@@ -1,0 +1,138 @@
+\section{Averaging as a Spectral Approximation}
+\label{sec:averaging_spectral}
+
+We now formalize the central claim of this work: under the anisotropic structure
+empirically validated in Section~2 and modeled in Section~3, simple averaging
+(mean subtraction) provides an effective and conservative approximation to
+spectral spike suppression.
+In particular, averaging removes a coherent component contained in the spike
+subspace while preserving the semantic long tail up to vanishing error.
+
+\subsection{Setup and Notation}
+
+Let $X \in \mathbb{R}^{N\times H}$ denote the matrix of token representations in a
+batch, with rows $x_i^\top$.
+Recall the decomposition introduced in Section~\ref{sec:model}:
+\[
+x_i = \ell + s_i,
+\qquad
+X = \mathbf{1}\ell^\top + S,
+\]
+where $\ell$ is the shared linguistic component and $S$ collects the semantic
+components.
+
+Let $X = U\Sigma V^\top$ be the singular value decomposition of $X$, and let
+$P_k = V_{1:k}^\top V_{1:k}$ denote the orthogonal projector onto the top-$k$
+right singular vectors (the empirical \emph{spike subspace}).
+Define the complementary projector $I-P_k$ as the \emph{tail subspace}.
+
+Let
+\[
+\mu = \frac{1}{N}\sum_{i=1}^N x_i,
+\qquad
+X_{\mathrm{avg}} = X - \mathbf{1}\mu^\top
+\]
+denote the batch mean and the mean-removed matrix.
+
+\subsection{Main Result}
+
+\begin{theorem}[Averaging as conservative spike suppression]
+\label{thm:avg_spectral}
+Suppose the token representations satisfy Assumptions~1–3 of
+Section~\ref{sec:model}, and that the empirical spike subspace $P_k$ contains the
+linguistic subspace $\mathcal L$ up to small error (as observed empirically in
+Section~2.3).
+Then the averaging operator $X_{\mathrm{avg}}$ satisfies the following properties.
+
+\begin{enumerate}
+
+\item \textbf{Mean alignment with the spike subspace.}
+The batch mean lies almost entirely in the empirical spike subspace:
+\begin{equation}
+\label{eq:mean_spike_align}
+\frac{\|P_k \mu\|_2^2}{\|\mu\|_2^2} \ge 1 - \varepsilon,
+\end{equation}
+for modest $k$ and small $\varepsilon$.
+Consequently, mean removal suppresses a coherent direction contained in the
+spectral spike.
+Empirically, this condition holds with $\varepsilon \ll 1$ for $k$ on the order
+of the observed spike rank (Section~2.3).
+
+\item \textbf{Spike energy reduction (conservative).}
+Averaging removes a nonzero fraction of the spike energy:
+\begin{equation}
+\label{eq:spike_reduction}
+1 - \frac{\|X_{\mathrm{avg}} P_k\|_F^2}{\|X P_k\|_F^2} > 0.
+\end{equation}
+Because averaging removes a single rank-one component aligned with the batch
+mean, the relative spike reduction is largest when the spike subspace is small
+and coherent.
+As $k$ increases, the same removed direction constitutes a smaller fraction of
+the larger spike subspace, and the relative reduction decreases.
+This behavior reflects the conservative nature of averaging and is consistent
+with the empirical curves in Section~3.
+
+\item \textbf{Tail preservation (additive form).}
+Mean removal perturbs the tail component only through the portion of the mean
+lying outside the spike subspace:
+\begin{equation}
+\label{eq:tail_additive_main}
+\|X_{\mathrm{avg}}(I-P_k) - X(I-P_k)\|_F
+=
+\|\mathbf{1}\mu^\top(I-P_k)\|_F
+=
+\sqrt{N}\,\|(I-P_k)\mu\|_2.
+\end{equation}
+In particular, when $\mu$ is well captured by the spike subspace (as in
+Section~2.3), the additive perturbation to the semantic tail is small.
+
+\smallskip
+\noindent\emph{(Relative form under a tail-energy lower bound.)}
+If, in addition, the tail energy satisfies $\|X(I-P_k)\|_F^2 \ge cN$ for some
+constant $c>0$ (i.e., per-token tail variance is bounded below), then
+\begin{equation}
+\label{eq:tail_ratio_cor}
+\frac{\|X_{\mathrm{avg}}(I-P_k)\|_F^2}{\|X(I-P_k)\|_F^2}
+=
+1 + O\!\left(\frac{\|(I-P_k)\mu\|_2}{\sqrt{N}}\right),
+\end{equation}
+so tail energy is preserved up to vanishing relative error as the number of
+semantically independent tokens increases.
+
+\end{enumerate}
+\end{theorem}
+
+\paragraph{Connection to gradient updates.}
+Although the analysis above is stated in terms of token representations, the same
+mean–residual separation applies directly to gradient computation in transformer
+layers.
+In particular, for linear projections, the batch gradient decomposes into a
+shared rank-one mean–mean term and a cross-covariance term between error signals
+and token-wise variations.
+Mean removal eliminates only the shared rank-one component aligned with the
+linguistic spike, while preserving the cross-covariance term that carries
+token-specific learning signal.
+As a result, averaging suppresses harmful coherent structure in gradients without
+erasing semantic learning.
+A detailed derivation of this gradient decomposition is provided in
+Appendix~\ref{app:grad_decomposition}.
+
+\subsection{Interpretation and Comparison with SVD}
+
+Theorem~\ref{thm:avg_spectral} highlights a key distinction between averaging and
+SVD-based spike suppression.
+Top-$k$ SVD removal eliminates the entire spike subspace and removes increasing
+energy as $k$ grows.
+In contrast, averaging removes a single coherent direction aligned with the
+batch mean.
+It therefore provides a conservative approximation: it suppresses the most
+harmful shared structure while minimizing collateral removal of semantic
+variation.
+
+This distinction explains the empirical curves in Section~3:
+averaging removes a substantial fraction of spike energy while preserving almost
+all tail energy, whereas SVD-based removal trades off spike suppression against
+semantic loss as $k$ increases.
+
+In the next section, we leverage this result to analyze the impact of averaging
+on low-bit quantization and adaptive optimization.

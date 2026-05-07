@@ -1,0 +1,91 @@
+\section{Discussion, Limitations, and Outlook}
+\label{sec:discussion}
+
+This work reframes anisotropy in human language representations as a dual
+phenomenon.
+On one hand, the presence of a dominant spectral spike poses significant
+challenges for optimization and quantization.
+On the other hand, the coherence and shared nature of this spike make it
+amenable to simple, efficient suppression through averaging.
+By grounding this perspective in empirical analysis, a minimal structural
+model, and formal guarantees, we show that averaging can fill the role of
+spectral spike suppression in a principled and hardware-friendly manner.
+
+\subsection{When Averaging Works}
+
+The effectiveness of averaging relies on structural properties that are
+ubiquitous in large language model training, but not universal.
+In particular, averaging is most effective when:
+\begin{itemize}
+  \item the dominant spike corresponds to shared linguistic structure that is
+  coherent across tokens;
+  \item semantic components are diverse and weakly correlated across sequences
+  or sufficiently distant contexts;
+  \item batches contain a sufficient number of semantically independent tokens
+  so that semantic residuals cancel under averaging.
+\end{itemize}
+
+These conditions are empirically validated for standard language model training
+regimes, but may not hold in settings with highly correlated batches, extremely
+small batch sizes, or non-linguistic data distributions.
+In such cases, more aggressive spectral methods may still be required.
+
+\subsection{Conservatism versus Aggressiveness}
+
+A key theme throughout the paper is that averaging is a \emph{conservative}
+operation.
+Unlike SVD-based spike suppression, which removes an entire low-rank subspace,
+averaging removes only a single coherent direction aligned with the batch mean.
+This conservatism is both a strength and a limitation.
+
+On the positive side, it minimizes collateral damage to semantic structure and
+avoids amplifying noise in the tail.
+On the negative side, it cannot eliminate all spike energy when the spike
+subspace has dimension greater than one.
+As a result, averaging should be viewed as a safe first-order approximation,
+rather than a complete replacement for spectral methods in all settings.
+
+\subsection{Relation to Existing Spectral Methods}
+
+Our analysis clarifies why explicit spectral methods such as Metis and
+spike-aware optimizers are effective: they target the same coherent structure
+identified here.
+The contribution of this work is not to dispute the value of such methods, but
+to show that much of their benefit can be achieved by exploiting statistical
+regularities of language data through simple operations.
+
+From this perspective, averaging can be seen as a baseline spectral
+approximation.
+It may be combined with more refined methods, used as a warm-up or
+preconditioning step, or applied selectively in regimes where full spectral
+analysis is impractical.
+
+\subsection{Broader Implications}
+
+The curse–blessing duality highlighted in this work suggests a broader principle
+for large-scale learning systems:
+pathological geometric structures induced by data may also encode exploitable
+regularities.
+Understanding the geometry of data distributions—not just model architectures—
+can open the door to algorithmic simplifications that are both theoretically
+sound and practically impactful.
+
+While this paper focuses on language models, similar anisotropic structures have
+been observed in vision, multimodal models, and scientific data.
+Exploring whether analogous averaging-based approximations apply in these
+domains is an interesting direction for future work.
+
+\subsection{Conclusion}
+
+Anisotropy in human language corpora is unavoidable.
+It degrades training efficiency, destabilizes quantization, and complicates
+optimization.
+At the same time, its coherence enables simple and efficient remedies.
+
+This work shows that averaging, one of the simplest operations available in
+large-scale systems, can be elevated from a heuristic to a principled spectral
+approximation.
+By aligning algorithmic design with the geometry of language data, we obtain a
+method that is efficient, interpretable, and broadly applicable.
+We hope this perspective encourages further exploration of data-aware
+approaches to large-scale model training.

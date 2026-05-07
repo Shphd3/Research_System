@@ -1,0 +1,479 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{enumitem}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.22\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65\baselineskip}
+
+\title{Daily Research Report:\\From Spectral Decoupling to Continual-Learning Factorized MoE}
+\author{}
+\date{2026-04-24}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+Our long-term goal is to build a Hierarchical MoE that can move toward the target of ``learn from very few examples and do not forget old knowledge.'' The current stage should therefore not be evaluated only by whether the router separates data. It should be evaluated by whether the structure supports low-interference adaptation.
+
+The Phase8p2 result changes the mainline in a precise way.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Update 1: the factorized $u50\_ext$ block has formal CL value.}
+    Under the fixed Phase8p2 protocol, $G2\_u50\_ext$ improves over the dense baseline $G0$ in learning gain, forgetting cost, and matched forgetting. This means $u50\_ext$ is no longer only a representation hypothesis. It has entered the continual-learning objective.
+
+    \item \textbf{Update 2: routing is not yet established as an additional CL mechanism.}
+    $G4\_u50\_ext$ has the best fixed-budget RAS, but it does not stably beat $G2\_u50\_ext$ in matched forgetting or ReachRate. Therefore, the current result supports a factorized common/plastic block, not a strong claim that learned routing already improves CL.
+
+    \item \textbf{Update 3: the replay baseline is close and still stronger under stricter criteria.}
+    The best structural model is near $G0\_ER$ in fixed-budget score, but $G0\_ER$ remains better in matched forgetting and ReachRate. Hence we cannot yet claim that the architecture exceeds a simple continual-learning baseline.
+
+    \item \textbf{Update 4: the next bottleneck is router-function alignment, not more band slicing.}
+    Phase7 already showed that full PCA tail is too coarse and that $u50\_ext$ is the most useful current CL input. Phase8p2 now shows that the split-dense version works, while the routed version is not yet stable. The next step is to test whether the router is aligned with true expert advantage.
+\end{enumerate}
+
+The concise update is:
+
+$$
+\text{formal CL value of } u50\_ext \text{ factorization is established, but routing advantage is not established.}
+$$
+
+\section{Background and Theoretical Critique}
+
+The original intuition was that language follows a Zipfian distribution, so a MoE should separate high-frequency and low-frequency knowledge. This intuition remains useful, but it is incomplete.
+
+Zipfian language implies that common patterns receive dense gradient support, while mid-tail and rare patterns receive sparse support. If all updates are written into a single shared parameter space, then few-shot adaptation can damage old common knowledge. This motivates a split between stable common computation and plastic residual computation.
+
+However, the main theoretical correction is:
+
+$$
+\text{separating data is not the same as creating useful experts.}
+$$
+
+A router can separate tokens by domain, frequency, or spectral position, but that does not imply that the selected expert has lower next-token loss, or that updating this expert will cause less forgetting. We therefore distinguish three levels.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Readable separation.} A probe, cluster, or router can separate inputs according to a proxy label.
+    \item \textbf{Functional specialization.} The selected expert has lower next-token loss than alternative experts on the same token.
+    \item \textbf{Continual-learning specialization.} After adaptation, the selected branch improves new query loss while causing less old-task forgetting at matched learning gain.
+\end{enumerate}
+
+Our earlier work moved from the first level to the second level. Phase8p2 is the first formal step toward the third level.
+
+This also changes the role of the router. The router should not be understood as a generic separator. It should be understood as a predictor of expert advantage. If the router is not trained or calibrated toward expert advantage, then better separability may still fail to produce better CL.
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{Mainline hypotheses}
+
+The current mainline is organized around four hypotheses.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{H1: common/plastic factorization is necessary for low-interference adaptation.}
+    A stable common branch should preserve high-frequency and general language ability, while a plastic branch should absorb few-shot mid-tail updates.
+
+    \item \textbf{H2: $u50\_ext$ is the current best practical plastic input.}
+    Full PCA tail is too broad, and $u25$ is too narrow for CL. $u50\_ext$ offers a better tradeoff between learnability and functional coverage.
+
+    \item \textbf{H3: current learned routing is not yet aligned with functional or retention-aware expert advantage.}
+    A router that separates inputs can still fail if its scores do not predict which expert has lower token loss or lower forgetting risk.
+
+    \item \textbf{H4: PCA is a useful diagnostic scaffold, not the final semantic basis.}
+    Phase7 suggests that sparse dictionary features reconstruct hidden states better than PCA top-$K$, so future hierarchy may need feature-based rather than purely PCA-based decomposition.
+\end{enumerate}
+
+\subsection{Representation split}
+
+Let $x\in\mathbb{R}^d$ be the hidden state at layer 8 after the post-attention layer normalization. Let $\mu$ be the calibration mean. Let $V_{16}$ be the first 16 principal directions of the centered covariance. The original full tail residual was
+
+$$
+x_t=(I-V_{16}V_{16}^{\top})(x-\mu).
+$$
+
+Phase7 showed that this full tail is too coarse for CL. We therefore use a narrower functional span. Let $P_{u50}$ be the projection onto the upper-middle band, and let $P_{ext}$ be the projection onto the extreme residual band. The current plastic input is
+
+$$
+x_{u50\_ext}=P_{u50}(x-\mu)+0.25P_{ext}(x-\mu).
+$$
+
+This is not claimed to be the final semantic decomposition. It is the best current low-interference input supported by the Phase7-Phase8 evidence.
+
+\subsection{Factorized common/plastic block}
+
+The strongest current architecture is not a full hierarchical MoE. It is a factorized single-layer block:
+
+$$
+h_{\mathrm{out}}
+=
+h_{\mathrm{in}}
++
+F_c(x)
++
+F_p(x_{u50\_ext}).
+$$
+
+Here $F_c$ is the common branch and $F_p$ is the plastic branch. During adaptation, the common branch should be frozen or updated slowly, while the plastic branch is updated quickly.
+
+The modeling reason is simple. Restricting the plastic branch input makes its update more local:
+
+$$
+\Delta \theta_p
+\approx
+-\eta
+\nabla_{\theta_p}
+L(F_p(x_{u50\_ext})).
+$$
+
+This update cannot directly use the full common representation. That restriction is useful for retention, but it also means the common branch must carry the common ability that the plastic branch no longer sees.
+
+\subsection{Functional specialization}
+
+For a token $t$, let the learned router select expert $e_{\mathrm{sel}}(t)$, and let $e'$ be an alternative expert. Define the counterfactual expert gap as
+
+$$
+G_{\mathrm{cf}}(t,e')
+=
+\ell_t(e')-\ell_t(e_{\mathrm{sel}}).
+$$
+
+If $G_{\mathrm{cf}}(t,e')>0$, then the selected expert has a functional next-token advantage over the alternative expert.
+
+However, this is still a static definition. It is not yet enough for continual learning.
+
+\subsection{Continual-learning specialization}
+
+For episode $m$, let $\mathcal{Q}_m$ be the new-domain query set and let $\mathcal{D}_{old}^{eval}$ be the old evaluation set. Define the learning gain after $U$ adaptation steps:
+
+$$
+LG_m(U)
+=
+L(\theta_0;\mathcal{Q}_m)
+-
+L(\theta_m^{(U)};\mathcal{Q}_m).
+$$
+
+Define the forgetting cost:
+
+$$
+FC_m(U)
+=
+L(\theta_m^{(U)};\mathcal{D}_{old}^{eval})
+-
+L(\theta_0;\mathcal{D}_{old}^{eval}).
+$$
+
+Define the clipped forgetting cost:
+
+$$
+FC_m^+(U)=\max(FC_m(U),0).
+$$
+
+Define the retention-adjusted score:
+
+$$
+RAS_m(U)=LG_m(U)-FC_m^+(U).
+$$
+
+A branch or expert is useful for CL only if it improves new query performance while lowering forgetting at matched learning gain. This is the definition that should replace proxy separability.
+
+\subsection{Router as advantage predictor}
+
+The current router can be written as
+
+$$
+h_{\mathrm{out}}
+=
+h_{\mathrm{in}}
++
+F_c(x)
++
+\sum_e g_e(x)F_e(x_{u50\_ext}).
+$$
+
+The problem is that $g_e(x)$ is not directly trained to predict the best expert. The ideal static expert is
+
+$$
+e_{\mathrm{oracle}}(t)
+=
+\arg\min_e \ell_t(e).
+$$
+
+A retention-aware ideal expert would be
+
+$$
+e_{\mathrm{CL}}(t)
+=
+\arg\max_e
+\left[
+\Delta L_{\mathrm{new}}(e,t)
+-
+\lambda \Delta L_{\mathrm{old}}(e,t)
+\right].
+$$
+
+Thus the next router objective should not be domain separability. It should be advantage alignment.
+
+\section{Empirical Study}
+
+\subsection{What was established before Phase8p2}
+
+The earlier phases established five important facts.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item Real Qwen hidden states contain a shared high-variance head.
+    \item Removing this shared head gives a tail-oriented residual that is more useful for expert computation than raw hidden states.
+    \item Single-layer tail-conditioned blocks outperform dense FFN and flat raw MoE in real block replacement experiments.
+    \item Counterfactual expert gap shows that single-layer tail-conditioned blocks can produce language-modeling-relevant specialization.
+    \item Recursive hierarchy has oracle potential, but learned hierarchy is not ready because the coarse router is the first bottleneck.
+\end{enumerate}
+
+These results supported the move from representation separability to functional specialization.
+
+\subsection{Phase7: what the representation gate showed}
+
+Phase7 tested whether the full PCA tail residual should be the first CL expert input. The answer was no.
+
+The important functional result was
+
+$$
+\Delta L_{\mathrm{remove\;mid}}
+\gg
+\Delta L_{\mathrm{remove\;ext}}.
+$$
+
+The reported values were
+
+$$
+\Delta L_{\mathrm{remove\;mid}}=0.0542,
+\qquad
+\Delta L_{\mathrm{remove\;ext}}=0.0038.
+$$
+
+Sparse dictionary reconstruction also outperformed PCA top-16 reconstruction:
+
+$$
+\mathrm{MSE}_{\mathrm{PCA-top16}}=0.3831,
+\qquad
+\mathrm{MSE}_{\mathrm{dict}}\approx0.2379.
+$$
+
+Therefore Phase7 did not reject the tail direction. It rejected the crude use of the entire full tail as the CL expert input. It also suggested that true semantic features are likely sparse, overlapping, and non-orthogonal.
+
+\subsection{Phase8p2: formal matched-forgetting result}
+
+Phase8p2 fixed
+
+\begin{itemize}[leftmargin=1.5em]
+    \item expert input: $u50\_ext$;
+    \item adaptation horizon: $U=8$;
+    \item compared groups: $G0$, $G2\_u50\_ext$, $G4\_u50\_ext$, and $G0\_ER$;
+    \item main regime: $0.5\times$ learning rate.
+\end{itemize}
+
+The main table is:
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}
+\toprule
+Group & LG & FC & RAS & ReachRate & Matched Forgetting \\
+\midrule
+$G0$ & -0.000251 & 0.000786 & -0.001121 & 0.450 & -0.000017 \\
+$G0\_ER$ & 0.000774 & -0.000282 & 0.000571 & 0.367 & -0.000502 \\
+$G2\_u50\_ext$ & 0.000803 & 0.000082 & 0.000503 & 0.217 & -0.000212 \\
+$G4\_u50\_ext$ & 0.000785 & -0.000122 & 0.000671 & 0.200 & -0.000184 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Phase8p2 formal matched-forgetting result at the stable $0.5\times$ learning-rate regime.}
+\end{table}
+
+The gates are:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item $G2\_u50\_ext > G0$: true.
+    \item $G4\_u50\_ext > G2\_u50\_ext$: not established.
+    \item best structure vs $G0\_ER$: near, but below under matched forgetting and ReachRate.
+\end{enumerate}
+
+The strongest conclusion is:
+
+$$
+u50\_ext \text{ factorization has formal CL value.}
+$$
+
+The strongest boundary is:
+
+$$
+\text{routing advantage is not established.}
+$$
+
+\subsection{Why the current gate is insufficient}
+
+The current router can separate data, but it does not necessarily create useful experts. There are three reasons.
+
+First, separability is not functional advantage. A separated cluster can still be assigned to an expert whose next-token loss is not lower than the alternatives.
+
+Second, functional advantage is not retention advantage. An expert can reduce current-token loss but still update directions that damage old knowledge.
+
+Third, routing adds variance. If the expert input space already provides most of the CL benefit, then an uncalibrated router can add instability without adding useful specialization.
+
+This explains why $G2\_u50\_ext$ is the most stable structural result, while $G4\_u50\_ext$ only has a weak fixed-budget advantage.
+
+\section{Next Iteration}
+
+\subsection{Immediate experiment 1: router-function audit}
+
+Before training a new router, we should audit the current router.
+
+For each token $t$ and expert $e$, compute $\ell_t(e)$. Define
+
+$$
+e_{\mathrm{sel}}(t)=\arg\max_e g_e(t),
+$$
+
+and
+
+$$
+e_{\mathrm{oracle}}(t)=\arg\min_e \ell_t(e).
+$$
+
+Define selected regret:
+
+$$
+R_{\mathrm{sel}}(t)=\ell_t(e_{\mathrm{sel}})-\min_e\ell_t(e).
+$$
+
+The audit should report selected regret, best-expert hit rate, route load, route margin, and the correlation between route margin and negative selected regret.
+
+If oracle routing strongly improves over learned routing, then the router is the bottleneck. If oracle routing still fails to beat $G2$, then the routed experts themselves are not sufficiently differentiated.
+
+\subsection{Immediate experiment 2: oracle routing upper bound}
+
+Evaluate the same $G4\_u50\_ext$ experts with an oracle router:
+
+$$
+e_{\mathrm{oracle}}(t)=\arg\min_e \ell_t(e).
+$$
+
+Compare oracle-routed $G4$ against learned $G4$ and $G2$. This experiment answers whether routing calibration has enough upside to justify a new router objective.
+
+\subsection{Immediate experiment 3: advantage-supervised router}
+
+Only if the oracle gap is positive, train an advantage-supervised router. Construct soft labels
+
+$$
+q_e(t)=
+\frac{\exp(-\ell_t(e)/\tau)}
+{\sum_{e'}\exp(-\ell_t(e')/\tau)}.
+$$
+
+Train the router with
+
+$$
+L_{\mathrm{router}}
+=
+\mathrm{KL}(q(t)\Vert g(t)).
+$$
+
+The goal is not only to improve routing purity. The goal is to reduce selected regret and improve matched forgetting.
+
+\subsection{Immediate experiment 4: common/plastic cooperation}
+
+Run an ablation to test the role of the common branch:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item freeze common, update plastic;
+    \item update common and plastic;
+    \item update common only;
+    \item common only;
+    \item plastic only.
+\end{enumerate}
+
+The expected outcome is that freezing common and updating plastic should give the best retention-learning tradeoff. If this fails, then the current common/plastic factorization needs redesign.
+
+\subsection{Immediate experiment 5: implementation feasibility}
+
+Exact $u50\_ext$ projection may be too costly for practical training. We should measure the time and memory overhead of exact projection and train a projection surrogate
+
+$$
+\hat{x}_{u50\_ext}=S_\phi(x).
+$$
+
+The surrogate objective is
+
+$$
+L_{\mathrm{proj}}=\|S_\phi(x)-x_{u50\_ext}\|_2^2.
+$$
+
+A feasible route to practice requires that the surrogate preserve most of the CL gain while reducing projection overhead.
+
+\subsection{Current architecture proposal}
+
+The current responsible architecture proposal is not yet a full Hierarchical MoE. It is:
+
+$$
+h_{\mathrm{out}}
+=
+h_{\mathrm{in}}
++
+F_c(x)
++
+F_p(x_{u50\_ext}).
+$$
+
+A routed version remains a candidate, but only after router-function alignment is verified:
+
+$$
+h_{\mathrm{out}}
+=
+h_{\mathrm{in}}
++
+F_c(x)
++
+\sum_e g_e(\phi(x,x_{u50\_ext}))F_e(x_{u50\_ext}).
+$$
+
+A full hierarchical version should be postponed until the coarse router can be trained toward functional and retention-aware advantage.
+
+\section{Short Meeting Script}
+
+My presentation topic is how our MoE line moves toward the goal of learning from few examples without forgetting old knowledge.
+
+The main update of this stage is that the $u50\_ext$ factorized block has formal continual-learning value, but routing itself is not yet established as an extra CL mechanism.
+
+The evidence is Phase8p2. Under the fixed $U=8$ protocol, $G2\_u50\_ext$ beats the dense baseline in learning gain, forgetting, and matched forgetting. However, $G4\_u50\_ext$ does not stably beat $G2$ in matched forgetting or ReachRate, even though its fixed-budget RAS is slightly higher.
+
+My current understanding is that separating data is not enough. The expert must receive a restricted and useful input space, and the router must predict functional expert advantage rather than proxy separability.
+
+What remains uncertain is whether the routed experts already contain useful functional differences that the learned router fails to exploit, or whether the experts themselves are not sufficiently differentiated.
+
+The next step is a router-function audit and oracle-routing upper bound. If oracle routing helps, we will build an advantage-supervised router. If oracle routing does not help, we should stay with the split-dense common/plastic block and improve the branch design before moving to hierarchy.
+
+\end{document}

@@ -1,0 +1,54 @@
+\section{Related Work}
+
+\paragraph{Learning-rate stability and the Hessian paradigm.}
+Classical convergence and stability analyses of gradient descent are typically
+stated in terms of smoothness constants or Hessian curvature, leading to
+step-size constraints proportional to $1/\lambda_{\max}(H)$.
+This Hessian-centric viewpoint underlies much of modern optimization theory
+for machine learning and motivates the common practice of diagnosing training
+instabilities through curvature (sharpness) measurements.
+
+\paragraph{Edge of Stability (EoS) and oscillatory optimization dynamics.}
+Cohen et al.~\cite{cohen2021eos} empirically identified that full-batch gradient descent
+in neural network training often operates in an \emph{Edge-of-Stability} regime,
+where the top Hessian eigenvalue fluctuates near $2/\eta$ and the loss exhibits
+short-term oscillations while decreasing over long horizons.
+Arora et al.~\cite{arora2022eos} provided a theoretical analysis of mechanisms by which
+gradient-based methods can enter and make progress in such EoS regimes,
+thereby initiating a line of work on understanding learning dynamics beyond
+the classical monotone-descent picture.
+More recently, Cohen et al.~\cite{cohen2024centralflows} proposed \emph{central flows},
+a differential-equation formalism aimed at modeling the time-averaged trajectory
+of oscillatory optimizers in EoS-like regimes, providing a complementary tool
+for reasoning about long-term dynamics.
+
+\paragraph{Beyond GD: EoS-style analyses for alternative update rules.}
+Extensions of the EoS perspective have also appeared for algorithms that modify
+the objective or update rule.
+For example, Long and Bartlett~\cite{long2024sameos} derive an ``edge of stability''
+condition for Sharpness-Aware Minimization (SAM) and empirically validate that
+SAM operates near this boundary; see also Foret et al.~\cite{foret2020sam} for
+the original SAM formulation.
+
+\paragraph{Matrix-aware preconditioning and matrix-whitening optimizers.}
+A separate but related thread studies \emph{structure-aware} optimizers that exploit
+the matrix structure of gradients rather than treating parameters as vectors.
+PolarGrad~\cite{lau2025polargrad} provides a unifying perspective for ``matrix-aware''
+preconditioning and frames Muon as a special instance (via polar decomposition / related
+matrix transforms), with both theoretical and empirical evidence of acceleration.
+In parallel, practical scaling work has shown that Muon can be made viable for large-scale
+language-model training through techniques such as weight decay and per-parameter scaling~\cite{liu2025muonscalable}.
+At the same time, the rapidly growing space of matrix-whitening methods has motivated
+careful ablations; Frans et al.~\cite{frans2025matrixwhitening} argue that performance
+differences among whitening-style optimizers are not explained solely by the accuracy
+of spectral normalization, highlighting the role of variance adaptation.
+
+\paragraph{Spike--tail spectral geometry and spike-aware spectral shaping.}
+Motivated by spectral anisotropy in large language model training, Huang et al.~\cite{huang2026spectra}
+propose Spectra, a spike-aware optimizer that tracks and suppresses a dominant low-rank spike
+subspace without amplifying the spectral tail.
+Our work is complementary in spirit to these optimizer developments but is primarily
+\emph{learning-theoretic}: we focus on deriving stability and convergence properties of
+gradient dynamics under a domain-motivated spike--tail Jacobian structure (including mean bias),
+and then interpret normalization, mean-removal, and whitening-style interventions
+as geometric operations that reduce dominant singular components and relax step-size constraints.

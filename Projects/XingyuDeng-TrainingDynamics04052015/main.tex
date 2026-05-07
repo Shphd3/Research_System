@@ -1,0 +1,793 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.22\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+\newcommand{\idea}[1]{\textcolor{red}{[#1]}}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.75\baselineskip}
+
+\title{MoE Routing for Continual Learning:\\ A Reset of the Problem Statement}
+\author{Theory Group}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+This version integrates the new \texttt{ckpt40000} benchmark synthesis, the completed coarse clustering audit, the updated token-level expert audit, and the revised low-rank quadratic direction under training. Only conclusions that are already supported by current evidence are written as claims; the new regularized subspace-energy route is recorded as the active design direction, not as a validated result.
+
+\begin{enumerate}
+    \item \textbf{Update 1 (Specialization--Low-Rankness Link): expert specialization and expert low-rankness are now linked more carefully and more usefully.}
+
+    We now state this relation explicitly. Specialization is the assignment-side operation that separates tokens across experts. Low-rankness is the geometry-side state inside each expert. Under the law of total covariance,
+    \[
+    \mathrm{Cov}(x)
+    =
+    \mathbb{E}_{e}\!\big[\mathrm{Cov}(x\mid E=e)\big]
+    +
+    \mathrm{Cov}_{e}(\mathbb{E}[x\mid E=e]),
+    \]
+    stronger between-expert separation can reduce average within-expert covariance when the total feature covariance is fixed at the model level and expert capacity is comparably constrained.
+
+    \textbf{What this means:} expert specialization and expert low-rankness are not equivalent, but they should no longer be discussed independently. Specialization is the routing-side operation; low-rankness is one plausible geometric consequence once assignment becomes cleaner and less overlapping.
+
+    \item \textbf{Update 2 (Variance-Routing Clarification): the active variance-routing form is not a pure second-order branch.}
+
+    Our current understanding is that a usable variance-routing family should contain three coordinated channels rather than a single isolated quadratic term:
+    \[
+    \ell_e(x)
+    =
+    a_e^\top x_{\parallel}
+    +
+    b_e^\top x_c
+    +
+    \|V_e x_c\|_2^2
+    +
+    c_e,
+    \]
+    where $x_{\parallel}$ is the mean-direction projection and $x_c$ is the globally centered residual. The first term preserves mean-related bias information, the second term preserves centered first-order semantic variation, and the third term measures subspace energy in expert-specific directions.
+
+    \textbf{What this means:} the project should no longer describe ``variance routing'' as ``just add a second-order term.'' The current target is a hybrid route that keeps the useful first-order structure and adds a structured quadratic channel on top of it.
+
+    \item \textbf{Update 3 (Clustering Audit): the completed coarse clustering experiment weakens the old claim that diagonal second-order features directly encode semantic grouping.}
+
+    The coarse audit shows that raw first-order features remain best aligned with the coarse semantic labels:
+    \[
+    \texttt{raw\_x\_raw}: \mathrm{NMI}=0.3114,\quad \mathrm{ARI}=0.2230,\quad \mathrm{PMA}=0.4670,
+    \]
+    while diagonal second-order and projected second-order representations remain weak on these semantic metrics. At the same time, pure subspace energy produces a very high geometric separation score,
+    \[
+    \texttt{energy\_first\_pca}: \mathrm{Silhouette}=0.5005,
+    \]
+    but still poor semantic alignment
+    \[
+    \mathrm{NMI}=0.0277,\qquad \mathrm{ARI}=0.0052,\qquad \mathrm{PMA}=0.2712.
+    \]
+
+    \textbf{What this means:} not every second-order signal is semantic, and not every geometrically separable quantity is useful for routing. The clustering audit therefore argues against keeping the old diagonal second-order story as the main scientific claim.
+
+    \item \textbf{Update 4 (Benchmark Repositioning): the main competitive picture at \texttt{ckpt40000} has changed.}
+
+    At \texttt{ckpt40000}, \texttt{acp\_lite} remains the strongest first-order route on downstream average
+    \[
+    \texttt{Round0 Avg}=0.4497.
+    \]
+    However, the current quadratic story should now go through the low-rank family rather than the older diagonal family. In particular,
+    \[
+    \texttt{quadratic\_low\_rank\_acp\_lite}: \mathrm{Round0\ Avg}=0.4462,\quad \mathrm{CR@0.5}=0.9700,
+    \]
+    while
+    \[
+    \texttt{quadratic\_low\_rank}: \mathrm{Mean\ SI}=0.6338
+    \]
+    is the strongest current cross-domain isolation result in the benchmark.
+
+    \textbf{What this means:} the relevant comparison is no longer ``linear versus diagonal quadratic.'' It is now ``strong first-order mean-aware routing versus low-rank subspace-aware quadratic routing.''
+
+    \item \textbf{Update 5 (Theoretical Pivot): the active quadratic direction is now a regularized hybrid route with mean projection, centered linear structure, and low-rank subspace energy.}
+
+    The revised target is now
+    \[
+    \ell_e(x)
+    =
+    a_e^\top x_{\parallel}
+    +
+    b_e^\top x_c
+    +
+    \|V_e x_c\|_2^2
+    +
+    c_e
+    =
+    a_e^\top x_{\parallel}
+    +
+    b_e^\top x_c
+    +
+    x_c^\top V_e^\top V_e x_c
+    +
+    c_e,
+    \]
+    together with two structural regularizers:
+    \[
+    \mathcal{L}_{\mathrm{internal}}
+    =
+    \sum_{e=1}^{K}\|V_eV_e^\top-I_r\|_F^2,
+    \qquad
+    \mathcal{L}_{\mathrm{cross}}
+    =
+    \sum_{i\neq j}\|V_iV_j^\top\|_F^2.
+    \]
+
+    \textbf{What this means:} the project is no longer trying to defend the old diagonal form as the final answer. The live quadratic hypothesis is a hybrid route with explicit mean-aware, centered-linear, and subspace-energy components, together with intra-expert orthogonality and inter-expert separation. This is a revised mechanism under training, not a completed empirical result.
+
+    \item \textbf{Update 6 (Token Audit): expert specialization is directly observable, but the observed specialization is token-functional rather than a trivial one-domain-per-expert partition.}
+
+    The token audit continues to show readable expert roles, including punctuation/discourse experts, connective experts, scientific-medical experts, relational experts, and concept-heavy experts.
+
+    \textbf{What this means:} the question is no longer whether experts can specialize. The real question is which kind of specialization is induced, and which kind of specialization is compatible with low overlap, non-collapse, and eventual continual-learning benefit.
+\end{enumerate}
+
+\section{Background and Theoretical Critique}
+
+The project has been motivated by a simple but difficult chain: router design shapes expert assignment, expert assignment shapes expert geometry, and expert geometry may eventually determine whether later domains interfere with earlier ones.
+
+The difficulty is that several different concepts had previously been mixed together:
+\begin{enumerate}
+    \item \emph{assignment}: which tokens are sent to which experts;
+    \item \emph{geometry}: what covariance structure is induced inside each expert;
+    \item \emph{mechanism}: what information the router is actually using to produce its logits;
+    \item \emph{outcome}: whether that mechanism eventually improves continual learning.
+\end{enumerate}
+
+This report keeps these layers separate.
+
+The present report is organized around three concrete questions that are central to the project:
+\begin{enumerate}
+    \item What is the relation between expert specialization and expert low-rankness?
+    \item What does ``routing by variance'' actually mean, and what kind of second-order structure is actually useful for routing?
+    \item Can router design make experts more specialized in a meaningful and observable way?
+\end{enumerate}
+
+The first two questions are mainly theoretical; the third is empirical. They must be answered together. A vague claim such as ``quadratic uses variance'' is not enough; we need a formal description of the current mechanism and a critical account of what the clustering evidence does or does not support. A vague claim such as ``experts are more specialized'' is also not enough; we need explicit evidence about what kinds of tokens are actually routed to each expert.
+
+This critique matters directly for \texttt{acp\_lite}. Its current empirical strength should not be treated as a coincidence. It should be explained structurally: \texttt{acp\_lite} introduces a cleaner first-order decomposition of the routed feature and therefore becomes the strongest current first-order route that any new quadratic mechanism must justify itself against.
+
+The new clustering results sharpen this point further. They show that naive diagonal second-order features do not automatically recover coarse semantic grouping, and that pure energy can create strong geometric separation without producing semantic alignment. This forces a theoretical pivot: the live quadratic route is no longer ``use any second-order term,'' but rather ``identify which second-order structures are worth routing on, and parameterize them in a way that can reduce expert overlap without collapsing semantics.''
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{Router family}
+
+Let $x \in \mathbb{R}^d$ be the routed feature and let $\mu_{\mathrm{global}}$ be the running mean used for centering. Define
+\[
+x_c = x - \mu_{\mathrm{global}}.
+\]
+
+We compare three router families.
+
+\paragraph{Centered linear router.}
+\[
+\ell_{\mathrm{lin}}(x) = W x_c.
+\]
+This is the clean first-order baseline.
+
+\paragraph{ACP-lite router.}
+Let
+\[
+u = \frac{\mu_{\mathrm{global}}}{\|\mu_{\mathrm{global}}\|_2},
+\qquad
+x_{\parallel} = (u^\top x)u.
+\]
+The working \texttt{acp\_lite} form is
+\[
+\ell_{\mathrm{acp}}(x) = W_{\parallel}x_{\parallel} + W_c x_c.
+\]
+This router remains first-order, but it splits the routed signal into a mean-direction channel and a centered-residual channel.
+
+\paragraph{Hybrid mean-aware subspace-energy router.}
+The current revised routing target is
+\[
+\ell_e(x)
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+\|V_e x_c\|_2^2
++
+c_e,
+\qquad
+V_e\in\mathbb{R}^{r\times d}.
+\]
+Equivalently,
+\[
+\ell_e(x)
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+x_c^\top V_e^\top V_e x_c
++
+c_e.
+\]
+This router combines three signals: mean-direction projection, centered first-order residual, and expert-specific low-rank subspace energy. It is therefore a hybrid mean-aware and subspace-aware quadratic mechanism rather than an axis-aligned diagonal quadratic form.
+
+\paragraph{Diagnostic predecessor: diagonal quadratic router.}
+For reference, the older diagnostic family takes the form
+\[
+\ell_{\mathrm{diag}}(x)=W_1 x_c + W_2(x_c\odot x_c-\lambda).
+\]
+This older form is still useful as a mechanistic predecessor, but it is no longer the main target of the project.
+
+\subsection{What expert specialization means}
+
+In this project, expert specialization should not be reduced to a single scalar. A specialized router should satisfy three conditions simultaneously:
+\begin{enumerate}
+    \item \textbf{assignment selectivity:} tokens with similar local roles or semantic functions should prefer overlapping experts;
+    \item \textbf{within-expert compactness:} routed features inside one expert should occupy a more concentrated subspace;
+    \item \textbf{anti-collapse:} the observed structure should not be a trivial artifact of routing almost everything into one expert.
+\end{enumerate}
+
+The key point is that specialization is fundamentally a token-level assignment phenomenon. It does not require a one-expert-per-document-domain partition. A router may specialize by syntax, lexical type, discourse role, numerical format, scientific terminology, or concept structure, and such specialization is still scientifically meaningful if it produces cleaner within-expert geometry.
+
+\begin{proposition}[Why specialization can induce compact experts]
+Let $E$ be the routed expert identity and let $\mu_e=\mathbb{E}[x\mid E=e]$. Then
+\[
+\mathrm{Cov}(x)
+=
+\mathbb{E}_{e}\!\big[\mathrm{Cov}(x\mid E=e)\big]
++
+\mathrm{Cov}_{e}(\mu_e).
+\]
+Therefore, for fixed overall feature covariance, increasing the between-expert separation term $\mathrm{Cov}_{e}(\mu_e)$ reduces the average within-expert covariance term $\mathbb{E}_{e}[\mathrm{Cov}(x\mid E=e)]$.
+\end{proposition}
+
+\begin{proof}
+This is the law of total covariance applied to the conditioning variable $E$.
+\end{proof}
+
+This proposition supplies the missing bridge between specialization and low-rankness, but it should not be overread. Specialization is the assignment-side phenomenon; compactness is a geometric consequence when the partition becomes cleaner. The implication is strongest when expert capacity is comparably constrained and the solution is not dominated by collapse or severe load imbalance.
+
+\subsection{Why centering is necessary}
+
+The correct theoretical statement is not that centering makes conditional means equal. It is the opposite: centering removes the shared global offset and exposes the domain-specific first-order differences that were previously buried inside that shared offset.
+
+\begin{proposition}[Centering preserves domain-specific first-order differences]
+Let $x_c = x - \mu_{\mathrm{global}}$ and let
+\[
+\mu_A = \mathbb{E}[x\mid A], \qquad \mu_B = \mathbb{E}[x\mid B].
+\]
+Then
+\[
+\mathbb{E}[x_c \mid A] = \mu_A - \mu_{\mathrm{global}},
+\qquad
+\mathbb{E}[x_c \mid B] = \mu_B - \mu_{\mathrm{global}}.
+\]
+Hence
+\[
+\mathbb{E}[x_c \mid A] - \mathbb{E}[x_c \mid B] = \mu_A - \mu_B.
+\]
+Therefore global centering does not erase domain-specific first-order separation; it removes only the shared offset.
+\end{proposition}
+
+\begin{proof}
+By definition,
+\[
+\mathbb{E}[x_c \mid A]
+=
+\mathbb{E}[x-\mu_{\mathrm{global}}\mid A]
+=
+\mathbb{E}[x\mid A]-\mu_{\mathrm{global}}
+=
+\mu_A-\mu_{\mathrm{global}},
+\]
+and similarly for $B$. Subtracting the two equalities yields the claim.
+\end{proof}
+
+\begin{remark}
+In the balanced two-domain case, if the global mean is the average of the two domain means, then the two centered conditional means become opposite around the common center. This is one reason centered linear routing can become much cleaner than non-centered routing.
+\end{remark}
+
+\subsection{Why \texttt{acp\_lite} can work}
+
+The current theoretical reading of \texttt{acp\_lite} is as follows.
+
+After global centering, the routed feature still contains at least two distinct first-order structures:
+\begin{enumerate}
+    \item a component aligned with the global mean direction, which tracks coarse shared offset and domain drift;
+    \item a centered residual component, which carries local semantic and contextual variation.
+\end{enumerate}
+
+The centered linear router pushes both through a single matrix $W$. In contrast, \texttt{acp\_lite} allocates two separate linear channels:
+\[
+\ell_{\mathrm{acp}}(x)=W_{\parallel}x_{\parallel}+W_c x_c.
+\]
+These two channels are not redundant. The $x_{\parallel}$ branch preserves absolute location along the dominant mean-related axis, while the $x_c$ branch removes the shared global offset and preserves domain-specific first-order deviation. This does not make the router second-order; it makes the first-order structure more explicit and better conditioned.
+
+\begin{proposition}[ACP-lite is a structured first-order router]
+Let
+\[
+\Delta_{\parallel}
+=
+\mathbb{E}[x_{\parallel}\mid A]-\mathbb{E}[x_{\parallel}\mid B],
+\qquad
+\Delta_c
+=
+\mathbb{E}[x_c\mid A]-\mathbb{E}[x_c\mid B].
+\]
+Then
+\[
+\mathbb{E}[\ell_{\mathrm{acp}}(x)\mid A]-\mathbb{E}[\ell_{\mathrm{acp}}(x)\mid B]
+=
+W_{\parallel}\Delta_{\parallel}+W_c\Delta_c.
+\]
+Therefore \texttt{acp\_lite} can separately exploit mean-direction differences and centered first-order differences.
+\end{proposition}
+
+\begin{proof}
+Take conditional expectations under $A$ and $B$ and subtract linearly.
+\end{proof}
+
+This is currently the cleanest explanation for why \texttt{acp\_lite} can perform well. It is not ``mysteriously better.'' It is a more explicit first-order factorization of routing information: one channel captures mean-related bias or dominant-frequency structure, and the other captures centered semantic residual.
+
+\subsection{Mechanism Deepening: From Linear Routing to Variance Routing}
+
+The current mechanism story can be summarized as a progression from one increasingly expressive routing family to another.
+
+\paragraph{Stage 1: centered linear routing.}
+The centered linear router
+\[
+\ell_{\mathrm{lin}}(x)=W x_c
+\]
+can only exploit first-order separation after global centering. It is suitable when useful routing information is primarily encoded in mean differences.
+
+\paragraph{Stage 2: structured first-order routing via \texttt{acp\_lite}.}
+The \texttt{acp\_lite} form
+\[
+\ell_{\mathrm{acp}}(x)=W_{\parallel}x_{\parallel}+W_c x_c
+\]
+keeps the router first-order but splits the signal into two channels. The current working interpretation is:
+\begin{enumerate}
+    \item $x_{\parallel}$ captures projection onto the dominant mean-related axis, which often behaves like a frequency- or domain-bias direction;
+    \item $x_c$ captures the residual first-order structure after removing the global center, and is therefore closer to a semantic residual than to a raw domain offset.
+\end{enumerate}
+
+This interpretation is consistent with the empirical fact that \texttt{acp\_lite} is currently the strongest first-order benchmark at \texttt{ckpt40000}. It uses first-order information more explicitly than the centered linear baseline.
+
+\paragraph{Stage 3: hybrid variance-aware routing.}
+If useful separation is not exhausted by first-order structure, then the natural target is not a pure quadratic branch but a hybrid form that keeps the informative first-order channels and adds a subspace-energy term:
+\[
+\ell_e(x)
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+x_c^\top Q_e x_c
++
+c_e,
+\qquad
+Q_e \succeq 0.
+\]
+This form says that routing may depend simultaneously on mean-direction information, centered first-order residual information, and anisotropy of the centered feature cloud.
+
+\paragraph{Low-rank realization.}
+If
+\[
+Q_e = V_e^\top V_e,
+\qquad
+V_e\in\mathbb{R}^{r\times d},
+\]
+then
+\[
+\ell_e(x)
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+x_c^\top V_e^\top V_e x_c
++
+c_e
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+\|V_e x_c\|_2^2
++
+c_e.
+\]
+This is the low-rank implementation of the current variance-aware routing hypothesis. It does not merely check coordinate-wise squared magnitude; it preserves first-order routing channels and adds energy after projection to an expert-specific subspace.
+
+\begin{remark}
+This low-rank subspace-energy form is the mathematically clean target if the project wants to move from diagonal second-moment routing to genuine variance routing.
+\end{remark}
+
+\paragraph{Why pure energy is not enough.}
+The clustering audit adds an important restriction. If we define a scalar energy feature
+\[
+z=\|P_r x_c\|_2,
+\]
+then $z$ preserves only radial magnitude inside the projected subspace and discards directional structure inside that subspace. This is enough to produce strong geometric separation, but not enough to preserve coarse semantic grouping. The current results therefore support the following reading:
+\begin{enumerate}
+    \item direction still matters;
+    \item subspace choice still matters;
+    \item energy alone is not a synonym for semantics.
+\end{enumerate}
+
+\paragraph{Current revised route under training.}
+The active routing direction is now a regularized hybrid route:
+\[
+\ell_e(x)
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+\|V_e x_c\|_2^2
++
+c_e.
+\]
+To make the learned expert subspaces less redundant, we add two structural penalties:
+\[
+\mathcal{L}_{\mathrm{internal}}
+=
+\sum_{e=1}^{K}\|V_eV_e^\top-I_r\|_F^2,
+\qquad
+\mathcal{L}_{\mathrm{cross}}
+=
+\sum_{i\neq j}\|V_iV_j^\top\|_F^2.
+\]
+The first encourages orthonormal rows within each expert subspace; the second discourages overlap across experts. The role of the quadratic part is therefore no longer to replace first-order routing, but to refine it with explicit subspace-energy structure. This is the main revised mechanism now under training, but it is not yet an empirical conclusion of this report.
+
+\subsection{What the current quadratic form is really routing by}
+
+The structural justification for quadratic routing is narrower than ``more expressive is better.'' The first thing that must be clarified is that our current form is \emph{not} full variance routing.
+
+\begin{proposition}[The current quadratic term is diagonal second-moment routing]
+For expert $e$, write the second-order branch as
+\[
+\ell^{(2)}_e(x)
+=
+w_{2,e}^{\top}(x_c\odot x_c-\lambda).
+\]
+Let
+\[
+D_e=\mathrm{Diag}(w_{2,e}),
+\qquad
+\Lambda=\mathrm{Diag}(\lambda).
+\]
+Then
+\[
+\ell^{(2)}_e(x)
+=
+\mathrm{Tr}\!\big(D_e(x_cx_c^{\top}-\Lambda)\big).
+\]
+Therefore the current quadratic branch uses only the diagonal part of the centered second moment in the native feature basis.
+\end{proposition}
+
+\begin{proof}
+Since $w_{2,e}^{\top}(x_c\odot x_c)$ is exactly the weighted sum of the diagonal entries of $x_cx_c^{\top}$, it can be written as
+\[
+\sum_i (w_{2,e})_i (x_{c,i}^2-\lambda_i)
+=
+\mathrm{Tr}\!\big(D_e(x_cx_c^\top-\Lambda)\big).
+\]
+\end{proof}
+
+This proposition answers the first theoretical question precisely. The current diagonal form is routing by \emph{coordinate-wise centered energy}. It is second-order, but only along the original coordinate axes. It does not use general covariance geometry or arbitrary rotated anisotropy.
+
+\begin{remark}
+This is why it is more accurate to describe the current router as \emph{diagonal second-moment routing} rather than as full variance routing.
+\end{remark}
+
+A more complete notion of variance routing would allow the router to learn its own subspace directions without discarding the useful first-order channels. This is exactly why the hybrid form
+\[
+\ell_e(x)
+=
+a_e^\top x_{\parallel}
++
+b_e^\top x_c
++
+\|V_e x_c\|_2^2
++
+c_e
+\]
+has become the live target while the diagonal form is being downgraded to a diagnostic predecessor.
+
+\begin{proposition}[Debiased quadratic routing is useful only under covariance-only separation]
+Assume two domains $A,B$ satisfy
+\[
+\mathbb{E}[x_c\mid A]=\mathbb{E}[x_c\mid B]=0
+\]
+but have different diagonal covariances
+\[
+\mathrm{diag}(\Sigma_A)\neq \mathrm{diag}(\Sigma_B),
+\qquad
+\Sigma_D=\mathbb{E}[x_cx_c^\top\mid D].
+\]
+Then
+\[
+\mathbb{E}[\ell_{\mathrm{quad}}(x)\mid A]-\mathbb{E}[\ell_{\mathrm{quad}}(x)\mid B]
+=
+W_2\big(\mathrm{diag}(\Sigma_A)-\mathrm{diag}(\Sigma_B)\big).
+\]
+\end{proposition}
+
+\begin{proof}
+Under the zero-centered-mean assumption, the first-order term vanishes in expectation. Also
+\[
+\mathbb{E}[x_c\odot x_c\mid D]=\mathrm{diag}(\Sigma_D),
+\]
+so the debiasing constant cancels across domains when taking the difference.
+\end{proof}
+
+This proposition shows exactly what the older diagonal quadratic route can claim: it can exploit \emph{diagonal} covariance differences that centered linear routing cannot exploit. But this is weaker than a claim of full variance routing, and the clustering audit gives an additional empirical reason not to keep that older route as the main target.
+
+To distinguish architectural capability from learned mechanism, we define the second-order attribution ratio
+\[
+\rho
+=
+\frac{\mathbb{E}|m_2(x)|}{\mathbb{E}|m_1(x)|},
+\]
+where $m_1(x)$ and $m_2(x)$ are the linear-branch and quadratic-branch margin contributions. Only when $\rho$ is materially large can we say that the learned router is substantially using its second-order branch.
+
+\subsection{Hypothesis status}
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{p{0.12\linewidth}p{0.16\linewidth}p{0.62\linewidth}}
+\toprule
+ID & Status & Statement \\
+\midrule
+H1 & Supported & Centering is necessary because it removes the shared global offset while preserving domain-specific first-order differences. \\
+H2 & Supported & \texttt{acp\_lite} is the strongest current fair first-order route and needs a direct theoretical interpretation rather than an ad hoc empirical one. \\
+H3 & Supported & Pure subspace energy can produce geometric separation without semantic clustering; therefore geometric separation alone cannot justify a semantic-routing claim. \\
+H4 & Active & The relevant quadratic route is now low-rank subspace-energy routing with structural regularization, not the older diagonal second-moment form. \\
+H5 & Active & Useful expert specialization must be shown jointly through token structure, overlap reduction, and non-collapse rather than by any single metric alone. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Current hypothesis tracking at the end of the static mechanism-audit stage.}
+\label{tab:hypothesis-status}
+\end{table}
+
+\section{Empirical Study}
+
+\subsection{What remains stable across versions}
+
+Across the earlier spectral audits and the current \texttt{ckpt40000} benchmark, four points remain stable.
+
+\begin{enumerate}
+    \item \textbf{Centering is necessary.} Non-centered routing is a useful counterexample: it can produce large margins without producing clean expert geometry.
+    \item \textbf{Structure and performance are decoupled.} A router can look good on one structural metric without becoming the best overall task model.
+    \item \textbf{First-order routing is still very strong.} \texttt{acp\_lite} remains the benchmark that any quadratic route must justify itself against.
+    \item \textbf{Quadratic routing is still unresolved.} It remains interesting, but the relevant open line is now a hybrid mean-aware plus low-rank subspace-energy route rather than the older diagonal second-order family.
+\end{enumerate}
+
+\subsection{Current benchmark anchor at \texttt{ckpt40000}}
+
+Table~\ref{tab:benchmark-40000} summarizes the main benchmark view at \texttt{ckpt40000}. It keeps only the models and metrics that are central to the updated story: downstream task average, robustness under strong perturbation, cross-domain interference, and load balance.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccc}
+\toprule
+Model & Round0 Avg $\uparrow$ & CR@0.5 $\uparrow$ & Mean SI $\downarrow$ & CV\_load $\downarrow$ \\
+\midrule
+\texttt{linear\_no\_center} & 0.4253 & 1.0000 & 0.8063 & 1.8224 \\
+\texttt{linear\_running\_center} & 0.4387 & 0.9610 & 0.6522 & 0.3141 \\
+\texttt{acp\_lite} & \textbf{0.4497} & 0.9566 & 0.6844 & \textbf{0.1349} \\
+\texttt{quadratic\_low\_rank\_linear} & 0.4352 & 0.9578 & 0.6639 & 0.2802 \\
+\texttt{quadratic\_low\_rank} & 0.4376 & 0.9649 & \textbf{0.6338} & 0.6719 \\
+\texttt{quadratic\_low\_rank\_acp\_lite} & 0.4462 & \textbf{0.9700} & 0.6620 & 0.3647 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Main benchmark anchor at \texttt{ckpt40000}, extracted from the five-round synthesis. The table exposes the current trade-off among task performance, robustness, cross-domain isolation, and routing balance.}
+\label{tab:benchmark-40000}
+\end{table}
+
+\paragraph{Main reading of Table~\ref{tab:benchmark-40000}.}
+\begin{enumerate}
+    \item \texttt{linear\_no\_center} is the counterexample that disciplines the whole story: it is highly stable under perturbation, but that stability is degenerate and accompanies the worst task average and the worst interference.
+    \item \texttt{linear\_running\_center} remains the clean baseline: balanced, low-interference, and free of the collapse pathology.
+    \item \texttt{acp\_lite} is still the strongest current first-order model on downstream average and the best-balanced first-order route in this table.
+    \item \texttt{quadratic\_low\_rank\_acp\_lite} currently gives the best robustness--performance compromise: it is close to \texttt{acp\_lite} on Round0 while achieving the best CR@0.5.
+    \item \texttt{quadratic\_low\_rank} has the lowest Mean SI, but that alone is not enough: its load balance is weaker and its downstream average is still below \texttt{acp\_lite}.
+    \item The main quadratic question has therefore changed. It is no longer whether any quadratic branch can help, but whether a subspace-aware quadratic route can improve overlap and robustness without sacrificing balance or first-order semantic usefulness.
+\end{enumerate}
+
+\subsection{Coarse clustering audit: what second-order features really capture}
+
+The clustering audit was designed to answer a narrower mechanistic question: if we extract different first-order and second-order representations from the centered feature cloud, which ones actually align with coarse domain labels, and which ones only create geometric separation?
+
+Table~\ref{tab:clustering-audit} shows the averaged result over layers and PCA ranks. We report PMA, NMI, and ARI as the main semantic alignment metrics, and keep Silhouette as a geometric auxiliary metric.
+This should be read as a coarse diagnostic rather than a final semantic benchmark: it is strong enough to reject overclaims, but not strong enough to canonize a final second-order representation.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccc}
+\toprule
+Representation & Silhouette $\uparrow$ & NMI $\uparrow$ & ARI $\uparrow$ & PMA $\uparrow$ \\
+\midrule
+\texttt{raw\_x\_raw} & 0.0234 & \textbf{0.3114} & \textbf{0.2230} & \textbf{0.4670} \\
+\texttt{first\_order\_raw} & 0.0234 & \textbf{0.3114} & \textbf{0.2230} & \textbf{0.4670} \\
+\texttt{first\_order\_pca} & 0.0014 & 0.0669 & 0.0256 & 0.2975 \\
+\texttt{second\_order\_raw} & -0.0349 & 0.0465 & 0.0011 & 0.2245 \\
+\texttt{second\_order\_pca} & 0.0120 & 0.0428 & 0.0066 & 0.2588 \\
+\texttt{subspace\_second\_pca} & 0.0367 & 0.0399 & 0.0080 & 0.2573 \\
+\texttt{energy\_first\_pca} & \textbf{0.5005} & 0.0277 & 0.0052 & 0.2712 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Coarse clustering audit on the WoS domain5x50 setting. The main contrast is between semantic alignment metrics (PMA/NMI/ARI) and the geometric separation metric (Silhouette).}
+\label{tab:clustering-audit}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/image.png}
+\caption*{(a) Silhouette across representations}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/image copy.png}
+\caption*{(b) PMA across representations}
+\end{minipage}
+\caption{The clustering audit exposes a clean split between geometric separation and semantic alignment. Energy-only features separate radially very well, but raw first-order features remain much better aligned with the coarse semantic labels.}
+\label{fig:clustering-audit}
+\end{figure}
+
+\paragraph{Critical reading of Table~\ref{tab:clustering-audit} and Figure~\ref{fig:clustering-audit}.}
+\begin{enumerate}
+    \item \texttt{raw\_x\_raw} and \texttt{first\_order\_raw} remain strongest on the coarse semantic metrics. This means the current coarse labels are still much more directly recoverable from first-order structure than from the tested second-order constructions.
+    \item Diagonal second-order representations do not show a stable semantic advantage. This weakens the older idea that the current diagonal quadratic route should be interpreted as directly semantic by itself.
+    \item \texttt{energy\_first\_pca} gives the clearest geometric separation but poor semantic alignment. This is the most important cautionary result in the clustering audit: a clean radial split is not the same thing as a semantically meaningful split.
+    \item \texttt{subspace\_second\_pca} is geometrically more promising than raw diagonal second-order features, but under the current coarse labels it is still not competitive with raw first-order features on semantic alignment.
+\end{enumerate}
+
+The practical implication is sharp. The project should stop talking about ``variance'' in the abstract. The real question is which second-order structures remain after centering, which of those structures survive projection into expert-specific subspaces, and which of them are actually useful for routing rather than merely geometrically separable. The current audit does leave one narrow opening for the revised direction: low-rank subspace-aware second-order features look more promising than raw diagonal second-order features, but the present evidence is still too weak to claim a semantic advantage.
+
+\subsection{Can experts become more specialized?}
+
+The token-level audit gives a clear positive answer: yes, experts can become more specialized, but the specialization that emerges is micro-semantic and functional rather than a trivial one-expert-per-domain partition. The role of this audit in the present report is modest but important: it establishes that readable expert structure already exists. It does not, by itself, prove that the newest low-rank quadratic route is the final answer.
+
+Table~\ref{tab:token-audit} lists representative experts extracted from \texttt{linear\_running\_center}, \texttt{acp\_lite}, and an earlier quadratic-family audit. The examples are selected to show the most interpretable expert roles.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{p{0.22\linewidth}p{0.08\linewidth}p{0.10\linewidth}p{0.37\linewidth}p{0.18\linewidth}}
+\toprule
+Model & Layer & Expert & Representative top tokens & Reading \\
+\midrule
+\texttt{linear\_running\_center} & 10 & 0 & \texttt{., ):, METHODS, Firstly, Secondly, Here} & punctuation / discourse-boundary expert \\
+\texttt{linear\_running\_center} & 10 & 7 & \texttt{to, and, if, where, by, when, between} & function-word / connective expert \\
+\texttt{acp\_lite} & 10 & 4 & \texttt{clinical, medical, biological, laboratory, molecular, physiological} & scientific-medical content expert \\
+\texttt{acp\_lite} & 10 & 3 & \texttt{towards, from, support, around, against, without} & relational / directional expert \\
+\texttt{quadratic family (earlier audit)} & 6 & 5 & \texttt{logical, meaning, reasoning, conceptual, semantic, assumptions} & logic / concept expert \\
+\texttt{quadratic family (earlier audit)} & 10 & 5 & \texttt{quadratic, density, determinant, convex, tensor, Hessian} & mathematical-technical expert \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Representative token-level specialization examples. The point is not that every expert is perfectly pure, but that clear functional and semantic roles emerge and are readable directly from routed tokens. The earlier quadratic-family rows are included only as existence evidence for concept-heavy specialization, not as proof that the newest low-rank route has already converged to the same pattern.}
+\label{tab:token-audit}
+\end{table}
+
+This table is important for the specialization question. It shows that the answer is not merely hypothetical: the router already creates experts with distinct token-level preferences. What remains unresolved is not whether specialization exists, but which form of specialization is most useful for continual learning.
+
+More specifically, the three model families emphasize different kinds of specialization:
+\begin{enumerate}
+    \item \texttt{linear\_running\_center} already produces clean functional experts, especially punctuation, discourse-boundary, and connective roles;
+    \item \texttt{acp\_lite} produces stronger content-facing experts, especially scientific-medical and relational-directional token groups;
+    \item earlier quadratic-family audits tended to surface more concept-heavy and mathematical-technical experts, which keeps the second-order line scientifically interesting, even though the current report does not yet claim that the newest low-rank route has already converged to that structure.
+\end{enumerate}
+
+This is the most complete current answer to the specialization question. Experts can indeed become more specialized, but the specialization is token-functional and micro-semantic rather than a crude document-topic partition.
+
+\subsection{What the current evidence implies}
+
+The empirical story is now tighter than before.
+
+\begin{enumerate}
+    \item Centering is a necessary baseline intervention.
+    \item \texttt{acp\_lite} is the strongest current fair first-order route.
+    \item The clustering audit weakens the claim that diagonal second-order features directly encode semantic grouping.
+    \item Pure energy is a geometric separator, not yet a semantic separator.
+    \item The active quadratic question is now a hybrid mean-aware plus low-rank subspace-energy route with explicit structural regularization.
+    \item Expert specialization is already observable directly at the token level, but its usefulness for continual learning still depends on overlap, balance, and update geometry rather than on any one scalar metric.
+\end{enumerate}
+
+\section{Next iteration}
+
+The next iteration should stay tightly aligned with the current bottlenecks.
+
+\begin{enumerate}
+    \item \textbf{Scale up the token-level expert audit.}
+    
+    The current report contains representative token examples. The next step is to turn this into a systematic specialization dashboard: expert vocab concentration, POS/category composition, top-token tables, and cross-layer consistency.
+
+    \item \textbf{Train and evaluate the regularized hybrid mean-aware subspace-energy router.}
+
+    The next architectural step is no longer the older diagonal quadratic form. It is the regularized hybrid route
+    \[
+    \ell_e(x)
+    =
+    a_e^\top x_{\parallel}
+    +
+    b_e^\top x_c
+    +
+    \|V_e x_c\|_2^2
+    +
+    c_e
+    \]
+    together with
+    \[
+    \mathcal{L}_{\mathrm{internal}}
+    =
+    \sum_{e=1}^{K}\|V_eV_e^\top-I_r\|_F^2,
+    \qquad
+    \mathcal{L}_{\mathrm{cross}}
+    =
+    \sum_{i\neq j}\|V_iV_j^\top\|_F^2.
+    \]
+    The key question is whether these constraints can reduce expert overlap without collapsing the useful first-order structure already captured by \texttt{acp\_lite}.
+
+    \item \textbf{Refine the clustering audit instead of overreading the current coarse setting.}
+
+    The current coarse audit is already informative, but it should be extended with finer granularity and alternate distances. PMA/NMI/ARI should remain the primary metrics; Silhouette should stay a geometric auxiliary metric only.
+
+    \item \textbf{Keep two-task continual-learning evaluation for a later report update.}
+
+    That experiment remains necessary, but it should not be partially folded into the current report before the new routing mechanism itself is clarified and trained.
+\end{enumerate}
+
+Planned additions for the next report update:
+\begin{enumerate}
+    \item fuller expert-token tables showing which words or token classes dominate each expert;
+    \item a token-level specialization dashboard as the main assignment analysis;
+    \item a first trained prototype of the regularized hybrid mean-aware subspace-energy router;
+    \item a refined clustering audit comparing semantic alignment and geometric separation more carefully;
+    \item the completed two-task continual-learning results later, once the static mechanism side is clearer.
+\end{enumerate}
+
+The project is now in a cleaner state than before. We no longer need to argue vaguely that ``the router should use variance.'' We now need to show which second-order structures are useful, how they should be combined with mean-aware and centered first-order terms, and under what conditions a regularized hybrid quadratic route deserves to stay in the mainline against the very strong \texttt{acp\_lite} baseline.
+
+\end{document}

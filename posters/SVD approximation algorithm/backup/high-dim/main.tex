@@ -1,0 +1,65 @@
+\documentclass[11pt]{book}
+
+% --------------------
+% Packages
+% --------------------
+\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{theorem}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+
+% --------------------
+% Title info
+% --------------------
+\title{Bias}
+\author{
+
+}
+
+
+\begin{document}
+
+% --------------------
+% Front matter
+% --------------------
+\frontmatter
+\maketitle
+\tableofcontents
+
+% --------------------
+% Main content
+% --------------------
+\mainmatter
+
+% Chapter 1
+\input{chapter1}
+\input{operators}
+\input{new_design}
+\newpage
+\input{low-bit}
+\newpage
+\input{softmax}
+
+\newpage
+\input{appendix_a}
+\newpage
+\input{appendix_b}
+\newpage
+\input{appendix_c}
+\newpage
+\input{appendix_d}
+
+
+
+
+% --------------------
+% Back matter
+% --------------------
+\backmatter
+% \bibliography{refs}
+% \bibliographystyle{plain}
+
+\end{document}

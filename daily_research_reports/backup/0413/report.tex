@@ -1,0 +1,261 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage{array}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.22\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65\baselineskip}
+
+\title{Daily Research Report:\\Tail-Space Routing Probe for Expert Specialization}
+\author{}
+\date{2026-04-13}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+This report addresses one concrete question: under a representation regime induced by Zipfian frequency statistics and next-token prediction, what routing space is sufficient to support meaningful expert specialization?
+
+\begin{enumerate}
+    \item \textbf{Update 1: we refine the object of expert specialization.}  
+    Specialization should not be defined solely by expert-parameter diversity or by load uniformity. It is a system-level property of \emph{gating + experts}: experts must differ in function, and the gating mechanism must send different kinds of representations to different experts in a stable way.
+
+    \item \textbf{Update 2: mean removal alone is insufficient.}  
+    Our representation analysis shows that centering removes the global offset but does not remove the dominant shared high-variance structure. Severe anisotropy remains after mean removal. Therefore, ``mean-centered routing'' is not yet a sufficient condition for specialization.
+
+    \item \textbf{Update 3: in the controlled probe, only tail-based routing yields clean semantic partitioning.}  
+    The two-layer routing probe gives a consistent result: full-space routing is blinded by the head component; load balancing improves occupancy but not semantic partitioning; only routing in the tail space yields high accuracy, high routing purity, and a low tail-variance ratio.
+
+    \item \textbf{Update 4: centered tail routing is more stable than uncentered tail routing.}  
+    This indicates that mean shift is not a benign nuisance term. If centering is skipped before tail extraction, the dominant direction is contaminated by both the global offset and the large dynamic head variance, which degrades tail estimation and subsequent routing quality.
+\end{enumerate}
+
+\section{Background and Theoretical Critique}
+
+The core promise of Mixture-of-Experts is not merely that it increases parameter count. Its value comes from structured conditional computation: model capacity increases while per-token inference cost does not scale accordingly. This promise is valid only if different experts specialize.
+
+That requirement is stronger than standard engineering criteria such as occupancy balance. Load balance only tells us whether tokens are distributed evenly. It does not tell us whether the routing decision is semantically meaningful. Likewise, expert-parameter diversity only tells us that experts can represent different functions; it does not establish that the router has created a meaningful division of labor.
+
+This report studies specialization from the geometry of the representation space. We model each token representation as
+\[
+x = \mu + x_{\mathrm{head}} + x_{\mathrm{tail}},
+\]
+where $\mu$ is a strong global offset, $x_{\mathrm{head}}$ is a high-energy shared component dominated by common structure, and $x_{\mathrm{tail}}$ contains the lower-energy but semantically discriminative residual structure. The working hypothesis is deliberately weak: meaningful specialization should be built in the tail space, not in the shared head-dominated space.
+
+Under this view, current routing failures become easier to explain. A router operating on the full space primarily sees the global shift and the dominant head variance. These high-energy shared components obscure the fine-grained semantic differences that should determine expert assignment. The result is collapse, semantic mixing, or superficially balanced but functionally meaningless routing.
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{Representation decomposition}
+
+The starting point of this report is the decomposition
+\[
+x = \mu + x_{\mathrm{head}} + x_{\mathrm{tail}}.
+\]
+
+Here, $\mu$ denotes a strong global offset, $x_{\mathrm{head}}$ denotes the dynamic high-variance component associated with shared structure, and $x_{\mathrm{tail}}$ denotes the residual component that carries class- or concept-specific information. If the shared head space is approximated by the top-$k$ principal directions $V_k$, the tail projection can be written as
+\[
+x_{\mathrm{tail}} = (I - V_k V_k^\top)(x - \mu).
+\]
+
+This is not yet a final routing algorithm. It is the analytic coordinate system used in this report: first remove the global offset, then remove the shared head component, and finally ask whether the remaining tail space contains the geometry needed for specialization.
+
+\subsection{A system-level definition of specialization}
+
+Under this decomposition, we use the following working definition:
+\begin{quote}
+A MoE system is specialized only if the gating mechanism consistently assigns different types of tokens to different experts, and the routed feature clouds remain well separated in the tail space rather than overlapping through shared head structure.
+\end{quote}
+
+This definition makes specialization a dynamic property of the complete system, not a static property of expert parameters alone. If expert weights differ but the gating mechanism keeps sending semantically unrelated inputs to the same experts, specialization has not been achieved.
+
+To express this geometrically, we examine the tail-space covariance of tokens routed to different experts. In the ideal case, the tail covariances of expert $i$ and expert $j$ should be close to orthogonal:
+\[
+\operatorname{Tr}(\widetilde{\Sigma}_i \widetilde{\Sigma}_j) \rightarrow 0,\qquad i \neq j.
+\]
+This expresses the notion that different experts should process different tail manifolds rather than the same shared subspace.
+
+\subsection{Why centering alone is insufficient}
+
+If we only center and do not remove the shared head component, then
+\[
+x - \mu = x_{\mathrm{head}} + x_{\mathrm{tail}}.
+\]
+The dominant head component is still present. Centering removes translation but does not remove spectral imbalance. As long as $x_{\mathrm{head}}$ dominates the covariance, the router will remain sensitive to shared structure rather than to the semantic residual that should determine specialization.
+
+This explains why the mean-centered variant still fails in the controlled experiment. It is more reasonable than a completely uncentered baseline, but it still performs routing in the wrong space.
+
+\subsection{Why tail routing can work}
+
+Once routing is restricted to a sufficiently clean tail space, the problem becomes much better conditioned. The router no longer needs to discover weak semantic differences inside a high-energy shared cloud. It only needs to separate samples along lower-energy but higher-value residual directions.
+
+This also explains why first-order and second-order routing can become effectively equivalent in a sufficiently clean tail space. If the dominant discriminative structure in the tail is already encoded in mean differences, then a linear decision boundary is sufficient. In that regime, explicit second-order routing adds complexity without adding useful separation.
+
+\section{Empirical Study}
+
+\subsection{Synthetic routing probe setup}
+
+To isolate the routing mechanism itself, we construct a two-layer routing probe with synthetic data generated as
+\[
+x = \mu + x_{\mathrm{head}} + x_{\mathrm{tail}}.
+\]
+The setup is deliberately controlled:
+\begin{itemize}
+    \item $\mu$ is a fixed strong offset with $\|\mu\|_2 = 50$;
+    \item $x_{\mathrm{head}} = U_{\mathrm{head}} c_{\mathrm{head}}$ lies in a 4-dimensional high-variance subspace with standard deviations $100, 50, 25, 12$;
+    \item $x_{\mathrm{tail}}$ carries the class-discriminative signal.
+\end{itemize}
+
+We use 8 experts, and every expert has full 8-way output capability. This removes expert-capacity limitations from the experiment. We compare five routing variants:
+\begin{itemize}
+    \item \texttt{baseline}: routing in the full space;
+    \item \texttt{baseline\_lb}: full-space routing with load balancing;
+    \item \texttt{mean\_centered}: only remove the mean;
+    \item \texttt{uncentered\_tail}: remove the head component without centering;
+    \item \texttt{centered\_tail}: center first, then remove the head component.
+\end{itemize}
+
+\subsection{Main outcomes}
+
+Table~\ref{tab:variant-summary} summarizes the empirical role of each routing variant. The goal is not to enumerate every metric but to make the physical behavior of each variant explicit.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.17\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.17\linewidth} >{\raggedright\arraybackslash}p{0.40\linewidth}}
+\toprule
+Variant & Routing space & Empirical status & Interpretation \\
+\midrule
+\texttt{baseline} & full space & accuracy near random guess; strong collapse & blinded by mean shift and head variance; cannot isolate semantic structure \\
+\texttt{baseline\_lb} & full space + LB & more balanced occupancy, still poor task performance & occupancy balance improves usage, not specialization \\
+\texttt{mean\_centered} & $x-\mu$ & more reasonable than the baseline, but still fails & centering is not equivalent to removing the shared head component \\
+\texttt{uncentered\_tail} & tail without centering & strong improvement & head removal already helps, but tail extraction is still contaminated by mean shift \\
+\texttt{centered\_tail} & $(I-V_kV_k^\top)(x-\mu)$ & best among all five variants & centering followed by head removal yields the cleanest tail-space specialization \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Five routing variants and their empirical roles in the synthetic probe.}
+\label{tab:variant-summary}
+\end{table}
+
+Three conclusions are stable:
+\begin{enumerate}
+    \item The failure of full-space routing is not primarily a load-balancing problem; it is a routing-space problem.
+    \item Mean removal alone is insufficient.
+    \item Centered tail routing outperforms uncentered tail routing, which shows that mean shift directly affects the quality of tail extraction.
+\end{enumerate}
+
+\subsection{Performance and routing purity}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_eval_accuracy.png}
+\caption*{(a) Test accuracy}
+\end{minipage}\hfill
+\begin{minipage}{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_eval_routing_purity.png}
+\caption*{(b) Routing purity}
+\end{minipage}\hfill
+\begin{minipage}{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_tail_variance_ratio.png}
+\caption*{(c) Tail variance ratio}
+\end{minipage}
+\caption{Performance-level evidence. Only tail-based routing simultaneously improves task accuracy, routing purity, and tail concentration. Centered tail is consistently the strongest variant.}
+\label{fig:performance-trio}
+\end{figure}
+
+Figure~\ref{fig:performance-trio} provides the main evidence chain.
+
+\textbf{Accuracy.} The three variants tied to the full space (\texttt{baseline}, \texttt{baseline\_lb}, and \texttt{mean\_centered}) remain close to random performance. Both tail-based variants are much stronger, and \texttt{centered\_tail} is the best overall.
+
+\textbf{Routing purity.} The ranking is essentially the same. The full-space variants do not create clean expert responsibilities, whereas tail-based routing does.
+
+\textbf{Tail variance ratio.} \texttt{centered\_tail} most strongly concentrates the discriminative signal into the tail space. This matters because the method is not only better in output metrics; it is also better aligned with the intended geometry of specialization.
+
+\subsection{Assignment structure and load behavior}
+
+\begin{figure}[H]
+\centering
+\safeincludegraphics[width=0.88\linewidth]{figures/fig_eval_confusion_grid.png}
+\caption{Row-normalized assignment confusion. The full-space variants remain diffuse or collapse to a few experts, whereas tail-based routing produces a substantially cleaner expert--class correspondence.}
+\label{fig:confusion-grid}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.58\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_eval_expert_load.png}
+\caption*{(a) Expert load distribution}
+\end{minipage}\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_eval_load_variance.png}
+\caption*{(b) Load variance}
+\end{minipage}
+\caption{Load behavior. Load-balancing regularization improves occupancy uniformity, but occupancy uniformity alone does not create meaningful specialization.}
+\label{fig:load-behavior}
+\end{figure}
+
+Figures~\ref{fig:confusion-grid} and~\ref{fig:load-behavior} explain why load balance is not the same as specialization.
+
+\textbf{Assignment confusion.} \texttt{baseline} collapses many classes onto a few experts. \texttt{baseline\_lb} becomes more even, but still does not produce a clean class--expert correspondence. Only tail-based routing yields a much sharper mapping.
+
+\textbf{Expert load.} \texttt{baseline\_lb} achieves the lowest load variance, but this does not translate into either high accuracy or high routing purity. Occupancy uniformity is therefore an engineering constraint, not a definition of specialization.
+
+\subsection{What this report establishes}
+
+At the current stage, the probe establishes four stable conclusions:
+\begin{enumerate}
+    \item If routing is performed directly in the full representation space, mean shift and high-variance head structure systematically damage specialization.
+    \item Mean removal alone is insufficient because the head component remains dominant.
+    \item Load balancing can improve occupancy uniformity without improving semantic routing quality.
+    \item In the current controlled setting, the cleanest specialization arises in the centered tail space.
+\end{enumerate}
+
+\section{Next Iteration}
+
+The purpose of this daily report is to clarify the problem, not to overstate a final method. Based on the current results, the next iteration should focus on three concrete tasks:
+
+\begin{enumerate}
+    \item \textbf{Transfer the head/tail decomposition to real LLM representations.}  
+    We need to test whether the same structure---mean shift, head blinding, and tail specialization---appears in real models rather than only in the synthetic probe.
+
+    \item \textbf{Build a transferable specialization audit for the tail space.}  
+    The current probe provides intuitive evidence through routing purity and tail variance ratio. The next step is to convert these into a real-model specialization audit.
+
+    \item \textbf{Translate tail-based routing into an actual router design.}  
+    The current direction is clear: first remove the mean, then remove the shared head, and finally route in the tail space. The next step is to test whether this structure yields cleaner expert specialization in a real MoE model.
+\end{enumerate}
+
+The main contribution of this report is therefore not that a final routing mechanism has been solved. It is that we now have a clearer answer to a more basic question: what routing space is worth optimizing, and why many current routing strategies fail before specialization even has a chance to emerge.
+
+\end{document}

@@ -1,0 +1,92 @@
+\section{Introduction}
+
+Large language models are trained on massive human language corpora,
+which induce a characteristic geometry in learned representations.
+Across layers and training stages, activations, gradients, and model parameters
+exhibit pronounced anisotropy:
+a small number of directions concentrate disproportionate energy
+(strong spectral spikes),
+while the remaining directions form a broad long tail
+\cite{ethayarajh2019contextual,mu2018all,timkey2021rogue,kovaleva2021bertbusters,machina2024anisotropy}.
+
+This anisotropy is not accidental.
+It reflects the hierarchical structure of human language itself.
+At every level of representation—tokens, phrases, clauses, and full sentences—
+there exist shared semantic components that are common across tokens within a context.
+When contextual aggregation mechanisms such as attention and nonlinear transformations
+extract these shared semantics, they naturally induce coherent mean directions
+in the representation space.
+Consequently, mean bias is not confined to the embedding layer;
+it re-emerges across layers as models progressively capture higher-level
+semantic regularities.
+
+While such structure is linguistically natural,
+it becomes a computational liability during large-scale training.
+Anisotropy inflates elementwise dynamic range,
+distorts adaptive second-moment estimates
+\cite{kingma2014adam,loshchilov2017adamw,spectra2026},
+and compresses long-tail variation in low-bit regimes
+\cite{xiao2023smoothquant,frantar2022gptq,lin2024awq,li2024svdquant,ashkboos2024quarot}.
+In high-dimensional spaces, even moderate coherent bias produces
+a consistent directional drift across thousands of coordinates,
+amplifying outliers and destabilizing numerical precision.
+Thus anisotropy constitutes a structural \emph{curse}
+for efficient and stable large-scale training.
+
+In this work, we perform a systematic layer-wise investigation
+of anisotropy across activations, gradient outputs, and model parameters.
+We uncover a structural asymmetry:
+\emph{mean bias is a dominant component of activation anisotropy across layers,
+whereas gradient outputs exhibit no comparable coherent mean}.
+Moreover, although model parameters display spectral spikes,
+they do not accumulate persistent mean offsets.
+This establishes activation mean bias as the principal forward-path driver
+of anisotropic geometry.
+
+Importantly, we show that anisotropy can be decomposed into two components:
+(i) a coherent mean bias, and
+(ii) a residual low-rank spike.
+The mean bias is the primary source of extreme elementwise outliers
+and adaptive second-moment inflation,
+while the residual spike plays a secondary role.
+Thus the dominant instability mechanism is not generic high-dimensional variance,
+but a structured rank-one component that propagates through residual connections
+across depth.
+
+Tracing this structure backward,
+we identify its statistical origin in the skewed token distribution of natural language.
+Embedding weights develop frequency-aligned structure
+\cite{mikolov2013efficient,mikolov2013distributed,arora2017simple},
+and subsequent contextual aggregation amplifies shared semantics at progressively
+higher abstraction levels.
+Mean bias therefore reflects the hierarchical organization of world knowledge
+encoded in language rather than an architectural accident.
+
+Crucially, this structure is not merely harmful—it is also exploitable.
+Because the dominant instability arises from a rank-one component,
+it can be isolated and removed with a single mean-subtraction operation.
+The remaining low-rank spike can, if necessary,
+be whitened once at the embedding activation level.
+Both operations are hardware-friendly and substantially cheaper
+than repeated layer-wise SVD corrections.
+In this sense, the same structure that creates instability
+also enables efficient mitigation—the \emph{blessing} of bias.
+
+We validate this bias-centric interpretation in two downstream settings.
+In low-bit quantization, mean removal significantly reduces dynamic-range inflation
+\cite{xiao2023smoothquant,wei2023outlier,ashkboos2024quarot}.
+In adaptive optimization, it contracts extreme second-moment tails,
+improving effective learning-rate allocation
+\cite{kingma2014adam,spectra2026}.
+These results suggest that addressing bias at its source
+can replace or complement spectral interventions
+with minimal computational overhead.
+
+\paragraph{Contributions.}
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item We show that activation mean bias emerges across layers as a structural consequence of hierarchical semantic aggregation.
+    \item We demonstrate that mean-dominated components account for most extreme activation magnitudes and second-moment inflation.
+    \item We establish a forward-path asymmetry: gradient outputs remain mean-neutral while activations accumulate coherent bias.
+    \item We propose source-level mean removal and optional spike whitening as efficient spectral conditioning mechanisms.
+    \item We demonstrate improvements in low-bit quantization and adaptive optimization.
+\end{enumerate}

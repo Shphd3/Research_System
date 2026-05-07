@@ -1,0 +1,529 @@
+\section{Rank-One Agreement Approximation: What Works and Why (with Detailed Proofs)}
+\label{sec:rank_one_agreement}
+
+This section proves two statements that are both critical for the proposed approximation method:
+
+\begin{enumerate}
+    \item \textbf{Agreement capture.} The averaging-based rank-one estimator
+    $\widehat{G}_1$ recovers the dominant grammar-driven \emph{agreement spike}
+    $A_{\mathrm{agr}}$ up to a controlled error.
+    \item \textbf{Semantic non-capture (yet learnability).} The same averaging probe
+    does \emph{not} extract intra-sequence semantic structure: semantic contributions can be
+    large at the token level and remain available to SGD, while still canceling in the
+    specific aggregated statistics used by the probe.
+\end{enumerate}
+
+Throughout, we make the dependence on the foundational assumptions in
+Section~\ref{sec:foundational_assumptions} explicit.
+
+\subsection{Setup: agreement component plus semantic residual}
+\label{sec:rank_one_setup}
+
+Let $G\in\mathbb{R}^{d\times d}$ be the gradient matrix of a transformer linear layer.
+We decompose
+\begin{equation}
+\label{eq:rank_one_decomp}
+G \;=\; A_{\mathrm{agr}} \;+\; R_{\mathrm{sem}},
+\end{equation}
+where $A_{\mathrm{agr}}$ is the grammar-driven \emph{agreement component} and $R_{\mathrm{sem}}$
+is the semantic/context-specific residual.
+
+\paragraph{Rank-one agreement model.}
+Assume the agreement component is rank one:
+\begin{equation}
+\label{eq:rank_one_A}
+A_{\mathrm{agr}} \;=\; \sigma a b^\top,
+\qquad
+a,b\in\mathbb{R}^d\setminus\{0\},
+\qquad
+\sigma>0.
+\end{equation}
+
+\paragraph{Visibility under the averaging probe.}
+Let $\mathbf{1}\in\mathbb{R}^d$ be the all-ones vector and define
+\begin{equation}
+\label{eq:alpha_beta}
+\alpha \triangleq \mathbf{1}^\top a,
+\qquad
+\beta \triangleq \mathbf{1}^\top b.
+\end{equation}
+Assume $\alpha\neq 0$ and $\beta\neq 0$, so that $A_{\mathrm{agr}}$ is visible to this probe.
+
+\subsection{Semantic cancellation under aggregation: formal sequence-level proof}
+\label{sec:semantic_cancellation_proof}
+
+We now prove a concrete, sequence-level cancellation statement for the probe statistics
+$R_{\mathrm{sem}}\mathbf{1}$, $R_{\mathrm{sem}}^\top\mathbf{1}$, and $\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}$.
+
+\subsubsection{Batch model and assumptions}
+
+Consider a batch consisting of $S$ sequences. For sequence $s\in\{1,\dots,S\}$,
+let $\mathcal{T}_s$ be the set of token indices included from that sequence
+(e.g.\ all tokens, or a subset of sufficiently distant positions in long-context settings).
+Write the batch gradient as
+\begin{equation}
+\label{eq:G_seq_sum}
+G \;=\; \sum_{s=1}^S \sum_{t\in\mathcal{T}_s} \delta^{(s,t)} \bigl(x^{(s,t)}\bigr)^\top.
+\end{equation}
+Conceptually decompose each token-level contribution as
+\begin{equation}
+\label{eq:token_decomp}
+\delta^{(s,t)} \bigl(x^{(s,t)}\bigr)^\top
+\;=\;
+A_{\mathrm{agr}}^{(s,t)} \;+\; R_{\mathrm{sem}}^{(s,t)}.
+\end{equation}
+Define the sequence-level semantic residual sum
+\begin{equation}
+\label{eq:Zs_def}
+Z_s \;\triangleq\; \sum_{t\in\mathcal{T}_s} R_{\mathrm{sem}}^{(s,t)},
+\qquad\text{so that}\qquad
+R_{\mathrm{sem}} \;=\; \sum_{s=1}^S Z_s.
+\end{equation}
+
+We now formalize the statistical content of Section~\ref{sec:foundational_assumptions}:
+
+\begin{assumption}[Sequence-level semantic independence and zero-mean]
+\label{assump:Zs}
+Conditioned on model parameters and the batch construction rule, the random matrices
+$\{Z_s\}_{s=1}^S$ satisfy:
+\begin{enumerate}
+\item (\emph{Inter-sequence independence}) $Z_1,\dots,Z_S$ are independent.
+\item (\emph{Zero-mean across sequences}) $\mathbb{E}[Z_s]=0$ for each $s$.
+\end{enumerate}
+For long-context training, the same assumption applies when $\mathcal{T}_s$ is chosen to
+include only sufficiently distant positions so that semantic dependence within $\mathcal{T}_s$
+is weak, i.e.\ $Z_s$ aggregates approximately independent semantic blocks.
+\end{assumption}
+
+\begin{assumption}[Finite second moments of probe responses]
+\label{assump:moments}
+There exist constants $\sigma_u^2,\sigma_v^2,\sigma_s^2<\infty$ such that for all $s$,
+\begin{equation}
+\label{eq:moment_bounds}
+\mathbb{E}\|Z_s\mathbf{1}\|_2^2 \le \sigma_u^2,
+\qquad
+\mathbb{E}\|Z_s^\top\mathbf{1}\|_2^2 \le \sigma_v^2,
+\qquad
+\mathbb{E}\bigl(\mathbf{1}^\top Z_s \mathbf{1}\bigr)^2 \le \sigma_s^2.
+\end{equation}
+\end{assumption}
+
+\subsubsection{Lemma: cancellation of semantic residual in the probe statistics}
+
+\begin{lemma}[Semantic cancellation under aggregation (detailed)]
+\label{lem:semantic_cancellation}
+Let $R_{\mathrm{sem}}=\sum_{s=1}^S Z_s$ with $\{Z_s\}$ satisfying
+Assumptions~\ref{assump:Zs}--\ref{assump:moments}. Then:
+\begin{align}
+\label{eq:cancel_mean}
+\mathbb{E}[R_{\mathrm{sem}}\mathbf{1}] &= 0,
+\qquad
+\mathbb{E}[R_{\mathrm{sem}}^\top\mathbf{1}] = 0,
+\qquad
+\mathbb{E}[\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}] = 0,\\
+\label{eq:cancel_second_moment}
+\mathbb{E}\|R_{\mathrm{sem}}\mathbf{1}\|_2^2 &\le S\,\sigma_u^2,
+\qquad
+\mathbb{E}\|R_{\mathrm{sem}}^\top\mathbf{1}\|_2^2 \le S\,\sigma_v^2,
+\qquad
+\mathbb{E}\bigl(\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}\bigr)^2 \le S\,\sigma_s^2.
+\end{align}
+Consequently, for any $\delta\in(0,1)$, with probability at least $1-\delta$,
+\begin{equation}
+\label{eq:cancel_hp}
+\|R_{\mathrm{sem}}\mathbf{1}\|_2 \le \sqrt{\frac{S}{\delta}}\,\sigma_u,\quad
+\|R_{\mathrm{sem}}^\top\mathbf{1}\|_2 \le \sqrt{\frac{S}{\delta}}\,\sigma_v,\quad
+|\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}| \le \sqrt{\frac{S}{\delta}}\,\sigma_s.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We prove each claim explicitly.
+
+\paragraph{Mean identities.}
+Using \eqref{eq:Zs_def} and linearity of expectation,
+\[
+\mathbb{E}[R_{\mathrm{sem}}\mathbf{1}]
+=
+\mathbb{E}\Big[\sum_{s=1}^S Z_s\mathbf{1}\Big]
+=
+\sum_{s=1}^S \mathbb{E}[Z_s]\mathbf{1}
+=
+0,
+\]
+where the last equality uses $\mathbb{E}[Z_s]=0$.
+The proofs of $\mathbb{E}[R_{\mathrm{sem}}^\top\mathbf{1}]=0$ and
+$\mathbb{E}[\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}]=0$ are identical.
+
+\paragraph{Second-moment bound for $R_{\mathrm{sem}}\mathbf{1}$.}
+Let $U_s \triangleq Z_s\mathbf{1}\in\mathbb{R}^d$. Then $R_{\mathrm{sem}}\mathbf{1}=\sum_{s=1}^S U_s$.
+Expand the squared norm:
+\[
+\Big\|\sum_{s=1}^S U_s\Big\|_2^2
+=
+\sum_{s=1}^S \|U_s\|_2^2
++
+2\sum_{1\le s<t\le S} U_s^\top U_t.
+\]
+Taking expectations gives
+\[
+\mathbb{E}\Big\|\sum_{s=1}^S U_s\Big\|_2^2
+=
+\sum_{s=1}^S \mathbb{E}\|U_s\|_2^2
++
+2\sum_{s<t} \mathbb{E}[U_s^\top U_t].
+\]
+By independence of $Z_s$ and $Z_t$, $U_s$ and $U_t$ are independent; since $\mathbb{E}[U_s]=0$,
+\[
+\mathbb{E}[U_s^\top U_t]
+=
+\mathbb{E}[U_s]^\top \mathbb{E}[U_t]
+=
+0.
+\]
+Thus,
+\[
+\mathbb{E}\|R_{\mathrm{sem}}\mathbf{1}\|_2^2
+=
+\sum_{s=1}^S \mathbb{E}\|U_s\|_2^2
+=
+\sum_{s=1}^S \mathbb{E}\|Z_s\mathbf{1}\|_2^2
+\le
+S\,\sigma_u^2,
+\]
+using \eqref{eq:moment_bounds}. This proves the first inequality in \eqref{eq:cancel_second_moment}.
+The other two second-moment inequalities follow by the same argument with
+$V_s \triangleq Z_s^\top\mathbf{1}$ and $W_s \triangleq \mathbf{1}^\top Z_s\mathbf{1}$.
+
+\paragraph{High-probability bounds.}
+Apply Markov's inequality to nonnegative random variables:
+\[
+\mathbb{P}\!\left(\|R_{\mathrm{sem}}\mathbf{1}\|_2 \ge \tau\right)
+=
+\mathbb{P}\!\left(\|R_{\mathrm{sem}}\mathbf{1}\|_2^2 \ge \tau^2\right)
+\le
+\frac{\mathbb{E}\|R_{\mathrm{sem}}\mathbf{1}\|_2^2}{\tau^2}
+\le
+\frac{S\sigma_u^2}{\tau^2}.
+\]
+Setting $\tau=\sqrt{S\sigma_u^2/\delta}$ yields
+$\mathbb{P}(\|R_{\mathrm{sem}}\mathbf{1}\|_2 \ge \sqrt{S/\delta}\,\sigma_u)\le\delta$.
+The other two bounds follow identically.
+\end{proof}
+
+\subsubsection{From cancellation to the $\varepsilon$-style inequalities}
+
+To relate Lemma~\ref{lem:semantic_cancellation} to the relative inequalities used by the estimator,
+we also need that the agreement component reinforces \emph{linearly} with the number of independent
+sequences, reflecting shared grammar structure.
+
+\begin{assumption}[Agreement reinforcement in probe marginals]
+\label{assump:agreement_reinforce}
+There exist constants $m_u,m_v,m_s>0$ such that
+\begin{equation}
+\label{eq:agreement_linear_scaling}
+\|A_{\mathrm{agr}}\mathbf{1}\|_2 \ge S\,m_u,\qquad
+\|A_{\mathrm{agr}}^\top\mathbf{1}\|_2 \ge S\,m_v,\qquad
+|\mathbf{1}^\top A_{\mathrm{agr}}\mathbf{1}| \ge S\,m_s.
+\end{equation}
+\end{assumption}
+
+\begin{corollary}[Relative semantic cancellation for the probe statistics]
+\label{cor:eps_condition}
+Under Lemma~\ref{lem:semantic_cancellation} and Assumption~\ref{assump:agreement_reinforce},
+for any $\delta\in(0,1)$, with probability at least $1-\delta$,
+\begin{equation}
+\label{eq:residual_cancel}
+\|R_{\mathrm{sem}}\mathbf{1}\|
+\le
+\varepsilon_u \|A_{\mathrm{agr}}\mathbf{1}\|,
+\qquad
+\|R_{\mathrm{sem}}^\top\mathbf{1}\|
+\le
+\varepsilon_v \|A_{\mathrm{agr}}^\top\mathbf{1}\|,
+\qquad
+|\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}|
+\le
+\varepsilon_s |\mathbf{1}^\top A_{\mathrm{agr}}\mathbf{1}|,
+\end{equation}
+where
+\[
+\varepsilon_u \triangleq \frac{1}{\sqrt{S}}\cdot \frac{\sigma_u}{m_u}\cdot\frac{1}{\sqrt{\delta}},
+\qquad
+\varepsilon_v \triangleq \frac{1}{\sqrt{S}}\cdot \frac{\sigma_v}{m_v}\cdot\frac{1}{\sqrt{\delta}},
+\qquad
+\varepsilon_s \triangleq \frac{1}{\sqrt{S}}\cdot \frac{\sigma_s}{m_s}\cdot\frac{1}{\sqrt{\delta}}.
+\]
+In particular, for fixed $\delta$, each $\varepsilon_\bullet = O(S^{-1/2})$.
+\end{corollary}
+
+\begin{proof}
+From Lemma~\ref{lem:semantic_cancellation}, with probability at least $1-\delta$,
+\[
+\|R_{\mathrm{sem}}\mathbf{1}\|_2 \le \sqrt{\frac{S}{\delta}}\,\sigma_u.
+\]
+From Assumption~\ref{assump:agreement_reinforce},
+\[
+\|A_{\mathrm{agr}}\mathbf{1}\|_2 \ge S\,m_u.
+\]
+Divide the first inequality by the second to get
+\[
+\frac{\|R_{\mathrm{sem}}\mathbf{1}\|_2}{\|A_{\mathrm{agr}}\mathbf{1}\|_2}
+\le
+\frac{\sqrt{S/\delta}\,\sigma_u}{S\,m_u}
+=
+\frac{1}{\sqrt{S}}\cdot\frac{\sigma_u}{m_u}\cdot\frac{1}{\sqrt{\delta}}
+=
+\varepsilon_u.
+\]
+The other two inequalities are identical.
+\end{proof}
+
+\subsection{Agreement spike recovery via the averaging estimator (full proof)}
+\label{sec:agreement_recovery}
+
+Define
+\begin{equation}
+\label{eq:uvs_def}
+u \triangleq G\mathbf{1},
+\qquad
+v \triangleq G^\top \mathbf{1},
+\qquad
+s \triangleq \mathbf{1}^\top G \mathbf{1},
+\end{equation}
+and the rank-one estimator
+\begin{equation}
+\label{eq:Ghat1_def}
+\widehat{G}_1 \triangleq \frac{u v^\top}{s}.
+\end{equation}
+
+\begin{theorem}[Recovery of the rank-one agreement component]
+\label{thm:rank_one_agreement}
+Assume \eqref{eq:rank_one_decomp}--\eqref{eq:rank_one_A} and $\alpha\neq 0$, $\beta\neq 0$ in
+\eqref{eq:alpha_beta}. Suppose \eqref{eq:residual_cancel} holds for some $0\le\varepsilon<1$
+(where for simplicity we take $\varepsilon\triangleq\max\{\varepsilon_u,\varepsilon_v,\varepsilon_s\}$).
+Define
+\begin{equation}
+\label{eq:c_def}
+c \triangleq \frac{\sigma^2 \alpha \beta}{s}.
+\end{equation}
+Then
+\begin{align}
+\label{eq:rank_one_bound}
+\|\widehat{G}_1 - c\,ab^\top\|_2
+&\le
+\frac{2\varepsilon+\varepsilon^2}{1-\varepsilon}\,\|A_{\mathrm{agr}}\|_2,
+\\[3pt]
+\label{eq:scale_bound}
+\left|\frac{c}{\sigma}-1\right|
+&\le
+\frac{\varepsilon}{1-\varepsilon}.
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Define perturbations
+\[
+r_u \triangleq R_{\mathrm{sem}}\mathbf{1},\qquad
+r_v \triangleq R_{\mathrm{sem}}^\top\mathbf{1},\qquad
+r_s \triangleq \mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}.
+\]
+Then using $G=A_{\mathrm{agr}}+R_{\mathrm{sem}}$ and $A_{\mathrm{agr}}=\sigma ab^\top$,
+\begin{align*}
+u &= G\mathbf{1} = A_{\mathrm{agr}}\mathbf{1} + r_u
+= \sigma a(b^\top\mathbf{1}) + r_u
+= \sigma\beta a + r_u,\\
+v &= G^\top\mathbf{1} = A_{\mathrm{agr}}^\top\mathbf{1} + r_v
+= \sigma b(a^\top\mathbf{1}) + r_v
+= \sigma\alpha b + r_v,\\
+s &= \mathbf{1}^\top G\mathbf{1}
+= \mathbf{1}^\top A_{\mathrm{agr}}\mathbf{1} + r_s
+= \sigma\alpha\beta + r_s.
+\end{align*}
+
+From \eqref{eq:residual_cancel} and $A_{\mathrm{agr}}\mathbf{1}=\sigma\beta a$,
+$A_{\mathrm{agr}}^\top\mathbf{1}=\sigma\alpha b$, $\mathbf{1}^\top A_{\mathrm{agr}}\mathbf{1}=\sigma\alpha\beta$,
+we have
+\[
+\|r_u\|\le \varepsilon \|\sigma\beta a\|,
+\qquad
+\|r_v\|\le \varepsilon \|\sigma\alpha b\|,
+\qquad
+|r_s|\le \varepsilon |\sigma\alpha\beta|.
+\]
+In particular,
+\begin{equation}
+\label{eq:s_lower}
+|s|
+=
+|\sigma\alpha\beta + r_s|
+\ge
+|\sigma\alpha\beta| - |r_s|
+\ge
+(1-\varepsilon)|\sigma\alpha\beta|.
+\end{equation}
+
+Now expand $\widehat{G}_1$:
+\[
+\widehat{G}_1
+=
+\frac{(\sigma\beta a + r_u)(\sigma\alpha b + r_v)^\top}{s}.
+\]
+Subtract $c\,ab^\top$ with $c=\sigma^2\alpha\beta/s$ and expand:
+\[
+\widehat{G}_1 - c\,ab^\top
+=
+\frac{\sigma\beta\, a r_v^\top}{s}
++
+\frac{\sigma\alpha\, r_u b^\top}{s}
++
+\frac{r_u r_v^\top}{s}.
+\]
+Using $\|xy^\top\|_2=\|x\|_2\|y\|_2$,
+\begin{align*}
+\|\widehat{G}_1 - c\,ab^\top\|_2
+&\le
+\frac{\sigma|\beta|\,\|a\|\,\|r_v\|}{|s|}
++
+\frac{\sigma|\alpha|\,\|b\|\,\|r_u\|}{|s|}
++
+\frac{\|r_u\|\,\|r_v\|}{|s|}.
+\end{align*}
+Bound each term using \eqref{eq:s_lower}:
+\[
+\frac{\sigma|\beta|\,\|a\|\,\|r_v\|}{|s|}
+\le
+\frac{\sigma|\beta|\,\|a\|}{(1-\varepsilon)|\sigma\alpha\beta|}
+\cdot
+\varepsilon\|\sigma\alpha b\|
+=
+\frac{\varepsilon}{1-\varepsilon}\,\sigma\|a\|\|b\|.
+\]
+Similarly,
+\[
+\frac{\sigma|\alpha|\,\|b\|\,\|r_u\|}{|s|}
+\le
+\frac{\varepsilon}{1-\varepsilon}\,\sigma\|a\|\|b\|.
+\]
+For the third term,
+\[
+\frac{\|r_u\|\,\|r_v\|}{|s|}
+\le
+\frac{\varepsilon\|\sigma\beta a\|\cdot \varepsilon\|\sigma\alpha b\|}{(1-\varepsilon)|\sigma\alpha\beta|}
+=
+\frac{\varepsilon^2}{1-\varepsilon}\,\sigma\|a\|\|b\|.
+\]
+Summing yields
+\[
+\|\widehat{G}_1 - c\,ab^\top\|_2
+\le
+\frac{2\varepsilon+\varepsilon^2}{1-\varepsilon}\,\sigma\|a\|\|b\|.
+\]
+Since $\|A_{\mathrm{agr}}\|_2=\|\sigma ab^\top\|_2=\sigma\|a\|\|b\|$, this proves \eqref{eq:rank_one_bound}.
+
+Finally,
+\[
+\frac{c}{\sigma}
+=
+\frac{\sigma\alpha\beta}{\sigma\alpha\beta+r_s}
+=
+\frac{1}{1+r_s/(\sigma\alpha\beta)}.
+\]
+Let $x=r_s/(\sigma\alpha\beta)$. Then $|x|\le\varepsilon$ and
+\[
+\left|\frac{c}{\sigma}-1\right|
+=
+\left|\frac{1}{1+x}-1\right|
+=
+\left|\frac{-x}{1+x}\right|
+\le
+\frac{|x|}{1-|x|}
+\le
+\frac{\varepsilon}{1-\varepsilon},
+\]
+proving \eqref{eq:scale_bound}.
+\end{proof}
+
+\subsection{Why the probe does not capture intra-sequence semantics (formal statement)}
+\label{sec:semantic_non_capture}
+
+The previous results show that the probe statistics $(G\mathbf{1},G^\top\mathbf{1},\mathbf{1}^\top G\mathbf{1})$
+are dominated by agreement. We now formalize the complementary statement: \emph{semantic structure can
+remain large and correlated within each sequence, yet still be invisible to the probe.}
+This is exactly the sense in which intra-sequence semantics remain learnable.
+
+\paragraph{A precise distinction: first-order probe vs.\ semantic energy.}
+The probe only depends on three \emph{first-order} aggregated quantities:
+\[
+R_{\mathrm{sem}}\mathbf{1},\quad R_{\mathrm{sem}}^\top\mathbf{1},\quad \mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}.
+\]
+In contrast, intra-sequence semantic learnability is governed by the \emph{token-level} residuals
+$\{R_{\mathrm{sem}}^{(s,t)}\}$ entering SGD updates, and can be quantified by \emph{second-order}
+(or energy) measures, e.g.
+\[
+E_{\mathrm{sem}}
+\triangleq
+\sum_{s=1}^S \sum_{t\in\mathcal{T}_s} \bigl\|R_{\mathrm{sem}}^{(s,t)}\bigr\|_F^2,
+\qquad
+\text{or}
+\qquad
+\sum_{t\in\mathcal{T}_s} R_{\mathrm{sem}}^{(s,t)} \bigl(R_{\mathrm{sem}}^{(s,t)}\bigr)^\top.
+\]
+The key point is: \emph{first-order cancellation does not imply small energy}.
+
+\begin{lemma}[Cancellation does not imply vanishing semantic energy]
+\label{lem:energy_vs_sum}
+Let $Z_1,\dots,Z_S$ be independent random matrices with $\mathbb{E}[Z_s]=0$.
+Then:
+\begin{equation}
+\label{eq:sum_small_energy_large}
+\mathbb{E}\Big\|\sum_{s=1}^S Z_s\Big\|_F^2
+=
+\sum_{s=1}^S \mathbb{E}\|Z_s\|_F^2.
+\end{equation}
+In particular, even though $\sum_s Z_s$ concentrates around $0$ in many directions,
+the total semantic energy $\sum_s \mathbb{E}\|Z_s\|_F^2$ can scale linearly in $S$.
+\end{lemma}
+
+\begin{proof}
+Expand the Frobenius norm:
+\[
+\Big\|\sum_{s=1}^S Z_s\Big\|_F^2
+=
+\left\langle \sum_{s=1}^S Z_s,\ \sum_{t=1}^S Z_t\right\rangle_F
+=
+\sum_{s=1}^S \|Z_s\|_F^2
++
+2\sum_{s<t} \langle Z_s, Z_t\rangle_F.
+\]
+Take expectations. By independence and $\mathbb{E}[Z_s]=0$,
+\[
+\mathbb{E}\langle Z_s, Z_t\rangle_F
+=
+\langle \mathbb{E}[Z_s],\mathbb{E}[Z_t]\rangle_F
+=
+0
+\qquad (s\neq t).
+\]
+Thus
+\[
+\mathbb{E}\Big\|\sum_{s=1}^S Z_s\Big\|_F^2
+=
+\sum_{s=1}^S \mathbb{E}\|Z_s\|_F^2,
+\]
+proving \eqref{eq:sum_small_energy_large}.
+\end{proof}
+
+\paragraph{Consequences for intra-sequence semantics and learnability.}
+Lemma~\ref{lem:semantic_cancellation} shows that the probe responses
+$R_{\mathrm{sem}}\mathbf{1}$, $R_{\mathrm{sem}}^\top\mathbf{1}$, and $\mathbf{1}^\top R_{\mathrm{sem}}\mathbf{1}$
+scale like $O(\sqrt{S})$ (and hence become negligible relative to agreement, which is $\Theta(S)$).
+Lemma~\ref{lem:energy_vs_sum} shows that simultaneously the semantic energy contained in the
+sequence-level residuals $\{Z_s\}$ can scale as $\Theta(S)$ and need not vanish.
+
+Therefore, semantic structure can remain large and correlated within each sequence (and thus
+useful for learning), while still being \emph{invisible to the specific averaging probe} used to
+estimate the agreement spike. This is exactly the desired behavior: the probe extracts the
+grammar-driven spike while leaving intra-sequence semantic correlations untouched for SGD to learn.
+
+Although the analysis in this section is framed in terms of the gradient matrix G, the core mechanism—removal of a dominant shared component while preserving high-dimensional variability—is representation-agnostic. Appendix A formalizes this mechanism in a canonical high-dimensional model, where each column corresponds to a token and decomposes into a shared component plus token-specific residuals. The appendix proves that removing the shared mean direction preserves almost all variance of the residuals, thereby justifying the semantic-preservation claim made here for gradients.

@@ -1,0 +1,92 @@
+\section{Related Work}
+\label{sec:related_work}
+
+Our work is closely related to three lines of research:
+(i) spectral anisotropy in language model representations,
+(ii) low-bit quantization under anisotropic spectra,
+and (iii) optimizer design under structured gradient geometry.
+We review each in turn and clarify how our contribution differs.
+
+\paragraph{Anisotropy and outlier dimensions in language models.}
+A growing body of work has documented that contextual representations produced
+by Transformer language models are highly anisotropic.
+Early studies showed that word and sentence embeddings concentrate in narrow
+cones under cosine similarity, reducing representational diversity
+\citep{arora2017simple,mu2017allbutthetop,ethayarajh2019contextual}.
+Subsequent analyses identified small sets of ``rogue'' or ``outlier'' dimensions
+that dominate similarity computations and downstream behavior
+\citep{timkey2021rogue,kovaleva2021bertbusters,puccetti2022frequency}.
+More recent work argues that anisotropy is closely tied to frequency skew,
+syntactic structure, and training dynamics rather than being an inherent flaw
+of the Transformer architecture \citep{rudman2023stable,machina2024anisotropy}.
+
+Our work builds on these observations but shifts the focus from representation
+quality at inference time to \emph{training-time spectral geometry}.
+Rather than treating anisotropy as a nuisance to be removed, we show that the
+coherent structure underlying anisotropy can be exploited algorithmically.
+
+\paragraph{Low-bit quantization and spectral decomposition.}
+Quantization of large language models has progressed rapidly from FP32 to BF16,
+FP8, and recently FP4, motivated by substantial gains in efficiency
+\citep{micikevicius2022fp8,peng2023fp8,perez2023fp8}.
+However, extreme low-bit regimes exacerbate sensitivity to wide numerical
+distributions and outliers.
+A range of methods address this problem via reparameterization or preprocessing,
+including channel-wise scaling and shifting \citep{xiao2023smoothquant,wei2023outlier},
+orthogonal or Hadamard rotations \citep{suresh2017distributed,ashkboos2024quarot,ashkboos2025halo},
+and outlier separation into high-precision branches \citep{li2024svdquant}.
+
+Metis~\citep{cao2025metis} identifies spectral anisotropy as the \emph{fundamental}
+barrier to FP4 training and proposes explicit spectral decomposition of weights,
+activations, and gradients to separate dominant singular components from the
+long tail.
+By quantizing these components independently, Metis enables robust W4A4G4
+training with minimal accuracy loss.
+However, Metis still relies on estimating a low-rank spectral subspace, using
+random sampling and projection to amortize the cost of SVD.
+
+Our work is complementary but conceptually distinct.
+Rather than approximating the spike subspace via randomized spectral methods,
+we show that, due to the statistical structure of language data, a shared
+linguistic component can be isolated by a much simpler operation—batch
+averaging—without explicit decomposition.
+This provides a lightweight surrogate that can fill the role of SVD-based spike
+suppression in quantization-sensitive settings.
+
+\paragraph{Optimizers under anisotropic gradient geometry.}
+Adaptive optimizers such as Adam and AdamW \citep{kingma2014adam,loshchilov2017adamw}
+operate coordinate-wise and ignore correlations within matrix-valued parameters.
+When gradient energy concentrates in a low-rank spike, their second-moment
+statistics become dominated by these directions, suppressing updates in the
+long-tail subspace.
+Matrix-aware optimizers, including K-FAC \citep{martens2015kfac}, Shampoo
+\citep{gupta2018shampoo}, and SOAP \citep{vyas2024soap}, capture structured
+correlations but incur significant computational and memory overhead.
+
+Spectra~\citep{spectra2026} directly targets this issue by identifying and
+suppressing the dominant low-rank spike subspace in gradient updates, while
+leaving the noise-sensitive tail unamplified.
+Spectra tracks the spike using cached power iteration and applies localized
+spectral shaping with low overhead.
+
+Our contribution is orthogonal to optimizer design.
+We provide a data-geometric explanation for why the dominant spike is
+\emph{coherent and shared across tokens}, and show that averaging removes a
+direction lying almost entirely within the spike subspace.
+This insight complements spike-aware optimizers such as Spectra by providing a
+simple, hardware-friendly primitive that attenuates spike-dominated statistics
+without requiring iterative spectral routines.
+
+\paragraph{Efficient low-rank approximation.}
+Classical SVD and QR-based methods are expensive in large-scale training loops.
+Randomized and streaming techniques offer scalable alternatives for estimating
+dominant subspaces \citep{halko2011randomized,tropp2012user,oja1982pca}.
+Both Metis and Spectra exploit these tools to reduce the cost of spectral
+interventions.
+
+Our work shows that, under the specific statistical structure of human language
+corpora, even these approximations may be unnecessary for isolating the most
+harmful shared component.
+By leveraging coherence in linguistic structure and incoherence in semantic
+residuals, averaging acts as a conservative but effective spectral
+approximation.

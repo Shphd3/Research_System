@@ -1,0 +1,234 @@
+\section{Gradient Decomposition and Second-Moment Inflation}
+\label{app:gradient_proof}
+
+This appendix formalizes how activation bias propagates into gradients and
+inflates adaptive optimizer statistics.
+
+\subsection{Notation and setup}
+
+Consider a linear layer with weight matrix $W \in \mathbb{R}^{d \times h}$,
+input activation $x_i \in \mathbb{R}^{h}$,
+and output gradient $\delta_i \in \mathbb{R}^{d}$.
+
+The per-token gradient is
+\[
+g_i = \delta_i x_i^\top \in \mathbb{R}^{d \times h}.
+\]
+
+Let
+\[
+G = \frac{1}{N} \sum_{i=1}^N g_i
+\]
+denote the batch gradient.
+
+Assume activations decompose as
+\[
+x_i = \mu + s_i,
+\qquad
+\mathbb{E}[s_i] = 0.
+\]
+
+No assumption is made about $\mathbb{E}[\delta_i]$ at this stage.
+
+\subsection{Exact gradient decomposition}
+
+\begin{lemma}[Gradient decomposition identity]
+\label{lem:grad_decomp}
+The batch gradient satisfies
+\[
+G
+=
+\mathbb{E}[\delta]\mu^\top
++
+\mathbb{E}[\delta s^\top].
+\]
+\end{lemma}
+
+\begin{proof}
+Substitute $x_i = \mu + s_i$ into
+\[
+G = \frac{1}{N}\sum_{i=1}^N \delta_i x_i^\top
+=
+\frac{1}{N}\sum_{i=1}^N \delta_i(\mu^\top + s_i^\top).
+\]
+Distribute:
+\[
+G
+=
+\left(\frac{1}{N}\sum_{i=1}^N \delta_i\right)\mu^\top
++
+\frac{1}{N}\sum_{i=1}^N \delta_i s_i^\top.
+\]
+Taking expectation over batch sampling yields the stated identity.
+\end{proof}
+
+\paragraph{Interpretation.}
+Even if $\mathbb{E}[\delta]=0$, the second term
+$\mathbb{E}[\delta s^\top]$ remains.
+However, the first term is a rank-one matrix aligned with $\mu$ and can
+produce coherent gradient structure whenever $\mathbb{E}[\delta]\neq 0$.
+
+\subsection{Second-moment structure of gradients}
+
+Adaptive optimizers such as Adam maintain an elementwise second-moment estimate:
+\[
+v_{ab} = \mathbb{E}[g_{i,ab}^2].
+\]
+
+Since
+\[
+g_{i,ab} = \delta_{i,a} x_{i,b},
+\]
+we have the exact identity
+\[
+v_{ab}
+=
+\mathbb{E}[\delta_{a}^2 x_b^2].
+\]
+
+Using $x_b = \mu_b + s_b$, we expand:
+
+\begin{align}
+x_b^2
+&=
+(\mu_b + s_b)^2 \\
+&=
+\mu_b^2
++
+2\mu_b s_b
++
+s_b^2.
+\end{align}
+
+Therefore,
+
+\begin{equation}
+\label{eq:v_expand}
+v_{ab}
+=
+\mu_b^2 \mathbb{E}[\delta_a^2]
++
+2\mu_b \mathbb{E}[\delta_a^2 s_b]
++
+\mathbb{E}[\delta_a^2 s_b^2].
+\end{equation}
+
+\subsection{Bias-induced inflation term}
+
+If $s_b$ is zero-mean and independent of $\delta_a^2$,
+then $\mathbb{E}[\delta_a^2 s_b] = 0$, and we obtain:
+
+\begin{equation}
+\label{eq:v_clean}
+v_{ab}
+=
+\mu_b^2 \mathbb{E}[\delta_a^2]
++
+\mathbb{E}[\delta_a^2 s_b^2].
+\end{equation}
+
+The first term is deterministic and shared across tokens.
+
+\begin{theorem}[Bias-driven second-moment inflation]
+\label{thm:second_moment_inflation}
+Suppose
+\[
+\mu_b^2 \gg \mathbb{E}[s_b^2]
+\]
+for a subset of coordinates $b$.
+Then for those coordinates,
+\[
+v_{ab}
+\approx
+\mu_b^2 \mathbb{E}[\delta_a^2],
+\]
+and hence the second moment is dominated by the bias term.
+\end{theorem}
+
+\begin{proof}
+From \eqref{eq:v_clean},
+\[
+v_{ab}
+=
+\mu_b^2 \mathbb{E}[\delta_a^2]
++
+\mathbb{E}[\delta_a^2 s_b^2].
+\]
+If $\mu_b^2 \gg \mathbb{E}[s_b^2]$ and $\delta_a^2$ has finite variance,
+then
+\[
+\mu_b^2 \mathbb{E}[\delta_a^2]
+\gg
+\mathbb{E}[\delta_a^2 s_b^2].
+\]
+Therefore the first term dominates.
+\end{proof}
+
+\paragraph{Consequences.}
+Large $\mu_b$ causes certain coordinates to have inflated $v_{ab}$ values.
+Since Adam uses effective learning rate proportional to $1/\sqrt{v_{ab}}$,
+these coordinates experience suppressed learning rates.
+
+\subsection{Effect of mean removal}
+
+After centering activations,
+\[
+x'_i = x_i - \mu = s_i.
+\]
+
+The new second moment becomes
+
+\[
+v'_{ab}
+=
+\mathbb{E}[\delta_a^2 s_b^2].
+\]
+
+\begin{theorem}[Second-moment reduction under mean removal]
+\label{thm:v_reduction}
+For coordinates where bias dominates,
+\[
+\frac{v'_{ab}}{v_{ab}}
+\approx
+\frac{\mathbb{E}[s_b^2]}{\mu_b^2}
+\ll 1.
+\]
+\end{theorem}
+
+\begin{proof}
+Divide \eqref{eq:v_clean}:
+\[
+\frac{v'_{ab}}{v_{ab}}
+=
+\frac{\mathbb{E}[\delta_a^2 s_b^2]}
+{\mu_b^2 \mathbb{E}[\delta_a^2] + \mathbb{E}[\delta_a^2 s_b^2]}.
+\]
+If $\mu_b^2 \gg \mathbb{E}[s_b^2]$, denominator dominated by first term,
+so
+\[
+\frac{v'_{ab}}{v_{ab}}
+\approx
+\frac{\mathbb{E}[s_b^2]}
+{\mu_b^2}
+\ll 1.
+\]
+\end{proof}
+
+\paragraph{Interpretation.}
+Mean removal reduces extreme $v_{ab}$ entries multiplicatively.
+This matches empirical reductions of $4\times$ to $50\times$ observed in
+Section~2.4B.
+
+\subsection{Summary}
+
+We have shown:
+
+\begin{enumerate}
+\item Bias induces a rank-one component in gradients.
+\item Bias contributes a deterministic inflation term to second-moment statistics.
+\item Mean removal eliminates this term exactly.
+\item The reduction factor scales with $\mu_b^2 / \mathbb{E}[s_b^2}$.
+\end{enumerate}
+
+This provides a precise mechanism linking activation bias to optimizer
+instability.

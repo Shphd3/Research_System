@@ -1,0 +1,154 @@
+\section{Averaging as a Probe for Agreement-Driven Structure}
+\label{sec:averaging_probe}
+
+Having clarified that our objective is to approximate grammar-driven agreement
+structure rather than arbitrary low-rank matrices
+(Section~\ref{sec:target_structure}),
+we now introduce averaging operations as simple, GPU-friendly probes for isolating
+this structure in gradient matrices.
+
+\subsection{Physical Interpretation of Gradient Entries}
+\label{sec:physical_gradient}
+
+We briefly recall the physical meaning of the gradient matrix entries in order to
+motivate the averaging operations that follow.
+
+Consider the key projection in a transformer layer,
+\[
+k = W_k x,
+\qquad
+W_k \in \mathbb{R}^{d\times d},
+\]
+where $x \in \mathbb{R}^{d}$ is the input hidden state and $k \in \mathbb{R}^{d}$ is
+the resulting key vector.
+The gradient of the loss with respect to $W_k$,
+\[
+G = \nabla_{W_k} \mathcal{L} \in \mathbb{R}^{d\times d},
+\]
+has entries
+\[
+G_{i\ell} = \frac{\partial \mathcal{L}}{\partial W_{k,i\ell}},
+\]
+which measure how strongly the training data pushes the connection from input
+feature $\ell$ to output feature $i$.
+
+For a batch of tokens, the gradient aggregates per-token outer products,
+\[
+G = \sum_{j,t} \delta^{(j,t)} \bigl(x^{(j,t)}\bigr)^\top,
+\]
+where $\delta^{(j,t)}$ is the backpropagated error signal at the projection for
+token $(j,t)$.
+Thus, $G$ encodes correlations between activation directions and error directions,
+aggregated across many tokens and contexts.
+
+\subsection{Column Averaging: Primary Probe of Agreement}
+\label{sec:column_averaging}
+
+We now introduce column averaging as the primary operation for probing
+agreement-driven structure.
+
+Let $\mathbf{1} \in \mathbb{R}^{d}$ denote the vector of all ones, and define the
+column-averaged vector
+\[
+u \;\triangleq\; G \mathbf{1} \in \mathbb{R}^{d},
+\qquad
+u_i = \sum_{\ell=1}^{d} G_{i\ell}.
+\]
+
+Substituting the token-level gradient expression yields
+\[
+u
+=
+\sum_{j,t}
+\delta^{(j,t)} \bigl( (x^{(j,t)})^\top \mathbf{1} \bigr).
+\]
+Importantly, this expression remains a \emph{sum over tokens}.
+The multiplication by $\mathbf{1}$ collapses feature-specific input variation into
+a scalar weight for each token, while the aggregation over tokens suppresses
+semantic variation under the assumptions of
+Section~\ref{sec:foundational_assumptions}.
+
+\paragraph{Interpretation.}
+Column averaging answers the question:
+\begin{quote}
+\emph{Which output directions of this layer are being consistently pushed across
+many tokens and sequences, regardless of which specific input features caused the
+pressure?}
+\end{quote}
+
+Because grammatical structure is shared across sequences, grammar-induced gradient
+components reinforce coherently in $\nu$.
+In contrast, semantic components vary across sequences and cancel in expectation
+when tokens are drawn from semantically independent sequences.
+As a result, $\nu$ serves as a direct probe of the dominant agreement-driven update
+direction.
+
+\paragraph{Why column averaging works.}
+The effectiveness of column averaging does not rely on low rank alone.
+It relies on the fact that the agreement spike is both \emph{low rank} and \emph{coherent}:
+its singular vectors are dense, and its row/column marginals (e.g., $A\mathbf{1}$ and
+$A^\top\mathbf{1}$) do not vanish due to cancellation.
+In contrast, the residual semantic component is high-rank and comparatively \emph{incoherent}
+under batching: token-specific semantic features vary across sequences and cancel in
+these first-order aggregated statistics.
+This asymmetry is specific to grammar-driven agreement structure and does not hold
+for arbitrary low-rank matrices.
+
+\subsection{Row Averaging: Auxiliary Construction}
+\label{sec:row_averaging}
+
+For completeness, we define the row-averaged vector
+\[
+v \;\triangleq\; G^\top \mathbf{1} \in \mathbb{R}^{d},
+\qquad
+v_\ell = \sum_{i=1}^{d} G_{i\ell}.
+\]
+In token-level form,
+\[
+v
+=
+\sum_{j,t}
+x^{(j,t)} \bigl( (\delta^{(j,t)})^\top \mathbf{1} \bigr).
+\]
+
+Row averaging aggregates gradient contributions associated with each input feature
+across output dimensions.
+Empirically and conceptually, this signal is typically weaker and noisier than the
+column-averaged signal, as input features mix semantic and contextual information
+more heavily.
+
+We emphasize that row averaging is \emph{not} introduced as an independent probe of
+agreement structure.
+Rather, it plays an auxiliary role in completing a rank-one matrix reconstruction
+once the dominant agreement direction has been identified via column averaging.
+
+\subsection{Rank-One Reconstruction from Averages}
+\label{sec:rank_one_from_averages}
+
+Given the column-averaged vector $\nu$ and the row-averaged vector $v$, a natural
+rank-one approximation of the gradient matrix is
+\[
+\widehat{G}_1
+\;\triangleq\;
+\frac{u v^\top}{\mathbf{1}^\top G \mathbf{1}}.
+\]
+
+This construction is algebraic rather than structural: it combines the dominant
+left- and right-marginal signals into a rank-one matrix.
+Its validity rests entirely on the agreement-driven structure described in
+Section~\ref{sec:target_structure} and the cancellation assumptions of
+Section~\ref{sec:foundational_assumptions}.
+
+In particular, $\widehat{G}_1$ should be interpreted as an approximation to the
+agreement component $A$, not as a generic low-rank approximation to $G$.
+When these assumptions fail, the reconstruction may be inaccurate, even if $G$ is
+low rank.
+
+\paragraph{Summary.}
+Averaging serves as a lightweight, GPU-native probe for isolating agreement-driven
+structure in gradient matrices.
+Column averaging is the primary mechanism by which shared grammatical update
+directions are revealed, while row averaging plays a secondary, algebraic role in
+constructing a rank-one approximation.
+This asymmetric treatment reflects the underlying linguistic and statistical
+structure of the data and is essential for the correctness of the proposed method.

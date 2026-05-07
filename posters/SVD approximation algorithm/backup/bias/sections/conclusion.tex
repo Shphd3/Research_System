@@ -1,0 +1,106 @@
+\section{Conclusion and Discussion}
+\label{sec:conclusion}
+
+This work re-examines anisotropy in large language model training
+through the lens of activation bias.
+While prior analyses focused on spectral spike--tail structure,
+we show that a coherent mean component in activations
+is the primary driver of extreme elementwise outliers
+and second-moment inflation.
+
+Empirically, we demonstrated that:
+
+\begin{itemize}
+    \item Activation means are statistically significant across layers and
+    training stages, while gradient-output means remain at noise level.
+    \item Extreme activation outliers are overwhelmingly dominated by
+    the mean component rather than spike variance or semantic tail.
+    \item Bias propagates multiplicatively into gradient outer products,
+    inflating both blockwise quantization scale and adaptive optimizer
+    second moments.
+\end{itemize}
+
+These findings clarify that many training instabilities attributed to
+spectral anisotropy are, in practice, bias-driven.
+
+\paragraph{Curse.}
+Bias introduces dynamic-range inflation in low-bit quantization,
+suppresses effective learning rates in adaptive optimizers,
+and amplifies extreme coordinate statistics.
+Its coherent nature causes disproportionate influence on
+blockwise scaling and second-moment estimates.
+
+\paragraph{Blessing.}
+Because bias is structured, low-rank, and globally coherent,
+it admits an extremely simple mitigation strategy:
+mean removal.
+Unlike full SVD-based spike suppression,
+mean removal is hardware-friendly, inexpensive,
+and conservative — it removes the dominant instability
+without disturbing semantic covariance structure.
+
+Across large-scale experiments ($1$B parameters, $100$B tokens),
+bias mitigation improved both FP4 quantization stability
+and adaptive optimizer behavior.
+Spike whitening provided further refinement,
+but the majority of stabilization arose from bias removal alone.
+
+\subsection{Implications}
+
+The results suggest a revised perspective on LLM training geometry:
+
+\begin{enumerate}
+    \item Spectral spike structure is not monolithic.
+    A significant portion of spike energy corresponds to bias.
+    \item Controlling bias is a minimal structural correction
+    that addresses multiple downstream instabilities simultaneously.
+    \item Expensive spectral decompositions may be solving
+    a simpler underlying structural issue.
+\end{enumerate}
+
+This reframing opens new design directions
+for quantization schemes, optimizers,
+and potentially even architectural normalization strategies.
+
+\subsection{Limitations and Open Questions}
+
+Several important questions remain open:
+
+\begin{itemize}
+    \item \textbf{Origin of activation bias.}
+    Why do forward activations consistently develop large coherent means?
+    Is this purely data-driven, architecture-induced,
+    or an emergent property of residual accumulation?
+    
+    \item \textbf{Interaction with normalization layers.}
+    How does bias behave under different normalization schemes
+    (pre-norm vs post-norm, RMSNorm vs LayerNorm)?
+    
+    \item \textbf{Scaling behavior.}
+    Does bias magnitude scale with model size or training duration?
+    Preliminary evidence suggests early-layer dominance,
+    but a systematic scaling law analysis is warranted.
+    
+    \item \textbf{Beyond mean removal.}
+    Can lightweight structured corrections approximate full whitening
+    without expensive decompositions?
+\end{itemize}
+
+Addressing these questions will further clarify the geometric
+role of bias in representation learning.
+
+\subsection{Final Perspective}
+
+Bias is neither purely pathological nor purely benign.
+It simultaneously destabilizes training
+and provides a coherent structural handle for mitigation.
+
+Recognizing this duality
+allows us to move beyond viewing anisotropy
+as an opaque spectral phenomenon,
+toward understanding and controlling
+the specific geometric mechanisms that drive it.
+
+In this sense, bias embodies both
+the curse and the blessing
+of large language model training.

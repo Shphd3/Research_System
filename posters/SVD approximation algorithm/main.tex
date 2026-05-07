@@ -1,0 +1,98 @@
+\makeatletter
+% Add the ICLR 2026 template directory to LaTeX's search path.
+% This lets \usepackage{iclr2026_conference} work without copying files.
+\def\input@path{{./doc/iclr-template/master/iclr2026/}}
+\makeatother
+
+\documentclass{article}
+
+% ICLR template (located in ../doc/templates/iclr2026/)
+\usepackage{iclr2026_conference}
+\usepackage{times}
+
+% Math & symbols
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+
+% Figures & tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+% Formatting
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{epigraph}
+\newcommand{\draft}[1]{}
+
+% Reduce underfull vbox warnings by allowing variable page height.
+\raggedbottom
+
+% Theorem-like environments (used in \input files).
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+
+\title{The Curse and Blessing of Bias in Large Language Model Training}
+
+\author{
+  Anonymous Authors\\
+  Anonymous Institutions\\
+  \texttt{anonymous@iclr.cc}
+}
+
+% Uncomment for camera-ready
+% \iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Large language models trained on human language exhibit strong anisotropy: a small number of directions concentrate most energy, while the remaining dimensions form a long tail. This geometry inflates dynamic range, creates extreme activation outliers, and destabilizes low-bit training, where dominant spike directions hijack quantization scale. Existing mitigation strategies rely on explicit spectral decompositions such as SVD, which are computationally expensive, memory-intensive, and poorly aligned with modern accelerator hardware.
+
+We show that this anisotropy arises from a fundamental inductive bias of language modeling: token meaning is determined by context. Self-attention and residual accumulation reinforce shared semantic components, which accumulate into coherent mean directions. This mean bias dominates both elementwise outliers and second-moment inflation.
+
+Crucially, because the dominant instability is rank-one, it can be removed by a simple mean-subtraction operation. This bias-centric conditioning achieves the core benefit of spectral control without costly decompositions, providing a hardware-friendly path to stable low-bit quantization and adaptive optimization while preserving semantic structure.
+
+\end{abstract}
+
+\begin{flushright}
+\textit{“Understanding precedes simplicity.”}\\
+--- The Team
+\end{flushright}
+
+\input{./sections/introduction}
+
+\input{./sections/a1}
+
+\input{./sections/a2}
+
+\input{./sections/a3}
+
+\input{./sections/pilot_metis}
+
+\input{./sections/pilot_spectra}
+
+\input{./sections/related}
+
+\input{./sections/conclusion}
+
+\newpage
+
+
+\bibliographystyle{./doc/iclr-template/master/iclr2026/iclr2026_conference}
+\bibliography{references}
+
+\newpage
+
+\appendix
+%\input{proofs}
+% Extended derivations
+
+
+\end{document}

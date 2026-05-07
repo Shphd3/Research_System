@@ -1,0 +1,155 @@
+\section{Experiments}
+\label{sec:experiments}
+
+Our experiments follow a single logic chain:
+$$
+\text{data geometry}
+\rightarrow
+\text{routing separation}
+\rightarrow
+\text{semantic decoupling}
+\rightarrow
+\text{rejection of unnecessary second-order complexity}.
+$$
+The goal is not to overwhelm the reader with many loosely connected diagnostics. The goal is to show, step by step, why expert specialization in the current regime is best explained by centered orthogonal first-order routing.
+
+\subsection{Experiment 1: Data Geometry Audit}
+\paragraph{Objective.}
+We first ask a foundational question: after removing the global offset, are real token representations primarily separated by mean location or by covariance shape? This determines the upper bound on what a router should try to exploit.
+
+\paragraph{Setup.}
+We use a pretrained MoE model without imposing a special routing bias. From six representative MoE layers (layers 1, 3, 5, 7, 9, and 11), we extract 12{,}000 centered token activations $x_c$ from the WoS corpus.
+
+\paragraph{Procedure.}
+At each layer, we apply two offline clustering procedures:
+\begin{itemize}
+    \item K-Means, which searches for cluster separation through Euclidean distance and therefore emphasizes mean differences;
+    \item K-Subspaces, which searches for low-rank subspace structure and therefore emphasizes covariance differences.
+\end{itemize}
+
+\paragraph{Metric.}
+We quantify the geometric separability of the resulting partitions using the separation ratio
+$$
+\rho_{\mathrm{sep}}
+=
+\frac{\operatorname{Tr}(\operatorname{Cov}(\mathbb{E}[x_c\mid E]))}
+{\operatorname{Tr}(\operatorname{Cov}(x_c))}.
+$$
+
+\paragraph{Result.}
+Across all six layers, K-Means yields consistently higher $\rho_{\mathrm{sep}}$ than K-Subspaces. Moreover, the subspace-based partitions do not reliably produce lower within-cluster effective rank.
+
+\paragraph{Conclusion.}
+The residual representation geometry is predominantly mean-separable. Real token clouds behave more like separated groups at different locations than like clusters sharing a center but differing mainly by covariance shape. This result establishes the physical basis for using first-order hyperplanes as the primary routing mechanism.
+
+\subsection{Experiment 2: Routing Separation Evaluation}
+\paragraph{Objective.}
+We next test whether the proposed routing mechanism actually achieves stronger expert separation than competing gates on real checkpoints.
+
+\paragraph{Setup.}
+We evaluate checkpoints at step 60{,}000 for four models:
+\begin{itemize}
+    \item `linear\_no\_center',
+    \item `linear\_running\_center',
+    \item `acp\_lite',
+    \item `hybrid'.
+\end{itemize}
+We use the WoS validation split with 1{,}200 samples.
+
+\paragraph{Procedure.}
+For each model, we run forward inference, extract centered activations $x_c$ and expert assignments across all MoE layers, and aggregate geometry metrics layer by layer.
+
+\paragraph{Metrics.}
+We use two metrics:
+$$
+\rho_{\mathrm{sep}}
+=
+\frac{\operatorname{Tr}(\operatorname{Cov}(\mathbb{E}[x_c\mid E]))}
+{\operatorname{Tr}(\operatorname{Cov}(x_c))}
+$$
+and
+$$
+\mathrm{sRank}(\Sigma_e)
+=
+\frac{\operatorname{Tr}(\Sigma_e)^2}{\operatorname{Tr}(\Sigma_e^2)}.
+$$
+
+\paragraph{Result.}
+CORE (`acp\_lite') achieves the highest mean separation ratio:
+$$
+0.1015,
+$$
+compared with
+$$
+0.0645 \text{ for hybrid}, \qquad
+0.0615 \text{ for centered linear}, \qquad
+0.0060 \text{ for no-center linear}.
+$$
+At the same time, CORE maintains a reasonable within-expert effective-rank profile.
+
+\paragraph{Conclusion.}
+The strongest routing geometry in the current regime is achieved by orthogonally decoupled first-order routing. Once the dominant mean-related direction is separated from the centered residual channel, the gate maximizes between-expert mean separation without resorting to higher-order complexity.
+
+\subsection{Experiment 3: Semantic Decoupling Audit}
+\paragraph{Objective.}
+The geometric decomposition must also correspond to a physically meaningful semantic decomposition. We therefore test whether the mean-direction channel and residual channel react to different token classes.
+
+\paragraph{Setup.}
+We use `linear\_running\_center', `acp\_lite', and `hybrid'. We construct a strict single-token vocabulary containing 43 function words and 109 domain keywords.
+
+\paragraph{Procedure.}
+We measure token assignment concentration through top-share statistics and, for the hybrid gate, decompose the pre-softmax logits into three parts:
+$$
+L_{\mathrm{mean}}=a_e^\top x_{\parallel}, \qquad
+L_{\mathrm{residual}}=b_e^\top x_c, \qquad
+L_{\mathrm{subspace}}=\|V_e x_c\|_2^2.
+$$
+
+\paragraph{Result.}
+Function words exhibit a clear sink effect. Under `acp\_lite' and `hybrid', the mean top-share of function words exceeds $0.60$:
+$$
+0.6036 \text{ and } 0.6094,
+$$
+while the ordinary centered linear baseline reaches
+$$
+0.5778.
+$$
+
+\paragraph{Conclusion.}
+The mean-direction channel carries real semantic workload. It acts as a stable absorber for high-frequency or function-like tokens, allowing the centered residual channel to focus on finer semantic separation. This makes the decoupling physically interpretable, not merely algebraically convenient.
+
+\subsection{Experiment 4: Dynamics and Overhead Audit}
+\paragraph{Objective.}
+If first-order decoupling is already sufficient, why not keep second-order terms as an additional refinement? We answer this through optimization dynamics and engineering overhead.
+
+\paragraph{Setup.}
+For dynamics, we initialize the hybrid model and run a 100-step light training run. For cost, we evaluate stable checkpoints under fixed batch and token settings.
+
+\paragraph{Procedure.}
+We record the gradient $L_2$ norms of the pre-softmax components during early training and measure parameter count, router FLOPs per token, and wall-clock latency.
+
+\paragraph{Metrics.}
+For dynamics, we use
+$$
+\mathrm{Ratio}
+=
+\frac{\|\nabla L_{\mathrm{subspace}}\|_2}{\|\nabla L_{\mathrm{residual}}\|_2}.
+$$
+For cost, we report router parameters and FLOPs/token.
+
+\paragraph{Result.}
+The average gradient ratio is
+$$
+0.8685,
+$$
+which shows that the second-order branch is not trivially starved. By the final recorded step, the centered first-order and second-order branches still have comparable gradient magnitudes:
+$$
+0.00113 \text{ versus } 0.00201.
+$$
+At the same time, the engineering cost is dramatic. The hybrid router uses about $7.23$M router parameters and $1.196$M FLOPs/token, while CORE requires only $221.2$K router parameters and $15.4$K FLOPs/token.
+
+\paragraph{Conclusion.}
+In the current regime, second-order complexity is unnecessary. It is not absent because optimization starves it; rather, it competes with the first-order branch while offering no corresponding geometric gain, and it does so at nearly two orders of magnitude higher cost.
+
+\subsection{Downstream View}
+The four experiments above establish the main story of the paper. They show what structure exists in the data, what the router should exploit, why the proposed decoupling works, and why extra second-order complexity is not justified in the current regime. Continual learning is then used as a downstream validation setting: once specialization has been made geometrically cleaner, we can test whether this improved routing structure transfers into lower interference and better sequential adaptation.

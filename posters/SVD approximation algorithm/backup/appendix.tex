@@ -1,0 +1,258 @@
+% Appendix-local commands/environments (safe when this file is \input into main.tex)
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\mathbf{1}}
+
+\makeatletter
+\@ifundefined{c@remark}{%
+  \theoremstyle{remark}%
+  \newtheorem{remark}{Remark}%
+}{}
+\makeatother
+
+
+\chapter{A Canonical High-Dimensional Model for Averaging-Based Spike Removal and Semantic Preservation}
+\label{app:canonical_model}
+
+This appendix provides a detailed, self-contained mathematical instantiation of the
+assumptions used in Section~1.6.
+The goal is to rigorously justify two claims:
+\begin{enumerate}
+    \item averaging recovers the shared grammar-driven spike; and
+    \item removing this spike preserves essentially all semantic variability.
+\end{enumerate}
+The model is deliberately high-dimensional and distributional, reflecting the fact
+that semantic information in language models is spread over a wide feature space and
+manifests through variance rather than mean structure.
+
+\section{Matrix-as-Tokens Model}
+
+Let $G \in \R^{n\times n}$ be a matrix whose columns correspond to $n$ tokens, each
+represented by an $n$-dimensional vector.
+Denote the $j$-th column by $g_j \in \R^n$, so
+\[
+G = [g_1,\dots,g_n].
+\]
+
+\subsection{Grammar and Semantic Feature Decomposition}
+
+We assume that each token representation decomposes additively as
+\begin{equation}
+\label{eq:col_decomp}
+g_j = g_{\mathrm{gram}} + s_j,
+\qquad j=1,\dots,n,
+\end{equation}
+where:
+\begin{itemize}
+\item $g_{\mathrm{gram}} \in \R^n$ is a deterministic vector capturing grammatical or
+      structural features shared across all tokens; and
+\item $s_j \in \R^n$ is a random vector capturing token-specific semantic information.
+\end{itemize}
+
+Stacking the semantic components gives
+\[
+S \triangleq [s_1,\dots,s_n] \in \R^{n\times n},
+\]
+and therefore
+\begin{equation}
+\label{eq:G_decomp}
+G = g_{\mathrm{gram}}\1^\top + S.
+\end{equation}
+
+\section{Semantic Feature Distribution: Wide but Sparse}
+
+We now formalize the notion that semantics are high-dimensional but sparse.
+
+\begin{assumption}[Wide sparse semantic feature model]
+\label{assump:sparse_semantics}
+There exists a semantic feature dictionary of size $n$.
+Each token $j$ activates a random subset $\mathcal{S}_j \subset \{1,\dots,n\}$ with
+$|\mathcal{S}_j| = k \ll n$.
+The semantic vector takes the form
+\[
+s_j = \sum_{i \in \mathcal{S}_j} \xi_{j,i} e_i,
+\]
+where:
+\begin{itemize}
+\item $\{e_i\}$ is the standard basis of $\R^n$;
+\item $\xi_{j,i}$ are i.i.d.\ random variables with
+      $\E[\xi_{j,i}] = 0$ and $\E[\xi_{j,i}^2] = \tau^2 < \infty$;
+\item the supports $\mathcal{S}_j$ are drawn independently across tokens.
+\end{itemize}
+\end{assumption}
+
+\begin{remark}
+This model captures the intuition that each token expresses only a small subset of
+possible semantic features (entities, attributes, relations), while the full semantic
+space is very large.
+\end{remark}
+
+\begin{assumption}[Finite semantic energy]
+\label{assump:energy}
+Semantic vectors satisfy
+\[
+\E[s_j] = 0,
+\qquad
+\E\|s_j\|_2^2 = \sigma^2 = k\tau^2.
+\]
+\end{assumption}
+
+\section{Step 1: Averaging Recovers the Grammar Direction}
+
+Define the column mean
+\begin{equation}
+\label{eq:col_mean}
+\bar g \triangleq \frac{1}{n}G\1
+= g_{\mathrm{gram}} + \frac{1}{n}\sum_{j=1}^n s_j.
+\end{equation}
+
+\begin{proposition}[Column averaging recovers grammar]
+\label{prop:mean_recovers_grammar}
+Under Assumptions~\ref{assump:sparse_semantics}--\ref{assump:energy},
+\[
+\bar g \xrightarrow[]{a.s.} g_{\mathrm{gram}}
+\qquad \text{as } n\to\infty.
+\]
+\end{proposition}
+
+\begin{proof}
+Fix a coordinate $i\in\{1,\dots,n\}$.
+The $i$-th coordinate of $\frac{1}{n}\sum_{j=1}^n s_j$ is
+\[
+\frac{1}{n}\sum_{j=1}^n s_{j,i}.
+\]
+Each $s_{j,i}$ is nonzero with probability $k/n$, has zero mean, and finite variance.
+By independence across $j$ and Kolmogorov’s strong law of large numbers,
+\[
+\frac{1}{n}\sum_{j=1}^n s_{j,i} \to 0 \quad \text{almost surely}.
+\]
+Since this holds for every coordinate and $n$ is finite at each stage,
+$\frac{1}{n}\sum_j s_j \to 0$ almost surely as a vector.
+\end{proof}
+
+\section{Step 2: Spike Removal via Averaging-Based Projection}
+
+Define the normalized average direction
+\[
+\hat g \triangleq \frac{\bar g}{\|\bar g\|_2},
+\]
+and the rank-one projector
+\begin{equation}
+\label{eq:P_def}
+P \triangleq \hat g \hat g^\top,
+\qquad
+\widetilde G \triangleq (I-P)G.
+\end{equation}
+
+This operation removes the shared component using only a matrix--vector product and
+normalization, without computing any singular vectors.
+
+\section{Step 3: What Is Removed and What Is Preserved}
+
+\subsection{Grammar Spike Removal}
+
+\begin{proposition}
+\label{prop:remove_grammar}
+$\|(I-P)g_{\mathrm{gram}}\|_2 \to 0$ almost surely as $n\to\infty$.
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:mean_recovers_grammar}, $\hat g \to g_{\mathrm{gram}}/\|g_{\mathrm{gram}}\|$.
+Let $u = g_{\mathrm{gram}}/\|g_{\mathrm{gram}}\|$.
+Then $P \to uu^\top$, and
+\[
+(I-P)g_{\mathrm{gram}} \to (I-uu^\top)g_{\mathrm{gram}} = 0.
+\]
+\end{proof}
+
+\subsection{Semantic Energy Preservation}
+
+We now show that spike removal eliminates only a vanishing fraction of semantic
+energy.
+
+\begin{theorem}[Semantic variance preservation under sparse semantics]
+\label{thm:semantic_energy_preserved}
+Under Assumptions~\ref{assump:sparse_semantics}--\ref{assump:energy},
+\[
+\E\|(I-P)S\|_F^2
+=
+\E\|S\|_F^2 - O(k),
+\]
+and therefore
+\[
+\frac{\E\|(I-P)S\|_F^2}{\E\|S\|_F^2}
+=
+1 - O\!\left(\frac{k}{n}\right).
+\]
+\end{theorem}
+
+\begin{proof}
+For any unit vector $u$, the projection identity gives
+\[
+\|(I-uu^\top)S\|_F^2 = \|S\|_F^2 - \|u^\top S\|_2^2.
+\]
+We estimate $\E\|u^\top S\|_2^2$.
+Write
+\[u^\top S = [u^\top s_1,\dots,u^\top s_n],
+\qquad
+\|u^\top S\|_2^2 = \sum_{j=1}^n (u^\top s_j)^2.
+\]
+Taking expectation,
+\[
+\E\|u^\top S\|_2^2
+=
+\sum_{j=1}^n \E(u^\top s_j)^2
+=
+n\, \E(u^\top s_1)^2.
+\]
+
+Since $s_1$ has exactly $k$ nonzero coordinates, each contributing $\tau^2$ variance,
+and $u$ is dense with $\|u\|_2=1$, we have
+\[
+\E(u^\top s_1)^2
+=
+\E\sum_{i\in\mathcal{S}_1} u_i^2 \xi_{1,i}^2
+=
+\tau^2 \E\sum_{i\in\mathcal{S}_1} u_i^2
+=
+\tau^2 \cdot \frac{k}{n}.
+\]
+Therefore
+\[
+\E\|u^\top S\|_2^2 = n \cdot \tau^2 \cdot \frac{k}{n} = k\tau^2 = O(k).
+\]
+
+On the other hand,
+\[
+\E\|S\|_F^2 = \sum_{j=1}^n \E\|s_j\|_2^2 = n\sigma^2 = nk\tau^2.
+\]
+Combining,
+\[
+\E\|(I-P)S\|_F^2
+=
+nk\tau^2 - k\tau^2
+=
+k\tau^2(n-1),
+\]
+and dividing by $\E\|S\|_F^2$ yields the claimed ratio.
+\end{proof}
+
+\begin{corollary}
+Each token loses only an $O(k/n)$ fraction of its semantic energy under spike removal.
+\end{corollary}
+
+\section{Interpretation and Connection to Learning}
+
+This appendix rigorously establishes that:
+\begin{itemize}
+\item averaging recovers the shared grammar-driven direction (first-order structure);
+\item spike removal subtracts only a single shared direction;
+\item high-dimensional, sparse semantic variance is preserved up to vanishing
+      relative error.
+\end{itemize}
+
+Since stochastic gradient descent depends on second-order variability of token-level
+updates rather than their mean, preserving semantic variance is sufficient to
+maintain semantic learnability.
+Thus, the averaging-based spike removal isolates dominant grammatical agreement
+structure while leaving semantic learning intact.

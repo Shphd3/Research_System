@@ -1,0 +1,375 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{enumitem}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.20\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65\baselineskip}
+
+\title{Daily Research Report:\\Common--Plastic Separation for Few-Shot Continual Learning}
+\author{}
+\date{2026-04-24}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+Our long-term goal is to build a Hierarchical MoE that moves toward the target of learning from very few examples while not forgetting old knowledge. The current report does not claim that the full hierarchy is ready. It clarifies the single-layer mechanism that must be established before hierarchy is meaningful.
+
+The current mainline is:
+
+$$
+\text{separate common ability from plastic long-tail adaptation, then test whether this reduces forgetting.}
+$$
+
+The recent update can be summarized in four points.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{There is evidence for a common component in real model representations.}
+    Real hidden states contain a shared high-variance component. Removing this component gives a residual representation that is more suitable for expert computation than the raw hidden state.
+
+    \item \textbf{Expert input space matters more than simple data separation.}
+    In real single-layer replacement experiments, experts operating on the residual representation are more stable and more useful than experts operating directly on raw hidden states.
+
+    \item \textbf{The whole PCA tail is too coarse for continual learning.}
+    The useful plastic input is not the entire residual after removing the top spike. Functional intervention shows that the middle and upper-middle part carries much more next-token function than the extreme tail.
+
+    \item \textbf{The strongest current continual-learning result is the split common--plastic block.}
+    Under the fixed matched-forgetting protocol, the split-dense $u50\_ext$ block improves over the dense baseline. The routed expert version has a weak fixed-budget signal, but its extra CL value is not yet established under matched forgetting.
+\end{enumerate}
+
+The current conclusion is therefore:
+
+$$
+\text{common--plastic separation is supported; routing advantage is not yet established.}
+$$
+
+\section{Background and Theoretical Critique}
+
+The original motivation is simple. Language is long-tailed. Frequent patterns appear many times and form common language ability. Rare or domain-specific patterns appear sparsely and require plastic adaptation. If both types of knowledge are written into the same parameter space during few-shot adaptation, new updates can damage old common ability.
+
+This motivates a structural question:
+
+$$
+\text{Can we separate common information and long-tail plastic information so that the model learns new data faster and forgets less?}
+$$
+
+The important correction is that separation alone is not enough. A router may separate data by domain, frequency, or representation geometry, but this does not imply that the selected expert has lower next-token loss or lower forgetting risk. Thus the causal chain should be written as:
+
+$$
+\text{data are separated}
+\not\Rightarrow
+\text{experts are functionally specialized}
+\not\Rightarrow
+\text{continual learning improves.}
+$$
+
+For our goal, expert specialization must be defined functionally. An expert is useful only if it improves prediction on the current input and, after adaptation, improves new-task query loss while causing less old-task forgetting.
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{Mainline hypotheses}
+
+The current report is organized around four hypotheses.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{H1: Common and plastic information should be separated.}
+    Common ability should be preserved by a stable branch, while few-shot long-tail adaptation should be written into a more restricted plastic branch.
+
+    \item \textbf{H2: Expert specialization requires an input-space constraint.}
+    If an expert sees the full raw hidden state, it can simply become a small dense module. To encourage specialization, the expert should operate on a restricted functional residual space.
+
+    \item \textbf{H3: The useful residual space is not the full PCA tail.}
+    The full residual after top-spike removal mixes useful functional dimensions with weaker extreme-tail dimensions. The current best candidate is $u50\_ext$.
+
+    \item \textbf{H4: Routing must predict expert advantage, not only separate data.}
+    A useful router should select the expert that has functional or retention-aware advantage, not merely produce cleaner-looking clusters.
+\end{enumerate}
+
+\subsection{Support, query, and episode definition}
+
+A continual-learning test is built as an episode. Each episode has a small training part and a held-out evaluation part from the same new domain.
+
+The \textbf{support} set is the small new-domain data used for adaptation. In our protocol, it is one chunk of 256 tokens from a new domain. A \textbf{chunk} means a contiguous segment of tokens cut from a document. It is used as one small language-model training/evaluation unit.
+
+The \textbf{query} set is held-out data from the same new domain. It is not used for adaptation. It tests whether adaptation on the support chunk transfers to other examples from the same new task. In the current protocol, the query set contains 16 chunks of 256 tokens.
+
+For episode $m$, we write:
+
+$$
+\mathcal{E}_m=(\mathcal{S}_m,\mathcal{Q}_m),
+$$
+
+where $\mathcal{S}_m$ is the support set and $\mathcal{Q}_m$ is the query set.
+
+\subsection{Query loss and learning gain}
+
+For a query token $i$, let $c_i$ be its context and $y_i$ be the next token. The next-token loss is:
+
+$$
+\ell_i(\theta)=-\log p_\theta(y_i\mid c_i).
+$$
+
+The query loss of model parameters $\theta$ is:
+
+$$
+L_{query}(\theta;\mathcal{Q}_m)
+=
+\frac{1}{|\mathcal{Q}_m|}
+\sum_{(c_i,y_i)\in\mathcal{Q}_m}
+-
+\log p_\theta(y_i\mid c_i).
+$$
+
+Let $\theta_0$ be the parameters before adaptation, and let $\theta_m^{(U)}$ be the parameters after $U$ support-update steps on episode $m$. The query learning gain is:
+
+$$
+LG_m(U)
+=
+L_{query}(\theta_0;\mathcal{Q}_m)
+-
+L_{query}(\theta_m^{(U)};\mathcal{Q}_m).
+$$
+
+If $LG_m(U)>0$, then adaptation improved the new-domain query loss. If $LG_m(U)<0$, the support update made the new-domain query worse.
+
+\subsection{Forgetting cost and matched forgetting}
+
+Let $\mathcal{D}_{old}^{eval}$ be held-out old-domain data. It is never used for adaptation. Forgetting cost is:
+
+$$
+FC_m(U)
+=
+L_{old}(\theta_m^{(U)};\mathcal{D}_{old}^{eval})
+-
+L_{old}(\theta_0;\mathcal{D}_{old}^{eval}).
+$$
+
+If $FC_m(U)>0$, the old-domain loss increased, so the model forgot old knowledge. If $FC_m(U)<0$, the old-domain loss improved.
+
+Matched forgetting answers a stricter question:
+
+$$
+\text{When two models have learned the new task to a comparable level, which one forgets less?}
+$$
+
+This is necessary because a model can look safe simply by not learning the new task. Therefore we use the dense baseline's learning gain as an anchor. For each episode, we find the first adaptation step at which another model reaches the same learning gain, and then compare its old-domain forgetting at that matched point.
+
+Thus matched forgetting prevents a false conclusion such as:
+
+$$
+\text{the model forgets less only because it learned less.}
+$$
+
+\subsection{Common--plastic block}
+
+The current strongest structural hypothesis is a split block:
+
+$$
+h_{out}
+=
+h_{in}
++
+F_c(x)
++
+F_p(x_{u50\_ext}).
+$$
+
+Here $F_c(x)$ is the common branch and sees the raw hidden state. $F_p(x_{u50\_ext})$ is the plastic branch and only sees the restricted functional residual input. During adaptation, the plastic branch is updated while the common branch is kept stable.
+
+A routed version is:
+
+$$
+h_{out}
+=
+h_{in}
++
+F_c(x)
++
+\sum_e g_e(x)F_e(x_{u50\_ext}).
+$$
+
+The routed version should be considered useful only if the selected expert has functional advantage over alternatives.
+
+\section{Empirical Study}
+
+\subsection{Evidence 1: real models contain a common component}
+
+\textbf{Hypothesis.} Model representations contain a shared common component and a more task- or long-tail-related residual component.
+
+\textbf{Experiment sketch.} We decomposed hidden states from a real model layer and tested how different components affect semantic separation and next-token prediction.
+
+\textbf{Result.} Removing the strongest shared component makes the residual more suitable for expert computation. The useful predictive function is not concentrated in the extreme tail; it lies mainly in the middle and upper-middle part of the residual.
+
+\textbf{Interpretation.} Common information and plastic long-tail information are not a single homogeneous object. Separating them is a meaningful structural operation.
+
+\subsection{Evidence 2: experts should learn residual input rather than raw input}
+
+\textbf{Hypothesis.} If experts operate on raw hidden states, they mix common and long-tail signals. If they operate on the residual after common removal, they are more likely to specialize.
+
+\textbf{Experiment sketch.} We replaced one FFN block in a real model with several structures: a dense FFN, a raw-input MoE, and residual-input expert blocks.
+
+\textbf{Result.} Residual-input expert blocks are more stable and more effective than raw-input expert blocks in real single-layer experiments.
+
+\textbf{Interpretation.} The key operation is not simply adding experts. The key operation is changing the expert input from raw hidden state to a restricted residual representation.
+
+\subsection{Evidence 3: full tail is too coarse}
+
+\textbf{Hypothesis.} The full PCA tail is not a clean long-tail representation. It may mix useful functional information with weak extreme-tail directions.
+
+\textbf{Experiment sketch.} We split the residual spectrum into middle and extreme-tail parts and removed each part separately during frozen forward evaluation.
+
+\textbf{Result.} Removing the middle part causes a much larger next-token loss increase than removing the extreme tail. The reported values are:
+
+$$
+\Delta L_{remove\;mid}=0.0542,
+\qquad
+\Delta L_{remove\;ext}=0.0038.
+$$
+
+Sparse dictionary reconstruction also outperforms PCA top-16 reconstruction:
+
+$$
+\mathrm{MSE}_{PCA-top16}=0.3831,
+\qquad
+\mathrm{MSE}_{dict}\approx0.2379.
+$$
+
+\textbf{Interpretation.} PCA is useful as a diagnostic scaffold, but it is not the final semantic basis. The current practical input is $u50\_ext$, a more specific functional span.
+
+\subsection{Evidence 4: functional expert specialization is stronger than separability}
+
+\textbf{Hypothesis.} If experts are truly specialized, the selected expert should have lower next-token loss than alternative experts on the same token.
+
+\textbf{Experiment sketch.} For the same token, we compared the loss under the selected expert with the loss under alternative experts.
+
+\textbf{Result.} The selected expert shows positive functional advantage on middle and rare tokens in the tail-conditioned single-layer block.
+
+\textbf{Interpretation.} This moves specialization beyond surface separation. It asks whether the expert chosen by the model is actually useful for prediction.
+
+\subsection{Evidence 5: split $u50\_ext$ has formal CL value}
+
+\textbf{Hypothesis.} If common and plastic branches are separated, the model should adapt to new-domain support data while forgetting less old-domain knowledge.
+
+\textbf{Experiment sketch.} We adapted each model on one new-domain support chunk and evaluated on held-out new-domain query chunks and held-out old-domain data.
+
+\textbf{Result.} Under the stable $0.5\times$ regime, the dense baseline has negative learning gain and clear forgetting. The split $u50\_ext$ block has positive learning gain and much lower forgetting.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}
+\toprule
+Model & LG & FC & RAS & ReachRate & Matched Forgetting \\
+\midrule
+Dense baseline & -0.000251 & 0.000786 & -0.001121 & 0.450 & -0.000017 \\
+Dense + replay & 0.000774 & -0.000282 & 0.000571 & 0.367 & -0.000502 \\
+Split common--plastic $u50\_ext$ & 0.000803 & 0.000082 & 0.000503 & 0.217 & -0.000212 \\
+Routed experts on $u50\_ext$ & 0.000785 & -0.000122 & 0.000671 & 0.200 & -0.000184 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Formal matched-forgetting comparison under the stable $0.5\times$ regime.}
+\end{table}
+
+\textbf{Interpretation.} The split common--plastic block gives real CL value. However, the routed expert version does not yet stably outperform the split block under matched forgetting and ReachRate.
+
+\subsection{What the evidence establishes}
+
+The current evidence establishes four points.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item The common/plastic split has representation support in real hidden states.
+    \item Expert computation benefits from restricted residual input.
+    \item The full tail is too coarse; $u50\_ext$ is the current best practical plastic input.
+    \item Split $u50\_ext$ has formal continual-learning value, but routing advantage is not yet established.
+\end{enumerate}
+
+\section{Next Iteration}
+
+The next iteration should not jump directly to full hierarchy. The immediate goal is to determine whether routing has real functional upside beyond the split common--plastic block.
+
+\subsection{Immediate experiments}
+
+\textbf{1. Router-function audit.}
+For each token, force every expert and compute its next-token loss. Compare the router-selected expert with the best expert. The key metric is selected regret:
+
+$$
+R_{sel}(t)=\ell_t(e_{sel})-\min_e\ell_t(e).
+$$
+
+If regret is high, the router is selecting poorly. If oracle expert selection does not help, the experts themselves are not differentiated enough.
+
+\textbf{2. Oracle routing upper bound.}
+Evaluate the routed expert model using the loss-minimizing expert at each token. If oracle routing clearly beats the split block, router calibration is worth pursuing. If it does not, routing should be paused.
+
+\textbf{3. Common--plastic cooperation audit.}
+Compare freezing common and updating plastic, updating both, updating common only, plastic-only, and common-only variants. This tests whether the current gain comes from common stability, plastic restriction, or both.
+
+\textbf{4. Projection-cost audit.}
+Measure the runtime and memory cost of exact $u50\_ext$ projection. If it is too expensive, train a surrogate projector:
+
+$$
+\hat{x}_{u50\_ext}=S_\phi(x),
+\qquad
+L_{proj}=\|S_\phi(x)-x_{u50\_ext}\|_2^2.
+$$
+
+\subsection{Current architecture proposal}
+
+The current responsible architecture proposal is the split common--plastic block:
+
+$$
+h_{out}
+=
+h_{in}
++
+F_c(x)
++
+F_p(x_{u50\_ext}).
+$$
+
+A routed version remains a candidate:
+
+$$
+h_{out}
+=
+h_{in}
++
+F_c(x)
++
+\sum_e g_e(x)F_e(x_{u50\_ext}),
+$$
+
+but it should only be promoted after router-function alignment is verified.
+
+\subsection{Short oral summary}
+
+The goal is to test whether separating common information and long-tail plastic information makes few-shot adaptation faster and less forgetful. We have evidence that real model hidden states contain a shared common component, and that experts work better when they operate on a residual representation rather than on raw hidden states. We then found that the whole residual tail is too coarse; the useful part is a more specific functional span, $u50\_ext$. The latest formal CL comparison shows that a split common--plastic block on $u50\_ext$ beats a dense baseline, but the routed expert version does not yet stably beat the split block. Therefore the next step is not full hierarchy, but a router-function audit to test whether the router selects experts with real functional and retention-aware advantage.
+
+\end{document}

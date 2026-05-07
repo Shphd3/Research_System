@@ -1,0 +1,66 @@
+\section{Pilot Study II: Bias-Aware Optimization}
+\label{sec:optimizer_pilot}
+
+Adaptive optimizers such as Adam and Muon maintain
+second-moment statistics that are highly sensitive to extreme gradients.
+Section~\ref{subsec:mean_second_moment} showed that
+mean bias dominates second-moment tails.
+This motivates bias-aware optimization.
+
+\subsection{Hypothesis}
+
+\begin{quote}
+\emph{If mean bias inflates second-moment statistics,
+then removing activation mean should reduce effective learning-rate suppression
+and partially substitute spectral optimizers such as Muon and Spectra.}
+\end{quote}
+
+\subsection{Method}
+
+We evaluate three variants:
+
+\begin{itemize}
+\item Standard AdamW
+\item Spectra (spike-aware optimizer)
+\item AdamW + source-level mean removal
+\end{itemize}
+
+Mean removal is applied only at embedding activation.
+
+\subsection{Experimental Setup}
+
+\begin{itemize}
+\item Model: 1B parameters.
+\item Training: 100B tokens.
+\item Full precision (BF16).
+\item Metrics:
+  \begin{itemize}
+  \item Training loss curve
+  \item Gradient variance
+  \item Effective learning-rate distribution
+  \end{itemize}
+\end{itemize}
+
+\subsection{Results}
+
+\begin{itemize}
+\item Mean removal reduces $p99.9$ of second moment $v$ by $4$--$10\times$.
+\item Effective learning-rate distribution becomeFs more uniform.
+\item Convergence speed improves relative to baseline AdamW.
+\item Performance approaches that of Spectra without per-layer SVD.
+\end{itemize}
+
+\subsection{Interpretation}
+
+Second-moment inflation is primarily driven by coherent mean drift.
+Source-level bias conditioning reduces this inflation
+without explicit spectral decomposition.
+This suggests that spike-aware optimizers may be approximated
+by simpler bias-aware preprocessing.
+
+\subsection{Limitation}
+
+Unlike Spectra, mean removal does not adaptively track
+rotating spike subspaces.
+Thus in later training phases,
+residual low-rank structure may still influence optimization.

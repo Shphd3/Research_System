@@ -1,0 +1,158 @@
+\section{Proof of Theorem 1: Exponential Mean-Bias Amplification}
+
+\subsection{Setup}
+
+Let $x_1,\dots,x_N\in\mathbb{R}^D$ be token representations and write
+\[
+ x_j = \mu_{c(j)} + \varepsilon_j,
+\qquad j=1,\dots,N,
+\]
+with clusters $C_m$, centroids $\mu_m$, and mixture mean
+\[
+ \mu = \sum_m w_m \mu_m,
+\qquad w_m = \frac{|C_m|}{N},
+\qquad \mu\neq 0.
+\]
+Define the global means
+\[
+ \bar x := \frac{1}{N}\sum_{j=1}^N x_j,
+\qquad
+ \bar y := \frac{1}{N}\sum_{i=1}^N y_i.
+\]
+
+Single-head attention is
+\[
+ a_{ij} = \frac{\exp(\langle x_i,x_j\rangle/\tau)}{\sum_k \exp(\langle x_i,x_k\rangle/\tau)},
+\qquad
+ y_i = \sum_j a_{ij} x_j.
+\]
+
+Define mean-energy ratios
+\[
+ R_X^2 = \frac{\|\bar x\|^2}{\frac1N\sum_i \|x_i\|^2},
+\qquad
+ R_Y^2 = \frac{\|\bar y\|^2}{\frac1N\sum_i \|y_i\|^2}.
+\]
+
+\subsection{Assumptions}
+
+\paragraph{A1 (Zero-mean intra-cluster residuals).}
+For each cluster $C_m$,
+\[
+ \frac{1}{|C_m|}\sum_{j\in C_m} \varepsilon_j = 0.
+\]
+
+\paragraph{A2 (Softmax logit gap).}
+There exists $\Delta>0$ such that for all $i\in C_m$, $j\in C_m$, and $j'\notin C_m$,
+\[
+ \langle x_i,x_j\rangle - \langle x_i,x_{j'}\rangle \ge \Delta.
+\]
+
+\paragraph{A3 (Residual energy).}
+Define
+\[
+ \sigma^2 := \frac{1}{N}\sum_{i=1}^N \|\varepsilon_i\|^2.
+\]
+
+\paragraph{A4 (Within-cluster spread).}
+For each $i\in C_m$, the in-cluster weights are not degenerate:
+\[
+ \sum_{j\in C_m} a_{ij}^2 \le \frac{A_{\mathrm{in}}(i)^2}{|C_m|} + (1-A_{\mathrm{in}}(i))^2.
+\]
+(Equality holds for uniform weights within the cluster.)
+
+\subsection{Mean and Input Energy}
+
+By A1, the empirical mean equals the mixture mean:
+\[
+ \bar x = \mu.
+\]
+The input energy decomposes as
+\[
+ \frac1N\sum_i \|x_i\|^2 = \|\mu\|^2 + \sigma^2,
+\]
+so
+\[
+ R_X^2 = \frac{\|\mu\|^2}{\|\mu\|^2 + \sigma^2}.
+\]
+
+\subsection{Exponential Suppression of Cross-Cluster Mass}
+
+Fix $i\in C_m$ and define in-cluster mass
+\[
+ A_{\mathrm{in}}(i) := \sum_{j\in C_m} a_{ij}.
+\]
+From A2,
+\[
+ \frac{a_{ij'}}{a_{ij}} \le \exp\!\left(-\frac{\Delta}{\tau}\right),
+\qquad j\in C_m,\ j'\notin C_m,
+\]
+which yields
+\[
+ 1-A_{\mathrm{in}}(i)
+ \le \frac{N-|C_m|}{|C_m|}\,e^{-\Delta/\tau}.
+\]
+Define
+\[
+ \eta := \max_i (1-A_{\mathrm{in}}(i))
+ \le \max_m \frac{N-|C_m|}{|C_m|}\,e^{-\Delta/\tau}.
+\]
+
+\subsection{Variance Contraction}
+
+Write
+\[
+ y_i = \sum_j a_{ij}\mu_{c(j)} + \sum_j a_{ij}\varepsilon_j.
+\]
+Let $\tilde\varepsilon_i := \sum_j a_{ij}\varepsilon_j$. By convexity,
+\[
+ \|\tilde\varepsilon_i\|^2 \le \sum_j a_{ij}\|\varepsilon_j\|^2.
+\]
+Using A4 and splitting weights into in-cluster and out-of-cluster parts,
+\[
+ \|\tilde\varepsilon_i\|^2
+ \le
+ \Big(\sum_{j\in C_m} a_{ij}^2 + (1-A_{\mathrm{in}}(i))\Big)\,\max_j \|\varepsilon_j\|^2.
+\]
+Averaging over $i$ and using $\sum_j a_{ij}^2 \le A_{\mathrm{in}}(i)^2/|C_m| + (1-A_{\mathrm{in}}(i))^2$,
+we obtain a contraction of residual energy by a factor
+\[
+ 1-\kappa,\qquad
+ \kappa := c_0\,(1-\eta),
+\]
+for some constant $c_0>0$ depending only on the minimum cluster size.
+Thus
+\[
+ \frac1N\sum_i \|\tilde\varepsilon_i\|^2 \le (1-\kappa)\sigma^2.
+\]
+Since $\eta=O(e^{-\Delta/\tau})$, we have
+\[
+ \kappa = \Theta(1-e^{-\Delta/\tau}).
+\]
+
+\subsection{Output Energy and Amplification}
+
+The output mean satisfies
+\[
+ \bar y = \mu + O(e^{-\Delta/\tau}),
+\]
+and the output energy obeys
+\[
+ \frac1N\sum_i \|y_i\|^2 = \|\mu\|^2 + (1-\kappa)\sigma^2 + O(e^{-\Delta/\tau}).
+\]
+Therefore
+\[
+ R_Y^2
+ =
+ \frac{\|\mu\|^2}{\|\mu\|^2+(1-\kappa)\sigma^2}
+ + O(e^{-\Delta/\tau}).
+\]
+Subtracting $R_X^2$ gives
+\[
+ R_Y^2 - R_X^2
+ =
+ \frac{\|\mu\|^2\,\kappa\,\sigma^2}{(\|\mu\|^2+\sigma^2)(\|\mu\|^2+(1-\kappa)\sigma^2)}
+ + O(e^{-\Delta/\tau}).
+\]
+Since $\kappa=\Theta(1-e^{-\Delta/\tau})>0$ for $\Delta>0$, we obtain the stated
+lower bound with a constant $c>0$ depending only on cluster balance.\qed

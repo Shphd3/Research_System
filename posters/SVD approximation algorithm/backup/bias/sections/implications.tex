@@ -1,0 +1,142 @@
+\section{Practical Implications: Bias as a Controllable Source of Instability}
+\label{sec:implications}
+
+The preceding sections established three key empirical and theoretical facts:
+
+\begin{enumerate}
+    \item Activation bias is statistically significant and structurally coherent,
+    while gradient output mean remains at noise level.
+    \item Extreme activation outliers are overwhelmingly dominated by the bias
+    component rather than spike variance or tail variability.
+    \item Bias inflates both blockwise quantization scale and adaptive optimizer
+    second-moment statistics.
+\end{enumerate}
+
+These observations allow us to reinterpret several long-standing training
+pathologies through a unified lens: many instabilities attributed to spectral
+anisotropy are in fact primarily driven by activation bias.
+
+We now discuss the implications for quantization and optimization.
+
+\subsection{Quantization: Bias as Dynamic-Range Inflation}
+
+Low-bit quantization operates under a fundamental constraint: each block of
+features shares a common scaling factor. The effective resolution allocated to
+each element is therefore inversely proportional to the blockwise scale.
+
+From Appendix~\ref{app:quant_bias}, if a block contains coordinates with large
+$|\mu_j|$, the scale concentrates around
+\[
+\alpha(x;B) \approx \max_{j \in B} |\mu_j|,
+\]
+rather than the intrinsic stochastic variability level
+$O(\sigma \sqrt{\log b})$.
+
+This inflation has two consequences:
+
+\begin{itemize}
+    \item The quantization step size increases proportionally.
+    \item The long-tail semantic component $s_j$ is compressed relative to
+    its intrinsic scale.
+\end{itemize}
+
+Empirically, mean removal reduces blockwise $p99.9$ magnitudes by
+approximately a factor of two in early layers, consistent with the
+high-probability bounds derived in Appendix~\ref{app:quant_bias}.
+The resulting reduction in quantization step size directly improves effective
+tail signal-to-noise ratio (SNR).
+
+Importantly, this mechanism does not require full spike whitening.
+Bias removal alone addresses the dominant source of dynamic-range inflation.
+Spike whitening may provide further improvements when spike variance remains
+substantial, but it is not necessary to eliminate the principal outlier driver.
+
+\subsection{Optimization: Bias as Second-Moment Inflation}
+
+Adaptive optimizers such as Adam maintain elementwise second-moment estimates
+\[
+v_{ab} = \mathbb{E}[g_{ab}^2],
+\qquad
+g_{ab} = \delta_a x_b.
+\]
+
+Appendix~\ref{app:gradient_proof} shows that
+\[
+v_{ab}
+=
+\mu_b^2 \mathbb{E}[\delta_a^2]
++
+\mathbb{E}[\delta_a^2 s_b^2],
+\]
+under mild independence assumptions.
+
+When $\mu_b^2$ dominates $\mathbb{E}[s_b^2]$, the second moment becomes
+bias-driven. This inflates $v_{ab}$ for specific coordinates, thereby
+suppressing their effective learning rates via the update
+\[
+\Delta W_{ab} \propto \frac{g_{ab}}{\sqrt{v_{ab}}}.
+\]
+
+Empirically, mean removal reduces the extreme tail of $v$ by factors ranging
+from $4\times$ to nearly $50\times$ in early layers, while leaving median
+values largely unchanged. This confirms that bias primarily affects a small
+subset of coordinates that nonetheless dominate adaptive learning-rate
+suppression.
+
+Unlike gradient-output mean (which is statistically noise-level), activation
+bias propagates multiplicatively through the outer-product structure
+$g_i = \delta_i x_i^\top$ and therefore directly controls second-moment
+inflation.
+
+\subsection{When Is Mean Removal Sufficient?}
+
+The experiments suggest a layered interpretation:
+
+\begin{itemize}
+    \item \textbf{Early layers / early training:} bias dominates both
+    outliers and second-moment inflation.
+    Mean removal alone resolves most instability.
+    
+    \item \textbf{Later layers / late training:} spike variance persists even
+    after bias removal.
+    Additional spectral whitening may further flatten the spectrum.
+\end{itemize}
+
+Thus, bias removal can be viewed as the minimal structural correction.
+Spike whitening becomes an incremental refinement rather than the primary fix.
+
+\subsection{Relation to Existing Spectral Methods}
+
+Full SVD-based spike removal eliminates both bias and spike variance.
+Our analysis clarifies that a substantial portion of the benefit previously
+attributed to spike suppression may arise from removing the coherent mean
+component.
+
+This observation has two practical consequences:
+
+\begin{enumerate}
+    \item In low-bit training, mean removal can replace expensive SVD
+    decompositions when bias dominates dynamic-range inflation.
+    
+    \item In optimizer design, centering activations may mitigate second-moment
+    inflation without requiring explicit spike tracking.
+\end{enumerate}
+
+These implications motivate a re-examination of spectral regularization
+techniques: in many regimes, controlling bias may be sufficient to stabilize
+training.
+
+\subsection{Summary}
+
+The empirical and theoretical analyses converge on a consistent picture:
+
+\begin{itemize}
+    \item Bias is the primary driver of extreme activation outliers.
+    \item Bias propagates multiplicatively into gradient second moments.
+    \item Removing bias reduces both quantization instability and optimizer
+    suppression.
+    \item Spike variance remains but plays a secondary role relative to bias.
+\end{itemize}
+
+These results reposition mean removal from a heuristic preprocessing step to a
+structurally justified intervention grounded in activation geometry.

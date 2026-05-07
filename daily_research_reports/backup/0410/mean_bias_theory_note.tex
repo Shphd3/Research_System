@@ -1,0 +1,224 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,hyperref}
+\title{A Stylized Theory for Mean-Dominated Routing and Centered Expert Specialization}
+\author{}
+\date{}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\section{Setup}
+
+We study a stylized top-$1$ router with $E$ experts. Each token belongs to a latent class $y\in\{1,\dots,E\}$ indicating the expert that should ideally process it. The routed representation is decomposed as
+\begin{equation}
+    x = \mu + \nu_y + \varepsilon,
+\end{equation}
+where $\mu\in\mathbb R^d$ is a shared mean component, $\nu_y\in\mathbb R^d$ is an expert-discriminative residual, and $\varepsilon\sim\mathcal N(0,\sigma^2 I_d)$ is isotropic noise.
+
+Let $\bar\mu = \mu / \|\mu\|$ and assume that the discriminative residual lives in the orthogonal complement of the mean direction.
+\begin{assumption}[Residual orthogonality]
+For every class $y$, we have $\bar\mu^\top \nu_y = 0$.
+\end{assumption}
+This assumption is not essential for the main message, but it makes the role of the common mean component transparent.
+
+The router score for expert $e$ is linear:
+\begin{equation}
+    s_e(x) = w_e^\top x,
+\end{equation}
+and the selected expert is $\hat e(x)=\arg\max_e s_e(x)$. We decompose each row vector into a mean-sensitive part and a residual-sensitive part:
+\begin{equation}
+    w_e = \alpha_e \bar\mu + \beta u_e,
+\end{equation}
+where $u_e\in\bar\mu^\perp$, $\|u_e\|=1$, $\alpha_e\in\mathbb R$, and $\beta>0$ is a residual-sensitivity scale shared for simplicity.
+
+The centered router uses
+\begin{equation}
+    x_c = x-\mu = \nu_y + \varepsilon,
+\end{equation}
+with scores $s^c_e(x)=w_e^\top x_c$ and selected expert $\hat e_c(x)=\arg\max_e s^c_e(x)$.
+
+We now formalize two questions:
+\begin{enumerate}
+    \item When does the uncentered router collapse onto a mean-favored expert, independent of class $y$?
+    \item Under the same noise level $\sigma$, when does centering restore class-dependent expert separation?
+\end{enumerate}
+
+\section{Uncentered routing can collapse under mean domination}
+
+Let $e^\star\in\arg\max_e \alpha_e$ be any expert whose router row is most aligned with the mean direction, and define
+\begin{equation}
+    b_j := (\alpha_{e^\star}-\alpha_j)\,\|\mu\|,
+    \qquad j\neq e^\star.
+\end{equation}
+The quantity $b_j$ is the deterministic mean-induced advantage of expert $e^\star$ over expert $j$.
+
+For any pair of experts $i,j$, define the score-difference noise scale
+\begin{equation}
+    \tau_{ij} := \sigma \sqrt{(\alpha_i-\alpha_j)^2 + \beta^2\|u_i-u_j\|^2}.
+\end{equation}
+Because $\bar\mu\perp u_i,u_j$, the Gaussian fluctuation in $s_i(x)-s_j(x)$ has variance exactly $\tau_{ij}^2$.
+
+\begin{proposition}[Mean domination induces routing collapse]
+Fix a class $y$ and let $0<\delta<1$. If
+\begin{equation}
+    \min_{j\neq e^\star} b_j
+    >
+    \beta \max_{j\neq e^\star}\left| (u_{e^\star}-u_j)^\top \nu_y \right|
+    +
+    \sqrt{2\log\frac{E-1}{\delta}}\,\max_{j\neq e^\star}\tau_{e^\star j},
+    \label{eq:collapse_condition}
+\end{equation}
+then
+\begin{equation}
+    \mathbb P\bigl(\hat e(x)=e^\star\mid y\bigr) \ge 1-\delta.
+\end{equation}
+If \eqref{eq:collapse_condition} holds for every class $y$, then the router is non-specialized in the sense that it selects the same expert $e^\star$ for all classes with probability at least $1-\delta$ on each class.
+\end{proposition}
+
+\begin{proof}
+For any $j\neq e^\star$,
+\begin{align}
+    s_{e^\star}(x)-s_j(x)
+    &= (w_{e^\star}-w_j)^\top (\mu+\nu_y+\varepsilon) \\
+    &= b_j + \beta (u_{e^\star}-u_j)^\top \nu_y + \xi_j,
+\end{align}
+where $\xi_j\sim\mathcal N(0,\tau_{e^\star j}^2)$. By the Gaussian tail bound,
+\begin{equation}
+    \mathbb P\left(\xi_j\le -\sqrt{2\log\frac{E-1}{\delta}}\,\tau_{e^\star j}\right)
+    \le \frac{\delta}{E-1}.
+\end{equation}
+Under condition \eqref{eq:collapse_condition}, with probability at least $1-\delta/(E-1)$ we have
+\begin{equation}
+    s_{e^\star}(x)-s_j(x) > 0.
+\end{equation}
+Applying a union bound over all $j\neq e^\star$ yields
+\begin{equation}
+    \mathbb P\bigl(s_{e^\star}(x)>s_j(x)\;\forall j\neq e^\star\mid y\bigr)\ge 1-\delta,
+\end{equation}
+which is exactly the event $\hat e(x)=e^\star$.
+\end{proof}
+
+\paragraph{Interpretation.}
+The proposition makes the mean-dominated regime explicit. If the spread in mean alignment, measured by $b_j$, dominates both the residual class signal and the noise, then the router picks the same expert for every class. In other words, the common-mode term can destroy specialization even though class-dependent information is present in $\nu_y$.
+
+\section{Centering enlarges the specialization regime}
+
+Define the residual margin of class $y$ by
+\begin{equation}
+    m_y := \min_{j\neq y} (u_y-u_j)^\top \nu_y.
+\end{equation}
+The condition $m_y>0$ states that, in the residual subspace, class $y$ is best aligned with its intended expert $y$.
+
+\begin{theorem}[Centering restores class-dependent routing under the same noise]
+Fix a class $y$ and let $0<\delta<1$. If
+\begin{equation}
+    \beta m_y
+    >
+    \sqrt{2\log\frac{E-1}{\delta}}\,
+    \max_{j\neq y}\tau_{yj},
+    \label{eq:center_condition}
+\end{equation}
+then the centered router satisfies
+\begin{equation}
+    \mathbb P\bigl(\hat e_c(x)=y\mid y\bigr) \ge 1-\delta.
+\end{equation}
+Moreover, there exist regimes with the same noise level $\sigma$ in which the uncentered router collapses as in Proposition~1, while the centered router succeeds as in \eqref{eq:center_condition}.
+\end{theorem}
+
+\begin{proof}
+For any $j\neq y$,
+\begin{align}
+    s^c_y(x)-s^c_j(x)
+    &= (w_y-w_j)^\top (\nu_y+\varepsilon) \\
+    &= \beta (u_y-u_j)^\top \nu_y + \zeta_j,
+\end{align}
+where $\zeta_j\sim\mathcal N(0,\tau_{yj}^2)$. By the same Gaussian tail bound as above,
+\begin{equation}
+    \mathbb P\left(\zeta_j\le -\sqrt{2\log\frac{E-1}{\delta}}\,\tau_{yj}\right)
+    \le \frac{\delta}{E-1}.
+\end{equation}
+If \eqref{eq:center_condition} holds, then with probability at least $1-\delta/(E-1)$ we have $s^c_y(x)-s^c_j(x)>0$. A union bound over $j\neq y$ yields
+\begin{equation}
+    \mathbb P\bigl(\hat e_c(x)=y\mid y\bigr) \ge 1-\delta.
+\end{equation}
+For the second claim, choose parameters such that \eqref{eq:center_condition} holds, and then increase $\|\mu\|$ until \eqref{eq:collapse_condition} also holds for some $e^\star\neq y$. The centered condition is unchanged because it does not depend on $\|\mu\|$, while the uncentered condition becomes easier to satisfy as $\|\mu\|$ grows.
+\end{proof}
+
+\paragraph{Interpretation.}
+The theorem captures the statement you want in the paper: \emph{under the same noise level}, centering removes the term whose strength scales with $\|\mu\|$, and therefore enlarges the region in which expert specialization is possible. The key point is not that centering removes all difficulty, but that it removes the deterministic common-mode bias that can otherwise dominate routing competition.
+
+\section{Why the mean-parallel channel should not be discarded}
+
+Centering helps routing, but this does not mean the mean-parallel information is useless. We now show that discarding it from computation can create irreducible error.
+
+Let
+\begin{equation}
+    z := \bar\mu^\top x,
+    \qquad
+    x_c := x-\mu.
+\end{equation}
+Consider any target function $f(x)$ to be approximated by the MoE block.
+
+\begin{proposition}[Dropping the mean channel causes irreducible loss whenever the target depends on it]
+Assume $f(x)$ has non-trivial dependence on $z$ beyond what is already contained in $x_c$, in the sense that
+\begin{equation}
+    \mathbb E\bigl[\mathrm{Var}(f(x)\mid x_c)\bigr] > 0.
+\end{equation}
+Then every predictor $g(x_c)$ that discards the mean-parallel channel satisfies
+\begin{equation}
+    \mathbb E\bigl[(f(x)-g(x_c))^2\bigr]
+    \ge
+    \mathbb E\bigl[\mathrm{Var}(f(x)\mid x_c)\bigr]
+    > 0.
+\end{equation}
+The lower bound is attained by $g^\star(x_c)=\mathbb E[f(x)\mid x_c]$.
+\end{proposition}
+
+\begin{proof}
+This is the standard orthogonal decomposition for conditional expectation:
+\begin{align}
+    \mathbb E\bigl[(f-g)^2\bigr]
+    &= \mathbb E\bigl[(f-\mathbb E[f\mid x_c])^2\bigr]
+      + \mathbb E\bigl[(\mathbb E[f\mid x_c]-g)^2\bigr] \\
+    &\ge \mathbb E\bigl[(f-\mathbb E[f\mid x_c])^2\bigr]
+     = \mathbb E\bigl[\mathrm{Var}(f\mid x_c)\bigr].
+\end{align}
+If the target retains non-trivial information in the mean-parallel variable $z$ after conditioning on $x_c$, then the conditional variance term is strictly positive.
+\end{proof}
+
+\paragraph{Interpretation.}
+This proposition formalizes a second design principle: the shared/common channel should be \emph{removed from expert competition}, but it should not disappear from computation. A natural architecture-level consequence is to route with the centered residual while preserving the mean-parallel information through a shared expert or shared path.
+
+\section{Discussion and extensions}
+
+\begin{remark}[Running means]
+The analysis used a fixed population mean $\mu$ only to keep the notation clean. If the router uses a running estimate $\mu_t$, one can write
+\begin{equation}
+    x-\mu_t = (x-\mu) + (\mu-\mu_t),
+\end{equation}
+and absorb the estimation error $(\mu-\mu_t)$ into the noise term. The same argument then goes through with an additional error contribution controlled by $\|\mu_t-\mu\|$.
+\end{remark}
+
+\begin{remark}[From rank-one mean removal to rank-$r$ common-subspace removal]
+The same logic extends from a single direction $\bar\mu$ to a low-rank common subspace $C$ with projector $P_C$. One replaces $x_c=x-\mu$ by $x_\perp=(I-P_C)x$, replaces the mean-sensitive term $\alpha_e\bar\mu$ by an expert-specific linear form on $P_Cx$, and repeats the same domination argument in the orthogonal complement. This yields a natural bridge from mean removal to rank-$r$ common-subspace removal.
+\end{remark}
+
+\section{Takeaway}
+
+The stylized theory supports three statements that fit the intended paper story:
+\begin{enumerate}
+    \item A strong common mean component can make the router non-specialized by inducing a deterministic advantage for mean-favored experts.
+    \item Under the same noise level, centering removes this bias and enlarges the regime in which class-dependent expert separation is possible.
+    \item The removed mean-parallel channel should not be discarded from computation; if the target depends on it, dropping it creates irreducible error.
+\end{enumerate}
+
+These three statements provide the mathematical backbone for a mean-aware routing design: center the competitive routing signal, preserve the common channel, and reserve expert competition for the residual component that is actually capable of supporting specialization.
+
+\end{document}

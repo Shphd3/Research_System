@@ -1,0 +1,20 @@
+\section{Analysis: Mean-Dominated Anisotropy in Large Language Models}
+
+Prior work established that large language model training
+exhibits persistent anisotropy across activations, gradients, and parameters.
+In this section, we dissect this phenomenon empirically and theoretically.
+Our goal is to answer three precise questions:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Does a coherent mean bias exist across layers and training stages?
+    \item Does this mean bias dominate activation outliers?
+    \item Does this mean bias dominate optimizer second-moment statistics?
+\end{enumerate}
+
+We show that the answer to all three is affirmative.
+Together, these results establish mean bias as the first-order structural
+
+
+\input{./sections/a1}
+\input{./sections/a2}
+\input{./sections/a3}

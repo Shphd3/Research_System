@@ -1,0 +1,181 @@
+\section{Pilot Study I: Bias-Aware Low-Bit Training}
+\label{sec:lowbit_pilot}
+
+Low-bit training amplifies the pathological effects of anisotropy.
+Under blockwise quantization, scale is determined by extreme elementwise values.
+As shown in Section~\ref{subsec:mean_outliers},
+these extremes are predominantly mean-dominated.
+This suggests that addressing mean bias at its source may substitute
+for heavier spectral corrections.
+
+\subsection{Hypothesis}
+
+We test the following hypothesis:
+
+\begin{quote}
+\emph{If mean bias is the dominant driver of outliers,
+then source-level mean removal should recover most of the stability
+benefits attributed to SVD-based spike suppression methods such as Metis.}
+\end{quote}
+
+\subsection{Method}
+
+We propose a simple \emph{mean--residual quantization} method, which we call
+\emph{Averis} (Averaging-Induced Residual Splitting).
+The method targets a concrete empirical observation: for large activation-like matrices in Transformer
+training, extreme values (which dominate blockwise quantization scales) are largely driven by a
+mean-dominated component that is coherent across tokens.
+Accordingly, we explicitly split out a column-mean component via averaging and quantize it separately
+from the remaining residual, using only reduction operations and standard quantization kernels.
+
+\paragraph{Notation and quantization operator.}
+Let $\mathcal{Q}_b(\cdot)$ denote a $b$-bit quantization operator (e.g., blockwise FP4) applied to a matrix.
+We write $\bar{\mathbf{M}}\triangleq \mathcal{Q}_b(\mathbf{M})$ for the quantized version of any matrix
+$\mathbf{M}$.
+Throughout, $\mathbf{1}$ denotes an all-ones vector with the appropriate dimension.
+
+\paragraph{Forward pass: activation mean--residual splitting.}
+Let $\mathbf{W}\in\mathbb{R}^{m\times n}$ be a weight matrix and let
+$\mathcal{X}\in\mathbb{R}^{b\times s\times m}$ be an input activation tensor, where $b$ is batch size,
+$s$ is sequence length, and $m$ is hidden dimension.
+As usual, we reshape $\mathcal{X}$ into a matrix $\mathbf{X}\in\mathbb{R}^{l\times m}$ with $l=b\cdot s$
+and compute the GeMM output
+\[
+\mathbf{Y}=\mathbf{X}\mathbf{W}\in\mathbb{R}^{l\times n}.
+\]
+
+We define the \emph{activation column-mean vector} $\mu_{\mathbf{X}}\in\mathbb{R}^{m}$ and the associated
+\emph{mean matrix} $\mathbf{M}_{\mathbf{X}}\in\mathbb{R}^{l\times m}$ by
+\[
+\mu_{\mathbf{X}} \triangleq \frac{1}{l}\mathbf{1}^{\top}\mathbf{X},
+\qquad
+\mathbf{M}_{\mathbf{X}} \triangleq \mathbf{1}\,\mu_{\mathbf{X}}.
+\]
+The residual is
+\[
+\mathbf{X}_{\mathrm{R}} \triangleq \mathbf{X}-\mathbf{M}_{\mathbf{X}}.
+\]
+We then quantize the two parts independently:
+\[
+\bar{\mathbf{M}}_{\mathbf{X}}=\mathcal{Q}_b(\mathbf{M}_{\mathbf{X}}),
+\qquad
+\bar{\mathbf{X}}_{\mathrm{R}}=\mathcal{Q}_b(\mathbf{X}_{\mathrm{R}}),
+\qquad
+\bar{\mathbf{W}}=\mathcal{Q}_b(\mathbf{W}).
+\]
+The quantized forward computation is
+\begin{equation}
+\label{eq:averis_forward}
+\hat{\mathbf{Y}}
+\;=\;
+(\bar{\mathbf{M}}_{\mathbf{X}}+\bar{\mathbf{X}}_{\mathrm{R}})\,\bar{\mathbf{W}}.
+\end{equation}
+In practice, one may compute $\mu_{\mathbf{X}}$ first, subtract it from $\mathbf{X}$ on the fly to form
+$\mathbf{X}_{\mathrm{R}}$, and never explicitly materialize $\mathbf{M}_{\mathbf{X}}$.
+
+\paragraph{Backward pass: output-gradient mean--residual splitting.}
+Let $\mathbf{D}\in\mathbb{R}^{l\times n}$ denote the matrix of loss derivatives with respect to
+the GeMM output $\mathbf{Y}$, i.e.,
+\[
+\mathbf{D}\triangleq \frac{\partial \mathcal{L}}{\partial \mathbf{Y}}
+\quad (\text{after reshaping}).
+\]
+We define the \emph{output-gradient column-mean vector} $\mu_{\mathbf{D}}\in\mathbb{R}^{n}$ and mean matrix
+$\mathbf{M}_{\mathbf{D}}\in\mathbb{R}^{l\times n}$ by
+\[
+\mu_{\mathbf{D}} \triangleq \frac{1}{l}\mathbf{1}^{\top}\mathbf{D},
+\qquad
+\mathbf{M}_{\mathbf{D}} \triangleq \mathbf{1}\,\mu_{\mathbf{D}},
+\qquad
+\mathbf{D}_{\mathrm{R}} \triangleq \mathbf{D}-\mathbf{M}_{\mathbf{D}}.
+\]
+Quantize the components independently:
+\[
+\bar{\mathbf{M}}_{\mathbf{D}}=\mathcal{Q}_b(\mathbf{M}_{\mathbf{D}}),
+\qquad
+\bar{\mathbf{D}}_{\mathrm{R}}=\mathcal{Q}_b(\mathbf{D}_{\mathrm{R}}).
+\]
+Then the key GeMMs in backpropagation are evaluated as
+\begin{equation}
+\label{eq:averis_backward}
+\widehat{\frac{\partial \mathcal{L}}{\partial \mathbf{X}}}
+\;=\;
+(\bar{\mathbf{M}}_{\mathbf{D}}+\bar{\mathbf{D}}_{\mathrm{R}})\,\bar{\mathbf{W}}^{\top},
+\qquad
+\widehat{\frac{\partial \mathcal{L}}{\partial \mathbf{W}}}
+\;=\;
+(\bar{\mathbf{M}}_{\mathbf{X}}+\bar{\mathbf{X}}_{\mathrm{R}})^{\top}\,(\bar{\mathbf{M}}_{\mathbf{D}}+\bar{\mathbf{D}}_{\mathrm{R}}).
+\end{equation}
+
+\paragraph{Computational profile.}
+Averis requires only computing two mean vectors ($\mu_{\mathbf{X}}$ and $\mu_{\mathbf{D}}$) and applying
+two subtractions per step, in addition to the baseline quantized GeMMs.
+No spectral decomposition or iterative orthogonalization is involved, and all additional operations are
+GPU-friendly reductions and elementwise kernels.
+
+\subsection{Experimental Setup}
+
+\label{experiment:setup}
+\textbf{Models and Datasets.}
+We conduct experiments on GPT-2 (1.1B).
+For pretraining, we use the DCLM dataset and train the model on 100B tokens.
+The raw data are segmented to split long documents and concatenate short ones, filtered to remove non-Unicode and non-English content.
+
+\textbf{FP4 Training.}
+We evaluate the efficacy of Averis under FP4 quantization against both FP4 and BF16 baselines.
+All FP4 training in this work adopts W4A4G4 quantization, where weights, activations, and gradients are represented in the E2M1 NVFP4 format.
+Stochastic rounding (SR) is applied by default in all FP4 experiments, as it mitigates quantization bias and is orthogonal to Averis.
+
+\textbf{Baselines.}
+We compare the following settings:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item \textbf{BF16}: full-precision baseline.
+\item \textbf{Vanilla FP4}: direct NVFP4 quantization (W4A4G4) without structural splitting.
+\item \textbf{Averis FP4}: the proposed mean--residual splitting applied to activations and output gradients, with independent quantization of the mean matrices and residuals.
+\end{itemize}
+
+\subsection{Results}
+
+\textbf{Training loss.}
+Figure~\ref{figure:loss-averis} shows the training loss curves of the BF16 baseline, vanilla FP4, and FP4 + Averis.
+Vanilla FP4 exhibits a clear loss gap relative to BF16, whereas Averis consistently narrows this gap throughout training and
+achieves a final loss close to the BF16 baseline.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/1Bloss.png}
+    \caption{Training loss curves for GPT-2 1.1B under BF16, vanilla FP4, and FP4 + Averis.}
+    \label{figure:loss-averis}
+\end{figure}
+
+\textbf{Downstream performance.}
+Table~\ref{table:downstream-task-averis} reports downstream task results for GPT-2 1.1B.
+Direct FP4 quantization degrades performance relative to BF16, while FP4 + Averis recovers most of the gap and, in some
+metrics, matches the BF16 baseline.
+
+\begin{table}[h]
+\caption{Downstream performance on GPT-2 1.1B across different precision settings, reported with task-specific metrics.}
+\vspace{-0.7\baselineskip}
+\centering
+\small
+\resizebox{\textwidth}{!}{
+\tiny
+\begin{tabular}{llccccccccc}
+\toprule
+Model & Method & Loss & ARC-C & ARC-E & BoolQ & LAMBADA & PIQA & RACE & HellaSwag & Avg \\
+\midrule
+GPT-2   & BF16          & 3.09 & \textbf{30.7} & 59.5 & \textbf{60.0} & 35.4 & \textbf{64.9} & 47.3 & 41.1 & 48.4 \\
+(1.1B)  & FP4           & 3.22 & 29.8 & 57.6 & 59.8 & 35.5 & 63.6 & 46.8 & 39.5 & 47.5 \\
+        & FP4 + Averis  & \textbf{3.01} & 30.1 & \textbf{60.0} & 59.5 & \textbf{36.2} & 64.1 & \textbf{48.5} & \textbf{41.9} & \textbf{48.6} \\
+\bottomrule
+\end{tabular}
+}
+\label{table:downstream-task-averis}
+\end{table}
+
+\subsection{Interpretation}
+
+These results indicate that
+low-bit instability is primarily driven by mean-dominated outliers.
+Full spectral suppression is not strictly necessary.
+Source-level bias conditioning recovers most benefits at a fraction of cost.

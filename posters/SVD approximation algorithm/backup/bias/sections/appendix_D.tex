@@ -1,0 +1,48 @@
+\section{Algorithm: Subspace-Aware Whitening via Cholesky QR}
+
+\textbf{Input:}
+\begin{itemize}
+    \item $G \in \mathbb{R}^{d \times B}$: Input batch (gradients or activations), with feature dimension $d$ and batch size $B$.
+    \item $k$: Rank of the spike subspace (typically $k \approx d/100$).
+    \item $\lambda$: Whitening strength scalar (default $1.0$).
+\end{itemize}
+
+\textbf{Output:}
+\begin{itemize}
+    \item $G_{clean} \in \mathbb{R}^{d \times B}$: The whitened matrix with mean bias and anisotropic spikes removed.
+\end{itemize}
+
+\subsection*{Phase 1: Mean Removal (Centering)}
+Remove the Rank-1 common mean shared across all tokens to eliminate the ``common energy'' bias.
+
+\begin{align}
+    \mu &= \frac{1}{B} G \mathbf{1}_B & \text{(Compute mean vector)} \\
+    G_c &= G - \mu \mathbf{1}_B^\top & \text{(Broadcast subtract mean)}
+\end{align}
+
+\subsection*{Phase 2: Randomized Spike Detection (Sketching)}
+Use a random probe matrix to identify the dominant $k$-dimensional subspace (the frequency spike) using a randomized range finder.
+
+\begin{align}
+    \Omega &\sim \mathcal{N}(0, 1)^{B \times k} & \text{(Generate Gaussian random probes)} \\
+    Y &= G_c \Omega & \text{(Sketch the range via Matrix Multiply)}
+\end{align}
+\textit{Note: $Y \in \mathbb{R}^{d \times k}$ captures the dominant directions.}
+
+\subsection*{Phase 3: Cholesky QR Orthogonalization}
+Compute an orthonormal basis $Q$ for the range of $Y$. We use Cholesky QR to maintain hardware efficiency by relying solely on matrix multiplications.
+
+\begin{align}
+    M &= Y^\top Y & \text{(Compute Gram Matrix, result is $k \times k$)} \\
+    R &= \text{Cholesky}(M) & \text{(Decompose such that $M = R^\top R$)} \\
+    Q &= Y R^{-1} & \text{(Solve for $Q$ via triangular solve)}
+\end{align}
+\textit{Note: $Q \in \mathbb{R}^{d \times k}$ is now an orthonormal basis for the spike subspace.}
+
+\subsection*{Phase 4: Whitening (Projection \& Subtraction)}
+Project the centered data onto the discovered spike basis $Q$ and subtract it to whiten the spectrum.
+
+\begin{align}
+    C &= Q^\top G_c & \text{(Compute projection coefficients)} \\
+    G_{clean} &= G_c - \lambda (Q C) & \text{(Subtract reconstruction of the spike)}
+\end{align}

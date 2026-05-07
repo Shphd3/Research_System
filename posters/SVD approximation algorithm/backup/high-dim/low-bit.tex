@@ -1,0 +1,439 @@
+\chapter{Mean-Dominated Quantization Noise and Softmax Amplification}
+\label{ch:softmax_amplification_full}
+
+This chapter explains a concrete and practically important phenomenon in low-bit
+Transformer training: \emph{even when stochastic rounding is unbiased, quantization
+noise can be amplified by softmax and lead to instability}. The central message is
+that the amplification is not mysterious; it follows from a precise causal chain.
+A coherent mean bias in the upstream activations creates extreme elementwise values,
+which in turn \emph{set the quantization scale}. This ``scale hijacking'' compresses
+the long-tail semantic variations into a tiny portion of the quantization grid.
+Stochastic rounding remains unbiased, but the resulting variance becomes large
+\emph{relative to the long-tail signal}. Softmax then propagates this variance through
+a dense Jacobian coupling term and, additionally, converts variance into systematic
+drift through curvature (Hessian) terms.
+
+We develop this argument in a slow, step-by-step manner. At each step we keep track
+of what is (i) an algebraic identity, (ii) an approximation (Taylor expansion), and
+(iii) a modeling assumption (noise model, tail behavior). The point is not to
+``prove softmax is bad,'' but to understand the mechanism well enough to design
+stable low-bit systems.
+
+\section{Preliminaries: what softmax acts on in Transformers}
+
+In attention, softmax is applied to a vector of scores over \emph{positions}.
+Fix a query token index $i$ and let the key sequence length be $n$ (typically $n=L$).
+The pre-softmax scores for query $i$ are
+\begin{equation}
+z \in \mathbb{R}^{n},\qquad
+z_j = \frac{\langle q_i, k_j\rangle}{\sqrt{d}},
+\end{equation}
+and the attention weights are
+\begin{equation}
+y = \mathrm{softmax}(z/\tau)\in\mathbb{R}^n,\qquad
+y_j = \frac{\exp(z_j/\tau)}{\sum_{\ell=1}^{n}\exp(z_\ell/\tau)},
+\end{equation}
+where $\tau>0$ is an effective temperature (explicit or implicit).
+
+\paragraph{Why we study the score vector $z$.}
+Low-bit failures in attention often arise from quantizing the scores (or intermediate
+quantities that determine them). The important point is that the softmax output
+depends sensitively on the \emph{relative} structure of $z$, especially when $y$
+becomes sharp (peaky). Our goal is to understand how quantization noise in $z$
+propagates through softmax.
+
+\paragraph{Checkpoint (critical thinking).}
+Before doing any math, ask: \emph{what controls training stability?} In low-bit
+training, it is rarely the average energy; it is often the \emph{extremes} that set
+scales and dominate variance. This chapter formalizes that intuition for the softmax
+block.
+
+\section*{Why a Small Mean Becomes Dominant in High Dimension}
+
+Before analyzing quantization and softmax, we must first explain a simple but
+crucial geometric fact: in high-dimensional spaces, a coherent mean bias can be
+small in each coordinate yet large in total magnitude.
+
+Let $\mu \in \mathbb{R}^H$ denote the mean vector of an activation (or logit)
+distribution, where $H$ is the hidden dimension (typically $H \ge 1024$).
+Suppose that the mean bias is \emph{coherent}, meaning that it shifts many
+coordinates in a consistent direction.
+If the typical coordinate-wise mean magnitude is $\bar{\mu}$, i.e.,
+$|\mu_j| \approx \bar{\mu}$ for many $j$, then the Euclidean norm satisfies
+
+\begin{equation}
+\|\mu\|_2
+=
+\sqrt{\sum_{j=1}^{H} \mu_j^2}
+\approx
+\sqrt{H}\,\bar{\mu}.
+\label{eq:mu_scaling}
+\end{equation}
+
+This $\sqrt{H}$ factor is the high-dimensional magnifier.
+For example, when $H=4096$, we have $\sqrt{H}=64$.
+Thus a coordinate-wise mean shift as small as $\bar{\mu}=0.01$ produces a global
+mean magnitude $\|\mu\|_2 \approx 0.64$, which is no longer small relative to the
+scale of typical fluctuations.
+
+The contrast with unstructured noise is equally important.
+If $x\in\mathbb{R}^H$ is mean-zero with per-coordinate variance $\sigma^2$,
+then the typical coordinate magnitude is $O(\sigma)$, and the maximum coordinate
+magnitude grows only as $O(\sigma\sqrt{2\log H})$ by standard concentration.
+In other words, coherent bias grows with $\sqrt{H}$, while the largest random
+fluctuation grows only with $\sqrt{\log H}$.
+
+This difference in scaling explains why coherent mean components dominate extreme
+elementwise behavior.
+Even if the mean accounts for only a modest fraction of total variance,
+its coherence across coordinates makes it disproportionately likely to appear in
+the largest entries.
+Since low-bit quantization and adaptive optimizers are controlled by such
+extremes (blockwise maxima and squared magnitudes), mean bias becomes the
+first-order driver of numerical instability.
+
+With this geometric principle in mind, we can now analyze the full causal chain:
+mean-dominated outliers determine the quantization scale, quantization injects
+variance into the long tail, and softmax propagates and amplifies that variance.
+
+\paragraph{A concrete numerical example.}
+To make \eqref{eq:mu_scaling} tangible, consider a typical LLM hidden size
+$H=4096$ (so $\sqrt{H}=64$). Suppose the mean bias is small per coordinate,
+with typical magnitude $\bar{\mu}=0.01$. Then
+\[
+\|\mu\|_2 \approx \sqrt{H}\,\bar{\mu} = 64 \times 0.01 = 0.64.
+\]
+So even though the bias is only $0.01$ in each coordinate, its coherent
+accumulation across thousands of dimensions produces a global shift of order
+$0.64$, which is not negligible.
+
+Now compare this to random mean-zero fluctuations.
+Assume a mean-zero noise vector with per-coordinate standard deviation
+$\sigma=0.1$. A typical coordinate has magnitude on the order of $0.1$, but the
+largest coordinate among $H$ dimensions grows only logarithmically:
+\[
+\max_{1\le j\le H} |x_j|
+\;\approx\;
+\sigma \sqrt{2\log H}
+\;=\;
+0.1 \sqrt{2\log 4096}.
+\]
+Since $\log 4096 \approx 8.32$ (natural log), this gives
+\[
+\max_j |x_j|
+\approx
+0.1 \sqrt{2\times 8.32}
+=
+0.1 \sqrt{16.64}
+\approx
+0.1 \times 4.08
+\approx
+0.41.
+\]
+Thus, in this example, the coherent mean produces a global magnitude
+$\|\mu\|_2 \approx 0.64$, while even the \emph{largest} random coordinate is
+only about $0.41$.
+This illustrates the key high-dimensional contrast:
+coherent bias scales as $\sqrt{H}$, whereas random extremes scale only as
+$\sqrt{\log H}$.
+
+For low-bit quantization, this difference is decisive.
+Blockwise scaling is set by extreme magnitudes, and a coherent mean shifts
+many coordinates in the same direction.
+Even if each coordinate shift is small, the induced global drift is large enough
+to dominate the extreme statistics that control quantization scale and
+second-moment accumulation.
+
+\section{Stage I: scale hijacking --- why the quantizer grid is set by bias}
+
+We model the score vector as
+\begin{equation}
+z = m + r,
+\label{eq:z_m_r_ch1}
+\end{equation}
+where $m$ denotes a coherent component (bias-driven contribution) and $r$ denotes
+the residual semantic structure (spike+tail). The crucial empirical fact established
+earlier is that coherent bias often dominates \emph{elementwise} extremes of upstream
+activations. When these activations are linearly transformed into scores, the same
+pattern can appear in $z$: the extreme values of $z$ can be dominated by $m$.
+
+\subsection{Block quantization and step size}
+
+Consider symmetric $b$-bit uniform quantization applied blockwise. Let $s$ be the
+scale chosen for the block and define the step size
+\begin{equation}
+\Delta = \frac{s}{2^{b-1}-1}.
+\label{eq:delta_def_ch1}
+\end{equation}
+In many implementations, $s$ is chosen as either the maximum magnitude or a high
+percentile of magnitudes within the block. For pedagogy, assume the simplest and
+most extreme choice:
+\begin{equation}
+s = \|z\|_\infty = \max_{1\le j\le n}|z_j|.
+\label{eq:scale_inf}
+\end{equation}
+
+\subsection{Why extremes decide the grid}
+
+Substituting $z=m+r$, the scale satisfies
+\begin{equation}
+\|z\|_\infty = \|m+r\|_\infty \ge \|m\|_\infty - \|r\|_\infty.
+\end{equation}
+If $\|m\|_\infty \gg \|r\|_\infty$, then $\|z\|_\infty$ is essentially set by $\|m\|_\infty$.
+This is already enough to explain the phenomenon at an engineering level.
+
+To connect this to high-dimensional probability, assume the residual entries $r_j$
+are sub-Gaussian with parameter $\sigma^2$, meaning
+\begin{equation}
+\Pr(|r_j|>t)\le 2\exp\!\left(-\frac{c t^2}{\sigma^2}\right)
+\quad\text{for some }c>0.
+\label{eq:subgauss_tail}
+\end{equation}
+Then standard extreme-value scaling gives
+\begin{equation}
+\|r\|_\infty \approx \sigma\sqrt{2\log n}
+\quad\text{with high probability}.
+\label{eq:residual_max_scale}
+\end{equation}
+Therefore, whenever the coherent component satisfies
+\begin{equation}
+\|m\|_\infty \gg \sigma\sqrt{2\log n},
+\label{eq:hijack_condition}
+\end{equation}
+the block scale $s=\|z\|_\infty$ is mean-dominated with high probability.
+We call this phenomenon \emph{scale hijacking}.
+
+\paragraph{Interpretation.}
+Scale hijacking means the quantizer spends its limited codebook to represent the
+coherent component $m$ accurately (because $m$ sets the dynamic range), while the
+residual semantic structure $r$ is forced into the small remaining numerical range.
+
+\paragraph{Checkpoint (critical thinking).}
+Students often assume that ``unbiased noise is harmless.'' This chapter shows that
+the \emph{variance} of unbiased noise is what matters, and the variance is controlled
+by the quantizer step size $\Delta$, which is controlled by \emph{outliers}. If
+outliers are mean-dominated, the quantization grid becomes biased toward representing
+the mean rather than the semantics.
+
+\section{Stage II: variance inflation --- why unbiased rounding still causes trouble}
+
+\subsection{Stochastic rounding as additive noise}
+
+Model stochastic rounding as
+\begin{equation}
+\hat z = z + \varepsilon,
+\qquad
+\mathbb{E}[\varepsilon_j\mid z_j]=0.
+\label{eq:sr_noise_model}
+\end{equation}
+For uniform quantization, the error is bounded by half a step, hence
+\begin{equation}
+\mathrm{Var}(\varepsilon_j\mid z_j)\le \frac{\Delta^2}{4}.
+\label{eq:sr_var_bound}
+\end{equation}
+A common approximation is
+\begin{equation}
+\mathrm{Var}(\varepsilon_j\mid z_j)\approx \frac{\Delta^2}{12},
+\label{eq:sr_var_approx}
+\end{equation}
+which holds if the rounding error is close to uniform within a bin.
+
+\subsection{Tail SNR collapse}
+
+Consider a coordinate $j$ where the semantic residual magnitude satisfies $|r_j|\ll \Delta$.
+Then the quantized residual $\hat r_j=r_j+\varepsilon_j$ is dominated by $\varepsilon_j$,
+and the effective signal-to-noise ratio obeys
+\begin{equation}
+\mathrm{SNR}_j
+\triangleq
+\frac{|r_j|}{\sqrt{\mathrm{Var}(\varepsilon_j)}}
+\lesssim
+\frac{|r_j|}{\Delta}.
+\label{eq:snr_tail}
+\end{equation}
+Under scale hijacking, $\Delta$ is proportional to $s\approx \|m\|_\infty$, so
+\begin{equation}
+\mathrm{SNR}_j \lesssim \frac{|r_j|}{\|m\|_\infty}.
+\label{eq:snr_mean_control}
+\end{equation}
+This is the key point: stochastic rounding is unbiased, but the variance can be
+enormous relative to the long-tail semantic signal.
+
+\paragraph{Interpretation.}
+Mean bias does not need to ``directly break'' learning. It suffices that it forces
+the quantizer step size to be large. Then the quantized tail components become noisy,
+and that noise is fed into softmax.
+
+\section{Stage III: dense coupling amplification --- how softmax spreads and amplifies noise}
+
+Softmax is nonlinear and dense: every output coordinate depends on every input coordinate.
+This is what turns localized variance into global instability.
+
+\subsection{Taylor expansion framework}
+
+Let $y=\mathrm{softmax}(z/\tau)$ and $\hat y=\mathrm{softmax}(\hat z/\tau)$.
+A second-order Taylor expansion yields
+\begin{equation}
+\hat y_i
+=
+y_i
++
+\sum_{j=1}^{n} J_{ij}(z)\,\varepsilon_j
++
+\frac12 \sum_{j=1}^{n}\sum_{k=1}^{n} H_{i,jk}(z)\,\varepsilon_j\varepsilon_k
++
+O(\|\varepsilon\|^3),
+\label{eq:taylor_softmax_ch1}
+\end{equation}
+where $J$ is the Jacobian and $H$ is the Hessian tensor of softmax.
+
+\subsection{Jacobian: first-order variance propagation}
+
+The softmax Jacobian is
+\begin{equation}
+J(z)
+=
+\frac{1}{\tau}\left(\mathrm{diag}(y)-yy^\top\right),
+\qquad
+J_{ij}(z)=\frac{1}{\tau}y_i(\delta_{ij}-y_j).
+\label{eq:softmax_jac_ch1}
+\end{equation}
+To first order, $\Delta y \approx J\varepsilon$, hence
+\begin{equation}
+\mathrm{Cov}(\Delta y)\approx J\,\Sigma_\varepsilon\,J^\top,
+\label{eq:cov_prop_ch1}
+\end{equation}
+where $\Sigma_\varepsilon=\mathrm{Cov}(\varepsilon)$.
+
+A crucial implication is that the covariance is not diagonal even if $\Sigma_\varepsilon$
+is diagonal, because $J$ is dense. This is the \emph{dense coupling} effect.
+
+\subsection{Head-to-tail broadcasting in the peaky regime}
+
+When attention is sharp, one coordinate $h$ dominates: $y_h\approx 1$ and $y_i\ll 1$ for $i\neq h$.
+In this regime, for $i\neq h$ we have
+\begin{equation}
+J_{ih}(z)= -\frac{1}{\tau}y_i y_h \approx -\frac{1}{\tau}y_i.
+\end{equation}
+If $\Sigma_\varepsilon$ is diagonal with entrywise variances $\sigma_j^2$, then
+\begin{equation}
+\mathrm{Var}(\Delta y_i)
+=
+\sum_{j=1}^{n}J_{ij}^2\sigma_j^2
+\approx
+J_{ih}^2\sigma_h^2
+\approx
+\frac{1}{\tau^2}y_i^2\sigma_h^2.
+\label{eq:head_tail_broadcast_ch1}
+\end{equation}
+Thus the variance of the \emph{dominant head coordinate} is broadcast into all tail coordinates.
+If scale hijacking makes $\sigma_h^2$ large, then all tail probabilities inherit that noise.
+
+\paragraph{Interpretation.}
+This is precisely why softmax is dangerous under mean-dominated quantization noise:
+even if only a few coordinates have large quantization variance, softmax spreads it globally.
+
+\subsection{Hessian: second-order systematic drift}
+
+Taking expectation of \eqref{eq:taylor_softmax_ch1} under unbiased noise
+$\mathbb{E}[\varepsilon]=0$ removes the first-order term but leaves the second-order term:
+\begin{equation}
+\mathbb{E}[\hat y_i-y_i]
+\approx
+\frac12 \sum_{j,k} H_{i,jk}(z)\,\Sigma_{\varepsilon,jk}.
+\label{eq:hessian_drift_ch1}
+\end{equation}
+Since $\Sigma_\varepsilon$ scales as $\Delta^2$ and $\Delta$ is mean-controlled under scale hijacking,
+the systematic drift scales quadratically with the mean-dominated scale.
+Thus unbiased rounding can still induce a predictable shift in attention weights.
+
+\section{Conclusion of the Amplification Mechanism}
+
+Putting the pieces together, mean bias produces instability through a fully specified chain.
+Mean-dominated outliers determine the quantization step size $\Delta$ (scale hijacking).
+Large $\Delta$ induces large quantization variance, which disproportionately corrupts long-tail semantic coordinates (variance inflation).
+Softmax then propagates and amplifies this variance through a dense Jacobian coupling term (head-to-tail broadcasting), and additionally converts variance into systematic drift through curvature (Hessian) terms.
+This explains why mean removal is a first-order stabilization mechanism in low-bit attention: it prevents the mean component from setting $\Delta$ in the first place.
+
+
+\chapter{Mitigating Softmax Error Amplification via Mean-Bias Removal}
+\label{ch:softmax_mitigate_mean}
+
+We now derive how mean-bias removal mitigates quantization-induced error
+propagation and amplification through softmax.
+The key principle is simple but often misunderstood:
+softmax itself is translation-invariant, but the quantizer is not.
+Thus mean subtraction does not change the ideal (full-precision) softmax output,
+but it can shrink the quantization step size and therefore suppress both
+Jacobian variance amplification and Hessian-induced drift.
+
+\section{Softmax Invariance and Quantization Non-Invariance}
+
+Softmax satisfies
+\begin{equation}
+\mathrm{softmax}\big((z+c\mathbf{1})/\tau\big)=\mathrm{softmax}(z/\tau)
+\qquad \forall c\in\mathbb{R}.
+\end{equation}
+Therefore, centering logits by subtracting their average
+\begin{equation}
+z_c \triangleq z - \bar z\,\mathbf{1},
+\qquad
+\bar z = \frac{1}{n}\mathbf{1}^\top z,
+\end{equation}
+preserves the exact attention distribution in full precision:
+\begin{equation}
+\mathrm{softmax}(z_c/\tau)=\mathrm{softmax}(z/\tau).
+\end{equation}
+
+Quantization, however, depends on magnitude through the scale $s$ and step size $\Delta$.
+If $z=m+r$ and $s(z)\approx \|m\|_\infty$, then $\Delta$ is mean-controlled.
+After centering, the coherent component is removed, and the scale becomes
+residual-controlled: $s(z_c)\approx \|r\|_\infty$.
+
+\section{Quadratic Suppression of Noise Covariance}
+
+Define the scale reduction factor
+\begin{equation}
+\alpha \triangleq \frac{s(z_c)}{s(z)} \approx \frac{\|r\|_\infty}{\|m\|_\infty}.
+\end{equation}
+Because $\Delta$ scales linearly with $s$,
+quantization variance scales quadratically:
+\begin{equation}
+\Sigma_\varepsilon(z_c) \approx \alpha^2 \Sigma_\varepsilon(z).
+\end{equation}
+
+Thus mean-bias removal suppresses injected quantization noise by $\alpha^2$.
+
+\section{Quadratic Suppression of Jacobian Variance Amplification}
+
+Since $y$ is unchanged in full precision by centering, the Jacobian $J$ is unchanged as well.
+Therefore,
+\begin{equation}
+\mathrm{Cov}(\Delta y\mid z_c)
+\approx
+J\,\Sigma_\varepsilon(z_c)\,J^\top
+\approx
+\alpha^2\,J\,\Sigma_\varepsilon(z)\,J^\top.
+\end{equation}
+Hence Jacobian-propagated variance is reduced by a factor $\alpha^2$.
+
+\section{Quadratic Suppression of Hessian Drift}
+
+Similarly, because the Hessian depends only on $y$, it is unchanged under exact centering.
+Thus,
+\begin{equation}
+\mathbb{E}[\hat y-y\mid z_c]
+\approx
+\frac12 \sum_{j,k} H_{i,jk}(z)\,\Sigma_{\varepsilon,jk}(z_c)
+\approx
+\alpha^2\,\mathbb{E}[\hat y-y\mid z].
+\end{equation}
+Therefore mean-bias removal suppresses curvature-induced drift by the same quadratic factor.
+
+\section{Takeaway}
+
+Mean subtraction does not alter the ideal attention distribution,
+but it prevents mean-dominated outliers from hijacking the quantization scale.
+By shrinking $\Delta$, it reduces injected variance quadratically,
+thereby suppressing both Jacobian variance broadcasting and Hessian drift.
+This is the fundamental reason mean removal is a first-order stabilizer for low-bit attention.

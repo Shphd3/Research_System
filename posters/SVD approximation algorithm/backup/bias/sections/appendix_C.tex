@@ -1,0 +1,208 @@
+\section{Bias-Driven Dynamic-Range Inflation in Block Quantization}
+\label{app:quant_bias}
+
+This appendix formalizes how activation bias inflates blockwise quantization
+scales and thereby degrades the effective resolution available to long-tail
+components.
+
+\subsection{Setup: block quantization model}
+
+Consider a vector $x\in\mathbb{R}^H$ that will be quantized using blockwise
+scaling.
+Let $B\subset\{1,\dots,H\}$ denote a block of coordinates with $|B|=b$.
+A standard block quantizer chooses a scale proportional to
+\begin{equation}
+\label{eq:block_scale_max}
+\alpha(x;B) \triangleq \max_{j\in B} |x_j|.
+\end{equation}
+The quantization step size is then
+\[
+\Delta(x;B) = \alpha(x;B) / Q,
+\]
+where $Q$ is the maximum representable integer level (e.g.\ $Q=7$ for signed
+4-bit symmetric quantization).
+
+We study how $\alpha(x;B)$ behaves under the decomposition
+\begin{equation}
+\label{eq:x_bias_noise}
+x_j = \mu_j + s_j,
+\qquad
+\mu\in\mathbb{R}^H \text{ deterministic},
+\qquad
+\mathbb{E}[s_j]=0.
+\end{equation}
+
+\subsection{Assumptions}
+
+\begin{assumption}[Sub-Gaussian centered variation]
+\label{assump:subg_C}
+For each $j$, the centered noise $s_j$ is sub-Gaussian with parameter $\sigma^2$:
+\[
+\mathbb{P}(|s_j|\ge t)\le 2\exp\!\left(-\frac{t^2}{2\sigma^2}\right).
+\]
+The $s_j$ are independent across coordinates within a block.
+\end{assumption}
+
+The independence assumption is used only to obtain clean max bounds; weaker
+dependence conditions yield similar results with different constants.
+
+\subsection{Block scale with bias}
+
+Define
+\[
+m_B \triangleq \max_{j\in B} |\mu_j|.
+\]
+
+\begin{lemma}[Upper bound]
+\label{lem:block_upper}
+For any $t\ge 0$, with probability at least $1-2b\exp(-t^2/(2\sigma^2))$,
+\[
+\alpha(x;B) \le m_B + t.
+\]
+\end{lemma}
+
+\begin{proof}
+For any $j\in B$, $|x_j| \le |\mu_j| + |s_j|$.
+Hence
+\[
+\max_{j\in B}|x_j|
+\le
+\max_{j\in B}|\mu_j| + \max_{j\in B}|s_j|
+=
+m_B + \max_{j\in B}|s_j|.
+\]
+By a union bound,
+\[
+\mathbb{P}\left(\max_{j\in B}|s_j|\ge t\right)
+\le
+\sum_{j\in B}\mathbb{P}(|s_j|\ge t)
+\le
+2b\exp\!\left(-\frac{t^2}{2\sigma^2}\right).
+\]
+\end{proof}
+
+\begin{lemma}[Lower bound]
+\label{lem:block_lower}
+For any $t\ge 0$, with probability at least $1-2\exp(-t^2/(2\sigma^2))$,
+\[
+\alpha(x;B) \ge m_B - t.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $j^\star\in B$ achieve $|\mu_{j^\star}|=m_B$.
+Then
+\[
+\alpha(x;B)=\max_{j\in B}|x_j|\ge |x_{j^\star}|
+\ge |\mu_{j^\star}| - |s_{j^\star}|
+= m_B - |s_{j^\star}|.
+\]
+Thus
+\[
+\mathbb{P}\big(\alpha(x;B)\le m_B - t\big)
+\le
+\mathbb{P}(|s_{j^\star}|\ge t)
+\le
+2\exp\!\left(-\frac{t^2}{2\sigma^2}\right).
+\]
+\end{proof}
+
+\paragraph{Consequence.}
+Combining Lemmas~\ref{lem:block_upper} and \ref{lem:block_lower} shows that
+block scale concentrates around $m_B$ whenever $m_B \gg \sigma\sqrt{\log b}$.
+
+\subsection{Block scale without bias (mean removal)}
+
+After mean removal, the centered vector is $x'_j = s_j$ and the block scale is
+\[
+\alpha(x';B) = \max_{j\in B}|s_j|.
+\]
+
+\begin{lemma}[Centered max bound]
+\label{lem:centered_max}
+For any $\delta\in(0,1)$, with probability at least $1-\delta$,
+\[
+\alpha(x';B) \le \sigma \sqrt{2\log(2b/\delta)}.
+\]
+\end{lemma}
+
+\begin{proof}
+Set $t=\sigma\sqrt{2\log(2b/\delta)}$ in Lemma~\ref{lem:block_upper} with $m_B=0$:
+\[
+\mathbb{P}\!\left(\max_{j\in B}|s_j|\ge t\right)
+\le 2b\exp\!\left(-\frac{t^2}{2\sigma^2}\right)
+= 2b\exp\!\left(-\log(2b/\delta)\right)=\delta.
+\]
+\end{proof}
+
+\subsection{Dynamic-range inflation factor}
+
+The ratio of block scales with and without bias is
+\[
+\frac{\alpha(x;B)}{\alpha(x';B)}.
+\]
+
+\begin{theorem}[Bias-driven dynamic-range inflation]
+\label{thm:range_inflation}
+Fix $\delta\in(0,1)$.
+Under Assumption~\ref{assump:subg_C}, with probability at least $1-2\delta$,
+\[
+\frac{\alpha(x;B)}{\alpha(x';B)}
+\ge
+\frac{m_B - \sigma\sqrt{2\log(2/\delta)}}{\sigma\sqrt{2\log(2b/\delta)}},
+\]
+and
+\[
+\frac{\alpha(x;B)}{\alpha(x';B)}
+\le
+\frac{m_B + \sigma\sqrt{2\log(2b/\delta)}}{\sigma\sqrt{2\log(2b/\delta)}}.
+\]
+In particular, if $m_B \gg \sigma\sqrt{\log b}$, then
+\[
+\alpha(x;B) \approx m_B
+\qquad\text{while}\qquad
+\alpha(x';B) = O(\sigma\sqrt{\log b}),
+\]
+so the block scale is inflated by a factor on the order of $m_B / (\sigma\sqrt{\log b})$.
+\end{theorem}
+
+\begin{proof}
+The upper bound follows by combining Lemma~\ref{lem:block_upper} (with probability
+$1-\delta$) and Lemma~\ref{lem:centered_max} (with probability $1-\delta$).
+The lower bound follows by Lemma~\ref{lem:block_lower} and Lemma~\ref{lem:centered_max}.
+A union bound gives total probability at least $1-2\delta$.
+\end{proof}
+
+\subsection{Implication for quantization resolution and tail SNR}
+
+Block quantization step size satisfies
+\[
+\Delta(x;B) = \alpha(x;B)/Q.
+\]
+Thus Theorem~\ref{thm:range_inflation} implies that bias increases the quantization
+step size multiplicatively in blocks containing large-mean coordinates.
+This reduces effective resolution for coordinates whose magnitude is governed by
+centered variation $s_j$, i.e., the long-tail semantic component.
+
+A crude but informative proxy for tail signal-to-noise ratio (SNR) is
+\[
+\mathrm{SNR}_{\text{tail}} \propto \frac{\mathbb{E}[s_j^2]}{\Delta(x;B)^2},
+\]
+which decreases quadratically with block scale.
+Therefore, bias-driven inflation of $\alpha(x;B)$ directly suppresses tail SNR.
+
+\paragraph{Remark (percentile-based scaling).}
+In practice, scales are often set by a high percentile (e.g.\ $p99.9$) rather than
+the maximum.
+The same phenomenon holds: when the mean dominates the upper quantiles of $|x_j|$,
+percentile-based scales concentrate around $m_B$ rather than the noise level.
+Replacing the max bounds above with sub-Gaussian quantile bounds yields analogous
+conclusions.
+
+\paragraph{Summary.}
+Bias inflates blockwise quantization scales whenever blocks contain coordinates
+with large $|\mu_j|$, compressing the resolution allocated to tail variability.
+Mean removal eliminates this inflation and restores block scales to the
+noise-controlled regime $O(\sigma\sqrt{\log b})$.
+This formalizes the empirical dynamic-range reductions observed in
+Section~2.4C.

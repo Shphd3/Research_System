@@ -1,0 +1,286 @@
+\chapter{Experimental Investigation of Mean Bias and Low-Bit Softmax Stability}
+\label{chap:fp4_softmax_report}
+
+\section{Problem Statement}
+
+We investigate the interaction between activation anisotropy, mean bias, and
+low-bit (FP4) quantization in Transformer attention.
+
+In modern low-bit training pipelines, linear layers are computed in low precision
+(FP4 or INT4), but nonlinear operators such as softmax are typically executed in
+higher precision (e.g., BF16/FP16). This avoids catastrophic instability caused by
+quantizing the probability simplex.
+
+The central question of this investigation is:
+
+\begin{center}
+\emph{Is mean bias the dominant structural cause of softmax instability under FP4 quantization?}
+\end{center}
+
+To answer this question, we conducted a sequence of controlled experiments on
+real model activations and attention states. The goal was to isolate:
+
+\begin{enumerate}
+\item The impact of mean bias on FP4 softmax error.
+\item The relative effect of input quantization versus output quantization.
+\item Whether mean removal alone stabilizes softmax in FP4.
+\item Whether alternative attention operators improve robustness.
+\end{enumerate}
+
+All experiments were conducted using actual model tensors:
+\[
+Q, K \in \mathbb{R}^{1 \times H_{head} \times L \times d},
+\]
+with $L=1024$ tokens and $d=128$ per head.
+
+FP4 quantization was simulated using blockwise scaling with percentile-based scale
+selection and stochastic rounding.
+
+\section{Experiment 1: FP4 Quantization of Activation Tensors}
+
+\subsection{Objective}
+
+To quantify whether removing mean bias improves softmax robustness when
+queries and keys are quantized to FP4 but softmax output remains in FP16.
+
+\subsection{Setup}
+
+Two baselines were constructed:
+
+\begin{itemize}
+\item \textbf{Biased baseline:} raw $Q,K$ tensors.
+\item \textbf{Mean-free baseline:} $Q,K$ centered along feature dimension.
+\end{itemize}
+
+For each baseline:
+
+\begin{enumerate}
+\item Compute reference softmax in FP16.
+\item Quantize $Q,K$ to FP4.
+\item Compute softmax in FP16.
+\item Compare output against FP16 reference.
+\end{enumerate}
+
+Error metrics:
+
+\[
+\text{KL}, \quad L_1, \quad L_2, \quad \max |\Delta A|, \quad \text{tail log error}.
+\]
+
+\subsection{Results}
+
+Representative results (Layer 3, Step 10k):
+
+\begin{align*}
+\textbf{Biased FP4 QK:} \quad & \text{KL}=3.81\times 10^{-2} \\
+\textbf{Mean-free FP4 QK:} \quad & \text{KL}=3.32\times 10^{-2}
+\end{align*}
+
+Mean removal reduces KL divergence by approximately $13\%$,
+and similarly reduces $L_1$, $L_2$, and tail error.
+
+\subsection{Conclusion}
+
+Mean removal improves softmax robustness under FP4 input quantization,
+but the improvement is moderate. Instability does not vanish.
+
+This indicates mean bias contributes to scale inflation,
+but it is not the only mechanism of instability.
+
+\section{Experiment 2: 2$\times$2 Softmax Quantization Study}
+
+\subsection{Objective}
+
+To separate the effect of input quantization (Q,K)
+from output quantization (softmax probabilities).
+
+We constructed a 2$\times$2 experimental grid:
+
+\[
+\text{Input: Biased vs Mean-free}
+\quad \times \quad
+\text{Output: FP16 vs FP4}.
+\]
+
+\subsection{Setup}
+
+For each case:
+
+\begin{enumerate}
+\item Compute FP16 reference.
+\item Quantize Q,K to FP4.
+\item Compute attention.
+\item Optionally quantize output probabilities to FP4.
+\end{enumerate}
+
+\subsection{Key Findings}
+
+When softmax output is quantized directly to FP4
+(using naïve probability quantization):
+
+\[
+\text{KL} \approx 22,
+\quad
+\text{out\_zero\_frac} \approx 0.999.
+\]
+
+This indicates catastrophic simplex collapse:
+almost all attention mass is rounded to zero.
+
+Using a log-ratio FP4 codec significantly reduces collapse:
+
+\[
+\text{KL} \approx 0.06,
+\quad
+\text{out\_zero\_frac} \approx 0.03.
+\]
+
+Mean removal improves KL by roughly $10$--$15\%$ in this regime.
+
+\subsection{Conclusion}
+
+The dominant instability under FP4 arises from
+softmax output quantization, not merely input mean bias.
+
+Mean bias affects scale selection,
+but the primary structural problem is the difficulty of
+representing probability simplices in FP4.
+
+\section{Experiment 3: Laplacian Attention Operator}
+
+\subsection{Objective}
+
+To test whether replacing softmax attention with
+a mean-neutral Laplacian attention update improves robustness.
+
+Laplacian update:
+
+\[
+L = AV - V.
+\]
+
+\subsection{Findings}
+
+When quantizing Q,K only:
+
+\[
+\|\Delta O\|_2 = \|\Delta L\|_2.
+\]
+
+When quantizing V as well:
+
+Laplacian attention performs worse than standard attention,
+because it exposes V-quantization error directly.
+
+\subsection{Conclusion}
+
+Difference-style updates do not mitigate FP4 instability.
+They do not alter Jacobian sensitivity to A-noise.
+
+\section{Experiment 4: Theoretical Analysis of Softmax Amplification}
+
+We derived the three-stage instability mechanism:
+
+\begin{center}
+\textbf{Scale Hijacking} $\rightarrow$
+\textbf{Variance Inflation} $\rightarrow$
+\textbf{Dense Coupling Amplification}.
+\end{center}
+
+\subsection{Stage I: Scale Hijacking}
+
+If logits decompose as
+
+\[
+z = m + r,
+\]
+
+and $\|m\|_\infty \gg \|r\|_\infty$,
+then block scale satisfies
+
+\[
+s \approx \|m\|_\infty.
+\]
+
+Thus FP4 step size is governed by coherent mean bias.
+
+\subsection{Stage II: Variance Inflation}
+
+Stochastic rounding variance obeys
+
+\[
+\mathrm{Var}(\varepsilon) \le \Delta^2/4,
+\quad \Delta \propto s.
+\]
+
+Hence
+
+\[
+\mathrm{Var}(\varepsilon) \propto \|m\|_\infty^2.
+\]
+
+\subsection{Stage III: Softmax Amplification}
+
+Softmax Jacobian:
+
+\[
+J = \frac{1}{\tau}(\mathrm{diag}(y) - yy^\top).
+\]
+
+Error covariance propagates as
+
+\[
+\mathrm{Cov}(\Delta y) \approx J \Sigma_\varepsilon J^\top.
+\]
+
+In peaky regimes, variance from the dominant coordinate
+is broadcast to all others.
+
+\subsection{Hessian Drift}
+
+Second-order Taylor expansion shows:
+
+\[
+\mathbb{E}[\hat y - y]
+\propto \Sigma_\varepsilon,
+\]
+
+so quantization noise induces systematic bias.
+
+\section{Global Conclusions}
+
+From all experiments and derivations:
+
+\begin{enumerate}
+\item Mean bias contributes significantly to FP4 instability,
+      especially through scale hijacking.
+\item However, even mean-free inputs remain sensitive to FP4 quantization.
+\item The dominant structural bottleneck is representing
+      softmax probabilities in FP4.
+\item Softmax amplification arises from dense coupling in its Jacobian.
+\item Log-domain encoding dramatically improves stability.
+\end{enumerate}
+
+\section{Implications}
+
+The instability of FP4 attention arises from a structural interaction:
+
+\begin{equation}
+\text{High-dimensional bias}
+\;\times\;
+\text{Blockwise scaling}
+\;\times\;
+\text{Simplex representation}
+\;\times\;
+\text{Softmax coupling}.
+\end{equation}
+
+Mean removal mitigates the first factor.
+Improved probability encoding mitigates the third.
+Jacobian-aware operator redesign is required to address the fourth.
+
+\bigskip
+
+These findings clarify that mean bias is a first-order contributor,
+but full FP4 attention requires coordinated redesign of
+scale selection, probability encoding, and operator structure.

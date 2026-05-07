@@ -1,0 +1,230 @@
+\section{Mean Bias as the Dominant Source of Activation Outliers}
+\label{sec:activation_outliers}
+
+We now address its sharp structural consequence: the production of extreme elementwise activations that destabilize low-bit quantization. Because the dynamic range of low-bit quantization is strictly governed by entrywise maxima (the $L_\infty$ norm), we perform an elementwise mechanical decomposition to precisely locate the geometric source of this instability.
+
+Following the notation in previous sections, let the activation matrix be
+$X \in \mathbb{R}^{l \times m}$ with $l=bs$ token positions and hidden dimension $m$.
+To attribute outlier energy, we decompose $X$ into three mutually orthogonal components.
+Let $\mu = \frac{1}{l}X^\top \mathbf{1} \in \mathbb{R}^m$ be the feature-wise mean vector,
+and let $\tilde{X} = X - \mathbf{1}\mu^\top$ be the column-centered activation matrix. We decompose $X$ as:
+\begin{equation}
+X = \underbrace{\mathbf{1}\mu^\top}_{M (\text{mean})} + \underbrace{U_k \Sigma_k V_k^\top}_{X_{\text{spike}}} + \underbrace{X_{\text{tail}}}_{\text{residual}},
+\end{equation}
+where $X_{\text{spike}}$ is the truncated rank-$k$ singular value decomposition of the centered matrix $\tilde{X}$ onto its top $k = \lfloor 0.01 m \rfloor$ singular directions, and $X_{\text{tail}} = \tilde{X} - X_{\text{spike}}$ is the remaining orthogonal residual. Because $X_{\text{spike}}$ and $X_{\text{tail}}$ are linear projections of the centered matrix, they maintain zero column means (i.e., they are orthogonal to the all-ones vector $\mathbf{1}$). Therefore, the decomposition is strictly orthogonal in the Frobenius inner product, yielding exact energy separation:
+\begin{equation}
+\|X\|_F^2 = \|M\|_F^2 + \|X_{\text{spike}}\|_F^2 + \|X_{\text{tail}}\|_F^2.
+\end{equation}
+
+
+
+\paragraph{Outlier Attribution.} 
+Define the outlier set $\mathcal{E}_{\text{top}}$ as the indices $(i,j)$ of the top $0.1\%$ of entries ranked by absolute magnitude $|X_{ij}|$. To determine which geometric component drives these extreme values, we define the squared-magnitude share for each $(i,j) \in \mathcal{E}_{\text{top}}$:
+\begin{equation}
+\rho_{ij}^{(\text{mean})} = \frac{M_{ij}^2}{X_{ij}^2}, \quad \rho_{ij}^{(\text{spike})} = \frac{(X_{\text{spike}})_{ij}^2}{X_{ij}^2}, \quad \rho_{ij}^{(\text{tail})} = \frac{(X_{\text{tail}})_{ij}^2}{X_{ij}^2}.
+\end{equation}
+
+While the decomposition is strictly orthogonal over the full matrix, individual elementwise squares technically contain minor cross-terms (e.g., $2M_{ij}(X_{\text{spike}})_{ij}$). Nevertheless, measuring these primary component ratios provides a highly accurate and stable proxy for identifying the dominant driver of extreme values.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_10k_embedding.png}
+    \caption{Embedding, 10k}
+\end{subfigure}\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_170k_embedding.png}
+    \caption{Embedding, 170k}
+\end{subfigure}
+
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_10k_layer3.png}
+    \caption{Layer 3, 10k}
+\end{subfigure}\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_170k_layer3.png}
+    \caption{Layer 3, 170k}
+\end{subfigure}
+
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_10k_layer15.png}
+    \caption{Layer 15, 10k}
+\end{subfigure}\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_170k_layer15.png}
+    \caption{Layer 15, 170k}
+\end{subfigure}
+
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_10k_layer27.png}
+    \caption{Layer 27, 10k}
+\end{subfigure}\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/outlier/outlier_170k_layer27.png}
+    \caption{Layer 27, 170k}
+\end{subfigure}
+\caption{Activation outlier contribution shares (top 0.1\% entries) across layers and training steps. Each row compares early (10k, left) and late (170k, right) for the same module.}
+\label{fig:outlier_shares}
+\end{figure}
+
+Figures~\ref{fig:energy_grid} and \ref{fig:outlier_shares} summarize these statistics across layers and training stages. Figure~\ref{fig:outlier_shares} shows a clear row-wise pattern: in each module (embedding, layer 3, layer 15, and layer 27), the late-stage panel (170k, right) exhibits a larger mean-component contribution to top-$0.1\%$ outliers than the corresponding early-stage panel (10k, left). In shallow modules, mean bias is already dominant at 10k and becomes near-total at 170k. In deeper modules, the 10k regime still shows stronger spike influence, but by 170k the mean term overtakes and becomes the primary outlier source. This late-stage transition to mean-dominated outliers across all four rows is the key empirical result of this section.
+
+\paragraph{High-Dimensional Extreme-Value Amplification.}
+We now formalize the statistical mechanism by which a coherent rank-one mean bias produces the dominant extreme activations observed in large language models. Our analysis proceeds in three steps. First, we show that once a deterministic mean shift exceeds the quantization threshold, individual coordinates exceed that threshold with constant probability (Theorem~\ref{thm:extreme_dominance}). Second, we demonstrate that this effect aggregates across tokens: a mean shift generates a dense population of extreme activations, whereas purely variance-driven fluctuations produce only exponentially rare outliers (Theorem~\ref{thm:dense_extreme}). Finally, we characterize the high-dimensional scaling with a sharper lower bound: under Gaussian noise, the maximum activation in a mean-shifted coordinate is lower bounded by an additive form $|\mu_j|+\text{(extreme-value term)}$, while variance-only maxima remain on the $\sigma\sqrt{\log l}$ scale (Theorem~\ref{thm:extreme_separation}). Together, these results establish a fundamental asymmetry between deterministic bias and stochastic variance: a coherent mean component can systematically generate the largest elementwise activations and therefore dominate the dynamic range that governs low-bit quantization.
+
+\begin{theorem}[Elementwise Extreme Dominance]
+\label{thm:extreme_dominance}
+Let an activation coordinate be modeled as
+\[
+X_{ij} = \mu_j + Z_{ij},
+\]
+where $\mu_j$ is a deterministic mean shift and $Z_{ij}$ is independent zero-mean sub-Gaussian noise with variance proxy $\sigma^2$. For a quantization threshold $t>0$ such that $t < |\mu_j|$, the probability that the coordinate magnitude exceeds the threshold satisfies
+\begin{equation}
+\mathbb{P}(|X_{ij}| > t)
+\;\ge\;
+1 - 2\exp\!\left(-\frac{(|\mu_j| - t)^2}{2\sigma^2}\right).
+\end{equation}
+\end{theorem}
+
+\noindent\textit{Proof.} Deferred to Appendix~\ref{appendix:proof_extreme_dominance}.
+
+Theorem~\ref{thm:extreme_dominance} shows that once the deterministic mean shift exceeds the quantization threshold, extreme values occur with constant probability. In contrast, purely variance-driven activations $X'_{ij} = Z_{ij}$ satisfy
+\begin{equation}
+\mathbb{P}(|Z_{ij}| > t)
+\le
+2\exp\!\left(-\frac{t^2}{2\sigma^2}\right),
+\end{equation}
+which decays exponentially with the threshold.
+
+However, the practical impact of mean bias in large models arises not only from the probability of individual extremes but from the number of such extremes produced across tokens. The following result formalizes this distinction.
+
+\begin{theorem}[Dense Extreme Amplification by Mean Bias]
+\label{thm:dense_extreme}
+Let $X_{ij} = \mu_j + Z_{ij}$ where $Z_{ij}$ are independent mean-zero $\sigma^2$-sub-Gaussian variables. Define the exceedance count
+\[
+C_j(t) = \sum_{i=1}^{l} \mathbf{1}\{|X_{ij}| > t\}.
+\]
+
+Then:
+
+\textbf{(Mean-dominated regime)}  
+If $|\mu_j| > t$, then
+\[
+\mathbb{E}[C_j(t)]
+\ge
+l\left(1 - 2\exp\!\left(-\frac{(|\mu_j|-t)^2}{2\sigma^2}\right)\right).
+\]
+
+\textbf{(Variance-only regime)}  
+If $\mu_j = 0$, then
+\[
+\mathbb{E}[C_j(t)]
+\le
+2l\exp\!\left(-\frac{t^2}{2\sigma^2}\right).
+\]
+
+Thus a deterministic mean shift produces $\Theta(l)$ threshold exceedances, whereas variance-driven extremes occur only with exponentially small frequency.
+\end{theorem}
+
+\begin{proof}
+Write $C_j(t)=\sum_{i=1}^{l} I_i$ with $I_i=\mathbf{1}\{|X_{ij}|>t\}$. By linearity of expectation,
+\[
+\mathbb{E}[C_j(t)] = \sum_{i=1}^{l} \mathbb{E}[I_i] = l\,\mathbb{P}(|X_{ij}|>t).
+\]
+If $|\mu_j|>t$, apply Theorem~\ref{thm:extreme_dominance} to obtain
+\[
+\mathbb{P}(|X_{ij}|>t) \ge 1-2\exp\!\left(-\frac{(|\mu_j|-t)^2}{2\sigma^2}\right),
+\]
+which gives the first bound. If $\mu_j=0$, then $X_{ij}=Z_{ij}$ and sub-Gaussian tails give
+\[
+\mathbb{P}(|X_{ij}|>t)=\mathbb{P}(|Z_{ij}|>t)\le 2\exp\!\left(-\frac{t^2}{2\sigma^2}\right),
+\]
+yielding the second bound.
+\end{proof}
+
+Theorem~\ref{thm:dense_extreme} reveals a fundamental structural asymmetry. A coherent mean shift generates a \emph{dense population of extreme activations} across tokens, whereas variance-driven fluctuations produce only sparse outliers.
+
+Because blockwise low-bit quantization determines its dynamic range from the $L_\infty$ norm within each block, the presence of many large-magnitude activations forces the quantization grid to expand. This expansion compresses the dynamic resolution available for the remaining semantic variation.
+
+Consequently, even when other low-rank spike components exist, removing the coherent mean bias directly targets the primary geometric driver of extreme-value instability and restores effective numerical resolution for the semantic signal.
+
+\begin{theorem}[High-Dimensional Extreme-Value Separation (Sharper Lower Bound)]
+\label{thm:extreme_separation}
+
+Let activation coordinates follow
+\[
+X_{ij} = \mu_j + Z_{ij},
+\]
+where $Z_{ij} \overset{\mathrm{i.i.d.}}{\sim} \mathcal{N}(0,\sigma^2)$ across $i$.
+Define
+\[
+M_j = \max_{1 \le i \le l} |X_{ij}|.
+\]
+
+For any $\delta \in (0,1)$, let
+\[
+q_{l,\delta} := \sigma\,\Phi^{-1}\!\big((1-\delta)^{1/l}\big),
+\]
+where $\Phi$ is the standard normal CDF. Then
+\[
+\mathbb{P}\!\left(M_j \ge |\mu_j| + q_{l,\delta}\right) \ge 1-\delta.
+\]
+In particular,
+\[
+\mathbb{P}\!\left(M_j \ge |\mu_j|\right) = 1-2^{-l}.
+\]
+
+Furthermore, in the variance-only case ($\mu_j=0$), with probability at least $1-\delta$,
+\[
+\max_{1 \le i \le l}|Z_{ij}| \le \sigma\sqrt{2\log\frac{2l}{\delta}}.
+\]
+Therefore, mean-shifted maxima enjoy an additive lower shift $|\mu_j|$ plus an extreme-value term, while variance-only maxima remain at the $\sigma\sqrt{\log l}$ scale.
+\end{theorem}
+
+\begin{proof}
+Let $s_j = \operatorname{sign}(\mu_j)$ for $\mu_j\neq 0$ (either sign can be used when $\mu_j=0$), and define $Y_i := s_j Z_{ij}$. Since Gaussian noise is symmetric, $Y_i \overset{\mathrm{i.i.d.}}{\sim} \mathcal{N}(0,\sigma^2)$.
+For every $i$,
+\[
+|\mu_j + Z_{ij}| \ge s_j(\mu_j + Z_{ij}) = |\mu_j| + Y_i,
+\]
+so
+\[
+M_j \ge |\mu_j| + \max_{1\le i\le l} Y_i.
+\]
+Hence
+\[
+\mathbb{P}(M_j < |\mu_j| + t)
+\le \mathbb{P}\!\left(\max_{1\le i\le l} Y_i < t\right)
+= \Phi(t/\sigma)^l.
+\]
+Choosing $t=q_{l,\delta}$ gives $\Phi(t/\sigma)^l = 1-\delta$, so
+\[
+\mathbb{P}(M_j \ge |\mu_j| + q_{l,\delta}) \ge 1-\delta.
+\]
+Setting $t=0$ yields
+\[
+\mathbb{P}(M_j \ge |\mu_j|) \ge 1-\mathbb{P}(Y_1<0,\dots,Y_l<0)=1-2^{-l},
+\]
+and equality holds because $\mathbb{P}(Y_i<0)=1/2$ for Gaussian noise.
+
+For $\mu_j=0$, the variance-only upper bound follows from the standard union bound with Gaussian (hence sub-Gaussian) tails:
+\[
+\mathbb{P}\!\left(\max_{1\le i\le l}|Z_{ij}|\ge u\right)
+\le 2l\exp\!\left(-\frac{u^2}{2\sigma^2}\right),
+\]
+then set $u=\sigma\sqrt{2\log\frac{2l}{\delta}}$.
+\end{proof}
+
+Theorem~\ref{thm:extreme_separation} highlights a fundamental scaling asymmetry between coherent bias and stochastic noise. Extreme values generated by sub-Gaussian fluctuations grow only logarithmically with the number of samples, scaling as $\sigma\sqrt{\log l}$. 
+
+In contrast, coherent mean shifts accumulate systematically across layers and can scale with the representation dimension. In high-dimensional Transformer models where hidden dimension $m$ is large, even modest coordinate-wise bias can produce magnitudes significantly exceeding the stochastic extreme-value scale.
+
+This separation implies that once a coherent mean component forms in representation space, it naturally dominates the largest elementwise activations and therefore determines the dynamic range of low-bit quantization.

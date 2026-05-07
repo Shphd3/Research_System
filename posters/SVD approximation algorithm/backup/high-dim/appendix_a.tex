@@ -1,0 +1,243 @@
+\chapter{Mean-Free Spectral Regime: Spike--Tail Quantization and Softmax Amplification}
+\label{sec:meanfree_spectral_softmax}
+
+In this section we analyze the failure mechanism of low-bit softmax
+\emph{after mean bias has been removed}.
+Our objective is to isolate the residual source of instability
+arising purely from spectral anisotropy,
+i.e., the coexistence of low-rank spike directions and a long semantic tail.
+
+Throughout this section, all vectors are assumed to be mean-free in the token dimension.
+Thus the rank-one mean component has already been eliminated,
+and we focus exclusively on spike--tail structure.
+
+\subsection{Spectral Decomposition of Mean-Free Logits}
+
+Let $z \in \mathbb{R}^H$ denote a pre-softmax logit vector
+for a single token and attention head.
+Assume $z$ is centered:
+\[
+\mathbb{E}[z] = 0.
+\]
+
+We consider a spectral decomposition
+\begin{equation}
+z = z_{\mathrm{sp}} + z_{\mathrm{tail}},
+\qquad
+z_{\mathrm{sp}} = U_k a,
+\qquad
+z_{\mathrm{tail}} = U_\perp b,
+\label{eq:spike_tail_decomp}
+\end{equation}
+where:
+
+\begin{itemize}
+\item $U_k \in \mathbb{R}^{H \times k}$ spans the top-$k$ singular directions,
+\item $U_\perp$ spans the orthogonal complement,
+\item $\mathrm{Cov}(a) = \Lambda_{\mathrm{sp}}$ contains large eigenvalues,
+\item $\mathrm{Cov}(b) = \Lambda_{\mathrm{tail}}$ contains small eigenvalues.
+\end{itemize}
+
+We assume a typical anisotropic regime:
+\[
+\lambda_{\mathrm{sp}} \gg \lambda_{\mathrm{tail}},
+\qquad
+k \ll H.
+\]
+
+Thus energy concentrates in a low-dimensional spike subspace,
+while semantic diversity resides in the long tail.
+
+\subsection{Low-Bit Quantization in the Spike-Dominated Regime}
+
+Consider symmetric blockwise quantization with $b$ bits.
+Let $s$ denote the per-block scale determined by a high percentile
+of $|z|$:
+\[
+\Delta = \frac{s}{2^{b-1}-1}.
+\]
+
+Although $z$ is mean-free,
+its elementwise maxima are typically governed by spike components.
+Under mild sub-Gaussian assumptions on $b$,
+extreme-value theory yields
+\[
+\max_j |z_j|
+\approx
+\max_j |z_{\mathrm{sp},j}|
+\quad \text{with high probability.}
+\]
+
+Therefore the quantization step satisfies
+\begin{equation}
+\Delta \propto \|z_{\mathrm{sp}}\|_\infty.
+\label{eq:delta_spike}
+\end{equation}
+
+This phenomenon can be described as \emph{spectral scale dominance}:
+the quantization grid resolution is calibrated by the spike,
+not by tail magnitudes.
+
+\subsection{Tail Signal-to-Noise Collapse}
+
+Under stochastic rounding,
+\[
+\hat z = z + \varepsilon,
+\qquad
+\mathbb{E}[\varepsilon]=0,
+\qquad
+\mathrm{Var}(\varepsilon_j) \le \frac{\Delta^2}{4}.
+\]
+
+Using \eqref{eq:delta_spike},
+\[
+\mathrm{Var}(\varepsilon_j)
+\propto
+\|z_{\mathrm{sp}}\|_\infty^2.
+\]
+
+Define a tail coordinate $j$ such that $|z_{\mathrm{tail},j}| \ll \|z_{\mathrm{sp}}\|_\infty$.
+Then its effective signal-to-noise ratio is
+
+\begin{equation}
+\mathrm{SNR}_j
+=
+\frac{|z_{\mathrm{tail},j}|}
+{\sqrt{\mathrm{Var}(\varepsilon_j)}}
+\approx
+\frac{|z_{\mathrm{tail},j}|}{\|z_{\mathrm{sp}}\|_\infty}.
+\label{eq:tail_snr}
+\end{equation}
+
+When spike energy dominates,
+$\mathrm{SNR}_j \ll 1$ for most tail coordinates.
+Thus long-tail semantic information is buried beneath quantization variance,
+even though the representation is mean-free.
+
+This mechanism is independent of mean bias.
+It arises purely from spectral anisotropy.
+
+\subsection{Softmax Jacobian Amplification}
+
+Softmax with temperature $\tau$ is
+\[
+y_i = \frac{\exp(z_i/\tau)}{\sum_k \exp(z_k/\tau)}.
+\]
+
+Its Jacobian is
+\begin{equation}
+J(z)
+=
+\frac{1}{\tau}
+\left(\mathrm{diag}(y) - y y^\top\right).
+\label{eq:jacobian_softmax}
+\end{equation}
+
+First-order propagation gives
+\[
+\Delta y \approx J(z)\varepsilon,
+\qquad
+\mathrm{Cov}(\Delta y)
+\approx
+J(z)\Sigma_\varepsilon J(z)^\top.
+\]
+
+In regimes where spike energy induces peaky distributions,
+one coordinate $h$ satisfies $y_h \approx 1$.
+Then for $i \neq h$,
+\[
+J_{ih} \approx -\frac{y_i}{\tau}.
+\]
+
+Substituting into covariance propagation yields
+
+\begin{equation}
+\mathrm{Var}(\Delta y_i)
+\approx
+\frac{1}{\tau^2}
+y_i^2
+\mathrm{Var}(\varepsilon_h).
+\label{eq:broadcast}
+\end{equation}
+
+Thus quantization noise in the dominant spike coordinate
+is broadcast to all tail coordinates.
+This is a \emph{dense coupling} effect,
+arising from the $y y^\top$ term.
+
+\subsection{Hessian-Induced Systematic Drift}
+
+Softmax is nonlinear.
+Second-order expansion yields
+
+\[
+\mathbb{E}[\hat y - y]
+\approx
+\frac{1}{2}
+\sum_{j,k}
+H_{i,jk}(z)
+\Sigma_{\varepsilon,jk},
+\]
+
+where $H$ is the Hessian tensor.
+Because $\Sigma_\varepsilon$ scales with $\|z_{\mathrm{sp}}\|_\infty^2$,
+systematic drift magnitude also scales quadratically with spike dominance.
+
+Thus spike-determined scaling produces both:
+
+\begin{enumerate}
+\item Variance amplification (Jacobian),
+\item Systematic bias (Hessian curvature).
+\end{enumerate}
+
+\subsection{High-Dimensional Amplification}
+
+In high dimension,
+\[
+\|z_{\mathrm{sp}}\|_2
+\sim
+\sqrt{k}\,\sigma_{\mathrm{sp}},
+\qquad
+\|z_{\mathrm{tail}}\|_2
+\sim
+\sqrt{H-k}\,\sigma_{\mathrm{tail}}.
+\]
+
+Even when $\sigma_{\mathrm{sp}}$ exceeds $\sigma_{\mathrm{tail}}$
+only moderately,
+the extremal coordinate magnitude of $z$ scales as
+
+\[
+\|z_{\mathrm{sp}}\|_\infty
+\sim
+\sigma_{\mathrm{sp}}\sqrt{2\log H}.
+\]
+
+As $H$ grows,
+this extremal growth ensures that quantization scale
+is almost surely governed by spike directions.
+
+Thus high dimensionality magnifies spectral imbalance.
+
+\subsection{Conclusion}
+
+Even in the absence of mean bias,
+low-bit instability arises from spike--tail anisotropy.
+The mechanism proceeds as:
+
+\[
+\text{Spike Dominance}
+\;\rightarrow\;
+\text{Scale Inflation}
+\;\rightarrow\;
+\text{Tail SNR Collapse}
+\;\rightarrow\;
+\text{Softmax Coupled Amplification}.
+\]
+
+Therefore,
+mean removal alone does not guarantee FP4 stability.
+Achieving precision-robust softmax requires
+spectral flattening (whitening),
+adaptive scaling,
+or operator redesign that mitigates spike-induced scale dominance.

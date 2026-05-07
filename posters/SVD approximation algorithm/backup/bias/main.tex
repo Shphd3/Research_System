@@ -1,0 +1,127 @@
+\makeatletter
+% Add the ICLR 2026 template directory to LaTeX's search path.
+% This lets \usepackage{iclr2026_conference} work without copying files.
+\def\input@path{{../../doc/iclr-template/master/iclr2026/}}
+\makeatother
+
+\documentclass{article}
+
+% ICLR template (located in ../doc/templates/iclr2026/)
+\usepackage{iclr2026_conference}
+\usepackage{times}
+
+% Math & symbols
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+
+% Figures & tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+% Formatting
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% Reduce underfull vbox warnings by allowing variable page height.
+\raggedbottom
+
+% Theorem-like environments (used in \input files).
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+
+\title{The Curse and Blessing of Bias in Large Language Model Training}
+
+\author{
+  Anonymous Authors\\
+  Anonymous Institutions\\
+  \texttt{anonymous@iclr.cc}
+}
+
+% Uncomment for camera-ready
+% \iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Training of large language models (LLMs) is governed by the interaction between
+forward activations and backward gradient outputs at every layer.
+While prior work has emphasized spectral anisotropy in these tensors,
+we show that a more elementary structural component --- 
+\emph{activation bias}, a coherent mean embedded in forward representations ---
+plays a central role in shaping training geometry.
+
+Across layers and training stages, activation means exhibit
+noise-normalized magnitudes exceeding $10\times$--$40\times$
+the expected stochastic scale, whereas gradient-output means remain at noise level.
+Furthermore, among the top $0.1\%$ largest activation entries,
+$85\%$--$90\%$ of squared magnitude is attributable to the mean component,
+with spike variance contributing modestly and long-tail components contributing
+negligibly.
+These results establish \emph{mean-dominated outliers} as a structural property
+of LLM activations rather than an incidental consequence of heavy-tailed variance.
+
+We formalize this phenomenon and show that bias propagates multiplicatively
+through the outer-product gradient structure, influencing both the spectral
+geometry of parameter updates and the elementwise dynamic range encountered
+during training.
+A simple intervention --- activation mean removal ---
+isolates and eliminates the dominant coherent component while preserving
+higher-order semantic covariance.
+Additional spike whitening provides incremental conditioning,
+but is not the primary source of improvement.
+
+To illustrate the broader implications of this structural insight,
+we evaluate bias mitigation in two downstream settings:
+FP4 low-bit training and adaptive optimization.
+In both cases, removing activation bias yields consistent improvements,
+explaining a substantial portion of the gains previously attributed to
+computationally intensive spectral methods.
+
+These findings reposition bias as a central geometric feature of
+large language model training.
+While bias contributes to dynamic-range inflation and conditioning pathologies,
+its structured coherence also enables efficient mitigation,
+revealing both the curse and the blessing of bias.
+
+\end{abstract}
+
+\input{./sections/introduction}
+\input{./sections/related}
+\input{./sections/analysis}
+\input{./sections/model}
+\input{./sections/theoretical_analysis}
+\input{./sections/implications}
+\input{./sections/exp}
+\input{./sections/conclusion}
+
+\newpage
+
+\bibliographystyle{../../doc/iclr-template/master/iclr2026/iclr2026_conference}
+\bibliography{references}
+
+
+\newpage
+
+\appendix
+\input{./sections/appendix_A}
+\input{./sections/appendix_B}
+\input{./sections/appendix_C}
+\newpage
+\input{./sections/appendix_D}
+\newpage
+\input{./sections/appendix_E}
+
+%\newpage
+%\input{./sections/learning}
+
+
+%\input{./draft}
+
+\end{document}

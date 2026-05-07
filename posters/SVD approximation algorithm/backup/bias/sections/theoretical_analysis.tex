@@ -1,0 +1,166 @@
+\section{Theoretical Consequences of Bias}
+\label{sec:theory}
+
+Section~\ref{sec:formal_model} introduced a structured decomposition of token
+representations:
+\[
+x_i = \mu + s_i^{\text{spike}} + s_i^{\text{tail}},
+\]
+where $\mu$ is a shared bias component, $s_i^{\text{spike}}$ lies in a
+low-dimensional subspace, and $s_i^{\text{tail}}$ occupies a high-dimensional
+complement.
+Section~\ref{sec:empirical} established empirically that activation bias
+dominates extreme entries and significantly inflates optimizer statistics.
+We now formalize these observations.
+
+Throughout this section, we assume:
+\begin{itemize}
+\item $\mu$ is dense and fixed across tokens,
+\item $s_i$ are zero-mean random vectors with finite second moment,
+\item $s_i$ have sub-Gaussian tails (for concentration results).
+\end{itemize}
+
+The assumptions reflect the empirical statistics observed in Section~2.
+
+\subsection{Bias Dominates Extreme Activation Entries}
+\label{subsec:theory_outliers}
+
+We begin by formalizing why bias dominates the largest-magnitude activation
+entries.
+
+\begin{theorem}[Bias dominance of extreme entries]
+\label{thm:bias_outlier}
+Let $x_i = \mu + s_i$ with $\mathbb{E}[s_i]=0$ and
+$\|s_{ij}\|$ sub-Gaussian with variance proxy $\sigma^2$.
+If $\max_j |\mu_j| \gg \sigma$,
+then for sufficiently small $\varepsilon>0$, among the top
+$\varepsilon$-fraction of entries (by $|x_{ij}|$),
+\[
+\frac{|M_{ij}|^2}{|x_{ij}|^2} \to 1
+\quad \text{with high probability as } N\to\infty.
+\]
+\end{theorem}
+
+\paragraph{Interpretation.}
+Extreme activation entries are primarily caused by the coherent bias component.
+Random fluctuations from $s_i$ produce heavy tails only with exponentially small
+probability, whereas the bias contributes deterministically to every token.
+
+\paragraph{Connection to Section~2.2.}
+The empirical result that mean contribution exceeds $85\%$ of squared magnitude
+for top-$0.1\%$ entries (Section~2.2) is a finite-sample manifestation of
+Theorem~\ref{thm:bias_outlier}.
+
+\subsection{Bias as a Structured Component of the Spectral Spike}
+\label{subsec:theory_spike}
+
+The activation matrix can be written as
+\[
+X = M + S,
+\qquad
+M = \mathbf{1}\mu^\top.
+\]
+
+\begin{theorem}[Bias contributes a rank-one spike]
+\label{thm:bias_spike}
+The matrix $M$ has rank one with singular value
+\[
+\sigma_1(M) = \sqrt{N}\|\mu\|_2.
+\]
+Moreover,
+\[
+\sigma_1(X) \ge \sigma_1(M) - \|S\|_2.
+\]
+If $\sqrt{N}\|\mu\|_2$ dominates $\|S\|_2$,
+then the leading singular direction of $X$ aligns with $\mu$.
+\end{theorem}
+
+\paragraph{Interpretation.}
+Bias produces a coherent low-rank component inside the spike subspace.
+Mean removal eliminates this rank-one contribution exactly, but does not
+eliminate structured variance in $S_{\text{spike}}$.
+This explains why Section~2.3 observed partial but not complete spike reduction
+after centering.
+
+\subsection{Bias-Induced Gradient Structure}
+\label{subsec:theory_grad}
+
+Consider a linear layer with gradient
+\[
+G = \mathbb{E}[\delta x^\top].
+\]
+Substituting $x = \mu + s$ yields the exact identity
+\begin{equation}
+\label{eq:G_decomp_theory}
+G =
+\mathbb{E}[\delta]\mu^\top
++
+\mathbb{E}[\delta s^\top].
+\end{equation}
+
+\begin{theorem}[Bias-driven gradient component]
+\label{thm:grad_bias}
+Even if $\mathbb{E}[\delta]=0$, the second-moment statistics of $G$
+contain bias-dependent inflation terms:
+\[
+v = \mathbb{E}[g \odot g]
+= \frac{1}{N}(\Delta^{\odot 2})^\top (X^{\odot 2}).
+\]
+If $X = M + S$, then
+\[
+X^{\odot 2}
+=
+M^{\odot 2}
++
+2(M \odot S)
++
+S^{\odot 2}.
+\]
+The first term contributes deterministic inflation proportional to $\mu_j^2$.
+\end{theorem}
+
+\paragraph{Interpretation.}
+Bias increases extreme entries of $v$, shrinking effective learning rates in
+Adam-type optimizers.
+Mean removal reduces this inflation multiplicatively, consistent with the
+empirical reductions observed in Section~2.4B.
+
+\subsection{Dynamic-Range Inflation Under Bias}
+\label{subsec:theory_quant}
+
+Blockwise quantization uses scales proportional to
+\[
+\alpha = \max_{j \in \text{block}} |x_{ij}|.
+\]
+
+\begin{theorem}[Bias-driven dynamic range inflation]
+\label{thm:quant_bias}
+Under the model $x_i=\mu+s_i$,
+if $|\mu_j|$ dominates typical fluctuations of $s_{ij}$,
+then for blocks containing dimension $j$,
+\[
+\alpha \approx |\mu_j|
+\]
+with high probability.
+\end{theorem}
+
+\paragraph{Interpretation.}
+Bias inflates quantization scale and compresses semantic resolution.
+Mean removal restores dynamic range symmetry, explaining the empirical
+improvements observed in Section~2.4C.
+
+\paragraph{Summary of theoretical implications.}
+
+The preceding results establish three mechanisms:
+
+\begin{enumerate}
+\item Bias dominates extreme activation entries.
+\item Bias contributes a coherent low-rank spectral component.
+\item Bias inflates second-moment and quantization statistics.
+\end{enumerate}
+
+These mechanisms collectively explain why mean removal is an effective
+and computationally trivial intervention.
+Detailed proofs of Theorems~\ref{thm:bias_outlier}--\ref{thm:quant_bias}
+are provided in Appendix~A.
+

@@ -1,0 +1,46 @@
+\section{Mean bias phenomenon}
+
+Let $\mathcal{X} \in \mathbb{R}^{b\times s\times m}$ denote an activation tensor, where $b$ is batch size, $s$ is sequence length, and $m$ is hidden dimension. For GeMM analysis, reshape it into $\mathbf{X} \in \mathbb{R}^{l\times m}$ with $l=bs$, and write its SVD as
+\[
+\mathbf{X}=\sum_{i=1}^{r}\sigma_i\mathbf{u}_i\mathbf{v}_i^\top,
+\qquad r=\min(l,m),
+\qquad \sigma_1\ge\sigma_2\ge\cdots\ge\sigma_r>0.
+\]
+Define the column-wise mean vector and induced mean matrix by
+\[
+\mu_{\mathbf{X}}^\top=\frac{1}{l}\mathbf{1}^\top\mathbf{X}\in\mathbb{R}^{1\times m},
+\qquad
+\mathbf{M}_{\mathbf{X}}=\mathbf{1}\,\mu_{\mathbf{X}}^\top\in\mathbb{R}^{l\times m}.
+\]
+We call this phenomenon \emph{mean bias} when token representations are shifted in a common directional sense. Concretely, with normalized mean direction $\hat\mu=\mu_{\mathbf{X}}/\|\mu_{\mathbf{X}}\|_2$ and token rows $x_i$ of $\mathbf{X}$, define $p_i = x_i^\top\hat\mu.$
+Across activation matrices in trained LLMs, the signs of $\{p_i\}$ are consistently concentrated on one side, indicating a coherent directional shift rather than symmetric fluctuation around zero. Figure~\ref{fig:mean_bias_definition} (left) provides one representative example from late-stage Qwen3-0.6B (layer-27 FFN input), where token-wise projection signs are nearly uniform.
+
+We further find that the mean direction nearly recovers the leading anisotropic spike direction, which METIS identifies as the primary contributor to quantization error. Since
+\[
+\mu_{\mathbf{X}}=\frac{1}{l}\mathbf{X}^\top\mathbf{1}
+=\frac{1}{l}(\mathbf{U}\mathbf{\Sigma}\mathbf{V}^\top)^\top\mathbf{1}
+=\frac{1}{l}\mathbf{V}\mathbf{\Sigma}\mathbf{U}^\top\mathbf{1},
+\]
+we have the right-singular expansion
+\[
+\mu_{\mathbf{X}}=\mathbf{V}\alpha=\sum_{i=1}^{r}\alpha_i\mathbf{v}_i,
+\qquad
+\alpha_i=\frac{\sigma_i}{l}\,\mathbf{u}_i^\top\mathbf{1}.
+\]
+Therefore, alignment with $\mathbf{v}_1$ is large when two conditions hold jointly: (i) anisotropic spectrum with dominant $\sigma_1$, empirically observed in METIS~\citep{cao2025metis}, and (ii) limited sign cancellation in $\mathbf{u}_1^\top\mathbf{1}$ so that $|\alpha_1|$ remains large. In contrast, non-leading modes typically exhibit stronger sign alternation, making $\mathbf{u}_i^\top\mathbf{1}$ small and suppressing $\alpha_i$ for $i>1$. Consequently, $\mu_{\mathbf{X}}$ aligns much more strongly with $\mathbf{v}_1$ than with other right singular directions; empirically, this cosine similarity approaches $0.99$ (Figure~\ref{fig:mean_bias_definition}, right).
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/mean_projection_sorted.png}
+\caption{Token projections on normalized mean direction.}
+\end{subfigure}\hfill
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/mean_vs_rightsv_cos_loglog.png}
+\caption{Similarity between mean and right singular directions.}
+\end{subfigure}
+\caption{Evidence for mean-bias coherence and spectral dominance. Left: projection-sign consistency across tokens. Right: dominant alignment of mean vector with the top right singular vector.}
+\label{fig:mean_bias_definition}
+\end{figure}

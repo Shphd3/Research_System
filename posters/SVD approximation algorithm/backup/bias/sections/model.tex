@@ -1,0 +1,168 @@
+\section{A Formal Model of Bias, Spike Variance, and Tail Variability}
+\label{sec:formal_model}
+
+Section~\ref{sec:empirical} established three empirical facts:
+(i) activations have a statistically significant mean ($R_x\gg 1$) while gradient
+outputs are mean-free ($R_\delta\approx 1$),
+(ii) extreme activation entries are dominated by the mean component,
+and (iii) mean removal reduces but does not eliminate the spectral spike.
+In this section we formalize these observations into a minimal model that
+separates \emph{bias}, \emph{structured low-rank variance}, and a
+\emph{high-dimensional tail}.
+The model is intentionally simple: its purpose is to isolate the mechanisms
+needed to explain the empirical phenomena and motivate later algorithmic
+interventions.
+
+\subsection{Token-wise representation model}
+\label{subsec:model_token}
+
+Let $x_i \in \mathbb{R}^H$ denote the representation (activation) of token $i$
+at a fixed layer, and let
+\[
+X = \begin{bmatrix} x_1^\top \\ \vdots \\ x_N^\top \end{bmatrix}\in\mathbb{R}^{N\times H}
+\]
+be the stacked activation matrix for a batch of $N$ tokens.
+We decompose each token representation as
+\begin{equation}
+\label{eq:x_decompose}
+x_i = \mu + s_i,
+\qquad
+\mu \in \mathbb{R}^H,
+\qquad
+\mathbb{E}[s_i]=0,
+\end{equation}
+where $\mu$ is a shared bias component and $s_i$ captures token-dependent
+variation.
+Equivalently,
+\[
+X = M + S,
+\qquad
+M \triangleq \mathbf{1}\mu^\top,
+\qquad
+S \triangleq \begin{bmatrix} s_1^\top \\ \vdots \\ s_N^\top \end{bmatrix}.
+\]
+By construction, mean-centering removes the bias:
+\[
+X_c \triangleq X - M = S.
+\]
+
+\subsection{Spike--tail variance decomposition}
+\label{subsec:model_spike_tail}
+
+The empirical results indicate that $S$ (the centered activations) exhibits a
+spike--tail spectrum.
+We model this by assuming that the centered variation admits an orthogonal
+decomposition into a low-rank structured component and a high-dimensional tail:
+\begin{equation}
+\label{eq:s_decompose}
+s_i = s_i^{\text{spike}} + s_i^{\text{tail}},
+\qquad
+s_i^{\text{spike}} \in \mathcal{U},
+\qquad
+s_i^{\text{tail}} \in \mathcal{U}^\perp,
+\end{equation}
+for a low-dimensional subspace $\mathcal{U}\subset\mathbb{R}^H$ with
+$\dim(\mathcal{U})=r \ll H$.
+Let $P_{\mathcal{U}}$ and $P_{\mathcal{U}^\perp}$ denote the corresponding
+orthogonal projectors. Then
+\[
+s_i^{\text{spike}} = P_{\mathcal{U}}s_i,
+\qquad
+s_i^{\text{tail}}  = P_{\mathcal{U}^\perp}s_i.
+\]
+
+In matrix form,
+\[
+S = S_{\text{spike}} + S_{\text{tail}},
+\qquad
+S_{\text{spike}} = SP_{\mathcal{U}},
+\qquad
+S_{\text{tail}} = SP_{\mathcal{U}^\perp}.
+\]
+
+\paragraph{Empirical correspondence.}
+In practice, $\mathcal{U}$ is instantiated as the span of the top-$k$ right singular
+vectors of the centered activation matrix $X_c$, where $k$ is chosen as a small
+fraction of $H$ (e.g., $k=1\%$).
+Section~\ref{subsec:spectral_role_bias} showed that mean removal reduces the
+leading singular values but leaves a nontrivial residual low-rank variance
+subspace, consistent with~\eqref{eq:s_decompose}.
+
+\subsection{Elementwise outliers and the role of bias}
+\label{subsec:model_outliers}
+
+The model~\eqref{eq:x_decompose}--\eqref{eq:s_decompose} distinguishes between
+two qualitatively different sources of large elementwise magnitudes:
+\begin{itemize}
+\item \textbf{Bias-driven outliers.} The bias term $\mu$ is dense and shared,
+so the mean matrix $M=\mathbf{1}\mu^\top$ can contribute coherently to the
+magnitude of many entries.
+\item \textbf{Variance-driven extremes.} The random components
+$s_i^{\text{spike}}$ and $s_i^{\text{tail}}$ fluctuate across tokens and can
+produce large entries through variance, but do not contribute to the mean.
+\end{itemize}
+Section~\ref{subsec:outlier_mean_dominance} established empirically that, among
+the largest $0.1\%$ entries of $X$, squared-magnitude contributions are dominated
+by $M$, with smaller contributions from $S_{\text{spike}}$ and negligible
+contributions from $S_{\text{tail}}$.
+
+\subsection{Gradient decomposition under mean-biased activations}
+\label{subsec:model_grad}
+
+Let $\delta_i \in \mathbb{R}^{H'}$ denote the gradient output (backpropagated
+signal) for token $i$ at a linear layer with weight matrix
+$W\in\mathbb{R}^{H'\times H}$.
+The per-token gradient is
+\[
+g_i = \delta_i x_i^\top \in \mathbb{R}^{H'\times H},
+\]
+and the batch gradient is
+\[
+G \triangleq \frac{1}{N}\sum_{i=1}^N g_i
+= \mathbb{E}[\delta x^\top].
+\]
+Substituting~\eqref{eq:x_decompose} yields the identity
+\begin{equation}
+\label{eq:G_decompose}
+G
+=
+\mathbb{E}[\delta]\mu^\top
++
+\mathbb{E}[\delta s^\top].
+\end{equation}
+This separates a rank-one bias-driven term from a cross-covariance term.
+Section~\ref{subsec:first_order_asymmetry} established empirically that
+$\mathbb{E}[\delta]$ is noise-level, while $\mu$ is large.
+Section~\ref{subsec:grad_spectrum_bias} further showed that centering $x$
+reduces the spectral spike of $G$, consistent with removing the first term.
+
+\subsection{Second-moment (Adam) statistics}
+\label{subsec:model_adam}
+
+Adaptive optimizers maintain elementwise second moments of gradients.
+For the outer-product gradient $g_i=\delta_i x_i^\top$, the elementwise second
+moment admits the exact batch identity
+\begin{equation}
+\label{eq:v_identity}
+v \triangleq \mathbb{E}[g_i \odot g_i]
+=
+\frac{1}{N}(\Delta^{\odot 2})^\top (X^{\odot 2}),
+\end{equation}
+where $\Delta\in\mathbb{R}^{N\times H'}$ stacks $\delta_i$ and
+$X\in\mathbb{R}^{N\times H}$ stacks $x_i$.
+Equation~\eqref{eq:v_identity} makes explicit that activation magnitudes
+directly influence second-moment inflation.
+Section~\ref{subsec:optimizer_bias} showed empirically that mean removal reduces
+the extreme tail of $v$ (up to $50\times$ in $\max(v)$ in some regimes),
+establishing bias-driven second-moment inflation as a key mechanism.
+
+\paragraph{Summary.}
+The model isolates three components with distinct roles:
+\begin{enumerate}
+\item $\mu$ (bias): drives elementwise outliers and inflates second moments;
+\item $\mathcal{U}$ (spike variance subspace): captures low-rank structured variance;
+\item $\mathcal{U}^\perp$ (tail): carries high-dimensional token-dependent variability.
+\end{enumerate}
+The next section studies algorithmic consequences: mean subtraction removes
+$\mu$ exactly with negligible cost, while lightweight spectral conditioning can
+reduce residual spike variance when needed.

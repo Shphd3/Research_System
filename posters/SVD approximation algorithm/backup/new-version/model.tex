@@ -1,0 +1,186 @@
+\section{A Structural Model of Linguistic and Semantic Components}
+\label{sec:model}
+
+Motivated by the empirical observations in Section~2, we introduce a structural
+model that captures the essential geometric properties of language model
+representations relevant to anisotropy and spike suppression.
+The purpose of this model is not to reproduce all details of neural
+representations, but to isolate the minimal structure needed to explain the
+empirical behavior of averaging observed later in this section.
+A formal explanation of these behaviors is provided in Section~4.
+
+\subsection{Token Representation Model}
+\label{subsec:token_model}
+
+Let $x_i \in \mathbb{R}^H$ denote the representation of token $i$ at a fixed layer,
+and let
+\[
+X = 
+\begin{bmatrix}
+x_1^\top \\
+\vdots \\
+x_N^\top
+\end{bmatrix}
+\in \mathbb{R}^{N \times H}
+\]
+collect the representations of all tokens in a batch.
+We model each token representation as the sum of two components,
+\begin{equation}
+\label{eq:model_decomposition}
+x_i = \ell + s_i,
+\end{equation}
+where:
+\begin{itemize}
+  \item $\ell \in \mathbb{R}^H$ is a \emph{shared linguistic component}, common to
+  all tokens in the batch; and
+  \item $s_i \in \mathbb{R}^H$ is a \emph{semantic component} that varies across
+  tokens.
+\end{itemize}
+
+This decomposition reflects the empirical findings in
+Sections~\ref{subsec:spike_long_tail}--\ref{subsec:tail_incoherent}:
+linguistic structure (e.g., grammar, syntax, and shared functional patterns) is
+globally coherent across tokens, while semantic content is diverse and
+context-dependent.
+
+\subsection{Structural Assumptions}
+\label{subsec:structural_assumptions}
+
+The empirical analyses in Sections~2.2--2.4 motivate the following structural
+assumptions.
+
+\paragraph{Assumption 1 (Low-rank linguistic structure).}
+The shared component $\ell$ lies in a low-dimensional subspace
+$\mathcal{L} \subset \mathbb{R}^H$ of dimension $d_\ell \ll H$.
+Equivalently, $\ell$ is well approximated by the span of a small number of leading
+right singular vectors of $X$, consistent with the spike structure observed in
+Figure~\ref{fig:spectrum_spike_tail_combined} and the coherence analysis in
+Figure~\ref{fig:colmean_alignment}.
+
+\paragraph{Assumption 2 (Semantic compressibility).}
+Each semantic component $s_i$ lies predominantly in the orthogonal complement
+$\mathcal{L}^\perp$ and is \emph{compressible} in a fixed semantic eigenbasis:
+most of its energy is concentrated on a subset of coordinates whose size is small
+relative to $\dim(\mathcal{L}^\perp)$.
+This assumption is empirically supported by the effective support statistics
+shown in Figure~\ref{fig:tail_effective_support}.
+
+\paragraph{Assumption 3 (Semantic incoherence across sequences).}
+For tokens drawn from different sequences, or from sufficiently distant
+positions within a long sequence, semantic components are weakly correlated in a
+normalized sense.
+Let $s_i^{\perp} = P_{\mathcal{L}^\perp}s_i$ denote the projection of $s_i$ onto the
+semantic subspace.
+Then for $i \neq j$ from different sequences,
+\begin{equation}
+\label{eq:assump_cos_incoh}
+\mathbb{E}\!\left[
+\frac{\langle s_i^{\perp},\, s_j^{\perp}\rangle}
+{\|s_i^{\perp}\|_2\,\|s_j^{\perp}\|_2}
+\right]
+\approx 0,
+\end{equation}
+with bounded second moments $\mathbb{E}\|s_i\|_2^2 \le \sigma^2$.
+This assumption is directly validated by the coefficient-space cosine similarity
+distributions in Figure~\ref{fig:tail_coeff_cosine}.
+
+\subsection{Empirical Effect of Averaging on Spike and Tail}
+\label{subsec:avg_empirical}
+
+We now empirically examine how mean removal (averaging) affects the spectral
+structure characterized in Section~2.
+The goal of this subsection is purely observational: to quantify how much of the
+spectral spike is suppressed by averaging, and how much of the long tail is
+preserved, without appealing to any theoretical explanation.
+A formal account of these phenomena is deferred to Section~4.
+
+\paragraph{Experimental setup.}
+Given the token matrix $X \in \mathbb{R}^{N\times H}$, we consider two operations:
+(i) \emph{mean removal},
+\[
+X_{\mathrm{avg}} = X - \mathbf{1}\mu^\top,
+\quad
+\mu = \tfrac{1}{N}\sum_{i=1}^N x_i,
+\]
+and (ii) \emph{top-$k$ SVD removal},
+\[
+X_k = X - X P_k,
+\]
+where $P_k$ projects onto the top-$k$ right singular vectors of $X$.
+We compare these operations using Frobenius-norm energy ratios, which measure how
+much variance remains after each transformation.
+
+\paragraph{Mean alignment with the spike subspace.}
+Figure~\ref{fig:avg_mean_in_spike} reports the fraction of mean energy captured by
+the spike subspace, $\|P_k\mu\|_2^2 / \|\mu\|_2^2$, as a function of $k$.
+The batch mean lies almost entirely within the spike subspace for modest $k$; for
+example, projecting onto the top $1\%$ of singular directions captures over
+$99.9\%$ of the mean energy.
+This indicates that mean removal primarily targets directions aligned with the
+dominant spectral spike.
+
+\paragraph{Spike energy reduction and tail preservation.}
+Figures~\ref{fig:avg_spike_reduction} and~\ref{fig:avg_tail_preservation} quantify
+the effect of averaging on the spike and tail components, respectively.
+Mean removal suppresses a nontrivial portion of spike energy, while preserving
+nearly all tail energy across a wide range of spike-subspace definitions.
+In contrast, top-$k$ SVD removal progressively eliminates both spike and tail
+energy as $k$ increases.
+
+\paragraph{Conservative nature of averaging.}
+Figure~\ref{fig:avg_residual_energy} compares the total residual energy after mean
+removal and after top-$k$ SVD removal.
+Mean removal eliminates a fixed shared component, resulting in a bounded energy
+reduction, whereas SVD removal continues to remove energy as the projection rank
+grows.
+This highlights the conservative nature of averaging: it suppresses the dominant
+shared structure without aggressively removing variance from the long tail.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/avg_mean_in_spike_vs_k.png}
+    \caption{Mean energy captured by the spike subspace.}
+    \label{fig:avg_mean_in_spike}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/avg_spike_reduction_vs_k.png}
+    \caption{Spike energy reduction under mean removal.}
+    \label{fig:avg_spike_reduction}
+  \end{subfigure}
+
+  \vspace{0.5em}
+
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/avg_tail_preservation_vs_k.png}
+    \caption{Tail energy preservation under mean removal.}
+    \label{fig:avg_tail_preservation}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/avg_residual_energy_comparison.png}
+    \caption{Residual energy: mean removal vs.\ top-$k$ SVD removal.}
+    \label{fig:avg_residual_energy}
+  \end{subfigure}
+
+  \caption{Empirical validation of averaging as conservative spike suppression.
+  Mean removal targets directions aligned with the spike subspace
+  (top-left), suppresses spike energy (top-right), preserves long-tail energy
+  (bottom-left), and removes less total energy than top-$k$ SVD projection
+  (bottom-right).}
+  \label{fig:avg_vs_svd_validation}
+\end{figure}
+
+\paragraph{Summary of empirical findings.}
+Across layers and batches, we consistently observe that mean removal:
+(i) targets directions aligned with the spectral spike;
+(ii) suppresses a substantial fraction of spike energy; and
+(iii) preserves the vast majority of long-tail energy.
+These empirical regularities set the stage for the next section, where we
+provide a formal explanation for why averaging exhibits these properties under
+the structural assumptions validated above.

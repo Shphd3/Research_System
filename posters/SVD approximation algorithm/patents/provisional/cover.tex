@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+\setstretch{1.15}
+
+\title{\bf BIAS-CONDITIONED LOW-PRECISION NEURAL NETWORK TRAINING VIA RANK-ONE MEAN DECOMPOSITION}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{ABSTRACT}
+
+A computer-implemented method and system for stabilizing low-precision neural network training are disclosed. An activation tensor associated with a neural network layer is decomposed into a rank-one mean component and a residual component. The rank-one mean component and residual component are independently quantized and recombined during matrix multiplication operations. In certain embodiments, a symmetric decomposition is applied to gradient tensors during backpropagation. The disclosed approach reduces dynamic range inflation and second-moment instability without requiring spectral decomposition operations such as singular value decomposition. The method is hardware-friendly and suitable for GPU, ASIC, and accelerator-based training environments.
+
+\newpage
+
+\section{FIELD OF THE INVENTION}
+
+The present invention relates to machine learning systems. More specifically, the invention relates to low-precision neural network training and quantization techniques that improve numerical stability and hardware efficiency.
+
+\section{BACKGROUND}
+
+Neural networks, including transformer-based language models, are increasingly trained using reduced numerical precision formats such as FP8, FP4, and other low-bit floating point or blockwise quantization schemes. Reduced precision improves computational efficiency, memory utilization, and hardware throughput.
+
+However, reduced precision training suffers from instability caused by extreme activation magnitudes and inflated adaptive second-moment statistics. Existing mitigation techniques often rely on spectral decompositions, whitening procedures, or orthogonal transformations that require significant computational overhead and are poorly aligned with high-throughput accelerator hardware.
+
+Accordingly, there exists a need for an efficient and hardware-compatible method for mitigating bias-driven outliers and second-moment inflation during low-precision neural network training.
+
+\section{SUMMARY OF THE INVENTION}
+
+The invention provides a method for bias-conditioned training of neural networks. The method includes:
+
+\begin{enumerate}
+    \item Computing a feature-wise mean vector from an activation tensor.
+    \item Constructing a rank-one mean tensor from said mean vector.
+    \item Computing a residual activation tensor by subtracting the rank-one mean tensor.
+    \item Independently quantizing the rank-one mean tensor and the residual tensor.
+    \item Performing matrix multiplication using the independently quantized components.
+    \item Optionally performing symmetric decomposition on gradient tensors during backpropagation.
+\end{enumerate}
+
+The disclosed approach avoids singular value decomposition and other expensive spectral operations while stabilizing low-bit training.
+
+\newpage
+
+\section{DETAILED DESCRIPTION}
+
+\subsection{Activation Mean Decomposition}
+
+Let an activation tensor be reshaped into a matrix:
+
+\[
+X \in \mathbb{R}^{l \times m}
+\]
+
+where $l$ represents batch size multiplied by sequence length, and $m$ represents feature dimension.
+
+A feature-wise mean vector is computed as:
+
+\[
+\mu_X = \frac{1}{l} \bm{1}^\top X
+\]
+
+where $\bm{1}$ is an all-ones vector of dimension $l$.
+
+A rank-one mean tensor is constructed:
+
+\[
+M_X = \bm{1} \mu_X^\top
+\]
+
+The residual activation tensor is:
+
+\[
+X_R = X - M_X
+\]
+
+\subsection{Independent Quantization}
+
+Let $Q_b(\cdot)$ represent a quantization operator to a reduced precision format.
+
+\[
+\overline{M}_X = Q_b(M_X)
+\]
+\[
+\overline{X}_R = Q_b(X_R)
+\]
+
+Independent scaling parameters may be used for $\overline{M}_X$ and $\overline{X}_R$.
+
+\subsection{Matrix Multiplication Reconstruction}
+
+Given a quantized weight matrix $\overline{W}$:
+
+\[
+\widehat{Y} = (\overline{M}_X + \overline{X}_R) \overline{W}
+\]
+
+In certain embodiments, the mean tensor is not explicitly materialized, and subtraction is performed on-the-fly.
+
+\subsection{Backward-Pass Decomposition}
+
+Given gradient tensor:
+
+\[
+D = \frac{\partial L}{\partial Y}
+\]
+
+A mean vector is computed:
+
+\[
+\mu_D = \frac{1}{l} \bm{1}^\top D
+\]
+
+Residual gradient:
+
+\[
+D_R = D - \bm{1}\mu_D^\top
+\]
+
+Independent quantization is applied:
+
+\[
+\overline{M}_D = Q_b(\bm{1}\mu_D^\top)
+\]
+\[
+\overline{D}_R = Q_b(D_R)
+\]
+
+Gradients are computed:
+
+\[
+\widehat{\frac{\partial L}{\partial X}} = (\overline{M}_D + \overline{D}_R) \overline{W}^\top
+\]
+
+\[
+\widehat{\frac{\partial L}{\partial W}} = (\overline{M}_X + \overline{X}_R)^\top (\overline{M}_D + \overline{D}_R)
+\]
+
+\subsection{Optional Embodiments}
+
+Embodiments may include:
+
+\begin{itemize}
+    \item Partial mean scaling using a factor $\alpha$.
+    \item Per-head or per-group mean computation.
+    \item Mixed-precision encoding of mean and residual.
+    \item Application during inference-only quantization.
+    \item Distributed training implementations.
+    \item Optional residual spike conditioning without full spectral decomposition.
+\end{itemize}
+
+\subsection{Hardware Implementation}
+
+The method may be implemented using:
+
+\begin{itemize}
+    \item Reduction kernels for mean computation.
+    \item Elementwise subtraction operations.
+    \item Existing quantized GeMM hardware.
+\end{itemize}
+
+No singular value decomposition or eigen decomposition is required.
+
+\newpage
+
+\section*{CLAIM APPENDIX (DRAFT CLAIMS)}
+
+\textbf{Claim 1.} A computer-implemented method for training a neural network using low-precision numerical representation, comprising:
+
+\begin{enumerate}
+    \item receiving an activation tensor associated with a neural network layer;
+    \item computing a feature-wise mean vector from the activation tensor;
+    \item constructing a rank-one mean tensor from the feature-wise mean vector;
+    \item generating a residual activation tensor by subtracting the rank-one mean tensor from the activation tensor;
+    \item independently quantizing the rank-one mean tensor and the residual activation tensor;
+    \item performing a matrix multiplication using the independently quantized tensors and a quantized weight tensor.
+\end{enumerate}
+
+\textbf{Claim 2.} The method of claim 1, further comprising applying a corresponding decomposition and independent quantization to gradient tensors during backpropagation.
+
+\textbf{Claim 3.} The method of claim 1, wherein the reduced numerical precision format comprises a 4-bit floating point representation.
+
+\textbf{Claim 4.} The method of claim 1, wherein singular value decomposition is not performed.
+
+\textbf{Claim 5.} A neural network training system configured to perform the method of claim 1.
+
+\textbf{Claim 6.} A non-transitory computer-readable medium storing instructions that cause one or more processors to perform the method of claim 1.
+
+\end{document}

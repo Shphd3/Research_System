@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,enumitem}
+\title{Expert Specialization 评估指标说明与升级建议}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section{为什么需要重新设计指标}
+
+你们当前最强的指标，是谱空间里的 principal-subspace similarity：
+\[
+    \mathrm{sim}(\mathcal S_i,\mathcal S_j)=\sigma_{\max}(B_j^\top B_i).
+\]
+这个指标非常好的一点是：\textbf{它对“是否存在一条非常共享的方向”很敏感。} 如果两个专家只要有一条 dominant direction 几乎重合，这个值就会很高。所以它特别适合检测 SD-MoE 那篇文章关心的 failure mode：dominant shared direction。
+
+但它也有一个本质限制：\textbf{它只看“最像的那一条方向”，不看“整个子空间整体上像不像”。} 因此，它是一个“是否存在公共尖峰”的指标，而不是“整体冗余有多大”的指标。
+
+如果论文要讨论的是 expert specialization 的根因，那么指标必须从单一几何量升级成三层：参数几何、路由行为、功能可替换性。
+
+\section{现有指标分别测到了什么}
+
+\subsection{参数 overlap：测的是“方向是否共享”}
+给定专家 $i,j$ 的某个谱区间基底 $B_i,B_j\in\mathbb R^{d\times r}$，你们现在用的是
+\[
+    O_{\max}(i,j)=\sigma_{\max}(B_i^\top B_j).
+\]
+它等于两个子空间主夹角的余弦最大值，也就是 canonical correlations 里最大的一项。
+
+\paragraph{它的优点：}
+\begin{itemize}
+    \item 对共享 dominant direction 极其敏感；
+    \item 计算简单；
+    \item 很适合作为“是否出现 SD-MoE 式 dominant collapse”的检测器。
+\end{itemize}
+
+\paragraph{它的局限：}
+\begin{itemize}
+    \item 只要有一条方向很像，它就会很高，即便其他 $r-1$ 条都不一样；
+    \item 反过来，只要最像的那条不高，它就可能很低，即便整个子空间在平均意义上仍然重合很多；
+    \item 它不区分“共享的是 head、middle 还是 tail”在功能上的含义差别。
+\end{itemize}
+
+\subsection{load balance / occupancy：测的是“分得均不均”，不是“分得对不对”}
+load balance 或 expert usage 统计只回答一个问题：\textbf{token 有没有比较均匀地分给不同专家。}
+
+它不回答以下问题：
+\begin{itemize}
+    \item 这些专家处理的是不是不同类型的 token；
+    \item 同一个 token 的 top-$k$ 是否仍然总选到很相似的 experts；
+    \item experts 之间是不是 function 上仍然可互换。
+\end{itemize}
+
+所以，一个“随机但均匀”的 router 可以有很好看的 load balance，但 specialization 仍然很差。
+
+\subsection{benchmark：测的是最终效果，但不告诉你为什么}
+下游任务分数当然重要，但它是最终结果，不是机理指标。benchmark 能告诉你“方法有没有收益”，不能告诉你“收益是不是来自 specialization”。
+
+\section{必须新增的第一类指标：整体子空间重叠，而不是只看最强方向}
+
+\subsection{平均型 overlap}
+最直接的补充是
+\[
+    O_{\mathrm{vol}}(i,j)=\frac{1}{r}\|B_i^\top B_j\|_F^2
+    =\frac{1}{r}\sum_{k=1}^r \cos^2\theta_k,
+\]
+其中 $\theta_k$ 是两子空间的 principal angles。
+
+\paragraph{这个量的意义非常直接：}
+如果 $O_{\max}$ 问的是“有没有一条方向特别像”，那么 $O_{\mathrm{vol}}$ 问的是“整个 $r$ 维子空间平均有多像”。
+
+\paragraph{为什么你们需要它：}
+因为你们现在的结果很可能会出现这样的情况：
+\begin{itemize}
+    \item $O_{\max}$ 看起来下降了，说明最共享的尖峰没那么强了；
+    \item 但 $O_{\mathrm{vol}}$ 依然不低，说明整体上 experts 还是学了很多相近方向。
+\end{itemize}
+
+这正好能区分“去掉了一个公共 spike”和“真正把专家整体分开了”这两件事。
+
+\subsection{能量加权 overlap}
+如果你们想把“方向是否重合”和“这些方向有多重要”结合起来，可以定义能量加权版本。最实用的写法不是很复杂的矩阵式，而是先固定 band，再在 band 内做加权：
+\[
+    O_{\mathrm{ew}}(i,j;\mathcal B)=
+    \frac{\sum_{a\in\mathcal B}\sum_{b\in\mathcal B} \sigma_{i,a}\sigma_{j,b}\,(b_{i,a}^\top b_{j,b})^2}
+    {\sum_{a\in\mathcal B}\sum_{b\in\mathcal B}\sigma_{i,a}\sigma_{j,b}}.
+\]
+
+这个量能区分：
+\begin{itemize}
+    \item 某些方向虽然角度上相近，但本身能量很小；
+    \item 某些方向既相近，又占了大部分谱能量。
+\end{itemize}
+
+对于你们关心的 forgetting / middle-tail 问题，这个指标尤其重要。
+
+\section{必须新增的第二类指标：路由行为本身}
+
+\subsection{score correlation：直接检验“router 是否被 common-mode 支配”}
+设 token $t$ 对 expert $e$ 的 pre-softmax score 为 $s_e(x_t)$。定义
+\[
+    C_{ij}=\mathrm{Corr}_t\bigl(s_i(x_t),s_j(x_t)\bigr).
+\]
+
+\paragraph{这个量回答的问题是：}
+不同 expert 的打分是不是几乎一起涨、一起跌。
+
+如果一个 shared common-mode 在支配路由，那么所有 experts 的 score 会高度正相关；也就是说，router 虽然表面上有很多行向量，本质上却像在做“一维排序”。
+
+\paragraph{这个指标的优点：}
+它不依赖参数分解，也不依赖你先相信哪一种 overlap 定义。它直接看 router 的实际行为。
+
+\subsection{top-$k$ 共选冗余}
+设某个 token 的 top-$k$ 专家集合为 $\mathcal E_t$。定义
+\[
+    R_{\mathrm{co}}=\mathbb E_t\left[\frac{1}{\binom{k}{2}}
+    \sum_{i\neq j\in \mathcal E_t} \mathrm{sim}_{\mathrm{param}}(i,j)\right].
+\]
+
+\paragraph{它测的是什么：}
+同一个 token 被同时送去的 experts，到底是互补的，还是彼此很像的。
+
+如果 top-$2$ / top-$4$ 总在选相似 experts，那么 activated FLOPs 虽然增加了，但 effective capacity 并没有跟着增长。
+
+\subsection{条件分布差异}
+如果你们有 domain、token type、词性、长度、稀有词等标签，可以看
+\[
+    p(e\mid c),
+\]
+其中 $c$ 是条件标签。
+
+\paragraph{它的作用：}
+不是为了证明“expert 一定对应某个语义标签”，而是为了检查 routing 是否至少对条件发生了稳定改变。如果对不同条件几乎没有差异，那就很难说专家学到了有区分度的分工。
+
+\section{必须新增的第三类指标：功能 specialization}
+
+\subsection{expert swap loss：最直接的功能可替换性测试}
+设 $\mathcal T_e$ 是原本路由到 expert $e$ 的 token 集合。把这些 token 临时改路由到另一个 expert $j$，定义
+\[
+    \Delta_{e\to j}=\mathbb E_{t\in\mathcal T_e}
+    \bigl[\ell(t; e\mapsto j)-\ell(t)\bigr].
+\]
+
+\paragraph{它的解释极其直接：}
+如果 $\Delta_{e\to j}$ 很小，说明 expert $j$ 可以顶替 $e$ 干活，那么 $e$ 的功能 specialization 就很弱。
+
+\paragraph{为什么这是你们最需要的指标：}
+因为你们现在最大的风险，就是“参数几何看起来分开了，但专家在 function 上仍然可互换”。swap loss 正是在检验这件事。
+
+\subsection{merge / prune 曲线}
+进一步，可以把最相似的一对 experts 合并，或者直接删除一组 experts，然后看 loss 或 benchmark 下降多少。
+
+\paragraph{它测的是什么：}
+模型真实使用了多少“不可替代的专家能力”。
+
+如果合并或删除相似 experts 几乎不掉性能，说明当前 MoE 的有效容量远小于名义容量。
+
+\section{怎样把这些指标与你们当前主线对应起来}
+
+你们当前的主线是 mean bias $\rightarrow$ better specialization。那对应地，指标应该形成下面这条闭环：
+\begin{enumerate}
+    \item \textbf{输入侧：} 去 mean / 去 common subspace 后，score correlation 是否下降；
+    \item \textbf{路由侧：} top-$k$ 共选冗余是否下降；
+    \item \textbf{参数侧：} $O_{\max}$ 和 $O_{\mathrm{vol}}$ 是否一起下降；
+    \item \textbf{功能侧：} swap loss、merge/prune 曲线是否变陡。
+\end{enumerate}
+
+只有四层证据是同向的，你们才能有力地说：\textbf{我们促进的不是“几何上的好看分离”，而是 useful specialization。}
+
+\section{最简建议：现在就必须补的三个指标}
+如果当前时间有限，不可能一口气补全所有指标，那么优先级最高的三个是：
+\begin{enumerate}
+    \item $O_{\mathrm{vol}}$：补足现有 overlap 指标只看最强方向的缺陷；
+    \item score correlation：最直接测试 mean/common-mode hypothesis；
+    \item expert swap loss：最直接测试 function 上是否真的 specialize。
+\end{enumerate}
+
+这三个量一补上，整篇文章对 specialization 的论证就会扎实很多。
+
+\end{document}

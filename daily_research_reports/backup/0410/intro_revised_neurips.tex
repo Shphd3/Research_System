@@ -1,0 +1,39 @@
+% Revised introduction section for the NeurIPS manuscript.
+% This file is intended to replace the current intro snippet.
+% It assumes xcolor is already loaded in the main preamble.
+\providecommand{\uncertain}[1]{\textcolor{red}{[TODO: #1]}}
+
+\section{Introduction}
+\label{sec:intro}
+
+Mixture-of-Experts (MoE) scales large language models by activating only a small subset of parameters per token, but this promise depends on one central condition: routed experts must actually specialize. When specialization fails, multiple experts become functionally similar or nearly interchangeable, and the model pays the systems cost of sparse routing without fully converting additional parameters into effective representational capacity \citep{fedus2022switch,dai2024deepseekmoe,huang2026sdmoe}. Understanding why specialization fails is therefore a first-order question for MoE design.
+
+Existing work has shown that specialization failure can appear at multiple levels. At the architectural level, routed experts may absorb knowledge that is effectively shared, motivating explicit shared-expert designs \citep{dai2024deepseekmoe}. At the optimization level, the implementation of load balancing can itself alter whether experts become domain-specialized or are forced toward uniform within-sequence usage \citep{qiu2025demons}. At the spectral level, SD-MoE shows that experts in standard MoEs may share highly aligned dominant parameter and gradient subspaces, and that gating decisions can be biased toward these common directions \citep{huang2026sdmoe}. Taken together, these results suggest that specialization failure is not a superficial occupancy problem; it is fundamentally tied to the geometry of routed representations and to the way routing interacts with that geometry.
+
+In this work, we revisit the problem from the representation side. Our starting observation is that hidden states presented to the router are strongly anisotropic and contain a pronounced common-mode component, which we refer to as a \emph{mean bias} \citep{ethayarajh2019contextual,puccetti2022outlier}. In our own audits, the most stable phenomenon across router families is not always the dominant-parameter-collapse pattern emphasized by SD-MoE; instead, what remains consistently strong is a shared input subspace across layers and batches, together with the fact that simple centering already improves routing quality \uncertain{replace with finalized one-sentence summary of the empirical audit}. This points to a complementary failure mode: before experts can separate, the router must first disentangle a shared common component from expert-discriminative residual variation.
+
+This observation leads to a simple but crucial question: what should be removed, and what should be preserved? Let $x$ denote the routed hidden state. We decompose it into a mean-parallel component and a centered residual,
+\[
+    x = x_{\parallel} + x_c,
+    \qquad
+    x_c = x - \mu_t,
+\]
+where $\mu_t$ is a running mean and $x_{\parallel}$ is the projection of $x$ onto the mean direction. Standard routing mixes these two sources of variation inside a single score function. Under mean-dominated noise, the mean-aligned component can induce highly correlated expert scores, making specialization difficult. At the same time, the mean direction itself still carries useful coarse information, so it cannot simply be discarded from computation. The right design principle is therefore not ``remove the mean and forget it,'' but rather ``center the competitive routing signal while preserving the common channel.''
+
+We develop this principle both theoretically and algorithmically. On the theory side, we prove in a stylized routing model that, under the same noise level, mean domination can force non-specialized routing, whereas centering expands the regime in which correct expert separation is achievable. We further show that if the target computation depends non-trivially on the mean-parallel channel, then any predictor that discards this channel incurs an irreducible error. On the algorithm side, we study \emph{mean-aware split routing}, in which the mean-parallel and centered channels are handled separately. We instantiate this principle with two router families. The first is a first-order affine decomposition,
+\[
+    \ell_e^{\mathrm{aff}}(x) = a_e^\top x_{\parallel} + b_e^\top x_c,
+\]
+and the second is a hybrid quadratic variant that further scores residual variance through a low-rank term \uncertain{keep this branch only if the final method section still includes the quadratic router}. Rather than treating a new score form as the sole contribution, we use these routers as controlled probes for a deeper question: what kind of routing signal is actually capable of inducing useful expert specialization?
+
+Our empirical study yields three messages. First, centering is necessary: removing the common-mode bias improves routing and downstream behavior relative to uncentered baselines. Second, centering alone is not sufficient: even after mean removal, a large shared subspace remains, and expert specialization does not automatically emerge. Third, increasing routing complexity is not a guaranteed solution: the quadratic router can strengthen gate-to-expert alignment under our spectral audit, but this stronger alignment does not yet translate into a decisive downstream or specialization advantage \uncertain{insert final quantitative statement once the experiments are frozen}. Together, these results suggest that the bottleneck is not merely the lack of a richer score function; it is the lack of a correct decomposition between shared computation and discriminative routing.
+
+Our contributions are therefore fourfold:
+\begin{itemize}
+    \item \textbf{We identify a representation-side bottleneck for expert specialization.} We argue that common-mode bias in router inputs is a major cause of specialization failure, complementary to the parameter- and gradient-side diagnosis in SD-MoE.
+    \item \textbf{We show that centering is necessary, but discarding the mean channel is incorrect.} Our theory proves that mean-dominated routing is harder to specialize under noise, while any computation that ignores the mean-parallel channel can incur irreducible error.
+    \item \textbf{We formulate mean-aware split routing as a concrete design principle.} We study first-order and second-order instantiations that explicitly separate the common channel from the centered competitive signal.
+    \item \textbf{We refine how specialization should be evaluated.} Beyond occupancy and parameter overlap, we advocate a multi-level evaluation that separates parameter geometry, routing behavior, and functional specialization \uncertain{keep or trim depending on whether the metric section is promoted into the main paper}.
+\end{itemize}
+
+Finally, we treat continual learning as an important downstream implication rather than as the primary theorem of this paper. Our immediate goal is to understand when routing produces genuinely distinct experts; the relation between such specialization and reduced interference in sequential adaptation is a second-stage question \uncertain{keep this sentence only if continual-learning experiments remain in the paper}.

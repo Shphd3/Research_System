@@ -1,0 +1,84 @@
+\subsection{Averaging Across Independent Sequences and Semantic Preservation}
+\label{sec:sequence_level_averaging}
+
+A central goal of this chapter is to isolate shared, grammar-like structure in
+gradient matrices while preserving the model’s ability to learn semantic features.
+This requires careful attention to \emph{where} averaging is performed and
+\emph{what statistical independence assumptions} are invoked.
+
+\paragraph{Token- and sequence-level structure.}
+We index tokens by a pair $(j,t)$, where $j$ denotes the sequence index and $t$
+denotes the token position within that sequence.
+In typical language-model training, tokens within the same sequence share entities,
+topics, and compositional meaning, and are therefore \emph{semantically correlated}.
+In contrast, different sequences in a batch are drawn independently and may be
+treated as approximately \emph{semantically independent}.
+
+We decompose per-token activations and backpropagated errors as
+\[
+x^{(j,t)} = x_{\mathrm{gram}} + x_{\mathrm{sem}}^{(j,t)},
+\qquad
+\delta^{(j,t)} = \delta_{\mathrm{gram}} + \delta_{\mathrm{sem}}^{(j,t)},
+\]
+where the grammar components are shared across sequences, while the semantic
+components vary across sequences and positions.
+
+\paragraph{Batch gradient and semantic cancellation.}
+The gradient of a linear projection with respect to a batch of tokens is
+\[
+G
+=
+\sum_{j} \sum_{t \in \text{seq } j}
+\delta^{(j,t)} \bigl(x^{(j,t)}\bigr)^\top
+\;\in\;
+\mathbb{R}^{d\times d}.
+\]
+In this expression, the summation over tokens constitutes an implicit averaging
+over the batch.
+When this summation is taken over tokens from many \emph{independent sequences},
+semantic contributions fluctuate in sign and direction and cancel in expectation,
+while grammar-related contributions reinforce coherently.
+This yields the decomposition
+\[
+G = A + R,
+\]
+where $A$ captures shared, grammar-like structure and $R$ captures residual
+semantic variability, as formalized in Assumption~1.
+
+\paragraph{Why averaging must be across sequences.}
+It is crucial that this averaging be performed across tokens drawn from
+\emph{different sequences}.
+If averaging were instead restricted to tokens within a single sequence, semantic
+signals would remain strongly correlated and would not cancel.
+Such within-sequence averaging would suppress meaningful semantic structure and
+interfere with learning.
+In contrast, averaging across sequences removes only \emph{independent} semantic
+variation, while preserving within-sequence correlations that are essential for
+learning semantic and compositional features.
+
+\paragraph{Averaging as a probe, not an update.}
+The averaging operations introduced in this chapter (e.g., $G\mathbf{1}$ or
+$G\Omega$) are used solely as \emph{diagnostic probes} to estimate the dominant
+shared subspace of the gradient matrix.
+They do not replace the full gradient in the parameter update.
+All semantic information remains present in the original gradient and continues
+to drive learning through stochastic gradient descent.
+Averaging is therefore used to \emph{identify and regulate} dominant shared
+directions, not to eliminate semantic gradients.
+
+\paragraph{Implications for low-rank approximation.}
+Under the assumption of semantic independence across sequences, the dominant
+grammar component $A$ induces dense, coherent marginals that survive simple
+aggregation, while the residual $R$ cancels under averaging.
+This justifies the use of simple column averaging (and its randomized extensions)
+to approximate the spiky, low-dimensional structure of the agreement matrix
+without explicit singular value decomposition.
+At the same time, because averaging is restricted to independent sequences,
+semantic features remain learnable through standard optimization dynamics.
+
+\paragraph{Summary.}
+In summary, averaging should be understood as operating across independent
+semantic units (sequences), not across correlated tokens within a sequence.
+This distinction is essential: it allows shared grammatical structure to be
+isolated without suppressing the semantic variability that drives representation
+learning.

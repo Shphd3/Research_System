@@ -1,0 +1,114 @@
+\documentclass{article}
+
+% ICLR template (located in ../doc/templates/iclr2026/)
+\usepackage{iclr2026_conference}
+\usepackage{times}
+
+% Math & symbols
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+
+% Figures & tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+% Formatting
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{epigraph}
+\newcommand{\draft}[1]{}
+
+% Reduce underfull vbox warnings by allowing variable page height.
+\raggedbottom
+
+% Theorem-like environments (used in \input files).
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+
+\title{The Curse and Blessing of Mean Bias in FP4-Quantized LLM Training}
+
+\author{%
+\hspace{1.0em} \textbf{Hengjie Cao}$^{1}$\thanks{Co-first authors.} \hspace{1.0em}
+\textbf{Zhendong Huang}$^{1}$\footnotemark[1] \hspace{1.0em}
+\textbf{Mengyi Chen}$^{1}$ \hspace{1.0em}
+\textbf{Yifeng Yang}$^{1}$ \hspace{1.0em}
+\textbf{Fanqi Yu}$^{1}$ \\
+\hspace{2.0em} \textbf{Ruijun Huang}$^{1}$ \hspace{1.0em}
+\textbf{Fang Dong}$^{1}$ \hspace{1.0em}
+\textbf{Xin Zhang}$^{1}$ \hspace{1.0em}
+\textbf{Jixian Zhou}$^{1}$ \hspace{1.0em}
+\textbf{Anrui Chen}$^{1}$ \\
+\hspace{1.7em} \textbf{Mingzhi Dong}$^{2}$ \hspace{1.0em}
+\textbf{Yujiang Wang}$^{4,5}$ \hspace{1.0em}
+\textbf{Jinlong Hou}$^{3}$ \hspace{1.0em}
+\textbf{Qin Lv}$^{6}$ \hspace{1.0em}
+\textbf{Yuan Cheng}$^{3}$ \\
+\hspace{12.0em} \textbf{Tun Lu}$^{1}$ \hspace{1.0em}
+\textbf{Fan Yang}$^{1}$ \hspace{1.0em}
+\textbf{Li Shang}$^{1}$
+\\[0.5em]
+\hspace{3.0em} $^1$ Fudan University \hspace{1.0em}
+$^2$ University of Bath \hspace{1.0em}
+$^3$ Shanghai Innovation Institute \\
+\hspace{4.0em} $^4$ University of Oxford \hspace{0.5em}
+$^5$ Oxford Suzhou Centre for Advanced Research \hspace{0.5em}  \\
+\hspace{13.0em} $^6$ University of Colorado Boulder
+}
+% Uncomment for camera-ready
+\iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+% \thispagestyle{plain}
+% \pagestyle{plain}
+
+\begin{abstract}
+
+Large language models trained on natural language exhibit pronounced anisotropy: a small number of directions concentrate disproportionate energy, while the remaining dimensions form a broad semantic tail. In low-bit training regimes, this geometry becomes numerically unstable. Because blockwise quantization scales are determined by extreme elementwise magnitudes, dominant directions stretch the dynamic range, compressing long-tail semantic variation into narrow numerical bins.
+We show that this instability is primarily driven by a coherent rank-one mean bias, which constitutes the dominant component of spectral anisotropy in LLM representations. This mean component emerges systematically across layers and training stages and accounts for the majority of extreme activation magnitudes, making it the principal driver of dynamic-range inflation under low precision.
+Crucially, because the dominant instability is rank-one, it can be eliminated through a simple source-level mean-subtraction operation. This bias-centric conditioning recovers most of the stability benefits of SVD-based spectral methods while requiring only reduction operations and standard quantization kernels. Empirical results on FP4 (W4A4G4) training show that mean removal substantially narrows the loss gap to BF16 and restores downstream performance, providing a hardware-efficient path to stable low-bit LLM training.
+
+\end{abstract}
+
+% \begin{flushright}
+% \textit{“Understanding precedes simplicity.”}\\
+% --- The Team
+% \end{flushright}
+
+\input{./psections/introduction}
+
+\input{./psections/a0}
+
+\input{./psections/a1_new}
+
+\input{./psections/a2}
+
+\input{./psections/method}
+
+\input{./psections/related}
+
+\input{./psections/conclusion}
+
+\newpage
+
+
+\bibliographystyle{iclr2026_conference}
+\bibliography{references}
+% \input{paper.bbl}
+
+\newpage
+
+\appendix
+% \input{./psections/proofs_new}
+\input{./psections/proofs_extra}
+%\input{proofs}
+% Extended derivations
+
+
+\end{document}

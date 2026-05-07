@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,xcolor,hyperref}
+\setlist[itemize]{leftmargin=1.6em}
+\setlist[enumerate]{leftmargin=1.8em}
+\title{围绕 Expert Specialization 的下一轮科研计划}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section{当前阶段最重要的判断}
+
+这一轮结果最有价值的地方，不是“我们已经找到最终方法”，而是我们已经把问题缩小到了一个更清楚的范围：\textbf{当前方法改变了部分路由几何，但没有从根本上带来 useful specialization。} 这件事本身就是一个重要发现，因为它说明“把专家分开”与“让专家真正有用地分工”并不是一回事。
+
+基于当前审计，可以先得出四个稳妥判断：
+\begin{enumerate}
+    \item \textbf{mean/common-mode 确实是有效因素。} 不做中心化的线性路由是最差基线；加入 load balance 或做 running-center 后，结果明显变好。这说明表征中的共享偏置的确会影响路由。
+    \item \textbf{但是，当前方法并没有复现 SD-MoE 中最关键的参数侧 failure pattern。} 你们当前模型里 dominant overlap 并没有像 SD-MoE 基线那样系统性高于 tail overlap，因此不能直接沿用“dominant shared parameter collapse $\Rightarrow$ 方法设计”这条因果链。
+    \item \textbf{shared input subspace 仍然很强。} 这说明专家要想 specialize，不是简单靠参数自己分开，而是必须解决输入表征中的 shared component 如何参与路由的问题。
+    \item \textbf{Quadratic 不是无效，而是当前形式没有击中根因。} 它能增强 gate-to-expert alignment，但没有转化成稳定、明显的下游收益。这更像是在告诉我们：二阶信息可能抓住了某些结构，但当前抓到的不是“有用的 expert-discriminative structure”。
+\end{enumerate}
+
+因此，下一轮工作的目标不应是“继续调已有方法直到涨点”，而应是：\textbf{围绕 expert specialization 的 root cause，重建诊断、理论、方法和评估之间的一致性。}
+
+\section{与 SD-MoE 对照后，当前结论应该如何表述}
+
+\subsection{已经复现或部分复现的部分}
+\begin{itemize}
+    \item \textbf{shared-space 现象复现得很强。} 不同 batch、不同模型之间仍然存在很强的输入共享子空间，这与 SD-MoE 中“共享输入结构驱动梯度对齐”的方向是一致的。
+    \item \textbf{路由的确会受到共享结构影响。} 无论是线性、ACP-lite 还是 quadratic，你们都观察到 gate 的行为并非完全自由，而是显著受某些稳定方向支配。
+    \item \textbf{中心化的确有帮助。} 这支持了“输入里有一个不该直接拿来竞争专家的 common-mode”这个观点。
+\end{itemize}
+
+\subsection{没有复现的关键部分}
+\begin{itemize}
+    \item \textbf{dominant-parameter-collapse 没有复现。} 这意味着你们现在的 failure mode 与 SD-MoE 基线并不相同，至少不能简单视作同一个问题的不同实现。
+    \item \textbf{gradient head-vs-tail 的结论也没有形成与 SD-MoE 完全同向的证据链。} 当前最强、最稳的信号是“shared input space 强”，而不是“dominant gradient subspace 系统性更共享”。
+    \item \textbf{更强的 gate alignment 没有自动带来更好的 benchmark。} 这说明“参数/门控几何更对齐”并不等价于“有效容量更高”。
+\end{itemize}
+
+\subsection{因此论文的主命题应该收紧}
+下一篇 paper 最强的写法，不应该是“我们发明了一个新的 router，所以 specialization 变好了”，而应该是：
+\begin{quote}
+\textbf{MoE 中 expert specialization 的核心瓶颈，是 router 输入中的 common-mode bias。去均值是必要条件，但不是充分条件；被去掉的公共通道不能消失，而应以 shared-path 的形式被保留下来。}
+\end{quote}
+
+这个命题有三个优点：
+\begin{enumerate}
+    \item 它解释了为什么 no-center 会差；
+    \item 它解释了为什么 center 之后能变好但还不够；
+    \item 它也解释了为什么单纯增加二阶复杂度不一定 work，因为问题不只是表达力，而是 shared vs. discriminative 的分解是否正确。
+\end{enumerate}
+
+\section{下一轮科研的核心科学问题}
+
+\paragraph{Q1.} shared/common-mode 到底是不是当前训练设置下 expert specialization 失败的主要原因？
+
+\paragraph{Q2.} 去掉 mean 之后，究竟是哪一部分 residual signal 能支持 routing specialization？是简单的一阶方向，还是更高阶的协方差信号，还是低秩 whitening 之后的残差？
+
+\paragraph{Q3.} 为什么当前 quadratic 不 work？它到底学到了什么：方差、异常值、尺度、还是有用的语义分工？
+
+\paragraph{Q4.} 你们现在用的 overlap 指标，到底测到了什么？它测到的是“存在一条公共方向”，还是“整体子空间重合很多”，还是“功能上可以互换”？
+
+\paragraph{Q5.} expert specialization 与低秩、以及 continual learning 中的遗忘，到底是什么关系？这个关系应该作为主命题，还是第二阶段展开的问题？
+
+\section{下一轮工作的总体路线}
+
+\subsection{阶段 A：先把 root cause 做成因果结论，而不是相关性结论}
+这一阶段不先训练新模型，而先做干预实验。
+\begin{enumerate}
+    \item 对同一个已训练 checkpoint，在 inference/router-analysis 时分别使用：
+    \[
+        x,\qquad x-\mu,\qquad x-P_r x,\qquad \mathrm{whiten}(x-P_r x),
+    \]
+    其中 $P_r$ 是 top-$r$ common subspace projector。
+    \item 做 dose-response：人为给 router 输入加上 $+\alpha\mu$，考察 routing entropy、score correlation、top-$k$ co-activation redundancy 如何随 $\alpha$ 变化。
+    \item 做 ``drop vs. preserve'' 对照：
+    \begin{itemize}
+        \item 直接丢掉 $x_{\parallel}$；
+        \item 把 $x_{\parallel}$ 送入 shared path；
+        \item 只让 residual 参与 expert competition。
+    \end{itemize}
+\end{enumerate}
+
+\textbf{这一阶段的目标：} 先证明“去除 common-mode 会改变路由竞争结构”，再证明“common-mode 不能从 computation 中消失”。只要这两点成立，文章主线就稳了。
+
+\subsection{阶段 B：把方法设计收缩成一个最小正确解}
+优先级最高的方法，不应该是更复杂的 quadratic，而应该是更干净的 shared/residual 分解：
+\begin{align}
+    x_{\parallel} &= P_r x,\\
+    x_{\perp} &= (I-P_r)x,\\
+    \ell_e(x) &= b_e^\top \widetilde{x}_{\perp},
+\end{align}
+其中 $\widetilde{x}_{\perp}$ 可以先取 $x_{\perp}$，再逐步尝试 whitening 或尺度归一化；而 $x_{\parallel}$ 不进入 expert competition，而进入 shared expert 或 shared FFN 路径。
+
+这一阶段的方法原则只有一句话：
+\begin{quote}
+\textbf{route on discriminative residual, compute common information on a shared path.}
+\end{quote}
+
+\subsection{阶段 C：把 quadratic 从“主角方法”改成“被诊断对象”}
+当前 quadratic 不该继续被当作主方法猛调，而应先回答它为什么不 work。需要做四类诊断：
+\begin{enumerate}
+    \item \textbf{符号敏感性测试：} 比较 $x_c$ 与 $-x_c$ 的路由变化。如果路由对正负翻转不敏感，说明 quadratic 主要在看“轴”和“尺度”，而不是语义方向。
+    \item \textbf{尺度偏置测试：} 固定方向、改变 $\lVert x_c \rVert$，考察路由是否过度响应 norm/outlier。
+    \item \textbf{残差各向异性测试：} 中心化后再看 top-PC 是否仍主导；如果仍然强，说明 quadratic 可能只是在继续追高方差方向。
+    \item \textbf{功能冗余测试：} 比较 quadratic 选中的 experts 是否在 function 上仍然高度可替换。
+\end{enumerate}
+
+只有当这些测试表明 quadratic 学到的确实是 expert-discriminative 结构，而不是 norm/variance artifact，才值得把它重新放回主线。
+
+\subsection{阶段 D：把 continual learning 作为第二阶段项目，而不是现在就塞进主线}
+关于 low-rank 与 forgetting 的关系，现在最稳妥的做法不是先写结论，而是先做 band-wise 验证：
+\begin{enumerate}
+    \item 保存旧任务 checkpoint；
+    \item 学新任务后，把 expert matrix 的 head / middle / tail 分段恢复；
+    \item 看恢复哪一段时，旧任务性能回升最多。
+\end{enumerate}
+
+如果 middle band 真的是 forgetting carrier，这会变成非常强的独立结果；如果不是，也能避免主文中出现未经验证的叙事跳跃。
+
+\section{新一轮方法设计的优先级}
+
+\subsection{优先级 1：shared-path + centered residual routing}
+这是最应该马上做的版本，因为它最直接对应你们的理论命题，也最容易解释。
+
+\subsection{优先级 2：mean removal $\rightarrow$ rank-$r$ common-subspace removal}
+如果只减均值还不够，就不要立刻跳 quadratic，而是先推广到去 top-$r$ common subspace。这样逻辑仍然干净，而且更接近谱空间视角。
+
+\subsection{优先级 3：residual whitening / normalization}
+如果 residual 里仍强烈各向异性，那么线性 router 可能还在看“被剩下来的 dominant direction”。这一步是为了把“去 mean”推广为“去 common geometry”。
+
+\subsection{优先级 4：similarity-aware second pick}
+若 top-$k$ 经常选到彼此很像的 experts，就在第二个 expert 的选择上加入“与第一个 expert 尽量不相似”的重排项，而不是直接把整个评分函数复杂化。
+
+\section{评估体系必须升级成三层，而不是继续只看一个 overlap}
+
+\subsection{第一层：参数几何}
+继续保留当前 principal-subspace similarity，但必须补上 volume-style overlap，如
+\[
+    O_{\mathrm{vol}}(i,j)=\frac{1}{r}\lVert B_i^\top B_j\rVert_F^2,
+\]
+因为当前的 $\lambda_{\max}(B_i^\top B_j)$ 只能说明“至少有一条方向很像”，但不能说明“整个子空间到底重合了多少”。
+
+\subsection{第二层：路由行为}
+必须新增以下量：
+\begin{itemize}
+    \item score correlation matrix；
+    \item top-$k$ co-selection redundancy；
+    \item centering/rank-$r$ removal 之后的 routing entropy 变化；
+    \item domain 或 token-type 条件下的 routing 分布差异。
+\end{itemize}
+这些指标直接对应“router 到底是不是在用 common-mode 做决策”。
+
+\subsection{第三层：功能 specialization}
+最关键的是 expert swap / merge / prune：
+\begin{itemize}
+    \item swap：把原本路由到 expert $e$ 的 token 临时换给 $j$，测 loss 增量；
+    \item merge：把最相似的 experts 合并，看性能掉多少；
+    \item prune：删除一组 experts，看模型是否几乎不受影响。
+\end{itemize}
+如果这些操作影响很小，那么即便参数 overlap 很好看，也不能说 specialization 真正成立。
+
+\section{里程碑与阶段性产出}
+
+\paragraph{第 1 周到第 2 周：} 完成所有 inference-time 干预与 rank-$r$ removal 曲线，确认主命题能否成立。
+
+\paragraph{第 3 周到第 4 周：} 训练最小正确解：shared-path + centered residual routing；同时补齐 routing-behavior 指标。
+
+\paragraph{第 5 周到第 6 周：} 完成 quadratic 失败机理诊断，判断它是该放弃、保留为附录，还是改造成真正有效的方法。
+
+\paragraph{第 7 周到第 8 周：} 形成论文版本。优先主线为 mean/common-mode root cause；备选主线为“parameter overlap is not useful specialization”。
+
+\section{最终建议：这篇文章应该怎么立}
+
+当前最推荐的写法是：
+\begin{quote}
+\textbf{我们不是简单地提出一个更复杂的 gate，而是说明：MoE 中真正妨碍 expert specialization 的，是 routed representation 里的 common-mode bias。去均值是必要条件，但必须把被去掉的公共信息通过 shared path 保留下来。}
+\end{quote}
+
+如果最后方法收益仍然不够大，也不要强行把 paper 写成“新方法显著优于所有基线”。更强的 Plan B 是：
+\begin{quote}
+\textbf{参数 overlap 下降并不等于 useful specialization；真正需要评估的是 parameter geometry、routing behavior 和 functional specialization 的一致性。}
+\end{quote}
+
+这条备选主线同样有发表价值，而且与当前结果是高度一致的。
+
+\end{document}

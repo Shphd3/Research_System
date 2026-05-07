@@ -1,0 +1,96 @@
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Frequency Bias and Subsampling in Word2Vec (2013)}
+
+The earliest large-scale embedding systems already encountered statistical
+dominance of frequent tokens.
+In the original Word2Vec formulation~\cite{mikolov2013efficient},
+high-frequency words were observed to contribute disproportionately
+to training updates.
+To mitigate this, subsampling was introduced:
+frequent words are randomly discarded with probability increasing
+in their corpus frequency.
+
+The stated motivation was computational efficiency.
+However, from a geometric perspective,
+subsampling implicitly suppresses a dominant first-order component
+associated with corpus frequency.
+This can be interpreted as an early heuristic attempt to control
+frequency-driven anisotropy in the embedding space.
+
+Importantly, Word2Vec did not explicitly analyze the embedding mean
+or its contribution to spectral structure.
+Bias mitigation was treated as an optimization trick,
+rather than as a structural property of the learned representation.
+
+\subsection{Common Direction Removal in Sentence Embeddings (SIF, 2017)}
+
+Arora et al.~\cite{arora2017simple} proposed Smooth Inverse Frequency (SIF)
+sentence embeddings, observing that averaged word vectors tend to
+be dominated by a common direction.
+They remove the top principal component after sentence averaging,
+demonstrating improved downstream performance.
+
+Their interpretation is that frequent words induce a dominant
+latent direction that does not encode semantic content.
+This work introduced an explicit spectral removal step
+(post-hoc PCA subtraction) and formalized a generative model
+in which a common discourse vector explains the phenomenon.
+
+While SIF identified and removed a dominant direction,
+it did not distinguish between mean-induced structure
+and higher-order covariance anisotropy,
+nor did it analyze the impact on training dynamics or optimization.
+
+\subsection{Anisotropy in Word Embeddings (All-but-the-Top, 2018)}
+
+Mu and Viswanath~\cite{mu2018all} systematically analyzed anisotropy
+in pretrained word embeddings.
+They observed that embeddings concentrate in a narrow cone
+and that removing the mean and the top principal components
+significantly improves isotropy and performance.
+
+The All-but-the-Top (ABTT) procedure subtracts the mean
+and removes several leading singular vectors.
+This explicitly connects anisotropy to low-rank structure
+and demonstrates that dominant spectral directions
+can be detrimental to representation quality.
+
+However, ABTT operates as a post-processing technique
+on static embeddings.
+It does not analyze the causal origin of the dominant component,
+nor does it connect mean-dominated structure to
+optimization instability or quantization pathologies.
+
+\subsection{Positioning of the Present Work}
+
+The prior literature establishes three important facts:
+
+\begin{itemize}
+\item High-frequency tokens induce dominant directions.
+\item Embedding spaces are strongly anisotropic.
+\item Removing leading spectral components improves representation quality.
+\end{itemize}
+
+Our work differs in scope and focus.
+
+First, we identify that in modern transformer training,
+the dominant first-order structure is specifically an
+\emph{activation mean bias} emerging from embedding statistics
+and token frequency imbalance.
+
+Second, we show that this bias is not merely a representation artifact,
+but propagates multiplicatively through gradient outer products,
+inflating optimizer second moments and quantization scales.
+
+Third, we provide a unifying causal analysis linking
+frequency imbalance $\rightarrow$ embedding bias
+$\rightarrow$ activation anisotropy
+$\rightarrow$ gradient-scale distortion.
+
+Thus, while earlier work removed dominant directions
+to improve embedding quality,
+we show that bias is a central structural driver
+of multiple downstream training phenomena
+in large language models.:w

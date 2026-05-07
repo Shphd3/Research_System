@@ -1,0 +1,475 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.22\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+\newcommand{\idea}[1]{\textcolor{red}{[#1]}}
+\newcommand{\question}[1]{\textcolor{blue}{[#1]}}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.75\baselineskip}
+
+\title{MoE Routing for Continual Learning:\\ A Reset of the Problem Statement}
+\author{Theory Group}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+\idea{This version should freeze what is already stable, cut back claims that are not yet supported, and make the next iteration definition-driven rather than proof-driven.}
+
+Our current objective is no longer ``find the most interesting router.'' It is to determine what kind of routing geometry is actually useful for continual learning (CL), and to decide whether quadratic routing is truly necessary for that goal.
+
+\begin{enumerate}
+    \item We reset the main scientific target around CL rather than around router novelty.
+
+    \textbf{Conclusion:} the right question is not whether a router is low-rank, quadratic, or high-margin, but whether it induces experts that are compact, isolated across domains, and still useful on downstream tasks.
+
+    \item We now treat expert specialization as a multi-dimensional object rather than a single scalar score.
+
+    \textbf{Conclusion:} ``specialized experts'' must be defined jointly by assignment concentration, geometric compactness, cross-domain isolation, and load balance. A single metric such as $ED$ or margin is not sufficient.
+
+    \item The latest checkpoints (\texttt{ckpt60000} and \texttt{ckpt70000}) changed the practical picture.
+
+    \textbf{Conclusion:} \texttt{acp\_on} and \texttt{linear\_running\_center} are the current practical anchors. \texttt{low\_rank} remains structurally interesting, but it is no longer the unique leading explanation. \texttt{quadratic\_nosvd} shows robustness and separation signals, but it is not yet the best CL candidate.
+
+    \item Quadratic routing should now be treated as an open route, not as the main conclusion.
+
+    \textbf{Conclusion:} current evidence supports at most the claim that variance-aware routing is plausible and worth testing. It does not yet support the stronger claim that quadratic routing is already better for CL.
+\end{enumerate}
+
+\section{Background and Theoretical Critique}
+
+The project has accumulated many experiments, but the main story had become too diffuse. Three pieces of language were doing too much hidden work:
+\begin{enumerate}
+    \item ``the router makes experts more specialized,''
+    \item ``experts should be low-rank,''
+    \item ``quadratic routing distributes by variance.''
+\end{enumerate}
+
+All three need sharper definitions.
+
+The CL-oriented problem can be stated as follows. Let $x$ be the routed feature, $E$ the selected expert, and $D$ the domain or task identity. A useful router should do four things at once:
+\begin{enumerate}
+    \item send semantically similar samples to a concentrated set of experts,
+    \item keep the occupied feature subspace inside each expert small,
+    \item reduce overlap between the subspaces induced by different domains inside the same expert,
+    \item avoid trivial collapse into a few experts.
+\end{enumerate}
+
+This is why ``better routing'' and ``expert low-rankness'' cannot be discussed separately. The router determines which samples are pooled inside each expert; that partition determines the covariance geometry the expert must absorb; that geometry controls whether later domains will interfere with earlier ones.
+
+Historical spectral observations remain useful, but only as motivation. They justify centering and the search for structured low-dimensional directions; they do \emph{not} by themselves prove that a router is CL-friendly.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/exp1_mean_cosine_layer18.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/exp2_scree_multidomain_rc4_layer18.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/exp3_mean_overlap_vs_r_layer18.png}
+\end{minipage}
+\caption{Earlier spectral evidence that motivated the current line of work: strong mean alignment, concentrated leading directions, and structured subspace overlap. These findings justify centering and structured routing, but they do not yet identify the correct CL metric or prove the need for quadratic routing.}
+\label{fig:historical-spectral}
+\end{figure}
+
+The strongest critique of our previous story is therefore simple: we were often explaining CL using a router-centric slogan, while the real missing object was a precise definition of expert specialization.
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{A definition of router-induced specialization}
+
+Let $C$ denote a semantic cluster or domain label, let $E$ denote expert identity, and let $C_e$ denote the covariance of inputs routed into expert $e$. We define router-induced specialization as a four-part panel:
+\[
+\mathcal{S}
+=
+\Big(
+\underbrace{H(E\mid C)}_{\text{assignment}},
+\underbrace{\mathcal{R}_{\mathrm{geom}}(C_e)}_{\text{compactness}},
+\underbrace{SI_e}_{\text{cross-domain isolation}},
+\underbrace{CV_{\mathrm{load}}}_{\text{anti-collapse}}
+\Big).
+\]
+
+The current implementation uses
+\[
+H(E\mid C)
+=
+-\sum_c p(c)\sum_e p(e\mid c)\log_2 p(e\mid c),
+\]
+\[
+ED(C_e)
+=
+\frac{\left(\sum_i \lambda_i\right)^2}{\sum_i \lambda_i^2},
+\qquad
+ED_{\mathrm{comp}}=\text{load-compensated } ED,
+\]
+\[
+SI_e
+=
+\frac{\mathrm{Tr}(C_{e,A}C_{e,B})}{\|C_{e,A}\|_F\|C_{e,B}\|_F},
+\qquad
+CV_{\mathrm{load}}
+=
+\frac{\sigma(p_e)}{1/E}.
+\]
+
+However, we no longer regard $ED_{\mathrm{comp}}$ as the final definition of low-rankness, because it still counts weak spectral tails too aggressively. The most promising replacement is the \emph{statistical dimension}
+\[
+d_\tau(C_e)
+=
+\mathrm{Tr}\!\big(C_e(C_e+\tau I)^{-1}\big)
+=
+\sum_i \frac{\lambda_i}{\lambda_i+\tau},
+\]
+along with the energy rank
+\[
+r_\alpha(C_e)
+=
+\min\Big\{k:\frac{\sum_{i\le k}\lambda_i}{\sum_j \lambda_j}\ge \alpha\Big\}.
+\]
+
+Interpretation:
+\begin{enumerate}
+    \item $H(E\mid C)$ asks whether semantically similar samples are concentrated onto a small set of experts.
+    \item $d_\tau$ asks how many directions are meaningfully occupied above a noise floor.
+    \item $SI_e$ asks whether different domains collide inside the same expert.
+    \item $CV_{\mathrm{load}}$ asks whether the observed specialization is real or just collapse.
+\end{enumerate}
+
+\subsection{Why compactness and isolation matter for CL}
+
+Let
+\[
+C_{e,\mathrm{old}} = U_{\mathrm{old}}\Lambda_{\mathrm{old}}U_{\mathrm{old}}^\top,
+\qquad
+C_{e,\mathrm{new}} = U_{\mathrm{new}}\Lambda_{\mathrm{new}}U_{\mathrm{new}}^\top
+\]
+be expert-$e$ covariances for an old and a new domain.
+
+\begin{proposition}[Spectral interference is controlled by occupied-subspace overlap]
+\[
+\mathrm{Tr}(C_{e,\mathrm{old}} C_{e,\mathrm{new}})
+\le
+\|\Lambda_{\mathrm{old}}\|_2
+\|\Lambda_{\mathrm{new}}\|_2
+\|U_{\mathrm{old}}^\top U_{\mathrm{new}}\|_F^2.
+\]
+\end{proposition}
+
+\begin{proof}
+Write
+\[
+\mathrm{Tr}(C_{e,\mathrm{old}} C_{e,\mathrm{new}})
+=
+\mathrm{Tr}\!\left(
+U_{\mathrm{old}}\Lambda_{\mathrm{old}}U_{\mathrm{old}}^\top
+U_{\mathrm{new}}\Lambda_{\mathrm{new}}U_{\mathrm{new}}^\top
+\right).
+\]
+By cyclic permutation of the trace,
+\[
+\mathrm{Tr}(C_{e,\mathrm{old}} C_{e,\mathrm{new}})
+=
+\mathrm{Tr}\!\left(
+\Lambda_{\mathrm{old}}^{1/2}
+U_{\mathrm{old}}^\top U_{\mathrm{new}}
+\Lambda_{\mathrm{new}}
+U_{\mathrm{new}}^\top U_{\mathrm{old}}
+\Lambda_{\mathrm{old}}^{1/2}
+\right).
+\]
+This equals
+\[
+\left\|
+\Lambda_{\mathrm{old}}^{1/2}
+U_{\mathrm{old}}^\top U_{\mathrm{new}}
+\Lambda_{\mathrm{new}}^{1/2}
+\right\|_F^2.
+\]
+Using $\|ABC\|_F \le \|A\|_2 \|B\|_F \|C\|_2$ yields
+\[
+\left\|
+\Lambda_{\mathrm{old}}^{1/2}
+U_{\mathrm{old}}^\top U_{\mathrm{new}}
+\Lambda_{\mathrm{new}}^{1/2}
+\right\|_F^2
+\le
+\|\Lambda_{\mathrm{old}}\|_2
+\|\Lambda_{\mathrm{new}}\|_2
+\|U_{\mathrm{old}}^\top U_{\mathrm{new}}\|_F^2.
+\]
+\end{proof}
+
+This proposition gives the missing bridge. For fixed energy scale, lower occupied dimension and lower subspace overlap directly reduce a CL-relevant interference term. This is the mathematical reason we care about expert compactness.
+
+Motivated by this bound, we define the current forgetting proxy
+\[
+\mathcal{F}_e(D_{\mathrm{old}}\!\to\! D_{\mathrm{new}})
+=
+p(e\mid D_{\mathrm{new}})
+\cdot
+SI_e,
+\]
+and interpret it as ``how much new traffic enters expert $e$ times how much that traffic geometrically collides with old occupancy.'' This is still a proxy rather than a final theorem about forgetting, but it is much closer to the CL objective than raw margin or raw ED alone.
+
+\subsection{What ``routing by variance'' actually means}
+
+The quadratic story must also be stated more precisely. After first-order centering, let $x_c=x-\mu$. Routing by variance in the current project means routing by the \emph{centered diagonal second moment}
+\[
+q_{\mathrm{deb}} = x_c \odot x_c - \lambda,
+\qquad
+\lambda = \mathbb{E}[x_c \odot x_c].
+\]
+
+\begin{proposition}[Quadratic routing is structurally justified only under covariance-only separation]
+Suppose
+\[
+x\mid D=A \sim \mathcal{N}(0,\Sigma_A),
+\qquad
+x\mid D=B \sim \mathcal{N}(0,\Sigma_B),
+\]
+with diagonal covariances and equal class priors. Then:
+\begin{enumerate}
+    \item for every linear score $a^\top x$, the domain mean gap is zero:
+    \[
+    \mathbb{E}[a^\top x\mid D=A]-\mathbb{E}[a^\top x\mid D=B]=0;
+    \]
+    \item if $\Delta=\mathrm{diag}(\Sigma_A)-\mathrm{diag}(\Sigma_B)\neq 0$ and
+    \[
+    \lambda=\tfrac12\big(\mathrm{diag}(\Sigma_A)+\mathrm{diag}(\Sigma_B)\big),
+    \]
+    then choosing $b=\Delta$ gives
+    \[
+    \mathbb{E}[b^\top(x\odot x-\lambda)\mid D=A]
+    -
+    \mathbb{E}[b^\top(x\odot x-\lambda)\mid D=B]
+    =
+    \|\Delta\|_2^2 > 0.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first claim follows from zero conditional means:
+\[
+\mathbb{E}[a^\top x\mid D=A]=a^\top \mathbb{E}[x\mid D=A]=0,
+\quad
+\mathbb{E}[a^\top x\mid D=B]=0.
+\]
+For the second claim,
+\[
+\mathbb{E}[x\odot x\mid D=A]=\mathrm{diag}(\Sigma_A),
+\qquad
+\mathbb{E}[x\odot x\mid D=B]=\mathrm{diag}(\Sigma_B).
+\]
+Subtracting $\lambda$ yields
+\[
+\mathbb{E}[x\odot x-\lambda\mid D=A]=\tfrac12\Delta,
+\qquad
+\mathbb{E}[x\odot x-\lambda\mid D=B]=-\tfrac12\Delta.
+\]
+Hence with $b=\Delta$,
+\[
+\mathbb{E}[b^\top(x\odot x-\lambda)\mid D=A]
+-
+\mathbb{E}[b^\top(x\odot x-\lambda)\mid D=B]
+=
+\Delta^\top \Delta
+=
+\|\Delta\|_2^2.
+\]
+\end{proof}
+
+This is the sharp version of the quadratic intuition: quadratic routing is not needed because it is more expressive in general; it is needed only when the centered linear signal is insufficient and useful separation lives in diagonal covariance structure.
+
+\subsection{Hypothesis status}
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{p{0.12\linewidth}p{0.16\linewidth}p{0.62\linewidth}}
+\toprule
+ID & Status & Statement \\
+\midrule
+H1 & Supported & CL-friendly routing should be evaluated by a multi-view specialization panel rather than by any single scalar metric. \\
+H2 & Active / partially supported & Lower expert occupancy and lower cross-domain overlap should reduce a CL-relevant interference proxy. \\
+H3 & Supported & \texttt{acp\_on} and \texttt{linear\_running\_center} are the strongest current practical baselines. \\
+H4 & Active & Debiased diagonal quadratic routing is useful only if centered first-order routing misses real second-order separation. \\
+H5 & Active & $d_{\tau,\mathrm{comp}}$ should replace $ED_{\mathrm{comp}}$ as the primary low-rank metric. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Current hypothesis tracking after integrating older checkpoints with the newest 12L ckpt60000 and ckpt70000 results.}
+\label{tab:hypothesis-status}
+\end{table}
+
+\section{Empirical Study}
+
+\subsection{What remains stable across versions}
+
+Across the early spectral audits, the 24L ckpt40000 comparison, and the newest 12L ckpt60000/70000 reports, three conclusions have remained stable:
+\begin{enumerate}
+    \item \textbf{Centering is necessary.} Uncentered routing repeatedly behaves as a degenerate counterexample: very large margin and near-perfect perturbation consistency can coexist with poor cross-domain isolation.
+    \item \textbf{Structure and performance are decoupled.} Better compactness or lower SI does not automatically translate into the best task average.
+    \item \textbf{Quadratic routing is not yet settled.} It shows encouraging signs in robustness and expert separation, but its CL advantage is not established.
+\end{enumerate}
+
+\subsection{Latest anchor: ckpt60000 and ckpt70000}
+
+Table~\ref{tab:latest-anchor} is the main anchor for this report. It integrates the two newest checkpoints and focuses on the centered model family plus the current quadratic route.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llccccc}
+\toprule
+Checkpoint & Model & Round0 Avg $\uparrow$ & $ED_{\mathrm{comp}} \downarrow$ & Overlap $\downarrow$ & CR@0.5 $\uparrow$ & Mean SI $\downarrow$ \\
+\midrule
+60000 & \texttt{linear\_running\_center} & 0.4519 & \textbf{51.1212} & 0.2949 & 0.9547 & 0.6535 \\
+60000 & \texttt{acp\_on} & \textbf{0.4594} & 52.8773 & \textbf{0.2684} & 0.9424 & \textbf{0.6501} \\
+60000 & \texttt{low\_rank} & 0.4528 & 53.6336 & 0.2746 & 0.9452 & 0.6607 \\
+60000 & \texttt{quadratic\_nosvd} & 0.4553 & 56.4000 & 0.2702 & \textbf{0.9592} & 0.6867 \\
+\midrule
+70000 & \texttt{linear\_running\_center} & 0.4493 & \textbf{51.1608} & 0.2909 & 0.9512 & 0.6504 \\
+70000 & \texttt{acp\_on} & \textbf{0.4628} & 52.4893 & 0.2649 & 0.9387 & \textbf{0.6430} \\
+70000 & \texttt{low\_rank} & 0.4587 & 52.3292 & 0.2701 & 0.9405 & 0.6505 \\
+70000 & \texttt{quadratic\_nosvd} & 0.4540 & 55.8015 & \textbf{0.2635} & \textbf{0.9583} & 0.6708 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Latest CL-oriented anchor table. \texttt{acp\_on} is strongest on task average and SI; \texttt{linear\_running\_center} remains the cleanest balanced baseline; \texttt{quadratic\_nosvd} is strongest on robustness and, at ckpt70000, expert separation, but not on compactness or SI.}
+\label{tab:latest-anchor}
+\end{table}
+
+\paragraph{Main reading of Table~\ref{tab:latest-anchor}.}
+\begin{enumerate}
+    \item \texttt{acp\_on} is the current practical leader because it wins on downstream average at both checkpoints and on SI at both checkpoints.
+    \item \texttt{linear\_running\_center} is the cleanest baseline because it has the best $ED_{\mathrm{comp}}$ at both checkpoints while remaining competitive everywhere else.
+    \item \texttt{low\_rank} is no longer the unique structural explanation. It remains competitive, but the newest checkpoints do not support writing ``low-rank is the main route'' as the report headline.
+    \item \texttt{quadratic\_nosvd} is intriguing because it becomes the best centered-family model under high perturbation and reaches the best Overlap at ckpt70000, but its SI and compactness are still behind the best baselines.
+\end{enumerate}
+
+\subsection{The counterexample we should not forget}
+
+The role of \texttt{linear\_no\_center} is not to be recommended, but to discipline our definitions. At ckpt70000 it has CR$=1.0000$, mean margin above $7.8$, and yet Mean SI$=0.7869$ with only 0.4398 downstream average. This is decisive evidence that large margin and perfect routing stability do \emph{not} imply useful CL specialization.
+
+\subsection{Latest figures}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/ckpt70000_round0_downstream_heatmap.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/ckpt70000_round1_edcomp_overlap_dual_axis.png}
+\end{minipage}
+
+\vspace{0.8em}
+
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/ckpt70000_round2_overall_cr_curve.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/ckpt70000_round3_si_margin_scatter.png}
+\end{minipage}
+\caption{Latest ckpt70000 figures used as the current Prism anchor: downstream task heatmap, compactness-vs-overlap tradeoff, perturbation consistency curve, and SI-vs-margin scatter.}
+\label{fig:latest-anchor}
+\end{figure}
+
+\subsection{Why quadratic routing is not yet the mainline}
+
+\idea{Quadratic should be framed as the most important open route, not as the report's established answer.}
+
+The two newest checkpoints force a careful interpretation of \texttt{quadratic\_nosvd}:
+\begin{enumerate}
+    \item \textbf{Positive signals.} It is the most robust centered-family model under strong perturbation at both ckpt60000 and ckpt70000, and it achieves the lowest Overlap at ckpt70000.
+    \item \textbf{Negative signals.} It has the worst $ED_{\mathrm{comp}}$ among the centered candidates at both checkpoints, and its SI remains behind both \texttt{acp\_on} and \texttt{linear\_running\_center}.
+    \item \textbf{Implementation caveat.} Its exported Round3 margins are all zeros in the latest reports. This is much more likely to be a logging or implementation issue than a real ``zero-confidence router,'' so those margins should \emph{not} be used as scientific evidence.
+\end{enumerate}
+
+\paragraph{Conclusion.} The report should say that quadratic routing is a promising route for robustness and separation, but the current evidence does not justify writing that it already produces better CL geometry than the best centered baselines.
+
+\subsection{What the new empirical anchor implies}
+
+The empirical story is now much tighter than before:
+\begin{enumerate}
+    \item \texttt{center} is a necessary baseline intervention;
+    \item \texttt{acp\_on} is the strongest current practical candidate;
+    \item \texttt{linear\_running\_center} is the clean baseline we must beat;
+    \item \texttt{low\_rank} is a structural route, not a final answer;
+    \item \texttt{quadratic\_nosvd} is an open path whose necessity must be established by a discriminative test, not by enthusiasm.
+\end{enumerate}
+
+\section{Next iteration}
+
+The next iteration should be definition-first and discriminative-test-first.
+
+\begin{enumerate}
+    \item \textbf{Replace the low-rank metric.} Recompute the latest checkpoints with
+    \[
+    \mathcal{R}_{\mathrm{geom}} = d_{\tau,\mathrm{comp}}
+    \]
+    as the primary compactness metric, and keep $r_{0.9,\mathrm{comp}}$ as the interpretable secondary metric. The goal is to avoid ED-style overcounting of weak tails.
+
+    \item \textbf{Add assignment-quality metrics.} Report NMI$(E,C)$ or purity alongside $H(E\mid C)$. The goal is to distinguish ``experts are compact'' from ``experts actually correspond to meaningful semantic partitions.''
+
+    \item \textbf{Run a no-training necessity audit for quadratic routing.} On frozen activations, compare centered linear scores $a^\top x_c$ with debiased quadratic scores $b^\top(x_c\odot x_c-\lambda)$ on held-out domain pairs. If the quadratic score does not outperform the linear score on covariance-dominant pairs, we should stop pushing quadratic routing as the next main architecture.
+
+    \item \textbf{Run the Step-0 raw-vs-debiased quadratic audit.} Measure load skew, mean logits, and the predicted second-order bias term under random initialization. This directly tests whether second-order debiasing solves a real initialization problem.
+
+    \item \textbf{Repair the quadratic margin export.} Round3 logging for \texttt{quadratic\_nosvd} must be fixed before any confidence-based interpretation is allowed.
+\end{enumerate}
+
+Planned figures for the next Prism update:
+\begin{enumerate}
+    \item a specialization-panel comparison plot: assignment, compactness, isolation, and balance in one dashboard;
+    \item a Step-0 load-skew audit for raw vs centered vs debiased quadratic routing;
+    \item a frozen-feature AUC comparison for centered linear vs debiased quadratic routing;
+    \item a $d_\tau$ sensitivity plot over $\{0.5\tau_0,\tau_0,2\tau_0\}$.
+\end{enumerate}
+
+The project is now in a better state than before because the next bottleneck is explicit: we do not need more grand theory first; we need a better definition of specialization and a sharper test of whether quadratic routing is actually necessary.
+
+\end{document}

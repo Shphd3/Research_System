@@ -1,0 +1,76 @@
+\section{What Structure Are We Approximating?}
+\label{sec:target_structure}
+
+Before introducing specific approximation methods, it is essential to clarify
+\emph{what kind of structure} we aim to extract from transformer gradient matrices.
+Although the gradients studied in this chapter often exhibit strong low-rank or
+spiky spectra, our objective is \emph{not} to approximate an arbitrary low-rank
+matrix in the classical numerical linear algebra sense.
+Instead, we focus on a highly specific and structured form of low-dimensionality
+that arises from shared linguistic regularities.
+
+\paragraph{Agreement-driven structure.}
+As established in Sections~\ref{sec:gradients_linear_layers} and
+\ref{sec:foundational_assumptions}, the gradient matrix of a transformer linear
+layer can be written as a sum of per-token outer products,
+\[
+G = \sum_{j,t} \delta^{(j,t)} \bigl(x^{(j,t)}\bigr)^\top.
+\]
+Under the assumptions that (i) grammatical structure is shared across tokens and
+sequences, and (ii) semantic variation is largely independent across sequences,
+the aggregated gradient naturally decomposes as
+\[
+G = A + R,
+\]
+where:
+\begin{itemize}
+    \item $A$ is a low-rank \emph{agreement component} induced by grammar-driven,
+    globally aligned update directions; and
+    \item $R$ is a high-rank residual capturing semantic and context-specific
+    variation that cancels under appropriate aggregation.
+\end{itemize}
+
+The term \emph{agreement} emphasizes that $A$ arises from consistent, repeated
+update signals shared across many tokens and sequences, rather than from generic
+low-rank structure.
+
+\paragraph{Why this is not generic low-rank approximation.}
+In general, a low-rank matrix may have singular vectors that are sparse,
+oscillatory, or orthogonal to simple probe directions.
+Recovering such structure typically requires explicit singular value
+decomposition or iterative orthogonalization.
+In contrast, the agreement component $A$ considered here has several special
+properties:
+\begin{itemize}
+    \item its singular vectors are dense and globally aligned,
+    \item it induces non-vanishing row and column marginals,
+    \item it survives simple aggregation operations such as summation or averaging.
+\end{itemize}
+These properties are a direct consequence of shared grammatical structure and
+sequence-level semantic independence, not of low rank alone.
+
+\paragraph{Implications for approximation.}
+Because the agreement component $A$ produces coherent, non-canceling marginals,
+it can be detected using extremely simple probes, such as multiplication by the
+all-ones vector or by a small number of random vectors.
+These probes are sufficient to recover the dominant subspace of $A$ up to scale,
+without requiring explicit singular value decomposition or QR factorization.
+
+Crucially, this approximation strategy is \emph{structure-exploiting} rather than
+\emph{structure-agnostic}.
+It is designed to isolate grammar-driven agreement spikes while leaving
+intra-sequence semantic correlations intact, thereby preserving the information
+necessary for learning semantic features.
+
+\paragraph{Scope and limitations.}
+Throughout this chapter, all approximation results should be interpreted in the
+context of this agreement-driven structure.
+The proposed averaging-based methods are not intended to recover arbitrary
+low-rank matrices, nor to replace general-purpose SVD algorithms.
+Rather, they provide a lightweight, GPU-friendly mechanism for approximating the
+dominant optimization-driving structure that arises under realistic assumptions
+about linguistic data and training pipelines.
+
+With this target structure in mind, we now turn to averaging operations as simple
+yet effective probes for isolating agreement-driven components in gradient
+matrices.

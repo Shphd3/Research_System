@@ -1,0 +1,152 @@
+\section{Mean Removal and What the Objective Actually Learns}
+\label{sec:mean_removal_from_loss}
+
+This section answers a foundational question: if the token-mean of activations is a random variable that depends on context, why is it nevertheless plausible that removing (or separating) the mean does not destroy the learning signal?
+We proceed from the training objective of LLMs, derive the exact gradient expressions, and establish which parts of the signal correspond to the mean (first moment) and which correspond to token-wise variability (second-order structure).
+
+\subsection{Training Objective and Notation}
+
+Large language models are trained by minimizing next-token cross-entropy.
+Let $\mathcal{D}$ denote the data distribution over sequences, and let the model define conditional probabilities
+\begin{equation}
+p_\theta(w_{t+1}\mid w_{\le t}) = \mathrm{softmax}(z_t)_ {w_{t+1}},
+\end{equation}
+where $z_t\in\mathbb{R}^V$ are logits over vocabulary size $V$.
+The population loss is
+\begin{equation}
+\label{eq:ce_loss}
+\mathcal{L}(\theta)=\mathbb{E}_{(w_1,\dots,w_T)\sim\mathcal{D}}\Bigg[-\sum_{t=1}^{T-1}\log \mathrm{softmax}(z_t)_{w_{t+1}}\Bigg].
+\end{equation}
+
+Fix a layer $\ell$ and focus on a single linear projection within that layer (the argument applies to attention and MLP projections alike).
+Let $x_t\in\mathbb{R}^H$ be the input activation at token $t$ to this projection, and define the projection
+\begin{equation}
+\label{eq:linear_proj}
+y_t = W x_t + b,\qquad W\in\mathbb{R}^{d\times H},\; b\in\mathbb{R}^d.
+\end{equation}
+Downstream nonlinearities and further layers map $\{y_t\}$ to logits $\{z_t\}$.
+Let $\delta_t\in\mathbb{R}^d$ denote the backpropagated gradient at this projection:
+\begin{equation}
+\label{eq:delta_def}
+\delta_t \;\triangleq\; \frac{\partial \mathcal{L}}{\partial y_t}.
+\end{equation}
+Then the per-token gradient of $\mathcal{L}$ with respect to $W$ is exactly
+\begin{equation}
+\label{eq:grad_outer}
+\nabla_W \mathcal{L} \;=\; \sum_{t} \delta_t x_t^\top,
+\qquad
+\nabla_b \mathcal{L} \;=\; \sum_t \delta_t.
+\end{equation}
+This is the precise ``outer-product'' structure used throughout optimization.
+
+\subsection{Mean Decomposition and Exact Gradient Split}
+
+Let $N$ denote the number of tokens contributing to the gradient in a batch (or in an expectation over data).
+Define the \emph{token-mean activation} and \emph{centered activation}:
+\begin{equation}
+\label{eq:mean_center_def}
+\mu_x \;\triangleq\; \frac{1}{N}\sum_{t=1}^N x_t,
+\qquad
+\tilde{x}_t \;\triangleq\; x_t - \mu_x,
+\qquad
+\sum_{t=1}^N \tilde{x}_t = 0.
+\end{equation}
+Substitute $x_t=\mu_x+\tilde{x}_t$ into \eqref{eq:grad_outer}. This yields an \emph{exact identity}:
+\begin{equation}
+\label{eq:grad_split}
+\nabla_W \mathcal{L}
+=
+\sum_t \delta_t(\mu_x+\tilde{x}_t)^\top
+=
+\Big(\sum_t \delta_t\Big)\mu_x^\top
++
+\sum_t \delta_t \tilde{x}_t^\top.
+\end{equation}
+Define the mean of backprop signals
+\begin{equation}
+\label{eq:mu_delta_def}
+\mu_\delta \;\triangleq\; \frac{1}{N}\sum_{t=1}^N \delta_t.
+\end{equation}
+Then \eqref{eq:grad_split} can be written as
+\begin{equation}
+\label{eq:grad_split_compact}
+\frac{1}{N}\nabla_W \mathcal{L}
+=
+\underbrace{\mu_\delta \mu_x^\top}_{\text{rank-1 mean--mean term}}
++
+\underbrace{\frac{1}{N}\sum_t \delta_t\tilde{x}_t^\top}_{\text{cross-covariance term}}.
+\end{equation}
+
+\paragraph{Interpretation.}
+Equation~\eqref{eq:grad_split_compact} is the end-to-end decomposition that matters for learning.
+The first term is rank-one and depends only on the \emph{means} $(\mu_\delta,\mu_x)$.
+The second term depends on token-wise \emph{variations} $\tilde{x}_t$ and is a cross-covariance between
+backprop signals and token-specific deviations.
+If the optimization objective requires learning fine-grained distinctions between tokens and contexts, that information must appear in the cross-covariance term.
+
+\subsection{A Fully Rigorous Invariance Statement: Centering with Bias Compensation}
+
+Mean removal in the forward pass changes the function \emph{unless} we compensate for the removed mean through an equivalent parameter transformation.
+We now state and prove the exact equivalence.
+
+\begin{theorem}[Exact functional equivalence under mean-centering with bias update]
+\label{thm:centering_equiv}
+Fix a batch (or context) producing activations $\{x_t\}_{t=1}^N$ and mean $\mu_x$.
+Define centered activations $\tilde{x}_t = x_t - \mu_x$.
+Consider the linear map \eqref{eq:linear_proj}.
+Define an adjusted bias
+\begin{equation}
+\label{eq:bprime}
+b' \;\triangleq\; b + W\mu_x.
+\end{equation}
+Then for every token $t$,
+\begin{equation}
+\label{eq:exact_equiv}
+W x_t + b \;=\; W\tilde{x}_t + b'.
+\end{equation}
+Consequently, replacing $x_t$ by $\tilde{x}_t$ \emph{and} replacing $b$ by $b'$ leaves all downstream activations and logits unchanged, hence leaves the cross-entropy loss \eqref{eq:ce_loss} unchanged.
+\end{theorem}
+
+\begin{proof}
+By definition, $x_t=\tilde{x}_t+\mu_x$. Substitute into the left-hand side:
+\[
+W x_t + b = W(\tilde{x}_t+\mu_x)+b = W\tilde{x}_t + (W\mu_x+b).
+\]
+With $b'$ defined by \eqref{eq:bprime}, we obtain \eqref{eq:exact_equiv}.
+Since $y_t$ is unchanged for all $t$, every downstream deterministic computation produces identical logits $z_t$, and therefore the softmax probabilities and the loss \eqref{eq:ce_loss} are identical.
+\end{proof}
+
+\paragraph{Consequence.}
+Theorem~\ref{thm:centering_equiv} is the precise sense in which ``mean removal need not destroy predictive information'':
+it is a \emph{reparameterization} of the same function, provided the mean is forwarded (absorbed) as an equivalent bias contribution at the next linear boundary.
+This theorem is exact and does not assume anything about the distribution of $\mu_x$.
+
+\subsection{What If We Center Without Compensation?}
+
+If we replace $x_t$ by $\tilde{x}_t$ but keep the original bias $b$, then the linear output becomes
+\[
+y_t' = W\tilde{x}_t + b = y_t - W\mu_x,
+\]
+which is a constant shift in $y_t$ across tokens for the given batch.
+This shift generally changes logits and therefore changes the loss.
+Thus ``centering is free'' is not true without qualification.
+The correct statement is: centering is information-preserving conditional on forwarding/absorbing the mean into a separate channel (e.g., adjusted bias, residual carrier, or explicit structure stream).
+
+\subsection{Why ``Useful Information Lives in Variability''}
+
+Equation~\eqref{eq:grad_split_compact} now makes the key point precise.
+The only part of the gradient that can encode token- and context-specific distinctions is the cross-covariance term:
+\begin{equation}
+\label{eq:cross_cov}
+C_{\delta x}\;\triangleq\;\frac{1}{N}\sum_{t=1}^N \delta_t\tilde{x}_t^\top.
+\end{equation}
+The rank-one mean--mean term $\mu_\delta\mu_x^\top$ is shared across tokens and cannot express within-batch variation.
+
+In particular, if $\mu_\delta$ is small (noise-level)---as observed empirically for gradient outputs in our measurements---then the mean--mean term is negligible and learning is driven almost entirely by $C_{\delta x}$.
+Even when $\mu_\delta$ is not identically zero, the rank-one term represents a global shared update direction, whereas $C_{\delta x}$ captures structured correlations between errors and token-level deviations, which is the mechanism required to learn conditional dependencies beyond base rates.
+
+\subsection{Summary}
+
+Starting from the cross-entropy loss \eqref{eq:ce_loss}, we derived an exact gradient decomposition \eqref{eq:grad_split_compact} showing that updates split into a rank-one mean--mean component and a cross-covariance component.
+We then proved an exact invariance theorem (Theorem~\ref{thm:centering_equiv}) showing that mean-centering can be made function-preserving when the removed mean is forwarded as an equivalent bias at the next linear boundary.
+Therefore, mean separation is not inherently information-destroying; information is lost only if the mean channel is discarded rather than separated.

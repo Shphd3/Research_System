@@ -1,0 +1,21 @@
+\section{Introduction}
+
+Large language models are trained on massive human language corpora, which induce a characteristic geometry in learned representations. Across layers and training stages, activations exhibit pronounced anisotropy: a small number of directions concentrate disproportionate energy (strong spectral spikes), while the remaining directions form a broad semantic tail \citep{ethayarajh2019contextual, mu2018all, timkey2021rogue, kovaleva2021bertbusters, machina2024anisotropy}.
+
+While linguistically natural, this structure becomes a numerical liability under low-bit training. In blockwise quantization, scaling factors are determined by extreme elementwise magnitudes. When a small set of directions dominates the activation spectrum, these extremes stretch the dynamic range, compressing long-tail semantic variation into narrow numerical bins and degrading training stability \citep{xiao2023smoothquant, frantar2022gptq, lin2024awq, li2024svdquant, ashkboos2024quarot}. Prior mitigation strategies therefore rely on explicit spectral control, often via singular value decomposition (SVD) or orthogonalization procedures, as in Metis \citep{cao2025metis} and related approaches. Although effective, such techniques are computationally intensive, memory-expensive, and poorly aligned with modern accelerator hardware.
+
+In this work, we examine the internal structure of anisotropy and uncover a sharper structural principle: activation anisotropy in LLM training is predominantly driven by a coherent rank-one mean bias. This mean component is not incidental. At every representational level—tokens, phrases, clauses, and full sentences—language contains shared contextual signal. Self-attention, non-odd nonlinearities, and residual accumulation integrate these shared components across tokens and layers, systematically regenerating and amplifying coherent mean directions in representation space.
+
+Due to high dimensionality, even modest coordinate-wise bias produces substantial vector magnitude. In hidden dimension $H$, the norm of a coherent mean scales as $\|\mu\|_2 \sim \sqrt{H}\,\bar{\mu}$, magnifying small per-coordinate drift into dominant elementwise extremes. We show both theoretically and empirically that this rank-one mean component accounts for the majority of extreme activation magnitudes across layers and training stages. Since low-bit quantization scales are governed by these extremes, mean bias becomes the primary driver of dynamic-range inflation and numerical instability.
+
+Crucially, because the dominant instability is rank-one, it admits a simple remedy. A single source-level mean-subtraction operation isolates and removes the coherent bias component before quantization. This operation requires only reduction and elementwise kernels, avoiding costly spectral decompositions while recovering most of their stability benefits. In this sense, the same structure that creates low-bit instability also exposes a low-dimensional handle for efficient mitigation: the blessing of mean bias.
+
+We validate this bias-centric interpretation through FP4 (W4A4G4) training experiments on 1B-scale models. Mean removal narrows the loss gap relative to BF16 training and restores downstream task performance, demonstrating a hardware-efficient path to stable low-bit LLM training.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+    \item We identify coherent activation mean bias as the dominant structural component of spectral anisotropy in LLM training.
+    \item We show theoretically and empirically that mean bias accounts for the majority of extreme activation magnitudes that determine low-bit quantization scale.
+    \item We propose a source-level mean–residual splitting method that is computationally efficient and hardware-friendly.
+    \item We demonstrate stable FP4 (W4A4G4) training, narrowing the loss gap to BF16 and recovering downstream performance.
+\end{enumerate}

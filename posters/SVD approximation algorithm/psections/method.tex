@@ -1,0 +1,196 @@
+\section{Mean Bias-Aware Low-Bit Training Method}
+\label{sec:lowbit_pilot}
+\label{sec:lowbit_method}
+
+Low-bit training amplifies the pathological effects of anisotropy.
+Under blockwise quantization, scale is determined by extreme elementwise values.
+As shown in Section~\ref{sec:activation_outliers},
+these extremes are predominantly mean-dominated.
+This suggests that addressing mean bias at its source may substitute
+for heavier spectral corrections.
+
+
+We test the following hypothesis:
+\begin{quote}
+\emph{If mean bias is the dominant driver of outliers,
+then source-level mean removal should recover most of the stability
+benefits attributed to SVD-based spike suppression methods such as Metis.}
+\end{quote}
+
+We propose a simple \emph{mean--residual quantization} method, which we call
+\emph{Averis} (Averaging-Induced Residual Splitting).
+The method targets a concrete empirical observation: for large activation-like matrices in Transformer
+training, extreme values (which dominate blockwise quantization scales) are largely driven by a
+mean-dominated component that is coherent across tokens.
+Accordingly, we explicitly split out a column-mean component via averaging and quantize it separately
+from the remaining residual, using only reduction operations and standard quantization kernels.
+
+\paragraph{Notation and quantization operator.}
+Let $\mathcal{Q}_b(\cdot)$ denote a $b$-bit quantization operator (e.g., blockwise FP4) applied to a matrix.
+We write $\bar{\mathbf{M}}\triangleq \mathcal{Q}_b(\mathbf{M})$ for the quantized version of any matrix
+$\mathbf{M}$.
+Throughout, $\mathbf{1}$ denotes an all-ones vector with the appropriate dimension.
+
+\paragraph{Forward pass: activation mean--residual splitting.}
+Let $\mathbf{W}\in\mathbb{R}^{m\times n}$ be a weight matrix and let
+$\mathcal{X}\in\mathbb{R}^{b\times s\times m}$ be an input activation tensor, where $b$ is batch size,
+$s$ is sequence length, and $m$ is hidden dimension.
+As usual, we reshape $\mathcal{X}$ into a matrix $\mathbf{X}\in\mathbb{R}^{l\times m}$ with $l=b\cdot s$
+and compute the GeMM output
+\[
+\mathbf{Y}=\mathbf{X}\mathbf{W}\in\mathbb{R}^{l\times n}.
+\]
+
+We define the \emph{activation column-mean vector} $\mu_{\mathbf{X}}\in\mathbb{R}^{m}$ by
+\[
+\mu_{\mathbf{X}} \triangleq \frac{1}{l}\mathbf{1}^{\top}\mathbf{X},
+\]
+The residual is
+\[
+\mathbf{X}_{\mathrm{R}} \triangleq \mathbf{X}-\mathbf{1}\,\mu_{\mathbf{X}}.
+\]
+We then quantize the mean vector and residual independently:
+\[
+\bar{\mu}_{\mathbf{X}}=\mathcal{Q}_b(\mu_{\mathbf{X}}),
+\qquad
+\bar{\mathbf{X}}_{\mathrm{R}}=\mathcal{Q}_b(\mathbf{X}_{\mathrm{R}}),
+\qquad
+\bar{\mathbf{W}}=\mathcal{Q}_b(\mathbf{W}).
+\]
+The quantized forward computation is
+\begin{equation}
+\label{eq:averis_forward}
+\hat{\mathbf{Y}}
+\;=\;
+\mathbf{1}\,(\bar{\mu}_{\mathbf{X}}\bar{\mathbf{W}})
+\;+
+\bar{\mathbf{X}}_{\mathrm{R}}\,\bar{\mathbf{W}}.
+\end{equation}
+where the first term is broadcast along the token dimension via $\mathbf{1}$.
+In practice, one computes $\mu_{\mathbf{X}}$ first, subtracts it from $\mathbf{X}$ on the fly to form
+$\mathbf{X}_{\mathrm{R}}$, and never materializes the mean matrix.
+
+\paragraph{Backward pass: output-gradient mean--residual splitting.}
+Let $\mathbf{D}\in\mathbb{R}^{l\times n}$ denote the matrix of loss derivatives with respect to
+the GeMM output $\mathbf{Y}$, i.e.,
+\[
+\mathbf{D}\triangleq \frac{\partial \mathcal{L}}{\partial \mathbf{Y}}
+\quad (\text{after reshaping}).
+\]
+We define the \emph{output-gradient column-mean vector} $\mu_{\mathbf{D}}\in\mathbb{R}^{n}$ by
+\[
+\mu_{\mathbf{D}} \triangleq \frac{1}{l}\mathbf{1}^{\top}\mathbf{D},
+\qquad
+\mathbf{D}_{\mathrm{R}} \triangleq \mathbf{D}-\mathbf{1}\,\mu_{\mathbf{D}}.
+\]
+Quantize the components independently:
+\[
+\bar{\mu}_{\mathbf{D}}=\mathcal{Q}_b(\mu_{\mathbf{D}}),
+\qquad
+\bar{\mathbf{D}}_{\mathrm{R}}=\mathcal{Q}_b(\mathbf{D}_{\mathrm{R}}).
+\]
+Then the key GeMMs in backpropagation are evaluated as
+\begin{equation}
+\label{eq:averis_backward}
+\widehat{\frac{\partial \mathcal{L}}{\partial \mathbf{X}}}
+\;=\;
+\mathbf{1}\,(\bar{\mu}_{\mathbf{D}}\bar{\mathbf{W}}^{\top})
+\;+
+\bar{\mathbf{D}}_{\mathrm{R}}\,\bar{\mathbf{W}}^{\top},
+\qquad
+\widehat{\frac{\partial \mathcal{L}}{\partial \mathbf{W}}}
+\;=\;
+\bar{\mathbf{X}}_{\mathrm{R}}^{\top}\bar{\mathbf{D}}_{\mathrm{R}}
+\;+
+\bar{\mathbf{X}}_{\mathrm{R}}^{\top}(\mathbf{1}\bar{\mu}_{\mathbf{D}})
+\;+
+(\mathbf{1}\bar{\mu}_{\mathbf{X}})^{\top}\bar{\mathbf{D}}_{\mathrm{R}}
+\;+
+(\mathbf{1}\bar{\mu}_{\mathbf{X}})^{\top}(\mathbf{1}\bar{\mu}_{\mathbf{D}}).
+\end{equation}
+The additive terms are accumulated with broadcasted additions without explicitly storing
+$\mathbf{M}_{\mathbf{X}}$ or $\mathbf{M}_{\mathbf{D}}$.
+
+\paragraph{Computational profile.}
+Averis requires only computing two mean vectors ($\mu_{\mathbf{X}}$ and $\mu_{\mathbf{D}}$) and applying
+two subtractions per step, in addition to the baseline quantized GeMMs.
+No spectral decomposition or iterative orthogonalization is involved, and all additional operations are
+GPU-friendly reductions and elementwise kernels.
+
+\section{Mean Bias-Aware Low-Bit Training Experiments}
+\label{sec:lowbit_experiment}
+
+\subsection{Experimental Setup}
+
+\label{experiment:setup}
+\textbf{Models and Datasets.}
+We conduct experiments on Qwen-3 (0.6B), and we additionally include a Qwen3-8B pretraining loss reference run.
+For pretraining, we use the DCLM dataset and train the 0.6B model on 100B tokens.
+The raw data are segmented to split long documents and concatenate short ones, filtered to remove non-Unicode and non-English content.
+
+\textbf{FP4 Training.}
+We evaluate the efficacy of Averis under FP4 quantization against BF16 baselines.
+All FP4 training in this work adopts W4A4G4 quantization, where weights, activations, and gradients are represented in the E2M1 NVFP4 format.
+Stochastic rounding (SR) is applied by default in all FP4 experiments, as it mitigates quantization bias and is orthogonal to Averis.
+
+\textbf{Baselines.}
+We compare the following settings:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item \textbf{BF16}: full-precision baseline.
+\item \textbf{Vanilla FP4}: direct NVFP4 quantization (W4A4G4) without structural splitting.
+\item \textbf{Averis FP4}: the proposed mean--residual splitting applied to activations and output gradients, with independent quantization of mean vectors and residuals.
+\end{itemize}
+
+\subsection{Results}
+
+\textbf{Training loss.}
+Figure~\ref{figure:loss-averis} shows the training loss curves of the BF16 baseline and FP4 + Averis.
+Averis remains slightly above BF16 in loss, while clearly improving over vanilla FP4.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/qwen_0.6B_loss.png}
+    \caption{Training loss curves for Qwen3-0.6B under BF16 and FP4 + Averis.}
+    \label{figure:loss-averis}
+\end{figure}
+
+\textbf{Qwen3-8B pretraining loss.}
+Figure~\ref{figure:loss-averis-8b} presents the corresponding pretraining loss result on Qwen3-8B under NVFP4 training.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/8B-nvfp4-loss.png}
+    \caption{Pretraining loss result for Qwen3-8B under NVFP4 training.}
+    \label{figure:loss-averis-8b}
+\end{figure}
+
+\textbf{Downstream performance at 10B tokens.}
+At the 10B-token checkpoint, we evaluate BF16 and Averis on seven downstream tasks.
+As shown in Table~\ref{table:downstream-10b-averis}, Averis improves the average score
+from 0.4564 to 0.4661.
+
+\begin{table}[h]
+\centering
+\caption{Downstream task results at 10B tokens.}
+\label{table:downstream-10b-averis}
+\small
+\begin{tabular}{lcccccccc}
+\toprule
+Method & ARC-C & ARC-E & BoolQ & HellaSwag & LAMBADA & PIQA & RACE & Avg \\
+\midrule
+BF16        & \textbf{0.2534} & \textbf{0.5126} & 0.5309 & \textbf{0.3768} & 0.3602 & \textbf{0.6730} & 0.4882 & 0.4564 \\
+Averis      & 0.2491 & 0.5072 & \textbf{0.5746} & 0.3751 & \textbf{0.3862} & 0.6670 & \textbf{0.5036} & \textbf{0.4661} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% \subsection{Computational Cost}
+
+% We report the computational overhead of Averis relative to Vanilla FP4 and BF16 baselines.
+% \textbf{Placeholder}: Throughput (tokens/s), step time (ms), and relative overhead (\%) at matched global batch size.
+
+% \subsection{Memory Usage}
+
+% We report training memory consumption for all compared methods.
+% \textbf{Placeholder}: Peak GPU memory (GB), activation memory (GB), and optimizer-state memory (GB)
+% under identical model size and training configuration.

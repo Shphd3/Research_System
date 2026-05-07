@@ -1,0 +1,390 @@
+\chapter{Mean Regeneration in Neural Network Operators: Empirical Isolation Experiments and Formal Analysis}
+
+\section{Purpose and Scope}
+
+This document provides a detailed, self-contained study of \emph{mean regeneration} in common neural-network operators.
+The motivating empirical observation is that, in modern transformer training, token-wise activations frequently exhibit a strong \emph{token-mean bias} in feature space, whereas gradient outputs often do not.
+We ask a mechanistic question:
+
+\begin{quote}
+Which operators \emph{create}, \emph{propagate}, \emph{amplify}, or \emph{suppress} the token-mean bias, and why?
+\end{quote}
+
+We address this through:
+\begin{enumerate}
+\item \textbf{Operator isolation experiments}: apply each operator repeatedly (with and without residual accumulation) to random mean-free inputs and measure the growth of a noise-normalized mean statistic.
+\item \textbf{Formal operator analysis}: prove mean propagation for linear maps, mean generation for non-odd nonlinearities, mean accumulation under residual connections, mean neutrality for layer normalization (in the token-mean sense), and non-preservation of token-mean under softmax attention due to data-dependent convex averaging.
+\end{enumerate}
+
+The experiments are intentionally minimal---they are not intended to reproduce full transformer training, but to isolate causal contributions of each operator.
+
+\section{Notation and Mean Statistics}
+
+\subsection{Token matrix and token-mean}
+
+Let $X\in\R^{N\times H}$ be a token matrix: each row $x_i^\top\in\R^H$ is the representation of token $i$.
+Define the \emph{token-mean vector} in feature space:
+\begin{equation}
+\label{eq:mu_token}
+\mu(X) \;\stackrel{\mathrm{def}}{=}\; \frac{1}{N}\sum_{i=1}^N x_i \;=\; \frac{1}{N}\1^\top X \in \R^H.
+\end{equation}
+Define the centered matrix:
+\begin{equation}
+X_c \;\stackrel{\mathrm{def}}{=}\; X - \1\mu(X)^\top.
+\end{equation}
+
+\subsection{Noise-normalized mean ratio}
+
+A nonzero sample mean can arise from finite-sample fluctuations even for mean-zero data.
+We therefore normalize the mean magnitude by the expected ``noise-level'' mean size.
+
+Define the per-token second moment:
+\begin{equation}
+\label{eq:Ex2}
+\E_N\|x\|_2^2 \;\stackrel{\mathrm{def}}{=}\; \frac{1}{N}\sum_{i=1}^N \|x_i\|_2^2 \;=\; \frac{1}{N}\|X\|_F^2.
+\end{equation}
+For i.i.d.\ mean-zero tokens with finite second moment, the sample mean satisfies the classical scaling
+\[
+\|\mu(X)\|_2 \sim \sqrt{\frac{\E\|x\|_2^2}{N}}
+\]
+(up to constants and concentration).
+Motivated by this, we define the \emph{noise-normalized mean ratio}:
+\begin{equation}
+\label{eq:R_def}
+R(X) \;\stackrel{\mathrm{def}}{=}\; \frac{\|\mu(X)\|_2}{\sqrt{\E_N\|x\|_2^2/N}}.
+\end{equation}
+Interpretation:
+\begin{itemize}
+\item $R(X)\approx 1$: token-mean is at ``noise level'' (no coherent mean).
+\item $R(X)\gg 1$: token-mean is a coherent bias (structural mean).
+\end{itemize}
+
+\paragraph{Implementation note.}
+All experiments compute $R$ using \eqref{eq:mu_token}--\eqref{eq:R_def} on the token axis (batch$\times$sequence), not the hidden dimension.
+
+\section{Empirical Operator Isolation Experiments}
+
+\subsection{Experimental protocol (shared across operators)}
+
+We fix $(B,L,H)$ and represent tokens as $X\in\R^{(BL)\times H}$.
+Inputs are sampled i.i.d.\ standard normal:
+\[
+x_i \sim \mathcal{N}(0,I_H), \qquad X_0 \in \R^{N\times H}, \; N=BL.
+\]
+We apply an operator $\mathcal{T}$ repeatedly for depth $L_{\text{depth}}$:
+\[
+X_{t+1} =
+\begin{cases}
+\mathcal{T}(X_t), & \text{(no residual)}\\
+X_t + \eta\,\mathcal{T}(X_t), & \text{(residual, gain $\eta$)}
+\end{cases}
+\]
+and record $R(X_t)$ at each depth step.
+
+\paragraph{Why both ``no residual'' and ``residual'' modes?}
+\begin{itemize}
+\item ``No residual'' isolates whether $\mathcal{T}$ itself tends to move representations toward a mean-dominated attractor when iterated.
+\item ``Residual'' models the accumulation mechanism in deep networks: if $\mathcal{T}(X)$ has a consistent mean drift, residual connections integrate it.
+\end{itemize}
+
+\subsection{Summary of empirical findings}
+
+The key outcomes from the experiments performed are:
+
+\begin{itemize}
+\item \textbf{LayerNorm is mean-neutral:} $R$ stays near $1$ across depth with or without residual.
+\item \textbf{ReLU/GELU in FFNs regenerate mean strongly:} even with mean-free input, applying $\ReLU$ or $\GELU$ inside an MLP produces large $R$ after the nonlinearity; residual accumulation keeps it large.
+\item \textbf{Softmax attention regenerates mean:} attention alone increases $R$; enabling Q/K/V/O biases amplifies the effect dramatically.
+\item \textbf{SwiGLU regenerates mean:} in stabilized settings (pre-LN and residual gain), $R$ grows with depth; growth increases with residual gain and is amplified by linear biases.
+\end{itemize}
+
+We now document the numeric results observed in a representative run.
+
+\subsection{Two-layer FFN mean regeneration (control experiment)}
+
+We used a two-layer MLP (no residual in the operator itself):
+\[
+Z = XW_1,\quad A=\phi(Z),\quad Y = AW_2,
+\]
+with random Gaussian weights and mean-free input $X$.
+
+Representative results (small setting $N=2048, H=64, M=256$):
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Stage & $\phi$ & $R$ (reported) & Interpretation \\
+\midrule
+$X$ & --- & $\approx 1$ & noise-level mean \\
+$Z=XW_1$ & --- & $\approx 1$ & linear preserves mean \\
+$A=\phi(Z)$ & ReLU & $\approx 25.6$ & mean generated by non-odd $\phi$ \\
+$Y=AW_2$ & ReLU & $\approx 24.0$ & mean propagated by linear map \\
+$A=\phi(Z)$ & GELU & $\approx 19.7$ & mean generated by non-odd $\phi$ \\
+$Y=AW_2$ & GELU & $\approx 18.4$ & mean propagated \\
+$A=\phi(Z)$ & tanh & $\approx 1.0$ & odd $\phi$ preserves mean symmetry \\
+$Y=AW_2$ & tanh & $\approx 1.0$ & mean remains noise-level \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This experiment cleanly isolates the role of the activation nonlinearity: non-odd elementwise activations produce a nonzero mean from symmetric inputs.
+
+\subsection{Residual MLP stack: accumulation and the role of mean removal}
+
+A residual MLP stack applies
+\[
+X_{t+1} = X_t + \eta\,f_t(X_t),
+\]
+where $f_t$ is a two-layer MLP with activation.
+
+Empirical observations:
+\begin{itemize}
+\item For ReLU/GELU, $R$ grows to large values across depth (mean accumulates).
+\item Removing mean \emph{before} the MLP reduces but does not eliminate accumulation (the residual backbone remains ``dirty'').
+\item Removing mean \emph{after} each residual update enforces $R\equiv 0$ by construction.
+\end{itemize}
+
+\subsection{LayerNorm operator}
+
+Using the operator isolation script for LayerNorm (with/without affine and with/without residual) yielded:
+\[
+R_0 \approx 0.95,\quad R_{\text{final}} \approx 0.95,
+\]
+approximately constant across depth. This confirms LayerNorm is not a token-mean generator in this setting.
+
+\subsection{Softmax attention operator (stabilized and unstabilized)}
+
+We tested multihead self-attention as an isolated operator.
+
+\paragraph{Unstabilized attention (no pre-LN).}
+In the earlier attention isolation, $R$ could jump quickly and become large, especially without residual or with bias terms.
+
+\paragraph{Stabilized attention (pre-LN + residual gain).}
+In a stabilized pre-norm attention-only block with residual gain $\eta$:
+\begin{itemize}
+\item Bias off, $\eta=0.1$: $R$ grew modestly (e.g., $R_{\text{final}}\approx 1.55$).
+\item Bias on, $\eta=0.1$: $R$ grew rapidly (e.g., $R_{\text{final}}\approx 9.74$).
+\item Increasing $\eta$ increased $R$ growth (consistent with residual integration of mean drift).
+\end{itemize}
+
+\subsection{Stabilized SwiGLU operator}
+
+We used a stabilized SwiGLU block:
+\[
+Y = W_o\big((W_1(\LN(X)))\odot \swish(W_2(\LN(X)))\big),\qquad
+X\leftarrow X+\eta Y,
+\]
+with residual gain $\eta$.
+
+Empirical observations:
+\begin{itemize}
+\item $R$ grows with depth under residual, with growth scaling strongly with $\eta$.
+\item Removing linear biases reduces mean regeneration substantially.
+\item Disabling LN affine parameters had negligible effect at initialization.
+\end{itemize}
+
+These experiments provide an empirical operator-level decomposition:
+LayerNorm is neutral; attention and gated/non-odd MLPs generate mean; residual connections integrate mean drift.
+
+\section{Formal Analysis: Mean Effects of Operators}
+
+We now provide a detailed theoretical analysis consistent with the experiments.
+
+\subsection{Linear maps}
+
+\begin{theorem}[Mean propagation under linear maps]
+\label{thm:linear_mean}
+Let $\mathcal{T}(X)=XW+\1 b^\top$, where $W\in\R^{H\times H'}$ and $b\in\R^{H'}$.
+Then
+\[
+\mu(\mathcal{T}(X)) = \mu(X)W + b.
+\]
+In particular, if $b=0$ and $\mu(X)=0$, then $\mu(\mathcal{T}(X))=0$ (no mean generation).
+\end{theorem}
+
+\begin{proof}
+By definition,
+\[
+\mu(\mathcal{T}(X))
+= \frac{1}{N}\1^\top(XW+\1 b^\top)
+= \left(\frac{1}{N}\1^\top X\right)W + \left(\frac{1}{N}\1^\top\1\right)b^\top
+= \mu(X)W + b.
+\]
+\end{proof}
+
+\subsection{Residual connections}
+
+\begin{theorem}[Residual accumulation of mean drift]
+\label{thm:residual_mean}
+Let $X_{t+1}=X_t+\eta F(X_t)$. Then
+\[
+\mu(X_{t+1}) = \mu(X_t) + \eta\,\mu(F(X_t)).
+\]
+\end{theorem}
+
+\begin{proof}
+Apply $\mu(\cdot)$ and linearity:
+\[
+\mu(X_{t+1})
+=\mu(X_t+\eta F(X_t))
+=\mu(X_t)+\eta\,\mu(F(X_t)).
+\]
+\end{proof}
+
+This theorem explains why even small operator-induced mean drift compounds across depth.
+
+\subsection{Odd versus non-odd elementwise nonlinearities}
+
+Consider an elementwise nonlinearity $\phi:\R\to\R$, applied coordinatewise to $X$:
+\[
+(\phi(X))_{ij}=\phi(X_{ij}).
+\]
+
+\begin{assumption}[Coordinatewise symmetry across tokens]
+\label{ass:symmetric_coords}
+For each feature coordinate $j$, the random variable $Z=X_{ij}$ (with $i$ sampled uniformly from tokens)
+is symmetric about $0$: $Z\overset{d}{=}-Z$.
+\end{assumption}
+
+\begin{theorem}[Odd nonlinearities preserve zero mean under symmetry]
+\label{thm:odd_phi}
+Assume \ref{ass:symmetric_coords} and $\phi$ is odd: $\phi(-z)=-\phi(z)$.
+Then for each coordinate $j$,
+\[
+\E[\phi(Z)] = 0,
+\]
+and hence $\E[\mu(\phi(X))]=0$.
+Moreover, by standard concentration (finite variance), $\|\mu(\phi(X))\|=O_p(N^{-1/2})$.
+\end{theorem}
+
+\begin{proof}
+If $Z\overset{d}{=}-Z$, then
+\[
+\E[\phi(Z)] = \E[\phi(-Z)] = \E[-\phi(Z)] \Rightarrow \E[\phi(Z)]=0.
+\]
+Apply coordinatewise to each feature and linearity of expectation for $\mu(\cdot)$.
+Concentration follows from finite second moments and independence/weak dependence across tokens.
+\end{proof}
+
+\begin{theorem}[Non-odd nonlinearities generate mean under symmetry]
+\label{thm:nonodd_phi}
+Assume \ref{ass:symmetric_coords} and $\phi$ is not odd.
+Then in general $\E[\phi(Z)]\neq 0$, so $\E[\mu(\phi(X))]\neq 0$.
+For example, if $Z\sim\mathcal{N}(0,\sigma^2)$:
+\[
+\E[\ReLU(Z)] = \frac{\sigma}{\sqrt{2\pi}} > 0.
+\]
+\end{theorem}
+
+\begin{proof}
+For ReLU, $\ReLU(Z)=Z\cdot\mathbf{1}\{Z>0\}$, hence
+\[
+\E[\ReLU(Z)] = \int_0^\infty z \cdot \frac{1}{\sigma\sqrt{2\pi}} e^{-z^2/(2\sigma^2)}\,dz
+= \frac{\sigma}{\sqrt{2\pi}}.
+\]
+For a general non-odd $\phi$, symmetry does not imply $\E[\phi(Z)]=0$; mean generation is typical unless $\phi$ is specifically constructed to be mean-free under the input distribution.
+\end{proof}
+
+This explains the FFN mean regeneration observed for ReLU/GELU and the absence of regeneration for $\tanh$ in the MLP-only experiment.
+
+\subsection{LayerNorm (token-wise) and token-mean neutrality}
+
+LayerNorm acts on each token vector $x\in\R^H$ by normalizing across features:
+\[
+\LN(x) = \gamma \odot \frac{x-\bar{x}\1}{\sqrt{\frac{1}{H}\|x-\bar{x}\1\|_2^2+\epsilon}} + \beta,
+\quad \bar{x}=\frac{1}{H}\1^\top x.
+\]
+
+\begin{proposition}[LayerNorm does not systematically generate token-mean bias]
+\label{prop:layernorm_neutral}
+Assume token vectors are i.i.d.\ and the initialization satisfies $\beta=0$.
+Then $\E[\mu(\LN(X))]=0$ (token-mean in feature space), and $\|\mu(\LN(X))\|$ remains at noise level $O_p(N^{-1/2})$.
+If $\beta\neq 0$, then LayerNorm injects a deterministic mean $+\beta$ at each token, but this is a learned offset (not an intrinsic nonlinear regeneration mechanism).
+\end{proposition}
+
+\begin{proof}
+With $\beta=0$, each token is centered across features; across tokens, there is no deterministic feature-wise shift introduced at initialization.
+Thus the token-mean across rows concentrates near zero.
+If $\beta\neq 0$, then $\LN(x)$ contains an additive $\beta$ independent of token index, hence the token-mean shifts by $\beta$.
+\end{proof}
+
+This aligns with experiments showing LayerNorm keeps $R\approx 1$.
+
+\subsection{Softmax attention is not mean-preserving}
+
+Consider an attention operator (single head for clarity):
+\[
+Q = XW_Q,\quad K=XW_K,\quad V=XW_V,
+\qquad
+A(X)=\softmax\!\left(\frac{QK^\top}{\sqrt{d}}\right),
+\qquad
+\Attn(X)=A(X)V,
+\]
+where $\softmax$ is row-wise.
+
+\begin{proposition}[Softmax attention generally does not preserve token-mean]
+\label{prop:attn_nonpreserve}
+Even if $\mu(X)=0$, in general $\mu(\Attn(X))\neq 0$.
+\end{proposition}
+
+\begin{proof}[Proof sketch (structural, non-independence argument)]
+If the attention weights $A$ were independent of $V$ and unbiased, then $\mu(A V)$ could remain near zero when $\mu(V)=0$.
+However, in self-attention $A(X)$ and $V(X)$ are computed from the same $X$, so $A$ is \emph{data-dependent} and \emph{correlated} with $V$.
+Moreover, $A$ is row-stochastic with strictly positive entries, making $\Attn(X)$ a convex combination of value vectors with weights biased by alignment structure in $X$.
+These two facts (dependence + positivity) break the symmetry needed for mean preservation.
+A concrete counterexample can be constructed by choosing $X$ with two token clusters whose dot-products yield systematically unequal attention weights; the resulting convex averaging yields a nonzero token-mean even when the global mean of $X$ is zero.
+\end{proof}
+
+\paragraph{Bias terms amplify attention mean drift.}
+If $Q,K,V$ include biases, then by Theorem~\ref{thm:linear_mean}, even with mean-free $X$ the biases inject nonzero means in $Q,K,V$.
+Residual accumulation then amplifies these injected means, matching the dramatic experimental gap between bias-free and biased attention.
+
+\subsection{SwiGLU mean regeneration}
+
+SwiGLU applies a multiplicative gate:
+\[
+\mathrm{SwiGLU}(x) = (xW_1)\odot \swish(xW_2),
+\quad \swish(z)=z\sigma(z),
+\]
+followed by an output projection.
+Since $\swish$ is not odd, it can produce nonzero mean even for symmetric inputs, and the multiplicative interaction couples two correlated projections of $x$.
+
+\begin{proposition}[SwiGLU generally generates mean]
+\label{prop:swiglu_mean}
+Under symmetric input assumptions, SwiGLU can generate a nonzero token-mean in feature space.
+Residual accumulation and linear biases amplify this effect.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Let $a=xW_1$ and $b=xW_2$; even if $x$ is symmetric, $\swish(b)$ is not odd and typically $\E[\swish(b)]\neq 0$ coordinatewise.
+Moreover, $(a)\odot \swish(b)$ couples correlated random variables (both derived from $x$), so cancellations needed for mean-free output generally do not hold.
+A subsequent linear map propagates the mean by Theorem~\ref{thm:linear_mean}, and residual accumulation compounds it by Theorem~\ref{thm:residual_mean}.
+\end{proof}
+
+\section{Synthesis: Operator-Level Causal Chain for Mean Bias}
+
+The experiments and analysis jointly support the following operator-level conclusions:
+
+\begin{itemize}
+\item \textbf{Linear maps} propagate existing mean and inject mean if biases are present (Theorem~\ref{thm:linear_mean}).
+\item \textbf{Non-odd elementwise nonlinearities} (ReLU, GELU, swish) generate mean from symmetric inputs (Theorem~\ref{thm:nonodd_phi}, Proposition~\ref{prop:swiglu_mean}).
+\item \textbf{Residual connections} accumulate mean drift across depth (Theorem~\ref{thm:residual_mean}).
+\item \textbf{LayerNorm} is approximately token-mean neutral at initialization (Proposition~\ref{prop:layernorm_neutral}).
+\item \textbf{Softmax attention} is not mean-preserving due to data-dependent convex averaging; bias terms amplify drift (Proposition~\ref{prop:attn_nonpreserve}).
+\end{itemize}
+
+Therefore, even if mean bias is removed at the embedding output, transformer blocks can regenerate mean due to attention and MLP nonlinearities, and residual pathways can accumulate it.
+This provides a principled explanation for why mean bias can appear layer-wise, and motivates architectural strategies that (i) purify block inputs, (ii) control residual mean drift, or (iii) separate mean as a structured side-channel.
+
+\section{Practical Recommendations for Architecture Experiments}
+
+Based on the above, the following architectural controls are theoretically motivated:
+
+\begin{enumerate}
+\item \textbf{Clean-block, dirty-residual:} subtract local token-mean before attention/MLP while keeping residual backbone intact.
+\item \textbf{Post-residual centering:} enforce $\mu(X_\ell)=0$ after each residual update (strongest control, but may remove useful structure unless forwarded separately).
+\item \textbf{Dual-stream design:} explicitly separate and forward the mean channel while keeping the semantic stream mean-free for computation.
+\item \textbf{Bias parameter auditing:} Q/K/V/O and MLP biases strongly amplify mean drift; disabling or constraining biases can reduce regeneration.
+\end{enumerate}
+
+\paragraph{What this document does \emph{not} claim.}
+These operator analyses explain mean drift mechanisms but do not by themselves prove end-to-end training improvements in large-scale LLMs; such claims require full training experiments. The purpose here is mechanistic clarity and testable architectural guidance.

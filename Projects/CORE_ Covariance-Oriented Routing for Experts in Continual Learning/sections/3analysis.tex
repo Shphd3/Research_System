@@ -1,0 +1,147 @@
+\section{Understanding Expert Specialization}
+\label{sec:analysis}
+
+Our analysis starts from a narrower question than continual learning: what kind of routing geometry actually induces expert specialization in modern MoE language models? The answer we develop in this section is first-order and decoupled. In the current regime, the key is not to add more nonlinear complexity, but to isolate two distinct first-order signals that standard gates entangle: the dominant mean-related direction and the centered residual variation.
+
+\subsection{Setup and Notation}
+Let $x \in \mathbb{R}^d$ denote the hidden representation before routing. Let $\mu_{\mathrm{global}}$ be the global mean. Define
+$$
+u=\frac{\mu_{\mathrm{global}}}{\|\mu_{\mathrm{global}}\|_2}, \qquad
+x_{\parallel}=(u^\top x)u, \qquad
+x_c=x-\mu_{\mathrm{global}}.
+$$
+
+Here, $x_{\parallel}$ captures the coordinate of the token along the dominant mean-related direction, while $x_c$ removes the shared global offset and retains the centered residual variation.
+
+\subsection{Why Centering Is Necessary}
+The correct statement is not that centering makes conditional means equal. It does the opposite: it removes the shared global offset and preserves the domain-specific first-order differences that were previously buried under that offset.
+
+\begin{proposition}[Centering preserves domain-specific first-order differences]
+Let
+$$
+\mu_A=\mathbb{E}[x\mid A], \qquad \mu_B=\mathbb{E}[x\mid B].
+$$
+Then
+$$
+\mathbb{E}[x_c\mid A]=\mu_A-\mu_{\mathrm{global}}, \qquad
+\mathbb{E}[x_c\mid B]=\mu_B-\mu_{\mathrm{global}}.
+$$
+Hence
+$$
+\mathbb{E}[x_c\mid A]-\mathbb{E}[x_c\mid B]=\mu_A-\mu_B.
+$$
+Therefore centering removes only the shared offset; it does not erase domain-specific first-order separation.
+\end{proposition}
+
+\begin{proof}
+The identities follow directly from linearity of conditional expectation:
+$$
+\mathbb{E}[x_c\mid A]
+=
+\mathbb{E}[x-\mu_{\mathrm{global}}\mid A]
+=
+\mathbb{E}[x\mid A]-\mu_{\mathrm{global}}
+=
+\mu_A-\mu_{\mathrm{global}},
+$$
+and similarly for $B$. Subtracting the two equalities yields the claim.
+\end{proof}
+
+This proposition explains why centered linear routing can already become much cleaner than uncentered routing. Uncentered routing compares tokens through a large shared bias term. Centered routing exposes the differences that matter for assignment.
+
+\subsection{Why the Mean Direction Must Be Kept}
+Centering is necessary, but it is not sufficient. The mean direction cannot simply be discarded, because it still carries coarse routing information. In practice, the dominant direction often correlates with token frequency, function-word behavior, or broad domain drift. If the gate removes that direction completely, it loses a stable and useful routing cue.
+
+This leads to a structured first-order interpretation:
+$$
+\ell_e(x)=a_e^\top x_{\parallel}+b_e^\top x_c.
+$$
+The first term handles coarse, mean-related separation; the second term handles centered residual separation.
+
+\begin{proposition}[Orthogonally decoupled first-order routing]
+Define
+$$
+\Delta_{\parallel}
+=
+\mathbb{E}[x_{\parallel}\mid A]-\mathbb{E}[x_{\parallel}\mid B],
+\qquad
+\Delta_c
+=
+\mathbb{E}[x_c\mid A]-\mathbb{E}[x_c\mid B].
+$$
+Then
+$$
+\mathbb{E}[\ell_e(x)\mid A]-\mathbb{E}[\ell_e(x)\mid B]
+=
+a_e^\top \Delta_{\parallel}+b_e^\top \Delta_c.
+$$
+Therefore the two channels can independently exploit mean-direction differences and centered first-order differences.
+\end{proposition}
+
+\begin{proof}
+Take conditional expectations under $A$ and $B$ and subtract linearly.
+\end{proof}
+
+This is the theoretical basis of CORE. The gate is not stronger because it is more nonlinear. It is stronger because it exposes the right first-order factors explicitly.
+
+\subsection{Specialization and Low-Rankness}
+Expert specialization is an assignment-side phenomenon: similar tokens are routed to the same expert more consistently. Low-rankness is a geometry-side phenomenon: activations arriving at one expert occupy a smaller effective subspace. The two are related through the law of total covariance:
+$$
+\operatorname{Cov}(x_c)
+=
+\mathbb{E}[\operatorname{Cov}(x_c\mid E)]
++
+\operatorname{Cov}(\mathbb{E}[x_c\mid E]),
+$$
+where $E$ is the routed expert.
+
+This decomposition tells us how to read specialization geometrically. The second term measures how far the expert-conditional means are pulled apart. The first term measures how spread out tokens remain inside each expert. If routing increases the second term under a fixed global covariance budget, then the first term is pressured downward. In anisotropic language-model representations, this pressure naturally encourages lower effective within-expert rank.
+
+We therefore use two complementary metrics:
+$$
+\rho_{\mathrm{sep}}
+=
+\frac{\operatorname{Tr}(\operatorname{Cov}(\mathbb{E}[x_c\mid E]))}
+{\operatorname{Tr}(\operatorname{Cov}(x_c))}
+$$
+and
+$$
+\mathrm{sRank}(\Sigma_e)
+=
+\frac{\operatorname{Tr}(\Sigma_e)^2}{\operatorname{Tr}(\Sigma_e^2)},
+\qquad
+\Sigma_e=\operatorname{Cov}(x_c\mid E=e).
+$$
+
+$\rho_{\mathrm{sep}}$ measures how strongly the gate separates experts in mean space. $\mathrm{sRank}(\Sigma_e)$ measures whether each expert's assigned activations collapse toward a lower-dimensional subspace. Specialization is strongest when these two move in the same direction.
+
+\subsection{Current Empirical Evidence}
+The current analysis already supports four concrete claims.
+
+\paragraph{Data geometry is predominantly mean-separable.}
+We extracted centered token activations from six representative MoE layers and compared K-Means clustering against subspace-based clustering. Across all six layers, K-Means produced consistently higher separation ratios than K-Subspaces. This indicates that real token clouds are primarily separated by location in residual space, not by hidden covariance-only structure. In other words, after centering, the representation geometry still looks more like separated clusters than like coincident ellipsoids distinguished only by shape.
+
+\paragraph{The decoupled first-order gate achieves the strongest separation.}
+On fixed checkpoint audits, CORE achieves the highest mean separation ratio among the compared routing families:
+$$
+\rho_{\mathrm{sep}}(\texttt{CORE})=0.1015,
+$$
+which exceeds `hybrid' $(0.0645)$, `linear\_running\_center' $(0.0615)$, and `linear\_no\_center' $(0.0060)$. This is the clearest direct evidence that expert specialization in the current regime is governed by mean separation, not by higher-order slicing.
+
+\paragraph{The decoupling has a real semantic interpretation.}
+Using a strict single-token vocabulary of 43 function words and 109 domain keywords, we observe a strong function-word sink effect. The average top-share for function words exceeds $0.60$ under CORE and the hybrid comparator, compared with $0.5778$ under the ordinary centered linear baseline. This supports the interpretation that the mean-related channel absorbs high-frequency or function-like tokens, leaving the residual channel to handle finer semantic distinctions.
+
+\paragraph{Second-order complexity is not justified in the current regime.}
+The second-order branch was not numerically dead: during early training, its gradient norm was of the same order as the centered first-order branch, with average ratio $0.8685$. This matters because it rules out the simplest failure explanation, namely that the higher-order term is merely starved by optimization. At the same time, the engineering cost is prohibitive. The hybrid router requires roughly $7.23$M router parameters and $1.196$M FLOPs/token, while CORE uses only $221.2$K parameters and $15.4$K FLOPs/token. Since the geometry audit already shows that the current data regime is predominantly mean-separable, the extra complexity brings no commensurate specialization benefit. In this regime, the correct conclusion is not that second-order routing is impossible, but that it is unnecessary.
+
+\subsection{Planned Evidence That Strengthens the Story}
+Two additional analyses are planned to make the story fully publication-ready.
+
+\paragraph{Eigen-spectrum decay audit.}
+We will compare the local covariance spectra of experts under CORE and under the no-centering baseline. If our current interpretation is correct, CORE should produce a visibly sharper eigenvalue decay, showing that stronger mean separation passively induces lower effective within-expert dimensionality.
+
+\paragraph{Orthogonal ablation and continual-learning bridge.}
+We will compare three pure first-order variants: mean-only routing, residual-only routing, and the full decoupled gate. This will test whether the gain truly comes from orthogonal decoupling rather than from either channel alone. We then use continual-learning interference as a downstream bridge, not as the primary theoretical object.
+
+\subsection{Main Takeaway}
+The current evidence supports a simple conclusion. The bottleneck in current MoE routing is not the absence of a stronger nonlinear gate. It is the failure to handle anisotropic first-order geometry correctly. Once the global offset is removed and the mean direction is preserved as a separate routing channel, expert specialization becomes substantially cleaner. This is why the analysis section supports a strong practical statement: for the current representation regime, second-order routing is not needed to explain or improve specialization.

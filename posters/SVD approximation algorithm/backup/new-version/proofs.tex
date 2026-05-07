@@ -1,0 +1,263 @@
+\appendix
+\section{Formal Proofs for Averaging as Spectral Approximation}
+\label{app:proofs}
+
+This appendix provides rigorous proofs supporting
+Section~\ref{sec:averaging_spectral}.
+To avoid circularity, we first prove results with respect to a fixed linguistic
+subspace $\mathcal L$, and then relate it to the empirical SVD spike subspace.
+
+\subsection{Setup}
+
+Assume token representations satisfy
+\[
+x_i = \ell + s_i,
+\qquad
+X = \mathbf{1}\ell^\top + S,
+\]
+where $\ell \in \mathcal L \subset \mathbb{R}^H$ and $s_i$ are semantic residuals.
+
+Let $P_{\mathcal L}$ and $P_{\mathcal L^\perp}$ denote orthogonal projectors onto
+$\mathcal L$ and its complement.
+
+\subsection{Assumptions}
+
+\begin{assumption}[Low-rank linguistic structure]
+$\ell \in \mathcal L$, where $\dim(\mathcal L)=d_\ell \ll H$.
+\end{assumption}
+
+\begin{assumption}[Semantic second-moment bound]
+There exists $\sigma^2$ such that
+\[
+\mathbb{E}\|s_i\|_2^2 \le \sigma^2.
+\]
+\end{assumption}
+
+\begin{assumption}[Semantic incoherence across sequences]
+For tokens drawn from different sequences (or sufficiently distant positions),
+the normalized semantic inner product is small. Specifically, for $i \neq j$,
+\begin{equation}
+\label{eq:assump_cos_incoh}
+\left|
+\mathbb{E}\!\left[
+\frac{s_i^\top s_j}{\|s_i\|_2\,\|s_j\|_2}
+\right]
+\right|
+\le \varepsilon_{\mathrm{inc}},
+\end{equation}
+for a small constant $\varepsilon_{\mathrm{inc}} \ll 1$.
+Moreover, in the tail eigenbasis used in Section~2.4, the normalized coefficient
+vectors are also weakly aligned across sequences, i.e.,
+$\left|\mathbb{E}[\cos(c_i, c_j)]\right| \le \varepsilon_{\mathrm{inc}}$, where
+$c_i$ denotes the tail-basis coefficient vector of $s_i$.
+\end{assumption}
+
+This assumption directly matches the empirical cosine similarity measurements in
+Section~2.4.
+
+\subsection{Mean Removal Identity}
+
+\begin{lemma}
+Let $\bar{s}_N = \frac{1}{N}\sum_{i=1}^N s_i$.
+Then
+\[
+\mu = \ell + \bar{s}_N,
+\qquad
+X_{\mathrm{avg}} = S - \mathbf{1}\bar{s}_N^\top.
+\]
+\end{lemma}
+
+\subsection{Concentration of Semantic Mean}
+
+\begin{lemma}
+With probability at least $1-\delta$,
+\[
+\|\bar{s}_N\|_2 \le \frac{\sigma}{\sqrt{N\delta}}.
+\]
+\end{lemma}
+
+\subsection{Tail Preservation under Mean Removal}
+\label{app:tail_preservation}
+
+\begin{theorem}[Tail perturbation is rank-one and controlled by mean leakage]
+\label{thm:app_tail_additive}
+For any projector $P$ on $\mathbb{R}^H$ and any batch mean $\mu$,
+\begin{equation}
+\label{eq:app_tail_exact}
+X_{\mathrm{avg}}(I-P) - X(I-P) = -\mathbf{1}\mu^\top(I-P),
+\end{equation}
+and therefore
+\begin{equation}
+\label{eq:app_tail_bound}
+\|X_{\mathrm{avg}}(I-P) - X(I-P)\|_F
+=
+\|\mathbf{1}\mu^\top(I-P)\|_F
+=
+\sqrt{N}\,\|(I-P)\mu\|_2.
+\end{equation}
+In particular, when $P=P_k$ is the empirical spike projector and $\mu$ is well
+captured by $\mathrm{range}(P_k)$, tail perturbation is small.
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:app_tail_exact} follows directly from
+$X_{\mathrm{avg}} = X - \mathbf{1}\mu^\top$.
+For \eqref{eq:app_tail_bound}, use the Frobenius norm identity
+$\|\mathbf{1}w^\top\|_F = \|\mathbf{1}\|_2\|w\|_2 = \sqrt{N}\|w\|_2$ with
+$w=(I-P)\mu$.
+\end{proof}
+
+\begin{corollary}[Relative tail preservation under a tail-energy lower bound]
+\label{cor:app_tail_ratio}
+Assume $\|X(I-P)\|_F^2 \ge cN$ for some constant $c>0$.
+Then
+\[
+\frac{\|X_{\mathrm{avg}}(I-P)\|_F^2}{\|X(I-P)\|_F^2}
+=
+1 + O\!\left(\frac{\|(I-P)\mu\|_2}{\sqrt{N}}\right).
+\]
+\end{corollary}
+
+\begin{proof}
+Let $A=X(I-P)$ and $E=\mathbf{1}\mu^\top(I-P)$.
+Then $X_{\mathrm{avg}}(I-P)=A-E$ and
+\[
+\bigl|\|A-E\|_F^2 - \|A\|_F^2\bigr|
+\le 2\|A\|_F\|E\|_F + \|E\|_F^2.
+\]
+Divide both sides by $\|A\|_F^2$ and use $\|E\|_F=\sqrt{N}\|(I-P)\mu\|_2$ and
+$\|A\|_F^2\ge cN$.
+\end{proof}
+
+\paragraph{Definition (Semantic leakage into the linguistic subspace).}
+We say semantic leakage into $\mathcal L$ is small if
+\[
+\mathbb{E}\|P_{\mathcal L} s_i\|_2^2 \le \rho^2,
+\qquad \rho \ll \|\ell\|_2.
+\]
+
+\subsection{Spike Suppression}
+
+\begin{theorem}
+Mean removal eliminates the coherent linguistic component:
+\[
+XP_{\mathcal L} = \mathbf{1}\ell^\top + SP_{\mathcal L},
+\qquad
+X_{\mathrm{avg}}P_{\mathcal L} = SP_{\mathcal L} - \mathbf{1}\bar{s}_N^\top P_{\mathcal L}.
+\]
+If semantic leakage into $\mathcal L$ is small in the above sense, then
+\[
+\|X_{\mathrm{avg}}P_{\mathcal L}\|_F^2 \ll \|XP_{\mathcal L}\|_F^2.
+\]
+\end{theorem}
+
+\subsection{Relation to the Empirical SVD Spike Subspace}
+
+Let $P_k$ denote the projector onto the top-$k$ right singular vectors of $X$.
+Empirically (Section~2.3),
+\[
+\frac{\|P_k \mu\|_2^2}{\|\mu\|_2^2} \approx 1
+\]
+for modest $k$, indicating that $\mathcal L \subseteq \mathrm{range}(P_k)$ up to
+small error.
+Under this condition, the fixed-subspace guarantees above apply to the empirical
+spike subspace used in practice.
+
+\paragraph{Remark.}
+Because averaging removes exactly one rank-one component, its relative spike
+reduction decreases as $k$ grows.
+This behavior matches the empirical spike-reduction curves in Section~3 and is a
+direct consequence of the conservative nature of averaging.
+
+\section{Gradient Decomposition Under Mean-Centered Activations}
+\label{app:grad_decomposition}
+
+This appendix clarifies how mean-centering activations interacts with gradient
+computation in transformer layers, and why removing a shared mean component does
+not eliminate token-specific learning signal, even though per-token gradients
+are outer products.
+The discussion here is explanatory and complements the formal analysis in
+Section~4.
+
+\paragraph{Per-token gradient structure.}
+Consider a linear projection in a transformer layer,
+\[
+y = Wx, \qquad W \in \mathbb{R}^{d \times d}, \; x \in \mathbb{R}^d,
+\]
+and let $\ell_t$ denote the loss associated with token $t$.
+The gradient of $\ell_t$ with respect to $W$ is
+\[
+g_t \triangleq \nabla_W \ell_t = \delta_t x_t^\top,
+\]
+where $\delta_t = \nabla_{y_t} \ell_t$ is the backpropagated error signal.
+The batch gradient used by SGD is the average of these outer products,
+\[
+G = \frac{1}{N}\sum_{t=1}^N g_t = \mathbb{E}[\delta x^\top].
+\]
+
+\paragraph{Decomposition into mean and residual components.}
+Decompose the activation into its mean and residual components,
+\[
+x = \mu_x + \tilde{x},
+\qquad
+\mu_x = \mathbb{E}[x],
+\qquad
+\mathbb{E}[\tilde{x}] = 0.
+\]
+Substituting into the batch gradient yields the exact identity
+\begin{equation}
+\label{eq:grad_decomp}
+\mathbb{E}[\delta x^\top]
+=
+\underbrace{\mathbb{E}[\delta]\mu_x^\top}_{\text{rank-1, shared}}
++
+\underbrace{\mathbb{E}[\delta \tilde{x}^\top]}_{\text{cross-covariance}}.
+\end{equation}
+
+\noindent
+Equation~\eqref{eq:grad_decomp} separates the batch gradient into two conceptually
+distinct components:
+\begin{itemize}
+  \item the mean term $\mathbb{E}[\delta]\mu_x^\top$, which is a shared, low-rank
+  update arising from components that are coherent across tokens (the
+  grammar-driven spike); and
+  \item the cross-covariance term $\mathbb{E}[\delta \tilde{x}^\top]$, which
+  captures correlations between error signals and token-wise variations and
+  constitutes the learning-relevant semantic signal.
+\end{itemize}
+
+\paragraph{Effect of mean-centering.}
+If activations are mean-centered, $x' = x - \mu_x = \tilde{x}$, then the batch
+gradient becomes
+\[
+\mathbb{E}[\delta (x')^\top] = \mathbb{E}[\delta \tilde{x}^\top].
+\]
+Thus, mean-centering removes only the rank-one mean--mean contribution
+$\mathbb{E}[\delta]\mu_x^\top$ and leaves the cross-covariance term intact.
+This explains why averaging suppresses a coherent, spike-like component of the
+gradient while preserving token-specific learning signal.
+
+\paragraph{Relation to second-order structure and adaptive optimizers.}
+Although SGD updates use the first moment of per-token gradients, the learning
+signal associated with semantic variation is expressed through correlations
+between $\delta_t$ and $\tilde{x}_t$ across tokens.
+Moreover, adaptive optimizers such as Adam and AdamW explicitly maintain
+second-moment estimates of gradients,
+\[
+v \approx \mathbb{E}[g_t \odot g_t],
+\]
+which decompose into contributions from shared components and from token-wise
+variability.
+A large shared component inflates these second moments and suppresses effective
+learning rates in semantically meaningful directions.
+Mean-centering reduces this shared contribution while leaving the variability
+term largely unchanged, which is consistent with the empirical improvements
+observed in optimization and low-bit quantization.
+
+\paragraph{Summary.}
+Although per-token gradients are outer products, mean-centering activations
+removes only a shared, low-rank component of the batch gradient.
+The cross-covariance term that carries token-specific semantic information
+remains, ensuring that semantic learning is preserved.
+This decomposition provides an intuitive bridge between the empirical results in
+Section~3 and the formal analysis in Section~4.

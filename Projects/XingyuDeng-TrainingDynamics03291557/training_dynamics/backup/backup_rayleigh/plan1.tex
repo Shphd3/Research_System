@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{assumption}{Assumption}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1\baselineskip}
+
+\title{Section 2: Mathematical Modeling \\
+\large A Rayleigh Quotient Framework for Gauss-Newton Sharpness in Mixture-of-Experts}
+\author{Theory Group}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{2. Theoretical Modeling and Mathematical Unification}
+
+In this section, we adopt a block-heterogeneous view of curvature tailored for Mixture-of-Experts (MoE) architectures. We isolate a single affine projection block $z=W_e x$ corresponding to a specific expert $e$. We present a refined theoretical framework that connects the statistical properties of expert-routed forward activations to the maximum eigenvalue (sharpness) of the corresponding Gauss-Newton Hessian block. By leveraging the Rayleigh quotient, we establish a tight, dimension-independent lower bound on curvature.
+
+\subsection*{2.1 Definitions and Assumptions}
+
+Due to the routing mechanism in MoE, each expert only processes a subset of tokens. Let $(x,y)\sim\mathcal{D}_e$ denote a token-level sample routed to a specific expert $e$, with activation $x\in\mathbb{R}^{d_{in}}$ at the routing layer. For the logits $z\in\mathbb{R}^{d_{out}}$, let $p = \operatorname{softmax}(z)$. The cross-entropy loss functional Hessian for a single sample is given by $H_{z} := \nabla_z^2 l(z,y) = \operatorname{diag}(p) - pp^\top \ge 0$. We define the expected functional Hessian conditioned on the expert routing as $\Sigma_{H_z}^{(e)} := \mathbb{E}_{x \sim \mathcal{D}_e}[H_z]$.
+
+\begin{definition}[Effective Curvature and Directional Projection]
+Let $u_H\in\mathbb{R}^{d_{out}}$ be the unit eigenvector corresponding to the maximum eigenvalue of the expected functional Hessian $\Sigma_{H_z}^{(e)}$. We define the expert's effective curvature as:
+\begin{equation}
+    \gamma_{eff}^{(e)} := \lambda_{\max}(\Sigma_{H_z}^{(e)}) = u_H^\top \Sigma_{H_z}^{(e)} u_H
+\end{equation}
+For any single routed sample, we define the directional functional curvature as the scalar $h := u_H^\top H_z u_H \ge 0$.
+\end{definition}
+
+\begin{assumption}[Expert-Conditioned Decomposition]
+We assume the activations routed to expert $e$ can be decomposed as $x = \mu_e + \tilde{x}$, where $\mu_e := \mathbb{E}_{x \sim \mathcal{D}_e}[x]$ is the expert-specific mean, and the centered residual satisfies $\mathbb{E}_{x \sim \mathcal{D}_e}[\tilde{x}] = 0$.
+\end{assumption}
+
+\begin{assumption}[1D Statistical Decoupling]
+Let $u_{\mu_e} := \mu_e/\|\mu_e\|$ be the unit vector in the mean direction. We define the activation residual projected onto the mean direction as a scalar $\tilde{x}_{\mu_e} := u_{\mu_e}^\top \tilde{x}$. Since $\mathbb{E}[\tilde{x}] = 0$, we have $\mathbb{E}[\tilde{x}_{\mu_e}] = 0$. Let $\sigma_{\mu_e}^2 := \operatorname{Var}(\tilde{x}_{\mu_e})$ and $\sigma_h^2 := \operatorname{Var}(h)$. We assume:
+\begin{enumerate}
+    \item The first-order correlation is bounded by $\rho$: $\operatorname{Corr}(\tilde{x}_{\mu_e}, h) = \rho$.
+    \item The second-order covariance is bounded by $\epsilon_{var}$: $\operatorname{Cov}(\tilde{x}_{\mu_e}^2, h) \ge -\epsilon_{var}$.
+\end{enumerate}
+\end{assumption}
+
+\subsection*{2.2 Proof Sketch}
+
+Our proof follows a short chain from the expert-conditioned statistical assumptions to a quantitative bound:
+
+\begin{enumerate}
+    \item \textbf{Activation Decomposition:} Assume $x = \mu_e + \tilde{x}$ for the subset of tokens routed to expert $e$. Project the fluctuations onto the mean direction $u_{\mu_e}$ to isolate the 1D scalar residual $\tilde{x}_{\mu_e}$.
+    \item \textbf{Directional Curvature Projection:} Identify the maximum eigenvector $u_H$ of the expected functional Hessian $\Sigma_{H_z}^{(e)}$, and define the single-sample directional curvature $h = u_H^\top H_z u_H \ge 0$.
+    \item \textbf{Kronecker Rayleigh Construction:} For the exact Gauss-Newton block of the expert $\mathcal{H}_{\mathrm{GN}}^{(e)} = \mathbb{E}_{x \sim \mathcal{D}_e}[xx^\top \otimes H_z]$, construct a rank-1 test vector $v = u_{\mu_e} \otimes u_H$. The Rayleigh quotient guarantees $\lambda_{\max}(\mathcal{H}_{\mathrm{GN}}^{(e)}) \ge v^\top \mathcal{H}_{\mathrm{GN}}^{(e)} v = \mathbb{E}[(\|\mu_e\| + \tilde{x}_{\mu_e})^2 h]$.
+    \item \textbf{Statistical Decoupling \& Expansion:} Expand the expectation into mean, covariance, and variance terms. Bounding the correlation terms using Assumption 2 reveals that sharpness is driven by the second moment $(\|\mu_e\|^2 + \sigma_{\mu_e}^2)$ in the mean direction.
+\end{enumerate}
+
+\subsection*{2.3 Main Theorem: Rayleigh Quotient Lower Bound}
+
+Because the projection $z=W_e x$ is linear in $w_e=\operatorname{vec}(W_e)$, the exact Gauss-Newton block for the expert is given by $\mathcal{H}_{\mathrm{GN}}^{(e)} = \mathbb{E}_{x \sim \mathcal{D}_e}[xx^\top \otimes H_z]$. We now present our main theorem linking the routed activation statistics to the GN block sharpness.
+
+\begin{theorem}[Moment-induced lower bound on GN sharpness via the Rayleigh quotient] \label{thm:rayleigh}
+Under Assumptions 1 and 2, the maximum eigenvalue of the expert Gauss-Newton block $\mathcal{H}_{\mathrm{GN}}^{(e)}$ is bounded below by:
+\begin{equation}
+    \lambda_{\max}(\mathcal{H}_{\mathrm{GN}}^{(e)}) \ge \gamma_{eff}^{(e)}(\|\mu_e\|^2 + \sigma_{\mu_e}^2) - 2\|\mu_e\| |\rho| \sigma_{\mu_e} \sigma_h - \epsilon_{var}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $u_{\mu_e} = \frac{\mu_e}{\|\mu_e\|}$ and let $u_H$ be the unit eigenvector corresponding to $\lambda_{\max}(\Sigma_{H_z}^{(e)})$. We construct the Kronecker product test vector $v := u_{\mu_e} \otimes u_H$. Since $\|u_{\mu_e}\|_2 = 1$ and $\|u_H\|_2 = 1$, we have $\|v\|_2 = \|u_{\mu_e}\|_2 \|u_H\|_2 = 1$. By the fundamental property of the Rayleigh quotient for symmetric matrices, the maximum eigenvalue is lower-bounded by the quadratic form:
+\begin{equation}
+    \lambda_{\max}(\mathcal{H}_{\mathrm{GN}}^{(e)}) \ge v^\top \mathcal{H}_{\mathrm{GN}}^{(e)} v
+\end{equation}
+
+Substitute the definition of the Gauss-Newton block $\mathcal{H}_{\mathrm{GN}}^{(e)} = \mathbb{E}_{x \sim \mathcal{D}_e}[xx^\top \otimes H_z]$:
+\begin{align}
+    v^\top \mathcal{H}_{\mathrm{GN}}^{(e)} v &= (u_{\mu_e} \otimes u_H)^\top \mathbb{E}[xx^\top \otimes H_z] (u_{\mu_e} \otimes u_H) \\
+    &= \mathbb{E}[(u_{\mu_e}^\top x)^2 (u_H^\top H_z u_H)]
+\end{align}
+Recall our definitions $u_{\mu_e}^\top x = \|\mu_e\| + \tilde{x}_{\mu_e}$ and $h = u_H^\top H_z u_H$. Substituting these yields:
+\begin{align}
+    v^\top \mathcal{H}_{\mathrm{GN}}^{(e)} v &= \mathbb{E}[(\|\mu_e\| + \tilde{x}_{\mu_e})^2 h] \\
+    &= \|\mu_e\|^2 \mathbb{E}[h] + 2\|\mu_e\|\mathbb{E}[\tilde{x}_{\mu_e} h] + \mathbb{E}[\tilde{x}_{\mu_e}^2 h]
+\end{align}
+
+We now analyze the three terms individually:
+\begin{enumerate}
+    \item \textbf{First term:} By definition, $\mathbb{E}[h] = \lambda_{\max}(\Sigma_{H_z}^{(e)}) = \gamma_{eff}^{(e)}$. Thus, the term is $\gamma_{eff}^{(e)}\|\mu_e\|^2$.
+    \item \textbf{Second term:} Since $\mathbb{E}[\tilde{x}_{\mu_e}] = 0$, $\mathbb{E}[\tilde{x}_{\mu_e} h] = \operatorname{Cov}(\tilde{x}_{\mu_e}, h) = \rho \sigma_{\mu_e} \sigma_h$. We take the worst-case bound: $2\|\mu_e\|\mathbb{E}[\tilde{x}_{\mu_e} h] \ge -2\|\mu_e\| |\rho| \sigma_{\mu_e} \sigma_h$.
+    \item \textbf{Third term:} Using the covariance identity, $\mathbb{E}[\tilde{x}_{\mu_e}^2 h] = \mathbb{E}[\tilde{x}_{\mu_e}^2]\mathbb{E}[h] + \operatorname{Cov}(\tilde{x}_{\mu_e}^2, h)$. By definition, $\mathbb{E}[\tilde{x}_{\mu_e}^2] = \sigma_{\mu_e}^2$ and $\mathbb{E}[h] = \gamma_{eff}^{(e)}$. Using Assumption 2.2, we obtain $\mathbb{E}[\tilde{x}_{\mu_e}^2 h] \ge \sigma_{\mu_e}^2 \gamma_{eff}^{(e)} - \epsilon_{var}$.
+\end{enumerate}
+
+Combining these observations, we obtain:
+\begin{equation}
+    \lambda_{\max}(\mathcal{H}_{\mathrm{GN}}^{(e)}) \ge \gamma_{eff}^{(e)}(\|\mu_e\|^2 + \sigma_{\mu_e}^2) - 2\|\mu_e\| |\rho| \sigma_{\mu_e} \sigma_h - \epsilon_{var}
+\end{equation}
+This completes the proof.
+\end{proof}
+
+\begin{remark}[Tightness and the Role of Variance]
+Unlike the standard derivation that drops the covariance term, this refined bound explicitly demonstrates that both the expert mean norm $\|\mu_e\|^2$ and the projection variance $\sigma_{\mu_e}^2$ contribute directly to the sharpness scale. Even if the routed activations are centered ($\mu_e \approx 0$), the variance in the predominant direction prevents the curvature from collapsing to zero, making this bound physically meaningful for MoE architectures.
+\end{remark}
+
+\subsection*{2.4 Critical Analysis: The Saturation Trap and Phase Decoupling}
+
+Theorem~\ref{thm:rayleigh} provides a deterministic lower bound. The key point is that the factors in the leading term evolve jointly during training; therefore, the bound should be interpreted dynamically rather than statically.
+
+\paragraph{Saturation Mechanism in Expert Routing}
+As $\|\mu_e\|$ increases due to expert specialization, logits $z = W_e(\mu_e + \tilde{x})$ typically increase in magnitude. The softmax output then becomes increasingly concentrated, i.e., $p$ moves toward a one-hot vector. In that regime, $H_z = \operatorname{diag}(p) - pp^\top$ shrinks toward zero, so $\Sigma_{H_z}^{(e)}$ and $\gamma_{eff}^{(e)}$ also decrease. Hence, growth in $\|\mu_e\|^2$ does not imply monotone growth in curvature.
+
+\paragraph{A Component-wise Lower Bound for $\gamma_{eff}^{(e)}$}
+Let $e_k \in \mathbb{R}^{d_{out}}$ be a standard basis vector. By Rayleigh's principle,
+\[
+\gamma_{eff}^{(e)} = \lambda_{\max}(\Sigma_{H_z}^{(e)})
+\ge e_k^\top \Sigma_{H_z}^{(e)} e_k
+= \mathbb{E}_{x \sim \mathcal{D}_e}\bigl[p_k(x)(1-p_k(x))\bigr], \quad \forall k.
+\]
+Therefore,
+\[
+\gamma_{eff}^{(e)}
+\ge \max_{k \in \{1,\dots,d_{out}\}} \mathbb{E}_{x \sim \mathcal{D}_e}\bigl[p_k(x)(1-p_k(x))\bigr].
+\]
+The term $p_k(x)(1-p_k(x))$ is the Bernoulli variance of class-$k$ probability. This shows that $\gamma_{eff}^{(e)}$ is controlled by uncertain output dimensions and remains nontrivial as long as predictions are not fully saturated.
+
+\paragraph{Implication: Active-Phase Curvature Barrier}
+The mean-induced curvature barrier is strongest in the \emph{Active Phase}, where at least part of the output distribution remains uncertain and $\gamma_{eff}^{(e)}$ is still appreciable. In this phase, the leading term $\gamma_{eff}^{(e)}(\|\mu_e\|^2 + \sigma_{\mu_e}^2)$ can dominate, forcing effective step-size reduction near the Edge of Stability for that specific expert. After substantial saturation, $\gamma_{eff}^{(e)}$ decreases and the barrier weakens, which may lead to load imbalance if not regularized.
+
+\subsection*{2.5 Experiment Design: Empirical Verification and Bound Tightness in MoE}
+
+To rigorously validate Assumption 2, quantify the severity of the ``Saturation Trap,'' and verify the tightness of our Rayleigh quotient bound, we design an in-situ tracking experiment tailored for Mixture-of-Experts architectures during pre-training.
+
+\paragraph{Objective}
+1. Empirically track both the first-order correlation $\rho^{(t)} = \operatorname{Corr}(\tilde{x}_{\mu_e}, h)$ and the second-order covariance anomaly $\epsilon_{var}^{(t)} = -\min(0, \operatorname{Cov}(\tilde{x}_{\mu_e}^2, h))$.
+2. Measure the exact $\lambda_{\max}(\mathcal{H}_{\mathrm{GN}}^{(e)})$ via implicit Kronecker Hessian-Vector Products (HvPs) to evaluate the tightness of the deterministic lower bound derived in Theorem~\ref{thm:rayleigh}.
+
+\paragraph{Methodology and Procedure}
+We attach forward and backward hooks to a target expert layer $W_e$ within an MoE block. Let $N_e$ be the dynamic number of tokens routed to expert $e$ in a given training step.
+
+\begin{enumerate}
+    \item \textbf{Expert-Conditioned Representation Statistics:} For a batch of routed activations $X_e \in \mathbb{R}^{N_e \times d_{in}}$, compute the expert-specific mean $\mu_e = \frac{1}{N_e}\sum_{i=1}^{N_e} x_i$ and the mean direction $u_{\mu_e} = \mu_e / \|\mu_e\|_2$.
+    
+    \item \textbf{Compute 1D Length Fluctuations:} For each token $i$, compute the centered residual $\tilde{x}_i = x_i - \mu_e$ and its 1D projection $\tilde{x}_{\mu,i} = u_{\mu_e}^\top \tilde{x}_i$. Collect the scalar values $\tilde{x}_{\mu,i}$ and their squares $\tilde{x}_{\mu,i}^2$ into vectors $\mathbf{v}_{\mathrm{fluct}}$ and $\mathbf{v}_{\mathrm{sq\_fluct}} \in \mathbb{R}^{N_e}$.
+    
+    \item \textbf{Dominant Curvature Direction and Single-Sample Curvature:} Construct the expected functional Hessian $\Sigma_{H_z}^{(e)} = \frac{1}{N_e}\sum_{i=1}^{N_e} H_{z,i}$, where $H_{z,i}$ is the functional Hessian for token $i$. Extract its top eigenvector $u_H$ via the power iteration method. For each token, compute the directional curvature $h_i = u_H^\top H_{z,i} u_H$ and collect them into $\mathbf{v}_{\mathrm{curv}} \in \mathbb{R}^{N_e}$.
+    
+    \item \textbf{Decoupling Metrics Extraction:} 
+    \begin{itemize}
+        \item Compute $\rho^{(t)} = \operatorname{Corr}(\mathbf{v}_{\mathrm{fluct}}, \mathbf{v}_{\mathrm{curv}})$.
+        \item Compute the second-order covariance penalty $\epsilon_{var}^{(t)} = - \operatorname{Cov}(\mathbf{v}_{\mathrm{sq\_fluct}}, \mathbf{v}_{\mathrm{curv}})$.
+    \end{itemize}
+    
+    \item \textbf{Exact GN Sharpness vs. Lower Bound:} Compute the exact maximum eigenvalue of the block Gauss-Newton Hessian, $\lambda_{\text{exact}}^{(t)} := \lambda_{\max}(\mathcal{H}_{\mathrm{GN}}^{(e)})$, using the Lanczos algorithm. The implicit Kronecker HvP for a test matrix $V \in \mathbb{R}^{d_{out} \times d_{in}}$ is implemented via the mapping:
+    \begin{equation}
+        V \mapsto \frac{1}{N_e}\sum_{i=1}^{N_e} H_{z,i} V x_i x_i^\top
+    \end{equation}
+    Simultaneously, compute the theoretical lower bound $\lambda_{\text{bound}}^{(t)}$ from Theorem~\ref{thm:rayleigh}.
+\end{enumerate}
+
+\paragraph{Expected Results and Phase Transitions}
+During the \emph{Active Phase} (early to mid-training), we hypothesize that $\rho^{(t)} \approx 0$ and $\epsilon_{var}^{(t)}$ is negligibly small, yielding a tight bound where $\lambda_{\text{exact}}^{(t)} \approx \lambda_{\text{bound}}^{(t)}$. As the expert saturates and specializes, the negative correlation between $\tilde{x}_{\mu,i}^2$ and $h_i$ will increase, causing $\epsilon_{var}^{(t)}$ to spike. This experiment will reveal the exact step at which the statistical decoupling assumption relaxes and how the expert-specific curvature barrier behaves dynamically.
+
+\end{document}

@@ -1,0 +1,574 @@
+\section{Empirical Analysis of Anisotropy in Language Model Representations}
+
+The purpose of this section is to empirically characterize the geometric structure
+induced by human language corpora in large language model representations.
+Rather than proposing new algorithms, we focus on establishing a set of
+data-driven facts about anisotropy that hold across models, layers, and training
+settings.
+In particular, we show that anisotropy consistently manifests as a separation
+between a coherent, low-rank spectral spike and an incoherent, high-dimensional
+long tail.
+This empirical characterization provides the foundation for the averaging-based
+spectral approximation developed in subsequent sections.
+
+\subsection{Experimental Setup}
+
+Our analysis is based on activations extracted from pretrained large language
+models.
+Unless otherwise stated, we analyze intermediate activation tensors from a
+decoder-only transformer, using a batch of sequences drawn from a standard
+language modeling corpus.
+For a given layer, activations have shape $[B, L, H]$, where $B$ is the batch
+size, $L$ is the sequence length, and $H$ is the hidden dimension.
+We flatten the batch and sequence dimensions to obtain a token matrix
+$X \in \mathbb{R}^{N \times H}$ with $N = B \cdot L$ tokens.
+
+All analyses in this section are performed on raw activations without
+preprocessing or normalization unless explicitly stated.
+We emphasize that the observations reported below are qualitatively stable across
+layers, batches, and model scales, and do not depend on architectural details or
+training objectives.
+
+\subsection{Spectral Signature: Spike and Long Tail}
+\label{subsec:spike_long_tail}
+
+We begin by examining the singular value spectrum of the token matrix
+$b \in \mathbb{R}^{(BL)\times H}$ obtained by flattening the batch and sequence
+dimensions of the activation tensor.
+Let
+\[
+b = U \Sigma V^\top,
+\qquad
+\Sigma = \mathrm{diag}(\sigma_1,\sigma_2,\dots),
+\]
+denote its singular value decomposition.
+Throughout this section, we define \emph{spectral energy} as the squared singular
+values $\sigma_k^2$, so that the total energy equals the Frobenius norm
+$\sum_k \sigma_k^2 = \|b\|_F^2$.
+
+Figure~\ref{fig:spectrum_spike_tail_combined} summarizes the spectral signature
+of anisotropy using the singular value spectrum and the cumulative spectral
+energy distribution.
+Across all layers and batches we analyzed, the spectrum exhibits a striking and
+stable spike--tail structure: a small number of singular values dominate the
+spectrum, followed by a broad and smoothly decaying long tail.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/spectrum_spike_tail.png}
+    \caption{Singular value spectrum (log scale).}
+    \label{fig:spectrum_spike_tail}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/spectrum_cum_energy.png}
+    \caption{Cumulative spectral energy
+    $\sum_{i\le k}\sigma_i^2 / \sum_i\sigma_i^2$.}
+    \label{fig:spectrum_cum_energy}
+  \end{subfigure}
+
+  \caption{Spectral signature of anisotropy in language model activations.
+  (\textbf{Left}) The singular value spectrum exhibits a sharp low-rank spike
+  followed by a broad and smoothly decaying long tail.
+  (\textbf{Right}) The cumulative spectral energy shows that a very small fraction
+  of components captures a large share of the total energy, while hundreds to
+  thousands of directions are required to explain the remaining variance,
+  indicating a broad and information-rich tail.}
+  \label{fig:spectrum_spike_tail_combined}
+\end{figure}
+
+Quantitatively, in the example shown, the top $1\%$ of singular components capture
+more than $60\%$ of the total spectral energy.
+Moreover, fewer than $20$ components suffice to explain $50\%$ of the energy,
+while reaching $90\%$ and $95\%$ requires several hundred components
+(e.g., $k\approx 390$ and $k\approx 799$, respectively).
+These values are computed directly from the cumulative energy distribution shown
+in Figure~\ref{fig:spectrum_cum_energy}, and are explicitly annotated in the plot.
+At the same time, the singular value spectrum continues to decay smoothly over
+thousands of directions, indicating that the long tail is broad and structured,
+rather than negligible noise.
+
+This spike--tail separation is robust across layers, model scales, and training
+regimes, and has been independently observed in prior studies on low-bit
+quantization and optimizer dynamics.
+From a data-geometry perspective, these results establish anisotropy as a stable
+and intrinsic property of language model representations.
+They also motivate a key design principle for mitigating anisotropy: any
+effective intervention must selectively suppress the dominant spike while
+preserving the high-dimensional structure of the long tail, which encodes
+semantically meaningful variation.
+
+While this section establishes the existence and scale of the spectral spike, it
+does not address whether this spike corresponds to shared structure or random
+variance.
+We address this question next.
+
+
+\subsection{The Spike: Low-Rank and Coherent}
+\label{subsec:spike_coherent}
+
+We now examine the structure of the dominant spectral spike and show that it is
+both low-rank and highly coherent across tokens.
+This distinguishes the spike from random high-variance noise and provides the
+key empirical foundation for averaging-based spike suppression.
+
+\paragraph{Low-rank structure of the spike.}
+Although the leading singular value is often emphasized, the spike is not
+confined to a single direction.
+Instead, its energy is distributed across a small number of leading singular
+components, forming a low-dimensional subspace.
+In the example analyzed here, the top singular component captures approximately
+$32.5\%$ of the batch mean energy, while the top $5$ components already capture
+more than $96\%$.
+Projecting onto the top $10$ components captures over $99\%$ of the batch mean
+energy, and projecting onto the top $1\%$ of singular directions ($k=41$)
+recovers more than $99.9\%$.
+This demonstrates that the spike is low-rank but not rank-one, and that the
+shared structure is distributed across a small subspace rather than a single
+singular direction.
+
+\paragraph{Coherence with shared structure.}
+Large singular values alone do not imply shared structure: a high-variance
+direction could arise from uncorrelated fluctuations.
+To directly test whether the spike corresponds to a coherent, token-shared
+component, we compare the broadcasted column-mean matrix
+$\mathrm{ColMean}_{\mu}(b)=\mathbf{1}\mu^\top$ with individual rank-$1$
+reconstructions $\sigma_k u_k v_k^\top$ of the activation matrix $b$.
+For each singular component $k$, we measure the absolute cosine similarity in
+Frobenius inner product, which captures how strongly the shared mean aligns with
+that component.
+
+Figure~\ref{fig:colmean_alignment} shows the resulting alignment curves for three
+different estimators of the column mean.
+The horizontal axis is plotted on a logarithmic scale to emphasize the sharp
+localization of alignment in the leading components.
+Across all estimators, alignment is highly concentrated in the first few
+singular directions and decays rapidly outside the spike subspace.
+We note that the strongest alignment need not occur at $k=1$, reflecting the
+fact that the spike occupies a low-rank subspace rather than a single direction.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/col_batch.png}
+    \caption{Batch mean.}
+    \label{fig:col_batch}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/col_sampled.png}
+    \caption{Sampled tokens across sequences.}
+    \label{fig:col_sampled}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/col_single.png}
+    \caption{Single-sequence mean.}
+    \label{fig:col_single}
+  \end{subfigure}
+
+  \caption{Alignment between the broadcasted column-mean matrix and individual
+  rank-$1$ singular components under different mean estimators.
+  The horizontal axis is shown on a logarithmic scale.
+  Alignment is sharply localized to the leading singular components, indicating
+  that the spectral spike corresponds to a coherent, shared structure.}
+  \label{fig:colmean_alignment}
+\end{figure}
+
+\paragraph{Concentration of alignment mass.}
+While the alignment curves reveal the shape and decay of coherence along the
+spectrum, they do not directly quantify how much of the shared structure is
+captured by the spike subspace.
+To make this explicit, we compute the cumulative distribution function (CDF) of
+alignment mass, defined as the fraction of total alignment captured by the first
+$k$ singular components.
+
+Figure~\ref{fig:colmean_alignment_cdf_individual} shows the CDFs for each mean
+estimator separately.
+In all cases, alignment mass is overwhelmingly concentrated in the spike
+subspace.
+For the batch mean estimator, more than $99.6\%$ of the alignment mass is
+contained within the top $1\%$ of singular components.
+The sampled-token estimator exhibits a similarly sharp concentration
+($98.7\%$ within the top $1\%$), while the single-sequence mean is more diffuse
+but still places over $98\%$ of the alignment mass in the same spike subspace.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/col_batch_cdf.png}
+    \caption{Batch mean.}
+    \label{fig:col_batch_cdf}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/col_sampled_cdf.png}
+    \caption{Sampled tokens across sequences.}
+    \label{fig:col_sampled_cdf}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/col_single_cdf.png}
+    \caption{Single-sequence mean.}
+    \label{fig:col_single_cdf}
+  \end{subfigure}
+
+  \caption{CDF of alignment mass for individual mean estimators.
+  Each plot shows the fraction of total alignment captured by the top $k$
+  singular components.
+  In all cases, alignment mass is overwhelmingly concentrated in the spike
+  subspace, with the batch mean exhibiting the strongest concentration and the
+  single-sequence mean the most diffuse distribution.}
+  \label{fig:colmean_alignment_cdf_individual}
+\end{figure}
+
+To facilitate direct comparison across estimators, Figure~\ref{fig:colmean_alignment_cdf}
+overlays the three CDFs in a single plot.
+This view highlights the consistent ordering:
+batch mean $>$ sampled tokens $>$ single sequence, reflecting the role of
+semantic diversity in reinforcing shared structure under averaging.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/colmean_alignment_cdf_three_methods.png}
+  \caption{Comparison of alignment mass concentration across mean estimators.
+  The batch mean captures over $99.6\%$ of the total alignment mass within the
+  top $1\%$ of singular components, followed by the sampled-token estimator
+  ($98.7\%$) and the single-sequence mean ($98.2\%$).
+  This ordering reflects the role of semantic diversity in reinforcing shared
+  structure under averaging.}
+  \label{fig:colmean_alignment_cdf}
+\end{figure}
+
+\paragraph{Effect of averaging across sequences.}
+Taken together, Figures~\ref{fig:colmean_alignment}--\ref{fig:colmean_alignment_cdf}
+establish that the spectral spike is not only low-rank, but also coherent and
+globally shared across tokens.
+Averaging over the full batch yields the strongest and most concentrated
+alignment, followed by averaging over randomly sampled tokens across sequences,
+while single-sequence averaging is least effective.
+This behavior directly supports the view that the spike corresponds to shared
+linguistic structure, rather than uncorrelated variance, and that its coherence
+is precisely what enables simple averaging to isolate it.
+
+This property distinguishes the spike from the high-dimensional, incoherent long
+tail examined in the next subsection.
+
+\subsection{The Long Tail: High-Dimensional and Incoherent}
+\label{subsec:tail_incoherent}
+
+We next analyze the long tail of the spectrum and show that it exhibits the
+complementary properties needed for safe spike suppression:
+(i) semantic information is distributed over a high-dimensional subspace, yet
+each token occupies only a portion of this subspace (compressibility); and
+(ii) semantic components are largely incoherent across tokens drawn from
+different sequences or sufficiently distant positions, so averaging does not
+erase semantic variation.
+
+\paragraph{Per-token compressibility in the tail eigenbasis.}
+We define the spike subspace as the span of the top $k_s$ right singular vectors
+(e.g., $k_s=1\%$) and project each token onto the tail complement.
+We then express each projected token in the \emph{tail eigenbasis} (the remaining
+right singular vectors) and measure how many tail coordinates are required to
+capture a fixed fraction of its energy.
+Figure~\ref{fig:tail_effective_support} shows the resulting distributions of
+effective support sizes.
+
+In our running example, the tail subspace has dimension $H-k_s=4055$.
+A typical token requires only a few hundred tail coordinates to capture
+$90\%$ of its tail energy (median $\approx 542$), and under $1000$ coordinates to
+capture $95\%$ (median $\approx 896$).
+Thus, although the semantic subspace itself is high-dimensional, individual
+tokens are \emph{compressible} in this basis: each token activates only a subset
+of the available tail directions.
+
+\paragraph{Coefficient-space incoherence across tokens.}
+Compressibility alone does not guarantee safe averaging: if different tokens
+activate the same directions with aligned coefficients, semantic information
+could still be suppressed.
+What matters is therefore not overlap of supports, but \emph{incoherence of
+coefficients} in the tail basis.
+
+To test this directly, we compute cosine similarity between normalized tail
+coefficient vectors for pairs of tokens, distinguishing three cases:
+(i) tokens from the same sequence and nearby positions;
+(ii) tokens from the same sequence but far apart in position; and
+(iii) tokens drawn from different sequences.
+Figure~\ref{fig:tail_coeff_cosine} shows the resulting distributions.
+
+Across sequences, tail coefficient cosine similarity is tightly concentrated
+around zero (mean $\approx -1.1\times 10^{-3}$, standard deviation $\approx 0.05$),
+indicating near-orthogonality in coefficient space.
+Tokens from the same sequence but far apart in position exhibit a similar
+distribution (mean $\approx -4.4\times 10^{-3}$), suggesting that semantic
+correlation decays with distance in long contexts.
+In contrast, nearby tokens within the same sequence show a modest positive shift
+(mean $\approx 0.076$), reflecting local semantic and topical coherence.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/tail_effective_support.png}
+    \caption{Per-token effective support size in the tail eigenbasis.}
+    \label{fig:tail_effective_support}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/tail_coeff_cosine.png}
+    \caption{Cosine similarity of tail coefficients:
+    within-sequence (near), within-sequence (far), and across-sequence.}
+    \label{fig:tail_coeff_cosine}
+  \end{subfigure}
+  \caption{Empirical properties of the long tail.
+  (\textbf{Left}) Individual tokens are compressible in the semantic tail: most
+  tail energy is concentrated on a subset of directions.
+  (\textbf{Right}) Tail coefficients are nearly orthogonal across sequences and
+  for far-apart positions within a sequence, while nearby tokens show modest
+  correlation, indicating local semantic structure but global incoherence.}
+\end{figure}
+
+Taken together, these results complement
+Section~\ref{subsec:spike_coherent}.
+The spike is low-rank and coherent, corresponding to shared linguistic
+structure, whereas the long tail is high-dimensional and semantically diverse:
+individual tokens occupy only a portion of the tail subspace, and tail
+coefficients are weakly correlated across sequences.
+This separation provides the empirical basis for the analysis in the next
+section, where we formalize why averaging can suppress the coherent spike while
+preserving semantic information in the long tail.
+
+\subsection{Elementwise Origin of Outliers: Mean vs Spike vs Tail}
+\label{subsec:outlier_origin}
+
+The previous subsections characterized anisotropy in spectral space.
+However, model training operates in \emph{element space}.
+To understand why averaging is effective, we must identify which component
+(mean, spike, or tail) actually produces elementwise outliers.
+
+We decompose the activation matrix $X$ into three orthogonal components:
+\[
+X = M + X_{\text{spike}} + X_{\text{tail}},
+\]
+where:
+\begin{itemize}
+    \item $M = \mathbf{1}\mu^\top$ is the batch-mean component,
+    \item $X_{\text{spike}}$ is the projection onto the top-$k$ singular vectors
+          (e.g., top $1\%$),
+    \item $X_{\text{tail}}$ is the remaining orthogonal complement.
+\end{itemize}
+
+We then analyze the largest $0.1\%$ of element magnitudes (quantization-relevant outliers)
+and compute, for each outlier entry, the squared-magnitude contribution fraction from
+mean, spike, and tail components.
+
+\paragraph{Outlier-level contribution.}
+
+Figure~\ref{fig:outlier_contribution} shows the distribution of squared-magnitude
+shares within the outlier set.
+
+\begin{itemize}
+    \item For \textbf{activations}, the overwhelming majority of outliers are dominated
+          by the \emph{mean component}. Over $99\%$ of extreme entries have their largest
+          squared contribution coming from $M$, while spike contributes modestly and tail
+          contributes negligibly.
+    \item For \textbf{gradient outputs}, the mean contribution is negligible.
+          Outliers are instead dominated by variance components (primarily tail).
+\end{itemize}
+
+This demonstrates a fundamental asymmetry:
+activation outliers are primarily a \emph{mean-driven phenomenon},
+whereas gradient-output outliers are variance-driven.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/outlier_contribution_hist.png}
+    \caption{
+    Squared-magnitude contribution shares for the top $0.1\%$ elementwise outliers.
+    (Left) Activation matrix.
+    (Right) Gradient-output matrix.
+    Activation outliers are dominated by the mean component,
+    while gradient-output outliers arise from variance (tail) components.
+    }
+    \label{fig:outlier_contribution}
+\end{figure}
+
+\paragraph{Global energy decomposition.}
+
+While outliers are dominated by the mean, the overall Frobenius energy tells a
+different story.
+Figure~\ref{fig:energy_decomposition} shows the fraction of total energy
+attributed to each component.
+
+\begin{itemize}
+    \item For activations, the mean and spike each contribute roughly
+          $20\%$ of total energy, while the long tail contributes the majority.
+    \item For gradient outputs, the mean contributes almost no energy;
+          the spectrum is dominated by spike and tail variance.
+\end{itemize}
+
+Thus:
+\begin{itemize}
+    \item The \emph{mean dominates extreme elements} (outliers).
+    \item The \emph{tail dominates total variance}.
+\end{itemize}
+
+This distinction explains why mean removal dramatically reduces outliers
+while preserving most variance.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/energy_decomposition.png}
+    \caption{
+    Global Frobenius energy decomposition into mean, spike, and tail components.
+    Activation anisotropy is driven by a mean component that creates
+    elementwise outliers, whereas gradient-output anisotropy is primarily variance-based.
+    }
+    \label{fig:energy_decomposition}
+\end{figure}
+
+\paragraph{Key implication.}
+
+The results clarify the mechanism underlying averaging-based conditioning:
+
+\begin{itemize}
+    \item Mean removal eliminates the dominant source of activation outliers.
+    \item It does not significantly disturb the long-tail variance.
+    \item Therefore, it improves quantization stability without destroying semantic information.
+\end{itemize}
+
+This elementwise perspective resolves the earlier confusion:
+anisotropy in spectral space does not imply that spike variance dominates
+element magnitudes.
+Instead, coherent mean structure is responsible for most extreme values,
+
+\subsection{Activation Bias and Optimizer Second-Moment Inflation}
+\label{subsec:optimizer_bias}
+
+We now quantify how activation bias affects adaptive optimizers.
+Adam and AdamW maintain an elementwise second-moment estimate
+\[
+v \approx \mathbb{E}[g_t \odot g_t],
+\]
+where for a linear layer
+\[
+g_t = \delta_t x_t^\top.
+\]
+Using the identity
+\[
+v = \frac{1}{N}(\Delta^{\odot 2})^\top (X^{\odot 2}),
+\]
+we can directly measure how conditioning the activations $X$
+affects the distribution of $v$.
+
+\paragraph{Protocol.}
+For each layer and training step, we compute:
+\begin{itemize}
+\item $v_{\text{raw}}$ from original activations,
+\item $v_{\text{mean}}$ after mean removal,
+\item $v_{\text{mean+whiten}}$ after mean removal and top-$1\%$ spike whitening.
+\end{itemize}
+We focus on extreme-tail statistics ($p99.9$ and $\max$), which dominate
+effective learning-rate suppression in Adam updates.
+
+\paragraph{Quantitative results.}
+
+Table~\ref{tab:adam_v_detailed} reports raw values and reduction factors.
+
+\begin{table}[t]
+\centering
+\caption{Extreme-tail statistics of Adam second moment $v$.}
+\label{tab:adam_v_detailed}
+\begin{tabular}{lcccccc}
+\toprule
+Layer & Step & Method & $p99.9(v)$ & $\max(v)$ &
+$p99.9$ reduction & $\max$ reduction \\
+\midrule
+\multirow{3}{*}{Layer 3}
+& 10k
+& Raw
+& $1.60\times10^{-10}$ & $8.38\times10^{-10}$ & -- & -- \\
+& 
+& Mean-only
+& $3.44\times10^{-11}$ & $1.91\times10^{-10}$ &
+$\mathbf{4.6\times}$ & $\mathbf{4.4\times}$ \\
+&
+& Mean+whiten
+& $1.72\times10^{-11}$ & $8.09\times10^{-11}$ &
+$9.3\times$ & $10.4\times$ \\
+\midrule
+\multirow{3}{*}{Layer 3}
+& 180k
+& Raw
+& $1.00\times10^{-10}$ & $7.37\times10^{-9}$ & -- & -- \\
+&
+& Mean-only
+& $2.50\times10^{-11}$ & $1.53\times10^{-10}$ &
+$\mathbf{4.0\times}$ & $\mathbf{48\times}$ \\
+&
+& Mean+whiten
+& $2.44\times10^{-11}$ & $1.54\times10^{-10}$ &
+$4.1\times$ & $47.8\times$ \\
+\midrule
+\multirow{3}{*}{Layer 21}
+& 10k
+& Raw
+& $1.67\times10^{-11}$ & $3.43\times10^{-11}$ & -- & -- \\
+&
+& Mean-only
+& $1.59\times10^{-11}$ & $2.58\times10^{-11}$ &
+$1.05\times$ & $1.33\times$ \\
+&
+& Mean+whiten
+& $1.48\times10^{-11}$ & $2.33\times10^{-11}$ &
+$1.13\times$ & $1.47\times$ \\
+\midrule
+\multirow{3}{*}{Layer 21}
+& 180k
+& Raw
+& $9.23\times10^{-11}$ & $1.10\times10^{-9}$ & -- & -- \\
+&
+& Mean-only
+& $2.21\times10^{-11}$ & $2.69\times10^{-10}$ &
+$\mathbf{4.2\times}$ & $\mathbf{4.1\times}$ \\
+&
+& Mean+whiten
+& $2.09\times10^{-11}$ & $1.95\times10^{-10}$ &
+$4.4\times$ & $5.6\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Observations.}
+
+\begin{enumerate}
+\item Mean removal consistently reduces the extreme tail of $v$.
+In early layers or later training stages, reductions range from
+$4\times$ to nearly $50\times$ in $\max(v)$.
+
+\item Whitening provides additional improvement in early training
+(Layer 3, 10k), but contributes little beyond mean removal
+in later stages (Layer 3, 180k).
+
+\item The median of $v$ changes minimally across methods,
+indicating that mean removal primarily affects a small subset
+of extreme parameters, which nonetheless dominate adaptive
+learning-rate suppression.
+\end{enumerate}
+
+\paragraph{Implication.}
+These results demonstrate that activation bias is a dominant driver of
+extreme second-moment inflation in Adam.
+Removing the mean significantly stabilizes the optimizer by shrinking
+the pathological tail of $v$, thereby improving effective learning-rate
+allocation without altering the semantic covariance structure.

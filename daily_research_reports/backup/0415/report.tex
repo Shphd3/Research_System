@@ -1,0 +1,439 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{enumitem}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.22\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65\baselineskip}
+
+\title{Daily Research Report:\\Global Representation Decoupling, Hierarchical Residual Decoupling, and Regularization Decoupling}
+\author{}
+\date{2026-04-15}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+Our current mainline is now organized around three propositions: global representation decoupling, hierarchical residual decoupling, and regularization decoupling.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Update 1: regularization decoupling is a real bottleneck.}  
+    The optimization-side line suggests that isotropic weight decay suppresses low-variance tail directions and low-occupancy experts. Specialization can therefore fail even when the representation geometry is informative.
+
+    \item \textbf{Update 2: global representation decoupling is the main geometric operation.}  
+    The main representation result is not simple centering. The non-trivial gain comes from removing the shared centered covariance head, and this operation helps only when the removed subspace is dominated by shared nuisance rather than semantic signal.
+
+    \item \textbf{Update 3: hierarchical residual decoupling is necessary after global cleaning.}  
+    After global head removal, the remaining tail is not yet clean. The hierarchical toy experiment shows that the residual can still contain coarse-group-specific shared structure, and a second local removal step substantially improves fine routing.
+
+    \item \textbf{Update 4: mean-only removal is only a negative control.}  
+    Centering by itself barely changes separability or routing accuracy. This matters because it rules out the trivial explanation that simple recentering is already sufficient.
+\end{enumerate}
+
+\section{Background and Theoretical Critique}
+
+The central problem remains expert specialization. A MoE model is useful only if the router creates a meaningful division of labor: different experts should receive inputs that differ in predictive mode, not merely in occupancy statistics. Under this view, routing quality should be judged by whether it reduces incompatible mode mixing inside each expert, rather than by load balance alone.
+
+This week's work sharpens a specific diagnosis. The issue is not simply that routing is performed on uncentered representations. The stronger claim is that routing in the full representation space is structurally misaligned with specialization because shared high-variance directions dominate the geometry. Centering removes translation, but it does not remove the covariance head that still overwhelms the tail structure relevant for routing.
+
+This yields three concrete propositions.
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Regularization Decoupling:} even if useful tail directions exist, can isotropic optimization suppress them before they are exploited by the router?
+    \item \textbf{Global Representation Decoupling:} how should we define separability in the representation space, and when does removing the shared centered head actually help?
+    \item \textbf{Hierarchical Residual Decoupling:} after global head removal, does the residual still contain local shared structure that should be removed recursively?
+\end{enumerate}
+
+The report below follows this order. We begin with the optimization-side bottleneck, then formalize global representation decoupling as a non-trivial separability problem, and finally explain why the cleaned residual may still require a second decoupling stage.
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{Mainline hypotheses}
+
+This week's report is organized around four concrete hypotheses.
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{H1 (Regularization-side tail suppression).} Even when tail directions contain useful routing signal, isotropic weight decay can suppress them disproportionately if they have low variance or if their associated experts have low occupancy.
+
+    \item \textbf{H2 (Global representation decoupling).} Removing the top-$k$ centered covariance directions improves separability only when those directions carry predominantly shared within-group nuisance rather than between-group semantic signal.
+
+    \item \textbf{H3 (Hierarchical residual decoupling).} After global head removal, the residual may still contain coarse-group-specific low-rank shared structure. A second local removal step can therefore improve fine-grained specialization.
+
+    \item \textbf{H4 (Mean-only insufficiency).} Subtracting the global mean changes the coordinate origin but does not, by itself, produce substantial MoE-relevant separability gains.
+\end{enumerate}
+
+\subsection{Global representation decoupling}
+
+Let $x \in \mathbb{R}^d$ denote a token representation, and let $\mu = \mathbb{E}[x]$ be the global mean. We define the centered representation by
+\[
+x_c = x - \mu .
+\]
+Let $V_k \in \mathbb{R}^{k \times d}$ collect the top-$k$ eigenvectors of the centered covariance matrix, and let
+\[
+P_t = I - V_k^\top V_k
+\]
+be the projector onto the residual tail space. The tail representation is then
+\[
+x_{\mathrm{tail}} = P_t x_c .
+\]
+
+To measure whether a projection improves routing-relevant discrimination, we use a Fisher-style separability score. Let $z$ denote a semantic or routing-relevant group label, let $\pi_c = P(z=c)$ be the group prior, let $\mu_c = \mathbb{E}[x \mid z=c]$ be the conditional mean, and let
+\[
+\mu = \sum_c \pi_c \mu_c
+\]
+be the global mean. Define the between-group scatter and within-group scatter by
+\[
+B_z = \sum_c \pi_c (\mu_c - \mu)(\mu_c - \mu)^\top,
+\qquad
+W_z = \sum_c \pi_c \operatorname{Cov}(x \mid z=c).
+\]
+For a projection matrix $P$, we define
+\[
+\operatorname{Sep}_F(P;z)
+=
+\frac{\operatorname{tr}(P B_z P^\top)}{\operatorname{tr}(P W_z P^\top)}.
+\]
+
+This definition is appropriate because it measures exactly the ratio required by specialization: how much between-group signal remains after projection, relative to how much within-group nuisance remains after projection. It is not a trivial metric for two reasons. First, the mean-only control shows that simple centering barely changes routing behavior, so a projection does not automatically improve separability. Second, the shared-head experiment shows that targeted head removal can change $\operatorname{Sep}_F$ substantially under matched dimensionality, whereas matched-dimension random removal does not. The improvement therefore cannot be reduced to generic denoising or dimensionality reduction; it depends on the structure of the removed subspace.
+
+Now let $U$ be an orthonormal basis for the removed subspace. Define
+\[
+\delta_b = \operatorname{tr}(U^\top B_z U),
+\qquad
+\delta_w = \operatorname{tr}(U^\top W_z U).
+\]
+The quantity $\delta_b$ measures how much between-group signal lies in the removed head, while $\delta_w$ measures how much within-group nuisance lies in the removed head. Head removal is beneficial only when the removed subspace contains a larger fraction of nuisance than of semantic signal:
+\[
+\frac{\delta_b}{\operatorname{tr}(B_z)} < \frac{\delta_w}{\operatorname{tr}(W_z)}.
+\]
+This criterion makes the benefit condition explicit. In this sense, global representation decoupling is a principled filtering operation rather than a heuristic truncation.
+
+\subsection{Hierarchical residual decoupling}
+
+To explain why a single global removal may still be insufficient, we use a two-level latent structure:
+\[
+x
+=
+\mu
++
+x_{\text{global-head}}
++
+x_{\text{coarse}}
++
+x_{\text{local-head}}
++
+x_{\text{fine}}
++
+\varepsilon .
+\]
+Here:
+\begin{itemize}[leftmargin=1.5em]
+    \item $x_{\text{global-head}}$ denotes globally shared high-variance structure;
+    \item $x_{\text{coarse}}$ denotes coarse-group signal;
+    \item $x_{\text{local-head}}$ denotes coarse-group-specific shared nuisance;
+    \item $x_{\text{fine}}$ denotes fine-grained signal relevant for final routing;
+    \item $\varepsilon$ denotes residual noise.
+\end{itemize}
+
+After global head removal, the residual can still contain $x_{\text{local-head}}$. Therefore the routing problem is not necessarily flat. A more faithful structure is:
+\begin{enumerate}[leftmargin=1.5em]
+    \item remove the global shared head;
+    \item route at the coarse level;
+    \item estimate and remove a local shared head inside each coarse group;
+    \item route again at the fine level.
+\end{enumerate}
+
+The global tail is therefore not guaranteed to be the final routing space. It can itself be hierarchically structured.
+
+\subsection{Regularization decoupling}
+
+The optimization-side line asks whether useful tail signal survives training. Let expert $e$ have occupancy $p_e$, let direction $i$ have feature variance $\lambda_i$, let $\gamma_e$ be the effective decay strength applied to expert $e$, and let $\beta_i$ be the task-relevant target coefficient along direction $i$. In a minimal linear model, the learned coefficient takes the form
+\[
+a_{e,i}^{*}
+=
+\frac{p_e \lambda_i}{p_e \lambda_i + \gamma_e}\,\beta_i.
+\]
+The numerator $p_e \lambda_i$ is the useful training signal available to that expert-direction pair; the denominator adds the decay pressure. Low-variance directions and low-occupancy experts therefore suffer a double disadvantage. This is the mechanism behind optimization-side tail suppression. The corresponding design question is how to decouple regularization strength from a single global schedule so that tail directions can survive long enough to be exploited.
+
+\section{Empirical Study}
+
+\subsection{What was executed this week}
+
+This week produced three completed representation-side audits and one preliminary optimization-side line:
+\begin{enumerate}[leftmargin=1.5em]
+    \item a regularization-decoupling toy study on weight-decay suppression;
+    \item a global representation decoupling audit;
+    \item a signal-leakage sweep for the global decoupling criterion;
+    \item a hierarchical residual decoupling toy experiment;
+    \item a mean-only control as a negative baseline.
+\end{enumerate}
+
+\subsection{Regularization decoupling}
+
+The optimization-side line is still less mature than the representation-side results, but it is no longer anecdotal. We now have a clear toy protocol, a minimal theoretical model, and three explicit regularization regimes:
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Global decay:} a single isotropic decay coefficient is applied to all router parameters at every step.
+    \item \textbf{Lazy decay:} decay is skipped on inactive steps, but the decay magnitude itself remains global and expert-agnostic.
+    \item \textbf{Dynamic decay:} the effective decay is adjusted using occupancy-aware or branch-aware statistics so that low-occupancy experts and low-variance directions are not penalized as aggressively as dominant components.
+\end{enumerate}
+
+The stable conclusion is qualitative rather than final: under uniform decay, low-variance tail directions and low-occupancy experts are penalized much more aggressively than dominant head directions or frequent experts.
+
+The current results suggest two concrete effects:
+\begin{enumerate}[leftmargin=1.5em]
+    \item under global isotropic decay, tail signal survival can collapse while head signal remains partially intact;
+    \item for rare experts, simply skipping decay on inactive steps is not enough; convergence remains substantially slower unless decay strength is tied to occupancy.
+\end{enumerate}
+
+Figure~\ref{fig:reg-decoupling} summarizes the current toy evidence. The three curves correspond to the three regularization regimes above and plot the survival of tail signal during training.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/global_tail_signal_survival.png}
+\caption*{(a) Global decay}
+\end{minipage}\hfill
+\begin{minipage}{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/lazy_tail_signal_survival.png}
+\caption*{(b) Lazy decay}
+\end{minipage}\hfill
+\begin{minipage}{0.32\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/dynamic_tail_signal_survival.png}
+\caption*{(c) Dynamic decay}
+\end{minipage}
+\caption{Tail-signal survival under three regularization regimes. Global decay suppresses tail components most aggressively; lazy decay improves the ceiling but does not remove the occupancy gap; dynamic decay yields the strongest recovery for weak and infrequent tail components.}
+\label{fig:reg-decoupling}
+\end{figure}
+
+The interpretation is straightforward. Global decay creates the strongest survival barrier. Lazy decay partially relaxes this barrier, but it still inherits the same global scale and therefore remains too conservative for weak or rare experts. Dynamic decay is the first regime that explicitly matches regularization strength to the effective training signal. This is why it improves both the survival ceiling and the convergence speed of low-signal components.
+
+This line matters because specialization failure can persist even if the geometry has been corrected. A good routing space is not enough if the optimization process suppresses the very directions that the router should use.
+
+\subsection{Global representation decoupling audit}
+
+The main representation-side result of the week is that targeted shared-head removal can improve routing, but only under a precise condition.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}
+\toprule
+Method & Sep$_{\text{rayleigh}}$ & Sep$_{\text{trace}}$ & Router Acc & NMI & Routed MSE \\
+\midrule
+Raw & 3.009 & 0.009 & 81.45\% & 0.508 & 0.2192 \\
+Centered & 3.009 & 0.009 & 82.11\% & 0.520 & 0.2004 \\
+Centered + PCA-remove-top4 & 3.006 & 0.250 & 82.36\% & 0.525 & 0.1989 \\
+Centered + Random-drop-top4 & 2.058 & 0.010 & 72.86\% & 0.377 & 0.3604 \\
+Centered + Oracle-remove-U & 3.007 & 0.250 & 82.38\% & 0.525 & 0.1986 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Global representation decoupling audit at $\alpha=4$. Targeted removal is close to the oracle and clearly outperforms matched-dimension random removal.}
+\label{tab:exp-b-alpha4}
+\end{table}
+
+Two conclusions matter. First, our PCA-based removal is close to the oracle under matched dimensionality, so the gain is not coming from arbitrary dimension reduction. Second, the gain is visible on routing-relevant metrics, not only on a generic reconstruction metric.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.49\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_sep_rayleigh_vs_alpha.png}
+\caption*{(a) Sep$_{\text{rayleigh}}$ vs $\alpha$}
+\end{minipage}\hfill
+\begin{minipage}{0.49\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_router_acc_vs_alpha.png}
+\caption*{(b) Router accuracy vs $\alpha$}
+\end{minipage}
+\caption{Shared-head strength sweep. Once a shared head is present, targeted removal tracks the oracle and consistently outperforms matched-dimension random removal.}
+\label{fig:exp-b-alpha}
+\end{figure}
+
+Figure~\ref{fig:exp-b-alpha} makes the conditional structure explicit. When $\alpha=0$, removing the top-$k$ directions is harmful because there is no meaningful shared head to remove. Once $\alpha$ becomes positive, the targeted method recovers immediately and remains close to the oracle. This directly supports the criterion in the previous section.
+
+\begin{figure}[H]
+\centering
+\safeincludegraphics[width=0.72\linewidth]{figures/fig_router_acc_vs_step_alpha4.png}
+\caption{Finite-budget learning dynamics at $\alpha=4$. The targeted head-removal variant reaches the high-accuracy regime quickly and remains close to the oracle, whereas matched-dimension random removal stays much lower.}
+\label{fig:exp-b-step}
+\end{figure}
+
+The step-wise plot in Figure~\ref{fig:exp-b-step} shows that the gain appears early, not only at asymptotic convergence. The operation changes the effective optimization geometry, not merely the final representation.
+
+\subsection{Signal-leakage sweep}
+
+The leakage sweep stress-tests the condition above by gradually injecting semantic signal into the removed head.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}
+\toprule
+$\rho$ & Raw Acc & Centered Acc & Ours Acc & Raw Sep$_{\text{rayleigh}}$ & Ours Sep$_{\text{rayleigh}}$ \\
+\midrule
+0.00 & 81.20\% & 82.06\% & 82.12\% & 2.994 & 2.992 \\
+0.25 & 81.22\% & 81.88\% & 82.10\% & 3.011 & 2.998 \\
+0.50 & 81.37\% & 82.10\% & 82.06\% & 3.025 & 2.986 \\
+1.00 & 81.68\% & 82.38\% & 81.37\% & 3.076 & 2.919 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Semantic leakage sweep. Once semantic signal leaks strongly into the head, targeted removal stops being beneficial and begins to degrade routing accuracy.}
+\label{tab:exp-c}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.49\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_sep_rayleigh_vs_rho.png}
+\caption*{(a) Sep$_{\text{rayleigh}}$ vs $\rho$}
+\end{minipage}\hfill
+\begin{minipage}{0.49\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/fig_router_acc_vs_rho.png}
+\caption*{(b) Router accuracy vs $\rho$}
+\end{minipage}
+\caption{Leakage sweep across $\rho$. The gain from head removal shrinks as the removed subspace begins to carry semantic signal.}
+\label{fig:exp-c-rho}
+\end{figure}
+
+The conclusion is precise: global representation decoupling is beneficial only while the removed subspace is nuisance-dominated. Once the removed subspace carries too much semantic signal, the same operation destroys useful routing information.
+
+\subsection{Hierarchical residual decoupling}
+
+The hierarchical experiment addresses a different question. Suppose the global shared head has already been removed. Is the remaining tail immediately suitable for fine routing? The answer is no when the residual still contains coarse-group-specific local shared structure.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccc}
+\toprule
+Strategy & Coarse accuracy & Fine accuracy & Fine Sep$_F$ \\
+\midrule
+Flat after global tail & -- & 85.55\% & 0.0486 \\
+Hierarchical & 99.74\% & 91.83\% & 0.1420 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Hierarchical residual-decoupling toy experiment. A coarse-to-fine strategy with local head removal yields a large improvement in fine routing.}
+\label{tab:hierarchical}
+\end{table}
+
+This experiment extends the mainline in an important way. The global tail is not guaranteed to be the final routing space. Residual geometry can remain hierarchical, and the routing architecture should be allowed to follow that hierarchy.
+
+\subsection{Mean-only control}
+
+The mean-only control is now a supporting negative result rather than the main story. It tests the strongest null hypothesis: if the data contains only a global mean and class means, but no shared covariance head, then centering should not materially improve separability.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccc}
+\toprule
+Method & Sep$_{\text{rayleigh}}$ & Sep$_{\text{trace}}$ & Router Acc & NMI \\
+\midrule
+Raw & 3.00 $\pm$ 0.05 & 0.19 $\pm$ 0.00 & 81.79\% $\pm$ 0.62\% & 0.51 $\pm$ 0.01 \\
+Centered & 3.00 $\pm$ 0.05 & 0.19 $\pm$ 0.00 & 82.35\% $\pm$ 0.32\% & 0.52 $\pm$ 0.01 \\
+Centered + Random-drop-top4 & 2.16 $\pm$ 0.25 & 0.18 $\pm$ 0.02 & 74.28\% $\pm$ 3.14\% & 0.40 $\pm$ 0.04 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Mean-only control. Raw and centered representations are effectively identical on both separability and routing accuracy.}
+\label{tab:exp-a}
+\end{table}
+
+This experiment rules out the trivial explanation that simple recentering is already the main mechanism.
+
+\subsection{What this week's evidence establishes}
+
+Taken together, this week's evidence supports four statements:
+\begin{enumerate}[leftmargin=1.5em]
+    \item specialization can fail for optimization reasons even when the geometry is in principle useful;
+    \item global representation decoupling can substantially improve routing-relevant separability;
+    \item that gain is conditional rather than universal;
+    \item after global head removal, hierarchical residual decoupling can still be necessary.
+\end{enumerate}
+
+\section{Next Iteration}
+
+The next iteration should consolidate the current findings into a concrete model program. The goal is no longer to ask whether tail routing helps in the abstract. The goal is to build a specialization-oriented architecture whose router, experts, and optimization procedure are all aligned with the geometry diagnosed above.
+
+\subsection{Immediate experiments}
+
+\textbf{1. Real-model global representation decoupling audit.}  
+Promote the conditional head-removal result from toy evidence to real LLM layers. The deliverables are layer-wise estimates of $\operatorname{Sep}_F$, matched-dimension controls, and concrete cases where head removal helps or hurts.
+
+\textbf{2. Real-model hierarchical residual decoupling audit.}  
+Test whether residual routing in real models is genuinely hierarchical. The deliverables are coarse-group assignments, local residual spectra, and fine-routing comparisons between flat and hierarchical pipelines.
+
+\textbf{3. Regularization decoupling closure.}  
+Run a controlled decay comparison with global decay, lazy decay, and occupancy-aware decay. The deliverables are tail-signal survival curves, threshold-crossing times, and rare-vs-frequent expert comparisons.
+
+\subsection{A feasible architecture proposal}
+
+The current evidence supports a concrete, testable design with three coordinated parts.
+
+\textbf{Router design.}
+\begin{enumerate}[leftmargin=1.5em]
+    \item Maintain a running mean and compute the centered representation $x_c = x - \mu_t$.
+    \item Estimate a global shared head $V_g$ and perform global representation decoupling:
+    \[
+    x_{\text{tail}}^{(g)} = (I - V_g^\top V_g)x_c .
+    \]
+    \item Use a coarse router on $x_{\text{tail}}^{(g)}$ to produce coarse expert groups.
+    \item Inside each coarse group $g$, estimate a local shared head $V_g^{(\ell)}$ and perform hierarchical residual decoupling:
+    \[
+    x_{\text{tail}}^{(\ell)} = (I - {V_g^{(\ell)}}^\top V_g^{(\ell)}) x_{\text{tail}}^{(g)} .
+    \]
+    \item Use a fine router on $x_{\text{tail}}^{(\ell)}$ for final expert assignment.
+\end{enumerate}
+
+\textbf{Expert design.}
+\begin{enumerate}[leftmargin=1.5em]
+    \item Coarse experts should focus on broad predictive modes and absorb shared structure that remains after global head removal.
+    \item Fine experts should operate on locally cleaned residuals and therefore receive more homogeneous, lower-conflict inputs.
+    \item The expert hierarchy should mirror the hierarchy of the residual geometry rather than forcing a single flat specialization pattern.
+\end{enumerate}
+
+\textbf{Optimization process.}
+\begin{enumerate}[leftmargin=1.5em]
+    \item Use regularization decoupling: occupancy-aware or branch-aware decay rather than a single isotropic decay strength.
+    \item Reduce decay pressure on low-variance tail parameters and low-occupancy experts.
+    \item Track both routing metrics and coefficient survival during training to ensure that the optimization process preserves the directions the router is intended to exploit.
+\end{enumerate}
+
+This is the most plausible next model direction at the current stage: not a generic tail router, but a \emph{hierarchical residual-routing system} in which geometry correction, routing, expert structure, and optimization are designed together.
+
+\end{document}

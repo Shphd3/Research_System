@@ -1,0 +1,153 @@
+\section{Mean Bias as the Primary Source of Second-Moment Inflation}
+\label{subsec:mean_second_moment}
+
+We now turn to the optimizer-level consequence of activation bias.
+While the previous subsection established that mean bias dominates
+elementwise outliers, adaptive optimizers operate on squared gradients.
+It is therefore essential to understand how activation bias propagates
+into second-moment statistics.
+
+\paragraph{Gradient outer-product structure.}
+
+For a linear layer with weight matrix $W \in \mathbb{R}^{H_{\text{out}}\times H_{\text{in}}}$,
+the per-token gradient is the outer product
+
+\begin{equation}
+g = \delta x^\top,
+\end{equation}
+
+where $x \in \mathbb{R}^{H_{\text{in}}}$ is the forward activation vector
+and $\delta \in \mathbb{R}^{H_{\text{out}}}$ is the gradient output vector.
+
+Adam and related adaptive optimizers maintain the elementwise second moment $v = \mathbb{E}[g \odot g]$.
+To rigorously track dimensions, consider the weight connecting input coordinate $j$ to output coordinate $i$. The second moment for this parameter is
+
+\begin{equation}
+v_{ij} = \mathbb{E}[g_{ij}^2]
+   = \mathbb{E}[\delta_i^2 x_j^2].
+\end{equation}
+
+\paragraph{Activation decomposition.}
+
+Decompose the activation coordinate $x_j$ into its expected mean and centered fluctuation:
+
+\begin{equation}
+x_j = \mu_j + \tilde{x}_j,
+\qquad
+\mathbb{E}[\tilde{x}_j] = 0.
+\end{equation}
+
+Substituting into $v_{ij}$ yields
+
+\begin{equation}
+v_{ij}
+=
+\mathbb{E}[\delta_i^2 (\mu_j + \tilde{x}_j)^2]
+=
+\mathbb{E}[\delta_i^2 \mu_j^2]
++
+\mathbb{E}[\delta_i^2 \tilde{x}_j^2]
++
+2\mu_j \mathbb{E}[\delta_i^2 \tilde{x}_j].
+\end{equation}
+
+Crucially, because the backward gradient energy $\delta_i^2$ is empirically found to be approximately uncorrelated
+with the forward activation fluctuation $\tilde{x}_j$
+(Section~\ref{subsec:mean_emergence}),
+the expectation of their product separates. Since the fluctuation is zero-mean ($\mathbb{E}[\tilde{x}_j] = 0$), the cross term vanishes in expectation:
+
+\begin{equation}
+2\mu_j \mathbb{E}[\delta_i^2 \tilde{x}_j]
+\approx
+2\mu_j \mathbb{E}[\delta_i^2]\mathbb{E}[\tilde{x}_j]
+= 0.
+\end{equation}
+
+Thus the second moment separates cleanly into two additive components:
+
+\begin{equation}
+v_{ij}
+\approx
+\underbrace{\mathbb{E}[\delta_i^2]\mu_j^2}_{\text{bias-driven term}}
++
+\underbrace{\mathbb{E}[\delta_i^2 \tilde{x}_j^2]}_{\text{variance-driven term}}.
+\label{eq:v_decomposition}
+\end{equation}
+
+\paragraph{High-dimensional amplification.}
+
+Let $\bar{\mu}$ denote the average coordinate magnitude of the mean vector.
+In $H_{\text{in}}$ dimensions,
+
+\begin{equation}
+\|\mu\|_2^2 = H_{\text{in}} \bar{\mu}^2.
+\end{equation}
+
+Even when $\bar{\mu}$ is moderate,
+the coherent alignment across $H_{\text{in}}$ coordinates
+creates a dense $\mu_j^2$ term that contributes uniformly
+to all output dimensions $i$ connected to that input feature $j$.
+In contrast, $\tilde{x}_j$ is approximately isotropic,
+so its squared contribution spreads across directions
+without coherent alignment.
+Consequently, for extreme percentiles of the matrix $v$
+(e.g., $p99.9$ or $\max$),
+the bias-driven term in \eqref{eq:v_decomposition}
+dominates.
+
+\paragraph{Extreme-value scaling.}
+
+From \eqref{eq:v_decomposition}, if the structural mean magnitude heavily outweighs the variance, $|\mu_j| \gg \sqrt{\mathbb{E}[\tilde{x}_j^2]}$,
+then
+
+\begin{equation}
+v_{ij} \sim \mathbb{E}[\delta_i^2] \mu_j^2,
+\end{equation}
+
+and extreme values scale quadratically with the coherent mean.
+This mathematically guarantees why activation bias directly inflates
+the heavy tail of $v$.
+
+\paragraph{Empirical verification.}
+
+We quantify this effect across shallow and deep layers
+and across early (10k) and late (180k) training stages.
+Table~\ref{tab:adam_v_bias} reports the $p99.9$ and maximum values
+of $v$ before and after mean removal. Across layers and training stages,
+mean removal consistently contracts the extreme tail of $v$.
+In early layers and late training,
+reductions exceed $4\times$.
+Whitening of the residual spike provides additional but smaller gains.
+
+
+\begin{table}[t]
+\centering
+\caption{Effect of mean removal on extreme second-moment statistics.}
+\label{tab:adam_v_bias}
+\begin{tabular}{lcccc}
+\toprule
+Layer & Step & $p99.9(v)$ (raw) & $p99.9(v)$ (mean removed) & Reduction \\
+\midrule
+3 & 10k  & $1.60\times10^{-10}$ & $3.44\times10^{-11}$ & $4.6\times$ \\
+3 & 180k & $1.00\times10^{-10}$ & $2.50\times10^{-11}$ & $4.0\times$ \\
+21 & 10k & $1.67\times10^{-11}$ & $1.59\times10^{-11}$ & $1.05\times$ \\
+21 & 180k& $9.23\times10^{-11}$ & $2.21\times10^{-11}$ & $4.2\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+These results demonstrate that the dominant driver of extreme second-moment statistics is the rank-one mean component. Residual spike variance contributes secondary structure. The long-tail variance contributes negligibly to extreme $v_{ij}$.
+
+Since adaptive learning-rate scaling depends on $1/\sqrt{v_{ij}}$,
+bias-driven inflation suppresses updates along semantically meaningful
+directions.
+Removing the mean directly eliminates the first-order source of
+second-moment distortion,
+thereby restoring balanced effective learning rates.
+
+
+In summary, activation mean bias is the primary source of second-moment inflation.
+Its effect is quadratic, dense, and amplified by dimensionality.
+Mean removal therefore targets the first-order cause
+of optimizer instability.

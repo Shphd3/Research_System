@@ -1,0 +1,595 @@
+\chapter{From Cross-Entropy to Mean-Neutral Attention: A First-Principles Derivation}
+\label{chap:laplacian_softmax}
+
+\section{Introduction}
+
+The Transformer architecture is built upon a simple but powerful principle:
+the meaning of a token is determined by its context.
+This principle is implemented through the self-attention mechanism,
+which aggregates information across tokens via a softmax-weighted average.
+
+Empirically, however, deep Transformer networks exhibit strong anisotropy.
+Hidden representations accumulate a coherent mean bias and develop
+dominant spectral directions.
+This phenomenon persists even when the loss function itself
+does not explicitly encourage such bias.
+
+In this chapter we ask a precise mathematical question:
+
+\emph{Does the standard softmax attention operator inherently generate mean drift?}
+
+We begin from the training objective itself, examine the structure of
+cross-entropy gradients, and derive the implications for contextual operators.
+We then show that softmax attention behaves as a low-pass averaging operator,
+which naturally produces coherent drift.
+Finally, we derive an alternative operator---the Laplacian softmax---
+from first principles of contrastive learning,
+and show that it is intrinsically mean-neutral.
+
+This derivation does not rely on empirical observation.
+It follows directly from the mathematics of the objective.
+
+\section{Cross-Entropy Training and Translation Invariance}
+
+Large language models are trained with next-token prediction.
+Let $h_t \in \mathbb{R}^H$ denote the hidden representation at position $t$,
+and let $W_U$ be the output projection.
+The logits are
+
+\begin{equation}
+z_t = h_t W_U.
+\end{equation}
+
+The probability of the next token is
+
+\begin{equation}
+p_t = \mathrm{softmax}(z_t).
+\end{equation}
+
+The loss is cross-entropy:
+
+\begin{equation}
+\mathcal{L}
+=
+-\sum_{t} \log p_t(y_t).
+\end{equation}
+
+Consider shifting all hidden states by a constant vector $c$:
+
+\begin{equation}
+h_t' = h_t + c.
+\end{equation}
+
+The logits become
+
+\begin{equation}
+z_t' = z_t + c W_U.
+\end{equation}
+
+If $cW_U$ is constant across vocabulary indices,
+softmax remains unchanged:
+
+\begin{equation}
+\mathrm{softmax}(z_t + \alpha \mathbf{1}) = \mathrm{softmax}(z_t).
+\end{equation}
+
+Therefore, the loss is invariant to global hidden-state shifts.
+
+\paragraph{Implication.}
+Cross-entropy does not penalize coherent mean drift.
+Nothing in the objective enforces $\mu(h_t) = 0$.
+
+\section{Gradient Structure and Contrastive Learning}
+
+The gradient of the loss with respect to $h_t$ is
+
+\begin{equation}
+\nabla_{h_t} \mathcal{L}
+=
+W_U^\top (p_t - y_t).
+\end{equation}
+
+Observe that this gradient depends only on the difference
+between predicted distribution $p_t$ and target $y_t$.
+It does not depend on absolute magnitude of $h_t$.
+
+Thus training is inherently \emph{contrastive}:
+we push correct logits up and incorrect logits down.
+Learning is driven by relative differences,
+not absolute scale.
+
+This is the first principle we must respect:
+semantic learning is fundamentally contrastive.
+
+\section{Softmax Attention as Convex Averaging}
+
+Standard self-attention is defined as
+
+\begin{equation}
+Q = XW_Q, \quad
+K = XW_K, \quad
+V = XW_V,
+\end{equation}
+
+\begin{equation}
+A = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d}}\right),
+\end{equation}
+
+\begin{equation}
+Y = AV.
+\end{equation}
+
+The softmax is applied row-wise, so
+
+\begin{equation}
+A_{ij} \ge 0,
+\quad
+\sum_j A_{ij} = 1.
+\end{equation}
+
+Each output token is therefore a convex combination:
+
+\begin{equation}
+y_i = \sum_j A_{ij} v_j.
+\end{equation}
+
+This has a crucial geometric consequence.
+
+\subsection{Mean Preservation Property}
+
+Let
+
+\begin{equation}
+V = \mathbf{1}\mu^\top + V_c,
+\end{equation}
+
+where $\mu$ is the shared mean component
+and $V_c$ is zero-mean across tokens.
+
+Then
+
+\begin{equation}
+Y = A(\mathbf{1}\mu^\top + V_c)
+=
+\mathbf{1}\mu^\top + AV_c.
+\end{equation}
+
+Because $A\mathbf{1} = \mathbf{1}$,
+the shared component propagates unchanged.
+
+Thus softmax attention preserves and spreads coherent mean.
+
+\section{Why Softmax Generates Mean Drift}
+
+Softmax weights are strictly positive.
+They enforce cooperative aggregation.
+This is a low-pass filter:
+shared components survive,
+differences are averaged.
+
+When combined with residual connections,
+
+\begin{equation}
+X_{\ell+1} = X_\ell + AV_\ell,
+\end{equation}
+
+any small coherent component
+accumulates layer by layer.
+
+Thus even if gradients are contrastive,
+the forward operator is aggregative.
+This mismatch explains mean drift.
+
+\section{Contrastive Principle for Contextual Operators}
+
+The semantic assumption underlying attention is:
+
+\begin{quote}
+A token should move toward relevant context and away from irrelevant context.
+\end{quote}
+
+Standard softmax only implements attraction.
+It does not implement repulsion.
+Every token contributes positively.
+
+However, semantic structure is bipolar:
+tokens are correlated in some subspaces
+and anticorrelated in others.
+
+Therefore a more faithful operator should implement
+difference-based updates.
+
+\section{Deriving Laplacian Softmax from First Principles}
+
+We seek an operator that:
+
+\begin{enumerate}
+\item Preserves contrastive learning logic.
+\item Removes shared offsets.
+\item Maintains contextual selectivity.
+\end{enumerate}
+
+Define the difference attention update:
+
+\begin{equation}
+\Delta y_i
+=
+\sum_j A_{ij}(v_j - v_i).
+\end{equation}
+
+Expanding:
+
+\begin{equation}
+\Delta y_i
+=
+\left(\sum_j A_{ij} v_j\right) - v_i.
+\end{equation}
+
+Summing across tokens:
+
+\begin{equation}
+\sum_i \Delta y_i
+=
+\sum_i \sum_j A_{ij} v_j
+-
+\sum_i v_i.
+\end{equation}
+
+Since rows of $A$ sum to one,
+
+\begin{equation}
+\sum_i \sum_j A_{ij} v_j
+=
+\sum_j v_j.
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+\sum_i \Delta y_i = 0.
+\end{equation}
+
+Thus
+
+\begin{equation}
+\mu(\Delta Y) = 0.
+\end{equation}
+
+This operator is mean-neutral.
+
+\subsection{Laplacian Interpretation}
+
+Define graph Laplacian:
+
+\begin{equation}
+L = I - A.
+\end{equation}
+
+Then
+
+\begin{equation}
+\Delta Y = -L V.
+\end{equation}
+
+This is a diffusion operator.
+It removes constant modes.
+Constant vectors lie in the nullspace of $L$.
+
+Thus Laplacian attention explicitly removes shared components.
+
+\section{Geometric Consequences}
+
+Softmax attention:
+\begin{equation}
+Y = AV
+\end{equation}
+is a convex smoothing operator.
+
+Laplacian attention:
+\begin{equation}
+Y = V - LV
+\end{equation}
+is contrastive and mean-neutral.
+
+Softmax:
+Low-pass filtering.
+
+Laplacian:
+High-pass filtering.
+
+In high dimension, even small coherent bias scales as
+\begin{equation}
+\|\mu\| \sim \sqrt{H}\epsilon.
+\end{equation}
+
+Thus preventing mean regeneration is essential.
+
+\section{Conclusion}
+
+From the cross-entropy objective,
+we derive that learning is inherently contrastive.
+However, standard softmax attention performs only
+positive aggregation.
+This mismatch creates coherent drift.
+
+By re-deriving attention from a contrastive principle,
+we obtain Laplacian softmax,
+which is provably mean-neutral
+and suppresses shared bias modes.
+
+This operator aligns the geometry of contextual learning
+with the mathematics of the objective,
+and provides a principled foundation
+for mean-stable Transformer architectures.
+
+
+\chapter{Replacing SwiGLU: Mean-Neutral Nonlinearities for Transformer Architectures}
+
+\section{Introduction}
+
+Modern Transformer architectures rely heavily on gated feed-forward
+nonlinearities, most prominently SwiGLU.
+Empirically, SwiGLU improves training stability and performance compared to
+ReLU or GELU in large language models.
+However, from a geometric perspective, SwiGLU introduces a systematic mean
+shift in activations, even when the input is zero-mean.
+In deep residual architectures, this mean shift accumulates layer by layer,
+producing coherent bias growth and contributing to anisotropy.
+
+This chapter develops a first-principles analysis of why SwiGLU regenerates
+mean bias, how this affects representation geometry, and how one can design
+mean-neutral alternatives without sacrificing expressive power.
+Our goal is not merely to eliminate bias, but to design nonlinear operators
+whose geometry is aligned with the high-dimensional statistical structure of
+language.
+
+\section{Mean Regeneration in Two-Layer Feed-Forward Networks}
+
+Consider a standard two-layer Transformer MLP block without residuals:
+
+\begin{equation}
+Z = X W_1,
+\qquad
+A = \phi(Z),
+\qquad
+Y = A W_2,
+\end{equation}
+
+where $X \in \mathbb{R}^{N \times H}$ contains token representations,
+$W_1 \in \mathbb{R}^{H \times M}$,
+$W_2 \in \mathbb{R}^{M \times H}$,
+and $\phi$ is a nonlinear activation.
+
+Assume that $X$ is zero-mean across tokens:
+
+\[
+\mu(X) = \frac{1}{N} \mathbf{1}^\top X = 0.
+\]
+
+Even under this assumption, the nonlinearity $\phi$ may generate
+a nonzero mean:
+
+\[
+\mu(A) = \frac{1}{N} \mathbf{1}^\top \phi(XW_1).
+\]
+
+If $\phi$ is not an odd function,
+then even when $Z$ is symmetrically distributed,
+$\mathbb{E}[\phi(Z)] \neq 0$.
+This creates a coherent drift vector.
+
+For ReLU:
+\[
+\phi(z) = \max(0,z),
+\]
+we have
+\[
+\mathbb{E}[\phi(z)] > 0
+\quad \text{whenever } z \sim \mathcal{N}(0,\sigma^2).
+\]
+
+For GELU or SiLU (used inside SwiGLU), the same holds:
+\[
+\mathbb{E}[\phi(z)] > 0.
+\]
+
+Thus the nonlinearity alone introduces mean shift.
+
+After multiplication by $W_2$, this mean becomes dense in output space:
+
+\[
+\mu(Y) = \mu(A) W_2.
+\]
+
+Hence even if $X$ is centered,
+$Y$ is not.
+
+In residual networks:
+
+\[
+X_{\ell+1} = X_\ell + Y_\ell,
+\]
+
+the mean accumulates additively:
+
+\[
+\mu(X_{\ell+1}) = \mu(X_\ell) + \mu(Y_\ell).
+\]
+
+Therefore, non-odd activations cause systematic mean growth.
+
+\section{SwiGLU and Mean Amplification}
+
+SwiGLU is defined as
+
+\begin{equation}
+\text{SwiGLU}(X)
+=
+(X W_1) \odot \text{SiLU}(X W_2),
+\end{equation}
+
+where $\odot$ denotes elementwise multiplication.
+
+Even if $X$ is zero-mean,
+both $XW_1$ and $XW_2$ are approximately zero-mean (by linearity).
+However, SiLU is non-odd, so
+
+\[
+\mu(\text{SiLU}(XW_2)) > 0.
+\]
+
+The product of a symmetric random variable and a positively skewed one
+is also skewed.
+Thus SwiGLU compounds mean generation through multiplicative interaction.
+
+Empirically, repeated SwiGLU layers increase
+the mean bias ratio
+
+\[
+R = \frac{\|\mu(X)\|}{\sqrt{\mathbb{E}\|X\|^2 / N}}
+\]
+
+monotonically across depth.
+
+This confirms that mean regeneration is intrinsic to the operator,
+not merely to embeddings.
+
+\section{Design Objective: Mean-Neutral Nonlinearity}
+
+A nonlinear operator $\phi$ is mean-neutral if
+
+\[
+\mathbb{E}[\phi(z)] = 0
+\quad \text{whenever } z \text{ is symmetric}.
+\]
+
+This holds if and only if $\phi$ is an odd function:
+
+\[
+\phi(-z) = -\phi(z).
+\]
+
+For example:
+
+\[
+\phi(z) = \tanh(z)
+\]
+
+satisfies
+
+\[
+\mathbb{E}[\tanh(z)] = 0
+\quad \text{for symmetric } z.
+\]
+
+Thus replacing SwiGLU with an odd nonlinearity
+prevents spontaneous mean drift.
+
+However, pure $\tanh$ removes gating and multiplicative structure.
+
+\section{Mean-Neutral Gated Alternatives}
+
+To preserve gating while eliminating mean bias,
+we construct symmetric gated activations.
+
+\subsection{Odd Gated Unit}
+
+Define
+
+\begin{equation}
+\text{OddGLU}(X)
+=
+(XW_1) \odot \tanh(XW_2).
+\end{equation}
+
+Because $\tanh$ is odd,
+if $XW_1$ and $XW_2$ are symmetric,
+then the output remains zero-mean.
+
+This preserves multiplicative gating
+while eliminating mean regeneration.
+
+\subsection{Centered SwiGLU}
+
+An alternative is explicit centering:
+
+\begin{equation}
+A = \text{SwiGLU}(X),
+\qquad
+A_c = A - \mu(A).
+\end{equation}
+
+This enforces zero token-mean regardless of activation type.
+
+This method is architecture-agnostic and preserves expressivity.
+
+\section{Residual Architecture Implications}
+
+In deep Transformers, residual accumulation amplifies any nonzero mean.
+Thus even small mean shifts become significant:
+
+\[
+\mu(X_L) = \sum_{\ell=1}^{L} \mu(Y_\ell).
+\]
+
+Mean-neutral nonlinearities ensure
+
+\[
+\mu(Y_\ell) \approx 0,
+\]
+
+so the residual stream remains geometrically stable.
+
+Empirical simulations confirm:
+
+\[
+R_{\text{none}} \gg R_{\text{pre-block}} \gg R_{\text{post-residual}} = 0.
+\]
+
+Post-residual centering is sufficient to prevent mean growth,
+independent of activation choice.
+
+\section{Trade-Offs and Practical Considerations}
+
+Replacing SwiGLU with $\tanh$:
+
+\begin{itemize}
+\item Eliminates mean regeneration,
+\item But reduces expressive gating power.
+\end{itemize}
+
+Using OddGLU:
+
+\begin{itemize}
+\item Preserves multiplicative interaction,
+\item Prevents spontaneous bias growth.
+\end{itemize}
+
+Using explicit centering:
+
+\begin{itemize}
+\item Works with any activation,
+\item Is hardware-friendly,
+\item Can be fused into kernels.
+\end{itemize}
+
+The optimal choice depends on whether the goal is
+full mean-neutrality or preserving next-token likelihood fidelity.
+
+\section{Conclusion}
+
+SwiGLU and related non-odd nonlinearities are a principal source of
+mean regeneration in deep Transformer architectures.
+This mean growth is not incidental but structural,
+arising from the asymmetry of the activation function.
+
+From a geometric perspective, replacing or modifying SwiGLU
+is essential if one seeks to design a fully mean-neutral Transformer.
+Odd gated units or explicit centering operations
+provide principled alternatives.
+
+The broader implication is that Transformer architecture
+was not originally designed with high-dimensional mean stability in mind.
+By rethinking nonlinear operators from first principles,
+we can construct models that maintain semantic contrast
+without accumulating harmful bias.
