@@ -52,8 +52,18 @@ Use these personal skills when they exist:
 - `research-mainline`: judge whether material updates the research mainline.
 - `daily-report-coach`: compress daily work into a clear daily report.
 - `meeting-brief-coach`: produce advisor-facing 30 second and 1 minute explanations.
+- `prism-report`: write or update group-meeting-ready PRISM project reports.
 
 The repo-tracked skill sources live in `codex_skills/`. The installed copies live in `C:\Users\250010109\.codex\skills\`.
+
+## Paper Reading Library
+
+Use `paper_reading/` for literature accumulation.
+
+Each paper should live under one category folder and contain at least `summary_card.md`.
+Use `paper_reading/_templates/summary_card.md` as the required first-pass card.
+
+Do not turn every paper into a long note. Deep notes are only needed when the paper changes the mainline, creates a risk, or becomes necessary for a PRISM report.
 
 ## Git Habit
 
