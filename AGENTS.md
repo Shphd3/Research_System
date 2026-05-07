@@ -8,8 +8,10 @@ Remote servers run experiments. This workspace preserves research judgment, evid
 At the start of any research task:
 
 1. Read `CURRENT.md`.
-2. Read the daily report or raw material named by the user.
-3. Decide whether the material updates the mainline before writing a long response.
+2. Read `mainline.md`.
+3. Read `claim_board.md` when the task involves interpretation, reports, or meetings.
+4. Read the daily report, experiment card, or raw material named by the user.
+5. Decide whether the material updates the mainline before writing a long response.
 
 Do not rely on chat history as the main source of memory.
 
@@ -26,6 +28,17 @@ Every research output must answer:
 If there is no mainline update, say `No mainline update today` and explain why.
 
 Do not turn experiment logs into reports by summarizing every detail. Keep only evidence that changes the hypothesis, modeling, empirical support, limitation, or next decision.
+
+Always distinguish:
+
+- Result: what the experiment or paper directly shows
+- Interpretation: what the result suggests
+- Claim: what can be said publicly
+- Speculation: what remains a possible explanation
+
+Maintain `claim_board.md` after major experiments. Every claim should be marked as `supported`, `weakly supported`, `unsupported`, `contradicted`, or `unclear`.
+
+Experiment cards belong in `experiments/`. Every experiment card should include question, hypothesis, setup, controls, metrics, raw results, interpretation, claim strength, limitations, and next experiment.
 
 ## Daily Report Shape
 
@@ -53,6 +66,11 @@ Use these personal skills when they exist:
 - `daily-report-coach`: compress daily work into a clear daily report.
 - `meeting-brief-coach`: produce advisor-facing 30 second and 1 minute explanations.
 - `prism-report`: write or update group-meeting-ready PRISM project reports.
+- `experiment-card-writer`: convert raw experiment material into a structured experiment card.
+- `claim-auditor`: classify claims against current evidence.
+- `meeting-brief-builder`: build advisor/group-meeting briefs from experiment cards and claim board.
+- `paper-reading-card`: convert a paper into a compact reading card.
+- `moe-specialization-diagnosis`: diagnose feature/function/routing/frequency/forgetting specialization.
 
 The repo-tracked skill sources live in `codex_skills/`. The installed copies live in `C:\Users\250010109\.codex\skills\`.
 
