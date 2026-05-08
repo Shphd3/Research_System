@@ -1,0 +1,357 @@
+%!TEX program = xelatex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{enumitem}
+
+\newcommand{\safeincludegraphics}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][0.20\textheight][c]{0.9\linewidth}{\centering [Placeholder for Figure: \texttt{\detokenize{#2}}]}}%
+  }%
+}
+\newcommand{\tablesize}{\footnotesize}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65\baselineskip}
+
+\title{Daily Research Report:\\Feature-Zipf Synthetic Mechanisms and Hierarchical MoE Specialization}
+\author{}
+\date{2026-05-08}
+
+\begin{document}
+\maketitle
+
+\section{Recent Updates}
+
+The current question is not simply whether a Hierarchical MoE has more experts or a more complicated routing tree. The question is more specific:
+
+$$
+\begin{aligned}
+&\text{Does the model recover a hierarchical computation mechanism,}\\
+&\text{rather than only separating input features?}
+\end{aligned}
+$$
+
+The latest update is:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item We changed the synthetic setting from \textbf{leaf-Zipf labels} to \textbf{feature-Zipf hidden representations}. This is closer to language, because long-tail behavior in language is more naturally attached to sparse features than to clean class labels.
+
+    \item In the synthetic setting, Hierarchical MoE has a weak but meaningful advantage in \textbf{function-level mechanism recovery}. When different levels of sparse features correspond to different linear transformations, the hierarchical structure is closer to the data-generating process.
+
+    \item This advantage is limited. The learned Hierarchical MoE is still far from the oracle hierarchical model, and it does not clearly beat flat spectral MoE on feature-level sparse division.
+
+    \item On real DCLM hidden representations, the corrected MoE-input analysis still does not support the claim that Hierarchical MoE separates sparse atoms more finely than Flat MoE. It only shows a weak internal coarse-block structure.
+\end{enumerate}
+
+The safest current conclusion is:
+
+$$
+\text{Hierarchy helps more with function recovery than with sparse feature division, but only partially.}
+$$
+
+\section{Background and Theoretical Critique}
+
+The advisor-level hypothesis is that language representations may contain sparse, low-dimensional, and hierarchical feature structure. If this is true, then a good MoE should not merely route tokens into arbitrary experts. It should align expert computation with the underlying feature mechanisms.
+
+This creates a distinction that must be made explicit:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Feature-level specialization}: different experts receive tokens that activate different sparse features.
+    \item \textbf{Function-level specialization}: different experts learn different transformations required by those features.
+    \item \textbf{Routing-level specialization}: the router reliably sends the right example to the right expert.
+\end{itemize}
+
+The important critique is:
+
+$$
+\text{different input features}
+\not\Rightarrow
+\text{different computation mechanisms}.
+$$
+
+If all samples share the same output function, then experts have little reason to learn different mechanisms, even if the input features differ. Mechanistic specialization becomes meaningful only when different feature groups require different transformations.
+
+\section{Hypotheses and Mathematical Modeling}
+
+\subsection{Feature-Zipf representation}
+
+The synthetic hidden state is built from sparse features:
+
+$$
+h=\frac{1}{\sqrt{|S(x)|}}\sum_{j\in S(x)}a_je_j+\epsilon.
+$$
+
+Here $S(x)$ is the set of active sparse features. The key modeling change is that Zipfian frequency acts on features:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item common features appear frequently;
+    \item group features appear at middle frequency and represent coarse context;
+    \item unique features appear rarely and represent fine semantic mechanisms.
+\end{itemize}
+
+\subsection{Two output mechanisms}
+
+The control setting uses one shared output transformation:
+
+$$
+y=Ah+\eta.
+$$
+
+This tests whether input feature differences alone create routing differentiation.
+
+The mechanism setting assigns different transformations to different levels:
+
+$$
+y=(A_{\text{common}}+\mathbf{1}[c]A_c+\mathbf{1}[f]A_{c,f}^{tail})h+\eta.
+$$
+
+This is the scientifically important setting. It tests whether the model can recover a hierarchical computation mechanism:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item $A_{\text{common}}$ is shared computation;
+    \item $A_c$ is coarse group-level computation;
+    \item $A_{c,f}^{tail}$ is fine unique-level computation.
+\end{itemize}
+
+\subsection{What the metrics mean}
+
+\textbf{Leaf NMI} measures whether routing assignments align with fine-grained synthetic mechanisms.
+
+\textbf{Feature selectivity} measures whether experts receive different sparse feature profiles.
+
+\textbf{Function cosine} measures whether learned expert weights align with the true transformation matrices. This is the closest metric to function-level recovery.
+
+\section{Empirical Study}
+
+\subsection{Evidence 1: feature differences alone do not create strong mechanism specialization}
+
+\textbf{Hypothesis.} If samples only differ in input sparse features but all share the same output function, experts should have little pressure to form different computation mechanisms.
+
+\textbf{Experiment sketch.} Use the fixed-output setting:
+
+$$
+y=Ah+\eta.
+$$
+
+\textbf{Result.} Learned routing still shows weak feature selectivity, but function recovery is essentially the same across models because the target computation is shared.
+
+\textbf{Interpretation.} Input feature differences can create weak routing differentiation. They do not by themselves prove mechanism specialization.
+
+\subsection{Evidence 2: hierarchy partially recovers level-specific transformations}
+
+\textbf{Hypothesis.} If common, group, and unique features require different transformations, Hierarchical MoE should be closer to the data-generating mechanism than Flat MoE.
+
+\textbf{Experiment sketch.} Use the variable-output setting:
+
+$$
+y=(A_{\text{common}}+\mathbf{1}[c]A_c+\mathbf{1}[f]A_{c,f}^{tail})h+\eta.
+$$
+
+\textbf{Result.} In the semantic computation setting, Hierarchical conditional-input achieves function cosine $0.796$, higher than Flat $Wh$ + common + LB at $0.780$. However, Oracle Hierarchical reaches $0.973$.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccc}
+\toprule
+Model & Loss $\downarrow$ & Leaf NMI $\uparrow$ & Feature Selectivity $\uparrow$ & Function Cos $\uparrow$ \\
+\midrule
+Flat $Wh$ + common + LB & 0.000160 & 0.235 & 0.270 & 0.780 \\
+Flat middle spectral + common & 0.000161 & 0.260 & 0.279 & 0.775 \\
+Hierarchical full-input & 0.000163 & 0.234 & 0.290 & 0.786 \\
+Hierarchical conditional-input & 0.000160 & 0.235 & 0.279 & 0.796 \\
+Oracle Hierarchical conditional-input & 0.000116 & 1.000 & 0.776 & 0.973 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Feature-Zipf variable-output setting. Hierarchical conditional-input has the strongest learned function cosine, but the gap over flat learned models is limited and far below the oracle.}
+\end{table}
+
+\textbf{Interpretation.} Hierarchical MoE is better aligned with the level-specific transformation structure, but only partially. The result supports a weak function-level specialization claim, not a strong routing-recovery claim.
+
+\subsection{Evidence 3: the causal driver is level-specific transformation, not feature difference alone}
+
+\textbf{Hypothesis.} Expert division should be stronger when different feature levels require different transformations.
+
+\textbf{Experiment sketch.} Remove group and unique sparse atoms, which represent coarse and fine semantic features, and compare the loss increase under the variable-output mechanism and the shared-output control.
+
+\textbf{Result.} Removing group + unique atoms increases loss by about $0.000185$ in the semantic computation setting, but only $0.000031$ in the shared-output control.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcc}
+\toprule
+Setting & Output mechanism & Loss increase after removing group + unique atoms \\
+\midrule
+Semantic computation & $(A_{\text{common}}+\mathbf{1}[c]A_c+\mathbf{1}[f]A_{c,f}^{tail})h+\eta$ & $\approx 0.000185$ \\
+Shared computation control & $Ah+\eta$ & $\approx 0.000031$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Removing group and unique atoms matters much more when those features correspond to level-specific transformations.}
+\end{table}
+
+\textbf{Interpretation.} The main pressure for expert division comes from the fact that different features require different transformations. It is not enough for the input features to be different.
+
+\subsection{Evidence 4: real-data sparse atom routing does not yet support a stronger hierarchy claim}
+
+\textbf{Hypothesis.} If Hierarchical MoE has learned stronger feature-level specialization on real DCLM hidden states, its paths should receive more diverse sparse atom profiles than Flat MoE.
+
+\textbf{Experiment sketch.} Use the corrected MoE-input analysis: sparse dictionary codes are computed on the hidden state actually entering the MoE/MLP block, not on the pre-attention decoder input.
+
+\textbf{Result.} On Layer 7, Flat raw top-1 + LB has atom diversity $0.229$, while Hierarchical full-input has $0.036$ and Hierarchical conditional-input has $0.030$. Hierarchical paths also have higher top-atom overlap.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccc}
+\toprule
+Model & Atom Diversity $\uparrow$ & Top Atom Overlap $\downarrow$ & UsageNorm \\
+\midrule
+Flat raw top-1 + LB & 0.229 & 0.379 & 0.999 \\
+Flat middle spectral top-1 & 0.104 & 0.439 & 0.967 \\
+Hierarchical full-input & 0.036 & 0.661 & 0.992 \\
+Hierarchical conditional-input & 0.030 & 0.669 & 0.995 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Corrected MoE-input sparse atom analysis. Hierarchical MoE does not show stronger path-level atom diversity than Flat MoE.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\safeincludegraphics[width=0.95\linewidth]{figures/moe_fig1_shared_atoms_side_by_side_layer_7_moe_input.png}
+\caption{Corrected MoE-input path-atom heatmap. The hierarchical models use paths evenly, but their path-level atom profiles are more similar than those of the flat raw baseline.}
+\label{fig:moe-input-heatmap}
+\end{figure}
+
+\textbf{Interpretation.} The real-data sparse dictionary evidence does not support the claim that Hierarchical MoE is better at feature-level sparse division. It supports a weaker claim: the model uses sparse atoms, but hierarchy does not yet make path atom profiles more diverse.
+
+\subsection{Evidence 5: path atoms are functionally used, but that is not the same as diverse specialization}
+
+\textbf{Hypothesis.} If path-level atoms matter, removing a path's top atoms should hurt the model more than removing random atoms.
+
+\textbf{Experiment sketch.} For each path, remove its strongest sparse atoms from the MoE input and re-run the model. Compare this with random atom removal.
+
+\textbf{Result.} Removing top path atoms increases loss much more than random atom removal for all models.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/moe_fig4_true_atom_loss_delta_layer_7_moe_input.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/moe_fig6_true_atom_moe_output_change_layer_7_moe_input.png}
+\end{minipage}
+\caption{Removing each path's top atoms changes loss and MoE output more than random atom removal. This shows the atoms are functionally used, but it does not prove that different paths use different atoms.}
+\end{figure}
+
+\textbf{Interpretation.} Sparse atoms are not just visualization artifacts. They affect model computation. However, this evidence alone does not prove that Hierarchical MoE has more diverse feature specialization.
+
+\subsection{Evidence 6: hierarchical models show a weak internal coarse-block structure}
+
+\textbf{Hypothesis.} Even if Hierarchical MoE does not separate sparse atoms more finely than Flat MoE, it may still form an internal coarse-to-fine structure.
+
+\textbf{Experiment sketch.} Write each hierarchical path as $path=4c+f$. Compare atom-profile distances between coarse blocks and within each coarse block.
+
+\textbf{Result.} The coarse block gap is positive at every inspected layer, but becomes small in deeper layers.
+
+\begin{table}[H]
+\centering
+\tablesize
+\begin{tabular}{lcc}
+\toprule
+Layer & Hierarchical full-input & Hierarchical conditional-input \\
+\midrule
+1 & 0.148 & 0.106 \\
+3 & 0.043 & 0.031 \\
+5 & 0.030 & 0.034 \\
+7 & 0.016 & 0.012 \\
+\bottomrule
+\end{tabular}
+\caption{Corrected MoE-input coarse block gap. Positive values indicate that different coarse blocks are more different from each other than paths inside the same coarse block.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/moe_fig2_hier_full_layer_7_coarse_block_heatmap_moe_input.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\safeincludegraphics[width=\linewidth]{figures/moe_fig3_hier_conditional_layer_7_coarse_block_heatmap_moe_input.png}
+\end{minipage}
+\caption{Hierarchical coarse-block heatmaps at Layer 7. The white separators mark coarse groups. The structure is visible but weak.}
+\end{figure}
+
+\textbf{Interpretation.} Hierarchical MoE forms a weak internal hierarchy, but real DCLM data has no ground-truth coarse/fine labels here. Therefore this should be described as an observable internal coarse-block structure, not as recovery of a real semantic hierarchy.
+
+\subsection{Figure audit trail}
+
+The final interpretation uses the corrected MoE-input analysis above. The earlier draft used decoder-layer input before the attention block, which is less directly tied to what experts actually receive. The following figure is kept only as an audit trail from the earlier report bundle.
+
+\begin{figure}[H]
+\centering
+\safeincludegraphics[width=0.92\linewidth]{figures/draft_fig1_shared_atoms_side_by_side_layer_7.png}
+\caption{Earlier decoder-input path-atom heatmap from the previous draft bundle. It is included for traceability, but the corrected MoE-input figures are the primary evidence.}
+\end{figure}
+
+\section{Next Iteration}
+
+The next iteration should not be ``make the hierarchy larger.'' The immediate scientific problem is to connect feature-level and function-level specialization.
+
+\subsection{Immediate experiments}
+
+\textbf{1. Separate feature-level and function-level metrics.}
+Report feature selectivity, Leaf NMI, function cosine, and atom ablation effects as separate axes. Do not collapse them into a single ``specialization'' claim.
+
+\textbf{2. Explain middle spectral routing.}
+Flat middle spectral routing remains strong on feature-level division. Run spectral band ablations to identify whether the middle band is capturing group-level, unique-level, or mixed sparse features.
+
+\textbf{3. Add hierarchy to the feature-effective input.}
+Test whether hierarchical routing improves after using the same middle spectral preprocessing that helps flat feature division.
+
+\textbf{4. Move from synthetic to real hidden states carefully.}
+Use real-data sparse dictionary diagnostics as a constraint, not as proof of ground-truth semantic hierarchy.
+
+\subsection{Current responsible claim}
+
+The responsible claim is:
+
+$$
+\begin{aligned}
+&\text{Hierarchical MoE partially recovers level-specific transformations,}\\
+&\text{but it does not yet clearly improve sparse feature division.}
+\end{aligned}
+$$
+
+\subsection{Short oral summary}
+
+The purpose of this experiment is to test whether a Hierarchical MoE can recover a structured computation mechanism, not just split input features. I changed the synthetic setting so that Zipfian long-tail behavior is attached to sparse features, closer to language. The key result is that when all samples share the same output function, experts have little reason to form mechanism-level division. But when common, group, and unique features require different transformations, the hierarchical model fits the mechanism slightly better: its function cosine is $0.796$, above the flat baseline's $0.780$, although still far below the oracle hierarchical value $0.973$. So the current claim is weak but clear: hierarchy helps partially with function-level mechanism recovery, but it does not yet prove stronger sparse feature division. The next step is to separate feature-level and function-level specialization and explain why middle spectral routing remains strong.
+
+\end{document}

@@ -18,9 +18,21 @@ Read, in this order when available:
 3. experiment cards, result summaries, figures, or logs named by the user
 4. previous PRISM/report text if the user is updating an existing report
 
+## Output Format
+
+If the user asks for a PRISM project document, prefer a self-contained LaTeX file in the target `prism/` folder, following the existing project style:
+
+- `\documentclass[11pt]{article}`
+- `geometry`, `amsmath`, `graphicx`, `hyperref`, `booktabs`, `float`, `caption`, `adjustbox`, `enumitem`
+- a `\safeincludegraphics` helper
+- compact tables with `\tablesize`
+- section order matching the previous PRISM report
+
+If figures are used, copy them into `prism/figures/` and reference them with relative paths such as `figures/name.png`.
+
 ## Fixed Structure
 
-Use this structure by default:
+Use this structure by default for Markdown drafts:
 
 ```markdown
 # PRISM Report - [topic/date]
@@ -97,3 +109,50 @@ How to redirect back to the mainline:
 ```
 
 Use at most 2-3 likely questions unless the user asks for more.
+
+## LaTeX PRISM Structure
+
+For a meeting-ready `.tex` PRISM report, use this section order unless the user provides a newer project template:
+
+```latex
+\section{Recent Updates}
+\section{Background and Theoretical Critique}
+\section{Hypotheses and Mathematical Modeling}
+\section{Empirical Study}
+\section{Next Iteration}
+\subsection{Short oral summary}
+```
+
+Inside `Empirical Study`, organize evidence by claim, not chronology. Each evidence subsection should include:
+
+- `\textbf{Hypothesis.}`
+- `\textbf{Experiment sketch.}`
+- `\textbf{Result.}`
+- `\textbf{Interpretation.}`
+
+## Audience Rule
+
+Assume the advisor knows the high-level hypothesis but not the detailed implementation. Before showing metrics, explain in plain language:
+
+- what object is being tested;
+- why this controlled experiment is needed;
+- what the model is supposed to recover;
+- what the reported metric means.
+
+Do not start with tables or architecture names before defining the scientific question.
+
+## Claim Boundary Rule
+
+Every PRISM report must state:
+
+- what the evidence supports;
+- what it weakens;
+- what it cannot prove;
+- the safest current claim.
+
+For synthetic experiments, explicitly separate:
+
+- feature-level specialization;
+- function-level specialization;
+- routing-level specialization;
+- transfer to real hidden states.
