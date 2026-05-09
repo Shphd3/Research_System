@@ -203,7 +203,7 @@ Use these suggested paths:
 - PRISM report: `daily_research_reports/MMDD/meeting/prism/main.tex`
 - experiment analysis: `daily_research_reports/MMDD/experiment_analysis.md`
 
-If you cannot write files, output the proposed file content with the target path.
+If you cannot write files, output the proposed file content with the target path. If you cannot access the repository, send me the files, and tell me where to store the files.
 
 ## 5. Forbidden Habits
 
