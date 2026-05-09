@@ -1,6 +1,6 @@
 # Codex Web Setup
 
-This repository is initialized as a local git repository, but it currently has no remote configured. To use it from Codex Web, first connect it to a GitHub repository.
+This repository is initialized as a local git repository and should be connected to the GitHub repository `Shphd3/Research_System`.
 
 Official OpenAI references:
 
@@ -71,7 +71,7 @@ Avoid tracking:
 ## Current Local State
 
 - Local git repository: yes.
-- Remote configured: no.
+- Remote configured: `https://github.com/Shphd3/Research_System.git`
 - GitHub CLI available: no.
 
-Once a GitHub remote URL is available, the only missing steps are `git remote add origin ...` and `git push -u origin ...`.
+Use `git remote -v` to verify the current remote, and `git push` to publish accepted local commits.
