@@ -22,6 +22,7 @@ Every research output must answer:
 - What was done?
 - What is the one-sentence conclusion?
 - Does this update the current mainline?
+- What viewpoint did today's work refine, correct, or make more uncertain?
 - What can we not claim yet?
 - How should this be explained in 30 seconds?
 
@@ -35,6 +36,17 @@ Always distinguish:
 - Interpretation: what the result suggests
 - Claim: what can be said publicly
 - Speculation: what remains a possible explanation
+
+Daily work must include a short viewpoint update. This is not a diary reflection. It should state one research judgment that became clearer through experiments, paper reading, blog reading, or discussion. It must also name the weakest or most attackable part of that judgment:
+
+- unsupported assumption
+- ambiguous definition
+- missing control
+- possible counterexample
+- wording that sounds stronger than the evidence
+- next check needed to make the view more defensible
+
+If there is no viewpoint update, write `No viewpoint update today` and state whether the day only added background, implementation progress, or raw material.
 
 Maintain `claim_board.md` after major experiments. Every claim should be marked as `supported`, `weakly supported`, `unsupported`, `contradicted`, or `unclear`.
 
@@ -52,6 +64,8 @@ Use this compact structure for `daily_report.md`:
 ## Core Conclusion
 
 ## Mainline Update
+
+## Viewpoint Update / Self-Audit
 
 ## What I Cannot Claim Yet
 

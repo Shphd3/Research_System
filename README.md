@@ -26,8 +26,9 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 1. Read `CURRENT.md`, `mainline.md`, and relevant evidence.
 2. Decide whether today's work updates the mainline.
 3. Write a compact daily report or experiment card.
-4. Update `CURRENT.md` / `claim_board.md` only when evidence changes them.
-5. Commit the research-system update.
+4. Add one viewpoint update: what became clearer, and what is still weak or attackable.
+5. Update `CURRENT.md` / `claim_board.md` only when evidence changes them.
+6. Commit the research-system update.
 
 ## Codex Web
 

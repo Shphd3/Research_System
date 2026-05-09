@@ -22,6 +22,8 @@ Write a compact daily report. Do not turn the day into a task log.
 
 ## Interpretation
 
+## Viewpoint Update / Self-Audit
+
 ## Problems / Blockers
 
 ## Tomorrow's Plan
@@ -33,5 +35,7 @@ Write a compact daily report. Do not turn the day into a task log.
 
 - Read `CURRENT.md` and `mainline.md` first when available.
 - Say whether the day updates the mainline.
+- Include exactly one viewpoint update: what research judgment changed, sharpened, or became less certain.
+- Audit the weakest part of that viewpoint: unsupported assumption, ambiguous concept, missing control, counterexample, or wording that overclaims.
 - Separate result, interpretation, claim, and speculation.
 - Keep advisor questions concrete.
