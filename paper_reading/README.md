@@ -8,9 +8,21 @@ Each paper should have its own folder under one category. Every paper folder mus
 
 Optional files:
 
+- `reading_record.md` for mainline-anchored reading notes
 - `reading_notes.md` for section-level notes
 - `math_notes.md` for definitions, equations, and proof sketches
 - `experiment_notes.md` for experimental design and evidence checks
+
+For blogs or essays, use the same category folders and create:
+
+- `recordings.md` or `reading_record.md`
+- `summary_card.md` only if the piece becomes important enough to cite later
+
+Templates live in `_templates/`:
+
+- `summary_card.md`: shortest first-pass card
+- `paper_reading_record.md`: paper reading process template
+- `blog_reading_record.md`: blog / essay reading process template
 
 ## Categories
 
@@ -39,3 +51,5 @@ Example:
 ## Reading Rule
 
 The summary card is enough for first-pass reading. Only create deeper notes when the paper changes the mainline, exposes a risk, or becomes necessary for a report.
+
+For any paper, blog, or essay, always end with a `Mainline Update Check`. The useful output is not that you read it, but whether it changes your hypothesis, modeling, experiment design, interpretation, or next decision.

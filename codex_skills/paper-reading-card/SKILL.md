@@ -9,6 +9,14 @@ metadata:
 
 Create a compact first-pass paper card.
 
+## Repo Templates
+
+Use these templates when working inside the research workspace:
+
+- `paper_reading/_templates/summary_card.md`: shortest first-pass card
+- `paper_reading/_templates/paper_reading_record.md`: full paper reading process record
+- `paper_reading/_templates/blog_reading_record.md`: blog / essay reading process record
+
 ## Required Output
 
 ```markdown
@@ -39,3 +47,4 @@ Create a compact first-pass paper card.
 - Separate what the authors claim from your own judgment.
 - State whether the paper changes the mainline, creates a risk, or is only background.
 - If it should be filed, recommend one `paper_reading/` category.
+- End reading records with a `Mainline Update Check`.
