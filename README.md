@@ -13,7 +13,7 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 
 ## Working Areas
 
-- `daily_research_reports/`: daily conclusions, experiment summaries, and report bundles.
+- `daily_research_reports/`: dated folders for daily reports, daily conclusions, experiment summaries, and report bundles.
 - `experiments/`: experiment cards organized by research question.
 - `meetings/`: advisor/group-meeting materials, including PRISM reports.
 - `paper_reading/`: literature cards and reading notes.
@@ -29,6 +29,8 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 4. Add one viewpoint update: what became clearer, and what is still weak or attackable.
 5. Update `CURRENT.md` / `claim_board.md` only when evidence changes them.
 6. Commit the research-system update.
+
+Daily reports should be placed at `daily_research_reports/MMDD/daily_report.md`. Use `daily_research_reports/_templates/daily_log_template.md`.
 
 ## Codex Web
 

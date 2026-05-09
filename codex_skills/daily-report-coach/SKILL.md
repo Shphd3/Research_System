@@ -9,6 +9,8 @@ metadata:
 
 Use this skill to write or revise a daily research report.
 
+Daily reports should live under `daily_research_reports/MMDD/daily_report.md`. Do not create or use a separate root-level daily log folder.
+
 ## Goal
 
 The daily report should train the user to explain:

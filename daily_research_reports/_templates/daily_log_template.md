@@ -1,4 +1,4 @@
-# Daily Log - MMDD
+# Daily Report - MMDD
 
 ## What I Did
 

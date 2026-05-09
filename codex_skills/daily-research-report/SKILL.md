@@ -9,6 +9,8 @@ metadata:
 
 Write a compact daily report. Do not turn the day into a task log.
 
+Daily reports should live under `daily_research_reports/MMDD/daily_report.md`. Do not create or use a separate root-level daily log folder.
+
 ## Required Output
 
 ```markdown

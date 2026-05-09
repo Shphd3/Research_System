@@ -54,6 +54,10 @@ Experiment cards belong in `experiments/`. Every experiment card should include 
 
 ## Daily Report Shape
 
+Daily reports belong in dated folders under `daily_research_reports/MMDD/`. Do not create a separate root-level daily log folder.
+
+Use `daily_research_reports/_templates/daily_log_template.md` as the starting template.
+
 Use this compact structure for `daily_report.md`:
 
 ```markdown
