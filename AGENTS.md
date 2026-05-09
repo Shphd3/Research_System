@@ -74,6 +74,18 @@ Use these personal skills when they exist:
 
 The repo-tracked skill sources live in `codex_skills/`. The installed copies live in `C:\Users\250010109\.codex\skills\`.
 
+## Repository Layout
+
+Keep the repository root small. The root should contain only the core navigation files:
+
+- `AGENTS.md`
+- `CURRENT.md`
+- `mainline.md`
+- `claim_board.md`
+- `README.md`
+
+Put reusable prompts in `prompts/`, tooling notes in `docs/`, meeting materials in `meetings/`, paper notes in `paper_reading/`, and daily work in `daily_research_reports/`.
+
 ## Paper Reading Library
 
 Use `paper_reading/` for literature accumulation.
