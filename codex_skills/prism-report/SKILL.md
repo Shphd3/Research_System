@@ -9,6 +9,14 @@ metadata:
 
 Use this skill to turn research progress into a report that can be shown in meetings. A PRISM report is not a daily log. It is a mainline-facing document that explains the problem, evidence, interpretation, and next decision.
 
+Default output location for new meeting PRISM work:
+
+```text
+daily_research_reports/MMDD/meeting/prism/
+```
+
+Do not create new PRISM materials under a root-level `meetings/` folder.
+
 ## Inputs
 
 Read, in this order when available:
@@ -20,7 +28,7 @@ Read, in this order when available:
 
 ## Output Format
 
-If the user asks for a PRISM project document, prefer a self-contained LaTeX file in the target `prism/` folder, following the existing project style:
+If the user asks for a PRISM project document, prefer a self-contained LaTeX file in the target `daily_research_reports/MMDD/meeting/prism/` folder, following the existing project style:
 
 - `\documentclass[11pt]{article}`
 - `geometry`, `amsmath`, `graphicx`, `hyperref`, `booktabs`, `float`, `caption`, `adjustbox`, `enumitem`

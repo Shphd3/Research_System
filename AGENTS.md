@@ -58,6 +58,18 @@ Daily reports belong in dated folders under `daily_research_reports/MMDD/`. Do n
 
 Use `daily_research_reports/_templates/daily_log_template.md` as the starting template.
 
+Meeting materials also belong inside the same dated daily folder:
+
+```text
+daily_research_reports/MMDD/meeting/
+```
+
+Put PRISM reports under:
+
+```text
+daily_research_reports/MMDD/meeting/prism/
+```
+
 Use this compact structure for `daily_report.md`:
 
 ```markdown
@@ -102,7 +114,7 @@ Keep the repository root small. The root should contain only the core navigation
 - `claim_board.md`
 - `README.md`
 
-Put reusable prompts in `prompts/`, tooling notes in `docs/`, meeting materials in `meetings/`, paper notes in `paper_reading/`, and daily work in `daily_research_reports/`.
+Put reusable prompts in `prompts/`, tooling notes in `docs/`, paper notes in `paper_reading/`, and all daily work including meeting materials in `daily_research_reports/MMDD/`.
 
 ## Paper Reading Library
 

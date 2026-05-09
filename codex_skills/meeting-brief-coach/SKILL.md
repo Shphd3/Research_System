@@ -9,6 +9,8 @@ metadata:
 
 Use this skill to turn research progress into a short spoken explanation.
 
+When writing files, put meeting materials under `daily_research_reports/MMDD/meeting/`. Do not create new meeting materials under a root-level `meetings/` folder.
+
 ## Default Structure
 
 For a 30 second update, use:

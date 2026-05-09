@@ -9,3 +9,15 @@ daily_research_reports/MMDD/daily_report.md
 ```
 
 Use `daily_log_template.md` as the compact first-pass structure.
+
+Meeting materials for the same day should be created under:
+
+```text
+daily_research_reports/MMDD/meeting/
+```
+
+PRISM reports should be created under:
+
+```text
+daily_research_reports/MMDD/meeting/prism/
+```

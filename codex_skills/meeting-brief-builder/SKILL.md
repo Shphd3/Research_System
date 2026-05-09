@@ -9,6 +9,14 @@ metadata:
 
 Prepare a concise research meeting brief.
 
+Default output location for new meeting materials:
+
+```text
+daily_research_reports/MMDD/meeting/
+```
+
+Do not create new meeting materials under a root-level `meetings/` folder.
+
 ## Required Output
 
 ```markdown

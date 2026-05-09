@@ -13,9 +13,8 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 
 ## Working Areas
 
-- `daily_research_reports/`: dated folders for daily reports, daily conclusions, experiment summaries, and report bundles.
-- `experiments/`: experiment cards organized by research question.
-- `meetings/`: advisor/group-meeting materials, including PRISM reports.
+- `daily_research_reports/`: dated folders for daily reports, daily conclusions, meeting materials, PRISM reports, experiment summaries, and report bundles.
+- `experiments/`: cross-day experiment cards organized by research question.
 - `paper_reading/`: literature cards and reading notes.
 - `codex_skills/`: repo-tracked source copies of personal Codex skills.
 - `prompts/`: reusable project prompts and older workflow prompts.
@@ -31,6 +30,8 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 6. Commit the research-system update.
 
 Daily reports should be placed at `daily_research_reports/MMDD/daily_report.md`. Use `daily_research_reports/_templates/daily_log_template.md`.
+
+Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`. PRISM reports should be placed at `daily_research_reports/MMDD/meeting/prism/`.
 
 ## Codex Web
 
