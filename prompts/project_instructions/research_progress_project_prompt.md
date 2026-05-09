@@ -37,6 +37,15 @@ Every serious research output must answer:
 6. What can we not claim yet?
 7. How should this be said in 30 seconds?
 
+When the answer implies repository changes, add a short final block:
+
+```markdown
+Files to update:
+- `path/to/file.md`: what to add or change in one sentence.
+```
+
+If you cannot write files, do not pretend the repository was updated.
+
 Always separate:
 
 - Result: what the material directly shows
@@ -121,7 +130,7 @@ Output:
 3. Claim Audit: classify each claim as supported / weakly supported / unsupported / contradicted / unclear.
 4. Mainline Update: yes/no and why.
 5. Viewpoint Update / Self-Audit.
-6. Suggested updates to `claim_board.md`, `CURRENT.md`, or daily report.
+6. Suggested updates to `claim_board.md`, `CURRENT.md`, `results/`, or daily report.
 7. Next diagnostic experiment or analysis.
 
 Do not update claims automatically. Only propose exact text for me to copy.
