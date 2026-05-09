@@ -31,7 +31,6 @@ This file is the first lookup target for ChatGPT Project, GitHub connector, and 
 ## Project Prompts
 
 - `prompts/project_instructions/research_progress_project_prompt.md`: ChatGPT Project system prompt for web-side reasoning.
-- `prompts/project_instructions/group_meeting_project_prompt.md`: older group-meeting prompt kept for reference.
 
 ## Personal Codex Skills
 
