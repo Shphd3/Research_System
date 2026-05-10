@@ -6,8 +6,9 @@ This file is the first lookup target for ChatGPT Project, GitHub connector, and 
 
 - `AGENTS.md`: repository rules for Codex and research workflow.
 - `CURRENT.md`: current research state, safest claim, bottleneck, and current task.
-- `mainline.md`: long-term research mainline and open questions.
+- `mainline.md`: long-term attention-as-search / dynamic hierarchical KV indexing mainline and open questions.
 - `claim_board.md`: current claim status and evidence boundaries.
+- `/data/250010109/from-attention-to-search/docs/architecture.md`: architecture source note for the new long-context attention-as-search direction.
 
 ## Daily Work
 
@@ -19,6 +20,7 @@ This file is the first lookup target for ChatGPT Project, GitHub connector, and 
 ## Experiment Memory
 
 - `experiments/`: cross-day experiment cards.
+- `experiments/E003_attention_as_search_kv_indexing.md`: current first diagnostic experiment for router/expert buckets as KV candidate indexes.
 - `daily_research_reports/MMDD/experiment_analysis.md`: date-local experiment analysis when available.
 - `results/`: reusable result summaries or artifacts.
 

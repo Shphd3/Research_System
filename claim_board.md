@@ -1,6 +1,6 @@
 # Claim Board
 
-Last updated: 2026-05-07
+Last updated: 2026-05-10
 
 Use this board before reports and meetings. Do not present a claim more strongly than its current status.
 
@@ -12,58 +12,66 @@ Status labels:
 - `contradicted`
 - `unclear`
 
-## Claim A: Feature-Zipf synthetic data is more reasonable than leaf-Zipf data.
+## Claim A: Long-context attention can be interpreted as search over KV memory.
 
-Status: supported.
+Status: supported as conceptual reframing.
 
-Evidence: Zipf acts on sparse feature occurrence rather than directly on labels. This better matches a common/group/unique feature view of language.
+Evidence: Standard attention ranks all historical keys by query-key dot product, then softmax makes the largest logits dominate. At million-token scale this resembles extreme-value retrieval over a dynamically generated memory, not uniform aggregation over all tokens.
 
-Meeting boundary: say this is a better controlled diagnostic setting, not a full simulation of natural language.
+Meeting boundary: say this is a computational interpretation and research framing. Do not claim it already gives an implemented speedup.
 
-## Claim B: The synthetic mechanism is recoverable.
-
-Status: supported.
-
-Evidence: Oracle flat and oracle hierarchical models reach Leaf NMI 1.000 and high feature selectivity. Oracle hierarchical conditional input reaches function cos 0.973 in the variable-A setting.
-
-Meeting boundary: oracle proves recoverability, not that learned routing already solved it.
-
-## Claim C: Learned routers exploit sparse feature signal.
+## Claim B: Dynamic hierarchical KV indexing is a plausible architecture direction for million-token inference.
 
 Status: weakly supported.
 
-Evidence: Learned models beat random flat on loss in variable-A and show modest improvements in Leaf NMI and feature selectivity.
+Evidence: The architecture note identifies a natural decomposition: candidate retrieval, then exact sparse attention reranking. This matches the structure of search systems and addresses the global KV scan bottleneck.
 
-Meeting boundary: the signal is real but weak; it is not yet clean mechanism recovery.
+Meeting boundary: plausible direction only. Need real trace diagnostics for recall, bucket balance, update overhead, and hardware behavior.
 
-## Claim D: Hierarchical MoE is better than flat MoE at sparse feature specialization.
+## Claim C: MoE router / expert ID can serve as a model-native inverted index.
 
-Status: unsupported.
+Status: unclear.
 
-Evidence: Hierarchical models do not clearly beat flat middle spectral + common on Leaf NMI or sparse dictionary feature division metrics.
+Evidence: MoE routing already partitions token representations for sparse computation, so expert IDs could in principle index KV positions by learned semantic region. However, previous MoE work did not prove that expert partitions align with true mechanisms strongly enough, and it did not test attention winner recall.
 
-Meeting boundary: do not claim hierarchy is better at sparse feature division yet.
+Meeting boundary: present as the central hypothesis, not as a result.
 
-## Claim E: Hierarchical MoE is better at function-level mechanism recovery.
-
-Status: weakly supported.
-
-Evidence: In variable-A, Hier conditional input has the highest learned function cos among non-oracle models, and oracle hierarchical has much higher function cos than oracle flat.
-
-Meeting boundary: say function-level signal is stronger than feature-level signal, not that the architecture is solved.
-
-## Claim F: Middle spectral routing helps sparse feature division.
-
-Status: supported by current synthetic diagnostics.
-
-Evidence: Flat middle spectral + common has the best learned Leaf NMI and strongest sparse dictionary division metrics among learned models.
-
-Meeting boundary: this is currently the strongest diagnostic phenomenon and should become a target of explanation.
-
-## Claim G: Fixed-A feature selectivity proves expert functional specialization.
+## Claim D: Expert/router buckets are aligned with attention softmax winners.
 
 Status: unsupported.
 
-Evidence: In fixed-A, all models have the same output function, so function cos is essentially identical. Fixed-A only shows that input features can induce weak routing differentiation.
+Evidence: No current result yet measures whether query-time router assignments retrieve dense-attention top keys with high recall.
 
-Meeting boundary: fixed-A is a control, not proof of functional expert specialization.
+Meeting boundary: this is the first decisive diagnostic for the new mainline.
+
+## Claim E: Hierarchical KV indexing can preserve dense-attention quality while reducing inference cost.
+
+Status: unsupported.
+
+Evidence: No current end-to-end sparse attention experiment has shown quality preservation, latency reduction, or hardware-efficient dynamic insertion.
+
+Meeting boundary: do not make performance claims until after recall diagnostics and sparse-attention implementation tests.
+
+## Claim F: Feature-Zipf Hierarchical MoE remains useful as mechanism bridge.
+
+Status: supported.
+
+Evidence: Earlier Feature-Zipf work clarified that specialization must be evaluated by feature/function alignment and not only routing frequency. It also exposed the gap between learned routing and true mechanism recovery.
+
+Meeting boundary: keep this as motivation for why router-index alignment must be diagnosed carefully.
+
+## Claim G: Hierarchical MoE is already better than flat MoE at sparse feature specialization.
+
+Status: unsupported.
+
+Evidence: Previous synthetic diagnostics did not show a clear advantage over flat middle spectral MoE on sparse feature division metrics.
+
+Meeting boundary: this remains an old-branch boundary. Do not import it as a positive premise for the new KV indexing mainline.
+
+## Claim H: Current safest mainline claim.
+
+Status: supported.
+
+Evidence: The safe claim combines only the architectural reframing and the open hypothesis: million-token attention exposes a memory search/indexing bottleneck, and MoE routing is a natural candidate signal for model-native indexing.
+
+Meeting boundary: say “natural candidate” and “needs trace-level validation,” not “validated solution.”
