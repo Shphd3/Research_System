@@ -98,5 +98,6 @@ Claim strength before experiment:
 - Separate result, interpretation, claim update, and next decision.
 - Do not upgrade a claim unless the setup directly tests it.
 - If the setup only tests a boundary condition, say so.
+- After a closure is complete, state whether `consensus.md` should be updated and which specific item changes.
 - The weakest point must be concrete: missing control, ambiguous metric, weak baseline, limited dataset, layer/head specificity, or mismatch with the mainline.
 - When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

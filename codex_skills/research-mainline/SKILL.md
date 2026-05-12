@@ -20,6 +20,7 @@ For each project, the main folder should be minimal:
 Projects/<project>/main/
   README.md
   current_mainline.md
+  consensus.md
   status.md
   hypotheses/
     README.md
@@ -60,6 +61,18 @@ The current project state in one page:
 - what is not claimable;
 - current active hypotheses;
 - next decision.
+
+### `consensus.md`
+
+The current knowledge boundary:
+
+- what is supported enough to use as a premise;
+- what is only a working hypothesis;
+- what remains unclear;
+- what cannot be claimed;
+- setup assumptions accepted for the next experiment.
+
+Do not put raw logs or daily progress here. Update it only after hypothesis closure, result analysis, or meeting feedback changes what can be treated as known.
 
 ### `hypotheses/README.md`
 
@@ -132,6 +145,7 @@ separate source note or `legacy/`, not in `plans/`.
 A result or discussion updates the mainline only if it changes one of:
 
 - the current safest claim;
+- the consensus boundary;
 - a hypothesis status;
 - an experiment card status;
 - an experiment result interpretation;

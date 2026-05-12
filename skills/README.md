@@ -51,6 +51,7 @@ Projects/<project>/main/
 Project-level `main/` is for shared consensus only:
 
 - stable current mainline;
+- `consensus.md`: what is currently known, plausible, unclear, and not claimable;
 - project-wide claim boundary;
 - shared hypothesis index;
 - merged experiment/result summaries;
@@ -67,10 +68,29 @@ Use branch-local folders for:
 - active experiment cards;
 - unfinished hypotheses;
 - hypothesis closure drafts;
+- branch-local `consensus.md` for current working knowledge and assumptions;
 - branch-local result summaries;
 - meeting-prep material before it becomes project consensus.
 
 Promote branch-local material to project `main/` only after it changes shared project consensus.
+
+## Consensus Document
+
+Each active branch may maintain:
+
+```text
+Projects/<project>/<worker>/main/consensus.md
+```
+
+Use `consensus.md` to measure existing knowledge:
+
+- what is supported enough to use as a premise;
+- what is only a working hypothesis;
+- what remains unclear;
+- what cannot be claimed;
+- which setup assumptions are accepted for the next experiment.
+
+Do not put raw logs or daily progress into `consensus.md`. Update it only after hypothesis closure, result analysis, or meeting feedback changes what can be treated as known.
 
 ## Formula Rule
 
