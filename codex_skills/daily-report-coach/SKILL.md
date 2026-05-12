@@ -1,31 +1,23 @@
 ---
 name: daily-report-coach
-description: Use when turning the user's daily research work, experiment notes, raw logs, or meeting preparation into a concise daily report that connects work to the mainline without becoming a long activity log.
+description: Use when turning daily research work, experiment notes, reading notes, blockers, meeting preparation, or next-day plans into a concise daily report anchored to the active project mainline.
 metadata:
   short-description: Write concise daily reports
 ---
 
 # Daily Report Coach
 
-Use this skill to write or revise a daily research report.
+Use this skill to write or revise a daily research report. Do not turn the day into a task log.
 
-Daily reports should live under `daily_research_reports/MMDD/daily_report.md`. Do not create or use a separate root-level daily log folder.
+Daily reports should live under:
 
-## Goal
+```text
+daily_research_reports/MMDD/daily_report.md
+```
 
-The daily report should train the user to explain:
+## Required Output
 
-- what was done
-- what was learned
-- how it updates the mainline
-- what research viewpoint changed, sharpened, or became less certain
-- where that viewpoint is weak, imprecise, or easy to attack
-- what is still not supported
-- how to say it clearly to an advisor or senior student
-
-## Format
-
-Use exactly this compact structure unless the user asks otherwise:
+Use this compact structure by default:
 
 ```markdown
 # Daily Report - MMDD
@@ -43,13 +35,23 @@ Use exactly this compact structure unless the user asks otherwise:
 ## 30s Meeting Script
 ```
 
+Optional fields only when useful:
+
+```markdown
+## Problems / Blockers
+
+## Tomorrow's Plan
+
+## Questions For Advisor
+```
+
 ## Rules
 
+- Read the active project mainline first when available.
+- Keep only evidence that affects the mainline, claim boundary, or next decision.
 - Do not list every experiment detail.
-- Keep only evidence that affects the mainline.
-- If the material is exploratory, label it as exploratory.
 - The viewpoint update must be one research judgment, not a diary reflection.
-- The self-audit must name the most vulnerable part: unsupported assumption, ambiguous definition, missing control, possible counterexample, or over-strong wording.
+- The self-audit must name the vulnerable part: unsupported assumption, ambiguous definition, missing control, possible counterexample, or over-strong wording.
 - If no viewpoint changed, write `No viewpoint update today` and explain why.
-- The 30 second script must be understandable to someone who has not followed every prior turn.
-- Avoid vague phrases like "the result is interesting"; state what the result supports, weakens, or leaves unresolved.
+- The 30 second script must be understandable to someone who has not followed every detail.
+- Avoid vague phrases like "interesting result"; state what the result supports, weakens, or leaves unresolved.

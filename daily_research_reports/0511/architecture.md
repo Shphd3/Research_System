@@ -10,8 +10,7 @@ Mathematically, standard attention computes:
 
 $$
 a_i
-=
-\operatorname{softmax}
+=\operatorname{softmax}
 \left(
 \frac{q^\top k_i}{\sqrt d}
 \right)
@@ -40,16 +39,14 @@ The softmax function is exponentially selective:
 
 $$
 \frac{a_i}{a_j}
-=
-\exp(s_i - s_j)
+=\exp(s_i - s_j)
 $$
 
 where:
 
 $$
 s_i
-=
-\frac{q^\top k_i}{\sqrt d}
+=\frac{q^\top k_i}{\sqrt d}
 $$
 
 Even a moderate logit difference creates an enormous disparity in final attention weights. If one token score exceeds another by 10, then its weight becomes approximately:
@@ -277,8 +274,7 @@ Each layer and each attention head possesses its own representation geometry:
 
 $$
 \mathcal I
-=
-\{
+=\{
 \mathcal I_{\ell,h}
 \}_{\ell,h}
 $$
@@ -414,8 +410,7 @@ The memory index therefore becomes:
 
 $$
 \mathcal I_{\ell,e}
-=
-\{
+=\{
 i :
 \text{token } i
 \text{ routed to expert } e

@@ -1,8 +1,0 @@
-\section{Conclusion}
-\label{sec:conclusion}
-
-This paper reframes the routing problem in MoE around expert specialization. The central question is not whether a more complex gate can always be designed, but whether the gate separates tokens into experts in a geometrically meaningful way. Our analysis shows that the key obstacle in the current regime is anisotropic first-order geometry: a large global mean shift must be removed, but the mean direction itself still carries useful routing information.
-
-This leads to a simple conclusion. The strongest routing mechanism in the current regime is a centered and orthogonally decoupled first-order gate. By separating mean-direction routing from centered residual routing, CORE induces cleaner expert specialization than standard linear gates, admits a direct semantic interpretation, and avoids the heavy cost of second-order complexity.
-
-The current evidence is already sufficient to support this story through data-geometry audits, routing-separation evaluations, semantic decoupling analysis, and dynamics/overhead audits. The remaining work is downstream: we will continue to test whether the resulting expert specialization transfers into lower interference and improved continual-learning behavior.
