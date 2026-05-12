@@ -219,6 +219,7 @@ Prefer this active skill set:
 - `research-mainline`: judge whether material updates a project mainline.
 - `claim-auditor`: audit claim strength against evidence.
 - `experiment-card-writer`: write compact experiment cards and result-decision blocks.
+- `hypothesis-closure`: close the loop on a hypothesis after experiment evidence exists.
 - `daily-report-coach`: write compact daily reports.
 - `meeting-brief-coach`: prepare 30 second / 1 minute advisor-facing explanations.
 - `prism-report`: build meeting-ready PRISM reports.
