@@ -75,3 +75,4 @@ When useful, add 2 likely advisor questions:
 - Lead with conclusion, not process.
 - Include at most three main observations.
 - Explain why the next step is the bottleneck, not just what the next step is.
+- When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

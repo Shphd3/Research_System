@@ -99,6 +99,7 @@ Write a 30 second version and, if useful, a 1 minute version.
 - Do not overclaim from one experiment.
 - Every major section must connect back to the current mainline.
 - If evidence is weak, say it is weak and explain what would make it decisive.
+- In Markdown PRISM drafts, inline formulas must use `$...$` and display formulas must use `$$...$$`.
 
 ## Meeting Defense
 

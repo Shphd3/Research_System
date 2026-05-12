@@ -38,3 +38,7 @@ Keep the answer short:
 5. Next decision
 
 Avoid praising novelty. Focus on whether the evidence moves the research forward.
+
+## Formula Rule
+
+When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

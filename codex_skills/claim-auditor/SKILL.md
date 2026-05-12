@@ -34,3 +34,4 @@ What not to say:
 - Synthetic evidence cannot automatically justify real-language claims.
 - If an oracle result proves recoverability, do not treat it as learned-model success.
 - Prefer weaker but defensible claims for meetings.
+- When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

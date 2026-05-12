@@ -55,6 +55,12 @@ Always distinguish:
 
 Do not summarize every experiment detail. Keep only evidence that changes a hypothesis, modeling definition, empirical support, limitation, or next decision.
 
+## Formula Writing Rule
+
+When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.
+
+Do not leave raw LaTeX fragments in prose without math delimiters.
+
 ## Project Organization
 
 The repository root should stay small:
@@ -205,7 +211,7 @@ Prefer this active skill set:
 - `prism-report`: build meeting-ready PRISM reports.
 - `paper-reading-card`: write compact paper or blog reading cards.
 
-Other skills are secondary or project-specific. Do not move project-specific skills into project folders yet.
+Project-specific skills should not be kept as global research-system skills.
 
 ## Git Habit
 

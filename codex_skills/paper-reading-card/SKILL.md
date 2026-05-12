@@ -1,13 +1,13 @@
 ---
 name: paper-reading-card
-description: Use when reading a paper or turning paper notes into a compact card focused on problem, gap, method, result, interpretation, claim, and relation to the user's project.
+description: Use when reading a paper, blog, essay, or technical note and turning it into a compact card focused on problem, method, result, interpretation, claim, relation to the active project, and whether it changes the mainline.
 metadata:
-  short-description: Write paper reading cards
+  short-description: Write paper and blog reading cards
 ---
 
 # Paper Reading Card
 
-Create a compact first-pass paper card.
+Create a compact first-pass reading card. Do not summarize the whole paper section by section unless asked.
 
 ## Repo Templates
 
@@ -20,7 +20,7 @@ Use these templates when working inside the research workspace:
 ## Required Output
 
 ```markdown
-# Paper Reading Card
+# Reading Card
 
 论文标题：
 
@@ -39,12 +39,14 @@ Use these templates when working inside the research workspace:
 和我研究的关系：
 
 以后是否需要精读：是/否
+
+## Mainline Update Check
 ```
 
 ## Rules
 
-- Do not summarize the whole paper section by section unless asked.
 - Separate what the authors claim from your own judgment.
-- State whether the paper changes the mainline, creates a risk, or is only background.
+- State whether the reading changes the mainline, creates a risk, or is only background.
 - If it should be filed, recommend one `paper_reading/` category.
-- End reading records with a `Mainline Update Check`.
+- Keep the card concise.
+- When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.
