@@ -92,7 +92,7 @@ Removed root-level project folders:
 
 ## Skill Sources
 
-Use `skills/README.md` for the skill map.
+Use `codex_skills/` for the skill map and skill sources.
 
 Primary active skills:
 
