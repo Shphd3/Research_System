@@ -55,3 +55,4 @@ Optional fields only when useful:
 - If no viewpoint changed, write `No viewpoint update today` and explain why.
 - The 30 second script must be understandable to someone who has not followed every detail.
 - Avoid vague phrases like "interesting result"; state what the result supports, weakens, or leaves unresolved.
+- When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

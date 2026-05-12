@@ -153,3 +153,9 @@ When answering, keep it short:
 3. What changed
 4. What cannot be claimed
 5. Next decision
+
+Avoid praising novelty. Focus on whether the evidence moves the research forward.
+
+## Formula Rule
+
+When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

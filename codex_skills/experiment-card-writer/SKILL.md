@@ -120,3 +120,4 @@ Therefore:
 - Separate result, interpretation, limitation, and decision.
 - Do not let a metric improvement become a stronger public claim than it supports.
 - Prefer decision-oriented wording over long experiment narration.
+- When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.
