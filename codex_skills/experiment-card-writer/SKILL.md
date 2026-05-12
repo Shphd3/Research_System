@@ -17,6 +17,13 @@ Project-specific experiment cards should live inside the active project, normall
 Projects/<project>/main/
 ```
 
+For branch-local work, use the branch folder instead of project-level `main/`, for example:
+
+```text
+Projects/from-attention-to-search/XingyuD/main/plans/
+Projects/from-attention-to-search/XingyuD/main/experiments/
+```
+
 Do not create root-level `experiments/` cards unless the user explicitly asks for a global/cross-project card.
 
 ## Pre-Experiment Thinking
@@ -62,28 +69,33 @@ Candidate construction:
 - Sparse Output Error
 - Accuracy Drop
 
-## 6. Expected Outcomes
+## 6. Key Figures For Reporting
+- Figure 1:
+- Figure 2:
+- Figure 3:
+
+## 7. Expected Outcomes
 If H1 holds:
 Gate recall > Random recall.
 
 If H1 fails:
 Gate recall ~= Random recall.
 
-## 7. What This Can Prove
+## 8. What This Can Prove
 It can test whether the router provides a coarse retrieval signal.
 
-## 8. What This Cannot Prove
+## 9. What This Cannot Prove
 It cannot prove full inference speedup.
 It cannot prove million-token scalability.
 It cannot prove standard MoE routing is already sufficient.
 
-## 9. Result
+## 10. Result
 TBD.
 
-## 10. Conclusion
+## 11. Conclusion
 TBD.
 
-## 11. Next Step
+## 12. Next Step
 TBD.
 ```
 
@@ -106,6 +118,11 @@ This does not show:
 - all layers/heads behave the same;
 - real long-context tasks will benefit.
 
+### Key Figures
+- Figure:
+- What it should show:
+- Meeting use:
+
 ### Decision
 Therefore:
 - if Gate > Random: continue to candidate exact attention;
@@ -120,4 +137,6 @@ Therefore:
 - Separate result, interpretation, limitation, and decision.
 - Do not let a metric improvement become a stronger public claim than it supports.
 - Prefer decision-oriented wording over long experiment narration.
+- Every experiment card should specify the key figure(s) needed for advisor-facing reporting.
+- Figures should be diagnostic, not decorative: they must support a claim boundary or next decision.
 - When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

@@ -38,6 +38,40 @@ Skills are task-specific. Global reply style belongs in `AGENTS.md`, not in a sk
 | `prism-report` | Build group-meeting-ready PRISM reports. |
 | `paper-reading-card` | Turn papers or blogs into compact reading cards. |
 
+## Project Document Organization
+
+The global research system manages conventions. Specific project content belongs inside each project.
+
+Use this rule for project folders:
+
+```text
+Projects/<project>/main/
+```
+
+Project-level `main/` is for shared consensus only:
+
+- stable current mainline;
+- project-wide claim boundary;
+- shared hypothesis index;
+- merged experiment/result summaries;
+- status that all branches should follow.
+
+Personal or branch-local work should stay in the worker branch folder, for example:
+
+```text
+Projects/from-attention-to-search/XingyuD/main/
+```
+
+Use branch-local folders for:
+
+- active experiment cards;
+- unfinished hypotheses;
+- hypothesis closure drafts;
+- branch-local result summaries;
+- meeting-prep material before it becomes project consensus.
+
+Promote branch-local material to project `main/` only after it changes shared project consensus.
+
 ## Formula Rule
 
 When a skill writes Markdown research documents:
