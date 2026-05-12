@@ -32,6 +32,20 @@ Do not rely on chat history as the main source of memory.
 
 Root-level `CURRENT.md` is a compatibility pointer only. Project-specific mainline state belongs under `Projects/<project>/main/`.
 
+## Local Skill Use
+
+For research organization work inside `Research_System`, always read `AGENTS.md`
+first. Then use local skills from `codex_skills/` when the task type matches:
+
+- experiment plan or experiment card: `codex_skills/experiment-card-writer/SKILL.md`
+- experiment result or daily synthesis: `codex_skills/daily-report-coach/SKILL.md`
+- claim boundary or public wording audit: `codex_skills/claim-auditor/SKILL.md`
+- mainline update or project state consolidation: `codex_skills/research-mainline/SKILL.md`
+- meeting / group-report preparation: `codex_skills/meeting-brief-coach/SKILL.md`
+
+These local skills are repository rules, not optional background references.
+Read only the relevant skill file unless the task explicitly requires more.
+
 ## Mainline Discipline
 
 Every research output should answer only the relevant subset of:
@@ -65,7 +79,6 @@ The repository root should stay small:
 - global or cross-project notes
 - `prompts/`
 - `codex_skills/`
-- `skills/`
 - `paper_reading/`
 - `daily_research_reports/`
 
@@ -79,7 +92,7 @@ Agents should treat `Projects/<project>/main/` as the only required project cont
 
 `Projects/` contains independent project repositories and is ignored by the parent repository. Manage each project's files with that project's own Git repository.
 
-Root-level `hypotheses/` and `experiments/` have been retired. Project-specific hypotheses and experiment cards belong under the specific project context.
+Root-level `hypotheses/` and `experiments/` have been retired. Project-specific hypotheses, experiment cards, and experiment results belong under the specific project context.
 
 ## Experiment Discipline
 
