@@ -38,6 +38,7 @@ For research organization work inside `Research_System`, always read `AGENTS.md`
 first. Then use local skills from `codex_skills/` when the task type matches:
 
 - experiment plan or experiment card: `codex_skills/experiment-card-writer/SKILL.md`
+- experiment card plus ACP/SCO cluster submission: `codex_skills/experiment-acp-runner/SKILL.md`
 - experiment result or daily synthesis: `codex_skills/daily-report-coach/SKILL.md`
 - claim boundary or public wording audit: `codex_skills/claim-auditor/SKILL.md`
 - mainline update or project state consolidation: `codex_skills/research-mainline/SKILL.md`
@@ -213,6 +214,7 @@ Prefer this active skill set:
 - `research-mainline`: judge whether material updates a project mainline.
 - `claim-auditor`: audit claim strength against evidence.
 - `experiment-card-writer`: write compact experiment cards and result-decision blocks.
+- `experiment-acp-runner`: turn experiment cards into ACP/SCO dry runs, submissions, monitoring records, and mainline-safe result summaries.
 - `daily-report-coach`: write compact daily reports.
 - `meeting-brief-coach`: prepare 30 second / 1 minute advisor-facing explanations.
 - `prism-report`: build meeting-ready PRISM reports.

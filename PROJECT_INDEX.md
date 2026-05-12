@@ -99,6 +99,7 @@ Primary active skills:
 - `codex_skills/research-mainline/SKILL.md`
 - `codex_skills/claim-auditor/SKILL.md`
 - `codex_skills/experiment-card-writer/SKILL.md`
+- `codex_skills/experiment-acp-runner/SKILL.md`
 - `codex_skills/daily-report-coach/SKILL.md`
 - `codex_skills/meeting-brief-coach/SKILL.md`
 - `codex_skills/prism-report/SKILL.md`
