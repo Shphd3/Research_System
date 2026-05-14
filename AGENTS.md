@@ -173,6 +173,9 @@ family for reporting; each big closure should live in its own subfolder with a
 local `figures/` directory, and should link back to the local experiment
 `summary.md` files rather than replacing them.
 
+Big closure documents should be written in Chinese by default, with English kept
+only for metric names, code identifiers, paths, and quoted source terms.
+
 ## Experiment Discipline
 
 Before proposing or summarizing experiments, first write the purpose chain.

@@ -184,6 +184,9 @@ Use this folder for advisor-facing big closure documents. These synthesize a
 tightly scoped hypothesis family or an experiment line across local experiment
 summaries. They should not replace per-experiment `summary.md` files.
 
+Write big closure documents in Chinese by default. Keep English only for metric
+names, file paths, code identifiers, and quoted source terms.
+
 Each big closure should be a folder:
 
 ```text

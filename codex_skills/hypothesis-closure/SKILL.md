@@ -1,15 +1,21 @@
 ---
 name: hypothesis-closure
-description: Use when an experiment, result, meeting note, or research iteration needs to close the loop on a hypothesis by linking original purpose, mainline anchor, setup validity, result, claim update, weakest point, next decision, and advisor-facing summary.
+description: Use when an experiment, result, meeting note, or research iteration needs to close the loop on a hypothesis in Chinese by linking original purpose, mainline anchor, setup validity, result, claim update, weakest point, next decision, and advisor-facing summary.
 metadata:
   short-description: Close research hypotheses
 ---
 
 # Hypothesis Closure
 
-Use this skill after an experiment or analysis has enough result evidence to update, weaken, reject, or keep open a hypothesis.
+Use this skill after an experiment or analysis has enough result evidence to
+update, weaken, reject, or keep open a hypothesis.
 
-If the experiment is not finished, write only the sections that can be filled and mark the rest as `TBD`. Do not pretend the hypothesis is closed before results exist.
+Default language is Chinese. Use English only for code identifiers, metric
+names, file paths, or when the user explicitly asks for English.
+
+If the experiment is not finished, write only the sections that can be filled
+and mark the rest as `TBD`. Do not pretend the hypothesis is closed before
+results exist.
 
 ## Location Rule
 
@@ -45,29 +51,29 @@ files they synthesize.
 ## Required Output
 
 ```markdown
-# Hypothesis Closure - MMDD
+# 假设闭环：<name> - MMDD
 
-## 1. Original Purpose
+## 1. 原始目的
 
 本轮实验原本要验证什么问题？
 
-## 2. Mainline Anchor
+## 2. 主线锚点
 
 它对应 architecture.md / mainline.md 里的哪一句问题定义？
 
-## 3. Hypothesis
+## 3. 待判定假设
 
 Hx: ...
 
-Claim strength before experiment:
-- unsupported / weakly supported / unclear
+实验前证据强度：
+- 未支持 / 弱支持 / 不清楚
 
-## 4. Why This Setup Tests The Hypothesis
+## 4. 为什么这个实验能检验该假设
 
 为什么这个模型、数据、指标能测试这个假设？
 边界条件是什么？
 
-## 5. Experiment Summary
+## 5. 实验设置摘要
 
 - Model:
 - Data:
@@ -75,41 +81,41 @@ Claim strength before experiment:
 - Metric:
 - Key comparison:
 
-## 6. Result
+## 6. 直接结果
 
 只写关键结果，不写流水账。
 
-## 7. Key Figures
+## 7. 关键图片
 
 - Figure:
 - Path:
 - Supports:
 
-## 8. Interpretation
+## 8. 解释
 
 结果说明什么？
 
-## 9. Claim Update
+## 9. Claim 更新
 
-- Supported:
-- Weakly supported:
-- Unsupported:
-- Contradicted:
-- Still unclear:
+- 支持：
+- 弱支持：
+- 不支持：
+- 被反驳：
+- 仍不清楚：
 
-## 10. What Cannot Be Claimed
+## 10. 不能声称什么
 
 明确不能说什么。
 
-## 11. Weakest Point
+## 11. 最弱点
 
 导师最可能攻击哪里？
 
-## 12. Next Decision
+## 12. 下一步决策
 
 继续 / 修改 / 停止 / 换假设。
 
-## 13. 30s Advisor Version
+## 13. 30 秒汇报版本
 
 一句话目的 + 结果 + 边界 + 下一步。
 ```
@@ -117,6 +123,7 @@ Claim strength before experiment:
 ## Rules
 
 - One closure document should close one hypothesis or one tightly scoped hypothesis family.
+- Write closure documents in Chinese by default.
 - Local experiment closure belongs in `experiments/.../summary.md`.
 - Advisor-facing big closure belongs in `main/hypotheses/`.
 - Big closure should reference the local summary files it synthesizes.
