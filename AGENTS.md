@@ -179,6 +179,9 @@ Keep big closures concise for reporting: merge mainline anchor with hypothesis,
 merge claim update with cannot-claim boundaries, and merge weakest point with
 next decision. Put setup details and long tables in experiment `summary.md` or
 `detailed.md`.
+Big closures must be self-contained: do not assume the reader knows previous
+failed runs, chat history, or why a design changed. Prior context should appear
+only when it is necessary for the current claim.
 
 ## Experiment Discipline
 

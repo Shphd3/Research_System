@@ -186,6 +186,9 @@ summaries. They should not replace per-experiment `summary.md` files.
 
 Write big closure documents in Chinese by default. Keep English only for metric
 names, file paths, code identifiers, and quoted source terms.
+Big closures must be self-contained for advisor-facing reading. They may link
+to experiment summaries for details, but they should not require prior failed
+runs or chat context to understand the current claim.
 
 Each big closure should be a folder:
 

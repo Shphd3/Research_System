@@ -45,8 +45,10 @@ Name big closure files like:
 H001_router_attention_recall_closure_MMDD/hypothesis_closure.md
 ```
 
-Big closure documents should link back to the local experiment `summary.md`
-files they synthesize.
+Big closure documents may link back to local experiment `summary.md` files, but
+they must be self-contained: a reader should understand the purpose, setup,
+result, claim boundary, and next decision without reading previous experiments
+or chat context.
 
 ## Required Output
 
@@ -106,7 +108,11 @@ Hx: ...
 - Write closure documents in Chinese by default.
 - Local experiment closure belongs in `experiments/.../summary.md`.
 - Advisor-facing big closure belongs in `main/hypotheses/`.
-- Big closure should reference the local summary files it synthesizes.
+- Big closure should be self-contained. Do not assume the reader knows previous
+  failed runs, chat history, or why a design changed. Mention prior context only
+  if it is essential to the current claim.
+- Big closure may reference the local summary files it synthesizes, but should
+  not depend on them for basic comprehension.
 - Keep the result section short; do not paste full logs.
 - Put setup details, metric details, and long tables in the corresponding experiment `summary.md` / `detailed.md`, not in the big closure.
 - Copy report-ready figures into the closure folder's `figures/` directory and
