@@ -1,0 +1,1486 @@
+{
+  "interpretation": {
+    "fc1_right": "right singular vectors of fc1; 100D FFN input directions",
+    "fc2_left": "left singular vectors of fc2; 100D FFN output directions",
+    "index": "singular vectors are sorted from largest to smallest singular value",
+    "abs_cosine": "absolute cosine is used because singular-vector sign is arbitrary"
+  },
+  "top_alignments": {
+    "fc1_right__ffn_input_after_inserted_A": [
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": -0.6932706832885742,
+        "abs_cosine": 0.6932706832885742
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.31438344717025757,
+        "abs_cosine": 0.31438344717025757
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 14,
+        "singular_value": 1.5940070152282715,
+        "cosine": 0.22960369288921356,
+        "abs_cosine": 0.22960369288921356
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": 0.22544759511947632,
+        "abs_cosine": 0.22544759511947632
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 6,
+        "singular_value": 1.7561242580413818,
+        "cosine": 0.17094309628009796,
+        "abs_cosine": 0.17094309628009796
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.15520545840263367,
+        "abs_cosine": 0.15520545840263367
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 41,
+        "singular_value": 1.2754751443862915,
+        "cosine": -0.13102802634239197,
+        "abs_cosine": 0.13102802634239197
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 63,
+        "singular_value": 1.050396203994751,
+        "cosine": -0.11923958361148834,
+        "abs_cosine": 0.11923958361148834
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 16,
+        "singular_value": 1.5795098543167114,
+        "cosine": -0.10837392508983612,
+        "abs_cosine": 0.10837392508983612
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 71,
+        "singular_value": 0.9579277038574219,
+        "cosine": 0.10291643440723419,
+        "abs_cosine": 0.10291643440723419
+      }
+    ],
+    "fc1_right__ffn_input_after_inserted_B": [
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.5665091276168823,
+        "abs_cosine": 0.5665091276168823
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": 0.4370536208152771,
+        "abs_cosine": 0.4370536208152771
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": 0.27194544672966003,
+        "abs_cosine": 0.27194544672966003
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 6,
+        "singular_value": 1.7561242580413818,
+        "cosine": 0.2118995189666748,
+        "abs_cosine": 0.2118995189666748
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 28,
+        "singular_value": 1.4126639366149902,
+        "cosine": -0.17405924201011658,
+        "abs_cosine": 0.17405924201011658
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.15798693895339966,
+        "abs_cosine": 0.15798693895339966
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 35,
+        "singular_value": 1.352121353149414,
+        "cosine": 0.15732966363430023,
+        "abs_cosine": 0.15732966363430023
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 84,
+        "singular_value": 0.8309635519981384,
+        "cosine": 0.15170550346374512,
+        "abs_cosine": 0.15170550346374512
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 25,
+        "singular_value": 1.4571142196655273,
+        "cosine": 0.1476433277130127,
+        "abs_cosine": 0.1476433277130127
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 10,
+        "singular_value": 1.6691612005233765,
+        "cosine": -0.12763243913650513,
+        "abs_cosine": 0.12763243913650513
+      }
+    ],
+    "fc1_right__ffn_input_abc_predictive_mean": [
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.6013021469116211,
+        "abs_cosine": 0.6013021469116211
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": 0.34475311636924744,
+        "abs_cosine": 0.34475311636924744
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 6,
+        "singular_value": 1.7561242580413818,
+        "cosine": 0.2650740146636963,
+        "abs_cosine": 0.2650740146636963
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": -0.24056074023246765,
+        "abs_cosine": 0.24056074023246765
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.2185254991054535,
+        "abs_cosine": 0.2185254991054535
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 84,
+        "singular_value": 0.8309635519981384,
+        "cosine": 0.16257402300834656,
+        "abs_cosine": 0.16257402300834656
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 63,
+        "singular_value": 1.050396203994751,
+        "cosine": -0.15194861590862274,
+        "abs_cosine": 0.15194861590862274
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 25,
+        "singular_value": 1.4571142196655273,
+        "cosine": 0.14588399231433868,
+        "abs_cosine": 0.14588399231433868
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 14,
+        "singular_value": 1.5940070152282715,
+        "cosine": 0.1393074244260788,
+        "abs_cosine": 0.1393074244260788
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 35,
+        "singular_value": 1.352121353149414,
+        "cosine": 0.1324750930070877,
+        "abs_cosine": 0.1324750930070877
+      }
+    ],
+    "fc1_right__residual_abc_predictive_mean": [
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.5578179359436035,
+        "abs_cosine": 0.5578179359436035
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": 0.37963956594467163,
+        "abs_cosine": 0.37963956594467163
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": -0.30299222469329834,
+        "abs_cosine": 0.30299222469329834
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 6,
+        "singular_value": 1.7561242580413818,
+        "cosine": 0.25066518783569336,
+        "abs_cosine": 0.25066518783569336
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.22000034153461456,
+        "abs_cosine": 0.22000034153461456
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 14,
+        "singular_value": 1.5940070152282715,
+        "cosine": 0.16105574369430542,
+        "abs_cosine": 0.16105574369430542
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 63,
+        "singular_value": 1.050396203994751,
+        "cosine": -0.14761824905872345,
+        "abs_cosine": 0.14761824905872345
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 84,
+        "singular_value": 0.8309635519981384,
+        "cosine": 0.14299696683883667,
+        "abs_cosine": 0.14299696683883667
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 35,
+        "singular_value": 1.352121353149414,
+        "cosine": 0.12535104155540466,
+        "abs_cosine": 0.12535104155540466
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "residual_abc_predictive_mean",
+        "index": 41,
+        "singular_value": 1.2754751443862915,
+        "cosine": -0.12251059710979462,
+        "abs_cosine": 0.12251059710979462
+      }
+    ],
+    "fc1_right__ffn_output_abc_predictive_mean": [
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 27,
+        "singular_value": 1.4261425733566284,
+        "cosine": 0.2971492111682892,
+        "abs_cosine": 0.2971492111682892
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": -0.2893056273460388,
+        "abs_cosine": 0.2893056273460388
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 6,
+        "singular_value": 1.7561242580413818,
+        "cosine": 0.2626785337924957,
+        "abs_cosine": 0.2626785337924957
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": -0.24991829693317413,
+        "abs_cosine": 0.24991829693317413
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 82,
+        "singular_value": 0.8430873155593872,
+        "cosine": 0.2426011860370636,
+        "abs_cosine": 0.2426011860370636
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 16,
+        "singular_value": 1.5795098543167114,
+        "cosine": -0.19175629317760468,
+        "abs_cosine": 0.19175629317760468
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 66,
+        "singular_value": 1.0232360363006592,
+        "cosine": -0.18921346962451935,
+        "abs_cosine": 0.18921346962451935
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 20,
+        "singular_value": 1.526031732559204,
+        "cosine": 0.18770426511764526,
+        "abs_cosine": 0.18770426511764526
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 44,
+        "singular_value": 1.2393823862075806,
+        "cosine": -0.18362298607826233,
+        "abs_cosine": 0.18362298607826233
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.18352825939655304,
+        "abs_cosine": 0.18352825939655304
+      }
+    ],
+    "fc1_right__token_embedding_A": [
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": -0.711631715297699,
+        "abs_cosine": 0.711631715297699
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.2661900520324707,
+        "abs_cosine": 0.2661900520324707
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": 0.2642005980014801,
+        "abs_cosine": 0.2642005980014801
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 14,
+        "singular_value": 1.5940070152282715,
+        "cosine": 0.20660832524299622,
+        "abs_cosine": 0.20660832524299622
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 7,
+        "singular_value": 1.7390596866607666,
+        "cosine": 0.13096004724502563,
+        "abs_cosine": 0.13096004724502563
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 95,
+        "singular_value": 0.6978687644004822,
+        "cosine": 0.1292254775762558,
+        "abs_cosine": 0.1292254775762558
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.12795811891555786,
+        "abs_cosine": 0.12795811891555786
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 63,
+        "singular_value": 1.050396203994751,
+        "cosine": -0.10852682590484619,
+        "abs_cosine": 0.10852682590484619
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 81,
+        "singular_value": 0.8635537028312683,
+        "cosine": 0.10497447103261948,
+        "abs_cosine": 0.10497447103261948
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_A",
+        "index": 42,
+        "singular_value": 1.2651112079620361,
+        "cosine": 0.10036767274141312,
+        "abs_cosine": 0.10036767274141312
+      }
+    ],
+    "fc1_right__token_embedding_B": [
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": 0.46749383211135864,
+        "abs_cosine": 0.46749383211135864
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.40303850173950195,
+        "abs_cosine": 0.40303850173950195
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 35,
+        "singular_value": 1.352121353149414,
+        "cosine": 0.24876657128334045,
+        "abs_cosine": 0.24876657128334045
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 7,
+        "singular_value": 1.7390596866607666,
+        "cosine": 0.23744641244411469,
+        "abs_cosine": 0.23744641244411469
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": 0.23163577914237976,
+        "abs_cosine": 0.23163577914237976
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 10,
+        "singular_value": 1.6691612005233765,
+        "cosine": -0.20471538603305817,
+        "abs_cosine": 0.20471538603305817
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 28,
+        "singular_value": 1.4126639366149902,
+        "cosine": -0.15687982738018036,
+        "abs_cosine": 0.15687982738018036
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 62,
+        "singular_value": 1.0569466352462769,
+        "cosine": -0.13888010382652283,
+        "abs_cosine": 0.13888010382652283
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 40,
+        "singular_value": 1.278026819229126,
+        "cosine": -0.13569426536560059,
+        "abs_cosine": 0.13569426536560059
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_B",
+        "index": 64,
+        "singular_value": 1.04533052444458,
+        "cosine": 0.13160279393196106,
+        "abs_cosine": 0.13160279393196106
+      }
+    ],
+    "fc1_right__token_embedding_C": [
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 17,
+        "singular_value": 1.5555400848388672,
+        "cosine": -0.2814632058143616,
+        "abs_cosine": 0.2814632058143616
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 18,
+        "singular_value": 1.5482001304626465,
+        "cosine": -0.2667591869831085,
+        "abs_cosine": 0.2667591869831085
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 1,
+        "singular_value": 2.890976667404175,
+        "cosine": -0.26566821336746216,
+        "abs_cosine": 0.26566821336746216
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 45,
+        "singular_value": 1.2361679077148438,
+        "cosine": -0.21980546414852142,
+        "abs_cosine": 0.21980546414852142
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.20359158515930176,
+        "abs_cosine": 0.20359158515930176
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 29,
+        "singular_value": 1.4017343521118164,
+        "cosine": 0.20150843262672424,
+        "abs_cosine": 0.20150843262672424
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 10,
+        "singular_value": 1.6691612005233765,
+        "cosine": -0.1860317587852478,
+        "abs_cosine": 0.1860317587852478
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 26,
+        "singular_value": 1.4452344179153442,
+        "cosine": 0.183384507894516,
+        "abs_cosine": 0.183384507894516
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 55,
+        "singular_value": 1.1235839128494263,
+        "cosine": 0.16540804505348206,
+        "abs_cosine": 0.16540804505348206
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_C",
+        "index": 36,
+        "singular_value": 1.325232982635498,
+        "cosine": -0.16062621772289276,
+        "abs_cosine": 0.16062621772289276
+      }
+    ],
+    "fc1_right__token_embedding_ABC_mean": [
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 3,
+        "singular_value": 1.8982139825820923,
+        "cosine": -0.48175638914108276,
+        "abs_cosine": 0.48175638914108276
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 10,
+        "singular_value": 1.6691612005233765,
+        "cosine": -0.25302284955978394,
+        "abs_cosine": 0.25302284955978394
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 35,
+        "singular_value": 1.352121353149414,
+        "cosine": 0.24478502571582794,
+        "abs_cosine": 0.24478502571582794
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 18,
+        "singular_value": 1.5482001304626465,
+        "cosine": -0.21980953216552734,
+        "abs_cosine": 0.21980953216552734
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 2,
+        "singular_value": 2.366147994995117,
+        "cosine": -0.19396820664405823,
+        "abs_cosine": 0.19396820664405823
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 45,
+        "singular_value": 1.2361679077148438,
+        "cosine": -0.1738164871931076,
+        "abs_cosine": 0.1738164871931076
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 81,
+        "singular_value": 0.8635537028312683,
+        "cosine": 0.15795117616653442,
+        "abs_cosine": 0.15795117616653442
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 46,
+        "singular_value": 1.2205826044082642,
+        "cosine": -0.15751859545707703,
+        "abs_cosine": 0.15751859545707703
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 33,
+        "singular_value": 1.3633936643600464,
+        "cosine": -0.15310198068618774,
+        "abs_cosine": 0.15310198068618774
+      },
+      {
+        "matrix": "fc1_right",
+        "representation": "token_embedding_ABC_mean",
+        "index": 25,
+        "singular_value": 1.4571142196655273,
+        "cosine": 0.1469188779592514,
+        "abs_cosine": 0.1469188779592514
+      }
+    ],
+    "fc2_left__ffn_input_after_inserted_A": [
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 10,
+        "singular_value": 0.9238601326942444,
+        "cosine": 0.238991379737854,
+        "abs_cosine": 0.238991379737854
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 34,
+        "singular_value": 0.6895594000816345,
+        "cosine": -0.23428566753864288,
+        "abs_cosine": 0.23428566753864288
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 81,
+        "singular_value": 0.4444583058357239,
+        "cosine": -0.2329404056072235,
+        "abs_cosine": 0.2329404056072235
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 39,
+        "singular_value": 0.6616930365562439,
+        "cosine": 0.21282340586185455,
+        "abs_cosine": 0.21282340586185455
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 35,
+        "singular_value": 0.68040931224823,
+        "cosine": 0.1948651224374771,
+        "abs_cosine": 0.1948651224374771
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 64,
+        "singular_value": 0.5310609936714172,
+        "cosine": 0.18932542204856873,
+        "abs_cosine": 0.18932542204856873
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 83,
+        "singular_value": 0.43073296546936035,
+        "cosine": -0.18864154815673828,
+        "abs_cosine": 0.18864154815673828
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 49,
+        "singular_value": 0.6124963760375977,
+        "cosine": -0.18472330272197723,
+        "abs_cosine": 0.18472330272197723
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 16,
+        "singular_value": 0.8328869938850403,
+        "cosine": 0.1827511489391327,
+        "abs_cosine": 0.1827511489391327
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_A",
+        "index": 15,
+        "singular_value": 0.8433233499526978,
+        "cosine": 0.17655186355113983,
+        "abs_cosine": 0.17655186355113983
+      }
+    ],
+    "fc2_left__ffn_input_after_inserted_B": [
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 38,
+        "singular_value": 0.6645499467849731,
+        "cosine": 0.2637175917625427,
+        "abs_cosine": 0.2637175917625427
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 58,
+        "singular_value": 0.5611783862113953,
+        "cosine": 0.2467973232269287,
+        "abs_cosine": 0.2467973232269287
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 26,
+        "singular_value": 0.7461898922920227,
+        "cosine": 0.2446608990430832,
+        "abs_cosine": 0.2446608990430832
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 33,
+        "singular_value": 0.6993549466133118,
+        "cosine": 0.21538813412189484,
+        "abs_cosine": 0.21538813412189484
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 31,
+        "singular_value": 0.7054645419120789,
+        "cosine": -0.18513397872447968,
+        "abs_cosine": 0.18513397872447968
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 70,
+        "singular_value": 0.5011288523674011,
+        "cosine": 0.1825680434703827,
+        "abs_cosine": 0.1825680434703827
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 27,
+        "singular_value": 0.7380157709121704,
+        "cosine": 0.18153253197669983,
+        "abs_cosine": 0.18153253197669983
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 86,
+        "singular_value": 0.4175296723842621,
+        "cosine": 0.16363821923732758,
+        "abs_cosine": 0.16363821923732758
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 71,
+        "singular_value": 0.49416542053222656,
+        "cosine": 0.16052018105983734,
+        "abs_cosine": 0.16052018105983734
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_after_inserted_B",
+        "index": 21,
+        "singular_value": 0.7860214710235596,
+        "cosine": 0.1515696495771408,
+        "abs_cosine": 0.1515696495771408
+      }
+    ],
+    "fc2_left__ffn_input_abc_predictive_mean": [
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 39,
+        "singular_value": 0.6616930365562439,
+        "cosine": 0.24328351020812988,
+        "abs_cosine": 0.24328351020812988
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 49,
+        "singular_value": 0.6124963760375977,
+        "cosine": -0.23346927762031555,
+        "abs_cosine": 0.23346927762031555
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 48,
+        "singular_value": 0.6155369281768799,
+        "cosine": -0.21976923942565918,
+        "abs_cosine": 0.21976923942565918
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 64,
+        "singular_value": 0.5310609936714172,
+        "cosine": 0.2153812199831009,
+        "abs_cosine": 0.2153812199831009
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 27,
+        "singular_value": 0.7380157709121704,
+        "cosine": 0.21108724176883698,
+        "abs_cosine": 0.21108724176883698
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 31,
+        "singular_value": 0.7054645419120789,
+        "cosine": -0.21045540273189545,
+        "abs_cosine": 0.21045540273189545
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 34,
+        "singular_value": 0.6895594000816345,
+        "cosine": -0.19692224264144897,
+        "abs_cosine": 0.19692224264144897
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 86,
+        "singular_value": 0.4175296723842621,
+        "cosine": 0.18639245629310608,
+        "abs_cosine": 0.18639245629310608
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 35,
+        "singular_value": 0.68040931224823,
+        "cosine": 0.1714649349451065,
+        "abs_cosine": 0.1714649349451065
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_input_abc_predictive_mean",
+        "index": 23,
+        "singular_value": 0.7722049951553345,
+        "cosine": -0.16365690529346466,
+        "abs_cosine": 0.16365690529346466
+      }
+    ],
+    "fc2_left__residual_abc_predictive_mean": [
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 39,
+        "singular_value": 0.6616930365562439,
+        "cosine": 0.23998701572418213,
+        "abs_cosine": 0.23998701572418213
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 64,
+        "singular_value": 0.5310609936714172,
+        "cosine": 0.23894435167312622,
+        "abs_cosine": 0.23894435167312622
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 49,
+        "singular_value": 0.6124963760375977,
+        "cosine": -0.23170247673988342,
+        "abs_cosine": 0.23170247673988342
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 48,
+        "singular_value": 0.6155369281768799,
+        "cosine": -0.20524173974990845,
+        "abs_cosine": 0.20524173974990845
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 31,
+        "singular_value": 0.7054645419120789,
+        "cosine": -0.20401531457901,
+        "abs_cosine": 0.20401531457901
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 27,
+        "singular_value": 0.7380157709121704,
+        "cosine": 0.19095464050769806,
+        "abs_cosine": 0.19095464050769806
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 86,
+        "singular_value": 0.4175296723842621,
+        "cosine": 0.18968170881271362,
+        "abs_cosine": 0.18968170881271362
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 35,
+        "singular_value": 0.68040931224823,
+        "cosine": 0.18892653286457062,
+        "abs_cosine": 0.18892653286457062
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 34,
+        "singular_value": 0.6895594000816345,
+        "cosine": -0.18239212036132812,
+        "abs_cosine": 0.18239212036132812
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "residual_abc_predictive_mean",
+        "index": 81,
+        "singular_value": 0.4444583058357239,
+        "cosine": -0.17055433988571167,
+        "abs_cosine": 0.17055433988571167
+      }
+    ],
+    "fc2_left__ffn_output_abc_predictive_mean": [
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 20,
+        "singular_value": 0.7995842695236206,
+        "cosine": -0.26015394926071167,
+        "abs_cosine": 0.26015394926071167
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 96,
+        "singular_value": 0.35484954714775085,
+        "cosine": 0.24280889332294464,
+        "abs_cosine": 0.24280889332294464
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 4,
+        "singular_value": 1.0865209102630615,
+        "cosine": -0.23915542662143707,
+        "abs_cosine": 0.23915542662143707
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 25,
+        "singular_value": 0.7517064809799194,
+        "cosine": 0.21440550684928894,
+        "abs_cosine": 0.21440550684928894
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 34,
+        "singular_value": 0.6895594000816345,
+        "cosine": -0.19964173436164856,
+        "abs_cosine": 0.19964173436164856
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 68,
+        "singular_value": 0.5097792148590088,
+        "cosine": -0.19406767189502716,
+        "abs_cosine": 0.19406767189502716
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 46,
+        "singular_value": 0.6200817227363586,
+        "cosine": 0.1865684986114502,
+        "abs_cosine": 0.1865684986114502
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 21,
+        "singular_value": 0.7860214710235596,
+        "cosine": -0.17916196584701538,
+        "abs_cosine": 0.17916196584701538
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 11,
+        "singular_value": 0.892439067363739,
+        "cosine": 0.17890949547290802,
+        "abs_cosine": 0.17890949547290802
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "ffn_output_abc_predictive_mean",
+        "index": 56,
+        "singular_value": 0.5747594833374023,
+        "cosine": 0.174361914396286,
+        "abs_cosine": 0.174361914396286
+      }
+    ],
+    "fc2_left__token_embedding_A": [
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 10,
+        "singular_value": 0.9238601326942444,
+        "cosine": 0.2489868551492691,
+        "abs_cosine": 0.2489868551492691
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 81,
+        "singular_value": 0.4444583058357239,
+        "cosine": -0.24851667881011963,
+        "abs_cosine": 0.24851667881011963
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 35,
+        "singular_value": 0.68040931224823,
+        "cosine": 0.22297540307044983,
+        "abs_cosine": 0.22297540307044983
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 83,
+        "singular_value": 0.43073296546936035,
+        "cosine": -0.1868543028831482,
+        "abs_cosine": 0.1868543028831482
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 5,
+        "singular_value": 1.0679266452789307,
+        "cosine": -0.18643012642860413,
+        "abs_cosine": 0.18643012642860413
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 49,
+        "singular_value": 0.6124963760375977,
+        "cosine": -0.1778704673051834,
+        "abs_cosine": 0.1778704673051834
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 66,
+        "singular_value": 0.5211737751960754,
+        "cosine": -0.1768302172422409,
+        "abs_cosine": 0.1768302172422409
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 15,
+        "singular_value": 0.8433233499526978,
+        "cosine": 0.1744312047958374,
+        "abs_cosine": 0.1744312047958374
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 34,
+        "singular_value": 0.6895594000816345,
+        "cosine": -0.168348029255867,
+        "abs_cosine": 0.168348029255867
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_A",
+        "index": 16,
+        "singular_value": 0.8328869938850403,
+        "cosine": 0.16301557421684265,
+        "abs_cosine": 0.16301557421684265
+      }
+    ],
+    "fc2_left__token_embedding_B": [
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 26,
+        "singular_value": 0.7461898922920227,
+        "cosine": 0.26255500316619873,
+        "abs_cosine": 0.26255500316619873
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 23,
+        "singular_value": 0.7722049951553345,
+        "cosine": -0.23408293724060059,
+        "abs_cosine": 0.23408293724060059
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 72,
+        "singular_value": 0.490178644657135,
+        "cosine": -0.23059022426605225,
+        "abs_cosine": 0.23059022426605225
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 84,
+        "singular_value": 0.42708465456962585,
+        "cosine": 0.21826989948749542,
+        "abs_cosine": 0.21826989948749542
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 58,
+        "singular_value": 0.5611783862113953,
+        "cosine": 0.2180115282535553,
+        "abs_cosine": 0.2180115282535553
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 71,
+        "singular_value": 0.49416542053222656,
+        "cosine": 0.1988009810447693,
+        "abs_cosine": 0.1988009810447693
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 25,
+        "singular_value": 0.7517064809799194,
+        "cosine": -0.1966516375541687,
+        "abs_cosine": 0.1966516375541687
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 100,
+        "singular_value": 0.31466230750083923,
+        "cosine": 0.1879461109638214,
+        "abs_cosine": 0.1879461109638214
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 47,
+        "singular_value": 0.6175304651260376,
+        "cosine": -0.18595749139785767,
+        "abs_cosine": 0.18595749139785767
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_B",
+        "index": 70,
+        "singular_value": 0.5011288523674011,
+        "cosine": 0.18388041853904724,
+        "abs_cosine": 0.18388041853904724
+      }
+    ],
+    "fc2_left__token_embedding_C": [
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 45,
+        "singular_value": 0.6230940818786621,
+        "cosine": 0.3375093936920166,
+        "abs_cosine": 0.3375093936920166
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 47,
+        "singular_value": 0.6175304651260376,
+        "cosine": -0.24739843606948853,
+        "abs_cosine": 0.24739843606948853
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 74,
+        "singular_value": 0.4800340235233307,
+        "cosine": -0.23622898757457733,
+        "abs_cosine": 0.23622898757457733
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 50,
+        "singular_value": 0.6032480597496033,
+        "cosine": -0.22242090106010437,
+        "abs_cosine": 0.22242090106010437
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 43,
+        "singular_value": 0.6387717127799988,
+        "cosine": -0.1976793110370636,
+        "abs_cosine": 0.1976793110370636
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 57,
+        "singular_value": 0.5684270858764648,
+        "cosine": -0.19280007481575012,
+        "abs_cosine": 0.19280007481575012
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 52,
+        "singular_value": 0.5966857671737671,
+        "cosine": -0.18572063744068146,
+        "abs_cosine": 0.18572063744068146
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 73,
+        "singular_value": 0.48763221502304077,
+        "cosine": -0.18063676357269287,
+        "abs_cosine": 0.18063676357269287
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 67,
+        "singular_value": 0.5172635912895203,
+        "cosine": 0.17543449997901917,
+        "abs_cosine": 0.17543449997901917
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_C",
+        "index": 11,
+        "singular_value": 0.892439067363739,
+        "cosine": 0.16928713023662567,
+        "abs_cosine": 0.16928713023662567
+      }
+    ],
+    "fc2_left__token_embedding_ABC_mean": [
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 45,
+        "singular_value": 0.6230940818786621,
+        "cosine": 0.26812121272087097,
+        "abs_cosine": 0.26812121272087097
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 47,
+        "singular_value": 0.6175304651260376,
+        "cosine": -0.23994946479797363,
+        "abs_cosine": 0.23994946479797363
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 88,
+        "singular_value": 0.40382009744644165,
+        "cosine": -0.22776053845882416,
+        "abs_cosine": 0.22776053845882416
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 23,
+        "singular_value": 0.7722049951553345,
+        "cosine": -0.21658970415592194,
+        "abs_cosine": 0.21658970415592194
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 11,
+        "singular_value": 0.892439067363739,
+        "cosine": 0.18010380864143372,
+        "abs_cosine": 0.18010380864143372
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 72,
+        "singular_value": 0.490178644657135,
+        "cosine": -0.17675486207008362,
+        "abs_cosine": 0.17675486207008362
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 39,
+        "singular_value": 0.6616930365562439,
+        "cosine": 0.17046114802360535,
+        "abs_cosine": 0.17046114802360535
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 62,
+        "singular_value": 0.5457226037979126,
+        "cosine": -0.1696246862411499,
+        "abs_cosine": 0.1696246862411499
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 84,
+        "singular_value": 0.42708465456962585,
+        "cosine": 0.16493327915668488,
+        "abs_cosine": 0.16493327915668488
+      },
+      {
+        "matrix": "fc2_left",
+        "representation": "token_embedding_ABC_mean",
+        "index": 14,
+        "singular_value": 0.8510846495628357,
+        "cosine": 0.16468113660812378,
+        "abs_cosine": 0.16468113660812378
+      }
+    ]
+  }
+}

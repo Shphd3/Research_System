@@ -1,0 +1,72 @@
+{
+  "abc_final_metrics": {
+    "step": 500.0,
+    "loss": 2.8459951480229697,
+    "ppl": 17.218685286373162,
+    "ab_loss": 0.3653712198138237,
+    "bc_loss": 0.03457718125234047,
+    "abc_loss": 0.1999742005330821,
+    "ab_accuracy": 1.0,
+    "bc_accuracy": 1.0,
+    "abc_accuracy": 1.0,
+    "background_loss": 3.33752832810084,
+    "ab_count": 6534.0,
+    "bc_count": 6536.0
+  },
+  "random_final_metrics": {
+    "step": 500.0,
+    "loss": 3.2595209876696267,
+    "ppl": 26.03706208111921,
+    "ab_loss": NaN,
+    "bc_loss": NaN,
+    "abc_loss": NaN,
+    "ab_accuracy": 0.0,
+    "bc_accuracy": 0.0,
+    "abc_accuracy": 0.0,
+    "background_loss": 3.2595209876696267,
+    "ab_count": 0.0,
+    "bc_count": 0.0
+  },
+  "svd_summary_rows": [
+    {
+      "condition": "abc_motif",
+      "matrix": "ffn_fc1_weight",
+      "rank_full": 100,
+      "top1": 2.890976667404175,
+      "top2": 2.3661491870880127,
+      "top5_energy_fraction": 0.1490485668182373,
+      "top10_energy_fraction": 0.24071332812309265,
+      "stable_rank": 19.159789991160405
+    },
+    {
+      "condition": "abc_motif",
+      "matrix": "ffn_fc2_weight",
+      "rank_full": 100,
+      "top1": 2.060969591140747,
+      "top2": 1.6932952404022217,
+      "top5_energy_fraction": 0.2352527379989624,
+      "top10_energy_fraction": 0.3314998149871826,
+      "stable_rank": 11.480871056568043
+    },
+    {
+      "condition": "random_only",
+      "matrix": "ffn_fc1_weight",
+      "rank_full": 100,
+      "top1": 2.7861692905426025,
+      "top2": 1.8347795009613037,
+      "top5_energy_fraction": 0.13342006504535675,
+      "top10_energy_fraction": 0.225460946559906,
+      "stable_rank": 20.13620017363371
+    },
+    {
+      "condition": "random_only",
+      "matrix": "ffn_fc2_weight",
+      "rank_full": 100,
+      "top1": 1.9318428039550781,
+      "top2": 1.131714940071106,
+      "top5_energy_fraction": 0.18408358097076416,
+      "top10_energy_fraction": 0.28801828622817993,
+      "stable_rank": 12.323764165264167
+    }
+  ]
+}

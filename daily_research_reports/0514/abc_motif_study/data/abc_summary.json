@@ -1,0 +1,72 @@
+{
+  "final_metrics": {
+    "step": 500.0,
+    "loss": 2.8459951480229697,
+    "ppl": 17.218685286373162,
+    "ab_loss": 0.3653712198138237,
+    "bc_loss": 0.03457718125234047,
+    "abc_loss": 0.1999742005330821,
+    "ab_accuracy": 1.0,
+    "bc_accuracy": 1.0,
+    "abc_accuracy": 1.0,
+    "background_loss": 3.33752832810084,
+    "ab_count": 6534.0,
+    "bc_count": 6536.0
+  },
+  "ffn_fc1_summary": {
+    "name": "ffn_fc1_weight",
+    "shape": [
+      400,
+      100
+    ],
+    "rank_full": 100,
+    "top_10_singular_values": [
+      2.890976667404175,
+      2.3661491870880127,
+      1.8982136249542236,
+      1.7839926481246948,
+      1.7678495645523071,
+      1.7561237812042236,
+      1.7390605211257935,
+      1.7064491510391235,
+      1.69474196434021,
+      1.6691616773605347
+    ],
+    "top_1_energy_fraction": 0.05219263955950737,
+    "top_5_energy_fraction": 0.1490485668182373,
+    "top_10_energy_fraction": 0.24071332812309265,
+    "stable_rank": 19.159789991160405
+  },
+  "ffn_fc2_summary": {
+    "name": "ffn_fc2_weight",
+    "shape": [
+      100,
+      400
+    ],
+    "rank_full": 100,
+    "top_10_singular_values": [
+      2.060969591140747,
+      1.6932952404022217,
+      1.427066445350647,
+      1.086520791053772,
+      1.0679267644882202,
+      1.0208796262741089,
+      0.9846612811088562,
+      0.9707649350166321,
+      0.941243052482605,
+      0.9238603115081787
+    ],
+    "top_1_energy_fraction": 0.08710140734910965,
+    "top_5_energy_fraction": 0.2352527379989624,
+    "top_10_energy_fraction": 0.3314998149871826,
+    "stable_rank": 11.480871056568043
+  },
+  "artifacts": {
+    "dataset": "experiments/abc_motif/out/dataset.pt",
+    "metrics_csv": "experiments/abc_motif/out/metrics.csv",
+    "training_loss_svg": "experiments/abc_motif/out/training_loss.svg",
+    "abc_accuracy_svg": "experiments/abc_motif/out/abc_prediction_accuracy.svg",
+    "ffn_svd_json": "experiments/abc_motif/out/ffn_svd.json",
+    "ffn_svd_svg": "experiments/abc_motif/out/ffn_svd_spectrum.svg"
+  }
+}

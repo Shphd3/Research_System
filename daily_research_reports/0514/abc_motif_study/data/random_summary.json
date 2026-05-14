@@ -1,0 +1,72 @@
+{
+  "final_metrics": {
+    "step": 500.0,
+    "loss": 3.2595209876696267,
+    "ppl": 26.03706208111921,
+    "ab_loss": NaN,
+    "bc_loss": NaN,
+    "abc_loss": NaN,
+    "ab_accuracy": 0.0,
+    "bc_accuracy": 0.0,
+    "abc_accuracy": 0.0,
+    "background_loss": 3.2595209876696267,
+    "ab_count": 0.0,
+    "bc_count": 0.0
+  },
+  "ffn_fc1_summary": {
+    "name": "ffn_fc1_weight",
+    "shape": [
+      400,
+      100
+    ],
+    "rank_full": 100,
+    "top_10_singular_values": [
+      2.7861692905426025,
+      1.8347795009613037,
+      1.8289411067962646,
+      1.7980178594589233,
+      1.7742940187454224,
+      1.7378090620040894,
+      1.7064980268478394,
+      1.704293966293335,
+      1.6701148748397827,
+      1.66165030002594
+    ],
+    "top_1_energy_fraction": 0.049661800265312195,
+    "top_5_energy_fraction": 0.13342006504535675,
+    "top_10_energy_fraction": 0.225460946559906,
+    "stable_rank": 20.13620017363371
+  },
+  "ffn_fc2_summary": {
+    "name": "ffn_fc2_weight",
+    "shape": [
+      100,
+      400
+    ],
+    "rank_full": 100,
+    "top_10_singular_values": [
+      1.9318428039550781,
+      1.131714940071106,
+      1.10377037525177,
+      1.0792450904846191,
+      1.0346927642822266,
+      1.0261167287826538,
+      0.996020495891571,
+      0.9775256514549255,
+      0.9466150999069214,
+      0.940003514289856
+    ],
+    "top_1_energy_fraction": 0.08114403486251831,
+    "top_5_energy_fraction": 0.18408358097076416,
+    "top_10_energy_fraction": 0.28801828622817993,
+    "stable_rank": 12.323764165264167
+  },
+  "artifacts": {
+    "dataset": "experiments/abc_motif/random_out/dataset.pt",
+    "metrics_csv": "experiments/abc_motif/random_out/metrics.csv",
+    "training_loss_svg": "experiments/abc_motif/random_out/training_loss.svg",
+    "abc_accuracy_svg": "experiments/abc_motif/random_out/abc_prediction_accuracy.svg",
+    "ffn_svd_json": "experiments/abc_motif/random_out/ffn_svd.json",
+    "ffn_svd_svg": "experiments/abc_motif/random_out/ffn_svd_spectrum.svg"
+  }
+}
