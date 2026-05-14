@@ -175,6 +175,10 @@ local `figures/` directory, and should link back to the local experiment
 
 Big closure documents should be written in Chinese by default, with English kept
 only for metric names, code identifiers, paths, and quoted source terms.
+Keep big closures concise for reporting: merge mainline anchor with hypothesis,
+merge claim update with cannot-claim boundaries, and merge weakest point with
+next decision. Put setup details and long tables in experiment `summary.md` or
+`detailed.md`.
 
 ## Experiment Discipline
 

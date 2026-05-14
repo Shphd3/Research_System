@@ -57,45 +57,30 @@ files they synthesize.
 
 本轮实验原本要验证什么问题？
 
-## 2. 主线锚点
+## 2. 主线锚点与待判定假设
 
 它对应 architecture.md / mainline.md 里的哪一句问题定义？
-
-## 3. 待判定假设
 
 Hx: ...
 
 实验前证据强度：
 - 未支持 / 弱支持 / 不清楚
 
-## 4. 为什么这个实验能检验该假设
-
-为什么这个模型、数据、指标能测试这个假设？
-边界条件是什么？
-
-## 5. 实验设置摘要
-
-- Model:
-- Data:
-- Baseline:
-- Metric:
-- Key comparison:
-
-## 6. 直接结果
+## 3. 直接结果
 
 只写关键结果，不写流水账。
 
-## 7. 关键图片
+## 4. 关键图片
 
 - Figure:
 - Path:
 - Supports:
 
-## 8. 解释
+## 5. 解释
 
 结果说明什么？
 
-## 9. Claim 更新
+## 6. Claim 边界
 
 - 支持：
 - 弱支持：
@@ -103,19 +88,14 @@ Hx: ...
 - 被反驳：
 - 仍不清楚：
 
-## 10. 不能声称什么
-
 明确不能说什么。
 
-## 11. 最弱点
+## 7. 最弱点与下一步
 
 导师最可能攻击哪里？
-
-## 12. 下一步决策
-
 继续 / 修改 / 停止 / 换假设。
 
-## 13. 30 秒汇报版本
+## 8. 30 秒汇报版本
 
 一句话目的 + 结果 + 边界 + 下一步。
 ```
@@ -128,9 +108,10 @@ Hx: ...
 - Advisor-facing big closure belongs in `main/hypotheses/`.
 - Big closure should reference the local summary files it synthesizes.
 - Keep the result section short; do not paste full logs.
+- Put setup details, metric details, and long tables in the corresponding experiment `summary.md` / `detailed.md`, not in the big closure.
 - Copy report-ready figures into the closure folder's `figures/` directory and
   embed them with Markdown image links when figures exist.
-- Separate result, interpretation, claim update, and next decision.
+- Merge mainline anchor with hypothesis, merge claim update with cannot-claim boundaries, and merge weakest point with next decision.
 - Do not upgrade a claim unless the setup directly tests it.
 - If the setup only tests a boundary condition, say so.
 - After a closure is complete, state whether `consensus.md` should be updated and which specific item changes.
