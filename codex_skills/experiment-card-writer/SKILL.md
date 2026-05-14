@@ -1,6 +1,6 @@
 ---
 name: experiment-card-writer
-description: Use when designing, rewriting, or analyzing research experiments as purpose-first project-local experiment cards and detailed execution plans, with known narrative, hypothesis, data/task construction, setup boundary, baselines, metrics, result, conclusion, and next decision.
+description: Use when designing, rewriting, or analyzing research experiments as purpose-first project-local experiment cards and detailed execution plans. Purpose cards connect the main purpose, mainline position, known narrative, hypotheses, experiment object, paradigm, expected outcomes, and hypothesis-update logic; execution plans contain concrete run details.
 metadata:
   short-description: Write purpose-first experiment cards
 ---
@@ -11,8 +11,8 @@ Convert experiment ideas, raw notes, logs, or result summaries into a
 purpose-first experiment card and, when needed, a detailed execution plan.
 
 The first job is to stabilize the researcher's thinking before execution:
-state why the experiment exists, what known narrative it relies on, and what
-hypothesis it can actually decide.
+state why the experiment exists, where it sits in the mainline, what known
+narrative it relies on, and what hypothesis it can actually decide.
 
 ## Location Rule
 
@@ -69,16 +69,20 @@ for a global/cross-project card.
 Before writing a card, answer these internally and reflect them in the card:
 
 1. What is the purpose / main reason for this experiment?
-2. What known narrative, premise, or prior result motivates it?
-3. What is the core hypothesis?
-4. How are data and task constructed to test that hypothesis?
-5. Why is this setup meaningful: model, data, task, diagnostic target?
-6. What are the boundary conditions of this setup?
-7. Which experiments are needed, and do they jointly test the hypothesis rather than only show a suggestive signal?
+2. Where does this experiment sit in the current project mainline?
+3. What known narrative, premise, or prior result motivates it?
+4. What is the experiment purpose, as distinct from the general purpose?
+5. What is the core hypothesis and what sub-hypotheses make it decidable?
+6. What is the experiment object and high-level paradigm?
+7. What result patterns would update the hypothesis?
+8. What are the claim boundaries?
 
 ## Required Output For Purpose Card
 
-Write `experiments/<experiment_id>/purpose_card.md` first by default:
+Write `experiments/<experiment_id>/purpose_card.md` first by default. Keep it
+focused on the purpose chain, not run mechanics. Commands, full configs,
+hyperparameters, metric schemas, artifact contracts, and pass/fail mechanics
+belong in `execution_plan.md`.
 
 ```markdown
 # Experiment Card: E1 Router-Attention Recall
@@ -86,70 +90,47 @@ Write `experiments/<experiment_id>/purpose_card.md` first by default:
 ## 1. Purpose / Main Reason
 Explain why this experiment exists and what thinking it is meant to clarify.
 
-## 2. Known Narrative / Premise
+## 2. Mainline Position
+Explain where this experiment sits in the active research chain.
+
+## 3. Known Narrative / Premise
 State the accepted premise, prior result, or working belief used by the
 experiment. Keep it claim-safe.
 
-## 3. Hypothesis To Decide
+## 4. Experiment Purpose
+State the local decision this experiment is meant to make.
+
+## 5. Hypothesis And Sub-Hypotheses
 H1: Router bucket and attention top-token are aligned.
 
-## 4. Experiment Question
-Given query token q_t, do router-retrieved candidate tokens cover dense attention top-M tokens?
+H1a:
+H1b:
+H1c:
 
-## 5. Data And Task Construction
-Data:
-Task:
-Target signal:
-Why this construction tests H1:
+## 6. Experiment Object
+Name the data/model/signal object at a high level.
 
-## 6. Setup
-Model:
-Dataset:
-Layer:
-Head:
-Signal source:
-Candidate construction:
+## 7. Experiment Paradigm
+Describe the high-level comparison or diagnostic pattern.
 
-## 7. Baselines
-- Random bucket
-- Local window
-- Oracle top-M
-- Full attention
-
-## 8. Metrics
-- Recall@K
-- Attention Mass Recall
-- Candidate Ratio
-- Sparse Output Error
-- Accuracy Drop
-
-## 9. Key Figures For Reporting
-- Figure 1:
-- Figure 2:
-- Figure 3:
-
-## 10. Expected Outcomes
+## 8. Expected Outcomes And Hypothesis Update Logic
 If H1 holds:
-Gate recall > Random recall.
+
+If H1 weakens:
 
 If H1 fails:
-Gate recall ~= Random recall.
 
-## 11. What This Can Prove
-It can test whether the router provides a coarse retrieval signal.
+## 9. What This Can Prove
 
-## 12. What This Cannot Prove
-It cannot prove full inference speedup.
-It cannot prove million-token scalability.
-It cannot prove standard MoE routing is already sufficient.
+## 10. What This Cannot Prove
 
-## 13. Result
+## 11. Result
 TBD.
 
-## 14. Conclusion
+## 12. Conclusion
 TBD.
 
-## 15. Next Step
+## 13. Next Step
 TBD.
 ```
 
@@ -157,8 +138,9 @@ For recursive experiment projects:
 
 - top-level `purpose_card.md` states the whole abstract purpose, known narrative,
   logic chain, hypotheses, stage map, and global claim boundary;
-- each `stages/<stage_id>/purpose_card.md` states only the local purpose,
-  local hypothesis, data/task construction, claim boundary, and next gate.
+- each `stages/<stage_id>/purpose_card.md` states only the local purpose chain,
+  local hypothesis, experiment object/paradigm, expected outcome logic, claim
+  boundary, and next gate. It should not duplicate execution details.
 
 ## Required Output For Execution Plan
 
@@ -201,6 +183,9 @@ Use this compact shape for `summary.md`:
 ```markdown
 # Result Summary: E1 Router-Attention Recall
 
+### Purpose And Hypothesis
+Briefly restate the experiment purpose and hypothesis from `purpose_card.md`.
+
 ### Observation
 We observe: Gate candidate Recall@K = __, Random candidate Recall@K = __.
 
@@ -235,6 +220,8 @@ explain which claim boundary each figure supports.
 
 ```markdown
 # Result Summary: E1 Router-Attention Recall
+
+## Purpose And Hypothesis
 
 ## Observation
 

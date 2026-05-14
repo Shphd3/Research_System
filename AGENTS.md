@@ -139,14 +139,21 @@ Use this recursive shape when one experiment contains gated sub-experiments
 such as data sanity -> dense readback -> MoE separation -> real-data comparison.
 
 `purpose_card.md` is the first document to write. It stabilizes the research
-thinking before execution. It must state:
+thinking before execution. It is not the place for operational details. It must
+connect the experiment's purpose chain:
 
-- the purpose / main reason for the experiment;
-- the known narrative or premises being used;
-- the hypothesis to decide;
-- the data and task construction;
-- what result would change the project viewpoint;
+- the overall purpose and why this experiment exists;
+- where it sits in the active project mainline;
+- the known narrative, premises, or prior results being used;
+- the experiment purpose;
+- the hypothesis and refined sub-hypotheses;
+- the experiment object and high-level paradigm;
+- the expected result patterns and how each would update the hypothesis;
 - what cannot be claimed even if the experiment works.
+
+Keep concrete run details, commands, config paths, model hyperparameters,
+metric schemas, artifact contracts, and pass/fail mechanics in
+`execution_plan.md`, not in `purpose_card.md`.
 
 `execution_plan.md` is the operational document. It should contain concrete
 run details: dataset construction, config, model/training setup, metrics,
@@ -157,9 +164,10 @@ card and execution plan. The top-level purpose card explains the whole research
 logic chain; stage cards explain only their local decision.
 
 `summary.md` is the claim-safe result analysis and local experiment closure
-after the run. It must state the direct result, interpretation, limitation,
-claim update, next decision, and embed the key figure(s) needed for
-advisor-facing reporting when figures exist.
+after the run. It must restate the purpose and hypothesis from the purpose card
+briefly, then state the direct result, interpretation, limitation, claim update,
+next decision, and embed the key figure(s) needed for advisor-facing reporting
+when figures exist.
 
 `detailed.md` keeps the longer tables, logs, figures, seed notes, and failure
 analysis. It must record figure paths and what each figure supports. Report
@@ -198,48 +206,42 @@ Compress the task through these questions:
 6. What are the boundary conditions of this setup?
 7. Which experiments are needed, and do they jointly test the hypothesis rather than only show a suggestive signal?
 
-For experiment design, output a compact purpose card by default. Add a detailed
-execution plan only when the user is ready to run or asks for implementation
-details.
+For experiment design, output a compact purpose card by default. The purpose
+card should link the mainline position, known premises, experiment purpose,
+hypothesis, object, paradigm, expected outcomes, and hypothesis-update logic.
+Add a detailed execution plan only when the user is ready to run or asks for
+implementation details.
 
 ```markdown
 # Experiment Card: E1 Router-Attention Recall
 
 ## 1. Purpose / Main Reason
 
-## 2. Known Narrative / Premise
+## 2. Mainline Position
 
-## 3. Hypothesis To Decide
+## 3. Known Narrative / Premise
 
-## 4. Experiment Question
+## 4. Experiment Purpose
 
-## 5. Data And Task Construction
+## 5. Hypothesis And Sub-Hypotheses
 
-## 6. Setup
-Model:
-Dataset:
-Layer:
-Head:
-Signal source:
-Candidate construction:
+## 6. Experiment Object
 
-## 7. Baselines
+## 7. Experiment Paradigm
 
-## 8. Metrics
+## 8. Expected Outcomes And Hypothesis Update Logic
 
-## 9. Expected Outcomes
+## 9. What This Can Prove
 
-## 10. What This Can Prove
+## 10. What This Cannot Prove
 
-## 11. What This Cannot Prove
-
-## 12. Result
+## 11. Result
 TBD.
 
-## 13. Conclusion
+## 12. Conclusion
 TBD.
 
-## 14. Next Step
+## 13. Next Step
 TBD.
 ```
 
