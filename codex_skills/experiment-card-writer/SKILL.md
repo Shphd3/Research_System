@@ -37,6 +37,7 @@ experiments/<experiment_id>/
   execution_plan.md
   summary.md
   detailed.md
+  figures/
 ```
 
 For a linked experiment line, use a recursive project folder:
@@ -52,6 +53,7 @@ experiments/<experiment_project_id>/
       execution_plan.md
       summary.md
       detailed.md
+      figures/
   source_notes/
 ```
 
@@ -191,7 +193,8 @@ location.
 ## Required Output For Result Analysis
 
 Each experiment result should be a folder. Put claim-safe synthesis in
-`summary.md` and longer evidence in `detailed.md`.
+`summary.md` and longer evidence in `detailed.md`. `summary.md` is also the
+local experiment closure.
 
 Use this compact shape for `summary.md`:
 
@@ -212,6 +215,7 @@ This does not show:
 
 ### Key Figures
 - Figure:
+- Path:
 - What it should show:
 - Meeting use:
 
@@ -223,7 +227,35 @@ Therefore:
 ```
 
 Use `detailed.md` for full tables, per-seed metrics, figures, logs, and
-counterexamples.
+counterexamples. When figures exist, copy report-ready images into a local
+`figures/` folder beside the report, embed them with Markdown image links, and
+explain which claim boundary each figure supports.
+
+`summary.md` must close the local loop:
+
+```markdown
+# Result Summary: E1 Router-Attention Recall
+
+## Observation
+
+## Interpretation
+
+## Limitation
+
+## Key Figures
+- Figure:
+- Path:
+- Supports:
+
+## Claim Update
+- Supported:
+- Weakened:
+- Still unclear:
+
+## What Cannot Be Claimed
+
+## Next Decision
+```
 
 ## Rules
 
@@ -233,10 +265,13 @@ counterexamples.
 - For multi-stage lines, create recursive `stages/<stage_id>/` folders instead
   of flattening all cards into one document.
 - Store each experiment result as a folder with `summary.md` and `detailed.md`.
+- Use `summary.md` as the local experiment closure after every experiment or stage result exists.
 - Do not output multiple cards unless the user asks.
 - Separate result, interpretation, limitation, and decision.
 - Do not let a metric improvement become a stronger public claim than it supports.
 - Prefer decision-oriented wording over long experiment narration.
 - Every experiment card should specify the key figure(s) needed for advisor-facing reporting.
 - Figures should be diagnostic, not decorative: they must support a claim boundary or next decision.
+- Result summaries and detailed analyses should embed local `figures/` images when figures exist.
+- Put local experiment closure in `experiments/.../summary.md`; put advisor-facing big closure synthesis in `main/hypotheses/`.
 - When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

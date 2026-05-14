@@ -32,6 +32,7 @@ Projects/<project>/main/
       execution_plan.md
       summary.md
       detailed.md
+      figures/
     <experiment_project_id>/
       README.md
       purpose_card.md
@@ -42,7 +43,12 @@ Projects/<project>/main/
           execution_plan.md
           summary.md
           detailed.md
+          figures/
       source_notes/
+    hypotheses/
+      <closure_id>/
+        hypothesis_closure.md
+        figures/
 ```
 
 `README.md` is the default file to read first. It must point to every other
@@ -106,11 +112,12 @@ per experiment:
 
 ```text
 experiments/<experiment_id>/
-  README.md
-  purpose_card.md
-  execution_plan.md
-  summary.md
-  detailed.md
+    README.md
+    purpose_card.md
+    execution_plan.md
+    summary.md
+    detailed.md
+    figures/
 ```
 
 For a gated experiment line, use recursive stage folders:
@@ -126,6 +133,7 @@ experiments/<experiment_project_id>/
       execution_plan.md
       summary.md
       detailed.md
+      figures/
   source_notes/
 ```
 
@@ -155,10 +163,34 @@ modes.
 - the direct result;
 - the interpretation;
 - the limitation;
+- the key figure paths when figures exist;
+- the claim update;
 - the decision.
 
 `detailed.md` is added after a run and should contain supporting tables, figures, seed notes, command
 records, failed runs, and longer analysis. Do not make `summary.md` a raw log.
+
+`summary.md` is also the local experiment closure. Do not create a separate
+`closure.md` unless the user explicitly asks for a legacy split. For recursive
+experiment projects, each stage closes locally through its own `summary.md`.
+
+When figures exist, copy report-ready images into a `figures/` folder beside
+the report and embed them with relative Markdown image links. A result is not
+report-ready if the key plot path and what it supports are missing.
+
+### `hypotheses/`
+
+Use this folder for advisor-facing big closure documents. These synthesize a
+tightly scoped hypothesis family or an experiment line across local experiment
+summaries. They should not replace per-experiment `summary.md` files.
+
+Each big closure should be a folder:
+
+```text
+hypotheses/<closure_id>/
+  hypothesis_closure.md
+  figures/
+```
 
 ### `status.md`
 

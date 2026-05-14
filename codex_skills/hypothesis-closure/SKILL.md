@@ -11,19 +11,36 @@ Use this skill after an experiment or analysis has enough result evidence to upd
 
 If the experiment is not finished, write only the sections that can be filled and mark the rest as `TBD`. Do not pretend the hypothesis is closed before results exist.
 
-## Default Location
+## Location Rule
 
-For project-specific closure documents, write under the active project's hypothesis folder. For the current primary project, use:
-
-```text
-Projects/from-attention-to-search/XingyuD/main/hypotheses/
-```
-
-Name files like:
+Every completed experiment or recursive stage must first have a local closure
+inside its experiment summary:
 
 ```text
-H001_router_attention_recall_closure_MMDD.md
+Projects/<project>/main/experiments/<experiment_id>/summary.md
+Projects/<project>/main/experiments/<experiment_project_id>/stages/<stage_id>/summary.md
 ```
+
+Use local `summary.md` to close the experiment's immediate hypothesis.
+
+Use the active project's `hypotheses/` folder for advisor-facing big closure
+documents that synthesize one experiment line or one tightly scoped hypothesis
+family. Each big closure should be a subfolder with its own figures:
+
+```text
+Projects/from-attention-to-search/XingyuD/main/hypotheses/<closure_id>/
+  hypothesis_closure.md
+  figures/
+```
+
+Name big closure files like:
+
+```text
+H001_router_attention_recall_closure_MMDD/hypothesis_closure.md
+```
+
+Big closure documents should link back to the local experiment `summary.md`
+files they synthesize.
 
 ## Required Output
 
@@ -62,11 +79,17 @@ Claim strength before experiment:
 
 只写关键结果，不写流水账。
 
-## 7. Interpretation
+## 7. Key Figures
+
+- Figure:
+- Path:
+- Supports:
+
+## 8. Interpretation
 
 结果说明什么？
 
-## 8. Claim Update
+## 9. Claim Update
 
 - Supported:
 - Weakly supported:
@@ -74,19 +97,19 @@ Claim strength before experiment:
 - Contradicted:
 - Still unclear:
 
-## 9. What Cannot Be Claimed
+## 10. What Cannot Be Claimed
 
 明确不能说什么。
 
-## 10. Weakest Point
+## 11. Weakest Point
 
 导师最可能攻击哪里？
 
-## 11. Next Decision
+## 12. Next Decision
 
 继续 / 修改 / 停止 / 换假设。
 
-## 12. 30s Advisor Version
+## 13. 30s Advisor Version
 
 一句话目的 + 结果 + 边界 + 下一步。
 ```
@@ -94,7 +117,12 @@ Claim strength before experiment:
 ## Rules
 
 - One closure document should close one hypothesis or one tightly scoped hypothesis family.
+- Local experiment closure belongs in `experiments/.../summary.md`.
+- Advisor-facing big closure belongs in `main/hypotheses/`.
+- Big closure should reference the local summary files it synthesizes.
 - Keep the result section short; do not paste full logs.
+- Copy report-ready figures into the closure folder's `figures/` directory and
+  embed them with Markdown image links when figures exist.
 - Separate result, interpretation, claim update, and next decision.
 - Do not upgrade a claim unless the setup directly tests it.
 - If the setup only tests a boundary condition, say so.

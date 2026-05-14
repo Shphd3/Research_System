@@ -115,6 +115,7 @@ Projects/<project>/main/experiments/<experiment_id>/
   execution_plan.md
   summary.md
   detailed.md
+  figures/
 ```
 
 For a multi-stage experiment line, use a recursive project folder:
@@ -130,6 +131,7 @@ Projects/<project>/main/experiments/<experiment_project_id>/
       execution_plan.md
       summary.md
       detailed.md
+      figures/
   source_notes/
 ```
 
@@ -154,9 +156,22 @@ For recursive experiment projects, each stage must have its own local purpose
 card and execution plan. The top-level purpose card explains the whole research
 logic chain; stage cards explain only their local decision.
 
-`summary.md` is the claim-safe result analysis after the run. `detailed.md` keeps the longer
-tables, logs, figures, seed notes, and failure analysis. Do not put raw logs in
-the mainline unless they are small and necessary to understand the decision.
+`summary.md` is the claim-safe result analysis and local experiment closure
+after the run. It must state the direct result, interpretation, limitation,
+claim update, next decision, and embed the key figure(s) needed for
+advisor-facing reporting when figures exist.
+
+`detailed.md` keeps the longer tables, logs, figures, seed notes, and failure
+analysis. It must record figure paths and what each figure supports. Report
+figures should be copied into a `figures/` folder beside the report file and
+referenced with relative Markdown image links. Do not put raw logs in the
+mainline unless they are small and necessary to understand the decision.
+
+Project `hypotheses/` is reserved for larger advisor-facing hypothesis closure
+documents. These synthesize one experiment line or a tightly scoped hypothesis
+family for reporting; each big closure should live in its own subfolder with a
+local `figures/` directory, and should link back to the local experiment
+`summary.md` files rather than replacing them.
 
 ## Experiment Discipline
 
@@ -228,6 +243,10 @@ For result analysis, keep it to:
 ### Interpretation
 
 ### Limitation
+
+### Key Figures
+
+### Claim Update
 
 ### Decision
 ```
