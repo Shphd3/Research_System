@@ -27,10 +27,22 @@ Projects/<project>/main/
   experiments/
     README.md
     <experiment_id>/
+      README.md
       purpose_card.md
       execution_plan.md
       summary.md
       detailed.md
+    <experiment_project_id>/
+      README.md
+      purpose_card.md
+      execution_plan.md
+      stages/
+        <stage_id>/
+          purpose_card.md
+          execution_plan.md
+          summary.md
+          detailed.md
+      source_notes/
 ```
 
 `README.md` is the default file to read first. It must point to every other
@@ -94,11 +106,32 @@ per experiment:
 
 ```text
 experiments/<experiment_id>/
+  README.md
   purpose_card.md
   execution_plan.md
   summary.md
   detailed.md
 ```
+
+For a gated experiment line, use recursive stage folders:
+
+```text
+experiments/<experiment_project_id>/
+  README.md
+  purpose_card.md
+  execution_plan.md
+  stages/
+    <stage_id>/
+      purpose_card.md
+      execution_plan.md
+      summary.md
+      detailed.md
+  source_notes/
+```
+
+The top-level card explains the whole research logic chain. Stage cards explain
+the local decision. `source_notes/` may store copied raw plans, meeting notes,
+or daily notes as provenance; do not treat source notes as claim-safe results.
 
 `purpose_card.md` is required before running. It should state:
 

@@ -110,11 +110,31 @@ Default experiment layout:
 
 ```text
 Projects/<project>/main/experiments/<experiment_id>/
+  README.md
   purpose_card.md
   execution_plan.md
   summary.md
   detailed.md
 ```
+
+For a multi-stage experiment line, use a recursive project folder:
+
+```text
+Projects/<project>/main/experiments/<experiment_project_id>/
+  README.md
+  purpose_card.md
+  execution_plan.md
+  stages/
+    <stage_id>/
+      purpose_card.md
+      execution_plan.md
+      summary.md
+      detailed.md
+  source_notes/
+```
+
+Use this recursive shape when one experiment contains gated sub-experiments
+such as data sanity -> dense readback -> MoE separation -> real-data comparison.
 
 `purpose_card.md` is the first document to write. It stabilizes the research
 thinking before execution. It must state:
@@ -129,6 +149,10 @@ thinking before execution. It must state:
 `execution_plan.md` is the operational document. It should contain concrete
 run details: dataset construction, config, model/training setup, metrics,
 artifacts, commands, expected outputs, and pass/fail criteria.
+
+For recursive experiment projects, each stage must have its own local purpose
+card and execution plan. The top-level purpose card explains the whole research
+logic chain; stage cards explain only their local decision.
 
 `summary.md` is the claim-safe result analysis after the run. `detailed.md` keeps the longer
 tables, logs, figures, seed notes, and failure analysis. Do not put raw logs in

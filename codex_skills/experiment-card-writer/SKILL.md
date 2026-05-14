@@ -32,11 +32,32 @@ Default new-experiment layout:
 
 ```text
 experiments/<experiment_id>/
+  README.md
   purpose_card.md
   execution_plan.md
   summary.md
   detailed.md
 ```
+
+For a linked experiment line, use a recursive project folder:
+
+```text
+experiments/<experiment_project_id>/
+  README.md
+  purpose_card.md
+  execution_plan.md
+  stages/
+    <stage_id>/
+      purpose_card.md
+      execution_plan.md
+      summary.md
+      detailed.md
+  source_notes/
+```
+
+Use recursive folders when there is a gated logic chain such as data sanity ->
+dense readback -> MoE separation -> real-data statistics. Copy raw daily plans
+or meeting notes into `source_notes/` only when they are needed as provenance.
 
 Do not create root-level `experiments/` cards unless the user explicitly asks
 for a global/cross-project card.
@@ -130,6 +151,13 @@ TBD.
 TBD.
 ```
 
+For recursive experiment projects:
+
+- top-level `purpose_card.md` states the whole abstract purpose, known narrative,
+  logic chain, hypotheses, stage map, and global claim boundary;
+- each `stages/<stage_id>/purpose_card.md` states only the local purpose,
+  local hypothesis, data/task construction, claim boundary, and next gate.
+
 ## Required Output For Execution Plan
 
 Write `experiments/<experiment_id>/execution_plan.md` when the user is preparing a run. It must be concrete
@@ -154,6 +182,11 @@ enough that another agent can execute without redesigning the experiment:
 
 ## 8. Result Location
 ```
+
+For recursive experiment projects, the top-level `execution_plan.md` should
+define stage order and gates. Each stage `execution_plan.md` should define the
+actual runnable setup, metrics, artifacts, pass/fail criteria, and result
+location.
 
 ## Required Output For Result Analysis
 
@@ -197,6 +230,8 @@ counterexamples.
 - Keep the card short.
 - Start with purpose and known narrative, not model details.
 - Separate `purpose_card.md` from `execution_plan.md` for new experiments.
+- For multi-stage lines, create recursive `stages/<stage_id>/` folders instead
+  of flattening all cards into one document.
 - Store each experiment result as a folder with `summary.md` and `detailed.md`.
 - Do not output multiple cards unless the user asks.
 - Separate result, interpretation, limitation, and decision.
