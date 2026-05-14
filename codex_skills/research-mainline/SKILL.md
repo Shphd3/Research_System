@@ -24,12 +24,13 @@ Projects/<project>/main/
   status.md
   hypotheses/
     README.md
-  plans/
-    README.md
-    E*.md
   experiments/
     README.md
-    R*.md
+    <experiment_id>/
+      purpose_card.md
+      execution_plan.md
+      summary.md
+      detailed.md
 ```
 
 `README.md` is the default file to read first. It must point to every other
@@ -86,18 +87,35 @@ The hypothesis index. Each hypothesis needs:
 
 Every experiment card must map to at least one hypothesis.
 
-### `plans/`
-
-Only experiment cards belong here.
-
-Every plan file should be a compact experiment card and should name the
-hypothesis it tests. Do not put long narrative plans here.
-
 ### `experiments/`
 
-Only experiment result summaries belong here.
+Experiment planning documents and result summaries live together in one folder
+per experiment:
 
-Every result file should name:
+```text
+experiments/<experiment_id>/
+  purpose_card.md
+  execution_plan.md
+  summary.md
+  detailed.md
+```
+
+`purpose_card.md` is required before running. It should state:
+
+- purpose / main reason;
+- known narrative / premise;
+- hypothesis to decide;
+- data and task construction;
+- setup boundary;
+- metrics;
+- what this can and cannot prove;
+- next decision.
+
+`execution_plan.md` is required once the experiment is ready to run. It should
+state concrete configs, commands, artifacts, pass/fail criteria, and failure
+modes.
+
+`summary.md` is added after a run and should name:
 
 - the corresponding experiment card;
 - the hypothesis it changes;
@@ -105,6 +123,9 @@ Every result file should name:
 - the interpretation;
 - the limitation;
 - the decision.
+
+`detailed.md` is added after a run and should contain supporting tables, figures, seed notes, command
+records, failed runs, and longer analysis. Do not make `summary.md` a raw log.
 
 ### `status.md`
 
@@ -120,13 +141,16 @@ This is not a meeting report. It should answer:
 
 ## Experiment Card Contract
 
-Use this minimal card shape:
+Use this minimal purpose-card shape:
 
 ```markdown
 # Experiment Card: E1 Short Name
 
-Hypothesis:
-Question:
+Purpose / Main Reason:
+Known Narrative / Premise:
+Hypothesis To Decide:
+Experiment Question:
+Data And Task Construction:
 Setup:
 Baselines:
 Metrics:
@@ -138,7 +162,8 @@ Next Decision:
 ```
 
 Keep cards short. If a card needs long background, the background belongs in a
-separate source note or `legacy/`, not in `plans/`.
+separate source note, the detailed execution plan, or `legacy/`, not in the
+purpose card.
 
 ## Mainline Update Test
 

@@ -15,7 +15,7 @@ logs, and a short mainline-safe result summary.
 Before writing commands or conclusions:
 
 1. Read the active project's `main/` files, especially `current_mainline.md`.
-2. Read the relevant experiment card under the active `main/plans/`.
+2. Read the relevant experiment folder under the active `main/experiments/`.
 3. Read the experiment workspace `AGENTS.md` and the specific runbook/doc named by the user.
 4. For current `from-attention-to-search/XingyuD` work, use:
 
@@ -193,9 +193,10 @@ After completion, summarize only:
 - job id, submit log, runtime log, result/checkpoint path
 - direct result, interpretation, limitation, next decision
 
-Only promote a result to the active branch mainline, currently
-`Projects/from-attention-to-search/XingyuD/main/experiments/R*.md`, if it changes
-a hypothesis status, claim boundary, experiment status, or next decision.
+Only promote a result to the active branch mainline, currently as
+`Projects/from-attention-to-search/XingyuD/main/experiments/<experiment_id>/summary.md`
+plus `detailed.md`, if it changes a hypothesis status, claim boundary,
+experiment status, or next decision.
 
 Do not claim indexed-KV quality from training loss, router accuracy, or ACP
 success. Quality claims require post-training candidate retrieval plus exact QK

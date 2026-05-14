@@ -101,25 +101,72 @@ Agents should treat `Projects/<project>/main/` as the only required project cont
 
 Root-level `hypotheses/` and `experiments/` have been retired. Project-specific hypotheses, experiment cards, and experiment results belong under the specific project context.
 
+## Experiment File Discipline
+
+Every new experiment should be organized as a small folder, not as an isolated
+flat note, unless it is a legacy one-off card.
+
+Default experiment layout:
+
+```text
+Projects/<project>/main/experiments/<experiment_id>/
+  purpose_card.md
+  execution_plan.md
+  summary.md
+  detailed.md
+```
+
+`purpose_card.md` is the first document to write. It stabilizes the research
+thinking before execution. It must state:
+
+- the purpose / main reason for the experiment;
+- the known narrative or premises being used;
+- the hypothesis to decide;
+- the data and task construction;
+- what result would change the project viewpoint;
+- what cannot be claimed even if the experiment works.
+
+`execution_plan.md` is the operational document. It should contain concrete
+run details: dataset construction, config, model/training setup, metrics,
+artifacts, commands, expected outputs, and pass/fail criteria.
+
+`summary.md` is the claim-safe result analysis after the run. `detailed.md` keeps the longer
+tables, logs, figures, seed notes, and failure analysis. Do not put raw logs in
+the mainline unless they are small and necessary to understand the decision.
+
 ## Experiment Discipline
 
-Before proposing or summarizing experiments, compress the task through four questions:
+Before proposing or summarizing experiments, first write the purpose chain.
+Do not jump directly to architecture, scripts, or metrics.
 
-1. What is the core hypothesis?
-2. Why is this setup meaningful: model, data, task, and diagnostic target?
-3. What are the boundary conditions of this setup?
-4. Which experiments are needed, and do they jointly test the hypothesis rather than only show a suggestive signal?
+Compress the task through these questions:
 
-For experiment design, output one compact experiment card by default. Do not create a long experiment plan unless the user asks.
+1. What is the purpose / main reason for this experiment?
+2. What known narrative or premise makes this experiment meaningful?
+3. What is the core hypothesis?
+4. How are data and task constructed to test that hypothesis?
+5. Why is this setup meaningful: model, data, task, and diagnostic target?
+6. What are the boundary conditions of this setup?
+7. Which experiments are needed, and do they jointly test the hypothesis rather than only show a suggestive signal?
+
+For experiment design, output a compact purpose card by default. Add a detailed
+execution plan only when the user is ready to run or asks for implementation
+details.
 
 ```markdown
 # Experiment Card: E1 Router-Attention Recall
 
-## 1. Hypothesis To Decide
+## 1. Purpose / Main Reason
 
-## 2. Experiment Question
+## 2. Known Narrative / Premise
 
-## 3. Setup
+## 3. Hypothesis To Decide
+
+## 4. Experiment Question
+
+## 5. Data And Task Construction
+
+## 6. Setup
 Model:
 Dataset:
 Layer:
@@ -127,30 +174,30 @@ Head:
 Signal source:
 Candidate construction:
 
-## 4. Baselines
+## 7. Baselines
 
-## 5. Metrics
+## 8. Metrics
 
-## 6. Expected Outcomes
+## 9. Expected Outcomes
 
-## 7. What This Can Prove
+## 10. What This Can Prove
 
-## 8. What This Cannot Prove
+## 11. What This Cannot Prove
 
-## 9. Result
+## 12. Result
 TBD.
 
-## 10. Conclusion
+## 13. Conclusion
 TBD.
 
-## 11. Next Step
+## 14. Next Step
 TBD.
 ```
 
 For result analysis, keep it to:
 
 ```markdown
-## Result R1
+# Result Summary: <experiment_id>
 
 ### Observation
 
