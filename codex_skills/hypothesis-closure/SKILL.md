@@ -31,7 +31,11 @@ Use local `summary.md` to close the experiment's immediate hypothesis.
 
 Use the active project's `hypotheses/` folder for advisor-facing big closure
 documents that synthesize one experiment line or one tightly scoped hypothesis
-family. Each big closure should be a subfolder with its own figures:
+family. Do not create a new `hypotheses/` closure just because one experiment
+finished; single experiments and single diagnostic versions should close in
+their local `summary.md` unless the user is preparing a larger report.
+
+Each big closure should be a subfolder with its own figures:
 
 ```text
 Projects/from-attention-to-search/XingyuD/main/hypotheses/<closure_id>/
@@ -108,6 +112,9 @@ Hx: ...
 - Write closure documents in Chinese by default.
 - Local experiment closure belongs in `experiments/.../summary.md`.
 - Advisor-facing big closure belongs in `main/hypotheses/`.
+- Do not put every experiment into `main/hypotheses/`. Use `main/hypotheses/`
+  only after a series of experiments is ready for synthesis, reporting, or
+  mainline-level claim update.
 - Big closure should be self-contained. Do not assume the reader knows previous
   failed runs, chat history, or why a design changed. Mention prior context only
   if it is essential to the current claim.

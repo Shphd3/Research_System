@@ -45,10 +45,10 @@ Projects/<project>/main/
           detailed.md
           figures/
       source_notes/
-    hypotheses/
-      <closure_id>/
-        hypothesis_closure.md
-        figures/
+  hypotheses/
+    <closure_id>/
+      hypothesis_closure.md
+      figures/
 ```
 
 `README.md` is the default file to read first. It must point to every other
@@ -183,6 +183,11 @@ report-ready if the key plot path and what it supports are missing.
 Use this folder for advisor-facing big closure documents. These synthesize a
 tightly scoped hypothesis family or an experiment line across local experiment
 summaries. They should not replace per-experiment `summary.md` files.
+
+Do not create one big closure for every single experiment, version, or
+diagnostic. A single experiment closes locally in its `summary.md`; `hypotheses/`
+is for larger synthesis after a sequence of experiments is ready to report or
+when the project-level claim boundary changes.
 
 Write big closure documents in Chinese by default. Keep English only for metric
 names, file paths, code identifiers, and quoted source terms.
