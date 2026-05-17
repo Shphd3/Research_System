@@ -7,7 +7,8 @@ metadata:
 
 # Claim Auditor
 
-Audit claims against evidence and update claim boundaries.
+Audit claims against evidence and update claim boundaries. Use the active
+mainline, result summaries, and hypothesis closures as the source of truth.
 
 ## Required Output
 
@@ -29,7 +30,8 @@ What not to say:
 
 ## Rules
 
-- Read `claim_board.md` when available.
+- Read `CURRENT.md`, the active project `main/` files, experiment summaries,
+  hypothesis closures, or the user-provided evidence.
 - Separate result, interpretation, claim, and speculation.
 - Synthetic evidence cannot automatically justify real-language claims.
 - If an oracle result proves recoverability, do not treat it as learned-model success.

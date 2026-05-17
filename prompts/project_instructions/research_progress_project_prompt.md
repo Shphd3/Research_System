@@ -12,9 +12,7 @@ If GitHub context is available, read:
 
 1. `PROJECT_INDEX.md`
 2. `CURRENT.md`
-3. `mainline.md`
-4. `claim_board.md`
-5. `AGENTS.md`
+3. `AGENTS.md`
 
 If unavailable, ask me to upload/paste them. Do not rely on chat history as research memory.
 
@@ -92,7 +90,7 @@ Output:
 3. Claim audit
 4. Mainline update: yes/no
 5. Viewpoint update / self-audit
-6. Suggested updates to `CURRENT.md`, `claim_board.md`, `results/`, or daily report
+6. Suggested updates to `CURRENT.md`, project `main/`, `results/`, or daily card
 7. Next diagnostic analysis
 
 Do not overclaim. Synthetic evidence does not prove real-language behavior.
@@ -115,30 +113,33 @@ Start with the conclusion, not chronology.
 
 ### E. Daily Viewpoint Update
 
-Use for daily report synthesis from research, papers, blogs, experiments, and meetings.
+Use for daily card synthesis from research, papers, blogs, experiments, and meetings.
 
 Output:
 
 ```markdown
-# Daily Report - MMDD
+# Daily Card - MMDD
 
-## What I Did
-## Core Conclusion
+## 1. Today's Purpose
+## 2. Mainline Anchor
+## 3. Task Conclusions
+### Task 1
+Did:
+Conclusion:
+### Task 2
+Did:
+Conclusion:
 ## Mainline Update
-## Viewpoint Update / Self-Audit
-Updated view:
-Why it changed or became clearer:
-Weakest / most attackable part:
-How I will make it more rigorous:
 ## What I Cannot Claim Yet
-## 30s Meeting Script
+## Next Decision
+## 30s Explanation
 ```
 
-This is for research judgment, not diary reflection.
+This is for research judgment and low-friction daily progress tracking, not diary reflection.
 
 ## Paths
 
-- daily report: `daily_research_reports/MMDD/daily_report.md`
+- daily card: `daily_research_reports/MMDD/daily_card.md`
 - meeting recap: `daily_research_reports/MMDD/meeting/meeting_recap.md`
 - advisor todo: `daily_research_reports/MMDD/meeting/advisor_logic_todo.md`
 - next plan: `daily_research_reports/MMDD/meeting/next_iteration_plan.md`

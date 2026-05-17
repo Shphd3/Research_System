@@ -54,7 +54,7 @@ This research workspace and the remote experiment server are two different thing
 
 Track:
 
-- `AGENTS.md`, `CURRENT.md`, `mainline.md`, `claim_board.md`
+- `AGENTS.md`, `CURRENT.md`, `PROJECT_INDEX.md`
 - daily reports and experiment cards
 - meeting reports and PRISM `.tex` sources
 - paper reading cards and notes

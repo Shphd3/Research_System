@@ -7,7 +7,7 @@ metadata:
 
 # PRISM Report
 
-Use this skill to turn research progress into a report that can be shown in meetings. A PRISM report is not a daily log. It is a mainline-facing document that explains the problem, evidence, interpretation, and next decision.
+Use this skill to turn research progress into a report that can be shown in meetings. A PRISM report is not a daily card. It is a mainline-facing document that explains the problem, evidence, interpretation, and next decision.
 
 Default output location for new meeting PRISM work:
 
@@ -22,7 +22,7 @@ Do not create new PRISM materials under a root-level `meetings/` folder.
 Read, in this order when available:
 
 1. `CURRENT.md`
-2. relevant `daily_report.md` or raw daily material
+2. relevant `daily_card.md` or raw daily material
 3. experiment cards, result summaries, figures, or logs named by the user
 4. previous PRISM/report text if the user is updating an existing report
 

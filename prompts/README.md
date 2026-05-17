@@ -2,7 +2,7 @@
 
 This folder stores reusable prompts and historical workflow instructions.
 
-Use root-level files (`CURRENT.md`, `mainline.md`, `claim_board.md`, `AGENTS.md`) as the active research system. Prompts here are supporting material, not the primary source of research memory.
+Use root-level files (`CURRENT.md`, `PROJECT_INDEX.md`, `AGENTS.md`) as the active research system. Prompts here are supporting material, not the primary source of research memory.
 
 ## Folders
 

@@ -1,18 +1,18 @@
 ---
 name: daily-report-coach
-description: Use when turning daily research work, experiment notes, reading notes, blockers, meeting preparation, or next-day plans into a concise daily report anchored to the active project mainline.
+description: Use when turning daily research work, experiment notes, reading notes, blockers, meeting preparation, or next-day plans into a concise daily card anchored to the active project mainline.
 metadata:
-  short-description: Write concise daily reports
+  short-description: Write concise daily cards
 ---
 
-# Daily Report Coach
+# Daily Card Coach
 
-Use this skill to write or revise a daily research report. Do not turn the day into a task log.
+Use this skill to write or revise a daily card. Do not turn the day into a task log or long report.
 
-Daily reports should live under:
+Daily cards should live under:
 
 ```text
-daily_research_reports/MMDD/daily_report.md
+daily_research_reports/MMDD/daily_card.md
 ```
 
 ## Required Output
@@ -20,19 +20,27 @@ daily_research_reports/MMDD/daily_report.md
 Use this compact structure by default:
 
 ```markdown
-# Daily Report - MMDD
+# Daily Card - MMDD
 
-## What I Did
+## 1. Today's Purpose
 
-## Core Conclusion
+## 2. Mainline Anchor
 
-## Mainline Update
+## 3. Task Conclusions
 
-## Viewpoint Update / Self-Audit
+### Task 1
 
-## What I Cannot Claim Yet
+Did:
 
-## 30s Meeting Script
+Conclusion:
+
+## 4. Mainline Update
+
+## 5. What I Cannot Claim Yet
+
+## 6. Next Decision
+
+## 7. 30s Explanation
 ```
 
 Optional fields only when useful:
@@ -50,9 +58,9 @@ Optional fields only when useful:
 - Read the active project mainline first when available.
 - Keep only evidence that affects the mainline, claim boundary, or next decision.
 - Do not list every experiment detail.
-- The viewpoint update must be one research judgment, not a diary reflection.
-- The self-audit must name the vulnerable part: unsupported assumption, ambiguous definition, missing control, possible counterexample, or over-strong wording.
-- If no viewpoint changed, write `No viewpoint update today` and explain why.
+- Each task must end with a conclusion. If a task has no conclusion, state what remains undecided.
+- The mainline update must say whether the day changed a hypothesis, modeling definition, claim boundary, bottleneck, or next decision.
+- The self-audit belongs in `What I Cannot Claim Yet`: unsupported assumption, ambiguous definition, missing control, possible counterexample, or over-strong wording.
 - The 30 second script must be understandable to someone who has not followed every detail.
 - Avoid vague phrases like "interesting result"; state what the result supports, weakens, or leaves unresolved.
 - When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

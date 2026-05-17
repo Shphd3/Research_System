@@ -1,7 +1,7 @@
 # Codex Research System
 
 This repository manages research process, not the remote experiment codebase.
-Remote servers may run experiments. This workspace preserves project mainlines, claim boundaries, daily reports, reading notes, prompts, and reusable Codex skills.
+Remote servers may run experiments. This workspace preserves project mainlines, claim boundaries, daily cards, reading notes, prompts, and reusable Codex skills.
 
 ## Global Response Style
 
@@ -25,7 +25,7 @@ At the start of a research task:
 1. Read `PROJECT_INDEX.md`.
 2. Identify the active project.
 3. Read only that project's `Projects/<project>/main/` folder unless the user names additional files.
-4. Read the daily report, experiment result, meeting note, paper note, or raw material named by the user.
+4. Read the daily card, experiment result, meeting note, paper note, or raw material named by the user.
 5. Decide whether the material updates the active project's mainline before writing a long answer.
 
 Do not rely on chat history as the main source of memory.
@@ -263,9 +263,13 @@ For result analysis, keep it to:
 ### Decision
 ```
 
-## Daily Reports
+## Daily Cards
 
-Daily reports belong in dated folders:
+Daily cards replace daily reports. They are not diary entries or long reports.
+They are the smallest daily reasoning unit for purpose, task conclusions,
+mainline update, claim boundary, and next decision.
+
+Daily cards belong in dated folders:
 
 ```text
 daily_research_reports/MMDD/
@@ -286,19 +290,27 @@ daily_research_reports/MMDD/meeting/prism/
 Use this compact shape by default:
 
 ```markdown
-# Daily Report - MMDD
+# Daily Card - MMDD
 
-## What I Did
+## 1. Today's Purpose
 
-## Core Conclusion
+## 2. Mainline Anchor
 
-## Mainline Update
+## 3. Task Conclusions
 
-## Viewpoint Update / Self-Audit
+### Task 1
 
-## What I Cannot Claim Yet
+Did:
 
-## 30s Meeting Script
+Conclusion:
+
+## 4. Mainline Update
+
+## 5. What I Cannot Claim Yet
+
+## 6. Next Decision
+
+## 7. 30s Explanation
 ```
 
 ## Skills
@@ -324,7 +336,7 @@ Prefer this active skill set:
 - `experiment-card-writer`: write compact experiment cards and result-decision blocks.
 - `hypothesis-closure`: close the loop on a hypothesis after experiment evidence exists.
 - `experiment-acp-runner`: turn experiment cards into ACP/SCO dry runs, submissions, monitoring records, and mainline-safe result summaries.
-- `daily-report-coach`: write compact daily reports.
+- `daily-report-coach`: write compact daily cards.
 - `meeting-brief-coach`: prepare 30 second / 1 minute advisor-facing explanations.
 - `prism-report`: build meeting-ready PRISM reports.
 - `paper-reading-card`: write compact paper or blog reading cards.

@@ -1,6 +1,6 @@
 # Results
 
-Use this folder for curated result summaries that are stable enough to cite from `mainline.md`, `claim_board.md`, or PRISM reports.
+Use this folder for curated result summaries that are stable enough to cite from `CURRENT.md`, project mainline files, hypothesis closures, or PRISM reports.
 
 This folder is not for raw logs. Raw reports, CSVs, figures, and day-specific drafts should stay under `daily_research_reports/MMDD/`.
 

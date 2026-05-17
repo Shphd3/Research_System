@@ -64,17 +64,16 @@ Use this only when the user explicitly asks about MoE, specialization, forgettin
 - `PROJECT_INDEX.md`: project routing and lookup map.
 - `README.md`: repository overview.
 - `CURRENT.md`: compatibility pointer, not canonical project state.
-- `claim_board.md`: legacy or cross-project claim board. Prefer project-local claim files when present.
 
 Removed root-level project folders:
 
 - `experiments/`: project-specific experiment cards should live under the specific project.
 - `hypotheses/`: project-specific hypotheses should live under the specific project.
-- `mainline.md`: merged into the project-local mainline convention and root `CURRENT.md` pointer.
+- `mainline.md`: retired. Use root `CURRENT.md` plus project-local `main/` files.
 
 ## Daily Work
 
-- `daily_research_reports/_templates/daily_log_template.md`: daily report template.
+- `daily_research_reports/_templates/daily_card_template.md`: compact daily card template.
 - `daily_research_reports/MMDD/`: daily work folder.
 - `daily_research_reports/MMDD/meeting/`: meeting materials.
 - `daily_research_reports/MMDD/meeting/prism/`: PRISM report and figures.

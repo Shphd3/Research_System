@@ -1,14 +1,18 @@
-# Daily Research Report Templates
+# Daily Card Templates
 
-Daily logs belong inside `daily_research_reports/MMDD/`, not in a separate root-level daily log folder.
+Daily cards belong inside `daily_research_reports/MMDD/`, not in a separate root-level daily log folder.
+
+The daily card replaces the old daily report. It should reduce thinking load:
+state the day's purpose, task-level conclusions, mainline update, claim boundary,
+and next decision.
 
 For a new day, create:
 
 ```text
-daily_research_reports/MMDD/daily_report.md
+daily_research_reports/MMDD/daily_card.md
 ```
 
-Use `daily_log_template.md` as the compact first-pass structure.
+Use `daily_card_template.md` as the compact first-pass structure.
 
 Meeting materials for the same day should be created under:
 

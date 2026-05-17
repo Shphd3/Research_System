@@ -28,7 +28,7 @@ repo:Shphd3/Research_System import
 5. Test with:
 
 ```text
-Use GitHub to read Shphd3/Research_System. First find PROJECT_INDEX.md, then summarize CURRENT.md, mainline.md, and claim_board.md with file citations.
+Use GitHub to read Shphd3/Research_System. First find PROJECT_INDEX.md, then summarize CURRENT.md with file citations.
 ```
 
 If it cannot cite or find these files, the connector has not indexed the repository yet or GitHub app access is not configured for this repository.
@@ -51,8 +51,6 @@ At the start of a serious task, ask it to read:
 ```text
 PROJECT_INDEX.md
 CURRENT.md
-mainline.md
-claim_board.md
 AGENTS.md
 ```
 
@@ -60,7 +58,7 @@ Then provide the current material:
 
 - meeting transcript
 - experiment report from remote agent
-- daily report
+- daily card
 - reading note
 - PRISM draft
 
@@ -73,7 +71,7 @@ According to the OpenAI GitHub connector documentation, the ChatGPT GitHub app i
 Use Codex cloud when the task requires repository edits:
 
 - update templates
-- create a new daily report file
+- create a new daily card file
 - create a PRISM report folder
 - revise prompt files
 - update docs
@@ -96,4 +94,4 @@ PRISM files should go under:
 daily_research_reports/MMDD/meeting/prism/
 ```
 
-Core files such as `CURRENT.md`, `mainline.md`, and `claim_board.md` should be updated only when the user explicitly accepts the proposed mainline or claim change.
+Core files such as `CURRENT.md` and project-local mainline/result files should be updated only when the user explicitly accepts the proposed mainline or claim change.
