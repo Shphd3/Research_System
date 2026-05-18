@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oracle / Inhibition 支线完整交互报告</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f4;
+      --paper: #ffffff;
+      --panel: #f0f3f2;
+      --ink: #182126;
+      --muted: #5f6b72;
+      --faint: #849096;
+      --line: #d9dfdc;
+      --blue: #236f95;
+      --blue-soft: #dcecf4;
+      --green: #2d7b5b;
+      --green-soft: #e1f0e8;
+      --amber: #9a6824;
+      --amber-soft: #f3ead8;
+      --red: #a54942;
+      --red-soft: #f2dfdd;
+      --shadow: 0 16px 34px rgba(24, 33, 38, 0.08);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.62;
+      font-size: 15px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell {
+      display: grid;
+      grid-template-columns: 268px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 24px 18px;
+      overflow: auto;
+      border-right: 1px solid var(--line);
+      background: #eceee9;
+    }
+    .brand {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .side-title {
+      margin: 0 0 20px;
+      font-size: 18px;
+      line-height: 1.28;
+    }
+    .nav-block { margin: 20px 0; }
+    .nav-label {
+      color: var(--faint);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .nav-link {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+    .nav-link:hover { background: var(--paper); text-decoration: none; }
+    .side-note {
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      margin-top: 20px;
+    }
+    main {
+      max-width: 1240px;
+      padding: 34px 44px 74px;
+    }
+    .hero {
+      padding: 20px 0 26px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 26px;
+    }
+    .kicker {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 37px;
+      line-height: 1.14;
+      letter-spacing: 0;
+      margin: 0 0 12px;
+      max-width: 980px;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 920px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      margin: 42px 0 14px;
+    }
+    h3 {
+      font-size: 17px;
+      margin: 0 0 8px;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .metric .label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .metric .value {
+      font-weight: 850;
+      font-size: 29px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .metric .note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .callout {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 15px 16px;
+      margin: 16px 0;
+    }
+    .callout strong { display: block; margin-bottom: 4px; }
+    .warn { border-left-color: var(--amber); }
+    .danger { border-left-color: var(--red); }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 750;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .pill.good { color: var(--green); background: var(--green-soft); border-color: #c5dfd0; }
+    .pill.mixed { color: var(--amber); background: var(--amber-soft); border-color: #dfcda9; }
+    .pill.bad { color: var(--red); background: var(--red-soft); border-color: #dfbbb8; }
+    .pill.info { color: var(--blue); background: var(--blue-soft); border-color: #bed9e7; }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      min-height: 150px;
+      position: relative;
+    }
+    .step .num {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .step p, .card p { margin: 0; color: var(--muted); }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 8px 10px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+    button:hover { border-color: var(--blue); }
+    button.active {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 860px;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef2f1;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .bar-cell {
+      min-width: 160px;
+    }
+    .bar {
+      height: 8px;
+      border-radius: 999px;
+      background: #e5e9e7;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: var(--blue);
+    }
+    .details {
+      display: none;
+      margin-top: 14px;
+    }
+    .details.active { display: block; }
+    .kv {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 8px 14px;
+      font-size: 14px;
+    }
+    .kv div:nth-child(odd) {
+      color: var(--muted);
+      font-weight: 750;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 0;
+    }
+    .read-path {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .read-path .card {
+      min-height: 154px;
+      box-shadow: none;
+    }
+    .report-panel {
+      display: none;
+      margin-top: 14px;
+    }
+    .report-panel.active { display: block; }
+    .report-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .report-title-row h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .report-section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 12px 0;
+      box-shadow: var(--shadow);
+    }
+    .report-section h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+    .report-section h4:not(:first-child) {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .report-section p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+    .report-section ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .report-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: #fbfcfa;
+    }
+    .mini .mini-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .mini .mini-value {
+      font-size: 22px;
+      font-weight: 850;
+      line-height: 1.1;
+    }
+    .source-link {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer {
+      margin-top: 44px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .shell { grid-template-columns: 1fr; }
+      aside {
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      main { padding: 24px 18px 52px; }
+      .cols-4, .cols-3, .cols-2, .timeline, .read-path, .report-mini-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 29px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">Synthetic MoE</div>
+      <h1 class="side-title">Oracle / Inhibition 支线完整交互报告</h1>
+      <div class="nav-block">
+        <div class="nav-label">快速理解</div>
+        <a class="nav-link" href="#summary">一句话结论</a>
+        <a class="nav-link" href="#concepts">概念澄清</a>
+        <a class="nav-link" href="#path">实验路径</a>
+        <a class="nav-link" href="#metrics">指标解释</a>
+        <a class="nav-link" href="#results">结果矩阵</a>
+        <a class="nav-link" href="#detail">实验详情</a>
+      </div>
+      <div class="nav-block">
+        <div class="nav-label">完整汇编</div>
+        <a class="nav-link" href="#reports">每个报告整理</a>
+        <a class="nav-link" href="#decision">最终判断</a>
+      </div>
+      <div class="side-note">
+        目标：前半部分十分钟读懂，后半部分把每个支线报告都整理成可查阅的结构化版本。
+      </div>
+    </aside>
+
+    <main>
+      <section class="hero" id="summary">
+        <div class="kicker">Side Branch Guide</div>
+        <h1>为什么 MoE 会用 expert，却不会自然长出稳定 expertise？</h1>
+        <p class="lede">这份 HTML 不只是导读。前半部分给出十分钟阅读路径，后半部分把 residual、supervised control、Oracle probe、prototype inhibition、Oracle-initialized router 和理论报告逐个整理出来，保留方法、指标、结果、边界和下一步。</p>
+      </section>
+
+      <section>
+        <div class="grid cols-4">
+          <div class="card metric">
+            <div class="label">最强正结果</div>
+            <div class="value">3/4</div>
+            <div class="note">`oracle_init` seeds 形成 4-rule/4-expert</div>
+          </div>
+          <div class="card metric">
+            <div class="label">Oracle init NMI</div>
+            <div class="value">0.964</div>
+            <div class="note">rule label 与 expert route 高一致</div>
+          </div>
+          <div class="card metric">
+            <div class="label">随机 prototype</div>
+            <div class="value">0/4</div>
+            <div class="note">没有语义地盘时不能稳定四分</div>
+          </div>
+          <div class="card metric">
+            <div class="label">关键边界</div>
+            <div class="value">0.800</div>
+            <div class="note">seed 2 warmup cluster NMI，不干净时下游也难修复</div>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>十分钟结论</strong>
+          Oracle-space routing 已经从 probe 变成了有效干预：当 warmup 表示空间里的 rule clusters 干净，KMeans centers 接入 prototype router 后能诱导 rule-aligned experts。但后续的 inhibition/performance feedback 不能粗暴加入，否则可能增强 ablation 或打开 load，却破坏 rule purity。
+        </div>
+      </section>
+
+      <section id="concepts">
+        <h2>概念澄清</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Expertise 不是“被选中”</h3>
+            <p>一个 expert 只是被 router 选中，不代表它有专业化。我们要求它稳定负责某类 rule，并且禁用它会选择性伤害对应 rule。</p>
+          </div>
+          <div class="card">
+            <h3>Load balance 不是 expertise</h3>
+            <p>负载均匀只能说明 token 没全挤到一个 expert。它可能按位置、噪声或 common pattern 切分，不一定按 rule 切分。</p>
+          </div>
+          <div class="card">
+            <h3>Oracle-space 是语义地盘</h3>
+            <p>这里用 warmup 模型的 rule-context `ffn_input` 表示做 KMeans，得到 cluster centers，再把它们作为 prototype router 的初始地盘。</p>
+          </div>
+        </div>
+        <div class="grid cols-2" style="margin-top:14px;">
+          <div class="card">
+            <h3>Inhibition 要守地盘</h3>
+            <p>winner attraction、loser repulsion、homeostasis 的目标不是让 load 好看，而是防止 expert basin 互相吞并。</p>
+          </div>
+          <div class="card">
+            <h3>Performance feedback 是功能约束</h3>
+            <p>它问哪个 expert 对当前 token loss 更低。但如果不保护 Oracle clusters，它可能把多个 rule 合并给当前最强 expert。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="path">
+        <h2>实验路径</h2>
+        <div class="timeline">
+          <div class="step">
+            <div class="num">01</div>
+            <h3>Residual</h3>
+            <p>去掉 FFN residual 增强 bottleneck，但不能自己四分。</p>
+            <p><span class="pill mixed">有用但不够</span></p>
+          </div>
+          <div class="step">
+            <div class="num">02</div>
+            <h3>Supervised router</h3>
+            <p>给 router rule-to-expert 信号后 8/8 seeds 四分。</p>
+            <p><span class="pill good">容量足够</span></p>
+          </div>
+          <div class="step">
+            <div class="num">03</div>
+            <h3>Oracle probe</h3>
+            <p>表示空间里已有 rule clusters，但 learned router 没用好。</p>
+            <p><span class="pill info">信号存在</span></p>
+          </div>
+          <div class="step">
+            <div class="num">04</div>
+            <h3>Random prototype</h3>
+            <p>随机地盘加 inhibition 只能缓解 collapse，不能四分。</p>
+            <p><span class="pill bad">不够</span></p>
+          </div>
+          <div class="step">
+            <div class="num">05</div>
+            <h3>Oracle init</h3>
+            <p>KMeans centers 接入 router 后 3/4 seeds 四分。</p>
+            <p><span class="pill good">核心正结果</span></p>
+          </div>
+          <div class="step">
+            <div class="num">06</div>
+            <h3>下一步</h3>
+            <p>做 cluster-preserving inhibition / performance feedback。</p>
+            <p><span class="pill mixed">机制细化</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics">
+        <h2>指标解释</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>指标</th><th>它衡量什么</th><th>常见误读</th><th>本支线怎么用</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Mean min target prob</td><td>最弱 rule 的 target probability</td><td>高不等于 expertise</td><td>确认 readback 没崩</td></tr>
+              <tr><td>Routing NMI</td><td>rule label 和 expert assignment 的一致性</td><td>NMI 高仍需 ablation 验证因果</td><td>主要 routing purity 指标</td></tr>
+              <tr><td>Rule experts used</td><td>四条 rule 主 expert 用了几个不同 expert</td><td>只看数量不够，还要看 NMI</td><td>判断是否接近四分</td></tr>
+              <tr><td>4-expert runs</td><td>多 seed 中稳定四分的次数</td><td>单 seed 成功不代表稳定</td><td>衡量可复现性</td></tr>
+              <tr><td>Max all-token load</td><td>最大 expert 在所有 token 上的流量占比</td><td>低 load 不等于语义分工</td><td>检查 collapse</td></tr>
+              <tr><td>Max ablation drop</td><td>禁用 expert 后 rule target prob 最大下降</td><td>强 drop 不代表选择性正确</td><td>衡量 expert 因果性</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="results">
+        <h2>结果矩阵</h2>
+        <div class="toolbar" aria-label="结果筛选">
+          <button class="active" data-filter="all">全部</button>
+          <button data-filter="positive">正结果</button>
+          <button data-filter="boundary">边界</button>
+          <button data-filter="negative">负结果</button>
+        </div>
+        <div class="table-wrap">
+          <table id="resultTable">
+            <thead>
+              <tr>
+                <th>条件</th>
+                <th>判断</th>
+                <th>4-expert runs</th>
+                <th>Routing NMI</th>
+                <th>Rule experts</th>
+                <th>Max all load</th>
+                <th>Ablation drop</th>
+                <th>读法</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-kind="negative">
+                <td>random_prototype</td>
+                <td><span class="pill bad">负对照</span></td>
+                <td>0/4</td>
+                <td class="bar-cell">0.302<div class="bar"><span style="width:30.2%"></span></div></td>
+                <td>1.50</td>
+                <td>0.948</td>
+                <td>0.292</td>
+                <td>有好表示但无语义地盘，仍不四分。</td>
+              </tr>
+              <tr data-kind="positive">
+                <td>frozen_oracle_router</td>
+                <td><span class="pill good">正结果</span></td>
+                <td>3/4</td>
+                <td class="bar-cell">0.950<div class="bar"><span style="width:95%"></span></div></td>
+                <td>3.75</td>
+                <td>0.910</td>
+                <td>0.512</td>
+                <td>强行按 Oracle clusters 路由，能诱导 rule-aligned routing。</td>
+              </tr>
+              <tr data-kind="positive">
+                <td>oracle_init</td>
+                <td><span class="pill good">核心正结果</span></td>
+                <td>3/4</td>
+                <td class="bar-cell">0.964<div class="bar"><span style="width:96.4%"></span></div></td>
+                <td>3.75</td>
+                <td>0.936</td>
+                <td>0.531</td>
+                <td>Oracle 地盘允许训练后仍基本保持。</td>
+              </tr>
+              <tr data-kind="boundary">
+                <td>oracle_init_inhibition</td>
+                <td><span class="pill mixed">边界</span></td>
+                <td>2/4</td>
+                <td class="bar-cell">0.929<div class="bar"><span style="width:92.9%"></span></div></td>
+                <td>3.50</td>
+                <td>0.912</td>
+                <td>0.687</td>
+                <td>增强 ablation 因果性，但会扰动 purity。</td>
+              </tr>
+              <tr data-kind="boundary">
+                <td>oracle_init_performance</td>
+                <td><span class="pill mixed">边界</span></td>
+                <td>1/4</td>
+                <td class="bar-cell">0.893<div class="bar"><span style="width:89.3%"></span></div></td>
+                <td>3.25</td>
+                <td>0.458</td>
+                <td>0.520</td>
+                <td>打开 load 最强，但可能合并 rule clusters。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legend">
+          <span class="pill good">正结果：能支撑机制</span>
+          <span class="pill mixed">边界：有改善但不等于 solved</span>
+          <span class="pill bad">负结果：排除简单解释</span>
+        </div>
+      </section>
+
+      <section id="detail">
+        <h2>实验详情</h2>
+        <div class="toolbar">
+          <button class="detail-btn active" data-detail="oracle">Oracle-initialized router</button>
+          <button class="detail-btn" data-detail="inhibition">Inhibition</button>
+          <button class="detail-btn" data-detail="performance">Performance feedback</button>
+          <button class="detail-btn" data-detail="residual">Residual</button>
+        </div>
+        <div class="details active" id="detail-oracle">
+          <div class="card">
+            <h3>Oracle-initialized router 到底验证了什么？</h3>
+            <div class="kv">
+              <div>方法</div><div>warmup MoE -> 抽 rule-context `ffn_input` -> KMeans -> centers 初始化 prototype router -> 从同一 warmup checkpoint 继续训练。</div>
+              <div>为什么要 warm-start</div><div>centers 必须和 router 输入在同一表示空间；否则坐标系不一致，实验无效。</div>
+              <div>结论</div><div>`oracle_init` NMI 0.964，3/4 seeds 四分。Oracle-space signal 不只是 probe 指标，而能转成 routing。</div>
+              <div>边界</div><div>seed 2 warmup KMeans NMI 0.800、purity 0.750，下游也只到 3 experts。</div>
+            </div>
+          </div>
+        </div>
+        <div class="details" id="detail-inhibition">
+          <div class="card">
+            <h3>Inhibition 为什么不是直接答案？</h3>
+            <div class="kv">
+              <div>它做什么</div><div>winner attraction、loser margin、homeostasis，目标是让 expert basin 更稳定。</div>
+              <div>正面结果</div><div>`oracle_init_inhibition` 把 ablation drop 提到 0.687，是这一组最高。</div>
+              <div>问题</div><div>4-expert runs 从 oracle_init 的 3/4 降到 2/4，说明它可能增强因果瓶颈，但扰动 rule purity。</div>
+              <div>下一步</div><div>做系数 sweep，目标是在不牺牲 NMI 的情况下提高 ablation drop。</div>
+            </div>
+          </div>
+        </div>
+        <div class="details" id="detail-performance">
+          <div class="card">
+            <h3>Performance feedback 为什么有用但危险？</h3>
+            <div class="kv">
+              <div>它做什么</div><div>让多个 expert 都试算，哪个 expert 对 token loss 更低，就把 router 推向谁。</div>
+              <div>正面结果</div><div>`oracle_init_performance` 把 max all-token load 降到 0.458，明显缓解一般 token collapse。</div>
+              <div>问题</div><div>4-expert runs 只有 1/4。它可能奖励当前最强 expert 接手多个 rule，从而合并 clusters。</div>
+              <div>下一步</div><div>做 cluster-preserving performance feedback，让功能反馈服务于 Oracle cluster assignment。</div>
+            </div>
+          </div>
+        </div>
+        <div class="details" id="detail-residual">
+          <div class="card">
+            <h3>Residual removal 到底说明了什么？</h3>
+            <div class="kv">
+              <div>论文是否提到</div><div>Oracle-MoE 论文没有提出 residual removal；图注只是说图里省略 residual。</div>
+              <div>实验发现</div><div>no-FFN-residual 降低 load collapse、增强 ablation，但仍没有稳定四分。</div>
+              <div>解释</div><div>它解决 expert 是否必要，不解决 expert 应该负责哪个 rule。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reports">
+        <h2>完整报告汇编</h2>
+        <p class="small">这一部分不是导航链接，而是把每个支线报告重新整理成统一格式：问题、方法、结果、解释、边界、下一步。需要查原文时，每个面板底部都有源文件。</p>
+        <div class="toolbar" aria-label="报告切换">
+          <button class="report-btn active" data-report="synthesis">支线总报告</button>
+          <button class="report-btn" data-report="theory">Inhibitory 理论</button>
+          <button class="report-btn" data-report="residual">Residual Ablation</button>
+          <button class="report-btn" data-report="supervised">Supervised Router</button>
+          <button class="report-btn" data-report="oracleprobe">Oracle-space Probe</button>
+          <button class="report-btn" data-report="prototype">Prototype Inhibition</button>
+          <button class="report-btn" data-report="oracleinit">Oracle-initialized Router</button>
+        </div>
+
+        <div class="report-panel active" id="report-synthesis">
+          <div class="report-title-row">
+            <h3>支线总报告：这条支线到底回答什么</h3>
+            <span class="pill info">总览</span>
+          </div>
+          <div class="report-section">
+            <h4>核心问题</h4>
+            <p>主线已经发现：默认 top-1 MoE 能学会 synthetic rules，也会产生 causally meaningful expert use，但不会稳定形成 `4 rules -> 4 experts`。支线要解释这个负结果，并寻找能让 expertise 出现的额外机制。</p>
+          </div>
+          <div class="report-section">
+            <h4>支线分解</h4>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>层次</th><th>问题</th><th>当前判断</th></tr></thead>
+                <tbody>
+                  <tr><td>Residual</td><td>是否 shared bypass 让 expert 不必要？</td><td>部分是；去 residual 增强 bottleneck，但不四分。</td></tr>
+                  <tr><td>Capacity</td><td>架构能不能表达四分？</td><td>能；supervised router 8/8 seeds 四分。</td></tr>
+                  <tr><td>Oracle-space</td><td>表示空间有没有 rule geometry？</td><td>有；probe 与 Oracle-init 都支持。</td></tr>
+                  <tr><td>Inhibition</td><td>竞争机制能不能自己发现 experts？</td><td>随机版本不够；必须守住 Oracle clusters。</td></tr>
+                  <tr><td>Performance</td><td>功能反馈能否补上约束？</td><td>能打开 load，但可能合并 rule。</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>总判断</h4>
+            <p>默认 objective 缺少 route-level specialization pressure。Oracle-space initialization 是目前最强正结果；inhibition 和 performance feedback 不是错，但要设计成 cluster-preserving，否则会牺牲 rule purity。</p>
+            <h4>为什么这些方法有的 work、有的不 work</h4>
+            <ul>
+              <li>能 work 的方法，通常补上了“router 应该按什么语义结构分”的约束。</li>
+              <li>不 work 的方法，通常只改变了瓶颈强度、负载分散或随机竞争，却没有告诉 expert 地盘在哪里。</li>
+              <li>部分 work 的方法，说明它补了一层约束，但会破坏另一层约束，比如 performance feedback 打开 load，却可能合并 rule clusters。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./oracle_inhibition_side_branch_synthesis_zh.md">oracle_inhibition_side_branch_synthesis_zh.md</a></div>
+          </div>
+        </div>
+
+        <div class="report-panel" id="report-theory">
+          <div class="report-title-row">
+            <h3>Inhibitory Competition 理论报告</h3>
+            <span class="pill mixed">机制假说</span>
+          </div>
+          <div class="report-section">
+            <h4>它想解释什么</h4>
+            <p>普通 MoE 的 expert 只是一个被 router 选中的 FFN。理论报告提出更强定义：expert 应该是语义空间中的 attraction basin，也就是某类 feature 会稳定流向它，它也逐渐变成处理这类 feature 的功能单元。</p>
+          </div>
+          <div class="report-section">
+            <h4>核心机制</h4>
+            <div class="report-mini-grid">
+              <div class="mini"><div class="mini-label">Winner attraction</div><div class="mini-value">靠近</div><p class="small">赢的 expert prototype 向当前 feature 靠近。</p></div>
+              <div class="mini"><div class="mini-label">Loser repulsion</div><div class="mini-value">推开</div><p class="small">相近但没赢的 expert 被推离，减少地盘重叠。</p></div>
+              <div class="mini"><div class="mini-label">Homeostasis</div><div class="mini-value">防垄断</div><p class="small">避免单 expert 吞掉所有 token，但不把均匀 load 当作目标。</p></div>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>实验后的修正</h4>
+            <p>随机 prototype + inhibition 不够，说明“竞争”不能从随机地盘开始。Oracle-initialized router 的正结果说明，inhibition 更合理的位置是：先有 Oracle-space 地盘，再用 inhibition 守住并增强因果性。</p>
+            <h4>为什么这个理论可能 work</h4>
+            <ul>
+              <li>默认 top-1 MoE 有正反馈：早期 winner 获得更多 route 和梯度，会继续变强。</li>
+              <li>如果没有 loser repulsion 和 homeostasis，expert 地盘容易被早期偶然优势吞掉。</li>
+              <li>如果先有 Oracle-space 地盘，inhibition 可以从“随机竞争”变成“守住已有语义边界”。</li>
+            </ul>
+            <h4>为什么最小版本没 work</h4>
+            <ul>
+              <li>随机 prototype 没有站在 rule clusters 上，竞争会硬化随机 basin。</li>
+              <li>margin inhibition 只知道 winner 分数要高，不知道 winner 是否真的对应正确 rule。</li>
+              <li>homeostasis 防垄断，但它本身不知道什么是语义专业化。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./semantic_moe_inhibitory_competition_theory_zh.md">semantic_moe_inhibitory_competition_theory_zh.md</a></div>
+          </div>
+        </div>
+
+        <div class="report-panel" id="report-residual">
+          <div class="report-title-row">
+            <h3>FFN Residual Ablation 报告</h3>
+            <span class="pill mixed">有用但不充分</span>
+          </div>
+          <div class="report-section">
+            <h4>问题</h4>
+            <p>论文里是否说去掉 residual 会更好？答案是否定的。PDF 中 residual 只出现在图注 “Residual connections are omitted.”，意思是图中省略，没有把 residual removal 作为方法主张。</p>
+          </div>
+          <div class="report-section">
+            <h4>实验设置</h4>
+            <p>扫 `ffn_residual_scale in {1.0, 0.5, 0.25, 0.0}`，看去掉 FFN residual 是否让 expert 更必要，并是否诱导更清楚 rule experts。</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Scale</th><th>Min target prob</th><th>Routing NMI</th><th>Rule experts</th><th>Max all load</th><th>Ablation drop</th></tr></thead>
+                <tbody>
+                  <tr><td>1.0</td><td>0.9396</td><td>0.501</td><td>2.00</td><td>0.957</td><td>0.760</td></tr>
+                  <tr><td>0.5</td><td>0.9491</td><td>0.419</td><td>1.75</td><td>0.959</td><td>0.855</td></tr>
+                  <tr><td>0.25</td><td>0.9646</td><td>0.419</td><td>1.75</td><td>0.966</td><td>0.916</td></tr>
+                  <tr><td>0.0</td><td>0.9624</td><td>0.647</td><td>2.25</td><td>0.566</td><td>0.966</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>结论</h4>
+            <p>去掉 FFN residual 后，一般 token 的 load collapse 明显下降，expert ablation 更强；但仍没有稳定四分。所以 residual bypass 是问题的一部分，不是 semantic expertise 的充分解释。</p>
+            <h4>为什么它会 work 一部分</h4>
+            <ul>
+              <li>FFN residual 是共享旁路，模型可以不用认真依赖 expert 也完成预测。</li>
+              <li>降低 residual 后，expert 输出更接近必经路径，所以 ablation drop 变大。</li>
+              <li>all-token load 从约 0.96 降到约 0.57，说明训练动力学确实被改变。</li>
+            </ul>
+            <h4>为什么它不够</h4>
+            <ul>
+              <li>它只回答“expert 是否必要”，不回答“哪个 rule 应该给哪个 expert”。</li>
+              <li>没有 route-level semantic target，多个 rule 仍可合并到同一个 expert。</li>
+              <li>所以 bottleneck pressure 不是 expertise pressure。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./ffn_residual_ablation_report_zh.md">ffn_residual_ablation_report_zh.md</a></div>
+          </div>
+        </div>
+
+        <div class="report-panel" id="report-supervised">
+          <div class="report-title-row">
+            <h3>Supervised Router Positive Control 报告</h3>
+            <span class="pill good">容量正控</span>
+          </div>
+          <div class="report-section">
+            <h4>问题</h4>
+            <p>默认 MoE 不四分，到底是架构做不到，还是训练目标不提供分工压力？这个实验只在 planted rule context 上给 router 正确 expert target，测试容量上限。</p>
+          </div>
+          <div class="report-section">
+            <h4>结果</h4>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Condition</th><th>Runs</th><th>4-expert runs</th><th>Min target prob</th><th>Routing NMI</th><th>Rule experts</th><th>Expected acc</th></tr></thead>
+                <tbody>
+                  <tr><td>baseline</td><td>8</td><td>0</td><td>0.9390</td><td>0.573</td><td>2.12</td><td>0.344</td></tr>
+                  <tr><td>supervised</td><td>8</td><td>8</td><td>0.8759</td><td>1.000</td><td>4.00</td><td>1.000</td></tr>
+                  <tr><td>supervised_no_ffn_residual</td><td>8</td><td>8</td><td>0.8835</td><td>1.000</td><td>4.00</td><td>1.000</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>结论</h4>
+            <p>当前架构完全能表达 `4-rule/4-expert`。默认 MoE 的失败不是 capacity 问题，而是 ordinary next-token loss 没有提供 route-level 分工压力。</p>
+            <h4>为什么它 work</h4>
+            <ul>
+              <li>它直接给 router 一个 rule-to-expert 信号，消除了 routing 对称性。</li>
+              <li>每条 rule 在 planted context 上被推向固定 expert，expert 因此获得稳定、专门的梯度来源。</li>
+              <li>这说明模型容量、expert 数量和优化基本都足够。</li>
+            </ul>
+            <h4>为什么它不是最终方法</h4>
+            <ul>
+              <li>它用了显式 rule label，是 positive control，不是无监督机制。</li>
+              <li>它证明“能做到”，不证明默认 objective 会自己做到。</li>
+              <li>它给 Oracle/inhibition 方法提供上界：无标签方法应该朝这个结构靠近。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./supervised_router_positive_control_report_zh.md">supervised_router_positive_control_report_zh.md</a></div>
+          </div>
+        </div>
+
+        <div class="report-panel" id="report-oracleprobe">
+          <div class="report-title-row">
+            <h3>Oracle-space Probe 报告</h3>
+            <span class="pill info">信号验证</span>
+          </div>
+          <div class="report-section">
+            <h4>问题</h4>
+            <p>不看 learned router，只看模型内部 rule-context 表示，这些表示能不能被 KMeans 聚成 rule clusters？如果能，说明 Oracle-MoE 的语义空间思路在 synthetic D3 上有可用信号。</p>
+          </div>
+          <div class="report-section">
+            <h4>结果</h4>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Condition</th><th>Runs</th><th>KMeans NMI</th><th>Purity</th><th>Same-minus-diff cosine</th><th>Prev-context attention</th></tr></thead>
+                <tbody>
+                  <tr><td>baseline</td><td>8</td><td>0.864</td><td>0.844</td><td>0.5805</td><td>0.2869</td></tr>
+                  <tr><td>supervised</td><td>8</td><td>0.903</td><td>0.875</td><td>1.0634</td><td>0.2352</td></tr>
+                  <tr><td>supervised_no_ffn_residual</td><td>8</td><td>0.938</td><td>0.906</td><td>1.0965</td><td>0.2432</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>结论</h4>
+            <p>baseline learned router NMI 约 0.573，但表示空间 KMeans NMI 已经有 0.864。模型内部已经有 rule geometry，只是默认 router 没有把它转成 expert 分工。</p>
+            <p>这只是 probe，不等于完整 Oracle-MoE 验证。后续 Oracle-initialized router 实验才把 cluster centers 接进 routing。</p>
+            <h4>为什么它提示 Oracle-MoE 可能 work</h4>
+            <ul>
+              <li>如果 rule-context representations 已经聚成簇，router 就不需要从零发现所有结构。</li>
+              <li>KMeans NMI 高于 learned router NMI，说明“表示空间知道，但 router 没用好”。</li>
+              <li>这正好对应 Oracle-MoE 的思路：先找 semantic group / oracle space，再用它指导 routing。</li>
+            </ul>
+            <h4>为什么 probe 本身还不够</h4>
+            <ul>
+              <li>KMeans 是离线诊断，不能证明训练中的 router 会保持这些 clusters。</li>
+              <li>它不测 expert ablation，不知道 cluster routing 是否有因果作用。</li>
+              <li>它也没有验证论文里的 attention semantic group、SVD projection 和 locality/CSD 指标。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./oracle_space_probe_report_zh.md">oracle_space_probe_report_zh.md</a></div>
+          </div>
+        </div>
+
+        <div class="report-panel" id="report-prototype">
+          <div class="report-title-row">
+            <h3>Prototype / Inhibition 报告</h3>
+            <span class="pill bad">随机地盘失败</span>
+          </div>
+          <div class="report-section">
+            <h4>问题</h4>
+            <p>不用 rule label，只给每个 expert 一个随机 learnable prototype，再加 winner attraction、margin inhibition 和 homeostasis，能不能自己形成 rule expertise？</p>
+          </div>
+          <div class="report-section">
+            <h4>结果</h4>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Condition</th><th>4-expert runs</th><th>Min target prob</th><th>Routing NMI</th><th>Rule experts</th><th>Max all load</th><th>Ablation drop</th></tr></thead>
+                <tbody>
+                  <tr><td>prototype_plain</td><td>0/4</td><td>0.9065</td><td>0.277</td><td>1.50</td><td>0.983</td><td>0.629</td></tr>
+                  <tr><td>prototype_inhibition</td><td>0/4</td><td>0.9044</td><td>0.573</td><td>2.25</td><td>0.764</td><td>0.733</td></tr>
+                  <tr><td>prototype_inhibition_no_ffn_residual</td><td>0/4</td><td>0.9453</td><td>0.391</td><td>1.75</td><td>0.551</td><td>0.923</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>结论</h4>
+            <p>随机 prototype + inhibition 可以缓解 collapse，但不能自己发现稳定 rule experts。它否定的是“随机地盘 + 简单竞争就够了”的小版本，不否定“Oracle 地盘 + 守地盘机制”的更强版本。</p>
+            <h4>为什么它会改善一点</h4>
+            <ul>
+              <li>prototype router 把 expert 选择变成“靠近哪个中心”，比自由线性 router 更像地盘竞争。</li>
+              <li>inhibition 和 homeostasis 会抑制单点垄断，所以 load collapse 有所缓解。</li>
+              <li>ablation drop 上升，说明 expert 路径变得更有因果作用。</li>
+            </ul>
+            <h4>为什么它不能真正 work</h4>
+            <ul>
+              <li>prototype 初始位置随机，不一定落在 rule clusters 上。</li>
+              <li>训练早期偶然 winner 会被 attraction 进一步强化，随机地盘会被硬化。</li>
+              <li>inhibition 不知道哪个 expert 真正解释哪条 rule，只能扩大 score margin。</li>
+              <li>所以它能减少 collapse，却不能保证语义对齐。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./prototype_inhibition_experiment_report_zh.md">prototype_inhibition_experiment_report_zh.md</a></div>
+          </div>
+        </div>
+
+        <div class="report-panel" id="report-oracleinit">
+          <div class="report-title-row">
+            <h3>Oracle-initialized Router 报告</h3>
+            <span class="pill good">关键正结果</span>
+          </div>
+          <div class="report-section">
+            <h4>问题</h4>
+            <p>如果 warmup 模型的 rule-context 表示空间里已经有 rule clusters，把 KMeans cluster centers 接到 prototype router 后，能不能真正形成 rule-aligned expert routing？</p>
+          </div>
+          <div class="report-section">
+            <h4>关键方法修正</h4>
+            <p>必须 warm-start：每个 condition 从同一个 warmup checkpoint 继续，只替换 prototype router。这样 Oracle centers、router 输入、experts 和 LM head 都在同一坐标系。早先把 centers 接到随机新模型的 pilot 不能作为结论。</p>
+          </div>
+          <div class="report-section">
+            <h4>Warmup cluster 质量</h4>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Seed</th><th>Warmup router NMI</th><th>KMeans NMI</th><th>KMeans purity</th><th>读法</th></tr></thead>
+                <tbody>
+                  <tr><td>0</td><td>0.577</td><td>1.000</td><td>1.000</td><td>cluster 干净</td></tr>
+                  <tr><td>1</td><td>0.571</td><td>1.000</td><td>1.000</td><td>cluster 干净</td></tr>
+                  <tr><td>2</td><td>0.000</td><td>0.800</td><td>0.750</td><td>上游 cluster 不干净</td></tr>
+                  <tr><td>3</td><td>0.857</td><td>1.000</td><td>1.000</td><td>cluster 干净</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>聚合结果</h4>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Condition</th><th>4-expert runs</th><th>Min target prob</th><th>Routing NMI</th><th>Rule experts</th><th>Max all load</th><th>Ablation drop</th></tr></thead>
+                <tbody>
+                  <tr><td>random_prototype</td><td>0/4</td><td>0.981</td><td>0.302</td><td>1.50</td><td>0.948</td><td>0.292</td></tr>
+                  <tr><td>frozen_oracle_router</td><td>3/4</td><td>0.984</td><td>0.950</td><td>3.75</td><td>0.910</td><td>0.512</td></tr>
+                  <tr><td>oracle_init</td><td>3/4</td><td>0.985</td><td>0.964</td><td>3.75</td><td>0.936</td><td>0.531</td></tr>
+                  <tr><td>oracle_init_inhibition</td><td>2/4</td><td>0.984</td><td>0.929</td><td>3.50</td><td>0.912</td><td>0.687</td></tr>
+                  <tr><td>oracle_init_performance</td><td>1/4</td><td>0.978</td><td>0.893</td><td>3.25</td><td>0.458</td><td>0.520</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="report-section">
+            <h4>结论</h4>
+            <p>Oracle-space centers 可以实际诱导 rule-aligned routing。`oracle_init` 是目前支线最强正结果。边界是：如果 warmup cluster 本身不干净，下游 router 很难凭空修复；inhibition 增强 ablation，performance feedback 打开 load，但二者都可能扰动 rule purity。</p>
+            <h4>为什么 Oracle init work</h4>
+            <ul>
+              <li>它不再让 prototype 随机出生，而是直接放到 warmup 表示空间的 rule clusters 上。</li>
+              <li>这给 router 一个明确的 semantic prior：相似 rule-context 应该去同一个 expert，不同 rule-context 应该分开。</li>
+              <li>warm-start 保证 centers、router 输入和 expert weights 在同一坐标系，所以这个 prior 是有效的。</li>
+              <li>cluster 干净的 seeds 上，frozen_oracle_router 和 oracle_init 都稳定四分，说明方法确实把 rule geometry 转成了 routing。</li>
+            </ul>
+            <h4>为什么它还不是完整解决</h4>
+            <ul>
+              <li>seed 2 的 warmup KMeans 本身不干净，Oracle 条件也只到 3 experts，说明上游 representation quality 是瓶颈。</li>
+              <li>frozen_oracle_router routing 很好，但不一定最大化 expert 因果性；inhibition 才明显提高 ablation drop。</li>
+              <li>performance feedback 能打开 load，但会改变 cluster assignment，说明功能约束和语义约束会冲突。</li>
+              <li>完整 Oracle-MoE 论文还包含 attention semantic group、SVD/oracle projection、locality/CSD 目标，这些没有全部系统验证。</li>
+            </ul>
+            <div class="source-link">源文件：<a href="./oracle_initialized_router_experiment_report_zh.md">oracle_initialized_router_experiment_report_zh.md</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="decision">
+        <h2>最终判断</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>现在可以说</h3>
+            <p>Oracle-space centers 可以实际诱导 rule-aligned expert routing；默认 MoE 失败不是 capacity 问题，也不是单纯 residual 绕路；随机 prototype 和简单 inhibition 不够。</p>
+          </div>
+          <div class="card">
+            <h3>现在不能说</h3>
+            <p>不能说完整 Oracle-MoE 论文方法全部验证；不能说 load balance 就是 expertise；不能说 inhibition/performance feedback 已经解决 specialization。</p>
+          </div>
+        </div>
+        <div class="callout warn">
+          <strong>下一步实验问题</strong>
+          如何在保持 Oracle cluster purity 的同时，提高 expert 的因果性和功能分工？最直接是 `Oracle init + inhibition 系数 sweep` 和 `Oracle init + cluster-preserving performance feedback`。
+        </div>
+      </section>
+
+      <section>
+        <h2>文件导读</h2>
+        <div class="read-path">
+          <div class="card">
+            <h3>总报告</h3>
+            <p><a href="./oracle_inhibition_side_branch_synthesis_zh.md">oracle_inhibition_side_branch_synthesis_zh.md</a></p>
+          </div>
+          <div class="card">
+            <h3>关键正结果</h3>
+            <p><a href="./oracle_initialized_router_experiment_report_zh.md">oracle_initialized_router_experiment_report_zh.md</a></p>
+          </div>
+          <div class="card">
+            <h3>Oracle probe</h3>
+            <p><a href="./oracle_space_probe_report_zh.md">oracle_space_probe_report_zh.md</a></p>
+          </div>
+          <div class="card">
+            <h3>随机 prototype</h3>
+            <p><a href="./prototype_inhibition_experiment_report_zh.md">prototype_inhibition_experiment_report_zh.md</a></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        数据来源：`runs/synthetic_semantic_oracle_initialized_router_warmstart_20260517_202027/summary.json` 及支线各实验报告。该页面是阅读导览，不替代 Markdown 中的完整 claim 边界。
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const rows = document.querySelectorAll('#resultTable tbody tr');
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        rows.forEach((row) => {
+          row.style.display = filter === 'all' || row.dataset.kind === filter ? '' : 'none';
+        });
+      });
+    });
+
+    const detailButtons = document.querySelectorAll('.detail-btn');
+    const details = document.querySelectorAll('.details');
+    detailButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        detailButtons.forEach((b) => b.classList.remove('active'));
+        details.forEach((panel) => panel.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(`detail-${button.dataset.detail}`).classList.add('active');
+      });
+    });
+
+    const reportButtons = document.querySelectorAll('.report-btn');
+    const reportPanels = document.querySelectorAll('.report-panel');
+    reportButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        reportButtons.forEach((b) => b.classList.remove('active'));
+        reportPanels.forEach((panel) => panel.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(`report-${button.dataset.report}`).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
