@@ -74,9 +74,9 @@ K=4 sanity 通过：候选等于 full prefix，recall/mass=1.0，L2=0。
 
 ## 4. 关键图
 
-![uniform perfect router retrieval](figures/r3_uniform_perfect_router_topk_recall_mass_l2_baselines.png)
+![uniform perfect router retrieval](../figures/r3_uniform_perfect_router_topk_recall_mass_l2_baselines.png)
 
-![longtail perfect router retrieval](figures/r3_longtail_perfect_router_topk_recall_mass_l2_baselines.png)
+![longtail perfect router retrieval](../figures/r3_longtail_perfect_router_topk_recall_mass_l2_baselines.png)
 
 ## 5. 解释
 

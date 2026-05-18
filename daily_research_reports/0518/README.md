@@ -2,9 +2,10 @@
 
 ## 01_reporting
 
-对外汇报只读这一份：
+对外汇报读这两份同内容不同语言的报告：
 
-- `0518_E2B_E2C_E3_integrated_closure.md`
+- `0518_router_specialization_and_retrieval_report_ZH.md`
+- `0518_router_specialization_and_retrieval_report_EN.md`
 - `figures/`
 
 ## 02_experiment_process_analysis

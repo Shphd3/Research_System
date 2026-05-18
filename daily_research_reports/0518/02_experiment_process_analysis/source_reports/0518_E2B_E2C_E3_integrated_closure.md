@@ -88,19 +88,19 @@ Predictor decomposition:
 
 ## 4. 关键图
 
-![E2-B3 prototype gradient](figures/e2b3_prototype_grad_norm_over_steps.png)
+![E2-B3 prototype gradient](../figures/e2b3_prototype_grad_norm_over_steps.png)
 
 Supports: 修正后 prototype centers 确实收到自然 NTP 梯度。
 
-![E2-B3 routing matrix](figures/e2b3_routing_matrix_by_variant.png)
+![E2-B3 routing matrix](../figures/e2b3_routing_matrix_by_variant.png)
 
 Supports: natural prototype 仍不 clean；supervised CE clean。
 
-![E2-C representation PCA](figures/e2c_router_representation_pca.png)
+![E2-C representation PCA](../figures/e2c_router_representation_pca.png)
 
 Supports: representation 可分不等于 top-1 expert assignment clean。
 
-![E3 predictor crossed](figures/e3_predictor_accuracy_crossed.png)
+![E3 predictor crossed](../figures/e3_predictor_accuracy_crossed.png)
 
 Supports: expert choice 更像由 router projection / hidden geometry 决定。
 

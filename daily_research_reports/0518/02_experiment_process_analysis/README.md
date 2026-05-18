@@ -9,5 +9,6 @@
 汇报入口在：
 
 ```text
-../01_reporting/0518_E2B_E2C_E3_integrated_closure.md
+../01_reporting/0518_router_specialization_and_retrieval_report_ZH.md
+../01_reporting/0518_router_specialization_and_retrieval_report_EN.md
 ```
