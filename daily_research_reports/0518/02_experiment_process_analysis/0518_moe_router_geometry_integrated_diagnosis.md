@@ -2,7 +2,7 @@
 
 ## 1. 结论
 
-结合文章 *The Myth of Expert Specialization in MoEs* 和我们 E2-B / E2-C / E3 的实验，现在可以较清楚地诊断：
+结合文章 *The Myth of Expert Specialization in MoEs* 和我们 E2-B / E2-B3 / E2-C / E3 的实验，现在可以较清楚地诊断：
 
 ```text
 MoE 没有自然形成 one-feature-one-expert，
@@ -23,6 +23,7 @@ $$
 我们的实验给出的直接证据是：
 
 - E2-B：prototype / center router 无监督时不 clean；加 feature CE 后可以 `NMI=1`。
+- E2-B3：修正为 gate-value top-1 后，prototype centers 确实收到 NTP 梯度并移动，但仍不能自然 clean；center separation 也不能替代 assignment pressure。
 - E2-C：contrastive representation 中 feature 可线性读出，但 routing 仍不 clean。
 - E3：hidden feature probe 为 `1.0`，但 natural router NMI 只有约 `0.56-0.72`；supervised router 在所有控制数据上 `NMI=1`。
 
@@ -53,7 +54,7 @@ MoE 不分 expert，是因为模型没有学到 ABC/DEF/GHI/JKL。
 
 ### 2.2 不是模型容量或代码链路坏了
 
-E2-B 的 `prototype_aux_*` 和 E3 的 `router_aux_lam_1_0` 都能得到 clean specialization：
+E2-B3 的 supervised CE 和 E3 的 `router_aux_lam_1_0` 都能得到 clean specialization：
 
 ```text
 NMI = 1.0
@@ -69,7 +70,36 @@ ablation drop 显著上升
 
 失败不是“系统做不到”，而是“natural objective 不主动这样做”。
 
-### 2.3 不是“表示聚类”就够了
+### 2.3 不是 prototype centers 没有梯度
+
+我们发现旧 E2-B / E2-B2 有一个关键可信度问题：hard top-1 prototype routing 中，expert output 没有乘以 selected gate probability，因此自然 $L_{\text{NTP}}$ 不能可靠反传到 prototype centers。
+
+E2-B3 已修正为 gate-value top-1：
+
+$$
+y_t=p_{t,e^*}\mathrm{Expert}_{e^*}(h_t),
+\quad
+e^*=\arg\max_e p_{t,e}
+$$
+
+修正后结果是：
+
+| variant | first prototype grad | readback | NMI | best-perm acc | fixed-label acc |
+|---|---:|---:|---:|---:|---:|
+| natural NTP | 0.0050 | 0.9957 | 0.5772 | 0.5000 | 0.3333 |
+| center separation | 0.0706 | 0.9955 | 0.1924 | 0.3333 | 0.2500 |
+| supervised CE | 4.1205 | 0.9969 | 1.0000 | 1.0000 | 1.0000 |
+
+这说明：
+
+```text
+prototype centers 确实能在 NTP 下收到梯度并移动；
+但自然移动不会自动演化成四个 feature centers。
+```
+
+Center separation 能把 centers 撑开，但不能把 feature clusters 分配给不同 centers。因此失败不是“质心不训练”，而是“质心训练目标没有 assignment-level pressure”。
+
+### 2.4 不是“表示聚类”就够了
 
 E2-C 中 router representation probe accuracy 为 `1.0`，但最强 contrastive variant 也只有：
 
@@ -86,7 +116,7 @@ best-perm acc = 0.619
 
 文章的 $g=Ph$ 几何解释正好解释这一点：router 关心的是 $P$ 的投影方向，而不是人类看到的 PCA cluster 或 feature centroid。
 
-### 2.4 Natural router 更像按 router projection / hidden geometry 切
+### 2.5 Natural router 更像按 router projection / hidden geometry 切
 
 E3 predictor decomposition 显示，在 no-LB 下：
 
@@ -106,7 +136,7 @@ expert id 可以被 router projection / PCA geometry 高准确预测；
 
 所以 router 不是完全随机。它确实在切 hidden space，只是切的不是我们定义的 feature boundary。
 
-### 2.5 Expert utility 存在冗余
+### 2.6 Expert utility 存在冗余
 
 E3 component ablation 显示，natural setting 中：
 
@@ -170,7 +200,7 @@ LB 可以让 load 更均匀，但不会自动把 expert 对齐人工 feature。
 
 最有效方案是 assignment-level supervision。
 
-已经被 E2-B / E3 验证可行：
+已经被 E2-B3 / E3 验证可行：
 
 $$
 L = L_{\text{NTP}} + \lambda \cdot \mathrm{CE}(\text{router logits}, \text{feature id})
@@ -199,7 +229,24 @@ ablation drop 显著升高
 如果给 feature label，one-to-one 分发可以被稳定实现。
 ```
 
-### 4.2 如果目标是不使用 feature label 的自然分工：还需要增强任务压力
+## 5. 关键图
+
+![E2-B3 prototype gradient](figures/e2b3_prototype_grad_norm_over_steps.png)
+
+Figure: E2-B3 prototype gradient  
+Supports: 修正后 natural NTP 确实给 prototype centers 非零梯度。
+
+![E2-B3 routing](figures/e2b3_routing_matrix_by_variant.png)
+
+Figure: E2-B3 routing matrix  
+Supports: 有梯度的 trainable centers 仍不自然 clean；supervised CE clean。
+
+![E2-B3 centroid to prototype](figures/e2b3_feature_centroid_to_prototype_heatmap.png)
+
+Figure: E2-B3 feature centroid to prototype  
+Supports: 只有 supervised CE 把 feature centroid 对齐到指定 prototype。
+
+## 6. 如果目标是不使用 feature label 的自然分工：还需要增强任务压力
 
 因为文章和实验都说明，natural router 不会自动追求人类定义的 feature partition。要想无监督或弱监督地得到 one-to-one，需要让这种分工在 loss/utility 上变得必要。
 
@@ -229,7 +276,7 @@ ablation drop 显著升高
 6. 训练 dynamics 中加入 early specialization pressure  
    文章和我们的 dynamics 都提示 early routing 会影响后续 co-adaptation。可以在早期使用较强 assignment pressure，后期 anneal。
 
-## 5. 推荐的下一步实验
+## 7. 推荐的下一步实验
 
 最优先不是继续跑普通 MoE，而是做 specialization pressure test。
 
@@ -307,7 +354,7 @@ maximize H(expert)
 
 它比 feature CE 更接近“发现分工”，但仍然依赖 synthetic feature label 做诊断。
 
-## 6. 对主线的更新
+## 8. 对主线的更新
 
 这篇文章让我们的主线判断更稳：
 
@@ -326,6 +373,6 @@ Router bucket 不能默认当作 feature reverse index。
 但不能期待普通 NTP + linear router 自然给出。
 ```
 
-## 7. 30 秒汇报版本
+## 9. 30 秒汇报版本
 
-这篇 MoE router geometry 文章和我们的实验结论高度一致：linear router 本质是 $g=Ph$，所以 expert 分配取决于 hidden geometry 被 router 投影成什么方向，而不是自动按人类定义的 feature 聚类。我们的 E2-B/E2-C/E3 证明：feature 在 hidden 和 router representation 中都可读出，模型也能在监督下 `NMI=1` clean 分发；但 natural NTP 下 router 只学到一个足够降低 loss 的 partition，不会自然 one-feature-one-expert。下一步要做的是 specialization pressure test：比较 learned / oracle / best-utility router，并降低 expert 冗余或加入 assignment-level pressure，让 one-to-one 在任务上变成必要解。
+这篇 MoE router geometry 文章和我们的实验结论高度一致：linear router 本质是 $g=Ph$，所以 expert 分配取决于 hidden geometry 被 router 投影成什么方向，而不是自动按人类定义的 feature 聚类。我们还修正了 prototype top-1 的梯度链路：修正后 natural NTP 确实能移动 prototype centers，但仍不能自然形成 clean one-feature-one-expert；center separation 也不够。只有 feature CE 能稳定 `NMI=1`。因此最稳结论是：representation separability、center movement、center separation 都不等于 router specialization；下一步要测试什么 assignment-level pressure 或任务压力能让 one-to-one 成为必要解。

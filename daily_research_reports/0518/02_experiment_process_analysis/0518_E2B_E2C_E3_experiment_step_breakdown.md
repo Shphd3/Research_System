@@ -259,11 +259,12 @@ E3 比较：
 MoE 对任务有贡献，但 natural routing 不是 clean 独占分工。
 ```
 
-## 5. 三个实验合起来的逻辑链
+## 5. 四个诊断合起来的逻辑链
 
 1. E2-B：prototype router 不是自然解；但加 feature CE 后能 clean。
-2. E2-C：contrastive representation 可分不是充分条件；cluster 不自动变 assignment。
-3. E3：同一模型在 supervised router 下全部 clean；natural router 不 clean；hidden feature 可分但 router 不按 feature label 切。
+2. E2-B2：center separation 可以撑开 expert centers，但不自动产生 feature-to-expert assignment。
+3. E2-C：contrastive representation 可分不是充分条件；cluster 不自动变 assignment。
+4. E3：同一模型在 supervised router 下全部 clean；natural router 不 clean；hidden feature 可分但 router 不按 feature label 切。
 
 最终闭环：
 
@@ -271,3 +272,120 @@ MoE 对任务有贡献，但 natural routing 不是 clean 独占分工。
 当前 failure 的核心不是表示学不到，也不是 expert 容量不够；
 而是 natural NTP objective 没有把可分 feature representation 转成 clean expert assignment 的必要压力。
 ```
+
+## 6. 补充实验：E2-B2 Center Separation Prototype Router
+
+Correction: E2-B2 使用 hard top-1 prototype routing，expert output 没有乘以 selected gate probability，因此自然 $L_{\text{NTP}}$ 不能可靠训练 prototype centers。E2-B3 已经修正这一点，后续关于 prototype center dynamics 的结论以 E2-B3 为准。
+
+### 6.1 要问的问题
+
+如果不使用 feature label supervision，只让每个 expert 的 prototype center 彼此远离，是否能自然形成 clean one-feature-one-expert？
+
+这比 E2-B 的 feature CE 更接近实际可用形式，因为它不需要知道 ABC/DEF/GHI/JKL 的真实标签。
+
+### 6.2 损失函数
+
+对 expert centers $c_e$ 做归一化后，惩罚不同 centers 的正余弦相似度：
+
+$$
+L_{\text{center-sep}}
+=
+\frac{1}{E(E-1)}
+\sum_{e \neq e'}
+\max(0,\cos(c_e,c_{e'}) - m)^2
+$$
+
+本轮使用 $m=0$，总损失为：
+
+$$
+L
+=
+L_{\text{NTP}}
++ \lambda_{\text{sep}} L_{\text{center-sep}}
++ \lambda_{\text{LB}} L_{\text{LB}}
+$$
+
+其中 center separation 只让 centers 分开，不告诉 router 哪个 feature 应该进入哪个 center。
+
+### 6.3 运行设置
+
+本轮只跑 3 seeds：`20260513/20260514/20260515`。  
+数据仍是 uniform all-trigram synthetic corpus。
+
+| variant | center-sep coef | LB |
+|---|---:|---:|
+| `prototype_center_sep_0_1_no_lb` | 0.1 | no |
+| `prototype_center_sep_1_0_no_lb` | 1.0 | no |
+| `prototype_center_sep_1_0_lb` | 1.0 | yes |
+
+### 6.4 结果
+
+| variant | readback | NMI | best-perm acc | load entropy | ablation drop |
+|---|---:|---:|---:|---:|---:|
+| `prototype_center_sep_0_1_no_lb` | 0.9952 | 0.4843 | 0.5077 | 1.1363 | 0.3629 |
+| `prototype_center_sep_1_0_no_lb` | 0.9948 | 0.4875 | 0.5238 | 1.1414 | 0.3980 |
+| `prototype_center_sep_1_0_lb` | 0.9949 | 0.5783 | 0.5284 | 1.3862 | 0.4060 |
+
+Prototype centers 的 off-diagonal cosine 已经被压到非正，final `center_sep_loss = 0.0`。也就是说，center separation 目标本身是成功的。
+
+### 6.5 结论
+
+E2-B2 说明：
+
+```text
+把 expert centers 撑开，可以避免 center collapse；
+但不能自动把 feature clusters 分配到不同 experts。
+```
+
+因此，缺失的不是 center geometry pressure，而是 assignment-level pressure：目标函数需要推动“不同 feature-like clusters 使用不同 experts”，而不只是让 expert centers 彼此远离。
+
+## 7. 修正实验：E2-B3 Trainable Prototype Dynamics
+
+### 7.1 修正了什么
+
+旧 prototype top-1：
+
+$$
+e^*=\arg\max_e p_{t,e},
+\quad
+y_t=\mathrm{Expert}_{e^*}(h_t)
+$$
+
+这里 `argmax` 不可导，而且 $y_t$ 不含 $p_{t,e^*}$，所以自然 $L_{\text{NTP}}$ 不会反传到 router/prototype。
+
+E2-B3 改成：
+
+$$
+y_t=p_{t,e^*}\mathrm{Expert}_{e^*}(h_t)
+$$
+
+这样 NTP loss 可以通过 $p_{t,e^*}$ 更新 prototype centers。
+
+### 7.2 实验设置
+
+本轮 3 seeds：`20260513/20260514/20260515`。
+
+| variant | loss | 目的 |
+|---|---|---|
+| `trainable_center_natural_no_lb` | $L_{\text{NTP}}$ | 看 centers 是否自然对齐 feature |
+| `trainable_center_sep_1_0_no_lb` | $L_{\text{NTP}} + L_{\text{center-sep}}$ | 看撑开 centers 是否足够 |
+| `trainable_center_supervised_ce_1_0_no_lb` | $L_{\text{NTP}} + L_{\text{router-feature}}$ | supervised upper bound |
+
+### 7.3 结果
+
+| variant | first prototype grad | readback | NMI | best-perm acc | fixed-label acc |
+|---|---:|---:|---:|---:|---:|
+| natural NTP | 0.0050 | 0.9957 | 0.5772 | 0.5000 | 0.3333 |
+| center separation | 0.0706 | 0.9955 | 0.1924 | 0.3333 | 0.2500 |
+| supervised CE | 4.1205 | 0.9969 | 1.0000 | 1.0000 | 1.0000 |
+
+### 7.4 结论
+
+E2-B3 说明：
+
+```text
+prototype centers 在 NTP 下确实收到梯度并移动；
+但 natural NTP 仍不会把 centers 自然演化成四个 feature centers。
+```
+
+Center separation 能把 centers 撑开，但不能把 feature clusters 分配给不同 centers。Supervised CE 能 clean，说明模型和代码链路能做这件事；失败仍然来自 assignment-level pressure 不足。
