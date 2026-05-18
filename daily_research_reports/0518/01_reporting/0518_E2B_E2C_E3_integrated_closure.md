@@ -39,8 +39,10 @@ Natural router 不 clean，不是因为 feature 没学到、模型容量不够�
 修正后的 gate-value top-1：
 
 $$
-y_t=p_{t,e^*}\mathrm{Expert}_{e^*}(h_t),
-\quad e^*=\arg\max_e p_{t,e}
+\begin{aligned}
+e^* &= \arg\max_e p_{t,e}, \\
+y_t &= p_{t,e^*}\,\mathrm{Expert}_{e^*}(h_t).
+\end{aligned}
 $$
 
 | variant | first prototype grad | readback | NMI | best-perm acc |
@@ -165,4 +167,3 @@ router 就没有必要把人工 feature label 映射成 one-feature-one-expert�
 ## 8. 30 秒汇报
 
 我们闭环了 natural MoE router 为什么不形成 clean feature specialization。结果不是模型没学到 feature，也不是 router 结构不能分；E3 里 feature 从 hidden 可线性读出，supervised router 也能稳定 `NMI=1`。关键失败点是：natural NTP 没有把“可分表示”转化成“按 feature 分 expert”的必要压力；router 更像按 hidden geometry 或 router projection 切。下一步要测 feature-aligned routing 是否真的带来 utility 优势。
-

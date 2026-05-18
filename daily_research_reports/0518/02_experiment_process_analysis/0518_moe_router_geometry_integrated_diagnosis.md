@@ -77,9 +77,10 @@ ablation drop 显著上升
 E2-B3 已修正为 gate-value top-1：
 
 $$
-y_t=p_{t,e^*}\mathrm{Expert}_{e^*}(h_t),
-\quad
-e^*=\arg\max_e p_{t,e}
+\begin{aligned}
+e^* &= \arg\max_e p_{t,e}, \\
+y_t &= p_{t,e^*}\,\mathrm{Expert}_{e^*}(h_t).
+\end{aligned}
 $$
 
 修正后结果是：

@@ -288,21 +288,25 @@ Correction: E2-B2 使用 hard top-1 prototype routing，expert output 没有乘�
 对 expert centers $c_e$ 做归一化后，惩罚不同 centers 的正余弦相似度：
 
 $$
+\begin{aligned}
 L_{\text{center-sep}}
-=
+&=
 \frac{1}{E(E-1)}
 \sum_{e \neq e'}
-\max(0,\cos(c_e,c_{e'}) - m)^2
+\max\!\left(0,\cos(c_e,c_{e'}) - m\right)^2 .
+\end{aligned}
 $$
 
 本轮使用 $m=0$，总损失为：
 
 $$
+\begin{aligned}
 L
-=
+&=
 L_{\text{NTP}}
 + \lambda_{\text{sep}} L_{\text{center-sep}}
-+ \lambda_{\text{LB}} L_{\text{LB}}
++ \lambda_{\text{LB}} L_{\text{LB}} .
+\end{aligned}
 $$
 
 其中 center separation 只让 centers 分开，不告诉 router 哪个 feature 应该进入哪个 center。
@@ -346,9 +350,10 @@ E2-B2 说明：
 旧 prototype top-1：
 
 $$
-e^*=\arg\max_e p_{t,e},
-\quad
-y_t=\mathrm{Expert}_{e^*}(h_t)
+\begin{aligned}
+e^* &= \arg\max_e p_{t,e}, \\
+y_t &= \mathrm{Expert}_{e^*}(h_t).
+\end{aligned}
 $$
 
 这里 `argmax` 不可导，而且 $y_t$ 不含 $p_{t,e^*}$，所以自然 $L_{\text{NTP}}$ 不会反传到 router/prototype。
@@ -356,7 +361,10 @@ $$
 E2-B3 改成：
 
 $$
-y_t=p_{t,e^*}\mathrm{Expert}_{e^*}(h_t)
+\begin{aligned}
+e^* &= \arg\max_e p_{t,e}, \\
+y_t &= p_{t,e^*}\,\mathrm{Expert}_{e^*}(h_t).
+\end{aligned}
 $$
 
 这样 NTP loss 可以通过 $p_{t,e^*}$ 更新 prototype centers。
