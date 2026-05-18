@@ -1,75 +1,69 @@
-# 0518 Report: Why MoE Routers Do Not Naturally Learn One-Feature-One-Expert, And Whether That Helps Retrieval
+# 0518 Report: Hypothesis Closure for Router Specialization and KV Retrieval
 
-## 1. Main Message
+## 1. 30-Second Message
 
-The safest conclusion is:
+This round tests whether an MoE router can first learn `one feature -> one expert` and then use expert buckets as a KV retrieval index. The safest conclusion is a two-level negative result. First, even when features are readable from hidden states, natural NTP does not turn them into clean expert assignments. Second, even when supervised training forces perfect feature routing, those feature-aligned buckets still do not retrieve the high-mass KV positions needed by block2 attention. In short: `feature separability != router specialization`, and `router specialization != KV index`. The next step is not to run more MoE variants, but to decompose what actually explains high-mass dense attention: locality, token identity, hidden similarity, value similarity, or feature identity.
 
-```text
-In the controlled synthetic trigram setting, the model can learn the features,
-and supervised router signals can produce one-feature-one-expert routing.
-However, natural NTP training does not produce this specialization.
+## 2. Hypotheses Closed In This Report
 
-Moreover, even perfect one-feature-one-expert routing is not sufficient
-to become an efficient and reliable KV retrieval index in the current setup.
-```
+This report does not prove whether MoE is useful in general. It closes three smaller hypotheses.
 
-This splits the mainline into two questions:
+| ID | Hypothesis | Current decision |
+|---|---|---|
+| H1 | If features are separable in hidden/router representations, natural routing will learn `one feature -> one expert`. | Not supported |
+| H2 | If experts have trainable prototype centers, NTP will push centers toward different feature clusters. | Not supported |
+| H3 | If we force perfect feature routing, feature-aligned buckets will become useful KV retrieval indexes. | Not supported |
 
-1. Why does the natural router not learn `one feature -> one expert`?
-2. If we force `one feature -> one expert`, does it make index retrieval efficient and reliable?
-
-The first question is not fully closed, but several wrong explanations are now ruled out. The second question is clearer: in the current setup, the answer is no.
-
-## 2. Research Goal
-
-The long-term goal is to test whether:
+Mainline update:
 
 ```text
-an MoE router can act as a model-native index,
-assigning different context features to different experts or buckets,
-and thereby supporting efficient KV retrieval.
+feature representation separability does not imply router specialization;
+router specialization does not imply a KV retrieval index.
 ```
+
+## 3. Experimental World And Boundary
+
+This report is self-contained within a controlled synthetic setting. It does not claim the same result already holds for real LLMs.
+
+| Item | Setting |
+|---|---|
+| Data | all-trigram synthetic corpus |
+| Features | four context relations: `ABC`, `DEF`, `GHI`, `JKL` |
+| Model | tiny causal Transformer + 4-expert top-1 MoE |
+| Training | next-token prediction, plus optional router supervision |
+| Retrieval target | high-mass KV positions from block2 full attention |
 
 The intended chain was:
 
 ```text
-controlled data features
+controlled features
 -> learned feature representations
 -> feature-aligned expert routing
--> feature-aligned buckets retrieve the KV states needed by attention
+-> feature-aligned buckets retrieve attention-relevant KV
 ```
 
-The 0518 results show two breaks in this chain:
+The 0518 results break this chain in two places:
 
-- Representation separability does not imply feature-aligned router specialization.
-- Feature-aligned router specialization does not imply a good KV retrieval index.
+1. separable feature representations do not force the router to specialize by feature;
+2. feature-specialized routing does not guarantee useful KV retrieval.
 
-## 3. Line A: Why Does The Natural Router Not Learn One-Feature-One-Expert?
+## 4. H1/H2: Why Does Natural Routing Not Become One-Feature-One-Expert?
 
-### 3.1 Experimental Setup
+### 4.1 Purpose
 
-The data contains synthetic trigram features:
+We first ask whether natural routing fails because the model did not learn the features, or because the router objective does not require feature-aligned expert assignment.
 
-| feature | relation |
-|---|---|
-| ABC | `[1,2] -> 22` |
-| DEF | `[3,4] -> 23` |
-| GHI | `[6,7] -> 20` |
-| JKL | `[8,9] -> 21` |
+### 4.2 Experiments
 
-The model is a tiny causal Transformer with a 4-expert top-1 MoE FFN. The training objective is next-token prediction.
-
-We tested three explanations:
-
-| experiment | question | conclusion |
+| Experiment | Question | Result |
 |---|---|---|
-| E2-B3 prototype centers | If each expert has a trainable center $c_e$, will routing naturally become feature-aligned? | No. Centers receive gradients and move, but do not align to features. |
-| E2-C contrastive router representation | If router representations become more separable, is that sufficient? | No. Feature labels are linearly readable, but expert assignment is still not clean. |
-| E3 failure-mode diagnostic | What explains natural routing? | It is better explained by hidden geometry / router projection than by human feature labels. |
+| E2-B3 prototype centers | Do trainable expert centers naturally align with features? | Centers receive gradients and move, but do not become clean. |
+| E2-C contrastive representation | Is a more separable router representation sufficient? | No. Features are readable, but expert assignment remains not clean. |
+| E3 predictor diagnostic | What better explains expert choice? | Hidden geometry / router projection, not human feature labels. |
 
-### 3.2 Key Result 1: Prototype Centers Receive Gradients But Do Not Naturally Specialize
+### 4.3 Evidence 1: Prototype Centers Receive Gradients But Do Not Become Clean
 
-We fixed the hard top-1 gradient issue by multiplying the selected expert output by its gate value:
+E2-B3 fixes the hard top-1 gradient issue by multiplying the selected expert output by its gate value:
 
 $$
 \begin{aligned}
@@ -78,11 +72,9 @@ y_t &= p_{t,e^*}\,\mathrm{Expert}_{e^*}(h_t).
 \end{aligned}
 $$
 
-This allows the NTP loss to update expert centers $c_e$.
+This ensures that NTP loss can affect prototype centers.
 
-Results:
-
-| variant | first prototype grad | readback | NMI | best-perm acc |
+| Variant | first prototype grad | readback | NMI | best-perm acc |
 |---|---:|---:|---:|---:|
 | natural NTP | 0.0050 | 0.9957 | 0.5772 | 0.5000 |
 | center separation | 0.0706 | 0.9955 | 0.1924 | 0.3333 |
@@ -90,16 +82,16 @@ Results:
 
 Interpretation:
 
-- Under natural NTP, centers do receive gradients and move.
-- But they do not naturally become four feature centers.
-- Center separation pushes centers apart, but does not assign feature clusters to different centers.
-- Only supervised CE reliably reaches `NMI=1`.
+- natural NTP does send gradients to the centers;
+- the centers still do not become four feature centers;
+- center separation spreads centers apart but does not assign feature clusters to them;
+- supervised CE reaches `NMI=1`, so the architecture can implement clean routing when assignment-level pressure exists.
 
 ![E2-B3 prototype gradient](figures/e2b3_prototype_grad_norm_over_steps.png)
 
 ![E2-B3 routing matrix](figures/e2b3_routing_matrix_by_variant.png)
 
-### 3.3 Key Result 2: Features Are Readable, But The Router Does Not Use Feature Labels
+### 4.4 Evidence 2: Features Are Readable, But The Router Does Not Use Feature Labels
 
 In E3, feature labels are linearly readable from hidden states:
 
@@ -107,9 +99,9 @@ In E3, feature labels are linearly readable from hidden states:
 feature-linear-probe = 1.0
 ```
 
-However, feature labels alone do not predict the router's expert choices well:
+But feature labels alone do not explain expert choice well. Router projection and PCA geometry explain it much better:
 
-| dataset / no-LB | feature-linear-probe | feature-only -> expert | router-projection -> expert | PCA-only -> expert |
+| Dataset / no-LB | feature-linear-probe | feature-only -> expert | router-projection -> expert | PCA-only -> expert |
 |---|---:|---:|---:|---:|
 | unique | 1.000 | 0.539 | 0.973 | 0.941 |
 | shared-B | 1.000 | 0.510 | 0.984 | 0.968 |
@@ -119,43 +111,38 @@ However, feature labels alone do not predict the router's expert choices well:
 This means:
 
 ```text
-The model internally distinguishes the features.
+The model can distinguish the features internally.
 The router is not random.
-But it learns a different low-loss partition of hidden space,
+But it learns another low-loss partition of hidden space,
 not the human-defined ABC/DEF/GHI/JKL one-to-one partition.
 ```
 
 ![E3 predictor crossed](figures/e3_predictor_accuracy_crossed.png)
 
-### 3.4 Conclusion For Line A
+### 4.5 Decision For H1/H2
 
-We can rule out:
+We can rule out four explanations:
 
-- The feature was not learned.
-- The model or code cannot specialize.
-- Prototype centers do not receive gradients.
-- Representation separability alone is sufficient.
+- the feature was not learned;
+- the model or code cannot route cleanly;
+- prototype centers receive no gradient;
+- representation separability is sufficient.
 
 The stronger explanation is:
 
 ```text
 NTP only requires next-token prediction.
-If some hidden-geometry partition or redundant expert utility is enough to reduce loss,
-the router does not need to map human feature labels to experts one-to-one.
+If a hidden-geometry partition or redundant expert utility is enough to reduce loss,
+the router has no reason to learn one-feature-one-expert.
 ```
 
-This question is not fully closed. We still need to explain why the natural router chooses its particular low-loss partition, and what pressure would make feature-aligned routing necessary.
+This is not fully closed yet. We still need to explain why the natural router chooses its particular low-loss partition and what pressure would make feature-aligned routing necessary.
 
-## 4. Line B: If One-Feature-One-Expert Holds, Does It Become A Good KV Index?
+## 5. H3: If Routing Is Perfect, Does It Become A KV Index?
 
-### 4.1 Experimental Setup
+### 5.1 Purpose
 
-R3 is an upper-bound test:
-
-```text
-Instead of waiting for natural specialization,
-we force perfect one-feature-one-expert routing using RouterFeatureCE.
-```
+R3 is an upper-bound test. Instead of waiting for natural specialization, we force perfect one-feature-one-expert routing using `RouterFeatureCE`.
 
 Mapping:
 
@@ -166,18 +153,18 @@ GHI -> expert 2
 JKL -> expert 3
 ```
 
-Then we test whether these feature-aligned buckets can retrieve the high-mass KV positions used by block2 full attention.
+Then we test whether these feature-aligned buckets retrieve the high-mass KV positions used by block2 full attention.
 
-### 4.2 Key Result: Perfect Feature Routing Is Still Not A Good KV Index
+### 5.2 Key Result
 
-The premise succeeds:
+The forced routing succeeds:
 
 | Dataset | NMI | ARI | fixed-label routing | feature readback acc |
 |---|---:|---:|---:|---:|
 | uniform | 1.000 | 1.000 | 1.000 | 1.000 |
 | longtail | 1.000 | 1.000 | 1.000 | 1.000 |
 
-But retrieval does not succeed. On feature queries:
+But retrieval does not succeed:
 
 | Dataset | K | Router recall | Random recall | Local recall | Router mass | Local mass |
 |---|---:|---:|---:|---:|---:|---:|
@@ -186,10 +173,10 @@ But retrieval does not succeed. On feature queries:
 | longtail | 1 | 0.328 | 0.298 | 0.433 | 0.378 | 0.735 |
 | longtail | 2 | 0.582 | 0.580 | 0.746 | 0.614 | 0.887 |
 
-The result:
+Conclusion:
 
 ```text
-Perfect feature routing is only slightly better than random,
+perfect feature routing is only slightly better than random,
 and clearly worse than the same-count local baseline.
 ```
 
@@ -197,78 +184,62 @@ and clearly worse than the same-count local baseline.
 
 ![R3 longtail retrieval](figures/r3_longtail_perfect_router_topk_recall_mass_l2_baselines.png)
 
-### 4.3 Conclusion For Line B
+### 5.3 Decision For H3
 
-In the current synthetic all-trigram setup:
+H3 is not supported.
 
-```text
-one-feature-one-expert is not sufficient for KV retrieval.
-```
+In the current synthetic all-trigram setup, one-feature-one-expert is not sufficient for KV retrieval. This means R1/R2 did not fail only because natural routing lacked specialization. Even perfect feature specialization does not group the high-mass KV positions required by attention.
 
-This means R1/R2 did not fail only because the natural router lacked specialization. Even with perfect feature specialization, the high-mass KV positions needed by attention are not mainly grouped by feature labels.
-
-More likely variables are:
+More likely explanatory variables are:
 
 - locality;
 - token identity;
 - hidden similarity;
 - value/output similarity;
-- head-specific attention patterns.
-
-## 5. Overall Interpretation
-
-The current mainline should be:
-
-```text
-We originally wanted to treat the MoE router as a feature index.
-The experiments show that this requires two additional conditions:
-
-1. the router must actually form a feature-aligned partition;
-2. the feature-aligned partition must retrieve the KV states needed by attention.
-
-In the current synthetic trigram setting, neither condition naturally holds.
-```
-
-Short version:
-
-```text
-feature representation separability does not imply router specialization;
-router specialization does not imply a KV retrieval index.
-```
+- head-specific attention pattern.
 
 ## 6. Claim Boundary
 
 Supported claims:
 
-- In the controlled synthetic trigram setting, natural top-1 routing does not automatically form clean one-feature-one-expert.
-- With feature supervision, the model can form clean routing.
-- Even perfect feature routing is not sufficient for efficient KV retrieval in the current setup.
-- The next step should diagnose what variables explain high-mass attention KV positions.
+- In the controlled synthetic trigram setting, natural top-1 routing does not automatically become clean one-feature-one-expert.
+- Feature readability in hidden states is not sufficient for feature-aligned expert assignment.
+- Supervised feature routing can reach `NMI=1`.
+- Even perfect feature routing is not sufficient to become an efficient KV index in the current setup.
+- The next step should diagnose what variables determine high-mass attention KV positions.
 
-Unsupported claims:
+Do not claim:
 
-- Real LLM MoEs do not learn semantic experts.
-- MoE routers can never act as retrieval indexes.
-- Feature specialization has no retrieval value in all tasks.
+- real LLM MoEs do not learn semantic experts;
+- MoE routers can never serve as retrieval indexes;
+- feature specialization has no retrieval value in all tasks;
+- the current experiment rules out long-context acceleration.
 
 ## 7. Next Step
 
-The next priority is attention source decomposition:
+Priority: attention source decomposition.
 
 ```text
 locality / token identity / hidden similarity / value similarity / feature identity
 ```
 
-We need to measure how much attention mass each variable explains.
+Goal: measure how much attention mass each variable explains.
 
-We should also run a utility gap test:
+Also run a utility gap test:
 
 ```text
 learned router vs feature-oracle router vs best-utility router
 ```
 
-If the feature-oracle router is not better than the learned router, then one-feature-one-expert is a human-desired partition, not a necessary solution for the current NTP/attention mechanism.
+If the feature-oracle router is not better than the learned router, then one-feature-one-expert is a human-desired interpretability partition, not a necessary solution for the current NTP/attention mechanism.
 
-## 8. 30-Second Update
+## 8. What Not To Say In Meeting
 
-My main question is whether the MoE router can become a feature index and then support KV retrieval. I separated this into two questions. First, why does the router not naturally learn one-feature-one-expert? E2/E3 show that the feature is readable from hidden states and supervised routing can reach `NMI=1`, but natural NTP does not turn the feature into an expert assignment. Second, if we force perfect feature routing, does retrieval work? R3 says no: perfect router buckets are only slightly better than random and much worse than local retrieval. So the current conclusion is: feature separability does not imply router specialization, and router specialization does not imply a KV index. Next, I need to diagnose what actually explains the high-mass KV positions in dense attention.
+- Do not say "MoE routers have no semantics."
+- Do not say "feature routing is useless."
+- Do not say "retrieval is impossible."
+- Do not treat `NMI=1` as retrieval success; R3 shows that clean routing and useful retrieval are different.
+
+## 9. One-Minute Meeting Script
+
+I closed two small hypotheses. First, I tested whether separable features naturally become one-feature-one-expert routing. This is not supported: features are linearly readable from hidden states and supervised routing can reach `NMI=1`, but natural NTP still does not make expert assignment clean. The router is better explained by hidden geometry or router projection than by human feature labels. Second, I tested whether perfect feature routing is enough for KV retrieval. R3 also says no: even with `NMI=1`, router buckets are only slightly better than random and much worse than local retrieval. So the current conclusion is that feature separability does not imply router specialization, and router specialization does not imply a KV index. The next step is to decompose dense attention and measure whether high-mass KV positions are explained by locality, token identity, hidden similarity, value similarity, or feature identity.

@@ -20,7 +20,15 @@ JKL -> expert 3
 
 然后测试这些 feature-aligned buckets 能否高效召回 block2 full attention 的 high-mass KV。
 
-## 2. 实验设置
+## 2. 待闭环假设
+
+**H3: perfect feature routing is sufficient for KV retrieval.**
+
+如果 block2 attention 的 high-mass KV 主要按 feature identity 聚集，那么在强制得到 `NMI=1` 的 one-feature-one-expert 后，router bucket 应该显著优于 same-count random，并且接近或超过 same-count local baseline。
+
+如果 perfect router 仍然不能稳定召回 high-mass KV，那么 R1/R2 的失败就不能只归因于 natural router 不 clean；更可能说明当前 attention 依赖的不是 feature label 本身，而是 locality、token identity、hidden similarity、value similarity 或 head-specific pattern。
+
+## 3. 实验设置
 
 两个数据版本：
 
@@ -45,7 +53,7 @@ oracle top-M
 full prefix sanity
 ```
 
-## 3. 直接结果
+## 4. 直接结果
 
 实验前提成立：
 
@@ -72,13 +80,13 @@ Dense attention 本身仍然 sparse：
 
 K=4 sanity 通过：候选等于 full prefix，recall/mass=1.0，L2=0。
 
-## 4. 关键图
+## 5. 关键图
 
 ![uniform perfect router retrieval](../figures/r3_uniform_perfect_router_topk_recall_mass_l2_baselines.png)
 
 ![longtail perfect router retrieval](../figures/r3_longtail_perfect_router_topk_recall_mass_l2_baselines.png)
 
-## 5. 解释
+## 6. 解释
 
 R3 的结论是负向的：
 
@@ -96,7 +104,7 @@ block2 attention 可能更依赖 locality、token identity、hidden similarity�
 value/output similarity，或 head-specific pattern。
 ```
 
-## 6. Claim 边界
+## 7. Claim 边界
 
 可以说：
 
@@ -110,7 +118,7 @@ value/output similarity，或 head-specific pattern。
 - 真实 LLM 中 feature specialization 没有检索价值。
 - 当前结果证明没有加速可能。
 
-## 7. 最弱点与下一步
+## 8. 最弱点与下一步
 
 最弱点：
 
@@ -126,7 +134,6 @@ locality / token identity / hidden similarity / value similarity / feature ident
 分别解释多少 attention mass。
 ```
 
-## 8. 30 秒汇报
+## 9. 30 秒汇报
 
 我们做了一个 perfect-router upper-bound 实验：用 `RouterFeatureCE` 把四个 feature 强制成 one-feature-one-expert，uniform 和 long-tail 两种数据上都达到 `NMI=1`。但 retrieval 仍失败：router bucket 只略高于 random，明显弱于 same-count local，输出 L2 也更差。结论是，在当前 synthetic all-trigram setup 中，feature specialization 不是 KV index 成立的充分条件；下一步要找 block2 attention 真正依赖的变量。
-
