@@ -44,7 +44,9 @@ export PATH=/root/.sco/bin:$PATH
 export WORKSPACE_NAME=share-space
 export CLUSTER_NAME=share-cluster
 export WORKER_SPEC=n6ls.iu.i40.4
-export QUOTA_TYPE=spot
+# For 4 GPUs or fewer, omit QUOTA_TYPE and omit --quota-type to use
+# guaranteed/default resources. For jobs requesting more than 4 GPUs, use:
+# export QUOTA_TYPE=spot
 export IMAGE_URL=registry.cn-sh-01.sensecore.cn/ccr-zhicheng-03/shphd-lite3:container1-20260506075648
 export MOUNT_SPEC=01995892-d478-76d8-aec7-13fd8284477e:/data
 export CONDA_ENV=spectral-hier
@@ -80,6 +82,13 @@ export GPU_COUNT=<gpu_count>
 export DEEPSPEED_NUM_GPUS=<gpu_count>
 export JOB_NAME=<job-name-ending-with-${gpu_count}gpu>
 ```
+
+Quota rule:
+
+- For `GPU_COUNT <= 4`, do not set `export QUOTA_TYPE=spot` and do not pass
+  `--quota-type=spot`; this uses guaranteed/default resources.
+- For `GPU_COUNT > 4`, set `export QUOTA_TYPE=spot` and pass
+  `--quota-type="${QUOTA_TYPE}"`.
 
 The inherited real-small submit script is a 4-GPU path and sets
 `CUDA_VISIBLE_DEVICES=0,1,2,3`. For non-4-GPU jobs, patch visible devices before

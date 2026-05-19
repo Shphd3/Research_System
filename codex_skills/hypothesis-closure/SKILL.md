@@ -54,6 +54,27 @@ they must be self-contained: a reader should understand the purpose, setup,
 result, claim boundary, and next decision without reading previous experiments
 or chat context.
 
+After an advisor-facing closure is complete, also sync a concise reporting copy
+or reporting pointer into the current day's daily folder:
+
+```text
+daily_research_reports/MMDD/01_reporting/
+```
+
+If the folder does not exist, create it. The daily reporting copy should be
+shorter than the project closure and should be ready to use in a meeting or
+group update. It should contain only:
+
+- the core purpose and hypothesis;
+- the closure decision;
+- the key evidence and figure links;
+- the claim boundary;
+- the next decision;
+- a 30-second explanation.
+
+Do not duplicate long tables or raw logs in the daily folder. Put those in the
+project experiment `summary.md` / `detailed.md` or the project-level closure.
+
 ## Required Output
 
 ```markdown
@@ -106,6 +127,33 @@ Hx: ...
 一句话目的 + 结果 + 边界 + 下一步。
 ```
 
+Also create or update the same day's reporting artifact:
+
+```text
+daily_research_reports/MMDD/01_reporting/<MMDD>_<closure_id>_closure.md
+```
+
+Use this compact shape:
+
+```markdown
+# <MMDD> Closure Brief: <name>
+
+## 1. Core Purpose And Hypothesis
+
+## 2. Closure Decision
+
+## 3. Key Evidence
+
+## 4. Claim Boundary
+
+## 5. Next Decision
+
+## 6. 30s Explanation
+```
+
+If the daily reporting folder has a `README.md`, add the new brief there as an
+index item.
+
 ## Rules
 
 - One closure document should close one hypothesis or one tightly scoped hypothesis family.
@@ -128,5 +176,9 @@ Hx: ...
 - Do not upgrade a claim unless the setup directly tests it.
 - If the setup only tests a boundary condition, say so.
 - After a closure is complete, state whether `consensus.md` should be updated and which specific item changes.
+- After a closure is complete, sync a concise version into
+  `daily_research_reports/MMDD/01_reporting/` for same-day reporting. If the
+  closure is not report-worthy, explicitly write `No daily reporting sync` and
+  give a one-sentence reason.
 - The weakest point must be concrete: missing control, ambiguous metric, weak baseline, limited dataset, layer/head specificity, or mismatch with the mainline.
 - When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.
