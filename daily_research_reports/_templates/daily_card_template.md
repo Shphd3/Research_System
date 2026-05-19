@@ -48,18 +48,25 @@ Conclusion:
 
 如果明天要跟导师/学长说，30 秒版本是：
 
-## 8. Thought Parking Lot
+## 8. Recording / Class Notes
 
-只记录会打断当前任务的旁支想法。关键规则：
+用于记录上课 / 讲座 / 讨论中真正有用的内容，不写逐字稿。
+
+Class / Session：
+
+Key points：
+
+Relation to my research / current task：
+
+Action：
+
+## 9. Small Thought Parking Lot
+
+只收纳会打断当前任务的旁支想法，不展开分析。关键规则：
 
 > 只要它不阻塞当前 25 分钟产出，就先放进去，不追。
 
-### Thought 1
-
-突然想到的点：
-
-它为什么看起来重要：
-
-它是否真的阻塞当前 25 分钟任务：是 / 否
-
-我什么时候回来看它：
+- 突然想到的点：
+  - 为什么看起来重要：
+  - 是否阻塞当前 25 分钟任务：是 / 否
+  - 回看时间：

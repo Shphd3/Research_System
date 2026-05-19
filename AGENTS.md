@@ -312,19 +312,25 @@ Conclusion:
 
 ## 7. 30s Explanation
 
-## 8. Thought Parking Lot
+## 8. Recording / Class Notes
+
+## 9. Small Thought Parking Lot
 ```
 
-Use `Thought Parking Lot` for side ideas that appear during focused work:
+Use `Recording / Class Notes` for class, lecture, or discussion notes. Do not
+write transcripts; keep only the key points, relation to current research/task,
+and action.
+
+Use `Small Thought Parking Lot` for side ideas that appear during focused work:
 
 ```markdown
 突然想到的点：
 
-它为什么看起来重要：
+为什么看起来重要：
 
-它是否真的阻塞当前 25 分钟任务：是 / 否
+是否阻塞当前 25 分钟任务：是 / 否
 
-我什么时候回来看它：
+回看时间：
 ```
 
 Rule: if the thought does not block the current 25 minute output, park it and

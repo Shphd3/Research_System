@@ -14,15 +14,10 @@ daily_research_reports/MMDD/daily_card.md
 
 Use `daily_card_template.md` as the compact first-pass structure.
 
-If side thoughts appear during focused work, keep them inside the daily card's
-`Thought Parking Lot` section, or create:
+Class notes and side thoughts should stay inside `daily_card.md` by default:
 
-```text
-daily_research_reports/MMDD/thought_parking_lot.md
-```
-
-Use `thought_parking_lot_template.md`. Do not expand parked thoughts during the
-current 25 minute task unless they directly block the task output.
+- `Recording / Class Notes`: only keep class points that affect research judgment, task planning, or future reading.
+- `Small Thought Parking Lot`: park side ideas without expanding them unless they directly block the current 25 minute task.
 
 Meeting materials for the same day should be created under:
 

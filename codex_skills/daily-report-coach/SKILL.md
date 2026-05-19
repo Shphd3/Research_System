@@ -42,7 +42,9 @@ Conclusion:
 
 ## 7. 30s Explanation
 
-## 8. Thought Parking Lot
+## 8. Recording / Class Notes
+
+## 9. Small Thought Parking Lot
 ```
 
 Optional fields only when useful:
@@ -64,11 +66,16 @@ Optional fields only when useful:
 - The mainline update must say whether the day changed a hypothesis, modeling definition, claim boundary, bottleneck, or next decision.
 - The self-audit belongs in `What I Cannot Claim Yet`: unsupported assumption, ambiguous definition, missing control, possible counterexample, or over-strong wording.
 - The 30 second script must be understandable to someone who has not followed every detail.
-- `Thought Parking Lot` is for side ideas that should not interrupt the current task. Use this compact entry:
+- `Recording / Class Notes` is for class, lecture, or discussion notes. Do not write transcripts. Keep only:
+  - Class / Session:
+  - Key points:
+  - Relation to my research / current task:
+  - Action:
+- `Small Thought Parking Lot` is for side ideas that should not interrupt the current task. Use this compact entry:
   - 突然想到的点：
-  - 它为什么看起来重要：
-  - 它是否真的阻塞当前 25 分钟任务：是 / 否
-  - 我什么时候回来看它：
+  - 为什么看起来重要：
+  - 是否阻塞当前 25 分钟任务：是 / 否
+  - 回看时间：
 - If a parked thought does not block the current 25 minute output, record it and return to the main task.
 - Avoid vague phrases like "interesting result"; state what the result supports, weakens, or leaves unresolved.
 - When writing Markdown research documents, inline formulas must use `$...$` and display formulas must use `$$...$$`.

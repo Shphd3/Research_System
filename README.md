@@ -30,7 +30,7 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 
 Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use `daily_research_reports/_templates/daily_card_template.md`.
 
-Side thoughts can stay inside the daily card's `Thought Parking Lot`, or in `daily_research_reports/MMDD/thought_parking_lot.md` when they accumulate.
+Class notes and side thoughts should stay inside `daily_card.md` by default. Use `Recording / Class Notes` for class points, and `Small Thought Parking Lot` for side ideas that should not interrupt the current task.
 
 Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`. PRISM reports should be placed at `daily_research_reports/MMDD/meeting/prism/`.
 
