@@ -24,10 +24,13 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 2. Decide whether today's work updates the mainline.
 3. Write a compact daily card or experiment card.
 4. State the conclusion for each task, not a task log.
-5. Update `CURRENT.md` only when evidence changes the mainline, claim boundary, bottleneck, or next decision.
-6. Commit the research-system update.
+5. Park side thoughts instead of chasing them during the current 25 minute task.
+6. Update `CURRENT.md` only when evidence changes the mainline, claim boundary, bottleneck, or next decision.
+7. Commit the research-system update.
 
 Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use `daily_research_reports/_templates/daily_card_template.md`.
+
+Side thoughts can stay inside the daily card's `Thought Parking Lot`, or in `daily_research_reports/MMDD/thought_parking_lot.md` when they accumulate.
 
 Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`. PRISM reports should be placed at `daily_research_reports/MMDD/meeting/prism/`.
 

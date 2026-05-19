@@ -14,6 +14,16 @@ daily_research_reports/MMDD/daily_card.md
 
 Use `daily_card_template.md` as the compact first-pass structure.
 
+If side thoughts appear during focused work, keep them inside the daily card's
+`Thought Parking Lot` section, or create:
+
+```text
+daily_research_reports/MMDD/thought_parking_lot.md
+```
+
+Use `thought_parking_lot_template.md`. Do not expand parked thoughts during the
+current 25 minute task unless they directly block the task output.
+
 Meeting materials for the same day should be created under:
 
 ```text

@@ -311,7 +311,25 @@ Conclusion:
 ## 6. Next Decision
 
 ## 7. 30s Explanation
+
+## 8. Thought Parking Lot
 ```
+
+Use `Thought Parking Lot` for side ideas that appear during focused work:
+
+```markdown
+突然想到的点：
+
+它为什么看起来重要：
+
+它是否真的阻塞当前 25 分钟任务：是 / 否
+
+我什么时候回来看它：
+```
+
+Rule: if the thought does not block the current 25 minute output, park it and
+return to the main task. Do not expand it into a new analysis unless the user
+explicitly asks to review parked thoughts.
 
 ## Skills
 
