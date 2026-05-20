@@ -96,6 +96,7 @@ Use `codex_skills/` for the skill map and skill sources.
 Primary active skills:
 
 - `codex_skills/research-mainline/SKILL.md`
+- `codex_skills/scholar-mode/SKILL.md`
 - `codex_skills/claim-auditor/SKILL.md`
 - `codex_skills/experiment-card-writer/SKILL.md`
 - `codex_skills/experiment-acp-runner/SKILL.md`

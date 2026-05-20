@@ -40,6 +40,7 @@ first. Then use local skills from `codex_skills/` when the task type matches:
 - experiment plan or experiment card: `codex_skills/experiment-card-writer/SKILL.md`
 - experiment card plus ACP/SCO cluster submission: `codex_skills/experiment-acp-runner/SKILL.md`
 - experiment result or daily synthesis: `codex_skills/daily-report-coach/SKILL.md`
+- research intuition, theory framing, methodology critique, or literature analysis before a fixed artifact exists: `codex_skills/scholar-mode/SKILL.md`
 - claim boundary or public wording audit: `codex_skills/claim-auditor/SKILL.md`
 - mainline update or project state consolidation: `codex_skills/research-mainline/SKILL.md`
 - meeting / group-report preparation: `codex_skills/meeting-brief-coach/SKILL.md`
@@ -356,6 +357,7 @@ Edit the repo-tracked version first, then sync the installed copy when needed.
 Prefer this active skill set:
 
 - `research-mainline`: judge whether material updates a project mainline.
+- `scholar-mode`: clarify research intuitions, theory framing, methodology critique, and literature-fit judgments before turning them into artifacts.
 - `claim-auditor`: audit claim strength against evidence.
 - `experiment-card-writer`: write compact experiment cards and result-decision blocks.
 - `hypothesis-closure`: close the loop on a hypothesis after experiment evidence exists.
