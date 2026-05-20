@@ -4,7 +4,7 @@
 
 目的：判断 raw-attention Oracle-MoE 是否能把 synthetic trigram feature 稳定分给不同 experts，并排除 prefix token / target token shortcut。
 
-假设：如果 `attention_output` 中已有 feature-related regions，则 Dingyi-style oracle-initialized prototype router 应比普通 router 更稳定地形成 feature-aligned functional specialization。
+假设：如果 `attention_output` 中已有 feature-related regions，则  oracle-initialized prototype router 应比普通 router 更稳定地形成 feature-aligned functional specialization。
 
 ## 2. Closure Decision
 
@@ -12,7 +12,7 @@
 
 ## 3. Key Evidence
 
-- `crossed_factorial_uniform` 中，C7e 达到 `readback=1.000`、`feature-expert NMI=0.834`、`router_selects_best=1.000`。
+- `crossed_factorial_uniform` （打乱上下文）中，C7e 达到 `readback=1.000`、`feature-expert NMI=0.834`、`router_selects_best=1.000`。
 - `shared_b_uniform` 与 `shared_target_uniform` 中，C7e 仍保持 NMI 约 0.9，说明不只是简单 prefix-end token 或 target token shortcut。
 - D* audit 显示 C7e 仍有较高 top-shared boundary energy，因此不能说是纯 feature direction 切分。
 
@@ -28,4 +28,4 @@
 
 ## 6. 30s Explanation
 
-我们这轮是在问：MoE router 能不能真的按 synthetic feature 分 expert，而不是靠 token 捷径。结果是，普通 router 不稳定；但 Dingyi-style oracle-init 的 C7e 在 shared-token、shared-target、crossed-factorial 控制下仍能 readback，并保持较高 feature-expert 对齐。最强证据是 crossed-factorial 里 `readback=1.000`、`NMI=0.834`、`selected-best=1.000`。边界是它不是自然发现机制，而且 boundary 仍混有 common directions；下一步看 zipf 长尾是否保持。
+我们这轮是在问：MoE router 能不能真的按 synthetic feature 分 expert，而不是靠 token 捷径。结果是，普通 router 不稳定；但  oracle-init 的 C7e 在 shared-token、shared-target、crossed-factorial 控制下仍能 readback，并保持较高 feature-expert 对齐。最强证据是 crossed-factorial 里 `readback=1.000`、`NMI=0.834`、`selected-best=1.000`。边界是它不是自然发现机制，而且 boundary 仍混有 common directions；下一步看 zipf 长尾是否保持。
