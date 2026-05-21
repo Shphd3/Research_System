@@ -14,6 +14,15 @@ daily_research_reports/MMDD/meeting/
     figures/
 ```
 
+For experiment closures, keep the fast reporting entry in:
+
+```text
+daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+```
+
+The reporting card should start with an empty oral report card for the user to
+write before the meeting, then include or link the closure snapshot.
+
 Meeting documents should optimize for claim boundaries:
 
 - what can be said strongly

@@ -17,6 +17,18 @@ daily_research_reports/MMDD/daily_card.md
 
 Use `daily_card_template.md` as the compact first-pass structure.
 
+When an experiment hypothesis closure is finished, create a meeting-prep
+reporting card:
+
+```text
+daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+```
+
+Use `reporting_card_template.md`. The top oral report card is intentionally
+blank so the user can write the group-meeting language themselves. The closure
+snapshot below is for fast access; the project-local closure remains the source
+of truth.
+
 Class notes and side thoughts should stay inside `daily_card.md` by default:
 
 - `Recording / Class Notes`: only keep class points that affect research judgment, task planning, or future reading.

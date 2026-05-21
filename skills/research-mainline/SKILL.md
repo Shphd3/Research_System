@@ -120,6 +120,18 @@ decision.
 `detailed.md` stores longer tables, seed notes, command records, failed runs,
 and supporting analysis.
 
+Keep the first reading path in `experiments/` narrow. Active experiments should
+be the ones most relevant to the proposition currently being verified. Move
+older, weakly related, superseded, or purely supporting experiments into
+`experiments/archive/` and maintain an `archive/README.md` with:
+
+- archived folder;
+- why it was archived;
+- when it should be consulted again.
+
+Do not delete evidence just because it is no longer active. Archive it unless
+the user explicitly asks to delete it.
+
 ### `sync/`
 
 `Projects/<project>/<worker>/sync/MMDD_topic/` is the default branch-local
@@ -141,6 +153,21 @@ Update sync once per active working day with the smallest shareable outcome:
 For experiment sync, include a compact `Artifact / Repro Map`. The sync should
 let a collaborator understand the result and know where to continue without
 asking where the code, data, figures, or outputs live.
+
+Experiment sync should use the same self-contained research-judgment structure
+as closures:
+
+```markdown
+## 1. 目的
+## 2. 假设
+## 3. 数学建模
+## 4. 实验设置
+## 5. 结论
+## 6. 证据
+## 7. 结论边界
+## 8. 下一步决策
+## 9. 结果文档
+```
 
 When figures are central evidence, copy the most important report-ready figures
 into the sync folder's local `figures/` directory and embed them with one

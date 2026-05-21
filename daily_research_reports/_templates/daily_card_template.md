@@ -68,6 +68,8 @@ Conclusion:
 
 是否需要写/更新 sync 文件夹：是 / 否
 
+是否需要生成 `01_reporting/<hypothesis_id>_reporting_card.md`：是 / 否
+
 ## 7. 30s Explanation
 
 如果明天要跟导师/学长说，30 秒版本是：

@@ -19,6 +19,17 @@ Answer only the information most relevant to the user's current question.
 - Do not turn research help into long essays. Extract the key decision, claim boundary, and next action.
 - Respect the user's cognitive load. Prefer a small answer that preserves the next decision over a complete answer that expands the problem space.
 - If a reply could branch, give the recommended branch first and mention at most one optional branch.
+- Do not flatter or merely agree with the user. When the user's reasoning may
+  contain a logical gap, hidden assumption, conflated concept, weak evidence
+  link, or premature conclusion, point it out directly and briefly. The goal is
+  to help the user build stricter research judgment, not to make the user feel
+  affirmed.
+- Default to critical-thinking collaboration. Treat the user's claim as a
+  research hypothesis to examine, not as something to affirm. When useful,
+  challenge the premise, evidence chain, concept boundary, metric choice,
+  causal interpretation, or next-step logic. If the user's reasoning is sound,
+  state what assumptions make it sound. Critique should be concise, specific,
+  and aimed at strengthening the user's scientific thinking.
 - For research-system refinement requests, default to: conclusion, one-line evaluation, concrete edit made or next edit.
 - For experiment replies, be self-contained: define the question, setup, key metric, result, interpretation, and claim boundary before using shorthand.
 - Do not begin with opaque English abbreviations or code names. Explain terms such as `RI`, `NMI`, or `CE delta` the first time they matter.
@@ -206,6 +217,12 @@ figures should be copied into a `figures/` folder beside the report file and
 referenced with relative Markdown image links. Do not put raw logs in the
 mainline unless they are small and necessary to understand the decision.
 
+Keep `main/experiments/` focused. It is not a museum of every historical run.
+The first reading path should retain only experiments most relevant to the
+proposition currently being verified. Older, weakly related, superseded, or
+purely supporting experiments should move under `experiments/archive/` with a
+short index explaining why they are archived and when to consult them.
+
 Project `hypotheses/` is the hypothesis reasoning layer. It stores the
 pre-experiment `purpose_card.md` and the post-evidence `hypothesis_closure.md`.
 The experiment folder stores execution and evidence. The closure should link
@@ -214,13 +231,30 @@ comprehension.
 
 Closure documents should be written in Chinese by default, with English kept
 only for metric names, code identifiers, paths, and quoted source terms.
-Keep closures concise for reporting: merge mainline anchor with hypothesis,
-merge claim update with cannot-claim boundaries, and merge weakest point with
-next decision. Put setup details and long tables in experiment `summary.md` or
+Closures should use a detailed version of the reporting-card structure:
+`目的 / 假设 / 数学建模 / 实验设置 / 结论 / 证据 / 结论边界 / 下一步决策 / 结果文档`.
+Keep closures concise for reporting, but include enough mathematical modeling
+to make the hypothesis precise: objects, variables, expected relation, and the
+metric decision rule. Put long tables and logs in experiment `summary.md` or
 `detailed.md`.
 Closures must be self-contained: do not assume the reader knows previous
 failed runs, chat history, or why a design changed. Prior context should appear
 only when it is necessary for the current claim.
+
+After a closure is finished, create a daily meeting-prep copy under:
+
+```text
+daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+```
+
+This daily file should put a small empty `Oral Report Card - Fill Before
+Meeting` section first, with only `目的 / 假设 / 结论 / 证据`, then include or link
+the closure snapshot. The project-local `hypothesis_closure.md` remains the
+source of truth; the daily copy exists so the user can prepare group-meeting
+language without searching across folders.
+If figures are used in the daily reporting card, copy them into a local folder
+beside the card and use local relative image links; do not reference figures
+across project directories from daily reports.
 
 ## Experiment Discipline
 
@@ -316,6 +350,8 @@ For each project:
 - For branch-local work, use `Projects/<project>/<worker>/sync/MMDD_topic/`.
   Each meeting-facing sync folder should be named with date and topic and should
   contain the actual reporting document, not only a pointer.
+  Experiment sync should use the same self-contained research-judgment structure
+  as closures: `目的 / 假设 / 数学建模 / 实验设置 / 结论 / 证据 / 结论边界 / 下一步决策 / 结果文档`.
   Experiment sync must include a compact artifact / repro map: code workspace,
   runner, config, data or manifest, result dir, figure dir, key files,
   checkpoints/logs, and repro command. If figures are central evidence, copy the

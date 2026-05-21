@@ -50,54 +50,60 @@ experiments/<experiment_id>/detailed.md
 ```markdown
 # Hypothesis Closure: <hypothesis_id>
 
-## 1. 原始问题层级与目的
+## 1. 目的
 
-从 purpose card 压缩：这轮原本要判定什么？
+这轮实验为什么必须做？它服务于哪个问题层级和下一步决策？
 
-## 2. 待判定假设
+## 2. 假设
 
 H:
 
 Rivals:
 
-## 3. 实验设置是否有效
+## 3. 数学建模
+
+Objects:
+
+Variables:
+
+Expected relation:
+
+Metric decision rule:
+
+## 4. 实验设置
 
 说明 setup 是否真的测试了 H，而不是只测试了弱 proxy。
 
-## 4. 直接结果
+## 5. 结论
 
-只写改变判断的结果，不写流水账。
+一句话结论。
 
-## 5. 解释
+## 6. 证据
 
-Result -> Interpretation -> Boundary.
+只写改变判断的结果。每条证据要说明它支持什么。
 
-## 6. Claim Update
+1.
+2.
+3.
 
-支持：
+## 7. 结论边界
 
-削弱：
-
-仍不清楚：
+能说：
 
 不能说：
 
-Public wording:
-
-Private speculation:
-
-## 7. 最弱点
+最弱点：
 
 导师最可能攻击的缺口：missing control / ambiguous metric / weak baseline /
 limited data / train-infer mismatch / layer specificity / synthetic-only。
 
-## 8. 下一步决定
+## 8. 下一步决策
 
 继续 / 修改 / 停止 / 换假设，并说明原因。
 
-## 9. 30s Explanation / Sync Version
+## 9. 结果文档
 
-一句话目的 + 结果 + 边界 + 下一步。
+summary / detailed / figures / runtime artifacts。
 ```
 
 ## Reporting Sync
@@ -112,6 +118,50 @@ After a closure is finished, also decide whether to sync:
 - mainline files: `current_mainline.md`, `consensus.md`, `status.md`
 - research graph: `graph.yaml`
 
+For group-meeting preparation, also create a daily reporting card:
+
+```text
+daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+```
+
+This file is the user's meeting-prep surface. Put an empty oral report card at
+the top for the user to write in their own words, then include or link the
+closure snapshot below. The project-local `hypothesis_closure.md` remains the
+source of truth; the daily copy is for fast meeting access.
+
+If the closure uses figures, copy the report-ready figures into a local folder
+beside the daily reporting card, for example
+`<hypothesis_id>_figures/`, and update image links to that local folder. Do not
+use cross-project relative image links from daily reporting cards.
+
+Use this shape:
+
+```markdown
+# Reporting Card: <hypothesis_id>
+
+Source closure:
+`Projects/<project>/<worker>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md`
+
+## Oral Report Card - Fill Before Meeting
+
+目的：
+
+假设：
+
+结论：
+
+证据：
+
+1.
+2.
+3.
+
+## Closure Snapshot
+```
+
+Do not make the user write another full report for meetings. Closure provides
+the logic; the daily reporting card provides the oral script space.
+
 For meeting-facing sync, create a folder named by date and topic, for example:
 
 ```text
@@ -121,18 +171,28 @@ Projects/from-attention-to-search/XingyuD/sync/0521_router_diagnosis/
   figures/
 ```
 
-The sync document should be written from the closure and contain only:
+The sync document should be written from the closure and use the same detailed
+research-judgment structure:
 
-- purpose and hypothesis;
-- result and interpretation;
-- key figure(s) with one-sentence evidence interpretation when figures are
-  central to the claim;
-- claim boundary;
-- weakest point;
-- next decision;
-- artifact / repro map: code workspace, runner, config, data or manifest,
-  result dir, figure dir, key files, checkpoints or logs, and repro command;
-- 30s / 1min explanation when useful.
+```markdown
+## 1. 目的
+## 2. 假设
+## 3. 数学建模
+## 4. 实验设置
+## 5. 结论
+## 6. 证据
+## 7. 结论边界
+## 8. 下一步决策
+## 9. 结果文档
+```
+
+`结果文档` should include the artifact / repro map: code workspace, runner,
+config, data or manifest, result dir, figure dir, key files, checkpoints or
+logs, and repro command.
+
+When figures are central to the claim, copy report-ready figures into the sync
+folder's local `figures/` directory and embed them with one-sentence evidence
+interpretation.
 
 The sync is not complete if a collaborator can understand the conclusion but
 cannot tell where the code, data, outputs, and figures are. Keep the map compact;

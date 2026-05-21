@@ -45,6 +45,15 @@ Result Documents
 The purpose card should link the experiment `summary.md`, `detailed.md`, key
 figures when needed, and `hypothesis_closure.md`.
 
+After a hypothesis closure is finished, create a daily reporting card under:
+
+```text
+daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+```
+
+The card should leave the oral-report section blank for the user to write before
+meeting, then include or link the closure snapshot for fast daily access.
+
 The purpose card belongs in `hypotheses/`; the execution plan and result
 evidence belong in `experiments/`.
 
@@ -58,6 +67,11 @@ Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 An experiment should correspond to one primary hypothesis. Multi-stage
 experiment lines may have stage-level sub-decisions, but they should still link
 back to the primary hypothesis purpose card.
+
+Keep active `experiments/` focused on the proposition currently being verified.
+Older, weakly related, superseded, or supporting-only experiments should be
+collected under `experiments/archive/` with a short index. Archive evidence
+rather than deleting it unless deletion is explicitly requested.
 
 Purpose cards must include:
 
@@ -75,9 +89,10 @@ Purpose cards must include:
   results, boundaries, and handoffs.
 - `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
   collaborator sync folder; the reporting document lives inside this folder.
-  Experiment sync must include a compact artifact / repro map: code, runner,
-  config, data or manifest, result folder, figure folder, key files,
-  checkpoints/logs, and repro command.
+  Experiment sync should use the closure-like structure `目的 / 假设 / 数学建模 /
+  实验设置 / 结论 / 证据 / 结论边界 / 下一步决策 / 结果文档`, and must include a compact
+  artifact / repro map: code, runner, config, data or manifest, result folder,
+  figure folder, key files, checkpoints/logs, and repro command.
 - `Projects/<project>/<worker>/docs/`: named material documents that help write
   hypothesis purpose cards and closures.
 - `graph.yaml`: optional thin research graph. Use `research-graph-sop`; keep
