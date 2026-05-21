@@ -6,6 +6,9 @@ The daily card replaces the old daily report. It should reduce thinking load:
 state the day's purpose, task-level conclusions, mainline update, claim boundary,
 and next decision.
 
+There is no separate daily-report skill. Use the template directly and keep each
+task split into `Did / Result / Interpretation / Claim boundary / Conclusion`.
+
 For a new day, create:
 
 ```text

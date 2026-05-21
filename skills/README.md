@@ -1,10 +1,6 @@
 # Skills
 
-This folder is only an index. Repo-tracked skill sources live in:
-
-```text
-codex_skills/
-```
+This folder is the canonical repo-tracked source for research-system skills.
 
 Installed local copies live in:
 
@@ -12,85 +8,67 @@ Installed local copies live in:
 C:\Users\250010109\.codex\skills\
 ```
 
-Edit `codex_skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
+Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
-## How Codex Uses Skills
-
-Codex uses a skill when:
-
-- the user explicitly names it, or
-- the task clearly matches the skill description.
-
-Codex then reads that skill's `SKILL.md` and follows its required output and rules.
-
-Skills are task-specific. Global reply style belongs in `AGENTS.md`, not in a skill.
-
-## Active Global Skills
+## Active Skills
 
 | Skill | Use |
 |---|---|
-| `research-mainline` | Decide whether material updates the active project mainline. |
-| `claim-auditor` | Check whether claims exceed evidence. |
-| `experiment-card-writer` | Write compact experiment cards and result-decision blocks. |
-| `hypothesis-closure` | Close the loop on a hypothesis after experiment evidence exists. |
-| `daily-report-coach` | Compress daily work into a concise daily report. |
-| `meeting-brief-coach` | Produce 30s / 1min advisor-facing explanations and brief written meeting notes. |
+| `research-mainline` | Maintain compact project mainline, hypothesis status, and result routing. |
+| `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
+| `experiment-card-writer` | Write hypothesis-first purpose cards and experiment execution plans. |
+| `hypothesis-closure` | Close a hypothesis from its purpose card and evidence. |
+| `experiment-acp-runner` | Turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and summaries. |
 | `prism-report` | Build group-meeting-ready PRISM reports. |
 | `paper-reading-card` | Turn papers or blogs into compact reading cards. |
+| `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
+| `writing-explanatory-reports` | Write detailed experiment reports and result analyses under `experiments/`. |
+| `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
 
-## Project Document Organization
+## Research Paradigm
 
-The global research system manages conventions. Specific project content belongs inside each project.
-
-Use this rule for project folders:
-
-```text
-Projects/<project>/main/
-```
-
-Project-level `main/` is for shared consensus only:
-
-- stable current mainline;
-- `consensus.md`: what is currently known, plausible, unclear, and not claimable;
-- project-wide claim boundary;
-- shared hypothesis index;
-- merged experiment/result summaries;
-- status that all branches should follow.
-
-Personal or branch-local work should stay in the worker branch folder, for example:
+Default project loop:
 
 ```text
-Projects/from-attention-to-search/XingyuD/main/
+hypothesis purpose card -> execution plan -> experiment result summary -> hypothesis closure -> mainline/status update
 ```
 
-Use branch-local folders for:
+The purpose card belongs in `hypotheses/`; the execution plan and result
+evidence belong in `experiments/`.
 
-- active experiment cards;
-- unfinished hypotheses;
-- hypothesis closure drafts;
-- branch-local `consensus.md` for current working knowledge and assumptions;
-- branch-local result summaries;
-- meeting-prep material before it becomes project consensus.
-
-Promote branch-local material to project `main/` only after it changes shared project consensus.
-
-## Consensus Document
-
-Each active branch may maintain:
+Default one-to-one mapping:
 
 ```text
-Projects/<project>/<worker>/main/consensus.md
+Projects/<project>/main/hypotheses/<hypothesis_id>/purpose_card.md
+Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 ```
 
-Use `consensus.md` to measure existing knowledge:
+An experiment should correspond to one primary hypothesis. Multi-stage
+experiment lines may have stage-level sub-decisions, but they should still link
+back to the primary hypothesis purpose card.
 
-- what is supported enough to use as a premise;
-- what is only a working hypothesis;
-- what remains unclear;
-- what cannot be claimed;
-- which setup assumptions are accepted for the next experiment.
+Purpose cards must include:
 
-Do not put raw logs or daily progress into `consensus.md`. Update it only after hypothesis closure, result analysis, or meeting feedback changes what can be treated as known.
+- problem level;
+- purpose;
+- hypothesis and rival explanations;
+- mathematical modeling;
+- experiment design;
+- expected outcomes and hypothesis-update logic;
+- claim boundary.
+
+## Project Support Surfaces
+
+- `Projects/<project>/sync/`: daily collaborator-facing sync of shareable
+  results, boundaries, and handoffs.
+- `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
+  collaborator sync folder; the reporting document lives inside this folder.
+- `Projects/<project>/<worker>/docs/`: named material documents that help write
+  hypothesis purpose cards and closures.
+- `graph.yaml`: optional thin research graph. Use `research-graph-sop`; keep
+  graph structure lightweight and store reasoning in Markdown notes.
+- `results/R001_short_name/`: curated stage-level research outcomes that are
+  stable enough to reuse across mainlines, closures, meetings, or reports.
 
 ## Formula Rule
 
@@ -100,14 +78,7 @@ When a skill writes Markdown research documents:
 - display formulas must use `$$...$$`;
 - raw LaTeX formulas should not appear in prose without math delimiters.
 
-## Removed / Merged Skills
-
-| Old skill | Status |
-|---|---|
-| `daily-research-report` | Merged into `daily-report-coach`. |
-| `meeting-brief-builder` | Merged into `meeting-brief-coach`. |
-| `moe-specialization-diagnosis` | Removed from global skills because it is project-specific. |
-
 ## Cleanup Rule
 
-Do not add new global skills unless the task is repeated often and cannot be handled by one of the active global skills.
+Do not add new global skills unless the task is repeated often and cannot be
+handled by one of the active global skills.

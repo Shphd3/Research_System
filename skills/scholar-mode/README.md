@@ -24,10 +24,10 @@ This is an upstream research-judgment skill. Use it before artifact-oriented ski
 It should not replace:
 
 - `experiment-card-writer` for purpose cards and execution plans.
-- `claim-auditor` for claim-boundary checks against concrete evidence.
 - `paper-reading-card` for compact paper or blog reading cards.
 - `research-mainline` for project-state consolidation.
-- `hypothesis-closure` for closing experiment-backed hypotheses.
+- `hypothesis-closure` for closing experiment-backed hypotheses and checking
+  claim boundaries against concrete evidence.
 
 ## Maintenance
 

@@ -17,6 +17,13 @@ Answer only the information most relevant to the user's current question.
 - Prefer short paragraphs or compact bullets.
 - When a useful broader idea is not requested, put it only at the end as a short optional note.
 - Do not turn research help into long essays. Extract the key decision, claim boundary, and next action.
+- Respect the user's cognitive load. Prefer a small answer that preserves the next decision over a complete answer that expands the problem space.
+- If a reply could branch, give the recommended branch first and mention at most one optional branch.
+- For research-system refinement requests, default to: conclusion, one-line evaluation, concrete edit made or next edit.
+- For experiment replies, be self-contained: define the question, setup, key metric, result, interpretation, and claim boundary before using shorthand.
+- Do not begin with opaque English abbreviations or code names. Explain terms such as `RI`, `NMI`, or `CE delta` the first time they matter.
+- For metrics, name the most important metric first and explain why it decides the judgment. Do not make the user search through a metric pile.
+- Meeting-facing and collaborator-facing reports must be self-contained. This is the first reporting principle.
 
 ## Start Here
 
@@ -35,15 +42,15 @@ Root-level `CURRENT.md` is a compatibility pointer only. Project-specific mainli
 ## Local Skill Use
 
 For research organization work inside `Research_System`, always read `AGENTS.md`
-first. Then use local skills from `codex_skills/` when the task type matches:
+first. Then use local skills from `skills/` when the task type matches:
 
-- experiment plan or experiment card: `codex_skills/experiment-card-writer/SKILL.md`
-- experiment card plus ACP/SCO cluster submission: `codex_skills/experiment-acp-runner/SKILL.md`
-- experiment result or daily synthesis: `codex_skills/daily-report-coach/SKILL.md`
-- research intuition, theory framing, methodology critique, or literature analysis before a fixed artifact exists: `codex_skills/scholar-mode/SKILL.md`
-- claim boundary or public wording audit: `codex_skills/claim-auditor/SKILL.md`
-- mainline update or project state consolidation: `codex_skills/research-mainline/SKILL.md`
-- meeting / group-report preparation: `codex_skills/meeting-brief-coach/SKILL.md`
+- hypothesis-first purpose card or experiment design: `skills/experiment-card-writer/SKILL.md`
+- hypothesis purpose card plus ACP/SCO cluster submission: `skills/experiment-acp-runner/SKILL.md`
+- research intuition, theory framing, methodology critique, or literature analysis before a fixed artifact exists: `skills/scholar-mode/SKILL.md`
+- mainline update or project state consolidation: `skills/research-mainline/SKILL.md`
+- research graph creation or maintenance: `skills/research-graph-sop/SKILL.md`
+- detailed experiment report or result analysis: `skills/writing-explanatory-reports/SKILL.md`
+- Sidecar app handoff or review session: `skills/sidecar-thinking/SKILL.md`
 
 These local skills are repository rules, not optional background references.
 Read only the relevant skill file unless the task explicitly requires more.
@@ -86,7 +93,8 @@ The repository root should stay small:
 - `README.md`
 - global or cross-project notes
 - `prompts/`
-- `codex_skills/`
+- `skills/`
+- `results/`
 - `paper_reading/`
 - `daily_research_reports/`
 
@@ -100,19 +108,59 @@ Agents should treat `Projects/<project>/main/` as the only required project cont
 
 `Projects/` contains independent project repositories and is ignored by the parent repository. Manage each project's files with that project's own Git repository.
 
-Root-level `hypotheses/` and `experiments/` have been retired. Project-specific hypotheses, experiment cards, and experiment results belong under the specific project context.
+Root-level `hypotheses/` and `experiments/` have been retired. Project-specific hypothesis purpose cards, execution plans, and experiment results belong under the specific project context.
+
+## Hypothesis-First Research Discipline
+
+Default rule:
+
+```text
+one hypothesis purpose card -> one primary experiment folder -> one local result summary -> one self-contained closure
+```
+
+An experiment should exist because a hypothesis needs evidence. Do not create
+many small experiments to explore the space casually; prefer fewer experiments
+that deepen understanding, rule out a rival explanation, or change the next
+decision.
+
+Write the hypothesis purpose card before writing an experiment execution plan.
+The purpose card belongs in `hypotheses/`, not in `experiments/`.
+
+Default hypothesis layout:
+
+```text
+Projects/<project>/main/hypotheses/<hypothesis_id>/
+  purpose_card.md
+  hypothesis_closure.md
+  figures/
+  source_notes/
+```
+
+`purpose_card.md` must include:
+
+- problem level: where this hypothesis sits in the research question stack;
+- purpose: why this hypothesis matters now;
+- hypothesis and rival explanations;
+- mathematical modeling: variables, objects, assumptions, and expected relations;
+- experiment design: the minimum experiment that can test it;
+- expected outcomes and how each outcome updates the hypothesis;
+- claim boundary: what cannot be claimed even if the experiment works.
+
+`hypothesis_closure.md` should be written from the purpose card after evidence
+exists. It must be concise but self-contained: a reader should understand the
+original question, hypothesis, setup, result, claim boundary, and next decision
+without chat history.
 
 ## Experiment File Discipline
 
-Every new experiment should be organized as a small folder, not as an isolated
-flat note, unless it is a legacy one-off card.
+Every new experiment should be organized as a small folder tied to exactly one
+primary hypothesis folder, unless it is a legacy one-off card.
 
 Default experiment layout:
 
 ```text
 Projects/<project>/main/experiments/<experiment_id>/
   README.md
-  purpose_card.md
   execution_plan.md
   summary.md
   detailed.md
@@ -124,11 +172,9 @@ For a multi-stage experiment line, use a recursive project folder:
 ```text
 Projects/<project>/main/experiments/<experiment_project_id>/
   README.md
-  purpose_card.md
   execution_plan.md
   stages/
     <stage_id>/
-      purpose_card.md
       execution_plan.md
       summary.md
       detailed.md
@@ -139,33 +185,17 @@ Projects/<project>/main/experiments/<experiment_project_id>/
 Use this recursive shape when one experiment contains gated sub-experiments
 such as data sanity -> dense readback -> MoE separation -> real-data comparison.
 
-`purpose_card.md` is the first document to write. It stabilizes the research
-thinking before execution. It is not the place for operational details. It must
-connect the experiment's purpose chain:
-
-- the overall purpose and why this experiment exists;
-- where it sits in the active project mainline;
-- the known narrative, premises, or prior results being used;
-- the experiment purpose;
-- the hypothesis and refined sub-hypotheses;
-- the experiment object and high-level paradigm;
-- the expected result patterns and how each would update the hypothesis;
-- what cannot be claimed even if the experiment works.
-
-Keep concrete run details, commands, config paths, model hyperparameters,
-metric schemas, artifact contracts, and pass/fail mechanics in
-`execution_plan.md`, not in `purpose_card.md`.
-
 `execution_plan.md` is the operational document. It should contain concrete
 run details: dataset construction, config, model/training setup, metrics,
 artifacts, commands, expected outputs, and pass/fail criteria.
 
-For recursive experiment projects, each stage must have its own local purpose
-card and execution plan. The top-level purpose card explains the whole research
-logic chain; stage cards explain only their local decision.
+For recursive experiment projects, each stage must have its own local execution
+plan. The hypothesis purpose card explains the whole research logic chain;
+stage execution plans explain only their local run and decision gate.
 
 `summary.md` is the claim-safe result analysis and local experiment closure
-after the run. It must restate the purpose and hypothesis from the purpose card
+after the run. It must restate the purpose and hypothesis from the linked
+hypothesis purpose card
 briefly, then state the direct result, interpretation, limitation, claim update,
 next decision, and embed the key figure(s) needed for advisor-facing reporting
 when figures exist.
@@ -176,73 +206,73 @@ figures should be copied into a `figures/` folder beside the report file and
 referenced with relative Markdown image links. Do not put raw logs in the
 mainline unless they are small and necessary to understand the decision.
 
-Project `hypotheses/` is reserved for larger advisor-facing hypothesis closure
-documents. These synthesize one experiment line or a tightly scoped hypothesis
-family for reporting; each big closure should live in its own subfolder with a
-local `figures/` directory, and should link back to the local experiment
-`summary.md` files rather than replacing them.
+Project `hypotheses/` is the hypothesis reasoning layer. It stores the
+pre-experiment `purpose_card.md` and the post-evidence `hypothesis_closure.md`.
+The experiment folder stores execution and evidence. The closure should link
+back to the local experiment `summary.md`, but should not depend on it for basic
+comprehension.
 
-Big closure documents should be written in Chinese by default, with English kept
+Closure documents should be written in Chinese by default, with English kept
 only for metric names, code identifiers, paths, and quoted source terms.
-Keep big closures concise for reporting: merge mainline anchor with hypothesis,
+Keep closures concise for reporting: merge mainline anchor with hypothesis,
 merge claim update with cannot-claim boundaries, and merge weakest point with
 next decision. Put setup details and long tables in experiment `summary.md` or
 `detailed.md`.
-Big closures must be self-contained: do not assume the reader knows previous
+Closures must be self-contained: do not assume the reader knows previous
 failed runs, chat history, or why a design changed. Prior context should appear
 only when it is necessary for the current claim.
 
 ## Experiment Discipline
 
-Before proposing or summarizing experiments, first write the purpose chain.
+Before proposing or summarizing experiments, first write the hypothesis purpose chain.
 Do not jump directly to architecture, scripts, or metrics.
 
 Compress the task through these questions:
 
-1. What is the purpose / main reason for this experiment?
-2. What known narrative or premise makes this experiment meaningful?
-3. What is the core hypothesis?
-4. How are data and task constructed to test that hypothesis?
-5. Why is this setup meaningful: model, data, task, and diagnostic target?
-6. What are the boundary conditions of this setup?
-7. Which experiments are needed, and do they jointly test the hypothesis rather than only show a suggestive signal?
+1. What problem level is this hypothesis answering?
+2. What is the purpose / main reason for deciding it now?
+3. What is the core hypothesis and what rivals must be distinguished?
+4. What mathematical object, variables, and assumptions define the hypothesis?
+5. How are data and task constructed to test that hypothesis?
+6. Why is this setup meaningful: model, data, task, and diagnostic target?
+7. What are the boundary conditions of this setup?
+8. Which single experiment is the sharpest next test?
 
-For experiment design, output a compact purpose card by default. The purpose
-card should link the mainline position, known premises, experiment purpose,
-hypothesis, object, paradigm, expected outcomes, and hypothesis-update logic.
+For experiment design, output a compact hypothesis purpose card by default.
+The purpose card should link the problem level, purpose, hypothesis, mathematical
+modeling, experiment design, expected outcomes, and hypothesis-update logic.
 Add a detailed execution plan only when the user is ready to run or asks for
 implementation details.
 
 ```markdown
-# Experiment Card: E1 Router-Attention Recall
+# Hypothesis Purpose Card: H1 Router-Attention Recall
 
-## 1. Purpose / Main Reason
+## 1. Problem Level
 
-## 2. Mainline Position
+## 2. Purpose
 
-## 3. Known Narrative / Premise
+## 3. Hypothesis And Rivals
 
-## 4. Experiment Purpose
+## 4. Mathematical Modeling
 
-## 5. Hypothesis And Sub-Hypotheses
+## 5. Experiment Design
 
-## 6. Experiment Object
+## 6. Expected Outcomes And Hypothesis Update Logic
 
-## 7. Experiment Paradigm
+## 7. What This Can Prove
 
-## 8. Expected Outcomes And Hypothesis Update Logic
+## 8. What This Cannot Prove
 
-## 9. What This Can Prove
-
-## 10. What This Cannot Prove
-
-## 11. Result
+## 9. Linked Experiment
 TBD.
 
-## 12. Conclusion
+## 10. Result
 TBD.
 
-## 13. Next Step
+## 11. Conclusion
+TBD.
+
+## 12. Next Step
 TBD.
 ```
 
@@ -263,6 +293,53 @@ For result analysis, keep it to:
 
 ### Decision
 ```
+
+## Research Graph And Project Sync
+
+The research graph tool is `skills/research-graph-sop/SKILL.md`; the optional
+local app bridge is `skills/sidecar-thinking/SKILL.md`.
+
+Use a project-local `graph.yaml` as a lightweight navigation map when the
+project has enough hypotheses, evidence, methods, and tasks that a graph lowers
+cognitive load. Keep the graph thin and the notes thick:
+
+- graph nodes point to `current_mainline.md`, hypothesis purpose cards,
+  experiment summaries, closures, reading notes, and sync notes;
+- Markdown files remain the source of reasoning and evidence;
+- the graph does not replace mainline, daily cards, summaries, or closures.
+
+For each project:
+
+- `Projects/<project>/sync/` is for collaborator-facing daily research-result
+  sync. Update it once per active working day with the smallest shareable
+  outcome, boundary, and next handoff.
+- For branch-local work, use `Projects/<project>/<worker>/sync/MMDD_topic/`.
+  Each meeting-facing sync folder should be named with date and topic and should
+  contain the actual reporting document, not only a pointer.
+- `Projects/<project>/<worker>/docs/` stores named material documents that help
+  write future hypothesis purpose cards: concept notes, modeling notes,
+  figure guides, meeting-derived definitions, and reusable explanations.
+- Do not put raw logs or full run output in `sync/` or `docs/`.
+
+## Curated Results
+
+Root-level `results/` stores valuable stage-level research outcomes that are
+stable enough to reuse across projects, meetings, hypothesis closures, or PRISM
+reports. It is not a raw-output dump.
+
+Each curated result should be a folder:
+
+```text
+results/R001_short_name/
+  README.md
+  figures/
+  tables/
+  source_notes/
+```
+
+Add a curated result only when it changes a claim boundary, bottleneck, next
+decision, or reusable framing. Keep disconnected raw result folders under the
+project experiment workspace instead.
 
 ## Daily Cards
 
@@ -349,7 +426,7 @@ C:\Users\250010109\.codex\skills\
 Repo-tracked skill sources live in:
 
 ```text
-codex_skills/
+skills/
 ```
 
 Edit the repo-tracked version first, then sync the installed copy when needed.
@@ -358,14 +435,14 @@ Prefer this active skill set:
 
 - `research-mainline`: judge whether material updates a project mainline.
 - `scholar-mode`: clarify research intuitions, theory framing, methodology critique, and literature-fit judgments before turning them into artifacts.
-- `claim-auditor`: audit claim strength against evidence.
-- `experiment-card-writer`: write compact experiment cards and result-decision blocks.
+- `experiment-card-writer`: write compact hypothesis purpose cards and experiment execution plans.
 - `hypothesis-closure`: close the loop on a hypothesis after experiment evidence exists.
-- `experiment-acp-runner`: turn experiment cards into ACP/SCO dry runs, submissions, monitoring records, and mainline-safe result summaries.
-- `daily-report-coach`: write compact daily cards.
-- `meeting-brief-coach`: prepare 30 second / 1 minute advisor-facing explanations.
+- `experiment-acp-runner`: turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and mainline-safe result summaries.
 - `prism-report`: build meeting-ready PRISM reports.
 - `paper-reading-card`: write compact paper or blog reading cards.
+- `research-graph-sop`: maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks.
+- `writing-explanatory-reports`: write detailed experiment reports and result analyses under `experiments/`.
+- `sidecar-thinking`: optional bridge to the local Sidecar app for review sessions and graph inspection.
 
 Project-specific skills should not be kept as global research-system skills.
 

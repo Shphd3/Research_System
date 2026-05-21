@@ -10,7 +10,7 @@ For any project-specific task, read only:
 Projects/<project>/main/
 ```
 
-Do not scan the full project folder unless the user explicitly names extra files. The `main/` folder is the compressed project context: current question, mainline, claim boundary, and next decision.
+Do not scan the full project folder unless the user explicitly names extra files. The `main/` folder is the compressed project context: current question, hypothesis purpose cards, mainline, claim boundary, and next decision.
 
 `Projects/` contains independent project repositories and is ignored by this parent repository. If a cloud or web agent needs project-local files, index or clone the specific project repository as well.
 
@@ -35,6 +35,8 @@ Required context:
 Optional supporting files only when requested:
 
 - `Projects/from-attention-to-search/docs/architecture.md`
+- `Projects/from-attention-to-search/sync/README.md`
+- `Projects/from-attention-to-search/XingyuD/docs/`
 - `daily_research_reports/0511/architecture.md`
 - `daily_research_reports/0511/flat_real_inference.md`
 
@@ -67,7 +69,7 @@ Use this only when the user explicitly asks about MoE, specialization, forgettin
 
 Removed root-level project folders:
 
-- `experiments/`: project-specific experiment cards should live under the specific project.
+- `experiments/`: project-specific execution plans and result summaries should live under the specific project.
 - `hypotheses/`: project-specific hypotheses should live under the specific project.
 - `mainline.md`: retired. Use root `CURRENT.md` plus project-local `main/` files.
 
@@ -85,25 +87,42 @@ Removed root-level project folders:
 - `paper_reading/_templates/blog_reading_record.md`: blog / essay reading process.
 - `paper_reading/`: categorized paper and blog notes.
 
+## Curated Results
+
+- `results/`: curated folders for valuable stage-level research outcomes.
+  These are reusable claim/evidence summaries, not raw experiment dumps.
+
 ## Project Prompts
 
 - `prompts/project_instructions/research_progress_project_prompt.md`: ChatGPT Project prompt for web-side reasoning.
 
 ## Skill Sources
 
-Use `codex_skills/` for the skill map and skill sources.
+Use `skills/` for the skill map and canonical skill sources.
 
 Primary active skills:
 
-- `codex_skills/research-mainline/SKILL.md`
-- `codex_skills/scholar-mode/SKILL.md`
-- `codex_skills/claim-auditor/SKILL.md`
-- `codex_skills/experiment-card-writer/SKILL.md`
-- `codex_skills/experiment-acp-runner/SKILL.md`
-- `codex_skills/daily-report-coach/SKILL.md`
-- `codex_skills/meeting-brief-coach/SKILL.md`
-- `codex_skills/prism-report/SKILL.md`
-- `codex_skills/paper-reading-card/SKILL.md`
+- `skills/research-mainline/SKILL.md`
+- `skills/scholar-mode/SKILL.md`
+- `skills/experiment-card-writer/SKILL.md`
+- `skills/experiment-acp-runner/SKILL.md`
+- `skills/hypothesis-closure/SKILL.md`
+- `skills/prism-report/SKILL.md`
+- `skills/paper-reading-card/SKILL.md`
+- `skills/research-graph-sop/SKILL.md`
+- `skills/writing-explanatory-reports/SKILL.md`
+- `skills/sidecar-thinking/SKILL.md`
+
+## Project Support Surfaces
+
+- `Projects/<project>/sync/`: collaborator-facing daily sync of shareable
+  research outcomes, boundaries, and handoffs.
+- `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local sync folder for
+  meeting-facing reports; name folders with date and topic.
+- `Projects/<project>/<worker>/docs/`: named material documents that support
+  future hypothesis purpose cards and closures.
+- `Projects/<project>/graph.yaml` or `Projects/<project>/<worker>/graph.yaml`:
+  optional thin research graph maintained with `research-graph-sop`.
 
 ## Web-Side Mode Map
 

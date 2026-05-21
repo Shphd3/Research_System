@@ -1,11 +1,50 @@
 # Results
 
-Use this folder for curated result summaries that are stable enough to cite from `CURRENT.md`, project mainline files, hypothesis closures, or PRISM reports.
+Use this folder for curated, valuable stage-level research outcomes.
 
-This folder is not for raw logs. Raw reports, CSVs, figures, and day-specific drafts should stay under `daily_research_reports/MMDD/`.
+This is not a dump for raw experiment outputs. A result belongs here only when
+it is stable enough to be reused in mainline files, hypothesis closures, meeting
+briefs, PRISM reports, or future project framing.
 
-A result summary should be added only when:
+## Folder Contract
 
-- the evidence is likely to be reused across meetings or reports;
-- the result changes a claim boundary, bottleneck, or next decision;
-- reading the daily raw material every time would be too slow or noisy.
+Each curated result is a folder:
+
+```text
+results/R001_short_name/
+  README.md
+  figures/
+  tables/
+  source_notes/
+```
+
+Only `README.md` is required. Add `figures/`, `tables/`, or `source_notes/`
+when the result needs reusable evidence.
+
+## README Shape
+
+```markdown
+# R001 Short Name
+
+## Result
+
+## Why It Matters
+
+## Evidence
+
+## Claim Boundary
+
+## Reuse Links
+```
+
+## Add A Result Only When
+
+- it changes a claim boundary, bottleneck, or next decision;
+- it will likely be cited across meetings, reports, or project mainlines;
+- the daily or experiment source material is too noisy to reread every time.
+
+## Current Curated Results
+
+- `R001_dclm_moe_input_sparse_atom/`: real DCLM MoE-input sparse-atom summary.
+- `R002_correlation_aware_feature_zipf/`: negative result for explicit
+  correlation-aware Feature-Zipf routing.

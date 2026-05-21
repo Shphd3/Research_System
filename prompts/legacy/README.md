@@ -8,4 +8,4 @@ They are not the current research workflow. Prefer the lightweight system in:
 - `PROJECT_INDEX.md`
 - `AGENTS.md`
 - `paper_reading/_templates/`
-- `codex_skills/`
+- `skills/`

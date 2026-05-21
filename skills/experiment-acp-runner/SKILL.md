@@ -1,8 +1,8 @@
 ---
 name: experiment-acp-runner
-description: Use when turning a research experiment card into a runnable local or ACP/SCO cluster run, especially for from-attention-to-search attention-search experiments that require dry-run submission, GPU/image edits, run records, and mainline-safe result summaries.
+description: Use when turning a hypothesis purpose card plus experiment execution plan into a runnable local or ACP/SCO cluster run, especially for from-attention-to-search attention-search experiments that require dry-run submission, GPU/image edits, run records, and mainline-safe result summaries.
 metadata:
-  short-description: Write experiment cards and ACP run commands
+  short-description: Run execution plans on ACP/SCO
 ---
 
 # Experiment ACP Runner
@@ -15,9 +15,10 @@ logs, and a short mainline-safe result summary.
 Before writing commands or conclusions:
 
 1. Read the active project's `main/` files, especially `current_mainline.md`.
-2. Read the relevant experiment folder under the active `main/experiments/`.
-3. Read the experiment workspace `AGENTS.md` and the specific runbook/doc named by the user.
-4. For current `from-attention-to-search/XingyuD` work, use:
+2. Read the relevant hypothesis purpose card under `main/hypotheses/`.
+3. Read the relevant experiment folder under the active `main/experiments/`.
+4. Read the experiment workspace `AGENTS.md` and the specific runbook/doc named by the user.
+5. For current `from-attention-to-search/XingyuD` work, use:
 
 ```text
 Projects/from-attention-to-search/XingyuD/main/
@@ -198,7 +199,7 @@ Training Config
 
 After completion, summarize only:
 
-- card ID / hypothesis ID
+- hypothesis ID / experiment ID
 - job id, submit log, runtime log, result/checkpoint path
 - direct result, interpretation, limitation, next decision
 

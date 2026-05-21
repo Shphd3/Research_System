@@ -20,3 +20,13 @@ Meeting documents should optimize for claim boundaries:
 - what can only be said weakly
 - what cannot be said
 - what the next decisive experiment is
+
+For branch-local project meetings, the primary shareable artifact should come
+from the hypothesis closure and live under:
+
+```text
+Projects/<project>/<worker>/sync/MMDD_topic/
+```
+
+The daily meeting folder can keep local preparation notes, but the collaborator-
+facing report belongs in the project sync folder.

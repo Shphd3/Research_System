@@ -23,7 +23,7 @@ Read, in this order when available:
 
 1. `CURRENT.md`
 2. relevant `daily_card.md` or raw daily material
-3. experiment cards, result summaries, figures, or logs named by the user
+3. hypothesis purpose cards, result summaries, figures, or logs named by the user
 4. previous PRISM/report text if the user is updating an existing report
 
 ## Output Format

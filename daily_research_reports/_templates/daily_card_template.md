@@ -14,17 +14,35 @@
 
 Did:
 
+Result:
+
+Interpretation:
+
+Claim boundary:
+
 Conclusion:
 
 ### Task 2:
 
 Did:
 
+Result:
+
+Interpretation:
+
+Claim boundary:
+
 Conclusion:
 
 ### Task 3:
 
 Did:
+
+Result:
+
+Interpretation:
+
+Claim boundary:
 
 Conclusion:
 
@@ -36,6 +54,8 @@ Conclusion:
 
 如果否，今天澄清了什么：
 
+是否需要更新 project sync / graph / results：是 / 否
+
 ## 5. What I Cannot Claim Yet
 
 今天的结果还不能说明什么：
@@ -43,6 +63,10 @@ Conclusion:
 ## 6. Next Decision
 
 下一步最小决策 / 最小实验 / 最小阅读任务：
+
+是否需要写 hypothesis closure：是 / 否
+
+是否需要写/更新 sync 文件夹：是 / 否
 
 ## 7. 30s Explanation
 

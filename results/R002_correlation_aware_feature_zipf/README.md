@@ -113,7 +113,11 @@ Flat middle spectral 和 learned Hier conditional_input 在这个 correlated syn
 - 不能说明 continual learning 或遗忘问题会因此改善；
 - 不能把 z-gate 的改善等同于 learned MoE 在真实 hidden space 中自动发现了机制结构。
 
-## 产物位置
+## 成果归档位置
+
+- 阶段成果摘要：`results/R002_correlation_aware_feature_zipf/README.md`
+
+## 原始产物位置
 
 - 结果目录：`results/e002_correlation_aware_feature_zipf/`
 - 汇总表：`results/e002_correlation_aware_feature_zipf/summary_by_model.csv`

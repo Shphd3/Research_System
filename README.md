@@ -14,7 +14,8 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 
 - `daily_research_reports/`: dated folders for daily cards, meeting materials, PRISM reports, experiment summaries, and report bundles.
 - `paper_reading/`: literature cards and reading notes.
-- `codex_skills/`: repo-tracked source copies of personal Codex skills.
+- `skills/`: repo-tracked source copies of personal Codex skills.
+- `results/`: curated folders for valuable stage-level research outcomes.
 - `prompts/`: reusable project prompts and older workflow prompts.
 - `docs/`: setup notes for tooling and workflow maintenance.
 
@@ -22,10 +23,10 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 
 1. Read `CURRENT.md` and relevant evidence.
 2. Decide whether today's work updates the mainline.
-3. Write a compact daily card or experiment card.
+3. Write a compact daily card or hypothesis purpose card.
 4. State the conclusion for each task, not a task log.
 5. Park side thoughts instead of chasing them during the current 25 minute task.
-6. Update `CURRENT.md` only when evidence changes the mainline, claim boundary, bottleneck, or next decision.
+6. Update project-local `main/` files only when evidence changes the mainline, claim boundary, bottleneck, hypothesis status, or next decision.
 7. Commit the research-system update.
 
 Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use `daily_research_reports/_templates/daily_card_template.md`.
@@ -33,6 +34,21 @@ Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use
 Class notes and side thoughts should stay inside `daily_card.md` by default. Use `Recording / Class Notes` for class points, and `Small Thought Parking Lot` for side ideas that should not interrupt the current task.
 
 Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`. PRISM reports should be placed at `daily_research_reports/MMDD/meeting/prism/`.
+
+## Hypothesis-First Loop
+
+For project research, write the hypothesis purpose card before the experiment
+execution plan:
+
+```text
+Projects/<project>/main/hypotheses/<hypothesis_id>/purpose_card.md
+Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
+Projects/<project>/main/experiments/<experiment_id>/summary.md
+Projects/<project>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md
+```
+
+Default principle: fewer, sharper experiments. Each experiment should deepen
+understanding, test a hypothesis, or change a next decision.
 
 ## Codex Web
 
