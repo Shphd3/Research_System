@@ -24,6 +24,15 @@ Templates live in `_templates/`:
 - `paper_reading_record.md`: paper reading process template
 - `blog_reading_record.md`: blog / essay reading process template
 
+For web-side paper-reading AI, use:
+
+```text
+prompts/project_instructions/paper_reading_project_prompt.md
+```
+
+That prompt assumes the AI can only see `Research_System`, so it uses
+`PROJECT_SNAPSHOT_from_attention_to_search.md` as the active project context.
+
 ## Categories
 
 - `01_moe_routing/`: MoE, routing, expert specialization, sparse computation

@@ -316,6 +316,11 @@ For each project:
 - For branch-local work, use `Projects/<project>/<worker>/sync/MMDD_topic/`.
   Each meeting-facing sync folder should be named with date and topic and should
   contain the actual reporting document, not only a pointer.
+  Experiment sync must include a compact artifact / repro map: code workspace,
+  runner, config, data or manifest, result dir, figure dir, key files,
+  checkpoints/logs, and repro command. If figures are central evidence, copy the
+  report-ready figures into the sync folder and embed them with one-sentence
+  interpretations.
 - `Projects/<project>/<worker>/docs/` stores named material documents that help
   write future hypothesis purpose cards: concept notes, modeling notes,
   figure guides, meeting-derived definitions, and reusable explanations.

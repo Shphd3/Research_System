@@ -9,6 +9,8 @@ The goal is to preserve research judgment: mainline, hypotheses, evidence, claim
 - `CURRENT.md`: current research mainline, safest claim, bottleneck, and next decision.
 - `PROJECT_INDEX.md`: project routing and lookup map.
 - `AGENTS.md`: project-level Codex instructions.
+- `PROJECT_SNAPSHOT_from_attention_to_search.md`: root-visible active-project
+  snapshot for web-side and paper-reading AI that cannot access `Projects/`.
 
 ## Working Areas
 

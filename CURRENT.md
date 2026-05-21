@@ -1,6 +1,6 @@
 # Current Research Mainline
 
-Last updated: 2026-05-14
+Last updated: 2026-05-21
 
 ## Active Project
 
@@ -12,153 +12,108 @@ Branch: Xingyu
 Working context: Projects/from-attention-to-search/XingyuD/main/
 ```
 
-Supporting project:
+Root `CURRENT.md` is only a compatibility pointer. Canonical state lives in:
 
 ```text
-Projects/MoE-Continual-Learning/
+Projects/from-attention-to-search/main/current_mainline.md
+Projects/from-attention-to-search/XingyuD/main/current_mainline.md
 ```
-
-The primary mainline is `from-attention-to-search`. The MoE continual-learning project is supporting context: it provides the data-property, feature-definition, mapping-conflict, and expert-specialization background.
 
 ## One-Sentence Mainline
 
-We are trying to reinterpret long-context Transformer attention as model-native search over dynamic KV memory: first retrieve a small candidate set from a learned index, then run exact sparse attention over those candidates.
+We are reframing long-context attention as search over dynamic KV memory, but
+the current bottleneck is mechanism diagnosis: ordinary top-1 MoE may route
+mixed token/context bundles rather than clean latent features.
 
-## Core Research Question
-
-Can a Transformer learn an internal memory-indexing structure so that long-context attention no longer behaves like a linear scan over all cached tokens?
-
-More concretely:
+## Core Question
 
 ```text
-query token -> learned routing / indexing signal -> candidate KV tokens -> exact sparse attention
+query token -> learned index / routing signal -> candidate KV tokens -> exact sparse attention
 ```
 
-## Current Hypothesis
+This now splits into two questions:
 
-The broad hypothesis is:
+1. Can expert routing form functional feature specialization?
+2. If yes, does that specialization help Reverse Index candidate generation?
 
-> Useful long-context attention may require a learned index whose partitions align with the geometry that determines high attention mass, not merely with input features, token identity, or ordinary MoE utilization.
+Reverse Index means using a query-side bucket or learned index signal to retrieve
+historical KV candidates before exact sparse attention.
 
-The current candidate indexing signals include:
+## Current Evidence
 
-- MoE / H-MoE router buckets;
-- feature identity;
-- rule or path identity;
-- hidden-state similarity;
-- value or output similarity;
-- latent atom overlap;
-- temporal locality.
+Supported:
 
-## Current Evidence From `from-attention-to-search`
+- dense attention is selective, so retrieval framing is meaningful;
+- early flat / H-MoE / spectral router buckets were not sufficient KV indexes;
+- E4 shows feature-aligned routing can be constructed, but natural NTP routing
+  does not reliably learn clean one-feature-one-expert structure;
+- R0/R1 shows same-bucket KV can beat random same-count KV in corrected
+  post-attention RI;
+- high feature-expert NMI is not enough to prove functional specialization or
+  good retrieval.
 
-Current R1 result:
-
-- Dense block2 attention is sparse enough to make retrieval meaningful.
-- Attention mass is often remote, so local-only retrieval is weak.
-- Oracle top-$M$ candidates can recover dense attention output.
-- But current flat MoE, H-MoE, and spectral router buckets do not retrieve high-mass KV tokens better than random matched candidates.
-
-Current safe claim:
-
-> In the current synthetic setup, existing flat/H-MoE/spectral router buckets do not provide useful KV candidate retrieval signal beyond random matched retrieval.
-
-This is a negative but useful result. It says the retrieval framing is meaningful, but the current router signal is not the right index.
-
-## Current Evidence From Synthetic Data Understanding
-
-E0/E1 supports a cleaner all-trigram corpus as a usable synthetic testbed:
-
-- planted features are three-token context relations such as `[A,B]->[C]`;
-- with `V=1000` and `N=10^6`, target-feature collision risk is near zero;
-- a dense toy Transformer can read back all four planted features, including the low-frequency `JKL` feature with target count 100.
-
-Current implication:
-
-> The next synthetic question is no longer whether the data is clean enough, but whether MoE experts separate feature identity, frequency, or some deeper mapping/retrieval signal.
-
-## Supporting Insight From MoE Continual Learning
-
-The older MoE continual-learning line changed the feature definition.
-
-Earlier weak view:
+## Active Hypothesis
 
 ```text
-forgetting comes from poor atom-level feature separation
+H0521_ab_feature_specialization
 ```
 
-Updated view:
+Question:
 
 ```text
-forgetting comes from feature overlap + rule/mapping conflict + insufficient routing specialization
+在最小 AB synthetic setup 中，ordinary top-1 MoE routing 能否把 composite feature AB 从 atomic feature A/B 中分离出来？
 ```
 
-Key lesson:
+Most important metric:
 
-> Splitting helps only when the split aligns with the true mapping-level feature, not merely with raw input atoms or coarse families.
+```text
+class-specific expert ablation delta loss
+```
 
-This matters for `from-attention-to-search` because a good KV index may need to align with the feature/rule/mapping geometry that predicts future attention winners. Expert IDs alone are not enough unless they align with that geometry.
+It matters because assignment metrics show where samples go, while ablation
+delta loss shows what each expert functionally supports.
 
-## Current Claim Boundary
+## Roadmap
+
+```text
+Gate 1: AB feature-specialization diagnosis
+Gate 2: specialization -> Reverse Index alignment
+Gate 3: candidate generator tournament
+Gate 4: train/infer mismatch
+Gate 5: real representation transfer
+```
+
+## Claim Boundary
 
 We can claim:
 
-- long-context attention can be framed as an extreme-value retrieval problem;
-- dense attention in the current synthetic setup is sparse enough for candidate retrieval to be meaningful;
-- oracle retrieval works in the current setup;
-- current MoE/H-MoE/spectral router buckets fail as useful KV indexes in R1;
-- clean all-trigram synthetic data is a valid next testbed for feature-separation experiments;
-- mapping-level feature definition is important background from the MoE continual-learning project.
+- attention-as-search remains a meaningful framing;
+- expert buckets can contain retrieval signal above random;
+- one-feature-one-expert is not sufficient for good Reverse Index;
+- the next step is top-1 MoE mechanism diagnosis, not router architecture
+  optimization.
 
 We cannot claim:
 
-- MoE routing is generally useless for KV retrieval;
-- H-MoE is generally worse than flat MoE;
-- the current synthetic result transfers to DCLM or real long-context inference;
-- there is any speedup yet;
-- ordinary expert specialization equals useful memory indexing;
-- atom-level feature separation is sufficient for retrieval or continual-learning stability.
-
-## Current Bottleneck
-
-The bottleneck is identifying what dense attention actually follows.
-
-Candidate explanations:
-
-- latent atom overlap;
-- planted rule or path identity;
-- hidden-state similarity;
-- value/output similarity;
-- temporal locality;
-- mapping-level feature identity.
-
-Until this is diagnosed, we should not design another router/indexer as if expert IDs already define the right memory partition.
+- MoE routing is generally useless;
+- top-1 MoE necessarily fails in all settings;
+- top-k / soft routing will solve the issue;
+- current same-bucket RI is enough to replace dense attention;
+- any real-language transfer or speedup.
 
 ## Next Decision
 
-Next step:
-
-> Use the clean all-trigram synthetic corpus to test what signal predicts dense attention winners and whether MoE experts separate feature identity, frequency, or mapping/retrieval-relevant structure.
-
-The next experiment should distinguish:
+Write and run:
 
 ```text
-feature separation
-frequency specialization
-mapping/rule specialization
-retrieval alignment with attention mass
+experiments/H0521_ab_feature_specialization/execution_plan.md
 ```
 
-## Reading Anchor
+First run:
 
-When reading papers or blogs, connect them to this mainline only if they update one of:
-
-- attention as retrieval/search;
-- dynamic KV memory;
-- learned indexing;
-- sparse or hierarchical feature structure;
-- MoE/H-MoE routing and expert specialization;
-- mapping-level feature definition;
-- evidence needed to move from synthetic diagnostics to real representations.
-
-If a paper only provides background, say `No mainline update from this reading`.
+```text
+dense baseline
+top-1 MoE no-load-balance
+routing assignment diagnostics
+class-specific expert ablation
+```

@@ -84,6 +84,15 @@ hypotheses/<hypothesis_id>/hypothesis_closure.md
 purpose, hypothesis/rivals, mathematical modeling, experiment design, expected
 outcomes, and claim boundary.
 
+After the experiment, the same `purpose_card.md` must be updated with result
+links and final status. It should contain:
+
+- direct result;
+- one-sentence conclusion;
+- next decision;
+- links to `summary.md`, `detailed.md`, key figures if needed, and
+  `hypothesis_closure.md`.
+
 `hypothesis_closure.md` comes after evidence and should be concise,
 self-contained, and written from the purpose card.
 
@@ -125,9 +134,20 @@ Update sync once per active working day with the smallest shareable outcome:
 - what changed;
 - why it matters;
 - what cannot be claimed;
-- what handoff or question remains.
+- what handoff or question remains;
+- where the collaborator can find code, config, data/manifest, result folder,
+  figure folder, key artifacts, checkpoints, logs, and repro command.
 
-Do not put raw logs here.
+For experiment sync, include a compact `Artifact / Repro Map`. The sync should
+let a collaborator understand the result and know where to continue without
+asking where the code, data, figures, or outputs live.
+
+When figures are central evidence, copy the most important report-ready figures
+into the sync folder's local `figures/` directory and embed them with one
+sentence explaining what each figure supports. Do not leave the sync as dry text
+when visual evidence is what makes the claim understandable.
+
+Do not put raw logs, full tables, or unfiltered experiment outputs here.
 
 ### `<worker>/docs/`
 
@@ -184,6 +204,8 @@ No mainline update today.
 - Do not promote raw logs, temporary notes, or exploratory branches into
   `main/`.
 - Keep closures self-contained but concise.
+- Do not leave completed hypotheses with `TBD` in the purpose card result,
+  conclusion, next step, or result document links.
 - When figures exist, copy report-ready images into local `figures/` and
   explain what each figure supports.
 - Markdown formulas must use `$...$` or `$$...$$`.

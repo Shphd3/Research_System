@@ -14,6 +14,13 @@ Do not scan the full project folder unless the user explicitly names extra files
 
 `Projects/` contains independent project repositories and is ignored by this parent repository. If a cloud or web agent needs project-local files, index or clone the specific project repository as well.
 
+If a web-side or paper-reading agent cannot see `Projects/`, use the root-level
+snapshot instead:
+
+```text
+PROJECT_SNAPSHOT_from_attention_to_search.md
+```
+
 ## Active Project
 
 Current primary project:
@@ -31,6 +38,7 @@ https://github.com/BinaryCheater/from-attention-to-search.git
 Required context:
 
 - `Projects/from-attention-to-search/main/current_mainline.md`
+- `Projects/from-attention-to-search/main/roadmap.md`
 
 Optional supporting files only when requested:
 
@@ -66,6 +74,8 @@ Use this only when the user explicitly asks about MoE, specialization, forgettin
 - `PROJECT_INDEX.md`: project routing and lookup map.
 - `README.md`: repository overview.
 - `CURRENT.md`: compatibility pointer, not canonical project state.
+- `PROJECT_SNAPSHOT_from_attention_to_search.md`: root-visible active-project
+  snapshot for web-side and paper-reading AI.
 
 Removed root-level project folders:
 

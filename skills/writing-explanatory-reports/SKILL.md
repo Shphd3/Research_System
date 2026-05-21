@@ -100,6 +100,11 @@ Example pattern:
 
 Every table or figure must have a nearby plain-language interpretation. The user should not need to infer the conclusion from numbers alone.
 
+If figures exist and are central to the result, the report must include the most
+important report-ready figure(s), not only text or tables. A result report should
+show the evidence that makes the conclusion visible, then explain what the
+reader should see in the image.
+
 Good table commentary names:
 
 - the largest relevant contrast,

@@ -33,6 +33,18 @@ Default project loop:
 hypothesis purpose card -> execution plan -> experiment result summary -> hypothesis closure -> mainline/status update
 ```
 
+After results exist, the original purpose card must be backfilled with:
+
+```text
+Result
+Conclusion
+Next Step
+Result Documents
+```
+
+The purpose card should link the experiment `summary.md`, `detailed.md`, key
+figures when needed, and `hypothesis_closure.md`.
+
 The purpose card belongs in `hypotheses/`; the execution plan and result
 evidence belong in `experiments/`.
 
@@ -63,12 +75,22 @@ Purpose cards must include:
   results, boundaries, and handoffs.
 - `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
   collaborator sync folder; the reporting document lives inside this folder.
+  Experiment sync must include a compact artifact / repro map: code, runner,
+  config, data or manifest, result folder, figure folder, key files,
+  checkpoints/logs, and repro command.
 - `Projects/<project>/<worker>/docs/`: named material documents that help write
   hypothesis purpose cards and closures.
 - `graph.yaml`: optional thin research graph. Use `research-graph-sop`; keep
   graph structure lightweight and store reasoning in Markdown notes.
 - `results/R001_short_name/`: curated stage-level research outcomes that are
   stable enough to reuse across mainlines, closures, meetings, or reports.
+
+## Reporting Figure Rule
+
+Experiment result reports and collaborator sync should include the most
+important report-ready figure(s) when figures are central evidence. Each figure
+needs a nearby sentence explaining what it supports. Do not make the reader infer
+the result from a dry metric list.
 
 ## Formula Rule
 

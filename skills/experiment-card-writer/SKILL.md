@@ -124,6 +124,10 @@ TBD.
 ## 12. Next Step
 
 TBD.
+
+## 13. Result Documents
+
+TBD.
 ```
 
 Keep the purpose card concise. If background is long, put it in `source_notes/`
@@ -183,11 +187,31 @@ Hypothesis purpose card:
 ## Next Decision
 ```
 
+## Post-Experiment Backfill
+
+After an experiment finishes, update the original
+`hypotheses/<hypothesis_id>/purpose_card.md`. Do not leave the purpose card as a
+pre-experiment artifact.
+
+Backfill these sections:
+
+- `Result`: one paragraph with the direct result.
+- `Conclusion`: one sentence stating whether the hypothesis is supported,
+  weakened, redirected, or still open.
+- `Next Step`: the next decision, not a task list.
+- `Result Documents`: links to the experiment `summary.md`, `detailed.md`, key
+  figures when needed, and `hypothesis_closure.md` once written.
+
+The purpose card should remain concise. Detailed evidence belongs in
+`experiments/<experiment_id>/summary.md` and `detailed.md`.
+
 ## Rules
 
 - Fewer, sharper experiments are preferred over many shallow runs.
 - Do not start with architecture, scripts, or metrics before the hypothesis is clear.
 - Purpose cards are reasoning artifacts; execution plans are operational artifacts.
+- Every purpose card must be completed after the experiment by linking result
+  documents and filling `Result`, `Conclusion`, and `Next Step`.
 - Separate result, interpretation, limitation, claim update, and decision.
 - Do not let a metric improvement become a stronger public claim than it supports.
 - Figures must support a claim boundary or next decision.

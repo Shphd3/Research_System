@@ -125,17 +125,43 @@ The sync document should be written from the closure and contain only:
 
 - purpose and hypothesis;
 - result and interpretation;
+- key figure(s) with one-sentence evidence interpretation when figures are
+  central to the claim;
 - claim boundary;
 - weakest point;
 - next decision;
+- artifact / repro map: code workspace, runner, config, data or manifest,
+  result dir, figure dir, key files, checkpoints or logs, and repro command;
 - 30s / 1min explanation when useful.
 
+The sync is not complete if a collaborator can understand the conclusion but
+cannot tell where the code, data, outputs, and figures are. Keep the map compact;
+do not paste raw logs.
+
 If no sync is needed, write `No sync update` with a one-sentence reason.
+
+## Purpose Card Backfill
+
+After writing `hypothesis_closure.md`, update the original
+`purpose_card.md`. This is required.
+
+Backfill:
+
+- `Result`: direct result in one short paragraph.
+- `Conclusion`: one-sentence hypothesis decision.
+- `Next Step`: next decision.
+- `Result Documents`: links to `experiments/<experiment_id>/summary.md`,
+  `detailed.md`, important figures, and this `hypothesis_closure.md`.
+
+Do not duplicate long evidence in the purpose card. Link the result documents
+and keep the card readable as the hypothesis lifecycle record.
 
 ## Rules
 
 - A closure must be self-contained but not long.
 - Start from the purpose card; do not rewrite the experiment as a chronology.
+- Closure is not complete until the purpose card links the result documents and
+  has updated `Result`, `Conclusion`, and `Next Step`.
 - Do not upgrade a claim unless the setup directly tests it.
 - Always separate public claim, private interpretation, and speculation.
 - If the setup only tests a boundary condition, say so.
