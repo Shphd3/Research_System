@@ -155,6 +155,11 @@ reading path. Put supporting diagnostics, extra figures, or detailed artifact
 maps in subfolders, but keep the daily conclusion, evidence, boundary, and next
 decision in one main document.
 
+Project-local sync must only reference paths visible inside the project
+repository. Do not cite root-level `Research_System` materials such as
+`daily_research_reports/`; if such material informed the sync, integrate the
+necessary content into the sync itself.
+
 For experiment sync, include a compact `Artifact / Repro Map`. The sync should
 let a collaborator understand the result and know where to continue without
 asking where the code, data, figures, or outputs live.

@@ -354,6 +354,10 @@ For each project:
   reading path. Supporting hypothesis-specific or diagnostic subfolders are
   fine, but they should link back to the daily sync instead of becoming
   competing daily entry points.
+  Project-local sync must only reference paths visible inside the project
+  repository. Do not cite root-level `Research_System` materials such as
+  `daily_research_reports/`; if such material informed the sync, integrate the
+  necessary content into the sync itself.
   Experiment sync should use the same self-contained research-judgment structure
   as closures: `目的 / 假设 / 数学建模 / 实验设置 / 结论 / 证据 / 结论边界 / 下一步决策 / 结果文档`.
   Experiment sync must include a compact artifact / repro map: code workspace,

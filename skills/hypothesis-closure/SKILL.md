@@ -176,6 +176,11 @@ reading path. Supporting hypothesis-specific or diagnostic subfolders are fine,
 but they should link back to the daily sync rather than becoming competing
 entry points.
 
+Project-local sync must only reference paths visible inside the project
+repository. Do not cite root-level `Research_System` materials such as
+`daily_research_reports/`; if such material informed the sync, integrate the
+necessary content into the sync itself.
+
 The sync document should be written from the closure and use the same detailed
 research-judgment structure:
 
