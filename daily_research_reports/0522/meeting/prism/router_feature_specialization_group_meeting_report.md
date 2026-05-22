@@ -193,6 +193,75 @@ prediction-position hidden space 本身有低维 class structure；
 ordinary top-1 expert bucket 没有展示出 expert-specific AB subspace。
 ```
 
+### Three meeting statements for SVD audit
+
+第一点：SVD audit 的对象不是“分发比例”，而是“expert bucket 的表示子空间是否和 feature direction 对齐”。
+
+做法是：在 prediction position $p^*=31$ 取 router 实际看到的 hidden state $h_i$，按 class 计算均值：
+
+$$
+\mu_0,\quad \mu_A,\quad \mu_B,\quad \mu_{AB}
+$$
+
+然后构造：
+
+$$
+v_A=\mu_A-\mu_0,\quad v_B=\mu_B-\mu_0,\quad v_{AB}^{int}=\mu_{AB}-\mu_A-\mu_B+\mu_0
+$$
+
+这里 $v_{AB}^{int}$ 是最关键的定义，因为 $v_{AB}^{raw}=\mu_{AB}-\mu_0$ 几乎就是 $v_A+v_B$。实际结果中 $\cos(v_{AB}^{raw}, v_A+v_B)=0.994-0.998$，所以不能把 raw AB direction 当作 AB interaction。
+
+第二点：右奇异向量对齐已经做了，但结果不支持 clean AB specialist。
+
+对 AB-dominant expert 收集其接收的 hidden states $H_e$，中心化后做：
+
+$$
+\tilde{H}_e=U_e\Sigma_e V_e^\top
+$$
+
+$V_e$ 的前 $r$ 个右奇异向量表示该 expert bucket 中 hidden state 的 dominant directions。我们用：
+
+$$
+\mathrm{ProjScore}(v,e,r)=\frac{\lVert P_{S_{e,r}}v\rVert_2^2}{\lVert v\rVert_2^2}
+$$
+
+评估 feature direction 是否落在 expert dominant subspace 中。rank 4 下结果是：
+
+| Direction | AB expert mean | random matched mean | global mean |
+|---|---:|---:|---:|
+| $v_A$ | 0.986 | 0.998 | 0.998 |
+| $v_B$ | 0.991 | 0.998 | 0.998 |
+| $v_{AB}^{int}$ | 0.803 | 0.843 | 0.846 |
+
+因此 AB expert 确实和 A/B/AB interaction 方向都对齐，但这种对齐不比 random matched bucket 或 global hidden subspace 更强。它更像全局 hidden geometry，而不是 AB expert 独有的 feature specialization。
+
+第三点：SVD metric 是合理的，但必须配 baseline 和 ablation 一起读。
+
+它合理的原因是：如果一个 expert 真的是 feature-level specialist，那么它接收的 hidden states 的主变化方向应该和对应 feature direction 对齐；右奇异向量正是在测 expert bucket 内部的 dominant variance directions。
+
+但它不是充分证据。因为如果整个 prediction hidden space 本身已经低维，任何大样本 bucket 的 top SVD directions 都可能和 A/B/AB 方向高度对齐。所以必须比较：
+
+```text
+AB expert vs random matched bucket vs global hidden subspace
+```
+
+并再看 mask AB expert 后是否主要伤害 AB-composite。当前 mask 结果不稳定：只有 seed `20260524` 明显主要伤害 AB-composite，其他 seed 主要伤害 A-only 或几乎不伤害 AB。因此不能说形成了稳定 functional AB specialist。
+
+### Motif frequency in seq32 experiments
+
+H0522 SVD audit 的 fixed-position eval set 是严格 balanced：
+
+| Class / motif type | Count per seed | Frequency |
+|---|---:|---:|
+| background | 4096 | 25% |
+| A-only: `[A, r]` | 4096 | 25% |
+| B-only: `[r, B]` | 4096 | 25% |
+| AB-composite: `[A, B]` | 4096 | 25% |
+
+总计每个 seed `16384` 条样本，4 个 seed。SVD audit 中 motif position 固定为 `15`，目的是先去掉 position 分布对 feature direction 的干扰。
+
+原始 H0521b 训练设置也是 class-balanced：train 每类 `6000`，eval 每类 `1600`；motif position 在合法位置中均匀采样。也就是说，本轮主要不是 class imbalance 导致的 routing 现象。
+
 ## 8. Evidence 4 - Factor audit
 
 ### Question
@@ -349,4 +418,3 @@ Evidence:
 How to redirect back to the mainline:
 
 Reverse Index alignment 要放在 clean specialization 或 factor mechanism 更清楚之后再测。
-
