@@ -2,7 +2,7 @@
 
 ## 1. Today's Purpose
 
-完成 H0522 `seq_len=32` router factor audit，判断 ordinary top-1 MoE 的 expert id 更受 rule/function 还是 shortcut factors 影响。
+完成 H0522 `seq_len=32` SVD feature-mixing diagnostic 和 router factor audit，判断 ordinary top-1 MoE 的 expert bucket 是否能解释为 clean feature/function bucket。
 
 ## 2. Mainline Anchor
 
@@ -18,13 +18,23 @@ expert id 能不能作为 learned Reverse Index 的稳定 feature/function bucke
 
 Did:
 
+在已训练 H0521b `seq_len=32` MoE 上完成 SVD feature-mixing analysis，本地两卡使用 `cuda:0, cuda:1`，4 个 seed，`n_eval_per_class=4096`。
+
+Conclusion:
+
+AB-composite 有 dominant expert，但该 expert 对 A/B/AB interaction 都高投影，且不优于 random/global baseline；mask damage 也不跨 seed 稳定指向 AB-composite。因此 AB-dominant expert 不是稳定 clean AB specialist。
+
+### Task 2
+
+Did:
+
 完成 ACP 四卡 job `pt-xceqs84c`，跑完 Stage 1-5，四个 seed 全部完成。
 
 Conclusion:
 
 Stage 1/2 显示 source-position 和 token-id 对 router 的解释力强于 rule/class。
 
-### Task 2
+### Task 3
 
 Did:
 
@@ -42,13 +52,13 @@ H0522 更新主线：
 ordinary top-1 expert id 目前不能作为 clean rule/function Reverse Index。
 ```
 
-更精确地说，当前 evidence 支持 position/token-id/target-shortcut modulated mixed routing。
+更精确地说，SVD 诊断显示 AB-dominant expert 不是稳定 clean AB specialist；factor audit 进一步支持 position/token-id/target-shortcut modulated mixed routing。
 
 ## 5. What I Cannot Claim Yet
 
 不能说 MoE routing 一般无效，也不能说真实语言模型中一定同样失败。
 
-Stage 5 仍有 target/second-token shortcut，所以下一步必须做更严格的 anti-shortcut 构造。
+SVD 只分析 prediction-position expert，不能直接证明 source-token KV retrieval 失败。Stage 5 仍有 target/second-token shortcut，所以下一步必须做更严格的 anti-shortcut 构造。
 
 ## 6. Next Decision
 
@@ -61,7 +71,7 @@ test rule/function -> expert_id after shortcuts are controlled.
 
 ## 7. 30s Explanation
 
-我们今天把 router 分发拆成几个可能因素看：token、位置、左上下文、rule/function、target。结果是，旧 seq_len=32 模型里位置和具体 token 更能解释 expert id；新解耦任务里模型能做对任务，但 router 更贴近 target/second-token shortcut，而不是稳定 rule/function。所以现在不能把 ordinary top-1 expert id 当作干净的检索索引，下一步要做去 shortcut 的 synthetic。
+我们今天先看了已训练 seq_len=32 MoE 的 AB expert：AB 样本确实集中到某个 expert，但这个 expert 的子空间不是 AB-only，而且 mask 后也不稳定只伤害 AB。随后 factor audit 显示，旧模型里位置和具体 token 更能解释 expert id；新解耦任务里模型能做对任务，但 router 更贴近 target/second-token shortcut，而不是稳定 rule/function。所以现在不能把 ordinary top-1 expert id 当作干净的检索索引，下一步要做去 shortcut 的 synthetic。
 
 ## 8. Recording / Class Notes
 
