@@ -2,6 +2,36 @@
 
 Date: 2026-05-22
 
+## 0. Mainline Anchor
+
+方法的根本假设是：
+
+```text
+attention 是高度 selective 的算子；当前 token 真正需要的信息通常只是
+历史 KV memory 中很小的一部分。
+```
+
+因此主线问题是：
+
+```text
+长上下文 attention 的 KV memory 有没有一种可学习的 index structure？
+```
+
+如果有，我们希望从：
+
+```text
+当前 token -> learned index / routing signal -> candidate KV tokens -> sparse attention
+```
+
+绕开对全部 KV 的线性扫描。
+
+基于之前研究的 MoE 模型，本轮拆成两个可以独立验证的问题：
+
+1. expert 能不能实现 specialization；
+2. specialization 能不能帮助 Reverse Index / inverted index / KV retrieval。
+
+本报告聚焦第一个问题：expert bucket 是否足够稳定、干净、可解释。即使 specialization 不完美，只要它比随机或既有 baseline 更好，第二个问题仍然可以独立进入 retrieval alignment 测试。
+
 ## 1. Report Purpose
 
 这次组会只回答一个收窄后的问题：

@@ -9,8 +9,19 @@
 主线问题：
 
 ```text
-expert id 能不能作为 learned Reverse Index 的稳定 feature/function bucket？
+attention 是高度 selective 的算子；当前 token 真正需要的信息通常只是
+历史 KV memory 中很小的一部分。核心问题是：长上下文 attention 的
+KV memory 有没有一种可学习的 index structure？
 ```
+
+基于 MoE 的当前验证链条分成两问：
+
+```text
+1. expert 能不能实现 specialization？
+2. specialization 能不能帮助 Reverse Index / inverted index / KV retrieval？
+```
+
+今天的实验主要回答第一问。即使 specialization 不完美，只要它比随机或既有 baseline 更好，第二问仍然可以独立测试其 retrieval utility。
 
 ## 3. Task Conclusions
 
