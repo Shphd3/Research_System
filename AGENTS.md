@@ -121,6 +121,12 @@ Agents should treat `Projects/<project>/main/` as the only required project cont
 
 Root-level `hypotheses/` and `experiments/` have been retired. Project-specific hypothesis purpose cards, execution plans, and experiment results belong under the specific project context.
 
+Project-local experiment workspaces should push code, configs, and docs needed
+for collaborators to reproduce or extend the work. Do not push raw results,
+datasets, figures, checkpoints, logs, run outputs, or generated artifacts unless
+they have been curated into project `main/`, project `sync/`, or root
+`results/` as stable evidence.
+
 ## Hypothesis-First Research Discipline
 
 Default rule:
