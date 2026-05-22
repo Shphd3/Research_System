@@ -171,6 +171,11 @@ Projects/from-attention-to-search/XingyuD/sync/0521_router_diagnosis/
   figures/
 ```
 
+For the same date and topic, keep one consolidated daily sync as the first
+reading path. Supporting hypothesis-specific or diagnostic subfolders are fine,
+but they should link back to the daily sync rather than becoming competing
+entry points.
+
 The sync document should be written from the closure and use the same detailed
 research-judgment structure:
 

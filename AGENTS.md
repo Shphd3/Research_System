@@ -350,6 +350,10 @@ For each project:
 - For branch-local work, use `Projects/<project>/<worker>/sync/MMDD_topic/`.
   Each meeting-facing sync folder should be named with date and topic and should
   contain the actual reporting document, not only a pointer.
+  For the same date and topic, keep one consolidated daily sync as the first
+  reading path. Supporting hypothesis-specific or diagnostic subfolders are
+  fine, but they should link back to the daily sync instead of becoming
+  competing daily entry points.
   Experiment sync should use the same self-contained research-judgment structure
   as closures: `目的 / 假设 / 数学建模 / 实验设置 / 结论 / 证据 / 结论边界 / 下一步决策 / 结果文档`.
   Experiment sync must include a compact artifact / repro map: code workspace,

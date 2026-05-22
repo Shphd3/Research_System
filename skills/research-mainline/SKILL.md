@@ -150,6 +150,11 @@ Update sync once per active working day with the smallest shareable outcome:
 - where the collaborator can find code, config, data/manifest, result folder,
   figure folder, key artifacts, checkpoints, logs, and repro command.
 
+For the same date and topic, maintain one consolidated daily sync as the first
+reading path. Put supporting diagnostics, extra figures, or detailed artifact
+maps in subfolders, but keep the daily conclusion, evidence, boundary, and next
+decision in one main document.
+
 For experiment sync, include a compact `Artifact / Repro Map`. The sync should
 let a collaborator understand the result and know where to continue without
 asking where the code, data, figures, or outputs live.
