@@ -127,6 +127,23 @@ B-only vs AB 中的 B source token 对比尤其重要：
 
 ![H0521b B-only vs AB B routing](figures/h0521b_b_only_vs_ab_b_source_routing_by_seed.png)
 
+CB 等频补充控制进一步检查这个解释：加入 `[C,B] -> y_CB`，并让 `CB` 和 `AB` 出现频率一致，只看 B source token 在三种上下文中的分发。
+
+```text
+B-only: B in [r,B]
+AB:     B in [A,B]
+CB:     B in [C,B]
+```
+
+![H0522b B context routing](figures/h0522b_b_context_routing_horizontal_by_seed.png)
+
+结果是：`B_in_B_only / B_in_AB / B_in_CB` 在 3/4 seeds 中 dominant expert 完全一致，只有 seed `20260524` 分开。这不改变总判断，但让表述更精确：
+
+```text
+B routing 有很强 B identity anchor；
+left context 有调制，但不是跨 seed 稳定主导因素。
+```
+
 ### Interpretation
 
 这支持一个弱但有用的判断：
