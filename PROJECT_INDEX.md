@@ -122,6 +122,7 @@ Primary active skills:
 - `skills/research-graph-sop/SKILL.md`
 - `skills/writing-explanatory-reports/SKILL.md`
 - `skills/sidecar-thinking/SKILL.md`
+- `skills/remote-sco-collaboration/SKILL.md`
 
 ## Project Support Surfaces
 

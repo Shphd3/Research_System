@@ -1,0 +1,42 @@
+hosts:
+  - id: h100-2gpu-10109
+    alias: "[2GPU]118.145.32.132[10109]"
+    hostname: 118.145.32.132
+    port: 10109
+    user: root
+    expected_gpu: 2
+    gpu_note: Verify with nvidia-smi after connecting; host label is not evidence.
+    default_duration_hours: 4
+    role: Remote collaboration container for debugging and GPU work before SCO/ACP submission.
+
+  - id: h100-mig-11109
+    alias: "[Mig]118.145.32.132[11109]"
+    hostname: 118.145.32.132
+    port: 11109
+    user: root
+    expected_gpu: mig
+    gpu_note: MIG partition; verify visible devices and memory with nvidia-smi.
+    default_duration_hours: 4
+    role: Remote collaboration container for lighter debugging, environment checks, and submission setup.
+
+  - id: h100-mig-2c-12109
+    alias: "[MIG-2c]118.145.32.132[12109]"
+    hostname: 118.145.32.132
+    port: 12109
+    user: root
+    expected_gpu: mig-2c
+    gpu_note: MIG 2c-style partition label; verify actual resources with nvidia-smi.
+    default_duration_hours: 4
+    role: Remote collaboration container for debugging and SCO/ACP submission setup.
+
+defaults:
+  session_duration_hours: 4
+  expected_research_root: /data/250010109/Research_System
+  sidecar_remote_port: 4317
+  local_forward_ports: [4317, 4318, 4319]
+  preflight_commands:
+    - hostname
+    - pwd
+    - nvidia-smi
+    - which sco || ls /root/.sco/bin/sco
+    - git status --short --branch

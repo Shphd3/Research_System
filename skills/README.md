@@ -24,6 +24,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
 | `writing-explanatory-reports` | Write detailed experiment reports and result analyses under `experiments/`. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
+| `remote-sco-collaboration` | Connect to remote H100 containers, verify session state, and bridge local research work to SCO/ACP execution. |
 
 ## Research Paradigm
 

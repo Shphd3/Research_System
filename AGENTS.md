@@ -62,6 +62,7 @@ first. Then use local skills from `skills/` when the task type matches:
 - research graph creation or maintenance: `skills/research-graph-sop/SKILL.md`
 - detailed experiment report or result analysis: `skills/writing-explanatory-reports/SKILL.md`
 - Sidecar app handoff or review session: `skills/sidecar-thinking/SKILL.md`
+- remote H100 container collaboration before SCO/ACP submission: `skills/remote-sco-collaboration/SKILL.md`
 
 These local skills are repository rules, not optional background references.
 Read only the relevant skill file unless the task explicitly requires more.
@@ -498,6 +499,7 @@ Prefer this active skill set:
 - `research-graph-sop`: maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks.
 - `writing-explanatory-reports`: write detailed experiment reports and result analyses under `experiments/`.
 - `sidecar-thinking`: optional bridge to the local Sidecar app for review sessions and graph inspection.
+- `remote-sco-collaboration`: connect to remote H100 containers, run preflight checks, and hand off to SCO/ACP experiment execution.
 
 Project-specific skills should not be kept as global research-system skills.
 
