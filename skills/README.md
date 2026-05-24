@@ -19,12 +19,38 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `experiment-card-writer` | Write hypothesis-first purpose cards and experiment execution plans. |
 | `hypothesis-closure` | Close a hypothesis from its purpose card and evidence. |
 | `experiment-acp-runner` | Turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and summaries. |
-| `prism-report` | Build group-meeting-ready PRISM reports. |
 | `paper-reading-card` | Turn papers or blogs into compact reading cards. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
 | `writing-explanatory-reports` | Write detailed experiment reports and result analyses under `experiments/`. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
 | `remote-sco-collaboration` | Connect to remote H100 containers, verify session state, and bridge local research work to SCO/ACP execution. |
+| `research-system-remote-workflow` | Gatekeep local research artifacts versus remote code/SCO execution, active/archive cleanup, closure shape, and sync/report workflow. |
+
+## Skill Responsibility Boundary
+
+Do not treat every skill as a separate workflow. Use this responsibility map:
+
+| Layer | Skill | Owns | Does not own |
+|---|---|---|---|
+| Workflow gate | `research-system-remote-workflow` | Decide local vs remote boundary; decide which artifact changes; active/archive cleanup; closure/sync/report shape. | SSH mechanics, SCO command details, paper reading. |
+| Remote session | `remote-sco-collaboration` | Host/container selection, SSH preflight, remote workspace check, session note. | Hypothesis writing or final claim updates. |
+| Remote run | `experiment-acp-runner` | Turn an execution plan into ACP/SCO dry-run, submission, monitoring record, and run summary. | Designing the hypothesis from scratch. |
+| Pre-run reasoning | `experiment-card-writer` | Purpose card and execution plan. | Post-result closure. |
+| Post-run reasoning | `hypothesis-closure` | Evidence-backed closure and claim-boundary update. | Long raw metric report. |
+| Detailed report | `writing-explanatory-reports` | `detailed.md`, metric explanations, figure/table interpretation. | Mainline decision by itself. |
+| Mainline | `research-mainline` | Current mainline, status, roadmap, graph-linked evidence. | Raw logs or remote job operation. |
+| Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
+
+Current consolidation decision:
+
+```text
+Do not merge skills yet.
+```
+
+Reason: the repeated confusion is caused by unclear boundaries, not by the
+number of skills. Re-evaluate later whether `hypothesis-closure` and
+`writing-explanatory-reports` should merge; for now keep closure concise and
+`detailed.md` explanatory.
 
 ## Research Paradigm
 

@@ -128,6 +128,60 @@ datasets, figures, checkpoints, logs, run outputs, or generated artifacts unless
 they have been curated into project `main/`, project `sync/`, or root
 `results/` as stable evidence.
 
+## Remote Experiment Execution Boundary
+
+This repository is the research-process system. It should not become the place
+where agents edit active experiment code, run training, inspect raw logs, or
+submit SCO jobs unless the user explicitly asks for local-only inspection.
+
+Default boundary:
+
+- local `Research_System`: hypotheses, mainlines, closures, graphs, daily
+  cards, sync notes, meeting reports, curated evidence, and claim boundaries;
+- remote containers / SCO: experiment code edits, debug runs, training,
+  datasets, raw outputs, logs, checkpoints, and SCO submissions. Multiple
+  containers may be available; default to `10109` because it is the usual active
+  container unless the user names another machine.
+
+When the user asks to change experiment code, run code, inspect experiment logs,
+or submit SCO work, use `skills/research-system-remote-workflow/SKILL.md` and
+`skills/remote-sco-collaboration/SKILL.md` first. Select `10109` by default
+unless the user names another active machine. Run remote preflight before edits
+or jobs:
+
+```text
+hostname
+pwd
+nvidia-smi
+git status --short --branch
+which sco
+```
+
+Promote only curated summaries, report-ready figures, artifact maps, and claim
+updates back into this repository. Keep raw outputs and checkpoints remote.
+
+## Closure And Sync Workflow
+
+Hypothesis closures should start with a small user-fill oral card, then give the
+evidence-backed closure. The oral card is for meeting preparation and may be
+blank; the evidence-backed section must link to result summaries, figures, code
+paths, configs, remote result dirs, and repro commands when available.
+
+Required closure shape:
+
+```text
+Oral Report Card - Fill Before Meeting
+目的 / 假设 / 结论 / 证据
+
+Evidence-backed closure
+目的 / 假设 / 数学建模 / 实验设置 / 结果 / 解释 / 结论边界 / 下一步决策 / Artifact-Repro Map
+```
+
+Sync files are not just single closures. They should connect several closures or
+experiment stages into a collaborator-readable research trajectory, with a
+`Reading Path` section first and an `Artifact / Repro Map` for code, runner,
+config, data, result dir, figure dir, logs/checkpoints, and repro command.
+
 ## Hypothesis-First Research Discipline
 
 Default rule:
@@ -494,7 +548,6 @@ Prefer this active skill set:
 - `experiment-card-writer`: write compact hypothesis purpose cards and experiment execution plans.
 - `hypothesis-closure`: close the loop on a hypothesis after experiment evidence exists.
 - `experiment-acp-runner`: turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and mainline-safe result summaries.
-- `prism-report`: build meeting-ready PRISM reports.
 - `paper-reading-card`: write compact paper or blog reading cards.
 - `research-graph-sop`: maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks.
 - `writing-explanatory-reports`: write detailed experiment reports and result analyses under `experiments/`.

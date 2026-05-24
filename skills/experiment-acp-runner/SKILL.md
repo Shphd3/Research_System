@@ -1,6 +1,6 @@
 ---
 name: experiment-acp-runner
-description: Use when turning a hypothesis purpose card plus experiment execution plan into a runnable local or ACP/SCO cluster run, especially for from-attention-to-search attention-search experiments that require dry-run submission, GPU/image edits, run records, and mainline-safe result summaries.
+description: Use when turning a hypothesis purpose card plus experiment execution plan into a runnable remote or ACP/SCO cluster run, especially for from-attention-to-search attention-search experiments that require dry-run submission, GPU/image edits, run records, and mainline-safe result summaries.
 metadata:
   short-description: Run execution plans on ACP/SCO
 ---
@@ -18,14 +18,16 @@ Before writing commands or conclusions:
 2. Read the relevant hypothesis purpose card under `main/hypotheses/`.
 3. Read the relevant experiment folder under the active `main/experiments/`.
 4. Read the experiment workspace `AGENTS.md` and the specific runbook/doc named by the user.
-5. For current `from-attention-to-search/XingyuD` work, use:
+5. For current `from-attention-to-search` work, use the project-level canonical
+   mainline:
 
 ```text
-Projects/from-attention-to-search/XingyuD/main/
+Projects/from-attention-to-search/main/
 ```
 
-Do not update `Projects/from-attention-to-search/main/` unless the user
-explicitly asks.
+Do not recreate or rely on `Projects/from-attention-to-search/XingyuD/main/`.
+`XingyuD/` is for worker-local code workspace, docs, and sync surfaces, not the
+canonical mainline.
 
 ACP defaults live in:
 
@@ -203,11 +205,33 @@ After completion, summarize only:
 - job id, submit log, runtime log, result/checkpoint path
 - direct result, interpretation, limitation, next decision
 
-Only promote a result to the active branch mainline, currently as
-`Projects/from-attention-to-search/XingyuD/main/experiments/<experiment_id>/summary.md`
+Only promote a result to the canonical project mainline, currently as
+`Projects/from-attention-to-search/main/experiments/<experiment_id>/summary.md`
 plus `detailed.md`, if it changes a hypothesis status, claim boundary,
-experiment status, or next decision.
+experiment status, or next decision. Do not recreate `XingyuD/main`.
 
 Do not claim indexed-KV quality from training loss, router accuracy, or ACP
 success. Quality claims require post-training candidate retrieval plus exact QK
 rerank attention evaluation.
+
+## Handoff Back To Research System
+
+After a remote run, record enough for collaborators to continue without asking
+where artifacts live:
+
+```text
+code workspace:
+runner:
+config:
+data / manifest:
+result dir:
+figure dir:
+key files:
+checkpoints / logs:
+repro command:
+job id:
+```
+
+Keep raw logs and checkpoints in the remote/project experiment workspace.
+Promote only curated summaries, report-ready figures, claim-boundary updates,
+and next decisions into `main/`, `sync/`, or root `results/`.
