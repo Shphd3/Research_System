@@ -452,12 +452,15 @@ For each project:
   sync. Update it once per active working day with the smallest shareable
   outcome, boundary, and next handoff.
 - For branch-local work, use `Projects/<project>/<worker>/sync/MMDD_topic/`.
-  Each meeting-facing sync folder should be named with date and topic and should
+  Keep one primary sync folder per date for each worker. If several
+  hypotheses, versions, or diagnostics finish on the same date, place them as
+  subfolders under that date's primary sync instead of creating competing
+  same-date top-level sync entries. Each meeting-facing sync folder should
   contain the actual reporting document, not only a pointer.
-  For the same date and topic, keep one consolidated daily sync as the first
-  reading path. Supporting hypothesis-specific or diagnostic subfolders are
-  fine, but they should link back to the daily sync instead of becoming
-  competing daily entry points.
+  The main `report.md` must start with a closure-style daily summary: the
+  user's meeting-ready judgment, strongest hypothesis update, key evidence,
+  claim boundary, and next decision. Detailed setup, figure walkthroughs,
+  tables, and artifact maps come after this first section.
   Project-local sync must only reference paths visible inside the project
   repository. Do not cite root-level `Research_System` materials such as
   `daily_research_reports/`; if such material informed the sync, integrate the

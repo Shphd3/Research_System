@@ -206,7 +206,8 @@ Source closure:
 Do not make the user write another full report for meetings. Closure provides
 the logic; the daily reporting card provides the oral script space.
 
-For meeting-facing sync, create a folder named by date and topic, for example:
+For meeting-facing sync, keep one primary sync folder per date for each worker.
+Name it with date and the main topic, for example:
 
 ```text
 Projects/from-attention-to-search/XingyuD/sync/0521_router_diagnosis/
@@ -215,10 +216,16 @@ Projects/from-attention-to-search/XingyuD/sync/0521_router_diagnosis/
   figures/
 ```
 
-For the same date and topic, keep one consolidated daily sync as the first
-reading path. Supporting hypothesis-specific or diagnostic subfolders are fine,
-but they should link back to the daily sync rather than becoming competing
-entry points.
+For the same date, keep one consolidated daily sync as the first reading path.
+If several hypotheses, diagnostics, or versions finish on the same date, place
+them as subfolders under that date's primary sync. They should link back to the
+daily sync rather than becoming competing same-date entry points.
+
+The main `report.md` must start like a closure: a compact user-facing summary
+that states the day's judgment, strongest hypothesis update, evidence basis,
+claim boundary, and next decision. Treat this first section as the user's
+meeting-ready wording. Detailed experiment setup, tables, figure walkthroughs,
+and artifact maps come after it.
 
 Project-local sync must only reference paths visible inside the project
 repository. Do not cite root-level `Research_System` materials such as
@@ -226,9 +233,10 @@ repository. Do not cite root-level `Research_System` materials such as
 necessary content into the sync itself.
 
 The sync document should be written from the closure and use the same detailed
-research-judgment structure:
+research-judgment structure after the front summary:
 
 ```markdown
+## 0. Closure-Style Daily Summary
 ## 1. 目的
 ## 2. 假设
 ## 3. 数学建模

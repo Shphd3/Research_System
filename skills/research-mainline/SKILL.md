@@ -135,8 +135,10 @@ the user explicitly asks to delete it.
 ### `sync/`
 
 `Projects/<project>/<worker>/sync/MMDD_topic/` is the default branch-local
-collaborator or meeting sync surface. Name folders with date and topic, and put
-the actual report document inside the folder.
+collaborator or meeting sync surface. Use one primary sync folder per date for
+each worker. If the day contains several hypotheses, stages, or diagnostics,
+put them as subfolders under that date's primary sync instead of creating
+several same-date top-level sync entries.
 
 `Projects/<project>/sync/` is for shared project-level sync after the result is
 safe to share as project consensus.
@@ -150,10 +152,17 @@ Update sync once per active working day with the smallest shareable outcome:
 - where the collaborator can find code, config, data/manifest, result folder,
   figure folder, key artifacts, checkpoints, logs, and repro command.
 
-For the same date and topic, maintain one consolidated daily sync as the first
-reading path. Put supporting diagnostics, extra figures, or detailed artifact
-maps in subfolders, but keep the daily conclusion, evidence, boundary, and next
-decision in one main document.
+For a given date, maintain one consolidated daily sync as the first reading
+path. Put supporting diagnostics, extra figures, or detailed artifact maps in
+subfolders, but keep the daily conclusion, evidence, boundary, and next decision
+in one main document.
+
+The top of the main `report.md` should be closure-like rather than purely
+procedural: start with a compact researcher-facing summary that the user can
+read aloud or edit as their own conclusion. This first section should anchor:
+what changed today, the strongest hypothesis update, the key evidence, the
+claim boundary, and the next decision. Put detailed experiment sections,
+tables, figure walkthroughs, and artifact maps after this front summary.
 
 Project-local sync must only reference paths visible inside the project
 repository. Do not cite root-level `Research_System` materials such as
@@ -165,9 +174,10 @@ let a collaborator understand the result and know where to continue without
 asking where the code, data, figures, or outputs live.
 
 Experiment sync should use the same self-contained research-judgment structure
-as closures:
+as closures after the front summary:
 
 ```markdown
+## 0. Closure-Style Daily Summary
 ## 1. 目的
 ## 2. 假设
 ## 3. 数学建模

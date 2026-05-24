@@ -235,6 +235,11 @@ Create collaborator-facing sync under:
 Projects/<project>/<worker>/sync/MMDD_topic/
 ```
 
+Use one primary sync folder per date for each worker. If a day has multiple
+experiments, versions, audits, or diagnostics, put those reports in subfolders
+under the date's primary sync. Do not create several competing same-date sync
+entry points.
+
 Sync is not just one closure copied somewhere else. It should connect several
 closures or experiment stages into a readable research trajectory for
 collaborators.
@@ -242,11 +247,12 @@ collaborators.
 Each sync must be self-contained and project-local:
 
 ```markdown
-## 0. Reading Path
-This sync connects:
-- closure / experiment A:
-- closure / experiment B:
-- current next decision:
+## 0. Closure-Style Daily Summary
+Today's judgment:
+Strongest hypothesis update:
+Key evidence:
+Claim boundary:
+Next decision:
 
 ## 1. 目的
 ## 2. 假设
@@ -258,6 +264,10 @@ This sync connects:
 ## 8. 下一步决策
 ## 9. Artifact / Repro Map
 ```
+
+The first section should read like a concise closure summary that the user can
+adapt as their own meeting summary. Put detailed setup, tables, figure-by-figure
+discussion, and repro links after that front judgment.
 
 The artifact map must include code workspace, runner, config, data or manifest,
 result dir, figure dir, key files, checkpoints or logs, and repro command.
