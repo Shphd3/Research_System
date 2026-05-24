@@ -160,6 +160,31 @@ which sco
 Promote only curated summaries, report-ready figures, artifact maps, and claim
 updates back into this repository. Keep raw outputs and checkpoints remote.
 
+## Remote Experiment Close Loop
+
+Use this closed loop when an experiment requires code changes, GPU execution, or
+SCO/ACP submission:
+
+```text
+local purpose_card + execution_plan
+-> remote pull latest
+-> remote code/config edit
+-> remote smoke/debug run
+-> remote SCO/ACP submit and monitor
+-> remote result summary / sync / closure draft
+-> remote commit + push curated code/docs
+-> local pull and update mainline / graph / meeting docs
+```
+
+Remote commits should include reproducible code, configs, runbooks, small
+curated result summaries, report-ready figures, and artifact maps. Do not commit
+raw logs, checkpoints, datasets, full run outputs, or uncurated generated files.
+
+After the remote push succeeds, the local workspace should pull the relevant
+repositories before editing reports. Local edits should then focus on claim
+boundary, mainline status, graph links, meeting cards, and collaborator-facing
+sync. Do not manually copy scattered remote logs into the local process repo.
+
 ## Closure And Sync Workflow
 
 Hypothesis closures should start with a small user-fill oral card, then give the

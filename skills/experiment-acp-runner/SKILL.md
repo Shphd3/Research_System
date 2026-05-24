@@ -235,3 +235,21 @@ job id:
 Keep raw logs and checkpoints in the remote/project experiment workspace.
 Promote only curated summaries, report-ready figures, claim-boundary updates,
 and next decisions into `main/`, `sync/`, or root `results/`.
+
+## Remote Commit And Local Pull
+
+After the job result has been interpreted, finish the remote side before asking
+the local workspace to update:
+
+```text
+1. Write or update summary.md / detailed.md / sync report / closure draft.
+2. Include the artifact map: code workspace, runner, config, data, result dir,
+   figure dir, log/checkpoint path, repro command, and job id.
+3. Commit and push reproducible code, configs, runbooks, and curated reports.
+4. Do not commit raw logs, checkpoints, datasets, or full output directories.
+5. On the local machine, pull the project repository and then update mainline,
+   graph, meeting cards, or root Research_System reports.
+```
+
+If the result does not change the hypothesis, still record a short remote run
+summary and say `No mainline update` in the local daily/reporting layer.

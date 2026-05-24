@@ -105,6 +105,44 @@ submit SCO jobs:
 Promote only curated conclusions and report-ready figures back into
 `Research_System`.
 
+## Remote Experiment Close Loop
+
+For experiments that require remote code edits or SCO/ACP execution, enforce
+this order:
+
+```text
+1. local: write or confirm purpose_card.md and execution_plan.md
+2. remote: pull latest before editing code or configs
+3. remote: edit only the remote project workspace
+4. remote: run a smoke/debug path before formal submission
+5. remote: submit SCO/ACP and record job id, command, log path, result path
+6. remote: write the result summary, sync note, or closure draft with artifact map
+7. remote: commit and push curated code/docs/results needed for reproducibility
+8. local: pull the pushed changes, then update mainline, graph, and meeting docs
+```
+
+Remote commit allowed:
+
+- code changes, configs, launch scripts, runbooks;
+- small curated tables or report-ready figures;
+- `summary.md`, `detailed.md`, closure drafts, sync reports;
+- artifact maps with code workspace, runner, config, data manifest, result dir,
+  figure dir, logs/checkpoints path, repro command, and job id.
+
+Remote commit forbidden unless explicitly curated:
+
+- raw logs;
+- checkpoints;
+- datasets;
+- full run directories;
+- unfiltered generated figures or tables;
+- temporary cache files.
+
+The local workspace should not become a manual copy target for remote artifacts.
+After remote push, local work starts from `git pull` and focuses on research
+judgment: mainline update, claim boundary, graph links, daily/meeting reports,
+and collaborator-facing sync.
+
 ## Skill Responsibility Map
 
 Use this skill as the workflow gatekeeper only. It decides where work belongs
