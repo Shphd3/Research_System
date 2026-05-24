@@ -166,9 +166,11 @@ tables, figure walkthroughs, and artifact maps after this front summary.
 
 This front summary is required and must be section `## 0. Closure-Style Daily
 Summary`. Treat it like the user-fill judgment card in a hypothesis closure:
-write it in the user's voice as compact editable points, or leave clearly marked
-slots when the user wants to fill them. Do not bury the user's own summary below
-implementation details.
+leave clearly marked blank slots by default so the user can write the final
+meeting-facing judgment. Do not fill it with Codex's own final wording unless
+the user explicitly provides or confirms that wording. The default slots are:
+purpose, hypothesis, conclusion, evidence, what cannot be claimed, and next
+decision. Do not bury the user's own summary below implementation details.
 
 Project-local sync must only reference paths visible inside the project
 repository. Do not cite root-level `Research_System` materials such as
@@ -183,7 +185,7 @@ Experiment sync should use the same self-contained research-judgment structure
 as closures after the front summary:
 
 ```markdown
-## 0. Closure-Style Daily Summary
+## 0. Closure-Style Daily Summary（用户填写）
 ## 1. 目的
 ## 2. 假设
 ## 3. 数学建模

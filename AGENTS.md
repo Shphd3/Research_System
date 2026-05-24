@@ -211,10 +211,11 @@ sync folders.
 
 The main daily sync report must start with section `## 0. Closure-Style Daily
 Summary`. This section is the user's research-judgment anchor, like the first
-card in a hypothesis closure: it should be short, editable by the user, and
-state the user's own meeting-facing points before any detailed evidence walk.
-It should include at least: what changed today, strongest hypothesis update,
-key evidence, claim boundary, and next decision.
+card in a hypothesis closure. By default, leave it as a blank user-fill
+scaffold before any detailed evidence walk. Do not replace it with Codex's own
+final meeting wording unless the user explicitly provides or confirms that
+wording. The scaffold should include: purpose, hypothesis, conclusion,
+evidence, what cannot be claimed, and next decision.
 
 After section 0, write the detailed sync sections and include an `Artifact /
 Repro Map` for code, runner, config, data, result dir, figure dir,
@@ -473,9 +474,11 @@ For each project:
   same-date top-level sync entries. Each meeting-facing sync folder should
   contain the actual reporting document, not only a pointer.
   The main `report.md` must start with a closure-style daily summary: the
-  user's meeting-ready judgment, strongest hypothesis update, key evidence,
-  claim boundary, and next decision. Detailed setup, figure walkthroughs,
-  tables, and artifact maps come after this first section.
+  user's meeting-ready judgment card. Leave this section blank by default with
+  fields for purpose, hypothesis, conclusion, evidence, claim boundary, and next
+  decision; only fill it when the user has supplied or confirmed the wording.
+  Detailed setup, figure walkthroughs, tables, and artifact maps come after
+  this first section.
   Project-local sync must only reference paths visible inside the project
   repository. Do not cite root-level `Research_System` materials such as
   `daily_research_reports/`; if such material informed the sync, integrate the
