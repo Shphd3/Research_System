@@ -13,6 +13,10 @@ only after that, an executable experiment plan.
 Core rule: **hypothesis first, experiment second**. An experiment exists because
 a hypothesis needs evidence, not because a new run is easy to launch.
 
+Language rule: purpose cards should be written in Chinese by default. Keep
+English only for metric names, code identifiers, experiment IDs, paths, quoted
+terms, and established technical labels where translation would reduce clarity.
+
 ## Location Rule
 
 Write the purpose card in the hypothesis folder:
