@@ -135,10 +135,10 @@ the user explicitly asks to delete it.
 ### `sync/`
 
 `Projects/<project>/<worker>/sync/MMDD_topic/` is the default branch-local
-collaborator or meeting sync surface. Use one primary sync folder per date for
-each worker. If the day contains several hypotheses, stages, or diagnostics,
-put them as subfolders under that date's primary sync instead of creating
-several same-date top-level sync entries.
+collaborator or meeting sync surface. Use exactly one primary sync folder per
+date for each worker. If the day contains several hypotheses, stages,
+diagnostics, or experiment versions, put them as subfolders under that date's
+primary sync instead of creating several same-date top-level sync entries.
 
 `Projects/<project>/sync/` is for shared project-level sync after the result is
 safe to share as project consensus.
@@ -153,9 +153,9 @@ Update sync once per active working day with the smallest shareable outcome:
   figure folder, key artifacts, checkpoints, logs, and repro command.
 
 For a given date, maintain one consolidated daily sync as the first reading
-path. Put supporting diagnostics, extra figures, or detailed artifact maps in
-subfolders, but keep the daily conclusion, evidence, boundary, and next decision
-in one main document.
+path. Put supporting diagnostics, extra figures, version reports, or detailed
+artifact maps in subfolders, but keep the daily conclusion, evidence, boundary,
+and next decision in one main document.
 
 The top of the main `report.md` should be closure-like rather than purely
 procedural: start with a compact researcher-facing summary that the user can
@@ -163,6 +163,12 @@ read aloud or edit as their own conclusion. This first section should anchor:
 what changed today, the strongest hypothesis update, the key evidence, the
 claim boundary, and the next decision. Put detailed experiment sections,
 tables, figure walkthroughs, and artifact maps after this front summary.
+
+This front summary is required and must be section `## 0. Closure-Style Daily
+Summary`. Treat it like the user-fill judgment card in a hypothesis closure:
+write it in the user's voice as compact editable points, or leave clearly marked
+slots when the user wants to fill them. Do not bury the user's own summary below
+implementation details.
 
 Project-local sync must only reference paths visible inside the project
 repository. Do not cite root-level `Research_System` materials such as

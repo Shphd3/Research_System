@@ -201,9 +201,24 @@ Evidence-backed closure
 ```
 
 Sync files are not just single closures. They should connect several closures or
-experiment stages into a collaborator-readable research trajectory, with a
-`Reading Path` section first and an `Artifact / Repro Map` for code, runner,
-config, data, result dir, figure dir, logs/checkpoints, and repro command.
+experiment stages into a collaborator-readable research trajectory.
+
+Daily sync rule: for each worker and date, keep exactly one primary sync folder.
+If several hypotheses, diagnostics, or experiment versions finish on the same
+date, put them under that date folder as subfolders and make the top-level
+`report.md` the first reading path. Do not create several same-date top-level
+sync folders.
+
+The main daily sync report must start with section `## 0. Closure-Style Daily
+Summary`. This section is the user's research-judgment anchor, like the first
+card in a hypothesis closure: it should be short, editable by the user, and
+state the user's own meeting-facing points before any detailed evidence walk.
+It should include at least: what changed today, strongest hypothesis update,
+key evidence, claim boundary, and next decision.
+
+After section 0, write the detailed sync sections and include an `Artifact /
+Repro Map` for code, runner, config, data, result dir, figure dir,
+logs/checkpoints, and repro command.
 
 ## Hypothesis-First Research Discipline
 
