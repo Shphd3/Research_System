@@ -121,6 +121,15 @@ Use `summary.md` for the short decision-facing result. Use `detailed.md` for
 metric explanations, setup details, tables, figure interpretation, seed notes,
 failed-run analysis, and audit trail.
 
+Implementation audit rule: when an experiment uses a nontrivial intervention or
+diagnostic implementation, `detailed.md` must include enough operational detail
+for another researcher to audit the result without reading the chat. This
+especially applies to router/model initialization, custom losses, ablations,
+dispatch rules, data sampling, probe construction, surrogate gradients,
+interventions, and stopping gates. Record the code path/function, config fields,
+objects being computed, formulas or pseudocode, hyperparameters, and what the
+implementation is **not** doing when that distinction affects the claim.
+
 Do not use this skill for hypothesis closures by default. Closures should use
 `hypothesis-closure` and should be shorter, self-contained, and claim-focused.
 
