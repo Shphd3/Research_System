@@ -195,6 +195,14 @@ many small experiments to explore the space casually; prefer fewer experiments
 that deepen understanding, rule out a rival explanation, or change the next
 decision.
 
+Default to the minimum decisive experiment. For each hypothesis, first identify
+the smallest setup that can change the hypothesis state: supported, weakened,
+redirected, or still open. Do not propose a broad variable sweep, many metrics,
+or several loosely related runs before the primary hypothesis has one clear
+decision rule. Extra variables, ablations, seeds, or diagnostics are allowed
+only when they distinguish a named rival explanation or protect the validity of
+the primary conclusion.
+
 Write the hypothesis purpose card before writing an experiment execution plan.
 The purpose card belongs in `hypotheses/`, not in `experiments/`.
 
@@ -258,8 +266,9 @@ Use this recursive shape when one experiment contains gated sub-experiments
 such as data sanity -> dense readback -> MoE separation -> real-data comparison.
 
 `execution_plan.md` is the operational document. It should contain concrete
-run details: dataset construction, config, model/training setup, metrics,
-artifacts, commands, expected outputs, and pass/fail criteria.
+run details: dataset construction, config, model/training setup, the primary
+decision metric, only necessary supporting diagnostics, artifacts, commands,
+expected outputs, and pass/fail criteria.
 
 For recursive experiment projects, each stage must have its own local execution
 plan. The hypothesis purpose card explains the whole research logic chain;
@@ -322,6 +331,13 @@ across project directories from daily reports.
 Before proposing or summarizing experiments, first write the hypothesis purpose chain.
 Do not jump directly to architecture, scripts, or metrics.
 
+The default experiment shape is one hypothesis, one sharp test, one primary
+decision metric, and one closure. Avoid expanding an experiment into a grid of
+variables because it is convenient to run. If the first result is ambiguous,
+write the ambiguity into the summary and design the next minimal test from that
+specific uncertainty. Do not accumulate unrelated diagnostics that do not update
+the hypothesis.
+
 Compress the task through these questions:
 
 1. What problem level is this hypothesis answering?
@@ -332,12 +348,16 @@ Compress the task through these questions:
 6. Why is this setup meaningful: model, data, task, and diagnostic target?
 7. What are the boundary conditions of this setup?
 8. Which single experiment is the sharpest next test?
+9. Which one metric decides the hypothesis update, and which diagnostics are
+   truly necessary to interpret that metric?
 
 For experiment design, output a compact hypothesis purpose card by default.
 The purpose card should link the problem level, purpose, hypothesis, mathematical
 modeling, experiment design, expected outcomes, and hypothesis-update logic.
 Add a detailed execution plan only when the user is ready to run or asks for
-implementation details.
+implementation details. The execution plan should start with the minimal run;
+put optional extensions in a separate `Deferred Extensions` section and do not
+treat them as part of the first decision gate.
 
 ```markdown
 # Hypothesis Purpose Card: H1 Router-Attention Recall

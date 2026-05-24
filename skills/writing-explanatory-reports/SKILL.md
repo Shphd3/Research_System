@@ -34,6 +34,58 @@ A good report supports three reading modes:
 
 Prefer explanation that helps judgment over exhaustive detail.
 
+## Meeting / PRISM-Style Reports
+
+When the report is for a group meeting, advisor update, or PRISM-style document,
+it is still a mainline-facing decision report, not a chronology. Start from the
+scientific question and organize evidence by claim.
+
+Default meeting-report location:
+
+```text
+daily_research_reports/MMDD/meeting/
+daily_research_reports/MMDD/meeting/prism/
+```
+
+Use this structure unless a project template is named:
+
+```markdown
+# Meeting Report - <topic/date>
+
+## 1. Report Purpose
+## 2. Research Background
+## 3. Current Hypothesis
+## 4. Modeling / Mechanism
+## 5. Empirical Evidence
+## 6. Current Interpretation
+## 7. Claims To Downgrade
+## 8. Next Iteration
+## 9. Meeting Version
+```
+
+For each evidence block, state:
+
+- experiment or observation;
+- what it supports;
+- what it weakens;
+- what alternative explanation remains.
+
+When useful, add at most 2-3 likely advisor questions:
+
+```markdown
+## Likely Questions
+
+### Question
+Short answer:
+Evidence:
+How to redirect back to the mainline:
+```
+
+Assume the advisor knows the high-level topic but not the implementation
+details. Before showing metrics, explain what object is being tested, why the
+controlled experiment is needed, what the metric means, and what the safest
+current claim is.
+
 ## Default Structure
 
 Use the shortest structure that preserves understanding. For most experiment reports:
@@ -58,8 +110,12 @@ Default locations:
 
 ```text
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
-Projects/<project>/<worker>/main/experiments/<experiment_id>/detailed.md
 ```
+
+Do not create worker-local `main/` folders such as
+`Projects/<project>/<worker>/main/`. Worker folders can hold sync reports and
+remote code-workspace notes, but detailed evidence reports belong under the
+canonical project `main/`.
 
 Use `summary.md` for the short decision-facing result. Use `detailed.md` for
 metric explanations, setup details, tables, figure interpretation, seed notes,
@@ -82,6 +138,13 @@ Use explicit chains when helpful:
 `observed X -> suggests Y -> but because Z, only supports W`
 
 Every strong claim needs its boundary. Especially mark limits from small samples, proxy metrics, oracle upper bounds, synthetic tasks, failed runs, baselines that are not equal-budget, and implementation caveats.
+
+For synthetic experiments, explicitly separate:
+
+- feature-level specialization;
+- function-level specialization;
+- routing-level specialization;
+- transfer to real hidden states.
 
 ## Metric Explanation
 

@@ -32,11 +32,10 @@ Write the closure beside the purpose card:
 Projects/<project>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md
 ```
 
-For branch-local work:
-
-```text
-Projects/<project>/<worker>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md
-```
+Do not create worker-local `main/` folders such as
+`Projects/<project>/<worker>/main/`. Branch-local collaboration material belongs
+in `Projects/<project>/<worker>/sync/`, while closures stay in the canonical
+project mainline.
 
 The experiment folder keeps execution evidence:
 
@@ -50,17 +49,48 @@ experiments/<experiment_id>/detailed.md
 ```markdown
 # Hypothesis Closure: <hypothesis_id>
 
-## 1. 目的
+## 0. My Judgment Card
+
+This section is the user's research-judgment anchor. Keep it short. The user
+should write it directly or explicitly confirm it before the closure is treated
+as finished.
+
+目的：
+
+假设：
+
+实验设计：
+
+结论：
+
+我现在不能 claim：
+
+下一步判断：
+
+## 1. Purpose
 
 这轮实验为什么必须做？它服务于哪个问题层级和下一步决策？
 
-## 2. 假设
+## 2. Hypothesis
 
-H:
+主假设：
 
-Rivals:
+Rival explanations：
 
-## 3. 数学建模
+## 3. Experiment Design
+
+数据：
+
+模型 / 设置：
+
+关键 metric：
+
+判定规则：
+
+## 4. Optional Mathematical Modeling
+
+Only include this section when variables, objects, assumptions, or the metric
+decision rule affect the judgment.
 
 Objects:
 
@@ -68,25 +98,23 @@ Variables:
 
 Expected relation:
 
-Metric decision rule:
+## 5. Result
 
-## 4. 实验设置
+直接结果是什么？不要先写解释。
 
-说明 setup 是否真的测试了 H，而不是只测试了弱 proxy。
+## 6. Interpretation
 
-## 5. 结论
+这个结果说明什么、削弱了什么、没有区分什么？
 
-一句话结论。
+## 7. Key Evidence
 
-## 6. 证据
-
-只写改变判断的结果。每条证据要说明它支持什么。
+只写改变判断的结果。每条证据要说明它支持哪个判断。
 
 1.
 2.
 3.
 
-## 7. 结论边界
+## 8. Claim Boundary
 
 能说：
 
@@ -97,13 +125,29 @@ Metric decision rule:
 导师最可能攻击的缺口：missing control / ambiguous metric / weak baseline /
 limited data / train-infer mismatch / layer specificity / synthetic-only。
 
-## 8. 下一步决策
+## 9. Next Decision
 
 继续 / 修改 / 停止 / 换假设，并说明原因。
 
-## 9. 结果文档
+## 10. Links
 
-summary / detailed / figures / runtime artifacts。
+Purpose card:
+
+Experiment summary:
+
+Detailed report:
+
+Figures:
+
+Code:
+
+Config:
+
+Result dir:
+
+Logs:
+
+Repro command:
 ```
 
 ## Reporting Sync
@@ -140,7 +184,7 @@ Use this shape:
 # Reporting Card: <hypothesis_id>
 
 Source closure:
-`Projects/<project>/<worker>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md`
+`Projects/<project>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md`
 
 ## Oral Report Card - Fill Before Meeting
 
@@ -229,11 +273,27 @@ and keep the card readable as the hypothesis lifecycle record.
 ## Rules
 
 - A closure must be self-contained but not long.
+- A closure is not a full report. It is a judgment close-out plus links to the
+  evidence trail.
+- The `My Judgment Card` is mandatory. It should be written by the user or
+  explicitly confirmed by the user; Codex may draft it, but should not hide that
+  it is the user's judgment anchor.
 - Start from the purpose card; do not rewrite the experiment as a chronology.
 - Closure is not complete until the purpose card links the result documents and
   has updated `Result`, `Conclusion`, and `Next Step`.
 - Do not upgrade a claim unless the setup directly tests it.
 - Always separate public claim, private interpretation, and speculation.
+- Audit each important claim against evidence:
+  - status: supported / weakly supported / unsupported / contradicted / unclear;
+  - evidence;
+  - counter-evidence or limitation;
+  - public wording;
+  - what not to say.
+- Synthetic evidence cannot automatically justify real-language claims.
+- Oracle results can show recoverability, but do not count as learned-model
+  success unless the learned mechanism is tested.
+- Prefer weaker but defensible meeting wording over a stronger claim whose
+  missing control is obvious.
 - If the setup only tests a boundary condition, say so.
 - Put long tables, commands, and raw logs in `experiments/.../detailed.md`.
 - Copy report-ready figures into the closure `figures/` folder when figures are

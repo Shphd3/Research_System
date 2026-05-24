@@ -1,6 +1,6 @@
 # Project Snapshot: from-attention-to-search
 
-Last updated: 2026-05-21
+Last updated: 2026-05-24
 
 This file exists because web-side AI and paper-reading AI may only see
 `Research_System`, not the project subrepository under `Projects/`.
@@ -9,8 +9,11 @@ Canonical local project files still live under:
 
 ```text
 Projects/from-attention-to-search/
-Projects/from-attention-to-search/XingyuD/main/
+Projects/from-attention-to-search/main/
 ```
+
+`XingyuD/` may contain worker-local code workspaces, docs, and sync notes, but
+it must not contain a second `main/` mainline.
 
 When web-side agents cannot access those files, use this snapshot as the active
 project context.
@@ -106,7 +109,7 @@ We cannot claim:
 Write and run:
 
 ```text
-Projects/from-attention-to-search/XingyuD/main/experiments/H0521_ab_feature_specialization/execution_plan.md
+Projects/from-attention-to-search/main/experiments/H0521_ab_feature_specialization/execution_plan.md
 ```
 
 First run:
@@ -123,10 +126,10 @@ class-specific expert ablation
 If a web-side AI suggests edits, it should refer to these local target paths:
 
 ```text
-Projects/from-attention-to-search/XingyuD/main/hypotheses/H0521_ab_feature_specialization/purpose_card.md
-Projects/from-attention-to-search/XingyuD/main/experiments/H0521_ab_feature_specialization/execution_plan.md
-Projects/from-attention-to-search/XingyuD/main/experiments/H0521_ab_feature_specialization/summary.md
-Projects/from-attention-to-search/XingyuD/main/hypotheses/H0521_ab_feature_specialization/hypothesis_closure.md
+Projects/from-attention-to-search/main/hypotheses/H0521_ab_feature_specialization/purpose_card.md
+Projects/from-attention-to-search/main/experiments/H0521_ab_feature_specialization/execution_plan.md
+Projects/from-attention-to-search/main/experiments/H0521_ab_feature_specialization/summary.md
+Projects/from-attention-to-search/main/hypotheses/H0521_ab_feature_specialization/hypothesis_closure.md
 Projects/from-attention-to-search/XingyuD/sync/MMDD_topic/report.md
 ```
 

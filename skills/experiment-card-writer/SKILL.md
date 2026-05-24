@@ -21,11 +21,9 @@ Write the purpose card in the hypothesis folder:
 Projects/<project>/main/hypotheses/<hypothesis_id>/purpose_card.md
 ```
 
-For branch-local work:
-
-```text
-Projects/<project>/<worker>/main/hypotheses/<hypothesis_id>/purpose_card.md
-```
+Do not create worker-local `main/` folders such as
+`Projects/<project>/<worker>/main/`. Worker folders may contain code workspaces,
+docs, or sync notes, but the project mainline stays in `Projects/<project>/main/`.
 
 Write concrete run details in the experiment folder:
 
@@ -207,7 +205,17 @@ The purpose card should remain concise. Detailed evidence belongs in
 
 ## Rules
 
+- Default to the minimum decisive experiment: one hypothesis, one sharp test,
+  one primary decision metric, and one closure.
 - Fewer, sharper experiments are preferred over many shallow runs.
+- Do not propose broad variable sweeps, many metrics, or multiple loosely
+  related runs before the first hypothesis update is closed.
+- Add extra variables, ablations, seeds, or diagnostics only when they
+  distinguish a named rival explanation or protect the validity of the primary
+  conclusion.
+- If the first result is ambiguous, write the ambiguity down and design the next
+  minimal test from that uncertainty instead of expanding the current run into a
+  large experiment grid.
 - Do not start with architecture, scripts, or metrics before the hypothesis is clear.
 - Purpose cards are reasoning artifacts; execution plans are operational artifacts.
 - Every purpose card must be completed after the experiment by linking result
