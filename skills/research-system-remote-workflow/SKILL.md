@@ -1,30 +1,38 @@
 ---
 name: research-system-remote-workflow
-description: Use when organizing Research_System daily workflow, project mainline cleanup, active/archive experiment structure, collaborator sync, group-meeting reports, closure-document templates, or when coding/training/SCO work should happen on a remote container, usually 10109, instead of the local research-process repository.
+description: Use when organizing Research_System daily workflow, project mainline cleanup, active/archive experiment structure, collaborator sync, group-meeting reports, closure-document templates, or deciding whether experiment work belongs in local review, a remote container, or SCO/ACP.
 ---
 
 # Research System Remote Workflow
 
 ## Core Boundary
 
-Treat this local repository as the research-process system, not the experiment
-code workspace.
+Treat this local repository as the research-process system, not the default
+experiment code workspace.
 
 Local `Research_System` owns research mainlines, hypotheses, closures, graph
 maps, daily cards, sync notes, meeting reports, curated results, claim
 boundaries, and next decisions.
 
-Remote containers / SCO own code edits, training scripts, debug runs, datasets,
-raw outputs, checkpoints, logs, and SCO submissions.
+Remote Codex/container workspaces own experiment code edits, debug runs, smoke
+runs, full runs, result analysis, report-ready figures/tables, datasets, raw
+outputs, checkpoints, logs, and cluster submissions.
 
-There are multiple usable containers. Default to `10109` because it is the
-user's usual active container, but accept another container if the user names
-one or the remote host registry indicates a better target.
+Cluster/SCO/ACP owns formal or long training jobs.
 
-Do not edit local experiment code or launch local training when the user asks
-for actual code implementation, remote execution, or SCO submission. Use
-`remote-sco-collaboration` first, then `experiment-acp-runner` when submitting
-jobs.
+Do not make the local Windows agent SSH into a remote container as the default
+experiment workflow. If the agent is already running inside the target remote
+container, edit, run, analyze, commit, and push there. If the agent is running
+locally, use local work for research-process edits, review, Git pulls, and only
+small explicit smoke tests.
+
+Use Git as the normal synchronization path between local and remote. Keep SSH or
+SCP as an explicit ad hoc utility for small status checks, quick table copies,
+or emergency recovery, not as the standard development loop.
+
+Smoke tests may run either locally or in a remote container when they are small,
+explicit, and useful. Full experiments and cluster submissions should run from
+the remote container or cluster workflow.
 
 ## Daily Research Chain
 
@@ -81,22 +89,27 @@ consult it again, and which current node supersedes it.
 
 Do not delete evidence unless the user explicitly asks.
 
-## Remote Coding And SCO Rule
+## Execution Location Rule
 
 When the user asks to modify experiment code, run experiments, inspect logs, or
 submit SCO jobs:
 
-1. Read the local purpose card / execution plan first.
-2. Use `remote-sco-collaboration`.
-3. Select host `10109` by default unless the user names another active machine.
-4. SSH to the remote container and run preflight:
+1. Read or confirm the local purpose card / execution plan first.
+2. Determine the current execution context when it matters:
    - `hostname`
    - `pwd`
    - `nvidia-smi`
    - `git status --short --branch`
    - `which sco` or `/root/.sco/bin/sco`
-5. Modify code only in the remote project workspace.
-6. Run a smoke/debug path before a full run.
+3. If already in the remote container, work directly in that checkout: edit,
+   smoke, run, analyze, commit, and push curated code/docs.
+4. If local on Windows, do not SSH by default. Pull/review via Git, update
+   research-process artifacts, or run only small explicit smoke tests.
+5. Use `remote-sco-collaboration` only when the user explicitly asks to connect
+   by SSH, inspect a remote session, start/check CCI, copy a small artifact, or
+   manage remote access.
+6. Use `experiment-acp-runner` when submitting jobs from the remote/container
+   workflow.
 7. Submit SCO only after the command, config, output dir, and pass/fail metric
    are explicit.
 8. Record job id, command, log path, result path, and first diagnosis in a
@@ -105,20 +118,19 @@ submit SCO jobs:
 Promote only curated conclusions and report-ready figures back into
 `Research_System`.
 
-## Remote Experiment Close Loop
+## Experiment Sync Loop
 
-For experiments that require remote code edits or SCO/ACP execution, enforce
-this order:
+For experiments that require code edits, GPU execution, or SCO/ACP execution,
+use this order:
 
 ```text
 1. local: write or confirm purpose_card.md and execution_plan.md
-2. remote: pull latest before editing code or configs
-3. remote: edit only the remote project workspace
-4. remote: run a smoke/debug path before formal submission
-5. remote: submit SCO/ACP and record job id, command, log path, result path
-6. remote: write the result summary, sync note, or closure draft with artifact map
-7. remote: commit and push curated code/docs/results needed for reproducibility
-8. local: pull the pushed changes, then update mainline, graph, and meeting docs
+2. remote/container: pull latest before editing code or configs
+3. remote/container: edit, smoke, run, analyze, and create report-ready figures/tables
+4. remote/container or cluster: submit SCO/ACP when needed and record job id, command, log path, result path
+5. remote/container: write the result summary, sync note, or closure draft with artifact map
+6. remote/container: commit and push curated code/docs/results needed for reproducibility
+7. local: pull the pushed changes, then update mainline, graph, and meeting docs
 ```
 
 Remote commit allowed:
@@ -148,10 +160,10 @@ and collaborator-facing sync.
 Use this skill as the workflow gatekeeper only. It decides where work belongs
 and which artifact should be updated.
 
-- `research-system-remote-workflow`: local/remote boundary, daily workflow,
-  active/archive cleanup, closure/sync/report shape.
-- `remote-sco-collaboration`: SSH session, host selection, preflight, port
-  forwarding, remote handoff note.
+- `research-system-remote-workflow`: local/remote/cluster boundary, daily
+  workflow, active/archive cleanup, closure/sync/report shape.
+- `remote-sco-collaboration`: explicit SSH session, host selection, CCI checks,
+  preflight, port forwarding, small ad hoc remote artifact access.
 - `experiment-acp-runner`: concrete ACP/SCO command construction, dry-run,
   submission, monitoring, and run summary.
 - `experiment-card-writer`: pre-run hypothesis purpose card and execution plan.

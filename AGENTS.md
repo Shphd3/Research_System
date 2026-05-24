@@ -128,62 +128,60 @@ datasets, figures, checkpoints, logs, run outputs, or generated artifacts unless
 they have been curated into project `main/`, project `sync/`, or root
 `results/` as stable evidence.
 
-## Remote Experiment Execution Boundary
+## Execution Location Boundary
 
-This repository is the research-process system. It should not become the place
-where agents edit active experiment code, run training, inspect raw logs, or
-submit SCO jobs unless the user explicitly asks for local-only inspection.
+This repository is the research-process system. Local Windows work should focus
+on research organization: hypotheses, mainlines, closures, graphs, daily cards,
+sync notes, meeting reports, curated evidence, prompts, reviews, and Git pulls
+of curated project results.
 
 Default boundary:
 
-- local `Research_System`: hypotheses, mainlines, closures, graphs, daily
-  cards, sync notes, meeting reports, curated evidence, and claim boundaries;
-- remote containers / SCO: experiment code edits, debug runs, training,
-  datasets, raw outputs, logs, checkpoints, and SCO submissions. Multiple
-  containers may be available; default to `10109` because it is the usual active
-  container unless the user names another machine.
+- local Windows `Research_System`: research-process edits, review, lightweight
+  smoke checks when explicitly useful, and `git pull` / `git checkout` of
+  curated results;
+- remote Codex/container workspace: experiment code edits, debugging, smoke
+  runs, full runs, result analysis, report-ready figures/tables, and cluster
+  submission;
+- cluster/SCO/ACP: long or formal training jobs and large-scale experiment
+  execution.
 
-When the user asks to change experiment code, run code, inspect experiment logs,
-or submit SCO work, use `skills/research-system-remote-workflow/SKILL.md` and
-`skills/remote-sco-collaboration/SKILL.md` first. Select `10109` by default
-unless the user names another active machine. Run remote preflight before edits
-or jobs:
+Do not make a local Windows agent SSH into a remote container as the default
+experiment workflow. Prefer opening/using Codex directly inside the target
+remote container for experiment work. Use Git as the normal synchronization
+path between local and remote repositories.
 
-```text
-hostname
-pwd
-nvidia-smi
-git status --short --branch
-which sco
-```
+SSH/SCP remains allowed only as an explicit, small ad hoc utility: quick status
+inspection, emergency recovery, or copying a small table/report when Git is
+temporarily inconvenient. It is not the default coding, training, or result
+sync path.
 
-Promote only curated summaries, report-ready figures, artifact maps, and claim
-updates back into this repository. Keep raw outputs and checkpoints remote.
+Smoke runs may happen either locally or in the remote container when they are
+small, explicit, and useful for validating code. Full experiments and cluster
+submissions should happen from the remote/container side.
 
-## Remote Experiment Close Loop
+Promote only curated summaries, report-ready figures, small tables, artifact
+maps, and claim updates into Git. Keep raw outputs, checkpoints, datasets, full
+run directories, and unfiltered logs out of project mainline paths.
+
+## Experiment Sync Loop
 
 Use this closed loop when an experiment requires code changes, GPU execution, or
 SCO/ACP submission:
 
 ```text
-local purpose_card + execution_plan
--> remote pull latest
--> remote code/config edit
--> remote smoke/debug run
--> remote SCO/ACP submit and monitor
--> remote result summary / sync / closure draft
--> remote commit + push curated code/docs
--> local pull and update mainline / graph / meeting docs
+local: purpose/review/mainline as needed
+-> remote/container: pull latest from Git
+-> remote/container: edit code/configs and run smoke/full experiments
+-> remote/container or cluster: submit long jobs when needed
+-> remote/container: write curated summary/detailed/closure/sync with figures
+-> remote/container: commit and push curated code/docs/results
+-> local: pull from Git and update research judgment / meeting materials
 ```
 
-Remote commits should include reproducible code, configs, runbooks, small
-curated result summaries, report-ready figures, and artifact maps. Do not commit
-raw logs, checkpoints, datasets, full run outputs, or uncurated generated files.
-
-After the remote push succeeds, the local workspace should pull the relevant
-repositories before editing reports. Local edits should then focus on claim
-boundary, mainline status, graph links, meeting cards, and collaborator-facing
-sync. Do not manually copy scattered remote logs into the local process repo.
+Do not manually copy scattered remote logs into the local process repo. If a
+small table or figure must be moved outside Git, record why and keep raw
+artifacts remote.
 
 ## Closure And Sync Workflow
 
