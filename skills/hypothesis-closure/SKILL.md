@@ -150,6 +150,27 @@ Logs:
 Repro command:
 ```
 
+## Evidence Figure Rule
+
+When the closure uses empirical evidence that can be visualized, include the
+report-ready figure directly in the closure, not only in the linked experiment
+summary. Put a one-sentence interpretation immediately below every figure.
+
+Use project-relative paths from `Projects/<project>/`, not absolute local or
+remote machine paths, for committed closure links. Keep the artifact map compact:
+link only the purpose card, experiment summary, detailed report, key figure(s),
+runner, config, curated result table(s), and remote raw result/log directory
+when needed.
+
+Example:
+
+```markdown
+![Router drift vs hidden drift](figures/router_weight_vs_hidden_subspace_drift.png)
+
+This figure shows that router vectors stay numerically fixed while hidden
+subspaces move, so the route change is not caused by router-weight optimization.
+```
+
 ## Reporting Sync
 
 After a closure is finished, also decide whether to sync:

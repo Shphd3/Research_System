@@ -117,7 +117,6 @@ Primary active skills:
 - `skills/experiment-card-writer/SKILL.md`
 - `skills/experiment-acp-runner/SKILL.md`
 - `skills/hypothesis-closure/SKILL.md`
-- `skills/prism-report/SKILL.md`
 - `skills/paper-reading-card/SKILL.md`
 - `skills/research-graph-sop/SKILL.md`
 - `skills/writing-explanatory-reports/SKILL.md`

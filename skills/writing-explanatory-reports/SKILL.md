@@ -70,6 +70,19 @@ For each evidence block, state:
 - what it weakens;
 - what alternative explanation remains.
 
+## Figure Evidence Standard
+
+Reports and closures should use figures as evidence, not decoration. Every
+central figure must be embedded near the claim it supports, and every embedded
+figure must have a one-sentence caption below it that says exactly what the
+figure supports or weakens.
+
+For project-local committed reports, use paths relative to the report file or
+relative to `Projects/<project>/`; avoid absolute local/remote paths except in a
+compact artifact map for raw remote outputs. If a figure is needed for
+reliability audit, generate it in the remote experiment workspace and commit the
+curated PNG plus the report text from the remote repo before pulling locally.
+
 When useful, add at most 2-3 likely advisor questions:
 
 ```markdown

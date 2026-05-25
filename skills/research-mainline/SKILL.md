@@ -253,6 +253,44 @@ If none change, write:
 No mainline update today.
 ```
 
+## Daily / Meeting Workflow
+
+Maintain one chain per active experiment:
+
+```text
+purpose -> hypothesis -> execution -> result -> interpretation -> hypothesis update -> sync/report
+```
+
+Daily cards are not task logs. They should keep only evidence that affects the
+mainline, claim boundary, or next decision. If no viewpoint changed, write
+`No viewpoint update today` or `No mainline update today` and explain why in one
+sentence.
+
+For group-meeting preparation, build reports from project-local sync and
+mainline files, not from chat history. Meeting reports belong under:
+
+```text
+daily_research_reports/MMDD/meeting/
+daily_research_reports/MMDD/meeting/prism/
+```
+
+Use a self-contained structure:
+
+```markdown
+## 1. Research Question
+## 2. Why This Matters
+## 3. Current Hypothesis
+## 4. Experiment Setup
+## 5. Key Result
+## 6. Interpretation
+## 7. What We Cannot Claim
+## 8. Next Decision
+## 9. Backup Figures / Artifact Map
+```
+
+Assume the reader has not followed prior notes. In three minutes they should
+understand the question, evidence, boundary, and next action.
+
 ## Rules
 
 - Prefer fewer, sharper experiments over many weak ones.

@@ -360,7 +360,7 @@
 
 发言人1   13:41
 
-> 就是我能不能用一种新的数字化的方法。
+> 就是我能不能用一种新的初始化的方法。
 
 **审议：** 意思：思考能否用新的数值化方法。指向 factorized synthetic generator / Gaussian feature geometry / controlled compatibility。
 

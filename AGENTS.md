@@ -57,6 +57,8 @@ first. Then use local skills from `skills/` when the task type matches:
 
 - hypothesis-first purpose card or experiment design: `skills/experiment-card-writer/SKILL.md`
 - hypothesis purpose card plus ACP/SCO cluster submission: `skills/experiment-acp-runner/SKILL.md`
+- problem boundary, physical priors, mathematical modeling, and computational
+  realization before experiment design: `skills/problem-anchor-writer/SKILL.md`
 - research intuition, theory framing, methodology critique, or literature analysis before a fixed artifact exists: `skills/scholar-mode/SKILL.md`
 - mainline update or project state consolidation: `skills/research-mainline/SKILL.md`
 - research graph creation or maintenance: `skills/research-graph-sop/SKILL.md`
@@ -609,6 +611,9 @@ Prefer this active skill set:
 
 - `research-mainline`: judge whether material updates a project mainline.
 - `scholar-mode`: clarify research intuitions, theory framing, methodology critique, and literature-fit judgments before turning them into artifacts.
+- `problem-anchor-writer`: write English problem-anchor documents that define
+  the parent problem, subproblem, physical priors, mathematical modeling, and
+  computational realization.
 - `experiment-card-writer`: write compact hypothesis purpose cards and experiment execution plans.
 - `hypothesis-closure`: close the loop on a hypothesis after experiment evidence exists.
 - `experiment-acp-runner`: turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and mainline-safe result summaries.

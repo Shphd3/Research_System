@@ -16,6 +16,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 |---|---|
 | `research-mainline` | Maintain compact project mainline, hypothesis status, and result routing. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
+| `problem-anchor-writer` | Write English problem-anchor documents from boundary and physical priors to math and implementation. |
 | `experiment-card-writer` | Write hypothesis-first purpose cards and experiment execution plans. |
 | `hypothesis-closure` | Close a hypothesis from its purpose card and evidence. |
 | `experiment-acp-runner` | Turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and summaries. |
@@ -40,6 +41,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 | Detailed report | `writing-explanatory-reports` | `detailed.md`, metric explanations, figure/table interpretation. | Mainline decision by itself. |
 | Mainline | `research-mainline` | Current mainline, status, roadmap, graph-linked evidence. | Raw logs or remote job operation. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
+| Problem anchor | `problem-anchor-writer` | English problem definition, physical priors, mathematical modeling, computational realization. | Concrete execution plans or post-result closure. |
 
 Current consolidation decision:
 
