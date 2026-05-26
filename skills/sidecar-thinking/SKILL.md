@@ -9,6 +9,22 @@ Use this skill to connect Codex with the local Thinking Sidecar app. The app is 
 
 ## Start Or Find The App
 
+For `Projects/from-attention-to-search`, use the project helper:
+
+```bash
+cd Projects/from-attention-to-search
+scripts/open_sidecar.sh
+```
+
+This starts or reuses the Sidecar for that repository, opens the graph UI, and
+loads `graph.yaml`. Useful variants:
+
+```bash
+scripts/open_sidecar.sh --no-open
+SIDECAR_PORT=4318 scripts/open_sidecar.sh
+scripts/open_sidecar.sh --graph graph.yaml
+```
+
 If the server is not already running:
 
 ```bash

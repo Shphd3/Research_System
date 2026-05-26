@@ -14,7 +14,7 @@ Core rule:
 
 ```text
 anchor -> execution plan -> remote/container smoke or run -> curated result
--> sync closure -> graph/anchor update
+-> summary/detailed -> anchor update -> root anchor copy -> sync closure
 ```
 
 Local `Research_System` owns graph, anchors, sync closures, daily cards,
@@ -108,8 +108,9 @@ Remote commit may include:
 
 - code changes, configs, launch scripts, runbooks;
 - small curated tables or report-ready figures;
-- experiment `summary.md` / `detailed.md` when the project still uses them;
+- experiment `summary.md` / `detailed.md`;
 - anchor updates;
+- root sync anchor copies;
 - sync closure drafts;
 - artifact maps.
 
@@ -119,7 +120,35 @@ explicitly curates them.
 
 ## Sync Closure Handoff
 
-After results exist, write or update a project-local sync closure under:
+After results exist, first write or update the curated experiment documents:
+
+```text
+Projects/<project>/main/experiments/<experiment_id>/summary.md
+Projects/<project>/main/experiments/<experiment_id>/detailed.md
+```
+
+`detailed.md` must start with:
+
+```markdown
+## 0. Quick Recap
+
+目的：
+
+假设：
+
+实验思路：
+
+结论：
+
+证据：
+```
+
+Then update the relevant anchor if the result changes the physical prior,
+mathematical model, computational realization, claim boundary, or next decision.
+Copy the updated anchor to the root sync category when the project uses root
+anchor copies.
+
+Finally, write or update a project-local sync closure under:
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/report.md
@@ -131,6 +160,7 @@ It must include a compact artifact / repro map:
 code workspace:
 runner:
 config:
+key code files:
 data / manifest:
 result dir:
 figure dir:
@@ -139,9 +169,6 @@ checkpoints / logs:
 repro command:
 job id:
 ```
-
-Then update the relevant anchor only if the result changes the physical prior,
-mathematical model, computational realization, claim boundary, or next decision.
 
 ## Report Writing Standard
 

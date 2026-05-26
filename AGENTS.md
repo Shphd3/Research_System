@@ -87,6 +87,29 @@ Each anchor should define:
 After evidence exists, update the same anchor. Long result explanation belongs
 in a sync closure.
 
+## Anchor Sync Copy Rule
+
+Every active anchor must have a categorized copy under root `sync/` so a
+web-side research partner can read the current anchor without entering the
+project repository.
+
+Canonical source:
+
+```text
+Projects/<project>/main/problem_anchors/<anchor_id>.md
+```
+
+Root sync copy:
+
+```text
+sync/<sync_id>/anchors/<category>/<anchor_id>.md
+```
+
+The project-local anchor remains the source of truth. After updating an active
+anchor, copy the latest version into the matching root sync category and update
+the category index if needed. Verify the source and copy are identical before
+ending the task.
+
 ## Experiment Rule
 
 Default shape:

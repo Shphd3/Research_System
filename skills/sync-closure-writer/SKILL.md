@@ -43,8 +43,18 @@ context:
 Projects/<project>/sync/MMDD_topic/report.md
 ```
 
-If the result changes the research state, update the source anchor and
-`graph.yaml` after writing the sync closure.
+Before writing the sync closure, make sure the result has already been
+integrated into:
+
+```text
+experiment summary.md / detailed.md
+source anchor evidence / claim boundary / next decision
+root sync anchor copy
+graph.yaml, if the route changed
+```
+
+The sync closure is the meeting or collaborator-facing report built from those
+updated sources.
 
 ## Required Shape
 
@@ -52,6 +62,7 @@ If the result changes the research state, update the source anchor and
 # Sync Closure: <topic>
 
 Anchor:
+Story:
 
 ## 0. Oral Report Card - Fill Before Meeting
 
@@ -71,20 +82,30 @@ Anchor:
 
 ## 4. Experiment Setup
 
-## 5. Observation
+## 5. Conclusion
 
-## 6. Interpretation
+## 6. Evidence
 
-## 7. Claim Boundary
+## 7. Observation
 
-## 8. Next Decision
+## 8. Interpretation
 
-## 9. Figures / Tables
+## 9. Claim Boundary
 
-## 10. Artifact / Repro Map
+## 10. Next Decision
+
+## 11. Links
+
+anchor:
+summary:
+detailed:
+source anchor copy:
+
+## 12. Artifact / Repro Map
 code workspace:
 runner:
 config:
+key code files:
 data / manifest:
 result dir:
 figure dir:
@@ -117,16 +138,26 @@ Every important metric must state:
 Every central figure must be embedded or linked near the claim it supports, with
 a one-sentence interpretation.
 
+Do not use opaque English phrases as story labels. Write the story in one clear
+sentence, for example:
+
+```text
+This experiment tests whether route assignment follows the feature whose expert
+has causal utility, rather than the easier token or frequency shortcut.
+```
+
 ## Anchor Backfill
 
-After the sync closure is written, update the anchor if the result changes:
+Anchor backfill happens before the sync closure. If the result changes the
+research state, update:
 
 - current evidence;
 - safest claim;
 - weakened or strengthened physical prior;
 - mathematical object or metric rule;
 - computational realization;
-- next smallest decision.
+- next smallest decision;
+- links to `summary.md`, `detailed.md`, and the sync report when available.
 
 Do not duplicate long logs in the anchor. Link the sync closure and curated
 result files.

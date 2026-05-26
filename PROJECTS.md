@@ -90,6 +90,12 @@ Current root sync:
 sync/S000_current_specialization/
 ```
 
+Current root anchor copy:
+
+```text
+sync/S000_current_specialization/anchors/expert_specialization/gating_induced_expert_specialization.md
+```
+
 ## Web-Side Rule
 
 Web-side agents should not rely on chat history or old compatibility snapshots.

@@ -110,7 +110,32 @@ pass/fail criteria, and failure modes.
 observation, interpretation, limitation, claim update, and next decision.
 
 `detailed.md` stores longer tables, seed notes, command records, failed runs,
-and supporting analysis.
+and supporting analysis. It must start with:
+
+```markdown
+## 0. Quick Recap
+
+目的：
+
+假设：
+
+实验思路：
+
+结论：
+
+证据：
+```
+
+The rest of `detailed.md` should expand the same structure with anchor links,
+the decision point, setup, primary metric, evidence walkthrough, interpretation,
+claim boundary, next decision, and artifact map. The artifact map must include
+code workspace, runner or launch script, config, key code files, data or
+manifest, result directory, figure directory, key tables, logs/checkpoints, and
+reproduction command when available. Do not let `detailed.md` become a raw
+appendix without a story.
+
+After `detailed.md` is written, the active anchor must link back to it from the
+current evidence section.
 
 Keep the first reading path in `experiments/` narrow. Active experiments should
 be the ones most relevant to the proposition currently being verified. Move
@@ -212,19 +237,19 @@ navigation layer; Markdown files remain the reasoning layer.
 
 ### root `sync/`
 
-Use root-level `sync/` for cross-project anchor summaries and curated
-stage-level outcomes that are stable enough to cite without entering project
-repositories.
+Use root-level `sync/` for cross-project anchor summaries, categorized anchor
+copies, and curated stage-level outcomes that are stable enough to cite without
+entering project repositories.
 
-Each root sync anchor should be a folder:
+Active anchors must be mirrored into root sync:
 
 ```text
-sync/R001_short_name/
-  README.md
-  figures/
-  tables/
-  source_notes/
+sync/<sync_id>/anchors/<category>/<anchor_id>.md
 ```
+
+The project-local anchor is the source of truth. When it changes, copy it to
+the root sync category in the same turn and verify that the source and copy are
+identical.
 
 Do not place disconnected raw outputs here. Raw outputs stay under the project
 experiment workspace.
@@ -251,7 +276,7 @@ No mainline update today.
 Maintain one chain per active anchor:
 
 ```text
-anchor -> execution -> result -> interpretation -> anchor update -> sync closure/report
+anchor -> execution -> summary/detailed -> anchor update -> root anchor copy -> sync closure/report
 ```
 
 Daily cards are not task logs. They should keep only evidence that affects the

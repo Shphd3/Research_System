@@ -39,6 +39,10 @@ Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
 ```
 
+Every experiment document must link back to its anchor. Do not use opaque
+English phrases as the story title. Give one rigorous, clear sentence that
+states what the experiment is trying to decide.
+
 Default mapping:
 
 ```text
@@ -98,6 +102,7 @@ Anchor:
 # Result Summary: <experiment_id>
 
 Anchor:
+Story:
 
 ## Observation
 
@@ -120,6 +125,83 @@ Anchor:
 ## Next Decision
 ```
 
+## Detailed Report Template
+
+`detailed.md` is the complete evidence version of the same research story, not
+a metric dump or timeline. It must start with the quick recap and then expand
+the same logic through setup, evidence, interpretation, and links.
+
+```markdown
+# Detailed Result: <experiment_id>
+
+Anchor:
+
+Story:
+
+## 0. Quick Recap
+
+目的：
+
+假设：
+
+实验思路：
+
+结论：
+
+证据：
+
+## 1. Anchor Link And Decision Point
+
+Anchor:
+
+Parent question:
+
+This experiment updates:
+
+## 2. Purpose
+
+## 3. Hypothesis And Rival Explanations
+
+## 4. Experiment Logic
+
+## 5. Setup
+
+## 6. Primary Metric And Decision Rule
+
+## 7. Main Result
+
+## 8. Evidence Walkthrough
+
+## 9. Interpretation
+
+## 10. Claim Boundary
+
+## 11. Next Decision
+
+## 12. Links And Artifact Map
+anchor:
+summary:
+sync report:
+code workspace:
+runner:
+config:
+key code files:
+data / manifest:
+result dir:
+figure dir:
+key tables:
+logs / checkpoints:
+repro command:
+```
+
+The quick recap is short. The later sections expand the same five points:
+purpose, hypothesis, experiment logic, conclusion, and evidence.
+
+All code and artifact entries should be concrete paths when available. A reader
+should be able to jump from the detailed report to the runner, config, result
+directory, figures, and reproduction command without asking where the code
+lives.
+
 ## Rules
 
 - Default to the minimum decisive experiment: one anchor, one sharp test,
@@ -136,8 +218,14 @@ Anchor:
 - Do not start with architecture, scripts, or metrics before the anchor is clear.
 - Do not create separate hypothesis purpose cards.
 - Anchors are reasoning artifacts; execution plans are operational artifacts.
-- After results, use `sync-closure-writer` and update the anchor.
+- After results, write `summary.md` and `detailed.md`, update the anchor and
+  root anchor copy, then use `sync-closure-writer` when a meeting or
+  collaborator-facing report is needed.
 - Separate result, interpretation, limitation, claim update, and decision.
+- Always include the anchor path, result document links, and a one-sentence
+  story written in clear research language.
+- After writing `detailed.md`, link it from the active anchor's current
+  evidence section.
 - Do not let a metric improvement become a stronger public claim than it supports.
 - Figures must support a claim boundary or next decision.
 - Markdown formulas must use `$...$` or `$$...$$`.

@@ -20,6 +20,12 @@ The current branch anchor is:
 Projects/from-attention-to-search/main/problem_anchors/gating_induced_expert_specialization.md
 ```
 
+Root-sync copy:
+
+```text
+sync/S000_current_specialization/anchors/expert_specialization/gating_induced_expert_specialization.md
+```
+
 ## Current Evidence From Branch Sync
 
 Latest useful sync reports:

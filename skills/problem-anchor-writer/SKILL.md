@@ -21,6 +21,16 @@ Use `docs/examples/example.md` as the compact default structure. When a longer
 style reference is needed, use
 `docs/examples/problem_attention_gated_low_level_matching.md`.
 
+After updating an active project anchor, copy it to the categorized root sync
+anchor path when the project defines one, for example:
+
+```text
+sync/<sync_id>/anchors/<category>/<anchor_id>.md
+```
+
+The project-local anchor remains the source of truth. Verify that source and
+root copy are identical before finishing.
+
 ## Core Rule
 
 A problem-anchor document must make the problem falsifiable and bounded.
@@ -199,4 +209,6 @@ anchor keeps the research question and claim boundary alive.
   vague or conceptually unstable.
 - Use `experiment-card-writer` only for the operational execution plan after
   this anchor identifies the minimal decisive test.
-- Use `sync-closure-writer` after evidence exists.
+- After evidence exists, update the anchor from `summary.md` / `detailed.md`;
+  then use `sync-closure-writer` when a meeting or collaborator-facing closure
+  is needed.

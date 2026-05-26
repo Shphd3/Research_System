@@ -33,7 +33,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Purpose, hypothesis, physical priors, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
 | Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
-| Post-run sync | `sync-closure-writer` | Evidence-backed sync closure and anchor backfill. | Raw metric dump. |
+| Post-run sync | `sync-closure-writer` | Evidence-backed sync closure from an already updated anchor and experiment reports. | Raw metric dump or first-pass result analysis. |
 | Mainline | `research-mainline` | Project graph, anchors, roadmap, sync anchors. | Raw logs or remote job operation. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
 
@@ -49,7 +49,7 @@ into anchors. Post-result closures are sync closures based on anchors.
 Default project loop:
 
 ```text
-anchor -> execution plan -> experiment result summary -> sync closure -> anchor/graph update
+anchor -> execution plan -> summary/detailed -> anchor/graph update -> root anchor copy -> sync closure
 ```
 
 After results exist, the original anchor must be backfilled with:
@@ -62,7 +62,8 @@ Result Documents
 ```
 
 The anchor should link the experiment `summary.md`, `detailed.md`, key figures,
-and sync closure when needed.
+and sync closure when needed. If the project uses root anchor copies, update the
+root copy in the same turn and verify that it matches the source anchor.
 
 Anchors belong in project anchor folders such as
 `main_specialization/problem_anchors/` or `main/problem_anchors/`; execution
@@ -78,6 +79,28 @@ Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 An experiment should correspond to one primary anchor. Multi-stage experiment
 lines may have stage-level sub-decisions, but they should still link back to
 the primary anchor.
+
+`detailed.md` must begin with:
+
+```markdown
+## 0. Quick Recap
+
+目的：
+
+假设：
+
+实验思路：
+
+结论：
+
+证据：
+```
+
+The rest of `detailed.md` expands the same structure. It must include the
+anchor link, result document links, the decision point, primary metric, evidence
+walkthrough, interpretation, claim boundary, next decision, and artifact map.
+Do not use opaque English phrases as story labels; write one rigorous and clear
+sentence describing the experiment's research story.
 
 Keep active `experiments/` focused on the proposition currently being verified.
 Older, weakly related, superseded, or supporting-only experiments should be
@@ -110,9 +133,8 @@ Anchors must include:
   anchors and sync closures.
 - `graph.yaml`: default thin research graph. Use `research-graph-sop`; keep
   graph structure lightweight and store reasoning in Markdown anchors and notes.
-- `sync/R001_short_name/`: root-level cross-project anchor summaries or curated
-  stage-level outcomes stable enough to reuse across graphs, anchors, closures,
-  meetings, or reports.
+- `sync/<sync_id>/anchors/<category>/<anchor_id>.md`: categorized root copy of
+  an active anchor for web-side and cross-project reading.
 
 ## Reporting Figure Rule
 

@@ -24,6 +24,26 @@ Older root sync structures have been removed from the default reading path.
 Historical project evidence should live in project-local `archive/` folders or
 project-local sync reports.
 
+## Anchor Copy Rule
+
+Every active project anchor must be mirrored into root sync with an explicit
+category:
+
+```text
+sync/<sync_id>/anchors/<category>/<anchor_id>.md
+```
+
+The project-local anchor is the source of truth; the root sync copy is the
+web-side and cross-project reading copy. When the source anchor changes, update
+the sync copy in the same turn and verify that the source and copy are
+identical.
+
+Current categories:
+
+| Category | Meaning |
+|---|---|
+| `expert_specialization/` | anchors about gating, route assignment, and expert causal utility |
+
 ## Add A Root Sync Only When
 
 - it changes the current mainline question, claim boundary, or next decision;
