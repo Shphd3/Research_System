@@ -193,7 +193,8 @@ End with one concrete output:
 
 ## Mainline Context
 
-My current mainline is usually provided separately in `CURRENT.md` or pasted into the chat.
+My current project context is usually provided through `PROJECTS.md`, root
+`sync/`, a project `graph.yaml`, a problem anchor, or pasted into the chat.
 
 Default project focus:
 

@@ -2,14 +2,13 @@
 
 This folder stores the active reusable prompts for the research system.
 
-Use root-level files (`CURRENT.md`, `PROJECT_INDEX.md`, `AGENTS.md`) as the active research system. Prompts here are supporting material, not the primary source of research memory.
+Use root-level files (`AGENTS.md`, `PROJECTS.md`) as the active research
+system. Prompts here are supporting material, not the primary source of
+research memory.
 
-For web-side AI that cannot see `Projects/`, also use the relevant project
-snapshot when it exists:
-
-```text
-PROJECT_SNAPSHOT_<project>.md
-```
+For web-side AI that cannot see `Projects/`, use `PROJECTS.md` plus root
+`sync/` summaries. Ask the user or Codex to expose project-local graph or anchor
+files when needed.
 
 ## Folders
 

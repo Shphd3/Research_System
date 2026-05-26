@@ -28,7 +28,7 @@ repo:Shphd3/Research_System import
 5. Test with:
 
 ```text
-Use GitHub to read Shphd3/Research_System. First find PROJECT_INDEX.md, then summarize CURRENT.md with file citations.
+Use GitHub to read Shphd3/Research_System. First find AGENTS.md and PROJECTS.md, then summarize the active project route and root sync anchors with file citations.
 ```
 
 If it cannot cite or find these files, the connector has not indexed the repository yet or GitHub app access is not configured for this repository.
@@ -37,7 +37,7 @@ If it cannot cite or find these files, the connector has not indexed the reposit
 
 This is not a vector database that we build manually. ChatGPT's GitHub connector uses GitHub access/search to locate relevant repository content. We make this easier by keeping:
 
-- `PROJECT_INDEX.md` at repo root
+- `PROJECTS.md` at repo root
 - short canonical files with stable names
 - dated daily folders
 - predictable meeting paths
@@ -49,9 +49,8 @@ For high-reasoning discussion, use the ChatGPT Project named `ResearchProgress` 
 At the start of a serious task, ask it to read:
 
 ```text
-PROJECT_INDEX.md
-CURRENT.md
 AGENTS.md
+PROJECTS.md
 ```
 
 Then provide the current material:
@@ -94,4 +93,6 @@ PRISM files should go under:
 daily_research_reports/MMDD/meeting/prism/
 ```
 
-Core files such as `CURRENT.md` and project-local mainline/result files should be updated only when the user explicitly accepts the proposed mainline or claim change.
+Core files such as `PROJECTS.md`, project-local `graph.yaml`, and problem
+anchors should be updated only when the user explicitly accepts the proposed
+route, claim boundary, or next-decision change.

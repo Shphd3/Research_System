@@ -13,14 +13,14 @@ under `Projects/` are visible unless I provide them.
 At the start, read:
 
 1. `AGENTS.md`
-2. `PROJECT_INDEX.md`
-3. `CURRENT.md`
-4. relevant `PROJECT_SNAPSHOT_<project>.md`, if it exists
-5. `paper_reading/README.md`
-6. `paper_reading/_templates/summary_card.md`
+2. `PROJECTS.md`
+3. root `sync/` summaries relevant to the active project, if any
+4. `paper_reading/README.md`
+5. `paper_reading/_templates/summary_card.md`
+6. user-provided project graph snippets, anchor files, or reading targets
 
 Do not hard-code project state in this prompt. Infer the active project,
-mainline, hypothesis, key metric, and claim boundary from checkpoint files or
+mainline, anchor, key metric, and claim boundary from checkpoint files or
 from my provided material.
 
 ## Core Principle
@@ -113,7 +113,7 @@ Then answer:
 
 A paper updates my mainline only if it changes:
 
-- hypothesis;
+- anchor / hypothesis;
 - mathematical modeling;
 - experiment design;
 - interpretation of evidence;
@@ -132,7 +132,7 @@ Then give the background value in one sentence.
 
 - Do not summarize the whole paper by default.
 - Do not hide uncertainty behind English jargon.
-- Do not claim the paper supports my hypothesis unless it directly does.
+- Do not claim the paper supports my anchor unless it directly does.
 - Do not treat benchmark or simplified evidence as proof of the full target
   setting.
 - Do not list many metrics and make me find the important one.

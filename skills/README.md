@@ -14,18 +14,15 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
 | Skill | Use |
 |---|---|
-| `research-mainline` | Maintain compact project mainline, hypothesis status, and result routing. |
+| `research-mainline` | Maintain compact project graph, anchors, sync closures, and result routing. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
-| `problem-anchor-writer` | Write English problem-anchor documents from boundary and physical priors to math and implementation. |
-| `experiment-card-writer` | Write hypothesis-first purpose cards and experiment execution plans. |
-| `hypothesis-closure` | Close a hypothesis from its purpose card and evidence. |
-| `experiment-acp-runner` | Turn execution plans into ACP/SCO dry runs, submissions, monitoring records, and summaries. |
+| `problem-anchor-writer` | Write unified anchor/purpose-card documents from boundary and physical priors to math, implementation, evidence, and next decision. |
+| `experiment-card-writer` | Write operational experiment execution plans from anchors. |
+| `sync-closure-writer` | Write anchor-based sync closures after evidence exists. |
+| `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `paper-reading-card` | Turn papers or blogs into compact reading cards. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
-| `writing-explanatory-reports` | Write detailed experiment reports and result analyses under `experiments/`. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
-| `remote-sco-collaboration` | Connect to remote H100 containers, verify session state, and bridge local research work to SCO/ACP execution. |
-| `research-system-remote-workflow` | Gatekeep local research artifacts versus remote code/SCO execution, active/archive cleanup, closure shape, and sync/report workflow. |
 
 ## Skill Responsibility Boundary
 
@@ -33,36 +30,29 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 
 | Layer | Skill | Owns | Does not own |
 |---|---|---|---|
-| Workflow gate | `research-system-remote-workflow` | Decide local vs remote boundary; decide which artifact changes; active/archive cleanup; closure/sync/report shape. | SSH mechanics, SCO command details, paper reading. |
-| Remote session | `remote-sco-collaboration` | Host/container selection, SSH preflight, remote workspace check, session note. | Hypothesis writing or final claim updates. |
-| Remote run | `experiment-acp-runner` | Turn an execution plan into ACP/SCO dry-run, submission, monitoring record, and run summary. | Designing the hypothesis from scratch. |
-| Pre-run reasoning | `experiment-card-writer` | Purpose card and execution plan. | Post-result closure. |
-| Post-run reasoning | `hypothesis-closure` | Evidence-backed closure and claim-boundary update. | Long raw metric report. |
-| Detailed report | `writing-explanatory-reports` | `detailed.md`, metric explanations, figure/table interpretation. | Mainline decision by itself. |
-| Mainline | `research-mainline` | Current mainline, status, roadmap, graph-linked evidence. | Raw logs or remote job operation. |
+| Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
+| Anchor reasoning | `problem-anchor-writer` | Purpose, hypothesis, physical priors, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
+| Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
+| Post-run sync | `sync-closure-writer` | Evidence-backed sync closure and anchor backfill. | Raw metric dump. |
+| Mainline | `research-mainline` | Project graph, anchors, roadmap, sync anchors. | Raw logs or remote job operation. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
-| Problem anchor | `problem-anchor-writer` | English problem definition, physical priors, mathematical modeling, computational realization. | Concrete execution plans or post-result closure. |
 
 Current consolidation decision:
 
 ```text
-Do not merge skills yet.
+Remote workflow skills are merged. Purpose cards and hypotheses are unified
+into anchors. Post-result closures are sync closures based on anchors.
 ```
-
-Reason: the repeated confusion is caused by unclear boundaries, not by the
-number of skills. Re-evaluate later whether `hypothesis-closure` and
-`writing-explanatory-reports` should merge; for now keep closure concise and
-`detailed.md` explanatory.
 
 ## Research Paradigm
 
 Default project loop:
 
 ```text
-hypothesis purpose card -> execution plan -> experiment result summary -> hypothesis closure -> mainline/status update
+anchor -> execution plan -> experiment result summary -> sync closure -> anchor/graph update
 ```
 
-After results exist, the original purpose card must be backfilled with:
+After results exist, the original anchor must be backfilled with:
 
 ```text
 Result
@@ -71,44 +61,38 @@ Next Step
 Result Documents
 ```
 
-The purpose card should link the experiment `summary.md`, `detailed.md`, key
-figures when needed, and `hypothesis_closure.md`.
+The anchor should link the experiment `summary.md`, `detailed.md`, key figures,
+and sync closure when needed.
 
-After a hypothesis closure is finished, create a daily reporting card under:
-
-```text
-daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
-```
-
-The card should leave the oral-report section blank for the user to write before
-meeting, then include or link the closure snapshot for fast daily access.
-
-The purpose card belongs in `hypotheses/`; the execution plan and result
-evidence belong in `experiments/`.
+Anchors belong in project anchor folders such as
+`main_specialization/problem_anchors/` or `main/problem_anchors/`; execution
+plans and result evidence belong in `experiments/`.
 
 Default one-to-one mapping:
 
 ```text
-Projects/<project>/main/hypotheses/<hypothesis_id>/purpose_card.md
+Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 ```
 
-An experiment should correspond to one primary hypothesis. Multi-stage
-experiment lines may have stage-level sub-decisions, but they should still link
-back to the primary hypothesis purpose card.
+An experiment should correspond to one primary anchor. Multi-stage experiment
+lines may have stage-level sub-decisions, but they should still link back to
+the primary anchor.
 
 Keep active `experiments/` focused on the proposition currently being verified.
 Older, weakly related, superseded, or supporting-only experiments should be
 collected under `experiments/archive/` with a short index. Archive evidence
 rather than deleting it unless deletion is explicitly requested.
 
-Purpose cards must include:
+Anchors must include:
 
-- problem level;
+- problem definition / level;
 - purpose;
 - hypothesis and rival explanations;
+- physical priors;
 - mathematical modeling;
-- experiment design;
+- computational realization;
+- minimal experiment design;
 - expected outcomes and hypothesis-update logic;
 - claim boundary.
 
@@ -123,11 +107,12 @@ Purpose cards must include:
   artifact / repro map: code, runner, config, data or manifest, result folder,
   figure folder, key files, checkpoints/logs, and repro command.
 - `Projects/<project>/<worker>/docs/`: named material documents that help write
-  hypothesis purpose cards and closures.
-- `graph.yaml`: optional thin research graph. Use `research-graph-sop`; keep
-  graph structure lightweight and store reasoning in Markdown notes.
-- `results/R001_short_name/`: curated stage-level research outcomes that are
-  stable enough to reuse across mainlines, closures, meetings, or reports.
+  anchors and sync closures.
+- `graph.yaml`: default thin research graph. Use `research-graph-sop`; keep
+  graph structure lightweight and store reasoning in Markdown anchors and notes.
+- `sync/R001_short_name/`: root-level cross-project anchor summaries or curated
+  stage-level outcomes stable enough to reuse across graphs, anchors, closures,
+  meetings, or reports.
 
 ## Reporting Figure Rule
 

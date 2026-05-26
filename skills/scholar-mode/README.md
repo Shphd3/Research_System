@@ -23,11 +23,12 @@ This is an upstream research-judgment skill. Use it before artifact-oriented ski
 
 It should not replace:
 
-- `experiment-card-writer` for purpose cards and execution plans.
+- `problem-anchor-writer` for anchor / purpose-card documents.
+- `experiment-card-writer` for execution plans.
 - `paper-reading-card` for compact paper or blog reading cards.
 - `research-mainline` for project-state consolidation.
-- `hypothesis-closure` for closing experiment-backed hypotheses and checking
-  claim boundaries against concrete evidence.
+- `sync-closure-writer` for anchor-based post-result closures and claim
+  boundaries against concrete evidence.
 
 ## Maintenance
 

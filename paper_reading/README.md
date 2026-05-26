@@ -31,7 +31,9 @@ prompts/project_instructions/paper_reading_project_prompt.md
 ```
 
 That prompt assumes the AI can only see `Research_System`, so it uses
-`PROJECT_SNAPSHOT_from_attention_to_search.md` as the active project context.
+`PROJECTS.md` plus root `sync/` summaries as the active project context. Provide
+project-local graph or anchor files when the reading depends on details inside
+`Projects/`.
 
 ## Categories
 

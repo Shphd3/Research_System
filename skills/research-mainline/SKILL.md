@@ -1,6 +1,6 @@
 ---
 name: research-mainline
-description: Use when organizing or updating a research project's mainline, hypothesis purpose cards, experiment folders, result summaries, closures, sync notes, research graph, and project status.
+description: Use when organizing or updating a research project's graph, anchors/purpose cards, experiment folders, result summaries, sync closures, root sync anchors, and project status.
 metadata:
   short-description: Maintain compact research mainline
 ---
@@ -9,31 +9,35 @@ metadata:
 
 Use this skill to keep a research project easy to inspect and easy to act on.
 The goal is not to store every note. The goal is to make the current question,
-hypotheses, evidence, claim boundary, and next decision obvious.
+anchors, evidence, claim boundary, and next decision obvious.
 
-## Required Main Structure
+## Required Project Structure
 
 ```text
-Projects/<project>/main/
-  README.md
-  current_mainline.md
-  consensus.md
-  status.md
-  hypotheses/
+Projects/<project>/
+  graph.yaml
+  main/
     README.md
-    <hypothesis_id>/
-      purpose_card.md
-      hypothesis_closure.md
-      figures/
-      source_notes/
-  experiments/
-    README.md
-    <experiment_id>/
+    roadmap.md
+    problem_anchors/
       README.md
-      execution_plan.md
-      summary.md
-      detailed.md
-      figures/
+      <anchor_id>.md
+    experiments/
+      README.md
+      <experiment_id>/
+        README.md
+        execution_plan.md
+        summary.md
+        detailed.md
+        figures/
+```
+
+For `kv_cache`, the specialization mainline uses:
+
+```text
+Projects/kv_cache/research/graph.yaml
+Projects/kv_cache/main_specialization/
+Projects/kv_cache/main_specialization/problem_anchors/
 ```
 
 Optional project support surfaces:
@@ -42,64 +46,53 @@ Optional project support surfaces:
 Projects/<project>/sync/
 Projects/<project>/<worker>/sync/MMDD_topic/
 Projects/<project>/<worker>/docs/
-Projects/<project>/graph.yaml
-results/R001_short_name/
+sync/R001_short_name/
 ```
 
 ## File Roles
 
-### `current_mainline.md`
+### `graph.yaml`
 
-One-page state:
+The default navigation layer for the project and the Sidecar entry point. It
+should answer in under a minute:
 
-- one-sentence mainline;
-- current safest claim;
-- active hypotheses;
-- what is not claimable;
-- next decision.
+- what is being investigated;
+- which anchors, claims, methods, evidence, and tasks matter now;
+- what is active, blocked, draft, or done;
+- which Markdown files hold the reasoning.
 
-### `consensus.md`
+Use `research-graph-sop` for changes to `graph.yaml`. The graph should stay
+thin; Markdown files hold the thick reasoning.
 
-Shared knowledge boundary:
+### `main/problem_anchors/`
 
-- supported premises;
-- working hypotheses;
-- unclear points;
-- not-claimable points;
-- assumptions accepted for the next experiment.
+This is the living reasoning layer and the unified purpose-card layer. Each
+anchor should define:
 
-Update only after evidence, closure, or meeting feedback changes what can be
-treated as known.
+- problem definition;
+- physical priors;
+- mathematical modeling;
+- computational realization;
+- minimal falsifiable test;
+- current evidence;
+- claim boundary and next decision.
 
-### `hypotheses/`
+Update an anchor when experiments change the physical prior, mathematical
+object, computational test, interpretation, claim boundary, or next decision.
 
-This is the reasoning layer. Each active hypothesis should have:
+Do not create a separate `hypotheses/<id>/purpose_card.md` for new work. The
+anchor owns the purpose, hypothesis, rival explanations, math, minimal test,
+evidence update, and next decision.
 
-```text
-hypotheses/<hypothesis_id>/purpose_card.md
-hypotheses/<hypothesis_id>/hypothesis_closure.md
-```
+### `main/roadmap.md`
 
-`purpose_card.md` comes before the experiment and must include problem level,
-purpose, hypothesis/rivals, mathematical modeling, experiment design, expected
-outcomes, and claim boundary.
-
-After the experiment, the same `purpose_card.md` must be updated with result
-links and final status. It should contain:
-
-- direct result;
-- one-sentence conclusion;
-- next decision;
-- links to `summary.md`, `detailed.md`, key figures if needed, and
-  `hypothesis_closure.md`.
-
-`hypothesis_closure.md` comes after evidence and should be concise,
-self-contained, and written from the purpose card.
+Compact route and gate logic. Use it for the current research route, stop
+rules, and the order in which anchors or experiments should be resolved.
 
 ### `experiments/`
 
 This is the execution and evidence layer. Each experiment should map to one
-primary hypothesis.
+primary anchor.
 
 ```text
 experiments/<experiment_id>/
@@ -113,9 +106,8 @@ experiments/<experiment_id>/
 `execution_plan.md` contains concrete configs, commands, metrics, artifacts,
 pass/fail criteria, and failure modes.
 
-`summary.md` is the local result synthesis. It must link the hypothesis purpose
-card and state observation, interpretation, limitation, claim update, and next
-decision.
+`summary.md` is the local result synthesis. It must link the anchor and state
+observation, interpretation, limitation, claim update, and next decision.
 
 `detailed.md` stores longer tables, seed notes, command records, failed runs,
 and supporting analysis.
@@ -132,7 +124,7 @@ older, weakly related, superseded, or purely supporting experiments into
 Do not delete evidence just because it is no longer active. Archive it unless
 the user explicitly asks to delete it.
 
-### `sync/`
+### `sync/` And Sync Closures
 
 `Projects/<project>/<worker>/sync/MMDD_topic/` is the default branch-local
 collaborator or meeting sync surface. Use exactly one primary sync folder per
@@ -177,9 +169,10 @@ repository. Do not cite root-level `Research_System` materials such as
 `daily_research_reports/`; if such material informed the sync, integrate the
 necessary content into the sync itself.
 
-For experiment sync, include a compact `Artifact / Repro Map`. The sync should
-let a collaborator understand the result and know where to continue without
-asking where the code, data, figures, or outputs live.
+For experiment sync, write an anchor-based sync closure and include a compact
+`Artifact / Repro Map`. The sync should let a collaborator understand the
+result and know where to continue without asking where the code, data, figures,
+or outputs live.
 
 Experiment sync should use the same self-contained research-judgment structure
 as closures after the front summary:
@@ -217,16 +210,16 @@ Use `research-graph-sop` when a project needs a lightweight map of questions,
 claims, evidence, methods, sources, outputs, and next tasks. The graph is a
 navigation layer; Markdown files remain the reasoning layer.
 
-### root `results/`
+### root `sync/`
 
-Use root-level `results/` only for curated stage-level outcomes that are stable
-enough to cite across project mainlines, hypothesis closures, meeting briefs, or
-PRISM reports.
+Use root-level `sync/` for cross-project anchor summaries and curated
+stage-level outcomes that are stable enough to cite without entering project
+repositories.
 
-Each curated result should be a folder:
+Each root sync anchor should be a folder:
 
 ```text
-results/R001_short_name/
+sync/R001_short_name/
   README.md
   figures/
   tables/
@@ -240,9 +233,9 @@ experiment workspace.
 
 A result or discussion updates the mainline only if it changes one of:
 
-- current safest claim;
-- consensus boundary;
-- hypothesis status;
+- graph route;
+- anchor claim boundary;
+- anchor status;
 - experiment interpretation;
 - what cannot be claimed;
 - next decision.
@@ -255,10 +248,10 @@ No mainline update today.
 
 ## Daily / Meeting Workflow
 
-Maintain one chain per active experiment:
+Maintain one chain per active anchor:
 
 ```text
-purpose -> hypothesis -> execution -> result -> interpretation -> hypothesis update -> sync/report
+anchor -> execution -> result -> interpretation -> anchor update -> sync closure/report
 ```
 
 Daily cards are not task logs. They should keep only evidence that affects the
@@ -296,9 +289,9 @@ understand the question, evidence, boundary, and next action.
 - Prefer fewer, sharper experiments over many weak ones.
 - Do not promote raw logs, temporary notes, or exploratory branches into
   `main/`.
-- Keep closures self-contained but concise.
-- Do not leave completed hypotheses with `TBD` in the purpose card result,
-  conclusion, next step, or result document links.
+- Keep sync closures self-contained but concise.
+- Do not leave completed anchors with stale evidence, claim boundary, next
+  decision, or result document links.
 - When figures exist, copy report-ready images into local `figures/` and
   explain what each figure supports.
 - Markdown formulas must use `$...$` or `$$...$$`.

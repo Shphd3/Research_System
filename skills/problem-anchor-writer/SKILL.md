@@ -1,24 +1,25 @@
 ---
 name: problem-anchor-writer
-description: Use when writing or revising an English research problem-anchor document that defines the problem boundary, parent/subproblem relation, physical priors, mathematical modeling, and computational realization before designing experiments.
+description: Use when writing or revising the unified anchor/purpose-card document for a research problem: problem boundary, physical priors, mathematical modeling, computational realization, minimal experiment, evidence updates, and claim boundary.
 metadata:
   short-description: Write problem-anchor documents
 ---
 
 # Problem Anchor Writer
 
-Use this skill to write an English document that anchors what problem the
-research is solving before proposing experiments or implementation details.
+Use this skill to write or update the anchor. The anchor is now the unified
+purpose card: it replaces separate hypothesis purpose cards as the main
+pre-run and post-run reasoning artifact.
 
-This is not a result report and not an execution plan. It is the bridge:
+It is not a run log and not a standalone execution plan. It is the bridge:
 
 ```text
 research intuition -> physical prior -> mathematical model -> computational realization
 ```
 
-When available, use the structure of
-`docs/externel_resources/problem_attention_gated_low_level_matching.md` as the
-style reference.
+Use `docs/examples/example.md` as the compact default structure. When a longer
+style reference is needed, use
+`docs/examples/problem_attention_gated_low_level_matching.md`.
 
 ## Core Rule
 
@@ -32,6 +33,19 @@ Do not start from architecture, metrics, or scripts. First define:
 - the physical prior or mechanistic assumption;
 - the mathematical objects that express the prior;
 - the computational test implied by the math.
+
+Physical priors are the most important section. A physical prior is not a vague
+preference for an architecture; it is an assumption about the structure of the
+task, representation, memory, routing signal, or causal utility that could be
+wrong and that constrains both the math and implementation.
+
+If the active mainline is unstable, do not create a separate hypothesis purpose
+card. First write or update the anchor at the project-specific anchor path:
+
+```text
+Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
+Projects/<project>/main/problem_anchors/<anchor_id>.md
+```
 
 Use `support / weaken / redirect` instead of claiming that an experiment will
 fully prove a broad hypothesis.
@@ -151,9 +165,25 @@ What cannot be claimed:
 Next smallest decision:
 ```
 
+## Post-Result Update
+
+After an experiment or analysis finishes, update the same anchor rather than
+creating a new hypothesis closure. Backfill:
+
+- direct observation;
+- interpretation;
+- whether the physical prior is supported, weakened, redirected, or still open;
+- what cannot be claimed;
+- next decision;
+- links to sync closure, figures, tables, code/config, and result directories.
+
+Long evidence belongs in a sync closure or experiment detailed report. The
+anchor keeps the research question and claim boundary alive.
+
 ## Writing Standards
 
-- Write in clear English.
+- Write in the language requested by the user. If no language is requested, use
+  English for the anchor document and Chinese for the discussion summary.
 - Define terms before using abbreviations.
 - Keep the document self-contained.
 - Prefer one precise subproblem over a broad umbrella question.
@@ -167,8 +197,6 @@ Next smallest decision:
 
 - Use `scholar-mode` before this skill when the research intuition is still
   vague or conceptually unstable.
-- Use this skill before `experiment-card-writer` when the problem boundary or
-  physical prior is not yet fixed.
-- Use `experiment-card-writer` after this document identifies the minimal
-  decisive test.
-- Use `hypothesis-closure` after evidence exists.
+- Use `experiment-card-writer` only for the operational execution plan after
+  this anchor identifies the minimal decisive test.
+- Use `sync-closure-writer` after evidence exists.
