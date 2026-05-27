@@ -16,7 +16,7 @@ repositories.
 
 | Anchor | Source |
 |---|---|
-| `expert_specialization/gating_induced_expert_specialization.md` | `Projects/from-attention-to-search/main/problem_anchors/gating_induced_expert_specialization.md` |
+| `expert_specialization/slot_context_dominance_router_specialization_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md` |
 
 ## Update Rule
 

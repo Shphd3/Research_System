@@ -20,6 +20,17 @@ Language rule: execution plans should be written in Chinese by default. Keep
 English only for metric names, code identifiers, experiment IDs, paths, quoted
 terms, and established technical labels where translation would reduce clarity.
 
+For the current MoE specialization line, use this plan as the local style
+reference for pre-run execution plans:
+
+```text
+Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/execution_plan.md
+```
+
+Its important pattern is: decision question first, primary hypothesis and rival
+explanation second, then data construction, controlled conditions, primary
+metric, decision rules, and a minimal report table.
+
 ## Location Rule
 
 Do not write a separate `hypotheses/<id>/purpose_card.md`.
@@ -31,12 +42,14 @@ Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
 ```
 
-Write concrete run details in the experiment folder:
+Write concrete run details and result closure in the experiment folder:
 
 ```text
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
+Projects/<project>/main/experiments/<experiment_id>/figures/
+Projects/<project>/main/experiments/<experiment_id>/tables/
 ```
 
 Every experiment document must link back to its anchor. Do not use opaque
@@ -98,11 +111,30 @@ Anchor:
 
 ## Result Summary Template
 
+`summary.md` now carries the role that old hypothesis closures used to carry.
+It is the first post-result reading path and must close the experiment at the
+claim level. It should be self-contained enough for a meeting or collaborator
+recap, while linking to `detailed.md` for the full record.
+
 ```markdown
 # Result Summary: <experiment_id>
 
 Anchor:
 Story:
+
+## 0. Closure Summary
+
+目的：
+
+假设 / 问题：
+
+结论：
+
+关键证据：
+
+结论边界：
+
+下一步决策：
 
 ## Observation
 
@@ -111,9 +143,10 @@ Story:
 ## Limitation
 
 ## Key Figures
-- Figure:
-- Path:
-- Supports:
+
+![<figure title>](figures/<figure>.png)
+
+Supports:
 
 ## Claim Update
 - Supported:
@@ -127,9 +160,13 @@ Story:
 
 ## Detailed Report Template
 
-`detailed.md` is the complete evidence version of the same research story, not
-a metric dump or timeline. It must start with the quick recap and then expand
-the same logic through setup, evidence, interpretation, and links.
+`detailed.md` is the complete experiment record and evidence version of the
+same research story, not a metric dump or timeline. It must include the full
+experiment details needed to audit or reproduce the result: data construction,
+conditions, model/training/eval setup, seeds, commands, job ids, artifact
+paths, curated tables, key figures, failed or partial runs when relevant, and
+interpretation. It must start with the quick recap and then expand the same
+logic through setup, evidence, interpretation, and links.
 
 ```markdown
 # Detailed Result: <experiment_id>
@@ -170,15 +207,23 @@ This experiment updates:
 
 ## 7. Main Result
 
-## 8. Evidence Walkthrough
+## 8. Key Figures
 
-## 9. Interpretation
+![<figure title>](figures/<figure>.png)
 
-## 10. Claim Boundary
+Supports:
 
-## 11. Next Decision
+## 9. Evidence Walkthrough
 
-## 12. Links And Artifact Map
+## 10. Full Experiment Record
+
+## 11. Interpretation
+
+## 12. Claim Boundary
+
+## 13. Next Decision
+
+## 14. Links And Artifact Map
 anchor:
 summary:
 sync report:
@@ -202,10 +247,25 @@ should be able to jump from the detailed report to the runner, config, result
 directory, figures, and reproduction command without asking where the code
 lives.
 
+Figures are mandatory when figures exist. Put report-ready figures under
+`figures/`, embed the important ones in both `summary.md` and `detailed.md`,
+and write one sentence stating which claim each figure supports. Put curated
+tables under `tables/` and link or summarize them near the relevant metric.
+
 ## Rules
 
 - Default to the minimum decisive experiment: one anchor, one sharp test,
   one primary decision metric, and one closure.
+- A plan should be organized around the decision it can change, not around
+  scripts. Start with the decision question and rival explanation before run
+  conditions.
+- For specialization experiments, route-alignment metrics are supporting
+  evidence. The primary metric should test whether route assignment agrees with
+  expert causal utility whenever that utility can be measured.
+- Every required condition must have a purpose column or sentence explaining
+  which rival explanation it distinguishes.
+- Include a minimal report table before the run when the result should be
+  meeting-facing or collaborator-facing.
 - Fewer, sharper experiments are preferred over many shallow runs.
 - Do not propose broad variable sweeps, many metrics, or multiple loosely
   related runs before the first hypothesis update is closed.
@@ -221,6 +281,11 @@ lives.
 - After results, write `summary.md` and `detailed.md`, update the anchor and
   root anchor copy, then use `sync-closure-writer` when a meeting or
   collaborator-facing report is needed.
+- Treat `summary.md` as the closure-level result document. Do not create a
+  separate hypothesis closure for ordinary experiment results.
+- Treat `detailed.md` as the full experiment record. It should be sufficient to
+  reconstruct what was run, where artifacts live, and how the conclusion was
+  derived.
 - Separate result, interpretation, limitation, claim update, and decision.
 - Always include the anchor path, result document links, and a one-sentence
   story written in clear research language.

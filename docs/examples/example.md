@@ -11,6 +11,8 @@ parent_node: <parent_problem>
 2. sharper question
    Used to clarify which parent question this sharper question belongs to.
 
+Key: decide what we don't need to do.
+
 ## 2. Physical Priors
 
 - Features

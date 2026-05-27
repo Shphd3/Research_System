@@ -17,13 +17,13 @@ Projects/from-attention-to-search/XingyuD/sync/
 The current branch anchor is:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gating_induced_expert_specialization.md
+Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
 ```
 
 Root-sync copy:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/gating_induced_expert_specialization.md
+sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
 ```
 
 ## Current Evidence From Branch Sync
@@ -33,6 +33,7 @@ Latest useful sync reports:
 ```text
 Projects/from-attention-to-search/XingyuD/sync/0524_router_feature_specialization/report.md
 Projects/from-attention-to-search/XingyuD/sync/0525_zipfian_hierarchical/report.md
+Projects/from-attention-to-search/XingyuD/sync/0526_slot_context_dominance/report.md
 ```
 
 Current evidence says:
@@ -48,13 +49,17 @@ Current evidence says:
   it does not by itself explain tail specialization failure;
 - a minimal common/sense hierarchy increases token/family routing association,
   but does not improve tail functional specialization.
+- slot context can control routing in a fixed-B diagnostic, but multi-B
+  trajectory shows slot-centroid initialization starts non-diagonal, training
+  improves NMI only partially, and visible predictive slot information is not
+  sufficient for robust route-function binding under B identity variation.
 
 ## Current Claim Boundary
 
 Can claim:
 
 ```text
-The current failure mode is not merely lack of semantic separability.
+The current failure mode is not merely lack of semantic or slot separability.
 The sharper issue is route-function mismatch: route assignment, expert causal
 utility, and the training objective are not yet reliably aligned.
 ```
@@ -71,15 +76,17 @@ Reverse KV retrieval follows from current evidence.
 
 ## Next Decision
 
-Do not continue broad architecture sweeps. First rewrite the branch anchor so
-the physical prior and minimal falsifiable test are clear.
+Do not continue broad architecture or context-length sweeps. The slot-context
+dominance diagnostic is now closed enough to redirect toward route-function
+binding.
 
 Recommended next anchor question:
 
 ```text
-When token identity conflicts with slot/context feature, can a gating rule make
-expert assignment follow the feature that has causal expert utility rather than
-the easier token/frequency shortcut?
+Can an explicit target-position route-function binding signal make multi-B
+learned routing align with slot-specific expert utility, especially for the
+distributed slot-code condition?
 ```
 
-The next sync should report one minimal diagnostic that updates this anchor.
+The next sync should report one minimal binding diagnostic rather than another
+context-strength sweep.

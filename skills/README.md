@@ -49,8 +49,16 @@ into anchors. Post-result closures are sync closures based on anchors.
 Default project loop:
 
 ```text
-anchor -> execution plan -> summary/detailed -> anchor/graph update -> root anchor copy -> sync closure
+anchor -> execution plan -> summary closure -> detailed record -> anchor/graph update -> root anchor copy -> sync report
 ```
+
+`summary.md` carries the old closure role inside the experiment folder. It is
+the first post-result reading path and must state the purpose, hypothesis or
+question, conclusion, key evidence, claim boundary, and next decision.
+
+`detailed.md` is the complete experiment record. It must preserve the full
+setup, conditions, seeds, commands, job ids, curated tables, important figures,
+artifact map, failed or partial runs when relevant, and the evidence walkthrough.
 
 After results exist, the original anchor must be backfilled with:
 
@@ -97,8 +105,9 @@ the primary anchor.
 ```
 
 The rest of `detailed.md` expands the same structure. It must include the
-anchor link, result document links, the decision point, primary metric, evidence
-walkthrough, interpretation, claim boundary, next decision, and artifact map.
+anchor link, result document links, the decision point, setup, primary metric,
+key figures, evidence walkthrough, full experiment record, interpretation,
+claim boundary, next decision, and artifact map.
 Do not use opaque English phrases as story labels; write one rigorous and clear
 sentence describing the experiment's research story.
 
@@ -138,10 +147,12 @@ Anchors must include:
 
 ## Reporting Figure Rule
 
-Experiment result reports and collaborator sync should include the most
-important report-ready figure(s) when figures are central evidence. Each figure
-needs a nearby sentence explaining what it supports. Do not make the reader infer
-the result from a dry metric list.
+Experiment result reports and collaborator sync must include the most important
+report-ready figure(s) when figures exist and are central evidence. Copy them
+into the local `figures/` folder and embed them in `summary.md`, `detailed.md`,
+and the sync `report.md` when applicable. Each figure needs a nearby sentence
+explaining what it supports. Do not make the reader infer the result from a dry
+metric list.
 
 ## Formula Rule
 

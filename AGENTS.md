@@ -67,10 +67,10 @@ For the current work branch, use:
 Projects/from-attention-to-search/main/problem_anchors/<anchor_id>.md
 ```
 
-Current first anchor draft:
+Current first anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gating_induced_expert_specialization.md
+Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
 ```
 
 Each anchor should define:
@@ -115,8 +115,19 @@ ending the task.
 Default shape:
 
 ```text
-one anchor -> one minimal decisive experiment -> one result summary -> one sync closure -> anchor/graph update
+one anchor -> one minimal decisive experiment -> summary closure -> detailed record -> sync report -> anchor/graph update
 ```
+
+`summary.md`承接旧 closure 的作用：它是实验完成后的第一阅读入口，必须
+self-contained 地给出目的、问题/假设、结论、关键证据、结论边界和下一步。
+普通实验结果不再另写独立 hypothesis closure。
+
+`detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
+seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
+和 claim boundary。
+
+如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
+`summary.md`、`detailed.md` 和相关 sync report 中嵌入。只列路径不嵌图是不完整的。
 
 Do not jump directly to architecture, scripts, or metrics before the anchor is
 clear. Avoid broad sweeps before the first anchor decision is closed. Add
@@ -125,8 +136,9 @@ explanation or protect the validity of the primary conclusion.
 
 ## Sync Closure Rule
 
-Post-result closure is now an anchor-based sync closure, not a separate
-hypothesis closure.
+Post-result sync is now an anchor-based collaborator report. The experiment
+`summary.md` carries the closure role; the sync report packages that closure for
+meeting or handoff use.
 
 Default location:
 
@@ -149,6 +161,9 @@ Anchor / 目的 / 物理先验 / 数学建模 / 计算实现 / 实验设置 /
 The artifact map must include code workspace, runner, config, data/manifest,
 result dir, figure dir, key files, checkpoints/logs, repro command, and job id
 when applicable.
+
+Central figures must be embedded near the claims they support, with a short
+interpretation.
 
 ## Graph Rule
 

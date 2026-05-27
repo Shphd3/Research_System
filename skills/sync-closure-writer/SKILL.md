@@ -7,9 +7,11 @@ metadata:
 
 # Sync Closure Writer
 
-Use this after evidence exists. The sync closure is the reporting and
-collaboration document built from an anchor. It replaces hypothesis closure as
-the default post-result artifact.
+Use this after evidence exists. The sync closure is the branch-local or
+collaborator-facing report built from an anchor and an experiment `summary.md`.
+The experiment `summary.md` now carries the old hypothesis-closure role inside
+the experiment folder; sync closure packages that conclusion for meeting or
+handoff use.
 
 Default language is Chinese. Keep English for metric names, code identifiers,
 paths, and quoted technical terms.
@@ -47,7 +49,8 @@ Before writing the sync closure, make sure the result has already been
 integrated into:
 
 ```text
-experiment summary.md / detailed.md
+experiment summary.md as the closure-level result document
+experiment detailed.md as the complete experiment record
 source anchor evidence / claim boundary / next decision
 root sync anchor copy
 graph.yaml, if the route changed
@@ -85,6 +88,12 @@ Story:
 ## 5. Conclusion
 
 ## 6. Evidence
+
+## 6.1 Key Figures
+
+![<figure title>](figures/<figure>.png)
+
+Supports:
 
 ## 7. Observation
 
@@ -135,8 +144,10 @@ Every important metric must state:
 - what it cannot prove;
 - which metric dominates the decision when metrics disagree.
 
-Every central figure must be embedded or linked near the claim it supports, with
-a one-sentence interpretation.
+Every central figure must be copied into the sync folder's local `figures/`
+directory when possible, embedded or linked near the claim it supports, and
+given a one-sentence interpretation. A sync closure without important available
+figures is incomplete.
 
 Do not use opaque English phrases as story labels. Write the story in one clear
 sentence, for example:
@@ -161,3 +172,13 @@ research state, update:
 
 Do not duplicate long logs in the anchor. Link the sync closure and curated
 result files.
+
+## Relationship To Experiment Reports
+
+- `summary.md`: closure-level result, first reading path, self-contained
+  observation / interpretation / limitation / claim update / next decision.
+- `detailed.md`: complete experiment record, including setup, seeds, commands,
+  job ids, artifact map, curated tables, important figures, failed or partial
+  runs when relevant, and evidence walkthrough.
+- sync `report.md`: meeting or collaborator-facing packaging of the same
+  conclusion. It should not replace `summary.md` or `detailed.md`.

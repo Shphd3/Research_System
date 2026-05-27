@@ -106,11 +106,15 @@ experiments/<experiment_id>/
 `execution_plan.md` contains concrete configs, commands, metrics, artifacts,
 pass/fail criteria, and failure modes.
 
-`summary.md` is the local result synthesis. It must link the anchor and state
-observation, interpretation, limitation, claim update, and next decision.
+`summary.md` is the closure-level local result synthesis. It inherits the role
+of the old hypothesis closure inside the experiment folder. It must link the
+anchor and state observation, interpretation, limitation, claim update, key
+figures, and next decision. It is the first reading path after a result exists.
 
-`detailed.md` stores longer tables, seed notes, command records, failed runs,
-and supporting analysis. It must start with:
+`detailed.md` is the complete experiment record. It stores the full setup, data
+construction, model/training/eval details, conditions, seeds, command records,
+job ids, longer tables, key figures, failed or partial runs, artifact maps, and
+supporting analysis. It must start with:
 
 ```markdown
 ## 0. Quick Recap
@@ -127,12 +131,17 @@ and supporting analysis. It must start with:
 ```
 
 The rest of `detailed.md` should expand the same structure with anchor links,
-the decision point, setup, primary metric, evidence walkthrough, interpretation,
-claim boundary, next decision, and artifact map. The artifact map must include
-code workspace, runner or launch script, config, key code files, data or
-manifest, result directory, figure directory, key tables, logs/checkpoints, and
-reproduction command when available. Do not let `detailed.md` become a raw
-appendix without a story.
+the decision point, setup, primary metric, key figures, evidence walkthrough,
+full experiment record, interpretation, claim boundary, next decision, and
+artifact map. The artifact map must include code workspace, runner or launch
+script, config, key code files, data or manifest, result directory, figure
+directory, key tables, logs/checkpoints, job id, and reproduction command when
+available. Do not let `detailed.md` become a raw appendix without a story.
+
+Important figures are mandatory when they exist. Copy report-ready figures into
+the experiment folder's local `figures/` directory, embed them in both
+`summary.md` and `detailed.md`, and write what each figure proves or fails to
+prove. Put curated tables in `tables/`.
 
 After `detailed.md` is written, the active anchor must link back to it from the
 current evidence section.

@@ -51,7 +51,7 @@ Sidecar-readable graph updates that support the primary mainline.
 Current branch anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gating_induced_expert_specialization.md
+Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
 ```
 
 Current branch graph:
@@ -93,7 +93,7 @@ sync/S000_current_specialization/
 Current root anchor copy:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/gating_induced_expert_specialization.md
+sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
 ```
 
 ## Web-Side Rule

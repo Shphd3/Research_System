@@ -17,8 +17,15 @@ It is not a run log and not a standalone execution plan. It is the bridge:
 research intuition -> physical prior -> mathematical model -> computational realization
 ```
 
-Use `docs/examples/example.md` as the compact default structure. When a longer
-style reference is needed, use
+Use `docs/examples/example.md` as the compact default structure. For the
+current MoE specialization line, use the slot-context dominance anchor as the
+stronger local style reference:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+```
+
+When a longer historical style reference is needed, use
 `docs/examples/problem_attention_gated_low_level_matching.md`.
 
 After updating an active project anchor, copy it to the categorized root sync
@@ -48,6 +55,17 @@ Physical priors are the most important section. A physical prior is not a vague
 preference for an architecture; it is an assumption about the structure of the
 task, representation, memory, routing signal, or causal utility that could be
 wrong and that constrains both the math and implementation.
+
+For gating and expert-specialization anchors, prefer the slot-context dominance
+style:
+
+- state one narrow decision question before any implementation detail;
+- write what the anchor does not solve;
+- express the physical prior as a refutable causal/mechanistic condition;
+- connect representation visibility, router assignment, and expert utility;
+- name the rival explanation explicitly;
+- make assignment-utility agreement the primary judgment when specialization is
+  the claim.
 
 If the active mainline is unstable, do not create a separate hypothesis purpose
 card. First write or update the anchor at the project-specific anchor path:
@@ -197,6 +215,11 @@ anchor keeps the research question and claim boundary alive.
 - Define terms before using abbreviations.
 - Keep the document self-contained.
 - Prefer one precise subproblem over a broad umbrella question.
+- Use section titles that match the active compact template when possible:
+  `Problem Definition`, `Physical Priors`, `Mechanistic Motivation`,
+  `Mathematical Modeling`, `Computational Realization`,
+  `Minimal Falsifiable Test`, `Falsifiable Outcomes`, `Current Evidence`,
+  `Claim Boundary And Next Decision`.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not
