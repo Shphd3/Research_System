@@ -1,6 +1,6 @@
 # 0526 Slot-Context 汇报包
 
-入口文档：
+入口文档，汇报时只看这个：
 
 ```text
 talk_track.md
@@ -22,7 +22,7 @@ figures/02_fixed_multi_bridge_nmi_by_seed.png
 figures/03_bridge_short_long_route_heatmaps.png
 ```
 
-一句话结论：
+30 秒结论：
 
 ```text
 slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容易按 slot 分；
