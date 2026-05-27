@@ -1,25 +1,36 @@
 # 0526 Slot-Context 汇报包
 
-入口文档，汇报时只看这个：
+最重要的文件，先打开：
+
+```text
+anchor/slot_context_dominance_router_specialization_anchor.md
+```
+
+30 秒汇报时只看：
 
 ```text
 talk_track.md
 ```
 
-核心材料：
+实验细节，需要 audit 时看：
 
 ```text
-docs/anchor_slot_context_signal_and_route_utility_binding.md
-docs/slot_context_summary.md
-docs/bridge_abcd_summary.md
+slot_context_dominance_router_specialization/detailed.md
+slot_context_bridge_abcd_context_length/detailed.md
+```
+
+备份/同步材料：
+
+```text
+docs/
 ```
 
 三张主图：
 
 ```text
-figures/01_short_vs_long_routing_init_final.png
-figures/02_fixed_multi_bridge_nmi_by_seed.png
-figures/03_bridge_short_long_route_heatmaps.png
+figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png
+figures/bridge_abcd_final_nmi_by_seed_heatmap.png
+figures/bridge_abcd_short_long_init_final_route_heatmaps.png
 ```
 
 30 秒结论：

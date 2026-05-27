@@ -24,9 +24,9 @@ slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容�
 三张主图：
 
 ```text
-1. short vs long routing: ../figures/01_short_vs_long_routing_init_final.png
-2. fixed-B / multi-B seed result: ../figures/02_fixed_multi_bridge_nmi_by_seed.png
-3. bridge short vs long heatmap: ../figures/03_bridge_short_long_route_heatmaps.png
+1. short vs long routing: ../figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png
+2. fixed-B / multi-B seed result: ../figures/bridge_abcd_final_nmi_by_seed_heatmap.png
+3. bridge short vs long heatmap: ../figures/bridge_abcd_short_long_init_final_route_heatmaps.png
 ```
 
 回答边界：
@@ -150,7 +150,7 @@ Trajectory follow-up:
 
 ### Key Figure For Discussion
 
-![random vs slot-centroid init, init vs final](../figures/01_short_vs_long_routing_init_final.png)
+![random vs slot-centroid init, init vs final](../figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png)
 
 How to read: each small heatmap is B-position routing, with row = slot, column = expert, and value = fraction routed to that expert. Columns compare `random init` and `slot-centroid init`; inside each pair, left is step 0 and right is final. Rows show all fixed-B and multi-B seeds without seed averaging.
 
@@ -173,11 +173,11 @@ Interpretation: the evidence supports “stronger context plus slot-centroid pri
 | multi-B | long role | semantic | 0.593 | 0.921 | 1.000 |
 | multi-B | distributed role | semantic | 0.297 | 0.733 | 1.000 |
 
-![bridge final NMI by seed](../figures/02_fixed_multi_bridge_nmi_by_seed.png)
+![bridge final NMI by seed](../figures/bridge_abcd_final_nmi_by_seed_heatmap.png)
 
 How to read: each row preserves one seed-level final NMI value. fixed-B long semantic is `1.000` for all seeds; multi-B semantic improves over random but does not become seed-stable.
 
-![bridge short vs long init-final route heatmaps](../figures/03_bridge_short_long_route_heatmaps.png)
+![bridge short vs long init-final route heatmaps](../figures/bridge_abcd_short_long_init_final_route_heatmaps.png)
 
 How to read: compare random vs semantic init and step-0 vs final routing. The diagonal route-role pattern is most reliable under long role context plus semantic centroid init.
 

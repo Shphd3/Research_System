@@ -39,15 +39,15 @@ weak slot signal 是否解释了之前 top-1 MoE routing 不按 feature/slot 稳
 
 1. short vs long routing 对比：
 
-![random vs slot-centroid init, init vs final](../figures/01_short_vs_long_routing_init_final.png)
+![random vs slot-centroid init, init vs final](../figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png)
 
 2. fixed-B / multi-B seed-level bridge NMI：
 
-![bridge final NMI by seed](../figures/02_fixed_multi_bridge_nmi_by_seed.png)
+![bridge final NMI by seed](../figures/bridge_abcd_final_nmi_by_seed_heatmap.png)
 
 3. bridge short vs long init-final route heatmap：
 
-![bridge short vs long init-final route heatmaps](../figures/03_bridge_short_long_route_heatmaps.png)
+![bridge short vs long init-final route heatmaps](../figures/bridge_abcd_short_long_init_final_route_heatmaps.png)
 
 预期问题：
 
@@ -117,11 +117,11 @@ weak slot signal 是否解释了之前 top-1 MoE routing 不按 feature/slot 稳
 | multi-B | long role | semantic | 0.593 | 0.921 | 1.000 |
 | multi-B | distributed role | semantic | 0.297 | 0.733 | 1.000 |
 
-![bridge final NMI by seed](../figures/02_fixed_multi_bridge_nmi_by_seed.png)
+![bridge final NMI by seed](../figures/bridge_abcd_final_nmi_by_seed_heatmap.png)
 
 Interpretation: fixed-B long semantic is a clean positive control: same B identity, different role context, final NMI `1.000` across seeds. multi-B long semantic is stronger than short/distributed semantic on average, but still seed-unstable. This supports “context signal helps routing” and preserves the multi-B boundary.
 
-![bridge short vs long init-final route heatmaps](../figures/03_bridge_short_long_route_heatmaps.png)
+![bridge short vs long init-final route heatmaps](../figures/bridge_abcd_short_long_init_final_route_heatmaps.png)
 
 Interpretation: random init does not reliably discover the role partition. Semantic centroid init plus long role context is the condition where the route-role heatmap most clearly becomes or stays diagonal.
 
@@ -148,7 +148,7 @@ Oracle 在 multi-B 下为 1.0，说明任务本身存在 slot-specific expert ut
 
 ## Key Figure For Discussion
 
-![random vs slot-centroid init, init vs final](../figures/01_short_vs_long_routing_init_final.png)
+![random vs slot-centroid init, init vs final](../figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png)
 
 How to read: rows are all seeds, columns compare `random init` versus `slot-centroid init`; within each init type, left is step 0 and right is final. Each small heatmap is B-position routing: row = slot, column = expert, value = fraction routed to that expert.
 

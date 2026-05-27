@@ -20,18 +20,34 @@
 
 ## 1. 图怎么用
 
+最重要的背景文件：
+
+```text
+anchor/slot_context_dominance_router_specialization_anchor.md
+```
+
+如果导师问“你整个问题定义是什么”，直接打开这个文件，看开头的：
+
+```text
+Reporting Summary
+Question
+Current Evidence
+Claim Boundary
+```
+
 ### 图 1：主结果图
 
 看：
 
 ```text
-figures/01_short_vs_long_routing_init_final.png
+figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png
 ```
 
 对应文档：
 
 ```text
 docs/slot_context_summary.md
+slot_context_dominance_router_specialization/detailed.md
 ```
 
 怎么说：
@@ -41,20 +57,21 @@ docs/slot_context_summary.md
 fixed-B 下 long context 更接近按 slot 分；multi-B 下有增强但不稳定。
 ```
 
-![short vs long routing](figures/01_short_vs_long_routing_init_final.png)
+![short vs long routing](figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png)
 
 ### 图 2：fixed-B 和 multi-B seed 结果
 
 看：
 
 ```text
-figures/02_fixed_multi_bridge_nmi_by_seed.png
+figures/bridge_abcd_final_nmi_by_seed_heatmap.png
 ```
 
 对应文档：
 
 ```text
 docs/bridge_abcd_summary.md
+slot_context_bridge_abcd_context_length/detailed.md
 ```
 
 怎么说：
@@ -64,14 +81,14 @@ fixed-B long semantic 基本是满的，说明去掉 B identity 后 slot 能控�
 multi-B 也提升，但 seed 间不稳定，说明 B identity 仍然干扰。
 ```
 
-![fixed and multi B NMI](figures/02_fixed_multi_bridge_nmi_by_seed.png)
+![fixed and multi B NMI](figures/bridge_abcd_final_nmi_by_seed_heatmap.png)
 
 ### 图 3：bridge 对照图
 
 看：
 
 ```text
-figures/03_bridge_short_long_route_heatmaps.png
+figures/bridge_abcd_short_long_init_final_route_heatmaps.png
 ```
 
 对应文档：
@@ -87,7 +104,7 @@ docs/bridge_abcd_summary.md
 旧实验说明 semantic init alone 不够；现在说明 long context 确实能增强 routing alignment。
 ```
 
-![bridge heatmaps](figures/03_bridge_short_long_route_heatmaps.png)
+![bridge heatmaps](figures/bridge_abcd_short_long_init_final_route_heatmaps.png)
 
 ## 2. 最后一句边界
 

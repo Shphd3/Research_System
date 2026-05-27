@@ -47,11 +47,11 @@ This bridge experiment aligns the old r-B / AB / CB / DB setting with the curren
 
 ## Key Figures
 
-![bridge final NMI by seed](../figures/02_fixed_multi_bridge_nmi_by_seed.png)
+![bridge final NMI by seed](../figures/bridge_abcd_final_nmi_by_seed_heatmap.png)
 
 This figure is the main collaborator-facing bridge plot: rows preserve seed-level results rather than seed averaging. It shows that fixed-B long semantic is stable across seeds, while multi-B semantic improves alignment but remains seed-dependent.
 
-![bridge short vs long init-final route heatmaps](../figures/03_bridge_short_long_route_heatmaps.png)
+![bridge short vs long init-final route heatmaps](../figures/bridge_abcd_short_long_init_final_route_heatmaps.png)
 
 This figure compares random vs semantic initialization and step-0 vs final routing for short and long role contexts. It supports the interpretation that long context makes the semantic prior much more stable in fixed-B and partially helpful in multi-B.
 

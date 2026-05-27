@@ -24,19 +24,19 @@ slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容�
 
 1. Main short-vs-long / init-vs-final routing comparison:
 
-![random vs slot-centroid init, init vs final](../figures/01_short_vs_long_routing_init_final.png)
+![random vs slot-centroid init, init vs final](../figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png)
 
 Use this to say: slot-centroid init plus long context gives the cleanest routing prior; random init does not reliably discover it.
 
 2. Bridge final NMI by seed:
 
-![bridge final NMI by seed](../figures/02_fixed_multi_bridge_nmi_by_seed.png)
+![bridge final NMI by seed](../figures/bridge_abcd_final_nmi_by_seed_heatmap.png)
 
 Use this to say: fixed-B long semantic is stable across seeds; multi-B improves but remains seed-dependent.
 
 3. Bridge short-vs-long route heatmaps:
 
-![bridge short vs long init-final route heatmaps](../figures/03_bridge_short_long_route_heatmaps.png)
+![bridge short vs long init-final route heatmaps](../figures/bridge_abcd_short_long_init_final_route_heatmaps.png)
 
 Use this to say: long context makes the semantic route prior more stable.
 
