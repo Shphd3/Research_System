@@ -2,331 +2,201 @@
 parent_node: problem.moe_expert_specialization
 ---
 
-# Slot-Context Dominance for Gating-Induced Expert Specialization
+# Slot-Context Signal And Route-Utility Binding
+
+## Reporting Summary
+
+```text
+slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容易按 slot 分；
+但 multi-B 里 B identity 仍然干扰，所以只得到部分 specialization。
+```
+
+The safest current claim is:
+
+```text
+context strength helps routing alignment, but visible slot information plus slot-centroid initialization is not sufficient for robust multi-B functional specialization.
+```
 
 ## Question
 
-Can stronger slot context plus slot-centroid router initialization make standard top-1 MoE form slot-aligned routing and slot-specific expert utility?
-
-The sharper subproblem is:
+Broader question:
 
 ```text
-When the same B token has different next-token targets under four different slots,
-does increasing the slot context signal in the B hidden state make the gate route by slot rather than by B token identity?
+Why does ordinary top-1 MoE gating fail to produce stable, interpretable feature-level expert specialization?
 ```
 
-This is a child problem of MoE expert specialization. It belongs under the diagnostic line:
+Sharper question:
 
 ```text
-why ordinary gating does not produce stable functional specialization
+If the context before B determines B's next-token target, and the router is initialized from slot centroids, is slot visibility sufficient for learned top-1 routing to become slot-functional?
 ```
 
-It does not solve real-corpus specialization, KV-cache reverse indexing, or new MoE architecture design. It only tests whether the previous failure can be explained by weak slot signal in the gate input.
+This anchor is a diagnostic child of the specialization mainline. It tests the weak-context explanation for prior routing failure. It does not test real-corpus specialization, Zipfian robustness, KV-cache reverse indexing, or a new MoE architecture.
 
 ## Physical Prior
 
-The first physical prior is:
+In language, the same surface token can require different continuations in different contexts. Therefore the relevant feature is not token identity alone, but a context-dependent predictive state.
 
-```text
-A router can specialize by a feature only if that feature is visible in the router input and useful for the loss.
-```
-
-For a B token under slot `s`, the gate input can be decomposed as:
+For a B token under slot $s$, the router input can be decomposed as:
 
 $$
 h_{i,s}^{(m)} = c_i + \beta_m u_s + \epsilon
 $$
 
-where:
+where $c_i$ is B-token identity, $u_s$ is slot/context information, and $\beta_m$ is the strength of that context at the B position.
 
-```text
-c_i: B token identity component
-u_s: slot/context component
-m: slot prefix length or context strength
-beta_m: strength of slot information at the B position
-```
-
-If `beta_m` is small, routing may be dominated by `c_i`. If longer context increases `beta_m`, slot may become a viable routing axis.
-
-Physical meaning: In the real world, long context may strengthen a task-relevant factor in the hidden state, but this alone does not imply that the learned router will use that factor as the expert partition.
-
-The second prior is:
-
-```text
-Routing alignment is not enough; the assigned expert must have causal utility for that slot.
-```
-
-Therefore the experiment must measure both routing assignment and expert utility.
+A linear router can route by slot only if $u_s$ is visible in $h_{i,s}^{(m)}$ and useful for reducing NTP loss. But routing alignment alone is not specialization. A slot-specialized route must also select the expert that has causal utility for that slot.
 
 ## Mechanistic Motivation
 
-Previous initialization experiments show that semantic or context initialization can create early routing alignment, but this alignment decays during NTP training. They also show that semantic boundaries can be recoverable in hidden states while the learned router does not use them as stable functional routes.
-
-This leaves one unresolved explanation:
+Previous short-slot experiments showed:
 
 ```text
-Maybe the slot signal at the B position was too weak or too short, so B token identity dominated the router update.
+semantic / context initialization can create early routing alignment;
+NTP training can wash that alignment out;
+hidden states may still contain recoverable slot boundaries.
 ```
 
-This anchor tests that explanation directly by strengthening the slot context while keeping the same top-1 MoE mechanism.
+This leaves two rival explanations:
+
+```text
+A. slot signal at B was too weak, so B identity dominated routing;
+B. slot is visible and useful, but top-1 NTP does not bind route assignment to expert utility.
+```
+
+The experiment separates them by first removing B-identity variation, then adding it back.
 
 ## Mathematical Modeling
 
 Use four slots and four experts:
 
 $$
-s\in\{0,1,2,3\}, \qquad e\in\{0,1,2,3\}
+s\in\{0,1,2,3\}, \qquad e\in\{0,1,2,3\}.
 $$
 
-The same token `B_i` appears under every slot:
+Each sample has:
 
 $$
-x_{i,s}=(C_s^{(m)}, B_i)
+x_{i,s}=(C_s^{(m)}, B_i), \qquad y_{i,s}=\pi_s(B_i).
 $$
 
-The target is slot-dependent:
+For the same $B_i$, the four slots produce distinct targets. Thus $B_i$ alone cannot determine the next token; slot context must disambiguate prediction.
+
+The top-1 selected-gate router is:
 
 $$
-y_{i,s}=\pi_s(B_i)
+p=\operatorname{softmax}(Wh_{i,s}), \qquad r_{i,s}=\arg\max_e p_e.
 $$
 
-with:
+Slot-conditioned expert utility is measured by ablation:
 
 $$
-y_{i,0},y_{i,1},y_{i,2},y_{i,3}\ \text{distinct for the same}\ B_i.
+\Delta CE(s,e)=CE_s(\operatorname{ablate}(e))-CE_s(\operatorname{full}).
 $$
 
-Thus `B_i` alone cannot determine the target. The slot must disambiguate the prediction. So the setting builds a criteria where slots matters more than the B_i identity itself.
-
-The top-1 router is:
-
-$$
-p=\operatorname{softmax}(Wh_{i,s}), \qquad r_{i,s}=\arg\max_e p_e
-$$
-
-Functional expert utility is:
-
-$$
-\Delta CE(s,e)=CE_s(\operatorname{ablate}(e))-CE_s(\operatorname{full})
-$$
-
-The primary metric is assignment-utility agreement:
-
-$$
-A= P(r_{i,s}=\arg\max_e \Delta CE(s,e)\mid s)
-$$
-
-The hypothesis predicts:
+The core judgment is not one metric but the bundle:
 
 ```text
-in long-slot context data, A and NMI(route, slot) should increase,
-and forced expert loss should show a slot-specific diagonal advantage.
+route-slot NMI / route heatmap / forced expert loss / assignment-utility agreement
 ```
 
-## Workflow Interface
-
-The workflow is:
-
-```text
-four-slot synthetic data
-  -> strengthen slot context before B
-  -> initialize router rows by B-position slot centroids
-  -> train top-1 selected-gate MoE
-  -> measure route-slot alignment at B positions
-  -> measure slot-conditioned expert utility
-  -> decide whether stronger context signal is sufficient for functional specialization
-```
-
-The output is not a new model. The output is a mechanism decision:
-
-```text
-weak context signal explains the previous failure
-```
-
-or:
-
-```text
-even visible and predictive slot features are not sufficient for learned top-1 functional specialization
-```
+A result supports functional specialization only if final route assignment is slot-aligned and the assigned expert is also utility-best for that slot.
 
 ## Minimal Computational Test
 
-Use full four slots and four experts.
-
-### Scheme A: repeated slot cue
+Two modes:
 
 ```text
-slot 0: A A A A A  B_i -> Y_{0,i}
-slot 1: C C C C C  B_i -> Y_{1,i}
-slot 2: G G G G G  B_i -> Y_{2,i}
-slot 3: K K K K K  B_i -> Y_{3,i}
+single_b_sanity: one shared B token; tests whether slot context can control routing when B identity is removed.
+multi_b_primary: 256 B identities; tests whether slot routing survives B-identity variation.
 ```
 
-### Scheme B: distributed slot code
+Conditions:
 
 ```text
-slot 0: p0 q0 r0 t0 u0  B_i -> Y_{0,i}
-slot 1: p0 q1 r1 t1 u1  B_i -> Y_{1,i}
-slot 2: p1 q0 r1 t0 u1  B_i -> Y_{2,i}
-slot 3: p1 q1 r0 t1 u0  B_i -> Y_{3,i}
+C0_short_slot_init: one-token slot cue baseline
+A_long_repeated_slot_init: 5-token repeated slot cue
+B_long_distributed_slot_init: 5-token distributed slot code
+Oracle_slot_router / Oracle_b_position_only: slot-utility upper bound
+A_long_random_init / B_long_random_init: natural-discovery controls
 ```
 
-In Scheme B, no single cue token uniquely determines the slot. The full context code is needed.
-
-Router initialization:
-
-$$
-\mu_s=\mathbb{E}_i[h(B_i\mid s)], \qquad \bar\mu=\mathbb{E}_s[\mu_s]
-$$
-
-$$
-w_s \leftarrow \alpha\cdot \operatorname{Normalize}\left((\Sigma+\lambda I)^{-1}(\mu_s-\bar\mu)\right)
-$$
-
-Compare:
-
-```text
-short one-token slot cue + slot init
-long repeated cue + slot init
-long distributed code + slot init
-oracle slot router upper bound
-```
-
-## Falsifiable Conclusion
-
-Supported if:
-
-```text
-long-slot conditions make slot decodable from B hidden states;
-route-slot matrix becomes diagonal after expert permutation;
-assigned expert matches the slot utility-best expert;
-forced expert loss and ablation utility show slot-specific diagonal advantage;
-this holds across seeds and is stronger than the short-slot condition.
-```
-
-Weakened if:
-
-```text
-slot is decodable from B hidden states but routing does not align;
-routing aligns with slot but expert utility does not;
-only repeated cue works, but distributed code fails;
-only assignment metrics improve while target CE or expert utility does not.
-```
-
-Redirected if:
-
-```text
-oracle slot routing has no utility gap -> the task does not create expert-specific utility;
-oracle works but learned routing fails -> top-1 NTP dynamics fail to convert predictive slot factors into expert decomposition.
-```
+The repeated cue is the strongest context signal. The distributed code is cleaner because no single prefix token uniquely identifies the slot.
 
 ## Current Evidence
 
-Current evidence is negative and boundary-setting:
+Supported weak result:
 
 ```text
-semantic/context initialization can improve early B-context routing;
-final routing alignment decays during training;
-final hidden states still contain recoverable B-context boundary;
-semantic routing is not automatically a functional expert route.
+Stronger context plus slot-centroid init can control routing in fixed-B diagnostics.
 ```
 
-The 2026-05-26 slot-context dominance diagnostic adds a sharper split:
+Evidence:
 
 ```text
-single-B: slot context can control routing and align assignment with utility;
-multi-B: slot remains decodable and predictive, but learned routing does not robustly bind assignment to utility under B-identity variation.
+single-B A_long_repeated: route NMI = 1.000, Assign-Utility = 1.000
+single-B B_long_distributed: route NMI = 0.893, Assign-Utility = 1.000
+bridge fixed-B long semantic: final NMI = 1.000 across seeds
 ```
 
-Key result:
-
-| Mode | Condition | Target Acc | Probe h_B->slot | NMI(route, slot) | Assign-Utility |
-|---|---|---:|---:|---:|---:|
-| `single_b_sanity` | `A_long_repeated_slot_init` | 1.000 | 1.000 | 1.000 | 1.000 |
-| `single_b_sanity` | `B_long_distributed_slot_init` | 1.000 | 1.000 | 0.893 | 1.000 |
-| `multi_b_primary` | `A_long_repeated_slot_init` | 1.000 | 1.000 | 0.593 | 0.921 |
-| `multi_b_primary` | `B_long_distributed_slot_init` | 1.000 | 1.000 | 0.297 | 0.733 |
-| `multi_b_primary` | `Oracle_slot_router` | 1.000 | 0.997 | 1.000 | 1.000 |
-
-The 2026-05-27 trajectory follow-up closes five diagnostic gaps:
+Weakened strong result:
 
 ```text
-initial-vs-final route NMI;
-route NMI trajectory;
-route-slot and forced-utility heatmaps;
-B-position-only Oracle;
-random-init controls.
+slot visibility plus slot-centroid init is not sufficient for robust multi-B functional specialization.
 ```
 
-Key trajectory result:
-
-| Mode | Condition | NMI 0 -> 1600 | Assign-Utility 0 -> 1600 | Slot-center norm 0 -> 1600 |
-|---|---|---:|---:|---:|
-| `single_b` | `A_long_repeated_slot_init` | 1.000 -> 1.000 | 0.438 -> 1.000 | 1.089 -> 3.186 |
-| `single_b` | `B_long_distributed_slot_init` | 1.000 -> 0.893 | 0.438 -> 1.000 | 0.491 -> 4.185 |
-| `multi_b` | `A_long_repeated_slot_init` | 0.243 -> 0.591 | 0.565 -> 0.925 | 1.166 -> 4.903 |
-| `multi_b` | `B_long_distributed_slot_init` | 0.078 -> 0.313 | 0.326 -> 0.747 | 0.652 -> 4.298 |
-| `multi_b` | `Oracle_b_position_only` | 1.000 -> 1.000 | 0.625 -> 1.000 | 1.166 -> 3.644 |
-| `multi_b` | `B_long_random_init` | 0.006 -> 0.010 | 0.420 -> 0.998 | 0.652 -> 5.039 |
-
-Interpretation:
+Evidence:
 
 ```text
-The weak-context explanation is only partially supported.
-It explains the fixed-B diagnostic, but not robust multi-B functional specialization.
-The stronger failure mode is multi-B initialization geometry plus route-function binding under identity variation.
+multi-B h_B -> slot probe = 1.000 and target accuracy = 1.000;
+multi-B Oracle = 1.000, so slot-specific utility is available;
+multi-B A_long_repeated improves but remains imperfect: route NMI 0.243 -> 0.591, Assign-Utility 0.565 -> 0.925;
+multi-B B_long_distributed remains weak: route NMI 0.078 -> 0.313, Assign-Utility 0.326 -> 0.747.
 ```
 
-The important correction is:
+Metric caveat:
 
 ```text
-multi-B slot-centroid init is not initially clean diagonal routing.
-Training increases slot-center separation and route NMI, but does not fully convert visible slot geometry into stable top-1 functional routing.
-Oracle_b_position_only = 1.0 shows that B-position routing alone is sufficient for the upper bound.
-Random-init B_long can show high Assign-Utility with near-zero route NMI, so Assign-Utility must be read with route NMI and utility heatmaps.
-Seed-level final routing heatmaps confirm that the multi-B conclusion is not an artifact of averaging: A_long improves but is not stable across seeds, and B_long does not form a reliable slot-to-expert permutation.
+multi-B B_long_random_init reaches Assign-Utility = 0.998 while route NMI = 0.010.
 ```
 
-Result links:
+Therefore Assign-Utility alone can be high under utility collapse. It must be read together with route-slot alignment and forced expert loss.
+
+## Claim Boundary
+
+What can be claimed:
 
 ```text
-summary: Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/summary.md
-detailed: Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/detailed.md
-sync closure: Projects/from-attention-to-search/XingyuD/sync/0526_slot_context_dominance/report.md
-single-B result dir: Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/slot_context_dominance_router_specialization/slot_context_single_b_full_20260526
-multi-B result dir: Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526
-single-B trajectory result dir: Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527
-multi-B trajectory result dir: Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527
+Context strength matters. Long slot context and semantic centroid initialization make B-position routing more slot-aligned, especially when B identity is fixed.
 ```
 
-## Claim Boundary And Next Decision
-
-Supported claim:
+What cannot be claimed:
 
 ```text
-Top-1 MoE can form slot-controlled routing in a fixed-B diagnostic when slot is visible and predictive.
+ordinary top-1 NTP naturally forms robust slot-functional experts;
+init-final diagonal improvement alone proves specialization;
+route heatmap diagonalization alone proves expert utility;
+this transfers to Zipfian or real-corpus data.
 ```
 
-Weakened claim:
+The current failure is more specific than weak representation:
 
 ```text
-Predictive slot visibility plus slot-centroid init is sufficient for robust multi-B functional specialization.
+slot information is visible and useful, but learned routing does not reliably bind the slot axis to utility-best experts under many B identities.
 ```
 
-Claim boundary:
+## Next Decision
+
+Do not move directly to Zipfian stress tests. First test the smallest mechanism that addresses the observed gap:
 
 ```text
-This evidence only covers four-slot/four-expert synthetic NTP with no load-balance objective.
-It does not rule out auxiliary route-function binding, utility-aware routing regularizers, deeper models, or real-corpus specialization.
-It also shows that assignment-utility agreement alone can overstate specialization when utility collapses to a common expert.
+multi_b_primary + explicit route-function binding at the B / target position
 ```
 
-Next decision:
+Primary check:
 
 ```text
-Do not extend the context-length sweep.
-Run the next minimal test on multi_b_primary with an explicit route-function binding signal,
-such as a target-position slot-router auxiliary loss or utility-aware routing regularizer.
-Judge by route NMI, route heatmap, forced utility heatmap, and assignment-utility together,
-especially on the distributed-code condition.
+Can a binding signal raise A_long and B_long assignment-utility while also improving route-slot NMI and forced-loss diagonal structure across seeds?
 ```
+
+If this works, then Zipfian data becomes a robustness test. If it fails, the problem is likely not context strength but the top-1 routing dynamics or expert-utility formation mechanism.
