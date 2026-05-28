@@ -45,7 +45,8 @@ Edge-side MoE swapping needs feature-level expert specialization: common/shared 
 ```text
 已有结果 1：multi-B 中 slot probe 和 oracle 都接近 1，但 flat top-1 learned routing 不能稳定绑定 slot 与 utility-best expert。
 已有结果 2：uniform 64-B active-compute-matched 对照中，common_flat 平均优于 flat_top1；但 hierarchical_common 没有稳定超过 common_flat。
-当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案。
+已有结果 3：random-init 对照中，NTP 仍能学会 target，但 route-slot NMI 明显下降；高 Assign-Utility 可以由 utility-best path collapse 产生，不等于形成清晰 slot experts。
+当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案；slot-centroid 初始化对漂亮分发贡献很大。
 ```
 
 结论边界：
@@ -134,6 +135,7 @@ Current evidence refines this hypothesis:
 ```text
 common path may help, but adding a second routing level does not by itself guarantee route-utility binding.
 The next sharper mechanism is not "hierarchy is enough"; it is "leaf router should see a representation where common/B-identity directions are removed or softened."
+Random-init shows that NTP alone does not reliably recover the slot-specialized routing seen under semantic slot-centroid init.
 ```
 
 ## 4. Mathematical Modeling
@@ -299,6 +301,25 @@ hierarchical_common is not a stable improvement; it helps one B_long seed but lo
 Therefore "structural hierarchy alone fixes binding" is weakened.
 ```
 
+Random-init control:
+
+| Condition | Model | Assign-Utility | Route-Slot NMI | Slot-B Consistency |
+|---|---|---:|---:|---:|
+| A_long | flat_top1 | 0.795 | 0.450 | 0.819 |
+| A_long | common_flat | 0.911 | 0.536 | 0.908 |
+| A_long | hierarchical_common | 0.952 | 0.237 | 0.954 |
+| B_long | flat_top1 | 0.690 | 0.174 | 0.756 |
+| B_long | common_flat | 0.948 | 0.058 | 0.964 |
+| B_long | hierarchical_common | 0.835 | 0.078 | 0.834 |
+
+Interpretation:
+
+```text
+Without semantic initialization, route-slot NMI is much lower.
+Some high Assign-Utility values are caused by utility-best paths collapsing to a common path, not by slot-specialized experts.
+Therefore Assign-Utility must be read together with route-slot NMI and utility heatmaps.
+```
+
 ## 7. Claim Boundary And Next Decision
 
 If supported:
@@ -321,4 +342,5 @@ Current decision after 0528:
 Do not claim H-MoE has solved the gating problem.
 Keep common path as a candidate.
 Test common-residual leaf routing before Zipf.
+If testing true hierarchy, explicitly set root group to B-family/B-cluster and leaf to slot; merely increasing hierarchy depth is not enough.
 ```
