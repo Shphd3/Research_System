@@ -46,7 +46,8 @@ Edge-side MoE swapping needs feature-level expert specialization: common/shared 
 已有结果 1：multi-B 中 slot probe 和 oracle 都接近 1，但 flat top-1 learned routing 不能稳定绑定 slot 与 utility-best expert。
 已有结果 2：uniform 64-B active-compute-matched 对照中，common_flat 平均优于 flat_top1；但 hierarchical_common 没有稳定超过 common_flat。
 已有结果 3：random-init 对照中，NTP 仍能学会 target，但 route-slot NMI 明显下降；高 Assign-Utility 可以由 utility-best path collapse 产生，不等于形成清晰 slot experts。
-当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案；slot-centroid 初始化对漂亮分发贡献很大。
+已有结果 4：linear FFN/KV toy 支持 frequency-induced head-feature anisotropy；Zipf-normal 先学 head unique feature，tail error 被拉高，inverse-frequency reweight 能把谱和 head/tail error 拉回 uniform 附近。
+当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案；更小的上游机制应写成 common/head-frequency component dominance，而不是直接写成 H-MoE works。
 ```
 
 结论边界：
@@ -59,8 +60,9 @@ Edge-side MoE swapping needs feature-level expert specialization: common/shared 
 下一步：
 
 ```text
-先不要直接进入 Zipf。
-下一步应比较 common_flat 与 common_residual_leaf_router，并在 64-B / 256-B 两个压力档上看 Assign-Utility 与 slot-B route consistency 是否稳定改善。
+先不要继续加 hierarchy 深度。
+下一步应先做 router-factor attribution：区分 common component、head-frequency unique component、B identity、slot/target feature 到底哪个在控制 routing logits。
+只有确认 router 主要被 common component 控制时，common-residual leaf router 才是最直接干预；如果主要被 head-frequency 控制，则应优先考虑 reweight 或 frequency-balanced diagnostic。
 ```
 
 ## 1. Problem Definition
@@ -134,8 +136,9 @@ Current evidence refines this hypothesis:
 
 ```text
 common path may help, but adding a second routing level does not by itself guarantee route-utility binding.
-The next sharper mechanism is not "hierarchy is enough"; it is "leaf router should see a representation where common/B-identity directions are removed or softened."
+The next sharper mechanism is not "hierarchy is enough"; it is "router should not be controlled by dominant common/B-identity/head-frequency directions when the target-deciding feature is slot/unique."
 Random-init shows that NTP alone does not reliably recover the slot-specialized routing seen under semantic slot-centroid init.
+Linear FFN/KV toy shows frequency imbalance alone can create head-feature anisotropy and tail underfitting, even without MoE or slot.
 ```
 
 ## 4. Mathematical Modeling
@@ -320,6 +323,45 @@ Some high Assign-Utility values are caused by utility-best paths collapsing to a
 Therefore Assign-Utility must be read together with route-slot NMI and utility heatmaps.
 ```
 
+## 6.2 Linear FFN Frequency-Anisotropy Evidence
+
+Experiment:
+
+```text
+Projects/from-attention-to-search/main/experiments/linear_ffn_frequency_anisotropy/summary.md
+Projects/from-attention-to-search/main/experiments/linear_ffn_frequency_anisotropy/detailed.md
+```
+
+Setup:
+
+```text
+linear FFN / KV toy
+x = k_c + k_{u_i} + noise
+y = v_c + v_{u_i}
+conditions: uniform_normal, zipf_normal, zipf_reweight
+5 seeds, 5000 steps
+4-GPU ACP full run: pt-98tw742y
+```
+
+Main result:
+
+| Step | Condition | Top Energy | Effective Rank | Tail/Head Full MSE | Head Key Align | Head Value Align |
+|---:|---|---:|---:|---:|---:|---:|
+| 1000 | uniform_normal | 0.0174 | 142.9 | 1.04 | 0.036 | 0.092 |
+| 1000 | zipf_normal | **0.0316** | **108.6** | **32.32** | **0.099** | **0.177** |
+| 1000 | zipf_reweight | 0.0174 | 142.5 | 1.05 | 0.035 | 0.085 |
+| 5000 | uniform_normal | 0.0175 | 142.9 | 1.02 | 0.036 | 0.094 |
+| 5000 | zipf_normal | **0.0314** | **108.9** | **33.12** | **0.095** | **0.171** |
+| 5000 | zipf_reweight | 0.0174 | 142.6 | 1.06 | 0.036 | 0.093 |
+
+Interpretation:
+
+```text
+Frequency imbalance is sufficient to create head-feature dominant anisotropy in a minimal linear model.
+Inverse-frequency reweight removes most of this effect.
+However, Zipf-normal top direction aligns with head unique key/value more than common key/value, so this toy supports head-frequency dominance more directly than common-feature dominance.
+```
+
 ## 7. Claim Boundary And Next Decision
 
 If supported:
@@ -341,6 +383,7 @@ Current decision after 0528:
 ```text
 Do not claim H-MoE has solved the gating problem.
 Keep common path as a candidate.
-Test common-residual leaf routing before Zipf.
-If testing true hierarchy, explicitly set root group to B-family/B-cluster and leaf to slot; merely increasing hierarchy depth is not enough.
+Do not continue architecture depth before the factor attribution question is sharper.
+The next diagnostic should separate common component, head-frequency unique component, B identity, and slot/target feature in router inputs.
+If testing true hierarchy later, explicitly set root group to B-family/B-cluster and leaf to slot; merely increasing hierarchy depth is not enough.
 ```
