@@ -1,0 +1,324 @@
+---
+parent_node: problem.moe_expert_specialization
+---
+
+# Hierarchical Route-Utility Binding Under Compositional Features
+
+## Report Summary
+
+父问题：
+
+```text
+Edge-side MoE swapping needs feature-level expert specialization: common/shared computation should be resident, and long-tail/unique computation should be dynamically routed.
+```
+
+当前子问题：
+
+```text
+在已有 multi-B slot-context synthetic 中，ordinary flat top-1 MoE 已经证明 slot 信息可见但 routing 不稳定。两级 Hierarchical Common-Unique MoE 是否能让 common/token-identity component 与 slot/unique predictive component 分开，从而恢复 route-utility binding？
+```
+
+为什么要问这个问题：
+
+```text
+学长主线已经说明：Zipf feature 会诱导 hot/cold expert locality，load balance 会抹平这种 locality；H-MoE 在真实任务上保持建模能力并给出系统侧 swapping 收益。
+但这还没有证明 H-MoE 的 gating 真的解决了我们观察到的 multi-B route-function binding failure。
+导师建议：先试 hierarchical 方法，看原来的 gating 问题是否不存在；再用 uniform 数据集验证问题是否由 Zipf 引起。
+```
+
+决策问题：
+
+```text
+下一步应该继续调 flat router / context init，还是把研究线转向 hierarchical/common-residual gating 作为解决普通 top-1 routing failure 的核心机制？
+```
+
+任务构造：
+
+```text
+复用上次 multi-B slot-context setup：same B identity 在不同 slot 下有不同 target；slot/context feature 是 target 所需信息，B identity/common component 是干扰项。
+比较 flat MoE 与 two-level H-MoE / common-residual router。
+先跑 uniform 数据；若 uniform 已改善，再加 Zipf stress。
+```
+
+当前结果 / 预期结果：
+
+```text
+已有结果 1：multi-B 中 slot probe 和 oracle 都接近 1，但 flat top-1 learned routing 不能稳定绑定 slot 与 utility-best expert。
+已有结果 2：uniform 64-B active-compute-matched 对照中，common_flat 平均优于 flat_top1；但 hierarchical_common 没有稳定超过 common_flat。
+当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案。
+```
+
+结论边界：
+
+```text
+这个 anchor 只判断 H-MoE/common-residual gating 是否解决受控 NTP synthetic 中的 route-function binding failure。
+它不能证明真实语料 feature-level specialization，也不能证明端侧系统收益；那些属于学长 story 已经部分覆盖、后续需要联合验证的部分。
+```
+
+下一步：
+
+```text
+先不要直接进入 Zipf。
+下一步应比较 common_flat 与 common_residual_leaf_router，并在 64-B / 256-B 两个压力档上看 Assign-Utility 与 slot-B route consistency 是否稳定改善。
+```
+
+## 1. Problem Definition
+
+Broader question:
+
+```text
+What is feature-level expert specialization, and how can MoE routing form it under NTP rather than merely route by token identity or load balance constraints?
+```
+
+Sharper question:
+
+```text
+Does Hierarchical Common-Unique routing fix the failure where slot/context information is visible and useful, but flat top-1 routing does not bind that feature axis to utility-best experts?
+```
+
+What we do not need to do now:
+
+```text
+Do not prove full H-MoE deployment gain.
+Do not move immediately to real corpus.
+Do not treat expert load skew alone as specialization.
+Do not define specialization by surface token identity.
+```
+
+Operational definitions:
+
+```text
+feature: a contextual predictive factor that changes next-token distribution.
+common component: high-frequency or token-identity/shared component that many samples use.
+unique/slot component: context-specific component needed to disambiguate target under same B identity.
+route-utility binding: selected expert/path is both aligned with feature and causally useful for that feature's prediction.
+```
+
+## 2. Physical Priors
+
+```text
+1. NTP hidden state at a routed position is compositional: it contains token identity, context/slot feature, and other common predictive features.
+2. Feature frequency is often non-uniform and hierarchical, but even uniform multi-B can expose route-function binding failure.
+3. Ordinary flat top-1 routing can read a dominant component without guaranteeing that selected experts become functionally useful for the target-deciding feature.
+4. H-MoE is meaningful only if common/shared computation is separated from unique/leaf routing, not merely because it has more routers.
+```
+
+## 3. Mechanistic Motivation
+
+Previous anchor showed:
+
+```text
+slot information is visible in h_B;
+oracle slot routing works;
+but learned flat routing is unstable in multi-B.
+```
+
+This suggests the failure is not simply missing information. It may be a binding failure:
+
+```text
+h_{i,s} = c_i + beta u_s + epsilon
+```
+
+where `c_i` is B identity / common component and `u_s` is slot predictive component. Flat router sees both at once and may route by the wrong component or learn utility collapse.
+
+H-MoE hypothesis:
+
+```text
+top/common path absorbs c_i / shared computation;
+leaf/group router is forced or biased to bind u_s to a smaller expert path;
+therefore route-feature alignment and forced expert utility should improve together.
+```
+
+Current evidence refines this hypothesis:
+
+```text
+common path may help, but adding a second routing level does not by itself guarantee route-utility binding.
+The next sharper mechanism is not "hierarchy is enough"; it is "leaf router should see a representation where common/B-identity directions are removed or softened."
+```
+
+## 4. Mathematical Modeling
+
+Flat routing:
+
+$$
+r = \arg\max_e W_e h_{i,s}, \qquad h_{i,s}=c_i+\beta u_s+\epsilon.
+$$
+
+H-MoE / common-unique routing:
+
+$$
+y = f_{common}(h) + f_{leaf, r_s}(h),
+$$
+
+with either:
+
+$$
+r_s = \arg\max_j R_j h
+$$
+
+or a common-residual variant:
+
+$$
+h_{res}=h-P_{common}(h), \qquad r_s=\arg\max_j R_j h_{res}.
+$$
+
+The 0528 experiment used active-compute-matched variants:
+
+$$
+y_{\mathrm{flat}} = p_e f_e(h),
+$$
+
+$$
+y_{\mathrm{common\_flat}} = f_{\mathrm{global}}(h)+p_j f_{\mathrm{leaf},j}(h),
+$$
+
+$$
+y_{\mathrm{hier}} =
+f_{\mathrm{global}}(h)+p_g f_{\mathrm{group},g}(h)+p_g p_{\ell|g} f_{\mathrm{leaf},g,\ell}(h).
+$$
+
+Primary metrics:
+
+```text
+route-slot NMI
+route-B identity NMI
+forced expert loss / ablation utility matrix
+assignment-utility agreement
+final CE / target accuracy
+expert load health
+```
+
+A model supports specialization only if route-slot NMI and forced-loss diagonal improve together.
+
+## 5. Computational Realization
+
+### 5.1 Workflow Interface
+
+Input:
+
+```text
+Existing multi-B synthetic data:
+slot context + B_i -> target pi_s(B_i)
+```
+
+Models:
+
+```text
+A. flat top-1 MoE baseline
+B. common_flat: global common expert + one-level leaf top-1 router
+C. hierarchical_common: global common + selected group common + two-level leaf router
+D. next candidate: common-residual leaf router, where leaf router uses h - P_common(h)
+```
+
+Output:
+
+```text
+Table comparing route-slot NMI, route-B NMI, Assign-Utility, forced-loss diagonal, CE/accuracy, expert load.
+```
+
+### 5.2 Minimal Computational Test
+
+Core  test:
+
+```text
+completed 0528:
+uniform 64-B + A_long/B_long:
+flat_top1 vs common_flat vs hierarchical_common, 4 seeds, 3000 steps.
+```
+
+Result:
+
+```text
+common_flat is the strongest current variant.
+hierarchical_common does not show a stable advantage over common_flat.
+```
+
+Next minimal test:
+
+```text
+common_flat vs common_residual_leaf_router on 64-B and 256-B.
+Only if that supports route-utility binding should Zipf stress be added.
+```
+
+## 6. Minimal Falsifiable Test
+
+Supported if:
+
+```text
+common/hierarchical/common-residual routing improves Assign-Utility, slot-B route consistency, and forced/ablation utility alignment over flat baseline while keeping CE/accuracy comparable.
+```
+
+Weakened if:
+
+```text
+common/hierarchy only improves loss or route heatmaps, but does not improve assignment-utility binding.
+```
+
+Refuted for this mechanism if:
+
+```text
+hierarchy/common-residual behaves like flat routing: slot is visible, oracle works, but learned routing still does not bind slot to utility-best path.
+```
+
+## 6.1 Current Evidence
+
+Experiment:
+
+```text
+Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/summary.md
+Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/detailed.md
+```
+
+Setup:
+
+```text
+uniform 64-B
+4 slots / 4 leaf paths
+active FFN width = 256 for all compared models
+semantic slot-centroid init
+3000 full NTP steps
+4 seeds
+```
+
+Main result:
+
+| Condition | Model | Assign-Utility | Slot-B Consistency | Route-Slot NMI | Target Acc |
+|---|---|---:|---:|---:|---:|
+| A_long | flat_top1 | 0.935 | 0.948 | 0.883 | 1.0 |
+| A_long | common_flat | **0.952** | 0.951 | 0.883 | 1.0 |
+| A_long | hierarchical_common | 0.932 | **0.968** | 0.853 | 1.0 |
+| B_long | flat_top1 | 0.880 | 0.912 | 0.689 | 1.0 |
+| B_long | common_flat | **0.918** | **0.921** | **0.787** | 1.0 |
+| B_long | hierarchical_common | 0.878 | 0.900 | 0.727 | 1.0 |
+
+Interpretation:
+
+```text
+common_flat modestly improves route-utility binding, especially in B_long.
+hierarchical_common is not a stable improvement; it helps one B_long seed but loses on others.
+Therefore "structural hierarchy alone fixes binding" is weakened.
+```
+
+## 7. Claim Boundary And Next Decision
+
+If supported:
+
+```text
+Claim: common-residual routing is a plausible mechanism for solving flat top-1 route-function binding failure in controlled NTP feature specialization.
+Next: add Zipf feature frequencies and test whether common path protects long-tail leaf specialization.
+```
+
+If weakened/refuted:
+
+```text
+Claim: structural hierarchy alone is insufficient; need explicit routing objective, route-neutral representation, or auxiliary route-function binding loss.
+Next: return to router objective rather than architecture.
+```
+
+Current decision after 0528:
+
+```text
+Do not claim H-MoE has solved the gating problem.
+Keep common path as a candidate.
+Test common-residual leaf routing before Zipf.
+```
