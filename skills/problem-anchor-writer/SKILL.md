@@ -89,6 +89,24 @@ parent_node: <parent_problem_or_graph_node>
 
 # <Problem Anchor Title>
 
+## 汇报前 Summary
+
+父问题：
+
+当前子问题：
+
+为什么要问这个问题：
+
+决策问题：
+
+任务构造：
+
+当前结果 / 预期结果：
+
+结论边界：
+
+下一步：
+
 ## 1. Problem Definition
 
 What is the parent problem?
@@ -216,10 +234,15 @@ anchor keeps the research question and claim boundary alive.
 - Keep the document self-contained.
 - Prefer one precise subproblem over a broad umbrella question.
 - Use section titles that match the active compact template when possible:
-  `Problem Definition`, `Physical Priors`, `Mechanistic Motivation`,
-  `Mathematical Modeling`, `Computational Realization`,
-  `Minimal Falsifiable Test`, `Falsifiable Outcomes`, `Current Evidence`,
+  `Reporting Summary`, `Problem Definition`, `Physical Priors`,
+  `Mechanistic Motivation`, `Mathematical Modeling`,
+  `Computational Realization`, `Minimal Falsifiable Test`,
+  `Falsifiable Outcomes`, `Current Evidence`,
   `Claim Boundary And Next Decision`.
+- `汇报前 Summary` / `Reporting Summary` is a short front summary for meeting or
+  collaborator reading. It should be concise, written in Chinese by default for
+  this research system, and should not replace the full anchor sections; it
+  compresses them.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not
