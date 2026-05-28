@@ -70,6 +70,7 @@ This is the living reasoning layer and the unified purpose-card layer. Each
 anchor should define:
 
 - problem definition;
+- compact operational definitions for decision-critical terms;
 - physical priors;
 - mathematical modeling;
 - computational realization;
@@ -104,7 +105,10 @@ experiments/<experiment_id>/
 ```
 
 `execution_plan.md` contains concrete configs, commands, metrics, artifacts,
-pass/fail criteria, and failure modes.
+pass/fail criteria, failure modes, and a compact stage audit when the
+experiment has multiple implementation stages. Nontrivial algorithm stages must
+have an exact algorithm specification before the run, but the specification can
+live in the execution plan or remote runbook instead of the anchor.
 
 `summary.md` is the closure-level local result synthesis. It inherits the role
 of the old hypothesis closure inside the experiment folder. It must link the
@@ -132,11 +136,19 @@ supporting analysis. It must start with:
 
 The rest of `detailed.md` should expand the same structure with anchor links,
 the decision point, setup, primary metric, key figures, evidence walkthrough,
-full experiment record, interpretation, claim boundary, next decision, and
-artifact map. The artifact map must include code workspace, runner or launch
-script, config, key code files, data or manifest, result directory, figure
-directory, key tables, logs/checkpoints, job id, and reproduction command when
-available. Do not let `detailed.md` become a raw appendix without a story.
+stage evidence / failure decomposition when needed, full experiment record,
+interpretation, claim boundary, next decision, and artifact map. Negative or
+ambiguous results should state whether they falsify the physical prior itself
+or only the tested operationalization / proxy. The artifact map must include
+code workspace, runner or launch script, config, key code files, data or
+manifest, result directory, figure directory, key tables, logs/checkpoints, job
+id, and reproduction command when available. Do not let `detailed.md` become a
+raw appendix without a story.
+
+If several reasonable operationalizations fail in the same way, add a short
+goal / metric audit to `detailed.md` before launching another fix. The audit
+should state the downstream decision, the old metric, the repeated failure
+pattern, and whether the goal or success condition should change.
 
 Important figures are mandatory when they exist. Copy report-ready figures into
 the experiment folder's local `figures/` directory, embed them in both

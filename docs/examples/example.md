@@ -67,6 +67,14 @@ parent_node: <parent_problem>
 
 Key: decide what we don't need to do.
 
+Operational definitions, only for decision-critical terms:
+
+```text
+term_1: success / failure / ambiguous or insufficient evidence
+term_2: success / failure / ambiguous or insufficient evidence
+term_3: success / failure / ambiguous or insufficient evidence
+```
+
 ## 2. Physical Priors
 
 - Features

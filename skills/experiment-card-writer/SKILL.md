@@ -82,6 +82,34 @@ Then compress the experiment into:
 4. What is the smallest experiment that can change belief?
 5. What result patterns would support, weaken, or redirect the hypothesis?
 6. What cannot be claimed even if the result is positive?
+7. Which implementation stages need local pass/fail evidence before the final
+   metric can be trusted?
+
+For multi-stage experiments, write a compact stage audit rather than a long
+debug plan. Each important stage should fit one row:
+
+```text
+stage | local question | input evidence | pass/fail rule | debug artifact | handoff
+```
+
+If a stage needs many thresholds or examples, put them in `detailed.md` or the
+remote runbook. The execution plan should only name the evidence needed to
+trust the final result.
+
+For any nontrivial algorithm stage, write the exact algorithm before the run.
+The shortest acceptable specification is:
+
+```text
+input / parameters / intermediate variables / steps / pass conditions /
+fail conditions / failure reasons / outputs / debug artifacts
+```
+
+Keep the anchor compact. Put this algorithm specification in the execution plan,
+remote runbook, or `detailed.md`.
+
+If several reasonable operationalizations fail in the same way, stop expanding
+the experiment grid and audit the goal or metric. Ask whether the label,
+primary metric, or success condition still matches the downstream decision.
 
 ## Execution Plan Template
 
@@ -102,11 +130,17 @@ Anchor:
 
 ## 5. Metrics And Artifacts
 
-## 6. Pass / Fail Criteria
+## 6. Stage Audit
 
-## 7. Failure Modes To Check
+| Stage | Local Question | Input Evidence | Pass / Fail Rule | Debug Artifact | Handoff |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
 
-## 8. Result Location
+## 7. Pass / Fail Criteria
+
+## 8. Failure Modes To Check
+
+## 9. Result Location
 ```
 
 ## Result Summary Template
@@ -139,6 +173,16 @@ Story:
 ## Observation
 
 ## Interpretation
+
+## Operationalization Boundary
+
+This result falsifies:
+
+This result does not falsify:
+
+Tested operationalization:
+
+Alternative operationalizations still open:
 
 ## Limitation
 
@@ -215,15 +259,43 @@ Supports:
 
 ## 9. Evidence Walkthrough
 
-## 10. Full Experiment Record
+## 10. Stage Evidence And Failure Decomposition
 
-## 11. Interpretation
+| Stage | Evidence | Passed / Failed / Unclear | Failure Reason | What This Rules Out |
+| --- | --- | --- | --- | --- |
+| | | | | |
 
-## 12. Claim Boundary
+Falsified physical prior:
 
-## 13. Next Decision
+Falsified operationalization / proxy:
 
-## 14. Links And Artifact Map
+Remaining rival explanations:
+
+## 11. Goal / Metric Audit, If Triggered
+
+Trigger:
+
+Old goal / metric:
+
+Repeated failure pattern:
+
+Downstream decision:
+
+Revised goal / metric:
+
+Errors now acceptable:
+
+Errors still harmful:
+
+## 12. Full Experiment Record
+
+## 13. Interpretation
+
+## 14. Claim Boundary
+
+## 15. Next Decision
+
+## 16. Links And Artifact Map
 anchor:
 summary:
 sync report:
@@ -264,6 +336,12 @@ tables under `tables/` and link or summarize them near the relevant metric.
   expert causal utility whenever that utility can be measured.
 - Every required condition must have a purpose column or sentence explaining
   which rival explanation it distinguishes.
+- Multi-stage experiments must include a compact stage audit. Do not trust a
+  final metric unless the plan names the stage-local evidence that can explain
+  success, failure, or uncertainty.
+- Nontrivial algorithm stages must have an exact algorithm specification before
+  running. Do not treat words like `cluster`, `match`, `stable`, `aligned`, or
+  `valid` as an algorithm.
 - Include a minimal report table before the run when the result should be
   meeting-facing or collaborator-facing.
 - Fewer, sharper experiments are preferred over many shallow runs.
@@ -275,6 +353,8 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - If the first result is ambiguous, write the ambiguity down and design the next
   minimal test from that uncertainty instead of expanding the current run into a
   large experiment grid.
+- If repeated reasonable fixes fail with the same pattern, perform a goal /
+  metric audit before adding another algorithmic fix.
 - Do not start with architecture, scripts, or metrics before the anchor is clear.
 - Do not create separate hypothesis purpose cards.
 - Anchors are reasoning artifacts; execution plans are operational artifacts.
@@ -286,6 +366,8 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - Treat `detailed.md` as the full experiment record. It should be sufficient to
   reconstruct what was run, where artifacts live, and how the conclusion was
   derived.
+- When a result is negative or ambiguous, state whether it falsifies the
+  physical prior itself or only the tested operationalization / proxy.
 - Separate result, interpretation, limitation, claim update, and decision.
 - Always include the anchor path, result document links, and a one-sentence
   story written in clear research language.

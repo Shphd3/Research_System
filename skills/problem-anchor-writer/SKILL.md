@@ -47,6 +47,7 @@ Do not start from architecture, metrics, or scripts. First define:
 - the parent problem;
 - the exact subproblem;
 - what is inside and outside the boundary;
+- the key terms that must be operationalized before the experiment;
 - the physical prior or mechanistic assumption;
 - the mathematical objects that express the prior;
 - the computational test implied by the math.
@@ -77,6 +78,23 @@ Projects/<project>/main/problem_anchors/<anchor_id>.md
 
 Use `support / weaken / redirect` instead of claiming that an experiment will
 fully prove a broad hypothesis.
+
+## Compact Operationalization Rule
+
+Anchors should contain operational definitions, but they must stay compact. Do
+not turn the anchor into a methodology appendix.
+
+For a new anchor, define only the terms that control the decision, usually
+three to five terms. For each term, write one line:
+
+```text
+term: success / failure / ambiguous or insufficient evidence
+```
+
+Use this to keep intuitive words such as `stable`, `specialized`,
+`causal utility`, `aligned`, `consistent`, or `shortcut` from becoming
+unmeasured claims. Put long threshold details, diagnostics, and examples in the
+execution plan or `detailed.md`, not in the anchor.
 
 ## Required Structure
 
@@ -118,6 +136,12 @@ What is the decision question?
 What is inside the boundary?
 
 What is outside the boundary?
+
+Operational definitions, only for decision-critical terms:
+
+```text
+term: success / failure / ambiguous or insufficient evidence
+```
 
 ## 2. Physical Priors
 
@@ -218,6 +242,8 @@ creating a new hypothesis closure. Backfill:
 
 - direct observation;
 - interpretation;
+- whether the result falsifies the physical prior itself, or only one
+  operationalization / proxy of that prior;
 - whether the physical prior is supported, weakened, redirected, or still open;
 - what cannot be claimed;
 - next decision;
@@ -225,6 +251,11 @@ creating a new hypothesis closure. Backfill:
 
 Long evidence belongs in a sync closure or experiment detailed report. The
 anchor keeps the research question and claim boundary alive.
+
+If repeated reasonable operationalizations fail and a goal / metric audit
+changes the downstream decision, update only the anchor's decision question,
+primary observable, claim boundary, and next decision. Keep the audit details in
+`detailed.md` or a sync closure.
 
 ## Writing Standards
 
