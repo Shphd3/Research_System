@@ -6,16 +6,79 @@ parent_node: problem.moe_expert_specialization
 
 ## Reporting Summary
 
+我们的父问题是，为什么线性分发在 ABC/DBE slots形式的合成数据实验中，没有形成slot-specialized的分发，怎么才能形成slot-specialized的分发。
+
+我们研究的是：
+
+> **MoE 的 router 为什么没有稳定按照 slot / feature 去分 expert？**
+
+之前的 short-slot 实验中，我们看到：
+
+- 一开始用 slot 信息初始化 router，确实能让 routing 更像 slot 分发；
+- 但是训练之后，这种分发会下降；
+- 最后 router 没有稳定按照 slot 分 expert。
+
+所以这轮实验要回答一个更具体的问题：
+
+> **之前在slot信息初始化后，训练后Router坍缩到根据 B 的common feature分发，是不是因为 slot 信息太短、太弱，到了 B token 位置以后，被 B token identity 或 common feature 压过去了？**
+
+也就是说，我们想检查：
+
+> **如果增强 B 前面的 slot context，让NTP目标更加依赖slot的类型，router 会不会更按照 slot 分发？**
+
+### **任务构造**
+
+#### 1 repeated slot context
+
+第一种是重复的 slot cue：
+
 ```text
-slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容易按 slot 分；
-但 multi-B 里 B identity 仍然干扰，所以只得到部分 specialization。
+slot 1: A A A A A + B_i -> target
+slot 2: C C C C C + B_i -> target
+slot 3: G G G G G + B_i -> target
+slot 4: K K K K K + B_i -> target
 ```
 
-The safest current claim is:
+目的：
+
+> **提供一个最强、最简单的 slot 信号，检查 router 是否能按 slot 分发。**
+
+这是比较容易成功的版本。
+
+---
+
+#### 2 distributed slot context
+
+第二种是组合式 slot cue：
 
 ```text
-context strength helps routing alignment, but visible slot information plus slot-centroid initialization is not sufficient for robust multi-B functional specialization.
+slot 1: p0 q0 r0 t0 u0 + B_i -> target
+slot 2: p0 q1 r1 t1 u1 + B_i -> target
+slot 3: p1 q0 r1 t0 u1 + B_i -> target
+slot 4: p1 q1 r0 t1 u0 + B_i -> target
 ```
+
+这里单个 prefix token 不能唯一决定 slot，必须看整体组合。
+
+目的：
+
+> **避免模型只靠一个 prefix token 偷懒，测试它是否真的利用了更完整的 slot context。**
+
+### **当前结果：**
+
+结果可以总结成一句话：
+
+> **slot context 变长以后，router 确实更倾向于按照 slot 分发；但是在 multi-B 情况下，这个分发还不稳定。**
+
+更具体地说：
+
+| 情况 | 结果 | 说明 |
+|---|---|---|
+| fixed-B + repeated slot | 基本能按 slot 分 | slot 信息本身能控制 router |
+| fixed-B + distributed slot | 效果也较好 | 不只是单个 prefix token 有用 |
+| multi-B + repeated slot | 有明显增强，但不完美 | slot 信息能抵抗一部分 B identity 干扰 |
+| multi-B + distributed slot | 增强较弱 | 更复杂的 slot context 更难稳定使用 |
+| oracle routing | 可以达到很好结果 | 说明任务本身不是无解 |
 
 ## Question
 
