@@ -28,8 +28,8 @@ Read:
 
 1. `PROJECTS.md`;
 2. active project `graph.yaml`;
-3. relevant anchor under `main_specialization/problem_anchors/` or the project
-   anchor folder named by the user;
+3. relevant anchor under the project mainline's `problem_anchors/` directory,
+   or the project anchor folder named by the user;
 4. the execution plan or runbook named by the user;
 5. the experiment workspace `AGENTS.md`, if present.
 

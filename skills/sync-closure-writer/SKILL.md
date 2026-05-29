@@ -22,8 +22,8 @@ Read in order:
 
 1. `PROJECTS.md`;
 2. project `graph.yaml`;
-3. relevant anchor, usually under `main_specialization/problem_anchors/` or
-   `main/problem_anchors/`;
+3. relevant anchor, usually under a project mainline's `problem_anchors/`
+   directory, such as `main/problem_anchors/`;
 4. experiment `summary.md`, `detailed.md`, figures, or run tables needed to
    audit the result;
 5. code/config/artifact paths for reproduction.
@@ -153,8 +153,8 @@ Do not use opaque English phrases as story labels. Write the story in one clear
 sentence, for example:
 
 ```text
-This experiment tests whether route assignment follows the feature whose expert
-has causal utility, rather than the easier token or frequency shortcut.
+This experiment tests whether the measured effect is caused by the proposed
+mechanism, rather than by a simpler shortcut or confound in the setup.
 ```
 
 ## Anchor Backfill

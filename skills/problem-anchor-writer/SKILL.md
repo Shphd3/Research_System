@@ -17,16 +17,9 @@ It is not a run log and not a standalone execution plan. It is the bridge:
 research intuition -> physical prior -> mathematical model -> computational realization
 ```
 
-Use `docs/examples/example.md` as the compact default structure. For the
-current MoE specialization line, use the slot-context dominance anchor as the
-stronger local style reference:
-
-```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
-```
-
-When a longer historical style reference is needed, use
-`docs/examples/problem_attention_gated_low_level_matching.md`.
+Use `docs/examples/example.md` as the compact default structure. Project-local
+anchors can be used as style references only after checking that their domain
+terms do not leak into a new problem.
 
 After updating an active project anchor, copy it to the categorized root sync
 anchor path when the project defines one, for example:
@@ -53,26 +46,37 @@ Do not start from architecture, metrics, or scripts. First define:
 - the computational test implied by the math.
 
 Physical priors are the most important section. A physical prior is not a vague
-preference for an architecture; it is an assumption about the structure of the
-task, representation, memory, routing signal, or causal utility that could be
-wrong and that constrains both the math and implementation.
+preference for a method or architecture. It is a refutable assumption about the
+structure of the problem, data-generating process, representation, mechanism,
+environment, objective, or intervention that constrains both the math and
+implementation.
 
-For gating and expert-specialization anchors, prefer the slot-context dominance
-style:
+Each physical prior must satisfy four requirements:
+
+1. Real-world meaning: it says something concrete about the task, data,
+   system, environment, representation, mechanism, intervention, or objective.
+2. Refutability: it can be wrong, and the anchor names what evidence would
+   weaken or redirect it.
+3. Mathematical constraint: it maps to objects, variables, relations, or
+   observables in the model.
+4. Implementation constraint: it determines what data, intervention, metric,
+   artifact, or control the experiment must use.
+
+For mechanism-centered anchors, use this general pattern:
 
 - state one narrow decision question before any implementation detail;
 - write what the anchor does not solve;
 - express the physical prior as a refutable causal/mechanistic condition;
-- connect representation visibility, router assignment, and expert utility;
+- connect the observable signal, intervention, and claimed mechanism;
 - name the rival explanation explicitly;
-- make assignment-utility agreement the primary judgment when specialization is
-  the claim.
+- make the primary metric test the claimed mechanism, not just a convenient
+  proxy, whenever that mechanism can be measured or intervened on.
 
 If the active mainline is unstable, do not create a separate hypothesis purpose
 card. First write or update the anchor at the project-specific anchor path:
 
 ```text
-Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
+Projects/<project>/<mainline>/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
 ```
 
@@ -91,10 +95,10 @@ three to five terms. For each term, write one line:
 term: success / failure / ambiguous or insufficient evidence
 ```
 
-Use this to keep intuitive words such as `stable`, `specialized`,
-`causal utility`, `aligned`, `consistent`, or `shortcut` from becoming
-unmeasured claims. Put long threshold details, diagnostics, and examples in the
-execution plan or `detailed.md`, not in the anchor.
+Use this to keep intuitive words such as `stable`, `specific`, `causal`,
+`aligned`, `consistent`, `robust`, or `shortcut` from becoming unmeasured
+claims. Put long threshold details, diagnostics, and examples in the execution
+plan or `detailed.md`, not in the anchor.
 
 ## Required Structure
 
@@ -109,17 +113,13 @@ parent_node: <parent_problem_or_graph_node>
 
 ## 汇报前 Summary
 
-父问题：
+问题：
 
-当前子问题：
+假设：
 
-为什么要问这个问题：
+证据入口：
 
-决策问题：
-
-任务构造：
-
-当前结果 / 预期结果：
+当前判断：
 
 结论边界：
 
@@ -151,12 +151,19 @@ problem meaningful.
 Each prior should have real content. Avoid empty claims such as "the model
 should learn useful features."
 
-For example, a KV-index prior could be:
+Check each prior against the four requirements:
+
+1. real-world meaning;
+2. refutability;
+3. mathematical constraint;
+4. implementation constraint.
+
+For example, a general prior could be:
 
 ```text
-Language hidden states are not a flat unstructured memory. They contain
-semantic or functional neighborhoods that can be partitioned into smaller
-candidate sets before exact attention.
+The target system is not fully explained by a single global statistic. It has
+condition-dependent structure that should appear in a measurable variable and
+change predictably under a controlled intervention.
 ```
 
 ## 3. Motivation And Mechanism
@@ -272,8 +279,11 @@ primary observable, claim boundary, and next decision. Keep the audit details in
   `Claim Boundary And Next Decision`.
 - `汇报前 Summary` / `Reporting Summary` is a short front summary for meeting or
   collaborator reading. It should be concise, written in Chinese by default for
-  this research system, and should not replace the full anchor sections; it
-  compresses them.
+  this research system, and should not replace the full anchor sections. Its
+  job is to let the advisor understand the work in about 60 seconds: problem,
+  hypothesis, evidence entry point, current judgment, boundary, and next step.
+  The evidence entry point should be either one key figure or a 2-3 sentence
+  description of the minimal experiment.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not

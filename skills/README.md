@@ -14,7 +14,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
 | Skill | Use |
 |---|---|
-| `research-mainline` | Maintain compact project graph, anchors, sync closures, and result routing. |
+| `research-mainline` | Maintain compact project graph, anchors, sync closures, and result organization. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Write unified anchor/purpose-card documents from boundary and physical priors to math, implementation, evidence, and next decision. |
 | `experiment-card-writer` | Write operational experiment execution plans from anchors. |
@@ -73,14 +73,13 @@ The anchor should link the experiment `summary.md`, `detailed.md`, key figures,
 and sync closure when needed. If the project uses root anchor copies, update the
 root copy in the same turn and verify that it matches the source anchor.
 
-Anchors belong in project anchor folders such as
-`main_specialization/problem_anchors/` or `main/problem_anchors/`; execution
-plans and result evidence belong in `experiments/`.
+Anchors belong in the project mainline's `problem_anchors/` directory;
+execution plans and result evidence belong in `experiments/`.
 
 Default one-to-one mapping:
 
 ```text
-Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
+Projects/<project>/<mainline>/problem_anchors/<anchor_id>.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 ```
 

@@ -32,14 +32,6 @@ Projects/<project>/
         figures/
 ```
 
-For `kv_cache`, the specialization mainline uses:
-
-```text
-Projects/kv_cache/research/graph.yaml
-Projects/kv_cache/main_specialization/
-Projects/kv_cache/main_specialization/problem_anchors/
-```
-
 Optional project support surfaces:
 
 ```text
@@ -69,6 +61,8 @@ thin; Markdown files hold the thick reasoning.
 This is the living reasoning layer and the unified purpose-card layer. Each
 anchor should define:
 
+- a short reporting summary for the advisor: problem, hypothesis, evidence
+  entry point, current judgment, boundary, and next step;
 - problem definition;
 - compact operational definitions for decision-critical terms;
 - physical priors;
@@ -77,6 +71,9 @@ anchor should define:
 - minimal falsifiable test;
 - current evidence;
 - claim boundary and next decision.
+
+Each physical prior should satisfy four requirements: real-world meaning,
+refutability, mathematical constraint, and implementation constraint.
 
 Update an anchor when experiments change the physical prior, mathematical
 object, computational test, interpretation, claim boundary, or next decision.
@@ -115,10 +112,11 @@ of the old hypothesis closure inside the experiment folder. It must link the
 anchor and state observation, interpretation, limitation, claim update, key
 figures, and next decision. It is the first reading path after a result exists.
 
-`detailed.md` is the complete experiment record. It stores the full setup, data
-construction, model/training/eval details, conditions, seeds, command records,
-job ids, longer tables, key figures, failed or partial runs, artifact maps, and
-supporting analysis. It must start with:
+`detailed.md` is the complete experiment record. It stores the full setup, data,
+material, or case construction, system/procedure/evaluation details,
+conditions, seeds or replicates when relevant, command records, job ids, longer
+tables, key figures, failed or partial runs, artifact maps, and supporting
+analysis. It must start with:
 
 ```markdown
 ## 0. Quick Recap

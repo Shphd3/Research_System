@@ -9,10 +9,9 @@ Use this skill to connect Codex with the local Thinking Sidecar app. The app is 
 
 ## Start Or Find The App
 
-For `Projects/from-attention-to-search`, use the project helper:
+If the project provides a Sidecar helper script, use it from that project root:
 
 ```bash
-cd Projects/from-attention-to-search
 scripts/open_sidecar.sh
 ```
 

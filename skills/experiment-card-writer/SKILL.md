@@ -20,16 +20,11 @@ Language rule: execution plans should be written in Chinese by default. Keep
 English only for metric names, code identifiers, experiment IDs, paths, quoted
 terms, and established technical labels where translation would reduce clarity.
 
-For the current MoE specialization line, use this plan as the local style
-reference for pre-run execution plans:
-
-```text
-Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/execution_plan.md
-```
-
-Its important pattern is: decision question first, primary hypothesis and rival
-explanation second, then data construction, controlled conditions, primary
-metric, decision rules, and a minimal report table.
+Use this general pattern for pre-run execution plans: decision question first,
+primary hypothesis and rival explanation second, then material or case
+construction, controlled conditions, primary metric, decision rules, and a
+minimal report table. Project-local plans can be used as style references only
+after removing domain-specific assumptions.
 
 ## Location Rule
 
@@ -38,7 +33,7 @@ Do not write a separate `hypotheses/<id>/purpose_card.md`.
 Use the anchor as the purpose card:
 
 ```text
-Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
+Projects/<project>/<mainline>/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
 ```
 
@@ -59,7 +54,7 @@ states what the experiment is trying to decide.
 Default mapping:
 
 ```text
-one anchor -> one primary experiment folder or one gated experiment line
+one anchor -> one primary experiment folder or one staged experiment line
 ```
 
 Multi-stage experiments are allowed, but every stage must link back to the
@@ -122,9 +117,9 @@ Anchor:
 
 ## 1. Run Goal
 
-## 2. Data Construction
+## 2. Data / Material / Case Construction
 
-## 3. Model / Training / Evaluation Setup
+## 3. System / Procedure / Evaluation Setup
 
 ## 4. Configs And Commands
 
@@ -206,11 +201,12 @@ Supports:
 
 `detailed.md` is the complete experiment record and evidence version of the
 same research story, not a metric dump or timeline. It must include the full
-experiment details needed to audit or reproduce the result: data construction,
-conditions, model/training/eval setup, seeds, commands, job ids, artifact
-paths, curated tables, key figures, failed or partial runs when relevant, and
-interpretation. It must start with the quick recap and then expand the same
-logic through setup, evidence, interpretation, and links.
+experiment details needed to audit or reproduce the result: data, materials, or
+case construction; conditions; system/procedure/evaluation setup; seeds or
+replicates when relevant; commands, job ids, artifact paths, curated tables,
+key figures, failed or partial runs when relevant, and interpretation. It must
+start with the quick recap and then expand the same logic through setup,
+evidence, interpretation, and links.
 
 ```markdown
 # Detailed Result: <experiment_id>
@@ -331,17 +327,18 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - A plan should be organized around the decision it can change, not around
   scripts. Start with the decision question and rival explanation before run
   conditions.
-- For specialization experiments, route-alignment metrics are supporting
-  evidence. The primary metric should test whether route assignment agrees with
-  expert causal utility whenever that utility can be measured.
+- Proxy-alignment metrics are supporting evidence. The primary metric should
+  test the claimed mechanism or decision-relevant effect whenever it can be
+  measured or intervened on.
 - Every required condition must have a purpose column or sentence explaining
   which rival explanation it distinguishes.
 - Multi-stage experiments must include a compact stage audit. Do not trust a
   final metric unless the plan names the stage-local evidence that can explain
   success, failure, or uncertainty.
 - Nontrivial algorithm stages must have an exact algorithm specification before
-  running. Do not treat words like `cluster`, `match`, `stable`, `aligned`, or
-  `valid` as an algorithm.
+  running. Do not treat broad words like `group`, `match`, `stable`, `aligned`,
+  `valid`, `filter`, or `score` as an algorithm until the exact computation is
+  written.
 - Include a minimal report table before the run when the result should be
   meeting-facing or collaborator-facing.
 - Fewer, sharper experiments are preferred over many shallow runs.
