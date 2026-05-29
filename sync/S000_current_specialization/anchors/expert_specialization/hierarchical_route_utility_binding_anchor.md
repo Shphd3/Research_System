@@ -47,7 +47,8 @@ Edge-side MoE swapping needs feature-level expert specialization: common/shared 
 已有结果 2：uniform 64-B active-compute-matched 对照中，common_flat 平均优于 flat_top1；但 hierarchical_common 没有稳定超过 common_flat。
 已有结果 3：random-init 对照中，NTP 仍能学会 target，但 route-slot NMI 明显下降；高 Assign-Utility 可以由 utility-best path collapse 产生，不等于形成清晰 slot experts。
 已有结果 4：linear FFN/KV toy 支持 frequency-induced head-feature anisotropy；Zipf-normal 先学 head unique feature，tail error 被拉高，inverse-frequency reweight 能把谱和 head/tail error 拉回 uniform 附近。
-当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案；更小的上游机制应写成 common/head-frequency component dominance，而不是直接写成 H-MoE works。
+已有结果 5：linear FFN spectral decomposition 显示 Zipf tail failure 主要是 tail component 没写进 $W$；remove-top / W_low 只带来很小 tail 改善，P_tail_key W P_tail_value 明显弱。
+当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案；更小的上游机制应写成 frequency-driven head write-in / tail write-in failure，而不是直接写成 H-MoE works。
 ```
 
 结论边界：
@@ -62,7 +63,8 @@ Edge-side MoE swapping needs feature-level expert specialization: common/shared 
 ```text
 先不要继续加 hierarchy 深度。
 下一步应先做 router-factor attribution：区分 common component、head-frequency unique component、B identity、slot/target feature 到底哪个在控制 routing logits。
-只有确认 router 主要被 common component 控制时，common-residual leaf router 才是最直接干预；如果主要被 head-frequency 控制，则应优先考虑 reweight 或 frequency-balanced diagnostic。
+同时要检查 rare/tail feature 是否进入 expert function；如果 tail component 根本没写进专家，单纯 remove-top/common-residual 不能解决。
+只有确认 router 主要被 common component 控制时，common-residual leaf router 才是最直接干预；如果主要是 head-frequency / tail-write-in failure，则应优先考虑 reweight、tail-write-in pressure 或 frequency-balanced diagnostic。
 ```
 
 ## 1. Problem Definition
@@ -359,7 +361,31 @@ Interpretation:
 ```text
 Frequency imbalance is sufficient to create head-feature dominant anisotropy in a minimal linear model.
 Inverse-frequency reweight removes most of this effect.
-However, Zipf-normal top direction aligns with head unique key/value more than common key/value, so this toy supports head-frequency dominance more directly than common-feature dominance.
+Top-1 was insufficient: subspace analysis shows common mode enters top-r subspace, while head unique directions enter earlier and stronger than tail.
+This supports a frequency-driven high-energy subspace allocation story, not a pure top-1 story.
+```
+
+Post-hoc spectral decomposition:
+
+```text
+Projects/from-attention-to-search/main/experiments/linear_ffn_spectral_feature_decomposition/summary.md
+Projects/from-attention-to-search/main/experiments/linear_ffn_spectral_feature_decomposition/detailed.md
+```
+
+Main result:
+
+| Condition | Head->Head Fro Ratio | Tail->Tail Fro Ratio | Head Own Unique MSE | Tail Own Unique MSE |
+|---|---:|---:|---:|---:|
+| uniform_normal | 0.0677 | 0.0666 | 0.00063 | 0.00064 |
+| zipf_normal | **0.2869** | **0.0219** | **0.00010** | **0.00254** |
+| zipf_reweight | 0.0676 | 0.0661 | 0.00062 | 0.00066 |
+
+Interpretation:
+
+```text
+Zipf-normal writes head feature strongly but tail feature weakly.
+W_low / remove_top does not significantly reduce tail error, so the stronger diagnosis is tail write-in failure rather than high-frequency value interference.
+Reweight restores the tail component.
 ```
 
 ## 7. Claim Boundary And Next Decision
@@ -385,5 +411,6 @@ Do not claim H-MoE has solved the gating problem.
 Keep common path as a candidate.
 Do not continue architecture depth before the factor attribution question is sharper.
 The next diagnostic should separate common component, head-frequency unique component, B identity, and slot/target feature in router inputs.
+Also check whether rare/tail features are written into expert functions at all before attributing failure to route-time interference.
 If testing true hierarchy later, explicitly set root group to B-family/B-cluster and leaf to slot; merely increasing hierarchy depth is not enough.
 ```
