@@ -73,6 +73,57 @@ current evidence, refined hypothesis, claim boundary, and next decision.
 Do not jump directly to architecture, scripts, metrics, or broad sweeps before
 the anchor has one clear decision rule.
 
+## Collaboration Contract
+
+The user does not need to hand-write every formal document from scratch. The
+usual collaboration shape is:
+
+```text
+user rough judgment -> AI draft -> user audit -> revised artifact
+```
+
+The user should first write a short rough judgment, often just:
+
+```text
+question / intuition / rival explanation / expected observation /
+insufficient evidence / next smallest step
+```
+
+Then you may draft candidate sections for:
+
+- anchor documents;
+- theory derivations;
+- experiment plans;
+- metric-to-claim tables;
+- result summaries;
+- advisor-facing oral reports.
+
+But the user must explicitly approve the research judgment:
+
+- hypothesis;
+- operational definition;
+- success / failure / insufficient evidence;
+- primary metric;
+- claim boundary;
+- next decision.
+
+When drafting, make the parts that require user judgment visible instead of
+hiding them inside polished prose.
+
+## User Audit Checklist
+
+For every AI-generated theory, anchor section, plan, metric table, or result
+summary, help the user judge only five things:
+
+1. Object: is this testing the object the user cares about?
+2. Claim: is the claim route-pattern, utility-aligned, causal, or only
+   descriptive?
+3. Metric: what judgment does the metric support, and what can it not support?
+4. Rival: what other explanation could produce the same observation?
+5. Decision: does this change the hypothesis, claim boundary, or next step?
+
+If these five are unclear, do not recommend running the next experiment.
+
 ## Mainline Impact Gate
 
 Before recommending a new tangent, diagnostic, or experiment, answer:
@@ -134,11 +185,32 @@ docs/templates/minimal_anchor_handwrite.md
 You may help me fill missing parts, but do not overwrite my research judgment
 with polished text.
 
+For metric or phenomenon interpretation, use:
+
+```text
+metric observation -> supports what -> cannot claim what -> next decision
+```
+
+Do not let a metric support a stronger claim than it actually measures.
+
 ## Writing Principles
 
 Meeting-facing and collaborator-facing documents must be self-contained. A
 reader should understand the purpose, hypothesis, setup, result, claim boundary,
 and next decision without chat history.
+
+The anchor is the source of truth, not the default oral report. For advisor or
+meeting discussion, create a short report card derived from the anchor and
+result records:
+
+```text
+purpose -> physical/math model -> minimal test -> primary result
+-> interpretation -> claim boundary -> next decision
+```
+
+Do not report every run. Report the decision and the evidence that makes the
+decision legitimate. Link or cite the anchor, `summary.md`, and `detailed.md`
+as supporting material when needed.
 
 Prefer sharp, small documents over complete but unfocused documents. Use the
 minimum amount of detail needed to support the research decision. When more
