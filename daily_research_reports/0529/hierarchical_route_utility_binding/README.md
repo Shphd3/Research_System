@@ -1,11 +1,11 @@
-# 0529 Hierarchical Route-Utility Binding
+# 0529 Mainline Update: From Hierarchy To Factor Attribution
 
 Use these files in order:
 
-1. `summary.md` - fastest reading path and main conclusion.
-2. `detailed.md` - full audit record with data, model, metrics, figures, and artifact map.
-3. `sync_report.md` - meeting-facing short report.
-4. `anchor.md` - current problem anchor and claim boundary.
+1. `anchor.md` - latest clarified anchor: hierarchy is now evidence; the active question is NTP factor attribution and tail write-in.
+2. `summary.md` - fastest reading path for the hierarchy experiment result.
+3. `detailed.md` - full audit record with data, model, metrics, figures, and artifact map.
+4. `sync_report.md` - meeting-facing short report.
 
 Key figures:
 

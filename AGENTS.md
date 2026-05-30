@@ -85,7 +85,8 @@ Each anchor should define:
 - claim boundary and next decision.
 
 After evidence exists, update the same anchor. Long result explanation belongs
-in a sync closure.
+in `detailed.md`; optional handoff reports package already-updated evidence for
+meeting or collaborator use.
 
 ## Anchor Sync Copy Rule
 
@@ -115,30 +116,45 @@ ending the task.
 Default shape:
 
 ```text
-one anchor -> one minimal decisive experiment -> summary closure -> detailed record -> sync report -> anchor/graph update
+one anchor -> one minimal decisive experiment -> summary.md -> detailed.md -> anchor update -> root anchor copy -> optional handoff report
 ```
 
-`summary.md`承接旧 closure 的作用：它是实验完成后的第一阅读入口，必须
+`summary.md` 是实验完成后的第一阅读入口，必须
 self-contained 地给出目的、问题/假设、结论、关键证据、结论边界和下一步。
-普通实验结果不再另写独立 hypothesis closure。
 
 `detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
 seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
 和 claim boundary。
 
 如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
-`summary.md`、`detailed.md` 和相关 sync report 中嵌入。只列路径不嵌图是不完整的。
+`summary.md`、`detailed.md` 和可选 handoff report 中嵌入。只列路径不嵌图是不完整的。
 
 Do not jump directly to architecture, scripts, or metrics before the anchor is
 clear. Avoid broad sweeps before the first anchor decision is closed. Add
 ablations, seeds, or diagnostics only when they distinguish a named rival
 explanation or protect the validity of the primary conclusion.
 
-## Sync Closure Rule
+Before pursuing a new observation, idea, diagnostic, or AI-suggested tangent,
+apply the mainline impact gate:
 
-Post-result sync is now an anchor-based collaborator report. The experiment
-`summary.md` carries the closure role; the sync report packages that closure for
-meeting or handoff use.
+```text
+Mainline impact:
+- affects hypothesis? yes/no/unclear
+- affects claim boundary? yes/no/unclear
+- affects next decision? yes/no/unclear
+- recommendation: pursue / park / ignore
+```
+
+If the user has not thought it through, help clarify the rival explanations and
+the smallest test or reason to park it. Do not turn an unclear tangent into a
+new experiment before this gate is passed.
+
+## Handoff Report Rule
+
+Post-result handoff is optional. The anchor is the current-state research
+document, `summary.md` is the first result reading path, and `detailed.md` is
+the full iteration ledger. A handoff report only packages those updated sources
+for meeting, collaborator, or web-side use.
 
 Default location:
 
@@ -147,15 +163,13 @@ Projects/<project>/<worker>/sync/MMDD_topic/report.md
 Projects/<project>/sync/MMDD_topic/report.md
 ```
 
-A sync closure must be self-contained and include:
+A handoff report must be self-contained and include:
 
 ```text
-Oral Report Card - Fill Before Meeting
-目的 / 问题 / 结论 / 证据
-
-Evidence-backed sync closure
-Anchor / 目的 / 物理先验 / 数学建模 / 计算实现 / 实验设置 /
-结果 / 解释 / 结论边界 / 下一步决策 / Artifact-Repro Map
+Anchor / Summary / Detailed
+Oral Report Card
+目的 / 物理建模或假设 / 最小实验 / 结论 / 证据 / 结论边界 / 下一步
+Artifact-Repro Map
 ```
 
 The artifact map must include code workspace, runner, config, data/manifest,
@@ -170,28 +184,38 @@ interpretation.
 Use the project graph as the navigation layer and Markdown anchors as the
 reasoning layer. Keep the graph thin and the notes thick.
 
+Before changing an existing `graph.yaml`, first discuss the proposed research
+state change with the user and get confirmation, unless the user explicitly
+requested that exact graph edit in the current turn. The graph records the
+user's research-center judgment; it is not an automatic cleanup target.
+
 Graph nodes should point to anchors, roadmap entries, experiment summaries,
-sync closures, reading notes, and reusable outputs. The graph does not replace
-anchors or sync closures.
+detailed records, optional handoff reports, reading notes, and reusable outputs.
+The graph does not replace anchors, summaries, detailed records, or handoff
+reports.
 
 ## Local Skill Use
 
 For research organization work inside `Research_System`, always read this file
 first. Then use local skills from `skills/` when the task type matches:
 
+- `research-progress-core`: apply the general research-progress paradigm before
+  artifact writing: hypothesis, operational definition, minimal test, metric +
+  visual evidence, failure analysis, and refined hypothesis.
 - `problem-anchor-writer`: write or update anchor / purpose-card documents.
 - `experiment-card-writer`: write operational execution plans from anchors.
-- `sync-closure-writer`: write anchor-based sync closures after evidence.
+- `handoff-report-writer`: write optional meeting/collaborator/web handoff
+  reports after anchor, `summary.md`, and `detailed.md` are updated.
 - `remote-experiment-workflow`: remote/container/SCO/ACP workflow and artifact
   maps.
 - `research-mainline`: maintain graph, anchors, roadmap, and root sync state.
 - `research-graph-sop`: maintain a thin Sidecar-readable graph.
 - `sidecar-thinking`: bridge to the local Sidecar app.
 - `scholar-mode`: clarify unstable research intuitions before artifacts.
-- `paper-reading-card`: write compact paper/blog reading cards.
 
 Writing-explanatory-report principles are no longer a separate skill; apply
-them inside anchors, experiment summaries, and sync closures:
+them inside anchors, experiment summaries, detailed records, and handoff
+reports:
 
 - write decision reports, not timelines;
 - explain what each important metric answers and cannot prove;
@@ -221,9 +245,9 @@ sync/S000_current_specialization/
 
 ## Execution Boundary
 
-Local `Research_System` owns research-process artifacts: graph, anchors, sync
-closures, daily cards, meeting materials, paper notes, curated evidence, claim
-boundaries, and next decisions.
+Local `Research_System` owns research-process artifacts: graph, anchors,
+summary/detailed result records, optional handoff reports, daily cards, meeting
+materials, curated evidence, claim boundaries, and next decisions.
 
 Remote/container workspaces own experiment code edits, debugging, smoke/full
 runs, result analysis, figures/tables, raw outputs, checkpoints, logs, and
@@ -234,7 +258,7 @@ as the default local workflow. SSH/SCP is allowed only for explicit small
 status checks, emergency recovery, port forwarding, or small artifact recovery.
 
 Promote only curated summaries, report-ready figures, small tables, artifact
-maps, anchor updates, and sync closures into Git. Keep raw outputs,
+maps, anchor updates, detailed records, and handoff reports into Git. Keep raw outputs,
 checkpoints, datasets, full run directories, and unfiltered logs out of
 research mainline paths.
 

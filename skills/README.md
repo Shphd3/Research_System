@@ -14,13 +14,13 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
 | Skill | Use |
 |---|---|
-| `research-mainline` | Maintain compact project graph, anchors, sync closures, and result organization. |
+| `research-progress-core` | Governing research paradigm: hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
+| `research-mainline` | Maintain compact project graph, anchors, result records, root sync anchors, and project organization. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Write unified anchor/purpose-card documents from boundary and physical priors to math, implementation, evidence, and next decision. |
 | `experiment-card-writer` | Write operational experiment execution plans from anchors. |
-| `sync-closure-writer` | Write anchor-based sync closures after evidence exists. |
+| `handoff-report-writer` | Write optional meeting/collaborator/web handoff reports after anchor, summary, and detailed records are updated. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
-| `paper-reading-card` | Turn papers or blogs into compact reading cards. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
 
@@ -30,10 +30,11 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 
 | Layer | Skill | Owns | Does not own |
 |---|---|---|---|
+| Research paradigm | `research-progress-core` | What counts as research progress: hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Purpose, hypothesis, physical priors, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
 | Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
-| Post-run sync | `sync-closure-writer` | Evidence-backed sync closure from an already updated anchor and experiment reports. | Raw metric dump or first-pass result analysis. |
+| External handoff | `handoff-report-writer` | Optional self-contained report for meeting, collaborator, or web-side handoff after anchor and result records are updated. | Replacing anchor, `summary.md`, or `detailed.md`. |
 | Mainline | `research-mainline` | Project graph, anchors, roadmap, sync anchors. | Raw logs or remote job operation. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
 
@@ -41,22 +42,32 @@ Current consolidation decision:
 
 ```text
 Remote workflow skills are merged. Purpose cards and hypotheses are unified
-into anchors. Post-result closures are sync closures based on anchors.
+into anchors. Post-result closure happens in the updated anchor and required
+`summary.md` / `detailed.md`; handoff reports are optional external packages.
+Research progress is governed by research-progress-core; the other skills are
+artifact writers or local adapters.
 ```
 
 ## Research Paradigm
 
-Default project loop:
+Default short research loop:
 
 ```text
-anchor -> execution plan -> summary closure -> detailed record -> anchor/graph update -> root anchor copy -> sync report
+hypothesis -> operational definition -> minimal test
+-> metric + visual evidence -> failure analysis -> refined hypothesis
 ```
 
-`summary.md` carries the old closure role inside the experiment folder. It is
-the first post-result reading path and must state the purpose, hypothesis or
-question, conclusion, key evidence, claim boundary, and next decision.
+Default project artifact loop:
 
-`detailed.md` is the complete experiment record. It must preserve the full
+```text
+anchor -> execution plan -> summary.md -> detailed.md -> anchor update -> root anchor copy -> optional handoff report
+```
+
+`summary.md` is required. It is the first post-result reading path and must
+state the purpose, hypothesis or question, conclusion, key evidence, claim
+boundary, and next decision.
+
+`detailed.md` is required. It is the complete experiment record. It must preserve the full
 setup, conditions, seeds, commands, job ids, curated tables, important figures,
 artifact map, failed or partial runs when relevant, and the evidence walkthrough.
 
@@ -70,8 +81,9 @@ Result Documents
 ```
 
 The anchor should link the experiment `summary.md`, `detailed.md`, key figures,
-and sync closure when needed. If the project uses root anchor copies, update the
-root copy in the same turn and verify that it matches the source anchor.
+and optional handoff report when needed. If the project uses root anchor copies,
+update the root copy in the same turn and verify that it matches the source
+anchor.
 
 Anchors belong in the project mainline's `problem_anchors/` directory;
 execution plans and result evidence belong in `experiments/`.
@@ -127,18 +139,22 @@ Anchors must include:
 - expected outcomes and hypothesis-update logic;
 - claim boundary.
 
+For nontrivial research work, the artifact loop is incomplete unless it also
+records stage-level evidence, the failure interpretation for each important
+stage, whether a result falsifies the physical prior or only one
+operationalization, and the next uncertainty to isolate.
+
 ## Project Support Surfaces
 
 - `Projects/<project>/sync/`: daily collaborator-facing sync of shareable
   results, boundaries, and handoffs.
 - `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
   collaborator sync folder; the reporting document lives inside this folder.
-  Experiment sync should use the closure-like structure `目的 / 假设 / 数学建模 /
-  实验设置 / 结论 / 证据 / 结论边界 / 下一步决策 / 结果文档`, and must include a compact
-  artifact / repro map: code, runner, config, data or manifest, result folder,
-  figure folder, key files, checkpoints/logs, and repro command.
+  Handoff reports should use a compact self-contained structure and must include
+  a compact artifact / repro map: code, runner, config, data or manifest, result
+  folder, figure folder, key files, checkpoints/logs, and repro command.
 - `Projects/<project>/<worker>/docs/`: named material documents that help write
-  anchors and sync closures.
+  anchors, result records, and handoff reports.
 - `graph.yaml`: default thin research graph. Use `research-graph-sop`; keep
   graph structure lightweight and store reasoning in Markdown anchors and notes.
 - `sync/<sync_id>/anchors/<category>/<anchor_id>.md`: categorized root copy of
@@ -149,7 +165,7 @@ Anchors must include:
 Experiment result reports and collaborator sync must include the most important
 report-ready figure(s) when figures exist and are central evidence. Copy them
 into the local `figures/` folder and embed them in `summary.md`, `detailed.md`,
-and the sync `report.md` when applicable. Each figure needs a nearby sentence
+and the optional handoff `report.md` when applicable. Each figure needs a nearby sentence
 explaining what it supports. Do not make the reader infer the result from a dry
 metric list.
 

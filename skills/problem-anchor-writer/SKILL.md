@@ -11,6 +11,21 @@ Use this skill to write or update the anchor. The anchor is now the unified
 purpose card: it replaces separate hypothesis purpose cards as the main
 pre-run and post-run reasoning artifact.
 
+First apply `research-progress-core`. The anchor is the current-state document
+for that core loop: hypothesis, operational definitions, physical priors,
+mathematical model, minimal falsifiable test, current evidence, refined
+hypothesis, claim boundary, and next uncertainty. If those elements are not
+available, say which element is missing before writing a polished anchor.
+
+The full implementation contract belongs in the execution plan or runbook. The
+anchor should state only the implementation implication needed to understand
+the minimal test.
+
+Anchor filenames should describe a stable research question or hypothesis line,
+not a date, seed, smoke run, or one failed operationalization. Use
+`<mechanism_or_question>_anchor.md` unless the project already has a clearer
+local convention.
+
 It is not a run log and not a standalone execution plan. It is the bridge:
 
 ```text
@@ -20,6 +35,11 @@ research intuition -> physical prior -> mathematical model -> computational real
 Use `docs/examples/example.md` as the compact default structure. Project-local
 anchors can be used as style references only after checking that their domain
 terms do not leak into a new problem.
+
+For hand-written first drafts, use
+`templates/minimal_anchor_handwrite.md`. The hand-written draft is allowed to
+be rough; its purpose is to expose the user's thinking before AI polishes the
+anchor.
 
 After updating an active project anchor, copy it to the categorized root sync
 anchor path when the project defines one, for example:
@@ -92,7 +112,7 @@ For a new anchor, define only the terms that control the decision, usually
 three to five terms. For each term, write one line:
 
 ```text
-term: success / failure / ambiguous or insufficient evidence
+term: success / failure / insufficient evidence
 ```
 
 Use this to keep intuitive words such as `stable`, `specific`, `causal`,
@@ -111,19 +131,21 @@ parent_node: <parent_problem_or_graph_node>
 
 # <Problem Anchor Title>
 
-## 汇报前 Summary
+## Report Summary（中文，汇报用）
 
-问题：
+目的：
 
-假设：
+物理建模 / 假设：
 
-证据入口：
+最小实验：
 
-当前判断：
+当前结论：
 
 结论边界：
 
 下一步：
+
+Keep this section short. It is for oral reporting, not for full reasoning.
 
 ## 1. Problem Definition
 
@@ -140,7 +162,7 @@ What is outside the boundary?
 Operational definitions, only for decision-critical terms:
 
 ```text
-term: success / failure / ambiguous or insufficient evidence
+term: success / failure / insufficient evidence
 ```
 
 ## 2. Physical Priors
@@ -191,17 +213,17 @@ Include:
 
 ## 5. Computational Realization
 
-Translate the mathematical model into implementation terms:
+Translate the mathematical model into compact implementation implications:
 
 - data construction;
 - model components;
 - intervention or control;
-- algorithm / runner;
 - measured observables;
 - artifact outputs.
 
-Every implementation choice should trace back to a mathematical object or
-assumption.
+Do not put the full implementation contract here. Exact inputs, parameters,
+algorithm steps, pass/fail checks, commands, and debug artifacts belong in the
+execution plan.
 
 ## 6. Minimal Decisive Test
 
@@ -245,7 +267,7 @@ Next smallest decision:
 ## Post-Result Update
 
 After an experiment or analysis finishes, update the same anchor rather than
-creating a new hypothesis closure. Backfill:
+creating a separate closure document. Backfill:
 
 - direct observation;
 - interpretation;
@@ -254,20 +276,25 @@ creating a new hypothesis closure. Backfill:
 - whether the physical prior is supported, weakened, redirected, or still open;
 - what cannot be claimed;
 - next decision;
-- links to sync closure, figures, tables, code/config, and result directories.
+- links to `summary.md`, `detailed.md`, optional handoff report, figures,
+  tables, code/config, and result directories.
 
-Long evidence belongs in a sync closure or experiment detailed report. The
-anchor keeps the research question and claim boundary alive.
+Long evidence belongs in `detailed.md`. The anchor keeps the current
+hypothesis, evidence update, refined hypothesis, claim boundary, and next
+decision alive.
 
 If repeated reasonable operationalizations fail and a goal / metric audit
 changes the downstream decision, update only the anchor's decision question,
 primary observable, claim boundary, and next decision. Keep the audit details in
-`detailed.md` or a sync closure.
+`detailed.md` or an optional handoff report.
 
 ## Writing Standards
 
+- Follow the `research-progress-core` communication rule: use simple language,
+  name the concrete object / variable / metric / stage / artifact / decision,
+  and do not use polished prose to hide an unclear idea.
 - Write in the language requested by the user. If no language is requested, use
-  English for the anchor document and Chinese for the discussion summary.
+  English for the anchor document and Chinese only for `Report Summary（中文，汇报用）`.
 - Define terms before using abbreviations.
 - Keep the document self-contained.
 - Prefer one precise subproblem over a broad umbrella question.
@@ -277,13 +304,10 @@ primary observable, claim boundary, and next decision. Keep the audit details in
   `Computational Realization`, `Minimal Falsifiable Test`,
   `Falsifiable Outcomes`, `Current Evidence`,
   `Claim Boundary And Next Decision`.
-- `汇报前 Summary` / `Reporting Summary` is a short front summary for meeting or
-  collaborator reading. It should be concise, written in Chinese by default for
-  this research system, and should not replace the full anchor sections. Its
-  job is to let the advisor understand the work in about 60 seconds: problem,
-  hypothesis, evidence entry point, current judgment, boundary, and next step.
-  The evidence entry point should be either one key figure or a 2-3 sentence
-  description of the minimal experiment.
+- `Report Summary（中文，汇报用）` is a short front summary. It should let the
+  advisor understand the work in about 60 seconds: purpose, physical
+  modeling/hypothesis, minimal experiment, current conclusion, boundary, and
+  next step. Do not make it a long mini-report.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not
@@ -297,5 +321,14 @@ primary observable, claim boundary, and next decision. Keep the audit details in
 - Use `experiment-card-writer` only for the operational execution plan after
   this anchor identifies the minimal decisive test.
 - After evidence exists, update the anchor from `summary.md` / `detailed.md`;
-  then use `sync-closure-writer` when a meeting or collaborator-facing closure
-  is needed.
+  then use `handoff-report-writer` only when a meeting, collaborator, or
+  web-side handoff package is needed.
+
+## Reference Delegation
+
+Do not duplicate long methodology rules inside the anchor. When needed, load
+the relevant `research-progress-core/references/` file:
+
+- `research_documentation.md` for current-state document vs iteration ledger;
+- `research_loop_checklist.md` for a quick anchor review;
+- `goal_audit.md` when repeated failures change the decision question or metric.

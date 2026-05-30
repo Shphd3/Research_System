@@ -1,324 +1,448 @@
 ---
 parent_node: problem.moe_expert_specialization
+source_anchor: Projects/from-attention-to-search/main/problem_anchors/ntp_zipf_feature_factorization_anchor/ntp_zipf_feature_factorization_anchor.md
+updated_from: hierarchical_route_utility_binding result + linear FFN Zipf evidence
 ---
 
-# Hierarchical Route-Utility Binding Under Compositional Features
+# NTP Factor Attribution And Tail Feature Write-In
 
-## Report Summary
+## 汇报前 Summary
 
-父问题：
+一句话结论：
 
 ```text
-Edge-side MoE swapping needs feature-level expert specialization: common/shared computation should be resident, and long-tail/unique computation should be dynamically routed.
+这次问题不应再表述成 “H-MoE / hierarchy 能不能解决 gating”，而应表述成：
+在 NTP 中，router 到底被哪个 factor 控制，以及真正决定 target 的 tail/slot feature 有没有写进 expert function。
 ```
 
-当前子问题：
+为什么要这样改：
 
 ```text
-在已有 multi-B slot-context synthetic 中，ordinary flat top-1 MoE 已经证明 slot 信息可见但 routing 不稳定。两级 Hierarchical Common-Unique MoE 是否能让 common/token-identity component 与 slot/unique predictive component 分开，从而恢复 route-utility binding？
+hierarchical_route_utility_binding 结果只说明 common path 有弱帮助；
+它没有证明两层 hierarchy 本身能稳定解决 route-utility binding。
+
+linear FFN / KV toy 进一步提示：
+Zipf 频率会让 head feature 更强写入，tail feature 写入不足；
+所以失败可能不只是 router 看错方向，也可能是 tail/slot function 根本没写进 expert。
 ```
 
-为什么要问这个问题：
+当前决策问题：
 
 ```text
-学长主线已经说明：Zipf feature 会诱导 hot/cold expert locality，load balance 会抹平这种 locality；H-MoE 在真实任务上保持建模能力并给出系统侧 swapping 收益。
-但这还没有证明 H-MoE 的 gating 真的解决了我们观察到的 multi-B route-function binding failure。
-导师建议：先试 hierarchical 方法，看原来的 gating 问题是否不存在；再用 uniform 数据集验证问题是否由 Zipf 引起。
+下一步不是继续加 hierarchy 深度，也不是直接做 Zipf stress。
+下一步应先做 NTP factor attribution + tail write-in diagnostic。
 ```
 
-决策问题：
+最小判断：
 
 ```text
-下一步应该继续调 flat router / context init，还是把研究线转向 hierarchical/common-residual gating 作为解决普通 top-1 routing failure 的核心机制？
-```
+如果 tail/slot feature 已经有 expert utility，但 router logits 被 common/head/B-identity 控制，
+则测试 common-residual / high-frequency-removed leaf router。
 
-任务构造：
-
-```text
-复用上次 multi-B slot-context setup：same B identity 在不同 slot 下有不同 target；slot/context feature 是 target 所需信息，B identity/common component 是干扰项。
-比较 flat MoE 与 two-level H-MoE / common-residual router。
-先跑 uniform 数据；若 uniform 已改善，再加 Zipf stress。
-```
-
-当前结果 / 预期结果：
-
-```text
-已有结果 1：multi-B 中 slot probe 和 oracle 都接近 1，但 flat top-1 learned routing 不能稳定绑定 slot 与 utility-best expert。
-已有结果 2：uniform 64-B active-compute-matched 对照中，common_flat 平均优于 flat_top1；但 hierarchical_common 没有稳定超过 common_flat。
-当前更新：common path 是值得保留的候选机制；两层 group/common hierarchy 本身还不能作为已支持的核心解决方案。
-```
-
-结论边界：
-
-```text
-这个 anchor 只判断 H-MoE/common-residual gating 是否解决受控 NTP synthetic 中的 route-function binding failure。
-它不能证明真实语料 feature-level specialization，也不能证明端侧系统收益；那些属于学长 story 已经部分覆盖、后续需要联合验证的部分。
-```
-
-下一步：
-
-```text
-先不要直接进入 Zipf。
-下一步应比较 common_flat 与 common_residual_leaf_router，并在 64-B / 256-B 两个压力档上看 Assign-Utility 与 slot-B route consistency 是否稳定改善。
+如果 tail/slot feature 本身没有写入 expert function，
+则优先做 reweight / tail-write-in pressure，而不是只改 router。
 ```
 
 ## 1. Problem Definition
 
-Broader question:
+父问题：
 
 ```text
-What is feature-level expert specialization, and how can MoE routing form it under NTP rather than merely route by token identity or load balance constraints?
+MoE router 如何在 NTP 中形成稳定、可解释、可复用的 feature-level expert specialization？
 ```
 
-Sharper question:
+当前更尖锐的子问题：
 
 ```text
-Does Hierarchical Common-Unique routing fix the failure where slot/context information is visible and useful, but flat top-1 routing does not bind that feature axis to utility-best experts?
+在受控 NTP synthetic 中，route-utility binding failure 到底来自 routing interference，
+还是来自 tail/slot feature write-in failure？
 ```
 
-What we do not need to do now:
+这里的核心对象不是 architecture，而是两个因果环节：
 
 ```text
-Do not prove full H-MoE deployment gain.
-Do not move immediately to real corpus.
-Do not treat expert load skew alone as specialization.
-Do not define specialization by surface token identity.
+feature -> expert function write-in -> expert utility
+feature -> router logit / selected route -> route assignment
+```
+
+只有两个环节都成立，才能叫 functional specialization。
+
+当前不解决：
+
+```text
+不证明真实语料 specialization。
+不证明端侧 swapping 收益。
+不证明 H-MoE 已经有效。
+不把 linear FFN toy 直接当作 Transformer/MoE 结论。
+不把 route NMI 或 Assign-Utility 单独当作 specialization。
 ```
 
 Operational definitions:
 
 ```text
-feature: a contextual predictive factor that changes next-token distribution.
-common component: high-frequency or token-identity/shared component that many samples use.
-unique/slot component: context-specific component needed to disambiguate target under same B identity.
-route-utility binding: selected expert/path is both aligned with feature and causally useful for that feature's prediction.
+feature: 会改变 next-token distribution 的受控生成因子。
+write-in: 某 feature 对应的 expert/path 对该 feature 预测有可测 causal utility。
+routing dominance: router logit 或 selected route 主要由某个 factor 解释。
+route-utility binding: route 与 feature 对齐，并且 route 选中的 expert/path 是 utility-best。
+tail-write-in failure: tail/slot feature 在 forced/ablation utility 中没有形成清楚 utility-best path。
+routing interference: tail/slot utility 存在，但 router 被 common/head/B-identity factor 带偏。
 ```
 
 ## 2. Physical Priors
 
+Prior 1: NTP hidden state 是组合表征。
+
 ```text
-1. NTP hidden state at a routed position is compositional: it contains token identity, context/slot feature, and other common predictive features.
-2. Feature frequency is often non-uniform and hierarchical, but even uniform multi-B can expose route-function binding failure.
-3. Ordinary flat top-1 routing can read a dominant component without guaranteeing that selected experts become functionally useful for the target-deciding feature.
-4. H-MoE is meaningful only if common/shared computation is separated from unique/leaf routing, not merely because it has more routers.
+B-position hidden state 不只含 slot，也含 B identity、family、common context、head/tail frequency 信息。
+因此 router 可能读到可预测但不是目标 feature 的 dominant component。
+```
+
+可被削弱的证据：
+
+```text
+factor attribution 显示 router logits 不能被这些 factor 解释，或者 slot factor 已经主导 routing。
+```
+
+Prior 2: frequency 会改变 function write-in。
+
+```text
+Zipfian feature 更频繁地产生梯度；head feature 可能更早、更强地写入参数，
+tail feature 即使在数据生成规则中重要，也可能没有形成足够强的 expert utility。
+```
+
+可被削弱的证据：
+
+```text
+Zipf 与 uniform 在 head/tail utility diagonal、forced loss、ablation utility 上没有差异；
+或 reweight 不能恢复 tail utility。
+```
+
+Prior 3: hierarchy 不是机制本身。
+
+```text
+多一层 router 只有在它把 common/head factor 与 slot/tail factor 分开时才有意义。
+如果 hierarchy 只是增加路径结构，而没有改变 router 看到的 causal factor，它不会稳定解决 binding。
+```
+
+可被削弱的证据：
+
+```text
+two-level hierarchy 在 matched compute、matched data、多个 seeds 下稳定提升 route-slot alignment 与 utility diagonal。
 ```
 
 ## 3. Mechanistic Motivation
 
-Previous anchor showed:
+已有证据形成的链条：
 
 ```text
-slot information is visible in h_B;
-oracle slot routing works;
-but learned flat routing is unstable in multi-B.
+slot-context NTP:
+  slot 信息可见，oracle routing 可行，但 learned top-1 routing 在 multi-B 下不稳定。
+
+hierarchical/common path:
+  common_flat 在 64-B uniform 下有弱帮助；
+  hierarchical_common 没有稳定超过 common_flat。
+
+linear FFN / KV toy:
+  Zipf 频率足以造成 head feature 强写入、tail feature underfit；
+  spectral decomposition 更支持 tail write-in failure，而不是简单 high-frequency value interference。
 ```
 
-This suggests the failure is not simply missing information. It may be a binding failure:
+因此当前不是问：
 
 ```text
-h_{i,s} = c_i + beta u_s + epsilon
+H-MoE 能不能 work？
 ```
 
-where `c_i` is B identity / common component and `u_s` is slot predictive component. Flat router sees both at once and may route by the wrong component or learn utility collapse.
-
-H-MoE hypothesis:
+而是问：
 
 ```text
-top/common path absorbs c_i / shared computation;
-leaf/group router is forced or biased to bind u_s to a smaller expert path;
-therefore route-feature alignment and forced expert utility should improve together.
+在 NTP MoE 里，tail/slot feature 是已经写进 expert 但 router 没选对，
+还是它根本没有被写进 expert function？
 ```
 
-Current evidence refines this hypothesis:
+这一区分决定下一步方法：
 
 ```text
-common path may help, but adding a second routing level does not by itself guarantee route-utility binding.
-The next sharper mechanism is not "hierarchy is enough"; it is "leaf router should see a representation where common/B-identity directions are removed or softened."
+routing interference -> 改 router input / remove common-head subspace / common-residual leaf router。
+tail write-in failure -> 改 training pressure / reweight / auxiliary tail write-in objective。
 ```
 
 ## 4. Mathematical Modeling
 
-Flat routing:
+令一个受控样本的 factor 为：
 
 $$
-r = \arg\max_e W_e h_{i,s}, \qquad h_{i,s}=c_i+\beta u_s+\epsilon.
+z=(c,g,i,s)
 $$
 
-H-MoE / common-unique routing:
+其中：
 
 $$
-y = f_{common}(h) + f_{leaf, r_s}(h),
+c=\text{common factor},\quad
+g=\text{B-family factor},\quad
+i=\text{B identity / unique factor},\quad
+s=\text{slot / target-deciding factor}.
 $$
 
-with either:
+B-position hidden state 写成：
 
 $$
-r_s = \arg\max_j R_j h
+h_{g,i,s}=a_c c+a_g g+a_i b_i+a_s u_s+\epsilon.
 $$
 
-or a common-residual variant:
+router logits：
 
 $$
-h_{res}=h-P_{common}(h), \qquad r_s=\arg\max_j R_j h_{res}.
+\ell_e(h)=r_e^\top h.
 $$
 
-The 0528 experiment used active-compute-matched variants:
+factor attribution 要估计：
 
 $$
-y_{\mathrm{flat}} = p_e f_e(h),
+\ell_e^{(F)}=r_e^\top P_F h,
 $$
 
-$$
-y_{\mathrm{common\_flat}} = f_{\mathrm{global}}(h)+p_j f_{\mathrm{leaf},j}(h),
-$$
+其中 $P_F$ 对应 common、head-frequency、B-family、B-identity 或 slot 子空间。
+
+expert utility 用 ablation / forced loss 测：
 
 $$
-y_{\mathrm{hier}} =
-f_{\mathrm{global}}(h)+p_g f_{\mathrm{group},g}(h)+p_g p_{\ell|g} f_{\mathrm{leaf},g,\ell}(h).
+\Delta CE(z,e)=CE_z(\operatorname{ablate}(e))-CE_z(\operatorname{full}).
 $$
 
-Primary metrics:
+functional specialization 的必要条件是：
 
-```text
-route-slot NMI
-route-B identity NMI
-forced expert loss / ablation utility matrix
-assignment-utility agreement
-final CE / target accuracy
-expert load health
-```
+$$
+\operatorname{route}(z)\approx \operatorname{feature}(z)
+\quad \text{and} \quad
+\operatorname{route}(z)\approx \arg\max_e \Delta CE(z,e).
+$$
 
-A model supports specialization only if route-slot NMI and forced-loss diagonal improve together.
+如果：
+
+$$
+\arg\max_e \Delta CE(z,e)
+$$
+
+对 tail/slot 不清楚，则问题是 write-in failure。
+
+如果 utility-best path 清楚，但：
+
+$$
+\operatorname{route}(z)
+$$
+
+主要由 common/head/B-identity 解释，则问题是 routing interference。
 
 ## 5. Computational Realization
 
-### 5.1 Workflow Interface
-
-Input:
+数据结构保留 slot-context NTP 形式：
 
 ```text
-Existing multi-B synthetic data:
-slot context + B_i -> target pi_s(B_i)
+seq_len = 32
+positions 10-14: slot/context prefix
+position 15: B_i
+position 16: Y_{slot, family, i}
 ```
 
-Models:
+需要显式控制的 factor：
 
 ```text
-A. flat top-1 MoE baseline
-B. common_flat: global common expert + one-level leaf top-1 router
-C. hierarchical_common: global common + selected group common + two-level leaf router
-D. next candidate: common-residual leaf router, where leaf router uses h - P_common(h)
+common context
+B-family / group
+B identity / unique id
+slot / target-deciding factor
+head/middle/tail frequency rank
 ```
 
-Output:
+最小模型组：
 
 ```text
-Table comparing route-slot NMI, route-B NMI, Assign-Utility, forced-loss diagonal, CE/accuracy, expert load.
+flat_top1 MoE
+common_flat
+high-frequency-removed or common-residual leaf router, only after attribution supports routing interference
 ```
 
-### 5.2 Minimal Computational Test
-
-Core  test:
+暂时不做：
 
 ```text
-completed 0528:
-uniform 64-B + A_long/B_long:
-flat_top1 vs common_flat vs hierarchical_common, 4 seeds, 3000 steps.
+更深 hierarchy sweep
+真实语料
+reverse index utility
+系统侧 swapping
 ```
 
-Result:
+## 6. Minimal Decisive Test
+
+### Test A: NTP factor attribution
+
+目的：
 
 ```text
-common_flat is the strongest current variant.
-hierarchical_common does not show a stable advantage over common_flat.
+判断 router logits / selected route 被哪个 factor 控制。
 ```
 
-Next minimal test:
+观测：
 
 ```text
-common_flat vs common_residual_leaf_router on 64-B and 256-B.
-Only if that supports route-utility binding should Zipf stress be added.
+factor -> router logit R2 / explained variance
+factor -> selected expert MI / NMI
+factor removal -> route flip rate
 ```
 
-## 6. Minimal Falsifiable Test
-
-Supported if:
+支持 routing interference，如果：
 
 ```text
-common/hierarchical/common-residual routing improves Assign-Utility, slot-B route consistency, and forced/ablation utility alignment over flat baseline while keeping CE/accuracy comparable.
+slot/tail utility 存在；
+但 router logits 主要由 common/head/B-identity 解释。
 ```
 
-Weakened if:
+### Test B: tail write-in diagnostic
+
+目的：
 
 ```text
-common/hierarchy only improves loss or route heatmaps, but does not improve assignment-utility binding.
+判断 tail/slot feature 是否真的写进 expert function。
 ```
 
-Refuted for this mechanism if:
+观测：
 
 ```text
-hierarchy/common-residual behaves like flat routing: slot is visible, oracle works, but learned routing still does not bind slot to utility-best path.
+forced expert loss
+ablation utility matrix
+head/middle/tail utility diagonal
+tail/head utility gap
 ```
 
-## 6.1 Current Evidence
-
-Experiment:
+支持 tail-write-in failure，如果：
 
 ```text
-Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/summary.md
-Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/detailed.md
+Zipf 下 head features 有清楚 utility-best path；
+tail/slot features 没有清楚 utility-best path；
+reweight 能恢复 tail utility diagonal。
 ```
 
-Setup:
+### Test C: mechanism intervention
+
+只在 Test A/B 指明机制后做：
 
 ```text
-uniform 64-B
-4 slots / 4 leaf paths
-active FFN width = 256 for all compared models
-semantic slot-centroid init
-3000 full NTP steps
-4 seeds
+如果是 routing interference:
+  common_flat vs common-residual / high-frequency-removed leaf router
+
+如果是 tail write-in failure:
+  uniform vs zipf vs zipf_reweight
+  或加 tail-write-in pressure / auxiliary objective
 ```
 
-Main result:
+## 7. Falsifiable Outcomes
 
-| Condition | Model | Assign-Utility | Slot-B Consistency | Route-Slot NMI | Target Acc |
-|---|---|---:|---:|---:|---:|
-| A_long | flat_top1 | 0.935 | 0.948 | 0.883 | 1.0 |
-| A_long | common_flat | **0.952** | 0.951 | 0.883 | 1.0 |
-| A_long | hierarchical_common | 0.932 | **0.968** | 0.853 | 1.0 |
-| B_long | flat_top1 | 0.880 | 0.912 | 0.689 | 1.0 |
-| B_long | common_flat | **0.918** | **0.921** | **0.787** | 1.0 |
-| B_long | hierarchical_common | 0.878 | 0.900 | 0.727 | 1.0 |
-
-Interpretation:
+支持当前 anchor，如果：
 
 ```text
-common_flat modestly improves route-utility binding, especially in B_long.
-hierarchical_common is not a stable improvement; it helps one B_long seed but loses on others.
-Therefore "structural hierarchy alone fixes binding" is weakened.
+NTP factor attribution 能把 failure 分成 routing interference 或 tail-write-in failure；
+并且对应 intervention 改善 route-feature alignment 与 utility diagonal。
 ```
 
-## 7. Claim Boundary And Next Decision
-
-If supported:
+削弱当前 anchor，如果：
 
 ```text
-Claim: common-residual routing is a plausible mechanism for solving flat top-1 route-function binding failure in controlled NTP feature specialization.
-Next: add Zipf feature frequencies and test whether common path protects long-tail leaf specialization.
+router logits 不被 common/head/B-identity/slot 等 factor 明显解释；
+tail/slot utility 也没有系统性 frequency 差异；
+则当前 factor decomposition 不足，需要重新定义 feature 或任务。
 ```
 
-If weakened/refuted:
+重定向，如果：
 
 ```text
-Claim: structural hierarchy alone is insufficient; need explicit routing objective, route-neutral representation, or auxiliary route-function binding loss.
-Next: return to router objective rather than architecture.
+所有模型 target accuracy 都高，但 route/utility 指标互相矛盾；
+说明当前 synthetic 的 specialization metric 仍有 proxy mismatch，需要先做 metric audit。
 ```
 
-Current decision after 0528:
+仍不能证明：
 
 ```text
-Do not claim H-MoE has solved the gating problem.
-Keep common path as a candidate.
-Test common-residual leaf routing before Zipf.
+真实语料中的专家分工。
+端侧部署收益。
+expert id 可直接作为 KV reverse index。
 ```
+
+## 8. Current Evidence
+
+Evidence 1: slot-context dominance。
+
+```text
+slot 信息在 h_B 中可见，oracle routing 可行；
+multi-B learned top-1 routing 仍不能稳定绑定 slot 与 utility-best expert。
+```
+
+Evidence 2: hierarchical_route_utility_binding。
+
+```text
+uniform 64-B 下 common_flat 有弱帮助；
+B_long Assign-Utility: flat_top1 0.880, common_flat 0.918, hierarchical_common 0.878。
+因此 common path 值得保留，但 two-level hierarchy 本身没有被支持为稳定解法。
+```
+
+Evidence 3: linear FFN frequency anisotropy。
+
+```text
+Zipf-normal 产生更尖的 spectrum、更低 effective rank、更高 tail/head error；
+inverse-frequency reweight 基本恢复到 uniform。
+```
+
+Evidence 4: linear FFN spectral decomposition。
+
+```text
+Zipf-normal 下 head->head component 强，tail->tail component 弱；
+remove-top / W_low 对 tail error 改善很小。
+这更支持 tail feature 没写入，而不是 tail 已写入但被 top directions 污染。
+```
+
+证据边界：
+
+```text
+linear FFN 不是 NTP Transformer/MoE；
+hierarchical result 是 uniform 64-B moderate stress；
+所以二者只能决定下一步诊断，不足以直接下 NTP router 机制结论。
+```
+
+## 9. Claim Boundary And Next Decision
+
+最安全 claim：
+
+```text
+当前证据把问题从 “H-MoE 是否有效” 收窄为：
+NTP 中 route-utility binding failure 到底来自 factor-level routing interference，
+还是来自 tail/slot feature write-in failure。
+```
+
+不能 claim：
+
+```text
+不能 claim H-MoE 已经解决 gating。
+不能 claim common-residual 一定有效。
+不能 claim Zipf 下 tail failure 一定会出现在 NTP MoE。
+不能 claim linear FFN toy 直接解释 Transformer router。
+不能 claim high Assign-Utility 单独证明 specialization。
+```
+
+下一步最小决策：
+
+```text
+先跑 NTP factor attribution + tail write-in diagnostic。
+```
+
+判断分叉：
+
+```text
+若 utility 存在但 route 被 common/head/B-identity 控制：
+  做 common-residual / high-frequency-removed leaf router。
+
+若 tail/slot utility 不存在或很弱：
+  做 reweight / tail-write-in pressure。
+
+若两者都不成立：
+  重新审查 synthetic feature 定义和 specialization metric。
+```
+

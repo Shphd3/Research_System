@@ -9,6 +9,13 @@ metadata:
 
 Use this skill to turn a clear anchor into an executable experiment plan.
 
+First apply `research-progress-core`. An experiment plan is valid only when it
+preserves the chain from hypothesis to operational definition, minimal test,
+metric plus visual evidence, failure analysis, and refined hypothesis. For
+nontrivial work, the execution plan owns the implementation contract. If the
+plan cannot identify what result would falsify or weaken the hypothesis, do not
+write it as a runnable experiment yet.
+
 Core rule: **anchor first, experiment second**. An experiment exists because an
 anchor needs evidence, not because a new run is easy to launch.
 
@@ -47,6 +54,10 @@ Projects/<project>/main/experiments/<experiment_id>/figures/
 Projects/<project>/main/experiments/<experiment_id>/tables/
 ```
 
+Experiment IDs may include date or iteration labels because they are records of
+tests, for example `HMMDD_short_topic`, `HMMDDa_short_topic_smoke`, or
+`HMMDDb_short_topic_full`. Do not use experiment-style names for anchors.
+
 Every experiment document must link back to its anchor. Do not use opaque
 English phrases as the story title. Give one rigorous, clear sentence that
 states what the experiment is trying to decide.
@@ -76,8 +87,10 @@ Then compress the experiment into:
 3. What mathematical object, variables, and assumptions define it?
 4. What is the smallest experiment that can change belief?
 5. What result patterns would support, weaken, or redirect the hypothesis?
-6. What cannot be claimed even if the result is positive?
-7. Which implementation stages need local pass/fail evidence before the final
+6. What result pattern counts as insufficient evidence?
+7. Which known good, known bad, and known confusing cases should be inspected?
+8. What cannot be claimed even if the result is positive?
+9. Which implementation stages need local pass/fail evidence before the final
    metric can be trusted?
 
 For multi-stage experiments, write a compact stage audit rather than a long
@@ -119,11 +132,16 @@ Anchor:
 
 ## 2. Data / Material / Case Construction
 
+Include known good, known bad, and known confusing cases when possible.
+
 ## 3. System / Procedure / Evaluation Setup
 
 ## 4. Configs And Commands
 
 ## 5. Metrics And Artifacts
+
+For each decision metric, state the question it answers and the cost of false
+positives and false negatives when those costs differ.
 
 ## 6. Stage Audit
 
@@ -133,6 +151,8 @@ Anchor:
 
 ## 7. Pass / Fail Criteria
 
+Include success, failure, and insufficient-evidence criteria.
+
 ## 8. Failure Modes To Check
 
 ## 9. Result Location
@@ -140,10 +160,10 @@ Anchor:
 
 ## Result Summary Template
 
-`summary.md` now carries the role that old hypothesis closures used to carry.
-It is the first post-result reading path and must close the experiment at the
-claim level. It should be self-contained enough for a meeting or collaborator
-recap, while linking to `detailed.md` for the full record.
+`summary.md` is required. It is the first post-result reading path and closes
+the experiment at the claim-update level. It should be self-contained enough to
+state purpose, hypothesis/question, conclusion, key evidence, claim boundary,
+and next decision, while linking to `detailed.md` for the full record.
 
 ```markdown
 # Result Summary: <experiment_id>
@@ -199,7 +219,7 @@ Supports:
 
 ## Detailed Report Template
 
-`detailed.md` is the complete experiment record and evidence version of the
+`detailed.md` is required. It is the complete experiment record and evidence version of the
 same research story, not a metric dump or timeline. It must include the full
 experiment details needed to audit or reproduce the result: data, materials, or
 case construction; conditions; system/procedure/evaluation setup; seeds or
@@ -255,6 +275,10 @@ Supports:
 
 ## 9. Evidence Walkthrough
 
+Separate single-observation evidence, change evidence, and summary evidence
+when the result depends on training trajectories, seeds, checkpoints, ablations,
+or before/after comparisons.
+
 ## 10. Stage Evidence And Failure Decomposition
 
 | Stage | Evidence | Passed / Failed / Unclear | Failure Reason | What This Rules Out |
@@ -294,7 +318,7 @@ Errors still harmful:
 ## 16. Links And Artifact Map
 anchor:
 summary:
-sync report:
+handoff report:
 code workspace:
 runner:
 config:
@@ -322,6 +346,15 @@ tables under `tables/` and link or summarize them near the relevant metric.
 
 ## Rules
 
+- Follow the `research-progress-core` communication rule: state what is tested,
+  where evidence will be found, what can pass, what can fail, why failure would
+  matter, and what next decision the experiment can change.
+- Operational definitions must include success, failure, and insufficient
+  evidence.
+- Pre-run plans should name known good, known bad, and known confusing cases
+  whenever the domain allows it.
+- For trajectory, seed, checkpoint, ablation, or before/after claims, separate
+  single-observation evidence, change evidence, and summary evidence.
 - Default to the minimum decisive experiment: one anchor, one sharp test,
   one primary decision metric, and one closure.
 - A plan should be organized around the decision it can change, not around
@@ -330,6 +363,8 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - Proxy-alignment metrics are supporting evidence. The primary metric should
   test the claimed mechanism or decision-relevant effect whenever it can be
   measured or intervened on.
+- If false positives and false negatives have different costs, metric design
+  must state those costs before the run.
 - Every required condition must have a purpose column or sentence explaining
   which rival explanation it distinguishes.
 - Multi-stage experiments must include a compact stage audit. Do not trust a
@@ -355,11 +390,12 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - Do not start with architecture, scripts, or metrics before the anchor is clear.
 - Do not create separate hypothesis purpose cards.
 - Anchors are reasoning artifacts; execution plans are operational artifacts.
-- After results, write `summary.md` and `detailed.md`, update the anchor and
-  root anchor copy, then use `sync-closure-writer` when a meeting or
-  collaborator-facing report is needed.
-- Treat `summary.md` as the closure-level result document. Do not create a
-  separate hypothesis closure for ordinary experiment results.
+- After results, always write `summary.md` and `detailed.md`, then update the
+  anchor and root anchor copy when the result changes the current hypothesis,
+  evidence, claim boundary, or next decision. Use `handoff-report-writer` only
+  when a meeting, collaborator, or web-side handoff package is needed.
+- Treat `summary.md` as the first result reading path. Do not create a
+  separate closure document for ordinary experiment results.
 - Treat `detailed.md` as the full experiment record. It should be sufficient to
   reconstruct what was run, where artifacts live, and how the conclusion was
   derived.
@@ -373,3 +409,14 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - Do not let a metric improvement become a stronger public claim than it supports.
 - Figures must support a claim boundary or next decision.
 - Markdown formulas must use `$...$` or `$$...$$`.
+
+## Reference Delegation
+
+Do not duplicate detailed research-method rules here. When needed, load the
+relevant `research-progress-core/references/` file:
+
+- `algorithm_specification.md` for exact algorithm or stage contracts;
+- `profiling_and_evidence.md` for metric, figure, example, and stage evidence;
+- `failure_decomposition.md` when a result fails without a local cause;
+- `goal_audit.md` when repeated reasonable fixes fail in the same way;
+- `research_loop_checklist.md` for a quick pre-run or post-run review.

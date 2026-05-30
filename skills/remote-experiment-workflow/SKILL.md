@@ -14,11 +14,11 @@ Core rule:
 
 ```text
 anchor -> execution plan -> remote/container smoke or run -> curated result
--> summary/detailed -> anchor update -> root anchor copy -> sync closure
+-> summary/detailed -> anchor update -> root anchor copy -> optional handoff report
 ```
 
-Local `Research_System` owns graph, anchors, sync closures, daily cards,
-meeting material, claim boundaries, and next decisions. Remote/container
+Local `Research_System` owns graph, anchors, summary/detailed result records,
+optional handoff reports, daily cards, meeting material, claim boundaries, and next decisions. Remote/container
 workspaces own code edits, debug runs, full runs, result analysis, figures,
 tables, raw outputs, checkpoints, and logs.
 
@@ -111,14 +111,14 @@ Remote commit may include:
 - experiment `summary.md` / `detailed.md`;
 - anchor updates;
 - root sync anchor copies;
-- sync closure drafts;
+- optional handoff report drafts;
 - artifact maps.
 
 Do not commit raw logs, checkpoints, datasets, full run directories,
 unfiltered generated figures/tables, or temporary cache files unless the user
 explicitly curates them.
 
-## Sync Closure Handoff
+## Handoff
 
 After results exist, first write or update the curated experiment documents:
 
@@ -148,7 +148,8 @@ mathematical model, computational realization, claim boundary, or next decision.
 Copy the updated anchor to the root sync category when the project uses root
 anchor copies.
 
-Finally, write or update a project-local sync closure under:
+Finally, write or update a project-local handoff report only if a meeting,
+collaborator, or web-side reader needs a self-contained package:
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/report.md
@@ -172,7 +173,7 @@ job id:
 
 ## Report Writing Standard
 
-All curated reports and sync closures must be decision reports, not timelines.
+All curated reports and optional handoff reports must be decision reports, not timelines.
 They should separate:
 
 - observation;

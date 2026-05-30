@@ -9,6 +9,28 @@ Use the graph as a small, inspectable map of the research state. Put structure a
 
 Core principle: **thin graph, thick notes, active agent**. The graph should reduce cognitive load, not become a database the researcher has to maintain.
 
+## User-Confirmed Research Judgment Rule
+
+The graph is the navigation layer for the user's research judgment. Do not edit
+`graph.yaml` just because a structure looks cleaner.
+
+Before changing an existing project graph, first present the proposed research
+state change to the user and ask for confirmation unless the user explicitly
+requested that exact graph edit in the current turn.
+
+The proposal should name:
+
+```text
+which question, claim, evidence, method, output, or task changes
+why the change matters for the research route
+which anchor, summary, detailed report, handoff report, or source supports it
+what would remain uncertain or unrepresented
+```
+
+After confirmation, make the smallest graph edit that improves navigation. If
+only a Markdown anchor, summary, detailed record, or handoff report changed and the research route
+did not change, do not edit the graph.
+
 ## First Move
 
 If `graph.yaml` exists, read it before proposing structure changes. Then read only the linked Markdown/source files needed to understand the active question, claims, evidence, methods, and tasks.
