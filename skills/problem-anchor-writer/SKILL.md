@@ -37,8 +37,8 @@ anchors can be used as style references only after checking that their domain
 terms do not leak into a new problem.
 
 For hand-written first drafts, use
-`templates/minimal_anchor_handwrite.md`. The hand-written draft is allowed to
-be rough; its purpose is to expose the user's thinking before AI polishes the
+`docs/templates/minimal_anchor_handwrite.md`. The hand-written draft is allowed
+to be rough; its purpose is to expose the user's thinking before AI polishes the
 anchor.
 
 After updating an active project anchor, copy it to the categorized root sync

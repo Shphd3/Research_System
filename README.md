@@ -3,7 +3,7 @@
 This repository is a research-process workspace. It is not the remote experiment codebase.
 
 The goal is to preserve research judgment: project graph, problem anchors,
-hypotheses, evidence, claim boundaries, daily cards, paper reading cards, and
+hypotheses, evidence, claim boundaries, result records, handoff reports, and
 meeting-ready reports.
 
 ## Start Here
@@ -13,7 +13,7 @@ meeting-ready reports.
 
 ## Working Areas
 
-- `daily_research_reports/`: dated folders for daily cards, meeting materials, PRISM reports, experiment summaries, and report bundles.
+- `daily_research_reports/`: dated folders for daily cards, meeting materials, experiment summaries, and report bundles.
 - `paper_reading/`: literature cards and reading notes.
 - `skills/`: repo-tracked source copies of personal Codex skills.
 - `sync/`: cross-project anchor summaries and reusable research state.
@@ -26,7 +26,7 @@ meeting-ready reports.
    problem anchor or sync note.
 2. Decide whether today's work updates the graph, anchor, claim boundary, or
    next decision.
-3. Write a compact daily card, anchor update, or sync closure.
+3. Write a compact daily card, anchor update, result record, or optional handoff report.
 4. State the conclusion for each task, not a task log.
 5. Park side thoughts instead of chasing them during the current 25 minute task.
 6. Update project-local graph or anchor files only when evidence changes the
@@ -37,7 +37,7 @@ Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use
 
 Class notes and side thoughts should stay inside `daily_card.md` by default. Use `Recording / Class Notes` for class points, and `Small Thought Parking Lot` for side ideas that should not interrupt the current task.
 
-Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`. PRISM reports should be placed at `daily_research_reports/MMDD/meeting/prism/`.
+Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`.
 
 ## Hypothesis-First Loop
 
@@ -56,12 +56,19 @@ Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
-Projects/<project>/<worker>/sync/MMDD_topic/report.md
+Projects/<project>/main/experiments/<experiment_id>/detailed.md
+Projects/<project>/<worker>/sync/MMDD_topic/report.md  # optional handoff
 ```
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
 understanding, test a hypothesis, or change a next decision.
 
-## Codex Web
+## Web-Side AI
 
-This local repository is ready to be connected to a remote GitHub repository for Codex Web usage. See `docs/codex_web_setup.md`.
+Web-side theory AI should treat this repository as research memory, not as the
+experiment codebase. Start from `AGENTS.md`, `PROJECTS.md`, and root `sync/`.
+Use project-local graph, anchor, `summary.md`, and `detailed.md` only when the
+user or Codex exposes them.
+
+Web-side AI should propose research judgments and questions. Codex/local agents
+perform repository edits after the user confirms the research-state change.

@@ -17,17 +17,17 @@ daily_research_reports/MMDD/daily_card.md
 
 Use `daily_card_template.md` as the compact first-pass structure.
 
-When an experiment hypothesis closure is finished, create a meeting-prep
-reporting card:
+When an experiment result is summarized, create a compact meeting-prep
+reporting card only if the result needs oral discussion:
 
 ```text
 daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
 ```
 
 Use `reporting_card_template.md`. The top oral report card is intentionally
-blank so the user can write the group-meeting language themselves. The closure
-snapshot below is for fast access; the project-local closure remains the source
-of truth.
+blank so the user can write the group-meeting language themselves. The
+project-local anchor, `summary.md`, and `detailed.md` remain the source of
+truth.
 
 Class notes and side thoughts should stay inside `daily_card.md` by default:
 
@@ -38,10 +38,4 @@ Meeting materials for the same day should be created under:
 
 ```text
 daily_research_reports/MMDD/meeting/
-```
-
-PRISM reports should be created under:
-
-```text
-daily_research_reports/MMDD/meeting/prism/
 ```

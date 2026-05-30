@@ -25,10 +25,9 @@ It should not replace:
 
 - `problem-anchor-writer` for anchor / purpose-card documents.
 - `experiment-card-writer` for execution plans.
-- `paper-reading-card` for compact paper or blog reading cards.
 - `research-mainline` for project-state consolidation.
-- `sync-closure-writer` for anchor-based post-result closures and claim
-  boundaries against concrete evidence.
+- `handoff-report-writer` for optional meeting or collaborator handoff reports
+  after the anchor, summary, and detailed record are already updated.
 
 ## Maintenance
 
