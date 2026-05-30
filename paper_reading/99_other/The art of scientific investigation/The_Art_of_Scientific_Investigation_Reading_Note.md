@@ -30,3 +30,11 @@ AI、代码、算力、实验平台都只是工具。真正决定科研推进的
 - 能否识别异常；
 - 能否更新假设；
 - 能否形成有价值的下一步。
+
+## Chapter IV - Hypothesis
+
+重点学习版见：
+
+[Chapter_04_Hypothesis_Study_Guide.md](Chapter_04_Hypothesis_Study_Guide.md)
+
+当前结论：假设不是为了让自己相信一个解释，而是为了生成能区分竞争解释的实验。理解要通向新方法，必须继续推进到“可干预失败机制”。
