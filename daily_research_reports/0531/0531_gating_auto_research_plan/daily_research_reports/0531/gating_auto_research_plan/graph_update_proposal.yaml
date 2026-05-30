@@ -1,0 +1,59 @@
+# Proposal only. Do not apply without user confirmation.
+# Graph nodes point to reasoning artifacts; they do not replace anchors or reports.
+
+nodes:
+  - id: problem.stable_route_function_binding
+    type: problem_anchor
+    title: Stable Route-Function Binding For Feature-Level Expert Specialization
+    path: Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/stable_route_function_binding_anchor.md
+    parent: problem.moe_expert_specialization
+    status: active_proposed
+    next_decision: Run H0531a router-factor attribution before choosing residual router, binding regularizer, or nonlinear/prior gate.
+
+  - id: experiment.H0531a_router_factor_attribution
+    type: experiment_plan
+    title: Decide which factor controls routing and whether target feature has expert utility
+    path: Projects/from-attention-to-search/main/experiments/H0531a_router_factor_attribution/execution_plan.md
+    parent: problem.stable_route_function_binding
+    status: planned
+
+  - id: experiment.H0531b_residual_whitened_router
+    type: conditional_experiment_plan
+    title: Test residual or whitened router if common/head dominance is diagnosed
+    path: Projects/from-attention-to-search/main/experiments/H0531b_residual_whitened_router/execution_plan.md
+    parent: problem.stable_route_function_binding
+    status: conditional
+    run_if: H0531a shows common/B/head dominance
+
+  - id: experiment.H0531c_route_function_binding_regularizer
+    type: conditional_experiment_plan
+    title: Test utility-binding regularizer if route-function mismatch is diagnosed
+    path: Projects/from-attention-to-search/main/experiments/H0531c_route_function_binding_regularizer/execution_plan.md
+    parent: problem.stable_route_function_binding
+    status: conditional
+    run_if: H0531a shows expert utility exists but router does not select it, or utility collapse needs explicit binding
+
+  - id: experiment.H0531d_nonlinear_and_prior_router
+    type: conditional_experiment_plan
+    title: Test nonlinear/prior routers after factor attribution and binding/residual results
+    path: Projects/from-attention-to-search/main/experiments/H0531d_nonlinear_and_prior_router/execution_plan.md
+    parent: problem.stable_route_function_binding
+    status: parked
+    run_if: residual and binding routes are insufficient or router capacity is diagnosed as bottleneck
+
+edges:
+  - from: problem.moe_expert_specialization
+    to: problem.stable_route_function_binding
+    relation: sharpens
+  - from: problem.stable_route_function_binding
+    to: experiment.H0531a_router_factor_attribution
+    relation: minimal_decisive_test
+  - from: experiment.H0531a_router_factor_attribution
+    to: experiment.H0531b_residual_whitened_router
+    relation: conditional_next_if_common_head_dominance
+  - from: experiment.H0531a_router_factor_attribution
+    to: experiment.H0531c_route_function_binding_regularizer
+    relation: conditional_next_if_route_function_mismatch
+  - from: experiment.H0531a_router_factor_attribution
+    to: experiment.H0531d_nonlinear_and_prior_router
+    relation: parked_until_needed

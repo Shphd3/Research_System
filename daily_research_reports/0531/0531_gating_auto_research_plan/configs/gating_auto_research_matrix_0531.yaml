@@ -1,0 +1,136 @@
+project: from-attention-to-search
+anchor: Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/stable_route_function_binding_anchor.md
+primary_experiment: H0531a_router_factor_attribution
+code_workspace: Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding
+
+research_goal:
+  statement: >
+    Find a routing / representation decomposition / regularizer that forms stable
+    feature-level expert specialization under controlled synthetic NTP.
+  required_properties:
+    - route aligns with target_deciding_feature
+    - selected path has causal expert utility
+    - train route does not wash out
+    - inference route stable under target-preserving perturbations
+    - method can plausibly transfer beyond synthetic oracle labels
+
+metrics:
+  primary_bundle:
+    - route_slot_nmi
+    - assignment_utility_agreement
+    - forced_expert_loss_diagonal_margin
+    - train_stability_last_k
+    - inference_stability_perturbation
+    - target_ce_accuracy_non_regression
+  supporting:
+    - route_b_nmi
+    - route_frequency_nmi
+    - conditional_b_nmi_within_slot
+    - expert_load_entropy
+    - probe_slot_accuracy
+    - probe_b_accuracy
+    - probe_frequency_accuracy
+
+conditions:
+  smoke:
+    data:
+      - multi_b_64_B_long
+    models:
+      - flat_top1
+      - common_flat
+    seeds: [20260521]
+    steps: 100
+  primary_full:
+    data:
+      - multi_b_64_A_long
+      - multi_b_64_B_long
+      - multi_b_256_B_long
+    models:
+      - flat_top1
+      - common_flat
+    seeds: [20260521, 20260522, 20260523, 20260524]
+    steps: 3000
+  optional_stress:
+    data:
+      - zipf_multi_b_B_long
+    run_only_if: uniform_diagnosis_closed
+
+experiments:
+  H0531a_router_factor_attribution:
+    purpose: decide which factor controls routing and whether expert utility is written
+    runner: scripts/run_router_factor_attribution.py
+    config: configs/router_factor_attribution_0531.json
+    diagnostics:
+      - probe_slot_b_frequency
+      - router_factor_sensitivity
+      - forced_expert_ce
+      - ablation_utility_delta
+      - train_stability
+      - inference_stability
+    decision_gate:
+      common_or_head_dominates: H0531b_residual_whitened_router
+      utility_diagonal_but_route_misses: H0531c_route_function_binding_regularizer
+      utility_not_diagonal_or_tail_not_written: expert_writein_reweight_pressure
+      metric_invalid: repair_data_or_metric
+
+  H0531b_residual_whitened_router:
+    run_if: common_or_head_dominates
+    runner: scripts/run_residual_whitened_router.py
+    methods:
+      - true_common_residual_router
+      - pca_common_residual_router
+      - whitened_router
+      - common_path_plus_residual_leaf
+    success: improve primary_bundle over common_flat without target CE regression
+
+  H0531c_route_function_binding_regularizer:
+    run_if: utility_diagonal_but_route_misses_or_utility_collapse
+    runner: scripts/run_route_function_binding_regularizer.py
+    methods:
+      - sg_utility_kl
+      - delayed_sg_utility_kl
+      - margin_binding
+      - writein_plus_binding
+    controls:
+      - lambda_zero
+      - load_balance_only
+      - random_utility_target
+      - oracle_slot_supervised_upper_bound
+    success: utility agreement plus route-slot NMI plus forced diagonal margin improve together
+
+  H0531d_nonlinear_and_prior_router:
+    run_if: residual_and_binding_insufficient_or_router_capacity_bottleneck
+    runner: scripts/run_nonlinear_prior_router.py
+    methods:
+      - small_mlp_router
+      - bilinear_factorized_router
+      - orthogonal_linear_router
+      - semantic_centroid_anti_decay
+      - route_consistency_augmentation
+    success: non_oracle method improves primary_bundle and anti_overfit diagnostics
+
+artifacts:
+  required_docs:
+    - summary.md
+    - detailed.md
+    - anchor_update
+    - root_sync_anchor_copy
+  required_tables:
+    - probe_scores.csv
+    - router_attribution.csv
+    - forced_expert_loss.csv
+    - decision_metrics_by_seed.csv
+  required_figures:
+    - router_factor_sensitivity.png
+    - forced_loss_heatmap.png
+    - route_maps_full_vs_edited.png
+    - train_stability_trajectory.png
+    - inference_stability_by_model.png
+
+stop_rules:
+  - oracle_slot_router_fails
+  - forced_expert_loss_invalid
+  - target_ce_accuracy_not_learned
+  - factor_edits_not_interpretable
+  - no_summary_or_detailed_possible
+  - broad_architecture_sweep_before_H0531a_closure

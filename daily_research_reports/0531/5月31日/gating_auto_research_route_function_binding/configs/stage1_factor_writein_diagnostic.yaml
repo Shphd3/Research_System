@@ -1,0 +1,21 @@
+experiment: S1_factor_writein_diagnostic
+task: synthetic_ntp
+num_slots: 4
+num_experts: 4
+num_families: 4
+num_b_identities: 256
+seq_len: 32
+slot_code_type: distributed
+distributions: [uniform, zipf_alpha_1.3, zipf_reweight]
+models: [linear_top1_router, linear_soft_router, common_flat, oracle_slot_router, random_router]
+seeds: [0, 1, 2, 3, 4]
+metrics:
+  - target_acc
+  - route_feature_nmi
+  - assignment_utility
+  - factor_logit_r2
+  - selected_route_factor_nmi
+  - factor_removal_flip_rate
+  - forced_expert_ce_matrix
+  - ablation_utility_matrix
+  - head_mid_tail_utility_gap

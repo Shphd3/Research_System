@@ -1,0 +1,16 @@
+experiment: S2A_routing_interference
+run_if: S1_supports_routing_interference
+variants:
+  - common_residual_router
+  - frequency_residual_router
+  - linear_residual_plus_consistency
+  - nonlinear_residual_mlp_router
+controls:
+  - raw_h_mlp_router
+  - random_subspace_removed_router
+  - slot_subspace_removed_negative_control
+  - matched_compute_linear_router
+seeds: [0, 1, 2, 3, 4]
+lambda_same: [0.1, 1.0]
+lambda_diff: [0.1, 1.0]
+subspace_rank: [1, 2, 4]

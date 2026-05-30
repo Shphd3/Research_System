@@ -1,0 +1,13 @@
+experiment: S0_2x2_ntp_sanity
+optimizer: full_batch_gd
+lr: 0.2
+steps: 200
+gate_init: zeros
+cases:
+  complementary: [[0.99, 0.01], [0.01, 0.99]]
+  identical: [[0.50, 0.50], [0.50, 0.50]]
+  same_best: [[0.99, 0.99], [0.01, 0.01]]
+  weak_complementary: [[0.60, 0.40], [0.40, 0.60]]
+outputs:
+  table: tables/2x2_ntp_sanity.csv
+  figure: figures/2x2_gate_margin_curve.png

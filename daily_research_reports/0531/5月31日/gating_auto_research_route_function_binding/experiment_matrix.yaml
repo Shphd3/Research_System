@@ -1,0 +1,163 @@
+experiment_id: H0531_route_function_binding_auto_research
+anchor: Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/route_function_binding_stable_feature_routing_anchor.md
+result_root: Projects/from-attention-to-search/main/experiments/H0531_route_function_binding_auto_research
+root_sync_anchor: sync/S000_current_specialization/anchors/expert_specialization/route_function_binding_stable_feature_routing_anchor.md
+
+primary_goal: >
+  Find a synthetic-NTP routing mechanism that produces stable route-function binding:
+  route aligns with target-deciding feature and selected expert has causal utility for that feature.
+
+default_task:
+  task_type: synthetic_ntp
+  num_slots: 4
+  num_experts: 4
+  num_families: 4
+  num_b_identities: 256
+  seq_len: 32
+  target_position: B_position
+  target_rule: Y_slot_family_identity
+  heldout_b_fraction: 0.2
+  distributions:
+    - uniform
+    - zipf_alpha_1.3
+    - zipf_reweight
+
+success_thresholds:
+  target_acc: 0.99
+  route_feature_nmi: 0.80
+  assignment_utility: 0.90
+  checkpoint_flip_max: 0.05
+  seed_permutation_stability: 0.80
+  same_feature_aug_consistency: 0.90
+  different_feature_separation: 0.80
+  heldout_b_route_nmi: 0.70
+
+stages:
+  S0_2x2_ntp_sanity:
+    required: true
+    cases:
+      complementary:
+        expert_utility: [[0.99, 0.01], [0.01, 0.99]]
+        expected: split
+      identical:
+        expert_utility: [[0.50, 0.50], [0.50, 0.50]]
+        expected: no_signal
+      same_best:
+        expert_utility: [[0.99, 0.99], [0.01, 0.01]]
+        expected: collapse
+      weak_complementary:
+        expert_utility: [[0.60, 0.40], [0.40, 0.60]]
+        expected: weak_split
+    outputs:
+      tables:
+        - tables/2x2_ntp_sanity.csv
+      figures:
+        - figures/2x2_gate_margin_curve.png
+
+  S1_factor_writein_diagnostic:
+    required_after: S0_2x2_ntp_sanity
+    models:
+      - linear_top1_router
+      - linear_soft_router
+      - common_flat
+      - oracle_slot_router
+      - random_router
+    distributions:
+      - uniform
+      - zipf_alpha_1.3
+      - zipf_reweight
+    seeds_smoke: [0]
+    seeds_full: [0, 1, 2, 3, 4]
+    metrics:
+      - target_acc
+      - route_feature_nmi
+      - assignment_utility
+      - factor_logit_r2
+      - selected_route_factor_nmi
+      - factor_removal_flip_rate
+      - forced_expert_ce_matrix
+      - ablation_utility_matrix
+      - head_mid_tail_utility_gap
+    branch_rules:
+      routing_interference: utility_exists_and_route_dominated_by_nuisance
+      write_in_failure: tail_slot_utility_absent_or_weak
+      both: utility_weak_then_route_nuisance_after_reweight
+      metric_failure: metrics_conflict_repeatedly
+
+  S2A_routing_interference:
+    run_if: S1.branch in [routing_interference, both]
+    variants:
+      - common_residual_router
+      - frequency_residual_router
+      - linear_residual_plus_consistency
+      - nonlinear_residual_mlp_router
+    controls:
+      - raw_h_mlp_router
+      - random_subspace_removed_router
+      - slot_subspace_removed_negative_control
+      - matched_compute_linear_router
+    primary_metrics:
+      - route_feature_nmi
+      - assignment_utility
+      - factor_removal_flip_rate
+      - checkpoint_flip
+      - heldout_b_route_nmi
+
+  S2B_writein_failure:
+    run_if: S1.branch in [write_in_failure, both]
+    variants:
+      - zipf_reweight
+      - balanced_curriculum_then_zipf
+      - tail_write_in_auxiliary_CE
+      - responsibility_binding_after_warmup
+      - responsibility_binding_plus_load_balance
+    primary_metrics:
+      - tail_utility_diagonal_gap
+      - tail_head_utility_ratio
+      - assignment_utility
+      - route_feature_nmi
+      - checkpoint_flip
+
+  S2C_combined:
+    run_if: S2A.partial_pass and S2B.partial_pass
+    variants:
+      - reweight_then_common_residual_router
+      - responsibility_binding_warmup_then_residual_router
+      - balanced_curriculum_plus_route_consistency
+    stop_after_first_success: true
+
+  S3_stability_transfer_screen:
+    run_if: candidate_method_exists
+    checks:
+      - checkpoint_route_flip
+      - seed_permutation_stability
+      - heldout_b_identity_generalization
+      - same_feature_augmentation_consistency
+      - different_feature_route_separation
+      - no_oracle_inference_constraint
+      - matched_compute_control
+
+required_outputs:
+  documents:
+    - execution_plan.md
+    - summary.md
+    - detailed.md
+    - artifact_map.md
+    - decision_ledger.md
+  tables:
+    - tables/primary_decision_table.csv
+    - tables/stage1_factor_attribution.csv
+    - tables/stage1_writein_utility.csv
+    - tables/stage2_intervention_comparison.csv
+    - tables/stage3_stability_screen.csv
+    - tables/failure_decomposition.csv
+  figures:
+    - figures/route_heatmap_by_slot.png
+    - figures/forced_expert_ce_matrix.png
+    - figures/ablation_utility_matrix.png
+    - figures/factor_attribution_r2.png
+    - figures/route_flip_by_factor_removal.png
+    - figures/checkpoint_route_stability.png
+    - figures/seed_permutation_stability.png
+    - figures/head_mid_tail_utility_gap.png
+    - figures/inference_augmentation_consistency.png

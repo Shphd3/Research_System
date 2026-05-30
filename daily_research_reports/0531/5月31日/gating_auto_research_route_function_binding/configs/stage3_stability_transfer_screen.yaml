@@ -1,0 +1,18 @@
+experiment: S3_stability_transfer_screen
+run_if: candidate_method_exists
+checks:
+  - checkpoint_route_flip
+  - seed_permutation_stability
+  - heldout_b_identity_generalization
+  - same_feature_augmentation_consistency
+  - different_feature_route_separation
+  - no_oracle_inference_constraint
+  - matched_compute_control
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+checkpoint_window: last_20_percent
+thresholds:
+  checkpoint_flip_max: 0.05
+  seed_permutation_stability_min: 0.80
+  heldout_b_route_nmi_min: 0.70
+  same_feature_aug_consistency_min: 0.90
+  different_feature_separation_min: 0.80

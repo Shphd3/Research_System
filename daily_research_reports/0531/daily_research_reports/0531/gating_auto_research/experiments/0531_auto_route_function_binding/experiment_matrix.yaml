@@ -1,0 +1,160 @@
+experiment_id: 0531_auto_route_function_binding
+anchor: Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/route_function_binding_stable_gating_anchor.md
+result_dir: runs/0531_auto_route_function_binding
+
+common:
+  objective: next_token_cross_entropy
+  seeds_smoke: [0, 1]
+  seeds_full: [0, 1, 2, 3, 4]
+  train_steps_smoke: 500
+  train_steps_full: 3000
+  checkpoint_eval_interval: 100
+  batch_size: 256
+  optimizer: adamw
+  lr: 0.0003
+  weight_decay: 0.01
+  load_balance_coeff: [0.0]
+  top_k: 1
+  save_hidden_states: true
+  save_routes: true
+  save_forced_expert_outputs: true
+
+tasks:
+  T0_2x2_ntp:
+    purpose: sanity check NTP gate dynamics
+    features: 2
+    tokens: 2
+    experts: 2
+    cases: [fixed_complementary, identical_experts, same_best_expert, trainable_tiny_random]
+    pass_rule: complementary splits; identical stays unlearned; same_best collapses
+
+  T1_uniform_noncompositional:
+    purpose: advisor minimal uniform non-compositional setup
+    features: 8
+    experts: 8
+    vocab_size: 8
+    frequency: uniform
+    common_component: false
+    pass_rule: if utility gaps form, route-function binding should emerge
+
+  T2_multiB_slot_uniform:
+    purpose: current main failure case
+    slots: 4
+    B_identities: [64, 256]
+    feature_code: [repeated_slot, distributed_slot]
+    frequency: uniform
+    pass_rule: route-slot NMI and forced utility must improve together
+
+  T3_common_unique_uniform:
+    purpose: isolate common component interference without Zipf
+    slots: 4
+    B_identities: 128
+    common_strength: [0.0, 0.5, 1.0, 2.0]
+    frequency: uniform
+    pass_rule: residual/common mechanisms should improve as common_strength grows
+
+  T4_zipf_common_unique:
+    purpose: robustness after uniform success
+    slots: 4
+    B_identities: 256
+    zipf_alpha: [0.8, 1.2]
+    common_strength: [1.0]
+    pass_rule: method should avoid head-only utility and recover tail binding
+
+  T5_heldout_shift:
+    purpose: inference stability
+    heldout_B_fraction: 0.25
+    perturbation_sigma: [0.01, 0.05]
+    frequency_shift: [uniform_to_zipf, zipf_to_uniform]
+    pass_rule: route consistency >= 0.85 and no major CE crash
+
+models:
+  M0_flat_top1:
+    type: flat_top1_moe
+    purpose: baseline
+
+  M0_soft_gate:
+    type: soft_moe
+    purpose: hard-vs-soft control
+
+  M1_common_flat:
+    type: common_path_plus_leaf_router
+    purpose: existing weak-positive baseline
+
+  C1_residual_linear:
+    type: linear_gate_on_residual
+    rank_common: [1, 2, 4, 8]
+    subspace_source: [oracle_common, pca_all, pca_head]
+    purpose: test representation decomposition
+
+  C2_utility_binding:
+    type: flat_top1_with_utility_binding
+    lambda_bind: [0.01, 0.05, 0.1, 0.2]
+    tau_utility: [0.25, 0.5, 1.0]
+    start_step: [0, 200]
+    purpose: bind gate to expert NTP utility
+
+  C3_prior_linear:
+    type: prototype_init_linear_gate
+    init: [feature_centroid, orthogonal_prototype]
+    warmup_steps: [200, 1000]
+    lambda_proto: [0.01, 0.05]
+    margin: [0.0, 0.2, 0.5]
+    purpose: diagnostic for linear gate plus prior
+
+  C4_nonlinear_gate:
+    type: mlp_router
+    hidden_width: [16, 32, 64]
+    input_variant: [raw, residual, raw_plus_residual]
+    purpose: test nonlinear separability and overfit risk
+
+  C5_residual_plus_binding:
+    type: residual_linear_with_utility_binding
+    rank_common: [2, 4]
+    lambda_bind: [0.05, 0.1]
+    tau_utility: [0.5]
+    purpose: combine interference removal and route-utility binding
+
+  C6_tail_writein_pressure:
+    type: frequency_balanced_ntp_or_auxiliary
+    reweight: [inverse_frequency, sqrt_inverse_frequency]
+    balanced_batch: [true]
+    purpose: only if forced utility shows target/tail feature is not written in
+
+stages:
+  - id: S0_sanity
+    tasks: [T0_2x2_ntp]
+    models: [M0_soft_gate]
+    seeds: smoke
+    gate: must_pass_before_next
+
+  - id: S1_baseline_attribution
+    tasks: [T2_multiB_slot_uniform]
+    models: [M0_flat_top1, M1_common_flat]
+    seeds: smoke
+    analyses: [factor_attribution, forced_loss_matrix, checkpoint_trajectory]
+    gate: choose_candidate_family
+
+  - id: S2_candidate_smoke
+    tasks: [T2_multiB_slot_uniform, T3_common_unique_uniform]
+    models: [C1_residual_linear, C2_utility_binding, C5_residual_plus_binding]
+    seeds: smoke
+    gate: select_top_two
+
+  - id: S3_optional_candidate
+    tasks: [T2_multiB_slot_uniform]
+    models: [C3_prior_linear, C4_nonlinear_gate, C6_tail_writein_pressure]
+    seeds: smoke
+    run_if: attribution_requires_it
+
+  - id: S4_full_uniform
+    tasks: [T2_multiB_slot_uniform, T3_common_unique_uniform]
+    models: selected_top_two_plus_baselines
+    seeds: full
+    gate: uniform_binding_pass
+
+  - id: S5_stability_and_zipf
+    tasks: [T5_heldout_shift, T4_zipf_common_unique]
+    models: selected_top_two_plus_baselines
+    seeds: full
+    run_if: S4_passes
