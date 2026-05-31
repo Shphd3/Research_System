@@ -70,6 +70,18 @@ Conclusion:
 
 是否需要生成 `01_reporting/<hypothesis_id>_reporting_card.md`：是 / 否
 
+## 6.5 Today's Closed Loop
+
+Question:
+
+Evidence:
+
+Claim Boundary:
+
+Next Decision:
+
+Advisor report card needed? yes / no
+
 ## 7. 30s Explanation
 
 如果明天要跟导师/学长说，30 秒版本是：

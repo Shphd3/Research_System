@@ -47,6 +47,12 @@ Use this only when at least one is true:
 
 Do not create a handoff report for every ordinary experiment by default.
 
+For ordinary advisor discussion, prefer a compact
+`05_report_card_for_advisor.md` in the daily or experiment folder. It should be
+derived from the anchor, summary, and detailed result. Use a formal handoff
+report only when a collaborator, meeting package, or web-side reader needs a
+self-contained transfer document.
+
 ## Required Inputs
 
 Read in order:

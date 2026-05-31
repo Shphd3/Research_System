@@ -98,6 +98,49 @@ the smallest test or reason to park it
 
 Do not turn an unclear tangent into a new experiment until this gate is passed.
 
+## Protocol Approval Rule
+
+For any nontrivial experiment, write a short protocol before code changes or
+runs. The protocol is the user's audit surface, not an implementation plan.
+
+It must state:
+
+```text
+goal / decision question / tested hypothesis / rival explanation
+data / model / routing or algorithm / loss or objective
+conditions / checkpoints or seeds
+primary metric / secondary metrics
+known good / known bad / known confusing
+success / failure / insufficient evidence
+what this cannot claim
+user approval checklist
+```
+
+The AI must stop after the protocol and wait for user approval. Without
+approval, do not run experiments, expand conditions, generate a broad grid, or
+promote a result claim.
+
+Known good, known bad, and known confusing cases can be minimal before the run.
+They may be marked `TBD but not blocking` only if the protocol states what
+validity risk remains. After the run, review them in the detailed result.
+
+## Audit Before Interpretation Rule
+
+Before interpreting a result, first audit whether the experiment actually ran
+the approved protocol:
+
+```text
+approved conditions match actual conditions?
+primary metric exists?
+central figures/tables exist?
+seeds/checkpoints recorded?
+known good/bad/confusing reviewed?
+failure or insufficient evidence criteria applied?
+```
+
+If this audit fails, the result can be recorded as incomplete evidence but must
+not update the claim boundary as if it were decisive.
+
 ## Research Loop
 
 1. State one falsifiable hypothesis.

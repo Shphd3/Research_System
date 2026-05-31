@@ -21,12 +21,23 @@ The full implementation contract belongs in the execution plan or runbook. The
 anchor should state only the implementation implication needed to understand
 the minimal test.
 
+The anchor owns current-state judgment only:
+
+```text
+problem / conjecture / physical prior / math model / minimal test
+current evidence / claim boundary / next decision
+```
+
+Do not store full algorithm steps, long result tables, raw logs, ablation grids,
+or meeting scripts in the anchor.
+
 Anchor filenames should describe a stable research question or hypothesis line,
 not a date, seed, smoke run, or one failed operationalization. Use
 `<mechanism_or_question>_anchor.md` unless the project already has a clearer
 local convention.
 
-It is not a run log and not a standalone execution plan. It is the bridge:
+It is not a run log, not a protocol, and not a standalone execution plan. It is
+the bridge:
 
 ```text
 research intuition -> physical prior -> mathematical model -> computational realization

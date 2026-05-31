@@ -26,7 +26,7 @@ meeting-ready reports.
    problem anchor or sync note.
 2. Decide whether today's work updates the graph, anchor, claim boundary, or
    next decision.
-3. Write a compact daily card, anchor update, result record, or optional handoff report.
+3. Write a compact daily card, anchor update, protocol, result record, or optional handoff report.
 4. State the conclusion for each task, not a task log.
 5. Park side thoughts instead of chasing them during the current 25 minute task.
 6. Update project-local graph or anchor files only when evidence changes the
@@ -49,11 +49,13 @@ Projects/<project>/main/problem_anchors/<anchor_id>.md
 Projects/<project>/graph.yaml
 ```
 
-After the anchor is stable, write the operational experiment execution plan:
+After the anchor is stable, write a short protocol for user approval before the
+operational execution plan:
 
 ```text
 Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
+Projects/<project>/main/experiments/<experiment_id>/protocol_for_approval.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
@@ -62,6 +64,8 @@ Projects/<project>/<worker>/sync/MMDD_topic/report.md  # optional handoff
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
 understanding, test a hypothesis, or change a next decision.
+Nontrivial experiments should stop at `protocol_for_approval.md` until the user
+approves the run.
 
 ## Web-Side AI
 
