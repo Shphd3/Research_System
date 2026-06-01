@@ -321,7 +321,10 @@ primary observable, claim boundary, and next decision. Keep the audit details in
   modeling/hypothesis, minimal experiment, current conclusion, boundary, and
   next step. Do not make it a long mini-report. It is not the meeting/advisor
   report card; use `daily_research_reports/_templates/report_card_template.md`
-  for the advisor-facing evidence card with definitions and embedded figures.
+  to create `daily_research_reports/MMDD/<topic>/05_report_card.md`
+  with the fixed Source Files, Executive Summary, Research Process Update,
+  Terms Used Here, Key Figures, Current Claim, Claim Boundary, and Next Step
+  sections.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not
@@ -335,7 +338,7 @@ primary observable, claim boundary, and next decision. Keep the audit details in
 - Use `experiment-card-writer` only for the operational execution plan after
   this anchor identifies the minimal decisive test.
 - After evidence exists, update the anchor from `summary.md` / `detailed.md`.
-  Do not update root sync, write handoff reports, edit graph, commit, or push
+  Do not update root sync, package handoff reports, edit graph, commit, or push
   unless the user explicitly asks. Use `handoff-report-writer` only when that
   explicit handoff request exists.
 

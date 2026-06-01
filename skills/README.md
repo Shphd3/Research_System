@@ -19,7 +19,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Write unified anchor/purpose-card documents from boundary and physical priors to math, implementation, evidence, and next decision. |
 | `experiment-card-writer` | Write operational experiment execution plans from anchors. |
-| `handoff-report-writer` | Write optional meeting/collaborator/web handoff reports after anchor, summary, and detailed records are updated. |
+| `handoff-report-writer` | Package existing anchor, summary, detailed, report card, figures, and tables for meeting/collaborator/web handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
@@ -34,7 +34,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Purpose, hypothesis, physical priors, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
 | Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
-| External handoff | `handoff-report-writer` | Explicitly requested self-contained report or curated collaborator repo sync package after anchor and result records are updated. | Replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
+| External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
 
@@ -157,13 +157,18 @@ operationalization, and the next uncertainty to isolate.
 - `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
   collaborator sync folder; use only when project sync is explicitly requested.
   Meeting/advisor/sync report cards should reuse
-  `daily_research_reports/_templates/report_card_template.md`. Report cards are
-  advisor-facing evidence cards: define necessary terms, embed central figures,
-  state the research-process update, claim boundary, and next step, and keep
-  private advisor questions in daily or meeting notes. Handoff reports may paste
-  the filled card inline, and must include a compact artifact / repro map: code,
-  runner, config, data or manifest, result folder, figure folder, key files,
-  checkpoints/logs, and repro command.
+  `daily_research_reports/_templates/report_card_template.md` and be named
+  `05_report_card.md` in daily or sync packages. Report cards are
+  advisor-facing evidence cards with fixed
+  sections: Source Files, Executive Summary, Research Process Update, Terms
+  Used Here, Key Figures, Current Claim, Claim Boundary, and Next Step. Keep
+  private advisor questions in daily or meeting notes. Handoff packages should
+  copy existing cards and result records, plus referenced figures/tables, and
+  add only a short README or index for navigation.
+- `daily_research_reports/MMDD/<topic>/05_report_card.md`:
+  default daily location for an advisor-facing report card. It is
+  created only when the experiment needs meeting/advisor discussion, and it is
+  derived from the anchor, `summary.md`, and `detailed.md`.
 - `Projects/<project>/<worker>/docs/`: named material documents that help write
   anchors, result records, and handoff reports.
 - `graph.yaml`: default thin research graph. Use `research-graph-sop`; keep
@@ -173,7 +178,7 @@ operationalization, and the next uncertainty to isolate.
 - `<external_collaborator_repo>/<agreed_research_sync_path>/MMDD_topic/`:
   explicitly requested sync package for a senior student's or collaborator's
   GitHub repo. Include only a minimal curated package: copied anchor,
-  `summary.md`, `detailed.md`, optional `report_card.md`, and figures/tables
+  `summary.md`, `detailed.md`, optional `05_report_card.md`, and figures/tables
   only when referenced by those synced documents. Do not include raw logs,
   checkpoints, datasets, full result dirs, private notes, unrelated anchors,
   code changes, configs, or execution plans unless explicitly requested.

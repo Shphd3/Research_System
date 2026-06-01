@@ -9,7 +9,7 @@ Use this folder shape for a daily sandbox or a small mainline experiment.
 02_execution_plan.md
 03_summary.md
 04_detailed.md
-05_report_card_for_advisor.md
+05_report_card.md
 handoff_report.md
 figures/
 tables/
@@ -34,13 +34,13 @@ the user approves.
 
 `04_detailed.md`: complete evidence ledger and artifact map.
 
-`05_report_card_for_advisor.md`: optional. Meeting/advisor-facing report card
-derived from anchor, summary, and detailed. Use
+`05_report_card.md`: optional. Meeting/advisor-facing report card derived from
+anchor, summary, and detailed. Use
 `daily_research_reports/_templates/report_card_template.md` as the default
 template.
 
-`handoff_report.md`: optional. Create only when the user explicitly asks for a
-handoff report.
+`handoff_report.md`: optional legacy name. Prefer packaging existing files with
+a short README/index when the user explicitly asks for handoff.
 
 When a handoff report is explicitly requested, this anchor file should also
 serve as the local copy of the most important project anchor for that handoff.

@@ -1,68 +1,94 @@
-# Advisor Report Card: <topic>
+# Report Card: <topic>
 
-Source files:
+## Source Files
 
-```text
 Anchor:
-Protocol:
+
 Summary:
+
 Detailed:
+
 Figures / Tables:
-```
 
-Purpose:
+## 0. Executive Summary
 
-This file is the advisor-facing, self-contained evidence card. It is meant to
-be opened or shared in a meeting. It is not private preparation notes, not a
-PPT, not a handoff report, and not a replacement for the anchor, `summary.md`,
-or `detailed.md`.
+本轮目标：
 
-Do not include private advisor questions, "if interrupted" scripts, hidden
-uncertainty notes, or broad future brainstorming. Put those in your private
-daily card or meeting notes.
+____
 
-## 0. 30s Version
+最小机制审计：
 
-我这次研究的是：____。
+____
 
-最小实验是：____。
+清晰的假设：
 
-关键发现是：____。
+____
 
-当前最安全的结论是：____。
+关键发现：
 
-结论边界是：这个结果只能说明 ____；不能说明 ____。
+____
 
-下一步是：____。
+当前结论：
+
+____
+
+结论边界：
+
+____
+
+下一步：
+
+____
 
 ## 1. Research Process Update
 
-| step | content |
+| item | content |
 |---|---|
-| Hypothesis | ____ |
-| Operational definition | ____ |
-| Minimal test | ____ |
-| Metric + visual evidence | ____ |
-| Failure analysis | ____ |
+| Previous mainline | ____ |
+| New probe | ____ |
+| New evidence | ____ |
 | Knowledge update | ____ |
+| Next decision | ____ |
 
 ## 2. Terms Used Here
 
-| term | meaning |
-|---|---|
-| ____ | ____ |
-| ____ | ____ |
-| ____ | ____ |
+- `term`: ____
+- `term`: ____
+- `term`: ____
 
 ## 3. Key Figures
 
-![<figure title>](figures/<figure>.png)
-
-Interpretation: ____.
+### Figure 1: <figure title>
 
 ![<figure title>](figures/<figure>.png)
 
-Interpretation: ____.
+What to see:
+
+____
+
+Supports:
+
+____
+
+Cannot prove:
+
+____
+
+### Figure 2: <figure title>
+
+![<figure title>](figures/<figure>.png)
+
+What to see:
+
+____
+
+Supports:
+
+____
+
+Cannot prove:
+
+____
 
 ## 4. Current Claim
 
@@ -70,16 +96,29 @@ ____
 
 ## 5. Claim Boundary
 
-This result supports:
+Can claim:
 
-1. ____
+____
 
-It does not claim:
+Cannot claim:
 
-1. ____
-2. ____
-3. ____
+____
 
 ## 6. Next Step
 
 ____
+
+## Rules
+
+- Use the filename `05_report_card.md`.
+- Write for the advisor to read directly.
+- Keep it self-contained, brief, and complete.
+- Include only the minimum detail needed to understand the question, hypothesis,
+  evidence, boundary, and next decision.
+- Define necessary terms in `## 2. Terms Used Here`.
+- Embed only central figures and explain what each figure supports and cannot
+  prove.
+- Do not include private questions, rehearsal scripts, raw logs, long tables,
+  implementation details, or new unapproved experiments.
+- Do not make a stronger claim than `summary.md`, `detailed.md`, and the anchor
+  support.

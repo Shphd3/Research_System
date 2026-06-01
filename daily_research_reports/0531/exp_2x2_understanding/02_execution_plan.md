@@ -56,7 +56,7 @@ token accuracy sanity check
 ```text
 03_summary.md
 04_detailed.md
-05_report_card_for_advisor.md
+report_card.md
 figures/
 tables/
 notes/

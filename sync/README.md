@@ -22,6 +22,7 @@ specialization mainline using curated evidence from:
 
 ```text
 Projects/from-attention-to-search/XingyuD/sync/
+Projects/from-attention-to-search/main/experiments/
 ```
 
 Older root sync structures have been removed from the default reading path.
@@ -44,6 +45,60 @@ web-side and cross-project reading copy. When root sync is requested, update
 the sync copy in the same turn and verify that the source and copy are
 identical.
 
+## Sync Action Meanings
+
+Use these as separate commands:
+
+| User says | Action |
+|---|---|
+| sync root sync | update root `sync/` reading copies and indexes |
+| sync to collaborator repo | copy a curated package into the external repo |
+| package handoff | copy existing anchor / summary / detailed / 05_report_card / referenced figures and tables into a handoff folder |
+| update graph | edit project `graph.yaml` after the research-state change is confirmed |
+| push | commit or push only the explicitly requested repo/branch |
+
+If the user only asks to update an experiment, update the project-local anchor,
+`summary.md`, and `detailed.md`; do not touch root sync, handoff, graph, or
+Git remotes.
+
+## What The User Must Specify
+
+Before a sync action, clarify these points when they are not already explicit:
+
+```text
+sync type: root sync / project sync / external collaborator repo
+target path or repo branch, if external
+date/topic package name
+source anchor or experiment folder
+include 05_report_card? yes/no
+include protocol or execution_plan? yes/no
+include figures/tables? only referenced / all curated
+update graph? yes/no
+commit or push? yes/no, and which repo/branch
+```
+
+If these are unclear, report the ambiguity first instead of guessing a broader
+sync scope.
+
+## Daily / Project Sync Package
+
+The sync package should be the same shape whether it is copied into today's
+daily folder, project-local sync, or an external collaborator repo:
+
+```text
+<anchor_id>.md
+summary.md
+detailed.md
+05_report_card.md
+figures/   # only referenced key figures
+tables/    # only curated evidence tables
+README.md  # short index
+```
+
+Do not create new conclusions during sync. Sync packages copy the current
+research state; the anchor, `summary.md`, and `detailed.md` remain the source
+documents.
+
 Current categories:
 
 | Category | Meaning |
@@ -58,3 +113,15 @@ Current categories:
   state.
 
 Do not add root sync folders for every experiment.
+
+## Current Formal Project Evidence
+
+The 2026-05-31 mechanism audit has been promoted to:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/
+```
+
+It is not copied into root `sync/anchors/` until the user explicitly requests a
+root anchor sync for this mechanism anchor.

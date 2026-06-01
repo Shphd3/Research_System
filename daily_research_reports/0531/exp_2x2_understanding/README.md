@@ -11,7 +11,7 @@ top-1 NTP-style routing is path dependent.
 4. `02_execution_plan.md` - execution contract.
 5. `03_summary.md` - first result reading path.
 6. `04_detailed.md` - full evidence ledger.
-7. `05_report_card_for_advisor.md` - meeting-facing card.
+7. `report_card.md` - meeting-facing card.
 
 ## Main Claim
 

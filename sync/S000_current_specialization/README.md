@@ -12,6 +12,7 @@ The active branch evidence is organized under:
 
 ```text
 Projects/from-attention-to-search/XingyuD/sync/
+Projects/from-attention-to-search/main/experiments/
 ```
 
 The current branch anchor is:
@@ -24,6 +25,15 @@ Root-sync copy:
 
 ```text
 sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
+```
+
+Latest formal mechanism record:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/report_card_for_advisor.md
 ```
 
 ## Current Evidence From Branch Sync
@@ -40,6 +50,9 @@ Current evidence says:
 
 - corrected top-1 sparse MoE can learn the task, but AB-specific functional
   expert specialization is unstable;
+- in the 2026-05-31 2x2 NTP-style top-1 proxy, failed seeds are already
+  collapsed at step 0, successful seeds are already split at step 0, and router
+  bias worsens same-expert initialization risk;
 - semantic or context initialization can create early semantic routing, but the
   semantic route decays during training;
 - final hidden states still contain recoverable semantic boundaries, yet the
@@ -83,10 +96,10 @@ binding.
 Recommended next anchor question:
 
 ```text
-Can an explicit target-position route-function binding signal make multi-B
-learned routing align with slot-specific expert utility, especially for the
-distributed slot-code condition?
+Can one anti-lock-in mechanism, such as structured router initialization,
+prevent early same-expert top-1 collapse before returning to the multi-B /
+slot-context setting?
 ```
 
-The next sync should report one minimal binding diagnostic rather than another
-context-strength sweep.
+The next sync should report one minimal anti-lock-in diagnostic rather than
+another broad context-strength or architecture sweep.

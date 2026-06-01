@@ -128,7 +128,7 @@ explicitly curates them.
 
 When syncing to a senior student's or collaborator's external repo, do not copy
 the experiment workspace or codebase by default. Copy only the curated package:
-copied current anchor, `summary.md`, `detailed.md`, optional `report_card.md`,
+copied current anchor, `summary.md`, `detailed.md`, optional `05_report_card.md`,
 and figures/tables only when referenced by those synced documents.
 
 ## Handoff
@@ -161,8 +161,8 @@ mathematical model, computational realization, claim boundary, or next decision.
 Do not copy the updated anchor to root sync unless the user explicitly requests
 root sync.
 
-Finally, write or update a handoff report only if the user explicitly requests
-one. The default daily handoff location is:
+Finally, package a handoff only if the user explicitly requests one. The default
+daily handoff location is:
 
 ```text
 daily_research_reports/MMDD/<topic>/handoff_report.md
@@ -177,14 +177,18 @@ Projects/<project>/<worker>/sync/MMDD_topic/report.md
 Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
 ```
 
-If the need is advisor discussion, first fill the shared report card:
+If the need is advisor discussion, first fill the shared report card and save
+it in the experiment folder:
 
 ```text
-daily_research_reports/_templates/report_card_template.md
+daily_research_reports/MMDD/<topic>/05_report_card.md
 ```
 
-The handoff report may include the filled report card inline, but should not
-define a separate report-card structure.
+Use `daily_research_reports/_templates/report_card_template.md` as the source
+template. The handoff package may include the existing filled report card, but
+should not define a separate report-card structure or create new research
+content.
+The filename is always `05_report_card.md` in daily or sync packages.
 
 It must include a compact artifact / repro map:
 

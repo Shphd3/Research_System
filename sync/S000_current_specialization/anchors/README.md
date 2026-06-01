@@ -21,6 +21,13 @@ repositories.
 
 ## Update Rule
 
-When a source anchor changes, copy the latest version here in the same turn and
-keep this index aligned. Before finishing, verify that the source and sync copy
-are identical.
+Do not update these copies automatically when a project-local anchor changes.
+Update them only when the user explicitly asks to sync root sync or names a
+specific root anchor copy. Before finishing that requested sync, verify that the
+source and sync copy are identical.
+
+Not yet copied by default:
+
+| Project-local anchor | Why not copied |
+|---|---|
+| `Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md` | promoted project evidence, but root anchor sync has not been explicitly requested |

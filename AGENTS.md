@@ -95,7 +95,7 @@ Default behavior:
 ```text
 update anchor / summary.md / detailed.md / daily card only
 do not update root sync automatically
-do not write handoff reports automatically
+do not package handoff reports automatically
 do not sync to external collaborator repos automatically
 do not update graph.yaml automatically
 do not push automatically
@@ -106,7 +106,7 @@ Only perform these actions when the user explicitly asks:
 ```text
 sync root sync
 sync to collaborator/senior repo
-write handoff report
+package handoff report
 push to remote
 update graph
 ```
@@ -135,7 +135,7 @@ External collaborator repo sync is a separate explicit action. It means copying
 a small curated research package into a collaborator/advisor/senior student's
 repo, not mirroring this repository or the experiment codebase. Include only
 the copied current anchor, `summary.md`, `detailed.md`, and optionally a
-`report_card.md` for quick reading. Copy figures or tables only when those files
+`05_report_card.md` for quick reading. Copy figures or tables only when those files
 are embedded by the synced documents.
 Do not include raw logs, checkpoints, datasets, full result directories,
 private daily notes, unrelated anchors, or code changes unless the user
@@ -155,7 +155,7 @@ Default shape:
 one anchor -> one minimal decisive experiment -> summary.md -> detailed.md -> anchor update
 ```
 
-Root sync, external collaborator repo sync, handoff reports, graph updates,
+Root sync, external collaborator repo sync, handoff packages, graph updates,
 commits, and pushes are separate explicit actions. Do not perform them unless
 the user asks for that action in the current task.
 
@@ -165,6 +165,29 @@ self-contained 地给出目的、问题/假设、结论、关键证据、结论�
 `detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
 seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
 和 claim boundary。
+
+When an experiment needs advisor-facing discussion, create the report card as:
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card.md
+```
+
+The report card is a short, self-contained reading card derived from the
+anchor, `summary.md`, and `detailed.md`. It belongs with the experiment record,
+not beside the anchor, and must embed central figures when figures are
+decision-relevant. Use the fixed structure from
+`daily_research_reports/_templates/report_card_template.md`:
+
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
 
 如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
 `summary.md`、`detailed.md` 和可选 handoff report 中嵌入。只列路径不嵌图是不完整的。
@@ -193,10 +216,10 @@ new experiment before this gate is passed.
 
 Post-result handoff is optional. The anchor is the current-state research
 document, `summary.md` is the first result reading path, and `detailed.md` is
-the full iteration ledger. A handoff report only packages those updated sources
-for meeting, collaborator, or web-side use.
+the full iteration ledger. A handoff package only copies and indexes those
+already-updated sources for meeting, collaborator, or web-side use.
 
-Default daily location when the user explicitly requests a handoff report:
+Default daily location when the user explicitly requests a handoff package:
 
 ```text
 daily_research_reports/MMDD/<topic>/handoff_report.md
@@ -217,20 +240,18 @@ Projects/<project>/sync/MMDD_topic/report.md
 Projects/<project>/sync/MMDD_topic/<anchor_id>.md
 ```
 
-A handoff report must be self-contained and include:
+A handoff package must be self-contained and include existing:
 
 ```text
 Anchor / Summary / Detailed
-Advisor-facing Report Card derived from daily_research_reports/_templates/report_card_template.md
-目的 / 物理建模或假设 / 最小实验 / 结论 / 证据 / 结论边界 / 下一步
-Artifact-Repro Map
+05_report_card.md derived from daily_research_reports/_templates/report_card_template.md
+figures / tables referenced by included docs
+short README or index
 ```
 
-The report card may be pasted inline in the handoff report, but it must not
-define a separate incompatible meeting template. It is advisor-facing content:
-embed central figures, define necessary terms, and do not include private
-advisor questions or "if interrupted" scripts. The source remains anchor +
-`summary.md` + `detailed.md`.
+Do not create new claims, new conclusions, or a second closure in a handoff
+package. The source remains anchor + `summary.md` + `detailed.md` and the
+advisor-facing report card when it already exists or is explicitly requested.
 
 The artifact map must include code workspace, runner, config, data/manifest,
 result dir, figure dir, key files, checkpoints/logs, repro command, and job id
@@ -264,8 +285,8 @@ first. Then use local skills from `skills/` when the task type matches:
   visual evidence, failure analysis, and refined hypothesis.
 - `problem-anchor-writer`: write or update anchor / purpose-card documents.
 - `experiment-card-writer`: write operational execution plans from anchors.
-- `handoff-report-writer`: write explicitly requested meeting/collaborator/web
-  handoff reports after anchor, `summary.md`, and `detailed.md` are updated.
+- `handoff-report-writer`: package explicitly requested meeting/collaborator/web
+  handoff material after anchor, `summary.md`, and `detailed.md` are updated.
 - `remote-experiment-workflow`: remote/container/SCO/ACP workflow and artifact
   maps.
 - `research-mainline`: maintain graph, anchors, roadmap, and root sync state;

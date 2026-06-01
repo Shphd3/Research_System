@@ -383,10 +383,30 @@ tables under `tables/` and link or summarize them near the relevant metric.
 When the result is meeting-facing, generate a report card from
 `daily_research_reports/_templates/report_card_template.md`. The report card is
 an advisor-facing, self-contained evidence card derived from anchor,
-`summary.md`, and `detailed.md`, not a second closure. It should include the
-hypothesis, operational definition, minimal test, knowledge update, important
-figures, term definitions, claim boundary, and next step. Do not include private
-advisor questions or "if interrupted" scripts in the report card.
+`summary.md`, and `detailed.md`, not a second closure. In project records, save
+it as:
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card.md
+```
+
+It must follow the shared structure:
+
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
+
+It should include the falsifiable hypothesis, operational definition, minimal
+test, knowledge update, important figures, term definitions, claim boundary,
+and next step. Do not include private advisor questions, rehearsal scripts, raw
+logs, long tables, or implementation details in the report card.
 
 ## Rules
 
@@ -439,7 +459,7 @@ advisor questions or "if interrupted" scripts in the report card.
 - Anchors are reasoning artifacts; execution plans are operational artifacts.
 - After results, always write `summary.md` and `detailed.md`, then update the
   anchor when the result changes the current hypothesis, evidence, claim
-  boundary, or next decision. Do not update root sync, write handoff reports,
+  boundary, or next decision. Do not update root sync, package handoff reports,
   edit graph, commit, or push unless the user explicitly asks. Use
   `handoff-report-writer` only when that explicit handoff request exists.
 - Treat `summary.md` as the first result reading path. Do not create a

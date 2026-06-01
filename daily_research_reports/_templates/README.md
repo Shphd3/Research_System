@@ -1,40 +1,58 @@
-# Daily Card Templates
+# Daily Research Templates
 
-Daily cards belong inside `daily_research_reports/MMDD/`, not in a separate root-level daily log folder.
+This folder keeps reusable templates for research reporting surfaces.
 
-The daily card replaces the old daily report. It should reduce thinking load:
-state the day's purpose, task-level conclusions, mainline update, claim boundary,
-and next decision.
+## Daily Notes
 
-There is no separate daily-report skill. Use the template directly and keep each
-task split into `Did / Result / Interpretation / Claim boundary / Conclusion`.
+There is no longer a maintained daily-card template.
 
-For a new day, create:
+Daily notes should stay minimal and free-form. Recommended fields:
 
 ```text
-daily_research_reports/MMDD/daily_card.md
+purpose
+closed loop
+claim boundary
+next decision
+private advisor questions
+report card pointer, if needed
 ```
 
-Use `daily_card_template.md` as the compact first-pass structure.
+Do not turn daily notes into a second report system.
 
-When an experiment result is summarized, create a compact meeting/advisor/sync
-report card only if the user asks for meeting preparation or the result needs
-advisor-facing discussion:
+## Report Card
+
+When an experiment result is summarized, create an advisor-facing report card
+only if the user asks for meeting preparation or the result needs advisor-facing
+discussion:
 
 ```text
-daily_research_reports/MMDD/<topic>/05_report_card_for_advisor.md
+daily_research_reports/MMDD/<topic>/05_report_card.md
 ```
 
 Use `report_card_template.md`. The report card is derived from the anchor,
-`summary.md`, and `detailed.md`; it does not replace them. It is
-advisor-facing content: embed important figures, define necessary terms, state
-the research-process update, and keep private advisor questions in daily or
-meeting notes.
+`summary.md`, and `detailed.md`; it does not replace them. It is a short,
+self-contained advisor-facing evidence card with fixed sections:
 
-Class notes and side thoughts should stay inside `daily_card.md` by default:
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
 
-- `Recording / Class Notes`: only keep class points that affect research judgment, task planning, or future reading.
-- `Small Thought Parking Lot`: park side ideas without expanding them unless they directly block the current 25 minute task.
+Daily topic folders use the fixed filename `05_report_card.md`. If the same
+card is synced to a project or collaborator package, copy the card together
+with the anchor, `summary.md`, `detailed.md`, and referenced figures/tables.
+
+## Meeting Notes
+
+Private meeting notes may include questions, worries, and reminders that should
+not appear in advisor-facing report cards unless the user explicitly wants them
+there.
 
 Meeting materials for the same day should be created under:
 

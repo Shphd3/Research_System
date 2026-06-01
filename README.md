@@ -31,10 +31,12 @@ meeting-ready reports.
 5. Park side thoughts instead of chasing them during the current 25 minute task.
 6. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
-7. Do not update root sync, write handoff reports, edit `graph.yaml`, commit, or
-   push unless explicitly requested.
+7. Do not update root sync, package handoff reports, edit `graph.yaml`, commit,
+   or push unless explicitly requested.
 
-Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use `daily_research_reports/_templates/daily_card_template.md`.
+Daily notes should be placed at `daily_research_reports/MMDD/` when useful.
+There is no maintained daily-card template; keep daily notes minimal and
+free-form.
 
 Class notes and side thoughts should stay inside `daily_card.md` by default. Use `Recording / Class Notes` for class points, and `Small Thought Parking Lot` for side ideas that should not interrupt the current task.
 
@@ -60,6 +62,7 @@ Projects/<project>/main/experiments/<experiment_id>/protocol_for_approval.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
+daily_research_reports/MMDD/<topic>/05_report_card.md
 ```
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
@@ -74,6 +77,10 @@ important anchor copy in today's folder by default:
 daily_research_reports/MMDD/<topic>/handoff_report.md
 daily_research_reports/MMDD/<topic>/<anchor_id>.md
 ```
+
+When syncing a daily result to another project or collaborator repo, copy the
+same curated set: subject-bearing anchor, `summary.md`, `detailed.md`,
+`05_report_card.md`, and only the figures/tables referenced by those documents.
 
 ## Web-Side AI
 

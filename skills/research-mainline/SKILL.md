@@ -152,7 +152,7 @@ exists, use a date/topic folder:
   <anchor_id>.md
   summary.md
   detailed.md
-  report_card.md       # optional, for quick reading
+  05_report_card.md    # optional, for quick reading
   figures/             # only if referenced by synced docs
   tables/              # only if referenced by synced docs
 ```
@@ -170,7 +170,7 @@ anchor -> execution_plan.md -> summary.md -> detailed.md
 ```
 
 `summary.md` and `detailed.md` are required after an experiment result exists.
-Root sync copies, handoff reports, graph edits, commits, and pushes are explicit
+Root sync copies, handoff packages, graph edits, commits, and pushes are explicit
 follow-up actions only.
 
 ## File Roles
@@ -201,9 +201,9 @@ Anchor body is English. The top `Report Summary（中文，汇报用）` should 
 目的 / 物理建模或假设 / 最小实验 / 当前结论 / 结论边界 / 下一步
 ```
 
-This front summary is not the meeting/advisor report card. When a result needs
-advisor-facing or sync presentation, generate that card from
-`daily_research_reports/_templates/report_card_template.md`.
+This front summary is not `05_report_card.md`. When a result needs
+advisor-facing or sync presentation, generate `05_report_card.md` in the daily
+or sync package from `daily_research_reports/_templates/report_card_template.md`.
 
 Use `problem-anchor-writer` for anchor content rules.
 
@@ -216,6 +216,7 @@ anchor and contain:
 execution_plan.md
 summary.md
 detailed.md
+05_report_card.md, when advisor-facing in daily or sync packages
 figures/ when important figures exist
 tables/ when curated tables exist
 ```
@@ -251,7 +252,7 @@ required:
 - detailed.md
 
 optional:
-- report_card.md, when the collaborator needs a fast advisor-facing summary
+- 05_report_card.md, when the collaborator needs a fast advisor-facing summary
 - figures/ or tables/, only when referenced by anchor, summary, detailed, or
   report_card
 - README.md or index, only when the target repo requires one
@@ -286,14 +287,15 @@ Before copying into the external repo:
 Commit and push the external repo only when the user explicitly asks. A request
 to "sync files" means copy/update the curated package; it does not imply push.
 
-### Handoff Report
+### Handoff Package
 
 Optional external package. Use it only when the user explicitly asks for a
 meeting, collaborator, GitHub, or web-side handoff.
 
-Use `handoff-report-writer`. Do not create a handoff report merely because an
-experiment finished. The default handoff location is the daily folder, with the
-filled handoff report and the most important anchor copy side by side.
+Use `handoff-report-writer`. Do not create a new handoff document merely because
+an experiment finished. A handoff package should copy existing anchor,
+`summary.md`, `detailed.md`, optional report card, and referenced figures/tables,
+then add only a short README or index.
 
 ### Daily / Meeting Reports
 
@@ -309,11 +311,31 @@ Daily / meeting report cards should reuse
 from updated anchor, `summary.md`, and `detailed.md`. They do not replace
 anchor, summary, detailed, or graph.
 
-Advisor-facing report cards must be self-contained: include the hypothesis,
-operational definition, minimal test, research-process update, necessary term
-definitions, important embedded figures, claim boundary, and next step. Do not
-put private advisor questions or "if interrupted" scripts in the report card;
-keep those in daily cards or private meeting notes.
+For project records, the fixed location and name is:
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card.md
+```
+
+Advisor-facing report cards must use the fixed structure in
+`daily_research_reports/_templates/report_card_template.md` and be saved as
+`05_report_card.md` in daily or sync packages. The required sections are:
+
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
+
+They should be self-contained, brief, and complete enough for an advisor to
+understand the question, falsifiable hypothesis, evidence, boundary, and next
+decision. Do not put private advisor questions, rehearsal scripts, raw logs,
+long tables, or implementation details in the report card.
 
 Do not maintain a separate meeting sub-workflow unless the user explicitly asks.
 
@@ -353,7 +375,7 @@ delete it.
 
 - Keep mainline thin; put reasoning in anchors and result records.
 - By default, update only anchor / `summary.md` / `detailed.md` / daily card.
-- Do not update root sync, sync to an external collaborator repo, write handoff
+- Do not update root sync, sync to an external collaborator repo, package handoff
   reports, edit `graph.yaml`, commit, or push unless the user explicitly asks.
 - Do not promote raw logs, checkpoints, datasets, full run directories, or
   unfiltered generated outputs into mainline paths.

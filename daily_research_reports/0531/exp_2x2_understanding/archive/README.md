@@ -8,7 +8,7 @@ Active evidence is summarized in:
 ```text
 ../03_summary.md
 ../04_detailed.md
-../05_report_card_for_advisor.md
+../report_card.md
 ../ntp_style_top1_router_lockin_anchor.md
 ```
 
