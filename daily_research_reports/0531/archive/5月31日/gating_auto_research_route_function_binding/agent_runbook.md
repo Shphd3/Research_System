@@ -29,7 +29,7 @@ skills/experiment-card-writer/SKILL.md
 skills/remote-experiment-workflow/SKILL.md
 sync/S000_current_specialization/README.md
 sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
-this package: anchor.md, execution_plan.md, implementation_contract.md
+this package: route_function_binding_stable_feature_routing_anchor.md, execution_plan.md, implementation_contract.md
 ```
 
 Then write a short preflight note:

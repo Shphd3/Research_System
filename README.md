@@ -26,12 +26,13 @@ meeting-ready reports.
    problem anchor or sync note.
 2. Decide whether today's work updates the graph, anchor, claim boundary, or
    next decision.
-3. Write a compact daily card, anchor update, protocol, result record, or optional handoff report.
+3. Write a compact daily card, anchor update, protocol, or result record.
 4. State the conclusion for each task, not a task log.
 5. Park side thoughts instead of chasing them during the current 25 minute task.
-6. Update project-local graph or anchor files only when evidence changes the
-   route, claim boundary, bottleneck, hypothesis status, or next decision.
-7. Commit the research-system update.
+6. Update anchors only when evidence changes the route, claim boundary,
+   bottleneck, hypothesis status, or next decision.
+7. Do not update root sync, write handoff reports, edit `graph.yaml`, commit, or
+   push unless explicitly requested.
 
 Daily cards should be placed at `daily_research_reports/MMDD/daily_card.md`. Use `daily_research_reports/_templates/daily_card_template.md`.
 
@@ -59,13 +60,20 @@ Projects/<project>/main/experiments/<experiment_id>/protocol_for_approval.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
-Projects/<project>/<worker>/sync/MMDD_topic/report.md  # optional handoff
 ```
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
 understanding, test a hypothesis, or change a next decision.
 Nontrivial experiments should stop at `protocol_for_approval.md` until the user
 approves the run.
+
+When a handoff is explicitly requested, place the handoff report and the most
+important anchor copy in today's folder by default:
+
+```text
+daily_research_reports/MMDD/<topic>/handoff_report.md
+daily_research_reports/MMDD/<topic>/<anchor_id>.md
+```
 
 ## Web-Side AI
 

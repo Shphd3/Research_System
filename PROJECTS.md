@@ -96,6 +96,9 @@ Current root anchor copy:
 sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
 ```
 
+This copy is updated only when the user explicitly asks to sync root sync. The
+project-local anchor remains the source of truth.
+
 ## Web-Side Rule
 
 Web-side agents should not rely on chat history or old compatibility snapshots.

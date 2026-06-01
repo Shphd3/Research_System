@@ -1,6 +1,6 @@
 # Execution Plan: 2x2 Top-1 Router Lock-In
 
-Anchor: `anchor.md`
+Anchor: `ntp_style_top1_router_lockin_anchor.md`
 Approved protocol: `01_protocol_for_approval.md`
 
 ## Run Goal

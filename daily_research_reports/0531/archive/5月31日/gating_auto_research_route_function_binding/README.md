@@ -40,7 +40,7 @@ sync/S000_current_specialization/anchors/expert_specialization/route_function_bi
 
 | File | Role |
 |---|---|
-| `anchor.md` | 新 anchor 草案：定义父问题、物理先验、数学建模、最小可证伪测试。 |
+| `route_function_binding_stable_feature_routing_anchor.md` | 新 anchor 草案：定义父问题、物理先验、数学建模、最小可证伪测试。 |
 | `execution_plan.md` | 可执行实验计划：多阶段 auto research，但每阶段有明确决策门。 |
 | `agent_runbook.md` | 给 agent 的逐步执行说明、分支规则、停止规则、artifact 要求。 |
 | `experiment_matrix.yaml` | 实验矩阵、条件、指标、阈值、输出路径。 |
@@ -65,4 +65,3 @@ anchor -> smoke -> diagnostic -> mechanism intervention -> stability -> summary/
 ```text
 observation / interpretation / claim / speculation / boundary / next decision
 ```
-

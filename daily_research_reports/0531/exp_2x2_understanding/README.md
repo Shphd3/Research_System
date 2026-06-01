@@ -6,7 +6,7 @@ top-1 NTP-style routing is path dependent.
 ## Read Order
 
 1. `00_handwrite_anchor.md` - user rough judgment.
-2. `anchor.md` - current research state.
+2. `ntp_style_top1_router_lockin_anchor.md` - current research state.
 3. `01_protocol_for_approval.md` - approved audit protocol.
 4. `02_execution_plan.md` - execution contract.
 5. `03_summary.md` - first result reading path.

@@ -1,36 +1,11 @@
-# Reporting Card: <hypothesis_id>
+# Deprecated Reporting Card Template
 
-Source closure:
-
-```text
-Projects/<project>/<worker>/main/hypotheses/<hypothesis_id>/hypothesis_closure.md
-```
-
-## Oral Report Card - Fill Before Meeting
-
-目的：
-
-假设：
-
-结论：
-
-证据：
-
-1.
-2.
-3.
-
-## Closure Snapshot
-
-Paste or summarize the final `hypothesis_closure.md` here for daily access.
-
-The project-local closure remains the source of truth.
-
-If figures are needed, copy them beside this reporting card, for example:
+Use the shared report card template instead:
 
 ```text
-<hypothesis_id>_figures/
+daily_research_reports/_templates/report_card_template.md
 ```
 
-Use local relative image links. Do not reference figures across project
-directories from the daily reporting card.
+This file is kept only for compatibility with older daily notes that mention
+`reporting_card_template.md`. Do not start new meeting/advisor/sync cards from
+this file.

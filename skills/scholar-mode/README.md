@@ -26,8 +26,9 @@ It should not replace:
 - `problem-anchor-writer` for anchor / purpose-card documents.
 - `experiment-card-writer` for execution plans.
 - `research-mainline` for project-state consolidation.
-- `handoff-report-writer` for optional meeting or collaborator handoff reports
-  after the anchor, summary, and detailed record are already updated.
+- `handoff-report-writer` for explicitly requested meeting or collaborator
+  handoff reports after the anchor, summary, and detailed record are already
+  updated.
 
 ## Maintenance
 

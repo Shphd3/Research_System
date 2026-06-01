@@ -7,6 +7,10 @@ project folder.
 It is not a raw-output dump and not a replacement for project-local sync
 reports.
 
+It is also not the same as syncing to a collaborator, advisor, or senior
+student's external GitHub repo. External collaborator repo sync is an explicit
+curated package copy into that repo's agreed destination folder.
+
 ## Current Root Sync
 
 ```text
@@ -26,7 +30,9 @@ project-local sync reports.
 
 ## Anchor Copy Rule
 
-Every active project anchor must be mirrored into root sync with an explicit
+Root sync is an explicit external-reading surface, not an automatic side effect
+of every project-local anchor update. When the user explicitly asks to sync
+root sync, mirror the active project anchor into root sync with an explicit
 category:
 
 ```text
@@ -34,7 +40,7 @@ sync/<sync_id>/anchors/<category>/<anchor_id>.md
 ```
 
 The project-local anchor is the source of truth; the root sync copy is the
-web-side and cross-project reading copy. When the source anchor changes, update
+web-side and cross-project reading copy. When root sync is requested, update
 the sync copy in the same turn and verify that the source and copy are
 identical.
 

@@ -4,12 +4,13 @@ Use this folder shape for a daily sandbox or a small mainline experiment.
 
 ```text
 00_handwrite_anchor.md
-anchor.md
+<topic>_anchor.md
 01_protocol_for_approval.md
 02_execution_plan.md
 03_summary.md
 04_detailed.md
 05_report_card_for_advisor.md
+handoff_report.md
 figures/
 tables/
 notes/
@@ -20,7 +21,8 @@ archive/
 
 `00_handwrite_anchor.md`: rough user judgment. No execution details.
 
-`anchor.md`: current research state. No raw logs or full implementation
+`<topic>_anchor.md`: current research state. Use a subject-bearing name that
+matches the research question or mechanism. No raw logs or full implementation
 contract.
 
 `01_protocol_for_approval.md`: short pre-run audit surface. AI stops here until
@@ -32,8 +34,17 @@ the user approves.
 
 `04_detailed.md`: complete evidence ledger and artifact map.
 
-`05_report_card_for_advisor.md`: 60-second advisor-facing card derived from
-anchor, summary, and detailed.
+`05_report_card_for_advisor.md`: optional. Meeting/advisor-facing report card
+derived from anchor, summary, and detailed. Use
+`daily_research_reports/_templates/report_card_template.md` as the default
+template.
+
+`handoff_report.md`: optional. Create only when the user explicitly asks for a
+handoff report.
+
+When a handoff report is explicitly requested, this anchor file should also
+serve as the local copy of the most important project anchor for that handoff.
+Keep the subject-bearing basename; do not rename it to generic `anchor.md`.
 
 `archive/`: old probes or superseded proxies kept for traceability, not for the
 main read path.

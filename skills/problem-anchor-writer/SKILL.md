@@ -52,15 +52,16 @@ For hand-written first drafts, use
 to be rough; its purpose is to expose the user's thinking before AI polishes the
 anchor.
 
-After updating an active project anchor, copy it to the categorized root sync
-anchor path when the project defines one, for example:
+After updating an active project anchor, do not copy it to root sync unless the
+user explicitly requests root sync. When requested, copy it to the categorized
+root sync anchor path, for example:
 
 ```text
 sync/<sync_id>/anchors/<category>/<anchor_id>.md
 ```
 
-The project-local anchor remains the source of truth. Verify that source and
-root copy are identical before finishing.
+The project-local anchor remains the source of truth. When a root sync copy is
+requested, verify that source and root copy are identical before finishing.
 
 ## Core Rule
 
@@ -156,7 +157,7 @@ parent_node: <parent_problem_or_graph_node>
 
 下一步：
 
-Keep this section short. It is for oral reporting, not for full reasoning.
+Keep this section short. It is for quick reporting, not for full reasoning.
 
 ## 1. Problem Definition
 
@@ -318,7 +319,9 @@ primary observable, claim boundary, and next decision. Keep the audit details in
 - `Report Summary（中文，汇报用）` is a short front summary. It should let the
   advisor understand the work in about 60 seconds: purpose, physical
   modeling/hypothesis, minimal experiment, current conclusion, boundary, and
-  next step. Do not make it a long mini-report.
+  next step. Do not make it a long mini-report. It is not the meeting/advisor
+  report card; use `daily_research_reports/_templates/report_card_template.md`
+  for the advisor-facing evidence card with definitions and embedded figures.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not
@@ -331,9 +334,10 @@ primary observable, claim boundary, and next decision. Keep the audit details in
   vague or conceptually unstable.
 - Use `experiment-card-writer` only for the operational execution plan after
   this anchor identifies the minimal decisive test.
-- After evidence exists, update the anchor from `summary.md` / `detailed.md`;
-  then use `handoff-report-writer` only when a meeting, collaborator, or
-  web-side handoff package is needed.
+- After evidence exists, update the anchor from `summary.md` / `detailed.md`.
+  Do not update root sync, write handoff reports, edit graph, commit, or push
+  unless the user explicitly asks. Use `handoff-report-writer` only when that
+  explicit handoff request exists.
 
 ## Reference Delegation
 

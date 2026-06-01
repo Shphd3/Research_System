@@ -54,7 +54,7 @@ Conclusion:
 
 如果否，今天澄清了什么：
 
-是否需要更新 project sync / graph / results：是 / 否
+是否需要后续显式动作：root sync / handoff report / graph / push / 无
 
 ## 5. What I Cannot Claim Yet
 
@@ -64,11 +64,10 @@ Conclusion:
 
 下一步最小决策 / 最小实验 / 最小阅读任务：
 
-是否需要写 hypothesis closure：是 / 否
+是否需要生成 `05_report_card_for_advisor.md`：是 / 否
 
-是否需要写/更新 sync 文件夹：是 / 否
-
-是否需要生成 `01_reporting/<hypothesis_id>_reporting_card.md`：是 / 否
+是否需要写 handoff report / 更新 root sync / 更新 graph / push：
+仅在我明确请求时填写。
 
 ## 6.5 Today's Closed Loop
 
@@ -82,9 +81,24 @@ Next Decision:
 
 Advisor report card needed? yes / no
 
-## 7. 30s Explanation
+## 7. Report Card Pointer
 
-如果明天要跟导师/学长说，30 秒版本是：
+如果明天要跟导师/学长/合作者说，使用：
+
+```text
+daily_research_reports/_templates/report_card_template.md
+```
+
+本日对应 report card：
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card_for_advisor.md
+```
+
+30 秒版本可以直接取 report card 的 `0. 30s Version`。
+
+不要在 daily card 里重复维护一套完整汇报模板。导师问题、临场提醒、私人担心
+写在 daily card 或 meeting notes，不写进给导师看的 report card。
 
 ## 8. Recording / Class Notes
 

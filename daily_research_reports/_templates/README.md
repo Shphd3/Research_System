@@ -17,17 +17,19 @@ daily_research_reports/MMDD/daily_card.md
 
 Use `daily_card_template.md` as the compact first-pass structure.
 
-When an experiment result is summarized, create a compact meeting-prep
-reporting card only if the result needs oral discussion:
+When an experiment result is summarized, create a compact meeting/advisor/sync
+report card only if the user asks for meeting preparation or the result needs
+advisor-facing discussion:
 
 ```text
-daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+daily_research_reports/MMDD/<topic>/05_report_card_for_advisor.md
 ```
 
-Use `reporting_card_template.md`. The top oral report card is intentionally
-blank so the user can write the group-meeting language themselves. The
-project-local anchor, `summary.md`, and `detailed.md` remain the source of
-truth.
+Use `report_card_template.md`. The report card is derived from the anchor,
+`summary.md`, and `detailed.md`; it does not replace them. It is
+advisor-facing content: embed important figures, define necessary terms, state
+the research-process update, and keep private advisor questions in daily or
+meeting notes.
 
 Class notes and side thoughts should stay inside `daily_card.md` by default:
 

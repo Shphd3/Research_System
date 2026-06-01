@@ -380,6 +380,14 @@ Figures are mandatory when figures exist. Put report-ready figures under
 and write one sentence stating which claim each figure supports. Put curated
 tables under `tables/` and link or summarize them near the relevant metric.
 
+When the result is meeting-facing, generate a report card from
+`daily_research_reports/_templates/report_card_template.md`. The report card is
+an advisor-facing, self-contained evidence card derived from anchor,
+`summary.md`, and `detailed.md`, not a second closure. It should include the
+hypothesis, operational definition, minimal test, knowledge update, important
+figures, term definitions, claim boundary, and next step. Do not include private
+advisor questions or "if interrupted" scripts in the report card.
+
 ## Rules
 
 - Follow the `research-progress-core` communication rule: state what is tested,
@@ -430,9 +438,10 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - Do not create separate hypothesis purpose cards.
 - Anchors are reasoning artifacts; execution plans are operational artifacts.
 - After results, always write `summary.md` and `detailed.md`, then update the
-  anchor and root anchor copy when the result changes the current hypothesis,
-  evidence, claim boundary, or next decision. Use `handoff-report-writer` only
-  when a meeting, collaborator, or web-side handoff package is needed.
+  anchor when the result changes the current hypothesis, evidence, claim
+  boundary, or next decision. Do not update root sync, write handoff reports,
+  edit graph, commit, or push unless the user explicitly asks. Use
+  `handoff-report-writer` only when that explicit handoff request exists.
 - Treat `summary.md` as the first result reading path. Do not create a
   separate closure document for ordinary experiment results.
 - Treat `detailed.md` as the full experiment record. It should be sufficient to

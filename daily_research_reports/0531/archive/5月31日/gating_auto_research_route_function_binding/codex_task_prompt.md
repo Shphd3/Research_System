@@ -20,7 +20,7 @@ sync/S000_current_specialization/anchors/expert_specialization/slot_context_domi
 然后读取本任务包：
 
 ```text
-anchor.md
+route_function_binding_stable_feature_routing_anchor.md
 execution_plan.md
 implementation_contract.md
 experiment_matrix.yaml

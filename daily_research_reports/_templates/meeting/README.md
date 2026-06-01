@@ -12,16 +12,22 @@ daily_research_reports/MMDD/meeting/
   slide_outline.md
 ```
 
-For experiment results that need oral discussion, keep the fast reporting entry
-in:
+For experiment results that need advisor-facing discussion, keep the fast
+reporting entry in:
 
 ```text
-daily_research_reports/MMDD/01_reporting/<hypothesis_id>_reporting_card.md
+daily_research_reports/MMDD/<topic>/05_report_card_for_advisor.md
 ```
 
-The reporting card should start with an empty oral report card for the user to
-write before the meeting, then include or link the relevant anchor, `summary.md`,
-and `detailed.md`.
+Use the shared template:
+
+```text
+daily_research_reports/_templates/report_card_template.md
+```
+
+The reporting card should include or link the relevant anchor, `summary.md`,
+and `detailed.md`, embed important figures, and define necessary terms. Do not
+maintain a separate meeting-only report-card format.
 
 Meeting documents should optimize for claim boundaries:
 
@@ -30,12 +36,20 @@ Meeting documents should optimize for claim boundaries:
 - what cannot be said
 - what the next decisive experiment is
 
-For branch-local project meetings, the primary shareable artifact should be an
-optional handoff report created after the anchor and result records are updated:
+For branch-local project meetings, create a handoff report only when the user
+explicitly asks for it. The default location is the day's topic folder:
+
+```text
+daily_research_reports/MMDD/<topic>/handoff_report.md
+daily_research_reports/MMDD/<topic>/<anchor_id>.md
+```
+
+Use the project sync folder only when the user explicitly asks for project or
+collaborator sync:
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/
 ```
 
 The daily meeting folder can keep local preparation notes, but the collaborator-
-facing report belongs in the project sync folder.
+facing report should be copied to project sync only on explicit request.

@@ -13,9 +13,14 @@ between local workflow, remote session, and ACP runner skills.
 Core rule:
 
 ```text
-anchor -> execution plan -> remote/container smoke or run -> curated result
--> summary/detailed -> anchor update -> root anchor copy -> optional handoff report
+anchor -> protocol_for_approval.md -> execution plan
+-> remote/container smoke or run -> curated result
+-> summary/detailed -> anchor update
 ```
+
+Root sync, handoff reports, graph edits, commits, and pushes are explicit
+follow-up actions only. External collaborator repo sync is also explicit. Do
+not perform any of these unless the user asks.
 
 Local `Research_System` owns graph, anchors, summary/detailed result records,
 optional handoff reports, daily cards, meeting material, claim boundaries, and next decisions. Remote/container
@@ -39,7 +44,8 @@ question and the primary metric.
 ## Local / Remote Boundary
 
 - If Codex is already inside the target remote/container, work there directly:
-  edit, smoke, run, analyze, write curated docs, commit, and push.
+  edit, smoke, run, analyze, and write curated docs. Commit and push only when
+  the user explicitly asks.
 - If Codex is local, do not SSH by default. Use local work for research-process
   edits, Git pull/review, and small explicit smoke checks.
 - Use SSH/SCP only for explicit small status checks, port forwarding, quick
@@ -104,19 +110,26 @@ Always run a smoke/debug path before a formal long run when possible.
 
 ## Curated Artifacts
 
-Remote commit may include:
+When the user explicitly asks for a commit, it may include:
 
 - code changes, configs, launch scripts, runbooks;
 - small curated tables or report-ready figures;
 - experiment `summary.md` / `detailed.md`;
 - anchor updates;
-- root sync anchor copies;
-- optional handoff report drafts;
+- root sync anchor copies, only when root sync was explicitly requested;
+- handoff report drafts, only when handoff was explicitly requested;
+- external collaborator repo sync packages, only when that external sync was
+  explicitly requested;
 - artifact maps.
 
 Do not commit raw logs, checkpoints, datasets, full run directories,
 unfiltered generated figures/tables, or temporary cache files unless the user
 explicitly curates them.
+
+When syncing to a senior student's or collaborator's external repo, do not copy
+the experiment workspace or codebase by default. Copy only the curated package:
+copied current anchor, `summary.md`, `detailed.md`, optional `report_card.md`,
+and figures/tables only when referenced by those synced documents.
 
 ## Handoff
 
@@ -145,15 +158,33 @@ Projects/<project>/main/experiments/<experiment_id>/detailed.md
 
 Then update the relevant anchor if the result changes the physical prior,
 mathematical model, computational realization, claim boundary, or next decision.
-Copy the updated anchor to the root sync category when the project uses root
-anchor copies.
+Do not copy the updated anchor to root sync unless the user explicitly requests
+root sync.
 
-Finally, write or update a project-local handoff report only if a meeting,
-collaborator, or web-side reader needs a self-contained package:
+Finally, write or update a handoff report only if the user explicitly requests
+one. The default daily handoff location is:
+
+```text
+daily_research_reports/MMDD/<topic>/handoff_report.md
+daily_research_reports/MMDD/<topic>/<anchor_id>.md
+```
+
+Project-local sync is used only if the user explicitly requests project or
+collaborator sync:
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/report.md
+Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
 ```
+
+If the need is advisor discussion, first fill the shared report card:
+
+```text
+daily_research_reports/_templates/report_card_template.md
+```
+
+The handoff report may include the filled report card inline, but should not
+define a separate report-card structure.
 
 It must include a compact artifact / repro map:
 

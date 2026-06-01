@@ -318,9 +318,9 @@ next experiment.
 - Use `problem-anchor-writer` to write the current-state reasoning document.
 - Use `experiment-card-writer` to turn a clear anchor into an execution plan and
   result reports.
-- Use `handoff-report-writer` only when evidence must be packaged for meeting,
-  collaborator, or web-side handoff after the anchor and required result
-  documents are updated.
+- Use `handoff-report-writer` only when the user explicitly asks to package
+  evidence for meeting, collaborator, or web-side handoff after the anchor and
+  required result documents are updated.
 - Use `research-graph-sop` to maintain the navigation layer.
 - Use `research-mainline` for project-local organization, paths, sync copies,
   and cleanup rules.
