@@ -1,4 +1,4 @@
-# exp_2x2_understanding Archive
+﻿# exp_2x2_understanding Archive
 
 This archive keeps superseded probes and intermediate fragments out of the
 active read path.
@@ -9,7 +9,7 @@ Active evidence is summarized in:
 ../03_summary.md
 ../04_detailed.md
 ../report_card.md
-../ntp_style_top1_router_lockin_anchor.md
+../02_ntp_style_top1_router_lockin_anchor.md
 ```
 
 Archived material:

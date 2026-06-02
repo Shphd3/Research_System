@@ -1,4 +1,4 @@
-# Meeting Materials
+﻿# Meeting Materials
 
 Use `daily_research_reports/MMDD/meeting/` for group meeting, advisor meeting,
 and short preparation notes.
@@ -22,7 +22,7 @@ daily_research_reports/MMDD/<topic>/05_report_card.md
 Use the shared template:
 
 ```text
-daily_research_reports/_templates/report_card_template.md
+templates/reporting/report_card_template.md
 ```
 
 The reporting card should use the fixed `05_report_card.md` structure from the

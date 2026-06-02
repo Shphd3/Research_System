@@ -1,8 +1,8 @@
-# Report Card: Top-1 Router Early Lock-in as a Mechanism Probe
+﻿# Report Card: Top-1 Router Early Lock-in as a Mechanism Probe
 
 ## Source Files
 
-Anchor: `ntp_style_top1_router_lockin_anchor.md`
+Anchor: `02_ntp_style_top1_router_lockin_anchor.md`
 
 Summary: `03_summary.md`
 

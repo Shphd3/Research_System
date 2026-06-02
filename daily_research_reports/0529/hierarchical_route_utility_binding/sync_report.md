@@ -1,4 +1,4 @@
-# 0528 Hierarchical Route-Utility Binding Sync
+﻿# 0528 Hierarchical Route-Utility Binding Sync
 
 ## Oral Report Card - Fill Before Meeting
 
@@ -39,7 +39,7 @@ hierarchical_common: 0.878
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/hierarchical_gating_frame/hierarchical_route_utility_binding_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/02_hierarchical_gating_frame/03_hierarchical_route_utility_binding_anchor.md
 ```
 
 目的：

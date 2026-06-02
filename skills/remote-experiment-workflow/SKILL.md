@@ -1,4 +1,4 @@
----
+﻿---
 name: remote-experiment-workflow
 description: Use when deciding or executing the remote/container/SCO/ACP workflow for experiments: local-vs-remote boundary, SSH/CCI preflight, cluster submission, monitoring, artifact maps, and curated sync updates.
 metadata:
@@ -184,7 +184,7 @@ it in the experiment folder:
 daily_research_reports/MMDD/<topic>/05_report_card.md
 ```
 
-Use `daily_research_reports/_templates/report_card_template.md` as the source
+Use `templates/reporting/report_card_template.md` as the source
 template. The handoff package may include the existing filled report card, but
 should not define a separate report-card structure or create new research
 content.

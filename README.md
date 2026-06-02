@@ -17,6 +17,7 @@ meeting-ready reports.
 - `paper_reading/`: literature cards and reading notes.
 - `skills/`: repo-tracked source copies of personal Codex skills.
 - `sync/`: cross-project anchor summaries and reusable research state.
+- `templates/`: the single maintained folder for reusable templates.
 - `prompts/`: reusable project prompts and older workflow prompts.
 - `docs/`: setup notes for tooling and workflow maintenance.
 
@@ -37,6 +38,9 @@ meeting-ready reports.
 Daily notes should be placed at `daily_research_reports/MMDD/` when useful.
 There is no maintained daily-card template; keep daily notes minimal and
 free-form.
+
+Reusable templates live in `templates/`. Do not create new reusable templates
+inside daily, paper-reading, docs, or project folders by default.
 
 Class notes and side thoughts should stay inside `daily_card.md` by default. Use `Recording / Class Notes` for class points, and `Small Thought Parking Lot` for side ideas that should not interrupt the current task.
 

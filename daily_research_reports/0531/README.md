@@ -1,4 +1,4 @@
-# 0531 Daily Research Index
+﻿# 0531 Daily Research Index
 
 ## Active Read Path
 
@@ -21,8 +21,8 @@ Inside `exp_2x2_understanding/`, read:
 ```text
 03_summary.md
 04_detailed.md
-05_report_card_for_advisor.md
-ntp_style_top1_router_lockin_anchor.md
+05_05_report_card.md
+02_ntp_style_top1_router_lockin_anchor.md
 ```
 
 ## Archived Material

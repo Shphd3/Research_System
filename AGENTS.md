@@ -1,4 +1,4 @@
-# Codex Research System
+﻿# Codex Research System
 
 This repository manages research process, not the remote experiment codebase.
 
@@ -70,7 +70,7 @@ Projects/from-attention-to-search/main/problem_anchors/<anchor_id>.md
 Current first anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Each anchor should define:
@@ -176,7 +176,7 @@ The report card is a short, self-contained reading card derived from the
 anchor, `summary.md`, and `detailed.md`. It belongs with the experiment record,
 not beside the anchor, and must embed central figures when figures are
 decision-relevant. Use the fixed structure from
-`daily_research_reports/_templates/report_card_template.md`:
+`templates/reporting/report_card_template.md`:
 
 ```text
 Source Files
@@ -244,7 +244,7 @@ A handoff package must be self-contained and include existing:
 
 ```text
 Anchor / Summary / Detailed
-05_report_card.md derived from daily_research_reports/_templates/report_card_template.md
+05_report_card.md derived from templates/reporting/report_card_template.md
 figures / tables referenced by included docs
 short README or index
 ```
@@ -313,6 +313,7 @@ The repository root should stay small:
 - `PROJECTS.md`
 - `README.md`
 - `sync/`
+- `templates/`
 - `prompts/`
 - `skills/`
 - `paper_reading/`
@@ -325,6 +326,10 @@ entry is:
 ```text
 sync/S000_current_specialization/
 ```
+
+Root-level `templates/` is the only maintained reusable-template folder.
+Do not add new reusable templates under `daily_research_reports/`, `docs/`,
+`paper_reading/`, or project folders by default.
 
 ## Execution Boundary
 

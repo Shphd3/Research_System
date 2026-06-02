@@ -1,8 +1,8 @@
-# Report Card: Top-1 Router Early Lock-in as a Mechanism Probe
+﻿# Report Card: Top-1 Router Early Lock-in as a Mechanism Probe
 
 ## Source Files
 
-Anchor: `../../../../Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md`
+Anchor: `../../../../Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/02_ntp_style_top1_router_lockin_anchor.md`
 
 Summary: `../../../../Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md`
 
@@ -12,31 +12,32 @@ Figures / Tables: `figures/`, `tables/curated_evidence_table.md`
 
 ## 0. Executive Summary
 
-本轮目标：
+**本轮目标：**
 
 解释 ABC / multi-B slot-context synthetic 中，ordinary top-1 router 为什么不能稳定形成 feature-level specialization。
 
-最小机制审计：
+**最小机制审计：**
 
-使用 2-feature / 2-expert NTP-style top-1 proxy，检查 collapse 是 late optimization drift，还是 early top-1 lock-in。
+使用 2-feature / 2-expert NTP-style top-1 实验，检查 collapse 是优化过程的梯度信号导致的分化，还是受到初始分发状态的限制。
 
-清晰的假设：
+**假设：**
 
-在二维正交 feature 下，linear router 能表达 A/B 分到不同 expert；因此失败不主要是表达能力不足，而是 NTP 目标和 top-1 更新路径没有要求 router 形成稳定 route-pattern separation。这个假设可证伪：如果 A/B 初始 split 仍会后期 collapse，或 linear router 无法表达 split，那么该假设被削弱。
+在二维正交 feature 下，linear router 能将$e_1 = [1, 0] $， $e_2 = [0, 1]$ 分到不同 expert；因此失败不主要是表达能力不足，而是 NTP 目标和 top-1 更新路径没有要求 router 形成稳定 route-pattern separation。
+这个假设可证伪：如果 e1、e2初始 split 仍会后期 collapse，或 linear router 无法表达 split，那么该假设被削弱。
 
-关键发现：
+**关键发现：**
 
-Failed seeds 在 step 0 已经 A/B same expert，之后 selected gate confidence 放大，未选 expert starvation；successful seeds 在 step 0 已经 A/B split，并稳定保持。
+Failed seeds 在 step 0 已经将e1、e2分到same expert，之后gating选中该专家的confidence增大，未选的expert得不到训练；successful seeds 在 step 0 已经把e1、e2 split，并稳定保持。
 
-当前结论：
+**当前结论：**
 
-当前结果支持 early top-1 lock-in + expert starvation，而不是 late optimization drift。
+当前结果支持初始分发状态的限制 + expert under-trained，而不是 late optimization drift。
 
-结论边界：
+**结论边界：**
 
 这个结果只说明 minimal route-pattern dynamics，不说明 full LM、attention setting 或 utility-aligned specialization。
 
-下一步：
+**下一步：**
 
 不直接训大模型；下一步测试 explicit route-function binding signal，判断是否能把 route assignment 和 expert causal utility 绑定起来。
 

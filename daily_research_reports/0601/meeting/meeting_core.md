@@ -32,7 +32,10 @@
 
 1. 通过看优化过程中的分发演化，这个 toy setting 支持一个判断：2 * 2 实验的分发不一致性，是由于初始时刻的分划错误导致的。即使 feature 在表征空间中可分，NTP 也不保证 router 会把它们路由到不同 expert。
 
-Next Iteration:
+**Boundaries：**
+目前的结论仅仅只针对于2维简单情形，高维情形中线性gating的能力没有办法确定。
+
+**Next Iteration:**
 
 下一步不是继续 2×2，也不是重复 structured initialization。
 因为 previous ABC / multi-B detailed 已经显示 semantic / slot-centroid init 在 multi-B 下不充分。

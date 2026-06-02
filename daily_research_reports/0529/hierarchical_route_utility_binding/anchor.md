@@ -1,6 +1,6 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
-source_anchor: Projects/from-attention-to-search/main/problem_anchors/ntp_zipf_feature_factorization_anchor/ntp_zipf_feature_factorization_anchor.md
+source_anchor: Projects/from-attention-to-search/main/problem_anchors/03_ntp_zipf_feature_factorization/04_ntp_zipf_feature_factorization_anchor.md
 updated_from: hierarchical_route_utility_binding result + linear FFN Zipf evidence
 ---
 

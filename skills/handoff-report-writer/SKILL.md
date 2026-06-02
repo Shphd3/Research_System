@@ -1,4 +1,4 @@
----
+﻿---
 name: handoff-report-writer
 description: Use only when existing research artifacts must be packaged for a meeting, collaborator, web-side reader, or external repo sync after the anchor, summary, detailed result, and optional report card already exist.
 metadata:
@@ -41,7 +41,7 @@ replace anchor backfill, `summary.md`, `detailed.md`, or the advisor report
 card.
 
 If a handoff package includes `05_report_card.md`, keep it in the exact shared
-structure from `daily_research_reports/_templates/report_card_template.md`.
+structure from `templates/reporting/report_card_template.md`.
 Do not convert it into a separate oral report, private question list, or second
 closure.
 
@@ -77,7 +77,7 @@ optional:
 ```
 
 If the requested package needs a report card and none exists, use
-`daily_research_reports/_templates/report_card_template.md` only when the user
+`templates/reporting/report_card_template.md` only when the user
 explicitly asks to create it. Otherwise, package the existing sources and note
 that no report card was included.
 

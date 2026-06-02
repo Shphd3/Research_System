@@ -1,6 +1,6 @@
-# Result Summary
+﻿# Result Summary
 
-Anchor: `ntp_style_top1_router_lockin_anchor.md`
+Anchor: `02_ntp_style_top1_router_lockin_anchor.md`
 Protocol: `01_protocol_for_approval.md`
 Detailed: `04_detailed.md`
 

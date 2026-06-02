@@ -1,4 +1,4 @@
-# Skills
+﻿# Skills
 
 This folder is the canonical repo-tracked source for research-system skills.
 
@@ -157,7 +157,7 @@ operationalization, and the next uncertainty to isolate.
 - `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
   collaborator sync folder; use only when project sync is explicitly requested.
   Meeting/advisor/sync report cards should reuse
-  `daily_research_reports/_templates/report_card_template.md` and be named
+  `templates/reporting/report_card_template.md` and be named
   `05_report_card.md` in daily or sync packages. Report cards are
   advisor-facing evidence cards with fixed
   sections: Source Files, Executive Summary, Research Process Update, Terms

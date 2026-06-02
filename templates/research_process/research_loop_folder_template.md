@@ -1,4 +1,4 @@
-# Research Loop Folder Template
+﻿# Research Loop Folder Template
 
 Use this folder shape for a daily sandbox or a small mainline experiment.
 
@@ -36,7 +36,7 @@ the user approves.
 
 `05_report_card.md`: optional. Meeting/advisor-facing report card derived from
 anchor, summary, and detailed. Use
-`daily_research_reports/_templates/report_card_template.md` as the default
+`templates/reporting/report_card_template.md` as the default
 template.
 
 `handoff_report.md`: optional legacy name. Prefer packaging existing files with

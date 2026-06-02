@@ -1,9 +1,9 @@
-# Deprecated Reporting Card Template
+﻿# Deprecated Reporting Card Template
 
 Use the shared report card template instead:
 
 ```text
-daily_research_reports/_templates/report_card_template.md
+templates/reporting/report_card_template.md
 ```
 
 This file is kept only for compatibility with older daily notes that mention

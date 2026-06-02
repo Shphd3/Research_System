@@ -1,4 +1,4 @@
-# Projects
+﻿# Projects
 
 This is the root project registry for the research system. Use it after
 `AGENTS.md`.
@@ -51,7 +51,7 @@ Sidecar-readable graph updates that support the primary mainline.
 Current branch anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Current branch graph:
@@ -81,6 +81,7 @@ be used as the first success criterion for the current anchor.
 - `sync/`: compact root-level current-state summaries for web-side partners.
 - `daily_research_reports/`: daily cards and meeting materials.
 - `paper_reading/`: paper and blog reading cards.
+- `templates/`: single maintained reusable-template folder.
 - `prompts/`: reusable prompts.
 - `skills/`: repo-tracked skill sources.
 
@@ -93,7 +94,7 @@ sync/S000_current_specialization/
 Current root anchor copy:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 This copy is updated only when the user explicitly asks to sync root sync. The

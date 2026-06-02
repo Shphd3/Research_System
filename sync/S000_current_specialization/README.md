@@ -1,4 +1,4 @@
-# S000 Current Specialization Sync
+﻿# S000 Current Specialization Sync
 
 ## Current Mainline
 
@@ -18,22 +18,22 @@ Projects/from-attention-to-search/main/experiments/
 The current branch anchor is:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Root-sync copy:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
-Latest formal mechanism record:
+Latest formal mechanism sync package:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/report_card_for_advisor.md
+sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/
+sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/05_report_card.md
+sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/summary.md
+sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/detailed.md
 ```
 
 ## Current Evidence From Branch Sync
@@ -96,10 +96,9 @@ binding.
 Recommended next anchor question:
 
 ```text
-Can one anti-lock-in mechanism, such as structured router initialization,
-prevent early same-expert top-1 collapse before returning to the multi-B /
-slot-context setting?
+Can an explicit route-function binding signal make route assignment align with
+expert causal utility in the multi-B / slot-context setting?
 ```
 
-The next sync should report one minimal anti-lock-in diagnostic rather than
-another broad context-strength or architecture sweep.
+The next sync should report one minimal route-function binding diagnostic
+rather than another broad context-strength or architecture sweep.

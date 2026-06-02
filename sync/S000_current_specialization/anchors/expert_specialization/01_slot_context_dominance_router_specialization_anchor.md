@@ -1,4 +1,4 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
 ---
 
@@ -268,7 +268,7 @@ Evidence:
 ```text
 Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
 Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/report_card_for_advisor.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/report_card.md
 ```
 
 ## Next Decision

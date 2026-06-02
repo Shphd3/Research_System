@@ -1,4 +1,4 @@
----
+﻿---
 name: experiment-card-writer
 description: Use only for operational experiment execution plans after an anchor/purpose-card is clear. Do not create separate hypothesis purpose cards; anchors own purpose, hypothesis, physical priors, math, and result updates.
 metadata:
@@ -381,7 +381,7 @@ and write one sentence stating which claim each figure supports. Put curated
 tables under `tables/` and link or summarize them near the relevant metric.
 
 When the result is meeting-facing, generate a report card from
-`daily_research_reports/_templates/report_card_template.md`. The report card is
+`templates/reporting/report_card_template.md`. The report card is
 an advisor-facing, self-contained evidence card derived from anchor,
 `summary.md`, and `detailed.md`, not a second closure. In project records, save
 it as:

@@ -1,9 +1,9 @@
-# Result Summary: slot_context_bridge_abcd_context_length
+﻿# Result Summary: slot_context_bridge_abcd_context_length
 
 Anchor:
 
 ```text
-../../problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+../../problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Story:

@@ -1,4 +1,4 @@
----
+﻿---
 name: problem-anchor-writer
 description: Use when writing or revising the unified anchor/purpose-card document for a research problem: problem boundary, physical priors, mathematical modeling, computational realization, minimal experiment, evidence updates, and claim boundary.
 metadata:
@@ -48,7 +48,7 @@ anchors can be used as style references only after checking that their domain
 terms do not leak into a new problem.
 
 For hand-written first drafts, use
-`docs/templates/minimal_anchor_handwrite.md`. The hand-written draft is allowed
+`templates/research_process/minimal_anchor_handwrite.md`. The hand-written draft is allowed
 to be rough; its purpose is to expose the user's thinking before AI polishes the
 anchor.
 
@@ -320,7 +320,7 @@ primary observable, claim boundary, and next decision. Keep the audit details in
   advisor understand the work in about 60 seconds: purpose, physical
   modeling/hypothesis, minimal experiment, current conclusion, boundary, and
   next step. Do not make it a long mini-report. It is not the meeting/advisor
-  report card; use `daily_research_reports/_templates/report_card_template.md`
+  report card; use `templates/reporting/report_card_template.md`
   to create `daily_research_reports/MMDD/<topic>/05_report_card.md`
   with the fixed Source Files, Executive Summary, Research Process Update,
   Terms Used Here, Key Figures, Current Claim, Claim Boundary, and Next Step

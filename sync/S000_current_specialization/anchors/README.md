@@ -1,4 +1,4 @@
-# Anchor Copies
+﻿# Anchor Copies
 
 This folder stores categorized root-sync copies of active project anchors.
 
@@ -16,8 +16,9 @@ repositories.
 
 | Anchor | Source |
 |---|---|
-| `expert_specialization/slot_context_dominance_router_specialization_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md` |
-| `expert_specialization/hierarchical_route_utility_binding_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/hierarchical_gating_frame/hierarchical_route_utility_binding_anchor.md` |
+| `expert_specialization/01_slot_context_dominance_router_specialization_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md` |
+| `expert_specialization/02_ntp_style_top1_router_lockin_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/02_ntp_style_top1_router_lockin_anchor.md` |
+| `expert_specialization/03_hierarchical_route_utility_binding_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/02_hierarchical_gating_frame/03_hierarchical_route_utility_binding_anchor.md` |
 
 ## Update Rule
 
@@ -26,8 +27,8 @@ Update them only when the user explicitly asks to sync root sync or names a
 specific root anchor copy. Before finishing that requested sync, verify that the
 source and sync copy are identical.
 
-Not yet copied by default:
+Current key experiment package:
 
-| Project-local anchor | Why not copied |
-|---|---|
-| `Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md` | promoted project evidence, but root anchor sync has not been explicitly requested |
+```text
+sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/
+```

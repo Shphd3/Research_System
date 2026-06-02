@@ -1,4 +1,4 @@
----
+﻿---
 name: research-mainline
 description: Use when organizing or updating a research project's mainline state: graph, roadmap, anchors, experiment result records, explicitly requested root anchor copies, external collaborator repo sync packages, handoff reports, archive state, and project status.
 metadata:
@@ -77,9 +77,9 @@ Use:
 Examples:
 
 ```text
-slot_context_dominance_router_specialization_anchor.md
-route_function_binding_specialization_anchor.md
-frequency_induced_feature_anisotropy_anchor.md
+01_slot_context_dominance_router_specialization_anchor.md
+02_route_function_binding_specialization_anchor.md
+03_frequency_induced_feature_anisotropy_anchor.md
 ```
 
 Do not create a new anchor for each daily iteration, seed, smoke run, or failed
@@ -203,7 +203,7 @@ Anchor body is English. The top `Report Summary（中文，汇报用）` should 
 
 This front summary is not `05_report_card.md`. When a result needs
 advisor-facing or sync presentation, generate `05_report_card.md` in the daily
-or sync package from `daily_research_reports/_templates/report_card_template.md`.
+or sync package from `templates/reporting/report_card_template.md`.
 
 Use `problem-anchor-writer` for anchor content rules.
 
@@ -307,7 +307,7 @@ question / hypothesis / minimal test / conclusion / evidence / boundary / next d
 ```
 
 Daily / meeting report cards should reuse
-`daily_research_reports/_templates/report_card_template.md`. They are derived
+`templates/reporting/report_card_template.md`. They are derived
 from updated anchor, `summary.md`, and `detailed.md`. They do not replace
 anchor, summary, detailed, or graph.
 
@@ -318,7 +318,7 @@ daily_research_reports/MMDD/<topic>/05_report_card.md
 ```
 
 Advisor-facing report cards must use the fixed structure in
-`daily_research_reports/_templates/report_card_template.md` and be saved as
+`templates/reporting/report_card_template.md` and be saved as
 `05_report_card.md` in daily or sync packages. The required sections are:
 
 ```text

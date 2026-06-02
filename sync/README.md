@@ -1,4 +1,4 @@
-# Root Sync
+﻿# Root Sync
 
 Root `sync/` is for compact current-state summaries that help a web-side
 research partner understand the active research route without entering every
@@ -116,12 +116,18 @@ Do not add root sync folders for every experiment.
 
 ## Current Formal Project Evidence
 
-The 2026-05-31 mechanism audit has been promoted to:
+The 2026-05-31 mechanism audit has been synced into root sync as the current
+key experiment package:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/ntp_style_top1_router_lockin_anchor.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/
+sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/
 ```
 
-It is not copied into root `sync/anchors/` until the user explicitly requests a
-root anchor sync for this mechanism anchor.
+It contains the latest mechanism anchor, `summary.md`, `detailed.md`,
+`05_report_card.md`, and only the key referenced figures/tables.
+
+The current root anchor copies are numbered and live under:
+
+```text
+sync/S000_current_specialization/anchors/expert_specialization/
+```
