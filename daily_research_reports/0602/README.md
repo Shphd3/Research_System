@@ -106,7 +106,7 @@ tables/
 Formal anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/02_ntp_style_top1_router_lockin_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md
 ```
 
 Formal experiment:
@@ -279,7 +279,7 @@ assignment-utility agreement
 3. `daily_research_reports/0602/README.md`
 4. `daily_research_reports/0601/2x2_top1_router_lockin/05_report_card.md`
 5. `daily_research_reports/0601/meeting/meeting_core.md`
-6. `Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/02_ntp_style_top1_router_lockin_anchor.md`
+6. `Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md`
 7. `Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md`
 8. `Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md`
 

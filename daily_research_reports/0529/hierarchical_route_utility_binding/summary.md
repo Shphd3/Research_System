@@ -3,7 +3,7 @@
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/02_hierarchical_gating_frame/03_hierarchical_route_utility_binding_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/03_hierarchical_route_utility_binding_anchor.md
 ```
 
 Story:

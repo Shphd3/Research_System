@@ -14,7 +14,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
 | Skill | Use |
 |---|---|
-| `research-progress-core` | Governing research paradigm: hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
+| `research-progress-core` | Governing research paradigm: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
 | `research-mainline` | Maintain compact project anchors, result records, and project organization; graph, root sync, external collaborator sync, handoff, commit, and push actions require explicit user request. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Write unified anchor/purpose-card documents from boundary and physical priors to math, implementation, evidence, and next decision. |
@@ -30,9 +30,9 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 
 | Layer | Skill | Owns | Does not own |
 |---|---|---|---|
-| Research paradigm | `research-progress-core` | What counts as research progress: hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
+| Research paradigm | `research-progress-core` | What counts as research progress: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
-| Anchor reasoning | `problem-anchor-writer` | Purpose, hypothesis, physical priors, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
+| Anchor reasoning | `problem-anchor-writer` | Purpose, physical priors, falsifiable hypothesis, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
 | Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
 | External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
@@ -53,7 +53,7 @@ artifact writers or local adapters.
 Default short research loop:
 
 ```text
-hypothesis -> operational definition -> minimal test
+physical prior -> falsifiable hypothesis -> operational definition -> minimal test
 -> metric + visual evidence -> failure analysis -> refined hypothesis
 ```
 

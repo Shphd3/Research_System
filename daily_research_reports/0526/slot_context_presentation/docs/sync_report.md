@@ -3,7 +3,7 @@
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Story:
@@ -269,7 +269,7 @@ B_long assignment-utility: 0.733 -> materially higher
 anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 summary:

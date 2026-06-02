@@ -2,7 +2,7 @@
 
 ## Source Files
 
-Anchor: `../../../../Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/02_ntp_style_top1_router_lockin_anchor.md`
+Anchor: `../../../../Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md`
 
 Summary: `../../../../Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md`
 

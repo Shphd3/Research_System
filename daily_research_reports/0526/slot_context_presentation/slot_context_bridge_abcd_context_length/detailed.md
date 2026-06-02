@@ -3,7 +3,7 @@
 Anchor:
 
 ```text
-../../problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+../../problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Story:
@@ -29,7 +29,7 @@ This bridge experiment aligns the old r-B / AB / CB / DB setting with the curren
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 This experiment updates:

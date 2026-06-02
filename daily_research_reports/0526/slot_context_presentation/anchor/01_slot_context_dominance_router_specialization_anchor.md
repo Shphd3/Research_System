@@ -110,7 +110,7 @@ where $c_i$ is B-token identity, $u_s$ is slot/context information, and $\beta_m
 
 A linear router can route by slot only if $u_s$ is visible in $h_{i,s}^{(m)}$ and useful for reducing NTP loss. But routing alignment alone is not specialization. A slot-specialized route must also select the expert that has causal utility for that slot.
 
-## Mechanistic Motivation
+## Hypothesis / Mechanism
 
 Previous short-slot experiments showed:
 

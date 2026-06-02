@@ -3,7 +3,7 @@
 Anchor:
 
 ```text
-../../problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+../../problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 ## One Sentence

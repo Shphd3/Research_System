@@ -1,6 +1,6 @@
 ﻿---
 name: experiment-card-writer
-description: Use only for operational experiment execution plans after an anchor/purpose-card is clear. Do not create separate hypothesis purpose cards; anchors own purpose, hypothesis, physical priors, math, and result updates.
+description: Use only for operational experiment execution plans after an anchor/purpose-card is clear. Do not create separate hypothesis purpose cards; anchors own purpose, physical priors, falsifiable hypothesis, math, and result updates.
 metadata:
   short-description: Write anchor-based execution plans
 ---

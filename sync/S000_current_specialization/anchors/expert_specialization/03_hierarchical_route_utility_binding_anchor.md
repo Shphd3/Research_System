@@ -108,7 +108,7 @@ route-utility binding: selected expert/path is both aligned with feature and cau
 4. H-MoE is meaningful only if common/shared computation is separated from unique/leaf routing, not merely because it has more routers.
 ```
 
-## 3. Mechanistic Motivation
+## 3. Hypothesis / Mechanism
 
 Previous anchor showed:
 

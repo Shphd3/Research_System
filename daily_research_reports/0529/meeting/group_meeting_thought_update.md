@@ -247,9 +247,9 @@ NTP factor attribution + tail write-in diagnostic
 Anchors:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/03_ntp_zipf_feature_factorization/04_ntp_zipf_feature_factorization_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/02_hierarchical_gating_frame/03_hierarchical_route_utility_binding_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/04_ntp_zipf_feature_factorization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/03_hierarchical_route_utility_binding_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Experiment summaries:

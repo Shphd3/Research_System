@@ -18,7 +18,7 @@ score. Research progress is a reduction of uncertainty.
 Default short loop:
 
 ```text
-hypothesis -> operational definition -> minimal test
+physical prior -> falsifiable hypothesis -> operational definition -> minimal test
 -> metric + visual evidence -> failure analysis -> refined hypothesis
 ```
 
@@ -143,27 +143,28 @@ not update the claim boundary as if it were decisive.
 
 ## Research Loop
 
-1. State one falsifiable hypothesis.
-2. Define the important terms operationally: success, failure, and insufficient
+1. State the physical prior or mechanistic belief that makes the question meaningful.
+2. Derive one falsifiable hypothesis from that prior.
+3. Define the important terms operationally: success, failure, and insufficient
    evidence.
-3. Build the smallest diagnostic test that can change belief, preferably with
+4. Build the smallest diagnostic test that can change belief, preferably with
    known good, known bad, and known confusing cases.
-4. Measure numbers and human-inspectable evidence.
-5. Analyze why the result passed, failed, or stayed ambiguous.
-6. Refine the hypothesis and claim boundary.
+5. Measure numbers and human-inspectable evidence.
+6. Analyze why the result passed, failed, or stayed ambiguous.
+7. Refine the physical prior, hypothesis, and claim boundary.
 
-For nontrivial work, expand step 2 into physical priors, mathematical modeling,
-and an implementation contract. The full implementation contract belongs in
-the execution plan or runbook, not in the anchor.
+For nontrivial work, expand the physical prior into mathematical modeling and
+an implementation contract. The full implementation contract belongs in the
+execution plan or runbook, not in the anchor.
 
 ## What Must Exist
 
 For nontrivial research work, the notes or reports must include:
 
 ```text
-falsifiable hypothesis
-operational definitions
 physical priors
+falsifiable hypothesis derived from those priors
+operational definitions
 mathematical model for each prior
 implementation contract for each nontrivial model or stage
 explicit algorithm specification for each nontrivial stage

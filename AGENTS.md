@@ -70,7 +70,7 @@ Projects/from-attention-to-search/main/problem_anchors/<anchor_id>.md
 Current first anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Each anchor should define:
@@ -281,8 +281,9 @@ For research organization work inside `Research_System`, always read this file
 first. Then use local skills from `skills/` when the task type matches:
 
 - `research-progress-core`: apply the general research-progress paradigm before
-  artifact writing: hypothesis, operational definition, minimal test, metric +
-  visual evidence, failure analysis, and refined hypothesis.
+  artifact writing: physical prior, falsifiable hypothesis, operational
+  definition, minimal test, metric + visual evidence, failure analysis, and
+  refined hypothesis.
 - `problem-anchor-writer`: write or update anchor / purpose-card documents.
 - `experiment-card-writer`: write operational execution plans from anchors.
 - `handoff-report-writer`: package explicitly requested meeting/collaborator/web

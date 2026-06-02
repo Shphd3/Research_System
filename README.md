@@ -46,10 +46,11 @@ Class notes and side thoughts should stay inside `daily_card.md` by default. Use
 
 Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`.
 
-## Hypothesis-First Loop
+## Physical-Prior-First Loop
 
-For project research, write a problem anchor before hypothesis and experiment
-work when the question is not yet stable:
+For project research, write a problem anchor before experiment work when the
+question is not yet stable. The anchor should state the physical prior before
+the falsifiable hypothesis:
 
 ```text
 Projects/<project>/main/problem_anchors/<anchor_id>.md

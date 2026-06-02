@@ -16,9 +16,9 @@ repositories.
 
 | Anchor | Source |
 |---|---|
-| `expert_specialization/01_slot_context_dominance_router_specialization_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/01_slot_context_dominance_router_specialization_anchor.md` |
-| `expert_specialization/02_ntp_style_top1_router_lockin_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/01_gated_main_causes/02_ntp_style_top1_router_lockin_anchor.md` |
-| `expert_specialization/03_hierarchical_route_utility_binding_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/02_hierarchical_gating_frame/03_hierarchical_route_utility_binding_anchor.md` |
+| `expert_specialization/01_slot_context_dominance_router_specialization_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md` |
+| `expert_specialization/02_ntp_style_top1_router_lockin_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md` |
+| `expert_specialization/03_hierarchical_route_utility_binding_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/03_hierarchical_route_utility_binding_anchor.md` |
 
 ## Update Rule
 

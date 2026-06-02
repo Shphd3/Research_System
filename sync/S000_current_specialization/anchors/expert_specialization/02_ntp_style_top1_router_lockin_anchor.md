@@ -37,14 +37,6 @@ from early top-1 lock-in, and can better initial router geometry preserve
 route-pattern separation?
 ```
 
-## Hypothesis / Conjecture
-
-```text
-Top-1 route-pattern specialization is path dependent.
-Initial same-expert assignment causes lock-in and expert starvation.
-Initial split assignment is amplified into stable routing and expert advantage.
-```
-
 ## Physical Priors
 
 1. Top-1 routing converts a small logit difference into a discrete training
@@ -68,6 +60,14 @@ $$
 
 If $\delta_A$ and $\delta_B$ have the same sign, A/B select the same expert. If
 they have opposite signs, A/B split across experts.
+
+## Hypothesis / Conjecture
+
+```text
+Top-1 route-pattern specialization is path dependent.
+Initial same-expert assignment causes lock-in and expert starvation.
+Initial split assignment is amplified into stable routing and expert advantage.
+```
 
 ## Minimal Decisive Test
 

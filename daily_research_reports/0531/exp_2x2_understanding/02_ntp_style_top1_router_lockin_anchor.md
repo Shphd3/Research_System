@@ -1,7 +1,7 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
-status: daily_sandbox_promoted_evidence
-source_draft: 00_handwrite_anchor.md
+status: promoted_project_evidence
+source_sandbox: daily_research_reports/0531/exp_2x2_understanding/
 ---
 
 # 2x2 Top-1 Router Lock-In Anchor
@@ -37,14 +37,6 @@ from early top-1 lock-in, and can better initial router geometry preserve
 route-pattern separation?
 ```
 
-## Hypothesis / Conjecture
-
-```text
-Top-1 route-pattern specialization is path dependent.
-Initial same-expert assignment causes lock-in and expert starvation.
-Initial split assignment is amplified into stable routing and expert advantage.
-```
-
 ## Physical Priors
 
 1. Top-1 routing converts a small logit difference into a discrete training
@@ -68,6 +60,14 @@ $$
 
 If $\delta_A$ and $\delta_B$ have the same sign, A/B select the same expert. If
 they have opposite signs, A/B split across experts.
+
+## Hypothesis / Conjecture
+
+```text
+Top-1 route-pattern specialization is path dependent.
+Initial same-expert assignment causes lock-in and expert starvation.
+Initial split assignment is amplified into stable routing and expert advantage.
+```
 
 ## Minimal Decisive Test
 
@@ -123,14 +123,15 @@ router prior: known-good split 10/10 -> final split 10/10
 Main evidence files:
 
 ```text
-03_summary.md
-04_detailed.md
-figures/ntp_style_lockin_audit.png
-figures/ntp_style_success_dynamics_audit.png
-figures/ntp_style_no_router_bias/summary_by_seed.png
-tables/ntp_style_lockin_audit.csv
-tables/ntp_style_success_dynamics_audit.csv
-tables/ntp_style_router_bias_comparison.csv
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/report_card.md
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/figures/ntp_style_lockin_audit.png
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/figures/ntp_style_success_dynamics_audit.png
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/figures/ntp_style_no_router_bias/summary_by_seed.png
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/tables/ntp_style_lockin_audit.csv
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/tables/ntp_style_success_dynamics_audit.csv
+Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/tables/ntp_style_router_bias_comparison.csv
 ```
 
 ## Claim Boundary And Next Decision

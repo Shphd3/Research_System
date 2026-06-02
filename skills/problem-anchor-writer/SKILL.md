@@ -12,10 +12,11 @@ purpose card: it replaces separate hypothesis purpose cards as the main
 pre-run and post-run reasoning artifact.
 
 First apply `research-progress-core`. The anchor is the current-state document
-for that core loop: hypothesis, operational definitions, physical priors,
-mathematical model, minimal falsifiable test, current evidence, refined
-hypothesis, claim boundary, and next uncertainty. If those elements are not
-available, say which element is missing before writing a polished anchor.
+for that core loop: problem definition, physical priors, falsifiable hypothesis,
+operational definitions, mathematical model, minimal falsifiable test, current
+evidence, refined hypothesis, claim boundary, and next uncertainty. If those
+elements are not available, say which element is missing before writing a
+polished anchor.
 
 The full implementation contract belongs in the execution plan or runbook. The
 anchor should state only the implementation implication needed to understand
@@ -82,6 +83,11 @@ preference for a method or architecture. It is a refutable assumption about the
 structure of the problem, data-generating process, representation, mechanism,
 environment, objective, or intervention that constrains both the math and
 implementation.
+
+Write physical priors before the hypothesis. The hypothesis should be a
+falsifiable consequence of the prior, not the source of the prior. If the user
+only gives a hypothesis, first ask what real-world or mechanistic prior makes
+that hypothesis plausible.
 
 Each physical prior must satisfy four requirements:
 
@@ -200,9 +206,11 @@ condition-dependent structure that should appear in a measurable variable and
 change predictably under a controlled intervention.
 ```
 
-## 3. Motivation And Mechanism
+## 3. Hypothesis / Mechanism
 
 Why should the prior help the system?
+
+What falsifiable hypothesis follows from the prior?
 
 What mechanism connects the prior to the target behavior?
 
@@ -291,9 +299,9 @@ creating a separate closure document. Backfill:
 - links to `summary.md`, `detailed.md`, optional handoff report, figures,
   tables, code/config, and result directories.
 
-Long evidence belongs in `detailed.md`. The anchor keeps the current
-hypothesis, evidence update, refined hypothesis, claim boundary, and next
-decision alive.
+Long evidence belongs in `detailed.md`. The anchor keeps the current physical
+prior, hypothesis, evidence update, refined hypothesis, claim boundary, and
+next decision alive.
 
 If repeated reasonable operationalizations fail and a goal / metric audit
 changes the downstream decision, update only the anchor's decision question,
@@ -312,7 +320,7 @@ primary observable, claim boundary, and next decision. Keep the audit details in
 - Prefer one precise subproblem over a broad umbrella question.
 - Use section titles that match the active compact template when possible:
   `Reporting Summary`, `Problem Definition`, `Physical Priors`,
-  `Mechanistic Motivation`, `Mathematical Modeling`,
+  `Hypothesis / Mechanism`, `Mathematical Modeling`,
   `Computational Realization`, `Minimal Falsifiable Test`,
   `Falsifiable Outcomes`, `Current Evidence`,
   `Claim Boundary And Next Decision`.

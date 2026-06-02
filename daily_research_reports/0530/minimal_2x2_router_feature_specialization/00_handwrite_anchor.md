@@ -1,4 +1,4 @@
-# 00 Handwrite Anchor
+﻿# 00 Handwrite Anchor
 
 ## Report Summary（中文，汇报用）
 
@@ -43,7 +43,15 @@ Decision question:
 
 Why this matters now:
 
-## 2. Hypothesis
+## 2. Physical Prior
+
+What I believe about the system / data / mechanism:
+
+Why this prior could be wrong:
+
+What observable should change if it is right:
+
+## 3. Hypothesis
 
 Current hypothesis in one sentence:
 
@@ -53,7 +61,7 @@ Rival explanation 2:
 
 What would make me change my mind:
 
-## 3. Operational Definitions
+## 4. Operational Definitions
 
 Term 1:
 
@@ -70,14 +78,6 @@ success:
 failure:
 insufficient evidence:
 ```
-
-## 4. Physical Prior
-
-What I believe about the system / data / mechanism:
-
-Why this prior could be wrong:
-
-What observable should change if it is right:
 
 ## 5. Minimal Test
 

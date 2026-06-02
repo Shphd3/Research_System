@@ -191,9 +191,9 @@ high-level project route. Do not put detailed evidence here.
 
 ### Anchor
 
-Current-state document. It should contain the current hypothesis, operational
-definitions, physical priors, mathematical model, minimal test, current
-evidence, refined hypothesis, claim boundary, and next decision.
+Current-state document. It should contain the current physical priors,
+falsifiable hypothesis, operational definitions, mathematical model, minimal
+test, current evidence, refined hypothesis, claim boundary, and next decision.
 
 Anchor body is English. The top `Report Summary（中文，汇报用）` should be short:
 

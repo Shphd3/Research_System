@@ -1,4 +1,4 @@
-# 00 Handwrite Anchor
+﻿# 00 Handwrite Anchor
 
 ## Report Summary（中文，汇报用）
 
@@ -26,7 +26,15 @@ Why this matters now: 如果在最小2×2系统下Router都不能稳定分开两
 那么ABC实验中的failure就可能不是复杂数据导致的，
 而是Router训练机制本身导致的。
 
-## 2. Hypothesis
+## 2. Physical Prior
+
+What I believe about the system / data / mechanism:
+正交情形的features使用内积是最可分的，线性Router具有这种分辨表达能力。
+Why this prior could be wrong: 具有这种分辨表达能不达标在NTP训练目标下能够训出这种分辨表达能力。
+
+What observable should change if it is right: 在二维情形下，都没有办法形成router-feature 对角线热力图，那么我相信的这个事实就是错的
+
+## 3. Hypothesis
 
 Current hypothesis in one sentence: 对于两个正交的Features，线性Router能够将之两个features稳定分发到不同的expert上进行处理。
 
@@ -47,7 +55,7 @@ Rival explanation 2: 线性分发本身就没有办法表达features specializat
 
 What would make me change my mind: 如果不同seeds下最终都形成稳定对角分发，那么我的线性router 一定会发生collapse的假设就会被推翻
 
-## 3. Operational Definitions
+## 4. Operational Definitions
 
 Term 1: Router-level specialization
 
@@ -81,14 +89,6 @@ insufficient evidence:
 不同 seeds 结果互相矛盾，但还不清楚是训练噪声还是机制失败。
 
 ```
-
-## 4. Physical Prior
-
-What I believe about the system / data / mechanism:
-正交情形的features使用内积是最可分的，线性Router具有这种分辨表达能力。
-Why this prior could be wrong: 具有这种分辨表达能不达标在NTP训练目标下能够训出这种分辨表达能力。
-
-What observable should change if it is right: 在二维情形下，都没有办法形成router-feature 对角线热力图，那么我相信的这个事实就是错的
 
 ## 5. Minimal Test
 

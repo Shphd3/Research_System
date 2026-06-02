@@ -66,14 +66,14 @@ commit / push
 
 ## 3. Anchor 的基本结构
 
-当我让你 polish 或检查 anchor 时，重点不是把文字写漂亮，而是让研究对象、假设、实验和结论边界可裁定。
+当我让你 polish 或检查 anchor 时，重点不是把文字写漂亮，而是让研究对象、物理先验、假设、实验和结论边界可裁定。
 
 anchor 通常需要包含：
 
 ```text
 Problem Definition
 Physical Priors
-Motivation / Mechanism
+Hypothesis / Mechanism
 Mathematical Modeling
 Computational Realization
 Minimal Decisive Test
@@ -85,8 +85,8 @@ Claim Boundary And Next Decision
 每部分的意义：
 
 - `Problem Definition`: 父问题、子问题、当前 decision question、边界内外。
-- `Physical Priors`: 为什么这个问题在机制上有意义；这个 prior 应该能被证据削弱。
-- `Motivation / Mechanism`: prior 怎样导致目标现象；同一现象还有什么 rival explanation。
+- `Physical Priors`: 为什么这个问题在机制上有意义；这个 prior 应该能被证据削弱。它必须放在 hypothesis 前面。
+- `Hypothesis / Mechanism`: 从 physical prior 推出的可证伪假设；prior 怎样导致目标现象；同一现象还有什么 rival explanation。
 - `Mathematical Modeling`: 用变量、对象、关系把 prior 钉住，不用数学装饰不清楚的想法。
 - `Computational Realization`: 最小实现含义，包括数据、模型组件、干预、观测量和 artifact。
 - `Minimal Decisive Test`: 能更新 anchor 的最小实验，不扩展成大网格。
