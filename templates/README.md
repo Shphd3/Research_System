@@ -52,7 +52,8 @@ purpose.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_notes_template.md` | Private meeting notes and meeting preparation. |
+| `meeting/meeting_brief_template.md` | Pre-meeting brief that states conclusion, minimum evidence, claim boundary, and next decision. Save as `meeting_brief.md`. |
+| `meeting/meeting_notes_template.md` | Guidance plus lightweight structure for private post-meeting notes. |
 | `meeting/recordings_template.md` | Meeting or discussion recording notes. |
 
 ## Archive

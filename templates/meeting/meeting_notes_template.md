@@ -8,9 +8,20 @@ Recommended shape:
 ```text
 daily_research_reports/MMDD/meeting/
   meeting_brief.md
+  meeting_notes.md
   advisor_questions.md
   slide_outline.md
 ```
+
+Use the shared brief template for pre-meeting decision framing:
+
+```text
+templates/meeting/meeting_brief_template.md
+```
+
+`meeting_brief.md` should start with the conclusion, then give only the minimum
+reason, claim boundary, and next decision. It is for meeting preparation, not a
+replacement for an experiment `summary.md`, `detailed.md`, or `05_report_card.md`.
 
 For experiment results that need advisor-facing discussion, keep the fast
 reporting entry in:
@@ -54,3 +65,25 @@ Projects/<project>/<worker>/sync/MMDD_topic/
 
 The daily meeting folder can keep local preparation notes, but the collaborator-
 facing report should be copied to project sync only on explicit request.
+
+## Private Meeting Notes
+
+Use this lightweight structure for post-meeting or personal notes:
+
+```text
+# 会议记录
+
+## 会议记录 - group mainline
+
+主线内容更新：
+
+next-to-do：
+
+## 会议记录 - personal
+
+主线内容更新：
+
+next-to-do：
+
+other：
+```
