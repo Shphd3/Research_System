@@ -4,17 +4,17 @@
 
 **要回答的问题：**
 
-如果对Router的行向量（可以视作专家的中心）进行归一化，并且在每次更新的时候进行几何上的Inhibition，看能否在数据均匀分布情况下形成feature-level的专一化。
+如果对Router的行向量（视作专家的中心）进行归一化，构成严格cosine similarity分发，并且在每次更新的时候进行几何上的Inhibition，看能否在数据均匀分布情况下形成feature-level的专一化。
 
 **结论：**
 
-1. 在均匀分布的合成数据实验上，只靠对Router中心几何上的Inhibition没有办法自然形成feature-level的specialization，但是确实有让不同的feature分得更开的趋势
-2. 注入几何上先验初始化的基础上，再使用inhibition，能够相比random初始化使用inhibition更能形成feature-level专一化，但是仍然不能稳定形成，推测需要更强的优化过程中的 分发-优化 绑定，也就是显式地注入表征几何分化的优化目标
+1. 在均匀分布的合成数据实验上，只靠几何上的Inhibition没有办法自然形成feature-level的specialization，但是能让不同的feature分得更开
+2. 注入几何先验初始化的基础上，再使用inhibition，能够相比random初始化使用inhibition更能形成feature-level专一化，但是仍然不能稳定形成，推测需要更强的 分发-优化目标 绑定正则化项，也就是显式地注入表征几何分化的优化目标，才能保证优化过程中保持feature专一化分发
 
 **Next Step：**
 
 1. 将feature的Zipfian分布纳入考虑，推测此时使用归一化的Router相比普通的Router能够更好地分发
-2. 探究可实现的表征空间分发约束，以此构想在真实数据上的router-专家初始化 + 优化正则化项
+2. 并且要探究真实数据可实现的表征空间分发约束，以此构想真实场景router-专家初始化 + 表征-router binding的正则化项
 
 **当前解释：**
 
@@ -81,9 +81,9 @@ slot centroid prototype 含有可用的 slot direction；router-center separatio
 
 | Evidence item                    | Comparison     | Result                          | Decision meaning                           |
 | -------------------------------- | -------------- | ------------------------------- | ------------------------------------------ |
-| slot prototype 有信息            | C1/C4 vs C0/C3 | step-0 NMI 约 0.242 vs 约 0.009 | slot init 是有效入口                       |
-| center separation 的 dot 结果    | D1             | final NMI 0.446, std 0.320      | 不稳定                                     |
-| center separation 的 cosine 结果 | K1             | final NMI 0.566, std 0.491      | 最强但 seed-unstable                       |
+| slot initialization 有信息            | C1/C4 vs C0/C3 | step-0 NMI 约 0.242 vs 约 0.009 | slot init 是有效入口                       |
+| center separation 的 结果    | D1             | final NMI 0.446, std 0.320      | 不稳定                                     |
+| center separation 的 cosine similarity 结果 | K1             | final NMI 0.566, std 0.491      | 分得最开但 seed-unstable                       |
 | center separation 是否足够       | D1/K1          | 都没有稳定到 NMI=1              | 只分开 centers 不能解决 assignment binding |
 | no accuracy tradeoff             | all            | target accuracy 1.000           | accuracy 不是 specialization 证据          |
 
@@ -101,4 +101,4 @@ slot prototype + cosine router 有几何信号，但 center separation alone 仍
 
 **Next Iteration:**
 
-下一步先不扩大到 Zipfian，而是先补一个最小 anti-merge / assignment-discovery 信号，并和 K1 做 per-seed 对照。如果仍不稳定，再判断是否需要 supervised assignment 或其他 route-function binding。
+下一步要进入 Zipfian
