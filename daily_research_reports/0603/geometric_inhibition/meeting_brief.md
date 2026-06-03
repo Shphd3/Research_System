@@ -2,58 +2,103 @@
 
 ## Meeting Summary
 
-结论：
+**要回答的问题：**
 
-> 在 uniform multi-B synthetic 中，slot-stable initialization 能把 slot 信息注入 router 初始几何；在此基础上，geometric inhibition 能把 final route-slot NMI 稳定到 1.000，而且不是单纯提高 gate confidence。
+如果对Router的行向量（可以视作专家的中心）进行归一化，并且在每次更新的时候进行几何上的Inhibition，看能否在数据均匀分布情况下形成feature-level的专一化。
 
-最小理由：
+**结论：**
 
-1. Q1: C1 vs C0 的 step-0 route-slot NMI 是 0.242 vs 0.009；C4 vs C3 是 0.242 vs 0.008，说明 prototype 本身有 slot 信息。
-2. Q2/Q3: C2 vs C1 final NMI 从 0.446 到 1.000；C5 vs C4 从 0.566 到 1.000。confidence 也上升，但 NMI 同时大幅上升，因此削弱“只是 gate sharper”的 rival。
-3. Q5: 所有条件 target accuracy 都是 1.000，所以没有看到 routing 更整齐但任务变差的 tradeoff。
+1. 在均匀分布的合成数据实验上，只靠对Router中心几何上的Inhibition没有办法自然形成feature-level的specialization，但是确实有让不同的feature分得更开的趋势
+2. 注入几何上先验初始化的基础上，再使用inhibition，能够相比random初始化使用inhibition更能形成feature-level专一化，但是仍然不能稳定形成，推测需要更强的优化过程中的 分发-优化 绑定，也就是显式地注入表征几何分化的优化目标
 
-当前解释：
+**Next Step：**
 
-Observation: slot-stable init 提高 step-0 alignment；geometric inhibition 提高 final route-slot NMI 和 seed stability；selected gate confidence 上升但不是唯一变化。
+1. 将feature的Zipfian分布纳入考虑，推测此时使用归一化的Router相比普通的Router能够更好地分发
+2. 探究可实现的表征空间分发约束，以此构想在真实数据上的router-专家初始化 + 优化正则化项
 
-Interpretation: prototype geometry 是可用的，但 init alone 不够稳定；显式 token margin / router-center separation 能抑制 route mixing。
+**当前解释：**
+
+Observation:
+slot-stable init 提高初始 route-slot alignment；cosine router + slot init 在 center separation only 下最好，但仍然 seed-unstable；target accuracy 全部为 1.000。
+
+Interpretation:
+
+1. slot prototype geometry 是可用的；
+2. cosine similarity router 比 dot-product router 更适合这个几何入口；
+3. 但 center separation 只是在分开 router rows，没有解决 token-to-expert assignment binding；
+4. 因此它不能单独作为稳定 specialization 机制。
+
+### 数据叙述
+
+每个样本只看一个关键预测位置：$B_i \rightarrow Y_{s,i}$。同一个 $B_i$ 在不同 slot/context 下目标 token 不同，所以 router 如果只看 $B_i$ identity，就不能解释 slot-specific target。
+
+| Case                       | Sequence example                                                                                                                  | Prediction tested                                           | What this controls                                            |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------- |
+| same $B_i$, different slot | $[r_{\mathrm{start}}, C_0, B_{17}, Y_{0,17}, r_{\mathrm{end}}]$ / $[r_{\mathrm{start}}, C_1, B_{17}, Y_{1,17}, r_{\mathrm{end}}]$ | $B_{17}\rightarrow Y_{0,17}$ / $B_{17}\rightarrow Y_{1,17}$ | 同一 $B_i$ 在不同 slot 下目标不同，测试 routing 是否能看 slot |
+| same slot, different $B_i$ | $[r_{\mathrm{start}}, C_0, B_{17}, Y_{0,17}, r_{\mathrm{end}}]$ / $[r_{\mathrm{start}}, C_0, B_{42}, Y_{0,42}, r_{\mathrm{end}}]$ | $B_{17}\rightarrow Y_{0,17}$ / $B_{42}\rightarrow Y_{0,42}$ | 同一 slot 下仍有不同 target，任务不是只按 slot 分类           |
+
+### 最重要实验代号
+
+这次组会只需要最小代号。`geometric separation` 在这里等于 `router-center separation only`，不包括 supervised token-margin / logit-margin 正则化。
+
+| Code | Router            | Init             | Extra loss / mechanism | Why it matters                                        |
+| ---- | ----------------- | ---------------- | ---------------------- | ----------------------------------------------------- |
+| C0   | 普通线性分发      | random           | none                   | 05 中最朴素 baseline                                  |
+| C1   | 普通线性分发      | slot-stable init | none                   | 05 中只加 slot init 的朴素对照                        |
+| C3   | cosine similarity | random           | none                   | cosine router 的朴素 baseline                         |
+| C4   | cosine similarity | slot-stable init | none                   | cosine + slot init 的朴素对照                         |
+| D1   | 普通线性分发      | slot-stable init | center separation only | 05_01：dot 下的 geometric separation                  |
+| K1   | cosine similarity | slot-stable init | center separation only | 05_01：cosine 下的 geometric separation，最强但不稳定 |
+
+### 关键实验结果
+
+| Question                   | Pair               | Key metric            | Result                         | Interpretation                             |
+| -------------------------- | ------------------ | --------------------- | ------------------------------ | ------------------------------------------ |
+| slot init 是否注入几何     | C1 vs C0; C4 vs C3 | step-0 route-slot NMI | 0.242 vs 0.009; 0.242 vs 0.008 | slot prototype 有初始几何信息              |
+| cosine路由 是否更适合          | K1 vs D1           | final route-slot NMI  | 0.566 vs 0.446                 | cosine + slot init 是更好的 center-only 条件 |
+| center separation 是否足够 | D1 / K1            | final NMI std         | 0.320 / 0.491                  | seed variance 高，不能 claim 稳定 routing  |
+| 是否有 accuracy tradeoff   | all                | target accuracy       | 1.000                          | task learning 不等于 specialization        |
+
+
 
 ## Meeting Preparation
 
 **Question:**
 
-在 top-1 MoE 中，如果我们先用 slot prototype 初始化 router，再加入 geometric inhibition，是否能稳定形成 slot-aligned routing？
+在 top-1 MoE 中，如果我们先用 slot prototype 初始化 router，再只加入 router-center geometric separation，是否能稳定形成 slot-aligned routing？
 
 **Why this matters?**
 
-之前 ordinary top-1 router 的失败可能来自 early assignment lock-in。这个实验检查一个更清晰的机制：不是让模型自己发现 specialization，而是先给一个几何 prior，再问 inhibition 是否能防止 routing drift。
+之前 ordinary top-1 router 的失败可能来自 early assignment lock-in。这个实验检查一个更清晰的几何机制：先给 slot prototype 作为 router center 初始方向，再只让 router centers 互相分开，问它是否足以防止 route mixing。
 
 **Hypothesis:**
 
-slot centroid prototype 含有可用的 slot direction；geometric inhibition 可以在训练中维持 assigned slot expert 和其他 experts 的 margin，并减少 route mixing。
+slot centroid prototype 含有可用的 slot direction；router-center separation 可能维持不同 expert center 的几何分离，从而减少 route mixing。
 
 **Evidence:**
 
-最重要 metric 是 final route-slot NMI，因为本次组会目标是 routing stabilization，不是完整 utility specialization。
+最重要 metric 是 final route-slot NMI 及其 seed variance，因为本次组会目标是判断 center separation 是否能稳定 routing，不是完整 utility specialization。
 
-1. Q1 init 成功：C1/C4 的 step-0 NMI 都约 0.242，random baseline C0/C3 约 0.009。
-2. Q2 geo 有额外贡献：C2/C5 final NMI 都是 1.000，且 final NMI std 为 0。
-3. Q3 不是 confidence-only：C2 vs C1 confidence +0.028 且 NMI +0.554；C5 vs C4 confidence +0.029 且 NMI +0.434。
-4. Q4 cosine：init-only 下 cosine 比 dot final NMI 更高，0.566 vs 0.446；加 geo 后两者都 1.000。
-5. Q5 accuracy：所有条件 target accuracy 都是 1.000。
+| Evidence item                    | Comparison     | Result                          | Decision meaning                           |
+| -------------------------------- | -------------- | ------------------------------- | ------------------------------------------ |
+| slot prototype 有信息            | C1/C4 vs C0/C3 | step-0 NMI 约 0.242 vs 约 0.009 | slot init 是有效入口                       |
+| center separation 的 dot 结果    | D1             | final NMI 0.446, std 0.320      | 不稳定                                     |
+| center separation 的 cosine 结果 | K1             | final NMI 0.566, std 0.491      | 最强但 seed-unstable                       |
+| center separation 是否足够       | D1/K1          | 都没有稳定到 NMI=1              | 只分开 centers 不能解决 assignment binding |
+| no accuracy tradeoff             | all            | target accuracy 1.000           | accuracy 不是 specialization 证据          |
 
 **Boundaries:**
 
-这个结论只覆盖 uniform multi-B synthetic、external slot assignment $a(s,i)=s$、无 router bias、top-1 selected-gate MoE。
+这个结论只覆盖 uniform multi-B synthetic、slot-stable init、router-center separation only、无 router bias、top-1 selected-gate MoE。
 
 **Cannot claim yet:**
 
-不能说真实语言数据中能自动获得 slot label；不能说 cosine 自然产生 specialization；不能说 Zipfian 高频/低频已经解决；不能说 expert utility 完整解决。
+不能说 center separation alone 解决 specialization；不能说 cosine 自然产生稳定 specialization；不能说 Zipfian 高频/低频已经解决；不能说 expert utility 完整解决。
 
 **Next Decision:**
 
-组会中可以把它作为一个 clean positive mechanism：geometric inhibition stabilizes slot-assigned routing and weakens the confidence-only rival。
+slot prototype + cosine router 有几何信号，但 center separation alone 仍不足以稳定 assignment binding。
 
 **Next Iteration:**
 
-下一步测试 Zipfian multi-B 或 less-oracle prototype。如果在频率不平衡下 C2/C5 仍稳定，claim 可以推进到 frequency robustness；如果失败，则说明当前几何机制依赖 uniform exposure 或 oracle assignment。
+下一步先不扩大到 Zipfian，而是先补一个最小 anti-merge / assignment-discovery 信号，并和 K1 做 per-seed 对照。如果仍不稳定，再判断是否需要 supervised assignment 或其他 route-function binding。
