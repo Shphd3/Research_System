@@ -14,7 +14,7 @@ prompt, or README.
 | `research_process/` | Templates for starting, structuring, or continuing a research iteration. |
 | `reporting/` | Templates for advisor, collaborator, meeting, or sync-facing report cards. |
 | `reading/` | Templates for paper, blog, and reading-note work. |
-| `meeting/` | Templates for private meeting preparation, notes, and recordings. |
+| `meeting/` | Templates for private meeting preparation and notes. |
 | `archive/` | Historical templates kept for compatibility only. |
 
 ## Research Process Templates
@@ -44,7 +44,7 @@ Reading templates do not replace research anchors.
 | `reading/paper_blog_reading_record.md` | Blog or informal technical article reading record. |
 | `reading/paper_summary_card.md` | Short reading summary card. |
 
-## Meeting / Recording Templates
+## Meeting Templates
 
 These are private preparation and record-keeping surfaces. They should not be
 shown as advisor-facing report cards unless explicitly rewritten for that
@@ -53,8 +53,7 @@ purpose.
 | Template | Use |
 |---|---|
 | `meeting/meeting_brief_template.md` | Pre-meeting brief that states conclusion, minimum evidence, claim boundary, and next decision. Save as `meeting_brief.md`. |
-| `meeting/meeting_notes_template.md` | Guidance plus lightweight structure for private post-meeting notes. |
-| `meeting/recordings_template.md` | Meeting or discussion recording notes. |
+| `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis. Save as `meeting_notes.md`. |
 
 ## Archive
 
@@ -69,5 +68,7 @@ purpose.
   experiment, or sync package.
 - Daily notes should stay minimal and free-form; do not recreate a daily-card
   template system.
+- Do not create separate `recordings.md` files by default. Put meeting-derived
+  notes and diagnosis in `meeting_notes.md`.
 - Historical archive snapshots may contain old template files. Do not use them
   as current templates.

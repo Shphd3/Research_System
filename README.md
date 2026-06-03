@@ -42,7 +42,9 @@ free-form.
 Reusable templates live in `templates/`. Do not create new reusable templates
 inside daily, paper-reading, docs, or project folders by default.
 
-Class notes and side thoughts should stay inside `daily_card.md` by default. Use `Recording / Class Notes` for class points, and `Small Thought Parking Lot` for side ideas that should not interrupt the current task.
+Class notes and side thoughts should stay inside `daily_card.md` by default.
+Use `Class Notes` for class points, and `Small Thought Parking Lot` for side
+ideas that should not interrupt the current task.
 
 Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`.
 

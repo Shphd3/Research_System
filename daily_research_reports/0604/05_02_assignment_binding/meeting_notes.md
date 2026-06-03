@@ -1,12 +1,26 @@
-# 会议记录
+# Meeting Notes
 
-## 会议记录 - group mainline
+## Meeting Diagnosis
+
+导师的 Toy claim 是什么：
+
+我同意什么：
+
+我的 stronger concern 是什么：
+
+三个未放松的假设：
+
+1.
+2.
+3.
+
+## Group Mainline
 
 主线内容更新：
 
 next-to-do：
 
-## 会议记录 - personal
+## Personal Research Notes
 
 主线内容更新：
 
