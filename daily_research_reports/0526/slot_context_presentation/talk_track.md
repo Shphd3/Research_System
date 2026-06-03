@@ -1,4 +1,4 @@
-# 0526 Slot-Context 30 秒汇报稿
+﻿# 0526 Slot-Context 30 秒汇报稿
 
 ## 0. 只讲这一版
 
@@ -23,7 +23,7 @@
 最重要的背景文件：
 
 ```text
-anchor/slot_context_dominance_router_specialization_anchor.md
+anchor/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 如果导师问“你整个问题定义是什么”，直接打开这个文件，看开头的：

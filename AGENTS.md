@@ -1,4 +1,4 @@
-# Codex Research System
+﻿# Codex Research System
 
 This repository manages research process, not the remote experiment codebase.
 
@@ -70,7 +70,7 @@ Projects/from-attention-to-search/main/problem_anchors/<anchor_id>.md
 Current first anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Each anchor should define:
@@ -88,13 +88,34 @@ After evidence exists, update the same anchor. Long result explanation belongs
 in `detailed.md`; optional handoff reports package already-updated evidence for
 meeting or collaborator use.
 
-## Anchor Sync Copy Rule
+## Explicit Sync Rule
 
-Every active anchor must have a categorized copy under root `sync/` so a
-web-side research partner can read the current anchor without entering the
-project repository.
+Default behavior:
 
-Canonical source:
+```text
+update anchor / summary.md / detailed.md / daily card only
+do not update root sync automatically
+do not package handoff reports automatically
+do not sync to external collaborator repos automatically
+do not update graph.yaml automatically
+do not push automatically
+```
+
+Only perform these actions when the user explicitly asks:
+
+```text
+sync root sync
+sync to collaborator/senior repo
+package handoff report
+push to remote
+update graph
+```
+
+The project-local anchor remains the source of truth. Root `sync/` is an
+explicit external-reading surface for web-side or cross-project readers, not an
+automatic side effect of every anchor edit.
+
+Canonical anchor source:
 
 ```text
 Projects/<project>/main/problem_anchors/<anchor_id>.md
@@ -106,18 +127,37 @@ Root sync copy:
 sync/<sync_id>/anchors/<category>/<anchor_id>.md
 ```
 
-The project-local anchor remains the source of truth. After updating an active
-anchor, copy the latest version into the matching root sync category and update
-the category index if needed. Verify the source and copy are identical before
-ending the task.
+When the user requests root sync, copy the latest project-local anchor into the
+matching root sync category, update the category index if needed, and verify the
+source and copy are identical before ending the task.
+
+External collaborator repo sync is a separate explicit action. It means copying
+a small curated research package into a collaborator/advisor/senior student's
+repo, not mirroring this repository or the experiment codebase. Include only
+the copied current anchor, `summary.md`, `detailed.md`, and optionally a
+`05_report_card.md` for quick reading. Copy figures or tables only when those files
+are embedded by the synced documents.
+Do not include raw logs, checkpoints, datasets, full result directories,
+private daily notes, unrelated anchors, or code changes unless the user
+explicitly asks for those files.
+
+Before syncing to an external repo, identify the target repo path, check its
+`git status --short --branch`, avoid overwriting dirty collaborator files
+without explicit approval, convert absolute paths to relative links, and verify
+embedded figures/tables exist inside the copied package. Commit and push the
+external repo only when explicitly requested.
 
 ## Experiment Rule
 
 Default shape:
 
 ```text
-one anchor -> one minimal decisive experiment -> summary.md -> detailed.md -> anchor update -> root anchor copy -> optional handoff report
+one anchor -> one minimal decisive experiment -> summary.md -> detailed.md -> anchor update
 ```
+
+Root sync, external collaborator repo sync, handoff packages, graph updates,
+commits, and pushes are separate explicit actions. Do not perform them unless
+the user asks for that action in the current task.
 
 `summary.md` 是实验完成后的第一阅读入口，必须
 self-contained 地给出目的、问题/假设、结论、关键证据、结论边界和下一步。
@@ -125,6 +165,29 @@ self-contained 地给出目的、问题/假设、结论、关键证据、结论�
 `detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
 seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
 和 claim boundary。
+
+When an experiment needs advisor-facing discussion, create the report card as:
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card.md
+```
+
+The report card is a short, self-contained reading card derived from the
+anchor, `summary.md`, and `detailed.md`. It belongs with the experiment record,
+not beside the anchor, and must embed central figures when figures are
+decision-relevant. Use the fixed structure from
+`templates/reporting/report_card_template.md`:
+
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
 
 如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
 `summary.md`、`detailed.md` 和可选 handoff report 中嵌入。只列路径不嵌图是不完整的。
@@ -153,24 +216,42 @@ new experiment before this gate is passed.
 
 Post-result handoff is optional. The anchor is the current-state research
 document, `summary.md` is the first result reading path, and `detailed.md` is
-the full iteration ledger. A handoff report only packages those updated sources
-for meeting, collaborator, or web-side use.
+the full iteration ledger. A handoff package only copies and indexes those
+already-updated sources for meeting, collaborator, or web-side use.
 
-Default location:
+Default daily location when the user explicitly requests a handoff package:
+
+```text
+daily_research_reports/MMDD/<topic>/handoff_report.md
+daily_research_reports/MMDD/<topic>/<anchor_id>.md
+```
+
+`<anchor_id>.md` should keep the same subject-bearing name as the most important
+project anchor for that handoff, so the daily folder contains both the handoff
+package and the current research-state source without a generic `anchor.md`.
+
+Project-local sync locations are used only when the user explicitly asks for
+project sync or collaborator sync:
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/report.md
+Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
 Projects/<project>/sync/MMDD_topic/report.md
+Projects/<project>/sync/MMDD_topic/<anchor_id>.md
 ```
 
-A handoff report must be self-contained and include:
+A handoff package must be self-contained and include existing:
 
 ```text
 Anchor / Summary / Detailed
-Oral Report Card
-目的 / 物理建模或假设 / 最小实验 / 结论 / 证据 / 结论边界 / 下一步
-Artifact-Repro Map
+05_report_card.md derived from templates/reporting/report_card_template.md
+figures / tables referenced by included docs
+short README or index
 ```
+
+Do not create new claims, new conclusions, or a second closure in a handoff
+package. The source remains anchor + `summary.md` + `detailed.md` and the
+advisor-facing report card when it already exists or is explicitly requested.
 
 The artifact map must include code workspace, runner, config, data/manifest,
 result dir, figure dir, key files, checkpoints/logs, repro command, and job id
@@ -200,15 +281,18 @@ For research organization work inside `Research_System`, always read this file
 first. Then use local skills from `skills/` when the task type matches:
 
 - `research-progress-core`: apply the general research-progress paradigm before
-  artifact writing: hypothesis, operational definition, minimal test, metric +
-  visual evidence, failure analysis, and refined hypothesis.
+  artifact writing: physical prior, falsifiable hypothesis, operational
+  definition, minimal test, metric + visual evidence, failure analysis, and
+  refined hypothesis.
 - `problem-anchor-writer`: write or update anchor / purpose-card documents.
 - `experiment-card-writer`: write operational execution plans from anchors.
-- `handoff-report-writer`: write optional meeting/collaborator/web handoff
-  reports after anchor, `summary.md`, and `detailed.md` are updated.
+- `handoff-report-writer`: package explicitly requested meeting/collaborator/web
+  handoff material after anchor, `summary.md`, and `detailed.md` are updated.
 - `remote-experiment-workflow`: remote/container/SCO/ACP workflow and artifact
   maps.
-- `research-mainline`: maintain graph, anchors, roadmap, and root sync state.
+- `research-mainline`: maintain graph, anchors, roadmap, and root sync state;
+  root sync, external collaborator repo sync, and graph edits require explicit
+  user requests.
 - `research-graph-sop`: maintain a thin Sidecar-readable graph.
 - `sidecar-thinking`: bridge to the local Sidecar app.
 - `scholar-mode`: clarify unstable research intuitions before artifacts.
@@ -230,6 +314,7 @@ The repository root should stay small:
 - `PROJECTS.md`
 - `README.md`
 - `sync/`
+- `templates/`
 - `prompts/`
 - `skills/`
 - `paper_reading/`
@@ -242,6 +327,10 @@ entry is:
 ```text
 sync/S000_current_specialization/
 ```
+
+Root-level `templates/` is the only maintained reusable-template folder.
+Do not add new reusable templates under `daily_research_reports/`, `docs/`,
+`paper_reading/`, or project folders by default.
 
 ## Execution Boundary
 
@@ -269,7 +358,8 @@ display formulas must use `$$...$$`.
 
 ## Git Habit
 
-Prefer one lightweight commit per working day:
+Commit or push only when the user explicitly asks. When committing, prefer one
+lightweight commit per working day:
 
 ```text
 MMDD: mainline update - <one sentence conclusion>

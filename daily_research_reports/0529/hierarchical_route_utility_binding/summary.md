@@ -1,9 +1,9 @@
-# Result Summary: hierarchical_route_utility_binding
+﻿# Result Summary: hierarchical_route_utility_binding
 
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/hierarchical_gating_frame/hierarchical_route_utility_binding_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/03_hierarchical_route_utility_binding_anchor.md
 ```
 
 Story:

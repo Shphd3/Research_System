@@ -1,6 +1,6 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
-source_anchor: Projects/from-attention-to-search/main/problem_anchors/ntp_zipf_feature_factorization_anchor/ntp_zipf_feature_factorization_anchor.md
+source_anchor: Projects/from-attention-to-search/main/problem_anchors/04_ntp_zipf_feature_factorization_anchor.md
 updated_from: hierarchical_route_utility_binding result + linear FFN Zipf evidence
 ---
 
@@ -130,7 +130,7 @@ Prior 3: hierarchy 不是机制本身。
 two-level hierarchy 在 matched compute、matched data、多个 seeds 下稳定提升 route-slot alignment 与 utility diagonal。
 ```
 
-## 3. Mechanistic Motivation
+## 3. Hypothesis / Mechanism
 
 已有证据形成的链条：
 
@@ -445,4 +445,3 @@ NTP 中 route-utility binding failure 到底来自 factor-level routing interfer
 若两者都不成立：
   重新审查 synthetic feature 定义和 specialization metric。
 ```
-

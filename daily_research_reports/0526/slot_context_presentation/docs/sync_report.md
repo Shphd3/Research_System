@@ -1,9 +1,9 @@
-# Sync Closure: Slot-Context Dominance Router Specialization
+﻿# Sync Closure: Slot-Context Dominance Router Specialization
 
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Story:
@@ -269,7 +269,7 @@ B_long assignment-utility: 0.733 -> materially higher
 anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 summary:
@@ -299,7 +299,7 @@ Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_cont
 source anchor copy:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 ## 12. Artifact / Repro Map

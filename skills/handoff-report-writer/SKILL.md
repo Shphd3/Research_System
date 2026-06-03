@@ -1,159 +1,211 @@
----
+﻿---
 name: handoff-report-writer
-description: Use only when evidence must be packaged for a meeting, collaborator, or web-side handoff after the anchor, experiment summary, and detailed result are already updated.
+description: Use only when existing research artifacts must be packaged for a meeting, collaborator, web-side reader, or external repo sync after the anchor, summary, detailed result, and optional report card already exist.
 metadata:
-  short-description: Write optional research handoff reports
+  short-description: Package existing research artifacts
 ---
 
 # Handoff Report Writer
 
-Use this skill after evidence exists and after the core research documents are
-updated. A handoff report is an optional external package. It is not the main
-research document and it is not a second closure.
+This skill packages existing research artifacts. It does not create new
+research content, new claims, new conclusions, or a second closure.
 
 The source of truth remains:
 
 ```text
-anchor.md = current-state hypothesis, evidence, refined hypothesis, boundary, next decision
+<anchor_id>.md = current-state hypothesis, evidence, boundary, next decision
 summary.md = first post-result reading path
-detailed.md = full iteration ledger and artifact map
+detailed.md = full evidence ledger and artifact map
+05_report_card.md = advisor-facing evidence card, if it already exists or is explicitly requested
 ```
 
 ## Core Rule
 
-First apply `research-progress-core`. The report must state:
+Use this skill only when the user explicitly asks to package, hand off, sync, or
+copy existing material.
+
+The job is:
 
 ```text
-what was tested
-where the evidence is
-what passed
-what failed
-why it failed, if known
-what the next concrete test or decision is
+select existing files
+copy them into the target package
+preserve subject-bearing filenames
+copy only referenced figures/tables
+write a short README or index
+verify links and file existence
+report what was included and excluded
 ```
 
-Do not write a handoff report from chat history alone. Do not use it to replace
-anchor backfill, `summary.md`, or `detailed.md`.
+Do not write from chat history alone. Do not invent missing results. Do not
+replace anchor backfill, `summary.md`, `detailed.md`, or the advisor report
+card.
+
+If a handoff package includes `05_report_card.md`, keep it in the exact shared
+structure from `templates/reporting/report_card_template.md`.
+Do not convert it into a separate oral report, private question list, or second
+closure.
 
 ## When To Use
 
 Use this only when at least one is true:
 
-- a collaborator or advisor needs a self-contained report;
-- a web-side or GitHub-side reader should understand the result without entering
-  the project repository;
-- a meeting requires an oral report card and artifact map;
-- multiple result documents need to be packaged into one handoff.
+- the user asks for a handoff package;
+- the user asks to sync to root sync, project sync, or an external collaborator
+  repo;
+- a collaborator or advisor needs a small self-contained file package;
+- a web-side or GitHub-side reader needs curated current artifacts without raw
+  experiment outputs.
 
-Do not create a handoff report for every ordinary experiment by default.
+Do not create a handoff package for every ordinary experiment by default.
 
 ## Required Inputs
 
-Read in order:
-
-1. `PROJECTS.md`;
-2. project `graph.yaml`, only for navigation;
-3. relevant anchor;
-4. experiment `summary.md`;
-5. experiment `detailed.md`;
-6. key figures, tables, and artifact paths needed for reproduction.
-
-## Location
-
-Branch-local meeting or collaborator handoff:
+Read only the existing artifacts needed for the package:
 
 ```text
-Projects/<project>/<worker>/sync/MMDD_topic/report.md
+required:
+- relevant anchor
+- summary.md
+- detailed.md
+
+optional:
+- protocol_for_approval.md
+- execution_plan.md
+- 05_report_card.md
+- figures/ referenced by included markdown
+- tables/ referenced by included markdown
 ```
 
-Project-level handoff only when the result is stable enough to share as project
-context:
+If the requested package needs a report card and none exists, use
+`templates/reporting/report_card_template.md` only when the user
+explicitly asks to create it. Otherwise, package the existing sources and note
+that no report card was included.
+
+## Default Package Shape
+
+Use date/topic folders:
 
 ```text
-Projects/<project>/sync/MMDD_topic/report.md
+<target_root>/MMDD_or_YYYY-MM-DD/<topic>/
+  README.md
+  <anchor_id>.md
+  summary.md
+  detailed.md
+  protocol_for_approval.md      # optional
+  execution_plan.md             # optional
+  05_report_card.md             # optional
+  figures/                      # only referenced figures
+  tables/                       # only referenced tables
 ```
 
-Root sync handoff for web-side readers should point to the root anchor copy:
+For daily local packages:
 
 ```text
-sync/<sync_id>/anchors/<category>/<anchor_id>.md
+daily_research_reports/MMDD/<topic>/
 ```
 
-## Required Shape
+For project-local sync:
+
+```text
+Projects/<project>/<worker>/sync/MMDD_topic/
+Projects/<project>/sync/MMDD_topic/
+```
+
+For external collaborator repo sync:
+
+```text
+<external_collaborator_repo>/<agreed_research_sync_path>/MMDD_topic/
+```
+
+Use the target repo's existing convention when one is known. If no destination
+is known, ask for the destination path before copying.
+
+## README / Index Only
+
+The only new text this skill should normally write is a short `README.md` or
+index for navigation:
 
 ```markdown
-# Handoff Report: <topic>
+# <date> <topic> Handoff Package
 
-Anchor:
-Summary:
-Detailed:
+## Read Order
 
-## 0. Oral Report Card
+1. `05_report_card.md` if present
+2. `<anchor_id>.md`
+3. `summary.md`
+4. `detailed.md`
 
-目的：
+## Scope
 
-物理建模 / 假设：
+One or two sentences copied or tightly paraphrased from `summary.md`.
 
-最小实验：
+## Boundary
 
-结论：
+One or two sentences copied or tightly paraphrased from `summary.md`.
 
-证据：
+## Included Files
 
-结论边界：
-
-下一步：
-
-## 1. What Was Tested
-
-## 2. Evidence Location
-
-## 3. What Passed
-
-## 4. What Failed Or Stayed Ambiguous
-
-## 5. Interpretation
-
-## 6. Claim Boundary
-
-## 7. Next Decision
-
-## 8. Key Figures
-
-![<figure title>](figures/<figure>.png)
-
-Supports:
-
-## 9. Artifact / Repro Map
-
-code workspace:
-runner:
-config:
-key code files:
-data / manifest:
-result dir:
-figure dir:
-key files:
-checkpoints / logs:
-repro command:
-job id:
+...
 ```
 
-## Writing Standard
+Do not add a new argument, new interpretation, new next step, new advisor
+questions, or new experiment design in the package README.
 
-This is a decision report, not a timeline. Keep it shorter than `detailed.md`.
-It should package the conclusion and evidence for transfer, not re-run the full
-reasoning.
+## Include / Exclude Rules
 
-Every important metric must state what question it answers, what failure mode
-it catches, and what it cannot prove. Every central figure must have a nearby
-one-sentence interpretation.
+Include only curated, reader-facing artifacts:
 
-## Reference Delegation
+```text
+anchor
+summary.md
+detailed.md
+05_report_card.md
+protocol or execution plan when useful for audit
+figures and tables referenced by included markdown
+```
 
-If the handoff needs more than packaging, do not expand this skill. Load the
-relevant `research-progress-core/references/` file instead:
+Exclude by default:
 
-- `profiling_and_evidence.md` when deciding which evidence is sufficient;
-- `failure_decomposition.md` when the handoff must explain a bottleneck;
-- `goal_audit.md` when the handoff explains a changed metric or goal.
+```text
+raw logs
+checkpoints
+datasets
+full run directories
+temporary caches
+unfiltered generated figures/tables
+private daily notes
+unconfirmed speculation
+unrelated anchors
+old archived evidence
+experiment code changes
+```
+
+Copy code only when the user explicitly asks for code sync.
+
+## Safety Checks
+
+Before copying into any external repo:
+
+1. Check the target repo `git status --short --branch`.
+2. Do not overwrite dirty collaborator files without explicit approval.
+3. Keep all copied paths inside the requested target folder.
+4. Convert absolute local links into relative package links when needed.
+5. Verify every embedded figure/table exists inside the copied package.
+6. Report included and excluded file classes before commit or push.
+
+A request to sync files means copy/update the package. Commit and push only when
+the user explicitly asks.
+
+## Output Report
+
+After packaging, report:
+
+```text
+target package path
+included files
+excluded file classes
+missing optional files, if any
+whether commit/push was performed
+```
+
+Keep the response short.

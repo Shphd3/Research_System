@@ -18,7 +18,7 @@ score. Research progress is a reduction of uncertainty.
 Default short loop:
 
 ```text
-hypothesis -> operational definition -> minimal test
+physical prior -> falsifiable hypothesis -> operational definition -> minimal test
 -> metric + visual evidence -> failure analysis -> refined hypothesis
 ```
 
@@ -98,29 +98,73 @@ the smallest test or reason to park it
 
 Do not turn an unclear tangent into a new experiment until this gate is passed.
 
+## Protocol Approval Rule
+
+For any nontrivial experiment, write a short protocol before code changes or
+runs. The protocol is the user's audit surface, not an implementation plan.
+
+It must state:
+
+```text
+goal / decision question / tested hypothesis / rival explanation
+data / model / routing or algorithm / loss or objective
+conditions / checkpoints or seeds
+primary metric / secondary metrics
+known good / known bad / known confusing
+success / failure / insufficient evidence
+what this cannot claim
+user approval checklist
+```
+
+The AI must stop after the protocol and wait for user approval. Without
+approval, do not run experiments, expand conditions, generate a broad grid, or
+promote a result claim.
+
+Known good, known bad, and known confusing cases can be minimal before the run.
+They may be marked `TBD but not blocking` only if the protocol states what
+validity risk remains. After the run, review them in the detailed result.
+
+## Audit Before Interpretation Rule
+
+Before interpreting a result, first audit whether the experiment actually ran
+the approved protocol:
+
+```text
+approved conditions match actual conditions?
+primary metric exists?
+central figures/tables exist?
+seeds/checkpoints recorded?
+known good/bad/confusing reviewed?
+failure or insufficient evidence criteria applied?
+```
+
+If this audit fails, the result can be recorded as incomplete evidence but must
+not update the claim boundary as if it were decisive.
+
 ## Research Loop
 
-1. State one falsifiable hypothesis.
-2. Define the important terms operationally: success, failure, and insufficient
+1. State the physical prior or mechanistic belief that makes the question meaningful.
+2. Derive one falsifiable hypothesis from that prior.
+3. Define the important terms operationally: success, failure, and insufficient
    evidence.
-3. Build the smallest diagnostic test that can change belief, preferably with
+4. Build the smallest diagnostic test that can change belief, preferably with
    known good, known bad, and known confusing cases.
-4. Measure numbers and human-inspectable evidence.
-5. Analyze why the result passed, failed, or stayed ambiguous.
-6. Refine the hypothesis and claim boundary.
+5. Measure numbers and human-inspectable evidence.
+6. Analyze why the result passed, failed, or stayed ambiguous.
+7. Refine the physical prior, hypothesis, and claim boundary.
 
-For nontrivial work, expand step 2 into physical priors, mathematical modeling,
-and an implementation contract. The full implementation contract belongs in
-the execution plan or runbook, not in the anchor.
+For nontrivial work, expand the physical prior into mathematical modeling and
+an implementation contract. The full implementation contract belongs in the
+execution plan or runbook, not in the anchor.
 
 ## What Must Exist
 
 For nontrivial research work, the notes or reports must include:
 
 ```text
-falsifiable hypothesis
-operational definitions
 physical priors
+falsifiable hypothesis derived from those priors
+operational definitions
 mathematical model for each prior
 implementation contract for each nontrivial model or stage
 explicit algorithm specification for each nontrivial stage
@@ -275,9 +319,9 @@ next experiment.
 - Use `problem-anchor-writer` to write the current-state reasoning document.
 - Use `experiment-card-writer` to turn a clear anchor into an execution plan and
   result reports.
-- Use `handoff-report-writer` only when evidence must be packaged for meeting,
-  collaborator, or web-side handoff after the anchor and required result
-  documents are updated.
+- Use `handoff-report-writer` only when the user explicitly asks to package
+  evidence for meeting, collaborator, or web-side handoff after the anchor and
+  required result documents are updated.
 - Use `research-graph-sop` to maintain the navigation layer.
 - Use `research-mainline` for project-local organization, paths, sync copies,
   and cleanup rules.

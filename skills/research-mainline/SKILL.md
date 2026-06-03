@@ -1,6 +1,6 @@
----
+﻿---
 name: research-mainline
-description: Use when organizing or updating a research project's mainline state: graph, roadmap, anchors, experiment result records, root anchor copies, optional handoff reports, archive state, and project status.
+description: Use when organizing or updating a research project's mainline state: graph, roadmap, anchors, experiment result records, explicitly requested root anchor copies, external collaborator repo sync packages, handoff reports, archive state, and project status.
 metadata:
   short-description: Maintain compact research mainline
 ---
@@ -43,7 +43,7 @@ Projects/<project>/
         figures/
 ```
 
-Optional surfaces:
+Explicit optional surfaces:
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/report.md
@@ -51,7 +51,11 @@ Projects/<project>/sync/MMDD_topic/report.md
 Projects/<project>/<worker>/docs/
 sync/<sync_id>/anchors/<category>/<anchor_id>.md
 daily_research_reports/MMDD/
+<external_collaborator_repo>/<agreed_path>/MMDD_topic/
 ```
+
+Do not update optional sync, external collaborator sync, handoff, graph, commit,
+or push surfaces unless the user explicitly asks for that action.
 
 ## Naming Rules
 
@@ -73,9 +77,9 @@ Use:
 Examples:
 
 ```text
-slot_context_dominance_router_specialization_anchor.md
-route_function_binding_specialization_anchor.md
-frequency_induced_feature_anisotropy_anchor.md
+01_slot_context_dominance_router_specialization_anchor.md
+02_route_function_binding_specialization_anchor.md
+03_frequency_induced_feature_anisotropy_anchor.md
 ```
 
 Do not create a new anchor for each daily iteration, seed, smoke run, or failed
@@ -120,12 +124,41 @@ the hypothesis, evidence, boundary, or next decision, update the anchor too.
 Handoff reports are date/topic packages for external readers:
 
 ```text
+daily_research_reports/MMDD/<topic>/handoff_report.md
+daily_research_reports/MMDD/<topic>/<anchor_id>.md
 Projects/<project>/<worker>/sync/MMDD_topic/report.md
+Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
 Projects/<project>/sync/MMDD_topic/report.md
+Projects/<project>/sync/MMDD_topic/<anchor_id>.md
 ```
 
-Use them only when a meeting, collaborator, GitHub, or web-side reader needs a
-self-contained package.
+Use them only when the user explicitly asks for a handoff or sync package.
+Default handoff output goes in the daily folder and includes a copy of the most
+important anchor using its subject-bearing basename, not generic `anchor.md`.
+Project sync folders are used only when project/collaborator sync is explicitly
+requested.
+
+### External Collaborator Repo Sync Names
+
+External collaborator repo sync means copying a curated research package into a
+separate collaborator repository, for example an advisor/senior student's
+GitHub repo. It is not root sync and not project-local sync.
+
+Use the collaborator repo's agreed folder convention when one exists. If none
+exists, use a date/topic folder:
+
+```text
+<external_collaborator_repo>/<agreed_research_sync_path>/MMDD_topic/
+  <anchor_id>.md
+  summary.md
+  detailed.md
+  05_report_card.md    # optional, for quick reading
+  figures/             # only if referenced by synced docs
+  tables/              # only if referenced by synced docs
+```
+
+Use subject-bearing filenames. Do not use generic `anchor.md` unless the
+external repo already requires it.
 
 ## Core Artifact Chain
 
@@ -133,12 +166,12 @@ Default chain:
 
 ```text
 anchor -> execution_plan.md -> summary.md -> detailed.md
--> anchor update -> root anchor copy -> optional handoff report
+-> anchor update
 ```
 
 `summary.md` and `detailed.md` are required after an experiment result exists.
-The optional handoff report is only for meeting, collaborator, or web-side
-transfer.
+Root sync copies, handoff packages, graph edits, commits, and pushes are explicit
+follow-up actions only.
 
 ## File Roles
 
@@ -158,15 +191,19 @@ high-level project route. Do not put detailed evidence here.
 
 ### Anchor
 
-Current-state document. It should contain the current hypothesis, operational
-definitions, physical priors, mathematical model, minimal test, current
-evidence, refined hypothesis, claim boundary, and next decision.
+Current-state document. It should contain the current physical priors,
+falsifiable hypothesis, operational definitions, mathematical model, minimal
+test, current evidence, refined hypothesis, claim boundary, and next decision.
 
 Anchor body is English. The top `Report Summary（中文，汇报用）` should be short:
 
 ```text
 目的 / 物理建模或假设 / 最小实验 / 当前结论 / 结论边界 / 下一步
 ```
+
+This front summary is not `05_report_card.md`. When a result needs
+advisor-facing or sync presentation, generate `05_report_card.md` in the daily
+or sync package from `templates/reporting/report_card_template.md`.
 
 Use `problem-anchor-writer` for anchor content rules.
 
@@ -179,6 +216,7 @@ anchor and contain:
 execution_plan.md
 summary.md
 detailed.md
+05_report_card.md, when advisor-facing in daily or sync packages
 figures/ when important figures exist
 tables/ when curated tables exist
 ```
@@ -188,22 +226,76 @@ figures, tables, failure analysis, and artifact-map details.
 
 ### Root Anchor Copy
 
-Active anchors must be mirrored to root `sync/` when a root category is defined:
+Root sync is an explicit external-reading surface. Do not update it just
+because an anchor changed. When the user asks for root sync, mirror the active
+anchor to:
 
 ```text
 sync/<sync_id>/anchors/<category>/<anchor_id>.md
 ```
 
-The project-local anchor is the source of truth. After updating it, copy it to
-the root sync path and verify the files are identical.
+The project-local anchor is the source of truth. When root sync is requested,
+copy the anchor to the root sync path and verify the files are identical.
 
-### Handoff Report
+### External Collaborator Repo Sync
 
-Optional external package. Use it only when a meeting, collaborator, GitHub, or
-web-side reader needs a self-contained report.
+Use this only when the user explicitly asks to sync material to a collaborator,
+senior student's repo, advisor repo, or another external GitHub repository.
 
-Use `handoff-report-writer`. Do not create a handoff report merely because an
-experiment finished.
+This sync should be a curated package, not a repository mirror. Include only
+the smallest files needed for the collaborator to understand the research state:
+
+```text
+required:
+- copied current anchor with subject-bearing filename
+- summary.md
+- detailed.md
+
+optional:
+- 05_report_card.md, when the collaborator needs a fast advisor-facing summary
+- figures/ or tables/, only when referenced by anchor, summary, detailed, or
+  report_card
+- README.md or index, only when the target repo requires one
+- execution_plan.md, only when syncing a proposed run before execution
+```
+
+Do not sync:
+
+```text
+- raw logs
+- checkpoints
+- datasets
+- full run directories
+- unfiltered generated figures/tables
+- caches or temporary files
+- private daily notes or unconfirmed speculation
+- unrelated anchors or old archived evidence
+- experiment code changes unless the user explicitly requests code sync
+```
+
+Before copying into the external repo:
+
+1. Ask for or identify the target repo path and agreed destination folder.
+2. Check the target repo's `git status --short --branch`.
+3. Do not overwrite dirty collaborator files unless the user explicitly
+   approves that exact overwrite.
+4. Convert absolute local links into relative links.
+5. Copy only the curated package.
+6. Verify every linked figure/table exists inside the copied package.
+7. Show the inclusion/exclusion list before commit or push.
+
+Commit and push the external repo only when the user explicitly asks. A request
+to "sync files" means copy/update the curated package; it does not imply push.
+
+### Handoff Package
+
+Optional external package. Use it only when the user explicitly asks for a
+meeting, collaborator, GitHub, or web-side handoff.
+
+Use `handoff-report-writer`. Do not create a new handoff document merely because
+an experiment finished. A handoff package should copy existing anchor,
+`summary.md`, `detailed.md`, optional report card, and referenced figures/tables,
+then add only a short README or index.
 
 ### Daily / Meeting Reports
 
@@ -213,6 +305,37 @@ Daily and meeting reports are derived from updated anchors, `summary.md`, and
 ```text
 question / hypothesis / minimal test / conclusion / evidence / boundary / next decision
 ```
+
+Daily / meeting report cards should reuse
+`templates/reporting/report_card_template.md`. They are derived
+from updated anchor, `summary.md`, and `detailed.md`. They do not replace
+anchor, summary, detailed, or graph.
+
+For project records, the fixed location and name is:
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card.md
+```
+
+Advisor-facing report cards must use the fixed structure in
+`templates/reporting/report_card_template.md` and be saved as
+`05_report_card.md` in daily or sync packages. The required sections are:
+
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
+
+They should be self-contained, brief, and complete enough for an advisor to
+understand the question, falsifiable hypothesis, evidence, boundary, and next
+decision. Do not put private advisor questions, rehearsal scripts, raw logs,
+long tables, or implementation details in the report card.
 
 Do not maintain a separate meeting sub-workflow unless the user explicitly asks.
 
@@ -251,6 +374,9 @@ delete it.
 ## Rules
 
 - Keep mainline thin; put reasoning in anchors and result records.
+- By default, update only anchor / `summary.md` / `detailed.md` / daily card.
+- Do not update root sync, sync to an external collaborator repo, package handoff
+  reports, edit `graph.yaml`, commit, or push unless the user explicitly asks.
 - Do not promote raw logs, checkpoints, datasets, full run directories, or
   unfiltered generated outputs into mainline paths.
 - Do not leave completed anchors with stale evidence, claim boundary, next

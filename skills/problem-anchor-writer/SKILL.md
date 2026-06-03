@@ -1,4 +1,4 @@
----
+﻿---
 name: problem-anchor-writer
 description: Use when writing or revising the unified anchor/purpose-card document for a research problem: problem boundary, physical priors, mathematical modeling, computational realization, minimal experiment, evidence updates, and claim boundary.
 metadata:
@@ -12,21 +12,33 @@ purpose card: it replaces separate hypothesis purpose cards as the main
 pre-run and post-run reasoning artifact.
 
 First apply `research-progress-core`. The anchor is the current-state document
-for that core loop: hypothesis, operational definitions, physical priors,
-mathematical model, minimal falsifiable test, current evidence, refined
-hypothesis, claim boundary, and next uncertainty. If those elements are not
-available, say which element is missing before writing a polished anchor.
+for that core loop: problem definition, physical priors, falsifiable hypothesis,
+operational definitions, mathematical model, minimal falsifiable test, current
+evidence, refined hypothesis, claim boundary, and next uncertainty. If those
+elements are not available, say which element is missing before writing a
+polished anchor.
 
 The full implementation contract belongs in the execution plan or runbook. The
 anchor should state only the implementation implication needed to understand
 the minimal test.
+
+The anchor owns current-state judgment only:
+
+```text
+problem / conjecture / physical prior / math model / minimal test
+current evidence / claim boundary / next decision
+```
+
+Do not store full algorithm steps, long result tables, raw logs, ablation grids,
+or meeting scripts in the anchor.
 
 Anchor filenames should describe a stable research question or hypothesis line,
 not a date, seed, smoke run, or one failed operationalization. Use
 `<mechanism_or_question>_anchor.md` unless the project already has a clearer
 local convention.
 
-It is not a run log and not a standalone execution plan. It is the bridge:
+It is not a run log, not a protocol, and not a standalone execution plan. It is
+the bridge:
 
 ```text
 research intuition -> physical prior -> mathematical model -> computational realization
@@ -37,19 +49,20 @@ anchors can be used as style references only after checking that their domain
 terms do not leak into a new problem.
 
 For hand-written first drafts, use
-`docs/templates/minimal_anchor_handwrite.md`. The hand-written draft is allowed
+`templates/research_process/minimal_anchor_handwrite.md`. The hand-written draft is allowed
 to be rough; its purpose is to expose the user's thinking before AI polishes the
 anchor.
 
-After updating an active project anchor, copy it to the categorized root sync
-anchor path when the project defines one, for example:
+After updating an active project anchor, do not copy it to root sync unless the
+user explicitly requests root sync. When requested, copy it to the categorized
+root sync anchor path, for example:
 
 ```text
 sync/<sync_id>/anchors/<category>/<anchor_id>.md
 ```
 
-The project-local anchor remains the source of truth. Verify that source and
-root copy are identical before finishing.
+The project-local anchor remains the source of truth. When a root sync copy is
+requested, verify that source and root copy are identical before finishing.
 
 ## Core Rule
 
@@ -70,6 +83,11 @@ preference for a method or architecture. It is a refutable assumption about the
 structure of the problem, data-generating process, representation, mechanism,
 environment, objective, or intervention that constrains both the math and
 implementation.
+
+Write physical priors before the hypothesis. The hypothesis should be a
+falsifiable consequence of the prior, not the source of the prior. If the user
+only gives a hypothesis, first ask what real-world or mechanistic prior makes
+that hypothesis plausible.
 
 Each physical prior must satisfy four requirements:
 
@@ -145,7 +163,7 @@ parent_node: <parent_problem_or_graph_node>
 
 下一步：
 
-Keep this section short. It is for oral reporting, not for full reasoning.
+Keep this section short. It is for quick reporting, not for full reasoning.
 
 ## 1. Problem Definition
 
@@ -188,9 +206,11 @@ condition-dependent structure that should appear in a measurable variable and
 change predictably under a controlled intervention.
 ```
 
-## 3. Motivation And Mechanism
+## 3. Hypothesis / Mechanism
 
 Why should the prior help the system?
+
+What falsifiable hypothesis follows from the prior?
 
 What mechanism connects the prior to the target behavior?
 
@@ -279,9 +299,9 @@ creating a separate closure document. Backfill:
 - links to `summary.md`, `detailed.md`, optional handoff report, figures,
   tables, code/config, and result directories.
 
-Long evidence belongs in `detailed.md`. The anchor keeps the current
-hypothesis, evidence update, refined hypothesis, claim boundary, and next
-decision alive.
+Long evidence belongs in `detailed.md`. The anchor keeps the current physical
+prior, hypothesis, evidence update, refined hypothesis, claim boundary, and
+next decision alive.
 
 If repeated reasonable operationalizations fail and a goal / metric audit
 changes the downstream decision, update only the anchor's decision question,
@@ -300,14 +320,19 @@ primary observable, claim boundary, and next decision. Keep the audit details in
 - Prefer one precise subproblem over a broad umbrella question.
 - Use section titles that match the active compact template when possible:
   `Reporting Summary`, `Problem Definition`, `Physical Priors`,
-  `Mechanistic Motivation`, `Mathematical Modeling`,
+  `Hypothesis / Mechanism`, `Mathematical Modeling`,
   `Computational Realization`, `Minimal Falsifiable Test`,
   `Falsifiable Outcomes`, `Current Evidence`,
   `Claim Boundary And Next Decision`.
 - `Report Summary（中文，汇报用）` is a short front summary. It should let the
   advisor understand the work in about 60 seconds: purpose, physical
   modeling/hypothesis, minimal experiment, current conclusion, boundary, and
-  next step. Do not make it a long mini-report.
+  next step. Do not make it a long mini-report. It is not the meeting/advisor
+  report card; use `templates/reporting/report_card_template.md`
+  to create `daily_research_reports/MMDD/<topic>/05_report_card.md`
+  with the fixed Source Files, Executive Summary, Research Process Update,
+  Terms Used Here, Key Figures, Current Claim, Claim Boundary, and Next Step
+  sections.
 - Physical priors must be meaningful enough to be wrong.
 - Mathematical modeling must constrain implementation choices.
 - Computational realization must not introduce extra variables that are not
@@ -320,9 +345,10 @@ primary observable, claim boundary, and next decision. Keep the audit details in
   vague or conceptually unstable.
 - Use `experiment-card-writer` only for the operational execution plan after
   this anchor identifies the minimal decisive test.
-- After evidence exists, update the anchor from `summary.md` / `detailed.md`;
-  then use `handoff-report-writer` only when a meeting, collaborator, or
-  web-side handoff package is needed.
+- After evidence exists, update the anchor from `summary.md` / `detailed.md`.
+  Do not update root sync, package handoff reports, edit graph, commit, or push
+  unless the user explicitly asks. Use `handoff-report-writer` only when that
+  explicit handoff request exists.
 
 ## Reference Delegation
 

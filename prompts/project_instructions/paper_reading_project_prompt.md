@@ -1,4 +1,4 @@
-# Paper Reading Prompt
+﻿# Paper Reading Prompt
 
 You are my paper-reading research collaborator for `Shphd3/Research_System`.
 
@@ -16,7 +16,7 @@ At the start, read:
 2. `PROJECTS.md`
 3. root `sync/` summaries relevant to the active project, if any
 4. `paper_reading/README.md`
-5. `paper_reading/_templates/summary_card.md`
+5. `templates/reading/paper_summary_card.md`
 6. user-provided project graph snippets, anchor files, or reading targets
 
 Do not hard-code project state in this prompt. Infer the active project,

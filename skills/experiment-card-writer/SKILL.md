@@ -1,6 +1,6 @@
----
+﻿---
 name: experiment-card-writer
-description: Use only for operational experiment execution plans after an anchor/purpose-card is clear. Do not create separate hypothesis purpose cards; anchors own purpose, hypothesis, physical priors, math, and result updates.
+description: Use only for operational experiment execution plans after an anchor/purpose-card is clear. Do not create separate hypothesis purpose cards; anchors own purpose, physical priors, falsifiable hypothesis, math, and result updates.
 metadata:
   short-description: Write anchor-based execution plans
 ---
@@ -16,8 +16,9 @@ nontrivial work, the execution plan owns the implementation contract. If the
 plan cannot identify what result would falsify or weaken the hypothesis, do not
 write it as a runnable experiment yet.
 
-Core rule: **anchor first, experiment second**. An experiment exists because an
-anchor needs evidence, not because a new run is easy to launch.
+Core rule: **anchor first, protocol second, experiment third**. An experiment
+exists because an anchor needs evidence, not because a new run is easy to
+launch.
 
 Precondition: if the task lacks a stable problem definition, physical prior,
 mathematical model, computational realization, or primary decision metric, stop
@@ -47,6 +48,7 @@ Projects/<project>/main/problem_anchors/<anchor_id>.md
 Write concrete run details and result closure in the experiment folder:
 
 ```text
+Projects/<project>/main/experiments/<experiment_id>/protocol_for_approval.md
 Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
@@ -121,12 +123,46 @@ primary metric, or success condition still matches the downstream decision.
 
 ## Execution Plan Template
 
+## Protocol For Approval Template
+
+Write this before code changes or runs. Keep it under 30 lines.
+
+```markdown
+# Protocol For Approval: <experiment_id>
+
+Goal:
+Decision question:
+Tested hypothesis:
+Rival explanation:
+Data:
+Model:
+Routing / algorithm:
+Loss / objective:
+Conditions:
+Checkpoints / seeds:
+Primary metric:
+Secondary metrics:
+Known good case:
+Known bad case:
+Known confusing case:
+Success:
+Failure:
+Insufficient evidence:
+What this cannot claim:
+User approval checklist:
+```
+
+Stop after writing this file. Do not run the experiment until the user approves
+the protocol. After approval, write `execution_plan.md` without adding
+unapproved conditions.
+
 Write this only when the user is ready to run:
 
 ```markdown
 # Execution Plan: <experiment_id>
 
 Anchor:
+Approved protocol:
 
 ## 1. Run Goal
 
@@ -344,6 +380,34 @@ Figures are mandatory when figures exist. Put report-ready figures under
 and write one sentence stating which claim each figure supports. Put curated
 tables under `tables/` and link or summarize them near the relevant metric.
 
+When the result is meeting-facing, generate a report card from
+`templates/reporting/report_card_template.md`. The report card is
+an advisor-facing, self-contained evidence card derived from anchor,
+`summary.md`, and `detailed.md`, not a second closure. In project records, save
+it as:
+
+```text
+daily_research_reports/MMDD/<topic>/05_report_card.md
+```
+
+It must follow the shared structure:
+
+```text
+Source Files
+Executive Summary
+Research Process Update
+Terms Used Here
+Key Figures
+Current Claim
+Claim Boundary
+Next Step
+```
+
+It should include the falsifiable hypothesis, operational definition, minimal
+test, knowledge update, important figures, term definitions, claim boundary,
+and next step. Do not include private advisor questions, rehearsal scripts, raw
+logs, long tables, or implementation details in the report card.
+
 ## Rules
 
 - Follow the `research-progress-core` communication rule: state what is tested,
@@ -388,12 +452,16 @@ tables under `tables/` and link or summarize them near the relevant metric.
 - If repeated reasonable fixes fail with the same pattern, perform a goal /
   metric audit before adding another algorithmic fix.
 - Do not start with architecture, scripts, or metrics before the anchor is clear.
+- Do not run or expand a nontrivial experiment before the protocol is approved.
+- Short result first: after a run, write `summary.md` before expanding
+  `detailed.md`.
 - Do not create separate hypothesis purpose cards.
 - Anchors are reasoning artifacts; execution plans are operational artifacts.
 - After results, always write `summary.md` and `detailed.md`, then update the
-  anchor and root anchor copy when the result changes the current hypothesis,
-  evidence, claim boundary, or next decision. Use `handoff-report-writer` only
-  when a meeting, collaborator, or web-side handoff package is needed.
+  anchor when the result changes the current hypothesis, evidence, claim
+  boundary, or next decision. Do not update root sync, package handoff reports,
+  edit graph, commit, or push unless the user explicitly asks. Use
+  `handoff-report-writer` only when that explicit handoff request exists.
 - Treat `summary.md` as the first result reading path. Do not create a
   separate closure document for ordinary experiment results.
 - Treat `detailed.md` as the full experiment record. It should be sufficient to

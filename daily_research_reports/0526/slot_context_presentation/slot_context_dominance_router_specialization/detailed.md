@@ -1,9 +1,9 @@
-# Detailed Result: slot_context_dominance_router_specialization
+﻿# Detailed Result: slot_context_dominance_router_specialization
 
 Anchor:
 
 ```text
-../../problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+../../problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Story:
@@ -29,7 +29,7 @@ This experiment separates whether slot context can control routing for one fixed
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 Parent question:
@@ -421,7 +421,7 @@ B_long assignment_utility_agreement: 0.733 -> materially higher
 anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
 summary:
