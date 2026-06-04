@@ -1,485 +1,239 @@
 ---
 parent_node: 05_01_geometric_inhibition_anchor
 status: draft-for-review
+source_of_truth_status: daily-review-only
 ---
 
 # 05_02 Feature Assumption Relaxation
 
 ## 汇报前 Summary
 
-**父问题**
+结论：
 
-ordinary top-1 MoE router 在 NTP 训练下为什么容易形成不稳定、退化或不可解释的 routing，而不是形成可解释的 feature-level expert specialization？
+05_02 的主线不是直接证明 specialization，也不是把 true inhibition 作为中心故事。它的目标是从 advisor's minimal baseline setting 出发，一次放松一个数据假设，观察 route consistency 是否仍然 non-collapsed 且有意义。
 
-**当前子问题**
+minimal baseline setting 的三个关键假设是：
 
-导师的 toy claim 已经视为 closed：
-
-> 在 single-feature、uniform feature distribution、top-1 routing / inhibition 的极简 setting 下，同一 feature 可以因为 early lock-in 稳定进入同一 expert。
-
-05_02 不再讨论这个 closed claim，而是逐个放松该 toy claim 依赖的三个假设：
-
-1. 一个 token 只有一个 feature；
+1. token 是 single-feature；
 2. feature distribution 是 uniform；
-3. 不分析多个 features 进入同一个 expert 后的关系。
+3. 多个 features 进入同一 expert 后，不分析它们之间的关系。
 
-**为什么要问这个问题**
+当前执行顺序：
 
-05_01 / H0604a 说明 exact key `(slot, B_i)` 的 same-feature route consistency 很高，但 high consistency 可能由 collapse 造成。
+1. P1：compositional token feature routing，放松 single-feature token 假设。
+2. P3：same-expert feature relation，分析多个 features 进入同一 expert 后是否有结构。
+3. P2：Zipfian frequency，先 parked；等 feature definition 和 same-expert relation 清楚后再做。
 
-05_01 / H0604b 说明在 non-collapsed S0/S1-cos 条件下，当前 route axis 更像 slot，而不是 `B_i`；但 H0604b 只是 existing-log audit，没有显式构造 compositional-feature data。
+抑制（inhibition）只保留为一个 condition / candidate mechanism。它可以和 baseline 比较，但不能替代 05_02 的主问题。
 
-因此，05_02 的目的不是进入 utility binding，而是先回答：当 toy setting 的假设被逐个放松时，router 的 weak consistency 是否还成立，以及这种 consistency 是否有结构。
+结论边界：
 
-**决策问题**
+即使 P1/P3 positive，也只能说明 assumption relaxation 下 routing 仍可保持 non-collapsed 和可解释结构；不能 claim expert utility specialization、Zipf robustness、real-data generalization 或新 router design。
 
-当 single-feature / uniform / no-feature-collision 假设被放松时，router 产生的是：
+下一步：
 
-1. stable non-collapsed feature routing；
-2. collapse；
-3. arbitrary early-locking bucket；
-4. surface-axis routing；
-5. 还是具有几何、预测目标或训练动态结构的 feature grouping？
-
-**任务构造**
-
-本 anchor 下有三个 minimal protocols：
-
-- P1: Compositional Token Feature Routing
-- P2: Zipfian Feature Frequency Routing
-- P3: Same-Expert Feature Relation
-
-当前优先执行 P1 和 P3。P2 先写 protocol，占位不立即跑。
-
-**结论边界**
-
-本 anchor 不 claim：
-
-1. expert utility specialization 已形成；
-2. center separation 是 causal mechanism；
-3. route-feature NMI alone 等于 specialization；
-4. Zipf / real-corpus robustness；
-5. toy claim 的结论可以直接推广到真实 LM。
-
-**下一步**
-
-先做 P1：显式构造 compositional token，判断 router 是否跟随 target-relevant feature。  
-再做 P3：在 feature label 相对明确后，判断进入同一 expert 的多个 features 是否有结构。
-
----
+先审阅 P1/P3 protocol；通过后再创建对应实验文件夹。不要为 P2 创建当前实验文件夹。
 
 ## 1. Problem Definition
 
-### Broader question
+### Parent problem
 
-ordinary top-1 MoE router 学到的 routing signal 到底是什么？
+ordinary top-1 MoE router 在 next-token prediction 训练下可能形成稳定 route consistency，但这种 consistency 可能来自 collapse、surface shortcut 或 early lock-in，不一定是有意义的 feature-level routing。
 
-可能是：
+### Sharper subproblem
 
-- feature identity；
-- target-relevant predictive factor；
-- expert utility gap；
-- surface token / position shortcut；
-- early random lock-in；
-- collapse。
+advisor's minimal baseline setting 已经给出一个最小观察面：同一 feature 可以稳定 route 到同一 expert。05_02 不再重复这个基线，而是检查当基线假设被放松时，这种 route consistency 是否仍然：
 
-### Sharper question
+1. 不坍缩；
+2. 与目标相关 feature 对齐；
+3. 在 many-to-one feature assignment 中有结构。
 
-在导师 closed toy claim 的基础上，逐个放松其假设，判断 stable non-collapsed feature routing 是否仍成立。
+### Decision question
 
-### What we do not need to do now
+当 minimal baseline setting 的假设被逐步放松时，router 产生的是：
 
-- 不做 real corpus。
-- 不做 full Zipf sweep。
-- 不做 route-utility binding。
-- 不提出新 router。
-- 不用 NMI 或 consistency 直接 claim specialization。
+- target-relevant, non-collapsed route consistency；
+- fixed surface-axis routing；
+- $B_i$ identity shortcut；
+- arbitrary early-locking bucket；
+- collapse；
+- 或 structured same-expert grouping。
+
+### Inside boundary
+
+- synthetic controlled data only；
+- P1 compositional token feature routing；
+- P3 family-structured same-expert relation；
+- baseline 和 inhibition candidate 可作为条件比较；
+- 每个解释都先通过 target learning 与 collapse guard。
+
+### Outside boundary
+
+- 不做 utility binding；
+- 不做 Zipfian / frequency full run；
+- 不做 real corpus；
+- 不设计新 router；
+- 不把 route consistency 直接等同于 specialization。
 
 ### Operational definitions
 
-**same-feature route consistency**
+route consistency：同一 feature label $f$ 的样本是否集中进入同一 expert。
 
-同一 feature label `f` 的多个 samples 是否集中 route 到同一 expert。
+$$
+\mathrm{Consistency}(F)=\frac{1}{|F|}\sum_f \max_e P(route=e\mid f)
+$$
 
-Primary metric:
+non-collapse：routing 至少使用多个 experts，并且不能由单一 expert 吸收绝大多数样本。
 
-```text
-mean_f max_e P(route=e | feature=f)
-```
+target-relevant routing：route 的主要信息轴随 target rule 变化；P1 中 C1 对齐 $S1$，C2 对齐 $S2$，C3 对齐 $(S1,S2)$。
 
-**non-collapse**
-
-router 是否使用多个 experts，而不是 all-to-one / near-all-to-one。
-
-Primary metrics:
-
-```text
-load entropy norm
-max load fraction
-active experts
-```
-
-**target-relevant feature routing**
-
-当 token 中有多个 candidate features 时，router 是否主要绑定决定 target 的 factor，而不是 nuisance factor。
-
-**same-expert feature relation**
-
-多个 features 进入同一 expert 后，它们是否共享几何、预测目标、训练动态，还是只是 arbitrary bucket。
-
----
+same-expert relation：同一 expert 内 features 是否比 load-matched random grouping 更共享 family、representation geometry 或 target relation。
 
 ## 2. Physical Priors
 
-### Prior 1: initial lock-in can create weak consistency
+### Prior 1: compositional tokens expose route-axis ambiguity
 
-top-1 routing 会强化 early nearest-expert assignment。  
-因此 same-feature consistency 可以由 initial lock-in 产生。  
-但这只是 weak consistency，不等于 specialization。
+一个 token context 可以同时包含多个 candidate features。若 router 真跟随 target-relevant factor，改变 target rule 应改变 route axis；若 router 只跟随 surface axis 或 identity shortcut，route axis 不会随 target rule 改变。
 
-### Prior 2: compositional tokens expose feature-selection ambiguity
+### Prior 2: high consistency can be a false positive
 
-真实 token 往往不是 single-feature。一个 hidden state 可能同时包含：
+collapse 或 deterministic lock-in 都能让 consistency 很高。因此 consistency 只有在 target learning 成功且 routing non-collapsed 后才可解释。
 
-- context / slot feature；
-- identity feature；
-- composite predictive state；
-- nuisance variation。
+### Prior 3: $F>E$ forces many-to-one assignment
 
-如果 router 只是跟随 surface axis，那么 route consistency 不一定说明它学到了 target-relevant feature。
+feature 数量大于 expert 数量时，多个 features 进入同一 expert 是必然现象。关键问题不是是否 many-to-one，而是 same-expert features 是否比随机同负载分组更有 family / geometry / target structure。
 
-### Prior 3: F > E forces grouping
+### Prior 4: frequency is downstream
 
-feature 数量通常大于 expert 数量。  
-所以一个 expert 接收多个 features 是必然的。  
-关键问题不是“是否 many-to-one”，而是 same-expert features 是否有结构关系。
+Zipfian frequency 会改变 sample count、coverage 和 load pressure。若 feature definition 与 same-expert relation 未定，frequency 结果无法解释。因此 P2 parked。
 
-### Prior 4: collapse is a false positive
+## 3. Hypotheses And Rival Explanations
 
-如果所有 features 都进入同一个 expert，每个 feature 也满足“只进入一个 expert”。  
-因此所有 consistency metric 都必须配合 load guard。
+### H1: target-rule-dependent routing in P1
 
----
+在 compositional token 中，dominant route axis 应随 target rule 改变：
 
-## 3. Mechanistic Motivation
+- C1: $Y=Y(S1)$ 对齐 $S1$；
+- C2: $Y=Y(S2)$ 对齐 $S2$；
+- C3: $Y=Y(S1,S2)$ 对齐 $(S1,S2)$。
 
-导师 toy claim 的前提是：
+Rival explanation：route 固定跟随同一 surface axis 或 nuisance $B_i$。
 
-```text
-A1. 一个 token 只有一个 feature。
-A2. feature distribution 是 uniform。
-A3. 不分析多个 features 进入同一个 expert 后的关系。
-```
+### H2: family-structured grouping in P3
 
-05_02 的机制问题是：
+在 $E=4, G=4, K=4, F=16$ 的 family-structured feature dataset 中，same-expert features 应比 load-matched random grouping 更 family-structured。
 
-```text
-当 A1/A2/A3 被逐个放松时，
-top-1 + early lock-in 还能产生 stable non-collapsed feature routing 吗？
-```
+Rival explanation：同一 expert 内 features 只是 arbitrary bucket 或 collapse 产物。
 
-如果不能，我们需要知道失败模式是：
+### H3: inhibition is only a condition
 
-- collapse；
-- arbitrary hash-like routing；
-- surface-axis shortcut；
-- target-irrelevant grouping；
-- tail feature starvation。
-
----
+inhibition candidate 可以作为 `I*` 条件比较，但 05_02 的 claim 不依赖它必须成功。若 `I*` 提高 consistency 但增加 collapse，它是负面机制证据，不是 assumption relaxation 的成功。
 
 ## 4. Mathematical Modeling
 
-Let each sample contain candidate factors:
+For P1:
 
-```text
-x = [r_start, S1, S2, B_i, Y, r_end]
-```
+$$
+x=[r_{\mathrm{start}}, S1, S2, B_i, Y, r_{\mathrm{end}}]
+$$
 
-where:
+Feature labels:
 
-```text
-S1: slot-like feature group 1
-S2: slot-like feature group 2
-B_i: identity-like feature
-Y: target
-```
+- $F_{S1}=S1$
+- $F_{S2}=S2$
+- $F_B=B_i$
+- $F_{pair}=(S1,S2)$
 
-Feature label choices:
+Primary observable is normalized mutual information, 即归一化互信息（NMI）：
 
-```text
-F_S1 = S1
-F_S2 = S2
-F_B  = B_i
-F_pair = (S1, S2)
-F_comp = (S1, S2, B_i)
-```
+$$
+\mathrm{NMI}(route;F)
+$$
 
-Routing distribution:
+For P3:
 
-```text
-P(e | f) = count(route=e and feature=f) / count(feature=f)
-```
+$$
+f=(g,k),\quad g\in\{1,\dots,G\},\quad k\in\{1,\dots,K\}
+$$
 
-Consistency:
+Same-expert relation is compared against a load-matched random baseline:
 
-```text
-Consistency(F) = mean_f max_e P(e | f)
-```
-
-Route-feature information:
-
-```text
-NMI(route; F)
-```
-
-Collapse guard:
-
-```text
-load entropy norm
-max load fraction
-active experts
-```
-
-Same-expert relation:
-
-```text
-For each expert e:
-collect features routed to e;
-compare their geometry / target / trajectory relation
-against load-matched random grouping.
-```
-
----
+$$
+\Delta_{\mathrm{family}}=
+\mathrm{Purity}_{actual}-\mathrm{Purity}_{random}
+$$
 
 ## 5. Computational Realization
 
-### 5.1 Workflow Interface
+### P1
 
-Input:
+Construct compositional token contexts with $|S1|=4$, $|S2|=4$, $|B_i|=64$ or $256$, and optional nuisance variants if the data pipeline already supports them. Route logging uses one fixed position across all conditions: the $B_i$ position, which is also the pre-target position immediately before $Y$.
 
-controlled synthetic sequences with known factors:
+### P3
 
-```text
-S1, S2, B_i, target rule, nuisance variants
-```
+Construct family-structured features with $E=4$, $G=4$, $K=4$, $F=16$, uniform distribution. Each feature is $f=(g,k)$. Route logging uses one fixed position across all conditions: the last `F_gk` token, the pre-target position immediately before $Y_{gk}$.
 
-Computation:
+### Conditions
 
-train or evaluate top-1 MoE router under minimal controlled conditions. Start from the cleanest 05_01 condition, e.g. S0/S1-cos or current best non-collapsed setup.
+At minimum compare:
 
-Output:
+- `B0`: matched no-inhibition baseline；
+- `I*`: approved inhibition candidate, if available.
 
-- route assignment logs;
-- feature × expert heatmaps;
-- load histograms;
-- consistency and NMI metrics;
-- same-expert relation statistics.
-
-### 5.2 Minimal protocols
-
-#### P1: Compositional Token Feature Routing
-
-Relaxed assumption:
-
-```text
-A1. 一个 token 只有一个 feature。
-```
-
-Question:
-
-```text
-当 token 同时包含 S1、S2、B_i 时，router 是否跟随 target-relevant factor？
-```
-
-Minimal data:
-
-```text
-x = [r_start,
-     S1_a1, S1_a2, S1_a3,
-     S2_b1, S2_b2, S2_b3,
-     B_i,
-     Y,
-     r_end]
-```
-
-Use three target rules:
-
-```text
-C1: Y = Y(S1)          # S1 relevant, S2 and B_i nuisance
-C2: Y = Y(S2)          # S2 relevant, S1 and B_i nuisance
-C3: Y = Y(S1, S2)      # compositional target
-```
-
-Optional later condition:
-
-```text
-C4: Y = Y(S1, S2, B_i) # exact composite identity target
-```
-
-Primary decision:
-
-```text
-Does the routing axis switch when the target-relevant factor changes?
-```
-
-#### P2: Zipfian Feature Frequency Routing
-
-Relaxed assumption:
-
-```text
-A2. feature distribution 是 uniform。
-```
-
-Question:
-
-```text
-当 feature frequency 变成 Zipfian 时，head features 和 tail features 的 route consistency 是否分化？
-```
-
-Status:
-
-```text
-Protocol written, but experiment parked until P1/P3 clarify feature definition and same-expert relation.
-```
-
-#### P3: Same-Expert Feature Relation
-
-Relaxed assumption:
-
-```text
-A3. 不分析多个 features 进入同一个 expert 后的关系。
-```
-
-Question:
-
-```text
-多个 features 进入同一 expert 后，是 arbitrary bucket，还是 shared geometry / target / trajectory group？
-```
-
-Minimal setup:
-
-Use the feature axis fixed by P1 or 05_01 best condition. Construct `F > E` features under uniform distribution, then inspect the feature composition of each expert.
-
----
+Inhibition is not the storyline; it is only one condition to test whether the relaxation remains non-collapsed and meaningful.
 
 ## 6. Minimal Falsifiable Tests
 
 ### P1 supported if
 
-- C1 routing aligns with S1 under non-collapse；
-- C2 routing aligns with S2 under non-collapse；
-- C3 routing aligns with `(S1, S2)` or a clear target-relevant composite state；
-- nuisance axes do not dominate when they are not target-relevant。
+Under non-collapse and successful target learning, dominant route axis changes with target rule:
+
+- C1 aligns with $S1$；
+- C2 aligns with $S2$；
+- C3 aligns with $(S1,S2)$。
 
 ### P1 weakened if
 
-- router always aligns with the same surface axis regardless of target rule；
-- consistency is high only because of collapse；
-- route axis is unrelated to target-relevant factor。
+route always follows the same surface axis or $B_i$ despite $B_i$ being nuisance.
 
-### P2 supported if
+### P1 invalid if
 
-- head features keep high consistency；
-- tail features show lower consistency / higher instability / starvation；
-- load becomes more concentrated than uniform baseline。
-
-### P2 weakened if
-
-- head and tail features have similar consistency and load behavior after controlling for sample count；
-- Zipfian frequency does not change routing structure relative to uniform baseline。
+target learning fails or routing collapses.
 
 ### P3 supported if
 
-- same-expert features share geometry / target relation / trajectory more than load-matched random grouping；
-- grouping is stable across seeds or training windows。
+same-expert features are more family-structured than load-matched random grouping under non-collapse.
 
 ### P3 weakened if
 
-- same-expert features are no more structured than random grouping；
-- grouping changes strongly across seeds；
-- apparent structure disappears after collapse guard。
+same-expert grouping is no more structured than random.
 
----
+### P3 invalid if
 
-## 7. Falsifiable Outcomes
+routing collapses, target learning fails, or too few features remain per active expert.
 
-### Outcome A: target-relevant routing
+## 7. Current Evidence
 
-Router switches route axis when target rule changes.  
-This supports feature-selection sensitivity, not yet utility specialization.
+H0604a shows same-feature consistency can be high, but this is weak evidence because collapse can also produce high consistency.
 
-### Outcome B: surface-axis routing
+H0604b shows that after collapse filtering, the best existing non-collapsed route structure is closer to slot than to $B_i$.
 
-Router keeps routing by S1 / S2 / B_i regardless of target rule.  
-This weakens the claim that router learns target-relevant features.
+H0605a shows token-conditioned inhibition can sharpen consistency but may amplify collapse. This is why inhibition remains a candidate condition, not the main storyline.
 
-### Outcome C: composite-key routing
+## 8. Claim Boundary And Next Decision
 
-Router only stabilizes on the full composite key.  
-This suggests atomic predictive-state or hash-like routing, not clean slot-level specialization.
+Safest current claim：
 
-### Outcome D: collapse
+05_02 is an assumption-relaxation audit: first compositional token routing, then same-expert relation. It tests whether route consistency remains non-collapsed and meaningful beyond the minimal baseline setting.
 
-Consistency high but load entropy low.  
-This is degenerate route consistency.
+What cannot be claimed：
 
-### Outcome E: structured same-expert grouping
+1. expert utility specialization；
+2. real-data generalization；
+3. Zipfian robustness；
+4. successful new router design；
+5. that inhibition is the explanation unless its condition passes the same guards.
 
-Multiple features entering one expert share geometry / target / trajectory.  
-This supports moving toward capacity or utility analysis.
+Next smallest decision：
 
-### Outcome F: arbitrary bucket
-
-Same-expert grouping has no structure beyond random baseline.  
-This suggests initial lock-in alone does not create meaningful specialization.
-
----
-
-## 8. Current Evidence
-
-From 05_01:
-
-```text
-H0604a:
-Exact (slot, B_i) same-feature consistency is high,
-but collapse can produce false positives.
-
-H0604b:
-After collapse filtering, S0/S1-cos is best described as slot-aligned routing.
-B_i is weak.
-slot+B_i remains the exact atomic key for same-feature consistency.
-
-Boundary:
-This was an existing-log audit, not a constructed compositional-feature experiment.
-```
-
----
-
-## 9. Claim Boundary and Next Decision
-
-Can claim now:
-
-```text
-05_01 gives a bounded starting point:
-best non-collapsed routing is slot-aligned,
-and exact (slot,B_i) is stable as an atomic key.
-```
-
-Cannot claim now:
-
-```text
-1. Token compositionality has been tested.
-2. Router follows target-relevant feature under compositional tokens.
-3. Same-expert features have meaningful structure.
-4. Expert utility specialization exists.
-5. Zipfian robustness exists.
-```
-
-Immediate next decision:
-
-```text
-Run P1 first.
-Then run P3 if P1 gives a usable feature axis.
-Keep P2 parked until feature definition and grouping relation are clearer.
-```
+Review P1 and P3. If approved, create experiment folders for P1 first and P3 second. Keep P2 parked.

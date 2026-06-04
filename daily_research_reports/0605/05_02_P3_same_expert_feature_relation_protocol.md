@@ -1,139 +1,144 @@
-# 05_02 P3 Protocol: Same-Expert Feature Relation
+# Protocol For Approval: 05_02_P3_same_expert_feature_relation
 
-## 1. Purpose
+## 0. Purpose
 
-This protocol relaxes the advisor's third toy assumption:
+P3 放松 minimal baseline setting 的第三个假设：不再只看 feature 是否稳定进入 expert，而是检查多个 features 进入同一 expert 后是否有 meaningful structure。
 
-```text
-A3. 不分析多个 features 进入同一个 expert 后的关系。
-```
+这里的 meaningful structure 指：same-expert features 是否比 load-matched random grouping 更 family-structured，而不是 arbitrary buckets。
 
-Question:
+## 1. Decision Question
 
-```text
-当多个 features 进入同一个 expert 时，它们是 arbitrary bucket，还是 structured group？
-```
+当 $F>E$ 时，同一 expert 内的 features 是否共享 ground-truth family、hidden geometry 或 target relation？
 
-This updates our router understanding because feature-level specialization cannot mean only same-feature consistency. If F > E, one expert must receive multiple features; their relation determines whether routing is meaningful or just hash-like lock-in.
+## 2. Tested Hypothesis
 
----
+Under non-collapse, same-expert features should be more family-structured than load-matched random grouping.
 
-## 2. Minimal Setup
+## 3. Rival Explanation
 
-Use a feature axis fixed by P1 or the current best 05_01 condition.
+same-expert grouping 可能只是 arbitrary early-locking bucket、load artifact 或 collapse false positive。
 
-Construct:
+## 4. Data Construction
 
-```text
-F features
-E experts
-F > E
-uniform feature distribution
-non-collapsed routing required
-```
+Use a family-structured feature dataset:
 
-Avoid unnecessary B_i confound if the goal is slot-feature relation.
+- number of experts: $E=4$
+- number of feature families: $G=4$
+- features per family: $K=4$
+- total features: $F=G\times K=16$, so $F>E$
+- distribution: uniform
 
-Recommended first version:
+Define each feature as:
 
-```text
-feature = slot-like class
-number of features > number of experts
-same target rule across conditions
-```
+$$
+f=(g,k)
+$$
 
----
+where:
 
-## 3. What To Measure
+- $g$ is the ground-truth family id;
+- $k$ is the within-family feature id.
 
-For each expert, collect the features mostly routed to it.
+Use this sequence format:
 
-Measure four possible relations:
+$$
+x=[r_{\mathrm{start}},
+G_{g1},G_{g2},G_{g3},
+F_{gk1},F_{gk2},F_{gk3},
+Y_{gk},
+r_{\mathrm{end}}]
+$$
 
-```text
-1. geometry relation:
-   hidden centroid similarity among same-expert features
+Do not include $B_i$ in the first P3 dataset unless P1 shows $B_i$ is part of the routed feature.
 
-2. target relation:
-   whether same-expert features share target structure
+## 5. Route Logging Position
 
-3. trajectory relation:
-   whether features enter the expert at similar training stages
+Use the last $F_{gk}$ token position for route logging in every condition. This is the pre-target position immediately before $Y_{gk}$.
 
-4. seed stability:
-   whether grouping is stable across seeds
-```
+Do not mix route logging positions across conditions.
 
-Compare against:
+## 6. Model / Conditions
 
-```text
-load-matched random grouping baseline
-```
+Minimum condition families:
 
----
+| Code | Meaning | Purpose |
+|---|---|---|
+| `B0` | no-inhibition baseline | tests family-structured grouping under assumption relaxation |
+| `I*` | approved inhibition candidate, if available | condition comparison only |
 
-## 4. Metrics
+Inhibition is not the main storyline. It is only a condition to compare against baseline.
 
-Report:
+## 7. Seeds / Checkpoints
 
-```text
-same-expert intra-group centroid similarity
-random-baseline intra-group similarity
-same-expert target-relation score
-cross-seed grouping stability
-expert load entropy
-max load fraction
-active experts
-```
+Full run:
 
-Required figures:
+- uniform family-structured data;
+- `B0` included;
+- `I*` included only if implementation is already specified;
+- at least seeds `20260521`, `20260522`, `20260523`;
+- final checkpoint route logs;
+- optional early/mid/final checkpoints for grouping trajectory.
 
-```text
-expert → feature composition table
-same-expert similarity vs random baseline
-feature grouping heatmap
-expert load histogram
-```
+Smoke checks are allowed, but they are not evidence.
 
----
+## 8. Primary Metric
 
-## 5. Decision Rules
+Primary metric: same-expert family structure over load-matched random baseline.
 
-Supported if:
+Use at least family purity:
 
-```text
-same-expert features are more similar than load-matched random groups;
-this relation appears in geometry, target relation, or training trajectory;
-results pass collapse guard.
-```
+$$
+\Delta_{\mathrm{family}}=
+\mathrm{Purity}_{actual}-\mathrm{Purity}_{random}
+$$
 
-Weakened if:
+If available, also report:
 
-```text
-same-expert features are no more structured than random groups;
-grouping changes strongly across seeds;
-apparent structure disappears after removing collapsed runs.
-```
+- hidden centroid similarity over random baseline;
+- target-relation score over random baseline.
 
-Insufficient evidence if:
+## 9. Required Figures / Tables
 
-```text
-feature axis is not fixed;
-experts collapse;
-too few features enter each expert;
-only one seed is available.
-```
+1. Expert × feature heatmap, with features ordered by family.
+2. Expert × family composition heatmap.
+3. Same-expert relation vs load-matched random baseline:
+   include family purity, hidden centroid similarity, and target-relation score if available.
+4. Expert load histogram by condition and seed.
+5. Optional: checkpoint grouping trajectory.
 
----
+## 10. Secondary Checks
 
-## 6. What Not To Claim
+- target accuracy;
+- `active_experts`;
+- `expert_load_max_fraction`;
+- `expert_load_entropy_norm`;
+- number of features per active expert;
+- excluded seeds with collapse or insufficient-feature reason.
 
-Do not claim:
+## 11. Decision Rule
 
-```text
-utility-aligned specialization;
-causal expert function;
-real-data generality.
-```
+Supported if same-expert features are more family-structured than load-matched random grouping under non-collapse.
 
-This protocol only tests whether many-to-one feature assignment has structure beyond arbitrary early lock-in.
+Weakened if same-expert grouping is no more structured than random.
+
+Invalid if routing collapses, target learning fails, or too few features remain per active expert.
+
+## 12. What This Cannot Claim
+
+P3 cannot claim:
+
+- expert utility specialization;
+- causal expert function;
+- Zipfian robustness;
+- real-data generalization;
+- new router design.
+
+## 13. User Approval Checklist
+
+- [ ] Dataset uses $E=4$, $G=4$, $K=4$, $F=16$.
+- [ ] Each feature is $f=(g,k)$.
+- [ ] Sequence format matches this protocol.
+- [ ] $B_i$ is excluded unless P1 requires it.
+- [ ] Load-matched random baseline is included.
+- [ ] Required heatmaps and relation-vs-random table are produced.
+- [ ] Collapse and target learning are checked before interpretation.
