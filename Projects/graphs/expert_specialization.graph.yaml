@@ -138,88 +138,40 @@ nodes:
     tags: [evidence, slot-context]
 
   - id: rq.intervention_05
-    title: Can 05-style priors stabilize routing?
+    title: Can inhibition stabilize routing?
     type: question
-    summary: "Owner: from-attention-to-search 05 anchors. Result preview: supervised prototype warmup/inhibition can stabilize routing, but label-free geometry alone is not enough."
+    summary: "Owner: from-attention-to-search 05_01 anchor. Result preview: center separation is insufficient; true token-conditioned inhibition creates lock-in but is not yet robust against collapse."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_similarity_prior_routing_inhibition_anchor.md
-        title: 05 similarity-prior routing/inhibition anchor
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
-        title: 05_01 geometric inhibition anchor
+        title: 05_01 inhibition anchor
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
         title: 05_02 assignment binding anchor
     status: active
     tags: [05, intervention, inhibition]
 
-  - id: rq.similarity_prior_05
-    title: Does similarity-prior inhibition work?
-    type: question
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition. Result preview: router init helps early route-slot alignment, but expert warmup or explicit inhibition is what closes Assign-Utility."
-    files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_similarity_prior_routing_inhibition_anchor.md
-        title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/protocol_for_approval.md
-        title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/execution_plan.md
-        title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/summary.md
-        title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/detailed.md
-        title: detailed
-    status: done
-    tags: [05, warmup, inhibition]
-
-  - id: claim.supervised_prior_works
-    title: Supervised prototype binding works
-    type: claim
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition. Expert warmup and explicit inhibition can turn supervised slot/prototype assignment into stable utility-aligned routing."
-    files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_similarity_prior_routing_inhibition_anchor.md
-        title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/summary.md
-        title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/detailed.md
-        title: detailed
-    status: active
-    tags: [supported, supervised-prior]
-
-  - id: evidence.h0602_similarity_prior
-    title: H0602a similarity-prior routing and inhibition
-    type: evidence
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition. Result preview: C010/C001/C101/C111 reach near-perfect route-slot NMI and Assign-Utility; router init alone improves routing but not utility."
-    files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_similarity_prior_routing_inhibition_anchor.md
-        title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/protocol_for_approval.md
-        title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/execution_plan.md
-        title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/summary.md
-        title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/detailed.md
-        title: detailed
-    status: done
-    tags: [H0602a, evidence, 05]
-
   - id: rq.geometric_05_01
-    title: Does geometry alone stabilize routing?
+    title: Does inhibition stabilize routing?
     type: question
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor. Result preview: supervised geometric inhibition stabilizes slot routing, but center separation alone is seed-unstable."
+    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md. Result preview: center separation is insufficient; true token-conditioned inhibition is the right mechanism class but currently amplifies collapse."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
-        title: anchor
+        title: inhibition anchor
       - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/protocol_for_approval.md
-        title: protocol
+        title: center-separation protocol
       - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/execution_plan.md
-        title: execution plan
+        title: center-separation execution plan
       - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
-        title: summary
+        title: center-separation summary
       - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
-        title: detailed
+        title: center-separation detailed
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/summary.md
+        title: true token-conditioned inhibition summary
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/detailed.md
+        title: true token-conditioned inhibition detailed
       - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
         title: report card
     status: done
-    tags: [05_01, geometry, center-separation]
+    tags: [05_01, inhibition, token-conditioned]
 
   - id: claim.center_separation_not_enough
     title: Center separation alone is not enough
@@ -236,6 +188,20 @@ nodes:
         title: report card
     status: active
     tags: [weakened, center-only]
+
+  - id: claim.token_conditioned_inhibition_not_enough
+    title: Token-conditioned inhibition is lock-in prone
+    type: claim
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay. True inhibition gives perfect same-feature consistency, but it does not robustly improve non-collapsed composition and often amplifies collapse."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+        title: inhibition anchor
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/summary.md
+        title: summary
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/detailed.md
+        title: detailed
+    status: active
+    tags: [weakened, H0605a, true-inhibition, collapse-guard]
 
   - id: claim.cosine_slot_init_signal
     title: Cosine slot-init is the strongest current clue
@@ -292,6 +258,22 @@ nodes:
         title: report card
     status: done
     tags: [center-only, evidence]
+
+  - id: evidence.h0605a_true_token_inhibition
+    title: H0605a true token-conditioned inhibition replay
+    type: evidence
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay. Result preview: all inhibition conditions reach near-perfect same-feature consistency, but random-init inhibition collapses and S1-cos is seed-sensitive."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+        title: inhibition anchor
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/execution_plan.md
+        title: execution plan
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/summary.md
+        title: summary
+      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/detailed.md
+        title: detailed
+    status: done
+    tags: [H0605a, evidence, true-inhibition, collapse]
 
   - id: rq.feature_identity_audit
     title: What feature does routing bind to?
@@ -531,22 +513,14 @@ edges:
     kind: supports
 
   - from: rq.intervention_05
-    to: rq.similarity_prior_05
-    kind: decomposes
-
-  - from: rq.intervention_05
     to: rq.geometric_05_01
     kind: decomposes
 
-  - from: claim.supervised_prior_works
-    to: rq.similarity_prior_05
+  - from: claim.center_separation_not_enough
+    to: rq.geometric_05_01
     kind: answers
 
-  - from: evidence.h0602_similarity_prior
-    to: claim.supervised_prior_works
-    kind: supports
-
-  - from: claim.center_separation_not_enough
+  - from: claim.token_conditioned_inhibition_not_enough
     to: rq.geometric_05_01
     kind: answers
 
@@ -560,6 +534,10 @@ edges:
 
   - from: evidence.center_only_report
     to: claim.center_separation_not_enough
+    kind: supports
+
+  - from: evidence.h0605a_true_token_inhibition
+    to: claim.token_conditioned_inhibition_not_enough
     kind: supports
 
   - from: evidence.h0604a_feature_key
