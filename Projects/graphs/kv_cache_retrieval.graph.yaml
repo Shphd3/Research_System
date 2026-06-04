@@ -1,0 +1,52 @@
+root: rq.kv_cache_retrieval
+
+ui:
+  layout: LR
+  expanded:
+    - rq.kv_cache_retrieval
+
+nodes:
+  - id: rq.kv_cache_retrieval
+    title: KV cache retrieval downstream line
+    type: question
+    summary: Reverse KV retrieval is archived as a downstream-effect question until expert specialization has causal utility.
+    file: /Projects/from-attention-to-search/main/roadmap.md
+    status: archived
+    tags: [kv-cache, retrieval, downstream]
+
+  - id: concept.reverse_index
+    title: Reverse index
+    type: concept
+    summary: A learned bucket or index signal may help retrieve historical KV candidates before exact sparse-attention reranking.
+    file: /Projects/from-attention-to-search/main/problem_anchors/README.md
+    status: archived
+    tags: [definition, retrieval]
+
+  - id: claim.same_bucket_partial_signal
+    title: Same-bucket KV has partial signal
+    type: claim
+    summary: Same-bucket KV can beat random in corrected diagnostics, but this is not enough to claim expert IDs are a usable reverse index.
+    file: /Projects/from-attention-to-search/main/roadmap.md
+    status: archived
+    tags: [boundary]
+
+  - id: dependency.specialization_first
+    title: Specialization first
+    type: claim
+    summary: Reopen retrieval only after stable, non-collapsed, utility-aligned expert specialization is established.
+    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    status: active
+    tags: [dependency, specialization]
+
+edges:
+  - from: rq.kv_cache_retrieval
+    to: concept.reverse_index
+    kind: operationalizes
+
+  - from: claim.same_bucket_partial_signal
+    to: rq.kv_cache_retrieval
+    kind: answers
+
+  - from: dependency.specialization_first
+    to: rq.kv_cache_retrieval
+    kind: depends_on

@@ -1,0 +1,475 @@
+root: rq.expert_specialization
+
+ui:
+  layout: LR
+  expanded:
+    - rq.expert_specialization
+    - rq.define_specialization
+    - rq.failure_mechanism
+    - rq.intervention_05
+    - rq.feature_identity_audit
+    - rq.next_assignment_binding
+
+nodes:
+  - id: rq.expert_specialization
+    title: How can MoE experts specialize?
+    type: question
+    summary: "Owner: kv_cache mainline, implemented in from-attention-to-search. Question: can gating make MoE experts form stable, interpretable, reusable feature-level specialization?"
+    files:
+      - path: /Projects/kv_cache/main_specialization/specialization_overview.md
+        title: kv_cache specialization overview
+      - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+        title: current branch anchor
+    status: active
+    tags: [specialization, mainline, moe]
+
+  - id: rq.define_specialization
+    title: What counts as specialization?
+    type: question
+    summary: Specialization requires more than route-label purity; it must separate weak consistency, non-collapse, feature identity, and causal utility.
+    file: /Projects/from-attention-to-search/main/problem_anchors/README.md
+    status: active
+    tags: [definition, claim-boundary]
+
+  - id: concept.specialization
+    title: Feature-level expert specialization
+    type: concept
+    summary: A useful expert partition should align with an operational feature, avoid collapse, and select experts with causal utility for that feature.
+    file: /Projects/from-attention-to-search/main/problem_anchors/README.md
+    status: active
+    tags: [definition]
+
+  - id: claim.high_nmi_not_enough
+    title: High route purity is not enough
+    type: claim
+    summary: A route bucket can align with a label or SVD direction without proving functional expert specialization.
+    file: /Projects/from-attention-to-search/main/problem_anchors/README.md
+    status: active
+    tags: [metric, boundary]
+
+  - id: rq.failure_mechanism
+    title: Why does ordinary top-1 fail?
+    type: question
+    summary: Diagnose whether ordinary top-1 MoE fails because routing follows shortcuts, early lock-in, or route-function mismatch.
+    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    status: active
+    tags: [failure, top1, router]
+
+  - id: claim.vanilla_top1_not_clean
+    title: Vanilla top-1 does not form clean buckets
+    type: claim
+    summary: Current A/B/AB and sparse-router evidence weakens the claim that ordinary top-1 MoE naturally forms stable feature-level experts.
+    file: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0521a_seq2_ab_feature_specialization/summary.md
+    status: active
+    tags: [ordinary-top1, negative-evidence]
+
+  - id: claim.router_shortcuts
+    title: Router may follow shortcuts
+    type: claim
+    summary: Router assignment can be explained by token identity, position, common components, or residual-preserved signals rather than the intended feature.
+    file: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0522_router_factor_audit_seq32/summary.md
+    status: active
+    tags: [shortcut, attribution]
+
+  - id: claim.early_lockin
+    title: Early top-1 lock-in matters
+    type: claim
+    summary: In the 2x2 proxy, failed seeds collapse at step 0 and then stay collapsed, supporting early assignment lock-in as a mechanism.
+    file: /Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
+    status: active
+    tags: [lock-in, mechanism]
+
+  - id: claim.route_function_mismatch
+    title: Assignment and utility can be unbound
+    type: claim
+    summary: Routing can look structured while failing to select the expert with causal utility for the intended feature.
+    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    status: active
+    tags: [utility, mismatch]
+
+  - id: evidence.h0521_h0522
+    title: H0521/H0522 shortcut evidence
+    type: evidence
+    summary: AB and source-token diagnostics show no stable clean feature buckets; factor audits keep token identity and shortcut explanations alive.
+    files:
+      - path: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0521a_seq2_ab_feature_specialization/summary.md
+        title: H0521 AB specialization diagnostic
+      - path: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0521b_seq32_contiguous_ab/summary.md
+        title: H0521b source-token diagnostic
+      - path: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0522_router_factor_audit_seq32/summary.md
+        title: H0522 router factor audit
+    status: done
+    tags: [evidence, shortcut]
+
+  - id: evidence.h0531_lockin
+    title: H0531 2x2 lock-in diagnostic
+    type: evidence
+    summary: Minimal 2-feature top-1 runs localize collapse to initial assignment rather than late training drift.
+    file: /Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
+    status: done
+    tags: [evidence, lock-in]
+
+  - id: rq.slot_context_visibility
+    title: Is the slot signal visible?
+    type: question
+    summary: Test whether slot/context information can be represented at the routed position, before asking whether the router uses it.
+    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    status: done
+    tags: [slot-context, visibility]
+
+  - id: claim.slot_visible_not_sufficient
+    title: Slot visibility is not sufficient
+    type: claim
+    summary: Strong slot context can improve route-role structure, but multi-B routing still does not robustly bind assignment to expert utility.
+    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    status: active
+    tags: [slot-context, boundary]
+
+  - id: evidence.slot_context
+    title: Slot-context dominance and bridge runs
+    type: evidence
+    summary: Fixed-B and bridge r-B/AB/CB/DB runs show slot/context signal can be visible, but learned routing remains bounded in multi-B.
+    files:
+      - path: /Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/summary.md
+        title: Slot-context dominance diagnostic
+      - path: /Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/summary.md
+        title: Slot-context bridge diagnostic
+    status: done
+    tags: [evidence, slot-context]
+
+  - id: rq.intervention_05
+    title: Can 05-style priors stabilize routing?
+    type: question
+    summary: "Owner: from-attention-to-search 05 anchors. Result preview: supervised prototype warmup/inhibition can stabilize routing, but label-free geometry alone is not enough."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_similarity_prior_routing_inhibition_anchor.md
+        title: 05 similarity-prior routing/inhibition anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+        title: 05_01 geometric inhibition anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
+        title: 05_02 assignment binding anchor
+    status: active
+    tags: [05, intervention, inhibition]
+
+  - id: rq.similarity_prior_05
+    title: Does similarity-prior inhibition work?
+    type: question
+    summary: "Anchor: 05_similarity_prior. Experiment: H0602a. Result: router init helps early route-slot alignment, but expert warmup or explicit inhibition is what closes Assign-Utility."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_similarity_prior_routing_inhibition_anchor.md
+        title: anchor
+      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/summary.md
+        title: result summary
+      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/detailed.md
+        title: detailed record
+    status: done
+    tags: [05, warmup, inhibition]
+
+  - id: claim.supervised_prior_works
+    title: Supervised prototype binding works
+    type: claim
+    summary: Expert warmup and explicit inhibition can turn supervised slot/prototype assignment into stable utility-aligned routing.
+    file: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/summary.md
+    status: active
+    tags: [supported, supervised-prior]
+
+  - id: evidence.h0602_similarity_prior
+    title: H0602a similarity-prior routing and inhibition
+    type: evidence
+    summary: "Result preview: C010/C001/C101/C111 reach near-perfect route-slot NMI and Assign-Utility; router init alone improves routing but not utility."
+    files:
+      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/summary.md
+        title: summary
+      - path: /Projects/from-attention-to-search/main/experiments/05_similarity_prior_routing_inhibition/detailed.md
+        title: detailed
+    status: done
+    tags: [H0602a, evidence, 05]
+
+  - id: rq.geometric_05_01
+    title: Does geometry alone stabilize routing?
+    type: question
+    summary: "Anchor: 05_01. Result preview: supervised geometric inhibition stabilizes slot routing, but center separation alone is seed-unstable."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+        title: anchor
+      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
+        title: result summary
+      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+        title: report card
+    status: done
+    tags: [05_01, geometry, center-separation]
+
+  - id: claim.center_separation_not_enough
+    title: Center separation alone is not enough
+    type: claim
+    summary: Label-free router-center separation can preserve some structure, especially in K1, but it does not reliably prevent slot merge or single-expert collapse.
+    file: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+    status: active
+    tags: [weakened, center-only]
+
+  - id: claim.cosine_slot_init_signal
+    title: Cosine slot-init is the strongest current clue
+    type: claim
+    summary: In non-collapsed reads, cosine router plus slot init gives the best slot-aligned structure, but this is not yet functional specialization.
+    file: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+    status: active
+    tags: [cosine, slot-init, clue]
+
+  - id: evidence.h0603_geometric
+    title: H0603a geometric inhibition
+    type: evidence
+    summary: "Result preview: slot-stable init improves step-0 NMI; supervised geometric inhibition drives final route-slot NMI to 1.000 with target accuracy 1.000."
+    files:
+      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
+        title: summary
+      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
+        title: detailed
+    status: done
+    tags: [H0603a, evidence, geometry]
+
+  - id: evidence.center_only_report
+    title: Center-only ablation report card
+    type: evidence
+    summary: "Result preview: D0/D1/K0/K1 show center separation alone cannot reliably bind slots; K1 is the useful but seed-unstable clue."
+    files:
+      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+        title: report card
+      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
+        title: detailed
+    status: done
+    tags: [center-only, evidence]
+
+  - id: rq.feature_identity_audit
+    title: What feature does routing bind to?
+    type: question
+    summary: "Current active decision: before utility binding, audit whether routing follows slot, B_i, or atomic (slot, B_i)."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+        title: current anchor
+      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+        title: H0604a summary
+      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+        title: H0604a detailed
+    status: active
+    tags: [current, feature-definition, H0604a]
+
+  - id: claim.same_feature_consistency_weak
+    title: Same-feature consistency is weak evidence
+    type: claim
+    summary: H0604a supports the advisor's weak toy claim, but high FeatureKeyConsistency can also be caused by deterministic routing or collapse.
+    file: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+    status: active
+    tags: [weak-claim, collapse-guard]
+
+  - id: claim.feature_axis_before_utility
+    title: Feature axis must be fixed before utility binding
+    type: claim
+    summary: Route-utility binding is premature until we know whether the operational feature is slot, B_i, or atomic (slot, B_i).
+    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    status: active
+    tags: [current-route, decision]
+
+  - id: evidence.h0604a_feature_key
+    title: H0604a feature-key stability diagnostic
+    type: evidence
+    summary: "Result preview: FeatureKeyConsistency is near 0.99 across conditions, but this is weak evidence because collapse and deterministic lock-in can satisfy it."
+    files:
+      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+        title: summary
+      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+        title: detailed
+    status: done
+    tags: [H0604a, evidence, feature-definition]
+
+  - id: method.feature_axis_audit
+    title: Feature-axis audit on H0604a logs
+    type: method
+    summary: Compute consistency, NMI, load entropy, max load, and per-expert composition for slot, B_i, and slot+B_i labels.
+    file: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+    status: active
+    tags: [method, current, existing-logs]
+
+  - id: task.h0604b_feature_axis
+    title: Run H0604b feature-axis audit
+    type: task
+    summary: Use existing H0604a route logs/checkpoints to decide what the router treats as the operational feature.
+    file: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+    status: active
+    tags: [next-action, H0604b]
+
+  - id: rq.next_assignment_binding
+    title: What comes after feature-axis audit?
+    type: question
+    summary: "Owner: from-attention-to-search. Next decision: if a non-collapsed slot or slot+B_i structure exists, test minimal assignment binding; otherwise refine feature definition."
+    file: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
+    status: blocked
+    tags: [05_02, next, assignment-binding]
+
+  - id: rq.assignment_binding_05_02
+    title: Minimal assignment binding
+    type: question
+    summary: "Candidate next anchor: find the smallest non-supervised signal that turns geometry into stable token-to-expert assignment."
+    file: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
+    status: draft
+    tags: [05_02, draft]
+
+  - id: rq.frequency_robustness
+    title: When to test frequency or Zipf?
+    type: question
+    summary: Frequency/Zipf robustness should wait until the feature axis and non-collapsed composition are fixed.
+    file: /Projects/from-attention-to-search/main/problem_anchors/04_ntp_zipf_feature_factorization_anchor.md
+    status: blocked
+    tags: [frequency, deferred]
+
+  - id: rq.kv_retrieval_downstream
+    title: When to reopen KV retrieval?
+    type: question
+    summary: Reverse KV retrieval is a downstream-effect line, not the current success criterion for expert specialization.
+    file: /Projects/from-attention-to-search/main/roadmap.md
+    status: archived
+    tags: [kv-cache, retrieval, downstream]
+
+edges:
+  - from: rq.expert_specialization
+    to: rq.define_specialization
+    kind: decomposes
+
+  - from: rq.expert_specialization
+    to: rq.failure_mechanism
+    kind: decomposes
+
+  - from: rq.expert_specialization
+    to: rq.intervention_05
+    kind: decomposes
+
+  - from: rq.expert_specialization
+    to: rq.feature_identity_audit
+    kind: decomposes
+
+  - from: rq.expert_specialization
+    to: rq.next_assignment_binding
+    kind: leads_to
+
+  - from: rq.define_specialization
+    to: concept.specialization
+    kind: operationalizes
+
+  - from: claim.high_nmi_not_enough
+    to: rq.define_specialization
+    kind: answers
+
+  - from: claim.vanilla_top1_not_clean
+    to: rq.failure_mechanism
+    kind: answers
+
+  - from: claim.router_shortcuts
+    to: rq.failure_mechanism
+    kind: answers
+
+  - from: claim.early_lockin
+    to: rq.failure_mechanism
+    kind: answers
+
+  - from: claim.route_function_mismatch
+    to: rq.failure_mechanism
+    kind: answers
+
+  - from: evidence.h0521_h0522
+    to: claim.vanilla_top1_not_clean
+    kind: supports
+
+  - from: evidence.h0521_h0522
+    to: claim.router_shortcuts
+    kind: supports
+
+  - from: evidence.h0531_lockin
+    to: claim.early_lockin
+    kind: supports
+
+  - from: rq.failure_mechanism
+    to: rq.slot_context_visibility
+    kind: decomposes
+
+  - from: claim.slot_visible_not_sufficient
+    to: rq.slot_context_visibility
+    kind: answers
+
+  - from: evidence.slot_context
+    to: claim.slot_visible_not_sufficient
+    kind: supports
+
+  - from: rq.intervention_05
+    to: rq.similarity_prior_05
+    kind: decomposes
+
+  - from: rq.intervention_05
+    to: rq.geometric_05_01
+    kind: decomposes
+
+  - from: claim.supervised_prior_works
+    to: rq.similarity_prior_05
+    kind: answers
+
+  - from: evidence.h0602_similarity_prior
+    to: claim.supervised_prior_works
+    kind: supports
+
+  - from: claim.center_separation_not_enough
+    to: rq.geometric_05_01
+    kind: answers
+
+  - from: claim.cosine_slot_init_signal
+    to: rq.geometric_05_01
+    kind: answers
+
+  - from: evidence.h0603_geometric
+    to: claim.center_separation_not_enough
+    kind: supports
+
+  - from: evidence.center_only_report
+    to: claim.center_separation_not_enough
+    kind: supports
+
+  - from: evidence.h0604a_feature_key
+    to: claim.cosine_slot_init_signal
+    kind: supports
+
+  - from: claim.same_feature_consistency_weak
+    to: rq.feature_identity_audit
+    kind: answers
+
+  - from: claim.feature_axis_before_utility
+    to: rq.feature_identity_audit
+    kind: answers
+
+  - from: evidence.h0604a_feature_key
+    to: claim.same_feature_consistency_weak
+    kind: supports
+
+  - from: evidence.h0604a_feature_key
+    to: claim.feature_axis_before_utility
+    kind: supports
+
+  - from: method.feature_axis_audit
+    to: rq.feature_identity_audit
+    kind: operationalizes
+
+  - from: task.h0604b_feature_axis
+    to: method.feature_axis_audit
+    kind: operationalizes
+
+  - from: rq.feature_identity_audit
+    to: rq.next_assignment_binding
+    kind: leads_to
+
+  - from: rq.next_assignment_binding
+    to: rq.assignment_binding_05_02
+    kind: decomposes
+
+  - from: rq.next_assignment_binding
+    to: rq.frequency_robustness
+    kind: leads_to
+
+  - from: rq.next_assignment_binding
+    to: rq.kv_retrieval_downstream
+    kind: leads_to

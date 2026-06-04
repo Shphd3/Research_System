@@ -37,11 +37,15 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.side/
 
 # Local environments
 .venv/
 venv/
 env/
 
-# Project workspaces are independent repositories.
-Projects/
+# Project workspaces are independent repositories. Keep only the shared graph
+# hub visible to this root research-system repo.
+Projects/*
+!Projects/graphs/
+!Projects/graphs/**

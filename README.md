@@ -9,7 +9,7 @@ meeting-ready reports.
 ## Start Here
 
 - `AGENTS.md`: project-level Codex instructions.
-- `PROJECTS.md`: project registry, active project route, and root-level state map.
+- `PROJECTS.md`: project registry, active route, graph hub, and root-level state map.
 
 ## Working Areas
 
@@ -23,8 +23,8 @@ meeting-ready reports.
 
 ## Daily Loop
 
-1. Read `PROJECTS.md`, then the active project's `graph.yaml` and relevant
-   problem anchor or sync note.
+1. Read `PROJECTS.md`, then the relevant graph under `Projects/graphs/` and
+   the linked problem anchor, experiment result, paper note, or sync note.
 2. Decide whether today's work updates the graph, anchor, claim boundary, or
    next decision.
 3. Write a compact daily card, anchor update, protocol, or result record.
@@ -32,8 +32,8 @@ meeting-ready reports.
 5. Park side thoughts instead of chasing them during the current 25 minute task.
 6. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
-7. Do not update root sync, package handoff reports, edit `graph.yaml`, commit,
-   or push unless explicitly requested.
+7. Do not update root sync, package handoff reports, edit graph manifests,
+   commit, or push unless explicitly requested.
 
 Daily notes should be placed at `daily_research_reports/MMDD/` when useful.
 There is no maintained daily-card template; keep daily notes minimal and
@@ -55,8 +55,8 @@ question is not yet stable. The anchor should state the physical prior before
 the falsifiable hypothesis:
 
 ```text
+Projects/graphs/<topic>.graph.yaml
 Projects/<project>/main/problem_anchors/<anchor_id>.md
-Projects/<project>/graph.yaml
 ```
 
 After the anchor is stable, write a short protocol for user approval before the
@@ -93,8 +93,9 @@ same curated set: subject-bearing anchor, `summary.md`, `detailed.md`,
 
 Web-side theory AI should treat this repository as research memory, not as the
 experiment codebase. Start from `AGENTS.md`, `PROJECTS.md`, and root `sync/`.
-Use project-local graph, anchor, `summary.md`, and `detailed.md` only when the
-user or Codex exposes them.
+Use `Projects/graphs/` for the cross-project map. Use project-local graph,
+anchor, `summary.md`, and `detailed.md` only when the user or Codex exposes
+them.
 
 Web-side AI should propose research judgments and questions. Codex/local agents
 perform repository edits after the user confirms the research-state change.

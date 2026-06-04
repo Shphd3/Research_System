@@ -5,9 +5,10 @@ This is the root project registry for the research system. Use it after
 
 ## Global Rule
 
-For project-specific work, identify the project here, then read only the
-project's graph, anchor, roadmap, worker README, sync report, or result summary
-needed for the current question.
+For project-specific work, identify the project here, then read the relevant
+cross-project graph under `Projects/graphs/`, and only then read the linked
+project anchor, roadmap, worker README, sync report, or result summary needed
+for the current question.
 
 Do not scan whole project repositories by default. The graph is the navigation
 layer; problem anchors and sync reports are the reasoning layer.
@@ -46,7 +47,7 @@ Projects/from-attention-to-search/XingyuD/
 ```
 
 This branch stores current experiments, branch-local sync notes, anchors, and
-Sidecar-readable graph updates that support the primary mainline.
+result records that support the primary mainline.
 
 Current branch anchor:
 
@@ -54,10 +55,33 @@ Current branch anchor:
 Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
-Current branch graph:
+Cross-project graph hub:
+
+```text
+Projects/graphs/
+Projects/graphs/expert_specialization.graph.yaml
+Projects/graphs/kv_cache_retrieval.graph.yaml
+Projects/graphs/specialization_papers.graph.yaml
+```
+
+Legacy branch-local graph:
 
 ```text
 Projects/from-attention-to-search/graph.yaml
+```
+
+The graph hub lives under `Projects/graphs/`, not inside a single project. Its
+nodes link to concrete project documents such as anchors, experiment summaries,
+detailed records, report cards, and paper notes.
+
+Graph display rule:
+
+```text
+Use Sidecar to display/open graphs. For cross-project graphs, start Sidecar
+with workspace root `/data/250010109/Research_System` and graph manifest such
+as `Projects/graphs/expert_specialization.graph.yaml`. Do not create ad hoc
+HTML graph views unless the user explicitly asks for an exported static
+artifact.
 ```
 
 ## Current Route
@@ -90,6 +114,7 @@ be used as the first success criterion for the current anchor.
 - `AGENTS.md`: global agent behavior and repository rules.
 - `PROJECTS.md`: project priority and routing map.
 - `sync/`: compact root-level current-state summaries for web-side partners.
+- `Projects/graphs/`: Sidecar-readable cross-project graph manifests.
 - `daily_research_reports/`: daily cards and meeting materials.
 - `paper_reading/`: paper and blog reading cards.
 - `templates/`: single maintained reusable-template folder.

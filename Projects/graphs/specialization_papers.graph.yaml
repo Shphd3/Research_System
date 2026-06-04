@@ -1,0 +1,51 @@
+root: rq.specialization_literature
+
+ui:
+  layout: LR
+  expanded:
+    - rq.specialization_literature
+
+nodes:
+  - id: rq.specialization_literature
+    title: What does prior work say about MoE specialization?
+    type: question
+    summary: Literature map for claims and cautions about expert specialization, routing geometry, and MoE scale.
+    status: draft
+    tags: [papers, specialization]
+
+  - id: source.myth_specialization_geometry
+    title: Myth of Expert Specialization
+    type: source
+    summary: Reading note cautioning that MoE routing geometry need not imply domain expertise or functional specialization.
+    file: /paper_reading/01_moe_routing/The Myth of Expert Specialization in MoEs Why Routing Reflects Geometry, Not Necessarily Domain Expertise/Paper-Reading-Record-Q8RCCW4Z.md
+    status: done
+    tags: [moe, routing-geometry]
+
+  - id: source.million_experts
+    title: Mixture of A Million Experts
+    type: source
+    summary: Reading note for large-scale MoE/expert routing background; use as source context, not as direct evidence for this synthetic claim.
+    file: /paper_reading/01_moe_routing/Mixture of A Million Experts/paper_reading_record.md
+    status: done
+    tags: [moe, scale]
+
+  - id: claim.routing_geometry_not_domain_expertise
+    title: Routing geometry is not expertise
+    type: claim
+    summary: "Prior work motivates a strict boundary: route clusters or expert geometry do not by themselves establish functional specialization."
+    file: /Projects/from-attention-to-search/main/problem_anchors/README.md
+    status: active
+    tags: [claim-boundary]
+
+edges:
+  - from: source.myth_specialization_geometry
+    to: claim.routing_geometry_not_domain_expertise
+    kind: supports
+
+  - from: source.million_experts
+    to: rq.specialization_literature
+    kind: cites
+
+  - from: claim.routing_geometry_not_domain_expertise
+    to: rq.specialization_literature
+    kind: answers

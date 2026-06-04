@@ -24,8 +24,11 @@ At the start of a research task:
 
 1. Read `PROJECTS.md`.
 2. Identify the active project and worker surface.
-3. Read the project's graph, then only the linked anchor, roadmap, sync note,
-   experiment result, meeting note, paper note, or raw material needed.
+3. Read the relevant graph. For cross-project specialization work, prefer
+   `Projects/graphs/expert_specialization.graph.yaml`; for narrow branch-local
+   work, use the linked project graph only when it is the better map. Then read
+   only the linked anchor, roadmap, sync note, experiment result, meeting note,
+   paper note, or raw material needed.
 4. Decide whether the material updates the graph, anchor, claim boundary, or
    next decision before writing a long answer.
 
@@ -97,7 +100,7 @@ update anchor / summary.md / detailed.md / daily card only
 do not update root sync automatically
 do not package handoff reports automatically
 do not sync to external collaborator repos automatically
-do not update graph.yaml automatically
+do not update graph manifests automatically
 do not push automatically
 ```
 
@@ -265,7 +268,33 @@ interpretation.
 Use the project graph as the navigation layer and Markdown anchors as the
 reasoning layer. Keep the graph thin and the notes thick.
 
-Before changing an existing `graph.yaml`, first discuss the proposed research
+Cross-project graphs live under:
+
+```text
+Projects/graphs/
+```
+
+Current graph hub:
+
+```text
+Projects/graphs/expert_specialization.graph.yaml
+Projects/graphs/kv_cache_retrieval.graph.yaml
+Projects/graphs/specialization_papers.graph.yaml
+```
+
+These graphs are loaded with Sidecar workspace root:
+
+```text
+/data/250010109/Research_System
+```
+
+Graph nodes should include the ownership relation in the summary or tags, and
+should link to the concrete project documents that support the node: anchor,
+experiment `summary.md`, `detailed.md`, report card, roadmap, or paper note.
+The graph node gives only a result preview; the linked document remains the
+source of reasoning.
+
+Before changing an existing graph manifest, first discuss the proposed research
 state change with the user and get confirmation, unless the user explicitly
 requested that exact graph edit in the current turn. The graph records the
 user's research-center judgment; it is not an automatic cleanup target.
@@ -274,6 +303,14 @@ Graph nodes should point to anchors, roadmap entries, experiment summaries,
 detailed records, optional handoff reports, reading notes, and reusable outputs.
 The graph does not replace anchors, summaries, detailed records, or handoff
 reports.
+
+When the user asks to display, open, view, or show the graph, always use the
+local Sidecar app through `sidecar-thinking`. For the current specialization
+mainline, load `Projects/graphs/expert_specialization.graph.yaml` with
+Research_System as the workspace root. Do not generate a standalone HTML graph
+or alternate visualization unless the user explicitly asks for an exported
+HTML/static artifact. If Sidecar fails to start, report the Sidecar command,
+URL, and log path instead of substituting a custom graph page.
 
 ## Local Skill Use
 
