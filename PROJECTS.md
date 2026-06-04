@@ -66,9 +66,20 @@ The current research route is:
 
 ```text
 define feature-level expert specialization
--> diagnose why baseline gating does not produce stable functional specialization
--> bind route assignment to expert causal utility
--> test downstream effects only after specialization is supported
+-> answer the advisor's weak toy question: same-feature route consistency
+-> audit operational feature identity: slot vs B_i vs (slot, B_i)
+-> audit non-collapse and expert composition under the chosen feature definition
+-> only then test route-utility binding
+-> only then test Zipfian / real-corpus robustness
+```
+
+Current local focus:
+
+```text
+Before route-utility binding, first define the operational feature and test
+what the router actually binds to: slot, B_i, or the atomic pair (slot, B_i).
+Also distinguish weak same-feature consistency from non-collapsed feature
+specialization.
 ```
 
 Reverse KV retrieval is now archived as a downstream-effect line. It should not
