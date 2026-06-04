@@ -23,7 +23,15 @@
 
 **Why this matters?**
 
-[说明它为什么影响主线判断、claim boundary 或下一步实验决策。]
+在我们的最简setting中，我们存在3个较强的假设：
+
+1. 一个 token 中的 feature 是否真的是 single feature？
+2. feature 分布是否是 uniform？
+3. 多个 feature 进入同一个 expert 后，它们之间是什么关系？
+
+我们首先对第一个假设进行探究。
+在当前 multi-B synthetic 中，router 实际绑定的是 slot、B_i，还是 composite key = (slot, B_i)？
+这个问题必须先回答，因为如果 feature 轴本身不清楚，后续讨论 specialization、utility binding 或 Zipf 分布都会混乱。
 
 **Hypothesis:**
 
