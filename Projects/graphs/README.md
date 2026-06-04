@@ -26,9 +26,26 @@ Projects/kv_cache                 primary mainline project
 paper_reading/                    literature notes linked by paper subgraphs
 ```
 
+Artifact link convention for experiment nodes:
+
+```text
+project folder
+-> anchor
+-> protocol_for_approval.md, when present
+-> execution_plan.md
+-> summary.md
+-> detailed.md
+-> report_card.md, when present
+```
+
+Example project folder:
+
+```text
+Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/
+```
+
 Rule:
 
 The graph is thin. Nodes should summarize ownership, linked anchors,
 experiment records, and result status. The full reasoning stays in the linked
-anchor, `summary.md`, `detailed.md`, or report card.
-
+anchor, `execution_plan.md`, `summary.md`, `detailed.md`, or report card.
