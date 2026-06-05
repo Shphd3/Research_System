@@ -10,7 +10,7 @@ source_of_truth_status: project-local-anchor
 
 结论：
 
-05_02 的主线不是直接证明 specialization，也不是把 true inhibition 作为中心故事。它的目标是从 advisor's minimal baseline setting 出发，一次放松一个数据假设，观察 route consistency 是否仍然 non-collapsed 且有意义。
+05_02 的主线不是直接证明 specialization，也不是把 true inhibition 作为中心故事。它的目标是从  minimal baseline setting 出发，一次放松一个数据假设，观察 route consistency 是否仍然 non-collapsed 且有意义。
 
 A05_02_P1_compositional_token_feature_routing 和 A05_02_P3_same_expert_feature_relation 的当前结论是 negative / bounded：
 
@@ -21,7 +21,7 @@ minimal baseline setting 的三个关键假设是：
 
 1. token 是 single-feature；
 2. feature distribution 是 uniform；
-3. 多个 features 进入同一 expert 后，不分析它们之间的关系。
+3. 一次只有一个feature进入一个expert.
 
 当前执行顺序：
 
