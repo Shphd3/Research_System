@@ -2,13 +2,29 @@
 
 ## Meeting Summary
 
-这轮我先暂停继续放松 feature assumptions，因为复查最简均匀数据发现：虽然 inhibition 可以提高 same-feature route consistency，但多数 seeds 出现 route collapse，而且 inhibition 有放大 collapse 的趋势。
+目前我们还不能放松上次提到的三个 feature assumptions：
 
-因此当前最小问题变成：
+1. token只由一个feature组成
+2. feature是均匀分布的
+3. 进入同一个expert的feature只有一个
 
-> 在 feature 均匀分布、没有 compositional relaxation 的情况下，collapse 是早期几何/初始化已经决定的，还是训练中 top-1 选择逐步放大的？
+因为复查最简均匀数据实验发现：虽然 inhibition 可以提高 same-feature route consistency，但多数 seeds 出现 route collapse，而且使用 inhibition 有放大 collapse 的趋势。
 
-这个问题必须先回答，否则后续 P1/P3/P2 的结果都会被 collapse 干扰，无法判断 router 是否真的在做 feature-level routing。
+我们将这次要回答的问题定为：
+
+> 在 feature 均匀分布的情况下，collapse 是早期几何/初始化已经决定的，还是训练中 top-1 选择逐步放大学习common方向的趋势？
+
+这个问题必须先回答，因为后续我们设计的实验结果被 collapse 强干扰，无法判断 router 是否真的在做 feature-level routing。
+
+### 结论
+
+经过audit实验，我们发现在最简均匀数据上的实验，MoE坍塌有以下的特征：
+
+1. 大多数坍塌是由于初始化就发生了错误的分发，然后分发的过程中错误的分发被不断加强，在训练初期错误分发模式就被固定。（线性router 在NTP目标下没有自我纠正的功能）
+    1. 尽管random init让不同专家的分发向量一开始分了三六九等，但是仍然存在，不同的feature 一开始就是和某个专家分发向量相似度高的情形，训练过程会不断加重这种情形。
+    2. 初始时刻，top-1 margin不大， 但是训练后会发生显著增长
+2. 即使数据均匀分布，仍然存在common方向，坍缩的expert很大程度上就是先学习了common方向，然后被top-1 routing放大坍缩。
+
 
 ## Meeting Preparation
 
@@ -35,30 +51,80 @@ Q3: collapse expert 是否更对齐所有 features 共享的 common direction？
 
 **Hypothesis:**
 
-H1: 
+H1: collapse 可能来自早期的 common-direction alignment。  
+也就是说，pre-target hidden states 中存在跨 feature 的 shared/common component；如果 router vector 早期对齐这个 common direction，而不是 feature-specific residual direction，不同 features 会被吸入同一个 expert region，形成最终形成路由collapse.
 
-[可被证伪的研究假设。必要时写清 parent problem / subproblem 关系。]
 
 **Evidence:**
 
-[自洽概括关键证据。先写最重要 metric 或 figure，因为它决定本次判断。]
+本次证据的读法是：不看平均曲线，直接看 seed-level 对照。
 
-1. [证据点：metric / figure / table / experiment condition。]
-2. [证据点：它不能证明什么。]
+1. 早期负载 / top-1 间隔 / common direction
+
+![S1-cos seed contrast](figures/evidence_s1cos_seed_contrast_load_margin_common.png)
+
+解析：`S1-cos/20260522` 在 step 0 已经偏向最终 expert，step 10 跨过坍缩阈值，训练把早期偏置放大为完全坍缩；`20260523` 有早期 spike 但能恢复平衡。
+
+2. feature centroid × router vector cosine
+
+![S1-cos assignment and cosine contrast](figures/evidence_s1cos_assignment_cosine_contrast.png)
+
+解析：坍缩 seed 中所有 slots 的 hidden centroid 最后都更接近同一个 router vector；恢复 seed 中 cosine pattern 分化为 slot-to-expert structure。
+
+3. 同一坏 seed 跨条件对比
+
+![Seed 20260522 cross-condition lock-in](figures/evidence_seed20260522_cross_condition_lockin.png)
+
+解析：`20260522` 在多数匹配条件中都有早期 load concentration，说明 collapse 不是 inhibition-only artifact，而是同一 seed 的早期 routing geometry 容易被放大。
+
+4. router geometry
+
+![S1-cos router geometry contrast](figures/evidence_s1cos_router_geometry_contrast.png)
+
+解析：collapse 不是所有 router vectors 合并，而是最终 selected expert vector 移动更强，成为 shared hidden direction 的 attractor。
 
 **Boundaries:**
 
-[当前结论只覆盖哪些条件、数据、模型、训练目标、初始化或 metric。]
+本次只分析原始 uniform feature setting，数据形式如下：
+
+$$
+x_{s,i,r} = [r_{\mathrm{start}}, C_s, B_i, Y_{s,i}, r_{\mathrm{end}}]
+$$
+
+其中：
+$s$：slot / context feature，均匀采样；
+$i$：$B_i$ identity token，均匀采样；
+$r$：随机 nuisance token，不决定 target；
+$Y_{s,i}$：由 $(C_s, B_i)$ 共同决定的 target；
+operational feature key 是 $(s,i)$。
+
+不回答 compositional token、Zipfian frequency、real data，也不直接证明 expert utility specialization。
 
 **Cannot claim yet:**
 
-[明确现在不能说的更强结论，避免会议中越界。]
+1. 不能说 collapse 已经解决；本次只是定位 collapse 的发生机制。
+2. 不能说 common direction 是唯一因果原因；本次没有对 common direction 做干预。
+3. 不能说 inhibition 一定有害；当前证据只说明这版 selected-expert self-reinforcement 容易放大早期偏置。
+4. 不能推广到 compositional token、Zipfian frequency、real data。
+5. 不能声称 router-chosen expert 与 utility-best expert 错配；本次没有把 forced-routing utility 作为决定性证据。
 
 **Next Decision:**
 
-[本次会议后需要做出的最小决策：继续、转向、补一个诊断、还是 park。]
+先不要继续扩大 P1/P3 feature-assumption relaxation；下一步回到原始 uniform setting，测试一个最小 anti-lock-in intervention。
+
+会议上需要决定优先测哪一个：
+
+1. early load balancing / router warmup；
+2. common-direction subtraction before routing；
+3. delayed or softened top-1 routing before hard top-1。
 
 **Next Iteration:**
 
-[如果决策是继续，写最小 decisive experiment；如果不是继续，写 park/redirect 条件。]
+最小实验只保留原始 uniform feature data、原始 seeds、原始 checkpoints，比较 current routing 与一个 anti-lock-in variant。
 
+判定标准：
+
+1. final hard collapse 是否消失；
+2. step 0-50 dominant expert lock-in 是否被打散；
+3. target accuracy 是否仍接近 1；
+4. non-collapsed seeds 是否保留或改善 slot-level expert composition。
