@@ -23,7 +23,11 @@
 1. 大多数坍塌是由于初始化就发生了错误的分发，然后分发的过程中错误的分发被不断加强，在训练初期错误分发模式就被固定。（线性router 在NTP目标下没有自我纠正的功能）
     1. 尽管random init让不同专家的分发向量一开始分了三六九等，但是仍然存在，不同的feature 一开始就是和某个专家分发向量相似度高的情形，训练过程会不断加重这种情形。
     2. 初始时刻，top-1 margin不大， 但是训练后会发生显著增长
-2. 即使数据均匀分布，仍然存在common方向，坍缩的expert很大程度上就是先学习了common方向，然后被top-1 routing放大坍缩。
+2. 即使数据均匀分布，仍然存在common方向，坍缩的expert很大程度上就是先学习了common方向，其中一个 expert 的 router vector 被训练推向了许多 hidden states 共享的方向，所以越来越多 tokens 会被它选中。
+
+### Next Step
+
+
 
 
 ## Meeting Preparation
@@ -81,7 +85,7 @@ H1: collapse 可能来自早期的 common-direction alignment。
 
 ![S1-cos router geometry contrast](figures/evidence_s1cos_router_geometry_contrast.png)
 
-解析：collapse 不是所有 router vectors 合并，而是最终 selected expert vector 移动更强，成为 shared hidden direction 的 attractor。
+解析：collapse 是最终 selected expert vector 移动更强，成为 shared hidden direction 的 attractor。
 
 **Boundaries:**
 
