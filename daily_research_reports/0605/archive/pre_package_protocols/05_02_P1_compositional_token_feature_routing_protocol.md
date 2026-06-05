@@ -1,4 +1,4 @@
-# Protocol For Approval: 05_02_A05_02_P1_compositional_token_feature_routing
+# Protocol For Approval: A05_02_P1_compositional_token_feature_routing
 
 ## 0. Purpose
 
