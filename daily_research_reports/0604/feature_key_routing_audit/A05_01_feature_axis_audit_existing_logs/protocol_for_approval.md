@@ -36,7 +36,7 @@ Data:
 不重新训练。读取 H0604a 已有 route logs/checkpoints：
 
 ```text
-Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/
+Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/
 ```
 
 Required fields:

@@ -4,9 +4,9 @@
 
 Anchor: `../../../../Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md`
 
-Summary: `../../../../Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md`
+Summary: `../../../../Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/summary.md`
 
-Detailed: `../../../../Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md`
+Detailed: `../../../../Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/detailed.md`
 
 Figures / Tables: `figures/`, `tables/curated_evidence_table.md`
 

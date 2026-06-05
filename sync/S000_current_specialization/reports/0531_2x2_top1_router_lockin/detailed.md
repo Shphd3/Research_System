@@ -139,13 +139,13 @@ Test structured router initialization as the smallest anti-lock-in mechanism.
 ## 10. Artifact / Repro Map
 
 ```text
-code workspace: main/experiments/H0531_2x2_top1_router_lockin/scripts/
+code workspace: main/experiments/A02_top1_router_lockin_2x2/scripts/
 runner: scripts/run_ntp_style_lockin_audit.py
 runner: scripts/run_ntp_style_success_dynamics_audit.py
 runner: scripts/run_ntp_style_initial_router_audit.py
 runner: scripts/run_ntp_style_no_router_bias_audit.py
 runner: scripts/run_ntp_style_router_bias_comparison.py
-curated result dir: main/experiments/H0531_2x2_top1_router_lockin/
+curated result dir: main/experiments/A02_top1_router_lockin_2x2/
 source sandbox: daily_research_reports/0531/exp_2x2_understanding/
 figure dir: figures/
 table dir: tables/

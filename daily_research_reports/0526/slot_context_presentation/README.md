@@ -15,8 +15,8 @@ talk_track.md
 实验细节，需要 audit 时看：
 
 ```text
-slot_context_dominance_router_specialization/detailed.md
-slot_context_bridge_abcd_context_length/detailed.md
+A01_slot_context_dominance_router_specialization/detailed.md
+A01_slot_context_bridge_abcd_context_length/detailed.md
 ```
 
 备份/同步材料：

@@ -123,15 +123,15 @@ router prior: known-good split 10/10 -> final split 10/10
 Main evidence files:
 
 ```text
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/detailed.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/report_card.md
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/figures/ntp_style_lockin_audit.png
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/figures/ntp_style_success_dynamics_audit.png
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/figures/ntp_style_no_router_bias/summary_by_seed.png
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/tables/ntp_style_lockin_audit.csv
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/tables/ntp_style_success_dynamics_audit.csv
-Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/tables/ntp_style_router_bias_comparison.csv
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/summary.md
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/detailed.md
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/report_card.md
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/figures/ntp_style_lockin_audit.png
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/figures/ntp_style_success_dynamics_audit.png
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/figures/ntp_style_no_router_bias/summary_by_seed.png
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/tables/ntp_style_lockin_audit.csv
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/tables/ntp_style_success_dynamics_audit.csv
+Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/tables/ntp_style_router_bias_comparison.csv
 ```
 
 ## Claim Boundary And Next Decision

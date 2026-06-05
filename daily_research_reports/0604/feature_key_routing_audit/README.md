@@ -5,8 +5,8 @@
 1. `05_report_card.md`
 2. `meeting_brief.md`
 3. `meeting_notes.md`
-4. `H0604b_feature_axis_audit_existing_logs/summary.md`
-5. `H0604a_feature_key_routing_stability_center_only/summary.md`
+4. `A05_01_feature_axis_audit_existing_logs/summary.md`
+5. `A05_01_feature_key_routing_stability_center_only/summary.md`
 
 ## Scope
 
@@ -21,5 +21,5 @@ This package does not claim assignment binding or expert utility specialization.
 - `05_report_card.md`: advisor-facing feature-axis audit card.
 - `meeting_brief.md`: short meeting framing.
 - `meeting_notes.md`: notes from the previous same-feature consistency discussion.
-- `H0604a_feature_key_routing_stability_center_only/`: copied summary, detailed record, protocol, execution plan, figures, and tables.
-- `H0604b_feature_axis_audit_existing_logs/`: copied summary, detailed record, protocol, execution plan, figures, and tables.
+- `A05_01_feature_key_routing_stability_center_only/`: copied summary, detailed record, protocol, execution plan, figures, and tables.
+- `A05_01_feature_axis_audit_existing_logs/`: copied summary, detailed record, protocol, execution plan, figures, and tables.

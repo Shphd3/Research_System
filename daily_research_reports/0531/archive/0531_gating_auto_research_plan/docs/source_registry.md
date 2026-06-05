@@ -22,7 +22,7 @@ skills/research-progress-core/references/algorithm_specification.md
 sync/S000_current_specialization/README.md
 sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
 sync/S000_current_specialization/anchors/expert_specialization/hierarchical_route_utility_binding_anchor.md
-daily_research_reports/0529/hierarchical_route_utility_binding/detailed.md
+daily_research_reports/0529/A03_hierarchical_route_utility_binding/detailed.md
 ```
 
 ## Existing evidence imported into this plan

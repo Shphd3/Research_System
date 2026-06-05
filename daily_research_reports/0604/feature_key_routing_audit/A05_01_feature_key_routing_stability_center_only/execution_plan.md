@@ -162,7 +162,7 @@ Runner should:
 Research record:
 
 ```text
-Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/
+Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/
 ```
 
 Code workspace:

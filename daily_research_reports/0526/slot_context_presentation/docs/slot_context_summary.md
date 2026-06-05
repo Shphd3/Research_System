@@ -128,9 +128,9 @@ Interpretation: random init does not reliably discover the role partition. Seman
 Bridge result files:
 
 ```text
-bridge summary: ../slot_context_bridge_abcd_context_length/summary.md
-bridge detailed: ../slot_context_bridge_abcd_context_length/detailed.md
-tables: ../slot_context_bridge_abcd_context_length/tables/bridge_abcd_*.csv
+bridge summary: ../A01_slot_context_bridge_abcd_context_length/summary.md
+bridge detailed: ../A01_slot_context_bridge_abcd_context_length/detailed.md
+tables: ../A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_*.csv
 jobs: single_b pt-qeorv2p9; multi_b pt-gr1vtgfn
 ```
 

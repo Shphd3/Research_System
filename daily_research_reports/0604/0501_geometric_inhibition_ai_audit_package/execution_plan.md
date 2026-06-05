@@ -195,12 +195,12 @@ Research-system files:
 | Action | Path | Purpose |
 | --- | --- | --- |
 | existing | `Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md` | source-of-truth anchor |
-| existing | `Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/protocol_for_approval.md` | approved protocol |
-| create | `Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/execution_plan.md` | this implementation plan |
-| create after run | `Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md` | group-meeting first reading path |
-| create after run | `Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md` | full experimental record |
-| create after run | `Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/figures/` | curated meeting figures |
-| create after run | `Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/tables/` | curated tables |
+| existing | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md` | approved protocol |
+| create | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/execution_plan.md` | this implementation plan |
+| create after run | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md` | group-meeting first reading path |
+| create after run | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/detailed.md` | full experimental record |
+| create after run | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/figures/` | curated meeting figures |
+| create after run | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/tables/` | curated tables |
 
 Runnable workspace files:
 
@@ -297,10 +297,10 @@ active/synthetic_data_understanding/logs/acp/
 Curated meeting outputs:
 
 ```text
-Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
-Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
-Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/figures/
-Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/tables/
+Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md
+Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/detailed.md
+Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/figures/
+Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/tables/
 ```
 
 ## 11. Approval Gate

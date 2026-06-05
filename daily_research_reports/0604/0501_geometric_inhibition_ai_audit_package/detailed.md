@@ -78,7 +78,7 @@ figures/h0603a_geometric_inhibition/h0603a_geometric_inhibition_standard_4gpu_20
 Curated result dir:
 
 ```text
-Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/
+Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/
 ```
 
 ## 2. Data / Model / Training

@@ -11,15 +11,15 @@ Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibitio
 H0604a:
 
 ```text
-H0604a_feature_key_routing_stability_center_only/summary.md
-H0604a_feature_key_routing_stability_center_only/detailed.md
+A05_01_feature_key_routing_stability_center_only/summary.md
+A05_01_feature_key_routing_stability_center_only/detailed.md
 ```
 
 H0604b:
 
 ```text
-H0604b_feature_axis_audit_existing_logs/summary.md
-H0604b_feature_axis_audit_existing_logs/detailed.md
+A05_01_feature_axis_audit_existing_logs/summary.md
+A05_01_feature_axis_audit_existing_logs/detailed.md
 ```
 
 ## 0. Executive Summary
@@ -75,7 +75,7 @@ H0604b_feature_axis_audit_existing_logs/detailed.md
 
 ### Figure 1: H0604a Feature-Key Consistency
 
-![Feature-key consistency histogram](H0604a_feature_key_routing_stability_center_only/figures/feature_key_consistency_histogram.png)
+![Feature-key consistency histogram](A05_01_feature_key_routing_stability_center_only/figures/feature_key_consistency_histogram.png)
 
 What to see:
 
@@ -91,7 +91,7 @@ It cannot prove specialization, because collapse can also make the metric high.
 
 ### Figure 2: H0604a Expert Load Guard
 
-![Expert load distribution](H0604a_feature_key_routing_stability_center_only/figures/expert_load_distribution.png)
+![Expert load distribution](A05_01_feature_key_routing_stability_center_only/figures/expert_load_distribution.png)
 
 What to see:
 
@@ -103,7 +103,7 @@ High consistency must be filtered by load entropy / max-load before interpretati
 
 ### Figure 3: H0604b Feature-Axis NMI
 
-![Feature-axis NMI](H0604b_feature_axis_audit_existing_logs/figures/feature_axis_nmi_comparison.png)
+![Feature-axis NMI](A05_01_feature_axis_audit_existing_logs/figures/feature_axis_nmi_comparison.png)
 
 What to see:
 
@@ -115,7 +115,7 @@ The best current non-collapsed routing is slot-aligned, not $B_i$-aligned.
 
 ### Figure 4: H0604b Expert Load Histogram
 
-![Expert load histogram](H0604b_feature_axis_audit_existing_logs/figures/expert_load_histogram.png)
+![Expert load histogram](A05_01_feature_axis_audit_existing_logs/figures/expert_load_histogram.png)
 
 What to see:
 

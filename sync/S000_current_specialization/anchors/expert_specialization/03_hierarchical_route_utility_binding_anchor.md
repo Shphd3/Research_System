@@ -272,8 +272,8 @@ hierarchy/common-residual behaves like flat routing: slot is visible, oracle wor
 Experiment:
 
 ```text
-Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/summary.md
-Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/detailed.md
+Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/summary.md
+Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/detailed.md
 ```
 
 Setup:
@@ -330,8 +330,8 @@ Therefore Assign-Utility must be read together with route-slot NMI and utility h
 Experiment:
 
 ```text
-Projects/from-attention-to-search/main/experiments/linear_ffn_frequency_anisotropy/summary.md
-Projects/from-attention-to-search/main/experiments/linear_ffn_frequency_anisotropy/detailed.md
+Projects/from-attention-to-search/main/experiments/archive/A04_parked_frequency/linear_ffn_frequency_anisotropy/summary.md
+Projects/from-attention-to-search/main/experiments/archive/A04_parked_frequency/linear_ffn_frequency_anisotropy/detailed.md
 ```
 
 Setup:
@@ -368,8 +368,8 @@ This supports a frequency-driven high-energy subspace allocation story, not a pu
 Post-hoc spectral decomposition:
 
 ```text
-Projects/from-attention-to-search/main/experiments/linear_ffn_spectral_feature_decomposition/summary.md
-Projects/from-attention-to-search/main/experiments/linear_ffn_spectral_feature_decomposition/detailed.md
+Projects/from-attention-to-search/main/experiments/archive/secondary_linear_ffn/linear_ffn_spectral_feature_decomposition/summary.md
+Projects/from-attention-to-search/main/experiments/archive/secondary_linear_ffn/linear_ffn_spectral_feature_decomposition/detailed.md
 ```
 
 Main result:

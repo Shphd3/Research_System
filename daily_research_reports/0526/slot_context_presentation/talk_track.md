@@ -47,7 +47,7 @@ figures/discussion_random_vs_slot_init_init_final_route_heatmaps.png
 
 ```text
 docs/slot_context_summary.md
-slot_context_dominance_router_specialization/detailed.md
+A01_slot_context_dominance_router_specialization/detailed.md
 ```
 
 怎么说：
@@ -71,7 +71,7 @@ figures/bridge_abcd_final_nmi_by_seed_heatmap.png
 
 ```text
 docs/bridge_abcd_summary.md
-slot_context_bridge_abcd_context_length/detailed.md
+A01_slot_context_bridge_abcd_context_length/detailed.md
 ```
 
 怎么说：

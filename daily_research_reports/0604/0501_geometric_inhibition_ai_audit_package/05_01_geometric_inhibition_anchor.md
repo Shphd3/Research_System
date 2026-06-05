@@ -40,8 +40,8 @@ Do not move to route-utility binding, Zipf / high-frequency distribution, or rea
 |---|---|---|---|---|
 | 1 | H0603a historical supervised slot-margin run | 外部指定 slot assignment 时，不同 slot feature 能否被送到不同 expert？ | 可以稳定 route-slot NMI | 只证明 supervised assignment 下可构造；不是当前 label-free claim |
 | 1b | H0603b center-only diagnostics | 只做 center separation 是否足够？ | center separation alone 不足以决定 token assignment | 不能把 router center 分开等同于 specialization |
-| 2 | `H0604a_feature_key_routing_stability_center_only` | 同一 tentative feature 是否稳定送到同一 expert？feature 暂定为 `(slot,B_i)` | weak same-feature consistency 基本成立；collapse 可造成假阳性；center separation 无独立增益 | FeatureKeyConsistency 是弱指标，必须加 load / composition guard |
-| 3 | `H0604b_feature_axis_audit_existing_logs` | 当前所谓 feature 到底是 `slot`、$B_i$，还是 `(slot,B_i)`？ | completed; best non-collapsed `S0/S1-cos` is slot-aligned, $B_i$ is weak, exact `(slot,B_i)` is stable | choose branch 2C for current best setup |
+| 2 | `A05_01_feature_key_routing_stability_center_only` | 同一 tentative feature 是否稳定送到同一 expert？feature 暂定为 `(slot,B_i)` | weak same-feature consistency 基本成立；collapse 可造成假阳性；center separation 无独立增益 | FeatureKeyConsistency 是弱指标，必须加 load / composition guard |
+| 3 | `A05_01_feature_axis_audit_existing_logs` | 当前所谓 feature 到底是 `slot`、$B_i$，还是 `(slot,B_i)`？ | completed; best non-collapsed `S0/S1-cos` is slot-aligned, $B_i$ is weak, exact `(slot,B_i)` is stable | choose branch 2C for current best setup |
 
 当前逻辑：
 
@@ -282,7 +282,7 @@ Required central figures:
 Status:
 
 ```text
-completed at main/experiments/H0604b_feature_axis_audit_existing_logs/
+completed at main/experiments/A05_01_feature_axis_audit_existing_logs/
 ```
 
 ---

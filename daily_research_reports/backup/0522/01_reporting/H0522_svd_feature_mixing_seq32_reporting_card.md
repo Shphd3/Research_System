@@ -3,7 +3,7 @@
 Source closure:
 
 ```text
-Projects/from-attention-to-search/XingyuD/main/hypotheses/H0521_router_feature_specialization/H0522_svd_feature_mixing_seq32/hypothesis_closure.md
+Projects/from-attention-to-search/XingyuD/main/hypotheses/A01_router_feature_specialization_audit/A01_E04_svd_feature_mixing_seq32/hypothesis_closure.md
 ```
 
 ## Oral Report Card - Fill Before Meeting

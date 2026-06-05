@@ -90,16 +90,16 @@ submit:
 scripts/submit_hierarchical_route_utility_binding_4gpu_acp.sh
 
 result dir:
-results/hierarchical_route_utility_binding/hierarchical_route_utility_binding_full_20260528
+results/A03_hierarchical_route_utility_binding/hierarchical_route_utility_binding_full_20260528
 
 figure dir:
-figures/hierarchical_route_utility_binding/hierarchical_route_utility_binding_full_20260528
+figures/A03_hierarchical_route_utility_binding/hierarchical_route_utility_binding_full_20260528
 
 curated summary:
-Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/summary.md
+Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/summary.md
 
 curated detailed:
-Projects/from-attention-to-search/main/experiments/hierarchical_route_utility_binding/detailed.md
+Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/detailed.md
 
 job id:
 pt-7y7u65m5

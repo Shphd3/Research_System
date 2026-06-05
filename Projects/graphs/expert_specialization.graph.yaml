@@ -59,7 +59,7 @@ nodes:
     title: Vanilla top-1 does not form clean buckets
     type: claim
     summary: Current A/B/AB and sparse-router evidence weakens the claim that ordinary top-1 MoE naturally forms stable feature-level experts.
-    file: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0521a_seq2_ab_feature_specialization/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0521a_seq2_ab_feature_specialization/summary.md
     status: active
     tags: [ordinary-top1, negative-evidence]
 
@@ -67,7 +67,7 @@ nodes:
     title: Router may follow shortcuts
     type: claim
     summary: Router assignment can be explained by token identity, position, common components, or residual-preserved signals rather than the intended feature.
-    file: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0522_router_factor_audit_seq32/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0522_router_factor_audit_seq32/summary.md
     status: active
     tags: [shortcut, attribution]
 
@@ -75,7 +75,7 @@ nodes:
     title: Early top-1 lock-in matters
     type: claim
     summary: In the 2x2 proxy, failed seeds collapse at step 0 and then stay collapsed, supporting early assignment lock-in as a mechanism.
-    file: /Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/summary.md
     status: active
     tags: [lock-in, mechanism]
 
@@ -92,11 +92,11 @@ nodes:
     type: evidence
     summary: AB and source-token diagnostics show no stable clean feature buckets; factor audits keep token identity and shortcut explanations alive.
     files:
-      - path: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0521a_seq2_ab_feature_specialization/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0521a_seq2_ab_feature_specialization/summary.md
         title: H0521 AB specialization diagnostic
-      - path: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0521b_seq32_contiguous_ab/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0521b_seq32_contiguous_ab/summary.md
         title: H0521b source-token diagnostic
-      - path: /Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0522_router_factor_audit_seq32/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0522_router_factor_audit_seq32/summary.md
         title: H0522 router factor audit
     status: done
     tags: [evidence, shortcut]
@@ -105,7 +105,7 @@ nodes:
     title: H0531 2x2 lock-in diagnostic
     type: evidence
     summary: Minimal 2-feature top-1 runs localize collapse to initial assignment rather than late training drift.
-    file: /Projects/from-attention-to-search/main/experiments/H0531_2x2_top1_router_lockin/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/summary.md
     status: done
     tags: [evidence, lock-in]
 
@@ -130,9 +130,9 @@ nodes:
     type: evidence
     summary: Fixed-B and bridge r-B/AB/CB/DB runs show slot/context signal can be visible, but learned routing remains bounded in multi-B.
     files:
-      - path: /Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/summary.md
         title: Slot-context dominance diagnostic
-      - path: /Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/summary.md
         title: Slot-context bridge diagnostic
     status: done
     tags: [evidence, slot-context]
@@ -156,19 +156,19 @@ nodes:
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: inhibition anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md
         title: center-separation protocol
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/execution_plan.md
         title: center-separation execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md
         title: center-separation summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/detailed.md
         title: center-separation detailed
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/summary.md
         title: true token-conditioned inhibition summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/detailed.md
         title: true token-conditioned inhibition detailed
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/report_card.md
         title: report card
     status: done
     tags: [05_01, inhibition, token-conditioned]
@@ -176,15 +176,15 @@ nodes:
   - id: claim.center_separation_not_enough
     title: Center separation alone is not enough
     type: claim
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor. Label-free router-center separation can preserve some structure, especially in K1, but it does not reliably prevent slot merge or single-expert collapse."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation. Label-free router-center separation can preserve some structure, especially in K1, but it does not reliably prevent slot merge or single-expert collapse."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/detailed.md
         title: detailed
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/report_card.md
         title: report card
     status: active
     tags: [weakened, center-only]
@@ -192,13 +192,13 @@ nodes:
   - id: claim.token_conditioned_inhibition_not_enough
     title: Token-conditioned inhibition is lock-in prone
     type: claim
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay. True inhibition gives perfect same-feature consistency, but it does not robustly improve non-collapsed composition and often amplifies collapse."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay. True inhibition gives perfect same-feature consistency, but it does not robustly improve non-collapsed composition and often amplifies collapse."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: inhibition anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/detailed.md
         title: detailed
     status: active
     tags: [weakened, H0605a, true-inhibition, collapse-guard]
@@ -206,17 +206,17 @@ nodes:
   - id: claim.cosine_slot_init_signal
     title: Cosine slot-init is the strongest current clue
     type: claim
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only. In non-collapsed reads, cosine router plus slot init gives the best slot-aligned structure, but this is not yet functional specialization."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only. In non-collapsed reads, cosine router plus slot init gives the best slot-aligned structure, but this is not yet functional specialization."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/detailed.md
         title: detailed
     status: active
     tags: [cosine, slot-init, clue]
@@ -224,19 +224,19 @@ nodes:
   - id: evidence.h0603_geometric
     title: H0603a geometric inhibition
     type: evidence
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor. Result preview: slot-stable init improves step-0 NMI; supervised geometric inhibition drives final route-slot NMI to 1.000 with target accuracy 1.000."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation. Result preview: slot-stable init improves step-0 NMI; supervised geometric inhibition drives final route-slot NMI to 1.000 with target accuracy 1.000."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/detailed.md
         title: detailed
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/report_card.md
         title: report card
     status: done
     tags: [H0603a, evidence, geometry]
@@ -244,17 +244,17 @@ nodes:
   - id: evidence.center_only_report
     title: Center-only ablation report card
     type: evidence
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor. Result preview: D0/D1/K0/K1 show center separation alone cannot reliably bind slots; K1 is the useful but seed-unstable clue."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation. Result preview: D0/D1/K0/K1 show center separation alone cannot reliably bind slots; K1 is the useful but seed-unstable clue."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/detailed.md
         title: detailed
-      - path: /Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/report_card.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/report_card.md
         title: report card
     status: done
     tags: [center-only, evidence]
@@ -262,15 +262,15 @@ nodes:
   - id: evidence.h0605a_true_token_inhibition
     title: H0605a true token-conditioned inhibition replay
     type: evidence
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay. Result preview: all inhibition conditions reach near-perfect same-feature consistency, but random-init inhibition collapses and S1-cos is seed-sensitive."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay. Result preview: all inhibition conditions reach near-perfect same-feature consistency, but random-init inhibition collapses and S1-cos is seed-sensitive."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: inhibition anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0605a_true_token_conditioned_inhibition_replay/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/detailed.md
         title: detailed
     status: done
     tags: [H0605a, evidence, true-inhibition, collapse]
@@ -278,21 +278,21 @@ nodes:
   - id: rq.feature_identity_audit
     title: What feature does routing bind to?
     type: question
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs. Decision: in best non-collapsed conditions, routing is better described as slot-aligned than B_i-aligned."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs. Decision: in best non-collapsed conditions, routing is better described as slot-aligned than B_i-aligned."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
         title: current anchor
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: 05_01 anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/summary.md
         title: H0604a summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/detailed.md
         title: H0604a detailed
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/execution_plan.md
         title: H0604b execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: H0604b summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
         title: H0604b detailed
     status: done
     tags: [feature-definition, H0604a, H0604b]
@@ -300,17 +300,17 @@ nodes:
   - id: claim.same_feature_consistency_weak
     title: Same-feature consistency is weak evidence
     type: claim
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only. H0604a supports the advisor's weak toy claim, but high FeatureKeyConsistency can also be caused by deterministic routing or collapse."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only. H0604a supports the advisor's weak toy claim, but high FeatureKeyConsistency can also be caused by deterministic routing or collapse."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/detailed.md
         title: detailed
     status: active
     tags: [weak-claim, collapse-guard]
@@ -322,13 +322,13 @@ nodes:
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
         title: current anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: H0604b summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
         title: H0604b detailed
     status: active
     tags: [current-route, decision]
@@ -336,17 +336,17 @@ nodes:
   - id: evidence.h0604a_feature_key
     title: H0604a feature-key stability diagnostic
     type: evidence
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only. Result preview: FeatureKeyConsistency is near 0.99 across conditions, but this is weak evidence because collapse and deterministic lock-in can satisfy it."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only. Result preview: FeatureKeyConsistency is near 0.99 across conditions, but this is weak evidence because collapse and deterministic lock-in can satisfy it."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604a_feature_key_routing_stability_center_only/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/detailed.md
         title: detailed
     status: done
     tags: [H0604a, evidence, feature-definition]
@@ -354,17 +354,17 @@ nodes:
   - id: method.feature_axis_audit
     title: Feature-axis audit on H0604a logs
     type: method
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs. Compute consistency, NMI, load entropy, max load, and per-expert composition for slot, B_i, and slot+B_i labels."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs. Compute consistency, NMI, load entropy, max load, and per-expert composition for slot, B_i, and slot+B_i labels."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
         title: detailed
     status: done
     tags: [method, H0604b, existing-logs]
@@ -372,13 +372,13 @@ nodes:
   - id: task.h0604b_feature_axis
     title: Run H0604b feature-axis audit
     type: task
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs. Completed audit: best non-collapsed S0/S1-cos route structure is mostly slot-aligned, not B_i-aligned."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs. Completed audit: best non-collapsed S0/S1-cos route structure is mostly slot-aligned, not B_i-aligned."
     files:
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
         title: detailed
     status: done
     tags: [next-action, H0604b]
@@ -386,17 +386,17 @@ nodes:
   - id: evidence.h0604b_feature_axis
     title: H0604b feature-axis audit
     type: evidence
-    summary: "Project folder: Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs. Result preview: after collapse filtering, S0/S1-cos have high NMI(route; slot) and near-zero NMI(route; B_i); use slot as operational feature axis."
+    summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs. Result preview: after collapse filtering, S0/S1-cos have high NMI(route; slot) and near-zero NMI(route; B_i); use slot as operational feature axis."
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/protocol_for_approval.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/protocol_for_approval.md
         title: protocol
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/execution_plan.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/execution_plan.md
         title: execution plan
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
         title: detailed
     status: done
     tags: [H0604b, evidence, feature-axis, slot]
@@ -408,9 +408,9 @@ nodes:
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
         title: 05_02 anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: H0604b summary
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/detailed.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
         title: H0604b detailed
     status: active
     tags: [05_02, next, assignment-binding, slot-axis]
@@ -422,7 +422,7 @@ nodes:
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
         title: previous decision summary
     status: draft
     tags: [05_02, draft]

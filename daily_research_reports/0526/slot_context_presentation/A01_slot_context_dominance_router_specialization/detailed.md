@@ -427,13 +427,13 @@ Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance
 summary:
 
 ```text
-Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/summary.md
+Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/summary.md
 ```
 
 detailed:
 
 ```text
-Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/detailed.md
+Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/detailed.md
 ```
 
 code workspace:
@@ -464,40 +464,40 @@ scripts/submit_slot_context_dominance_4gpu_acp.sh
 data / manifest:
 
 ```text
-results/slot_context_dominance_router_specialization/slot_context_single_b_full_20260526/data_audit.json
-results/slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526/data_audit.json
-results/slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527/data_audit.json
-results/slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527/data_audit.json
+results/A01_slot_context_dominance_router_specialization/slot_context_single_b_full_20260526/data_audit.json
+results/A01_slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526/data_audit.json
+results/A01_slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527/data_audit.json
+results/A01_slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527/data_audit.json
 ```
 
 result dir:
 
 ```text
-results/slot_context_dominance_router_specialization/slot_context_single_b_full_20260526
-results/slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526
-results/slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527
-results/slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527
+results/A01_slot_context_dominance_router_specialization/slot_context_single_b_full_20260526
+results/A01_slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526
+results/A01_slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527
+results/A01_slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527
 ```
 
 figure dir:
 
 ```text
-figures/slot_context_dominance_router_specialization/slot_context_single_b_full_20260526
-figures/slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526
-figures/slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527
-figures/slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527
+figures/A01_slot_context_dominance_router_specialization/slot_context_single_b_full_20260526
+figures/A01_slot_context_dominance_router_specialization/slot_context_multi_b_full_20260526
+figures/A01_slot_context_dominance_router_specialization/slot_context_single_b_trajectory_full_20260527
+figures/A01_slot_context_dominance_router_specialization/slot_context_multi_b_trajectory_full_20260527
 ```
 
 curated tables:
 
 ```text
-Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/tables/
+Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/tables/
 ```
 
 curated figures:
 
 ```text
-Projects/from-attention-to-search/main/experiments/slot_context_dominance_router_specialization/figures/
+Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/figures/
 ```
 
 logs / checkpoints:
@@ -507,7 +507,7 @@ logs/acp/slot_context_single_b_full_20260526_runtime_*.log
 logs/acp/slot_context_multi_b_full_20260526_runtime_*.log
 logs/acp/slot_context_single_b_trajectory_full_20260527_runtime_*.log
 logs/acp/slot_context_multi_b_trajectory_full_20260527_runtime_*.log
-results/slot_context_dominance_router_specialization/*/*/*/seed_*/model.pt
+results/A01_slot_context_dominance_router_specialization/*/*/*/seed_*/model.pt
 ```
 
 first-pass repro command:
@@ -557,8 +557,8 @@ bridge_abcd_multi_b: pt-gr1vtgfn
 Bridge docs:
 
 ```text
-summary: ../slot_context_bridge_abcd_context_length/summary.md
-detailed: ../slot_context_bridge_abcd_context_length/detailed.md
+summary: ../A01_slot_context_bridge_abcd_context_length/summary.md
+detailed: ../A01_slot_context_bridge_abcd_context_length/detailed.md
 ```
 
 Bridge result table:
@@ -584,11 +584,11 @@ Bridge artifacts:
 
 ```text
 curated tables:
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/tables/bridge_abcd_initial_final_by_seed.csv
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/tables/bridge_abcd_single_b_summary_by_condition.csv
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/tables/bridge_abcd_multi_b_summary_by_condition.csv
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_initial_final_by_seed.csv
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_single_b_summary_by_condition.csv
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_multi_b_summary_by_condition.csv
 
 result dirs:
-results/slot_context_dominance_router_specialization/bridge_abcd_single_b_full_20260527
-results/slot_context_dominance_router_specialization/bridge_abcd_multi_b_full_20260527
+results/A01_slot_context_dominance_router_specialization/bridge_abcd_single_b_full_20260527
+results/A01_slot_context_dominance_router_specialization/bridge_abcd_multi_b_full_20260527
 ```

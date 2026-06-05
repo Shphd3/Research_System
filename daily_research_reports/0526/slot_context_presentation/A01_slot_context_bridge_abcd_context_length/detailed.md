@@ -180,23 +180,23 @@ configs/slot_context_dominance_router_specialization.json
 Result dirs:
 
 ```text
-results/slot_context_dominance_router_specialization/bridge_abcd_single_b_full_20260527
-results/slot_context_dominance_router_specialization/bridge_abcd_multi_b_full_20260527
+results/A01_slot_context_dominance_router_specialization/bridge_abcd_single_b_full_20260527
+results/A01_slot_context_dominance_router_specialization/bridge_abcd_multi_b_full_20260527
 ```
 
 Curated tables:
 
 ```text
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/tables/bridge_abcd_initial_final_by_seed.csv
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/tables/bridge_abcd_single_b_summary_by_condition.csv
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/tables/bridge_abcd_multi_b_summary_by_condition.csv
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_initial_final_by_seed.csv
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_single_b_summary_by_condition.csv
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_multi_b_summary_by_condition.csv
 ```
 
 Curated figures:
 
 ```text
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/figures/bridge_abcd_final_nmi_by_seed_heatmap.png
-Projects/from-attention-to-search/main/experiments/slot_context_bridge_abcd_context_length/figures/bridge_abcd_short_long_init_final_route_heatmaps.png
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/figures/bridge_abcd_final_nmi_by_seed_heatmap.png
+Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/figures/bridge_abcd_short_long_init_final_route_heatmaps.png
 ```
 
 Job ids:

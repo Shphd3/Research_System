@@ -120,7 +120,7 @@ Closure:
 Projects/from-attention-to-search/main/hypotheses/H0529a_zipfian_frequency_shortcut/hypothesis_closure.md
 
 Summary:
-Projects/from-attention-to-search/main/experiments/H0529a_zipfian_frequency_shortcut/summary.md
+Projects/from-attention-to-search/main/experiments/archive/A04_parked_frequency/H0529a_zipfian_frequency_shortcut/summary.md
 ```
 
 ## H0530a：Hierarchical Common/Sense MoE
@@ -156,7 +156,7 @@ Closure:
 Projects/from-attention-to-search/main/hypotheses/H0530a_hierarchical_common_sense_moe/hypothesis_closure.md
 
 Summary:
-Projects/from-attention-to-search/main/experiments/H0530a_hierarchical_common_sense_moe/summary.md
+Projects/from-attention-to-search/main/experiments/archive/A04_parked_frequency/H0530a_hierarchical_common_sense_moe/summary.md
 ```
 
 ## 最后一句

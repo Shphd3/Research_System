@@ -41,7 +41,7 @@ project folder
 Example project folder:
 
 ```text
-Projects/from-attention-to-search/main/experiments/05_01_geometric_inhibition_anchor/
+Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/
 ```
 
 Rule:

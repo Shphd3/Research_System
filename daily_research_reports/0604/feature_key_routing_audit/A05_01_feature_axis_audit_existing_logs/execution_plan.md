@@ -160,7 +160,7 @@ The result is insufficient if the route matrix does not support reconstruction o
 Research record:
 
 ```text
-Projects/from-attention-to-search/main/experiments/H0604b_feature_axis_audit_existing_logs/
+Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/
 ```
 
 Expected outputs:
