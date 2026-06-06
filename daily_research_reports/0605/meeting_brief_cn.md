@@ -8,7 +8,7 @@
 2. feature是均匀分布的
 3. 进入同一个expert的feature只有一个
 
-因为复查最简均匀数据实验发现：虽然 inhibition 可以提高 same-feature route consistency，但多数 seeds 出现 route collapse，而且使用 inhibition 有放大 collapse 的趋势。
+因为复查最简均匀数据实验发现：虽然 inhibition 可以提高同一feature的分发一致性，但多数 seeds 出现 route collapse，而且使用 inhibition 有放大 collapse 的趋势。
 
 我们将这次要回答的问题定为：
 
@@ -20,15 +20,12 @@
 
 经过audit实验，我们发现在最简均匀数据上的实验，MoE坍塌有以下的特征：
 
-1. 大多数坍塌是由于初始化就发生了错误的分发，然后分发的过程中错误的分发被不断加强，在训练初期错误分发模式就被固定。（线性router 在NTP目标下没有自我纠正的功能）
+1. 最终 collapse 到的 expert 在早期几何中已经预见；但初始分发的logit margin 不大，训练过程会把这个早期偏置放大成 lock-in。（在最终坍塌的seed中，没有观察到足够的自我纠正；但也存在 recovery 的 seed，说明 early spike 并非必然导致 collapse。为什么需要recover还需要进行探究）
     1. 尽管random init让不同专家的分发向量一开始分了三六九等，但是仍然存在，不同的feature 一开始就是和某个专家分发向量相似度高的情形，训练过程会不断加重这种情形。
     2. 初始时刻，top-1 margin不大， 但是训练后会发生显著增长
-2. 即使数据均匀分布，仍然存在common方向，坍缩的expert很大程度上就是先学习了common方向，其中一个 expert 的 router vector 被训练推向了许多 hidden states 共享的方向，所以越来越多 tokens 会被它选中。
+2. 即使数据均匀分布，仍然存在common方向，collapse expert 最终高度对齐 common hidden direction：$c(t)=\frac{\mathrm{mean}_f \ h_f(t)}{\|\mathrm{mean}_f \ h_f(t)\|}$. 因为其中一个 expert 的 router vector 被训练推向了许多 hidden states 共享的方向，所以越来越多 tokens 会被它选中。
 
 ### Next Step
-
-
-
 
 ## Meeting Preparation
 
