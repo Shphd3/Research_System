@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    "R0-dot",
+    "R1-dot",
+    "R0-cos",
+    "R1-cos",
+    "S0-dot",
+    "S1-dot",
+    "S0-cos",
+    "S1-cos"
+  ],
+  "config": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/configs/h0605a_true_token_conditioned_inhibition_replay.json",
+  "device": "cpu",
+  "focus_conditions": [
+    "R0-dot",
+    "R1-dot",
+    "R0-cos",
+    "R1-cos",
+    "S1-cos"
+  ],
+  "notes": "S* conditions overwrite PyTorch random router weights with slot-centroid initialization; R* conditions keep PyTorch default random router weights.",
+  "seeds": [
+    20260521,
+    20260522,
+    20260523
+  ],
+  "workspace": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding"
+}
