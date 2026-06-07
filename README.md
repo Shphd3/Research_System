@@ -6,6 +6,10 @@ The goal is to preserve research judgment: project graph, problem anchors,
 hypotheses, evidence, claim boundaries, result records, handoff reports, and
 meeting-ready reports.
 
+Canonical research artifacts are written in English by default. Chinese
+companion files are allowed when useful; add `_cn` before the extension, for
+example `summary_cn.md` or `<anchor_id>_cn.md`.
+
 ## Start Here
 
 - `AGENTS.md`: project-level Codex instructions.

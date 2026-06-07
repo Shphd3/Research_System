@@ -1,21 +1,24 @@
 # Minimal Anchor Handwrite Draft
 
 Use this by hand before asking AI to polish the anchor. Write rough bullets.
-The goal is to expose your thinking, not to produce the final anchor.
+The canonical anchor is written in English. If Chinese helps thinking, write a
+separate `_cn.md` companion; do not mix two full versions in one file.
 
-## 0. Tiny Summary（中文）
+## 0. Tiny Summary
 
-目的：
+Parent problem:
 
-物理先验：
+Current subproblem:
 
-假设：
+Core hypothesis:
 
-最小实验：
+Minimal test:
 
-我需要 AI 帮我检查：
+Current boundary:
 
-## 1. Problem
+Next decision:
+
+## 1. Problem Definition
 
 Parent problem:
 
@@ -23,46 +26,70 @@ Sharper subproblem:
 
 Decision question:
 
+Not in scope:
+
 ## 2. Physical Prior
 
-What I believe about the system / data / mechanism:
+P1:
 
-Why this prior could be wrong:
+Meaning:
 
-What observable should change if it is right:
+Could be wrong if:
 
 ## 3. Hypothesis
 
-Current falsifiable hypothesis:
+H1:
 
-Rival explanation:
+Supported if:
 
-What would make me change my mind:
+Weakened if:
 
-## 4. Mathematical Sketch
+## 4. Minimal Mathematical Model
 
-Objects / variables:
+Objects:
 
-Relation I expect:
+Core decomposition:
 
-Observable implied by the relation:
+Mechanism relation:
 
-## 5. Minimal Test
+Observable metrics:
 
-Smallest test I can run:
+Falsifier:
 
-Primary metric / figure:
+## 5. Minimal Tests
 
-Success:
+Experiment:
 
-Failure:
+Question:
+
+Intervention:
+
+Primary metric:
+
+Supports:
+
+Weakens:
+
+## 6. Falsifiable Outcomes
+
+Supported:
+
+Weakened:
 
 Insufficient evidence:
 
-## 6. Next Decision
+## 7. Current Evidence
 
-If supported:
+Observation:
 
-If weakened:
+Interpretation:
 
-If unclear:
+Boundary:
+
+## 8. Claim Boundary And Next Decision
+
+Can claim:
+
+Cannot claim:
+
+Next decision:

@@ -1,6 +1,6 @@
 ﻿---
 name: experiment-card-writer
-description: Use only for operational experiment execution plans after an anchor/purpose-card is clear. Do not create separate hypothesis purpose cards; anchors own purpose, physical priors, falsifiable hypothesis, math, and result updates.
+description: Use only for operational experiment execution plans after a compact anchor decision card is clear. Do not create separate hypothesis purpose cards; anchors own the decision question, physical priors, falsifiable hypothesis, minimal math, primary metrics, and result updates.
 metadata:
   short-description: Write anchor-based execution plans
 ---
@@ -20,13 +20,15 @@ Core rule: **anchor first, protocol second, experiment third**. An experiment
 exists because an anchor needs evidence, not because a new run is easy to
 launch.
 
-Precondition: if the task lacks a stable problem definition, physical prior,
-mathematical model, computational realization, or primary decision metric, stop
-and use `skills/problem-anchor-writer/SKILL.md` first.
+Precondition: if the task lacks one decision question, physical prior,
+falsifiable hypothesis, one minimal mathematical model, minimal test, or primary
+decision metric, stop and use `skills/problem-anchor-writer/SKILL.md` first.
 
-Language rule: execution plans should be written in Chinese by default. Keep
-English only for metric names, code identifiers, experiment IDs, paths, quoted
-terms, and established technical labels where translation would reduce clarity.
+Language rule: canonical protocols, execution plans, summaries, and detailed
+records are written in English by default. If a Chinese companion is needed,
+create a separate `_cn.md` file such as `execution_plan_cn.md`, `summary_cn.md`,
+or `detailed_cn.md`. In conversation, explain new technical terms in Chinese
+before using English names or abbreviations.
 
 Use this general pattern for pre-run execution plans: decision question first,
 primary hypothesis and rival explanation second, then material or case
@@ -38,7 +40,7 @@ after removing domain-specific assumptions.
 
 Do not write a separate `hypotheses/<id>/purpose_card.md`.
 
-Use the anchor as the purpose card:
+Use the anchor as the decision card:
 
 ```text
 Projects/<project>/<mainline>/problem_anchors/<anchor_id>.md
@@ -80,7 +82,7 @@ First verify that the problem anchor already answers:
 1. What parent problem and sharper subproblem are being addressed?
 2. What physical prior makes this problem meaningful?
 3. What mathematical object expresses that prior?
-4. What computational realization follows from the math?
+4. What primary metric and observable object can test it?
 
 Then compress the experiment into:
 
@@ -209,17 +211,17 @@ Story:
 
 ## 0. Closure Summary
 
-目的：
+Purpose:
 
-假设 / 问题：
+Hypothesis / question:
 
-结论：
+Conclusion:
 
-关键证据：
+Key evidence:
 
-结论边界：
+Claim boundary:
 
-下一步决策：
+Next decision:
 
 ## Observation
 
@@ -276,15 +278,15 @@ Story:
 
 ## 0. Quick Recap
 
-目的：
+Purpose:
 
-假设：
+Hypothesis:
 
-实验思路：
+Experiment logic:
 
-结论：
+Conclusion:
 
-证据：
+Evidence:
 
 ## 1. Anchor Link And Decision Point
 

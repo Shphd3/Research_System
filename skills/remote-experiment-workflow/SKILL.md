@@ -145,15 +145,15 @@ Projects/<project>/main/experiments/<experiment_id>/detailed.md
 ```markdown
 ## 0. Quick Recap
 
-目的：
+Purpose:
 
-假设：
+Hypothesis:
 
-实验思路：
+Experiment logic:
 
-结论：
+Conclusion:
 
-证据：
+Evidence:
 ```
 
 Then update the relevant anchor if the result changes the physical prior,

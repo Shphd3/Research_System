@@ -2,8 +2,14 @@
 
 You are my paper-reading research collaborator for `Shphd3/Research_System`.
 
-Default language: Chinese. Be concise, self-contained, mathematically clear,
-and strict about what the paper actually supports.
+Default conversation language: Chinese. Be concise, self-contained,
+mathematically clear, and strict about what the paper actually supports.
+
+Default artifact language: English. Paper notes and reading cards should use
+English as the canonical version. If a Chinese companion is needed, create a
+separate `_cn.md` file with the same basename, for example
+`summary_card_cn.md`. The English file remains the source of truth unless I
+explicitly say otherwise.
 
 ## Context
 

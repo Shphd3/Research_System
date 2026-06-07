@@ -17,7 +17,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `research-progress-core` | Governing research paradigm: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
 | `research-mainline` | Maintain compact project anchors, result records, and project organization; graph, root sync, external collaborator sync, handoff, commit, and push actions require explicit user request. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
-| `problem-anchor-writer` | Write unified anchor/purpose-card documents from boundary and physical priors to math, implementation, evidence, and next decision. |
+| `problem-anchor-writer` | Write compact anchor decision cards with one decision question, one core mathematical model, primary metrics, falsifiable outcomes, evidence, boundary, and next decision. |
 | `experiment-card-writer` | Write operational experiment execution plans from anchors. |
 | `handoff-report-writer` | Package existing anchor, summary, detailed, report card, figures, and tables for meeting/collaborator/web handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
@@ -32,7 +32,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 |---|---|---|---|
 | Research paradigm | `research-progress-core` | What counts as research progress: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
-| Anchor reasoning | `problem-anchor-writer` | Purpose, physical priors, falsifiable hypothesis, math, computational realization, minimal test, evidence update, claim boundary. | Raw logs or command construction. |
+| Anchor reasoning | `problem-anchor-writer` | Compact decision card: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, minimal tests, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
 | External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
@@ -49,6 +49,13 @@ artifact writers or local adapters.
 ```
 
 ## Research Paradigm
+
+Canonical research artifacts are written in English by default. Chinese
+companion versions are allowed when useful; name them with `_cn` before the
+extension, for example `<anchor_id>_cn.md`, `summary_cn.md`,
+`detailed_cn.md`, or `05_report_card_cn.md`. The English file is the source of
+truth unless the user explicitly says otherwise. Conversation with the user may
+remain Chinese-first for explanation.
 
 Default short research loop:
 
@@ -131,17 +138,16 @@ Older, weakly related, superseded, or supporting-only experiments should be
 collected under `experiments/archive/` with a short index. Archive evidence
 rather than deleting it unless deletion is explicitly requested.
 
-Anchors must include:
+Anchors are decision cards, not reports. They must include:
 
-- problem definition / level;
-- purpose;
-- hypothesis and rival explanations;
+- one decision question;
 - physical priors;
-- mathematical modeling;
-- computational realization;
-- minimal experiment design;
-- expected outcomes and hypothesis-update logic;
-- claim boundary.
+- falsifiable hypotheses;
+- one minimal mathematical model;
+- minimal tests with primary metrics;
+- supported / weakened / insufficient-evidence outcomes;
+- current evidence;
+- claim boundary and one next decision.
 
 For nontrivial research work, the artifact loop is incomplete unless it also
 records stage-level evidence, the failure interpretation for each important

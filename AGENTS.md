@@ -2,9 +2,18 @@
 
 This repository manages research process, not the remote experiment codebase.
 
-Default language: Chinese. Start with the conclusion, then give only the
-minimum reason, claim boundary, and next decision needed for the user's current
-question.
+Default conversation language: Chinese. Start with the conclusion, then give
+only the minimum reason, claim boundary, and next decision needed for the
+user's current question.
+
+Default artifact language: English. Canonical research files such as anchors,
+protocols, execution plans, `summary.md`, `detailed.md`, `05_report_card.md`,
+handoff packages, graph summaries, and sync packages should be written in
+English unless the user explicitly asks otherwise. Chinese companion versions
+are allowed when useful; name them with `_cn` before the extension, for example
+`<anchor_id>_cn.md`, `summary_cn.md`, `detailed_cn.md`, and
+`05_report_card_cn.md`. The English file remains the source of truth unless the
+user explicitly says the Chinese file is canonical.
 
 ## Response Style
 
@@ -13,6 +22,9 @@ question.
   using its English name or abbreviation.
 - Do not use labels as a substitute for explanation. State the concrete meaning
   first, then use a short label only if it reduces repetition.
+- In conversation, explain new technical terms in Chinese first. In canonical
+  English artifacts, define terms in plain English and create a `_cn.md`
+  companion only when Chinese explanation is needed.
 - Treat the user's idea as a research hypothesis to examine, not as something
   to affirm.
 - Point out unclear objects, hidden assumptions, rival explanations, metric
@@ -58,8 +70,8 @@ a downstream-effect line until expert specialization is first established.
 
 ## Anchor-First Rule
 
-The anchor is the unified purpose card. Do not create new separate
-`hypotheses/<id>/purpose_card.md` files for new work.
+The anchor is a compact decision card, not a long report. Do not create new
+separate `hypotheses/<id>/purpose_card.md` files for new work.
 
 Default anchor paths:
 
@@ -80,16 +92,16 @@ Current first anchor:
 Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
-Each anchor should define:
+Each anchor should let the reader see these points in about 3 minutes:
 
-- problem definition and parent/subproblem relation;
-- physical priors;
-- mathematical modeling;
-- computational realization;
-- minimal falsifiable experiment;
-- support / weaken / redirect outcome logic;
+- phenomenon and parent/subproblem relation;
+- exactly one decision question;
+- physical priors and falsifiable hypotheses;
+- exactly one core mathematical model;
+- minimal tests with primary metrics;
+- supported / weakened / insufficient-evidence outcomes;
 - current evidence;
-- claim boundary and next decision.
+- claim boundary and exactly one next decision.
 
 After evidence exists, update the same anchor. Long result explanation belongs
 in `detailed.md`; optional handoff reports package already-updated evidence for
@@ -166,8 +178,9 @@ Root sync, external collaborator repo sync, handoff packages, graph updates,
 commits, and pushes are separate explicit actions. Do not perform them unless
 the user asks for that action in the current task.
 
-`summary.md` 是实验完成后的第一阅读入口，必须
-self-contained 地给出目的、问题/假设、结论、关键证据、结论边界和下一步。
+`summary.md` is the first post-result reading path. It must be self-contained
+and state purpose, question or hypothesis, conclusion, key evidence, claim
+boundary, and next decision.
 
 `detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
 seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释

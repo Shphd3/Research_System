@@ -2,19 +2,19 @@
 
 ## Why I Read This
 
-我读它是为了理解：
+I read it to understand:
 
 ## My Mainline Anchor
 
-它可能和我的研究主线关系是：
+Possible relation to my research mainline:
 
 ## One Question Before Reading
 
-我读这篇 paper 先只想回答一个问题：
+The one question I want to answer first:
 
 ## Do Not Overclaim
 
-这篇 paper 的结论不能直接替代我自己的实验结论；它只能更新我的问题、假设、建模、实验设计或解释边界。
+This paper cannot replace my own experimental conclusion. It can only update my question, hypothesis, modeling, experiment design, or interpretation boundary.
 
 ---
 
@@ -22,23 +22,23 @@
 
 ### Problem
 
-论文想解决什么问题：
+What problem does the paper address:
 
 ### Gap
 
-已有方法或已有理解缺什么：
+What is missing in prior methods or understanding:
 
 ### Method
 
-作者方法是什么：
+What is the author's method:
 
 ### Result
 
-最关键结果是什么：
+What is the key result:
 
 ### Claim
 
-作者真正声称了什么：
+What does the author actually claim:
 
 ---
 
@@ -46,65 +46,65 @@
 
 ### Section:
 
-这一节在做什么：
+What this section does:
 
-新增概念 / 定义 / 方法：
+New concept / definition / method:
 
-它如何支撑主 claim：
+How it supports the main claim:
 
-我不确定的地方：
+What remains unclear:
 
 ---
 
 ## Math / Mechanism Notes
 
-关键对象：
+Key objects:
 
-关键公式：
+Key formula:
 
-这个公式在论证里起什么作用：
+Role of this formula in the argument:
 
-我需要回头确认的假设：
+Assumptions I need to check later:
 
 ---
 
 ## Experiment Notes
 
-实验想回答的问题：
+Question answered by the experiment:
 
-控制组 / baseline：
+Control / baseline:
 
-指标：
+Metric:
 
-结果：
+Result:
 
-作者解释：
+Author's explanation:
 
-我是否相信这个解释：
+Whether I trust this explanation:
 
-还缺什么实验：
+Missing experiment:
 
 ---
 
 ## Paper Reading Card
 
-论文标题：
+Paper title:
 
-我为什么读它：
+Why I read it:
 
-核心问题：
+Core question:
 
-作者方法：
+Author's method:
 
-关键结果：
+Key result:
 
-作者解释：
+Author's explanation:
 
-我的判断：
+My judgment:
 
-和我研究的关系：
+Relation to my research:
 
-以后是否需要精读：是/否
+Need close reading later: yes/no
 
 ---
 

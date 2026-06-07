@@ -12,31 +12,31 @@ Figures / Tables:
 
 ## 0. Executive Summary
 
-本轮目标：
+Goal:
 
 ____
 
-最小机制审计：
+Minimal mechanism audit:
 
 ____
 
-清晰的假设：
+Clear hypothesis:
 
 ____
 
-关键发现：
+Key finding:
 
 ____
 
-当前结论：
+Current conclusion:
 
 ____
 
-结论边界：
+Claim boundary:
 
 ____
 
-下一步：
+Next step:
 
 ____
 

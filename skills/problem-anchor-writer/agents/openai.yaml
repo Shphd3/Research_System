@@ -1,3 +1,3 @@
 display_name: Problem Anchor Writer
-short_description: Write English problem-boundary documents from physical priors to math and implementation.
-default_prompt: Write a self-contained English problem-anchor document that defines the parent problem, sharper subproblem, physical priors, mathematical modeling, computational realization, falsifiable test, claim boundary, and next decision.
+short_description: Write compact anchor decision cards with one question, one core model, primary metrics, and falsifiers.
+default_prompt: Write a concise research anchor as a decision card: one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, supported/weakened/insufficient outcomes, current evidence, claim boundary, and one next decision.

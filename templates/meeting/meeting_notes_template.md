@@ -75,13 +75,13 @@ Use this lightweight structure for post-meeting or personal notes:
 
 ## Meeting Diagnosis
 
-导师的 Toy claim 是什么：
+Advisor's toy claim:
 
-我同意什么：
+What I agree with:
 
-我的 stronger concern 是什么：
+My stronger concern:
 
-三个未放松的假设：
+Three unrelaxed assumptions:
 
 1.
 2.
@@ -89,13 +89,13 @@ Use this lightweight structure for post-meeting or personal notes:
 
 ## Group Mainline
 
-主线内容更新：
+Mainline update:
 
 next-to-do：
 
 ## Personal Research Notes
 
-主线内容更新：
+Mainline update:
 
 next-to-do：
 

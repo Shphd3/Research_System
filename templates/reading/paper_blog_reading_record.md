@@ -2,19 +2,19 @@
 
 ## Why I Read This
 
-我读它是为了理解：
+I read it to understand:
 
 ## My Mainline Anchor
 
-它可能和我的研究主线关系是：
+Possible relation to my research mainline:
 
 ## One Question Before Reading
 
-我读这篇 blog / essay 先只想回答一个问题：
+The one question I want to answer first:
 
 ## Do Not Overclaim
 
-这篇 blog / essay 只能作为概念启发、问题重写或实验设计灵感，不能直接当作实验结论。
+This blog / essay can only provide conceptual inspiration, question reframing, or experiment-design ideas. It cannot be used as direct experimental evidence.
 
 ---
 
@@ -22,49 +22,49 @@
 
 ### Note 1
 
-原文观点：
+Original point:
 
-它在说什么：
+Concrete meaning:
 
-我怎么理解：
+My interpretation:
 
-和我研究的关系：
+Relation to my research:
 
-它可能支持 / 挑战 / 启发什么：
+What it may support / challenge / inspire:
 
-我还不确定：
+What remains unclear:
 
 ---
 
 ## Blog Reading Card
 
-标题：
+Title:
 
-我为什么读它：
+Why I read it:
 
-核心问题：
+Core question:
 
-作者主要观点：
+Author's main point:
 
-关键例子 / 证据：
+Key example / evidence:
 
-作者解释：
+Author's explanation:
 
-我的判断：
+My judgment:
 
-和我研究的关系：
+Relation to my research:
 
-可以转化成的一个问题：
+One question it can become:
 
-以后是否需要精读：是/否
+Need close reading later: yes/no
 
 ---
 
 ## Mainline Update Check
 
-这篇 blog / essay 是否更新我的主线：是/否
+Does this blog / essay update my mainline: yes/no
 
-如果是，更新了什么：
+If yes, what changed:
 
 - Hypothesis:
 - Modeling:
@@ -72,7 +72,7 @@
 - Interpretation:
 - Next decision:
 
-如果否，它只是提供了什么背景启发：
+If no, what background inspiration did it provide:
 
 ---
 

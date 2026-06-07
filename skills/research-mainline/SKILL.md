@@ -191,19 +191,34 @@ high-level project route. Do not put detailed evidence here.
 
 ### Anchor
 
-Current-state document. It should contain the current physical priors,
-falsifiable hypothesis, operational definitions, mathematical model, minimal
-test, current evidence, refined hypothesis, claim boundary, and next decision.
+Compact decision card. It should let a reader understand the current research
+state in about 3 minutes: one decision question, physical priors, falsifiable
+hypotheses, one core mathematical model, minimal tests with primary metrics,
+current evidence, claim boundary, and one next decision.
 
-Anchor body is English. The top `Report Summary（中文，汇报用）` should be short:
+Use English for canonical project artifacts by default. If a Chinese companion
+is needed, create a separate `_cn.md` file with the same basename, such as
+`<anchor_id>_cn.md`, `summary_cn.md`, `detailed_cn.md`, or
+`05_report_card_cn.md`. The English file remains the source of truth unless the
+user explicitly says otherwise.
+
+The required anchor structure is:
 
 ```text
-目的 / 物理建模或假设 / 最小实验 / 当前结论 / 结论边界 / 下一步
+0. Tiny Summary
+1. Problem Definition
+2. Physical Prior
+3. Hypothesis
+4. Minimal Mathematical Model
+5. Minimal Tests
+6. Falsifiable Outcomes
+7. Current Evidence
+8. Claim Boundary And Next Decision
 ```
 
-This front summary is not `05_report_card.md`. When a result needs
-advisor-facing or sync presentation, generate `05_report_card.md` in the daily
-or sync package from `templates/reporting/report_card_template.md`.
+Do not add extra sections by default. Do not put protocol details, long
+background, literature review, broad ablations, or implementation contracts in
+the anchor.
 
 Use `problem-anchor-writer` for anchor content rules.
 
