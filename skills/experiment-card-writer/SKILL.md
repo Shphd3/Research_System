@@ -255,14 +255,17 @@ Supports:
 
 ## Detailed Report Template
 
-`detailed.md` is required. It is the complete experiment record and evidence version of the
-same research story, not a metric dump or timeline. It must include the full
-experiment details needed to audit or reproduce the result: data, materials, or
-case construction; conditions; system/procedure/evaluation setup; seeds or
-replicates when relevant; commands, job ids, artifact paths, curated tables,
-key figures, failed or partial runs when relevant, and interpretation. It must
-start with the quick recap and then expand the same logic through setup,
-evidence, interpretation, and links.
+`detailed.md` is required. It is the complete experiment record and evidence
+version of the same research story, not a metric dump or timeline. Unlike
+`summary.md`, which should stay concise and decision-facing, `detailed.md`
+should be complete enough for a later AI or collaborator to re-analyze the
+problem without re-running or re-discovering the artifact structure. It must
+include the full experiment details needed to audit, reproduce, and reason over
+the result: data, materials, or case construction; all executed conditions;
+system/procedure/evaluation setup; seeds or replicates when relevant; commands,
+job ids, artifact paths, curated tables, key figures, failed or partial runs
+when relevant, and interpretation. It must start with the quick recap and then
+expand the same logic through setup, evidence, interpretation, and links.
 
 ```markdown
 # Detailed Result: <experiment_id>
@@ -368,7 +371,14 @@ repro command:
 ```
 
 The quick recap is short. The later sections expand the same five points:
-purpose, hypothesis, experiment logic, conclusion, and evidence.
+purpose, hypothesis, experiment logic, conclusion, and evidence. When the run
+has multiple protocols, seeds, checkpoints, interventions, or negative results,
+`detailed.md` should preserve the full curated result set: per-condition
+tables, seed-level or checkpoint-level summaries, figure-by-figure
+interpretations, failure or ambiguity analysis, and explicit notes on which
+conditions were not run and why. Do not replace this with averages only; use
+averages as summary evidence after recording the seed/checkpoint evidence that
+supports or contradicts the claim.
 
 All code and artifact entries should be concrete paths when available. A reader
 should be able to jump from the detailed report to the runner, config, result
