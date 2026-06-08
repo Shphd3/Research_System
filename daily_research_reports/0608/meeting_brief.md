@@ -8,27 +8,29 @@
 我们的核心数学模型：
 
 $$
-h_f = c + r_f \\
+h_f = c + r_f
+$$
 
-logits = w_e^T h_f = w_e^T (c + r_f)
+$$
+z_{f,e} = w_e^T h_f = w_e^T c + w_e^T r_f
 $$
 
 ### Conclusion:
 
-uniform collapse 的 step-0 主要来自 routed position / positional embedding 造成的 common offset；但训练最终产生的 collapse 不是仅靠去 position embedding就能完全解决。
+uniform collapse 的 step-0 主要来自 routed position / positional embedding 造成的 common offset；但训练最终产生的 collapse 不是仅靠去 position embedding 就能完全解决。
 
 在之前的uniform数据分布setting下：
 1. 路由坍缩根因不是因为构造的数据是不均匀的和坏的router初始化造成的
-2. 数据尽管不存在common feature，但是transformer block输出的hidden state包含一个跨features的common component，这个common component是由于position embedding造成。
-    1. 将position embedding减掉进行路由以后，发现初始化时候的expert是能够回归均匀分发的。
-    2. 将路由的权重构造成和position embedding垂直时，初始的分发也能回归均匀分发
-    3. 但是common偏置的去除主要修复了早期的路由坍缩现象，去除后能够提升feature分发的专一性，但是不能解决feature-to-expert的specialization.（以下max load越低越好，0.25时表明是完美的feature专一化分发）
+2. 数据尽管不存在common feature，但是 transformer block 输出的 routed hidden state 包含一个跨 features 的 common component。新的 position/source ablation 表明，fixed routed position / positional embedding 是这个 common component 的主要因果来源之一。
+    1. 只 zero routed position embedding 后，common_ratio 从约 0.51 降到约 0.045，step-0 max-load 从约 0.62 降到约 0.33-0.36。
+    2. zero all position embedding 的效果相近，说明主要来源集中在 routed token 的固定绝对位置。
+    3. 去除 position embedding 可以降低 collapse，但不能自动产生 slot-level specialization。max-load 低只说明 load balance 更好；slot-level specialization 需要看 slot-expert NMI 和 slot-expert heatmap。
         - 数据一实验repeated pattern: **r - AAAA B_i - y_{A,B_i} - r**
             final max-load 从 baseline 约 0.70 降到约 0.43。
         - 数据二实验distributed_complex pattern: **r - ABCDE B_i - y_{ABCDE,B_i} - r**
             final max-load 从 baseline 约 0.92 降到约 0.74。
 
-要避免最终的坍缩，除了在初始化的时候要合理避免collapse偏置，还需要在训练过程中在几何上构造防止坍缩的正则化项。（早期使用load-balance能够极大程度缓解最终路由坍缩，但是治标不治本，并且不能构成feature especialization）
+当前 meeting 不把 load-balance 或 anti-lockin 作为主结论。它们可以降低 final collapse，但不能直接说明形成了 slot-level specialization。今天的主结论是 common-source localization：fixed routed position / positional embedding 是 step-0 common-offset 的主要因果来源之一。
 
 ### Next decision:
 
@@ -56,6 +58,66 @@ P4: common-aware init 修复 step-0，但 final mixed。
 
 **分析**：所以 offset control 不等于 solve final collapse。
 
+### Visual Evidence And Experiment Meaning
+
+#### Experiment A: position/source ablation
+
+**这个实验在做什么？**  
+它直接测试 common component 是否来自 fixed routed position / positional embedding。做法是在 step 0 分别保留 position embedding、zero all position embedding、只 zero routed position embedding、shuffle position vectors、randomize logical feature position。
+
+![Position source max-load and common ratio](figures/position_source_max_load_and_common_ratio.png)
+
+**解析**：zero routed position embedding 和 zero all position embedding 都把 step-0 common_ratio 从约 0.51 降到约 0.04，并把 step-0 max-load 从约 0.62 降到约 0.33-0.36；这说明 routed position embedding 是 early common-offset 的主要因果来源之一。
+
+#### Experiment B: train-time common-cancel, final slot-level routing
+
+**这个实验在做什么？**  
+它在训练过程中对 router logits 去掉 common score：
+
+$$
+z'_{f,e} = w_e^T h_f - w_e^T c
+$$
+
+然后看 final checkpoint 时 slot 和 expert 是否形成稳定对应关系。下面每张图的 row 是 slot，column 是 expert，cell 是 $P(expert \mid slot)$。如果形成 slot-level specialization，应该看到不同 slot 稳定对应不同 expert。注意：这组 common-cancel 图来自已有 A05_03 P5B 结果，final checkpoint 是 step 400；它不是最新 1600-step position P7 run。
+
+**distributed_complex, seed 20260521**
+
+![distributed common cancel seed20260521](figures/slot_specialization_common_cancel_final/baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260521.png)
+
+**解析**：P5B NMI=0.073，max-load=0.863；仍然是 weak/no slot structure。
+
+**distributed_complex, seed 20260522**
+
+![distributed common cancel seed20260522](figures/slot_specialization_common_cancel_final/baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260522.png)
+
+**解析**：P5B NMI=0.069，max-load=0.636；load 有改善，但 slot-expert 对齐仍弱。
+
+**distributed_complex, seed 20260523**
+
+![distributed common cancel seed20260523](figures/slot_specialization_common_cancel_final/baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260523.png)
+
+**解析**：P5B NMI=0.698，max-load=0.501；这个 seed 出现 partial slot structure，但不是跨 seed 稳定结果。
+
+**repeated, seed 20260521**
+
+![repeated common cancel seed20260521](figures/slot_specialization_common_cancel_final/baseline_vs_p5b_final_slot_expert_repeated_seed20260521.png)
+
+**解析**：P5B NMI=0.601，max-load=0.752；有 partial slot structure，但 load 仍偏集中。
+
+**repeated, seed 20260522**
+
+![repeated common cancel seed20260522](figures/slot_specialization_common_cancel_final/baseline_vs_p5b_final_slot_expert_repeated_seed20260522.png)
+
+**解析**：P5B NMI=0.074，max-load=0.580；没有形成清晰 slot-level specialization。
+
+**repeated, seed 20260523**
+
+![repeated common cancel seed20260523](figures/slot_specialization_common_cancel_final/baseline_vs_p5b_final_slot_expert_repeated_seed20260523.png)
+
+**解析**：P5B NMI=0.514，max-load=0.543；有 partial slot structure，但仍不是稳定强 specialization。
+
+**结论**：train-time common-cancel 可以降低 early common-offset 和部分 collapse，但 final slot-level specialization 不稳定；它不是一个稳定产生 slot-specialized experts 的机制。
+
 ## Meeting Preparation
 
 **Question:**
@@ -70,7 +132,8 @@ routed hidden state 可分解为 \(h_f=c+r_f\)。common component \(c\) 通过 \
 **Evidence:**
 1. P1/P2: \(w_e^\top c\) predicts step-0 dominant expert; cancellation lowers step-0 max-load to near random/balanced range.
 2. P3/P5/P4: offset control improves early geometry and hard collapse but final max-load remains high.
-3. P6/P7: anti-lockin warmup gives strongest final-load control; final route utility is co-adapted, not simply utility-wrong.
+3. P7 position/source ablation: zeroing only the routed position embedding sharply reduces common_ratio and step-0 max-load.
+4. Slot-level heatmaps: train-time common-cancel gives partial slot structure in some seeds, but not stable slot-level specialization.
 
 **Can claim now:**
 fixed routed position / positional embedding is a major causal source of the step-0 common component.
@@ -82,7 +145,7 @@ load balance means feature specialization;
 the result transfers beyond this toy setting.
 
 **Next Decision:**
-position/template causal ablation + full 4-card verification of baseline, P5B, P4-I4, P6A.
+Use the position/source result to set the 05_03 claim boundary, then decide whether the next experiment should target remaining training-time collapse or return to slot-level specialization.
 
 **每个实验具体说明了什么**
 
@@ -93,5 +156,6 @@ position/template causal ablation + full 4-card verification of baseline, P5B, P
 | **P3**   | 训练时取消 common offset，collapse 会不会下降？                     | hard collapse 下降，但 final max-load 仍偏高。说明 common 是 early driver，但不是全部。                        |
 | **P4**   | common-aware initialization 能不能修复 step-0 偏置？            | 能显著降低 step-0 load，但 final 结果 mixed。说明 init 通过 common score 影响 early routing，但 init alone 不够。 |
 | **P5**   | 哪种 common subtraction 更稳定？                              | logit-level cancellation 最稳；SVD / low-rank residual 不稳定。                                     |
-| **P6**   | anti-lockin warmup 能不能控制 final collapse？                | P6A 最强，final load 明显下降，accuracy 基本保持。说明 final collapse 需要 training-time control。             |
+| **P5B slot heatmap** | 训练中去 common offset 后，final 是否形成 slot-level specialization？ | 不稳定。部分 seed 有 partial slot structure，但跨 seed 不稳定；说明 common-cancel 不是稳定产生 slot-specialized experts 的机制。 |
+| **P6**   | anti-lockin warmup 能不能控制 final collapse？                | 暂时不作为今天主结论。它可以降低 load collapse，但 load balance 不等于 slot-level specialization。             |
 | **P7** | position/template source 是不是 common shift 的因果来源？ | 是。zero routed position embedding 将 common_ratio 从约 0.51 降到约 0.045，并将 step-0 max-load 从约 0.62 降到约 0.33-0.36；但 final collapse 没有完全解决。 |
