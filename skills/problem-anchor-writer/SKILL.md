@@ -1,6 +1,6 @@
 ---
 name: problem-anchor-writer
-description: Use when writing or revising a compact research anchor as a decision card: one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, evidence, claim boundary, and next decision. Use when the user asks to write, polish, audit, shorten, or update an anchor.
+description: Use when auditing, polishing, writing, shortening, or updating a compact research anchor. For rough or minimal hand-written anchors, first critique and clarify the user's logic instead of immediately producing a polished final anchor. For requested formal anchors, write a decision card with one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, evidence, claim boundary, and next decision.
 metadata:
   short-description: Write compact anchor decision cards
 ---
@@ -14,6 +14,42 @@ Use this skill to write or revise a research anchor.
 决策问题（decision question）指本轮只裁定的一个问题。核心数学模型（core mathematical model）指能连接物理先验、实验对象和主要指标的最小公式或关系。主要指标（primary metric）指决定本轮判断的第一指标。可证伪条件（falsifier）指什么结果会让假设变弱或需要修改。
 
 First apply `research-progress-core`. If the idea is still conceptually unclear, use `scholar-mode` before writing the anchor.
+
+## Interaction Modes
+
+默认把用户手写的最小锚点（`minimal anchor`）、粗稿锚点（`rough anchor`）或不完整草稿当作思考暴露稿，而不是等待 AI 自动补全的半成品。
+
+讨论最小锚点时，默认只先完成第 1-4 节：Problem Definition、Physical Prior、Hypothesis、Minimal Mathematical Model。第 5 节 Minimal Tests 由用户和 AI 在前四节清楚后共同推导；AI 可以提出测试候选、取舍理由和需要用户决定的问题，但不要单方面替用户定稿 Minimal Tests。
+
+### Minimal Anchor Audit Mode
+
+当用户给出最小/粗稿 anchor 让你看、polish、检查、改进，但没有明确要求写正式 anchor 文件时，先批改，不直接输出完整 anchor。
+
+输出应包括：
+
+- 保留的用户判断：哪些 parent problem、现象、直觉或 next decision 应继续作为用户原始逻辑；
+- 物理先验审查：先判断用户已有物理先验是否正确、可反驳、能推出当前 hypothesis；
+- 必须澄清的问题：feature key、decision question、scope、metric、causal claim、rival explanation 中哪些还不清楚；
+- 逻辑缺口：哪些 hypothesis 没有 falsifier，哪些 metric 不能支持对应 claim，哪些 experiment 同时回答了多个问题；
+- 最小补充清单：为了进入正式 anchor，还需要补哪 3-6 个具体点；
+- Minimal Tests 共创点：哪些测试设计必须等用户确认物理先验、feature key、primary metric 后再共同完成；
+- 可选修订方向：给出 1-2 个更严谨的 decision question 或 hypothesis wording，并标明需要用户确认。
+
+不要默默替用户换题、换 feature definition、换 next decision，或把一个粗糙但有价值的研究直觉改成 AI 自己认为更完整的研究路线。
+
+如果 AI 认为必须新增物理先验，只能先提出为“候选物理先验”，说明它为什么需要、会支持哪个 hypothesis、什么结果会让它变弱。用户明确承认之前，不得把该候选先验写入正式 anchor 的 Physical Prior 部分。
+
+### User-Logic-Preserving Formal Anchor Mode
+
+只有当用户明确要求“写正式 anchor”、“生成 anchor 文件”、“改成完整 anchor”、“出版/汇报用卡片”时，才输出完整 anchor。
+
+正式 anchor 应该是在用户原始逻辑上补强，而不是生成一个看似完美但替换了用户判断的版本。写完后，如果不是纯 artifact-only 请求，简短说明：
+
+- 保留了用户的哪条主逻辑；
+- 收紧了哪些 claim 或 boundary；
+- 哪些研究判断仍需要用户确认；
+- 哪些候选物理先验尚未被用户承认，因此没有写入 anchor；
+- 下一步怎样让它更严谨。
 
 ## Core Rule
 
@@ -29,7 +65,7 @@ First apply `research-progress-core`. If the idea is still conceptually unclear,
 ## Length Limits
 
 - 主体长度：英文约 600-900 words；如果写中文伴随版，控制在 1200-1800 中文字。
-- `Tiny Summary`: at most 8 lines.
+- `Tiny Summary`: 用中文写，at most 8 lines.
 - 每节最多 3 条。
 - 每条最多 2 行。
 - 数学最多 1 个核心分解、1 个机制关系、1 组指标。
@@ -61,15 +97,15 @@ First apply `research-progress-core`. If the idea is still conceptually unclear,
 
 ### 0. Tiny Summary
 
-只写：
+用中文只写：
 
 ```text
-Parent problem:
-Current subproblem:
-Core hypothesis:
-Minimal test:
-Current boundary:
-Next decision:
+父问题：
+当前子问题：
+核心假设：
+最小测试：
+当前边界：
+下一步决策：
 ```
 
 不要展开背景。
@@ -90,6 +126,8 @@ Not in scope:
 ### 2. Physical Prior
 
 物理先验（physical prior）指对系统、数据、机制或目标的可反驳直觉。只写 1-3 个。
+
+评述个人 anchor 时，先审查物理先验，再审查 hypothesis、math、test 和 metric。新增物理先验必须先作为候选项交给用户审核；用户承认之前，不要写入正式 anchor。
 
 Use:
 
@@ -163,6 +201,8 @@ Falsifier:
 ### 5. Minimal Tests
 
 最多写 3 个主实验。每个实验只回答一个问题。
+
+对于个人 minimal anchor，Minimal Tests 通常不在第一轮由 AI 单独完成。先把第 1-4 节审清楚，再和用户共同确定实验问题、干预、primary metric、supports 和 weakens。若用户尚未确认物理先验或 feature key，只能列候选测试，不要写成定稿。
 
 Use:
 
