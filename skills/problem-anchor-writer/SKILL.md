@@ -62,6 +62,8 @@ First apply `research-progress-core`. If the idea is still conceptually unclear,
 
 不要把锚点写成 `detailed.md`、实验协议、会议记录、文献综述、运行手册或实现合同。命令、参数、调试步骤、长表格、原始日志、大范围消融和文献解释都放到锚点外。
 
+Post-result anchor updates must be analytical, not presentational. After experiments finish, do not paste seed tables, long metric lists, or per-experiment result narration into the anchor. Convert results into a clear conclusion, the rival explanations weakened, the remaining claim boundary, and the next decision. Put result presentation in `summary.md`, `detailed.md`, figures, and tables; the anchor should link to those artifacts only as evidence locations.
+
 ## Length Limits
 
 - 主体长度：英文约 600-900 words；如果写中文伴随版，控制在 1200-1800 中文字。
