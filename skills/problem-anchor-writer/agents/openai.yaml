@@ -1,3 +1,11 @@
 display_name: Problem Anchor Writer
-short_description: Write compact anchor decision cards with one question, one core model, primary metrics, and falsifiers.
-default_prompt: Write a concise research anchor as a decision card: one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, supported/weakened/insufficient outcomes, current evidence, claim boundary, and one next decision.
+short_description: Audit rough anchors first, then write compact decision cards when explicitly requested.
+default_prompt: >-
+  If given a rough or minimal hand-written anchor, first critique and clarify
+  the user's logic: preserve the user's main judgment, identify unclear
+  objects, metric mismatches, missing falsifiers, claim-boundary gaps, and the
+  smallest additions needed. Only when a formal anchor is explicitly requested,
+  write a concise decision card with one decision question, physical priors,
+  falsifiable hypotheses, one minimal mathematical model, minimal tests,
+  supported/weakened/insufficient outcomes, current evidence, claim boundary,
+  and one next decision.

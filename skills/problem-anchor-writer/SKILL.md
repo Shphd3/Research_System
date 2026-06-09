@@ -1,6 +1,6 @@
 ---
 name: problem-anchor-writer
-description: Use when writing or revising a compact research anchor as a decision card: one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, evidence, claim boundary, and next decision. Use when the user asks to write, polish, audit, shorten, or update an anchor.
+description: Use when auditing, polishing, writing, shortening, or updating a compact research anchor. For rough or minimal hand-written anchors, first critique and clarify the user's logic instead of immediately producing a polished final anchor. For requested formal anchors, write a decision card with one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, evidence, claim boundary, and next decision.
 metadata:
   short-description: Write compact anchor decision cards
 ---
@@ -14,6 +14,35 @@ Use this skill to write or revise a research anchor.
 决策问题（decision question）指本轮只裁定的一个问题。核心数学模型（core mathematical model）指能连接物理先验、实验对象和主要指标的最小公式或关系。主要指标（primary metric）指决定本轮判断的第一指标。可证伪条件（falsifier）指什么结果会让假设变弱或需要修改。
 
 First apply `research-progress-core`. If the idea is still conceptually unclear, use `scholar-mode` before writing the anchor.
+
+## Interaction Modes
+
+默认把用户手写的最小锚点（`minimal anchor`）、粗稿锚点（`rough anchor`）或不完整草稿当作思考暴露稿，而不是等待 AI 自动补全的半成品。
+
+### Minimal Anchor Audit Mode
+
+当用户给出最小/粗稿 anchor 让你看、polish、检查、改进，但没有明确要求写正式 anchor 文件时，先批改，不直接输出完整 anchor。
+
+输出应包括：
+
+- 保留的用户判断：哪些 parent problem、现象、直觉或 next decision 应继续作为用户原始逻辑；
+- 必须澄清的问题：feature key、decision question、scope、metric、causal claim、rival explanation 中哪些还不清楚；
+- 逻辑缺口：哪些 hypothesis 没有 falsifier，哪些 metric 不能支持对应 claim，哪些 experiment 同时回答了多个问题；
+- 最小补充清单：为了进入正式 anchor，还需要补哪 3-6 个具体点；
+- 可选修订方向：给出 1-2 个更严谨的 decision question 或 hypothesis wording，并标明需要用户确认。
+
+不要默默替用户换题、换 feature definition、换 next decision，或把一个粗糙但有价值的研究直觉改成 AI 自己认为更完整的研究路线。
+
+### User-Logic-Preserving Formal Anchor Mode
+
+只有当用户明确要求“写正式 anchor”、“生成 anchor 文件”、“改成完整 anchor”、“出版/汇报用卡片”时，才输出完整 anchor。
+
+正式 anchor 应该是在用户原始逻辑上补强，而不是生成一个看似完美但替换了用户判断的版本。写完后，如果不是纯 artifact-only 请求，简短说明：
+
+- 保留了用户的哪条主逻辑；
+- 收紧了哪些 claim 或 boundary；
+- 哪些研究判断仍需要用户确认；
+- 下一步怎样让它更严谨。
 
 ## Core Rule
 

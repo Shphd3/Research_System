@@ -4,6 +4,32 @@ Use this by hand before asking AI to polish the anchor. Write rough bullets.
 The canonical anchor is written in English. If Chinese helps thinking, write a
 separate `_cn.md` companion; do not mix two full versions in one file.
 
+## AI Use Contract
+
+This file is a thinking draft, not a final anchor. When an AI reads it, the
+default task is to critique and clarify the user's logic before writing a
+formal anchor.
+
+The AI should first identify:
+
+- which user judgments should be preserved;
+- which objects, feature definitions, metrics, or claim boundaries are unclear;
+- which hypotheses lack falsifiers;
+- which claims are stronger than the available evidence or metrics;
+- the smallest additions needed before this can become a formal anchor.
+
+The AI should not silently replace the user's research question, feature key,
+or next decision. If a formal anchor is requested, it should improve this draft
+on top of the user's logic and then state what was tightened.
+
+Optional notes for the user:
+
+My uncertain points:
+
+Do not silently change:
+
+AI should challenge:
+
 ## 0. Tiny Summary
 
 Parent problem:
