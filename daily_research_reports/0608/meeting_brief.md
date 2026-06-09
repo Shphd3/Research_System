@@ -15,13 +15,13 @@ $$
 z_{f,e} = w_e^T h_f = w_e^T c + w_e^T r_f
 $$
 
-### Conclusion:
+### Conclusion
 
 uniform collapse 的 step-0 主要来自 routed position / positional embedding 造成的 common offset；但训练最终产生的 collapse 不是仅靠去 position embedding 就能完全解决。
 
 在之前的uniform数据分布setting下：
-1. 路由坍缩根因不是因为构造的数据是不均匀的和坏的router初始化造成的
-2. 数据尽管不存在common feature，但是 transformer block 输出的 routed hidden state 包含一个跨 features 的 common component。新的 position/source ablation 表明，fixed routed position / positional embedding 是这个 common component 的主要因果来源之一。
+
+1. 构建数据的时候，我们fix了路由表征在sequence中的位置，因此该表征会存在一个common的positional embedding 成分。positional embedding 是这个 common component 的主要因果来源之一，但是去除了 position embedding（或者构造features出现在sequence中的不同位置），虽然改善了最后的路由坍缩，但是还是没有办法产生feature level的specialization.
     1. 只 zero routed position embedding 后，common_ratio 从约 0.51 降到约 0.045，step-0 max-load 从约 0.62 降到约 0.33-0.36。
     2. zero all position embedding 的效果相近，说明主要来源集中在 routed token 的固定绝对位置。
     3. 去除 position embedding 可以降低 collapse，但不能自动产生 slot-level specialization。max-load 低只说明 load balance 更好；slot-level specialization 需要看 slot-expert NMI 和 slot-expert heatmap。
@@ -30,21 +30,19 @@ uniform collapse 的 step-0 主要来自 routed position / positional embedding 
         - 数据二实验distributed_complex pattern: **r - ABCDE B_i - y_{ABCDE,B_i} - r**
             final max-load 从 baseline 约 0.92 降到约 0.74。
 
-当前 meeting 不把 load-balance 或 anti-lockin 作为主结论。它们可以降低 final collapse，但不能直接说明形成了 slot-level specialization。今天的主结论是 common-source localization：fixed routed position / positional embedding 是 step-0 common-offset 的主要因果来源之一。
+### Next decision
 
-### Next decision:
+1. 从 collapse转入 slot-level specialization audit。
+下一轮需要在排除position embedding的前提下，观察routing的分化轨迹。首先初始化让features初始化到不同expert上，然后观察什么时候坍缩到其他专家上。
 
-1. 将 05_03 的 claim boundary 更新为：fixed routed position / positional embedding 是 step-0 common offset 的主要因果来源之一。
-2. 暂时不要把 load balance 或 anti-lockin 作为主结论；当前 meeting 重点是 common source localization。
-3. 下一步需要决定：剩余 final collapse 是继续追踪 training-time amplification，还是先回到 feature-structure specialization 的主线。
+### Evidence
 
-
-### Evidence:
 P1/P2: common-score \(w_e^\top c\) 预测 step-0 dominant expert，agreement 接近 1.0。
 baseline 是 0.25。full hidden step-0 max-load 约 0.62-0.64；
 在logit上减去common component部分贡献后后降到约 0.28-0.29。
 
 P7 position/source ablation:
+
 - baseline_pos: common_ratio 约 0.51，step-0 max-load 约 0.62。
 - zero_routed_pos_step0: common_ratio 降到约 0.045，step-0 max-load 降到约 0.33-0.36。
 - zero_all_pos_step0: common_ratio 约 0.035，step-0 max-load 约 0.33-0.36。
