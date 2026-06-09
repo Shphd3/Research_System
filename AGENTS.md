@@ -13,7 +13,10 @@ English unless the user explicitly asks otherwise. Chinese companion versions
 are allowed when useful; name them with `_cn` before the extension, for example
 `<anchor_id>_cn.md`, `summary_cn.md`, `detailed_cn.md`, and
 `05_report_card_cn.md`. The English file remains the source of truth unless the
-user explicitly says the Chinese file is canonical.
+user explicitly says the Chinese file is canonical. Exception: anchor
+`Tiny Summary` sections should be written in Chinese as the quick judgment
+surface, while the rest of the canonical anchor remains English unless the user
+explicitly asks otherwise.
 
 ## Response Style
 
