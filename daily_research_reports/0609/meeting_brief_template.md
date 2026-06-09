@@ -17,12 +17,13 @@ residual_{s,p} = m_{s,p} - c - r_s - u_p
 
 Minimum reason:
 
-1. [Key evidence 1: state what judgment it supports.]
-2. [Key evidence 2: state which rival explanation it weakens or rules out.]
-
 Current interpretation:
 
-[Separate observation from interpretation. Do not turn weak evidence into a strong causal claim.]
+Next decision:
+
+1. 需要查明，这个common造成的gating logit，是一开始就很大，还是后面慢慢长出来的
+2. 对于slot-init的情形，我们发现几乎所有的的seeds都产生了slot-level的specialization, 这非常令人诧异，让人感到疑惑，难道仅仅只是初始化到附近，就直接lock-in吗？common component是否长出来了呢？
+3. 为什么这种均匀随机初始化，就是会对齐common component呢？
 
 ## Meeting Preparation
 
