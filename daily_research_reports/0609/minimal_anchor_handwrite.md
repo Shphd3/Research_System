@@ -6,141 +6,156 @@ separate `_cn.md` companion; do not mix two full versions in one file.
 
 ## 0. Tiny Summary
 
-Parent problem:
+父问题：为什么普通 sparse top-1 MoE router 不能稳定形成 feature-to-expert specialization？
 
-Current subproblem:
+当前子问题：在去掉显式 position-common 因素后，为什么 uniform slot 数据训练后仍然发生 expert collapse？
 
-Core hypothesis:
+核心假设：slot 信息可能存在，但 top-1 router 的训练动态会被 non-slot component 或 early expert advantage 锁定，从而不按 slot 分发。
 
-Minimal test:
+最小测试：构造 no-position / random-position slot task，追踪 route、logit margin、hidden component 和 router gradient trajectory。
 
-Current boundary:
+当前边界：只研究 synthetic uniform slot setting；不声称解决真实 LM 的 specialization。
 
-Next decision:
+下一步决策：判断 collapse 是 missing slot signal、residual common bias，还是 top-1 training lock-in。
 
 ## 1. Problem Definition
 
-Parent problem: 
+## 1. Problem Definition
 
-为什么MoE的gating不能稳定形成feature level的specialization?
+Parent problem:
+Why does sparse top-1 MoE gating fail to stably form feature-to-expert specialization?
 
 Sharper subproblem:
-
-在之前我们发现，collapse是由于position embedding造成的问题。现在我们排除这个因素（要么去position embedding，要么让slots出现在sequences中的不同位置），发现训练到最后还是会造成expert collapse. 我们想要探明collapse的原因.
+After controlling explicit position-common signals, the router is initially less collapsed but still collapses during training. We need to identify what drives this training-time re-collapse.
 
 Decision question:
-
-去掉position这个common因素的影响，为什么MoE还会发生collapse？构造的数据中是否还存在其他common component？
-如果去掉了所有common component，为什么Gating还是不能按照slot features进行分发？不同的slot出现的顺序导致了更新发生了重叠？还是其他什么原因？
+In a uniform slot-feature task, does post-position-control collapse come from missing slot signal, residual non-slot logit bias, or top-1 training lock-in?
 
 Not in scope:
 
-1. 暂时不对真实表征空间提出解决方案
+- We do not claim a real-LM solution.
+- We do not claim load balance equals feature specialization.
 
 ## 2. Physical Prior
 
-首要是排除position的影响，其次在语言中，存在很多与slot无关的common信息。
+P1: Slot-specific signal may exist in the routed hidden state.
+Meaning: if the target only depends on slot identity, then hidden states should contain linearly decodable slot information.
+Could be wrong if: the routed hidden state is dominated by B_i, template, or residual common information.
 
-P1: 同一slot下，表征含有关于slot的信息成分，从而对于同一个target（target只和slot相关）, 不管对于所在B_i如何，都应该路由到同一个expert上. 
+P2: Slot signal does not guarantee slot routing.
+Meaning: sparse top-1 router selects the expert with largest logit, so any non-slot component that changes logits can dominate routing.
+Could be wrong if: slot logit margin dominates from early training but routing still collapses.
 
-Meaning: 
-
-Could be wrong if:
-
-Meaning:
-
-Could be wrong if:
-
-P2: 在P1情况下，B_i所在的位置，我们认为应该是带有一个专有属于其自身的语义信息，这种语义信息很容易使得用于分发的hidden state看不到上文的slot信息
-
-P3：数据的structure 应该能决定的事情是我们想要最终学成的表征空间的性质，但是router很有可能一开始没有学到这种语义结构，从而导致发生lock-in
-
-P4：现有的线性gating，如果被训练太多，决策区域会变大，从而后续给定的token都会被包含进入其决策的空间区域中。
-
-Meaning: 
-
-Could be wrong if:
-不同的token表征实际上是不含有common部分的，这样子线性gating即使被训练再多，也不会进行一致性的决策
-
-Meaning:
-
-Could be wrong if:
-
-
+P3: Top-1 routing can create training-time lock-in.
+Meaning: once one expert receives more tokens, its parameters and router logits co-adapt, making later routing harder to change.
+Could be wrong if: route changes remain frequent and no early expert advantage predicts final collapse.
 
 ## 3. Hypothesis
 
-H1（根据P1 和 P4提出）: 当我们按照slot进行初始化，避免early lockin的时候，同时我们分发数据给定slot的顺序一定，slot在sequences中不同位置出现时，应该能最终训出fully specialization的模型。（给定先验 + 防止某个专家向量被训得太好-P4）
-
-Supported if:
-跨seeds实现slot specialization
-
-Weakened if:
-理想训练情况下，发生slot专家分家情形
-
-H2: 在H1成立的基础上，如果我们再加入几何上的Inhibition，我们能够让决策错误（同一slot-target对分到其他专家上）出现得更少
+H1: Post-position-control collapse occurs because sparse top-1 training locks the router into early non-slot routing advantages before slot-specific routing becomes stable.
 
 Supported if:
 
+- slot information is decodable from hidden states;
+- early route/logit trajectory predicts final dominant experts;
+- route changes are driven by non-slot logit margin or early expert advantage;
+- slot-initialized positive control prevents or delays collapse across seeds.
+
 Weakened if:
+
+- slot information is not decodable;
+- slot logit margin dominates from the beginning;
+- slot-initialized positive control still collapses in the same way.
+
+Positive control / known-good case:
+Initialize routing according to slot-to-expert assignment and test whether specialization is stable when early lock-in is removed.
 
 ## 4. Minimal Mathematical Model
 
-Objects: 
+Objects:
 
-被分发的hidden states 为 h
+- h_i: routed hidden state of token i
+- s_i: slot identity
+- b_i: B-token / template identity
+- W_r: router weight matrix
+- e_i: selected top-1 expert
 
 Core decomposition:
+$$h_i = c + r_{s_i} + q_{b_i} + ε_i$$
 
-h = h_{common} + h_{semantic}
+where:
 
-Mechanism relation:
+- c: common component shared across slots
+- r_{s_i}: slot-specific component
+- q_{b_i}: non-slot B/template component
+- ε_i: residual noise
 
+Sparse top-1 router:
+$z_{i,e} = w_e^T h_i$,
+$e_i = argmax_e z_{i,e}$
 
-r1 - slot - B_i - y_{slot} - r2
+Logit decomposition:
+$$z_{i,e} = w_e^T c + w_e^T r_{s_i} + w_e^T q_{b_i} + w_e^T ε_i$$
 
-r1、r2长度不固定
+Observable metrics:
 
-Observable metrics: 
-
-slot level 分发NMI
-
-Falsifier:
+- slot-to-expert NMI
+- per-slot route purity
+- max-load / entropy
+- top-1 logit margin
+- component contribution to logit margin
+- route switch time
 
 ## 5. Minimal Tests
 
-Experiment:
+E0: Slot signal probe
+Question: Does routed hidden state contain decodable slot information after position-common control?
 
-Question:
+E1: Logit trajectory audit
+Question: When routing changes, is the top-1 decision driven by slot component or non-slot component?
 
-Intervention:
+E2: Gradient / update trajectory audit
+Question: Do router updates align with slot identity or with early expert advantage?
 
-Primary metric:
+E3: Slot-initialized positive control
+Question: If early lock-in is removed by slot-to-expert initialization, is slot-specialization reachable and stable?
 
-Supports:
-
-Weakens:
+E4: Anti-lockin intervention
+Question: If H1 is supported, can early anti-lockin reduce wrong route switches?
 
 ## 6. Falsifiable Outcomes
 
 Supported:
+Slot signal is decodable, but final routing is predicted by early non-slot logit margin or top-1 expert advantage. Slot initialization prevents or delays collapse.
 
 Weakened:
+Slot signal is not decodable, or slot-initialized routing still collapses in the same pattern.
 
 Insufficient evidence:
+Final routing becomes more balanced, but slot purity / NMI does not improve; or only final heatmaps are shown without trajectory evidence.
 
 ## 7. Current Evidence
 
 Observation:
+Removing position embedding reduces initial collapse, but training still leads to concentration on a small number of experts.
 
 Interpretation:
+Position-common signal explains part of early routing bias, but cannot fully explain final training-time collapse.
 
 Boundary:
+Existing evidence does not prove position embedding is the only common source, nor does it explain final collapse completely.
 
 ## 8. Claim Boundary And Next Decision
 
-Can claim:
+Can claim if supported:
+In this uniform slot toy setting, sparse top-1 MoE can fail to specialize by slot even when slot information exists, because training-time routing dynamics amplify early non-slot advantages.
 
 Cannot claim:
 
+- position embedding is the only cause;
+- common offset fully explains final collapse;
+- load balance means feature specialization;
+- this mechanism directly transfers to real LMs.
+
 Next decision:
+Run the minimal setting with no-position / random-position control, then track slot signal, logit trajectory, gradient trajectory, and slot-initialized positive control.
