@@ -97,6 +97,26 @@ HMMDDa_short_topic_smoke/
 HMMDDb_short_topic_full/
 ```
 
+When an experiment folder uses an `A` prefix, the number after `A` is the
+primary anchor id, not the calendar date. Use:
+
+```text
+A<anchor_id>_<short_topic>/
+A<anchor_id>a_<short_topic>_smoke/
+A<anchor_id>b_<short_topic>_full/
+```
+
+Examples:
+
+```text
+A05_04_no_position_forced_feature_init_trajectory/
+A05_04_round1_slot_specialization_protocol/
+```
+
+This means `A05_04_*` maps to
+`problem_anchors/05_04_*_anchor.md`. Calendar dates belong in run names,
+daily report paths, logs, or result folders, not in the anchor-code position.
+
 Use suffixes only when they distinguish real iteration roles:
 
 ```text

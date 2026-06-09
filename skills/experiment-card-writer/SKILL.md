@@ -62,6 +62,18 @@ Experiment IDs may include date or iteration labels because they are records of
 tests, for example `HMMDD_short_topic`, `HMMDDa_short_topic_smoke`, or
 `HMMDDb_short_topic_full`. Do not use experiment-style names for anchors.
 
+If the experiment ID uses an `A` prefix, the number after `A` must be the
+primary anchor id, not the calendar date:
+
+```text
+A<anchor_id>_<short_topic>/
+```
+
+For example, experiments for
+`problem_anchors/05_04_uniform_feature_specialization_after_position_removal_anchor.md`
+should use `A05_04_<short_topic>/`. Calendar dates should be placed in run
+names, daily report folders, logs, or result folders.
+
 Every experiment document must link back to its anchor. Do not use opaque
 English phrases as the story title. Give one rigorous, clear sentence that
 states what the experiment is trying to decide.
@@ -74,6 +86,27 @@ one anchor -> one primary experiment folder or one staged experiment line
 
 Multi-stage experiments are allowed, but every stage must link back to the
 anchor and state its local decision gate.
+
+### Anchor Mapping Rule
+
+Every protocol, execution plan, `summary.md`, and `detailed.md` for an
+experiment must include an explicit anchor mapping near the top:
+
+```text
+Primary anchor:
+Anchor decision question:
+Experiment role:
+Stage mapping:
+- P0 / E0 / stage name -> anchor test or rival explanation it audits
+- P1 / E1 / stage name -> anchor test or rival explanation it audits
+```
+
+Stages such as dataset audits, smoke checks, probes, decompositions, positive
+controls, and ablations are usually not separate anchors. They are local tests
+inside the primary anchor unless they introduce a new parent problem, a new
+decision question, or a new hypothesis line. If a stage cannot be mapped to the
+anchor's decision question, stop and either park it or ask whether a new anchor
+is needed.
 
 ## Before Writing
 
@@ -203,29 +236,48 @@ the experiment at the claim-update level. It should be self-contained enough to
 state purpose, hypothesis/question, conclusion, key evidence, claim boundary,
 and next decision, while linking to `detailed.md` for the full record.
 
+Every `summary.md` must also be a medium-detail audit surface, not just a short
+conclusion. It must contain these sections, with canonical artifacts using
+English headings:
+
+```text
+Purpose
+How It Was Done
+Metrics
+What Result A Would Mean
+What Result B Would Mean
+Concrete Result Analysis
+Claim Boundary
+Next Decision
+```
+
+`Purpose` states the decision question. `How It Was Done` states the data,
+model, intervention/control, seeds/checkpoints, and the exact routed/loss
+position at enough detail to audit the setup. `Metrics` names the primary
+metric first and explains why it decides the judgment. `What Result A Would
+Mean` and `What Result B Would Mean` define the main support/weakening patterns
+before interpreting the observed result. `Concrete Result Analysis` reports the
+actual numbers, important seed or condition exceptions, and figure/table
+interpretation. This should be less exhaustive than `detailed.md` but detailed
+enough for a medium-level understanding of the experiment.
+
 ```markdown
 # Result Summary: <experiment_id>
 
 Anchor:
 Story:
 
-## 0. Closure Summary
+## Purpose
 
-Purpose:
+## How It Was Done
 
-Hypothesis / question:
+## Metrics
 
-Conclusion:
+## What Result A Would Mean
 
-Key evidence:
+## What Result B Would Mean
 
-Claim boundary:
-
-Next decision:
-
-## Observation
-
-## Interpretation
+## Concrete Result Analysis
 
 ## Operationalization Boundary
 
