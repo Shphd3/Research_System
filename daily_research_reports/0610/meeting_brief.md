@@ -2,13 +2,13 @@
 
 ## Meeting Summary
 
-### Question
+### **Question**
 
 在无 position embedding、feature 均匀、`SLOT_s B_CONST Y_s（ABC）`最小任务中，为什么 线性router sparse MoE 仍然从随机初始化进入 collapse，而不是形成 slot-to-expert specialization？
 
 ---
 
-### Setup
+### **Setup**
 
 我们使用一个最小合成 moving-block 数据集。序列长度为 12；`0` 是 filler token；`SLOT_s` 使用 token `1..4`；固定的 `B_CONST` 是 token `10`；目标 `Y_s` 使用 token `20..23`。
 
@@ -36,13 +36,27 @@ route position = 6, target = Y_2
 
 ---
 
-## Conclusions
+## **Conclusions**
 
-1. **Collapse 不是因为任务学不会，也不是因为 `h_B` 缺少 slot 信息。** Baseline accuracy 是 `1.0`，slot probe 在 held-out position 上也是 `1.0`，但 random-init routing 仍然 collapse。
-2. **dot-product router 的 top-1 决策被 common-logit 主导。** Common margin 在 step 0 已经大于 slot margin，并在 step 10 前迅速放大；早期 common argmax 能预测 final dominant expert。
-3. **主动消除 common-logit 可以显著提高 slot-level specialization。** Common cancellation 在保持 accuracy `1.0` 的同时，把 mean slot NMI 从 `0.080` 提高到 `0.896` 或 `0.963`。
+合成数据实验中collapse不是因为表征中没有feature信息，而是随机初始化早期就被模长较大的common方向主导，common方向尤其对齐某一个专家，从而导致了collapse发生。
 
-### 1. Collapse 是因为合成数据中去除了position embedding仍然含有common部分，减去common部分（或者给定slot信息初始化）slot-specialization 是可以达成的。
+1. **随机初始化的线性 router 的 top-1 决策被 common-logit（后发现部分由于B token处残差链接） 主导。** Common margin 在 step 0 已经大于 slot margin，并在 step 10 前迅速放大；早期 common argmax 能预测 final dominant expert。
+2. **主动消除 common-logit 可以显著提高 slot-level specialization。** Common cancellation 在保持 accuracy `1.0` 的同时，把 mean slot NMI 从 `0.080` 提高到 `0.896` 或 `0.963`。
+
+另外，如果我们将router初始化到feature附近，那么优化到最后也能实现完美的specialization.
+
+**解决方案：**
+
+1. 将router初始化到common的正交补空间，同时要给定feature对齐的先验（难点：如何在真实的表征空间中对于common进行估计）
+2. 训练的时候路由接收的部分应该是去除common的部分（难点：如何估计common）
+
+---
+
+**具体解析：**
+
+结论解析如下
+
+### 1. Collapse 是因为合成数据中去除了position embedding仍然含有common部分，减去common部分（或者给定slot信息初始化）slot-specialization 是可以达成的
 
 无 position moving-block baseline 仍 collapse，但 `h_B` 中 slot 信息可线性解码；slot-aware initialization 可以形成高 NMI 的 slot-level specialization。
 
