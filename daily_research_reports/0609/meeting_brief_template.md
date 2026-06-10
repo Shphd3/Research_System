@@ -37,6 +37,7 @@ Current interpretation:
 > 被路由的 B-position hidden state 中仍然存在一个 common component，而该 common component 对应的 router score 主导了 top-1 路由决策。
 
 这个 common score 可能有两种来源：
+
 1. 在初始化时就已经存在；
 2. 在训练最开始的几个优化步骤中迅速增长。
 随后，sparse top-1 routing 会在 slot-specific 信号尚未建立之前，将路由锁定到某一个早期占优的 expert 上，从而导致 collapse。
@@ -49,10 +50,6 @@ Next decision:
 在移除 position embedding 之后，这个 common component 究竟来自哪里？
 2. 如果主动消除（cancel）common-logit，是否能够让随机初始化的 sparse top-1 MoE 进入 slot-specialization 的可达优化盆地（reachable basin）？
 3. 为什么 slot-initialized routing 能够保持稳定，而随机初始化 routing 会发生 collapse？
-
-1. 需要查明，这个common造成的gating logit，是一开始就很大，还是后面慢慢长出来的
-2. 对于slot-init的情形，我们发现几乎所有的的seeds都产生了slot-level的specialization, 这非常令人诧异，让人感到疑惑，难道仅仅只是初始化到附近，就直接lock-in吗？common component是否长出来了呢？
-3. 为什么这种均匀随机初始化，就是会对齐common component呢？
 
 ## Meeting Preparation
 
