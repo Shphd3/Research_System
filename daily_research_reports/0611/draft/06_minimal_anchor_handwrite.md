@@ -4,7 +4,7 @@
 
 父问题：sparse top-1 MoE router 为什么在早期进入 route collapse / expert underuse？
 
-当前子问题：真实/半真实 hidden states 中，random dot-product router 是否已有 common-induced route concentration？
+当前子问题：DCLM real-text 上，random-initialized sparse top-1 dot-product MoE 在 step 0 / early steps 是否已有 common-logit-driven route concentration？
 
 核心假设：h_i 可分解为 c + r_i，random router rows 对 c 的不同投影形成 expert-specific common bias。
 
@@ -20,10 +20,10 @@ Parent problem:
 Why do sparse dot-product top-1 MoE routers enter early route collapse or expert underuse?
 
 Sharper subproblem:
-Do real/semi-real frozen hidden states contain common directions that become expert-specific router offsets under random initialization?
+Do random-initialized real-text MoE hidden states contain a common component that becomes an expert-specific router offset at step 0 / early training?
 
 Decision question:
-In frozen real/semi-real hidden states, does random dot-product top-1 routing produce common-logit-driven route concentration, and does this concentration worsen as expert count increases?
+On DCLM real-text data, does a random-initialized sparse top-1 dot-product MoE produce route concentration because w_e^T c dominates w_e^T r_i, and does this dominance worsen with expert count?
 
 Not in scope:
 
@@ -59,21 +59,20 @@ Router normalization, hidden-state geometry, or residual margins dominate this e
 
 ## 3. Hypothesis
 
-H1: Frozen hidden states contain a stable common component/subspace.
-Supported if:
+H1: Random-initialized real-text router-input hidden states contain a nontrivial common component c.
 common_ratio and cross-split common direction stability are high, and residuals still preserve feature/residual structure.
 
 Weakened if:
 estimated common direction is unstable or common removal destroys all residual structure.
 
-H2: Random dot-product router logits are dominated by common projections.
-Supported if:
+H2: The common projection w_e^T c creates an expert-specific logit gap larger than the residual projection w_e^T r_i.
+
 common_margin > residual/feature_margin, and argmax_e w_e^T c predicts many token route winners.
 
 Weakened if:
 route winners are mainly explained by residual/feature logits, not common logits.
 
-H3: Route concentration worsens with expert count.
+H3: Increasing expert count increases common-winner dominance and expert underuse.
 Supported if:
 max_load, entropy drop, active-expert drop, or common-winner dominance worsen as E increases.
 
@@ -104,17 +103,17 @@ If common_margin is not large and common removal does not reduce route concentra
 
 ## 5. Minimal Tests
 
-Test 1: Frozen random-router audit.
+Test 1: Step-0 common-logit audit.
 Question:
-Do real/semi-real hidden states show route concentration under random dot-product top-1 routing?
+At random initialization on DCLM real text, does common_margin exceed residual_margin and predict dominant routing?
 
-Test 2: Expert-count scaling.
+Test 2: Virtual expert-count scaling.
 Question:
-Does common-winner dominance increase as E increases?
+For the same hidden states, does increasing virtual E increase common_margin, dominance_ratio, and expert underuse?
 
-Test 3: Common projection control(or common subtraction control).
+Test 3: Early-training / actual E validation.
 Question:
-Does removing estimated common component reduce route concentration while preserving residual/feature structure?
+Does early training preserve or amplify the same common-winner bias, and does actual E scaling worsen early underuse?
 
 ## 6. Falsifiable Outcomes
 
