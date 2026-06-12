@@ -1,53 +1,150 @@
-# Meeting Brief
+# Meeting Brief: [主题]
 
-## Meeting Summary
+## **Question**
 
-Conclusion:
+[这次汇报要回答的一个核心问题。]
 
-> [Write the main conclusion to communicate in 1-2 sentences. State the result first; do not write a timeline.]
+**父问题：**
+[它为什么影响主线判断。]
 
-Minimum reason:
+**当前子问题：**
+[这次结果具体减少了哪一个不确定性。]
 
-1. [Key evidence 1: state what judgment it supports.]
-2. [Key evidence 2: state which rival explanation it weakens or rules out.]
+## **Conclusion**
 
-Current interpretation:
+> [先写结果，1-2 句话，不写时间线。]
 
-[Separate observation from interpretation. Do not turn weak evidence into a strong causal claim.]
+**主要更新：**
 
-## Meeting Preparation
+1. [我们的判断发生了什么变化。]
+2. [哪个旧解释被支持、削弱或修正。]
+3. [这个结果指向哪个下一步决策。]
 
-**Question:**
+## **Key Evidence**
 
-[One core question this meeting should answer.]
+[把证据展开到不读完整实验记录也能判断结论是否成立。]
 
-**Why this matters?**
+1. **[证据标题 1。]** [指标 / 图 / 条件。]  
+   **结果：** [数值或现象。]  
+   **解释：** [它支持或削弱了什么。]
 
-[Explain why it affects the mainline judgment, claim boundary, or next experiment decision.]
+2. **[证据标题 2。]** [指标 / 图 / 条件。]  
+   **结果：** [数值或现象。]  
+   **解释：** [它支持或削弱了什么。]
 
-**Hypothesis:**
+3. **[证据标题 3。]** [指标 / 图 / 条件。]  
+   **结果：** [数值或现象。]  
+   **解释：** [它支持或削弱了什么。]
 
-[Falsifiable research hypothesis. State the parent problem / subproblem relation when needed.]
+## **Detailed Setup**
 
-**Evidence:**
+[只写判断证据所必需的设置。]
 
-[Summarize the key evidence. Put the most important metric or figure first because it decides this judgment.]
+**数据 / 任务：**
 
-1. [Evidence point: metric / figure / table / experiment condition.]
-2. [Evidence point: what it cannot prove.]
+- [数据来源或合成任务。]
+- [输入构造。]
+- [预测目标或训练目标。]
+- [统计哪些位置、样本或词元。]
 
-**Boundaries:**
+**模型：**
 
-[State which conditions, data, model, training objective, initialization, or metric this conclusion covers.]
+- [模型类型和大小。]
+- [随机初始化、预训练模型或训练后审计节点。]
+- [关键维度。]
 
-**Cannot claim yet:**
+**路由器 / 混合专家模型：**
 
-[State the stronger conclusion that cannot be claimed yet.]
+- [路由器类型。]
+- [每个词元选择几个专家。]
+- [是否使用共享专家。]
+- [负载均衡损失是否开启。]
+- [其他会影响解释的路由设置。]
 
-**Next Decision:**
+**运行 / 审计：**
 
-[The smallest decision after this meeting: continue, redirect, add one diagnostic, or park.]
+- [随机种子。]
+- [审计节点。]
+- [审计样本量。]
+- [任务号或运行编号。]
 
-**Next Iteration:**
+## **Detailed Evidence**
 
-[If continuing, write the minimal decisive experiment. If not, write the park or redirect condition.]
+### 1. [证据块 1]
+
+[这个证据块回答什么局部问题。]
+
+| 指标 | 结果 | 含义 |
+|---|---:|---|
+| [指标] | [数值] | [它回答什么] |
+| [指标] | [数值] | [它回答什么] |
+
+**解释：**
+[区分观测和解释，并说明不能证明什么。]
+
+### 2. [证据块 2]
+
+[这个证据块回答什么局部问题。]
+
+| 指标 | 结果 | 含义 |
+|---|---:|---|
+| [指标] | [数值] | [它回答什么] |
+| [指标] | [数值] | [它回答什么] |
+
+**解释：**
+[区分观测和解释，并说明不能证明什么。]
+
+### 3. [证据块 3]
+
+[这个证据块回答什么局部问题。]
+
+| 指标 | 结果 | 含义 |
+|---|---:|---|
+| [指标] | [数值] | [它回答什么] |
+| [指标] | [数值] | [它回答什么] |
+
+**解释：**
+[区分观测和解释，并说明不能证明什么。]
+
+## **Current Interpretation**
+
+**观测：**
+[直接测到的现象。]
+
+**解释：**
+[这些观测说明了什么。]
+
+**现在可以说：**
+[证据已经支持的表述。]
+
+**仍然只是猜测：**
+[可能成立但尚未测试的表述。]
+
+## **Boundary**
+
+**这个结论覆盖：**
+
+- [数据 / 任务边界。]
+- [模型 / 路由器边界。]
+- [训练目标 / 审计节点边界。]
+- [指标边界。]
+
+**这个结论不覆盖：**
+
+- [未测试的更强结论。]
+- [未测试的设置。]
+- [未证明的方法或部署结论。]
+
+## **Next Step**
+
+**下一步决策：**
+[会后需要决定的最小问题。]
+
+**下一轮实验：**
+[若继续，写最小决定性实验；若转向，写替代假设。]
+
+**支持标准：**
+[什么结果支持下一步假设。]
+
+**削弱标准：**
+[什么结果削弱下一步假设。]
