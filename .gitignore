@@ -45,7 +45,20 @@ venv/
 env/
 
 # Project workspaces are independent repositories. Keep only the shared graph
-# hub visible to this root research-system repo.
+# hub and explicitly curated course-delivery projects visible to this root
+# research-system repo.
 Projects/*
 !Projects/graphs/
 !Projects/graphs/**
+!Projects/academic_writing/
+!Projects/academic_writing/**
+
+# Academic Writing course project: keep source notes and reusable resources in
+# Git; keep generated builds, final submission archives, and local drafts out
+# unless explicitly force-added for a submission record.
+Projects/academic_writing/**/build/
+Projects/academic_writing/**/compiled/
+Projects/academic_writing/**/exports/
+Projects/academic_writing/**/*.zip
+Projects/academic_writing/**/*.pdf
+Projects/academic_writing/**/~$*

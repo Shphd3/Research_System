@@ -142,3 +142,16 @@ Web-side agents should not rely on chat history or old compatibility snapshots.
 If they cannot see `Projects/`, use `PROJECTS.md` and `sync/` summaries, then
 ask the user or a local Codex agent to expose the relevant graph, anchor, or
 sync report.
+
+## Course Delivery Projects
+
+Academic Writing Project 2 is tracked as a course-delivery wrapper:
+
+```text
+Projects/academic_writing/
+```
+
+It uses the current MoE gating specialization work as source material for
+slides, a poster, and a 10-page CVPR-format manuscript. It does not replace the
+`from-attention-to-search` research mainline and should not update graphs,
+root sync, or experiment records unless explicitly requested.
