@@ -1,19 +1,19 @@
 # Summary Card
 
-Paper title:
+论文标题：
 
-Why I read it:
+我为什么读它：
 
-Core question:
+核心问题：
 
-Author's method:
+作者方法：
 
-Key result:
+关键结果：
 
-Author's explanation:
+作者解释：
 
-My judgment:
+我的判断：
 
-Relation to my research:
+和我研究的关系：
 
-Need close reading later: yes/no
+以后是否需要精读：是/否
