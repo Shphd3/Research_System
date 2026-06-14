@@ -8,7 +8,7 @@ ui:
     - rq.failure_mechanism
     - rq.intervention_05
     - rq.feature_identity_audit
-    - rq.next_assignment_binding
+    - rq.next_anti_common_intervention
 
 nodes:
   - id: rq.expert_specialization
@@ -59,7 +59,7 @@ nodes:
     title: Vanilla top-1 does not form clean buckets
     type: claim
     summary: Current A/B/AB and sparse-router evidence weakens the claim that ordinary top-1 MoE naturally forms stable feature-level experts.
-    file: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0521a_seq2_ab_feature_specialization/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/A01_E01_seq2_ab_feature_specialization/summary.md
     status: active
     tags: [ordinary-top1, negative-evidence]
 
@@ -67,7 +67,7 @@ nodes:
     title: Router may follow shortcuts
     type: claim
     summary: Router assignment can be explained by token identity, position, common components, or residual-preserved signals rather than the intended feature.
-    file: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0522_router_factor_audit_seq32/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/A01_E03_router_factor_audit_seq32/summary.md
     status: active
     tags: [shortcut, attribution]
 
@@ -92,11 +92,11 @@ nodes:
     type: evidence
     summary: AB and source-token diagnostics show no stable clean feature buckets; factor audits keep token identity and shortcut explanations alive.
     files:
-      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0521a_seq2_ab_feature_specialization/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/A01_E01_seq2_ab_feature_specialization/summary.md
         title: H0521 AB specialization diagnostic
-      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0521b_seq32_contiguous_ab/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/A01_E02_seq32_contiguous_ab/summary.md
         title: H0521b source-token diagnostic
-      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/H0522_router_factor_audit_seq32/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A01_router_feature_specialization_audit/A01_E03_router_factor_audit_seq32/summary.md
         title: H0522 router factor audit
     status: done
     tags: [evidence, shortcut]
@@ -144,8 +144,8 @@ nodes:
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
         title: 05_01 inhibition anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
-        title: 05_02 assignment binding anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
+        title: 05_02 feature assumption relaxation anchor
     status: active
     tags: [05, intervention, inhibition]
 
@@ -401,31 +401,65 @@ nodes:
     status: done
     tags: [H0604b, evidence, feature-axis, slot]
 
-  - id: rq.next_assignment_binding
-    title: What comes after feature-axis audit?
+  - id: rq.next_anti_common_intervention
+    title: What follows the common-offset audits?
     type: question
-    summary: "Owner/project folder: Projects/from-attention-to-search. H0604b selects slot as the next operational axis; next local question is what relation multiple slot features share when entering the same expert."
+    summary: "Owner/project folder: Projects/from-attention-to-search. 05_02 weakens ordinary assumption relaxation, and 05_03/05_04 point to common-offset plus early-training feedback; next test should be one label-free anti-common / anti-lockin intervention."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
-        title: 05_02 anchor
-      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
-        title: H0604b summary
-      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
-        title: H0604b detailed
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
+        title: 05_02 assumption-relaxation anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_03_uniform_collapse_common_offset_anchor.md
+        title: 05_03 common-offset anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_02_dotproduct_common_logit_causality_anchor.md
+        title: 05_04_02 common-logit causality anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md
+        title: 05_04_03 real-text initialization anchor
     status: active
-    tags: [05_02, next, assignment-binding, slot-axis]
+    tags: [05_04, next, anti-common, anti-lockin]
 
-  - id: rq.assignment_binding_05_02
-    title: Minimal assignment binding
+  - id: rq.feature_assumption_05_02
+    title: Feature assumption relaxation
     type: question
-    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. Candidate next anchor: find the smallest non-supervised signal that turns geometry into stable token-to-expert assignment."
+    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. P1 and P3 weaken the claim that ordinary top-1 routing survives compositional tokens or many-feature grouping under non-collapse guards."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
         title: anchor
-      - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
-        title: previous decision summary
-    status: draft
-    tags: [05_02, draft]
+      - path: /Projects/from-attention-to-search/main/experiments/A05_02_P1_compositional_token_feature_routing/summary.md
+        title: P1 summary
+      - path: /Projects/from-attention-to-search/main/experiments/A05_02_P3_same_expert_feature_relation/summary.md
+        title: P3 summary
+    status: done
+    tags: [05_02, evidence, assumption-relaxation]
+
+  - id: rq.common_offset_05_03
+    title: Uniform common-offset mechanism
+    type: question
+    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. 05_03 supports common offset as a step-0 concentration mechanism, while final collapse still requires a training-dynamic explanation."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_03_uniform_collapse_common_offset_anchor.md
+        title: anchor
+      - path: /Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset/summary.md
+        title: common-offset summary
+      - path: /Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_position_template_source_ablation/summary.md
+        title: source-ablation summary
+    status: done
+    tags: [05_03, evidence, common-offset]
+
+  - id: rq.common_logit_05_04
+    title: Common-logit causality and real-text boundary
+    type: question
+    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. 05_04_02 supports common-logit causality in a minimal dot-product toy boundary; 05_04_03 weakens pure step-0 common dominance on real text and redirects to early-training feedback."
+    files:
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_02_dotproduct_common_logit_causality_anchor.md
+        title: dot-product common-logit anchor
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md
+        title: real-text initialization anchor
+      - path: /Projects/from-attention-to-search/main/experiments/A05_04_02_round2_dotproduct_common_logit/summary.md
+        title: round-2 summary
+      - path: /Projects/from-attention-to-search/main/experiments/A05_04_03_real_text_common_logit_audit/summary.md
+        title: real-text summary
+    status: active
+    tags: [05_04, evidence, common-logit, real-text]
 
   - id: rq.frequency_robustness
     title: When to test frequency or Zipf?
@@ -461,7 +495,7 @@ edges:
     kind: decomposes
 
   - from: rq.expert_specialization
-    to: rq.next_assignment_binding
+    to: rq.next_anti_common_intervention
     kind: leads_to
 
   - from: rq.define_specialization
@@ -569,7 +603,7 @@ edges:
     kind: answers
 
   - from: evidence.h0604b_feature_axis
-    to: rq.next_assignment_binding
+    to: rq.next_anti_common_intervention
     kind: leads_to
 
   - from: method.feature_axis_audit
@@ -581,17 +615,25 @@ edges:
     kind: operationalizes
 
   - from: rq.feature_identity_audit
-    to: rq.next_assignment_binding
+    to: rq.next_anti_common_intervention
     kind: leads_to
 
-  - from: rq.next_assignment_binding
-    to: rq.assignment_binding_05_02
+  - from: rq.next_anti_common_intervention
+    to: rq.feature_assumption_05_02
     kind: decomposes
 
-  - from: rq.next_assignment_binding
+  - from: rq.next_anti_common_intervention
+    to: rq.common_offset_05_03
+    kind: decomposes
+
+  - from: rq.next_anti_common_intervention
+    to: rq.common_logit_05_04
+    kind: decomposes
+
+  - from: rq.next_anti_common_intervention
     to: rq.frequency_robustness
     kind: leads_to
 
-  - from: rq.next_assignment_binding
+  - from: rq.next_anti_common_intervention
     to: rq.kv_retrieval_downstream
     kind: leads_to

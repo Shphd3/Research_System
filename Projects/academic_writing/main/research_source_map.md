@@ -9,7 +9,7 @@ specialization work.
 Projects/graphs/expert_specialization.graph.yaml
 Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/05_02_assignment_binding_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
 ```
 
 Useful result records:
