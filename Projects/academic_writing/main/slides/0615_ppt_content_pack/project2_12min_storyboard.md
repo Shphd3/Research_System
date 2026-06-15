@@ -393,38 +393,53 @@ Speaker logic:
 
 ---
 
-## Slide 12. Current claim and next mechanism
+## Slide 12. 0615 stress test and current claim
 
 Time: 10:35-12:00
 
 On-slide title:
 
 ```text
-Current claim: common-aware initialization should target early amplification, not only load
+0615 update: common-filtered spectrum init improves step 0, but fails by step 10
 ```
 
 On-slide bullets:
 
 ```text
+What worked:
+common-filtered expert-spectrum initialization makes step-0 routing closer to uniform.
+
+What failed:
+it does not reduce step-10 common-margin amplification or top-1 load concentration.
+
 Current claim:
-Early sparse top-1 failure is better explained by amplified routing geometry than by missing feature information alone.
-
-Claim boundary:
-Routing geometry is not the same as domain expertise; no claim yet for pretrained large MoEs or final functional expert specialization.
-
-Next mechanism:
-Estimate common subspace -> filter common directions -> preserve residual router-expert coupling.
+the bottleneck is early-training amplification, not just initial geometric balance.
 ```
 
 Figure:
 
-![Next mechanism hypothesis](figures/s12_next_mechanism_hypothesis.png)
+![0615 spectrum init stress test](figures/s12_0615_spectrum_init_stress_test.png)
 
 Placement:
-Use the diagram full width. Put `Current claim / Boundary / Next experiment` as three small callouts around it.
+Use the stress-test figure full width. Put a red callout near the left plot:
+`V4: 13.97% at step 0 -> 93.51% at step 10`.
+Put a small gray boundary line at the bottom:
+`Negative-but-informative: not a successful method yet; still useful for identifying the failure bridge.`
 
 Speaker logic:
-结尾要像 research update：讲清楚已经知道什么、不能 claim 什么、下一步怎么做。下一步不是普通 load balance，而是在 matched usage 下比较 common-aware initialization 是否改善 feature/residual alignment，并检查是否保留有用的 router-expert geometric coupling。
+结尾要像 research update：讲清楚 0615 的结果改变了什么。我们不能再把 common-filtered expert-spectrum linear init 当作 proposal 来讲，而要讲成一个 stress test：它确实改善第 0 步，但没有改善第 10 步。因此当前故事更强地指向 early-training amplification，需要后续审计 common-aligned winner 是否被 router update / hidden drift / gate-hidden interaction 继续放大。
+
+Key numbers to say:
+
+```text
+After removing top-1% high-frequency token ids:
+V0 random rank-1 load: 19.98% at step 0 -> 83.16% at step 10.
+V4 common-filtered spectrum: 13.97% at step 0 -> 93.51% at step 10.
+
+Late-layer average:
+V4 lowers A_interaction: 0.2795 -> 0.1543.
+But V4 worsens common-margin delta: 0.3878 -> 0.5203.
+```
 
 ---
 
@@ -496,6 +511,36 @@ Speaker logic:
 
 ---
 
+## Backup Slide C. Next decision after the 0615 stress test
+
+Use this only if asked what to do next.
+
+```text
+Do not promote V4 as a successful method.
+
+Next diagnostic:
+Does the initially common-aligned router winner receive reinforcing updates during steps 0-10?
+
+Measure:
+c_t = mean router input
+s_e(t) = w_e(t)^T c_t
+load_e(t) = top-1 load
+delta_w_e(t)^T c_t = router update along the common direction
+
+Decision:
+If winner projection grows with load, test router self-reinforcement.
+If not, shift to hidden drift / residual anisotropy / expert-output feedback.
+```
+
+Figure:
+
+![Next mechanism hypothesis](figures/s12_next_mechanism_hypothesis.png)
+
+Speaker logic:
+这页是问答用。正式汇报最后不主动把它讲成方法，只说下一步是最小 post-hoc audit。这里的关键是把“失败”转成下一步的最小 causal bridge：第 0 步 common-aligned winner 是否被前 10 步训练进一步放大。
+
+---
+
 ## Figure Manifest
 
 | Slide | File | Role |
@@ -515,7 +560,11 @@ Speaker logic:
 | 10 | `figures/s10_normal_max_load_trajectory.png` | Optional normal trajectory validation |
 | 11 | `figures/s11_freeze_split_key_numbers.png` | Latest freeze-split causal summary |
 | 11 | `figures/s11_replay_heatmap_common_margin.png` | Optional replay evidence |
-| 12 | `figures/s12_next_mechanism_hypothesis.png` | Proposed next mechanism |
+| 12 | `figures/s12_0615_spectrum_init_stress_test.png` | Latest 0615 stress-test result |
+| Backup | `figures/s12_0615_step10_common_margin_by_variant.png` | Optional detailed 0615 common-margin figure |
+| Backup | `figures/s12_0615_step10_raw_max_load_by_variant.png` | Optional detailed 0615 load figure |
+| Backup | `figures/s12_0615_replay_A_interaction_by_variant.png` | Optional detailed 0615 interaction figure |
+| Backup | `figures/s12_next_mechanism_hypothesis.png` | Next diagnostic mechanism |
 
 ## Suggested 12-Minute Timing
 

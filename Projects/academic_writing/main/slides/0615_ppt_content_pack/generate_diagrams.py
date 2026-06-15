@@ -232,6 +232,52 @@ def next_mechanism():
     save(fig, "s12_next_mechanism_hypothesis.png")
 
 
+def spectrum_init_stress_test():
+    variants = ["random", "common-filtered\nspectrum"]
+    step0_rank1 = [19.98, 13.97]
+    step10_rank1 = [83.16, 93.51]
+    cm_delta = [0.3878, 0.5203]
+    interaction = [0.2795, 0.1543]
+
+    fig, axes = plt.subplots(1, 2, figsize=(13.2, 7.2), gridspec_kw={"width_ratios": [1.15, 1]})
+    fig.suptitle("0615 stress test: better step-0 balance does not stop step-10 amplification",
+                 fontsize=20, weight="bold", color=COL["ink"], y=0.98)
+
+    ax = axes[0]
+    x = range(len(variants))
+    width = 0.34
+    ax.bar([i - width/2 for i in x], step0_rank1, width, label="step 0 rank-1 load", color=COL["cyan"])
+    ax.bar([i + width/2 for i in x], step10_rank1, width, label="step 10 rank-1 load", color=COL["red"])
+    ax.axhline(12.5, color=COL["muted"], linestyle="--", linewidth=1.2, label="uniform for 8 experts")
+    ax.set_xticks(list(x))
+    ax.set_xticklabels(variants)
+    ax.set_ylabel("Top expert load after removing top-1% high-frequency tokens (%)")
+    ax.set_ylim(0, 100)
+    ax.grid(axis="y", alpha=0.25)
+    ax.legend(loc="upper left", frameon=True, fontsize=9)
+    ax.text(0.05, 0.88, "V4 starts closer to uniform,\nbut concentrates more by step 10.",
+            transform=ax.transAxes, fontsize=11, color=COL["muted"], va="top")
+
+    ax2 = axes[1]
+    x2 = range(len(variants))
+    ax2.bar([i - width/2 for i in x2], cm_delta, width, label="common-margin delta", color=COL["purple"])
+    ax2.bar([i + width/2 for i in x2], interaction, width, label="A interaction", color=COL["orange"])
+    ax2.set_xticks(list(x2))
+    ax2.set_xticklabels(variants)
+    ax2.set_ylabel("Late-layer mean")
+    ax2.set_ylim(0, 0.65)
+    ax2.grid(axis="y", alpha=0.25)
+    ax2.legend(loc="upper left", frameon=True, fontsize=9)
+    ax2.text(0.04, 0.88, "Partial win: lower interaction.\nFailure: higher common-margin delta.",
+             transform=ax2.transAxes, fontsize=11, color=COL["muted"], va="top")
+
+    for a in axes:
+        for s in ["top", "right"]:
+            a.spines[s].set_visible(False)
+
+    save(fig, "s12_0615_spectrum_init_stress_test.png")
+
+
 if __name__ == "__main__":
     background_gap()
     evidence_storyline()
@@ -239,3 +285,4 @@ if __name__ == "__main__":
     position_source_simple()
     freeze_split_bar()
     next_mechanism()
+    spectrum_init_stress_test()
