@@ -41,7 +41,7 @@ My uncertain points:
 
 - Expert 的“谱方向”到底取自完整局部 Jacobian，还是取自 FFN 的某个有效线性近似？
 - common expert 是真实训练中的额外 expert，还是只作为初始化前的 common-subspace removal / routing oracle？
-- 当前 top-1 linear router 能否表达 $||P_{S_e}h||^2$ 这种子空间投影分数，还是需要先做 oracle audit 再压缩成线性权重？
+- 当前 top-1 linear router 能否表达 $\|P_{S_e}h\|^2$ 这种子空间投影分数，还是需要先做 oracle audit 再压缩成线性权重？
 
 接下来需要讨论：expert 的谱方向到底怎么定义、common expert 是真实结构还是诊断构造、以及 top-1 linear router 能不能表达子空间投影分数。以及，除了导师这种初始化方式之外，是否存在对于初始表征空间 + 专家初始化方式相结合的初始化
 
@@ -70,29 +70,29 @@ Candidate physical priors I am not sure about:
 
 父问题：为什么 random-init sparse top-1 MoE router 不能稳定进入 useful expert specialization？
 
-当前子问题：导师提出 router 初始化应利用 expert 初始化的高奇异值方向；补充说明要求先处理 common feature，再用长尾 residual feature 做 expert 分发。
+当前子问题：能否把导师提出的 expert-spectrum routing intuition 变成可计算的 router initialization，并判断它是否真的优于 random init？
 
-核心假设：expert 初始谱含有可用的 label-free routing prior，但 raw top-spectrum 会被 common direction 污染；common-filtered residual-spectrum routing 才可能减少早期 common amplification。
+核心假设更新：expert spectrum 里有弱 residual utility signal，但把 spectrum score 压成 linear top-1 router 后，大部分 oracle assignment 结构丢失。common-filtered spectrum 只能降低 replay interaction，不能解决 step-10 common-margin 和负载集中。
 
-最小测试：先做 expert-spectrum / common-overlap audit，再比较 random、raw-spectrum、common-filtered spectrum 初始化在 step 0--10 的 common-margin、load、replay interaction 和 utility correlation。
+已完成最小测试：4-GPU ACP full run，6 个 initialization variants，3 seeds，0--300 steps，完整 replay / utility / exact gate-input audit。
 
-当前边界：这是 computation + implementation 构造草稿，不是已批准实验协议；只针对 small random-init top-1 MoE early training。
+当前边界：这是 negative-but-informative result。它不否定 expert spectrum 在更强 router / oracle gate 下可能有用，但不支持当前 linear router initialization。
 
-下一步决策：先确定可实现的 expert-spectrum score：oracle 子空间投影，还是可写入 linear router 的初始化权重。
+下一步决策：不要把 V4 common-filtered spectrum linear init 当作成功方法继续推进。若导师追问，应做 computation-vs-implementation split：residual-spectrum oracle gate 或 stronger fitted classifier bridge vs 当前 linear row-mean bridge。
 
 ## 1. Problem Definition
 
 Parent problem:
-Why does random-initialized sparse top-1 MoE fail to enter stable, useful expert specialization before early route concentration appears?
+Why do random-initialized sparse top-1 MoE routers fail to enter stable and useful expert specialization before early route concentration appears?
 
 Sharper subproblem:
-Can expert initialization provide a label-free routing prior if common features are removed or isolated before residual expert-spectrum dispatch?
+Can expert initialization and initial router-input geometry jointly provide a label-free router initialization, after common directions are removed or isolated?
 
 Decision question:
-Does a common-filtered expert-spectrum routing initialization reduce early common-logit amplification compared with random and raw-spectrum initialization, while preserving loss and showing expert-specific utility signal?
+Does a common-filtered expert-spectrum / representation initialization reduce early common-logit amplification and improve specialization or utility alignment compared with random and raw-spectrum initialization?
 
 Not in scope:
-Pretrained large MoEs, final expert utility specialization, top-2 routing, load-balance loss as the solution, and claims that expert singular vectors are true semantic features.
+Pretrained large MoEs, final expert utility specialization, load-balance loss as the solution, top-2 routing, and claims that expert singular vectors are true semantic features.
 
 ## 2. Physical Prior
 
@@ -100,28 +100,28 @@ P1:
 Randomly initialized experts are not functionally identical because their input-side high-gain subspaces differ.
 
 Meaning:
-Even under Gaussian initialization, each expert may have a small set of singular directions where input perturbations produce larger output changes.
+Even with Gaussian initialization, each expert may respond more strongly to some input directions than others.
 
 Could be wrong if:
-Expert high-gain subspaces are statistically indistinguishable, unstable, or do not predict forced-routing utility.
+Expert high-gain subspaces are indistinguishable, unstable, or unrelated to forced-routing utility.
 
 P2:
-Raw top singular directions are vulnerable to common-feature capture.
+Raw top-spectrum directions are vulnerable to common-feature capture.
 
 Meaning:
-The largest-energy directions may align with batch-common, position-common, or frequency-common components instead of residual feature differences.
+The largest expert-sensitive directions may align with common, position, frequency, or high-energy directions rather than useful residual differences.
 
 Could be wrong if:
-Top expert-spectrum directions have low overlap with common subspaces and raw-spectrum routing does not increase common-margin or route concentration.
+Top-spectrum directions have low overlap with common subspaces and raw-spectrum routing does not increase common-margin or route concentration.
 
 P3:
-Useful spectrum-based routing should first isolate common components, then dispatch residual token features to compatible expert high-gain subspaces.
+Useful early routing should align residual token representations with compatible expert high-gain directions, not merely balance load.
 
 Meaning:
-A common expert or common-subspace removal handles shared directions; the remaining residual is routed by expert-specific spectrum alignment.
+A good initialization should reduce common-driven early amplification while preserving loss and improving feature / utility alignment.
 
 Could be wrong if:
-Common filtering destroys the routing signal, worsens loss, or fails to reduce A06_02-style common-logit amplification.
+Common filtering destroys useful routing signal, worsens loss, or only improves load balance without improving specialization or utility correlation.
 
 ## 3. Hypothesis
 
@@ -129,154 +129,196 @@ H1:
 Expert high-gain input subspaces contain non-random routing information at initialization.
 
 Supported if:
-Spectrum scores predict forced-routing utility or reduce loss/gradient mismatch relative to random assignment.
+Expert spectrum scores predict forced-routing utility or produce non-random residual assignment better than random routing.
 
 Weakened if:
-Spectrum scores are uncorrelated with forced-routing utility and do not improve any early specialization or stability metric.
+Spectrum scores are uncorrelated with forced-routing utility and do not improve early specialization or stability metrics.
 
 H2:
 Raw expert-spectrum routing is vulnerable to common-direction capture.
 
 Supported if:
-Raw top-spectrum directions overlap strongly with common subspaces and raw-spectrum routing increases common_margin, raw_max_load, or A_interaction.
+Raw top-spectrum directions overlap strongly with common subspaces and raw-spectrum initialization increases `common_margin`, `raw_max_load`, or `A_interaction`.
 
 Weakened if:
-Raw-spectrum routing has low common overlap and reduces early common-logit amplification without extra filtering.
+Raw-spectrum initialization has low common overlap and reduces early common-logit amplification without filtering.
 
 H3:
-Common-filtered expert-spectrum routing is the more plausible initialization method.
+Common-filtered spectrum / representation initialization is the more plausible method.
 
 Supported if:
-Filtering or a low-rank common expert lowers step-10 common_margin_delta and gate-hidden interaction while preserving LM loss and effective experts.
+Common-filtered initialization lowers step-10 `common_margin_delta` and `A_interaction` while preserving LM loss, effective experts, and specialization / utility signal.
 
 Weakened if:
-Filtered routing only improves load balance, fails utility correlation, or has the same A06_02 common amplification as random routing.
+Filtered initialization only improves load balance, fails utility correlation, or reproduces the same early amplification as random init.
 
 ## 4. Minimal Mathematical Model
 
 Objects:
-For expert $e$, let $E_e(h)$ be its FFN function and $J_e(h_0)=\partial E_e(h)/\partial h|_{h_0}$ its input-side local linearization. Let $S_e=\mathrm{span}(V_{e,1:k})$ be the top-$k$ right singular subspace of $J_e(h_0)\approx U_e\Sigma_eV_e^\top$. Let $C$ be the common subspace estimated from router inputs.
+For expert $e$, let $E_e(h)$ be the expert FFN function. Let $J_e(h_\*)=\partial E_e(h)/\partial h|_{h_\*}$ be its input-side local linearization. Let $S_e=\mathrm{span}(V_{e,1:k})$ be the top-$k$ right singular subspace of $J_e(h_\*)\approx U_e\Sigma_e V_e^\top$. Let $C$ be the common subspace estimated from initial router inputs $H_0$.
 
 Core decomposition:
-Token input is split as $h=c+r$, where $c=P_C h$ is common and $r=(I-P_C)h$ is residual. Candidate scores are:
+For token input $h_i$,
 
 $$
-s_e^{raw}(h)=||P_{S_e}h||^2,\qquad
-s_e^{res}(h)=||P_{S_e}(I-P_C)h||^2.
+h_i = c_i + r_i,\qquad
+c_i = P_C h_i,\qquad
+r_i = (I - P_C)h_i.
 $$
+
+Candidate spectrum scores:
+
+$$
+s_e^{raw}(h_i)=\|P_{S_e}h_i\|^2
+$$
+
+$$
+s_e^{res}(h_i)=\|P_{S_e}(I-P_C)h_i\|^2
+$$
+
+Implementation bridge:
+Use the oracle score $s_e^{res}$ to assign audit tokens to experts, then compress that assignment into linear router rows:
+
+$$
+A_e=\{i:e=\arg\max_j s_j^{res}(h_i)\}
+$$
+
+$$
+w_e^{init}\propto \mathrm{mean}_{i\in A_e}r_i
+$$
+
+or fit a small ridge / linear classifier from $r_i$ to the oracle assignment.
 
 Mechanism relation:
-If $S_e$ overlaps mainly with $C$, raw spectrum routing amplifies common-score spread. If $S_e$ captures residual directions after $P_C$ removal, routing can reduce common-logit amplification and improve expert-specific assignment.
+If $S_e$ mainly overlaps with $C$, raw spectrum routing amplifies common directions. If $S_e$ captures residual directions after common removal, linearized residual-spectrum initialization may reduce early common amplification.
 
 Observable metrics:
-`overlap(S_e,C)`, `spectral_score`, forced-routing utility correlation, `common_margin_delta`, `raw_max_load`, `centered_max_load`, `effective_experts`, LM loss, and A06_02 replay terms `A_gate`, `A_hidden`, `A_interaction`.
+`overlap(S_e, C)`, inter-expert subspace diversity, oracle spectral load, forced-routing utility correlation, `common_margin_delta`, `raw_max_load`, `effective_experts`, LM loss, `slot_NMI`, and `A_interaction`.
 
 Falsifier:
-If raw and filtered spectrum scores do not predict utility and do not change step-10 common-margin or replay interaction relative to random init, expert-spectrum initialization is not a supported mechanism in this setting.
+If raw and filtered spectrum scores neither predict utility nor change step-10 common-margin / `A_interaction` relative to random init, expert-spectrum initialization is not supported in this setting.
 
 ## 5. Minimal Tests
 
-Experiment:
-Spectral overlap and implementability audit.
+Experiment 1:
+Expert-spectrum / common-overlap / utility audit.
 
 Question:
-Are expert top singular subspaces distinct, and do they overlap more with common or residual directions?
+Do expert top high-gain directions differ across experts, and do they align more with common directions, residual directions, or forced-routing utility?
 
 Intervention:
-Compute top-$k$ input-side singular subspaces for each expert; compare them to common subspaces from router inputs, with $k$ around the proposed top 1% direction budget.
+Compute top-$k$ input-side expert subspaces $S_e$; compare $S_e$ with common subspace $C$ and residual activations $R=(I-P_C)H_0$. Also measure forced-routing utility on a fixed audit batch.
 
 Primary metric:
-`overlap(S_e,C)` and inter-expert subspace diversity.
+`overlap(S_e, C)`, inter-expert subspace diversity, activation $\|P_{S_e}r_i\|^2$, and correlation between $s_e^{res}$ and forced-routing utility.
 
 Supports:
-Experts have distinct high-gain subspaces and common-filtering changes the usable residual alignment.
+Expert spectrum contains distinct residual / utility signal.
 
 Weakens:
-Subspaces are indistinguishable, dominated by common directions, or too expensive/ambiguous to compute reproducibly.
+Top spectrum is common-dominated, indistinguishable across experts, or unrelated to utility.
 
-Experiment:
-Router initialization comparison.
+Experiment 2:
+Initialization implementation comparison.
 
 Question:
-Does common-filtered spectrum initialization change the A06_02 early amplification path?
+Can we turn expert-spectrum and initial representation geometry into a valid linear router initialization?
 
 Intervention:
-Compare random init, raw-spectrum init, and common-filtered spectrum init or common-expert-plus-residual-spectrum routing on the same DCLM path-check setup.
+Construct these initializations on the same model and audit batch:
+1. random_init;
+2. representation_residual_init;
+3. raw_spectrum_init;
+4. common_filtered_spectrum_init;
+5. hybrid_spectrum_to_linear_init.
 
 Primary metric:
-Layer 3--5 step0->10 `common_margin_delta` and replay `A_interaction`.
+step-0 raw_max_load, centered_max_load, common_margin, empty expert count, oracle-to-linear agreement, and initialization reconstruction / classifier accuracy.
 
 Supports:
-Common-filtered spectrum init lowers common-margin amplification and A_interaction without worsening LM loss.
+A method produces sane step-0 routing without common dominance or empty-expert failure.
 
 Weakens:
-It only changes raw load, worsens loss, or reproduces the same common-margin spike as random init.
+A method collapses at step 0, cannot be represented by a linear router, or only changes load through common bias.
 
-Experiment:
-Forced-routing utility correlation.
+Experiment 3:
+Early-training comparison.
 
 Question:
-Does the spectrum score predict whether a token benefits from expert $e$?
+Does the initialization change the early training path, especially the step-10 common amplification and gate-hidden interaction?
 
 Intervention:
-For a fixed audit batch, force candidate tokens through each expert or compare output/loss deltas under controlled routing.
+Train selected initialization variants for 0--300 steps under the same top-1 MoE setup, with exact gate-input audit and cross-checkpoint replay.
 
 Primary metric:
-Correlation between `s_e^{raw}` / `s_e^{res}` and forced-routing utility.
+For synthetic: `slot_NMI`, per-slot purity, accuracy, `common_margin`, `slot_margin`.
+For real DCLM: `common_margin_delta`, `raw_max_load_delta`, `effective_experts`, LM loss, and `A_interaction`.
 
 Supports:
-Filtered spectrum score predicts utility better than raw score and random assignment.
+Common-filtered or hybrid initialization lowers step-10 common amplification / `A_interaction` while preserving loss and improving specialization or utility alignment.
 
 Weakens:
-Neither score predicts utility, or raw/common score dominates the apparent benefit.
+It only improves load balance, worsens loss, or follows the same early amplification path as random init.
 
 ## 6. Falsifiable Outcomes
 
 Supported:
-Expert spectrum is distinct, common-filtered spectrum reduces step-10 common amplification and A_interaction, and filtered spectrum score predicts forced-routing utility.
+Expert high-gain subspaces are distinct; common-filtered spectrum scores predict forced-routing utility; and common-filtered / hybrid initialization reduces early common amplification or improves slot specialization without hurting loss.
 
 Weakened:
-Top spectrum is mostly common, filtered routing fails to reduce A06_02-style amplification, or spectrum score has no utility correlation.
+Top spectrum is mostly common, raw and filtered initialization do not improve utility alignment, or all initialized variants reproduce the same step-10 amplification as random init.
 
 Insufficient evidence:
-Only load balance is reported; expert spectrum is approximated without a checked implementation contract; no common-overlap audit exists; no replay decomposition is run; or only one seed/layer is inspected.
+Only load balance is reported; no common-overlap audit exists; forced-routing utility is not measured; exact gate input is not audited; or only one seed / layer is tested.
 
 ## 7. Current Evidence
 
 Observation:
-Advisor explicitly proposed that router initialization should use expert initialization's large singular directions, with a later clarification that common feature directions should be removed or handled by a common expert before residual dispatch.
+The advisor proposed that router initialization should use the large singular directions of initialized experts, because an ideal router should dispatch inputs according to their compatibility with expert high-gain directions.
 
 Interpretation:
-The method is not merely random router replacement; it is a computation/implementation construction: common handling plus residual expert-spectrum alignment.
+This motivates expert-spectrum-conditioned initialization, but it does not by itself prove that top singular directions are useful features.
 
 Boundary:
-This is an advisor intuition and construction target, not yet experimental evidence that the method works.
+The advisor's idea is a computation target, not yet experimental evidence.
 
 Observation:
-A06_02 shows the real DCLM step-10 spike is not gate-only. In layer 5, normal `common_margin_delta=1.2760`, `A_gate=-0.0137`, `A_hidden=0.4858`, and `A_interaction=0.8038`.
+In the minimal synthetic setting, slot information exists and slot-specialization is reachable, but random routing collapses. Common-logit cancellation raises slot_NMI from 0.080 to 0.896 / 0.963 while preserving accuracy.
 
 Interpretation:
-The new initialization should be judged by whether it changes hidden/gate interaction and common amplification, not merely by initial load balance.
+Common control is not optional. Any spectrum-based routing must be tested against common-direction capture.
 
 Boundary:
-A06_02 does not test expert-spectrum initialization, common expert routing, or forced-routing utility.
+This evidence is from controlled synthetic data and does not directly prove real-text behavior.
 
 Observation:
-A06_02 freeze split shows raw load concentration can survive fixed gate and frozen experts, while full common-margin amplification needs hidden-producing path and gate-hidden interaction.
+In real DCLM early training, step-10 late-layer concentration is not gate-only. Layer-5 $A_{actual}=1.2760$, $A_{gate}=-0.0137$, $A_{hidden}=0.4858$, and $A_{interaction}=0.8038$. Freeze split shows expert updates amplify common-margin, while raw load can survive without expert updates.
 
 Interpretation:
-Common-filtered spectrum routing may help only if it changes the early residual path that feeds gate-hidden interaction.
+Anchor1 should evaluate whether initialization changes early hidden-gate interaction, not only step-0 load.
 
 Boundary:
-It cannot yet claim to solve all raw route concentration, residual anisotropy, position structure, or forward expert-output feedback.
+This does not prove expert-spectrum initialization works; it tells us which early metrics to inspect.
+
+Observation:
+A06_01 full 4-GPU ACP run completed successfully with 18 training runs, 13068 replay rows, 72 forced-utility rows, and exact gate reconstruction error 0.0. In late layers 3--5, V4 common-filtered spectrum reduced `A_interaction` to 0.1543 compared with V0 random at 0.2795, but worsened the primary early-training metrics: `common_margin_delta=0.5203` versus 0.3878, step-10 `raw_max_load=0.9374` versus 0.8344, and effective experts 1.2177 versus 1.5636.
+
+Interpretation:
+Common filtering changes the replay interaction mechanism but does not prevent early top-1 route concentration. The direct linear initialization is therefore not a successful method in this setting.
+
+Boundary:
+The residual-spectrum oracle assignment is balanced, but residual-oracle-to-linear agreement remains low: V3 0.2038, V4 0.2157, V5 0.2465. This points to the linear-router implementation bridge as a likely bottleneck. The minimal MoE source also still includes a shared expert path even though the protocol intended `use_shared_expert=false`.
 
 ## 8. Claim Boundary And Next Decision
 
-Can claim:
-The current method idea is a concrete label-free routing-construction hypothesis: isolate common directions, then route residual token features by expert high-gain input subspace alignment.
+Can claim now:
+Expert spectrum contains a weak residual utility signal, and common filtering can reduce replay interaction. However, common-filtered expert-spectrum **linear** initialization does not reduce the primary step-10 common-margin spike or top-1 load concentration in this random-init DCLM top-1 MoE setting.
 
-Cannot claim:
-We cannot yet claim that expert top singular directions are useful features, that common filtering is sufficient, or that this solves MoE collapse.
+Cannot claim now:
+Expert top singular directions are true features; expert initialization sufficiently covers the representation space; spectrum initialization solves collapse; expert spectrum is useless in general; or the result transfers to pretrained / large / top-2 or top-4 MoEs.
 
 Next decision:
-Decide the first implementable score: run an oracle subspace-score audit first, or immediately compress expert subspaces into linear router initialization weights.
+Do not promote V4 common-filtered expert-spectrum linear initialization as a successful method.
+
+Decision after results:
+If this direction must be pursued, run only one narrow follow-up: compare residual-spectrum oracle gate or a stronger fitted classifier bridge against the current linear row-mean bridge for steps 0--10. If the oracle/fitted bridge also fails to reduce `common_margin_delta` and `raw_max_load`, park expert-spectrum routing for this setting.
