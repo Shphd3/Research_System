@@ -19,6 +19,7 @@ plt.rcParams.update({
 COL = {
     "ink": "#17202a",
     "muted": "#6b7280",
+    "magenta": "#881E55",
     "blue": "#2563eb",
     "cyan": "#0891b2",
     "green": "#16a34a",
@@ -63,6 +64,25 @@ def save(fig, name):
     plt.close(fig)
 
 
+def save_transparent(fig, name):
+    fig.savefig(OUT / name, bbox_inches="tight", facecolor="none", transparent=True, pad_inches=0.02)
+    plt.close(fig)
+
+
+def formula_images():
+    fig, ax = plt.subplots(figsize=(4.2, 0.72))
+    ax.axis("off")
+    ax.text(0.5, 0.5, r"$h_i = c + r_i$",
+            ha="center", va="center", fontsize=34, color=COL["magenta"])
+    save_transparent(fig, "formula_hidden_decomposition.png")
+
+    fig, ax = plt.subplots(figsize=(6.6, 0.78))
+    ax.axis("off")
+    ax.text(0.5, 0.5, r"$z_{i,e}=w_e^{\top}h_i=w_e^{\top}c+w_e^{\top}r_i$",
+            ha="center", va="center", fontsize=30, color=COL["ink"])
+    save_transparent(fig, "formula_gate_score_decomposition.png")
+
+
 def background_gap():
     fig, ax = plt.subplots(figsize=(13.2, 7.2))
     clean(ax)
@@ -105,7 +125,7 @@ def evidence_storyline():
     items = [
         ("1. Consistency is not enough", "High route consistency can hide collapse", COL["red"]),
         ("2. Specialization is reachable", "Slot-aware init enters a better basin", COL["green"]),
-        ("3. Common-logit bias", "$w_e^T c$ acts as expert-specific bias", COL["blue"]),
+        ("3. Common-logit bias", "$w_e^{\\top}c$ acts as expert-specific bias", COL["blue"]),
         ("4. Real-text update", "Step-0 bias exists; step-10 amplification dominates", COL["orange"]),
         ("5. Next mechanism", "Common-filtered initialization + anti-lock-in routing", COL["purple"]),
     ]
@@ -134,18 +154,18 @@ def common_logit_model():
             fontsize=21, weight="bold", color=COL["ink"])
 
     box(ax, (0.06, 0.62), 0.20, 0.18, "Router input", "$h_i = c + r_i$", fc="#eff6ff", ec=COL["blue"])
-    box(ax, (0.40, 0.62), 0.20, 0.18, "Gate score", "$z_{i,e}=w_e^T h_i$", fc="#ecfeff", ec=COL["cyan"])
-    box(ax, (0.74, 0.62), 0.20, 0.18, "Top-1 route", "$e_i=argmax_e z_{i,e}$", fc="#fff7ed", ec=COL["orange"])
+    box(ax, (0.40, 0.62), 0.20, 0.18, "Gate score", "$z_{i,e}=w_e^{\\top}h_i$", fc="#ecfeff", ec=COL["cyan"])
+    box(ax, (0.74, 0.62), 0.20, 0.18, "Top-1 route", "$e_i=\\mathrm{argmax}_e\\,z_{i,e}$", fc="#fff7ed", ec=COL["orange"])
     arrow(ax, (0.27, 0.71), (0.39, 0.71), COL["muted"])
     arrow(ax, (0.61, 0.71), (0.73, 0.71), COL["muted"])
 
-    ax.text(0.08, 0.45, "$z_{i,e}=w_e^T c + w_e^T r_i$",
+    ax.text(0.08, 0.45, "$z_{i,e}=w_e^{\\top}c + w_e^{\\top}r_i$",
             fontsize=28, color=COL["ink"])
     ax.text(0.12, 0.38, "common score", fontsize=12, color=COL["blue"], weight="bold")
     ax.text(0.40, 0.38, "residual / feature score", fontsize=12, color=COL["green"], weight="bold")
 
     box(ax, (0.08, 0.17), 0.38, 0.17, "Why it biases top-1",
-        "$w_e^T c$ does not depend on token feature,\n"
+        "$w_e^{\\top}c$ does not depend on token feature,\n"
         "but differs across experts.",
         fc="#fef2f2", ec=COL["red"])
     box(ax, (0.54, 0.17), 0.38, 0.17, "Design implication",
@@ -240,7 +260,7 @@ def spectrum_init_stress_test():
     interaction = [0.2795, 0.1543]
 
     fig, axes = plt.subplots(1, 2, figsize=(13.2, 7.2), gridspec_kw={"width_ratios": [1.15, 1]})
-    fig.suptitle("0615 stress test: better step-0 balance does not stop step-10 amplification",
+    fig.suptitle("Expert-spectrum stress test: better step-0 balance does not stop step-10 amplification",
                  fontsize=20, weight="bold", color=COL["ink"], y=0.98)
 
     ax = axes[0]
@@ -279,6 +299,7 @@ def spectrum_init_stress_test():
 
 
 if __name__ == "__main__":
+    formula_images()
     background_gap()
     evidence_storyline()
     common_logit_model()
