@@ -1,6 +1,6 @@
 # Protocol: A06_E01_2x2_expert_geometry_metric_audit
 
-Primary anchor: `../../problem_anchors/06_2x2_expert_geometry_gate_anchor.md`  
+Primary anchor: `06_2x2_expert_geometry_gate_anchor.md`  
 Anchor decision question: In the minimal $2\times2$ setting, which expert-initialization-induced compatibility metric can define a non-degenerate static oracle routing rule that supports both balanced load and metric-defined specialization under uniform input?  
 Experiment role: First-stage static oracle metric audit for the 2D expert-geometry gate. No training is included.
 

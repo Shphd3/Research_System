@@ -1,6 +1,6 @@
 # Summary: A06_E01_2x2_expert_geometry_metric_audit
 
-Primary anchor: `../../problem_anchors/06_2x2_expert_geometry_gate_anchor.md`  
+Primary anchor: `06_2x2_expert_geometry_gate_anchor.md`  
 Protocol: `protocol.md`
 
 ## Purpose

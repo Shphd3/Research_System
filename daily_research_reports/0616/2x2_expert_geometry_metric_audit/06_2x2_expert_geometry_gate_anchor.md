@@ -317,9 +317,9 @@ This supports M4 only as a static oracle compatibility metric. It does not show 
 
 Evidence links:
 
-- `Projects/from-attention-to-search/main/experiments/A06_E01_2x2_expert_geometry_metric_audit/summary.md`
-- `Projects/from-attention-to-search/main/experiments/A06_E01_2x2_expert_geometry_metric_audit/detailed.md`
-- `Projects/from-attention-to-search/main/experiments/A06_E01_2x2_expert_geometry_metric_audit/tables/metric_decision_summary.csv`
+- `summary.md`
+- `detailed.md`
+- `tables/metric_decision_summary.csv`
 
 Observation:
 M3 top-1 projection also succeeds in anisotropic conditions but has smaller margins than M4. In C5, M3 top-1 mean margin is 0.6366 versus M4 mean margin 2.3873.
@@ -332,7 +332,7 @@ It ignores singular-value scale and secondary input directions.
 
 Evidence links:
 
-- `Projects/from-attention-to-search/main/experiments/A06_E01_2x2_expert_geometry_metric_audit/tables/aggregate_metric_summary.csv`
+- `tables/aggregate_metric_summary.csv`
 
 Observation:
 M1/M2 prototype metrics route cleanly in many non-degenerate cases but have substantial sign sensitivity: mean sign sensitivity is 0.5333 for M1 and 0.2633 for M2.
@@ -345,7 +345,7 @@ This does not rule out a future prototype metric if a principled sign convention
 
 Evidence links:
 
-- `Projects/from-attention-to-search/main/experiments/A06_E01_2x2_expert_geometry_metric_audit/tables/sign_sensitivity.csv`
+- `tables/sign_sensitivity.csv`
 
 Observation:
 Near-identical experts expose a metric caveat. M4 can pass the binary `metric_validity` criterion after calibration, but its C4 natural mean margin is only 0.0226.
@@ -358,7 +358,7 @@ This is a metric-read caveat, not a falsification of M4 in anisotropic cases.
 
 Evidence links:
 
-- `Projects/from-attention-to-search/main/experiments/A06_E01_2x2_expert_geometry_metric_audit/detailed.md`
+- `detailed.md`
 
 ## 8. Claim Boundary And Next Decision
 

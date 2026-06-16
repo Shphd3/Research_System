@@ -1,6 +1,6 @@
 # Detailed: A06_E01_2x2_expert_geometry_metric_audit
 
-Primary anchor: `../../problem_anchors/06_2x2_expert_geometry_gate_anchor.md`  
+Primary anchor: `06_2x2_expert_geometry_gate_anchor.md`  
 Protocol: `protocol.md`  
 Summary: `summary.md`
 
@@ -330,7 +330,7 @@ Compare a quadratic M4 oracle, a top-1 projection approximation, and the best li
 ## 12. Links And Artifact Map
 
 anchor:
-`../../problem_anchors/06_2x2_expert_geometry_gate_anchor.md`
+`06_2x2_expert_geometry_gate_anchor.md`
 
 protocol:
 `protocol.md`
