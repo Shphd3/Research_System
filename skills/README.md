@@ -17,9 +17,9 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `research-progress-core` | Governing research paradigm: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
 | `research-mainline` | Maintain compact project anchors, result records, and project organization; graph, root sync, external collaborator sync, handoff, commit, and push actions require explicit user request. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
-| `problem-anchor-writer` | Write compact anchor decision cards with one decision question, one core mathematical model, primary metrics, falsifiable outcomes, evidence, boundary, and next decision. |
-| `experiment-card-writer` | Write operational experiment execution plans from anchors. |
-| `handoff-report-writer` | Package existing anchor, summary, detailed, report card, figures, and tables for meeting/collaborator/web handoff. |
+| `problem-anchor-writer` | Write anchor design documents with one decision question, physical priors, math, computational realization, falsifiable tests, evidence, boundary, and next decision. |
+| `experiment-card-writer` | Write `protocol.md`, `summary.md`, and `detailed.md` from anchors. |
+| `handoff-report-writer` | Package existing anchor, protocol, summary, detailed, figures, and tables for meeting/collaborator/web handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
@@ -32,8 +32,8 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 |---|---|---|---|
 | Research paradigm | `research-progress-core` | What counts as research progress: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
-| Anchor reasoning | `problem-anchor-writer` | Compact decision card: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, minimal tests, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
-| Execution plan | `experiment-card-writer` | Concrete run plan from an anchor. | Separate purpose cards. |
+| Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
+| Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |
 | External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
@@ -53,7 +53,7 @@ artifact writers or local adapters.
 Canonical research artifacts are written in English by default. Chinese
 companion versions are allowed when useful; name them with `_cn` before the
 extension, for example `<anchor_id>_cn.md`, `summary_cn.md`,
-`detailed_cn.md`, or `05_report_card_cn.md`. The English file is the source of
+`protocol_cn.md`, `summary_cn.md`, or `detailed_cn.md`. The English file is the source of
 truth unless the user explicitly says otherwise. Conversation with the user may
 remain Chinese-first for explanation.
 
@@ -67,20 +67,24 @@ physical prior -> falsifiable hypothesis -> operational definition -> minimal te
 Default project artifact loop:
 
 ```text
-anchor -> protocol_for_approval.md -> execution plan -> summary.md
--> detailed.md -> anchor update
+anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
 Root sync, external collaborator repo sync, handoff reports, graph edits,
 commits, and pushes are explicit follow-up actions only.
 
-`summary.md` is required. It is the first post-result reading path and must
-state the purpose, hypothesis or question, conclusion, key evidence, claim
-boundary, and next decision.
+`protocol.md` is required before implementation or running. It is the approved
+experiment design and replaces the old protocol/execution-plan split.
 
-`detailed.md` is required. It is the complete experiment record. It must preserve the full
-setup, conditions, seeds, commands, job ids, curated tables, important figures,
-artifact map, failed or partial runs when relevant, and the evidence walkthrough.
+`summary.md` is required. It is the first post-result reading path and must
+state the purpose, exact setup, primary metric, conclusion, key evidence, claim
+boundary, and next decision. It must explain central figures using the
+visualization-results standard.
+
+`detailed.md` is required. It is the complete experiment record. It must
+preserve the full setup, conditions, seeds, commands, job ids, curated tables,
+important figures, visualization results, artifact map, failed or partial runs
+when relevant, and the evidence walkthrough.
 
 After results exist, the original anchor must be backfilled with:
 
@@ -91,19 +95,19 @@ Next Step
 Result Documents
 ```
 
-The anchor should link the experiment `summary.md`, `detailed.md`, key figures,
-and any explicitly requested report card or handoff report. If the project uses
+The anchor should link the experiment `protocol.md`, `summary.md`,
+`detailed.md`, and key figures. If the project uses
 root anchor copies, update the root copy only when the user explicitly requests
 root sync, then verify that it matches the source anchor.
 
 Anchors belong in the project mainline's `problem_anchors/` directory;
-execution plans and result evidence belong in `experiments/`.
+protocols and result evidence belong in `experiments/`.
 
 Default one-to-one mapping:
 
 ```text
 Projects/<project>/<mainline>/problem_anchors/<anchor_id>.md
-Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
+Projects/<project>/main/experiments/<experiment_id>/protocol.md
 ```
 
 An experiment should correspond to one primary anchor. Multi-stage experiment
@@ -144,6 +148,7 @@ Anchors are decision cards, not reports. They must include:
 - physical priors;
 - falsifiable hypotheses;
 - one minimal mathematical model;
+- computational realization / implementation contract;
 - minimal tests with primary metrics;
 - supported / weakened / insufficient-evidence outcomes;
 - current evidence;
@@ -162,19 +167,9 @@ operationalization, and the next uncertainty to isolate.
   collaborator-facing sync of shareable results, boundaries, and handoffs.
 - `Projects/<project>/<worker>/sync/MMDD_topic/`: branch-local meeting or
   collaborator sync folder; use only when project sync is explicitly requested.
-  Meeting/advisor/sync report cards should reuse
-  `templates/reporting/report_card_template.md` and be named
-  `05_report_card.md` in daily or sync packages. Report cards are
-  advisor-facing evidence cards with fixed
-  sections: Source Files, Executive Summary, Research Process Update, Terms
-  Used Here, Key Figures, Current Claim, Claim Boundary, and Next Step. Keep
-  private advisor questions in daily or meeting notes. Handoff packages should
-  copy existing cards and result records, plus referenced figures/tables, and
-  add only a short README or index for navigation.
-- `daily_research_reports/MMDD/<topic>/05_report_card.md`:
-  default daily location for an advisor-facing report card. It is
-  created only when the experiment needs meeting/advisor discussion, and it is
-  derived from the anchor, `summary.md`, and `detailed.md`.
+  Handoff packages should copy existing anchor/protocol/result records, plus
+  referenced figures/tables, and add only a short README or index for
+  navigation.
 - `Projects/<project>/<worker>/docs/`: named material documents that help write
   anchors, result records, and handoff reports.
 - `graph.yaml`: default thin research graph. Use `research-graph-sop`; keep
@@ -184,19 +179,19 @@ operationalization, and the next uncertainty to isolate.
 - `<external_collaborator_repo>/<agreed_research_sync_path>/MMDD_topic/`:
   explicitly requested sync package for a senior student's or collaborator's
   GitHub repo. Include only a minimal curated package: copied anchor,
-  `summary.md`, `detailed.md`, optional `05_report_card.md`, and figures/tables
-  only when referenced by those synced documents. Do not include raw logs,
-  checkpoints, datasets, full result dirs, private notes, unrelated anchors,
-  code changes, configs, or execution plans unless explicitly requested.
+  `protocol.md`, `summary.md`, `detailed.md`, and figures/tables only when
+  referenced by those synced documents. Do not include raw logs, checkpoints,
+  datasets, full result dirs, private notes, unrelated anchors, code changes,
+  or uncurated configs unless explicitly requested.
 
 ## Reporting Figure Rule
 
 Experiment result reports and collaborator sync must include the most important
 report-ready figure(s) when figures exist and are central evidence. Copy them
-into the local `figures/` folder and embed them in `summary.md`, `detailed.md`,
-the optional report card, and the optional handoff `report.md` when applicable.
-Each figure needs a nearby sentence explaining what it supports. Do not make the
-reader infer the result from a dry metric list.
+into the local `figures/` folder and embed them in `summary.md` and
+`detailed.md`. Each central figure needs purpose, setup, how-to-read, observed
+result, take-home, and remaining uncertainty. Do not make the reader infer the
+result from a dry metric list.
 
 ## Formula Rule
 

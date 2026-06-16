@@ -21,25 +21,10 @@ templates/meeting/meeting_brief_template.md
 
 `meeting_brief.md` should start with the conclusion, then give only the minimum
 reason, claim boundary, and next decision. It is for meeting preparation, not a
-replacement for an experiment `summary.md`, `detailed.md`, or `05_report_card.md`.
+replacement for an experiment `summary.md` or `detailed.md`.
 
-For experiment results that need advisor-facing discussion, keep the fast
-reporting entry in:
-
-```text
-daily_research_reports/MMDD/<topic>/05_report_card.md
-```
-
-Use the shared template:
-
-```text
-templates/reporting/report_card_template.md
-```
-
-The reporting card should use the fixed `05_report_card.md` structure from the
-shared template. It should include or link the relevant anchor, `summary.md`,
-and `detailed.md`, embed important figures, and define necessary terms. Do not
-maintain a separate meeting-only report-card format.
+For experiment results that need advisor-facing discussion, make `summary.md`
+and `detailed.md` self-contained enough to read directly.
 
 Meeting documents should optimize for claim boundaries:
 

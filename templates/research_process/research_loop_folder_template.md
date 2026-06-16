@@ -1,16 +1,13 @@
-﻿# Research Loop Folder Template
+# Research Loop Folder Template
 
 Use this folder shape for a daily sandbox or a small mainline experiment.
 
 ```text
 00_handwrite_anchor.md
 <topic>_anchor.md
-01_protocol_for_approval.md
-02_execution_plan.md
-03_summary.md
-04_detailed.md
-05_report_card.md
-handoff_report.md
+protocol.md
+summary.md
+detailed.md
 figures/
 tables/
 notes/
@@ -19,32 +16,31 @@ archive/
 
 ## File Roles
 
-`00_handwrite_anchor.md`: rough user judgment. No execution details.
+`00_handwrite_anchor.md`: rough user judgment. This is the thinking surface
+before AI critique. It may be incomplete.
 
-`<topic>_anchor.md`: current research state. Use a subject-bearing name that
-matches the research question or mechanism. No raw logs or full implementation
-contract.
+`<topic>_anchor.md`: formal anchor and current-state research design. It is the
+project-local equivalent of research-exploration `docs/design.md`.
 
-`01_protocol_for_approval.md`: short pre-run audit surface. AI stops here until
-the user approves.
+`protocol.md`: experiment design and approval surface. It replaces the old
+two-file split between approval notes and implementation details. The AI stops
+here until the user approves implementation or running.
 
-`02_execution_plan.md`: approved implementation contract and stage audit.
+`summary.md`: first post-run reading path. It must include central
+visualization-result explanations for the main figures.
 
-`03_summary.md`: first post-run reading path. Short decision report.
+`detailed.md`: complete evidence ledger, protocol compliance audit,
+stage-level evidence, full visualization results, and artifact map.
 
-`04_detailed.md`: complete evidence ledger and artifact map.
+`figures/`: report-ready central figures embedded and explained in
+`summary.md` and `detailed.md`.
 
-`05_report_card.md`: optional. Meeting/advisor-facing report card derived from
-anchor, summary, and detailed. Use
-`templates/reporting/report_card_template.md` as the default
-template.
+`tables/`: curated small tables used by the result documents.
 
-`handoff_report.md`: optional legacy name. Prefer packaging existing files with
-a short README/index when the user explicitly asks for handoff.
-
-When a handoff report is explicitly requested, this anchor file should also
-serve as the local copy of the most important project anchor for that handoff.
-Keep the subject-bearing basename; do not rename it to generic `anchor.md`.
+`notes/`: private scratch notes that are not part of the main read path.
 
 `archive/`: old probes or superseded proxies kept for traceability, not for the
 main read path.
+
+Do not create separate implementation-plan files for new work. Legacy files may
+remain in old folders as historical evidence.

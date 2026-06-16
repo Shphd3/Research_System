@@ -1,4 +1,4 @@
-﻿---
+---
 name: remote-experiment-workflow
 description: Use when deciding or executing the remote/container/SCO/ACP workflow for experiments: local-vs-remote boundary, SSH/CCI preflight, cluster submission, monitoring, artifact maps, and curated sync updates.
 metadata:
@@ -7,39 +7,38 @@ metadata:
 
 # Remote Experiment Workflow
 
-Use this skill for the whole remote experiment loop. It replaces the old split
-between local workflow, remote session, and ACP runner skills.
+Use this skill for execution-environment logistics. It does not define the
+research question; the anchor and protocol do that.
 
 Core rule:
 
 ```text
-anchor -> protocol_for_approval.md -> execution plan
--> remote/container smoke or run -> curated result
--> summary/detailed -> anchor update
+anchor -> protocol.md -> remote/container smoke or run
+-> curated result artifacts -> summary.md / detailed.md -> anchor update
 ```
 
-Root sync, handoff reports, graph edits, commits, and pushes are explicit
+Root sync, handoff packages, graph edits, commits, and pushes are explicit
 follow-up actions only. External collaborator repo sync is also explicit. Do
 not perform any of these unless the user asks.
 
-Local `Research_System` owns graph, anchors, summary/detailed result records,
-optional handoff reports, daily cards, meeting material, claim boundaries, and next decisions. Remote/container
-workspaces own code edits, debug runs, full runs, result analysis, figures,
-tables, raw outputs, checkpoints, and logs.
+Local `Research_System` owns graph, anchors, protocols, summary/detailed result
+records, daily notes, meeting material, claim boundaries, and next decisions.
+Remote/container workspaces own code edits, debug runs, full runs, result
+analysis, figures, tables, raw outputs, checkpoints, and logs.
 
 ## Before Any Run
 
 Read:
 
 1. `PROJECTS.md`;
-2. active project `graph.yaml`;
-3. relevant anchor under the project mainline's `problem_anchors/` directory,
-   or the project anchor folder named by the user;
-4. the execution plan or runbook named by the user;
+2. the relevant graph or roadmap;
+3. the active anchor under `problem_anchors/`;
+4. `protocol.md` for the experiment;
 5. the experiment workspace `AGENTS.md`, if present.
 
 Do not start from scripts or metrics before the anchor states the decision
-question and the primary metric.
+question and the protocol states the primary metric, conditions, and
+success/failure/insufficient-evidence rules.
 
 ## Local / Remote Boundary
 
@@ -71,12 +70,6 @@ ps -eo pid,lstart,etime,cmd | grep -E '[s]leep 4h|setup_env'
 ```
 
 Do not overwrite remote work. Pull only after checking the working tree.
-
-For reusable local helpers, use:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File skills/remote-experiment-workflow/scripts/remote_sco_session.ps1 -HostKey h100-2gpu-10109 -Action print
-```
 
 ## SCO / ACP Submission
 
@@ -114,10 +107,10 @@ When the user explicitly asks for a commit, it may include:
 
 - code changes, configs, launch scripts, runbooks;
 - small curated tables or report-ready figures;
-- experiment `summary.md` / `detailed.md`;
+- experiment `protocol.md`, `summary.md`, and `detailed.md`;
 - anchor updates;
 - root sync anchor copies, only when root sync was explicitly requested;
-- handoff report drafts, only when handoff was explicitly requested;
+- handoff packages, only when handoff was explicitly requested;
 - external collaborator repo sync packages, only when that external sync was
   explicitly requested;
 - artifact maps.
@@ -128,67 +121,32 @@ explicitly curates them.
 
 When syncing to a senior student's or collaborator's external repo, do not copy
 the experiment workspace or codebase by default. Copy only the curated package:
-copied current anchor, `summary.md`, `detailed.md`, optional `05_report_card.md`,
-and figures/tables only when referenced by those synced documents.
+current anchor, `protocol.md`, `summary.md`, `detailed.md`, and figures/tables
+only when referenced by those synced documents.
 
-## Handoff
+## Result Writing Boundary
 
-After results exist, first write or update the curated experiment documents:
+After results exist, first write or update:
 
 ```text
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
 ```
 
-`detailed.md` must start with:
-
-```markdown
-## 0. Quick Recap
-
-Purpose:
-
-Hypothesis:
-
-Experiment logic:
-
-Conclusion:
-
-Evidence:
-```
+`summary.md` must include central visualization explanations for the main
+figures. `detailed.md` must include protocol compliance audit, stage evidence,
+full visualization results, and artifact map.
 
 Then update the relevant anchor if the result changes the physical prior,
 mathematical model, computational realization, claim boundary, or next decision.
 Do not copy the updated anchor to root sync unless the user explicitly requests
 root sync.
 
-Finally, package a handoff only if the user explicitly requests one. The default
-daily handoff location is:
+## Handoff
 
-```text
-daily_research_reports/MMDD/<topic>/handoff_report.md
-daily_research_reports/MMDD/<topic>/<anchor_id>.md
-```
-
-Project-local sync is used only if the user explicitly requests project or
-collaborator sync:
-
-```text
-Projects/<project>/<worker>/sync/MMDD_topic/report.md
-Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
-```
-
-If the need is advisor discussion, first fill the shared report card and save
-it in the experiment folder:
-
-```text
-daily_research_reports/MMDD/<topic>/05_report_card.md
-```
-
-Use `templates/reporting/report_card_template.md` as the source
-template. The handoff package may include the existing filled report card, but
-should not define a separate report-card structure or create new research
-content.
-The filename is always `05_report_card.md` in daily or sync packages.
+Package a handoff only if the user explicitly requests one. The package should
+copy or index existing anchor, `protocol.md`, `summary.md`, `detailed.md`, and
+referenced figures/tables.
 
 It must include a compact artifact / repro map:
 
@@ -208,8 +166,8 @@ job id:
 
 ## Report Writing Standard
 
-All curated reports and optional handoff reports must be decision reports, not timelines.
-They should separate:
+All curated reports and optional handoff packages must be decision reports, not
+timelines. They should separate:
 
 - observation;
 - interpretation;
@@ -217,5 +175,5 @@ They should separate:
 - claim boundary.
 
 Every central metric must say what question it answers, what failure mode it
-catches, and what it cannot prove. Every central figure must have a nearby
-one-sentence interpretation.
+catches, and what it cannot prove. Every central figure must explain purpose,
+setup, how to read, observed result, take-home, and remaining uncertainty.

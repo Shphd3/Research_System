@@ -12,7 +12,6 @@ prompt, or README.
 | Folder | Purpose |
 |---|---|
 | `research_process/` | Templates for starting, structuring, or continuing a research iteration. |
-| `reporting/` | Templates for advisor, collaborator, meeting, or sync-facing report cards. |
 | `reading/` | Templates for paper, blog, and reading-note work. |
 | `meeting/` | Templates for private meeting preparation and notes. |
 | `archive/` | Historical templates kept for compatibility only. |
@@ -23,16 +22,6 @@ prompt, or README.
 |---|---|
 | `research_process/minimal_anchor_handwrite.md` | Minimal hand-written anchor draft for user thinking before AI expansion. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
-
-## Reporting Templates
-
-Use these when compressing already-updated anchor / summary / detailed evidence
-for advisor, collaborator, meeting, or sync reading.
-
-| Template | Use |
-|---|---|
-| `reporting/report_card_template.md` | Advisor-facing report card after an experiment closure. Save as `05_report_card.md`. |
-| `reporting/deprecated_reporting_card_template.md` | Compatibility note only. Use `reporting/report_card_template.md`. |
 
 ## Reading Templates
 
@@ -46,9 +35,8 @@ Reading templates do not replace research anchors.
 
 ## Meeting Templates
 
-These are private preparation and record-keeping surfaces. They should not be
-shown as advisor-facing report cards unless explicitly rewritten for that
-purpose.
+These are private preparation and record-keeping surfaces. They do not replace
+the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
@@ -64,8 +52,6 @@ purpose.
 
 ## Rules
 
-- Report cards are saved as `05_report_card.md` inside the relevant daily,
-  experiment, or sync package.
 - Daily notes should stay minimal and free-form; do not recreate a daily-card
   template system.
 - Do not create separate `recordings.md` files by default. Put meeting-derived

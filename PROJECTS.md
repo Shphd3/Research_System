@@ -71,8 +71,8 @@ Projects/from-attention-to-search/graph.yaml
 ```
 
 The graph hub lives under `Projects/graphs/`, not inside a single project. Its
-nodes link to concrete project documents such as anchors, experiment summaries,
-detailed records, report cards, and paper notes.
+nodes link to concrete project documents such as anchors, protocols,
+experiment summaries, detailed records, and paper notes.
 
 Graph display rule:
 

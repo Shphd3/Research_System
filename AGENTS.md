@@ -7,13 +7,13 @@ only the minimum reason, claim boundary, and next decision needed for the
 user's current question.
 
 Default artifact language: English. Canonical research files such as anchors,
-protocols, execution plans, `summary.md`, `detailed.md`, `05_report_card.md`,
-handoff packages, graph summaries, and sync packages should be written in
+protocols, `summary.md`, `detailed.md`, handoff packages, graph summaries, and
+sync packages should be written in
 English unless the user explicitly asks otherwise. Chinese companion versions
 are allowed when useful; name them with `_cn` before the extension, for example
-`<anchor_id>_cn.md`, `summary_cn.md`, `detailed_cn.md`, and
-`05_report_card_cn.md`. The English file remains the source of truth unless the
-user explicitly says the Chinese file is canonical. Exception: anchor
+`<anchor_id>_cn.md`, `protocol_cn.md`, `summary_cn.md`, and `detailed_cn.md`.
+The English file remains the source of truth unless the user explicitly says
+the Chinese file is canonical. Exception: anchor
 `Tiny Summary` sections should be written in Chinese as the quick judgment
 surface, while the rest of the canonical anchor remains English unless the user
 explicitly asks otherwise.
@@ -73,8 +73,10 @@ a downstream-effect line until expert specialization is first established.
 
 ## Anchor-First Rule
 
-The anchor is a compact decision card, not a long report. Do not create new
-separate `hypotheses/<id>/purpose_card.md` files for new work.
+The anchor is the project-local equivalent of the advisor's
+research-exploration `docs/design.md`: a compact but complete current-state
+research design document. Do not create new separate
+`hypotheses/<id>/purpose_card.md` files for new work.
 
 Default anchor paths:
 
@@ -95,27 +97,28 @@ Current first anchor:
 Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
 ```
 
-Each anchor should let the reader see these points in about 3 minutes:
+Each anchor should let the reader see these points quickly:
 
 - phenomenon and parent/subproblem relation;
 - exactly one decision question;
 - physical priors and falsifiable hypotheses;
 - exactly one core mathematical model;
+- computational realization / implementation contract;
 - minimal tests with primary metrics;
 - supported / weakened / insufficient-evidence outcomes;
 - current evidence;
 - claim boundary and exactly one next decision.
 
 After evidence exists, update the same anchor. Long result explanation belongs
-in `detailed.md`; optional handoff reports package already-updated evidence for
-meeting or collaborator use.
+in `detailed.md`; optional handoff packages only package already-updated
+evidence for meeting or collaborator use.
 
 ## Explicit Sync Rule
 
 Default behavior:
 
 ```text
-update anchor / summary.md / detailed.md / daily card only
+update anchor / protocol.md / summary.md / detailed.md / daily card only
 do not update root sync automatically
 do not package handoff reports automatically
 do not sync to external collaborator repos automatically
@@ -156,9 +159,9 @@ source and copy are identical before ending the task.
 External collaborator repo sync is a separate explicit action. It means copying
 a small curated research package into a collaborator/advisor/senior student's
 repo, not mirroring this repository or the experiment codebase. Include only
-the copied current anchor, `summary.md`, `detailed.md`, and optionally a
-`05_report_card.md` for quick reading. Copy figures or tables only when those files
-are embedded by the synced documents.
+the copied current anchor, `protocol.md`, `summary.md`, and `detailed.md`.
+Copy figures or tables only when those files are embedded by the synced
+documents.
 Do not include raw logs, checkpoints, datasets, full result directories,
 private daily notes, unrelated anchors, or code changes unless the user
 explicitly asks for those files.
@@ -174,46 +177,33 @@ external repo only when explicitly requested.
 Default shape:
 
 ```text
-one anchor -> one minimal decisive experiment -> summary.md -> detailed.md -> anchor update
+one anchor -> one minimal decisive protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
 Root sync, external collaborator repo sync, handoff packages, graph updates,
 commits, and pushes are separate explicit actions. Do not perform them unless
 the user asks for that action in the current task.
 
+`protocol.md` replaces the old two-file split between approval notes and
+implementation details. It is the experiment design and approval surface
+aligned with the advisor's research-exploration `docs/experiment_design.md`.
+Do not run or implement a nontrivial experiment before the protocol is
+approved.
+
 `summary.md` is the first post-result reading path. It must be self-contained
-and state purpose, question or hypothesis, conclusion, key evidence, claim
-boundary, and next decision.
+and state purpose, exact setup, primary metric, conclusion, key evidence, claim
+boundary, and next decision. It must also explain central figures using the
+visualization-results standard: what the figure tests, how to read it, observed
+result, take-home, and what it does not prove.
 
 `detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
 seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
-和 claim boundary。
-
-When an experiment needs advisor-facing discussion, create the report card as:
-
-```text
-daily_research_reports/MMDD/<topic>/05_report_card.md
-```
-
-The report card is a short, self-contained reading card derived from the
-anchor, `summary.md`, and `detailed.md`. It belongs with the experiment record,
-not beside the anchor, and must embed central figures when figures are
-decision-relevant. Use the fixed structure from
-`templates/reporting/report_card_template.md`:
-
-```text
-Source Files
-Executive Summary
-Research Process Update
-Terms Used Here
-Key Figures
-Current Claim
-Claim Boundary
-Next Step
-```
+和 claim boundary. It must include a `Visualization Results` section where each
+central figure/viewer states purpose, setup, how to read, observed result,
+take-home, and remaining uncertainty.
 
 如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
-`summary.md`、`detailed.md` 和可选 handoff report 中嵌入。只列路径不嵌图是不完整的。
+`summary.md`、`detailed.md` 和显式请求的 handoff package 中嵌入。只列路径不嵌图是不完整的。
 
 Do not jump directly to architecture, scripts, or metrics before the anchor is
 clear. Avoid broad sweeps before the first anchor decision is closed. Add
@@ -238,9 +228,10 @@ new experiment before this gate is passed.
 ## Handoff Report Rule
 
 Post-result handoff is optional. The anchor is the current-state research
-document, `summary.md` is the first result reading path, and `detailed.md` is
-the full iteration ledger. A handoff package only copies and indexes those
-already-updated sources for meeting, collaborator, or web-side use.
+design document, `protocol.md` is the approved experiment design, `summary.md`
+is the first result reading path, and `detailed.md` is the full evidence
+ledger. A handoff package only copies and indexes those already-updated sources
+for meeting, collaborator, or web-side use.
 
 Default daily location when the user explicitly requests a handoff package:
 
@@ -266,15 +257,14 @@ Projects/<project>/sync/MMDD_topic/<anchor_id>.md
 A handoff package must be self-contained and include existing:
 
 ```text
-Anchor / Summary / Detailed
-05_report_card.md derived from templates/reporting/report_card_template.md
+Anchor / Protocol / Summary / Detailed
 figures / tables referenced by included docs
 short README or index
 ```
 
 Do not create new claims, new conclusions, or a second closure in a handoff
-package. The source remains anchor + `summary.md` + `detailed.md` and the
-advisor-facing report card when it already exists or is explicitly requested.
+package. The source remains anchor + `protocol.md` + `summary.md` +
+`detailed.md`.
 
 The artifact map must include code workspace, runner, config, data/manifest,
 result dir, figure dir, key files, checkpoints/logs, repro command, and job id
@@ -310,7 +300,7 @@ These graphs are loaded with Sidecar workspace root:
 
 Graph nodes should include the ownership relation in the summary or tags, and
 should link to the concrete project documents that support the node: anchor,
-experiment `summary.md`, `detailed.md`, report card, roadmap, or paper note.
+experiment `protocol.md`, `summary.md`, `detailed.md`, roadmap, or paper note.
 The graph node gives only a result preview; the linked document remains the
 source of reasoning.
 
@@ -319,8 +309,9 @@ state change with the user and get confirmation, unless the user explicitly
 requested that exact graph edit in the current turn. The graph records the
 user's research-center judgment; it is not an automatic cleanup target.
 
-Graph nodes should point to anchors, roadmap entries, experiment summaries,
-detailed records, optional handoff reports, reading notes, and reusable outputs.
+Graph nodes should point to anchors, roadmap entries, experiment protocols,
+summaries, detailed records, optional handoff reports, reading notes, and
+reusable outputs.
 The graph does not replace anchors, summaries, detailed records, or handoff
 reports.
 
@@ -341,10 +332,12 @@ first. Then use local skills from `skills/` when the task type matches:
   artifact writing: physical prior, falsifiable hypothesis, operational
   definition, minimal test, metric + visual evidence, failure analysis, and
   refined hypothesis.
-- `problem-anchor-writer`: write or update anchor / purpose-card documents.
-- `experiment-card-writer`: write operational execution plans from anchors.
+- `problem-anchor-writer`: write or update anchor / design documents.
+- `experiment-card-writer`: write `protocol.md`, `summary.md`, and
+  `detailed.md` from anchors.
 - `handoff-report-writer`: package explicitly requested meeting/collaborator/web
-  handoff material after anchor, `summary.md`, and `detailed.md` are updated.
+  handoff material after anchor, `protocol.md`, `summary.md`, and
+  `detailed.md` are updated.
 - `remote-experiment-workflow`: remote/container/SCO/ACP workflow and artifact
   maps.
 - `research-mainline`: maintain graph, anchors, roadmap, and root sync state;
@@ -355,8 +348,8 @@ first. Then use local skills from `skills/` when the task type matches:
 - `scholar-mode`: clarify unstable research intuitions before artifacts.
 
 Writing-explanatory-report principles are no longer a separate skill; apply
-them inside anchors, experiment summaries, detailed records, and handoff
-reports:
+them inside anchors, protocols, experiment summaries, detailed records, and
+handoff reports:
 
 - write decision reports, not timelines;
 - explain what each important metric answers and cannot prove;

@@ -1,6 +1,6 @@
-﻿---
+---
 name: research-mainline
-description: Use when organizing or updating a research project's mainline state: graph, roadmap, anchors, experiment result records, explicitly requested root anchor copies, external collaborator repo sync packages, handoff reports, archive state, and project status.
+description: Use when organizing or updating a research project's mainline state: graph, roadmap, anchors, protocols, experiment result records, explicitly requested root anchor copies, external collaborator repo sync packages, handoff packages, archive state, and project status.
 metadata:
   short-description: Maintain compact research mainline
 ---
@@ -8,7 +8,7 @@ metadata:
 # Research Mainline
 
 Use this skill to keep the active research state easy to inspect and act on.
-It does not define the research method and does not write detailed templates.
+It does not define the research method; it maps the method onto project paths.
 
 First apply `research-progress-core`. Then use this skill only to decide where
 the current state lives, whether the mainline changed, and which surfaces need
@@ -24,7 +24,7 @@ The mainline should make these items obvious:
 - refined hypothesis or current uncertainty;
 - claim boundary;
 - next decision;
-- links to the result records that justify the state.
+- links to the protocol and result records that justify the state.
 
 ## Required Surfaces
 
@@ -37,18 +37,21 @@ Projects/<project>/
       <anchor_id>.md
     experiments/
       <experiment_id>/
-        execution_plan.md
+        protocol.md
         summary.md
         detailed.md
         figures/
+        tables/
 ```
+
+Legacy two-file planning records may remain in old experiments, but new work
+should use `protocol.md`.
 
 Explicit optional surfaces:
 
 ```text
-Projects/<project>/<worker>/sync/MMDD_topic/report.md
-Projects/<project>/sync/MMDD_topic/report.md
-Projects/<project>/<worker>/docs/
+Projects/<project>/<worker>/sync/MMDD_topic/
+Projects/<project>/sync/MMDD_topic/
 sync/<sync_id>/anchors/<category>/<anchor_id>.md
 daily_research_reports/MMDD/
 <external_collaborator_repo>/<agreed_path>/MMDD_topic/
@@ -59,12 +62,10 @@ or push surfaces unless the user explicitly asks for that action.
 
 ## Naming Rules
 
-Use names to show research level. Do not use one naming scheme for everything.
-
 ### Anchor Names
 
-Anchor names should describe a stable research question or hypothesis line, not
-a day or one run.
+Anchor names describe a stable research question or hypothesis line, not a day
+or one run.
 
 Use:
 
@@ -74,31 +75,14 @@ Use:
 <problem_axis>_<decision>_anchor.md
 ```
 
-Examples:
-
-```text
-01_slot_context_dominance_router_specialization_anchor.md
-02_route_function_binding_specialization_anchor.md
-03_frequency_induced_feature_anisotropy_anchor.md
-```
-
 Do not create a new anchor for each daily iteration, seed, smoke run, or failed
 operationalization. Update the same anchor unless the parent question or
 hypothesis line changes.
 
 ### Experiment Names
 
-Experiment folders may include date or iteration labels because they are
-records of tests:
-
-```text
-HMMDD_short_topic/
-HMMDDa_short_topic_smoke/
-HMMDDb_short_topic_full/
-```
-
 When an experiment folder uses an `A` prefix, the number after `A` is the
-primary anchor id, not the calendar date. Use:
+primary anchor id, not the calendar date:
 
 ```text
 A<anchor_id>_<short_topic>/
@@ -106,16 +90,8 @@ A<anchor_id>a_<short_topic>_smoke/
 A<anchor_id>b_<short_topic>_full/
 ```
 
-Examples:
-
-```text
-A05_04_no_position_forced_feature_init_trajectory/
-A05_04_round1_slot_specialization_protocol/
-```
-
-This means `A05_04_*` maps to
-`problem_anchors/05_04_*_anchor.md`. Calendar dates belong in run names,
-daily report paths, logs, or result folders, not in the anchor-code position.
+Calendar dates belong in run names, daily report paths, logs, or result
+folders, not in the anchor-code position.
 
 Use suffixes only when they distinguish real iteration roles:
 
@@ -139,240 +115,113 @@ daily_research_reports/MMDD/<topic>/
 Daily reports do not replace anchors or experiment records. If the day changes
 the hypothesis, evidence, boundary, or next decision, update the anchor too.
 
-### Handoff Reports
-
-Handoff reports are date/topic packages for external readers:
-
-```text
-daily_research_reports/MMDD/<topic>/handoff_report.md
-daily_research_reports/MMDD/<topic>/<anchor_id>.md
-Projects/<project>/<worker>/sync/MMDD_topic/report.md
-Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
-Projects/<project>/sync/MMDD_topic/report.md
-Projects/<project>/sync/MMDD_topic/<anchor_id>.md
-```
-
-Use them only when the user explicitly asks for a handoff or sync package.
-Default handoff output goes in the daily folder and includes a copy of the most
-important anchor using its subject-bearing basename, not generic `anchor.md`.
-Project sync folders are used only when project/collaborator sync is explicitly
-requested.
-
-### External Collaborator Repo Sync Names
-
-External collaborator repo sync means copying a curated research package into a
-separate collaborator repository, for example an advisor/senior student's
-GitHub repo. It is not root sync and not project-local sync.
-
-Use the collaborator repo's agreed folder convention when one exists. If none
-exists, use a date/topic folder:
-
-```text
-<external_collaborator_repo>/<agreed_research_sync_path>/MMDD_topic/
-  <anchor_id>.md
-  summary.md
-  detailed.md
-  05_report_card.md    # optional, for quick reading
-  figures/             # only if referenced by synced docs
-  tables/              # only if referenced by synced docs
-```
-
-Use subject-bearing filenames. Do not use generic `anchor.md` unless the
-external repo already requires it.
-
 ## Core Artifact Chain
 
 Default chain:
 
 ```text
-anchor -> execution_plan.md -> summary.md -> detailed.md
--> anchor update
+anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
-`summary.md` and `detailed.md` are required after an experiment result exists.
-Root sync copies, handoff packages, graph edits, commits, and pushes are explicit
-follow-up actions only.
+Root sync copies, handoff packages, graph edits, commits, and pushes are
+explicit follow-up actions only.
 
 ## File Roles
 
-### `graph.yaml`
+### Graph
 
-Navigation layer only. It points to questions, anchors, evidence, methods,
-outputs, and tasks. It does not replace Markdown reasoning.
+Navigation layer only. It points to questions, anchors, protocols, evidence,
+methods, outputs, and tasks. It does not replace Markdown reasoning.
 
 Before editing an existing graph, use `research-graph-sop` and get the user's
 confirmation of the research-state change unless the user explicitly requested
 that exact graph edit.
 
-### `roadmap.md`
+### Roadmap
 
 Compact route and gate logic. Use it for the order of anchors, stop rules, and
 high-level project route. Do not put detailed evidence here.
 
 ### Anchor
 
-Compact decision card. It should let a reader understand the current research
-state in about 3 minutes: one decision question, physical priors, falsifiable
-hypotheses, one core mathematical model, minimal tests with primary metrics,
-current evidence, claim boundary, and one next decision.
-
-Use English for canonical project artifacts by default. If a Chinese companion
-is needed, create a separate `_cn.md` file with the same basename, such as
-`<anchor_id>_cn.md`, `summary_cn.md`, `detailed_cn.md`, or
-`05_report_card_cn.md`. The English file remains the source of truth unless the
-user explicitly says otherwise.
+The anchor is the project-local equivalent of research-exploration
+`docs/design.md`: a compact but complete current-state research design
+document. It should include one decision question, physical priors,
+falsifiable hypotheses, one core mathematical model, computational realization,
+minimal falsification tests, current evidence, claim boundary, and one next
+decision.
 
 The required anchor structure is:
 
 ```text
 0. Tiny Summary
 1. Problem Definition
-2. Physical Prior
-3. Hypothesis
-4. Minimal Mathematical Model
-5. Minimal Tests
-6. Falsifiable Outcomes
+2. Physical Priors
+3. Falsifiable Hypotheses
+4. Mathematical Model
+5. Computational Realization
+6. Minimal Falsification Tests
 7. Current Evidence
 8. Claim Boundary And Next Decision
 ```
 
-Do not add extra sections by default. Do not put protocol details, long
-background, literature review, broad ablations, or implementation contracts in
-the anchor.
+Do not put commands, long configs, raw logs, broad ablations, or full result
+presentation in the anchor. Put those in `protocol.md`, `summary.md`, and
+`detailed.md`.
 
-Use `problem-anchor-writer` for anchor content rules.
+### Protocol
 
-### Experiment Folder
+`protocol.md` is the approved experiment design. It replaces the old two-file
+planning split. It should align with the advisor's research-exploration
+`docs/experiment_design.md` role.
 
-Execution and evidence layer. Each active experiment should map to one primary
-anchor and contain:
+It must include the decision question, tested hypothesis, rival explanations,
+data/model/algorithm/objective, conditions, primary metric, secondary metrics,
+known good/bad/confusing cases, stage-level profiling plan, success/failure/
+insufficient-evidence conditions, what cannot be claimed, and approval status.
+
+For nontrivial algorithms, it must include input, parameters, intermediate
+variables, steps, outputs, debug artifacts, pass conditions, fail conditions,
+and failure reasons.
+
+### Summary
+
+`summary.md` is the first post-result reading path. It must include purpose,
+exact setup, primary metric, result, key evidence, claim boundary, and next
+decision.
+
+It must also absorb the key parts of research-exploration
+`docs/visualization_results.md`: each central figure should explain what it
+tests, how to read it, observed result, take-home, and what it does not prove.
+
+### Detailed
+
+`detailed.md` is the full evidence ledger. It must include protocol compliance
+audit, setup, metrics, stage evidence, failure decomposition, full experiment
+record, interpretation, claim boundary, next decision, artifact map, and a full
+`Visualization Results` section.
+
+Every central figure or viewer should state purpose, setup, how to read,
+observed result, take-home, and remaining uncertainty.
+
+## External Sync And Handoff
+
+Use these only when explicitly requested. A sync or handoff package should copy
+or index existing:
 
 ```text
-execution_plan.md
+anchor
+protocol.md
 summary.md
 detailed.md
-05_report_card.md, when advisor-facing in daily or sync packages
-figures/ when important figures exist
-tables/ when curated tables exist
+figures/ and tables/ referenced by included docs
+short README or index
 ```
 
-Use `experiment-card-writer` for execution plan, summary, detailed record,
-figures, tables, failure analysis, and artifact-map details.
-
-### Root Anchor Copy
-
-Root sync is an explicit external-reading surface. Do not update it just
-because an anchor changed. When the user asks for root sync, mirror the active
-anchor to:
-
-```text
-sync/<sync_id>/anchors/<category>/<anchor_id>.md
-```
-
-The project-local anchor is the source of truth. When root sync is requested,
-copy the anchor to the root sync path and verify the files are identical.
-
-### External Collaborator Repo Sync
-
-Use this only when the user explicitly asks to sync material to a collaborator,
-senior student's repo, advisor repo, or another external GitHub repository.
-
-This sync should be a curated package, not a repository mirror. Include only
-the smallest files needed for the collaborator to understand the research state:
-
-```text
-required:
-- copied current anchor with subject-bearing filename
-- summary.md
-- detailed.md
-
-optional:
-- 05_report_card.md, when the collaborator needs a fast advisor-facing summary
-- figures/ or tables/, only when referenced by anchor, summary, detailed, or
-  report_card
-- README.md or index, only when the target repo requires one
-- execution_plan.md, only when syncing a proposed run before execution
-```
-
-Do not sync:
-
-```text
-- raw logs
-- checkpoints
-- datasets
-- full run directories
-- unfiltered generated figures/tables
-- caches or temporary files
-- private daily notes or unconfirmed speculation
-- unrelated anchors or old archived evidence
-- experiment code changes unless the user explicitly requests code sync
-```
-
-Before copying into the external repo:
-
-1. Ask for or identify the target repo path and agreed destination folder.
-2. Check the target repo's `git status --short --branch`.
-3. Do not overwrite dirty collaborator files unless the user explicitly
-   approves that exact overwrite.
-4. Convert absolute local links into relative links.
-5. Copy only the curated package.
-6. Verify every linked figure/table exists inside the copied package.
-7. Show the inclusion/exclusion list before commit or push.
-
-Commit and push the external repo only when the user explicitly asks. A request
-to "sync files" means copy/update the curated package; it does not imply push.
-
-### Handoff Package
-
-Optional external package. Use it only when the user explicitly asks for a
-meeting, collaborator, GitHub, or web-side handoff.
-
-Use `handoff-report-writer`. Do not create a new handoff document merely because
-an experiment finished. A handoff package should copy existing anchor,
-`summary.md`, `detailed.md`, optional report card, and referenced figures/tables,
-then add only a short README or index.
-
-### Daily / Meeting Reports
-
-Daily and meeting reports are derived from updated anchors, `summary.md`, and
-`detailed.md`. They should make the closure clear:
-
-```text
-question / hypothesis / minimal test / conclusion / evidence / boundary / next decision
-```
-
-Daily / meeting report cards should reuse
-`templates/reporting/report_card_template.md`. They are derived
-from updated anchor, `summary.md`, and `detailed.md`. They do not replace
-anchor, summary, detailed, or graph.
-
-For project records, the fixed location and name is:
-
-```text
-daily_research_reports/MMDD/<topic>/05_report_card.md
-```
-
-Advisor-facing report cards must use the fixed structure in
-`templates/reporting/report_card_template.md` and be saved as
-`05_report_card.md` in daily or sync packages. The required sections are:
-
-```text
-Source Files
-Executive Summary
-Research Process Update
-Terms Used Here
-Key Figures
-Current Claim
-Claim Boundary
-Next Step
-```
-
-They should be self-contained, brief, and complete enough for an advisor to
-understand the question, falsifiable hypothesis, evidence, boundary, and next
-decision. Do not put private advisor questions, rehearsal scripts, raw logs,
-long tables, or implementation details in the report card.
-
-Do not maintain a separate meeting sub-workflow unless the user explicitly asks.
+Do not create new claims, second closures, or stronger conclusions in a handoff
+package. Do not include raw logs, checkpoints,
+datasets, full result directories, unfiltered generated figures/tables, caches,
+private notes, unrelated anchors, or code changes unless explicitly requested.
 
 ## Mainline Update Test
 
@@ -409,13 +258,16 @@ delete it.
 ## Rules
 
 - Keep mainline thin; put reasoning in anchors and result records.
-- By default, update only anchor / `summary.md` / `detailed.md` / daily card.
-- Do not update root sync, sync to an external collaborator repo, package handoff
-  reports, edit `graph.yaml`, commit, or push unless the user explicitly asks.
+- By default, update only anchor / `protocol.md` / `summary.md` /
+  `detailed.md` / daily note.
+- Do not create separate implementation-plan files for new work.
+- Do not update root sync, sync to an external collaborator repo, package
+  handoff reports, edit graph, commit, or push unless the user explicitly asks.
 - Do not promote raw logs, checkpoints, datasets, full run directories, or
   unfiltered generated outputs into mainline paths.
 - Do not leave completed anchors with stale evidence, claim boundary, next
   decision, or result links.
 - When central figures exist, curated copies should appear in the experiment
-  `figures/` folder and be embedded in `summary.md` and `detailed.md`.
+  `figures/` folder and be embedded and explained in `summary.md` and
+  `detailed.md`.
 - Markdown formulas must use `$...$` or `$$...$$`.

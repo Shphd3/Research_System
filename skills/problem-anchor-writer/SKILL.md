@@ -1,120 +1,97 @@
 ---
 name: problem-anchor-writer
-description: Use when auditing, polishing, writing, shortening, or updating a compact research anchor. For rough or minimal hand-written anchors, first critique and clarify the user's logic instead of immediately producing a polished final anchor. For requested formal anchors, write a decision card with one decision question, physical priors, falsifiable hypotheses, one minimal mathematical model, minimal tests, evidence, claim boundary, and next decision.
+description: Use when auditing, polishing, writing, or updating a research anchor. The anchor is the project-local equivalent of research-exploration docs/design.md: a compact but complete current-state design document. For rough hand-written anchors, critique first before writing a formal anchor.
 metadata:
-  short-description: Write compact anchor decision cards
+  short-description: Write anchor design documents
 ---
 
 # Problem Anchor Writer
 
 Use this skill to write or revise a research anchor.
 
-研究锚点（anchor）不是报告，而是决策卡：它让研究者在 3 分钟内看清正在研究的现象、当前假设、数学对象、最小实验、可证伪结果、证据边界和下一步。
+An anchor is the current-state research design document. It is equivalent to
+the research-exploration `docs/design.md`, adapted to this repository's
+anchor-first workflow. It should preserve the user's research judgment while
+making the problem, priors, model, computational realization, falsification
+tests, evidence, claim boundary, and next decision inspectable.
 
-决策问题（decision question）指本轮只裁定的一个问题。核心数学模型（core mathematical model）指能连接物理先验、实验对象和主要指标的最小公式或关系。主要指标（primary metric）指决定本轮判断的第一指标。可证伪条件（falsifier）指什么结果会让假设变弱或需要修改。
+## User Workflow
 
-First apply `research-progress-core`. If the idea is still conceptually unclear, use `scholar-mode` before writing the anchor.
+Default workflow:
 
-## Interaction Modes
+```text
+minimal hand-written anchor
+-> AI critique and clarification
+-> formal anchor draft
+-> user review
+-> protocol.md
+-> implementation / run
+```
 
-默认把用户手写的最小锚点（`minimal anchor`）、粗稿锚点（`rough anchor`）或不完整草稿当作思考暴露稿，而不是等待 AI 自动补全的半成品。
+Do not jump from a vague idea directly to protocol or code. If the anchor is
+unclear, critique the rough anchor first and name the missing decisions.
 
-讨论最小锚点时，默认只先完成第 1-4 节：Problem Definition、Physical Prior、Hypothesis、Minimal Mathematical Model。第 5 节 Minimal Tests 由用户和 AI 在前四节清楚后共同推导；AI 可以提出测试候选、取舍理由和需要用户决定的问题，但不要单方面替用户定稿 Minimal Tests。
+## Minimal Anchor Audit Mode
 
-### Minimal Anchor Audit Mode
+When the user gives a minimal or rough anchor, treat it as exposed thinking, not
+as a half-finished document for the AI to silently complete.
 
-当用户给出最小/粗稿 anchor 让你看、polish、检查、改进，但没有明确要求写正式 anchor 文件时，先批改，不直接输出完整 anchor。
+First return an audit:
 
-输出应包括：
+- user judgments to preserve;
+- unclear object, feature definition, metric, scope, or causal claim;
+- physical priors that are missing, too vague, or not falsifiable;
+- hypotheses without clear falsifiers;
+- math objects that do not map to measurable variables;
+- claims that are stronger than the proposed evidence;
+- the smallest additions needed before a formal anchor can be written;
+- candidate tests that require user approval before becoming Minimal Tests.
 
-- 保留的用户判断：哪些 parent problem、现象、直觉或 next decision 应继续作为用户原始逻辑；
-- 物理先验审查：先判断用户已有物理先验是否正确、可反驳、能推出当前 hypothesis；
-- 必须澄清的问题：feature key、decision question、scope、metric、causal claim、rival explanation 中哪些还不清楚；
-- 逻辑缺口：哪些 hypothesis 没有 falsifier，哪些 metric 不能支持对应 claim，哪些 experiment 同时回答了多个问题；
-- 最小补充清单：为了进入正式 anchor，还需要补哪 3-6 个具体点；
-- Minimal Tests 共创点：哪些测试设计必须等用户确认物理先验、feature key、primary metric 后再共同完成；
-- 可选修订方向：给出 1-2 个更严谨的 decision question 或 hypothesis wording，并标明需要用户确认。
+If a new physical prior seems necessary, propose it as a candidate. Do not write
+it into the formal anchor until the user accepts it.
 
-不要默默替用户换题、换 feature definition、换 next decision，或把一个粗糙但有价值的研究直觉改成 AI 自己认为更完整的研究路线。
+## Formal Anchor Mode
 
-如果 AI 认为必须新增物理先验，只能先提出为“候选物理先验”，说明它为什么需要、会支持哪个 hypothesis、什么结果会让它变弱。用户明确承认之前，不得把该候选先验写入正式 anchor 的 Physical Prior 部分。
-
-### User-Logic-Preserving Formal Anchor Mode
-
-只有当用户明确要求“写正式 anchor”、“生成 anchor 文件”、“改成完整 anchor”、“出版/汇报用卡片”时，才输出完整 anchor。
-
-正式 anchor 应该是在用户原始逻辑上补强，而不是生成一个看似完美但替换了用户判断的版本。写完后，如果不是纯 artifact-only 请求，简短说明：
-
-- 保留了用户的哪条主逻辑；
-- 收紧了哪些 claim 或 boundary；
-- 哪些研究判断仍需要用户确认；
-- 哪些候选物理先验尚未被用户承认，因此没有写入 anchor；
-- 下一步怎样让它更严谨。
-
-## Core Rule
-
-锚点必须回答四个审查问题：
-
-1. 是否只有一个决策问题？
-2. 是否只有一个核心数学模型？
-3. 每个实验是否只回答一个问题？
-4. 是否清楚写了支持、削弱、证据不足三类结果？
-
-不要把锚点写成 `detailed.md`、实验协议、会议记录、文献综述、运行手册或实现合同。命令、参数、调试步骤、长表格、原始日志、大范围消融和文献解释都放到锚点外。
-
-Post-result anchor updates must be analytical, not presentational. After experiments finish, do not paste seed tables, long metric lists, or per-experiment result narration into the anchor. Convert results into a clear conclusion, the rival explanations weakened, the remaining claim boundary, and the next decision. Put result presentation in `summary.md`, `detailed.md`, figures, and tables; the anchor should link to those artifacts only as evidence locations.
-
-## Length Limits
-
-- 主体长度：英文约 600-900 words；如果写中文伴随版，控制在 1200-1800 中文字。
-- `Tiny Summary`: 用中文写，at most 8 lines.
-- 每节最多 3 条。
-- 每条最多 2 行。
-- 数学最多 1 个核心分解、1 个机制关系、1 组指标。
-- 不加额外章节。
-
-如果写不下，把细节移到 `execution_plan.md`、`summary.md`、`detailed.md`、`05_report_card.md` 或阅读笔记。
+Write a formal anchor only when requested or when the user has approved the
+rough anchor direction. The formal anchor should tighten the user's logic, not
+replace it with a cleaner but different research question.
 
 ## Required Structure
 
-使用这个固定结构：
-
 ```markdown
-# Anchor Title
+# <Anchor Title>
 
 ## 0. Tiny Summary
 ## 1. Problem Definition
-## 2. Physical Prior
-## 3. Hypothesis
-## 4. Minimal Mathematical Model
-## 5. Minimal Tests
-## 6. Falsifiable Outcomes
+## 2. Physical Priors
+## 3. Falsifiable Hypotheses
+## 4. Mathematical Model
+## 5. Computational Realization
+## 6. Minimal Falsification Tests
 ## 7. Current Evidence
 ## 8. Claim Boundary And Next Decision
 ```
 
-不要加额外章节。暂时不做的内容只写进 `Cannot claim` 或 `Next decision` 的一句边界。
+Do not add extra top-level sections by default.
 
 ## Section Requirements
 
 ### 0. Tiny Summary
 
-用中文只写：
+Write this section in Chinese as the quick judgment surface:
 
 ```text
 父问题：
 当前子问题：
 核心假设：
-最小测试：
+最小证伪测试：
 当前边界：
 下一步决策：
 ```
 
-不要展开背景。
-
 ### 1. Problem Definition
 
-必须包含：
+Must include:
 
 ```text
 Parent problem:
@@ -123,13 +100,12 @@ Decision question:
 Not in scope:
 ```
 
-只能有一个 `Decision question`。
+There should be exactly one decision question.
 
-### 2. Physical Prior
+### 2. Physical Priors
 
-物理先验（physical prior）指对系统、数据、机制或目标的可反驳直觉。只写 1-3 个。
-
-评述个人 anchor 时，先审查物理先验，再审查 hypothesis、math、test 和 metric。新增物理先验必须先作为候选项交给用户审核；用户承认之前，不要写入正式 anchor。
+Write one to three falsifiable priors. Each prior should say what mechanistic
+belief makes the question meaningful.
 
 Use:
 
@@ -139,11 +115,10 @@ Meaning:
 Could be wrong if:
 ```
 
-不要写泛泛背景。
+### 3. Falsifiable Hypotheses
 
-### 3. Hypothesis
-
-假设（hypothesis）必须能被实验削弱。最多写 3 个。
+Each hypothesis must be derived from the physical priors and have clear support
+and weakening conditions.
 
 Use:
 
@@ -153,13 +128,11 @@ Supported if:
 Weakened if:
 ```
 
-每个假设都必须有可证伪条件。
+### 4. Mathematical Model
 
-### 4. Minimal Mathematical Model
+Only define mathematical objects that the experiment can measure or use.
 
-只写影响本轮判断的数学。
-
-必须包含：
+Must include:
 
 ```text
 Objects:
@@ -169,71 +142,50 @@ Observable metrics:
 Falsifier:
 ```
 
-规则：
+Every equation must map to a physical prior, a measurable object, and a code or
+analysis path.
 
-- 不写装饰性公式。
-- 不定义实验不会测的变量。
-- 每个变量都必须对应实现对象。
-- 每个公式都必须对应可观测指标。
-- 不能导出实验判据的公式必须删除。
+### 5. Computational Realization
 
-推荐形式：
+This is the main addition relative to the older compact anchor. It is the
+minimum implementation contract that connects the model to code.
+
+Include only:
 
 ```text
-Objects:
-h_f = ...
-c = ...
-r_f = ...
-w_e = ...
-
-Model:
-h_f = c + r_f
-z_{f,e} = w_e^T c + w_e^T r_f
-
-Mechanism:
-Collapse risk increases if common-score spread dominates residual-score spread.
-
-Metrics:
-common_score_rank, max_load, dominant_persistence, accuracy
-
-Falsifier:
-...
+Input objects:
+Computed variables:
+Algorithm stages:
+Stage-local evidence:
+Expected artifacts:
 ```
 
-### 5. Minimal Tests
+Do not put long commands, raw configs, logs, or implementation timelines here.
+Those belong in `protocol.md` and `detailed.md`.
 
-最多写 3 个主实验。每个实验只回答一个问题。
+### 6. Minimal Falsification Tests
 
-对于个人 minimal anchor，Minimal Tests 通常不在第一轮由 AI 单独完成。先把第 1-4 节审清楚，再和用户共同确定实验问题、干预、primary metric、supports 和 weakens。若用户尚未确认物理先验或 feature key，只能列候选测试，不要写成定稿。
+Write at most three tests. Each test should answer one question and map to the
+current decision.
 
 Use:
 
 ```text
-Experiment:
+Test:
 Question:
-Intervention:
+Intervention / comparison:
 Primary metric:
 Supports:
 Weakens:
-```
-
-不要把支撑性检查写成主实验。
-
-### 6. Falsifiable Outcomes
-
-必须包含：
-
-```text
-Supported:
-Weakened:
 Insufficient evidence:
 ```
 
-每类最多 3 条。证据不足（insufficient evidence）指结果不能可靠支持或削弱假设。
+For a user's first minimal anchor draft, do not finalize this section without
+checking that sections 1-5 are clear.
 
 ### 7. Current Evidence
 
-只写已经观察到的证据。不要把解释伪装成证据。
+Write observed evidence, not a long result report.
 
 Use:
 
@@ -241,13 +193,14 @@ Use:
 Observation:
 Interpretation:
 Boundary:
+Evidence links:
 ```
 
-观察（Observation）是直接看到的结果；解释（Interpretation）是它可能意味着什么；边界（Boundary）是解释停止的位置。
+Link to `summary.md`, `detailed.md`, figures, or tables when they exist.
 
 ### 8. Claim Boundary And Next Decision
 
-必须分开：
+Must include:
 
 ```text
 Can claim:
@@ -255,48 +208,38 @@ Cannot claim:
 Next decision:
 ```
 
-只能有一个下一步决策。
+There should be exactly one next decision.
 
-## Deletion Rules
+## What Does Not Belong In The Anchor
 
-必须删除：
+Move these outside the anchor:
 
-- 和决策问题无关的背景；
-- 当前实验不能测的数学变量；
-- 没有主要指标的实验；
-- 没有可证伪条件的假设；
-- 超过一个下一步决策；
-- 把 toy setting 直接推广到真实数据的 claim；
-- 塞进锚点的实验协议或实现细节。
+- run commands;
+- long config tables;
+- raw logs;
+- seed-by-seed dumps;
+- broad ablation grids;
+- full implementation plans;
+- literature review;
+- meeting scripts;
+- result presentation that belongs in `summary.md` or `detailed.md`.
 
 ## Post-Result Update
 
-有结果后更新同一个锚点。只改：
+After an experiment, update the same anchor if the result changes the physical
+prior, hypothesis status, evidence, claim boundary, or next decision.
 
-- 当前证据；
-- 支持、削弱、证据不足的状态；
-- 结论边界；
-- 下一步决策；
-- `summary.md`、`detailed.md`、图表和可选 `05_report_card.md` 的链接。
+Do not paste the result report into the anchor. Convert the result into:
 
-长解释放在 `detailed.md`；结果第一阅读入口放在 `summary.md`；给导师快速读的压缩版放在 `05_report_card.md`。
-
-不要创建单独的 `hypotheses/<id>/purpose_card.md`。
-
-## Language And Naming Rules
-
-- Canonical anchors are written in English by default.
-- If a Chinese companion is needed, create a separate `<anchor_id>_cn.md`.
-- The English anchor is the source of truth unless the user explicitly says the Chinese version is canonical.
-- In conversation, define technical terms in Chinese before using English names or abbreviations.
-- In the English anchor, define terms in plain English before using labels or abbreviations.
-- Do not use labels as substitutes for explanation; write the concrete meaning first.
-- Use precise, short bullets.
-- Keep equations in `$...$` or `$$...$$`.
-- Do not copy project-specific algorithm names, model names, or claims into a new anchor unless they are the actual current object.
+- supported / weakened / insufficient-evidence status;
+- rival explanations weakened or still alive;
+- new boundary;
+- next decision;
+- links to `summary.md` and `detailed.md`.
 
 ## Relationship To Other Skills
 
-- Use `experiment-card-writer` after the anchor identifies the minimal tests.
-- Use `handoff-report-writer` only when the user explicitly asks to package existing anchor, `summary.md`, `detailed.md`, and optional `05_report_card.md`.
-- Do not update root sync, external collaborator repo sync, graph manifests, commit, or push unless the user explicitly asks.
+- Use `research-progress-core` to audit whether the research loop is complete.
+- Use `experiment-card-writer` after the anchor identifies the minimal test and
+  the user is ready to write `protocol.md`.
+- Do not create separate `hypotheses/<id>/purpose_card.md` files for new work.

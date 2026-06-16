@@ -155,7 +155,7 @@ not update the claim boundary as if it were decisive.
 
 For nontrivial work, expand the physical prior into mathematical modeling and
 an implementation contract. The full implementation contract belongs in the
-execution plan or runbook, not in the anchor.
+protocol or runbook, not in the anchor.
 
 ## What Must Exist
 
@@ -317,7 +317,7 @@ next experiment.
 
 - Use `scholar-mode` to clarify an unstable intuition before artifact writing.
 - Use `problem-anchor-writer` to write the current-state reasoning document.
-- Use `experiment-card-writer` to turn a clear anchor into an execution plan and
+- Use `experiment-card-writer` to turn a clear anchor into a protocol and
   result reports.
 - Use `handoff-report-writer` only when the user explicitly asks to package
   evidence for meeting, collaborator, or web-side handoff after the anchor and

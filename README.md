@@ -3,8 +3,8 @@
 This repository is a research-process workspace. It is not the remote experiment codebase.
 
 The goal is to preserve research judgment: project graph, problem anchors,
-hypotheses, evidence, claim boundaries, result records, handoff reports, and
-meeting-ready reports.
+hypotheses, evidence, claim boundaries, protocols, result records, and
+meeting materials.
 
 Canonical research artifacts are written in English by default. Chinese
 companion files are allowed when useful; add `_cn` before the extension, for
@@ -63,23 +63,21 @@ Projects/graphs/<topic>.graph.yaml
 Projects/<project>/main/problem_anchors/<anchor_id>.md
 ```
 
-After the anchor is stable, write a short protocol for user approval before the
-operational execution plan:
+After the anchor is stable, write `protocol.md` for user approval before
+implementation or running:
 
 ```text
 Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
-Projects/<project>/main/experiments/<experiment_id>/protocol_for_approval.md
-Projects/<project>/main/experiments/<experiment_id>/execution_plan.md
+Projects/<project>/main/experiments/<experiment_id>/protocol.md
 Projects/<project>/main/experiments/<experiment_id>/summary.md
 Projects/<project>/main/experiments/<experiment_id>/detailed.md
-daily_research_reports/MMDD/<topic>/05_report_card.md
 ```
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
 understanding, test a hypothesis, or change a next decision.
-Nontrivial experiments should stop at `protocol_for_approval.md` until the user
-approves the run.
+Nontrivial experiments should stop at `protocol.md` until the user approves the
+implementation or run.
 
 When a handoff is explicitly requested, place the handoff report and the most
 important anchor copy in today's folder by default:
@@ -90,8 +88,8 @@ daily_research_reports/MMDD/<topic>/<anchor_id>.md
 ```
 
 When syncing a daily result to another project or collaborator repo, copy the
-same curated set: subject-bearing anchor, `summary.md`, `detailed.md`,
-`05_report_card.md`, and only the figures/tables referenced by those documents.
+same curated set: subject-bearing anchor, `protocol.md`, `summary.md`,
+`detailed.md`, and only the figures/tables referenced by those documents.
 
 ## Web-Side AI
 
