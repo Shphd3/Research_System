@@ -18,6 +18,11 @@ The formal anchor is the project-local equivalent of
 `docs/design.md` in the research-exploration workflow. It should explain the
 research design, not only summarize a result.
 
+Use `Tiny Summary` as a short anchor replay: it should let you recover the
+current question, judgment, evidence, boundary, and next decision before
+reading the full anchor. The rest of the anchor is the auditable design layer
+for AI critique, replay, and boundary checks.
+
 ## AI Use Contract
 
 When an AI reads this draft, its first job is to audit the user's logic before
@@ -28,7 +33,7 @@ writing a formal anchor. It should identify:
 - whether the physical priors are falsifiable and sufficient;
 - which hypotheses lack falsifiers;
 - whether the mathematical model maps to measurable variables;
-- what computational realization is missing;
+- whether the computational realization prevents math/code drift;
 - which minimal tests still need user approval.
 
 The AI should not silently replace the user's research question, feature key,
@@ -51,11 +56,11 @@ Candidate physical priors I am not sure about:
 
 当前子问题：
 
-核心假设：
+当前判断：
 
-最小证伪测试：
+关键证据：
 
-当前边界：
+最危险边界：
 
 下一步决策：
 
@@ -98,6 +103,9 @@ Observable metrics:
 Falsifier:
 
 ## 5. Computational Realization
+
+Purpose: prevent the mathematical object and implemented object from drifting
+apart.
 
 Input objects:
 

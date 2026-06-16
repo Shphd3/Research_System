@@ -15,6 +15,17 @@ anchor-first workflow. It should preserve the user's research judgment while
 making the problem, priors, model, computational realization, falsification
 tests, evidence, claim boundary, and next decision inspectable.
 
+The anchor has two reading layers:
+
+```text
+Tiny Summary = short anchor replay for the human reader
+Full anchor = auditable design document for AI, replay, and boundary checks
+```
+
+Do not solve anchor length by deleting the design logic. Solve it by making the
+Tiny Summary strong enough that the user can recover the current question,
+judgment, evidence, boundary, and next decision before reading the full anchor.
+
 ## User Workflow
 
 Default workflow:
@@ -43,6 +54,8 @@ First return an audit:
 - physical priors that are missing, too vague, or not falsifiable;
 - hypotheses without clear falsifiers;
 - math objects that do not map to measurable variables;
+- computational realization gaps where the implemented object may drift from
+  the mathematical object;
 - claims that are stronger than the proposed evidence;
 - the smallest additions needed before a formal anchor can be written;
 - candidate tests that require user approval before becoming Minimal Tests.
@@ -78,16 +91,21 @@ Do not add extra top-level sections by default.
 
 ### 0. Tiny Summary
 
-Write this section in Chinese as the quick judgment surface:
+Write this section in Chinese as a short anchor replay or draft, not as a vague
+abstract. It should let the user recover the whole anchor in about 30 seconds.
+Use concrete sentences, not labels without content.
 
 ```text
 父问题：
 当前子问题：
-核心假设：
-最小证伪测试：
-当前边界：
+当前判断：
+关键证据：
+最危险边界：
 下一步决策：
 ```
+
+Length target: 3 to 6 short lines. If the Tiny Summary cannot be written
+clearly, the full anchor is not ready.
 
 ### 1. Problem Definition
 
@@ -149,6 +167,13 @@ analysis path.
 
 This is the main addition relative to the older compact anchor. It is the
 minimum implementation contract that connects the model to code.
+
+The reason this section exists is to prevent a common research failure: the
+physical prior and mathematical model sound clear, but the implemented
+experiment measures a different object. Computational realization forces the
+anchor to name the actual inputs, derived variables, algorithm stages,
+stage-local evidence, and expected artifacts before the protocol or code is
+written.
 
 Include only:
 

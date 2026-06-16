@@ -154,6 +154,13 @@ Anchors are decision cards, not reports. They must include:
 - current evidence;
 - claim boundary and one next decision.
 
+Each anchor has two reading layers. `Tiny Summary` is the short human-facing
+anchor replay: current question, judgment, key evidence, most dangerous
+boundary, and next decision. The remaining sections are the auditable design
+layer for AI review, replay, and boundary checks. `Computational Realization`
+prevents theory/code drift by naming the implemented inputs, computed
+variables, algorithm stages, stage-local evidence, and expected artifacts.
+
 For nontrivial research work, the artifact loop is incomplete unless it also
 records stage-level evidence, the failure interpretation for each important
 stage, whether a result falsifies the physical prior or only one

@@ -151,6 +151,11 @@ falsifiable hypotheses, one core mathematical model, computational realization,
 minimal falsification tests, current evidence, claim boundary, and one next
 decision.
 
+The anchor has two reading layers. `Tiny Summary` is the short human-facing
+anchor replay: current question, judgment, key evidence, most dangerous
+boundary, and next decision. The remaining sections are the auditable design
+layer for AI review, replay, and boundary checks.
+
 The required anchor structure is:
 
 ```text
@@ -168,6 +173,11 @@ The required anchor structure is:
 Do not put commands, long configs, raw logs, broad ablations, or full result
 presentation in the anchor. Put those in `protocol.md`, `summary.md`, and
 `detailed.md`.
+
+`Computational Realization` exists to prevent theory/code drift: the anchor
+must say what input objects, computed variables, algorithm stages,
+stage-local evidence, and expected artifacts instantiate the mathematical
+model before the protocol or implementation expands it.
 
 ### Protocol
 

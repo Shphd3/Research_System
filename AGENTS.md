@@ -13,10 +13,10 @@ English unless the user explicitly asks otherwise. Chinese companion versions
 are allowed when useful; name them with `_cn` before the extension, for example
 `<anchor_id>_cn.md`, `protocol_cn.md`, `summary_cn.md`, and `detailed_cn.md`.
 The English file remains the source of truth unless the user explicitly says
-the Chinese file is canonical. Exception: anchor
-`Tiny Summary` sections should be written in Chinese as the quick judgment
-surface, while the rest of the canonical anchor remains English unless the user
-explicitly asks otherwise.
+the Chinese file is canonical. Exception: anchor `Tiny Summary` sections should
+be written in Chinese as the short anchor replay: current question, judgment,
+key evidence, most dangerous boundary, and next decision. The rest of the
+canonical anchor remains English unless the user explicitly asks otherwise.
 
 ## Response Style
 
@@ -108,6 +108,12 @@ Each anchor should let the reader see these points quickly:
 - supported / weakened / insufficient-evidence outcomes;
 - current evidence;
 - claim boundary and exactly one next decision.
+
+The anchor has two reading layers: `Tiny Summary` is the human-facing short
+replay, and the remaining sections are the auditable design layer for AI,
+replay, and boundary checks. Do not solve a long anchor by deleting design
+logic; make the Tiny Summary strong and keep detailed run material in
+`protocol.md`, `summary.md`, or `detailed.md`.
 
 After evidence exists, update the same anchor. Long result explanation belongs
 in `detailed.md`; optional handoff packages only package already-updated

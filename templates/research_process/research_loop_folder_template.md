@@ -20,7 +20,9 @@ archive/
 before AI critique. It may be incomplete.
 
 `<topic>_anchor.md`: formal anchor and current-state research design. It is the
-project-local equivalent of research-exploration `docs/design.md`.
+project-local equivalent of research-exploration `docs/design.md`. Its
+`Tiny Summary` is the short anchor replay for human reading; the remaining
+sections are the auditable design layer.
 
 `protocol.md`: experiment design and approval surface. It replaces the old
 two-file split between approval notes and implementation details. The AI stops

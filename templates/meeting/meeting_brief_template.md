@@ -1,150 +1,73 @@
-# Meeting Brief: [主题]
+# Meeting Brief: <topic>
 
-## **Question**
+Use this for a short advisor or group-meeting reading surface. It is not a
+replacement for `summary.md` or `detailed.md`; it only carries the minimum
+decision context needed in the meeting.
 
-[这次汇报要回答的一个核心问题。]
+## Question
 
-**父问题：**
-[它为什么影响主线判断。]
+Core question:
 
-**当前子问题：**
-[这次结果具体减少了哪一个不确定性。]
+Why it matters to the mainline:
 
-## **Conclusion**
+Current subproblem:
 
-> [先写结果，1-2 句话，不写时间线。]
+## Conclusion
 
-**主要更新：**
+One-sentence summary:
 
-1. [我们的判断发生了什么变化。]
-2. [哪个旧解释被支持、削弱或修正。]
-3. [这个结果指向哪个下一步决策。]
+1.
+2.
+3.
 
-## **Key Evidence**
+## Setup
 
-[把证据展开到不读完整实验记录也能判断结论是否成立。]
+Only include setup details needed to judge the evidence.
 
-1. **[证据标题 1。]** [指标 / 图 / 条件。]  
-   **结果：** [数值或现象。]  
-   **解释：** [它支持或削弱了什么。]
+Data / task:
 
-2. **[证据标题 2。]** [指标 / 图 / 条件。]  
-   **结果：** [数值或现象。]  
-   **解释：** [它支持或削弱了什么。]
+Model / router:
 
-3. **[证据标题 3。]** [指标 / 图 / 条件。]  
-   **结果：** [数值或现象。]  
-   **解释：** [它支持或削弱了什么。]
+Comparison:
 
-## **Detailed Setup**
+Primary metric:
 
-[只写判断证据所必需的设置。]
+Important omission:
 
-**数据 / 任务：**
+Do not include seeds, job ids, run ids, full configs, or audit-node lists unless
+one of them changes the credibility of the conclusion.
 
-- [数据来源或合成任务。]
-- [输入构造。]
-- [预测目标或训练目标。]
-- [统计哪些位置、样本或词元。]
+## Key Evidence
 
-**模型：**
+1. **<evidence title>**
+   Evidence:
+   Result:
+   Interpretation:
 
-- [模型类型和大小。]
-- [随机初始化、预训练模型或训练后审计节点。]
-- [关键维度。]
+2. **<evidence title>**
+   Evidence:
+   Result:
+   Interpretation:
 
-**路由器 / 混合专家模型：**
+3. **<evidence title>**
+   Evidence:
+   Result:
+   Interpretation:
 
-- [路由器类型。]
-- [每个词元选择几个专家。]
-- [是否使用共享专家。]
-- [负载均衡损失是否开启。]
-- [其他会影响解释的路由设置。]
+Use only evidence that can be read during the meeting. Move detailed tables,
+stage traces, and full visualization walkthroughs to `summary.md` or
+`detailed.md`.
 
-**运行 / 审计：**
+## Boundary
 
-- [随机种子。]
-- [审计节点。]
-- [审计样本量。]
-- [任务号或运行编号。]
+This conclusion does not cover:
 
-## **Detailed Evidence**
+-
+-
+-
 
-### 1. [证据块 1]
+## Next Step
 
-[这个证据块回答什么局部问题。]
+Next decision:
 
-| 指标 | 结果 | 含义 |
-|---|---:|---|
-| [指标] | [数值] | [它回答什么] |
-| [指标] | [数值] | [它回答什么] |
-
-**解释：**
-[区分观测和解释，并说明不能证明什么。]
-
-### 2. [证据块 2]
-
-[这个证据块回答什么局部问题。]
-
-| 指标 | 结果 | 含义 |
-|---|---:|---|
-| [指标] | [数值] | [它回答什么] |
-| [指标] | [数值] | [它回答什么] |
-
-**解释：**
-[区分观测和解释，并说明不能证明什么。]
-
-### 3. [证据块 3]
-
-[这个证据块回答什么局部问题。]
-
-| 指标 | 结果 | 含义 |
-|---|---:|---|
-| [指标] | [数值] | [它回答什么] |
-| [指标] | [数值] | [它回答什么] |
-
-**解释：**
-[区分观测和解释，并说明不能证明什么。]
-
-## **Current Interpretation**
-
-**观测：**
-[直接测到的现象。]
-
-**解释：**
-[这些观测说明了什么。]
-
-**现在可以说：**
-[证据已经支持的表述。]
-
-**仍然只是猜测：**
-[可能成立但尚未测试的表述。]
-
-## **Boundary**
-
-**这个结论覆盖：**
-
-- [数据 / 任务边界。]
-- [模型 / 路由器边界。]
-- [训练目标 / 审计节点边界。]
-- [指标边界。]
-
-**这个结论不覆盖：**
-
-- [未测试的更强结论。]
-- [未测试的设置。]
-- [未证明的方法或部署结论。]
-
-## **Next Step**
-
-**下一步决策：**
-[会后需要决定的最小问题。]
-
-**下一轮实验：**
-[若继续，写最小决定性实验；若转向，写替代假设。]
-
-**支持标准：**
-[什么结果支持下一步假设。]
-
-**削弱标准：**
-[什么结果削弱下一步假设。]
+Next minimal experiment or action:
