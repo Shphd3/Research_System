@@ -26,6 +26,21 @@ Do not solve anchor length by deleting the design logic. Solve it by making the
 Tiny Summary strong enough that the user can recover the current question,
 judgment, evidence, boundary, and next decision before reading the full anchor.
 
+## Self-Contained Core Rule
+
+An anchor must be minimally self-contained. Do not rely on chat history, meeting
+memory, or another artifact for the meaning of local labels. The first time a
+local shorthand is used, define the concrete object it names:
+
+- method or metric labels such as `M1`, `M2`, or `oracle`;
+- condition labels such as `C1`, `C2`, or named controls;
+- model variants, data slices, and intervention settings;
+- primary metrics and thresholds that decide support or weakening.
+
+The definition can be one line, but it must let a new reader audit what was
+compared and why it bears on the decision question. Tiny Summary may use labels
+only if the full anchor defines them nearby.
+
 ## User Workflow
 
 Default workflow:

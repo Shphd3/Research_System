@@ -24,6 +24,12 @@ One-sentence summary:
 
 Only include setup details needed to judge the evidence.
 
+Make the brief minimally self-contained: define every local shorthand label
+that appears in the conclusion or evidence, such as metric names, condition
+names, model variants, dataset slices, and control settings. A meeting reader
+should not need chat history, the protocol, or the detailed report to know what
+the compared objects are.
+
 Data / task:
 
 Model / router:

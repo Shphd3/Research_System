@@ -21,6 +21,22 @@ detailed.md = full evidence ledger and visualization results
 figures/ and tables/ = referenced evidence artifacts
 ```
 
+## Minimal Self-Contained Rule
+
+Every meeting brief, collaborator package, or web-side reading surface must be
+minimally self-contained. Define local shorthand labels before using them as
+evidence, including:
+
+- metric or method labels such as `M1`, `M2`, or named ablations;
+- condition or setting labels such as `C1`, `C2`, or dataset slices;
+- model/router variants and negative controls;
+- primary metrics whose names are not self-explanatory.
+
+Keep the definitions short, but make the object concrete. A reader should be
+able to understand the compared settings and the decision without chat history,
+the protocol, or the full detailed report. Do not solve this by copying full
+configs or timelines into the brief.
+
 ## Package Contents
 
 Include only the smallest curated set needed for the reader:
