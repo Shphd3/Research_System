@@ -3,6 +3,19 @@
 Use this as a short group-meeting reading surface. It is not a replacement for
 `summary.md` or `detailed.md`.
 
+二维机制：
+
+初始化差异 →
+距离度量 →
+分发 →
+uniformity + specialization
+
+高维对应：
+
+？
+
+
+
 ## Question
 
 Core question:
@@ -32,6 +45,7 @@ One-sentence summary:
 1. 不是只有 M4 能把均匀 feature 分成均匀负载：M1/M2/M3-top1 在非退化各向异性条件下也能做到负载误差为 0。
 2. M4 的优势是它保留完整矩阵响应，在 C3/C5 的分数优势最大，并且在 C2 这个“没有方向差异”的对照组中正确退化。
 3. 只看负载是否均匀不能证明 expert 真的有偏好；C4 近似相同 experts 的有效/无效标记过于宽松，必须看分数优势大小。
+4. 补充的区域均匀实验说明：二维证明应该使用 trace-centered M4，也就是 $x^\top(G_e-\mathrm{tr}(G_e)I/2)x$。它不只适用于单位圆，也适用于 uniform disk、annulus 和 centered square；但不能说任意均匀区域都成立，centered rectangle 会破坏 50/50。
 
 ## Setup
 
@@ -40,6 +54,10 @@ Only include setup details needed to judge the evidence.
 Data / task:
 
 二维输入 $x$ 从单位圆 $S^1$ 均匀采样；每个 expert-geometry seed 采样 10,000 个点，共 100 个 seeds。条件包括随机矩阵、等奇异值正交矩阵、不等奇异值正交矩阵、近似相同 experts、明显分离各向异性 experts。
+
+补充区域实验 A06_E02：
+
+为了回答“单位圆是否太特殊”，我们又固定同样的 $2\times2$ expert 条件，改用 7 种二维输入分布：unit circle、uniform disk、annulus、centered square、near-origin mixture、shifted disk、centered rectangle。每种分布 20,000 个点、100 个 expert seeds。这个实验不是新主线，而是检查二维证明的输入分布边界。
 
 Model / router（模型 / 路由规则）:
 
@@ -52,6 +70,12 @@ M2 unsigned prototype: $q_e(x)=(x^\top m_e)^2$。
 M3 top-1 projection: $q_e(x)=\|V_{e,1}^\top x\|^2$。  
 M3 full-span control: $q_e(x)=\|V_{e,1:2}^\top x\|^2$。  
 M4 matrix response: $q_e(x)=x^\top A_e^\top A_ex=\|A_ex\|^2$。
+
+A06_E02 中额外区分三个 M4：
+
+raw M4: $x^\top G_ex$。  
+trace-centered M4: $x^\top(G_e-\mathrm{tr}(G_e)I/2)x$，这是二维证明要用的对象。  
+distribution-centered M4: $x^\top G_ex-\mathbb{E}_{x\sim P}[x^\top G_ex]$，这是一个容易混淆的对照；半径变化时它不等价于 trace-centered M4。
 
 Primary metric:
 
@@ -87,6 +111,20 @@ Important omission:
    Interpretation:
    近似相同 experts 不能因为有效/无效标记通过就说有强专家偏好；随机矩阵也可能需要校准才能满足负载均匀。
 
+4. **模长变化不破坏结论，但任意区域均匀会破坏结论**
+   Evidence:
+   A06_E02 比较 unit circle、uniform disk、annulus、centered square、near-origin mixture、shifted disk、centered rectangle。
+   Result:
+   在 C3/C5 两个非退化各向异性条件中，trace-centered M4 的负载误差：unit circle = 0.0000，uniform disk = 0.0030，annulus = 0.0045，centered square = 0.0015，near-origin mixture = 0.0013，centered rectangle = 0.2308。平均分数优势相对单位圆：uniform disk 约 0.50，annulus 约 0.62，centered square 约 0.67，near-origin mixture 约 0.12。
+   Interpretation:
+   半径变化本身不是问题；真正需要的是足够的对称性。uniform disk 和 annulus 仍然是正确的补充 setting；centered square 也是合理的区域均匀 setting；但 centered rectangle 说明“任意正方形/矩形/区域均匀”不能直接外推。near-origin mixture 主要暴露 margin 风险：负载仍均匀，但分数优势变弱。
+
+5. **trace-centered M4 和 distribution-centered M4 不能混用**
+   Evidence:
+   在 C1 random unconstrained experts 中，raw M4 的负载误差约 0.25。trace-centered M4 在 unit circle、uniform disk、annulus、centered square 上接近 0；但 distribution-centered M4 在 uniform disk 的负载误差 = 0.0896，在 near-origin mixture = 0.3863。
+   Interpretation:
+   二维证明要写的是 $x^\top(G_e-\mathrm{tr}(G_e)I/2)x$。如果只减整个分布上的均值，半径变化时可能引入新的阈值效应，不能作为同一个证明对象。
+
 ## Boundary
 
 This conclusion does not cover:
@@ -96,13 +134,14 @@ This conclusion does not cover:
 - 不证明语义 feature 特化，也不证明 feature 被分到某个 expert 后一定带来真实任务收益。
 - 不证明高维低秩近似和 common removal 已经成立。
 - 不证明 `metric_validity` 这种有效/无效二值判据在近似相同 experts 上足够严格。
+- 不证明任意二维均匀区域都能 50/50；目前支持的是单位圆、径向对称区域和 centered square 这类有足够对称性的区域。
 
 ## Next Step
 
 Next decision:
 
-是否把 M4 的矩阵响应能量作为下一轮路由器构造目标，同时把 M3-top1 当作低维近似候选？
+是否把 trace-centered M4 写成二维证明对象，并把 M4 的矩阵响应能量作为下一轮路由器构造目标，同时把 M3-top1 当作低维近似候选？
 
 Next minimal experiment or action:
 
-在同一个二维设置中比较三种分配规则：精确 M4 二次分数规则、M3-top1 低维近似规则、最佳线性近似规则。核心看负载误差、平均分数优势、与 M4 理想规则的一致率，以及近似相同 experts 中的误判率。
+先完成二维证明：对 unit circle、radially symmetric radius-varying distributions、centered square 分别说明为什么 trace-centered M4 能 50/50；同时明确 centered rectangle 是反例边界。然后再比较三种分配规则：精确 M4 二次分数规则、M3-top1 低维近似规则、最佳线性近似规则。核心看负载误差、平均分数优势、与 M4 理想规则的一致率，以及近似相同 experts 中的误判率。
