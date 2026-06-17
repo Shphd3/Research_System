@@ -22,16 +22,6 @@ Centered/calibrated M4 是当前高维静态目标；raw M4 被削弱；top-r �
 
 ## Setup
 
-Input是什么？
-
-Expert是什么？
-
-Distance是什么？
-
-Uniformity怎么定义？
-
-
-
 Data / task:
 输入是 $x\sim\mathrm{Unif}(S^{d-1})$，$d=2,4,8,16,32,64,128,256,512$。每个 condition 100 seeds，每个 seed 20,000 eval samples，5,000 calibration samples。
 

@@ -3,19 +3,6 @@
 Use this as a short group-meeting reading surface. It is not a replacement for
 `summary.md` or `detailed.md`.
 
-二维机制：
-
-初始化差异 →
-距离度量 →
-分发 →
-uniformity + specialization
-
-高维对应：
-
-？
-
-
-
 ## Question
 
 Core question:
@@ -40,7 +27,7 @@ M4 matrix response: $q_e(x)=x^\top A_e^\top A_ex=\|A_ex\|^2$。
 
 One-sentence summary:
 
-二维情形下，M4 的“矩阵响应能量”是当前最合适的核心分数定义；M3-top1 是低秩近似候选；M1/M2 可以作为用于比较的对照分发方式。
+二维情形下，M4 的“完整专家矩阵响应能量”是当前最合适的核心分数定义；M3-top1形式 是低秩近似候选，后续会外推到高维情形；M1/M2为我们实验对比的baseline.
 
 1. 不是只有 M4 能把均匀 feature 分成均匀负载：M1/M2/M3-top1 在非退化各向异性条件下也能做到负载误差为 0。
 2. M4 的优势是它保留完整矩阵响应，在 C3/C5 的分数优势最大，并且在 C2 这个“没有方向差异”的对照组中正确退化。
