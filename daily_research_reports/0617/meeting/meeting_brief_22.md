@@ -7,7 +7,8 @@ Use this as a short group-meeting reading surface. It is not a replacement for
 
 Core question:
 
-在两个 $2\times2$ experts 和二维均匀输入中，哪一种由 expert 初始化矩阵诱导的兼容分数 $q_e(x)$ 可以作为下一步路由器构造的核心几何对象？
+theory_proof\theoretical_analysis.md中给出了关于2维情形下，使用m个随机中心根据余弦相似度分发，为什么不能够形成均匀分发。
+我们探索的问题在于：在两个 $2\times2$ experts 和二维均匀输入中，哪一种由 expert 初始化矩阵诱导的路由分数 $q_e(x)$ 可以作为下一步路由器初始化构造的核心几何对象？
 
 Why it matters to the mainline:
 
@@ -15,6 +16,7 @@ Why it matters to the mainline:
 
 Current subproblem:
 
+我们使用以下几种分数进行实验：
 M1 signed prototype: $q_e(x)=x^\top m_e$。  
 M2 unsigned prototype: $q_e(x)=(x^\top m_e)^2$。  
 M3 top-1 projection: $q_e(x)=\|V_{e,1}^\top x\|^2$。  
