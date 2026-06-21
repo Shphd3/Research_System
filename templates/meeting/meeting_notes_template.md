@@ -19,10 +19,10 @@ Use the shared brief template for pre-meeting decision framing:
 templates/meeting/meeting_brief_template.md
 ```
 
-`meeting_brief.md` should start with a three-point conclusion and one summary
-sentence, then give only setup, key evidence, uncovered boundary, and next
-decision. It is for meeting preparation, not a replacement for an experiment
-`summary.md` or `detailed.md`.
+`meeting_brief.md` should start from the problem being solved and the cognitive
+update: how the researcher's judgment changed, which key evidence supports it,
+what boundary remains, and what meeting decision is needed. It is for meeting
+preparation, not a replacement for an experiment `summary.md` or `detailed.md`.
 
 For experiment results that need advisor-facing discussion, make `summary.md`
 and `detailed.md` self-contained enough to read directly.

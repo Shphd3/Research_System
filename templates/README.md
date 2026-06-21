@@ -40,7 +40,7 @@ the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_brief_template.md` | Pre-meeting brief with question, three-point conclusion, setup, key evidence, uncovered boundary, and next decision. Save as `meeting_brief.md`. |
+| `meeting/meeting_brief_template.md` | Advisor/group-meeting brief with problem-first framing, cognitive update, key evidence from `summary.md`, central figures, boundary, next decision, and a merged-brief mode for multi-day work. Save as `meeting_brief.md`. |
 | `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis. Save as `meeting_notes.md`. |
 
 ## Archive

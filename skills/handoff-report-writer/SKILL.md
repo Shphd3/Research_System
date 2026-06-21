@@ -10,6 +10,12 @@ metadata:
 Use this skill only when the user explicitly asks for a meeting,
 collaborator, web-side, or external repository handoff package.
 
+For group-meeting or advisor-facing briefs, the first goal is that the advisor
+can quickly understand what problem is being solved. A meeting brief is not an
+experiment retelling. It reports how the researcher's judgment changed, why
+that update is supported, what boundary remains, and what decision is needed
+next.
+
 Do not create new research claims, new conclusions, or a second closure. The
 source of truth remains:
 
@@ -20,6 +26,67 @@ summary.md = first result reading path
 detailed.md = full evidence ledger and visualization results
 figures/ and tables/ = referenced evidence artifacts
 ```
+
+The brief may synthesize a higher-level cognitive update across several
+existing summaries only when the synthesis is directly supported by those
+sources. If the synthesis is not fully supported, write it as an unresolved
+question or next decision, not as a claim.
+
+## Meeting Brief Modes
+
+Use one of two modes.
+
+Mode A: cognitive-update brief.
+Use when one anchor or one experiment line produced the main update.
+
+Required order:
+
+```text
+problem being solved
+old or uncertain judgment
+updated judgment
+2-4 key evidence items from summary.md
+central figures, if they decide the claim boundary or next decision
+can claim / cannot claim
+meeting decision needed
+source map
+```
+
+Mode B: merged brief.
+Use when several days, anchors, or experiment summaries must be reported
+together.
+
+Do not concatenate old briefs. Merge by the main research question:
+
+```text
+shared problem
+subquestions merged
+single higher-level judgment update
+evidence modules, one per source summary or anchor
+cross-result interpretation
+conflicts or remaining rival explanations
+can claim / cannot claim
+meeting decision needed
+source map and excluded material
+```
+
+If the source briefs answer different parent questions, do not force one
+merged claim. Split them into separate mainline updates and mark unrelated
+results as parked or side evidence.
+
+## Source Priority
+
+Use sources in this order:
+
+1. updated anchor for the current claim boundary and next decision;
+2. `summary.md` for the meeting conclusion, key evidence, and central figures;
+3. `detailed.md` for setup checks, numeric precision, and artifact maps;
+4. protocol only to verify the approved question, conditions, and primary
+   metric.
+
+Do not use chat history as the source of a meeting claim. Do not pull debug
+plots from `detailed.md` into the brief unless they directly decide the current
+claim boundary or next decision.
 
 ## Minimal Self-Contained Rule
 
@@ -50,6 +117,10 @@ figures/      # only files embedded or directly referenced
 tables/       # only files embedded or directly referenced
 README.md     # short index and scope, when useful
 ```
+
+For a private daily meeting folder, `meeting_brief.md` may point to existing
+project artifacts instead of copying the full package. If the user asks for a
+handoff package or external sync, copy only the curated files listed above.
 
 Do not include:
 
