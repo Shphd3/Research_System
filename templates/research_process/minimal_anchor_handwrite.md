@@ -4,128 +4,128 @@ This is rough thinking for AI audit. It is not a final anchor.
 
 ## User Control
 
-Preserve:
+**Preserve:**
 
-Do not silently change:
+**Do not silently change:**
 
-Unclear / risky:
+**Unclear / risky:**
 
-Candidate priors:
+**Candidate priors:**
 
 ## 0. Tiny Summary
 
-父问题：
+**父问题：**
 
-当前子问题：
+**当前子问题：**
 
-当前判断：
+**当前判断：**
 
-关键证据：
+**关键证据：**
 
-最危险边界：
+**最危险边界：**
 
-下一步决策：
+**下一步决策：**
 
 ### Minimal Replay
 
-Question:
+**Question:**
 
-Physical prior:
+**Physical prior:**
 
-Core model:
+**Core model:**
 
-Model term being tested:
+**Model term being tested:**
 
-Primary metric:
+**Primary metric:**
 
-Falsifier:
+**Falsifier:**
 
-Can claim:
+**Can claim:**
 
-Cannot claim:
+**Cannot claim:**
 
-Next decision:
+**Next decision:**
 
 ## 1. Problem Definition
 
-Parent problem:
+**Parent problem:**
 
-Sharper subproblem:
+**Sharper subproblem:**
 
-Decision question:
+**Decision question:**
 
-Not in scope:
+**Not in scope:**
 
 ## 2. Physical Priors
 
-P1:
+**P1:**
 
-Meaning:
+**Meaning:**
 
-Could be wrong if:
+**Could be wrong if:**
 
 ## 3. Falsifiable Hypotheses
 
-H1:
+**H1:**
 
-Supported if:
+**Supported if:**
 
-Weakened if:
+**Weakened if:**
 
 ## 4. Mathematical Model
 
-Objects:
+**Objects:**
 
-Core decomposition:
+**Core decomposition:**
 
-Mechanism relation:
+**Mechanism relation:**
 
-Observable metrics:
+**Observable metrics:**
 
-Falsifier:
+**Falsifier:**
 
 ## 5. Computational Realization
 
-Input objects:
+**Input objects:**
 
-Computed variables:
+**Computed variables:**
 
-Algorithm stages:
+**Algorithm stages:**
 
-Stage-local evidence:
+**Stage-local evidence:**
 
-Expected artifacts:
+**Expected artifacts:**
 
 ## 6. Minimal Falsification Tests
 
-Test:
+**Test:**
 
-Question:
+**Question:**
 
-Intervention / comparison:
+**Intervention / comparison:**
 
-Primary metric:
+**Primary metric:**
 
-Supports:
+**Supports:**
 
-Weakens:
+**Weakens:**
 
-Insufficient evidence:
+**Insufficient evidence:**
 
 ## 7. Current Evidence
 
-Observation:
+**Observation:**
 
-Interpretation:
+**Interpretation:**
 
-Boundary:
+**Boundary:**
 
-Evidence links:
+**Evidence links:**
 
 ## 8. Claim Boundary And Next Decision
 
-Can claim:
+**Can claim:**
 
-Cannot claim:
+**Cannot claim:**
 
-Next decision:
+**Next decision:**
