@@ -119,6 +119,21 @@ After evidence exists, update the same anchor. Long result explanation belongs
 in `detailed.md`; optional handoff packages only package already-updated
 evidence for meeting or collaborator use.
 
+## Artifact Alignment Contract
+
+Each artifact has one job. Do not let later artifacts rewrite earlier research
+questions, and do not let early artifacts absorb run details or results.
+
+| Artifact | Owns | Must not do |
+|---|---|---|
+| `00_handwrite_anchor.md` | the user's rough judgment and exposed thinking | be polished by AI into a complete document without audit |
+| anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
+| `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
+| `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
+| `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than `summary.md` or the anchor |
+| `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
+| anchor update | compress results into supported / weakened / insufficient evidence | paste a result report into the anchor |
+
 ## Explicit Sync Rule
 
 Default behavior:

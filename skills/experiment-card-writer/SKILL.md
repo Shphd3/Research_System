@@ -36,21 +36,90 @@ Do not run or expand a nontrivial experiment before the protocol is approved.
 Do not add broad sweeps, extra seeds, or new diagnostics unless they distinguish
 a named rival explanation or protect the validity of the primary conclusion.
 
+## Protocol Alignment Gate
+
+A protocol is invalid unless it starts with an approval-facing snapshot. The
+first page is for the user to confirm purpose and basic setup before any run:
+
+```text
+Approval status:
+Purpose:
+Primary anchor:
+Anchor decision question:
+Anchor physical prior tested:
+Anchor core model term tested:
+Anchor falsifier:
+Experiment role:
+Primary metric from anchor:
+Claim boundary from anchor:
+Minimal setup:
+Basic configuration:
+Conditions to run:
+Pass:
+Fail:
+Insufficient:
+Cannot claim:
+Approval decision:
+```
+
+Keep this snapshot short enough to read before approving the experiment. Put
+stage profiling, algorithm details, commands, and artifact maps after the
+snapshot.
+
+Each condition, ablation, diagnostic, or visualization must appear in this
+table:
+
+| Item | Anchor clause tested | Model term / rival explanation | Why needed | Primary or secondary evidence | Pass | Fail | Insufficient | Figure/table |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+Do not include a condition because it is easy to run. Include it only if it
+tests a model term, separates a named rival explanation, or protects the
+validity of the primary metric.
+
+The protocol must explicitly say whether it is a root-cause audit, metric
+audit, operationalization / proxy test, method construction, or robustness
+check. Method construction is not allowed as the first move unless the anchor
+already contains a supported mechanism or metric target.
+
 ## Protocol Standard
 
 `protocol.md` is the approved experiment design. It replaces the older two-file
 planning split.
 
 It must align with the research-exploration `experiment_design.md` role:
+the first page is the approval snapshot; later sections are the audit layer.
 
 ```markdown
 # Protocol: <experiment_id>
 
+## 0. Approval Snapshot
+
+Approval status:
+Purpose:
 Primary anchor:
 Anchor decision question:
+Anchor physical prior tested:
+Anchor core model term tested:
+Anchor falsifier:
 Experiment role:
+Primary metric from anchor:
+Claim boundary from anchor:
+Minimal setup:
+Basic configuration:
+Conditions to run:
+Pass:
+Fail:
+Insufficient:
+Cannot claim:
+Approval decision:
 
-## 1. Decision Question
+## 1. Anchor Alignment
+
+Decision question:
+Physical prior tested:
+Core model term tested:
+Falsifier:
+Claim boundary:
 
 ## 2. Tested Hypothesis
 
@@ -59,6 +128,10 @@ Experiment role:
 ## 4. Data / Model / Algorithm / Objective
 
 ## 5. Conditions, Seeds, And Checkpoints
+
+| Item | Anchor clause tested | Model term / rival explanation | Why needed | Primary or secondary evidence | Pass | Fail | Insufficient | Figure/table |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | | | |
 
 ## 6. Primary Metric
 
@@ -91,11 +164,39 @@ failure reasons:
 
 ## 12. What This Cannot Claim
 
-## 13. Approval Status
+## 13. Review Notes And Protocol Changes
 ```
 
 Stop after writing or changing the protocol unless the user explicitly approves
 running or implementing the experiment.
+
+## Visualized Result Alignment Gate
+
+A figure is allowed in `summary.md` only if it supports the current claim
+boundary or next decision. Every central figure must include this alignment
+block:
+
+```text
+Anchor question:
+Protocol question:
+Metric shown:
+Metric definition:
+Data source:
+What this figure decides:
+Observed result:
+Allowed claim:
+What this figure does not prove:
+Anchor update implication:
+```
+
+Debug figures that do not support the current conclusion must move to
+`detailed.md` under `Debug / Appendix Figures`, or to a viewer appendix titled
+`Debug plots not used for the current conclusion`.
+
+`summary.md` should contain only the smallest number of figures needed to
+support the primary judgment. `detailed.md` may contain the full evidence
+ledger, but it must separate decision evidence, stage-level profiling
+evidence, debug-only evidence, and failed or ambiguous evidence.
 
 ## Summary Standard
 
@@ -127,13 +228,27 @@ Protocol:
 
 What this tests:
 
+Anchor question:
+
+Protocol question:
+
+Metric shown:
+
+Metric definition:
+
+Data source:
+
 How to read:
+
+What this figure decides:
 
 Observed result:
 
-Take-home:
+Allowed claim:
 
 What this does not prove:
+
+Anchor update implication:
 
 ## Claim Boundary
 
@@ -188,6 +303,13 @@ success/failure/insufficient-evidence criteria applied:
 
 ## 5. Main Results
 
+Separate:
+
+- decision evidence;
+- stage-level profiling evidence;
+- debug-only evidence;
+- failed or ambiguous evidence.
+
 ## 6. Visualization Results
 
 For each central figure or viewer:
@@ -202,6 +324,8 @@ How to read:
 Observed result:
 Take-home:
 Remaining uncertainty:
+What this figure does not prove:
+Anchor update implication:
 
 ## 7. Stage Evidence And Failure Decomposition
 

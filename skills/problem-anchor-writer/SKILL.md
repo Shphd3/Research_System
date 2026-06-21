@@ -19,12 +19,33 @@ The anchor has two reading layers:
 
 ```text
 Tiny Summary = short anchor replay for the human reader
+Minimal Replay = the approval-facing 9-line judgment check
 Full anchor = auditable design document for AI, replay, and boundary checks
 ```
 
 Do not solve anchor length by deleting the design logic. Solve it by making the
-Tiny Summary strong enough that the user can recover the current question,
-judgment, evidence, boundary, and next decision before reading the full anchor.
+Tiny Summary and Minimal Replay strong enough that the user can recover the
+current question, judgment, evidence, boundary, and next decision before
+reading the full anchor. The full anchor is an audit layer, not the first
+reading path.
+
+## Short Anchor Contract
+
+The formal anchor keeps the 0-8 structure, but section 0 is the real
+human-facing decision surface:
+
+```text
+0. Tiny Summary
+   - Chinese short replay, 3-6 short lines
+   - Minimal Replay with the required 9 fields
+1-8. Full audit layer
+   - compact evidence and reasoning for AI replay and boundary checks
+```
+
+Keep sections 1-8 short: at most three bullets per section by default, and no
+bullet should carry run commands, seed dumps, broad grids, or full result
+presentation. If a section cannot stay short, move the material to
+`protocol.md`, `summary.md`, or `detailed.md`.
 
 ## Self-Contained Core Rule
 
@@ -56,6 +77,54 @@ minimal hand-written anchor
 
 Do not jump from a vague idea directly to protocol or code. If the anchor is
 unclear, critique the rough anchor first and name the missing decisions.
+
+## Minimal Anchor Gate
+
+The anchor is a decision card, not a complete research report. Before writing
+or approving a formal anchor, the user or assistant must produce this minimal
+replay:
+
+```text
+Question:
+Physical prior:
+Core model:
+Model term being tested:
+Primary metric:
+Falsifier:
+Can claim:
+Cannot claim:
+Next decision:
+```
+
+If this replay is unclear, do not polish the full anchor. Simplify the anchor
+and return to audit mode.
+
+Hard constraints:
+
+- one decision question;
+- one core physical prior, or at most three tightly linked priors;
+- one core mathematical decomposition or mechanism relation;
+- one primary metric;
+- one falsifier;
+- one next decision.
+
+`Computational Realization` is only a drift-prevention stub. It may name input
+objects, computed variables, stages, evidence, and expected artifacts, but it
+must not become an implementation plan.
+
+If `Computational Realization` exceeds 8 bullets or contains commands, config
+details, broad sweeps, seed dumps, or result interpretation, move that material
+to `protocol.md` or `detailed.md`.
+
+After results, update the anchor only by compressing the result into:
+
+- supported / weakened / insufficient evidence;
+- rival explanations ruled out or still alive;
+- new claim boundary;
+- one next decision;
+- links to `summary.md` and `detailed.md`.
+
+Do not paste result reports into the anchor.
 
 ## Minimal Anchor Audit Mode
 
@@ -106,9 +175,9 @@ Do not add extra top-level sections by default.
 
 ### 0. Tiny Summary
 
-Write this section in Chinese as a short anchor replay or draft, not as a vague
-abstract. It should let the user recover the whole anchor in about 30 seconds.
-Use concrete sentences, not labels without content.
+Write this section as the first reading path, not as a vague abstract. It must
+contain both a Chinese Tiny Summary and the Minimal Replay. If section 0 is not
+clear, the full anchor is not ready.
 
 ```text
 父问题：
@@ -119,8 +188,22 @@ Use concrete sentences, not labels without content.
 下一步决策：
 ```
 
-Length target: 3 to 6 short lines. If the Tiny Summary cannot be written
-clearly, the full anchor is not ready.
+Then include:
+
+```text
+Question:
+Physical prior:
+Core model:
+Model term being tested:
+Primary metric:
+Falsifier:
+Can claim:
+Cannot claim:
+Next decision:
+```
+
+Length target: 3 to 6 short lines for Tiny Summary, plus the 9-line Minimal
+Replay. Do not hide missing definitions in section 0 by saying "see below".
 
 ### 1. Problem Definition
 

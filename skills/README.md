@@ -38,6 +38,21 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
 
+## Artifact Alignment Contract
+
+Keep the artifact chain narrow. Each file owns one layer of judgment or
+evidence; it must not silently absorb another file's job.
+
+| Artifact | Owns | Must not do |
+|---|---|---|
+| `00_handwrite_anchor.md` | rough user judgment and exposed thinking | become an AI-polished complete anchor before audit |
+| anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
+| `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
+| `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
+| `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
+| `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
+| anchor update | supported / weakened / insufficient evidence, boundary, next decision | paste a result report into the anchor |
+
 Current consolidation decision:
 
 ```text
@@ -155,11 +170,13 @@ Anchors are decision cards, not reports. They must include:
 - claim boundary and one next decision.
 
 Each anchor has two reading layers. `Tiny Summary` is the short human-facing
-anchor replay: current question, judgment, key evidence, most dangerous
-boundary, and next decision. The remaining sections are the auditable design
-layer for AI review, replay, and boundary checks. `Computational Realization`
-prevents theory/code drift by naming the implemented inputs, computed
-variables, algorithm stages, stage-local evidence, and expected artifacts.
+anchor replay. `Minimal Replay` is the 9-field approval-facing judgment check:
+question, physical prior, core model, model term, primary metric, falsifier,
+can claim, cannot claim, and next decision. The remaining sections are the
+auditable design layer for AI review, replay, and boundary checks.
+`Computational Realization` prevents theory/code drift by naming the
+implemented inputs, computed variables, algorithm stages, stage-local evidence,
+and expected artifacts.
 
 For nontrivial research work, the artifact loop is incomplete unless it also
 records stage-level evidence, the failure interpretation for each important

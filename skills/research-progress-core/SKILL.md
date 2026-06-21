@@ -34,6 +34,62 @@ Do not promote a claim unless the short loop is inspectable. Use the expanded
 loop only when the idea requires explicit physical modeling, mathematical
 objects, or nontrivial implementation stages.
 
+## Question-Before-Method Rule
+
+Do not start from a method proposal. Before any protocol, implementation, or
+method comparison, classify the research move:
+
+```text
+Experiment role:
+- root-cause audit
+- metric audit
+- operationalization / proxy test
+- method construction
+- robustness / scaling check
+```
+
+Method construction is invalid as the first move unless a prior root-cause
+audit, metric audit, or proxy test has identified the mechanism or metric the
+method is supposed to control.
+
+For every proposed method, require:
+
+```text
+Current phenomenon:
+Current physical prior:
+Core model term affected:
+Rival explanation separated:
+Primary metric:
+Falsifier:
+Allowed claim if it passes:
+What remains unproven:
+```
+
+If these fields are unclear, do not write a protocol. Return to problem
+definition, physical prior, and minimal model.
+
+## Method Freeze Rule
+
+When the user proposes a method, first decide whether the method is premature.
+
+Use:
+
+```text
+Method proposal:
+Current question:
+Current mechanism belief:
+What the method controls:
+What evidence says this control target matters:
+Rival explanation it separates:
+If it works, what can be claimed:
+If it fails, what is falsified:
+Verdict: test now / reduce to diagnostic / park
+```
+
+Park the method if it does not change the current hypothesis, claim boundary,
+or next decision. If the method only improves a score without explaining which
+mechanism changed, treat it as engineering evidence, not scientific progress.
+
 ## Communication Rule
 
 Use simple language. Precision means naming the concrete object, variable, file,
@@ -102,6 +158,9 @@ Do not turn an unclear tangent into a new experiment until this gate is passed.
 
 For any nontrivial experiment, write a short protocol before code changes or
 runs. The protocol is the user's audit surface, not an implementation plan.
+Its first page should be an `Approval Snapshot` that lets the user confirm the
+purpose, basic setup, primary metric, pass/fail/insufficient criteria, and
+claim boundary before reading the full audit layer.
 
 It must state:
 

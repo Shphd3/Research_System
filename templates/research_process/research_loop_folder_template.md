@@ -1,6 +1,6 @@
 # Research Loop Folder Template
 
-Use this folder shape for a daily sandbox or a small mainline experiment.
+Use this shape for a small mainline experiment or daily sandbox.
 
 ```text
 00_handwrite_anchor.md
@@ -16,33 +16,31 @@ archive/
 
 ## File Roles
 
-`00_handwrite_anchor.md`: rough user judgment. This is the thinking surface
-before AI critique. It may be incomplete.
+`00_handwrite_anchor.md`: rough user judgment for AI audit, not a polished
+anchor.
 
-`<topic>_anchor.md`: formal anchor and current-state research design. It is the
-project-local equivalent of research-exploration `docs/design.md`. Its
-`Tiny Summary` is the short anchor replay for human reading; the remaining
-sections are the auditable design layer.
+`<topic>_anchor.md`: compact current-state design. First reading surface is
+`Tiny Summary` plus `Minimal Replay`; sections 1-8 are the audit layer.
 
-`protocol.md`: experiment design and approval surface. It replaces the old
-two-file split between approval notes and implementation details. The AI stops
-here until the user approves implementation or running.
+`protocol.md`: experiment approval surface. Page 1 is `Approval Snapshot`;
+later sections hold anchor alignment, conditions, profiling, and nontrivial
+algorithm details.
 
-`summary.md`: first post-run reading path. It must include central
-visualization-result explanations for the main figures.
+`summary.md`: first post-run reading path. Include only the conclusion,
+primary metric, claim boundary, next decision, and central figures needed for
+that judgment.
 
-`detailed.md`: complete evidence ledger, protocol compliance audit,
-stage-level evidence, full visualization results, and artifact map.
+`detailed.md`: complete evidence ledger with protocol audit, setup, full
+results, stage evidence, failure decomposition, debug-only evidence, and
+artifact map.
 
-`figures/`: report-ready central figures embedded and explained in
-`summary.md` and `detailed.md`.
+`figures/`: report-ready evidence figures embedded in `summary.md` and
+`detailed.md`. Debug-only plots stay in `detailed.md` or a viewer appendix.
 
-`tables/`: curated small tables used by the result documents.
+`tables/`: curated small tables used by result documents.
 
-`notes/`: private scratch notes that are not part of the main read path.
+`notes/`: scratch material outside the main read path.
 
-`archive/`: old probes or superseded proxies kept for traceability, not for the
-main read path.
+`archive/`: superseded probes kept for traceability.
 
-Do not create separate implementation-plan files for new work. Legacy files may
-remain in old folders as historical evidence.
+Do not create separate implementation-plan files for new work.

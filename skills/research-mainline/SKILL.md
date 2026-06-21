@@ -126,6 +126,18 @@ anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 Root sync copies, handoff packages, graph edits, commits, and pushes are
 explicit follow-up actions only.
 
+Artifact roles must stay aligned:
+
+| Artifact | Owns | Must not do |
+|---|---|---|
+| `00_handwrite_anchor.md` | rough user judgment and exposed thinking | become an AI-polished complete anchor before audit |
+| anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
+| `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
+| `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
+| `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
+| `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
+| anchor update | supported / weakened / insufficient evidence, boundary, next decision | paste a result report into the anchor |
+
 ## File Roles
 
 ### Graph
@@ -185,6 +197,11 @@ model before the protocol or implementation expands it.
 planning split. It should align with the advisor's research-exploration
 `docs/experiment_design.md` role.
 
+Its first page should be an `Approval Snapshot`: purpose, anchor alignment,
+minimal setup, conditions to run, primary metric, pass/fail/insufficient
+criteria, claim boundary, and approval decision. Put stage profiling,
+algorithm details, commands, and artifact maps after this snapshot.
+
 It must include the decision question, tested hypothesis, rival explanations,
 data/model/algorithm/objective, conditions, primary metric, secondary metrics,
 known good/bad/confusing cases, stage-level profiling plan, success/failure/
@@ -203,6 +220,7 @@ decision.
 It must also absorb the key parts of research-exploration
 `docs/visualization_results.md`: each central figure should explain what it
 tests, how to read it, observed result, take-home, and what it does not prove.
+Keep only figures that support the current claim boundary or next decision.
 
 ### Detailed
 
@@ -213,6 +231,9 @@ record, interpretation, claim boundary, next decision, artifact map, and a full
 
 Every central figure or viewer should state purpose, setup, how to read,
 observed result, take-home, and remaining uncertainty.
+Separate decision evidence, stage-level profiling evidence, debug-only
+evidence, and failed or ambiguous evidence. Debug-only figures must not be
+promoted into `summary.md` as decision evidence.
 
 ## External Sync And Handoff
 
