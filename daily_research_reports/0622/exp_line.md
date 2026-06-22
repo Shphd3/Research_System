@@ -35,7 +35,7 @@ Anchor0605回答什么
 去掉 hidden common component 后，剩余 load 是 finite-sample noise，还是还有真实 residual geometry？
 
 结论：
-residual covariance 不是各向同性，这也致使了去掉common部分后的imbalance的产生
+去掉 common 后，残余 hidden states 仍然不是各向同性的球状分布；residual covariance anisotropy / structured residual geometry 是剩余 imbalance 的主要候选解释，而不是有限样本噪声。
 
 作用：
 1. 对“centering 解决了初始化几何问题” 这个说法进行了严格化，防止过早得出错误结论
@@ -94,3 +94,100 @@ B. anti-lockin after partition
 从 oracle 或 pseudo-oracle partition 出发，测试 top-1 training 什么时候破坏这个 partition，以及需要什么 anti-lockin 机制保护它。
 
 如果进入 DCLM，必须先定义 feature/proxy specialization metric，不能只看 load。
+
+----
+
+# Setting reliability audit for 0605-0607
+
+结论：0605-0607 的 setting 足够支持当前主线继续推进到“无标签 feature discovery”和“防止 early softmax lock-in”；但它们只支持 initialized synthetic hidden-state replay 这个边界内的判断，不能直接支持 training stability、真实 DCLM 表现、或所有 label-free 方法无效。
+
+## 0605 是否可靠
+
+可靠。
+
+它解决的是：去掉 hidden-state common component 后，残余 load imbalance 是否只是有限样本噪声。
+
+可靠点：
+
+- 沿用 0604 的 hidden-state surface：4 个 pair 严格均匀，pair position 随机，background token 与 pair id 无关，router readout 固定在 slot span 的最后一个位置；因为本轮 `slot_token_len=1`，所以这个位置就是 `pair_start`，不是序列最后一个 token。final block 与其他 block 使用一致 router reference。
+- 有 state / router / replay / whitening / sample-count / context-position audit，不只是看最终 load。
+- 关键对照区分了 centered replay、matched isotropic residual、whitened residual 和 sample-count guard。
+- 结论不是来自单一 seed 或单一 depth/readout，结果表覆盖多个 seed、depth、readout 条件。
+
+边界：
+
+- 0605 可以说“structured residual geometry / residual covariance anisotropy 是剩余 imbalance 的主要候选解释”，不应该写成“covariance alone 完整因果解释了所有 residual imbalance”。
+- whitening 在这里是 diagnostic，不是已经证明可部署的方法。
+- context-position 条件上的高 $L$ 值只能说明局部条件下仍有结构，不应反过来当作 aggregate imbalance 的唯一来源。
+
+决策：
+
+0605 足以排除“只是有限样本噪声”的路线，允许进入“残余几何是否包含可用 feature structure”的下一步。
+
+## 0606 是否可靠
+
+可靠，但它是 positive control，不是方法证明。
+
+它解决的是：如果给定真实 pair feature label，当前 hidden-state 几何中是否存在可以被 router 读出的 feature-aligned partition。
+
+可靠点：
+
+- 有 calibration / eval split，避免只在同一批样本上构造和验证 centroid。
+- feature identity 明确对应 4 个 pair，专家数也是 4，因此 oracle partition 是可检验的。
+- 同时比较 oracle centroid、raw centroid、random/equal-norm 等 baseline。
+- 判断指标包含 feature NMI、load、margin、route heatmap，不把 balanced load 误当 specialization。
+
+边界：
+
+- 0606 使用标签，因此只能证明“partition reachable”，不能证明 label-free discovery。
+- raw centroid 也能成功，所以 common-centering 不是 oracle reachability 的必要条件；它更多说明 feature signal 本来就在 hidden state 中。
+- 它不说明训练能自然到达该 partition，也不说明真实 DCLM feature 已经定义。
+
+决策：
+
+0606 足以保留“feature-level specialization is geometrically available”的主线，允许继续问“没有标签时能不能发现它”。
+
+## 0607 是否可靠
+
+可靠，作为 negative control 足够。
+
+它解决的是：只靠 label-free 的 global common/residual controls，是否能接近 0606 的 oracle feature partition。
+
+可靠点：
+
+- 明确继承 0605 的 residual-geometry 问题和 0606 的 oracle upper bound。
+- 有 dependency audit 和 label-leakage audit，确保 label-free 条件没有偷用 pair label。
+- 同时看 load 和 feature NMI，直接证明“load improvement 不等于 specialization improvement”。
+- label-free 条件下 feature NMI 没有接近 oracle，而 oracle 条件可达，因此失败不是因为 hidden state 没有 feature signal。
+
+边界：
+
+- 0607 只裁定 simple global controls：global centering、projection、whitening、random-row variants 等。
+- 它不能否定 clustering、dictionary learning、contrastive objective、activation patching proxy、gradient proxy 等更强的 feature discovery 方法。
+- heldout batch mean 是强 transductive diagnostic；因为它仍未恢复 feature NMI，所以 negative result 反而更强，但它本身不是部署方案。
+
+决策：
+
+0607 足以停止把“load balance repair”当成主线方法，下一步应转向 feature proxy / cluster discovery；同时把 common/residual control 降级为 load guard 或 diagnostic，而不是 specialization mechanism。
+
+## 对当前 exp_line 的收紧
+
+需要收紧三句话：
+
+1. 0605 的主张应是“structured residual geometry / covariance anisotropy 仍然制造 router imbalance”，不是“covariance 单独完整解释一切”。
+2. 0606 的主张应是“oracle feature partition 可达”，不是“common-centered residual 是唯一可达方式”。
+3. 0607 的主张应是“simple label-free global controls 失败”，不是“所有 label-free 方法失败”。
+
+## Proceed gate
+
+可以推进，但推进对象应该是：
+
+- feature discovery：activation cluster、token-function proxy、gradient proxy、contrastive grouping。
+- anti-lockin：如果初始 routing 已有错误 basin，训练早期如何防止 softmax/top-k 把错误 partition 固化。
+- DCLM 前置条件：先定义 feature/proxy metric；不能只用 load balance 作为 specialization 证据。
+
+不应立即推进的是：
+
+- 只优化 load balance 的 router method。
+- 没有 feature proxy 的真实 DCLM 大实验。
+- 把 0607 解释成 label-free 路线整体失败。
