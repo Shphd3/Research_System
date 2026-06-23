@@ -10,11 +10,11 @@ metadata:
 Use this skill only when the user explicitly asks for a meeting,
 collaborator, web-side, or external repository handoff package.
 
-For group-meeting or advisor-facing briefs, the first goal is that the advisor
-can quickly understand what problem is being solved. A meeting brief is not an
-experiment retelling. It reports how the researcher's judgment changed, why
-that update is supported, what boundary remains, and what decision is needed
-next.
+For group-meeting or advisor-facing briefs, the output is a formal,
+problem-centered meeting document. A meeting brief is not an experiment
+retelling, a speaking script, or a compressed `summary.md`. Its subject is the
+research question, mechanism, evidence, result boundary, and next execution
+action, not what the researcher has completed.
 
 Do not create new research claims, new conclusions, or a second closure. The
 source of truth remains:
@@ -27,66 +27,91 @@ detailed.md = full evidence ledger and visualization results
 figures/ and tables/ = referenced evidence artifacts
 ```
 
-The brief may synthesize a higher-level cognitive update across several
-existing summaries only when the synthesis is directly supported by those
-sources. If the synthesis is not fully supported, write it as an unresolved
-question or next decision, not as a claim.
+The brief may synthesize a higher-level update across several existing
+summaries only when the synthesis is directly supported by those sources. If
+the synthesis is not fully supported, write it as an unresolved boundary or an
+execution action, not as a claim.
+
+## Meeting Brief Formality Gate
+
+Apply this gate before writing or revising `meeting_brief.md`:
+
+- Write the brief in Chinese by default. Use English only for file names,
+  paths, formulas, and abbreviations that have already been defined in Chinese.
+- Use precise and concise language. Do not use English jargon as a substitute
+  for explanation.
+- Do not use oral labels such as "30-second summary" in the document. The
+  brief must be formally written but easy to present aloud.
+- Make the question, mechanism, evidence, and result the grammatical subjects
+  of the main sentences. Do not organize the brief around "we ran", "we did",
+  "we tested", or similar activity-centered phrasing.
+- The executive summary must contain the research question, mechanistic
+  interpretation, main result, result boundary, and execution action.
+- The mechanistic interpretation must include the minimal model, relation, or
+  mechanism chain used to decompose the problem. If no model exists, state that
+  the model is missing and do not invent one.
+- The main result must start with one summary sentence, followed by at most
+  three numbered result points.
+- Each result point title must be a complete sentence understandable to a
+  non-specialist undergraduate. It cannot be a noun phrase.
+- Each result point must include mechanism alignment, evidence, explanation,
+  boundary, and source.
+- Do not write discussion-point sections or advisor-question lists. Put the
+  next minimal step under `执行动作` with purpose and completion criterion.
 
 ## Meeting Brief Modes
 
 Use one of two modes.
 
-Mode A: cognitive-update brief.
+Mode A: single research-line brief.
 Use when one anchor or one experiment line produced the main update.
 
 Required order:
 
 ```text
-problem being solved
-old or uncertain judgment
-updated judgment
-2-4 key evidence items from summary.md
-central figures, if they decide the claim boundary or next decision
-can claim / cannot claim
-meeting decision needed
-source map
+executive summary
+mechanistic interpretation and minimal model
+main result: one sentence plus up to three result points
+execution action: next step, purpose, completion criterion
+evidence index
+source index
+backup material
 ```
 
-Mode B: merged brief.
+Mode B: multi-source brief.
 Use when several days, anchors, or experiment summaries must be reported
 together.
 
 Do not concatenate old briefs. Merge by the main research question:
 
 ```text
-shared problem
-subquestions merged
-single higher-level judgment update
-evidence modules, one per source summary or anchor
-cross-result interpretation
-conflicts or remaining rival explanations
-can claim / cannot claim
-meeting decision needed
-source map and excluded material
+executive summary for the shared problem
+shared mechanism or model
+merged main result: one sentence plus up to three result points
+source result modules
+remaining conflicts or rival explanations
+execution action
+evidence index and source index
+excluded material and reason
 ```
 
 If the source briefs answer different parent questions, do not force one
-merged claim. Split them into separate mainline updates and mark unrelated
+merged result. Split them into separate mainline updates and mark unrelated
 results as parked or side evidence.
 
 ## Source Priority
 
 Use sources in this order:
 
-1. updated anchor for the current claim boundary and next decision;
+1. updated anchor for the current claim boundary and execution action;
 2. `summary.md` for the meeting conclusion, key evidence, and central figures;
 3. `detailed.md` for setup checks, numeric precision, and artifact maps;
 4. protocol only to verify the approved question, conditions, and primary
    metric.
 
 Do not use chat history as the source of a meeting claim. Do not pull debug
-plots from `detailed.md` into the brief unless they directly decide the current
-claim boundary or next decision.
+plots from `detailed.md` into the brief unless they directly support the
+current result boundary or execution action.
 
 ## Minimal Self-Contained Rule
 
@@ -158,7 +183,7 @@ When adding an index, keep it short:
 
 ## Claim Boundary
 
-## Next Decision
+## Next Action
 ```
 
 The README should point to the existing artifacts. It should not reinterpret the

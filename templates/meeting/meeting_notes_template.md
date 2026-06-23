@@ -1,89 +1,84 @@
-﻿# Meeting Materials
+# 会议材料
 
-Use `daily_research_reports/MMDD/meeting/` for group meeting, advisor meeting,
-and short preparation notes.
-
-Recommended shape:
+组会、导师沟通和会后记录默认放在：
 
 ```text
 daily_research_reports/MMDD/meeting/
   meeting_brief.md
   meeting_notes.md
-  advisor_questions.md
   slide_outline.md
 ```
 
-Use the shared brief template for pre-meeting decision framing:
+会前正式简报使用：
 
 ```text
 templates/meeting/meeting_brief_template.md
 ```
 
-`meeting_brief.md` should start from the problem being solved and the cognitive
-update: how the researcher's judgment changed, which key evidence supports it,
-what boundary remains, and what meeting decision is needed. It is for meeting
-preparation, not a replacement for an experiment `summary.md` or `detailed.md`.
+`meeting_brief.md` 应从问题本身展开：研究问题、机制解释与建模、主要结果、
+结论边界和执行动作。它是正式会议材料，不是实验流水账，也不是
+`summary.md` 或 `detailed.md` 的替代品。
 
-For experiment results that need advisor-facing discussion, make `summary.md`
-and `detailed.md` self-contained enough to read directly.
+涉及实验结果时，`summary.md` 和 `detailed.md` 仍必须能独立阅读；会议简报只
+引用其中已经成立的结论和核心证据。
 
-Meeting documents should optimize for claim boundaries:
+会议材料应优先服务于结论边界：
 
-- what can be said strongly
-- what can only be said weakly
-- what this conclusion does not cover
-- what the next decisive experiment is
+- 当前可以强说什么；
+- 当前只能弱说什么；
+- 当前结论不覆盖什么；
+- 下一步执行动作要关闭哪个边界。
 
-For branch-local project meetings, package a handoff only when the user
-explicitly asks for it. The default location is the day's topic folder:
+分支内会议材料默认只保存在当天 meeting 文件夹。只有用户明确要求 handoff、
+project sync 或 collaborator sync 时，才复制到项目同步目录。
+
+默认 handoff 位置：
 
 ```text
 daily_research_reports/MMDD/<topic>/handoff_report.md
 daily_research_reports/MMDD/<topic>/<anchor_id>.md
 ```
 
-Use the project sync folder only when the user explicitly asks for project or
-collaborator sync:
+显式请求项目或协作者同步时，才使用：
 
 ```text
 Projects/<project>/<worker>/sync/MMDD_topic/
 ```
 
-The daily meeting folder can keep local preparation notes, but the collaborator-
-facing report should be copied to project sync only on explicit request.
+## 会后个人记录
 
-## Private Meeting Notes
+`meeting_notes.md` 用于保存会后诊断和个人判断，不替代正式简报。
 
-Use this lightweight structure for post-meeting or personal notes:
+```markdown
+# 会议记录
 
-```text
-# Meeting Notes
+## 会议诊断
 
-## Meeting Diagnosis
+对方核心判断：
 
-Advisor's toy claim:
+我同意的部分：
 
-What I agree with:
+我仍然担心：
 
-My stronger concern:
-
-Three unrelaxed assumptions:
+尚未放松的假设：
 
 1.
 2.
 3.
 
-## Group Mainline
+## 主线更新
 
-Mainline update:
+结论变化：
 
-next-to-do：
+边界变化：
 
-## Personal Research Notes
+执行动作：
 
-Mainline update:
+## 个人研究记录
 
-next-to-do：
+新理解：
 
-other：
+待确认问题：
+
+下一步动作：
 ```

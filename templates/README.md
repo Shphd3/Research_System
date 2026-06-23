@@ -13,7 +13,7 @@ prompt, or README.
 |---|---|
 | `research_process/` | Templates for starting, structuring, or continuing a research iteration. |
 | `reading/` | Templates for paper, blog, and reading-note work. |
-| `meeting/` | Templates for private meeting preparation and notes. |
+| `meeting/` | Templates for formal meeting briefs and private meeting notes. |
 | `archive/` | Historical templates kept for compatibility only. |
 
 ## Research Process Templates
@@ -35,13 +35,13 @@ Reading templates do not replace research anchors.
 
 ## Meeting Templates
 
-These are private preparation and record-keeping surfaces. They do not replace
-the anchor, protocol, summary, or detailed evidence record.
+These are meeting-facing preparation and record-keeping surfaces. They do not
+replace the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_brief_template.md` | Advisor/group-meeting brief with problem-first framing, cognitive update, key evidence from `summary.md`, central figures, boundary, next decision, and a merged-brief mode for multi-day work. Save as `meeting_brief.md`. |
-| `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis. Save as `meeting_notes.md`. |
+| `meeting/meeting_brief_template.md` | Formal Chinese meeting brief with problem-first framing, mechanistic modeling, one-sentence main result, up to three result points, evidence boundary, execution action, and source index. Save as `meeting_brief.md`. |
+| `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis, mainline update, and execution action. Save as `meeting_notes.md`. |
 
 ## Archive
 

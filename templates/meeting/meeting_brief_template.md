@@ -1,219 +1,260 @@
-# Meeting Brief: <topic>
+# 会议简报：<问题标题>
 
-Use this for advisor or group-meeting reporting. The first goal is that the
-advisor can quickly understand what problem is being solved. The brief is not
-an experiment retelling; it reports how the researcher's judgment changed.
+本模板用于组会或导师沟通前的正式简报。它不是实验流水账，也不是
+`summary.md` 或 `detailed.md` 的压缩版。简报的主线必须围绕问题本身展开：
+当前问题是什么，机制模型如何解释该问题，证据把结论推进到哪里，边界在哪里，
+下一步应执行什么动作。
 
-Source of truth:
+可信来源顺序：
 
 ```text
 anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
-Use `summary.md` for the main conclusion and central figures. Use
-`detailed.md` only to check setup, numbers, and evidence boundary.
+## 模式一：单一研究线简报
 
-## Mode A: Cognitive-Update Brief
-
-Use this when one anchor or one experiment line produced the main update.
+用于一个 anchor、一个实验线或一个主要结果形成当前汇报主线的情况。
 
 ```markdown
-# Meeting Brief: <topic>
+# 会议简报：<问题标题>
 
-## 0. One-Sentence Update
+## 0. 执行摘要
 
-This work updates my judgment from <old/uncertain view> to <new bounded view>.
+**研究问题：** <用一句话说明当前需要判断的问题。主语应是问题本身，不是“我们做了什么”。>
 
-## 1. Problem
+**机制解释：** <用一句话说明当前机制判断。必须指向第 1 节的模型或机制链条。>
 
-Main problem:
+**主要结果：** <用一句话总结当前结果支持什么，以及不能支持什么。>
 
-Why this matters:
+1. <结果点一。必须是一句完整结论，非本领域本科生应能读懂。>
+2. <结果点二。必须是一句完整结论，不能写成名词短语。>
+3. <结果点三。最多三点；没有第三点就删除本行。>
 
-Current subproblem:
+**结论边界：** <用一句话说明当前证据不能推出什么。>
 
-Decision question:
+**执行动作：** <用一句话说明下一步最小动作、目的和完成判据。>
 
-## 2. Updated Judgment
+## 1. 机制解释与建模
 
-Main conclusion:
+**核心模型：**
 
-1.
-2.
-3.
+$$
+<写出当前问题依赖的最小模型、关系式或判定函数>
+$$
 
-No longer safe to say:
+**符号含义：**
 
--
+- $<symbol>$：<用中文解释该变量或项代表什么。>
+- $<symbol>$：<用中文解释该变量或项代表什么。>
 
-More accurate wording:
+**机制链条：**
 
--
+1. <模型中的哪个项改变了哪个可观察现象。>
+2. <该可观察现象为什么会影响主要指标或图形。>
+3. <该指标或图形为什么能支持或削弱当前结论。>
 
-## 3. Evidence Supporting The Update
+**当前问题分解：**
 
-### Evidence 1: <plain title>
+- <需要判定的模型项或机制环节。>
+- <最危险的替代解释。>
+- <当前实验只能区分什么，不能区分什么。>
 
-What was tested:
+## 2. 主要结果
 
-Result:
+**一句话总结：** <用一句话给出当前最重要结果；这句话应能直接放进组会开场。>
 
-What this rules out:
+### 结果 1：<一句完整结论>
 
-What this supports:
+**机制对应：** <该结果对应第 1 节模型或机制链条中的哪一环。>
 
-Figure:
+**证据：** <实验设置、主要指标、核心数字或图形模式。只写决定判断的证据。>
 
-### Evidence 2: <plain title>
+**解释：** <为什么该证据支持这条结果；必须说明逻辑链条，不只贴指标名。>
 
-What was tested:
+**边界：** <该证据不能证明什么。>
 
-Result:
+**来源：** <anchor / protocol.md / summary.md / detailed.md / figure path。>
 
-What this rules out:
+### 结果 2：<一句完整结论>
 
-What this supports:
+**机制对应：**
 
-Figure:
+**证据：**
 
-## 4. Integrated Interpretation
+**解释：**
 
-How the evidence changes the mainline:
+**边界：**
 
-Remaining rival explanation:
+**来源：**
 
-Why the current boundary is still narrow:
+### 结果 3：<一句完整结论>
 
-## 5. Boundary
+**机制对应：**
 
-Can claim:
+**证据：**
 
-Cannot claim:
+**解释：**
 
-## 6. Next Decision
+**边界：**
 
-Meeting decision needed:
+**来源：**
 
-Next minimal experiment or action:
+## 3. 执行动作
 
-## 7. Source Map
+**下一步动作：** <下一步最小实验、分析、写作或同步动作。>
 
-Anchor:
+**目的：** <该动作要区分哪个解释，或要关闭哪个边界。>
 
-Protocol:
+**完成判据：** <达到什么证据状态才算完成。>
 
-Summary:
+## 4. 证据索引
 
-Detailed:
+| 结果 | 证据 | 主要指标或图 | 支持什么 | 不能证明什么 | 来源 |
+|---|---|---|---|---|---|
+| 结果 1 |  |  |  |  |  |
+| 结果 2 |  |  |  |  |  |
+| 结果 3 |  |  |  |  |  |
 
-Figures:
+## 5. 来源索引
+
+**Anchor：**
+
+**Protocol：**
+
+**Summary：**
+
+**Detailed：**
+
+**Figures：**
+
+## 6. 补充材料
+
+<只放不属于前三个主要结果、但可能被追问的补充证据。调试图、失败运行和
+非主线观察默认放在这里。>
 ```
 
-## Mode B: Merged Brief
+## 模式二：多来源合并简报
 
-Use this when several days, anchors, or experiment summaries must be reported
-together. Do not concatenate old briefs. Merge by main research question and
-cognitive update.
+用于多个日期、多个 summary 或多个 anchor 需要合并汇报的情况。不要拼接旧
+brief；必须围绕同一个上层问题重新组织。
 
 ```markdown
-# Meeting Brief: <merged topic>
+# 会议简报：<合并问题标题>
 
-## 0. Top-Level Update
+## 0. 执行摘要
 
-Across <days / experiment lines>, my judgment changed from <old view> to
-<new bounded view>.
+**上层问题：** <一句话说明多个来源共同服务的研究问题。>
 
-## 1. Shared Problem
+**统一机制解释：** <一句话说明这些结果共同指向的机制判断。>
 
-Main problem:
+**主要结果：** <一句话总结合并后的结果支持什么，以及不能支持什么。>
 
-Why this matters:
+1. <合并结果点一。>
+2. <合并结果点二。>
+3. <合并结果点三。最多三点。>
 
-Subquestions merged:
+**结论边界：** <一句话说明合并证据仍不能推出什么。>
 
-1.
-2.
-3.
+**执行动作：** <一句话说明下一步最小动作、目的和完成判据。>
 
-## 2. Merged Mainline Judgment
+## 1. 机制解释与建模
 
-Higher-level conclusion:
+**核心模型：**
 
-1.
-2.
-3.
+$$
+<合并汇报所依赖的共同模型或机制关系>
+$$
 
-What is now ruled out or weakened:
+**机制链条：**
 
--
+1. <共同机制环节一。>
+2. <共同机制环节二。>
+3. <共同机制环节三。>
 
-What remains unresolved:
+**被合并的问题：**
 
--
+1. <来源 A 回答的问题。>
+2. <来源 B 回答的问题。>
+3. <来源 C 回答的问题。>
 
-## 3. Evidence Modules
+## 2. 主要结果
 
-### Module A: <source summary / anchor>
+**一句话总结：** <用一句话给出合并后最重要结果。>
 
-Question answered:
+### 结果 1：<一句完整结论>
 
-Key result:
+**来源结果：** <来自哪个 summary、anchor 或图。>
 
-Mainline update:
+**机制对应：** <对应共同模型或机制链条中的哪一环。>
 
-Central figure:
+**证据：** <决定该结果的核心证据。>
 
-### Module B: <source summary / anchor>
+**边界：** <该合并结果不能推出什么。>
 
-Question answered:
+### 结果 2：<一句完整结论>
 
-Key result:
+**来源结果：**
 
-Mainline update:
+**机制对应：**
 
-Central figure:
+**证据：**
 
-## 4. Cross-Result Interpretation
+**边界：**
 
-How the modules fit together:
+### 结果 3：<一句完整结论>
 
-Conflict or tension between results:
+**来源结果：**
 
-What the combined evidence still cannot claim:
+**机制对应：**
 
-## 5. Boundary
+**证据：**
 
-Can claim:
+**边界：**
 
-Cannot claim:
+## 3. 执行动作
 
-## 6. Next Decision
+**下一步动作：**
 
-Meeting decision needed:
+**目的：**
 
-Next minimal experiment or action:
+**完成判据：**
 
-## 7. Source Map
+## 4. 证据索引
 
-Included anchors:
+| 结果 | 来源 | 主要证据 | 支持什么 | 不能证明什么 |
+|---|---|---|---|---|
+| 结果 1 |  |  |  |  |
+| 结果 2 |  |  |  |  |
+| 结果 3 |  |  |  |  |
 
-Included summaries:
+## 5. 来源索引
 
-Included detailed records:
+**Included anchors：**
 
-Included figures:
+**Included summaries：**
 
-Excluded material and why:
+**Included detailed records：**
+
+**Included figures：**
+
+**Excluded material and reason：**
+
+## 6. 补充材料
+
+<只放非主线但可能被追问的材料。>
 ```
 
-## Rules
+## 写作规则
 
-- Start from the problem, not from experiment IDs.
-- State the judgment update explicitly.
-- Use only conclusions already supported by the anchor, `summary.md`, and
-  `detailed.md`.
-- Use only central figures that support the current claim boundary or next
-  decision.
-- Keep setup short; define only objects needed to understand the evidence.
-- If multiple briefs disagree, preserve the disagreement as an unresolved
-  boundary instead of forcing a single stronger claim.
+- 默认用中文写会议简报。除文件名、路径、公式符号和已经定义过的缩写外，
+  不使用英文黑话。
+- 语言必须精确、简洁。每个小节只写推进判断所需的信息。
+- 主线必须以问题、机制、证据和边界为主语；不要以“我们完成了什么”为主线。
+- `主要结果` 最多三点。每一点的标题必须是一句完整结论，不能是名词短语。
+- 每一点必须包含机制对应、证据、解释、边界和来源。
+- 机制解释必须给出最小模型、关系式或机制链条。没有模型时，先说明模型缺失，
+  不要编造机制。
+- `执行动作` 只写下一步最小动作、目的和完成判据；不要写讨论问题清单。
+- 只引用 anchor、`protocol.md`、`summary.md`、`detailed.md` 和已有图表中已经
+  支持的结论。会议简报不能创造新结论。
+- 调试图、失败运行、补充观察和宽泛猜测只能放入补充材料，不能伪装成主要结果。
