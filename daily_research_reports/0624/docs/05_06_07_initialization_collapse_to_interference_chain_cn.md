@@ -30,7 +30,7 @@
 - 所以 07 必须进入故事线，回答“这个分区是否降低干扰、有功能价值”。
 
 总 claim boundary：
-05-06 目前能支持“collapse 机制和可达/可保持边界”的故事，不能直接支持“真实语言模型已有语义专家”或“方法已经解决 MoE specialization”。07 目前是 draft-for-review 的下一阶段设计，还没有结果。
+05-06 目前能支持“collapse 机制和可达/可保持边界”的故事，不能直接支持“真实语言模型已有语义专家”或“方法已经解决 MoE specialization”。07 已经在 controlled synthetic D07 上支持“metric surface 合法 -> common-control 减少 rare interference -> route-function binding 存在”这条链，但还不能外推到真实语料、真实 checkpoint 或可部署 MoE。
 
 ## 2. 链条总览
 
@@ -48,6 +48,7 @@
 -> `06_12 preservation failure`
 -> `06_13 failure localization`
 -> `06_16 controlled bridge boundary`
+-> `06_17 route-relevant state selector boundary`
 -> `07_01 metric/data audit`
 -> `07_02 method effect`
 -> `07_03 route-function binding`
@@ -426,7 +427,24 @@ boundary：
 不测试 RoPE；C4 仍有 1/8 failure；slot-end token 是 feature-specific，不能证明 whole-slot compositional semantics；不能推出 real-DCLM preservation。
 
 链接下去：
-若继续 controlled boundary，进入 C4 all-position / RoPE / whole-slot composition；若回应 specialization value，进入 [07_01 common/rare conflict metric audit anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
+若继续 controlled boundary，进入 [06_17 all-position route-relevant feature discovery anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md)；若回应 specialization value，进入 [07_01 common/rare conflict metric audit anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
+
+### Anchor: 06_17 All-Position Route-Relevant Feature Discovery
+
+解决了什么问题：
+解释 A06_16 中 C4 all-position 聚类为什么仍会把 feature 合并：是 route feature geometry 不存在，还是聚类样本池混入了太多非路由 hidden states。
+
+和父问题的关系：
+它把“能否发现 feature partition”进一步收紧到“必须先知道哪些 hidden states 是 route-relevant”。这一步防止把所有 token 位置一锅聚类误当成真实 feature discovery。
+
+conclusion：
+支持“样本池错配”。route-only 和 slot offset 3 的 held-out route `feature_NMI=1.0`，8/8 seeds 全过；all-position mean `feature_NMI=0.797`、最差 `0.637`、只有 1/8 完全通过；role-balanced all-position 也只有 1/8 完全通过。
+
+boundary：
+这不是 real-DCLM semantic feature discovery，也不是最终初始化算法；它只说明 controlled no-position bridge 里，all hidden states 不是合法的 route-initialization proxy population。
+
+链接下去：
+若继续 06 controlled bridge，下一步应构建 label-free route-relevant state selector；若转向 value story，进入 [07_01 common/rare conflict metric audit anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
 
 ### Anchor: 07_01 Common / Rare Conflict Metric Audit
 
@@ -437,10 +455,10 @@ boundary：
 它让 07 正确进入故事线：不是又发明一个 gate，而是先问 expert partition 是否有价值。只有 oracle feature gate 能在 D07 上超过 dense 和 load-only null，后续方法收益才可解释。
 
 conclusion：
-当前是 draft_for_review，无结果。设计上是 metric / data audit，不测试 common-control。
+supported_controlled_synthetic。D07 是可用的 controlled synthetic audit surface：`Delta_vs_best_null=0.8601 +/- 0.0008`，dense rare loss `1.4399`，load-only rare loss `1.5300`，oracle rare loss `0.5798`；shortcut 最高 `0.5000`，hidden conflict readout `1.0000`。
 
 boundary：
-不能 claim common-control works、routing semantic、expert utility exists；只在通过后 claim D07 是合法 audit surface。
+不能 claim common-control works、routing semantic、expert utility exists、真实语料迁移或 neural checkpoint 行为；只能 claim D07 是 controlled synthetic 的合法 method-test surface。
 
 链接下去：
 [07_02 common-controlled rare interference anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_02_common_controlled_rare_interference_anchor.md)
@@ -454,10 +472,10 @@ boundary：
 它把 05/06 的 anti-common / anti-collapse 机制转成 value question：控制 common 不只是让负载好看，而是真的减少 rare-feature interference。
 
 conclusion：
-当前是 draft_for_review，依赖 A07_01。成功标准是 `RIR_cc > 0`，并且 matched-load guard 通过。
+supported_controlled_synthetic。common-control 在 D07 上支持 rare-interference reduction：`RIR_cc=0.9502 +/- 0.0006`，`FoO_cc=1.1049`；load-only 和 common-control 的 max load 都是 `0.2500`，active experts 都是 `4.0000`，conflict readout 前后都是 `1.0000`。
 
 boundary：
-若 rare loss 改善只来自更好 load balance，只能 claim anti-collapse，不能 claim common-control-specific interference reduction；不能 claim expert causal specialization。
+只能 claim controlled synthetic D07 上 common-control 比 matched balance-only 更能降低 rare loss；不能 claim expert causal specialization、semantic routing、真实语料迁移或可部署架构。
 
 链接下去：
 [07_03 route-function binding anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md)
@@ -471,13 +489,13 @@ boundary：
 它是从“有用的路由分区”走向“真正 expert specialization”的必要最后一步。没有它，A07_02 最多证明 functional improvement，不证明 expert function 分化。
 
 conclusion：
-当前是 draft_for_review，依赖 A07_02。测试 forced-routing utility 和 fixed-routing ablation。
+supported_controlled_synthetic。A07_02 的 rare-loss gain 有 route-function binding 证据：selected-best rate `1.0000` 对 chance `0.2500`，route-conditioned utility advantage 约 `0.950`，modal ablation delta `0.6800`，nonmodal ablation delta `0.0000`。
 
 boundary：
-不能在 A07_02 之前执行；不能 claim natural-language semantic experts；final-only utility 可能只是 route/expert co-adaptation，需要 early/final guard。
+raw expert ID 会跨 seed 置换，必须读 modal-aligned metrics；不能 claim natural-language semantic experts、真实 DCLM specialization、可部署 routing 或 one-feature-one-expert 结构。
 
 链接下去：
-若通过，07 line 可以更新为 controlled causal expert specialization；若失败，A07_02 只能作为 functional improvement，不作为 specialization evidence。
+若继续 controlled line，下一步是 neural D07 training；若想对接真实主线，下一步是把 route-function diagnostic 迁移到真实 trained checkpoint。
 
 ## 4. 07 如何进入故事线
 
@@ -490,20 +508,21 @@ boundary：
 - synthetic feature partition 可以被 oracle 或 pseudo centers 找到；
 - real DCLM proxy 可以发现并线性路由；
 - ordinary real DCLM training 会覆盖 proxy routing；
+- 06_17 说明 controlled bridge 中 all-position clustering 失败主要来自样本池错配，真正需要的是 route-relevant state selector；
 - load balance 和 route_NMI 都可能误导。
 
 因此 07 必须先问：
 
 如果 gate 已经不塌缩，专家分区是否真的减少 feature interference？
 
-这就是 A07_01 的作用。它不应该直接测试 common-control 方法，而应该先验证 D07 和 `Delta_vs_best_null`：
+这就是 A07_01 的作用。现在它已经验证 D07 和 `Delta_vs_best_null`：
 
 - oracle feature gate 是否能降低 rare loss；
 - dense 和 load-only null 是否公平；
 - conflict signal 是否在 routed-token hidden state 可读；
 - shortcut 是否能解释结果。
 
-只有 A07_01 通过，A07_02 才能问 common-control 是否比 load-matched baseline 更好。只有 A07_02 通过，A07_03 才能问 routed expert 是否真的有 causal utility。
+A07_01 已通过，所以 A07_02 合法地测试了 common-control 是否比 load-matched baseline 更好。A07_02 已通过，所以 A07_03 合法地测试了 routed expert 是否真的有 causal utility。当前 07 的支持范围是 controlled synthetic D07，不是 real-DCLM 或自然语义专家。
 
 ## 5. 给导师的报告梳理
 
@@ -516,19 +535,22 @@ boundary：
 第二段，06：
 我把问题拆成 stage contract：feature/proxy 是否存在，能否初始化 router，训练是否保持。synthetic 中 pseudo init 可以发现并保持；真实 DCLM 中 proxy 存在且 step-0 可路由，但普通训练 step 5/10 会覆盖它。因此真实主瓶颈是 training feedback override，不是 proxy discovery 或 step-0 bridge。
 
-第三段，06_16 boundary：
-controlled no-pos bridge 修正了旧结论：没有 learned absolute position 时，C0-C3 discovery 和 preservation 都过。所以 controlled bridge 的下一步不是继续证明 preservation，而是选择 C4 all-position、RoPE、whole-slot composition 或回到 real-DCLM preservation。
+第三段，06_16/06_17 boundary：
+controlled no-pos bridge 修正了旧结论：没有 learned absolute position 时，C0-C3 discovery 和 preservation 都过。A06_17 进一步说明 C4 all-position 的主要问题不是 route-position feature geometry 不存在，而是聚类样本池错配；route-only 和 slot-end hidden states 能完美发现 feature，而 all-position 会把非路由状态混进来。因此 controlled bridge 的下一步应是 route-relevant state selector，而不是继续把所有 hidden states 一起聚类。
 
 第四段，07：
-即使解决 collapse 和 preservation，也还不能说 specialization 有价值。07 进入的原因是：要证明 expert partition 降低 common/rare feature interference，而不只是负载均匀。先做 A07_01 metric/data audit，再做 A07_02 common-control 方法收益，最后 A07_03 expert utility。
+即使解决 collapse 和 preservation，也还不能说 specialization 有价值。07 进入的原因是：要证明 expert partition 降低 common/rare feature interference，而不只是负载均匀。A07_01 已支持 D07 metric surface 合法，A07_02 已支持 common-control 在 matched-load 下减少 rare interference，A07_03 已支持 controlled D07 route-function binding。这个链条可以作为“controlled causal expert specialization”的证据，但不能外推真实语言模型。
 
 ## 6. 下一步决策
 
 如果目标是延续机制主线：
 优先设计 real-DCLM preservation / anti-feedback anchor，问题是能否让 raw-center proxy routing 穿过 step 5/10 collapse window，同时不伤 LM loss。
 
+如果目标是修补 controlled bridge：
+优先设计 label-free route-relevant state selector，问题是能否在不知道真实 route position 的情况下筛出 route-like hidden states，再做 feature clustering。
+
 如果目标是给导师展示“为什么这个方向值得做”：
-优先推进 A07_01，但只能写 protocol 并验证 D07 / `Delta_vs_best_null`，不能直接跑 common-control。A07_01 是 07 进入故事线的门票。
+使用 07 的完整结果链：A07_01 证明 D07 surface 合法，A07_02 证明 common-control 的 rare-loss benefit 超过 matched load-only，A07_03 证明 route-function binding。报告中必须同时强调这是 controlled synthetic 结果，real-DCLM preservation 仍未解决。
 
 当前推荐：
-下一步先审 A07_01 protocol，因为它能把“均匀分配到专家”升级为“专家分区是否减少干扰”的可解释问题；同时在报告边界里明确 real-DCLM preservation 仍未解决。
+短期讨论用 07 结果链说明 specialization 的 value；下一轮实验在机制线上二选一：要么做 real-DCLM preservation / anti-feedback，要么做 06_17 后续的 route-relevant state selector。若目标是最快推进主线，优先 real-DCLM preservation，因为它仍是从 controlled result 走向真实 checkpoint 的第一瓶颈。
