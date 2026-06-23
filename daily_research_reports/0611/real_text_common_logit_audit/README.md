@@ -7,7 +7,7 @@ Primary reading path:
 
 Canonical project sources:
 
-- `Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md`
 - `Projects/from-attention-to-search/main/experiments/A05_04_02_real_text_common_logit_audit/summary.md`
 - `Projects/from-attention-to-search/main/experiments/A05_04_02_real_text_common_logit_audit/detailed.md`
 

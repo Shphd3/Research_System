@@ -1,6 +1,6 @@
 # Result Summary: A05_02_P3_same_expert_feature_relation Same-Expert Feature Relation
 
-Anchor: `Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md`
+Anchor: `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md`
 
 Story: P3 tested whether same-expert features share family structure more than load-matched random grouping.
 

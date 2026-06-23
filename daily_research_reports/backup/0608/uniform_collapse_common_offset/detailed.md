@@ -68,7 +68,7 @@ If this predicts the step-0 dominant expert and canceling $w_e^T c$ reduces step
 
 Workspace: `Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding`
 
-Anchor: `../../problem_anchors/05_03_uniform_collapse_common_offset_anchor.md`
+Anchor: `../../problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md`
 
 Protocol: `protocol_for_approval.md`
 

@@ -168,6 +168,6 @@ A06_07:
 
 Anchors:
 
-- `Projects/from-attention-to-search/main/problem_anchors/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_06_feature_level_initialization_positive_control_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_07_label_free_common_residual_control_router_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_06_feature_level_initialization_positive_control_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_07_label_free_common_residual_control_router_anchor.md`

@@ -303,7 +303,7 @@ A06_01 is high-dimensional real-text evidence and does not prove the 2D metric. 
 
 Evidence links:
 
-- `Projects/from-attention-to-search/main/problem_anchors/06_01_common_filtered_expert_spectrum_router_initialization_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_01_common_filtered_expert_spectrum_router_initialization_anchor.md`
 - `Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization/summary.md`
 
 Observation:

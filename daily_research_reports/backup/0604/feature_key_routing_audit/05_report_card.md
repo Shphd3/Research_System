@@ -5,7 +5,7 @@
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
 ```
 
 H0604a:

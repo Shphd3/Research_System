@@ -142,9 +142,9 @@ nodes:
     type: question
     summary: "Owner: from-attention-to-search 05_01 anchor. Result preview: center separation is insufficient; true token-conditioned inhibition creates lock-in but is not yet robust against collapse."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: 05_01 inhibition anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md
         title: 05_02 feature assumption relaxation anchor
     status: active
     tags: [05, intervention, inhibition]
@@ -152,9 +152,9 @@ nodes:
   - id: rq.geometric_05_01
     title: Does inhibition stabilize routing?
     type: question
-    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md. Result preview: center separation is insufficient; true token-conditioned inhibition is the right mechanism class but currently amplifies collapse."
+    summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md. Result preview: center separation is insufficient; true token-conditioned inhibition is the right mechanism class but currently amplifies collapse."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: inhibition anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md
         title: center-separation protocol
@@ -178,7 +178,7 @@ nodes:
     type: claim
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation. Label-free router-center separation can preserve some structure, especially in K1, but it does not reliably prevent slot merge or single-expert collapse."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md
         title: summary
@@ -194,7 +194,7 @@ nodes:
     type: claim
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay. True inhibition gives perfect same-feature consistency, but it does not robustly improve non-collapsed composition and often amplifies collapse."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: inhibition anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/summary.md
         title: summary
@@ -208,7 +208,7 @@ nodes:
     type: claim
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only. In non-collapsed reads, cosine router plus slot init gives the best slot-aligned structure, but this is not yet functional specialization."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/protocol_for_approval.md
         title: protocol
@@ -226,7 +226,7 @@ nodes:
     type: evidence
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation. Result preview: slot-stable init improves step-0 NMI; supervised geometric inhibition drives final route-slot NMI to 1.000 with target accuracy 1.000."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md
         title: protocol
@@ -246,7 +246,7 @@ nodes:
     type: evidence
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation. Result preview: D0/D1/K0/K1 show center separation alone cannot reliably bind slots; K1 is the useful but seed-unstable clue."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/execution_plan.md
         title: execution plan
@@ -264,7 +264,7 @@ nodes:
     type: evidence
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay. Result preview: all inhibition conditions reach near-perfect same-feature consistency, but random-init inhibition collapses and S1-cos is seed-sensitive."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: inhibition anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/execution_plan.md
         title: execution plan
@@ -282,7 +282,7 @@ nodes:
     files:
       - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
         title: current anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: 05_01 anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/summary.md
         title: H0604a summary
@@ -302,7 +302,7 @@ nodes:
     type: claim
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only. H0604a supports the advisor's weak toy claim, but high FeatureKeyConsistency can also be caused by deterministic routing or collapse."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/protocol_for_approval.md
         title: protocol
@@ -338,7 +338,7 @@ nodes:
     type: evidence
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only. Result preview: FeatureKeyConsistency is near 0.99 across conditions, but this is weak evidence because collapse and deterministic lock-in can satisfy it."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/protocol_for_approval.md
         title: protocol
@@ -356,7 +356,7 @@ nodes:
     type: method
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs. Compute consistency, NMI, load entropy, max load, and per-expert composition for slot, B_i, and slot+B_i labels."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/protocol_for_approval.md
         title: protocol
@@ -388,7 +388,7 @@ nodes:
     type: evidence
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs. Result preview: after collapse filtering, S0/S1-cos have high NMI(route; slot) and near-zero NMI(route; B_i); use slot as operational feature axis."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/protocol_for_approval.md
         title: protocol
@@ -406,13 +406,13 @@ nodes:
     type: question
     summary: "Owner/project folder: Projects/from-attention-to-search. 05_02 weakens ordinary assumption relaxation, and 05_03/05_04 point to common-offset plus early-training feedback; next test should be one label-free anti-common / anti-lockin intervention."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md
         title: 05_02 assumption-relaxation anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_03_uniform_collapse_common_offset_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md
         title: 05_03 common-offset anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_02_dotproduct_common_logit_causality_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md
         title: 05_04_02 common-logit causality anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
         title: 05_04_03 real-text initialization anchor
     status: active
     tags: [05_04, next, anti-common, anti-lockin]
@@ -422,7 +422,7 @@ nodes:
     type: question
     summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. P1 and P3 weaken the claim that ordinary top-1 routing survives compositional tokens or many-feature grouping under non-collapse guards."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_02_P1_compositional_token_feature_routing/summary.md
         title: P1 summary
@@ -436,7 +436,7 @@ nodes:
     type: question
     summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. 05_03 supports common offset as a step-0 concentration mechanism, while final collapse still requires a training-dynamic explanation."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_03_uniform_collapse_common_offset_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md
         title: anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset/summary.md
         title: common-offset summary
@@ -450,9 +450,9 @@ nodes:
     type: question
     summary: "Project folder: Projects/from-attention-to-search/main/problem_anchors. 05_04_02 supports common-logit causality in a minimal dot-product toy boundary; 05_04_03 weakens pure step-0 common dominance on real text and redirects to early-training feedback."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_02_dotproduct_common_logit_causality_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md
         title: dot-product common-logit anchor
-      - path: /Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
         title: real-text initialization anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05_04_02_round2_dotproduct_common_logit/summary.md
         title: round-2 summary

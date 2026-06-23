@@ -1,7 +1,7 @@
 # Execution Plan: H0604a Feature-Key Routing Stability Center-Only
 
 Anchor:
-`../../problem_anchors/05_01_geometric_inhibition_anchor.md`
+`../../problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md`
 
 Approved protocol:
 `protocol_for_approval.md`

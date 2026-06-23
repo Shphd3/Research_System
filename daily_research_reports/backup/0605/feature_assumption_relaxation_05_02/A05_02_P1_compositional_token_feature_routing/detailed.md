@@ -1,6 +1,6 @@
 # Detailed Result: A05_02_P1_compositional_token_feature_routing Compositional Token Feature Routing
 
-Anchor: `Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md`
+Anchor: `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md`
 
 ## 0. Quick Recap
 

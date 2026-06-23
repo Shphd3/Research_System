@@ -315,14 +315,14 @@ A06_08 检查了结论是否只是 `slot_token_len=1` 的 artifact。结果在 r
 
 Anchors:
 
-- `Projects/from-attention-to-search/main/problem_anchors/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_04_real_hidden_state_gate_geometry_decomposition_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_06_feature_level_initialization_positive_control_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_07_label_free_common_residual_control_router_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_08_label_free_feature_discovery_initialization_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_09_training_basin_preservation_anchor.md`
-- `Projects/from-attention-to-search/main/problem_anchors/06_08_slot_length_robustness_replay_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_hidden_state_gate_geometry_decomposition_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_06_feature_level_initialization_positive_control_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_07_label_free_common_residual_control_router_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_label_free_feature_discovery_initialization_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_09_training_basin_preservation_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_slot_length_robustness_replay_anchor.md`
 
 Summaries / detailed records:
 

@@ -139,7 +139,7 @@ Cannot claim:
 ## 7. Source Map
 
 Anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
 
 Protocol:
 `Projects/from-attention-to-search/main/experiments/A06_03_high_dimensional_gaussian_gate_norm_variation/protocol.md`

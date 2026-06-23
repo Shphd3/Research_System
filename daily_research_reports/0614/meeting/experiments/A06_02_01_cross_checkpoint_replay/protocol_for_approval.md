@@ -1,6 +1,6 @@
 # Protocol For Approval: A06_02_01 Cross-Checkpoint Replay
 
-Primary anchor: `Projects/from-attention-to-search/main/problem_anchors/06_02_early_training_common_logit_amplification_anchor.md`
+Primary anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_02_early_training_common_logit_amplification_anchor.md`
 
 Anchor decision question: Is early common-logit amplification mainly carried by gate-weight update, hidden-state producer drift, expert-output feedback, or their interaction?
 

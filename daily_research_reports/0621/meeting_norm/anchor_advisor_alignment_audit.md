@@ -11,7 +11,7 @@ conjecture -> physical priors -> mathematical model
 ```
 
 Current anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
 
 ## Overall Judgment
 

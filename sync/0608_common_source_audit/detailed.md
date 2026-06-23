@@ -25,7 +25,7 @@ Required current-iteration files were available except for an optional `detailed
 | `AGENTS.md` | read |
 | `PROJECTS.md` | read |
 | `Projects/graphs/expert_specialization.graph.yaml` | read |
-| `Projects/from-attention-to-search/main/problem_anchors/05_03_uniform_collapse_common_offset_anchor.md` | read |
+| `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md` | read |
 | `daily_research_reports/0608/uniform_collapse_common_offset/summary.md` | read |
 | `daily_research_reports/0608/uniform_collapse_common_offset/detailed.md` | read |
 | `daily_research_reports/0608/uniform_collapse_common_offset/tables/*.csv` | read |

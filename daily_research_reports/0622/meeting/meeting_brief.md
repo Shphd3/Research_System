@@ -406,13 +406,13 @@ synthetic pseudo-feature discovery -> weaker proxy feature -> real-language prox
 
 ## 10. Source Map
 
-- A06_03 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
-- A06_04 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_04_real_hidden_state_gate_geometry_decomposition_anchor.md`
-- A06_05 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
-- A06_06 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_06_feature_level_initialization_positive_control_anchor.md`
-- A06_07 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_07_label_free_common_residual_control_router_anchor.md`
-- A06_08 discovery anchor: `Projects/from-attention-to-search/main/problem_anchors/06_08_label_free_feature_discovery_initialization_anchor.md`
-- A06_09 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_09_training_basin_preservation_anchor.md`
-- Slot-length robustness anchor: `Projects/from-attention-to-search/main/problem_anchors/06_08_slot_length_robustness_replay_anchor.md`
+- A06_03 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
+- A06_04 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_hidden_state_gate_geometry_decomposition_anchor.md`
+- A06_05 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
+- A06_06 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_06_feature_level_initialization_positive_control_anchor.md`
+- A06_07 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_07_label_free_common_residual_control_router_anchor.md`
+- A06_08 discovery anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_label_free_feature_discovery_initialization_anchor.md`
+- A06_09 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_09_training_basin_preservation_anchor.md`
+- Slot-length robustness anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_slot_length_robustness_replay_anchor.md`
 - A06_08 discovery summary: `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/summary.md`
 - A06_09 summary: `Projects/from-attention-to-search/main/experiments/A06_09_training_basin_preservation/summary.md`

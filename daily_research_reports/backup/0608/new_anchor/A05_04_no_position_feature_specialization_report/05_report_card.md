@@ -4,7 +4,7 @@
 
 Anchor:
 
-`Projects/from-attention-to-search/main/problem_anchors/05_04_uniform_feature_specialization_after_position_removal_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_01_uniform_feature_specialization_after_position_removal_anchor.md`
 
 Summary:
 

@@ -66,4 +66,4 @@ raw-center equal-norm 能做出很强 step0 routing；
 | 03 | synthetic/hierarchical utility binding；和 06_14 概念相关，但依赖不同 | parked，暂不合并 |
 | 04 | Zipf/frequency write-in 分支；不是 real-proxy 分支的替代 | parked，暂不合并 |
 
-真正的结构整理：已把 `06_10-06_15` 从临时子目录扁平化到 canonical anchor 目录，并在 `problem_anchors/README.md` 中按 01-04 / 05 / 06 / 07 分类。
+真正的结构整理：05 anchors 已迁入 `problem_anchors/05_failure_mechanism/`，06 anchors 已迁入 `problem_anchors/06_geometry_proxy_preservation/`；`problem_anchors/README.md` 作为总入口，两个子文件夹里的 `research_map.md` 作为可继续更新的研究线地图。

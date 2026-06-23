@@ -225,7 +225,7 @@ Decision rule:
 ## Source Map
 
 Project anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
 
 Protocol:
 `Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/protocol.md`

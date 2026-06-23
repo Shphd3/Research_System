@@ -245,7 +245,7 @@ random-context / position structure，
 ## Source Map
 
 Anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_04_real_hidden_state_gate_geometry_decomposition_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_hidden_state_gate_geometry_decomposition_anchor.md`
 
 Protocol:
 `Projects/from-attention-to-search/main/experiments/A06_04_real_hidden_state_gate_geometry_decomposition/protocol.md`

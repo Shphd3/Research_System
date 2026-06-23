@@ -2,7 +2,7 @@
 
 ## Source Files
 
-Anchor: `../../problem_anchors/05_01_geometric_inhibition_anchor.md`
+Anchor: `../../problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md`
 
 Summary: `summary.md`
 

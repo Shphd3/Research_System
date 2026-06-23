@@ -3,7 +3,7 @@
 ## 1. Research Question
 
 Primary anchor:
-`Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md`
 
 Question:
 On DCLM packed-token text, does random-initialized sparse top-1 linear routing concentrate because $w_e^T c$ dominates $w_e^T r_i$ in the actual router-gate input?
@@ -328,7 +328,7 @@ Research experiment folder:
 `Projects/from-attention-to-search/main/experiments/A05_04_02_real_text_common_logit_audit`
 
 Anchor:
-`Projects/from-attention-to-search/main/problem_anchors/05_04_03_real_text_common_logit_initialization_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md`
 
 Runner:
 `Projects/from-attention-to-search/main/experiments/A05_04_02_real_text_common_logit_audit/scripts/run_real_text_common_logit_audit.py`

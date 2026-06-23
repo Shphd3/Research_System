@@ -3,7 +3,7 @@
 Anchor:
 
 ```text
-../../problem_anchors/05_01_geometric_inhibition_anchor.md
+../../problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
 ```
 
 Story:

@@ -16,7 +16,7 @@ The ACP job status is `FAILED`, but the result artifacts are complete. The failu
 Anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/06_02_early_training_common_logit_amplification_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_02_early_training_common_logit_amplification_anchor.md
 ```
 
 Protocol and sanity check:

@@ -93,7 +93,7 @@ do not use load balance as the main success metric. A real-model test must inclu
 ## Source Map
 
 Anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_07_label_free_common_residual_control_router_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_07_label_free_common_residual_control_router_anchor.md`
 
 Protocol:
 `Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/protocol.md`

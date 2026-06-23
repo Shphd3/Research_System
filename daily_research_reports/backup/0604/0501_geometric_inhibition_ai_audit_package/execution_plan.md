@@ -3,7 +3,7 @@
 Anchor:
 
 ```text
-../../problem_anchors/05_01_geometric_inhibition_anchor.md
+../../problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
 ```
 
 Approved protocol:
@@ -194,7 +194,7 @@ Research-system files:
 
 | Action | Path | Purpose |
 | --- | --- | --- |
-| existing | `Projects/from-attention-to-search/main/problem_anchors/05_01_geometric_inhibition_anchor.md` | source-of-truth anchor |
+| existing | `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md` | source-of-truth anchor |
 | existing | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md` | approved protocol |
 | create | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/execution_plan.md` | this implementation plan |
 | create after run | `Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/summary.md` | group-meeting first reading path |

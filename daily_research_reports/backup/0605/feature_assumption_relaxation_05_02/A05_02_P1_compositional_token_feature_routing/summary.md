@@ -1,6 +1,6 @@
 # Result Summary: A05_02_P1_compositional_token_feature_routing Compositional Token Feature Routing
 
-Anchor: `Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_relaxation_anchor.md`
+Anchor: `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md`
 
 Story: P1 tested whether routing follows the target-relevant factor when one input context contains $S1$, $S2$, and nuisance $B_i$.
 

@@ -252,7 +252,7 @@ oracle 和 pseudo init 保持清晰的一对一路由。
 ## Source Map
 
 A06_08 anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_08_label_free_feature_discovery_initialization_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_label_free_feature_discovery_initialization_anchor.md`
 
 A06_08 protocol:
 `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/protocol.md`
@@ -264,7 +264,7 @@ A06_08 detailed:
 `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/detailed.md`
 
 A06_09 anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_09_training_basin_preservation_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_09_training_basin_preservation_anchor.md`
 
 A06_09 protocol:
 `Projects/from-attention-to-search/main/experiments/A06_09_training_basin_preservation/protocol.md`

@@ -118,7 +118,7 @@ Can label-free common/residual-control initialization approximate the A06_06 ora
 ## Source Map
 
 Anchor:
-`Projects/from-attention-to-search/main/problem_anchors/06_06_feature_level_initialization_positive_control_anchor.md`
+`Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_06_feature_level_initialization_positive_control_anchor.md`
 
 Protocol:
 `Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/protocol.md`
