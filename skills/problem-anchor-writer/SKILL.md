@@ -108,6 +108,35 @@ Hard constraints:
 - one falsifier;
 - one next decision.
 
+## Anchor Split Gate
+
+Apply this gate before writing, approving, or extending a formal anchor. The
+anchor is allowed to be self-contained, but it must stay one auditable decision
+card.
+
+Split the work into separate anchors or child anchors when any of these are
+true:
+
+- the draft needs more than one decision question;
+- the draft needs more than one primary metric to decide the claim;
+- the draft needs more than one falsifier;
+- the draft needs more than one next decision;
+- the diagnostics test different rival explanations that do not share the same
+  physical prior, model term, and falsifier;
+- the anchor starts carrying multiple historical iterations instead of the
+  current-state judgment.
+
+Do not hide a split problem by adding more subsections. If the material is long
+because it contains run details, commands, configs, broad ablations, or result
+presentation, move it to `protocol.md`, `summary.md`, or `detailed.md`. If the
+material is long because the research question has branched, create a separate
+anchor with its own Minimal Replay and falsification test.
+
+When several diagnostic points are needed, write them as separate falsifiable
+cards unless they are all necessary parts of the same single decision. Each
+card must state its own prior, tested model term, primary metric, falsifier,
+claim boundary, and next decision.
+
 `Computational Realization` is only a drift-prevention stub. It may name input
 objects, computed variables, stages, evidence, and expected artifacts, but it
 must not become an implementation plan.
@@ -134,6 +163,9 @@ as a half-finished document for the AI to silently complete.
 First return an audit:
 
 - user judgments to preserve;
+- Anchor Split Gate violations, if the draft contains multiple decision
+  questions, primary metrics, falsifiers, next decisions, or unrelated rival
+  explanations;
 - unclear object, feature definition, metric, scope, or causal claim;
 - physical priors that are missing, too vague, or not falsifiable;
 - hypotheses without clear falsifiers;
@@ -345,6 +377,7 @@ Move these outside the anchor:
 - full implementation plans;
 - literature review;
 - meeting scripts;
+- multiple historical iterations that no longer decide the current question;
 - result presentation that belongs in `summary.md` or `detailed.md`.
 
 ## Post-Result Update
