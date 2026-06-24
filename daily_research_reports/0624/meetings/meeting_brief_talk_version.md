@@ -12,11 +12,11 @@
 
 ## Verdict
 
-在均匀features分布合成数据实验上，
+在features均匀分布合成数据实验上，
 
-**1. 可以构造出 feature-level expert 初始化partition，这种partition在初始时能够将features均匀分开，并且训练后（1600steps）能够准确预测并且仍然保持feature-level specialized的partition.但它不会由 random gating 自然产生，需要依赖表征几何的分布。**
+**1. 可以构造出 feature-level expert 初始化partition，这种partition在初始时能够将features均匀分开，并且训练后（1600steps）能够准确预测并且仍然保持feature-level specialized的partition.但它不会由 random gating 自然产生，需要依赖features在空间中的统计分布。**
 
-**2. 这种partition可以不依赖features的真实labels，由所有hidden states无监督聚类中心产生（但7/8个seeds的实验中成功，一个seed失败，失败原因是聚类时两类features中心过近发生混淆）**
+**2. 这种partition可以不依赖features的真实labels，由所有hidden states减去均值无监督聚类，用聚类中心代替gating矩阵的行向量 产生（但7/8个seeds的实验中成功，一个seed失败，失败原因是聚类时两类features过近发生混淆，并且含有背景噪声的hidden states）**
 
 具体结论是：
 
@@ -57,7 +57,7 @@ $$
 
 - $w_e^\top c$ 会给某些 expert 一个对所有 feature 都存在的共同优势；
 - random $w_e$ 不一定和 feature centers 对齐，所以多个 feature 可能被同一个 expert 接走；
-- top-1 training 会放大早期优势，导致 lock-in 或 collapse。
+- top-1 training 会放大早期优势，导致 lock-in 或 collapse。【还未能完全给出证明，涉及梯度更新的轨迹】
 
 因此正确路线不是指望 random gate 自己分开 feature，而是先找到 $r_f$ 的中心，再把 router 初始化到这个分区附近。
 
