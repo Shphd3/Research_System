@@ -18,6 +18,29 @@ real-DCLM proxy clusters 可发现且 step 0 可线性路由；
 但 ordinary real-DCLM training 会在 step 5/10 覆盖 proxy routing。
 ```
 
+2026-06-25 local two-GPU full02 复现：
+
+```text
+A06_10 real-DCLM proxy discovery: completed, 96 proxy rows + 72 hidden rows
+A06_11 proxy-center router bridge: completed, 264 router rows + 48 hidden rows
+A06_12 proxy-init preservation: completed, 12/12 tasks + 288 trajectory rows
+```
+
+复现结论没有改变主线判断：
+
+```text
+A06_10 step-10 raw/residual proxy stability NMI = 0.5211
+A06_11 step-10 raw-center proxy_route_NMI = 0.8811
+A06_12 raw-center proxy_route_NMI: 0.7549 at step 0 -> 0.0410 at step 5 -> 0.0131 at step 10
+```
+
+解释：
+
+```text
+proxy 存在，step-0 router bridge 存在；
+当前失败点仍是 preservation：ordinary training 覆盖 proxy routing。
+```
+
 ## 阶段证据
 
 ### 1. Controlled route-position geometry
@@ -37,6 +60,24 @@ all-position: mean feature_NMI = 0.797, only 1/8 strict pass
 ```text
 all-position clustering 的失败不是 feature geometry 不存在，而是把非路由状态
 混进了拟合样本池。真正需要的是 route-relevant state selector。
+```
+
+A06_18 revision 进一步测试了 PCA latent clustering、bottleneck AE latent
+clustering、SAE-code clustering：
+
+```text
+route-only / slot offset 3: feature_NMI = 1.0, 8/8 seeds pass
+raw all-position: mean feature_NMI = 0.831, 2/8 strict pass
+best revision selector: PCA q=4 mean feature_NMI = 0.871, 2/8 strict pass
+SAE L1 8x reconstruction MSE = 0.0034, but feature_NMI = 0.729
+```
+
+判断：
+
+```text
+generic representation learning 不能替代 route-relevant selector；
+reconstruction quality 不是 route-readout quality；
+下一版 selector 必须显式加入 route-local 或 route-readout constraint。
 ```
 
 ### 2. Real-DCLM proxy discovery
@@ -119,5 +160,7 @@ Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preserv
 Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_real_dclm_full02_rerun_report.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_18_label_free_route_relevant_state_selector/summary.md
 ```

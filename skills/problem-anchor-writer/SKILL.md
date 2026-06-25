@@ -53,6 +53,49 @@ Do not solve anchor length by deleting design logic. Solve it by making
 section 0 short and useful, while keeping sections 1-8 compact. The user's
 first writing surface is the Thinking Card, not the full anchor.
 
+## Readable Anchor Contract
+
+An anchor is a decision card first and an audit surface second. It must be
+readable before it is exhaustive.
+
+The first reading path must let the user answer these questions without
+reading a protocol:
+
+```text
+What phenomenon are we explaining?
+What single mechanism is being tested?
+Which variable or model term carries the mechanism?
+Which primary metric would change the decision?
+What result makes us pursue, revise, or park?
+```
+
+If those answers are not obvious from `0. Thinking Card`, `1. Problem
+Definition`, and `8. Claim Boundary And Next Decision`, the anchor is not ready.
+Do not compensate by adding more tests, equations, or caveats.
+
+Keep anchor detail bounded:
+
+- one decision question;
+- one primary metric;
+- one main falsifier;
+- one next decision;
+- one core mathematical model;
+- at most three physical priors, but prefer one when the mechanism is still
+  being clarified;
+- at most three minimal tests, but prefer one decisive test plus guards;
+- no broad condition tables, full algorithm specs, run configs, or sweep
+  plans.
+
+Do not remove the required 0-8 anchor sections to make the document short.
+Keep the sections, but make each section concise. Within each section, use
+bold subheadings such as `**Decision question:**`, `**Primary metric:**`, and
+`**Falsifier:**` so the reader can scan the argument quickly.
+
+Protocol-level detail belongs in `protocol.md`. The anchor may name the
+minimal test and the guard metrics, but the protocol owns exact conditions,
+seeds, checkpoints, algorithm parameters, profiling tables, and pass/fail
+thresholds.
+
 ## Thinking Card Contract
 
 `00_handwrite_anchor.md` should require only:
@@ -310,8 +353,8 @@ sweeps, seed dumps, or result interpretation, move that material to
 
 ### 6. Minimal Falsification Tests
 
-Write at most three tests. Each test should answer one question and map to the
-current decision.
+Write at most three tests. Prefer one decisive test plus guards. Each test
+should answer one question and map to the current decision.
 
 Use:
 
@@ -320,20 +363,18 @@ Test:
 Question:
 Intervention / comparison:
 Primary metric:
-Operational definition:
-Stage-local evidence:
-Supports:
-Weakens:
-Insufficient evidence:
+Pass / fail / insufficient:
+Why it decides:
 Failure means:
 ```
 
-`Operational definition` states the exact measured condition for support,
-weakening, and insufficient evidence. `Stage-local evidence` states what
-intermediate artifact, metric, figure, or example must be inspected before the
-final metric is trusted. `Failure means` states whether failure would falsify
-the physical prior, the mathematical model, one operationalization/proxy, the
-implementation, or the metric.
+Use one short paragraph or a compact table. The anchor should not carry the
+full protocol matrix. Exact thresholds, stage-local evidence, known good/bad
+cases, and condition-by-condition pass/fail rules move to `protocol.md`.
+
+`Failure means` states whether failure would falsify the physical prior, the
+mathematical model, one operationalization/proxy, the implementation, or the
+metric.
 
 Do not finalize this section until the Thinking Card and sections 1-5 are
 clear.

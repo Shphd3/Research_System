@@ -236,6 +236,27 @@ claim boundary
 If any item is missing, say the research state is incomplete and name the
 missing item.
 
+These items do not have to live in one artifact. Keep the artifact roles
+separate:
+
+```text
+anchor:
+  concise current decision, mechanism, primary metric, minimal falsifier,
+  claim boundary, and next decision
+
+protocol.md:
+  exact experiment conditions, algorithm parameters, profiling plan,
+  pass/fail/insufficient thresholds, known good/bad/confusing cases
+
+summary.md and detailed.md:
+  result evidence, visualization interpretation, failure decomposition,
+  artifact map, and updated claim boundary
+```
+
+Do not turn a readable anchor into a full protocol or result report in order to
+show that the research loop is complete. If the anchor becomes painful to read,
+split the question or move detail to the protocol.
+
 ## Artifact Mapping
 
 This project implements the core loop through research artifacts:

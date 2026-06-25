@@ -18,15 +18,18 @@ or experiment plan. Fill only the Thinking Card. Do not hand-write the full
 
 **Phenomenon:**
 
-为什么这个现象值得解释？
+长尾信息被学到了common信息的方向，common信息如果与长尾信息有方向冲突，那么长尾信息会被common给冲淡。我们想要的是，moe能够将rare冲突项与common方向分开来学，从而能够提高学习的相关效率！
 
 **Mechanism guess:**
 
-我怀疑哪个机制导致它？
+根据导师的草稿，应该是A-AB-ABC这种nested的结构导致的学习问题。
+
+1. 由于语义的嵌套结构，长尾信息受到干扰被学到了
+2. common信息会在hidden state中形成一个方向偏置
 
 **Key variables:**
 
-最少需要哪些变量？
+通过梯度进行的建模。
 
 **Causal relation:**
 

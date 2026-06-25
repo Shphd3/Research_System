@@ -66,6 +66,20 @@ Keep this snapshot short enough to read before approving the experiment. Put
 stage profiling, algorithm details, commands, and artifact maps after the
 snapshot.
 
+The protocol may carry detail that the anchor omits, but it must still be
+readable. The approval snapshot should answer in plain language:
+
+```text
+what one uncertainty this run resolves;
+which anchor claim it can change;
+which primary metric decides it;
+what result makes the run pass, fail, or remain insufficient;
+what the run cannot claim.
+```
+
+If the snapshot requires a broad condition table to understand the mechanism,
+return to the anchor and split the question before writing the protocol.
+
 Each condition, ablation, diagnostic, or visualization must appear in this
 table:
 
@@ -75,6 +89,10 @@ table:
 Do not include a condition because it is easy to run. Include it only if it
 tests a model term, separates a named rival explanation, or protects the
 validity of the primary metric.
+
+Prefer a small protocol with one decisive comparison and explicit guards. Move
+nice-to-have diagnostics, exploratory sweeps, and method variants to a later
+follow-up unless they are needed to separate a named rival explanation.
 
 The protocol must explicitly say whether it is a root-cause audit, metric
 audit, operationalization / proxy test, method construction, or robustness
