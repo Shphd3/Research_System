@@ -1,10 +1,10 @@
-# Anchor B 中文拆分稿：无标签 Common-Aware 路由器初始化
+﻿# Anchor B 中文拆分稿：无标签 Common-Aware 路由器初始化
 
 Source: `daily_research_reports/0611/draft/moe_storyline_anchor_plan_0611.md`
 
 Scope: This file extracts the Anchor B part. It assumes Anchor A has made the real/semi-real representation geometry worth testing. It asks whether hidden-state geometry can define a label-free router initialization.
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：稀疏 top-1 点积 MoE 的 early collapse 可能来自 common-logit bias。  
 当前子问题：没有 slot labels 时，能否用 hidden-state geometry 初始化 router，降低 common-induced expert bias。  

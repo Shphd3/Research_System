@@ -1,4 +1,4 @@
-# Meeting Brief: Early-Training Common-Logit Amplification
+﻿# Meeting Brief: Early-Training Common-Logit Amplification
 
 ## **Question**
 
@@ -51,7 +51,7 @@ step10 common_margin = 1.4242
 
 解释：早期集中是稳定复现的现象，但 step 300 又回落，说明这里审计的是早期训练动力学，不是长期专家死亡。
 
-![Normal max-load trajectory](experiments/A06_02_01_cross_checkpoint_replay/figures/trajectory_max_load_normal.png)
+![Normal max-load trajectory](experiments/A06/A06_02_01_cross_checkpoint_replay/figures/trajectory_max_load_normal.png)
 
 **Evidence 2: $W_{10}H_0$ 不解释第 5 层共同分量 spike。**
 
@@ -75,7 +75,7 @@ A_interaction = 0.8038
 
 解释：gate-only 贡献接近 0，hidden-only 只能解释一部分，最大剩余来自 $W$ 和 $H$ 同时变化后的 interaction。
 
-![Replay common-margin heatmap](experiments/A06_02_01_cross_checkpoint_replay/figures/replay_heatmap_common_margin.png)
+![Replay common-margin heatmap](experiments/A06/A06_02_01_cross_checkpoint_replay/figures/replay_heatmap_common_margin.png)
 
 **Evidence 3: freeze split 说明 raw load 和 common-margin 需要分开解释。**
 

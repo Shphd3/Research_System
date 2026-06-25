@@ -1,4 +1,4 @@
-# Minimal Anchor Handwrite Draft
+﻿# Minimal Anchor Handwrite Draft
 
 This is rough thinking for AI audit. It is not a final anchor.
 
@@ -12,7 +12,7 @@ Unclear / risky:
 
 Candidate priors:
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 总目标：是否存在一种gating 初始化的方式，能够使得gating初始化的时候让hidden states 均匀分发到不同的experts上，从而缓解早期的负载不均导致的路由坍缩。
 
@@ -31,7 +31,7 @@ Candidate priors:
 
 下一步决策：
 
-### Minimal Replay
+### Thinking Card Audit
 
 Question: 
 

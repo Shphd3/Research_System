@@ -16,6 +16,7 @@ repositories.
 
 | Anchor | Source |
 |---|---|
+| `expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md` | synthesized root-sync mainline from A05/A06/A07 evidence |
 | `expert_specialization/01_slot_context_dominance_router_specialization_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md` |
 | `expert_specialization/02_ntp_style_top1_router_lockin_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md` |
 | `expert_specialization/03_hierarchical_route_utility_binding_anchor.md` | `Projects/from-attention-to-search/main/problem_anchors/03_hierarchical_route_utility_binding_anchor.md` |
@@ -27,8 +28,8 @@ Update them only when the user explicitly asks to sync root sync or names a
 specific root anchor copy. Before finishing that requested sync, verify that the
 source and sync copy are identical.
 
-Current key experiment package:
+Current mainline package:
 
 ```text
-sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/
+sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
 ```

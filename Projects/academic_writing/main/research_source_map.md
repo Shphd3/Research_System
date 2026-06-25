@@ -1,4 +1,4 @@
-# Research Source Map
+﻿# Research Source Map
 
 This course project derives its technical content from the ongoing MoE gating
 specialization work.
@@ -15,12 +15,12 @@ Projects/from-attention-to-search/main/problem_anchors/05_02_feature_assumption_
 Useful result records:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/summary.md
-Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/detailed.md
-Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/summary.md
-Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/detailed.md
-Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/summary.md
-Projects/from-attention-to-search/main/experiments/A05_01_true_token_conditioned_inhibition_replay/detailed.md
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_key_routing_stability_center_only/summary.md
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_key_routing_stability_center_only/detailed.md
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/summary.md
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/detailed.md
+Projects/from-attention-to-search/main/experiments/A05/A05_01_true_token_conditioned_inhibition_replay/summary.md
+Projects/from-attention-to-search/main/experiments/A05/A05_01_true_token_conditioned_inhibition_replay/detailed.md
 ```
 
 ## Defensible Current Claim

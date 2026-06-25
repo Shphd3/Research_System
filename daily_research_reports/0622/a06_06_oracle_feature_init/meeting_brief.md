@@ -1,4 +1,4 @@
-# Meeting Brief: A06_06 Oracle Feature-Level Initialization
+﻿# Meeting Brief: A06_06 Oracle Feature-Level Initialization
 
 ## Problem
 
@@ -121,13 +121,13 @@ Anchor:
 `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_06_feature_level_initialization_positive_control_anchor.md`
 
 Protocol:
-`Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/protocol.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_06_feature_level_initialization_positive_control/protocol.md`
 
 Summary:
-`Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_06_feature_level_initialization_positive_control/summary.md`
 
 Detailed:
-`Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/detailed.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_06_feature_level_initialization_positive_control/detailed.md`
 
 Runner:
 `Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/scripts/run_a06_06_feature_level_initialization_positive_control.py`

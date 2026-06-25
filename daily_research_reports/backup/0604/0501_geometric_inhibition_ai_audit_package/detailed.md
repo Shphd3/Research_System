@@ -1,4 +1,4 @@
-# Detailed Record: H0603a Geometric Inhibition
+﻿# Detailed Record: H0603a Geometric Inhibition
 
 ## 0. Quick Recap
 
@@ -78,7 +78,7 @@ figures/h0603a_geometric_inhibition/h0603a_geometric_inhibition_standard_4gpu_20
 Curated result dir:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/
+Projects/from-attention-to-search/main/experiments/A05/A05_01_geometric_inhibition_center_separation/
 ```
 
 ## 2. Data / Model / Training

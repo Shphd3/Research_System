@@ -1,4 +1,4 @@
-# Round A Theory Pack
+﻿# Round A Theory Pack
 
 ## Hypothesis
 
@@ -22,8 +22,7 @@
 
 如果这一步不成立，那么后面关于 variance-aware routing 的机制叙述会非常虚。
 
-## Mathematical Modeling
-
+## 4. Mathematical Model
 ### Core Objects
 
 给定中心化特征：

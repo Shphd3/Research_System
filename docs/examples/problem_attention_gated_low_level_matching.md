@@ -1,4 +1,4 @@
----
+﻿---
 parent_node: problem.agent_workflow
 ---
 
@@ -29,8 +29,7 @@ target + attention / relevance gating
 
 The broader workflow claim is that high-level control does not need to directly output motor actions. It can instead modulate what the low-level controller should attend to, trust, or ignore.
 
-## Physical Prior
-
+## 2. Physical Priors
 The physical prior is:
 
 ```text
@@ -77,8 +76,7 @@ which sensory signals are expected to help reduce the current control error?
 
 This connects to the earlier path-integration intuition. A high-level belief can predict not only where the target is, but also which future sensory channels should become relevant after the agent moves.
 
-## Mathematical Modeling
-
+## 4. Mathematical Model
 Let the low-level observation at time \(t\) be \(o_t\), and let a fixed feature extractor produce a feature tensor:
 
 $$

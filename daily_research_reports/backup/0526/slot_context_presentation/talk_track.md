@@ -29,7 +29,7 @@ anchor/01_slot_context_dominance_router_specialization_anchor.md
 如果导师问“你整个问题定义是什么”，直接打开这个文件，看开头的：
 
 ```text
-Reporting Summary
+Thinking Card
 Question
 Current Evidence
 Claim Boundary

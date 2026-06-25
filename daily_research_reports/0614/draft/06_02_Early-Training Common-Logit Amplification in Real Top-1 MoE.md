@@ -1,6 +1,6 @@
-# Minimal Anchor Handwrite Draft
+﻿# Minimal Anchor Handwrite Draft
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：为什么 sparse top-1 MoE router 在早期进入 route concentration / expert underuse？
 
@@ -32,8 +32,7 @@ Not in scope:
 3. final expert utility specialization;
 4. mentor-style expert-spectrum initialization.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1:
 The router-input common component is stable across early batches and checkpoints.
 
@@ -90,8 +89,7 @@ W_0 H_10 explains a large fraction of the spike, or freeze_experts / block exper
 Weakened if:
 W_10 H_0 already reproduces the spike and expert-feedback interventions have little effect.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects:
 
 $$

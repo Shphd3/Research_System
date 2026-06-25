@@ -1,6 +1,6 @@
 ﻿# 00 Handwrite Anchor
 
-## Report Summary（中文，汇报用）
+## Thinking Card
 
 目的：通过2 * 2的实验来研究，Router无法按照feature分发的原因到底因为什么原因？
 
@@ -43,8 +43,7 @@ Decision question:
 
 Why this matters now:
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 What I believe about the system / data / mechanism:
 
 Why this prior could be wrong:

@@ -1,4 +1,4 @@
-# Meeting Brief: High-Dimensional Gaussian Gate Load Imbalance
+﻿# Meeting Brief: High-Dimensional Gaussian Gate Load Imbalance
 
 ## 0. One-Sentence Update
 
@@ -142,13 +142,13 @@ Anchor:
 `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_03_high_dimensional_gaussian_gate_norm_variation_anchor.md`
 
 Protocol:
-`Projects/from-attention-to-search/main/experiments/A06_03_high_dimensional_gaussian_gate_norm_variation/protocol.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_03_high_dimensional_gaussian_gate_norm_variation/protocol.md`
 
 Summary:
-`Projects/from-attention-to-search/main/experiments/A06_03_high_dimensional_gaussian_gate_norm_variation/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_03_high_dimensional_gaussian_gate_norm_variation/summary.md`
 
 Detailed:
-`Projects/from-attention-to-search/main/experiments/A06_03_high_dimensional_gaussian_gate_norm_variation/detailed.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_03_high_dimensional_gaussian_gate_norm_variation/detailed.md`
 
 Figures copied for meeting:
 `figures/true_cell_imbalance_by_condition.png`

@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A06_09_training_basin_preservation
 parent_node: rq.feature_specialization.training_dynamics
 status: active_draft
@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_09 Training Basin Preservation Anchor Draft
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：即使初始化时构造了 feature-level routing partition，top-1 MoE 训练是否会保持这个 partition，还是重新进入 collapse / many-to-one merge basin。
 
@@ -329,8 +329,8 @@ Boundary:
 This does not show the partition is stable under training.
 
 Evidence links:
-`../experiments/A06_06_feature_level_initialization_positive_control/summary.md`
-`../experiments/A06_06_feature_level_initialization_positive_control/detailed.md`
+`../experiments/A06/A06_06_feature_level_initialization_positive_control/summary.md`
+`../experiments/A06/A06_06_feature_level_initialization_positive_control/detailed.md`
 
 Observation:
 A06_07 shows that global label-free controls improve load but not feature_NMI.
@@ -342,8 +342,8 @@ Boundary:
 This does not rule out feature discovery or anti-lockin.
 
 Evidence links:
-`../experiments/A06_07_label_free_common_residual_control_router/summary.md`
-`../experiments/A06_07_label_free_common_residual_control_router/detailed.md`
+`../experiments/A06/A06_07_label_free_common_residual_control_router/summary.md`
+`../experiments/A06/A06_07_label_free_common_residual_control_router/detailed.md`
 
 Observation:
 Earlier collapse audits support the view that early common-logit bias can seed collapse, while final collapse can require top-1 training amplification / lock-in.
@@ -355,8 +355,8 @@ Boundary:
 The current anchor does not assume anti-lockin is necessary; it tests whether it is necessary.
 
 Evidence links:
-`../experiments/A05_04_01_round1_slot_specialization_protocol_dot_product/summary.md`
-`../experiments/A05_04_02_round2_dot_product_common_logit_causality/summary.md`
+`../experiments/A05/A05_04_01_round1_slot_specialization_protocol_dot_product/summary.md`
+`../experiments/A05/A05_04_02_round2_dotproduct_common_logit/summary.md`
 
 ---
 

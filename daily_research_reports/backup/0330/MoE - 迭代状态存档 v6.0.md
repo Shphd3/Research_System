@@ -1,4 +1,4 @@
-# [调研]MoE - 迭代状态存档 v6.0
+﻿# [调研]MoE - 迭代状态存档 v6.0
 
 > 本版本的任务不是继续扩展理论，而是先收敛。
 > 我们要回答三件事：
@@ -45,8 +45,7 @@
 | H4 | Debiased quadratic router 只有在 centered linear 确实错过了二阶可分性时才有必要 | active | 这是“我们到底需不需要 quadratic” 的核心判据 | 当前只有 intuition 和局部现象，没有 no-training discriminative test | 可能 quadratic 只是更稳，不是真的更会分发 |
 | H5 | `d_tau_comp` 会比 `ED_comp` 更适合作为“专家低秩性”的主指标 | active | ED/ED_comp 对弱尾部过敏，会模糊“真正占用的方向数” | 数学上合理，且符合当前指标缺陷感受 | 需要固定 `tau` 选择协议并重算最新 checkpoint |
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 ### 4.1 Core Objects and Definitions
 - **输入与路由**：
   - token 表征：$x \in \mathbb{R}^d$

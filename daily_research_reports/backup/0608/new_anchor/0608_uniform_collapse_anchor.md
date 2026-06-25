@@ -1,4 +1,4 @@
----
+﻿---
 parent_node: uniform_feature_moe_specialization
 status: draft_for_audit_cycle
 created: 2026-06-08
@@ -6,7 +6,7 @@ created: 2026-06-08
 
 # Anchor: Why Uniform Features Still Collapse After Removing Position-Seeded Common Offset
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 **Parent problem:**
 
@@ -191,8 +191,7 @@ This mechanism predicts that a forced feature-to-expert initialization may not s
 
 ---
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 ### Objects
 
 Let:

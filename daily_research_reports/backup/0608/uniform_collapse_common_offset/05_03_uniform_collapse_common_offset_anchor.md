@@ -1,6 +1,6 @@
-# 05_03 Uniform Collapse Common-Offset Anchor
+﻿# 05_03 Uniform Collapse Common-Offset Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 Parent problem: ordinary top-1 MoE routing collapses even when feature frequencies are uniform.
 
@@ -24,8 +24,7 @@ Decision question: does the shared hidden component induce an expert-specific co
 
 Not in scope: compositional features, Zipfian frequency, real language data, proof that selected experts are utility-wrong, or a general anti-collapse solution.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1: uniform feature frequency does not imply zero-mean hidden states.
 Meaning: fixed positions, template tokens, residual stream offsets, and attention can create a shared component at the routed position.
 Could be wrong if: the measured common component is small or unrelated to route load.
@@ -52,8 +51,7 @@ H3: final collapse requires top-1 amplification beyond the step-0 offset.
 Supported if: common-aware initialization or cancellation balances step 0 but final max-load remains seed-dependent, while an early anti-lock-in objective is stronger.
 Weakened if: offset cancellation alone reliably solves final collapse.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects: $h_f$ is the hidden centroid for feature $f$ at the routed position; $c$ is the mean hidden centroid; $r_f$ is the feature residual; $w_e$ is router row $e$.
 
 Core decomposition:

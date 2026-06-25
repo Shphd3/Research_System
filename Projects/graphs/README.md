@@ -1,4 +1,4 @@
-# Research Graph Hub
+﻿# Research Graph Hub
 
 This directory stores Sidecar-readable graph manifests for cross-project
 research navigation.
@@ -41,7 +41,7 @@ project folder
 Example project folder:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_geometric_inhibition_center_separation/
+Projects/from-attention-to-search/main/experiments/A05/A05_01_geometric_inhibition_center_separation/
 ```
 
 Rule:

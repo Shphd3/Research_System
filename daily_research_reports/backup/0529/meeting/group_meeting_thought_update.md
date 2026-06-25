@@ -255,8 +255,8 @@ Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance
 Experiment summaries:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/summary.md
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/summary.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/summary.md
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/summary.md
 Projects/from-attention-to-search/main/experiments/archive/A04_parked_frequency/linear_ffn_frequency_anisotropy/summary.md
 Projects/from-attention-to-search/main/experiments/archive/secondary_linear_ffn/linear_ffn_spectral_feature_decomposition/summary.md
 ```

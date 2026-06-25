@@ -1,4 +1,4 @@
-# A06_01 Detailed: Common-Filtered Expert-Spectrum Router Initialization
+﻿# A06_01 Detailed: Common-Filtered Expert-Spectrum Router Initialization
 
 ## 0. Quick Recap
 
@@ -41,7 +41,7 @@ Submit command:
 
 ```bash
 A06_01_ALLOW_REAL_SUBMIT=1 RUN_NAME=a06_01_common_filtered_expert_spectrum_init_4gpu_20260614_full01 \
-  Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization/scripts/submit_common_filtered_expert_spectrum_init_4gpu_acp.sh
+  Projects/from-attention-to-search/main/experiments/A06/A06_01_common_filtered_expert_spectrum_router_initialization/scripts/submit_common_filtered_expert_spectrum_init_4gpu_acp.sh
 ```
 
 Runtime log:
@@ -219,11 +219,11 @@ Definitions:
 Execution:
 
 ```bash
-python Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization/scripts/audit_step0_token_frequency_routing.py \
+python Projects/from-attention-to-search/main/experiments/A06/A06_01_common_filtered_expert_spectrum_router_initialization/scripts/audit_step0_token_frequency_routing.py \
   --token-audit-batch-size 64 \
   --frequency-count-batch-size 256 \
   --top-token-count 64 \
-  --output-dir Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization
+  --output-dir Projects/from-attention-to-search/main/experiments/A06/A06_01_common_filtered_expert_spectrum_router_initialization
 ```
 
 Outputs:
@@ -270,11 +270,11 @@ The sharper audit sorts experts by their load within each variant, seed, step, l
 Command:
 
 ```bash
-python Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization/scripts/audit_token_frequency_rank_routing.py \
+python Projects/from-attention-to-search/main/experiments/A06/A06_01_common_filtered_expert_spectrum_router_initialization/scripts/audit_token_frequency_rank_routing.py \
   --steps 0 10 \
   --token-audit-batch-size 64 \
   --frequency-count-batch-size 256 \
-  --output-dir Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization
+  --output-dir Projects/from-attention-to-search/main/experiments/A06/A06_01_common_filtered_expert_spectrum_router_initialization
 ```
 
 After removing the top 1% high-frequency token ids, the late-layer sorted route distribution is:

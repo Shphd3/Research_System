@@ -1,6 +1,6 @@
-# 05_01_geometric_inhibition_anchor.md
+﻿# 05_01_geometric_inhibition_anchor.md
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 当前 05_01 只保留一个当前主线问题：
 
@@ -98,8 +98,7 @@ When multiple slot features are routed into the same expert, what relation do th
 
 ---
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 top-1 selected-gate router 会强化 early assignment。如果早期 assignment 形成 all-to-one 或 many-to-one collapse，那么 same-feature consistency 可以很高，但这不是 specialization。
 
 对当前 multi-B synthetic：
@@ -176,8 +175,7 @@ H0604b 基本固定当前最佳条件下的 operational feature axis：`slot` �
 
 ---
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 For a feature label type $F$:
 
 ```text
@@ -282,7 +280,7 @@ Required central figures:
 Status:
 
 ```text
-completed at main/experiments/A05_01_feature_axis_audit_existing_logs/
+completed at main/experiments/A05/A05_01_feature_axis_audit_existing_logs/
 ```
 
 ---

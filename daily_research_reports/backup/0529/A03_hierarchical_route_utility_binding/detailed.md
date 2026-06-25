@@ -316,13 +316,13 @@ figures/A03_hierarchical_route_utility_binding/hierarchical_route_utility_bindin
 Curated local tables:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/tables/
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/tables/
 ```
 
 Curated local figures:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/figures/
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/figures/
 ```
 
 ACP job:

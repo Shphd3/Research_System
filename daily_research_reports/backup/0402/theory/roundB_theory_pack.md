@@ -1,4 +1,4 @@
-# Round B Theory Pack
+﻿# Round B Theory Pack
 
 ## Hypothesis
 
@@ -24,8 +24,7 @@ Round B 不是纯静态表示分析，而是当前模型结构后果的检查。
 - expert 是否真的更专一；
 - 不同 domain 的 activation overlap 是否真的被压低。
 
-## Mathematical Modeling
-
+## 4. Mathematical Model
 ### Core Objects
 
 对于 expert `e` 和 domain `A / B`，定义 routed feature covariance：

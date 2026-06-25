@@ -112,7 +112,7 @@ Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_
 Formal experiment:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/
 ```
 
 Included:
@@ -280,8 +280,8 @@ assignment-utility agreement
 4. `daily_research_reports/0601/2x2_top1_router_lockin/05_report_card.md`
 5. `daily_research_reports/0601/meeting/meeting_core.md`
 6. `Projects/from-attention-to-search/main/problem_anchors/02_ntp_style_top1_router_lockin_anchor.md`
-7. `Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/summary.md`
-8. `Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/detailed.md`
+7. `Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/summary.md`
+8. `Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/detailed.md`
 
 ## Current Workspace Notes
 
@@ -291,7 +291,7 @@ At the time this handoff was written:
 Root Research_System has uncommitted changes in 0601 daily/report-card related files.
 Projects/from-attention-to-search has pushed commit 6e12941 on branch Xingyu.
 Projects/from-attention-to-search currently has an untracked detailed.pdf under
-main/experiments/A01_slot_context_dominance_router_specialization/.
+main/experiments/A01/A01_slot_context_dominance_router_specialization/.
 ```
 
 Do not commit, push, update graph, or sync root unless the user explicitly asks.

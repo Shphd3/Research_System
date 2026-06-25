@@ -275,25 +275,25 @@ Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance
 summary:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/summary.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/summary.md
 ```
 
 detailed:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/detailed.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/detailed.md
 ```
 
 bridge summary:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/summary.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/summary.md
 ```
 
 bridge detailed:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/detailed.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/detailed.md
 ```
 
 source anchor copy:
@@ -363,10 +363,10 @@ figures/A01_slot_context_dominance_router_specialization/slot_context_multi_b_tr
 key files:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/tables/
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/figures/
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/summary.md
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/detailed.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/tables/
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/figures/
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/summary.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/detailed.md
 ```
 
 checkpoints / logs:

@@ -1,4 +1,4 @@
-# 均匀特征如何进入稳定专家分工
+﻿# 均匀特征如何进入稳定专家分工
 
 ## 执行摘要
 
@@ -55,7 +55,7 @@ $$
 
 边界：这些结果主要在受控 synthetic / synthetic-to-realistic bridge 上成立，不能推出真实语义 feature，也不能推出真实 DCLM 训练能保存。
 
-来源：`A06_08_label_free_feature_discovery_initialization/summary.md`，`A06_09_training_basin_preservation/summary.md`，`A06_16_synthetic_to_realistic_proxy_bridge/summary.md`。
+来源：`Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md`，`Projects/from-attention-to-search/main/experiments/A06/A06_09_training_basin_preservation/summary.md`，`Projects/from-attention-to-search/main/experiments/A06/A06_16_synthetic_to_realistic_proxy_bridge/summary.md`。
 
 ### 2. 随机门控和全位置聚类都会把问题推回到错误的几何对象。
 
@@ -67,7 +67,7 @@ $$
 
 边界：common cancellation 是机制证据，不是最终方法；A06_17 只证明 controlled bridge 中全位置聚类对象不可靠，还没有给出真实语料上的无标签 route-relevant state selector。
 
-来源：`A05_04_02_round2_dotproduct_common_logit/summary.md`，`A05_04_03_real_text_common_logit_audit/summary.md`，`A06_17_all_position_route_relevant_feature_discovery/summary.md`。
+来源：`Projects/from-attention-to-search/main/experiments/A05/A05_04_02_round2_dotproduct_common_logit/summary.md`，`Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md`，`Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md`。
 
 ### 3. 专家分区必须通过训练保存和功能价值两道门槛。
 
@@ -79,7 +79,7 @@ $$
 
 边界：A07 是 controlled synthetic analytic audit，不是真实 checkpoint，不证明真实语义专家或真实 DCLM utility。
 
-来源：`A06_10_real_dclm_proxy_feature_operationalization/summary.md`，`A06_11_real_dclm_proxy_center_router_initialization/summary.md`，`A06_12_real_dclm_proxy_init_training_preservation/summary.md`，`A06_13_real_dclm_proxy_init_failure_decomposition/summary.md`，`A07_01/02/03` summaries。
+来源：`Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md`，`Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md`，`Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md`，`Projects/from-attention-to-search/main/experiments/A06/A06_13_real_dclm_proxy_init_failure_decomposition/summary.md`，`Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md`，`Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md`，`Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md`。
 
 ## Source Result Modules
 
@@ -112,17 +112,17 @@ $$
 
 | 证据 | 文件 |
 | --- | --- |
-| common-logit collapse and cancellation | `Projects/from-attention-to-search/main/experiments/A05_04_02_round2_dotproduct_common_logit/summary.md` |
-| real-text common-logit audit | `Projects/from-attention-to-search/main/experiments/A05_04_03_real_text_common_logit_audit/summary.md` |
-| label-free route-position discovery | `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/summary.md` |
-| synthetic training basin preservation | `Projects/from-attention-to-search/main/experiments/A06_09_training_basin_preservation/summary.md` |
-| real DCLM proxy discovery | `Projects/from-attention-to-search/main/experiments/A06_10_real_dclm_proxy_feature_operationalization/summary.md` |
-| real DCLM proxy router bridge | `Projects/from-attention-to-search/main/experiments/A06_11_real_dclm_proxy_center_router_initialization/summary.md` |
-| real DCLM preservation failure | `Projects/from-attention-to-search/main/experiments/A06_12_real_dclm_proxy_init_training_preservation/summary.md` |
-| first failed stage decomposition | `Projects/from-attention-to-search/main/experiments/A06_13_real_dclm_proxy_init_failure_decomposition/summary.md` |
-| synthetic-to-realistic bridge | `Projects/from-attention-to-search/main/experiments/A06_16_synthetic_to_realistic_proxy_bridge/summary.md` |
-| all-position route-relevant audit | `Projects/from-attention-to-search/main/experiments/A06_17_all_position_route_relevant_feature_discovery/summary.md` |
-| D07 metric and utility chain | `Projects/from-attention-to-search/main/experiments/A07_01_common_rare_conflict_metric_audit/summary.md`; `A07_02_common_controlled_rare_interference/summary.md`; `A07_03_route_function_binding/summary.md` |
+| common-logit collapse and cancellation | `Projects/from-attention-to-search/main/experiments/A05/A05_04_02_round2_dotproduct_common_logit/summary.md` |
+| real-text common-logit audit | `Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md` |
+| label-free route-position discovery | `Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md` |
+| synthetic training basin preservation | `Projects/from-attention-to-search/main/experiments/A06/A06_09_training_basin_preservation/summary.md` |
+| real DCLM proxy discovery | `Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md` |
+| real DCLM proxy router bridge | `Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md` |
+| real DCLM preservation failure | `Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md` |
+| first failed stage decomposition | `Projects/from-attention-to-search/main/experiments/A06/A06_13_real_dclm_proxy_init_failure_decomposition/summary.md` |
+| synthetic-to-realistic bridge | `Projects/from-attention-to-search/main/experiments/A06/A06_16_synthetic_to_realistic_proxy_bridge/summary.md` |
+| all-position route-relevant audit | `Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md` |
+| D07 metric and utility chain | `Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md`; `Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md`; `Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md` |
 | theory audit prompts | `daily_research_reports/0624/meetings/theory_ai_prompts.md` |
 
 ## Excluded Material And Reason

@@ -1,4 +1,4 @@
-# A06_02_01 Cross-Checkpoint Replay Summary
+﻿# A06_02_01 Cross-Checkpoint Replay Summary
 
 ## Purpose
 
@@ -31,7 +31,7 @@ variants: normal, freeze_last_layer_hidden_producer
 Run directory:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/runs/cross_checkpoint_replay/a06_02_cross_checkpoint_replay_4gpu_20260614_full01
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/runs/cross_checkpoint_replay/a06_02_cross_checkpoint_replay_4gpu_20260614_full01
 ```
 
 ## Conclusion

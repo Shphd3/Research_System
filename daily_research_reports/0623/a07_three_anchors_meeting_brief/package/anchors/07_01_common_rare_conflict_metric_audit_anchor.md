@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A07_01_common_rare_conflict_metric_audit
 parent_node: rq.expert_specialization
 status: supported_controlled_synthetic
@@ -9,7 +9,7 @@ source_draft: 00_handwrite_anchor.md
 
 # A07_01 Common / Rare Conflict Metric Audit Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：expert partition 是否真的降低 feature interference，而不是只改善 load。
 当前子问题：先验证 D07 数据和 `Delta_vs_best_null` 是否是合法审计面。
@@ -139,12 +139,12 @@ Insufficient evidence: missing manifest or hidden-state artifact.
 Observation: A07 shared full run completed on 2026-06-23 with 8 seeds.
 Interpretation: D07 has oracle-relievable rare conflict: `Delta_vs_best_null = 0.8601 +/- 0.0008`; dense rare loss is `1.4399`, load-only rare loss is `1.5300`, and oracle rare loss is `0.5798`.
 Boundary: this is a controlled synthetic hidden-state audit, not a neural end-to-end training result.
-Evidence links: `../../experiments/A07_01_common_rare_conflict_metric_audit/summary.md`, `../../experiments/A07_01_common_rare_conflict_metric_audit/detailed.md`.
+Evidence links: `../../experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md`, `../../experiments/A07/A07_01_common_rare_conflict_metric_audit/detailed.md`.
 
 Observation: Validity guards passed in the same run.
 Interpretation: conflict signal is readable from raw hidden and common-controlled hidden states (`1.0000` each), shortcut-only predictors stay at or below `0.5000`, and oracle forbidden-variable use is `0`.
 Boundary: this validates the synthetic audit surface, not real-language transfer.
-Evidence links: `../../experiments/A07_01_common_rare_conflict_metric_audit/tables/router_input_readability.csv`, `../../experiments/A07_01_common_rare_conflict_metric_audit/tables/shortcut_audit.csv`.
+Evidence links: `../../experiments/A07/A07_01_common_rare_conflict_metric_audit/tables/router_input_readability.csv`, `../../experiments/A07/A07_01_common_rare_conflict_metric_audit/tables/shortcut_audit.csv`.
 
 Observation: A05/A06 show load, entropy, and route_NMI can be misleading.
 Interpretation: A07 needs a loss-based audit surface before method testing.

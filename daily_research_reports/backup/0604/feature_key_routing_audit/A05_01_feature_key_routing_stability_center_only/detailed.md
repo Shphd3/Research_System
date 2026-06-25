@@ -1,4 +1,4 @@
-# Detailed Record: H0604a Feature-Key Routing Stability Center-Only
+﻿# Detailed Record: H0604a Feature-Key Routing Stability Center-Only
 
 ## 0. Quick Recap
 
@@ -83,7 +83,7 @@ figures/h0604a_feature_key_routing_stability_center_only/h0604a_feature_key_rout
 Curated result dir:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_key_routing_stability_center_only/
 ```
 
 ## 2. Data / Model / Training

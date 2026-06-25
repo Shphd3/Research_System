@@ -96,10 +96,10 @@ figure dir:
 figures/A03_hierarchical_route_utility_binding/hierarchical_route_utility_binding_full_20260528
 
 curated summary:
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/summary.md
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/summary.md
 
 curated detailed:
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/detailed.md
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/detailed.md
 
 job id:
 pt-7y7u65m5

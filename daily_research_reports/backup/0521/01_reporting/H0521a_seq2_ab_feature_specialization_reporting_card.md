@@ -1,4 +1,4 @@
-# Reporting Card: H0521a Seq2 AB Feature Specialization
+﻿# Reporting Card: H0521a Seq2 AB Feature Specialization
 
 Source closure:
 
@@ -133,6 +133,6 @@ expert function 已经强混合；真实语言 MoE 也一定如此；Reverse Ind
 
 ## 9. 结果文档
 
-- 实验摘要：`Projects/from-attention-to-search/XingyuD/main/experiments/A01_router_feature_specialization_audit/A01_E01_seq2_ab_feature_specialization/summary.md`
-- 详细报告：`Projects/from-attention-to-search/XingyuD/main/experiments/A01_router_feature_specialization_audit/A01_E01_seq2_ab_feature_specialization/detailed.md`
+- 实验摘要：`Projects/from-attention-to-search/XingyuD/main/experiments/A01/A01_router_feature_specialization_audit/A01_E01_seq2_ab_feature_specialization/summary.md`
+- 详细报告：`Projects/from-attention-to-search/XingyuD/main/experiments/A01/A01_router_feature_specialization_audit/A01_E01_seq2_ab_feature_specialization/detailed.md`
 - 运行结果目录：`Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/h0521_ab_feature_specialization/h0521_ab_feature_specialization_4gpu_guaranteed_20260521/`

@@ -1,4 +1,4 @@
-# Meeting Brief: A06_07 Label-Free Common / Residual Control
+﻿# Meeting Brief: A06_07 Label-Free Common / Residual Control
 
 ## Problem
 
@@ -96,13 +96,13 @@ Anchor:
 `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_07_label_free_common_residual_control_router_anchor.md`
 
 Protocol:
-`Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/protocol.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_07_label_free_common_residual_control_router/protocol.md`
 
 Summary:
-`Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_07_label_free_common_residual_control_router/summary.md`
 
 Detailed:
-`Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/detailed.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_07_label_free_common_residual_control_router/detailed.md`
 
 Runner:
 `Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/scripts/run_a06_07_label_free_common_residual_control_router.py`

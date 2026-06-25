@@ -1,4 +1,4 @@
-# E0521 / E0522 SVD Feature-Mixing Analysis Plan  
+﻿# E0521 / E0522 SVD Feature-Mixing Analysis Plan
 ## 已训练 seq_len=32 MoE 的 post-training diagnostic
 
 ## Conclusion
@@ -107,8 +107,7 @@ AB-composite 样本主要进入 AB expert
 
 ---
 
-## Mathematical Modeling
-
+## 4. Mathematical Model
 ### 1. Hidden state
 
 对第 `l` 层、第 `p` 个位置、第 `i` 个样本，记 hidden state 为：

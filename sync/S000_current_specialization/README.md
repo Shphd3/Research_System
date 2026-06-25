@@ -5,7 +5,8 @@
 The current mainline is:
 
 ```text
-gating -> expert specialization -> downstream effects
+gating -> route-relevant feature partition -> early-training preservation
+-> functional expert utility -> downstream effects
 ```
 
 The active branch evidence is organized under:
@@ -18,87 +19,75 @@ Projects/from-attention-to-search/main/experiments/
 The current branch anchor is:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
 ```
 
-Root-sync copy:
+Current project evidence anchors:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/01_slot_context_dominance_router_specialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md
 ```
 
-Latest formal mechanism sync package:
+Latest meeting synthesis:
 
 ```text
-sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/
-sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/05_report_card.md
-sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/summary.md
-sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/detailed.md
+daily_research_reports/0624/meetings/meeting_brief.md
 ```
 
 ## Current Evidence From Branch Sync
 
-Latest useful sync reports:
+Latest useful source reports:
 
 ```text
-Projects/from-attention-to-search/XingyuD/sync/0524_router_feature_specialization/report.md
-Projects/from-attention-to-search/XingyuD/sync/0525_zipfian_hierarchical/report.md
-Projects/from-attention-to-search/XingyuD/sync/0526_slot_context_dominance/report.md
+Projects/from-attention-to-search/main/experiments/A05/A05_04_02_round2_dotproduct_common_logit/summary.md
+Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
+Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
 ```
 
 Current evidence says:
 
-- corrected top-1 sparse MoE can learn the task, but AB-specific functional
-  expert specialization is unstable;
-- in the 2026-05-31 2x2 NTP-style top-1 proxy, failed seeds are already
-  collapsed at step 0, successful seeds are already split at step 0, and router
-  bias worsens same-expert initialization risk;
-- semantic or context initialization can create early semantic routing, but the
-  semantic route decays during training;
-- final hidden states still contain recoverable semantic boundaries, yet the
-  trained router does not reliably turn those boundaries into functional expert
-  utility;
-- Zipfian token frequency changes load structure, but in the current diagnostic
-  it does not by itself explain tail specialization failure;
-- a minimal common/sense hierarchy increases token/family routing association,
-  but does not improve tail functional specialization.
-- slot context can control routing in a fixed-B diagnostic, but multi-B
-  trajectory shows slot-centroid initialization starts non-diagonal, training
-  improves NMI only partially, and visible predictive slot information is not
-  sufficient for robust route-function binding under B identity variation.
+- A05 supports common-component and early-feedback failure mechanisms, while
+  weakening the strong claim that real-text step-0 routing is purely dominated
+  by common logits.
+- A06 supports route-position feature geometry in controlled settings, but
+  shows that all-position clustering is the wrong sample population and that
+  ordinary DCLM training can erase a step-0 proxy partition by step 5/10.
+- A07 moves the value question from load or route purity to common/rare
+  functional interference, but A07_04 is still insufficient evidence for
+  functional MoE specialization.
 
 ## Current Claim Boundary
 
 Can claim:
 
 ```text
-The current failure mode is not merely lack of semantic or slot separability.
-The sharper issue is route-function mismatch: route assignment, expert causal
-utility, and the training objective are not yet reliably aligned.
+Feature-level partition is reachable in controlled route-position geometry,
+but ordinary top-1 routing does not naturally discover or preserve it. The
+current mainline risk is wrong-object routing plus early-training overwrite.
 ```
 
 Cannot claim:
 
 ```text
-Current gating already induces stable expert specialization.
-Routing heatmaps or normalized mutual information prove functional experts.
-Zipfian frequency is irrelevant in general.
-Hierarchical MoE is generally ineffective.
+Real semantic experts exist.
+Balanced load or high route NMI proves functional experts.
+The A07 neural proxy already proves useful MoE specialization.
 Reverse KV retrieval follows from current evidence.
 ```
 
 ## Next Decision
 
-Do not continue broad architecture or context-length sweeps. The slot-context
-dominance diagnostic is now closed enough to redirect toward route-function
-binding.
-
-Recommended next anchor question:
+Do not continue broad architecture, context-length, or feature-existence
+sweeps. The next anchor question is:
 
 ```text
-Can an explicit route-function binding signal make route assignment align with
-expert causal utility in the multi-B / slot-context setting?
+Can a step-0 DCLM proxy partition be preserved through the step-5/10 training
+window without unacceptable language-model loss regression?
 ```
 
-The next sync should report one minimal route-function binding diagnostic
-rather than another broad context-strength or architecture sweep.
+If preservation succeeds, return to A07 functional utility. If it fails,
+decompose gate update, hidden-state drift, expert feedback, and optimizer
+geometry before proposing another method.

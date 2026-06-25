@@ -1,4 +1,4 @@
-# Meeting Brief：Anchor06_03 到 Anchor06_09 的 MoE 初始化路由主线
+﻿# Meeting Brief：Anchor06_03 到 Anchor06_09 的 MoE 初始化路由主线
 
 ## 0. Summary
 
@@ -326,10 +326,10 @@ Anchors:
 
 Summaries / detailed records:
 
-- `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/summary.md`
-- `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/detailed.md`
-- `Projects/from-attention-to-search/main/experiments/A06_09_training_basin_preservation/summary.md`
-- `Projects/from-attention-to-search/main/experiments/A06_09_training_basin_preservation/detailed.md`
+- `Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/detailed.md`
+- `Projects/from-attention-to-search/main/experiments/A06/A06_09_training_basin_preservation/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A06/A06_09_training_basin_preservation/detailed.md`
 
 Figures included in this brief:
 

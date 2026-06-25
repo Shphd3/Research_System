@@ -1,6 +1,6 @@
-# 05_01 Inhibition And Early Lock-In Anchor
+﻿# 05_01 Inhibition And Early Lock-In Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 Parent problem: ordinary top-1 MoE routing can look consistent without forming interpretable feature-level specialization.
 
@@ -24,8 +24,7 @@ Decision question: can the current inhibition direction produce non-collapsed, f
 
 Not in scope: real corpus behavior, Zipfian frequency, new router architecture, or claims that routed experts are causally utility-best.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1: hard top-1 selection creates a self-reinforcing training loop.
 Meaning: the selected expert receives the routed token update, and the next routing decision can become more confident for the same expert.
 Could be wrong if: early load imbalance repeatedly disappears without an explicit balancing or correction pressure.
@@ -52,8 +51,7 @@ H3: collapse in the original uniform setting is mostly early-geometry dominated.
 Supported if: final collapsed runs already point to the final dominant expert at step 0 to early checkpoints, and margins grow during training.
 Weakened if: early routing is balanced and the final dominant expert appears only late.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects: $h_f(t)$ is the hidden centroid for operational feature $f$ at the routed pre-target position; $w_e(t)$ is router row $e$; $e^+(f,t)=\arg\max_e w_e(t)^T h_f(t)$.
 
 Core decomposition:

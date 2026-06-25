@@ -1,9 +1,9 @@
-# Minimal Anchor Handwrite Draft
+﻿# Minimal Anchor Handwrite Draft
 
 Use this by hand before asking AI to polish the anchor. Write rough bullets.
 The canonical anchor is written in English. If Chinese helps thinking, write a
 separate `_cn.md` companion; do not mix two full versions in one file.
-Exception: write the `Tiny Summary` section in Chinese as the quick judgment
+Exception: write the `Thinking Card` section in Chinese as the quick judgment
 surface.
 
 ## AI Use Contract
@@ -66,7 +66,7 @@ Candidate physical priors I am not sure about:
 
 # 06_01 Common-Filtered Expert-Spectrum Router Initialization
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：为什么 random-init sparse top-1 MoE router 不能稳定进入 useful expert specialization？
 
@@ -94,8 +94,7 @@ Does a common-filtered expert-spectrum / representation initialization reduce ea
 Not in scope:
 Pretrained large MoEs, final expert utility specialization, load-balance loss as the solution, top-2 routing, and claims that expert singular vectors are true semantic features.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1:
 Randomly initialized experts are not functionally identical because their input-side high-gain subspaces differ.
 
@@ -152,8 +151,7 @@ Common-filtered initialization lowers step-10 `common_margin_delta` and `A_inter
 Weakened if:
 Filtered initialization only improves load balance, fails utility correlation, or reproduces the same early amplification as random init.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects:
 For expert $e$, let $E_e(h)$ be the expert FFN function. Let $J_e(h_\*)=\partial E_e(h)/\partial h|_{h_\*}$ be its input-side local linearization. Let $S_e=\mathrm{span}(V_{e,1:k})$ be the top-$k$ right singular subspace of $J_e(h_\*)\approx U_e\Sigma_e V_e^\top$. Let $C$ be the common subspace estimated from initial router inputs $H_0$.
 

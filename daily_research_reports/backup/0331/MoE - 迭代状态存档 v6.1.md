@@ -1,4 +1,4 @@
-# [调研]MoE - 迭代状态存档 v6.1
+﻿# [调研]MoE - 迭代状态存档 v6.1
 
 > 本版本的任务不再是继续扩展静态 proxy。  
 > 我们现在要回答三件事：  
@@ -48,8 +48,7 @@
 | H5 | `d_tau_comp` 比 `ED_comp` 更适合做 noise-aware occupancy 指标 | active | 修复低秩性指标缺陷 | 理论上更合理，尚未全量重算 | 需固定 `tau` 并跑完重算 |
 | H6 | 静态 proxy 可以筛选候选 router，但不能完成抗遗忘判决 | supported | 解释为什么现在必须切回 CL | 当前所有证据都仍停在 proxy | 若继续只做静态分析会偏题 |
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 ### 4.1 Current Interpretation of the Three Main Routes
 - **`linear_running_center`**：
   - 一阶中心化 baseline。

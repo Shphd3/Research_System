@@ -6,7 +6,7 @@ updated_from: hierarchical_route_utility_binding result + linear FFN Zipf eviden
 
 # NTP Factor Attribution And Tail Feature Write-In
 
-## 汇报前 Summary
+## Thinking Card
 
 一句话结论：
 
@@ -167,8 +167,7 @@ routing interference -> 改 router input / remove common-head subspace / common-
 tail write-in failure -> 改 training pressure / reweight / auxiliary tail write-in objective。
 ```
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 令一个受控样本的 factor 为：
 
 $$

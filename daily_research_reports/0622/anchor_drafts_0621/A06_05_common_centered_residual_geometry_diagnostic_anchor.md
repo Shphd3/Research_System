@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A06_05_common_centered_residual_geometry_diagnostic
 parent_node: rq.feature_specialization.initialization_geometry
 status: draft_for_user_review
@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_05 Common-Centered Residual Geometry Diagnostic Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：uniform feature distribution 下，初始化 dot-product top-1 gate 为什么仍可能产生 step-0 load imbalance，并阻碍 feature-level specialization。
 当前子问题：A06_04 已支持 hidden common component 是 synthetic hidden-state step-0 imbalance 的主导 tested source；但 common-centering 后仍有 residual load，需要继续拆。

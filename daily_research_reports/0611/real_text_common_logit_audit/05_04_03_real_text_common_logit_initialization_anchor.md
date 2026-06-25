@@ -1,6 +1,6 @@
-# 05_04_03 Real-Text Common-Logit Initialization Anchor
+﻿# 05_04_03 Real-Text Common-Logit Initialization Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：为什么 sparse top-1 MoE router 在早期进入 route concentration / expert underuse？
 当前子问题：DCLM real text 上，随机初始化线性 top-1 router 是否在 step 0 就被 common-logit offset 主导？
@@ -23,8 +23,7 @@ On DCLM packed-token text, does random-initialized sparse top-1 linear routing c
 Not in scope:
 This anchor does not test pretrained MoE behavior, final specialization, expert utility, or a deployable anti-common initialization.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1:
 Router-input hidden states in real text contain a shared direction or low-dimensional common component.
 Meaning:
@@ -75,8 +74,7 @@ Raw and centered scaling curves remain similar or do not worsen with $E$.
 Status:
 Weakened for virtual random gates. `dominance_ratio` stays below 1 and does not rise monotonically with $E$.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects:
 `h_i` is the exact tensor passed into the active linear gate for routed token `i`; `c = mean_i h_i`; `r_i = h_i - c`; `w_e` is the bias-free gate row for expert `e`.
 
@@ -173,7 +171,7 @@ Phase 4 observation:
 By step 300, actual larger $E$ shows more underuse risk: raw active-expert ratio is `0.9792` at $E=16$ and `0.9149` at $E=32$.
 
 Evidence location:
-Real-text evidence is recorded in `Projects/from-attention-to-search/main/experiments/A05_04_02_real_text_common_logit_audit/summary.md` and `detailed.md`.
+Real-text evidence is recorded in `Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md` and `detailed.md`.
 
 Daily report card:
 `daily_research_reports/0611/real_text_common_logit_audit/05_report_card.md`

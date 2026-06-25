@@ -20,7 +20,7 @@ prompt, or README.
 
 | Template | Use |
 |---|---|
-| `research_process/minimal_anchor_handwrite.md` | Minimal hand-written anchor draft for user thinking before AI expansion. |
+| `research_process/minimal_anchor_handwrite.md` | Minimal hand-written Thinking Card for user mechanism judgment before AI audit. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
 
 ## Reading Templates

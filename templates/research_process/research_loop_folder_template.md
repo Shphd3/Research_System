@@ -16,11 +16,13 @@ archive/
 
 ## File Roles
 
-`00_handwrite_anchor.md`: rough user judgment for AI audit, not a polished
-anchor.
+`00_handwrite_anchor.md`: rough user Thinking Card for AI audit. It should
+contain only phenomenon, mechanism guess, key variables, causal relation,
+observable metric, alternative explanation, and decision rule. It is not a
+full 0-8 anchor.
 
 `<topic>_anchor.md`: compact current-state design. First reading surface is
-`Tiny Summary` plus `Minimal Replay`; sections 1-8 are the audit layer.
+`Thinking Card`; sections 1-8 are the audit layer.
 
 `protocol.md`: experiment approval surface. Page 1 is `Approval Snapshot`;
 later sections hold anchor alignment, conditions, profiling, and nontrivial

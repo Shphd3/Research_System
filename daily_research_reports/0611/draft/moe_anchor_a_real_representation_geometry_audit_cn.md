@@ -1,10 +1,10 @@
-# Anchor A 中文拆分稿：真实表征初始化几何审计
+﻿# Anchor A 中文拆分稿：真实表征初始化几何审计
 
 Source: `daily_research_reports/0611/draft/moe_storyline_anchor_plan_0611.md`
 
 Scope: This file extracts the Anchor A part. It asks whether the common-logit bias mechanism exists in real or semi-real hidden representation spaces. It does not propose a new initialization method.
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：稀疏 top-1 点积 MoE 为什么会早期路由坍缩。  
 当前子问题：真实/半真实 hidden representation 中，随机 router 初始化是否也产生 common-induced imbalance。  

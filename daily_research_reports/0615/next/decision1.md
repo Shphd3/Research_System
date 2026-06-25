@@ -1,6 +1,6 @@
-# Decision 1: Test Whether Common-Aligned Router Winners Are Amplified By Early Top-1 Training
+﻿# Decision 1: Test Whether Common-Aligned Router Winners Are Amplified By Early Top-1 Training
 
-## Tiny Summary
+## Thinking Card
 
 当前事实：第 0 步负载最高的 expert，也是 router 向量与 common direction 余弦最对齐、且 $w_e^\top c$ 最大的 expert。
 

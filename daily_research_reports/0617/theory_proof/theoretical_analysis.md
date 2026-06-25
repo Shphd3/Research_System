@@ -1,4 +1,4 @@
-# Theoretical Analysis: Load Variance In Two-Dimensional Random Routing
+﻿# Theoretical Analysis: Load Variance In Two-Dimensional Random Routing
 
 ## Objective
 
@@ -218,8 +218,7 @@ The conjecture predicts:
 - Increasing \(n_{\text{tokens}}\) does not reduce \(p_j - 1/m\).
 - Therefore normalized load error approaches a nonzero initialization floor for random centroids.
 
-## Physical Prior
-
+## 2. Physical Priors
 Random centroids on the circle are unbiased but not evenly spaced. Uneven centroid spacing creates unequal expert-owned intervals. More tokens estimate those unequal intervals more accurately; more tokens do not make the intervals equal.
 
 ## Model 1: Random Initialization Variance

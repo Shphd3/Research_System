@@ -45,7 +45,7 @@ evidence; it must not silently absorb another file's job.
 
 | Artifact | Owns | Must not do |
 |---|---|---|
-| `00_handwrite_anchor.md` | rough user judgment and exposed thinking | become an AI-polished complete anchor before audit |
+| `00_handwrite_anchor.md` | rough Thinking Card and exposed user judgment | require or become a full 0-8 anchor before audit |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
@@ -122,7 +122,7 @@ Default one-to-one mapping:
 
 ```text
 Projects/<project>/<mainline>/problem_anchors/<anchor_id>.md
-Projects/<project>/main/experiments/<experiment_id>/protocol.md
+Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/protocol.md
 ```
 
 An experiment should correspond to one primary anchor. Multi-stage experiment
@@ -169,11 +169,11 @@ Anchors are decision cards, not reports. They must include:
 - current evidence;
 - claim boundary and one next decision.
 
-Each anchor has two reading layers. `Tiny Summary` is the short human-facing
-anchor replay. `Minimal Replay` is the 9-field approval-facing judgment check:
-question, physical prior, core model, model term, primary metric, falsifier,
-can claim, cannot claim, and next decision. The remaining sections are the
-auditable design layer for AI review, replay, and boundary checks.
+Each anchor has two reading layers. `Thinking Card` is the short human-facing
+mechanism judgment card: phenomenon, mechanism guess, key variables, causal
+relation, observable metric, alternative explanation, and decision rule. The
+remaining sections are the auditable design layer for AI review, replay,
+protocol alignment, and boundary checks.
 `Computational Realization` prevents theory/code drift by naming the
 implemented inputs, computed variables, algorithm stages, stage-local evidence,
 and expected artifacts.

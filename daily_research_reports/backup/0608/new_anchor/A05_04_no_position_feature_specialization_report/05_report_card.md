@@ -8,15 +8,15 @@ Anchor:
 
 Summary:
 
-`Projects/from-attention-to-search/main/experiments/A05_04_no_position_forced_feature_init_trajectory/summary.md`
+`Projects/from-attention-to-search/main/experiments/A05/A05_04_01_no_position_forced_feature_init_trajectory/summary.md`
 
 Detailed:
 
-`Projects/from-attention-to-search/main/experiments/A05_04_no_position_forced_feature_init_trajectory/detailed.md`
+`Projects/from-attention-to-search/main/experiments/A05/A05_04_01_no_position_forced_feature_init_trajectory/detailed.md`
 
 Figures / Tables:
 
-`Projects/from-attention-to-search/main/experiments/A05_04_no_position_forced_feature_init_trajectory/figures/a05_04_forced_feature_init_trajectory_4gpu_20260609/report/`
+`Projects/from-attention-to-search/main/experiments/A05/A05_04_01_no_position_forced_feature_init_trajectory/figures/a05_04_forced_feature_init_trajectory_4gpu_20260609/report/`
 
 ## 0. Executive Summary
 

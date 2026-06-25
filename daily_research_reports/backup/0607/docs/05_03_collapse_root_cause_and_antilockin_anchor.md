@@ -1,4 +1,4 @@
----
+﻿---
 parent_node: ordinary_top1_moe_route_consistency_and_specialization
 anchor_id: 05_03_collapse_root_cause_and_antilockin
 status: draft_for_next_iteration
@@ -7,7 +7,7 @@ created_from: research_handoff_0605 + 0605 mentor transcript + meeting_brief_cn
 
 # 05_03 Collapse Root-Cause And Anti-Lockin Anchor
 
-## 汇报前 Summary
+## Thinking Card
 
 父问题：
 
@@ -282,8 +282,7 @@ recommendation: pursue now
 
 ---
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 ### 4.1 Objects
 
 ```text

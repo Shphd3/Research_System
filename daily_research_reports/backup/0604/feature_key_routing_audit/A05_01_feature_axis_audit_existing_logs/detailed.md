@@ -1,4 +1,4 @@
-# Detailed Record: H0604b Feature-Axis Audit On Existing Logs
+﻿# Detailed Record: H0604b Feature-Axis Audit On Existing Logs
 
 ## 0. Purpose
 
@@ -314,7 +314,7 @@ Do not run frequency / Zipf diagnostics until this relation is defined.
 Research record:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/
 ```
 
 Runner:
@@ -328,7 +328,7 @@ Reproduction command:
 ```bash
 python3 Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/scripts/analyze_h0604b_feature_axis_audit.py \
   --input Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/h0604a_feature_key_routing_stability_center_only/h0604a_feature_key_routing_stability_4gpu_20260603/feature_key_route_matrix.csv \
-  --out-dir Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs
+  --out-dir Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs
 ```
 
 Complete tables:

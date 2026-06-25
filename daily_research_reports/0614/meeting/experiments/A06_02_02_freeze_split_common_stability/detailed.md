@@ -1,4 +1,4 @@
-# A06_02_02 Freeze Split and Common-Stability Detailed Record
+﻿# A06_02_02 Freeze Split and Common-Stability Detailed Record
 
 ## 0. Quick Recap
 
@@ -39,23 +39,23 @@ Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preserv
 Protocol:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/protocol_for_approval.md
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/protocol_for_approval.md
 ```
 
 Scripts:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/run_freeze_split_common_stability.py
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/audit_common_batch_stability_pca.py
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/summarize_freeze_split_results.py
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/submit_freeze_split_common_stability_4gpu_acp.sh
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/submit_common_pca_acp.sh
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/run_freeze_split_common_stability.py
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/audit_common_batch_stability_pca.py
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/summarize_freeze_split_results.py
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/submit_freeze_split_common_stability_4gpu_acp.sh
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/submit_common_pca_acp.sh
 ```
 
 Run directory:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/runs/freeze_split_common_stability/a06_02_02_freeze_split_common_stability_4gpu_20260614_full01
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/runs/freeze_split_common_stability/a06_02_02_freeze_split_common_stability_4gpu_20260614_full01
 ```
 
 ## 2. Experimental Setup
@@ -146,7 +146,7 @@ Full ACP run:
 ```bash
 A06_02_02_ALLOW_REAL_SUBMIT=1 \
 RUN_NAME=a06_02_02_freeze_split_common_stability_4gpu_20260614_full01 \
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/submit_freeze_split_common_stability_4gpu_acp.sh
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/submit_freeze_split_common_stability_4gpu_acp.sh
 ```
 
 Full run record:
@@ -163,7 +163,7 @@ Posthoc common-stability/PCA audit:
 
 ```bash
 A06_02_02_ALLOW_REAL_SUBMIT=1 \
-Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/scripts/submit_common_pca_acp.sh
+Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/scripts/submit_common_pca_acp.sh
 ```
 
 Common-stability run record:

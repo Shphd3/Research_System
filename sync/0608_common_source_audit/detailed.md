@@ -1,4 +1,4 @@
-# 0608 Overnight Common-Source Audit Detailed Record
+﻿# 0608 Overnight Common-Source Audit Detailed Record
 
 ## 1. Question
 
@@ -29,7 +29,7 @@ Required current-iteration files were available except for an optional `detailed
 | `daily_research_reports/0608/uniform_collapse_common_offset/summary.md` | read |
 | `daily_research_reports/0608/uniform_collapse_common_offset/detailed.md` | read |
 | `daily_research_reports/0608/uniform_collapse_common_offset/tables/*.csv` | read |
-| `Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset/scripts/*.py` | read |
+| `Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/scripts/*.py` | read |
 | `Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/src/synthetic_data_understanding/tiny_moe.py` | read |
 | `Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/configs/h0605a_true_token_conditioned_inhibition_replay.json` | read |
 

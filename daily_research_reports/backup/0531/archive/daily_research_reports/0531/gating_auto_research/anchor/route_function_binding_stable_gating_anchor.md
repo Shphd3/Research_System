@@ -1,10 +1,10 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
 ---
 
 # Stable Route-Function Binding For Synthetic Feature Specialization
 
-## Report Summary（中文，汇报用）
+## Thinking Card
 
 目的：
 
@@ -175,8 +175,7 @@ Mechanism candidates:
 4. linear gate + priors: prototype initialization, warmup constraints, margin, temperature, or load/capacity pressure that keeps routing aligned long enough for expert utility to form.
 ```
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 Let a routed hidden state be:
 
 $$

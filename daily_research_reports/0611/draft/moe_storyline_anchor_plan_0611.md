@@ -1,4 +1,4 @@
-# 0611 MoE Collapse Paper Storyline + Next Anchors Plan
+﻿# 0611 MoE Collapse Paper Storyline + Next Anchors Plan
 
 > Time context: 2026-06-11 16:20.  
 > Immediate purpose: help align with the mentor's paper-building logic before writing the next anchors.  
@@ -267,7 +267,7 @@ In frozen real/semi-real hidden states, does random dot-product top-1 routing pr
 
 ### 5.4 What you should write in the anchor, section by section
 
-#### Tiny Summary
+#### Thinking Card
 
 Write 3–5 lines:
 
@@ -413,7 +413,7 @@ Can a label-free common-aware initialization reduce or equalize w_e^T C in real/
 
 ### 6.4 What you should write in the anchor, section by section
 
-#### Tiny Summary
+#### Thinking Card
 
 ```text
 Synthetic results show slot-aware init can move routing into a specialization basin, but slot labels are unavailable in real settings.
@@ -898,7 +898,7 @@ Do not start with method. Start with real representation audit because it answer
 Write only rough bullets for:
 
 ```text
-Tiny Summary
+Thinking Card
 Problem Definition
 Physical Prior
 Hypothesis

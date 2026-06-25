@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A07_02_common_controlled_rare_interference
 parent_node: rq.expert_specialization
 status: supported_controlled_synthetic
@@ -10,7 +10,7 @@ source_draft: 00_handwrite_anchor.md
 
 # A07_02 Common-Controlled Rare Interference Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：common-control 是否从 anti-collapse 推进到 rare-feature interference reduction。
 当前子问题：在 A07_01 合法 D07 上，common-control 是否比 matched balance-only 降低 rare loss。
@@ -139,12 +139,12 @@ Insufficient evidence: missing load table, hidden readout, or label-free audit.
 Observation: A07 shared full run completed on 2026-06-23 with 8 seeds.
 Interpretation: common-control beats matched load-only on rare loss: `RIR_cc = 0.9502 +/- 0.0006`; `FoO_cc = 1.1049`.
 Boundary: this is a controlled synthetic method test, not a trained-checkpoint or real-corpus result.
-Evidence links: `../../experiments/A07_02_common_controlled_rare_interference/summary.md`, `../../experiments/A07_02_common_controlled_rare_interference/detailed.md`.
+Evidence links: `../../experiments/A07/A07_02_common_controlled_rare_interference/summary.md`, `../../experiments/A07/A07_02_common_controlled_rare_interference/detailed.md`.
 
 Observation: Load and signal guards passed.
 Interpretation: load-only and common-control both have max load `0.2500`, active experts `4.0000`, and load entropy `1.0000`; raw and post-control conflict readout are both `1.0000`.
 Boundary: this rules out load-only and signal-erasure rivals within this synthetic setup only.
-Evidence links: `../../experiments/A07_02_common_controlled_rare_interference/tables/matched_load_guard.csv`, `../../experiments/A07_02_common_controlled_rare_interference/tables/conflict_signal_preservation.csv`.
+Evidence links: `../../experiments/A07/A07_02_common_controlled_rare_interference/tables/matched_load_guard.csv`, `../../experiments/A07/A07_02_common_controlled_rare_interference/tables/conflict_signal_preservation.csv`.
 
 Observation: A05_03 supports common offset as an early collapse mechanism.
 Interpretation: common-control is plausible as an entry-condition method.

@@ -1,4 +1,4 @@
-# 组会 Brief: A06_03 到 A06_09 的 MoE 初始化几何主线
+﻿# 组会 Brief: A06_03 到 A06_09 的 MoE 初始化几何主线
 
 ## 0. 核心结论
 
@@ -414,5 +414,5 @@ synthetic pseudo-feature discovery -> weaker proxy feature -> real-language prox
 - A06_08 discovery anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_label_free_feature_discovery_initialization_anchor.md`
 - A06_09 anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_09_training_basin_preservation_anchor.md`
 - Slot-length robustness anchor: `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_08_slot_length_robustness_replay_anchor.md`
-- A06_08 discovery summary: `Projects/from-attention-to-search/main/experiments/A06_08_label_free_feature_discovery_initialization/summary.md`
-- A06_09 summary: `Projects/from-attention-to-search/main/experiments/A06_09_training_basin_preservation/summary.md`
+- A06_08 discovery summary: `Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md`
+- A06_09 summary: `Projects/from-attention-to-search/main/experiments/A06/A06_09_training_basin_preservation/summary.md`

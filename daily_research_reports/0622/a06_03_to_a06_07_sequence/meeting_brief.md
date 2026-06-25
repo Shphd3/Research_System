@@ -1,4 +1,4 @@
-# Meeting Brief: A06_03 to A06_07 Router Geometry Line
+﻿# Meeting Brief: A06_03 to A06_07 Router Geometry Line
 
 ## One-Sentence Conclusion
 
@@ -322,9 +322,9 @@ simple label-free global controls 只能修 load，不能找 feature
 
 ## Source Map
 
-- A06_03 summary: `Projects/from-attention-to-search/main/experiments/A06_03_high_dimensional_gaussian_gate_norm_variation/summary.md`
-- A06_04 summary: `Projects/from-attention-to-search/main/experiments/A06_04_real_hidden_state_gate_geometry_decomposition/summary.md`
-- A06_05 summary: `Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
-- A06_06 summary: `Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/summary.md`
-- A06_07 summary: `Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/summary.md`
+- A06_03 summary: `Projects/from-attention-to-search/main/experiments/A06/A06_03_high_dimensional_gaussian_gate_norm_variation/summary.md`
+- A06_04 summary: `Projects/from-attention-to-search/main/experiments/A06/A06_04_real_hidden_state_gate_geometry_decomposition/summary.md`
+- A06_05 summary: `Projects/from-attention-to-search/main/experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
+- A06_06 summary: `Projects/from-attention-to-search/main/experiments/A06/A06_06_feature_level_initialization_positive_control/summary.md`
+- A06_07 summary: `Projects/from-attention-to-search/main/experiments/A06/A06_07_label_free_common_residual_control_router/summary.md`
 - Handwritten line: `daily_research_reports/0622/exp_line.md`

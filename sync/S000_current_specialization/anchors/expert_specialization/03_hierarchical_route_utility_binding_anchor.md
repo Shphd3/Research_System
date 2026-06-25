@@ -1,10 +1,10 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
 ---
 
 # Hierarchical Route-Utility Binding Under Compositional Features
 
-## Report Summary
+## Thinking Card
 
 父问题：
 
@@ -143,8 +143,7 @@ Random-init shows that NTP alone does not reliably recover the slot-specialized 
 Linear FFN/KV toy shows frequency imbalance alone can create head-feature anisotropy and tail underfitting, even without MoE or slot.
 ```
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 Flat routing:
 
 $$
@@ -272,8 +271,8 @@ hierarchy/common-residual behaves like flat routing: slot is visible, oracle wor
 Experiment:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/summary.md
-Projects/from-attention-to-search/main/experiments/A03_hierarchical_route_utility_binding/detailed.md
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/summary.md
+Projects/from-attention-to-search/main/experiments/A03/A03_hierarchical_route_utility_binding/detailed.md
 ```
 
 Setup:

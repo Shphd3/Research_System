@@ -15,7 +15,7 @@ current evidence, claim boundary, and next decision.
 The experiment folder owns the approved experiment design and evidence:
 
 ```text
-Projects/<project>/main/experiments/<experiment_id>/
+Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/
   protocol.md
   summary.md
   detailed.md
@@ -372,7 +372,8 @@ move to an appendix/debug area or be omitted from the main result path.
 
 ## Rules
 
-- Use anchor-indexed experiment folder names: `A<anchor_id>_<short_topic>/`.
+- Use anchor-indexed experiment folder names under an anchor-family folder:
+  `main/experiments/A<anchor_id>/A<anchor_id>_<short_topic>/`.
 - Every protocol, summary, and detailed record must link to the primary anchor.
 - Do not create separate hypothesis purpose cards.
 - Do not create separate implementation-plan files for new work.

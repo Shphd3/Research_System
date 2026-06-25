@@ -1,6 +1,6 @@
-# 05_02 Feature Assumption Relaxation Anchor
+﻿# 05_02 Feature Assumption Relaxation Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 Parent problem: ordinary top-1 MoE route consistency may reflect collapse, shortcut, or early lock-in rather than feature-level specialization.
 
@@ -24,8 +24,7 @@ Decision question: under these relaxed feature assumptions, does ordinary top-1 
 
 Not in scope: Zipfian frequency, real corpora, utility-binding claims, new router design, or treating inhibition as the main story.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1: compositional inputs expose route-axis ambiguity.
 Meaning: if a routed context contains $S1$, $S2$, and nuisance $B_i$, changing the target rule should change the route axis.
 Could be wrong if: the router follows a surface token, position, or early expert preference instead of the target-relevant factor.
@@ -52,8 +51,7 @@ H3: inhibition is only a comparison condition in 05_02.
 Supported if: inhibition changes load or grouping but does not rescue the assumption-relaxation claim.
 Weakened if: inhibition robustly turns P1/P3 into non-collapsed positive evidence.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects: $route$ is the expert selected at the pre-target routed position; $F$ is the candidate feature label; $G$ is a family label; $E=4$ experts.
 
 Core decomposition:

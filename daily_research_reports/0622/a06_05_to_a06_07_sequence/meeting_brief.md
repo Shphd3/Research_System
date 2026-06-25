@@ -1,4 +1,4 @@
-# Meeting Brief: A06_05 to A06_07 Initialization Geometry Sequence
+﻿# Meeting Brief: A06_05 to A06_07 Initialization Geometry Sequence
 
 ## Shared Problem
 
@@ -54,7 +54,7 @@ Figure:
 ![A06_05 residual load controls](figures/a06_05_residual_load_by_condition.png)
 
 Source:
-`Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
 
 ## Evidence Module 2: A06_06 Oracle Reachability
 
@@ -81,7 +81,7 @@ Figure:
 ![A06_06 oracle feature NMI](figures/a06_06_feature_nmi_by_condition.png)
 
 Source:
-`Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_06_feature_level_initialization_positive_control/summary.md`
 
 ## Evidence Module 3: A06_07 Label-Free Control
 
@@ -109,7 +109,7 @@ Figure:
 ![A06_07 load versus oracle gap](figures/a06_07_load_oracle_gap_by_condition.png)
 
 Source:
-`Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_07_label_free_common_residual_control_router/summary.md`
 
 ## Cross-Result Interpretation
 
@@ -158,13 +158,13 @@ Recommended next method direction:
 ## Source Map
 
 A06_05:
-`Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
 
 A06_06:
-`Projects/from-attention-to-search/main/experiments/A06_06_feature_level_initialization_positive_control/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_06_feature_level_initialization_positive_control/summary.md`
 
 A06_07:
-`Projects/from-attention-to-search/main/experiments/A06_07_label_free_common_residual_control_router/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_07_label_free_common_residual_control_router/summary.md`
 
 Anchors:
 

@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A07_03_route_function_binding
 parent_node: rq.expert_specialization
 status: supported_controlled_synthetic
@@ -10,7 +10,7 @@ source_draft: 00_handwrite_anchor.md
 
 # A07_03 Route-Function Binding Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：rare loss 改善是否真的来自 expert specialization。
 当前子问题：A07_02 通过后，routed experts 是否对对应 conflict group 有因果效用。
@@ -148,12 +148,12 @@ Insufficient evidence: early checkpoints missing.
 Observation: A07 shared full run completed on 2026-06-23 with 8 seeds.
 Interpretation: route-function binding is supported by modal-aligned metrics: selected-best rate is `1.0000` against chance `0.2500`, and route-conditioned utility advantage is `0.9498-0.9502` across groups.
 Boundary: raw expert IDs permute across seeds, so raw expert-id averaged forced matrices are auxiliary only.
-Evidence links: `../../experiments/A07_03_route_function_binding/summary.md`, `../../experiments/A07_03_route_function_binding/detailed.md`.
+Evidence links: `../../experiments/A07/A07_03_route_function_binding/summary.md`, `../../experiments/A07/A07_03_route_function_binding/detailed.md`.
 
 Observation: Fixed-route ablation is selective under modal alignment.
 Interpretation: modal ablation delta is `0.6800` for every group, while nonmodal ablation delta is `0.0000`; early utility advantage is already `0.7408-0.7411`.
 Boundary: this is controlled synthetic causal-utility evidence, not real-language semantic expert evidence.
-Evidence links: `../../experiments/A07_03_route_function_binding/tables/modal_ablation_selectivity.csv`, `../../experiments/A07_03_route_function_binding/tables/early_final_utility.csv`.
+Evidence links: `../../experiments/A07/A07_03_route_function_binding/tables/modal_ablation_selectivity.csv`, `../../experiments/A07/A07_03_route_function_binding/tables/early_final_utility.csv`.
 
 Observation: A06_14 separates assignment from utility.
 Interpretation: A07_03 is required before claiming causal expert specialization.

@@ -1,6 +1,6 @@
-# Minimal Anchor Handwrite Draft
+﻿# Minimal Anchor Handwrite Draft
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：sparse top-1 MoE router 为什么在早期进入 route collapse / expert underuse？
 
@@ -31,8 +31,7 @@ Not in scope:
 - Not proposing a deployable initialization method.
 - Not claiming functional expert specialization.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1: Frozen real/semi-real hidden states contain a stable shared component or low-dimensional common subspace.
 
 Meaning:
@@ -79,8 +78,7 @@ max_load, entropy drop, active-expert drop, or common-winner dominance worsen as
 Weakened if:
 Experts-scaling looks like matched random routing or remains balanced.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects:
 h_i: hidden state of sample/token i.
 c: estimated common component or common subspace.

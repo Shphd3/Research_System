@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Compute 0608 common-source audit artifacts.
 
 This script writes only under sync/0608_common_source_audit.
@@ -28,7 +28,7 @@ TABLES = OUT / "tables"
 FIGURES = OUT / "figures"
 RAW = OUT / "raw_metrics"
 
-EXP = ROOT / "Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset"
+EXP = ROOT / "Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset"
 DAILY = ROOT / "daily_research_reports/0608/uniform_collapse_common_offset"
 PROJECT = ROOT / "Projects/from-attention-to-search"
 WORKSPACE = PROJECT / "XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding"

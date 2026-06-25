@@ -30,7 +30,9 @@ Projects/kv_cache/main_specialization/specialization_overview.md
 Mainline question:
 
 ```text
-How can gating make MoE experts form stable, interpretable, reusable feature-level specialization?
+Can top-1 MoE gating form a stable, interpretable, and useful feature-level
+expert partition after the right route-relevant hidden states are selected and
+the early-training overwrite window is controlled?
 ```
 
 Read-only rule:
@@ -52,7 +54,15 @@ result records that support the primary mainline.
 Current branch anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
+```
+
+Current branch evidence anchors:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md
 ```
 
 Cross-project graph hub:
@@ -90,20 +100,22 @@ The current research route is:
 
 ```text
 define feature-level expert specialization
--> answer the advisor's weak toy question: same-feature route consistency
--> audit operational feature identity: slot vs B_i vs (slot, B_i)
--> audit non-collapse and expert composition under the chosen feature definition
--> only then test route-utility binding
--> only then test Zipfian / real-corpus robustness
+-> explain why ordinary top-1 routing fails under uniform features
+-> isolate common-component / wrong-object routing and early feedback
+-> find route-position feature geometry and reject all-position clustering
+-> preserve the step-0 real-text proxy partition through early training
+-> only then test functional utility through common/rare interference
+-> only then discuss real semantic experts or downstream KV-cache effects
 ```
 
 Current local focus:
 
 ```text
-Before route-utility binding, first define the operational feature and test
-what the router actually binds to: slot, B_i, or the atomic pair (slot, B_i).
-Also distinguish weak same-feature consistency from non-collapsed feature
-specialization.
+Do not keep proving that controlled feature geometry exists. The current
+decision is whether a step-0 DCLM proxy partition can be preserved through the
+step-5/10 training window without unacceptable language-model loss regression.
+If preservation fails, decompose gate update, hidden-state drift, expert
+feedback, and optimizer geometry before returning to utility claims.
 ```
 
 Reverse KV retrieval is now archived as a downstream-effect line. It should not
@@ -130,7 +142,7 @@ sync/S000_current_specialization/
 Current root anchor copy:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/01_slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
 ```
 
 This copy is updated only when the user explicitly asks to sync root sync. The

@@ -1,4 +1,4 @@
-# Prompt: Revise 05_03 Minimal Anchor Into A Concise Decision Anchor
+﻿# Prompt: Revise 05_03 Minimal Anchor Into A Concise Decision Anchor
 
 You are helping revise a research anchor. Do not expand the research scope. Do not write a long report. Preserve the user's current judgment unless it is logically unsupported.
 
@@ -28,7 +28,7 @@ The anchor must be readable in one pass and must make the decision logic obvious
 ## Required Structure
 
 ```text
-0. 汇报前 Summary
+0. Thinking Card
 1. Problem Definition
 2. Operational Definitions
 3. Physical Priors

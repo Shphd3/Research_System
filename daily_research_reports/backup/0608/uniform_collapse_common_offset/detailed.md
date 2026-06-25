@@ -1,4 +1,4 @@
-# Detailed Result: A05_03_uniform_collapse_common_offset
+﻿# Detailed Result: A05_03_uniform_collapse_common_offset
 
 Anchor: `05_03_uniform_collapse_common_offset_anchor.md`
 
@@ -298,7 +298,7 @@ Errors still harmful: load balance without feature structure should not be calle
 P0-P3 command:
 
 ```bash
-python Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset/scripts/run_a05_03_common_offset_experiments.py \
+python Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/scripts/run_a05_03_common_offset_experiments.py \
   --seeds 20260521,20260522,20260523 \
   --train-steps 400 \
   --train-samples-per-slot 2000 \
@@ -310,7 +310,7 @@ python Projects/from-attention-to-search/main/experiments/A05_03_uniform_collaps
 P4-P7 command:
 
 ```bash
-python Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset/scripts/run_a05_03_remaining_experiments.py \
+python Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/scripts/run_a05_03_remaining_experiments.py \
   --protocols P4,P5,P6,P7 \
   --seeds 20260521,20260522,20260523 \
   --train-steps 400 \

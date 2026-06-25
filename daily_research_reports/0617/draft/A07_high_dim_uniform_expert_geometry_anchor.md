@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A07_high_dim_uniform_expert_geometry_gate
 parent_node: rq.expert_specialization
 status: proposed_next_anchor
@@ -9,7 +9,7 @@ source_anchor: A06_2x2_expert_geometry_gate
 
 # A07 High-Dimensional Uniform Expert-Geometry Gate Anchor
 
-## Tiny Summary
+## Thinking Card
 
 - A06 supports M4 matrix response energy as the core 2D static expert-geometry metric.
 - The next decision is whether centered/calibrated M4 can generalize from 2D uniform features to high-dimensional uniform features.
@@ -43,8 +43,7 @@ Operational definitions:
 - Metric-defined preference: the selected expert has a positive score margin over the alternative.
 - Uniform feature input: `x ~ Unif(S^{d-1})` unless the protocol explicitly uses the unit ball or a finite sampled uniform design.
 
-## Physical Prior
-
+## 2. Physical Priors
 - Expert-aware routing should compare the current feature direction with the input directions to which each expert is sensitive.
 - Load balance alone is weak in 2D because many symmetric direction rules split a uniform circle exactly in half.
 - The useful signal is not only `50/50` load; it is balanced load plus a stable positive compatibility margin.
@@ -67,8 +66,7 @@ H3: M3 top-r is a useful approximation only when it preserves M4 oracle decision
 - Supported if increasing rank improves agreement with centered M4 and preserves load and margin.
 - Weakened if top-r projection balances load but disagrees with M4 or has low margin.
 
-## Minimal Mathematical Model
-
+## 4. Mathematical Model
 Two experts:
 
 ```math

@@ -129,8 +129,8 @@ only when referenced by those synced documents.
 After results exist, first write or update:
 
 ```text
-Projects/<project>/main/experiments/<experiment_id>/summary.md
-Projects/<project>/main/experiments/<experiment_id>/detailed.md
+Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/summary.md
+Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/detailed.md
 ```
 
 `summary.md` must include central visualization explanations for the main

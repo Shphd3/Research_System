@@ -13,10 +13,11 @@ English unless the user explicitly asks otherwise. Chinese companion versions
 are allowed when useful; name them with `_cn` before the extension, for example
 `<anchor_id>_cn.md`, `protocol_cn.md`, `summary_cn.md`, and `detailed_cn.md`.
 The English file remains the source of truth unless the user explicitly says
-the Chinese file is canonical. Exception: anchor `Tiny Summary` sections should
-be written in Chinese as the short anchor replay: current question, judgment,
-key evidence, most dangerous boundary, and next decision. The rest of the
-canonical anchor remains English unless the user explicitly asks otherwise.
+the Chinese file is canonical. Exception: anchor `Thinking Card` sections may
+preserve the user's Chinese mechanism judgment: phenomenon, mechanism guess,
+key variables, causal relation, observable metric, alternative explanation,
+and decision rule. The rest of the canonical anchor remains English unless the
+user explicitly asks otherwise.
 
 ## Response Style
 
@@ -91,10 +92,18 @@ For the current work branch, use:
 Projects/from-attention-to-search/main/problem_anchors/<anchor_id>.md
 ```
 
-Current first anchor:
+Current mainline anchor:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
+```
+
+Current evidence anchors:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md
 ```
 
 Each anchor should let the reader see these points quickly:
@@ -109,11 +118,12 @@ Each anchor should let the reader see these points quickly:
 - current evidence;
 - claim boundary and exactly one next decision.
 
-The anchor has two reading layers: `Tiny Summary` is the human-facing short
-replay, and the remaining sections are the auditable design layer for AI,
-replay, and boundary checks. Do not solve a long anchor by deleting design
-logic; make the Tiny Summary strong and keep detailed run material in
-`protocol.md`, `summary.md`, or `detailed.md`.
+The anchor has two reading layers: `Thinking Card` is the human-facing
+mechanism judgment card, and sections 1-8 are the auditable design layer for
+AI replay, protocol alignment, and boundary checks. Do not solve a long anchor
+by deleting design logic; make the Thinking Card short and decision-bearing,
+then keep detailed run material in `protocol.md`, `summary.md`, or
+`detailed.md`.
 
 After evidence exists, update the same anchor. Long result explanation belongs
 in `detailed.md`; optional handoff packages only package already-updated
@@ -126,7 +136,7 @@ questions, and do not let early artifacts absorb run details or results.
 
 | Artifact | Owns | Must not do |
 |---|---|---|
-| `00_handwrite_anchor.md` | the user's rough judgment and exposed thinking | be polished by AI into a complete document without audit |
+| `00_handwrite_anchor.md` | the user's rough Thinking Card and exposed judgment | require or become a full 0-8 anchor before audit |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |

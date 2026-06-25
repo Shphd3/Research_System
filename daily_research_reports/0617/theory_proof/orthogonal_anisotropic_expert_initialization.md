@@ -1,6 +1,6 @@
-# Theoretical Proposal: Orthogonal Anisotropic Expert Initialization
+﻿# Theoretical Proposal: Orthogonal Anisotropic Expert Initialization
 
-## Tiny Summary
+## Thinking Card
 
 当前问题：如何修改专家随机初始化，让高维均匀表征可以被 $d$ 个 experts 均匀分发？
 

@@ -36,12 +36,13 @@ Projects/<project>/
     problem_anchors/
       <anchor_id>.md
     experiments/
-      <experiment_id>/
-        protocol.md
-        summary.md
-        detailed.md
-        figures/
-        tables/
+      A<anchor_id>/
+        <experiment_id>/
+          protocol.md
+          summary.md
+          detailed.md
+          figures/
+          tables/
 ```
 
 Legacy two-file planning records may remain in old experiments, but new work
@@ -104,6 +105,15 @@ trajectory
 seed_sweep
 ```
 
+Store active experiments under the anchor-family folder:
+
+```text
+main/experiments/A<anchor_id>/<experiment_id>/
+```
+
+For example, experiments whose id starts with `A05_` belong under
+`main/experiments/A05/`.
+
 ### Daily Reports
 
 Daily report folders are date-first because they record work for a day:
@@ -130,7 +140,7 @@ Artifact roles must stay aligned:
 
 | Artifact | Owns | Must not do |
 |---|---|---|
-| `00_handwrite_anchor.md` | rough user judgment and exposed thinking | become an AI-polished complete anchor before audit |
+| `00_handwrite_anchor.md` | rough Thinking Card and exposed user judgment | require or become a full 0-8 anchor before audit |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
@@ -163,15 +173,16 @@ falsifiable hypotheses, one core mathematical model, computational realization,
 minimal falsification tests, current evidence, claim boundary, and one next
 decision.
 
-The anchor has two reading layers. `Tiny Summary` is the short human-facing
-anchor replay: current question, judgment, key evidence, most dangerous
-boundary, and next decision. The remaining sections are the auditable design
-layer for AI review, replay, and boundary checks.
+The anchor has two reading layers. `Thinking Card` is the short human-facing
+mechanism judgment card: phenomenon, mechanism guess, key variables, causal
+relation, observable metric, alternative explanation, and decision rule. The
+remaining sections are the auditable design layer for AI review, replay,
+protocol alignment, and boundary checks.
 
 The required anchor structure is:
 
 ```text
-0. Tiny Summary
+0. Thinking Card
 1. Problem Definition
 2. Physical Priors
 3. Falsifiable Hypotheses

@@ -1,10 +1,10 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
 ---
 
 # Slot-Context Signal And Route-Utility Binding
 
-## Reporting Summary
+## Thinking Card
 
 ```text
 slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容易按 slot 分；
@@ -33,8 +33,7 @@ If the context before B determines B's next-token target, and the router is init
 
 This anchor is a diagnostic child of the specialization mainline. It tests the weak-context explanation for prior routing failure. It does not test real-corpus specialization, Zipfian robustness, KV-cache reverse indexing, or a new MoE architecture.
 
-## Physical Prior
-
+## 2. Physical Priors
 In language, the same surface token can require different continuations in different contexts. Therefore the relevant feature is not token identity alone, but a context-dependent predictive state.
 
 For a B token under slot $s$, the router input can be decomposed as:
@@ -66,8 +65,7 @@ B. slot is visible and useful, but top-1 NTP does not bind route assignment to e
 
 The experiment separates them by first removing B-identity variation, then adding it back.
 
-## Mathematical Modeling
-
+## 4. Mathematical Model
 Use four slots and four experts:
 
 $$

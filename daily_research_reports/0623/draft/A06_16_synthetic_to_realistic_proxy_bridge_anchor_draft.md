@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A06_16_synthetic_to_realistic_proxy_bridge
 parent_node: rq.feature_specialization.initialization_geometry
 status: draft_for_review
@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_16 Synthetic-To-Realistic Proxy Bridge Anchor Draft
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：在 uniform feature 分布下，dot-product top-1 MoE 的初始化能否形成并保持 feature-level specialization。
 
@@ -97,8 +97,7 @@ Could be wrong if: high step-0 NMI and margin still collapse immediately under o
 
 ---
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Hidden decomposition:
 
 \[

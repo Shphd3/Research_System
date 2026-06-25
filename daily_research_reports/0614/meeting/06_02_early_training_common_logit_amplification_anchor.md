@@ -1,6 +1,6 @@
-# 06_02 Early-Training Common-Logit Amplification In Real Top-1 MoE
+﻿# 06_02 Early-Training Common-Logit Amplification In Real Top-1 MoE
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：为什么 sparse top-1 MoE router 在早期进入 route concentration / expert underuse？
 当前子问题：真实 DCLM top-1 MoE 中，为什么 step 0 common dominance 不强，但 step 10 common-logit 和负载集中快速放大？
@@ -23,8 +23,7 @@ Is the early common-logit amplification mainly carried by gate-weight update, hi
 Not in scope:
 This anchor does not test pretrained large MoEs, final expert utility specialization, deployable mitigation, or mentor-style expert-spectrum initialization.
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 P1:
 The router-input common component is stable enough across early checkpoints to receive coherent optimizer pressure.
 Meaning:
@@ -69,8 +68,7 @@ $W_{10}H_0$ and $W_0H_{10}$ each explain only a minority, but $W_{10}H_{10}$ is 
 Weakened if:
 Either gate-only or hidden-only replay already explains the spike without freeze evidence.
 
-## 4. Minimal Mathematical Model
-
+## 4. Mathematical Model
 Objects:
 For checkpoint $t$, $H_t$ is the exact active gate input on the fixed audit batch, $W_t$ is the bias-free gate matrix, $h_{t,i}=c_t+r_{t,i}$, and $z_{a,b,i,e}=w_{a,e}^{\top}h_{b,i}$.
 
@@ -164,7 +162,7 @@ Execution note:
 The A06_02_02 full ACP job succeeded. The posthoc common-stability audit used a key-compatible fallback source because the original `/data/250010109/MoE_Router` source path was unavailable on later ACP workers. The fallback disabled shared experts and strict-loaded checkpoints; source checksums still differ, so this is a posthoc diagnostic boundary.
 
 Evidence location:
-`Projects/from-attention-to-search/main/experiments/A06_02_02_freeze_split_common_stability/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_02_02_freeze_split_common_stability/summary.md`
 
 ## 8. Claim Boundary And Next Decision
 

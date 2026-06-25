@@ -1,6 +1,6 @@
 ﻿# 00 Handwrite Anchor
 
-## Report Summary（中文，汇报用）
+## Thinking Card
 
 目的：
 
@@ -26,8 +26,7 @@ Why this matters now: 如果在最小2×2系统下Router都不能稳定分开两
 那么ABC实验中的failure就可能不是复杂数据导致的，
 而是Router训练机制本身导致的。
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 What I believe about the system / data / mechanism:
 正交情形的features使用内积是最可分的，线性Router具有这种分辨表达能力。
 Why this prior could be wrong: 具有这种分辨表达能不达标在NTP训练目标下能够训出这种分辨表达能力。

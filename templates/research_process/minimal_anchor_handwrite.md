@@ -1,6 +1,8 @@
-# Minimal Anchor Handwrite Draft
+# Thinking Card Handwrite Draft
 
-This is rough thinking for AI audit. It is not a final anchor.
+This is rough user thinking for AI audit. It is not a final anchor, protocol,
+or experiment plan. Fill only the Thinking Card. Do not hand-write the full
+0-8 anchor here.
 
 ## User Control
 
@@ -12,120 +14,32 @@ This is rough thinking for AI audit. It is not a final anchor.
 
 **Candidate priors:**
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
-**父问题：**
+**Phenomenon:**
 
-**当前子问题：**
+为什么这个现象值得解释？
 
-**当前判断：**
+**Mechanism guess:**
 
-**关键证据：**
+我怀疑哪个机制导致它？
 
-**最危险边界：**
+**Key variables:**
 
-**下一步决策：**
+最少需要哪些变量？
 
-### Minimal Replay
+**Causal relation:**
 
-**Question:**
+这些变量之间的方向关系是什么？
 
-**Physical prior:**
+**Observable metric:**
 
-**Core model:**
+哪个数能看到这个关系？
 
-**Model term being tested:**
+**Alternative explanation:**
 
-**Primary metric:**
+还有什么 rival explanation？
 
-**Falsifier:**
+**Decision:**
 
-**Can claim:**
-
-**Cannot claim:**
-
-**Next decision:**
-
-## 1. Problem Definition
-
-**Parent problem:**
-
-**Sharper subproblem:**
-
-**Decision question:**
-
-**Not in scope:**
-
-## 2. Physical Priors
-
-**P1:**
-
-**Meaning:**
-
-**Could be wrong if:**
-
-## 3. Falsifiable Hypotheses
-
-**H1:**
-
-**Supported if:**
-
-**Weakened if:**
-
-## 4. Mathematical Model
-
-**Objects:**
-
-**Core decomposition:**
-
-**Mechanism relation:**
-
-**Observable metrics:**
-
-**Falsifier:**
-
-## 5. Computational Realization
-
-**Input objects:**
-
-**Computed variables:**
-
-**Algorithm stages:**
-
-**Stage-local evidence:**
-
-**Expected artifacts:**
-
-## 6. Minimal Falsification Tests
-
-**Test:**
-
-**Question:**
-
-**Intervention / comparison:**
-
-**Primary metric:**
-
-**Supports:**
-
-**Weakens:**
-
-**Insufficient evidence:**
-
-## 7. Current Evidence
-
-**Observation:**
-
-**Interpretation:**
-
-**Boundary:**
-
-**Evidence links:**
-
-## 8. Claim Boundary And Next Decision
-
-**Can claim:**
-
-**Cannot claim:**
-
-**Next decision:**
+看到什么结果后，我会 pursue / revise / park？

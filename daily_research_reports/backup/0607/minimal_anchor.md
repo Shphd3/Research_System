@@ -1,9 +1,9 @@
-# Minimal Anchor Handwrite Draft
+﻿# Minimal Anchor Handwrite Draft
 
 Use this by hand before asking AI to polish the anchor. Write rough bullets.
 The goal is to expose your thinking, not to produce the final anchor.
 
-## 0. Tiny Summary（中文）
+## 0. Thinking Card（中文）
 
 目的：
 
@@ -25,8 +25,7 @@ Decision question:
 
 Uniform setting下为什么Gating仍然会collapse. 
 
-## 2. Physical Prior
-
+## 2. Physical Priors
 What I believe about the system / data / mechanism:
 
 1. uniform frequency不等于zero mean; linear gate极易受到common offset的控制

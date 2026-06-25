@@ -6,7 +6,7 @@ source_sandbox: daily_research_reports/0531/exp_2x2_understanding/
 
 # 2x2 Top-1 Router Lock-In Anchor
 
-## Report Summary（中文，汇报用）
+## Thinking Card
 
 目的：用最小 2 feature / 2 expert / top-1 NTP-style proxy 审查 router 为什么不能稳定形成 route-pattern specialization。
 
@@ -37,8 +37,7 @@ from early top-1 lock-in, and can better initial router geometry preserve
 route-pattern separation?
 ```
 
-## Physical Priors
-
+## 2. Physical Priors
 1. Top-1 routing converts a small logit difference into a discrete training
    path.
 2. The unselected expert receives no token update, so early imbalance can
@@ -123,15 +122,15 @@ router prior: known-good split 10/10 -> final split 10/10
 Main evidence files:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/summary.md
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/detailed.md
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/report_card.md
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/figures/ntp_style_lockin_audit.png
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/figures/ntp_style_success_dynamics_audit.png
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/figures/ntp_style_no_router_bias/summary_by_seed.png
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/tables/ntp_style_lockin_audit.csv
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/tables/ntp_style_success_dynamics_audit.csv
-Projects/from-attention-to-search/main/experiments/A02_top1_router_lockin_2x2/tables/ntp_style_router_bias_comparison.csv
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/summary.md
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/detailed.md
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/report_card.md
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/figures/ntp_style_lockin_audit.png
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/figures/ntp_style_success_dynamics_audit.png
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/figures/ntp_style_no_router_bias/summary_by_seed.png
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/tables/ntp_style_lockin_audit.csv
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/tables/ntp_style_success_dynamics_audit.csv
+Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/tables/ntp_style_router_bias_comparison.csv
 ```
 
 ## Claim Boundary And Next Decision

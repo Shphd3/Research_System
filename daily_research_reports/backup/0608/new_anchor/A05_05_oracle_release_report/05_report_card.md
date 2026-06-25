@@ -8,15 +8,15 @@ Anchor:
 
 Summary:
 
-`Projects/from-attention-to-search/main/experiments/A05_05_oracle_to_trainable_release/summary.md`
+`Projects/from-attention-to-search/main/experiments/A05/A05_04_01_oracle_to_trainable_release/summary.md`
 
 Detailed:
 
-`Projects/from-attention-to-search/main/experiments/A05_05_oracle_to_trainable_release/detailed.md`
+`Projects/from-attention-to-search/main/experiments/A05/A05_04_01_oracle_to_trainable_release/detailed.md`
 
 Figures / Tables:
 
-`Projects/from-attention-to-search/main/experiments/A05_05_oracle_to_trainable_release/figures/a05_05_oracle_to_trainable_release_4gpu_20260609/`
+`Projects/from-attention-to-search/main/experiments/A05/A05_04_01_oracle_to_trainable_release/figures/a05_05_oracle_to_trainable_release_4gpu_20260609/`
 
 ## 0. Executive Summary
 

@@ -1,4 +1,4 @@
-# A07 三个 Anchors Meeting Brief
+﻿# A07 三个 Anchors Meeting Brief
 
 ## 结论
 
@@ -101,6 +101,6 @@ Anchors:
 
 Experiment records:
 
-- `package/experiments/A07_01_common_rare_conflict_metric_audit/`
-- `package/experiments/A07_02_common_controlled_rare_interference/`
-- `package/experiments/A07_03_route_function_binding/`
+- `package/experiments/A07/A07_01_common_rare_conflict_metric_audit/`
+- `package/experiments/A07/A07_02_common_controlled_rare_interference/`
+- `package/experiments/A07/A07_03_route_function_binding/`

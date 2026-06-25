@@ -1,4 +1,4 @@
-# Execution Plan: H0604a Feature-Key Routing Stability Center-Only
+﻿# Execution Plan: H0604a Feature-Key Routing Stability Center-Only
 
 Anchor:
 `../../problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md`
@@ -162,7 +162,7 @@ Runner should:
 Research record:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_feature_key_routing_stability_center_only/
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_key_routing_stability_center_only/
 ```
 
 Code workspace:

@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A06_2x2_expert_geometry_gate
 parent_node: rq.expert_specialization
 status: active_result_updated
@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06 2x2 Expert-Geometry Gate Anchor
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：Switch-style MoE 的 gate 如何和 expert 初始化结构发生联系，而不是作为与 expert 无关的随机分类器。
 
@@ -304,7 +304,7 @@ A06_01 is high-dimensional real-text evidence and does not prove the 2D metric. 
 Evidence links:
 
 - `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_01_common_filtered_expert_spectrum_router_initialization_anchor.md`
-- `Projects/from-attention-to-search/main/experiments/A06_01_common_filtered_expert_spectrum_router_initialization/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A06/A06_01_common_filtered_expert_spectrum_router_initialization/summary.md`
 
 Observation:
 A06_E01 completed the static metric audit across 5 expert geometry conditions, 5 metric variants, and 100 seeds per stochastic condition.

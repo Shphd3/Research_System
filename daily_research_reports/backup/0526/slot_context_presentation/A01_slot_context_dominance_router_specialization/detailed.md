@@ -427,13 +427,13 @@ Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance
 summary:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/summary.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/summary.md
 ```
 
 detailed:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/detailed.md
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/detailed.md
 ```
 
 code workspace:
@@ -491,13 +491,13 @@ figures/A01_slot_context_dominance_router_specialization/slot_context_multi_b_tr
 curated tables:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/tables/
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/tables/
 ```
 
 curated figures:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A01_slot_context_dominance_router_specialization/figures/
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_dominance_router_specialization/figures/
 ```
 
 logs / checkpoints:
@@ -584,9 +584,9 @@ Bridge artifacts:
 
 ```text
 curated tables:
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_initial_final_by_seed.csv
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_single_b_summary_by_condition.csv
-Projects/from-attention-to-search/main/experiments/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_multi_b_summary_by_condition.csv
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_initial_final_by_seed.csv
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_single_b_summary_by_condition.csv
+Projects/from-attention-to-search/main/experiments/A01/A01_slot_context_bridge_abcd_context_length/tables/bridge_abcd_multi_b_summary_by_condition.csv
 
 result dirs:
 results/A01_slot_context_dominance_router_specialization/bridge_abcd_single_b_full_20260527

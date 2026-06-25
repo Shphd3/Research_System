@@ -1,12 +1,12 @@
-# 0614 Meeting Package: Early-Training Common-Logit Amplification
+﻿# 0614 Meeting Package: Early-Training Common-Logit Amplification
 
 Reading order:
 
 1. `meeting_brief.md`
 2. `06_02_early_training_common_logit_amplification_anchor.md`
-3. `experiments/A06_02_01_cross_checkpoint_replay/summary.md`
-4. `experiments/A06_02_02_freeze_split_common_stability/summary.md`
-5. `experiments/A06_02_02_freeze_split_common_stability/tables/hypothesis_status_summary.csv`
+3. `experiments/A06/A06_02_01_cross_checkpoint_replay/summary.md`
+4. `experiments/A06/A06_02_02_freeze_split_common_stability/summary.md`
+5. `experiments/A06/A06_02_02_freeze_split_common_stability/tables/hypothesis_status_summary.csv`
 
 Included materials:
 

@@ -1,4 +1,4 @@
-# Meeting Brief: A06_05 Common-Centered Residual Geometry
+﻿# Meeting Brief: A06_05 Common-Centered Residual Geometry
 
 Use this as a short advisor / group-meeting reading surface. It is not a replacement for the project `summary.md` or `detailed.md`.
 
@@ -228,13 +228,13 @@ Project anchor:
 `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_05_common_centered_residual_geometry_diagnostic_anchor.md`
 
 Protocol:
-`Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/protocol.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/protocol.md`
 
 Summary:
-`Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
 
 Detailed:
-`Projects/from-attention-to-search/main/experiments/A06_05_common_centered_residual_geometry_diagnostic/detailed.md`
+`Projects/from-attention-to-search/main/experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/detailed.md`
 
 Code workspace:
 `Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/`

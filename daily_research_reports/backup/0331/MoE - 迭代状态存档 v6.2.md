@@ -1,4 +1,4 @@
-# [调研]MoE - 迭代状态存档 v6.0
+﻿# [调研]MoE - 迭代状态存档 v6.0
 
 > 本版本不是开启全新故事线，而是把当前最有价值的旁路定义修复正式抬升进主线建模。  
 > 我们现在要回答三件事：  
@@ -51,8 +51,7 @@
 | H5 | `expert low-rankness` 应定义为 expert 内部 covariance 的低维占用状态，主指标应由 `r_{0.9}` 而不是 `ED_comp` 表征 | active | 修复 low-rankness 概念 | 来自理论 card1 | 仍需全量重算 |
 | H6 | 静态 proxy 可以筛选候选 router，但不能完成 CL 判决 | supported | 防止主线继续偏题 | 当前所有证据都停在 proxy | 若继续只做静态分析会误导 |
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 ### 4.1 Definition Repair: Three Core Concepts
 
 #### 4.1.1 Variance Routing

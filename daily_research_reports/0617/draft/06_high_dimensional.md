@@ -1,4 +1,4 @@
-# Minimal Anchor Handwrite Draft
+﻿# Minimal Anchor Handwrite Draft
 
 Use this by hand before asking AI to critique or polish the anchor. Write rough
 bullets. This file is a thinking draft, not a final anchor.
@@ -18,7 +18,7 @@ The formal anchor is the project-local equivalent of
 `docs/design.md` in the research-exploration workflow. It should explain the
 research design, not only summarize a result.
 
-Use `Tiny Summary` as a short anchor replay: it should let you recover the
+Use `Thinking Card` as a short anchor replay: it should let you recover the
 current question, judgment, evidence, boundary, and next decision before
 reading the full anchor. The rest of the anchor is the auditable design layer
 for AI critique, replay, and boundary checks.
@@ -50,7 +50,7 @@ AI should challenge:
 
 Candidate physical priors I am not sure about:
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：如何做一个更好的expert-aware 同时屏蔽common的 router 初始化？
 

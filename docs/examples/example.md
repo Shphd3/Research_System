@@ -1,10 +1,10 @@
----
+﻿---
 parent_node: <parent_problem>
 ---
 
 # <Problem Title>
 
-## 汇报前 Summary
+## Thinking Card
 
 这一节只写导师汇报用的最短 summary，不展开完整论证。目标是让导师在
 60 秒内明白：我在问什么、我的假设是什么、我用什么证据让问题变清楚、
@@ -81,8 +81,7 @@ Each physical prior must satisfy four requirements:
 
 Explain why these priors obey the real-world facts.
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 physical prior -> objects -> variables -> mapping/operator -> observable metric
 
 ## 5. Computational Realization

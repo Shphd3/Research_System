@@ -1,4 +1,4 @@
----
+﻿---
 parent_node: problem.moe_expert_specialization
 proposed_source_path: Projects/from-attention-to-search/main/problem_anchors/gated_main_causes/route_function_binding_stable_feature_routing_anchor.md
 proposed_root_sync_copy: sync/S000_current_specialization/anchors/expert_specialization/route_function_binding_stable_feature_routing_anchor.md
@@ -6,7 +6,7 @@ proposed_root_sync_copy: sync/S000_current_specialization/anchors/expert_special
 
 # Route-Function Binding For Stable Feature Routing
 
-## 汇报前 Summary
+## Thinking Card
 
 父问题：
 
@@ -229,8 +229,7 @@ A -> common-residual / high-frequency-removed / consistency-regularized / nonlin
 B -> reweight / tail-write-in pressure / responsibility binding / balanced expert utility formation.
 ```
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 Data factor:
 
 $$

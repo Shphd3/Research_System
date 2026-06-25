@@ -1,4 +1,4 @@
-# Reporting Card: H0521b Seq32 Contiguous AB
+﻿# Reporting Card: H0521b Seq32 Contiguous AB
 
 Source closure:
 
@@ -141,6 +141,6 @@ source role NMI: mean 0.042
 
 ## 9. 结果文档
 
-- 实验摘要：`Projects/from-attention-to-search/XingyuD/main/experiments/A01_router_feature_specialization_audit/A01_E02_seq32_contiguous_ab/summary.md`
-- 详细报告：`Projects/from-attention-to-search/XingyuD/main/experiments/A01_router_feature_specialization_audit/A01_E02_seq32_contiguous_ab/detailed.md`
+- 实验摘要：`Projects/from-attention-to-search/XingyuD/main/experiments/A01/A01_router_feature_specialization_audit/A01_E02_seq32_contiguous_ab/summary.md`
+- 详细报告：`Projects/from-attention-to-search/XingyuD/main/experiments/A01/A01_router_feature_specialization_audit/A01_E02_seq32_contiguous_ab/detailed.md`
 - 运行结果目录：`Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/h0521b_seq32_contiguous_ab/h0521b_seq32_contiguous_ab_4gpu_20260521/`

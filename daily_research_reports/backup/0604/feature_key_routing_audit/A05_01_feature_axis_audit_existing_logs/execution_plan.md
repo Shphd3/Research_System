@@ -1,4 +1,4 @@
-# Execution Plan: H0604b Feature-Axis Audit On Existing Logs
+﻿# Execution Plan: H0604b Feature-Axis Audit On Existing Logs
 
 Anchor:
 
@@ -160,7 +160,7 @@ The result is insufficient if the route matrix does not support reconstruction o
 Research record:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_01_feature_axis_audit_existing_logs/
+Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/
 ```
 
 Expected outputs:

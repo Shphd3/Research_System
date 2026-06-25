@@ -1,4 +1,4 @@
-# A06_02_01 Cross-Checkpoint Replay Detailed Record
+﻿# A06_02_01 Cross-Checkpoint Replay Detailed Record
 
 ## 0. Quick Recap
 
@@ -22,22 +22,22 @@ Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preserv
 Protocol and sanity check:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/protocol_for_approval.md
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/sanity_check.md
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/protocol_for_approval.md
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/sanity_check.md
 ```
 
 Runner and submit script:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/scripts/run_cross_checkpoint_replay.py
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/scripts/submit_cross_checkpoint_replay_4gpu_acp.sh
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/scripts/audit_common_batch_stability.py
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/scripts/run_cross_checkpoint_replay.py
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/scripts/submit_cross_checkpoint_replay_4gpu_acp.sh
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/scripts/audit_common_batch_stability.py
 ```
 
 Result directory:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/runs/cross_checkpoint_replay/a06_02_cross_checkpoint_replay_4gpu_20260614_full01
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/runs/cross_checkpoint_replay/a06_02_cross_checkpoint_replay_4gpu_20260614_full01
 ```
 
 ## 2. Experiment Setup
@@ -104,7 +104,7 @@ Full ACP submission:
 ```bash
 A06_02_ALLOW_REAL_SUBMIT=1 \
 RUN_NAME=a06_02_cross_checkpoint_replay_4gpu_20260614_full01 \
-Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/scripts/submit_cross_checkpoint_replay_4gpu_acp.sh
+Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/scripts/submit_cross_checkpoint_replay_4gpu_acp.sh
 ```
 
 ACP job:
@@ -115,7 +115,7 @@ display_name: ats-a06-02-cross-checkpoint-replay-4gpu
 worker: 4XN6lS-80GB
 final_scheduler_state: FAILED
 failure_cause: rank-3 replay barrier timeout after result completion
-runtime_log: Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/logs/acp/a06_02_cross_checkpoint_replay_4gpu_20260614_full01_runtime_20260614_053427.log
+runtime_log: Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/logs/acp/a06_02_cross_checkpoint_replay_4gpu_20260614_full01_runtime_20260614_053427.log
 ```
 
 ## 4. Artifact Map
@@ -222,8 +222,8 @@ Command:
 
 ```bash
 conda activate spectral-hier
-python Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/scripts/audit_common_batch_stability.py \
-  --run-dir Projects/from-attention-to-search/main/experiments/A06_02_01_cross_checkpoint_replay/runs/cross_checkpoint_replay/a06_02_cross_checkpoint_replay_4gpu_20260614_full01 \
+python Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/scripts/audit_common_batch_stability.py \
+  --run-dir Projects/from-attention-to-search/main/experiments/A06/A06_02_01_cross_checkpoint_replay/runs/cross_checkpoint_replay/a06_02_cross_checkpoint_replay_4gpu_20260614_full01 \
   --steps 0 10 300 \
   --seeds 0 1 2 \
   --num-splits 8 \

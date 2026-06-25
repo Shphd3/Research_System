@@ -1,4 +1,4 @@
----
+﻿---
 anchor_id: A06_08_label_free_feature_discovery_initialization
 parent_node: rq.feature_specialization.initialization_method
 status: active_draft
@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_08 Label-Free Feature Discovery Initialization Anchor Draft
 
-## 0. Tiny Summary
+## 0. Thinking Card
 
 父问题：uniform feature distribution 下，random-init dot-product top-1 MoE 为什么不能自然形成 feature-level specialization。
 
@@ -353,8 +353,8 @@ Boundary:
 A06_05 does not identify whether the structure is feature-aligned, position/context-aligned, or generic covariance anisotropy.
 
 Evidence links:
-`../experiments/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
-`../experiments/A06_05_common_centered_residual_geometry_diagnostic/detailed.md`
+`../experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/summary.md`
+`../experiments/A06/A06_05_common_centered_residual_geometry_diagnostic/detailed.md`
 
 Observation:
 A06_06 shows oracle feature-centroid initialization reaches perfect held-out feature routing in the synthetic hidden-state setting.
@@ -366,8 +366,8 @@ Boundary:
 This is not label-free and does not prove training stability.
 
 Evidence links:
-`../experiments/A06_06_feature_level_initialization_positive_control/summary.md`
-`../experiments/A06_06_feature_level_initialization_positive_control/detailed.md`
+`../experiments/A06/A06_06_feature_level_initialization_positive_control/summary.md`
+`../experiments/A06/A06_06_feature_level_initialization_positive_control/detailed.md`
 
 Observation:
 A06_07 shows that simple label-free global common/residual controls improve load but do not improve feature_NMI; whitening can even reduce NMI.
@@ -379,8 +379,8 @@ Boundary:
 This does not rule out clustering, dictionary learning, contrastive discovery, or other label-free feature discovery methods.
 
 Evidence links:
-`../experiments/A06_07_label_free_common_residual_control_router/summary.md`
-`../experiments/A06_07_label_free_common_residual_control_router/detailed.md`
+`../experiments/A06/A06_07_label_free_common_residual_control_router/summary.md`
+`../experiments/A06/A06_07_label_free_common_residual_control_router/detailed.md`
 
 ---
 

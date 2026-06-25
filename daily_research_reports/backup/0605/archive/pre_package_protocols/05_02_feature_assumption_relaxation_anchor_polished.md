@@ -1,4 +1,4 @@
----
+﻿---
 parent_node: 05_01_geometric_inhibition_anchor
 status: draft-for-review
 source_of_truth_status: daily-review-only
@@ -6,7 +6,7 @@ source_of_truth_status: daily-review-only
 
 # 05_02 Feature Assumption Relaxation
 
-## 汇报前 Summary
+## Thinking Card
 
 结论：
 
@@ -129,8 +129,7 @@ Rival explanation：同一 expert 内 features 只是 arbitrary bucket 或 colla
 
 inhibition candidate 可以作为 `I*` 条件比较，但 05_02 的 claim 不依赖它必须成功。若 `I*` 提高 consistency 但增加 collapse，它是负面机制证据，不是 assumption relaxation 的成功。
 
-## 4. Mathematical Modeling
-
+## 4. Mathematical Model
 For P1:
 
 $$

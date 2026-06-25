@@ -1,4 +1,4 @@
-# Execution Plan: A05_03_uniform_collapse_common_offset
+﻿# Execution Plan: A05_03_uniform_collapse_common_offset
 
 Anchor:
 
@@ -177,7 +177,7 @@ or short local runs are inconclusive, requiring ACP full run.
 Project-local result record:
 
 ```text
-Projects/from-attention-to-search/main/experiments/A05_03_uniform_collapse_common_offset/
+Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/
 ```
 
 Code workspace output:
