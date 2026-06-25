@@ -17,6 +17,36 @@ Can a step-0 real-DCLM proxy partition be preserved through the step-5/10
 training window without unacceptable language-model loss regression?
 ```
 
+## Adjudication Ladder
+
+This line moves from a fuzzy vision to testable states:
+
+```text
+fuzzy vision -> phenomenon -> physical prior -> mathematical model
+-> falsifiable hypothesis -> minimal experiment -> updated understanding
+```
+
+Current ladder:
+
+| Level | Question | Main metric | Cannot claim |
+|---|---|---|---|
+| 0. Failure | Why ordinary top-1 collapses or merges. | step-0 NMI, max load, common margin | A method. |
+| 1. Proxy discovery | Whether a route-relevant proxy exists. | cluster stability, proxy NMI, nuisance guards | Semantic experts. |
+| 2. Initialization | Whether proxy centers can become gate rows. | step-0 `proxy_route_NMI`, load | Training success. |
+| 3. Preservation | Whether the partition survives early training. | `proxy_route_NMI@step5/10` plus LM loss | Utility. |
+| 4. Utility | Whether the preserved partition reduces interference. | rare loss, route-function binding, causal ablation | Specialization from load/NMI alone. |
+| 5. Scaling | Whether many experts increase activated capacity. | per-expert effective rank, routing stability, utility per activated FLOP | Scaling from active-expert count alone. |
+
+Current position:
+
+```text
+active bottleneck: 3. Preservation
+```
+
+Levels 0-2 have enough evidence to motivate the preservation test. Level 4 is
+supported only in controlled D07 evidence, not real-DCLM utility. Level 5 is
+parked.
+
 ## Research-Line Map
 
 | File | Role |

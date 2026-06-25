@@ -57,6 +57,48 @@ For graph display, use Sidecar with workspace root:
 /data/250010109/Research_System
 ```
 
+## Research Vision And Adjudication Ladder
+
+The whole specialization project should be read as a staged adjudication
+ladder, not as a single method claim. Each level answers one narrower
+question and earns only the claim that its metric can support.
+
+| Level | Decision question | Primary metric | Cannot claim |
+|---|---|---|---|
+| 0. Failure | Why ordinary top-1 routing collapses or merges under apparently uniform features. | step-0 NMI, max load, common margin | A working method. |
+| 1. Proxy discovery | Whether a route-relevant proxy exists. | cluster stability, proxy NMI, nuisance guards | Semantic experts. |
+| 2. Initialization | Whether the proxy can be converted into gate rows. | step-0 `proxy_route_NMI`, load | Training success. |
+| 3. Preservation | Whether the partition survives early training. | `proxy_route_NMI@step5/10` plus LM loss | Expert utility. |
+| 4. Utility | Whether a preserved partition reduces interference or has causal expert value. | rare loss, route-function binding, causal ablation | Specialization from load/NMI alone. |
+| 5. Scaling | Whether many experts increase activated capacity. | per-expert effective rank, routing stability, utility per activated FLOP | Scaling from active-expert count alone. |
+
+`NMI` is normalized mutual information, used here as a route-label agreement
+metric. It can show alignment or collapse, but it does not prove functional
+expert value by itself.
+
+Current position in this ladder:
+
+```text
+active bottleneck: 3. Preservation
+```
+
+Practical reading:
+
+```text
+Level 0 has failure-mechanism evidence.
+Level 1 has controlled and real-DCLM proxy evidence, with semantic boundaries.
+Level 2 has real-DCLM step-0 proxy-center router evidence.
+Level 3 is the current unsolved bottleneck: ordinary training erases the proxy
+partition by step 5/10.
+Level 4 has controlled D07 support only; neural/real-DCLM utility is not yet
+supported.
+Level 5 is parked until preservation and utility are both better defined.
+```
+
+Do not promote a higher-level claim when only a lower-level metric passed.
+For example, balanced load or high route NMI can support non-collapse or
+alignment, but cannot by itself support utility or scaling.
+
 ## Current Question
 
 Current decision question:
@@ -146,6 +188,36 @@ Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
 ```
+
+## Active Mainline Sync Rule
+
+For this active specialization line, `PROJECTS.md` and the active root sync
+entry must move together when the mainline state changes.
+
+A mainline state change means an accepted update to any of these objects:
+
+```text
+current decision question
+active ladder level
+current route
+current evidence boundary
+claim boundary
+next decision
+web-side source links
+```
+
+When that happens, update the active root sync entry in the same task:
+
+```text
+sync/S000_current_specialization/README.md
+sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
+and the affected 05 / 06 / 07 research-line note when needed
+```
+
+This rule is for keeping web-side and cross-project readers current. It is not
+a raw-output mirror and does not authorize graph edits, external collaborator
+sync, handoff packaging, commits, pushes, or copying full anchors unless the
+user explicitly asks for those actions.
 
 ## Synthetic Versus Real Boundary
 

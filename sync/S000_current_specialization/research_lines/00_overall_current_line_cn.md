@@ -12,6 +12,49 @@ next-token training 在 step 5/10 覆盖。functional specialization 必须在
 preservation 成立后，再通过 common/rare interference 或 expert utility 判断。
 ```
 
+## 总愿景与裁定层级
+
+整个项目的推进逻辑是：
+
+```text
+模糊愿景 -> 现象 -> 物理先验 -> 数学建模 -> 可证伪假设
+-> minimal 实验 -> 更新理解
+```
+
+这不是一条“直接提出方法”的路线，而是逐层裁定：
+
+| 层级 | 要裁定的问题 | 主 metric | 不能声称什么 |
+|---|---|---|---|
+| 0. Failure | ordinary top-1 为什么 collapse / merge | step-0 NMI、max load、common margin | 不能 claim method |
+| 1. Proxy discovery | route-relevant proxy 是否存在 | cluster stability、proxy NMI、nuisance guards | 不能 claim semantic expert |
+| 2. Initialization | proxy 是否能转成 gate rows | step-0 `proxy_route_NMI`、load | 不能 claim training success |
+| 3. Preservation | partition 是否穿过 early training | `proxy_route_NMI@step5/10` + LM loss | 不能 claim utility |
+| 4. Utility | preserved partition 是否减少 interference | rare loss、route-function binding、causal ablation | 不能只凭 load/NMI claim specialization |
+| 5. Scaling | many experts 是否提升 activated capacity | per-expert effective rank、routing stability、utility per activated FLOP | 不能只看 active experts |
+
+这里 NMI 是“归一化互信息”，只衡量 route label 和目标划分的对齐程度；
+它可以裁定 collapse / alignment，但不能单独证明 expert 有功能价值。
+
+## 当前所处位置
+
+当前主动瓶颈是：
+
+```text
+3. Preservation
+```
+
+更具体地说：
+
+```text
+0 层 failure mechanism 已经有 common component、wrong population 和
+early-training feedback 证据；
+1 层 proxy discovery 已经有 controlled 与 real-DCLM proxy 证据，但语义边界仍在；
+2 层 initialization 已经有 step-0 real-DCLM proxy-center router 证据；
+3 层 preservation 仍未解决：ordinary training 会在 step 5/10 覆盖 proxy routing；
+4 层 utility 只有 controlled D07 支持，real-DCLM / neural utility 不能 claim；
+5 层 scaling 暂停，等 preservation 与 utility 都更清楚后再进入。
+```
+
 ## 逻辑链条
 
 ```text

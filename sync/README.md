@@ -45,14 +45,22 @@ paste complete result ledgers or raw figures.
 
 ## Update Rule
 
-Update root sync only when the user explicitly asks for root sync or a
-web-side research-line summary. When updating it:
+For the active specialization line named in `PROJECTS.md`, update root sync
+whenever a mainline state change is accepted in `PROJECTS.md`, or when the user
+explicitly asks for root sync or a web-side research-line summary.
+
+A mainline state change means a change to the current decision question,
+active ladder level, route, evidence boundary, claim boundary, next decision,
+or web-side source links. When updating root sync:
 
 1. State the research line and claim boundary.
 2. Link the source anchors and experiment summaries.
 3. Keep the synthetic-versus-real-data boundary explicit.
 4. Do not create stronger claims than the source anchors allow.
 5. Verify linked source files exist before committing.
+
+Root sync remains a compact reading surface. It must not mirror raw outputs,
+full anchors, checkpoints, logs, or unrelated project material.
 
 ## External Sync Is Different
 
