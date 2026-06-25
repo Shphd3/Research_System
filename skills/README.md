@@ -32,7 +32,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 |---|---|---|---|
 | Research paradigm | `research-progress-core` | What counts as research progress: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
-| Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
+| Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests with operational definitions, stage-local evidence, failure meaning, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |
 | External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
@@ -165,6 +165,8 @@ Anchors are decision cards, not reports. They must include:
 - one minimal mathematical model;
 - computational realization / implementation contract;
 - minimal tests with primary metrics;
+- operational definitions, stage-local evidence, and failure meaning for each
+  minimal falsification test;
 - supported / weakened / insufficient-evidence outcomes;
 - current evidence;
 - claim boundary and one next decision.

@@ -22,7 +22,9 @@ observable metric, alternative explanation, and decision rule. It is not a
 full 0-8 anchor.
 
 `<topic>_anchor.md`: compact current-state design. First reading surface is
-`Thinking Card`; sections 1-8 are the audit layer.
+`Thinking Card`; sections 1-8 are the audit layer. In section 6, each minimal
+test should state operational definition, stage-local evidence, and failure
+meaning before it becomes protocol-ready.
 
 `protocol.md`: experiment approval surface. Page 1 is `Approval Snapshot`;
 later sections hold anchor alignment, conditions, profiling, and nontrivial

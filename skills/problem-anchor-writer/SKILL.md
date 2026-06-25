@@ -320,10 +320,20 @@ Test:
 Question:
 Intervention / comparison:
 Primary metric:
+Operational definition:
+Stage-local evidence:
 Supports:
 Weakens:
 Insufficient evidence:
+Failure means:
 ```
+
+`Operational definition` states the exact measured condition for support,
+weakening, and insufficient evidence. `Stage-local evidence` states what
+intermediate artifact, metric, figure, or example must be inspected before the
+final metric is trusted. `Failure means` states whether failure would falsify
+the physical prior, the mathematical model, one operationalization/proxy, the
+implementation, or the metric.
 
 Do not finalize this section until the Thinking Card and sections 1-5 are
 clear.

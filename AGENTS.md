@@ -95,7 +95,8 @@ Each anchor should let the reader see these points quickly:
 - physical priors and falsifiable hypotheses;
 - exactly one core mathematical model;
 - computational realization / implementation contract;
-- minimal tests with primary metrics;
+- minimal tests with primary metrics, operational definitions, stage-local
+  evidence, and failure meaning;
 - supported / weakened / insufficient-evidence outcomes;
 - current evidence;
 - claim boundary and exactly one next decision.

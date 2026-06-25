@@ -171,7 +171,9 @@ The anchor is the project-local equivalent of research-exploration
 document. It should include one decision question, physical priors,
 falsifiable hypotheses, one core mathematical model, computational realization,
 minimal falsification tests, current evidence, claim boundary, and one next
-decision.
+decision. Each minimal falsification test should include its operational
+definition, stage-local evidence, and failure meaning before it becomes
+protocol-ready.
 
 The anchor has two reading layers. `Thinking Card` is the short human-facing
 mechanism judgment card: phenomenon, mechanism guess, key variables, causal
