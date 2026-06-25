@@ -1,169 +1,242 @@
-﻿# Projects
+# Projects
 
-This is the root project registry for the research system. Use it after
-`AGENTS.md`.
+This file is the current project-state registry for `Research_System`.
+Read it after `AGENTS.md`.
 
-## Global Rule
+`AGENTS.md` defines general operating rules. This file defines the active
+research line, active branch, current evidence boundary, and next decision.
 
-For project-specific work, identify the project here, then read the relevant
-cross-project graph under `Projects/graphs/`, and only then read the linked
-project anchor, roadmap, worker README, sync report, or result summary needed
-for the current question.
+## Reading Rule
 
-Do not scan whole project repositories by default. The graph is the navigation
-layer; problem anchors and sync reports are the reasoning layer.
+For project-specific work:
 
-## Project Priority
+1. Identify the active project here.
+2. Read the relevant graph under `Projects/graphs/`.
+3. Read only the linked project-local anchor, experiment `summary.md`,
+   `detailed.md`, sync note, meeting note, or paper note needed for the
+   current question.
 
-Primary mainline:
+Do not scan whole project repositories by default.
 
-```text
-Projects/kv_cache/
-```
+## Active Research Line
 
-Main specialization reference:
-
-```text
-Projects/kv_cache/main_specialization/specialization_overview.md
-```
-
-Mainline question:
+Primary research theme:
 
 ```text
-Can top-1 MoE gating form a stable, interpretable, and useful feature-level
-expert partition after the right route-relevant hidden states are selected and
-the early-training overwrite window is controlled?
+feature-level expert specialization in top-1 MoE gating
 ```
 
-Read-only rule:
-
-```text
-Do not edit Projects/kv_cache unless the user explicitly asks.
-```
-
-Active work branch:
+Current working project:
 
 ```text
 Projects/from-attention-to-search/
 Projects/from-attention-to-search/XingyuD/
 ```
 
-This branch stores current experiments, branch-local sync notes, anchors, and
-result records that support the primary mainline.
-
-Current branch anchor:
+Reference project:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
+Projects/kv_cache/
+Projects/kv_cache/main_specialization/specialization_overview.md
 ```
 
-Current branch evidence anchors:
+`Projects/kv_cache` is read-only unless the user explicitly asks to edit it.
+Only the `xyDeng` branch is under our management; do not push `main`.
+
+Current graph hub:
 
 ```text
-Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md
-```
-
-Cross-project graph hub:
-
-```text
-Projects/graphs/
 Projects/graphs/expert_specialization.graph.yaml
 Projects/graphs/kv_cache_retrieval.graph.yaml
 Projects/graphs/specialization_papers.graph.yaml
 ```
 
-Legacy branch-local graph:
+For graph display, use Sidecar with workspace root:
 
 ```text
-Projects/from-attention-to-search/graph.yaml
+/data/250010109/Research_System
 ```
 
-The graph hub lives under `Projects/graphs/`, not inside a single project. Its
-nodes link to concrete project documents such as anchors, protocols,
-experiment summaries, detailed records, and paper notes.
+## Current Question
 
-Graph display rule:
+Current decision question:
 
 ```text
-Use Sidecar to display/open graphs. For cross-project graphs, start Sidecar
-with workspace root `/data/250010109/Research_System` and graph manifest such
-as `Projects/graphs/expert_specialization.graph.yaml`. Do not create ad hoc
-HTML graph views unless the user explicitly asks for an exported static
-artifact.
+Can a step-0 real-DCLM proxy partition be preserved through the step-5/10
+training window without unacceptable language-model loss regression?
 ```
+
+This question is downstream of A05/A06 and upstream of stronger A07 utility
+claims.
 
 ## Current Route
 
-The current research route is:
+The current route is:
 
 ```text
-define feature-level expert specialization
--> explain why ordinary top-1 routing fails under uniform features
--> isolate common-component / wrong-object routing and early feedback
--> find route-position feature geometry and reject all-position clustering
--> preserve the step-0 real-text proxy partition through early training
--> only then test functional utility through common/rare interference
--> only then discuss real semantic experts or downstream KV-cache effects
+05 failure mechanism
+-> 06 route-relevant proxy discovery, initialization, and preservation
+-> 07 functional interference value after preservation
 ```
 
-Current local focus:
+Sharper logic:
 
 ```text
-Do not keep proving that controlled feature geometry exists. The current
-decision is whether a step-0 DCLM proxy partition can be preserved through the
-step-5/10 training window without unacceptable language-model loss regression.
-If preservation fails, decompose gate update, hidden-state drift, expert
-feedback, and optimizer geometry before returning to utility claims.
+ordinary top-1 routing can collapse under uniform features
+-> collapse can come from common components, wrong hidden-state populations,
+   and early-training feedback
+-> route-position feature geometry can be discovered and linearly routed
+-> all-position clustering is not a valid proxy population
+-> real-DCLM proxy routing exists at step 0 but ordinary training erases it
+-> functional value must be tested through common/rare interference or expert
+   utility, not load balance alone
 ```
 
-Reverse KV retrieval is now archived as a downstream-effect line. It should not
-be used as the first success criterion for the current anchor.
+## Current Evidence Boundary
+
+Can claim:
+
+```text
+Controlled route-position feature partitions are reachable. Ordinary top-1
+routing does not naturally discover or preserve the right partition. In real
+DCLM early training, proxy routing can be overwritten by step 5/10.
+```
+
+Cannot claim:
+
+```text
+Real semantic experts exist.
+Balanced load proves specialization.
+High route NMI proves expert utility.
+A07 neural proxy already proves useful MoE specialization.
+Reverse KV retrieval follows from the current evidence.
+```
+
+## 05 / 06 / 07 Reading Entry
+
+Root sync now stores research-line synthesis, not full anchor mirrors:
+
+```text
+sync/S000_current_specialization/README.md
+sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
+sync/S000_current_specialization/research_lines/05_failure_mechanism_line_cn.md
+sync/S000_current_specialization/research_lines/06_proxy_preservation_line_cn.md
+sync/S000_current_specialization/research_lines/07_interference_value_line_cn.md
+```
+
+Project-local source anchors remain the source of truth:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/
+Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/
+Projects/from-attention-to-search/main/problem_anchors/05_06_07_initialization_collapse_to_interference_chain_cn.md
+```
+
+Most important current evidence:
+
+```text
+Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
+Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
+Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
+Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
+```
+
+## Synthetic Versus Real Boundary
+
+Controlled synthetic experiments can establish:
+
+```text
+whether a mechanism is possible;
+whether a metric surface is valid;
+whether a known feature partition can be discovered, routed, preserved, or
+used under controlled labels and controlled nuisance variables.
+```
+
+They cannot establish:
+
+```text
+natural-language semantics;
+real-checkpoint behavior;
+deployable routing;
+real expert utility;
+robust transfer from controlled labels to open text.
+```
+
+Real-DCLM proxy experiments can establish:
+
+```text
+whether stable hidden-state proxy clusters exist;
+whether those proxy clusters are linearly routable at step 0;
+whether ordinary next-token training preserves or erases that proxy routing.
+```
+
+They cannot establish by themselves:
+
+```text
+semantic feature identity;
+causal expert utility;
+dense-beating MoE value;
+final pretrained-MoE behavior.
+```
+
+## Next Decision
+
+Do not run another broad feature-existence sweep. The next useful protocol
+should decide one bottleneck:
+
+```text
+real-DCLM early-preservation / anti-feedback
+```
+
+Primary metric:
+
+```text
+proxy_route_NMI at step 5/10 under fixed step-0 proxy labels
+```
+
+Required guards:
+
+```text
+LM loss, max load, active experts, common margin, and exact gate-input audit
+```
+
+If preservation succeeds, return to A07 utility on a preserved partition. If it
+fails, decompose gate update, hidden-state drift, expert feedback, and optimizer
+geometry before proposing another method.
 
 ## Root Surfaces
 
-- `AGENTS.md`: global agent behavior and repository rules.
-- `PROJECTS.md`: project priority and routing map.
-- `sync/`: compact root-level current-state summaries for web-side partners.
-- `Projects/graphs/`: Sidecar-readable cross-project graph manifests.
+- `AGENTS.md`: general agent behavior and repository rules.
+- `PROJECTS.md`: this current project-state registry.
+- `sync/`: compact research-line synthesis for web-side or cross-project readers.
+- `Projects/graphs/`: Sidecar-readable graph manifests.
 - `daily_research_reports/`: daily cards and meeting materials.
 - `paper_reading/`: paper and blog reading cards.
-- `templates/`: single maintained reusable-template folder.
+- `templates/`: maintained reusable templates.
 - `prompts/`: reusable prompts.
 - `skills/`: repo-tracked skill sources.
 
-Current root sync:
-
-```text
-sync/S000_current_specialization/
-```
-
-Current root anchor copy:
-
-```text
-sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
-```
-
-This copy is updated only when the user explicitly asks to sync root sync. The
-project-local anchor remains the source of truth.
-
 ## Web-Side Rule
 
-Web-side agents should not rely on chat history or old compatibility snapshots.
-If they cannot see `Projects/`, use `PROJECTS.md` and `sync/` summaries, then
-ask the user or a local Codex agent to expose the relevant graph, anchor, or
-sync report.
+Web-side agents should not rely on chat history. If they cannot inspect
+`Projects/`, use this file and `sync/` first, then ask a local Codex agent to
+expose the relevant graph, anchor, or experiment record.
 
 ## Course Delivery Projects
 
-Academic Writing Project 2 is tracked as a course-delivery wrapper:
+Academic Writing Project 2 is a course-delivery wrapper:
 
 ```text
 Projects/academic_writing/
 ```
 
 It uses the current MoE gating specialization work as source material for
-slides, a poster, and a 10-page CVPR-format manuscript. It does not replace the
-`from-attention-to-search` research mainline and should not update graphs,
-root sync, or experiment records unless explicitly requested.
+slides, a poster, and a CVPR-format manuscript. It does not replace the
+research mainline and should not update graphs, root sync, or experiment
+records unless explicitly requested.

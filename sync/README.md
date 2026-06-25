@@ -1,133 +1,61 @@
-﻿# Root Sync
+# Root Sync
 
-Root `sync/` is for compact current-state summaries that help a web-side
-research partner understand the active research route without entering every
-project folder.
+Root `sync/` is the compact external-reading surface for the research system.
+It is written for a web-side research partner or cross-project reader who
+should understand the current research line without scanning project folders.
 
-It is not a raw-output dump and not a replacement for project-local sync
-reports.
+Root sync is not:
 
-It is also not the same as syncing to a collaborator, advisor, or senior
-student's external GitHub repo. External collaborator repo sync is an explicit
-curated package copy into that repo's agreed destination folder.
+- a raw-output dump;
+- a mirror of every project anchor;
+- a replacement for project-local anchors, protocols, summaries, or detailed
+  records;
+- a collaborator-repo sync package.
 
-## Current Root Sync
+## Current Entry
 
 ```text
-S000_current_specialization/
+sync/S000_current_specialization/
 ```
 
-This is the only default root sync entry. It summarizes the current
-specialization mainline using curated evidence from:
+This entry summarizes the active feature-level expert-specialization line.
+Read it in this order:
 
 ```text
-Projects/from-attention-to-search/XingyuD/sync/
+sync/S000_current_specialization/README.md
+sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
+sync/S000_current_specialization/research_lines/05_failure_mechanism_line_cn.md
+sync/S000_current_specialization/research_lines/06_proxy_preservation_line_cn.md
+sync/S000_current_specialization/research_lines/07_interference_value_line_cn.md
+```
+
+## Source Of Truth
+
+Project-local files remain the source of truth:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/
 Projects/from-attention-to-search/main/experiments/
+Projects/from-attention-to-search/main/roadmap.md
+Projects/graphs/
 ```
 
-Older root sync structures have been removed from the default reading path.
-Historical project evidence should live in project-local `archive/` folders or
-project-local sync reports.
+Root sync compresses the current logic and links to those files. It should not
+paste complete result ledgers or raw figures.
 
-## Anchor Copy Rule
+## Update Rule
 
-Root sync is an explicit external-reading surface, not an automatic side effect
-of every project-local anchor update. When the user explicitly asks to sync
-root sync, mirror the active project anchor into root sync with an explicit
-category:
+Update root sync only when the user explicitly asks for root sync or a
+web-side research-line summary. When updating it:
 
-```text
-sync/<sync_id>/anchors/<category>/<anchor_id>.md
-```
+1. State the research line and claim boundary.
+2. Link the source anchors and experiment summaries.
+3. Keep the synthetic-versus-real-data boundary explicit.
+4. Do not create stronger claims than the source anchors allow.
+5. Verify linked source files exist before committing.
 
-The project-local anchor is the source of truth; the root sync copy is the
-web-side and cross-project reading copy. When root sync is requested, update
-the sync copy in the same turn and verify that the source and copy are
-identical.
+## External Sync Is Different
 
-## Sync Action Meanings
-
-Use these as separate commands:
-
-| User says | Action |
-|---|---|
-| sync root sync | update root `sync/` reading copies and indexes |
-| sync to collaborator repo | copy a curated package into the external repo |
-| package handoff | copy existing anchor / summary / detailed / 05_report_card / referenced figures and tables into a handoff folder |
-| update graph | edit project `graph.yaml` after the research-state change is confirmed |
-| push | commit or push only the explicitly requested repo/branch |
-
-If the user only asks to update an experiment, update the project-local anchor,
-`summary.md`, and `detailed.md`; do not touch root sync, handoff, graph, or
-Git remotes.
-
-## What The User Must Specify
-
-Before a sync action, clarify these points when they are not already explicit:
-
-```text
-sync type: root sync / project sync / external collaborator repo
-target path or repo branch, if external
-date/topic package name
-source anchor or experiment folder
-include 05_report_card? yes/no
-include protocol or execution_plan? yes/no
-include figures/tables? only referenced / all curated
-update graph? yes/no
-commit or push? yes/no, and which repo/branch
-```
-
-If these are unclear, report the ambiguity first instead of guessing a broader
-sync scope.
-
-## Daily / Project Sync Package
-
-The sync package should be the same shape whether it is copied into today's
-daily folder, project-local sync, or an external collaborator repo:
-
-```text
-<anchor_id>.md
-summary.md
-detailed.md
-05_report_card.md
-figures/   # only referenced key figures
-tables/    # only curated evidence tables
-README.md  # short index
-```
-
-Do not create new conclusions during sync. Sync packages copy the current
-research state; the anchor, `summary.md`, and `detailed.md` remain the source
-documents.
-
-Current categories:
-
-| Category | Meaning |
-|---|---|
-| `expert_specialization/` | anchors about gating, route assignment, and expert causal utility |
-
-## Add A Root Sync Only When
-
-- it changes the current mainline question, claim boundary, or next decision;
-- it is needed by a web-side partner that may not have project-local access;
-- it compresses several project-local sync reports into one stable current
-  state.
-
-Do not add root sync folders for every experiment.
-
-## Current Formal Project Evidence
-
-The 2026-05-31 mechanism audit has been synced into root sync as the current
-key experiment package:
-
-```text
-sync/S000_current_specialization/reports/0531_2x2_top1_router_lockin/
-```
-
-It contains the latest mechanism anchor, `summary.md`, `detailed.md`,
-`05_report_card.md`, and only the key referenced figures/tables.
-
-The current root anchor copies are numbered and live under:
-
-```text
-sync/S000_current_specialization/anchors/expert_specialization/
-```
+Syncing to a collaborator, advisor, or senior student's repository is a
+separate explicit action. It copies a curated package into that external repo.
+Root `sync/` does not perform that action by itself.

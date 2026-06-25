@@ -54,23 +54,22 @@ At the start of a research task:
 
 Do not rely on chat history as the main source of memory.
 
-## Current Project Hierarchy
+## Project State Ownership
 
-The true mainline project is:
+`AGENTS.md` defines repository-wide behavior, artifact roles, sync boundaries,
+and execution boundaries. Keep it general. Do not use it as the place to store
+the current project conclusion, active branch, latest evidence, or next
+experiment.
 
-```text
-Projects/kv_cache/main_specialization/
-```
+`PROJECTS.md` owns the current project map: active project, active branch,
+graph hub, current research route, root sync entry, claim boundary, and next
+decision.
 
-The active user work branch is:
-
-```text
-Projects/from-attention-to-search/XingyuD/
-```
-
-`from-attention-to-search` is the active working branch/surface under the
-broader `kv_cache` specialization mainline. Reverse KV retrieval is archived as
-a downstream-effect line until expert specialization is first established.
+Project-local `AGENTS.md`, `README.md`, anchors, roadmaps, experiment
+`summary.md`, and `detailed.md` own project-specific details. If a current
+research-state statement in this file conflicts with `PROJECTS.md`, treat
+`PROJECTS.md` as current and move the project-specific statement out of this
+file.
 
 ## Anchor-First Rule
 
@@ -86,25 +85,8 @@ Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
 ```
 
-For the current work branch, use:
-
-```text
-Projects/from-attention-to-search/main/problem_anchors/<anchor_id>.md
-```
-
-Current mainline anchor:
-
-```text
-sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
-```
-
-Current evidence anchors:
-
-```text
-Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md
-```
+For the active project and current anchor list, read `PROJECTS.md` first, then
+the linked project-local anchor index.
 
 Each anchor should let the reader see these points quickly:
 
@@ -171,21 +153,14 @@ The project-local anchor remains the source of truth. Root `sync/` is an
 explicit external-reading surface for web-side or cross-project readers, not an
 automatic side effect of every anchor edit.
 
-Canonical anchor source:
+Root sync should summarize research lines, claim boundaries, and links to
+source artifacts. It is not a raw-output dump and not a default mirror of full
+project anchors. Only copy a full anchor into root sync when the user explicitly
+asks for an anchor copy.
 
-```text
-Projects/<project>/main/problem_anchors/<anchor_id>.md
-```
-
-Root sync copy:
-
-```text
-sync/<sync_id>/anchors/<category>/<anchor_id>.md
-```
-
-When the user requests root sync, copy the latest project-local anchor into the
-matching root sync category, update the category index if needed, and verify the
-source and copy are identical before ending the task.
+When the user requests root sync, update the research-line summary and indexes
+for the named line. Verify that every linked source artifact exists before
+ending the task.
 
 External collaborator repo sync is a separate explicit action. It means copying
 a small curated research package into a collaborator/advisor/senior student's
@@ -315,13 +290,7 @@ Cross-project graphs live under:
 Projects/graphs/
 ```
 
-Current graph hub:
-
-```text
-Projects/graphs/expert_specialization.graph.yaml
-Projects/graphs/kv_cache_retrieval.graph.yaml
-Projects/graphs/specialization_papers.graph.yaml
-```
+The current graph hub and active graph files are listed in `PROJECTS.md`.
 
 These graphs are loaded with Sidecar workspace root:
 
@@ -347,12 +316,12 @@ The graph does not replace anchors, summaries, detailed records, or handoff
 reports.
 
 When the user asks to display, open, view, or show the graph, always use the
-local Sidecar app through `sidecar-thinking`. For the current specialization
-mainline, load `Projects/graphs/expert_specialization.graph.yaml` with
-Research_System as the workspace root. Do not generate a standalone HTML graph
-or alternate visualization unless the user explicitly asks for an exported
-HTML/static artifact. If Sidecar fails to start, report the Sidecar command,
-URL, and log path instead of substituting a custom graph page.
+local Sidecar app through `sidecar-thinking`. Use the graph file named in
+`PROJECTS.md` or in the current project-local instructions. Do not generate a
+standalone HTML graph or alternate visualization unless the user explicitly
+asks for an exported HTML/static artifact. If Sidecar fails to start, report
+the Sidecar command, URL, and log path instead of substituting a custom graph
+page.
 
 ## Local Skill Use
 
@@ -401,13 +370,9 @@ The repository root should stay small:
 - `paper_reading/`
 - `daily_research_reports/`
 
-Root-level `sync/` stores cross-project anchor summaries and reusable research
-state for agents that should not enter project repositories. The default root
-entry is:
-
-```text
-sync/S000_current_specialization/
-```
+Root-level `sync/` stores compact research-line summaries and current-state
+maps for agents that should not enter project repositories. The active root
+sync entry is listed in `PROJECTS.md`.
 
 Root-level `templates/` is the only maintained reusable-template folder.
 Do not add new reusable templates under `daily_research_reports/`, `docs/`,

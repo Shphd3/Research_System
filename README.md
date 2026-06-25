@@ -8,31 +8,24 @@ meeting materials.
 
 ## Current Research Snapshot
 
-The active specialization question is no longer whether a controlled feature
-partition can be constructed. A05, A06, and A07 currently say:
-
-- ordinary top-1 routing can fail because the gate follows a common component,
-  the wrong hidden-state population, or an early-training feedback path;
-- route-position feature geometry is reachable, but all-position clustering is
-  not a reliable proxy for route-relevant states;
-- real-text proxy routing can exist at step 0, but ordinary training can erase
-  it by step 5/10;
-- functional specialization remains unclaimed until a preserved partition also
-  improves feature utility or reduces common/rare interference.
-
-Current mainline anchor:
+The current project state lives in `PROJECTS.md`. The compact web-side research
+line lives in:
 
 ```text
-sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
+sync/S000_current_specialization/
 ```
 
-Current next decision:
+The active specialization line currently runs:
 
 ```text
-Write and approve one real-text early-preservation protocol: can a step-0 DCLM
-proxy partition survive the step-5/10 training window without unacceptable
-language-model loss regression?
+05 failure mechanism
+-> 06 route-relevant proxy discovery, initialization, and preservation
+-> 07 functional interference value after preservation
 ```
+
+The next decision is still narrow: test whether a step-0 real-DCLM proxy
+partition can survive the step-5/10 training window without unacceptable
+language-model loss regression.
 
 Canonical research artifacts are written in English by default. Chinese
 companion files are allowed when useful; add `_cn` before the extension, for
@@ -40,15 +33,17 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 
 ## Start Here
 
-- `AGENTS.md`: project-level Codex instructions.
-- `PROJECTS.md`: project registry, active route, graph hub, and root-level state map.
+- `AGENTS.md`: general Codex rules for this repository.
+- `PROJECTS.md`: current project registry, active route, graph hub, claim
+  boundary, and next decision.
+- `sync/S000_current_specialization/`: compact 05/06/07 research-line synthesis.
 
 ## Working Areas
 
 - `daily_research_reports/`: dated folders for daily cards, meeting materials, experiment summaries, and report bundles.
 - `paper_reading/`: literature cards and reading notes.
 - `skills/`: repo-tracked source copies of personal Codex skills.
-- `sync/`: cross-project anchor summaries and reusable research state.
+- `sync/`: compact research-line summaries and reusable current-state maps.
 - `templates/`: the single maintained folder for reusable templates.
 - `prompts/`: reusable project prompts and older workflow prompts.
 - `docs/`: setup notes for tooling and workflow maintenance.
