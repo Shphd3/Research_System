@@ -25,97 +25,97 @@ This document defines the mathematical objects, derives the margin dynamics, and
 
 Let:
 
-\[
+$$
 h_i(t)\in\mathbb{R}^d
-\]
+$$
 
-be the hidden state of token/sample \(i\) at training step \(t\).
+be the hidden state of token/sample $i$ at training step $t$.
 
 ### 2.2 Fixed Feature / Proxy Label
 
 Let:
 
-\[
+$$
 y_i\in F
-\]
+$$
 
-be the fixed feature/proxy label assigned to sample \(i\). In synthetic settings this may be a true feature label. In real-DCLM proxy settings it may be a fixed cluster label.
+be the fixed feature/proxy label assigned to sample $i$. In synthetic settings this may be a true feature label. In real-DCLM proxy settings it may be a fixed cluster label.
 
 This label is fixed for the audit. If labels are re-clustered at every checkpoint, the preservation question changes and becomes a tracking question, not assignment preservation.
 
 ### 2.3 Feature Center
 
-For feature \(f\), define:
+For feature $f$, define:
 
-\[
+$$
 \mu_f(t)=\frac{1}{|I_f|}\sum_{i\in I_f}h_i(t),
 \quad
 I_f=\{i:y_i=f\}.
-\]
+$$
 
 This is the feature center.
 
 ### 2.4 Router Row
 
-For expert \(e\), define:
+For expert $e$, define:
 
-\[
+$$
 w_e(t)\in\mathbb{R}^d.
-\]
+$$
 
 The top-1 router score is:
 
-\[
+$$
 z_e(h,t)=w_e(t)^\top h.
-\]
+$$
 
 The routed expert is:
 
-\[
+$$
 \hat e(h,t)=\arg\max_e w_e(t)^\top h.
-\]
+$$
 
 ### 2.5 Initial Assignment
 
 At step 0, each feature center is assigned to its winning expert:
 
-\[
+$$
 a(f)=\arg\max_e w_e(0)^\top \mu_f(0).
-\]
+$$
 
 This is the target assignment whose preservation we test.
 
 ### 2.6 Pairwise Router Gap
 
-For a competing expert \(e\neq a(f)\), define:
+For a competing expert $e\neq a(f)$, define:
 
-\[
+$$
 u_{f,e}(t)=w_{a(f)}(t)-w_e(t).
-\]
+$$
 
-This vector defines the decision boundary between the assigned expert and competitor \(e\).
+This vector defines the decision boundary between the assigned expert and competitor $e$.
 
 ### 2.7 Pairwise Margin
 
 The center-level margin is:
 
-\[
+$$
 \gamma_{f,e}(t)=u_{f,e}(t)^\top\mu_f(t).
-\]
+$$
 
-If \(\gamma_{f,e}(t)>0\), the feature center \(\mu_f(t)\) scores higher for the original expert \(a(f)\) than for competitor \(e\).
+If $\gamma_{f,e}(t)>0$, the feature center $\mu_f(t)$ scores higher for the original expert $a(f)$ than for competitor $e$.
 
-For feature \(f\) to preserve its center assignment:
+For feature $f$ to preserve its center assignment:
 
-\[
+$$
 \gamma_{f,e}(t)>0,\quad \forall e\neq a(f).
-\]
+$$
 
 For all features to preserve center assignment:
 
-\[
+$$
 \Gamma(t)=\min_f\min_{e\neq a(f)}\gamma_{f,e}(t)>0.
-\]
+$$
 
 ---
 
@@ -125,44 +125,44 @@ For all features to preserve center assignment:
 
 Let:
 
-\[
+$$
 \Delta\mu_f(t)=\mu_f(t)-\mu_f(0),
-\]
+$$
 
-\[
+$$
 \Delta u_{f,e}(t)=u_{f,e}(t)-u_{f,e}(0).
-\]
+$$
 
 Then:
 
-\[
+$$
 \mu_f(t)=\mu_f(0)+\Delta\mu_f(t),
-\]
+$$
 
-\[
+$$
 u_{f,e}(t)=u_{f,e}(0)+\Delta u_{f,e}(t).
-\]
+$$
 
 ### 3.2 Expanding The Margin
 
 Start from:
 
-\[
+$$
 \gamma_{f,e}(t)=u_{f,e}(t)^\top\mu_f(t).
-\]
+$$
 
 Substitute the drift decompositions:
 
-\[
+$$
 \gamma_{f,e}(t)
 =
 \bigl(u_{f,e}(0)+\Delta u_{f,e}(t)\bigr)^\top
 \bigl(\mu_f(0)+\Delta\mu_f(t)\bigr).
-\]
+$$
 
 Expand:
 
-\[
+$$
 \gamma_{f,e}(t)
 =
 u_{f,e}(0)^\top\mu_f(0)
@@ -172,17 +172,17 @@ u_{f,e}(0)^\top\mu_f(0)
 u_{f,e}(0)^\top\Delta\mu_f(t)
 +
 \Delta u_{f,e}(t)^\top\Delta\mu_f(t).
-\]
+$$
 
 Since:
 
-\[
+$$
 \gamma_{f,e}(0)=u_{f,e}(0)^\top\mu_f(0),
-\]
+$$
 
 we get:
 
-\[
+$$
 \gamma_{f,e}(t)=
 \gamma_{f,e}(0)
 +
@@ -191,52 +191,52 @@ D^{\mathrm{router}}_{f,e}(t)
 D^{\mathrm{feature}}_{f,e}(t)
 +
 D^{\mathrm{interaction}}_{f,e}(t),
-\]
+$$
 
 where:
 
-\[
+$$
 D^{\mathrm{router}}_{f,e}(t)
 =
 \Delta u_{f,e}(t)^\top\mu_f(0),
-\]
+$$
 
-\[
+$$
 D^{\mathrm{feature}}_{f,e}(t)
 =
 u_{f,e}(0)^\top\Delta\mu_f(t),
-\]
+$$
 
-\[
+$$
 D^{\mathrm{interaction}}_{f,e}(t)
 =
 \Delta u_{f,e}(t)^\top\Delta\mu_f(t).
-\]
+$$
 
 ### 3.3 Meaning Of Each Term
 
 | Term | Formula | Meaning |
 |---|---|---|
-| Initial margin | \(\gamma_{f,e}(0)\) | Step-0 safety buffer |
-| Router-boundary drift | \(\Delta u^\top \mu_0\) | Router rows/decision boundaries move relative to original center |
-| Feature-center drift | \(u_0^\top\Delta\mu\) | Hidden feature center moves relative to original boundary |
-| Interaction drift | \(\Delta u^\top\Delta\mu\) | Router and feature center co-move in a coupled way |
+| Initial margin | $\gamma_{f,e}(0)$ | Step-0 safety buffer |
+| Router-boundary drift | $\Delta u^\top \mu_0$ | Router rows/decision boundaries move relative to original center |
+| Feature-center drift | $u_0^\top\Delta\mu$ | Hidden feature center moves relative to original boundary |
+| Interaction drift | $\Delta u^\top\Delta\mu$ | Router and feature center co-move in a coupled way |
 
 A margin flips when:
 
-\[
+$$
 \gamma_{f,e}(t)<0.
-\]
+$$
 
 Equivalently:
 
-\[
+$$
 D^{\mathrm{router}}+
 D^{\mathrm{feature}}+
 D^{\mathrm{interaction}}
 <
 -\gamma_{f,e}(0).
-\]
+$$
 
 Thus, preservation failure can be read as:
 
@@ -248,33 +248,33 @@ Thus, preservation failure can be read as:
 
 Using Cauchy-Schwarz:
 
-\[
+$$
 |D^{\mathrm{router}}|
 =
 |\Delta u^\top\mu_0|
 \leq
 \|\Delta u\|\|\mu_0\|,
-\]
+$$
 
-\[
+$$
 |D^{\mathrm{feature}}|
 =
 |u_0^\top\Delta\mu|
 \leq
 \|u_0\|\|\Delta\mu\|,
-\]
+$$
 
-\[
+$$
 |D^{\mathrm{interaction}}|
 =
 |\Delta u^\top\Delta\mu|
 \leq
 \|\Delta u\|\|\Delta\mu\|.
-\]
+$$
 
 Define the drift budget:
 
-\[
+$$
 B_{f,e}(t)
 =
 \|\Delta u_{f,e}(t)\|\|\mu_f(0)\|
@@ -282,21 +282,21 @@ B_{f,e}(t)
 \|u_{f,e}(0)\|\|\Delta\mu_f(t)\|
 +
 \|\Delta u_{f,e}(t)\|\|\Delta\mu_f(t)\|.
-\]
+$$
 
 Then:
 
-\[
+$$
 \gamma_{f,e}(t)
 \geq
 \gamma_{f,e}(0)-B_{f,e}(t).
-\]
+$$
 
 So a sufficient preservation condition is:
 
-\[
+$$
 \gamma_{f,e}(0)>B_{f,e}(t).
-\]
+$$
 
 This is sufficient but not necessary. Actual signs may cancel. Therefore both exact decomposition terms and norm-bound budget should be reported.
 
@@ -308,13 +308,13 @@ The center margin only guarantees the assignment of the center. Individual token
 
 Let:
 
-\[
+$$
 h_i(t)=\mu_f(t)+\epsilon_i(t).
-\]
+$$
 
 Then:
 
-\[
+$$
 u_{f,e}(t)^\top h_i(t)
 =
 u_{f,e}(t)^\top\mu_f(t)
@@ -322,38 +322,38 @@ u_{f,e}(t)^\top\mu_f(t)
 u_{f,e}(t)^\top\epsilon_i(t)
 =
 \gamma_{f,e}(t)+u_{f,e}(t)^\top\epsilon_i(t).
-\]
+$$
 
 If:
 
-\[
+$$
 \|\epsilon_i(t)\|\leq \rho_f(t),
-\]
+$$
 
 then:
 
-\[
+$$
 u_{f,e}(t)^\top h_i(t)
 \geq
 \gamma_{f,e}(t)-\|u_{f,e}(t)\|\rho_f(t).
-\]
+$$
 
 Define robust cluster-aware margin:
 
-\[
+$$
 \tilde{\gamma}_{f,e}(t)=
 \gamma_{f,e}(t)-\|u_{f,e}(t)\|\rho_f^{(q)}(t),
-\]
+$$
 
-where \(\rho_f^{(q)}(t)\) is a high quantile radius, for example 90% or 95%.
+where $\rho_f^{(q)}(t)$ is a high quantile radius, for example 90% or 95%.
 
 If:
 
-\[
+$$
 \tilde{\gamma}_{f,e}(t)>0,
-\]
+$$
 
-then most samples in feature \(f\) should remain on the original side of the boundary.
+then most samples in feature $f$ should remain on the original side of the boundary.
 
 This extension distinguishes:
 
@@ -369,21 +369,21 @@ This extension distinguishes:
 
 Let:
 
-\[
+$$
 \mu_f(t)=c(t)+r_f(t),
-\]
+$$
 
 where:
 
-\[
+$$
 c(t)=\frac{1}{|F|}\sum_f \mu_f(t)
-\]
+$$
 
 is a common/dense component, and:
 
-\[
+$$
 r_f(t)=\mu_f(t)-c(t)
-\]
+$$
 
 is the feature residual.
 
@@ -391,43 +391,43 @@ is the feature residual.
 
 Then:
 
-\[
+$$
 \gamma_{f,e}(t)=u_{f,e}(t)^\top c(t)+u_{f,e}(t)^\top r_f(t).
-\]
+$$
 
 Define:
 
-\[
+$$
 C_{f,e}(t)=u_{f,e}(t)^\top c(t),
-\]
+$$
 
-\[
+$$
 Q_{f,e}(t)=u_{f,e}(t)^\top r_f(t).
-\]
+$$
 
 So:
 
-\[
+$$
 \gamma_{f,e}(t)=C_{f,e}(t)+Q_{f,e}(t).
-\]
+$$
 
 ### 6.3 Interpretation
 
-- \(C_{f,e}(t)\): common direction contribution.
-- \(Q_{f,e}(t)\): feature-residual contribution.
+- $C_{f,e}(t)$: common direction contribution.
+- $Q_{f,e}(t)$: feature-residual contribution.
 
-If router gaps \(u_{f,e}(t)\) rotate toward common/dense directions, then \(C_{f,e}(t)\) can dominate and feature residual separation can become irrelevant.
+If router gaps $u_{f,e}(t)$ rotate toward common/dense directions, then $C_{f,e}(t)$ can dominate and feature residual separation can become irrelevant.
 
 This gives a direct link to common-component / early-lock-in intuition:
 
-> The feature signal may still exist in \(r_f(t)\), but the router boundary no longer separates it.
+> The feature signal may still exist in $r_f(t)$, but the router boundary no longer separates it.
 
 ### 6.4 Common-Driven Failure Signature
 
 A common-driven failure should show:
 
-1. increasing alignment of router gaps with \(c(t)\);
-2. decreasing or unstable residual term \(Q_{f,e}(t)\);
+1. increasing alignment of router gaps with $c(t)$;
+2. decreasing or unstable residual term $Q_{f,e}(t)$;
 3. increasing expert load concentration;
 4. falling proxy-route NMI;
 5. acceptable loss decrease, meaning training did not simply fail.
@@ -450,7 +450,7 @@ A common-driven failure should show:
 
 - checking cluster stability;
 - checking step-0 proxy-route NMI;
-- checking whether \(\mu_f(t)\) remains distinguishable.
+- checking whether $\mu_f(t)$ remains distinguishable.
 
 **If true:** margin model is not the first failure point.
 
@@ -462,7 +462,7 @@ A common-driven failure should show:
 
 **Signature:**
 
-- low \(\gamma(0)\);
+- low $\gamma(0)$;
 - low step-0 NMI;
 - unstable initial assignment.
 
@@ -481,9 +481,9 @@ A common-driven failure should show:
 
 **Signature:**
 
-\[
+$$
 u_0^\top\Delta\mu
-\]
+$$
 
 is the dominant negative term in margin change.
 
@@ -503,9 +503,9 @@ is the dominant negative term in margin change.
 
 **Signature:**
 
-\[
+$$
 \Delta u^\top\mu_0
-\]
+$$
 
 is the dominant negative term.
 
@@ -525,9 +525,9 @@ is the dominant negative term.
 
 **Signature:**
 
-\[
+$$
 \Delta u^\top\Delta\mu
-\]
+$$
 
 is large and negative.
 
@@ -584,9 +584,9 @@ is large and negative.
 
 **Quantity:**
 
-\[
+$$
 \gamma_{f,e}(0)
-\]
+$$
 
 **How to vary:**
 
@@ -603,15 +603,15 @@ is large and negative.
 
 **Quantity:**
 
-\[
+$$
 \Delta\mu_f(t)
-\]
+$$
 
 **How to measure:**
 
-- compute \(\mu_f(t)\) at checkpoints with fixed labels;
-- compare \(\|\Delta\mu_f(t)\|\);
-- project \(\Delta\mu_f(t)\) onto initial router gaps \(u_{f,e}(0)\).
+- compute $\mu_f(t)$ at checkpoints with fixed labels;
+- compare $\|\Delta\mu_f(t)\|$;
+- project $\Delta\mu_f(t)$ onto initial router gaps $u_{f,e}(0)$.
 
 **How to control:**
 
@@ -626,18 +626,18 @@ is large and negative.
 
 **Quantity:**
 
-\[
+$$
 \Delta u_{f,e}(t)
 =
 \Delta w_{a(f)}(t)-\Delta w_e(t)
-\]
+$$
 
 **How to measure:**
 
 - router row norm drift;
 - router gap norm drift;
-- cosine between \(u(t)\) and \(u(0)\);
-- projection onto \(\mu_f(0)\), \(c(0)\), and \(r_f(0)\).
+- cosine between $u(t)$ and $u(0)$;
+- projection onto $\mu_f(0)$, $c(0)$, and $r_f(0)$.
 
 **How to control:**
 
@@ -653,13 +653,13 @@ is large and negative.
 
 **Quantity:**
 
-\[
+$$
 u_{f,e}(t)^\top c(t)
-\]
+$$
 
 **How to measure:**
 
-- common term \(C_{f,e}(t)\);
+- common term $C_{f,e}(t)$;
 - cosine between router gaps and common direction;
 - common alignment gain from step 0 to step 5/10.
 
@@ -676,11 +676,11 @@ u_{f,e}(t)^\top c(t)
 
 **Quantity:**
 
-\[
+$$
 \tilde{\gamma}_{f,e}(t)
 =
 \gamma_{f,e}(t)-\|u_{f,e}(t)\|\rho_f(t)
-\]
+$$
 
 **How to measure:**
 
@@ -701,18 +701,18 @@ u_{f,e}(t)^\top c(t)
 
 | Metric | Formula | Meaning | Main Use |
 |---|---|---|---|
-| Center margin | \(\gamma_{f,e}(t)\) | Feature center assignment safety | Core preservation object |
-| Min margin | \(\Gamma(t)\) | Worst-case safety | Early warning |
-| Drift budget | \(B_{f,e}(t)\) | Upper bound on margin consumption | Sufficient condition |
-| Consumption ratio | \(R=B/(\gamma(0)+\varepsilon)\) | Whether margin budget is exhausted | Prediction of failure |
-| Sign flip rate | \(\Pr[\gamma<0]\) | Fraction of pairwise assignment reversals | Mechanism readout |
-| Cluster-aware margin | \(\tilde{\gamma}\) | Token-level robust margin | Explains NMI vs center margin gap |
-| Router drift term | \(\Delta u^\top\mu_0\) | Router-side failure | Lock-in diagnosis |
-| Feature drift term | \(u_0^\top\Delta\mu\) | Hidden-side failure | Tracking diagnosis |
-| Interaction term | \(\Delta u^\top\Delta\mu\) | Co-adaptation failure | Coupled dynamics |
-| Common term | \(u^\top c\) | Common/dense alignment | Common-component diagnosis |
-| Residual term | \(u^\top r_f\) | Feature-specific separation | Specialization diagnosis |
-| proxy-route NMI | NMI\((y_i,\hat e_i)\) | Route-label agreement | Primary outcome |
+| Center margin | $\gamma_{f,e}(t)$ | Feature center assignment safety | Core preservation object |
+| Min margin | $\Gamma(t)$ | Worst-case safety | Early warning |
+| Drift budget | $B_{f,e}(t)$ | Upper bound on margin consumption | Sufficient condition |
+| Consumption ratio | $R=B/(\gamma(0)+\varepsilon)$ | Whether margin budget is exhausted | Prediction of failure |
+| Sign flip rate | $\Pr[\gamma<0]$ | Fraction of pairwise assignment reversals | Mechanism readout |
+| Cluster-aware margin | $\tilde{\gamma}$ | Token-level robust margin | Explains NMI vs center margin gap |
+| Router drift term | $\Delta u^\top\mu_0$ | Router-side failure | Lock-in diagnosis |
+| Feature drift term | $u_0^\top\Delta\mu$ | Hidden-side failure | Tracking diagnosis |
+| Interaction term | $\Delta u^\top\Delta\mu$ | Co-adaptation failure | Coupled dynamics |
+| Common term | $u^\top c$ | Common/dense alignment | Common-component diagnosis |
+| Residual term | $u^\top r_f$ | Feature-specific separation | Specialization diagnosis |
+| proxy-route NMI | $\mathrm{NMI}(y_i,\hat e_i)$ | Route-label agreement | Primary outcome |
 | LM loss | loss | Predictive guard | Prevent bad preservation |
 
 ---
@@ -744,19 +744,19 @@ u_{f,e}(t)^\top c(t)
 ## 11. Expected Plots
 
 1. **NMI vs margin consumption ratio**  
-   x-axis: \(R(t)\), y-axis: proxy-route NMI.
+   x-axis: $R(t)$, y-axis: proxy-route NMI.
 
 2. **Margin trajectory**  
-   \(\Gamma(0), \Gamma(5), \Gamma(10)\).
+   $\Gamma(0), \Gamma(5), \Gamma(10)$.
 
 3. **Drift attribution stacked bar**  
    router term, feature term, interaction term.
 
 4. **Common vs residual term plot**  
-   \(u^\top c\) and \(u^\top r_f\) over training.
+   $u^\top c$ and $u^\top r_f$ over training.
 
 5. **Sign flip heatmap**  
-   feature \(f\) by competitor expert \(e\), colored by whether \(\gamma_{f,e}\) flips.
+   feature $f$ by competitor expert $e$, colored by whether $\gamma_{f,e}$ flips.
 
 ---
 
@@ -946,7 +946,7 @@ Do not allow Codex to add new claims beyond the approved protocol.
 
 Before approving this model, check:
 
-1. Is \(a(f)\) fixed from step 0, or recomputed at each step?
+1. Is $a(f)$ fixed from step 0, or recomputed at each step?
 2. Are feature/proxy labels fixed and meaningful enough for preservation?
 3. Is the router row scale controlled, or does scaling change training dynamics?
 4. Is cluster radius included when interpreting token-level NMI?
