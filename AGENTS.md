@@ -37,6 +37,37 @@ user explicitly asks otherwise.
 - For metrics, name the most important metric first and explain why it decides
   the judgment.
 - Meeting-facing and collaborator-facing reports must be self-contained.
+- When the user asks for a concrete result, metric, comparison, run status, or
+  number, answer with the direct measured result first. Do not delay the answer
+  in order to polish plots, reorganize files, or write a longer report.
+
+## Terminology Rule
+
+Every research document must define its terms before using them as evidence.
+This is a hard readability rule, not a style preference.
+
+For conversation in Chinese, explain the concrete meaning in Chinese first,
+then introduce the English term or abbreviation in parentheses only if it will
+be reused. For canonical English artifacts, add a short
+`Terminology / Definitions` section near the top when the document uses
+non-obvious terms, abbreviations, metrics, condition labels, method names,
+project shorthand, or plot labels. Chinese companions and meeting briefs should
+use `术语解释`.
+
+Each important term should define:
+
+```text
+term / abbreviation:
+plain meaning:
+concrete object or computation:
+unit / formula, if it is a metric:
+why it matters for the current decision:
+what it cannot prove:
+```
+
+Do not use English jargon, project nicknames, run labels, condition codes, or
+metric names as substitutes for explanation. A reader should not need chat
+history, source code, or previous reports to understand a claim.
 
 ## Start Here
 
@@ -124,6 +155,7 @@ questions, and do not let early artifacts absorb run details or results.
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than `summary.md` or the anchor |
+| `closure/<topic>_closure_report.md` | line-level stable synthesis for a specified anchor folder | replace anchors, protocols, summaries, detailed records, or create stronger claims |
 | `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
 | anchor update | compress results into supported / weakened / insufficient evidence | paste a result report into the anchor |
 
@@ -187,6 +219,27 @@ Default shape:
 one anchor -> one minimal decisive protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
+This is the minimal repository adapter for the advisor's
+`research-exploration` spec:
+
+```text
+anchor                  = compact docs/design.md role
+protocol.md             = docs/experiment_design.md role
+summary.md + detailed.md + figures/viewer
+                        = docs/visualization_results.md role
+final_report.md         = stable-closure synthesis only after the working
+                          evidence and anchor are current
+problem_anchors/<line>/closure/
+                        = specified research-line synthesis for understanding
+                          the current process, mathematical model, evidence
+                          chain, and next decision
+```
+
+Do not create a parallel `docs/design.md`, `docs/experiment_design.md`, or
+`docs/visualization_results.md` tree for normal project work unless the user
+explicitly asks for that exported layout. The canonical system remains
+anchor-first.
+
 Root sync, external collaborator repo sync, handoff packages, graph updates,
 commits, and pushes are separate explicit actions. Do not perform them unless
 the user asks for that action in the current task.
@@ -203,11 +256,69 @@ boundary, and next decision. It must also explain central figures using the
 visualization-results standard: what the figure tests, how to read it, observed
 result, take-home, and what it does not prove.
 
+The summary must be conclusion-first and reader-facing. Start with what was
+established, what the experiment shows through the primary metric, and what we
+do next. Put setup and boundaries where they protect the claim; do not narrate
+discarded attempts or internal failure paths unless they are needed for the
+research decision. Every condition label, metric name, and plot label used in a
+result must be defined in a terminology/setup block before the reader needs it.
+
 `detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
 seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
 和 claim boundary. It must include a `Visualization Results` section where each
 central figure/viewer states purpose, setup, how to read, observed result,
 take-home, and remaining uncertainty.
+
+Before a new central plot or viewer is delivered, write or preserve a plot
+contract: question answered, metric definition and unit, data source,
+aggregation level, axis/legend meaning, allowed conclusion, and limitation.
+Then perform a bounded rendered-artifact audit: page renders, labels and legends
+are readable, metric definitions precede plots, important numbers are visible,
+and no plot requires source-code knowledge to understand. Unclear plots move to
+debug appendix or are removed from the main reading path.
+
+When a self-contained subproblem reaches stable closure, after the anchor,
+`summary.md`, and `detailed.md` are current, write a final synthesis only if the
+subproblem is being closed as a unit. Use `final_report.md` or a clearly named
+final report. It is not a routine per-experiment artifact and does not replace
+the anchor or result records.
+
+When the user explicitly specifies an anchor folder or research line and asks
+for a current understanding / closure synthesis, write it under:
+
+```text
+Projects/<project>/main/problem_anchors/<line>/closure/
+```
+
+Do not create placeholder `closure/` folders or extra `README.md` files. Create
+the directory only when a real closure report is being written; the closure
+report itself is the reading entry.
+
+The closure report is a line-level reading document. It should follow the
+advisor-style full-story pattern first, then put the audit tables in the later
+part. The first half should be readable as one coherent argument:
+
+```text
+title / subtitle -> abstract -> motivation -> confused concepts separated
+-> clean baseline or impossibility result -> mechanism model -> propositions
+or theorems -> controlled evidence -> real evidence or negative result
+-> reconciliation -> refined theory -> next experiment
+```
+
+The second half may contain the existing compact audit structure: result table,
+proved / assumed / empirical table, claim boundary, source map, and one compact
+appendix with data, model, training/evaluation settings, seeds, checkpoints,
+scripts, result paths, and primary metrics. It must link to source anchors and
+experiment records instead of duplicating them, and it must not introduce new
+claims stronger than the linked anchors, `summary.md`, and `detailed.md`.
+
+Closure reports are bilingual by default: the English file is canonical, and a
+Chinese companion with `_cn` before `.md` must be kept beside it unless the
+user explicitly chooses Chinese as canonical. Mathematical claims must separate
+proved statements, assumptions, and empirical propositions. If a claim can be
+proved from the stated model, include the proof; if it cannot, state the
+missing assumption or required experiment rather than writing a heuristic
+explanation.
 
 如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
 `summary.md`、`detailed.md` 和显式请求的 handoff package 中嵌入。只列路径不嵌图是不完整的。
@@ -353,6 +464,13 @@ them inside anchors, protocols, experiment summaries, detailed records, and
 handoff reports:
 
 - write decision reports, not timelines;
+- write reader-facing summaries conclusion-first: what is established, what the
+  experiment shows, and what the next action is;
+- define every metric, condition, and visible shorthand before using it as
+  evidence;
+- maintain a `Terminology / Definitions` or `术语解释` block when the document
+  contains non-obvious terms, abbreviations, condition labels, metrics, or
+  project-specific shorthand;
 - explain what each important metric answers and cannot prove;
 - interpret every central figure/table near the claim it supports;
 - separate observation, interpretation, decision, and boundary.

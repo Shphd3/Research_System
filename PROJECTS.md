@@ -129,7 +129,14 @@ ordinary top-1 routing can collapse under uniform features
    and early-training feedback
 -> route-position feature geometry can be discovered and linearly routed
 -> all-position clustering is not a valid proxy population
+-> controlled center initialization is preserved by positive margin buffer,
+   not by active router-center tracking
+-> A06_21 decomposes this buffer: controlled center-init preservation keeps
+   positive current and cluster-aware margins with zero sign flips; the main
+   negative pressure is feature-center drift, not router-side active tracking
 -> real-DCLM proxy routing exists at step 0 but ordinary training erases it
+-> the next decision is to apply the same margin-budget audit to real-DCLM
+   proxy-init training
 -> functional value must be tested through common/rare interference or expert
    utility, not load balance alone
 ```
@@ -140,8 +147,10 @@ Can claim:
 
 ```text
 Controlled route-position feature partitions are reachable. Ordinary top-1
-routing does not naturally discover or preserve the right partition. In real
-DCLM early training, proxy routing can be overwritten by step 5/10.
+routing does not naturally discover or preserve the right partition. In the
+controlled no-position bridge, center initialization preserves by a positive
+margin buffer, not by active router-center tracking. In real DCLM early
+training, proxy routing can be overwritten by step 5/10.
 ```
 
 Cannot claim:
@@ -183,6 +192,11 @@ Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_fe
 Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_02_router_center_tracking_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_03_feature_drift_margin_boundary/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_04_margin_crossing_causal_stress/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_robust_initialization/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
@@ -263,7 +277,7 @@ Do not run another broad feature-existence sweep. The next useful protocol
 should decide one bottleneck:
 
 ```text
-real-DCLM early-preservation / anti-feedback
+real-DCLM margin-budget failure decomposition
 ```
 
 Primary metric:
@@ -279,8 +293,9 @@ LM loss, max load, active experts, common margin, and exact gate-input audit
 ```
 
 If preservation succeeds, return to A07 utility on a preserved partition. If it
-fails, decompose gate update, hidden-state drift, expert feedback, and optimizer
-geometry before proposing another method.
+fails, use A06_21-style diagnostics to separate weak step-0 residual margin,
+early margin consumption, common overwrite, token spread, expert feedback, and
+optimizer geometry before proposing another method.
 
 ## Root Surfaces
 

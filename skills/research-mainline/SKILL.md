@@ -136,6 +136,28 @@ anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 Root sync copies, handoff packages, graph edits, commits, and pushes are
 explicit follow-up actions only.
 
+Every mainline artifact must be terminology-safe. If a document uses
+non-obvious terms, English jargon, abbreviations, metric names, condition
+labels, model variants, project shorthand, or plot labels, it must define them
+before using them as evidence. Use `Terminology / Definitions` for English
+canonical artifacts and `术语解释` for Chinese meeting or companion files.
+
+This chain is the local adapter for the advisor's `research-exploration` spec:
+
+```text
+anchor                              = docs/design.md role
+protocol.md                         = docs/experiment_design.md role
+summary.md + detailed.md + figures  = docs/visualization_results.md role
+final_report.md                     = stable-closure synthesis after the
+                                      working evidence and anchor are current
+problem_anchors/<line>/closure/     = specified research-line synthesis for
+                                      the current expected process, evidence
+                                      chain, mathematical model, and boundary
+```
+
+Do not create the exported `docs/` layout for ordinary mainline work unless the
+user asks for that layout. The anchor-first layout remains canonical.
+
 Artifact roles must stay aligned:
 
 | Artifact | Owns | Must not do |
@@ -145,6 +167,7 @@ Artifact roles must stay aligned:
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
+| `closure/<topic>_closure_report.md` | line-level stable synthesis requested for an anchor folder | replace source artifacts or make claims stronger than linked evidence |
 | `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
 | anchor update | supported / weakened / insufficient evidence, boundary, next decision | paste a result report into the anchor |
 
@@ -230,6 +253,13 @@ and failure reasons.
 exact setup, primary metric, result, key evidence, claim boundary, and next
 decision.
 
+It should start with a concise result snapshot: what is established, what the
+experiment shows through the primary metric, and what action follows. It should
+not narrate internal trial history unless that history changes the claim
+boundary or next decision. Define every condition label, metric abbreviation,
+and visible shorthand in `Terminology / Definitions` before using it as
+evidence.
+
 It must also absorb the key parts of research-exploration
 `docs/visualization_results.md`: each central figure should explain what it
 tests, how to read it, observed result, take-home, and what it does not prove.
@@ -247,6 +277,64 @@ observed result, take-home, and remaining uncertainty.
 Separate decision evidence, stage-level profiling evidence, debug-only
 evidence, and failed or ambiguous evidence. Debug-only figures must not be
 promoted into `summary.md` as decision evidence.
+
+For new central plots or browser viewers, require a plot contract before
+plotting and a bounded rendered-artifact audit before delivery. The contract
+must state the question answered, metric definition and unit, data source,
+aggregation level, axis/legend meaning, allowed conclusion, and limitation.
+The audit must check that the rendered artifact is readable and understandable
+without source-code knowledge.
+
+### Closure
+
+`problem_anchors/<line>/closure/` is the specified research-line synthesis
+surface. It is used when the user asks to close, summarize, audit, or
+understand a named anchor folder or line as a unit. It is not a default side
+effect of every experiment.
+
+Do not create placeholder closure folders or `closure/README.md` files. When a
+closure report is actually requested and written, use:
+
+```text
+closure/<line>_closure_report.md
+closure/<line>_closure_report_cn.md
+```
+
+The English file is canonical unless the user explicitly chooses Chinese as
+canonical. The Chinese companion must match the same claims, metrics,
+boundaries, and next decision.
+
+A closure report must use two layers.
+
+Story layer, first:
+
+- title and subtitle that state the research object;
+- abstract with the current verdict and next decision;
+- motivation that explains why the question matters;
+- explicit separation of confused concepts;
+- clean baseline, impossibility result, or no-effect case;
+- mechanism model and proof-level statements where possible;
+- controlled evidence;
+- real evidence or negative result;
+- reconciliation between controlled and real outcomes;
+- refined working theory;
+- next experiment.
+
+Audit layer, second:
+
+- source map;
+- experiment-to-experiment logic table;
+- result table with primary metrics and source links;
+- table separating proved statements, assumptions, and empirical propositions;
+- claim boundary;
+- compact appendix listing data, model, training/evaluation settings, seeds,
+  checkpoints, scripts, result paths, and primary metrics.
+
+Keep the report compact. Link to anchors and experiment records instead of
+copying their setup or result sections wholesale. Do not use a closure report
+to introduce new experimental claims. If the mathematical model cannot prove a
+stated mechanism, mark the statement as an assumption or empirical proposition
+and name the smallest experiment needed to test it.
 
 ## External Sync And Handoff
 

@@ -88,6 +88,37 @@ anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 Root sync, external collaborator repo sync, handoff reports, graph edits,
 commits, and pushes are explicit follow-up actions only.
 
+Terminology is part of the artifact contract. Any anchor, protocol, summary,
+detailed record, closure report, meeting brief, or viewer that uses non-obvious
+terms, English jargon, abbreviations, metric names, condition labels, model
+variants, or project shorthand must define them before using them as evidence.
+Use `Terminology / Definitions` in English canonical artifacts and `术语解释`
+in Chinese companions or meeting briefs.
+
+Minimum definition:
+
+```text
+term / abbreviation
+plain meaning
+concrete object or computation
+unit / formula, if metric
+why it matters for the current decision
+what it cannot prove
+```
+
+Minimal advisor-spec adapter:
+
+```text
+docs/design.md                  -> anchor
+docs/experiment_design.md       -> protocol.md
+docs/visualization_results.md   -> summary.md + detailed.md + figures/viewer
+docs/final_report.md            -> stable-closure synthesis after the anchor
+                                   and result records are current
+```
+
+Do not create a parallel `docs/` tree for normal project work unless the user
+asks for that exported layout.
+
 `protocol.md` is required before implementation or running. It is the approved
 experiment design and replaces the old protocol/execution-plan split.
 
@@ -95,6 +126,11 @@ experiment design and replaces the old protocol/execution-plan split.
 state the purpose, exact setup, primary metric, conclusion, key evidence, claim
 boundary, and next decision. It must explain central figures using the
 visualization-results standard.
+
+It should start with the reader-facing result shape: what we established, what
+the experiment shows through the primary metric, and what we do next. Condition
+labels, metric names, and visible shorthand must be defined in
+`Terminology / Definitions` before they are used as evidence.
 
 `detailed.md` is required. It is the complete experiment record. It must
 preserve the full setup, conditions, seeds, commands, job ids, curated tables,
@@ -218,6 +254,12 @@ into the local `figures/` folder and embed them in `summary.md` and
 `detailed.md`. Each central figure needs purpose, setup, how-to-read, observed
 result, take-home, and remaining uncertainty. Do not make the reader infer the
 result from a dry metric list.
+
+Before a new central plot or viewer is delivered, preserve a plot contract:
+question answered, metric definition and unit, data source, aggregation level,
+axis and legend meaning, allowed conclusion, and limitation. Rendered viewers
+must pass a bounded audit for readable labels, visible metric definitions,
+visible key numbers, and no source-code-only interpretation.
 
 ## Formula Rule
 

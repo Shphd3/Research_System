@@ -12,6 +12,17 @@ next-token training 在 step 5/10 覆盖。functional specialization 必须在
 preservation 成立后，再通过 common/rare interference 或 expert utility 判断。
 ```
 
+0630 更新：
+
+```text
+controlled no-position bridge 中，center initialization 的保持已被 A06_21
+分解为 margin-budget 机制：pseudo/oracle center 保持正 current margin、
+正 cluster-aware margin 和零 sign flip；负向压力主要来自 feature-center
+drift，但初始 margin buffer 足够大，没有跨 expert boundary。下一步不是再
+做 controlled feature-existence sweep，而是把同样分解带到 real-DCLM
+proxy-init failure。
+```
+
 ## 总愿景与裁定层级
 
 整个项目的推进逻辑是：
@@ -64,6 +75,9 @@ early-training feedback 证据；
 06: 正确 partition 是否可发现、可初始化、可保持
 -> route-position geometry 可达
 -> all-position clustering 是错误样本池
+-> center initialization 的保持来自 positive margin buffer，而不是 active tracking
+-> A06_21 支持 controlled margin-budget 解释：正 margin / 零 sign flip / 正
+   cluster-aware margin 比 NMI alone 更接近 preservation
 -> real-DCLM proxy 可在 step 0 线性路由
 -> ordinary training 会在 step 5/10 覆盖 proxy routing
 
@@ -117,7 +131,16 @@ real-DCLM proxy routing 能否穿过 step 5/10 的 early-training overwrite wind
 
 ## 下一步
 
-优先写一个 real-DCLM preservation / anti-feedback protocol：
+优先把 A06_21 的 margin-budget audit 搬到 real-DCLM A06_12 proxy-init
+training：
+
+```text
+step-0 proxy routing 被擦掉，是因为 residual margin 一开始就弱，
+还是 early training 吃掉了 margin，还是 common direction 压过
+residual feature term？
+```
+
+然后再写 real-DCLM preservation / anti-feedback protocol：
 
 ```text
 固定 step-0 proxy labels；
@@ -126,13 +149,16 @@ real-DCLM proxy routing 能否穿过 step 5/10 的 early-training overwrite wind
 保护指标是 LM loss、max load、active experts、common margin。
 ```
 
-若 preservation 成功，再回到 A07 utility。若 preservation 失败，先分解
-gate update、hidden-state drift、expert feedback 和 optimizer geometry，不直接换方法。
+若 preservation 成功，再回到 A07 utility。若 preservation 失败，先用
+A06_21-style diagnostics 分解 weak step-0 residual margin、early margin
+consumption、common overwrite、token spread、expert feedback 和 optimizer
+geometry，不直接换方法。
 
 ## 入口文件
 
 ```text
 Projects/from-attention-to-search/main/problem_anchors/05_06_07_initialization_collapse_to_interference_chain_cn.md
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
 ```

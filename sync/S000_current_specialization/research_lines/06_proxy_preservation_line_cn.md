@@ -14,6 +14,7 @@ feature/proxy 是否存在
 
 ```text
 controlled route-position geometry 可发现、可路由、可保持；
+controlled center initialization 的保持来自 positive margin buffer，而不是 active tracking；
 real-DCLM proxy clusters 可发现且 step 0 可线性路由；
 但 ordinary real-DCLM training 会在 step 5/10 覆盖 proxy routing。
 ```
@@ -80,6 +81,59 @@ reconstruction quality 不是 route-readout quality；
 下一版 selector 必须显式加入 route-local 或 route-readout constraint。
 ```
 
+### 1.5 Controlled margin preservation mechanism
+
+A06_17_02 到 A06_17_05 说明：在 corrected no-position bridge 中，center
+initialization 的保持不是因为 router rows 主动追踪 feature centers，而是
+因为初始化给出了正间隔安全区。
+
+关键判断：
+
+```text
+A06_17_02: pseudo/oracle center final feature_NMI = 1.0, but movement alignment < 0
+A06_17_03: worst boundary consumption < 0.70, dynamic switch rate = 0.000
+A06_17_04: forced crossing breaks the matched region
+A06_17_05: perturbations through rho=0.70 preserve, pure random fails
+```
+
+解释：
+
+```text
+positive margin is a geometric safety region in this controlled bridge;
+good initialization is not a guarantee forever, but it can place the system
+inside a margin basin that the tested training trajectory does not exhaust.
+```
+
+当前新增疑问：
+
+```text
+这个 positive margin 是 feature residual margin，还是 high-gain common-band
+margin？如果主要来自 common band，它只能说明 routing 稳定，不能说明
+feature-specific specialization 可信。
+```
+
+A06_21 已完成 full margin-budget audit：
+
+```text
+full run: 8 seeds x C0-C3 x 5 conditions x 12 checkpoints
+decomposition identity max error = 1.37e-6
+pseudo/oracle center at step 10: feature_NMI = 1.0, sign flip = 0,
+positive min margin > 5.6, positive cluster-aware margin > 4.5
+random/equal-norm random: negative min margin and sign flip about 0.23
+label-shuffled center: NMI can be moderate, but matched preserve fraction is low
+```
+
+解释：
+
+```text
+controlled bridge 中，真正保持的是正 current margin / cluster-aware margin，
+不是 NMI alone；
+center-init 的负向 margin pressure 主要来自 feature-center drift，
+但初始 margin buffer 足够大，所以没有跨 expert boundary；
+common share 在 center-init 条件中很低，因此 common overwrite 不是这个
+controlled preservation 的解释。
+```
+
 ### 2. Real-DCLM proxy discovery
 
 A06_10 支持真实 DCLM hidden states 中存在稳定 proxy clusters。
@@ -138,19 +192,24 @@ real-DCLM proxy 能证明：
 
 ```text
 label-free route-relevant state selector for real text；
+real-DCLM margin-budget decomposition: weak step-0 residual margin vs early
+margin consumption vs common overwrite；
 anti-feedback / preservation objective；
 proxy partition 的 expert utility 证据。
 ```
 
 ## 下一步
 
-优先写 preservation / anti-feedback protocol。不要直接设计 utility method。
+优先把 A06_21 的 margin-budget audit 搬到 real-DCLM A06_12 proxy-init
+training 上，然后再写 preservation / anti-feedback protocol。
+不要直接设计 utility method。
 
 最小问题：
 
 ```text
-在固定 step-0 proxy labels 后，哪一种训练控制能让 proxy_route_NMI 穿过
-step 5/10，同时 LM loss 不显著变坏？
+real-DCLM audit: step-0 proxy routing 被擦掉，是因为 residual margin
+一开始就弱，还是 early training 吃掉了 margin，还是 common direction
+压过 residual feature term？
 ```
 
 ## Source Links
@@ -162,5 +221,11 @@ Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_ce
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_real_dclm_full02_rerun_report.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_02_router_center_tracking_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_03_feature_drift_margin_boundary/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_04_margin_crossing_causal_stress/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_robust_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_18_label_free_route_relevant_state_selector/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_20_route_logit_common_estimator_random_init_feature_recovery/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
 ```

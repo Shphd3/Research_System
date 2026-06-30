@@ -36,6 +36,35 @@ Do not run or expand a nontrivial experiment before the protocol is approved.
 Do not add broad sweeps, extra seeds, or new diagnostics unless they distinguish
 a named rival explanation or protect the validity of the primary conclusion.
 
+## Language And Approval Workflow
+
+For new anchor-indexed experiments in this repository, protocol approval uses
+a Chinese-first workflow unless the user explicitly asks otherwise:
+
+```text
+Chinese protocol draft for user audit
+-> user approval / correction
+-> English canonical protocol.md at the experiment path
+-> Chinese companion protocol_cn.md kept beside it
+-> run
+-> English summary.md and detailed.md as canonical result records
+-> optional Chinese companion only when the user asks or when it is needed for
+   meeting explanation
+```
+
+Rules:
+
+- The Chinese draft must be short and plain enough for the user to audit the
+  question, data construction, metrics, pass/fail rules, and claim boundary.
+- The English `protocol.md` is the executable contract after approval.
+- The Chinese `protocol_cn.md` is a companion, not a separate protocol. It must
+  not introduce a different question, metric, condition, or boundary.
+- If the user approves running from the Chinese protocol, translate it to the
+  English canonical protocol before or during execution, then preserve the
+  Chinese version.
+- Result records stay in English by default because they are canonical project
+  artifacts; explain the result in Chinese in chat when the user asks.
+
 ## Protocol Alignment Gate
 
 A protocol is invalid unless it starts with an approval-facing snapshot. The
@@ -131,7 +160,13 @@ Insufficient:
 Cannot claim:
 Approval decision:
 
-## 1. Anchor Alignment
+## 1. Terminology / Definitions
+
+| Term | Plain meaning | Concrete object / computation | Unit or formula | Why it matters | Cannot prove |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
+
+## 2. Anchor Alignment
 
 Decision question:
 Physical prior tested:
@@ -139,34 +174,34 @@ Core model term tested:
 Falsifier:
 Claim boundary:
 
-## 2. Tested Hypothesis
+## 3. Tested Hypothesis
 
-## 3. Rival Explanations
+## 4. Rival Explanations
 
-## 4. Data / Model / Algorithm / Objective
+## 5. Data / Model / Algorithm / Objective
 
-## 5. Conditions, Seeds, And Checkpoints
+## 6. Conditions, Seeds, And Checkpoints
 
 | Item | Anchor clause tested | Model term / rival explanation | Why needed | Primary or secondary evidence | Pass | Fail | Insufficient | Figure/table |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | | | |
 
-## 6. Primary Metric
+## 7. Primary Metric
 
 State why this metric decides the judgment and what false positives or false
 negatives would cost when the costs differ.
 
-## 7. Secondary Metrics
+## 8. Secondary Metrics
 
-## 8. Known Good / Known Bad / Known Confusing Cases
+## 9. Known Good / Known Bad / Known Confusing Cases
 
-## 9. Stage-Level Profiling Plan
+## 10. Stage-Level Profiling Plan
 
 | Stage | Local question | Input evidence | Pass / fail / unclear rule | Debug artifact | Handoff |
 | --- | --- | --- | --- | --- | --- |
 | | | | | | |
 
-## 10. Algorithm Specification, If Nontrivial
+## 11. Algorithm Specification, If Nontrivial
 
 input:
 parameters:
@@ -178,28 +213,74 @@ pass conditions:
 fail conditions:
 failure reasons:
 
-## 11. Success / Failure / Insufficient Evidence
+## 12. Success / Failure / Insufficient Evidence
 
-## 12. What This Cannot Claim
+## 13. What This Cannot Claim
 
-## 13. Review Notes And Protocol Changes
+## 14. Review Notes And Protocol Changes
 ```
 
 Stop after writing or changing the protocol unless the user explicitly approves
 running or implementing the experiment.
 
+## Terminology And Reader-Ready Setup Rule
+
+Before any result table, figure, or condition label appears in `summary.md` or
+`detailed.md`, the setup must define the compared objects in plain language.
+This is the local minimal form of a paper-style experimental setup.
+
+Every `summary.md`, `detailed.md`, closure report, and meeting-derived result
+record must include a `Terminology / Definitions` section near the top when it
+uses non-obvious terms, abbreviations, metric names, condition labels, method
+names, project shorthand, or plot labels.
+
+Use this definition shape:
+
+```text
+Term:
+Plain meaning:
+Concrete object or computation:
+Unit / formula, if metric:
+Why it matters for this decision:
+What it cannot prove:
+```
+
+For `summary.md`, keep it compact but include the decision-relevant fields:
+
+```text
+research question
+data or data-generating process
+model / router / algorithm
+loss or objective
+conditions being compared, with plain-language labels
+which variables changed and which were held fixed
+training steps / checkpoints / seeds, when relevant
+primary metric definition and unit
+script or result path
+known setup limitation
+```
+
+For `detailed.md`, preserve the complete setup. Any label used in a plot or
+table, such as a condition name, metric abbreviation, model variant, or negative
+control, must be defined before the result uses it.
+
 ## Visualized Result Alignment Gate
 
 A figure is allowed in `summary.md` only if it supports the current claim
-boundary or next decision. Every central figure must include this alignment
-block:
+boundary or next decision. Before plotting or promoting a central figure, write
+a plot contract. Every central figure must be able to answer:
 
 ```text
 Anchor question:
 Protocol question:
 Metric shown:
 Metric definition:
+Metric unit:
 Data source:
+Aggregation level:
+Axis / legend meaning:
+Expected pattern if the hypothesis is supported:
+Expected pattern if the hypothesis is weakened or incomplete:
 What this figure decides:
 Observed result:
 Allowed claim:
@@ -216,11 +297,96 @@ support the primary judgment. `detailed.md` may contain the full evidence
 ledger, but it must separate decision evidence, stage-level profiling
 evidence, debug-only evidence, and failed or ambiguous evidence.
 
+## Closure Report Standard
+
+Use this section only when the user explicitly asks for a closure, current
+understanding report, line-level synthesis, or specified anchor-folder summary.
+The target path is:
+
+```text
+Projects/<project>/main/problem_anchors/<line>/closure/
+```
+
+The canonical pair is:
+
+```text
+<line>_closure_report.md
+<line>_closure_report_cn.md
+```
+
+The English file is canonical by default, and the Chinese file is a companion
+with the same claims, metrics, boundaries, and next decision. If the user asks
+for Chinese as the canonical file, state that explicitly in both files.
+
+The closure report is the reader-facing synthesis of a line, not a replacement
+for anchors, protocols, summaries, or detailed records. It should tell the full
+advisor-style story first, then place the compact audit structure in the later
+part. Link to source artifacts instead of copying their content. Use this
+structure:
+
+```markdown
+# <Line> Closure Report
+
+## Subtitle
+
+## Abstract
+
+## Terminology / Definitions
+
+## 1. Motivation
+
+## 2. What Must Be Distinguished
+
+## 3. Clean Baseline / Impossibility Result
+
+## 4. Mechanism Model
+
+## 5. Propositions And Proofs
+
+## 6. Controlled Evidence
+
+## 7. Real Evidence / Negative Result
+
+## 8. Reconciliation And Refined Theory
+
+## 9. Next Experiment
+
+## 10. Source Map And Audit Tables
+
+## 11. Claim Boundary
+
+## Appendix. Data / Model / Parameters / Scripts
+```
+
+Write conclusion-first. Define every technical object in plain language before
+using a shorthand. Separate observation, interpretation, claim, speculation,
+and boundary. For mathematical modeling, do not write only intuition: prove the
+statements that follow from the model, and label unproved mechanism claims as
+assumptions or empirical propositions. The appendix must list data construction
+or dataset, model/router/algorithm, loss or objective, seeds, checkpoints,
+important parameters, scripts, result directories, and primary metrics.
+
+Do not add a separate `closure/README.md` unless the user explicitly asks for
+an index. The closure report itself is the reading entry.
+
 ## Summary Standard
 
 `summary.md` is the first post-result reading path. It should be short enough
 to read quickly, but it must include enough visualization-result explanation
 that the central figures can be understood without chat history.
+
+Write it conclusion-first. The first result block should use the
+reader-facing shape:
+
+```text
+What we established:
+What the experiment shows:
+What we do next:
+```
+
+Use this shape for supported, weakened, and insufficient-evidence results. Do
+not hide uncertainty; put it in the claim boundary and next decision instead of
+burying the main result under process history.
 
 Use this structure:
 
@@ -230,13 +396,45 @@ Use this structure:
 Primary anchor:
 Protocol:
 
+## Result Snapshot
+
+Verdict:
+
+What we established:
+
+What the experiment shows:
+
+What we do next:
+
 ## Purpose
+
+## Terminology / Definitions
+
+| Term | Plain meaning | Concrete object / computation | Unit or formula | Why it matters | Cannot prove |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
 
 ## Exact Setup
 
+Research question:
+Data / model / objective:
+Conditions:
+Changed variables:
+Held fixed:
+Seeds / checkpoints:
+Paths:
+Known limitation:
+
 ## Primary Metric
 
+Definition:
+Unit:
+Why it decides:
+False-positive / false-negative cost, if asymmetric:
+
 ## Result
+
+## Key Evidence
 
 ## Key Figures
 
@@ -254,9 +452,17 @@ Metric shown:
 
 Metric definition:
 
+Metric unit:
+
 Data source:
 
+Aggregation level:
+
 How to read:
+
+Expected if supported:
+
+Expected if weakened or incomplete:
 
 What this figure decides:
 
@@ -287,6 +493,9 @@ failure, or insufficient-evidence criteria allow.
 future reader or AI to audit the run, understand the result, and locate the
 artifacts without re-discovering the project.
 
+It may be long, but it must be layered: quick judgment first, full audit after.
+It must not create a stronger conclusion than `summary.md` or the anchor.
+
 Use this structure:
 
 ```markdown
@@ -304,9 +513,15 @@ Experiment logic:
 Conclusion:
 Evidence:
 
-## 1. Anchor Link And Decision Point
+## 1. Terminology / Definitions
 
-## 2. Protocol Compliance Audit
+| Term | Plain meaning | Concrete object / computation | Unit or formula | Why it matters | Cannot prove |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
+
+## 2. Anchor Link And Decision Point
+
+## 3. Protocol Compliance Audit
 
 approved conditions match actual conditions:
 primary metric exists:
@@ -315,11 +530,28 @@ seeds/checkpoints recorded:
 known good/bad/confusing cases reviewed:
 success/failure/insufficient-evidence criteria applied:
 
-## 3. Setup
+## 4. Setup
 
-## 4. Metrics And Decision Rules
+Research question:
+Data construction:
+Train / eval / probe split:
+Model / router / algorithm:
+Input representation / position encoding:
+Loss / objective:
+Optimizer or update rule:
+Training steps / tokens / batch size:
+Checkpoints:
+Seeds:
+Conditions and plain-language labels:
+Changed variables:
+Held fixed:
+Script paths:
+Result paths:
+Known setup limitations:
 
-## 5. Main Results
+## 5. Metrics And Decision Rules
+
+## 6. Main Results
 
 Separate:
 
@@ -328,7 +560,7 @@ Separate:
 - debug-only evidence;
 - failed or ambiguous evidence.
 
-## 6. Visualization Results
+## 7. Visualization Results
 
 For each central figure or viewer:
 
@@ -338,14 +570,18 @@ For each central figure or viewer:
 
 Purpose:
 Setup:
+Metric definition:
+Metric unit:
 How to read:
+Expected if supported:
+Expected if weakened or incomplete:
 Observed result:
 Take-home:
 Remaining uncertainty:
 What this figure does not prove:
 Anchor update implication:
 
-## 7. Stage Evidence And Failure Decomposition
+## 8. Stage Evidence And Failure Decomposition
 
 | Stage | Evidence | Passed / failed / unclear | Failure reason | What this rules out |
 | --- | --- | --- | --- | --- |
@@ -358,15 +594,15 @@ Falsified implementation:
 Falsified metric:
 Remaining rival explanations:
 
-## 8. Full Experiment Record
+## 9. Full Experiment Record
 
-## 9. Interpretation
+## 10. Interpretation
 
-## 10. Claim Boundary
+## 11. Claim Boundary
 
-## 11. Next Decision
+## 12. Next Decision
 
-## 12. Links And Artifact Map
+## 13. Links And Artifact Map
 
 anchor:
 protocol:
@@ -400,5 +636,9 @@ move to an appendix/debug area or be omitted from the main result path.
 - A negative or ambiguous result must say whether it falsifies the physical
   prior, mathematical model, operationalization/proxy, implementation, metric,
   or none of these.
+- A negative or ambiguous result should be framed as the next uncertainty or
+  optimization direction, not as an internal failure narrative. Do not use
+  customer-facing prose to hide a weakened claim; keep the cannot-claim
+  boundary explicit.
 - Figures and tables must support a claim boundary or next decision.
 - Markdown formulas must use `$...$` or `$$...$$`.

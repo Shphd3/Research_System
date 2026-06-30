@@ -106,12 +106,101 @@ why it failed, if known
 what the next concrete test or decision is
 ```
 
+When the user asks for a concrete result, metric, comparison, run status, or
+number, return the direct measured result first as soon as it is available.
+Then state where the number came from and whether a caveat affects the
+decision. Do not delay the answer to polish a viewer, reorganize files, or
+write a longer document.
+
+For reader-facing result writing, use the minimal customer-facing shape:
+
+```text
+What we established:
+What the experiment shows:
+What we do next:
+```
+
+This shape does not remove scientific boundaries. It moves the boundary after
+the conclusion so the reader first sees the current decision, then sees what it
+cannot prove. Do not narrate discarded attempts, internal confusion, or failed
+paths unless that history changes the research decision.
+
 Do not use polished research language to hide an unclear idea. If an important
 term cannot be defined as a test, computation, artifact, or decision, treat the
 research state as incomplete and name the missing definition.
 
 Do not let fluent prose upgrade the claim. A sentence is too strong if it says
 more than the evidence, metric, or intervention can support.
+
+## Terminology Discipline
+
+Undefined terminology is a research risk, not a cosmetic issue. A term that is
+not defined may hide an unclear object, a metric mismatch, or a causal
+overclaim.
+
+Before using any non-obvious term as evidence, define it. This includes:
+
+- English jargon used in Chinese prose;
+- abbreviations and acronyms;
+- project nicknames and run labels;
+- condition labels and ablation names;
+- metric names and shorthand;
+- plot labels, axis names, and legend entries;
+- mechanism labels such as `proxy`, `margin`, `collapse`, `utility`, or
+  `preservation` when the local meaning matters.
+
+Use this minimum definition shape:
+
+```text
+term / abbreviation:
+plain meaning:
+concrete object or computation:
+unit / formula, if it is a metric:
+why it matters for the current decision:
+what it cannot prove:
+```
+
+In Chinese conversation and Chinese meeting briefs, explain the Chinese meaning
+first and put the reusable English term in parentheses. In canonical English
+artifacts, use a `Terminology / Definitions` section near the top when terms
+are not self-evident. Do not make the reader infer definitions from code,
+figures, old chats, or previous reports.
+
+## Line Closure Synthesis Rule
+
+When the user explicitly asks for a current understanding report, closure
+summary, or synthesis of a specified anchor folder or research line, produce a
+line-level closure report under:
+
+```text
+Projects/<project>/main/problem_anchors/<line>/closure/
+```
+
+The report is not a new experiment result and not a replacement for anchors,
+protocols, `summary.md`, or `detailed.md`. It should reduce uncertainty by
+turning the line into a coherent story first, then an audit surface second.
+Use this story chain in the first half:
+
+```text
+title / subtitle -> abstract -> motivation -> definitions and confused
+concepts -> clean baseline or impossibility result -> mechanism model
+-> propositions / proofs -> controlled evidence -> real evidence or negative
+result -> reconciliation -> refined theory -> next experiment
+```
+
+Use the compact audit chain in the second half:
+
+```text
+source map -> experiment logic table -> measured results -> proved / assumed /
+empirical table -> claim boundary -> data/model/parameter appendix
+```
+
+Closure reports must be bilingual by default, with an English canonical file
+and a Chinese `_cn.md` companion. For mathematical claims, prove what follows
+from the model. If a statement cannot be proved, label it as an assumption or
+empirical proposition and state the smallest experiment that could decide it.
+Every cited experiment must have appendix entries for data, model, parameters,
+seeds/checkpoints, scripts, result paths, and primary metrics.
 
 ## Required Distinctions
 
@@ -226,6 +315,9 @@ falsifiable hypothesis derived from those priors
 operational definitions
 mathematical model for each prior
 implementation contract for each nontrivial model or stage
+terminology definitions for non-obvious terms, metrics, condition labels, and
+project-specific shorthand
+reader-ready experimental setup before result labels or plots use condition names
 explicit algorithm specification for each nontrivial stage
 stage-level profiling evidence
 failure interpretation for each stage
@@ -282,6 +374,22 @@ navigation layer:
 
 Artifact names and paths are adapter details. The research rule is that the
 current theory and the history of tested operationalizations must not be mixed.
+
+For this repository, the advisor's `research-exploration` document roles map
+onto the local artifact chain:
+
+```text
+docs/design.md                  -> anchor
+docs/experiment_design.md       -> protocol.md
+docs/visualization_results.md   -> summary.md + detailed.md + figures/viewer
+docs/final_report.md            -> stable-closure synthesis only after the
+                                   anchor and result records are current
+```
+
+Do not create the exported `docs/` layout for normal project work unless the
+user asks for it. When a self-contained subproblem reaches stable closure, write
+a final synthesis only after the main conjecture, evidence, central figures,
+claim boundary, and next question are already settled.
 
 ## Algorithm Specification
 
@@ -341,6 +449,30 @@ is itself the hypothesis being tested.
 Metric design must name false-positive and false-negative costs when they are
 not symmetric. A metric that rewards the wrong error type is not decisive
 evidence even if the score is high.
+
+## Figure And Viewer Contract
+
+A central figure or viewer is part of the evidence, not decoration. Before
+plotting or keeping a main-path figure, write a plot contract:
+
+```text
+plot title
+research question answered
+metric name, definition, formula when useful, and unit
+data source and aggregation level
+x-axis, y-axis, color, and legend meaning
+expected pattern if the hypothesis is supported
+expected pattern if the hypothesis is weakened or incomplete
+allowed conclusion
+known limitation
+```
+
+The rendered artifact must then pass a bounded audit: it renders; labels and
+legends are readable; metric definitions appear before plots; each plot uses one
+primary unit; important numbers are visible near the plot; and the conclusion
+can be understood without reading source code. If a plot fails this audit, split
+it, relabel it, add the missing definition, move it to a debug appendix, or
+remove it from the main reading path.
 
 ## Failure Decomposition
 

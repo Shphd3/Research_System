@@ -40,6 +40,15 @@ Apply this gate before writing or revising `meeting_brief.md`:
   paths, formulas, and abbreviations that have already been defined in Chinese.
 - Use precise and concise language. Do not use English jargon as a substitute
   for explanation.
+- Include a `术语解释` section before the main results whenever the brief uses
+  non-obvious metrics, English terms, abbreviations, condition names, model
+  variants, or project shorthand. Define the Chinese meaning first, then put
+  the reusable English label or abbreviation in parentheses.
+- Write the brief as a reader-facing decision document. Lead with what is now
+  established, what the evidence shows, and what action follows.
+- Do not narrate discarded attempts, internal debugging history, or embarrassing
+  caveats unless that history changes the advisor's decision. Put scientific
+  boundaries in `结论边界`, not inside the headline claim.
 - Do not use oral labels such as "30-second summary" in the document. The
   brief must be formally written but easy to present aloud.
 - Make the question, mechanism, evidence, and result the grammatical subjects
@@ -56,6 +65,8 @@ Apply this gate before writing or revising `meeting_brief.md`:
   non-specialist undergraduate. It cannot be a noun phrase.
 - Each result point must include mechanism alignment, evidence, explanation,
   boundary, and source.
+- Each result point must define the metric, condition, or shorthand needed to
+  understand the evidence before using it as proof.
 - Do not write discussion-point sections or advisor-question lists. Put the
   next minimal step under `执行动作` with purpose and completion criterion.
 
@@ -128,6 +139,17 @@ Keep the definitions short, but make the object concrete. A reader should be
 able to understand the compared settings and the decision without chat history,
 the protocol, or the full detailed report. Do not solve this by copying full
 configs or timelines into the brief.
+
+Use this minimum definition shape:
+
+```text
+术语：
+中文含义：
+具体对象或计算方式：
+单位 / 公式，如果是指标：
+为什么影响当前判断：
+不能证明什么：
+```
 
 ## Package Contents
 

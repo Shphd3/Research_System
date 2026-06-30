@@ -58,11 +58,18 @@ first writing surface is the Thinking Card, not the full anchor.
 An anchor is a decision card first and an audit surface second. It must be
 readable before it is exhaustive.
 
+In this repository, the anchor is the minimal adapter of the advisor's
+`docs/design.md` role. It should state the current judgment, mechanism, metric,
+boundary, and next decision before carrying historical context. Do not write a
+long motivation section, timeline, or literature-style introduction above the
+Thinking Card.
+
 The first reading path must let the user answer these questions without
 reading a protocol:
 
 ```text
 What phenomenon are we explaining?
+What terms, abbreviations, metrics, or condition labels need definitions?
 What single mechanism is being tested?
 Which variable or model term carries the mechanism?
 Which primary metric would change the decision?
@@ -98,6 +105,59 @@ thresholds.
 
 ## Thinking Card Contract
 
+The Thinking Card is the only initial-audit layer. Do not put both
+`Pre-Anchor Card` and `0. Thinking Card` into the same anchor. They are two
+forms of the same object:
+
+- **Draft Thinking Card:** a three-item quick audit used in chat or rough daily
+  notes when the idea is still unclear.
+- **Formal `0. Thinking Card`:** the same judgment rewritten into the canonical
+  anchor section once the idea is clear enough to keep.
+
+For an unclear new anchor idea, write only the minimal draft Thinking Card:
+
+```text
+1. Phenomenon:
+2. Mechanism guess:
+3. Rival Explanations:
+```
+
+These three fields are enough for first-pass audit. They expose what is being
+explained, what mechanism is suspected, and what alternative mechanisms could
+also explain the same phenomenon. Do not require key variables, causal
+relation, metric, or decision rule before this first audit conversation.
+
+After discussion makes the idea coherent, expand the same Thinking Card with:
+
+```text
+Key variables:
+Causal relation:
+Observable metric:
+Decision:
+```
+
+If the minimal three fields are unclear, state the gap and stop. Do not expand
+into a full formal 0-8 anchor, protocol, or experiment plan until the user has
+reviewed, corrected, or approved the draft Thinking Card. If the user asks for
+an ambiguous "draft anchor", default to the minimal Thinking Card and do not
+add a separate `Pre-Anchor Card` heading.
+
+Before moving from the draft Thinking Card to a formal anchor or protocol,
+answer
+this review gate for the user:
+
+```text
+1. Is the core question drifting away from the parent problem?
+2. Are any key rival explanations missing?
+3. Can the primary metric actually distinguish the rival explanations?
+4. Are pass / fail / insufficient criteria clear enough to apply after a run?
+5. Is the cannot-claim boundary conservative enough?
+```
+
+If any answer is weak, revise the Thinking Card first. Do not hide an unclear
+question by adding more protocol detail. Once a formal anchor is written,
+section `0. Thinking Card` replaces the minimal draft; do not keep both.
+
 `00_handwrite_anchor.md` should require only:
 
 ```markdown
@@ -113,7 +173,7 @@ thresholds.
 
 **Observable metric:** the number or figure that can observe the relation.
 
-**Alternative explanation:** the rival explanation that could also explain it.
+**Rival Explanations:** the alternative mechanisms that could also explain it.
 
 **Decision:** what result would lead to pursue / revise / park.
 ```
@@ -136,6 +196,34 @@ Thinking Card in 00_handwrite_anchor.md
 -> protocol.md
 -> implementation / run
 ```
+
+## Language And Canonicalization Workflow
+
+For this repository, use a two-step language workflow for new anchors unless
+the user explicitly asks otherwise:
+
+```text
+Chinese draft Thinking Card / anchor card
+-> Chinese protocol draft when requested
+-> user review and correction
+-> English canonical anchor at the standard anchor path
+-> Chinese companion kept as <anchor_id>_cn.md
+```
+
+Meaning:
+
+- During idea clarification, anchor-card drafting, and protocol approval, write
+  in concise Chinese so the user can audit the mechanism quickly.
+- After the user approves the anchor or asks to run the experiment, translate
+  the approved design into the English canonical file at the normal project
+  path.
+- Preserve the Chinese version as a companion file with `_cn` before the file
+  extension.
+- Do not let translation change the research question, physical prior, primary
+  metric, pass/fail rule, or claim boundary. If translation exposes ambiguity,
+  state the ambiguity and ask or make the smallest conservative correction.
+- After results exist, update the English canonical anchor first, then update
+  the Chinese companion with the same claim boundary.
 
 If the Thinking Card is unclear, stay in audit mode. Do not write a protocol,
 implementation plan, broad test matrix, or formal anchor.
@@ -192,10 +280,10 @@ First return an audit:
 
 - user judgments to preserve;
 - unclear phenomenon, mechanism, variable, causal direction, metric, rival
-  explanation, scope, or decision rule;
+  explanations, scope, or decision rule;
 - hidden assumptions or causal overclaims;
 - whether the observable metric can actually see the proposed causal relation;
-- the strongest alternative explanation still alive;
+- the strongest rival explanation still alive;
 - the smallest edit needed to make the card decision-ready;
 - candidate formal-anchor mapping, if useful, but not a formal anchor.
 
@@ -213,7 +301,7 @@ Mechanism guess:
 Key variables:
 Causal relation:
 Observable metric:
-Alternative explanation:
+Rival Explanations:
 Decision:
 ```
 
@@ -253,6 +341,10 @@ Required structure:
 ```
 
 Do not add extra top-level sections by default.
+If the anchor uses non-obvious terms, abbreviations, metrics, method labels, or
+project shorthand, define them inside `1. Problem Definition` under
+`Terminology / Definitions`; do not add a separate top-level glossary unless the
+user explicitly asks for one.
 
 ## Section Requirements
 
@@ -267,7 +359,7 @@ Mechanism guess:
 Key variables:
 Causal relation:
 Observable metric:
-Alternative explanation:
+Rival Explanations:
 Decision:
 ```
 
@@ -282,6 +374,13 @@ Must include:
 ```text
 Parent problem:
 Sharper subproblem:
+Terminology / Definitions:
+  Term:
+  Plain meaning:
+  Concrete object or computation:
+  Unit / formula, if metric:
+  Why it matters for the current decision:
+  What it cannot prove:
 Decision question:
 Not in scope:
 ```

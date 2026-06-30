@@ -60,11 +60,16 @@ parked.
 
 A05 shows that ordinary top-1 routing can fail through common components,
 wrong geometric objects, and early-training feedback. A06 shows that
-route-position feature geometry can be found and routed, but all-position
-clustering is the wrong population and ordinary real-DCLM training can erase a
-step-0 proxy partition. A07 shows why value must be judged through
-common/rare interference or expert utility, but current neural evidence is not
-enough to claim real functional MoE specialization.
+route-position feature geometry can be found and routed, all-position
+clustering is the wrong population, and controlled center initialization is
+preserved by positive margin buffer rather than active center tracking. A06_21
+now decomposes this buffer: controlled center-init keeps positive current and
+cluster-aware margins with zero sign flips, while invalid guards have negative
+margin and poor matched preserve fraction.
+Ordinary real-DCLM training can still erase a step-0 proxy partition. A07
+shows why value must be judged through common/rare interference or expert
+utility, but current neural evidence is not enough to claim real functional
+MoE specialization.
 
 ## Source Links
 
@@ -82,6 +87,11 @@ Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_fe
 Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_02_router_center_tracking_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_03_feature_drift_margin_boundary/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_04_margin_crossing_causal_stress/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_robust_initialization/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
@@ -100,6 +110,8 @@ prove semantic expert identity or causal expert utility.
 
 ## Next Decision
 
-Write one real-DCLM preservation / anti-feedback protocol. The primary metric
-is `proxy_route_NMI` at step 5/10 under fixed step-0 proxy labels, with LM loss
-as the guard.
+Apply the A06_21 margin-budget audit to real-DCLM proxy-init training. The
+primary metric is `proxy_route_NMI` at step 5/10 under fixed step-0 proxy
+labels, with LM loss as the guard. The mechanism decision is whether failure
+comes from weak step-0 residual margin, early margin consumption, common
+overwrite, token spread, expert feedback, or optimizer geometry.
