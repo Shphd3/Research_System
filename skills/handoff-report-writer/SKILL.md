@@ -7,14 +7,17 @@ metadata:
 
 # Handoff Package Writer
 
-Use this skill only when the user explicitly asks for a meeting,
-collaborator, web-side, or external repository handoff package.
+Use this skill only when the user explicitly asks for a collaborator,
+web-side, external repository, or already-written meeting-material handoff
+package.
 
-For group-meeting or advisor-facing briefs, the output is a formal,
-problem-centered meeting document. A meeting brief is not an experiment
-retelling, a speaking script, or a compressed `summary.md`. Its subject is the
-research question, mechanism, evidence, result boundary, and next execution
-action, not what the researcher has completed.
+If the user asks to write, rewrite, or revise `meeting_brief.md`, use
+`meeting-brief-writer` first. Return to this skill only if the user also asks
+to package, copy, index, sync, commit, or push the finalized material.
+
+For group-meeting or advisor-facing handoff packages, the meeting brief itself
+must already follow `meeting-brief-writer`. This skill only packages the
+existing brief and its source artifacts without changing the claim.
 
 Do not create new research claims, new conclusions, or a second closure. The
 source of truth remains:
@@ -32,10 +35,25 @@ summaries only when the synthesis is directly supported by those sources. If
 the synthesis is not fully supported, write it as an unresolved boundary or an
 execution action, not as a claim.
 
-## Meeting Brief Formality Gate
+## Meeting Brief Package Gate
 
-Apply this gate before writing or revising `meeting_brief.md`:
+Apply this gate before packaging any `meeting_brief.md`. If the user is asking
+to write or revise the brief itself, stop using this skill and use
+`meeting-brief-writer` instead.
 
+- For any meeting package that includes `meeting_brief.md`, first read
+  `templates/meeting/meeting_brief_template.md` from the repository root and
+  verify the brief follows either `模式一` or `模式二` exactly. The template is
+  the hard structure contract; this skill supplies the source-boundary and
+  handoff rules around that template.
+- Use `模式一` when the meeting has one dominant research question or one
+  mechanism line, even if several experiment summaries are used as evidence.
+  Use `模式二` only when multiple parent questions must be merged and cannot be
+  represented as one mechanism line.
+- In `模式一`, the `0. 执行摘要` section must explicitly contain the bold fields
+  `研究问题`, `机制解释`, `主要结果`, `证据说明`, `结论边界`, and `执行动作`, plus
+  up to three numbered result sentences. Do not replace this with an
+  unstructured paragraph called "executive summary".
 - Write the brief in Chinese by default. Use English only for file names,
   paths, formulas, and abbreviations that have already been defined in Chinese.
 - Use precise and concise language. Do not use English jargon as a substitute

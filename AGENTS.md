@@ -447,9 +447,12 @@ first. Then use local skills from `skills/` when the task type matches:
 - `problem-anchor-writer`: write or update anchor / design documents.
 - `experiment-card-writer`: write `protocol.md`, `summary.md`, and
   `detailed.md` from anchors.
-- `handoff-report-writer`: package explicitly requested meeting/collaborator/web
-  handoff material after anchor, `protocol.md`, `summary.md`, and
-  `detailed.md` are updated.
+- `meeting-brief-writer`: write or revise strict advisor-facing
+  `meeting_brief.md` files by applying
+  `templates/meeting/meeting_brief_template.md` mode one or mode two exactly.
+- `handoff-report-writer`: package explicitly requested
+  collaborator/web/external handoff material after anchor, `protocol.md`,
+  `summary.md`, `detailed.md`, and any meeting brief are updated.
 - `remote-experiment-workflow`: remote/container/SCO/ACP workflow and artifact
   maps.
 - `research-mainline`: maintain graph, anchors, roadmap, and root sync state;

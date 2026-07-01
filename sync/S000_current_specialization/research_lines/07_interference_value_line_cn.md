@@ -81,6 +81,15 @@ proxy routing 被 preservation 保持；
 之后再测 common/rare interference 或 expert utility。
 ```
 
+0701 当前连接：
+
+```text
+导师 nested learning 提示高频 common high-gain channel 可能吸收 rare /
+组合特征。当前下一步不是直接 claim real-DCLM utility，而是在 06 preservation
+边界内做 common/rare routing audit：定义 common operator P_C，比较 raw h
+与 (I-P_C)h 的 rare-feature margin、sign flip 和 LM loss。
+```
+
 如果 routing 在 step 5/10 已经被覆盖，utility test 会混淆两个问题：
 
 ```text

@@ -14,9 +14,12 @@ feature/proxy 是否存在
 
 ```text
 controlled route-position geometry 可发现、可路由、可保持；
-controlled center initialization 的保持来自 positive margin buffer，而不是 active tracking；
+controlled center initialization 的保持来自有限厚度的 positive margin buffer，
+而不是 active tracking；
 real-DCLM proxy clusters 可发现且 step 0 可线性路由；
-但 ordinary real-DCLM training 会在 step 5/10 覆盖 proxy routing。
+但 ordinary real-DCLM training 会在 step 5/10 覆盖 proxy routing；
+A06_22 已复现这个真实崩塌，但 common/residual dominance 随 common
+projector 翻转，所以 common 是候选机制，不是已闭合根因。
 ```
 
 2026-06-25 local two-GPU full02 复现：
@@ -134,6 +137,26 @@ common share 在 center-init 条件中很低，因此 common overwrite 不是这
 controlled preservation 的解释。
 ```
 
+A06_23 进一步完成 margin threshold audit：
+
+```text
+row-gap scaling: w'_e = mean(w) + q(w_e - mean(w))
+q>0 时 step-0 assignment 不变，initial margin 按 q 成比例缩小
+q>=0.05: final matched preserve = 1.000, sign flip = 0
+q=0.02: final matched preserve = 0.375, sign flip = 0.159,
+        final current margin = -0.588
+q=0 guard / crossed guard: 原始 feature-to-expert identity 失败
+```
+
+解释：
+
+```text
+controlled bridge 中 positive margin 不是二值保险；
+它必须足够厚，才能扛过 early training 的 router/feature drift。
+NMI alone 不能作为 preservation 主指标，因为 q=0.02 和 crossed guard
+仍可能有较高 feature NMI，但已经丢失原始 feature-to-expert 映射。
+```
+
 ### 2. Real-DCLM proxy discovery
 
 A06_10 支持真实 DCLM hidden states 中存在稳定 proxy clusters。
@@ -174,6 +197,38 @@ LM loss 与 random 接近
 它是 ordinary next-token training 覆盖了 proxy routing。
 ```
 
+### 5. Common/residual trajectory bottleneck
+
+A06_22 对 A06_12-style real-DCLM collapse 做了 router-gap common/residual
+trajectory audit。
+
+关键结果：
+
+```text
+raw-center proxy_route_NMI: 0.7549 at step 0 -> 0.0410 at step 5 -> 0.0131 at step 10
+LM loss 与 random 接近，所以不是 training crash
+mean-common projector: Lambda_upd@5 = 2.1507, Lambda_upd@10 = 1.9856
+top hidden-PC projector: Lambda_upd@5 = 0.7089, Lambda_upd@10 = 0.6666
+router-row subspace projector: Lambda_upd@5 = 0.4611, Lambda_upd@10 = 0.4332
+```
+
+解释：
+
+```text
+真实 collapse 存在；
+mean-common 下 common update 看起来主导 margin movement；
+但 top hidden-PC 和 router-row subspace 下 residual update 反而更大。
+因此当前不能 claim common-dominated router update 是 projector-robust root cause。
+```
+
+这更新了 06 线下一步：
+
+```text
+不要直接做 common-subtraction method；
+先定义更物理、更贴近 nested learning / training objective 的 common operator；
+然后再比较 raw h 与 (I-P_C)h 的 routing 是否改善 rare-feature margin。
+```
+
 ## 合成到真实的边界
 
 controlled synthetic / bridge 能证明：
@@ -192,25 +247,26 @@ real-DCLM proxy 能证明：
 
 ```text
 label-free route-relevant state selector for real text；
-real-DCLM margin-budget decomposition: weak step-0 residual margin vs early
-margin consumption vs common overwrite；
+stable common operator tied to training objective or nested-learning geometry；
+common-subtracted routing audit: raw h vs (I-P_C)h；
 anti-feedback / preservation objective；
 proxy partition 的 expert utility 证据。
 ```
 
 ## 下一步
 
-优先把 A06_21 的 margin-budget audit 搬到 real-DCLM A06_12 proxy-init
-training 上，然后再写 preservation / anti-feedback protocol。
-不要直接设计 utility method。
+优先写 nested-learning-inspired common/rare routing audit，不要直接设计
+utility method 或 common-subtraction method。
 
 最小问题：
 
 ```text
-real-DCLM audit: step-0 proxy routing 被擦掉，是因为 residual margin
-一开始就弱，还是 early training 吃掉了 margin，还是 common direction
-压过 residual feature term？
+能否定义一个稳定 common operator P_C，使得 routing on (I-P_C)h 相比
+raw h 提高 rare-feature margin、降低 sign flip，并且不恶化 LM loss？
 ```
+
+若结论仍随 common projector 翻转，则说明 common definition 仍是建模瓶颈；
+不能进入方法 claim。
 
 ## Source Links
 
@@ -228,4 +284,8 @@ Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_ro
 Projects/from-attention-to-search/main/experiments/A06/A06_18_label_free_route_relevant_state_selector/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_20_route_logit_common_estimator_random_init_feature_recovery/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
+daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
+daily_research_reports/0701/meeting_brief.md
 ```

@@ -89,7 +89,8 @@ Level 0 has failure-mechanism evidence.
 Level 1 has controlled and real-DCLM proxy evidence, with semantic boundaries.
 Level 2 has real-DCLM step-0 proxy-center router evidence.
 Level 3 is the current unsolved bottleneck: ordinary training erases the proxy
-partition by step 5/10.
+partition by step 5/10; controlled preservation is now understood as a finite
+positive-margin buffer, while real-DCLM common/residual causality is not closed.
 Level 4 has controlled D07 support only; neural/real-DCLM utility is not yet
 supported.
 Level 5 is parked until preservation and utility are both better defined.
@@ -104,11 +105,13 @@ alignment, but cannot by itself support utility or scaling.
 Current decision question:
 
 ```text
-Can a step-0 real-DCLM proxy partition be preserved through the step-5/10
-training window without unacceptable language-model loss regression?
+Can a nested-learning-inspired common/rare routing audit define a stable common
+operator and show that common-subtracted routing improves rare-feature margins
+without unacceptable language-model loss regression?
 ```
 
-This question is downstream of A05/A06 and upstream of stronger A07 utility
+This question is downstream of A05/A06 margin preservation evidence and A06_22
+common/residual projector instability, and upstream of stronger A07 utility
 claims.
 
 ## Current Route
@@ -134,9 +137,16 @@ ordinary top-1 routing can collapse under uniform features
 -> A06_21 decomposes this buffer: controlled center-init preservation keeps
    positive current and cluster-aware margins with zero sign flips; the main
    negative pressure is feature-center drift, not router-side active tracking
+-> A06_23 sharpens this buffer claim: preservation has a finite safe-margin
+   threshold in the controlled no-position bridge; $q\ge0.05$ preserves, while
+   $q=0.02$ starts correct but crosses boundaries during training
 -> real-DCLM proxy routing exists at step 0 but ordinary training erases it
--> the next decision is to apply the same margin-budget audit to real-DCLM
-   proxy-init training
+-> A06_22 reproduces the real-DCLM collapse, but common/residual dominance
+   flips across common projectors, so "common causes collapse" is not yet a
+   stable claim
+-> the next decision is to turn nested learning into a falsifiable common/rare
+   routing audit: define a stable common operator, subtract it at routing time,
+   and test rare-feature margin, sign flips, and LM loss
 -> functional value must be tested through common/rare interference or expert
    utility, not load balance alone
 ```
@@ -149,8 +159,11 @@ Can claim:
 Controlled route-position feature partitions are reachable. Ordinary top-1
 routing does not naturally discover or preserve the right partition. In the
 controlled no-position bridge, center initialization preserves by a positive
-margin buffer, not by active router-center tracking. In real DCLM early
-training, proxy routing can be overwritten by step 5/10.
+margin buffer, not by active router-center tracking; A06_23 shows this buffer
+has a finite safe threshold rather than "any positive margin is enough." In
+real DCLM early training, proxy routing can be overwritten by step 5/10. A06_22
+shows that common/residual dominance is projector-dependent: mean-common
+supports common dominance, but top hidden-PC and router-row projectors do not.
 ```
 
 Cannot claim:
@@ -159,6 +172,8 @@ Cannot claim:
 Real semantic experts exist.
 Balanced load proves specialization.
 High route NMI proves expert utility.
+The current common projector is the true causal common operator.
+Common subtraction is already a validated routing method.
 A07 neural proxy already proves useful MoE specialization.
 Reverse KV retrieval follows from the current evidence.
 ```
@@ -191,16 +206,21 @@ Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_commo
 Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_02_router_center_tracking_preservation/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_03_feature_drift_margin_boundary/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_04_margin_crossing_causal_stress/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_robust_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
+daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
+daily_research_reports/0701/meeting_brief.md
 ```
 
 ## Active Mainline Sync Rule
@@ -277,25 +297,27 @@ Do not run another broad feature-existence sweep. The next useful protocol
 should decide one bottleneck:
 
 ```text
-real-DCLM margin-budget failure decomposition
+nested-learning-inspired common/rare routing audit
 ```
 
 Primary metric:
 
 ```text
-proxy_route_NMI at step 5/10 under fixed step-0 proxy labels
+rare-feature margin after routing on raw h versus common-subtracted (I-P_C)h
 ```
 
 Required guards:
 
 ```text
-LM loss, max load, active experts, common margin, and exact gate-input audit
+matched preserve fraction, proxy_route_NMI, current margin, sign-flip rate,
+LM loss, max load, active experts, common projector robustness, and exact
+gate-input audit
 ```
 
-If preservation succeeds, return to A07 utility on a preserved partition. If it
-fails, use A06_21-style diagnostics to separate weak step-0 residual margin,
-early margin consumption, common overwrite, token spread, expert feedback, and
-optimizer geometry before proposing another method.
+The protocol must first define $P_C$ as a physical common operator. If common
+dominance still flips across projectors as in A06_22, park method claims. If
+common-subtracted routing improves rare-feature margin and reduces sign flips
+without hurting LM loss, then write the next gating mechanism anchor.
 
 ## Root Surfaces
 

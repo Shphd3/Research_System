@@ -19,7 +19,8 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Write anchor design documents with one decision question, physical priors, math, computational realization, falsifiable tests, evidence, boundary, and next decision. |
 | `experiment-card-writer` | Write `protocol.md`, `summary.md`, and `detailed.md` from anchors. |
-| `handoff-report-writer` | Package existing anchor, protocol, summary, detailed, figures, and tables for meeting/collaborator/web handoff. |
+| `meeting-brief-writer` | Write or revise strict advisor-facing `meeting_brief.md` files. First read and strictly apply `templates/meeting/meeting_brief_template.md`. |
+| `handoff-report-writer` | Package existing anchor, protocol, summary, detailed, figures, tables, and finalized meeting material for collaborator/web/external handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
 | `sidecar-thinking` | Optional bridge to the local Sidecar app for review sessions and graph inspection. |
@@ -34,7 +35,8 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests with operational definitions, stage-local evidence, failure meaning, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |
-| External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
+| Meeting brief | `meeting-brief-writer` | Strict advisor-facing `meeting_brief.md`: current question, mechanism model, evidence, boundary, and next action. Must follow `templates/meeting/meeting_brief_template.md` mode one or mode two exactly. | Packaging, external sync, creating new claims, replacing anchors or result records. |
+| External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Writing the meeting brief itself; creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
 

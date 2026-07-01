@@ -13,8 +13,9 @@ expert partition?
 Current narrower decision:
 
 ```text
-Can a step-0 real-DCLM proxy partition be preserved through the step-5/10
-training window without unacceptable language-model loss regression?
+Can a nested-learning-inspired common/rare routing audit define a stable common
+operator and show that common-subtracted routing improves rare-feature margins
+without unacceptable language-model loss regression?
 ```
 
 ## Adjudication Ladder
@@ -63,13 +64,14 @@ wrong geometric objects, and early-training feedback. A06 shows that
 route-position feature geometry can be found and routed, all-position
 clustering is the wrong population, and controlled center initialization is
 preserved by positive margin buffer rather than active center tracking. A06_21
-now decomposes this buffer: controlled center-init keeps positive current and
-cluster-aware margins with zero sign flips, while invalid guards have negative
-margin and poor matched preserve fraction.
-Ordinary real-DCLM training can still erase a step-0 proxy partition. A07
-shows why value must be judged through common/rare interference or expert
-utility, but current neural evidence is not enough to claim real functional
-MoE specialization.
+decomposes this buffer; A06_23 sharpens it into a finite-threshold claim:
+$q\ge0.05$ preserves, while $q=0.02$ starts correct and still crosses routing
+boundaries during training. Ordinary real-DCLM training can erase a step-0
+proxy partition. A06_22 reproduces that collapse, but common/residual
+dominance flips across common projectors, so common is a candidate mechanism,
+not an established root cause. A07 shows why value must be judged through
+common/rare interference or expert utility, but current neural evidence is
+not enough to claim real functional MoE specialization.
 
 ## Source Links
 
@@ -86,16 +88,21 @@ Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_commo
 Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_02_router_center_tracking_preservation/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_03_feature_drift_margin_boundary/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_04_margin_crossing_causal_stress/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_robust_initialization/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
+daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
+daily_research_reports/0701/meeting_brief.md
 ```
 
 ## Boundary
@@ -110,8 +117,11 @@ prove semantic expert identity or causal expert utility.
 
 ## Next Decision
 
-Apply the A06_21 margin-budget audit to real-DCLM proxy-init training. The
-primary metric is `proxy_route_NMI` at step 5/10 under fixed step-0 proxy
-labels, with LM loss as the guard. The mechanism decision is whether failure
-comes from weak step-0 residual margin, early margin consumption, common
-overwrite, token spread, expert feedback, or optimizer geometry.
+Define a physically grounded common operator $P_C$ and run a bounded
+common-subtracted routing audit. Compare routing on raw $h$ with routing on
+$(I-P_C)h$. The primary metric is rare-feature margin; guards are matched
+preserve fraction, `proxy_route_NMI`, sign-flip rate, LM loss, max load, active
+experts, and projector robustness. If common dominance still flips by
+projector as in A06_22, park method claims. If common subtraction improves
+rare-feature margins without hurting LM loss, then write the next gating
+mechanism anchor.
