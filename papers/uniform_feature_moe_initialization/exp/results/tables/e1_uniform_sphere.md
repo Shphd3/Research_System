@@ -12,12 +12,6 @@
 | E1 | random | top1 | 128 | 4 | 0.0413799 | 1.11621 | 0.00109556 | 0.015564 |
 | E1 | random | top1 | 128 | 8 | 0.0572795 | 1.19778 | 0.00170684 | 0.01228 |
 | E1 | random | top1 | 128 | 16 | 0.0635952 | 1.24002 | 0.00204436 | 0.007484 |
-| E1 | symmetric | balanced_greedy | 64 | 4 | 0 | 1 | 3.99991e-12 | 0 |
-| E1 | symmetric | balanced_greedy | 64 | 8 | 0 | 1 | 8.00005e-12 | 0 |
-| E1 | symmetric | balanced_greedy | 64 | 16 | 0 | 1 | 1.60001e-11 | 0 |
-| E1 | symmetric | balanced_greedy | 128 | 4 | 0 | 1 | 3.99991e-12 | 0 |
-| E1 | symmetric | balanced_greedy | 128 | 8 | 0 | 1 | 8.00005e-12 | 0 |
-| E1 | symmetric | balanced_greedy | 128 | 16 | 0 | 1 | 1.60001e-11 | 0 |
 | E1 | symmetric | top1 | 64 | 4 | 0.00422162 | 1.0103 | 1.01721e-05 | 0.001494 |
 | E1 | symmetric | top1 | 64 | 8 | 0.00668913 | 1.02108 | 2.24431e-05 | 0.001452 |
 | E1 | symmetric | top1 | 64 | 16 | 0.0119025 | 1.04568 | 7.15917e-05 | 0.00157 |
