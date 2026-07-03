@@ -34,24 +34,19 @@
 \maketitle
 
 \begin{abstract}
-Uniform feature routing is often discussed through load-balancing heuristics or
-spectral diagnostics, but neither explains when an unconstrained top-1
-mixture-of-experts router should naturally use experts equally.  We isolate a
-minimal controlled setting and show that the answer is representation-geometric.
-If route-relevant token directions are uniform on the sphere and expert
-prototypes induce equal-measure spherical cells, then top-1 routing has uniform
-expected expert usage; regular-simplex prototypes give one constructive case.
-This result separates natural geometric balance from finite-token sampling noise
+We study when an unconstrained top-1 mixture-of-experts router naturally uses
+experts uniformly.  In a controlled setting, the answer is geometric: if
+route-relevant token directions are uniform on the sphere and expert prototypes
+induce equal-measure cells, then expected expert usage is uniform.  This
+sufficient condition separates natural balance from finite-token sampling noise
 and from capacity-constrained assignment, which can force equal counts without
-explaining the representation.  We further show that hidden spectral uniformity
-is only a second-order diagnostic: an isotropic-covariance distribution can still
-route nonuniformly when its directional support is not spherical.  Conversely,
-in a controlled elliptical family, whitening recovers the spherical direction
-model and restores the routing diagnostic.  Experiments mirror each claim,
-including spectral expert-prototype construction and a balanced-assignment
-control.  The paper therefore provides a clean baseline for uniform top-1
-routing, while making no claim about semantic expert identity, downstream
-utility, or training-time preservation.
+explaining the representation.  We also clarify the role of spectral language:
+covariance isotropy is only a second-order diagnostic and does not imply
+spherical directional uniformity, while whitening recovers the spherical model in
+a controlled elliptical family.  Spectral expert directions, including MPI-style
+router rows, are therefore candidate centers rather than balance guarantees.
+Synthetic experiments mirror these claims and make no claim about semantic
+expert identity, downstream utility, or training-time preservation.
 \end{abstract}
 
 \section{Introduction}
@@ -91,20 +86,15 @@ usage can be imbalanced even when the other side is well behaved.
 
 \paragraph{Contributions.}
 \begin{enumerate}
-\item We formulate the controlled uniform feature routing problem and separate
+\item We define the controlled uniform feature routing problem and separate
 feature-frequency uniformity, hidden spectral uniformity, directional
 uniformity, and expert-usage uniformity.
-\item We prove a $d$-dimensional sufficient condition for natural uniform top-1
-expert usage and give a regular-simplex corollary.
-\item We decompose observed finite-token imbalance into a fixed prototype-cell
-term and a sampling-noise term.
-\item We show that covariance spectral uniformity is only a second-order
-diagnostic by giving an isotropic-covariance counterexample with nonuniform
-routing.
-\item We connect expert principal singular directions and MPI-style routing to
-our story as center construction, not as a balance theorem.
-\item We provide synthetic experiments matching each theoretical claim and keep
-balanced assignment only as a non-geometric control.
+\item We prove a sufficient condition for natural top-1 usage balance, decompose
+finite-token imbalance, and show why covariance isotropy alone is not a routing
+certificate.
+\item We validate the theory with synthetic experiments, treating expert spectral
+prototypes as center construction and balanced assignment as a non-geometric
+control.
 \end{enumerate}
 
 \section{Problem Setup}
@@ -606,10 +596,12 @@ certify specialization.
 This discussion does not change the paper's main claim.  The paper studies
 static uniform usage under controlled geometry.  Training-time preservation is a
 separate margin problem: after initialization, feature centers, router rows, and
-expert matrices may drift.  A correct step-zero assignment is therefore
-insufficient unless the lower-tail routing margin is large enough to absorb that
-drift.  The slot-feature results motivate this boundary, but they are not used as
-evidence for the spherical theorem.
+expert matrices may drift.  For top-1 routing this is especially sharp, because
+crossing a decision boundary changes the selected expert discontinuously.  A
+correct step-zero assignment is therefore insufficient unless the lower-tail
+routing margin is large enough to absorb drift.  The slot-feature results
+motivate this boundary, but they are not used as evidence for the spherical
+theorem.
 
 \section{Scope and Limitations}
 
