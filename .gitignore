@@ -20,6 +20,10 @@ desktop.ini
 *.pdf
 *.pages
 
+# Curated paper artifacts for the uniform-feature MoE paper.
+!papers/uniform_feature_moe_initialization/latex/*.pdf
+!papers/uniform_feature_moe_initialization/latex/figures/*.pdf
+
 # LaTeX build outputs
 *.aux
 *.bbl

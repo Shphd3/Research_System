@@ -9,10 +9,10 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{graphicx}
 
 \newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
-\newtheorem{claim}{Claim}
 \newtheorem{remark}{Remark}
 
 \title{Uniform Feature Routing from Spectral Expert Prototypes}
@@ -25,99 +25,98 @@
 \maketitle
 
 \begin{abstract}
-This paper isolates the simplest case that must be understood before studying
-feature routing in real mixture-of-experts language models. We ask when uniformly
-occurring route-relevant features can be uniformly assigned to top-1 experts.
-The answer requires separating four notions that are often conflated: feature
-frequency, representation spectrum, representation geometry, and expert load.
-Our main observation is that expert-side spectral prototypes give a clean bridge
-between singular-value based router intuitions and uniform routing theory. If
-each expert is represented by the input-side principal singular direction of its
-expert matrix, and these expert spectral prototypes form a symmetric partition
-of a geometrically uniform feature space, then top-1 similarity routing gives
-uniform expert load in expectation. Finite token count only adds sampling noise;
-it does not fix imbalance caused by asymmetric prototype placement. If strict
-finite-sample uniformity is required, routing should be written as a balanced
-assignment problem. This draft gives the self-contained mathematical story and a
-minimal experimental protocol. It does not claim that short-context language
-model hidden states are naturally uniform, nor that expert specialization is
-preserved during training without a margin condition.
+This paper isolates a controlled routing problem that precedes claims about
+expert specialization in large language models: when do uniformly represented
+features receive uniform top-1 expert load?  The answer depends on two separate
+conditions.  On the token side, the route-relevant representation must be
+geometrically uniform, not merely frequency-balanced.  On the expert side, the
+routing prototypes must form a well-spread partition of that geometry.  We prove
+that uniform spherical features and equal-measure expert Voronoi cells imply
+uniform expected top-1 load.  We also show that random prototypes are balanced
+only after averaging over initializations; a single random realization has a
+non-vanishing geometric load floor.  Spectral expert prototypes, defined as the
+input-side principal singular directions of expert matrices, give a principled
+source of router centers and connect the result to singular-value based routing
+methods such as manifold power iteration.  Experiments on synthetic spherical,
+circular, spectral-prototype, balanced-assignment, and anisotropic-feature
+settings support the theory: prototype spread controls load balance, token count
+does not remove random-center imbalance, spectral alignment alone is not enough,
+explicit capacity-feasible assignment enforces empirical balance, and whitening
+restores balance when frequency-uniform features have an anisotropic spectrum.
 \end{abstract}
 
 \section{Introduction}
 
 Sparse mixture-of-experts (MoE) layers route each token to a small subset of
-experts and thereby increase model capacity under a fixed compute budget
-\citep{shazeer2017outrageously,fedus2022switch}. In a standard top-1 MoE layer,
-a router row acts as a vector proxy for an expert: the token is sent to the
-expert whose router row has the largest inner product with the token hidden
-state. This simple design creates a basic question that should be answered before
-studying large language models:
+experts and thereby increase parameter capacity under a fixed per-token compute
+budget \citep{shazeer2017outrageously,fedus2022switch}.  In a standard top-1
+MoE layer, a router row acts as a vector proxy for an expert: a token hidden
+state is sent to the expert whose row gives the largest inner product score.
+This simple rule raises a basic geometric question:
 \begin{quote}
 When features are uniform, what conditions make top-1 routing assign them
 uniformly to experts?
 \end{quote}
 
-The question sounds elementary but contains several different meanings of
-``uniform.'' Features may occur with equal frequency while their hidden states
-are highly anisotropic. A representation may have a flat covariance spectrum but
-still not be uniformly distributed over directions. Expert loads may be balanced
-without feature identity being preserved. Conversely, a router may align very
-well with experts while still creating load imbalance if the expert-side routing
-prototypes are clustered.
+The word ``uniform'' hides several distinct objects.  Feature ids may occur with
+equal frequency while their hidden states are highly anisotropic.  A
+representation may have an approximately flat covariance spectrum while still
+not be directionally uniform.  Expert load can be balanced without preserving
+feature identity.  Conversely, a router can align strongly with expert
+parameters and still route unevenly if the expert-side prototypes are clustered.
 
-This paper closes the cleanest version of the problem. We assume access to a
-route-relevant feature representation and ask what geometric conditions make a
-top-1 router uniformly dispatch these features. The story has three layers.
-First, in the ideal uniform feature space, symmetric expert prototypes partition
-the sphere into equal-measure regions, so top-1 routing gives uniform load in
-expectation. Second, random prototypes are balanced only after averaging over
-many initializations; in one realized model, they create unequal Voronoi cells
-that token count cannot remove. Third, expert principal singular directions give
-a natural source of prototypes. This is the point of contact with spectral router
-ideas such as Manifold Power Iteration (MPI), which explicitly drives router rows
-toward the principal singular directions of their associated expert matrices
-\citep{routermpi2026}. MPI supplies an expert-side prototype principle; our
-uniform-routing analysis states the additional geometric condition needed for
-uniform dispatch.
+This paper studies the cleanest version of the problem.  We assume that a
+route-relevant feature representation is available and ask which static geometry
+makes top-1 routing load-uniform.  The analysis has three parts.  First, under a
+uniform spherical token distribution, equal-measure spherical Voronoi regions
+give uniform expected load.  Second, random prototype placement creates unequal
+Voronoi cell masses in a single model instance; increasing token count reduces
+sampling noise but not this geometric floor.  Third, expert principal singular
+directions provide a natural source of expert prototypes.  This links the
+uniform-routing problem to manifold power iteration (MPI), which moves router
+rows toward expert principal directions \citep{routermpi2026}.  The link is
+conditional: spectral alignment supplies candidate centers, while uniform
+routing still requires those centers to be well spread over the feature
+geometry.
 
 \paragraph{Contributions.}
 \begin{enumerate}
-\item We formulate the uniform feature routing problem and distinguish frequency
-uniformity, spectral uniformity, geometric uniformity, and load uniformity.
-\item We prove the minimal ideal-case statement: uniform spherical features plus
-symmetric expert prototypes imply uniform expected expert load.
-\item We explain why random prototypes leave a persistent single-initialization
-load floor, using the two-dimensional circular Voronoi model.
-\item We connect singular-value based router intuition to the theory by treating
-expert principal singular directions as expert-side routing prototypes.
-\item We specify a minimal experiment plan that tests exactly the theoretical
-claims before moving to training dynamics or real language hidden states.
+\item We separate feature-frequency uniformity, spectral uniformity, geometric
+uniformity, and expert-load uniformity.
+\item We prove the ideal controlled statement: uniform spherical features and
+equal-measure prototype cells imply uniform expected top-1 load.
+\item We derive and validate the two-dimensional random-center load floor,
+separating prototype-geometry error from finite-token sampling error.
+\item We connect spectral router intuition to uniform routing by treating expert
+principal singular directions as expert-side routing prototypes.
+\item We provide synthetic evidence that spectral alignment is not sufficient
+for load balance, while whitening and explicit capacity-feasible assignment
+recover the corresponding controlled properties.
 \end{enumerate}
 
 \section{Problem Setup}
 
 \subsection{Top-1 routing}
 
-Let $h_i\in\mathbb{R}^d$ denote the route-relevant hidden state of token or
-example $i$. A top-1 MoE router has one row $r_e\in\mathbb{R}^d$ for each expert
-$e\in\{1,\ldots,E\}$. The routing score and routing decision are
+Let $h_i\in\mathbb{R}^d$ be the route-relevant representation of example $i$.
+A top-1 router has one row $r_e\in\mathbb{R}^d$ for each expert
+$e\in\{1,\ldots,E\}$.  The score and assignment are
 \begin{equation}
  s_e(h_i)=\langle h_i,r_e\rangle,
  \qquad
- a(h_i)=\arg\max_{e} s_e(h_i).
+ a(h_i)=\arg\max_e s_e(h_i).
 \end{equation}
-The empirical load of expert $e$ is
+The empirical expert load is
 \begin{equation}
  \widehat p_e=\frac{1}{N}\sum_{i=1}^N\mathbf{1}\{a(h_i)=e\}.
 \end{equation}
-The ideal load vector is uniform: $p_e^\star=1/E$.
+The target load vector is uniform: $p_e^\star=1/E$.
 
-\subsection{Four different uniformities}
+\subsection{Four uniformities}
 
 \begin{definition}[Feature-frequency uniformity]
-Feature ids $f\in\{1,\ldots,F\}$ are frequency-uniform if
-$\mathbb{P}(f)=1/F$ for all $f$.
+Discrete feature ids $f\in\{1,\ldots,F\}$ are frequency-uniform if
+$\mathbb{P}(f)=1/F$ for every feature.
 \end{definition}
 
 \begin{definition}[Spectral uniformity]
@@ -125,12 +124,12 @@ Let $\mu=N^{-1}\sum_i h_i$, $\bar h_i=h_i-\mu$, and
 \begin{equation}
  C=\frac{1}{N}\sum_{i=1}^N \bar h_i\bar h_i^\top.
 \end{equation}
-The representation is spectrally uniform when $C\approx\sigma^2 I$. We measure
-this by condition number, spectral entropy, and effective rank.
+The representation is spectrally uniform when $C\approx\sigma^2 I$.  We report
+the covariance condition number, spectral entropy, and effective rank.
 \end{definition}
 
 \begin{definition}[Geometric uniformity]
-After centering and optional whitening, define
+After centering and whitening, define
 \begin{equation}
  z_i=\frac{C^{-1/2}\bar h_i}{\|C^{-1/2}\bar h_i\|_2}.
 \end{equation}
@@ -139,26 +138,26 @@ on the unit sphere $\mathbb{S}^{d-1}$.
 \end{definition}
 
 \begin{definition}[Expert-load uniformity]
-The router is load-uniform when $\widehat p_e\approx 1/E$ for every expert.
+A router is load-uniform when $\widehat p_e\approx 1/E$ for every expert.
 \end{definition}
 
-The central point is that these definitions are not interchangeable. Equal
-feature frequency does not imply geometric uniformity. Spectral uniformity is a
-second-order condition and does not by itself force the router Voronoi regions to
-have equal mass. Load uniformity can also be obtained by explicit capacity
-constraints even when the geometry is not uniform.
+These definitions are not interchangeable.  Equal feature frequency does not
+imply geometric uniformity.  Spectral uniformity is a second-order condition and
+does not by itself force router Voronoi regions to have equal mass.  Load
+uniformity can also be imposed by a capacity constraint even when the underlying
+geometric routing rule is imbalanced.
 
 \section{Uniform Routing Theory}
 
-\subsection{Ideal symmetric prototype routing}
+\subsection{Spherical prototype routing}
 
-Let $u_1,\ldots,u_E\in\mathbb{S}^{d-1}$ be expert prototypes. They may be router
-rows directly, or they may be obtained from expert matrices as described in
-Section~\ref{sec:spectral_prototypes}. Define top-1 similarity routing by
+Let $u_1,\ldots,u_E\in\mathbb{S}^{d-1}$ be expert prototypes.  They may be
+router rows directly or may be obtained from expert matrices as in
+Section~\ref{sec:spectral_prototypes}.  Define top-1 similarity routing by
 \begin{equation}
- a(z)=\arg\max_e \langle z,u_e\rangle.
+ a(z)=\arg\max_e \langle z,u_e\rangle .
 \end{equation}
-The prototype $u_e$ owns the spherical Voronoi region
+Prototype $u_e$ owns the spherical Voronoi region
 \begin{equation}
  V_e=\{z\in\mathbb{S}^{d-1}:\langle z,u_e\rangle\geq
  \langle z,u_j\rangle,\;\forall j\}.
@@ -166,50 +165,45 @@ The prototype $u_e$ owns the spherical Voronoi region
 
 \begin{proposition}[Uniform expected load]
 Assume $z\sim\mathrm{Unif}(\mathbb{S}^{d-1})$ and
-$V_1,\ldots,V_E$ form a symmetric equal-measure partition of the sphere. Then
+$V_1,\ldots,V_E$ form an equal-measure partition of the sphere.  Then
 \begin{equation}
- \mathbb{P}(a(z)=e)=\frac{1}{E},\qquad \forall e.
+ \mathbb{P}(a(z)=e)=\frac{1}{E},\qquad \forall e,
 \end{equation}
-Therefore, for $N$ independent tokens,
-\begin{equation}
- \mathbb{E}[N\widehat p_e]=\frac{N}{E}.
-\end{equation}
+and therefore $\mathbb{E}[\widehat p_e]=1/E$ for $N$ independent examples.
 \end{proposition}
 
 \paragraph{Proof.}
-The uniform measure on $\mathbb{S}^{d-1}$ is invariant under rotations. By the
-symmetric equal-measure assumption, every Voronoi region can be mapped to every
-other region by a measure-preserving rotation. Hence all $V_e$ have the same
-measure. Since their union covers the sphere up to measure-zero boundaries, each
-region has mass $1/E$.
+The uniform measure on $\mathbb{S}^{d-1}$ is invariant under rotations.  If the
+prototype cells form an equal-measure partition, each cell has the same
+probability mass.  The cells cover the sphere up to measure-zero decision
+boundaries, so each has mass $1/E$.
 
 \paragraph{Finite-token effect.}
-For fixed equal-mass regions, the empirical load fluctuates around $1/E$. A
-standard concentration heuristic gives
+For fixed equal-mass cells, empirical load fluctuates around $1/E$.  A standard
+concentration scale is
 \begin{equation}
  \max_e\left|\widehat p_e-\frac{1}{E}\right|
  =O_p\left(\sqrt{\frac{\log E}{N}}\right).
 \end{equation}
-Thus finite token count creates sampling noise, but this noise decreases with
-$N$.
+This term is sampling noise.  It decreases with token count when the underlying
+cell masses are already equal.
 
-\subsection{Random prototypes are not enough}
+\subsection{Random prototypes}
 
-The previous result requires a symmetric prototype geometry. Random prototypes
-are unbiased across repeated initializations, but they are not balanced in one
-realized initialization. The cleanest illustration is the two-dimensional circle.
-Tokens are uniformly distributed as $x(\theta)=(\cos\theta,\sin\theta)$, and
-expert centers have random angles. Sorting the expert angles creates circular
-gaps $G_1,\ldots,G_E$. For random centers,
+Random prototype draws are balanced in expectation over many initializations,
+but a single realized model can be imbalanced.  The cleanest illustration is the
+unit circle.  Tokens are $x(\theta)=(\cos\theta,\sin\theta)$ with
+$\theta\sim\mathrm{Unif}[0,2\pi)$, and expert centers have random angles.  Sort
+the expert angles and let $G_1,\ldots,G_E$ be the circular gaps as fractions of
+the full circle.  For random centers,
 \begin{equation}
  (G_1,\ldots,G_E)\sim\mathrm{Dirichlet}(1,\ldots,1).
 \end{equation}
-The cell mass of expert $j$ is half of the gap on its left plus half of the gap
-on its right:
+The cell mass of expert $j$ is half of the left gap plus half of the right gap:
 \begin{equation}
  p_j=\frac{G_{j-1}+G_j}{2}.
 \end{equation}
-Therefore $\mathbb{E}[p_j]=1/E$, but the realized cell size has variance
+Thus $\mathbb{E}[p_j]=1/E$, but the realized cell size has variance
 \begin{equation}
  \mathrm{Var}(p_j)=\frac{E-2}{2E^2(E+1)}.
 \end{equation}
@@ -217,25 +211,27 @@ The relative standard deviation is
 \begin{equation}
  E\sqrt{\mathrm{Var}(p_j)}=\sqrt{\frac{E-2}{2(E+1)}}.
 \end{equation}
-This does not vanish with more sampled tokens. More tokens only estimate the
-unequal cells more accurately.
+This quantity does not vanish as token count increases.
 
-\paragraph{Load decomposition.}
+\paragraph{Error decomposition.}
 For fixed cell masses $p_1,\ldots,p_E$ and empirical loads $\widehat p_e$,
 \begin{equation}
  \widehat p_e-\frac{1}{E}
- =\left(p_e-\frac{1}{E}\right)+\left(\widehat p_e-p_e\right).
+ =
+ \left(p_e-\frac{1}{E}\right)
+ +
+ \left(\widehat p_e-p_e\right).
 \end{equation}
-The first term is prototype-geometry error. The second term is finite-token
-sampling error. A large $N$ removes the second term, not the first.
+The first term is prototype-geometry error.  The second term is finite-token
+sampling error.  More tokens remove the second term, not the first.
 
-\subsection{Strict finite-sample uniformity}
-\label{sec:strict_finite_sample}
+\subsection{Capacity-feasible empirical balance}
+\label{sec:balanced_assignment}
 
-When exact empirical balance is required, the routing step should be written as
-a capacity-constrained assignment. Let $A_{ie}\in\{0,1\}$ indicate that token $i$
-is assigned to expert $e$. Given similarity scores $S_{ie}=\langle z_i,u_e\rangle$,
-solve
+If exact empirical balance is required for a finite batch, routing can be posed
+as a capacity-constrained assignment.  Let $A_{ie}\in\{0,1\}$ indicate that
+example $i$ is assigned to expert $e$.  Given scores
+$S_{ie}=\langle z_i,u_e\rangle$, the exact balanced assignment solves
 \begin{align}
  \max_A \quad & \sum_{i=1}^N\sum_{e=1}^E A_{ie}S_{ie}, \\
  \text{s.t.}\quad & \sum_{e=1}^E A_{ie}=1,\qquad \forall i, \\
@@ -243,171 +239,275 @@ solve
  \left\{\left\lfloor\frac{N}{E}\right\rfloor,
  \left\lceil\frac{N}{E}\right\rceil\right\},\qquad \forall e.
 \end{align}
-This assignment gives strict load uniformity by construction. It should be
-reported as a deeper controlled baseline: it answers the finite-token version of
-the uniform-routing problem, while unconstrained top-1 routing answers the
-geometric expectation version.
+This formulation separates two questions.  Unconstrained top-1 routing tests
+the geometry of the prototype partition.  Capacity-feasible assignment tests how
+much score must be traded to enforce strict empirical balance.
 
 \section{Spectral Expert Prototypes}
 \label{sec:spectral_prototypes}
 
-The preceding section assumes that expert prototypes $u_e$ already exist. The
-spectral router intuition explains where they can come from. Let $W_e$ denote an
-input-side expert weight matrix, for example the gate projection of a GLU expert.
-A row-vector router prototype should represent the input direction to which the
-expert is most sensitive. Define the expert spectral prototype by
+The previous section treats expert prototypes as given.  Spectral routing gives
+a principled way to construct them from expert parameters.  Let $W_e$ be an
+input-side expert weight matrix.  Define the spectral prototype of expert $e$ as
 \begin{equation}
  v_e\in\arg\max_{\|v\|_2=1}\|v^\top W_e\|_2^2.
 \end{equation}
-Equivalently, $v_e$ is a top eigenvector of $W_eW_e^\top$, i.e., the input-side
+Equivalently, $v_e$ is a top eigenvector of $W_eW_e^\top$, the input-side
 principal singular direction of $W_e$.
 
-This connects directly to MPI-style routers. MPI updates a router row by a power
-iteration step followed by norm retraction:
+MPI-style routing approximates this direction by repeatedly multiplying the
+router row through the expert input covariance and retracting the row norm:
 \begin{equation}
  \widehat r_e=r_e W_eW_e^\top,
  \qquad
  r'_e=C\frac{\widehat r_e}{\|\widehat r_e\|_2}.
 \end{equation}
-Repeated application drives $r_e$ toward the principal eigendirection of
-$W_eW_e^\top$ when a spectral gap is present. The update therefore supplies an
-expert-side prototype construction, while the retraction fixes row norm and
-prevents norm scale from dominating routing logits.
+When a spectral gap is present, repeated power steps align $r_e$ with the
+principal eigendirection of $W_eW_e^\top$.  This provides expert-side prototype
+construction.  It does not, by itself, guarantee that the set
+$\{v_e\}_{e=1}^E$ is uniformly spread over the feature space.
 
 \begin{remark}[Alignment is not balance]
-Router--expert spectral alignment and load balance are different properties.
-MPI-style alignment can make $r_e$ a better proxy for expert $e$, but it does not
-by itself guarantee that the set $\{v_e\}_{e=1}^E$ is uniformly spread over the
-feature space. If the expert principal directions are clustered around a common
-direction, then a highly aligned router can still induce imbalanced routing.
+Router-expert spectral alignment and expert-load uniformity are distinct
+properties.  If expert principal directions are clustered around a common
+direction, a router can be highly aligned with every expert while still
+partitioning the feature space unevenly.
 \end{remark}
 
-This is the central bridge between the singular-value intuition and the uniform
-routing theorem:
-\begin{quote}
-Expert singular directions provide natural centers; uniform routing additionally
-requires those centers to form a well-spread partition of the feature geometry.
-\end{quote}
+\section{Experiments}
 
-\section{Controlled Baseline}
+\subsection{Setup and metrics}
 
-The minimal static baseline has three variants.
+All experiments are synthetic and static: no language model is trained, and no
+semantic expert claim is evaluated.  The goal is to test the controlled theorem
+and its boundaries.  Unless stated otherwise, features are sampled from a
+unit sphere, routed by inner product against expert prototypes, and aggregated
+over random seeds.
 
-\paragraph{Exact spectral-prototype router.}
-For each expert matrix $W_e$, compute the input-side top singular direction
-$v_e$, normalize it, and route by
+The primary load metric is load coefficient of variation,
 \begin{equation}
- a(z)=\arg\max_e\langle z,v_e\rangle.
+ \mathrm{LoadCV}
+ =
+ \frac{\mathrm{std}(\widehat p_1,\ldots,\widehat p_E)}
+ {\mathrm{mean}(\widehat p_1,\ldots,\widehat p_E)}.
 \end{equation}
-This tests the ideal version of the advisor/MPI intuition.
-
-\paragraph{MPI-approximated router.}
-Initialize random rows $r_e^{(0)}$ and apply one or more power-then-retract steps
+We also report max/min load ratio and maximum absolute load error.  Spectral
+alignment is
 \begin{equation}
- r_e^{(t+1)}=C\frac{r_e^{(t)}W_eW_e^\top}
- {\|r_e^{(t)}W_eW_e^\top\|_2}.
+ \lambda_e =
+ \frac{\|r_e^\top W_e\|_2}{\|r_e\|_2\|W_e\|_2},
 \end{equation}
-This tests whether the lightweight online approximation recovers the same
-prototype geometry as exact SVD.
+where $\lambda_e=1$ means the router row aligns with the expert's principal
+input-side singular direction.  For anisotropic features we report covariance
+condition number and effective rank.
 
-\paragraph{Balanced spectral assignment.}
-Use the same spectral prototypes but replace unconstrained top-1 routing with
-the capacity-constrained assignment in Section~\ref{sec:strict_finite_sample}.
-This tests the strict finite-sample version of the problem.
+\subsection{Prototype geometry controls load}
 
-\paragraph{Feature preprocessing.}
-For token features, report raw, centered, normalized, and whitened variants.
-This is essential because next-token hidden states can be strongly anisotropic.
-The uniform theorem applies to the whitened/geometrically uniform idealization;
-it does not claim that raw short-sequence Transformer states satisfy this
-assumption.
+The first experiment samples $N=100000$ examples from $\mathbb{S}^{63}$ and
+routes them to $E=8$ experts.  Symmetric prototypes are regular-simplex rows;
+random prototypes are independent unit vectors; clustered prototypes are
+perturbations of a shared direction.  A capacity-feasible balanced assignment is
+included as an empirical-balance baseline.
 
-\section{What The Experiments Must Establish}
-
-The experiment section should not begin with training dynamics. It should first
-validate the static geometry.
-
-\begin{table}[h]
+\begin{table}[t]
 \centering
-\caption{Required experimental claims and their corresponding tests.}
-\begin{tabular}{p{0.08\linewidth}p{0.38\linewidth}p{0.42\linewidth}}
+\caption{Uniform-sphere routing with $d=64$ and $E=8$.  Symmetric prototypes
+nearly eliminate load variation; clustered prototypes create a much larger
+load imbalance.}
+\label{tab:uniform_sphere}
+\begin{tabular}{lccc}
 \toprule
-ID & Claim & Minimal test \\
+Prototype / assignment & Load CV $\downarrow$ & Max/min load $\downarrow$
+& Max abs. error $\downarrow$ \\
 \midrule
-E1 & Symmetric prototypes route uniform features uniformly. & Sample uniform
-sphere features; compare symmetric, random, clustered, and balanced prototypes. \\
-E2 & Random prototype imbalance is a geometry floor, not token noise. & Use the
-2D circle model; record true Voronoi mass, empirical load, initialization error,
-and sampling error across token counts. \\
-E3 & Expert principal singular directions can serve as router centers. & Build
-expert matrices with controlled top singular directions; compare exact SVD
-prototypes and MPI-approximated prototypes. \\
-E4 & Strict finite-token uniformity requires balanced assignment. & Compare
-unconstrained top-1 routing with exact or approximate capacity-constrained
-assignment. \\
-E5 & Nonuniform feature spectra break the raw theorem assumptions. & Generate
-anisotropic features and test raw, centered, normalized, whitened, and
-whitened-balanced routing. \\
-E6 & Training preservation is a separate margin question. & Use existing A06
-margin-threshold evidence or a small optional bridge; do not make it the main
-claim. \\
+Symmetric top-1 & 0.0067 & 1.021 & 0.00145 \\
+Random top-1 & 0.0657 & 1.227 & 0.01451 \\
+Clustered top-1 & 0.1349 & 1.574 & 0.03580 \\
+Symmetric balanced & 0.0000 & 1.000 & 0.00000 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The detailed implementation plan lives in
-\texttt{papers/uniform\_feature\_moe\_initialization/exp/}. The main paper should
-only include result tables after these tests are run.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/prototype_geometry_load.pdf}
+\caption{Uniform token features do not alone determine expert load.  With the
+same feature distribution, prototype geometry changes load variation by more
+than an order of magnitude.}
+\label{fig:prototype_geometry}
+\end{figure}
 
-\section{Claim Boundary}
+Table~\ref{tab:uniform_sphere} and Figure~\ref{fig:prototype_geometry} support
+the first theoretical condition: load uniformity follows from the combination
+of uniform token geometry and well-spread prototypes, not from token-side
+uniformity alone.
 
-This paper can claim a closed controlled case:
-\begin{enumerate}
-\item under geometric uniformity, symmetric expert prototypes give uniform
-expected load;
-\item finite token count creates sampling error that decreases with $N$;
-\item random prototype placement creates a single-initialization geometry floor;
-\item expert principal singular directions are a principled source of prototypes;
-\item exact load uniformity requires balanced assignment.
-\end{enumerate}
+\subsection{Random centers create a geometric load floor}
 
-This paper should not claim that short-context next-token hidden states are
-naturally uniform. In fact, short sequence tasks are likely to produce a common
-component and anisotropic spectrum, especially with residual connections. Such
-experiments are valuable later as nonuniform-spectrum diagnostics, but they
-should not be required to close the present ideal case.
+The second experiment implements the circular Voronoi model.  For
+$E\in\{4,8,16\}$ random centers, we compare the initialization error
+$E\max_j |p_j-1/E|$, the sampling error $E\max_j|\widehat p_j-p_j|$, and the
+total observed error $E\max_j|\widehat p_j-1/E|$ as token count grows.
 
-\section{Discussion}
+\begin{table}[t]
+\centering
+\caption{Two-dimensional random-center routing.  Sampling error shrinks with
+token count, while the initialization error remains fixed for the same random
+center realization.}
+\label{tab:geometry_floor}
+\begin{tabular}{ccccc}
+\toprule
+Experts & Tokens & Init. error $\downarrow$ & Sampling error $\downarrow$
+& Total error $\downarrow$ \\
+\midrule
+4 & $10^3$ & 0.500 & 0.075 & 0.525 \\
+4 & $10^5$ & 0.500 & 0.007 & 0.504 \\
+8 & $10^3$ & 1.138 & 0.148 & 1.145 \\
+8 & $10^5$ & 1.138 & 0.015 & 1.138 \\
+16 & $10^3$ & 1.472 & 0.287 & 1.486 \\
+16 & $10^5$ & 1.472 & 0.028 & 1.473 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-The story clarifies the role of training dynamics. Initial uniform assignment
-and training-time preservation are separate. The static theory says when a
-router sends a uniform feature distribution uniformly to experts at a given time.
-Training can later move router rows, expert matrices, or feature centers. A
-positive lower-tail margin is therefore needed for preservation. Existing A06
-results already support the idea that a thin positive margin can fail while a
-thicker margin can survive. Those results should be used as supporting context,
-not as the main proof of uniform routing.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.76\linewidth]{figures/geometry_floor_sampling.pdf}
+\caption{Increasing token count reduces finite-sample noise but leaves the
+random-center geometry floor unchanged.  This validates the load decomposition
+into prototype-geometry error and sampling error.}
+\label{fig:geometry_floor}
+\end{figure}
 
-The same separation also clarifies the role of residual connections. If residual
-paths preserve a large common component, then hidden states may be spectrally
-anisotropic even when feature frequencies are equal. In that case the experiment
-has moved from the uniform case to the nonuniform-spectrum case. The correct
-controlled response is to measure the spectrum, whiten or remove the common
-component, and then test whether the uniform theorem becomes predictive again.
+Table~\ref{tab:geometry_floor} and Figure~\ref{fig:geometry_floor} confirm
+that random prototypes are not a solution to the single-initialization load
+problem.  They are unbiased across draws, but a realized model inherits unequal
+cell masses.
+
+\subsection{Spectral prototypes give centers, not balance}
+
+The third experiment constructs synthetic expert matrices whose input-side top
+singular directions are prescribed as symmetric, random, or clustered
+prototypes.  We compare exact singular-vector prototypes, one-step MPI, five-step
+MPI, and random router rows.  The key question is whether high expert alignment
+is sufficient for balanced routing.
+
+\begin{table}[t]
+\centering
+\caption{Spectral prototypes recover expert directions, but load balance still
+depends on prototype spread.}
+\label{tab:spectral_prototypes}
+\begin{tabular}{llccc}
+\toprule
+Prototype geometry & Router & Alignment $\uparrow$ & Load CV $\downarrow$
+& Max/min load $\downarrow$ \\
+\midrule
+Symmetric & Exact SVD & 1.000 & 0.009 & 1.030 \\
+Symmetric & MPI-1 & 0.975 & 0.025 & 1.094 \\
+Symmetric & MPI-5 & 1.000 & 0.009 & 1.030 \\
+Clustered & Exact SVD & 1.000 & 0.161 & 1.631 \\
+Clustered & MPI-1 & 0.977 & 0.195 & 1.788 \\
+Clustered & MPI-5 & 1.000 & 0.161 & 1.631 \\
+Random rows & No expert alignment & 0.098 & 0.074 & 1.281 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/spectral_alignment_not_balance.pdf}
+\caption{High spectral alignment does not imply load balance.  Clustered exact
+SVD and MPI rows align with their experts, but their load variation remains
+large because the recovered expert directions are not well spread.}
+\label{fig:spectral_alignment}
+\end{figure}
+
+Table~\ref{tab:spectral_prototypes} and Figure~\ref{fig:spectral_alignment}
+support the conditional role of spectral routing.  Expert singular directions
+are meaningful centers, and MPI recovers them when the synthetic expert has a
+dominant singular direction.  The load theorem still requires the recovered
+centers to form a balanced partition of the feature geometry.
+
+\subsection{Capacity-feasible assignment and anisotropic features}
+
+Capacity-feasible assignment, formalized in
+Section~\ref{sec:balanced_assignment}, enforces strict empirical load balance
+for a finite batch.  In the tested $d=64,E=8,N=4096$ setting, the greedy feasible
+assignment reduces LoadCV to $0$ for symmetric, random, and clustered
+prototypes.  The mean selected-score drops are small but geometry-dependent:
+$0.00059$ for symmetric prototypes, $0.00190$ for random prototypes, and
+$0.00538$ for clustered prototypes.  These values are empirical costs of the
+greedy feasible assignment, not optimality certificates for the exact assignment
+problem.
+
+The final experiment tests frequency-uniform but spectrally anisotropic
+features.  Starting from $z\sim\mathrm{Unif}(\mathbb{S}^{63})$, we form
+$h=Dz$ with $D=\mathrm{diag}(\alpha,1,\ldots,1)$.  The router prototypes remain
+symmetric.  As $\alpha$ grows, the raw representation violates the uniform
+spherical assumption.  Whitening and renormalization restore the controlled
+geometry.
+
+\begin{table}[t]
+\centering
+\caption{Anisotropic but frequency-uniform features.  Raw routing becomes
+imbalanced as the covariance condition number grows; whitening restores the
+uniform-routing regime.}
+\label{tab:anisotropy}
+\begin{tabular}{ccccc}
+\toprule
+$\alpha$ & Raw cond. no. $\downarrow$ & Raw LoadCV $\downarrow$
+& Whitened cond. no. $\downarrow$ & Whitened LoadCV $\downarrow$ \\
+\midrule
+1 & 1.10 & 0.008 & 1.00 & 0.005 \\
+2 & 4.20 & 0.409 & 1.00 & 0.005 \\
+5 & 26.22 & 0.816 & 1.00 & 0.005 \\
+10 & 104.88 & 0.972 & 1.00 & 0.005 \\
+20 & 419.52 & 1.053 & 1.00 & 0.005 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.76\linewidth]{figures/anisotropy_whitening.pdf}
+\caption{Feature frequency can remain uniform while representation geometry
+becomes highly anisotropic.  Raw top-1 routing becomes imbalanced under this
+anisotropy; whitening returns the feature distribution to the regime described
+by the uniform-routing theorem.}
+\label{fig:anisotropy}
+\end{figure}
+
+Table~\ref{tab:anisotropy} and Figure~\ref{fig:anisotropy} show that the raw
+load imbalance tracks spectral anisotropy, while whitening returns both the
+condition number and LoadCV to the controlled uniform regime.
+
+\section{Scope and Limitations}
+
+The results establish a controlled static routing statement.  They do not show
+that natural language hidden states are geometrically uniform, that learned MoE
+experts become semantic specialists, or that a balanced initial assignment is
+preserved during training.  Training can move feature centers, router rows, and
+expert matrices, so preservation requires additional margin and dynamics
+analysis.  The spectral-prototype experiments use synthetic expert matrices with
+prescribed singular directions; they test the geometry of spectral centers, not
+full-scale language-model transfer.  The balanced-assignment experiment uses a
+deterministic capacity-feasible procedure, so its score drops are empirical
+costs for that procedure rather than exact optimal costs.
 
 \section{Conclusion}
 
-Uniform feature routing is not solved by saying that features occur equally
-often, nor by saying that router rows align with expert spectra. The clean case
-requires both a token-side condition and an expert-side condition: the feature
-geometry must be uniform, and the expert prototypes must be well spread. Under
-these conditions, top-1 similarity routing gives uniform expected load; strict
-finite-sample load uniformity is obtained by balanced assignment. Spectral expert
-prototypes, including MPI-style principal-direction routers, provide a natural
-source of centers, but they do not remove the need to check prototype spread and
-feature anisotropy. This controlled result is the proper baseline before moving
-to Zipfian features, common/rare hierarchy, residual-induced anisotropy, or
-training-time specialization.
+Uniform feature routing requires both token-side and expert-side structure.
+Equal feature frequency is not enough: the route-relevant representation must be
+geometrically uniform, or be transformed into such a geometry.  Spectral expert
+prototypes are a principled way to obtain router centers, but alignment with
+expert singular directions does not guarantee load balance unless those
+directions are well spread.  Random prototypes remove bias only across repeated
+initializations, not within one realized model.  When exact finite-batch balance
+is required, capacity-feasible assignment supplies a separate balancing
+constraint and exposes its score cost.  This controlled result is the baseline
+case that must be closed before studying nonuniform feature frequencies,
+common-direction spectra, training-time preservation, or semantic expert
+utility.
 
 \bibliographystyle{iclr2026_conference}
 \bibliography{references}

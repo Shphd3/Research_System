@@ -20,7 +20,8 @@ Current files:
 |---|---|
 | `latex/paper.tex` | first ICLR-style LaTeX draft |
 | `latex/references.bib` | minimal bibliography and placeholders |
-| `experiment_plan.md` | experiment plan requested by the 2026-07-03 meeting |
+| `exp/EXPERIMENT_PLAN.md` | current experiment plan for the static spectral-prototype paper |
+| `exp/results/` | current synthetic E1--E5 result tables |
 | `template/SOURCE.md` | template source record |
 | `template/iclr2026.zip` | official ICLR 2026 template zip |
 | `template/iclr2026_official/` | unzipped official template |
