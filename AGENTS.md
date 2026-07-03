@@ -490,15 +490,24 @@ The repository root should stay small:
 - `prompts/`
 - `skills/`
 - `paper_reading/`
+- `papers/`
 - `daily_research_reports/`
 
 Root-level `sync/` stores compact research-line summaries and current-state
 maps for agents that should not enter project repositories. The active root
 sync entry is listed in `PROJECTS.md`.
 
+Root-level `papers/` stores paper-writing workspaces: conference templates,
+paper drafts, figure plans, related writing notes, and paper-specific source
+maps. A paper workspace may copy official venue templates locally. It must not
+replace project-local anchors, protocols, `summary.md`, `detailed.md`, or root
+sync entries as the source of research truth; paper claims must link back to
+those source artifacts and preserve their claim boundaries.
+
 Root-level `templates/` is the only maintained reusable-template folder.
 Do not add new reusable templates under `daily_research_reports/`, `docs/`,
-`paper_reading/`, or project folders by default.
+`paper_reading/`, `papers/` beyond paper-specific venue templates, or project
+folders by default.
 
 ## Execution Boundary
 
