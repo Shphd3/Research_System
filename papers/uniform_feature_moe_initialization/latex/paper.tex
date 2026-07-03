@@ -8,8 +8,11 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 
-\title{Uniform Feature Routing in Top-1 MoE: A Center-Initialization Baseline}
+\newtheorem{proposition}{Proposition}
+
+\title{Uniform Spectral Feature Routing in Top-1 MoE: A Controlled Baseline}
 
 \author{Anonymous Authors}
 
@@ -19,186 +22,144 @@
 \maketitle
 
 \begin{abstract}
-This draft isolates the simplest case of feature-level expert specialization:
-features appear with equal frequency, route-relevant hidden states have
-approximately uniform geometry, and the goal is only to distribute these
-features evenly across a top-1 mixture-of-experts router. We argue that this
-case should be closed before studying Zipf frequency, common/rare imbalance, or
-real-language semantics. In the uniform setting, random top-1 router centers
-are unbiased only in expectation; in a single initialization they induce
-unequal Voronoi cells. A center-initialized router gives the clean baseline:
-compute route-relevant feature centers, set equal-norm router rows from those
-centers, and require a positive lower-tail margin. Existing controlled results
-support the key preservation claim: feature assignments survive training only
-when the initial margin exceeds a finite basin thickness. Warmup, expert
-spectral directions, common subtraction, and manifold power iteration provide
-useful diagnostics, but they do not replace route-relevant center
-initialization in the current controlled bridge. The draft states the theory,
-the current evidence, the rival explanations, and the remaining experiments
-needed to turn this into a complete internal paper.
+This draft closes the simplest controlled case behind feature-level MoE routing.
+We study when uniformly occurring features can be routed uniformly across top-1
+experts. The key distinction is that feature-frequency uniformity, spectral
+uniformity, geometric uniformity, and expert-load uniformity are different
+requirements. In an ideal uniform representation space, symmetric expert
+prototypes induce equal Voronoi mass and therefore uniform expert load in
+expectation. If strict finite-sample balance is needed, the routing step can be
+written as a balanced assignment problem. The paper is therefore a controlled
+baseline, not a deployed router for real language data.
 \end{abstract}
 
 \section{Introduction}
 
 Sparse mixture-of-experts (MoE) models promise conditional computation, but a
 top-1 router is useful only if routed experts receive coherent and useful
-features \citep{shazeer2017outrageously,fedus2022switch}. In our current
-research line, the broad question is whether top-1 routing can form stable,
-interpretable feature-level expert specialization. The advisor's instruction in
-the July 3 meeting was narrower: before discussing nonuniform spectra,
-common/rare features, or language data, first finish the simplest uniform case.
+features \citep{shazeer2017outrageously,fedus2022switch}. This draft asks one
+narrow question: if route-relevant features occur uniformly and the hidden
+representation space is spectrally and geometrically uniform, can a top-1 MoE
+router assign them uniformly to experts?
 
-This paper draft is therefore not a method paper for real language. It is a
-controlled-case closure draft. The target statement is:
+The answer is yes under explicit conditions. If normalized features are uniform
+on the sphere and expert prototypes form a symmetric partition, top-1 similarity
+routing gives equal expert probability mass. If strict empirical balance is
+required, the assignment can be constrained directly. This paper deliberately
+stops before the harder cases: Zipf frequency, common/rare hierarchy, nonuniform
+spectra, and real language hidden states.
 
-\begin{quote}
-If feature frequencies are uniform and the route-relevant representation space
-is geometrically uniform, then the first clean solution is center-initialized
-top-1 routing with an explicit margin-preservation guard.
-\end{quote}
-
-This clean case matters because later failures can otherwise be misattributed.
-If uniform features cannot be distributed and preserved, then failures in
-Zipfian data, common/rare hierarchy, or real hidden states may reflect an
-unfinished routing baseline rather than the harder mechanism.
-
-\paragraph{Contributions of this draft.}
-First, we define the uniform routing problem and separate load balance, feature
-identity, and expert utility. Second, we give a geometric model showing why
-random centers create persistent load imbalance even with uniform features.
-Third, we state the center-initialization baseline and a margin-preservation
-condition. Fourth, we summarize the controlled evidence from A06 experiments
-and list the missing experiments required for a complete paper.
+\paragraph{Contributions.}
+\begin{enumerate}
+\item We separate frequency uniformity, spectral uniformity, geometric
+uniformity, and expert-load uniformity.
+\item We state the minimal theorem showing that symmetric prototypes give uniform
+expected expert load under spherical uniformity.
+\item We define the necessary experiments for closing this controlled case.
+\item We position existing A06 results as margin-preservation evidence rather
+than as the full proof of the uniform spectral case.
+\end{enumerate}
 
 \section{Problem Setup}
 
-\paragraph{Uniform features.}
-There are $F$ synthetic features, indexed by $f\in\{1,\ldots,F\}$, each sampled
-with probability $1/F$. In the current experiments $F=4$. Uniform frequency
-removes the explanation that high-frequency features dominate the router simply
-because they produce more gradient updates.
-
-\paragraph{Route-relevant state.}
-For each example $i$, the model produces hidden states $h_{i,p}$ at positions
-$p$. A route-relevant state is a hidden state whose variation carries the
-feature needed for the target. In the controlled slot task, the positive-control
-route position is the final token of the repeated feature slot.
-
-\paragraph{Top-1 router.}
-The router has one row $w_e$ for each expert $e$. Its score is
+Let $h_i\in\mathbb{R}^d$ denote the route-relevant hidden state for sample $i$.
+Each sample has a feature id $f_i\in\{1,\ldots,F\}$, with uniform frequency
+\begin{equation}
+\mathbb{P}(f_i=f)=\frac{1}{F}.
+\end{equation}
+The top-1 router has one row $w_e$ per expert and computes
 \begin{equation}
 z_e(h)=w_e^\top h,\qquad r(h)=\arg\max_e z_e(h).
 \end{equation}
-The goal in the uniform case is not merely to make expert loads equal. The goal
-is to assign each feature to a distinct expert and preserve that assignment
-through training.
-
-\paragraph{Metrics.}
-Feature NMI measures agreement between feature id and routed expert id. It can
-show that features are separated, but it cannot prove that expert identities are
-preserved or useful. The stronger preservation metric is matched preserve
-fraction: the fraction of features still routed to their initially matched
-expert. The margin for feature $f$ against competitor $e$ is
+The empirical expert load is
 \begin{equation}
-\gamma_{f,e}(t)=\left(w_{a(f)}(t)-w_e(t)\right)^\top \mu_f(t),
+\hat p_e=\frac{1}{N}\sum_{i=1}^N\mathbf{1}\{r(h_i)=e\}.
 \end{equation}
-where $\mu_f(t)$ is the feature center and $a(f)$ is the matched expert. The
-lower-tail statistic, margin p05, is the fifth percentile of matched margins.
-It asks whether the weakest examples remain inside a positive routing basin.
 
-\section{Why Random Centers Are Not Enough}
-
-The two-dimensional circle model explains why uniform features do not make a
-random router balanced in a single run. Let tokens be points
-$x(\theta)=(\cos\theta,\sin\theta)$ on the unit circle, and let $m$ expert
-centers be random unit vectors with angles $\phi_j$. Top-1 cosine routing
-chooses the nearest center in angle. Each expert owns a circular Voronoi cell.
-
-Let $G_1,\ldots,G_m$ be the sorted circular gaps between adjacent random
-centers, measured as fractions of the full circle. For independent uniform
-centers,
+Let $\mu=N^{-1}\sum_i h_i$, $\bar h_i=h_i-\mu$, and
 \begin{equation}
-(G_1,\ldots,G_m)\sim \mathrm{Dirichlet}(1,\ldots,1).
+C=\frac{1}{N}\sum_i \bar h_i\bar h_i^\top.
 \end{equation}
-The cell owned by expert $j$ has probability mass
+Spectral uniformity means $C\approx \sigma^2 I$. Geometric uniformity means the
+normalized directions
 \begin{equation}
-p_j=\frac{G_{j-1}+G_j}{2}.
+z_i=\frac{C^{-1/2}\bar h_i}{\|C^{-1/2}\bar h_i\|_2}
 \end{equation}
-Therefore $\mathbb{E}[p_j]=1/m$, but a single initialization is not balanced.
-The variance is
+are approximately uniform on $\mathbb{S}^{d-1}$. Load uniformity means
+$\hat p_e\approx 1/E$. These notions are distinct; spectral uniformity alone is
+not sufficient for load uniformity under an arbitrary router.
+
+\section{Theory}
+
+Let $u_1,\ldots,u_E\in\mathbb{S}^{d-1}$ be expert prototypes. Define
 \begin{equation}
-\mathrm{Var}(p_j)=\frac{m-2}{2m^2(m+1)}.
+r(z)=\arg\max_e \langle z,u_e\rangle.
 \end{equation}
-The normalized standard deviation is
+Each expert owns a spherical Voronoi region
 \begin{equation}
-m\sqrt{\mathrm{Var}(p_j)}
-=\sqrt{\frac{m-2}{2(m+1)}}.
+V_e=\{z:\langle z,u_e\rangle\geq \langle z,u_j\rangle,\forall j\}.
 \end{equation}
-This does not vanish with more sampled tokens. It approaches $1/\sqrt{2}$ as
-$m$ grows.
 
-For finite token count $n$, the measured load $\hat p_j$ decomposes as
+\begin{proposition}[Uniform expected load]
+Assume $z\sim\mathrm{Unif}(\mathbb{S}^{d-1})$ and
+$V_1,\ldots,V_E$ form a symmetric equal-area partition of the sphere. Then
 \begin{equation}
-\hat p_j-\frac{1}{m}
-=
-\left(p_j-\frac{1}{m}\right)+(\hat p_j-p_j).
+\mathbb{P}(r(z)=e)=\frac{1}{E},\qquad \forall e.
 \end{equation}
-The second term is sampling error and decays like $O(n^{-1/2})$. The first term
-is initialization geometry and remains unless the centers are made evenly
-spaced or otherwise balanced.
+For $N$ independent samples, $\mathbb{E}[N\hat p_e]=N/E$.
+\end{proposition}
 
-\paragraph{Consequence.}
-The first clean router cannot be ``random top-1 plus many uniform tokens.'' It
-must control center geometry. This motivates center initialization.
+\paragraph{Proof sketch.}
+The spherical uniform distribution is rotation invariant. A symmetric prototype
+configuration maps each Voronoi region to every other region by a
+measure-preserving rotation. Therefore all regions have the same spherical
+measure, and the mass of each region is $1/E$.
 
-\section{Center-Initialized Routing}
+Finite-sample loads still fluctuate:
+\begin{equation}
+\max_e\left|\hat p_e-\frac{1}{E}\right|
+=O_p\left(\sqrt{\frac{\log E}{N}}\right).
+\end{equation}
+Thus token sampling error decreases with $N$.
 
-The baseline algorithm is intentionally simple.
+If strict finite-sample balance is required, define $A_{ie}\in\{0,1\}$ and solve
+\begin{align}
+\max_A \quad & \sum_{i=1}^N\sum_{e=1}^E A_{ie}\langle z_i,u_e\rangle,\\
+\text{s.t.}\quad &\sum_{e=1}^E A_{ie}=1,\quad \forall i,\\
+&\sum_{i=1}^N A_{ie}\in\left\{\left\lfloor \frac{N}{E}\right\rfloor,
+\left\lceil \frac{N}{E}\right\rceil\right\},\quad \forall e.
+\end{align}
+This balanced assignment gives empirical load balance by construction.
 
+\section{Baseline Method}
+
+The controlled baseline has five steps.
 \begin{enumerate}
-\item Collect route-relevant hidden states $h_{i,p^\star}$ from a calibration
-set.
-\item Estimate feature centers $\mu_f$ by oracle labels, route-position
-k-means, or a label-free route-state selector.
-\item Initialize equal-norm router rows from the centers:
-\begin{equation}
-w_f = \alpha \frac{\mu_f-\bar\mu}{\|\mu_f-\bar\mu\|_2},
-\qquad
-\bar\mu=\frac{1}{F}\sum_f \mu_f.
-\end{equation}
-\item Train the model and track matched preserve fraction, feature NMI, margin
-p05, sign-flip rate, max load, and task loss.
+\item collect route-relevant hidden states $h_i$;
+\item center the states, $\bar h_i=h_i-\mu$;
+\item optionally whiten, $\tilde h_i=C^{-1/2}\bar h_i$;
+\item normalize directions, $z_i=\tilde h_i/\|\tilde h_i\|_2$;
+\item route by symmetric-prototype top-1 similarity or balanced assignment.
 \end{enumerate}
 
-The key preservation condition is a margin budget. Let
-$u_{f,e}=w_{a(f)}-w_e$. Then
+For training-preservation experiments, track the matched margin. If feature $f$
+is matched to expert $a(f)$, then
 \begin{equation}
-\gamma_{f,e}(t)-\gamma_{f,e}(0)
-=
-\Delta u_{f,e}(t)^\top \mu_f(0)
- + u_{f,e}(0)^\top \Delta \mu_f(t)
- + \Delta u_{f,e}(t)^\top \Delta \mu_f(t).
+\gamma_{f,e}(t)=\left(w_{a(f)}(t)-w_e(t)\right)^\top \mu_f(t).
 \end{equation}
-If the initial minimum margin exceeds the total drift budget on the right-hand
-side, the matched assignment is preserved. Thus the correct question is not
-whether the step-0 assignment is positive, but whether the positive margin is
-thick enough to survive early training.
+A positive step-0 assignment is not enough; the lower-tail margin must remain
+positive after early-training drift.
 
-\section{Controlled Evidence}
+\section{Existing Controlled Evidence}
 
-\subsection{Finite margin threshold}
+Existing A06 experiments support the preservation boundary, but they do not
+replace the uniform spectral experiments required for this draft.
 
-A06\_23 tests row-gap scaling in the controlled no-position bridge. The
-intervention
-\begin{equation}
-w'_e(q)=\bar w+q(w_e-\bar w)
-\end{equation}
-preserves the step-0 assignment for $q>0$ while shrinking the margin. At final
-step 1600, all $q\ge 0.05$ conditions preserve the original feature-to-expert
-identity perfectly. At $q=0.02$, matched preserve fraction drops to $0.375$,
-sign-flip rate rises to $0.159$, and the final current margin becomes negative
-($-0.588$). This supports a finite positive-margin basin, not the stronger
-claim that any positive margin is enough.
+A06\_23 tests row-gap scaling in a controlled no-position bridge. At final step
+1600, all $q\ge 0.05$ conditions preserve the original feature-to-expert identity
+perfectly. At $q=0.02$, matched preserve fraction drops to $0.375$, sign-flip
+rate rises to $0.159$, and the final current margin becomes negative
+($-0.588$). This supports a finite positive-margin basin.
 
 \begin{table}[h]
 \centering
@@ -215,78 +176,91 @@ $q=0.02$ & 0.909 & 0.375 & -0.588 & 0.159 \\
 \end{tabular}
 \end{table}
 
-\subsection{Warmup improves source quality but does not replace route selection}
+A06\_25 shows that warmup improves all-position clustering but does not match
+route-position control. A06\_26 shows that manifold power iteration can improve
+feature agreement but does not guarantee a stable positive lower-tail margin
+\citep{routermpi2026}. These results motivate the clean synthetic closure below.
 
-A06\_25 asks whether short warmup makes all-position hidden clustering or expert
-spectral directions usable. Immediate feature NMI for all-position clustering
-improves from $0.774$ at warmup 0 to $0.876$ at warmup 40. However,
-route-position clustering reaches $0.996$ at warmup 40. Common-projected expert
-SVD reaches $0.943$ immediate feature NMI at warmup 40, but its margin is much
-thinner than the route-position control. This supports the view that warmup
-helps representation geometry, but the route-relevant state population remains
-the bottleneck.
+\section{Necessary Experiments}
 
-\subsection{Rival routers do not close the uniform baseline}
+\begin{table}[h]
+\centering
+\caption{Required experiment blocks.}
+\begin{tabular}{p{0.08\linewidth}p{0.24\linewidth}p{0.28\linewidth}p{0.28\linewidth}}
+\toprule
+ID & Question & Minimal setting & Pass condition \\
+\midrule
+E1 & Does symmetric geometry route uniform features uniformly? &
+$z\sim\mathrm{Unif}(\mathbb{S}^{d-1})$; compare random, symmetric, repulsive,
+and balanced centers. & Symmetric and balanced centers reduce load CV and
+max/min ratio. \\
+E2 & Does token count only remove sampling error? & Fix centers and vary
+$N\in\{10^3,10^4,10^5\}$. & Sampling error decreases with $N$; random-center
+cell imbalance remains. \\
+E3 & Do large singular directions break raw routing? & Generate
+$h=Dz$ with $D=\mathrm{diag}(\alpha,1,\ldots,1)$. & Load imbalance increases
+with $\alpha$ and spectral condition number. \\
+E4 & Can centering or whitening restore balance? & Apply center, normalize,
+whiten, and whiten+balanced assignment to E3. & Whitening lowers condition
+number and restores load CV. \\
+E5 & Does uniform routing preserve feature identity under training? & Uniform
+four-feature Transformer-MoE bridge. & Positive feature NMI, matched preserve
+fraction, margin p05, and task accuracy. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-A06\_24 shows that all-position common subtraction does not match route-position
-or oracle centers on joint common/rare separation and rare margin. A06\_26
-tests manifold power iteration (MPI) routing as a spectral-router baseline
-\citep{routermpi2026}. MPI-c8 improves final feature NMI to $0.832$, compared
-with vanilla $0.686$, but margin p05 is strongly negative ($-15.258$). The
-route-centered control reaches feature NMI $0.979$ with positive margin p05
-$1.953$. Thus stronger expert-spectral routing can produce partial feature
-agreement without forming a stable positive-margin assignment.
+\paragraph{Metrics.}
+Report spectral condition number, spectral entropy, effective rank, load CV,
+KL-to-uniform, max/min load ratio, maximum load error, feature NMI, matched
+preserve fraction, margin p05, sign-flip rate, and task loss.
 
-\section{Experiment Plan Needed For The Paper}
+\section{Execution Plan}
 
-The current evidence is enough for a first draft, but a clean internal paper
-should still finish four explicit experiment blocks.
+\begin{table}[h]
+\centering
+\caption{Concrete execution table. E1--E4 are the minimum for the internal draft;
+E5 is a bridge experiment if time remains.}
+\begin{tabular}{p{0.08\linewidth}p{0.24\linewidth}p{0.30\linewidth}p{0.26\linewidth}}
+\toprule
+Order & Action & Output & Decision \\
+\midrule
+1 & Implement one synthetic script for E1--E4. & CSV with setting, seed, method,
+spectral metrics, and load metrics. & If this runs, the theory section has fresh
+support. \\
+2 & Run E1 with $d\in\{64,128\}$, $E\in\{4,8,16\}$, $N=10^5$, 5 seeds. & Table:
+random vs symmetric vs balanced. & Confirms the core uniform claim. \\
+3 & Run E2 with fixed centers and $N\in\{10^3,10^4,10^5\}$. & Table: sampling
+error versus initialization error. & Separates sampling noise from geometry. \\
+4 & Run E3/E4 with $\alpha\in\{1,2,5,10,20\}$. & Table: raw, centered,
+normalized, whitened, whitened+balanced. & Establishes the nonuniform-spectrum
+boundary and recovery. \\
+5 & Insert compact tables into this paper. & E1/E2 table and E3/E4 table. & Enough
+for the July 3 internal draft. \\
+6 & If time remains, run E5 with existing A06 bridge scripts. & Feature NMI,
+preserve fraction, margin p05, and task loss. & Preservation evidence, not the
+required proof of the theorem. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\paragraph{E1: circular uniform geometry.}
-Compare random centers, evenly spaced centers, minimum-angle rejection, and
-repulsive center optimization. Report true cell probabilities $p_j$, measured
-loads $\hat p_j$, initialization error, sampling error, and normalized load
-error. The pass condition is that sampling error shrinks with token count while
-random-center initialization error remains.
-
-\paragraph{E2: uniform no-position Transformer-MoE center initialization.}
-Run random, all-position k-means, route-position k-means, oracle centers, and
-row-gap scaling on the uniform four-feature task. The primary metric is matched
-preserve fraction; feature NMI and target accuracy are guards.
-
-\paragraph{E3: rival explanation panel.}
-Compare common subtraction, warmup-only all-position clustering, expert SVD,
-common-projected SVD, and MPI. A rival passes only if it improves both feature
-agreement and margin lower tail.
-
-\paragraph{E4: label-free route-state selection.}
-This is the next research step, not a claim in this paper. Test gradient-norm,
-gradient-weighted clustering, and Fisher-metric clustering as selectors for
-route-relevant hidden states. The target is to approach the route-position
-control without feature labels.
+If no script exists, create one file under an A06\_27-style folder and save
+\texttt{results.csv}. Do not let real-language experiments block this draft.
 
 \section{Claim Boundary}
 
-This paper can claim a controlled baseline: in the uniform-feature setting,
-center-initialized top-1 routing is the clean solution, and preservation is
-controlled by a finite positive-margin basin. It cannot claim real semantic
-experts, real-DCLM preservation, Zipf robustness, common/rare utility, or a
-deployed label-free method.
+This draft can claim that, in the ideal uniform geometric case, symmetric
+prototype routing gives uniform expected expert load, finite-sample noise shrinks
+with token count, and nonuniform spectra require whitening or balanced
+assignment. It cannot claim real semantic experts, Zipf robustness, common/rare
+utility, or a deployed label-free method.
 
 \section{Reproducibility Statement}
 
-This draft links all reported numbers to project-local experiment summaries:
-A06\_23, A06\_24, A06\_25, and A06\_26. A future compiled version should include
-the exact run commands, seeds, tables, and figures in an appendix. The present
-workspace includes the official ICLR 2026 template files but was not compiled
-because this local environment does not have TeX installed.
-
-\section{LLM Usage Statement}
-
-This initial draft was prepared with AI assistance from Codex using local
-research artifacts supplied in the repository. The scientific claims, numbers,
-and boundaries should be audited against the cited project summaries before any
-external submission.
+The reported A06 numbers should be audited against project-local summaries:
+A06\_23, A06\_24, A06\_25, and A06\_26. The new E1--E4 synthetic experiments
+should store commands, seeds, metrics, and tables under a single A06\_27-style
+folder. The paper should be compiled locally before sharing the PDF.
 
 \bibliographystyle{iclr2026_conference}
 \bibliography{references}
@@ -298,18 +272,16 @@ external submission.
 \begin{itemize}
 \item Meeting requirement:
 \texttt{daily\_research\_reports/0703/recordings/0703meeting.md}.
-\item Two-dimensional routing theory:
-\texttt{daily\_research\_reports/0703/resources/theoretical\_analysis.md}.
 \item Uniform feature meeting brief:
 \texttt{daily\_research\_reports/0703/a06\_25\_warmup\_spectral\_router\_reinit/meeting\_brief.md}.
 \item A06\_23 margin threshold:
 \texttt{Projects/from-attention-to-search/main/experiments/A06/A06\_23\_top1\_lockin\_margin\_threshold/summary.md}.
-\item A06\_24 common/rare boundary:
-\texttt{Projects/from-attention-to-search/main/experiments/A06/A06\_24\_synthetic\_common\_rare\_transformer\_moe/summary.md}.
 \item A06\_25 warmup source audit:
 \texttt{Projects/from-attention-to-search/main/experiments/A06/A06\_25\_warmup\_spectral\_router\_reinit/summary.md}.
 \item A06\_26 MPI baseline:
 \texttt{Projects/from-attention-to-search/main/experiments/A06/A06\_26\_mpi\_uniform\_feature\_router/summary.md}.
+\item New required synthetic closure:
+\texttt{Projects/from-attention-to-search/main/experiments/A06/A06\_27\_uniform\_spectral\_routing/}.
 \end{itemize}
 
 \end{document}
