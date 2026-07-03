@@ -1,18 +1,68 @@
-# 会议简报：均匀特征如何稳定分发到不同专家
+# 均匀特征如何稳定分发到不同专家
 
 ## 0. 执行摘要
 
 **研究问题：** 四个出现频率相同的合成特征，能否在不使用语义标签的情况下，稳定进入不同 experts？
 
-**当前结论：** 问题已经从“能否分开”推进到“如何形成可路由、可保持的特征表征”。仅靠 common subtraction、全位置聚类、expert 主谱方向或 MPI，都还不是完整方法。
+**当前结论：** 问题已经从“能否分开”推进到“如何形成可路由、可保持的特征表征”。仅靠 common subtraction、全位置聚类、expert 主谱方向或 MPI，还不能完整解决该问题，但是关键就在于找到feature的初始位置先验，同时保持正margin足够大。
 
-**三条主要结论：**
+**机制：**
 
-1. 任务位置中心可以把均匀 features 干净分到不同 experts；保持成功的关键不是第 0 步分对，而是训练后仍有正 margin。
-2. warmup 会让均匀 feature centers 在 L2 距离上明显拉开，即使它们的方向相似性可能增强；因此 delayed reinit 有利于把 feature 分开并初始化 gating rows，但仍不能替代 route-relevant state selection。
-3. MPI-c8 能提高 feature NMI，但 margin 低尾强负；all-position 初始化加 MPI-c8 也不能纠正到稳定 specialization。因此 MPI 是 spectral baseline，不是当前均匀 feature 分发方法。
+路由分数：
 
-**最小下一步：** 建立 nested-learning 对齐的新 anchor：用多词元/长时距目标塑造 route-relevant hidden state，再检验 delayed router reinit 是否同时提高 feature NMI、margin p05 和保持率。
+$$
+z_e=w_e^\top h.
+$$
+
+路由保持 margin：
+
+$$
+\gamma_{f,e}(t)=\bigl(w_{a(f)}(t)-w_e(t)\bigr)^\top\mu_f(t).
+$$
+
+margin 漂移分解：
+
+$$
+\gamma(t)-\gamma(0)
+=
+\Delta u(t)^\top\mu(0)
++u(0)^\top\Delta\mu(t)
++\Delta u(t)^\top\Delta\mu(t),
+\qquad
+u=w_{a(f)}-w_e.
+$$
+
+表征分解：
+
+$$
+h_{i,p}^{(k)}=c_{\rho(p)}^{(k)}+r_{f_i,p}^{(k)}+\eta_{i,p}^{(k)}.
+$$
+
+梯度选择信号：
+
+$$
+g_{i,p}=\nabla_{h_{i,p}}\mathcal L_i,
+\qquad
+E_p=\mathbb E_i\|g_{i,p}\|_2^2.
+$$
+
+Fisher-like 距离：
+
+$$
+F=\mathbb E[g_{i,p}g_{i,p}^{\top}],
+\qquad
+d_F(h_i,h_j)=(h_i-h_j)^\top F(h_i-h_j).
+$$
+
+**主要结论：**
+
+1. 现在的方法是对于hidden states进行聚类，找到feature中心从而初始化Router。在背景hidden state单一的情形下，该种方式能够保证初始feature分对，并且训练过程保持。
+    - 训练过程保持feature specialization的关键不是第 0 步分对，而是训练后选定专家和其他专家之间仍保持有正 margin。
+2. 由于初始的hidden state不带有强feature的信息，所以warmup几步进行聚类，然后重初始化gating row vector。这种方式能够提升分发的纯净度，但是不能解决根本问题。
+    - warmup 会让均匀 feature centers 在 L2 距离上明显拉开，即使它们的方向相似性可能增强；因此 delayed reinit 有利于把 feature 分开并初始化 gating rows，但仍不能替代 route-relevant state selection。
+3. 使用Redesign...中的方法MPI-c8，能提高 feature NMI，但 margin 低尾强负；all-position 初始化加 MPI-c8 也不能纠正到稳定 specialization，同时还有可能增大common主导的margin，导致坍缩。
+
+**最小下一步：** 建立梯度引导的 route-relevant state selection anchor：用损失梯度或 Fisher-like 信号在无标签条件下找出真正影响预测的 hidden states，再用这些 states 的中心初始化 gating rows，检验 feature NMI、margin p05 和保持率是否同时提高。
 
 ## 1. 术语解释
 
@@ -151,9 +201,29 @@ $$
 
 ## 4. 执行动作
 
-**下一步动作：** 建立 nested-learning-shaped route-state anchor。
+**下一步动作：** 建立 gradient / Fisher guided route-state selection anchor。
 
-**要回答的问题：** 多词元/长时距辅助目标能否让 route-relevant hidden state 更早变得 feature-aware，并形成正 margin？
+**要回答的问题：** 损失梯度或 Fisher-like 信号能否在不使用 feature label 的情况下，从 all-position hidden states 中选出 route-relevant states，并用这些 states 的中心初始化 gating rows？
+
+**核心想法：** 对每个样本 $i$ 和位置 $p$，计算损失对 hidden state 的梯度：
+
+$$
+g_{i,p}=\nabla_{h_{i,p}}\mathcal L_i.
+$$
+
+若某个位置真正承载任务相关 feature，它应同时满足：梯度能量高、hidden state 在 feature 上可分、初始化后 margin 为正。最小 selector 可以先用梯度能量：
+
+$$
+E_p=\mathbb E_i\|g_{i,p}\|_2^2.
+$$
+
+更强版本可用 Fisher-like metric：
+
+$$
+F=\mathbb E[g_{i,p}g_{i,p}^{\top}],
+\qquad
+d_F(h_i,h_j)=(h_i-h_j)^\top F(h_i-h_j).
+$$
 
 **实验完成判据：**
 
@@ -163,7 +233,7 @@ $$
 | stability | margin p05 从负转正，matched preserve fraction 高 |
 | nuisance guard | slot-start NMI 仍接近 0 |
 | task guard | target loss / accuracy 不恶化 |
-| source diagnosis | all-position、route-position、expert spectrum、MPI baseline 同时报告 |
+| selector diagnosis | gradient-norm selector、gradient-weighted clustering、Fisher-metric clustering 与 all-position / route-position controls 同时报告 |
 
 ## 5. 证据索引
 

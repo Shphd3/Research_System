@@ -16,7 +16,7 @@ nodes:
     type: question
     summary: "Owner: kv_cache mainline, implemented in from-attention-to-search. Current question: can a route-position proxy partition be selected and preserved through early real-text training before any functional expert-specialization claim is promoted?"
     files:
-      - path: /sync/S000_current_specialization/anchors/expert_specialization/00_feature_level_expert_specialization_mainline_anchor.md
+      - path: /sync/S000_current_specialization/README.md
         title: current mainline anchor
       - path: /Projects/kv_cache/main_specialization/specialization_overview.md
         title: kv_cache specialization overview
@@ -57,7 +57,7 @@ nodes:
     title: Why does ordinary top-1 fail?
     type: question
     summary: Diagnose whether ordinary top-1 MoE fails because routing follows shortcuts, early lock-in, or route-function mismatch.
-    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    file: /Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/01_slot_context_dominance_router_specialization_anchor.md
     status: active
     tags: [failure, top1, router]
 
@@ -89,7 +89,7 @@ nodes:
     title: Assignment and utility can be unbound
     type: claim
     summary: Routing can look structured while failing to select the expert with causal utility for the intended feature.
-    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    file: /Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/01_slot_context_dominance_router_specialization_anchor.md
     status: active
     tags: [utility, mismatch]
 
@@ -119,7 +119,7 @@ nodes:
     title: Is the slot signal visible?
     type: question
     summary: Test whether slot/context information can be represented at the routed position, before asking whether the router uses it.
-    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    file: /Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/01_slot_context_dominance_router_specialization_anchor.md
     status: done
     tags: [slot-context, visibility]
 
@@ -127,7 +127,7 @@ nodes:
     title: Slot visibility is not sufficient
     type: claim
     summary: Strong slot context can improve route-role structure, but multi-B routing still does not robustly bind assignment to expert utility.
-    file: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+    file: /Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/01_slot_context_dominance_router_specialization_anchor.md
     status: active
     tags: [slot-context, boundary]
 
@@ -286,7 +286,7 @@ nodes:
     type: question
     summary: "Project folder: Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs. Decision: in best non-collapsed conditions, routing is better described as slot-aligned than B_i-aligned."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/01_slot_context_dominance_router_specialization_anchor.md
         title: current anchor
       - path: /Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md
         title: 05_01 anchor
@@ -326,7 +326,7 @@ nodes:
     type: claim
     summary: "Updated by H0604b: use slot as the operational feature axis for the next local diagnostic, while keeping (slot,B_i) as the atomic consistency key."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/01_slot_context_dominance_router_specialization_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/01_slot_context_dominance_router_specialization_anchor.md
         title: current anchor
       - path: /Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/protocol_for_approval.md
         title: protocol
@@ -471,7 +471,7 @@ nodes:
     title: When to test frequency or Zipf?
     type: question
     summary: Frequency/Zipf robustness should wait until the feature axis and non-collapsed composition are fixed.
-    file: /Projects/from-attention-to-search/main/problem_anchors/04_ntp_zipf_feature_factorization_anchor.md
+    file: /Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/04_ntp_zipf_feature_factorization_anchor.md
     status: blocked
     tags: [frequency, deferred]
 

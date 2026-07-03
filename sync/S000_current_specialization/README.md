@@ -1,7 +1,23 @@
 # S000 Current Specialization
 
 This root sync entry summarizes the active feature-level expert-specialization
-research line. It is a reading map, not an anchor mirror.
+research line. It is both a reading map and an explicit anchor-copy sync
+surface.
+
+The project-local source of truth remains:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/
+```
+
+The copied anchor snapshot lives here:
+
+```text
+anchors/
+```
+
+Use `anchor_index.md` to inspect the copied anchor groups. The mirror is
+updated only when the user explicitly asks to sync S000.
 
 ## Main Question
 
@@ -52,6 +68,8 @@ parked.
 
 | File | Role |
 |---|---|
+| `anchor_index.md` | copied-anchor inventory and line grouping |
+| `anchors/` | copied project-local anchor tree from `from-attention-to-search` |
 | `research_lines/00_overall_current_line_cn.md` | overall 05/06/07 logic chain and strict boundary |
 | `research_lines/05_failure_mechanism_line_cn.md` | why ordinary top-1 routing fails |
 | `research_lines/06_proxy_preservation_line_cn.md` | route-relevant proxy discovery, initialization, and preservation |
