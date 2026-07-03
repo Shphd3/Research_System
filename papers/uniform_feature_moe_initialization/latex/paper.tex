@@ -9,7 +9,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{enumitem}
 
 \newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
@@ -83,7 +82,7 @@ uniform-routing analysis states the additional geometric condition needed for
 uniform dispatch.
 
 \paragraph{Contributions.}
-\begin{enumerate}[leftmargin=1.5em]
+\begin{enumerate}
 \item We formulate the uniform feature routing problem and distinguish frequency
 uniformity, spectral uniformity, geometric uniformity, and load uniformity.
 \item We prove the minimal ideal-case statement: uniform spherical features plus
@@ -231,6 +230,7 @@ The first term is prototype-geometry error. The second term is finite-token
 sampling error. A large $N$ removes the second term, not the first.
 
 \subsection{Strict finite-sample uniformity}
+\label{sec:strict_finite_sample}
 
 When exact empirical balance is required, the routing step should be written as
 a capacity-constrained assignment. Let $A_{ie}\in\{0,1\}$ indicate that token $i$
@@ -312,8 +312,8 @@ prototype geometry as exact SVD.
 
 \paragraph{Balanced spectral assignment.}
 Use the same spectral prototypes but replace unconstrained top-1 routing with
-the capacity-constrained assignment in Section~3.3. This tests the strict finite
-sample version of the problem.
+the capacity-constrained assignment in Section~\ref{sec:strict_finite_sample}.
+This tests the strict finite-sample version of the problem.
 
 \paragraph{Feature preprocessing.}
 For token features, report raw, centered, normalized, and whitened variants.
@@ -362,7 +362,7 @@ only include result tables after these tests are run.
 \section{Claim Boundary}
 
 This paper can claim a closed controlled case:
-\begin{enumerate}[leftmargin=1.5em]
+\begin{enumerate}
 \item under geometric uniformity, symmetric expert prototypes give uniform
 expected load;
 \item finite token count creates sampling error that decreases with $N$;
