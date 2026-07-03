@@ -34,23 +34,24 @@
 \maketitle
 
 \begin{abstract}
-This paper studies a minimal controlled question behind uniform feature routing
-in top-1 mixture-of-experts (MoE): when do uniformly occurring features route to
-uniformly used experts without an explicit balancing rule?  We show that the
-answer is geometric rather than count-based.  If route-relevant token directions
-are uniform on the sphere and expert prototypes induce equal-measure spherical
-cells, then unconstrained top-1 routing has uniform expected expert usage; a
-regular simplex gives a constructive case.  This condition separates natural
-geometric balance from two commonly conflated effects: finite-token sampling
-noise and capacity-constrained assignment.  We also clarify the role of spectral
-evidence.  A flat hidden covariance spectrum is a useful diagnostic but not a
-usage-balance theorem, since covariance identity need not imply directional
-uniformity.  Conversely, in a controlled elliptical family, whitening recovers
-the spherical model.  Expert principal singular directions, including those used
-by MPI-style routers, are therefore candidate centers rather than balance
-guarantees.  Synthetic experiments validate these controlled claims and support
-no stronger conclusion about natural language semantics or training-time
-preservation.
+Uniform feature routing is often discussed through load-balancing heuristics or
+spectral diagnostics, but neither explains when an unconstrained top-1
+mixture-of-experts router should naturally use experts equally.  We isolate a
+minimal controlled setting and show that the answer is representation
+geometric.  If route-relevant token directions are uniform on the sphere and
+expert prototypes induce equal-measure spherical cells, then top-1 routing has
+uniform expected expert usage; regular-simplex prototypes give one constructive
+case.  This result separates natural geometric balance from finite-token
+sampling noise and from capacity-constrained assignment, which can force equal
+counts without explaining the representation.  We further show that hidden
+spectral uniformity is only a second-order diagnostic: an isotropic-covariance
+distribution can still route nonuniformly when its directional support is not
+spherical.  Conversely, in a controlled elliptical family, whitening recovers
+the spherical direction model and restores the routing diagnostic.  Experiments
+mirror each claim, including spectral expert-prototype construction and a
+balanced-assignment control.  The paper therefore provides a clean baseline for
+uniform top-1 routing, while making no claim about semantic expert identity,
+downstream utility, or training-time preservation.
 \end{abstract}
 
 \section{Introduction}
@@ -220,18 +221,6 @@ $p_e=\mathbb{P}(z\in V_e)$.  Then
 The first term is the prototype-cell geometry error.  The second term is
 finite-token sampling noise.  Increasing $N$ reduces the second term but does
 not change the first.
-
-In the two-dimensional circle model, this decomposition is explicit.  If
-$E$ random centroids are sampled uniformly on the circle and the sorted circular
-gaps are $G_1,\ldots,G_E$, then
-\begin{equation}
- (G_1,\ldots,G_E)\sim \mathrm{Dirichlet}(1,\ldots,1),
- \qquad
- p_j=\frac{G_{j-1}+G_j}{2}.
-\end{equation}
-Thus $\mathbb{E}[p_j]=1/E$, but a single initialization is not balanced.  More
-routed tokens estimate these unequal $p_j$ more accurately; they do not make the
-$p_j$ equal.
 
 \subsection{Spectral uniformity is only a diagnostic}
 
@@ -417,8 +406,9 @@ the single-realization random-prototype geometry floor.}
 \label{fig:geometry_floor}
 \end{figure}
 
-This directly matches the finite-token decomposition: more examples reduce
-$\widehat p_e-p_e$, not $p_e-1/E$.
+Table~\ref{tab:geometry_floor} and Figure~\ref{fig:geometry_floor} directly
+match the finite-token decomposition: more examples reduce $\widehat p_e-p_e$,
+not $p_e-1/E$.
 \FloatBarrier
 
 \subsection{E3: spectral prototypes are centers, not balance}
@@ -458,48 +448,52 @@ Random rows & No expert alignment & 0.098 & 0.074 & 1.281 \\
 \label{fig:spectral_alignment}
 \end{figure}
 
-The result clarifies the role of spectral router construction.  Expert singular
-directions can be meaningful centers, but a center-construction rule is not a
-load-balance theorem.
+Table~\ref{tab:spectral_prototypes} and Figure~\ref{fig:spectral_alignment}
+clarify the role of spectral router construction.  Expert singular directions
+can be meaningful centers, but a center-construction rule is not a load-balance
+theorem.
 \FloatBarrier
 
-\subsection{E4: capacity assignment is only a control}
+\subsection{E4: isotropic covariance is not enough}
 
-E4 tests the strict finite-batch alternative.  With $N=2048,d=64,E=8$, both
-greedy capacity-feasible assignment and exact balanced assignment over expanded
-expert slots enforce zero LoadCV.
+E4 mirrors Proposition 3.  The token distribution has equal mass on the four
+axis directions in $\mathbb{R}^2$, so it has mean zero and covariance $I/2$.
+We route these points with three regular-simplex prototypes at angles
+$20^\circ$, $140^\circ$, and $260^\circ$.  These prototypes have equal-measure
+cells under the continuous uniform circle distribution, but the discrete
+four-axis support is not directionally uniform.
 
 \begin{table}[!htbp]
 \centering
-\caption{Capacity assignment as a non-geometric control.  Exact balanced
-assignment reaches zero LoadCV with lower score drop than greedy assignment, but
-it changes the assignment rule rather than the representation geometry.}
-\label{tab:balanced_assignment}
+\caption{A covariance-isotropy counterexample.  The distribution has condition
+number 1, but the induced top-1 load is $(0.25,0.50,0.25)$ rather than uniform.}
+\label{tab:covariance_counterexample}
 \small
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{lccc}
+\begin{tabular}{lcccc}
 \toprule
-Prototype geometry & Top-1 LoadCV $\downarrow$ & Greedy score drop $\downarrow$
-& Exact balanced score drop $\downarrow$ \\
+Distribution & Condition no. $\downarrow$ & Effective rank $\uparrow$
+& Load vector & LoadCV $\downarrow$ \\
 \midrule
-Symmetric & 0.054 & 0.00091 & 0.00012 \\
-Random & 0.122 & 0.00416 & 0.00056 \\
-Clustered & 0.128 & 0.00379 & 0.00047 \\
+Four axis points & 1.000 & 2.000 & $(0.25,0.50,0.25)$ & 0.3536 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/balanced_assignment_cost.pdf}
-\caption{Balanced assignment exposes the cost of forcing the count metric.  It is
-a control for count equality, not the representation mechanism studied here.}
-\label{fig:balanced_assignment}
+\includegraphics[width=0.78\linewidth]{figures/covariance_counterexample.pdf}
+\caption{A flat covariance spectrum does not certify uniform routing.  The
+four-axis distribution is spectrally isotropic, but its directional support
+places two points in the same prototype cell.}
+\label{fig:covariance_counterexample}
 \end{figure}
 
-We keep E4 in the main paper because it prevents a common misreading: uniform
-expert usage can be forced, but forced usage is not evidence for uniform feature
-geometry.
+Table~\ref{tab:covariance_counterexample} and
+Figure~\ref{fig:covariance_counterexample} make E4 the negative counterpart to
+E5: spectral diagnostics are useful, but they cannot replace a directional or
+cell-mass analysis.
+\FloatBarrier
 
 \subsection{E5: controlled spectral uniformization repairs an elliptical toy}
 
@@ -544,10 +538,50 @@ uniform-spectrum regime.}
 \label{fig:anisotropy}
 \end{figure}
 
-E5 should be read with the theorem boundary in mind.  Whitening is successful
-here because the data are generated by an elliptical distortion of a spherical
-source.  This is not a claim that arbitrary next-token hidden states are
-elliptical or naturally whitened.
+Table~\ref{tab:spectrum_uniformization}, Figure~\ref{fig:spectrum_uniformization},
+and Figure~\ref{fig:anisotropy} should be read with the theorem boundary in
+mind.  Whitening is successful here because the data are generated by an
+elliptical distortion of a spherical source.  This is not a claim that arbitrary
+next-token hidden states are elliptical or naturally whitened.
+\FloatBarrier
+
+\subsection{E6: capacity assignment is only a control}
+
+E6 tests the strict finite-batch alternative.  With $N=2048,d=64,E=8$, both
+greedy capacity-feasible assignment and exact balanced assignment over expanded
+expert slots enforce zero LoadCV.
+
+\begin{table}[!htbp]
+\centering
+\caption{Capacity assignment as a non-geometric control.  Exact balanced
+assignment reaches zero LoadCV with lower score drop than greedy assignment, but
+it changes the assignment rule rather than the representation geometry.}
+\label{tab:balanced_assignment}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+Prototype geometry & Top-1 LoadCV $\downarrow$ & Greedy score drop $\downarrow$
+& Exact balanced score drop $\downarrow$ \\
+\midrule
+Symmetric & 0.054 & 0.00091 & 0.00012 \\
+Random & 0.122 & 0.00416 & 0.00056 \\
+Clustered & 0.128 & 0.00379 & 0.00047 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.88\linewidth]{figures/balanced_assignment_cost.pdf}
+\caption{Balanced assignment exposes the cost of forcing the count metric.  It is
+a control for count equality, not the representation mechanism studied here.}
+\label{fig:balanced_assignment}
+\end{figure}
+
+Table~\ref{tab:balanced_assignment} and Figure~\ref{fig:balanced_assignment}
+show why we keep E6 in the main paper: uniform expert usage can be forced, but
+forced usage is not evidence for uniform feature geometry.
 \FloatBarrier
 
 \section{Scope and Limitations}
@@ -555,9 +589,9 @@ elliptical or naturally whitened.
 All positive statements in this paper are controlled sufficient constructions.
 The paper does not prove a necessary-and-sufficient theorem for all routers or
 all hidden-state distributions.  It also does not claim that hidden spectral
-uniformity alone implies load uniformity; Proposition 3 explicitly shows that it
-does not.  Spectral flattening is useful in E5 because the toy data satisfy a
-strong elliptical assumption.
+uniformity alone implies load uniformity; Proposition 3 and E4 explicitly show
+that it does not.  Spectral flattening is useful in E5 because the toy data
+satisfy a strong elliptical assumption.
 
 Training dynamics are outside the main claim.  Static uniform assignment and
 training-time preservation are different questions.  During optimization, token
@@ -568,14 +602,27 @@ margin-preservation problem, not the main evidence for this paper.
 
 \section{Conclusion}
 
-Uniform expert usage under unconstrained linear top-1 routing is a controlled
-representation-geometric phenomenon.  Equal feature frequency is not enough.
-Flat covariance is not enough.  Expert spectral alignment is not enough.  The
+Uniform expert usage under an unconstrained linear top-1 router is not a
+consequence of balanced feature frequencies alone.  It is a geometric property
+of the distribution seen by the router.  In the clean controlled case, the
 sufficient condition is two-sided: token directions must match the spherical
-model, and expert prototypes must induce equal-measure cells.  Balanced
-assignment can force uniform counts, but that is a different mechanism.  This
-paper closes the clean uniform-feature case and identifies the next controlled
-case: nonuniform hidden spectra and training-time preservation.
+model, and expert prototypes must induce equal-measure cells on that sphere.
+The experiments support this picture and separate it from nearby but weaker
+signals.  More tokens reduce sampling noise but do not remove a fixed
+prototype-cell floor; expert spectral directions can construct centers but do
+not guarantee balanced cells; covariance isotropy can coexist with nonuniform
+directional support; whitening repairs routing only under the controlled
+elliptical assumption; and balanced assignment forces counts by changing the
+assignment mechanism.
+
+The resulting claim is intentionally narrow but useful.  It gives a baseline
+for what uniform feature routing would require before training dynamics enter.
+Real short-context language models may violate the token-side assumptions
+through anisotropy, common residual components, and feature drift, and they may
+violate the expert-side assumptions through clustered or moving prototypes.
+Those effects are not counterexamples to the theorem; they are the next
+research problem.  The clean case clarified here tells us what must be checked
+before load uniformity can be interpreted as evidence of meaningful routing.
 
 \bibliographystyle{iclr2026_conference}
 \bibliography{references}

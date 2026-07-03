@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Synthetic experiments for uniform feature routing.
 
-This script implements E1--E5 from EXPERIMENT_PLAN.md. It is intentionally
+This script implements E1--E6 from EXPERIMENT_PLAN.md. It is intentionally
 self-contained and uses only numpy plus the Python standard library.
 """
 
@@ -27,6 +27,7 @@ COLUMNS = [
     "effective_rank", "prototype_max_cos", "prototype_mean_abs_cos",
     "alignment_lambda_mean", "alignment_lambda_min", "score_mean",
     "score_drop_vs_top1", "init_error", "sampling_error", "total_error",
+    "distribution", "direction_support", "router_cells", "load_vector",
     "notes",
 ]
 
@@ -379,23 +380,45 @@ def run_e3(rows: List[Dict[str, object]], quick: bool) -> None:
 
 
 def run_e4(rows: List[Dict[str, object]], quick: bool) -> None:
-    seeds = range(3 if quick else 5)
-    n = 1024 if quick else 2048
-    d = 64
-    e = 8
-    for seed in seeds:
-        rng = rng_for(3000 + seed)
-        x = sample_sphere(n, d, rng)
-        for mode in ["symmetric", "random", "clustered"]:
-            u = make_prototypes(mode, e, d, rng)
-            assign, scores, _ = route_top1(x, u)
-            top1_mean = selected_score_mean(scores, assign)
-            append_route_row(rows, "E4", "balanced_assignment", "top1", seed, x, u,
-                             prototype_mode=mode)
-            append_route_row(rows, "E4", "balanced_assignment", "balanced_greedy", seed, x, u,
-                             prototype_mode=mode, top1_score_mean=top1_mean)
-            append_route_row(rows, "E4", "balanced_assignment", "balanced_ot", seed, x, u,
-                             prototype_mode=mode, top1_score_mean=top1_mean)
+    """Isotropic covariance is not sufficient for uniform routing.
+
+    Four equally weighted axis directions have mean zero and covariance I/2,
+    but the three-prototype regular-simplex router used in the paper routes
+    them with load vector (1/4, 1/2, 1/4).
+    """
+    repeats = 1000 if quick else 10000
+    base = np.array([
+        [1.0, 0.0],
+        [0.0, 1.0],
+        [-1.0, 0.0],
+        [0.0, -1.0],
+    ])
+    x = np.repeat(base, repeats, axis=0)
+    angles = np.deg2rad(np.array([20.0, 140.0, 260.0]))
+    u = np.stack([np.cos(angles), np.sin(angles)], axis=1)
+    assign, scores, _ = route_top1(x, u)
+    load = np.bincount(assign, minlength=3) / x.shape[0]
+    rows.append(row(
+        experiment="E4",
+        setting="covariance_identity_not_directional_uniformity",
+        method="axis_distribution_simplex_router",
+        seed=0,
+        n=x.shape[0],
+        d=2,
+        e=3,
+        alpha=NAN,
+        prototype_mode="regular_simplex_rotated",
+        preprocess="none",
+        score_mean=selected_score_mean(scores, assign),
+        distribution="four_axis_points",
+        direction_support="non_spherical_discrete",
+        router_cells="regular_simplex_equal_measure_for_uniform_circle",
+        load_vector="(0.25, 0.50, 0.25)",
+        notes="covariance identity but nonuniform directional support",
+        **load_metrics(assign, 3),
+        **spectral_metrics(x),
+        **prototype_metrics(u),
+    ))
 
 
 def run_e5(rows: List[Dict[str, object]], quick: bool) -> None:
@@ -423,6 +446,26 @@ def run_e5(rows: List[Dict[str, object]], quick: bool) -> None:
             append_route_row(rows, "E5", "anisotropy_whitening", "balanced_greedy", seed, xw, u,
                              alpha=float(alpha), prototype_mode="symmetric", preprocess="whitened_norm",
                              top1_score_mean=top1_mean)
+
+
+def run_e6(rows: List[Dict[str, object]], quick: bool) -> None:
+    seeds = range(3 if quick else 5)
+    n = 1024 if quick else 2048
+    d = 64
+    e = 8
+    for seed in seeds:
+        rng = rng_for(3000 + seed)
+        x = sample_sphere(n, d, rng)
+        for mode in ["symmetric", "random", "clustered"]:
+            u = make_prototypes(mode, e, d, rng)
+            assign, scores, _ = route_top1(x, u)
+            top1_mean = selected_score_mean(scores, assign)
+            append_route_row(rows, "E6", "balanced_assignment", "top1", seed, x, u,
+                             prototype_mode=mode)
+            append_route_row(rows, "E6", "balanced_assignment", "balanced_greedy", seed, x, u,
+                             prototype_mode=mode, top1_score_mean=top1_mean)
+            append_route_row(rows, "E6", "balanced_assignment", "balanced_ot", seed, x, u,
+                             prototype_mode=mode, top1_score_mean=top1_mean)
 
 
 def write_csv(rows: List[Dict[str, object]], outdir: Path) -> None:
@@ -494,8 +537,10 @@ def write_tables(rows: List[Dict[str, object]], outdir: Path) -> None:
         ("e1_uniform_sphere.md", ["experiment", "prototype_mode", "method", "d", "e"], common_metrics),
         ("e2_high_dim_geometry_floor.md", ["experiment", "d", "e", "n"], ["init_error", "sampling_error", "total_error"]),
         ("e3_spectral_prototypes.md", ["experiment", "prototype_mode", "method"], ["alignment_lambda_mean"] + common_metrics),
-        ("e4_balanced_assignment.md", ["experiment", "prototype_mode", "method"], ["score_drop_vs_top1"] + common_metrics),
+        ("e4_covariance_counterexample.md", ["experiment", "distribution", "direction_support", "router_cells", "load_vector"],
+         ["condition_number", "effective_rank"] + common_metrics),
         ("e5_anisotropy_whitening.md", ["experiment", "alpha", "preprocess", "method"], ["condition_number", "effective_rank"] + common_metrics),
+        ("e6_balanced_assignment.md", ["experiment", "prototype_mode", "method"], ["score_drop_vs_top1"] + common_metrics),
     ]
     for filename, keys, metrics in specs:
         items = aggregate([r for r in rows if r["experiment"].lower() in filename], keys, metrics)
@@ -512,19 +557,22 @@ def write_tables(rows: List[Dict[str, object]], outdir: Path) -> None:
         e3_sym_load = mean_where(rows, {"experiment": "E3", "prototype_mode": "symmetric", "method": "exact_svd"}, "load_cv")
         e3_cluster_align = mean_where(rows, {"experiment": "E3", "prototype_mode": "clustered", "method": "exact_svd"}, "alignment_lambda_mean")
         e3_cluster_load = mean_where(rows, {"experiment": "E3", "prototype_mode": "clustered", "method": "exact_svd"}, "load_cv")
-        e4_top1 = mean_where(rows, {"experiment": "E4", "method": "top1"}, "load_cv")
-        e4_ot = mean_where(rows, {"experiment": "E4", "method": "balanced_ot"}, "load_cv")
-        e4_drop = mean_where(rows, {"experiment": "E4", "method": "balanced_ot"}, "score_drop_vs_top1")
+        e4_cond = mean_where(rows, {"experiment": "E4", "method": "axis_distribution_simplex_router"}, "condition_number")
+        e4_load = mean_where(rows, {"experiment": "E4", "method": "axis_distribution_simplex_router"}, "load_cv")
+        e4_ratio = mean_where(rows, {"experiment": "E4", "method": "axis_distribution_simplex_router"}, "load_max_min")
         e5_raw_cond = mean_where(rows, {"experiment": "E5", "alpha": 20.0, "preprocess": "raw", "method": "top1"}, "condition_number")
         e5_white_cond = mean_where(rows, {"experiment": "E5", "alpha": 20.0, "preprocess": "whitened_norm", "method": "top1"}, "condition_number")
         e5_raw_rank = mean_where(rows, {"experiment": "E5", "alpha": 20.0, "preprocess": "raw", "method": "top1"}, "effective_rank")
         e5_white_rank = mean_where(rows, {"experiment": "E5", "alpha": 20.0, "preprocess": "whitened_norm", "method": "top1"}, "effective_rank")
         e5_white_load = mean_where(rows, {"experiment": "E5", "alpha": 20.0, "preprocess": "whitened_norm", "method": "top1"}, "load_cv")
+        e6_top1 = mean_where(rows, {"experiment": "E6", "method": "top1"}, "load_cv")
+        e6_ot = mean_where(rows, {"experiment": "E6", "method": "balanced_ot"}, "load_cv")
+        e6_drop = mean_where(rows, {"experiment": "E6", "method": "balanced_ot"}, "score_drop_vs_top1")
 
         f.write("# Synthetic Experiment Summary\n\n")
         f.write("Conclusion: the main supported mechanism is representation geometry. ")
         f.write("Uniform top-1 expert usage appears when token directions are close to the spherical model and expert prototypes are well spread. ")
-        f.write("Capacity assignment can force the count metric, but it is only a non-geometric control. ")
+        f.write("Covariance isotropy alone is insufficient: the four-axis counterexample has condition number 1 but nonuniform load. ")
         f.write("In the elliptical toy setting, spectral shrinkage and whitening repair anisotropic features and restore the routing diagnostic.\n\n")
         f.write(f"Rows: {len(rows)}\n\n")
         f.write("## Terminology\n\n")
@@ -537,14 +585,16 @@ def write_tables(rows: List[Dict[str, object]], outdir: Path) -> None:
         f.write(f"- E1: symmetric spherical prototypes have mean LoadCV {e1_sym:.4g}; clustered prototypes have {e1_cluster:.4g}, showing the prototype-geometry side of the theorem.\n")
         f.write(f"- E2: for d=64, E=8, the random-prototype geometry floor is init_error {e2_init:.4g}; sampling_error decreases from {e2_sampling_1k:.4g} at N=1000 to {e2_sampling_50k:.4g} at N=50000.\n")
         f.write(f"- E3: exact SVD recovers expert directions in both cases, but symmetric prototypes have alignment {e3_sym_align:.4g} and LoadCV {e3_sym_load:.4g}, while clustered prototypes have alignment {e3_cluster_align:.4g} and LoadCV {e3_cluster_load:.4g}; spectral alignment alone is not a balance guarantee.\n")
-        f.write(f"- E4 control: unconstrained top-1 mean LoadCV is {e4_top1:.4g}; exact balanced assignment forces LoadCV {e4_ot:.4g} with mean selected-score drop {e4_drop:.4g}. This is forced count equality, not representation geometry.\n")
-        f.write(f"- E5: at anisotropy alpha=20, raw condition_number is {e5_raw_cond:.4g} and effective_rank is {e5_raw_rank:.4g}; whitened normalization gives condition_number {e5_white_cond:.4g}, effective_rank {e5_white_rank:.4g}, and LoadCV {e5_white_load:.4g}.\n\n")
+        f.write(f"- E4: the four-axis distribution has covariance condition_number {e4_cond:.4g} but LoadCV {e4_load:.4g} and max/min load ratio {e4_ratio:.4g}; spectral isotropy alone is not directional uniformity.\n")
+        f.write(f"- E5: at anisotropy alpha=20, raw condition_number is {e5_raw_cond:.4g} and effective_rank is {e5_raw_rank:.4g}; whitened normalization gives condition_number {e5_white_cond:.4g}, effective_rank {e5_white_rank:.4g}, and LoadCV {e5_white_load:.4g}.\n")
+        f.write(f"- E6 control: unconstrained top-1 mean LoadCV is {e6_top1:.4g}; exact balanced assignment forces LoadCV {e6_ot:.4g} with mean selected-score drop {e6_drop:.4g}. This is forced count equality, not representation geometry.\n\n")
         f.write("## Tables\n\n")
         f.write("- `tables/e1_uniform_sphere.md`: prototype geometry and expert load.\n")
         f.write("- `tables/e2_high_dim_geometry_floor.md`: fixed random-prototype geometry floor versus sampling noise.\n")
         f.write("- `tables/e3_spectral_prototypes.md`: spectral alignment is not sufficient for balanced usage.\n")
-        f.write("- `tables/e4_balanced_assignment.md`: non-geometric forced-balance control and score cost.\n")
-        f.write("- `tables/e5_anisotropy_whitening.md`: representation repair by spectral flattening under preprocessing.\n\n")
+        f.write("- `tables/e4_covariance_counterexample.md`: covariance-isotropy counterexample.\n")
+        f.write("- `tables/e5_anisotropy_whitening.md`: representation repair by spectral flattening under preprocessing.\n")
+        f.write("- `tables/e6_balanced_assignment.md`: non-geometric forced-balance control and score cost.\n\n")
         f.write("## Claim Boundary\n\n")
         f.write("These are synthetic controlled experiments. They do not establish semantic expert specialization, downstream utility, or that trained language-model hidden states naturally satisfy the spherical or whitened assumptions.\n")
 
@@ -567,6 +617,7 @@ def main() -> None:
     run_e3(rows, quick=quick)
     run_e4(rows, quick=quick)
     run_e5(rows, quick=quick)
+    run_e6(rows, quick=quick)
     outdir = Path(args.outdir)
     write_csv(rows, outdir)
     write_tables(rows, outdir)

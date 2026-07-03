@@ -47,8 +47,9 @@ representation geometry that makes top-1 routing naturally uniform.
 | Uniform sphere + equal-measure cells gives uniform expected expert load | Spherical Voronoi partition in $d$ dimensions | E1 |
 | Random prototypes are only balanced in expectation over initializations | Monte Carlo estimate of high-dimensional cell masses | E2 |
 | Expert singular directions are candidate prototypes, not a balance guarantee | Controlled expert matrices with prescribed principal directions | E3 |
-| Forced load balance is not a representation-geometric explanation | Capacity-constrained assignment / OT-style expanded slots | E4 control |
+| Covariance isotropy is not directional uniformity | Four-axis distribution with covariance $I/2$ | E4 |
 | Spectral flattening can restore the spherical routing geometry in a toy setting | Centering, normalization, shrinkage, whitening | E5 |
+| Forced load balance is not a representation-geometric explanation | Capacity-constrained assignment / OT-style expanded slots | E6 control |
 
 ## 3. E1: $d$-Dimensional Uniform Sphere And Prototype Geometry
 
@@ -162,38 +163,37 @@ Allowed claim: expert spectral directions can define centers, but spectral
 alignment does not imply load uniformity unless the recovered centers are well
 spread.
 
-## 6. E4: Capacity Assignment As A Non-Geometric Control
+## 6. E4: Covariance Isotropy Counterexample
 
-Question: How different is forced usage balance from representation-geometric
-top-1 balance?
+Question: Does spectrally uniform covariance imply directionally uniform
+routing geometry?
 
-Methods:
+Construction:
 
-1. unconstrained top-1 assignment;
-2. greedy capacity-feasible assignment;
-3. exact optimal-transport-style balanced assignment using expanded expert slots.
+1. use equal mass on four axis points $(1,0),(0,1),(-1,0),(0,-1)$;
+2. route to three regular-simplex prototypes at $20^\circ$, $140^\circ$, and
+   $260^\circ$;
+3. compare covariance condition number with LoadCV.
 
 Full setting:
 
-- $N=2048$;
-- $d=64$;
-- $E=8$;
-- 5 seeds;
-- symmetric, random, and clustered prototypes.
+- $N=40000$ repeated axis points;
+- $d=2$;
+- $E=3$;
+- deterministic single setting.
 
 Metrics:
 
+- covariance condition number;
+- effective rank;
 - LoadCV;
 - max/min load ratio;
-- selected-score drop relative to top-1.
+- load vector.
 
-Pass: both balanced methods reach zero LoadCV and therefore serve as a forced
-capacity control; exact balanced assignment has lower score drop than greedy.
+Pass: condition number is 1 but LoadCV is nonzero.
 
-Allowed claim: capacity constraints can force the count metric to be uniform,
-but this is not the mechanism studied by the main representation-geometry
-story. It does not prove directional uniformity, feature identity,
-specialization, or utility.
+Allowed claim: hidden spectral uniformity is only a second-order diagnostic.
+It does not imply directional uniformity or uniform expert usage.
 
 ## 7. E5: Hidden Feature Spectral Uniformization
 
@@ -246,7 +246,40 @@ uniformization can flatten the covariance spectrum and restore the downstream
 top-1 routing diagnostic under well-spread prototypes. This does not prove that
 language-model hidden states naturally become spectrally uniform.
 
-## 8. Claim Boundary
+## 8. E6: Capacity Assignment As A Non-Geometric Control
+
+Question: How different is forced usage balance from representation-geometric
+top-1 balance?
+
+Methods:
+
+1. unconstrained top-1 assignment;
+2. greedy capacity-feasible assignment;
+3. exact optimal-transport-style balanced assignment using expanded expert slots.
+
+Full setting:
+
+- $N=2048$;
+- $d=64$;
+- $E=8$;
+- 5 seeds;
+- symmetric, random, and clustered prototypes.
+
+Metrics:
+
+- LoadCV;
+- max/min load ratio;
+- selected-score drop relative to top-1.
+
+Pass: both balanced methods reach zero LoadCV and therefore serve as a forced
+capacity control; exact balanced assignment has lower score drop than greedy.
+
+Allowed claim: capacity constraints can force the count metric to be uniform,
+but this is not the mechanism studied by the main representation-geometry
+story. It does not prove directional uniformity, feature identity,
+specialization, or utility.
+
+## 9. Claim Boundary
 
 Can claim:
 
@@ -255,6 +288,8 @@ Can claim:
   geometry;
 - capacity-constrained assignment can force balanced counts, but only as a
   non-geometric control;
+- covariance spectral uniformity alone is not sufficient for directional
+  uniformity or uniform expert usage;
 - hidden feature spectral uniformity is achievable in toy or controlled
   representations by centering, shrinkage, and whitening, and can restore the
   spherical routing diagnostic in the elliptical toy setting;

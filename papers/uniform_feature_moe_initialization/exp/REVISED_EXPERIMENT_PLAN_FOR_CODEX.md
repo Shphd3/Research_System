@@ -18,15 +18,18 @@ spherical token directions + equal-measure expert prototype cells
 
 ## 0. Current status
 
-The current synthetic suite has already produced 480 rows and supports the main story:
+The current synthetic suite has produced 481 rows and supports the main story:
 
 - E1: prototype geometry controls load under uniform sphere features.
 - E2: random prototype imbalance is a geometry floor, not finite-token noise.
 - E3: spectral expert prototypes are centers, not balance guarantees.
-- E4: balanced assignment is a non-geometric control.
+- E4: covariance isotropy is not directional uniformity.
 - E5: whitening repairs the elliptical toy representation.
+- E6: balanced assignment is a non-geometric control.
 
-Do not replace these experiments. Add the missing audits below if time permits.
+Do not replace these experiments. The optional short-sequence bridge remains
+parked because it would change the paper from a controlled geometry paper into
+a training-dynamics paper.
 
 ---
 
@@ -97,23 +100,28 @@ Do not claim MPI solves uniform feature routing. MPI only supplies a center-cons
 
 ---
 
-### E4. Balanced assignment control
+### E4. Covariance-isotropy counterexample
 
-Keep as a control. It can remain in the main text because it prevents a common misunderstanding.
+Keep as main result.
 
 Correct claim:
 
 ```text
-Capacity assignment can force count equality, but it is not a representation-geometric explanation.
+Hidden spectral uniformity is a second-order diagnostic, not a sufficient condition for uniform top-1 usage.
 ```
 
 Required report:
 
-- unconstrained top-1 LoadCV;
-- greedy balanced assignment LoadCV and score drop;
-- exact balanced assignment LoadCV and score drop.
+- four-axis distribution;
+- covariance condition number;
+- effective rank;
+- load vector;
+- LoadCV and max/min load ratio.
 
-If space is tight, move the detailed table to appendix, but keep one sentence in the main paper.
+Important writing rule:
+
+Do not claim covariance identity generally implies spherical directional
+uniformity. E4 is the negative counterpart to E5.
 
 ---
 
@@ -143,11 +151,33 @@ Do not claim covariance identity generally implies directional uniformity. This 
 
 ---
 
-## 2. Missing audit to add: E6 covariance-isotropy counterexample
+### E6. Balanced assignment control
 
-### Why this is needed
+Keep as a control. It can remain in the main text because it prevents a common misunderstanding.
 
-The paper now contains a formal counterexample showing that covariance identity does not imply directional uniformity or uniform load. Codex should add an experiment that mirrors this proposition.
+Correct claim:
+
+```text
+Capacity assignment can force count equality, but it is not a representation-geometric explanation.
+```
+
+Required report:
+
+- unconstrained top-1 LoadCV;
+- greedy balanced assignment LoadCV and score drop;
+- exact balanced assignment LoadCV and score drop.
+
+If space is tight, move the detailed table to appendix, but keep one sentence in the main paper.
+
+---
+
+## 2. Executed audit: E4 covariance-isotropy counterexample
+
+### Why this was needed
+
+The paper contains a formal counterexample showing that covariance identity does
+not imply directional uniformity or uniform load. The E4 experiment mirrors this
+proposition.
 
 ### Claim supported
 
@@ -197,25 +227,25 @@ instead of:
 (1/3, 1/3, 1/3)
 ```
 
-### Implementation requirements
+### Implementation status
 
-Add a function to `run_synthetic.py`:
+Implemented in `run_synthetic.py`:
 
 ```python
-run_e6_covariance_counterexample(rows)
+run_e4(rows, quick)
 ```
 
-Add output rows with:
+Output row:
 
 ```text
-experiment = E6
+experiment = E4
 setting = covariance_identity_not_directional_uniformity
 method = axis_distribution_simplex_router
-n = 4 or repeated copies such as 40000
+n = 40000
 d = 2
 e = 3
 condition_number = 1
-load_cv = expected nonzero value
+load_cv = 0.353553
 notes = covariance identity but nonuniform directional support
 ```
 
@@ -232,7 +262,7 @@ For load vector `(1/4, 1/2, 1/4)`:
 Create:
 
 ```text
-results/tables/e6_covariance_counterexample.md
+results/tables/e4_covariance_counterexample.md
 ```
 
 Template:
@@ -283,10 +313,10 @@ This bridge can show that short-context hidden states are not naturally uniform.
 
 Before handing results back:
 
-1. Existing E1--E5 tables still reproduce the current summary.
-2. E6 is added to `results.csv` and has its own table.
-3. E6 shows condition number 1 and LoadCV about 0.3536.
+1. Existing E1--E6 tables reproduce the current summary.
+2. E4 is added to `results.csv` and has its own table.
+3. E4 shows condition number 1 and LoadCV about 0.3536.
 4. No text claims that MPI solves uniform routing by itself.
 5. No text claims that covariance identity implies spherical directional uniformity.
-6. E4 remains described as a control, not the main mechanism.
+6. E6 remains described as a control, not the main mechanism.
 7. The paper's main theorem is stated as a sufficient condition.
