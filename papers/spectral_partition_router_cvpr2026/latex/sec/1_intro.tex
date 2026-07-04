@@ -1,0 +1,58 @@
+\section{Introduction}
+
+Sparse mixture-of-experts (MoE) layers route each token, patch, or hidden
+representation to a small subset of experts
+\cite{shazeer2017outrageously,fedus2022switch}.  In modern vision and
+multimodal backbones, this routing decision is not merely an implementation
+detail: it determines which subnetwork processes which region of representation
+space.  A standard linear top-1 router computes one score per expert and selects
+the largest score.  This mechanism is simple, but the induced partition of
+feature space is controlled by random initialization, auxiliary losses, and
+early optimization dynamics.
+
+This paper separates two questions that are often conflated.  The first is
+whether experts receive equal numbers of examples.  The second is whether the
+feature distribution is partitioned into equal-probability cells by a fixed
+feature-only router.  A batch-level load-balancing assignment can make counts
+exactly equal by sending new examples to underfilled experts, but such an
+assignment is not a fixed function of the current feature.  Conversely, a fixed
+router can define a clean partition of feature space while only concentrating
+around equal counts on finite batches.
+
+We study the second question.  Let $X\in\R^d$ be the route-relevant hidden
+feature.  We assume access to an unlabeled calibration set from the same feature
+population after centering and spectral normalization.  The goal is to construct
+a deterministic router $g:\R^d\to\{1,\ldots,E\}$ such that the induced cells
+$C_e=\{x:g(x)=e\}$ satisfy $\Prob(X\in C_e)=1/E$.  The router may use unlabeled
+feature statistics and model-internal expert weights, but it may not use feature
+labels, task labels, evaluation labels, or current-batch expert counts.
+
+We propose \newterm{Spectral Partition Routing} (SPR).  SPR builds a recursive
+partition tree.  At each internal node, a split direction is selected and an
+empirical quantile threshold is estimated on the features reaching that node.
+The threshold sends a fraction of mass proportional to the number of experts in
+the left and right subtrees.  Recursing until each leaf owns one expert gives an
+equal-mass partition on the calibration distribution.  The direction policy
+controls what kind of geometry the equal-mass cells respect.  Fixed directions
+give the cleanest construction; locality-driven directions use unlabeled
+feature geometry; expert-guided directions use principal input singular
+directions of expert matrices, following the spectral expert-proxy intuition of
+MPI-style routers \cite{routermpi2026}.
+
+The resulting distinction is useful for both method design and evaluation.
+Quantiles control dispatch mass.  Expert weights, if informative, control
+alignment between expert identity and feature geometry.  Training preservation
+is a separate question: a balanced initialization can be lost when hidden
+features drift across thresholds.  Our experiments therefore report usage,
+feature agreement, margins, route flips, and task loss rather than usage alone.
+
+\paragraph{Contributions.}
+First, we define uniform feature dispatch as an equal-probability feature-space
+partition and give a non-cheating criterion for calibrated routers.  Second, we
+introduce SPR, a recursive quantile router with fixed, local, and expert-guided
+direction policies.  Third, we prove that recursive quantile splitting gives
+uniform expert-cell mass under continuous node projections.  Fourth, we provide
+a full synthetic evaluation showing where the construction succeeds and where
+it does not: quantiles improve held-out usage balance, expert-guided directions
+improve feature alignment, count balance alone has low feature agreement, and
+naive slow recalibration is unstable under controlled drift.

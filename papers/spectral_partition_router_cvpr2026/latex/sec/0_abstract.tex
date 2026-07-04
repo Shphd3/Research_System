@@ -1,0 +1,21 @@
+\begin{abstract}
+Sparse mixture-of-experts models often evaluate routing quality through expert
+usage counts, but equal counts alone do not define a feature-space partition. We
+study a constructive problem: given unlabeled route-relevant features in a
+spectrally normalized representation space, can a fixed router dispatch the
+feature distribution uniformly across experts without labels or batch-level
+capacity forcing? We define uniform feature dispatch as an equal-probability
+partition of feature space and introduce Spectral Partition Routing (SPR), a
+recursive quantile router whose split directions may be fixed, locality-driven,
+or derived from expert-weight spectral prototypes. Quantile thresholds provide
+the equal-mass guarantee; split directions determine geometry and expert
+alignment. We prove the equal-mass property and validate the construction in
+full synthetic runs. SPR reduces held-out LoadCV from 0.086 for random linear
+routing to 0.034 on Gaussian and spherical features, and from 0.308 for
+prototype-only routing to 0.062 on covariance-flat non-spherical features.
+Expert-guided SPR keeps the quantile balance while reaching 0.895
+cell-to-prototype alignment and improves a controlled hard-routing task from
+12.61 to 9.03 validation MSE. The experiments also expose limits: count balance
+does not imply feature specialization, locality-only splits do not reliably
+recover latent classes, and naive slow recalibration can destabilize routes.
+\end{abstract}

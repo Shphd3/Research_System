@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Controlled hard-routing expert training at the final epoch.}
+\label{tab:e5_training_dynamics}
+\begin{tabular}{lrrrrrr}
+\toprule
+Router & Val MSE $\downarrow$ & LoadCV $\downarrow$ & NMI $\uparrow$ & Flip $\downarrow$ & Margin p05 $\uparrow$ & Spec. $\uparrow$ \\
+\midrule
+Frozen-SPR & 12.472 & 0.050 & 0.077 & 0.025 & 0.021 & 0.268 \\
+Linear + load-balance & 13.292 & 0.000 & 0.038 & 0.049 & -- & 0.197 \\
+SPR-Expert & 9.030 & 0.047 & 0.385 & 0.024 & 0.024 & 0.514 \\
+SPR-init-linear & 11.558 & 0.053 & 0.179 & 0.020 & 0.041 & 0.392 \\
+Simplex init & 12.442 & 0.044 & 0.089 & 0.022 & 0.039 & 0.266 \\
+SlowUpdate-SPR & 17.432 & 0.053 & 0.096 & 0.888 & 0.022 & 0.301 \\
+Vanilla linear & 12.613 & 0.107 & 0.087 & 0.023 & 0.035 & 0.267 \\
+\bottomrule
+\end{tabular}
+\end{table}

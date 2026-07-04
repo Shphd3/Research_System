@@ -1,0 +1,72 @@
+\section{Theory}
+
+\begin{theorem}[Node quantile split]
+\label{thm:quantile}
+Let $X\sim P_{\calN}$ be the feature distribution at node $\calN$.  Let
+$q\in\Sphere^{d-1}$ and suppose $T=q^\top \tilde X$ has continuous CDF $F$.
+For $\rho\in(0,1)$, define $\tau=F^{-1}(\rho)$.  Then
+\begin{equation}
+  \Prob(T\le \tau)=\rho,\qquad \Prob(T>\tau)=1-\rho .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+This is the defining property of the $\rho$-quantile for a continuous scalar
+random variable.
+\end{proof}
+
+\begin{theorem}[Recursive uniform dispatch]
+\label{thm:recursive}
+Suppose every internal node $\calN$ in the SPR tree splits its feature mass in
+proportion to the number of experts assigned to its two children:
+\begin{equation}
+  \Prob(C_L\mid C_{\calN})=\frac{|\calE_L|}{|\calE_{\calN}|},
+  \qquad
+  \Prob(C_R\mid C_{\calN})=\frac{|\calE_R|}{|\calE_{\calN}|}.
+\end{equation}
+If the root contains all $E$ experts and each leaf contains one expert, then
+each leaf cell has mass $1/E$.
+\end{theorem}
+
+\begin{proof}
+For any node $\calN$, prove by induction that
+$\Prob(C_{\calN})=|\calE_{\calN}|/E$.  The root satisfies this because its
+mass is one and it contains $E$ experts.  If the claim holds for a parent node,
+then
+\begin{equation}
+  \Prob(C_L)
+  =\Prob(C_{\calN})\Prob(C_L\mid C_{\calN})
+  =\frac{|\calE_{\calN}|}{E}
+   \frac{|\calE_L|}{|\calE_{\calN}|}
+  =\frac{|\calE_L|}{E},
+\end{equation}
+and the right child is identical.  At a leaf, $|\calE_e|=1$, hence
+$\Prob(C_e)=1/E$.
+\end{proof}
+
+\begin{proposition}[SPR is not batch capacity assignment]
+After calibration, SPR evaluates stored directions and thresholds along one
+root-to-leaf path.  The route of $x$ does not depend on the other examples in
+the current batch or on current expert counts.
+\end{proposition}
+
+\paragraph{Finite calibration.}
+Empirical quantiles give exact or near-exact balance on the calibration set.
+Held-out balance depends on calibration size and distribution match.  For one
+scalar split, empirical CDF concentration gives the standard
+$O(\sqrt{\log(1/\delta)/n_{\calN}})$ scale at node sample size $n_{\calN}$
+\cite{dvoretzky1956asymptotic}.  Lower tree nodes have fewer samples, so
+calibration size is a real experimental variable.
+
+\paragraph{Training margins.}
+Uniform dispatch at calibration time is only the initialization problem.  For a
+tree router, we define the margin of $x$ as the closest distance to a threshold
+along the selected path:
+\begin{equation}
+  m_{\mathrm{tree}}(x)=
+  \min_{\calN\in\mathrm{path}(x)}
+  |q_{\calN}^{\top}\tilde x-\tau_{\calN}|.
+\end{equation}
+Small lower-tail margins predict route flips under representation drift, so the
+training experiments report loss, usage, route-feature NMI, flip rate, and
+margin lower tails.

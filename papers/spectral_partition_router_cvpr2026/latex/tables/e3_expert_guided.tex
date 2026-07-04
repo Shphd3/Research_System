@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Expert-weight-guided routing. Expert prototypes improve alignment, while quantile thresholds control mass.}
+\label{tab:e3_expert_guided}
+\begin{tabular}{llrrrr}
+\toprule
+Expert init & Router & Proto spread $\uparrow$ & Alignment $\uparrow$ & LoadCV $\downarrow$ & Margin p05 $\uparrow$ \\
+\midrule
+clustered & Expert-SVD top-1 & 0.877 & 0.903 & 0.149 & 0.039 \\
+clustered & MPI one-step top-1 & 0.877 & 0.909 & 0.094 & 0.035 \\
+clustered & SPR-Expert & 0.877 & 0.884 & 0.021 & 0.022 \\
+clustered & SPR-Expert-MPI & 0.877 & 0.896 & 0.021 & 0.022 \\
+clustered & SPR-Local & 0.877 & 0.098 & 0.021 & 0.021 \\
+random & Expert-SVD top-1 & 0.894 & 0.934 & 0.070 & 0.035 \\
+random & MPI one-step top-1 & 0.894 & 0.931 & 0.075 & 0.035 \\
+random & SPR-Expert & 0.894 & 0.917 & 0.017 & 0.021 \\
+random & SPR-Expert-MPI & 0.894 & 0.911 & 0.015 & 0.021 \\
+random & SPR-Local & 0.894 & 0.087 & 0.024 & 0.022 \\
+symmetric & Expert-SVD top-1 & 0.875 & 0.893 & 0.113 & 0.038 \\
+symmetric & MPI one-step top-1 & 0.875 & 0.915 & 0.084 & 0.036 \\
+symmetric & SPR-Expert & 0.875 & 0.886 & 0.016 & 0.024 \\
+symmetric & SPR-Expert-MPI & 0.875 & 0.898 & 0.021 & 0.021 \\
+symmetric & SPR-Local & 0.875 & 0.098 & 0.019 & 0.021 \\
+\bottomrule
+\end{tabular}
+\end{table}

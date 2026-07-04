@@ -1,0 +1,104 @@
+\section{Problem and Method}
+
+\subsection{Uniform feature dispatch}
+
+\begin{definition}[Uniform feature dispatch]
+A router is a deterministic map $g:\R^d\to\{1,\ldots,E\}$.  It induces cells
+$C_e=\{x\in\R^d:g(x)=e\}$.  The router achieves population uniform feature
+dispatch if
+\begin{equation}
+  \Prob(X\in C_e)=\Prob(g(X)=e)=\frac{1}{E},
+  \qquad e=1,\ldots,E .
+\end{equation}
+\end{definition}
+
+This definition is distributional.  It does not require every finite batch to
+contain exactly the same number of examples per expert.  Finite batches should
+concentrate around $1/E$ when the calibration and deployment distributions
+match, but exact batch balance is a different mechanism.
+
+\begin{definition}[Non-cheating feature router]
+After calibration, a non-cheating feature router may depend only on the current
+feature $x$, stored calibration statistics, and optional model-internal expert
+weights.  It may not depend on feature labels, task labels, evaluation labels,
+or current-batch expert counts.
+\end{definition}
+
+Expert weights are allowed because they are model-internal parameters.  They can
+guide how feature cells are associated with expert identities.  They cannot
+replace the feature quantiles that enforce the desired mass.
+
+\subsection{Spectral normalization}
+
+SPR assumes an unlabeled calibration set
+$\calD_{\mathrm{cal}}=\{x_i\}_{i=1}^{n_{\mathrm{cal}}}$ from the route-relevant
+feature population.  After centering by $\mu$ and optionally applying a
+whitening or shrinkage transform $B$, we route
+\begin{equation}
+  \tilde x = B(x-\mu), \qquad
+  \mathrm{Cov}(\tilde X)\approx \sigma^2 I .
+\end{equation}
+Spectral normalization does not imply semantic structure.  It only removes the
+confound that a single high-variance direction dominates the router geometry.
+
+\subsection{Recursive quantile partition}
+
+SPR constructs a binary tree whose leaves are experts.  Consider a node
+$\calN$ with expert subset $\calE_{\calN}$.  Split this subset into
+nonempty groups $\calE_L$ and $\calE_R$ and define
+\begin{equation}
+  \rho_{\calN}=
+  \frac{|\calE_L|}{|\calE_L|+|\calE_R|}.
+\end{equation}
+Choose a unit split direction $q_{\calN}$ and project the node population by
+$T_{\calN}=q_{\calN}^{\top}\tilde X$.  If $F_{\calN}$ is the CDF of
+$T_{\calN}$, set the threshold to
+\begin{equation}
+  \tau_{\calN}=F_{\calN}^{-1}(\rho_{\calN}).
+\end{equation}
+The left child receives features with
+$q_{\calN}^{\top}\tilde x\le \tau_{\calN}$; the right child receives the
+remaining features.  The recursion stops when a node contains one expert.
+
+\subsection{Direction policies}
+
+The quantile threshold controls mass.  The direction controls geometry.
+
+\paragraph{SPR-Fixed.}
+The tree uses a fixed sequence of random or structured unit directions.  This
+variant uses only unlabeled feature quantiles.
+
+\paragraph{SPR-Local.}
+At each node, SPR samples candidate directions, computes the quantile split for
+each, and chooses the split with the lowest weighted within-cell variance:
+\begin{equation}
+  \mathcal{L}_{\mathrm{local}}(q)=
+  \sum_{b\in\{L,R\}}\Prob(C_b\mid C_{\calN})
+  \E\left[\|\tilde X-\mu_b\|_2^2\mid \tilde X\in C_b\right].
+\end{equation}
+This is unsupervised and uses no evaluation labels.
+
+\paragraph{SPR-Expert.}
+Let $W_e$ be an input-side expert matrix.  We define an expert spectral
+prototype
+\begin{equation}
+  v_e\in\argmax_{\|v\|_2=1}\|v^{\top}W_e\|_2^2 ,
+\end{equation}
+the top eigenvector of $W_eW_e^\top$.  At a node, expert prototypes are split
+into two groups; the split direction is the normalized difference between their
+mean prototypes:
+\begin{equation}
+  q_{\calN}=
+  \frac{\bar v_L-\bar v_R}{\|\bar v_L-\bar v_R\|_2}.
+\end{equation}
+Thus expert weights choose geometry, while feature quantiles still choose the
+mass threshold.
+
+\subsection{Training modes}
+
+We evaluate three ways to use the calibrated tree in controlled training.
+\newterm{Frozen-SPR} keeps the tree fixed.  \newterm{SPR-init-linear} uses SPR
+cell centers to initialize rows of a linear router.  \newterm{SlowUpdate-SPR}
+periodically recalibrates from unlabeled windows.  These modes test
+initialization and preservation; they do not assume that SPR automatically
+discovers semantic experts.

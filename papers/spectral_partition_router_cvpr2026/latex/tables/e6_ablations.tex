@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\caption{Ablations and boundary checks.}
+\label{tab:e6_ablations}
+\begin{tabular}{llrrrr}
+\toprule
+Ablation & Setting & LoadCV $\downarrow$ & NMI $\uparrow$ & Margin p05 $\uparrow$ & Max error $\downarrow$ \\
+\midrule
+calibration\_size & 2048 & 0.077 & 0.025 & 0.021 & 0.020 \\
+calibration\_size & 32768 & 0.025 & 0.032 & 0.021 & 0.006 \\
+calibration\_size & 512 & 0.089 & 0.035 & 0.023 & 0.019 \\
+calibration\_size & 8192 & 0.025 & 0.026 & 0.021 & 0.005 \\
+count\_control & feature\_router & 0.029 & 0.031 & 0.021 & 0.006 \\
+count\_control & forced\_count & 0.000 & 0.012 & -- & 0.000 \\
+dimension & 128 & 0.025 & 0.015 & 0.021 & 0.006 \\
+dimension & 16 & 0.034 & 0.172 & 0.023 & 0.007 \\
+dimension & 32 & 0.028 & 0.076 & 0.022 & 0.007 \\
+dimension & 64 & 0.029 & 0.032 & 0.021 & 0.007 \\
+direction\_policy & expert & 0.028 & 0.255 & 0.022 & 0.007 \\
+direction\_policy & fixed & 0.027 & 0.033 & 0.021 & 0.006 \\
+direction\_policy & local & 0.038 & 0.037 & 0.021 & 0.009 \\
+expert\_count & 12 & 0.040 & 0.034 & 0.017 & 0.007 \\
+expert\_count & 4 & 0.022 & 0.013 & 0.032 & 0.009 \\
+expert\_count & 6 & 0.028 & 0.020 & 0.025 & 0.008 \\
+expert\_count & 8 & 0.030 & 0.029 & 0.021 & 0.006 \\
+expert\_weight\_quality & aligned & 0.035 & 0.232 & 0.022 & 0.008 \\
+expert\_weight\_quality & noisy & 0.034 & 0.027 & 0.021 & 0.008 \\
+expert\_weight\_quality & random & 0.040 & 0.021 & 0.021 & 0.009 \\
+feature\_drift & 0.00 & 0.037 & 0.029 & 0.021 & 0.009 \\
+feature\_drift & 0.05 & 0.038 & 0.029 & 0.021 & 0.009 \\
+feature\_drift & 0.15 & 0.037 & 0.029 & 0.022 & 0.009 \\
+feature\_drift & 0.30 & 0.036 & 0.029 & 0.022 & 0.009 \\
+whitening & off & 0.030 & 0.094 & 0.025 & 0.007 \\
+whitening & on & 0.034 & 0.031 & 0.020 & 0.008 \\
+\bottomrule
+\end{tabular}
+\end{table}

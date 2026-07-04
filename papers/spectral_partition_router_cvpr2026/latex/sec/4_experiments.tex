@@ -1,0 +1,145 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\paragraph{Metrics.}
+LoadCV is the coefficient of variation of expert usage; lower is closer to
+uniform dispatch.  Max error is the largest absolute deviation from target
+usage $1/E$.  NMI is normalized mutual information between evaluation-only
+latent feature labels and routes; it is never used to build the router.  Margin
+p05 is the fifth percentile of route margins.
+
+\paragraph{Full-run setup.}
+All results are full runs with five seeds.  E1 sweeps
+$d\in\{32,64\}$, $E\in\{4,8\}$, and
+$n_{\mathrm{cal}}\in\{2048,8192,16384\}$ with 8192 holdout points.  E2 uses
+$d=64$, $E\in\{4,8\}$, and 8192 calibration/holdout points.  E3--E5 use
+controlled feature populations with $E=8$ experts; E5 trains hard-routed
+linear experts for 80 epochs.  Balanced assignment is always a forced-count
+control, not a valid feature-only router.
+
+\subsection{Static uniform dispatch}
+
+E1 tests Gaussian and spherical features.  Table
+\ref{tab:e1_static_dispatch} shows that SPR gives exact calibration balance and
+low held-out imbalance.  Across the full sweep, the best SPR mean held-out
+LoadCV is 0.034, compared with 0.086 for vanilla random linear routing.  Simplex
+prototypes are strong on spherical data, which is expected because their
+geometry matches the distribution.
+
+\input{tables/e1_static_dispatch}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e1_loadcv_by_method.png}
+\includegraphics[width=0.48\linewidth]{figures/e1_holdout_gap.png}
+\caption{E1 static dispatch. Left: held-out usage imbalance. Right:
+calibration-to-holdout gap for SPR variants.}
+\label{fig:e1_static}
+\end{figure}
+
+\subsection{Covariance-flat non-spherical features}
+
+E2 tests whitened axis-jitter, sparse-mixture, and paired-direction features.
+Their covariance condition number is 1.00, yet prototype-router cells can have
+unequal probability mass.  On axis-supported features, simplex prototype
+routing reaches LoadCV 0.752, while SPR variants are near 0.04.  The paired
+direction case is a boundary case because finite support and near-ties make
+deterministic feature-only splitting unstable.
+
+\input{tables/e2_non_spherical}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e2_non_spherical_loadcv.png}
+\includegraphics[width=0.48\linewidth]{figures/e2_covariance_vs_load.png}
+\caption{E2 non-spherical features. Flat covariance does not determine the
+probability mass of prototype-router cells.}
+\label{fig:e2_non_spherical}
+\end{figure}
+
+\subsection{Expert-weight guidance}
+
+E3 tests random, symmetric, and clustered expert matrices.  We extract expert
+principal directions by SVD or one-step power iteration.  Prototype-only top-1
+routing aligns with expert directions but does not control mass.  SPR-Expert
+uses the same prototypes only to choose split directions; quantiles choose
+thresholds.  Table \ref{tab:e3_expert_guided} shows that SPR-Expert reaches
+mean held-out LoadCV 0.018 and cell-to-prototype alignment 0.895, while
+expert-SVD top-1 has alignment 0.910 but LoadCV 0.111.
+
+\input{tables/e3_expert_guided}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e3_prototype_spread.png}
+\includegraphics[width=0.48\linewidth]{figures/e3_alignment_vs_loadcv.png}
+\caption{E3 expert guidance. Expert prototypes provide geometry, but quantile
+thresholds are needed for low usage imbalance.}
+\label{fig:e3_expert}
+\end{figure}
+
+\subsection{Feature partition quality}
+
+E4 separates count balance from meaningful feature partition.  We generate
+balanced latent feature classes, randomly rotate the geometry, whiten globally,
+and hide labels from all routers.  Table \ref{tab:e4_feature_partition} shows
+that balanced assignment has perfect counts but NMI 0.007.  SPR-Fixed and
+SPR-Local are also near random in NMI.  SPR-Expert improves NMI to 0.233 and
+purity to 0.408 because its expert weights contain directions aligned with the
+latent geometry.  This supports expert-guided geometry, not a broad claim that
+locality-only quantile cuts recover the right classes.
+
+\input{tables/e4_feature_partition}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e4_nmi_purity.png}
+\includegraphics[width=0.48\linewidth]{figures/e4_within_cell_variance.png}
+\caption{E4 feature partition quality. Count balance is not enough; alignment
+requires a geometry source that matches latent feature structure.}
+\label{fig:e4_quality}
+\end{figure}
+
+\subsection{Controlled training dynamics}
+
+E5 uses a hard-routing regression task where each latent feature class has a
+different target map, $Y=A_FX+\epsilon$.  The routers never observe $F$.
+Experts train under the routes produced by each method.  SPR-Expert reaches
+final validation MSE 9.03 and NMI 0.385; vanilla linear routing reaches MSE
+12.61 and NMI 0.087.  SlowUpdate-SPR is a negative result: repeated
+recalibration gives route flip rate 0.888 and worse loss.
+
+\input{tables/e5_training_dynamics}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e5_loss_curves.png}
+\includegraphics[width=0.48\linewidth]{figures/e5_route_nmi.png}
+\includegraphics[width=0.48\linewidth]{figures/e5_flip_rate.png}
+\includegraphics[width=0.48\linewidth]{figures/e5_margin_p05.png}
+\caption{E5 controlled training dynamics. Expert-guided geometry improves the
+controlled task, while naive slow recalibration creates route instability.}
+\label{fig:e5_training}
+\end{figure}
+
+\subsection{Ablations}
+
+E6 audits calibration size, dimension, expert count, direction policy,
+whitening, expert quality, count forcing, and drift.  Larger calibration sets
+improve held-out balance: LoadCV drops from 0.089 at
+$n_{\mathrm{cal}}=512$ to 0.025 at 32768.  Expert quality controls feature
+agreement: aligned expert weights give NMI 0.282, while noisy or random weights
+collapse near fixed/local baselines.
+
+\input{tables/e6_ablations}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e6_calibration_size.png}
+\includegraphics[width=0.48\linewidth]{figures/e6_policy_ablation.png}
+\caption{E6 ablations. Calibration size controls statistical balance; expert
+weight quality controls feature agreement.}
+\label{fig:e6_ablations}
+\end{figure}
+
+\FloatBarrier

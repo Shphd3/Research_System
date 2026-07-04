@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{Spectrally flat but non-spherical features. Covariance flatness alone does not force prototype-router balance.}
+\label{tab:e2_non_spherical}
+\begin{tabular}{lrrlrr}
+\toprule
+Data & Cond. $\downarrow$ & Eff. rank $\uparrow$ & Method & LoadCV $\downarrow$ & Max error $\downarrow$ \\
+\midrule
+Axis-jitter & 1.00 & 64.0 & Balanced assignment & 0.000 & 0.000 \\
+Axis-jitter & 1.00 & 64.0 & SPR-Expert & 0.039 & 0.009 \\
+Axis-jitter & 1.00 & 64.0 & SPR-Fixed & 0.044 & 0.010 \\
+Axis-jitter & 1.00 & 64.0 & SPR-Local & 0.039 & 0.008 \\
+Axis-jitter & 1.00 & 64.0 & Simplex prototype & 0.752 & 0.215 \\
+Axis-jitter & 1.00 & 64.0 & Vanilla linear & 0.162 & 0.034 \\
+Paired-directions & 1.00 & 64.0 & Balanced assignment & 0.000 & 0.000 \\
+Paired-directions & 1.00 & 64.0 & SPR-Expert & 0.180 & 0.038 \\
+Paired-directions & 1.00 & 64.0 & SPR-Fixed & 0.211 & 0.047 \\
+Paired-directions & 1.00 & 64.0 & SPR-Local & 0.199 & 0.046 \\
+Paired-directions & 1.00 & 64.0 & Simplex prototype & 0.136 & 0.028 \\
+Paired-directions & 1.00 & 64.0 & Vanilla linear & 0.173 & 0.043 \\
+Sparse-mixture & 1.00 & 64.0 & Balanced assignment & 0.000 & 0.000 \\
+Sparse-mixture & 1.00 & 64.0 & SPR-Expert & 0.031 & 0.007 \\
+Sparse-mixture & 1.00 & 64.0 & SPR-Fixed & 0.031 & 0.008 \\
+Sparse-mixture & 1.00 & 64.0 & SPR-Local & 0.049 & 0.010 \\
+Sparse-mixture & 1.00 & 64.0 & Simplex prototype & 0.188 & 0.044 \\
+Sparse-mixture & 1.00 & 64.0 & Vanilla linear & 0.088 & 0.021 \\
+\bottomrule
+\end{tabular}
+\end{table}

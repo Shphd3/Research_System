@@ -1,0 +1,36 @@
+\section{Discussion and Limitations}
+
+The results support a narrow but useful claim.  Uniform feature dispatch is a
+feature-space partitioning property, not a synonym for batch load balancing.
+Recursive quantile thresholds give a direct construction for equal-mass cells,
+and the held-out experiments show that this construction generalizes when the
+calibration and deployment distributions match well enough.
+
+The experiments also show why uniform usage is insufficient.  Balanced
+assignment gives exact counts but low NMI.  SPR-Fixed gives clean quantile
+cells but weak feature agreement in the latent-class task.  SPR-Expert is
+stronger because it uses expert weights as a geometry prior.  This is not a
+claim that expert weights always encode useful features: the ablations show
+that noisy or random expert directions do not create meaningful cells.
+
+Training preservation remains a separate problem.  A good initial partition can
+be lost if representation drift moves many examples across thresholds.  The
+SlowUpdate-SPR result is intentionally reported as a negative case: non-cheating
+unlabeled recalibration can still destabilize routes if boundary updates are too
+aggressive.  Future work should add explicit finite-sample tree bounds,
+route-margin preservation objectives, and real vision or multimodal MoE
+experiments.
+
+\section{Conclusion}
+
+We formulate uniform routing as a constructive feature-partition problem and
+introduce Spectral Partition Routing.  The theory proves that recursive
+quantile splitting gives equal-mass expert cells under continuous node
+projections.  The experiments verify that quantile calibration reduces usage
+imbalance on Gaussian, spherical, and covariance-flat non-spherical features.
+They also show the boundary: uniform counts are not feature specialization, and
+locality-only splits do not reliably recover latent classes.  The strongest
+variant is expert-guided SPR, which separates the two roles cleanly: quantiles
+control probability mass, while expert spectral prototypes supply feature
+geometry.  Training-time preservation remains an open second-stage problem, not
+a consequence of balanced initialization.
