@@ -1,0 +1,11 @@
+# V2.1 Experiment File Index
+
+Read in this order:
+
+1. `README.md`
+2. `EXPERIMENT_PLAN.md`
+3. `CODEX_TASKS.md`
+4. `IMPLEMENTATION_AUDIT_CHECKLIST.md`
+5. `THEORY_TO_EXPERIMENT_MAP.md`
+6. `CLAIM_BOUNDARY.md`
+7. `RUN_ORDER.md`
