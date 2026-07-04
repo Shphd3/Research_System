@@ -1,0 +1,562 @@
+\documentclass{article}
+\usepackage{iclr2026_conference,times}
+
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{flafter}
+\hypersetup{hidelinks}
+
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par\noindent\textit{#1.}\ }{\hfill\qedsymbol\par}
+\makeatother
+
+\title{Spectral Partition Routing for Uniform Feature Dispatch in Mixture-of-Experts}
+
+\author{Anonymous Authors}
+
+%\iclrfinalcopy
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study a constructive routing problem for mixture-of-experts layers: given
+unlabeled route-relevant features in a spectrally uniform representation space,
+can we build a router that dispatches the feature distribution uniformly across
+experts without using labels or batch-level capacity forcing?  We define
+uniform feature dispatch as an equal-probability partition of feature space and
+propose Spectral Partition Routing (SPR), a calibration-based router that
+recursively splits unlabeled features by spectral-coordinate quantiles.  SPR can
+use only fixed axes, feature-locality objectives, or expert-weight-derived
+prototypes; in all cases, quantile thresholds provide the equal-mass guarantee,
+while the choice of split direction controls geometry and expert alignment.  We
+prove the equal-mass property, clarify why this is not capacity assignment, and
+separate the initialization problem from training-time preservation.  The
+experiments are left as explicit protocols: static dispatch, non-spherical
+spectrally flat features, expert-weight-guided routing, feature-partition
+quality, and controlled MoE training dynamics.
+\end{abstract}
+
+\section{Introduction}
+
+Sparse mixture-of-experts (MoE) layers route each token representation to a
+small subset of experts \citep{shazeer2017outrageously,fedus2022switch}.  A
+standard linear top-1 router computes one score per expert and selects the
+largest one.  This design is simple, but it leaves the induced feature-space
+partition largely determined by random initialization, learned dynamics, and
+auxiliary losses.  When the research goal is to understand whether uniformly
+represented features can be assigned uniformly to experts, count-level load
+balance is not the right starting point.  The primary object is the partition of
+feature space itself.
+
+This paper formulates the first step of that problem.  We assume access to an
+unlabeled calibration set of route-relevant features in a spectrally uniform
+space, meaning that the feature covariance has no dominant direction after the
+chosen representation normalization.  We ask whether one can construct a router
+that partitions the feature distribution into equal-probability cells, assigns
+one cell to each expert, and then routes future tokens by a fixed feature-only
+rule.  This setting is intentionally narrower than language-model training: it
+does not assume labels, semantic feature identities, or a task-specific notion of
+which expert should receive which feature.
+
+The key distinction is between \emph{uniform feature dispatch} and ordinary
+load balancing.  Load balancing can be forced inside a finite batch by assigning
+tokens to underfilled experts.  Uniform feature dispatch instead asks for a fixed
+router $g(x)$ whose induced cells $C_e=\{x:g(x)=e\}$ have equal probability mass
+under the feature distribution.  Once calibrated, $g(x)$ must route each token
+independently of the other tokens in the current batch.  Under this definition,
+using unlabeled feature statistics is allowed; using feature labels, task
+targets, or current-batch expert counts is not.
+
+We propose \newterm{Spectral Partition Routing} (SPR).  SPR first standardizes
+route-relevant features using unlabeled spectral statistics.  It then constructs
+a recursive partition tree.  At each internal node, a split direction is chosen
+and a quantile threshold is estimated on the unlabeled features reaching that
+node.  The threshold is chosen so that the probability mass sent to the left and
+right child matches the number of experts assigned to those children.  Recursing
+to $E$ leaves yields $E$ equal-mass feature cells.  The split directions can be
+fixed spectral axes, unsupervised locality directions, or directions derived from
+expert weights.  Expert weights are important because an expert matrix supplies
+an intrinsic candidate prototype through its principal input singular direction,
+as in spectral expert-proxy router designs such as MPI \citep{routermpi2026}.
+SPR uses such prototypes to choose geometry; quantiles still provide the
+uniform-dispatch guarantee.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+\item We define uniform feature dispatch as an equal-probability feature-space
+partition and give a precise non-cheating criterion for routers calibrated from
+unlabeled features and optional model-internal expert weights.
+\item We introduce Spectral Partition Routing, a practical family of recursive
+quantile routers with fixed-axis, locality-driven, and expert-weight-guided
+variants.
+\item We prove that recursive quantile splitting gives equal-mass expert cells on
+the calibration distribution, and we provide an experiment plan that separates
+static dispatch, feature locality, expert-prototype alignment, and training-time
+preservation.
+\end{enumerate}
+
+\section{Problem Definition}
+
+\subsection{Route-relevant feature distribution}
+
+Let $X\in\R^d$ denote the hidden feature to be routed.  In a sequence model,
+$X$ should be the representation at the route-relevant position, not an
+unfiltered pool of all token positions.  We assume an unlabeled calibration set
+\begin{equation}
+\calD_{\mathrm{cal}}=\{x_i\}_{i=1}^{n_{\mathrm{cal}}}
+\end{equation}
+from the same feature population.  No feature identity, sequence label, task
+answer, or expert label is available to the method.
+
+The controlled setting is a spectrally uniform representation space.  After
+centering by $\mu$ and optionally applying a spectral normalization matrix $B$,
+we write
+\begin{equation}
+  \tilde x = B(x-\mu),
+  \qquad
+  \mathrm{Cov}(\tilde X)\approx \sigma^2 I.
+\end{equation}
+If the given features are already spectrally uniform, $B$ may be the identity.
+If not, $B$ can be a whitening or shrinkage transform estimated from unlabeled
+calibration features.  Spectral uniformity is not treated as proof of semantic
+structure.  It only removes the confound that a single high-variance direction
+dominates the routing geometry.
+
+\subsection{Uniform feature dispatch}
+
+\begin{definition}[Uniform feature dispatch]
+A router is a deterministic map $g:\R^d\to\{1,\ldots,E\}$.  It induces feature
+cells
+\begin{equation}
+ C_e = \{x\in\R^d: g(x)=e\}.
+\end{equation}
+The router achieves population uniform feature dispatch if
+\begin{equation}
+ \Prob(X\in C_e)=\Prob(g(X)=e)=\frac{1}{E},\qquad e=1,\ldots,E.
+\end{equation}
+\end{definition}
+
+This definition is deliberately distributional.  It does not require every
+finite batch to contain exactly $N/E$ tokens per expert.  Finite batches should
+concentrate around $1/E$ if the calibration distribution matches the deployment
+distribution, but exact batch balance is a different mechanism.
+
+\begin{definition}[Non-cheating feature router]
+A calibrated router is non-cheating if, after calibration, $g(x)$ depends only on
+the current feature $x$, fixed calibration statistics, and optional
+model-internal expert weights.  It may not use feature labels, task targets,
+evaluation labels, or the current batch's expert counts to adjust assignments.
+\end{definition}
+
+Under this definition, using expert weights is allowed.  Expert weights are part
+of the model, not data labels.  They can guide how equal-mass feature cells are
+associated with experts.  What is not allowed is assigning a token to an expert
+because that expert is currently under capacity.
+
+\section{Spectral Partition Routing}
+
+SPR constructs a partition tree.  Each leaf is assigned to one expert.  Each
+internal node owns a feature subpopulation and a subset of experts.  A node
+splits its feature mass in proportion to how many experts are assigned to each
+child.
+
+\subsection{Recursive quantile partition}
+
+Consider a node $\calN$ with feature distribution $P_{\calN}$ and expert subset
+$\calE_{\calN}$.  Split the experts into two nonempty groups
+$\calE_L$ and $\calE_R$.  Define
+\begin{equation}
+ \rho_{\calN}=\frac{|\calE_L|}{|\calE_L|+|\calE_R|}.
+\end{equation}
+Choose a split direction $q_{\calN}\in\Sphere^{d-1}$ and scalar projection
+\begin{equation}
+ T_{\calN}=q_{\calN}^{\top}\tilde X,\qquad \tilde X\sim P_{\calN}.
+\end{equation}
+Let $F_{\calN}$ be the CDF of $T_{\calN}$ under the node distribution.  The
+threshold is the node quantile
+\begin{equation}
+ \tau_{\calN}=F_{\calN}^{-1}(\rho_{\calN}).
+\end{equation}
+The left and right children are
+\begin{align}
+ C_L &= \{x\in C_{\calN}: q_{\calN}^{\top}\tilde x\le \tau_{\calN}\},\\
+ C_R &= \{x\in C_{\calN}: q_{\calN}^{\top}\tilde x> \tau_{\calN}\}.
+\end{align}
+The recursion stops when a node contains one expert.  That leaf cell is assigned
+to that expert.  If $E=2^K$, all splits can be medians.  If $E$ is not a power
+of two, the split ratio follows the left/right expert counts.
+
+\subsection{Choosing the split direction}
+
+The quantile threshold gives equal mass.  The split direction controls geometry,
+locality, and expert alignment.  We study three variants.
+
+\paragraph{SPR-Fixed.}
+A fixed sequence of directions is chosen before seeing labels or tasks.  Examples
+include a fixed random orthogonal basis, a Hadamard basis, or a Fourier-like
+basis.  This is the cleanest construction: it uses only unlabeled feature
+quantiles and has no expert dependence.
+
+\paragraph{SPR-Local.}
+The direction is chosen from unlabeled calibration features to improve geometric
+locality.  A practical implementation samples candidate unit directions
+$\{q^{(m)}\}_{m=1}^M$, computes the quantile split for each, and chooses the one
+with lowest within-cell variance,
+\begin{equation}
+  \mathcal{L}_{\mathrm{local}}(q)
+  =\sum_{b\in\{L,R\}} \Prob(C_b\mid C_{\calN})
+  \E\left[\|\tilde X-\mu_b\|_2^2\mid \tilde X\in C_b\right].
+\end{equation}
+This remains unsupervised.  It uses feature geometry, not labels.
+
+\paragraph{SPR-Expert.}
+Expert weights can guide the partition.  Let $W_e$ be an input-side expert
+matrix.  Define an expert spectral prototype
+\begin{equation}
+ v_e\in\arg\max_{\|v\|_2=1}\|v^{\top}W_e\|_2^2,
+\end{equation}
+which is a top eigenvector of $W_eW_e^{\top}$.  This matches the expert-proxy
+view of spectral router designs: MPI-style updates move router rows toward
+principal expert directions through power iteration and retraction
+\citep{routermpi2026}.
+
+At node $\calN$, cluster or split the expert prototypes
+$\{v_e:e\in\calE_{\calN}\}$ into $\calE_L$ and $\calE_R$.  Let
+\begin{equation}
+ \bar v_L=\frac{1}{|\calE_L|}\sum_{e\in\calE_L} v_e,\qquad
+ \bar v_R=\frac{1}{|\calE_R|}\sum_{e\in\calE_R} v_e.
+\end{equation}
+Then use
+\begin{equation}
+ q_{\calN}=\frac{\bar v_L-\bar v_R}{\|\bar v_L-\bar v_R\|_2}
+\end{equation}
+whenever the numerator is nonzero; otherwise fall back to SPR-Fixed or
+SPR-Local.  Expert weights therefore influence which equal-mass cell goes to
+which expert.  They do not replace the quantile rule that enforces uniform
+feature dispatch.
+
+\subsection{Router forms for training}
+
+SPR can be used in three training modes.
+
+\paragraph{Frozen-SPR.}
+The tree, thresholds, and expert assignment are fixed after calibration.  Only
+experts and the rest of the model train.  This isolates whether a uniform feature
+partition is useful when it is preserved exactly.
+
+\paragraph{SPR-init-linear.}
+SPR is used only to initialize a conventional linear router.  Let
+\begin{equation}
+ c_e=\E[\tilde X\mid g_{\mathrm{SPR}}(X)=e]
+\end{equation}
+be the cell center.  The linear router row for expert $e$ is initialized to
+$c_e/\|c_e\|_2$ when the center is nonzero.  This tests whether the learned
+linear top-1 router can preserve a feature partition discovered by SPR.
+
+\paragraph{SlowUpdate-SPR.}
+The tree is recalibrated periodically using a moving window of unlabeled
+features.  Updates are infrequent and smoothed to avoid boundary oscillation.
+This mode studies representation drift while keeping the router non-cheating:
+each route decision still uses only the current feature and fixed statistics from
+previous calibration windows.
+
+\section{Theory}
+
+\subsection{A quantile split gives prescribed mass}
+
+\begin{theorem}[Node quantile split]
+\label{thm:quantile_split}
+Let $X\sim P_{\calN}$ be the feature distribution at node $\calN$, let
+$q\in\Sphere^{d-1}$, and let $T=q^{\top}\tilde X$ have a continuous CDF $F$.
+For $\rho\in(0,1)$, define $\tau=F^{-1}(\rho)$ and split by
+$T\le \tau$.  Then
+\begin{equation}
+ \Prob(T\le \tau)=\rho,\qquad \Prob(T>\tau)=1-\rho.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+This is the defining property of the $\rho$-quantile for a continuous scalar
+random variable.
+\end{proof}
+
+\subsection{Recursive splitting gives uniform expert cells}
+
+\begin{theorem}[Uniform dispatch by recursive spectral partition]
+\label{thm:recursive_uniform}
+Suppose every internal node $\calN$ in the SPR tree splits its feature mass in
+proportion to the number of experts assigned to its children:
+\begin{equation}
+ \Prob(C_L\mid C_{\calN})=\frac{|\calE_L|}{|\calE_{\calN}|},\qquad
+ \Prob(C_R\mid C_{\calN})=\frac{|\calE_R|}{|\calE_{\calN}|}.
+\end{equation}
+If the root contains all $E$ experts and each leaf contains one expert, then each
+leaf cell $C_e$ has mass $1/E$.
+\end{theorem}
+
+\begin{proof}
+For any node $\calN$, we prove by induction that
+\begin{equation}
+ \Prob(C_{\calN})=\frac{|\calE_{\calN}|}{E}.
+\end{equation}
+The root satisfies this because its mass is $1$ and it contains $E$ experts.  If
+the claim holds for a parent node, then for its left child,
+\begin{equation}
+ \Prob(C_L)=\Prob(C_{\calN})\Prob(C_L\mid C_{\calN})
+ =\frac{|\calE_{\calN}|}{E}\frac{|\calE_L|}{|\calE_{\calN}|}
+ =\frac{|\calE_L|}{E}.
+\end{equation}
+The right child is identical.  At a leaf, $|\calE_e|=1$, so
+$\Prob(C_e)=1/E$.
+\end{proof}
+
+\subsection{Why this is not capacity assignment}
+
+\begin{proposition}[Fixed feature router]
+After calibration, SPR defines a deterministic function $g(x)$ of the current
+feature and stored tree parameters.  It does not depend on the other examples in
+the current batch.  Therefore SPR is not a batch-level capacity assignment.
+\end{proposition}
+
+\begin{proof}
+The route of $x$ is computed by evaluating the stored split directions and
+thresholds along one root-to-leaf path.  No term in this computation contains the
+current batch composition or the current number of examples already assigned to
+any expert.
+\end{proof}
+
+\subsection{Finite calibration and deployment error}
+
+In practice, $F_{\calN}$ is estimated from a finite calibration set.  Empirical
+quantiles give exact or near-exact balance on the calibration set, but holdout
+usage depends on calibration size and distribution shift.  For one scalar split,
+standard empirical CDF concentration implies a deviation scale
+$O(\sqrt{\log(1/\delta)/n_{\calN}})$ at node sample size $n_{\calN}$
+\citep{dvoretzky1956asymptotic}.  In a tree, lower nodes have fewer samples, so
+calibration size is a real experimental variable.  This is a statistical
+estimation issue, not a capacity-forcing mechanism.
+
+\subsection{Role of expert weights}
+
+Expert weights affect the semantics of the partition, not the equal-mass proof.
+If SPR-Expert chooses $q_{\calN}$ from expert prototypes, Theorem
+\ref{thm:quantile_split} still guarantees the requested node mass because the
+threshold is a quantile of the feature projection.  Poor expert prototypes can
+produce geometrically poor or low-margin cells, but they cannot by themselves
+break the population mass guarantee when the quantiles are calibrated correctly.
+This separation is useful: expert weights provide an alignment prior, while
+quantiles provide dispatch uniformity.
+
+\section{Training Dynamics}
+
+Uniform dispatch at calibration time is only the initialization problem.  During
+training, the encoder, router statistics, and expert weights may move.  A top-1
+router is especially sensitive because a small boundary crossing changes the
+selected expert discontinuously.
+
+For tree routers, define the route margin of $x$ as the closest normalized
+distance to a threshold along the selected path:
+\begin{equation}
+ m_{\mathrm{tree}}(x)=\min_{\calN\in\mathrm{path}(x)}
+ \frac{|q_{\calN}^{\top}\tilde x-\tau_{\calN}|}{\|q_{\calN}\|_2}.
+\end{equation}
+For linear top-1 routers, use the score gap
+\begin{equation}
+ m_{\mathrm{linear}}(x)=s_{a(x)}(x)-\max_{j\ne a(x)}s_j(x).
+\end{equation}
+Small lower-tail margins predict route flips under representation drift.  The
+training experiments should therefore report not only loss and expert usage, but
+also route flip rate, feature-to-route agreement, and margin lower tails.
+
+The central training hypothesis is modest: a calibrated feature partition can
+provide a better initialization for controlled uniform-feature tasks than a
+random linear router, but preservation requires sufficient margin or slow
+recalibration.  This paper does not assume SPR automatically discovers semantic
+experts; it tests whether a clean equal-mass feature partition can be constructed
+and whether it survives controlled optimization.
+
+\section{Experiments}
+\label{sec:experiments}
+
+This section is intentionally specified as a protocol.  No experimental results
+are claimed in this draft.  Each experiment is designed to test one part of the
+story.
+
+\subsection{Static uniform dispatch}
+
+\paragraph{Goal.}
+Verify that SPR constructs equal-mass feature cells on spectrally uniform data
+and generalizes from calibration to holdout samples.
+
+\paragraph{Data.}
+Use Gaussian features $X\sim\mathcal{N}(0,I_d)$ and normalized spherical
+features $X/\|X\|_2\sim\mathrm{Unif}(\Sphere^{d-1})$.  Sweep $d$, $E$, and
+calibration size.
+
+\paragraph{Methods.}
+Compare vanilla random linear top-1 routing, regular-simplex prototype routing,
+SPR-Fixed, SPR-Local, SPR-Expert with synthetic expert weights, and balanced
+assignment as a forced-count control.
+
+\paragraph{Metrics.}
+Report calibration LoadCV, holdout LoadCV, maximum absolute usage error, margin
+lower tail, and calibration-to-holdout gap.
+
+\subsection{Spectrally flat but non-spherical features}
+
+\paragraph{Goal.}
+Show that covariance flatness alone does not make fixed prototype routers
+reliable, while quantile-calibrated SPR still constructs equal-mass cells.
+
+\paragraph{Data.}
+Use axis-supported distributions, mixtures of symmetric directions, and other
+zero-mean distributions with covariance close to $I/d$ but non-spherical support.
+
+\paragraph{Methods and expectation.}
+Prototype-only routers may be imbalanced because their cells receive unequal
+probability mass.  SPR should remain balanced on the calibration distribution and
+near-balanced on holdout data if the distribution is stable.
+
+\subsection{Expert-weight-guided partitioning}
+
+\paragraph{Goal.}
+Audit the role of expert weights.  Expert spectral directions should help align
+feature cells to experts, but quantile thresholds should be responsible for mass
+uniformity.
+
+\paragraph{Data and experts.}
+Use both standard randomly initialized expert matrices and controlled expert
+matrices with prescribed principal directions.  Extract expert prototypes by SVD
+or power iteration.
+
+\paragraph{Methods.}
+Compare expert-SVD prototype top-1 routing, MPI-style one-step prototypes,
+SPR-Expert, SPR-Fixed, and SPR-Local.  In SPR-Expert, expert prototypes choose
+split directions and expert groupings; quantiles choose thresholds.
+
+\paragraph{Metrics.}
+Report expert-prototype spread, prototype alignment, LoadCV, margin, and the
+agreement between SPR leaves and expert-prototype groups.
+
+\subsection{Feature partition quality}
+
+\paragraph{Goal.}
+Distinguish equal-mass dispatch from meaningful feature partition.
+
+\paragraph{Data.}
+Construct synthetic feature classes $F$ for evaluation only.  The router never
+uses $F$.  Generate features from class-conditioned distributions, then whiten or
+otherwise normalize them so that global covariance is close to identity.
+
+\paragraph{Metrics.}
+Report LoadCV, route--feature normalized mutual information, expert purity,
+within-cell variance, and margin lower tail.  This experiment tests whether SPR
+cuts geometry in a way that preserves latent feature groups, not merely counts.
+
+\subsection{Controlled MoE training dynamics}
+
+\paragraph{Goal.}
+Test whether a calibrated feature partition helps controlled MoE training and
+whether it is preserved under optimization.
+
+\paragraph{Task.}
+Construct a toy supervised task where each latent feature class requires a
+different function, for example $Y=A_FX+\epsilon$.  The router methods cannot use
+$F$ during calibration or training, but evaluation can measure whether routes
+align with $F$.
+
+\paragraph{Routers.}
+Compare vanilla linear top-1, linear top-1 with load-balancing loss,
+regular-simplex initialization, Frozen-SPR, SPR-init-linear, SlowUpdate-SPR, and
+SPR-Expert.
+
+\paragraph{Metrics.}
+Report train and validation loss, expert usage, route--feature NMI, route flip
+rate, margin p05, expert specialization score, and representation drift.
+
+\subsection{Ablations}
+
+Ablate calibration size, feature dimension, expert count, non-power-of-two
+expert counts, split-direction policy, whitening on/off, expert-weight quality,
+slow-update frequency, and feature drift.  Balanced assignment should remain only
+as a control for count forcing, not as the target method.
+
+\section{Discussion}
+
+The paper's target is intentionally first-stage.  Uniform feature dispatch means
+that the feature distribution is partitioned into equal-probability expert cells.
+It does not mean that the cells are semantically optimal, nor that the resulting
+experts improve downstream performance.  Those are later questions that require
+feature-structure and task-loss experiments.
+
+The main design tension is the choice of split direction.  Quantiles guarantee
+mass once a direction is chosen.  Fixed axes are clean but may ignore local
+feature geometry.  Locality-driven directions are more adaptive but require more
+calibration.  Expert-weight-guided directions connect the feature partition to
+the MoE parameters.  This last route is important: if an expert matrix already
+contains a strong principal direction, using it to guide a feature split is a
+reasonable way to tie router cells to expert identity.  However, expert weights
+alone do not guarantee uniform dispatch; they must be paired with calibrated
+thresholds.
+
+Training dynamics remain a separate issue.  A good initial partition can still
+be lost if representations drift across thresholds or if a learnable top-1
+router collapses into early lock-in.  This is why the second-stage experiments
+must report margin and route flips, not only usage counts.  In controlled
+sequence or slot-feature settings, the first practical question is whether the
+route-relevant states are themselves spectrally well behaved.  If all positions
+are pooled together, route and non-route states may mix, making the calibration
+population ill-defined.  The correct workflow is therefore: identify the
+route-relevant feature population, construct an equal-mass feature partition,
+attach the cells to experts, and then test whether training preserves the
+partition.
+
+\section{Scope and Limitations}
+
+SPR is a construction for unlabeled feature dispatch, not a proof that any
+standard MoE router will discover the same partition.  It assumes a calibration
+feature population representative of later routed features.  If the feature
+distribution shifts, stored quantiles can become stale.  If the distribution has
+large atoms, no deterministic feature-only router can split those identical
+features across experts without either stochastic tie-breaking or violating the
+principle that identical features receive identical routes.  Finally, equal-mass
+cells are not equivalent to useful specialization.  Feature quality and training
+utility must be measured separately.
+
+\section{Conclusion}
+
+We reformulate uniform routing as a constructive feature-partition problem.  In a
+spectrally uniform feature setting, the goal is to build a fixed, non-cheating
+router whose cells have equal probability mass.  Spectral Partition Routing
+achieves this by combining unlabeled spectral calibration, recursive quantile
+splitting, and optional expert-weight-guided directions.  Quantiles provide the
+uniform-dispatch guarantee; split-direction policy provides geometry and expert
+alignment.  The resulting story separates three questions that are often mixed:
+can we construct an equal-mass feature partition, can that partition align with
+expert identity, and can it survive training dynamics?  This draft resolves the
+first question by construction and lays out the experiments needed for the next
+two.
+
+\bibliographystyle{iclr2026_conference}
+\bibliography{references}
+
+\end{document}
