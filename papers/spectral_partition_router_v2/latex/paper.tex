@@ -49,10 +49,16 @@ use only fixed axes, feature-locality objectives, or expert-weight-derived
 prototypes; in all cases, quantile thresholds provide the equal-mass guarantee,
 while the choice of split direction controls geometry and expert alignment.  We
 prove the equal-mass property, clarify why this is not capacity assignment, and
-separate the initialization problem from training-time preservation.  The
-experiments are left as explicit protocols: static dispatch, non-spherical
-spectrally flat features, expert-weight-guided routing, feature-partition
-quality, and controlled MoE training dynamics.
+separate uniform usage from meaningful feature partitioning.  In full synthetic
+runs, SPR reduces held-out LoadCV from $0.086$ for random linear routing to
+$0.034$ on Gaussian and spherical features, and from $0.308$ for prototype-only
+routing to $0.062$ on covariance-flat non-spherical features.  Expert-guided SPR
+keeps the quantile balance while raising cell-to-prototype alignment to $0.896$,
+and in a controlled hard-routing task lowers final validation MSE from $12.61$
+for a random linear router to $9.03$.  The results also expose limits: count
+balance alone has low feature agreement, locality-only splits do not reliably
+recover latent feature classes, and naive slow recalibration can cause route
+instability under drift.
 \end{abstract}
 
 \section{Introduction}
@@ -109,9 +115,9 @@ unlabeled features and optional model-internal expert weights.
 quantile routers with fixed-axis, locality-driven, and expert-weight-guided
 variants.
 \item We prove that recursive quantile splitting gives equal-mass expert cells on
-the calibration distribution, and we provide an experiment plan that separates
-static dispatch, feature locality, expert-prototype alignment, and training-time
-preservation.
+the calibration distribution and empirically separate static dispatch,
+feature-locality quality, expert-prototype alignment, and controlled
+training-time preservation.
 \end{enumerate}
 
 \section{Problem Definition}
@@ -384,8 +390,8 @@ For linear top-1 routers, use the score gap
  m_{\mathrm{linear}}(x)=s_{a(x)}(x)-\max_{j\ne a(x)}s_j(x).
 \end{equation}
 Small lower-tail margins predict route flips under representation drift.  The
-training experiments should therefore report not only loss and expert usage, but
-also route flip rate, feature-to-route agreement, and margin lower tails.
+training experiments therefore report not only loss and expert usage, but also
+route flip rate, feature-to-route agreement, and margin lower tails.
 
 The central training hypothesis is modest: a calibrated feature partition can
 provide a better initialization for controlled uniform-feature tasks than a
@@ -397,116 +403,181 @@ and whether it survives controlled optimization.
 \section{Experiments}
 \label{sec:experiments}
 
-This section is intentionally specified as a protocol.  No experimental results
-are claimed in this draft.  Each experiment is designed to test one part of the
-story.
+The experiments test the construction in increasing order of claim strength.
+\newterm{LoadCV} is the coefficient of variation of expert usage, so lower
+values mean closer count balance.  \newterm{Max error} is the largest absolute
+deviation from target usage $1/E$.  \newterm{NMI} is normalized mutual
+information between evaluation-only latent feature labels and routed experts;
+it is used only after routing to audit whether a balanced partition also tracks
+feature structure.  \newterm{Margin p05} is the fifth percentile of route
+margins, a lower-tail stability diagnostic.
+
+Unless stated otherwise, full runs use five seeds.  E1 sweeps
+$d\in\{32,64\}$, $E\in\{4,8\}$, and
+$n_{\mathrm{cal}}\in\{2048,8192,16384\}$ with $8192$ holdout points.  E2 uses
+$d=64$, $E\in\{4,8\}$, $8192$ calibration points, and $8192$ holdout points.
+E3--E5 use $d=64$ or $32$ controlled feature populations with $E=8$ experts;
+E5 trains hard-routed linear experts for $80$ epochs.  Balanced assignment is
+reported only as a forced-count control.
 
 \subsection{Static uniform dispatch}
+\label{sec:exp-static-dispatch}
 
-\paragraph{Goal.}
-Verify that SPR constructs equal-mass feature cells on spectrally uniform data
-and generalizes from calibration to holdout samples.
+E1 verifies the basic dispatch claim on Gaussian and spherical features.  Table
+\ref{tab:e1_static_dispatch} shows the main setting.  SPR has exact calibration
+balance by construction and low held-out imbalance: on the full sweep, the best
+SPR mean held-out LoadCV is $0.034$, compared with $0.086$ for vanilla random
+linear routing.  Simplex prototypes are also strong on spherical data, which is
+expected because their geometry matches the distribution; this does not remove
+the need for quantiles when the distribution is not spherical.
 
-\paragraph{Data.}
-Use Gaussian features $X\sim\mathcal{N}(0,I_d)$ and normalized spherical
-features $X/\|X\|_2\sim\mathrm{Unif}(\Sphere^{d-1})$.  Sweep $d$, $E$, and
-calibration size.
+\input{tables/e1_static_dispatch}
 
-\paragraph{Methods.}
-Compare vanilla random linear top-1 routing, regular-simplex prototype routing,
-SPR-Fixed, SPR-Local, SPR-Expert with synthetic expert weights, and balanced
-assignment as a forced-count control.
-
-\paragraph{Metrics.}
-Report calibration LoadCV, holdout LoadCV, maximum absolute usage error, margin
-lower tail, and calibration-to-holdout gap.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e1_loadcv_by_method.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e1_holdout_gap.pdf}
+\caption{E1 static dispatch.  Left: held-out usage imbalance by router.  Right:
+calibration-to-holdout gap for SPR variants as calibration size changes.}
+\label{fig:e1_static}
+\end{figure}
 
 \subsection{Spectrally flat but non-spherical features}
+\label{sec:exp-non-spherical}
 
-\paragraph{Goal.}
-Show that covariance flatness alone does not make fixed prototype routers
-reliable, while quantile-calibrated SPR still constructs equal-mass cells.
+E2 separates covariance flatness from directional geometry.  The tested
+non-spherical distributions are whitened to condition number $1.00$, so a
+covariance-only audit would treat them as spectrally flat.  Table
+\ref{tab:e2_non_spherical} shows that this is not enough: on axis-supported
+features, simplex prototype routing reaches LoadCV $0.752$, while SPR variants
+are near $0.04$.  The paired-direction case is more difficult because finite
+support and near-ties make deterministic splitting unstable; it is a boundary
+case rather than a failure of the quantile theorem, which assumes continuous
+scalar projections.
 
-\paragraph{Data.}
-Use axis-supported distributions, mixtures of symmetric directions, and other
-zero-mean distributions with covariance close to $I/d$ but non-spherical support.
+\input{tables/e2_non_spherical}
 
-\paragraph{Methods and expectation.}
-Prototype-only routers may be imbalanced because their cells receive unequal
-probability mass.  SPR should remain balanced on the calibration distribution and
-near-balanced on holdout data if the distribution is stable.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e2_non_spherical_loadcv.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e2_covariance_vs_load.pdf}
+\caption{E2 non-spherical features.  Flat covariance does not determine the
+probability mass of prototype-router cells.}
+\label{fig:e2_non_spherical}
+\end{figure}
 
 \subsection{Expert-weight-guided partitioning}
+\label{sec:exp-expert-guided}
 
-\paragraph{Goal.}
-Audit the role of expert weights.  Expert spectral directions should help align
-feature cells to experts, but quantile thresholds should be responsible for mass
-uniformity.
+E3 tests whether expert weights can be used without becoming a hidden capacity
+mechanism.  We create random, symmetric, and clustered expert matrices and
+extract their principal input directions by SVD or one-step power iteration.
+Prototype-only top-1 routing aligns with expert directions but does not control
+cell mass.  SPR-Expert uses the same prototypes only to choose split directions;
+the thresholds remain feature quantiles.  Table \ref{tab:e3_expert_guided}
+therefore shows both effects: SPR-Expert reaches mean held-out LoadCV $0.018$
+and cell-to-prototype alignment $0.896$, while expert-SVD top-1 has alignment
+$0.910$ but LoadCV $0.111$.
 
-\paragraph{Data and experts.}
-Use both standard randomly initialized expert matrices and controlled expert
-matrices with prescribed principal directions.  Extract expert prototypes by SVD
-or power iteration.
+\input{tables/e3_expert_guided}
 
-\paragraph{Methods.}
-Compare expert-SVD prototype top-1 routing, MPI-style one-step prototypes,
-SPR-Expert, SPR-Fixed, and SPR-Local.  In SPR-Expert, expert prototypes choose
-split directions and expert groupings; quantiles choose thresholds.
-
-\paragraph{Metrics.}
-Report expert-prototype spread, prototype alignment, LoadCV, margin, and the
-agreement between SPR leaves and expert-prototype groups.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e3_prototype_spread.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e3_alignment_vs_loadcv.pdf}
+\caption{E3 expert guidance.  Expert prototypes provide geometry, but quantile
+thresholds are needed for low usage imbalance.}
+\label{fig:e3_expert}
+\end{figure}
 
 \subsection{Feature partition quality}
+\label{sec:exp-feature-partition}
 
-\paragraph{Goal.}
-Distinguish equal-mass dispatch from meaningful feature partition.
+E4 asks whether equal-mass cells are also meaningful feature partitions.  We
+generate balanced latent feature classes, rotate the class geometry randomly,
+whiten globally, and keep the labels hidden from every router.  The labels are
+used only for evaluation.  Table \ref{tab:e4_feature_partition} shows the main
+boundary: balanced assignment has perfect counts but NMI $0.007$, so usage
+balance alone is not feature structure.  SPR-Fixed and SPR-Local also remain
+near-random in NMI.  SPR-Expert improves NMI to $0.233$ and purity to $0.408$
+because its expert weights contain directions aligned with the latent geometry.
+Thus the feature-quality result supports the expert-guided version, not a broad
+claim that locality-only quantile cuts discover the right classes.
 
-\paragraph{Data.}
-Construct synthetic feature classes $F$ for evaluation only.  The router never
-uses $F$.  Generate features from class-conditioned distributions, then whiten or
-otherwise normalize them so that global covariance is close to identity.
+\input{tables/e4_feature_partition}
 
-\paragraph{Metrics.}
-Report LoadCV, route--feature normalized mutual information, expert purity,
-within-cell variance, and margin lower tail.  This experiment tests whether SPR
-cuts geometry in a way that preserves latent feature groups, not merely counts.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e4_nmi_purity.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e4_within_cell_variance.pdf}
+\caption{E4 feature partition quality.  Count balance is not enough; alignment
+requires a geometry source that matches the latent feature structure.}
+\label{fig:e4_quality}
+\end{figure}
 
 \subsection{Controlled MoE training dynamics}
+\label{sec:exp-training-dynamics}
 
-\paragraph{Goal.}
-Test whether a calibrated feature partition helps controlled MoE training and
-whether it is preserved under optimization.
+E5 uses a controlled hard-routing task in which each latent feature class has a
+different linear target map $Y=A_FX+\epsilon$.  The routers do not observe $F$.
+Experts are trained with the routes produced by each method, and evaluation
+tracks loss, usage, route-feature NMI, flip rate, and lower-tail margin.  Table
+\ref{tab:e5_training_dynamics} shows that SPR-Expert is the useful controlled
+case: it reaches final validation MSE $9.03$ and NMI $0.385$, while vanilla
+linear routing reaches MSE $12.61$ and NMI $0.087$.  Frozen-SPR and
+SPR-init-linear improve only modestly.  SlowUpdate-SPR is a negative result in
+this implementation: its repeated recalibration causes high route flip rate
+($0.888$) and worse loss.  This supports the margin-preservation warning rather
+than a blanket claim that periodic recalibration is safe.
 
-\paragraph{Task.}
-Construct a toy supervised task where each latent feature class requires a
-different function, for example $Y=A_FX+\epsilon$.  The router methods cannot use
-$F$ during calibration or training, but evaluation can measure whether routes
-align with $F$.
+\input{tables/e5_training_dynamics}
 
-\paragraph{Routers.}
-Compare vanilla linear top-1, linear top-1 with load-balancing loss,
-regular-simplex initialization, Frozen-SPR, SPR-init-linear, SlowUpdate-SPR, and
-SPR-Expert.
-
-\paragraph{Metrics.}
-Report train and validation loss, expert usage, route--feature NMI, route flip
-rate, margin p05, expert specialization score, and representation drift.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e5_loss_curves.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e5_route_nmi.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e5_flip_rate.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e5_margin_p05.pdf}
+\caption{E5 controlled training dynamics.  Expert-guided geometry improves the
+controlled task, while naive slow recalibration creates route instability.}
+\label{fig:e5_training}
+\end{figure}
 
 \subsection{Ablations}
+\label{sec:exp-ablations}
 
-Ablate calibration size, feature dimension, expert count, non-power-of-two
-expert counts, split-direction policy, whitening on/off, expert-weight quality,
-slow-update frequency, and feature drift.  Balanced assignment should remain only
-as a control for count forcing, not as the target method.
+E6 audits sensitivity to calibration size, dimension, expert count, whitening,
+direction policy, expert-weight quality, count forcing, and feature drift.
+Table \ref{tab:e6_ablations} confirms two main boundaries.  First, larger
+calibration sets improve held-out balance: LoadCV drops from $0.089$ at
+$n_{\mathrm{cal}}=512$ to $0.025$ at $32768$.  Second, expert quality controls
+feature agreement: aligned expert weights give NMI $0.282$, while noisy or
+random weights collapse near the fixed/local baselines.  Balanced assignment
+again has exact usage but low NMI, so it remains a control rather than a valid
+feature router.
+
+\input{tables/e6_ablations}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{figures/e6_calibration_size.pdf}
+\includegraphics[width=0.48\linewidth]{figures/e6_policy_ablation.pdf}
+\caption{E6 ablations.  Calibration size controls statistical balance, and
+expert-weight quality controls feature agreement.}
+\label{fig:e6_ablations}
+\end{figure}
+
+\FloatBarrier
 
 \section{Discussion}
 
-The paper's target is intentionally first-stage.  Uniform feature dispatch means
+The paper's target is intentionally limited.  Uniform feature dispatch means
 that the feature distribution is partitioned into equal-probability expert cells.
-It does not mean that the cells are semantically optimal, nor that the resulting
-experts improve downstream performance.  Those are later questions that require
-feature-structure and task-loss experiments.
+It does not mean that the cells are semantically optimal.  The experiments make
+this distinction concrete: balanced assignment and SPR-Fixed can produce good
+usage counts while having weak route-feature NMI.  The stronger controlled
+results occur when expert weights contain a useful geometric prior; in that
+case, SPR-Expert uses quantiles for mass and expert prototypes for alignment.
 
 The main design tension is the choice of split direction.  Quantiles guarantee
 mass once a direction is chosen.  Fixed axes are clean but may ignore local
@@ -519,10 +590,13 @@ alone do not guarantee uniform dispatch; they must be paired with calibrated
 thresholds.
 
 Training dynamics remain a separate issue.  A good initial partition can still
-be lost if representations drift across thresholds or if a learnable top-1
-router collapses into early lock-in.  This is why the second-stage experiments
-must report margin and route flips, not only usage counts.  In controlled
-sequence or slot-feature settings, the first practical question is whether the
+be lost if representations drift across thresholds or if recalibration changes
+boundaries too aggressively.  The SlowUpdate-SPR result is a useful negative
+case: updating from unlabeled windows preserves the non-cheating rule, but in
+our controlled drift setting it induces high route flips and worse loss.  This
+means preservation cannot be inferred from calibration balance; it must be
+audited with margins, flips, and task loss.  In controlled sequence or
+slot-feature settings, the first practical question is whether the
 route-relevant states are themselves spectrally well behaved.  If all positions
 are pooled together, route and non-route states may mix, making the calibration
 population ill-defined.  The correct workflow is therefore: identify the
@@ -532,15 +606,17 @@ partition.
 
 \section{Scope and Limitations}
 
-SPR is a construction for unlabeled feature dispatch, not a proof that any
-standard MoE router will discover the same partition.  It assumes a calibration
+SPR is a construction for unlabeled feature dispatch, not a proof that a
+standard trainable MoE router will discover the same partition.  The current
+experiments are synthetic and controlled; they do not establish real language
+model utility or semantic expert formation.  SPR also assumes a calibration
 feature population representative of later routed features.  If the feature
 distribution shifts, stored quantiles can become stale.  If the distribution has
 large atoms, no deterministic feature-only router can split those identical
 features across experts without either stochastic tie-breaking or violating the
-principle that identical features receive identical routes.  Finally, equal-mass
-cells are not equivalent to useful specialization.  Feature quality and training
-utility must be measured separately.
+principle that identical features receive identical routes.  Finally, expert
+weights help only when their principal directions are relevant to the feature
+geometry; noisy or random expert directions do not create meaningful cells.
 
 \section{Conclusion}
 
@@ -548,13 +624,16 @@ We reformulate uniform routing as a constructive feature-partition problem.  In 
 spectrally uniform feature setting, the goal is to build a fixed, non-cheating
 router whose cells have equal probability mass.  Spectral Partition Routing
 achieves this by combining unlabeled spectral calibration, recursive quantile
-splitting, and optional expert-weight-guided directions.  Quantiles provide the
-uniform-dispatch guarantee; split-direction policy provides geometry and expert
-alignment.  The resulting story separates three questions that are often mixed:
-can we construct an equal-mass feature partition, can that partition align with
-expert identity, and can it survive training dynamics?  This draft resolves the
-first question by construction and lays out the experiments needed for the next
-two.
+splitting, and optional expert-weight-guided directions.  The theory proves the
+mass property for continuous node projections, and the experiments verify that
+quantile calibration reduces held-out usage imbalance across Gaussian,
+spherical, and covariance-flat non-spherical features.  The experiments also
+show the claim boundary: uniform usage is not feature specialization, and
+locality-only splits are not enough to recover latent classes in our controlled
+setting.  Expert-guided SPR is the strongest variant because it separates the
+two jobs cleanly: quantiles control probability mass, while expert spectral
+prototypes supply feature geometry.  Training preservation remains an open
+second-stage problem rather than a consequence of balanced initialization.
 
 \bibliographystyle{iclr2026_conference}
 \bibliography{references}

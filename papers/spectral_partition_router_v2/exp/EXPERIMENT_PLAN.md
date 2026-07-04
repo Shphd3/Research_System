@@ -45,6 +45,36 @@ Balanced assignment may appear only as a forced-count control.
 
 ---
 
+## 1.1 Executed full-run configuration
+
+The current paper results are produced by the completed V2 full run, not by
+`--quick` smoke tests.  Every generated `metrics.csv` contains
+`run_mode=full`.
+
+- E1: five seeds; Gaussian and spherical data; `d in {32, 64}`;
+  `E in {4, 8}`; `n_cal in {2048, 8192, 16384}`; `n_holdout = 8192`.
+- E2: five seeds; axis-jitter, sparse-mixture, and paired-direction data;
+  `d = 64`; `E in {4, 8}`; `n_cal = n_holdout = 8192`.
+- E3: five seeds; `d = 64`; `E = 8`; random, symmetric, and clustered expert
+  initializations; SVD and one-step MPI prototype extraction.
+- E4: five seeds; `d = 64`; `E = 8`; weak, medium, and strong latent-feature
+  regimes; evaluation labels are hidden from router construction.
+- E5: five seeds; `d = 32`; `E = 8`; hard-routed linear experts trained for
+  80 epochs on the controlled class-conditioned regression task.
+- E6: five seeds; calibration-size, expert-count, dimension, direction-policy,
+  whitening, expert-quality, count-control, and feature-drift ablations.
+
+Paper-facing outputs are generated under:
+
+```text
+exp/results/e*/metrics.csv
+exp/results/e*/summary.md
+latex/figures/
+latex/tables/
+```
+
+---
+
 ## 2. Routers to implement
 
 ### 2.1 Vanilla linear top-1
@@ -69,7 +99,8 @@ Use regular-simplex rows when `E <= d+1`:
 a(x)=\arg\max_e u_e^\top x.
 \]
 
-This is a v1-style geometric baseline.
+This is a fixed geometric baseline.  It is useful when the data geometry happens
+to align with the simplex axes, but it has no quantile mass guarantee.
 
 ### 2.4 SPR-Fixed
 
@@ -368,4 +399,5 @@ Required ablations:
 5. Training dynamics.
 6. Ablations.
 
-No paper table should be filled with placeholder numbers. Populate only after running experiments.
+Paper tables are generated only from completed `metrics.csv` files. Do not
+enter result numbers by hand.

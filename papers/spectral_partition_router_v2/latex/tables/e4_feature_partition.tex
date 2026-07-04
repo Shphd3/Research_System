@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Feature partition quality on evaluation-only latent classes.}
+\label{tab:e4_feature_partition}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & LoadCV $\downarrow$ & NMI $\uparrow$ & Purity $\uparrow$ & Within-var. $\downarrow$ & Margin p05 $\uparrow$ \\
+\midrule
+Balanced assignment & 0.000 & 0.007 & 0.153 & 63.137 & -- \\
+SPR-Expert & 0.015 & 0.233 & 0.408 & 62.014 & 0.021 \\
+SPR-Fixed & 0.019 & 0.031 & 0.199 & 62.172 & 0.021 \\
+SPR-Local & 0.021 & 0.034 & 0.219 & 62.152 & 0.022 \\
+Simplex prototype & 0.017 & 0.029 & 0.198 & 61.764 & 0.038 \\
+Vanilla linear & 0.089 & 0.033 & 0.196 & 61.774 & 0.036 \\
+\bottomrule
+\end{tabular}
+\end{table}

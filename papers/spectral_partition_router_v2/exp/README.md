@@ -23,22 +23,34 @@ A method is considered non-cheating if it may use unlabeled calibration features
 
 ## Required experiment order
 
-1. Static equal-mass dispatch on spectrally uniform features.
-2. Static dispatch on spectrally flat but non-spherical features.
-3. Expert-weight-guided partitioning.
-4. Feature partition quality with held-out synthetic feature labels for evaluation only.
-5. Controlled MoE training dynamics.
-6. Ablations.
+1. E1: static equal-mass dispatch on spectrally uniform features.
+2. E2: static dispatch on spectrally flat but non-spherical features.
+3. E3: expert-weight-guided partitioning.
+4. E4: feature partition quality with held-out synthetic feature labels for evaluation only.
+5. E5: controlled MoE training dynamics.
+6. E6: ablations.
+
+The canonical mapping from experiment IDs to scripts, result directories,
+tables, and figures is:
+
+```text
+EXPERIMENT_REGISTRY.md
+exp/src/registry.py
+```
 
 ## Output contract
 
-Each experiment should write:
+Each completed experiment writes:
 
 ```text
-results/<experiment_name>/metrics.csv
-results/<experiment_name>/summary.md
-results/<experiment_name>/figures/*.pdf
-results/<experiment_name>/figures/*.png
+exp/results/<experiment_name>/metrics.csv
+exp/results/<experiment_name>/summary.md
+exp/results/<experiment_name>/figures/*.pdf
+exp/results/<experiment_name>/figures/*.png
+latex/figures/<paper_figure>.pdf
+latex/tables/<paper_table>.tex
 ```
 
-The paper draft intentionally contains no numeric results yet. Codex should fill results only after executing the experiments.
+The current V2 full run has been executed for E1--E6.  All `metrics.csv`
+files contain `run_mode=full`; paper-facing figures and tables have been
+generated under `latex/figures/` and `latex/tables/`.

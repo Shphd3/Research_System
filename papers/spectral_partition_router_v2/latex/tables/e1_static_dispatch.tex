@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Static uniform dispatch on the main full-run setting ($d=64$, $E=8$, largest calibration size).}
+\label{tab:e1_static_dispatch}
+\begin{tabular}{llrrrr}
+\toprule
+Data & Method & Cal LoadCV $\downarrow$ & Holdout LoadCV $\downarrow$ & Max error $\downarrow$ & Margin p05 $\uparrow$ \\
+\midrule
+Gaussian & Balanced assignment & 0.000 & 0.000 & 0.000 & -- \\
+Gaussian & SPR-Expert & 0.000 & 0.036 & 0.009 & 0.022 \\
+Gaussian & SPR-Fixed & 0.000 & 0.039 & 0.008 & 0.021 \\
+Gaussian & SPR-Local & 0.000 & 0.041 & 0.009 & 0.021 \\
+Gaussian & Simplex prototype & 0.015 & 0.031 & 0.006 & 0.038 \\
+Gaussian & Vanilla linear & 0.068 & 0.072 & 0.015 & 0.035 \\
+Spherical & Balanced assignment & 0.000 & 0.000 & 0.000 & -- \\
+Spherical & SPR-Expert & 0.000 & 0.024 & 0.005 & 0.021 \\
+Spherical & SPR-Fixed & 0.000 & 0.034 & 0.008 & 0.021 \\
+Spherical & SPR-Local & 0.000 & 0.027 & 0.007 & 0.024 \\
+Spherical & Simplex prototype & 0.020 & 0.029 & 0.007 & 0.039 \\
+Spherical & Vanilla linear & 0.068 & 0.069 & 0.015 & 0.035 \\
+\bottomrule
+\end{tabular}
+\end{table}

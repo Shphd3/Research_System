@@ -544,6 +544,8 @@ def write_tables(rows: List[Dict[str, object]], outdir: Path) -> None:
     ]
     for filename, keys, metrics in specs:
         items = aggregate([r for r in rows if r["experiment"].lower() in filename], keys, metrics)
+        if not items:
+            continue
         with (table_dir / filename).open("w") as f:
             f.write(md_table(items, keys + metrics))
 
@@ -602,6 +604,12 @@ def write_tables(rows: List[Dict[str, object]], outdir: Path) -> None:
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("--outdir", type=str, default="results")
+    p.add_argument(
+        "--experiments",
+        type=str,
+        default="E1,E2,E3,E4,E5,E6",
+        help="Comma-separated experiment IDs to run, e.g. E1,E4,E6.",
+    )
     g = p.add_mutually_exclusive_group()
     g.add_argument("--quick", action="store_true")
     g.add_argument("--full", action="store_true")
@@ -612,12 +620,20 @@ def main() -> None:
     args = parse_args()
     quick = not args.full
     rows: List[Dict[str, object]] = []
-    run_e1(rows, quick=quick)
-    run_e2(rows, quick=quick)
-    run_e3(rows, quick=quick)
-    run_e4(rows, quick=quick)
-    run_e5(rows, quick=quick)
-    run_e6(rows, quick=quick)
+    runners = {
+        "E1": run_e1,
+        "E2": run_e2,
+        "E3": run_e3,
+        "E4": run_e4,
+        "E5": run_e5,
+        "E6": run_e6,
+    }
+    requested = [item.strip().upper() for item in args.experiments.split(",") if item.strip()]
+    unknown = sorted(set(requested) - set(runners))
+    if unknown:
+        raise SystemExit(f"unknown experiment IDs: {', '.join(unknown)}")
+    for exp_id in requested:
+        runners[exp_id](rows, quick=quick)
     outdir = Path(args.outdir)
     write_csv(rows, outdir)
     write_tables(rows, outdir)

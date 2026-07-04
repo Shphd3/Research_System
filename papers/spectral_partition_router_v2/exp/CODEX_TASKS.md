@@ -1,232 +1,78 @@
-# Codex Tasks for Spectral Partition Router v2
+# Codex Status for Spectral Partition Router v2
 
-## General instructions
+## Current state
 
-Implement experiments for `papers/spectral_partition_router_v2/`.
+The V2 experiment suite has been implemented and executed as a full run for
+E1--E6.  The paper now uses generated metrics, tables, and figures rather than
+pre-result design notes.
 
-Do not edit `latex/paper.tex` with fabricated results. Only update result tables after experiments have been executed.
-
-Use deterministic seeds and write all raw metrics to CSV.
-
-## Task 1: Implement SPR routers
-
-Create a reusable module, suggested path:
+Canonical mapping:
 
 ```text
-exp/src/spr.py
+exp/EXPERIMENT_REGISTRY.md
+exp/src/registry.py
 ```
 
-Required classes/functions:
-
-```python
-class SPRTree:
-    def fit(self, X_cal, num_experts, direction_policy, expert_weights=None, **kwargs): ...
-    def predict(self, X): ...
-    def leaf_centers(self, X_cal): ...
-    def margins(self, X): ...
-```
-
-Direction policies:
+Implemented runners:
 
 ```text
-fixed
-local
-expert_svd
-expert_mpi
+exp/run_static_dispatch.py          # E1, E2
+exp/run_expert_guided.py            # E3
+exp/run_feature_partition_quality.py # E4
+exp/run_training_dynamics.py        # E5
+exp/run_ablations.py                # E6
+exp/make_paper_tables.py            # paper tables
 ```
 
-Required helper functions:
-
-```python
-make_fixed_axes(d, seed)
-fit_quantile_threshold(values, rho)
-compute_load_metrics(assignments, num_experts)
-compute_margin_tree(tree, X)
-extract_top_svd_direction(W)
-power_iteration_direction(W, steps)
-make_regular_simplex(E, d)
-route_linear_top1(X, router_rows)
-```
-
-## Task 2: Implement data generators
-
-Suggested path:
+Shared implementation:
 
 ```text
-exp/src/data.py
+exp/src/synthetic_suite.py
 ```
 
-Required generators:
+## Full-run outputs
 
-```python
-gaussian_features(n, d, seed)
-spherical_features(n, d, seed)
-axis_features(n, d, seed)
-symmetric_sparse_mixture(n, d, num_atoms, seed)
-latent_feature_mixture(n, d, num_features, noise, seed, whiten=True)
-controlled_expert_matrices(E, d, hidden_dim, geometry, seed)
-standard_expert_matrices(E, d, hidden_dim, init, seed)
-```
-
-All generators should return training/calibration/holdout splits when requested.
-
-## Task 3: Static dispatch experiments
-
-Create:
+Every metrics file contains `run_mode=full`.
 
 ```text
-exp/run_static_dispatch.py
+exp/results/e1_static_dispatch/metrics.csv
+exp/results/e2_non_spherical/metrics.csv
+exp/results/e3_expert_guided/metrics.csv
+exp/results/e4_feature_partition/metrics.csv
+exp/results/e5_training_dynamics/metrics.csv
+exp/results/e6_ablations/metrics.csv
 ```
 
-Runs Experiments A and B.
-
-Outputs:
+Paper artifacts:
 
 ```text
-results/static_dispatch/metrics.csv
-results/static_dispatch/summary.md
-results/static_dispatch/figures/loadcv_by_method.pdf
-results/static_dispatch/figures/holdout_gap.pdf
+latex/figures/
+latex/tables/
 ```
 
-## Task 4: Expert-weight experiments
+## Current claim boundary
 
-Create:
+Supported:
 
-```text
-exp/run_expert_guided.py
-```
+- Recursive quantile splitting gives calibration-balanced expert cells.
+- Held-out usage balance improves over random linear routing in the tested
+  Gaussian, spherical, and most non-spherical synthetic settings.
+- Expert spectral prototypes are useful as geometry priors when they align with
+  the latent feature geometry.
+- Count balance alone does not imply feature partition quality.
 
-Runs Experiment C.
-
-Outputs:
-
-```text
-results/expert_guided/metrics.csv
-results/expert_guided/summary.md
-results/expert_guided/figures/prototype_spread.pdf
-results/expert_guided/figures/alignment_vs_loadcv.pdf
-```
-
-Acceptance checks:
-
-- Report expert prototype pairwise cosine distribution.
-- Compare expert-SVD top-1 vs SPR-Expert.
-- Separate exact SVD and MPI approximation.
-
-## Task 5: Feature partition quality
-
-Create:
-
-```text
-exp/run_feature_partition_quality.py
-```
-
-Runs Experiment D.
-
-Outputs:
-
-```text
-results/feature_partition/metrics.csv
-results/feature_partition/summary.md
-results/feature_partition/figures/nmi_purity.pdf
-results/feature_partition/figures/within_cell_variance.pdf
-```
-
-Important: feature labels are evaluation-only. The router construction must not access them.
-
-## Task 6: Training dynamics
-
-Create:
-
-```text
-exp/run_training_dynamics.py
-```
-
-Runs Experiment E.
-
-Minimum toy task:
-
-```text
-X sampled from latent feature mixture
-Y = A_F X + noise
-experts are linear maps or small MLPs
-router variants compared under identical optimizer settings
-```
-
-Outputs:
-
-```text
-results/training_dynamics/metrics.csv
-results/training_dynamics/summary.md
-results/training_dynamics/figures/loss_curves.pdf
-results/training_dynamics/figures/route_nmi.pdf
-results/training_dynamics/figures/flip_rate.pdf
-results/training_dynamics/figures/margin_p05.pdf
-```
-
-## Task 7: Ablations
-
-Create:
-
-```text
-exp/run_ablations.py
-```
-
-Ablate:
-
-```text
-n_cal
-E
-d
-non-power-of-two E
-direction policy
-whitening on/off
-expert-weight quality
-slow update frequency
-feature drift strength
-```
-
-Outputs:
-
-```text
-results/ablations/metrics.csv
-results/ablations/summary.md
-```
-
-## Task 8: Generate paper-ready tables
-
-Create:
-
-```text
-exp/make_paper_tables.py
-```
-
-This script reads result CSV files and writes:
-
-```text
-latex/tables/static_dispatch.tex
-latex/tables/non_spherical.tex
-latex/tables/expert_guided.tex
-latex/tables/feature_partition.tex
-latex/tables/training_dynamics.tex
-latex/tables/ablations.tex
-```
-
-Do not create result numbers by hand.
-
-## Task 9: Update paper only after results exist
-
-After experiments run, update `latex/paper.tex`:
-
-- replace protocol text in Section 5 with actual result descriptions;
-- include generated tables;
-- cite figures generated from results;
-- keep all claim boundaries.
-
-Forbidden claims:
+Not supported:
 
 - SPR discovers semantic experts in general.
-- Equal-mass dispatch implies downstream improvement.
+- Equal-mass dispatch implies downstream utility.
 - Expert weights alone guarantee uniform dispatch.
-- Load-balancing loss and uniform feature dispatch are equivalent.
+- Slow recalibration is automatically stable under representation drift.
+
+## Next audit tasks
+
+1. Check whether the theory section should add a finite-sample tree-level bound
+   beyond the scalar DKW discussion.
+2. Decide whether the paired-direction E2 boundary case should be moved to the
+   main text, appendix, or limitation paragraph.
+3. Audit whether E5 should be framed as hard-routing controlled training rather
+   than general MoE training.

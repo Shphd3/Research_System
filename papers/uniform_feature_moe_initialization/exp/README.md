@@ -9,13 +9,13 @@ The experiments are deliberately static before training dynamics. They test the 
 1. uniform feature geometry + symmetric prototypes gives uniform expected expert load;
 2. random prototype imbalance is a geometry floor, not finite-token noise;
 3. expert principal singular directions can serve as router centers;
-4. strict finite-token uniformity requires balanced assignment;
-5. nonuniform feature spectra break the raw theorem assumptions and require whitening or explicit balancing;
-6. training preservation is a separate margin question and should not block this paper.
+4. covariance isotropy alone is not directional uniformity;
+5. nonuniform feature spectra in the elliptical toy setting can be repaired by whitening;
+6. strict finite-token uniformity can be forced by balanced assignment, but that is only a control.
 
 ## Minimal tonight target
 
-Run E1--E5 with synthetic features only. Do not train a language model tonight.
+Run E1--E6 with synthetic features only. Do not train a language model for this paper.
 
 Expected outputs:
 
@@ -28,9 +28,11 @@ papers/uniform_feature_moe_initialization/exp/results/tables/*.md
 ## File guide
 
 - `EXPERIMENT_PLAN.md`: full scientific protocol.
+- `EXPERIMENT_REGISTRY.md`: mapping from E1--E6 to scripts, tables, figures, and paper labels.
 - `CODEX_TASKS.md`: step-by-step implementation contract for Codex.
-- `run_synthetic.py`: starter executable script for E1--E5.
-- `TABLE_TEMPLATES.md`: result tables to paste into the paper after runs.
+- `run_synthetic.py`: full-suite executable script for E1--E6.
+- `run_e*.py`: per-experiment wrappers writing to `results/by_experiment/`.
+- `TABLE_TEMPLATES.md`: current table index.
 
 ## Main command
 
@@ -43,6 +45,12 @@ For the full run:
 
 ```bash
 python run_synthetic.py --outdir results --full
+```
+
+Run one experiment by ID:
+
+```bash
+python run_synthetic.py --experiments E4 --outdir results/by_experiment/e4_covariance_counterexample --full
 ```
 
 ## Claim boundary
