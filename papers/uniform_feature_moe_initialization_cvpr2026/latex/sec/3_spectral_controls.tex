@@ -1,0 +1,97 @@
+\section{Spectral Diagnostics and Controls}
+
+\subsection{Spectral uniformity is only a diagnostic}
+
+A flat covariance spectrum is useful, but it is not equivalent to the spherical
+condition in Proposition~\ref{prop:equal_measure_cells}.
+
+\begin{proposition}[Isotropic covariance does not imply directional uniformity]
+\label{prop:isotropic_not_directional}
+There exists a zero-mean distribution in $\R^2$ with covariance $I/2$ whose
+top-1 load under equal-measure simplex prototypes is not uniform.
+\end{proposition}
+
+\begin{proof}
+Let $D=\{(1,0),(0,1),(-1,0),(0,-1)\}$ and sample each point in $D$ with
+probability $1/4$. The mean is zero and the covariance is $I/2$. Now take three
+unit prototypes at angles $20^\circ$, $140^\circ$, and $260^\circ$. These are
+regular-simplex vertices on the circle, so under the continuous uniform circle
+distribution their cells have equal measure $1/3$. For the four-axis
+distribution, the points at angles $0^\circ$, $90^\circ$, $180^\circ$, and
+$270^\circ$ route respectively to the first, second, second, and third
+prototypes. The induced load is therefore $(1/4,1/2,1/4)$, not
+$(1/3,1/3,1/3)$. Hence covariance identity alone does not certify directional
+uniformity or load uniformity.
+\end{proof}
+
+This counterexample is the formal reason we treat hidden spectral uniformity as
+a second-order diagnostic. It can support the spherical model in controlled
+families, but it cannot replace a directional or cell-mass analysis.
+
+\subsection{Controlled whitening for an elliptical toy family}
+
+A related question is what happens when hidden states contain a large singular
+direction. We model this effect by applying an elliptical distortion to a
+spherical feature distribution.
+
+\begin{proposition}[Population whitening recovers spherical directions]
+\label{prop:whitening}
+Let $z\sim\mathrm{Unif}(\Sphere^{d-1})$ and $h=\mu+Az$, where $A$ is invertible.
+The population covariance is $C_h=AA^\top/d$. If $x=C_h^{-1/2}(h-\mu)$, then
+$x=\sqrt d\,Qz$ for an orthogonal matrix $Q$. Therefore $x/\|x\|_2$ is again
+uniform on $\Sphere^{d-1}$.
+\end{proposition}
+
+\begin{proof}
+Since $\E[zz^\top]=I/d$, $C_h=AA^\top/d$. Therefore
+\begin{equation}
+ C_h^{-1/2}(h-\mu)
+ =\sqrt d\,(AA^\top)^{-1/2}Az.
+\end{equation}
+By the polar decomposition, $(AA^\top)^{-1/2}A$ is orthogonal. The spherical
+uniform distribution is invariant under orthogonal transformations, so the
+normalized whitened direction is spherical uniform.
+\end{proof}
+
+This proposition justifies the elliptical toy experiment. It does not say that
+arbitrary trained hidden states are elliptical, nor that empirical covariance
+identity implies spherical direction uniformity.
+
+\section{Expert Prototypes and Capacity Controls}
+
+\subsection{Spectral expert prototypes identify centers}
+
+The theory above assumes expert prototypes are given. Expert matrices can
+provide candidate prototypes through singular directions. Let $W_e$ be an
+input-side expert matrix. Define its spectral prototype by
+\begin{equation}
+ v_e\in\argmax_{\|v\|_2=1}\|v^\top W_e\|_2^2.
+\end{equation}
+Equivalently, $v_e$ is a top eigenvector of $W_eW_e^\top$. Manifold power
+iteration (MPI)-style routers make this connection explicit by applying a
+power-then-retract update \citep{routermpi2026}:
+\begin{equation}
+ \widehat r_e=r_eW_eW_e^\top,
+ \qquad
+ r'_e=C_r\frac{\widehat r_e}{\|\widehat r_e\|_2}.
+\end{equation}
+This update can align a router row with an expert's principal direction. But
+alignment and uniform usage answer different questions. Alignment says a row is
+a good expert proxy. Uniform usage requires the recovered proxies to produce
+equal-mass cells for the token direction distribution.
+
+\subsection{Capacity assignment is a non-geometric control}
+
+If the only target is exact usage counts in one finite batch, a capacity rule
+can force them. Given scores $S_{ie}=\langle z_i,u_e\rangle$, balanced
+assignment solves
+\begin{align}
+ \max_A \quad & \sum_{i=1}^N\sum_{e=1}^E A_{ie}S_{ie}, \\
+ \text{s.t.}\quad & \sum_e A_{ie}=1,\qquad A_{ie}\in\{0,1\},\\
+ & \sum_i A_{ie}\in
+ \left\{\left\lfloor\frac{N}{E}\right\rfloor,
+ \left\lceil\frac{N}{E}\right\rceil\right\}.
+\end{align}
+This is important as a control and as a strict finite-token construction. It is
+not evidence that the representation is uniform, that features are meaningful,
+or that expert specialization has utility.

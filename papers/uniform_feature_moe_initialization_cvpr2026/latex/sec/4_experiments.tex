@@ -1,0 +1,241 @@
+\section{Experiments}
+
+\subsection{Setup and correspondence to the theory}
+
+All experiments are synthetic and static. They test the controlled claims one
+at a time. We first test whether well-spread prototype cells balance uniform
+spherical features. We then separate fixed prototype-cell imbalance from
+finite-token sampling noise, test expert spectral prototypes as candidate
+centers, test the covariance-isotropy counterexample, and test spectral
+flattening only in the elliptical toy family where Proposition~\ref{prop:whitening}
+applies. Finally, we include capacity assignment as a forced-count control.
+
+The main metric is LoadCV, the coefficient of variation of empirical expert
+usage:
+\begin{equation}
+ \mathrm{LoadCV}=\frac{\mathrm{std}(\widehat p_1,\ldots,\widehat p_E)}
+ {\mathrm{mean}(\widehat p_1,\ldots,\widehat p_E)}.
+\end{equation}
+For spectral geometry, we report covariance condition number and effective
+rank. For spectral expert prototypes, we report
+\begin{equation}
+ \lambda_e=\frac{\|r_e^\top W_e\|_2}{\|r_e\|_2\|W_e\|_2}.
+\end{equation}
+
+\subsection{Prototype geometry controls uniform-sphere usage}
+
+We sample $N=100000$ examples from $\Sphere^{63}$ and route them to $E=8$
+experts. Symmetric prototypes are regular-simplex rows, random prototypes are
+independent unit vectors, and clustered prototypes are perturbations of one
+shared direction.
+
+\begin{table}[t]
+\centering
+\caption{Uniform-sphere routing with $d=64$ and $E=8$.}
+\label{tab:uniform_sphere}
+\small
+\begin{tabular}{lccc}
+\toprule
+Prototype geometry & LoadCV $\downarrow$ & Max/min $\downarrow$
+& Max abs. error $\downarrow$ \\
+\midrule
+Symmetric top-1 & 0.0067 & 1.021 & 0.00145 \\
+Random top-1 & 0.0657 & 1.227 & 0.01451 \\
+Clustered top-1 & 0.1349 & 1.574 & 0.03580 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/prototype_geometry_load.pdf}
+\caption{Uniform spherical features do not alone determine expert usage.
+Prototype geometry controls load variation.}
+\label{fig:prototype_geometry}
+\end{figure}
+
+Table~\ref{tab:uniform_sphere} and Figure~\ref{fig:prototype_geometry} support
+the sufficient-condition story: well-spread cells give near-uniform usage,
+whereas clustered cells do not.
+
+\subsection{Random prototype imbalance is a geometry floor}
+
+We estimate high-dimensional random-prototype cell masses by Monte Carlo
+reference sampling. For a fixed random prototype realization, we compare
+geometry error, sampling error, and total usage error as routed batch size
+increases.
+
+\begin{table}[t]
+\centering
+\caption{Random-prototype floor for $d=64$.}
+\label{tab:geometry_floor}
+\small
+\begin{tabular}{ccccc}
+\toprule
+$E$ & $N$ & Geometry & Sampling & Total \\
+\midrule
+4 & $10^3$ & 0.093 & 0.074 & 0.096 \\
+4 & $5{\cdot}10^4$ & 0.093 & 0.014 & 0.097 \\
+8 & $10^3$ & 0.093 & 0.160 & 0.182 \\
+8 & $5{\cdot}10^4$ & 0.093 & 0.031 & 0.109 \\
+16 & $10^3$ & 0.185 & 0.237 & 0.234 \\
+16 & $5{\cdot}10^4$ & 0.185 & 0.044 & 0.194 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/geometry_floor_sampling.pdf}
+\caption{Increasing routed examples reduces sampling noise but does not remove
+the single-realization random-prototype geometry floor.}
+\label{fig:geometry_floor}
+\end{figure}
+
+Table~\ref{tab:geometry_floor} and Figure~\ref{fig:geometry_floor} match the
+finite-token decomposition: more examples reduce $\widehat p_e-p_e$, not
+$p_e-1/E$.
+
+\subsection{Spectral prototypes are centers, not balance}
+
+We construct expert matrices with prescribed input-side top singular directions,
+$W_e=\sigma_1 v_ea_e^\top+\sigma_0\Xi_e$. The prescribed directions are
+symmetric, random, or clustered. We compare exact singular value decomposition
+(SVD), one-step MPI, five-step MPI, and random rows.
+
+\begin{table}[t]
+\centering
+\caption{Spectral alignment recovers expert directions, but usage balance still
+depends on prototype spread.}
+\label{tab:spectral_prototypes}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccc}
+\toprule
+Geometry & Router & Align. $\uparrow$ & LoadCV $\downarrow$ & Max/min $\downarrow$ \\
+\midrule
+Sym. & Exact SVD & 1.000 & 0.009 & 1.030 \\
+Sym. & MPI-1 & 0.975 & 0.025 & 1.094 \\
+Clust. & Exact SVD & 1.000 & 0.161 & 1.631 \\
+Clust. & MPI-1 & 0.977 & 0.195 & 1.788 \\
+Random rows & None & 0.098 & 0.074 & 1.281 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/spectral_alignment_not_balance.pdf}
+\caption{High spectral alignment does not imply balanced expert usage.}
+\label{fig:spectral_alignment}
+\end{figure}
+
+Table~\ref{tab:spectral_prototypes} and Figure~\ref{fig:spectral_alignment}
+show that expert singular directions can be meaningful centers, but a
+center-construction rule is not a load-balance theorem.
+
+\subsection{Isotropic covariance is not enough}
+
+This experiment mirrors Proposition~\ref{prop:isotropic_not_directional}. The
+token distribution has equal mass on the four axis directions in $\R^2$, so it
+has mean zero and covariance $I/2$. We route these points with three
+regular-simplex prototypes at angles $20^\circ$, $140^\circ$, and $260^\circ$.
+
+\begin{table}[t]
+\centering
+\caption{Covariance isotropy does not imply uniform routing.}
+\label{tab:covariance_counterexample}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Distribution & Cond. & Eff. rank & Load vector & LoadCV \\
+\midrule
+Four axis points & 1.000 & 2.000 & $(.25,.50,.25)$ & 0.3536 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/covariance_counterexample.pdf}
+\caption{A flat covariance spectrum does not certify uniform routing.}
+\label{fig:covariance_counterexample}
+\end{figure}
+
+Table~\ref{tab:covariance_counterexample} and
+Figure~\ref{fig:covariance_counterexample} provide the operational version of
+the counterexample: condition number 1 coexists with nonuniform load.
+
+\subsection{Whitening repairs an elliptical toy}
+
+We test Proposition~\ref{prop:whitening} in a controlled family. Starting from
+$z\sim\mathrm{Unif}(\Sphere^{63})$, we form anisotropic features $h=Dz$ with
+$D=\mathrm{diag}(\alpha,1,\ldots,1)$. We compare raw features,
+centered-normalized features, partial spectral shrinkage with $\beta=0.5$, and
+whitening.
+
+\begin{table}[t]
+\centering
+\caption{Representation-geometric repair for $\alpha=20$.}
+\label{tab:spectrum_uniformization}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccc}
+\toprule
+Representation & Cond. $\downarrow$ & Eff. rank $\uparrow$ & LoadCV $\downarrow$ \\
+\midrule
+Raw & 419.52 & 2.61 & 1.053 \\
+Centered + norm. & 114.13 & 8.95 & 1.053 \\
+Partial shrinkage & 14.86 & 47.02 & 0.781 \\
+Whitened + norm. & 1.00 & 64.00 & 0.005 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/spectrum_uniformization.pdf}
+\caption{In the elliptical toy setting, spectral flattening moves the
+representation back toward the spherical routing model.}
+\label{fig:spectrum_uniformization}
+\end{figure}
+
+Table~\ref{tab:spectrum_uniformization} and
+Figure~\ref{fig:spectrum_uniformization} show that whitening is successful here
+because the data are generated by an elliptical distortion of a spherical
+source. This is not a claim that arbitrary hidden states are elliptical or
+naturally whitened.
+
+\subsection{Capacity assignment is only a control}
+
+With $N=2048,d=64,E=8$, both greedy capacity-feasible assignment and exact
+balanced assignment over expanded expert slots enforce zero LoadCV.
+
+\begin{table}[t]
+\centering
+\caption{Capacity assignment as a non-geometric control.}
+\label{tab:balanced_assignment}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccc}
+\toprule
+Geometry & Top-1 LoadCV & Greedy drop & Exact drop \\
+\midrule
+Symmetric & 0.054 & 0.00091 & 0.00012 \\
+Random & 0.122 & 0.00416 & 0.00056 \\
+Clustered & 0.128 & 0.00379 & 0.00047 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/balanced_assignment_cost.pdf}
+\caption{Balanced assignment exposes the cost of forcing the count metric. It is
+a control for count equality, not the representation mechanism studied here.}
+\label{fig:balanced_assignment}
+\end{figure}
+
+Table~\ref{tab:balanced_assignment} and Figure~\ref{fig:balanced_assignment}
+show why this control belongs in the paper: uniform expert usage can be forced,
+but forced usage is not evidence for uniform feature geometry.

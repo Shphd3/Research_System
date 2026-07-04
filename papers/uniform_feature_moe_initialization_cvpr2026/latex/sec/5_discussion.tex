@@ -1,0 +1,36 @@
+\section{Discussion and Limitations}
+
+All positive statements in this paper are controlled sufficient constructions.
+The paper does not prove a necessary-and-sufficient theorem for all routers or
+all hidden-state distributions. It also does not claim that hidden spectral
+uniformity alone implies load uniformity; the covariance-isotropy counterexample
+explicitly shows that it does not. Spectral flattening is useful in the
+elliptical experiment because the toy data satisfy a strong elliptical
+assumption.
+
+Training dynamics are outside the main claim. Static uniform assignment and
+training-time preservation are different questions. During optimization, token
+features, router rows, and expert matrices can move. Preservation then depends
+on margin lower tails and drift budgets, not only on step-zero geometry. The
+short-sequence next-token setting is therefore a later nonuniform-spectrum and
+margin-preservation problem, not the main evidence for this paper.
+
+\section{Conclusion}
+
+Uniform expert usage under an unconstrained linear top-1 router is not a
+consequence of balanced feature frequencies alone. It is a geometric property
+of the distribution seen by the router. In the clean controlled case, the
+sufficient condition is two-sided: token directions must match the spherical
+model, and expert prototypes must induce equal-measure cells on that sphere.
+The experiments support this picture and separate it from nearby but weaker
+signals. More tokens reduce sampling noise but do not remove a fixed
+prototype-cell floor; expert spectral directions can construct centers but do
+not guarantee balanced cells; covariance isotropy can coexist with nonuniform
+directional support; whitening repairs routing only under the controlled
+elliptical assumption; and balanced assignment forces counts by changing the
+assignment mechanism.
+
+The resulting claim is intentionally narrow but useful. It gives a baseline for
+what uniform feature routing would require before training dynamics enter. The
+clean case clarified here tells us what must be checked before load uniformity
+can be interpreted as evidence of meaningful routing.
