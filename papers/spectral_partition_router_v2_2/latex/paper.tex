@@ -1,0 +1,433 @@
+\documentclass{article}
+\usepackage{iclr2026_conference,times}
+
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{flafter}
+\hypersetup{hidelinks}
+
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+
+\title{Static Good Feature Dispatch in Spectrally Isotropic Mixture-of-Experts Routing}
+
+\author{Anonymous Authors}
+
+%\iclrfinalcopy
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study a static routing problem for mixture-of-experts models.  The clean
+case requested by the research program is not realistic language-model training,
+but a controlled regime in which route-relevant features are spectrally
+isotropic and feature frequencies are balanced.  We argue that equal expert load
+is too weak as a definition of good dispatch: recursive quantiles can equalize
+mass for broad distributions, so spectral isotropy is not the causal source of
+mass balance.  We instead define \emph{static good dispatch} as three separable
+properties: equal probability mass, feature coherence, and static expert
+compatibility or controlled utility.  This leads to a middle-regime assumption:
+features are globally spectrally isotropic but locally structured.  We propose
+Coherent Spectral Partition Routing (C-SPR), a static non-cheating router that
+uses spectral normalization to define a clean metric, recursive quantiles to
+control cell mass, and local or expert-weight geometry to choose coherent split
+directions.  The paper provides the theory and experimental protocol for this
+stage; training preservation and representation drift are deliberately left for
+a later stage.
+\end{abstract}
+
+\section{Introduction}
+
+Sparse mixture-of-experts (MoE) layers route each token representation to one or
+more experts \citep{shazeer2017outrageously,fedus2022switch}.  When the research
+question is whether uniformly represented features can be distributed well across
+experts, one must first define what ``well'' means.  Exact usage balance alone is
+not enough: a batch-level assignment rule can force equal counts without defining
+a stable feature-space partition, and a quantile tree can equalize mass without
+necessarily discovering feature meaning.
+
+This paper narrows the scope to the static clean case.  We assume that the
+route-relevant feature population has been identified and spectrally normalized,
+so that no single high-variance direction dominates the geometry.  This is not a
+claim about real next-token-prediction hidden states.  Rather, it is the
+controlled case that should be solved before studying large singular directions,
+nonuniform representations, or training-time drift.
+
+The key correction from prior equal-mass formulations is causal.  Recursive
+quantiles do not require covariance isotropy to equalize mass.  Therefore the
+right causal chain is not
+\begin{center}
+\texttt{spectral isotropy $\to$ equal mass}.
+\end{center}
+Instead, spectral isotropy removes global anisotropic confounds and gives a
+clean metric; local feature structure or expert-weight alignment gives
+informative split directions; quantiles enforce equal mass after a direction is
+chosen.  We call the resulting target \emph{static good dispatch}.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+\item We refine the clean uniform-feature routing problem into a static target:
+equal mass, feature coherence, and static expert compatibility or utility.
+\item We identify the productive middle regime as globally spectrally isotropic
+but locally structured features, which is weaker than spherical uniformity but
+stronger than arbitrary covariance isotropy.
+\item We define Coherent Spectral Partition Routing (C-SPR), a non-cheating
+static router that separates mass control, metric normalization, local coherence,
+and optional expert alignment.
+\item We give the theory and falsifiable experimental anchors needed to test
+which assumptions are actually responsible for good static dispatch.
+\end{enumerate}
+
+\section{Problem Definition}
+
+\subsection{Route-relevant feature population}
+
+Let $X\in\R^d$ be the route-relevant feature to be dispatched.  In a sequence
+model, $X$ should be the hidden state at the position used for routing, not an
+unfiltered pool of all positions.  We assume an unlabeled calibration set
+\begin{equation}
+  \calD_{\mathrm{cal}}=\{x_i\}_{i=1}^{n_{\mathrm{cal}}}
+\end{equation}
+from the same feature population.  Calibration may use unlabeled feature
+statistics and optional model-internal expert weights, but it may not use
+feature labels, task labels, evaluation labels, or current-batch expert counts.
+
+The controlled spectral setting is
+\begin{equation}
+  \tilde x = B(x-\mu),\qquad \Cov(\tilde X)\approx \sigma^2 I,
+\end{equation}
+where $B$ may be the identity, whitening, or a shrinkage transform estimated from
+unlabeled features.  Spectral normalization is a metric-cleaning step.  It does
+not by itself imply feature coherence.
+
+\subsection{Static good dispatch}
+
+A deterministic router is a map $g:\R^d\to\{1,\ldots,E\}$ with cells
+\begin{equation}
+  C_e = \{x:g(x)=e\}.
+\end{equation}
+
+\begin{definition}[Equal mass]
+The router has equal-mass dispatch if
+\begin{equation}
+  \Prob(g(X)=e)=\frac{1}{E},\qquad e=1,\ldots,E.
+\end{equation}
+\end{definition}
+
+Equal mass is necessary but not sufficient for a good static router.
+
+\begin{definition}[Feature coherence]
+Suppose a latent feature identity $F$ exists for analysis only.  A router is
+feature-coherent when $g(X)$ is informative about $F$, as measured by
+route-feature mutual information, purity, within-cell variance, or cell-center
+separation.  The router may not use $F$ during construction.
+\end{definition}
+
+\begin{definition}[Static expert compatibility]
+A static dispatch is expert-compatible when its cells align with model-internal
+expert geometry, such as expert spectral prototypes, or when the frozen route
+improves a controlled static expert-fitting task whose target function depends on
+latent feature identity.
+\end{definition}
+
+Training preservation is not part of this paper.  Route drift, dynamic
+recalibration, hysteresis, and learned-router preservation are separate later
+problems.
+
+\subsection{Non-cheating rule}
+
+A calibrated router is non-cheating if, after calibration, routing a feature uses
+only the current feature, stored calibration statistics, and optional
+model-internal expert weights.  It may not use feature labels, task targets,
+evaluation labels, or current-batch expert counts.  Balanced assignment is
+therefore a control rather than the proposed method.
+
+\section{Why Spectral Isotropy Alone Is Not Enough}
+
+Spectral isotropy says that the covariance has no dominant direction.  This is a
+second-order condition.  It does not identify feature groups, expert identity, or
+semantic structure.  It also does not cause the quantile equal-mass theorem.
+
+\begin{proposition}[Isotropy-alone non-identifiability]
+If an evaluation label $F$ is independent of $X$, then for every deterministic
+router $g(X)$,
+\begin{equation}
+  I(g(X);F)=0.
+\end{equation}
+Consequently, no unlabeled geometric router can recover meaningful feature
+coherence from labels that are not encoded in the feature distribution.
+\end{proposition}
+
+\begin{proof}
+Since $g(X)$ is a deterministic function of $X$ and $F$ is independent of $X$,
+$F$ is also independent of $g(X)$.  Therefore the mutual information is zero.
+\end{proof}
+
+This null result is an experimental anchor.  On isotropic Gaussian or spherical
+features with random labels independent of geometry, a good method may still
+balance mass, but it should not obtain high route-feature agreement.
+
+\section{The Middle Regime: Isotropic Local Feature Structure}
+
+The useful static problem is neither full spherical randomness nor arbitrary
+covariance isotropy.  We study globally isotropic but locally structured features.
+
+\begin{assumption}[Balanced isotropic local mixture]
+There is a latent feature identity $F\in\{1,\ldots,K\}$ with approximately
+balanced frequency.  Conditional on $F=f$,
+\begin{equation}
+  \tilde X = \mu_f + \epsilon_f,
+\end{equation}
+where the global covariance of $\tilde X$ is approximately isotropic and the
+local components are separated enough to be recoverable by geometry-based
+splits.
+\end{assumption}
+
+This assumption is feature-like: individual feature families have local structure,
+while the collection of many balanced families can have a flat global spectrum.
+Latent labels are never given to the router; they are used only for evaluation.
+
+\section{Coherent Spectral Partition Routing}
+
+C-SPR is a recursive static router.  It keeps the quantile mass mechanism from
+SPR but changes the scientific claim: mass, coherence, and expert compatibility
+come from different mechanisms.
+
+\subsection{Mass layer: recursive quantile tree}
+
+At a node $\calN$, let $\calE_{\calN}$ be the current expert set.  Split it into
+nonempty groups $\calE_L$ and $\calE_R$, and set
+\begin{equation}
+  \rho_{\calN}=\frac{|\calE_L|}{|\calE_{\calN}|}.
+\end{equation}
+Given a direction $q_{\calN}\in\Sphere^{d-1}$, define
+\begin{equation}
+  T_{\calN}=q_{\calN}^{\top}\tilde X.
+\end{equation}
+The threshold $\tau_{\calN}$ is the node-local $\rho_{\calN}$ quantile of
+$T_{\calN}$.  The split is
+\begin{align}
+  C_L &= \{x\in C_{\calN}: q_{\calN}^{\top}\tilde x\le \tau_{\calN}\},\\
+  C_R &= \{x\in C_{\calN}: q_{\calN}^{\top}\tilde x> \tau_{\calN}\}.
+\end{align}
+Recursing until each leaf owns one expert yields equal-mass cells when the node
+mass targets are met.
+
+\subsection{Geometry layer: split directions}
+
+\paragraph{C-SPR-RandomAxis.}
+Seeded random axes provide a mass-only baseline.  They should not be claimed to
+recover feature structure.
+
+\paragraph{C-SPR-FixedBasis.}
+A deterministic coordinate, orthogonal, or Hadamard-like basis provides a clean
+fixed-axis baseline.
+
+\paragraph{C-SPR-Local.}
+Local directions are chosen from unlabeled feature geometry.  For candidate
+$q$, compute its quantile split and score
+\begin{equation}
+  J_{\mathrm{local}}(q)
+  =-\sum_{b\in\{L,R\}} \Prob(C_b\mid C_{\calN})
+  \E[\|\tilde X-\mu_b\|_2^2\mid \tilde X\in C_b]
+  +\eta M(q),
+\end{equation}
+where $M(q)$ rewards a nondegenerate lower-tail margin.
+
+\paragraph{C-SPR-Expert.}
+Expert weights can guide cell-to-expert identity.  For input-side expert matrix
+$W_e$, define a sign-invariant spectral projector
+\begin{equation}
+  v_e\in\arg\max_{\|v\|_2=1}\|v^\top W_e\|_2^2,\qquad P_e=v_ev_e^\top.
+\end{equation}
+Projective distance removes SVD sign ambiguity:
+\begin{equation}
+  d(e,j)=1-\mathrm{tr}(P_eP_j)=1-(v_e^\top v_j)^2.
+\end{equation}
+Expert projectors are used to group experts and to score candidate split
+directions.  Quantile thresholds still determine mass.
+
+\paragraph{C-SPR-ExpertLocal.}
+The strongest static variant combines local feature coherence and expert
+geometry:
+\begin{equation}
+  J(q)=J_{\mathrm{local}}(q)+\lambda J_{\mathrm{expert}}(q)+\eta M(q).
+\end{equation}
+This objective uses no feature labels.
+
+\section{Theory}
+
+\begin{theorem}[Recursive quantile equal mass]
+Assume every internal node $\calN$ splits feature mass in proportion to child
+expert counts:
+\begin{equation}
+  \Prob(C_L\mid C_{\calN})=\frac{|\calE_L|}{|\calE_{\calN}|},\qquad
+  \Prob(C_R\mid C_{\calN})=\frac{|\calE_R|}{|\calE_{\calN}|}.
+\end{equation}
+If the root contains all $E$ experts and each leaf contains one expert, then
+each expert cell has mass $1/E$.
+\end{theorem}
+
+\begin{proof}
+For any node, prove by induction that $\Prob(C_{\calN})=|\calE_{\calN}|/E$.
+The root satisfies this because its mass is one.  If the parent satisfies it,
+then
+\begin{equation}
+  \Prob(C_L)=\Prob(C_{\calN})\Prob(C_L\mid C_{\calN})
+  =\frac{|\calE_{\calN}|}{E}\frac{|\calE_L|}{|\calE_{\calN}|}
+  =\frac{|\calE_L|}{E}.
+\end{equation}
+The right child is identical.  A leaf owns one expert, so its mass is $1/E$.
+\end{proof}
+
+This theorem is the mass theorem.  It does not require spectral isotropy.
+
+\begin{assumption}[Projected separation]
+At node $\calN$, suppose the feature population contains two latent groups
+$G\in\{L,R\}$ with target group mass $\rho_{\calN}$.  A direction $q$ and
+threshold $\tau$ have projected separation error $\varepsilon$ if
+\begin{equation}
+  \Prob(q^\top\tilde X>\tau\mid G=L,C_{\calN})\le\varepsilon,\qquad
+  \Prob(q^\top\tilde X\le\tau\mid G=R,C_{\calN})\le\varepsilon.
+\end{equation}
+\end{assumption}
+
+\begin{proposition}[Projected separation gives coherent split]
+Under projected separation error $\varepsilon$, the node split disagrees with the
+latent binary grouping with probability at most $\varepsilon$.
+\end{proposition}
+
+\begin{proof}
+The disagreement event is the weighted union of the left-group tail above the
+threshold and the right-group tail below the threshold.  Each conditional error
+is at most $\varepsilon$, so the total error is at most $\varepsilon$.
+\end{proof}
+
+\begin{proposition}[Expert-direction perturbation]
+Let $q^\star$ be an ideal separating direction with threshold $\tau^\star$.
+Assume $\|q-q^\star\|_2\le\delta$ and $\|\tilde X\|_2\le R$.  If the threshold is
+unchanged, then the split induced by $q$ can disagree with the split induced by
+$q^\star$ only when
+\begin{equation}
+  |{q^\star}^{\top}\tilde X-\tau^\star|\le \delta R.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The projection perturbation is bounded by
+$|(q-q^\star)^\top\tilde X|\le\delta R$.  If the ideal margin is larger than this
+perturbation, the side of the threshold cannot change.
+\end{proof}
+
+This explains why expert weights help only when their directions are aligned
+with feature-separating directions and the distribution has low boundary mass.
+
+\begin{proposition}[Spectral normalization as metric repair]
+Let $Z$ be a feature distribution expressed in a clean local-structure metric,
+and let $X=AZ$ for an invertible matrix $A$.  If population whitening is applied
+to $X$, then the whitened representation recovers the covariance-normalized
+geometry of $Z$ up to an orthogonal transform in the elliptical case.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+For the elliptical special case with $\Cov(Z)=I$, $\Cov(X)=AA^\top$.  Whitening
+by $\Cov(X)^{-1/2}$ yields $(AA^\top)^{-1/2}AZ$, and the polar factor
+$(AA^\top)^{-1/2}A$ is orthogonal.  Thus distances and directions are restored up
+to a rotation.  This justifies whitening as a controlled metric-repair operation,
+not as a semantic-routing guarantee for arbitrary distributions.
+\end{proof}
+
+\section{Experiments}
+\label{sec:experiments}
+
+The experiments are protocols until runs are complete.  No result numbers should
+be inserted manually.
+
+\subsection{E1: Equal-mass sanity}
+
+Verify that C-SPR variants keep low calibration and holdout LoadCV on continuous
+features, and report tie / atom behavior on discrete boundary cases.  This tests
+implementation health and the mass theorem.
+
+\subsection{E2: Isotropy-alone null}
+
+Use isotropic Gaussian and spherical features with evaluation labels independent
+of geometry.  Quantile routers may balance mass, but NMI and purity should remain
+near random.  This anchors the claim that isotropy alone is insufficient.
+
+\subsection{E3: Isotropic local structure}
+
+Use balanced latent mixtures that are globally whitened to isotropic covariance.
+Vary separation and noise.  Test whether C-SPR-Local or C-SPR-ExpertLocal
+improves feature coherence over random-axis and fixed-basis mass-only baselines.
+
+\subsection{E4: Expert alignment ladder}
+
+Create aligned, partially aligned, noisy, random, and misaligned expert weights.
+Test whether expert-guided routing improves only when expert geometry matches
+feature geometry.
+
+\subsection{E5: Spectral normalization causal ablation}
+
+Apply controlled anisotropic distortions to an isotropic local mixture.  Compare
+raw, centered-only, shrinkage, whitening, and oracle clean features.  This tests
+whether spectral normalization repairs the metric when the only damage is an
+elliptical distortion.
+
+\subsection{E6: Static utility}
+
+Fit frozen-route experts on controlled static tasks.  Compare feature-dependent
+targets $Y=A_FX+\epsilon$ with feature-independent targets $Y=AX+\epsilon$.
+Coherent dispatch should help primarily in the feature-dependent case.
+
+\subsection{E7: Failure modes}
+
+Report failures for no local structure, overlapping groups, unbalanced feature
+frequencies, large atoms, random expert weights, calibration shift, low
+dimension, and expert/feature count mismatch.  Each failure must be tied to a
+violated assumption.
+
+\section{Discussion}
+
+V2.2 separates a static research problem from training dynamics.  Equal mass is
+a solved construction under regular quantile assumptions.  Feature coherence is a
+structure problem: it needs local feature organization or an aligned expert prior.
+Static utility is a compatibility problem: it appears only when the expert task or
+expert geometry respects the same feature structure.  Spectral isotropy is not a
+semantic guarantee; it is the clean metric in which these questions can be tested
+without large-singular-direction confounds.
+
+\section{Scope and Limitations}
+
+This paper does not claim that arbitrary isotropic features contain meaningful
+clusters.  It does not claim that equal load implies specialization.  It does not
+claim that expert weights are always useful.  It also does not study training
+preservation, representation drift, learned-router dynamics, or real
+language-model utility.  These are later-stage questions.
+
+\section{Conclusion}
+
+The next static milestone is to solve good dispatch under explicit and falsifiable
+conditions.  In the proposed formulation, globally spectrally isotropic but
+locally structured features provide the controlled middle regime.  Quantiles give
+mass, spectral normalization gives a clean metric, local or expert-aligned split
+directions give coherence, and static utility appears only when the task or
+experts match the recovered feature structure.
+
+\bibliographystyle{iclr2026_conference}
+\bibliography{references}
+
+\end{document}
