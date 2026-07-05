@@ -1,313 +1,329 @@
-# V2.2 Research Plan: From Spectral Isotropy to Static Good Dispatch
+# V2.2 Research Plan: Static Feature-Level Specialization
 
-## 0. Research goal
+## 0. Goal
 
-The next research stage is not training preservation.  The goal is to close the static dispatch problem:
+The next stage is to close the advisor's clean mathematical case as a self-contained research story.
 
-```text
-Given spectrally isotropic route-relevant features,
-define what a good static dispatch means,
-identify what extra assumptions are needed beyond isotropy,
-and construct / test a non-cheating router under those assumptions.
-```
+The paper should answer:
 
-The correct research output is a paper framework plus experiments that make every unclear point falsifiable.
+> Under globally spectrally isotropic and frequency-uniform feature distributions, when is static feature-level specialization identifiable, and how can a non-cheating router construct it?
 
----
+This stage does **not** study preservation during training.
 
-## 1. Core judgment
+## 1. Current research thesis
 
-V2 solved equal-mass dispatch.  But equal mass is too weak.
-
-V2.2 should answer a sharper question:
+The thesis is:
 
 ```text
-When global spectrum is isotropic, can local feature structure be partitioned coherently and evenly across experts?
+Spectral isotropy gives a clean global metric.
+Frequency uniformity gives the possibility of balanced expert usage.
+Recoverable local feature families give the possibility of specialization.
+Balanced feature-family assignment gives the routing mechanism.
+Feature-dependent targets give measurable static utility.
 ```
 
-This requires a middle condition:
+The primary method is **BFSR: Balanced Feature-Specializing Routing**.
+
+## 2. Why this is more causal than quantile-first routing
+
+Quantile routing is a valid way to control probability mass, but it is not specific to the current feature assumption. It works for many distributions, including distributions without meaningful feature families. Therefore it is weakly causal for feature-level specialization.
+
+The new method uses the assumptions more directly:
 
 ```text
-globally isotropic but locally structured features
+Condition: feature families have uniform frequency.
+Mechanism: assign equal numbers or equal masses of feature families to experts.
+Effect: balanced expert usage.
+
+Condition: feature families are locally recoverable.
+Mechanism: recover families by unsupervised clustering in the normalized metric.
+Effect: high feature consistency / specialization.
+
+Condition: the global feature spectrum is isotropic.
+Mechanism: use the normalized space as a clean metric for clustering and expert alignment.
+Effect: avoid anisotropic confounds.
+
+Condition: target is feature-dependent.
+Mechanism: give each expert a coherent subset of feature families.
+Effect: lower static expert-learning loss.
 ```
 
-This is more language-like than fully spherical randomness, because language features are not arbitrary points on a sphere; they are local patterns / families / slots that may collectively produce a flat spectrum.
+Quantile-SPR should remain as a baseline because it distinguishes mass balance from feature specialization.
 
----
+## 3. Research objects
 
-## 2. Claim hierarchy
+### 3.1 Data family
 
-### Claim 1: mass
+Synthetic controlled data should be generated from:
 
-Recursive node-local quantiles give equal probability mass.
+\[
+F\sim \mathrm{Unif}(\{1,\ldots,K\}),
+\qquad
+X|F=k=\mu_k+\epsilon.
+\]
 
-Status from V2:
+The centers \(\mu_k\) should be constructed so that the aggregate distribution is globally isotropic or becomes isotropic after whitening:
+
+\[
+\Cov(\widetilde X)\approx I.
+\]
+
+The distribution should allow controlled variation along:
 
 ```text
-mostly solved
+feature separation
+feature frequency imbalance
+anisotropic distortion
+feature-dependent vs feature-independent targets
+expert alignment vs random expert geometry
 ```
 
-Remaining work:
+### 3.2 Methods
 
-- fix naming;
-- tie / atom handling;
-- calibration vs holdout separation;
-- make it clear that isotropy is not required for this theorem.
-
-### Claim 2: coherence
-
-Routes should preserve latent feature structure when such structure exists.
-
-Status:
+Primary:
 
 ```text
-not solved by V2 fixed/local baselines
-conditioned positive result from expert-guided V2
+BFSR-Cluster
+BFSR-ExpertAligned
 ```
 
-Need to test:
-
-- no-structure isotropic null;
-- isotropic local mixture;
-- expert-aligned mixture;
-- noisy / random expert geometry.
-
-### Claim 3: static utility
-
-A coherent partition should improve a controlled static expert-fitting task only when the target function is feature-dependent.
-
-Status:
+Anchors / controls:
 
 ```text
-not cleanly separated yet
+BFSR-OracleFeature       # upper bound, not non-cheating
+BFSR-RandomGroup         # balanced feature grouping without geometry
+Quantile-SPR             # mass without guaranteed feature coherence
+Vanilla linear top-1     # ordinary static router
+BalancedAssignment       # batch-count control, not valid main method
+Random router            # lower bound
 ```
 
-Need to test:
+### 3.3 Metrics
 
-- feature-dependent target maps;
-- feature-independent target maps;
-- frozen route expert fitting;
-- balanced assignment as control.
+Mass:
 
-### Removed claim: preservation
+```text
+LoadCV
+max absolute mass error
+expert usage entropy
+```
 
-Training preservation is explicitly out of v2.2.  Do not include route drift, slow update, hysteresis, dynamic recalibration, or learned-router preservation claims in the main story.
+Feature specialization:
 
----
+```text
+NMI(G,F)
+purity
+H(G|F)
+I(G;F)
+percentage of feature families split across experts
+within-expert feature-family diversity
+```
 
-## 3. Hypothesis-to-anchor map
+Feature recovery:
 
-Every hypothesis below has a matching negative or boundary anchor.
+```text
+cluster recovery accuracy up to permutation
+Adjusted Rand Index
+cluster purity
+```
 
-| ID | Hypothesis | Anchor / falsifier | Primary metrics |
+Static utility:
+
+```text
+validation loss after training fixed-route experts
+per-feature validation loss
+loss gap vs incoherent balanced controls
+```
+
+Distribution diagnostics:
+
+```text
+covariance condition number
+operator norm |Cov-I|
+feature separation
+estimated family mass imbalance
+```
+
+## 4. Hypothesis-to-anchor map
+
+| ID | Hypothesis | Positive anchor | Falsifier / negative anchor |
 |---|---|---|---|
-| H1 | Spectral isotropy alone is insufficient for coherence. | Isotropic Gaussian or spherical features with independent random labels. | NMI, purity near random. |
-| H2 | Quantiles are the mass mechanism. | Same directions with non-quantile thresholds should have worse LoadCV. | LoadCV, max error. |
-| H3 | Local structure enables coherent static dispatch. | Globally whitened mixture with separated centers. | NMI, purity, within-cell variance. |
-| H4 | Local objective fails when structure is absent or too overlapping. | Isotropic unstructured and low-separation mixtures. | NMI collapse, margin low. |
-| H5 | Expert guidance helps only when expert weights align with feature geometry. | Random/noisy expert weights should not improve NMI or compatibility. | NMI, cell-prototype alignment. |
-| H6 | Spectral normalization causally removes anisotropic confounds. | Compare raw anisotropic distorted features vs whitened features. | covariance condition, NMI, LoadCV. |
-| H7 | Static utility requires feature-dependent targets. | Feature-independent target should not reward coherent dispatch. | validation MSE, specialization. |
-| H8 | Balanced assignment is not a good feature dispatch. | It has exact mass but low NMI / poor locality. | LoadCV=0, NMI low. |
+| H1 | Spectral isotropy alone is insufficient. | Isotropic Gaussian with independent random labels gives low NMI for all non-cheating methods. | Any method gets high NMI when labels are independent of X. |
+| H2 | Uniform feature frequencies cause mass balance under balanced family assignment. | Oracle and recovered feature assignment give LoadCV near 0 when K divisible by E. | Equal family assignment fails on truly uniform recovered families. |
+| H3 | Local recoverability causes specialization. | As separation increases, cluster accuracy and NMI increase. | High NMI when cluster recovery is poor. |
+| H4 | Spectral normalization acts as metric repair, not as a specialization source. | Whitening improves clustering under anisotropic distortion. | Whitening improves NMI on unstructured isotropic null data. |
+| H5 | Quantile balancing is not enough for feature specialization. | Quantile-SPR has low LoadCV but lower NMI / utility than BFSR on feature-family data. | Quantile-SPR matches BFSR on feature coherence across all structured regimes. |
+| H6 | Expert alignment helps only when expert geometry is aligned with feature families. | BFSR-ExpertAligned improves assignment utility with aligned experts. | Random expert geometry improves similarly. |
+| H7 | Static utility requires feature-dependent target. | BFSR improves fixed-route expert loss when target depends on F. | BFSR improves equally when target is feature-independent. |
+| H8 | Batch-count balancing is not a feature router. | BalancedAssignment gives LoadCV=0 but low feature consistency and unstable per-batch route identity. | BalancedAssignment yields coherent feature-family routing without labels or stable feature geometry. |
 
----
+## 5. Research phases
 
-## 4. Research work packages
+### Phase 1: lock the clean feature construction
 
-### WP0: scope reset
-
-Goal:
+Deliverables:
 
 ```text
-remove preservation from current paper scope
+synthetic generator for isotropic feature-family mixtures
+frequency-uniform option
+separation sweep
+anisotropic distortion option
+feature-dependent and feature-independent target options
 ```
 
-Actions:
-
-- create v2.2 folder;
-- rewrite problem statement around static good dispatch;
-- replace `equal mass + coherence + preservation` with `equal mass + coherence + static utility`;
-- keep preservation only as future work.
-
-Completion criterion:
+Exit criterion:
 
 ```text
-The abstract, introduction, problem statement, method, and experiment plan contain no preservation claim.
+Covariance diagnostics show isotropy in the clean setting,
+while latent feature families remain recoverable when separation is high.
 ```
 
-### WP1: formalize the feature assumption
+### Phase 2: implement BFSR and anchors
 
-Goal:
+Deliverables:
 
 ```text
-make spectral isotropy causally relevant without overclaiming it
+BFSR-OracleFeature
+BFSR-Cluster
+BFSR-ExpertAligned
+BFSR-RandomGroup
+Quantile-SPR baseline
+BalancedAssignment control
 ```
 
-Candidate assumption:
+Exit criterion:
 
 ```text
-balanced isotropic local mixture
+BFSR-OracleFeature verifies the theoretical upper bound.
+BFSR-Cluster approaches it when feature recovery is easy.
 ```
 
-Formal version:
+### Phase 3: run identifiability anchors
+
+Experiments:
 
 ```text
-F uniform in {1,...,K}
-X | F=f = mu_f + epsilon_f
-Cov(X) approximately sigma^2 I after centering / whitening
-centers or local manifolds are separated
+isotropic null with independent labels
+isotropic structured mixture with separation sweep
+raw anisotropic distortion vs whitened features
+frequency imbalance sweep
 ```
 
-Key design decision:
-
-- do not assume full spherical uniformity;
-- do not assume arbitrary covariance isotropy;
-- assume a feature-like local structure that can be audited.
-
-Completion criterion:
-
-```text
-At least one theorem / proposition links projected separation to route-feature coherence.
-```
-
-### WP2: define C-SPR method family
-
-Goal:
-
-```text
-construct static good dispatch with separated mechanisms
-```
-
-Variants:
-
-- C-SPR-RandomAxis: mass-only baseline;
-- C-SPR-FixedBasis: deterministic clean mass baseline;
-- C-SPR-Local: local feature geometry;
-- C-SPR-Expert: expert geometry;
-- C-SPR-ExpertLocal: combined geometry.
-
-Implementation requirements:
-
-- node-local quantiles;
-- correct fixed-basis implementation;
-- sign-invariant projective expert prototypes;
-- feature-derived tie handling;
-- balanced assignment only as control.
-
-Completion criterion:
-
-```text
-Each method has a clear causal role and a matching ablation.
-```
-
-### WP3: static experiment anchors
-
-Run anchors in this order:
-
-1. **A0 clean V1 sanity**: spherical features + simplex cells.
-2. **A1 isotropic null**: no local structure.
-3. **A2 isotropic local mixture**: feature coherence should be possible.
-4. **A3 anisotropic distortion**: raw geometry should fail.
-5. **A4 whitening recovery**: normalization should recover the local mixture metric.
-6. **A5 expert alignment sweep**: aligned / noisy / random expert weights.
-7. **A6 static utility**: feature-dependent vs feature-independent tasks.
-8. **A7 failure modes**: atoms, ties, unbalanced frequencies, overlapping groups.
-
-Completion criterion:
+Exit criterion:
 
 ```text
 Every positive result has a matched negative control.
 ```
 
-### WP4: paper writing
+### Phase 4: run static utility audit
 
-Paper sections:
+Train fixed-route experts under different routers on controlled tasks.
 
-1. Introduction.
-2. Static Good Dispatch Problem.
-3. Why Spectral Isotropy Is Not Enough.
-4. Isotropic Local Feature Structure.
-5. Coherent Spectral Partition Routing.
-6. Theory.
-7. Experiments.
-8. Discussion and Limitations.
-
-Completion criterion:
+Exit criterion:
 
 ```text
-The paper explicitly states what is solved and what is not solved.
+BFSR improves loss only when the target is feature-dependent and feature families are recoverable.
 ```
 
-### WP5: decision gate
+### Phase 5: write group-meeting closure
 
-After experiments, decide which claim is supported.
-
-#### Green result
+The report should answer:
 
 ```text
-C-SPR-Local / ExpertLocal improves coherence on isotropic local mixtures,
-expert guidance helps only when aligned,
-whitening recovers performance after anisotropic distortion,
-static utility improves only for feature-dependent tasks.
+What exactly was the clean case?
+Why isotropy alone is insufficient?
+What additional minimal condition made the problem solvable?
+What method used that condition causally?
+Which experiments close the stage?
+What remains for the next stage?
 ```
 
-Then v2.2 can claim static good dispatch under explicit assumptions.
+## 6. Risks and decision rules
 
-#### Yellow result
+### Risk 1: BFSR-Cluster fails despite recoverable data
+
+Check:
 
 ```text
-equal mass works, but coherence improves only under expert alignment.
+cluster K known or not
+separation too low
+whitening implementation
+cluster initialization
+feature centers not actually balanced / isotropic
 ```
 
-Then make expert alignment the central condition and downgrade local-only claims.
-
-#### Red result
+Decision:
 
 ```text
-coherence does not improve even in controlled isotropic local mixtures.
+If OracleFeature succeeds but Cluster fails, the theory is fine but recovery algorithm is weak.
+If OracleFeature fails, the problem definition or data construction is wrong.
 ```
 
-Then the method is only a mass router; revise toward a different partition objective, such as graph-based balanced clustering or supervised / self-supervised feature discovery.
+### Risk 2: BFSR balances mass but does not improve utility
 
----
-
-## 5. Methodological discipline
-
-The research process should follow this rule:
+Check:
 
 ```text
-mechanism -> assumption -> falsifiable anchor -> experiment -> updated claim
+target may not be feature-dependent enough
+experts may be too expressive
+training budget may hide specialization benefits
+assignment objective may group incompatible features
 ```
 
-Do not proceed by adding complexity until the current failure mode is identified.
-
-For each experiment, write before running:
-
-1. what hypothesis it tests;
-2. what result would support it;
-3. what result would falsify it;
-4. which assumption is violated if it fails.
-
----
-
-## 6. Immediate next actions
-
-1. Implement v2.2 C-SPR code in a separate folder; do not mutate v2 or old v2.1.
-2. Run E1/E2/E3 first; do not run training.
-3. Build the assumption ladder before any static utility task.
-4. Use labels only for evaluation.
-5. Insert experimental numbers only after generated tables and figures exist.
-
----
-
-## 7. Final intended claim
-
-The intended v2.2 claim is:
+Decision:
 
 ```text
-For globally spectrally isotropic but locally structured route-relevant features,
-static good dispatch can be decomposed into mass, coherence, and static utility.
-Recursive quantiles provide mass.  Spectral normalization provides the clean metric.
-Local or expert-aligned geometry provides coherence when the corresponding assumption holds.
-Static utility appears only when the downstream expert task respects the same feature structure.
+Use capacity-limited experts and feature-conditioned targets for the static utility audit.
 ```
+
+### Risk 3: Quantile-SPR matches BFSR
+
+Interpretation:
+
+```text
+The data may be too easy or aligned with the quantile split direction.
+```
+
+Decision:
+
+```text
+Add multi-cluster arrangements where any single projection threshold cuts through feature families.
+```
+
+### Risk 4: Whitening improves everything, including null data
+
+Interpretation:
+
+```text
+Possible artifact in labels, clustering, or evaluation.
+```
+
+Decision:
+
+```text
+Re-run the isotropic null with independent labels and report confidence intervals.
+```
+
+## 7. Writing rule
+
+The paper should be self-contained. It should not read like a changelog from V1/V2/V2.1.
+
+Allowed framing:
+
+```text
+We study a controlled static problem motivated by uniform feature dispatch.
+```
+
+Avoid framing:
+
+```text
+In the previous version we did X; now we change Y.
+```
+
+## 8. Expected final claim
+
+If experiments support the hypotheses, the final claim should be:
+
+> In globally spectrally isotropic and frequency-uniform feature distributions, static feature-level specialization is possible when local feature families are recoverable. BFSR exploits this condition directly by recovering feature families in the normalized space and assigning them to experts under a balanced constraint. It achieves balanced usage because family frequencies are uniform, and it improves static utility only when the task respects the same feature-family structure.
+
+This is a clean closure of the static stage, not a claim about dynamic MoE training.
