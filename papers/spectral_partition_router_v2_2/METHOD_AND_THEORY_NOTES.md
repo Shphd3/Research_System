@@ -2,266 +2,373 @@
 
 ## 1. Research object
 
-V2.2 studies static good dispatch, not training preservation.
-
-The target is a non-cheating router that produces cells with:
+V2.2 studies **static feature-level specialization** under a clean controlled regime:
 
 ```text
-equal probability mass
-feature coherence
-static expert compatibility / controlled utility
+feature-family frequencies are uniform
+global representation spectrum is isotropic
+local feature families are recoverable
+router is fixed before expert training
 ```
 
-The central correction from V2 is:
+It does not study training preservation.
+
+## 2. Why the main method should not be quantile-first
+
+Recursive quantile routing is a strong mechanism for equal mass. However, in the current problem it is not the most causal method.
+
+The new target is not simply:
 
 ```text
-quantiles alone solve mass, not feature meaning.
-spectral isotropy alone cleans geometry, but does not create feature meaning.
-local feature structure or expert alignment is needed for coherent dispatch.
+make each expert receive 1/E probability mass
 ```
 
-## 2. Method name
-
-Use the working name:
+The new target is:
 
 ```text
-C-SPR: Coherent Spectral Partition Routing
+make each expert specialize on coherent feature families,
+while keeping expert mass balanced.
 ```
 
-C-SPR is a static router family.  It keeps the recursive quantile mass layer from SPR, but changes the scientific claim:
+If feature families are frequency-uniform, then the natural mass mechanism is **balanced assignment of feature families to experts**. This uses the given condition directly:
 
 ```text
-Mass comes from quantiles.
-Coherence comes from split-direction selection under local structure.
-Expert compatibility comes from optional expert-weight geometry.
+uniform family frequencies
++ equal number or equal total mass of families per expert
+-> balanced expert usage
 ```
 
-## 3. Feature setting
+Quantile routing may split a feature family across a threshold. That can produce balanced counts while damaging specialization. Therefore quantile-only routing is best treated as a baseline or fallback, not as the main method.
 
-Let `X in R^d` be the route-relevant feature.  The controlled representation is:
+## 3. Main method: BFSR
+
+Name:
 
 ```text
-tilde X = B(X - mu)
-Cov(tilde X) approximately sigma^2 I
+BFSR: Balanced Feature-Specializing Routing
 ```
 
-The useful middle regime is:
+Purpose:
 
 ```text
-F ~ Uniform({1,...,K})
-tilde X | F=f = mu_f + epsilon
+recover feature families in a spectrally normalized metric,
+then assign recovered families to experts under a balanced constraint.
 ```
 
-where the global covariance is isotropic but the distribution has local structure.
+### 3.1 Inputs
 
-This is different from a fully spherical feature distribution.  A spherical Gaussian has no recoverable discrete feature identity unless one is injected independently, in which case no unsupervised router should recover it.
+Calibration features:
 
-## 4. Static good dispatch definition
+\[
+\{x_i\}_{i=1}^n \subset \R^d.
+\]
 
-A router `g` induces cells:
+Number of experts:
+
+\[
+E.
+\]
+
+Number of feature families:
+
+\[
+K.
+\]
+
+In controlled experiments \(K\) is known from data construction. Later experiments may estimate \(K\), but this is not necessary for the first clean case.
+
+Optional expert-side geometry:
+
+\[
+\{w_e\}_{e=1}^E
+\]
+
+or expert spectral prototypes.
+
+### 3.2 Step 1: spectral normalization
+
+Estimate feature mean and covariance on calibration data:
+
+\[
+\widehat \mu = \frac{1}{n}\sum_i x_i,
+\qquad
+\widehat \Sigma = \frac{1}{n}\sum_i (x_i-\widehat\mu)(x_i-\widehat\mu)^\top.
+\]
+
+Normalize:
+
+\[
+\widetilde x_i = (\widehat\Sigma + \lambda I)^{-1/2}(x_i-\widehat\mu).
+\]
+
+This step is not a mass guarantee. It repairs the metric so that high-variance directions do not dominate feature recovery.
+
+### 3.3 Step 2: recover feature families
+
+Run unsupervised clustering in normalized space:
+
+\[
+\widehat h:\R^d\to\{1,\ldots,K\}.
+\]
+
+Possible implementations:
 
 ```text
-C_e = {x : g(x)=e}
+spherical k-means
+Gaussian mixture model with shared covariance
+spectral clustering on a nearest-neighbor graph
+nearest-prototype assignment from recovered centers
 ```
 
-### 4.1 Equal mass
+The first implementation should use spherical k-means or standard k-means after whitening, because the controlled feature family is center-based.
+
+### 3.4 Step 3: estimate recovered family mass
+
+For each recovered family \(c\), estimate:
+
+\[
+\widehat p_c = \frac{1}{n}\sum_i \mathbf 1\{\widehat h(\widetilde x_i)=c\}.
+\]
+
+In the ideal clean case, \(\widehat p_c \approx 1/K\).
+
+### 3.5 Step 4: assign feature families to experts
+
+Find an assignment
+
+\[
+a:\{1,\ldots,K\}\to\{1,\ldots,E\}
+\]
+
+such that each expert receives equal recovered family mass:
+
+\[
+\sum_{c:a(c)=e}\widehat p_c \approx 1/E.
+\]
+
+Possible objectives:
+
+#### Unsupervised locality objective
+
+Group related feature families together:
+
+\[
+\min_a \sum_{e=1}^E \sum_{c:a(c)=e} \widehat p_c
+\left\|\widehat\mu_c - \bar \mu_e\right\|^2
+\]
+
+subject to balanced recovered mass.
+
+#### Expert-aligned objective
+
+If expert-side prototypes \(u_e\) exist, assign feature families to compatible experts:
+
+\[
+\max_a \sum_{c=1}^K \widehat p_c
+\langle \widehat\mu_c, u_{a(c)}\rangle
+\]
+
+subject to balanced recovered mass.
+
+For sign-ambiguous spectral prototypes, use projective similarity:
+
+\[
+P_c = \frac{\widehat\mu_c \widehat\mu_c^\top}{\|\widehat\mu_c\|^2},
+\qquad
+P_e = u_e u_e^\top,
+\qquad
+s(c,e)=\mathrm{tr}(P_cP_e).
+\]
+
+### 3.6 Step 5: route new tokens
+
+For a new token feature \(x\):
 
 ```text
-P(C_e)=1/E
+normalize x -> x_tilde
+recover family c_hat = h_hat(x_tilde)
+route to expert g(x) = a(c_hat)
 ```
 
-### 4.2 Feature coherence
+This gives a fixed non-cheating router.
 
-When latent feature labels `F` exist for evaluation:
+## 4. Method variants
+
+### BFSR-OracleFeature
+
+Uses true feature family \(F\) to build the family-to-expert assignment.
+
+Purpose: upper bound / sanity check only. Not a valid non-cheating method.
+
+### BFSR-Cluster
+
+Uses unsupervised recovered feature family \(\widehat h(X)\). This is the primary non-cheating method.
+
+### BFSR-ExpertAligned
+
+Uses recovered feature families plus expert-side geometry to assign families to experts.
+
+Purpose: test whether model-internal expert geometry can give feature-to-expert identity.
+
+### BFSR-RandomGroup
+
+Assigns recovered feature families to experts uniformly subject to the same balance constraint.
+
+Purpose: tests whether feature recovery alone is enough or whether assignment geometry matters.
+
+### Quantile-SPR baseline
+
+Uses projection quantiles to equalize mass.
+
+Purpose: shows that equal mass can be achieved without feature-level specialization.
+
+### BalancedAssignment control
+
+Forces equal counts inside the current batch.
+
+Purpose: negative control. It is not a valid feature-distribution router because it uses current-batch counts.
+
+## 5. Theory components
+
+### Theorem 1: Isotropy-alone non-identifiability
+
+Let
+
+\[
+X\sim\mathcal N(0,I_d),
+\qquad F\sim\mathrm{Unif}(\{1,\ldots,K\}),
+\qquad F\perp X.
+\]
+
+For any deterministic router \(g(X)\),
+
+\[
+I(g(X);F)=0.
+\]
+
+Therefore spectral isotropy alone cannot imply feature specialization.
+
+Proof sketch: since \(g(X)\) is measurable with respect to \(X\), and \(F\perp X\), we have \(F\perp g(X)\).
+
+### Theorem 2: Balanced family assignment gives balanced expert mass
+
+Assume:
+
+1. \(F\sim\mathrm{Unif}(\{1,\ldots,K\})\).
+2. \(K\) is divisible by \(E\).
+3. The router assigns exactly \(K/E\) feature families to each expert.
+4. The router is feature-consistent: \(g(X)=a(F)\).
+
+Then
+
+\[
+\Prob(g(X)=e)=1/E
+\]
+
+for every expert \(e\).
+
+Proof:
+
+\[
+\Prob(g(X)=e)
+=\sum_{k:a(k)=e}\Prob(F=k)
+=\frac{K/E}{K}
+=\frac1E.
+\]
+
+### Theorem 3: Robust mass under feature recovery error
+
+Assume the ideal feature assignment \(a(F)\) is balanced, and the recovered family predictor satisfies
+
+\[
+\Prob(\widehat h(X)\neq F)\leq\eta.
+\]
+
+Define
+
+\[
+g(X)=a(\widehat h(X)).
+\]
+
+Then for each expert \(e\),
+
+\[
+\left|\Prob(g(X)=e)-1/E\right|\leq \eta.
+\]
+
+Proof sketch: \(g(X)\neq a(F)\) can happen only when \(\widehat h(X)\neq F\). Total variation between the expert distribution induced by \(a(F)\) and \(a(\widehat h(X))\) is at most \(\eta\).
+
+### Theorem 4: Specialization under feature recovery
+
+Under the same condition,
+
+\[
+\Prob(G \neq a(F))\leq\eta.
+\]
+
+Therefore feature-family consistency degrades at most with feature recovery error. Standard Fano-type bounds can translate this into lower bounds on mutual information or upper bounds on conditional entropy.
+
+### Proposition 5: Static utility requires feature-dependent target
+
+If
+
+\[
+Y\perp F\mid X
+\]
+
+and the expert class has no feature-conditioned advantage, then feature-family dispatch should not improve Bayes risk over a sufficiently expressive shared model.
+
+If instead
+
+\[
+Y = a_F^\top X + \xi
+\]
+
+and experts have limited capacity, then routing by \(F\) can reduce approximation error relative to incoherent partitions that mix many different \(a_F\)'s inside each expert.
+
+This proposition gives the static utility anchor. It should be tested experimentally rather than overclaimed.
+
+## 6. Causal map
 
 ```text
-NMI(g(X), F) high
-purity high
-within-cell variance low
-cell-center separation high
+A1: uniform feature-family frequency
+    -> mass balance through equal family/mass assignment
+
+A2: spectral isotropy / whitening
+    -> clean metric for feature recovery and expert geometry
+
+A3: local feature recoverability
+    -> high route-feature mutual information
+
+A4: feature-dependent target or aligned expert geometry
+    -> static utility improvement
 ```
 
-### 4.3 Expert compatibility
-
-When expert weights provide model-internal geometry, cell geometry should align with expert geometry:
+Each assumption has a falsifying anchor:
 
 ```text
-cell-prototype alignment high
-cell-to-expert assignment stable under sign-invariant prototype representation
+remove A1 -> mass imbalance unless assignment uses estimated masses
+remove A2 -> anisotropic confound dominates clustering
+remove A3 -> specialization impossible
+remove A4 -> no learning utility expected
 ```
 
-### 4.4 Static utility
+## 7. What to avoid claiming
 
-For a controlled static expert-fitting task:
+Do not claim:
 
 ```text
-Y = A_F X + noise
+spectral isotropy alone gives good routing
+quantile balancing gives feature specialization
+load balance implies expert specialization
+static dispatch solves training preservation
+synthetic utility proves real LLM utility
 ```
 
-with `F` hidden from the router, a coherent route should improve frozen-route expert fitting relative to incoherent equal-mass routes.
-
-## 5. C-SPR construction
-
-### Step 1: spectral normalization
-
-Estimate `mu` and a spectral normalization matrix `B` from unlabeled calibration features.
-
-Options:
+Do claim, if supported:
 
 ```text
-identity if already isotropic
-whitening
-spectral shrinkage
-rank-clipped whitening for numerical stability
+in globally isotropic, frequency-uniform, locally recoverable feature distributions,
+BFSR achieves balanced static feature-level specialization
+by recovering feature families and assigning them to experts under a balanced constraint.
 ```
-
-Report covariance condition number and effective rank before and after normalization.
-
-### Step 2: recursive mass tree
-
-At node `N`, with expert set `E_N`, split experts into `E_L` and `E_R` and set:
-
-```text
-rho_N = |E_L| / |E_N|
-```
-
-Given a direction `q_N`, split by the node-local quantile:
-
-```text
-q_N^T tilde X <= tau_N
-```
-
-where `tau_N` is the `rho_N` quantile of the node projection.
-
-### Step 3: choose split directions for coherence
-
-The method should compare several direction policies.
-
-#### C-SPR-RandomAxis
-
-Seeded random axes.  This is a mass-only baseline.
-
-#### C-SPR-FixedBasis
-
-A deterministic orthogonal / coordinate / Hadamard basis.  This is a stronger clean baseline than random axes.
-
-#### C-SPR-Local
-
-Choose directions using unlabeled feature geometry.  For candidate directions `q`, compute the quantile split and score:
-
-```text
-J_local(q) = - within_cell_variance(q) + eta * margin_tail(q)
-```
-
-where `margin_tail(q)` penalizes thresholds through high-density regions.
-
-#### C-SPR-Expert
-
-Use expert weights only as model-internal geometry.  For each expert matrix `W_e`, define a sign-invariant spectral projector:
-
-```text
-v_e = top left singular vector of W_e
-P_e = v_e v_e^T
-```
-
-Group experts using projective distance:
-
-```text
-d(e,j) = 1 - trace(P_e P_j) = 1 - (v_e^T v_j)^2
-```
-
-Then choose feature split directions that align resulting cells with the two expert subspace groups.
-
-#### C-SPR-ExpertLocal
-
-Combine expert guidance and local feature geometry:
-
-```text
-J(q) = - L_local(q) + lambda * Align_expert(q) + eta * Margin(q)
-```
-
-The quantile threshold still provides mass.
-
-## 6. Theory hierarchy
-
-### Theorem 1: recursive quantile equal mass
-
-If every internal node splits feature probability mass in proportion to the number of experts assigned to its children, every leaf cell has probability mass `1/E`.
-
-This theorem does not require spectral isotropy.  It is the mass theorem.
-
-### Proposition 2: isotropy-alone non-identifiability
-
-If `X` is isotropic and has no feature-dependent structure, then no unlabeled geometric router can recover meaningful feature labels.  If an evaluation label `F` is independent of `X`, then `I(g(X);F)=0` for every deterministic router `g`.
-
-This is the null anchor: isotropy alone should not produce feature coherence.
-
-### Assumption 3: isotropic local mixture
-
-At a node, suppose the feature population contains two latent groups `G in {L,R}` with the target mass ratio, and there exists a direction `q*` and threshold `tau*` such that the projected tails are small:
-
-```text
-P(q*^T X > tau* | G=L) <= epsilon
-P(q*^T X <= tau* | G=R) <= epsilon
-```
-
-### Proposition 4: projected separation gives coherent split
-
-Under the above projected separation, the node split disagrees with the latent binary grouping with probability at most `epsilon`.
-
-For a tree, total route-feature error is bounded by the accumulated node errors along the path.
-
-### Proposition 5: expert alignment transfers coherence
-
-If an expert-derived direction `q` is within `delta` of an ideal separating direction `q*`, and `||X|| <= R`, then the split can disagree with the ideal split only on samples whose ideal margin is at most `delta R`.
-
-Therefore expert weights help only if they are aligned with feature-separating directions and the feature distribution has low boundary mass around the ideal threshold.
-
-### Proposition 6: spectral normalization is a confound-removal step
-
-In an elliptically distorted local mixture:
-
-```text
-X = A Z
-```
-
-where `Z` is an isotropic local mixture and `A` has large condition number, raw Euclidean / inner-product geometry is dominated by `A`.  Population whitening recovers the geometry of `Z` up to an orthogonal transform.  Thus spectral normalization can causally improve local partition quality by restoring the metric in which local structure is expressed.
-
-This proposition is the correct causal role of spectral isotropy: it repairs or defines the metric, not the mass guarantee.
-
-## 7. Why this answers the advisor's clean-case request
-
-The advisor asked for the simplest case where:
-
-```text
-feature frequency is uniform
-representation / spectral space is uniform
-```
-
-V2.2 makes this precise as:
-
-```text
-balanced latent feature families
-spectrally normalized global covariance
-local feature structure in the normalized space
-```
-
-This is a better static target than arbitrary covariance isotropy because it is both close to feature-like language assumptions and falsifiable.
-
-## 8. Claim boundary
-
-Allowed claims after successful experiments:
-
-- C-SPR constructs equal-mass cells by quantile calibration.
-- Spectral normalization removes anisotropic metric confounds.
-- Local or expert-aligned split directions improve feature coherence when local structure exists.
-- Expert guidance helps only when expert weights are aligned with feature geometry.
-- Static utility improves only when the task or expert geometry is feature-dependent.
-
-Forbidden claims:
-
-- spectral isotropy alone gives good routing;
-- equal mass implies feature coherence;
-- random expert weights create useful partitions;
-- static good dispatch solves training preservation;
-- controlled synthetic tasks establish real LLM routing utility.
