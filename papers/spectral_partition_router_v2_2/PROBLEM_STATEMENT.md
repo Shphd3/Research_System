@@ -1,214 +1,234 @@
-# V2.2 Problem Statement: Static Good Dispatch under Spectral Isotropy
+# V2.2 Problem Statement: Static Feature-Level Specialization under Spectral Isotropy
 
 ## 1. Main question
 
-In a spectrally isotropic route-relevant feature space, can we construct a non-cheating static MoE router whose feature-space partition is not only equal-mass, but also feature-coherent and useful for a controlled static learning objective?
+We want to close the following static problem before studying training dynamics:
 
-The question is deliberately static.  It does not include representation drift, route preservation, or dynamic router updates.
+> Given a route-relevant feature distribution whose global spectrum is isotropic and whose feature families occur with uniform frequency, can we construct a non-cheating static router that assigns feature families to experts in a balanced and specialized way?
 
-## 2. Why the old v2.1 scope was premature
+The target is **feature-level specialization**, not merely equal token counts.
 
-The previous v2.1 scope used:
+A valid solution should answer four questions:
 
-```text
-equal mass + feature coherence + preservation
-```
+1. What is the controlled feature distribution?
+2. What does "good dispatch" mean in this distribution?
+3. Which assumptions make good dispatch identifiable?
+4. Which routing mechanism uses those assumptions causally?
 
-This is conceptually correct as a long-term decomposition, but it combines two stages:
+## 2. Why this scope
 
-1. **Static dispatch**: what partition should be constructed in the first place?
-2. **Training preservation**: will training keep that partition stable?
+The advisor's clean-case requirement is to first finish the simplest mathematical setting: feature frequency is uniform, the representation spectrum is uniform, and the resulting MoE dispatch problem should be stated, proved, and experimentally audited before moving to non-uniform spectra or real training dynamics.
 
-V2.2 handles only Stage 1.  Preservation should be a later paper or later section after static good dispatch is understood.
-
-## 3. What spectral isotropy can and cannot explain
-
-### 3.1 What it cannot explain
-
-Spectral isotropy alone does not imply a good router.
-
-It does not imply:
-
-- equal-mass routing by an arbitrary prototype router;
-- semantic feature partition;
-- expert specialization;
-- downstream utility.
-
-Recursive quantiles also do not mathematically require spectral isotropy to equalize mass.  Therefore the causal chain is not:
+This paper therefore excludes:
 
 ```text
-spectral isotropy -> equal mass
+training preservation
+representation drift
+slow router updates
+hysteresis
+learned-router dynamics
+large-singular-value non-uniform spectrum
 ```
 
-### 3.2 What it can explain
+Those are later-stage problems.
 
-Spectral isotropy is still important in the controlled research setting because it removes global anisotropic confounds:
+## 3. Controlled feature model
+
+Let
 
 ```text
-no single high-variance direction should dominate routing geometry
+F in {1,...,K}     latent route-relevant feature family
+X in R^d           hidden representation / route-relevant feature vector
+E                  number of experts
+G = g(X)           expert selected by a static router
 ```
 
-It makes feature distances, local neighborhoods, prototype directions, and split objectives interpretable in a shared normalized geometry.  Under additional local feature structure, this gives a clean setting in which to test whether a router can recover coherent feature cells.
+The controlled distribution is:
 
-The revised causal chain is:
+\[
+F \sim \mathrm{Unif}(\{1,\ldots,K\}),
+\qquad
+X \mid F=k = \mu_k + \epsilon.
+\]
+
+The assumptions are:
+
+### A1. Frequency uniformity
+
+Each feature family appears with equal probability:
+
+\[
+\Prob(F=k)=1/K.
+\]
+
+This is the frequency part of the clean case.
+
+### A2. Global spectral isotropy
+
+After centering and optional population whitening, the aggregate representation is approximately isotropic:
+
+\[
+\Cov(\widetilde X) \approx I_d.
+\]
+
+This is the spectral part of the clean case. It removes global anisotropic directions and defines a clean metric.
+
+### A3. Local feature recoverability
+
+The feature families are not arbitrary labels. They leave recoverable local structure in representation space. For example, there exists an unsupervised estimator \(\widehat h(X)\) such that
+
+\[
+\Prob(\widehat h(X) \neq F) \leq \eta
+\]
+
+up to a permutation of feature-family names.
+
+This assumption is necessary. Without it, feature-level specialization is unidentifiable.
+
+### A4. Static utility compatibility
+
+The downstream static objective depends on the feature family. A typical controlled target is:
+
+\[
+Y = a_F^\top X + \xi,
+\]
+
+or another family-conditioned rule. If the target is independent of \(F\), then feature specialization should not improve learning.
+
+## 4. Why spectral isotropy alone is not enough
+
+Spectral isotropy is a global second-order condition. It does not define which tokens should be grouped together.
+
+Null anchor:
+
+\[
+X \sim \mathcal N(0,I_d),
+\qquad
+F \perp X,
+\qquad
+F \sim \mathrm{Unif}(\{1,\ldots,K\}).
+\]
+
+For any deterministic router \(g(X)\),
+
+\[
+I(g(X);F)=0.
+\]
+
+Thus no feature-specializing router can be recovered from \(X\). This proves that isotropy alone cannot be the causal source of good routing.
+
+The correct middle regime is:
 
 ```text
-spectral normalization -> clean global metric
-local feature structure / expert alignment -> informative split directions
-quantile thresholds -> equal mass
-static expert compatibility -> controlled utility
+globally isotropic distribution
++ locally recoverable feature families
++ uniform feature-family frequencies
 ```
 
-## 4. Static good dispatch
+## 5. Definition of static good dispatch
 
-Let `X in R^d` be the route-relevant feature and `g: R^d -> {1,...,E}` a deterministic router.  Let:
+A static router \(g:\R^d\to\{1,\ldots,E\}\) is good in this paper if it satisfies the following objectives.
+
+### O1. Balanced expert mass
+
+\[
+\Prob(g(X)=e) \approx 1/E.
+\]
+
+This is required, but it is not sufficient.
+
+### O2. Feature-family consistency
+
+Each feature family should be routed consistently:
+
+\[
+H(G\mid F) \text{ is small.}
+\]
+
+Equivalently, purity / NMI between \(G\) and \(F\) should be high when feature families are recoverable.
+
+### O3. Non-trivial specialization
+
+The router should retain useful information about feature identity:
+
+\[
+I(G;F) \text{ is large relative to } H(G).
+\]
+
+This prevents solutions that are balanced but feature-agnostic.
+
+### O4. Static learning utility
+
+Under a feature-dependent controlled task, expert training with \(g\) should outperform balanced but incoherent dispatch.
+
+This objective is explicitly static: the router is fixed before expert training, and no preservation claim is made.
+
+## 6. Non-cheating rules
+
+Allowed during router construction:
 
 ```text
-C_e = {x : g(x)=e}
+unlabeled calibration features X
+feature mean/covariance
+unsupervised clustering of X
+model-internal expert weights, if used as an experimental condition
+estimated cluster masses
 ```
 
-### Target A: equal mass
+Forbidden during router construction:
 
 ```text
-P(g(X)=e)=1/E for every expert e.
+latent feature labels F
+task labels Y
+next-token answers
+evaluation labels
+current-batch expert counts
+batch-level forced assignment as the main method
 ```
 
-This is the mass target.  It is necessary but not sufficient.
+Latent labels \(F\) and targets \(Y\) are allowed only for synthetic data generation and evaluation.
 
-### Target B: feature coherence
+## 7. Main method target
 
-When there is latent feature identity `F`, the route should be informative about `F`:
+The method should use the assumptions causally:
 
 ```text
-I(g(X); F) high
-purity high
-within-cell variance low
-between-cell separation high
+spectral normalization
+-> clean metric for feature recovery
+
+recoverable local feature families
+-> cluster/prototype recovery
+
+uniform family frequencies
+-> balanced family-to-expert assignment gives mass balance
+
+feature-dependent objective
+-> specialized dispatch gives static learning utility
 ```
 
-The router may not use `F` during construction.  `F` is an evaluation-only variable.
-
-### Target C: static utility / expert compatibility
-
-A coherent partition should help a controlled static learning task when the task structure is feature-dependent, or it should align cells with model-internal expert geometry when such geometry exists.
-
-Possible audits:
+This leads to the main method family:
 
 ```text
-cell-to-expert prototype alignment
-static hard-routing regression loss
-expert specialization score after fitting experts with frozen routes
+BFSR: Balanced Feature-Specializing Routing
 ```
 
-No training-time route preservation claim is made.
+Quantile routing is retained as a baseline or optional calibration tool, not as the main causal mechanism.
 
-## 5. Non-cheating rule
+## 8. What this paper should prove or falsify
 
-A router is non-cheating if, after calibration, routing a token uses only:
+The paper should prove or experimentally test:
 
-- the current route-relevant feature;
-- stored calibration statistics from unlabeled features;
-- optional model-internal expert weights.
+1. **Impossibility anchor**: isotropy without feature recoverability cannot yield feature specialization.
+2. **Mass theorem**: if feature families are uniform and assigned evenly to experts, expert mass is balanced.
+3. **Robustness theorem**: if feature-family recovery error is at most \(\eta\), then mass and specialization degrade by controlled amounts.
+4. **Utility anchor**: coherent feature-family routing improves static expert learning only when the target depends on feature identity.
+5. **Negative controls**: random balanced dispatch, token-level balanced assignment, and quantile-only dispatch can balance usage without solving feature specialization.
 
-It may not use:
+## 9. Stage completion criterion
 
-- latent feature labels during construction;
-- task labels / next-token answers during routing construction;
-- evaluation labels;
-- current-batch expert counts;
-- post-hoc assignment to underfilled experts as the main method.
-
-Balanced assignment remains a control, not the method.
-
-## 6. Required middle-regime assumptions
-
-V2.2 should not assume arbitrary isotropic distributions are solvable.  It should test a ladder of explicit assumptions.
-
-### Assumption A: global spectral isotropy
-
-After centering and optional spectral normalization:
+This stage is complete when we can state:
 
 ```text
-Cov(tilde X) approximately sigma^2 I
+Under globally spectrally isotropic, frequency-uniform, locally recoverable feature-family distributions, a static non-cheating router can achieve balanced feature-level specialization by recovering feature families and assigning them evenly to experts.
+When local recoverability or feature-dependent utility is removed, the method fails in predictable ways.
 ```
-
-This removes high-variance confounds.
-
-### Assumption B: balanced feature frequency
-
-Latent features, when present, are frequency-balanced or close to balanced:
-
-```text
-P(F=f) approximately 1/K
-```
-
-This matches the advisor's clean-case instruction that both feature frequency and representation geometry are uniform.
-
-### Assumption C: local feature structure
-
-Features have local coherence after spectral normalization:
-
-```text
-X | F=f = mu_f + epsilon
-```
-
-with separated centers or separated local manifolds.
-
-### Assumption D: optional expert alignment
-
-Expert weights may provide model-internal directions or subspaces aligned with feature geometry:
-
-```text
-v_e approximately aligned with a feature direction / feature group
-```
-
-This is optional.  If expert weights are random or noisy, the expert-guided variant should not claim benefit.
-
-### Assumption E: regularity for deterministic splitting
-
-The projection distributions should be sufficiently continuous, or discrete atoms / ties must be explicitly handled and reported.
-
-## 7. Falsifiable hypotheses
-
-### H1: isotropy alone is insufficient
-
-On isotropic but unstructured features, routers can equalize mass but should not achieve meaningful route-feature agreement.
-
-### H2: local feature structure is necessary for coherence
-
-On globally isotropic but locally clusterable features, locality-aware or expert-aligned split directions should improve NMI / purity relative to random-axis quantile splits.
-
-### H3: quantiles are the mass mechanism
-
-If split directions are held fixed, changing from raw thresholds to quantile thresholds should reduce LoadCV.  This should hold beyond isotropic distributions.
-
-### H4: spectral normalization is a metric-cleaning mechanism
-
-In anisotropically distorted feature mixtures, raw local geometry should degrade; whitening or spectral shrinkage should recover the coherent partition if the underlying local structure is preserved.
-
-### H5: expert guidance helps only with alignment
-
-Expert-guided routing should improve coherence and expert compatibility only when expert weights are aligned with feature geometry.  Random expert weights should not help.
-
-### H6: static utility follows coherence only when the task is feature-dependent
-
-On controlled tasks with feature-dependent target maps, coherent routes should improve static expert fitting.  On feature-independent tasks, good mass/coherence should not automatically improve loss.
-
-## 8. Success criterion for v2.2
-
-V2.2 is successful if it establishes the following bounded claim:
-
-```text
-In a globally spectrally isotropic but locally structured feature distribution,
-a non-cheating static router can construct equal-mass and feature-coherent cells.
-Quantiles provide mass; spectral normalization provides the clean metric;
-local or expert-aligned geometry provides coherence; static utility appears only when the task or experts match the feature structure.
-```
-
-It should not claim:
-
-- spectral isotropy alone gives semantic routing;
-- equal mass implies feature coherence;
-- expert weights always help;
-- static dispatch solves training preservation;
-- synthetic static utility implies real language-model utility.
