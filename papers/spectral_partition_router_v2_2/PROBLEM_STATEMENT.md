@@ -45,11 +45,11 @@ G = g(X)           expert selected by a static router
 
 The controlled distribution is:
 
-\[
+$$
 F \sim \mathrm{Unif}(\{1,\ldots,K\}),
 \qquad
 X \mid F=k = \mu_k + \epsilon.
-\]
+$$
 
 The assumptions are:
 
@@ -57,9 +57,9 @@ The assumptions are:
 
 Each feature family appears with equal probability:
 
-\[
-\Prob(F=k)=1/K.
-\]
+$$
+\mathbb{P}(F=k)=1/K.
+$$
 
 This is the frequency part of the clean case.
 
@@ -67,19 +67,19 @@ This is the frequency part of the clean case.
 
 After centering and optional population whitening, the aggregate representation is approximately isotropic:
 
-\[
-\Cov(\widetilde X) \approx I_d.
-\]
+$$
+\operatorname{Cov}(\widetilde X) \approx I_d.
+$$
 
 This is the spectral part of the clean case. It removes global anisotropic directions and defines a clean metric.
 
 ### A3. Local feature recoverability
 
-The feature families are not arbitrary labels. They leave recoverable local structure in representation space. For example, there exists an unsupervised estimator \(\widehat h(X)\) such that
+The feature families are not arbitrary labels. They leave recoverable local structure in representation space. For example, there exists an unsupervised estimator $\widehat{h}(X)$ such that
 
-\[
-\Prob(\widehat h(X) \neq F) \leq \eta
-\]
+$$
+\mathbb{P}(\widehat{h}(X) \neq F) \leq \eta
+$$
 
 up to a permutation of feature-family names.
 
@@ -91,11 +91,11 @@ This is not part of the current stage claim. A later static-utility audit may
 test whether a downstream objective depends on the feature family. A typical
 controlled target is:
 
-\[
+$$
 Y = a_F^\top X + \xi,
-\]
+$$
 
-or another family-conditioned rule. If the target is independent of \(F\), then feature specialization should not improve learning. This belongs after the static dispatch definition has been closed.
+or another family-conditioned rule. If the target is independent of $F$, then feature specialization should not improve learning. This belongs after the static dispatch definition has been closed.
 
 ## 4. Why spectral isotropy alone is not enough
 
@@ -103,21 +103,21 @@ Spectral isotropy is a global second-order condition. It does not define which t
 
 Null anchor:
 
-\[
+$$
 X \sim \mathcal N(0,I_d),
 \qquad
 F \perp X,
 \qquad
 F \sim \mathrm{Unif}(\{1,\ldots,K\}).
-\]
+$$
 
-For any deterministic router \(g(X)\),
+For any deterministic router $g(X)$,
 
-\[
+$$
 I(g(X);F)=0.
-\]
+$$
 
-Thus no feature-specializing router can be recovered from \(X\). This proves that isotropy alone cannot be the causal source of good routing.
+Thus no feature-specializing router can be recovered from $X$. This proves that isotropy alone cannot be the causal source of good routing.
 
 The correct middle regime is:
 
@@ -129,13 +129,13 @@ globally isotropic distribution
 
 ## 5. Definition of static good dispatch
 
-A static router \(g:\R^d\to\{1,\ldots,E\}\) is good in this paper if it satisfies the following objectives.
+A static router $g:\mathbb{R}^d\to\{1,\ldots,E\}$ is good in this paper if it satisfies the following objectives.
 
 ### O1. Balanced expert mass
 
-\[
-\Prob(g(X)=e) \approx 1/E.
-\]
+$$
+\mathbb{P}(g(X)=e) \approx 1/E.
+$$
 
 This is required, but it is not sufficient.
 
@@ -143,19 +143,19 @@ This is required, but it is not sufficient.
 
 Each feature family should be routed consistently:
 
-\[
+$$
 H(G\mid F) \text{ is small.}
-\]
+$$
 
-Because \(K\) can be larger than \(E\), one expert may receive several feature families. The primary metric is therefore per-family route consistency, not route-to-feature purity.
+Because $K$ can be larger than $E$, one expert may receive several feature families. The primary metric is therefore per-family route consistency, not route-to-feature purity.
 
 ### O3. Non-trivial specialization
 
 The router should retain useful information about feature identity:
 
-\[
+$$
 I(G;F) \text{ is large relative to } H(G).
-\]
+$$
 
 This prevents solutions that are balanced but feature-agnostic.
 
@@ -186,7 +186,7 @@ current-batch expert counts
 batch-level forced assignment as the main method
 ```
 
-Latent labels \(F\) and targets \(Y\) are allowed only for synthetic data generation and evaluation.
+Latent labels $F$ and targets $Y$ are allowed only for synthetic data generation and evaluation.
 
 ## 7. Main method target
 
@@ -220,7 +220,7 @@ The paper should prove or experimentally test:
 
 1. **Impossibility anchor**: isotropy without feature recoverability cannot yield feature specialization.
 2. **Mass theorem**: if feature families are uniform and assigned evenly to experts, expert mass is balanced.
-3. **Robustness theorem**: if feature-family recovery error is at most \(\eta\), then mass and specialization degrade by controlled amounts.
+3. **Robustness theorem**: if feature-family recovery error is at most $\eta$, then mass and specialization degrade by controlled amounts.
 4. **Frequency-uniformity anchor**: equal-number family assignment balances expert mass only when feature-family frequencies are uniform; mass-aware assignment is needed when frequencies are non-uniform.
 5. **Negative controls**: random routing and quantile-only dispatch can balance usage or route ordinary geometry without solving feature-family consistency.
 
