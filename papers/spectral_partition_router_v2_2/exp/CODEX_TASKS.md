@@ -38,7 +38,7 @@ frequency-imbalance generator
 spectral normalizer
 k-means feature recovery
 BFSR-Cluster
-OracleFeature invalid upper bound
+OracleFeature non-admissible upper bound
 Quantile-SPR mass-only baseline
 Random linear top-1 baseline
 mass, family-consistency, split-rate, information-fraction metrics
@@ -68,11 +68,11 @@ holdout examples: 16000
 
 ## Current Acceptance Checks
 
-The current result is acceptable only if:
+The current result is acceptable for the narrow static claim only if:
 
 ```text
 E1: BFSR-Cluster approaches OracleFeature on LoadCV and family consistency.
-E2: valid non-cheating methods have near-zero expert information fraction.
+E2: admissible label-free methods have near-zero expert information fraction.
 E3: family consistency tracks cluster recovery as separation increases.
 E4: whitening repairs structured anisotropic distortion but does not create null-data information.
 E5: equal-number assignment fails under frequency imbalance, and mass-aware assignment repairs LoadCV.
@@ -94,5 +94,5 @@ static utility audit
 training-time preservation
 learned-router dynamics
 automatic K selection
+real hidden-state feature audit
 ```
-
