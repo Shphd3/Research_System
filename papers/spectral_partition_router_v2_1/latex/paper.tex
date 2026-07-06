@@ -1,0 +1,505 @@
+\documentclass{article}
+\usepackage{iclr2026_conference,times}
+
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{flafter}
+\hypersetup{hidelinks}
+
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par\noindent\textit{#1.}\ }{\hfill\qedsymbol\par}
+\makeatother
+
+\title{Geometry-Aware Spectral Partition Routing for Uniform Feature Dispatch}
+
+\author{Anonymous Authors}
+
+%\iclrfinalcopy
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study a controlled routing problem for mixture-of-experts models: when
+route-relevant features are spectrally uniform, can we build a non-cheating
+router whose dispatch is uniform, feature-aware, and stable during training?
+Prior equal-mass constructions solve only the first part: quantile thresholds can
+make expert cells have probability $1/E$, but equal mass alone does not imply
+that the cells align with latent feature structure or survive optimization.  We
+therefore formulate \emph{good feature dispatch} as three separable properties:
+equal mass, feature coherence, and margin-based preservation.  We propose
+Geometry-Aware Spectral Partition Routing, which keeps recursive quantile splits
+for mass control, but chooses split directions using either unlabeled locality or
+expert-weight geometry, and adds margin-aware preservation rules for training.
+The paper gives the exact equal-mass proof, a discrete-feature tie boundary, a
+coherence guarantee under projected separation, and a preservation theorem under
+bounded representation drift.  The experiment section is a protocol only: it
+specifies static, feature-structure, expert-guided, and training-preservation
+audits to be filled after execution.
+\end{abstract}
+
+\section{Introduction}
+
+Mixture-of-experts (MoE) models route each token representation to a small set of
+experts \citep{shazeer2017outrageously,fedus2022switch}.  In a top-1 router,
+small geometric differences decide the selected expert.  Therefore, if the
+research question is whether uniformly represented features can be distributed to
+experts, the first object to define is not the load-balancing loss, but the
+feature-space partition induced by the router.
+
+The simplest useful setting is controlled: route-relevant features have been
+chosen, centered, and spectrally normalized so that no dominant covariance
+direction remains.  This is not a claim about real language-model hidden states;
+it is the clean case one should solve before studying nonuniform spectra,
+residual common components, or sequence-position mixing.  The remaining question
+is constructive: what router should we use, and what properties should it have?
+
+A purely equal-mass answer is too weak.  Recursive quantile splitting can build a
+fixed feature router $g(x)$ whose cells $C_e=\{x:g(x)=e\}$ satisfy
+$\Prob(C_e)=1/E$.  This solves count-level dispatch without using labels or
+batch-level capacity forcing.  However, experiments from the previous iteration
+showed that equal-mass cells can have weak feature agreement, and that naive
+recalibration can destroy route stability.  Thus a ``good'' router must satisfy
+three properties, not one: it must dispatch equal probability mass, cut features
+in a geometrically meaningful way when structure exists, and preserve the
+assignment under training drift.
+
+This paper rewrites the problem around those three properties.  We propose
+\newterm{Geometry-Aware Spectral Partition Routing} (GA-SPR).  GA-SPR keeps the
+quantile mechanism because it is the clean source of equal mass.  It then adds a
+geometry layer: split directions are chosen from unlabeled feature locality or
+from expert weights.  Expert weights are allowed because they are model-internal
+information, not data labels.  In particular, an expert matrix supplies a
+candidate spectral prototype through its principal input singular direction,
+matching the expert-proxy view of spectral router designs such as MPI
+\citep{routermpi2026}.  Finally, GA-SPR treats training preservation as a margin
+problem: updates should be accepted only when they do not induce excessive route
+flips near partition boundaries.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+\item We refine uniform feature dispatch into three measurable targets: equal
+mass, feature coherence, and margin-based preservation.  This clarifies what is
+solved by quantiles and what requires additional structure.
+\item We define GA-SPR, a family of non-cheating routers that combine recursive
+quantile mass control with locality-aware or expert-weight-guided split
+directions, plus margin-aware training updates.
+\item We prove the mass, coherence, and preservation claims under explicit mild
+assumptions, and specify an experiment protocol that keeps static dispatch,
+feature quality, expert-weight alignment, and training dynamics separate.
+\end{enumerate}
+
+\section{Problem Definition}
+
+\subsection{Controlled feature setting}
+
+Let $X\in\R^d$ be the route-relevant feature.  In a sequence model this should be
+the hidden state at the position used for routing, not a pool of all positions.
+We assume an unlabeled calibration set
+\begin{equation}
+  \calD_{\mathrm{cal}}=\{x_i\}_{i=1}^{n_{\mathrm{cal}}}
+\end{equation}
+from the same feature population.  Calibration may use feature statistics and
+model-internal expert weights, but not feature labels or task targets.
+
+The representation is spectrally normalized by
+\begin{equation}
+  \tilde x = B(x-\mu),\qquad \Cov(\tilde X)\approx \sigma^2 I.
+\end{equation}
+Spectral normalization removes a dominant covariance direction as a confound.  It
+does not by itself imply that the feature distribution has useful local
+structure.
+
+\subsection{Three targets for good dispatch}
+
+A router is a deterministic map $g:\R^d\rightarrow\{1,\ldots,E\}$ with cells
+$C_e=\{x:g(x)=e\}$.
+
+\begin{definition}[Equal-mass dispatch]
+The router has equal-mass dispatch if
+\begin{equation}
+  \Prob(X\in C_e)=\frac{1}{E},\qquad e=1,\ldots,E.
+\end{equation}
+\end{definition}
+
+Equal mass is the base requirement.  It is not sufficient for a good router.
+
+\begin{definition}[Feature coherence]
+Suppose the data distribution has latent feature identity $F$ for analysis only.
+A router is feature-coherent when $g(X)$ is informative about $F$, measured by
+route-feature mutual information, purity, or low within-cell variance.  The
+method may not use $F$ during calibration or training.
+\end{definition}
+
+When no latent structure exists, feature coherence is not identifiable from
+isotropy alone.  Therefore coherence claims require an additional assumption such
+as clusterable features or expert weights aligned with feature directions.
+
+\begin{definition}[Training preservation]
+Let $g_0$ be the calibrated route and $g_t$ be the route after training step $t$.
+The partition is preserved if the route flip probability
+\begin{equation}
+  \Prob(g_t(X_t)\ne g_0(X_0))
+\end{equation}
+is small, and if the lower tail of the routing margin remains away from zero.
+\end{definition}
+
+\subsection{Non-cheating rule}
+
+A router is non-cheating if, after calibration, routing a token uses only the
+current feature, stored calibration statistics, and optional model-internal
+expert weights.  It may not use feature labels, task targets, evaluation labels,
+or current-batch expert counts.  Batch-level balanced assignment is therefore a
+control, not the method.
+
+\section{Geometry-Aware Spectral Partition Routing}
+
+GA-SPR is a recursive tree router.  Each internal node owns a feature
+subpopulation and a subset of experts.  Each leaf owns one expert.
+
+\subsection{Mass layer: recursive quantile split}
+
+At node $\calN$, let $\calE_{\calN}$ be the current expert set and split it into
+$\calE_L$ and $\calE_R$.  The target left mass is
+\begin{equation}
+  \rho_{\calN}=\frac{|\calE_L|}{|\calE_{\calN}|}.
+\end{equation}
+Given a direction $q_{\calN}\in\Sphere^{d-1}$, define
+\begin{equation}
+  T_{\calN}=q_{\calN}^{\top}\tilde X,\qquad \tilde X\sim P_{\calN}.
+\end{equation}
+Let $\tau_{\calN}$ be the $\rho_{\calN}$-quantile of $T_{\calN}$ under the node
+population.  The split is
+\begin{align}
+  C_L&=\{x\in C_{\calN}:q_{\calN}^{\top}\tilde x\le \tau_{\calN}\},\\
+  C_R&=\{x\in C_{\calN}:q_{\calN}^{\top}\tilde x>\tau_{\calN}\}.
+\end{align}
+Quantiles control mass.  They do not decide whether the split is geometrically
+meaningful.
+
+\subsection{Geometry layer: choosing split directions}
+
+\paragraph{GA-SPR-Mass.}
+The mass-only baseline chooses fixed basis directions or seeded random axes.
+This tests the equal-mass construction without claiming feature meaning.
+
+\paragraph{GA-SPR-Local.}
+The local variant chooses $q$ using unlabeled feature geometry.  Given candidate
+directions $q^{(m)}$, each with its quantile split, choose the direction that
+minimizes weighted within-cell variance
+\begin{equation}
+  \calL_{\mathrm{local}}(q)=\sum_{b\in\{L,R\}}\Prob(C_b\mid C_{\calN})
+  \E[\norm{\tilde X-\mu_b}_2^2\mid \tilde X\in C_b].
+\end{equation}
+A margin term can be added to avoid thresholds that cut through high-density
+regions.
+
+\paragraph{GA-SPR-Expert.}
+Expert weights can guide the split.  For an input-side expert matrix $W_e$,
+define its principal spectral line by
+\begin{equation}
+  v_e\in\arg\max_{\norm{v}_2=1}\norm{v^{\top}W_e}_2^2,\qquad
+  P_e=v_ev_e^{\top}.
+\end{equation}
+The projector $P_e$ removes the arbitrary sign of the singular vector.  Expert
+projectors can be grouped by a sign-invariant distance such as
+\begin{equation}
+  d(e,j)=1-\mathrm{tr}(P_eP_j)=1-(v_e^{\top}v_j)^2.
+\end{equation}
+After grouping experts into $\calE_L$ and $\calE_R$, GA-SPR-Expert chooses a
+feature split direction by either using an oriented router/MPI row when available
+or by selecting a locality direction whose resulting cells align with the two
+expert subspaces.  In the simplest projective form, a candidate direction can be
+extracted from the leading eigenspace of
+\begin{equation}
+  \Delta_{\calN}=\frac{1}{|\calE_L|}\sum_{e\in\calE_L}P_e
+  -\frac{1}{|\calE_R|}\sum_{e\in\calE_R}P_e.
+\end{equation}
+The sign of this direction is immaterial for equal mass; it only determines
+which child is named left.  Quantile thresholds still determine the child masses.
+
+\subsection{Preservation layer: margin-aware updates}
+
+The route margin of a tree router is
+\begin{equation}
+  m_{\mathrm{tree}}(x)=\min_{\calN\in\mathrm{path}(x)}
+  |q_{\calN}^{\top}\tilde x-\tau_{\calN}|.
+\end{equation}
+Naive recalibration may move thresholds across many samples and cause route
+flips.  GA-SPR therefore treats updates as controlled interventions.  A threshold
+or direction update is accepted only if the estimated route-change budget on a
+held-out calibration buffer is below a chosen tolerance.  A hysteresis band can
+keep points near old boundaries fixed unless the new route is confident.  These
+rules are not part of the equal-mass proof; they are a training-preservation
+mechanism to be tested experimentally.
+
+\section{Theory}
+
+\subsection{Equal mass from recursive quantiles}
+
+\begin{theorem}[Recursive quantile dispatch]
+\label{thm:recursive_quantile}
+Assume each internal node $\calN$ chooses a threshold satisfying
+\begin{equation}
+  \Prob(C_L\mid C_{\calN})=\frac{|\calE_L|}{|\calE_{\calN}|},\qquad
+  \Prob(C_R\mid C_{\calN})=\frac{|\calE_R|}{|\calE_{\calN}|}.
+\end{equation}
+If the root contains all $E$ experts and every leaf contains one expert, then
+each expert cell has mass $1/E$.
+\end{theorem}
+
+\begin{proof}
+For any node $\calN$, prove by induction that
+$\Prob(C_{\calN})=|\calE_{\calN}|/E$.  The root satisfies this.  If the parent
+satisfies it, then the left child satisfies
+\begin{equation}
+\Prob(C_L)=\Prob(C_{\calN})\Prob(C_L\mid C_{\calN})
+=\frac{|\calE_{\calN}|}{E}\frac{|\calE_L|}{|\calE_{\calN}|}
+=\frac{|\calE_L|}{E}.
+\end{equation}
+The right child is identical.  A leaf has one expert, so its mass is $1/E$.
+\end{proof}
+
+\subsection{Empirical quantiles and atom boundary}
+
+The theorem is exact for population quantiles.  With a finite calibration set,
+empirical CDF concentration gives the usual $O(n^{-1/2})$ split error for a
+continuous scalar projection \citep{dvoretzky1956asymptotic}.  For discrete
+features, exact deterministic splitting may be impossible.
+
+\begin{proposition}[Atom impossibility]
+Suppose an atom $x_0$ has probability $\Prob(X=x_0)>1/E$.  Any deterministic
+feature-only router that sends identical features to the same expert cannot have
+$\Prob(g(X)=e)=1/E$ for all $e$.
+\end{proposition}
+
+\begin{proof}
+All mass at $x_0$ must be sent to a single expert $e_0$.  Hence
+$\Prob(g(X)=e_0)\ge \Prob(X=x_0)>1/E$, contradicting equal mass.
+\end{proof}
+
+Thus discrete experiments require explicit tie handling or an approximate target.
+Feature-derived lexicographic keys are allowed; sample-index tie breaking is not
+a deterministic feature router.
+
+\subsection{Coherence under projected separation}
+
+Equal mass does not imply feature coherence.  The next theorem states the mild
+condition under which a split is coherent.
+
+\begin{assumption}[Projected separation]
+At node $\calN$, suppose the feature population contains two latent groups
+$G\in\{L,R\}$ that should be assigned to the two children, with
+$\Prob(G=L\mid C_{\calN})=\rho_{\calN}$.  A direction $q$ and threshold $\tau$
+have projected separation error $\varepsilon$ if
+\begin{equation}
+  \Prob(q^{\top}\tilde X>\tau\mid G=L,C_{\calN})\le \varepsilon,\qquad
+  \Prob(q^{\top}\tilde X\le\tau\mid G=R,C_{\calN})\le \varepsilon.
+\end{equation}
+\end{assumption}
+
+\begin{proposition}[One-node coherence]
+Under projected separation error $\varepsilon$, the node split disagrees with the
+latent binary grouping with probability at most $\varepsilon$.
+\end{proposition}
+
+\begin{proof}
+The disagreement event is the union of the left-group tail above the threshold
+and the right-group tail below the threshold, weighted by the group priors.  Each
+conditional error is at most $\varepsilon$, so the total error is at most
+$\varepsilon$.
+\end{proof}
+
+For a tree, the route-to-feature error is at most the sum of separation errors
+along the path.  This is the theoretical reason that good dispatch needs more
+than isotropy: it needs directions whose projected splits separate the relevant
+feature groups.
+
+\subsection{Expert alignment as a sufficient source of split directions}
+
+The expert-guided variant is justified only when expert weights contain useful
+geometry.  The following perturbation statement makes this explicit.
+
+\begin{assumption}[Aligned expert split]
+For a node split, let $q^\star$ be an ideal feature-separating direction with
+threshold $\tau^\star$.  A candidate direction $q$ from expert weights is
+$\delta$-aligned if $\norm{q-q^\star}_2\le\delta$.  Features are bounded by
+$\norm{\tilde X}_2\le R$ with probability one, and have margin
+\begin{equation}
+  m^\star(X)=|{q^\star}^{\top}\tilde X-\tau^\star|.
+\end{equation}
+\end{assumption}
+
+\begin{proposition}[Expert-direction perturbation]
+If $\norm{q-q^\star}_2\le\delta$ and the threshold is unchanged, then the split
+can disagree with the ideal split only when $m^\star(X)\le \delta R$.  Therefore
+\begin{equation}
+  \Prob(g_q(X)\ne g_{q^\star}(X))
+  \le \Prob(m^\star(X)\le \delta R).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For any $X$, the projection perturbation is bounded by
+$|(q-q^\star)^{\top}\tilde X|\le \delta R$.  If the ideal margin is larger than
+this perturbation, the sign relative to the threshold cannot change.
+\end{proof}
+
+This proposition explains the role of expert weights.  They are useful when they
+produce split directions close to feature-separating directions and when the
+feature distribution has low boundary mass.
+
+\subsection{Preservation under bounded drift}
+
+\begin{theorem}[Margin preservation]
+Let $g_0$ be a calibrated tree router with unit split directions and thresholds
+$\tau_{\calN}$.  Let $X_t=X_0+\Delta$ be a drifted feature.  If
+\begin{equation}
+  \norm{\Delta}_2 < m_{\mathrm{tree}}(X_0),
+\end{equation}
+then $g_t(X_t)=g_0(X_0)$ under the same tree.
+\end{theorem}
+
+\begin{proof}
+At each node on the original path, the split score changes by at most
+$|q_{\calN}^{\top}\Delta|\le\norm{\Delta}_2$.  If this is smaller than the
+minimum distance to all thresholds on the path, no binary decision changes.
+\end{proof}
+
+Consequently, if $\norm{\Delta}_2\le r$ with high probability, the route flip
+probability is bounded by $\Prob(m_{\mathrm{tree}}(X_0)\le r)$ plus the drift
+failure probability.  Training preservation is therefore a margin-and-drift
+problem, not a consequence of equal-mass initialization.
+
+\section{Experiments}
+\label{sec:experiments}
+
+This draft intentionally leaves the experimental results empty.  The protocols
+below define what must be run before claiming empirical validation.
+
+\subsection{Static equal-mass dispatch}
+
+\paragraph{Goal.} Verify that recursive quantile routing constructs equal-mass
+cells on calibration data and generalizes to holdout data.
+
+\paragraph{Data.} Gaussian, spherical, and whitened feature distributions.
+Report both continuous-density cases and discrete/atom-supported boundary cases.
+
+\paragraph{Methods.} Random linear router, regular-simplex prototype router,
+SPR-Mass, GA-SPR-Local, GA-SPR-Expert, and balanced assignment control.
+
+\paragraph{Metrics.} Calibration LoadCV, holdout LoadCV, maximum usage error,
+calibration-to-holdout gap, tie rate, atom mass, and margin p05.
+
+\subsection{Assumption ladder for feature meaning}
+
+\paragraph{Goal.} Determine which additional assumptions are needed beyond
+spectral isotropy for meaningful feature partition.
+
+\paragraph{Data regimes.}
+\begin{enumerate}
+\item Isotropic but unstructured distributions.
+\item Isotropic and clusterable mixtures $X=\mu_F+\epsilon$.
+\item Expert-aligned mixtures where expert spectral prototypes correlate with
+latent feature directions.
+\item Low-margin mixtures where equal-mass dispatch is possible but unstable.
+\end{enumerate}
+
+\paragraph{Metrics.} LoadCV, route-feature NMI, purity, within-cell variance,
+cell-center separation, and margin p05.
+
+\subsection{Expert-weight-guided routing}
+
+\paragraph{Goal.} Test whether expert weights provide useful geometry after
+fixing sign ambiguity.
+
+\paragraph{Required fixes before running.} Use sign-invariant projective
+prototypes or a deterministic orientation rule. Report prototype spread using
+nearest-neighbor cosine, maximum cosine, and effective prototype rank.
+
+\paragraph{Methods.} Expert-SVD top-1, MPI top-1, SPR-Mass, GA-SPR-Local,
+GA-SPR-Expert, and GA-SPR-Expert with local refinement.
+
+\paragraph{Metrics.} LoadCV, prototype spread, cell-prototype alignment,
+route-feature NMI, purity, and margin.
+
+\subsection{Margin-preserved training}
+
+\paragraph{Goal.} Test whether a calibrated partition is preserved during a
+controlled hard-routing training task.
+
+\paragraph{Task.} Synthetic latent feature classes, with class-dependent target
+maps $Y=A_FX+\epsilon$.  Feature labels are hidden from router construction and
+training, but used for evaluation.
+
+\paragraph{Routers.} Random linear top-1, true trainable linear top-1 with
+auxiliary load-balancing loss, balanced assignment control, Frozen GA-SPR,
+GA-SPR-init-linear, expert-guided GA-SPR, and margin-aware update GA-SPR.
+
+\paragraph{Metrics.} Validation loss, LoadCV, route-feature NMI, feature purity,
+route flip rate, margin p05, representation drift, and expert specialization.
+
+\subsection{Ablations}
+
+Ablate calibration size, expert count, dimension, feature atom mass, split policy,
+expert-weight quality, margin-update budget, hysteresis width, and drift strength.
+
+\section{Discussion}
+
+The central lesson is that uniform feature dispatch has layers.  Equal mass is a
+solvable construction problem: recursive quantiles do it under standard
+regularity conditions.  Meaningful partition is a structure problem: isotropy
+alone cannot tell the router which features belong together.  Preservation is a
+dynamics problem: even a good initial partition can be lost if drift exceeds the
+routing margin.
+
+The next useful assumption is therefore not full spherical uniformity, which is
+strong, nor covariance isotropy alone, which is too weak.  A productive middle
+regime is globally isotropic but locally structured features, possibly with
+expert weights that carry an aligned geometric prior.  This regime is close to
+what controlled slot-feature experiments try to capture: identify the
+route-relevant feature population, build equal-mass cells, attach cells to
+experts, and then check whether training preserves the assignment.
+
+\section{Scope and Limitations}
+
+GA-SPR is not a claim that equal-mass routing discovers semantic experts in
+general.  Without clusterability, expert alignment, or another structure prior,
+there may be no meaningful feature partition to recover.  The theory also assumes
+population or well-estimated quantiles; finite calibration, atoms, and
+distribution shift must be audited.  Finally, margin-aware updates are proposed
+as a training mechanism, not proven to solve arbitrary representation drift.
+
+\section{Conclusion}
+
+We refine the uniform-routing problem into a precise next-stage target:
+construct routers that achieve equal mass, feature coherence, and training
+preservation in a spectrally normalized feature space.  Quantiles solve the mass
+part; split directions solve the geometry part only under additional structure;
+and margins determine preservation.  GA-SPR organizes these roles into a single
+router family and gives the theory and experiment plan needed to test the next
+iteration.
+
+\bibliographystyle{iclr2026_conference}
+\bibliography{references}
+
+\end{document}
