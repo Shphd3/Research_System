@@ -34,6 +34,7 @@ shared direction.
 \caption{Uniform-sphere routing with $d=64$ and $E=8$.}
 \label{tab:uniform_sphere}
 \small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Prototype geometry & LoadCV $\downarrow$ & Max/min $\downarrow$
@@ -44,6 +45,7 @@ Random top-1 & 0.0657 & 1.227 & 0.01451 \\
 Clustered top-1 & 0.1349 & 1.574 & 0.03580 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \begin{figure}[t]
@@ -70,6 +72,7 @@ increases.
 \caption{Random-prototype floor for $d=64$.}
 \label{tab:geometry_floor}
 \small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{ccccc}
 \toprule
 $E$ & $N$ & Geometry & Sampling & Total \\
@@ -82,6 +85,7 @@ $E$ & $N$ & Geometry & Sampling & Total \\
 16 & $5{\cdot}10^4$ & 0.185 & 0.044 & 0.194 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \begin{figure}[t]
@@ -98,10 +102,18 @@ $p_e-1/E$.
 
 \subsection{Spectral prototypes are centers, not balance}
 
-We construct expert matrices with prescribed input-side top singular directions,
-$W_e=\sigma_1 v_ea_e^\top+\sigma_0\Xi_e$. The prescribed directions are
-symmetric, random, or clustered. We compare exact singular value decomposition
-(SVD), one-step MPI, five-step MPI, and random rows.
+We construct expert matrices with prescribed input-side signal directions, not
+exact finite-noise singular vectors. For input dimension $d$ and output width
+$m$, choose unit vectors $v_e\in\mathbb{R}^d$ and $a_e\in\mathbb{R}^m$, and set
+\[
+W_e=\sigma_1 v_ea_e^\top+\sigma_0 Z_e,\qquad
+Z_e\in\mathbb{R}^{d\times m},\quad (Z_e)_{ij}\sim\mathcal{N}(0,1).
+\]
+When $\sigma_0=0$, $v_e$ is the top left singular vector; with finite Gaussian
+noise it is a perturbative target, so we report measured alignment instead of
+assuming exact recovery. The prescribed directions $v_e$ are symmetric, random,
+or clustered. We compare exact singular value decomposition (SVD), one-step
+MPI, five-step MPI, and random rows.
 
 \begin{table}[t]
 \centering
@@ -110,6 +122,7 @@ depends on prototype spread.}
 \label{tab:spectral_prototypes}
 \small
 \setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{llccc}
 \toprule
 Geometry & Router & Align. $\uparrow$ & LoadCV $\downarrow$ & Max/min $\downarrow$ \\
@@ -121,6 +134,7 @@ Clust. & MPI-1 & 0.977 & 0.195 & 1.788 \\
 Random rows & None & 0.098 & 0.074 & 1.281 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \begin{figure}[t]
@@ -146,6 +160,7 @@ regular-simplex prototypes at angles $20^\circ$, $140^\circ$, and $260^\circ$.
 \caption{Covariance isotropy does not imply uniform routing.}
 \label{tab:covariance_counterexample}
 \small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lcccc}
 \toprule
 Distribution & Cond. & Eff. rank & Load vector & LoadCV \\
@@ -153,6 +168,7 @@ Distribution & Cond. & Eff. rank & Load vector & LoadCV \\
 Four axis points & 1.000 & 2.000 & $(.25,.50,.25)$ & 0.3536 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \begin{figure}[t]
@@ -180,6 +196,7 @@ whitening.
 \label{tab:spectrum_uniformization}
 \small
 \setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Representation & Cond. $\downarrow$ & Eff. rank $\uparrow$ & LoadCV $\downarrow$ \\
@@ -190,6 +207,7 @@ Partial shrinkage & 14.86 & 47.02 & 0.781 \\
 Whitened + norm. & 1.00 & 64.00 & 0.005 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \begin{figure}[t]
@@ -217,6 +235,7 @@ balanced assignment over expanded expert slots enforce zero LoadCV.
 \label{tab:balanced_assignment}
 \small
 \setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Geometry & Top-1 LoadCV & Greedy drop & Exact drop \\
@@ -226,6 +245,7 @@ Random & 0.122 & 0.00416 & 0.00056 \\
 Clustered & 0.128 & 0.00379 & 0.00047 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \begin{figure}[t]

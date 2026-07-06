@@ -1,0 +1,166 @@
+\documentclass[17pt]{extarticle}
+\usepackage[paperwidth=48in,paperheight=36in,margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+\definecolor{accent}{HTML}{881E55}
+\definecolor{ink}{HTML}{17141A}
+\definecolor{muted}{HTML}{5B5960}
+\definecolor{panel}{HTML}{F7F3F7}
+\definecolor{line}{HTML}{DED8E2}
+\definecolor{blue}{HTML}{1F77B4}
+
+\newcommand{\panel}[2]{%
+  \noindent\colorbox{panel}{%
+    \begin{minipage}{0.96\linewidth}
+    \vspace{0.18in}
+    {\color{accent}\bfseries\Large #1}\par\vspace{0.12in}
+    #2
+    \vspace{0.12in}
+    \end{minipage}}
+  \vspace{0.22in}
+}
+
+\begin{document}
+\color{ink}
+
+{\Huge\bfseries Uniform Feature Routing in Controlled Top-1 Mixture-of-Experts}\par
+\vspace{0.12in}
+{\Large Deng Xingyu \quad Student ID: 250010109 \quad Academic Writing Project 2}\par
+\vspace{0.16in}
+{\color{muted}\large Main claim: uniform expert usage is a two-sided geometric sufficient-condition result, not evidence of semantic expert specialization by itself.}
+\vspace{0.28in}
+
+\begin{multicols}{3}
+\raggedcolumns
+
+\panel{Problem}{
+\large
+Sparse MoE routers decide which experts see each token. A balanced load vector
+is useful, but it is ambiguous. It can come from spherical token geometry,
+well-spread expert cells, finite sampling, assignment constraints, or training
+dynamics. This poster isolates the static unconstrained top-1 question.
+
+\vspace{0.14in}
+\textbf{Question.} Under which representation-geometric assumptions does
+uniform expert usage arise naturally from top-1 routing?
+}
+
+\panel{Four Uniformities Must Be Separated}{
+\large
+\begin{tabular}{@{}p{0.36\linewidth}p{0.55\linewidth}@{}}
+\toprule
+Term & Concrete meaning \\
+\midrule
+Feature frequency & labels occur equally often \\
+Directional uniformity & centered directions cover the sphere \\
+Spectral uniformity & covariance has no dominant direction \\
+Usage uniformity & expert counts are close to $1/E$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.12in}
+The count metric is the outcome. It cannot prove the representation geometry
+unless rival explanations have been separated.
+}
+
+\panel{Theoretical Baseline}{
+\large
+For normalized token directions $z\in\mathbb{S}^{d-1}$ and expert prototypes
+$u_e$, expert $e$ owns
+\[
+V_e=\{z:\langle z,u_e\rangle\ge \langle z,u_j\rangle,\ \forall j\}.
+\]
+If $z$ is uniform on the sphere and the cells $V_1,\ldots,V_E$ have equal
+spherical measure, then
+\[
+\mathbb{P}(a(z)=e)=1/E,\qquad \mathbb{E}[\widehat p_e]=1/E.
+\]
+This is sufficient, not necessary, and not a utility claim.
+}
+
+\panel{Audit Pipeline}{
+\large
+\textbf{1. Define the routed population.}\\
+\textbf{2. Check directional mass, not only covariance.}\\
+\textbf{3. Estimate prototype-cell geometry.}\\
+\textbf{4. Split finite-sample noise from geometry floor.}\\
+\textbf{5. Separate natural top-1 routing from forced assignment.}
+
+\vspace{0.1in}
+Only after these checks should uniform load be used as evidence for meaningful
+routing structure.
+}
+
+\columnbreak
+
+\panel{Evidence 1: Prototype Geometry Controls Load}{
+\centering
+\includegraphics[width=0.96\linewidth]{figures/prototype_geometry_load.pdf}
+\par\vspace{0.08in}
+\large Uniform spherical features do not alone determine usage. Symmetric
+prototypes balance; clustered prototypes create load variation.
+}
+
+\panel{Evidence 2: More Tokens Do Not Remove Cell Geometry}{
+\centering
+\includegraphics[width=0.96\linewidth]{figures/geometry_floor_sampling.pdf}
+\par\vspace{0.08in}
+\large Increasing routed examples reduces sampling noise, but a fixed
+random-prototype cell floor remains.
+}
+
+\panel{Evidence 3: Spectral Centers Are Not Balance Guarantees}{
+\centering
+\includegraphics[width=0.96\linewidth]{figures/spectral_alignment_not_balance.pdf}
+\par\vspace{0.08in}
+\large Expert singular directions can be meaningful centers. If centers
+cluster, high alignment still gives imbalanced top-1 cells.
+}
+
+\columnbreak
+
+\panel{Counterexample: Covariance Isotropy Is Not Directional Uniformity}{
+\centering
+\includegraphics[width=0.90\linewidth]{figures/covariance_counterexample.pdf}
+\par\vspace{0.08in}
+\large A flat covariance spectrum can coexist with nonuniform directional
+support and nonuniform routing.
+}
+
+\panel{Controlled Repair and Non-Geometric Control}{
+\centering
+\includegraphics[width=0.47\linewidth]{figures/spectrum_uniformization.pdf}
+\hfill
+\includegraphics[width=0.47\linewidth]{figures/balanced_assignment_cost.pdf}
+\par\vspace{0.08in}
+\large Whitening repairs only the controlled elliptical family. Balanced
+assignment can force counts, but it changes the assignment mechanism.
+}
+
+\panel{Takeaways and Boundary}{
+\large
+\textbf{Supported.} In a controlled static top-1 router, uniform usage has a
+clean geometric sufficient condition: spherical token directions plus
+equal-measure expert cells.
+
+\vspace{0.1in}
+\textbf{Not supported.} The paper does not prove semantic expert identity,
+downstream utility, or training-time preservation.
+
+\vspace{0.1in}
+\textbf{Next audit.} For real models, check routed population, directional
+mass, prototype-cell geometry, finite-sample noise, capacity controls, and
+then margin/utility under training.
+}
+
+\end{multicols}
+
+\end{document}

@@ -1,0 +1,47 @@
+\section{Introduction}
+
+Sparse mixture-of-experts (MoE) layers increase parameter capacity by routing
+each token to a small subset of experts \citep{shazeer2017outrageously,
+fedus2022switch}. In a linear top-1 router, a token hidden state is assigned to
+the expert whose router row has the largest inner product with it. Therefore,
+when we ask whether uniformly occurring features can be routed to uniformly used
+experts, the immediate mathematical object is not the language task, but the
+geometry seen by this inner product.
+
+The controlled setting is deliberately simpler than real language modeling.
+Consider many independent feature families with equal frequency and no semantic
+relation across families. Even in this simplified regime, several notions of
+``uniform'' must be separated. Feature labels can be frequency-balanced while
+the hidden states are not uniformly distributed in high-dimensional space. The
+hidden covariance can have no dominant eigendirection while the direction
+distribution is still not spherical. Expert usage counts can be forced to be
+exactly equal by a capacity rule, but this does not explain why top-1 routing
+would balance naturally. Conversely, router rows can align with expert singular
+directions while still producing imbalanced usage when those directions cluster.
+
+We restrict the paper to the static controlled case. We do not claim that a
+short-context next-token-prediction model naturally learns uniform hidden
+states; such states may be strongly anisotropic because of local prediction
+signals and residual common components. Instead, we ask: under what
+representation-geometric assumptions is uniform expert usage a consequence of
+unconstrained top-1 routing itself?
+
+\paragraph{Main message.}
+Uniform top-1 expert usage is a two-sided sufficient-condition result. On the
+token side, the route-relevant feature directions must be close to a spherical
+uniform distribution. On the expert side, the router rows or expert-derived
+prototypes must cut that sphere into equal-measure cells. If either side fails,
+usage can be imbalanced even when the other side is well behaved.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+\item We define the controlled uniform feature routing problem and separate
+feature-frequency uniformity, hidden spectral uniformity, directional
+uniformity, and expert-usage uniformity.
+\item We prove a sufficient condition for natural top-1 usage balance, decompose
+finite-token imbalance, and show why covariance isotropy alone is not a routing
+certificate.
+\item We validate the theory with synthetic experiments, treating expert
+spectral prototypes as center construction and balanced assignment as a
+non-geometric control.
+\end{enumerate}

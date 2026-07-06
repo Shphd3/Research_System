@@ -1,0 +1,116 @@
+\section{Problem Setup}
+
+\subsection{Top-1 routing and expert usage}
+
+Let $h_i\in\R^d$ be the route-relevant representation of example $i$. The
+top-1 router has one prototype $u_e\in\R^d$ for expert
+$e\in\{1,\ldots,E\}$. It computes
+\begin{equation}
+ s_e(h_i)=\langle h_i,u_e\rangle,
+ \qquad
+ a(h_i)=\argmax_e s_e(h_i).
+\end{equation}
+The empirical expert usage is
+\begin{equation}
+ \widehat p_e=\frac{1}{N}\sum_{i=1}^N \mathbf{1}\{a(h_i)=e\}.
+\end{equation}
+The count-level target is $\widehat p_e\approx 1/E$ for all experts. This paper
+asks when that target arises from the top-1 geometry itself, not from an
+external capacity constraint.
+
+\subsection{Four notions of uniformity}
+
+\begin{definition}[Feature-frequency uniformity]
+Feature labels $f\in\{1,\ldots,F\}$ are frequency-uniform if
+$\Prob(f)=1/F$ for every $f$.
+\end{definition}
+
+\begin{definition}[Directional uniformity]
+After centering and normalizing route-relevant states,
+\begin{equation}
+ z_i=\frac{h_i-\mu}{\|h_i-\mu\|_2},
+\end{equation}
+the token-side representation is directionally uniform if $z_i$ is
+approximately uniform on $\Sphere^{d-1}$.
+\end{definition}
+
+\begin{definition}[Hidden spectral uniformity]
+Let $\bar h_i=h_i-\mu$ and
+\begin{equation}
+ C=\frac{1}{N}\sum_i \bar h_i\bar h_i^\top.
+\end{equation}
+The representation is spectrally uniform when $C$ has no dominant
+eigendirection, ideally $C=\sigma^2 I$. We use covariance condition number and
+effective rank as diagnostics.
+\end{definition}
+
+\begin{definition}[Expert-usage uniformity]
+The router is usage-uniform when $\widehat p_e\approx 1/E$ for all experts.
+\end{definition}
+
+The order matters. Frequency uniformity is a data property. Directional
+uniformity is the token-side condition directly seen by the inner-product
+router. Hidden spectral uniformity is a second-order diagnostic that can help
+detect or repair anisotropy, but it is not the same as directional uniformity.
+Usage uniformity is the router outcome.
+
+\section{Theory}
+
+\subsection{A sufficient condition for natural top-1 balance}
+
+Normalize token features and expert prototypes to the sphere:
+$z\in\Sphere^{d-1}$ and $u_e\in\Sphere^{d-1}$. Prototype $u_e$ owns the
+spherical top-1 cell
+\begin{equation}
+ V_e=\{z\in\Sphere^{d-1}:\langle z,u_e\rangle\ge
+ \langle z,u_j\rangle,\;\forall j\}.
+\end{equation}
+Tie boundaries are measure-zero under the continuous spherical uniform
+distribution, so the tie-breaking rule does not affect the result below.
+
+\begin{proposition}[Equal-measure cells are sufficient]
+\label{prop:equal_measure_cells}
+Assume $z\sim\mathrm{Unif}(\Sphere^{d-1})$ and the cells $V_1,\ldots,V_E$ form
+an equal-measure partition of the sphere up to measure-zero boundaries. Then
+\begin{equation}
+ \Prob(a(z)=e)=\frac{1}{E},\qquad \forall e,
+\end{equation}
+and for independent examples, $\E[\widehat p_e]=1/E$.
+\end{proposition}
+
+\begin{proof}
+The event $a(z)=e$ is exactly $z\in V_e$. The uniform distribution on the sphere
+assigns probability according to spherical measure. Since the $E$ cells cover
+the sphere up to measure-zero boundaries and have equal measure, each cell has
+probability mass $1/E$.
+\end{proof}
+
+\begin{corollary}[Regular-simplex construction]
+If $E\le d+1$ and $u_1,\ldots,u_E$ are the vertices of a regular simplex
+centered at the origin, then the induced top-1 cells have equal spherical
+measure. Therefore uniform spherical features have uniform expected top-1
+expert usage.
+\end{corollary}
+
+\begin{proof}
+A regular simplex is invariant under all permutations of its vertices. These
+permutations are realized by orthogonal transformations of the span of the
+simplex and can be extended by the identity on the orthogonal complement in
+$\R^d$. Thus every cell can be mapped to every other cell by a measure-preserving
+orthogonal map. The cells are congruent and have equal spherical measure.
+\end{proof}
+
+\subsection{Finite tokens do not fix prototype-cell imbalance}
+
+For any fixed prototype geometry, define the population cell mass
+$p_e=\Prob(z\in V_e)$. Then
+\begin{equation}
+ \widehat p_e-\frac{1}{E}
+ =
+ \left(p_e-\frac{1}{E}\right)
+ +
+ \left(\widehat p_e-p_e\right).
+\end{equation}
+The first term is the prototype-cell geometry error. The second term is
+finite-token sampling noise. Increasing $N$ reduces the second term but does not
+change the first.
