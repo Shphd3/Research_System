@@ -21,57 +21,55 @@
 
 \begin{abstract}
 We study a controlled static routing problem for mixture-of-experts (MoE)
-models.
-The hidden representation has two uniformities: latent feature families occur
-with equal frequency, and the aggregate representation spectrum is
-approximately isotropic.  We ask whether these two conditions are sufficient to
-define and construct a balanced feature-family dispatch.  The answer is
-conditional.
-Spectral isotropy alone is not sufficient: if feature labels are independent of
-an isotropic representation, any deterministic feature-only router has zero
-mutual information with the labels.  The solvable regime also needs locally
-recoverable feature families.  Under this regime we propose Balanced
+models.  The hidden representation is assumed to satisfy two clean-case
+uniformities: latent feature families occur with equal frequency, and the
+aggregate representation spectrum is approximately isotropic.  We ask whether
+these conditions support a balanced feature-family dispatch.  The answer is
+conditional.  Spectral isotropy alone is insufficient: if feature labels are
+independent of an isotropic representation, any deterministic feature-only router
+has zero mutual information with the labels.  The solvable regime also requires
+locally recoverable feature families.  Under this regime, we propose Balanced
 Feature-Specializing Routing (BFSR): estimate a spectral normalization from
-calibration features, recover feature families by unsupervised clustering,
-assign recovered families to experts under a balanced constraint, and route new
-examples by recovered family identity.  For BFSR, the mass mechanism is uniform
-feature-family frequency, not projection quantiles.  In controlled full runs,
-BFSR-Cluster reaches LoadCV
-0.003, family consistency 0.990, and cluster accuracy 0.986 in the clean
-positive case; valid routers have expert information fraction only 0.002 in
-the isotropy-only null; whitening restores cluster accuracy from 0.250 to
-0.958 under anisotropic distortion but does not create information in null
-data; and non-uniform feature frequencies break equal-number mass balance.
-Training-time preservation, learned-router dynamics, expert utility, and
-automatic selection of the number of feature families are outside this stage.
+calibration features, recover feature families by unsupervised clustering, assign
+recovered families to experts under a balanced constraint, and route new examples
+by recovered family identity.  For BFSR, mass balance comes from uniform
+feature-family frequency and balanced family assignment, not from projection
+quantiles.  In controlled full runs, BFSR-Cluster reaches LoadCV 0.003, family
+consistency 0.990, and cluster accuracy 0.986 in the clean positive case; valid
+label-free routers have expert information fraction only 0.002 in the
+isotropy-only null; whitening restores cluster accuracy from 0.250 to 0.958 under
+anisotropic distortion but does not create information in null data; and
+non-uniform feature frequencies break equal-number mass balance.  Training-time
+preservation, learned-router dynamics, downstream task utility, and automatic
+selection of the number of feature families are outside this stage.
 \end{abstract}
 
 \section{Introduction}
 
 A load-balancing objective for a mixture-of-experts router asks each expert to
 receive a similar number of tokens \citep{shazeer2017outrageously,
-fedus2022switch}.  That objective is useful, but it is not the same as
-feature-level specialization.  A batch-level capacity rule can make counts
-equal while ignoring stable feature identity.  Conversely, a router may track
+fedus2022switch}.  That objective is useful, but it is not equivalent to
+feature-level specialization.  A batch-level capacity rule can equalize counts
+while ignoring stable feature identity.  Conversely, a router may track
 meaningful feature families but use experts unevenly if the feature distribution
-itself is uneven.  We therefore separate the static dispatch question from
-later questions about training, preservation, and utility.
+itself is uneven.  We therefore isolate the static dispatch question before
+studying training dynamics, route preservation, or task-level utility.
 
 This paper studies the following clean case:
 \begin{quote}
 If route-relevant hidden features are globally spectrally isotropic and latent
-feature families occur with uniform frequency, when can a static non-cheating
-router assign feature families to experts in a balanced and specialized way?
+feature families occur with uniform frequency, when can a label-free,
+batch-independent static router assign feature families to experts in a balanced
+and specialization-preserving way?
 \end{quote}
 
 The main clarification is that the two uniformities play different roles.
 Uniform feature-family frequency explains equal expert mass once whole families
-are assigned evenly to experts.  Spectral isotropy is a metric condition: it
-says that the aggregate representation has no dominant variance direction that
-would distort distance or inner-product geometry.  It does not create feature
-identity.  If the latent feature family \(F\) is independent of the hidden
-feature \(X\), no feature-only router can recover \(F\), even when
-\(X\sim\Normal(0,I_d)\).
+are assigned evenly to experts.  Spectral isotropy is a metric condition: it says
+that the aggregate representation has no dominant variance direction that would
+distort distance or inner-product geometry.  It does not create feature identity.
+If the latent feature family \(F\) is independent of the hidden feature \(X\), no
+feature-only router can recover \(F\), even when \(X\sim\Normal(0,I_d)\).
 
 The solvable middle regime is therefore:
 \begin{center}
@@ -81,30 +79,30 @@ The solvable middle regime is therefore:
 + \textbf{locally recoverable feature families}.
 }}
 \end{center}
-In this regime we construct a static router that directly uses the assumptions.
-Balanced Feature-Specializing Routing (BFSR) first spectrally normalizes the
-calibration features, then recovers feature-family prototypes by unsupervised
-clustering, then assigns those recovered families to experts under a balanced
-constraint.  The router for a new example predicts its recovered family and
-sends it to the assigned expert.
+In this regime, Balanced Feature-Specializing Routing (BFSR) directly uses the
+assumptions: it spectrally normalizes calibration features, recovers
+feature-family prototypes by unsupervised clustering, and assigns those recovered
+families to experts under a balanced constraint.  A future example is routed by
+its recovered feature-family identity.
 
 \paragraph{Contributions.}
 \begin{enumerate}[leftmargin=*]
-    \item We define the static dispatch objective as balanced expert mass plus
-    feature-family consistency.  We explicitly exclude training preservation
-    and expert utility from the main claim.
-    \item We prove an impossibility anchor: spectral isotropy alone cannot
-    imply feature specialization.
-    \item We propose BFSR, a non-cheating static router for globally isotropic,
-    frequency-uniform, locally recoverable feature-family distributions.
+    \item We define a static dispatch objective consisting of balanced expert
+    mass and feature-family consistency.  Downstream task utility and route
+    preservation are deliberately excluded from the main claim.
+    \item We prove an impossibility anchor: spectral isotropy alone cannot imply
+    feature-family specialization.
+    \item We propose BFSR, a label-free calibration-time router for globally
+    isotropic, frequency-uniform, locally recoverable feature-family
+    distributions.
     \item We run a controlled experiment chain that separates mass balance,
     feature recoverability, spectral normalization, and feature-frequency
     uniformity.
 \end{enumerate}
 
 \paragraph{Scope.}
-The paper is a static controlled-case study.  It does not study representation drift,
-route preservation, slow router updates, learned-router dynamics, semantic
+The paper is a static controlled-case study.  It does not study representation
+drift, route preservation, slow router updates, learned-router dynamics, semantic
 expert identity, or real language-model utility.  These are downstream stages.
 
 \section{Controlled Static Setting}
@@ -123,8 +121,8 @@ The controlled feature model is
     X\mid F=k=\mu_k+\epsilon,
     \label{eq:mixture}
 \end{equation}
-where the aggregate representation is approximately isotropic after centering
-or whitening:
+where the aggregate representation is approximately isotropic after centering or
+whitening:
 \begin{equation}
     \Cov(\widetilde X)\approx I_d.
     \label{eq:isotropy}
@@ -137,8 +135,8 @@ family remains locally concentrated.
 \subsection{Recoverability}
 
 Spectral isotropy is not enough.  We require a feature-family estimator
-\(\widehat h:\R^d\to\{1,\ldots,K\}\), fitted without labels, such that up to a
-permutation of family names,
+\(\widehat h:\R^d\to\{1,\ldots,K\}\), fitted from calibration features without
+using labels, such that up to a permutation of family names,
 \begin{equation}
     \Prob(\widehat h(X)\neq F)\leq\eta.
     \label{eq:recovery}
@@ -146,14 +144,15 @@ permutation of family names,
 This is an identification condition.  Without recoverability, feature-family
 dispatch is unidentifiable from \(X\).
 
-\subsection{Non-cheating rule}
+\subsection{Calibration protocol}
 
-Router construction may use unlabeled calibration features, feature mean and
-covariance, unsupervised clustering of \(X\), estimated cluster masses, and
-optional model-internal expert geometry.  It may not use latent feature labels
-\(F\), task labels, next-token answers, evaluation labels, or current-batch
-expert counts.  Synthetic labels are used only for data generation and
-evaluation.  We report an OracleFeature router only as an invalid upper bound.
+The router may use calibration features, feature mean and covariance,
+unsupervised clustering of \(X\), estimated cluster masses, and optional
+model-internal expert geometry.  It may not use latent feature labels \(F\), task
+labels, next-token answers, evaluation labels, or current-batch expert counts.
+Synthetic labels are used only for data generation and evaluation.  We report an
+OracleFeature router only as an oracle upper bound that is not admissible under
+this protocol.
 
 \section{Static Good Dispatch}
 
@@ -179,20 +178,20 @@ consistency:
     \frac1K\sum_{k=1}^K \max_e \Prob(G=e\mid F=k).
     \label{eq:family_consistency}
 \end{equation}
-The ideal value is \(1\).  We also report the feature split rate, the fraction
-of families whose samples are split across more than one expert with at least
-5\% mass, and the expert information fraction
+The ideal value is \(1\).  We also report the feature split rate, the fraction of
+families whose samples are split across more than one expert with at least 5\%
+mass, and the expert information fraction
 \begin{equation}
     \frac{\MI(G;F)}{\Entropy(G)}.
     \label{eq:info_fraction}
 \end{equation}
 This last metric is \(1\) when the expert identity is fully determined by the
-feature family and \(0\) when the expert carries no information about the
-feature family.  Family consistency has a random floor near \(1/E\), with a
-small upward finite-sample bias because it takes a maximum over experts.  For
-null experiments, the expert information fraction is therefore the decisive
-metric.  We still report normalized mutual information where useful, but it is
-not the primary metric because \(G\) is a coarser label than \(F\) when \(K>E\).
+feature family and \(0\) when the expert carries no information about the feature
+family.  Family consistency has a random floor near \(1/E\), with a small
+finite-sample upward bias because it takes a maximum over experts.  For null
+experiments, the expert information fraction is therefore the decisive metric.
+We still report normalized mutual information where useful, but it is not the
+primary metric because \(G\) is a coarser label than \(F\) when \(K>E\).
 
 \paragraph{Downstream utility.}
 Feature-dependent expert utility is a natural next audit, but it is not part of
@@ -243,8 +242,7 @@ Use
     \label{eq:whiten}
 \end{equation}
 This step repairs the metric when anisotropic scale distortions are present.  It
-is not a mass-balance theorem and it cannot create feature identity in null
-data.
+is not a mass-balance theorem and it cannot create feature identity in null data.
 
 \subsection{Step 2: recover feature families}
 
@@ -275,9 +273,9 @@ For a new feature \(x\), normalize it, predict its recovered family
 
 \subsection{Baselines}
 
-We use one baseline for one question.  OracleFeature uses true \(F\) and is an
-invalid upper bound.  Quantile Spectral Partition Routing (Quantile-SPR) uses
-projection quantiles to balance mass; it tests whether mass balance alone
+We use one baseline for one question.  OracleFeature uses true \(F\) and is a
+non-admissible upper bound.  Quantile Spectral Partition Routing (Quantile-SPR)
+uses projection quantiles to balance mass; it tests whether mass balance alone
 preserves feature identity.  Random linear top-1 routing is an ordinary static
 router lower bound.  Batch-level balanced assignment is omitted from the main
 tables because it answers a different question: it forces current-batch counts
@@ -306,9 +304,11 @@ for every expert \(e\).
 \hfill\(\square\)
 
 \paragraph{Theorem 3: robust mass under recovery error.}
-Let \(a(F)\) be a balanced ideal family assignment.  Suppose the recovered
-family estimator satisfies \(\Prob(\widehat h(X)\neq F)\leq\eta\).  Define
-\(g(X)=a(\widehat h(X))\).  Then for every expert \(e\),
+Fix the permutation that aligns recovered family indices with true family
+indices.  Let \(a(F)\) be a balanced ideal family assignment.  Suppose the
+recovered family estimator satisfies \(\Prob(\widehat h(X)\neq F)\leq\eta\)
+after this alignment.  Define \(g(X)=a(\widehat h(X))\).  Then for every expert
+\(e\),
 \begin{equation}
     \abs{\Prob(g(X)=e)-1/E}\leq\eta.
 \end{equation}
@@ -342,10 +342,10 @@ contradictions of the theorem.
 
 \section{Experiments}
 
-We run five controlled experiments.  All valid methods fit only on calibration
-features.  Labels \(F\) are used for the invalid oracle and for evaluation.
-The full run uses five seeds, \(d=16\), \(K=32\), \(E=4\), 8000 calibration
-examples, and 16000 holdout examples.
+We run five controlled experiments.  All admissible methods fit only on
+calibration features.  Labels \(F\) are used for the oracle upper bound and for
+evaluation.  The full run uses five seeds, \(d=16\), \(K=32\), \(E=4\), 8000
+calibration examples, and 16000 holdout examples.
 
 \subsection{Datasets and diagnostics}
 
@@ -354,11 +354,11 @@ D1 is an isotropic null:
     X\sim\Normal(0,I_d),\qquad
     F\sim\Unif(\{1,\ldots,K\}),\qquad F\perp X.
 \]
-D2 is the clean structured mixture in Eq.~\ref{eq:mixture} with uniform
-families and paired centers.  D3 applies an anisotropic linear distortion to
-D2.  D4 makes feature frequencies non-uniform.  Table~\ref{tab:distribution_diagnostics}
-shows that the clean data are close to isotropic and exactly frequency-uniform.
-The frequency ablation changes family masses and therefore also changes the raw
+D2 is the clean structured mixture in Eq.~\ref{eq:mixture} with uniform families
+and paired centers.  D3 applies an anisotropic linear distortion to D2.  D4 makes
+feature frequencies non-uniform.  Table~\ref{tab:distribution_diagnostics} shows
+that the clean data are close to isotropic and exactly frequency-uniform.  The
+frequency ablation changes family masses and therefore also changes the raw
 covariance; whitening is used there to keep the routing metric controlled while
 we test the mass-balance premise.
 
@@ -369,30 +369,30 @@ we test the mass-balance premise.
 E1 tests whether BFSR solves the positive clean case.  E2 tests the
 impossibility anchor by removing the relation between \(X\) and \(F\).
 Table~\ref{tab:e1_e2_static_dispatch} gives the result.  In E1, BFSR-Cluster
-nearly matches the invalid OracleFeature upper bound: LoadCV is 0.003, family
-consistency is 0.990, and cluster accuracy is 0.986.  Quantile-SPR has low
-LoadCV but splits almost every family, showing that mass balance is not feature
-specialization.  In E2, all valid methods have expert information fraction
-about 0.002.  This is the empirical counterpart of Proposition 1.
+nearly matches the oracle upper bound: LoadCV is 0.003, family consistency is
+0.990, and cluster accuracy is 0.986.  Quantile-SPR has low LoadCV but splits
+almost every family, showing that mass balance is not feature-family dispatch.
+In E2, all admissible label-free methods have expert information fraction about
+0.002.  This is the empirical counterpart of Proposition 1.
 
 \input{tables/e1_e2_static_dispatch}
 
 \subsection{E3: feature recoverability}
 
 E3 sweeps feature-family separation while keeping the global spectrum
-approximately isotropic.  If the theory is right, BFSR should improve when
-local recoverability improves, not merely because the covariance is flat.
+approximately isotropic.  If the theory is right, BFSR should improve when local
+recoverability improves, not merely because the covariance is flat.
 Table~\ref{tab:e3_recoverability} and Figure~\ref{fig:e3_recoverability} show
-this pattern: cluster accuracy rises from 0.063 to 0.942, and family
-consistency rises from 0.294 to 0.956.
+this pattern: cluster accuracy rises from 0.063 to 0.942, and family consistency
+rises from 0.294 to 0.956.
 
 \input{tables/e3_recoverability}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.72\linewidth]{figures/e3_recoverability_sweep.png}
-\caption{Feature specialization tracks local recoverability.  The spectrum is
-kept controlled, while separation changes the recoverability of feature
+\caption{Feature-family consistency tracks local recoverability.  The spectrum
+is kept controlled, while separation changes the recoverability of feature
 families.}
 \label{fig:e3_recoverability}
 \end{figure}
@@ -401,11 +401,11 @@ families.}
 
 E4 applies a strong anisotropic distortion.  The question is whether whitening
 repairs the metric when recoverable structure exists, and whether it avoids
-creating fake specialization when no structure exists.  Table~\ref{tab:e4_spectral_normalization}
-and Figure~\ref{fig:e4_normalization} show both sides.  On structured distorted
-data, whitening raises cluster accuracy from 0.250 to 0.958 and family
-consistency from 0.452 to 0.968.  On distorted null data, whitening leaves the
-expert information fraction at 0.002.
+creating artificial feature information when no structure exists.
+Table~\ref{tab:e4_spectral_normalization} and Figure~\ref{fig:e4_normalization}
+show both sides.  On structured distorted data, whitening raises cluster
+accuracy from 0.250 to 0.958 and family consistency from 0.452 to 0.968.  On
+distorted null data, whitening leaves the expert information fraction at 0.002.
 
 \input{tables/e4_spectral_normalization}
 
@@ -413,8 +413,8 @@ expert information fraction at 0.002.
 \centering
 \includegraphics[width=0.72\linewidth]{figures/e4_spectral_normalization.png}
 \caption{Spectral normalization repairs anisotropic distortion only when local
-feature structure is present.  It does not manufacture feature information in
-the null distribution.}
+feature structure is present.  It does not create feature information in the
+null distribution.}
 \label{fig:e4_normalization}
 \end{figure}
 
@@ -424,11 +424,11 @@ E5 breaks uniform feature-family frequency while keeping the routing metric
 controlled by whitening.  The theorem predicts that equal-number family
 assignment no longer guarantees equal expert mass.  The result in
 Table~\ref{tab:e5_frequency_ablation} matches this prediction: OracleFeature
-with equal-number assignment has LoadCV 0.500, while mass-aware OracleFeature
-has LoadCV 0.024.  The same pattern appears in BFSR-Cluster: equal-number
-assignment has LoadCV 0.149, and mass-aware assignment reduces it to 0.029.
-Quantile-SPR remains a strong mass baseline, but its family consistency is only
-0.633 and its split rate is 0.906.
+with equal-number assignment has LoadCV 0.500, while mass-aware OracleFeature has
+LoadCV 0.024.  The same pattern appears in BFSR-Cluster: equal-number assignment
+has LoadCV 0.149, and mass-aware assignment reduces it to 0.029.  Quantile-SPR
+remains a strong mass baseline, but its family consistency is only 0.633 and its
+split rate is 0.906.
 
 \input{tables/e5_frequency_ablation}
 
@@ -447,21 +447,21 @@ families.}
 \section{Discussion}
 
 The experiments support a narrow claim.  In the static controlled case,
-feature-family dispatch is possible when three conditions hold together:
-global spectral isotropy, uniform feature-family frequency, and local feature
+feature-family dispatch is possible when three conditions hold together: global
+spectral isotropy, uniform feature-family frequency, and local feature
 recoverability.  Each condition has a separate role.  Spectral isotropy removes
 second-order metric confounds; frequency uniformity makes equal-number family
 assignment mass-balanced; recoverability makes specialization identifiable.
 
-A related continuous spherical-cell baseline is not enough by itself.  If
-feature directions are continuously uniform on a sphere and expert cells have
-equal spherical measure, then expert usage is uniform.  That is a valid
-continuous geometric mass result.  The present paper studies a feature-family
-object: discrete route-relevant families with equal frequency.  In this setting,
-a good dispatch must keep each family intact while assigning a balanced
-collection of families to experts.  The continuous spherical view is therefore a
-special mass-geometry case, not a replacement for the family-level
-identifiability condition.
+A related continuous spherical-cell baseline is not enough by itself.  If feature
+directions are continuously uniform on a sphere and expert cells have equal
+spherical measure, then expert usage is uniform.  That is a valid continuous
+geometric mass result.  The present paper studies a feature-family object:
+discrete route-relevant families with equal frequency.  In this setting, a good
+dispatch must keep each family intact while assigning a balanced collection of
+families to experts.  The continuous spherical view is therefore a special
+mass-geometry case, not a replacement for the family-level identifiability
+condition.
 
 \section{Limitations}
 
@@ -469,8 +469,8 @@ This paper is limited to controlled feature-family distributions.  It does not
 claim that real language-model hidden states naturally satisfy the assumptions.
 It does not solve automatic estimation of \(K\), non-uniform spectra beyond the
 metric-repair ablation, real semantic expert identity, learned-router training,
-training-time preservation, or expert utility.  Static utility should be tested
-only after the static dispatch definition is closed.
+training-time preservation, or downstream expert utility.  Static utility should
+be tested only after the static dispatch definition is closed.
 
 \section{Conclusion}
 
