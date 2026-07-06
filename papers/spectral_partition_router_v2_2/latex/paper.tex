@@ -7,7 +7,9 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{graphicx}
+\usepackage{placeins}
 \usepackage{hyperref}
+\hypersetup{hidelinks}
 \usepackage{url}
 
 \title{Static Feature-Family Dispatch under Spectrally Isotropic Representations}
@@ -386,7 +388,7 @@ consistency rises from 0.294 to 0.956.
 
 \input{tables/e3_recoverability}
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.72\linewidth]{figures/e3_recoverability_sweep.png}
 \caption{Feature specialization tracks local recoverability.  The spectrum is
@@ -407,7 +409,7 @@ expert information fraction at 0.002.
 
 \input{tables/e4_spectral_normalization}
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.72\linewidth]{figures/e4_spectral_normalization.png}
 \caption{Spectral normalization repairs anisotropic distortion only when local
@@ -430,7 +432,7 @@ Quantile-SPR remains a strong mass baseline, but its family consistency is only
 
 \input{tables/e5_frequency_ablation}
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.72\linewidth]{figures/e5_frequency_ablation.png}
 \caption{Frequency uniformity is the mass mechanism for equal-number family
@@ -439,6 +441,8 @@ repairs load balance; quantile balancing keeps mass low but splits feature
 families.}
 \label{fig:e5_frequency}
 \end{figure}
+
+\FloatBarrier
 
 \section{Discussion}
 

@@ -1,7 +1,8 @@
-\begin{table}[t]
+\begin{table}[!htbp]
 \centering
 \caption{Distribution diagnostics. The clean mixture is frequency-uniform and spectrally isotropic up to sampling error. The frequency ablation changes feature-family masses; whitening controls the routing metric before mass-balance comparisons.}
 \label{tab:distribution_diagnostics}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{llrrrr}
 \toprule
 Data & Norm. & Cond. $\downarrow$ & $\|\Sigma-I\|_{op}$ $\downarrow$ & Eff. rank $\uparrow$ & Freq. gap $\downarrow$ \\
@@ -9,12 +10,13 @@ Data & Norm. & Cond. $\downarrow$ & $\|\Sigma-I\|_{op}$ $\downarrow$ & Eff. rank
 E1 clean mixture & raw & 1.144 & 0.070 & 15.976 & 0.000 \\
 E1 clean mixture & whiten & 1.000 & 0.000 & 16.000 & 0.000 \\
 E2 isotropic null & raw & 1.171 & 0.082 & 15.966 & 0.000 \\
-E4 null_distorted & raw & 6526.409 & 6.113 & 3.511 & 0.000 \\
-E4 null_distorted & whiten & 1.000 & 0.000 & 16.000 & 0.000 \\
-E4 structured_distorted & raw & 6402.063 & 6.116 & 3.499 & 0.000 \\
-E4 structured_distorted & whiten & 1.000 & 0.000 & 16.000 & 0.000 \\
+E4 null distorted & raw & 6526.409 & 6.113 & 3.511 & 0.000 \\
+E4 null distorted & whiten & 1.000 & 0.000 & 16.000 & 0.000 \\
+E4 structured distorted & raw & 6402.063 & 6.116 & 3.499 & 0.000 \\
+E4 structured distorted & whiten & 1.000 & 0.000 & 16.000 & 0.000 \\
 E5 frequency-imbalanced & raw & 5.141 & 1.539 & 12.191 & 0.198 \\
 E5 frequency-imbalanced & whiten & 1.000 & 0.000 & 16.000 & 0.198 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
