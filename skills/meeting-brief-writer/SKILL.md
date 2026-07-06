@@ -15,6 +15,12 @@ A meeting brief is not an experiment timeline. It is a problem-centered
 decision document: current question, mechanism model, evidence, boundary, and
 next execution action.
 
+When the user asks for a shortened or pre-meeting brief, still follow the
+required template, but compress the content around one dominant problem, one
+supported conclusion, the concrete outputs/evidence, the claim boundary, and
+one next decision. Do not expand into a literature-style analysis, experiment
+timeline, or broad option list.
+
 ## Required Template
 
 Before writing or revising any `meeting_brief.md`, read:
@@ -68,6 +74,16 @@ only for precise setup, numbers, artifact maps, and validation details.
 ## Writing Rules
 
 - Write in Chinese by default for meeting-facing briefs.
+- Use fully objective wording. Do not write "the advisor asked", "we want to",
+  "we tried", "I suggest", or similar process-centered phrasing unless the user
+  explicitly asks for a personal speaking script. State the research object,
+  conclusion, evidence, boundary, and next action directly.
+- Make every meeting brief self-contained. Define the problem, conditions,
+  metrics, and outputs inside the brief so the reader does not need chat
+  history or prior daily notes.
+- For short briefs, prioritize: problem -> conclusion -> produced artifacts
+  and decisive evidence -> boundary -> next action. Keep mechanism explanation
+  to the minimum needed to make the conclusion understandable.
 - Define every non-obvious term before using it as evidence.
 - Explain the Chinese meaning first, then put reusable English abbreviations in
   parentheses only when needed.
