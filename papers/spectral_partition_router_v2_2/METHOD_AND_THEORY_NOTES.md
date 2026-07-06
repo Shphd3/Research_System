@@ -308,7 +308,7 @@ Under the same condition,
 
 Therefore feature-family consistency degrades at most with feature recovery error. Standard Fano-type bounds can translate this into lower bounds on mutual information or upper bounds on conditional entropy.
 
-### Proposition 5: Static utility requires feature-dependent target
+### Downstream proposition: static utility requires feature-dependent target
 
 If
 
@@ -326,7 +326,7 @@ Y = a_F^\top X + \xi
 
 and experts have limited capacity, then routing by \(F\) can reduce approximation error relative to incoherent partitions that mix many different \(a_F\)'s inside each expert.
 
-This proposition gives the static utility anchor. It should be tested experimentally rather than overclaimed.
+This proposition is parked for a downstream optional utility audit. It is not part of the current static dispatch claim.
 
 ## 6. Causal map
 
@@ -341,7 +341,7 @@ A3: local feature recoverability
     -> high route-feature mutual information
 
 A4: feature-dependent target or aligned expert geometry
-    -> static utility improvement
+    -> downstream utility / expert-identity audit, not current-stage evidence
 ```
 
 Each assumption has a falsifying anchor:
@@ -350,7 +350,7 @@ Each assumption has a falsifying anchor:
 remove A1 -> mass imbalance unless assignment uses estimated masses
 remove A2 -> anisotropic confound dominates clustering
 remove A3 -> specialization impossible
-remove A4 -> no learning utility expected
+remove A4 -> no downstream utility expected, but the static dispatch claim is unchanged
 ```
 
 ## 7. What to avoid claiming

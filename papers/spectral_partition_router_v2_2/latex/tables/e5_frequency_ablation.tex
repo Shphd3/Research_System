@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Frequency-uniformity ablation. Equal-number family assignment loses mass balance when feature-family frequencies are non-uniform; mass-aware assignment repairs the mass objective when family masses are estimated.}
+\label{tab:e5_frequency_ablation}
+\begin{tabular}{llrrr}
+\toprule
+Method & LoadCV $\downarrow$ & Max mass err. $\downarrow$ & Family cons. $\uparrow$ & Split rate $\downarrow$ \\
+\midrule
+OracleFeature & 0.500 & 0.186 & 1.000 & 0.000 \\
+OracleFeature-mass & 0.024 & 0.009 & 1.000 & 0.000 \\
+BFSR-Cluster & 0.149 & 0.059 & 0.759 & 0.550 \\
+BFSR-Cluster-mass & 0.029 & 0.010 & 0.772 & 0.537 \\
+Quantile-SPR & 0.019 & 0.007 & 0.633 & 0.906 \\
+\bottomrule
+\end{tabular}
+\end{table}

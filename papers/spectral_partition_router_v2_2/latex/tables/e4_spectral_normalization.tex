@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Spectral normalization ablation. Whitening repairs anisotropic metric distortion on structured data, but does not create feature information on null data.}
+\label{tab:e4_spectral_normalization}
+\begin{tabular}{llrrrr}
+\toprule
+Data & Normalizer & Cluster acc. $\uparrow$ & Family cons. $\uparrow$ & Info frac. $\uparrow$ & LoadCV $\downarrow$ \\
+\midrule
+null distorted & raw & 0.046 & 0.282 & 0.002 & 0.073 \\
+null distorted & whiten & 0.047 & 0.274 & 0.002 & 0.023 \\
+structured distorted & raw & 0.250 & 0.452 & 0.129 & 0.060 \\
+structured distorted & whiten & 0.958 & 0.968 & 0.874 & 0.004 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -16,7 +16,7 @@ Out of scope: training-time route preservation, representation drift,
 
 We study the following controlled problem:
 
-> If route-relevant features are globally spectrally isotropic and feature families are frequency-uniform, can we construct a non-cheating static router that sends whole feature families to experts, achieves balanced expert usage, and improves a controlled feature-dependent learning objective?
+> If route-relevant features are globally spectrally isotropic and feature families are frequency-uniform, can we construct a non-cheating static router that sends whole feature families to experts while achieving balanced expert usage?
 
 This is the static problem requested by the advisor's clean mathematical case: first make the uniform feature / uniform spectrum setting self-contained, prove what can be proved, and design experiments that close this stage before moving to non-uniform spectra or training preservation.
 
@@ -63,7 +63,7 @@ with:
 - frequency-uniform feature families;
 - globally approximately isotropic covariance after centering / whitening;
 - locally separated or recoverable feature-family structure;
-- a static feature-dependent target or expert-side geometry that makes specialization useful.
+- a static scope: feature-dependent utility and expert-side semantic alignment are downstream optional audits, not part of the current stage claim.
 
 A typical construction is a balanced mixture whose centers form a spherical or spectrally balanced code, so the aggregate distribution is isotropic while each family remains locally identifiable.
 
@@ -74,7 +74,7 @@ A good static dispatch is not just low load CV. It should satisfy:
 1. **Mass balance**: every expert receives equal probability mass.
 2. **Feature specialization**: each feature family is routed consistently to a small number of experts, ideally one expert.
 3. **Non-trivial expert usage**: the router should not collapse to a single expert or to arbitrary per-batch balancing.
-4. **Static utility**: under a feature-dependent supervised objective, the specialized dispatch should improve controlled expert learning relative to incoherent balanced dispatch.
+4. **Downstream utility audit**: controlled feature-dependent learning may be tested later, but it is not part of the current stage claim.
 
 ## Primary method: BFSR
 
@@ -87,7 +87,7 @@ BFSR has four steps:
 4. Route each new token to the expert assigned to its nearest recovered feature family.
 ```
 
-The mass mechanism is now family-level frequency balance, not projection quantiles:
+For BFSR, the mass mechanism is family-level frequency balance, not projection quantiles:
 
 ```text
 uniform feature frequencies + equal number/mass of feature families per expert
@@ -103,11 +103,11 @@ README.md                         # this overview
 PROBLEM_STATEMENT.md              # self-contained scope and definitions
 METHOD_AND_THEORY_NOTES.md         # method, assumptions, theorem sketches
 RESEARCH_PLAN.md                   # falsifiable hypotheses and research anchors
-exp/EXPERIMENT_PLAN.md             # static experiments; results left blank
+exp/EXPERIMENT_PLAN.md             # executed E1--E5 experiment chain and parked downstream audits
 exp/CODEX_TASKS.md                 # implementation tasks for Codex
-latex/paper.tex                    # self-contained paper scaffold
+latex/paper.tex                    # self-contained result draft
 latex/math_commands.tex            # LaTeX macros
-latex/references.bib               # placeholder bibliography
+latex/references.bib               # bibliography
 ```
 
 ## Stage closure criterion
@@ -118,7 +118,7 @@ This stage is closed only when the paper can say:
 In globally spectrally isotropic and frequency-uniform feature distributions,
 feature-level specialization is possible when local feature families are recoverable.
 BFSR uses that condition directly: it recovers feature families and assigns them to experts under a balanced constraint.
-When recoverability or feature-dependent utility is removed, the method should fail in predictable ways.
+When recoverability or feature-frequency uniformity is removed, the method should fail in predictable ways.
 ```
 
 The experiments should therefore include both positive and negative anchors. A method that succeeds only on load balance but not on feature specialization does not solve this stage.

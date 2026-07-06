@@ -85,15 +85,17 @@ up to a permutation of feature-family names.
 
 This assumption is necessary. Without it, feature-level specialization is unidentifiable.
 
-### A4. Static utility compatibility
+### A4. Downstream static utility compatibility
 
-The downstream static objective depends on the feature family. A typical controlled target is:
+This is not part of the current stage claim. A later static-utility audit may
+test whether a downstream objective depends on the feature family. A typical
+controlled target is:
 
 \[
 Y = a_F^\top X + \xi,
 \]
 
-or another family-conditioned rule. If the target is independent of \(F\), then feature specialization should not improve learning.
+or another family-conditioned rule. If the target is independent of \(F\), then feature specialization should not improve learning. This belongs after the static dispatch definition has been closed.
 
 ## 4. Why spectral isotropy alone is not enough
 
@@ -145,7 +147,7 @@ Each feature family should be routed consistently:
 H(G\mid F) \text{ is small.}
 \]
 
-Equivalently, purity / NMI between \(G\) and \(F\) should be high when feature families are recoverable.
+Because \(K\) can be larger than \(E\), one expert may receive several feature families. The primary metric is therefore per-family route consistency, not route-to-feature purity.
 
 ### O3. Non-trivial specialization
 
@@ -157,11 +159,9 @@ I(G;F) \text{ is large relative to } H(G).
 
 This prevents solutions that are balanced but feature-agnostic.
 
-### O4. Static learning utility
+### O4. Parked downstream utility
 
-Under a feature-dependent controlled task, expert training with \(g\) should outperform balanced but incoherent dispatch.
-
-This objective is explicitly static: the router is fixed before expert training, and no preservation claim is made.
+Feature-dependent expert learning is a later optional audit. It is not required for the current static dispatch claim.
 
 ## 6. Non-cheating rules
 
@@ -202,8 +202,8 @@ recoverable local feature families
 uniform family frequencies
 -> balanced family-to-expert assignment gives mass balance
 
-feature-dependent objective
--> specialized dispatch gives static learning utility
+downstream feature-dependent objective
+-> optional later static utility audit
 ```
 
 This leads to the main method family:
@@ -221,8 +221,8 @@ The paper should prove or experimentally test:
 1. **Impossibility anchor**: isotropy without feature recoverability cannot yield feature specialization.
 2. **Mass theorem**: if feature families are uniform and assigned evenly to experts, expert mass is balanced.
 3. **Robustness theorem**: if feature-family recovery error is at most \(\eta\), then mass and specialization degrade by controlled amounts.
-4. **Utility anchor**: coherent feature-family routing improves static expert learning only when the target depends on feature identity.
-5. **Negative controls**: random balanced dispatch, token-level balanced assignment, and quantile-only dispatch can balance usage without solving feature specialization.
+4. **Frequency-uniformity anchor**: equal-number family assignment balances expert mass only when feature-family frequencies are uniform; mass-aware assignment is needed when frequencies are non-uniform.
+5. **Negative controls**: random routing and quantile-only dispatch can balance usage or route ordinary geometry without solving feature-family consistency.
 
 ## 9. Stage completion criterion
 
@@ -230,5 +230,5 @@ This stage is complete when we can state:
 
 ```text
 Under globally spectrally isotropic, frequency-uniform, locally recoverable feature-family distributions, a static non-cheating router can achieve balanced feature-level specialization by recovering feature families and assigning them evenly to experts.
-When local recoverability or feature-dependent utility is removed, the method fails in predictable ways.
+When local recoverability or feature-frequency uniformity is removed, the method fails in predictable ways.
 ```

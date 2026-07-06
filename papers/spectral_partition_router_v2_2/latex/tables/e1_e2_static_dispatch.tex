@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Static dispatch sanity and isotropy-alone null. OracleFeature uses latent labels and is an invalid upper bound; the other methods are valid non-cheating routers.}
+\label{tab:e1_e2_static_dispatch}
+\begin{tabular}{llrrrrr}
+\toprule
+Exp. & Method & LoadCV $\downarrow$ & Family cons. $\uparrow$ & Split rate $\downarrow$ & Info frac. $\uparrow$ & Cluster acc. $\uparrow$ \\
+\midrule
+E1 & OracleFeature & 0.000 & 1.000 & 0.000 & 1.000 & -- \\
+E1 & BFSR-Cluster & 0.003 & 0.990 & 0.000 & 0.953 & 0.986 \\
+E1 & Quantile-SPR & 0.024 & 0.588 & 0.975 & 0.324 & -- \\
+E1 & Random linear & 0.142 & 0.628 & 0.931 & 0.364 & -- \\
+E2 & BFSR-Cluster & 0.028 & 0.273 & 1.000 & 0.002 & 0.047 \\
+E2 & Quantile-SPR & 0.028 & 0.275 & 1.000 & 0.002 & -- \\
+E2 & Random linear & 0.135 & 0.301 & 1.000 & 0.002 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

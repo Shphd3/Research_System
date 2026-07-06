@@ -19,7 +19,7 @@ Spectral isotropy gives a clean global metric.
 Frequency uniformity gives the possibility of balanced expert usage.
 Recoverable local feature families give the possibility of specialization.
 Balanced feature-family assignment gives the routing mechanism.
-Feature-dependent targets give measurable static utility.
+Feature-dependent targets are a downstream optional utility audit, not the current stage claim.
 ```
 
 The primary method is **BFSR: Balanced Feature-Specializing Routing**.
@@ -43,9 +43,9 @@ Condition: the global feature spectrum is isotropic.
 Mechanism: use the normalized space as a clean metric for clustering and expert alignment.
 Effect: avoid anisotropic confounds.
 
-Condition: target is feature-dependent.
+Downstream condition: target is feature-dependent.
 Mechanism: give each expert a coherent subset of feature families.
-Effect: lower static expert-learning loss.
+Effect: optional later static expert-learning audit.
 ```
 
 Quantile-SPR should remain as a baseline because it distinguishes mass balance from feature specialization.
@@ -74,8 +74,8 @@ The distribution should allow controlled variation along:
 feature separation
 feature frequency imbalance
 anisotropic distortion
-feature-dependent vs feature-independent targets
-expert alignment vs random expert geometry
+feature-dependent vs feature-independent targets, parked for downstream utility
+expert alignment vs random expert geometry, parked for downstream expert-identity audits
 ```
 
 ### 3.2 Methods
@@ -84,17 +84,14 @@ Primary:
 
 ```text
 BFSR-Cluster
-BFSR-ExpertAligned
 ```
 
 Anchors / controls:
 
 ```text
 BFSR-OracleFeature       # upper bound, not non-cheating
-BFSR-RandomGroup         # balanced feature grouping without geometry
 Quantile-SPR             # mass without guaranteed feature coherence
 Vanilla linear top-1     # ordinary static router
-BalancedAssignment       # batch-count control, not valid main method
 Random router            # lower bound
 ```
 
@@ -111,12 +108,10 @@ expert usage entropy
 Feature specialization:
 
 ```text
-NMI(G,F)
-purity
-H(G|F)
-I(G;F)
-percentage of feature families split across experts
-within-expert feature-family diversity
+family consistency: average max_e P(G=e | F=k)
+feature split rate
+expert information fraction I(G;F)/H(G)
+NMI(G,F), as a supplementary metric because G is coarser than F when K>E
 ```
 
 Feature recovery:
@@ -127,7 +122,7 @@ Adjusted Rand Index
 cluster purity
 ```
 
-Static utility:
+Parked static utility:
 
 ```text
 validation loss after training fixed-route experts
@@ -148,14 +143,14 @@ estimated family mass imbalance
 
 | ID | Hypothesis | Positive anchor | Falsifier / negative anchor |
 |---|---|---|---|
-| H1 | Spectral isotropy alone is insufficient. | Isotropic Gaussian with independent random labels gives low NMI for all non-cheating methods. | Any method gets high NMI when labels are independent of X. |
+| H1 | Spectral isotropy alone is insufficient. | Isotropic Gaussian with independent random labels gives near-zero expert information fraction for all non-cheating methods. | Any valid method gets high information fraction when labels are independent of X. |
 | H2 | Uniform feature frequencies cause mass balance under balanced family assignment. | Oracle and recovered feature assignment give LoadCV near 0 when K divisible by E. | Equal family assignment fails on truly uniform recovered families. |
-| H3 | Local recoverability causes specialization. | As separation increases, cluster accuracy and NMI increase. | High NMI when cluster recovery is poor. |
-| H4 | Spectral normalization acts as metric repair, not as a specialization source. | Whitening improves clustering under anisotropic distortion. | Whitening improves NMI on unstructured isotropic null data. |
-| H5 | Quantile balancing is not enough for feature specialization. | Quantile-SPR has low LoadCV but lower NMI / utility than BFSR on feature-family data. | Quantile-SPR matches BFSR on feature coherence across all structured regimes. |
-| H6 | Expert alignment helps only when expert geometry is aligned with feature families. | BFSR-ExpertAligned improves assignment utility with aligned experts. | Random expert geometry improves similarly. |
-| H7 | Static utility requires feature-dependent target. | BFSR improves fixed-route expert loss when target depends on F. | BFSR improves equally when target is feature-independent. |
-| H8 | Batch-count balancing is not a feature router. | BalancedAssignment gives LoadCV=0 but low feature consistency and unstable per-batch route identity. | BalancedAssignment yields coherent feature-family routing without labels or stable feature geometry. |
+| H3 | Local recoverability causes specialization. | As separation increases, cluster accuracy and family consistency increase. | High family consistency when cluster recovery is poor. |
+| H4 | Spectral normalization acts as metric repair, not as a specialization source. | Whitening improves clustering under anisotropic distortion. | Whitening improves information fraction on unstructured isotropic null data. |
+| H5 | Quantile balancing is not enough for feature specialization. | Quantile-SPR has low LoadCV but lower feature-family consistency than BFSR on recoverable feature-family data. | Quantile-SPR matches BFSR on feature consistency across all structured regimes. |
+| H6 | Feature-frequency uniformity is the mass premise for equal-number assignment. | Equal-number family assignment fails under frequency imbalance, while mass-aware assignment repairs load. | Equal-number assignment stays balanced under strong frequency imbalance without using masses. |
+| H7 | Expert alignment is downstream. | Parked until the static family-dispatch story is accepted. | N/A for current stage. |
+| H8 | Static utility is downstream. | Parked until the static family-dispatch story is accepted. | N/A for current stage. |
 
 ## 5. Research phases
 
@@ -168,7 +163,7 @@ synthetic generator for isotropic feature-family mixtures
 frequency-uniform option
 separation sweep
 anisotropic distortion option
-feature-dependent and feature-independent target options
+feature-dependent and feature-independent target options parked for downstream utility
 ```
 
 Exit criterion:
@@ -185,10 +180,7 @@ Deliverables:
 ```text
 BFSR-OracleFeature
 BFSR-Cluster
-BFSR-ExpertAligned
-BFSR-RandomGroup
 Quantile-SPR baseline
-BalancedAssignment control
 ```
 
 Exit criterion:
@@ -215,9 +207,9 @@ Exit criterion:
 Every positive result has a matched negative control.
 ```
 
-### Phase 4: run static utility audit
+### Phase 4: parked static utility audit
 
-Train fixed-route experts under different routers on controlled tasks.
+Train fixed-route experts under different routers on controlled tasks only after the static dispatch stage is accepted.
 
 Exit criterion:
 
@@ -259,7 +251,7 @@ If OracleFeature succeeds but Cluster fails, the theory is fine but recovery alg
 If OracleFeature fails, the problem definition or data construction is wrong.
 ```
 
-### Risk 2: BFSR balances mass but does not improve utility
+### Risk 2: downstream utility does not follow from static dispatch
 
 Check:
 
@@ -273,7 +265,7 @@ assignment objective may group incompatible features
 Decision:
 
 ```text
-Use capacity-limited experts and feature-conditioned targets for the static utility audit.
+Treat this as a downstream audit. Do not weaken the static dispatch result unless the paper tries to claim utility.
 ```
 
 ### Risk 3: Quantile-SPR matches BFSR
@@ -324,6 +316,6 @@ In the previous version we did X; now we change Y.
 
 If experiments support the hypotheses, the final claim should be:
 
-> In globally spectrally isotropic and frequency-uniform feature distributions, static feature-level specialization is possible when local feature families are recoverable. BFSR exploits this condition directly by recovering feature families in the normalized space and assigning them to experts under a balanced constraint. It achieves balanced usage because family frequencies are uniform, and it improves static utility only when the task respects the same feature-family structure.
+> In globally spectrally isotropic and frequency-uniform feature distributions, static feature-family dispatch is possible when local feature families are recoverable. BFSR exploits this condition directly by recovering feature families in the normalized space and assigning them to experts under a balanced constraint. It achieves balanced usage because family frequencies are uniform, while utility and training preservation remain downstream questions.
 
 This is a clean closure of the static stage, not a claim about dynamic MoE training.

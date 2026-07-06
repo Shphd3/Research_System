@@ -1,653 +1,182 @@
-# V2.2 Experiment Plan: Static Feature-Level Specialization
+# V2.2 Experiment Plan and Executed Result Map
 
-## 0. Purpose
+## 0. Current Stage Claim
 
-This experiment plan supports the V2.2 static paper.
-
-It tests whether a non-cheating router can achieve feature-level specialization under:
+This experiment suite supports the static clean-case paper:
 
 ```text
-globally spectrally isotropic features
-uniform feature-family frequencies
-recoverable local feature families
-fixed static routing
+Under globally spectrally isotropic, frequency-uniform, locally recoverable
+feature-family distributions, BFSR can construct a balanced and
+feature-consistent static dispatch without using latent labels during router
+construction.
 ```
 
-Excluded:
+The current stage does **not** test:
 
 ```text
-training preservation
-representation drift
-slow router updates
-hysteresis
+training-time preservation
+learned-router dynamics
+expert semantic identity
+feature-dependent utility
+automatic selection of K
+```
+
+Static utility is parked as a downstream optional audit.
+
+## 1. Terminology / Definitions
+
+LoadCV:
+plain meaning: coefficient of variation of expert usage.
+concrete computation: standard deviation of expert probabilities divided by their mean.
+why it matters: tests expert mass balance.
+what it cannot prove: feature specialization or expert utility.
+
+Family consistency:
+plain meaning: whether each true feature family is routed mostly to one expert.
+concrete computation: average over families of \(\max_e P(G=e\mid F=k)\).
+why it matters: primary specialization metric when \(K\ge E\).
+what it cannot prove: semantic expert identity or training preservation. It also has a random floor near \(1/E\), so the null experiment is judged primarily by expert information fraction.
+
+Feature split rate:
+plain meaning: fraction of feature families split across multiple experts.
+concrete computation: a family is split when more than one expert receives at least 5% of that family's samples.
+why it matters: detects whether mass-balanced routing cuts through feature families.
+what it cannot prove: downstream utility.
+
+Expert information fraction:
+plain meaning: how much the selected expert tells us about the feature family.
+concrete computation: \(I(G;F)/H(G)\).
+why it matters: detects feature-agnostic balanced routing.
+what it cannot prove: one-to-one feature/expert semantics when \(K>E\).
+
+Cluster accuracy:
+plain meaning: feature-family recovery quality.
+concrete computation: clustering accuracy after best permutation matching between recovered cluster ids and true family ids.
+why it matters: tests the local recoverability assumption.
+what it cannot prove: mass balance by itself.
+
+## 2. Methods
+
+Primary method:
+
+```text
+BFSR-Cluster:
+1. fit spectral normalizer on calibration X
+2. recover K clusters by k-means without labels
+3. assign recovered families to experts under equal-number or mass-aware balance
+4. route holdout examples by recovered family identity
+```
+
+Minimal baselines:
+
+```text
+OracleFeature       invalid upper bound; uses true F
+Quantile-SPR        mass-only baseline; can balance mass while splitting families
+Random linear       ordinary static top-1 router lower bound
+```
+
+BalancedAssignment is not used in the main result tables because it is a
+current-batch count control, not a fixed distributional router.
+
+## 3. Executed Experiments
+
+Full-run setting:
+
+```text
+seeds: 0,1,2,3,4
+d: 16
+K: 32
+E: 4
+calibration examples: 8000
+holdout examples: 16000
+```
+
+### E1. Clean mass and specialization sanity
+
+Question:
+Can BFSR solve the positive clean case when feature families are frequency-uniform, spectrally isotropic, and locally recoverable?
+
+Primary judgment:
+BFSR-Cluster reaches LoadCV 0.003, family consistency 0.990, and cluster accuracy 0.986.
+
+Interpretation:
+The positive clean case is solvable without using labels during router construction.
+
+### E2. Isotropy-alone null
+
+Question:
+Can valid non-cheating methods recover feature specialization when \(X\sim N(0,I)\) and \(F\perp X\)?
+
+Primary judgment:
+Valid methods have expert information fraction around 0.002.
+
+Interpretation:
+Spectral isotropy alone does not identify feature-family dispatch.
+
+### E3. Recoverability sweep
+
+Question:
+Does specialization track local feature recoverability?
+
+Primary judgment:
+As separation rises from 0.45 to 2.50, cluster accuracy rises from 0.063 to 0.942 and family consistency rises from 0.294 to 0.956.
+
+Interpretation:
+Specialization is caused by recoverable local feature structure, not by isotropy alone.
+
+### E4. Spectral normalization ablation
+
+Question:
+Does whitening repair anisotropic metric distortion, and does it avoid creating fake specialization in null data?
+
+Primary judgment:
+On distorted structured data, whitening raises cluster accuracy from 0.250 to 0.958. On distorted null data, expert information fraction remains around 0.002 after whitening.
+
+Interpretation:
+Spectral normalization is metric repair. It does not manufacture feature identity.
+
+### E5. Frequency-uniformity ablation
+
+Question:
+Is uniform feature frequency the reason equal-number family assignment gives balanced expert mass?
+
+Primary judgment:
+On imbalanced feature frequencies, equal-number BFSR has LoadCV 0.149 while mass-aware BFSR has LoadCV 0.029. OracleFeature shows the theorem boundary more sharply: equal-number LoadCV 0.500 vs mass-aware LoadCV 0.024.
+
+Interpretation:
+Uniform frequency is the clean-case mass mechanism. When it is removed, mass-aware assignment is required.
+
+## 4. Artifact Map
+
+```text
+runner:
+papers/spectral_partition_router_v2_2/exp/run_static_dispatch_suite.py
+
+source:
+papers/spectral_partition_router_v2_2/exp/src/static_bfsr_suite.py
+
+result summary:
+papers/spectral_partition_router_v2_2/exp/results/summary.md
+
+raw and aggregate CSVs:
+papers/spectral_partition_router_v2_2/exp/results/
+
+paper tables:
+papers/spectral_partition_router_v2_2/latex/tables/
+
+paper figures:
+papers/spectral_partition_router_v2_2/latex/figures/
+```
+
+## 5. Parked Downstream Audits
+
+The following experiments are intentionally not part of the current claim:
+
+```text
+expert alignment ladder
+static utility audit
+training-time preservation
 learned-router dynamics
 ```
 
-## 1. Methods
-
-### Primary methods
-
-#### BFSR-Cluster
-
-```text
-1. whiten / spectrally normalize X
-2. recover K feature families by clustering
-3. assign recovered families to experts with balanced mass constraint
-4. route each token by nearest recovered feature family
-```
-
-This is the main non-cheating method.
-
-#### BFSR-ExpertAligned
-
-Same as BFSR-Cluster, but family-to-expert assignment uses expert-side geometry when available.
-
-### Anchors and controls
-
-#### BFSR-OracleFeature
-
-Uses true feature family labels during routing construction.
-
-Purpose: upper bound only. Not a valid non-cheating method.
-
-#### BFSR-RandomGroup
-
-Uses recovered families but assigns them randomly to experts under balance.
-
-Purpose: separates feature recovery from assignment quality.
-
-#### Quantile-SPR
-
-Uses projection quantiles for mass balance.
-
-Purpose: shows whether mass balance alone is enough.
-
-#### Vanilla linear top-1
-
-Static linear router baseline.
-
-#### Random router
-
-Lower bound.
-
-#### BalancedAssignment
-
-Forces equal counts in the current batch.
-
-Purpose: batch-count control, not a valid distributional router.
-
-## 2. Metrics
-
-### Mass metrics
-
-```text
-LoadCV
-max absolute expert-mass error
-expert usage entropy
-```
-
-### Feature-specialization metrics
-
-```text
-NMI(G,F)
-purity(G,F)
-H(G|F)
-I(G;F)
-feature split rate
-within-expert number of feature families
-```
-
-### Feature-recovery metrics
-
-```text
-cluster accuracy up to permutation
-Adjusted Rand Index
-cluster purity
-```
-
-### Static utility metrics
-
-```text
-validation loss
-per-feature validation loss
-loss gap vs Quantile-SPR
-loss gap vs BFSR-RandomGroup
-loss gap vs BalancedAssignment
-```
-
-### Distribution diagnostics
-
-```text
-covariance condition number
-operator norm ||Cov-I||
-feature center separation
-estimated feature-family mass imbalance
-```
-
-## 3. Data generators
-
-### G1. Isotropic null generator
-
-```text
-X ~ N(0, I_d)
-F ~ Uniform({1,...,K}) independent of X
-```
-
-Purpose: prove isotropy alone is insufficient.
-
-Expected:
-
-```text
-all non-cheating methods have low NMI / purity
-LoadCV can be low for balancing methods
-static utility should not improve from feature specialization
-```
-
-### G2. Isotropic feature-family mixture
-
-```text
-F ~ Uniform({1,...,K})
-X | F=k = mu_k + eps
-```
-
-where centers are constructed to be globally balanced:
-
-```text
-mean center approximately 0
-aggregate covariance approximately isotropic after normalization
-```
-
-Purpose: positive clean case.
-
-Sweep:
-
-```text
-center separation: low / medium / high
-noise variance: low / medium / high
-K/E ratio: 1, 2, 4
-```
-
-Expected:
-
-```text
-BFSR-OracleFeature upper bound succeeds
-BFSR-Cluster approaches OracleFeature as separation increases
-Quantile-SPR balances mass but may split feature families
-```
-
-### G3. Anisotropically distorted feature-family mixture
-
-Start from G2, then apply:
-
-```text
-X_raw = A X
-```
-
-where A has a controlled condition number.
-
-Compare:
-
-```text
-raw space routing
-whitened / spectrally normalized routing
-```
-
-Purpose: test the causal role of spectral normalization as metric repair.
-
-Expected:
-
-```text
-raw anisotropic space hurts clustering and feature specialization
-normalization restores performance when local structure is recoverable
-normalization does not create specialization in null data
-```
-
-### G4. Frequency imbalance generator
-
-```text
-P(F=k) not equal
-```
-
-Purpose: test whether uniform frequency is the mass mechanism.
-
-Expected:
-
-```text
-equal-number family assignment no longer guarantees mass balance
-mass-aware family assignment can partially repair balance
-```
-
-### G5. Feature-dependent static target
-
-```text
-Y = a_F^T X + noise
-```
-
-or a feature-conditioned classification target.
-
-Purpose: test static learning utility.
-
-Expected:
-
-```text
-coherent feature routing improves fixed-route expert learning
-improvement increases when expert capacity is limited
-```
-
-### G6. Feature-independent static target
-
-```text
-Y = a^T X + noise
-```
-
-with no dependence on F.
-
-Purpose: negative utility control.
-
-Expected:
-
-```text
-BFSR should not get a systematic utility advantage
-```
-
-## 4. Experiments
-
-## E1. Clean mass and specialization sanity
-
-### Question
-
-When feature families are uniform, isotropic, and easily recoverable, does balanced family assignment produce balanced and specialized routing?
-
-### Data
-
-```text
-G2 with high separation
-K divisible by E
-```
-
-### Methods
-
-```text
-BFSR-OracleFeature
-BFSR-Cluster
-BFSR-RandomGroup
-Quantile-SPR
-Vanilla linear top-1
-Random router
-BalancedAssignment
-```
-
-### Metrics
-
-```text
-LoadCV
-NMI
-purity
-cluster recovery accuracy
-feature split rate
-```
-
-### Expected outcome
-
-```text
-OracleFeature: near-perfect balance and specialization
-BFSR-Cluster: close to OracleFeature if clustering succeeds
-BFSR-RandomGroup: balanced and specialized, but assignment geometry may be arbitrary
-Quantile-SPR: balanced but lower feature consistency if thresholds split families
-BalancedAssignment: perfect batch balance but low stable feature specialization
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: fill after running experiments.
-```
-
-## E2. Isotropy-alone null anchor
-
-### Question
-
-Can any non-cheating method recover feature specialization when labels are independent of isotropic features?
-
-### Data
-
-```text
-G1
-```
-
-### Methods
-
-Same as E1 except OracleFeature is reported only as an invalid upper bound.
-
-### Expected outcome
-
-```text
-all valid non-cheating methods have NMI near 0
-methods may still differ in LoadCV
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: this should support the claim that spectral isotropy alone is insufficient.
-```
-
-## E3. Feature recoverability sweep
-
-### Question
-
-Does feature specialization track local feature recoverability?
-
-### Data
-
-```text
-G2 with separation / noise sweep
-```
-
-### Methods
-
-```text
-BFSR-OracleFeature
-BFSR-Cluster
-BFSR-RandomGroup
-Quantile-SPR
-Vanilla linear top-1
-```
-
-### Metrics
-
-```text
-cluster accuracy
-NMI
-purity
-LoadCV
-```
-
-### Expected outcome
-
-```text
-as separation increases:
-cluster recovery improves
-BFSR-Cluster NMI improves
-mass remains controlled if family assignment remains balanced
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: relate performance to local recoverability, not isotropy alone.
-```
-
-## E4. Spectral normalization causal ablation
-
-### Question
-
-Does spectral normalization repair an anisotropic metric, and does it avoid creating fake specialization in null data?
-
-### Data
-
-```text
-G3: distorted structured mixture
-G1 with matched anisotropic distortion
-```
-
-### Conditions
-
-```text
-raw X
-centered only X
-whitened X
-```
-
-### Methods
-
-```text
-BFSR-Cluster
-Quantile-SPR
-Vanilla linear top-1
-```
-
-### Expected outcome
-
-```text
-on structured distorted data: whitening improves cluster recovery and NMI
-on null data: whitening does not create NMI
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: support spectral normalization as metric repair.
-```
-
-## E5. Frequency uniformity ablation
-
-### Question
-
-Is frequency uniformity the reason equal family assignment gives balanced expert mass?
-
-### Data
-
-```text
-G4 with controlled frequency imbalance
-```
-
-### Methods
-
-```text
-BFSR-OracleFeature equal-number assignment
-BFSR-OracleFeature mass-aware assignment
-BFSR-Cluster equal-number assignment
-BFSR-Cluster mass-aware assignment
-Quantile-SPR
-```
-
-### Expected outcome
-
-```text
-equal-number assignment works only when feature frequencies are uniform
-mass-aware assignment repairs some imbalance if masses are estimated well
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: clarify whether uniform frequency is a causal condition for mass.
-```
-
-## E6. Expert alignment ladder
-
-### Question
-
-Does expert-side geometry help only when it is aligned with feature-family geometry?
-
-### Data
-
-```text
-G2 with medium/high separation
-```
-
-### Expert conditions
-
-```text
-aligned expert prototypes
-noisy aligned expert prototypes
-random expert prototypes
-adversarial / permuted expert prototypes
-```
-
-### Methods
-
-```text
-BFSR-ExpertAligned
-BFSR-RandomGroup
-BFSR-Cluster locality assignment
-```
-
-### Expected outcome
-
-```text
-aligned experts improve assignment utility / compatibility
-random experts should not give comparable gains
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: distinguish feature recovery from expert identity assignment.
-```
-
-## E7. Static utility audit
-
-### Question
-
-Does feature-specializing routing improve fixed-route expert learning only when the target is feature-dependent?
-
-### Data
-
-```text
-G5 feature-dependent target
-G6 feature-independent target
-```
-
-### Expert training setup
-
-```text
-router fixed before training
-experts trained only on routed samples
-capacity-limited experts
-same optimization budget across methods
-```
-
-### Methods
-
-```text
-BFSR-OracleFeature
-BFSR-Cluster
-BFSR-ExpertAligned
-BFSR-RandomGroup
-Quantile-SPR
-Vanilla linear top-1
-BalancedAssignment
-```
-
-### Metrics
-
-```text
-validation loss
-per-feature loss
-LoadCV
-NMI
-```
-
-### Expected outcome
-
-```text
-feature-dependent target: coherent BFSR variants should improve loss
-feature-independent target: no systematic BFSR advantage
-```
-
-### Results
-
-```text
-TODO: fill after running experiments.
-```
-
-### Interpretation
-
-```text
-TODO: connect utility to feature dependence and expert capacity.
-```
-
-## 5. Minimal table templates
-
-### Table 1: Distribution diagnostics
-
-| Dataset | Cond(Cov) | ||Cov-I|| | K | E | Sep | Freq imbalance |
-|---|---:|---:|---:|---:|---:|---:|
-| TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-
-### Table 2: Static dispatch metrics
-
-| Dataset | Method | LoadCV | Max mass err | NMI | Purity | Split rate |
-|---|---|---:|---:|---:|---:|---:|
-| TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-
-### Table 3: Feature recovery
-
-| Dataset | Method | Cluster acc | ARI | Cluster purity |
-|---|---|---:|---:|---:|
-| TODO | TODO | TODO | TODO | TODO |
-
-### Table 4: Static utility
-
-| Dataset | Method | Val loss | Per-feature loss std | LoadCV | NMI |
-|---|---|---:|---:|---:|---:|
-| TODO | TODO | TODO | TODO | TODO | TODO |
-
-## 6. Execution order
-
-Run in this order:
-
-```text
-E1 clean sanity
-E2 isotropy null
-E3 recoverability sweep
-E4 spectral normalization ablation
-E5 frequency ablation
-E6 expert alignment ladder
-E7 static utility audit
-```
-
-Do not run E7 before E1--E4 are understood. Utility results are hard to interpret without first proving that the static router is actually balanced and feature-specializing.
-
-## 7. Required reporting style
-
-Every experiment report should include:
-
-```text
-Question
-Assumption tested
-Expected outcome
-Result
-Interpretation
-Failure explanation, if any
-```
-
-Do not report a positive result without the matched negative anchor.
+They should be opened only after the static dispatch story is accepted.
