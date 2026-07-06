@@ -1,25 +1,28 @@
-# V2.2 Problem Statement: Static Feature-Level Specialization under Spectral Isotropy
+# V2.2 Problem Statement: Static Feature-Family Dispatch under Spectral Isotropy
 
 ## 1. Main question
 
-We want to close the following static problem before studying training dynamics:
+We close the following static clean-case problem before studying training dynamics:
 
-> Given a route-relevant feature distribution whose global spectrum is isotropic and whose feature families occur with uniform frequency, can we construct a non-cheating static router that assigns feature families to experts in a balanced and specialized way?
+> Given a route-relevant feature distribution whose aggregate spectrum is isotropic and whose feature families occur with uniform frequency, can we construct a label-free, batch-independent static router that assigns feature families to experts in a balanced and specialization-preserving way?
 
-The target is **feature-level specialization**, not merely equal token counts.
+The target is **feature-family dispatch**, not merely equal token counts.
 
-A valid solution should answer four questions:
+A valid solution must specify:
 
-1. What is the controlled feature distribution?
-2. What does "good dispatch" mean in this distribution?
-3. Which assumptions make good dispatch identifiable?
-4. Which routing mechanism uses those assumptions causally?
+```text
+controlled feature distribution
+definition of good static dispatch
+identifiability assumptions
+routing mechanism that uses the assumptions causally
+matched positive and negative anchors
+```
 
-## 2. Why this scope
+## 2. Scope
 
-The advisor's clean-case requirement is to first finish the simplest mathematical setting: feature frequency is uniform, the representation spectrum is uniform, and the resulting MoE dispatch problem should be stated, proved, and experimentally audited before moving to non-uniform spectra or real training dynamics.
+This paper addresses the advisor's simplest mathematical case: feature frequency is uniform, the representation spectrum is uniform, and the static dispatch problem is stated, proved, and experimentally audited before moving to non-uniform spectra or real training dynamics.
 
-This paper therefore excludes:
+Out of scope:
 
 ```text
 training preservation
@@ -27,14 +30,15 @@ representation drift
 slow router updates
 hysteresis
 learned-router dynamics
-large-singular-value non-uniform spectrum
+large-singular-value non-uniform spectra
+real language-model hidden states
+downstream task utility
+automatic selection of K
 ```
-
-Those are later-stage problems.
 
 ## 3. Controlled feature model
 
-Let
+Let:
 
 ```text
 F in {1,...,K}     latent route-relevant feature family
@@ -51,7 +55,7 @@ F \sim \mathrm{Unif}(\{1,\ldots,K\}),
 X \mid F=k = \mu_k + \epsilon.
 $$
 
-The assumptions are:
+Assumptions:
 
 ### A1. Frequency uniformity
 
@@ -61,25 +65,25 @@ $$
 \mathbb{P}(F=k)=1/K.
 $$
 
-This is the frequency part of the clean case.
+This is the clean-case mass condition.
 
 ### A2. Global spectral isotropy
 
-After centering and optional population whitening, the aggregate representation is approximately isotropic:
+After centering and optional whitening, the aggregate representation is approximately isotropic:
 
 $$
 \operatorname{Cov}(\widetilde X) \approx I_d.
 $$
 
-This is the spectral part of the clean case. It removes global anisotropic directions and defines a clean metric.
+This is the clean-case metric condition.  It removes global anisotropic directions but does not create feature identity.
 
 ### A3. Local feature recoverability
 
-The feature families are not arbitrary labels. They leave recoverable local structure in representation space. For example, there exists an unsupervised estimator $\widehat{h}(X)$ such that
+The feature families are not arbitrary labels. They leave recoverable local structure in representation space. For example, there exists an unsupervised estimator \(\widehat h(X)\) such that
 
-$$
-\mathbb{P}(\widehat{h}(X) \neq F) \leq \eta
-$$
+\[
+\Prob(\widehat h(X) \neq F) \leq \eta
+\]
 
 up to a permutation of feature-family names.
 
@@ -91,15 +95,15 @@ This is not part of the current stage claim. A later static-utility audit may
 test whether a downstream objective depends on the feature family. A typical
 controlled target is:
 
-$$
+\[
 Y = a_F^\top X + \xi,
-$$
+\]
 
-or another family-conditioned rule. If the target is independent of $F$, then feature specialization should not improve learning. This belongs after the static dispatch definition has been closed.
+or another family-conditioned rule. If the target is independent of \(F\), then feature specialization should not improve learning. This belongs after the static dispatch definition has been closed.
 
-## 4. Why spectral isotropy alone is not enough
+## 4. Why spectral isotropy alone is insufficient
 
-Spectral isotropy is a global second-order condition. It does not define which tokens should be grouped together.
+Spectral isotropy is a global second-order condition.  It does not define which examples belong to the same feature family.
 
 Null anchor:
 
@@ -117,45 +121,45 @@ $$
 I(g(X);F)=0.
 $$
 
-Thus no feature-specializing router can be recovered from $X$. This proves that isotropy alone cannot be the causal source of good routing.
+Thus no feature-specializing router can be recovered from \(X\). This proves that isotropy alone cannot be the causal source of good routing.
 
-The correct middle regime is:
+The solvable middle regime is:
 
 ```text
-globally isotropic distribution
+globally isotropic aggregate representation
 + locally recoverable feature families
 + uniform feature-family frequencies
 ```
 
 ## 5. Definition of static good dispatch
 
-A static router $g:\mathbb{R}^d\to\{1,\ldots,E\}$ is good in this paper if it satisfies the following objectives.
+A static router \(g:\R^d\to\{1,\ldots,E\}\) is good in this paper if it satisfies the following objectives.
 
 ### O1. Balanced expert mass
 
-$$
-\mathbb{P}(g(X)=e) \approx 1/E.
-$$
+\[
+\Prob(g(X)=e) \approx 1/E.
+\]
 
 This is required, but it is not sufficient.
 
 ### O2. Feature-family consistency
 
-Each feature family should be routed consistently:
+Each feature family should be routed mostly to one expert:
 
-$$
+\[
 H(G\mid F) \text{ is small.}
-$$
+\]
 
-Because $K$ can be larger than $E$, one expert may receive several feature families. The primary metric is therefore per-family route consistency, not route-to-feature purity.
+Because \(K\) can be larger than \(E\), one expert may receive several feature families. The primary metric is therefore per-family route consistency, not route-to-feature purity.
 
-### O3. Non-trivial specialization
+### O4. Informative expert identity
 
-The router should retain useful information about feature identity:
+The selected expert should carry information about feature-family identity:
 
-$$
+\[
 I(G;F) \text{ is large relative to } H(G).
-$$
+\]
 
 This prevents solutions that are balanced but feature-agnostic.
 
@@ -163,19 +167,19 @@ This prevents solutions that are balanced but feature-agnostic.
 
 Feature-dependent expert learning is a later optional audit. It is not required for the current static dispatch claim.
 
-## 6. Non-cheating rules
+## 6. Calibration protocol
 
 Allowed during router construction:
 
 ```text
-unlabeled calibration features X
+calibration features X
 feature mean/covariance
 unsupervised clustering of X
-model-internal expert weights, if used as an experimental condition
 estimated cluster masses
+optional model-internal expert geometry, if explicitly tested
 ```
 
-Forbidden during router construction:
+Not allowed during router construction:
 
 ```text
 latent feature labels F
@@ -186,7 +190,7 @@ current-batch expert counts
 batch-level forced assignment as the main method
 ```
 
-Latent labels $F$ and targets $Y$ are allowed only for synthetic data generation and evaluation.
+Latent labels \(F\) and targets \(Y\) are allowed only for synthetic data generation and evaluation.
 
 ## 7. Main method target
 
@@ -201,12 +205,9 @@ recoverable local feature families
 
 uniform family frequencies
 -> balanced family-to-expert assignment gives mass balance
-
-downstream feature-dependent objective
--> optional later static utility audit
 ```
 
-This leads to the main method family:
+This leads to:
 
 ```text
 BFSR: Balanced Feature-Specializing Routing
@@ -220,15 +221,18 @@ The paper should prove or experimentally test:
 
 1. **Impossibility anchor**: isotropy without feature recoverability cannot yield feature specialization.
 2. **Mass theorem**: if feature families are uniform and assigned evenly to experts, expert mass is balanced.
-3. **Robustness theorem**: if feature-family recovery error is at most $\eta$, then mass and specialization degrade by controlled amounts.
+3. **Robustness theorem**: if feature-family recovery error is at most \(\eta\), then mass and specialization degrade by controlled amounts.
 4. **Frequency-uniformity anchor**: equal-number family assignment balances expert mass only when feature-family frequencies are uniform; mass-aware assignment is needed when frequencies are non-uniform.
 5. **Negative controls**: random routing and quantile-only dispatch can balance usage or route ordinary geometry without solving feature-family consistency.
 
 ## 9. Stage completion criterion
 
-This stage is complete when we can state:
+This stage is complete if the paper can state:
 
 ```text
-Under globally spectrally isotropic, frequency-uniform, locally recoverable feature-family distributions, a static non-cheating router can achieve balanced feature-level specialization by recovering feature families and assigning them evenly to experts.
-When local recoverability or feature-frequency uniformity is removed, the method fails in predictable ways.
+Under globally spectrally isotropic, frequency-uniform, locally recoverable
+feature-family distributions, BFSR constructs balanced static feature-family
+dispatch by recovering feature families and assigning them to experts under a
+balanced constraint.  When local recoverability is removed, the method fails in
+predictable ways.
 ```
