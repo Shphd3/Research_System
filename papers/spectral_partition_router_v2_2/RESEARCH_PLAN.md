@@ -1,321 +1,140 @@
-# V2.2 Research Plan: Static Feature-Level Specialization
+# V2.2 Research Plan: Static Feature-Family Dispatch
 
 ## 0. Goal
 
-The next stage is to close the advisor's clean mathematical case as a self-contained research story.
+Close the advisor's clean mathematical case as a self-contained static result:
 
-The paper should answer:
-
-> Under globally spectrally isotropic and frequency-uniform feature distributions, when is static feature-level specialization identifiable, and how can a non-cheating router construct it?
+> Under globally spectrally isotropic and frequency-uniform feature-family distributions, when is static feature-family dispatch identifiable, and how can a label-free calibration-time router construct it?
 
 This stage does **not** study preservation during training.
 
-## 1. Current research thesis
-
-The thesis is:
+## 1. Current thesis
 
 ```text
 Spectral isotropy gives a clean global metric.
-Frequency uniformity gives the possibility of balanced expert usage.
-Recoverable local feature families give the possibility of specialization.
-Balanced feature-family assignment gives the routing mechanism.
-Feature-dependent targets are a downstream optional utility audit, not the current stage claim.
+Frequency uniformity makes equal-number family assignment mass-balanced.
+Local feature recoverability makes feature-family dispatch identifiable.
+BFSR uses these conditions by normalizing, clustering, assigning families, and routing by recovered family identity.
 ```
 
-The primary method is **BFSR: Balanced Feature-Specializing Routing**.
+## 2. Method status
 
-## 2. Why this is more causal than quantile-first routing
-
-Quantile routing is a valid way to control probability mass, but it is not specific to the current feature assumption. It works for many distributions, including distributions without meaningful feature families. Therefore it is weakly causal for feature-level specialization.
-
-The new method uses the assumptions more directly:
-
-```text
-Condition: feature families have uniform frequency.
-Mechanism: assign equal numbers or equal masses of feature families to experts.
-Effect: balanced expert usage.
-
-Condition: feature families are locally recoverable.
-Mechanism: recover families by unsupervised clustering in the normalized metric.
-Effect: high feature consistency / specialization.
-
-Condition: the global feature spectrum is isotropic.
-Mechanism: use the normalized space as a clean metric for clustering and expert alignment.
-Effect: avoid anisotropic confounds.
-
-Downstream condition: target is feature-dependent.
-Mechanism: give each expert a coherent subset of feature families.
-Effect: optional later static expert-learning audit.
-```
-
-Quantile-SPR should remain as a baseline because it distinguishes mass balance from feature specialization.
-
-## 3. Research objects
-
-### 3.1 Data family
-
-Synthetic controlled data should be generated from:
-
-\[
-F\sim \mathrm{Unif}(\{1,\ldots,K\}),
-\qquad
-X|F=k=\mu_k+\epsilon.
-\]
-
-The centers \(\mu_k\) should be constructed so that the aggregate distribution is globally isotropic or becomes isotropic after whitening:
-
-\[
-\Cov(\widetilde X)\approx I.
-\]
-
-The distribution should allow controlled variation along:
-
-```text
-feature separation
-feature frequency imbalance
-anisotropic distortion
-feature-dependent vs feature-independent targets, parked for downstream utility
-expert alignment vs random expert geometry, parked for downstream expert-identity audits
-```
-
-### 3.2 Methods
-
-Primary:
+Primary method:
 
 ```text
 BFSR-Cluster
 ```
 
-Anchors / controls:
+Baselines / anchors:
 
 ```text
-BFSR-OracleFeature       # upper bound, not non-cheating
-Quantile-SPR             # mass without guaranteed feature coherence
-Vanilla linear top-1     # ordinary static router
-Random router            # lower bound
+OracleFeature       non-admissible upper bound
+Quantile-SPR        mass-only baseline
+Random linear       ordinary static router baseline
 ```
 
-### 3.3 Metrics
+## 3. Executed anchors
 
-Mass:
+| ID | Hypothesis | Result status |
+|---|---|---|
+| H1 | Spectral isotropy alone is insufficient. | Supported by E2: expert information fraction about 0.002. |
+| H2 | Uniform feature frequencies cause mass balance under equal-number family assignment. | Supported by E1 and E5. |
+| H3 | Local recoverability causes feature-family dispatch. | Supported by E3 separation sweep. |
+| H4 | Spectral normalization acts as metric repair. | Supported by E4 raw-vs-whitened ablation. |
+| H5 | Quantile balancing is not enough for feature-family dispatch. | Supported by E1 and E5: low LoadCV but high split rate. |
+
+## 4. Current results
+
+Full-run setting:
 
 ```text
-LoadCV
-max absolute mass error
-expert usage entropy
+seeds: 0,1,2,3,4
+d: 16
+K: 32
+E: 4
+calibration examples: 8000
+holdout examples: 16000
 ```
 
-Feature specialization:
+Key results:
 
 ```text
-family consistency: average max_e P(G=e | F=k)
-feature split rate
-expert information fraction I(G;F)/H(G)
-NMI(G,F), as a supplementary metric because G is coarser than F when K>E
+E1: BFSR-Cluster LoadCV 0.003, family consistency 0.990, cluster accuracy 0.986.
+E2: admissible label-free methods expert information fraction about 0.002.
+E3: separation 0.45 -> 2.50 gives cluster accuracy 0.063 -> 0.942 and family consistency 0.294 -> 0.956.
+E4: whitening on distorted structured data gives cluster accuracy 0.250 -> 0.958; null information remains about 0.002.
+E5: under frequency imbalance, equal-number BFSR LoadCV 0.149; mass-aware BFSR LoadCV 0.029.
 ```
 
-Feature recovery:
+## 5. Decision rule
+
+The current E1--E5 results are sufficient for a group-meeting closure of the static clean case.
+
+Do not expand the main paper claim unless a new experiment is explicitly opened.
+
+## 6. Next possible stages
+
+After the meeting, choose one:
+
+### A. Static utility audit
+
+Question:
 
 ```text
-cluster recovery accuracy up to permutation
-Adjusted Rand Index
-cluster purity
+Does feature-family dispatch improve fixed-route expert learning on feature-dependent targets?
 ```
 
-Parked static utility:
+This is the next experiment if the group wants evidence for "better learning".
+
+### B. Real hidden-state audit
+
+Question:
 
 ```text
-validation loss after training fixed-route experts
-per-feature validation loss
-loss gap vs incoherent balanced controls
+Do real route-relevant hidden states contain locally recoverable feature-family structure after spectral normalization?
 ```
 
-Distribution diagnostics:
+This is the next experiment if the group wants to connect the synthetic clean case to language models.
+
+### C. Training preservation
+
+Question:
 
 ```text
-covariance condition number
-operator norm |Cov-I|
-feature separation
-estimated family mass imbalance
+Can a static feature-family partition remain stable under representation drift during training?
 ```
 
-## 4. Hypothesis-to-anchor map
+This should remain a later stage, not part of V2.2.
 
-| ID | Hypothesis | Positive anchor | Falsifier / negative anchor |
-|---|---|---|---|
-| H1 | Spectral isotropy alone is insufficient. | Isotropic Gaussian with independent random labels gives near-zero expert information fraction for all non-cheating methods. | Any valid method gets high information fraction when labels are independent of X. |
-| H2 | Uniform feature frequencies cause mass balance under balanced family assignment. | Oracle and recovered feature assignment give LoadCV near 0 when K divisible by E. | Equal family assignment fails on truly uniform recovered families. |
-| H3 | Local recoverability causes specialization. | As separation increases, cluster accuracy and family consistency increase. | High family consistency when cluster recovery is poor. |
-| H4 | Spectral normalization acts as metric repair, not as a specialization source. | Whitening improves clustering under anisotropic distortion. | Whitening improves information fraction on unstructured isotropic null data. |
-| H5 | Quantile balancing is not enough for feature specialization. | Quantile-SPR has low LoadCV but lower feature-family consistency than BFSR on recoverable feature-family data. | Quantile-SPR matches BFSR on feature consistency across all structured regimes. |
-| H6 | Feature-frequency uniformity is the mass premise for equal-number assignment. | Equal-number family assignment fails under frequency imbalance, while mass-aware assignment repairs load. | Equal-number assignment stays balanced under strong frequency imbalance without using masses. |
-| H7 | Expert alignment is downstream. | Parked until the static family-dispatch story is accepted. | N/A for current stage. |
-| H8 | Static utility is downstream. | Parked until the static family-dispatch story is accepted. | N/A for current stage. |
+### D. Automatic K selection
 
-## 5. Research phases
-
-### Phase 1: lock the clean feature construction
-
-Deliverables:
+Question:
 
 ```text
-synthetic generator for isotropic feature-family mixtures
-frequency-uniform option
-separation sweep
-anisotropic distortion option
-feature-dependent and feature-independent target options parked for downstream utility
+Can K be selected from calibration features without knowing the synthetic ground-truth family count?
 ```
 
-Exit criterion:
-
-```text
-Covariance diagnostics show isotropy in the clean setting,
-while latent feature families remain recoverable when separation is high.
-```
-
-### Phase 2: implement BFSR and anchors
-
-Deliverables:
-
-```text
-BFSR-OracleFeature
-BFSR-Cluster
-Quantile-SPR baseline
-```
-
-Exit criterion:
-
-```text
-BFSR-OracleFeature verifies the theoretical upper bound.
-BFSR-Cluster approaches it when feature recovery is easy.
-```
-
-### Phase 3: run identifiability anchors
-
-Experiments:
-
-```text
-isotropic null with independent labels
-isotropic structured mixture with separation sweep
-raw anisotropic distortion vs whitened features
-frequency imbalance sweep
-```
-
-Exit criterion:
-
-```text
-Every positive result has a matched negative control.
-```
-
-### Phase 4: parked static utility audit
-
-Train fixed-route experts under different routers on controlled tasks only after the static dispatch stage is accepted.
-
-Exit criterion:
-
-```text
-BFSR improves loss only when the target is feature-dependent and feature families are recoverable.
-```
-
-### Phase 5: write group-meeting closure
-
-The report should answer:
-
-```text
-What exactly was the clean case?
-Why isotropy alone is insufficient?
-What additional minimal condition made the problem solvable?
-What method used that condition causally?
-Which experiments close the stage?
-What remains for the next stage?
-```
-
-## 6. Risks and decision rules
-
-### Risk 1: BFSR-Cluster fails despite recoverable data
-
-Check:
-
-```text
-cluster K known or not
-separation too low
-whitening implementation
-cluster initialization
-feature centers not actually balanced / isotropic
-```
-
-Decision:
-
-```text
-If OracleFeature succeeds but Cluster fails, the theory is fine but recovery algorithm is weak.
-If OracleFeature fails, the problem definition or data construction is wrong.
-```
-
-### Risk 2: downstream utility does not follow from static dispatch
-
-Check:
-
-```text
-target may not be feature-dependent enough
-experts may be too expressive
-training budget may hide specialization benefits
-assignment objective may group incompatible features
-```
-
-Decision:
-
-```text
-Treat this as a downstream audit. Do not weaken the static dispatch result unless the paper tries to claim utility.
-```
-
-### Risk 3: Quantile-SPR matches BFSR
-
-Interpretation:
-
-```text
-The data may be too easy or aligned with the quantile split direction.
-```
-
-Decision:
-
-```text
-Add multi-cluster arrangements where any single projection threshold cuts through feature families.
-```
-
-### Risk 4: Whitening improves everything, including null data
-
-Interpretation:
-
-```text
-Possible artifact in labels, clustering, or evaluation.
-```
-
-Decision:
-
-```text
-Re-run the isotropic null with independent labels and report confidence intervals.
-```
+This is a method-completeness issue, not necessary for the first clean case.
 
 ## 7. Writing rule
 
-The paper should be self-contained. It should not read like a changelog from V1/V2/V2.1.
+The paper should read as a self-contained static result, not as a changelog from V1/V2/V2.1.
 
-Allowed framing:
-
-```text
-We study a controlled static problem motivated by uniform feature dispatch.
-```
-
-Avoid framing:
+Allowed final claim:
 
 ```text
-In the previous version we did X; now we change Y.
+Under globally spectrally isotropic, frequency-uniform, locally recoverable
+feature-family distributions, BFSR constructs balanced static feature-family
+dispatch by recovering families and assigning them to experts under a balanced
+constraint.
 ```
 
-## 8. Expected final claim
+Forbidden claims:
 
-If experiments support the hypotheses, the final claim should be:
-
-> In globally spectrally isotropic and frequency-uniform feature distributions, static feature-family dispatch is possible when local feature families are recoverable. BFSR exploits this condition directly by recovering feature families in the normalized space and assigning them to experts under a balanced constraint. It achieves balanced usage because family frequencies are uniform, while utility and training preservation remain downstream questions.
-
-This is a clean closure of the static stage, not a claim about dynamic MoE training.
+```text
+spectral isotropy alone gives good routing
+BFSR proves downstream task improvement
+BFSR solves learned-router MoE training
+BFSR solves route preservation
+BFSR works on real hidden states without a real-data audit
+```
