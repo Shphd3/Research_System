@@ -118,6 +118,45 @@ early-training feedback 证据；
 -> neural A07_04 仍是 insufficient evidence
 ```
 
+## 支持线：11 long-horizon MTP objective
+
+MTP 线现在应作为“目标函数如何把长程变量写入当前 hidden state”的支持线，
+而不是替代 05/06/07 gating 主线。
+
+当前 A11 结论是：
+
+```text
+在受控 long-horizon 构造中，如果 K 覆盖第一个包含早期变量 Z 的未来位置，
+并且该未来目标是 Z 的一一对应编码，那么低该位置预测损失会迫使当前
+hidden state h_T 含有 Z。
+```
+
+A11_05 进一步说明：
+
+```text
+在 clean tau=3 的 all-position 训练中，直接加到 decision-prefix h_T 上的
+horizon-3 监督，是 K=3 更快、更稳定恢复 Z 的一个受支持机制成分；
+但 all-position 间接迁移仍然存在，所以不能说 direct supervision 是唯一
+路径，也不能推出自然语言或 MoE 路由收益。
+```
+
+它对 gating 主线的意义是提供一个候选桥：
+
+```text
+未来可以问：long-horizon / multi-token supervision 是否能让
+route-relevant hidden states 更早、更稳定地包含 feature 信息，并形成更厚
+的 routing margin？
+```
+
+当前不能 claim：
+
+```text
+MTP 已证明自然语言更强；
+MTP 已证明 MoE routing preservation；
+MTP 已证明 semantic expert identity 或 expert utility；
+K 越大越好。
+```
+
 ## 当前问题
 
 当前不是继续证明 controlled feature geometry 存在。当前要裁定的是：
@@ -192,6 +231,11 @@ Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_pres
 Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
+Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/README.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/meeting_brief.md
+Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

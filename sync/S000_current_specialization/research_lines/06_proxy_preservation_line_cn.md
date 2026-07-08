@@ -253,6 +253,17 @@ anti-feedback / preservation objective；
 proxy partition 的 expert utility 证据。
 ```
 
+相关支持线：
+
+```text
+A11 long-horizon MTP objective 说明，在受控构造中，覆盖第一个包含早期变量
+的未来目标可以直接迫使当前 hidden state 写入该变量。它还没有证明 MoE
+preservation。A11_05 进一步支持：在 clean tau=3 all-position 训练中，
+decision-prefix 上的 horizon-3 直接监督是更快、更稳定恢复变量的一个机制
+成分，但 all-position 间接迁移仍然存在。它为后续
+“objective-level route-relevant state formation”提供了一个可建模入口。
+```
+
 ## 下一步
 
 优先写 nested-learning-inspired common/rare routing audit，不要直接设计
@@ -286,6 +297,10 @@ Projects/from-attention-to-search/main/experiments/A06/A06_20_route_logit_common
 Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
+Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/README.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

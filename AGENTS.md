@@ -143,6 +143,37 @@ After evidence exists, update the same anchor. Long result explanation belongs
 in `detailed.md`; optional handoff packages only package already-updated
 evidence for meeting or collaborator use.
 
+## Story Rule
+
+A story is a research-line-level living synthesis. It explains how a line's
+research question, physical intuition, mathematical model, theorem state,
+anchor chain, experiment evidence, claim boundary, and next decision fit
+together. It does not replace anchors, protocols, `summary.md`, or
+`detailed.md`.
+
+Default story paths:
+
+```text
+Projects/<project>/main/stories/README.md
+Projects/<project>/main/stories/<line_id>/README.md
+Projects/<project>/main/stories/<line_id>/story.md
+Projects/<project>/main/stories/<line_id>/story_cn.md
+```
+
+Anchors remain the source of adjudicable questions. Stories are the source of
+line-level reading order and full argument synthesis. When a user explicitly
+asks to sync a research line, check both:
+
+```text
+Projects/<project>/main/problem_anchors/<line_id>/
+Projects/<project>/main/stories/<line_id>/
+```
+
+Root sync may copy a full story only when the user explicitly asks for full
+story sync or full line sync. If the story changes the claim boundary or next
+decision, update the relevant anchor index, `PROJECTS.md`, and root sync entry
+in the same explicit sync task.
+
 ## Artifact Alignment Contract
 
 Each artifact has one job. Do not let later artifacts rewrite earlier research
@@ -152,6 +183,7 @@ questions, and do not let early artifacts absorb run details or results.
 |---|---|---|
 | `00_handwrite_anchor.md` | the user's rough Thinking Card and exposed judgment | require or become a full 0-8 anchor before audit |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
+| story | line-level argument synthesis, theorem state, evidence chain, claim boundary, and next anchor decomposition | replace anchors, protocols, summaries, detailed records, or introduce stronger claims than the sources support |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than `summary.md` or the anchor |

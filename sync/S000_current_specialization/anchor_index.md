@@ -25,7 +25,7 @@ when the user asks for S000 sync.
 
 ## Snapshot
 
-Current copied anchor count: 75.
+Current copied anchor count: 81.
 
 The removed historical anchor is not copied:
 
@@ -51,6 +51,7 @@ anchors/06_geometry_proxy_preservation/06_2x2_expert_geometry_gate_anchor.md
 | `08_real_data_preserved_specialization/` | 11 | Real-data preserved-specialization target line. |
 | `09_common_rare_spectral_discrimination/` | 3 | Frequency and common/rare spectral-discrimination line. |
 | `10_optimizer_learning_rate_mechanism/` | 4 | Optimizer and critical-learning-rate mechanism support line. |
+| `11_long_horizon_mtp_objective/` | 6 | Supporting objective line for long-horizon MTP hidden-state supervision. |
 
 ## Reading Order
 
@@ -73,4 +74,6 @@ anchors/07_features_overlap/
 anchors/08_real_data_preserved_specialization/
 anchors/09_common_rare_spectral_discrimination/
 anchors/10_optimizer_learning_rate_mechanism/
+anchors/11_long_horizon_mtp_objective/
+stories/11_long_horizon_mtp_objective/story_cn.md
 ```

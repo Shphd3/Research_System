@@ -70,10 +70,26 @@ parked.
 |---|---|
 | `anchor_index.md` | copied-anchor inventory and line grouping |
 | `anchors/` | copied project-local anchor tree from `from-attention-to-search` |
+| `stories/` | copied project-local line stories when explicitly synced |
 | `research_lines/00_overall_current_line_cn.md` | overall 05/06/07 logic chain and strict boundary |
 | `research_lines/05_failure_mechanism_line_cn.md` | why ordinary top-1 routing fails |
 | `research_lines/06_proxy_preservation_line_cn.md` | route-relevant proxy discovery, initialization, and preservation |
 | `research_lines/07_interference_value_line_cn.md` | when a partition has functional value |
+
+Supporting objective line:
+
+```text
+anchors/11_long_horizon_mtp_objective/
+stories/11_long_horizon_mtp_objective/story_cn.md
+```
+
+This line is not the active MoE gating mainline. It asks whether multi-token
+prediction can directly supervise the current hidden state to retain a
+long-horizon variable. Current A11 evidence supports a controlled
+representation guarantee. A11_05 further supports direct decision-prefix
+horizon-3 supervision as a mechanism component for faster and more stable
+recovery in clean tau=3 all-position training. Learning efficiency remains
+controlled and partial, and MoE routing transfer remains open.
 
 ## One-Line State
 
@@ -90,6 +106,12 @@ dominance flips across common projectors, so common is a candidate mechanism,
 not an established root cause. A07 shows why value must be judged through
 common/rare interference or expert utility, but current neural evidence is
 not enough to claim real functional MoE specialization.
+
+A11 is a supporting objective line: in controlled long-horizon MTP tasks, when
+K covers the first informative future token, low loss at that horizon forces
+the current hidden state to contain the delayed variable. This may inform a
+future route-relevant hidden-state objective, but it does not prove gating
+preservation or expert utility.
 
 ## Source Links
 
@@ -119,6 +141,11 @@ Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_confli
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
+Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/README.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/meeting_brief.md
+Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

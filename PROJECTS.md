@@ -124,6 +124,40 @@ The current route is:
 -> 07 functional interference value after preservation
 ```
 
+Supporting objective line:
+
+```text
+11 long-horizon MTP objective
+```
+
+Line story:
+
+```text
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+```
+
+Role:
+
+```text
+This line tests whether multi-token prediction can directly supervise the
+current hidden state to retain a long-horizon variable. It is a mechanism
+candidate for future route-relevant hidden-state formation, not a replacement
+for the MoE gating preservation mainline.
+```
+
+Current A11 boundary:
+
+```text
+Controlled evidence supports a representation guarantee: if K covers the first
+informative future horizon and the covered target is a one-to-one code for the
+early variable, low loss at that horizon forces h_T to contain that variable.
+A11_05 further supports direct decision-prefix horizon-3 supervision as one
+mechanism component for faster and more stable recovery in clean tau=3
+all-position training. Learning-efficiency evidence is still partial and
+controlled; A11 does not yet prove natural-language benefit, MoE routing
+preservation, semantic expert identity, or expert utility.
+```
+
 Sharper logic:
 
 ```text
@@ -219,6 +253,8 @@ Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_confli
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```
