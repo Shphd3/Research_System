@@ -83,6 +83,12 @@ and the increment depends on centered output-direction alignment. Larger K by
 itself is not the causal object.
 ```
 
-Next decision: either close A11 as a controlled-objective mechanism line, or
-write a separate bridge anchor that tests whether this direct semantic velocity
-predicts route-relevant state changes for the MoE mainline.
+Next decision: open A11_10 as a theory-closure problem for A11 itself. The
+target is to prove or sharply bound when positive first-order semantic velocity
+implies smaller semantic-margin hitting time or higher early recovery AUC:
+
+```text
+K=2 minimal theorem -> tau=m covering theorem -> general-K vector-sum /
+next-K inclusion law -> finite-step efficiency under explicit optimization
+assumptions.
+```

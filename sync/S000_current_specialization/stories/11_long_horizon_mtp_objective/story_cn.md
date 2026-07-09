@@ -5,7 +5,7 @@
 - 研究线：`11_long_horizon_mtp_objective`
 - 语言：中文
 - 写作模式：综合 + 下一阶段前瞻
-- 当前核心变化：从“表示存在定理”推进到“一阶读出有效语义速度”的一般 K 向量和机制；11_06 / 11_07 验证 K=3 直接监督机制与全位置边界，A11_08 支持一般 K 的方向对齐规律，A11_08b 验证该方向机制不是单纯 step-0 artifact，A11_09 支持 next-K inclusion law
+- 当前核心变化：以 K=2 作为最小理论基元，从“表示存在定理”推进到“一阶读出有效语义速度”的一般 K 向量和机制；11_06 / 11_07 验证 K=3 直接监督机制与全位置边界，A11_08 支持一般 K 的方向对齐规律，A11_08b 验证该方向机制不是单纯 step-0 artifact，A11_09 支持 next-K inclusion law；下一步应推进从一阶速度到有限步学习效率的理论闭环
 
 ## 0. 术语约定
 
@@ -21,6 +21,7 @@
 | 读出有效语义 margin | $h_T$ 是否沿着正确未来 token 的输出方向移动 | $M_Z=\frac1m\sum_z(u_{S_z}-\bar u)^\top h_z$ | 是新的效率理论量 | 多步收敛或自然语言收益 |
 | 分支分离能量 | 不同分支隐藏状态是否分开 | $E_Z=\frac{1}{2m^2}\sum_{z,z'}\|h_z-h_{z'}\|^2$ | 对应 probe / route 可分性 | 信息是否被输出头使用 |
 | 高恢复时间 | 达到可靠语义恢复阈值的训练步数 | $T_{0.9}=\inf\{t:Q(t)\ge0.9\text{ 连续评估成立}\}$ | 实验学习效率指标 | 一阶机制原因 |
+| 有限步效率 | 在若干训练步内更早越过语义 margin 或恢复阈值 | 例如 $T_\gamma=\inf\{t:M_K(t)\ge\gamma\}$ | 下一步要证明的学习效率命题 | 仅由一阶速度自动推出 |
 | 保守恢复分数 $Q$ | 同时要求预测、探针、替换一致 | $Q=\min\{A,P,S\}$ | 防止 probe 假阳性 | 完整因果证明 |
 | 有信息未来位置集合 $\mathcal I_K$ | 被 K 覆盖且含有 $Z$ 新信息的位置 | $\mathcal I_K=\{j\le K:I(Z;Y_j\mid Y_{<j})>0\}$ | 一般 K 的核心对象 | 位置越多一定越好 |
 | 一般 K 合成语义方向 | 多个有信息未来位置的读出方向向量和 | $v_z^{(K)}=\sum_{j\in\mathcal I_K}\lambda_j(u_{j,z}-\bar u_j)$ | 决定当前状态的一阶语义更新方向 | 多步训练一定更快 |
@@ -30,11 +31,11 @@
 
 ## 1. 摘要
 
-A11 的原始问题是：MTP 是否比 NTP 更适合学习长程语义信息。现有 K=2 / K=3 结果已经证明了一个表示层结论：如果 MTP 的预测范围 $K$ 覆盖第一个语义显现位置 $\tau$，且 $Y_\tau=S_Z$ 一一编码早期变量 $Z$，那么低第 $\tau$ 个未来位置损失会推出当前状态 $h_T$ 含有 $Z$。这说明 MTP 有 NTP 在同一前缀上没有的直接表示约束。
+A11 的原始问题是：MTP 是否比 NTP 更适合学习长程语义信息。理论组织上，K=2 是最小基元：$Y_1=A$ 不含早期变量 $Z$，$Y_2=S_Z$ 一一编码 $Z$。这个构造已经说明，next-two 比 next-one 多出一个直接作用在当前 $h_T$ 上的语义监督项。推广到 K=3 / 一般 K 后，结论变成：如果 MTP 的预测范围 $K$ 覆盖第一个语义显现位置 $\tau$，且 $Y_\tau=S_Z$ 一一编码 $Z$，那么低第 $\tau$ 个未来位置损失会推出当前状态 $h_T$ 含有 $Z$。这说明 MTP 有 NTP 在同一前缀上没有的直接表示约束。
 
 但这还不是学习效率结论。新的理论推进是定义一个更接近“训练早期变快”的量：读出有效语义 margin。它衡量的不是 $h_T$ 最终是否含有 $Z$，而是训练一开始，目标函数的梯度是否把每个分支的 $h_T$ 朝正确未来 token $S_Z$ 的输出方向推动。
 
-在最小 $\tau=3$ 构造 $Y_1=A, Y_2=C, Y_3=S_Z$ 中，可以证明：在分支隐藏状态初始相同的可训练前缀表示模型里，K=1 和 K=2 只产生分支无关的公共更新，对读出有效语义 margin 的一阶增长为 0；K=3 的第 3 未来位置损失产生严格正的一阶增长。这个定理把“更直接地学”推进到“在一个明确效率量上更快地学”。
+在 K=2 最小构造中，可以证明：K=1 只产生分支无关的公共更新，对读出有效语义 margin 的一阶增长为 0；K=2 的第二未来位置损失产生严格正的一阶增长。把语义显现位置后移到 $\tau=3$，即 $Y_1=A, Y_2=C, Y_3=S_Z$，同一证明给出：K=1 和 K=2 为 0，K=3 为正。这个定理把“更直接地学”推进到“在一个明确效率量上更快地学”。
 
 现有 A11_05 表明，在无噪声 $\tau=3$ 全位置训练中，当前决策前缀上的第 3 位置监督是 K=3 速度优势的可测机制组件：给 K=2 加这个直接项几乎匹配完整 K=3，去掉 K=3 的这个直接项会变弱。但 A11_05 也暴露边界：随机初始化可能在第 0 步泄漏分支，且全位置训练存在间接迁移。
 
@@ -59,20 +60,21 @@ A11_09 验证了 next-K inclusion law：在冻结输出头、clean decision-only
 3. **一阶优化速度优势**：训练早期，MTP 梯度是否更快把 $h_T$ 推向正确未来输出方向。
 4. **多步训练效率优势**：实际训练中是否更小 $T_{0.9}$ 或更高早期 $Q$ 曲线面积。
 
-A11 过去已经较好回答了第 1 和第 2 层。现在要推进第 3 层，并把第 4 层作为实验闭环。
+A11 现在已经较好回答了第 1、第 2 和受控第 3 层。第 4 层仍不是定理：我们有全位置实验支持 direct 条件更稳、更快，但还没有从一阶速度严格推出有限步 hitting-time 优势。
 
-## 3. 为什么旧 story 的后续实验需要微调
+## 3. 为什么下一步应先推进理论闭环
 
-旧 story 把下一步设为“无泄漏全位置语义效率桥接”。这个实验仍然需要，但不应该作为第一步。原因是：
+A11 现在已经不缺一个简单的“再跑一次全位置曲线”。原因是：
 
 1. 全位置训练会引入间接迁移，容易把“当前前缀直接监督”与“其他位置共享参数更新”混在一起。
 2. 随机初始化可能让 $Q(0)$ 已经很高，导致 $T_{0.9}$ 失去速度含义。
-3. 即使全位置实验显示 K=3 更快，也还缺少一个紧贴目标函数的最小优化量来说明为什么更快。
+3. 即使全位置实验显示 K=3 更快，也还需要一个紧贴目标函数的理论量来说明为什么更快。
 
-因此，11_06 / 11_07 的结果应被读成一次 story 对照：
+因此，11_06 / 11_07 的结果应被读成一次理论收束：
 
-1. 旧 story 预期正确：覆盖 $\tau=3$ 的直接监督确实产生一阶读出 margin 优势。
-2. 旧 story 的边界需要更尖锐：all-position 中的 $Q$ 恢复并不等价于直接语义监督，因为间接迁移可以制造 probe-readable recovery。
+1. 覆盖 $\tau=3$ 的直接监督确实产生一阶读出 margin 优势。
+2. all-position 中的 $Q$ 恢复不等价于直接语义监督，因为间接迁移可以制造 probe-readable recovery。
+3. 下一步应把 K=2 最小基元、$\tau=m$ 覆盖规律、一般 K 向量和规律统一起来，并补上从一阶速度到有限步效率的证明条件。
 
 ## 4. 数据和训练布局
 
@@ -233,7 +235,42 @@ $$
 
 该定理说明低 MTP future loss 强迫 $h_T$ 含 $Z$，但不说明训练速度。
 
-### 8.2 新定理：K=3 有严格一阶读出有效 margin 增长
+### 8.2 K=2 最小理论基元
+
+K=2 是最小的 MTP-vs-NTP 理论单元。数据为：
+
+$$
+Y_1=A,\qquad Y_2=S_Z.
+$$
+
+其中 $A$ 对所有分支共享，$S_Z$ 一一编码 $Z$。令第 2 位置输出方向为：
+
+$$
+u_z=u_{S_z}^{(2)},\qquad \bar u=\frac1m\sum_z u_z.
+$$
+
+定义：
+
+$$
+M_Z^{(2)}(h)=\frac1m\sum_z(u_z-\bar u)^\top h_z.
+$$
+
+在分支折叠初始化、固定第 2 位置输出向量不全相同的条件下：
+
+$$
+G_1^{margin}(\theta_0)=0,
+$$
+
+但：
+
+$$
+G_2^{margin}(\theta_0)
+=\frac{\lambda_2}{m^2}\sum_z\|u_z-\bar u\|^2>0.
+$$
+
+含义：next-one 只看到共享目标 $A$，不能给 $h_T$ 分支相关的一阶语义更新；next-two 直接看到 $S_Z$，因此在读出有效语义 margin 上有严格正的一阶速度。A11_01 / A11_03 是这个 K=2 基元的实验支撑。
+
+### 8.3 $\tau=3$ 后移定理：K=3 有严格一阶读出有效 margin 增长
 
 **定理。** 在上述 $\tau=3$ 构造、分支折叠初始化、固定第 3 位置输出向量 $u_z$ 不全相同的条件下，梯度流满足：
 
@@ -313,7 +350,7 @@ $$
 
 证毕。
 
-### 8.3 分支分离能量是二阶量
+### 8.4 分支分离能量是二阶量
 
 定义：
 
@@ -341,7 +378,7 @@ $$
 
 这说明 K=3 在二阶意义上增加分支分离能量。该量更接近 probe / route 可分性，但不保证输出头会使用这些信息；因此它应作为辅助量。
 
-### 8.4 一般 K 的向量和定理
+### 8.5 一般 K 的向量和定理
 
 令 $\mathcal I_K$ 是 K 覆盖到的有信息未来位置集合。对每个 $j\in\mathcal I_K$，定义：
 
@@ -377,7 +414,7 @@ $$
 
 这个式子给出 A11_08 的核心判断：新增有信息未来位置是否帮助，取决于它与已有合成方向的内积，而不是取决于 K 本身变大。
 
-### 8.5 推广到可训练编码器的条件
+### 8.6 推广到可训练编码器的条件
 
 若 $h_z=f_\theta(X_{\le T}^{(z)})$，则梯度通过雅可比矩阵 $J_z=\partial h_z/\partial\theta$ 传回参数。上述结论需要一个可辨识性假设：分支 token 对编码器有可区分的参数通道，且 $J_zJ_z^\top$ 在 $\{u_z-\bar u\}$ 张成的方向上非退化。
 
@@ -389,17 +426,18 @@ $$
 |---|---|---|---|
 | 结构监督 | 覆盖 $\tau$ 才有直接语义目标 | $I(Z;Y_j\mid Y_{<j})$ | K=2/K=3 构造已支持 |
 | 表示存在 | 低 $Y_\tau$ loss 推出 $h_T$ 含 $Z$ | $I(h_T;Z)$ 下界 | 旧定理已支持 |
+| K=2 最小效率基元 | next-two 的 $Y_2=S_Z$ 项给 $h_T$ 严格正的一阶语义速度 | $G_2^{margin}$ | A11_01 / A11_03 支持：K=2 能比 fixed next-one 更早恢复 $Z$，但有优化不稳定 |
 | 一阶效率 | K=3 梯度使 $M_Z$ 严格增长，K=1/K=2 为 0 | $G_M^{hidden}$ | 11_06 支持：K3 为 0.003816，K1/K2 近似 0 |
-| 一般 K 方向叠加 | 多个有信息未来位置按中心化输出方向向量和贡献速度 | $G_K^{hidden}$，$G_K^{pred}$ | A11_08 支持：aligned 0.015262，low/conflict 0.000954，5/5 seeds 同向 |
+| 一般 K 方向叠加 | 多个有信息未来位置按中心化输出方向向量和贡献速度 | $G_K^{hidden}$，$G_K^{pred}$ | A11_08 / A11_09 支持：aligned 0.015262，low/conflict 0.000954，K3 turn on，shared H4 无增量 |
 | 二阶可分性 | K=3 增加分支分离能量 | $E_Z$ 的速度 / 轨迹 | 11_06 辅助支持，K3 短曲线 $E_Z$ 增长 |
 | 多步效率 | K=3 是否更小 $T_{0.9}$ / 更高 AUC | $Q(t),T_{0.9}$ | 11_07 支持 direct 条件更稳，但也显示 indirect transfer |
-| 主线桥接 | MTP 写入的 $Z$ 是否有利于路由 | route margin / sign flip | 尚未开始，不应直接声称 |
+| 有限步效率理论 | 一阶语义速度能否推出更小 hitting time | $T_\gamma$，$T_{0.9}$，局部平滑和 margin-growth 下界 | 尚未证明，是下一步理论主线 |
 
 ## 10. Anchor 证据链
 
 现有证据链应这样读：
 
-1. 11_01 证明并验证 K=2 objective-level separation。
+1. 11_01 证明并验证 K=2 objective-level separation：next-two 学会共享 $Y_1$ 的同时，让 $h_T$ 对 $S_Z$ 可预测、可探针、可 branch-swap。
 2. 11_02 说明第二未来词元必须含有新分支信息，且梯度冲突不等于有害。
 3. 11_03 把 K=2 推到学习曲线，但稳定性不足。
 4. 11_04 验证 first-informative-horizon，即 $\tau=3$ 时只有 K=3 在单决策前缀中直接覆盖 $S_Z$。
@@ -407,8 +445,14 @@ $$
 6. 11_06 验证新理论量：一阶读出有效 margin 增长。结果支持：K3 的 $G_M^{hidden}$ 为正，K1/K2 近似为 0。
 7. 11_07 回到无泄漏全位置训练，判断该一阶优势是否转化为多步效率。结果支持 direct 条件更强，但同时确认 all-position indirect transfer 仍然存在。
 8. 11_08 将 K=3 机制推广到一般 K：在同样 `K=4` 和同样两个有信息未来位置下，读出方向 aligned 与 low/conflict 会产生不同的一阶隐藏状态语义速度，结果支持向量和公式。
+9. 11_08b 检查 A11_08 是否只是 step-0 静态 output geometry，结果支持 frozen-head 下的 hidden velocity 机制，同时发现 trainable head 会漂移。
+10. 11_09 验证 next-K inclusion law：K 只在新增有信息 horizon 时打开或改变语义速度；新增 shared horizon 没有直接一阶语义增量，新增 aligned / low-conflict 信息 horizon 分别增强 / 削弱。
 
 ## 11. 实验结果整合
+
+A11_01 / A11_03 的关键信息是：K=2 是最小可验证基元。A11_01 中 fixed-next-one 学会共享 $Y_1=A$ 但保持 branch-blind，而 next-two 的 offset-2 accuracy、frozen probe、branch-swap consistency 都达到 1.0。A11_03 进一步显示，在 clean K=2 decision-only 中，next-two 比 fixed-next-one 有更高早期 AUC 和 reach rate；但 identical initialization 下只成功 2/5 seeds，因此它支持“直接监督有用”，不支持“优化必然成功”。
+
+A11_04 的关键信息是：当第一个有信息未来位置后移到 $\tau=3$，decision-only 中 K=1/K=2 不恢复，K=3 恢复；all-position 中 K=3 仍最强，但 K=1/K=2 可通过间接迁移恢复。因此 $\tau$ 后移实验把 K=2 基元推广成 first-informative-horizon 规律，同时给出了 all-position claim boundary。
 
 A11_05 的关键信息是：K=2 加当前决策前缀第 3 位置监督后，几乎匹配完整 K=3；K=3 去掉这个直接项后变弱。这说明直接语义监督不是抽象故事，而是全位置训练中可测的机制组件。
 
@@ -427,6 +471,10 @@ A11_08 的关键信息是：同样 `K=4`、同样两个有信息未来位置 `{3
 
 aligned 与 low/conflict 的差值为 `0.014308`，且 `5/5` 个 seed 都支持 aligned 更大。局部语言建模守卫也通过：所有条件最终 `Y1/Y2 accuracy=1.0/1.0`。因此，新的结论不是“只有 K3 能恢复 $Z$”，而是：direct informative-horizon supervision 让 $h_T$ 沿正确输出方向移动；一般 K 的效果取决于覆盖到的有信息未来位置的读出方向向量和；all-position 中的 $Q$ 恢复必须和 native H3 / $M_Z^{ref}$ 分开读。
 
+A11_08b 的关键信息是：A11_08 的方向机制不是纯 step-0 artifact。冻结 output heads 时，`aligned_h3_h4` 的 early AUC `G_hidden_ref=0.002660`，`low_conflict_h3_h4=0.000184`，且 `5/5` seeds 支持 aligned 更大。但可训练 head 下 `low_conflict_h3_h4` 的 `cos_34` 从 `-1.000` 漂移到 `-0.268`，所以多步 trainable 曲线必须记录 current geometry，不能只用初始化几何解释。
+
+A11_09 的关键信息是：next-K inclusion law 通过。`single_h3` 中 one-step `G_hidden` 为 `K2=0, K3=0.003816, K4=0.003816`，说明首次覆盖有信息 H3 时语义速度打开，新增 shared H4 没有直接增量；`aligned_h3_h4` 为 `0, 0.003816, 0.015262`，说明新增对齐信息位置增强；`low_conflict_h3_h4` 为 `0, 0.003816, 0.000954`，说明新增冲突信息位置削弱。这个结果把“固定 K=4 方向几何”推进成“next-K 增量规律”。
+
 ## 12. 反例和竞争解释
 
 | 竞争解释 | 为什么合理 | 当前处理 | 剩余风险 |
@@ -442,12 +490,13 @@ aligned 与 low/conflict 的差值为 `0.014308`，且 `5/5` 个 seed 都支持 
 
 可以说：
 
-1. 在受控 K=2 / K=3 构造中，MTP 覆盖 $\tau$ 时给 $h_T$ 直接语义监督。
+1. K=2 是最小理论基元：当 $Y_1$ 共享、$Y_2=S_Z$ 时，next-two 给 $h_T$ 直接语义监督，而 next-one 在同一前缀上没有该项。
 2. 低第 $\tau$ 未来位置损失推出 $h_T$ 含有 $Z$。
-3. 在最小可训练前缀表示模型中，K=3 对读出有效语义 margin 有严格正的一阶增长，K=1/K=2 为 0。
+3. 在最小可训练前缀表示模型中，覆盖第一个有信息未来位置会带来严格正的一阶读出有效 margin 增长；非覆盖目标只给公共更新。
 4. 11_06 支持该一阶机制在受控 Transformer activation-space 中可观测：K3 的 $G_M^{hidden}$ 为正，K1/K2 近似为 0。
 5. 11_07 支持当前决策前缀第 3 位置监督是 all-position 训练中更强 native readout 和更稳定 recovery 的机制组件。
-6. A11_08 支持一般 K 的向量和机制：同样 K 和同样两个有信息未来位置下，aligned 输出方向给出更高 $G_K^{hidden}$，low/conflict 输出方向给出更低 $G_K^{hidden}$。
+6. A11_08 / A11_09 支持一般 K 的向量和 inclusion 机制：K 的作用取决于新增有信息 horizon 及其中心化输出方向，而不是 K 大小本身。
+7. A11_08b 支持 hidden semantic velocity 机制不是纯 step-0 artifact；但可训练 head 会漂移，曲线解释必须记录 current geometry。
 
 不能说：
 
@@ -459,6 +508,7 @@ aligned 与 low/conflict 的差值为 `0.014308`，且 `5/5` 个 seed 都支持 
 6. 一阶 margin 优势自动推出任意设置下的多步 $T_{0.9}$ 优势。
 7. A11 已经证明 MoE 路由保持或专家收益。
 8. A11_08 已经证明自然语言中未来 token 方向天然对齐。
+9. 当前已经完成有限步学习效率定理；我们只有一阶速度定理和受控多步实验支持。
 
 ## 14. Anchor 分解和下一步
 
@@ -469,7 +519,7 @@ aligned 与 low/conflict 的差值为 `0.014308`，且 `5/5` 个 seed 都支持 
 | 11_08：一般 K 读出方向动力学 | 多个有信息未来位置是否按读出方向向量和贡献一阶速度？ | 避免把结论误写成 K 越大越好 | $G_K^{hidden}$，几何预测，seed 方向一致性，本地损失 | 已支持：aligned 高于 low/conflict，shared 为 0，single 为正 |
 | 11_08b：output geometry dynamics audit | A11_08 的方向几何是否只是 step-0 静态构造？ | 区分 hidden velocity 机制和 output-head co-adaptation | $G_{hidden}^{ref/current}$，$M_Z^{ref/current}$，$\cos_{34}$，head drift | 已支持 frozen-head velocity 机制；可训练 head 曲线必须记录 current geometry |
 | 11_09：next-K inclusion law | K 增大时，语义速度是否只在覆盖有信息位置时打开，并按新增方向变化？ | 把固定 K=4 的方向规律变成 next-2 / next-3 / next-K 规律 | turn-on、no-increment、vector-increment、local guard | 已支持：K2 近 0，K3 turn on，shared H4 无直接增量，aligned 增强，low/conflict 削弱 |
-| 未来 MoE 桥接 | 写入的 $Z$ 是否改善 route-relevant margin？ | 连接主线 | 路由 margin、sign flip、LM loss，且必须用 native H3 / $M_Z^{ref}$ 保护 direct evidence | 若无改善，A11 仍只是表示目标机制线 |
+| 11_10：有限步效率理论闭环 | 一阶语义速度优势在什么假设下推出更小 hitting time 或更高早期 AUC？ | 把“方向更对”推进到“学得更快”的理论命题 | $T_\gamma$，$T_{0.9}$，margin-growth 下界，head drift bound | 若失败，A11 只能 claim 一阶机制和受控经验效率，不能 claim 理论效率 |
 
 ## 14.5 下一步理论规划
 
@@ -477,7 +527,7 @@ aligned 与 low/conflict 的差值为 `0.014308`，且 `5/5` 个 seed 都支持 
 
 > 当 $K$ 覆盖有信息未来词时，MTP 会给 $h_T$ 一个直接语义更新方向；多个有信息未来位置按中心化输出方向向量和叠加；全位置训练中还有间接迁移，但直接项会带来更强的模型自身预测、更大的语义 margin、更稳定的恢复。
 
-后续理论推进应把这句话拆成五个可证明或可实验判定的子命题。A11_09 已经给出第 1 点的受控实验证据；剩余工作是把它整理成局部命题，并决定是否进入 MoE 桥接：
+后续理论推进应把这句话拆成五个可证明或可实验判定的子命题。A11_09 已经给出第 1 点的受控实验证据；剩余工作应优先整理成局部命题，并推进第 3 点的有限步效率证明：
 
 1. **next-K inclusion law。** K 增大时，如果新增未来位置不含 $Z$，则不应带来一阶语义增量；如果首次覆盖有信息未来位置，则语义速度 turn on；如果新增第二个有信息未来位置，则增量由 $2v^\top a+\|a\|^2$ 决定。A11_09 已支持这个受控规律。
 
@@ -501,21 +551,34 @@ $$
 
 项目主线仍是 top-1 MoE 路由中的特征级专家专业化，当前瓶颈是保持性。A11 不是替代主线，而是目标函数层面的候选机制：如果 MTP 能更早、更读出有效地把长程变量写入当前状态，它未来可能帮助形成更稳定的 route-relevant hidden states。
 
-但这还没有被证明。A11_09 已经说明一般 K 的故事不是只在固定 K=4 的几何构造中成立；连接 MoE 之前，还需要单独开一个最小桥接判定：A11 写入的长程变量是否真的改善 route-relevant margin、减少 sign flip，且不引入不可接受的 LM loss 退化。
+但这不是当前下一步。A11 现在更应该先在理论上闭合自身故事：把 K=2 最小基元、$\tau=m$ 覆盖规律、一般 K 向量和规律整理成一个统一命题，并说明在什么优化假设下，一阶语义速度优势可以推出有限步学习效率优势。
 
 ## 16. 下一步唯一决策
 
 当前唯一下一步：
 
-> 决定是否把 A11 收束为“受控目标函数机制线”，然后只开一个最小 MoE 桥接 anchor：检验 direct semantic velocity / native H3 / $M_Z^{ref}$ 是否能转化为 route-relevant margin 和 sign flip 改善。
+> 开 A11_10 理论闭环：证明或界定从 $G_K^{hidden}>0$ 到更小 $T_\gamma$ / 更高早期 AUC 的条件；同时整理 K=2 -> $\tau=m$ -> general K 的统一 theorem statement。
 
-不要再只重复 all-position $Q$ 曲线，也不要把桥接实验扩成新的 K 大扫参。11_06 / 11_07 已经说明：direct supervision 的证据应由 $G_M^{hidden}$、$M_Z^{ref}$、native H3 和 guarded recovery 联合给出；A11_08 / A11_09 又说明：一般 K 的增益必须按输出方向向量和有信息 horizon 审计，而不是按 K 大小审计。
+不要再只重复 all-position $Q$ 曲线，也不要现在转向 MoE bridge。11_06 / 11_07 已经说明：direct supervision 的证据应由 $G_M^{hidden}$、$M_Z^{ref}$、native H3 和 guarded recovery 联合给出；A11_08 / A11_09 又说明：一般 K 的增益必须按输出方向向量和有信息 horizon 审计，而不是按 K 大小审计。下一步理论问题是：需要哪些最小优化假设，才能把这些一阶量变成有限步效率定理。
 
 ## Source Map
 
 - `sync/S000_current_specialization/stories/11_long_horizon_mtp_objective/story_cn.md`
 - `sync/S000_current_specialization/anchors/11_long_horizon_mtp_objective/11_05_semantic_efficiency_bridge_anchor.md`
 - `sync/S000_current_specialization/anchors/11_long_horizon_mtp_objective/README.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_01_k2_branch_delayed_next_two_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_01_k2_branch_delayed_next_two/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_01_k2_branch_delayed_next_two/detailed.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_02_two_token_shared_trunk_signal_interference_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_02_two_token_shared_trunk_signal_interference/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_02_two_token_shared_trunk_signal_interference/detailed.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_03_k2_semantic_efficiency_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_03_k2_semantic_efficiency/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_03_k2_semantic_efficiency/detailed.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_04_k3_first_informative_horizon_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_04_k3_first_informative_horizon/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_04_k3_first_informative_horizon/detailed.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_05_semantic_efficiency_bridge_anchor.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/detailed.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md`
