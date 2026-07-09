@@ -88,8 +88,12 @@ prediction can directly supervise the current hidden state to retain a
 long-horizon variable. Current A11 evidence supports a controlled
 representation guarantee. A11_05 further supports direct decision-prefix
 horizon-3 supervision as a mechanism component for faster and more stable
-recovery in clean tau=3 all-position training. Learning efficiency remains
-controlled and partial, and MoE routing transfer remains open.
+recovery in clean tau=3 all-position training. A11_06 supports the first-order
+hidden readout-margin mechanism, and A11_07 shows that direct decision-prefix
+horizon-3 supervision gives stronger native H3 prediction and `M_Z_ref` under
+no-leakage all-position training. Boundary: all-position indirect transfer can
+still make `Z` probe-readable, so `Q` alone is not direct-supervision evidence;
+MoE routing transfer remains open.
 
 ## One-Line State
 
@@ -109,9 +113,11 @@ not enough to claim real functional MoE specialization.
 
 A11 is a supporting objective line: in controlled long-horizon MTP tasks, when
 K covers the first informative future token, low loss at that horizon forces
-the current hidden state to contain the delayed variable. This may inform a
-future route-relevant hidden-state objective, but it does not prove gating
-preservation or expert utility.
+the current hidden state to contain the delayed variable. A11_06 / A11_07 add
+controlled efficiency evidence: the covering target creates positive
+hidden-state readout-margin velocity and stronger native direct prediction.
+This may inform a future route-relevant hidden-state objective, but it does not
+prove gating preservation or expert utility.
 
 ## Source Links
 
@@ -146,6 +152,8 @@ Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/sto
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/meeting_brief.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

@@ -153,9 +153,14 @@ informative future horizon and the covered target is a one-to-one code for the
 early variable, low loss at that horizon forces h_T to contain that variable.
 A11_05 further supports direct decision-prefix horizon-3 supervision as one
 mechanism component for faster and more stable recovery in clean tau=3
-all-position training. Learning-efficiency evidence is still partial and
-controlled; A11 does not yet prove natural-language benefit, MoE routing
-preservation, semantic expert identity, or expert utility.
+all-position training. A11_06 supports the first-order hidden readout-margin
+mechanism: K3 has positive G_M_hidden while K1/K2 are near zero in the
+no-leakage decision-prefix setup. A11_07 supports direct decision-prefix
+horizon-3 supervision as the stronger all-position path: direct conditions
+reach native H3=1.0 and large M_Z_ref, while K1/K2/masked K3 can still recover
+nontrivial Q through indirect transfer. Therefore Q alone is not direct
+supervision evidence. A11 still does not prove natural-language benefit, MoE
+routing preservation, semantic expert identity, or expert utility.
 ```
 
 Sharper logic:
@@ -255,6 +260,8 @@ Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_bin
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
 Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

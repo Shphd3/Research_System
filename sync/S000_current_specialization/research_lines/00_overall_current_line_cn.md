@@ -140,12 +140,24 @@ horizon-3 监督，是 K=3 更快、更稳定恢复 Z 的一个受支持机制�
 路径，也不能推出自然语言或 MoE 路由收益。
 ```
 
+A11_06 / A11_07 进一步更新：
+
+```text
+11_06 支持一阶效率机制：在无泄漏 decision-prefix 设置中，K3 的
+hidden readout-margin velocity 为正，K1/K2 近似为 0。11_07 支持该
+direct horizon-3 监督在无泄漏 all-position 训练中给出更强 native H3、
+M_Z_ref、reach rate 和 early AUC。但 K1/K2/masked K3 仍可通过
+all-position 间接迁移得到非平凡 Q，因此 Q 不能单独作为 direct
+supervision 证据。
+```
+
 它对 gating 主线的意义是提供一个候选桥：
 
 ```text
 未来可以问：long-horizon / multi-token supervision 是否能让
 route-relevant hidden states 更早、更稳定地包含 feature 信息，并形成更厚
-的 routing margin？
+的 routing margin？这个桥接必须使用 native H3 / M_Z_ref 保护 direct
+semantic-state evidence，不能只看 Q。
 ```
 
 当前不能 claim：
@@ -155,6 +167,7 @@ MTP 已证明自然语言更强；
 MTP 已证明 MoE routing preservation；
 MTP 已证明 semantic expert identity 或 expert utility；
 K 越大越好。
+Q 单独证明 direct supervision。
 ```
 
 ## 当前问题
@@ -236,6 +249,8 @@ Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/sto
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/meeting_brief.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```
