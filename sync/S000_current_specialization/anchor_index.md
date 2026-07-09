@@ -25,7 +25,7 @@ when the user asks for S000 sync.
 
 ## Snapshot
 
-Current copied anchor count: 81.
+Current copied anchor count: 103.
 
 The removed historical anchor is not copied:
 
@@ -43,15 +43,15 @@ anchors/06_geometry_proxy_preservation/06_2x2_expert_geometry_gate_anchor.md
 
 | Line | Copied anchor count | Role |
 |---|---:|---|
-| `00_foundation_definition/` | 1 | Defines feature-level specialization and metric boundaries. |
-| `01_common_operator_mechanism/` | 5 | Defines and audits common operators before method construction. |
-| `05_failure_mechanism/` | 7 | Explains ordinary top-1 failure mechanisms and early lock-in. |
-| `06_geometry_proxy_preservation/` | 36 | Main proxy discovery, initialization, and preservation line. |
-| `07_features_overlap/` | 8 | Functional value, common/rare interference, and route-utility binding. |
+| `00_foundation_definition/` | 2 | Defines feature-level specialization and metric boundaries. |
+| `01_common_operator_mechanism/` | 9 | Defines and audits common operators before method construction. |
+| `05_failure_mechanism/` | 8 | Explains ordinary top-1 failure mechanisms and early lock-in. |
+| `06_geometry_proxy_preservation/` | 42 | Main proxy discovery, initialization, and preservation line. |
+| `07_features_overlap/` | 9 | Functional value, common/rare interference, and route-utility binding. |
 | `08_real_data_preserved_specialization/` | 11 | Real-data preserved-specialization target line. |
-| `09_common_rare_spectral_discrimination/` | 3 | Frequency and common/rare spectral-discrimination line. |
+| `09_common_rare_spectral_discrimination/` | 4 | Frequency and common/rare spectral-discrimination line. |
 | `10_optimizer_learning_rate_mechanism/` | 4 | Optimizer and critical-learning-rate mechanism support line. |
-| `11_long_horizon_mtp_objective/` | 6 | Supporting objective line for long-horizon MTP hidden-state supervision. |
+| `11_long_horizon_mtp_objective/` | 12 | Supporting objective line for long-horizon MTP hidden-state supervision. |
 
 ## Reading Order
 

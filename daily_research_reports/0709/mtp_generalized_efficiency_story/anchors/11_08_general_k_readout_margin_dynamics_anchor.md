@@ -1,6 +1,6 @@
 # 11_08 General-K Readout-Margin Dynamics Anchor
 
-Status: proposed daily anchor.  
+Status: supported by A11_08 full run on 2026-07-09.  
 Parent line: `11_long_horizon_mtp_objective`.  
 Purpose: test the general-K theorem behind MTP semantic efficiency.
 
@@ -12,13 +12,13 @@ Purpose: test the general-K theorem behind MTP semantic efficiency.
 
 **Key variables:** early variable `Z`; current state `h_T`; active horizon K; informative horizon set `I_K`; centered output direction `u_{j,z}-bar u_j`; aggregate semantic direction `v_z^(K)`; readout-effective margin `M_K`; one-step margin velocity `G_K`.
 
-**Causal relation:** If general-K efficiency is driven by additive aligned future supervision, then adding an informative horizon with aligned branch-output directions should increase `Delta M_K / eta`; adding an uninformative horizon should not; adding a conflicting informative horizon may reduce or destabilize the margin speed.
+**Causal relation:** If general-K efficiency is driven by additive aligned future supervision, then adding an informative horizon with aligned branch-output directions should increase `G_K_hidden`; adding an uninformative horizon should not; adding a conflicting informative horizon may reduce or destabilize the margin speed.
 
-**Observable metric:** Primary metric is `Delta M_K / eta` from one-step decision-prefix updates. Secondary metrics are `Delta E_Z / eta^2`, native informative-horizon accuracy, and local-target guard.
+**Observable metric:** Primary metric is the one-step hidden-gradient semantic velocity `G_K_hidden`, the activation-space derivative of the aggregate readout-effective margin. Secondary metrics are `Delta M_K / eta`, `Delta E_Z / eta^2`, native informative-horizon accuracy, guarded `Q_eval`, and local-target guard.
 
 **Alternative explanations:** Improvements may come from loss scale, more heads, probe-only recovery, or random branch leakage. Controls must keep architecture fixed, audit step-0 leakage, and compare aligned / orthogonal / conflicting informative-horizon constructions.
 
-**Decision rule:** Support if the observed one-step margin velocity follows the vector-sum prediction across aligned, orthogonal, uninformative, and conflicting horizon regimes.
+**Decision rule:** Support if the observed one-step hidden-gradient semantic velocity follows the vector-sum prediction across shared-only, single-informative, aligned two-informative, and low/conflicting two-informative horizon regimes.
 
 ## 1. Decision Question
 
@@ -108,8 +108,8 @@ Therefore monotonic improvement requires alignment, not merely larger K.
 
 | Test | Construction | Primary metric | Support | Weaken |
 |---|---|---|---|---|
-| uninformative added horizon | add shared `Y_r=A_r` | `Delta M/eta` | no increase | increase without leakage explanation |
-| aligned informative horizon | `a_{r,z}` aligned with existing `v_z` | `Delta M/eta` | predicted increase | no increase |
+| uninformative added horizon | add shared `Y_r=A_r` | `G_K_hidden` | no increase | increase without leakage explanation |
+| aligned informative horizon | `a_{r,z}` aligned with existing `v_z` | `G_K_hidden` | predicted increase | no increase |
 | orthogonal informative horizon | centered directions orthogonal on average | velocity increases by norm term only | match prediction | mismatch |
 | conflicting informative horizon | centered directions partly negative | velocity reduces or grows less | non-monotonic pattern appears | K always improves despite conflict |
 | local guard | all regimes | Y1/Y2/shared CE | no degradation | semantic gain trades off local targets |
@@ -118,18 +118,62 @@ Therefore monotonic improvement requires alignment, not merely larger K.
 
 Use decision-only training with synthetic branch suffixes. Create horizon regimes where the output rows or target codes induce different centered direction relations.
 
-The preferred implementation is to control target-code assignment across horizons rather than manually editing model weights:
+The implemented minimal falsifier controls output-row geometry directly because
+target-code permutation alone may not create a large enough geometry gap in high
+dimension:
 
 ```text
-aligned: S_{2,z}, S_{3,z} use same branch ordering
-permuted/orthogonal: S_{3,z} uses a balanced permutation with low centered correlation
-conflicting: S_{3,z} uses reversed or antagonistic branch mapping when output geometry permits
-uninformative: Y_j shared or noise independent of Z
+shared_only_k4:     Y1=A, Y2=C, Y3=A,   Y4=C
+single_h3:          Y1=A, Y2=C, Y3=S_z, Y4=A
+aligned_h3_h4:      Y1=A, Y2=C, Y3=S_z, Y4=T_z
+low_conflict_h3_h4: Y1=A, Y2=C, Y3=S_z, Y4=T_z
 ```
 
-For each regime, run one-step diagnostics from matched initialization and compare observed `Delta M/eta` with the theorem prediction computed from output rows.
+For each regime, run one-step diagnostics from matched initialization and
+compare observed `G_K_hidden` with the theorem prediction computed from output
+rows.
 
-## 7. Claim Boundary
+## 7. Current Evidence
+
+A11_08 full run:
+
+```text
+run name: a11_08_general_k_readout_margin_full_20260709_051147
+seeds: 971, 972, 973, 974, 975
+K: 4
+active horizons: 1, 2, 3, 4
+verdict: support
+```
+
+Primary result:
+
+| Condition | `G_pred_batch_scaled` | `G_hidden` |
+|---|---:|---:|
+| `shared_only_k4` | 0.000000 | 0.000000 |
+| `single_h3` | 0.003816 | 0.003816 |
+| `aligned_h3_h4` | 0.015262 | 0.015262 |
+| `low_conflict_h3_h4` | 0.000954 | 0.000954 |
+
+Decision evidence:
+
+```text
+geometry precondition: pass
+aligned > low/conflict: 5 / 5 seeds
+shared zero guard: pass
+single positive guard: pass
+local Y1/Y2 guard: pass
+falsifier: did not fire
+```
+
+Source records:
+
+```text
+Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/protocol.md
+Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/detailed.md
+```
+
+## 8. Claim Boundary
 
 Can claim if supported:
 
@@ -145,6 +189,18 @@ Natural-language MTP benefit follows.
 All-position training will follow the same monotonic pattern without indirect transfer controls.
 ```
 
-## 8. Next Decision
+## 9. Next Decision
 
-If 11_08 passes, use the measured direction-alignment law to design harder multi-horizon datasets. If it fails, the current K=3 margin theorem remains valid but does not generalize as a simple additive-direction story.
+Do not move to MoE yet. The next anchor should test the next-2 / next-3 /
+next-K inclusion law:
+
+```text
+When K increases, does first-order semantic velocity turn on exactly when K
+first includes an informative future horizon, remain near zero when the added
+horizon is uninformative, and change by the predicted vector increment when the
+added horizon is informative?
+```
+
+If this inclusion-law anchor passes, the story can then use the aggregate
+semantic direction as a cleaner candidate bridge object for route-relevance or
+MoE geometry.

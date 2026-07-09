@@ -78,11 +78,33 @@ no-position slot bridge. MPI improves feature-route NMI over vanilla
 with MPI-c8 and worsens margin p05 to `-20.579`, so MPI also does not correct
 the mixed all-position source. Therefore MPI is retained as a useful
 spectral-router baseline, not as the next mainline solution.
+A06_27 tests gradient/Fisher route-state selection on the same uniform
+no-position slot bridge. The full run supports a bounded positive result:
+embedding-gradient top1 and embedding-gradient direction select a route-relevant
+population without feature labels and reach perfect warmup-40 feature routing
+(`feature_NMI=1.000`, positive margin p05, matched preserve `1.000`, final NMI
+`1.000`). Fisher-only subspace clustering improves NMI but keeps negative
+margin, so it is a diagnostic rather than the method. The claim boundary is
+important: post-hidden gradients are route-local by the pointwise objective,
+and embedding gradients mostly identify the route/slot region; this supports
+route-state selection, not semantic feature discovery.
+A06_30 tests whether mixed full-LM ideal-center erosion requires background or
+non-feature positions. In a no-background full-slot sequence where all 32
+positions are the same feature token, oracle all-position / predictive-position
+/ last-predictive-position center initialization all preserve all-position
+feature NMI `1.000` and final margin p05 about `4.566` after 2000 full-LM
+steps. Random routing learns the repeated-token task but remains negative in
+margin. This supports background / non-feature positions as a necessary
+mechanism candidate in the previous mixed full-LM failure, while not proving
+the full causal decomposition.
 ```
 
 Therefore preservation is not the bottleneck in the controlled no-pos bridge
-when the initial margin is above the finite safe threshold. The current
-bottleneck is real-DCLM preservation: A06_22 shows the collapse is reproducible
+when the initial margin is above the finite safe threshold. A06_27 adds a
+positive synthetic selector: embedding-gradient top1/direction can identify the
+route-relevant population and initialize a stable uniform feature router. The
+current bottleneck is real-DCLM preservation and transfer beyond the synthetic
+pointwise-loss bridge: A06_22 shows the collapse is reproducible
 and margin/sign-flip fragility is visible, but generic common-mode dominance is
 not a stable mechanism target. A06_23 adds that the real-DCLM audit must judge
 whether step-0 proxy margins exceed measured early drift, not merely whether
@@ -90,9 +112,10 @@ they are positive. A06_24_synthetic further says that simple common subtraction
 is not the next method by itself. A06_25 adds that warmup helps but does not
 solve route-relevant state selection. A06_26 adds that Redesign-style MPI
 spectral routing improves over vanilla but does not create a stable
-positive-margin feature partition; the next modeling decision should test a
-nested-learning-shaped route-state objective, with row-projected preservation
-and MPI retained as guards/baselines after a valid initialization exists.
+positive-margin feature partition. A06_27 changes the next method target from
+"find any selector" to "turn embedding-gradient selection into a margin-thick
+method and add harder locality guards," with row-projected preservation and MPI
+retained as guards/baselines after a valid initialization exists.
 RoPE / position encoding, whole-slot composition, semantic feature meaning,
 and utility remain separate boundaries.
 
@@ -115,7 +138,7 @@ Real-DCLM training preservation and failure localization
 -> A06_12, A06_13, A06_22
 
 Mechanism bridge back to controlled settings
--> A06_16, A06_17, A06_17_02, A06_17_03, A06_17_04, A06_17_05, A06_18, A06_19, A06_20, A06_21, A06_23, A06_24_toy, A06_24_synthetic, A06_25, A06_26
+-> A06_16, A06_17, A06_17_02, A06_17_03, A06_17_04, A06_17_05, A06_18, A06_19, A06_20, A06_21, A06_23, A06_24_toy, A06_24_synthetic, A06_25, A06_26, A06_27
 
 Static expert-geometry support
 -> A06_2x2, A07_E01, A07_E02
@@ -162,26 +185,36 @@ Line closure
 | [`06_24_synthetic_common_rare_transformer_moe_anchor.md`](06_24_synthetic_common_rare_transformer_moe_anchor.md), [`06_24_synthetic_common_rare_transformer_moe_anchor_cn.md`](06_24_synthetic_common_rare_transformer_moe_anchor_cn.md) | No-position Transformer+MoE common/rare bridge | Full run shows all-position common subtraction is not reliable rare-feature expert separation; route-position/oracle centers and row-projected preservation are stronger candidates, with slot-position leakage excluded. | Supported with synthetic boundary |
 | [`06_25_warmup_spectral_router_reinit_anchor.md`](06_25_warmup_spectral_router_reinit_anchor.md), [`06_25_warmup_spectral_router_reinit_anchor_cn.md`](06_25_warmup_spectral_router_reinit_anchor_cn.md) | Warmup spectral/router reinit source audit | Full local two-GPU run shows warmup improves all-position and expert-SVD feature awareness, but route-position centers remain the strongest source; common-projected SVD is a candidate diagnostic, while simple orthogonalization is not the fix. | Partially supported / next nested-state anchor |
 | [`06_26_mpi_uniform_feature_router_anchor.md`](06_26_mpi_uniform_feature_router_anchor.md) | MPI spectral router baseline | Full local two-GPU run shows Redesign-style MPI improves feature NMI over vanilla (`mpi_c8` 0.832 vs 0.686) but stays below route-centered control (0.979) and has negative margin p05 (-15.258); all-position + MPI-c8 also fails to correct the source (NMI 0.830, margin p05 -20.579). | Partially supported / baseline only |
+| [`06_27_gradient_fisher_route_state_selector_anchor.md`](06_27_gradient_fisher_route_state_selector_anchor.md) | Gradient/Fisher route-state selector | Full local two-GPU run shows embedding-gradient top1/direction can select route-relevant states without feature labels and reach warmup-40 feature NMI `1.000` with positive margin and preserve, while Fisher-only subspace clustering keeps negative margin. | Supported with synthetic route-state boundary |
+| [`06_30_noise_free_full_slot_preservation_anchor.md`](06_30_noise_free_full_slot_preservation_anchor.md) | No-background full-slot preservation audit | Full local H100 run shows that when all 32 positions are feature-bearing and background tokens are removed, oracle all-position / predictive-position / last-predictive-position center initialization preserves all-position feature NMI `1.000` and final margin p05 about `4.566` after 2000 full-LM steps; random learns the task but stays negative-margin. | Supported as background/noise necessity check |
 
 ## Current Next Decision
 
-After A06_22, A06_23, A06_24_synthetic, A06_25, and A06_26, the selected mainline
-direction is to stop treating common subtraction, all-position warmup
-clustering, raw expert SVD, or MPI spectral routing as standalone solutions.
-The next method anchor should target route-relevant state formation:
+After A06_22, A06_23, A06_24_synthetic, A06_25, A06_26, and A06_27, the selected
+mainline direction is to stop treating common subtraction, all-position warmup
+clustering, raw expert SVD, MPI spectral routing, or Fisher-only metric changes
+as standalone solutions. A06_27 promotes embedding-gradient selection as the
+next method candidate:
 
 ```text
 method decision:
-can nested / long-horizon supervision make route-relevant hidden states
-feature-aware and margin-thick enough for delayed router reinitialization
-without label-known route-position selection?
+can an embedding-gradient selected route-state pool be turned into a
+margin-thick router initialization / refresh method, and does it survive harder
+objective-locality guards before common/rare transfer?
 ```
 
 Primary next metric on the uniform bridge: feature route `NMI` with margin p05
 as the preservation guard. Decision guards: matched preserve fraction,
 current/cluster-aware margin, sign-flip rate, max load, slot-position `NMI`,
-and task loss. If the next bridge returns to common/rare imbalance, restore the
-joint rare-feature `NMI` times common-vs-rare `NMI` score.
+selected route/slot/target fraction, and task loss. If the next bridge returns
+to common/rare imbalance, restore the joint rare-feature `NMI` times
+common-vs-rare `NMI` score.
+
+A06_30 updates the immediate next mechanism decision: before designing another
+gate, run a graded background-ratio margin-budget audit. The question is no
+longer whether no-background full-LM can preserve ideal routing; it can. The
+question is which added background / non-feature signal term first consumes the
+positive margin.
 
 Related side mechanism: A06_20 tested a routing-aware common estimator under
 random-init training. It failed as a feature-recovery estimator: selected

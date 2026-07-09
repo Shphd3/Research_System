@@ -1,8 +1,8 @@
 # 11_02 Two-Token Shared-Trunk Signal / Interference Anchor
 
-Status: canonical anchor, `decision_only` and `all_positions_lm_control` evidence completed locally.
-Parent line: `11_long_horizon_mtp_objective`.
-Prior evidence: `11_01_k2_branch_delayed_next_two_anchor.md` supports the clean K=2 objective-level separation.
+Status: canonical anchor, `decision_only` and `all_positions_lm_control` evidence completed locally.  
+Parent line: `11_long_horizon_mtp_objective`.  
+Prior evidence: `11_01_k2_branch_delayed_next_two_anchor.md` supports the clean K=2 objective-level separation.  
 Source design document: `daily_research_reports/0707/mtp_k2/two_token_shared_trunk_theory_experiment_design.md`.
 
 ## 0. Thinking Card
@@ -53,7 +53,7 @@ Source design document: `daily_research_reports/0707/mtp_k2/two_token_shared_tru
 
 ## 2. Physical Priors
 
-**P1: Data-information prior.**
+**P1: Data-information prior.**  
 $L_2$ has a principled reason to improve long-horizon branch representation only when $Y_2$ contains branch information beyond $Y_1$:
 
 $$
@@ -62,7 +62,7 @@ $$
 
 Could be wrong if data construction leaks branch through local context, or if Regime B/C is not clean.
 
-**P2: Representation-usefulness prior.**
+**P2: Representation-usefulness prior.**  
 Branch information in $Y_2$ does not guarantee that the model uses it. $L_2$ is useful representation signal only if its learning direction reduces branch-probe loss:
 
 $$
@@ -73,7 +73,7 @@ where $R_\phi=\operatorname{CE}(S_\phi(h),B)$ is branch-probe loss.
 
 Could be wrong if the probe is unreliable, the split is too small, or branch information is nonlinear while only a linear probe is used.
 
-**P3: Shared-gradient compatibility prior.**
+**P3: Shared-gradient compatibility prior.**  
 Useful $L_2$ may still hurt $L_1$ because both losses update shared trunk parameters:
 
 $$
@@ -85,34 +85,34 @@ Could be wrong if short-run gradient conflict does not predict training degradat
 
 ## 3. Falsifiable Hypotheses
 
-**H1: Useful branch-signal hypothesis.**
+**H1: Useful branch-signal hypothesis.**  
 In Regime A-clean, shared-trunk two-token should beat the NTP baseline on `branch_probe_accuracy_prediction_site`, `single_prefix_head2_accuracy`, and `branch_swap_preference`. Regime C-noisy should not show the same gains.
 
-Supported if: `A_vs_C_branch_probe_gain_at_prediction_site > 0`, A-clean has high head2/swap, and C-noisy stays near chance.
+Supported if: `A_vs_C_branch_probe_gain_at_prediction_site > 0`, A-clean has high head2/swap, and C-noisy stays near chance.  
 Weakened if: A-clean and C-noisy behave similarly, or C-noisy also produces branch gain.
 
-**H2: Redundancy hypothesis.**
+**H2: Redundancy hypothesis.**  
 In Regime B-redundant, $Y_2$ should not provide strong branch representation gain beyond what $Y_1$ already provides. Head-2 can be accurate, but branch gain should be explained by $Y_1$ or local predictability.
 
-Supported if: B branch gain is lower than A, or B gains are already present in NTP through $Y_1$.
+Supported if: B branch gain is lower than A, or B gains are already present in NTP through $Y_1$.  
 Weakened if: B matches A without a clear $Y_1$ explanation, meaning Regime B is not a clean redundancy control or $L_2$ has an unexpected optimization effect.
 
-**H3: Shared-trunk acquisition-interference hypothesis.**
+**H3: Shared-trunk acquisition-interference hypothesis.**  
 In Regime A-clean, $L_2$ may be branch-useful but fail to be acquired reliably through shared parameters. The failure can appear either as $L_1$ degradation or as persistent partial $Y_2$ branch learning while $L_1$ is already solved. This should coincide with negative $c_s$ or low $\rho$ in shared attention, shared MLP, or embedding.
 
-Supported if: branch metrics are unstable or partial across seeds while critical shared groups show $c_s<0$ or $\rho<1$.
+Supported if: branch metrics are unstable or partial across seeds while critical shared groups show $c_s<0$ or $\rho<1$.  
 Weakened if: branch metrics are stable and high without $L_1$ degradation and without destructive shared-gradient evidence.
 
-**H4: Expert-separation localization hypothesis.**
+**H4: Expert-separation localization hypothesis.**  
 H4 is not the first test of whether next-two causes shared-trunk gradient interference. That is H3. H4 asks whether, once interference exists, separating horizon-specific expert/MLP paths reduces the harmful part while keeping the useful branch signal.
 
-Supported if: `shared_attention_separate_expert` improves or preserves `L1_structured_loss` relative to `shared_trunk_two_token` while keeping `single_prefix_head2_accuracy` and branch probe.
+Supported if: `shared_attention_separate_expert` improves or preserves `L1_structured_loss` relative to `shared_trunk_two_token` while keeping `single_prefix_head2_accuracy` and branch probe.  
 Weakened if: separate-expert has the same $L_1$ degradation as shared-trunk two-token and conflict remains in shared attention or embeddings.
 
-**H5: Diagnostic validity hypothesis.**
+**H5: Diagnostic validity hypothesis.**  
 Regime C-noisy should be diagnosed as useless/noisy primarily by head-2 behavior: head-2 accuracy should remain near noise chance, and no branch-swap preference should be defined. Branch probe is a representation diagnostic, not a sufficient validity test.
 
-Supported if: C-noisy head-2 remains near chance and cannot pass swap.
+Supported if: C-noisy head-2 remains near chance and cannot pass swap.  
 Weakened if: C-noisy head-2 learns branch-specific targets, which would imply leakage, memorization, or invalid data construction.
 
 ## 4. Mathematical Model

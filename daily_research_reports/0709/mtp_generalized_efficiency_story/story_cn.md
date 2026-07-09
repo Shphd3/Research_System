@@ -1,11 +1,11 @@
 # MTP 长程语义学习效率：从 K=2/3 到一般 K 的理论推进
 
 文档状态：
-- 类型：daily research story，理论推进版
+- 类型：daily research story，A11_08 结果更新版
 - 日期：2026-07-09
 - 研究线：`11_long_horizon_mtp_objective`
-- 作用：在现有 A11 story 后继续深化理论建模；不是 project-local source of truth
-- 当前核心：把“覆盖第一个有信息未来位置”推广到一般 K，并把效率问题分成概率分布学习视角、参数更新视角和全位置训练动力学视角
+- 作用：在现有 A11 story 后继续深化一般 K 理论，并记录 A11_08 的最小 falsifiable 实验结果；项目主线版本见 project-local story
+- 当前核心：把“覆盖第一个有信息未来位置”推广到一般 K；A11_08 已支持“多个有信息未来位置的读出方向按向量和决定一阶语义速度”
 
 ## 0. 术语约定
 
@@ -18,10 +18,16 @@
 | 第一个有信息未来位置 $\tau$ | 第一个未来词元新增 $Z$ 信息的位置 | $\tau=\min\{j:I(Z;Y_j\mid Y_{<j})>0\}$ | 决定 K 是否覆盖直接语义监督 | 真实语料中固定唯一 |
 | 有信息未来位置集合 $\mathcal I_K$ | 被 K 覆盖且含 $Z$ 新信息的位置集合 | $\mathcal I_K=\{j\le K:I(Z;Y_j\mid Y_{<j})>0\}$ | 一般 K 分析对象 | 位置越多一定越好 |
 | 读出有效语义 margin | 当前状态是否沿正确未来 token 输出方向移动 | $M_K(h)=\frac1m\sum_z v_z^{(K)\top}h_z$ | 一阶效率理论量 | 多步收敛或自然语言收益 |
+| 一般 K 合成语义方向 | 多个有信息未来位置的读出方向向量和 | $v_z^{(K)}=\sum_{j\in\mathcal I_K}\lambda_j(u_{j,z}-\bar u_j)$ | 决定一般 K 的一阶语义速度 | K 大小本身 |
+| 隐藏状态语义速度 $G_K^{hidden}$ | 损失梯度把当前状态推向合成语义方向的速度 | $\frac1m\sum_z v_z^{(K)\top}(-\nabla_{h_z}L_K)$ | A11_08 的主指标 | 参数空间长期收敛 |
 | 分支分离能量 | 不同分支隐藏状态是否分开 | $E_Z=\frac1{2m^2}\sum_{z,z'}\|h_z-h_{z'}\|^2$ | 对应 probe / route 可分性 | 输出头是否使用该信息 |
 | 直接项 | 当前 $h_T$ 自己预测含 $Z$ 的未来 token | $L_{direct}=\lambda_\tau\operatorname{CE}(q_\tau(\cdot\mid h_T),S_Z)$ | 最短信用分配路径 | 全位置训练中唯一通路 |
 | 间接迁移 | 其他位置损失通过共享参数影响 $h_T$ | 由跨位置参数核 $J_TJ_s^\top$ 传递 | 解释 all-position 中 K1/K2 也能恢复 $Z$ | 直接监督无效 |
 | 高恢复时间 | 达到语义恢复阈值的训练步数 | $T_\alpha=\inf\{t:M(t)\ge \alpha\}$ 或 $T_{0.9}$ | 多步效率量 | 一阶机制必然成立 |
+| `shared_only_k4` | 四个未来位置都不含 $Z$ | `Y1=A,Y2=C,Y3=A,Y4=C` | A11_08 零语义速度守卫 | 全语言模型质量 |
+| `single_h3` | 只有第 3 个未来位置含 $Z$ | `Y1=A,Y2=C,Y3=S_z,Y4=A` | A11_08 单信息位置正对照 | 一般 K 全部规律 |
+| `aligned_h3_h4` | 第 3/4 未来位置都含 $Z$ 且读出方向对齐 | `Y3=S_z,Y4=T_z`，第 4 位置输出方向对齐第 3 位置 | 检验向量和放大 | 自然语言方向一定对齐 |
+| `low_conflict_h3_h4` | 第 3/4 未来位置都含 $Z$ 但读出方向低/冲突 | 同样 `Y3=S_z,Y4=T_z`，第 4 位置削弱第 3 位置方向 | 检验方向冲突能削弱速度 | K 大一定无益 |
 
 ## 1. 摘要
 
@@ -34,6 +40,8 @@ G_K^{margin}=\frac1{m^2}\sum_z\left\|\sum_{j\in\mathcal I_K}\lambda_j(u_{j,z}-\b
 $$
 
 这说明三件事。第一，只要 K 没覆盖任何有信息位置，$G_K^{margin}=0$。第二，覆盖一个有信息位置会产生正的一阶读出 margin。第三，继续增大 K 不一定单调更好；只有新增未来位置的输出方向与已有长程方向对齐时，margin 速度才一定增加。如果新增位置方向冲突，可能抵消。
+
+A11_08 已经把这个一般 K 机制做成最小可证伪实验。实验固定 `K=4`、固定四个 active loss、固定两个有信息未来位置 `{3,4}`，只改变第 4 个有信息未来位置的中心化输出方向。结果是：`aligned_h3_h4` 的隐藏状态语义速度 `G_hidden=0.015262`，`low_conflict_h3_h4` 的 `G_hidden=0.000954`，差值为 `0.014308`，且 `5/5` 个 seed 都满足 aligned 大于 low/conflict。`shared_only_k4` 为 0，`single_h3` 为 0.003816。本结果支持一般 K 向量和机制，没有触发 falsifier。
 
 从概率分布学习角度，MTP 的优势来自有效监督强度 $S_K(Z)=\sum_{j\le K}\lambda_j I(Z;Y_j\mid Y_{<j})$，但它只是结构量，不等于优化效率。要把它变成学习效率，需要额外假设：每个含信息未来位置的梯度方向对 $Z$ 是可辨识且同向的。
 
@@ -392,15 +400,15 @@ $$
 
 ## 12. 接下来还能推进的理论方向
 
-### 方向 A：一般 K 的方向对齐理论
+### 方向 A：next-K inclusion law
 
-研究：新增未来目标什么时候增加 $G_K$，什么时候抵消。核心量是：
+研究：当 K 从 next-2 到 next-3 再到 next-K 增大时，一阶语义速度是否只在 K 覆盖有信息未来位置时打开；新增无信息未来位置是否不给语义增量；新增第二个有信息未来位置是否按向量增量改变速度。核心量是：
 
 $$
 \sum_z v_z^{(K)\top}a_{r,z}.
 $$
 
-如果该项非负，则新增 horizon 有益；若为负且幅度大，新增 horizon 可能削弱语义方向。
+如果该项非负，则新增未来位置有益；若为负且幅度大，新增未来位置可能削弱语义方向。A11_08 已经验证了固定 `K=4` 下 aligned 与 low/conflict 的方向差异；下一步要验证随 K 递增时的 turn-on / no-increment / vector-increment 规律。
 
 ### 方向 B：概率分布到梯度信号的桥梁
 
@@ -424,18 +432,18 @@ A11_06 使用固定初始输出方向 $u^0_{S_z}$ 定义 $M_Z^{ref}$。后续需
 
 ## 13. 下一步建议
 
-不要马上桥接 MoE，也不要扩到自然语言。下一步最小理论实验应是：
+不要马上桥接 MoE，也不要扩到自然语言。A11_08 已支持一般 K 的方向对齐机制；下一步最小理论实验应是：
 
-1. **11_08：一般 K 方向对齐实验。** 构造多个有信息未来位置，让它们的输出方向同向、正交、反向，验证 $G_K$ 的向量和公式。
-2. **11_09：全位置跨位置核实验。** 测量 $J_TJ_s^\top$ 或其有限差分近似，判断间接迁移来自哪些位置，是否与 $M_Z$ 方向对齐。
+1. **11_09：next-K inclusion law 实验。** 系统比较 K=2/K=3/K=4：K 未覆盖有信息位置时应近零；K 首次覆盖有信息位置时应 turn on；K 只新增无信息位置时应无显著语义增量；K 新增第二个有信息位置时应按向量增量变化。
+2. **11_10：全位置跨位置核实验。** 在 inclusion law 完成后，再测量 $J_TJ_s^\top$ 或其有限差分近似，判断间接迁移来自哪些位置，是否与 $M_Z$ 方向对齐。
 
-这两个实验比直接做 MoE bridge 更必要。因为它们能回答：MTP 的效率优势什么时候随 K 增强，什么时候会被间接迁移或方向冲突覆盖。
+这两个实验比直接做 MoE bridge 更必要。因为它们能回答：MTP 的效率优势什么时候随 K 增强，什么时候只是新增了无信息目标，什么时候会被方向冲突或间接迁移覆盖。
 
 ## 14. 当前允许的最终表述
 
 可以说：
 
-> 在受控长程语义构造中，MTP 的优势不是“预测更多 token”，而是“覆盖含有早期变量的未来 token”。在分支折叠初始化和固定输出方向下，覆盖的有信息未来位置给当前状态一个严格正的一阶读出有效语义 margin 增长；一般 K 的增长等于各有信息未来位置中心化输出方向之和的平方。多步训练优势需要额外假设或实验验证，全位置训练还存在跨位置间接迁移。
+> 在受控长程语义构造中，MTP 的优势不是“预测更多 token”，而是“覆盖含有早期变量的未来 token”。在分支折叠初始化和固定输出方向下，覆盖的有信息未来位置给当前状态一个严格正的一阶读出有效语义 margin 增长；一般 K 的增长等于各有信息未来位置中心化输出方向之和的平方。A11_08 支持该向量和机制：同样 `K=4`、同样两个有信息未来位置时，aligned 输出方向给出高 `G_hidden`，low/conflict 输出方向给出低 `G_hidden`。多步训练优势需要额外假设或实验验证，全位置训练还存在跨位置间接迁移。
 
 不能说：
 
@@ -445,6 +453,9 @@ A11_06 使用固定初始输出方向 $u^0_{S_z}$ 定义 $M_Z^{ref}$。后续需
 
 - `daily_research_reports/0709/meetings/meeting_brief.md`
 - `daily_research_reports/0709/mtp_generalized_efficiency_story/anchors/11_08_general_k_readout_margin_dynamics_anchor.md`
-- `daily_research_reports/0709/mtp_generalized_efficiency_story/anchors/11_09_all_position_indirect_transfer_dynamics_anchor.md`
 - `daily_research_reports/0709/mtp_generalized_efficiency_story/protocols/11_08_protocol.md`
-- `daily_research_reports/0709/mtp_generalized_efficiency_story/protocols/11_09_protocol.md`
+- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_08_general_k_readout_margin_dynamics_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/protocol.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/detailed.md`

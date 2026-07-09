@@ -4,7 +4,25 @@
 
 **研究问题：** 多词元预测（multi-token prediction, MTP）是否比下一词元预测（next-token prediction, NTP）更高效地让当前隐藏状态学到长程语义变量。这里“长程语义变量”指：早期出现在前缀中、但要到未来某个词元才第一次影响输出的变量，记为 $Z$。
 
-**机制解释：** 我们使用一个受控构造：
+**机制解释：** 我们把输入序列建模为：
+
+$$
+X=(\mathrm{BR}_Z,F_1,\ldots,F_L,U,A_{shared},C_{shared},S_Z).
+$$
+
+模型先读到决策前缀：
+
+$$
+(\mathrm{BR}_Z,F_1,\ldots,F_L,U),
+$$
+
+形成当前隐藏状态：
+
+$$
+h_T=f_\theta(\mathrm{BR}_Z,F_1,\ldots,F_L,U).
+$$
+
+之后它要从同一个当前状态预测未来词元：
 
 $$
 Y_1=A_{shared},\qquad Y_2=C_{shared},\qquad Y_3=S_Z.

@@ -1,28 +1,27 @@
-# Copied Research Stories
+# Research Stories
 
-This folder stores copied project-local research stories for the S000 root
-sync surface. Stories are copied only when explicitly requested.
+This folder stores line-level research stories for `from-attention-to-search`.
 
-Project-local source of truth:
+A story is a living synthesis for one research line. It connects the research
+question, physical intuition, mathematical model, theorem state, anchor chain,
+experiment evidence, claim boundary, and next decision. It does not replace
+anchors, protocols, `summary.md`, or `detailed.md`.
 
-```text
-Projects/from-attention-to-search/main/stories/
-```
+## Active Stories
 
-Copied snapshot:
-
-```text
-sync/S000_current_specialization/stories/
-```
-
-## Stories
-
-| Line | Copied story | Source |
+| Line | Story | Role |
 |---|---|---|
-| `11_long_horizon_mtp_objective` | `11_long_horizon_mtp_objective/story_cn.md` | `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md` |
+| `06_geometry_proxy_preservation` | `06_geometry_proxy_preservation/story.md`, `06_geometry_proxy_preservation/story_cn.md` | Router training-dynamics story for the active preservation line; shifts A06 from center discovery to one-step router movement and signal/noise margin budget. |
+| `11_long_horizon_mtp_objective` | `11_long_horizon_mtp_objective/story_cn.md` | Chinese line-level synthesis for the long-horizon MTP objective line. |
 
-## Boundary
+## Sync Rule
 
-Stories are reading syntheses. They do not replace anchors, protocols,
-`summary.md`, or `detailed.md`, and they must not introduce claims stronger
-than the copied source artifacts.
+When a research line is explicitly synced, sync both:
+
+```text
+main/problem_anchors/<line>/
+main/stories/<line>/
+```
+
+The project-local story remains the source of truth. Root sync may copy it for
+external readers only when explicitly requested.

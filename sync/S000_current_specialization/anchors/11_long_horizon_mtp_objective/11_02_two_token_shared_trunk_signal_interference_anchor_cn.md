@@ -1,8 +1,8 @@
 # 11_02 Two-Token Shared-Trunk Signal / Interference Anchor
 
-状态：中文 companion；`decision_only` 证据已完成；`all_positions_lm_control` 尚未执行。
-父线：`11_long_horizon_mtp_objective`。
-前置证据：`11_01_k2_branch_delayed_next_two_anchor.md` 已支持 clean K=2 objective-level separation。
+状态：中文 companion；`decision_only` 证据已完成；`all_positions_lm_control` 尚未执行。  
+父线：`11_long_horizon_mtp_objective`。  
+前置证据：`11_01_k2_branch_delayed_next_two_anchor.md` 已支持 clean K=2 objective-level separation。  
 源设计文档：`daily_research_reports/0707/mtp_k2/two_token_shared_trunk_theory_experiment_design.md`。
 
 ## 0. Thinking Card
@@ -48,8 +48,8 @@
 
 ## 2. Physical Priors
 
-**P1: Data-information prior.**
-Meaning: $L_2$ 只有在 $Y_2$ 含有 $Y_1$ 之外的 branch 信息时，才有 principled reason 改善 long-horizon branch representation。
+**P1: Data-information prior.**  
+Meaning: $L_2$ 只有在 $Y_2$ 含有 $Y_1$ 之外的 branch 信息时，才有 principled reason 改善 long-horizon branch representation。  
 Observable condition:
 
 $$
@@ -58,8 +58,8 @@ $$
 
 Could be wrong if: data construction leaks branch through local context, or Regime B/C 不干净。
 
-**P2: Representation-usefulness prior.**
-Meaning: 有 branch information 的 $Y_2$ 不自动保证模型使用它；只有当 $L_2$ 的学习方向降低 branch-probe loss，才算 useful representation signal。
+**P2: Representation-usefulness prior.**  
+Meaning: 有 branch information 的 $Y_2$ 不自动保证模型使用它；只有当 $L_2$ 的学习方向降低 branch-probe loss，才算 useful representation signal。  
 Observable condition:
 
 $$
@@ -70,8 +70,8 @@ where $R_\phi=\operatorname{CE}(S_\phi(h),B)$ is branch-probe loss.
 
 Could be wrong if: probe 训练不可靠、样本太少，或 branch information 非线性但线性 probe 看不到。
 
-**P3: Shared-gradient compatibility prior.**
-Meaning: useful $L_2$ 仍可能伤害 $L_1$，因为 both losses update shared trunk.
+**P3: Shared-gradient compatibility prior.**  
+Meaning: useful $L_2$ 仍可能伤害 $L_1$，因为 both losses update shared trunk.  
 Observable condition:
 
 $$
@@ -83,29 +83,29 @@ Could be wrong if: short-run gradient conflict does not predict training degrada
 
 ## 3. Falsifiable Hypotheses
 
-**H1: Useful branch-signal hypothesis.**
-Regime A-clean 中，shared-trunk two-token 应比 NTP baseline 有更高 `branch_probe_accuracy_prediction_site`、更高 `single_prefix_head2_accuracy`、更强 `branch_swap_preference`；Regime C-noisy 不应出现同样提升。
-Supported if: `A_vs_C_branch_probe_gain_at_prediction_site > 0` 且 A-clean head2/swap 高、C-noisy 接近 chance。
+**H1: Useful branch-signal hypothesis.**  
+Regime A-clean 中，shared-trunk two-token 应比 NTP baseline 有更高 `branch_probe_accuracy_prediction_site`、更高 `single_prefix_head2_accuracy`、更强 `branch_swap_preference`；Regime C-noisy 不应出现同样提升。  
+Supported if: `A_vs_C_branch_probe_gain_at_prediction_site > 0` 且 A-clean head2/swap 高、C-noisy 接近 chance。  
 Weakened if: Regime A 和 Regime C 表现相同，或 C-noisy 也产生 branch gain。
 
-**H2: Redundancy hypothesis.**
-Regime B-redundant 中，$Y_2$ 不应提供明显超过 $Y_1$ 的新增 branch representation gain；head2 可以好，但 branch gain 不应显著超过 NTP 的 $Y_1$ branch signal。
-Supported if: B 中 `branch_probe_gain` 小于 A，且 `single_prefix_head2_accuracy` 的提升主要伴随 head1/local prediction。
+**H2: Redundancy hypothesis.**  
+Regime B-redundant 中，$Y_2$ 不应提供明显超过 $Y_1$ 的新增 branch representation gain；head2 可以好，但 branch gain 不应显著超过 NTP 的 $Y_1$ branch signal。  
+Supported if: B 中 `branch_probe_gain` 小于 A，且 `single_prefix_head2_accuracy` 的提升主要伴随 head1/local prediction。  
 Weakened if: B 与 A 一样提升 branch representation，说明 Regime B 构造不够 redundant，或 $L_2$ 有非预期优化效应。
 
-**H3: Shared-trunk acquisition-interference hypothesis.**
-在 Regime A-clean 中，$L_2$ 可以是 useful branch signal，但 shared parameters 未必能稳定获得这个 signal。失败可以表现为 $L_1$ 变差，也可以表现为 $L_1$ 已经解了但 $Y_2$ branch learning 长期停在 partial partition。
-Supported if: branch metrics across seeds 不稳定或 partial，同时 critical shared groups show $c_s<0$ or $\rho<1$.
+**H3: Shared-trunk acquisition-interference hypothesis.**  
+在 Regime A-clean 中，$L_2$ 可以是 useful branch signal，但 shared parameters 未必能稳定获得这个 signal。失败可以表现为 $L_1$ 变差，也可以表现为 $L_1$ 已经解了但 $Y_2$ branch learning 长期停在 partial partition。  
+Supported if: branch metrics across seeds 不稳定或 partial，同时 critical shared groups show $c_s<0$ or $\rho<1$.  
 Weakened if: branch metrics 稳定高、$L_1$ 不下降，并且没有 destructive shared-gradient evidence。
 
-**H4: Expert-separation localization hypothesis.**
-H4 不是第一步判断 next-two 是否造成 shared-trunk gradient interference；这个由 H3 判断。H4 的问题是：如果 H3 显示存在 useful-but-interfering 的 $L_2$，那么 shared-attention separate-expert 是否能定位并缓解 MLP/expert 子空间中的有害干扰。
-Supported if: separate-expert improves `L1_structured_loss` relative to shared-trunk two-token without reducing `single_prefix_head2_accuracy`, and expert parameter conflict disappears by construction.
+**H4: Expert-separation localization hypothesis.**  
+H4 不是第一步判断 next-two 是否造成 shared-trunk gradient interference；这个由 H3 判断。H4 的问题是：如果 H3 显示存在 useful-but-interfering 的 $L_2$，那么 shared-attention separate-expert 是否能定位并缓解 MLP/expert 子空间中的有害干扰。  
+Supported if: separate-expert improves `L1_structured_loss` relative to shared-trunk two-token without reducing `single_prefix_head2_accuracy`, and expert parameter conflict disappears by construction.  
 Weakened if: separate-expert 与 shared-trunk 同样伤害 $L_1$，且 conflict 仍集中在 shared attention / embedding。
 
-**H5: Diagnostic validity hypothesis.**
-Regime C-noisy 应主要通过 head2 判断为 useless/noisy：head2 accuracy 应接近 noise chance，并且 branch-swap 不适用。branch probe 是表示诊断，不是充分 validity test。
-Supported if: C-noisy head2 仍接近 chance，且无法通过 swap。
+**H5: Diagnostic validity hypothesis.**  
+Regime C-noisy 应主要通过 head2 判断为 useless/noisy：head2 accuracy 应接近 noise chance，并且 branch-swap 不适用。branch probe 是表示诊断，不是充分 validity test。  
+Supported if: C-noisy head2 仍接近 chance，且无法通过 swap。  
 Weakened if: C-noisy head2 学到 branch-specific target，说明数据泄漏、memorization 或构造失效。
 
 ## 4. Mathematical Model

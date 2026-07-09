@@ -1,7 +1,7 @@
 # 11_01 K=2 Branch-Delayed Next-Two Anchor
 
-Status: supported by the minimal K=2 run on 2026-07-06.
-Parent line: `11_long_horizon_mtp_objective`.
+Status: supported by the minimal K=2 run on 2026-07-06.  
+Parent line: `11_long_horizon_mtp_objective`.  
 Source theory document: `daily_research_reports/0707/mtp_k2/mtp_k2_self_contained_theory_proof.md`.
 
 ## 0. Thinking Card
@@ -45,24 +45,24 @@ Source theory document: `daily_research_reports/0707/mtp_k2/mtp_k2_self_containe
 
 ## 2. Physical Priors
 
-**P1: Shared-next-token prior.**
+**P1: Shared-next-token prior.**  
 If $Y_1=A$ for all branches, next-one at $T$ can be satisfied by branch-blind $h_T$.
 
-**P2: Branch-delayed target prior.**
+**P2: Branch-delayed target prior.**  
 If $Y_2=S_B$ and $B\mapsto S_B$ is one-to-one, branch-blind $h_T$ cannot predict $S_B$ with low loss.
 
-**P3: Direct second-token pressure prior.**
+**P3: Direct second-token pressure prior.**  
 The next-two second-token loss acts directly on $h_T$ and provides a branch-dependent target pressure absent from next-one at $T$.
 
 ## 3. Falsifiable Hypotheses
 
-**H1:** Fixed-next-one can predict shared $A$ but does not support $h_T\to S_B$.
+**H1:** Fixed-next-one can predict shared $A$ but does not support $h_T\to S_B$.  
 Supported: fixed-next-one offset-1 accuracy is high while offset-2, frozen probe, and branch-swap are weak.
 
-**H2:** Next-two makes the same $h_T$ support branch-specific second-token prediction.
+**H2:** Next-two makes the same $h_T$ support branch-specific second-token prediction.  
 Supported: next-two has high offset-2 accuracy, worst-branch probability, frozen probe, and branch-swap consistency.
 
-**H3:** The difference comes from second-token supervision, not extra capacity.
+**H3:** The difference comes from second-token supervision, not extra capacity.  
 Supported: both conditions use the same direct-head architecture, but only next-two succeeds.
 
 ## 4. Mathematical Model

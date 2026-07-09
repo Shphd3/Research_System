@@ -159,8 +159,21 @@ no-leakage decision-prefix setup. A11_07 supports direct decision-prefix
 horizon-3 supervision as the stronger all-position path: direct conditions
 reach native H3=1.0 and large M_Z_ref, while K1/K2/masked K3 can still recover
 nontrivial Q through indirect transfer. Therefore Q alone is not direct
-supervision evidence. A11 still does not prove natural-language benefit, MoE
-routing preservation, semantic expert identity, or expert utility.
+supervision evidence. A11_08 supports the general-K vector-sum mechanism:
+under the same K=4 and the same two informative horizons, aligned output-row
+geometry produces much larger hidden-state semantic velocity than
+low/conflicting geometry. A11_08b shows this primary velocity mechanism is not
+only a step-0 artifact: with frozen heads, aligned still has much larger early
+hidden semantic velocity than low/conflict, although trainable-head curves must
+record current output geometry because the heads drift. A11_09 supports the
+next-K inclusion law in controlled frozen-head decision-only dynamics: K2 is
+zero before the informative horizon, K3 turns on at the first informative
+horizon, adding a shared H4 gives no direct one-step semantic increment,
+aligned informative H4 amplifies, and low/conflict informative H4 weakens.
+Therefore K size alone is not the efficiency object; the covered informative
+horizons' centered readout directions are. A11 still does not prove
+natural-language benefit, MoE routing preservation, semantic expert identity,
+or expert utility.
 ```
 
 Sharper logic:
