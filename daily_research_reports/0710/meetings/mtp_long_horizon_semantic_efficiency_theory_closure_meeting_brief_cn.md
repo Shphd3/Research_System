@@ -73,7 +73,7 @@ $$
 2. 已经证明并验证一阶语义速度机制：覆盖有信息 future horizon 会给 $h_T$ 正的读出有效语义速度，非覆盖共享目标在分支折叠点没有这个一阶方向。
 3. 已经验证 general K 不是越大越好：新增 horizon 是否有帮助取决于它是否含新语义信息，以及输出方向是否与已有语义方向对齐。
 4. 当前还没有证明有限步效率定理：$G_K^{hidden}>0$ 还不能直接推出 $T_\gamma(K)$ 更小。
-5. 下一步是 A11_10 理论闭环：验证 velocity persistence、margin-to-recovery calibration、head drift bound、shared / indirect perturbation bound；不是 MoE bridge。
+5. 下一步是 A11_10 理论闭环：验证 velocity persistence、margin-to-recovery calibration、head drift bound、shared / indirect perturbation bound.
 
 **证据说明：**
 
