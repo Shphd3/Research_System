@@ -19,7 +19,7 @@ the vector sum of centered output directions over the covered informative
 horizons, not by K size alone.
 ```
 
-Latest evidence from 11_06 / 11_07 / 11_08 / 11_08b / 11_09:
+Latest evidence from 11_06 / 11_07 / 11_08 / 11_08b / 11_09 / 11_10:
 
 ```text
 11_06 supports the one-step hidden-state margin mechanism: K3 has positive
@@ -39,6 +39,9 @@ so trainable curves must record current geometry.
 11_09 supports the next-K inclusion law: K2 is zero before the informative
 horizon, K3 turns on at S_z, adding a shared H4 gives no one-step increment,
 aligned H4 amplifies, and low/conflict H4 weakens.
+11_10 supports the all-position native/probe split: K2 and masked K3 can keep
+nontrivial Q while native H3 remains 0 and M_Z_ref stays near zero; direct H3
+conditions reach native H3=1.0 and large M_Z_ref.
 ```
 
 A11 cannot claim:
@@ -70,12 +73,13 @@ Latest mechanism anchors:
 ```text
 11_08b_output_geometry_dynamics_audit_anchor.md
 11_09_next_k_inclusion_law_anchor.md
+11_10_all_position_indirect_transfer_dynamics_anchor.md
 ```
 
 ## Next Decision
 
 Do not bridge to MoE yet. The current A11 line can now claim a controlled
-next-K inclusion law for direct semantic velocity:
+next-K inclusion law and an all-position native/probe boundary:
 
 ```text
 Increasing K matters only when it newly includes an informative future horizon,
@@ -83,7 +87,7 @@ and the increment depends on centered output-direction alignment. Larger K by
 itself is not the causal object.
 ```
 
-Next decision: open A11_10 as a theory-closure problem for A11 itself. The
+Next decision: open A11_11 as a theory-closure problem for A11 itself. The
 target is to prove or sharply bound when positive first-order semantic velocity
 implies smaller semantic-margin hitting time or higher early recovery AUC:
 

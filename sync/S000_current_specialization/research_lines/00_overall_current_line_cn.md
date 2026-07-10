@@ -140,14 +140,17 @@ horizon-3 监督，是 K=3 更快、更稳定恢复 Z 的一个受支持机制�
 路径，也不能推出自然语言或 MoE 路由收益。
 ```
 
-A11_06 / A11_07 进一步更新：
+A11_06 到 A11_10 进一步更新：
 
 ```text
 11_06 支持一阶效率机制：在无泄漏 decision-prefix 设置中，K3 的
-hidden readout-margin velocity 为正，K1/K2 近似为 0。11_07 支持该
+hidden readout-margin velocity 为正，K1/K2 近似为 0。11_07 支持
 direct horizon-3 监督在无泄漏 all-position 训练中给出更强 native H3、
-M_Z_ref、reach rate 和 early AUC。但 K1/K2/masked K3 仍可通过
-all-position 间接迁移得到非平凡 Q，因此 Q 不能单独作为 direct
+M_Z_ref、reach rate 和 early AUC。11_08 / 11_08b / 11_09 支持
+general-K vector-sum 与 next-K inclusion law：K 的作用取决于是否新增
+informative horizon，以及新增方向是否对齐。11_10 支持 native/probe
+split：K2 和 masked K3 可以有非平凡 Q，但 native H3=0 且 M_Z_ref 近
+0；direct 条件 native H3=1 且 M_Z_ref 大。因此 Q 不能单独作为 direct
 supervision 证据。
 ```
 
@@ -251,6 +254,10 @@ Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_a
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_08b_output_geometry_dynamics_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_10_all_position_indirect_transfer_dynamics/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

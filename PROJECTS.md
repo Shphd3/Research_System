@@ -89,8 +89,11 @@ Level 0 has failure-mechanism evidence.
 Level 1 has controlled and real-DCLM proxy evidence, with semantic boundaries.
 Level 2 has real-DCLM step-0 proxy-center router evidence.
 Level 3 is the current unsolved bottleneck: ordinary training erases the proxy
-partition by step 5/10; controlled preservation is now understood as a finite
-positive-margin buffer, while real-DCLM common/residual causality is not closed.
+partition by step 5/10. Controlled evidence now separates three mechanisms:
+matched expert utility creates positive local margin pressure; weighted top-1
+correction is rank-mediated rather than absent; and systematic
+boundary-projected background bias can exhaust the finite margin buffer.
+Transfer to trainable hidden states and AdamW remains open.
 Level 4 has controlled D07 support only; neural/real-DCLM utility is not yet
 supported.
 Level 5 is parked until preservation and utility are both better defined.
@@ -105,14 +108,14 @@ alignment, but cannot by itself support utility or scaling.
 Current decision question:
 
 ```text
-Can a nested-learning-inspired common/rare routing audit define a stable common
-operator and show that common-subtracted routing improves rare-feature margins
-without unacceptable language-model loss regression?
+Under one-layer Transformer + weighted-top-1 MoE full-sequence LM training,
+which causal path is necessary for matched-margin first crossing and later
+re-entry: router-only motion, representation-only motion, or their joint
+optimizer-conditioned coupling?
 ```
 
-This question is downstream of A05/A06 margin preservation evidence and A06_22
-common/residual projector instability, and upstream of stronger A07 utility
-claims.
+This question is downstream of A06_31--A06_33 frozen-dynamics evidence and
+upstream of any preservation method or stronger A07 utility claim.
 
 ## Current Route
 
@@ -171,7 +174,21 @@ zero before the informative horizon, K3 turns on at the first informative
 horizon, adding a shared H4 gives no direct one-step semantic increment,
 aligned informative H4 amplifies, and low/conflict informative H4 weakens.
 Therefore K size alone is not the efficiency object; the covered informative
-horizons' centered readout directions are. A11 still does not prove
+horizons' centered readout directions are. A11_10 supports the all-position
+native/probe split: direct H3 conditions reach native H3=1.0 and large
+M_Z_ref, while K2 and masked K3 can keep nontrivial Q but native H3 remains 0
+and M_Z_ref stays near zero. Therefore Q alone is not direct-supervision
+evidence. A11_10 finite-step audit supports persistent positive early semantic
+velocity in direct informative conditions and native H3=1.0 / Q=1.0 in direct
+all-position conditions, but its Transformer parameter-space curvature
+certificate is often nonpositive or extremely loose. The active A11 story now
+separates this failure from hidden-state optimization: it proves the exact
+finite-step identity M_K(t+1)-M_K(t)=eta G_K_hidden(t), an explicit K=2
+recovery bound under regular-simplex output geometry and semantic-subspace
+decoupling, and a conditional stochastic sample-hitting bound. The remaining
+theoretical gap is parameter-space transmission through the encoder tangent
+kernel, background-loss interference, and nonlinear remainder. A11 still does
+not prove
 natural-language benefit, MoE routing preservation, semantic expert identity,
 or expert utility.
 ```
@@ -196,9 +213,15 @@ ordinary top-1 routing can collapse under uniform features
 -> A06_22 reproduces the real-DCLM collapse, but common/residual dominance
    flips across common projectors, so "common causes collapse" is not yet a
    stable claim
--> the next decision is to turn nested learning into a falsifiable common/rare
-   routing audit: define a stable common operator, subtract it at routing time,
-   and test rare-feature margin, sign flips, and LM loss
+-> A06_31 shows that expert utility, not route-center geometry alone, controls
+   the sign of local soft-router margin pressure
+-> A06_32 shows that weighted top-1 has correction, but it searches by current
+   score rank because unselected expert utilities are not compared
+-> A06_33 shows that background count alone is insufficient; systematic
+   boundary-projected bias creates separate first-cross and recovery thresholds
+-> the next decision is to use router-only, representation-only, joint-SGD, and
+   joint-AdamW freeze interventions on the trainable full-LM bridge; exact
+   margin reconstruction remains an algebraic guard, not causal evidence
 -> functional value must be tested through common/rare interference or expert
    utility, not load balance alone
 ```
@@ -216,6 +239,11 @@ has a finite safe threshold rather than "any positive margin is enough." In
 real DCLM early training, proxy routing can be overwritten by step 5/10. A06_22
 shows that common/residual dominance is projector-dependent: mean-common
 supports common dominance, but top hidden-PC and router-row projectors do not.
+In frozen controlled dynamics, A06_31 shows that matched expert utility creates
+positive margin pressure; A06_32 shows that top-1 correction is rank-mediated
+but not absent; A06_33 shows that systematic boundary-projected background bias
+can exhaust margin while orthogonal or balanced background does not. Margin
+crossing can be transient and must be separated from final failure.
 ```
 
 Cannot claim:
@@ -226,6 +254,9 @@ Balanced load proves specialization.
 High route NMI proves expert utility.
 The current common projector is the true causal common operator.
 Common subtraction is already a validated routing method.
+The frozen-SGD margin budget transfers unchanged to trainable hidden states or
+AdamW.
+Any first sign flip proves irreversible routing collapse.
 A07 neural proxy already proves useful MoE specialization.
 Reverse KV retrieval follows from the current evidence.
 ```
@@ -349,31 +380,32 @@ final pretrained-MoE behavior.
 
 ## Next Decision
 
-Do not run another broad feature-existence sweep. The next useful protocol
-should decide one bottleneck:
+Do not run another broad feature-existence, common-subtraction, or spectral
+router sweep. The next anchor should decide one causal bottleneck:
 
 ```text
-nested-learning-inspired common/rare routing audit
+representation-router-optimizer co-dynamics under full-sequence LM training
 ```
 
 Primary metric:
 
 ```text
-rare-feature margin after routing on raw h versus common-subtracted (I-P_C)h
+whether router-only, representation-only, joint-SGD, or joint-AdamW freeze
+interventions reproduce or remove matched-margin first crossing and re-entry
 ```
 
 Required guards:
 
 ```text
-matched preserve fraction, proxy_route_NMI, current margin, sign-flip rate,
-LM loss, max load, active experts, common projector robustness, and exact
-gate-input audit
+margin p05, matched identity, route NMI, LM loss, first-cross time, re-entry
+time, X/A/Q/h source-center trajectories, raw source gradients, AdamW moments,
+actual preconditioned boundary updates, max load, and active experts
 ```
 
-The protocol must first define $P_C$ as a physical common operator. If common
-dominance still flips across projectors as in A06_22, park method claims. If
-common-subtracted routing improves rare-feature margin and reduces sign flips
-without hurting LM loss, then write the next gating mechanism anchor.
+The exact three-term finite margin decomposition is an algebraic validity guard,
+not causal evidence. Method construction is allowed only after freeze
+interventions localize the necessary path to representation formation, router
+correction, optimizer transmission, or their interaction.
 
 ## Root Surfaces
 

@@ -1,6 +1,6 @@
 # 0709 Specialization Reframing Package
 
-Status: daily working package. This folder is a Chinese audit surface for the 2026-07-09 specialization reframing. It is not yet the canonical project-local anchor/story under `Projects/from-attention-to-search/`.
+Status: migrated and adjudicated. This folder remains the original Chinese audit surface. Canonical anchors, protocols, and result records now live under `Projects/from-attention-to-search/main/`.
 
 ## Files
 
@@ -21,4 +21,10 @@ The immediate move is not to train a new MoE or promote a new router. The move i
 
 ## Next decision
 
-Approve or revise the `06_33_frozen_hidden_advantage_margin_protocol_cn.md` protocol. Do not run a broad sweep or write a new gating method until the one-step advantage-to-margin model is falsified or supported.
+The daily draft was split because formula/autograd agreement is a chain-rule validity check, not a standalone mechanism result. Canonical chain:
+
+1. `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_31_soft_router_advantage_margin_dynamics_anchor.md`
+2. `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_32_top1_counterfactual_correction_dynamics_anchor.md`
+3. `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_33_background_bias_margin_budget_anchor.md`
+
+All three 32-seed full runs completed. The next decision is an optimizer-aware trainable-hidden full-LM margin bridge, not a new gating method.

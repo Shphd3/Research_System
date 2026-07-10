@@ -5,7 +5,7 @@
 - 研究线：`11_long_horizon_mtp_objective`
 - 语言：中文
 - 写作模式：综合 + 下一阶段前瞻
-- 当前核心变化：以 K=2 作为最小理论基元，从“表示存在定理”推进到“一阶读出有效语义速度”的一般 K 向量和机制；11_06 / 11_07 验证 K=3 直接监督机制与全位置边界，A11_08 支持一般 K 的方向对齐规律，A11_08b 验证该方向机制不是单纯 step-0 artifact，A11_09 支持 next-K inclusion law；下一步应推进从一阶速度到有限步学习效率的理论闭环
+- 当前核心变化：以 K=2 作为最小理论基元，从“表示存在定理”推进到“一阶读出有效语义速度”的一般 K 向量和机制；11_06 / 11_07 验证 K=3 直接监督机制与全位置边界，A11_08 支持一般 K 的方向对齐规律，A11_08b 验证该方向机制不是单纯 step-0 artifact，A11_09 支持 next-K inclusion law，A11_10 支持全位置 native/probe split；下一步应推进从一阶速度到有限步学习效率的理论闭环
 
 ## 0. 术语约定
 
@@ -46,6 +46,8 @@ A11_08 把机制从 K=3 推广到一般 K。它固定 `K=4`、固定四个 activ
 A11_08b 进一步检查了一个关键边界：A11_08 的输出方向几何是否只是 step-0 静态构造。结果显示，在冻结输出头时，`aligned_h3_h4` 的 early AUC `G_hidden_ref=0.002660`，`low_conflict_h3_h4=0.000184`，且 `5/5` 个 seed 都满足 aligned 大于 low/conflict；`shared_only_k4` 仍为 0，`single_h3` 仍为正。本结论支持隐藏状态语义速度机制，但不声称每个 seed 的最终 $Q$ 或 $M_Z$ 都稳定更强。可训练输出头下 `low_conflict_h3_h4` 的 `cos_34` 从 `-1.000` 移到 `-0.268`，说明训练曲线必须记录当前输出几何，不能只用初始几何解释。
 
 A11_09 验证了 next-K inclusion law：在冻结输出头、clean decision-only 设定中，`single_h3` 的 one-step `G_hidden` 为 `K2=0, K3=0.003816, K4=0.003816`，说明 K 首次覆盖有信息未来位置时打开语义速度，新增无信息 H4 不增加直接语义速度；`aligned_h3_h4` 为 `0, 0.003816, 0.015262`，说明新增对齐有信息位置放大速度；`low_conflict_h3_h4` 为 `0, 0.003816, 0.000954`，说明新增低/冲突有信息位置会削弱速度。由此，当前最稳妥的 story 是：K 的作用不是越大越好，而是是否新增有信息 horizon，以及新增方向与已有语义方向是否对齐。
+
+A11_10 重新把全位置间接迁移作为独立 anchor 审计。结果支持 native/probe split：`K2_active` 和 `K3_mask_decision_prefix_L3` 可以保持非平凡 `Q`（final Q 为 0.75 / 0.70），但 native H3 都为 0，final $M_Z^{ref}$ 仅为 0 / 0.004；`K3_active` 和 `K2_plus_decision_prefix_L3` 都达到 native H3=1.0，final $M_Z^{ref}$ 为 2.430 / 3.766。因此全位置训练中的 `Q` 只能说明 $Z$ 可读，不能单独证明 direct supervision；direct path 需要 native H3 与 $M_Z^{ref}$ 共同支持。
 
 ## 2. 研究问题
 
@@ -429,6 +431,7 @@ $$
 | K=2 最小效率基元 | next-two 的 $Y_2=S_Z$ 项给 $h_T$ 严格正的一阶语义速度 | $G_2^{margin}$ | A11_01 / A11_03 支持：K=2 能比 fixed next-one 更早恢复 $Z$，但有优化不稳定 |
 | 一阶效率 | K=3 梯度使 $M_Z$ 严格增长，K=1/K=2 为 0 | $G_M^{hidden}$ | 11_06 支持：K3 为 0.003816，K1/K2 近似 0 |
 | 一般 K 方向叠加 | 多个有信息未来位置按中心化输出方向向量和贡献速度 | $G_K^{hidden}$，$G_K^{pred}$ | A11_08 / A11_09 支持：aligned 0.015262，low/conflict 0.000954，K3 turn on，shared H4 无增量 |
+| 全位置 native/probe split | 非 direct loss 可让 $Z$ 可读，但不必然形成 native $h_T\to S_Z$ | $Q$，native H3，$M_Z^{ref}$ | A11_10 支持：K2 / masked K3 有非平凡 $Q$ 但 native H3=0，direct 条件 native H3=1 |
 | 二阶可分性 | K=3 增加分支分离能量 | $E_Z$ 的速度 / 轨迹 | 11_06 辅助支持，K3 短曲线 $E_Z$ 增长 |
 | 多步效率 | K=3 是否更小 $T_{0.9}$ / 更高 AUC | $Q(t),T_{0.9}$ | 11_07 支持 direct 条件更稳，但也显示 indirect transfer |
 | 有限步效率理论 | 一阶语义速度能否推出更小 hitting time | $T_\gamma$，$T_{0.9}$，局部平滑和 margin-growth 下界 | 尚未证明，是下一步理论主线 |
@@ -447,6 +450,7 @@ $$
 8. 11_08 将 K=3 机制推广到一般 K：在同样 `K=4` 和同样两个有信息未来位置下，读出方向 aligned 与 low/conflict 会产生不同的一阶隐藏状态语义速度，结果支持向量和公式。
 9. 11_08b 检查 A11_08 是否只是 step-0 静态 output geometry，结果支持 frozen-head 下的 hidden velocity 机制，同时发现 trainable head 会漂移。
 10. 11_09 验证 next-K inclusion law：K 只在新增有信息 horizon 时打开或改变语义速度；新增 shared horizon 没有直接一阶语义增量，新增 aligned / low-conflict 信息 horizon 分别增强 / 削弱。
+11. 11_10 验证全位置 native/probe split：direct 条件产生 native H3 与大 $M_Z^{ref}$，非 direct 条件可以有非平凡 $Q$ 但 native H3 为 0、$M_Z^{ref}$ 近 0。
 
 ## 11. 实验结果整合
 
@@ -475,6 +479,8 @@ A11_08b 的关键信息是：A11_08 的方向机制不是纯 step-0 artifact。�
 
 A11_09 的关键信息是：next-K inclusion law 通过。`single_h3` 中 one-step `G_hidden` 为 `K2=0, K3=0.003816, K4=0.003816`，说明首次覆盖有信息 H3 时语义速度打开，新增 shared H4 没有直接增量；`aligned_h3_h4` 为 `0, 0.003816, 0.015262`，说明新增对齐信息位置增强；`low_conflict_h3_h4` 为 `0, 0.003816, 0.000954`，说明新增冲突信息位置削弱。这个结果把“固定 K=4 方向几何”推进成“next-K 增量规律”。
 
+A11_10 的关键信息是：全位置训练里必须把 guarded recovery 和 native direct readout 分开。`K2_active` 与 `K3_mask_decision_prefix_L3` 的 final Q 为 0.75 / 0.70，但 native H3 为 0，final $M_Z^{ref}$ 为 0 / 0.004；`K3_active` 与 `K2_plus_decision_prefix_L3` 的 final Q 都为 1.0，native H3 都为 1.0，final $M_Z^{ref}$ 为 2.430 / 3.766。本地守卫通过：所有条件最终 Y1/Y2 accuracy 都为 1.0。因此 direct H3 是当前受控设置中产生 native readout 和大 margin 的可靠路径，而 non-direct all-position loss 可以产生 probe-readable recovery。
+
 ## 12. 反例和竞争解释
 
 | 竞争解释 | 为什么合理 | 当前处理 | 剩余风险 |
@@ -497,6 +503,7 @@ A11_09 的关键信息是：next-K inclusion law 通过。`single_h3` 中 one-st
 5. 11_07 支持当前决策前缀第 3 位置监督是 all-position 训练中更强 native readout 和更稳定 recovery 的机制组件。
 6. A11_08 / A11_09 支持一般 K 的向量和 inclusion 机制：K 的作用取决于新增有信息 horizon 及其中心化输出方向，而不是 K 大小本身。
 7. A11_08b 支持 hidden semantic velocity 机制不是纯 step-0 artifact；但可训练 head 会漂移，曲线解释必须记录 current geometry。
+8. A11_10 支持全位置 native/probe split：$Q$ 可以由间接迁移产生，direct supervision 证据必须联合 native H3 和 $M_Z^{ref}$。
 
 不能说：
 
@@ -519,7 +526,8 @@ A11_09 的关键信息是：next-K inclusion law 通过。`single_h3` 中 one-st
 | 11_08：一般 K 读出方向动力学 | 多个有信息未来位置是否按读出方向向量和贡献一阶速度？ | 避免把结论误写成 K 越大越好 | $G_K^{hidden}$，几何预测，seed 方向一致性，本地损失 | 已支持：aligned 高于 low/conflict，shared 为 0，single 为正 |
 | 11_08b：output geometry dynamics audit | A11_08 的方向几何是否只是 step-0 静态构造？ | 区分 hidden velocity 机制和 output-head co-adaptation | $G_{hidden}^{ref/current}$，$M_Z^{ref/current}$，$\cos_{34}$，head drift | 已支持 frozen-head velocity 机制；可训练 head 曲线必须记录 current geometry |
 | 11_09：next-K inclusion law | K 增大时，语义速度是否只在覆盖有信息位置时打开，并按新增方向变化？ | 把固定 K=4 的方向规律变成 next-2 / next-3 / next-K 规律 | turn-on、no-increment、vector-increment、local guard | 已支持：K2 近 0，K3 turn on，shared H4 无直接增量，aligned 增强，low/conflict 削弱 |
-| 11_10：有限步效率理论闭环 | 一阶语义速度优势在什么假设下推出更小 hitting time 或更高早期 AUC？ | 把“方向更对”推进到“学得更快”的理论命题 | $T_\gamma$，$T_{0.9}$，margin-growth 下界，head drift bound | 若失败，A11 只能 claim 一阶机制和受控经验效率，不能 claim 理论效率 |
+| 11_10：全位置间接迁移动力学 | 全位置非 direct recovery 是否等同于 native direct readout？ | 把 $Q$ 与 native H3 / margin 分开 | $Q$，native H3，$M_Z^{ref}$，local guard | 已支持：非 direct 可有 $Q$ 但 native/margin 近 0，direct 条件 native/margin 强 |
+| 11_11：有限步效率理论闭环 | 一阶语义速度优势在什么假设下推出更小 hitting time 或更高早期 AUC？ | 把“方向更对”推进到“学得更快”的理论命题 | $T_\gamma$，$T_{0.9}$，margin-growth 下界，head drift bound | 若失败，A11 只能 claim 一阶机制和受控经验效率，不能 claim 理论效率 |
 
 ## 14.5 下一步理论规划
 
@@ -527,7 +535,7 @@ A11_09 的关键信息是：next-K inclusion law 通过。`single_h3` 中 one-st
 
 > 当 $K$ 覆盖有信息未来词时，MTP 会给 $h_T$ 一个直接语义更新方向；多个有信息未来位置按中心化输出方向向量和叠加；全位置训练中还有间接迁移，但直接项会带来更强的模型自身预测、更大的语义 margin、更稳定的恢复。
 
-后续理论推进应把这句话拆成五个可证明或可实验判定的子命题。A11_09 已经给出第 1 点的受控实验证据；剩余工作应优先整理成局部命题，并推进第 3 点的有限步效率证明：
+后续理论推进应把这句话拆成五个可证明或可实验判定的子命题。A11_09 已经给出第 1 点的受控实验证据；A11_10 已经支持第 2 点和第 5 点的核心边界；剩余工作应优先整理成局部命题，并推进第 3 点的有限步效率证明：
 
 1. **next-K inclusion law。** K 增大时，如果新增未来位置不含 $Z$，则不应带来一阶语义增量；如果首次覆盖有信息未来位置，则语义速度 turn on；如果新增第二个有信息未来位置，则增量由 $2v^\top a+\|a\|^2$ 决定。A11_09 已支持这个受控规律。
 
@@ -557,7 +565,7 @@ $$
 
 当前唯一下一步：
 
-> 开 A11_10 理论闭环：证明或界定从 $G_K^{hidden}>0$ 到更小 $T_\gamma$ / 更高早期 AUC 的条件；同时整理 K=2 -> $\tau=m$ -> general K 的统一 theorem statement。
+> 开 A11_11 理论闭环：证明或界定从 $G_K^{hidden}>0$ 到更小 $T_\gamma$ / 更高早期 AUC 的条件；同时整理 K=2 -> $\tau=m$ -> general K 的统一 theorem statement。
 
 不要再只重复 all-position $Q$ 曲线，也不要现在转向 MoE bridge。11_06 / 11_07 已经说明：direct supervision 的证据应由 $G_M^{hidden}$、$M_Z^{ref}$、native H3 和 guarded recovery 联合给出；A11_08 / A11_09 又说明：一般 K 的增益必须按输出方向向量和有信息 horizon 审计，而不是按 K 大小审计。下一步理论问题是：需要哪些最小优化假设，才能把这些一阶量变成有限步效率定理。
 
@@ -597,3 +605,7 @@ $$
 - `Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/protocol.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/detailed.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_10_all_position_indirect_transfer_dynamics_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_10_all_position_indirect_transfer_dynamics/protocol.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_10_all_position_indirect_transfer_dynamics/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/A11_10_all_position_indirect_transfer_dynamics/detailed.md`

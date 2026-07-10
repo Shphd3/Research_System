@@ -95,7 +95,10 @@ supports the general-K vector-sum mechanism. A11_08b shows the primary
 hidden-velocity mechanism is not only a step-0 artifact under frozen output
 heads. A11_09 supports the next-K inclusion law: K matters when it newly
 covers an informative future horizon, and the increment depends on centered
-output-direction alignment. Boundary: `Q` alone is not direct-supervision
+output-direction alignment. A11_10 supports the all-position native/probe
+split: direct H3 conditions reach native H3=1.0 and large `M_Z_ref`, while
+K2 and masked K3 can keep nontrivial `Q` but native H3 remains 0 and
+`M_Z_ref` stays near zero. Boundary: `Q` alone is not direct-supervision
 evidence; larger K is not automatically better; MoE routing transfer remains
 open.
 
@@ -122,9 +125,10 @@ controlled efficiency evidence: the covering target creates positive
 hidden-state readout-margin velocity and stronger native direct prediction.
 A11_08 / A11_08b / A11_09 further show that general-K gains are governed by
 which informative horizons are covered and whether their centered readout
-directions align, not by K size alone. This may inform a future route-relevant
-hidden-state objective, but it does not prove gating preservation or expert
-utility.
+directions align, not by K size alone. A11_10 adds that all-position recovery
+must separate probe-readable `Q` from native direct readout. This may inform a
+future route-relevant hidden-state objective, but it does not prove gating
+preservation or expert utility.
 
 ## Source Links
 
@@ -164,6 +168,7 @@ Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_pos
 Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_08b_output_geometry_dynamics_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md
+Projects/from-attention-to-search/main/experiments/A11/A11_10_all_position_indirect_transfer_dynamics/summary.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

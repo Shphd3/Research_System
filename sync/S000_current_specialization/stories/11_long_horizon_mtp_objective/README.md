@@ -27,6 +27,7 @@ Current completed-anchor decomposition:
 11_08_general_k_readout_margin_dynamics_anchor.md
 11_08b_output_geometry_dynamics_audit_anchor.md
 11_09_next_k_inclusion_law_anchor.md
+11_10_all_position_indirect_transfer_dynamics_anchor.md
 ```
 
 Current boundary:
@@ -45,12 +46,15 @@ velocity turns on when K first covers an informative horizon, shared added
 horizons add no direct one-step semantic increment, aligned informative
 horizons amplify, and low/conflict informative horizons weaken. This supports
 direction-dependent next-K efficiency, not "larger K is always better."
+A11_10 supports the all-position native/probe split: K2 and masked K3 can have
+nontrivial Q while native H3 remains 0 and M_Z_ref stays near zero; direct H3
+conditions have native H3=1.0 and large M_Z_ref.
 ```
 
 Current next theoretical decision:
 
 ```text
-Do not bridge to MoE in the next A11 step. First write A11_10 as a theory
+Do not bridge to MoE in the next A11 step. First write A11_11 as a theory
 closure problem: turn the K=2 minimal theorem, the tau=m covering rule, and the
 general-K vector-sum / next-K inclusion law into one finite-step efficiency
 statement. The missing link is from positive first-order semantic velocity to
