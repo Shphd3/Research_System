@@ -185,12 +185,31 @@ certificate is often nonpositive or extremely loose. The active A11 story now
 separates this failure from hidden-state optimization: it proves the exact
 finite-step identity M_K(t+1)-M_K(t)=eta G_K_hidden(t), an explicit K=2
 recovery bound under regular-simplex output geometry and semantic-subspace
-decoupling, and a conditional stochastic sample-hitting bound. The remaining
-theoretical gap is parameter-space transmission through the encoder tangent
-kernel, background-loss interference, and nonlinear remainder. A11 still does
-not prove
-natural-language benefit, MoE routing preservation, semantic expert identity,
-or expert utility.
+decoupling, and a conditional stochastic sample-hitting bound. A11_02b has
+completed the advisor's K=2 diagnostic design: informative H2 passes native,
+probe, swap, and final task-directed-gradient guards; the lambda audit finds a
+small dose-dependent local L1 convergence cost but no final next-token accuracy
+loss. A11_11 now supports the controlled K=2 parameter-transmission
+prerequisite: in the folded-reference decision-only model, direct parameter
+semantic velocity is positive in 5/5 seeds, full-K2 net velocity remains
+positive in 5/5 seeds, and actual one-step margin movement follows eta times
+the tangent-kernel velocity. Its algebraic alpha-scaling laws remain
+implementation guards; the empirical support is native magnitude, positive net
+sign, and finite-step fidelity. A11_12 now closes the controlled all-position
+path decomposition: the earlier decision-position component G_D is positive
+and exceeds the later NTP semantic component G_I in 5/5 seeds; remaining
+all-position losses are signed, so the full K2 net velocity is positive in 4/5
+seeds rather than universally positive. Matched direct/mask trajectories favor
+the direct path in 5/5 seeds and preserve final Y1 accuracy, with a measurable
+decision-prefix CE cost. A11_13 closes one downstream construct-validity gate:
+the paired persistent-assistant task has Q_task=1.0 in 5/5 seeds, exact
+local/cue insufficiency, complete paraphrase/counterfactual guards, and maximum
+tested lexical-shortcut accuracy 0.5375. The remaining A11 gap is now the first
+neural method comparison: whether K=2 MTP reaches the shared standard-H1
+downstream score earlier than NTP under matched data tokens and backbone
+updates. A11 still does not prove natural-language MTP efficiency, pretrained-
+LLM benefit, MoE routing preservation, semantic expert identity, or expert
+utility.
 ```
 
 Sharper logic:

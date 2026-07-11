@@ -6,7 +6,31 @@
 
 **机制解释：**
 
-1. 本研究把“长程语义”定义为：变量 $Z$ 已经出现在前缀中，最近的未来词不依赖它，直到第 $\tau$ 个未来词才必须用它决定正确内容分支。
+1. 数据序列先给出分支变量 $Z$，中间加入不提供新分支信息的填充词，决策位置前使用各分支完全相同的局部上下文；未来后缀中，最近的词保持共享，较远的词 $S_Z$ 才由 $Z$ 决定。
+
+$$
+X_Z=
+\bigl[
+\mathrm{BR}_Z,\,
+F_1,\ldots,F_L,\,
+C_1,\ldots,C_r,\,
+Y_1,\ldots,Y_K
+\bigr].
+$$
+
+最小 K=2 构造和第一个有信息位置后移到 3 的构造分别是：
+
+$$
+Y_1=A_{\mathrm{shared}},\qquad Y_2=S_Z,
+$$
+
+$$
+Y_1=A_{\mathrm{shared}},\qquad
+Y_2=C_{\mathrm{shared}},\qquad
+Y_3=S_Z.
+$$
+
+2. 本研究把“长程语义”定义为：变量 $Z$ 已经出现在前缀中，最近的未来词不依赖它，直到第 $\tau$ 个未来词才必须用它决定正确内容分支。
 
 $$
 I(Z;Y_j\mid Y_{<j})=0\quad(j<\tau),
@@ -16,7 +40,7 @@ Y_\tau=S_Z,
 I(Z;Y_\tau\mid Y_{<\tau})=H(Z).
 $$
 
-2. 当预测范围覆盖第一个需要 $Z$ 的未来位置时，低该位置损失会强迫当前隐藏状态保留 $Z$。
+3. 当预测范围覆盖第一个需要 $Z$ 的未来位置时，低该位置损失会强迫当前隐藏状态保留 $Z$。
 
 $$
 \mathbb E[-\log q_\tau(S_Z\mid h_T)]\le\varepsilon
@@ -24,13 +48,13 @@ $$
 I(h_T;Z)\ge H(Z)-\varepsilon.
 $$
 
-3. 在直接优化隐藏状态、固定语义读出方向的模型中，语义边距每一步的增长精确等于该步的语义速度。
+4. 在直接优化隐藏状态、固定语义读出方向的模型中，语义边距每一步的增长精确等于该步的语义速度。
 
 $$
 M_K(t+1)-M_K(t)=\eta G_K^{hidden}(t).
 $$
 
-4. 在 Transformer 参数训练中，目标给出的语义方向还要经过编码器参数化，并受到其他位置损失的干扰。
+5. 在 Transformer 参数训练中，目标给出的语义方向还要经过编码器参数化，并受到其他位置损失的干扰。
 
 $$
 G_\theta
@@ -316,4 +340,4 @@ $$
 
 **Figures：**
 
-- `daily_research_reports/0711/meetings/figures/mtp_a11_10_direct_native_margin_split.png`
+- `daily_research_reports/0710/meetings/figures/mtp_a11_10_direct_native_margin_split.png`
