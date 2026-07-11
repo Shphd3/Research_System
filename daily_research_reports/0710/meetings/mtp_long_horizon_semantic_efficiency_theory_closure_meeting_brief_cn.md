@@ -249,7 +249,7 @@ $$
 
 **边界：** 它不说明 NTP 在其他位置监督下最终学不到 $Z$，也不说明 MTP 已经更省样本。
 
-**来源：** [A11 主故事](../../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md)；[第一个有信息位置实验摘要](../../../Projects/from-attention-to-search/main/experiments/A11/A11_04_k3_first_informative_horizon/summary.md)。
+**来源：** [A11 主故事](../../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md)；[第一个有信息位置实验摘要](../../../Projects/from-attention-to-search/main/experiments/A11/A11_04_k3_first_informative_horizon/summary.md)。
 
 ### 结果 2：直接有信息目标先产生严格正的一阶语义速度，再在明确条件下累积为有限步恢复。
 
@@ -290,7 +290,7 @@ $$
 
 **边界：** 真实文本中有信息位置和输出方向尚未识别，参数空间传递下界也尚未证明。
 
-**来源：** [A11 主故事](../../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md)；[一般 K 输出方向实验摘要](../../../Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md)；[逐步扩大预测范围实验摘要](../../../Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md)。
+**来源：** [A11 主故事](../../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md)；[一般 K 输出方向实验摘要](../../../Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md)；[逐步扩大预测范围实验摘要](../../../Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md)。
 
 ## 4. 执行动作
 
@@ -312,7 +312,7 @@ $$
 
 **主故事：**
 
-- [A11 长程语义效率主故事](../../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md)
+- [A11 长程语义效率主故事](../../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md)
 
 **整合简报：**
 

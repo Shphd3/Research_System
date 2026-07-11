@@ -156,9 +156,31 @@ Default story paths:
 ```text
 Projects/<project>/main/stories/README.md
 Projects/<project>/main/stories/<line_id>/README.md
-Projects/<project>/main/stories/<line_id>/story.md
-Projects/<project>/main/stories/<line_id>/story_cn.md
+Projects/<project>/main/stories/<line_id>/<NN>_<topic>.md
+Projects/<project>/main/stories/<line_id>/<NN>_<topic>_cn.md
+Projects/<project>/main/stories/<line_id>/archive/<snapshot_id>/<snapshot_id>.md
+Projects/<project>/main/stories/<line_id>/archive/<snapshot_id>/<snapshot_id>_cn.md
 ```
+
+Story filenames must remain identifiable outside their parent folder. Use a
+two-digit reading-order prefix and a concrete subject-bearing topic for active
+documents. Do not create new generic `story.md` or `story_cn.md` files. A line
+folder may contain multiple story documents only when they have different,
+explicit scopes, such as workload definition, mechanism theory, or downstream
+validation. Do not create one story per anchor.
+
+Each line `README.md` must contain an ordered story registry and mark exactly
+one document pair as the current primary synthesis. Historical snapshots must
+repeat the snapshot-folder identifier in the filename rather than using a
+generic basename.
+
+Formal stories are bilingual by default. The English canonical file and its
+Chinese `_cn.md` companion must share the same numeric prefix and topic stem.
+They must agree on the research question, theorem status, evidence verdict,
+claim boundary, and next decision. Updating or renaming a formal story means
+updating both language versions and all project-local references in the same
+task. A historical Chinese document that does not match the current English
+argument remains an archive; it must not be relabeled as the current companion.
 
 Anchors remain the source of adjudicable questions. Stories are the source of
 line-level reading order and full argument synthesis. When a user explicitly

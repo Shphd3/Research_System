@@ -302,7 +302,7 @@ $$
 
 **Story：**
 
-- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md`
+- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md`
 
 **Anchor：**
 

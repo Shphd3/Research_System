@@ -133,10 +133,11 @@ Supporting objective line:
 11 long-horizon MTP objective
 ```
 
-Line story:
+Line stories:
 
 ```text
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md
 ```
 
 Role:
@@ -204,12 +205,38 @@ the direct path in 5/5 seeds and preserve final Y1 accuracy, with a measurable
 decision-prefix CE cost. A11_13 closes one downstream construct-validity gate:
 the paired persistent-assistant task has Q_task=1.0 in 5/5 seeds, exact
 local/cue insufficiency, complete paraphrase/counterfactual guards, and maximum
-tested lexical-shortcut accuracy 0.5375. The remaining A11 gap is now the first
-neural method comparison: whether K=2 MTP reaches the shared standard-H1
-downstream score earlier than NTP under matched data tokens and backbone
-updates. A11 still does not prove natural-language MTP efficiency, pretrained-
-LLM benefit, MoE routing preservation, semantic expert identity, or expert
-utility.
+tested lexical-shortcut accuracy 0.5375. A11_14/14b separate local-language
+fit from unseen-paraphrase transfer; random small models fit seen wording but
+do not make the evaluation efficiency comparison adjudicable. A11_15 uses
+Qwen3-0.6B and raises held-out Q to roughly 0.8, but neither method reaches the
+sustained threshold; MTP's private H2 reaches about 0.90 without a stable
+common-H1 advantage. A11_16--A11_18 locate the missing mechanism: the extra H2
+gradient is mostly on shared parameters, and after a full-vocabulary burn-in
+it is useful under both H2 and standard H1 at the current h_T in 5/5 seeds,
+but becomes adverse under either head at h_{T+1} in 5/5 post-burn-in AUC
+comparisons under the original Decision bridge. A11_19 shows this is not a
+bridge-independent position law: Decision/Answer have positive AUC in 0/5
+seeds, while Therefore/colon have positive AUC in 4/5. Its strict
+preregistered verdict remains insufficient because the all-cell finite-
+difference guard passes in only 3/5 seeds, with failures concentrated at
+near-zero predictions. Thus horizon coverage and current-state formation do
+not imply downstream use-position preservation; the cross-position condition
+must include the intervening token/state transition. A11_20 tests this local
+ordering end to end: the standard-H1 margin interaction is positive in 5/5
+seeds, but the Q_real interaction is positive in only 3/5, favorable-bridge
+MTP gain in only 2/5, no run reaches the sustained threshold, and local guards
+fail. Thus local bridge-conditioned margin alignment is not sufficient for a
+downstream MTP efficiency advantage. The A11 mechanism phase is closed; do not
+add bridge, weight, or duration sweeps. The advisor dialogue now reframes the
+next A11 step as `01-2 workload modeling`: define a real distributed-evidence
+decision, simplify it to a minimal operator-labeled composition tree, and
+separate composition depth, evidence distance, and decision-reveal latency
+before comparing objectives. A11_21 repository-code semantic latency remains
+a parked real-workload candidate rather than the automatic next run. The only
+current A11 decision is to accept, revise, or reject the proposed workload
+model in the active story; no A11_22 protocol exists yet. A11 still does not
+prove natural-language or code MTP efficiency, pure-pretraining benefit, MoE
+routing preservation, semantic expert identity, or expert utility.
 ```
 
 Sharper logic:
@@ -321,7 +348,8 @@ Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_confli
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md

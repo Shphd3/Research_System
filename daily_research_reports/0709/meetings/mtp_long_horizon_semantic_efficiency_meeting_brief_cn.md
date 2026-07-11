@@ -222,7 +222,7 @@ $$
 
 **边界：** 表示保证不等于训练更快；它也不说明 all-position 中 K1/K2 不会通过其他位置学到 $Z$。
 
-**来源：** `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md`，`Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_04_k3_first_informative_horizon_anchor.md`，`Projects/from-attention-to-search/main/experiments/A11/A11_04_k3_first_informative_horizon/summary.md`。
+**来源：** `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md`，`Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_04_k3_first_informative_horizon_anchor.md`，`Projects/from-attention-to-search/main/experiments/A11/A11_04_k3_first_informative_horizon/summary.md`。
 
 ### 结果 2：在干净 $\tau=3$ 的一阶模型中，K3 给 $h_T$ 正的语义更新方向，K1/K2 没有这个方向。
 
@@ -295,7 +295,7 @@ $$
 
 **Story：**
 
-- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md`
+- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md`
 
 **Protocol：**
 

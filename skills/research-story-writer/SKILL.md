@@ -43,21 +43,32 @@ Prefer:
 ```text
 Projects/<project>/main/stories/README.md
 Projects/<project>/main/stories/<line_id>/README.md
-Projects/<project>/main/stories/<line_id>/story.md
-Projects/<project>/main/stories/<line_id>/story_cn.md
+Projects/<project>/main/stories/<line_id>/<NN>_<topic>.md
+Projects/<project>/main/stories/<line_id>/<NN>_<topic>_cn.md
 Projects/<project>/main/stories/<line_id>/anchor_threads/<anchor_id>/story_fragment.md
-Projects/<project>/main/stories/<line_id>/archive/YYYYMMDD_<topic>/README.md
+Projects/<project>/main/stories/<line_id>/archive/<snapshot_id>/<snapshot_id>.md
+Projects/<project>/main/stories/<line_id>/archive/<snapshot_id>/<snapshot_id>_cn.md
 ```
 
 Rules:
 
-1. Each research line has at most one active `story.md`.
-2. Use `story_cn.md` only as a Chinese companion unless the user says Chinese
-   is canonical.
-3. Do not write one full story per anchor.
-4. Use `anchor_threads/<anchor_id>/story_fragment.md` for anchor-specific
+1. Do not create new generic `story.md` or `story_cn.md` files. Active story
+   names use `<NN>_<topic>.md`, where `NN` is a two-digit reading-order number
+   and `topic` states the document's actual subject.
+2. A research line may contain multiple stories only when their scopes are
+   genuinely different. The line `README.md` must provide the ordered registry
+   and designate exactly one current primary synthesis.
+3. Formal stories are bilingual by default. The English canonical file and
+   Chinese companion use the same stem, with `_cn.md` added only to the Chinese
+   file. Keep question, theorem state, evidence, boundary, and next decision
+   synchronized. Do not promote an older Chinese snapshot as a companion when
+   its argument differs from the current English story.
+4. Historical snapshot filenames repeat the full snapshot-folder identifier so
+   that the file remains identifiable when copied out of its directory.
+5. Do not write one full story per anchor.
+6. Use `anchor_threads/<anchor_id>/story_fragment.md` for anchor-specific
    narrative fragments.
-5. Do not automatically update graph, root sync, commit, or push.
+7. Do not automatically update graph, root sync, commit, or push.
 
 ## Story Modes
 
@@ -129,8 +140,8 @@ define it in `术语约定` before using it in the argument.
 ## Writing Rules
 
 Default conversation language is Chinese. Canonical story language is English
-unless the user explicitly asks for Chinese canonical. Use `story_cn.md` for a
-Chinese companion.
+unless the user explicitly asks for Chinese canonical. Use the matching
+`<NN>_<topic>_cn.md` file for the Chinese companion.
 
 Use Research_System formula style:
 
@@ -157,7 +168,10 @@ sync, commit, or push unless the user explicitly asks.
 Before finishing, verify:
 
 ```text
-there is only one active story for the line
+there is exactly one README-designated primary story pair for the line
+the line README identifies one primary story pair and orders any additional stories
+every formal English story has a synchronized `_cn.md` companion
+filenames use a two-digit order and a subject-bearing topic rather than generic story names
 the abstract states question, mechanism, conclusion, boundary, and next step
 the story is self-contained and does not depend on meeting context
 the data/training layout appears before the theorem

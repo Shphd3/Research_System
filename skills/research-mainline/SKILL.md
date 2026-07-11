@@ -114,6 +114,29 @@ main/experiments/A<anchor_id>/<experiment_id>/
 For example, experiments whose id starts with `A05_` belong under
 `main/experiments/A05/`.
 
+### Story Names
+
+Story folders may contain more than one document, so the filename must carry
+both reading order and subject:
+
+```text
+main/stories/<line_id>/<NN>_<topic>.md
+main/stories/<line_id>/<NN>_<topic>_cn.md
+```
+
+Use a two-digit `NN`. Keep the English canonical story and Chinese companion
+on the same stem. The line `README.md` must order all story pairs and mark one
+pair as the current primary synthesis. Do not use generic `story.md` or
+`story_cn.md` names for new or renamed stories, and do not create one story per
+anchor.
+
+Archived snapshots repeat their snapshot identifier in the filename:
+
+```text
+archive/<snapshot_id>/<snapshot_id>.md
+archive/<snapshot_id>/<snapshot_id>_cn.md
+```
+
 ### Daily Reports
 
 Daily report folders are date-first because they record work for a day:

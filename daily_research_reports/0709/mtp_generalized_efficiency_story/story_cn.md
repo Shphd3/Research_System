@@ -454,7 +454,7 @@ A11_06 使用固定初始输出方向 $u^0_{S_z}$ 定义 $M_Z^{ref}$。后续需
 - `daily_research_reports/0709/meetings/meeting_brief.md`
 - `daily_research_reports/0709/mtp_generalized_efficiency_story/anchors/11_08_general_k_readout_margin_dynamics_anchor.md`
 - `daily_research_reports/0709/mtp_generalized_efficiency_story/protocols/11_08_protocol.md`
-- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md`
+- `Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md`
 - `Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_08_general_k_readout_margin_dynamics_anchor.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/protocol.md`
 - `Projects/from-attention-to-search/main/experiments/A11/A11_08_general_k_readout_margin_dynamics/summary.md`
