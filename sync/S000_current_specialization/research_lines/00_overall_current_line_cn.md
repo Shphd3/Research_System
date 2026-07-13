@@ -173,6 +173,17 @@ K 越大越好。
 Q 单独证明 direct supervision。
 ```
 
+0713 更新：
+
+```text
+A11_23/23b 表明当前从头训练的神经序列任务没有通过 task gate；更深、更宽、
+更长训练和显式 pair-token 均近机会水平。A11_24 在 oracle-factor 线性模型中
+支持结构性 rank competition：rank 1 的 MTP 标准损失 gap 为
+0.9084--1.0218，rank 2 时消失。A11_25 表明等辅助剂量课程不能修复 rank-1
+缺秩，Pareto pass 为 0/5。A11_26 因此 parks real/scale transfer；Router 继续
+parked。下一步只能先建立一个已具备两跳能力的 neural bridge。
+```
+
 ## 当前问题
 
 当前不是继续证明 controlled feature geometry 存在。当前要裁定的是：

@@ -75,6 +75,7 @@ parked.
 | `research_lines/05_failure_mechanism_line_cn.md` | why ordinary top-1 routing fails |
 | `research_lines/06_proxy_preservation_line_cn.md` | route-relevant proxy discovery, initialization, and preservation |
 | `research_lines/07_interference_value_line_cn.md` | when a partition has functional value |
+| `research_lines/11_long_horizon_mtp_objective_cn.md` | current MTP calibration, rank, curriculum, and transfer boundary |
 
 Supporting objective line:
 
@@ -99,8 +100,13 @@ output-direction alignment. A11_10 supports the all-position native/probe
 split: direct H3 conditions reach native H3=1.0 and large `M_Z_ref`, while
 K2 and masked K3 can keep nontrivial `Q` but native H3 remains 0 and
 `M_Z_ref` stays near zero. Boundary: `Q` alone is not direct-supervision
-evidence; larger K is not automatically better; MoE routing transfer remains
-open.
+evidence; larger K is not automatically better. The new A11_23/23b neural
+calibration attempts remain near chance, so real/scale transfer is not yet
+eligible. A11_24 supports structural rank competition only in an oracle-factor
+linear model: rank-1 MTP standard-loss gap is `0.9084--1.0218`, while rank 2
+removes the gap. A11_25 shows dose-matched curriculum does not repair that
+structural deficit (`0/5`). Router and MoE transfer remain parked. See
+`research_lines/11_long_horizon_mtp_objective_cn.md`.
 
 ## One-Line State
 

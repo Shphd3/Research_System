@@ -136,8 +136,8 @@ Supporting objective line:
 Line stories:
 
 ```text
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
 ```
 
 Role:
@@ -226,15 +226,22 @@ ordering end to end: the standard-H1 margin interaction is positive in 5/5
 seeds, but the Q_real interaction is positive in only 3/5, favorable-bridge
 MTP gain in only 2/5, no run reaches the sustained threshold, and local guards
 fail. Thus local bridge-conditioned margin alignment is not sufficient for a
-downstream MTP efficiency advantage. The A11 mechanism phase is closed; do not
-add bridge, weight, or duration sweeps. The advisor dialogue now reframes the
-next A11 step as `01-2 workload modeling`: define a real distributed-evidence
-decision, simplify it to a minimal operator-labeled composition tree, and
-separate composition depth, evidence distance, and decision-reveal latency
-before comparing objectives. A11_21 repository-code semantic latency remains
-a parked real-workload candidate rather than the automatic next run. The only
-current A11 decision is to accept, revise, or reject the proposed workload
-model in the active story; no A11_22 protocol exists yet. A11 still does not
+downstream MTP efficiency advantage. The A11 bridge phase remains closed; do
+not add bridge, weight, or duration sweeps. Under the user's explicit return to
+the MTP mechanism question, A11_22 now tests the paired one-step standard-loss
+interference law on the exact permutation-composition task. Its numerical
+component passes at relative step norm $10^{-5}$ (slope `1.0174`, Pearson
+`0.9990`, sign agreement `1.0000`), but the formal task-mechanism verdict is
+insufficient because all five validation answer accuracies remain at chance
+`0.125`. The only current A11 decision is one minimal task/model calibration
+repair while holding the data, losses, seeds, and finite-difference audit
+fixed. A11_23/23b now show that bounded depth/time/width and explicit pair-token
+repairs still leave the from-scratch sequence task near chance. A11_24 supports
+structural rank competition in an oracle-factor linear model: rank-1 MTP
+standard-loss gap is `0.9084--1.0218`, while rank 2 removes it to numerical
+zero. A11_25 shows dose-matched curriculum does not Pareto-repair the rank-1
+deficit (`0/5`). A11_26 therefore parks scale/real transfer until a calibrated
+neural bridge exists. A11_21, MoE, and Router remain parked. A11 still does not
 prove natural-language or code MTP efficiency, pure-pretraining benefit, MoE
 routing preservation, semantic expert identity, or expert utility.
 ```
@@ -348,8 +355,9 @@ Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_confli
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
+Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
