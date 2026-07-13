@@ -241,7 +241,12 @@ structural rank competition in an oracle-factor linear model: rank-1 MTP
 standard-loss gap is `0.9084--1.0218`, while rank 2 removes it to numerical
 zero. A11_25 shows dose-matched curriculum does not Pareto-repair the rank-1
 deficit (`0/5`). A11_26 therefore parks scale/real transfer until a calibrated
-neural bridge exists. A11_21, MoE, and Router remain parked. A11 still does not
+neural bridge exists. A11_27 now defines the immediate utilization question:
+after one shared pretrained-model checkpoint passes the two-hop task gate,
+does informative Next-2 increase counterfactual control of the answer by the
+standard next-token head relative to NTP? Its anchor is complete and protocol
+is a draft; no run is authorized yet. A11_21, MoE, and Router remain parked.
+A11 still does not
 prove natural-language or code MTP efficiency, pure-pretraining benefit, MoE
 routing preservation, semantic expert identity, or expert utility.
 ```
@@ -358,6 +363,8 @@ Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradie
 Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum.md
 Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
 Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/summary.md
+Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_27_standard_head_causal_representation_use_anchor.md
+Projects/from-attention-to-search/main/experiments/A11/A11_27_standard_head_causal_representation_use/protocol.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md

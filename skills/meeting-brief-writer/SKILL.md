@@ -55,7 +55,7 @@ For `模式一`, `## 0. 执行摘要` must include these bold fields exactly:
 ```text
 研究问题
 机制解释
-主要结果
+主要结论
 证据说明
 结论边界
 执行动作
@@ -66,12 +66,12 @@ Inside the executive summary:
 - `机制解释` must be multi-line when formulas are needed. It must list the
   most important formulas as display math, each preceded by one plain-language
   sentence that states what the formula means.
-- `主要结果` must contain the advisor-facing main conclusions as numbered
+- `主要结论` must contain the advisor-facing main conclusions as numbered
   points. These points are the conclusions to be reported aloud, not evidence
   labels or experiment names.
-- `证据说明` must map directly to the numbered main results. If one conclusion
+- `证据说明` must map directly to the numbered main conclusions. If one conclusion
   has multiple evidence items, use nested bullets under that conclusion.
-- Result sentences must be complete conclusions, not noun phrases.
+- Conclusion sentences must be complete conclusions, not noun phrases.
 
 The document title must be the problem title itself. Do not prefix the title
 with `会议简报：`.
@@ -113,7 +113,7 @@ only for precise setup, numbers, artifact maps, and validation details.
   parentheses only when needed.
 - Avoid project nicknames and English jargon in headings and claims. If a file
   name or metric abbreviation must remain, define it in `术语解释`.
-- Make the question, mechanism, evidence, and result the grammatical subjects.
+- Make the question, mechanism, evidence, and conclusion the grammatical subjects.
   Avoid organizing the brief around "we ran", "we tried", or "we did".
 - Start with the strongest supported conclusion, then state boundary and next
   action.
@@ -121,14 +121,18 @@ only for precise setup, numbers, artifact maps, and validation details.
   numbered or bulleted items, with a one-sentence plain-language meaning for
   each formula. In the executive summary, these formulas must be display
   formulas using `$$...$$`, not inline-only formulas.
-- The main results must be conclusion statements tied to the mathematical
-  model. Each result point should be short enough to say aloud and must not use
+- The main conclusions must be conclusion statements tied to the mathematical
+  model. Each conclusion point should be short enough to say aloud and must not use
   undefined technical terms.
-- In the executive summary, `主要结果` is the place for the main conclusions
+- In the executive summary, `主要结论` is the place for the main conclusions
   themselves. Do not put the conclusion list under `证据说明`.
-- The evidence explanation must correspond to the main result points. If one
-  result has multiple evidence items, split them into smaller sub-bullets under
-  that result rather than merging them into one dense paragraph.
+- The evidence explanation must correspond to the main conclusion points. If one
+  conclusion has multiple evidence items, split them into smaller sub-bullets under
+  that conclusion rather than merging them into one dense paragraph.
+- Do not use quotation marks to package an undefined concept, an informal label,
+  or a causal claim. Except for a necessary verbatim quotation, replace quoted
+  phrases with a direct definition of the object, condition, mechanism, or claim
+  boundary.
 - Separate observation, interpretation, decision, and speculation.
 - Do not create stronger claims than the linked anchor, summary, and detailed
   records allow.
@@ -141,12 +145,12 @@ The brief is incomplete unless it has:
   abbreviations, and shorthand labels;
 - one minimal mechanism model or explicit statement that the model is missing;
 - an executive summary where `机制解释` contains the key display formulas,
-  `主要结果` contains the numbered conclusions, and `证据说明` maps evidence
+  `主要结论` contains the numbered conclusions, and `证据说明` maps evidence
   back to those conclusions;
-- at most three main result points;
-- for each result point: mechanism correspondence, metric/condition
+- at most three main conclusion points;
+- for each conclusion point: mechanism correspondence, metric/condition
   definition, evidence, explanation, boundary, and source;
-- evidence bullets that map directly back to the result points;
+- evidence bullets that map directly back to the conclusion points;
 - central figures embedded near the claims they support;
 - an execution action with purpose and completion criterion;
 - a source index linking every anchor, protocol, summary, detailed record, and
@@ -160,8 +164,10 @@ Before returning the brief:
 2. Check that all embedded figure paths exist.
 3. Search for leftover English shorthand in claims and replace it with Chinese
    explanation unless it is a defined abbreviation or a file path.
-4. Check formulas use `$...$` for inline math and `$$...$$` for display math.
-5. Check that the next action is a minimal decision-bearing action, not a broad
+4. Search for quotation marks and confirm that each remaining pair is a necessary
+   verbatim quotation rather than a substitute for definition or explanation.
+5. Check formulas use `$...$` for inline math and `$$...$$` for display math.
+6. Check that the next action is a minimal decision-bearing action, not a broad
    wish list.
-6. Check that the dated meeting copy exists under
+7. Check that the dated meeting copy exists under
    `daily_research_reports/MMDD/meetings/` with a topic-bearing filename.
