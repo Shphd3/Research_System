@@ -301,7 +301,7 @@ Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_pres
 Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
 Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/README.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md

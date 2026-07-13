@@ -81,7 +81,9 @@ Supporting objective line:
 
 ```text
 anchors/11_long_horizon_mtp_objective/
-stories/11_long_horizon_mtp_objective/story_cn.md
+research_lines/11_long_horizon_mtp_objective_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
 ```
 
 This line is not the active MoE gating mainline. It asks whether multi-token
@@ -165,7 +167,7 @@ Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
 Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/README.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/story_cn.md
+Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_04_03_k3_efficiency_advantage/meeting_brief.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
