@@ -1,17 +1,18 @@
 # Daily Research Reports — 2026-07-12
 
-## Active Package
+## Current Role
 
-```text
-docs/
-```
+This date folder is a historical working package. Its workload stories,
+provisional anchor/protocol, and meeting briefs have been superseded by the
+project-local A11 line and the 0713 advisor-facing meeting brief.
 
-Purpose: convert the 0710 MTP/Router advisor dialogue into a workload-grounded story, a new A11_22 anchor, a minimal paired synthetic-real protocol, and an explicit theory route.
+## Active Reading Entry
 
-Reading entry:
+- [MTP mathematics foundations and synthetic-data audit](docs/mtp_math_foundations_and_synthetic_data_audit_cn.md)
+- [Current project story](../../Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md)
+- [Current 0713 meeting brief](../0713/meetings/mtp_three_questions_and_causal_use_meeting_brief_cn.md)
 
-```text
-docs/README.md
-```
+## Archived Material
 
-Status: working draft; no experiment run; no canonical sync.
+See [archive/README.md](archive/README.md) for the superseded 0712 drafts. They
+remain available for provenance but are not current research-state sources.
