@@ -172,7 +172,7 @@ common.
 
 ## 7. Current Evidence
 
-**Observation:** A06_12 shows real-DCLM raw-center proxy routing drops sharply
+**Observation:** `A06_01_04_E03` shows real-DCLM raw-center proxy routing drops sharply
 from step 0 to step 5/10. A bounded rerun recovered gate-logit artifacts for
 seeds 0/1/2, layers 3/4/5, and checkpoints 0/5/10.
 
@@ -209,7 +209,7 @@ and
 and
 `../../experiments/A01_common_operator/A01_04_real_dclm_feedback_logit_bridge_bounded_run/summary.md`
 and
-`../../experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md`.
+`../../experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E03_real_proxy_training_overwrite/summary.md`.
 
 ## 8. Claim Boundary And Next Decision
 

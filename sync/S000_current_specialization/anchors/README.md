@@ -1,14 +1,118 @@
-# Historical Copied Anchors
+# Problem Anchors
 
-This folder preserves an earlier explicit anchor-copy snapshot. It predates the
-2026-07-14 A06 consolidation and the separation of A11 from A12.
+This folder stores the project-local source-of-truth anchors for
+`from-attention-to-search`.
 
-Do not use the copied folders here to determine the active question, claim
-boundary, or next experiment. Use:
+Canonical anchors are grouped by research line:
 
-- [current anchor index](../anchor_index.md);
-- [project-local anchor registry](../../../Projects/from-attention-to-search/main/problem_anchors/README.md);
-- [current project state](../../../PROJECTS.md).
+```text
+Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/
+Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/
+Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/
+Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/
+Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/
+Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/
+Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/
+Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/
+```
 
-The copied files remain only so older reports and experiment records retain
-their provenance.
+Do not create a generic nested `anchors/` subfolder inside this project-local
+source tree. Each folder above is a research-line folder. Root `sync/S000_*`
+may copy these anchors into its own `anchors/` mirror when explicitly synced,
+but the project-local files remain the source of truth.
+
+Do not add placeholder `closure/` folders or per-folder closure README files.
+Create `closure/` only for a line explicitly selected for current-state
+synthesis. The closure report itself is the reading entry and should link to,
+not duplicate, anchors and experiment records.
+
+Current classification maps:
+
+```text
+00_foundation_definition/README.md
+05_failure_mechanism/research_map.md
+06_geometry_proxy_preservation/research_map.md
+09_common_rare_spectral_discrimination/README.md
+```
+
+## Active Research Shape
+
+Current mainline:
+
+```text
+definition / failure mechanism
+-> route-relevant state and proxy discovery
+-> initialization and finite-margin preservation
+-> expert utility formation
+-> partial-feedback discovery and phase control
+-> real-workload utility headroom before Router transfer
+```
+
+Current strongest judgment:
+
+```text
+The A06 controlled chain is now coherent from geometry to function. Route-
+relevant states can initialize a partition, but real proxy routing is rapidly
+overwritten by ordinary training. Finite low-tail margin is the local
+preservation buffer; its motion depends on utility, signed background pressure,
+representation, router, and optimizer-transmitted step scale. Correct exposure
+creates held-out specialist utility, while selected-only weighted top-1 can
+preserve a correct specialist but fail to discover it from a wrong rank. One
+rotating challenger plus a q10 or lower-CVaR10 utility certificate repairs that
+controlled failure and safely returns to top-1 under frozen four-expert
+assumptions. The only next decision is whether repository-level code has stable
+held-out expert utility headroom worth routing.
+```
+
+## Anchor Groups
+
+| Group | Anchors | Role | Current status |
+|---|---|---|---|
+| 00 foundation / definition | `00_foundation_definition/README.md` | Redirects the historical definition layer into consolidated `A06_00`. | No independent active anchor. |
+| 01 common-operator mechanism line | `01_common_operator_mechanism/README.md`, `01_common_operator_mechanism/README_cn.md`, `01_common_operator_mechanism/closure/01_common_operator_mechanism_closure_report.md` | Plan and synthesize the mechanism-first line for defining, identifying, and validating a common operator before method construction. | Stage 1 supports criterion-dependent common (`criterion_winner_diversity=4`); Stage 2 supports gradient common over activation common (`n_passed_mismatch_regimes=4/4`); Stage 3 controlled bridge supports feedback replay/removal (`n_passed_main_feedback_regimes=2/2`). The bounded real-DCLM gate-logit bridge reproduces collapse but rejects simple low-rank logit common as the main explanation (`pass=false`). |
+| 05 failure-mechanism line | `05_failure_mechanism/02_*`, `05_failure_mechanism/05_01_*` to `05_failure_mechanism/05_04_03_*` | Diagnose why ordinary top-1 fails: early top-1 lock-in, inhibition limits, feature-axis ambiguity, common offset, and common-logit feedback. | Mechanism evidence. It supplies the physical priors used by 06. |
+| 06 functional Routing line | `06_geometry_proxy_preservation/research_map.md`; parent anchors `06_00` to `06_04` with local `subanchors/` | Five decisions from functional definition through geometry, preservation, expert utility, sparse discovery, and a real-workload gate. | Four completed parent anchors and one active workload anchor; no LLM Router claim yet. |
+| 07 interference / value line | `07_features_overlap/07.md`, `07_features_overlap/07_01_*` to `07_features_overlap/07_06_*` | Tests whether parameter separation reduces common/rare feature interference or creates utility. | Controlled diagnostics; hierarchy/utility evidence is absorbed into A06. |
+| 09 common/rare spectral-discrimination line | `09_common_rare_spectral_discrimination/04_*`, `09_common_rare_spectral_discrimination/09_*` | Tests frequency / high-gain common-band explanations for rare discrimination failure. | Mechanism side line. It can inform A06/A07 but does not by itself prove a routing method. |
+| 10 optimizer learning-rate mechanism line | `10_optimizer_learning_rate_mechanism/10_*` | Seminar-driven optimizer root-cause line: test whether common / high-gain gradient directions constrain SGD-style critical learning rate before comparing Adam, Nesterov, or other optimizers. | Support line. It does not update the MoE preservation claim unless later bridged back through routing margin evidence. |
+| 11 informative-future branch mechanism | parent-anchor registry: `11_informative_future_branch_mechanism/README.md`; three complete parents `11_01`--`11_03`; story: `../stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md` | Isolates the objective-level NTP/MTP difference on a short matched branch: informative-future signal, parameter reachability, and the cross-position use boundary. | Stable bounded baseline. No active run; structured workload claims are excluded. |
+| 12 structured compositional MTP workload | parent-anchor registry: `12_structured_compositional_mtp_workload/README.md`; three complete parents `12_01`--`12_03`; story: `../stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md` | Tests whether the A11 signal becomes functional on a computation-tree workload, starting from a depth-two ordered-composition base case. | Workload valid; current from-scratch learner gate failed; linear rank mechanism supported; active design is a shared capability gate followed by intermediate-state causal use. |
+
+## Historical Placement
+
+Earlier definition, hierarchy, geometry, and real-proxy anchors have been
+absorbed into A06 parent/subanchor folders. Current documents use the new
+identifiers; immutable remote jobs remain in artifact maps and Git history is
+the source for the pre-consolidation file layout.
+
+## Experiment Folder Rule
+
+Experiment folders inherit the full parent/subanchor identity:
+
+```text
+../experiments/A06/<parent_id>_<topic>/<parent_id>_<subanchor_id>_E<run>_<topic>/
+```
+
+A parent anchor tells the complete major decision story. Small repairs,
+controls, rival-explanation tests, and method audits belong to its
+`subanchors/` directory and the matching grouped experiment directory. They do
+not receive a new line-level parent number. Renumber the directory and all
+active references when ownership changes; Git history preserves the previous
+layout.
+
+## Next Decision
+
+Audit `A06_04` before protocol design:
+
+```text
+Does unfiltered repository-level code completion contain stable held-out
+counterfactual expert utility gaps and positive oracle routing headroom?
+```
+
+Primary metric: held-out oracle routing headroom
+$G_{oracle}=L_{baseline}-L_{oracle}$.
+
+Required guards: calibration/held-out separation, stable best-expert identity,
+load-matched random routing, local-only and token-identity controls, and no MTP
+latency or utility prefiltering of the primary sample.

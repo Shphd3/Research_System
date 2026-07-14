@@ -55,10 +55,10 @@ Graph refresh status:
 
 ```text
 The project anchors and this registry contain the 2026-07-14 A06
-consolidation and A11/A12 split. The Sidecar specialization graph has not yet
-received that separately approved refresh. For those current decisions, use
-the linked project-local anchor registries rather than an older graph-node
-summary.
+consolidation, A11/A12 split, and A11/A12 parent/subanchor cleanup. The Sidecar
+specialization graph has not yet received that separately approved refresh.
+For those current decisions, use the linked project-local anchor registries
+rather than an older graph-node summary.
 ```
 
 For graph display, use Sidecar with workspace root:
@@ -184,11 +184,24 @@ Projects/from-attention-to-search/main/stories/11_informative_future_branch_mech
 Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md
 ```
 
+Current A11 parent-anchor registry:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md
+```
+
 Supporting A12 story:
 
 ```text
 Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md
 Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md
+```
+
+Current A12 parent-anchor registry and active parent:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md
+Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md
 ```
 
 Role:
@@ -200,7 +213,7 @@ structured composition workload. Neither line replaces the MoE preservation
 mainline.
 ```
 
-Current A11 milestone chain:
+Current A11 parent-anchor chain:
 
 ```text
 1. Informative-horizon supervision: supported in controlled hidden-state
@@ -223,7 +236,7 @@ reasoning, neural scale effects, curriculum benefit, real-workload transfer,
 or Router/MoE value. A11 is a stable baseline with no active run.
 ```
 
-Current A12 milestone chain:
+Current A12 parent-anchor chain:
 
 ```text
 1. Structured workload and capability gate: a computation-tree model defines
@@ -358,12 +371,13 @@ Projects/from-attention-to-search/main/stories/11_informative_future_branch_mech
 Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md
 Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md
 Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md
-Projects/from-attention-to-search/main/experiments/A12/A12_02_one_step_ntp_interference/summary.md
-Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_m03_standard_head_causal_use_anchor.md
-Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol.md
-Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
-Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
-Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
+Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md
+Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md
+Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E02_end_to_end_use_boundary/summary.md
+Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md
+Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md
+Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md
+Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md
 daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
 daily_research_reports/0701/meeting_brief.md
 ```

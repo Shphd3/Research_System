@@ -62,7 +62,7 @@ $$
 
 **边界：** 这否定当前模型作为目标比较载体，不否定预训练模型能学会该任务。
 
-**来源：** [能力校准总结](../../../Projects/from-attention-to-search/main/experiments/A12/A12_03b_explicit_binding_calibration/summary.md)
+**来源：** [能力校准总结](../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md)
 
 ### 问题 2：MTP 信息是否被使用？
 
@@ -72,7 +72,7 @@ $$
 
 **边界：** 只能说明当前受控任务中的“形成不保证使用”，不能推出一般语言模型规律。
 
-**来源：** [信息位置](../../../Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md) · [参数传递](../../../Projects/from-attention-to-search/main/experiments/A11/A11_11_k2_semantic_tangent_kernel_transmission/summary.md) · [跨位置使用](../../../Projects/from-attention-to-search/main/experiments/A11/A11_18_head_position_cross_kernel/summary.md)
+**来源：** [信息位置](../../../Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md) · [参数传递](../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md) · [跨位置使用](../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E01_head_position_cross_kernel/summary.md)
 
 ### 问题 3：容量与课程怎么解释？
 
@@ -82,7 +82,7 @@ $$
 
 **边界：** 这是线性受控机制，不是 Transformer 参数规模定律；课程仍可能缓解容量足够时的优化路径问题。
 
-**来源：** [表征秩总结](../../../Projects/from-attention-to-search/main/experiments/A12/A12_04_task_rank_competition/summary.md) · [课程边界](../../../Projects/from-attention-to-search/main/experiments/A12/A12_05_curriculum_rank_boundary/summary.md)
+**来源：** [表征秩总结](../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md) · [课程边界](../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md)
 
 ## 4. 唯一下一决策
 
@@ -92,10 +92,10 @@ $$
 
 **通过条件：** 完整答案准确率至少 `0.70`、格式至少 `0.99`、单表不高于 `0.20`、证据替换一致率至少 `0.90`；通过后才比较 NTP/MTP，并干预中间状态 $B$。
 
-**停止条件：** 任一门槛失败，停止目标比较和表征干预。[待审协议](../../../Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol_cn.md)
+**停止条件：** 任一门槛失败，停止目标比较和表征干预。[待审协议](../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol_cn.md)
 
 ## 5. 来源索引
 
 - **当前研究边界：** [A11 索引](../../../Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md) · [A12 索引](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md)
-- **下一实验：** [标准头因果使用协议](../../../Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol_cn.md)
+- **下一实验：** [标准头因果使用协议](../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol_cn.md)
 - **完整实验设置：** 需要精确模型、种子和干预实现时，进入上述各 `summary.md` 所链接的 `detailed.md`。

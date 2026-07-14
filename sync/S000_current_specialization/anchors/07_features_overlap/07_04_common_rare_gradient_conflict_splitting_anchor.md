@@ -177,7 +177,7 @@ Evidence links: `../../experiments/A07/A07_04_common_rare_gradient_conflict_spli
 Observation: A05/A06 show that load, route entropy, and route purity are not enough to claim expert specialization.
 Interpretation: A07 needs a functional interference metric, not another load or NMI metric.
 Boundary: this does not yet show common/rare gradient conflict exists.
-Evidence links: `../05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md`, `../06_geometry_proxy_preservation/06_07_label_free_common_residual_control_router_anchor.md`.
+Evidence links: `../05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md`, `../06_geometry_proxy_preservation/06_01_geometry_and_state_discovery/subanchors/06_01_03_label_free_route_state_selection_anchor.md`.
 
 Observation: A07_01 to A07_03 produced a synthetic positive-control chain, but its conflict and expert utility were largely constructed.
 Interpretation: those experiments validate the audit machinery, not the real mechanism.

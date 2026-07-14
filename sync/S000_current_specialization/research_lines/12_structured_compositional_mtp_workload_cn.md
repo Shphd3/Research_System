@@ -26,4 +26,10 @@ $$
 
 先审阅因果使用协议并运行共享预训练模型的能力门槛。通过后，才从同一检查点比较 NTP 与信息性 Next-2，并干预中间实体 $B$，判断共同标准头是否按第二张表的规则改变答案。门槛失败则停止。
 
-来源：[A12 索引](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md) · [A12 故事](../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md) · [待审协议](../../../Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol_cn.md)
+## 当前父锚点链
+
+1. `12_01`：先验证任务定义有效，并要求学习器通过完整上下文能力门槛。
+2. `12_02`：在受控模型中分离目标干扰、表征秩不足和课程学习的边界。
+3. `12_03`：当前活动锚点；只检验 MTP 形成的中间状态是否被共同标准头因果使用。
+
+来源：[A12 索引](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md) · [A12 故事](../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md) · [待审协议](../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol_cn.md)

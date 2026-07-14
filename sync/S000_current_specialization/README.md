@@ -63,9 +63,15 @@ or real-task transfer.
 
 ## Copy Boundary
 
-The existing `anchors/` and `stories/11_long_horizon_mtp_objective/` folders
-are historical copied snapshots. They are retained for provenance and must not
-override the current project-local A06, A11, or A12 sources indexed above.
+The complete `anchors/` tree is a current mirror of
+`Projects/from-attention-to-search/main/problem_anchors/`, including every
+active parent anchor, subanchor, bilingual companion, and closure report.
+Links that leave the anchor tree point back to the project-local experiment or
+story source.
+
+Story folders remain compact indexes unless a full story copy is explicitly
+requested. The legacy `stories/11_long_horizon_mtp_objective/` folder is a
+historical snapshot and must not override the current project-local sources.
 
 This sync did not modify the Sidecar graph manifest. The project registry and
 project-local anchors are authoritative until a separately approved graph

@@ -7,7 +7,7 @@ canonical_language: zh-CN
 source_docs:
   - ../../../../../daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
   - ../../../../../daily_research_reports/0626/recordings/r1.md
-  - ../08_real_data_preserved_specialization/08_00_real_data_preserved_specialization_mainline_anchor.md
+  - ../06_geometry_proxy_preservation/06_01_geometry_and_state_discovery/subanchors/06_01_06_spectral_reservoir_method_audit_anchor.md
 ---
 
 # A09_01 常见高增益带 / 稀有判别 Anchor
@@ -117,9 +117,9 @@ $C_{disc}(k)$：高增益带占正确目标相对干扰项判别的比例。
 
 **负控：** 打乱 rare 标签后也能通过投影降低错配，但 rare loss 变差。这说明只看错配下降也不够，必须同时看 rare loss。
 
-**Observation:** A08_01/A08_02 支持“稳定方向可以转成路由”的受控结果。
+**Observation:** `A06_01_06_E01/E02` 支持“稳定方向可以转成路由”的受控结果。
 
-**Observation:** A08_03 和 A07_06 提醒我们：只看损失改善，可能误判机制。
+**Observation:** `A06_01_06_E03` 和 A07_06 提醒我们：只看损失改善，可能误判机制。
 
 **Observation:** A06 显示初始化可以做成，但真实 DCLM 上普通训练不能稳定保存。
 

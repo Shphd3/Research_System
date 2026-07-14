@@ -16,6 +16,9 @@
 分区为何保持或越界；专家功能怎样形成并被稀疏反馈发现；真实工作负载是否真的存在
 值得路由的功能余量。局部消融和失败控制只作为这些问题的子证据，不再占据平行主线。
 
+对应编号为 `06_00` 到 `06_04`。局部证据使用
+`06_<父锚点>_<子锚点>`，不再沿用旧的扁平 `06_01` 到 `06_30` 序列。
+
 ## 当前问题
 
 现实工作负载必须先证明存在值得路由的功能差异。唯一决策是：未筛选仓库代码补全中，控制词元、局部信息、负载和划分过拟合后，留出最优专家身份是否稳定，oracle 路由相对基线是否仍有正收益。
@@ -29,6 +32,7 @@
 
 ## 来源
 
+- [同步锚点索引](../anchors/06_geometry_proxy_preservation/research_map.md)
 - [整线故事](../../../Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing_cn.md)
-- [Anchor 研究图](../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md)
+- [项目内 Anchor 研究图](../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md)
 - [当前工作负载 Anchor](../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor_cn.md)

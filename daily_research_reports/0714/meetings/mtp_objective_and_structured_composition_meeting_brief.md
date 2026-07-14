@@ -60,7 +60,7 @@ Output: <DECIDE> <FMT_0> <ANS_v1>
 
 **Boundary:** This disqualifies the checkpoint for objective comparison; it does not show that a pretrained model cannot learn the task.
 
-**Source:** [Capability summary](../../../Projects/from-attention-to-search/main/experiments/A12/A12_03b_explicit_binding_calibration/summary.md)
+**Source:** [Capability summary](../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md)
 
 ### Question 2: Is the MTP information used?
 
@@ -70,7 +70,7 @@ Output: <DECIDE> <FMT_0> <ANS_v1>
 
 **Boundary:** This supports “formation does not imply use” only in the controlled setting.
 
-**Source:** [Information inclusion](../../../Projects/from-attention-to-search/main/experiments/A11/A11_09_next_k_inclusion_law/summary.md) · [Parameter transmission](../../../Projects/from-attention-to-search/main/experiments/A11/A11_11_k2_semantic_tangent_kernel_transmission/summary.md) · [Cross-position use](../../../Projects/from-attention-to-search/main/experiments/A11/A11_18_head_position_cross_kernel/summary.md)
+**Source:** [Information inclusion](../../../Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md) · [Parameter transmission](../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md) · [Cross-position use](../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E01_head_position_cross_kernel/summary.md)
 
 ### Question 3: What do capacity and curriculum explain?
 
@@ -80,7 +80,7 @@ Output: <DECIDE> <FMT_0> <ANS_v1>
 
 **Boundary:** This is a controlled linear mechanism, not a Transformer scale law. Curriculum may still help an optimization-path problem when capacity is sufficient.
 
-**Source:** [Rank summary](../../../Projects/from-attention-to-search/main/experiments/A12/A12_04_task_rank_competition/summary.md) · [Curriculum boundary](../../../Projects/from-attention-to-search/main/experiments/A12/A12_05_curriculum_rank_boundary/summary.md)
+**Source:** [Rank summary](../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md) · [Curriculum boundary](../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md)
 
 ## 4. One Next Decision
 
@@ -88,10 +88,10 @@ Output: <DECIDE> <FMT_0> <ANS_v1>
 
 **Pass:** Full-answer accuracy at least `0.70`, format accuracy at least `0.99`, single-table accuracy at most `0.20`, and evidence-swap consistency at least `0.90`.
 
-**Stop:** If any gate fails, do not compare objectives or run representation interventions. After a pass, clone NTP and MTP from the same checkpoint and intervene on intermediate state $B$. [Draft protocol](../../../Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol.md)
+**Stop:** If any gate fails, do not compare objectives or run representation interventions. After a pass, clone NTP and MTP from the same checkpoint and intervene on intermediate state $B$. [Draft protocol](../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md)
 
 ## 5. Source Index
 
 - [A11 current boundary](../../../Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md)
 - [A12 current boundary](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md)
-- [Next protocol](../../../Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol.md)
+- [Next protocol](../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md)

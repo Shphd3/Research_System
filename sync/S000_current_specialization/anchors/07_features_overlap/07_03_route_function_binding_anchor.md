@@ -127,7 +127,7 @@ Failure means: MoE routing may be structured but not functionally specialized fo
 **Observation:** PROJECTS currently marks Level 3 preservation as the active bottleneck.  
 **Interpretation:** A07_03 must not run as a utility claim until a route partition is preserved through early training.  
 **Boundary:** High route NMI or balanced load alone cannot justify A07_03.  
-**Evidence links:** `../../experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md`.
+**Evidence links:** `../../experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E03_real_proxy_training_overwrite/summary.md`.
 
 ## 8. Claim Boundary And Next Decision
 

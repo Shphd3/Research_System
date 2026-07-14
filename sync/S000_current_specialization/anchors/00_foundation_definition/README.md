@@ -1,13 +1,15 @@
 # 00 Foundation Definition
 
-This folder owns the parent definition layer for feature-level expert
-specialization.
+The parent definition has been consolidated into the A06 Routing line.
 
 Read first:
 
 ```text
-01_slot_context_dominance_router_specialization_anchor.md
+../06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md
 ```
+
+The historical A01 design is preserved at
+`../06_geometry_proxy_preservation/06_00_functional_specialization_contract/subanchors/06_00_01_operational_definition_and_failure_evidence_anchor.md`.
 
 ## Role
 
@@ -21,8 +23,8 @@ route-function binding
 causal expert utility
 ```
 
-It is not a method line. It supplies the claim boundary inherited by the 05
-failure-mechanism line, the 06 proxy/preservation line, and the 07 value line.
+It is not an independent active line. Its claim boundary is now owned by
+`A06_00`; A01 experiments remain historical definition/failure evidence.
 
 ## Current Boundary
 

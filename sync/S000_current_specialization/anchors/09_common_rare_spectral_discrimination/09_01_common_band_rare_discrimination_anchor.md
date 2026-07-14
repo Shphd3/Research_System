@@ -8,7 +8,7 @@ companion_cn: 09_01_common_band_rare_discrimination_anchor_cn.md
 source_docs:
   - ../../../../../daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
   - ../../../../../daily_research_reports/0626/recordings/r1.md
-  - ../08_real_data_preserved_specialization/08_00_real_data_preserved_specialization_mainline_anchor.md
+  - ../06_geometry_proxy_preservation/06_01_geometry_and_state_discovery/subanchors/06_01_06_spectral_reservoir_method_audit_anchor.md
 ---
 
 # A09_01 Common High-Gain Band / Rare Discrimination Anchor
@@ -119,9 +119,9 @@ $C_{disc}(k)$ is the share of correct-target-versus-distractor discrimination co
 
 **Guard:** Shuffling rare labels also removes mismatch after projection, but rare loss gets worse. This shows mismatch reduction alone is not sufficient evidence.
 
-**Observation:** A08_01/A08_02 support a controlled result: a stable direction can be converted into routing.
+**Observation:** `A06_01_06_E01/E02` support a controlled result: a stable direction can be converted into routing.
 
-**Observation:** A08_03 and A07_06 warn that loss improvement alone can misidentify the mechanism.
+**Observation:** `A06_01_06_E03` and A07_06 warn that loss improvement alone can misidentify the mechanism.
 
 **Observation:** A06 shows initialization can be made to work, but ordinary training does not preserve it on real DCLM.
 
