@@ -2,30 +2,30 @@
 
 ## 0. Thinking Card
 
-**Phenomenon:** A useful hidden-state gradient may fail to move trainable shared parameters in the same direction.  
-**Mechanism guess:** the encoder Jacobian controls reachability, while all other token losses add signed background pressure.  
-**Key variables:** direct path velocity, later NTP path velocity, background velocity, total velocity.  
-**Causal relation:** decompose one shared-parameter update and compare predicted with observed margin change.  
-**Observable metric:** parameter semantic velocity.  
-**Rival explanations:** fixed-head artifact; universally positive all-position transfer.  
+**Phenomenon:** A useful hidden-state gradient may fail to move trainable shared parameters in the same direction.
+**Mechanism guess:** the encoder Jacobian controls reachability, while all other token losses add signed background pressure.
+**Key variables:** direct path velocity, later NTP path velocity, background velocity, total velocity.
+**Causal relation:** decompose one shared-parameter update and compare predicted with observed margin change.
+**Observable metric:** parameter semantic velocity.
+**Rival explanations:** fixed-head artifact; universally positive all-position transfer.
 **Decision:** retain conditional reachability and signed background as the complete local conclusion.
 
 ## 1. Problem Definition
 
-**Parent problem:** [11_02 hidden-to-parameter transmission](../11_02_hidden_to_parameter_transmission_anchor.md).  
-**Decision question:** Does the direct MTP path reach shared parameters, and can background losses reverse its net sign?  
+**Parent problem:** [11_02 hidden-to-parameter transmission](../11_02_hidden_to_parameter_transmission_anchor.md).
+**Decision question:** Does the direct MTP path reach shared parameters, and can background losses reverse its net sign?
 **Not in scope:** long-run convergence or real-task gain.
 
 **Parameter semantic velocity** is the predicted first-order change in the task margin after a parameter update. It answers whether a local gradient can be realized, but not whether repeated training remains beneficial.
 
 ## 2. Physical Priors
 
-**P1:** Nonzero hidden-state direction is insufficient without Jacobian reachability.  
+**P1:** Nonzero hidden-state direction is insufficient without Jacobian reachability.
 **P2:** All-position losses are signed contributors, not neutral background.
 
 ## 3. Falsifiable Hypotheses
 
-**H1:** The direct MTP component has positive velocity and predicts a finite small update.  
+**H1:** The direct MTP component has positive velocity and predicts a finite small update.
 **H2:** The total velocity can differ in sign because remaining losses can cancel the direct component.
 
 ## 4. Mathematical Model
@@ -53,6 +53,6 @@ The [transmission experiment](../../../../../../Projects/from-attention-to-searc
 
 ## 8. Claim Boundary And Next Decision
 
-**Can claim:** the direct path is reachable under the controlled model; background terms are signed.  
-**Cannot claim:** a universal positive total MTP update.  
+**Can claim:** the direct path is reachable under the controlled model; background terms are signed.
+**Cannot claim:** a universal positive total MTP update.
 **Next decision:** test whether the reached direction survives to the actual standard-head answer position.

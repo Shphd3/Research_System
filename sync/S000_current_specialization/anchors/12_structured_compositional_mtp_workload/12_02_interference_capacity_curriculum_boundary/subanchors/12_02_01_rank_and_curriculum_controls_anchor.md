@@ -2,25 +2,25 @@
 
 ## 0. Thinking Card
 
-**Phenomenon:** MTP can improve a future factor while harming the standard factor when one shared representation must carry two independent directions.  
-**Mechanism guess:** structural missing rank causes a persistent tradeoff; scheduling can change optimization order but not create an absent dimension.  
-**Key variables:** imposed representation rank, standard-loss gap, future-factor error, integrated auxiliary dose.  
-**Causal relation:** change only rank or only the timing of an equal total auxiliary dose.  
-**Observable metric:** standard-loss gap with future-factor improvement as a guard.  
-**Rival explanations:** auxiliary loss merely fails; curriculum repairs structural capacity; parameter count alone explains capacity.  
+**Phenomenon:** MTP can improve a future factor while harming the standard factor when one shared representation must carry two independent directions.
+**Mechanism guess:** structural missing rank causes a persistent tradeoff; scheduling can change optimization order but not create an absent dimension.
+**Key variables:** imposed representation rank, standard-loss gap, future-factor error, integrated auxiliary dose.
+**Causal relation:** change only rank or only the timing of an equal total auxiliary dose.
+**Observable metric:** standard-loss gap with future-factor improvement as a guard.
+**Rival explanations:** auxiliary loss merely fails; curriculum repairs structural capacity; parameter count alone explains capacity.
 **Decision:** retain missing rank as a sufficient controlled mechanism and park neural scale claims.
 
 ## 1. Problem Definition
 
-**Parent problem:** [12_02 interference, capacity, and curriculum boundary](../12_02_interference_capacity_curriculum_boundary_anchor.md).  
-**Decision question:** Does structural rank alone create the tradeoff, and can a dose-matched curriculum remove it?  
+**Parent problem:** [12_02 interference, capacity, and curriculum boundary](../12_02_interference_capacity_curriculum_boundary_anchor.md).
+**Decision question:** Does structural rank alone create the tradeoff, and can a dose-matched curriculum remove it?
 **Not in scope:** Transformer scaling laws.
 
 **Task-relevant rank** is the number of independent factor directions the shared representation can carry in the oracle linear model. It is causally controlled here; it is not inferred from parameter count.
 
 ## 2. Physical Priors
 
-**P1:** Two independent factors require two independent channels for zero-error joint representation.  
+**P1:** Two independent factors require two independent channels for zero-error joint representation.
 **P2:** A schedule cannot increase the rank constraint.
 
 ## 3. Falsifiable Hypotheses
@@ -52,6 +52,6 @@ The [rank intervention](../../../../../../Projects/from-attention-to-search/main
 
 ## 8. Claim Boundary And Next Decision
 
-**Can claim:** missing rank is a sufficient tradeoff mechanism in this linear model; curriculum cannot create rank.  
-**Cannot claim:** model size is the cause in Transformers or curriculum never helps.  
+**Can claim:** missing rank is a sufficient tradeoff mechanism in this linear model; curriculum cannot create rank.
+**Cannot claim:** model size is the cause in Transformers or curriculum never helps.
 **Next decision:** test task-relevant capacity only after a neural checkpoint passes the A12 capability gate.

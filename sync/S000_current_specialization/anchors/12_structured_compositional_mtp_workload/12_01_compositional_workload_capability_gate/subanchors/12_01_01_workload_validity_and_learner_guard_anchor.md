@@ -2,25 +2,25 @@
 
 ## 0. Thinking Card
 
-**Phenomenon:** The data distribution requires two evidence tables, but the tested small from-scratch learners solve only the output format.  
-**Mechanism guess:** the workload is valid; the present checkpoint lacks held-out composition capability.  
-**Key variables:** full-context accuracy, single-table accuracy, evidence-swap consistency, format accuracy.  
-**Causal relation:** remove or replace one evidence table and compare the predicted answer change.  
-**Observable metric:** full-context held-out answer accuracy, guarded by partial-evidence controls.  
-**Rival explanations:** single-table shortcut; tokenizer/interface failure; objective effect.  
+**Phenomenon:** The data distribution requires two evidence tables, but the tested small from-scratch learners solve only the output format.
+**Mechanism guess:** the workload is valid; the present checkpoint lacks held-out composition capability.
+**Key variables:** full-context accuracy, single-table accuracy, evidence-swap consistency, format accuracy.
+**Causal relation:** remove or replace one evidence table and compare the predicted answer change.
+**Observable metric:** full-context held-out answer accuracy, guarded by partial-evidence controls.
+**Rival explanations:** single-table shortcut; tokenizer/interface failure; objective effect.
 **Decision:** accept the workload, close further tuning of this from-scratch branch, and require a capable shared checkpoint.
 
 ## 1. Problem Definition
 
-**Parent problem:** [12_01 compositional workload capability gate](../12_01_compositional_workload_capability_gate_anchor.md).  
-**Decision question:** Is the two-table task valid, and is the tested checkpoint eligible for NTP/MTP comparison?  
+**Parent problem:** [12_01 compositional workload capability gate](../12_01_compositional_workload_capability_gate_anchor.md).
+**Decision question:** Is the two-table task valid, and is the tested checkpoint eligible for NTP/MTP comparison?
 **Not in scope:** explaining all Transformer task-learning failures.
 
 The **capability gate** requires the same checkpoint to solve unseen full-context examples, remain near chance with either table removed, and change answers correctly after evidence replacement. It prevents objective claims on an unlearned task.
 
 ## 2. Physical Priors
 
-**P1:** Independent complete permutations make either table alone uninformative about the answer.  
+**P1:** Independent complete permutations make either table alone uninformative about the answer.
 **P2:** A checkpoint at chance cannot identify objective-level composition mechanisms.
 
 ## 3. Falsifiable Hypotheses
@@ -51,6 +51,6 @@ The distribution passes the joint-evidence audit. The [capacity ladder](../../..
 
 ## 8. Claim Boundary And Next Decision
 
-**Can claim:** the task construction is valid; the tested learner branch is ineligible.  
-**Cannot claim:** MTP failure or Transformer impossibility.  
+**Can claim:** the task construction is valid; the tested learner branch is ineligible.
+**Cannot claim:** MTP failure or Transformer impossibility.
 **Next decision:** evaluate one pretrained or explicitly structured shared checkpoint against the same gate before any objective comparison.

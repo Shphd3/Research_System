@@ -2,31 +2,31 @@
 
 ## 0. Thinking Card
 
-**Phenomenon:** A longer prediction horizon does not always produce a larger task signal.  
-**Mechanism guess:** A new target contributes only when it carries new branch information, and its contribution is signed by its centered output direction.  
-**Key variables:** information inclusion, output-direction alignment, hidden semantic velocity.  
-**Causal relation:** include an informative target or rotate its output direction, then measure the signed current-state update.  
-**Observable metric:** hidden semantic velocity.  
-**Rival explanations:** horizon length alone; extra-loss magnitude alone.  
+**Phenomenon:** A longer prediction horizon does not always produce a larger task signal.
+**Mechanism guess:** A new target contributes only when it carries new branch information, and its contribution is signed by its centered output direction.
+**Key variables:** information inclusion, output-direction alignment, hidden semantic velocity.
+**Causal relation:** include an informative target or rotate its output direction, then measure the signed current-state update.
+**Observable metric:** hidden semantic velocity.
+**Rival explanations:** horizon length alone; extra-loss magnitude alone.
 **Decision:** keep information inclusion and direction alignment as the sufficient diagnostic description; park the earlier horizon-by-horizon variants.
 
 ## 1. Problem Definition
 
-**Parent problem:** [11_01 informative-horizon supervision](../11_01_informative_horizon_supervision_anchor.md).  
-**Sharper subproblem:** distinguish information-bearing supervision from mere horizon extension.  
-**Decision question:** Do information inclusion and output geometry explain the direct current-state increment better than horizon length alone?  
+**Parent problem:** [11_01 informative-horizon supervision](../11_01_informative_horizon_supervision_anchor.md).
+**Sharper subproblem:** distinguish information-bearing supervision from mere horizon extension.
+**Decision question:** Do information inclusion and output geometry explain the direct current-state increment better than horizon length alone?
 **Not in scope:** parameter transmission or later standard-head use.
 
 An **informative position** is a future token whose identity still depends on the branch variable after earlier tokens are known. **Hidden semantic velocity** is the one-step movement of the decision state along the branch-correct centered output direction; it decides this local question but cannot prove behavioral benefit.
 
 ## 2. Physical Priors
 
-**P1:** A branch-shared label cannot distinguish branches. It could be wrong if it produces a nonzero branch-specific update under matched prefixes.  
+**P1:** A branch-shared label cannot distinguish branches. It could be wrong if it produces a nonzero branch-specific update under matched prefixes.
 **P2:** Two informative labels combine as vectors. It could be wrong if alignment interventions fail to predict the signed increment.
 
 ## 3. Falsifiable Hypotheses
 
-**H1:** An uninformative added target produces zero direct increment.  
+**H1:** An uninformative added target produces zero direct increment.
 **H2:** Aligned informative directions increase the signal; conflicting directions reduce it.
 
 ## 4. Mathematical Model
@@ -54,6 +54,6 @@ Both controls pass in the decisive [next-$K$ inclusion experiment](../../../../.
 
 ## 8. Claim Boundary And Next Decision
 
-**Can claim:** direct signal is governed by information inclusion and output geometry, not horizon length alone.  
-**Cannot claim:** shared-parameter or downstream benefit.  
+**Can claim:** direct signal is governed by information inclusion and output geometry, not horizon length alone.
+**Cannot claim:** shared-parameter or downstream benefit.
 **Next decision:** use this result as the fixed premise of parent anchor 11_02; do not reopen the archived horizon variants unless the premise is contradicted.
