@@ -112,9 +112,44 @@ research design document. Do not create new separate
 Default anchor paths:
 
 ```text
-Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
-Projects/<project>/main/problem_anchors/<anchor_id>.md
+Projects/<project>/main_specialization/problem_anchors/<line_id>/<anchor_id>_<topic>_anchor.md
+Projects/<project>/main/problem_anchors/<line_id>/<anchor_id>_<topic>_anchor.md
 ```
+
+When a line explicitly adopts parent/subanchor packaging, use:
+
+```text
+Projects/<project>/main/problem_anchors/<line_id>/<anchor_id>_<topic>/<anchor_id>_<topic>_anchor.md
+Projects/<project>/main/problem_anchors/<line_id>/<anchor_id>_<topic>/subanchors/<anchor_id>_<NN>_<topic>_anchor.md
+```
+
+Use a parent anchor for a complete adjudicable research story, not for one
+small ablation. A parent anchor must connect the phenomenon, physical prior,
+core model, decisive evidence chain, claim boundary, and next decision for one
+major problem. Put local rival explanations, robustness checks, metric guards,
+or incremental mechanism clauses under that parent's `subanchors/` directory.
+
+A subanchor must inherit the parent question and identify exactly which clause
+it adjudicates. It must not create a parallel mainline, repeat the parent's
+complete story, or become a container for an arbitrary experiment list.
+
+Numbering is hierarchical:
+
+```text
+<line>_<parent>                 # parent anchor, for example 06_02
+<line>_<parent>_<child>         # subanchor, for example 06_02_03
+```
+
+Do not mix flat and parent/subanchor layouts inside one active line. Adopt the
+nested layout only through an explicit line migration that updates indexes and
+references in the same task. Existing flat line registries remain valid until
+such a migration is approved.
+
+When anchors are consolidated, renumber retained current anchors, indexes, and
+references in the same task. Rename experiment folders only when their
+reproducibility identifiers are not already externally referenced. Git history
+is the provenance layer; immutable job IDs, remote result directory names, and
+published artifact identifiers remain in artifact maps.
 
 For the active project and current anchor list, read `PROJECTS.md` first, then
 the linked project-local anchor index.
@@ -204,7 +239,8 @@ questions, and do not let early artifacts absorb run details or results.
 | Artifact | Owns | Must not do |
 |---|---|---|
 | `00_handwrite_anchor.md` | the user's rough Thinking Card and exposed judgment | require or become a full 0-8 anchor before audit |
-| anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
+| parent anchor | complete adjudicable story for one major research problem | become a runbook, experiment timeline, or broad ablation list |
+| subanchor | one local clause, rival explanation, robustness check, or metric guard inherited from a parent anchor | create a parallel mainline or repeat the full parent story |
 | story | line-level argument synthesis, theorem state, evidence chain, claim boundary, and next anchor decomposition | replace anchors, protocols, summaries, detailed records, or introduce stronger claims than the sources support |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |

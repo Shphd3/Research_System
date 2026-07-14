@@ -1,4 +1,9 @@
-# Long-Horizon MTP Objective Story
+# Historical Long-Horizon MTP Objective Story
+
+> This copied registry predates the A11/A12 split. Use the current
+> [A11 story](../../../../Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md)
+> and [A12 story](../../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md)
+> for current claims and decisions.
 
 This folder owns the project-local story for the A11 long-horizon MTP objective line.
 

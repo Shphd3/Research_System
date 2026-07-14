@@ -11,9 +11,15 @@ Use this skill for the formal meeting-facing document itself. Use
 `handoff-report-writer` only after the brief exists and the user explicitly
 asks to package or sync material for another reader or repository.
 
-A meeting brief is not an experiment timeline. It is a problem-centered
-decision document: current question, mechanism model, evidence, boundary, and
-next execution action.
+A meeting brief is not an experiment timeline and not a compressed result
+ledger. It is a short problem-centered decision document: the two or three
+questions that matter now, the minimum model and concrete data needed to
+understand them, the current answers, the boundary, and one next action.
+
+Default length is at most two rendered pages. For a Chinese brief, target
+roughly 1,200--1,800 Chinese characters excluding the source index. If the
+brief needs more space, move setup, metrics, tables, and figures to the linked
+`summary.md` or `detailed.md`; do not lengthen the brief into a second report.
 
 Every meeting brief must also be written to a dated meeting folder:
 
@@ -27,11 +33,10 @@ Use a distinguishable topic-bearing filename. Do not use generic names such as
 `meeting_brief.md` may also be updated when it is the source surface for an
 experiment, but the dated meeting copy is required for future meeting lookup.
 
-When the user asks for a shortened or pre-meeting brief, still follow the
-required template, but compress the content around one dominant problem, one
-supported conclusion, the concrete outputs/evidence, the claim boundary, and
-one next decision. Do not expand into a literature-style analysis, experiment
-timeline, or broad option list.
+The executive summary must tell a reader what changed in this update, what is
+now known, what is not known, and what happens next. Immediately after it, the
+brief must state the questions being answered. Only then introduce the
+mathematical model and the exact data construction.
 
 ## Required Template
 
@@ -54,24 +59,15 @@ For `模式一`, `## 0. 执行摘要` must include these bold fields exactly:
 
 ```text
 研究问题
-机制解释
-主要结论
-证据说明
+本次更新
+当前结论
 结论边界
 执行动作
 ```
 
-Inside the executive summary:
-
-- `机制解释` must be multi-line when formulas are needed. It must list the
-  most important formulas as display math, each preceded by one plain-language
-  sentence that states what the formula means.
-- `主要结论` must contain the advisor-facing main conclusions as numbered
-  points. These points are the conclusions to be reported aloud, not evidence
-  labels or experiment names.
-- `证据说明` must map directly to the numbered main conclusions. If one conclusion
-  has multiple evidence items, use nested bullets under that conclusion.
-- Conclusion sentences must be complete conclusions, not noun phrases.
+Inside the executive summary, use no project codes, run labels, or unexplained
+metrics. Do not put formulas there unless the conclusion is impossible to say
+accurately without one. The summary is a speaking surface, not a proof.
 
 The document title must be the problem title itself. Do not prefix the title
 with `会议简报：`.
@@ -105,9 +101,9 @@ only for precise setup, numbers, artifact maps, and validation details.
 - Make every meeting brief self-contained. Define the problem, conditions,
   metrics, and outputs inside the brief so the reader does not need chat
   history or prior daily notes.
-- For short briefs, prioritize: problem -> conclusion -> produced artifacts
-  and decisive evidence -> boundary -> next action. Keep mechanism explanation
-  to the minimum needed to make the conclusion understandable.
+- Use this fixed reading order: executive summary -> questions -> minimal model
+  and exact data -> current answers -> boundary and one next decision -> source
+  links.
 - Define every non-obvious term before using it as evidence.
 - Explain the Chinese meaning first, then put reusable English abbreviations in
   parentheses only when needed.
@@ -116,19 +112,15 @@ only for precise setup, numbers, artifact maps, and validation details.
 - Make the question, mechanism, evidence, and conclusion the grammatical subjects.
   Avoid organizing the brief around "we ran", "we tried", or "we did".
 - Start with the strongest supported conclusion, then state boundary and next
-  action.
-- The mechanism explanation must list the most important formulas as separate
-  numbered or bulleted items, with a one-sentence plain-language meaning for
-  each formula. In the executive summary, these formulas must be display
-  formulas using `$$...$$`, not inline-only formulas.
-- The main conclusions must be conclusion statements tied to the mathematical
-  model. Each conclusion point should be short enough to say aloud and must not use
-  undefined technical terms.
-- In the executive summary, `主要结论` is the place for the main conclusions
-  themselves. Do not put the conclusion list under `证据说明`.
-- The evidence explanation must correspond to the main conclusion points. If one
-  conclusion has multiple evidence items, split them into smaller sub-bullets under
-  that conclusion rather than merging them into one dense paragraph.
+  action. Each answer may contain only: direct answer, decisive evidence,
+  boundary, and source link. Do not repeat the same conclusion in a second
+  long subsection.
+- Use at most two display formulas in the whole brief. Every formula must be
+  preceded by one plain-language sentence and followed by definitions of all
+  symbols. Prefer one concrete example over a general derivation.
+- Include one exact data example whenever the claim depends on a synthetic or
+  constructed task. State input, required intermediate variable, output, and
+  training target.
 - Do not use quotation marks to package an undefined concept, an informal label,
   or a causal claim. Except for a necessary verbatim quotation, replace quoted
   phrases with a direct definition of the object, condition, mechanism, or claim
@@ -141,33 +133,34 @@ only for precise setup, numbers, artifact maps, and validation details.
 
 The brief is incomplete unless it has:
 
-- a self-contained `术语解释` table for metrics, conditions, data names,
-  abbreviations, and shorthand labels;
-- one minimal mechanism model or explicit statement that the model is missing;
-- an executive summary where `机制解释` contains the key display formulas,
-  `主要结论` contains the numbered conclusions, and `证据说明` maps evidence
-  back to those conclusions;
-- at most three main conclusion points;
-- for each conclusion point: mechanism correspondence, metric/condition
-  definition, evidence, explanation, boundary, and source;
-- evidence bullets that map directly back to the conclusion points;
-- central figures embedded near the claims they support;
-- an execution action with purpose and completion criterion;
-- a source index linking every anchor, protocol, summary, detailed record, and
-  embedded figure used.
+- a self-contained executive summary using the required five fields;
+- two or three explicit questions, never a broad topic list;
+- a compact `术语解释` table containing only terms actually used;
+- one minimal mechanism model or an explicit statement that the model is
+  missing;
+- one exact data example when constructed data are central;
+- one direct answer per question, with decisive evidence, boundary, and source;
+- exactly one next decision with pass/stop criteria;
+- a compact source index linking the anchor, protocol, and only the result
+  documents needed for audit.
+
+Figures are optional. Embed a figure only if it decides one of the stated
+questions; otherwise link the relevant `summary.md`.
 
 ## Validation Before Finishing
 
 Before returning the brief:
 
 1. Check that the template sections are present and in the required order.
-2. Check that all embedded figure paths exist.
-3. Search for leftover English shorthand in claims and replace it with Chinese
+2. Check that the brief is within the default length and does not repeat an
+   experiment report.
+3. Check that all embedded figure paths exist.
+4. Search for leftover English shorthand in claims and replace it with Chinese
    explanation unless it is a defined abbreviation or a file path.
-4. Search for quotation marks and confirm that each remaining pair is a necessary
+5. Search for quotation marks and confirm that each remaining pair is a necessary
    verbatim quotation rather than a substitute for definition or explanation.
-5. Check formulas use `$...$` for inline math and `$$...$$` for display math.
-6. Check that the next action is a minimal decision-bearing action, not a broad
+6. Check formulas use `$...$` for inline math and `$$...$$` for display math.
+7. Check that the next action is a minimal decision-bearing action, not a broad
    wish list.
-7. Check that the dated meeting copy exists under
+8. Check that the dated meeting copy exists under
    `daily_research_reports/MMDD/meetings/` with a topic-bearing filename.

@@ -1,4 +1,8 @@
-# Long-Horizon MTP Objective Anchors
+# Historical Long-Horizon MTP Objective Anchor Copy
+
+> This copied anchor set predates the A11/A12 split. Use the current
+> [A11 index](../../../../Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md)
+> and [A12 index](../../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md).
 
 This folder owns adjudicable anchors for the A11 long-horizon MTP objective line.
 

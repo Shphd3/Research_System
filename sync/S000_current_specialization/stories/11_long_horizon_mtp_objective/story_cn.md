@@ -1,4 +1,8 @@
-# 多词元预测如何更高效地学习长程语义信息
+# 历史快照：拆线前的长程 MTP 目标
+
+> 本文保留拆线前的完整推导，不再作为当前结论入口。当前请阅读
+> [A11 目标机制故事](../../../../Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md)
+> 和 [A12 结构化组合故事](../../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md)。
 
 文档状态：
 - 类型：研究线级 story，当前版本为理论 + 实验更新版

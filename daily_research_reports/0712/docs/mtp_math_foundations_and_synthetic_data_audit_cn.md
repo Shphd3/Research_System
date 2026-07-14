@@ -1,6 +1,6 @@
 # MTP 研究必备数学复习与合成数据审计
 
-> 对应主故事：`Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/01_distributed_evidence_compositional_decisions_cn.md`  
+> 对应主故事：`Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md`
 > 目标：复习报告所需的信息论与低秩理论，并把合成数据构造及每项实验的数据输入写成可以逐项审计的形式。  
 > 当前范围：只讨论下一词元预测（NTP）与后续两个词元预测（Next2），不讨论混合专家模型与路由器。
 

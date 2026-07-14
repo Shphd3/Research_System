@@ -51,6 +51,16 @@ Projects/graphs/kv_cache_retrieval.graph.yaml
 Projects/graphs/specialization_papers.graph.yaml
 ```
 
+Graph refresh status:
+
+```text
+The project anchors and this registry contain the 2026-07-14 A06
+consolidation and A11/A12 split. The Sidecar specialization graph has not yet
+received that separately approved refresh. For those current decisions, use
+the linked project-local anchor registries rather than an older graph-node
+summary.
+```
+
 For graph display, use Sidecar with workspace root:
 
 ```text
@@ -79,7 +89,7 @@ expert value by itself.
 Current position in this ladder:
 
 ```text
-active bottleneck: 3. Preservation
+active bottleneck: real-workload gate between 4. Utility and 5. Scaling
 ```
 
 Practical reading:
@@ -88,15 +98,16 @@ Practical reading:
 Level 0 has failure-mechanism evidence.
 Level 1 has controlled and real-DCLM proxy evidence, with semantic boundaries.
 Level 2 has real-DCLM step-0 proxy-center router evidence.
-Level 3 is the current unsolved bottleneck: ordinary training erases the proxy
-partition by step 5/10. Controlled evidence now separates three mechanisms:
-matched expert utility creates positive local margin pressure; weighted top-1
-correction is rank-mediated rather than absent; and systematic
-boundary-projected background bias can exhaust the finite margin buffer.
-Transfer to trainable hidden states and AdamW remains open.
-Level 4 has controlled D07 support only; neural/real-DCLM utility is not yet
-supported.
-Level 5 is parked until preservation and utility are both better defined.
+Level 3 has controlled mechanism evidence: finite low-tail margin is the local
+preservation state, and its motion depends on utility, signed background
+pressure, representation motion, router motion, and transmitted update scale.
+Level 4 has controlled neural evidence: correct conditional exposure creates
+held-out specialist utility, selected-only weighted top-1 can fail to discover
+an unselected specialist, and one challenger plus a lower-tail utility
+certificate repairs that failure under frozen four-expert assumptions.
+Level 4 has not passed on a real pretrained-LLM workload. Level 5 remains
+parked until stable real expert-utility headroom and learned Router capture are
+both established.
 ```
 
 Do not promote a higher-level claim when only a lower-level metric passed.
@@ -108,14 +119,15 @@ alignment, but cannot by itself support utility or scaling.
 Current decision question:
 
 ```text
-Under one-layer Transformer + weighted-top-1 MoE full-sequence LM training,
-which causal path is necessary for matched-margin first crossing and later
-re-entry: router-only motion, representation-only motion, or their joint
-optimizer-conditioned coupling?
+Does unfiltered repository-level code completion contain positive,
+cross-split-stable held-out oracle routing headroom after token-identity,
+local-only, load-matched, and split-overfitting controls?
 ```
 
-This question is downstream of A06_31--A06_33 frozen-dynamics evidence and
-upstream of any preservation method or stronger A07 utility claim.
+This question is parent anchor `A06_04`. It is downstream of completed
+`A06_03_01`--`A06_03_04`: expert-function formation, selected-path blindness,
+bounded challenger discovery, and the lower-tail phase switch. No additional
+Router method is justified until this workload premise passes.
 
 ## Current Route
 
@@ -123,165 +135,150 @@ The current route is:
 
 ```text
 05 failure mechanism
--> 06 route-relevant proxy discovery, initialization, and preservation
--> 07 functional interference value after preservation
+-> 06 route-relevant geometry and finite-margin preservation
+-> 06 controlled expert utility and partial-feedback correction
+-> 06 real-workload expert-utility headroom gate
+-> 07 functional interference value only after the gate passes
 ```
 
-Supporting objective line:
+Supporting objective lines:
 
 ```text
-11 long-horizon MTP objective
+11 informative-future branch mechanism
+-> 12 structured compositional MTP workload
 ```
 
-Line stories:
+Primary A06 story:
 
 ```text
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
+Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing.md
+Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing_cn.md
+```
+
+Current A06 anchor registry and active anchor:
+
+```text
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor_cn.md
+```
+
+A06 organization rule:
+
+```text
+one complete parent anchor per major decision
+-> local controls and method falsifiers under parent/subanchors/
+-> experiments inherit parent + subanchor + run identifiers
+```
+
+Current A06 experiment registry:
+
+```text
+Projects/from-attention-to-search/main/experiments/A06/README.md
+```
+
+Supporting A11 story:
+
+```text
+Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md
+Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md
+```
+
+Supporting A12 story:
+
+```text
+Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md
+Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md
 ```
 
 Role:
 
 ```text
-This line tests whether multi-token prediction can directly supervise the
-current hidden state to retain a long-horizon variable. It is a mechanism
-candidate for future route-relevant hidden-state formation, not a replacement
-for the MoE gating preservation mainline.
+A11 identifies the objective-level NTP/MTP difference on a short matched
+branch. A12 tests whether that earlier signal becomes functionally useful on a
+structured composition workload. Neither line replaces the MoE preservation
+mainline.
+```
+
+Current A11 milestone chain:
+
+```text
+1. Informative-horizon supervision: supported in controlled hidden-state
+   dynamics; information inclusion and output-direction alignment, not K alone,
+   determine the direct signal.
+2. Hidden-to-parameter transmission: conditionally supported in controlled
+   Transformer settings; all-position background is signed.
+3. Cross-position standard-head boundary: current-state formation is not
+   sufficient for later standard-head behavior; the proxy bridge branch is
+   closed.
 ```
 
 Current A11 boundary:
 
 ```text
-Controlled evidence supports a representation guarantee: if K covers the first
-informative future horizon and the covered target is a one-to-one code for the
-early variable, low loss at that horizon forces h_T to contain that variable.
-A11_05 further supports direct decision-prefix horizon-3 supervision as one
-mechanism component for faster and more stable recovery in clean tau=3
-all-position training. A11_06 supports the first-order hidden readout-margin
-mechanism: K3 has positive G_M_hidden while K1/K2 are near zero in the
-no-leakage decision-prefix setup. A11_07 supports direct decision-prefix
-horizon-3 supervision as the stronger all-position path: direct conditions
-reach native H3=1.0 and large M_Z_ref, while K1/K2/masked K3 can still recover
-nontrivial Q through indirect transfer. Therefore Q alone is not direct
-supervision evidence. A11_08 supports the general-K vector-sum mechanism:
-under the same K=4 and the same two informative horizons, aligned output-row
-geometry produces much larger hidden-state semantic velocity than
-low/conflicting geometry. A11_08b shows this primary velocity mechanism is not
-only a step-0 artifact: with frozen heads, aligned still has much larger early
-hidden semantic velocity than low/conflict, although trainable-head curves must
-record current output geometry because the heads drift. A11_09 supports the
-next-K inclusion law in controlled frozen-head decision-only dynamics: K2 is
-zero before the informative horizon, K3 turns on at the first informative
-horizon, adding a shared H4 gives no direct one-step semantic increment,
-aligned informative H4 amplifies, and low/conflict informative H4 weakens.
-Therefore K size alone is not the efficiency object; the covered informative
-horizons' centered readout directions are. A11_10 supports the all-position
-native/probe split: direct H3 conditions reach native H3=1.0 and large
-M_Z_ref, while K2 and masked K3 can keep nontrivial Q but native H3 remains 0
-and M_Z_ref stays near zero. Therefore Q alone is not direct-supervision
-evidence. A11_10 finite-step audit supports persistent positive early semantic
-velocity in direct informative conditions and native H3=1.0 / Q=1.0 in direct
-all-position conditions, but its Transformer parameter-space curvature
-certificate is often nonpositive or extremely loose. The active A11 story now
-separates this failure from hidden-state optimization: it proves the exact
-finite-step identity M_K(t+1)-M_K(t)=eta G_K_hidden(t), an explicit K=2
-recovery bound under regular-simplex output geometry and semantic-subspace
-decoupling, and a conditional stochastic sample-hitting bound. A11_02b has
-completed the advisor's K=2 diagnostic design: informative H2 passes native,
-probe, swap, and final task-directed-gradient guards; the lambda audit finds a
-small dose-dependent local L1 convergence cost but no final next-token accuracy
-loss. A11_11 now supports the controlled K=2 parameter-transmission
-prerequisite: in the folded-reference decision-only model, direct parameter
-semantic velocity is positive in 5/5 seeds, full-K2 net velocity remains
-positive in 5/5 seeds, and actual one-step margin movement follows eta times
-the tangent-kernel velocity. Its algebraic alpha-scaling laws remain
-implementation guards; the empirical support is native magnitude, positive net
-sign, and finite-step fidelity. A11_12 now closes the controlled all-position
-path decomposition: the earlier decision-position component G_D is positive
-and exceeds the later NTP semantic component G_I in 5/5 seeds; remaining
-all-position losses are signed, so the full K2 net velocity is positive in 4/5
-seeds rather than universally positive. Matched direct/mask trajectories favor
-the direct path in 5/5 seeds and preserve final Y1 accuracy, with a measurable
-decision-prefix CE cost. A11_13 closes one downstream construct-validity gate:
-the paired persistent-assistant task has Q_task=1.0 in 5/5 seeds, exact
-local/cue insufficiency, complete paraphrase/counterfactual guards, and maximum
-tested lexical-shortcut accuracy 0.5375. A11_14/14b separate local-language
-fit from unseen-paraphrase transfer; random small models fit seen wording but
-do not make the evaluation efficiency comparison adjudicable. A11_15 uses
-Qwen3-0.6B and raises held-out Q to roughly 0.8, but neither method reaches the
-sustained threshold; MTP's private H2 reaches about 0.90 without a stable
-common-H1 advantage. A11_16--A11_18 locate the missing mechanism: the extra H2
-gradient is mostly on shared parameters, and after a full-vocabulary burn-in
-it is useful under both H2 and standard H1 at the current h_T in 5/5 seeds,
-but becomes adverse under either head at h_{T+1} in 5/5 post-burn-in AUC
-comparisons under the original Decision bridge. A11_19 shows this is not a
-bridge-independent position law: Decision/Answer have positive AUC in 0/5
-seeds, while Therefore/colon have positive AUC in 4/5. Its strict
-preregistered verdict remains insufficient because the all-cell finite-
-difference guard passes in only 3/5 seeds, with failures concentrated at
-near-zero predictions. Thus horizon coverage and current-state formation do
-not imply downstream use-position preservation; the cross-position condition
-must include the intervening token/state transition. A11_20 tests this local
-ordering end to end: the standard-H1 margin interaction is positive in 5/5
-seeds, but the Q_real interaction is positive in only 3/5, favorable-bridge
-MTP gain in only 2/5, no run reaches the sustained threshold, and local guards
-fail. Thus local bridge-conditioned margin alignment is not sufficient for a
-downstream MTP efficiency advantage. The A11 bridge phase remains closed; do
-not add bridge, weight, or duration sweeps. Under the user's explicit return to
-the MTP mechanism question, A11_22 now tests the paired one-step standard-loss
-interference law on the exact permutation-composition task. Its numerical
-component passes at relative step norm $10^{-5}$ (slope `1.0174`, Pearson
-`0.9990`, sign agreement `1.0000`), but the formal task-mechanism verdict is
-insufficient because all five validation answer accuracies remain at chance
-`0.125`. The only current A11 decision is one minimal task/model calibration
-repair while holding the data, losses, seeds, and finite-difference audit
-fixed. A11_23/23b now show that bounded depth/time/width and explicit pair-token
-repairs still leave the from-scratch sequence task near chance. A11_24 supports
-structural rank competition in an oracle-factor linear model: rank-1 MTP
-standard-loss gap is `0.9084--1.0218`, while rank 2 removes it to numerical
-zero. A11_25 shows dose-matched curriculum does not Pareto-repair the rank-1
-deficit (`0/5`). A11_26 therefore parks scale/real transfer until a calibrated
-neural bridge exists. A11_27 now defines the immediate utilization question:
-after one shared pretrained-model checkpoint passes the two-hop task gate,
-does informative Next-2 increase counterfactual control of the answer by the
-standard next-token head relative to NTP? Its anchor is complete and protocol
-is a draft; no run is authorized yet. A11_21, MoE, and Router remain parked.
-A11 still does not
-prove natural-language or code MTP efficiency, pure-pretraining benefit, MoE
-routing preservation, semantic expert identity, or expert utility.
+A11 establishes an earlier direct first-order signal from informative future
+targets, conditional shared-parameter reachability, a cross-position
+sufficiency failure. It does not establish long-range composition, tree
+reasoning, neural scale effects, curriculum benefit, real-workload transfer,
+or Router/MoE value. A11 is a stable baseline with no active run.
+```
+
+Current A12 milestone chain:
+
+```text
+1. Structured workload and capability gate: a computation-tree model defines
+   intermediate-state composition. The current two-table task is only its
+   depth-two serial base case. Its joint-evidence construction is valid, but
+   the tested from-scratch small Transformers remain near chance.
+2. Interference, capacity, and curriculum boundary: insufficient
+   representation rank is a sufficient tradeoff mechanism in the oracle
+   linear model; dose-matched curriculum cannot create missing rank. This is
+   not a neural scale law.
+3. Intermediate-state causal use: active design. First establish one shared
+   task-capable checkpoint, then compare NTP and informative Next-2 through
+   the same standard head and intervene on the intermediate state B rather
+   than only the final-answer code Y.
+```
+
+Current A12 boundary:
+
+```text
+A12 establishes a valid depth-two joint-evidence workload, a failed current
+from-scratch learner branch, and a controlled linear missing-rank mechanism.
+It does not establish neural causal use, MTP superiority, a general branching
+tree result, a model-scale law, curriculum benefit in a capacity-sufficient
+regime, real-workload transfer, or Router/MoE value.
+```
+
+Exactly one next decision inside the supporting A11/A12 route:
+
+```text
+Review the revised A12 causal-use protocol and run only its shared capability gate.
+If the gate fails, do not compare NTP and Next-2 and do not interpret
+representation patches.
 ```
 
 Sharper logic:
 
 ```text
 ordinary top-1 routing can collapse under uniform features
--> collapse can come from common components, wrong hidden-state populations,
-   and early-training feedback
--> route-position feature geometry can be discovered and linearly routed
--> all-position clustering is not a valid proxy population
--> controlled center initialization is preserved by positive margin buffer,
-   not by active router-center tracking
--> A06_21 decomposes this buffer: controlled center-init preservation keeps
-   positive current and cluster-aware margins with zero sign flips; the main
-   negative pressure is feature-center drift, not router-side active tracking
--> A06_23 sharpens this buffer claim: preservation has a finite safe-margin
-   threshold in the controlled no-position bridge; $q\ge0.05$ preserves, while
-   $q=0.02$ starts correct but crosses boundaries during training
--> real-DCLM proxy routing exists at step 0 but ordinary training erases it
--> A06_22 reproduces the real-DCLM collapse, but common/residual dominance
-   flips across common projectors, so "common causes collapse" is not yet a
-   stable claim
--> A06_31 shows that expert utility, not route-center geometry alone, controls
-   the sign of local soft-router margin pressure
--> A06_32 shows that weighted top-1 has correction, but it searches by current
-   score rank because unselected expert utilities are not compared
--> A06_33 shows that background count alone is insufficient; systematic
-   boundary-projected bias creates separate first-cross and recovery thresholds
--> the next decision is to use router-only, representation-only, joint-SGD, and
-   joint-AdamW freeze interventions on the trainable full-LM bridge; exact
-   margin reconstruction remains an algebraic guard, not causal evidence
--> functional value must be tested through common/rare interference or expert
-   utility, not load balance alone
+-> route-relevant hidden geometry is reachable, but all-position mixing can
+   select the wrong state population
+-> real-DCLM proxy centers are linearly routable at step 0 but are overwritten
+   by ordinary training
+-> finite low-tail margin is the local preservation state; common energy alone
+   is not a stable causal explanation
+-> expert utility sets task-directed boundary pressure, while signed background
+   projection and representation-router-optimizer co-dynamics consume or
+   restore margin
+-> correct conditional exposure creates held-out specialist function
+-> selected-only weighted top-1 can preserve a correct specialist but cannot
+   discover it from a wrong rank on the learned bridge
+-> one rotating challenger supplies the missing counterfactual utility
+-> q10 or lower-CVaR10 safely switches from discovery to top-1 exploitation in
+   the frozen four-expert system
+-> the next decision is whether a real workload has stable expert-utility
+   headroom worth routing
 ```
 
 ## Current Evidence Boundary
@@ -289,19 +286,16 @@ ordinary top-1 routing can collapse under uniform features
 Can claim:
 
 ```text
-Controlled route-position feature partitions are reachable. Ordinary top-1
-routing does not naturally discover or preserve the right partition. In the
-controlled no-position bridge, center initialization preserves by a positive
-margin buffer, not by active router-center tracking; A06_23 shows this buffer
-has a finite safe threshold rather than "any positive margin is enough." In
-real DCLM early training, proxy routing can be overwritten by step 5/10. A06_22
-shows that common/residual dominance is projector-dependent: mean-common
-supports common dominance, but top hidden-PC and router-row projectors do not.
-In frozen controlled dynamics, A06_31 shows that matched expert utility creates
-positive margin pressure; A06_32 shows that top-1 correction is rank-mediated
-but not absent; A06_33 shows that systematic boundary-projected background bias
-can exhaust margin while orthogonal or balanced background does not. Margin
-crossing can be transient and must be separated from final failure.
+Route-relevant hidden geometry can initialize a controlled partition, and real
+DCLM proxy centers are linearly routable at step 0. Ordinary real-DCLM training
+can overwrite that proxy routing. Positive low-tail margin is the local
+preservation buffer, but its dynamics require expert utility, signed background
+projection, representation motion, router motion, and transmitted update scale.
+Correct conditional exposure creates held-out specialist utility. On the
+learned bridge, selected-only weighted top-1 preserves a correct specialist but
+does not discover it from rank 2 or rank 4. One rotating challenger restores
+discovery, and q10/lower-CVaR10 utility rules terminate audition without
+premature stopping in the frozen four-expert system.
 ```
 
 Cannot claim:
@@ -312,10 +306,11 @@ Balanced load proves specialization.
 High route NMI proves expert utility.
 The current common projector is the true causal common operator.
 Common subtraction is already a validated routing method.
-The frozen-SGD margin budget transfers unchanged to trainable hidden states or
-AdamW.
 Any first sign flip proves irreversible routing collapse.
 A07 neural proxy already proves useful MoE specialization.
+The controlled challenger Router transfers to joint pretrained-LLM training.
+Repository code has positive held-out expert-utility headroom.
+The controlled phase switch scales to many experts or saves wall-clock cost.
 Reverse KV retrieval follows from the current evidence.
 ```
 
@@ -337,34 +332,35 @@ Project-local source anchors remain the source of truth:
 Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/
 Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/
 Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/
-Projects/from-attention-to-search/main/problem_anchors/05_06_07_initialization_collapse_to_interference_chain_cn.md
 ```
 
 Most important current evidence:
 
 ```text
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md
+Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md
 Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_10_real_dclm_proxy_feature_operationalization/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_11_real_dclm_proxy_center_router_initialization/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_12_real_dclm_proxy_init_training_preservation/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_08_label_free_feature_discovery_initialization/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_17_all_position_route_relevant_feature_discovery/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_17_02_router_center_tracking_preservation/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_17_03_feature_drift_margin_boundary/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_17_04_margin_crossing_causal_stress/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_17_05_margin_basin_robust_initialization/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_21_margin_budget_preservation_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E01_real_proxy_operationalization/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E03_real_proxy_training_overwrite/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E04_all_position_pool_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E06_margin_budget_audit/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_04_E01_representation_router_optimizer/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E01_trainable_expert_utility/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E01_wrong_rank_correction/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger/summary.md
+Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_04_E03_tail_safe_certificate/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
 Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum.md
-Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md
-Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/summary.md
-Projects/from-attention-to-search/main/problem_anchors/11_long_horizon_mtp_objective/11_27_standard_head_causal_representation_use_anchor.md
-Projects/from-attention-to-search/main/experiments/A11/A11_27_standard_head_causal_representation_use/protocol.md
+Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md
+Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md
+Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md
+Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md
+Projects/from-attention-to-search/main/experiments/A12/A12_02_one_step_ntp_interference/summary.md
+Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_m03_standard_head_causal_use_anchor.md
+Projects/from-attention-to-search/main/experiments/A12/A12_07_standard_head_causal_representation_use/protocol.md
 Projects/from-attention-to-search/main/experiments/A11/A11_05_semantic_efficiency_bridge/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_06_readout_effective_margin_efficiency/summary.md
 Projects/from-attention-to-search/main/experiments/A11/A11_07_no_leakage_all_position_efficiency/summary.md
