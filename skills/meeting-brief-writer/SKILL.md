@@ -1,166 +1,103 @@
 ---
 name: meeting-brief-writer
-description: Write or revise strict advisor-facing and group-meeting briefs from existing research artifacts. Use when the user asks for meeting_brief.md, group meeting preparation, advisor brief, 模式一/模式二, or a self-contained meeting narrative with mechanism, evidence, claim boundary, and next action.
+description: Revise a human-first advisor-facing meeting executive summary from existing research artifacts. The final brief contains only the executive summary.
 ---
 
 # Meeting Brief Writer
 
-## Overview
+The meeting brief is a speaking and decision surface, not a second research
+report. Its final content is one executive summary only.
 
-Use this skill for the formal meeting-facing document itself. Use
-`handoff-report-writer` only after the brief exists and the user explicitly
-asks to package or sync material for another reader or repository.
+## Human-First Gate
 
-A meeting brief is not an experiment timeline and not a compressed result
-ledger. It is a short problem-centered decision document: the two or three
-questions that matter now, the minimum model and concrete data needed to
-understand them, the current answers, the boundary, and one next action.
-
-Default length is at most two rendered pages. For a Chinese brief, target
-roughly 1,200--1,800 Chinese characters excluding the source index. If the
-brief needs more space, move setup, metrics, tables, and figures to the linked
-`summary.md` or `detailed.md`; do not lengthen the brief into a second report.
-
-Every meeting brief must also be written to a dated meeting folder:
+Before AI writes the final brief, the researcher first drafts from memory:
 
 ```text
-daily_research_reports/MMDD/meetings/<distinguishable_topic>_meeting_brief.md
-daily_research_reports/MMDD/meetings/<distinguishable_topic>_meeting_brief_cn.md
+Research question:
+My initial judgment:
+Direct result:
+Claim boundary:
+Exactly one next action:
 ```
 
-Use a distinguishable topic-bearing filename. Do not use generic names such as
-`meeting_brief.md` inside the dated meeting folder. A project-local
-`meeting_brief.md` may also be updated when it is the source surface for an
-experiment, but the dated meeting copy is required for future meeting lookup.
-
-The executive summary must tell a reader what changed in this update, what is
-now known, what is not known, and what happens next. Immediately after it, the
-brief must state the questions being answered. Only then introduce the
-mathematical model and the exact data construction.
+If this draft is absent, provide the blank template and audit questions only.
+Do not generate the researcher's initial judgment from chat history.
 
 ## Required Template
 
-Before writing or revising any `meeting_brief.md`, read:
+Read and follow exactly:
 
 ```text
 templates/meeting/meeting_brief_template.md
 ```
 
-Follow either `模式一` or `模式二` exactly.
-
-- Use `模式一` when there is one dominant research question or one mechanism
-  line, even if several experiments provide evidence.
-- Use `模式二` only when multiple parent questions must be reported together
-  and cannot honestly be expressed as one mechanism line.
-- Do not replace the required sections with a generic executive summary,
-  handoff report, speaking script, or experiment list.
-
-For `模式一`, `## 0. 执行摘要` must include these bold fields exactly:
+The final file contains only `## 执行摘要` with these bold fields:
 
 ```text
 研究问题
-本次更新
-当前结论
+我的初始判断
+本次结果
+机制解释
+决定性证据
 结论边界
 执行动作
+来源
 ```
 
-Inside the executive summary, use no project codes, run labels, or unexplained
-metrics. Do not put formulas there unless the conclusion is impossible to say
-accurately without one. The summary is a speaking surface, not a proof.
+Do not append questions, background, model derivations, experiment timelines,
+full tables, appendices, or a second conclusion. Link the anchor, `summary.md`,
+or `detailed.md` for those details.
 
-The document title must be the problem title itself. Do not prefix the title
-with `会议简报：`.
+## Evidence Order
 
-## Source Order
-
-Do not use chat history as evidence. Rebuild the brief from source artifacts in
-this order:
+Do not use chat as evidence. Read:
 
 ```text
-PROJECTS.md
-relevant graph when needed
-anchor
-protocol.md
-summary.md
-detailed.md
-figures/ and tables/
+PROJECTS.md -> CURRENT.md -> anchor -> protocol.md -> summary.md -> detailed.md
 ```
 
-Use the anchor for the current claim boundary and next decision. Use
-`summary.md` for the meeting conclusion and central figures. Use `detailed.md`
-only for precise setup, numbers, artifact maps, and validation details.
+Use only the sources needed to audit the executive summary.
 
-## Writing Rules
+## AI Revision Role
 
-- Write in Chinese by default for meeting-facing briefs.
-- Use fully objective wording. Do not write "the advisor asked", "we want to",
-  "we tried", "I suggest", or similar process-centered phrasing unless the user
-  explicitly asks for a personal speaking script. State the research object,
-  conclusion, evidence, boundary, and next action directly.
-- Make every meeting brief self-contained. Define the problem, conditions,
-  metrics, and outputs inside the brief so the reader does not need chat
-  history or prior daily notes.
-- Use this fixed reading order: executive summary -> questions -> minimal model
-  and exact data -> current answers -> boundary and one next decision -> source
-  links.
-- Define every non-obvious term before using it as evidence.
-- Explain the Chinese meaning first, then put reusable English abbreviations in
-  parentheses only when needed.
-- Avoid project nicknames and English jargon in headings and claims. If a file
-  name or metric abbreviation must remain, define it in `术语解释`.
-- Make the question, mechanism, evidence, and conclusion the grammatical subjects.
-  Avoid organizing the brief around "we ran", "we tried", or "we did".
-- Start with the strongest supported conclusion, then state boundary and next
-  action. Each answer may contain only: direct answer, decisive evidence,
-  boundary, and source link. Do not repeat the same conclusion in a second
-  long subsection.
-- Use at most two display formulas in the whole brief. Every formula must be
-  preceded by one plain-language sentence and followed by definitions of all
-  symbols. Prefer one concrete example over a general derivation.
-- Include one exact data example whenever the claim depends on a synthetic or
-  constructed task. State input, required intermediate variable, output, and
-  training target.
-- Do not use quotation marks to package an undefined concept, an informal label,
-  or a causal claim. Except for a necessary verbatim quotation, replace quoted
-  phrases with a direct definition of the object, condition, mechanism, or claim
-  boundary.
-- Separate observation, interpretation, decision, and speculation.
-- Do not create stronger claims than the linked anchor, summary, and detailed
-  records allow.
+AI may:
 
-## Required Content Checks
+- define unclear terms in plain Chinese;
+- put the direct result first;
+- verify metrics, numbers, and links;
+- separate observation, interpretation, claim, speculation, and boundary;
+- expose a live rival explanation;
+- shorten repetition and improve wording.
 
-The brief is incomplete unless it has:
+AI must not:
 
-- a self-contained executive summary using the required five fields;
-- two or three explicit questions, never a broad topic list;
-- a compact `术语解释` table containing only terms actually used;
-- one minimal mechanism model or an explicit statement that the model is
-  missing;
-- one exact data example when constructed data are central;
-- one direct answer per question, with decisive evidence, boundary, and source;
-- exactly one next decision with pass/stop criteria;
-- a compact source index linking the anchor, protocol, and only the result
-  documents needed for audit.
+- invent the researcher's initial judgment;
+- silently replace the mechanism belief;
+- upgrade a correlation into a causal claim;
+- add a stronger claim than the linked sources;
+- turn the brief into a full report.
 
-Figures are optional. Embed a figure only if it decides one of the stated
-questions; otherwise link the relevant `summary.md`.
+If AI proposes a new interpretation, label it and obtain human approval before
+including it in the final brief.
 
-## Validation Before Finishing
+## Output
 
-Before returning the brief:
+Write the dated copy to:
 
-1. Check that the template sections are present and in the required order.
-2. Check that the brief is within the default length and does not repeat an
-   experiment report.
-3. Check that all embedded figure paths exist.
-4. Search for leftover English shorthand in claims and replace it with Chinese
-   explanation unless it is a defined abbreviation or a file path.
-5. Search for quotation marks and confirm that each remaining pair is a necessary
-   verbatim quotation rather than a substitute for definition or explanation.
-6. Check formulas use `$...$` for inline math and `$$...$$` for display math.
-7. Check that the next action is a minimal decision-bearing action, not a broad
-   wish list.
-8. Check that the dated meeting copy exists under
-   `daily_research_reports/MMDD/meetings/` with a topic-bearing filename.
+```text
+daily_research_reports/MMDD/meetings/<topic>_meeting_brief_cn.md
+```
+
+Use Chinese by default and a topic-bearing filename. A project-local brief may
+also be updated when explicitly requested.
+
+## Validation
+
+1. A human draft exists.
+2. The final document contains only the executive summary.
+3. The direct result appears before setup detail.
+4. Every metric or project label used in a claim is defined inline.
+5. Evidence links exist and support the nearby sentence.
+6. Observation and mechanism interpretation are distinguishable.
+7. The cannot-claim boundary and strongest live rival are explicit.
+8. There is exactly one next action with pass/stop/insufficient criteria.

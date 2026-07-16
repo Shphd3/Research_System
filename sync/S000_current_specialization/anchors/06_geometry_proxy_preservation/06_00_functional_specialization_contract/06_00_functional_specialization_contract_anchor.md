@@ -2,18 +2,7 @@
 
 Status: completed parent anchor.
 
-## 0. Thinking Card
-
-**Phenomenon:** A Router can be balanced, deterministic, and aligned with an
-evaluation label while its experts remain functionally interchangeable.
-
-**Physical judgment:** Feature-level expert specialization is not a geometric
-partition alone. It is a held-out relation among an operational input
-condition, a useful expert function, a Router that captures that function, and
-the activated cost paid to do so.
-
-**Decision:** normalized mutual information and load remain guards. Held-out
-forced-expert utility and route regret are the decision metrics.
+Thinking Card source: [06_00_functional_specialization_contract_thinking_card.md](06_00_functional_specialization_contract_thinking_card.md)
 
 ## 1. Complete Problem
 
@@ -88,8 +77,8 @@ $$
 
 | Subanchor | Local decision | Experiment group |
 |---|---|---|
-| [`A06_00_01`](subanchors/06_00_01_operational_definition_and_failure_evidence_anchor.md) | Separate observable route failure from functional specialization. | [`A06_00_01_E01`--`E03`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_00_functional_specialization_contract) |
-| [`A06_00_02`](subanchors/06_00_02_hierarchy_and_utility_diagnostics_anchor.md) | Require expert utility even when hierarchical route labels are recoverable. | [`A06_00_02_E01`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_00_functional_specialization_contract/A06_00_02_E01_hierarchical_route_utility) |
+| [`A06_00_01`](subanchors/06_00_01_operational_definition_and_failure_evidence_anchor.md) | Separate observable route failure from functional specialization. | [`A06_00_01_E01`--`E03`](/Projects/from-attention-to-search/main/experiments/A06/06_00_functional_specialization_contract) |
+| [`A06_00_02`](subanchors/06_00_02_hierarchy_and_utility_diagnostics_anchor.md) | Require expert utility even when hierarchical route labels are recoverable. | [`A06_00_02_E01`](/Projects/from-attention-to-search/main/experiments/A06/06_00_functional_specialization_contract/A06_00_02_E01_hierarchical_route_utility) |
 | [`A06_00_03`](subanchors/06_00_03_real_data_definition_boundary_anchor.md) | Treat real-text partitions as proxies until held-out expert value is established. | Definition guard; no standalone run. |
 
 ## 6. Minimal Adjudication Contract

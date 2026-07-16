@@ -2,15 +2,7 @@
 
 Status: workload model supported; current from-scratch small-Transformer capability gate failed and is closed.
 
-## 0. Thinking Card
-
-**Phenomenon:** A long context is not necessarily a long-range reasoning task. The relevant case requires remote evidence that remains necessary after local context is known and must be combined through an intermediate state.
-
-**Mechanism guess:** A two-table composition task isolates this computational skeleton while removing lexical shortcuts. It is useful only if the tested model can first learn the task.
-
-**Observable metric:** full-context held-out answer accuracy, guarded by single-table and evidence-intervention controls.
-
-**Decision:** accept the workload construction, reject further tuning of the current from-scratch learner, and require a capable shared checkpoint before objective comparison.
+Thinking Card source: [12_01_compositional_workload_capability_gate_thinking_card.md](12_01_compositional_workload_capability_gate_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -77,7 +69,7 @@ multi-branch aggregation.
 
 ## 7. Current Evidence
 
-The data construction satisfies the intended joint-necessity property. The tested from-scratch Transformers did not learn it: depth, width, longer training, and atomic row-binding tokens all remained near chance, with format accuracy at 1.0. See [capacity ladder](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration/summary.md), [explicit-binding repair](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md), and [subanchor 12_01_01](subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md).
+The data construction satisfies the intended joint-necessity property. The tested from-scratch Transformers did not learn it: depth, width, longer training, and atomic row-binding tokens all remained near chance, with format accuracy at 1.0. See [capacity ladder](/Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration/summary.md), [explicit-binding repair](/Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md), and [subanchor 12_01_01](subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md).
 
 ## 8. Claim Boundary And Next Decision
 

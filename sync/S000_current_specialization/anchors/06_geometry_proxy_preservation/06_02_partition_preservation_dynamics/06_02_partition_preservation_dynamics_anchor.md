@@ -2,16 +2,7 @@
 
 Status: completed parent mechanism anchor.
 
-## 0. Thinking Card
-
-**Phenomenon:** A positive initialized route can remain stable, cross below
-zero, or cross and re-enter. Center distance, common energy, and nominal
-learning rate do not individually determine the event.
-
-**Physical judgment:** Preservation is a finite low-tail margin budget. Expert
-utility determines task-directed pressure; background matters through signed
-projection onto the same boundary; Router rows, representation centers, and
-optimizer-transmitted updates jointly move the budget.
+Thinking Card source: [06_02_partition_preservation_dynamics_thinking_card.md](06_02_partition_preservation_dynamics_thinking_card.md)
 
 ## 1. Complete Problem
 
@@ -103,10 +94,10 @@ $$
 
 | Subanchor | Local decision | Experiment group |
 |---|---|---|
-| [`A06_02_01`](subanchors/06_02_01_finite_margin_basin_anchor.md) | Preservation occupies a finite low-tail margin basin. | [`E01`--`E08`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
-| [`A06_02_02`](subanchors/06_02_02_common_background_preservation_controls_anchor.md) | Common/background controls can slow drift but do not solve binding. | [`E01`--`E04`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
-| [`A06_02_03`](subanchors/06_02_03_utility_signed_local_dynamics_anchor.md) | Expert advantage and signed background pressure determine local margin direction. | [`E01`--`E03`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
-| [`A06_02_04`](subanchors/06_02_04_representation_router_optimizer_codynamics_anchor.md) | Router, representation, and optimizer-transmitted updates jointly determine crossing and recovery. | [`E01`--`E04`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
+| [`A06_02_01`](subanchors/06_02_01_finite_margin_basin_anchor.md) | Preservation occupies a finite low-tail margin basin. | [`E01`--`E08`](/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
+| [`A06_02_02`](subanchors/06_02_02_common_background_preservation_controls_anchor.md) | Common/background controls can slow drift but do not solve binding. | [`E01`--`E04`](/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
+| [`A06_02_03`](subanchors/06_02_03_utility_signed_local_dynamics_anchor.md) | Expert advantage and signed background pressure determine local margin direction. | [`E01`--`E03`](/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
+| [`A06_02_04`](subanchors/06_02_04_representation_router_optimizer_codynamics_anchor.md) | Router, representation, and optimizer-transmitted updates jointly determine crossing and recovery. | [`E01`--`E04`](/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics) |
 
 ## 6. Minimal Adjudication Contract
 

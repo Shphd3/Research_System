@@ -1,511 +1,255 @@
 # Projects
 
-This file is the current project-state registry for `Research_System`.
-Read it after `AGENTS.md`.
+Current-state registry for `Research_System`. Read after `AGENTS.md`, then read
+`CURRENT.md` for today's work.
 
-`AGENTS.md` defines general operating rules. This file defines the active
-research line, active branch, current evidence boundary, and next decision.
+## Active Project
 
-## Reading Rule
+| Role | Path / value |
+|---|---|
+| Theme | feature-level expert specialization in top-1 MoE gating |
+| Project | `Projects/from-attention-to-search/` |
+| Worker surface | `Projects/from-attention-to-search/XingyuD/` |
+| Active branch | `Xingyu` |
+| Read-only reference | `Projects/kv_cache/` |
+| Graph | `Projects/graphs/expert_specialization.graph.yaml` |
+| Root sync | `sync/S000_current_specialization/` |
 
-For project-specific work:
+`Projects/kv_cache` is read-only unless the user explicitly authorizes edits.
+Only its `xyDeng` branch is managed here; never push its `main` branch.
 
-1. Identify the active project here.
-2. Read the relevant graph under `Projects/graphs/`.
-3. Read only the linked project-local anchor, experiment `summary.md`,
-   `detailed.md`, sync note, meeting note, or paper note needed for the
-   current question.
-
-Do not scan whole project repositories by default.
-
-## Active Research Line
-
-Primary research theme:
+## Reading Order
 
 ```text
-feature-level expert specialization in top-1 MoE gating
+AGENTS.md
+-> PROJECTS.md
+-> CURRENT.md
+-> expert_specialization.graph.yaml
+-> linked project-local anchor / story / summary / detailed record
 ```
 
-Current working project:
+Do not scan whole project repositories by default. Project-local artifacts are
+the source of truth; the graph is navigation and root sync is the published
+reading surface.
 
-```text
-Projects/from-attention-to-search/
-Projects/from-attention-to-search/XingyuD/
-```
+## Research Map
 
-Reference project:
-
-```text
-Projects/kv_cache/
-Projects/kv_cache/main_specialization/specialization_overview.md
-```
-
-`Projects/kv_cache` is read-only unless the user explicitly asks to edit it.
-Only the `xyDeng` branch is under our management; do not push `main`.
-
-Current graph hub:
-
-```text
-Projects/graphs/expert_specialization.graph.yaml
-Projects/graphs/kv_cache_retrieval.graph.yaml
-Projects/graphs/specialization_papers.graph.yaml
-```
-
-Graph refresh status:
-
-```text
-The project anchors and this registry contain the 2026-07-14 A06
-consolidation, A11/A12 split, and A11/A12 parent/subanchor cleanup. The Sidecar
-specialization graph has not yet received that separately approved refresh.
-For those current decisions, use the linked project-local anchor registries
-rather than an older graph-node summary.
-```
-
-For graph display, use Sidecar with workspace root:
-
-```text
-/data/250010109/Research_System
-```
-
-## Research Vision And Adjudication Ladder
-
-The whole specialization project should be read as a staged adjudication
-ladder, not as a single method claim. Each level answers one narrower
-question and earns only the claim that its metric can support.
-
-| Level | Decision question | Primary metric | Cannot claim |
+| Line | Question | State | Current source |
 |---|---|---|---|
-| 0. Failure | Why ordinary top-1 routing collapses or merges under apparently uniform features. | step-0 NMI, max load, common margin | A working method. |
-| 1. Proxy discovery | Whether a route-relevant proxy exists. | cluster stability, proxy NMI, nuisance guards | Semantic experts. |
-| 2. Initialization | Whether the proxy can be converted into gate rows. | step-0 `proxy_route_NMI`, load | Training success. |
-| 3. Preservation | Whether the partition survives early training. | `proxy_route_NMI@step5/10` plus LM loss | Expert utility. |
-| 4. Utility | Whether a preserved partition reduces interference or has causal expert value. | rare loss, route-function binding, causal ablation | Specialization from load/NMI alone. |
-| 5. Scaling | Whether many experts increase activated capacity. | per-expert effective rank, routing stability, utility per activated FLOP | Scaling from active-expert count alone. |
+| A05 | Why can ordinary top-1 routing collapse under apparently uniform features? | Failure mechanisms established under controlled and real-text audits. | `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md` |
+| A06 | Can route-relevant structure be discovered, preserved, and converted into expert utility? | Primary line; controlled utility chain complete, real-workload headroom gate active. | `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md` |
+| A07 | Does functional separation reduce common/rare interference? | Supporting controlled evidence; parked until A06 passes the real-workload gate. | `Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/` |
+| A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Matched shared-aux K/V audit complete: all guards passed, but the strong behavioral increment failed ($\bar\Gamma_{info}=0.01675$, `0/5` at `0.10`). | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
+| A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
+| Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
-`NMI` is normalized mutual information, used here as a route-label agreement
-metric. It can show alignment or collapse, but it does not prove functional
-expert value by itself.
-
-Current position in this ladder:
+Primary route:
 
 ```text
-active bottleneck: real-workload gate between 4. Utility and 5. Scaling
+A05 failure
+-> A06 geometry and state discovery
+-> A06 finite-margin preservation
+-> A06 expert utility and partial-feedback correction
+-> A06 real-workload oracle-headroom gate
+-> A07 functional interference value only if the gate passes
 ```
 
-Practical reading:
+Supporting objective route:
 
 ```text
-Level 0 has failure-mechanism evidence.
-Level 1 has controlled and real-DCLM proxy evidence, with semantic boundaries.
-Level 2 has real-DCLM step-0 proxy-center router evidence.
-Level 3 has controlled mechanism evidence: finite low-tail margin is the local
-preservation state, and its motion depends on utility, signed background
-pressure, representation motion, router motion, and transmitted update scale.
-Level 4 has controlled neural evidence: correct conditional exposure creates
-held-out specialist utility, selected-only weighted top-1 can fail to discover
-an unselected specialist, and one challenger plus a lower-tail utility
-certificate repairs that failure under frozen four-expert assumptions.
-Level 4 has not passed on a real pretrained-LLM workload. Level 5 remains
-parked until stable real expert-utility headroom and learned Router capture are
-both established.
+A11 informative-future signal boundary
+-> A12 structured composition and standard-head use
 ```
 
-Do not promote a higher-level claim when only a lower-level metric passed.
-For example, balanced load or high route NMI can support non-collapse or
-alignment, but cannot by itself support utility or scaling.
-
-## Current Question
-
-Current decision question:
+Draft cross-line meeting route:
 
 ```text
-Does unfiltered repository-level code completion contain positive,
-cross-split-stable held-out oracle routing headroom after token-identity,
-local-only, load-matched, and split-overfitting controls?
+nominal context capacity
+-> evidence access
+-> state formation and transport
+-> standard-head causal use
+-> ordered composition
+-> query-conditioned retrieval utility
+-> held-out expert utility per unit cost
 ```
 
-This question is parent anchor `A06_04`. It is downstream of completed
-`A06_03_01`--`A06_03_04`: expert-function formation, selected-path blindness,
-bounded challenger discovery, and the lower-tail phase switch. No additional
-Router method is justified until this workload premise passes.
+The proposed 2026-07-17 meeting theme is:
 
-## Current Route
+> From Retrieval Hits to Functional Utility: What Should a Long-Context Router
+> Optimize?
 
-The current route is:
+This route does not replace the A06 primary line or turn long context into a
+mechanism claim. It connects the R3/R4 retrieval failure, A11 formation/use
+boundary, A12 carrier failure, and A06 utility gate around one missing object:
+held-out downstream loss preservation under a fixed selection budget.
 
-```text
-05 failure mechanism
--> 06 route-relevant geometry and finite-margin preservation
--> 06 controlled expert utility and partial-feedback correction
--> 06 real-workload expert-utility headroom gate
--> 07 functional interference value only after the gate passes
-```
+Q0 is already closed in the controlled setting: perfect feature specialization
+is not sufficient for a useful sparse KV index. Q1 is only a proposal: test
+whether retrieval proxies rank causal loss utility on existing checkpoints.
+The researcher must complete the mechanism, rival, uncertainty,
+judgment-changing evidence, and next-decision fields before a formal anchor or
+Protocol is created.
 
-Supporting objective lines:
+Sources:
 
-```text
-11 informative-future branch mechanism
--> 12 structured compositional MTP workload
-```
+- `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md`
+- `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme_cn.md`
+- `Projects/from-attention-to-search/main/experiments/archive/R3_perfect_router_retrieval/summary.md`
+- `Projects/from-attention-to-search/main/experiments/archive/R4_attention_output_router_retrieval/summary.md`
 
-Primary A06 story:
+## A06 Decision Chain
 
-```text
-Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing.md
-Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing_cn.md
-```
+| Parent | Decision | Verdict |
+|---|---|---|
+| `06_00` | What counts as functional specialization? | Requires conditional expert utility and route-function binding; load balance or route NMI alone is insufficient. |
+| `06_01` | Is a route-relevant state reachable and usable for initialization? | Yes under controlled conditions; real-DCLM proxy centers are linearly routable at step 0 but ordinary training overwrites them. |
+| `06_02` | What preserves a partition during training? | Finite low-tail margin is the local state; dynamics depend on utility, signed background pressure, representation motion, router motion, and update scale. |
+| `06_03` | Can sparse feedback discover the useful expert? | Selected-only feedback can be blind; one bounded challenger plus a lower-tail certificate repairs discovery in the frozen four-expert setting. |
+| `06_04` | Does a real workload contain stable expert-utility headroom worth routing? | Active, unresolved. |
 
-Current A06 anchor registry and active anchor:
+Active A06 question:
 
-```text
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor_cn.md
-```
+> Does unfiltered repository-level code completion contain positive,
+> cross-split-stable held-out oracle routing headroom after token-identity,
+> local-only, load-matched, length, frequency, and split-overfitting controls?
 
-A06 organization rule:
+Primary metric: held-out native-Router loss minus calibration-selected
+forced-expert loss on a separate test split. This measures oracle routing
+headroom; it does not establish that a learned Router can capture that headroom.
 
-```text
-one complete parent anchor per major decision
--> local controls and method falsifiers under parent/subanchors/
--> experiments inherit parent + subanchor + run identifiers
-```
+Required guards: calibration/test separation, stable best-expert identity,
+load-matched random routing, token-identity and local-only controls, length and
+frequency controls, and an unfiltered repository-code sample.
 
-Current A06 experiment registry:
+Current sources:
 
-```text
-Projects/from-attention-to-search/main/experiments/A06/README.md
-```
+- `Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A06/README.md`
 
-Supporting A11 story:
+## A11 / A12 Supporting Boundary
 
-```text
-Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md
-Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md
-```
-
-Current A11 parent-anchor registry:
-
-```text
-Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md
-```
-
-Supporting A12 story:
-
-```text
-Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md
-Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md
-```
-
-Current A12 parent-anchor registry and active parent:
-
-```text
-Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md
-Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md
-```
-
-Role:
-
-```text
-A11 identifies the objective-level NTP/MTP difference on a short matched
-branch. A12 tests whether that earlier signal becomes functionally useful on a
-structured composition workload. Neither line replaces the MoE preservation
-mainline.
-```
-
-Current A11 parent-anchor chain:
-
-```text
-1. Informative-horizon supervision: supported in controlled hidden-state
-   dynamics; information inclusion and output-direction alignment, not K alone,
-   determine the direct signal.
-2. Hidden-to-parameter transmission: conditionally supported in controlled
-   Transformer settings; all-position background is signed.
-3. Cross-position standard-head boundary: current-state formation is not
-   sufficient for later standard-head behavior; the proxy bridge branch is
-   closed.
-```
-
-Current A11 boundary:
-
-```text
 A11 establishes an earlier direct first-order signal from informative future
-targets, conditional shared-parameter reachability, a cross-position
-sufficiency failure. It does not establish long-range composition, tree
-reasoning, neural scale effects, curriculum benefit, real-workload transfer,
-or Router/MoE value. A11 is a stable baseline with no active run.
-```
+targets, conditional hidden-to-parameter reachability, and a cross-position
+sufficiency failure. It does not establish long-range composition, neural
+scale effects, real-workload transfer, or MoE value.
 
-Current A12 parent-anchor chain:
+A11's revised stronger audit is complete. It compared model-local `U03` source
+K/V causal control under standard-CE informative-MTP and a shared-aux condition
+matched for active heads, CE terms, nominal loss coefficients, and standard-head
+capability, with NTP as a secondary system baseline. All registered guards
+passed, but the strong behavioral information-content increment failed:
+$\bar\Gamma_{info}=0.01675$ and `0/5` seeds reached `0.10`.
 
-```text
-1. Structured workload and capability gate: a computation-tree model defines
-   intermediate-state composition. The current two-table task is only its
-   depth-two serial base case. Its joint-evidence construction is valid, but
-   the tested from-scratch small Transformers remain near chance.
-2. Interference, capacity, and curriculum boundary: insufficient
-   representation rank is a sufficient tradeoff mechanism in the oracle
-   linear model; dose-matched curriculum cannot create missing rank. This is
-   not a neural scale law.
-3. Intermediate-state causal use: active design. First establish one shared
-   task-capable checkpoint, then compare NTP and informative Next-2 through
-   the same standard head and intervene on the intermediate state B rather
-   than only the final-answer code Y.
-```
+Exactly one A11 decision:
 
-Current A12 boundary:
+> Decide whether to preregister a weak-margin audit; otherwise close this K/V
+> interface and move to a task where the early state is structurally necessary.
 
-```text
-A12 establishes a valid depth-two joint-evidence workload, a failed current
-from-scratch learner branch, and a controlled linear missing-rank mechanism.
-It does not establish neural causal use, MTP superiority, a general branching
-tree result, a model-scale law, curriculum benefit in a capacity-sufficient
-regime, real-workload transfer, or Router/MoE value.
-```
+A12 currently establishes:
 
-Exactly one next decision inside the supporting A11/A12 route:
+- a valid depth-two joint-evidence workload;
+- an exactly learnable in-support short-range fixed-rule surface for both NTP
+  and MTP at 1, 2, and 4 layers;
+- a positive NTP-versus-MTP interaction only under the exact-accuracy threshold
+  `1.0` on that memorization-prone fixed-table surface;
+- an E03 rejection because one-step and two-step tasks had asymmetric
+  query-relevant structure;
+- a completed E04 NTP-only Stage A in which no 2- or 4-layer scale stably
+  learned both task depths, no threshold was frozen, and the proposed
+  row-removal necessity guard failed because bijection completion recovers the
+  missing value;
+- failed or unstable unseen-composition surfaces;
+- a controlled linear missing-rank mechanism that is not a neural scale law.
 
-```text
-Review the revised A12 causal-use protocol and run only its shared capability gate.
-If the gate fails, do not compare NTP and Next-2 and do not interpret
-representation patches.
-```
+A12 does not establish neural causal use, general MTP superiority, unseen-pair
+composition, curriculum benefit in a capacity-sufficient regime, real-workload
+transfer, or MoE value.
 
-Sharper logic:
+Exactly one A12 decision:
 
-```text
-ordinary top-1 routing can collapse under uniform features
--> route-relevant hidden geometry is reachable, but all-position mixing can
-   select the wrong state population
--> real-DCLM proxy centers are linearly routable at step 0 but are overwritten
-   by ordinary training
--> finite low-tail margin is the local preservation state; common energy alone
-   is not a stable causal explanation
--> expert utility sets task-directed boundary pressure, while signed background
-   projection and representation-router-optimizer co-dynamics consume or
-   restore margin
--> correct conditional exposure creates held-out specialist function
--> selected-only weighted top-1 can preserve a correct specialist but cannot
-   discover it from a wrong rank on the learned bridge
--> one rotating challenger supplies the missing counterfactual utility
--> q10 or lower-CVaR10 safely switches from discovery to top-1 exploitation in
-   the frozen four-expert system
--> the next decision is whether a real workload has stable expert-utility
-   headroom worth routing
-```
+> Decide whether to close E04 under its frozen 2/4-layer, 20,000-step contract
+> or reopen carrier/capability design in a new Protocol. Stage B and every MTP
+> run remain blocked until a structurally valid carrier has at least one
+> NTP-eligible scale and a frozen threshold.
 
-## Current Evidence Boundary
+Current sources:
 
-Can claim:
+- `Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md`
+- `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/protocol_cn.md`
+- `Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md`
+- `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/protocol.md`
+- `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md`
 
-```text
-Route-relevant hidden geometry can initialize a controlled partition, and real
-DCLM proxy centers are linearly routable at step 0. Ordinary real-DCLM training
-can overwrite that proxy routing. Positive low-tail margin is the local
-preservation buffer, but its dynamics require expert utility, signed background
-projection, representation motion, router motion, and transmitted update scale.
-Correct conditional exposure creates held-out specialist utility. On the
-learned bridge, selected-only weighted top-1 preserves a correct specialist but
-does not discover it from rank 2 or rank 4. One rotating challenger restores
-discovery, and q10/lower-CVaR10 utility rules terminate audition without
-premature stopping in the frozen four-expert system.
-```
+## Claim Boundary
 
-Cannot claim:
+Supported:
 
-```text
-Real semantic experts exist.
-Balanced load proves specialization.
-High route NMI proves expert utility.
-The current common projector is the true causal common operator.
-Common subtraction is already a validated routing method.
-Any first sign flip proves irreversible routing collapse.
-A07 neural proxy already proves useful MoE specialization.
-The controlled challenger Router transfers to joint pretrained-LLM training.
-Repository code has positive held-out expert-utility headroom.
-The controlled phase switch scales to many experts or saves wall-clock cost.
-Reverse KV retrieval follows from the current evidence.
-```
+- Route-relevant hidden geometry can initialize a controlled partition.
+- Real-DCLM proxy centers are routable at step 0 and can be overwritten by
+  ordinary training.
+- Expert utility, signed background pressure, and representation-router-
+  optimizer co-dynamics jointly determine local margin preservation.
+- Correct conditional exposure creates held-out specialist utility in the
+  controlled system.
+- Selected-only top-1 feedback can miss an unselected specialist; a rotating
+  challenger and lower-tail certificate repair this in a frozen four-expert
+  system.
 
-## 05 / 06 / 07 Reading Entry
+Not supported:
 
-Root sync now stores research-line synthesis, not full anchor mirrors:
+- route NMI or balanced load proves functional specialization;
+- the current proxy is a semantic or causal expert definition;
+- the controlled Router transfers to joint pretrained-LLM training;
+- repository code has positive held-out oracle routing headroom;
+- the four-expert phase switch scales or reduces wall-clock cost;
+- MTP has general compositional or real-workload superiority;
+- a nominal million-token context is functionally usable;
+- feature specialization alone provides a useful long-context retrieval index.
 
-```text
-sync/S000_current_specialization/README.md
-sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
-sync/S000_current_specialization/research_lines/05_failure_mechanism_line_cn.md
-sync/S000_current_specialization/research_lines/06_proxy_preservation_line_cn.md
-sync/S000_current_specialization/research_lines/07_interference_value_line_cn.md
-```
+Controlled synthetic evidence establishes mechanism possibility and metric
+validity, not natural-language semantics or deployable routing. Real-DCLM proxy
+evidence establishes routability and overwrite behavior, not causal expert
+utility.
 
-Project-local source anchors remain the source of truth:
+## Exactly One Project-Level Next Decision
 
-```text
-Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/
-Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/
-```
+Approve or reject the minimal `A06_04` oracle-headroom protocol before
+designing another LLM-scale Router method. Do not run another broad
+feature-existence, common-subtraction, spectral-Router, or controlled
+sparse-discovery sweep first.
 
-Most important current evidence:
+For the 2026-07-17 group meeting, a separate time-bounded discussion gate is to
+approve, modify, or reject the proposed Q1 functional-retrieval audit. This
+draft gate does not replace the project-level A06 decision unless the
+researcher explicitly promotes it after completing the human judgment fields.
 
-```text
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md
-Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md
-Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E01_real_proxy_operationalization/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E03_real_proxy_training_overwrite/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E04_all_position_pool_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E06_margin_budget_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_04_E01_representation_router_optimizer/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E01_trainable_expert_utility/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E01_wrong_rank_correction/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger/summary.md
-Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_04_E03_tail_safe_certificate/summary.md
-Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md
-Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md
-Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md
-Projects/from-attention-to-search/main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting/summary.md
-Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md
-Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md
-Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md
-Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md
-Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md
-Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md
-Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E02_end_to_end_use_boundary/summary.md
-Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md
-Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md
-Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md
-Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md
-daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
-daily_research_reports/0701/meeting_brief.md
-```
+## Published Surfaces
 
-## Active Mainline Sync Rule
+- `CURRENT.md`: today's focus, progress, and resume action.
+- `Projects/graphs/expert_specialization.graph.yaml`: current thin navigation
+  graph.
+- `sync/S000_current_specialization/README.md`: root-sync entry.
+- `sync/S000_current_specialization/anchor_index.md`: complete mirrored-anchor
+  index.
+- `sync/S000_current_specialization/anchors/`: generated full mirror of current
+  project-local anchors with repository-root-safe external links.
 
-For this active specialization line, `PROJECTS.md` and the active root sync
-entry must move together when the mainline state changes.
+Root sync, graph edits, external collaborator sync, handoff packages, commits,
+and pushes remain explicit actions. This registry does not authorize them
+automatically.
 
-A mainline state change means an accepted update to any of these objects:
+## Other Root Surfaces
 
-```text
-current decision question
-active ladder level
-current route
-current evidence boundary
-claim boundary
-next decision
-web-side source links
-```
-
-When that happens, update the active root sync entry in the same task:
-
-```text
-sync/S000_current_specialization/README.md
-sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
-and the affected 05 / 06 / 07 research-line note when needed
-```
-
-This rule is for keeping web-side and cross-project readers current. It is not
-a raw-output mirror and does not authorize graph edits, external collaborator
-sync, handoff packaging, commits, pushes, or copying full anchors unless the
-user explicitly asks for those actions.
-
-## Synthetic Versus Real Boundary
-
-Controlled synthetic experiments can establish:
-
-```text
-whether a mechanism is possible;
-whether a metric surface is valid;
-whether a known feature partition can be discovered, routed, preserved, or
-used under controlled labels and controlled nuisance variables.
-```
-
-They cannot establish:
-
-```text
-natural-language semantics;
-real-checkpoint behavior;
-deployable routing;
-real expert utility;
-robust transfer from controlled labels to open text.
-```
-
-Real-DCLM proxy experiments can establish:
-
-```text
-whether stable hidden-state proxy clusters exist;
-whether those proxy clusters are linearly routable at step 0;
-whether ordinary next-token training preserves or erases that proxy routing.
-```
-
-They cannot establish by themselves:
-
-```text
-semantic feature identity;
-causal expert utility;
-dense-beating MoE value;
-final pretrained-MoE behavior.
-```
-
-## Next Decision
-
-Do not run another broad feature-existence, common-subtraction, or spectral
-router sweep. The next anchor should decide one causal bottleneck:
-
-```text
-representation-router-optimizer co-dynamics under full-sequence LM training
-```
-
-Primary metric:
-
-```text
-whether router-only, representation-only, joint-SGD, or joint-AdamW freeze
-interventions reproduce or remove matched-margin first crossing and re-entry
-```
-
-Required guards:
-
-```text
-margin p05, matched identity, route NMI, LM loss, first-cross time, re-entry
-time, X/A/Q/h source-center trajectories, raw source gradients, AdamW moments,
-actual preconditioned boundary updates, max load, and active experts
-```
-
-The exact three-term finite margin decomposition is an algebraic validity guard,
-not causal evidence. Method construction is allowed only after freeze
-interventions localize the necessary path to representation formation, router
-correction, optimizer transmission, or their interaction.
-
-## Root Surfaces
-
-- `AGENTS.md`: general agent behavior and repository rules.
-- `PROJECTS.md`: this current project-state registry.
-- `sync/`: compact research-line synthesis for web-side or cross-project readers.
-- `Projects/graphs/`: Sidecar-readable graph manifests.
 - `daily_research_reports/`: daily cards and meeting materials.
-- `paper_reading/`: paper and blog reading cards.
-- `templates/`: maintained reusable templates.
+- `paper_reading/`: reading cards.
+- `papers/`: paper-writing workspaces.
+- `templates/`: reusable templates.
 - `prompts/`: reusable prompts.
-- `skills/`: repo-tracked skill sources.
+- `skills/`: repository-tracked workflows.
 
-## Web-Side Rule
-
-Web-side agents should not rely on chat history. If they cannot inspect
-`Projects/`, use this file and `sync/` first, then ask a local Codex agent to
-expose the relevant graph, anchor, or experiment record.
-
-## Course Delivery Projects
-
-Academic Writing Project 2 is a course-delivery wrapper:
-
-```text
-Projects/academic_writing/
-```
-
-It uses the current MoE gating specialization work as source material for
-slides, a poster, and a CVPR-format manuscript. It does not replace the
-research mainline and should not update graphs, root sync, or experiment
-records unless explicitly requested.
+`Projects/academic_writing/` is a course-delivery wrapper using current
+research as source material. It does not own research state.

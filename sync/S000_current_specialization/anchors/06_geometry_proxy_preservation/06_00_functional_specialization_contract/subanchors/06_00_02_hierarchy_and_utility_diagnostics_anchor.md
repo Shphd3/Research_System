@@ -1,5 +1,6 @@
 # A06_00_02 Hierarchy And Utility Diagnostics
 
+Thinking Card source: [06_00_functional_specialization_contract_thinking_card.md](../06_00_functional_specialization_contract_thinking_card.md)
 Status: completed subanchor.
 
 **Parent:** [`A06_00`](../06_00_functional_specialization_contract_anchor.md).

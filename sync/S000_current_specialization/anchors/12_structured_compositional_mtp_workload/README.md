@@ -4,8 +4,8 @@ A12 asks when the objective-level signal isolated by A11 becomes functionally us
 
 Current story:
 
-- [English canonical story](../../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md)
-- [Chinese companion](../../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md)
+- [English canonical story](/Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md)
+- [Chinese companion](/Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md)
 
 ## Terminology / Definitions
 
@@ -20,6 +20,7 @@ Current story:
 
 | Order | Parent anchor | Stable knowledge update | Status |
 |---|---|---|---|
+| 0 | [12_0 Short-range single-step versus two-step composition](12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md) / [中文](12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor_cn.md) | Fixed-table E02 was positive only at exact fit; E03 had asymmetric query-relevant structure; E04 completed 12 NTP runs but no scale learned both depths, and bijection completion invalidated its row-removal necessity guard. | E04 Stage A blocked; no threshold; no MTP |
 | 1 | [12_01 Workload and capability gate](12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor.md) / [中文](12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor_cn.md) | The two-table depth-two path validly removes single-table shortcuts, but the tested from-scratch small Transformers did not learn it. | workload supported; learner branch closed |
 | 2 | [12_02 Capacity and curriculum boundary](12_02_interference_capacity_curriculum_boundary/12_02_interference_capacity_curriculum_boundary_anchor.md) / [中文](12_02_interference_capacity_curriculum_boundary/12_02_interference_capacity_curriculum_boundary_anchor_cn.md) | Missing representation rank is a sufficient tradeoff mechanism in the oracle linear model; dose-matched curriculum cannot create rank. | completed; neural transfer untested |
 | 3 | [12_03 Standard-head causal use](12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md) / [中文](12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor_cn.md) | First establish one shared task-capable checkpoint, then compare NTP and informative Next-2 through the same standard head and intervene on intermediate state $B$. | active design |
@@ -27,6 +28,8 @@ Current story:
 The line is read as
 
 $$
+\text{short-range one-step/two-step capability control}
+\rightarrow
 \text{valid structured workload}
 \rightarrow
 \text{shared capability gate}
@@ -40,10 +43,10 @@ Repository-code transfer, neural scale laws, deeper trees, and capacity-sufficie
 
 ## Claim Boundary
 
-A12 establishes a valid depth-two joint-evidence workload, a failed current from-scratch learner branch, and a controlled linear missing-rank mechanism. It does not establish neural causal use, MTP superiority, general tree reasoning, a model-scale law, curriculum benefit in a capacity-sufficient regime, real-workload transfer, or Router/MoE value.
+A12 establishes a valid depth-two joint-evidence workload, an exactly learnable in-support short-range surface, multiple failed or invalid fresh-composition carriers including E04's NTP capability and row-removal guards, and a controlled linear missing-rank mechanism. It does not establish neural causal use, general MTP superiority, unseen-pair compositional generalization, general tree reasoning, a model-scale law, curriculum benefit in a capacity-sufficient regime, real-workload transfer, or Router/MoE value.
 
 ## Exactly One Next Decision
 
-Review the [12_03 protocol](../../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md), then run only its shared capability gate. If the gate fails, do not compare NTP with informative Next-2 and do not interpret hidden-state patches.
+Decide whether to close E04 under its frozen contract or reopen carrier/capability design in a new Protocol. Stage B and every MTP run remain blocked until a structurally valid carrier has at least one NTP-eligible scale and a frozen threshold.
 
-Decision-bearing evidence is indexed in [the A12 experiment registry](../../../../Projects/from-attention-to-search/main/experiments/A12/README.md).
+Decision-bearing evidence is indexed in [the A12 experiment registry](/Projects/from-attention-to-search/main/experiments/A12/README.md).

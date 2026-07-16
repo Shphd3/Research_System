@@ -3,13 +3,13 @@
 This repository is a research-process workspace. It is not the remote experiment codebase.
 
 The goal is to preserve research judgment: project graph, problem anchors,
-hypotheses, evidence, claim boundaries, protocols, result records, and
-meeting materials.
+evidence, claim boundaries, protocols, result records, stories, and meeting
+materials.
 
 ## Current Research Snapshot
 
-The current project state lives in `PROJECTS.md`. The compact web-side research
-line lives in:
+The project map lives in `PROJECTS.md`; today's resume point and daily research
+ledger live in `CURRENT.md`. The compact web-side research line lives in:
 
 ```text
 sync/S000_current_specialization/
@@ -19,13 +19,20 @@ The active specialization line currently runs:
 
 ```text
 05 failure mechanism
--> 06 route-relevant proxy discovery, initialization, and preservation
--> 07 functional interference value after preservation
+-> 06 geometry, preservation, expert utility, and sparse discovery
+-> 06 real-workload utility headroom gate
+-> 07 interference value only after the gate passes
 ```
 
-The next decision is still narrow: test whether a step-0 real-DCLM proxy
-partition can survive the step-5/10 training window without unacceptable
-language-model loss regression.
+The project-level next decision is narrow: decide whether unfiltered
+repository-level code completion has positive, cross-split-stable held-out
+oracle routing headroom after registered nuisance controls.
+
+For the 2026-07-17 group meeting, a separate draft cross-line theme asks what a
+long-context Router should optimize so that selected evidence preserves the
+ordinary prediction head's decision under a fixed budget. This working theme is
+published in `sync/S000_current_specialization/research_lines/13_long_context_functional_retrieval_working_theme_cn.md`;
+it does not replace the A06 decision or authorize an experiment.
 
 Canonical research artifacts are written in English by default. Chinese
 companion files are allowed when useful; add `_cn` before the extension, for
@@ -36,7 +43,11 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 - `AGENTS.md`: general Codex rules for this repository.
 - `PROJECTS.md`: current project registry, active route, graph hub, claim
   boundary, and next decision.
-- `sync/S000_current_specialization/`: compact 05/06/07 research-line synthesis.
+- `CURRENT.md`: today's focus, completed progress, claim boundary, and resume
+  action; it links to the authoritative source artifacts.
+- `sync/S000_current_specialization/`: published research-line summaries and
+  the generated link-safe full anchor mirror. Republish it only through
+  `skills/research-mainline/scripts/publish_anchor_mirror.py`.
 
 ## Working Areas
 
@@ -50,16 +61,22 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 
 ## Daily Loop
 
-1. Read `PROJECTS.md`, then the relevant graph under `Projects/graphs/` and
-   the linked problem anchor, experiment result, paper note, or sync note.
-2. Decide whether today's work updates the graph, anchor, claim boundary, or
+1. Before AI use, write today's question, current mechanism guess, strongest
+   rival, uncertainty, mind-changing evidence, and one decision.
+2. Read `PROJECTS.md`, then `CURRENT.md`, then the relevant graph under
+   `Projects/graphs/` and the linked problem anchor, experiment result, paper
+   note, or sync note.
+3. Decide whether today's work updates the graph, anchor, claim boundary, or
    next decision.
-3. Write a compact daily card, anchor update, protocol, or result record.
-4. State the conclusion for each task, not a task log.
-5. Park side thoughts instead of chasing them during the current 25 minute task.
-6. Update anchors only when evidence changes the route, claim boundary,
+4. Update the compact resume point in `CURRENT.md`; write a detailed daily
+   card, anchor update, protocol, or result record only when needed.
+5. At the end of the day, close source material and write the direct result,
+   changed belief, claim boundary, and next decision from memory. AI audits and
+   revises only after this human draft.
+6. Park side thoughts instead of chasing them during the current task.
+7. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
-7. Do not update root sync, package handoff reports, edit graph manifests,
+8. Do not update root sync, package handoff reports, edit graph manifests,
    commit, or push unless explicitly requested.
 
 Daily notes should be placed at `daily_research_reports/MMDD/` when useful.
@@ -73,17 +90,27 @@ Class notes and side thoughts should stay inside `daily_card.md` by default.
 Use `Class Notes` for class points, and `Small Thought Parking Lot` for side
 ideas that should not interrupt the current task.
 
-Meeting materials should be placed at `daily_research_reports/MMDD/meeting/`.
+Meeting materials should be placed at `daily_research_reports/MMDD/meetings/`.
+The final meeting brief contains only the executive summary and starts from a
+human-written draft.
 
 ## Physical-Prior-First Loop
 
-For project research, write a problem anchor before experiment work when the
-question is not yet stable. The anchor should state the physical prior before
-the falsifiable hypothesis:
+For project research, first write an independent Thinking Card, then let AI
+audit it. Write the formal anchor only after the human approves the question,
+physical prior, rival, metric, boundary, and decision:
 
 ```text
 Projects/graphs/<topic>.graph.yaml
+templates/research_process/thinking_card_template.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
+```
+
+Name project-local cards with the anchor stem:
+
+```text
+<anchor_stem>_thinking_card.md
+<anchor_stem>_thinking_card_cn.md
 ```
 
 After the anchor is stable, write `protocol.md` for user approval before

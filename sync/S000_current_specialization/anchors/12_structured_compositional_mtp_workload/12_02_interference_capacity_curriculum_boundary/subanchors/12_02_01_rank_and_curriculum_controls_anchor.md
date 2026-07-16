@@ -1,14 +1,6 @@
 # Rank Competition And Curriculum Controls
 
-## 0. Thinking Card
-
-**Phenomenon:** MTP can improve a future factor while harming the standard factor when one shared representation must carry two independent directions.
-**Mechanism guess:** structural missing rank causes a persistent tradeoff; scheduling can change optimization order but not create an absent dimension.
-**Key variables:** imposed representation rank, standard-loss gap, future-factor error, integrated auxiliary dose.
-**Causal relation:** change only rank or only the timing of an equal total auxiliary dose.
-**Observable metric:** standard-loss gap with future-factor improvement as a guard.
-**Rival explanations:** auxiliary loss merely fails; curriculum repairs structural capacity; parameter count alone explains capacity.
-**Decision:** retain missing rank as a sufficient controlled mechanism and park neural scale claims.
+Thinking Card source: [12_02_01_rank_and_curriculum_controls_thinking_card.md](12_02_01_rank_and_curriculum_controls_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -48,7 +40,7 @@ Use the same oracle-factor dataset and optimizer; intervene only on rank. For cu
 
 ## 7. Current Evidence
 
-The [rank intervention](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md) shows a 0.9084--1.0218 standard-loss penalty at rank one while the future factor improves in 5/5 seeds; rank two removes the penalty. The [curriculum control](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md) repairs rank one in 0/5 seeds.
+The [rank intervention](/Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md) shows a 0.9084--1.0218 standard-loss penalty at rank one while the future factor improves in 5/5 seeds; rank two removes the penalty. The [curriculum control](/Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md) repairs rank one in 0/5 seeds.
 
 ## 8. Claim Boundary And Next Decision
 

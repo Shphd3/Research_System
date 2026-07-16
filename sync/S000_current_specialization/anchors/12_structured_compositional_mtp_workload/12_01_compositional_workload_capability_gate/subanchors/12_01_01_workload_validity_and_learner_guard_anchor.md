@@ -1,14 +1,6 @@
 # Workload Validity And Learner-Eligibility Guard
 
-## 0. Thinking Card
-
-**Phenomenon:** The data distribution requires two evidence tables, but the tested small from-scratch learners solve only the output format.
-**Mechanism guess:** the workload is valid; the present checkpoint lacks held-out composition capability.
-**Key variables:** full-context accuracy, single-table accuracy, evidence-swap consistency, format accuracy.
-**Causal relation:** remove or replace one evidence table and compare the predicted answer change.
-**Observable metric:** full-context held-out answer accuracy, guarded by partial-evidence controls.
-**Rival explanations:** single-table shortcut; tokenizer/interface failure; objective effect.
-**Decision:** accept the workload, close further tuning of this from-scratch branch, and require a capable shared checkpoint.
+Thinking Card source: [12_01_01_workload_validity_and_learner_guard_thinking_card.md](12_01_01_workload_validity_and_learner_guard_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -47,7 +39,7 @@ Serialize two complete $M=8$ tables using atomic task tokens; train on fresh per
 
 ## 7. Current Evidence
 
-The distribution passes the joint-evidence audit. The [capacity ladder](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration/summary.md) and [explicit-binding repair](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md) remain near $1/8$ answer chance while format accuracy reaches 1.0.
+The distribution passes the joint-evidence audit. The [capacity ladder](/Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration/summary.md) and [explicit-binding repair](/Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md) remain near $1/8$ answer chance while format accuracy reaches 1.0.
 
 ## 8. Claim Boundary And Next Decision
 

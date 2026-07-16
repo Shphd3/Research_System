@@ -5,13 +5,16 @@
 先读一个入口即可：
 
 ```text
-closure/01_common_operator_mechanism_closure_report_cn.md
+route_document_cn.md
 ```
 
-只有在判断下一阶段路线时，再读：
+只有在审计某个阶段时，再读对应 anchor：
 
 ```text
-route_document_cn.md
+01_01_common_operator_identifiability_anchor.md
+01_02_ground_truth_projector_recovery_anchor.md
+01_03_gradient_common_vs_activation_common_anchor_cn.md
+01_04_feedback_common_preservation_bridge_anchor.md
 ```
 
 ## 当前裁定
@@ -40,8 +43,6 @@ $$
 
 | 作用 | 路径 |
 |---|---|
-| 中文完整故事综合 | `closure/01_common_operator_mechanism_closure_report_cn.md` |
-| 英文 canonical 完整故事综合 | `closure/01_common_operator_mechanism_closure_report.md` |
 | 中文路线 | `route_document_cn.md` |
 | 英文路线 | `route_document.md` |
 | 可识别性 anchor | `01_01_common_operator_identifiability_anchor.md` |

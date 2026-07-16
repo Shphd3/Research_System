@@ -22,10 +22,8 @@ source tree. Each folder above is a research-line folder. Root `sync/S000_*`
 may copy these anchors into its own `anchors/` mirror when explicitly synced,
 but the project-local files remain the source of truth.
 
-Do not add placeholder `closure/` folders or per-folder closure README files.
-Create `closure/` only for a line explicitly selected for current-state
-synthesis. The closure report itself is the reading entry and should link to,
-not duplicate, anchors and experiment records.
+Do not create closure or hypothesis-card trees. Hypotheses belong in anchors,
+and line-level synthesis belongs in `main/stories/<line>/`.
 
 Current classification maps:
 
@@ -70,7 +68,7 @@ held-out expert utility headroom worth routing.
 | Group | Anchors | Role | Current status |
 |---|---|---|---|
 | 00 foundation / definition | `00_foundation_definition/README.md` | Redirects the historical definition layer into consolidated `A06_00`. | No independent active anchor. |
-| 01 common-operator mechanism line | `01_common_operator_mechanism/README.md`, `01_common_operator_mechanism/README_cn.md`, `01_common_operator_mechanism/closure/01_common_operator_mechanism_closure_report.md` | Plan and synthesize the mechanism-first line for defining, identifying, and validating a common operator before method construction. | Stage 1 supports criterion-dependent common (`criterion_winner_diversity=4`); Stage 2 supports gradient common over activation common (`n_passed_mismatch_regimes=4/4`); Stage 3 controlled bridge supports feedback replay/removal (`n_passed_main_feedback_regimes=2/2`). The bounded real-DCLM gate-logit bridge reproduces collapse but rejects simple low-rank logit common as the main explanation (`pass=false`). |
+| 01 common-operator mechanism line | `01_common_operator_mechanism/README.md`, `01_common_operator_mechanism/README_cn.md`, `01_common_operator_mechanism/route_document.md` | Plan and audit the mechanism-first line for defining, identifying, and validating a common operator before method construction. | Stage 1 supports criterion-dependent common (`criterion_winner_diversity=4`); Stage 2 supports gradient common over activation common (`n_passed_mismatch_regimes=4/4`); Stage 3 controlled bridge supports feedback replay/removal (`n_passed_main_feedback_regimes=2/2`). The bounded real-DCLM gate-logit bridge reproduces collapse but rejects simple low-rank logit common as the main explanation (`pass=false`). |
 | 05 failure-mechanism line | `05_failure_mechanism/02_*`, `05_failure_mechanism/05_01_*` to `05_failure_mechanism/05_04_03_*` | Diagnose why ordinary top-1 fails: early top-1 lock-in, inhibition limits, feature-axis ambiguity, common offset, and common-logit feedback. | Mechanism evidence. It supplies the physical priors used by 06. |
 | 06 functional Routing line | `06_geometry_proxy_preservation/research_map.md`; parent anchors `06_00` to `06_04` with local `subanchors/` | Five decisions from functional definition through geometry, preservation, expert utility, sparse discovery, and a real-workload gate. | Four completed parent anchors and one active workload anchor; no LLM Router claim yet. |
 | 07 interference / value line | `07_features_overlap/07.md`, `07_features_overlap/07_01_*` to `07_features_overlap/07_06_*` | Tests whether parameter separation reduces common/rare feature interference or creates utility. | Controlled diagnostics; hierarchy/utility evidence is absorbed into A06. |

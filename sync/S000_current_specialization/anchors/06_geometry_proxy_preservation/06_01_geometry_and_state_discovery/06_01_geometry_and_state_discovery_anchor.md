@@ -2,20 +2,7 @@
 
 Status: completed parent anchor with a negative label-free boundary.
 
-## 0. Thinking Card
-
-**Phenomenon:** The intended feature partition is linearly reachable when the
-correct route-position states are known. Clustering all positions, waiting for
-warmup, or extracting stronger spectral directions does not reliably identify
-the same population. Real-text proxies can initialize a Router but are rapidly
-overwritten by ordinary training.
-
-**Physical judgment:** The initialization problem has three contracts:
-route-relevant information must exist, the correct state population must be
-selected without privileged labels, and the resulting rows must enter a
-trainable basin. Existing evidence passes the first contract, partially passes
-the second only with controlled supervision, and fails the third on real proxy
-training.
+Thinking Card source: [06_01_geometry_and_state_discovery_thinking_card.md](06_01_geometry_and_state_discovery_thinking_card.md)
 
 ## 1. Complete Problem
 
@@ -102,13 +89,13 @@ on held-out data before Router initialization.
 
 | Subanchor | Local decision | Experiment group |
 |---|---|---|
-| [`A06_01_01`](subanchors/06_01_01_common_geometry_nuisance_controls_anchor.md) | Common directions and row norms are nuisance controls, not feature discovery. | [`E01`--`E06`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
-| [`A06_01_02`](subanchors/06_01_02_oracle_partition_reachability_anchor.md) | The intended partition is linearly reachable when routed states are known. | [`E01`--`E02`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
-| [`A06_01_03`](subanchors/06_01_03_label_free_route_state_selection_anchor.md) | Tested label-free selectors do not recover the oracle state population safely. | [`E01`--`E07`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
-| [`A06_01_04`](subanchors/06_01_04_real_proxy_initialization_overwrite_anchor.md) | A real proxy can initialize routing but ordinary training rapidly overwrites it. | [`E01`--`E04`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
-| [`A06_01_05`](subanchors/06_01_05_warmup_spectral_gradient_selector_audit_anchor.md) | Warmup, spectral, and gradient scores fail the joint state-selection and margin contract. | [`E01`--`E05`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
-| [`A06_01_06`](subanchors/06_01_06_spectral_reservoir_method_audit_anchor.md) | Iterative expert-direction extraction remains a diagnostic, not a feature-aware Router. | [`E01`--`E04`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
-| [`A06_01_07`](subanchors/06_01_07_static_expert_geometry_side_theory_anchor.md) | Static expert geometry is secondary evidence outside the active training-dynamics chain. | [`E01`--`E04`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_01`](subanchors/06_01_01_common_geometry_nuisance_controls_anchor.md) | Common directions and row norms are nuisance controls, not feature discovery. | [`E01`--`E06`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_02`](subanchors/06_01_02_oracle_partition_reachability_anchor.md) | The intended partition is linearly reachable when routed states are known. | [`E01`--`E02`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_03`](subanchors/06_01_03_label_free_route_state_selection_anchor.md) | Tested label-free selectors do not recover the oracle state population safely. | [`E01`--`E07`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_04`](subanchors/06_01_04_real_proxy_initialization_overwrite_anchor.md) | A real proxy can initialize routing but ordinary training rapidly overwrites it. | [`E01`--`E04`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_05`](subanchors/06_01_05_warmup_spectral_gradient_selector_audit_anchor.md) | Warmup, spectral, and gradient scores fail the joint state-selection and margin contract. | [`E01`--`E05`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_06`](subanchors/06_01_06_spectral_reservoir_method_audit_anchor.md) | Iterative expert-direction extraction remains a diagnostic, not a feature-aware Router. | [`E01`--`E04`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
+| [`A06_01_07`](subanchors/06_01_07_static_expert_geometry_side_theory_anchor.md) | Static expert geometry is secondary evidence outside the active training-dynamics chain. | [`E01`--`E04`](/Projects/from-attention-to-search/main/experiments/A06/06_01_geometry_and_state_discovery) |
 
 ## 6. Minimal Adjudication Contract
 

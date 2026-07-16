@@ -2,15 +2,7 @@
 
 Status: completed as a controlled mechanism boundary; neural and scale transfer remain untested.
 
-## 0. Thinking Card
-
-**Phenomenon:** Extra future supervision can improve the future factor while worsening the standard objective in a limited shared representation.
-
-**Mechanism guess:** The local effect is governed by gradient interaction, while a persistent tradeoff can be caused by insufficient task-relevant representation rank. A training schedule cannot create a missing independent direction.
-
-**Observable metric:** standard-objective loss gap under a controlled rank intervention, with future-factor error as the benefit guard.
-
-**Decision:** structural rank competition is a sufficient mechanism in the linear model; curriculum is not a structural-rank repair; do not infer a Transformer scale law yet.
+Thinking Card source: [12_02_interference_capacity_curriculum_boundary_thinking_card.md](12_02_interference_capacity_curriculum_boundary_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -58,7 +50,7 @@ First verify the local finite-difference equation on paired cloned updates. Then
 
 ## 7. Current Evidence
 
-The local Taylor equation is numerically accurate at small steps, but its neural task checkpoint was at chance and therefore does not establish task-conditioned interference. In the oracle linear model, rank one produces a standard-loss gap of 0.9084--1.0218 while improving the future factor in 5/5 seeds; rank two removes the gap to numerical zero. Dose-matched curriculum passes the rank-one Pareto criterion in 0/5 seeds. See [rank intervention](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md), [curriculum boundary](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md), and [subanchor 12_02_01](subanchors/12_02_01_rank_and_curriculum_controls_anchor.md). The ineligible local-gradient check is archived as supporting evidence rather than a mainline result.
+The local Taylor equation is numerically accurate at small steps, but its neural task checkpoint was at chance and therefore does not establish task-conditioned interference. In the oracle linear model, rank one produces a standard-loss gap of 0.9084--1.0218 while improving the future factor in 5/5 seeds; rank two removes the gap to numerical zero. Dose-matched curriculum passes the rank-one Pareto criterion in 0/5 seeds. See [rank intervention](/Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md), [curriculum boundary](/Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md), and [subanchor 12_02_01](subanchors/12_02_01_rank_and_curriculum_controls_anchor.md). The ineligible local-gradient check is archived as supporting evidence rather than a mainline result.
 
 ## 8. Claim Boundary And Next Decision
 

@@ -2,15 +2,7 @@
 
 Status: completed and conditionally supported in controlled Transformer settings.
 
-## 0. Thinking Card
-
-**Phenomenon:** A loss can point in a useful hidden-state direction without trainable shared parameters being able to realize that movement.
-
-**Mechanism guess:** The task direction must survive multiplication by the hidden-state Jacobian. Other language-model losses add signed background terms that may help or cancel it.
-
-**Observable metric:** parameter semantic velocity, the predicted change of the task margin under one shared-parameter update.
-
-**Decision:** the parameter-transmission prerequisite is supported under the controlled interventions; its sign is not universally positive under full all-position training.
+Thinking Card source: [11_02_hidden_to_parameter_transmission_thinking_card.md](11_02_hidden_to_parameter_transmission_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -67,7 +59,7 @@ Use a one-layer causal Transformer with frozen embeddings and output heads, trai
 
 ## 7. Current Evidence
 
-Decision-only transmission is positive in 5/5 seeds and accurately predicts finite updates. Under all-position training, $G_D$ is positive and exceeds $G_I$ in 5/5 seeds, but remaining losses reverse the full net velocity in one seed. See [decision-only transmission](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md), [all-position decomposition](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md), and [subanchor 11_02_01](subanchors/11_02_01_reachability_and_background_sign_anchor.md).
+Decision-only transmission is positive in 5/5 seeds and accurately predicts finite updates. Under all-position training, $G_D$ is positive and exceeds $G_I$ in 5/5 seeds, but remaining losses reverse the full net velocity in one seed. See [decision-only transmission](/Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md), [all-position decomposition](/Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md), and [subanchor 11_02_01](subanchors/11_02_01_reachability_and_background_sign_anchor.md).
 
 ## 8. Claim Boundary And Next Decision
 

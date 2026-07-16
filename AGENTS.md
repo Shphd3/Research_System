@@ -1,636 +1,308 @@
-﻿# Codex Research System
+# Codex Research System
 
-This repository manages research process, not the remote experiment codebase.
+This repository manages research judgment and process, not the remote
+experiment codebase.
 
-Default conversation language: Chinese. Start with the conclusion, then give
-only the minimum reason, claim boundary, and next decision needed for the
-user's current question.
+## Language And Response
 
-Default artifact language: English. Canonical research files such as anchors,
-protocols, `summary.md`, `detailed.md`, handoff packages, graph summaries, and
-sync packages should be written in
-English unless the user explicitly asks otherwise. Chinese companion versions
-are allowed when useful; name them with `_cn` before the extension, for example
-`<anchor_id>_cn.md`, `protocol_cn.md`, `summary_cn.md`, and `detailed_cn.md`.
-The English file remains the source of truth unless the user explicitly says
-the Chinese file is canonical. Exception: anchor `Thinking Card` sections may
-preserve the user's Chinese mechanism judgment: phenomenon, mechanism guess,
-key variables, causal relation, observable metric, alternative explanation,
-and decision rule. The rest of the canonical anchor remains English unless the
-user explicitly asks otherwise.
-
-## Response Style
-
-- Be precise, concise, and structured.
-- Use fewer English phrases. Define every technical term in Chinese before
-  using its English name or abbreviation.
-- Do not use labels as a substitute for explanation. State the concrete meaning
-  first, then use a short label only if it reduces repetition.
-- In conversation, explain new technical terms in Chinese first. In canonical
-  English artifacts, define terms in plain English and create a `_cn.md`
-  companion only when Chinese explanation is needed.
-- Treat the user's idea as a research hypothesis to examine, not as something
-  to affirm.
-- Point out unclear objects, hidden assumptions, rival explanations, metric
-  mismatch, causal overclaim, or missing boundary conditions.
-- Separate result, interpretation, claim, and speculation.
-- For metrics, name the most important metric first and explain why it decides
-  the judgment.
-- Meeting-facing and collaborator-facing reports must be self-contained.
-- When the user asks for a concrete result, metric, comparison, run status, or
-  number, answer with the direct measured result first. Do not delay the answer
-  in order to polish plots, reorganize files, or write a longer report.
-
-## Terminology Rule
-
-Every research document must define its terms before using them as evidence.
-This is a hard readability rule, not a style preference.
-
-For conversation in Chinese, explain the concrete meaning in Chinese first,
-then introduce the English term or abbreviation in parentheses only if it will
-be reused. For canonical English artifacts, add a short
-`Terminology / Definitions` section near the top when the document uses
-non-obvious terms, abbreviations, metrics, condition labels, method names,
-project shorthand, or plot labels. Chinese companions and meeting briefs should
-use `术语解释`.
-
-Each important term should define:
-
-```text
-term / abbreviation:
-plain meaning:
-concrete object or computation:
-unit / formula, if it is a metric:
-why it matters for the current decision:
-what it cannot prove:
-```
-
-Do not use English jargon, project nicknames, run labels, condition codes, or
-metric names as substitutes for explanation. A reader should not need chat
-history, source code, or previous reports to understand a claim.
+- Default conversation language: Chinese.
+- Start with the conclusion, then give only the reason, claim boundary, and
+  next decision needed for the current question.
+- Canonical research artifacts are English unless the user explicitly chooses
+  another language. Chinese companions use `_cn.md`.
+- An independent Thinking Card may preserve the user's Chinese mechanism
+  judgment.
+- Define technical terms in plain Chinese before reusing English names or
+  abbreviations in conversation.
+- Treat user ideas as hypotheses to audit. Point out undefined objects, hidden
+  assumptions, rival explanations, metric mismatch, causal overclaim, and
+  missing boundary conditions.
+- Separate direct result, observation, interpretation, claim, speculation,
+  boundary, and next decision.
+- When the user asks for a number or run status, return the measured result
+  first. Do not delay it for document cleanup.
 
 ## Start Here
 
-At the start of a research task:
+For research work:
 
 1. Read `PROJECTS.md`.
-2. Identify the active project and worker surface.
-3. Read the relevant graph. For cross-project specialization work, prefer
-   `Projects/graphs/expert_specialization.graph.yaml`; for narrow branch-local
-   work, use the linked project graph only when it is the better map. Then read
-   only the linked anchor, roadmap, sync note, experiment result, meeting note,
-   paper note, or raw material needed.
-4. Decide whether the material updates the graph, anchor, claim boundary, or
-   next decision before writing a long answer.
+2. Read `CURRENT.md` for today's focus and resume point.
+3. Identify the active project and worker surface.
+4. Read the graph named in `PROJECTS.md`.
+5. Read only the linked anchor, story, protocol, result, meeting note, paper
+   note, or raw material needed for the question.
+6. Decide whether the work changes an anchor, claim boundary, graph, sync
+   surface, or next decision before writing a long response.
 
-Do not rely on chat history as the main source of memory.
+Do not use chat history as the main research memory.
 
-## Project State Ownership
+## Human-AI Research Cycle
 
-`AGENTS.md` defines repository-wide behavior, artifact roles, sync boundaries,
-and execution boundaries. Keep it general. Do not use it as the place to store
-the current project conclusion, active branch, latest evidence, or next
-experiment.
+The human owns the initial judgment and final approval. AI retrieves, audits,
+formalizes, checks, and edits.
 
-`PROJECTS.md` owns the current project map: active project, active branch,
-graph hub, current research route, root sync entry, claim boundary, and next
-decision.
+```text
+human Thinking Card
+-> AI logic audit
+-> human correction / approval
+-> formal anchor
+-> approved protocol
+-> execution and evidence record
+-> human closed-book summary
+-> AI evidence and boundary audit
+-> anchor / CURRENT.md update
+```
 
-Project-local `AGENTS.md`, `README.md`, anchors, roadmaps, experiment
-`summary.md`, and `detailed.md` own project-specific details. If a current
-research-state statement in this file conflicts with `PROJECTS.md`, treat
-`PROJECTS.md` as current and move the project-specific statement out of this
-file.
+Before AI writes a formal anchor or final meeting brief, the human should state:
 
-## Anchor-First Rule
+```text
+phenomenon
+mechanism guess
+strongest rival explanation
+most uncertain point
+evidence that would change the judgment
+current next decision
+```
 
-The anchor is the project-local equivalent of the advisor's
-research-exploration `docs/design.md`: a compact but complete current-state
-research design document. Do not create new separate
-`hypotheses/<id>/purpose_card.md` files for new work.
+`Unknown` is valid. AI may propose candidate definitions, priors, metrics, and
+counterexamples, but must label them and must not silently invent the user's
+judgment.
+
+After a research cycle, the human first writes from memory:
+
+```text
+question
+direct result
+confirmed belief
+weakened or rejected belief
+current mechanism and reason
+cannot-claim boundary
+exactly one next decision
+```
+
+AI then verifies sources and wording without strengthening the claim.
+
+## State Ownership
+
+| Surface | Owns |
+|---|---|
+| `AGENTS.md` | stable repository behavior and hard boundaries |
+| `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
+| `CURRENT.md` | today's focus, progress, resume action, and append-only dated ledger |
+| `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
+| Thinking Card | human's initial mechanism judgment and uncertainty |
+| anchor | one adjudicable research design and its current boundary |
+| story | line-level mathematical and evidence synthesis |
+| `protocol.md` | approved test contract |
+| `summary.md` | first result reading path |
+| `detailed.md` | complete evidence ledger and artifact map |
+| root `sync/` | explicitly published external-reading surface |
+
+If a project-state statement here conflicts with `PROJECTS.md`, move the state
+out of this file and treat `PROJECTS.md` as current.
+
+## Thinking Card And Anchor
+
+New Thinking Card names are subject-bearing and collision-safe:
+
+```text
+<anchor_stem>_thinking_card.md
+<anchor_stem>_thinking_card_cn.md
+```
+
+The card is independent and human-owned. The formal anchor links it and does
+not duplicate it as section 0.
 
 Default anchor paths:
 
 ```text
-Projects/<project>/main_specialization/problem_anchors/<line_id>/<anchor_id>_<topic>_anchor.md
-Projects/<project>/main/problem_anchors/<line_id>/<anchor_id>_<topic>_anchor.md
+Projects/<project>/main/problem_anchors/<line>/<anchor_id>_<topic>_anchor.md
+Projects/<project>/main/problem_anchors/<line>/<anchor_id>_<topic>/
+  <anchor_id>_<topic>_anchor.md
+  subanchors/<anchor_id>_<NN>_<topic>_anchor.md
 ```
 
-When a line explicitly adopts parent/subanchor packaging, use:
+A parent anchor owns one complete major problem. A subanchor inherits the
+parent question and adjudicates one local clause, rival, robustness check, or
+metric guard. Do not mix flat and nested layouts inside one active line without
+an explicit migration that updates indexes and references.
+
+Formal anchors use sections 1-8:
 
 ```text
-Projects/<project>/main/problem_anchors/<line_id>/<anchor_id>_<topic>/<anchor_id>_<topic>_anchor.md
-Projects/<project>/main/problem_anchors/<line_id>/<anchor_id>_<topic>/subanchors/<anchor_id>_<NN>_<topic>_anchor.md
+1. Problem Definition
+2. Physical Priors
+3. Falsifiable Hypotheses
+4. Mathematical Model
+5. Computational Realization
+6. Minimal Falsification Tests
+7. Current Evidence
+8. Claim Boundary And Next Decision
 ```
 
-Use a parent anchor for a complete adjudicable research story, not for one
-small ablation. A parent anchor must connect the phenomenon, physical prior,
-core model, decisive evidence chain, claim boundary, and next decision for one
-major problem. Put local rival explanations, robustness checks, metric guards,
-or incremental mechanism clauses under that parent's `subanchors/` directory.
+Each anchor has one decision question, one core model, one primary metric, one
+main falsifier, pass/fail/insufficient meanings, a conservative boundary, and
+exactly one next decision. Commands, full configs, raw logs, and broad sweeps
+belong outside anchors.
 
-A subanchor must inherit the parent question and identify exactly which clause
-it adjudicates. It must not create a parallel mainline, repeat the parent's
-complete story, or become a container for an arbitrary experiment list.
+After evidence exists, update the same anchor. Do not create a separate
+`hypotheses/`, closure-report, or routine `final_report.md` layer.
 
-Numbering is hierarchical:
+## Story
+
+Stories live under:
 
 ```text
-<line>_<parent>                 # parent anchor, for example 06_02
-<line>_<parent>_<child>         # subanchor, for example 06_02_03
+Projects/<project>/main/stories/<line>/README.md
+Projects/<project>/main/stories/<line>/<NN>_<topic>.md
+Projects/<project>/main/stories/<line>/<NN>_<topic>_cn.md
 ```
 
-Do not mix flat and parent/subanchor layouts inside one active line. Adopt the
-nested layout only through an explicit line migration that updates indexes and
-references in the same task. Existing flat line registries remain valid until
-such a migration is approved.
+The line README orders story pairs and marks exactly one current primary
+synthesis. English and Chinese companions must agree on theorem state,
+evidence verdict, boundary, and next decision. Stories link to anchors and
+results; they do not replace or strengthen them. Historical snapshots use
+subject-bearing names under `archive/<snapshot_id>/`.
 
-When anchors are consolidated, renumber retained current anchors, indexes, and
-references in the same task. Rename experiment folders only when their
-reproducibility identifiers are not already externally referenced. Git history
-is the provenance layer; immutable job IDs, remote result directory names, and
-published artifact identifiers remain in artifact maps.
+## Experiment Chain
 
-For the active project and current anchor list, read `PROJECTS.md` first, then
-the linked project-local anchor index.
-
-Each anchor should let the reader see these points quickly:
-
-- phenomenon and parent/subproblem relation;
-- exactly one decision question;
-- physical priors and falsifiable hypotheses;
-- exactly one core mathematical model;
-- computational realization / implementation contract;
-- minimal tests with primary metrics, operational definitions, stage-local
-  evidence, and failure meaning;
-- supported / weakened / insufficient-evidence outcomes;
-- current evidence;
-- claim boundary and exactly one next decision.
-
-The anchor has two reading layers: `Thinking Card` is the human-facing
-mechanism judgment card, and sections 1-8 are the auditable design layer for
-AI replay, protocol alignment, and boundary checks. Do not solve a long anchor
-by deleting design logic; make the Thinking Card short and decision-bearing,
-then keep detailed run material in `protocol.md`, `summary.md`, or
-`detailed.md`.
-
-After evidence exists, update the same anchor. Long result explanation belongs
-in `detailed.md`; optional handoff packages only package already-updated
-evidence for meeting or collaborator use.
-
-## Story Rule
-
-A story is a research-line-level living synthesis. It explains how a line's
-research question, physical intuition, mathematical model, theorem state,
-anchor chain, experiment evidence, claim boundary, and next decision fit
-together. It does not replace anchors, protocols, `summary.md`, or
-`detailed.md`.
-
-Default story paths:
+Default chain:
 
 ```text
-Projects/<project>/main/stories/README.md
-Projects/<project>/main/stories/<line_id>/README.md
-Projects/<project>/main/stories/<line_id>/<NN>_<topic>.md
-Projects/<project>/main/stories/<line_id>/<NN>_<topic>_cn.md
-Projects/<project>/main/stories/<line_id>/archive/<snapshot_id>/<snapshot_id>.md
-Projects/<project>/main/stories/<line_id>/archive/<snapshot_id>/<snapshot_id>_cn.md
+anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
-Story filenames must remain identifiable outside their parent folder. Use a
-two-digit reading-order prefix and a concrete subject-bearing topic for active
-documents. Do not create new generic `story.md` or `story_cn.md` files. A line
-folder may contain multiple story documents only when they have different,
-explicit scopes, such as workload definition, mechanism theory, or downstream
-validation. Do not create one story per anchor.
+- Do not implement or run a nontrivial experiment before `protocol.md` is
+  approved.
+- `protocol.md` owns question alignment, conditions, primary metric,
+  pass/fail/insufficient rules, guards, approval state, and execution contract.
+- `summary.md` is conclusion-first: what is established, what the primary
+  metric shows, boundary, central figures, and next decision.
+- `detailed.md` owns the complete setup, seeds, commands, job IDs, full tables,
+  stage evidence, failures, artifact map, and visualization audit.
+- Add conditions, seeds, and diagnostics only when they separate a named rival
+  or protect the primary conclusion.
+- Every central plot needs a contract: question, metric and unit, data source,
+  aggregation, axes/legend, allowed conclusion, and limitation. Audit the
+  rendered artifact before delivery.
+- Important figures live locally beside the result documents and are embedded,
+  not merely listed by path.
 
-Each line `README.md` must contain an ordered story registry and mark exactly
-one document pair as the current primary synthesis. Historical snapshots must
-repeat the snapshot-folder identifier in the filename rather than using a
-generic basename.
-
-Formal stories are bilingual by default. The English canonical file and its
-Chinese `_cn.md` companion must share the same numeric prefix and topic stem.
-They must agree on the research question, theorem status, evidence verdict,
-claim boundary, and next decision. Updating or renaming a formal story means
-updating both language versions and all project-local references in the same
-task. A historical Chinese document that does not match the current English
-argument remains an archive; it must not be relabeled as the current companion.
-
-Anchors remain the source of adjudicable questions. Stories are the source of
-line-level reading order and full argument synthesis. When a user explicitly
-asks to sync a research line, check both:
+Before pursuing a tangent, apply:
 
 ```text
-Projects/<project>/main/problem_anchors/<line_id>/
-Projects/<project>/main/stories/<line_id>/
+affects hypothesis? yes/no/unclear
+affects claim boundary? yes/no/unclear
+affects next decision? yes/no/unclear
+recommendation: pursue / park / ignore
 ```
 
-Root sync may copy a full story only when the user explicitly asks for full
-story sync or full line sync. If the story changes the claim boundary or next
-decision, update the relevant anchor index, `PROJECTS.md`, and root sync entry
-in the same explicit sync task.
+## Meeting Brief
 
-## Artifact Alignment Contract
+The final meeting brief contains only the executive summary defined by
+`templates/meeting/meeting_brief_template.md`. The researcher writes the first
+judgment; AI audits and revises afterward. Background, derivations, complete
+tables, and timelines remain in anchors and result records.
 
-Each artifact has one job. Do not let later artifacts rewrite earlier research
-questions, and do not let early artifacts absorb run details or results.
+## Explicit Publication And Sync
 
-| Artifact | Owns | Must not do |
-|---|---|---|
-| `00_handwrite_anchor.md` | the user's rough Thinking Card and exposed judgment | require or become a full 0-8 anchor before audit |
-| parent anchor | complete adjudicable story for one major research problem | become a runbook, experiment timeline, or broad ablation list |
-| subanchor | one local clause, rival explanation, robustness check, or metric guard inherited from a parent anchor | create a parallel mainline or repeat the full parent story |
-| story | line-level argument synthesis, theorem state, evidence chain, claim boundary, and next anchor decomposition | replace anchors, protocols, summaries, detailed records, or introduce stronger claims than the sources support |
-| `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
-| `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
-| `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than `summary.md` or the anchor |
-| `closure/<topic>_closure_report.md` | line-level stable synthesis for a specified anchor folder | replace anchors, protocols, summaries, detailed records, or create stronger claims |
-| `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
-| anchor update | compress results into supported / weakened / insufficient evidence | paste a result report into the anchor |
+Default behavior updates only project-local sources and `CURRENT.md`.
 
-## Explicit Sync Rule
-
-Default behavior:
+These actions require an explicit user request:
 
 ```text
-update anchor / protocol.md / summary.md / detailed.md / daily card only
-do not update root sync automatically
-do not package handoff reports automatically
-do not sync to external collaborator repos automatically
-do not update graph manifests automatically
-do not push automatically
+edit an existing graph
+publish root sync or a full mirror
+sync to a collaborator repo
+package a handoff
+commit
+push
 ```
 
-Only perform these actions when the user explicitly asks:
+Project-local anchors remain the source of truth. When a root anchor mirror is
+explicitly requested, generate it with:
 
 ```text
-sync root sync
-sync to collaborator/senior repo
-package handoff report
-push to remote
-update graph
+python skills/research-mainline/scripts/publish_anchor_mirror.py
 ```
 
-The project-local anchor remains the source of truth. Root `sync/` is an
-explicit external-reading surface for web-side or cross-project readers, not an
-automatic side effect of every anchor edit.
+The publisher copies the complete anchor tree and rewrites links that leave the
+tree to repository-root absolute paths so the published mirror remains
+clickable. Do not hand-edit generated mirror files; update the source and
+republish. Update the root-sync README, line summary, and index in the same
+explicit publication task.
 
-Root sync should summarize research lines, claim boundaries, and links to
-source artifacts. It is not a raw-output dump and not a default mirror of full
-project anchors. Only copy a full anchor into root sync when the user explicitly
-asks for an anchor copy.
+External collaborator sync is a separate curated package. Check the target
+repo status first; do not overwrite dirty collaborator files. Copy only the
+approved anchor, protocol, summary, detailed record, and referenced figures or
+tables. Exclude private notes, raw logs, checkpoints, datasets, full result
+directories, and unrelated anchors. Commit or push only when explicitly asked.
 
-When the user requests root sync, update the research-line summary and indexes
-for the named line. Verify that every linked source artifact exists before
-ending the task.
+## Graph
 
-External collaborator repo sync is a separate explicit action. It means copying
-a small curated research package into a collaborator/advisor/senior student's
-repo, not mirroring this repository or the experiment codebase. Include only
-the copied current anchor, `protocol.md`, `summary.md`, and `detailed.md`.
-Copy figures or tables only when those files are embedded by the synced
-documents.
-Do not include raw logs, checkpoints, datasets, full result directories,
-private daily notes, unrelated anchors, or code changes unless the user
-explicitly asks for those files.
+Graphs are thin navigation; Markdown artifacts remain the reasoning source.
+Use only these node roles when possible: question, claim, concept, method,
+evidence, source, task, output. Link nodes to concrete source files and keep
+summaries to current previews.
 
-Before syncing to an external repo, identify the target repo path, check its
-`git status --short --branch`, avoid overwriting dirty collaborator files
-without explicit approval, convert absolute paths to relative links, and verify
-embedded figures/tables exist inside the copied package. Commit and push the
-external repo only when explicitly requested.
+Before changing an existing graph, obtain confirmation unless the current user
+request explicitly authorizes that edit. When asked to display a graph, use the
+local Sidecar app through `sidecar-thinking`; do not substitute a custom graph.
 
-## Experiment Rule
+## Terminology And Formula Rules
 
-Default shape:
+Define every non-obvious term, abbreviation, metric, condition, method label,
+run label, and plot label before using it as evidence. A metric definition must
+state its concrete computation, unit/formula, decision role, and what it cannot
+prove.
+
+Use `$...$` for inline formulas and `$$...$$` for display formulas.
+
+## Repository And Execution Boundary
+
+Keep the root focused on:
 
 ```text
-one anchor -> one minimal decisive protocol.md -> summary.md -> detailed.md -> anchor update
+AGENTS.md  PROJECTS.md  CURRENT.md  README.md
+Projects/  sync/  templates/  prompts/  skills/
+paper_reading/  papers/  daily_research_reports/  docs/
 ```
 
-This is the minimal repository adapter for the advisor's
-`research-exploration` spec:
+Root `templates/` is the only maintained reusable-template location.
 
-```text
-anchor                  = compact docs/design.md role
-protocol.md             = docs/experiment_design.md role
-summary.md + detailed.md + figures/viewer
-                        = docs/visualization_results.md role
-final_report.md         = stable-closure synthesis only after the working
-                          evidence and anchor are current
-problem_anchors/<line>/closure/
-                        = specified research-line synthesis for understanding
-                          the current process, mathematical model, evidence
-                          chain, and next decision
-```
+Local `Research_System` owns research-process artifacts and curated evidence.
+Remote/container workspaces own experiment code, debugging, runs, raw outputs,
+checkpoints, logs, result generation, and cluster submissions. Use Git as the
+normal synchronization path. SSH/SCP is only for explicit small inspection,
+recovery, or port forwarding.
 
-Do not create a parallel `docs/design.md`, `docs/experiment_design.md`, or
-`docs/visualization_results.md` tree for normal project work unless the user
-explicitly asks for that exported layout. The canonical system remains
-anchor-first.
+Do not promote raw outputs, checkpoints, datasets, or unfiltered logs into the
+research mainline.
 
-Root sync, external collaborator repo sync, handoff packages, graph updates,
-commits, and pushes are separate explicit actions. Do not perform them unless
-the user asks for that action in the current task.
+## Local Skills
 
-`protocol.md` replaces the old two-file split between approval notes and
-implementation details. It is the experiment design and approval surface
-aligned with the advisor's research-exploration `docs/experiment_design.md`.
-Do not run or implement a nontrivial experiment before the protocol is
-approved.
+Use repository skills when the task matches:
 
-`summary.md` is the first post-result reading path. It must be self-contained
-and state purpose, exact setup, primary metric, conclusion, key evidence, claim
-boundary, and next decision. It must also explain central figures using the
-visualization-results standard: what the figure tests, how to read it, observed
-result, take-home, and what it does not prove.
+- `research-progress-core`: research logic and uncertainty reduction.
+- `problem-anchor-writer`: Thinking Card audit and anchor construction.
+- `experiment-card-writer`: protocol, summary, and detailed records.
+- `meeting-brief-writer`: human-first executive summary.
+- `research-mainline`: project organization and explicit publication.
+- `research-graph-sop`: thin graph maintenance.
+- `handoff-report-writer`: explicit curated handoff packaging.
+- `remote-experiment-workflow`: remote execution and artifact maps.
+- `sidecar-thinking`: local graph display.
+- `scholar-mode`: unstable research intuition and literature framing.
 
-The summary must be conclusion-first and reader-facing. Start with what was
-established, what the experiment shows through the primary metric, and what we
-do next. Put setup and boundaries where they protect the claim; do not narrate
-discarded attempts or internal failure paths unless they are needed for the
-research decision. Every condition label, metric name, and plot label used in a
-result must be defined in a terminology/setup block before the reader needs it.
+Detailed templates and validation checklists live in those skills, not here.
 
-`detailed.md`存放最完整的实验记录：数据构造、模型/训练/评估设置、条件、
-seeds、命令、job id、关键图、完整表格、失败或部分运行、artifact map、解释
-和 claim boundary. It must include a `Visualization Results` section where each
-central figure/viewer states purpose, setup, how to read, observed result,
-take-home, and remaining uncertainty.
+## Git
 
-Before a new central plot or viewer is delivered, write or preserve a plot
-contract: question answered, metric definition and unit, data source,
-aggregation level, axis/legend meaning, allowed conclusion, and limitation.
-Then perform a bounded rendered-artifact audit: page renders, labels and legends
-are readable, metric definitions precede plots, important numbers are visible,
-and no plot requires source-code knowledge to understand. Unclear plots move to
-debug appendix or are removed from the main reading path.
-
-When a self-contained subproblem reaches stable closure, after the anchor,
-`summary.md`, and `detailed.md` are current, write a final synthesis only if the
-subproblem is being closed as a unit. Use `final_report.md` or a clearly named
-final report. It is not a routine per-experiment artifact and does not replace
-the anchor or result records.
-
-When the user explicitly specifies an anchor folder or research line and asks
-for a current understanding / closure synthesis, write it under:
-
-```text
-Projects/<project>/main/problem_anchors/<line>/closure/
-```
-
-Do not create placeholder `closure/` folders or extra `README.md` files. Create
-the directory only when a real closure report is being written; the closure
-report itself is the reading entry.
-
-The closure report is a line-level reading document. It should follow the
-advisor-style full-story pattern first, then put the audit tables in the later
-part. The first half should be readable as one coherent argument:
-
-```text
-title / subtitle -> abstract -> motivation -> confused concepts separated
--> clean baseline or impossibility result -> mechanism model -> propositions
-or theorems -> controlled evidence -> real evidence or negative result
--> reconciliation -> refined theory -> next experiment
-```
-
-The second half may contain the existing compact audit structure: result table,
-proved / assumed / empirical table, claim boundary, source map, and one compact
-appendix with data, model, training/evaluation settings, seeds, checkpoints,
-scripts, result paths, and primary metrics. It must link to source anchors and
-experiment records instead of duplicating them, and it must not introduce new
-claims stronger than the linked anchors, `summary.md`, and `detailed.md`.
-
-Closure reports are bilingual by default: the English file is canonical, and a
-Chinese companion with `_cn` before `.md` must be kept beside it unless the
-user explicitly chooses Chinese as canonical. Mathematical claims must separate
-proved statements, assumptions, and empirical propositions. If a claim can be
-proved from the stated model, include the proof; if it cannot, state the
-missing assumption or required experiment rather than writing a heuristic
-explanation.
-
-如果有重要图，必须复制到实验或 sync 文件夹的本地 `figures/` 目录，并在
-`summary.md`、`detailed.md` 和显式请求的 handoff package 中嵌入。只列路径不嵌图是不完整的。
-
-Do not jump directly to architecture, scripts, or metrics before the anchor is
-clear. Avoid broad sweeps before the first anchor decision is closed. Add
-ablations, seeds, or diagnostics only when they distinguish a named rival
-explanation or protect the validity of the primary conclusion.
-
-Before pursuing a new observation, idea, diagnostic, or AI-suggested tangent,
-apply the mainline impact gate:
-
-```text
-Mainline impact:
-- affects hypothesis? yes/no/unclear
-- affects claim boundary? yes/no/unclear
-- affects next decision? yes/no/unclear
-- recommendation: pursue / park / ignore
-```
-
-If the user has not thought it through, help clarify the rival explanations and
-the smallest test or reason to park it. Do not turn an unclear tangent into a
-new experiment before this gate is passed.
-
-## Handoff Report Rule
-
-Post-result handoff is optional. The anchor is the current-state research
-design document, `protocol.md` is the approved experiment design, `summary.md`
-is the first result reading path, and `detailed.md` is the full evidence
-ledger. A handoff package only copies and indexes those already-updated sources
-for meeting, collaborator, or web-side use.
-
-Default daily location when the user explicitly requests a handoff package:
-
-```text
-daily_research_reports/MMDD/<topic>/handoff_report.md
-daily_research_reports/MMDD/<topic>/<anchor_id>.md
-```
-
-`<anchor_id>.md` should keep the same subject-bearing name as the most important
-project anchor for that handoff, so the daily folder contains both the handoff
-package and the current research-state source without a generic `anchor.md`.
-
-Project-local sync locations are used only when the user explicitly asks for
-project sync or collaborator sync:
-
-```text
-Projects/<project>/<worker>/sync/MMDD_topic/report.md
-Projects/<project>/<worker>/sync/MMDD_topic/<anchor_id>.md
-Projects/<project>/sync/MMDD_topic/report.md
-Projects/<project>/sync/MMDD_topic/<anchor_id>.md
-```
-
-A handoff package must be self-contained and include existing:
-
-```text
-Anchor / Protocol / Summary / Detailed
-figures / tables referenced by included docs
-short README or index
-```
-
-Do not create new claims, new conclusions, or a second closure in a handoff
-package. The source remains anchor + `protocol.md` + `summary.md` +
-`detailed.md`.
-
-The artifact map must include code workspace, runner, config, data/manifest,
-result dir, figure dir, key files, checkpoints/logs, repro command, and job id
-when applicable.
-
-Central figures must be embedded near the claims they support, with a short
-interpretation.
-
-## Graph Rule
-
-Use the project graph as the navigation layer and Markdown anchors as the
-reasoning layer. Keep the graph thin and the notes thick.
-
-Cross-project graphs live under:
-
-```text
-Projects/graphs/
-```
-
-The current graph hub and active graph files are listed in `PROJECTS.md`.
-
-These graphs are loaded with Sidecar workspace root:
-
-```text
-/data/250010109/Research_System
-```
-
-Graph nodes should include the ownership relation in the summary or tags, and
-should link to the concrete project documents that support the node: anchor,
-experiment `protocol.md`, `summary.md`, `detailed.md`, roadmap, or paper note.
-The graph node gives only a result preview; the linked document remains the
-source of reasoning.
-
-Before changing an existing graph manifest, first discuss the proposed research
-state change with the user and get confirmation, unless the user explicitly
-requested that exact graph edit in the current turn. The graph records the
-user's research-center judgment; it is not an automatic cleanup target.
-
-Graph nodes should point to anchors, roadmap entries, experiment protocols,
-summaries, detailed records, optional handoff reports, reading notes, and
-reusable outputs.
-The graph does not replace anchors, summaries, detailed records, or handoff
-reports.
-
-When the user asks to display, open, view, or show the graph, always use the
-local Sidecar app through `sidecar-thinking`. Use the graph file named in
-`PROJECTS.md` or in the current project-local instructions. Do not generate a
-standalone HTML graph or alternate visualization unless the user explicitly
-asks for an exported HTML/static artifact. If Sidecar fails to start, report
-the Sidecar command, URL, and log path instead of substituting a custom graph
-page.
-
-## Local Skill Use
-
-For research organization work inside `Research_System`, always read this file
-first. Then use local skills from `skills/` when the task type matches:
-
-- `research-progress-core`: apply the general research-progress paradigm before
-  artifact writing: physical prior, falsifiable hypothesis, operational
-  definition, minimal test, metric + visual evidence, failure analysis, and
-  refined hypothesis.
-- `problem-anchor-writer`: write or update anchor / design documents.
-- `experiment-card-writer`: write `protocol.md`, `summary.md`, and
-  `detailed.md` from anchors.
-- `meeting-brief-writer`: write or revise strict advisor-facing
-  `meeting_brief.md` files by applying
-  `templates/meeting/meeting_brief_template.md` mode one or mode two exactly.
-- `handoff-report-writer`: package explicitly requested
-  collaborator/web/external handoff material after anchor, `protocol.md`,
-  `summary.md`, `detailed.md`, and any meeting brief are updated.
-- `remote-experiment-workflow`: remote/container/SCO/ACP workflow and artifact
-  maps.
-- `research-mainline`: maintain graph, anchors, roadmap, and root sync state;
-  root sync, external collaborator repo sync, and graph edits require explicit
-  user requests.
-- `research-graph-sop`: maintain a thin Sidecar-readable graph.
-- `sidecar-thinking`: bridge to the local Sidecar app.
-- `scholar-mode`: clarify unstable research intuitions before artifacts.
-
-Writing-explanatory-report principles are no longer a separate skill; apply
-them inside anchors, protocols, experiment summaries, detailed records, and
-handoff reports:
-
-- write decision reports, not timelines;
-- write reader-facing summaries conclusion-first: what is established, what the
-  experiment shows, and what the next action is;
-- define every metric, condition, and visible shorthand before using it as
-  evidence;
-- maintain a `Terminology / Definitions` or `术语解释` block when the document
-  contains non-obvious terms, abbreviations, condition labels, metrics, or
-  project-specific shorthand;
-- explain what each important metric answers and cannot prove;
-- interpret every central figure/table near the claim it supports;
-- separate observation, interpretation, decision, and boundary.
-
-## Repository Organization
-
-The repository root should stay small:
-
-- `AGENTS.md`
-- `PROJECTS.md`
-- `README.md`
-- `sync/`
-- `templates/`
-- `prompts/`
-- `skills/`
-- `paper_reading/`
-- `papers/`
-- `daily_research_reports/`
-
-Root-level `sync/` stores compact research-line summaries and current-state
-maps for agents that should not enter project repositories. The active root
-sync entry is listed in `PROJECTS.md`.
-
-Root-level `papers/` stores paper-writing workspaces: conference templates,
-paper drafts, figure plans, related writing notes, and paper-specific source
-maps. A paper workspace may copy official venue templates locally. It must not
-replace project-local anchors, protocols, `summary.md`, `detailed.md`, or root
-sync entries as the source of research truth; paper claims must link back to
-those source artifacts and preserve their claim boundaries.
-
-Root-level `templates/` is the only maintained reusable-template folder.
-Do not add new reusable templates under `daily_research_reports/`, `docs/`,
-`paper_reading/`, `papers/` beyond paper-specific venue templates, or project
-folders by default.
-
-## Execution Boundary
-
-Local `Research_System` owns research-process artifacts: graph, anchors,
-summary/detailed result records, optional handoff reports, daily cards, meeting
-materials, curated evidence, claim boundaries, and next decisions.
-
-Remote/container workspaces own experiment code edits, debugging, smoke/full
-runs, result analysis, figures/tables, raw outputs, checkpoints, logs, and
-cluster submissions.
-
-Use Git as the normal synchronization path. Do not SSH into remote containers
-as the default local workflow. SSH/SCP is allowed only for explicit small
-status checks, emergency recovery, port forwarding, or small artifact recovery.
-
-Promote only curated summaries, report-ready figures, small tables, artifact
-maps, anchor updates, detailed records, and handoff reports into Git. Keep raw outputs,
-checkpoints, datasets, full run directories, and unfiltered logs out of
-research mainline paths.
-
-## Formula Rule
-
-When writing Markdown research documents, inline formulas must use `$...$` and
-display formulas must use `$$...$$`.
-
-## Git Habit
-
-Commit or push only when the user explicitly asks. When committing, prefer one
-lightweight commit per working day:
+Never revert user changes. Commit or push only when explicitly requested.
+When committing, prefer one lightweight daily commit:
 
 ```text
 MMDD: mainline update - <one sentence conclusion>
 MMDD: daily note - no mainline update
 ```
-
-Never revert user changes unless explicitly requested.

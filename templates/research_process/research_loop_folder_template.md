@@ -3,7 +3,7 @@
 Use this shape for a small mainline experiment or daily sandbox.
 
 ```text
-00_handwrite_anchor.md
+<topic>_thinking_card.md
 <topic>_anchor.md
 protocol.md
 summary.md
@@ -16,15 +16,17 @@ archive/
 
 ## File Roles
 
-`00_handwrite_anchor.md`: rough user Thinking Card for AI audit. It should
-contain only phenomenon, mechanism guess, key variables, causal relation,
-observable metric, alternative explanation, and decision rule. It is not a
-full 0-8 anchor.
+`<topic>_thinking_card.md`: independent human judgment before AI formalization.
+Use the same subject-bearing stem as the anchor; Chinese companions use
+`<topic>_thinking_card_cn.md`. It
+contains the phenomenon, mechanism guess, strongest rival, uncertainty,
+mind-changing evidence, and current decision. AI audit is recorded separately
+inside the card; the human approves any change to the judgment.
 
-`<topic>_anchor.md`: compact current-state design. First reading surface is
-`Thinking Card`; sections 1-8 are the audit layer. In section 6, each minimal
-test should state operational definition, stage-local evidence, and failure
-meaning before it becomes protocol-ready.
+`<topic>_anchor.md`: compact current-state design. It links the approved
+Thinking Card and uses sections 1-8 as the audit layer. It does not duplicate
+the card. In section 6, each minimal test states operational definition,
+stage-local evidence, and failure meaning before becoming protocol-ready.
 
 `protocol.md`: experiment approval surface. Page 1 is `Approval Snapshot`;
 later sections hold anchor alignment, conditions, profiling, and nontrivial
@@ -61,5 +63,6 @@ Do not create separate implementation-plan files for new work.
 Do not create a parallel `docs/design.md`, `docs/experiment_design.md`, or
 `docs/visualization_results.md` tree for normal work. This folder maps those
 advisor-spec roles to the local anchor / protocol / summary+detailed chain.
-Create `final_report.md` only when a self-contained subproblem is being closed
-as a stable synthesis.
+Do not add a routine `final_report.md`; update the anchor, `summary.md`,
+`detailed.md`, story, or explicitly requested handoff according to artifact
+ownership.

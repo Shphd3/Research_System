@@ -5,13 +5,16 @@ This folder contains the 01 common-operator mechanism line.
 Read only one entry first:
 
 ```text
-closure/01_common_operator_mechanism_closure_report.md
+route_document.md
 ```
 
-Use the route document only when deciding the next stage:
+Use individual anchors only when auditing one stage:
 
 ```text
-route_document.md
+01_01_common_operator_identifiability_anchor.md
+01_02_ground_truth_projector_recovery_anchor.md
+01_03_gradient_common_vs_activation_common_anchor.md
+01_04_feedback_common_preservation_bridge_anchor.md
 ```
 
 ## Current Verdict
@@ -40,8 +43,6 @@ $$
 
 | Role | Path |
 |---|---|
-| full-story synthesis | `closure/01_common_operator_mechanism_closure_report.md` |
-| Chinese full-story synthesis | `closure/01_common_operator_mechanism_closure_report_cn.md` |
 | route | `route_document.md` |
 | Chinese route | `route_document_cn.md` |
 | identifiability anchor | `01_01_common_operator_identifiability_anchor.md` |

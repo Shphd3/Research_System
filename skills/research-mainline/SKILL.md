@@ -33,7 +33,13 @@ Projects/<project>/
   graph.yaml
   main/
     roadmap.md
+    stories/
+      <line_id>/
+        README.md
+        <NN>_<topic>.md
+        <NN>_<topic>_cn.md
     problem_anchors/
+      <anchor_stem>_thinking_card.md
       <anchor_id>.md
     experiments/
       A<anchor_id>/
@@ -171,11 +177,9 @@ This chain is the local adapter for the advisor's `research-exploration` spec:
 anchor                              = docs/design.md role
 protocol.md                         = docs/experiment_design.md role
 summary.md + detailed.md + figures  = docs/visualization_results.md role
-final_report.md                     = stable-closure synthesis after the
-                                      working evidence and anchor are current
-problem_anchors/<line>/closure/     = specified research-line synthesis for
-                                      the current expected process, evidence
-                                      chain, mathematical model, and boundary
+story pair                          = line-level synthesis of the current
+                                      process, evidence chain, mathematical
+                                      model, boundary, and next decision
 ```
 
 Do not create the exported `docs/` layout for ordinary mainline work unless the
@@ -185,12 +189,11 @@ Artifact roles must stay aligned:
 
 | Artifact | Owns | Must not do |
 |---|---|---|
-| `00_handwrite_anchor.md` | rough Thinking Card and exposed user judgment | require or become a full 0-8 anchor before audit |
+| `<anchor_stem>_thinking_card.md` | independent human judgment before AI formalization | become a formal anchor, protocol, or AI-authored conclusion |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
-| `closure/<topic>_closure_report.md` | line-level stable synthesis requested for an anchor folder | replace source artifacts or make claims stronger than linked evidence |
 | `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
 | anchor update | supported / weakened / insufficient evidence, boundary, next decision | paste a result report into the anchor |
 
@@ -221,16 +224,14 @@ decision. Each minimal falsification test should include its operational
 definition, stage-local evidence, and failure meaning before it becomes
 protocol-ready.
 
-The anchor has two reading layers. `Thinking Card` is the short human-facing
-mechanism judgment card: phenomenon, mechanism guess, key variables, causal
-relation, observable metric, alternative explanation, and decision rule. The
-remaining sections are the auditable design layer for AI review, replay,
-protocol alignment, and boundary checks.
+The independent `<anchor_stem>_thinking_card.md` is the human-facing judgment surface. The
+formal anchor links that card and contains the auditable design layer for AI
+review, replay, protocol alignment, and boundary checks. Do not duplicate the
+card in new anchors.
 
 The required anchor structure is:
 
 ```text
-0. Thinking Card
 1. Problem Definition
 2. Physical Priors
 3. Falsifiable Hypotheses
@@ -308,26 +309,17 @@ aggregation level, axis/legend meaning, allowed conclusion, and limitation.
 The audit must check that the rendered artifact is readable and understandable
 without source-code knowledge.
 
-### Closure
+### Story
 
-`problem_anchors/<line>/closure/` is the specified research-line synthesis
-surface. It is used when the user asks to close, summarize, audit, or
-understand a named anchor folder or line as a unit. It is not a default side
-effect of every experiment.
+`main/stories/<line>/` is the line-level synthesis surface. Use it when the
+user asks to summarize, audit, or understand a research line as a unit. Do not
+create a separate closure or final-report tree that duplicates the story.
 
-Do not create placeholder closure folders or `closure/README.md` files. When a
-closure report is actually requested and written, use:
+The English canonical story and Chinese `_cn.md` companion must share the same
+numbered subject-bearing stem and match on claims, metrics, boundaries, and the
+next decision.
 
-```text
-closure/<line>_closure_report.md
-closure/<line>_closure_report_cn.md
-```
-
-The English file is canonical unless the user explicitly chooses Chinese as
-canonical. The Chinese companion must match the same claims, metrics,
-boundaries, and next decision.
-
-A closure report must use two layers.
+A formal story uses two layers.
 
 Story layer, first:
 
@@ -353,9 +345,9 @@ Audit layer, second:
 - compact appendix listing data, model, training/evaluation settings, seeds,
   checkpoints, scripts, result paths, and primary metrics.
 
-Keep the report compact. Link to anchors and experiment records instead of
-copying their setup or result sections wholesale. Do not use a closure report
-to introduce new experimental claims. If the mathematical model cannot prove a
+Keep the story compact. Link to anchors and experiment records instead of
+copying their setup or result sections wholesale. Do not use a story to
+introduce new experimental claims. If the mathematical model cannot prove a
 stated mechanism, mark the statement as an assumption or empirical proposition
 and name the smallest experiment needed to test it.
 
@@ -373,10 +365,22 @@ figures/ and tables/ referenced by included docs
 short README or index
 ```
 
-Do not create new claims, second closures, or stronger conclusions in a handoff
-package. Do not include raw logs, checkpoints,
+Do not create new claims, independent syntheses, or stronger conclusions in a
+handoff package. Do not include raw logs, checkpoints,
 datasets, full result directories, unfiltered generated figures/tables, caches,
 private notes, unrelated anchors, or code changes unless explicitly requested.
+
+When the user explicitly requests the root anchor mirror, publish and validate
+it through:
+
+```text
+python skills/research-mainline/scripts/publish_anchor_mirror.py
+python skills/research-mainline/scripts/publish_anchor_mirror.py --check
+```
+
+The generated mirror keeps internal links relative and rewrites links that
+leave `problem_anchors/` to repository-root absolute paths. Do not hand-edit
+generated mirror files.
 
 ## Mainline Update Test
 

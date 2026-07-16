@@ -20,7 +20,7 @@ prompt, or README.
 
 | Template | Use |
 |---|---|
-| `research_process/minimal_anchor_handwrite.md` | Minimal hand-written Thinking Card for user mechanism judgment before AI audit. |
+| `research_process/thinking_card_template.md` | Independent human-written Thinking Card before AI audit and formal anchor construction. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
 
 ## Reading Templates
@@ -40,7 +40,7 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_brief_template.md` | Formal Chinese meeting brief with problem-first framing, mechanistic modeling, one-sentence main result, up to three result points, evidence boundary, execution action, and source index. Save as `meeting_brief.md`. |
+| `meeting/meeting_brief_template.md` | Human-first Chinese executive-summary-only meeting brief. AI audits and revises only after the researcher drafts the judgment. |
 | `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis, mainline update, and execution action. Save as `meeting_notes.md`. |
 
 ## Archive

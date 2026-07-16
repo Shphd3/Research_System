@@ -2,27 +2,7 @@
 
 Status: active design; revised protocol exists; no run is authorized.
 
-## 0. Thinking Card
-
-**Phenomenon:** A11 shows that informative future supervision can create an
-earlier task signal, but readable information and private future-head accuracy
-do not show that the ordinary next-token head uses an intermediate
-compositional state.
-
-**Mechanism guess:** After one shared checkpoint already solves the depth-two
-task, informative Next-2 strengthens an intermediate-state component $B$ that
-survives the shared format-token transition and causally controls the standard
-answer $Y=\pi_2(B)$.
-
-**Key variables:** task-gate accuracy, cross-fitted intermediate-state
-subspace, counterfactual standard-head effect, matched random-subspace effect,
-and clean standard-head accuracy.
-
-**Observable metric:** the NTP-to-MTP change in counterfactual control of the
-standard head that is specific to the $B$ subspace.
-
-**Decision:** test causal use only after the shared capability gate passes;
-otherwise stop without interpreting probes or patches.
+Thinking Card source: [12_03_standard_head_causal_use_thinking_card.md](12_03_standard_head_causal_use_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -144,7 +124,7 @@ mechanism. No completed experiment directly measures causal control through
 the intermediate state $B$ at a task-capable neural checkpoint.
 
 The detailed test surface is
-[protocol.md](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md).
+[protocol.md](/Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md).
 
 ## 8. Claim Boundary And Next Decision
 

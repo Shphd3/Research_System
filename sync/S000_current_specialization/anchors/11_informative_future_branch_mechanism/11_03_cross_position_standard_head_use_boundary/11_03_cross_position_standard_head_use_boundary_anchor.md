@@ -1,16 +1,8 @@
 # Cross-Position Standard-Head Use Boundary Anchor
 
-Status: completed; the sufficiency claim is weakened and this diagnostic branch is closed.
+Status: model-local K/V causal-use audit completed; the strong behavioral information-content increment failed, with a weak margin effect left for a new decision.
 
-## 0. Thinking Card
-
-**Phenomenon:** MTP can create a task-useful direction at the current state without improving the standard answer one token later.
-
-**Mechanism guess:** Use requires transport through the intervening token. The cross-position Jacobian can rotate a useful direction into an adverse one even when changing the output head does not.
-
-**Observable metric:** standard-head usefulness before and after the state transition, followed by a conservative held-out behavioral score.
-
-**Decision:** current-state formation is not sufficient for standard-head benefit; stop enumerating bridge tokens or training lengths on this proxy.
+Thinking Card source: [11_03_cross_position_standard_head_use_boundary_thinking_card.md](11_03_cross_position_standard_head_use_boundary_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -56,7 +48,9 @@ Hold the trained trajectory, diagnostic batch, and extra-loss gradient fixed. Cr
 
 ## 7. Current Evidence
 
-At $h_T$, both heads have positive usefulness in 5/5 seeds; at $h_{T+1}$, both are negative in 5/5. This identifies position rather than head identity as the immediate bottleneck. Intervening tokens change the local geometry, but the favorable local interaction does not yield a stable held-out behavioral advantage. See [cross-position audit](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E01_head_position_cross_kernel/summary.md), [end-to-end audit](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E02_end_to_end_use_boundary/summary.md), and [subanchor 11_03_01](subanchors/11_03_01_cross_position_proxy_falsification_anchor.md).
+At $h_T$, both heads have positive usefulness in 5/5 seeds; at $h_{T+1}$, both are negative in 5/5. This identifies position rather than head identity as the immediate bottleneck. Intervening tokens change the local geometry, but the favorable local interaction does not yield a stable held-out behavioral advantage. See [cross-position audit](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E01_head_position_cross_kernel/summary.md), [end-to-end audit](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E02_end_to_end_use_boundary/summary.md), and [subanchor 11_03_01](subanchors/11_03_01_cross_position_proxy_falsification_anchor.md).
+
+The completed [subanchor 11_03_02](subanchors/11_03_02_standard_head_causal_use_anchor.md) directly patched model-local K/V against matched shared-aux. All guards passed, but $\bar\Gamma_{info}=0.01675$ and 0/5 seeds reached `0.10`, so the strong behavioral increment failed; positive margin movement in 4/5 seeds remains only candidate weak influence.
 
 ## 8. Claim Boundary And Next Decision
 
@@ -64,7 +58,6 @@ Supported claim: formation at $h_T$ does not guarantee usefulness at $h_{T+1}$; 
 
 Not supported: a universal adverse-transition law, a universal bridge-token explanation, or MTP downstream efficiency.
 
-**Exactly one next decision:** hand this boundary to
-[A12](../../12_structured_compositional_mtp_workload/README.md). No additional
-A11 bridge-token or training-length sweep is justified unless A12 contradicts
-the controlled boundary.
+**Exactly one next decision:** decide whether to preregister a weak-margin audit;
+otherwise close this interface and move to a task where the early state is
+structurally necessary. No layer, Q, K-only, or V-only sweep is authorized.

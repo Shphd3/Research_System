@@ -1,14 +1,6 @@
 # Shared-Parameter Reachability And Background-Sign Control
 
-## 0. Thinking Card
-
-**Phenomenon:** A useful hidden-state gradient may fail to move trainable shared parameters in the same direction.
-**Mechanism guess:** the encoder Jacobian controls reachability, while all other token losses add signed background pressure.
-**Key variables:** direct path velocity, later NTP path velocity, background velocity, total velocity.
-**Causal relation:** decompose one shared-parameter update and compare predicted with observed margin change.
-**Observable metric:** parameter semantic velocity.
-**Rival explanations:** fixed-head artifact; universally positive all-position transfer.
-**Decision:** retain conditional reachability and signed background as the complete local conclusion.
+Thinking Card source: [11_02_01_reachability_and_background_sign_thinking_card.md](11_02_01_reachability_and_background_sign_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -49,7 +41,7 @@ At one shared checkpoint, compute component gradients, their predicted margin mo
 
 ## 7. Current Evidence
 
-The [transmission experiment](../../../../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md) supports H1 in 5/5 seeds. The [all-position decomposition](../../../../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md) shows positive direct contribution but one net-sign reversal.
+The [transmission experiment](/Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md) supports H1 in 5/5 seeds. The [all-position decomposition](/Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md) shows positive direct contribution but one net-sign reversal.
 
 ## 8. Claim Boundary And Next Decision
 

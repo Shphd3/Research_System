@@ -1,5 +1,6 @@
 # A06_01_02 Oracle Partition Reachability
 
+Thinking Card source: [06_01_geometry_and_state_discovery_thinking_card.md](../06_01_geometry_and_state_discovery_thinking_card.md)
 Status: completed subanchor.
 
 **Parent:** [`A06_01`](../06_01_geometry_and_state_discovery_anchor.md).

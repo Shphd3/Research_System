@@ -2,15 +2,7 @@
 
 状态：工作负载建模成立；当前从零训练的小型 Transformer 未通过能力门槛，该调参分支关闭。
 
-## 0. Thinking Card
-
-**现象：** 上下文很长不等于任务真的需要长程推理。目标任务必须满足：知道局部内容后，远程证据仍不可替代，而且模型必须经过中间状态把证据按顺序组合。
-
-**机制判断：** 两张完整的一一映射表可以隔离这一计算骨架，并排除简单词频和唯一答案词捷径；但只有模型先学会任务，才有资格比较训练目标。
-
-**核心观测：** 完整上下文的 held-out 答案准确率，同时用单表和证据干预作保护。
-
-**决策：** 接受数据建模；停止继续调当前从零训练的小模型；先获得一个能完成任务的共享检查点。
+Thinking Card source: [12_01_compositional_workload_capability_gate_thinking_card_cn.md](12_01_compositional_workload_capability_gate_thinking_card_cn.md)
 
 ## 1. 问题定义
 
@@ -75,7 +67,7 @@ $$
 
 ## 7. 当前证据
 
-数据构造满足联合必要性。被测从零训练 Transformer 没有学会：增加深度、宽度、训练时长以及原子化行绑定后仍接近机会水平，格式准确率为 1.0。见[能力阶梯](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration/summary.md)、[显式绑定修复](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md)与[子锚点 12_01_01](subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md)。
+数据构造满足联合必要性。被测从零训练 Transformer 没有学会：增加深度、宽度、训练时长以及原子化行绑定后仍接近机会水平，格式准确率为 1.0。见[能力阶梯](/Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration/summary.md)、[显式绑定修复](/Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/summary.md)与[子锚点 12_01_01](subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md)。
 
 ## 8. 结论边界与下一决策
 

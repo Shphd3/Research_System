@@ -6,27 +6,13 @@ status: supported_controlled_nested_reproduction
 created: 2026-06-23
 retargeted: 2026-06-28
 canonical_language: en
-source_draft: 00_handwrite_anchor.md
+thinking_card_source: 07_01_common_rare_conflict_metric_audit_thinking_card.md
 depends_on: A07_nested_singular_interference_mainline
 ---
 
 # A07_01 Nested Common Backbone Reproduction Anchor
 
-## 0. Thinking Card
-
-**Phenomenon:** In nested language-like data, common parent features may be learned before rare child features.
-
-**Mechanism guess:** Standard CE/AdamW first aligns a singular direction to the common parent, then keeps increasing its gain after the direction stabilizes.
-
-**Key variables:** nested level, frequency, common projector $P_C$, subspace drift $\delta_C$, common singular energy $S_C$, common and tail accuracy.
-
-**Causal relation:** high $A$ frequency -> early parent accuracy -> stable $P_C$ -> late growth of $S_C$.
-
-**Observable metric:** two-phase common-backbone signature: stable $P_C$ with continuing $S_C$ growth after common warmup.
-
-**Alternative explanation:** the benchmark may be solved by token shortcuts, independent labels, or capacity memorization rather than nested parent reuse.
-
-**Decision:** supported on the controlled rank-one nested surface; use it as the A07_02 gate, but do not generalize to wide transformers or real language.
+Thinking Card source: [07_01_common_rare_conflict_metric_audit_thinking_card.md](07_01_common_rare_conflict_metric_audit_thinking_card.md)
 
 ## 1. Problem Definition
 

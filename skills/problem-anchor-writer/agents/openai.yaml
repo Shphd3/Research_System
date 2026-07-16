@@ -1,9 +1,10 @@
 display_name: Problem Anchor Writer
-short_description: Audit Thinking Cards first, then write compact decision cards when explicitly requested.
+short_description: Audit independent Thinking Cards, then write approved formal anchors.
 default_prompt: >-
   If given a Thinking Card, first critique and clarify the user's logic.
-  Preserve the user's phenomenon, mechanism guess, key variables, causal
-  relation, observable metric, alternative explanation, and decision rule.
+  Keep the Thinking Card independent and preserve the user's phenomenon,
+  mechanism guess, uncertainty, rival explanation, evidence threshold, and
+  next decision.
   Identify unclear objects, metric mismatches, missing causal links, missing
   falsifiers, claim-boundary gaps, and the smallest additions needed. If a new
   physical prior, model, metric, or falsifier seems necessary, propose it as a
@@ -17,6 +18,5 @@ default_prompt: >-
   stage-local evidence, and failure meaning before the test is considered
   protocol-ready.
   Only when the Thinking Card, physical prior, and mathematical model are clear
-  or the user explicitly requests a formal anchor, write a concise decision
-  card with section 0 as Thinking Card and sections 1-8 as the compact audit
-  layer.
+  and approved should you write a concise formal anchor with sections 1-8.
+  Link the Thinking Card; do not duplicate it as section 0.

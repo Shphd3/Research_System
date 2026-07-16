@@ -1,335 +1,121 @@
 ---
 name: problem-anchor-writer
-description: Use when auditing, discussing, writing, or updating a research anchor. For rough Thinking Cards, critique and clarify the user's judgment first; write a formal anchor only after the Thinking Card is clear or explicitly approved.
+description: Use when auditing a human-written Thinking Card or writing and updating a formal research anchor after the card has been approved.
 metadata:
-  short-description: Audit and write anchor decision cards
+  short-description: Audit Thinking Cards and write anchors
 ---
 
 # Problem Anchor Writer
 
-Use this skill to audit, discuss, write, or revise a research anchor.
+An independent Thinking Card preserves the human's initial mechanism judgment.
+A formal anchor turns the approved judgment into an auditable research design.
+They are linked artifacts, not two sections of one document.
 
-An anchor is the current-state research design document. It is equivalent to
-the research-exploration `docs/design.md`, adapted to this repository's
-anchor-first workflow. It should preserve the user's research judgment while
-making the problem, mechanism, variables, causal relation, metric, rival
-explanation, evidence boundary, and next decision inspectable.
-
-This skill minimally contains the advisor `research-exploration` design chain:
+## Artifact Boundary
 
 ```text
-conjecture -> physical priors -> mathematical model
--> implementation contract -> experiment -> failure analysis
--> updated conjecture
+<anchor_stem>_thinking_card.md
+  human-owned initial judgment and uncertainty
+
+<anchor_id>_<topic>_anchor.md
+  AI-auditable design: problem, prior, hypothesis, model, realization,
+  minimal test, evidence, claim boundary, and next decision
 ```
 
-In this repository, the mapping is:
+The Thinking Card must not become a protocol. The anchor must link the approved
+Thinking Card and must not copy it into section 0. Use
+`<anchor_stem>_thinking_card.md`; Chinese companions use
+`<anchor_stem>_thinking_card_cn.md`.
 
-```text
-Thinking Card = user's conjecture and mechanism intuition
-Physical Prior Review = AI-user discussion that turns intuition into priors
-Mathematical Model Review = AI-user discussion that tests whether the model
-  really expresses the intuition
-Formal anchor sections 1-8 = compact `docs/design.md` equivalent
-protocol.md = experiment design / falsification plan
-summary.md + detailed.md = evidence and failure analysis
-anchor update = updated conjecture and claim boundary
-```
+## Human-First Gate
 
-## Anchor Reading Layers
-
-The anchor has two layers:
-
-```text
-0. Thinking Card
-   - human-facing mechanism judgment card
-   - preserves the user's current phenomenon, mechanism guess, variables,
-     causal relation, observable metric, rival explanation, and decision rule
-1-8. Full audit layer
-   - compact design layer for AI replay, protocol alignment, and boundary checks
-```
-
-Do not solve anchor length by deleting design logic. Solve it by making
-section 0 short and useful, while keeping sections 1-8 compact. The user's
-first writing surface is the Thinking Card, not the full anchor.
-
-## Readable Anchor Contract
-
-An anchor is a decision card first and an audit surface second. It must be
-readable before it is exhaustive.
-
-In this repository, the anchor is the minimal adapter of the advisor's
-`docs/design.md` role. It should state the current judgment, mechanism, metric,
-boundary, and next decision before carrying historical context. Do not write a
-long motivation section, timeline, or literature-style introduction above the
-Thinking Card.
-
-The first reading path must let the user answer these questions without
-reading a protocol:
-
-```text
-What phenomenon are we explaining?
-What terms, abbreviations, metrics, or condition labels need definitions?
-What single mechanism is being tested?
-Which variable or model term carries the mechanism?
-Which primary metric would change the decision?
-What result makes us pursue, revise, or park?
-```
-
-If those answers are not obvious from `0. Thinking Card`, `1. Problem
-Definition`, and `8. Claim Boundary And Next Decision`, the anchor is not ready.
-Do not compensate by adding more tests, equations, or caveats.
-
-Keep anchor detail bounded:
-
-- one decision question;
-- one primary metric;
-- one main falsifier;
-- one next decision;
-- one core mathematical model;
-- at most three physical priors, but prefer one when the mechanism is still
-  being clarified;
-- at most three minimal tests, but prefer one decisive test plus guards;
-- no broad condition tables, full algorithm specs, run configs, or sweep
-  plans.
-
-Do not remove the required 0-8 anchor sections to make the document short.
-Keep the sections, but make each section concise. Within each section, use
-bold subheadings such as `**Decision question:**`, `**Primary metric:**`, and
-`**Falsifier:**` so the reader can scan the argument quickly.
-
-Protocol-level detail belongs in `protocol.md`. The anchor may name the
-minimal test and the guard metrics, but the protocol owns exact conditions,
-seeds, checkpoints, algorithm parameters, profiling tables, and pass/fail
-thresholds.
-
-## Thinking Card Contract
-
-The Thinking Card is the only initial-audit layer. Do not put both
-`Pre-Anchor Card` and `0. Thinking Card` into the same anchor. They are two
-forms of the same object:
-
-- **Draft Thinking Card:** a three-item quick audit used in chat or rough daily
-  notes when the idea is still unclear.
-- **Formal `0. Thinking Card`:** the same judgment rewritten into the canonical
-  anchor section once the idea is clear enough to keep.
-
-For an unclear new anchor idea, write only the minimal draft Thinking Card:
-
-```text
-1. Phenomenon:
-2. Mechanism guess:
-3. Rival Explanations:
-```
-
-These three fields are enough for first-pass audit. They expose what is being
-explained, what mechanism is suspected, and what alternative mechanisms could
-also explain the same phenomenon. Do not require key variables, causal
-relation, metric, or decision rule before this first audit conversation.
-
-After discussion makes the idea coherent, expand the same Thinking Card with:
-
-```text
-Key variables:
-Causal relation:
-Observable metric:
-Decision:
-```
-
-If the minimal three fields are unclear, state the gap and stop. Do not expand
-into a full formal 0-8 anchor, protocol, or experiment plan until the user has
-reviewed, corrected, or approved the draft Thinking Card. If the user asks for
-an ambiguous "draft anchor", default to the minimal Thinking Card and do not
-add a separate `Pre-Anchor Card` heading.
-
-Before moving from the draft Thinking Card to a formal anchor or protocol,
-answer
-this review gate for the user:
-
-```text
-1. Is the core question drifting away from the parent problem?
-2. Are any key rival explanations missing?
-3. Can the primary metric actually distinguish the rival explanations?
-4. Are pass / fail / insufficient criteria clear enough to apply after a run?
-5. Is the cannot-claim boundary conservative enough?
-```
-
-If any answer is weak, revise the Thinking Card first. Do not hide an unclear
-question by adding more protocol detail. Once a formal anchor is written,
-section `0. Thinking Card` replaces the minimal draft; do not keep both.
-
-`00_handwrite_anchor.md` should require only:
-
-```markdown
-## 0. Thinking Card
-
-**Phenomenon:** why this phenomenon deserves explanation.
-
-**Mechanism guess:** which mechanism the user suspects.
-
-**Key variables:** the minimal variables needed.
-
-**Causal relation:** the directional relation among those variables.
-
-**Observable metric:** the number or figure that can observe the relation.
-
-**Rival Explanations:** the alternative mechanisms that could also explain it.
-
-**Decision:** what result would lead to pursue / revise / park.
-```
-
-Do not ask the user to hand-write the 0-8 formal anchor before this card is
-clear. Do not silently expand a rough card into a polished formal anchor.
-
-## User Workflow
-
-Default workflow:
-
-```text
-Thinking Card in 00_handwrite_anchor.md
--> Thinking Card Audit
--> Physical Prior Review
--> Mathematical Model Review
--> user clarification / approval
--> formal anchor draft
--> user review
--> protocol.md
--> implementation / run
-```
-
-## Language And Canonicalization Workflow
-
-For this repository, use a two-step language workflow for new anchors unless
-the user explicitly asks otherwise:
-
-```text
-Chinese draft Thinking Card / anchor card
--> Chinese protocol draft when requested
--> user review and correction
--> English canonical anchor at the standard anchor path
--> Chinese companion kept as <anchor_id>_cn.md
-```
-
-Meaning:
-
-- During idea clarification, anchor-card drafting, and protocol approval, write
-  in concise Chinese so the user can audit the mechanism quickly.
-- After the user approves the anchor or asks to run the experiment, translate
-  the approved design into the English canonical file at the normal project
-  path.
-- Preserve the Chinese version as a companion file with `_cn` before the file
-  extension.
-- Do not let translation change the research question, physical prior, primary
-  metric, pass/fail rule, or claim boundary. If translation exposes ambiguity,
-  state the ambiguity and ask or make the smallest conservative correction.
-- After results exist, update the English canonical anchor first, then update
-  the Chinese companion with the same claim boundary.
-
-If the Thinking Card is unclear, stay in audit mode. Do not write a protocol,
-implementation plan, broad test matrix, or formal anchor.
-
-## Physical Prior Review
-
-After the Thinking Card is coherent, the AI must work with the user to turn the
-mechanism guess into physical priors before writing the formal anchor.
-
-Return a short review:
-
-```text
-Candidate physical prior:
-Why this prior follows from the Thinking Card:
-What would make the prior false:
-Which variable should expose it:
-Which rival explanation it separates:
-Smallest correction to the user's intuition:
-```
-
-Do not silently replace the user's intuition with a cleaner prior. If multiple
-priors are possible, name the alternatives and ask which one is the current
-mainline. If the prior cannot be falsified, say so and return to the Thinking
-Card.
-
-## Mathematical Model Review
-
-After the physical prior is clear, the AI must discuss the mathematical model
-with the user before writing the formal anchor.
-
-Return a short review:
-
-```text
-Candidate model:
-Variables:
-Causal or mechanistic relation:
-Observable metric:
-What the model explains:
-What the model cannot explain:
-Mismatch with the user's intuition:
-Revision needed before formal anchor:
-```
-
-Every equation must map to a physical prior, a model variable, an
-implementation or analysis path, and an experiment or profiling artifact. If
-the model is only a metaphor, do not promote it into the formal anchor.
-
-## Thinking Card Audit
-
-When the user gives a rough Thinking Card, treat it as exposed thinking, not as
-a half-finished document for the AI to complete.
-
-First return an audit:
-
-- user judgments to preserve;
-- unclear phenomenon, mechanism, variable, causal direction, metric, rival
-  explanations, scope, or decision rule;
-- hidden assumptions or causal overclaims;
-- whether the observable metric can actually see the proposed causal relation;
-- the strongest rival explanation still alive;
-- the smallest edit needed to make the card decision-ready;
-- candidate formal-anchor mapping, if useful, but not a formal anchor.
-
-If a new physical prior, mathematical model, metric, or falsifier seems
-necessary, propose it as a candidate. Do not write it into the formal anchor
-until the user accepts it.
-
-## Thinking Card Clarity Gate
-
-Before writing or approving a formal anchor, the Thinking Card must answer:
+For a new idea, ask the human to fill:
 
 ```text
 Phenomenon:
 Mechanism guess:
-Key variables:
-Causal relation:
-Observable metric:
-Rival Explanations:
-Decision:
+Strongest rival explanation:
+Most uncertain point:
+Evidence that would change my mind:
+Current next decision:
 ```
 
-Hard constraints:
+The human may mark an item `unknown`. Do not manufacture a confident answer.
+If no card exists, create or show only the blank template at
+`templates/research_process/thinking_card_template.md`.
 
-- exactly one main phenomenon;
-- one mechanism guess, or a small set of tightly linked mechanism guesses;
+## AI Audit
+
+Before a formal anchor, return a short audit:
+
+```text
+Judgments to preserve:
+Unclear definitions:
+Hidden assumptions or causal overclaims:
+Strongest rival still alive:
+Can the proposed metric separate the rivals?:
+Smallest falsifier:
+AI-proposed correction, if any:
+```
+
+Label every AI-added prior, variable, metric, or model as a proposal. Move to a
+formal anchor only after the human corrects or approves the direction.
+
+## Formalization Gate
+
+The approved Thinking Card must support all of these:
+
+- exactly one phenomenon and one decision question;
+- one mechanism guess with a stated causal direction;
 - a minimal variable set;
-- a stated causal direction;
 - one primary observable metric;
-- at least one rival explanation;
-- one decision rule: pursue / revise / park.
+- at least one live rival explanation;
+- pass, fail, and insufficient-evidence meanings;
+- one next decision;
+- a conservative cannot-claim boundary.
 
-If these are unclear, do not polish the anchor. Return to the Thinking Card.
+If the metric cannot distinguish the mechanism from its rival, return to the
+Thinking Card. More experiments do not repair an undefined decision.
 
-## Formal Anchor Mode
+## Physical-Prior Review
 
-Write a formal anchor only when requested or when the user has approved the
-Thinking Card direction after the Physical Prior Review and Mathematical Model
-Review. The formal anchor should tighten the user's logic, not replace it with
-a cleaner but different research question.
+Before writing the anchor, check:
 
-Required structure:
+```text
+Candidate physical prior:
+Why it follows from the human judgment:
+What would make it false:
+Variable that exposes it:
+Rival explanation it separates:
+```
+
+## Mathematical-Model Review
+
+Then check:
+
+```text
+Core model:
+Variables:
+Mechanistic relation:
+Observable metric:
+What the model explains:
+What it cannot explain:
+Mismatch with the human intuition:
+```
+
+Every equation must map to a prior, a concrete computation, and an experiment
+or analysis artifact. Do not promote a metaphor into a mathematical claim.
+
+## Formal Anchor Structure
+
+Write a formal anchor only when the Thinking Card, prior, and model have been
+approved. Use exactly these top-level sections:
 
 ```markdown
 # <Anchor Title>
 
-## 0. Thinking Card
+Thinking Card source: [<anchor_stem>_thinking_card.md](...)
+
 ## 1. Problem Definition
 ## 2. Physical Priors
 ## 3. Falsifiable Hypotheses
@@ -340,218 +126,68 @@ Required structure:
 ## 8. Claim Boundary And Next Decision
 ```
 
-Do not add extra top-level sections by default.
-If the anchor uses non-obvious terms, abbreviations, metrics, method labels, or
-project shorthand, define them inside `1. Problem Definition` under
-`Terminology / Definitions`; do not add a separate top-level glossary unless the
-user explicitly asks for one.
+Do not add an abstract, timeline, literature review, or embedded Thinking Card.
+Keep one decision question, one core model, one primary metric, one main
+falsifier, and one next decision. Put run-level settings in `protocol.md`.
 
-## Section Requirements
+### Section Requirements
 
-### 0. Thinking Card
+1. Define the parent problem, sharper subproblem, decision question, and every
+   non-obvious term. For a metric, state computation, unit, decision role, and
+   what it cannot prove.
+2. Use at most three physical priors, preferably one. State falsifiers and the
+   variable exposing each prior.
+3. State the primary hypothesis, strongest rival, predictions under each, and
+   pass/fail/insufficient meanings.
+4. Define variables before equations. Separate assumptions, derived results,
+   empirical propositions, and intuition.
+5. Map every mathematical object to a tensor, component, dataset field,
+   intervention, or analysis computation.
+6. Use one decisive test plus necessary guards. State metric, threshold, rival
+   separated, allowed claim, and cannot-claim boundary.
+7. Link `protocol.md`, `summary.md`, and `detailed.md`; separate observation
+   from interpretation and remaining uncertainty.
+8. State supported, weakened, and unresolved claims; what cannot be claimed;
+   and exactly one next decision.
 
-Section 0 is the first reading path and should remain short. It may use the
-user's wording when that wording preserves real judgment. It must include:
+## Parent and Subanchor Rule
 
-```text
-Phenomenon:
-Mechanism guess:
-Key variables:
-Causal relation:
-Observable metric:
-Rival Explanations:
-Decision:
-```
+A parent anchor owns one complete major research problem. A subanchor inherits
+the parent question and adjudicates one local clause, rival explanation,
+robustness check, or metric guard. It must not repeat the full story or create a
+parallel mainline.
 
-Do not replace this section with an abstract, literature motivation, result
-summary, or AI-polished thesis statement. If the decision rule is missing, the
-formal anchor is not ready.
-
-### 1. Problem Definition
-
-Must include:
-
-```text
-Parent problem:
-Sharper subproblem:
-Terminology / Definitions:
-  Term:
-  Plain meaning:
-  Concrete object or computation:
-  Unit / formula, if metric:
-  Why it matters for the current decision:
-  What it cannot prove:
-Decision question:
-Not in scope:
-```
-
-There should be exactly one decision question.
-
-### 2. Physical Priors
-
-Write one to three falsifiable priors. Each prior should say what mechanistic
-belief makes the question meaningful.
-
-Use:
+## Result Update
 
 ```text
-P1:
-Meaning:
-Could be wrong if:
+human closed-book summary
+-> AI evidence and boundary audit
+-> summary.md / detailed.md update
+-> anchor sections 7 and 8 update
+-> CURRENT.md next action update
 ```
 
-### 3. Falsifiable Hypotheses
+The human summary states the question, direct result, confirmed and weakened
+beliefs, current mechanism, cannot-claim boundary, and one next decision. AI
+may improve expression only after that draft exists.
 
-Each hypothesis must be derived from the physical priors and have clear support
-and weakening conditions.
+## Language
 
-Use:
+The Thinking Card may remain Chinese. The canonical anchor is English unless
+the user says otherwise; a Chinese companion uses `_cn.md`. Translation must
+not change the question, model, metric, thresholds, boundary, or next decision.
 
-```text
-H1:
-Supported if:
-Weakened if:
-```
+## Validation
 
-### 4. Mathematical Model
+1. The Thinking Card exists and is linked, not duplicated.
+2. Human judgment and AI proposals remain distinguishable.
+3. Sections 1-8 contain one decision question and one next decision.
+4. The primary metric separates the hypothesis from its rival.
+5. Observation, interpretation, claim, speculation, and boundary are separate.
+6. Every linked artifact exists.
+7. Inline formulas use `$...$`; display formulas use `$$...$$`.
 
-Only define mathematical objects that the experiment can measure or use.
-
-Must include:
-
-```text
-Objects:
-Core decomposition:
-Mechanism relation:
-Observable metrics:
-Falsifier:
-```
-
-Every equation must map to a physical prior, a measurable object, and a code or
-analysis path.
-
-### 5. Computational Realization
-
-This is a drift-prevention stub that connects the model to code. It may name
-input objects, computed variables, algorithm stages, stage-local evidence, and
-expected artifacts, but it must not become an implementation plan.
-
-Include only:
-
-```text
-Input objects:
-Computed variables:
-Algorithm stages:
-Stage-local evidence:
-Expected artifacts:
-```
-
-If this section exceeds 8 bullets or contains commands, config details, broad
-sweeps, seed dumps, or result interpretation, move that material to
-`protocol.md` or `detailed.md`.
-
-### 6. Minimal Falsification Tests
-
-Write at most three tests. Prefer one decisive test plus guards. Each test
-should answer one question and map to the current decision.
-
-Use:
-
-```text
-Test:
-Question:
-Intervention / comparison:
-Primary metric:
-Pass / fail / insufficient:
-Why it decides:
-Failure means:
-```
-
-Use one short paragraph or a compact table. The anchor should not carry the
-full protocol matrix. Exact thresholds, stage-local evidence, known good/bad
-cases, and condition-by-condition pass/fail rules move to `protocol.md`.
-
-`Failure means` states whether failure would falsify the physical prior, the
-mathematical model, one operationalization/proxy, the implementation, or the
-metric.
-
-Do not finalize this section until the Thinking Card and sections 1-5 are
-clear.
-
-### 7. Current Evidence
-
-Write observed evidence, not a long result report.
-
-Use:
-
-```text
-Observation:
-Interpretation:
-Boundary:
-Evidence links:
-```
-
-Link to `summary.md`, `detailed.md`, figures, or tables when they exist.
-
-### 8. Claim Boundary And Next Decision
-
-Must include:
-
-```text
-Can claim:
-Cannot claim:
-Next decision:
-```
-
-There should be exactly one next decision.
-
-## Anchor Split Gate
-
-Apply this gate before writing, approving, or extending a formal anchor. Split
-the work into separate anchors or child anchors when any of these are true:
-
-- the draft needs more than one decision question;
-- the draft needs more than one primary metric to decide the claim;
-- the draft needs more than one falsifier;
-- the draft needs more than one next decision;
-- diagnostics test different rival explanations that do not share the same
-  phenomenon, mechanism guess, causal relation, and decision rule;
-- the anchor starts carrying multiple historical iterations instead of the
-  current-state judgment.
-
-Do not hide a split problem by adding more subsections.
-
-## What Does Not Belong In The Anchor
-
-Move these outside the anchor:
-
-- run commands;
-- long config tables;
-- raw logs;
-- seed-by-seed dumps;
-- broad ablation grids;
-- full implementation plans;
-- literature review;
-- meeting scripts;
-- multiple historical iterations that no longer decide the current question;
-- result presentation that belongs in `summary.md` or `detailed.md`.
-
-## Post-Result Update
-
-After an experiment, update the same anchor if the result changes the physical
-prior, hypothesis status, evidence, claim boundary, or next decision.
-
-Do not paste the result report into the anchor. Convert the result into:
-
-- supported / weakened / insufficient-evidence status;
-- rival explanations weakened or still alive;
-- new boundary;
-- next decision;
-- links to `summary.md` and `detailed.md`.
-
-## Relationship To Other Skills
-
-- Use `research-progress-core` to audit whether the research loop is complete.
-- Use `experiment-card-writer` after the anchor identifies the minimal test and
-  the user is ready to write `protocol.md`.
-- Do not create separate `hypotheses/<id>/purpose_card.md` files for new work.
+For legacy migration, use
+`scripts/migrate_embedded_thinking_cards.py`. It extracts section 0 verbatim,
+creates a subject-bearing card, replaces old `source_draft` metadata, and links
+the formal anchor to the new card.

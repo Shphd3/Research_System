@@ -1,35 +1,19 @@
 # 12 结构化组合任务与标准头使用
 
-## 回答的问题
+## 当前问题
 
-A11 发现的更早直接信号，能否在必须形成中间状态的组合任务中转化为共同标准头的功能收益？
+A11 的更早直接信号，能否在每个样本都重新生成规则、并要求一步或两步有序查表的任务中，更明显地加速两步任务的标准主头学习？
 
-## 数据
+## 已确认的边界
 
-每条样本包含两张完整随机一一映射表。给定起点 $A$，第一张表产生中间实体 $B$，第二张表产生答案 $Y$：
+固定规则表 E02 可以被 NTP 和 MTP 精确拟合，但正交互只出现在准确率恰好为 `1.0` 的最后阶段，不能支持一般收敛优势。E03 又因一步与两步任务的查询相关结构不对称而被拒绝。
 
-$$
-B=\pi_1(A),\qquad Y=\pi_2(B).
-$$
+E04 随后定义逐样本双映射平衡载体，并完成全部 12 条批准的 NTP Stage A 轨迹。没有模型规模合格：2 层两步任务结束在约 `0.250`，4 层两步任务约 `0.329`；4 层一步任务虽然两个种子接近 `0.999`，仍有一个种子停在 `0.838`。因此没有冻结掌握阈值。
 
-任意单表都不能确定答案，两表联合才能完成有序组合。它是计算树的深度二串行基础情形，不是一般多分支树。
-
-## 当前结论
-
-1. 数据构造能排除单表捷径，工作负载定义成立。
-2. 当前两层、宽度 64 的从零训练模型仍接近八分类机会水平，因此没有资格比较 NTP 与 MTP。
-3. 在线性 oracle 因子模型中，单一表征方向会导致 MTP 改善未来因子却损害标准目标；两个方向时损害消失。等辅助训练量课程不能补出缺失方向。
-
-线性结果只证明缺少独立方向是一个充分冲突机制，不证明 Transformer 参数量与 MTP 收益的尺度律。
+后验审计还发现删行必要性守卫无效：完整双射删去一行后，缺失输出仍可由其余四行没有使用的值补全。E04 只能作为能力地板描述，不能形成正式 MTP 比较。
 
 ## 唯一下一决策
 
-先审阅因果使用协议并运行共享预训练模型的能力门槛。通过后，才从同一检查点比较 NTP 与信息性 Next-2，并干预中间实体 $B$，判断共同标准头是否按第二张表的规则改变答案。门槛失败则停止。
+决定是在冻结的 2/4 层、20,000 步合同下关闭 E04，还是用新 Protocol 重开载体/能力设计。Stage B、封存确认比较和所有 MTP 运行继续阻塞。
 
-## 当前父锚点链
-
-1. `12_01`：先验证任务定义有效，并要求学习器通过完整上下文能力门槛。
-2. `12_02`：在受控模型中分离目标干扰、表征秩不足和课程学习的边界。
-3. `12_03`：当前活动锚点；只检验 MTP 形成的中间状态是否被共同标准头因果使用。
-
-来源：[A12 索引](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md) · [A12 故事](../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md) · [待审协议](../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol_cn.md)
+来源：[A12 索引](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md) · [12_0 锚点](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md) · [E04 总结](../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md) · [详细记录](../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md)

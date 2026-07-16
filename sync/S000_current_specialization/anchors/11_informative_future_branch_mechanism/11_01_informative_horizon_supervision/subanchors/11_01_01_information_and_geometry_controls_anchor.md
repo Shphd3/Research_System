@@ -1,14 +1,6 @@
 # Information Inclusion And Output-Geometry Controls
 
-## 0. Thinking Card
-
-**Phenomenon:** A longer prediction horizon does not always produce a larger task signal.
-**Mechanism guess:** A new target contributes only when it carries new branch information, and its contribution is signed by its centered output direction.
-**Key variables:** information inclusion, output-direction alignment, hidden semantic velocity.
-**Causal relation:** include an informative target or rotate its output direction, then measure the signed current-state update.
-**Observable metric:** hidden semantic velocity.
-**Rival explanations:** horizon length alone; extra-loss magnitude alone.
-**Decision:** keep information inclusion and direction alignment as the sufficient diagnostic description; park the earlier horizon-by-horizon variants.
+Thinking Card source: [11_01_01_information_and_geometry_controls_thinking_card.md](11_01_01_information_and_geometry_controls_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -50,7 +42,7 @@ Use matched prefixes and fixed readouts; add either a shared label, an aligned i
 
 ## 7. Current Evidence
 
-Both controls pass in the decisive [next-$K$ inclusion experiment](../../../../../../Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md). Earlier horizon and leakage checks are archived because they do not change this conclusion.
+Both controls pass in the decisive [next-$K$ inclusion experiment](/Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md). Earlier horizon and leakage checks are archived because they do not change this conclusion.
 
 ## 8. Claim Boundary And Next Decision
 

@@ -4,8 +4,8 @@ A11 isolates the objective-level difference between next-token prediction (NTP) 
 
 Current story:
 
-- [English canonical story](../../../../Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md)
-- [Chinese companion](../../../../Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md)
+- [English canonical story](/Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md)
+- [Chinese companion](/Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary_cn.md)
 
 ## Terminology / Definitions
 
@@ -23,7 +23,7 @@ Each directory contains one complete parent anchor. A subanchor is retained only
 |---|---|---|---|
 | 1 | [11_01 Informative-horizon supervision](11_01_informative_horizon_supervision/11_01_informative_horizon_supervision_anchor.md) / [中文](11_01_informative_horizon_supervision/11_01_informative_horizon_supervision_anchor_cn.md) | A direct current-state signal begins when the objective covers a future target carrying new branch information; output-direction alignment, not horizon length alone, controls the increment. | completed, supported |
 | 2 | [11_02 Hidden-to-parameter transmission](11_02_hidden_to_parameter_transmission/11_02_hidden_to_parameter_transmission_anchor.md) / [中文](11_02_hidden_to_parameter_transmission/11_02_hidden_to_parameter_transmission_anchor_cn.md) | The direct direction reaches shared parameters in the controlled model, while all-position background terms remain signed. | completed, conditional support |
-| 3 | [11_03 Cross-position standard-head boundary](11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor.md) / [中文](11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor_cn.md) | Current-state formation is not sufficient for later standard-head behavior. | completed, sufficiency weakened |
+| 3 | [11_03 Cross-position standard-head boundary](11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor.md) / [中文](11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor_cn.md) | Current-state formation is not sufficient for later standard-head behavior; the matched shared-aux K/V audit found no stable strong answer-control increment. | completed; strong-use increment failed |
 
 The line is read as
 
@@ -41,8 +41,10 @@ $$
 
 A11 establishes an earlier direct first-order task signal from informative future targets, conditional shared-parameter reachability, and a cross-position sufficiency failure. It does not establish long-range composition, tree reasoning, scale effects, curriculum benefit, real-workload transfer, or Router/MoE value.
 
+The completed [11_03_02 causal-use subanchor](11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor.md) strengthens that boundary: all guards passed, but the registered strong answer-switching increment over matched shared-aux failed. A 4/5 positive margin tendency remains secondary and unstable.
+
 ## Exactly One Next Decision
 
-No A11 experiment is active. Pass the three established premises to A12. Reopen A11 only if an A12 result contradicts one of them under matched controlled conditions.
+Decide whether to preregister a weak-margin audit; otherwise close this K/V interface and move to a task where the early state is structurally necessary. No unregistered K/V/Q/layer sweep is authorized.
 
-Decision-bearing experiment records are indexed in [the A11 experiment registry](../../../../Projects/from-attention-to-search/main/experiments/A11/README.md). Nondecisive historical variants are archived there rather than represented as separate anchors.
+Decision-bearing experiment records are indexed in [the A11 experiment registry](/Projects/from-attention-to-search/main/experiments/A11/README.md). Nondecisive historical variants are archived there rather than represented as separate anchors.

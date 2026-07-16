@@ -17,9 +17,9 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `research-progress-core` | Governing research paradigm: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
 | `research-mainline` | Maintain compact project anchors, result records, and project organization; graph, root sync, external collaborator sync, handoff, commit, and push actions require explicit user request. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
-| `problem-anchor-writer` | Write anchor design documents with one decision question, physical priors, math, computational realization, falsifiable tests, evidence, boundary, and next decision. |
+| `problem-anchor-writer` | Audit a subject-bearing independent human Thinking Card, then write sections 1-8 of the formal anchor after approval. |
 | `experiment-card-writer` | Write `protocol.md`, `summary.md`, and `detailed.md` from anchors. |
-| `meeting-brief-writer` | Write or revise strict advisor-facing `meeting_brief.md` files. First read and strictly apply `templates/meeting/meeting_brief_template.md`. |
+| `meeting-brief-writer` | Revise a human-first, executive-summary-only advisor brief. First apply `templates/meeting/meeting_brief_template.md`. |
 | `handoff-report-writer` | Package existing anchor, protocol, summary, detailed, figures, tables, and finalized meeting material for collaborator/web/external handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
@@ -35,7 +35,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests with operational definitions, stage-local evidence, failure meaning, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |
-| Meeting brief | `meeting-brief-writer` | Strict advisor-facing `meeting_brief.md`: current question, mechanism model, evidence, boundary, and next action. Must follow `templates/meeting/meeting_brief_template.md` mode one or mode two exactly. | Packaging, external sync, creating new claims, replacing anchors or result records. |
+| Meeting brief | `meeting-brief-writer` | Human-first executive summary: question, initial judgment, result, mechanism interpretation, evidence, boundary, and one action. | Writing the human's first judgment, packaging, external sync, creating new claims, replacing source records. |
 | External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Writing the meeting brief itself; creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
@@ -47,7 +47,7 @@ evidence; it must not silently absorb another file's job.
 
 | Artifact | Owns | Must not do |
 |---|---|---|
-| `00_handwrite_anchor.md` | rough Thinking Card and exposed user judgment | require or become a full 0-8 anchor before audit |
+| `<anchor_stem>_thinking_card.md` | independent human judgment before AI formalization | become a formal anchor, protocol, or AI-authored conclusion |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
 | `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
@@ -59,8 +59,9 @@ Current consolidation decision:
 
 ```text
 Remote workflow skills are merged. Purpose cards and hypotheses are unified
-into anchors. Post-result closure happens in the updated anchor and required
-`summary.md` / `detailed.md`; handoff reports are optional external packages.
+into anchors. Post-result judgment lives in the updated anchor and required
+`summary.md` / `detailed.md`; line synthesis lives in stories, and handoff
+reports are optional external packages.
 Research progress is governed by research-progress-core; the other skills are
 artifact writers or local adapters.
 ```
@@ -91,7 +92,7 @@ Root sync, external collaborator repo sync, handoff reports, graph edits,
 commits, and pushes are explicit follow-up actions only.
 
 Terminology is part of the artifact contract. Any anchor, protocol, summary,
-detailed record, closure report, meeting brief, or viewer that uses non-obvious
+detailed record, story, meeting brief, or viewer that uses non-obvious
 terms, English jargon, abbreviations, metric names, condition labels, model
 variants, or project shorthand must define them before using them as evidence.
 Use `Terminology / Definitions` in English canonical artifacts and `术语解释`
@@ -114,8 +115,8 @@ Minimal advisor-spec adapter:
 docs/design.md                  -> anchor
 docs/experiment_design.md       -> protocol.md
 docs/visualization_results.md   -> summary.md + detailed.md + figures/viewer
-docs/final_report.md            -> stable-closure synthesis after the anchor
-                                   and result records are current
+docs/final_report.md            -> exported view of the current story only when
+                                   explicitly requested
 ```
 
 Do not create a parallel `docs/` tree for normal project work unless the user
@@ -209,11 +210,9 @@ Anchors are decision cards, not reports. They must include:
 - current evidence;
 - claim boundary and one next decision.
 
-Each anchor has two reading layers. `Thinking Card` is the short human-facing
-mechanism judgment card: phenomenon, mechanism guess, key variables, causal
-relation, observable metric, alternative explanation, and decision rule. The
-remaining sections are the auditable design layer for AI review, replay,
-protocol alignment, and boundary checks.
+The independent `<anchor_stem>_thinking_card.md` is the human-facing mechanism judgment
+surface. The formal anchor links it and keeps sections 1-8 as the auditable
+design layer. New anchors do not duplicate the card as section 0.
 `Computational Realization` prevents theory/code drift by naming the
 implemented inputs, computed variables, algorithm stages, stage-local evidence,
 and expected artifacts.

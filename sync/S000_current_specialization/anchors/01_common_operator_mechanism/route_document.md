@@ -31,8 +31,6 @@ and interaction.
 
 | Role | Path |
 |---|---|
-| full-story synthesis | `closure/01_common_operator_mechanism_closure_report.md` |
-| Chinese full-story synthesis | `closure/01_common_operator_mechanism_closure_report_cn.md` |
 | A01_01 summary | `../../experiments/A01_common_operator/A01_01_common_operator_identifiability_full_run/summary.md` |
 | A01_03 summary | `../../experiments/A01_common_operator/A01_03_gradient_common_vs_activation_common_full_run/summary.md` |
 | A01_04 controlled summary | `../../experiments/A01_common_operator/A01_04_feedback_common_preservation_bridge_controlled_full_run/summary.md` |

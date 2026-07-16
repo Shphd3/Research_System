@@ -2,15 +2,7 @@
 
 状态：已完成；在受控 Transformer 设置中得到条件性支持。
 
-## 0. Thinking Card
-
-**现象：** 损失函数可以在隐藏状态上指向正确方向，但共享参数未必能够实现这次移动。
-
-**机制判断：** 任务方向必须经过隐藏状态对参数的雅可比传递；其他语言模型损失会产生有正有负的背景项，可能增强也可能抵消直接信号。
-
-**核心观测：** 参数语义速度，即一次共享参数更新预计造成的任务 margin 变化。
-
-**决策：** 受控模型中参数传递前提成立；在完整全位置训练中，净方向并不保证每次都为正。
+Thinking Card source: [11_02_hidden_to_parameter_transmission_thinking_card_cn.md](11_02_hidden_to_parameter_transmission_thinking_card_cn.md)
 
 ## 1. 问题定义
 
@@ -67,7 +59,7 @@ $G_D$ 是较早的 MTP 路径，$G_I$ 是较晚的标准 NTP 路径。
 
 ## 7. 当前证据
 
-决策位置实验中直接传递在 5/5 种子为正，且准确预测有限步变化。全位置实验中，$G_D$ 在 5/5 种子为正并大于 $G_I$，但其余损失在一个种子中使净速度反转。见[决策位置传递](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md)、[全位置分解](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md)与[子锚点 11_02_01](subanchors/11_02_01_reachability_and_background_sign_anchor.md)。
+决策位置实验中直接传递在 5/5 种子为正，且准确预测有限步变化。全位置实验中，$G_D$ 在 5/5 种子为正并大于 $G_I$，但其余损失在一个种子中使净速度反转。见[决策位置传递](/Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/summary.md)、[全位置分解](/Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition/summary.md)与[子锚点 11_02_01](subanchors/11_02_01_reachability_and_background_sign_anchor.md)。
 
 ## 8. 结论边界与下一决策
 

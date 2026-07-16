@@ -2,15 +2,7 @@
 
 状态：已完成；在受控隐藏状态模型中得到支持。
 
-## 0. Thinking Card
-
-**现象：** 预测更多未来词元有时会更早产生任务信号，但单纯增加预测跨度并不稳定有效。
-
-**机制判断：** 只有当新增未来位置包含局部上下文无法替代的任务信息时，它才会直接更新当前位置。多个信息性目标的作用取决于输出方向相加后是增强还是抵消。
-
-**核心观测：** 隐藏语义速度，即当前位置沿正确任务方向的一步移动量。
-
-**决策：** 关闭“直接监督何时出现”这一问题；不再把预测跨度本身当成原因。
+Thinking Card source: [11_01_informative_horizon_supervision_thinking_card_cn.md](11_01_informative_horizon_supervision_thinking_card_cn.md)
 
 ## 1. 问题定义
 
@@ -66,7 +58,7 @@ $$
 
 ## 7. 当前证据
 
-受控实验显示：信息位置之前速度为零，覆盖后变正；共有目标没有一步增量；对齐方向增强，冲突方向削弱。最短证据入口是 [next-$K$ 纳入规律结果摘要](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md)，辅助控制已压缩到[子锚点 11_01_01](subanchors/11_01_01_information_and_geometry_controls_anchor.md)。
+受控实验显示：信息位置之前速度为零，覆盖后变正；共有目标没有一步增量；对齐方向增强，冲突方向削弱。最短证据入口是 [next-$K$ 纳入规律结果摘要](/Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md)，辅助控制已压缩到[子锚点 11_01_01](subanchors/11_01_01_information_and_geometry_controls_anchor.md)。
 
 ## 8. 结论边界与下一决策
 

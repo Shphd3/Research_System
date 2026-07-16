@@ -34,6 +34,42 @@ Do not promote a claim unless the short loop is inspectable. Use the expanded
 loop only when the idea requires explicit physical modeling, mathematical
 objects, or nontrivial implementation stages.
 
+## Human-First Research Contract
+
+The human must expose an initial judgment before AI produces a polished design
+or report. The minimum input is:
+
+```text
+Phenomenon:
+Mechanism guess:
+Strongest rival explanation:
+Most uncertain point:
+Evidence that would change my mind:
+Current next decision:
+```
+
+The AI first audits this judgment: define unclear objects, expose hidden
+assumptions, add counterexamples, test whether the metric separates rivals,
+and identify the smallest falsifier. It may propose candidates but must label
+them as AI proposals and must not silently replace the user's judgment.
+
+After execution, the human first summarizes from memory:
+
+```text
+Question:
+Direct result:
+Confirmed:
+Weakened or rejected:
+Current mechanism and reason:
+Cannot claim:
+Exactly one next decision:
+```
+
+Only then should AI revise the wording, verify source links, separate
+observation from interpretation, and protect the claim boundary. If the human
+draft is missing, provide a blank scaffold and audit questions rather than a
+finished meeting brief.
+
 ## Question-Before-Method Rule
 
 Do not start from a method proposal. Before any protocol, implementation, or
@@ -166,20 +202,20 @@ artifacts, use a `Terminology / Definitions` section near the top when terms
 are not self-evident. Do not make the reader infer definitions from code,
 figures, old chats, or previous reports.
 
-## Line Closure Synthesis Rule
+## Line Story Synthesis Rule
 
-When the user explicitly asks for a current understanding report, closure
-summary, or synthesis of a specified anchor folder or research line, produce a
-line-level closure report under:
+When the user explicitly asks for a current understanding report or synthesis
+of a specified research line, update that line's formal story pair under:
 
 ```text
-Projects/<project>/main/problem_anchors/<line>/closure/
+Projects/<project>/main/stories/<line>/<NN>_<topic>.md
+Projects/<project>/main/stories/<line>/<NN>_<topic>_cn.md
 ```
 
-The report is not a new experiment result and not a replacement for anchors,
+The story is not a new experiment result and not a replacement for anchors,
 protocols, `summary.md`, or `detailed.md`. It should reduce uncertainty by
-turning the line into a coherent story first, then an audit surface second.
-Use this story chain in the first half:
+turning the line into a coherent argument first, then an audit surface second.
+Use this chain in the first half:
 
 ```text
 title / subtitle -> abstract -> motivation -> definitions and confused
@@ -195,8 +231,8 @@ source map -> experiment logic table -> measured results -> proved / assumed /
 empirical table -> claim boundary -> data/model/parameter appendix
 ```
 
-Closure reports must be bilingual by default, with an English canonical file
-and a Chinese `_cn.md` companion. For mathematical claims, prove what follows
+Formal stories are bilingual by default, with an English canonical file and a
+Chinese `_cn.md` companion. For mathematical claims, prove what follows
 from the model. If a statement cannot be proved, label it as an assumption or
 empirical proposition and state the smallest experiment that could decide it.
 Every cited experiment must have appendix entries for data, model, parameters,
@@ -382,14 +418,14 @@ onto the local artifact chain:
 docs/design.md                  -> anchor
 docs/experiment_design.md       -> protocol.md
 docs/visualization_results.md   -> summary.md + detailed.md + figures/viewer
-docs/final_report.md            -> stable-closure synthesis only after the
-                                   anchor and result records are current
+docs/final_report.md            -> exported view of the current story only when
+                                   the user explicitly requests that layout
 ```
 
 Do not create the exported `docs/` layout for normal project work unless the
-user asks for it. When a self-contained subproblem reaches stable closure, write
-a final synthesis only after the main conjecture, evidence, central figures,
-claim boundary, and next question are already settled.
+user asks for it. Keep line-level synthesis in the formal story pair and update
+it only after the main conjecture, evidence, central figures, claim boundary,
+and next question are settled.
 
 ## Algorithm Specification
 

@@ -2,18 +2,7 @@
 
 Status: completed parent anchor in the controlled four-expert bridge.
 
-## 0. Thinking Card
-
-**Phenomenon:** Correct conditional exposure creates specialists even when
-route purity is matched by a shuffled control. A correct specialist route is
-preserved, but the same useful specialist remains undiscovered when initialized
-below top-1.
-
-**Physical judgment:** Expert specialization forms through conditional update
-distributions. Top-1 discovery is then a partial-feedback problem: the selected
-expert is evaluated, while unselected expert functions are hidden. One bounded
-challenger supplies the missing comparison, and a lower-tail utility certificate
-ends exploration after weak conditions are safe.
+Thinking Card source: [06_03_utility_binding_and_sparse_discovery_thinking_card.md](06_03_utility_binding_and_sparse_discovery_thinking_card.md)
 
 ## 1. Complete Problem
 
@@ -100,10 +89,10 @@ $$
 
 | Subanchor | Local decision | Experiment group |
 |---|---|---|
-| [`A06_03_01`](subanchors/06_03_01_trainable_expert_utility_binding_anchor.md) | Conditional exposure creates expert utility before Router release. | [`E01`--`E02`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery) |
-| [`A06_03_02`](subanchors/06_03_02_selected_path_blindness_anchor.md) | Selected-only top-1 feedback can fail to reveal a better unselected expert. | [`E01`--`E02`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery) |
-| [`A06_03_03`](subanchors/06_03_03_bounded_challenger_discovery_anchor.md) | One rotating challenger supplies the missing local comparison. | [`E01`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger) |
-| [`A06_03_04`](subanchors/06_03_04_tail_safe_phase_switch_anchor.md) | Lower-tail evidence, not mean utility, decides when exploration may stop. | [`E01`--`E03`](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery) |
+| [`A06_03_01`](subanchors/06_03_01_trainable_expert_utility_binding_anchor.md) | Conditional exposure creates expert utility before Router release. | [`E01`--`E02`](/Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery) |
+| [`A06_03_02`](subanchors/06_03_02_selected_path_blindness_anchor.md) | Selected-only top-1 feedback can fail to reveal a better unselected expert. | [`E01`--`E02`](/Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery) |
+| [`A06_03_03`](subanchors/06_03_03_bounded_challenger_discovery_anchor.md) | One rotating challenger supplies the missing local comparison. | [`E01`](/Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger) |
+| [`A06_03_04`](subanchors/06_03_04_tail_safe_phase_switch_anchor.md) | Lower-tail evidence, not mean utility, decides when exploration may stop. | [`E01`--`E03`](/Projects/from-attention-to-search/main/experiments/A06/06_03_utility_binding_and_sparse_discovery) |
 
 ## 6. Minimal Adjudication Contract
 

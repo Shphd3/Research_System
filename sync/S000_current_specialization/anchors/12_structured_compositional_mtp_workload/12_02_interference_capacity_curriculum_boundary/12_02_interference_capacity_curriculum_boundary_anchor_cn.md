@@ -2,15 +2,7 @@
 
 状态：受控机制边界已完成；神经模型与尺度迁移尚未验证。
 
-## 0. Thinking Card
-
-**现象：** 在受限共享表征中，额外未来监督可能让未来因子学得更好，同时使标准目标变差。
-
-**机制判断：** 一步影响由梯度交互决定；持续权衡可以由任务相关表示秩不足造成。训练顺序无法创造一个结构上缺失的独立方向。
-
-**核心观测：** 在受控秩干预下的标准损失差，并用未来因子误差确认 MTP 确实获得了额外信息。
-
-**决策：** 在线性模型中，结构性秩竞争是一个充分机制；课程学习不能修复结构缺秩；暂不推断 Transformer 尺度规律。
+Thinking Card source: [12_02_interference_capacity_curriculum_boundary_thinking_card_cn.md](12_02_interference_capacity_curriculum_boundary_thinking_card_cn.md)
 
 ## 1. 问题定义
 
@@ -58,7 +50,7 @@ $$
 
 ## 7. 当前证据
 
-局部泰勒公式在小步长下数值准确，但对应神经模型仍处于机会水平，不能证明学会任务后的干扰。oracle 线性模型中，rank 1 的标准损失差为 0.9084--1.0218，同时未来因子在 5/5 种子改善；rank 2 后差异降到数值零。等剂量课程在 rank 1 的 Pareto 通过率为 0/5。见[秩干预](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md)、[课程边界](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md)与[子锚点 12_02_01](subanchors/12_02_01_rank_and_curriculum_controls_anchor.md)。未通过任务门槛的局部梯度检查仅保留为归档证据。
+局部泰勒公式在小步长下数值准确，但对应神经模型仍处于机会水平，不能证明学会任务后的干扰。oracle 线性模型中，rank 1 的标准损失差为 0.9084--1.0218，同时未来因子在 5/5 种子改善；rank 2 后差异降到数值零。等剂量课程在 rank 1 的 Pareto 通过率为 0/5。见[秩干预](/Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/summary.md)、[课程边界](/Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/summary.md)与[子锚点 12_02_01](subanchors/12_02_01_rank_and_curriculum_controls_anchor.md)。未通过任务门槛的局部梯度检查仅保留为归档证据。
 
 ## 8. 结论边界与下一决策
 

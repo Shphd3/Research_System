@@ -2,17 +2,7 @@
 
 状态：当前活动设计；修订协议已存在；尚未授权运行。
 
-## 0. Thinking Card
-
-**现象：** A11 说明信息性未来监督可以更早形成任务信号，但探针能读出或私有未来头准确，并不能说明普通下一词元主头使用了中间组合状态。
-
-**机制判断：** 同一个共享检查点先学会深度二任务后，信息性 Next-2 会增强中间状态 $B$ 的分量；该分量穿过共有格式词元后，在标准主头中因果控制 $Y=\pi_2(B)$。
-
-**关键变量：** 任务门槛准确率、交叉拟合中间状态子空间、反事实标准头效应、匹配随机子空间效应和干净标准头准确率。
-
-**核心观测：** 从 NTP 到信息性 Next-2，标准头中由 $B$ 子空间特异产生的反事实控制增加多少。
-
-**决策：** 共享能力门槛通过后才测试因果使用；否则停止，不解释探针或补丁。
+Thinking Card source: [12_03_standard_head_causal_use_thinking_card_cn.md](12_03_standard_head_causal_use_thinking_card_cn.md)
 
 ## 1. 问题定义
 
@@ -102,7 +92,7 @@ $$
 
 A11 支持更早信号形成和条件性参数传递，同时表明该信号可能在跨位置后失去作用。A12 的深度二工作负载有效，但当前从零训练模型没有通过能力门槛；秩结果只属于受控线性模型。尚无已完成实验在具备任务能力的神经检查点上直接测量经过中间状态 $B$ 的因果控制。
 
-详细测试设计见 [protocol.md](../../../../../Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md)。
+详细测试设计见 [protocol.md](/Projects/from-attention-to-search/main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use/protocol.md)。
 
 ## 8. 结论边界与下一决策
 

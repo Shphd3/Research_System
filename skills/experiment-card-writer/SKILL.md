@@ -229,7 +229,7 @@ Before any result table, figure, or condition label appears in `summary.md` or
 `detailed.md`, the setup must define the compared objects in plain language.
 This is the local minimal form of a paper-style experimental setup.
 
-Every `summary.md`, `detailed.md`, closure report, and meeting-derived result
+Every `summary.md`, `detailed.md`, and meeting-derived result
 record must include a `Terminology / Definitions` section near the top when it
 uses non-obvious terms, abbreviations, metric names, condition labels, method
 names, project shorthand, or plot labels.
@@ -297,83 +297,37 @@ support the primary judgment. `detailed.md` may contain the full evidence
 ledger, but it must separate decision evidence, stage-level profiling
 evidence, debug-only evidence, and failed or ambiguous evidence.
 
-## Closure Report Standard
+## Line Synthesis Boundary
 
-Use this section only when the user explicitly asks for a closure, current
-understanding report, line-level synthesis, or specified anchor-folder summary.
-The target path is:
-
-```text
-Projects/<project>/main/problem_anchors/<line>/closure/
-```
-
-The canonical pair is:
-
-```text
-<line>_closure_report.md
-<line>_closure_report_cn.md
-```
-
-The English file is canonical by default, and the Chinese file is a companion
-with the same claims, metrics, boundaries, and next decision. If the user asks
-for Chinese as the canonical file, state that explicitly in both files.
-
-The closure report is the reader-facing synthesis of a line, not a replacement
-for anchors, protocols, summaries, or detailed records. It should tell the full
-advisor-style story first, then place the compact audit structure in the later
-part. Link to source artifacts instead of copying their content. Use this
-structure:
-
-```markdown
-# <Line> Closure Report
-
-## Subtitle
-
-## Abstract
-
-## Terminology / Definitions
-
-## 1. Motivation
-
-## 2. What Must Be Distinguished
-
-## 3. Clean Baseline / Impossibility Result
-
-## 4. Mechanism Model
-
-## 5. Propositions And Proofs
-
-## 6. Controlled Evidence
-
-## 7. Real Evidence / Negative Result
-
-## 8. Reconciliation And Refined Theory
-
-## 9. Next Experiment
-
-## 10. Source Map And Audit Tables
-
-## 11. Claim Boundary
-
-## Appendix. Data / Model / Parameters / Scripts
-```
-
-Write conclusion-first. Define every technical object in plain language before
-using a shorthand. Separate observation, interpretation, claim, speculation,
-and boundary. For mathematical modeling, do not write only intuition: prove the
-statements that follow from the model, and label unproved mechanism claims as
-assumptions or empirical propositions. The appendix must list data construction
-or dataset, model/router/algorithm, loss or objective, seeds, checkpoints,
-important parameters, scripts, result directories, and primary metrics.
-
-Do not add a separate `closure/README.md` unless the user explicitly asks for
-an index. The closure report itself is the reading entry.
+This skill owns experiment protocols and result records, not line-level
+synthesis. When the user asks for a current understanding report or full-line
+synthesis, update the formal story through `research-mainline` after the anchor,
+`summary.md`, and `detailed.md` are current. Do not create a separate closure
+report.
 
 ## Summary Standard
 
 `summary.md` is the first post-result reading path. It should be short enough
 to read quickly, but it must include enough visualization-result explanation
 that the central figures can be understood without chat history.
+
+Before AI writes or revises the result judgment, the researcher first records
+from memory:
+
+```text
+Question:
+Direct result:
+Confirmed:
+Weakened or rejected:
+Current mechanism and reason:
+Cannot claim:
+Exactly one next decision:
+```
+
+AI then verifies measurements and links, separates observation from
+interpretation, and edits the prose. It must not invent the initial judgment or
+strengthen it beyond the protocol and evidence. If no human draft exists,
+provide this scaffold rather than a finished conclusion.
 
 Write it conclusion-first. The first result block should use the
 reader-facing shape:

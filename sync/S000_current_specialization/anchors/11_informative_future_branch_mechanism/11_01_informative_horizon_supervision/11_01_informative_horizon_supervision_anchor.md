@@ -2,15 +2,7 @@
 
 Status: completed and supported in the controlled hidden-state setting.
 
-## 0. Thinking Card
-
-**Phenomenon:** Predicting more future tokens sometimes creates an earlier semantic signal, but increasing the horizon alone does not reliably help.
-
-**Mechanism guess:** A future target affects the current state only when it contains task information not already determined by the matched local context. The first-order effect is the vector sum of the centered output directions of all such covered targets.
-
-**Observable metric:** hidden semantic velocity, the one-step movement of the current state toward the task-correct output direction.
-
-**Decision:** close the question of when direct current-state supervision appears; do not use larger horizon length itself as the explanation.
+Thinking Card source: [11_01_informative_horizon_supervision_thinking_card.md](11_01_informative_horizon_supervision_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -66,7 +58,7 @@ Supported means all three patterns hold across confirmation seeds. Weakened mean
 
 ## 7. Current Evidence
 
-The controlled next-$K$ experiment supports the inclusion law: velocity is zero before the informative horizon, becomes positive when it is covered, receives no one-step increment from a shared target, increases under aligned geometry, and decreases under conflicting geometry. The decisive source is the [next-$K$ inclusion summary](../../../../../Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md). The supporting controls are compressed in [subanchor 11_01_01](subanchors/11_01_01_information_and_geometry_controls_anchor.md).
+The controlled next-$K$ experiment supports the inclusion law: velocity is zero before the informative horizon, becomes positive when it is covered, receives no one-step increment from a shared target, increases under aligned geometry, and decreases under conflicting geometry. The decisive source is the [next-$K$ inclusion summary](/Projects/from-attention-to-search/main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law/summary.md). The supporting controls are compressed in [subanchor 11_01_01](subanchors/11_01_01_information_and_geometry_controls_anchor.md).
 
 ## 8. Claim Boundary And Next Decision
 

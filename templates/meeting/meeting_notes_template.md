@@ -3,8 +3,8 @@
 组会、导师沟通和会后记录默认放在：
 
 ```text
-daily_research_reports/MMDD/meeting/
-  meeting_brief.md
+daily_research_reports/MMDD/meetings/
+  <topic>_meeting_brief_cn.md
   meeting_notes.md
   slide_outline.md
 ```
@@ -15,9 +15,9 @@ daily_research_reports/MMDD/meeting/
 templates/meeting/meeting_brief_template.md
 ```
 
-`meeting_brief.md` 应从问题本身展开：研究问题、机制解释与建模、主要结果、
-结论边界和执行动作。它是正式会议材料，不是实验流水账，也不是
-`summary.md` 或 `detailed.md` 的替代品。
+正式简报只保留执行摘要：研究问题、人的初始判断、本次结果、机制解释、
+决定性证据、结论边界和一个执行动作。研究者先写，AI再审计和修改。它不是
+实验流水账，也不是 `summary.md` 或 `detailed.md` 的替代品。
 
 涉及实验结果时，`summary.md` 和 `detailed.md` 仍必须能独立阅读；会议简报只
 引用其中已经成立的结论和核心证据。
