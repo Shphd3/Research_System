@@ -50,22 +50,22 @@ Source: [A06 research map](Projects/from-attention-to-search/main/problem_anchor
 
 Today's working focus:
 
-> Prepare one group-meeting claim around long-context functional retrieval:
-> distinguish nominal capacity, evidence access, state formation, standard-head
-> use, composition, Router selection, and real expert utility.
+> Close the A11 exact source-K/V information audit and decide what carrier is
+> needed to test standard-head consumption without a direct branch bypass.
 
-Source: [English working theme](daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md) and [Chinese companion](daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme_cn.md).
+Source: [E02 summary](Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md) and [advisor-response note](daily_research_reports/0716/docs/a11_exact_source_kv_result_and_advisor_response_cn.md).
 
-Result state: working theme drafted; no formal anchor, Protocol, or new run.
-Existing R3/R4 evidence decisively answers the controlled Q0: perfect feature
-specialization is not sufficient for a useful sparse KV index. The proposed Q1
-asks whether current retrieval proxies predict causal loss utility under a
-fixed top-$k$ budget.
+Result state: remote four-GPU job `pt-rqtb6bw0` succeeded. Same-contract replay
+passed. Exact layer-2 `U03` K/V was perfectly branch-readable under every
+objective and seed, but the registered informative-MTP readability increment
+was nonpositive in 4/5 seeds. The formal verdict is insufficient because the
+single-shuffle guard failed. A 5/5 informative-MTP Fisher nuisance-compaction
+pattern remains secondary.
 
-Next action: the researcher completes the mechanism, strongest rival, most
-uncertain point, judgment-changing evidence, and one next-decision fields, then
-approves, modifies, or rejects Q1. Do not implement Q1 before an approved
-Protocol.
+Next action: decide how to realize a learnable `relay-required` carrier without
+an answer bypass, then complete a new Thinking Card. Do not run another
+objective, shared-unembedding, or K/V/Q comparison before the carrier and its
+non-saturation guard are approved.
 
 ## Daily Ledger
 
@@ -251,6 +251,50 @@ Next decision: the researcher completes the human judgment fields and
 approves, modifies, or rejects the Q1 audit before any Protocol or execution.
 
 Sources: [English working theme](daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md), [Chinese companion](daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme_cn.md), [R3](Projects/from-attention-to-search/main/experiments/archive/R3_perfect_router_retrieval/summary.md), and [R4](Projects/from-attention-to-search/main/experiments/archive/R4_attention_output_router_retrieval/summary.md).
+
+### 2026-07-16 — A11 exact source-K/V information audit
+
+Question: did the exact layer-2 `U03` K/V patched in E01 contain stable branch
+information, and did informative-MTP strengthen its held-out readability beyond
+matched shared-aux?
+
+Action completed: implemented an approved same-contract replay and source probe
+on the remote four-GPU ACP surface. Job `pt-rqtb6bw0` succeeded. No local or CPU
+model smoke was run.
+
+Measured result: E01 checkpoints and behavior statistics replayed exactly.
+NTP, shared-aux, and informative-MTP all reached held-out branch accuracy and
+four-class recall `1.0` for exact $[K_{2,T};V_{2,T}]$ in every seed. The
+registered primary metric had mean
+$\bar\Gamma_{\mathrm{read}}=-0.002299$ nat/example, 95% CI
+`[-0.004502,-0.000173]`, and was nonpositive in `4/5` seeds.
+
+Formal verdict: insufficient. Three of 15 single-shuffle probes exceeded the
+registered `0.30` maximum-accuracy guard. Post-result audit found mean shuffled
+accuracy `0.2209` and mean CE `1.4427`, suggesting a miscalibrated maximum guard
+rather than broad leakage, but the registered verdict was not changed.
+
+Confirmed: the patched exact K/V object is not linearly branch-empty.
+
+Weakened or rejected: informative-MTP does not make the branch label more
+readable under the registered saturated probe. The combined E01/E02 evidence
+cannot be stated as “MTP-specific information formed but the standard head did
+not use it,” because NTP and shared-aux are equally perfectly readable.
+
+Current mechanism and reason: informative-MTP may reorganize already-readable
+branch information. Its Fisher separation exceeded shared-aux in `5/5` seeds
+by `2.91–49.55` times, mainly through within-branch nuisance contraction. This
+is secondary geometry, not causal-use evidence.
+
+Claim boundary: no total ordinary-head non-use, general MTP failure,
+shared-unembedding repair, long-range transfer, natural-language benefit, or
+MoE value is established.
+
+Next decision: validate a learnable `relay-required` carrier with no direct
+answer bypass and a non-saturated shared-aux baseline before any new objective
+comparison.
+
+Sources: [summary](Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md), [detailed record](Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/detailed.md), and [advisor-response note](daily_research_reports/0716/docs/a11_exact_source_kv_result_and_advisor_response_cn.md).
 
 ## Entry Template
 

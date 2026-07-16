@@ -39,7 +39,7 @@ reading surface.
 | A05 | Why can ordinary top-1 routing collapse under apparently uniform features? | Failure mechanisms established under controlled and real-text audits. | `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md` |
 | A06 | Can route-relevant structure be discovered, preserved, and converted into expert utility? | Primary line; controlled utility chain complete, real-workload headroom gate active. | `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md` |
 | A07 | Does functional separation reduce common/rare interference? | Supporting controlled evidence; parked until A06 passes the real-workload gate. | `Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/` |
-| A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Matched shared-aux K/V audit complete: all guards passed, but the strong behavioral increment failed ($\bar\Gamma_{info}=0.01675$, `0/5` at `0.10`). | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
+| A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Exact K/V is branch-readable under all objectives; no registered MTP-specific readability or stable strong-use increment is established, while 5/5 nuisance compaction remains secondary. Relay-required carrier gate active. | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
@@ -141,10 +141,18 @@ capability, with NTP as a secondary system baseline. All registered guards
 passed, but the strong behavioral information-content increment failed:
 $\bar\Gamma_{info}=0.01675$ and `0/5` seeds reached `0.10`.
 
+The source-information follow-up reproduced those states and found exact K/V
+branch accuracy `1.0` under every condition and seed. It did not identify an
+informative-MTP-specific readability increment: mean
+$\Gamma_{\mathrm{read}}=-0.002299$ nat/example and 4/5 seeds nonpositive. The
+formal verdict was insufficient because the single-shuffle guard failed.
+Informative-MTP reduced within-branch nuisance dispersion in 5/5 seeds, but
+that Fisher pattern is secondary geometry rather than use evidence.
+
 Exactly one A11 decision:
 
-> Decide whether to preregister a weak-margin audit; otherwise close this K/V
-> interface and move to a task where the early state is structurally necessary.
+> Validate a learnable `relay-required` carrier with no direct answer bypass
+> and a non-saturated shared-aux baseline before another objective comparison.
 
 A12 currently establishes:
 
@@ -177,7 +185,8 @@ Current sources:
 
 - `Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md`
 - `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor.md`
-- `Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/protocol_cn.md`
+- `Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md`
 - `Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md`
 - `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md`
 - `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/protocol.md`
