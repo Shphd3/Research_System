@@ -4,7 +4,7 @@
 
 所有者：研究者
 
-状态：研究者判断初版，待研究者逐项修改与批准。
+状态：研究者已于 2026-07-16 授权按本卡方向自主形式化、逐级实验和重复审计。
 
 本文件不是正式 anchor、sub-anchor、Protocol、实验计划或结果报告。文中标记为
 “AI proposal”的内容只用于启发，不代表研究者判断。
@@ -116,16 +116,42 @@
 
 ### Current next decision / 当前唯一决策
 
-我当前选择：
+研究者最新授权后，当前选择更新为：
 
-> **先冻结 parent hypothesis 的问题边界、sub-anchor 的依赖顺序，以及第一个
-> carrier-validity subproblem；在这三者经我批准前，不进入 NTP/MTP objective
-> comparison。**
+> **先完成 carrier-validity 与 learner-capability 审计；只有通过后才比较
+> NTP、matched shared-aux 和 informative-MTP。主问题拆为一个 parent anchor
+> 和串行 subanchors，每个 subanchor 只证伪一个假设。实验以一层和两层小模型
+> 为边界，任务定义保持固定；失败必须先分解原因并更新认识，不能靠不断增加任务
+> 复杂度修补。**
 
-待研究者确认：
+研究者授权：
 
-- [ ] 我批准这一唯一决策。
-- [ ] 我需要修改为：`____________________________________________`
+- [x] anchors、Protocols 和顺序实验不再逐项等待研究者审核，由 AI 按注册门槛
+  自审并执行。
+- [x] 仍保持串行 gate：carrier 不合格时不得读取 objective comparison。
+- [x] 不因单次失败扩大 workload；只允许针对已定位瓶颈的最小修复。
+
+### Frozen first carrier / 已冻结的第一个载体
+
+第一版不直接声称“多证据组合”或“长 token 距离”，而只隔离最小的
+**query-conditioned relay**：
+
+```text
+[BOS] [value-A] [value-B] [selector] [RELAY] [ANSWER] -> selected value
+```
+
+- `selector` 指定答案是 `value-A` 还是 `value-B`；
+- `RELAY` 位置可读取两个值和 selector；
+- relay-required 条件下，`ANSWER` 位置只能读取 `RELAY`，不能直接读取值或
+  selector；
+- 两层模型对应“第一层形成 relay state，第二层由标准头读取”；
+- 一层 relay-required 模型是结构性 known-bad；
+- 一层 bypass 模型允许答案直接读取证据，是 learner/interface known-good；
+- held-out 组合、反事实替换和 relay-state patch 用来排除固定 pair 记忆与直接
+  bypass。
+
+这个载体只回答“提前监督在必须形成并使用中继状态时是否更有价值”。它不回答
+真正的多证据联合计算、长 token 距离、代码迁移或 MoE。
 
 ## Optional Formalization
 
@@ -298,10 +324,11 @@ Parked bridge:
 
 ## Boundary
 
-未经研究者修改和明确批准：
+本卡现已授权创建 parent/subanchors、Protocol、实现和顺序实验，并在证据改变
+判断时更新项目本地 anchor、story 和 `CURRENT.md`。
 
-- 不创建 parent anchor 或 sub-anchor；
-- 不写 Protocol；
-- 不实现或运行 NTP/MTP 实验；
-- 不更新 graph、sync、CURRENT、PROJECTS；
-- 不 commit 或 push。
+仍不自动授权：
+
+- 修改 graph 或 root sync；
+- external collaborator sync；
+- commit 或 push。

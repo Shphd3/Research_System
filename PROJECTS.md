@@ -18,6 +18,21 @@ Current-state registry for `Research_System`. Read after `AGENTS.md`, then read
 `Projects/kv_cache` is read-only unless the user explicitly authorizes edits.
 Only its `xyDeng` branch is managed here; never push its `main` branch.
 
+## Incubating Project — Diffusion Language Models
+
+| Role | Path / value |
+|---|---|
+| Theme | objective, sampling, and systems causes of the diffusion-LM quality--cost gap |
+| Project | `Projects/diffusion-language-models/` |
+| Graph | `Projects/graphs/diffusion_language_models.graph.yaml` |
+| State | literature audit complete; human Thinking Card approval required before formal anchors or experiments |
+| Current source | `Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md` |
+
+This new line does not replace the active A06 project or inherit its worker
+surface. Its candidate D00--D03 anchor decomposition remains draft. No remote
+workspace, protocol, job, or result record is authorized until the researcher
+approves or corrects the independent Thinking Card.
+
 ## Reading Order
 
 ```text
@@ -39,8 +54,10 @@ reading surface.
 | A05 | Why can ordinary top-1 routing collapse under apparently uniform features? | Failure mechanisms established under controlled and real-text audits. | `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md` |
 | A06 | Can route-relevant structure be discovered, preserved, and converted into expert utility? | Primary line; controlled utility chain complete, real-workload headroom gate active. | `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md` |
 | A07 | Does functional separation reduce common/rare interference? | Supporting controlled evidence; parked until A06 passes the real-workload gate. | `Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/` |
-| A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Exact K/V is branch-readable under all objectives; no registered MTP-specific readability or stable strong-use increment is established, while 5/5 nuisance compaction remains secondary. Relay-required carrier gate active. | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
+| A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Exact K/V is branch-readable under all objectives; no registered MTP-specific readability or stable strong-use increment is established, while 5/5 nuisance compaction remains secondary. Relay-required continuation moved to A13. | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
+| A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
+| A14 | Does hierarchical language composition preserve a shared low-rank state? | Conditional theorem verified and tree-aligned subspace geometry observed, but gold PPMI misses the strict rank budget, pretrained/trained bounds are vacuous, and the original composition control is content-confounded. One same-parent alternative-split decision remains. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_tree_low_rank_language_structure_anchor.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
 Primary route:
@@ -59,6 +76,17 @@ Supporting objective route:
 ```text
 A11 informative-future signal boundary
 -> A12 structured composition and standard-head use
+-> A13 task-property decomposition and necessary-relay utility
+```
+
+Independent representation-structure route:
+
+```text
+A14 conditional low-rank theorem
+-> held-out constituent subspace geometry
+-> pretrained/random architecture separation
+-> paired hierarchy-order intervention
+-> same-parent alternative-split and stability frontier
 ```
 
 Draft cross-line meeting route:
@@ -72,6 +100,23 @@ nominal context capacity
 -> query-conditioned retrieval utility
 -> held-out expert utility per unit cost
 ```
+
+Incubating diffusion-language-model route:
+
+```text
+D00 comparison contract
+-> D01 matched training-objective and data-repeat audit
+-> D02 fixed-denoiser unmasking-path audit
+-> D03 dense versus static/adaptive MoE audit
+```
+
+The current literature boundary is that pure masked diffusion remains weak on
+compute-normalized training and exact dependency-sensitive generation, while
+blockwise and AR--diffusion hybrids substantially improve the practical
+frontier. MoE improves active capacity and can improve routing/system
+efficiency, but no audited result establishes that it removes the denoising
+quality--parallelism trade-off. Source:
+`Projects/diffusion-language-models/README.md`.
 
 The proposed 2026-07-17 meeting theme is:
 
@@ -127,7 +172,7 @@ Current sources:
 - `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md`
 - `Projects/from-attention-to-search/main/experiments/A06/README.md`
 
-## A11 / A12 Supporting Boundary
+## A11 / A12 / A13 Supporting Boundary
 
 A11 establishes an earlier direct first-order signal from informative future
 targets, conditional hidden-to-parameter reachability, and a cross-position
@@ -181,6 +226,39 @@ Exactly one A12 decision:
 > run remain blocked until a structurally valid carrier has at least one
 > NTP-eligible scale and a frozen threshold.
 
+A13 resolves the relay-required carrier gate on a smaller controlled surface.
+After closing a query-conditioned carrier as unstable, it validated a
+single-value NTP relay and changed one auxiliary label at a time. The decisive
+answer-$A$ versus nuisance-$B$ relay-target comparison found
+$R_{\mathrm{relay}}=0.2315$ nats,
+$R_{\mathrm{bypass}}=0.0181$ nats, and a
+$0.2134$-nat interaction with 95% interval
+`[0.1646, 0.2585]`; all eight paired seeds had the expected relay and
+interaction signs. Every objective/path cell reached final accuracy `1.0` and
+every relay donor-use audit scored `1.0`.
+
+A13 establishes only a synthetic finite-budget sufficient condition:
+task-relevant earlier supervision helps when the supervised state is on the
+only answer path and is consumed by the ordinary head. It does not establish
+distance, composition, code/text transfer, long-context scaling, planning, or
+MoE utility.
+
+The frozen soft-relay Stage-0 audit then varied only the two-layer
+`ANSWER -> A` attention-logit penalty across `0`, `2`, `4`, and hard mask.
+All four NTP-only carriers reached final accuracy `1.0`, and the measured
+direct-path effect decreased while the relay effect and relay-reliance ratio
+increased at every level. However, the unpenalized condition reached at least
+`0.90` accuracy at the first positive checkpoint (`20` steps) in `8/8` seeds,
+so there was no common measured non-saturated window. Under the frozen stop
+rule, Stage 1 was not run; no soft-relay MTP-specific utility trend is
+identified.
+
+Exactly one A13 decision:
+
+> Decide whether to approve a measurement-only Stage-0 repair that records
+> every optimization step through step `40`, while preserving the data,
+> model, objectives, penalties, seeds, optimizer updates, and budgets.
+
 Current sources:
 
 - `Projects/from-attention-to-search/main/stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md`
@@ -192,6 +270,9 @@ Current sources:
 - `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/protocol.md`
 - `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md`
 - `Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md`
+- `Projects/from-attention-to-search/main/stories/13_mtp_task_property_decomposition/01_task_relevant_relay_supervision.md`
+- `Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/summary.md`
+- `Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_06_E01_soft_relay_mtp_ntp_audit/summary.md`
 
 ## Claim Boundary
 
@@ -216,6 +297,7 @@ Not supported:
 - repository code has positive held-out oracle routing headroom;
 - the four-expert phase switch scales or reduces wall-clock cost;
 - MTP has general compositional or real-workload superiority;
+- the A13 synthetic sufficient condition transfers to code, long context, or MoE;
 - a nominal million-token context is functionally usable;
 - feature specialization alone provides a useful long-context retrieval index.
 

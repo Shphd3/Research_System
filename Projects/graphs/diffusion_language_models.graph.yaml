@@ -1,0 +1,103 @@
+root: rq.diffusion_lm_failure
+
+ui:
+  layout: LR
+  expanded:
+    - rq.diffusion_lm_failure
+    - rq.diffusion_moe
+
+nodes:
+  - id: rq.diffusion_lm_failure
+    title: Why do diffusion language models still trail on important quality-cost planes?
+    type: question
+    summary: "Incubating question: separate training-objective inefficiency, unmasking-path error, and repeated-execution cost before attributing the gap to diffusion as a whole."
+    files:
+      - path: /Projects/diffusion-language-models/README.md
+        title: project entry
+      - path: /Projects/diffusion-language-models/main/problem_anchors/00_diffusion_language_model_failure_mechanism/00_diffusion_language_model_failure_mechanism_thinking_card_cn.md
+        title: pending human Thinking Card
+    status: draft
+    tags: [diffusion-lm, failure-mechanism, mainline-draft]
+
+  - id: source.diffusion_lm_evidence_audit
+    title: Literature and mechanism audit through 2026-07-17
+    type: source
+    summary: "Primary-source audit of masked diffusion, block and AR hybrids, likelihood evaluation, decoding order, training scaling, and MoE."
+    file: /Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
+    status: done
+    tags: [literature, mechanism, evidence-boundary]
+
+  - id: concept.three_plane_contract
+    title: Statistical, algorithmic, and systems planes must be separated
+    type: concept
+    summary: "Quality at matched training compute, quality per inference budget, and wall-clock latency at declared concurrency are different claims."
+    file: /Projects/diffusion-language-models/main/roadmap.md
+    status: draft
+    tags: [measurement, compute, latency]
+
+  - id: rq.diffusion_training_objective
+    title: Does random-mask any-order supervision waste compute?
+    type: question
+    summary: "Candidate D01: test objective and data-repeat effects under matched architecture, unique data, repeated tokens, and training FLOPs."
+    file: /Projects/diffusion-language-models/main/roadmap.md
+    status: draft
+    tags: [d01, objective, data-efficiency]
+
+  - id: rq.diffusion_sampling_path
+    title: Does parallel commitment create the exact-sequence gap?
+    type: question
+    summary: "Candidate D02: hold the denoiser fixed and vary reveal order, parallel width, lookahead, and correction under a common inference budget."
+    file: /Projects/diffusion-language-models/main/roadmap.md
+    status: draft
+    tags: [d02, sampling, dependency, unmasking]
+
+  - id: rq.diffusion_moe
+    title: Does MoE change diffusion quality or only per-pass cost?
+    type: question
+    summary: "Candidate D03: distinguish active-capacity quality, router load balance, timestep allocation, and expert-weight memory traffic."
+    files:
+      - path: /Projects/diffusion-language-models/main/roadmap.md
+        title: candidate D03 decomposition
+      - path: /Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
+        title: MoE evidence audit
+    status: draft
+    tags: [d03, moe, adaptive-compute, systems]
+
+  - id: claim.diffusion_moe_current_boundary
+    title: MoE helps capacity and routing efficiency but has not closed the core gap
+    type: claim
+    summary: "LLaDA-MoE proves feasibility, DiffusionGemma proves a low-batch deployment path, and expert-choice routing supports mask-ratio-adaptive capacity; none establishes that MoE removes sequence-dependency error."
+    file: /Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
+    status: done
+    tags: [moe, claim-boundary, literature-result]
+
+  - id: task.approve_diffusion_thinking_card
+    title: Approve or correct the diffusion-LM Thinking Card
+    type: task
+    summary: "Exactly one current decision: settle the mechanism guess, strongest rival, judgment-changing evidence, and D00-D03 order before any formal anchor or experiment."
+    file: /Projects/diffusion-language-models/main/problem_anchors/00_diffusion_language_model_failure_mechanism/00_diffusion_language_model_failure_mechanism_thinking_card_cn.md
+    status: active
+    tags: [next-decision, thinking-card, protocol-blocked]
+
+edges:
+  - from: source.diffusion_lm_evidence_audit
+    to: rq.diffusion_lm_failure
+    kind: informs
+  - from: rq.diffusion_lm_failure
+    to: concept.three_plane_contract
+    kind: operationalizes
+  - from: rq.diffusion_lm_failure
+    to: rq.diffusion_training_objective
+    kind: decomposes
+  - from: rq.diffusion_lm_failure
+    to: rq.diffusion_sampling_path
+    kind: decomposes
+  - from: rq.diffusion_lm_failure
+    to: rq.diffusion_moe
+    kind: decomposes
+  - from: claim.diffusion_moe_current_boundary
+    to: rq.diffusion_moe
+    kind: answers
+  - from: rq.diffusion_lm_failure
+    to: task.approve_diffusion_thinking_card
+    kind: leads_to

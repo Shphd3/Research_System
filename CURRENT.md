@@ -35,10 +35,12 @@ AI may then audit links and revise wording.
 | Held-out oracle routing headroom | Native Router loss minus the loss from expert choices selected on calibration data and evaluated on a separate test split | Decides whether real expert-function differences are large and stable enough to justify Router work | That a learned Router can capture the gap |
 | Mastery threshold $\tau$ | The standard-head accuracy used to declare the E04 task learned; Stage A chooses the largest eligible value from `0.80`, `0.90`, `0.95`, and `0.99` using NTP only | Freezes a non-saturated comparison point before any MTP result | A compositional algorithm or causal use of an intermediate state |
 | Functional retrieval loss gap $\Delta_s(k)$ | Held-out standard-head loss using the $k$ memory items selected by score $s$, minus loss using the full memory | Tests whether a selector preserves prediction quality at a matched budget | Million-token scaling, independent item utility, or MoE expert value |
+| AULC | Answer-NLL learning-curve area divided by its fixed step horizon | Measures ordinary-head finite-budget learning efficiency | Wall-clock speed or final capability |
+| Task-relevance relay interaction $\Delta_R$ | Answer-$A$ versus nuisance-$B$ AULC benefit under relay, minus the same benefit under bypass | Tests whether downstream relevance matters specifically when the early state is necessary | Code, long-context, composition, or MoE transfer |
 
 ## Current Snapshot
 
-Date: 2026-07-16
+Date: 2026-07-18
 
 Overall specialization mainline:
 
@@ -50,22 +52,26 @@ Source: [A06 research map](Projects/from-attention-to-search/main/problem_anchor
 
 Today's working focus:
 
-> Close the A11 exact source-K/V information audit and decide what carrier is
-> needed to test standard-head consumption without a direct branch bypass.
+> Decide whether a verified tree low-rank propagation theorem has a
+> non-vacuous empirical bridge to gold syntax, pretrained decoders, and a
+> paired hierarchy-training intervention.
 
-Source: [E02 summary](Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md) and [advisor-response note](daily_research_reports/0716/docs/a11_exact_source_kv_result_and_advisor_response_cn.md).
+Source: [A14 anchor](Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_tree_low_rank_language_structure_anchor.md) and [overall result](Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary.md).
 
-Result state: remote four-GPU job `pt-rqtb6bw0` succeeded. Same-contract replay
-passed. Exact layer-2 `U03` K/V was perfectly branch-readable under every
-objective and seed, but the registered informative-MTP readability increment
-was nonpositive in 4/5 seeds. The formal verdict is insufficient because the
-single-shuffle guard failed. A 5/5 informative-MTP Fisher nuisance-compaction
-pattern remains secondary.
+Result state: the theorem/implementation audit passed with maximum normalized
+violation `2.92e-8`. Gold PPMI constituents had a 34.2% held-out subspace
+advantage but required 657/2048 directions and missed the strict rank budget.
+Qwen and Pythia showed strong true-span and parent-child geometry, but their
+pretrained bound ratios were 10.80 and 1.77; the Pythia training increment did
+not replicate. In the paired causal intervention, all 12 descriptive
+tree-subspace effects were positive (mean `+0.1796`), all 12 composition
+effects were negative (mean `-0.0469`), latent rank tracked latent state count
+(`rho=0.949`), and no final hierarchy transition had a non-vacuous bound.
 
-Next action: decide how to realize a learnable `relay-required` carrier without
-an answer bypass, then complete a new Thinking Card. Do not run another
-objective, shared-unembedding, or K/V/Q comparison before the carrier and its
-non-saturation guard are approved.
+Next action: design one same-parent, same-token alternative-split experiment
+that traces prediction versus stability. Continue the propagation mechanism
+only if an out-of-sample operator beats the alternative split and has
+`B / ||H_parent||_F < 1`.
 
 ## Daily Ledger
 
@@ -295,6 +301,175 @@ answer bypass and a non-saturated shared-aux baseline before any new objective
 comparison.
 
 Sources: [summary](Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md), [detailed record](Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/detailed.md), and [advisor-response note](daily_research_reports/0716/docs/a11_exact_source_kv_result_and_advisor_response_cn.md).
+
+### 2026-07-16 — A13 task-relevant necessary-relay result
+
+Question: which minimal task property makes earlier future-style supervision
+useful to the ordinary next-token head?
+
+Action completed: created the A13 parent hierarchy and executed a staged
+carrier-first chain. The query-conditioned carrier was closed as unstable; an
+entropy-matched single-value NTP relay passed; two broad objective comparisons
+remained formally insufficient; fresh-seed one-label localization and
+answer-$A$ versus nuisance-$B$ controls were then executed.
+
+Measured result: the decisive $B$-versus-$A$ control passed. Relay utility was
+`0.2315` nats with interval `[0.1792, 0.2791]`; bypass utility was `0.0181`
+nats; the interaction was `0.2134` nats with interval
+`[0.1646, 0.2585]`. Relay utility and interaction were positive in `8/8`
+paired seeds. All four final capability cells and both relay donor-use audits
+were `1.0`.
+
+Confirmed: earlier supervision has finite-budget ordinary-head value when it
+names the downstream answer variable and is attached to a state on the only
+answer path.
+
+Weakened or rejected: token distance, target variability, a generic auxiliary
+head, or “NTP never sees the answer” are not sufficient explanations. Requiring
+every post-treatment objective arm to pass capability is also rejected as a
+performance inclusion rule.
+
+Current mechanism and reason: answer-aligned auxiliary credit trains the relay
+state toward the variable that the later ordinary head must consume; the same
+supervision has little marginal value when the answer can read the variable
+directly.
+
+Claim boundary: no general MTP, standard-implementation equivalence, long-range
+scaling, composition, paraphrase invariance, code/text transfer, planning, or
+MoE utility is established.
+
+Next decision: validate query-conditioned binding as a separate NTP-only
+carrier property before adding composition.
+
+Sources: [Chinese story](Projects/from-attention-to-search/main/stories/13_mtp_task_property_decomposition/01_task_relevant_relay_supervision_cn.md), [decisive summary](Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/summary.md), and [meeting-ready report](daily_research_reports/0717/mtp_long_horizon_compositional_workload/mtp_task_property_decisive_report_cn.md).
+
+### 2026-07-17 — A13 soft-relay Stage-0 stop
+
+Question: as the direct `ANSWER -> A` attention edge is progressively
+weakened, does informative-MTP utility grow with measured causal reliance on
+the relay rather than appear only under a hard mask?
+
+Action completed: froze penalties `0`, `2`, `4`, and hard mask; ran the
+NTP-only carrier audit on eight fresh seeds per path using four H100 GPUs; and
+applied the registered stop rule before any objective comparison.
+
+Measured result: every path reached final accuracy `1.0`. Across the four
+paths, the direct-deletion NLL effect decreased from `9.2764` to `0`, the
+wrong-relay donor effect increased from approximately `0` to `11.8856`, and
+the relay-reliance ratio increased from approximately `0` to `1`. The direct
+condition nevertheless reached `0.90` accuracy at step `20` in `8/8` seeds,
+the first positive checkpoint, so the common non-saturated-window gate failed.
+
+Confirmed: the frozen attention penalties cause an ordered shift in actual
+causal path use, not merely an ordered change in nominal attention strength.
+
+Weakened or rejected: the current 20-step measurement cadence is sufficient
+to identify a fair common early-learning window. No MTP hypothesis is rejected
+because shared-aux and informative-MTP were not run.
+
+Current mechanism and reason: weakening the direct edge moves answer control
+onto the relay, but it also slows NTP learning sharply; without resolving the
+early direct-condition learning curve, an apparent utility trend could be a
+ceiling or baseline-difficulty artifact.
+
+Claim boundary: the result does not identify informative-MTP utility, its
+continuity with relay reliance, a gradient-dose explanation, or transfer to
+code, natural language, long context, planning, or MoE.
+
+Next decision: approve or reject a measurement-only rerun that records every
+step through step `40` while preserving all data, model, objective, path,
+seed, optimization, and budget choices.
+
+Sources: [soft-relay summary](Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_06_E01_soft_relay_mtp_ntp_audit/summary.md) and [detailed record](Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_06_E01_soft_relay_mtp_ntp_audit/detailed.md).
+
+### 2026-07-17 — diffusion-language-model line incubation
+
+Question: why do diffusion language models still trail autoregressive models
+on important quality--cost comparisons, and does MoE repair the cause or only
+change per-forward capacity and systems cost?
+
+User-supplied phenomenon: “Diffusion语言模型结果不是那么好.” The user also
+requested a new research mainline, accurate anchors, independent experiments,
+and a specific MoE assessment.
+
+Action completed: audited primary literature through 2026-07-17; separated
+pure masked diffusion, block diffusion, joint AR--diffusion objectives, and
+AR-context/verification hybrids; created an independent project entry,
+candidate D00--D03 roadmap, literature evidence record, human Thinking Card,
+and thin graph. The existing expert-specialization graph was not edited.
+
+Direct literature result: pure masked diffusion remains disadvantaged in the
+studied compute-normalized training regime and on dependency-sensitive exact
+sequence generation. Blockwise and AR--diffusion hybrids substantially improve
+the practical frontier. MoE establishes sparse-capacity and routing/system
+benefits; expert-choice routing gives a matched-FLOP result for allocating more
+capacity at low mask ratios, but no audited result shows that MoE removes the
+unmasking quality--parallelism trade-off.
+
+Measured local result: none. The user has not yet supplied or approved the
+mechanism guess, strongest rival, judgment-changing evidence, and exactly one
+scientific decision required for a formal anchor. Therefore no formal anchor,
+Protocol, remote workspace mutation, cluster job, or result record was created.
+
+Claim boundary: the literature audit does not establish a universal diffusion
+failure, a single algorithm that is best under every deployment regime, a
+local causal reproduction, or semantic MoE expert specialization.
+
+Next decision: approve, modify, or reject the diffusion Thinking Card and the
+D00 comparison-contract -> D01 objective -> D02 sampler -> D03 MoE order.
+
+Sources: [project entry](Projects/diffusion-language-models/README.md),
+[Thinking Card](Projects/diffusion-language-models/main/problem_anchors/00_diffusion_language_model_failure_mechanism/00_diffusion_language_model_failure_mechanism_thinking_card_cn.md),
+[evidence audit](Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md),
+and [project graph](Projects/graphs/diffusion_language_models.graph.yaml).
+
+### 2026-07-18 — A14 tree low-rank language-structure audit
+
+Question: does a shared low-dimensional leaf state plus stable hierarchical
+composition give a non-vacuous explanation of low-rank language-model node
+representations?
+
+Action completed: formalized and proved the conditional propagation theorem;
+created approved protocols; implemented 16 passing unit tests; ran 809
+synthetic conditions, a gold-treebank PPMI audit, pretrained Qwen/Pythia with
+identical random baselines, and 24 paired small-Transformer training runs;
+audited and copied all central figures; wrote per-experiment and overall result
+records; and updated the bilingual anchor.
+
+Measured result: E01 passed with maximum normalized violation `2.92e-8`.
+E02 found a 34.2% gold-constituent projection advantage but selected rank
+657/2048. E03 found Qwen leaf/composition advantages 27.7%/66.5%, yet its
+bound ratio was 10.80; Pythia did not replicate the training-created
+composition effect. E04 produced an all-pair descriptive tree effect `+0.1796`
+and composition effect `-0.0469`, rank correlation `0.949`, and 0/48
+non-vacuous final bounds. Its registered verdict remained insufficient because
+0/12 pairs passed the root-probe equality guard.
+
+Confirmed by direct evidence: the conditional theorem is implemented
+correctly; true spans have shared subspace geometry in the tested coordinates;
+and hierarchy-aligned order can causally create tree-boundary compression in
+the controlled generator.
+
+Weakened or rejected: universal absolute leaf low rank, a replicated
+training-created shared-linear parent operator, and the claim that the current
+recursive norm bound explains pretrained or trained geometry. Cross-parent
+permutation is also weakened as a syntax control because it changes child
+content while the parent is their literal concatenation.
+
+Current mechanism and reason: the evidence favors scale- or tree-conditioned
+subspace selection/compression over one globally stable linear propagation
+operator. This is an AI evidence synthesis; the researcher has not supplied a
+separate closed-book post-run judgment.
+
+Claim boundary: no coordinate-invariant language rank, internal gold-tree
+construction, causal pretrained-LLM computation, or behavioral necessity is
+established.
+
+Next decision: run one same-parent, same-token alternative-split and
+prediction/stability-frontier experiment; continue only if the same operator
+beats that control and gives a non-vacuous held-out bound.
+
+Sources: [overall summary](Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary.md), [overall detailed record](Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/detailed.md), and [bilingual anchor](Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_tree_low_rank_language_structure_anchor_cn.md).
 
 ## Entry Template
 
