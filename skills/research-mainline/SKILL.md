@@ -148,11 +148,18 @@ archive/<snapshot_id>/<snapshot_id>_cn.md
 Daily report folders are date-first because they record work for a day:
 
 ```text
+daily_research_reports/MMDD/focus.md
 daily_research_reports/MMDD/<topic>/
 ```
 
-Daily reports do not replace anchors or experiment records. If the day changes
-the hypothesis, evidence, boundary, or next decision, update the anchor too.
+Keep exactly one `focus.md` per research day. It owns the human's daily idea,
+progress, closure, and resume action, and is created from
+`templates/research_process/focus_writing_template.md`. Other daily folders may
+hold meeting or working material, but must not duplicate daily state.
+
+Daily focus files do not replace anchors or experiment records. If the day
+changes the hypothesis, evidence, boundary, or next decision, update the
+smallest canonical owning artifact too.
 
 ## Core Artifact Chain
 

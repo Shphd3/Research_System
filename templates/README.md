@@ -13,7 +13,7 @@ prompt, or README.
 |---|---|
 | `research_process/` | Templates for starting, structuring, or continuing a research iteration. |
 | `reading/` | Templates for paper, blog, and reading-note work. |
-| `meeting/` | Templates for formal meeting briefs and private meeting notes. |
+| `meeting/` | Templates for human-completed meeting outlines and private meeting notes. |
 | `archive/` | Historical templates kept for compatibility only. |
 
 ## Research Process Templates
@@ -21,6 +21,7 @@ prompt, or README.
 | Template | Use |
 |---|---|
 | `research_process/thinking_card_template.md` | Independent human-written Thinking Card before AI audit and formal anchor construction. |
+| `research_process/focus_writing_template.md` | The sole daily idea/progress and routine group-meeting outline: one research center, several core questions, a central judgment, and a question-by-question evidence closure. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
 
 ## Reading Templates
@@ -40,7 +41,7 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_brief_template.md` | Human-first Chinese executive-summary-only meeting brief. AI audits and revises only after the researcher drafts the judgment. |
+| `meeting/meeting_outline_template.md` | Chinese advisor-discussion outline. AI supplies topic prompts and conclusion-to-experiment mappings; the researcher writes the explanation. |
 | `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis, mainline update, and execution action. Save as `meeting_notes.md`. |
 
 ## Archive
@@ -52,8 +53,8 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 ## Rules
 
-- Daily notes should stay minimal and free-form; do not recreate a daily-card
-  template system.
+- Keep exactly one `daily_research_reports/MMDD/focus.md` per research day; do
+  not recreate a second daily-card or current-log template.
 - Do not create separate `recordings.md` files by default. Put meeting-derived
   notes and diagnosis in `meeting_notes.md`.
 - Historical archive snapshots may contain old template files. Do not use them

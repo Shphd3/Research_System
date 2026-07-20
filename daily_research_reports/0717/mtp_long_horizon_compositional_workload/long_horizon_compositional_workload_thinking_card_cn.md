@@ -325,7 +325,8 @@ Parked bridge:
 ## Boundary
 
 本卡现已授权创建 parent/subanchors、Protocol、实现和顺序实验，并在证据改变
-判断时更新项目本地 anchor、story 和 `CURRENT.md`。
+判断时更新项目本地 anchor、story，以及当天的
+`daily_research_reports/MMDD/focus.md`。
 
 仍不自动授权：
 

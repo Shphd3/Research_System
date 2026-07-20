@@ -2,6 +2,11 @@
 
 Use this shape for a small mainline experiment or daily sandbox.
 
+Before creating this folder, close broad exploration around one exact
+advancement point in the root day's
+`daily_research_reports/MMDD/focus.md`. Do not duplicate that daily file inside
+the project experiment folder.
+
 ```text
 <topic>_thinking_card.md
 <topic>_anchor.md

@@ -68,7 +68,111 @@ Exactly one next decision:
 Only then should AI revise the wording, verify source links, separate
 observation from interpretation, and protect the claim boundary. If the human
 draft is missing, provide a blank scaffold and audit questions rather than a
-finished meeting brief.
+finished meeting explanation.
+
+## Divergence-Convergence Rule
+
+Research discussion must alternate between bounded divergence and explicit
+convergence. Continuous brainstorming is not progress.
+
+Use divergence only to produce a small set of genuinely different candidate
+mechanisms, rivals, or questions. Unless the user explicitly asks for a wider
+survey, propose at most three candidates. Then stop and require a decision:
+
+```text
+pursue one candidate
+combine two only if they make the same testable prediction
+park the rest
+```
+
+Do not generate another layer of possibilities before the current candidates
+have been ranked by mainline relevance and ability to change belief. Default
+back to convergence after one divergent round.
+
+## Exact Advancement Point
+
+Before a substantial daily research session, define exactly one advancement
+point:
+
+```text
+By the end of this session, I will make [one object or relation] clear enough
+to decide [one decision], by writing [one human-owned output], with completion
+defined as [one inspectable criterion].
+```
+
+An advancement point is a clarified judgment, rejected explanation, frozen
+definition, approved decision, or evidence-backed boundary. Reading papers,
+writing code, launching runs, collecting plots, and discussing possibilities
+are activities. They count as progress only when they close the stated
+advancement point.
+
+Name the destination before starting:
+
+```text
+unformed mechanism judgment -> Thinking Card
+current question or claim -> anchor
+approved test decision -> protocol.md
+measured result -> summary.md / detailed.md / anchor update
+daily idea, progress, closure, and resume -> daily_research_reports/MMDD/focus.md
+```
+
+The daily focus is the only retained daily ledger, not a second source of
+project truth. Do not create another current log or daily-card layer.
+Promote its judgment into a Thinking Card only when it becomes a new formal
+question; otherwise continue from the existing anchor or protocol.
+
+## Writing-To-Focus Protocol
+
+At the start of each research day, create or reopen:
+
+```text
+daily_research_reports/MMDD/focus.md
+```
+
+Create it from `templates/research_process/focus_writing_template.md`.
+Set its title to the exact research question at the center of that day, not a
+date or generic daily-focus label.
+In this artifact, the title, core-question list, and shared completion standard
+together instantiate the one advancement point; do not add a separate task
+list.
+
+The researcher writes first. AI guides the writing through one blocking
+question at a time:
+
+```text
+human lists the core meeting questions under one research center
+-> human writes one central judgment and mechanism chain
+-> AI identifies one blocking ambiguity
+-> AI asks one question and waits
+-> human rewrites in their own words
+-> human answers every core question from memory
+-> AI checks each answer, experiment mapping, and boundary
+```
+
+AI must not draft the researcher's final idea paragraph. It may provide a
+sentence skeleton, define an unclear term, expose a hidden assumption, or give
+a counterexample, but the researcher must write the claim, mechanism, rival,
+falsifier, and boundary.
+
+The core questions may be several, but they must jointly decide one central
+research question. Convergence is complete only when the researcher can state:
+
+```text
+one central claim
+one mechanism chain
+one strongest rival
+evidence that would change the claim
+one direct answer, decisive evidence or missing experiment, and cannot-claim
+boundary for every core question
+exactly one next decision
+```
+
+At session end, the researcher writes every answer from memory. AI may suggest
+which existing experiment supports an answer, or the smallest missing
+experiment, but the researcher confirms the mapping and boundary. End with one
+overall advisor decision and one resume action. Update the smallest canonical
+owning artifact only if the mainline changed; otherwise record `No mainline
+update today.`
 
 ## Question-Before-Method Rule
 
@@ -196,7 +300,7 @@ why it matters for the current decision:
 what it cannot prove:
 ```
 
-In Chinese conversation and Chinese meeting briefs, explain the Chinese meaning
+In Chinese conversation and Chinese meeting outlines, explain the Chinese meaning
 first and put the reusable English term in parentheses. In canonical English
 artifacts, use a `Terminology / Definitions` section near the top when terms
 are not self-evident. Do not make the reader infer definitions from code,

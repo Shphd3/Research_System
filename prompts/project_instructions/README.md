@@ -6,7 +6,8 @@ Current examples:
 
 - `research_progress_project_prompt.md`: compact ChatGPT Project instructions
   for sync-anchor context, conclusion-first correction, creative exploration,
-  and explanation followed by understanding checks.
+  bounded convergence through human writing, and explanation followed by
+  understanding checks.
 - `paper_reading_project_prompt.md`: paper-reading AI prompt for paper/blog reading anchored to the current mainline.
 
 Important: web-side AI may only see `Research_System`, not project subfolders

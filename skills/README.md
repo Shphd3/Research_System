@@ -14,12 +14,12 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
 | Skill | Use |
 |---|---|
-| `research-progress-core` | Governing research paradigm: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. |
+| `research-progress-core` | Governing research paradigm: bounded divergence, one exact advancement point, human-first focus writing, falsifiable hypothesis, minimal test, evidence, failure analysis, and refined judgment. |
 | `research-mainline` | Maintain compact project anchors, result records, and project organization; graph, root sync, external collaborator sync, handoff, commit, and push actions require explicit user request. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Audit a subject-bearing independent human Thinking Card, then write sections 1-8 of the formal anchor after approval. |
 | `experiment-card-writer` | Write `protocol.md`, `summary.md`, and `detailed.md` from anchors. |
-| `meeting-brief-writer` | Revise a human-first, executive-summary-only advisor brief. First apply `templates/meeting/meeting_brief_template.md`. |
+| `meeting-outline-writer` | Use the daily `focus.md` as the routine speaking outline; create a separate advisor outline with topic and experiment mappings only for multi-focus or explicitly requested meetings. |
 | `handoff-report-writer` | Package existing anchor, protocol, summary, detailed, figures, tables, and finalized meeting material for collaborator/web/external handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
@@ -31,12 +31,12 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 
 | Layer | Skill | Owns | Does not own |
 |---|---|---|---|
-| Research paradigm | `research-progress-core` | What counts as research progress: physical prior, falsifiable hypothesis, operational definition, minimal test, metric plus visual evidence, failure analysis, and refined hypothesis. | Project-specific paths, platform commands, or tool adapters. |
+| Research paradigm | `research-progress-core` | What counts as progress: bounded divergence, a human-written focused idea, one decision-bearing advancement point, falsifiable hypothesis, minimal test, evidence, failure analysis, and refined judgment. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests with operational definitions, stage-local evidence, failure meaning, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |
-| Meeting brief | `meeting-brief-writer` | Human-first executive summary: question, initial judgment, result, mechanism interpretation, evidence, boundary, and one action. | Writing the human's first judgment, packaging, external sync, creating new claims, replacing source records. |
-| External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Writing the meeting brief itself; creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
+| Meeting outline | `meeting-outline-writer` | Routine `focus.md` speaking structure; when separately justified, topic order, prompts, experiment mapping, result loops, and post-draft audit. | Writing the researcher's answers, duplicating `focus.md`, automatically creating a final brief, packaging, external sync, or creating new claims. |
+| External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Writing meeting material itself; creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |
 
@@ -92,11 +92,11 @@ Root sync, external collaborator repo sync, handoff reports, graph edits,
 commits, and pushes are explicit follow-up actions only.
 
 Terminology is part of the artifact contract. Any anchor, protocol, summary,
-detailed record, story, meeting brief, or viewer that uses non-obvious
+detailed record, story, meeting outline, or viewer that uses non-obvious
 terms, English jargon, abbreviations, metric names, condition labels, model
 variants, or project shorthand must define them before using them as evidence.
 Use `Terminology / Definitions` in English canonical artifacts and `术语解释`
-in Chinese companions or meeting briefs.
+in Chinese companions or meeting outlines.
 
 Minimum definition:
 

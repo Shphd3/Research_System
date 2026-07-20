@@ -1,26 +1,27 @@
 # 会议材料
 
-组会、导师沟通和会后记录默认放在：
+单一当日研究中心的会前讲述默认直接使用当天 `focus.md`。会后记录放在：
 
 ```text
 daily_research_reports/MMDD/meetings/
-  <topic>_meeting_brief_cn.md
   meeting_notes.md
   slide_outline.md
 ```
 
-会前正式简报使用：
+只有跨多个 focus、跨研究线或明确要求独立提纲时，才使用：
 
 ```text
-templates/meeting/meeting_brief_template.md
+templates/meeting/meeting_outline_template.md
+daily_research_reports/MMDD/meetings/<topic>_meeting_outline_cn.md
 ```
 
-正式简报只保留执行摘要：研究问题、人的初始判断、本次结果、机制解释、
-决定性证据、结论边界和一个执行动作。研究者先写，AI再审计和修改。它不是
+提纲按主题组织。AI 只提供讲述思路、结论与实验的对应关系和
+待补问题；研究者用自己的话完成讲解，AI 再审计证据与边界。它不是
 实验流水账，也不是 `summary.md` 或 `detailed.md` 的替代品。
 
-涉及实验结果时，`summary.md` 和 `detailed.md` 仍必须能独立阅读；会议简报只
-引用其中已经成立的结论和核心证据。
+涉及实验结果时，只按“问题—实验—结果—结论—边界—下一步”闭环
+讲述。`summary.md` 和 `detailed.md` 仍必须能独立阅读；提纲只引用其中
+已经成立的结论和核心证据。
 
 会议材料应优先服务于结论边界：
 

@@ -32,7 +32,7 @@ Before writing:
 1. Read repository `AGENTS.md` and `PROJECTS.md`.
 2. Read the line README and current story if one exists.
 3. Read relevant anchors.
-4. Read relevant protocols, summaries, detailed records, meeting briefs, and
+4. Read relevant protocols, summaries, detailed records, human-completed meeting outlines, and
    old story drafts.
 5. Do not rely on chat history as the source of truth.
 

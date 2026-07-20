@@ -6,33 +6,19 @@ The goal is to preserve research judgment: project graph, problem anchors,
 evidence, claim boundaries, protocols, result records, stories, and meeting
 materials.
 
-## Current Research Snapshot
+## State Location
 
-The project map lives in `PROJECTS.md`; today's resume point and daily research
-ledger live in `CURRENT.md`. The compact web-side research line lives in:
-
-```text
-sync/S000_current_specialization/
-```
-
-The active specialization line currently runs:
+Project routes, claim boundaries, and project-level next decisions live only in
+`PROJECTS.md`. Each day's human idea, progress, and resume point live in
+`daily_research_reports/MMDD/focus.md`. Compact web-side research lines live
+under:
 
 ```text
-05 failure mechanism
--> 06 geometry, preservation, expert utility, and sparse discovery
--> 06 real-workload utility headroom gate
--> 07 interference value only after the gate passes
+sync/
 ```
 
-The project-level next decision is narrow: decide whether unfiltered
-repository-level code completion has positive, cross-split-stable held-out
-oracle routing headroom after registered nuisance controls.
-
-For the 2026-07-17 group meeting, a separate draft cross-line theme asks what a
-long-context Router should optimize so that selected evidence preserves the
-ordinary prediction head's decision under a fixed budget. This working theme is
-published in `sync/S000_current_specialization/research_lines/13_long_context_functional_retrieval_working_theme_cn.md`;
-it does not replace the A06 decision or authorize an experiment.
+Do not copy changing research conclusions into this README; use it only for
+repository orientation.
 
 Canonical research artifacts are written in English by default. Chinese
 companion files are allowed when useful; add `_cn` before the extension, for
@@ -43,15 +29,18 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 - `AGENTS.md`: general Codex rules for this repository.
 - `PROJECTS.md`: current project registry, active route, graph hub, claim
   boundary, and next decision.
-- `CURRENT.md`: today's focus, completed progress, claim boundary, and resume
-  action; it links to the authoritative source artifacts.
-- `sync/S000_current_specialization/`: published research-line summaries and
-  the generated link-safe full anchor mirror. Republish it only through
+- `daily_research_reports/MMDD/focus.md`: one day's human-written idea,
+  group-meeting questions, question-by-question closure, and resume action;
+  create it from the maintained focus template.
+- `sync/`: explicitly published research-line summaries and generated
+  link-safe anchor mirrors. Use the current entry named in `PROJECTS.md` and
+  republish mirrors only through
   `skills/research-mainline/scripts/publish_anchor_mirror.py`.
 
 ## Working Areas
 
-- `daily_research_reports/`: dated folders for daily cards, meeting materials, experiment summaries, and report bundles.
+- `daily_research_reports/`: one daily `focus.md` plus dated meeting materials,
+  experiment summaries, and report bundles.
 - `paper_reading/`: literature cards and reading notes.
 - `skills/`: repo-tracked source copies of personal Codex skills.
 - `sync/`: compact research-line summaries and reusable current-state maps.
@@ -61,38 +50,48 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 
 ## Daily Loop
 
-1. Before AI use, write today's question, current mechanism guess, strongest
-   rival, uncertainty, mind-changing evidence, and one decision.
-2. Read `PROJECTS.md`, then `CURRENT.md`, then the relevant graph under
-   `Projects/graphs/` and the linked problem anchor, experiment result, paper
-   note, or sync note.
-3. Decide whether today's work updates the graph, anchor, claim boundary, or
-   next decision.
-4. Update the compact resume point in `CURRENT.md`; write a detailed daily
-   card, anchor update, protocol, or result record only when needed.
-5. At the end of the day, close source material and write the direct result,
-   changed belief, claim boundary, and next decision from memory. AI audits and
-   revises only after this human draft.
-6. Park side thoughts instead of chasing them during the current task.
-7. Update anchors only when evidence changes the route, claim boundary,
+1. Create or reopen `daily_research_reports/MMDD/focus.md` from
+   `templates/research_process/focus_writing_template.md`, replace its title
+   with the day's exact central research question, then list the core questions
+   that the group meeting must answer. All questions must serve one overall
+   decision.
+2. Read `PROJECTS.md`, today's `focus.md`, then the relevant graph under
+   `Projects/graphs/` and only the linked problem anchor, experiment result,
+   paper note, or sync note needed for that advancement point.
+3. If exploration is needed, generate at most three distinct candidates,
+   select one, and park the rest before further work.
+4. Write the four-sentence central judgment in the researcher's own words. AI
+   asks one blocking question at a time; the researcher revises the same
+   section in place.
+5. Perform only the derivation, reading, diagnostic, or approved experiment
+   needed to close the advancement point.
+6. At the end of the day, close source material and answer every listed
+   question from memory. Each answer has one decisive experiment or missing-
+   experiment marker and one cannot-claim boundary. Finish with one overall
+   advisor decision and one next action. AI audits only after this human draft.
+7. Park side thoughts instead of chasing them during the current task.
+8. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
-8. Do not update root sync, package handoff reports, edit graph manifests,
+9. Do not update root sync, package handoff reports, edit graph manifests,
    commit, or push unless explicitly requested.
 
-Daily notes should be placed at `daily_research_reports/MMDD/` when useful.
-There is no maintained daily-card template; keep daily notes minimal and
-free-form.
+Each research day has exactly one daily state file:
+`daily_research_reports/MMDD/focus.md`. It is retained as the human's daily
+idea/progress ledger, but it does not replace `PROJECTS.md`, anchors, protocols,
+or result records. Do not create a second daily card, current log, or parallel
+research-state file.
 
 Reusable templates live in `templates/`. Do not create new reusable templates
 inside daily, paper-reading, docs, or project folders by default.
 
-Class notes and side thoughts should stay inside `daily_card.md` by default.
-Use `Class Notes` for class points, and `Small Thought Parking Lot` for side
-ideas that should not interrupt the current task.
+Class notes, meeting materials, and side documents may still live under the
+dated folder, but they do not duplicate the role of `focus.md`. Park side ideas
+outside the active focus unless they change its one next decision.
 
-Meeting materials should be placed at `daily_research_reports/MMDD/meetings/`.
-The final meeting brief contains only the executive summary and starts from a
-human-written draft.
+For a routine single-center group meeting, the completed daily `focus.md` is
+the speaking outline. Use `daily_research_reports/MMDD/meetings/` only when a
+meeting combines several daily foci or research lines, or when a separate
+outline is explicitly requested. A finished brief is not created by default.
 
 ## Physical-Prior-First Loop
 

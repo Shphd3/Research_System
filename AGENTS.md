@@ -10,8 +10,8 @@ experiment codebase.
   next decision needed for the current question.
 - Canonical research artifacts are English unless the user explicitly chooses
   another language. Chinese companions use `_cn.md`.
-- An independent Thinking Card may preserve the user's Chinese mechanism
-  judgment.
+- An independent Thinking Card and the human-owned daily focus may preserve the
+  user's Chinese mechanism judgment.
 - Define technical terms in plain Chinese before reusing English names or
   abbreviations in conversation.
 - Treat user ideas as hypotheses to audit. Point out undefined objects, hidden
@@ -27,7 +27,8 @@ experiment codebase.
 For research work:
 
 1. Read `PROJECTS.md`.
-2. Read `CURRENT.md` for today's focus and resume point.
+2. Read `daily_research_reports/MMDD/focus.md` for today's human idea, focus,
+   and resume point when it exists.
 3. Identify the active project and worker surface.
 4. Read the graph named in `PROJECTS.md`.
 5. Read only the linked anchor, story, protocol, result, meeting note, paper
@@ -43,18 +44,21 @@ The human owns the initial judgment and final approval. AI retrieves, audits,
 formalizes, checks, and edits.
 
 ```text
-human Thinking Card
--> AI logic audit
--> human correction / approval
--> formal anchor
+daily focus: human advancement point + current idea
+-> AI focus audit
+-> existing anchor work, or human Thinking Card for a new formal question
+-> human correction / approval when a Thinking Card is needed
+-> formal anchor when a new question is promoted
 -> approved protocol
 -> execution and evidence record
 -> human closed-book summary
 -> AI evidence and boundary audit
--> anchor / CURRENT.md update
+-> canonical research artifact update when needed
+-> daily focus closure
 ```
 
-Before AI writes a formal anchor or final meeting brief, the human should state:
+Before AI writes a formal anchor or prepares a meeting outline, the human
+should state:
 
 ```text
 phenomenon
@@ -83,13 +87,57 @@ exactly one next decision
 
 AI then verifies sources and wording without strengthening the claim.
 
+## Focus And Writing
+
+Do not keep a research question in permanent divergence. One divergent round
+may propose at most three genuinely different candidates unless the user asks
+for a wider survey. Then choose one to pursue and park the rest before
+generating more possibilities.
+
+Every substantial work session must have exactly one advancement point:
+
+```text
+By the end of this session, I will make [one object or relation] clear enough
+to decide [one decision], by writing [one human-owned output], with completion
+defined as [one inspectable criterion].
+```
+
+Reading, coding, running, plotting, and discussion are activities, not
+advancement points. They count only when they clarify or reject a judgment,
+freeze a definition, change a claim boundary, or enable the stated decision.
+
+Each research day keeps exactly one retained focus file:
+
+```text
+daily_research_reports/MMDD/focus.md
+```
+
+Create it from `templates/research_process/focus_writing_template.md`. The
+title is the exact research question at the center of that day, never a generic
+date or `Daily Focus` label. Under it, the researcher lists the few core
+questions that must be answered in the group meeting. They are subquestions of
+one advancement point, not parallel research directions. The researcher writes
+the four-sentence central judgment and one direct answer for each question. AI
+identifies only the most blocking ambiguity, asks one question, waits for the
+answer, maps answers to existing or missing experiments, and asks the
+researcher to revise in place. AI must not write the answers for the
+researcher.
+
+The title, core-question list, and shared completion standard together define
+the single advancement point; do not add a separate activity checklist.
+
+The daily focus file owns the human's daily idea, progress, and resume point.
+It does not own project truth. If evidence changes a hypothesis, boundary, or
+next decision, update the relevant anchor, result record, protocol, story, or
+`PROJECTS.md` as well.
+
 ## State Ownership
 
 | Surface | Owns |
 |---|---|
 | `AGENTS.md` | stable repository behavior and hard boundaries |
 | `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `CURRENT.md` | today's focus, progress, resume action, and append-only dated ledger |
+| `daily_research_reports/MMDD/focus.md` | one day's human idea, core meeting questions, question-by-question closure, routine speaking outline, and resume action |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
 | Thinking Card | human's initial mechanism judgment and uncertainty |
 | anchor | one adjudicable research design and its current boundary |
@@ -198,16 +246,36 @@ affects next decision? yes/no/unclear
 recommendation: pursue / park / ignore
 ```
 
-## Meeting Brief
+## Meeting Preparation
 
-The final meeting brief contains only the executive summary defined by
-`templates/meeting/meeting_brief_template.md`. The researcher writes the first
-judgment; AI audits and revises afterward. Background, derivations, complete
-tables, and timelines remain in anchors and result records.
+For a routine meeting around one daily research center, the completed
+`daily_research_reports/MMDD/focus.md` is the default speaking outline. Do not
+create another meeting document that repeats its questions, answers, or
+evidence mapping.
+
+Use `templates/meeting/meeting_outline_template.md` only when the meeting
+combines several daily foci or research lines, or when the user explicitly asks
+for a separate meeting outline. It is still human-completed, not a finished
+brief. AI may propose speaking logic, identify unclear points, and map each
+conclusion to an existing or missing experiment. The researcher writes the
+actual explanation; AI audits evidence, boundaries, and order afterward.
+
+Present every completed experiment as one loop:
+
+```text
+question -> decisive experiment -> direct result -> conclusion
+-> cannot-claim boundary -> next decision
+```
+
+Do not stack derivations, formulas, complete tables, or run timelines in the
+speaking path. Keep them in anchors and result records. Do not create a
+separate final brief unless the researcher explicitly requests it after
+completing the outline.
 
 ## Explicit Publication And Sync
 
-Default behavior updates only project-local sources and `CURRENT.md`.
+Default behavior updates only project-local sources and today's
+`daily_research_reports/MMDD/focus.md`.
 
 These actions require an explicit user request:
 
@@ -264,7 +332,7 @@ Use `$...$` for inline formulas and `$$...$$` for display formulas.
 Keep the root focused on:
 
 ```text
-AGENTS.md  PROJECTS.md  CURRENT.md  README.md
+AGENTS.md  PROJECTS.md  README.md
 Projects/  sync/  templates/  prompts/  skills/
 paper_reading/  papers/  daily_research_reports/  docs/
 ```
@@ -287,7 +355,7 @@ Use repository skills when the task matches:
 - `research-progress-core`: research logic and uncertainty reduction.
 - `problem-anchor-writer`: Thinking Card audit and anchor construction.
 - `experiment-card-writer`: protocol, summary, and detailed records.
-- `meeting-brief-writer`: human-first executive summary.
+- `meeting-outline-writer`: AI-supported, human-completed advisor outline.
 - `research-mainline`: project organization and explicit publication.
 - `research-graph-sop`: thin graph maintenance.
 - `handoff-report-writer`: explicit curated handoff packaging.

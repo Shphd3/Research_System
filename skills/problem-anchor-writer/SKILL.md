@@ -164,7 +164,7 @@ human closed-book summary
 -> AI evidence and boundary audit
 -> summary.md / detailed.md update
 -> anchor sections 7 and 8 update
--> CURRENT.md next action update
+-> daily_research_reports/MMDD/focus.md closure
 ```
 
 The human summary states the question, direct result, confirmed and weakened

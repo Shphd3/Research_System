@@ -1,9 +1,14 @@
 # Thinking Card
 
 This is the researcher's independent first judgment. Fill it before asking AI
-to write a formal anchor or final meeting brief. `Unknown` is a valid answer.
+to write a formal anchor or prepare a meeting outline. `Unknown` is a valid answer.
 AI may audit and propose edits, but the researcher approves every change to the
 judgment.
+
+If the idea is still broad or keeps generating new branches, first use
+`templates/research_process/focus_writing_template.md` to select one exact
+advancement point. The daily focus retains that day's reasoning; the approved
+mechanism judgment belongs here.
 
 ## Human Draft
 
