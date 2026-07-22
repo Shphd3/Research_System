@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">叶子低维不能推出父空间低维的最小反例</title>
+  <desc id="desc">左右孩子都位于同一个一维空间。左角色映射保留方向 e1，右角色映射到独立方向 e2，因此父节点可达空间变成二维。</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+    </marker>
+    <style>
+      .title { font: 700 30px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #111827; }
+      .head { font: 700 27px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #111827; }
+      .body { font: 500 23px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #1f2937; }
+      .small { font: 500 21px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #374151; }
+      .arrow-label { font: 700 22px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+      .conclusion { font: 700 25px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #7c2d12; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="650" fill="#ffffff"/>
+  <text x="600" y="42" text-anchor="middle" class="title">最小反例：同一叶子空间，经不同角色映射后产生新方向</text>
+
+  <rect x="285" y="72" width="630" height="130" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="600" y="116" text-anchor="middle" class="head">父节点：hₚ = W_L h_L + W_R h_R</text>
+  <text x="600" y="158" text-anchor="middle" class="body">可达空间 = span(e₁, e₂)</text>
+  <text x="600" y="190" text-anchor="middle" class="small">维数从 1 增加到 2</text>
+
+  <path d="M 315 432 C 330 345, 405 265, 500 205" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+  <path d="M 885 432 C 870 345, 795 265, 700 205" fill="none" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+
+  <text x="335" y="310" class="arrow-label" fill="#1d4ed8">左角色 W_L</text>
+  <text x="302" y="344" class="small">W_L S₀ = span(e₁)</text>
+  <text x="742" y="310" class="arrow-label" fill="#c2410c">右角色 W_R</text>
+  <text x="735" y="344" class="small">W_R S₀ = span(e₂)</text>
+
+  <rect x="70" y="430" width="460" height="125" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="300" y="474" text-anchor="middle" class="head">左孩子 h_L</text>
+  <text x="300" y="516" text-anchor="middle" class="body">h_L ∈ S₀ = span(e₁)</text>
+  <text x="300" y="545" text-anchor="middle" class="small">共享的一维叶子空间</text>
+
+  <rect x="670" y="430" width="460" height="125" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="900" y="474" text-anchor="middle" class="head">右孩子 h_R</text>
+  <text x="900" y="516" text-anchor="middle" class="body">h_R ∈ S₀ = span(e₁)</text>
+  <text x="900" y="545" text-anchor="middle" class="small">共享的一维叶子空间</text>
+
+  <rect x="105" y="586" width="990" height="48" rx="12" fill="#ffedd5"/>
+  <text x="600" y="619" text-anchor="middle" class="conclusion">叶子共享一维空间 ≠ 父节点仍在同一空间；角色映射决定是否产生新方向</text>
+</svg>

@@ -58,7 +58,7 @@ reading surface.
 | A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Exact K/V is branch-readable under all objectives; no registered MTP-specific readability or stable strong-use increment is established, while 5/5 nuisance compaction remains secondary. Relay-required continuation moved to A13. | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
-| A14 | Does hierarchical language composition preserve a shared low-rank state? | Conditional theorem verified and tree-aligned subspace geometry observed. Same-parent and direction-balanced controls do not support a model-general gold-split operator, and every real/trained bound is vacuous; the global shared-linear propagation claim is closed. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_tree_low_rank_language_structure_anchor.md` |
+| A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The global shared-linear propagation claim remains closed. Static reachable-space accounting is exact, and a probabilistic sparse-activation theorem now bounds each mode by its active path-image spaces; reusable real modes, task sufficiency, and Router utility remain unverified. | `Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
 Primary route:
@@ -90,6 +90,8 @@ A14 conditional low-rank theorem
 -> same-parent alternative-split and stability frontier
 -> within-parent two-sided direction balance
 -> global shared-linear propagation claim closed
+-> probabilistic sparse-activation theorem
+-> task-sufficient conditional active-subtree decision
 ```
 
 Draft cross-line meeting route:
