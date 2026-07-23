@@ -14,7 +14,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 
 | Skill | Use |
 |---|---|
-| `research-progress-core` | Governing research paradigm: bounded divergence, one exact advancement point, human-first focus writing, falsifiable hypothesis, minimal test, evidence, failure analysis, and refined judgment. |
+| `research-progress-core` | Minimal research loop: one judgment, one rival, one approved test, one evidence-backed boundary, and one next decision. |
 | `research-mainline` | Maintain compact project anchors, result records, and project organization; graph, root sync, external collaborator sync, handoff, commit, and push actions require explicit user request. |
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Audit a subject-bearing independent human Thinking Card, then write sections 1-8 of the formal anchor after approval. |
@@ -31,7 +31,7 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 
 | Layer | Skill | Owns | Does not own |
 |---|---|---|---|
-| Research paradigm | `research-progress-core` | What counts as progress: bounded divergence, a human-written focused idea, one decision-bearing advancement point, falsifiable hypothesis, minimal test, evidence, failure analysis, and refined judgment. | Project-specific paths, platform commands, or tool adapters. |
+| Research paradigm | `research-progress-core` | One-page human focus, one decision-bearing uncertainty, a minimal approved test when needed, evidence audit, and one next decision. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests with operational definitions, stage-local evidence, failure meaning, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |

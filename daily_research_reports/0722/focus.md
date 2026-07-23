@@ -1,42 +1,86 @@
-# 概率性稀疏激活树能否把全局高容量与任务条件低维统一起来？
+# 跨上下文关系复用能否把 QK 参数谱集中连接到任务条件低维状态？
 
-## 1. 组会要回答的核心问题
+## 1. 今日研究中心
 
-1. **Q1：**概率性稀疏激活树精确证明了什么；它相对静态全局低秩命题改变了哪个数学对象？
-2. **Q2：**为什么条件活动树比全局共享空间更适合作为任务相关语义摘要的候选模型；现有真实证据支持和不支持什么？
-3. **Q3：**该定理与 Router 的逻辑接口是什么；还缺少什么证据，才能从条件低维推进到功能性路由？
+今天只收束一条知识链：
 
-**完成标准：**能够不依赖其他文档，分别说清确定性定理、概率推论、任务充分性缺口和 Router 边界；三个回答共同导向是否创建下一张 Thinking Card 的一个决策。
+```text
+关系跨上下文复用
+→ NTP 反复产生一致训练更新
+→ QK 参数功能集中到少数方向
+→ 任务直接使用的隐藏状态可以低维保留效用
+→ 概率活动树获得真实的低维局部信息源
+→ 才有资格继续讨论条件 Router
+```
 
-## 2. 我的中心判断与讲述主线（研究者闭卷填写）
+核心问题：
 
-1. **现象与中心判断：**______。
-2. **机制与问题链：**______。
-3. **最强替代解释；最不确定一环：**______；______。
-4. **改变判断的证据：**如果看到 ______，我会修正或放弃上述判断。
+1. **Q1：现有证据。**学长的 `share16/share4/share2/random_unshared` 实验直接改变了什么，实际支持了知识链中的哪一段？
+2. **Q2：理论接口。**A14 静态树与概率活动树定理已经证明什么，又为何不能解释 NTP 如何学习出低维状态？
+3. **Q3：当前缺口。**QK 参数功能压缩是否对应一个跨上下文可复用、且在未见数据上保留任务损失的低维状态？
 
-## 3. 逐题闭环（研究者先写回答）
+**共同完成标准：**明确区分数据、参数和状态三个对象；给知识链中的每个箭头标记“已证明／已观察／待验证”；最后只决定是否把 E08 独立重建注册为 standalone evidence。
 
-| 问题 | 我的回答（一句话） | AI 已定位的证据入口 | 不能声称 |
+## 2. 今日固定的对象与边界
+
+| 层次 | 当前对象 | 已知状态 | 不能等同于 |
 |---|---|---|---|
-| Q1 | ______ | 主故事第 2--6 节；E07 静态维数核算 | ______ |
-| Q2 | ______ | 主故事第 7--8 节；E02、E04、E06 | ______ |
-| Q3 | ______ | 主故事第 6、9、11 节；真实模式复用与任务效用证据均缺失 | ______ |
+| 数据侧 | A→C 关系跨 B 上下文的复用，以及独立映射规则数量 | `share` 是复用程度与规则数量的复合操纵 | token 频率；纯关系频率 |
+| 参数侧 | $W_Q/W_K$ 尾删鲁棒性及组合 QK 的功能谱 | toy setting 中，`share16` 学得更快且更耐 Q/K 尾删 | hidden-state 低维；自然语言普遍规律 |
+| 状态侧 | 预测第一个 C token 时，attention update 保留 held-out loss 所需的最小维数 | 独立重建中出现小幅极端条件差；来源重放仍缺失 | 参数矩阵秩；能量有效秩；语义熵 |
+| 树理论侧 | 给定活动模式的可达空间维数 | 静态维数核算与条件概率上界已完成 | NTP 学习动力学；任务充分性；Router 效用 |
+
+必须固定的三个否定判断：
+
+1. 高频不必然低秩，低频也不必然高秩；还取决于更新是否跨上下文一致、规则有多少以及是否相互冲突。
+2. 参数谱集中不自动推出隐藏状态低维；状态是否低维必须通过状态干预后的 held-out loss 判断。
+3. 条件状态低维也不自动推出 MoE；还需要不同条件对应不同最优函数，并存在可泛化的专家反事实效用。
+
+## 3. 今日中心判断与机制链
+
+1. **现象与中心判断：**当前最确定的现象是：在受控 ABCD-NTP toy setting 中，复用更多且独立规则更少的 `share16` 学得更快，并更依赖少量 Q/K 参数方向；这支持参数侧功能压缩，不支持“频率单独导致低秩”。
+2. **机制与问题链：**A14 已说明低维局部源经过稀疏条件激活时如何得到维数受控的活动空间；现在必须反向检查 NTP 是否真的学习出跨上下文可复用、且任务充分的低维局部状态。
+3. **最强替代解释；最不确定一环：**`share16` 只需记忆更少的独立映射规则，因此现象可能来自函数复杂度更低，而非关系复用或梯度对齐；最不确定的是 QK 参数功能集中是否对应状态侧功能低维。
+4. **改变判断的证据：**若 `share16` 在未见 B 上保留 C-token loss 所需的状态维数不低于 `random_unshared`，或学习到的低维空间不优于同秩随机空间，就放弃“现有参数压缩已经形成概率树所需低维局部状态”的解释。
+
+## 4. 逐题闭环
+
+| 问题 | 当前直接回答 | 决定性证据 / 状态 | 不能声称 |
+|---|---|---|---|
+| Q1 | `share` 改变的是“跨 B 复用程度 + 独立规则数量”，不是单一频率变量；复用较多的设置在 toy 模型中学习更快、Q/K 功能依赖更集中。 | [学长主线文档](docs/natural_language_spectral_space.md)；64 维 `share16/share4/share2/random` 稳定拟合中位步数约为 350/750/1100/1200。 | 复用是唯一原因；真实语言服从同一规律；hidden state 已低维。 |
+| Q2 | 静态 A14 精确核算角色压缩、同层复用与跨层复用怎样控制可达维数；概率扩展只证明少量低维源被激活时，单次模式的可达维数高概率受控。 | [概率活动树主故事](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree_cn.md)；[E07](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)。 | 树结构自动低秩；NTP 自动产生低维源；活动空间保留任务效用。 |
+| Q3 | 独立重建中，`share16` 相对 `random_unshared` 在 3/3 seed 上少需 3/3/2 个任务状态方向；但参数差远大于状态差，中间条件不单调，且原始来源无法精确重放。 | [E08 中文结果](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md)：正式判定为证据不足；忽略来源门时，其他冻结守卫全部通过。 | 频率是原因；参数秩按比例决定状态秩；精确复现学长实验；概率树已在真实模型中实现；Router 已获得依据。 |
 
 ### 总体收束
 
-- **这些回答共同说明：**______。
-- **希望导师重点裁定：**______。
-- **会后唯一下一决策；恢复时第一动作：**______；______。
+- **这些回答共同说明：**树理论解决的是“给定低维源和激活模式后维数如何传播”；独立重建为复合 share 条件提供了一个小幅任务状态压缩桥，但参数压缩远强于状态压缩，二者不能等同。
+- **当前项目边界：**A14 的全局共享线性传播主张保持关闭；概率模型没有重新声称自然语言或整个模型全局低秩。
+- **唯一下一决策：**审核并决定是否把 E08 独立重建注册为 standalone evidence；在此之前不进入频率因果或 Router 实验。
 
-## 4. 路由与核对
+## 5. 今日进展
+
+1. 完成 0721 组会录音的原文梳理与两份问题笔记，识别出“长序列、语义熵、表示秩和参数秩”此前存在对象混淆。
+2. 审计学长的自然语言谱空间主线，确认其最强直接证据停留在单层单头 toy 模型的 Q/K 参数侧；多尺度自然语言谱、真实 hidden-state 对应和 Router 推论仍是开放假设。
+3. 固定 `share16` 的正确解释：它同时增加关系跨上下文复用、减少独立映射规则数量，因此不能命名为纯频率实验。
+4. 固定 A14 与学长主线的接口：A14 不解释低维源如何被 NTP 学出；参数到任务状态的桥是当前最小缺口。
+5. 已完成 E08 full run、守卫、结果文档与 anchor 回写。正式 verdict 因来源 artifact 缺失为 `insufficient evidence`；独立重建的极端复合条件状态秩差为 3/3/2 维，参数 QK 差更大，但中间条件不单调。
+
+## 6. 运行后重点审核
+
+1. **来源边界：**是否接受“依据公开说明独立重建”，而不是原始 artifact 精确复现。
+2. **数据语义：**每个 B-family 拥有一张 A→C permutation，family 大小依次为 16/4/2/1；这是否符合你对 share 的理解。
+3. **状态对象：**主对象是 B 末端 attention residual update，而不是整个 residual stream。
+4. **无泄漏：**PCA 只在 calibration B 上拟合，任务损失只在未见 test B 上判定，并做 split-swap。
+5. **功能秩：**采用持续容忍定义；选定 rank 及其后所有 rank 都必须满足 $\Delta CE\le0.02$。
+6. **结论边界：**只比较两个极端复合条件；中间条件不单调，因此不写成频率或复用的普遍定律。
+
+## 7. 恢复点
+
+先阅读 [E08 中文摘要](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md) 与两张中心图，再逐项审核上面六点。只有审核接受，才把本重建注册为项目证据。
+
+## 8. AI 路由与状态核对
 
 - **所属项目：**A14 representation-structure route。
-- **当日完成的 self-contained 主故事：**
-  - [English canonical story](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree.md)
-  - [中文完整故事](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree_cn.md)
-- **静态理论与实现证据：**[E07 summary](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)。
-- **真实机制边界证据：**[E06 summary](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)。
-- **缺失闭环：**真实模式是否少量且可复用；稀疏活动子树是否在未见数据上保持任务效用；匹配条件是否带来专家级反事实效用。
+- **当前闭环：**独立重建显示极端复合条件有小幅任务状态秩差，但来源复现缺失，且参数—状态连续对应较弱。
 - **聚焦审计：**`focused`。
-- **正式状态更新：**A14 当前 primary story 已切换为概率性稀疏激活树；原全局共享线性传播主张保持关闭，没有被概率模型重新打开。
+- **本次更新性质：**新增 E08 独立重建证据并收紧 claim boundary；没有把它升级成频率因果、自然语言树机制或 Router 依据。

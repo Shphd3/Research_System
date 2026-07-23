@@ -20,9 +20,10 @@ prompt, or README.
 
 | Template | Use |
 |---|---|
-| `research_process/thinking_card_template.md` | Independent human-written Thinking Card before AI audit and formal anchor construction. |
-| `research_process/focus_writing_template.md` | The sole daily idea/progress and routine group-meeting outline: one research center, several core questions, a central judgment, and a question-by-question evidence closure. |
+| `research_process/thinking_card_template.md` | Optional human judgment card only when a new mechanism question is promoted. |
+| `research_process/focus_writing_template.md` | One-page human judgment, routine meeting brief, and resume point. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
+| `research_process/experiment_understanding_and_execution_gate_template_cn.md` | Four minimal Chinese cards for understanding, self-check, execution gating, and result reporting. |
 
 ## Reading Templates
 
@@ -41,8 +42,8 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_outline_template.md` | Chinese advisor-discussion outline. AI supplies topic prompts and conclusion-to-experiment mappings; the researcher writes the explanation. |
-| `meeting/meeting_notes_template.md` | Private post-meeting notes with meeting diagnosis, mainline update, and execution action. Save as `meeting_notes.md`. |
+| `meeting/meeting_outline_template.md` | Only for meetings that combine multiple research lines; routine meetings use `focus.md`. |
+| `meeting/meeting_notes_template.md` | Optional short post-meeting note only when the meeting changes judgment or action. |
 
 ## Archive
 

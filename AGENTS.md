@@ -40,71 +40,48 @@ Do not use chat history as the main research memory.
 
 ## Human-AI Research Cycle
 
-The human owns the initial judgment and final approval. AI retrieves, audits,
-formalizes, checks, and edits.
+The human owns the research judgment and approval. AI retrieves evidence,
+audits logic, formalizes approved work, executes, and maintains technical
+records.
 
 ```text
-daily focus: human advancement point + current idea
--> AI focus audit
--> existing anchor work, or human Thinking Card for a new formal question
--> human correction / approval when a Thinking Card is needed
--> formal anchor when a new question is promoted
--> approved protocol
--> execution and evidence record
--> human closed-book summary
--> AI evidence and boundary audit
--> canonical research artifact update when needed
--> daily focus closure
+one-page human focus
+-> AI identifies one blocking issue
+-> approved protocol only when an experiment is needed
+-> execution
+-> AI writes the evidence record
+-> human states the result and boundary from memory
+-> AI verifies
+-> update only the smallest owning artifact
 ```
 
-Before AI writes a formal anchor or prepares a meeting outline, the human
-should state:
+Before formalizing a new question, the human states:
 
 ```text
-phenomenon
-mechanism guess
-strongest rival explanation
-most uncertain point
+current judgment
+reason or mechanism
+strongest rival or uncertainty
 evidence that would change the judgment
-current next decision
+next decision
 ```
 
 `Unknown` is valid. AI may propose candidate definitions, priors, metrics, and
 counterexamples, but must label them and must not silently invent the user's
 judgment.
 
-After a research cycle, the human first writes from memory:
+After execution, the human first states:
 
 ```text
 question
 direct result
-confirmed belief
-weakened or rejected belief
-current mechanism and reason
-cannot-claim boundary
-exactly one next decision
+updated judgment
+cannot claim
+next decision
 ```
 
-AI then verifies sources and wording without strengthening the claim.
+AI verifies numbers, evidence, and wording without strengthening the claim.
 
 ## Focus And Writing
-
-Do not keep a research question in permanent divergence. One divergent round
-may propose at most three genuinely different candidates unless the user asks
-for a wider survey. Then choose one to pursue and park the rest before
-generating more possibilities.
-
-Every substantial work session must have exactly one advancement point:
-
-```text
-By the end of this session, I will make [one object or relation] clear enough
-to decide [one decision], by writing [one human-owned output], with completion
-defined as [one inspectable criterion].
-```
-
-Reading, coding, running, plotting, and discussion are activities, not
-advancement points. They count only when they clarify or reject a judgment,
-freeze a definition, change a claim boundary, or enable the stated decision.
 
 Each research day keeps exactly one retained focus file:
 
@@ -112,24 +89,32 @@ Each research day keeps exactly one retained focus file:
 daily_research_reports/MMDD/focus.md
 ```
 
-Create it from `templates/research_process/focus_writing_template.md`. The
-title is the exact research question at the center of that day, never a generic
-date or `Daily Focus` label. Under it, the researcher lists the few core
-questions that must be answered in the group meeting. They are subquestions of
-one advancement point, not parallel research directions. The researcher writes
-the four-sentence central judgment and one direct answer for each question. AI
-identifies only the most blocking ambiguity, asks one question, waits for the
-answer, maps answers to existing or missing experiments, and asks the
-researcher to revise in place. AI must not write the answers for the
-researcher.
+`focus.md` is a one-page, human-owned decision note. It is also the default
+routine meeting brief and resume point. Target 30 lines and do not exceed 60
+lines unless the user explicitly requests a longer working note.
 
-The title, core-question list, and shared completion standard together define
-the single advancement point; do not add a separate activity checklist.
+It contains only:
 
-The daily focus file owns the human's daily idea, progress, and resume point.
-It does not own project truth. If evidence changes a hypothesis, boundary, or
-next decision, update the relevant anchor, result record, protocol, story, or
-`PROJECTS.md` as well.
+```text
+one decision question
+current answer and reason
+strongest rival or uncertainty
+key evidence or missing evidence
+cannot-claim boundary
+advisor decision, next action, and resume point
+```
+
+Do not copy theory, terminology tables, Protocol conditions, run histories, or
+long source maps into `focus.md`; link the owning artifact instead. Keep at most
+three subquestions, all serving the same decision.
+
+The researcher writes the answer and interpretation. AI may prefill measured
+facts and links, then identifies only one blocking ambiguity. Do not create a
+separate daily log or routine meeting brief.
+
+Use at most three genuinely different candidates in one divergent round, then
+choose one and park the rest. Reading, coding, running, and plotting count as
+progress only when they change a judgment, boundary, or decision.
 
 ## State Ownership
 
@@ -137,7 +122,7 @@ next decision, update the relevant anchor, result record, protocol, story, or
 |---|---|
 | `AGENTS.md` | stable repository behavior and hard boundaries |
 | `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `daily_research_reports/MMDD/focus.md` | one day's human idea, core meeting questions, question-by-question closure, routine speaking outline, and resume action |
+| `daily_research_reports/MMDD/focus.md` | one-page human judgment, routine meeting brief, and resume action |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
 | Thinking Card | human's initial mechanism judgment and uncertainty |
 | anchor | one adjudicable research design and its current boundary |
@@ -248,29 +233,22 @@ recommendation: pursue / park / ignore
 
 ## Meeting Preparation
 
-For a routine meeting around one daily research center, the completed
-`daily_research_reports/MMDD/focus.md` is the default speaking outline. Do not
-create another meeting document that repeats its questions, answers, or
-evidence mapping.
+For a routine meeting, use the completed one-page `focus.md`. Do not create a
+second brief.
 
 Use `templates/meeting/meeting_outline_template.md` only when the meeting
-combines several daily foci or research lines, or when the user explicitly asks
-for a separate meeting outline. It is still human-completed, not a finished
-brief. AI may propose speaking logic, identify unclear points, and map each
-conclusion to an existing or missing experiment. The researcher writes the
-actual explanation; AI audits evidence, boundaries, and order afterward.
+combines several research lines or the user explicitly asks for one. The human
+writes the explanation; AI checks evidence, boundary, and order.
 
 Present every completed experiment as one loop:
 
 ```text
-question -> decisive experiment -> direct result -> conclusion
--> cannot-claim boundary -> next decision
+question -> key comparison -> direct result -> conclusion
+-> cannot claim -> decision
 ```
 
-Do not stack derivations, formulas, complete tables, or run timelines in the
-speaking path. Keep them in anchors and result records. Do not create a
-separate final brief unless the researcher explicitly requests it after
-completing the outline.
+Keep formulas, complete tables, and run timelines in anchors and result
+records.
 
 ## Explicit Publication And Sync
 

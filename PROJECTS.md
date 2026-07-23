@@ -34,6 +34,57 @@ surface. Its candidate D00--D03 anchor decomposition remains draft. No remote
 workspace, protocol, job, or result record is authorized until the researcher
 approves or corrects the independent Thinking Card.
 
+## Implementation Project — De-common Router Training
+
+| Role | Path / value |
+|---|---|
+| Theme | representation routing after subtracting a deployable common estimate |
+| Project | `Projects/decommon-router-training/` |
+| Model surface | `Projects/decommon-router-training/src/decommon_router/model/` |
+| Mechanism route | M01 estimator validity -> M02 Router-input causality -> M03 matched-load functional utility |
+| State | 8E/top-2 DDP/EP capacity and preemption-resume smokes complete; no mechanism experiment or claim is authorized |
+
+This user-requested implementation surface refactors the current
+`/data/250010109/MoE_Router` baseline and explicitly excludes the older
+spectral/Oja injection path. The provisional common estimator is a
+distributed, per-layer exponential moving mean; only the Router sees the
+centered representation, while sparse and shared experts receive the original
+state. Native DDP is the measured primary path for the maintained 342M and
+576M 8E/top-2 candidates; native EP=2 remains the memory-scaling fallback.
+Two-H100 capacity, real signal-driven resume, EP-sharded resume, and guarded
+reserved/idle ACP dry runs are complete. Four-H100 throughput remains an
+explicit planning estimate until measured on the target worker spec. AFS quota
+and storage controls are now audited: canonical 342M/576M runs have 150/230
+GiB hard caps, retain two rolling full recovery checkpoints, and retain one
+full weights-plus-optimizer milestone every 1B tokens. Read-only ACP monitoring
+is implemented locally, but live ACP state
+queries remain blocked by an installed SCO v1.3.0 component/API schema
+incompatibility; no recurring Codex monitor has been activated.
+
+Creating the scaffold does not promote the method claim, edit the active graph,
+or replace the A06 real-workload utility-headroom decision. Better balance or
+route separation remains insufficient; functional promotion requires an
+approved matched-load held-out utility protocol.
+
+## Implementation Project — De-common Router Evaluation
+
+| Role | Path / value |
+|---|---|
+| Theme | reproducible base-model downstream evaluation for de-common Router checkpoints |
+| Project | `Projects/decommon-router-evaluation/` |
+| Primary suite | five-shot LAMBADA, HellaSwag, PIQA, ARC-Easy, OpenBookQA, SciQ |
+| Compatibility suite | union of historical MultiHeadMoE and SD-MoE tasks |
+| State | evaluator scaffold, fixed suites, 30B schedule, and flow contract complete; no trained-checkpoint result exists |
+
+The evaluator pins `lm-eval==0.4.12` and `transformers==4.53.3`, reads complete
+replicated DDP milestones without copying them, and records checkpoint,
+tokenizer, task, shot, seed, and package provenance. Every 1B milestone gets a
+fixed cheap trajectory evaluation; every 5B milestone gets the full primary
+and group-compatibility suites; the final 30B milestone gets hard diagnostics.
+MMLU and other near-floor tasks are excluded from primary sub-billion model
+selection. EP-to-single-process consolidation remains unimplemented and must
+not be approximated by loading one expert shard.
+
 ## Reading Order
 
 ```text
@@ -58,7 +109,7 @@ reading surface.
 | A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Exact K/V is branch-readable under all objectives; no registered MTP-specific readability or stable strong-use increment is established, while 5/5 nuisance compaction remains secondary. Relay-required continuation moved to A13. | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
-| A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The global shared-linear propagation claim remains closed. Static reachable-space accounting is exact, and a probabilistic sparse-activation theorem now bounds each mode by its active path-image spaces; reusable real modes, task sufficiency, and Router utility remain unverified. | `Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree.md` |
+| A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The global shared-linear propagation claim remains closed. E08 is retained only as bounded standalone reconstruction evidence. A14_02_E01 is formally insufficient because its low-exposure primary conditions failed capability; it establishes only that duplicate frequency did not create new-context invariance and that capability-passing lookup `K=1/4/16` controls used 10.2/11.0/12.8 functional root directions. Shared composition remains unadjudicated, A14_03 remains blocked, and Router utility remains unverified. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/subanchors/14_02_relation_reuse_root_effective_rank_anchor.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
 Primary route:
@@ -91,7 +142,9 @@ A14 conditional low-rank theorem
 -> within-parent two-sided direction balance
 -> global shared-linear propagation claim closed
 -> probabilistic sparse-activation theorem
--> task-sufficient conditional active-subtree decision
+-> A14_01 parameter-to-state bridge with bounded standalone reconstruction
+-> A14_02 primary comparison insufficient; capability-first revision decision
+-> only if revised A14_02 passes, A14_03 state-to-parameter functional-rank demand
 ```
 
 Draft cross-line meeting route:

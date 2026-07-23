@@ -145,17 +145,15 @@ archive/<snapshot_id>/<snapshot_id>_cn.md
 
 ### Daily Reports
 
-Daily report folders are date-first because they record work for a day:
+Keep one human-facing file per day:
 
 ```text
 daily_research_reports/MMDD/focus.md
-daily_research_reports/MMDD/<topic>/
 ```
 
-Keep exactly one `focus.md` per research day. It owns the human's daily idea,
-progress, closure, and resume action, and is created from
-`templates/research_process/focus_writing_template.md`. Other daily folders may
-hold meeting or working material, but must not duplicate daily state.
+It is the one-page daily judgment, routine meeting brief, and resume action.
+Do not duplicate it with another daily card, log, or meeting brief. Supporting
+daily folders may hold recordings or working material only.
 
 Daily focus files do not replace anchors or experiment records. If the day
 changes the hypothesis, evidence, boundary, or next decision, update the
