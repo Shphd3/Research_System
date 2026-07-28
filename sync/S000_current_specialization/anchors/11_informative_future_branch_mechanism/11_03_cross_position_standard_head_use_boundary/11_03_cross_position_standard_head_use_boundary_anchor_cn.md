@@ -1,6 +1,6 @@
 # 跨位置标准预测头使用边界 Anchor
 
-状态：模型内 K/V 因果使用审计已完成；强行为信息内容增量失败，弱 margin 影响待决定是否审计。
+状态：模型内 K/V 因果使用与源信息审计已完成；精确 K/V 普遍可读，但尚未建立 MTP 特异可读性或强使用增量。
 
 Thinking Card source: [11_03_cross_position_standard_head_use_boundary_thinking_card_cn.md](11_03_cross_position_standard_head_use_boundary_thinking_card_cn.md)
 
@@ -52,10 +52,12 @@ $$
 
 已完成的[子锚点 11_03_02](subanchors/11_03_02_standard_head_causal_use_anchor_cn.md)在 matched shared-aux 对照下直接替换模型内部 K/V。所有守卫通过，但 $\bar\Gamma_{info}=0.01675$，0/5 种子达到 `0.10`，因此强行为增量失败；4/5 正向 margin 变化仅是候选弱影响。
 
+后续[精确源 K/V 审计](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md)发现 NTP、shared-aux 和 informative-MTP 在所有种子上都能 `100%` held-out 读出 branch。因此绝对线性源信息为空这一解释被排除，但普通路径共同形成仍然成立。注册的 informative-MTP 可读性增量在 4/5 种子非正；由于标签打乱守卫失败，正式判定为证据不足。5/5 Fisher nuisance 压缩只属于次要几何证据。
+
 ## 8. 结论边界与下一决策
 
 可支持：$h_T$ 的形成不保证 $h_{T+1}$ 的有用性；跨位置传递是额外必要条件。局部传递几何也不足以保证行为优势。
 
-不可支持：普适的负传递定律、普适桥接词解释或 MTP 下游效率。
+不可支持：普适的负传递定律、普适桥接词解释、MTP 特异额外 branch 可读性、标准主头完全不使用或 MTP 下游效率结论。
 
-**唯一下一决策：** 决定是否为弱 margin 影响建立新 Protocol；否则关闭该接口并转向早期状态具有结构必要性的任务。当前不授权层、Q、K-only 或 V-only 扫描。
+**唯一下一决策：** 先验证一个没有答案直接绕行、且 shared-aux 基线不饱和的 `relay-required` carrier。在该门槛通过前，不授权层、Q、K-only、V-only 或 shared-unembedding sweep。

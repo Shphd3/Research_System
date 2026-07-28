@@ -18,17 +18,9 @@ The active anchor is
 [A06_04 real-workload utility headroom](../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md).
 No LLM Router method is justified until this workload premise passes.
 
-For the 2026-07-17 group meeting, one draft cross-line question is published
-without replacing A06:
-
-```text
-What should a long-context Router optimize so that selected evidence preserves
-the ordinary prediction head's decision under a fixed compute budget?
-```
-
-The controlled Q0 is already closed: perfect feature specialization is not
-sufficient for a useful sparse KV index. The proposed Q1 loss-utility audit
-still requires the researcher's mechanism judgment and an approved Protocol.
+The supporting MTP route now extends through A13, and the independent A14
+route records the current conditional functional-rank theory. Neither route
+replaces the A06 real-workload Router gate.
 
 ## Research-Line Map
 
@@ -39,7 +31,8 @@ still requires the researcher's mechanism judgment and an approved Protocol.
 | 07 | Functional interference and value diagnostics | [value line](research_lines/07_interference_value_line_cn.md) |
 | 11 | Objective-level difference between NTP and MTP on a minimal delayed branch | [informative-future branch](research_lines/11_informative_future_branch_mechanism_cn.md) |
 | 12 | Structured composition, task capability, and standard-head causal use | [structured composition](research_lines/12_structured_compositional_mtp_workload_cn.md) |
-| 13 draft | Cross-line long-context retrieval theme: from hits to functional utility | [functional-retrieval working theme](research_lines/13_long_context_functional_retrieval_working_theme_cn.md) |
+| 13 | Task-property decomposition from hard relay to the soft-relay measurement blocker | [A13 anchors](anchors/13_mtp_task_property_decomposition/README.md) |
+| 14 | Conditional low-dimensional computation under a globally high-capacity hierarchy | [A14 anchors](anchors/14_tree_low_rank_language_structure/README.md) |
 
 Read [the overall synthesis](research_lines/00_overall_current_line_cn.md) first.
 
@@ -62,11 +55,20 @@ A12: ordered composition workload
 -> standard-head causal intervention remains downstream
 ```
 
-A11 is a stable bounded baseline with no active run. A12 E04 completed all 12
-approved NTP trajectories, but neither scale qualified and the row-removal
-guard was structurally invalid. The active decision is whether to close E04
-under the frozen contract or reopen carrier/capability design. MTP remains
-blocked.
+A11 is a stable bounded baseline. A12 E04 failed the NTP capability and
+row-removal validity gates. A13 established the hard-relay sufficient
+condition; soft-relay Stage 0 showed ordered causal path use but no common
+non-saturated comparison window. The next decision is measurement-only carrier
+repair, not an objective-effect claim.
+
+## Independent A14 Route
+
+A14 retains the controlled conditional-functional-rank theorem and closes the
+global shared-linear propagation claim. The improved frequency comparison
+supports non-inferiority only in its registered common-mapping task. The raw
+parameter-update basis is parked as unidentified, while E04--E06 retain the
+local Jacobian versus finite secant result. Router utility and a complete
+state-to-parameter rank claim remain unverified.
 
 ## Claim Boundary
 
@@ -105,9 +107,18 @@ python skills/research-mainline/scripts/publish_anchor_mirror.py --check
 
 Do not hand-edit `anchors/`; update the project-local source and republish.
 
-Story folders remain compact indexes unless a full story copy is explicitly
-requested. The legacy `stories/11_long_horizon_mtp_objective/` folder is a
-historical snapshot and must not override the current project-local sources.
+The `stories/` tree mirrors current line-level syntheses and excludes archived
+historical snapshots with stale evidence links. The `protocols/` tree mirrors
+canonical protocols, Chinese companions, and explicitly labeled legacy or
+draft protocol documents only; it does not copy summaries, detailed ledgers,
+scripts, figures, logs, or raw outputs. See [protocol index](protocol_index.md).
 
-The Sidecar graph and this root sync were refreshed together on 2026-07-16.
-Project-local anchors and experiment records remain authoritative.
+Generate or verify the additional mirrors with:
+
+```text
+python skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/stories --target sync/S000_current_specialization/stories --exclude-dir archive
+python skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
+```
+
+This root sync was refreshed on 2026-07-28. Project-local anchors, stories,
+and experiment records remain authoritative.

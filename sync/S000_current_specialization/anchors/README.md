@@ -15,6 +15,8 @@ Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_d
 Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/
 Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/
 Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/
+Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/
+Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/
 ```
 
 Do not create a generic nested `anchors/` subfolder inside this project-local
@@ -32,7 +34,40 @@ Current classification maps:
 05_failure_mechanism/research_map.md
 06_geometry_proxy_preservation/research_map.md
 09_common_rare_spectral_discrimination/README.md
+13_mtp_task_property_decomposition/README.md
+14_tree_low_rank_language_structure/README.md
 ```
+
+## Canonical Parent-Anchor Folder Rule
+
+Active multi-parent research lines use this structure:
+
+```text
+<line_id>/
+  README.md
+  <parent_id>_<topic>/
+    <parent_id>_<topic>_anchor.md
+    <parent_id>_<topic>_anchor_cn.md
+    <parent_id>_<topic>_thinking_card.md
+    <parent_id>_<topic>_thinking_card_cn.md
+    subanchors/
+      <parent_id>_<NN>_<topic>_anchor.md
+      <parent_id>_<NN>_<topic>_anchor_cn.md
+      <parent_id>_<NN>_<topic>_thinking_card.md
+      <parent_id>_<NN>_<topic>_thinking_card_cn.md
+```
+
+Each numbered major decision is a sibling parent folder, even when the line
+README orders it after or makes it depend on another parent. `subanchors/` is
+reserved for a child that inherits one parent's decision question and tests a
+local clause, rival, repair, robustness check, or metric guard. A dependency
+arrow does not establish parent--child ownership.
+
+Keep the parent anchor and its Thinking Card together; keep a child anchor and
+its Thinking Card together under `subanchors/`. The line README owns reading
+order and dependency order. Structural migrations move the only canonical
+copy, update all active references and indexes, remove the old path, and end
+with zero duplicate canonical files and zero broken local links.
 
 ## Active Research Shape
 
@@ -76,6 +111,8 @@ held-out expert utility headroom worth routing.
 | 10 optimizer learning-rate mechanism line | `10_optimizer_learning_rate_mechanism/10_*` | Seminar-driven optimizer root-cause line: test whether common / high-gain gradient directions constrain SGD-style critical learning rate before comparing Adam, Nesterov, or other optimizers. | Support line. It does not update the MoE preservation claim unless later bridged back through routing margin evidence. |
 | 11 informative-future branch mechanism | parent-anchor registry: `11_informative_future_branch_mechanism/README.md`; three complete parents `11_01`--`11_03`; story: `../stories/11_informative_future_branch_mechanism/01_informative_future_branch_signal_and_use_boundary.md` | Isolates the objective-level NTP/MTP difference on a short matched branch: informative-future signal, parameter reachability, and the cross-position use boundary. | Stable bounded baseline. No active run; structured workload claims are excluded. |
 | 12 structured compositional MTP workload | parent-anchor registry: `12_structured_compositional_mtp_workload/README.md`; three complete parents `12_01`--`12_03`; story: `../stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md` | Tests whether the A11 signal becomes functional on a computation-tree workload, starting from a depth-two ordered-composition base case. | Workload valid; current from-scratch learner gate failed; linear rank mechanism supported; active design is a shared capability gate followed by intermediate-state causal use. |
+| 13 MTP task-property decomposition | parent-anchor registry: `13_mtp_task_property_decomposition/README.md`; parent `13_00` with local `subanchors/` | Tests which workload properties convert earlier task-relevant supervision into ordinary-head utility. | Hard-relay sufficiency retained; soft-relay objective comparison remains blocked pending a measurement-only carrier repair decision. |
+| 14 conditional low-rank hierarchy | parent-anchor registry: `14_tree_low_rank_language_structure/README.md`; sibling parents `14_00`--`14_03`; only `14_02` currently owns local `subanchors/`; current synthesis: `../stories/14_tree_low_rank_language_structure/03_ntp_conditional_function_rank.md` | Separates global capacity from input-conditioned functional rank and audits the parameter-to-ROOT bridge. | Conditional theorem retained; point Jacobian is local only; finite training uses the low-dimensional secant/path-integrated image. Reuse-caused rank reduction remains open because unseen composition failed. |
 
 ## Historical Placement
 

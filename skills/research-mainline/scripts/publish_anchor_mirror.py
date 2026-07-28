@@ -10,6 +10,7 @@ import re
 import shutil
 import tempfile
 from pathlib import Path
+from urllib.parse import unquote
 
 
 LINK = re.compile(
@@ -42,6 +43,7 @@ def rewrite_markdown(
     source_root: Path,
     repo_root: Path,
     missing: list[str],
+    published_sources: set[Path] | None = None,
 ) -> tuple[str, int]:
     rewrites = 0
 
@@ -58,18 +60,22 @@ def rewrite_markdown(
         if not path_part:
             return match.group(0)
 
-        if path_part.startswith("/"):
-            resolved = repo_root / path_part.lstrip("/")
+        filesystem_path = unquote(path_part)
+
+        if filesystem_path.startswith("/"):
+            resolved = repo_root / filesystem_path.lstrip("/")
             if not resolved.exists():
                 missing.append(f"{source_file}: {destination}")
             return match.group(0)
 
-        resolved = (source_file.parent / path_part).resolve()
+        resolved = (source_file.parent / filesystem_path).resolve()
         if not resolved.exists():
             missing.append(f"{source_file}: {destination}")
             return match.group(0)
 
-        if inside(resolved, source_root):
+        if inside(resolved, source_root) and (
+            published_sources is None or resolved in published_sources
+        ):
             return match.group(0)
 
         if not inside(resolved, repo_root):
@@ -90,10 +96,29 @@ def rewrite_markdown(
     return LINK.sub(replace, text), rewrites
 
 
-def build(source: Path, target: Path, repo_root: Path) -> tuple[int, int]:
+def build(
+    source: Path,
+    target: Path,
+    repo_root: Path,
+    exclude_dirs: set[str] | None = None,
+) -> tuple[int, int]:
+    exclude_dirs = exclude_dirs or set()
     if target.exists():
         shutil.rmtree(target)
-    shutil.copytree(source, target)
+    shutil.copytree(
+        source,
+        target,
+        ignore=lambda _directory, names: [
+            name for name in names if name in exclude_dirs
+        ],
+    )
+
+    published_sources = {
+        path.resolve()
+        for path in source.rglob("*")
+        if path.is_file()
+        and not any(part in exclude_dirs for part in path.relative_to(source).parts)
+    }
 
     missing: list[str] = []
     rewritten_links = 0
@@ -103,7 +128,14 @@ def build(source: Path, target: Path, repo_root: Path) -> tuple[int, int]:
         raw = target_file.read_bytes()
         bom = raw.startswith(b"\xef\xbb\xbf")
         text = raw.decode("utf-8-sig")
-        updated, count = rewrite_markdown(text, source_file, source, repo_root, missing)
+        updated, count = rewrite_markdown(
+            text,
+            source_file,
+            source,
+            repo_root,
+            missing,
+            published_sources=published_sources,
+        )
         target_file.write_bytes((b"\xef\xbb\xbf" if bom else b"") + updated.encode("utf-8"))
         rewritten_links += count
         markdown_files += 1
@@ -111,6 +143,53 @@ def build(source: Path, target: Path, repo_root: Path) -> tuple[int, int]:
     if missing:
         raise RuntimeError("unresolved published links:\n" + "\n".join(missing))
     return markdown_files, rewritten_links
+
+
+def build_selected(
+    source: Path,
+    target: Path,
+    repo_root: Path,
+    include_names: set[str],
+) -> tuple[int, int]:
+    """Publish selected Markdown files while preserving their source layout."""
+    selected = {
+        path.resolve()
+        for path in source.rglob("*.md")
+        if path.name in include_names
+    }
+    if not selected:
+        raise RuntimeError(
+            "no files matched --include-name: " + ", ".join(sorted(include_names))
+        )
+
+    if target.exists():
+        shutil.rmtree(target)
+    target.mkdir(parents=True)
+
+    missing: list[str] = []
+    rewritten_links = 0
+    for source_file in sorted(selected):
+        target_file = target / source_file.relative_to(source)
+        target_file.parent.mkdir(parents=True, exist_ok=True)
+        raw = source_file.read_bytes()
+        bom = raw.startswith(b"\xef\xbb\xbf")
+        text = raw.decode("utf-8-sig")
+        updated, count = rewrite_markdown(
+            text,
+            source_file,
+            source,
+            repo_root,
+            missing,
+            published_sources=selected,
+        )
+        target_file.write_bytes(
+            (b"\xef\xbb\xbf" if bom else b"") + updated.encode("utf-8")
+        )
+        rewritten_links += count
+
+    if missing:
+        raise RuntimeError("unresolved published links:\n" + "\n".join(missing))
+    return len(selected), rewritten_links
 
 
 def directory_difference(expected: Path, actual: Path) -> list[str]:
@@ -142,6 +221,18 @@ def main() -> None:
         type=Path,
     )
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--include-name",
+        action="append",
+        default=[],
+        help="publish only Markdown files with this basename; may be repeated",
+    )
+    parser.add_argument(
+        "--exclude-dir",
+        action="append",
+        default=[],
+        help="exclude directories with this basename; may be repeated",
+    )
     args = parser.parse_args()
 
     source = args.source.resolve()
@@ -149,17 +240,25 @@ def main() -> None:
     if not source.is_dir():
         raise SystemExit(f"source anchor tree not found: {source}")
 
+    include_names = set(args.include_name)
+    exclude_dirs = set(args.exclude_dir)
+
+    def publish(destination: Path) -> tuple[int, int]:
+        if include_names:
+            return build_selected(source, destination, repo_root, include_names)
+        return build(source, destination, repo_root, exclude_dirs)
+
     if args.check:
         with tempfile.TemporaryDirectory() as temporary:
             expected = Path(temporary) / "anchors"
-            files, links = build(source, expected, repo_root)
+            files, links = publish(expected)
             differences = directory_difference(expected, target)
             if differences:
                 raise SystemExit("published mirror is stale:\n" + "\n".join(differences))
             print(f"mirror current: {files} Markdown files; {links} external links rewritten")
         return
 
-    files, links = build(source, target, repo_root)
+    files, links = publish(target)
     print(f"published: {files} Markdown files; {links} external links rewritten")
 
 

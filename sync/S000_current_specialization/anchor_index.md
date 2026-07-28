@@ -15,6 +15,8 @@ Projects/from-attention-to-search/main/problem_anchors/
 | 07 | `main/problem_anchors/07_features_overlap/` | Functional interference/value diagnostics. |
 | 11 | `main/problem_anchors/11_informative_future_branch_mechanism/README.md` | Stable objective-level MTP mechanism baseline. |
 | 12 | [synchronized A12 registry](anchors/12_structured_compositional_mtp_workload/README.md) -> `main/problem_anchors/12_structured_compositional_mtp_workload/README.md` | E04 NTP Stage A failed the capability and row-removal validity gates; decide whether to close or redesign. |
+| 13 | [synchronized A13 registry](anchors/13_mtp_task_property_decomposition/README.md) -> `main/problem_anchors/13_mtp_task_property_decomposition/README.md` | Hard relay is sufficient; soft relay lacks a common non-saturated comparison window. |
+| 14 | [synchronized A14 registry](anchors/14_tree_low_rank_language_structure/README.md) -> `main/problem_anchors/14_tree_low_rank_language_structure/README.md` | Conditional functional-rank theory retained; global linear propagation closed; finite secant bridge is current. |
 
 Paths above are relative to `Projects/from-attention-to-search/`.
 

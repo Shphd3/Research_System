@@ -142,14 +142,16 @@ BR_z F00 ... F15 U00 U01 U02 U03 A_SHARED S_z
 
 **A11_03_02_E01 直接结果：** 5/5 种子都通过共同能力检查点、缓存、自补丁、同分支、正控制和配对守卫。$\bar\Gamma_{info}=0.01675$，0/5 种子达到 `0.10`；只有 seed 972 为 `0.08374`，且集中在单一分支方向。因此信息内容的强行为因果使用增量按冻结规则失败。见 [summary](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/summary.md) 和 [detailed](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/detailed.md)。
 
+**A11_03_02_E02 源信息审计：** same-contract replay 复现了 E01。三个条件、五个种子的精确第二层 `U03` K/V 都达到 held-out branch accuracy 和四类 recall `1.0`，因此绝对线性信息形成已经确认。注册的 informative-MTP 相对 shared-aux 可读性增量在 4/5 种子为负，均值为 `-0.002299` nat/样本，95% CI 为 `[-0.004502,-0.000173]`。由于单次标签打乱的最大准确率守卫失败，正式判定为证据不足。次要 Fisher 诊断在 5/5 种子更高，主要来自 branch 内 nuisance 波动收缩。见 [summary](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md) 和 [detailed](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/detailed.md)。
+
 ## 8. 结论边界与下一决策
 
 当前可支持：MTP 可以产生更早的直接信号，但信息形成和有利局部几何不足以证明后续标准主头使用。
 
-当前已裁决：在匹配辅助训练结构和标准主头能力后，信息性未来目标没有稳定增强该接口上的强答案切换控制。
+当前已裁决：在匹配辅助训练结构和标准主头能力后，信息性未来目标没有稳定增强该接口上的强答案切换控制。精确源 K/V 在所有目标下都能读出 branch，但注册审计没有识别出 informative-MTP 特异的可读性增量。
 
-次要观察：informative-MTP 相对 shared-aux 的 donor-margin 变化在 4/5 种子为正，但均值被 seed 972 主导，不能覆盖主要失败判定。它最多支持候选弱或冗余影响。
+次要观察：informative-MTP 相对 shared-aux 的 donor-margin 变化在 4/5 种子为正，但均值被 seed 972 主导；其 branch 内 nuisance 几何也在 5/5 种子更紧。二者都只是候选机制，不是行为使用证据。
 
 即使实验通过，也只能建立该受控 K=2 任务和该源状态接口上、相对 matched shared-aux 的信息性 K=2 全位置目标包因果使用增量；不能把效应仅归到 `U03` 的局部标签，也不能建立一般 MTP 优势、K 的尺度规律、长程或自然语言价值、组合推理、表征可拆分性或 MoE 价值。
 
-**唯一下一决策：** 选择是否为弱 margin 影响建立新的预注册审计；否则关闭该 K/V 接口，转向让早期状态具有结构必要性的任务。未经新决策不运行 K/V/Q/层 sweep。
+**唯一下一决策：** 先验证一个没有答案直接绕行、且 shared-aux 基线不饱和的 `relay-required` carrier，再重新比较训练目标。在 carrier 通过前，K/V/Q/层和 shared-unembedding sweep 均保持后置。

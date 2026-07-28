@@ -1,6 +1,6 @@
 # Cross-Position Standard-Head Use Boundary Anchor
 
-Status: model-local K/V causal-use audit completed; the strong behavioral information-content increment failed, with a weak margin effect left for a new decision.
+Status: model-local K/V causal-use and source-information audits completed; exact K/V is generically readable, while neither MTP-specific readability nor a strong-use increment is established.
 
 Thinking Card source: [11_03_cross_position_standard_head_use_boundary_thinking_card.md](11_03_cross_position_standard_head_use_boundary_thinking_card.md)
 
@@ -52,12 +52,14 @@ At $h_T$, both heads have positive usefulness in 5/5 seeds; at $h_{T+1}$, both a
 
 The completed [subanchor 11_03_02](subanchors/11_03_02_standard_head_causal_use_anchor.md) directly patched model-local K/V against matched shared-aux. All guards passed, but $\bar\Gamma_{info}=0.01675$ and 0/5 seeds reached `0.10`, so the strong behavioral increment failed; positive margin movement in 4/5 seeds remains only candidate weak influence.
 
+The follow-up [exact source-K/V audit](/Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md) found perfect held-out branch readability under NTP, shared-aux, and informative-MTP in every seed. It therefore rules out absolute linear source emptiness, but not generic-path formation. The registered informative-MTP readability increment was nonpositive in 4/5 seeds, and the formal verdict was insufficient because the label-shuffle guard failed. A 5/5 Fisher nuisance-compaction pattern is secondary geometric evidence only.
+
 ## 8. Claim Boundary And Next Decision
 
 Supported claim: formation at $h_T$ does not guarantee usefulness at $h_{T+1}$; cross-position transport is an additional necessary condition. Local transport geometry alone is not sufficient for behavioral superiority.
 
-Not supported: a universal adverse-transition law, a universal bridge-token explanation, or MTP downstream efficiency.
+Not supported: a universal adverse-transition law, a universal bridge-token explanation, MTP-specific extra branch readability, total ordinary-head non-use, or MTP downstream efficiency.
 
-**Exactly one next decision:** decide whether to preregister a weak-margin audit;
-otherwise close this interface and move to a task where the early state is
-structurally necessary. No layer, Q, K-only, or V-only sweep is authorized.
+**Exactly one next decision:** validate a `relay-required` carrier with no
+direct answer bypass and a non-saturated shared-aux baseline. No layer, Q,
+K-only, V-only, or shared-unembedding sweep is authorized before that gate.

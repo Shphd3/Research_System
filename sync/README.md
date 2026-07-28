@@ -23,6 +23,9 @@ Read it in this order:
 
 ```text
 sync/S000_current_specialization/README.md
+sync/S000_current_specialization/anchor_index.md
+sync/S000_current_specialization/stories/README.md
+sync/S000_current_specialization/protocol_index.md
 sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
 sync/S000_current_specialization/research_lines/05_failure_mechanism_line_cn.md
 sync/S000_current_specialization/research_lines/06_proxy_preservation_line_cn.md
@@ -42,6 +45,11 @@ Projects/graphs/
 
 Root sync compresses the current logic and links to those files. It should not
 paste complete result ledgers or raw figures.
+
+The explicitly published `anchors/`, `stories/`, and `protocols/` trees are
+small Markdown mirrors for external reading. They exclude experiment outputs,
+logs, checkpoints, scripts, and figures; links to those assets return to the
+project-local source.
 
 ## Update Rule
 
