@@ -9,6 +9,11 @@ Current examples:
   bounded convergence through human writing, and explanation followed by
   understanding checks.
 - `paper_reading_project_prompt.md`: paper-reading AI prompt for paper/blog reading anchored to the current mainline.
+- `a14_02_rare_common_rank_audit_and_execution_prompt_cn.md`: Chinese-first
+  Thinking Card and execution gate for the improved active A14_02 E02
+  frequency/mapping-rank experiment and E03 rare outside-common-subspace
+  mechanism experiment; it preserves the old E02-v1 evidence through lossless
+  archive migration and requires staged human authorization.
 
 Important: web-side AI may only see `Research_System`, not project subfolders
 under `Projects/`. Prompts should tell the agent to read `PROJECTS.md` and

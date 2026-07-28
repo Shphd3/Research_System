@@ -26,5 +26,6 @@ Roles:
 - `detailed.md`: full setup, run evidence, failures, and artifact map.
 
 Do not add separate implementation plans, daily logs, meeting briefs, closure
-reports, or routine final reports. Use the day's one-page `focus.md` for the
-human judgment and meeting path; link the owning project artifact.
+reports, or routine final reports. Use the day's self-contained `focus.md` for
+the human knowledge update, explanation path, and next decision; link the owning
+project artifact.

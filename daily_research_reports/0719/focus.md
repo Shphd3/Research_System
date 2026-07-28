@@ -76,7 +76,7 @@ Top-1/Top-k 选择和低秩专家架构暂时 `park`。
 
 ## 8. 路由与核对
 
-- **所属项目 / anchor：**[A14 形式化锚点](../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_tree_low_rank_language_structure_anchor_cn.md)
+- **所属项目 / anchor：**[A14 形式化锚点](../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)
 - **主理论证据：**[E07 可达空间核算](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
 - **真实语言边界：**[E06 双侧方向平衡](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)
 - **完整当前结论：**[A14 当前实验总结](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary_cn.md)

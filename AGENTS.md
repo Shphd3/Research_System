@@ -89,28 +89,35 @@ Each research day keeps exactly one retained focus file:
 daily_research_reports/MMDD/focus.md
 ```
 
-`focus.md` is a one-page, human-owned decision note. It is also the default
-routine meeting brief and resume point. Target 30 lines and do not exceed 60
-lines unless the user explicitly requests a longer working note.
+`focus.md` is a concise, human-owned, self-contained research briefing for the
+researcher and other readers. It is also the default routine meeting brief and
+resume point. Target one page and 60 lines; include only experiments required
+to support the current conclusion.
 
 It contains only:
 
 ```text
-one decision question
-current answer and reason
-strongest rival or uncertainty
-key evidence or missing evidence
-cannot-claim boundary
-advisor decision, next action, and resume point
+1. one core decision question and at most three necessary subquestions
+2. one complete conclusion-as-knowledge-update with its claim boundary, plus
+   one mechanism explanation and one indispensable formula
+3. exactly one next decision, its mainline effect, completion criterion, and
+   resume action
+4. one AI-drafted, human-corrected explanation flowchart
+5. one plain-language paragraph for each conclusion-bearing experiment
 ```
 
-Do not copy theory, terminology tables, Protocol conditions, run histories, or
-long source maps into `focus.md`; link the owning artifact instead. Keep at most
-three subquestions, all serving the same decision.
+The conclusion must answer the question in language an outside researcher can
+understand. Present experiments as evidence for a knowledge update, not as a
+list of run ids, caveats, or metrics. Integrate the strongest unresolved rival
+and cannot-claim boundary into the conclusion. Define terms inline. Keep only
+one mechanism-critical formula; link longer theory, Protocol conditions, run
+histories, tables, and source maps to their owning artifacts.
 
-The researcher writes the answer and interpretation. AI may prefill measured
-facts and links, then identifies only one blocking ambiguity. Do not create a
-separate daily log or routine meeting brief.
+The researcher writes the conclusion, mechanism, and next decision. AI may
+prefill verified measurements and links, draft the flowchart, summarize each
+experiment's structure, and identify one blocking ambiguity. The researcher
+corrects and approves those AI-written parts. Do not create a separate daily
+log or routine meeting brief.
 
 Use at most three genuinely different candidates in one divergent round, then
 choose one and park the rest. Reading, coding, running, and plotting count as
@@ -122,7 +129,7 @@ progress only when they change a judgment, boundary, or decision.
 |---|---|
 | `AGENTS.md` | stable repository behavior and hard boundaries |
 | `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `daily_research_reports/MMDD/focus.md` | one-page human judgment, routine meeting brief, and resume action |
+| `daily_research_reports/MMDD/focus.md` | self-contained research briefing: question, knowledge update, mechanism, evidence structure, next decision, and resume action |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
 | Thinking Card | human's initial mechanism judgment and uncertainty |
 | anchor | one adjudicable research design and its current boundary |
@@ -147,19 +154,37 @@ New Thinking Card names are subject-bearing and collision-safe:
 The card is independent and human-owned. The formal anchor links it and does
 not duplicate it as section 0.
 
-Default anchor paths:
+Canonical anchor paths:
 
 ```text
-Projects/<project>/main/problem_anchors/<line>/<anchor_id>_<topic>_anchor.md
-Projects/<project>/main/problem_anchors/<line>/<anchor_id>_<topic>/
-  <anchor_id>_<topic>_anchor.md
-  subanchors/<anchor_id>_<NN>_<topic>_anchor.md
+Projects/<project>/main/problem_anchors/<line>/README.md
+Projects/<project>/main/problem_anchors/<line>/<parent_id>_<topic>/
+  <parent_id>_<topic>_anchor.md
+  <parent_id>_<topic>_anchor_cn.md
+  <parent_id>_<topic>_thinking_card.md
+  <parent_id>_<topic>_thinking_card_cn.md
+  subanchors/
+    <parent_id>_<NN>_<topic>_anchor.md
+    <parent_id>_<NN>_<topic>_anchor_cn.md
+    <parent_id>_<NN>_<topic>_thinking_card.md
+    <parent_id>_<NN>_<topic>_thinking_card_cn.md
 ```
 
-A parent anchor owns one complete major problem. A subanchor inherits the
-parent question and adjudicates one local clause, rival, robustness check, or
-metric guard. Do not mix flat and nested layouts inside one active line without
-an explicit migration that updates indexes and references.
+A research line may contain several sibling parent anchors, and every parent
+anchor receives its own `<parent_id>_<topic>/` folder. Dependency or reading
+order between parent anchors does not make one a subanchor of another.
+`subanchors/` contains only children that inherit that folder's parent decision
+question and adjudicate one local clause, rival, repair, robustness check, or
+metric guard. Parent anchor files and their Thinking Cards stay together in the
+parent folder; child Thinking Cards stay beside their child anchors in
+`subanchors/`. The line `README.md` indexes sibling parents, dependency order,
+current boundary, and one next decision.
+
+Legacy flat layouts may remain until an explicit migration. New or reorganized
+multi-parent lines must use the canonical folder-per-parent layout. A migration
+must move rather than copy the source files, update all indexes and references,
+remove the old path, and verify that no duplicate canonical version or broken
+local link remains.
 
 Formal anchors use sections 1-8:
 

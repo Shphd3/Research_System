@@ -39,8 +39,18 @@ Projects/<project>/
         <NN>_<topic>.md
         <NN>_<topic>_cn.md
     problem_anchors/
-      <anchor_stem>_thinking_card.md
-      <anchor_id>.md
+      <line_id>/
+        README.md
+        <parent_id>_<topic>/
+          <parent_id>_<topic>_anchor.md
+          <parent_id>_<topic>_anchor_cn.md
+          <parent_id>_<topic>_thinking_card.md
+          <parent_id>_<topic>_thinking_card_cn.md
+          subanchors/
+            <parent_id>_<NN>_<topic>_anchor.md
+            <parent_id>_<NN>_<topic>_anchor_cn.md
+            <parent_id>_<NN>_<topic>_thinking_card.md
+            <parent_id>_<NN>_<topic>_thinking_card_cn.md
     experiments/
       A<anchor_id>/
         <experiment_id>/
@@ -85,6 +95,31 @@ Use:
 Do not create a new anchor for each daily iteration, seed, smoke run, or failed
 operationalization. Update the same anchor unless the parent question or
 hypothesis line changes.
+
+### Parent Anchor Folders
+
+For every new or reorganized multi-parent research line, use one folder per
+parent anchor:
+
+```text
+main/problem_anchors/<line_id>/README.md
+main/problem_anchors/<line_id>/<parent_id>_<topic>/
+  <parent_id>_<topic>_anchor.md
+  <parent_id>_<topic>_thinking_card.md
+  subanchors/<parent_id>_<NN>_<topic>_anchor.md
+```
+
+Sibling parent anchors remain sibling folders even when one depends on another.
+Place an anchor in `subanchors/` only when it inherits the parent's decision
+question and tests one local clause, rival, repair, robustness check, or metric
+guard. Keep each Thinking Card beside the anchor it owns. The line `README.md`
+must distinguish sibling-parent dependency order from parent--child ownership.
+
+When migrating a line, move the canonical files instead of copying them, update
+the line README plus every project, story, experiment, daily-note, and graph
+reference in scope, remove the old path, and check for duplicate canonical
+files and broken relative links. Do not leave sibling parents inside another
+parent's `subanchors/` directory.
 
 ### Experiment Names
 
@@ -151,9 +186,11 @@ Keep one human-facing file per day:
 daily_research_reports/MMDD/focus.md
 ```
 
-It is the one-page daily judgment, routine meeting brief, and resume action.
-Do not duplicate it with another daily card, log, or meeting brief. Supporting
-daily folders may hold recordings or working material only.
+It is the self-contained daily research briefing, routine meeting brief, and
+resume action. It contains the current question, bounded knowledge update,
+mechanism, evidence structure, and next decision without replacing canonical
+sources. Do not duplicate it with another daily card, log, or meeting brief.
+Supporting daily folders may hold recordings or working material only.
 
 Daily focus files do not replace anchors or experiment records. If the day
 changes the hypothesis, evidence, boundary, or next decision, update the

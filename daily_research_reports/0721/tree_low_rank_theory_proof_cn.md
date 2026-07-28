@@ -630,6 +630,6 @@ $$
 
 - [7 月 21 日 focus](focus.md)
 - [7 月 21 日 meeting brief](meetings/tree_low_rank_closure_meeting_brief_cn.md)
-- [A14 中文 anchor](../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_tree_low_rank_language_structure_anchor_cn.md)
+- [A14 中文 anchor](../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)
 - [A14 中文 story](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/01_tree_aligned_compression_without_linear_propagation_cn.md)
 - [E07 可达空间核算](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)

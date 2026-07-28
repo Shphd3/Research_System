@@ -1,9 +1,9 @@
 # A14 状态—参数验证与实验路径 TODO
 
 > 日记录用途：帮助审核执行顺序，不替代 canonical anchor 或 protocol。  
-> Current primary anchor：[A14_02 共享规则与语义条件根表示有效秩](../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/subanchors/14_02_relation_reuse_root_effective_rank_anchor_cn.md)  
+> Current primary anchor：[A14_02 共享规则与语义条件根表示有效秩](../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_anchor_cn.md)
 > Current experiment：[A14_02_E01 中文 protocol 草案](../../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E01_shared_rule_vs_lookup_root_rank/protocol_cn.md)
-> Blocked follow-up anchor：[A14_03 状态功能秩与参数方向需求](../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/subanchors/14_03_state_parameter_functional_rank_demand_anchor_cn.md)
+> Blocked follow-up anchor：[A14_03 状态功能秩与参数方向需求](../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_03_state_parameter_functional_rank_demand/14_03_state_parameter_functional_rank_demand_anchor_cn.md)
 
 ## 1. 归属与编号
 

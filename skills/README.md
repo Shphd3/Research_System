@@ -19,7 +19,7 @@ Edit `skills/<skill>/SKILL.md` first, then sync the installed copy when needed.
 | `scholar-mode` | Clarify research intuitions, theory framing, methodology critique, and literature fit. |
 | `problem-anchor-writer` | Audit a subject-bearing independent human Thinking Card, then write sections 1-8 of the formal anchor after approval. |
 | `experiment-card-writer` | Write `protocol.md`, `summary.md`, and `detailed.md` from anchors. |
-| `meeting-outline-writer` | Use the daily `focus.md` as the routine speaking outline; create a separate advisor outline with topic and experiment mappings only for multi-focus or explicitly requested meetings. |
+| `meeting-outline-writer` | Use the self-contained daily `focus.md` as the routine speaking document; create a separate outline only for multi-line or explicitly requested meetings. |
 | `handoff-report-writer` | Package existing anchor, protocol, summary, detailed, figures, tables, and finalized meeting material for collaborator/web/external handoff. |
 | `remote-experiment-workflow` | Manage local/remote/container/SCO/ACP experiment workflow, preflight, submission, monitoring, and artifact maps. |
 | `research-graph-sop` | Maintain a thin graph of questions, claims, evidence, methods, outputs, and next tasks. |
@@ -31,11 +31,11 @@ Do not treat every skill as a separate workflow. Use this responsibility map:
 
 | Layer | Skill | Owns | Does not own |
 |---|---|---|---|
-| Research paradigm | `research-progress-core` | One-page human focus, one decision-bearing uncertainty, a minimal approved test when needed, evidence audit, and one next decision. | Project-specific paths, platform commands, or tool adapters. |
+| Research paradigm | `research-progress-core` | Self-contained daily focus, one decision-bearing uncertainty, bounded knowledge update, mechanism, evidence audit, and one next decision. | Project-specific paths, platform commands, or tool adapters. |
 | Remote workflow | `remote-experiment-workflow` | Local/remote/cluster boundary, SSH/CCI preflight, ACP/SCO submission, monitoring, artifact map, curated handoff. | Defining the research problem. |
 | Anchor reasoning | `problem-anchor-writer` | Current-state design document: phenomenon, one decision question, physical priors, falsifiable hypotheses, one core mathematical model, computational realization, minimal tests with operational definitions, stage-local evidence, failure meaning, evidence, claim boundary, one next decision. | Raw logs, command construction, protocol details, literature review, long reports. |
 | Experiment protocol and results | `experiment-card-writer` | Approved `protocol.md`, result `summary.md`, and full `detailed.md` from an anchor. | Separate purpose cards or separate implementation-plan files. |
-| Meeting outline | `meeting-outline-writer` | Routine `focus.md` speaking structure; when separately justified, topic order, prompts, experiment mapping, result loops, and post-draft audit. | Writing the researcher's answers, duplicating `focus.md`, automatically creating a final brief, packaging, external sync, or creating new claims. |
+| Meeting outline | `meeting-outline-writer` | Routine `focus.md` explanation flow, verified experiment descriptions, and post-draft audit; separate outline structure only when justified. | Writing the researcher's conclusion or mechanism, duplicating `focus.md`, automatically creating a final brief, packaging, external sync, or creating new claims. |
 | External handoff | `handoff-report-writer` | Explicitly requested packaging of existing artifacts or curated collaborator repo sync package after anchor and result records are updated. | Writing meeting material itself; creating new research claims; replacing anchor, `summary.md`, or `detailed.md`; automatic handoff creation; syncing code or raw outputs by default. |
 | Mainline | `research-mainline` | Project anchors, roadmap, result records, and explicit root/project/external sync or graph actions. | Raw logs, remote job operation, automatic graph/root-sync/external-sync/push. |
 | Graph | `research-graph-sop` | Thin `graph.yaml` navigation map. | Replacing Markdown reasoning files. |

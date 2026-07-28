@@ -66,8 +66,8 @@ chronology.
 
 Use sources in this order:
 
-1. completed daily `focus.md` or separate outline for the researcher's question
-   order and answers;
+1. completed daily `focus.md` or separate outline for the researcher's core
+   question, knowledge update, mechanism, and next decision;
 2. updated anchor for the current claim boundary and execution action;
 3. `summary.md` for the meeting conclusion, key evidence, and central figures;
 4. `detailed.md` for setup checks, numeric precision, and artifact maps;

@@ -1,0 +1,59 @@
+{
+  "package": "a14_ntp_conditional_low_rank_theory",
+  "role": "unique_editable_research_system_copy",
+  "source_zip_sha256": "9f16514854e10299d25ebf0358f519a77eef9b4b3a19698a2d4dfd00b5056746",
+  "theory_sync": {
+        "repository": "Projects/kv_cache",
+        "branch": "xyDeng",
+        "commit": "efd91334458bc301f608e2800f54d83625df7830",
+        "published_path": "xyDeng/sync/2026-07-24/a14_ntp_conditional_low_rank_theory",
+        "snapshot_package_version": "1.1",
+        "contains_local_2026_07_25_revision": false
+  },
+  "files": [
+    "01_理论论文_共享组合结构与条件低有效秩.md",
+    "02_证明附录.md",
+    "03_实验协议.md",
+    "04_物理先验与假设审计.md",
+    "05_审核清单.md",
+    "MANIFEST.json",
+    "README.md",
+    "references.bib"
+  ],
+  "checks": {
+    "main_has_abstract": true,
+    "main_has_intro": true,
+    "main_has_theorems_T0_T9": true,
+    "main_has_claim_boundary": true,
+    "protocol_has_pass_fail": true,
+    "appendix_has_concentration": true,
+        "appendix_has_flowcharts": true,
+        "priors_has_mentor": true,
+        "display_formulas_use_double_dollar": true,
+        "local_and_finite_bridges_are_separated": true,
+        "finite_secant_path_integral_proved": true,
+        "e04_e06_evidence_boundary_recorded": true
+  },
+  "sync_included": [
+    "01_理论论文_共享组合结构与条件低有效秩.md",
+    "02_证明附录.md",
+    "04_物理先验与假设审计.md",
+    "references.bib"
+  ],
+  "sync_excluded": [
+    "03_实验协议.md",
+    "05_审核清单.md"
+  ],
+    "local_evidence_update": {
+        "date": "2026-07-25",
+        "experiments": [
+            "A14_02_E04_shared_jacobian_path_image",
+            "A14_02_E05_trajectory_jacobian_closure",
+            "A14_02_E06_reference_jacobian_vs_secant"
+        ],
+        "result": "local_h9_supported_finite_h11_refuted_secant_bridge_adopted",
+        "published_to_kv_cache": false
+    },
+    "status": "theory_draft_revised_after_decisive_h9_h11_audit",
+    "package_version": "1.2"
+}

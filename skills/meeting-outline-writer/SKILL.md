@@ -7,9 +7,10 @@ metadata:
 
 # Meeting Outline Writer
 
-The default routine meeting artifact is the day's completed `focus.md`, which
-helps the researcher answer the core questions in their own words. It is not an
-AI-written report.
+The default routine speaking artifact is the day's completed `focus.md`: a
+self-contained research briefing with a bounded knowledge update, mechanism,
+flowchart, experiment structure, and next decision. It is not an AI-written
+conclusion.
 
 ## Default Boundary
 
@@ -41,6 +42,8 @@ and explicitly requests a separate final document.
 
 AI may fill:
 
+- an explanation flowchart drafted from the human conclusion and mechanism;
+- plain-language experiment structure and verified direct measurements;
 - meeting decision and topic order proposed from current sources;
 - short speaking prompts for each topic;
 - unclear definitions, hidden assumptions, and live rivals to address;
@@ -49,7 +52,8 @@ AI may fill:
 - a missing-experiment prompt when no existing result can support the point;
 - transition prompts and an evidence-boundary audit.
 
-AI must leave `我的讲解（研究者填写）` for the researcher. It must
+AI must leave the conclusion, mechanism judgment, and `我的讲解（研究者填写）`
+for the researcher. It must
 not fill that field from chat history, infer the researcher's voice, or turn
 bullet prompts into polished speech before the researcher drafts it.
 
@@ -71,10 +75,11 @@ meeting topics:
 PROJECTS.md -> today's focus.md -> relevant anchor -> summary.md -> detailed.md
 ```
 
-Use `focus.md` for the researcher's question order and answers, the anchor for
-the claim boundary, `summary.md` for the result conclusion and central
-evidence, and `detailed.md` only to verify numbers, setup, or artifact links.
-Meeting material links these sources rather than copying derivations or tables.
+Use `focus.md` for the researcher's core question, bounded knowledge update,
+mechanism, and next decision; use the anchor for the canonical claim boundary,
+`summary.md` for the result conclusion and central evidence, and `detailed.md`
+only to verify numbers, setup, or artifact links. Meeting material links these
+sources rather than copying derivations or tables.
 
 ## Topic Construction
 

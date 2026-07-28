@@ -157,6 +157,24 @@ the parent question and adjudicates one local clause, rival explanation,
 robustness check, or metric guard. It must not repeat the full story or create a
 parallel mainline.
 
+Use one folder per sibling parent anchor:
+
+```text
+main/problem_anchors/<line_id>/README.md
+main/problem_anchors/<line_id>/<parent_id>_<topic>/
+  <parent_id>_<topic>_anchor.md
+  <parent_id>_<topic>_thinking_card.md
+  subanchors/
+    <parent_id>_<NN>_<topic>_anchor.md
+    <parent_id>_<NN>_<topic>_thinking_card.md
+```
+
+Reading order or `depends_on` between two parent anchors does not make either a
+subanchor. Store an item in `subanchors/` only when it inherits the containing
+parent's decision question. Keep each Thinking Card beside the anchor it owns,
+and make the line `README.md` distinguish sibling-parent dependency order from
+parent--child ownership.
+
 ## Result Update
 
 ```text

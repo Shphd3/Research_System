@@ -15,7 +15,7 @@
 - 唯一核心数学缺口是：一般 Transformer 中能否从 attention 与 NTP 更新
   推出共享 Jacobian/path image，而不是直接把它写入假设。
 
-理论来源：[从静态树到 NTP 条件功能秩](../0724/docs/从静态树到NTP条件功能秩_概率稀疏层级计算完整理论论文.md)。
+理论来源：[NTP 条件低有效秩完整理论](../0724/NTP_conditional_low_rank_theory_package/01_理论论文_共享组合结构与条件低有效秩.md)。
 
 ## 决定性实验结果（AI 填入，研究者核对）
 

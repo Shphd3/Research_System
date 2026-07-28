@@ -75,24 +75,26 @@ choose one and park the rest.
 
 ## Daily Focus
 
-Use `daily_research_reports/MMDD/focus.md` as the only daily decision note,
-routine meeting brief, and resume point. Create it from
+Use `daily_research_reports/MMDD/focus.md` as the only daily self-contained
+research briefing, routine meeting brief, and resume point. Create it from
 `templates/research_process/focus_writing_template.md`.
 
 Keep it to one page. It contains:
 
 ```text
-one decision question
-current answer and reason
-strongest rival or uncertainty
-key evidence or missing evidence
-cannot-claim boundary
-advisor decision, next action, and resume point
+one core question and at most three necessary subquestions
+one complete conclusion as a knowledge update, including strongest unresolved
+rival and cannot-claim boundary
+one mechanism explanation with one indispensable formula
+one next decision that changes the mainline, plus completion and resume actions
+one AI-drafted, human-corrected explanation flowchart
+one plain-language paragraph per conclusion-bearing experiment
 ```
 
-Link rather than copy theory, terminology, Protocol details, run history, or
-result tables. The human writes the answer; AI may prefill measured facts and
-links, then identify one blocking ambiguity.
+The human writes the conclusion, mechanism, and next decision. AI may prefill
+verified facts and links, draft the flowchart, and summarize experiment
+structure; the human corrects and approves them. Link rather than copy extended
+theory, terminology tables, Protocol details, run history, or result tables.
 
 ## Decide Whether Work Is Worth Doing
 
@@ -259,7 +261,7 @@ does not match the downstream decision. Read:
 Use the smallest necessary artifact:
 
 ```text
-focus.md      human daily judgment and routine meeting brief
+focus.md      self-contained daily research briefing and routine meeting brief
 Thinking Card new, unformed mechanism judgment only
 anchor        current formal question and claim boundary
 protocol.md   approved experiment contract

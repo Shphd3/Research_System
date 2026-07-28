@@ -30,8 +30,8 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 - `PROJECTS.md`: current project registry, active route, graph hub, claim
   boundary, and next decision.
 - `daily_research_reports/MMDD/focus.md`: one day's human-written idea,
-  group-meeting questions, question-by-question closure, and resume action;
-  create it from the maintained focus template.
+  self-contained conclusion, mechanism, evidence structure, next decision, and
+  resume action; create it from the maintained focus template.
 - `sync/`: explicitly published research-line summaries and generated
   link-safe anchor mirrors. Use the current entry named in `PROJECTS.md` and
   republish mirrors only through
@@ -52,23 +52,21 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 
 1. Create or reopen `daily_research_reports/MMDD/focus.md` from
    `templates/research_process/focus_writing_template.md`, replace its title
-   with the day's exact central research question, then list the core questions
-   that the group meeting must answer. All questions must serve one overall
-   decision.
+   with the one core research question, then keep only the subquestions needed
+   to answer it.
 2. Read `PROJECTS.md`, today's `focus.md`, then the relevant graph under
    `Projects/graphs/` and only the linked problem anchor, experiment result,
    paper note, or sync note needed for that advancement point.
 3. If exploration is needed, generate at most three distinct candidates,
    select one, and park the rest before further work.
-4. Write the four-sentence central judgment in the researcher's own words. AI
-   asks one blocking question at a time; the researcher revises the same
-   section in place.
+4. Write a complete conclusion as a knowledge update with its boundary, then
+   explain the mechanism with one indispensable formula. AI asks one blocking
+   question at a time; the researcher revises in place.
 5. Perform only the derivation, reading, diagnostic, or approved experiment
    needed to close the advancement point.
-6. At the end of the day, close source material and answer every listed
-   question from memory. Each answer has one decisive experiment or missing-
-   experiment marker and one cannot-claim boundary. Finish with one overall
-   advisor decision and one next action. AI audits only after this human draft.
+6. Close source material and restate the conclusion, boundary, and next
+   decision from memory. AI then drafts the explanation flowchart and verified
+   experiment paragraphs; the researcher corrects them before closure.
 7. Park side thoughts instead of chasing them during the current task.
 8. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
@@ -88,10 +86,9 @@ Class notes, meeting materials, and side documents may still live under the
 dated folder, but they do not duplicate the role of `focus.md`. Park side ideas
 outside the active focus unless they change its one next decision.
 
-For a routine single-center group meeting, the completed daily `focus.md` is
-the speaking outline. Use `daily_research_reports/MMDD/meetings/` only when a
-meeting combines several daily foci or research lines, or when a separate
-outline is explicitly requested. A finished brief is not created by default.
+The completed daily `focus.md` is the default self-contained speaking and
+reading document. Use `daily_research_reports/MMDD/meetings/` only when several
+research lines must be combined or a separate outline is explicitly requested.
 
 ## Physical-Prior-First Loop
 
