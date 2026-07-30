@@ -1,0 +1,7 @@
+interface:
+  display_name: "Problem Anchor Writer"
+  short_description: "Audit Thinking Cards and formalize approved anchors"
+  default_prompt: "Use $problem-anchor-writer to audit a human Thinking Card and formalize its approved research anchor."
+
+policy:
+  allow_implicit_invocation: true

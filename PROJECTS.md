@@ -449,7 +449,7 @@ automatically.
 - `papers/`: paper-writing workspaces.
 - `templates/`: reusable templates.
 - `prompts/`: reusable prompts.
-- `skills/`: repository-tracked workflows.
+- `.agents/skills/`: repository-tracked, natively discovered workflows.
 
 `Projects/academic_writing/` is a course-delivery wrapper using current
 research as source material. It does not own research state.

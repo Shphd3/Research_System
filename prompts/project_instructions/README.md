@@ -20,4 +20,6 @@ under `Projects/`. Prompts should tell the agent to read `PROJECTS.md` and
 root `sync/` summaries first, then ask the user or Codex to expose
 project-local graph, anchor, `summary.md`, or `detailed.md` files when needed.
 
-When a prompt becomes stable and frequently reused, convert it into a Codex skill under `skills/` and install it into `C:\Users\250010109\.codex\skills\`.
+When a prompt becomes stable and frequently reused, convert it into a
+repository Codex skill under `.agents/skills/`. Do not install or synchronize a
+second personal-directory copy for this repository.

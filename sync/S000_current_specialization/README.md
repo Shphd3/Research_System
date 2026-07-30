@@ -101,8 +101,8 @@ directly usable from the published mirror.
 Generate or verify the mirror with:
 
 ```text
-python skills/research-mainline/scripts/publish_anchor_mirror.py
-python skills/research-mainline/scripts/publish_anchor_mirror.py --check
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --check
 ```
 
 Do not hand-edit `anchors/`; update the project-local source and republish.
@@ -116,8 +116,8 @@ scripts, figures, logs, or raw outputs. See [protocol index](protocol_index.md).
 Generate or verify the additional mirrors with:
 
 ```text
-python skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/stories --target sync/S000_current_specialization/stories --exclude-dir archive
-python skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/stories --target sync/S000_current_specialization/stories --exclude-dir archive
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
 ```
 
 This root sync was refreshed on 2026-07-28. Project-local anchors, stories,

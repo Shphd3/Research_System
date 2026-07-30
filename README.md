@@ -35,14 +35,15 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 - `sync/`: explicitly published research-line summaries and generated
   link-safe anchor mirrors. Use the current entry named in `PROJECTS.md` and
   republish mirrors only through
-  `skills/research-mainline/scripts/publish_anchor_mirror.py`.
+  `.agents/skills/research-mainline/scripts/publish_anchor_mirror.py`.
 
 ## Working Areas
 
 - `daily_research_reports/`: one daily `focus.md` plus dated meeting materials,
   experiment summaries, and report bundles.
 - `paper_reading/`: literature cards and reading notes.
-- `skills/`: repo-tracked source copies of personal Codex skills.
+- `.agents/skills/`: repo-tracked, natively discovered Codex skills; see
+  `docs/skills.md` for the responsibility and trigger index.
 - `sync/`: compact research-line summaries and reusable current-state maps.
 - `templates/`: the single maintained folder for reusable templates.
 - `prompts/`: reusable project prompts and older workflow prompts.

@@ -9,10 +9,10 @@
 ```text
 AGENTS.md
 PROJECTS.md
-skills/research-progress-core/SKILL.md
-skills/problem-anchor-writer/SKILL.md
-skills/experiment-card-writer/SKILL.md
-skills/remote-experiment-workflow/SKILL.md
+.agents/skills/research-progress-core/SKILL.md
+.agents/skills/problem-anchor-writer/SKILL.md
+.agents/skills/experiment-card-writer/SKILL.md
+.agents/skills/remote-experiment-workflow/SKILL.md
 sync/S000_current_specialization/README.md
 sync/S000_current_specialization/anchors/expert_specialization/slot_context_dominance_router_specialization_anchor.md
 sync/S000_current_specialization/anchors/expert_specialization/hierarchical_route_utility_binding_anchor.md

@@ -295,7 +295,7 @@ Project-local anchors remain the source of truth. When a root anchor mirror is
 explicitly requested, generate it with:
 
 ```text
-python skills/research-mainline/scripts/publish_anchor_mirror.py
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py
 ```
 
 The publisher copies the complete anchor tree and rewrites links that leave the
@@ -336,7 +336,7 @@ Keep the root focused on:
 
 ```text
 AGENTS.md  PROJECTS.md  README.md
-Projects/  sync/  templates/  prompts/  skills/
+Projects/  sync/  templates/  prompts/  .agents/
 paper_reading/  papers/  daily_research_reports/  docs/
 ```
 
@@ -353,11 +353,15 @@ research mainline.
 
 ## Local Skills
 
+Repository skills live in `.agents/skills/` and are discovered directly by
+Codex. Do not maintain personal-directory copies of these repository skills.
+
 Use repository skills when the task matches:
 
 - `research-progress-core`: research logic and uncertainty reduction.
 - `problem-anchor-writer`: Thinking Card audit and anchor construction.
 - `experiment-card-writer`: protocol, summary, and detailed records.
+- `research-story-writer`: line-level mathematical and evidence synthesis.
 - `meeting-outline-writer`: AI-supported, human-completed advisor outline.
 - `research-mainline`: project organization and explicit publication.
 - `research-graph-sop`: thin graph maintenance.

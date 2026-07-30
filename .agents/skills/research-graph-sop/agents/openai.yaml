@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Graph SOP"
+  short_description: "Inspect and maintain thin research graphs"
+  default_prompt: "Use $research-graph-sop to inspect or maintain a thin graph.yaml navigation layer without replacing Markdown evidence."
+
+policy:
+  allow_implicit_invocation: true

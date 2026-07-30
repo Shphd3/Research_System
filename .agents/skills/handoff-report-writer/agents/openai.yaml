@@ -1,0 +1,7 @@
+interface:
+  display_name: "Handoff Report Writer"
+  short_description: "Package approved research artifacts for handoff"
+  default_prompt: "Use $handoff-report-writer to package an explicitly requested curated research handoff from approved artifacts."
+
+policy:
+  allow_implicit_invocation: false

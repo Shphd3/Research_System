@@ -44,7 +44,7 @@ artifact 按仓库规范使用英文 canonical 与中文 companion。
 4. A14_02 parent anchor、现有 E02/E03 subanchors
 5. E01、旧 E02、E04–E06 的 `summary.md`、`detailed.md`
 6. 理论包中的 H9-L、H9-F、H10、H11、H12 和 T6-L/T6-F
-7. `skills/research-progress-core/`、`problem-anchor-writer/`、
+7. `.agents/skills/research-progress-core/`、`problem-anchor-writer/`、
    `experiment-card-writer/` 的完整说明
 
 不要用聊天记录代替这些来源。

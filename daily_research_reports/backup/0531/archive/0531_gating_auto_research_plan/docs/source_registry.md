@@ -7,13 +7,13 @@ This file records which repo rules and current evidence this plan used.
 ```text
 AGENTS.md
 PROJECTS.md
-skills/research-progress-core/SKILL.md
-skills/problem-anchor-writer/SKILL.md
-skills/experiment-card-writer/SKILL.md
-skills/remote-experiment-workflow/SKILL.md
-skills/research-mainline/SKILL.md
-skills/handoff-report-writer/SKILL.md
-skills/research-progress-core/references/algorithm_specification.md
+.agents/skills/research-progress-core/SKILL.md
+.agents/skills/problem-anchor-writer/SKILL.md
+.agents/skills/experiment-card-writer/SKILL.md
+.agents/skills/remote-experiment-workflow/SKILL.md
+.agents/skills/research-mainline/SKILL.md
+.agents/skills/handoff-report-writer/SKILL.md
+.agents/skills/research-progress-core/references/algorithm_specification.md
 ```
 
 ## Current project state
