@@ -1,0 +1,21 @@
+{
+  "model_verdicts": {
+    "decommon": {
+      "eligible_layer_ids": [],
+      "eligible_layers": 0,
+      "reason": "fewer than eight eligible layers",
+      "total_layers": 12,
+      "verdict": "insufficient"
+    },
+    "lb": {
+      "eligible_layer_ids": [],
+      "eligible_layers": 0,
+      "reason": "fewer than eight eligible layers",
+      "total_layers": 12,
+      "verdict": "insufficient"
+    }
+  },
+  "reason": "No layer reached the preregistered 20% centered-flip gate in either model.",
+  "secondary_observation": "Global spectra and final outputs changed little, but flip-only sparse-output CKA was far below the 0.90 equivalence guard; changed-token expert outputs are not interchangeable.",
+  "verdict": "insufficient"
+}

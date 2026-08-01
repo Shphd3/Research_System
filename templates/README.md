@@ -21,7 +21,7 @@ prompt, or README.
 | Template | Use |
 |---|---|
 | `research_process/thinking_card_template.md` | Optional human judgment card only when a new mechanism question is promoted. |
-| `research_process/focus_writing_template.md` | Self-contained research briefing: question, bounded conclusion, mechanism and key formula, next decision, explanation flowchart, and experiment paragraphs. |
+| `research_process/focus_writing_template.md` | One-question knowledge update: outsider-readable answer, decisive figure/table, explanation flowchart, boundary, and one next decision. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
 | `research_process/experiment_understanding_and_execution_gate_template_cn.md` | Four minimal Chinese cards for understanding, self-check, execution gating, and result reporting. |
 

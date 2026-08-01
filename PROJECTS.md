@@ -100,9 +100,10 @@ embedding scale but did not beat or reproduce failure in its multiplier-1.0
 control, so no embedding multiplier or production configuration is approved.
 
 Creating the scaffold does not promote the method claim, edit the active graph,
-or replace the A06 real-workload utility-headroom decision. Better balance or
-route separation remains insufficient; functional promotion requires an
-approved matched-load held-out utility protocol.
+or replace the A06 decision after the frozen CrossCodeEval headroom failure.
+Better balance, route separation, or route continuity remains insufficient;
+functional promotion requires an approved training-time held-out utility
+protocol.
 
 ## Implementation Project — De-common Router Evaluation
 
@@ -149,8 +150,8 @@ reading surface.
 | Line | Question | State | Current source |
 |---|---|---|---|
 | A05 | Why can ordinary top-1 routing collapse under apparently uniform features? | Failure mechanisms established under controlled and real-text audits. | `Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md` |
-| A06 | Can route-relevant structure be discovered, preserved, and converted into expert utility? | Primary line; controlled utility chain complete, real-workload headroom gate active. | `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md` |
-| A07 | Does functional separation reduce common/rare interference? | Supporting controlled evidence; parked until A06 passes the real-workload gate. | `Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/` |
+| A06 | Can route-relevant structure be discovered, preserved, and converted into expert utility? | Primary line; controlled utility chain complete; first registered CrossCodeEval final-layer headroom clause failed; training-time selective-sharing decision active. | `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md` |
+| A07 | Does functional separation reduce common/rare interference? | Supporting controlled evidence; parked until A06 establishes stable positive expert utility on a registered real workload. | `Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/` |
 | A11 | What direct training signal does an informative future target add, and does the standard head causally use it? | Exact K/V is branch-readable under all objectives; no registered MTP-specific readability or stable strong-use increment is established, while 5/5 nuisance compaction remains secondary. Relay-required continuation moved to A13. | `Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md` |
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
@@ -164,8 +165,9 @@ A05 failure
 -> A06 geometry and state discovery
 -> A06 finite-margin preservation
 -> A06 expert utility and partial-feedback correction
--> A06 real-workload oracle-headroom gate
--> A07 functional interference value only if the gate passes
+-> A06 registered frozen real-code headroom clause fails
+-> A06 training-time selective-sharing decision
+-> A07 functional interference value only if stable positive utility is established
 ```
 
 Supporting objective route:
@@ -256,26 +258,37 @@ Sources:
 | `06_01` | Is a route-relevant state reachable and usable for initialization? | Yes under controlled conditions; real-DCLM proxy centers are linearly routable at step 0 but ordinary training overwrites them. |
 | `06_02` | What preserves a partition during training? | Finite low-tail margin is the local state; dynamics depend on utility, signed background pressure, representation motion, router motion, and update scale. |
 | `06_03` | Can sparse feedback discover the useful expert? | Selected-only feedback can be blind; one bounded challenger plus a lower-tail certificate repairs discovery in the frozen four-expert setting. |
-| `06_04` | Does a real workload contain stable expert-utility headroom worth routing? | Active, unresolved. |
+| `06_04` | Does a real workload contain stable expert-utility headroom worth routing? | Active parent; the first registered CrossCodeEval final-layer clause failed split stability and positive absolute headroom. |
+
+Current A06 result:
+
+> Relevant cross-file context changes final-layer expert counterfactual effects,
+> but the calibration-selected expert is not split stable and its absolute
+> headroom over native routing is below the registered threshold.
+
+The direct held-out values are $I_{ctx}=0.01163$ nats per target token, 95% CI
+`[0.00336, 0.02022]`, and $H_{49}^{REL}=0.00540$, 95% CI
+`[-0.00105, 0.01225]`. Interaction passed, but expert identity stability and
+positive absolute headroom failed. This is a valid negative result for the
+registered frozen last-layer surface, not a conclusion for every repository-
+code workload or layer.
 
 Active A06 question:
 
-> Does unfiltered repository-level code completion contain positive,
-> cross-split-stable held-out oracle routing headroom after token-identity,
-> local-only, load-matched, length, frequency, and split-overfitting controls?
+> After this frozen-pool failure, should A06 approve one training-time
+> selective-sharing test on an explicit real rare/common workload?
 
-Primary metric: held-out native-Router loss minus calibration-selected
-forced-expert loss on a separate test split. This measures oracle routing
-headroom; it does not establish that a learned Router can capture that headroom.
-
-Required guards: calibration/test separation, stable best-expert identity,
-load-matched random routing, token-identity and local-only controls, length and
-frequency controls, and an unfiltered repository-code sample.
+If approved, positive held-out expert utility, split-stable identity,
+rare/common controls, and matched activated compute must be registered before
+implementation. Lower switch rate or context interaction alone is insufficient.
 
 Current sources:
 
 - `Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/01_functional_specialization_and_utility_routing.md`
 - `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md`
+- `Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/subanchors/06_04_01_context_conditioned_expert_utility_anchor.md`
+- `Projects/from-attention-to-search/main/experiments/A06/06_04_real_workload_utility_headroom/A06_04_01_E01_context_conditioned_expert_utility/summary.md`
+- `Projects/from-attention-to-search/main/stories/06_geometry_proxy_preservation/anchor_threads/06_04/story_fragment.md`
 - `Projects/from-attention-to-search/main/experiments/A06/README.md`
 
 ## A11 / A12 / A13 Supporting Boundary
@@ -394,13 +407,16 @@ Supported:
 - Selected-only top-1 feedback can miss an unselected specialist; a rotating
   challenger and lower-tail certificate repair this in a frozen four-expert
   system.
+- On the registered CrossCodeEval final-layer surface, relevant context changes
+  expert counterfactual effects, but context interaction alone does not imply
+  stable positive expert utility.
 
 Not supported:
 
 - route NMI or balanced load proves functional specialization;
 - the current proxy is a semantic or causal expert definition;
 - the controlled Router transfers to joint pretrained-LLM training;
-- repository code has positive held-out oracle routing headroom;
+- unfiltered repository code has positive held-out oracle routing headroom;
 - the four-expert phase switch scales or reduces wall-clock cost;
 - MTP has general compositional or real-workload superiority;
 - the A13 synthetic sufficient condition transfers to code, long context, or MoE;
@@ -410,19 +426,17 @@ Not supported:
 Controlled synthetic evidence establishes mechanism possibility and metric
 validity, not natural-language semantics or deployable routing. Real-DCLM proxy
 evidence establishes routability and overwrite behavior, not causal expert
-utility.
+utility. The CrossCodeEval result is a registered local failure and must not be
+generalized to every layer, model, or repository-code distribution.
 
 ## Exactly One Project-Level Next Decision
 
-Approve or reject the minimal `A06_04` oracle-headroom protocol before
-designing another LLM-scale Router method. Do not run another broad
-feature-existence, common-subtraction, spectral-Router, or controlled
-sparse-discovery sweep first.
+Approve or reject one training-time selective-sharing test on an explicit real
+rare/common workload after the `A06_04_01` frozen last-layer failure. Do not
+continue the same frozen-pool mining or design another LLM-scale Router first.
 
-For the 2026-07-17 group meeting, a separate time-bounded discussion gate is to
-approve, modify, or reject the proposed Q1 functional-retrieval audit. This
-draft gate does not replace the project-level A06 decision unless the
-researcher explicitly promotes it after completing the human judgment fields.
+The 2026-07-17 Q1 functional-retrieval proposal remains a historical discussion
+item and does not replace this A06 decision.
 
 ## Current Working And Published Surfaces
 

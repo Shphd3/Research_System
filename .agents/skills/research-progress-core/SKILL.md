@@ -79,22 +79,50 @@ Use `daily_research_reports/MMDD/focus.md` as the only daily self-contained
 research briefing, routine meeting brief, and resume point. Create it from
 `templates/research_process/focus_writing_template.md`.
 
-Keep it to one page. It contains:
+Treat `focus.md` as a **knowledge-update document, not an experiment result
+report**. Keep it to one page. A supervisor or outside researcher who did not
+run the experiment must be able to read only the answer, decisive visual, and
+flowchart and then correctly explain what changed in our understanding.
+
+Use exactly five sections in this order:
 
 ```text
-one core question and at most three necessary subquestions
-one complete conclusion as a knowledge update, including strongest unresolved
-rival and cannot-claim boundary
-one mechanism explanation with one indispensable formula
-one next decision that changes the mainline, plus completion and resume actions
-one AI-drafted, human-corrected explanation flowchart
-one plain-language paragraph per conclusion-bearing experiment
+1. one concrete answered question
+2. one plain-language knowledge update
+3. one decisive figure or table
+4. one explanation flowchart
+5. claim boundary and exactly one next decision
 ```
 
-The human writes the conclusion, mechanism, and next decision. AI may prefill
-verified facts and links, draft the flowchart, and summarize experiment
-structure; the human corrects and approves them. Link rather than copy extended
-theory, terminology tables, Protocol details, run history, or result tables.
+The first section contains exactly one decision-bearing subquestion of the
+broader research problem. Do not retain the umbrella agenda or list several
+future questions as if they were all today's focus.
+
+In the knowledge update, answer first in language an informed outsider can
+understand. Explain a metric in plain language before naming it, writing its
+formula, or citing its value. Keep one formula only when the reader needs it to
+understand the mechanism. Translate endpoint, ablation, checkpoint, and other
+experimental terms into the relation they test.
+
+The evidence section contains the single figure or compact table that makes
+the answer easiest to teach. State how to read it and the one conclusion it
+supports. Use only the minimum numbers needed to separate the main explanation
+from its rival; link `summary.md` or `detailed.md` for full metrics, controls,
+run IDs, uncertainty tables, and experiment history.
+
+The flowchart must itself answer the core question: every node is a
+plain-language judgment, every arrow is an explicit reasoning step, and the
+last node states the knowledge update rather than an experiment name.
+
+The final section states where the answer holds, what remains unsupported, the
+strongest unresolved explanation when material, and exactly one next decision
+with its completion criterion and resume action.
+
+The human writes or approves the question, conclusion, mechanism, and next
+decision. AI may prefill verified facts and links, choose and explain the
+decisive visual, and draft the flowchart; the human corrects and approves them.
+Delete experiment detail that does not change the answer, boundary, or next
+decision.
 
 ## Decide Whether Work Is Worth Doing
 

@@ -1,0 +1,47 @@
+{
+  "analysis": "native_layer_spectra",
+  "args": {
+    "batch_size": 8,
+    "calibration_docs": 32,
+    "candidate_pool": 512,
+    "checkpoint_step": 40000,
+    "device": "cuda:0",
+    "evaluation_docs": 64,
+    "expert_batch_tokens": 2048,
+    "layers": null,
+    "max_length": 256,
+    "model": "lb",
+    "smoke": false
+  },
+  "checkpoint_step": 40000,
+  "claim_boundary": "Descriptive checkpoint comparison only; the two models differ in both centering and load-balance training.",
+  "environment": {
+    "cuda_visible_devices": "0",
+    "device_name": "NVIDIA H100 80GB HBM3",
+    "python": "3.10.20",
+    "torch": "2.5.1+cu121"
+  },
+  "evaluation_shape": [
+    64,
+    256
+  ],
+  "evaluation_token_sha256": "aa9873b87e5f181dddffcf498c53268ce86f893f843852e9d2bbc04e79401160",
+  "layers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "matrix": "centered native sparse MoE output: native top-1 weight times selected expert output",
+  "model": "lb",
+  "model_dir": "/mnt/bucket/MoE_Router/outputs/qwen_moe_runs/output_moe/qwen3-moe-H768-linear_nocenter_lb001_8gpu-center_off-gate_off-acp_off-lb_0.01-linear",
+  "normalization": "covariance eigenvalues divided by their sum"
+}

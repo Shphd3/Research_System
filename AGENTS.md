@@ -89,33 +89,38 @@ Each research day keeps exactly one retained focus file:
 daily_research_reports/MMDD/focus.md
 ```
 
-`focus.md` is a concise, human-owned, self-contained research briefing for the
-researcher and other readers. It is also the default routine meeting brief and
-resume point. Target one page and 60 lines; include only experiments required
-to support the current conclusion.
+`focus.md` is a concise, human-owned, self-contained knowledge-update document
+for the researcher and other readers, not an experiment result report. It is
+also the default routine meeting brief and resume point. Target one page and
+60 lines; include only evidence required to understand the current conclusion.
 
 It contains only:
 
 ```text
-1. one core decision question and at most three necessary subquestions
-2. one complete conclusion-as-knowledge-update with its claim boundary, plus
-   one mechanism explanation and one indispensable formula
-3. exactly one next decision, its mainline effect, completion criterion, and
-   resume action
-4. one AI-drafted, human-corrected explanation flowchart
-5. one plain-language paragraph for each conclusion-bearing experiment
+1. exactly one concrete answered subquestion of the broader research problem
+2. one outsider-readable conclusion-as-knowledge-update; explain every metric
+   in plain language before naming or using it
+3. one decisive locally embedded figure or compact table with only the minimum
+   evidence needed to distinguish the main explanation from its rival
+4. one AI-drafted, human-corrected explanation flowchart that is sufficient to
+   reconstruct the answer
+5. the claim boundary and exactly one next decision, including its completion
+   criterion and resume action
 ```
 
 The conclusion must answer the question in language an outside researcher can
-understand. Present experiments as evidence for a knowledge update, not as a
-list of run ids, caveats, or metrics. Integrate the strongest unresolved rival
-and cannot-claim boundary into the conclusion. Define terms inline. Keep only
-one mechanism-critical formula; link longer theory, Protocol conditions, run
-histories, tables, and source maps to their owning artifacts.
+understand without opening the Protocol or result record. Present experiments
+as evidence for a knowledge update, not as a list of run ids, caveats, or
+metrics. Integrate the strongest unresolved rival and cannot-claim boundary
+into the conclusion. Define terms and metrics inline before using their names
+or values. Keep only one mechanism-critical formula when indispensable. The
+central figure or table must teach the inference, while longer theory,
+Protocol conditions, full result tables, run histories, and source maps remain
+linked in their owning artifacts.
 
 The researcher writes the conclusion, mechanism, and next decision. AI may
-prefill verified measurements and links, draft the flowchart, summarize each
-experiment's structure, and identify one blocking ambiguity. The researcher
+prefill verified facts and links, choose and explain the decisive visual,
+draft the flowchart, and identify one blocking ambiguity. The researcher
 corrects and approves those AI-written parts. Do not create a separate daily
 log or routine meeting brief.
 

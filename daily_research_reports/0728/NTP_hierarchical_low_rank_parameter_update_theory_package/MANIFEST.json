@@ -1,0 +1,102 @@
+{
+  "package": "a14_probability_tree_ntp_full_parameter_effective_rank",
+  "date": "2026-07-28",
+  "package_version": "0.4",
+  "status": "formal_theory_draft_protocol_pending_approval",
+  "language": "zh",
+  "scope": {
+    "primary_object": "rank_kr_relative_spectral_tail_tau_kr_of_full_registered_writer_W_T",
+    "secondary_object": "energy_rank_r_en_A_epsilon",
+    "corollary_only": "entropy_effective_rank_in_fixed_dimension",
+    "exact_model": "fixed_feature_binary_contrast_ntp_writer",
+    "conditional_models": [
+      "learned_residual_mlp_W2",
+      "one_layer_transformer_WO_and_W2"
+    ],
+    "optimizer": "pure_sgd_without_momentum_weight_decay_or_preconditioning",
+    "initialization": "independent_iid_gaussian_fan_in_scaled",
+    "objective": "full_position_next_token_prediction",
+    "two_phase_role": "intuition_only"
+  },
+  "causal_chain": [
+    "shared_probability_tree_mappings",
+    "task_coordinates_dimension_at_most_kr",
+    "full_position_ntp_mapping_exposure_and_coherent_margin",
+    "pure_sgd_low_dimensional_task_spike",
+    "full_writer_W_T_low_effective_rank_when_spike_dominates_bulk"
+  ],
+  "theorem_chain": [
+    "T1_controlled_probability_tree_realization",
+    "T2_ntp_exposure_coherent_growth_lower_bound",
+    "T3_recurrent_contrast_ntp_pure_sgd_exposure_and_spike_divergence",
+    "T4_out_of_envelope_bias_and_martingale_control",
+    "T5_gaussian_bulk_task_outlier_and_full_weight_tail_bound",
+    "T6_probability_tree_ntp_sgd_full_weight_effective_rank"
+  ],
+  "proof_status": {
+    "proved": [
+      "controlled_fixed_mapping_injections_imply_dim_U_star_le_kr",
+      "ntp_outer_product_and_pure_sgd_row_space_invariance",
+      "mapping_exposure_times_shared_margin_lower_bounds_task_spike_growth",
+      "recurrent_event_step_mass_implies_exposure_and_task_spike_divergence",
+      "gaussian_full_rank_and_rotational_invariance",
+      "rank_kr_spike_plus_small_residual_implies_tau_kr_W_T_to_zero"
+    ],
+    "conditional_proof": [
+      "approximate_envelope_with_small_bias_and_martingale_leakage",
+      "multiclass_softmax_extension",
+      "learned_residual_mlp_W2_and_one_layer_transformer_WO_W2"
+    ],
+    "unproved": [
+      "ordinary_learned_network_automatically_realizes_fixed_kr_coordinates",
+      "full_position_objective_unconditionally_outperforms_root_only",
+      "full_transformer_parameter_tuple_or_natural_language_model_is_low_effective_rank"
+    ]
+  },
+  "primary_metrics": [
+    "tau_kr_delta_W_T",
+    "tau_kr_W_T",
+    "one_minus_epsilon_energy_rank",
+    "task_spike_to_gaussian_bulk_frobenius_ratio",
+    "task_spike_to_gaussian_bulk_operator_ratio"
+  ],
+  "protocol_factors": [
+    "shared_tree_vs_disjoint_tree",
+    "full_position_ntp_vs_root_only_loss",
+    "mapping_exposure",
+    "gradient_coherence",
+    "learned_activation_kr_coordinate_realization",
+    "functional_rank_kr_replay"
+  ],
+  "files": [
+    "01_理论论文_层级NTP与低有效秩任务参数更新.md",
+    "02_证明附录.md",
+    "03_实验协议.md",
+    "04_物理先验与假设审计.md",
+    "05_审核清单.md",
+    "MANIFEST.json",
+    "README.md",
+    "references.bib"
+  ],
+  "checks": {
+    "notation_q0_registered_budget_qstar_actual_dimension": true,
+    "inline_formulas_use_single_dollar": true,
+    "display_formulas_use_double_dollar": true,
+    "local_links_resolve": true,
+    "markdown_fences_balance": true,
+    "json_manifest_parses": true,
+    "placeholders_absent": true,
+    "only_three_proof_statuses_used": true,
+    "gaussian_bulk_not_called_exactly_flat": true,
+    "full_W_T_low_algebraic_rank_not_claimed": true,
+    "protocol_has_approval_snapshot": true,
+    "protocol_execution_authorized": false
+  },
+  "publication": {
+    "graph_modified": false,
+    "anchors_modified": false,
+    "root_sync_published": false,
+    "external_collaborator_sync_requested": true,
+    "external_target": "Projects/kv_cache/xyDeng/sync/2026-07-28/a14_probability_tree_ntp_low_rank_parameter_update/"
+  }
+}
