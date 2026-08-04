@@ -1,6 +1,6 @@
 ---
 name: problem-anchor-writer
-description: "Audit a human-owned Thinking Card and create or update its approved formal research anchor. Use when the user asks to clarify a Thinking Card, formalize a research problem, or write anchor sections 1-8. Do not use for experiment protocols, run commands, result records, or publication."
+description: "Audit a human-owned Thinking Card and create or update its approved formal research anchor, including data, task, objective, architecture, and confirmation boundaries for learnable designs. Use when the user asks to clarify a Thinking Card, formalize a research problem, or write anchor sections 1-8. Do not use for experiment protocols, run commands, result records, or publication."
 ---
 
 # Problem Anchor Writer
@@ -103,6 +103,26 @@ Mismatch with the human intuition:
 
 Every equation must map to a prior, a concrete computation, and an experiment
 or analysis artifact. Do not promote a metaphor into a mathematical claim.
+
+## Learnable Research Design Gate
+
+When the anchor fits a parameterized model from data, read
+[`references/learnable_research_design.md`](references/learnable_research_design.md)
+completely before approving sections 4-6. The design must separate data
+construction, learning task, training objective, architecture, optimization,
+and untouched confirmation evidence.
+
+Keep their ownership explicit:
+
+- section 2 owns claims about the external data-generating process;
+- section 4 owns the learning task, exact objective, variables, and constraints;
+- section 5 owns the constructible data pipeline, architecture,
+  objective-to-computation map, optimization class, and inference path;
+- section 6 owns only the smallest falsifier and necessary guards.
+
+Do not let the Protocol invent a missing task, supervision source, objective,
+or scientific architecture rationale. If any design block is unresolved, mark
+the anchor insufficient and keep the next decision on that block.
 
 ## Formal Anchor Structure
 

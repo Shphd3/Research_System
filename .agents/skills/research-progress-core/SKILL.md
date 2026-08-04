@@ -163,9 +163,40 @@ remaining uncertainty
 
 If these are unclear, reduce the method to a diagnostic or park it.
 
+## Learnable-Experiment Uncertainty Gate
+
+Before proposing or repairing a learnable experiment, locate the one primary
+uncertainty:
+
+```text
+data construction  source population, sampling, transformation, target provenance
+learning task      what permitted input must produce which output
+training objective exact optimized quantity and constraints
+architecture       function family and inductive bias
+optimization       update rule, schedule, stopping, and checkpoint selection
+evaluation         untouched evidence and the decision metric
+```
+
+Use the causal order `data construction -> learning task -> training objective
+-> architecture -> optimization -> evaluation`. Architecture may be a simple
+frozen baseline, but it is not scientifically settled while the task or
+objective remains undefined. Do not repair an uncertainty in one block by
+silently changing another.
+
+Route research-design uncertainty to the current anchor through
+`problem-anchor-writer`. Route exact run conditions to `experiment-card-writer`
+only after the anchor-level blocks are coherent. Keep exactly one next decision
+focused on the first unresolved block.
+
 ## Experiment Contract
 
 Do not run a nontrivial experiment without an approved `protocol.md`.
+
+Use `experiment-card-writer` to write the complete candidate directly into
+`protocol.md` as `DRAFT_NOT_EXECUTABLE`, then surface only decision-critical
+items for review. The draft may contain exact candidate settings but cannot
+authorize action. Promote it only after every block is confirmed and
+cross-block consistency passes.
 
 The first page is the user's approval surface and must state:
 

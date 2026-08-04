@@ -236,14 +236,21 @@ Default chain:
 anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
-- Do not implement or run a nontrivial experiment before `protocol.md` is
-  approved.
+- Use `experiment-card-writer` to write the complete candidate directly into
+  `protocol.md` as `DRAFT_NOT_EXECUTABLE`, then surface only decision-critical
+  parts for review. Update that same file after corrections; do not create a
+  chat-only or second planning draft.
+- Promote the Protocol only after every block is explicitly confirmed and
+  cross-block consistency passes. Do not implement or run before the promoted
+  `protocol.md` records explicit approval for the requested execution scope.
 - `protocol.md` owns question alignment, conditions, primary metric,
   pass/fail/insufficient rules, guards, approval state, and execution contract.
 - `summary.md` is conclusion-first: what is established, what the primary
-  metric shows, boundary, central figures, and next decision.
+  metric shows, boundary, central evidence, any decision-relevant figures, and
+  next decision.
 - `detailed.md` owns the complete setup, seeds, commands, job IDs, full tables,
-  stage evidence, failures, artifact map, and visualization audit.
+  stage evidence, failures, artifact map, and visualization audit when figures
+  are decision-relevant.
 - Add conditions, seeds, and diagnostics only when they separate a named rival
   or protect the primary conclusion.
 - Every central plot needs a contract: question, metric and unit, data source,
@@ -365,7 +372,8 @@ Use repository skills when the task matches:
 
 - `research-progress-core`: research logic and uncertainty reduction.
 - `problem-anchor-writer`: Thinking Card audit and anchor construction.
-- `experiment-card-writer`: protocol, summary, and detailed records.
+- `experiment-card-writer`: blockwise experiment audit, confirmed protocol,
+  summary, and detailed records.
 - `research-story-writer`: line-level mathematical and evidence synthesis.
 - `meeting-outline-writer`: AI-supported, human-completed advisor outline.
 - `research-mainline`: project organization and explicit publication.

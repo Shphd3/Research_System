@@ -44,6 +44,9 @@ Evidence:
 
 ## 3. Protocol Compliance Audit
 
+all audit blocks confirmed before Protocol promotion:
+cross-block consistency passed:
+execution scope explicitly approved:
 approved conditions match actual conditions:
 primary metric exists:
 central figures/tables exist:
@@ -54,11 +57,12 @@ success/failure/insufficient-evidence criteria applied:
 ## 4. Setup
 
 Research question:
-Data construction:
+Data construction and provenance:
 Train / eval / probe split:
-Model / router / algorithm:
+Learning task and permitted supervision:
+Model / architecture / algorithm:
 Input representation / position encoding:
-Loss / objective:
+Training objective and constraints:
 Optimizer or update rule:
 Training steps / tokens / batch size:
 Checkpoints:
@@ -81,7 +85,7 @@ Separate:
 - debug-only evidence;
 - failed or ambiguous evidence.
 
-## 7. Visualization Results
+## 7. Visualization Results, When Decision-Relevant
 
 For each central figure or viewer:
 
@@ -143,6 +147,8 @@ job id:
 
 ## Figure and evidence boundary
 
-Every central figure must have purpose, setup, how-to-read, observed result,
-take-home, and remaining uncertainty. A figure that cannot be explained should
-move to an appendix/debug area or be omitted from the main result path.
+When central visual evidence exists, every figure must have purpose, setup,
+how-to-read, observed result, take-home, and remaining uncertainty. A figure
+that cannot be explained should move to an appendix/debug area or be omitted
+from the main result path. Do not create a visualization section merely to
+satisfy a template when the decision uses nonvisual evidence.

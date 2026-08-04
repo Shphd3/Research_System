@@ -110,8 +110,10 @@ Name project-local cards with the anchor stem:
 <anchor_stem>_thinking_card_cn.md
 ```
 
-After the anchor is stable, write `protocol.md` for user approval before
-implementation or running:
+After the anchor is stable, use `experiment-card-writer` to write the complete
+candidate directly into `protocol.md` as `DRAFT_NOT_EXECUTABLE`. AI then
+surfaces only decision-critical parts for review and updates the same file.
+Promote it only after every block is confirmed and consistency passes:
 
 ```text
 Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
@@ -123,8 +125,9 @@ Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/detailed.md
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
 understanding, test a hypothesis, or change a next decision.
-Nontrivial experiments should stop at `protocol.md` until the user approves the
-implementation or run.
+Nontrivial experiments should stop at the promoted `protocol.md` until the
+user explicitly approves the requested scope: implementation, smoke, or full
+run. Approval of one scope does not authorize the next.
 
 When a handoff is explicitly requested, place the handoff report and the most
 important anchor copy in today's folder by default:

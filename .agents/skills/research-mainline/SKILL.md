@@ -216,12 +216,13 @@ canonical artifacts and `术语解释` for Chinese meeting or companion files.
 This chain is the local adapter for the advisor's `research-exploration` spec:
 
 ```text
-anchor                              = docs/design.md role
-protocol.md                         = docs/experiment_design.md role
-summary.md + detailed.md + figures  = docs/visualization_results.md role
-story pair                          = line-level synthesis of the current
-                                      process, evidence chain, mathematical
-                                      model, boundary, and next decision
+anchor                      = one authoritative current research design
+protocol.md                 = one draft-to-approved experiment contract;
+                              non-executable until confirmation and consistency
+summary.md + detailed.md    = direct result, evidence, and reproducibility
+figures / viewer            = optional decision evidence when visual inspection matters
+story pair                  = explicit stable line synthesis; no automatic
+                              competing final_report layer
 ```
 
 Do not create the exported `docs/` layout for ordinary mainline work unless the
@@ -233,7 +234,7 @@ Artifact roles must stay aligned:
 |---|---|---|
 | `<anchor_stem>_thinking_card.md` | independent human judgment before AI formalization | become a formal anchor, protocol, or AI-authored conclusion |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
-| `protocol.md` | how one anchor clause will be tested | change the question post hoc or add unrelated sweeps |
+| `protocol.md` | the single in-file lifecycle from complete candidate to confirmed test | be treated as executable before all audit blocks pass, change the question post hoc, or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
 | `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
@@ -295,19 +296,24 @@ model before the protocol or implementation expands it.
 
 ### Protocol
 
-`protocol.md` is the approved experiment design. It replaces the old two-file
-planning split. It should align with the advisor's research-exploration
-`docs/experiment_design.md` role.
+`protocol.md` is the single draft-to-approved experiment design. AI writes the
+complete candidate there first as `DRAFT_NOT_EXECUTABLE`, covering
+question/boundary, data, task/supervision, model/architecture,
+objective/optimization, comparison/evidence, and execution/reproducibility.
+It then surfaces only decision-critical items for review, updates the same file
+after corrections, and promotes it after confirmation and a cross-block
+consistency pass. Do not create a separate draft execution-plan artifact.
 
-Its first page should be an `Approval Snapshot`: purpose, anchor alignment,
+Its first page should be an `Approval Snapshot`: document state, purpose, anchor alignment,
 minimal setup, conditions to run, primary metric, pass/fail/insufficient
 criteria, claim boundary, and approval decision. Put stage profiling,
 algorithm details, commands, and artifact maps after this snapshot.
 
 It must include the decision question, tested hypothesis, rival explanations,
-data/model/algorithm/objective, conditions, primary metric, secondary metrics,
-known good/bad/confusing cases, stage-level profiling plan, success/failure/
-insufficient-evidence conditions, what cannot be claimed, and approval status.
+data construction/provenance, learning task/supervision, model/architecture,
+training objective/optimization, conditions, primary and secondary metrics,
+known cases, stage-level profiling, success/failure/insufficient meanings,
+cannot-claim boundary, block confirmation ledger, and approval status.
 
 For nontrivial algorithms, it must include input, parameters, intermediate
 variables, steps, outputs, debug artifacts, pass conditions, fail conditions,
@@ -326,8 +332,8 @@ boundary or next decision. Define every condition label, metric abbreviation,
 and visible shorthand in `Terminology / Definitions` before using it as
 evidence.
 
-It must also absorb the key parts of research-exploration
-`docs/visualization_results.md`: each central figure should explain what it
+When central visual evidence exists, it must absorb the relevant
+research-exploration viewer role: each central figure should explain what it
 tests, how to read it, observed result, take-home, and what it does not prove.
 Keep only figures that support the current claim boundary or next decision.
 
@@ -335,8 +341,8 @@ Keep only figures that support the current claim boundary or next decision.
 
 `detailed.md` is the full evidence ledger. It must include protocol compliance
 audit, setup, metrics, stage evidence, failure decomposition, full experiment
-record, interpretation, claim boundary, next decision, artifact map, and a full
-`Visualization Results` section.
+record, interpretation, claim boundary, next decision, and artifact map. Add a
+`Visualization Results` section only when visual evidence is decision-relevant.
 
 Every central figure or viewer should state purpose, setup, how to read,
 observed result, take-home, and remaining uncertainty.

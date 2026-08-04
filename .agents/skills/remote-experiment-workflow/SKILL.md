@@ -47,11 +47,16 @@ Do not start from scripts or metrics before the anchor states the decision
 question and the protocol states the primary metric, conditions, and
 success/failure/insufficient-evidence rules.
 
+Before implementation, smoke, or full run, verify that the Protocol records
+all audit blocks as confirmed, cross-block consistency as passed, and explicit
+approval for the requested execution scope. Approval for one scope does not
+authorize a later scope.
+
 ## Local / Remote Boundary
 
-- If Codex is already inside the target remote/container, work there directly:
-  edit, smoke, run, analyze, and write curated docs. Commit and push only when
-  the user explicitly asks.
+- If Codex is already inside the target remote/container, work there directly
+  within the approved execution scope: edit, smoke, run, analyze, and write
+  curated docs. Commit and push only when the user explicitly asks.
 - If Codex is local, do not SSH by default. Use local work for research-process
   edits, Git pull/review, and small explicit smoke checks.
 - Use SSH/SCP only for explicit small status checks, port forwarding, quick
@@ -106,7 +111,8 @@ result dir:
 first diagnosis:
 ```
 
-Always run a smoke/debug path before a formal long run when possible.
+When smoke scope is approved, run a smoke/debug path before a formal long run
+when possible. Do not treat smoke approval as full-run approval.
 
 ## Curated Artifacts
 
@@ -140,9 +146,10 @@ Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/summary.md
 Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/detailed.md
 ```
 
-`summary.md` must include central visualization explanations for the main
-figures. `detailed.md` must include protocol compliance audit, stage evidence,
-full visualization results, and artifact map.
+`summary.md` must explain any central decision-relevant figures.
+`detailed.md` must include protocol compliance audit, stage evidence, and the
+artifact map; include full visualization results only when visual evidence is
+decision-relevant.
 
 Then update the relevant anchor if the result changes the physical prior,
 mathematical model, computational realization, claim boundary, or next decision.

@@ -1,6 +1,6 @@
 ---
 name: experiment-card-writer
-description: "Create or update anchor-aligned protocol.md, summary.md, and detailed.md experiment records, including approval gates, decision metrics, evidence ledgers, and figure contracts. Use when the user asks for an experiment protocol or result documentation after the anchor is clear. Do not redefine the research question or operate remote jobs."
+description: "Write a complete anchor-aligned protocol.md draft directly into the experiment folder, surface only decision-critical parts for researcher review, promote the same file after block confirmation and consistency, and update summary.md and detailed.md. Use for experiment design, protocol drafting or confirmation, or result documentation after the anchor is clear. Do not redefine the research question or operate remote jobs."
 ---
 
 # Experiment Protocol And Result Writer
@@ -10,7 +10,7 @@ the research design: problem definition, physical priors, hypotheses,
 mathematical model, computational realization, minimal falsification tests,
 current evidence, claim boundary, and next decision.
 
-The experiment folder owns the approved experiment design and evidence:
+The experiment folder owns the draft-to-approved experiment design and evidence:
 
 ```text
 Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/
@@ -20,9 +20,6 @@ Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/
   figures/
   tables/
 ```
-
-Legacy planning records may remain in old experiments, but new experiments
-should create `protocol.md` as the only experiment design surface by default.
 
 ## Core Chain
 
@@ -36,32 +33,47 @@ a named rival explanation or protect the validity of the primary conclusion.
 
 ## Language And Approval Workflow
 
-For new anchor-indexed experiments in this repository, protocol approval uses
-a Chinese-first workflow unless the user explicitly asks otherwise:
+For new anchor-indexed experiments, write the English canonical file first and
+conduct the decision review in Chinese unless the user asks otherwise:
 
 ```text
-Chinese protocol draft for user audit
--> user approval / correction
--> English canonical protocol.md at the experiment path
--> Chinese companion protocol_cn.md kept beside it
+English protocol.md completed as DRAFT_NOT_EXECUTABLE
+-> AI surfaces a concise decision-critical review extract in Chinese
+-> researcher confirms or corrects one or many blocks
+-> AI revises the same file and its status ledger
+-> cross-block consistency audit
+-> promote the same protocol.md to DESIGN_CONFIRMED_NOT_EXECUTABLE
+-> explicit execution-scope approval
 -> run
 -> English summary.md and detailed.md as canonical result records
--> optional Chinese companion only when the user asks or when it is needed for
-   meeting explanation
+-> optional Chinese companions only when requested or needed for a meeting
 ```
 
 Rules:
 
-- The Chinese draft must be short and plain enough for the user to audit the
-  question, data construction, metrics, pass/fail rules, and claim boundary.
-- The English `protocol.md` is the executable contract after approval.
-- The Chinese `protocol_cn.md` is a companion, not a separate protocol. It must
-  not introduce a different question, metric, condition, or boundary.
-- If the user approves running from the Chinese protocol, translate it to the
-  English canonical protocol before or during execution, then preserve the
-  Chinese version.
-- Result records stay in English by default because they are canonical project
-  artifacts; explain the result in Chinese in chat when the user asks.
+- Write the complete candidate into `protocol.md` before review and mark it
+  `DRAFT_NOT_EXECUTABLE`. Keep no chat-only or second planning draft; label
+  unsupported choices as assumptions or `BLOCKED`.
+- Let one reply confirm or correct any subset; do not split one coherent block
+  into approval microsteps.
+- Require an unambiguous confirmation for each block; silence does not count.
+- Promote it to `DESIGN_CONFIRMED_NOT_EXECUTABLE` only after all blocks and
+  cross-block consistency pass.
+- A Chinese `protocol_cn.md` companion must not change the canonical design.
+- Result records stay in English by default; explain them in Chinese in chat.
+
+## Draft-First Blockwise Audit Gate
+
+Before writing or revising a Protocol, read
+[`references/blockwise_protocol_audit.md`](references/blockwise_protocol_audit.md)
+completely. Complete the single canonical `protocol.md` first as
+`DRAFT_NOT_EXECUTABLE`, then surface only its decision-critical items. Keep all
+candidate execution details in that file; promote them only after every block
+is `CONFIRMED` and cross-block consistency is `PASS`.
+
+If a correction changes an earlier block, mark it `REOPENED` and re-audit all
+dependent blocks. Protocol promotion and execution approval are separate:
+implementation, smoke, and full run each require explicit scope approval.
 
 ## Protocol Alignment Gate
 
@@ -69,7 +81,11 @@ A protocol is invalid unless it starts with an approval-facing snapshot. The
 first page is for the user to confirm purpose and basic setup before any run:
 
 ```text
+Document status:
 Approval status:
+Block audit status:
+Cross-block consistency:
+Execution scope approved:
 Purpose:
 Primary anchor:
 Anchor decision question:
@@ -128,18 +144,22 @@ already contains a supported mechanism or metric target.
 
 ## Protocol Standard
 
-`protocol.md` is the approved experiment design. It replaces the older two-file
-planning split.
+`protocol.md` is the single draft-to-approved experiment design. Create and
+complete it before review as `DRAFT_NOT_EXECUTABLE`; never treat proposed or
+blocked content as an approved execution contract.
 
-It must align with the research-exploration `experiment_design.md` role:
-the first page is the approval snapshot; later sections are the audit layer.
+The first page is the approval snapshot; later sections are the audit layer.
 
 ```markdown
 # Protocol: <experiment_id>
 
 ## 0. Approval Snapshot
 
+Document status:
 Approval status:
+Block audit status:
+Cross-block consistency:
+Execution scope approved:
 Purpose:
 Primary anchor:
 Anchor decision question:
@@ -176,30 +196,36 @@ Claim boundary:
 
 ## 4. Rival Explanations
 
-## 5. Data / Model / Algorithm / Objective
+## 5. Data Construction And Provenance
 
-## 6. Conditions, Seeds, And Checkpoints
+## 6. Learning Task And Permitted Supervision
+
+## 7. Model / Architecture And Frozen Variants
+
+## 8. Training Objective And Optimization
+
+## 9. Conditions, Seeds, And Checkpoints
 
 | Item | Anchor clause tested | Model term / rival explanation | Why needed | Primary or secondary evidence | Pass | Fail | Insufficient | Figure/table |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | | | |
 
-## 7. Primary Metric
+## 10. Primary Metric
 
 State why this metric decides the judgment and what false positives or false
 negatives would cost when the costs differ.
 
-## 8. Secondary Metrics
+## 11. Secondary Metrics
 
-## 9. Known Good / Known Bad / Known Confusing Cases
+## 12. Known Good / Known Bad / Known Confusing Cases
 
-## 10. Stage-Level Profiling Plan
+## 13. Stage-Level Profiling Plan
 
 | Stage | Local question | Input evidence | Pass / fail / unclear rule | Debug artifact | Handoff |
 | --- | --- | --- | --- | --- | --- |
 | | | | | | |
 
-## 11. Algorithm Specification, If Nontrivial
+## 14. Algorithm Specification, If Nontrivial
 
 input:
 parameters:
@@ -211,15 +237,16 @@ pass conditions:
 fail conditions:
 failure reasons:
 
-## 12. Success / Failure / Insufficient Evidence
+## 15. Success / Failure / Insufficient Evidence
 
-## 13. What This Cannot Claim
+## 16. What This Cannot Claim
 
-## 14. Review Notes And Protocol Changes
+## 17. Block Confirmation Ledger And Review Notes
 ```
 
-Stop after writing or changing the protocol unless the user explicitly approves
-running or implementing the experiment.
+After writing or changing the Protocol, surface its decision-critical review
+extract and stop. Do not implement or run unless the user explicitly approves
+that execution scope.
 
 ## Terminology And Reader-Ready Setup Rule
 
@@ -369,7 +396,10 @@ What we do next:
 ## Exact Setup
 
 Research question:
-Data / model / objective:
+Data construction and provenance:
+Learning task and supervision:
+Model / architecture:
+Training objective and optimization:
 Conditions:
 Changed variables:
 Held fixed:

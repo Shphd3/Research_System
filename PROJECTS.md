@@ -34,6 +34,23 @@ surface. Its candidate D00--D03 anchor decomposition remains draft. No remote
 workspace, protocol, job, or result record is authorized until the researcher
 approves or corrects the independent Thinking Card.
 
+## Implementation Project — Online Spectral Router Training
+
+| Role | Path / value |
+|---|---|
+| Theme | matched online covariance-band routing and shallow Relay training |
+| Project | `Projects/online-spectral-router-training/` |
+| Research identity | A15 dynamic online spectral routing |
+| Worker surface | `/data/250010109/MoE_Router/experiments/20260803_online_spectral_router_training_v9/` |
+| State | bilingual Anchor and Protocol approved; implementation, paired smoke, and ten 10B jobs authorized |
+
+This implementation project owns the five-arm runner, deterministic online
+covariance tracker, nested Grassmann continuity guard, milestone evaluator,
+TensorBoard telemetry, and curated A15 evidence records. It does not replace
+the A15 source line in `from-attention-to-search`, edit the active graph, or
+publish/sync/commit without separate authorization. Checkpoints, raw logs,
+calibration caches, and full job outputs remain on the worker surface.
+
 ## Implementation Project — De-common Router Training
 
 | Role | Path / value |
