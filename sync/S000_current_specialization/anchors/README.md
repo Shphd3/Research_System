@@ -79,7 +79,8 @@ definition / failure mechanism
 -> initialization and finite-margin preservation
 -> expert utility formation
 -> partial-feedback discovery and phase control
--> real-workload utility headroom before Router transfer
+-> registered real-code frozen-pool headroom audit
+-> training-time utility-creation decision before Router transfer
 ```
 
 Current strongest judgment:
@@ -94,8 +95,11 @@ creates held-out specialist utility, while selected-only weighted top-1 can
 preserve a correct specialist but fail to discover it from a wrong rank. One
 rotating challenger plus a q10 or lower-CVaR10 utility certificate repairs that
 controlled failure and safely returns to top-1 under frozen four-expert
-assumptions. The only next decision is whether repository-level code has stable
-held-out expert utility headroom worth routing.
+assumptions. On the first registered CrossCodeEval final-layer surface,
+relevant context changes expert counterfactual effects, but expert identity is
+not split stable and positive absolute headroom fails. The only next decision
+is whether to approve one training-time selective-sharing test on an explicit
+real rare/common workload.
 ```
 
 ## Anchor Groups
@@ -105,7 +109,7 @@ held-out expert utility headroom worth routing.
 | 00 foundation / definition | `00_foundation_definition/README.md` | Redirects the historical definition layer into consolidated `A06_00`. | No independent active anchor. |
 | 01 common-operator mechanism line | `01_common_operator_mechanism/README.md`, `01_common_operator_mechanism/README_cn.md`, `01_common_operator_mechanism/route_document.md` | Plan and audit the mechanism-first line for defining, identifying, and validating a common operator before method construction. | Stage 1 supports criterion-dependent common (`criterion_winner_diversity=4`); Stage 2 supports gradient common over activation common (`n_passed_mismatch_regimes=4/4`); Stage 3 controlled bridge supports feedback replay/removal (`n_passed_main_feedback_regimes=2/2`). The bounded real-DCLM gate-logit bridge reproduces collapse but rejects simple low-rank logit common as the main explanation (`pass=false`). |
 | 05 failure-mechanism line | `05_failure_mechanism/02_*`, `05_failure_mechanism/05_01_*` to `05_failure_mechanism/05_04_03_*` | Diagnose why ordinary top-1 fails: early top-1 lock-in, inhibition limits, feature-axis ambiguity, common offset, and common-logit feedback. | Mechanism evidence. It supplies the physical priors used by 06. |
-| 06 functional Routing line | `06_geometry_proxy_preservation/research_map.md`; parent anchors `06_00` to `06_04` with local `subanchors/` | Five decisions from functional definition through geometry, preservation, expert utility, sparse discovery, and a real-workload gate. | Four completed parent anchors and one active workload anchor; no LLM Router claim yet. |
+| 06 functional Routing line | `06_geometry_proxy_preservation/research_map.md`; parent anchors `06_00` to `06_04` with local `subanchors/` | Five decisions from functional definition through geometry, preservation, expert utility, sparse discovery, and a real-workload gate. | Four completed parents; active `06_04` contains one completed failed CrossCodeEval subanchor; no LLM Router claim. |
 | 07 interference / value line | `07_features_overlap/07.md`, `07_features_overlap/07_01_*` to `07_features_overlap/07_06_*` | Tests whether parameter separation reduces common/rare feature interference or creates utility. | Controlled diagnostics; hierarchy/utility evidence is absorbed into A06. |
 | 09 common/rare spectral-discrimination line | `09_common_rare_spectral_discrimination/04_*`, `09_common_rare_spectral_discrimination/09_*` | Tests frequency / high-gain common-band explanations for rare discrimination failure. | Mechanism side line. It can inform A06/A07 but does not by itself prove a routing method. |
 | 10 optimizer learning-rate mechanism line | `10_optimizer_learning_rate_mechanism/10_*` | Seminar-driven optimizer root-cause line: test whether common / high-gain gradient directions constrain SGD-style critical learning rate before comparing Adam, Nesterov, or other optimizers. | Support line. It does not update the MoE preservation claim unless later bridged back through routing margin evidence. |
@@ -138,16 +142,15 @@ layout.
 
 ## Next Decision
 
-Audit `A06_04` before protocol design:
+Decide `A06_04` before any new protocol:
 
 ```text
-Does unfiltered repository-level code completion contain stable held-out
-counterfactual expert utility gaps and positive oracle routing headroom?
+After the registered CrossCodeEval final-layer frozen pool failed split
+stability and positive absolute headroom, should A06 approve one training-time
+selective-sharing test on an explicit real rare/common workload?
 ```
 
-Primary metric: held-out oracle routing headroom
-$G_{oracle}=L_{baseline}-L_{oracle}$.
-
-Required guards: calibration/held-out separation, stable best-expert identity,
-load-matched random routing, local-only and token-identity controls, and no MTP
-latency or utility prefiltering of the primary sample.
+If approved, the future protocol must require positive held-out expert utility,
+split-stable useful-expert identity, rare/common conditional controls, matched
+activated compute, and no utility prefiltering. Lower switching or a positive
+interaction alone is insufficient.

@@ -118,7 +118,7 @@ Failure means: either the interference prior is wrong, the control target is wro
 **Observation:** The mentor C3S note defines the relevant control target as the common-subspace component of the actual preconditioned update.  
 **Interpretation:** A07_02 should measure update-space suppression, not just route load or hidden norm.  
 **Boundary:** The proof does not guarantee tail loss improvement outside this controlled surface.  
-**Evidence links:** `../../../../../daily_research_reports/0625/docs/c3s_adamw_merged_rigorous_proof_with_negative_results.md`.
+**Evidence links:** `../../../../../daily_research_reports/backup/2026/06/0625/docs/c3s_adamw_merged_rigorous_proof_with_negative_results.md`.
 
 **Observation:** Prior A07_02 showed common-control improved D07 rare loss under matched load.  
 **Interpretation:** This remains a useful controlled precedent, but it does not test nested $P_C$ suppression.  

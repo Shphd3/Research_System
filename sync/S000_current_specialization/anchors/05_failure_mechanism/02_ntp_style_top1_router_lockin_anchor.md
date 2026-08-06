@@ -1,7 +1,7 @@
 ﻿---
 parent_node: problem.moe_expert_specialization
 status: promoted_project_evidence
-source_sandbox: daily_research_reports/0531/exp_2x2_understanding/
+source_sandbox: daily_research_reports/backup/2026/05/0531/exp_2x2_understanding/
 ---
 
 # 2x2 Top-1 Router Lock-In Anchor

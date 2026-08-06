@@ -10,8 +10,8 @@ depends_on:
   - A07_04_common_rare_gradient_conflict_splitting
   - A07_05_common_update_interference_diagnostic
 source_notes:
-  - ../../../../../daily_research_reports/0625/docs/c3s_adamw_merged_rigorous_proof_with_negative_results.md
-  - ../../../../../daily_research_reports/0625/docs/two_phase_singular_mode_learning_proof_and_test.md
+  - ../../../../../daily_research_reports/backup/2026/06/0625/docs/c3s_adamw_merged_rigorous_proof_with_negative_results.md
+  - ../../../../../daily_research_reports/backup/2026/06/0625/docs/two_phase_singular_mode_learning_proof_and_test.md
 ---
 
 # A07_06 Projected Common / Rare Conflict Splitting Anchor

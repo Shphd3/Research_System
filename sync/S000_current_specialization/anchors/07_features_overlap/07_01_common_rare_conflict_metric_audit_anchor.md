@@ -111,7 +111,7 @@ Failure means: the benchmark or the mechanism import must be revised.
 **Observation:** The mentor notes predict two-phase singular learning and common-subspace stability diagnostics.  
 **Interpretation:** A07_01 now instantiates those diagnostics in this codebase.  
 **Boundary:** the reproduction is intentionally rank-one; a wide-MLP smoke before finalization showed more subspace drift.  
-**Evidence links:** `../../../../../daily_research_reports/0625/docs/two_phase_singular_mode_learning_proof_and_test.md`, `../../../../../daily_research_reports/0625/docs/c3s_adamw_merged_rigorous_proof_with_negative_results.md`.
+**Evidence links:** `../../../../../daily_research_reports/backup/2026/06/0625/docs/two_phase_singular_mode_learning_proof_and_test.md`, `../../../../../daily_research_reports/backup/2026/06/0625/docs/c3s_adamw_merged_rigorous_proof_with_negative_results.md`.
 
 **Observation:** Prior A07_01 validated D07 as a controlled common/rare conflict audit.  
 **Interpretation:** That result is now legacy evidence for audit tooling, not evidence for nested singular interference.  

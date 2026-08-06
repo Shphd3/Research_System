@@ -167,7 +167,7 @@ Evidence location:
 Real-text evidence is recorded in `Projects/from-attention-to-search/main/experiments/A05/A05_04_03_real_text_common_logit_audit/summary.md` and `detailed.md`.
 
 Daily report card:
-`daily_research_reports/0611/real_text_common_logit_audit/05_report_card.md`
+`daily_research_reports/backup/2026/06/0611/real_text_common_logit_audit/05_report_card.md`
 
 ## 8. Claim Boundary And Next Decision
 

@@ -67,7 +67,7 @@ failure prevents complete evaluation of all 128 experts.
 
 For example $i$, let $x_i^c$ be a prompt under context condition
 $c\in\{rel,nuis,local\}$ and let $y_i$ be the identical teacher-forced target in
-all three conditions. At final MoE layer $l=26$, the native routed contribution
+all three conditions. At final MoE layer $l=47$, the native routed contribution
 for target-predicting position $t$ is
 
 $$

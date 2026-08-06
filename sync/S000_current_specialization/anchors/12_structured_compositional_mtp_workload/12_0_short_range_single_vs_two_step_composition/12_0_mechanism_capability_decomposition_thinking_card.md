@@ -11,7 +11,7 @@
 3. E04 的两步任务没有通过 NTP 能力门槛，因此其失败不能定位为“组合失败”，也不能用于判断 MTP。
 4. 完整双射存在排除法冗余：删去一行后仍能恢复缺失输出，因此原“必要事实”守卫无效。
 
-来源：[E04 summary](/Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md)、[E04 detailed](/Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md)、[0713 科研指导录音](/daily_research_reports/0713/recordings/0713_科研指导_整理稿.md)、[0713 导师与学长讨论录音](/daily_research_reports/0713/recordings/0713_导师与学长讨论_整理稿.md)。
+来源：[E04 summary](/Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md)、[E04 detailed](/Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md)、[0713 科研指导录音](/daily_research_reports/backup/2026/07/0713/recordings/0713_科研指导_整理稿.md)、[0713 导师与学长讨论录音](/daily_research_reports/backup/2026/07/0713/recordings/0713_导师与学长讨论_整理稿.md)。
 
 ## 1. 人的第一轮判断：必须由我独立填写
 

@@ -38,9 +38,9 @@ nonuniform Zipf robustness, common/rare utility, or a deployed MoE method.
 Main source artifacts:
 
 ```text
-daily_research_reports/0703/recordings/0703meeting.md
-daily_research_reports/0703/resources/theoretical_analysis.md
-daily_research_reports/0703/a06_25_warmup_spectral_router_reinit/meeting_brief.md
+daily_research_reports/backup/2026/07/0703/recordings/0703meeting.md
+daily_research_reports/backup/2026/07/0703/resources/theoretical_analysis.md
+daily_research_reports/backup/2026/07/0703/a06_25_warmup_spectral_router_reinit/meeting_brief.md
 Projects/from-attention-to-search/main/experiments/A06/A06_23_top1_lockin_margin_threshold/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_24_synthetic_common_rare_transformer_moe/summary.md
 Projects/from-attention-to-search/main/experiments/A06/A06_25_warmup_spectral_router_reinit/summary.md

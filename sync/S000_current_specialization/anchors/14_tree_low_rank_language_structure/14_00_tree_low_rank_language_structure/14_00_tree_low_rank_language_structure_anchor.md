@@ -183,7 +183,7 @@ An archived controlled one-layer Transformer study reported that distinct
 incremental features occupied a shared high-gain subspace in $W_Q$, $W_K$,
 and $W_{\mathrm{out}}$, with much weaker $W_V$ concentration. This is a
 mechanism prior, not current natural-language evidence:
-[archived controlled draft](/daily_research_reports/backup/0623/docs/research_draft_compositional_singular_concentration_with_loss_and_qk_descent_cn.md).
+[archived controlled draft](/daily_research_reports/backup/2026/06/0623/docs/research_draft_compositional_singular_concentration_with_loss_and_qk_descent_cn.md).
 
 The registered evidence chain is now complete:
 

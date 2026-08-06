@@ -6,8 +6,8 @@ created: 2026-06-29
 canonical_language: en
 companion_cn: 09_01_common_band_rare_discrimination_anchor_cn.md
 source_docs:
-  - ../../../../../daily_research_reports/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
-  - ../../../../../daily_research_reports/0626/recordings/r1.md
+  - ../../../../../daily_research_reports/backup/2026/06/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4.md
+  - ../../../../../daily_research_reports/backup/2026/06/0626/recordings/r1.md
   - ../06_geometry_proxy_preservation/06_01_geometry_and_state_discovery/subanchors/06_01_06_spectral_reservoir_method_audit_anchor.md
 ---
 

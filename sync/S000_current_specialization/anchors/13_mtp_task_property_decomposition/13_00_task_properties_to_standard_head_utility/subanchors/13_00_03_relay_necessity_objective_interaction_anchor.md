@@ -1,7 +1,7 @@
 # Does Relay Necessity Amplify the Standard-Head Utility of Next-2 Supervision?
 
 Thinking Card source:
-[long_horizon_compositional_workload_thinking_card_cn.md](/daily_research_reports/0717/mtp_long_horizon_compositional_workload/long_horizon_compositional_workload_thinking_card_cn.md)
+[long_horizon_compositional_workload_thinking_card_cn.md](/daily_research_reports/backup/2026/07/0717/mtp_long_horizon_compositional_workload/long_horizon_compositional_workload_thinking_card_cn.md)
 
 Parent anchor:
 [13_00 task properties to standard-head utility](../13_00_task_properties_to_standard_head_utility_anchor.md)

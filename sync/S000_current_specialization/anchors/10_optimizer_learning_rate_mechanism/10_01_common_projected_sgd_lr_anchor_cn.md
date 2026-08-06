@@ -106,7 +106,7 @@ $$
 
 **Boundary:** 当前 anchor 是 seminar optimizer 支线，不更新 feature-level MoE specialization 主线 claim。
 
-**Evidence links:** `daily_research_reports/0701/prompts/0701_seminar_questions_next_conversation_prompt_cn.md`; `daily_research_reports/0701/docs/design_problem_understanding_revised.md`; seminar screenshots noted there.
+**Evidence links:** `daily_research_reports/backup/2026/07/0701/prompts/0701_seminar_questions_next_conversation_prompt_cn.md`; `daily_research_reports/backup/2026/07/0701/docs/design_problem_understanding_revised.md`; seminar screenshots noted there.
 
 ## 8. Claim Boundary And Next Decision
 

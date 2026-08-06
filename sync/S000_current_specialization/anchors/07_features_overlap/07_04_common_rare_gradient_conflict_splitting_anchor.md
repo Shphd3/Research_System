@@ -4,7 +4,7 @@ parent_node: rq.expert_specialization
 status: insufficient_evidence_neural_proxy
 created: 2026-06-25
 canonical_language: en
-source_draft: ../../../../../daily_research_reports/0625/docs/07.md
+source_draft: ../../../../../daily_research_reports/backup/2026/06/0625/docs/07.md
 placement: 07_features_overlap
 depends_on:
   - A05_common_logit_collapse_line
@@ -154,7 +154,7 @@ Evidence links: `07_01_common_rare_conflict_metric_audit_anchor.md`, `07_02_comm
 Observation: the current 2026-06-25 draft reframes 07 around high-frequency / rare feature gradient conflict.
 Interpretation: this is the right 07-level question because it asks whether expert partition reduces feature interference.
 Boundary: the next protocol must not hand-code the conflict-loss answer.
-Evidence links: `../../../../../daily_research_reports/0625/docs/07.md`.
+Evidence links: `../../../../../daily_research_reports/backup/2026/06/0625/docs/07.md`.
 
 ## 8. Claim Boundary And Next Decision
 

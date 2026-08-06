@@ -5,7 +5,7 @@ status: result_updated_boundary_run
 created: 2026-07-03
 canonical_language: en
 source_docs:
-  - ../../../../../daily_research_reports/0701/docs/design_problem_understanding_revised.md
+  - ../../../../../daily_research_reports/backup/2026/07/0701/docs/design_problem_understanding_revised.md
   - 10_01_common_projected_sgd_lr_anchor.md
 ---
 
@@ -126,7 +126,7 @@ $$
 
 **Boundary:** The claim is optimizer-line diagnostic only; it does not update the current nested learning / MoE gating preservation claim.
 
-**Evidence links:** `../../../../../daily_research_reports/0701/docs/design_problem_understanding_revised.md`; `10_01_common_projected_sgd_lr_anchor.md`.
+**Evidence links:** `../../../../../daily_research_reports/backup/2026/07/0701/docs/design_problem_understanding_revised.md`; `10_01_common_projected_sgd_lr_anchor.md`.
 
 **Observation:** A10_02 main local boundary run (`high_lr=0.9`, seeds `0,1,2`) did not produce a qualifying late instability event, but `sgd_high_ce` showed rare-prefix suppression: rare accuracy `0.4335`, common accuracy `0.8949`, top-SV growth `3.6756`, top-2 energy `0.6622`, top-band gradient mass `0.5564`, extra-feature effective rank `2.4621`, and extra top-2 mass `0.4721`.
 

@@ -34,9 +34,11 @@ functional specialization contract
 ## Current Judgment
 
 The controlled evidence supports the mechanism through a frozen four-expert
-discovery-and-switch primitive. It does not yet support an LLM Router method.
-The unresolved premise is whether a real, unfiltered workload contains stable
-expert-function heterogeneity that the native Router fails to capture.
+discovery-and-switch primitive. The first registered real-code clause is also
+complete: on the CrossCodeEval final-layer frozen expert pool, relevant context
+changes counterfactual expert effects, but the selected identity is not split
+stable and positive absolute headroom fails. This does not support an LLM
+Router and does not adjudicate every unfiltered repository-code workload.
 
 ## Ordered Anchor Registry
 
@@ -46,7 +48,7 @@ expert-function heterogeneity that the native Router fails to capture.
 | 01 | [`06_01`](06_01_geometry_and_state_discovery/06_01_geometry_and_state_discovery_anchor.md) | Can unlabeled hidden-state structure provide a stable, trainable initial partition? | Geometry is reachable with the correct states; tested label-free selectors and real-proxy preservation are insufficient. |
 | 02 | [`06_02`](06_02_partition_preservation_dynamics/06_02_partition_preservation_dynamics_anchor.md) | Which signed training dynamics determine preservation, crossing, and recovery? | Low-tail margin is the local budget; utility, boundary pressure, representation, Router, and actual step jointly move it. |
 | 03 | [`06_03`](06_03_utility_binding_and_sparse_discovery/06_03_utility_binding_and_sparse_discovery_anchor.md) | Can training create useful expert functions and can sparse feedback discover them? | Correct exposure creates specialists; one challenger plus a lower-tail switch repairs the controlled selected-path blind basin. |
-| 04 | [`06_04`](06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md) | Does unfiltered repository code contain stable uncaptured expert-function headroom? | **Open and active. Protocol not approved.** |
+| 04 | [`06_04`](06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md) | Does unfiltered repository code contain stable uncaptured expert-function headroom? | **Active parent; `06_04_01` completed and failed on the registered CrossCodeEval final-layer surface.** |
 
 Each parent anchor is a complete decision story. Its `subanchors/` directory
 contains only local falsifiers, nuisance controls, or method audits needed to
@@ -75,7 +77,9 @@ separate parent decisions:
 - after the Router/representation/optimizer freeze audit, more fixed-expert
   recovery decomposition does not change the method decision;
 - after the lower-tail certificate passes, more synthetic stopping-threshold
-  tuning does not address the real-workload premise.
+  tuning does not address the real-workload premise;
+- after `06_04_01`, more mining of the same frozen last-layer expert pool does
+  not address training-time utility creation or the broader unfiltered scope.
 
 Static 2x2 geometry and spectral-direction extraction are parked side evidence.
 Their experiment records live under `A06_01_07` and `A06_01_06`; they are not
@@ -88,18 +92,26 @@ low-tail margin describes local preservation; expert utility and signed
 boundary pressure determine Router movement; conditional exposure can create
 specialists; selected-only top-1 has a controlled counterfactual-feedback
 failure; one challenger plus a lower-tail stopping rule repairs that failure in
-the frozen four-expert bridge.
+the frozen four-expert bridge. On the registered CrossCodeEval surface,
+relevant evidence changes final-layer counterfactual expert effects and the
+matched-slot methodology is numerically validated.
 
-**Not supported:** natural semantic experts, positive real-workload headroom, a
-deployable LLM Router, joint long-horizon stability, many-expert scaling,
-systems-level compute savings, or an MTP-Router benefit.
+**Weakened on the registered surface:** the frozen final-layer pool does not
+provide a split-stable, context-favored positive headroom target that a better
+Router could simply recover.
+
+**Not supported:** a conclusion for all unfiltered repository code, natural
+semantic experts, positive pretrained-LLM routing headroom, a deployable LLM
+Router, joint long-horizon stability, many-expert scaling, systems-level
+compute savings, or an MTP-Router benefit.
 
 ## Only Next Decision
 
-Audit [`A06_04`](06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md):
+Decide within [`A06_04`](06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md):
 
-> Is held-out oracle routing headroom positive on unfiltered repository-level
-> code after split-stability, load, token-identity, local-only, length, and
-> frequency controls?
+> After the registered CrossCodeEval final-layer pool failed split stability
+> and positive absolute headroom, should A06 approve one training-time
+> selective-sharing test on an explicit real rare/common workload?
 
-Do not design another Router architecture before this premise is established.
+Do not continue frozen-pool mining or design another Router before this human
+decision is recorded.
