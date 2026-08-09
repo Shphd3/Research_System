@@ -1020,9 +1020,9 @@ single-Jacobian extrapolation.
 
 ## 17. Sources
 
-- [Original 0721 meeting question](</daily_research_reports/0723/meeting_recordings/0721 组会_笔记.md>)
-- [Full technical proof](/daily_research_reports/0724/NTP_conditional_low_rank_theory_package/01_理论论文_共享组合结构与条件低有效秩.md)
-- [Proof appendix](/daily_research_reports/0724/NTP_conditional_low_rank_theory_package/02_证明附录.md)
+- [Original 0721 meeting question](</daily_research_reports/backup/2026/07/0723/meeting_recordings/0721 组会_笔记.md>)
+- [Full technical proof](/daily_research_reports/backup/2026/07/0724/NTP_conditional_low_rank_theory_package/01_理论论文_共享组合结构与条件低有效秩.md)
+- [Proof appendix](/daily_research_reports/backup/2026/07/0724/NTP_conditional_low_rank_theory_package/02_证明附录.md)
 - [A14 parent anchor](/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md)
 - [A14_02 functional-rank anchor](/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_anchor.md)
 - [A14_02_01 frequency--mapping anchor](/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_01_frequency_mapping_rank_separation_anchor.md)

@@ -4,7 +4,7 @@
 
 - 日期：2026-08-04
 - 模型：冻结的本地 Qwen3-8B
-- 核心实验：A15_01_05_E01
+- 核心实验：A15_02_E01
 - 正式裁定：`depth_pass_spectral_fail`
 - 文档性质：阶段性综合报告；不是新的 Router Protocol，也不是训练收益证明
 
@@ -287,7 +287,7 @@ Identify the broad academic field and the specific subfield.
 Classification:
 ```
 
-全部 512 条实际文本、token ids、左右 padding、读出 span、标签、模板、事实原子与哈希见[数据 manifest](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/provenance/actual_semantic_text_sequences.json)。数据集总 SHA-256 为 `cb440b98d81bac3f9813344f85e6efdbd994b7b988d8009ba64e207e64a11859`。
+全部 512 条实际文本、token ids、左右 padding、读出 span、标签、模板、事实原子与哈希见[数据 manifest](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/provenance/actual_semantic_text_sequences.json)。数据集总 SHA-256 为 `cb440b98d81bac3f9813344f85e6efdbd994b7b988d8009ba64e207e64a11859`。
 
 ### 4.4 固定了什么
 
@@ -464,7 +464,7 @@ $$
 | 35 | $6.86\times10^5$ | $7.37\times10^4$ | $8.46\times10^4$ | 0.871 | $6.08\times10^4$ | $3.83\times10^4$ | 1.590 | 1.82 |
 | 36 | $9.16\times10^5$ | $8.54\times10^4$ | $1.04\times10^5$ | 0.823 | $7.34\times10^4$ | $4.85\times10^4$ | 1.513 | 1.84 |
 
-表中最重要的对比不是“哪一列随层变大”，而是同一层内的 $B/W$。例如 block 35 的细类别间方差低于粗类别（$6.08\times10^4<7.37\times10^4$），但细类内方差只有粗类的约 45%，因此细区分度为 1.590，高于粗区分度 0.871。完整逐频带来源分别见 [band_metrics.csv](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/tables/band_metrics.csv) 与 [eigenvalue_band_summary.csv](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/tables/eigenvalue_band_summary.csv)。
+表中最重要的对比不是“哪一列随层变大”，而是同一层内的 $B/W$。例如 block 35 的细类别间方差低于粗类别（$6.08\times10^4<7.37\times10^4$），但细类内方差只有粗类的约 45%，因此细区分度为 1.590，高于粗区分度 0.871。完整逐频带来源分别见 [band_metrics.csv](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/tables/band_metrics.csv) 与 [eigenvalue_band_summary.csv](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/tables/eigenvalue_band_summary.csv)。
 
 ---
 
@@ -717,9 +717,9 @@ flowchart LR
 ## 16. 证据与来源索引
 
 - [理论与数据设计主文](../../../0803/docs/01_语义组合深度与频谱方差_理论与数据设计.md)
-- [正式 Protocol](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/protocol_cn.md)
-- [结果摘要](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/summary_cn.md)
-- [完整证据账本](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/detailed.md)
-- [全部实际语义文本](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E01_qwen3_coarse_fine_semantic_variance_atlas/provenance/actual_semantic_text_sequences.json)
-- [固定频带共同训练兼容性结果](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_middle_tail_functional_resolution/A15_02_01_E01_cross_update_compatibility_gate/summary_cn.md)
-- [2B 匹配计算固定频带分发结果](../../../../Projects/from-attention-to-search/main/experiments/A15/15_03_matched_band_dispatch_effect/A15_03_E01_2b_matched_band_dispatch/summary_cn.md)
+- [正式 Protocol](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/protocol_cn.md)
+- [结果摘要](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/summary_cn.md)
+- [完整证据账本](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/detailed.md)
+- [全部实际语义文本](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas/provenance/actual_semantic_text_sequences.json)
+- [固定频带共同训练兼容性结果](../../../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_04_E01_cross_update_compatibility_gate/summary_cn.md)
+- [2B 匹配计算固定频带分发结果](../../../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_05_E01_2b_matched_band_dispatch/summary_cn.md)

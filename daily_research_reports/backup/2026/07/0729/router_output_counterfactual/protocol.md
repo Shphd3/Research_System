@@ -6,7 +6,7 @@
 
 **Purpose:** determine whether changing only token-to-expert identity at one frozen MoE layer materially changes sparse-expert output geometry and downstream model output.
 
-**Primary anchor:** diagnostic companion to [A06_00 functional specialization contract](../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md). This probe cannot promote an A06 utility claim.
+**Primary anchor:** diagnostic companion to [A06_00 functional specialization contract](../../../../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md). This probe cannot promote an A06 utility claim.
 
 **Experiment role:** operationalization/proxy audit of immediate expert non-interchangeability.
 

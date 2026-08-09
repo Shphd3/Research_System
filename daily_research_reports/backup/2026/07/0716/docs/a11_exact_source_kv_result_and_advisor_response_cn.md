@@ -3,8 +3,8 @@
 日期：2026-07-16
 实验：`A11_03_02_E02_exact_source_kv_information_audit`
 远程任务：ACP job `pt-rqtb6bw0`，四卡，`SUCCEEDED`
-正式证据：[Summary](../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md)、
-[Detailed](../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/detailed.md)
+正式证据：[Summary](../../../../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/summary.md)、
+[Detailed](../../../../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit/detailed.md)
 
 表达依据：[科研指导录音整理](../../0713/recordings/0713_科研指导_整理稿.md)要求先讲清物理先验、最小可检验子问题、优先级和对主问题的推进；[导师与学长讨论整理](../../0713/recordings/0713_导师与学长讨论_整理稿.md)要求独立拆解“信息形成—标准头使用”的因果链，并说明 MTP 可能只在结构化、需要规划或中间状态的任务上有价值，不能从合成结果直接外推。
 

@@ -158,7 +158,7 @@ $$
 - $10^{-5}$：斜率 `1.0174`、相关 `0.9990`、符号一致率 `1.0000`、残差 `0.1012`。
 - 步长增至 $10^{-4}$ 后，斜率变为 `1.3202`、残差升至 `1.0676`，说明大步长已不能忽略曲率。
 
-![一步损失预测与实测一致性](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/figures/prediction_fidelity.png)
+![一步损失预测与实测一致性](../../../../../../../Projects/from-attention-to-search/main/experiments/A12/archive/12_02_capacity_diagnostics/A12_02_01_D01_ineligible_one_step_interference/figures/prediction_fidelity.png)
 
 **解释：** 最小步长点接近恒等线，且误差随步长增加，符合局部 Taylor 展开的预期。
 
@@ -225,7 +225,7 @@ $$
 **Summary：** [A11_22 Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/summary.md)  
 **Detailed：** [A11_22 Detailed](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/detailed.md)  
 **Story：** [MTP 干扰、容量与课程学习](/data/250010109/Research_System/Projects/from-attention-to-search/main/stories/11_long_horizon_mtp_objective/02_mtp_interference_capacity_curriculum_cn.md)  
-**Figures：** [预测一致性图](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/figures/prediction_fidelity.png)
+**Figures：** [预测一致性图](../../../../../../../Projects/from-attention-to-search/main/experiments/A12/archive/12_02_capacity_diagnostics/A12_02_01_D01_ineligible_one_step_interference/figures/prediction_fidelity.png)
 
 ## 7. 补充材料
 

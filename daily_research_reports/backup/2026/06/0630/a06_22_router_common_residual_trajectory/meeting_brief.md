@@ -82,7 +82,7 @@ $$
 
 **来源：** `summary.md`，`tables/full01_key_decision_metrics.csv`，`figures/full01_proxy_route_nmi_reproduction.png`。
 
-![Proxy-route NMI reproduction](../../../Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/figures/full01_proxy_route_nmi_reproduction.png)
+![Proxy-route NMI reproduction](../../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E01_common_residual_trajectory/figures/full01_proxy_route_nmi_reproduction.png)
 
 ### 结果 2：common-dominated update 只在 mean-common 坐标中成立，不是 projector-robust 机制。
 
@@ -98,7 +98,7 @@ $$
 
 **来源：** `summary.md`，`detailed.md`，`figures/full01_projector_lambda_step5_step10.png`。
 
-![Projector lambda step 5 and 10](../../../Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/figures/full01_projector_lambda_step5_step10.png)
+![Projector lambda step 5 and 10](../../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E01_common_residual_trajectory/figures/full01_projector_lambda_step5_step10.png)
 
 ### 结果 3：residual-margin fragility 仍是活跃解释，但必须和 common operator 一起定义。
 
@@ -114,7 +114,7 @@ $$
 
 **来源：** `detailed.md`，`tables/full01_common_projector_robustness.csv`，`tables/full01_common_residual_margin_by_pair.csv`。
 
-![Raw-center lambda trajectory](../../../Projects/from-attention-to-search/main/experiments/A06/A06_22_router_common_residual_trajectory_audit/figures/full01_raw_center_lambda_trajectory.png)
+![Raw-center lambda trajectory](../../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E01_common_residual_trajectory/figures/full01_raw_center_lambda_trajectory.png)
 
 ## 4. 执行动作
 

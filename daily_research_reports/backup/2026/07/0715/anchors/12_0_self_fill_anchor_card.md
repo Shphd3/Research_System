@@ -326,9 +326,9 @@ $$
 
 对照材料：
 
-- [当前中文 Anchor](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor_cn.md)
-- [当前 E02 中文 Protocol](../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E02_in_support_capability_calibration/protocol_cn.md)
-- [当前 E02 Summary](../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E02_in_support_capability_calibration/summary.md)
+- [当前中文 Anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor_cn.md)
+- [当前 E02 中文 Protocol](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E02_in_support_capability_calibration/protocol_cn.md)
+- [当前 E02 Summary](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E02_in_support_capability_calibration/summary.md)
 
 ### 9.1 Anchor 对照表
 

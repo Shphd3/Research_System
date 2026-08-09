@@ -1,6 +1,6 @@
 # Summary: Router Output Counterfactual Audit
 
-Primary anchor: diagnostic companion to [A06_00 functional specialization contract](../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md)  
+Primary anchor: diagnostic companion to [A06_00 functional specialization contract](../../../../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md)  
 Protocol: [protocol.md](protocol.md)
 
 ## Result Snapshot

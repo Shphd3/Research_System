@@ -30,7 +30,7 @@ $$
 q_{\mathrm{tree/ROOT}}(m)\le rN(m)\le rs,\qquad \dim U\le kr,\qquad \Delta\Theta_T=-\sum_{t=0}^{T-1}\eta_t v_t\phi_t^\top\ \Longrightarrow\ \operatorname{rank}(\Delta\Theta_T)\le\min(b,kr).
 $$
 
-**公式解释：** 同一组 mapping 活动预算与单 mapping 自由度，一侧控制树/ROOT 的任务方向，另一侧通过 NTP 外积梯度控制参数增量秩；[理论综合](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/03_ntp_conditional_function_rank_cn.md) 给出条件证明，[Nested Learning](../backup/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4_zh.md) 给出主方向被优化放大的局部机制。
+**公式解释：** 同一组 mapping 活动预算与单 mapping 自由度，一侧控制树/ROOT 的任务方向，另一侧通过 NTP 外积梯度控制参数增量秩；[理论综合](../../../../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/03_ntp_conditional_function_rank_cn.md) 给出条件证明，[Nested Learning](../backup/0629/docs/nested_prediction_spectral_anisotropy_causal_rewrite_v4_zh.md) 给出主方向被优化放大的局部机制。
 
 ## 3. 下一决策
 
@@ -79,4 +79,4 @@ flowchart TD
 
 ## 5. 实验结构与证据
 
-**实验认识更新：** E05 中 AdamW 参数位移的八维捕获为 0.9975，保留该子空间后 CE 仅增加 0.00026 nat；E06 中精确有限 ROOT 效应的八维捕获为 0.9829，功能重放 CE 仅增加 0.00022 nat。两项结果共同支持当前受控模型的参数更新与任务效应集中在低维、功能充分的主子空间；纯 SGD 的结构直连由下一决策裁定。[E05](../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E05_trajectory_jacobian_closure/summary_cn.md) · [E06](../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E06_reference_jacobian_vs_secant/summary_cn.md)
+**实验认识更新：** E05 中 AdamW 参数位移的八维捕获为 0.9975，保留该子空间后 CE 仅增加 0.00026 nat；E06 中精确有限 ROOT 效应的八维捕获为 0.9829，功能重放 CE 仅增加 0.00022 nat。两项结果共同支持当前受控模型的参数更新与任务效应集中在低维、功能充分的主子空间；纯 SGD 的结构直连由下一决策裁定。[E05](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E05_trajectory_jacobian_closure/summary_cn.md) · [E06](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E06_reference_jacobian_vs_secant/summary_cn.md)

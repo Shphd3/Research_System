@@ -33,6 +33,8 @@ replaces the A06 real-workload Router gate.
 | 12 | Structured composition, task capability, and standard-head causal use | [structured composition](research_lines/12_structured_compositional_mtp_workload_cn.md) |
 | 13 | Task-property decomposition from hard relay to the soft-relay measurement blocker | [A13 anchors](anchors/13_mtp_task_property_decomposition/README.md) |
 | 14 | Conditional low-dimensional computation under a globally high-capacity hierarchy | [A14 anchors](anchors/14_tree_low_rank_language_structure/README.md) |
+| 15 | Spectral representation geometry, independent middle/tail information audits, functional admission, and online routing | [A15 anchors](anchors/15_spectral_representation_and_functional_routing/README.md) |
+| 16 | Load-control gradient interference and mechanism-conditioned intervention | [A16 anchors](anchors/16_load_control_gradient_interference/README.md) |
 
 Read [the overall synthesis](research_lines/00_overall_current_line_cn.md) first.
 
@@ -69,6 +71,16 @@ supports non-inferiority only in its registered common-mapping task. The raw
 parameter-update basis is parked as unidentified, while E04--E06 retain the
 local Jacobian versus finite secant result. Router utility and a complete
 state-to-parameter rank claim remain unverified.
+
+## Independent A15 Route
+
+A15 is now organized by decision ownership rather than experiment chronology:
+Router-input geometry, learning and feedback dynamics, layerwise representation
+atlases, independent middle- and tail-band information questions, functional
+coordinate admission, and online routing. A15_04 is the active shared-tail
+geometry review. A15_03 is a separate `DRAFT_NOT_EXECUTABLE` middle-band audit.
+Neither band currently has a functional claim, and A15_05 retains the failed
+compatibility and matched-dispatch boundaries.
 
 ## Claim Boundary
 
@@ -120,5 +132,5 @@ python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --sourc
 python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
 ```
 
-This root sync was refreshed on 2026-07-28. Project-local anchors, stories,
+This root sync was refreshed on 2026-08-09. Project-local anchors, stories,
 and experiment records remain authoritative.

@@ -28,7 +28,7 @@ H/M/T 是三个等维输入块，分别编码正确专家所需的一个独立�
 | selected-only | 专家反馈下M/T能否纠错 | 细分纠错0.500；exact route 0.244 | 早期粗分区被锁定 |
 | oracle coverage | 只改更新覆盖能否恢复 | 细分纠错0.977；增量0.477 | 专家反馈是充分的锁定机制 |
 
-完整证据：[反馈锁定结果](../../Projects/from-attention-to-search/main/experiments/A15/15_04_expert_feedback_tail_lockin/A15_04_E01_selected_feedback_tail_correction/summary_cn.md)；[功能稳定性结果](../../Projects/from-attention-to-search/main/experiments/A15/15_05_low_variance_route_stability/A15_05_E01_functional_route_stability/summary_cn.md)。
+完整证据：[反馈锁定结果](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_01_E01_selected_expert_feedback_lockin/summary_cn.md)；[功能稳定性结果](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_02_E01_low_variance_functional_delay/summary_cn.md)。
 
 ## 4. 解释流程图
 

@@ -28,7 +28,7 @@
 | block 35 | 0.369 | 0.376 | 0.982 | 不能区别于零 |
 | block 36 | 0.413 | 0.452 | 0.915 | 子级局部更偏 head；非末层单独反转 |
 
-![父减子在 head、middle、tail 的逐层轨迹](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/figures/figure3_layer_role_difference_trajectories.png)
+![父减子在 head、middle、tail 的逐层轨迹](../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/figures/figure3_layer_role_difference_trajectories.png)
 
 图中横轴是 embedding 与 36 个 block 输出，纵轴是“父级减子级”的每方向平均能量；正值表示父级更强，负值表示子级更强。左图保留背景方差并用对称对数轴，右图除去背景方差、无量纲；阴影是按 32 条语义链配对重采样的 95% 区间。
 
@@ -55,4 +55,4 @@ flowchart LR
 - **完成判据：** 使用同一批预先冻结的 256 条文本、相同配对和统计规则，复现两阶段符号及多数层支持；只有复现后，才允许把特定层 × 频带送入功能效用检验。
 - **恢复时第一动作：** 选择“第二模型”或“第二自然 calibration 语料”作为唯一外部复现轴，不同时改变模型、文本和基底来源。
 
-完整结果：[中文摘要](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/summary_cn.md)；[全部实际文本](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/provenance/actual_semantic_text_sequences.json)。
+完整结果：[中文摘要](../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/summary_cn.md)；[全部实际文本](../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/provenance/actual_semantic_text_sequences.json)。

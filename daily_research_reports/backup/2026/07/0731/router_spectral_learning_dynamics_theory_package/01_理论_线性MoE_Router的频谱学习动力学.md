@@ -599,7 +599,7 @@ flat 条件的 head/middle/tail 50% 拟合时间均约为 141 steps；4:2:1 谱�
 56/111/223；16:4:1 谱约为 29/114/457；强谱白化后重新回到约 141/141/141。
 2,048 个 flat-rotation null、谱隙剂量关系和 tail-only capability guards 均通过。
 因此本节前四条受控预测已获实验支持；该结果不验证 AdamW、可训练专家反馈或
-真实 DCLM 的形成原因。[结果记录](../../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E03_S_controlled_spectral_learning_dynamics/summary.md)
+真实 DCLM 的形成原因。[结果记录](../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E01_controlled_covariance_learning_speed/summary.md)
 
 首个 E03-R 三-seed 正式配置在 step100（约 78.6M tokens）前均出现注册的
 20-step 最大专家份额超过 0.8，实际窗口最大值约 0.99；因此轨迹按 Protocol

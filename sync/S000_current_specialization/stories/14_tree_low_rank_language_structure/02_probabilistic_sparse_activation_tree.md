@@ -522,7 +522,7 @@ The main text is self-contained. This appendix only provides traceability.
 
 - [Original A14 static-tree anchor](/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md)
 - [Static-tree closure story](01_tree_aligned_compression_without_linear_propagation.md)
-- [Formal probabilistic proof, Chinese](/daily_research_reports/0721/probabilistic_sparse_activation_tree_theory_proof_cn.md)
+- [Formal probabilistic proof, Chinese](/daily_research_reports/backup/2026/07/0721/probabilistic_sparse_activation_tree_theory_proof_cn.md)
 
 ### 13.2 Experiment sources and realization details
 

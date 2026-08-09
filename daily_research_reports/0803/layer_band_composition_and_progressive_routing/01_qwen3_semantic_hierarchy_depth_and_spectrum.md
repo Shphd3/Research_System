@@ -1,6 +1,6 @@
 # 实验一：Qwen3-8B 同词父/子语义角色的层 × 频谱投影画像
 
-状态：最终版；冻结模型静态审计；只整理 A15_01_03_E02 的旧投影分析，不包含线性探针、粗细分类或 Router 训练。
+状态：最终版；冻结模型静态审计；只整理 A15_02_02_E02 的旧投影分析，不包含线性探针、粗细分类或 Router 训练。
 
 ## 摘要
 
@@ -115,7 +115,7 @@ flowchart LR
     S --> D["父减子 raw / white<br/>层 × 频带画像"]
 ~~~
 
-全部文本、token ids、目标 span、角色、链和模板见 [actual_semantic_text_sequences.json](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/provenance/actual_semantic_text_sequences.json)。语义数据 manifest SHA-256 为 b1b5545fff3893fad5d673c03ef5db6893b8e6cfaae1fd0d55d9624355cc8df5。
+全部文本、token ids、目标 span、角色、链和模板见 [actual_semantic_text_sequences.json](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/provenance/actual_semantic_text_sequences.json)。语义数据 manifest SHA-256 为 b1b5545fff3893fad5d673c03ef5db6893b8e6cfaae1fd0d55d9624355cc8df5。
 
 ## 3. 模型、表征与独立 covariance
 
@@ -390,9 +390,9 @@ Raw 与 white 的 H/M/T 六组比较均未通过该规则。以 white head 为�
 
 ## 14. 证据入口
 
-- [正式中文摘要](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/summary_cn.md)
-- [完整证据账本](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/detailed.md)
-- [正式 Protocol](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/protocol_cn.md)
-- [全部实际文本](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/provenance/actual_semantic_text_sequences.json)
+- [正式中文摘要](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/summary_cn.md)
+- [完整证据账本](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/detailed.md)
+- [正式 Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/protocol_cn.md)
+- [全部实际文本](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/provenance/actual_semantic_text_sequences.json)
 - [关键结果表](tables/01_qwen3_role_atlas_key_results.csv)
 - [末层反转表](tables/02_qwen3_final_layer_reversal.csv)

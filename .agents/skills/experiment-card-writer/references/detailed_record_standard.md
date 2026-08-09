@@ -1,38 +1,44 @@
 # Detailed Result Record Standard
 
+Apply `result_evidence_lineage.md` before using this structure.
+
 ## Contents
 
 - [Purpose](#purpose)
 - [Required structure](#required-structure)
-- [Figure and evidence boundary](#figure-and-evidence-boundary)
+- [Evidence ownership](#evidence-ownership)
+- [Figure boundary](#figure-boundary)
 
 ## Purpose
 
-`detailed.md` is the complete evidence ledger. It must be sufficient for a
-future reader or AI to audit the run, understand the result, and locate the
-artifacts without re-discovering the project.
+`detailed.md` is the only complete evidence ledger. A future reader or AI must
+be able to verify execution against the frozen Protocol, trace every
+decision-bearing result, understand failures, and locate artifacts without
+re-discovering the project.
 
-It may be long, but it must be layered: quick judgment first, full audit after.
-It must not create a stronger conclusion than `summary.md` or the anchor.
+It may be long, but it must be layered: verdict and eligibility first, full
+audit afterward. It must not create a stronger conclusion than `summary.md` or
+the Anchor.
 
-## Required structure
-
-Use this structure:
+## Required Structure
 
 ```markdown
 # Detailed: <experiment_id>
 
-Primary anchor:
-Protocol:
+Primary Anchor:
+Frozen Protocol and registered revision:
 Summary:
+Result eligibility:
 
 ## 0. Quick Recap
 
 Purpose:
 Hypothesis:
 Experiment logic:
-Conclusion:
-Evidence:
+Direct result:
+Eligibility:
+Verdict:
+Claim boundary:
 
 ## 1. Terminology / Definitions
 
@@ -42,23 +48,24 @@ Evidence:
 
 ## 2. Anchor Link And Decision Point
 
-## 3. Protocol Compliance Audit
+## 3. Protocol Freeze, Conformance, And Deviations
 
-all audit blocks confirmed before Protocol promotion:
-cross-block consistency passed:
-execution scope explicitly approved:
-approved conditions match actual conditions:
-primary metric exists:
-central figures/tables exist:
-seeds/checkpoints recorded:
-known good/bad/confusing cases reviewed:
-success/failure/insufficient-evidence criteria applied:
+| Registered item | Expected | Actual | Status | Evidence | Eligibility impact |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
 
-## 4. Setup
+Frozen Protocol revision:
+Execution scope approved:
+Amendments:
+Retries and exclusions:
+Missing conditions or artifacts:
+Post-hoc analyses:
+
+## 4. Actual Setup
 
 Research question:
 Data construction and provenance:
-Train / eval / probe split:
+Train / development / confirmation split:
 Learning task and permitted supervision:
 Model / architecture / algorithm:
 Input representation / position encoding:
@@ -70,24 +77,30 @@ Seeds:
 Conditions and plain-language labels:
 Changed variables:
 Held fixed:
-Script paths:
-Result paths:
+Code / config / data identities:
+Script and result paths:
 Known setup limitations:
 
-## 5. Metrics And Decision Rules
+## 5. Metrics And Registered Decision Rules
 
-## 6. Main Results
+## 6. Evidence Lineage
+
+| Claim or decision | Protocol criterion | Raw artifact | Computation / revision | Aggregation and uncertainty | Observed value | Eligibility | Verdict | Limitation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | | | |
+
+## 7. Main Results
 
 Separate:
 
-- decision evidence;
+- eligible decision evidence;
+- bounded evidence;
 - stage-level profiling evidence;
 - debug-only evidence;
-- failed or ambiguous evidence.
+- failed or ambiguous evidence;
+- ineligible, missing, and not-run evidence.
 
-## 7. Visualization Results, When Decision-Relevant
-
-For each central figure or viewer:
+## 8. Visualization Results, When Decision-Relevant
 
 ### <plain title>
 
@@ -95,22 +108,22 @@ For each central figure or viewer:
 
 Purpose:
 Setup:
-Metric definition:
-Metric unit:
+Metric definition and unit:
+Raw source and lineage row:
+Aggregation and uncertainty:
 How to read:
-Expected if supported:
-Expected if weakened or incomplete:
+Expected under registered outcomes:
 Observed result:
 Take-home:
 Remaining uncertainty:
 What this figure does not prove:
 Anchor update implication:
 
-## 8. Stage Evidence And Failure Decomposition
+## 9. Stage Evidence And Failure Decomposition
 
-| Stage | Evidence | Passed / failed / unclear | Failure reason | What this rules out |
-| --- | --- | --- | --- | --- |
-| | | | | |
+| Stage | Evidence | Passed / failed / unclear | Failure reason | What this rules out | What remains live |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
 
 Falsified physical prior:
 Falsified mathematical model:
@@ -119,15 +132,28 @@ Falsified implementation:
 Falsified metric:
 Remaining rival explanations:
 
-## 9. Full Experiment Record
+## 10. Full Experiment Record
 
-## 10. Interpretation
+## 11. Interpretation
 
-## 11. Claim Boundary
+## 12. Claim Boundary
 
-## 12. Next Decision
+Can claim:
+Cannot claim:
 
-## 13. Links And Artifact Map
+## 13. Next Decision
+
+Decision:
+Completion criterion:
+Resume action:
+
+## 14. Artifact Manifest
+
+| Artifact | Purpose | Producer / revision | Source inputs | Hash or identity | Complete | Claim-eligible | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | | |
+
+## 15. Links
 
 anchor:
 protocol:
@@ -135,20 +161,33 @@ summary:
 code workspace:
 runner:
 config:
-key code files:
 data / manifest:
 result dir:
 figure dir:
-key tables:
 logs / checkpoints:
 repro command:
-job id:
+job ids:
 ```
 
-## Figure and evidence boundary
+## Evidence Ownership
 
-When central visual evidence exists, every figure must have purpose, setup,
-how-to-read, observed result, take-home, and remaining uncertainty. A figure
-that cannot be explained should move to an appendix/debug area or be omitted
-from the main result path. Do not create a visualization section merely to
-satisfy a template when the decision uses nonvisual evidence.
+- Compare the frozen Protocol with actual execution before interpreting any
+  value.
+- Record every deviation, amendment, retry, exclusion, missing condition, and
+  post-hoc analysis, even when it does not change eligibility.
+- Separate raw observations, derived statistics, interpretations, and claims.
+- Do not combine eligible and ineligible evidence in one aggregate.
+- Do not treat layers, tokens, documents, checkpoints, or arms as independent
+  experimental replicates unless the design establishes that independence.
+- Make every decision-bearing value trace to a raw artifact, computation,
+  aggregation, registered criterion, and bounded claim.
+- Keep complete setup, all conditions, run history, and artifact manifests out
+  of `summary.md`; Detailed owns them.
+
+## Figure Boundary
+
+Every central figure must have a source table or lineage row, purpose, setup,
+metric and unit, aggregation, how-to-read statement, observed result,
+take-home, and remaining uncertainty. Move an unexplained or debug-only figure
+to a labeled appendix or omit it. Do not create a visualization section when
+the decision uses nonvisual evidence.

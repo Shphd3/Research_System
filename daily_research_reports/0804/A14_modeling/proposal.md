@@ -1,6 +1,6 @@
 # A14 数学模型修订草案：从概率活动树到“分类—组合—任务激活”语义 DAG
 
-材料基线是现有 [概率活动树理论](/data/250010109/Research_System/Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree_cn.md) 与 [A14 当前条件功能秩综合](/data/250010109/Research_System/Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/03_ntp_conditional_function_rank_cn.md)。
+材料基线是现有 [概率活动树理论](../../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree_cn.md) 与 [A14 当前条件功能秩综合](../../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/03_ntp_conditional_function_rank_cn.md)。
 
 ## 0. 中心裁定
 

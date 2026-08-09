@@ -114,6 +114,12 @@ question and tests one local clause, rival, repair, robustness check, or metric
 guard. Keep each Thinking Card beside the anchor it owns. The line `README.md`
 must distinguish sibling-parent dependency order from parent--child ownership.
 
+Before creating or reorganizing a line `README.md`, read
+[`references/line_direction_contract.md`](references/line_direction_contract.md)
+completely. Put a short direction snapshot before the artifact index. Derive
+its state and route from approved Anchors and verified results; never invent a
+transition to make the direction look complete.
+
 When migrating a line, move the canonical files instead of copying them, update
 the line README plus every project, story, experiment, daily-note, and graph
 reference in scope, remove the old path, and check for duplicate canonical
@@ -288,6 +294,10 @@ The required anchor structure is:
 Do not put commands, long configs, raw logs, broad ablations, or full result
 presentation in the anchor. Put those in `protocol.md`, `summary.md`, and
 `detailed.md`.
+
+State the Anchor's parent direction, blocking uncertainty, why this is the
+smallest direction-changing decision, and how each verdict affects the route.
+The line README owns the multi-Anchor map; do not copy its full history.
 
 `Computational Realization` exists to prevent theory/code drift: the anchor
 must say what input objects, computed variables, algorithm stages,

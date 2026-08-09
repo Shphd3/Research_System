@@ -25,5 +25,5 @@ next decision.
 
 Current reading entry:
 
-- [Project-local MTP story](../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md)
+- [Project-local MTP story](../../../../../../Projects/from-attention-to-search/main/stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use_cn.md)
 - [0713 meeting brief](../../0713/meetings/mtp_three_questions_and_causal_use_meeting_brief_cn.md)

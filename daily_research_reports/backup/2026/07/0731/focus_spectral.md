@@ -18,11 +18,11 @@
 
 ## 3. 关键证据图
 
-![非平谱分离学习时间，白化后重新重合](../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E03_S_controlled_spectral_learning_dynamics/figures/e03_s_crossing_times.png)
+![非平谱分离学习时间，白化后重新重合](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E01_controlled_covariance_learning_speed/figures/e03_s_crossing_times.png)
 
 **读图结论：** 同一条件内三条曲线的纵向距离表示学习同等比例目标所需更新次数的差异；平谱时重合，4:2:1 约形成 1:2:4，16:4:1 约形成 1:4:16，而白化后重新重合。这直接支持输入方差谱是受控系统中的速度来源。
 
-**完整证据：** [E03-S 结果摘要](../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E03_S_controlled_spectral_learning_dynamics/summary.md)；[完整证据记录](../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E03_S_controlled_spectral_learning_dynamics/detailed.md)。
+**完整证据：** [E03-S 结果摘要](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E01_controlled_covariance_learning_speed/summary.md)；[完整证据记录](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E01_controlled_covariance_learning_speed/detailed.md)。
 
 ## 4. 解释流程图
 
@@ -39,7 +39,7 @@ flowchart LR
 
 - **成立范围：** 固定高斯表征、固定谱基底、各方向强度匹配的软专家分数目标、线性 Gate、无正则随机梯度下降；8 个随机种子与 2,048 个平谱随机旋转对照全部通过。
 - **仍不能说：** 真实 DCLM 中的 head alignment 一定由该机制产生、AdamW 保留同一排序、专家共同训练会继续强化它、middle/tail 没有功能，或频谱分发提高验证损失/FLOP。
-- **最强未决解释：** 真实训练中专家优势谱与上游基底同时变化；本次 [E03-R](../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E03_R_real_early_spectral_learning_dynamics/summary.md) 的三个 seeds 到 step100 时，都出现某一层连续 20 步约 99% 的 token 流向同一个专家，因而无法区分谱动力学、专家反馈与路由塌缩。
+- **最强未决解释：** 真实训练中专家优势谱与上游基底同时变化；本次 [E03-R](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E02_real_trajectory_spectral_formation/summary.md) 的三个 seeds 到 step100 时，都出现某一层连续 20 步约 99% 的 token 流向同一个专家，因而无法区分谱动力学、专家反馈与路由塌缩。
 - **唯一下一决策：** 是否批准一个仍不使用负载均衡辅助损失（`lambda_lb=0`）、但重新冻结非梯度负载稳定规则的 E03-R 新 Protocol。
 - **完成判据：** 新 Protocol 必须先在三个随机种子上越过本次失败窗口，同时不触发“任一专家份额 $>0.8$”或“至少四个专家完全不接收 token”的守卫，再进入 2B-token 轨迹；科学判据继续要求至少两个随机种子的形成时间超过随机方向对照，且不能由基底漂移单独解释。
 - **恢复时第一动作：** 审核 E03-R 的 `insufficient_load_guard` 结果记录，先决定是否值得修订负载稳定条件；现有轨迹在首个注册训练检查点前停止，若获批准必须从初始化重跑。

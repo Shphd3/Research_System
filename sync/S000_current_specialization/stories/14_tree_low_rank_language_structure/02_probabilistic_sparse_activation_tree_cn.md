@@ -551,7 +551,7 @@ $$
 
 - [A14 原始静态树 anchor](/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md)
 - [静态树闭环故事](01_tree_aligned_compression_without_linear_propagation_cn.md)
-- [概率性稀疏激活树正式证明](/daily_research_reports/0721/probabilistic_sparse_activation_tree_theory_proof_cn.md)
+- [概率性稀疏激活树正式证明](/daily_research_reports/backup/2026/07/0721/probabilistic_sparse_activation_tree_theory_proof_cn.md)
 
 ### 15.2 实验来源与关键实现信息
 

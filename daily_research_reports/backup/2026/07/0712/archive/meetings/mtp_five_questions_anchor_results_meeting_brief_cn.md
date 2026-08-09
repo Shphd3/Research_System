@@ -91,7 +91,7 @@ $$
 **证据说明：** 原始序列最强条件 train `0.1249`；显式绑定五 seed test 最高 `0.1353`。  
 **边界：** 不能断言预训练 Transformer 或结构化模型无法组合。
 
-![显式绑定校准曲线](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_23b_explicit_binding_calibration/figures/curves.png)
+![显式绑定校准曲线](../../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration/figures/curves.png)
 
 ### 结果 2：显式表示秩决定受控模型中 MTP 是否损害标准目标
 
@@ -101,7 +101,7 @@ $$
 **证据说明：** rank 1 gap `0.9084--1.0218`，同时未来 MSE 在 5/5 改善；rank 2 gap 约零。  
 **边界：** 这是 oracle-factor 线性模型，不能用参数量直接外推到 LLM。
 
-![秩条件下的 MTP 干扰](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_24_task_rank_competition/figures/rank_phase.png)
+![秩条件下的 MTP 干扰](../../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition/figures/rank_phase.png)
 
 ### 结果 3：课程不能修复结构性秩不足，只可能处理优化路径问题
 
@@ -111,7 +111,7 @@ $$
 **证据说明：** rank 1 pass `0/5`；rank 2 静态/课程均为数值零；真实迁移因 neural task gate 失败而 parked。  
 **边界：** 不否定预训练神经网络中的非凸路径、有限预算或优化器状态收益。
 
-![等剂量课程 Pareto 检验](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_25_curriculum_rank_boundary/figures/pareto.png)
+![等剂量课程 Pareto 检验](../../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary/figures/pareto.png)
 
 ## 4. 执行动作
 

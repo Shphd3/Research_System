@@ -5,8 +5,8 @@
 相关来源：
 
 - [E04 阶段 A 失败收尾](a12_0_e04_stage_a_failure_closeout_cn.md)
-- [12_0 中文 Anchor](../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor_cn.md)
-- [E04 detailed](../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md)
+- [12_0 中文 Anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor_cn.md)
+- [E04 detailed](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/detailed.md)
 
 ## 当前判断
 

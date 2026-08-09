@@ -47,10 +47,15 @@ challenger supplies the missing counterfactual utility, and a per-token lower-
 tail certificate safely switches back to top-1 in the frozen four-expert
 system.
 
-This is a controlled mechanism result, not yet an LLM Router. The next decision
-is upstream: determine whether an unfiltered repository-code workload contains
-stable held-out expert utility gaps and positive oracle routing headroom. If it
-does not, semantic Router design has no functional target on that workload.
+This is a controlled mechanism result, not yet an LLM Router. The first
+registered real-code test now closes one local surface negatively: relevant
+cross-file evidence changes final-layer expert counterfactual effects, but the
+selected expert is not split stable and its absolute headroom over native
+routing is below the registered threshold. The parent unfiltered-workload
+question remains broader than this CrossCodeEval test. The next decision is
+whether to test training-time selective sharing on one explicit real
+rare/common workload, not whether to design another Router from the same
+frozen last-layer pool.
 
 ## 2. Research Question
 
@@ -70,7 +75,9 @@ The required contracts are ordered:
    under activated-compute and communication cost.
 
 A06 has controlled evidence through contract 4 and a frozen-system primitive
-for contract 5. It has not passed the real-workload premise.
+for contract 5. Its first registered real-code clause failed the joint
+stability-and-positive-headroom gate; no pretrained-LLM Router target has been
+established.
 
 ## 3. Why This Question Is Confusing
 
@@ -91,7 +98,7 @@ describe their coupled motion and the information hidden by sparse execution.
 
 ## 4. Concrete Data And Training Layout
 
-The evidence uses four deliberately separated surfaces.
+The evidence uses five deliberately separated surfaces.
 
 | Surface | Data and model | Decides | Does not decide |
 |---|---|---|---|
@@ -99,6 +106,7 @@ The evidence uses four deliberately separated surfaces.
 | One-layer synthetic Transformer+MoE | No learned position embedding, full-sequence LM loss, controlled features and experts | margin dynamics, freezing interventions, utility formation, sparse feedback | natural semantics or scale |
 | Real-DCLM proxy audit | Qwen-style top-1 MoE on packed DCLM tokens | proxy stability, step-0 routability, early overwrite | semantic expert identity |
 | Dense-LLM representation audit | Qwen3-0.6B attention/residual states $X$, $A$, and $H=X+A$ | candidate representation-source priors | MoE gate causality or rare features |
+| Frozen real-code expert audit | Qwen3-Coder-30B-A3B-Instruct on repository-disjoint CrossCodeEval pairs, with a matched final-layer slot swap | context-conditioned expert effects, split stability, and absolute headroom on the registered surface | unfiltered repository-wide headroom, learned routing, or other layers |
 
 The key learned-specialist bridge contains four equally frequent context-
 defined tasks. A sequence-start instruction selects a later modular next-token
@@ -306,7 +314,7 @@ than continuing to tune one geometric initializer.
 | `06_01` geometry and state discovery | Oracle route-position states make the partition reachable, but tested label-free state selectors fail and real proxies are overwritten by ordinary training. | `06_01_01`--`06_01_07`: nuisance geometry, reachability, state selection, proxy overwrite, selector audits, spectral audit, and static side theory. |
 | `06_02` preservation dynamics | Finite low-tail margin is the local budget; utility, signed boundary pressure, representation, Router, and actual step jointly determine crossing and recovery. | `06_02_01` finite basin; `06_02_02` common/background controls; `06_02_03` local signed dynamics; `06_02_04` coupled dynamics. |
 | `06_03` utility and sparse discovery | Correct exposure creates specialists; selected-only top-1 can remain trapped; one challenger and a lower-tail certificate repair the controlled failure. | `06_03_01` function formation; `06_03_02` selected-path blindness; `06_03_03` challenger discovery; `06_03_04` tail-safe switch. |
-| `06_04` workload gate | Real repository-code expert-utility headroom is the only unresolved premise. | no experiment yet |
+| `06_04` workload gate | Relevant context changes final-layer counterfactual expert effects, but the first registered CrossCodeEval surface fails split stability and positive absolute headroom. | `06_04_01` completed registered failure; the broader unfiltered-workload scope is not adjudicated |
 
 The full anchor-level disposition is maintained in
 `../../problem_anchors/06_geometry_proxy_preservation/research_map.md`.
@@ -328,9 +336,27 @@ The most decision-bearing measurements are:
   rank-4 cells; task-only pair routing corrects every cell.
 - q10 and lower-CVaR10 each reach `128/128` correction and retention with zero
   premature stops, while saving median `51%` and `43%` of audition updates.
+- On 128 held-out CrossCodeEval examples, relevant context beats an equally
+  long nuisance context by `0.20370` nats per target token, but the selected
+  expert is not calibration-split stable. The held-out interaction is
+  `0.01163` with 95% CI `[0.00336, 0.02022]`, while relevant absolute headroom
+  is only `0.00540` with 95% CI `[-0.00105, 0.01225]` and therefore fails.
+- The external Attention-Mean report reduces measured expert switch rate from
+  `81.84%` to `7.30%`, but test loss worsens from `3.1395` to `3.1920` and the
+  eight-task macro average changes from `0.4812` to `0.4787`. This is evidence
+  for route continuity and a lower communication-cost term, not functional
+  specialization.
+- The external Feature-Context-Frozen report has a one-run matched-parameter
+  NLL change of `-0.00413` versus standard routing and a no-feature control
+  that is `+0.00782` worse than the feature condition. Without shuffled
+  ownership, forced-expert utility matrices, or multiple seeds, it remains a
+  representation-input diagnostic rather than a specialization result.
 
-These numbers support the controlled mechanism chain. They do not supply the
-missing real-workload utility headroom.
+The first six measurements support the controlled mechanism chain. The
+CrossCodeEval measurement is a direct negative result for one real-code
+surface. The two external reports are adjacent evidence about representation
+input and systems cost; neither supplies the missing positive expert-utility
+headroom.
 
 ## 12. Counterexamples And Rival Explanations
 
@@ -349,6 +375,12 @@ missing real-workload utility headroom.
   but does not remove selected-path blindness.
 - **Mean utility stopping:** it detects the population-average transition but
   stops before minority routes are corrected.
+- **Continuity as specialization:** a lower switch rate can reduce expert-load
+  traffic while preserving or worsening task loss. It changes $C(S)$ in the
+  functional objective but does not identify a useful expert.
+- **Interaction as positive utility:** a positive context-expert interaction
+  can arise because one candidate becomes more harmful. Absolute headroom and
+  split stability are necessary guards.
 
 ## 13. Claim Boundary
 
@@ -361,7 +393,10 @@ missing real-workload utility headroom.
 - conditional exposure can create held-out specialist utility;
 - selected-only weighted top-1 can fail to discover an unselected specialist;
 - one challenger plus a lower-tail stopping certificate repairs that failure
-  under frozen four-expert assumptions.
+  under frozen four-expert assumptions;
+- on the registered CrossCodeEval final-layer surface, relevant context changes
+  expert counterfactual effects, but context interaction alone is not positive
+  specialization.
 
 **Not established:**
 
@@ -378,13 +413,15 @@ missing real-workload utility headroom.
 The current chain contains five parent anchors, `06_00`--`06_04`. Repeated
 common subtraction, denoising, spectral initialization, fixed-expert recovery,
 and synthetic stopping variants are local subanchor evidence rather than
-independent decision steps. The only active parent is `06_04`: audit stable
-held-out expert gaps and oracle routing headroom on unfiltered repository code.
+independent decision steps. Parent `06_04` now contains one completed local
+failure: the CrossCodeEval final-layer frozen pool does not expose a stable,
+context-favored positive headroom target. This does not prove that all
+unfiltered repository-code workloads or all layers lack headroom.
 
-Only if that gate passes should the line create a Router-capture anchor. That
-future anchor would compare native routing, load-matched routing, held-out
-oracle routing, and a learned utility-predicting Router at matched activated
-compute.
+The line must not create a Router-capture anchor from this result. Its only
+candidate next branch is a human-approved training-time selective-sharing test
+that asks whether stable positive utility can be created on an explicit real
+rare/common workload.
 
 ## 15. Relation To Mainline
 
@@ -402,17 +439,21 @@ variable determines future prediction and expert utility.
 
 ## 16. Next Decision
 
-> Does unfiltered repository-level code completion exhibit positive,
-> cross-split-stable held-out oracle routing headroom after token-identity,
-> local-only, load-matched, and split-overfitting controls?
+> Should A06 approve one training-time selective-sharing test on an explicit
+> real rare/common workload after the frozen CrossCodeEval final-layer pool
+> failed split stability and positive absolute headroom?
 
-If no, stop semantic Router work for this workload. If yes, the next question
-is how much of that headroom a learned Router can capture under matched cost.
+If no, close this branch at the current boundary. If yes, formalize one anchor
+and protocol before any implementation; do not continue frozen-pool mining or
+construct a Router from route continuity alone.
 
 ## Source Map
 
 - Anchor map: `../../problem_anchors/06_geometry_proxy_preservation/research_map.md`
-- Active anchor: `../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md`
+- Active parent anchor: `../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md`
+- Completed real-code subanchor: `../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/subanchors/06_04_01_context_conditioned_expert_utility_anchor.md`
+- Real-code result: `../../experiments/A06/06_04_real_workload_utility_headroom/A06_04_01_E01_context_conditioned_expert_utility/summary.md`
+- External source fragment: `anchor_threads/06_04/story_fragment.md`
 - Chinese Thinking Card: `../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_thinking_card_cn.md`
 - Utility formation: `../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E01_trainable_expert_utility/summary.md`
 - Wrong-rank failure: `../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E01_wrong_rank_correction/summary.md`

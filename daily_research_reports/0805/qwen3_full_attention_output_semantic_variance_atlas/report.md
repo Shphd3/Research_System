@@ -2,7 +2,7 @@
 
 日期：2026-08-05  
 模型：冻结的 `/data/share/Qwen3-8B`  
-实验：A15_01_05_E03  
+实验：A15_02_E03
 正式裁定：**`depth_pass_spectral_fail`**
 
 ## 摘要
@@ -294,9 +294,9 @@ attention 的 $R$ 数值更高，但不能写成“后续 residual 路径削弱�
 
 ## 14. 证据入口
 
-- [正式 Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E03_qwen3_full_attention_output_semantic_variance_atlas/protocol_cn.md)
-- [中文结果摘要](../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E03_qwen3_full_attention_output_semantic_variance_atlas/summary_cn.md)
-- [完整证据账本](../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_05_E03_qwen3_full_attention_output_semantic_variance_atlas/detailed.md)
+- [正式 Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E03_qwen3_pre_o_proj_semantic_atlas/protocol_cn.md)
+- [中文结果摘要](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E03_qwen3_pre_o_proj_semantic_atlas/summary_cn.md)
+- [完整证据账本](../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E03_qwen3_pre_o_proj_semantic_atlas/detailed.md)
 - [本报告内完整语义文本](provenance/actual_semantic_text_sequences.json)
 - [本报告内 calibration manifest](provenance/calibration_manifest.json)
 - [本报告内模型 manifest](provenance/model_manifest.json)

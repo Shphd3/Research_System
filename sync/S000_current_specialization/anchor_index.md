@@ -17,6 +17,8 @@ Projects/from-attention-to-search/main/problem_anchors/
 | 12 | [synchronized A12 registry](anchors/12_structured_compositional_mtp_workload/README.md) -> `main/problem_anchors/12_structured_compositional_mtp_workload/README.md` | E04 NTP Stage A failed the capability and row-removal validity gates; decide whether to close or redesign. |
 | 13 | [synchronized A13 registry](anchors/13_mtp_task_property_decomposition/README.md) -> `main/problem_anchors/13_mtp_task_property_decomposition/README.md` | Hard relay is sufficient; soft relay lacks a common non-saturated comparison window. |
 | 14 | [synchronized A14 registry](anchors/14_tree_low_rank_language_structure/README.md) -> `main/problem_anchors/14_tree_low_rank_language_structure/README.md` | Conditional functional-rank theory retained; global linear propagation closed; finite secant bridge is current. |
+| 15 | [synchronized A15 registry](anchors/15_spectral_representation_and_functional_routing/README.md) -> `main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` | Seven sibling parents separate Router-input geometry, learning dynamics, representation atlases, independent middle/tail questions, functional admission, and online routing; A15_04 is the active geometry review. |
+| 16 | [synchronized A16 registry](anchors/16_load_control_gradient_interference/README.md) -> `main/problem_anchors/16_load_control_gradient_interference/README.md` | Load-control gradient interference remains independent of A15. |
 
 Paths above are relative to `Projects/from-attention-to-search/`.
 

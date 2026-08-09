@@ -239,8 +239,8 @@ Exactly one immediate decision:
 
 - [0713 advisor discussion](../../0713/recordings/0713_导师与学长讨论_整理稿.md)
 - [0713 research guidance](../../0713/recordings/0713_科研指导_整理稿.md)
-- [R3 perfect-router retrieval](../../../Projects/from-attention-to-search/main/experiments/archive/R3_perfect_router_retrieval/summary.md)
-- [R4 attention-output retrieval](../../../Projects/from-attention-to-search/main/experiments/archive/R4_attention_output_router_retrieval/summary.md)
-- [A11 result](../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/summary.md)
-- [A12 E04 result](../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md)
-- [A06 research map](../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md)
+- [R3 perfect-router retrieval](../../../../../../Projects/from-attention-to-search/main/experiments/archive/R3_perfect_router_retrieval/summary.md)
+- [R4 attention-output retrieval](../../../../../../Projects/from-attention-to-search/main/experiments/archive/R4_attention_output_router_retrieval/summary.md)
+- [A11 result](../../../../../../Projects/from-attention-to-search/main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use/summary.md)
+- [A12 E04 result](../../../../../../Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md)
+- [A06 research map](../../../../../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md)

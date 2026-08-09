@@ -276,10 +276,10 @@ Local-HMT 的负梯度对比例和输出冗余点估计较低，与其较好的 
 
 ## 9. 证据入口
 
-- [2B 中文摘要](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_04_E01_progressive_band_source_routing_2b/summary_cn.md)
-- [2B 完整证据](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_04_E01_progressive_band_source_routing_2b/detailed.md)
+- [2B 中文摘要](../../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b/summary_cn.md)
+- [2B 完整证据](../../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b/detailed.md)
 - [10B 自包含完整报告](/data/250010109/Research_System/daily_research_reports/0803/online_spectral_router_10b_training_report/report.md)
-- [10B 中文摘要](/data/250010109/Research_System/Projects/online-spectral-router-training/main/experiments/A15/A15_00_E01_10b_five_arm_training/summary_cn.md)
+- [10B 中文摘要](../../../Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E01_10b_online_spectral_routing/summary_cn.md)
 - [10B 终点表](tables/09_10b_endpoint_nll.csv)
 - [10B 配对差表](tables/10_10b_endpoint_pairwise_nll.csv)
 - [10B 在线刷新表](tables/11_10b_online_refresh_summary.csv)

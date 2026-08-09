@@ -48,8 +48,8 @@
 | 问题 | 当前直接回答 | 决定性证据 / 状态 | 不能声称 |
 |---|---|---|---|
 | Q1 | `share` 改变的是“跨 B 复用程度 + 独立规则数量”，不是单一频率变量；复用较多的设置在 toy 模型中学习更快、Q/K 功能依赖更集中。 | [学长主线文档](docs/natural_language_spectral_space.md)；64 维 `share16/share4/share2/random` 稳定拟合中位步数约为 350/750/1100/1200。 | 复用是唯一原因；真实语言服从同一规律；hidden state 已低维。 |
-| Q2 | 静态 A14 精确核算角色压缩、同层复用与跨层复用怎样控制可达维数；概率扩展只证明少量低维源被激活时，单次模式的可达维数高概率受控。 | [概率活动树主故事](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree_cn.md)；[E07](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)。 | 树结构自动低秩；NTP 自动产生低维源；活动空间保留任务效用。 |
-| Q3 | 独立重建中，`share16` 相对 `random_unshared` 在 3/3 seed 上少需 3/3/2 个任务状态方向；但参数差远大于状态差，中间条件不单调，且原始来源无法精确重放。 | [E08 中文结果](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md)：正式判定为证据不足；忽略来源门时，其他冻结守卫全部通过。 | 频率是原因；参数秩按比例决定状态秩；精确复现学长实验；概率树已在真实模型中实现；Router 已获得依据。 |
+| Q2 | 静态 A14 精确核算角色压缩、同层复用与跨层复用怎样控制可达维数；概率扩展只证明少量低维源被激活时，单次模式的可达维数高概率受控。 | [概率活动树主故事](../../../../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/02_probabilistic_sparse_activation_tree_cn.md)；[E07](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)。 | 树结构自动低秩；NTP 自动产生低维源；活动空间保留任务效用。 |
+| Q3 | 独立重建中，`share16` 相对 `random_unshared` 在 3/3 seed 上少需 3/3/2 个任务状态方向；但参数差远大于状态差，中间条件不单调，且原始来源无法精确重放。 | [E08 中文结果](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md)：正式判定为证据不足；忽略来源门时，其他冻结守卫全部通过。 | 频率是原因；参数秩按比例决定状态秩；精确复现学长实验；概率树已在真实模型中实现；Router 已获得依据。 |
 
 ### 总体收束
 
@@ -76,7 +76,7 @@
 
 ## 7. 恢复点
 
-先阅读 [E08 中文摘要](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md) 与两张中心图，再逐项审核上面六点。只有审核接受，才把本重建注册为项目证据。
+先阅读 [E08 中文摘要](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md) 与两张中心图，再逐项审核上面六点。只有审核接受，才把本重建注册为项目证据。
 
 ## 8. AI 路由与状态核对
 

@@ -389,4 +389,4 @@ $$
 
 下一步只应回答一个问题：这种稀疏头身份能否在独立 taxonomy 上复现并保持层/头坐标稳定。未通过复现前，不进入 Router 训练。
 
-正式实验记录：[summary_cn.md](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_06_E01_qwen3_mlp_input_channel_group_semantic_concentration/summary_cn.md)；[detailed.md](../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_06_E01_qwen3_mlp_input_channel_group_semantic_concentration/detailed.md)。
+正式实验记录：[summary_cn.md](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_03_E01_architectural_head_channel_concentration/summary_cn.md)；[detailed.md](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_03_E01_architectural_head_channel_concentration/detailed.md)。

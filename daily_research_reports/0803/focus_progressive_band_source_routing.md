@@ -1,6 +1,6 @@
 # 显式 H→M→T 路由能否产生有益的层级专家分工？
 
-状态：A15_01_04_E01 已完成；正式裁定为 specialization-only without quality pass。
+状态：A15_05_03_E01 已完成；正式裁定为 specialization-only without quality pass。
 
 ## 1. 本次唯一回答的问题
 
@@ -22,7 +22,7 @@ Held-out NLL 表示模型预测未见 token 的平均意外程度，越低越好
 
 ## 3. 决定性证据
 
-![两套配对续训的 held-out NLL 与匹配 FLOPs](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_04_E01_progressive_band_source_routing_2b/figures/figure1_heldout_nll_vs_flops.png)
+![两套配对续训的 held-out NLL 与匹配 FLOPs](../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b/figures/figure1_heldout_nll_vs_flops.png)
 
 横轴是解析匹配的累计训练 FLOPs，纵轴是 held-out NLL；黑色为完整输入 native，蓝色为各层本地 H→M→T，橙色为第一层 H→M→T relay。两种处理在最左侧先明显变差，relay 到约 1.5B token 才追平并在 2B 略低；整条橙线的平均高度仍高于黑线。
 
@@ -52,4 +52,4 @@ flowchart LR
 - **完成判据：** 两个独立训练种子中，功能坐标都降低专家选择遗憾或更新冲突，并且随后同时改善终点 NLL 与 NLL AUC。
 - **恢复时第一动作：** 先定义和冻结功能坐标的准入 Protocol，不直接增加新的固定频带训练 arm。
 
-完整结果：[中文摘要](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_04_E01_progressive_band_source_routing_2b/summary_cn.md)；[完整证据账本](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_04_E01_progressive_band_source_routing_2b/detailed.md)。
+完整结果：[中文摘要](../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b/summary_cn.md)；[完整证据账本](../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b/detailed.md)。

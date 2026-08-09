@@ -42,7 +42,7 @@ NTP 并非看不到 $A$：它仍在晚一个位置预测 $A$，而且可以学�
 - 第 100 步两者平均准确率为 99.28% 对 16.35%；
 - 允许绕行时，两者第 100 步都已 100%。
 
-![任务相关性对照学习曲线](../../../Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/figures/objective_learning_curves.png)
+![任务相关性对照学习曲线](../../../../../../Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/figures/objective_learning_curves.png)
 
 ## 对 MTP/NTP 认识的更新
 
@@ -94,6 +94,6 @@ future target 含答案变量
 
 详细证据入口：
 
-- [A13 主 anchor](../../../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md)
-- [决定性结果](../../../Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/summary.md)
-- [完整中文 story](../../../Projects/from-attention-to-search/main/stories/13_mtp_task_property_decomposition/01_task_relevant_relay_supervision_cn.md)
+- [A13 主 anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md)
+- [决定性结果](../../../../../../Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/summary.md)
+- [完整中文 story](../../../../../../Projects/from-attention-to-search/main/stories/13_mtp_task_property_decomposition/01_task_relevant_relay_supervision_cn.md)

@@ -49,7 +49,7 @@ $$
 
 ## 3. Main Results
 
-![Prediction fidelity](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11/A11_22_one_step_ntp_interference/figures/prediction_fidelity.png)
+![Prediction fidelity](../../../../../../../Projects/from-attention-to-search/main/experiments/A12/archive/12_02_capacity_diagnostics/A12_02_01_D01_ineligible_one_step_interference/figures/prediction_fidelity.png)
 
 The smallest step passes the numerical-law thresholds, while residual grows with step size. The hard calibration guard fails in five of five seeds, so the formal verdict is insufficient evidence for learned-task interference. A11_01--A11_20 have complete protocol/summary/detailed records; A11_21 is explicitly parked; A11_22 is closed with this insufficient verdict; A11_23--A11_26 are not open.
 

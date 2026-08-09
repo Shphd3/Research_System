@@ -32,7 +32,7 @@ $$R_{H:M}=\frac{\text{同等输入能量下 head 造成的专家间分数变化�
 
 **读表结论：** Router 的现状是“主要使用 head，同时弱使用 middle/tail”；现有三个保存状态不能支持“训练一直把 Router 推向只看 head”。
 
-**完整证据：** [Q1 中文结果摘要](../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E01_actual_router_input_band_response/summary_cn.md)
+**完整证据：** [Q1 中文结果摘要](../../../../../Projects/from-attention-to-search/main/experiments/A15/15_00_router_input_spectral_geometry/A15_00_E01_actual_router_input_spectral_access/summary_cn.md)
 
 ## 4. 解释流程图
 

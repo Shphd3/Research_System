@@ -185,8 +185,8 @@ Code sources:
 
 重要图：
 
-![A07_01 common backbone curves](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_01_nested_common_backbone_reproduction/figures/a07_01_backbone_curves.png)
+![A07_01 common backbone curves](../../../../../../Projects/from-attention-to-search/main/experiments/A07/A07_01_nested_common_backbone_reproduction/figures/a07_01_backbone_curves.png)
 
-![A07_02 tail control results](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_02_nested_tail_common_subspace_control/figures/a07_02_control_results.png)
+![A07_02 tail control results](../../../../../../Projects/from-attention-to-search/main/experiments/A07/A07_02_nested_tail_common_subspace_control/figures/a07_02_control_results.png)
 
-![A07_03 route binding](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_03_nested_route_function_binding/figures/a07_03_route_binding.png)
+![A07_03 route binding](../../../../../../Projects/from-attention-to-search/main/experiments/A07/A07_03_nested_route_function_binding/figures/a07_03_route_binding.png)

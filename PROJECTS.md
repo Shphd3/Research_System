@@ -19,6 +19,16 @@ current day's human idea and resume point, read
 `Projects/kv_cache` is read-only unless the user explicitly authorizes edits.
 Only its `xyDeng` branch is managed here; never push its `main` branch.
 
+A15 spectral representation geometry and functional routing, and A16
+load-control gradient interference, are both research lines inside
+`Projects/from-attention-to-search/`. A15 owns Router-input geometry, spectral
+learning dynamics, representation atlases, independent middle/tail information
+audits, functional coordinate admission, and online spectral routing; A16 owns load-control mechanism,
+LM-versus-load-gradient interaction, and mechanism-conditioned intervention
+selection. Neither line pauses or gates the other. Their checkpoints, raw logs,
+calibration caches, and full run outputs remain under the verified
+`/data/250010109/MoE_Router/` worker surfaces.
+
 ## Incubating Project — Diffusion Language Models
 
 | Role | Path / value |
@@ -33,23 +43,6 @@ This new line does not replace the active A06 project or inherit its worker
 surface. Its candidate D00--D03 anchor decomposition remains draft. No remote
 workspace, protocol, job, or result record is authorized until the researcher
 approves or corrects the independent Thinking Card.
-
-## Implementation Project — Online Spectral Router Training
-
-| Role | Path / value |
-|---|---|
-| Theme | matched online covariance-band routing and shallow Relay training |
-| Project | `Projects/online-spectral-router-training/` |
-| Research identity | A15 dynamic online spectral routing |
-| Worker surface | `/data/250010109/MoE_Router/experiments/20260803_online_spectral_router_training_v9/` |
-| State | bilingual Anchor and Protocol approved; implementation, paired smoke, and ten 10B jobs authorized |
-
-This implementation project owns the five-arm runner, deterministic online
-covariance tracker, nested Grassmann continuity guard, milestone evaluator,
-TensorBoard telemetry, and curated A15 evidence records. It does not replace
-the A15 source line in `from-attention-to-search`, edit the active graph, or
-publish/sync/commit without separate authorization. Checkpoints, raw logs,
-calibration caches, and full job outputs remain on the worker surface.
 
 ## Implementation Project — De-common Router Training
 
@@ -173,7 +166,8 @@ reading surface.
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
 | A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The controlled conditional-functional-rank theorem is retained, while global shared-linear propagation remains closed. E01 established that duplicate exposure is not context diversity and that capability-passing lookup `K=1/4/16` controls used 10.2/11.0/12.8 functional ROOT directions; archived E02-v1 matched seen-pair capability but failed strong unseen-pair recombination in 5/5. Improved E02 now isolates exact frequency inside one learned common mapping: all 10 pairs passed strict zero-exposure capability and rank-validity gates, LowF-minus-HighF functional rank averaged 0.2 directions, and its one-sided 95% upper bound was 0.5 against a frozen two-direction margin. This supports frequency non-inferiority in the registered task, not a shared-versus-independent mapping advantage. E03 was parked before treatment because a 32-probe common AdamW step basis captured only 0.478--0.631 of held-out common-update energy, so raw parameter-space reuse remains unidentified. E04--E06 retain the local-versus-finite bridge result: exact optimizer/ROOT secants were effectively eight-dimensional, while single-point H11 was refuted in 5/5. A14_03 remains blocked and Router utility remains unverified. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md` |
-| A15 | Why does a trained linear Gate become head-dominant, and can covariance rank become a functional routing coordinate? | Actual-input and controlled-dynamics audits establish strong finite-time head bias with nonzero middle/tail access. Fixed M/T/N views change dispatch but fail compatibility and matched-2B utility admission; natural parent/child concept roles also fail to define a cross-model universal rank mapping. Covariance rank is currently a learning-speed and geometry coordinate, not a validated expert-utility target. | `Projects/from-attention-to-search/main/problem_anchors/15_linear_gate_spectral_training_bias/README.md` |
+| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Router-input access, controlled learning dynamics, and layerwise representation non-uniformity are established only within their named coordinate systems. No universal semantic rank coordinate or middle/tail routing gain is established. A15_04 is the active shared-tail geometry review; A15_03 is an independent `DRAFT_NOT_EXECUTABLE` middle-band audit; A15_05 functional admission remains bounded by failed compatibility and matched-dispatch claims. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
+| A16 | Can expert load be controlled without gradient interference that slows language-model learning or blocks expert differentiation? | The migrated DC audit establishes an immediate sustainer of frozen Vanilla collapse but not historical sufficiency. A16_00 is the active mechanism decision: held-out shadow-step NLL is primary, complete-global-batch LM/LB raw-gradient cosine is mechanistic, and dynamic expert bias is only the conditional first intervention. | `Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/backup/2026/07/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
 Primary route:

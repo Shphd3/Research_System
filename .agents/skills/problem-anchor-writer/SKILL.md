@@ -1,6 +1,6 @@
 ---
 name: problem-anchor-writer
-description: "Audit a human-owned Thinking Card and create or update its approved formal research anchor, including data, task, objective, architecture, and confirmation boundaries for learnable designs. Use when the user asks to clarify a Thinking Card, formalize a research problem, or write anchor sections 1-8. Do not use for experiment protocols, run commands, result records, or publication."
+description: "Audit a human-owned Thinking Card and create, revise, or cold-read its approved self-contained and source-grounded formal research anchor, including direction placement, data, task, objective, architecture, and confirmation boundaries for learnable designs. Use when the user asks to clarify a research question, formalize a problem, write Anchor sections 1-8, or audit Anchor readability, grounding, and self-containment. Do not use for experiment protocols, run commands, result records, or publication."
 ---
 
 # Problem Anchor Writer
@@ -30,12 +30,16 @@ Thinking Card and must not copy it into section 0. Use
 For a new idea, ask the human to fill:
 
 ```text
+Parent research direction or problem:
 Phenomenon:
 Mechanism guess:
 Strongest rival explanation:
 Most uncertain point:
 Evidence that would change my mind:
+Current blocking uncertainty:
+Why this decision is needed now:
 Current next decision:
+Known source material, or Unknown:
 ```
 
 The human may mark an item `unknown`. Do not manufacture a confident answer.
@@ -48,22 +52,39 @@ Before a formal anchor, return a short audit:
 
 ```text
 Judgments to preserve:
+Direction placement and why this question is next:
 Unclear definitions:
 Hidden assumptions or causal overclaims:
 Strongest rival still alive:
 Can the proposed metric separate the rivals?:
 Smallest falsifier:
+Grounding gaps and source links needed:
 AI-proposed correction, if any:
 ```
 
 Label every AI-added prior, variable, metric, or model as a proposal. Move to a
 formal anchor only after the human corrects or approves the direction.
 
+## Grounding And No-Invention Gate
+
+Every decision-bearing statement must be grounded in an explicitly confirmed
+human judgment, an approved parent Anchor, or a verified linked artifact. An
+AI-added prior, definition, variable, metric, threshold, mechanism, or claim
+must remain labeled `AI_PROPOSAL` until the researcher approves it.
+
+When required information is absent, write `Unknown` or `BLOCKED`, state why it
+matters, and link the most direct artifact that could resolve it. Do not infer a
+claim from a filename, run ID, expected pattern, neighboring Anchor, or missing
+result. A link supports audit; the Anchor must still state the local meaning
+needed to understand its question and boundary.
+
 ## Formalization Gate
 
 The approved Thinking Card must support all of these:
 
 - exactly one phenomenon and one decision question;
+- the parent direction, current blocking uncertainty, and why this is the
+  smallest decision that can change the direction;
 - one mechanism guess with a stated causal direction;
 - a minimal variable set;
 - one primary observable metric;
@@ -148,11 +169,19 @@ Do not add an abstract, timeline, literature review, or embedded Thinking Card.
 Keep one decision question, one core model, one primary metric, one main
 falsifier, and one next decision. Put run-level settings in `protocol.md`.
 
+Before drafting, revising, or approving an anchor, read
+[`references/anchor_self_containment.md`](references/anchor_self_containment.md)
+completely. Self-contained means that a cold reader can reconstruct the
+research judgment without opening links; it does not mean that the anchor owns
+execution or reproducibility detail. Apply the reference's zero-net-growth
+rule and do not add top-level sections to satisfy readability.
+
 ### Section Requirements
 
 1. Define the parent problem, sharper subproblem, decision question, and every
-   non-obvious term. For a metric, state computation, unit, decision role, and
-   what it cannot prove.
+   non-obvious term. State the current blocking uncertainty and why this is the
+   smallest decision that can change the parent direction. For a metric, state
+   computation, unit, decision role, and what it cannot prove.
 2. Use at most three physical priors, preferably one. State falsifiers and the
    variable exposing each prior.
 3. State the primary hypothesis, strongest rival, predictions under each, and
@@ -163,10 +192,12 @@ falsifier, and one next decision. Put run-level settings in `protocol.md`.
    intervention, or analysis computation.
 6. Use one decisive test plus necessary guards. State metric, threshold, rival
    separated, allowed claim, and cannot-claim boundary.
-7. Link `protocol.md`, `summary.md`, and `detailed.md`; separate observation
-   from interpretation and remaining uncertainty.
+7. State the minimum local evidence unit before linking `protocol.md`,
+   `summary.md`, or `detailed.md`: key comparison, direct observation, safest
+   interpretation, and remaining uncertainty.
 8. State supported, weakened, and unresolved claims; what cannot be claimed;
-   and exactly one next decision.
+   how Pass, Fail, and Insufficient redirect or stop the parent direction; and
+   exactly one next decision with its completion criterion and resume action.
 
 ## Parent and Subanchor Rule
 
@@ -220,8 +251,19 @@ not change the question, model, metric, thresholds, boundary, or next decision.
 3. Sections 1-8 contain one decision question and one next decision.
 4. The primary metric separates the hypothesis from its rival.
 5. Observation, interpretation, claim, speculation, and boundary are separate.
-6. Every linked artifact exists.
-7. Inline formulas use `$...$`; display formulas use `$$...$$`.
+6. A cold reader can reconstruct the question-to-decision chain without
+   opening a link; links support audit rather than carry the explanation.
+7. Every term, label, symbol, metric, and identifier needed for the decision is
+   defined at first use in plain language.
+8. Every decision-bearing statement is human-confirmed, inherited from an
+   approved linked source, verified from evidence, or explicitly labeled
+   `AI_PROPOSAL`, `Unknown`, or `BLOCKED`.
+9. Unresolved or disputed items state their local consequence and link the
+   direct artifact needed to audit or resolve them.
+10. Readability changes obey zero net growth: added local explanation displaces
+   at least as much chronology, run detail, secondary evidence, or repetition.
+11. Every linked artifact exists.
+12. Inline formulas use `$...$`; display formulas use `$$...$$`.
 
 For legacy migration, use
 `scripts/migrate_embedded_thinking_cards.py`. It extracts section 0 verbatim,

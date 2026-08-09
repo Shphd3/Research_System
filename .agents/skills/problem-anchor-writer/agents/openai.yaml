@@ -1,7 +1,7 @@
 interface:
   display_name: "Problem Anchor Writer"
-  short_description: "Audit Thinking Cards and formalize approved anchors"
-  default_prompt: "Use $problem-anchor-writer to audit the Thinking Card and formalize an approved anchor, separating data, task, objective, architecture, and confirmation boundaries when the design is learnable."
+  short_description: "Audit Thinking Cards and self-contained anchors"
+  default_prompt: "Use $problem-anchor-writer to create or audit a self-contained, source-grounded Anchor without inventing missing research judgment or evidence."
 
 policy:
   allow_implicit_invocation: true

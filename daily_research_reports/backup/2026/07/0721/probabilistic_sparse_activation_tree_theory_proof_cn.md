@@ -957,5 +957,5 @@ MoE 路由策略最优。
 ## 19. 来源
 
 - [A14 静态树正式证明](tree_low_rank_theory_proof_cn.md)
-- [E07 可达空间核算](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
-- [E06 真实语言边界](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)
+- [E07 可达空间核算](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
+- [E06 真实语言边界](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)

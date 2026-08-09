@@ -76,10 +76,10 @@ Top-1/Top-k 选择和低秩专家架构暂时 `park`。
 
 ## 8. 路由与核对
 
-- **所属项目 / anchor：**[A14 形式化锚点](../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)
-- **主理论证据：**[E07 可达空间核算](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
-- **真实语言边界：**[E06 双侧方向平衡](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)
-- **完整当前结论：**[A14 当前实验总结](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary_cn.md)
+- **所属项目 / anchor：**[A14 形式化锚点](../../../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)
+- **主理论证据：**[E07 可达空间核算](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
+- **真实语言边界：**[E06 双侧方向平衡](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)
+- **完整当前结论：**[A14 当前实验总结](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary_cn.md)
 - **缺失闭环：**条件变量尚未冻结；条件化局部空间与 held-out 专家效用均无直接实验。
 - **聚焦审计：**`focused`
 - **正式状态更新：**A14 全局主张关闭；新的条件化局部空间问题尚未晋升为 anchor 或 protocol。

@@ -17,6 +17,8 @@ Projects/from-attention-to-search/main/problem_anchors/11_informative_future_bra
 Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/
 Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/
 Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/
+Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/
+Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/
 ```
 
 Do not create a generic nested `anchors/` subfolder inside this project-local
@@ -117,6 +119,8 @@ real rare/common workload.
 | 12 structured compositional MTP workload | parent-anchor registry: `12_structured_compositional_mtp_workload/README.md`; three complete parents `12_01`--`12_03`; story: `../stories/12_structured_compositional_mtp_workload/01_structured_composition_workload_and_standard_head_use.md` | Tests whether the A11 signal becomes functional on a computation-tree workload, starting from a depth-two ordered-composition base case. | Workload valid; current from-scratch learner gate failed; linear rank mechanism supported; active design is a shared capability gate followed by intermediate-state causal use. |
 | 13 MTP task-property decomposition | parent-anchor registry: `13_mtp_task_property_decomposition/README.md`; parent `13_00` with local `subanchors/` | Tests which workload properties convert earlier task-relevant supervision into ordinary-head utility. | Hard-relay sufficiency retained; soft-relay objective comparison remains blocked pending a measurement-only carrier repair decision. |
 | 14 conditional low-rank hierarchy | parent-anchor registry: `14_tree_low_rank_language_structure/README.md`; sibling parents `14_00`--`14_03`; only `14_02` currently owns local `subanchors/`; current synthesis: `../stories/14_tree_low_rank_language_structure/03_ntp_conditional_function_rank.md` | Separates global capacity from input-conditioned functional rank and audits the parameter-to-ROOT bridge. | Conditional theorem retained; point Jacobian is local only; finite training uses the low-dimensional secant/path-integrated image. Reuse-caused rank reduction remains open because unseen composition failed. |
+| 15 spectral representation geometry and functional routing | parent-anchor registry: `15_spectral_representation_and_functional_routing/README.md`; sibling parents `15_00`--`15_06`; current synthesis: `../stories/15_spectral_representation_and_functional_routing/02_spectral_representation_to_functional_routing.md` | Separates Router-input geometry, learning/feedback dynamics, representation atlases, independent middle/tail information audits, functional coordinate admission, and online routing. | No universal semantic rank coordinate or middle/tail functional gain is established; `A15_04` is the active geometry review and `A15_03` remains an independent draft. |
+| 16 load-control gradient interference | parent-anchor registry: `16_load_control_gradient_interference/README.md`; parent `16_00` with local subanchor `16_00_01` | Tests whether differentiable load control improves hard load while worsening next-step held-out language learning. | Frozen DC sustainer boundary complete; global-batch LM/LB gradient and shadow-step audit is the active mechanism decision. |
 
 ## Historical Placement
 

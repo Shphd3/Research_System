@@ -24,7 +24,7 @@
 
 ## 3. 决定性证据
 
-![完整表征的层级形成与细频带身份](../../Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_02_E01_controlled_layer_band_information_profile/figures/final_knowledge_update.png)
+![完整表征的层级形成与细频带身份](../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_01_E01_controlled_layer_information_profile/figures/final_knowledge_update.png)
 
 | 证据 | L1 | L2 | L3 | L4 | 认识 |
 | --- | ---: | ---: | ---: | ---: | --- |

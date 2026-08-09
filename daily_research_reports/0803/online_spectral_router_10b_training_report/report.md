@@ -1,7 +1,7 @@
 # 在线频谱 Router 五臂 10B 训练：完整评估报告
 
 状态：最终版
-实验：`A15_00_E01_10b_five_arm_training`
+实验：`A15_06_E01_10b_online_spectral_routing`（历史运行编号：`A15_00_E01_10b_five_arm_training`）
 主裁定：**本实验不支持 Relay-HMT；Local-HMT 在两个种子上都是最低 NLL 点估计，但尚未达到“两种子均明确优于 Centered-Full”的决定性标准。**
 
 ## 0. 摘要
@@ -288,7 +288,7 @@ Vanilla 的部分局部遗憾数值看起来并不差，但它已经严重路由
 - [专家机制摘要](tables/expert_function_summary.csv)
 - [运行时间与吞吐](tables/runtime_summary.csv)
 - [完整性清单](tables/analysis_completeness.json)
-- [Canonical Protocol](../../../Projects/online-spectral-router-training/main/experiments/A15/A15_00_E01_10b_five_arm_training/protocol.md)
+- [Canonical Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E01_10b_online_spectral_routing/protocol.md)
 
 原始 checkpoints、逐 token 路由数组、TensorBoard events 与完整 telemetry 保留在：
 

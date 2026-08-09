@@ -96,7 +96,7 @@ $$
 
 **证据：** Step 0 时，全位置公共方向剔除的 rare-feature NMI 为 `0.690`、联合分离分数为 `0.405`、稀有路由 margin 低尾为 `-2.759`；任务位置残差中心的 rare-feature NMI 为 `1.000`、联合分离分数为 `0.637`、稀有路由 margin 低尾为 `11.657`；oracle raw 中心的联合分离分数也是 `0.637`。
 
-![Step-0 联合分离分数](../../Projects/from-attention-to-search/main/experiments/A06/A06_24_synthetic_common_rare_transformer_moe/figures/step0_joint_feature_score_by_condition.png)
+![Step-0 联合分离分数](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E03_transformer_common_rare/figures/step0_joint_feature_score_by_condition.png)
 
 **解释：** 如果公共方向剔除本身就是特征分离器，全位置公共方向剔除应接近任务位置或 oracle 中心。实际结果显示它仍保留负 margin 和较低联合分离分数，说明缺失环节是任务相关样本池选择，而不是只缺一个公共方向校正。
 
@@ -112,7 +112,7 @@ $$
 
 **证据：** 训练到 step 160 后，所有条件 target accuracy 都达到 `1.0`。但全位置公共方向剔除的 final 联合分离分数为 `0.432`，稀有路由 margin 低尾为 `-5.427`；任务位置 raw 的 final 联合分离分数为 `0.620`，稀有路由 margin 低尾为 `5.227`。
 
-![Final 联合分离分数](../../Projects/from-attention-to-search/main/experiments/A06/A06_24_synthetic_common_rare_transformer_moe/figures/final_joint_feature_score_by_condition.png)
+![Final 联合分离分数](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E03_transformer_common_rare/figures/final_joint_feature_score_by_condition.png)
 
 **解释：** 合成目标足够简单，模型可以学会预测而不保持干净路由。准确率只能说明任务可学，不说明路由专家分工成立。
 
@@ -128,7 +128,7 @@ $$
 
 **证据：** 训练后，oracle residual input 的 rare-feature NMI 为 `1.000`、稀有路由 margin 低尾为 `8.924`，但 common/rare NMI 降到 `0.376`、联合分离分数为 `0.376`；oracle row-projected 的 rare-feature NMI 为 `1.000`、common/rare NMI 为 `0.636`、联合分离分数为 `0.636`、稀有路由 margin 低尾为 `8.646`。
 
-![Final rare margin p05](../../Projects/from-attention-to-search/main/experiments/A06/A06_24_synthetic_common_rare_transformer_moe/figures/final_rare_margin_p05_by_condition.png)
+![Final rare margin p05](../../../../../Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E03_transformer_common_rare/figures/final_rare_margin_p05_by_condition.png)
 
 **解释：** residual input 条件能保住稀有特征彼此分开和正 margin，但公共特征仍可能重新混入稀有专家。row projection 直接限制 router row 的公共方向回流，因此更符合“完整 common/rare partition preservation”的方法目标。
 

@@ -1,7 +1,7 @@
 interface:
   display_name: "Experiment Card Writer"
-  short_description: "Draft protocols in-file and surface critical review"
-  default_prompt: "Use $experiment-card-writer to write the complete protocol draft into its canonical file, surface decision-critical parts for review, and promote it only after confirmation and consistency checks."
+  short_description: "Freeze protocols and trace result evidence"
+  default_prompt: "Use $experiment-card-writer to draft and freeze an anchor-aligned Protocol, then write evidence-lineage-safe Summary and Detailed records."
 
 policy:
   allow_implicit_invocation: true

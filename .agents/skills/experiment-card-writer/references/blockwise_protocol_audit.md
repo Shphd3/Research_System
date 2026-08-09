@@ -12,6 +12,7 @@ decisions for review and verify that the confirmed blocks form one experiment.
 4. Cross-block consistency audit
 5. Protocol promotion and execution approval
 6. Change control
+7. Post-start freeze boundary
 
 ## Document And Block Status
 
@@ -164,3 +165,11 @@ boundary reopens the affected block, downgrades the file to
 `DRAFT_NOT_EXECUTABLE`, and invalidates execution approval until the dependent
 blocks and consistency audit pass again. Update the Protocol review notes; do
 not create a competing execution-plan file.
+
+## Post-Start Freeze Boundary
+
+This reopening rule applies before execution starts. After the first approved
+execution begins, preserve the registered scientific body and apply
+`protocol_self_containment_and_freeze.md`. Record any material change as an
+append-only amendment with its evidence-eligibility impact; never silently
+overwrite the pre-run contract.

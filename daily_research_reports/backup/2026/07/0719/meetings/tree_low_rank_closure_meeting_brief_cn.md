@@ -186,7 +186,7 @@ MoE 或 Router 设计。
 ## 九、来源
 
 - [当日 focus](../focus.md)
-- [A14 形式化锚点](../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)
-- [A14 当前实验总结](../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary_cn.md)
-- [E07 可达空间核算](../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
-- [E06 双侧方向平衡](../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)
+- [A14 形式化锚点](../../../../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)
+- [A14 当前实验总结](../../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/summary_cn.md)
+- [E07 可达空间核算](../../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E07_reachable_space_accounting/summary.md)
+- [E06 双侧方向平衡](../../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/boundary/A14_E06_two_sided_split_robustness/summary.md)

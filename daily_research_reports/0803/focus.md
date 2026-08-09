@@ -29,7 +29,7 @@
 
 **读图：** 左侧 Local 中，第 2/3/4 层 Router 分别看本层的 head/middle/tail；右侧 Relay 中，三个后层 Router 都从第一层取信息，只是分别读取第一层的 head/middle/tail。两种方法都没有截断专家输入：专家仍看到本层完整表示，变化的只是 Router 用什么信息选择专家。
 
-**完整证据：** [自包含综合报告](layer_band_composition_and_progressive_routing/report.md)；[Qwen3-8B 静态结果](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_03_E02_qwen3_independent_covariance_role_atlas/summary_cn.md)；[2B 训练结果](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_01_shallow_head_guided_deep_routing/A15_01_04_E01_progressive_band_source_routing_2b/summary_cn.md)。
+**完整证据：** [自包含综合报告](layer_band_composition_and_progressive_routing/report.md)；[Qwen3-8B 静态结果](../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas/summary_cn.md)；[2B 训练结果](../../Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b/summary_cn.md)。
 
 ## 4. 解释流程图（AI 初稿，研究者修改）
 

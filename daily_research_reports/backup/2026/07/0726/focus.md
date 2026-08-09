@@ -9,7 +9,7 @@
 - **E04–E06 共同识别的新对象：** 局部 Jacobian 可以随 context 与训练位置旋转，但积分后的 learned secant 仍可跨 context 形成低维、冻结读出充分的有限功能创新。
 - **E02 直接更新：** 在 strict zero-exposure unseen-cell 能力通过后，target frequency $1$ 对 $8$ 的 ROOT 功能秩为 $7.6$ 对 $7.4$；paired 差均值 $0.2$，单侧 95% upper bound $0.5<2$，所以 rare exact frequency 没有迫使方向数上升。
 - **E03 边界更新：** common AdamW step space 的 held-out capture 只有 $0.478$--$0.631$，0/10 达到 $0.80$；因此状态功能复用不自动等于 raw parameter-update 空间共享，E03 按 Protocol parked。
-- **[理论 v2](../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/04_finite_functional_innovation_theory_v2_cn.md) 真正新增：** 输出头商空间中的 finite innovation、exact path residual 的主定理、以及“只有独立且功能必要的新创新才增加最小秩”的条件下界。
+- **[理论 v2](../../../../../Projects/from-attention-to-search/main/stories/14_tree_low_rank_language_structure/04_finite_functional_innovation_theory_v2_cn.md) 真正新增：** 输出头商空间中的 finite innovation、exact path residual 的主定理、以及“只有独立且功能必要的新创新才增加最小秩”的条件下界。
 
 ## 关键证据、最强 rival 与边界
 

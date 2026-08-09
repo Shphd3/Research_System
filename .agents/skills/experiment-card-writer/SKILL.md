@@ -1,16 +1,20 @@
 ---
 name: experiment-card-writer
-description: "Write a complete anchor-aligned protocol.md draft directly into the experiment folder, surface only decision-critical parts for researcher review, promote the same file after block confirmation and consistency, and update summary.md and detailed.md. Use for experiment design, protocol drafting or confirmation, or result documentation after the anchor is clear. Do not redefine the research question or operate remote jobs."
+description: "Write, audit, confirm, and freeze an anchor-aligned protocol.md, then create evidence-grounded summary.md and detailed.md records with explicit provenance and claim boundaries. Use for experiment design, Protocol approval or amendment, result interpretation, or result-record maintenance after the Anchor is clear. Do not redefine the research question, invent missing judgment or evidence, operate remote jobs, or publish artifacts."
 ---
 
 # Experiment Protocol And Result Writer
 
-Use this skill after the anchor has been reviewed and approved. The anchor owns
-the research design: problem definition, physical priors, hypotheses,
-mathematical model, computational realization, minimal falsification tests,
-current evidence, claim boundary, and next decision.
+Use this skill only after the formal Anchor has one approved decision question,
+primary metric, main falsifier, claim boundary, and next decision. The Anchor
+owns the research design; this skill owns the experiment contract and evidence
+record.
 
-The experiment folder owns the draft-to-approved experiment design and evidence:
+```text
+anchor -> protocol.md -> summary.md -> detailed.md -> anchor sections 7-8
+```
+
+Store the canonical files together:
 
 ```text
 Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/
@@ -21,323 +25,89 @@ Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/
   tables/
 ```
 
-## Core Chain
-
-```text
-anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
-```
-
-Do not run or expand a nontrivial experiment before the protocol is approved.
-Do not add broad sweeps, extra seeds, or new diagnostics unless they distinguish
-a named rival explanation or protect the validity of the primary conclusion.
-
-## Language And Approval Workflow
-
-For new anchor-indexed experiments, write the English canonical file first and
-conduct the decision review in Chinese unless the user asks otherwise:
-
-```text
-English protocol.md completed as DRAFT_NOT_EXECUTABLE
--> AI surfaces a concise decision-critical review extract in Chinese
--> researcher confirms or corrects one or many blocks
--> AI revises the same file and its status ledger
--> cross-block consistency audit
--> promote the same protocol.md to DESIGN_CONFIRMED_NOT_EXECUTABLE
--> explicit execution-scope approval
--> run
--> English summary.md and detailed.md as canonical result records
--> optional Chinese companions only when requested or needed for a meeting
-```
-
-Rules:
-
-- Write the complete candidate into `protocol.md` before review and mark it
-  `DRAFT_NOT_EXECUTABLE`. Keep no chat-only or second planning draft; label
-  unsupported choices as assumptions or `BLOCKED`.
-- Let one reply confirm or correct any subset; do not split one coherent block
-  into approval microsteps.
-- Require an unambiguous confirmation for each block; silence does not count.
-- Promote it to `DESIGN_CONFIRMED_NOT_EXECUTABLE` only after all blocks and
-  cross-block consistency pass.
-- A Chinese `protocol_cn.md` companion must not change the canonical design.
-- Result records stay in English by default; explain them in Chinese in chat.
-
-## Draft-First Blockwise Audit Gate
-
-Before writing or revising a Protocol, read
-[`references/blockwise_protocol_audit.md`](references/blockwise_protocol_audit.md)
-completely. Complete the single canonical `protocol.md` first as
-`DRAFT_NOT_EXECUTABLE`, then surface only its decision-critical items. Keep all
-candidate execution details in that file; promote them only after every block
-is `CONFIRMED` and cross-block consistency is `PASS`.
-
-If a correction changes an earlier block, mark it `REOPENED` and re-audit all
-dependent blocks. Protocol promotion and execution approval are separate:
-implementation, smoke, and full run each require explicit scope approval.
-
-## Protocol Alignment Gate
-
-A protocol is invalid unless it starts with an approval-facing snapshot. The
-first page is for the user to confirm purpose and basic setup before any run:
-
-```text
-Document status:
-Approval status:
-Block audit status:
-Cross-block consistency:
-Execution scope approved:
-Purpose:
-Primary anchor:
-Anchor decision question:
-Anchor physical prior tested:
-Anchor core model term tested:
-Anchor falsifier:
-Experiment role:
-Primary metric from anchor:
-Claim boundary from anchor:
-Minimal setup:
-Basic configuration:
-Conditions to run:
-Pass:
-Fail:
-Insufficient:
-Cannot claim:
-Approval decision:
-```
-
-Keep this snapshot short enough to read before approving the experiment. Put
-stage profiling, algorithm details, commands, and artifact maps after the
-snapshot.
-
-The protocol may carry detail that the anchor omits, but it must still be
-readable. The approval snapshot should answer in plain language:
-
-```text
-what one uncertainty this run resolves;
-which anchor claim it can change;
-which primary metric decides it;
-what result makes the run pass, fail, or remain insufficient;
-what the run cannot claim.
-```
-
-If the snapshot requires a broad condition table to understand the mechanism,
-return to the anchor and split the question before writing the protocol.
+## Mandatory Reference Routing
 
-Each condition, ablation, diagnostic, or visualization must appear in this
-table:
+Read the required references completely before acting:
 
-| Item | Anchor clause tested | Model term / rival explanation | Why needed | Primary or secondary evidence | Pass | Fail | Insufficient | Figure/table |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+- For any Protocol draft, revision, confirmation, promotion, or amendment,
+  read [blockwise_protocol_audit.md](references/blockwise_protocol_audit.md)
+  and
+  [protocol_self_containment_and_freeze.md](references/protocol_self_containment_and_freeze.md).
+- For any result interpretation, `summary.md`, or `detailed.md` work, read
+  [result_evidence_lineage.md](references/result_evidence_lineage.md).
+- Before creating or revising `detailed.md`, also read
+  [detailed_record_standard.md](references/detailed_record_standard.md).
 
-Do not include a condition because it is easy to run. Include it only if it
-tests a model term, separates a named rival explanation, or protects the
-validity of the primary metric.
+Do not copy the references into the output. Apply their contracts in the
+canonical files.
 
-Prefer a small protocol with one decisive comparison and explicit guards. Move
-nice-to-have diagnostics, exploratory sweeps, and method variants to a later
-follow-up unless they are needed to separate a named rival explanation.
+## Hard Gates
 
-The protocol must explicitly say whether it is a root-cause audit, metric
-audit, operationalization / proxy test, method construction, or robustness
-check. Method construction is not allowed as the first move unless the anchor
-already contains a supported mechanism or metric target.
+### 1. Anchor Alignment
 
-## Protocol Standard
+Do not let the Protocol invent or redefine the research question, physical
+prior, mathematical target, primary metric, falsifier, or claim boundary. If
+the Anchor does not determine one of them, stop and return the missing decision
+to `problem-anchor-writer`.
 
-`protocol.md` is the single draft-to-approved experiment design. Create and
-complete it before review as `DRAFT_NOT_EXECUTABLE`; never treat proposed or
-blocked content as an approved execution contract.
+Every added condition, seed, checkpoint, diagnostic, or figure must either
+separate a named rival explanation or protect the validity of the primary
+conclusion. Park everything else.
 
-The first page is the approval snapshot; later sections are the audit layer.
+### 2. Draft First, Then Review
 
-```markdown
-# Protocol: <experiment_id>
+Write the complete candidate directly into the single canonical `protocol.md`
+as `DRAFT_NOT_EXECUTABLE`. Do not create a chat-only draft, a second Protocol,
+or a separate implementation plan.
 
-## 0. Approval Snapshot
+Cover audit blocks A-G, label unsupported choices `PROPOSED`, mark missing
+judgment `BLOCKED`, and surface only decision-critical items for researcher
+review. Silence is not confirmation.
 
-Document status:
-Approval status:
-Block audit status:
-Cross-block consistency:
-Execution scope approved:
-Purpose:
-Primary anchor:
-Anchor decision question:
-Anchor physical prior tested:
-Anchor core model term tested:
-Anchor falsifier:
-Experiment role:
-Primary metric from anchor:
-Claim boundary from anchor:
-Minimal setup:
-Basic configuration:
-Conditions to run:
-Pass:
-Fail:
-Insufficient:
-Cannot claim:
-Approval decision:
+Promote the same file to `DESIGN_CONFIRMED_NOT_EXECUTABLE` only when every
+block is `CONFIRMED`, cross-block consistency is `PASS`, and no unresolved
+choice can change interpretation.
 
-## 1. Terminology / Definitions
+### 3. Self-Contained Approval Contract
 
-| Term | Plain meaning | Concrete object / computation | Unit or formula | Why it matters | Cannot prove |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | |
+Require a short approval snapshot before the audit layer. A cold reader must be
+able to state, without opening a link:
 
-## 2. Anchor Alignment
+- the one uncertainty and Anchor clause tested;
+- treatment, control, changed variable, and held-fixed variables;
+- the primary metric and registered analysis rule;
+- Pass, Fail, and Insufficient meanings;
+- the smallest approved execution scope;
+- what the experiment cannot claim.
 
-Decision question:
-Physical prior tested:
-Core model term tested:
-Falsifier:
-Claim boundary:
+Require a constructible stage contract, frozen analysis plan, preflight/smoke
+boundary, failure-stop rules, and artifact destinations. Links support audit;
+they must not carry information needed to approve the run.
 
-## 3. Tested Hypothesis
+### 4. Protocol Freeze And Amendment
 
-## 4. Rival Explanations
+Design confirmation does not authorize execution. Obtain explicit approval for
+each requested scope such as implementation, smoke, or full run.
 
-## 5. Data Construction And Provenance
+At the first execution approval, freeze the scientific body, registered
+criteria, and decision-bearing configuration. After execution starts:
 
-## 6. Learning Task And Permitted Supervision
+- never rewrite the registered hypothesis, conditions, metric, threshold, or
+  verdict rule;
+- never insert observed results, interpretation, or a result-derived next
+  decision into the Protocol body;
+- add only execution status, receipts, result links, or an append-only
+  amendment with before/after values, reason, timing, and eligibility impact.
 
-## 7. Model / Architecture And Frozen Variants
+Any silent post-start change makes the affected result ineligible.
 
-## 8. Training Objective And Optimization
+### 5. Result Grounding And Human Judgment
 
-## 9. Conditions, Seeds, And Checkpoints
+Never infer a result from a plan, expected pattern, partial log, filename, or
+missing artifact. Use `NOT RUN`, `UNKNOWN`, `MISSING`, or `INELIGIBLE` when
+that is the verified state.
 
-| Item | Anchor clause tested | Model term / rival explanation | Why needed | Primary or secondary evidence | Pass | Fail | Insufficient | Figure/table |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | | |
-
-## 10. Primary Metric
-
-State why this metric decides the judgment and what false positives or false
-negatives would cost when the costs differ.
-
-## 11. Secondary Metrics
-
-## 12. Known Good / Known Bad / Known Confusing Cases
-
-## 13. Stage-Level Profiling Plan
-
-| Stage | Local question | Input evidence | Pass / fail / unclear rule | Debug artifact | Handoff |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | |
-
-## 14. Algorithm Specification, If Nontrivial
-
-input:
-parameters:
-intermediate variables:
-steps:
-outputs:
-debug artifacts:
-pass conditions:
-fail conditions:
-failure reasons:
-
-## 15. Success / Failure / Insufficient Evidence
-
-## 16. What This Cannot Claim
-
-## 17. Block Confirmation Ledger And Review Notes
-```
-
-After writing or changing the Protocol, surface its decision-critical review
-extract and stop. Do not implement or run unless the user explicitly approves
-that execution scope.
-
-## Terminology And Reader-Ready Setup Rule
-
-Before any result table, figure, or condition label appears in `summary.md` or
-`detailed.md`, the setup must define the compared objects in plain language.
-This is the local minimal form of a paper-style experimental setup.
-
-Every `summary.md`, `detailed.md`, and meeting-derived result
-record must include a `Terminology / Definitions` section near the top when it
-uses non-obvious terms, abbreviations, metric names, condition labels, method
-names, project shorthand, or plot labels.
-
-Use this definition shape:
-
-```text
-Term:
-Plain meaning:
-Concrete object or computation:
-Unit / formula, if metric:
-Why it matters for this decision:
-What it cannot prove:
-```
-
-For `summary.md`, keep it compact but include the decision-relevant fields:
-
-```text
-research question
-data or data-generating process
-model / router / algorithm
-loss or objective
-conditions being compared, with plain-language labels
-which variables changed and which were held fixed
-training steps / checkpoints / seeds, when relevant
-primary metric definition and unit
-script or result path
-known setup limitation
-```
-
-For `detailed.md`, preserve the complete setup. Any label used in a plot or
-table, such as a condition name, metric abbreviation, model variant, or negative
-control, must be defined before the result uses it.
-
-## Visualized Result Alignment Gate
-
-A figure is allowed in `summary.md` only if it supports the current claim
-boundary or next decision. Before plotting or promoting a central figure, write
-a plot contract. Every central figure must be able to answer:
-
-```text
-Anchor question:
-Protocol question:
-Metric shown:
-Metric definition:
-Metric unit:
-Data source:
-Aggregation level:
-Axis / legend meaning:
-Expected pattern if the hypothesis is supported:
-Expected pattern if the hypothesis is weakened or incomplete:
-What this figure decides:
-Observed result:
-Allowed claim:
-What this figure does not prove:
-Anchor update implication:
-```
-
-Debug figures that do not support the current conclusion must move to
-`detailed.md` under `Debug / Appendix Figures`, or to a viewer appendix titled
-`Debug plots not used for the current conclusion`.
-
-`summary.md` should contain only the smallest number of figures needed to
-support the primary judgment. `detailed.md` may contain the full evidence
-ledger, but it must separate decision evidence, stage-level profiling
-evidence, debug-only evidence, and failed or ambiguous evidence.
-
-## Line Synthesis Boundary
-
-This skill owns experiment protocols and result records, not line-level
-synthesis. When the user asks for a current understanding report or full-line
-synthesis, update the formal story through `research-mainline` after the anchor,
-`summary.md`, and `detailed.md` are current. Do not create a separate closure
-report.
-
-## Summary Standard
-
-`summary.md` is the first post-result reading path. It should be short enough
-to read quickly, but it must include enough visualization-result explanation
-that the central figures can be understood without chat history.
-
-Before AI writes or revises the result judgment, the researcher first records
-from memory:
+Before AI writes or revises the conclusion, require the researcher to record:
 
 ```text
 Question:
@@ -349,150 +119,68 @@ Cannot claim:
 Exactly one next decision:
 ```
 
-AI then verifies measurements and links, separates observation from
-interpretation, and edits the prose. It must not invent the initial judgment or
-strengthen it beyond the protocol and evidence. If no human draft exists,
-provide this scaffold rather than a finished conclusion.
+AI may verify measurements, evidence lineage, wording, and boundary. It must
+not invent the initial judgment or strengthen it beyond the registered rule
+and eligible evidence.
 
-Write it conclusion-first. The first result block should use the
-reader-facing shape:
+### 6. Evidence Lineage
+
+Every decision-bearing number, table, figure, and verdict must trace:
 
 ```text
-What we established:
-What the experiment shows:
-What we do next:
+raw artifact
+-> computation or transformation
+-> aggregation and uncertainty
+-> registered criterion
+-> observed value
+-> verdict
+-> bounded claim
 ```
 
-Use this shape for supported, weakened, and insufficient-evidence results. Do
-not hide uncertainty; put it in the claim boundary and next decision instead of
-burying the main result under process history.
+Record Protocol conformance and every deviation before interpreting results.
+An artifact path alone is not evidence lineage.
 
-Use this structure:
+### 7. Summary And Detailed Ownership
 
-```markdown
-# Summary: <experiment_id>
+`summary.md` is the shortest complete result reading path. Keep only the
+decision-bearing setup, registered rule, direct result, smallest central
+evidence, claim boundary, and one next decision with completion criterion and
+resume action.
 
-Primary anchor:
-Protocol:
+`detailed.md` is the only complete evidence ledger. It owns full setup,
+conformance and deviations, evidence lineage, all eligible results, stage and
+failure decomposition, run receipts, and the artifact manifest.
 
-## Result Snapshot
+The two files may repeat only the primary metric definition, primary observed
+value, verdict, claim boundary, and next decision. Those repeated fields must
+match exactly. Neither file may claim more than the Anchor permits.
 
-Verdict:
+### 8. Visual Evidence
 
-What we established:
+Include a figure only when it supports the current verdict, claim boundary, or
+next decision. Define its data source, metric and unit, aggregation, axes and
+legend, observed result, allowed conclusion, and limitation before promotion.
+Move debug-only figures out of `summary.md`.
 
-What the experiment shows:
+### 9. Close The Chain
 
-What we do next:
+After eligible evidence and researcher judgment are consistent:
 
-## Purpose
-
-## Terminology / Definitions
-
-| Term | Plain meaning | Concrete object / computation | Unit or formula | Why it matters | Cannot prove |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | |
-
-## Exact Setup
-
-Research question:
-Data construction and provenance:
-Learning task and supervision:
-Model / architecture:
-Training objective and optimization:
-Conditions:
-Changed variables:
-Held fixed:
-Seeds / checkpoints:
-Paths:
-Known limitation:
-
-## Primary Metric
-
-Definition:
-Unit:
-Why it decides:
-False-positive / false-negative cost, if asymmetric:
-
-## Result
-
-## Key Evidence
-
-## Key Figures
-
-### Figure: <plain title>
-
-![<plain title>](figures/<figure>.png)
-
-What this tests:
-
-Anchor question:
-
-Protocol question:
-
-Metric shown:
-
-Metric definition:
-
-Metric unit:
-
-Data source:
-
-Aggregation level:
-
-How to read:
-
-Expected if supported:
-
-Expected if weakened or incomplete:
-
-What this figure decides:
-
-Observed result:
-
-Allowed claim:
-
-What this does not prove:
-
-Anchor update implication:
-
-## Claim Boundary
-
-Can claim:
-
-Cannot claim:
-
-## Next Decision
+```text
+summary.md / detailed.md
+-> update Anchor section 7 with the minimum local evidence unit
+-> update Anchor section 8 with the bounded claim and one next decision
+-> update today's focus.md when the daily judgment changed
 ```
 
-The summary must name the primary metric first and explain why it decides the
-current question. Do not make a stronger claim than the protocol's success,
-failure, or insufficient-evidence criteria allow.
+Do not create a closure report or line synthesis through this skill. Route an
+explicit line-level synthesis to `research-story-writer` and path/state changes
+to `research-mainline`.
 
-## Detailed Standard
+## Language And Safety
 
-Before creating or updating `detailed.md`, read
-[`references/detailed_record_standard.md`](references/detailed_record_standard.md)
-completely. It preserves the full evidence-ledger structure, setup fields,
-visualization contract, failure decomposition, and artifact map. The detailed
-record must remain layered, auditable, and no stronger than `summary.md` or the
-anchor.
-
-## Rules
-
-- Use anchor-indexed experiment folder names under an anchor-family folder:
-  `main/experiments/A<anchor_id>/A<anchor_id>_<short_topic>/`.
-- Every protocol, summary, and detailed record must link to the primary anchor.
-- Do not create separate hypothesis purpose cards.
-- Do not create separate implementation-plan files for new work.
-- For trajectory, seed, checkpoint, ablation, or before/after claims, separate
-  single-observation evidence, change evidence, and summary evidence.
-- A negative or ambiguous result must say whether it falsifies the physical
-  prior, mathematical model, operationalization/proxy, implementation, metric,
-  or none of these.
-- A negative or ambiguous result should be framed as the next uncertainty or
-  optimization direction, not as an internal failure narrative. Do not use
-  customer-facing prose to hide a weakened claim; keep the cannot-claim
-  boundary explicit.
-- Figures and tables must support a claim boundary or next decision.
-- Markdown formulas must use `$...$` or `$$...$$`.
+- Write English canonical files first unless the user chooses another
+  language; companions must preserve all rules, numbers, and boundaries.
+- Use `$...$` and `$$...$$` for Markdown mathematics.
+- Do not implement, run, submit, publish, sync, commit, or push through this
+  skill without the separate authorization required for that action.

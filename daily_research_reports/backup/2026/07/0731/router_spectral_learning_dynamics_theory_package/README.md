@@ -46,12 +46,12 @@ SGD 下验证理论的受控预测：flat 的三频带学习时间重合；4:2:1
 首个 E03-R 正式配置在三个 seeds 的 step100 前均触发负载守卫，因而只能判
 `insufficient_load_guard`；它不支持也不反驳真实 head 形成命题。
 
-[E03-S 完整结果](../../../Projects/from-attention-to-search/main/experiments/A15/15_00_covariance_head_gate_alignment/A15_00_E03_S_controlled_spectral_learning_dynamics/summary.md)
+[E03-S 完整结果](../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E01_controlled_covariance_learning_speed/summary.md)
 
 阅读入口：
 
 1. [主文：线性 MoE Router 的频谱学习动力学](01_理论论文_线性MoE_Router的频谱学习动力学.md)
-2. [E03 动力学 subanchor](../../../Projects/from-attention-to-search/main/problem_anchors/15_linear_gate_spectral_training_bias/15_00_covariance_head_gate_alignment/subanchors/15_00_01_spectral_learning_dynamics_anchor_cn.md)
+2. [E03 动力学 subanchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/15_01_spectral_learning_and_feedback_dynamics_anchor_cn.md)
 
 本文状态严格区分：
 

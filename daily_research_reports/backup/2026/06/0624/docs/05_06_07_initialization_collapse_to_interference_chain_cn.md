@@ -70,7 +70,7 @@ boundary：
 不能 claim inhibition 永远无效，也不能 claim expert utility 错误；这里只说明当前 inhibition formulation 不是可靠 anti-collapse path。
 
 链接下去：
-[05_03 common-offset anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md)
+[05_03 common-offset anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md)
 
 ### Anchor: 05_02 Feature Assumption Relaxation
 
@@ -87,7 +87,7 @@ boundary：
 不能 claim 没有任何 router 可以学到 compositional/family grouping；只能 claim 当前 ordinary top-1 不能作为正证据。
 
 链接下去：
-[05_04_02 common-logit causality anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md)
+[05_04_02 common-logit causality anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md)
 
 ### Anchor: 05_03 Uniform Collapse Common-Offset
 
@@ -104,7 +104,7 @@ boundary：
 不能 claim collapse 已解决；position/common source 不是唯一机制；toy 结论不能直接外推真实 LM。
 
 链接下去：
-[05_04_02 common-logit causality anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md)
+[05_04_02 common-logit causality anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md)
 
 ### Anchor: 05_04_01 Uniform Feature Specialization After Position Removal
 
@@ -121,7 +121,7 @@ boundary：
 这是 synthetic uniform slot setting，不证明真实 LM、multi-B feature 或 expert computation causality。
 
 链接下去：
-[05_04_02 common-logit causality anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md)
+[05_04_02 common-logit causality anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md)
 
 ### Anchor: 05_04_02 Dot-Product Common-Logit Causality
 
@@ -138,7 +138,7 @@ boundary：
 common cancellation 不是 deployable solution；不能 claim expert computation 已因果专门化；不能直接外推 real LM、cosine router 或长上下文。
 
 链接下去：
-[05_04_03 real-text common-logit anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md)
+[05_04_03 real-text common-logit anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md)
 
 ### Anchor: 05_04_03 Real-Text Common-Logit Initialization
 
@@ -393,7 +393,7 @@ boundary：
 不能用当前失败否定 expert utility；只能说 utility binding 依赖 preservation。
 
 链接下去：
-[07_03 route-function binding anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md)
+[07_03 route-function binding anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md)
 
 ### Anchor: 06_15 Real-DCLM Utility-Aware Gating Initialization
 
@@ -427,7 +427,7 @@ boundary：
 不测试 RoPE；C4 仍有 1/8 failure；slot-end token 是 feature-specific，不能证明 whole-slot compositional semantics；不能推出 real-DCLM preservation。
 
 链接下去：
-若继续 controlled boundary，进入 [06_17 all-position route-relevant feature discovery anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md)；若回应 specialization value，进入 [07_01 common/rare conflict metric audit anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
+若继续 controlled boundary，进入 [06_17 all-position route-relevant feature discovery anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_17_all_position_route_relevant_feature_discovery_anchor.md)；若回应 specialization value，进入 [07_01 common/rare conflict metric audit anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
 
 ### Anchor: 06_17 All-Position Route-Relevant Feature Discovery
 
@@ -444,7 +444,7 @@ boundary：
 这不是 real-DCLM semantic feature discovery，也不是最终初始化算法；它只说明 controlled no-position bridge 里，all hidden states 不是合法的 route-initialization proxy population。
 
 链接下去：
-若继续 06 controlled bridge，下一步应构建 label-free route-relevant state selector；若转向 value story，进入 [07_01 common/rare conflict metric audit anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
+若继续 06 controlled bridge，下一步应构建 label-free route-relevant state selector；若转向 value story，进入 [07_01 common/rare conflict metric audit anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md)。
 
 ### Anchor: 07_01 Common / Rare Conflict Metric Audit
 
@@ -461,7 +461,7 @@ boundary：
 不能 claim common-control works、routing semantic、expert utility exists、真实语料迁移或 neural checkpoint 行为；只能 claim D07 是 controlled synthetic 的合法 method-test surface。
 
 链接下去：
-[07_02 common-controlled rare interference anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_02_common_controlled_rare_interference_anchor.md)
+[07_02 common-controlled rare interference anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_02_common_controlled_rare_interference_anchor.md)
 
 ### Anchor: 07_02 Common-Controlled Rare Interference
 
@@ -478,7 +478,7 @@ boundary：
 只能 claim controlled synthetic D07 上 common-control 比 matched balance-only 更能降低 rare loss；不能 claim expert causal specialization、semantic routing、真实语料迁移或可部署架构。
 
 链接下去：
-[07_03 route-function binding anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md)
+[07_03 route-function binding anchor](../../../../../../Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md)
 
 ### Anchor: 07_03 Route-Function Binding
 

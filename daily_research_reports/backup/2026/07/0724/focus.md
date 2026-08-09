@@ -50,9 +50,9 @@ flowchart TD
 
 ## 实验带来的认识更新（按与主命题的相关性）
 
-1. **A14_02 的 $K$ 趋势直接回答“独立功能数是否改变任务秩”：** 在能力 5/5 通过、曝光和 context 配置相同的 lookup 控制中，跨 16 个 rule IDs 的独立映射数 $K=1/4/16$ 时，ROOT 功能秩为 10.2/11.0/12.8。它正向支持本生成器中的“跨样本独立映射并集 $k$ 增大，功能方向可以上升”，而不是线性比例定律；它不检验单样本活动数 $s$（[A14_02-E01 结果](../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E01_shared_rule_vs_lookup_root_rank/summary_cn.md)）。
+1. **A14_02 的 $K$ 趋势直接回答“独立功能数是否改变任务秩”：** 在能力 5/5 通过、曝光和 context 配置相同的 lookup 控制中，跨 16 个 rule IDs 的独立映射数 $K=1/4/16$ 时，ROOT 功能秩为 10.2/11.0/12.8。它正向支持本生成器中的“跨样本独立映射并集 $k$ 增大，功能方向可以上升”，而不是线性比例定律；它不检验单样本活动数 $s$（[A14_02-E01 结果](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E01_shared_rule_vs_lookup_root_rank/summary_cn.md)）。
 2. **A14_02 同时更新“是否真的复用”：** A14_02-E02 中 shared 在 5/5 配对 seeds 上都高于 lookup（均值 0.2125 vs 0.0640），提供了部分结构敏感性的方向性线索；但 shared 未见组件配对仍为 0/5 通过，低于 0.80 能力门。因此不能说“完全没有复用信号”，也不能把它升级为可靠的已学 common mapping 或低秩证据；该实验没有测 rank（[A14_02-E02 结果](../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E02_component_recombination_capability/summary_cn.md)）。
-3. **A14_01 最后检查参数—状态桥：** 独立重建中，`share16/random_unshared` 的组合 QK 功能秩均值为 29.7/50.7，状态功能秩为 11.0/13.7；极端方向一致，但中间条件不单调、相关性不显著，且复用与规则数量同时变化。因此它只支持有边界的复合条件差异，不能把参数压缩按比例解释成表征压缩（[结果](../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md)）。
+3. **A14_01 最后检查参数—状态桥：** 独立重建中，`share16/random_unshared` 的组合 QK 功能秩均值为 29.7/50.7，状态功能秩为 11.0/13.7；极端方向一致，但中间条件不单调、相关性不显著，且复用与规则数量同时变化。因此它只支持有边界的复合条件差异，不能把参数压缩按比例解释成表征压缩（[结果](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_tree_low_rank_language_structure/A14_E08_relation_reuse_state_bridge/summary_cn.md)）。
 
 ## 裁定
 
