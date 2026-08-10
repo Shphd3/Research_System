@@ -21,7 +21,7 @@ prompt, or README.
 | Template | Use |
 |---|---|
 | `research_process/thinking_card_template.md` | Optional human judgment card only when a new mechanism question is promoted. |
-| `research_process/focus_writing_template.md` | One-question knowledge update: outsider-readable answer, decisive figure/table, explanation flowchart, boundary, and one next decision. |
+| `research_process/focus_writing_template.md` | One answered problem's knowledge update: natural-language conclusion first, results below as explanation, decisive figure/table, boundary, and one next decision. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
 | `research_process/experiment_understanding_and_execution_gate_template_cn.md` | Four minimal Chinese cards for understanding, self-check, execution gating, and result reporting. |
 
@@ -42,7 +42,8 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_outline_template.md` | Only for meetings that combine multiple research lines; routine meetings use `focus.md`. |
+| `meeting/meeting_focus_template.md` | Required concise meeting update: one named problem proceeds directly; multi-problem synthesis first fixes human scope and one core question. |
+| `meeting/meeting_outline_template.md` | Optional speaking order only after a completed meeting focus and an explicit request. |
 | `meeting/meeting_notes_template.md` | Optional short post-meeting note only when the meeting changes judgment or action. |
 
 ## Archive
@@ -54,8 +55,13 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 ## Rules
 
-- Keep exactly one `daily_research_reports/MMDD/focus.md` per research day; do
-  not recreate a second daily-card or current-log template.
+- Create `focus_<problem>.md` only when that problem reaches a bounded knowledge
+  update; several problem focuses may exist on one day.
+- Create a new `focus_meeting_<topic>.md` for every meeting. A named one-problem
+  meeting uses a progressive question chain directly; a multi-problem meeting
+  waits for exact human scope, exclusions, and one core question.
+- Legacy bare `focus.md` files may remain, but new files use the two patterns
+  above unless an explicit migration says otherwise.
 - Do not create separate `recordings.md` files by default. Put meeting-derived
   notes and diagnosis in `meeting_notes.md`.
 - Historical archive snapshots may contain old template files. Do not use them

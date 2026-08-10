@@ -170,8 +170,14 @@ After eligible evidence and researcher judgment are consistent:
 summary.md / detailed.md
 -> update Anchor section 7 with the minimum local evidence unit
 -> update Anchor section 8 with the bounded claim and one next decision
--> update today's focus.md when the daily judgment changed
+-> after the human states a bounded knowledge update, create or update
+   daily_research_reports/MMDD/focus_<problem>.md
 ```
+
+`summary.md` and `detailed.md` analyze and preserve experimental results; they
+do not themselves constitute the focus conclusion. In the problem focus, the
+human-approved knowledge update comes first as natural complete sentences, and
+the selected result appears below only to explain it.
 
 Do not create a closure report or line synthesis through this skill. Route an
 explicit line-level synthesis to `research-story-writer` and path/state changes

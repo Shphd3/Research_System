@@ -231,7 +231,8 @@ human closed-book summary
 -> AI evidence and boundary audit
 -> summary.md / detailed.md update
 -> anchor sections 7 and 8 update
--> daily_research_reports/MMDD/focus.md closure
+-> daily_research_reports/MMDD/focus_<problem>.md only after a bounded,
+   human-stated knowledge update exists
 ```
 
 The human summary states the question, direct result, confirmed and weakened

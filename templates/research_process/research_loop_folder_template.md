@@ -25,7 +25,9 @@ Roles:
 - `summary.md`: conclusion, primary result, boundary, next decision.
 - `detailed.md`: full setup, run evidence, failures, and artifact map.
 
-Do not add separate implementation plans, daily logs, meeting briefs, closure
-reports, or routine final reports. Use the day's self-contained `focus.md` for
-the human knowledge update, explanation path, and next decision; link the owning
-project artifact.
+Do not add separate implementation plans, daily logs, closure reports, or
+routine final reports. When the problem reaches a bounded answer, use
+`daily_research_reports/MMDD/focus_<problem>.md` for the human knowledge update,
+result-based explanation, and next decision. A meeting uses a separately created
+`focus_meeting_<topic>.md` after the human chooses its merge scope and core
+question. Link the owning project artifacts.

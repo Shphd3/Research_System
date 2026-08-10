@@ -14,10 +14,11 @@ If the user asks to prepare, rewrite, or revise meeting material, use
 to package, copy, index, sync, commit, or push the human-completed material.
 
 For group-meeting or advisor-facing handoff packages, the completed meeting
-material must already follow `meeting-outline-writer`: a routine meeting uses
-the day's `focus.md`, while a multi-focus meeting may use a separate outline.
-It must contain the researcher's own answers or explanation. This skill only
-packages existing material and source artifacts without changing the claim.
+material must already follow `meeting-outline-writer`: every synthesis uses a
+new `focus_meeting_<topic>.md` whose merge scope, core question, and knowledge
+update were supplied or approved by the researcher. A separate outline exists
+only when explicitly requested after that focus. This skill only packages
+existing material and source artifacts without changing the claim.
 
 Do not create new research claims, new conclusions, or an independent
 synthesis. The
@@ -42,8 +43,8 @@ Apply this gate before packaging meeting material. If the user is asking to
 write or revise the material itself, stop using this skill and use
 `meeting-outline-writer` instead.
 
-- Read the completed daily `focus.md`; for a separately justified outline, also
-  read `templates/meeting/meeting_outline_template.md`.
+- Read the completed `focus_meeting_<topic>.md`; if a separate outline was
+  explicitly requested, read it only as a presentation-order companion.
 - Verify that every core question or topic contains the researcher's own answer
   or explanation rather than AI-completed prose.
 - Verify that each empirical conclusion maps to an existing experiment or is
@@ -64,12 +65,14 @@ chronology.
 
 Use sources in this order:
 
-1. completed daily `focus.md` or separate outline for the researcher's core
-   question, knowledge update, mechanism, and next decision;
-2. updated anchor for the current claim boundary and execution action;
-3. `summary.md` for the meeting conclusion, key evidence, and central figures;
-4. `detailed.md` for setup checks, numeric precision, and artifact maps;
-5. protocol only to verify the approved question, conditions, and primary
+1. completed `focus_meeting_<topic>.md` for the human-chosen scope, core
+   question, knowledge synthesis, boundary, and next decision;
+2. its selected `focus_<problem>.md` sources for the problem-level knowledge
+   updates and their result explanations;
+3. updated anchor for the current claim boundary and execution action;
+4. `summary.md` for key evidence and central figures;
+5. `detailed.md` for setup checks, numeric precision, and artifact maps;
+6. protocol only to verify the approved question, conditions, and primary
    metric.
 
 Do not use chat history as the source of a meeting claim. Do not pull debug
@@ -108,7 +111,9 @@ Use this minimum definition shape:
 Include only the smallest curated set needed for the reader:
 
 ```text
-focus.md or <topic>_meeting_outline_cn.md  # existing human-completed meeting surface
+focus_meeting_<topic>.md                   # required human-completed meeting surface
+focus_<problem>.md                         # only human-selected source focuses
+<topic>_meeting_outline_cn.md              # only when separately requested
 <anchor_id>.md
 protocol.md
 summary.md
@@ -118,9 +123,9 @@ tables/       # only files embedded or directly referenced
 README.md     # short index and scope, when useful
 ```
 
-For a private daily meeting folder, `meeting_outline_cn.md` may point to existing
-project artifacts instead of copying the full package. If the user asks for a
-handoff package or external sync, copy only the curated files listed above.
+An optional `meeting_outline_cn.md` may point to existing project artifacts
+instead of copying the full package. If the user asks for a handoff package or
+external sync, copy only the curated files listed above.
 
 Do not include:
 

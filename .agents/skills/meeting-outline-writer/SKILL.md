@@ -1,177 +1,158 @@
 ---
 name: meeting-outline-writer
-description: "Prepare or audit a human-completed meeting structure and speaking flow from existing research evidence. Use when the user asks for an advisor meeting, meeting brief, speaking outline, or multi-line discussion plan. Do not author the researcher's conclusion, create claims, package a handoff, or sync files."
+description: "Use when the user asks to prepare or audit an advisor meeting, group-meeting focus, meeting brief, speaking flow, or multi-problem discussion plan. Do not use for handoff packaging, publication, or sync."
 ---
 
-# Meeting Outline Writer
+# Meeting Focus Writer
 
-The default routine speaking artifact is the day's completed `focus.md`: a
-self-contained research briefing with a bounded knowledge update, mechanism,
-flowchart, experiment structure, and next decision. It is not an AI-written
-conclusion.
+A meeting focus is a concise knowledge update, not an experiment correction,
+result audit, or protocol recap. Organize it as a progressive question chain so
+each answer creates the need for the next question.
 
-## Default Boundary
-
-When the meeting covers one daily research center, revise
-`daily_research_reports/MMDD/focus.md` in place. Do not create a second file
-that duplicates its questions, answers, or evidence mapping.
-
-Create a separate meeting outline only when the meeting combines several daily
-foci or research lines, or the user explicitly requests one. Do not directly
-generate a finished brief.
-
-When a separate outline is justified, use this template exactly:
+Create a new artifact:
 
 ```text
-templates/meeting/meeting_outline_template.md
+daily_research_reports/MMDD/focus_meeting_<topic>.md
 ```
 
-Separate-outline output:
+Use `templates/meeting/meeting_focus_template.md`. Do not overwrite a source
+`focus_<problem>.md`.
+
+## Choose The Scope Path
+
+### One-problem meeting
+
+Use the lightweight path when the user names one problem, note, or problem
+focus and supplies or clearly states the meeting's core question. This explicit
+request is sufficient scope authorization; do not add an
+`AWAITING_HUMAN_SCOPE` scaffold or demand a merge ledger.
+
+If the user asks AI to draft the knowledge wording, use status
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. Use `HUMAN_CONFIRMED` only after the
+researcher explicitly approves or corrects that wording.
+
+### Multi-problem meeting
+
+When two or more independent problem updates are being combined, first require:
 
 ```text
-daily_research_reports/MMDD/meetings/<topic>_meeting_outline_cn.md
+one core question
+exact source focus paths
+explicit exclusions
+one advisor decision, when needed
 ```
 
-The completed outline is normally the speaking surface. Create a separate
-final brief only when the researcher has filled every topic in their own words
-and explicitly requests a separate final document.
+Until those fields are supplied, create only the scaffold with status
+`AWAITING_HUMAN_SCOPE`. Do not infer the merge range from recency, chat,
+`PROJECTS.md`, or semantic similarity. After the gate, use the same concise
+output shape as the one-problem path; list sources compactly instead of adding
+a mandatory merge table.
 
-## Human Ownership Gate
+## Output Contract
 
-AI may fill:
+Use these sections in order:
 
-- an explanation flowchart drafted from the human conclusion and mechanism;
-- plain-language experiment structure and verified direct measurements;
-- meeting decision and topic order proposed from current sources;
-- short speaking prompts for each topic;
-- unclear definitions, hidden assumptions, and live rivals to address;
-- existing experiment or figure that can explain each conclusion;
-- the allowed claim and limitation of that experiment;
-- a missing-experiment prompt when no existing result can support the point;
-- transition prompts and an evidence-boundary audit.
+```text
+1. meeting theme and one core question
+2. current knowledge update in connected natural sentences
+3. a progressive question chain with two to four necessary steps
+4. claim boundary and exactly one next decision
+```
 
-AI must leave the conclusion, mechanism judgment, and `我的讲解（研究者填写）`
-for the researcher. It must
-not fill that field from chat history, infer the researcher's voice, or turn
-bullet prompts into polished speech before the researcher drafts it.
+For each step in the question chain, write:
 
-After the researcher fills the outline, AI may:
+```text
+question
+direct answer
+minimum decisive evidence
+how far that answer reaches
+why the next question is now necessary
+```
 
-- check whether the explanation is coherent and understandable;
-- verify numbers, metrics, and source links;
-- identify a conclusion that lacks an experiment;
-- identify an experiment that does not support the nearby conclusion;
-- remove unnecessary formulas and implementation detail;
-- lightly edit wording without replacing the researcher's mechanism judgment.
+Later questions must depend on earlier answers. Do not organize by run order or
+document order. Delete any step that does not change the final boundary or next
+decision.
+
+The final section includes the exactly one next decision, its completion
+criterion, and the first resume action. Add one advisor ruling only when the
+user requests it or the decision genuinely requires it.
+
+## Knowledge-Update Rule
+
+The opening wording states what is now understood without relying on run IDs,
+metric names, pass/fail labels, or protocol details. Results come afterwards
+and explain the update; they do not replace it.
+
+If the evidence is negative or insufficient, explain which interpretation it
+removes or why the question remains open. Do not frame the meeting around
+debugging an experiment unless debugging itself is the user-selected research
+question.
+
+Never create a joint judgment that no selected source owns. Preserve a source
+conflict instead of smoothing it over. If AI drafts wording beyond an already
+approved problem update, keep the draft status visible.
+
+## Evidence Rule
+
+Use the fewest results needed to make each answer intelligible. Define a
+non-obvious metric in plain language before its value. Keep formulas, full
+tables, run histories, guard ledgers, and configurations in their owning
+artifacts.
+
+A figure, compact table, or flowchart is optional. Include it only when it
+materially improves the reader's understanding of a decisive relation. Do not
+require a merge table, evidence ledger, or flowchart merely to fill a template.
+
+Each empirical statement still preserves:
+
+```text
+direct result
+allowed inference
+cannot-claim boundary
+source link
+```
 
 ## Source Order
 
-Do not use chat as evidence. Read only the sources required for the requested
-meeting topics:
+Do not use chat as evidence. Read only:
 
 ```text
-PROJECTS.md -> today's focus.md -> relevant anchor -> summary.md -> detailed.md
+explicit meeting scope
+-> named note or focus_<problem>.md
+-> linked anchor and summary.md
+-> detailed.md only for numeric or provenance verification
 ```
 
-Use `focus.md` for the researcher's core question, bounded knowledge update,
-mechanism, and next decision; use the anchor for the canonical claim boundary,
-`summary.md` for the result conclusion and central evidence, and `detailed.md`
-only to verify numbers, setup, or artifact links. Meeting material links these
-sources rather than copying derivations or tables.
+For a one-problem meeting, one named note and its bounded problem focus are
+enough when they answer the core question. For a multi-problem meeting, include
+only the human-selected sources.
 
-## Topic Construction
+## Optional Speaking Outline
 
-Every topic must do one distinct job in the advisor discussion:
+Create a separate speaking outline from
+`templates/meeting/meeting_outline_template.md` only when explicitly requested
+after the meeting focus is complete. It may change presentation order but must
+not rewrite the knowledge update or become a second evidence record.
 
-```text
-topic decision
-one-sentence conclusion
-AI speaking prompts
-researcher-owned explanation
-conclusion-to-experiment mapping
-result closure, if evidence exists
-source
-```
+## Common Mistakes
 
-Do not organize topics by experiment chronology. Organize them by the
-reasoning chain needed for the advisor to challenge the current judgment.
-Delete a topic if it does not change the meeting decision or prepare a
-necessary transition.
-
-## Conclusion-To-Experiment Mapping
-
-For every conclusion, state one of:
-
-```text
-supported by an existing experiment
-needs a new experiment
-is a framing statement and needs no experiment
-```
-
-When an existing experiment is used, name:
-
-```text
-experiment or figure
-decisive contrast
-direct result
-allowed conclusion
-cannot-claim boundary
-```
-
-When a new experiment is needed, propose only:
-
-```text
-rival explanations to separate
-smallest experiment
-primary metric
-result that would change the conclusion
-```
-
-This is an experiment prompt, not an approved Protocol. Do not expand it into
-conditions, seeds, implementation, or a sweep unless the user separately asks
-for a Protocol.
-
-## Result Closure Rule
-
-Present each completed experiment as one conclusion-bearing loop:
-
-```text
-question -> decisive experiment -> direct result -> conclusion
--> cannot-claim boundary -> next decision
-```
-
-Use the fewest numbers needed to establish the direction and decision. Do not
-stack mathematical derivations, complete tables, run timelines, or multiple
-metrics in the speaking path. Include a formula only when the advisor cannot
-understand the decision without it; otherwise link the source artifact.
-
-Negative and insufficient results are complete loops when they eliminate an
-explanation or reveal that the experiment cannot adjudicate the claim.
-
-## AI Audit Output
-
-After the human draft, keep the audit short:
-
-```text
-unclear object
-conclusion without adequate evidence
-experiment with an overclaimed interpretation
-topic without a closed loop
-detail or formula to remove
-```
-
-Do not rewrite a full finished brief unless explicitly requested after this
-audit.
+| Wrong shape | Correction |
+| --- | --- |
+| experiment verdicts lead the document | lead with the knowledge update |
+| every meeting starts with a merge gate | use the lightweight path for one named problem |
+| sources are copied into a large audit table | link them and keep only decision evidence |
+| questions are parallel topics | make each answer motivate the next question |
+| a figure and flowchart are always present | include visuals only when they clarify a decisive relation |
+| representation evidence becomes Router function | state the functional gap explicitly |
 
 ## Validation
 
-1. The artifact is an outline, not AI-completed prose.
-2. Every topic has one decision role and one human-owned explanation field.
-3. Every empirical conclusion maps to an existing or explicitly missing
-   experiment.
-4. Every completed result follows the conclusion loop.
-5. Evidence and interpretation are distinguishable.
-6. The strongest live rival and cannot-claim boundary are visible.
-7. Formulas and implementation details are absent unless indispensable.
-8. The outline ends with one advisor discussion point and one candidate next
-   action.
+1. A new `focus_meeting_<topic>.md` exists and source problem focuses are unchanged.
+2. The artifact uses the one-problem or multi-problem scope path correctly.
+3. The opening is a knowledge update, not an experiment-result analysis.
+4. Two to four questions form one progressive reasoning chain.
+5. Each answer gives only its minimum evidence and explicit reach.
+6. Direct result, interpretation, and cannot-claim boundary remain distinct.
+7. No mandatory merge table, audit ledger, flowchart, or speaking script bloats the focus.
+8. The document ends with exactly one decision, completion criterion, and resume action.
+9. `HUMAN_CONFIRMED` appears only after explicit researcher approval.

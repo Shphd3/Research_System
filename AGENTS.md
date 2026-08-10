@@ -10,8 +10,8 @@ experiment codebase.
   next decision needed for the current question.
 - Canonical research artifacts are English unless the user explicitly chooses
   another language. Chinese companions use `_cn.md`.
-- An independent Thinking Card and the human-owned daily focus may preserve the
-  user's Chinese mechanism judgment.
+- An independent Thinking Card and human-owned problem or meeting focus may
+  preserve the user's Chinese mechanism judgment.
 - Define technical terms in plain Chinese before reusing English names or
   abbreviations in conversation.
 - Treat user ideas as hypotheses to audit. Point out undefined objects, hidden
@@ -27,8 +27,8 @@ experiment codebase.
 For research work:
 
 1. Read `PROJECTS.md`.
-2. Read `daily_research_reports/MMDD/focus.md` for today's human idea, focus,
-   and resume point when it exists.
+2. Read only the relevant `daily_research_reports/MMDD/focus_<problem>.md`, or
+   the human-selected source focuses named by a meeting focus, when they exist.
 3. Identify the active project and worker surface.
 4. Read the graph named in `PROJECTS.md`.
 5. Read only the linked anchor, story, protocol, result, meeting note, paper
@@ -45,14 +45,16 @@ audits logic, formalizes approved work, executes, and maintains technical
 records.
 
 ```text
-one-page human focus
+one-page problem knowledge update
 -> AI identifies one blocking issue
 -> approved protocol only when an experiment is needed
 -> execution
 -> AI writes the evidence record
 -> human states the result and boundary from memory
 -> AI verifies
--> update only the smallest owning artifact
+-> human states the resulting knowledge update
+-> update only the smallest owning artifact and, when the problem is bounded,
+   its problem focus
 ```
 
 Before formalizing a new question, the human states:
@@ -83,46 +85,71 @@ AI verifies numbers, evidence, and wording without strengthening the claim.
 
 ## Focus And Writing
 
-Each research day keeps exactly one retained focus file:
+Focus has two distinct forms.
+
+### Problem Knowledge Update
+
+When one problem reaches a bounded answer, create:
 
 ```text
-daily_research_reports/MMDD/focus.md
+daily_research_reports/MMDD/focus_<problem_slug>.md
 ```
 
-`focus.md` is a concise, human-owned, self-contained knowledge-update document
-for the researcher and other readers, not an experiment result report. It is
-also the default routine meeting brief and resume point. Target one page and
-60 lines; include only evidence required to understand the current conclusion.
+The file is a concise, human-owned, self-contained **knowledge update**, not an
+experiment-result analysis. A day may contain several problem focus files when
+several problems reach bounded answers. If no problem reaches a bounded answer,
+do not manufacture a focus conclusion. Legacy bare `focus.md` files may remain;
+do not create new ones or bulk-rename them without an explicit migration.
 
-It contains only:
+Target one page and about 60 lines. It contains only:
+
+1. exactly one concrete answered problem;
+2. a knowledge update written as several connected, natural, complete
+   sentences that an outside researcher can understand;
+3. a result-based explanation below that update: decisive comparison, direct
+   result, why it changes the understanding, and the strongest remaining rival;
+4. one decisive locally embedded figure or compact table;
+5. one AI-drafted, human-corrected explanation flowchart;
+6. the claim boundary and exactly one next decision, including completion
+   criterion and resume action.
+
+The opening conclusion must say what is now understood. It must not be a list
+of run IDs, metric values, pass/fail labels, or experimental observations. Put
+results below the conclusion and use them to explain and support the knowledge
+update; results do not replace it. Define every metric in plain language before
+using its name or value. Keep only one mechanism-critical formula when
+indispensable. Longer theory, Protocol conditions, full result tables, run
+histories, and source maps remain linked in their owning artifacts.
+
+The researcher writes or explicitly approves the core question, knowledge
+update, mechanism, claim boundary, and next decision. AI may prefill verified
+facts and links, select and explain the decisive visual, draft the flowchart,
+and identify one blocking ambiguity. AI must not infer a stronger conclusion
+from experimental results.
+
+### Meeting Knowledge Synthesis
+
+For every meeting synthesis, create a new file:
 
 ```text
-1. exactly one concrete answered subquestion of the broader research problem
-2. one outsider-readable conclusion-as-knowledge-update; explain every metric
-   in plain language before naming or using it
-3. one decisive locally embedded figure or compact table with only the minimum
-   evidence needed to distinguish the main explanation from its rival
-4. one AI-drafted, human-corrected explanation flowchart that is sufficient to
-   reconstruct the answer
-5. the claim boundary and exactly one next decision, including its completion
-   criterion and resume action
+daily_research_reports/MMDD/focus_meeting_<topic_slug>.md
 ```
 
-The conclusion must answer the question in language an outside researcher can
-understand without opening the Protocol or result record. Present experiments
-as evidence for a knowledge update, not as a list of run ids, caveats, or
-metrics. Integrate the strongest unresolved rival and cannot-claim boundary
-into the conclusion. Define terms and metrics inline before using their names
-or values. Keep only one mechanism-critical formula when indispensable. The
-central figure or table must teach the inference, while longer theory,
-Protocol conditions, full result tables, run histories, and source maps remain
-linked in their owning artifacts.
+A one-problem meeting uses the lightweight path when the researcher names the
+problem, note, or problem focus and states the meeting's core question. A
+multi-problem meeting starts as `AWAITING_HUMAN_SCOPE` until the researcher
+provides the exact source focus paths, exclusions, and core question. AI must
+not infer a multi-problem merge range or introduce a joint judgment that no
+selected source owns.
 
-The researcher writes the conclusion, mechanism, and next decision. AI may
-prefill verified facts and links, choose and explain the decisive visual,
-draft the flowchart, and identify one blocking ambiguity. The researcher
-corrects and approves those AI-written parts. Do not create a separate daily
-log or routine meeting brief.
+The meeting focus follows the same knowledge-update principle as a problem
+focus, but answers one core question through two to four progressive
+subquestions. Each direct answer gives only the minimum evidence, its reach,
+and why the next question is necessary. Do not require a merge table, evidence
+ledger, flowchart, or speaking script. Add a visual only when it materially
+clarifies a decisive relation. If AI drafts unconfirmed knowledge wording, keep
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` visible. A separate speaking outline is
+created only when explicitly requested after the meeting focus is complete.
 
 Use at most three genuinely different candidates in one divergent round, then
 choose one and park the rest. Reading, coding, running, and plotting count as
@@ -134,7 +161,8 @@ progress only when they change a judgment, boundary, or decision.
 |---|---|
 | `AGENTS.md` | stable repository behavior and hard boundaries |
 | `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `daily_research_reports/MMDD/focus.md` | self-contained research briefing: question, knowledge update, mechanism, evidence structure, next decision, and resume action |
+| `daily_research_reports/MMDD/focus_<problem>.md` | one problem's self-contained knowledge update, evidence explanation, boundary, next decision, and resume action |
+| `daily_research_reports/MMDD/focus_meeting_<topic>.md` | one meeting's concise progressive knowledge update from a named problem or a human-scoped multi-problem set |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
 | Thinking Card | human's initial mechanism judgment and uncertainty |
 | anchor | one adjudicable research design and its current boundary |
@@ -270,12 +298,16 @@ recommendation: pursue / park / ignore
 
 ## Meeting Preparation
 
-For a routine meeting, use the completed one-page `focus.md`. Do not create a
-second brief.
+Always create a new `focus_meeting_<topic>.md` from
+`templates/meeting/meeting_focus_template.md`. For one named problem, proceed
+once the researcher has stated the core question. For multiple independent
+problems, require the exact human-selected merge scope and exclusions before
+synthesis. In both cases, organize the meeting as a concise progressive answer
+to one question, not an experiment correction or source-by-source audit.
 
-Use `templates/meeting/meeting_outline_template.md` only when the meeting
-combines several research lines or the user explicitly asks for one. The human
-writes the explanation; AI checks evidence, boundary, and order.
+Use `templates/meeting/meeting_outline_template.md` only when the user
+explicitly asks for a separate speaking outline after the meeting focus is
+complete.
 
 Present every completed experiment as one loop:
 
@@ -289,8 +321,8 @@ records.
 
 ## Explicit Publication And Sync
 
-Default behavior updates only project-local sources and today's
-`daily_research_reports/MMDD/focus.md`.
+Default behavior updates only project-local sources and the applicable problem
+or meeting focus files under `daily_research_reports/MMDD/`.
 
 These actions require an explicit user request:
 
@@ -375,7 +407,7 @@ Use repository skills when the task matches:
 - `experiment-card-writer`: blockwise experiment audit, confirmed protocol,
   summary, and detailed records.
 - `research-story-writer`: line-level mathematical and evidence synthesis.
-- `meeting-outline-writer`: AI-supported, human-completed advisor outline.
+- `meeting-outline-writer`: human-scoped meeting focus and optional speaking outline.
 - `research-mainline`: project organization and explicit publication.
 - `research-graph-sop`: thin graph maintenance.
 - `handoff-report-writer`: explicit curated handoff packaging.

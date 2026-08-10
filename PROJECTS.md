@@ -1,8 +1,8 @@
 # Projects
 
-Current-state registry for `Research_System`. Read after `AGENTS.md`. For the
-current day's human idea and resume point, read
-`daily_research_reports/MMDD/focus.md` when it exists.
+Current-state registry for `Research_System`. Read after `AGENTS.md`. For a
+problem's latest bounded knowledge update and resume point, read its relevant
+`daily_research_reports/MMDD/focus_<problem>.md` when it exists.
 
 ## Active Project
 
@@ -146,7 +146,7 @@ model selection or capability claims.
 ```text
 AGENTS.md
 -> PROJECTS.md
--> daily_research_reports/MMDD/focus.md (when present)
+-> relevant daily_research_reports/MMDD/focus_<problem>.md (when present)
 -> expert_specialization.graph.yaml
 -> linked project-local anchor / story / summary / detailed record
 ```
@@ -166,8 +166,8 @@ reading surface.
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
 | A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The controlled conditional-functional-rank theorem is retained, while global shared-linear propagation remains closed. E01 established that duplicate exposure is not context diversity and that capability-passing lookup `K=1/4/16` controls used 10.2/11.0/12.8 functional ROOT directions; archived E02-v1 matched seen-pair capability but failed strong unseen-pair recombination in 5/5. Improved E02 now isolates exact frequency inside one learned common mapping: all 10 pairs passed strict zero-exposure capability and rank-validity gates, LowF-minus-HighF functional rank averaged 0.2 directions, and its one-sided 95% upper bound was 0.5 against a frozen two-direction margin. This supports frequency non-inferiority in the registered task, not a shared-versus-independent mapping advantage. E03 was parked before treatment because a 32-probe common AdamW step basis captured only 0.478--0.631 of held-out common-update energy, so raw parameter-space reuse remains unidentified. E04--E06 retain the local-versus-finite bridge result: exact optimizer/ROOT secants were effectively eight-dimensional, while single-point H11 was refuted in 5/5. A14_03 remains blocked and Router utility remains unverified. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md` |
-| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Router-input access, controlled learning dynamics, and layerwise representation non-uniformity are established only within their named coordinate systems. No universal semantic rank coordinate or middle/tail routing gain is established. A15_04 is the active shared-tail geometry review; A15_03 is an independent `DRAFT_NOT_EXECUTABLE` middle-band audit; A15_05 functional admission remains bounded by failed compatibility and matched-dispatch claims. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
-| A16 | Can expert load be controlled without gradient interference that slows language-model learning or blocks expert differentiation? | The migrated DC audit establishes an immediate sustainer of frozen Vanilla collapse but not historical sufficiency. A16_00 is the active mechanism decision: held-out shadow-step NLL is primary, complete-global-batch LM/LB raw-gradient cosine is mechanistic, and dynamic expert bias is only the conditional first intervention. | `Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md` |
+| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Router-input access, controlled learning dynamics, and layerwise representation non-uniformity are established only within their named coordinate systems. A15_02_05 rejected a stable actual-$\Delta n$ fine-specific local-rank law, A15_04 rejected global shared broad-tail relocation, and A15_05 did not admit fixed covariance bands functionally. The researcher has parked A15_03 before execution. The active A15_07 draft now asks whether conditional-fine information concentrates in small layer-local directions that reproduce across expression families beyond equal-rank Haar and label permutation. Even a Pass would create only a semantic candidate coordinate; expert utility and Router gain remain untested. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
+| A16 | Can expert load be controlled without gradient interference that slows language-model learning or blocks expert differentiation? | The DC audit establishes an immediate sustainer of frozen Vanilla collapse. The completed 12-cell shadow audit finds reproducible Centered relief only at 50M and rejects global multistage outcome/shared-path/expert-conflict mediation; the source runs did not apply the configured LB gradient. The active decision is a matched Centered dynamic-bias versus effective-LB versus no-controller comparison. | `Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/backup/2026/07/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
 Primary route:
@@ -217,7 +217,12 @@ actual Router-input spectral access
 -> real-trajectory load-stability boundary
 -> fixed-band compatibility and matched-training Fail
 -> layer-specific information identity and natural hierarchy audit
--> next: replace rank labels with a directly functional expert-utility coordinate
+-> balanced actual-input fine-specific local-rank Fail
+-> shared broad-tail relocation Fail
+-> fixed covariance-band functional admission and matched dispatch Fail
+-> A15_03 band audit parked by researcher
+-> next: test cross-expression low-rank conditional-fine directions without selecting a band
+-> only a passed direction certificate may enter independent functional expert-utility admission
 ```
 
 Draft cross-line meeting route:
@@ -463,9 +468,11 @@ item and does not replace this A06 decision.
 
 ## Current Working And Published Surfaces
 
-- `daily_research_reports/MMDD/focus.md`: one day's self-contained research
-  briefing, knowledge update, next decision, and resume action; it is not
-  project truth.
+- `daily_research_reports/MMDD/focus_<problem>.md`: one problem's self-contained
+  knowledge update, evidence explanation, next decision, and resume action; it
+  is not project truth.
+- `daily_research_reports/MMDD/focus_meeting_<topic>.md`: a new human-scoped
+  synthesis of explicitly selected problem focuses; it is not project truth.
 - `Projects/graphs/expert_specialization.graph.yaml`: current thin navigation
   graph.
 - `sync/S000_current_specialization/README.md`: root-sync entry.
@@ -480,8 +487,8 @@ automatically.
 
 ## Other Root Surfaces
 
-- `daily_research_reports/`: one daily `focus.md` plus dated meeting and working
-  materials.
+- `daily_research_reports/`: dated problem knowledge updates, meeting
+  syntheses, and working materials. Legacy bare `focus.md` files may remain.
 - `paper_reading/`: reading cards.
 - `papers/`: paper-writing workspaces.
 - `templates/`: reusable templates.

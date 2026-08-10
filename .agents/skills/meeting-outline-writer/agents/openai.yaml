@@ -1,7 +1,7 @@
 interface:
-  display_name: "Meeting Outline Writer"
-  short_description: "Prepare human-owned advisor meeting outlines"
-  default_prompt: "Use $meeting-outline-writer to prepare or audit a human-completed advisor meeting structure from existing evidence."
+  display_name: "Meeting Focus Writer"
+  short_description: "Write concise progressive meeting knowledge updates"
+  default_prompt: "Use $meeting-outline-writer to turn one named problem, or an explicitly scoped multi-problem set, into a concise progressive meeting focus."
 
 policy:
   allow_implicit_invocation: true

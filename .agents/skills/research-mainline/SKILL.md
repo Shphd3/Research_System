@@ -183,23 +183,23 @@ archive/<snapshot_id>/<snapshot_id>.md
 archive/<snapshot_id>/<snapshot_id>_cn.md
 ```
 
-### Daily Reports
+### Focus Files
 
-Keep one human-facing file per day:
+Place a bounded problem update at
+`daily_research_reports/MMDD/focus_<problem>.md`; several may exist on one day.
+Place every meeting synthesis in a newly created
+`daily_research_reports/MMDD/focus_meeting_<topic>.md`. A one-problem meeting
+uses the researcher-named problem or note and core question. A multi-problem
+meeting requires exact human-selected source paths, exclusions, and one core
+question before synthesis. Legacy bare `focus.md` files may remain; do not
+migrate them implicitly.
 
-```text
-daily_research_reports/MMDD/focus.md
-```
-
-It is the self-contained daily research briefing, routine meeting brief, and
-resume action. It contains the current question, bounded knowledge update,
-mechanism, evidence structure, and next decision without replacing canonical
-sources. Do not duplicate it with another daily card, log, or meeting brief.
-Supporting daily folders may hold recordings or working material only.
-
-Daily focus files do not replace anchors or experiment records. If the day
-changes the hypothesis, evidence, boundary, or next decision, update the
-smallest canonical owning artifact too.
+Focus files are human-owned knowledge updates, not experiment-result reports or
+canonical project truth. Results appear below the natural-language conclusion
+as its explanation. Meeting focuses use a concise progressive question chain,
+not a mandatory merge table or evidence ledger. If a focus changes a
+hypothesis, evidence boundary, or next decision, also update the smallest
+canonical owning artifact.
 
 ## Core Artifact Chain
 

@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Progress Core"
-  short_description: "Audit research judgment and next decisions"
-  default_prompt: "Use $research-progress-core to audit one research judgment, its strongest rival, the minimum falsifier, and the next decision."
+  short_description: "Close one problem as a knowledge update"
+  default_prompt: "Use $research-progress-core to audit one research judgment, its strongest rival, the minimum falsifier, and, once bounded, its human-owned problem knowledge update and next decision."
 
 policy:
   allow_implicit_invocation: true

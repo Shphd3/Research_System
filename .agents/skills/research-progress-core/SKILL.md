@@ -1,6 +1,6 @@
 ---
 name: research-progress-core
-description: "Audit research judgment and reduce one decision-bearing uncertainty through rival explanations, a minimal falsifier, evidence interpretation, and one next decision. Use for research planning, mechanism or metric audits, failure analysis, result interpretation, and daily focus closure. Do not use for project path management, document schemas, remote operations, or publication."
+description: "Use when the user asks to audit a research judgment, separate rival explanations, design a minimal falsifier, interpret a result boundary, analyze a failure, or close one bounded problem as a knowledge update. Do not use for project paths, meeting synthesis, document schemas, remote operations, or publication."
 ---
 
 # Research Progress Core
@@ -36,14 +36,15 @@ not silently replace the human judgment.
 Use this workflow:
 
 ```text
-one-page focus
+one problem and its current judgment
 -> identify one blocking issue
 -> approved Protocol only if an experiment is needed
 -> execute
 -> AI records evidence
 -> human states result and boundary from memory
 -> AI verifies
--> update the smallest owning artifact
+-> human states the knowledge update
+-> update the smallest owning artifact and, when bounded, its problem focus
 ```
 
 After execution, ask the human to state:
@@ -73,56 +74,42 @@ only when they change a judgment, boundary, or decision.
 Use at most three genuinely different candidates in one divergent round. Then
 choose one and park the rest.
 
-## Daily Focus
+## Problem Knowledge Update Focus
 
-Use `daily_research_reports/MMDD/focus.md` as the only daily self-contained
-research briefing, routine meeting brief, and resume point. Create it from
-`templates/research_process/focus_writing_template.md`.
+When one problem reaches a bounded answer, create
+`daily_research_reports/MMDD/focus_<problem>.md` from
+`templates/research_process/focus_writing_template.md`. Several problems may
+close on one day; no closure means no invented focus conclusion. Leave legacy
+bare `focus.md` files unchanged.
 
-Treat `focus.md` as a **knowledge-update document, not an experiment result
-report**. Keep it to one page. A supervisor or outside researcher who did not
-run the experiment must be able to read only the answer, decisive visual, and
-flowchart and then correctly explain what changed in our understanding.
+This artifact is a **knowledge update, not an experiment-result analysis**.
+The researcher first writes or explicitly approves several connected, natural,
+complete sentences saying what is now understood. Those sentences must be
+readable without run IDs, metric tables, pass/fail labels, or the Protocol.
+Until that judgment exists, use `AWAITING_HUMAN_JUDGMENT`; AI must not derive a
+stronger conclusion from the results.
 
-Use exactly five sections in this order:
+Put the results below the knowledge update and use them to explain it:
 
 ```text
-1. one concrete answered question
-2. one plain-language knowledge update
-3. one decisive figure or table
-4. one explanation flowchart
-5. claim boundary and exactly one next decision
+decisive comparison
+-> verified direct result
+-> why that result changes the prior understanding
+-> strongest remaining rival and cannot-claim boundary
 ```
 
-The first section contains exactly one decision-bearing subquestion of the
-broader research problem. Do not retain the umbrella agenda or list several
-future questions as if they were all today's focus.
+Define a metric in plain language before naming it or citing its value. Keep
+only the minimum result and one decisive local figure or table needed to
+separate the main explanation from its rival; link full evidence to
+`summary.md` or `detailed.md`. The flowchart must reconstruct the inference in
+plain language, and the final section must contain exactly one next decision,
+its completion criterion, and resume action.
 
-In the knowledge update, answer first in language an informed outsider can
-understand. Explain a metric in plain language before naming it, writing its
-formula, or citing its value. Keep one formula only when the reader needs it to
-understand the mechanism. Translate endpoint, ablation, checkpoint, and other
-experimental terms into the relation they test.
-
-The evidence section contains the single figure or compact table that makes
-the answer easiest to teach. State how to read it and the one conclusion it
-supports. Use only the minimum numbers needed to separate the main explanation
-from its rival; link `summary.md` or `detailed.md` for full metrics, controls,
-run IDs, uncertainty tables, and experiment history.
-
-The flowchart must itself answer the core question: every node is a
-plain-language judgment, every arrow is an explicit reasoning step, and the
-last node states the knowledge update rather than an experiment name.
-
-The final section states where the answer holds, what remains unsupported, the
-strongest unresolved explanation when material, and exactly one next decision
-with its completion criterion and resume action.
-
-The human writes or approves the question, conclusion, mechanism, and next
-decision. AI may prefill verified facts and links, choose and explain the
-decisive visual, and draft the flowchart; the human corrects and approves them.
-Delete experiment detail that does not change the answer, boundary, or next
-decision.
+The human owns the question, knowledge update, mechanism, boundary, and next
+decision. AI may verify facts and links, explain the decisive visual, draft the
+flowchart, and expose one blocking ambiguity. Route meeting synthesis to
+`meeting-outline-writer`; do not merge several problem focuses through this
+skill.
 
 ## Decide Whether Work Is Worth Doing
 
@@ -320,7 +307,8 @@ does not match the downstream decision. Read:
 Use the smallest necessary artifact:
 
 ```text
-focus.md      self-contained daily research briefing and routine meeting brief
+focus_<problem>.md self-contained problem knowledge update and result explanation
+focus_meeting_<topic>.md concise progressive meeting knowledge update; owned by meeting-outline-writer
 Thinking Card new, unformed mechanism judgment only
 anchor        current formal question and claim boundary
 protocol.md   approved experiment contract

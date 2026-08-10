@@ -13,14 +13,14 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 
 | Skill | Trigger scope | Does not own | Implicit invocation |
 | --- | --- | --- | --- |
-| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, daily focus | Project paths, document schemas, remote execution | Allowed |
+| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, problem-level `focus_<problem>.md` knowledge update | Project paths, meeting synthesis, document schemas, remote execution | Allowed |
 | `problem-anchor-writer` | Thinking Card audit, approved anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
 | `experiment-card-writer` | In-file protocol drafting, critical-item review, promotion, `summary.md`, `detailed.md`, and evidence contracts | Research-question redefinition, remote jobs | Allowed |
 | `research-story-writer` | Explicit research-line story or paper-like stage synthesis | Anchors, experiment records, routine meeting notes | Allowed |
 | `research-mainline` | Project organization, artifact placement, archive state, status, and explicitly requested root-mirror publication | Research judgment, raw execution, handoff packaging, external collaborator sync | Allowed; guarded actions still require an explicit request |
 | `remote-experiment-workflow` | Container, SSH, CCI, SCO, or ACP experiment workflow, monitoring, logs, artifact maps | Hypothesis design or SCO platform resource semantics | Allowed |
 | `scholar-mode` | Research-intuition audit, theory or methodology critique, paper analysis, literature positioning | Artifact schemas, graph work, runs, ordinary code | Allowed |
-| `meeting-outline-writer` | Advisor meeting, meeting brief, speaking flow, multi-line discussion outline | Researcher's conclusion, handoff packaging, sync | Allowed |
+| `meeting-outline-writer` | Concise progressive `focus_meeting_<topic>.md` for one named problem or a human-scoped multi-problem set, plus optional speaking flow | Researcher's unconfirmed conclusion, multi-problem scope choice, handoff packaging, sync | Allowed |
 | `handoff-report-writer` | Explicit curated package, handoff, copy, or external sync request | New claims, meeting authorship, raw outputs | Explicit only |
 | `research-graph-sop` | Explicit `graph.yaml` inspection, creation, maintenance, or navigation audit | Ordinary research notes or project-state edits without graph scope | Allowed |
 | `sidecar-thinking` | Explicit Sidecar display, session, graph inspection, or API/CLI call | Ordinary graph editing or research synthesis | Explicit only |

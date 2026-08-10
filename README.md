@@ -9,9 +9,10 @@ materials.
 ## State Location
 
 Project routes, claim boundaries, and project-level next decisions live only in
-`PROJECTS.md`. Each day's human idea, progress, and resume point live in
-`daily_research_reports/MMDD/focus.md`. Compact web-side research lines live
-under:
+`PROJECTS.md`. Bounded problem-level knowledge updates live in
+`daily_research_reports/MMDD/focus_<problem>.md`; concise progressive meeting
+updates live in new `daily_research_reports/MMDD/focus_meeting_<topic>.md`
+files. Compact web-side research lines live under:
 
 ```text
 sync/
@@ -29,9 +30,11 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 - `AGENTS.md`: general Codex rules for this repository.
 - `PROJECTS.md`: current project registry, active route, graph hub, claim
   boundary, and next decision.
-- `daily_research_reports/MMDD/focus.md`: one day's human-written idea,
-  self-contained conclusion, mechanism, evidence structure, next decision, and
-  resume action; create it from the maintained focus template.
+- `daily_research_reports/MMDD/focus_<problem>.md`: one problem's human-owned,
+  self-contained knowledge update, with results below it as explanation.
+- `daily_research_reports/MMDD/focus_meeting_<topic>.md`: one meeting's
+  progressive answer to a named problem, or to an explicitly human-scoped
+  multi-problem set.
 - `sync/`: explicitly published research-line summaries and generated
   link-safe anchor mirrors. Use the current entry named in `PROJECTS.md` and
   republish mirrors only through
@@ -39,8 +42,8 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 
 ## Working Areas
 
-- `daily_research_reports/`: one daily `focus.md` plus dated meeting materials,
-  experiment summaries, and report bundles.
+- `daily_research_reports/`: dated problem knowledge updates, human-scoped
+  meeting syntheses, experiment summaries, and report bundles.
 - `paper_reading/`: literature cards and reading notes.
 - `.agents/skills/`: repo-tracked, natively discovered Codex skills; see
   `docs/skills.md` for the responsibility and trigger index.
@@ -51,45 +54,42 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 
 ## Daily Loop
 
-1. Create or reopen `daily_research_reports/MMDD/focus.md` from
-   `templates/research_process/focus_writing_template.md`, replace its title
-   with the one core research question, then keep only the subquestions needed
-   to answer it.
-2. Read `PROJECTS.md`, today's `focus.md`, then the relevant graph under
-   `Projects/graphs/` and only the linked problem anchor, experiment result,
-   paper note, or sync note needed for that advancement point.
+1. Read `PROJECTS.md`, the relevant prior `focus_<problem>.md`, then the
+   relevant graph under `Projects/graphs/` and only the linked problem anchor,
+   experiment result, paper note, or sync note needed for the current problem.
+2. State the current judgment, strongest rival, evidence that would change the
+   judgment, and one next decision. `Unknown` is valid.
 3. If exploration is needed, generate at most three distinct candidates,
    select one, and park the rest before further work.
-4. Write a complete conclusion as a knowledge update with its boundary, then
-   explain the mechanism with one indispensable formula. AI asks one blocking
-   question at a time; the researcher revises in place.
-5. Perform only the derivation, reading, diagnostic, or approved experiment
+4. Perform only the derivation, reading, diagnostic, or approved experiment
    needed to close the advancement point.
-6. Close source material and restate the conclusion, boundary, and next
-   decision from memory. AI then drafts the explanation flowchart and verified
-   experiment paragraphs; the researcher corrects them before closure.
-7. Park side thoughts instead of chasing them during the current task.
-8. Update anchors only when evidence changes the route, claim boundary,
+5. When the problem reaches a bounded answer, create
+   `daily_research_reports/MMDD/focus_<problem>.md` from the maintained problem
+   focus template. The researcher writes several natural, complete sentences
+   stating the knowledge update; only then are results used below to explain it.
+6. AI verifies the evidence, drafts the explanation flowchart, and checks that
+   the result analysis has not replaced or strengthened the knowledge update.
+7. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
-9. Do not update root sync, package handoff reports, edit graph manifests,
+8. Do not update root sync, package handoff reports, edit graph manifests,
    commit, or push unless explicitly requested.
 
-Each research day has exactly one daily state file:
-`daily_research_reports/MMDD/focus.md`. It is retained as the human's daily
-idea/progress ledger, but it does not replace `PROJECTS.md`, anchors, protocols,
-or result records. Do not create a second daily card, current log, or parallel
-research-state file.
+A day may contain several `focus_<problem>.md` files when several problems reach
+bounded answers. If none does, do not invent a conclusion merely to create a
+daily file. Legacy bare `focus.md` files remain valid historical artifacts but
+are not the naming pattern for new files. Problem focuses do not replace
+`PROJECTS.md`, anchors, protocols, or result records.
 
 Reusable templates live in `templates/`. Do not create new reusable templates
 inside daily, paper-reading, docs, or project folders by default.
 
-Class notes, meeting materials, and side documents may still live under the
-dated folder, but they do not duplicate the role of `focus.md`. Park side ideas
-outside the active focus unless they change its one next decision.
-
-The completed daily `focus.md` is the default self-contained speaking and
-reading document. Use `daily_research_reports/MMDD/meetings/` only when several
-research lines must be combined or a separate outline is explicitly requested.
+For a meeting, always create a new `focus_meeting_<topic>.md` from
+`templates/meeting/meeting_focus_template.md`. For one named problem, proceed
+after the human states the core question. For multiple independent problems,
+require exact source paths, exclusions, and one core question before merging.
+The meeting file answers that question progressively and does not overwrite
+source focuses. Create a separate speaking outline only when explicitly
+requested after the meeting focus is complete.
 
 ## Physical-Prior-First Loop
 

@@ -15,8 +15,8 @@ sync/README.md
 PROJECTS.md 指定的当前 sync 入口、anchor_index.md，以及 anchors/ 中的全部正式 anchor
 ```
 
-不要主动读取 daily focus、graph、项目本地文件、protocol、summary、
-detailed 或原始实验材料；只有我明确要求时才读。项目进度只依据
+不要主动读取 problem focus、meeting focus、graph、项目本地文件、protocol、
+summary、detailed 或原始实验材料；只有我明确要求时才读。项目进度只依据
 `PROJECTS.md` 和 sync anchor。具体讨论问题由我在每次对话中给出，不要
 自行猜测当前任务。文件不可访问或相互矛盾时直接说明，不用旧聊天补全。
 
