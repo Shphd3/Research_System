@@ -21,7 +21,8 @@ prompt, or README.
 | Template | Use |
 |---|---|
 | `research_process/thinking_card_template.md` | Optional human judgment card only when a new mechanism question is promoted. |
-| `research_process/focus_writing_template.md` | One answered problem's knowledge update: natural-language conclusion first, results below as explanation, decisive figure/table, boundary, and one next decision. |
+| `research_process/daily_report_template.md` | Full reader-friendly daily experiment or evidence report, with self-contained context, verified results, knowledge update, boundary, and one next decision. |
+| `research_process/focus_writing_template.md` | Minimal summary and navigation card derived from one confirmed daily report: one question, concise update, one decisive result, boundary, and one next decision. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
 | `research_process/experiment_understanding_and_execution_gate_template_cn.md` | Four minimal Chinese cards for understanding, self-check, execution gating, and result reporting. |
 
@@ -56,7 +57,12 @@ replace the anchor, protocol, summary, or detailed evidence record.
 ## Rules
 
 - Create `focus_<problem>.md` only when that problem reaches a bounded knowledge
-  update; several problem focuses may exist on one day.
+  update and its source daily report is human-confirmed; several problem
+  focuses may exist on one day.
+- Create `docs/daily_report_<topic_slug>.md` for each completed
+  experiment or bounded evidence synthesis delivered as a daily knowledge
+  update. It is the full reader explanation derived from canonical evidence;
+  the problem focus is its minimal summary and navigation card.
 - Create a new `focus_meeting_<topic>.md` for every meeting. A named one-problem
   meeting uses a progressive question chain directly; a multi-problem meeting
   waits for exact human scope, exclusions, and one core question.

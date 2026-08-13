@@ -9,7 +9,9 @@ materials.
 ## State Location
 
 Project routes, claim boundaries, and project-level next decisions live only in
-`PROJECTS.md`. Bounded problem-level knowledge updates live in
+`PROJECTS.md`. Complete reader-friendly daily experiment and evidence reports
+live in `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`.
+Bounded problem-level knowledge updates condensed from confirmed reports live in
 `daily_research_reports/MMDD/focus_<problem>.md`; concise progressive meeting
 updates live in new `daily_research_reports/MMDD/focus_meeting_<topic>.md`
 files. Compact web-side research lines live under:
@@ -30,8 +32,11 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
 - `AGENTS.md`: general Codex rules for this repository.
 - `PROJECTS.md`: current project registry, active route, graph hub, claim
   boundary, and next decision.
+- `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`: the
+  complete reader-friendly report derived from canonical experiment evidence.
 - `daily_research_reports/MMDD/focus_<problem>.md`: one problem's human-owned,
-  self-contained knowledge update, with results below it as explanation.
+  minimal knowledge summary and navigation card derived from a confirmed daily
+  report.
 - `daily_research_reports/MMDD/focus_meeting_<topic>.md`: one meeting's
   progressive answer to a named problem, or to an explicitly human-scoped
   multi-problem set.
@@ -63,12 +68,14 @@ example `summary_cn.md` or `<anchor_id>_cn.md`.
    select one, and park the rest before further work.
 4. Perform only the derivation, reading, diagnostic, or approved experiment
    needed to close the advancement point.
-5. When the problem reaches a bounded answer, create
-   `daily_research_reports/MMDD/focus_<problem>.md` from the maintained problem
-   focus template. The researcher writes several natural, complete sentences
-   stating the knowledge update; only then are results used below to explain it.
-6. AI verifies the evidence, drafts the explanation flowchart, and checks that
-   the result analysis has not replaced or strengthened the knowledge update.
+5. After eligible evidence and the researcher's result judgment exist, create
+   `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` from
+   the maintained daily-report template. It explains the full experiment and
+   knowledge update while linking canonical evidence.
+6. After the researcher confirms that report's knowledge wording, condense it
+   into `daily_research_reports/MMDD/focus_<problem>.md`. AI verifies evidence,
+   drafts the explanation flowchart, and checks that the focus adds nothing not
+   present in the confirmed daily report.
 7. Update anchors only when evidence changes the route, claim boundary,
    bottleneck, hypothesis status, or next decision.
 8. Do not update root sync, package handoff reports, edit graph manifests,
@@ -121,7 +128,16 @@ Projects/<project>/main/problem_anchors/<anchor_id>.md
 Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/protocol.md
 Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/summary.md
 Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/detailed.md
+daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
+daily_research_reports/MMDD/focus_<problem>.md
 ```
+
+The experiment-local `summary.md` and `detailed.md` remain the canonical result
+and evidence records. The `daily_report` is the complete reader-friendly
+explanation derived from them. Only after the researcher confirms its knowledge
+update is it condensed into the one-problem focus. The focus keeps only the
+question, concise update, one decisive result, boundary, next decision, and
+report link; it must not introduce new evidence or strengthen the daily report.
 
 Default principle: fewer, sharper experiments. Each experiment should deepen
 understanding, test a hypothesis, or change a next decision.

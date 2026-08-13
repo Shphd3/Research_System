@@ -185,8 +185,15 @@ archive/<snapshot_id>/<snapshot_id>_cn.md
 
 ### Focus Files
 
+Place the full reader-friendly daily report at
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` after
+canonical evidence and human judgment exist. It is derived from the Anchor,
+Protocol, Summary, and Detailed records.
+
 Place a bounded problem update at
-`daily_research_reports/MMDD/focus_<problem>.md`; several may exist on one day.
+`daily_research_reports/MMDD/focus_<problem>.md` only by condensing a
+human-confirmed daily report into a minimal summary and navigation card;
+several may exist on one day.
 Place every meeting synthesis in a newly created
 `daily_research_reports/MMDD/focus_meeting_<topic>.md`. A one-problem meeting
 uses the researcher-named problem or note and core question. A multi-problem
@@ -209,6 +216,12 @@ Default chain:
 anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
+Derived daily reading chain:
+
+```text
+canonical result records + anchor update -> daily_report -> minimal problem focus
+```
+
 Root sync copies, graph edits, commits, and pushes are explicit follow-up
 actions only. Handoff packages are explicit follow-up work owned by
 `handoff-report-writer`.
@@ -226,13 +239,17 @@ anchor                      = one authoritative current research design
 protocol.md                 = one draft-to-approved experiment contract;
                               non-executable until confirmation and consistency
 summary.md + detailed.md    = direct result, evidence, and reproducibility
+daily_report                = derived reader-friendly experiment and knowledge report
 figures / viewer            = optional decision evidence when visual inspection matters
 story pair                  = explicit stable line synthesis; no automatic
                               competing final_report layer
 ```
 
-Do not create the exported `docs/` layout for ordinary mainline work unless the
-user asks for that layout. The anchor-first layout remains canonical.
+Do not create an exported project-local `docs/` layout for ordinary mainline
+work unless the user asks for it. The required
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` reading
+surface is a separate derived daily artifact; the anchor-first project layout
+remains canonical.
 
 Artifact roles must stay aligned:
 
@@ -243,6 +260,7 @@ Artifact roles must stay aligned:
 | `protocol.md` | the single in-file lifecycle from complete candidate to confirmed test | be treated as executable before all audit blocks pass, change the question post hoc, or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
+| `daily_report` | self-contained reader explanation and human-confirmed knowledge update derived from canonical evidence | become the sole source of a result, deviation, eligibility label, or verdict |
 | `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
 | anchor update | supported / weakened / insufficient evidence, boundary, next decision | paste a result report into the anchor |
 
@@ -367,6 +385,18 @@ aggregation level, axis/legend meaning, allowed conclusion, and limitation.
 The audit must check that the rendered artifact is readable and understandable
 without source-code knowledge.
 
+### Daily Report And Problem Focus
+
+After canonical results and the Anchor update agree, place the full
+reader-friendly report at
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`. Use
+`research-progress-core`; preserve canonical evidence lineage, negative
+results, claim boundary, and exactly one next decision. After the researcher
+confirms its knowledge wording, condense it into
+`daily_research_reports/MMDD/focus_<problem>.md` as a minimal summary and
+navigation card. Never reverse this dependency or let the focus strengthen or
+duplicate the daily report.
+
 ### Story
 
 `main/stories/<line>/` is the line-level synthesis surface. Use it when the
@@ -481,7 +511,8 @@ delete it.
 
 - Keep mainline thin; put reasoning in anchors and result records.
 - By default, update only anchor / `protocol.md` / `summary.md` /
-  `detailed.md` / daily note.
+  `detailed.md` / the subject-bearing `daily_report` / its derived minimal
+  problem focus.
 - Do not create separate implementation-plan files for new work.
 - Do not update root sync, edit graph, commit, or push unless the user
   explicitly asks. Never perform external collaborator sync or handoff

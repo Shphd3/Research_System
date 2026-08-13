@@ -155,6 +155,12 @@ The two files may repeat only the primary metric definition, primary observed
 value, verdict, claim boundary, and next decision. Those repeated fields must
 match exactly. Neither file may claim more than the Anchor permits.
 
+A reader-friendly daily report is a derived explanatory surface, not a third
+canonical result record. After Summary, Detailed, and the Anchor update agree,
+route daily-report writing and later focus condensation to
+`research-progress-core`. Do not make the daily report the only source of a
+number, eligibility decision, deviation, or verdict.
+
 ### 8. Visual Evidence
 
 Include a figure only when it supports the current verdict, claim boundary, or
@@ -170,14 +176,18 @@ After eligible evidence and researcher judgment are consistent:
 summary.md / detailed.md
 -> update Anchor section 7 with the minimum local evidence unit
 -> update Anchor section 8 with the bounded claim and one next decision
--> after the human states a bounded knowledge update, create or update
+-> after the human states a bounded knowledge update, use
+   `research-progress-core` to create and confirm
+   daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
+-> only then condense that confirmed daily report into
    daily_research_reports/MMDD/focus_<problem>.md
 ```
 
 `summary.md` and `detailed.md` analyze and preserve experimental results; they
-do not themselves constitute the focus conclusion. In the problem focus, the
-human-approved knowledge update comes first as natural complete sentences, and
-the selected result appears below only to explain it.
+do not themselves constitute the daily knowledge update or focus conclusion.
+The daily report provides the complete reader explanation; the problem focus
+keeps only its concise knowledge update, one decisive result, boundary, next
+decision, and report link.
 
 Do not create a closure report or line synthesis through this skill. Route an
 explicit line-level synthesis to `research-story-writer` and path/state changes

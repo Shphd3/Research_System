@@ -1,6 +1,6 @@
 ---
 name: research-progress-core
-description: "Use when the user asks to audit a research judgment, separate rival explanations, design a minimal falsifier, interpret a result boundary, analyze a failure, or close one bounded problem as a knowledge update. Do not use for project paths, meeting synthesis, document schemas, remote operations, or publication."
+description: "Use when the user asks to audit a research judgment, separate rival explanations, design a minimal falsifier, interpret a result boundary, analyze a failure, write a reader-friendly daily research report, or close one bounded problem as a concise focus. Do not use for project paths, meeting synthesis, remote operations, or publication."
 ---
 
 # Research Progress Core
@@ -44,7 +44,10 @@ one problem and its current judgment
 -> human states result and boundary from memory
 -> AI verifies
 -> human states the knowledge update
--> update the smallest owning artifact and, when bounded, its problem focus
+-> AI writes the reader-friendly daily report
+-> human confirms or corrects that report
+-> update the smallest owning artifact and, when bounded, condense the report
+   into its problem focus
 ```
 
 After execution, ask the human to state:
@@ -74,42 +77,131 @@ only when they change a judgment, boundary, or decision.
 Use at most three genuinely different candidates in one divergent round. Then
 choose one and park the rest.
 
+## Reader-Friendly Daily Report
+
+After eligible evidence exists and the researcher has stated the result,
+boundary, knowledge update, and next decision, create or update:
+
+```text
+daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
+```
+
+Use `templates/research_process/daily_report_template.md`. The daily report
+is a compact, problem-driven paper: it reconstructs one argument from the
+human-owned question to one bounded knowledge update. It is not a run ledger,
+a multi-depth repetition of the verdict, or a replacement for canonical result
+records.
+
+Use this positive recipe in order:
+
+```text
+question-form title + provenance metadata
+-> one short abstract: question, method distinction, decisive result, boundary
+-> human question and why the previous measure cannot answer it
+-> task, data splits, statistical unit, and terms
+-> method logic and, when gated, one semantic flowchart
+-> hypotheses, treatment/control mapping, metrics, and decision rules
+-> direct results: what was done, observed, allowed, and limited
+-> knowledge update, cannot-claim boundary, exactly one next decision
+-> compact canonical source map
+```
+
+Use a question-form title without the answer. The abstract is the only early
+verdict. After it, the body follows the logical dependency from question to
+conclusion once; the conclusion then compresses
+the inference without copying the abstract, results table, or boundary list.
+Normally use seven main sections and about 2,500--5,000 Chinese characters, or
+an equivalent compact length in another language, excluding metadata,
+formulas, tables, and sources. Complete definitions take priority over a
+mechanical length cap.
+
+Use the project-local Anchor, frozen Protocol, `summary.md`, and `detailed.md`
+as canonical sources. Self-contained means the report supplies enough context
+to understand and judge the result without chat history; it does not duplicate
+the full evidence ledger. Every decision-bearing number, figure, eligibility
+label, verdict, boundary, and next decision must match its canonical source.
+
+Define every non-obvious term before its first use in a hypothesis, formula,
+table, or figure. A definition states its plain meaning, exact object or
+computation, decision role, and main non-claim. Always define TRAIN,
+DEVELOPMENT, CONFIRMATION/TEST, episode or other independence unit, condition,
+readout/probe, metric unit, control quantile, and uncertainty procedure when
+they appear. If the current run reused frozen earlier-split assets, say
+explicitly what the current run trained, selected, and did not train or select.
+
+Each method component gets one role: for example location diagnostic, exact
+difference, candidate construction, or verdict-bearing held-out test. When
+three or more dependent steps or a gate determine whether downstream work is
+admitted, embed one Mermaid flowchart with semantic nodes, Pass/Fail paths, and
+the current stopping point. A text arrow chain does not substitute for the
+requested visual. If the user explicitly requests a flowchart, include one even
+when the reasoning is shorter.
+
+Each result block follows one loop:
+
+```text
+what was tested -> direct result -> plain-language scale or baseline
+-> allowed interpretation -> adjacent limitation
+```
+
+Normally use one central result table and no more than two figures that answer
+genuinely different evidence clauses. Explain axes, units, intervals, correct
+baseline, allowed reading, and limitation beside each figure. Put eligibility
+in one short paragraph. Predecessor histories, environment retries, commands,
+receipts, hashes, and artifact inventories stay in `detailed.md` unless one
+fact changes whether the result is eligible or how it must be interpreted.
+Preserve material negative results and uncertainty; never turn `Fail` or
+`Insufficient` into optimistic wording.
+
+The report includes the design-level uncertainty contract: independence unit,
+aggregation, draw count, primary seed, interval construction, and where a
+control quantile is recomputed. Per-seed ledgers, sampled-index arrays, and
+retry details remain in `detailed.md`.
+
+Using one meeting note as the named source of one experiment question is not
+meeting synthesis. Route to `meeting-outline-writer` only when the task merges
+multiple meeting problems or prepares the meeting itself.
+
+If the researcher has not confirmed the knowledge wording, keep
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` visible. A draft may reconstruct context
+and verified evidence, but it must not invent the researcher's mechanism
+judgment or create a completed problem focus.
+
 ## Problem Knowledge Update Focus
 
-When one problem reaches a bounded answer, create
+When one problem reaches a bounded answer and its daily report is
+human-confirmed, create
 `daily_research_reports/MMDD/focus_<problem>.md` from
 `templates/research_process/focus_writing_template.md`. Several problems may
 close on one day; no closure means no invented focus conclusion. Leave legacy
 bare `focus.md` files unchanged.
 
-This artifact is a **knowledge update, not an experiment-result analysis**.
-The researcher first writes or explicitly approves several connected, natural,
-complete sentences saying what is now understood. Those sentences must be
-readable without run IDs, metric tables, pass/fail labels, or the Protocol.
-Until that judgment exists, use `AWAITING_HUMAN_JUDGMENT`; AI must not derive a
-stronger conclusion from the results.
-
-Put the results below the knowledge update and use them to explain it:
+This artifact is a **minimal summary and navigation card**, not an
+experiment-result analysis. Keep it normally within 20--30 lines. Its complete
+shape is:
 
 ```text
-decisive comparison
--> verified direct result
--> why that result changes the prior understanding
--> strongest remaining rival and cannot-claim boundary
+source daily report
+one answered question
+two-to-four-sentence knowledge update
+one sentence: decisive comparison and direct result
+cannot-claim boundary
+exactly one next decision
 ```
 
-Define a metric in plain language before naming it or citing its value. Keep
-only the minimum result and one decisive local figure or table needed to
-separate the main explanation from its rival; link full evidence to
-`summary.md` or `detailed.md`. The flowchart must reconstruct the inference in
-plain language, and the final section must contain exactly one next decision,
-its completion criterion, and resume action.
+Do not copy setup, definitions, formulas, metric tutorials, tables, figures,
+flowcharts, evidence lineage, completion criteria, or resume actions into the
+focus. A single number is allowed only when omitting it would make the update
+ambiguous. Send the reader to the daily report for every detail.
 
 The human owns the question, knowledge update, mechanism, boundary, and next
-decision. AI may verify facts and links, explain the decisive visual, draft the
-flowchart, and expose one blocking ambiguity. Route meeting synthesis to
-`meeting-outline-writer`; do not merge several problem focuses through this
-skill.
+decision. AI may verify the source link and the one decisive result. Route
+meeting synthesis to `meeting-outline-writer`; do not merge several problem
+focuses through this skill. Name the confirmed daily report as the first
+source. A focus may omit
+detail, but it must not add a result, number, interpretation, boundary, or next
+decision absent from that source. If canonical evidence changes, update in the
+one-way order `canonical records -> daily report -> focus`.
 
 ## Decide Whether Work Is Worth Doing
 
@@ -249,6 +341,10 @@ cannot claim
 next decision
 ```
 
+Within a daily report, the whole adjudicated experiment is one result for this
+rule. Result subsections give only their direct reading and adjacent limitation;
+the global claim boundary and next decision appear once in the conclusion.
+
 Return requested numbers and run status first.
 
 ## Metrics, Terms, And Figures
@@ -307,7 +403,8 @@ does not match the downstream decision. Read:
 Use the smallest necessary artifact:
 
 ```text
-focus_<problem>.md self-contained problem knowledge update and result explanation
+daily_report_<topic_slug>.md complete reader-friendly result and knowledge update; derived from canonical evidence
+focus_<problem>.md minimal summary and navigation card derived from the daily report
 focus_meeting_<topic>.md concise progressive meeting knowledge update; owned by meeting-outline-writer
 Thinking Card new, unformed mechanism judgment only
 anchor        current formal question and claim boundary
@@ -317,8 +414,11 @@ detailed.md   complete evidence and reproducibility ledger
 story         explicit line-level synthesis only
 ```
 
-Do not duplicate the same conclusion across new daily cards, briefs, closure
-reports, or implementation plans. Update the owning artifact and link it.
+The one allowed full daily reading surface is the subject-bearing
+`daily_report_<topic_slug>.md`. Do not create additional daily cards,
+briefs, closure reports, or implementation plans that duplicate it. The daily
+report explains canonical evidence; it does not replace `summary.md` or
+`detailed.md` as a truth source.
 
 Use `research-mainline` for paths and publication rules,
 `problem-anchor-writer` for anchors, and `experiment-card-writer` for Protocol
@@ -327,13 +427,12 @@ logistics.
 
 ## Writing Rule
 
-Write decision reports, not timelines. Start with:
+Write decision reports, not timelines. The abstract starts with:
 
 ```text
-what is established
-what the experiment shows
-what happens next
+question -> decisive result -> bounded answer -> next decision
 ```
 
-Then state the boundary. Do not use polished prose to conceal an undefined
+The body then reconstructs `question -> definitions -> test -> result ->
+inference` in that order. Do not use polished prose to conceal an undefined
 object or upgrade a claim.

@@ -13,7 +13,7 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 
 | Skill | Trigger scope | Does not own | Implicit invocation |
 | --- | --- | --- | --- |
-| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, problem-level `focus_<problem>.md` knowledge update | Project paths, meeting synthesis, document schemas, remote execution | Allowed |
+| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, reader-friendly `daily_report`, and its minimal problem-level `focus_<problem>.md` | Project paths, meeting synthesis, remote execution | Allowed |
 | `problem-anchor-writer` | Thinking Card audit, approved anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
 | `experiment-card-writer` | In-file protocol drafting, critical-item review, promotion, `summary.md`, `detailed.md`, and evidence contracts | Research-question redefinition, remote jobs | Allowed |
 | `research-story-writer` | Explicit research-line story or paper-like stage synthesis | Anchors, experiment records, routine meeting notes | Allowed |
@@ -34,6 +34,7 @@ research-progress-core
 -> problem-anchor-writer for coherent data/task/objective/architecture design
 -> experiment-card-writer for in-file drafting, critical review, and promotion
 -> remote-experiment-workflow when execution is remote
+-> research-progress-core for the verified daily_report and minimal focus
 -> research-story-writer only for explicit line synthesis
 -> research-mainline for project placement or explicit publication
 ```

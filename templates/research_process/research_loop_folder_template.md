@@ -26,8 +26,11 @@ Roles:
 - `detailed.md`: full setup, run evidence, failures, and artifact map.
 
 Do not add separate implementation plans, daily logs, closure reports, or
-routine final reports. When the problem reaches a bounded answer, use
-`daily_research_reports/MMDD/focus_<problem>.md` for the human knowledge update,
-result-based explanation, and next decision. A meeting uses a separately created
-`focus_meeting_<topic>.md` after the human chooses its merge scope and core
-question. Link the owning project artifacts.
+competing final reports. When a completed experiment or bounded synthesis is
+delivered in the daily report, write the one full reader-facing artifact at
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`. After
+the researcher confirms its knowledge update, condense it into
+`daily_research_reports/MMDD/focus_<problem>.md` as a minimal summary and
+navigation card. A meeting uses a separately
+created `focus_meeting_<topic>.md` after the human chooses its merge scope and
+core question. Link the owning project artifacts.

@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Progress Core"
-  short_description: "Close one problem as a knowledge update"
-  default_prompt: "Use $research-progress-core to audit one research judgment, its strongest rival, the minimum falsifier, and, once bounded, its human-owned problem knowledge update and next decision."
+  short_description: "Write daily reports and concise problem focuses"
+  default_prompt: "Use $research-progress-core to audit one research judgment, write its evidence-grounded reader-friendly daily_report, and condense a human-confirmed bounded answer into a minimal problem focus."
 
 policy:
   allow_implicit_invocation: true

@@ -53,8 +53,11 @@ one-page problem knowledge update
 -> human states the result and boundary from memory
 -> AI verifies
 -> human states the resulting knowledge update
+-> AI writes the reader-friendly daily report from the verified record and
+   human judgment
+-> human confirms or corrects that daily report
 -> update only the smallest owning artifact and, when the problem is bounded,
-   its problem focus
+   condense the confirmed daily report into its problem focus
 ```
 
 Before formalizing a new question, the human states:
@@ -85,7 +88,33 @@ AI verifies numbers, evidence, and wording without strengthening the claim.
 
 ## Focus And Writing
 
-Focus has two distinct forms.
+Daily writing has one full explanatory report followed by two focus forms.
+
+### Daily Research Report
+
+For every completed experiment or bounded evidence synthesis that changes a
+research judgment, claim boundary, or next decision and is delivered in the
+daily report, create:
+
+```text
+daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
+```
+
+Use `templates/research_process/daily_report_template.md`. This file is the
+complete, reader-friendly, self-contained explanation of the day's result and
+knowledge update. A reader should understand the question, objects,
+hypotheses, decisive comparison, metrics, direct result, inference, boundary,
+and next decision without chat history. Self-contained means sufficient for
+understanding and judgment; it does not mean copying the complete run ledger.
+
+The project-local `summary.md` and `detailed.md` remain the canonical result
+and evidence sources. Every decision-bearing number and figure in the daily
+report must trace to those records. The daily report must preserve material
+negative results, uncertainty, deviations, and failed assumptions; it must not
+reframe `Fail` or `Insufficient` as progress language. Before the researcher
+confirms the knowledge wording, mark it
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. Only a confirmed daily report may be
+the source of a completed problem focus.
 
 ### Problem Knowledge Update
 
@@ -95,37 +124,34 @@ When one problem reaches a bounded answer, create:
 daily_research_reports/MMDD/focus_<problem_slug>.md
 ```
 
-The file is a concise, human-owned, self-contained **knowledge update**, not an
-experiment-result analysis. A day may contain several problem focus files when
-several problems reach bounded answers. If no problem reaches a bounded answer,
-do not manufacture a focus conclusion. Legacy bare `focus.md` files may remain;
-do not create new ones or bulk-rename them without an explicit migration.
+The file is a short, human-owned **summary and navigation card** condensed from
+one confirmed daily report, not a second experiment report. A day may contain
+several problem focus files when several problems reach bounded answers. If no
+problem reaches a bounded answer, or the source daily report is not
+human-confirmed, do not manufacture a focus conclusion. Legacy bare `focus.md`
+files may remain; do not create new ones or bulk-rename them without an explicit
+migration.
 
-Target one page and about 60 lines. It contains only:
+Keep the focus normally within 20--30 lines. It contains only:
 
 1. exactly one concrete answered problem;
-2. a knowledge update written as several connected, natural, complete
-   sentences that an outside researcher can understand;
-3. a result-based explanation below that update: decisive comparison, direct
-   result, why it changes the understanding, and the strongest remaining rival;
-4. one decisive locally embedded figure or compact table;
-5. one AI-drafted, human-corrected explanation flowchart;
-6. the claim boundary and exactly one next decision, including completion
-   criterion and resume action.
+2. a two-to-four-sentence human-confirmed knowledge update;
+3. one sentence giving the decisive comparison and direct result;
+4. the cannot-claim boundary and exactly one next decision;
+5. one prominent link to the complete daily report.
 
-The opening conclusion must say what is now understood. It must not be a list
-of run IDs, metric values, pass/fail labels, or experimental observations. Put
-results below the conclusion and use them to explain and support the knowledge
-update; results do not replace it. Define every metric in plain language before
-using its name or value. Keep only one mechanism-critical formula when
-indispensable. Longer theory, Protocol conditions, full result tables, run
-histories, and source maps remain linked in their owning artifacts.
+Do not repeat setup, terminology tables, formulas, full metrics, multiple
+results, figures, flowcharts, provenance tables, completion criteria, or resume
+instructions in the focus. Those belong to the daily report. A focus may repeat
+one number only when the knowledge update would otherwise be ambiguous.
 
 The researcher writes or explicitly approves the core question, knowledge
-update, mechanism, claim boundary, and next decision. AI may prefill verified
-facts and links, select and explain the decisive visual, draft the flowchart,
-and identify one blocking ambiguity. AI must not infer a stronger conclusion
-from experimental results.
+update, mechanism, claim boundary, and next decision. AI may prefill the source
+link and verify the one decisive result. AI must not infer a stronger conclusion
+from experimental results. A focus must name its source daily report first and
+must not introduce a result, interpretation, boundary, or next decision absent
+from that confirmed source. Corrections flow only from canonical evidence to
+the daily report and then to the focus.
 
 ### Meeting Knowledge Synthesis
 
@@ -161,7 +187,8 @@ progress only when they change a judgment, boundary, or decision.
 |---|---|
 | `AGENTS.md` | stable repository behavior and hard boundaries |
 | `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `daily_research_reports/MMDD/focus_<problem>.md` | one problem's self-contained knowledge update, evidence explanation, boundary, next decision, and resume action |
+| `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` | full reader-friendly experiment or evidence report, verified knowledge update, boundary, and one next decision; derived from canonical evidence |
+| `daily_research_reports/MMDD/focus_<problem>.md` | minimal summary and navigation card: one answered problem, concise knowledge update, one decisive result, boundary, and one next decision |
 | `daily_research_reports/MMDD/focus_meeting_<topic>.md` | one meeting's concise progressive knowledge update from a named problem or a human-scoped multi-problem set |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
 | Thinking Card | human's initial mechanism judgment and uncertainty |
@@ -258,10 +285,18 @@ subject-bearing names under `archive/<snapshot_id>/`.
 
 ## Experiment Chain
 
-Default chain:
+Canonical experiment chain:
 
 ```text
 anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
+```
+
+Daily reading chain after eligible evidence and human judgment:
+
+```text
+summary.md + detailed.md + anchor update
+-> daily_report_<topic_slug>.md
+-> focus_<problem>.md
 ```
 
 - Use `experiment-card-writer` to write the complete candidate directly into
@@ -279,6 +314,15 @@ anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 - `detailed.md` owns the complete setup, seeds, commands, job IDs, full tables,
   stage evidence, failures, artifact map, and visualization audit when figures
   are decision-relevant.
+- The daily report owns the complete reader explanation, not canonical
+  evidence. It must link the exact Anchor, Protocol, Summary, and Detailed
+  records, explain every central metric and figure in plain language, preserve
+  the registered verdict and boundary exactly, and contain exactly one next
+  decision.
+- Create the problem focus only by compressing a human-confirmed daily report.
+  The focus keeps only the question, concise update, one decisive result,
+  boundary, one next decision, and report link; it may not add or strengthen
+  content.
 - Add conditions, seeds, and diagnostics only when they separate a named rival
   or protect the primary conclusion.
 - Every central plot needs a contract: question, metric and unit, data source,
@@ -321,8 +365,9 @@ records.
 
 ## Explicit Publication And Sync
 
-Default behavior updates only project-local sources and the applicable problem
-or meeting focus files under `daily_research_reports/MMDD/`.
+Default behavior updates only project-local sources, the applicable
+reader-friendly daily report, and the problem or meeting focus files under
+`daily_research_reports/MMDD/`.
 
 These actions require an explicit user request:
 

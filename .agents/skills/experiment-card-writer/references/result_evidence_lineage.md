@@ -40,9 +40,12 @@ sources, consistency, and wording. If the researcher has not provided the
 closed-book judgment, present the required scaffold rather than inventing a
 conclusion.
 
-`summary.md` owns the first reading path. `detailed.md` owns the complete
-evidence ledger. The Protocol owns the registered plan and must not be rewritten
-with result-derived content.
+`summary.md` owns the first canonical result reading path. `detailed.md` owns
+the complete evidence ledger. The Protocol owns the registered plan and must
+not be rewritten with result-derived content. A subject-bearing daily report
+under `daily_research_reports/MMDD/docs/` may provide a fuller reader
+explanation, but it is derived from these canonical records and cannot become
+the sole evidence source.
 
 ## Evidence Eligibility
 
@@ -247,6 +250,23 @@ Full setup, all conditions, stage evidence, deviations, run history, and the
 artifact manifest belong only in Detailed. Summary may state only the minimum
 decision-bearing setup.
 
+When a reader-friendly daily report is required, enforce this one-way chain:
+
+```text
+Protocol + Summary + Detailed + Anchor update
+-> daily_report_<topic_slug>.md
+-> focus_<problem>.md
+```
+
+The daily report may repeat verified material needed for a cold reader, but
+every decision-bearing number and figure must link to its canonical lineage.
+Its eligibility, verdict, boundary, and one next decision must match Summary,
+Detailed, and the Anchor exactly. Before human confirmation, mark its knowledge
+wording `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. A completed focus must cite a
+human-confirmed daily report and keep only the question, concise update, one
+decisive result, boundary, next decision, and report link. It cannot introduce
+a new number, interpretation, boundary, or decision.
+
 ## Final Audit
 
 Mark each item `PASS` or `FAIL`:
@@ -262,6 +282,8 @@ Summary is conclusion-first and links primary sources directly:
 Detailed is the only complete evidence ledger:
 Figures have source, aggregation, observed result, and limitation:
 Summary, Detailed, and Anchor verdicts and boundaries agree:
+Any daily report preserves canonical eligibility, verdict, lineage, boundary, and next decision:
+Any completed focus cites a human-confirmed daily report and contains only the minimal summary fields:
 Exactly one next decision has a completion criterion and resume action:
 No missing value, expected pattern, or filename was turned into evidence:
 ```

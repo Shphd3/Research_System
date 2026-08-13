@@ -2,20 +2,20 @@
 
 ```text
 type: daily_research_report
-status: HUMAN_CONFIRMED
-human_audit_scope: question_method_and_claim_boundary
-evidence_state: AWAITING_CANONICAL_RESULTS
+status: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
+human_audit_scope: question_method_and_claim_boundary; result wording awaiting confirmation
+evidence_state: CANONICAL_RESULT_AVAILABLE
 date: 2026-08-11
 topic: layerwise_long_range_added_accessibility
 canonical_anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor.md
-frozen_protocol: Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E01_layerwise_long_range_gain_and_representation_rank/protocol.md
-canonical_summary: pending
-canonical_detailed: pending
+frozen_protocol: Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md
+canonical_summary: Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md
+canonical_detailed: Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/detailed.md
 ```
 
-> **当前状态：**研究问题、测量对象、判定规则和结论边界已经人工审计；正式
-> 实验结果尚未形成 canonical `summary.md` / `detailed.md`。本报告说明“怎样
-> 回答”，不提前填写“答案是什么”。
+> **当前状态：**正式实验、证据资格审计和两组中央图已经完成；注册 verdict 为
+> `H2_LC_FAIL_CONTROL_DEGRADATION`。下面的结果性认识更新仍是 AI 草案，等待
+> 研究者确认；确认前不生成 problem focus。
 
 ## 1. 一句话直觉
 
@@ -93,8 +93,9 @@ $$
 
 ### 4.1 先得到合法差分，再排除旧状态可线性预测部分
 
-Qwen3-8B 有 36 个 block，隐藏宽度 $d=4096$。在同一个答案前决策 token，
-对第 $\ell$ 个 block 定义：
+Qwen3-8B 有 36 个 block，隐藏宽度 $d=4096$。E01 发现第 1 层写入前旧状态
+$X_1$ 在该 token 上结构性恒定，无法满足冻结标准化，因此 E02 在确认标签打开前
+将注册比较范围固定为 blocks 2--36；对第 $\ell$ 个注册 block 定义：
 
 这里 **block** 是 Transformer 重复堆叠的一层计算；**attention** 是从上下文
 聚合信息的子模块；**residual 状态**是各子模块共同读写的 token 向量；
@@ -108,7 +109,7 @@ $$
 
 | 符号 | 形状 | 白话含义 | 来源 |
 | --- | ---: | --- | --- |
-| $\ell\in\{1,\ldots,36\}$ | 标量 | block 编号 | 已知索引 |
+| $\ell\in\{2,\ldots,36\}$ | 标量 | 注册比较的 block 编号 | 已知索引 |
 | $h_\ell$ | $4096$ | 本层 attention 写入前的 residual 状态 | 模型提取 |
 | $a_\ell$ | $4096$ | attention 输出投影后、加回 residual 前的写入 | 模型提取 |
 | $N_\ell$ | 映射 | 本层 post-attention RMSNorm | 冻结模型组件 |
@@ -192,12 +193,12 @@ I_\ell
 $$
 
 第一项是桥接事实必要时的远近差；第二项是桥接事实不必要时的同类位置控制。
-最终主指标比较预先固定的深层 blocks 25--36 与浅层 blocks 1--12：
+最终主指标比较预先固定的深层 blocks 25--36 与浅层 blocks 2--12：
 
 $$
 T_{depth}
 =\operatorname{median}_{\ell=25}^{36}I_\ell
--\operatorname{median}_{\ell=1}^{12}I_\ell.
+-\operatorname{median}_{\ell=2}^{12}I_\ell.
 $$
 
 $T_{depth}>0$ 的点估计表示深层交互更大；正式结论必须由以完整 world 为单位的
@@ -235,11 +236,11 @@ $r_{eff}$ 表示整条谱相当于多少个同等活跃方向；$r_{80}^{var}$ �
 更新方差所需的最少方向数。二者都是**表征能量秩**，不使用答案标签，也不是
 “多少维足以读出答案”的任务秩。
 
-为了让 36 层在同一方向坐标中比较，只用 TRAIN 构造公共激活基：
+为了让 35 个注册层在同一方向坐标中比较，只用 TRAIN 构造公共激活基：
 
 $$
 \Sigma_{common}
-=\frac1{36}\sum_{\ell=1}^{36}
+=\frac1{35}\sum_{\ell=2}^{36}
 \frac{\Sigma_{D,\ell}^{TRAIN}}
 {\operatorname{tr}(\Sigma_{D,\ell}^{TRAIN})},
 \qquad
@@ -251,45 +252,69 @@ $\operatorname{tr}$ 是总方差；逐层除以总方差后再等权平均，避
 各层投影后的逐方向能量曲线使用同一横轴；显示时可用固定 9-rank 平滑，但所有
 计算和判定使用原始数据。
 
-## 6. 怎样读最终结果
+## 6. 正式结果：交互增强，但目标单元的绝对增益下降
 
-结果返回后，正文只保留两张承担不同问题的图：
+任务能力、桥接依赖、四卡表征身份、确认前冻结和证据清单全部通过，因此这次
+结果具备正式解释资格。五个注册量如下，单位均为 `nats/example`：
 
-1. **功能图：**36 层四条 $G_{\ell,c}$ 曲线、$I_\ell$ 曲线，以及
-   $T_{depth}$ 和四个具名守卫的 95% 区间。它回答深层是否增加更多远程必要
-   目标可访问性。
-2. **表征图：**36 层 $r_{eff}$、$r_{80}^{var}$、总方差和公共基逐方向能量
-   曲线；层越深颜色越深。它只描述更新几何。
+| 注册量 | 点估计与配对 95% 区间 | 直接含义 |
+| --- | ---: | --- |
+| $T_{depth}$ | +0.006102 [0.004119, 0.007669] | 深层差中差显著大于浅层 |
+| $M_D$ | +0.003328 [0.001715, 0.004508] | 深层交互本身为正 |
+| $A_{2F}$ | **-0.011422 [-0.013994, -0.009812]** | 深层远程两跳绝对增益反而下降 |
+| $T_{depth}^{head}$ | +0.018116 [0.014273, 0.021431] | 线性 headroom 校正后仍为正 |
+| $T_{cap}$ | +0.001621 [-0.000873, 0.002821] | 与同预算错配修正的区分仍不精确 |
 
-模型首先必须通过任务能力和桥接依赖检查；失败时结论是 `Insufficient`，而不
-是 H2-LC 反例。H2-LC 的主判定量是 $T_{depth}$；其余守卫分别排除深层交互仅由
-控制条件恶化、远程两跳没有绝对增长、旧状态损失余量不同、或任意同预算修正
-支路都会改善等解释。完整阈值与 2,000 次配对 bootstrap 合同见 Frozen Protocol。
+因此，不能只看到 $T_{depth}>0$ 就说“深层新增了更多长程信息”。差中差可以因为
+四个条件的相对移动而变大；本轮真正希望增长的 $2F$ 绝对新增可访问量却显著
+下降。冻结判定把该结果映射为 `H2_LC_FAIL_CONTROL_DEGRADATION`。
 
-**当前结果：`AWAITING_CANONICAL_RESULTS`。**目前不能填写 Pass、Fail、
-Insufficient，也不能由尚未返回的谱形状推进到 Router。
+![逐层新增可访问性与注册判据](layerwise_long_range_added_accessibility/figures/figure_1_layerwise_accessibility.png)
 
-## 7. 当前认识、边界与唯一下一决策
+图 A 保留 blocks 2--36 的四条条件曲线，图 B 是逐层 $I_\ell$，图 C 是五项注册
+区间。它能支持上述具名 Fail，但不能说明哪个向量方向存储了知识，也不能证明
+模型原生使用线性读出信号。
 
-### 当前已经固定的认识
+## 7. 表征谱结果：非单调重分配，不是一个统一低秩结论
 
-1. $U=Z-X$ 是同层、同坐标的精确计算写入，但不能自动称为新增信息。
-2. $R_U$ 去掉旧状态可线性预测部分；留出 $g/G$ 再检验它是否增加目标概率。
-3. $I_\ell$ 用一跳位置效应控制两跳位置效应；$T_{depth}$ 承担正式深浅比较。
-4. 表征秩与公共基只描述同一交互更新的几何，不能替代目标增益。
+CONFIRMATION 上，$r_{eff}$ 从 block 2 的 18.77 到 block 9 的 350.76；
+$r_{80}^{var}$ 从 10 到 338。代表性层为：
+
+| block | $r_{eff}$ | $r_{80}^{var}$ | trace |
+| ---: | ---: | ---: | ---: |
+| 2 | 18.77 | 10 | 610.19 |
+| 12 | 260.79 | 279 | 123.51 |
+| 25 | 52.04 | 36 | 415.46 |
+| 36 | 220.89 | 181 | 179.38 |
+
+公共基前 32 个方向在不同层保留的 CONFIRMATION 能量差别很大：block 2 为
+74.18%，block 12 为 5.85%，block 25 为 53.81%，block 36 为 8.56%。因此
+当前更准确的描述是“层间发生明显但非单调的谱重分配”，而不是“新增表征始终
+低秩”或“越深越低秩”。H1-REP 没有预注册阈值，本轮不能把这些数值升级为
+H1 Pass/Fail。
+
+![表征秩与公共基能量](layerwise_long_range_added_accessibility/figures/figure_2_representation_rank_common_basis.png)
+
+## 8. 认识更新、边界与唯一下一决策
+
+### 待研究者确认的唯一认识更新
+
+> 在当前 Qwen3-8B、关系任务、答案前 token 和线性读出族中，深层的“必要性 ×
+> 距离”交互虽然更强，却没有带来更大的远程两跳绝对新增可访问量；因此交互量
+> 不能单独作为“深层学到更多长程新信息”的度量。
 
 ### 不能推出什么
 
-- 不能证明确定性网络创造新的 Shannon 信息或事实知识。
+- 不能说深层总信息更少，或深层没有产生任何新表征。
 - 不能把 $U$、$R_U$、$D_\ell$ 或协方差谱称为知识本身。
-- 不能由低表征有效秩推出少数方向足以读出目标。
-- 不能证明模型原生使用该线性可读信号，也不能推出专家效用或 Router 收益。
+- 不能由局部低秩层推出少数方向足以完成目标读出。
+- 不能证明模型原生使用该信号，也不能推出专家效用或 Router 收益。
 
 ### 唯一下一决策
 
-待正式结果和证据资格审计完成后，只按冻结合同把 H2-LC 映射为 Pass、具名
-Fail 或 Insufficient，并写出一条结果性认识更新；在此之前不以谱形状推进到
-Router。
+在任何 Router 实验之前，先决定是否把下一问题改成直接围绕
+$G_{\ell,2F}$ 的逐层绝对新增可访问量，并继续用同预算、目标无关修正作为匹配
+对照；不要再以差中差 $I_\ell$ 的上升单独定义新增知识增长。
 
 ### 来源
 
@@ -297,5 +322,6 @@ Router。
 - **前序负向证据：**[方差区间报告](../../0810/docs/DAILY_SUMMARY_ADVISOR_VARIANCE_INTERVAL_20260810.md)
 - **前序局部度量：**[第 25 层新增可访问性日报](../../0810/docs/daily_report_layer25_conditional_innovation.md)
 - **Anchor：**[A15_08_01 中文版](../../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor_cn.md)
-- **Frozen Protocol：**[A15_08_01_E01](../../../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E01_layerwise_long_range_gain_and_representation_rank/protocol.md)
-- **Canonical Summary / Detailed：**等待正式实验生成。
+- **E01 标准化守卫记录：**[Summary](../../../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E01_layerwise_long_range_gain_and_representation_rank/summary.md)
+- **Frozen Protocol：**[A15_08_01_E02](../../../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md)
+- **Canonical Result：**[Summary](../../../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md) / [Detailed](../../../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/detailed.md)
