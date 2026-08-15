@@ -6,7 +6,7 @@ Thinking Card 来源：[16_00_switch_lb_gradient_conflict_thinking_card_cn.md](1
 
 A16 研究如何在维持稀疏专家可用负载的同时，不减慢语言模型学习或阻碍专家形成。已有证据说明真实的 token 共享 Router 输入分量会即时维持冻结 Vanilla 的坍缩，但它没有判断可微负载目标、语言模型目标、AdamW 历史或硬路由反馈中的哪一项形成了该状态。
 
-唯一决策问题是：**在最早 100M token 内，从完全相同的参数、优化器状态和全局训练 batch 出发，加入 Switch 风格负载均衡梯度是否一边改善硬专家负载，一边使下一步 held-out NLL 变差，并在受影响的 Router 参数组中出现 LM/LB 原始梯度负余弦？**
+唯一决策问题是：**在注册的早期、中期和后期状态中，从完全相同的参数、优化器状态和全局训练 batch 出发，加入 Switch 风格负载均衡梯度是否一边改善硬专家负载，一边使下一步 held-out NLL 变差；running-centering 是否同时减少该代价以及 Router-source、Gate 与路由后专家更新路径中的冲突？**
 
 这里的“梯度冲突”是语言模型（LM）目标与负载均衡（LB）目标在 Gate 或 Router 上游共享参数中的方向相反，不是 A07 在专家参数内部测量的 common/rare 梯度冲突。Pass 使非梯度负载控制成为第一修复；Fail 保留辅助 LB 或转向 hard/soft 控制失配；影子状态不一致或全局梯度不完整则为 Insufficient。
 
@@ -45,13 +45,13 @@ $$
 
 ## 5. Computational Realization
 
-使用已验证的四层、隐藏维 768、八专家、top-1 DCLM MoE，以及配对的 Vanilla-Full 与 Centered-Full 条件。在两个 seed 的注册早期状态上，重放完全相同的全局 optimizer batch，包括全部梯度累积 microbatch 与分布式归约；分别计算 LM-only 和 LB-only 原始梯度，不推进数据游标或优化器。
+使用已验证的四层、隐藏维 768、八专家、top-1 DCLM MoE，以及配对的 Vanilla-Full 与 Centered-Full 条件。在两个 seed 的 50M、6B、10B 注册状态上，重放完全相同的全局 optimizer batch，包括全部梯度累积 microbatch 与分布式归约；分别计算 LM-only 和 LB-only 原始梯度，不推进数据游标或优化器。
 
-复制完整参数、AdamW moment、scheduler、随机数状态和 Router buffer。分别执行 LM-only 与 LM+LB 影子一步，再在同一组未用于更新的独立文档和固定负载 token 上评估。逐层记录 Gate 权重与 Router 输入上游参数的余弦、范数和实际更新对齐；把梯度投影到独立注册的 DC 与去中心残差方向，以衔接已完成的 DC 审计。专家参数没有直接 LB 梯度，其变化属于后续路由反馈问题。
+复制完整参数、AdamW moment、scheduler、随机数状态和 Router buffer。分别执行 LM-only 与 LM+LB 影子一步，再在同一组未用于更新的独立文档和固定负载 token 上评估。逐层记录 Gate 权重与 centering 前实际 Router-source 张量的余弦、范数和实际更新对齐；在固定、按领域分层的 Web of Science 文档上测量被送入同一专家的文档组之间的 LM 梯度冲突。专家参数没有直接 LB 梯度；若出现直接梯度是实现失败，专家侧测量属于路由中介效应。
 
 ## 6. Minimal Falsification Tests
 
-决定性比较是配对影子一步的 $\Delta NLL_{LB}$。结果在预注册早期状态和文档上聚合，但两个 seed 分开报告。主规则不设人为 practical margin：两个 seed 各自的文档 bootstrap 95% 下界都必须大于零。机制支持还要求同一参数组的注册全局 batch 余弦为负，并且最忙专家占比配对下降。完整 batch 身份、精确状态复制、优化器重放、独立评估文档、确定性 Router buffer 与梯度重构是硬守卫。
+决定性比较是 50M、6B、10B 三个阶段中 Centered 对配对影子一步 $\Delta NLL_{LB}$ 的中介效应，阶段与 seed 分开报告。主规则不设人为 practical margin：两个 seed 各自冻结的阶段中位数文档 bootstrap 95% 下界都必须大于零，并且每个 seed 至少两个阶段方向一致。Router-source/Gate 冲突和路由后 WoS 专家冲突分别给 typed verdict。完整 batch 身份、精确状态复制、优化器重放、独立评估文档、确定性 Router buffer 与梯度重构是硬守卫。
 
 known-good 包括人为构造的相反标量目标，以及能够降低已构造硬失衡的 LB-only 扰动；known-bad 包括相同目标、零 LB 系数和打乱的 LB 梯度。负余弦但 $\Delta NLL_{LB}$ 不为正支持有益正则解释；$\Delta NLL_{LB}>0$ 但负载不改善支持无效干扰。该测试不能选出最佳长期控制器。
 
@@ -61,17 +61,17 @@ known-good 包括人为构造的相反标量目标，以及能够降低已构造
 
 迁入的冻结反事实裁定为 `necessary_only`：Vanilla 去掉独立估计的真实均值后，注册深层最忙专家占比下降 0.68678，配对 95% 区间为 [0.68435, 0.68922]，远高于匹配随机 q95 0.18326；给独立训练的 Centered 加回中心则没有超过随机对照。公共分量因此即时维持当前 Vanilla 坍缩，但静态加回不能重建已经分别适配的训练路径。[迁入的子 Anchor](subanchors/16_00_01_dc_sustainer_boundary_anchor_cn.md)和[结果记录](/Projects/from-attention-to-search/main/experiments/A16/A16_00_01_E01_dc_sustainer_audit/summary_cn.md)保存该边界。
 
-同一审计没有发现“坍缩后 LB 梯度普遍归零”的统一规律：局部 softmax 杠杆随层和检查点变化。LM/LB 全局 batch 梯度、AdamW 实际更新和影子一步 NLL 尚未测量，因此 A16_00 仍未获得实验裁定。
+完整 12 单元审计否定“centering 在所有阶段普遍减少 LB 冲突”的解释。50M 时，Vanilla 支付了可复现的 +0.000845/+0.000617 nat/token 有效 LB 影子代价，Centered 无法区别于零，两个 seed 的 Centered 中介均为正；6B 点估计反转，10B 只有 seed 29 精确为正。seed 17 的注册三阶段中位数区间跨零、seed 29 通过，因此两 seed 结果裁定为 Fail。Router 共享路径与专家内部冲突条款也都失败。[多阶段结果](/Projects/from-attention-to-search/main/experiments/A16/A16_00_02_E01_multistage_gradient_pathway_audit/summary_cn.md)。
+
+实现审计同时发现，源 30B 轨迹并未真正收到配置中的 LB 梯度：re-entrant activation checkpointing 使嵌套辅助张量脱离计算图。A16 的有效结果因此是冻结状态上精确、真正可微的反事实影子一步，不能用来声称原轨迹在有效 LB 下训练。
 
 ## 8. Claim Boundary And Next Decision
 
-已支持：DC 是冻结 Vanilla 当前坍缩的方向特异即时维持因素，相同系数不等于相同硬负载控制。仍未解决：辅助 LB 是否付出 held-out 学习代价、是否属于有益正则，或是否只是无法改变饱和硬路由。
+已支持：DC 会即时维持冻结 Vanilla 坍缩；centering 会消除一个可复现的早期可微 LB 代价；LB 效应强烈依赖训练阶段。已否定：centering 并未跨两个 seed 和所有阶段普遍减少共享路径或专家内部冲突。源训练没有施加有效 LB，因此长期 LB 作用仍未解决。
 
-本 Anchor 不能声称所有辅助损失都有害、动态 expert bias 已经更好、早期一步效应会持续到长训练，或负载更好就会形成有用专家。动态 expert bias 只是在 A16_00 支持有害干扰或 hard/soft 失配后的研究者首选干预。
+本 Anchor 不能声称所有辅助损失都有害、动态 expert bias 已经更好、影子一步效应会持续到长训练，或负载更好就会形成有用专家。动态 expert bias 只是在 A16_00 支持有害干扰或 hard/soft 失配后的研究者首选干预。
 
-研究者已经批准 Vanilla-Full 与 Centered-Full 的早期梯度—影子更新实验，
-授权范围包括 Protocol、实现、smoke 与直接执行。唯一下一决策改为：在获得
-合格结果后，选择 dynamic expert bias、保留可微 LB，或修复 hard/soft 控制
-失配。完成标准是两个 seed、两种模型条件都保持全局 batch 与完整 optimizer
-状态一致，并按冻结规则重建 $\Delta NLL_{LB}$、硬负载变化和 batch 梯度余弦。
-恢复时先冻结并执行该 Protocol，不先启动 dynamic bias 长训。
+多阶段审计已经完成。唯一下一决策是：Centered + dynamic expert bias 是否能比
+Centered + 真正可微 LB 和 Centered 无额外负载控制更高效地维持可用硬负载。
+比较必须匹配 token、初始化、数据顺序、capacity 与计算量，并联合报告 held-out
+NLL/FLOP 和硬专家负载。不得把当前一步审计解释为 dynamic bias 已经更优。

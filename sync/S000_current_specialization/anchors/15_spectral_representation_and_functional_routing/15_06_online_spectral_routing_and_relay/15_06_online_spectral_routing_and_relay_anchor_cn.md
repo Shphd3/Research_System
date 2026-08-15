@@ -2,10 +2,10 @@
 anchor_id: 15_06_online_spectral_routing_and_relay
 legacy_anchor_id: 15_06_dynamic_online_spectral_routing
 parent_line: 15_spectral_representation_and_functional_routing
-status: completed_local_random_control_30b_single_seed_recorded
+status: completed_30b_downstream_evaluation_recorded
 canonical_language: zh
 companion_en: 15_06_online_spectral_routing_and_relay_anchor.md
-updated: 2026-08-08
+updated: 2026-08-09
 ---
 
 # A15_06 在线频谱路由与接力
@@ -66,22 +66,32 @@ covariance 排名身份，同时把相邻目标的全部 principal-angle 运动�
 Local-HMT 相对该随机对照只在 seed 17 明确改善；seed 29 点估计反转且区间跨零。
 随机臂并不更难追踪。因此固定 H/M/T 排名身份同样没有获得跨 seed 的功能证书。
 
-30B 延长训练还暴露了另一类 Router 失败：同为 $\lambda_{LB}=0.01$，Vanilla
-深层在约 50M--100M token 已接近单专家，而 Centered 仍保持广泛使用。冻结 E04
+30B 延长训练还暴露了另一类 Router 失败：虽然配置和日志均记录
+$\lambda_{LB}=0.01$，A16 后续实现审计发现重计算路径使嵌套 LB 辅助张量没有
+进入反向，因此这些源训练没有收到有效 LB 参数更新。Vanilla 深层仍在约
+50M--100M token 已接近单专家，而 Centered 保持广泛使用。冻结 E04
 根因审计裁定为 `necessary_only`：Vanilla 去独立真实均值使深层最忙专家占比
 下降 0.68678 [0.68435, 0.68922]，高于匹配随机 q95 0.18326；给独立训练的
 Centered 加回保存中心则未超过随机 q95。因此公共分量即时维持当前 Vanilla
 坍缩，但学习路径适配使简单的双向静态偏置解释不成立。
 
+seed 17 的 30B 八任务下游评估也已完成。没有任何模型通过相对 Centered-Full
+的广泛迁移规则。Local-HMT 的导航性宏平均最高，并在 ARC-Easy、LAMBADA 上
+获得配对区间高于零的改善，但其 covariance 身份在任何任务上都没有可靠优于
+Local-Random。Relay-HMT 相对 Local-HMT 或 Relay-Random 都没有可靠正收益，
+且在 ARC-Easy 明确更差。因此下游证据仍是任务特异的，不支持恢复 H2 或 H3。
+
 Protocol：[A15_06_E01](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E01_10b_online_spectral_routing/protocol_cn.md)
 
 身份对照结果：[A15_06_E02](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E02_local_random_identity_control/summary_cn.md)
+
+30B 下游结果：[A15_06_E04](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E04_30b_downstream_evaluation/summary_cn.md)
 
 迁入 A16 的负载控制结果：[A16_00_01_E01](/Projects/from-attention-to-search/main/experiments/A16/A16_00_01_E01_dc_sustainer_audit/summary_cn.md)
 
 ## 8. Claim Boundary And Next Decision
 
-本实验只能建立注册的四层 DCLM、两个 seed、10B终点效应，不能建立 H/M/T 的普遍语义、规模普适性、组合计算或专家专业化的唯一因果解释。E02 已关闭 Local-Random 缺口，并且不支持把 Local-HMT 的弱点估计优势归因于 covariance 排名身份。
+现有实验建立了四层 DCLM、两个 seed 的10B终点效应，以及 seed 17 的30B下游任务向量；它们不能建立 H/M/T 的普遍语义、规模普适性、组合计算或专家专业化的唯一因果解释。E02 已关闭 Local-Random 缺口，并且不支持把 Local-HMT 的弱点估计优势归因于 covariance 排名身份。
 
 A15 不再拥有负载控制修复决策，但会在另一个任务中独立继续。
 [A16_00](../../16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/16_00_switch_lb_gradient_conflict_anchor_cn.md)

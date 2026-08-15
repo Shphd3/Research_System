@@ -11,14 +11,14 @@ Projects/from-attention-to-search/main/problem_anchors/
 | Line | Current registry | Role |
 |---|---|---|
 | 05 | `main/problem_anchors/05_failure_mechanism/research_map.md` | Ordinary top-1 failure priors. |
-| 06 | [synchronized A06 registry](anchors/06_geometry_proxy_preservation/research_map.md) -> `main/problem_anchors/06_geometry_proxy_preservation/research_map.md` | Five-parent primary chain; active anchor is `06_04`. |
+| 06 | [synchronized A06 registry](anchors/06_geometry_proxy_preservation/research_map.md) -> `main/problem_anchors/06_geometry_proxy_preservation/research_map.md` | Five-parent primary chain; the frozen CrossCodeEval clause failed and the current decision is whether to test training-time selective sharing. |
 | 07 | `main/problem_anchors/07_features_overlap/` | Functional interference/value diagnostics. |
 | 11 | `main/problem_anchors/11_informative_future_branch_mechanism/README.md` | Stable objective-level MTP mechanism baseline. |
 | 12 | [synchronized A12 registry](anchors/12_structured_compositional_mtp_workload/README.md) -> `main/problem_anchors/12_structured_compositional_mtp_workload/README.md` | E04 NTP Stage A failed the capability and row-removal validity gates; decide whether to close or redesign. |
 | 13 | [synchronized A13 registry](anchors/13_mtp_task_property_decomposition/README.md) -> `main/problem_anchors/13_mtp_task_property_decomposition/README.md` | Hard relay is sufficient; soft relay lacks a common non-saturated comparison window. |
 | 14 | [synchronized A14 registry](anchors/14_tree_low_rank_language_structure/README.md) -> `main/problem_anchors/14_tree_low_rank_language_structure/README.md` | Conditional functional-rank theory retained; global linear propagation closed; finite secant bridge is current. |
-| 15 | [synchronized A15 registry](anchors/15_spectral_representation_and_functional_routing/README.md) -> `main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` | Seven sibling parents separate Router-input geometry, learning dynamics, representation atlases, independent middle/tail questions, functional admission, and online routing; A15_04 is the active geometry review. |
-| 16 | [synchronized A16 registry](anchors/16_load_control_gradient_interference/README.md) -> `main/problem_anchors/16_load_control_gradient_interference/README.md` | Load-control gradient interference remains independent of A15. |
+| 15 | [synchronized A15 registry](anchors/15_spectral_representation_and_functional_routing/README.md) -> `main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` | Eight active sibling parents (`15_00`, `15_01`, `15_02`, `15_04`--`15_08`); `15_03` is archived. A15_08 is active, and the next decision is whether to reformulate the successor around direct absolute $G_{\ell,2F}$. |
+| 16 | [synchronized A16 registry](anchors/16_load_control_gradient_interference/README.md) -> `main/problem_anchors/16_load_control_gradient_interference/README.md` | Two sibling parents (`16_00`, `16_01`); A16_01_01 owns the approved frozen expert-choice-regret gate and remains independent of A15. |
 
 Paths above are relative to `Projects/from-attention-to-search/`.
 

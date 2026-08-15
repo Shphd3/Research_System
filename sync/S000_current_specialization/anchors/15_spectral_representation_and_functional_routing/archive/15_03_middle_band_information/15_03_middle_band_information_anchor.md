@@ -1,16 +1,18 @@
 ---
 anchor_id: 15_03_middle_band_information
 legacy_anchor_id: 15_01_12_middle_band_stability_decomposition
-status: draft_metric_and_threshold_pending_review
+status: archived_unrun
 canonical_language: en
 thinking_card: 15_03_middle_band_information_thinking_card_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
-updated: 2026-08-09
+updated: 2026-08-15
 ---
 
 # A15_03 Is Apparent Middle-Band Stability Real Or An Averaging Artifact?
 
-Researcher judgment: [Chinese Thinking Card](15_03_middle_band_information_thinking_card_cn.md). Candidate experiment: [A15_03_E01 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_03_middle_band_information/A15_03_E01_middle_band_stability_decomposition/protocol.md).
+Researcher judgment: [Chinese Thinking Card](15_03_middle_band_information_thinking_card_cn.md). Historical candidate experiment: [A15_03_E01 Protocol](/Projects/from-attention-to-search/main/experiments/A15/archive/15_03_middle_band_information/A15_03_E01_middle_band_stability_decomposition/protocol.md).
+
+> **State update, 2026-08-15:** the researcher removed this band-level audit from the active route before execution. Archiving is not a Pass, Fail, or evidence update. The active line no longer treats band location as a decision-bearing object.
 
 ## 1. Problem Definition
 
@@ -154,7 +156,7 @@ $e=1$ is the Haar expectation. This is a mandatory direction-identity guard, not
 1. A15_02_06 used the required 512-record bank and actual $\Delta n_\ell$. Its raw conditional-fine local-rank centroid moved from 0.370 early to 0.471 late, while the broad target-common redistribution survived and fine-specific nonlinear use did not. The completed record did not register $D_M$ or a broad F2--F8 shared-middle test. [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E01_mlp_parameter_geometry_and_semantic_location/summary.md) and [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E01_mlp_parameter_geometry_and_semantic_location/detailed.md).
 2. A15_02_06's rank-256 parameter-only commonality was about 1.04 times Haar in the middle, versus 2.20 in head and 3.26 in tail. That makes H3 plausible but does not adjudicate the rank-1,792 F2--F8 union or semantic capture.
 3. A15_02_07's matched [TAX](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full/summary.md) and [COMP](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E02_controlled_composition_full/summary.md) results found target-common spectral change but no stable complex-specific relocation or conditionally new linear information. They do not distinguish absolute-scale, internal-cancellation, or direction-rotation explanations for middle.
-4. A15_04 is an unexecuted broad shared-tail design. Its middle space is only a control and its verdict is tail-specific. This Anchor neither amends nor borrows that verdict. [Anchor](../15_04_tail_band_information/15_04_tail_band_information_anchor.md) and [Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_04_tail_band_information/A15_04_E01_shared_tail_geometry/protocol.md).
+4. A15_04 is now a completed broad shared-tail Fail. Its positive shared-middle change remains a control observation inside a tail-specific verdict and does not establish middle stability or function. This archived Anchor neither amends nor borrows that verdict. [Anchor](../../15_04_tail_band_information/15_04_tail_band_information_anchor.md) and [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_04_tail_band_information/A15_04_E01_shared_tail_geometry/summary.md).
 5. Earlier A15_05 compatibility and A15_05_05 matched-training results did not admit fixed covariance bands as functional routing coordinates. Therefore even a true-stability Pass here would remain geometry-only.
 
 The A15_03 decomposition has not been implemented or run. $D_M$, $g_M$, $D_{shape}$, within-middle transport, and shared-middle semantic capture are `NOT RUN`.
@@ -165,4 +167,4 @@ This Anchor may distinguish a stable absolute rank curve with shared orientation
 
 Even `true_middle_stability` only preserves a later question: whether a function-aligned selection inside the stable middle predicts held-out expert-update or task utility beyond native and random controls. It does not reopen the failed fixed-band dispatch route and does not establish that middle is useful.
 
-**Exactly one next decision:** approve or correct the candidate [Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_03_middle_band_information/A15_03_E01_middle_band_stability_decomposition/protocol.md). **Completion criterion:** the researcher explicitly decides the primary semantic object, $D_M$, the proposed $\delta_M=\log(1.25)$ margin, raw-$\Delta n$ provenance, Haar construction, and typed verdict rules while preserving separation from A15_04. **Resume action:** only after all Protocol blocks are confirmed, request implementation or smoke permission as a separate scope; no execution is authorized now.
+**Archive boundary:** this proposal was never implemented or run and owns no scientific verdict. It may be consulted only for historical metric definitions; it is not an active reopening option or next decision. The historical [Protocol](/Projects/from-attention-to-search/main/experiments/A15/archive/15_03_middle_band_information/A15_03_E01_middle_band_stability_decomposition/protocol.md) remains non-executable.

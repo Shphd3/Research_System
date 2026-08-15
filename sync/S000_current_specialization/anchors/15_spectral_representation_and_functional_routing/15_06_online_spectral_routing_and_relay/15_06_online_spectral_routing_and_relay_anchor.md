@@ -2,10 +2,10 @@
 anchor_id: 15_06_online_spectral_routing_and_relay
 legacy_anchor_id: 15_06_dynamic_online_spectral_routing
 parent_line: 15_spectral_representation_and_functional_routing
-status: completed_local_random_control_30b_single_seed_recorded
+status: completed_30b_downstream_evaluation_recorded
 canonical_language: en
 thinking_card: 15_06_online_spectral_routing_and_relay_thinking_card.md
-updated: 2026-08-08
+updated: 2026-08-09
 ---
 
 # A15_06 Online Spectral Routing And Relay
@@ -137,9 +137,12 @@ clearly beat this control only in seed 17; seed 29 reversed in point estimate
 and crossed zero. The random tracker was not disadvantaged. Fixed H/M/T rank
 identity therefore did not obtain a reproducible functional certificate.
 
-The 30B extension exposed a separate Router failure: despite the same
-$\lambda_{LB}=0.01$, Vanilla deep layers were already near single-expert use by
-50M--100M tokens, while Centered remained broad. The frozen E04 root-cause
+The 30B extension exposed a separate Router failure: although all configs and
+logs recorded $\lambda_{LB}=0.01$, a later A16 implementation audit showed that
+re-entrant checkpointing detached the nested LB auxiliary tensor from backward.
+The source trajectories therefore did not receive an effective LB update.
+Vanilla deep layers were already near single-expert use by 50M--100M tokens,
+while Centered remained broad. The frozen E04 root-cause
 audit returned `necessary_only`: subtracting the independently fitted true
 mean from Vanilla reduced deep-layer busiest-expert share by 0.68678
 [0.68435, 0.68922], above matched-random q95 0.18326; adding the saved center
@@ -147,16 +150,26 @@ to a separately trained Centered Router did not exceed its random q95. Thus
 the common component immediately sustains current Vanilla collapse, while
 learned-path adaptation prevents a bidirectional static-offset explanation.
 
+The seed-17 30B eight-task downstream evaluation is complete. No arm passed the
+registered broad-transfer rule over Centered-Full. Local-HMT had the highest
+navigation-only macro accuracy and exceeded Centered on ARC-Easy and LAMBADA
+with paired intervals above zero, but its covariance identity did not beat the
+matched Local-Random control on any task. Relay-HMT had no reliable positive
+task versus Local-HMT or Relay-Random and was reliably worse on ARC-Easy. The
+downstream reading is therefore task-specific and does not rescue H2 or H3.
+
 Protocol: [A15_06_E01](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E01_10b_online_spectral_routing/protocol.md)
 
 Identity-control result: [A15_06_E02](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E02_local_random_identity_control/summary.md)
+
+30B downstream result: [A15_06_E04](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E04_30b_downstream_evaluation/summary.md)
 
 Migrated load-control result: [A16_00_01_E01](/Projects/from-attention-to-search/main/experiments/A16/A16_00_01_E01_dc_sustainer_audit/summary.md)
 
 ## 8. Claim Boundary And Next Decision
 
-The completed experiments establish only four-layer DCLM, two-seed, 10B
-terminal effects under the registered tracker. They cannot establish universal
+The completed experiments establish four-layer DCLM, two-seed 10B terminal
+effects and a seed-17 30B downstream vector under the registered tracker. They cannot establish universal
 H/M/T semantics, universal scale transfer, compositional computation, or
 expert specialization as the unique cause of an NLL change. E02 closes the
 Local-Random gap and does not support attributing the weak Local-HMT point

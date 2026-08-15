@@ -1,7 +1,7 @@
 ---
 anchor_id: 15_04_tail_band_information
 legacy_anchor_id: 15_01_11_shared_tail_semantic_relocation
-status: researcher_band_partition_confirmed_metric_pending
+status: completed_fail_local_random_or_nontail_relocation
 canonical_language: en
 companion_language: zh
 thinking_card: 15_04_tail_band_information_thinking_card_cn.md
@@ -31,7 +31,7 @@ The researcher has now fixed the complete local parameter spectrum as 16 equal 2
 
 > For the attention-induced actual MLP-input increment in frozen Qwen3-8B, does late-layer conditional-fine variance become more enriched than early-layer variance in a cross-layer shared broad tail F9--F16, beyond dimension-matched random geometry and the shared head F1 and middle F2--F8, while the full F1--F16 pattern remains visible?
 
-The representation is $\Delta n_\ell=RMSNorm_\ell(x_\ell+a_\ell)-RMSNorm_\ell(x_\ell)$. It is the change in the current layer's native MLP input caused by inserting the observed attention write $a_\ell$ while holding the pre-write residual $x_\ell$ fixed. It is not a subtraction of adjacent-layer covariance and does not by itself mean information-theoretic novelty. The semantic statistic is the within-parent between-child covariance of $\Delta n_\ell$, equally weighted over eight parents. Centering within each parent removes that parent's common class mean; it does not remove all information already present in earlier layers. The fixed set is the 512-record A15_02_06 set; the claim is restricted to it.
+The representation is $\Delta n_\ell=RMSNorm_\ell(x_\ell+a_\ell)-RMSNorm_\ell(x_\ell)$. It is the change in the current layer's native MLP input caused by inserting the observed attention write $a_\ell$ while holding the pre-write residual $x_\ell$ fixed. It is not a subtraction of adjacent-layer covariance and does not by itself mean information-theoretic novelty. The researcher has confirmed one primary semantic object only: the within-parent between-child covariance of $\Delta n_\ell$, equally weighted over eight parents. Centering within each parent removes that parent's common class mean; it does not remove all information already present in earlier layers. The fixed set is the 512-record A15_02_06 set; the claim is restricted to it.
 
 Pass permits a separate functional Protocol. Fail closes the broad shared-tail explanation. Insufficient evidence permits only provenance or estimation repair.
 
@@ -43,7 +43,7 @@ Pass permits a separate functional Protocol. Fail closes the broad shared-tail e
 4. Raw head, middle, and tail captures are not directly comparable because their dimensions are 256, 1,792, and 2,048. For any fixed covariance, their random expected capture fractions are respectively $1/16$, $7/16$, and $8/16$. A fair comparison must therefore divide capture by the matched random expectation.
 5. Geometric enrichment does not imply MLP use. A low-gain space can contain readable variance while exerting little current output effect.
 
-The band partition is `HUMAN_CONFIRMED`. The random-normalized broad-band metric below is an `AI_PROPOSAL` awaiting Protocol review.
+The band partition and random-normalized broad-band metric were Protocol-confirmed and have now been executed.
 
 ## 3. Falsifiable Hypotheses
 
@@ -52,6 +52,8 @@ The band partition is `HUMAN_CONFIRMED`. The random-normalized broad-band metric
 G0 is an early-versus-late statement, not a claim of monotonic layer-by-layer movement.
 
 **G1 — broad shared-tail geometry.** After correcting for band dimension, late-layer conditional-fine variance increases its enrichment in the cross-layer shared F9--F16 tail more than in shared F1 head or shared F2--F8 middle, and more than a matched random spectral partition.
+
+The global shared space carries the only G1 verdict. Early-internal, late-internal, early-to-late, and late-to-early measurements diagnose whether any shared structure is globally stable, forms only late, or redirects between depth stages; none can replace or rescue the global verdict.
 
 **Strongest rival.** The apparent tail effect is explained by tail's larger dimension, by a generic shared orientation, or by local rank redistribution without a common cross-layer direction. This rival predicts no tail-specific enrichment after matched random and head/middle controls.
 
@@ -67,7 +69,7 @@ P_{\ell,M}=\sum_{k=2}^{8}P_{\ell,k},\qquad
 P_{\ell,T}=\sum_{k=9}^{16}P_{\ell,k},
 $$
 
-with ranks $r_H=256$, $r_M=1792$, and $r_T=2048$. Split layers into two disjoint depth-balanced groups. For an evaluated layer in group $f$, construct a shared broad space from only the other group:
+with ranks $r_H=256$, $r_M=1792$, and $r_T=2048$. For the global primary measurement, split blocks 1--35 into odd/even groups. For an evaluated layer in group $f$, construct the shared broad space from only the other group:
 
 $$
 M_G^{(-f)}=\frac{1}{|-f|}\sum_{j\in-f}P_{j,G},\qquad
@@ -75,6 +77,8 @@ Q_G^{(-f)}=\operatorname{TopEig}_{r_G}(M_G^{(-f)}),
 $$
 
 where $G\in\{H,M,T\}$. Shared rank-256 projectors $Q_k^{(-f)}$ are constructed analogously for every F1--F16 band and are reported separately.
+
+Let $E=\{1,\ldots,12\}$ and $L=\{25,\ldots,35\}$. The same odd/even exclusion within $E$ and within $L$ gives early-internal $Q_{G,E}^{(-f)}$ and late-internal $Q_{G,L}^{(-f)}$. For cross-stage transfer, $Q_{G,E}$ is built from all early parameter projectors and evaluated only on late covariances, while $Q_{G,L}$ is built from all late projectors and evaluated only on early covariances. The parameter-only cross-stage overlap $\operatorname{tr}(Q_{G,E}Q_{G,L})/r_G$ distinguishes a persistent orientation from stage rotation. These stage-resolved quantities are diagnostic and do not enter $D_T$.
 
 For conditional-fine covariance $B_{\ell,F}$, broad-space capture and dimension-normalized enrichment are
 
@@ -101,14 +105,14 @@ $D_T>0$ means the broad tail's depth increase exceeds both other broad parameter
 
 ## 5. Computational Realization
 
-1. Freeze the 512 A15_02_06 records and materialize raw 4096-dimensional $\Delta n_\ell$ by deterministic replay because the old response artifacts retain only layer-local eigen-coordinates.
+1. Freeze the 512 A15_02_06 records. The new H100 replay failed exact 5090-cache identity and was excluded; Protocol amendment A2 recovered residual-coordinate $\Delta n_\ell$ only from the original exact-replay eigencoordinates after independently validating the complete saved parameter basis and quantization stability.
 2. Use 16 fixed local parameter bands of width 256. Report for every layer and band: absolute between-class variance per direction, normalized local variance share, shared-band capture, and random-normalized shared-band enrichment.
 3. Separately construct the broad shared H/M/T projectors above. Do not sum independently constructed shared-band captures, because their consensus spaces need not remain mutually orthogonal.
-4. Use odd/even layers among blocks 1--35 as mutually exclusive construction/evaluation groups; block 36 is descriptive only.
-5. Use a matched random 16-band orthogonal partition in each random draw. Its F1, F2--F8, and F9--F16 unions provide dimension-matched H/M/T nulls, and the same draw is applied to every layer.
-6. Use the sealed design/confirmation expression halves and clustered parent/template uncertainty. Directions and layers are repeated measurements, not independent samples.
+4. Use odd/even layers among blocks 1--35 for the global primary fit/evaluation; repeat the exclusion within early and late windows, then measure both early-built-on-late and late-built-on-early transfer. Block 36 is descriptive only.
+5. Use a matched random 16-band orthogonal partition in each random draw. Its F1, F2--F8, and F9--F16 unions provide dimension-matched H/M/T nulls for global and stage-resolved measurements, and the same draw is applied to every layer.
+6. Use the sealed design/confirmation expression halves and clustered parent/template uncertainty. Directions and layers are repeated measurements, not independent samples. Stage-resolved results receive one non-primary interpretation label and cannot change G1.
 
-The full 16-band data are mandatory evidence. The broad H/M/T summary carries the one decision.
+The full 16-band data are mandatory evidence. The global broad H/M/T summary carries the one decision; stage-resolved geometry explains the accepted global result or localizes why it failed.
 
 ## 6. Minimal Falsification Tests
 
@@ -118,18 +122,20 @@ The full 16-band data are mandatory evidence. The broad H/M/T summary carries th
 | Fail: `local_random_or_nontail_relocation` | G0 holds, but broad tail does not beat matched random, or its dimension-normalized increase does not exceed head/middle, or only local F1--F16 redistribution works | close the broad shared-tail interpretation |
 | Insufficient | raw-$\Delta n$ replay, G0, shared-tail estimation, or expression/layer-group reliability is unstable | repair provenance or estimation only |
 
-The decisive falsifier is not whether F16 alone is high. It is whether the F9--F16 broad shared space has a tail-specific depth enrichment after dimension matching. If only the local rank centroid moves, the meeting intuition has not yet yielded a reusable cross-layer coordinate.
+The decisive falsifier is not whether F16 alone is high or whether a late-only space looks strong. It is whether the global F9--F16 broad shared space has a tail-specific depth enrichment after dimension matching. If only the local rank centroid or one stage-local space moves, the meeting intuition has not yet yielded a globally reusable cross-layer coordinate.
 
 ## 7. Current Evidence
 
-1. A15_02_06 found native rank-256 head/middle/tail overlap at 2.20/1.04/3.26 times Haar expectation; its complete band profile was U-shaped, with strongest overlap in the lowest-gain endpoint. This motivates but does not establish the new broad F9--F16 semantic claim. [Result summary](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E01_mlp_parameter_geometry_and_semantic_location/summary.md)
-2. In actual $\Delta n_\ell$, the descriptive raw conditional-fine local-rank centroid moved from 0.370 early to 0.471 late. This is local rank redistribution, not cross-layer direction identity; G0 rechecks the observation on the complete 16-band replay.
-3. A15_02_07 [TAX](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full/summary.md) and [COMP](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E02_controlled_composition_full/summary.md) found no stable complexity-specific relocation or conditionally new linear information.
+1. The local phenomenon reproduces. The median local-rank centroid rises from 0.369909 early to 0.471137 late, giving $T_{rank}=0.101228$ with grouped-bootstrap 95% interval [0.087289, 0.113888]. Local broad-tail enrichment also rises by 0.247581, interval [0.210290, 0.276835].
+2. The global shared broad tail moves in the opposite direction. Its enrichment falls from 1.053568 early to 0.950114 late: $T_T=-0.103453$, interval [-0.142083, -0.076752]. Shared middle rises by 0.228442, so $D_T=-0.331895$, interval [-0.412888, -0.271072]. Actual $T_T$ and late tail enrichment are both below their 512-Haar q95 controls. Odd/even layers and both expression halves all retain the negative tail sign.
+3. The full F1--F16 pattern localizes the mismatch: F9--F13 increase while F14--F16 decrease, especially F16. The registered F9--F16 union therefore fails; a post-hoc narrower tail cannot replace it.
+4. Global odd/even tail consensus overlap is above Haar (0.694019 versus 0.500301), so a cross-layer parameter-tail orientation exists. The semantic result nevertheless fails because late conditional-fine variance is not enriched in it.
+5. Stage diagnostics are `mixed_stage_geometry`: early/late tail projector overlap exceeds Haar, but late-internal and early-built-on-late semantic enrichments do not. This pattern cannot rescue the global Fail.
 
-The broad shared-tail geometry test has not been run.
+The complete evidence and provenance record is [A15_04_E01 summary](/Projects/from-attention-to-search/main/experiments/A15/15_04_tail_band_information/A15_04_E01_shared_tail_geometry/summary.md).
 
 ## 8. Claim Boundary And Next Decision
 
-Even Pass establishes only that, on the frozen 512-record set, late conditional-fine geometry becomes more enriched in a cross-layer shared F9--F16 low-gain space than in dimension-matched random, F1 head, and F2--F8 middle spaces. It does not restore the original claims that depth causes semantic refinement or that the identified space is suitable for Gating. It cannot establish stored knowledge, nonlinear coding, MLP transmission, task utility, or Router benefit.
+A15_04 establishes only that local conditional-fine rank relocation does not enter the registered globally shared F9--F16 tail on this frozen 512-record set. It does not show that tail directions are unused, random, nonfunctional, or unsuitable for every nonlinear method. The positive shared-middle change also does not establish that middle is a functional module. No MLP-use, task-function, deletion, or Router experiment is admissible from this Fail.
 
-**Exactly one next decision:** approve or correct the revised 16-band Protocol contract. **Completion criterion:** explicitly decide (a) deterministic raw-$\Delta n$ replay plus odd/even cross-layer fitting, (b) 512 Haar partitions plus 2,000 grouped bootstrap replicates, and (c) the $D_T$ conjunctive verdict rule; the Protocol must still require all F1--F16 raw and normalized data without post-hoc band selection. **Resume action:** after all Protocol blocks are explicitly confirmed, request implementation and smoke permission separately.
+**Exactly one next decision:** close fixed-band localization as the route from parameter geometry to added information and pass the question to A15_08's residual-relative held-out accessibility criterion. **Completion criterion:** any future coordinate must add frozen-target accessibility beyond the old-state readout and matched controls before functional admission. **Resume action:** do not reopen a middle/tail audit or Router experiment from this Fail.

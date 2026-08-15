@@ -6,21 +6,21 @@ remain the source of truth.
 
 ## Current State
 
-The primary Routing decision is no longer another synthetic initialization or
-anti-collapse method. The controlled chain has reached a real-workload gate:
+The synchronized surface now exposes three independent current decisions:
 
 ```text
-Does unfiltered repository-level code completion contain positive,
-cross-split-stable held-out oracle routing headroom after nuisance controls?
+A06: decide whether to test training-time selective sharing after the frozen
+     CrossCodeEval headroom clause failed.
+A15: decide whether layerwise long-range innovation should be adjudicated by
+     direct absolute G_{ell,2F}, not by a positive interaction alone.
+A16: run the approved two-seed frozen expert-choice-regret gate before any
+     conditional-innovation 30B continuation.
 ```
 
-The active anchor is
-[A06_04 real-workload utility headroom](../../Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md).
-No LLM Router method is justified until this workload premise passes.
-
-The supporting MTP route now extends through A13, and the independent A14
-route records the current conditional functional-rank theory. Neither route
-replaces the A06 real-workload Router gate.
+These lines do not gate one another. A06 owns expert-utility formation on a
+registered workload; A15 owns representation coordinates and functional
+admission; A16 owns load control and the functionally supervised incremental
+Router branch. Geometry or load balance alone does not justify an LLM Router.
 
 ## Research-Line Map
 
@@ -33,8 +33,8 @@ replaces the A06 real-workload Router gate.
 | 12 | Structured composition, task capability, and standard-head causal use | [structured composition](research_lines/12_structured_compositional_mtp_workload_cn.md) |
 | 13 | Task-property decomposition from hard relay to the soft-relay measurement blocker | [A13 anchors](anchors/13_mtp_task_property_decomposition/README.md) |
 | 14 | Conditional low-dimensional computation under a globally high-capacity hierarchy | [A14 anchors](anchors/14_tree_low_rank_language_structure/README.md) |
-| 15 | Spectral representation geometry, independent middle/tail information audits, functional admission, and online routing | [A15 anchors](anchors/15_spectral_representation_and_functional_routing/README.md) |
-| 16 | Load-control gradient interference and mechanism-conditioned intervention | [A16 anchors](anchors/16_load_control_gradient_interference/README.md) |
+| 15 | Spectral representation geometry, public-coordinate audits, functional admission, and target-conditioned layer innovation | [A15 anchors](anchors/15_spectral_representation_and_functional_routing/README.md) |
+| 16 | Load control and functionally supervised incremental-information routing | [A16 anchors](anchors/16_load_control_gradient_interference/README.md) |
 
 Read [the overall synthesis](research_lines/00_overall_current_line_cn.md) first.
 
@@ -76,11 +76,25 @@ state-to-parameter rank claim remain unverified.
 
 A15 is now organized by decision ownership rather than experiment chronology:
 Router-input geometry, learning and feedback dynamics, layerwise representation
-atlases, independent middle- and tail-band information questions, functional
-coordinate admission, and online routing. A15_04 is the active shared-tail
-geometry review. A15_03 is a separate `DRAFT_NOT_EXECUTABLE` middle-band audit.
-Neither band currently has a functional claim, and A15_05 retains the failed
-compatibility and matched-dispatch boundaries.
+atlases, functional coordinate admission, online routing, and target-
+conditioned layer innovation. A15_03 is archived and A15_07 remains parked
+unrun. The public-coordinate sequence establishes only basis-conditioned
+description: Mean Response orders coarse--medium--fine on average, while a
+second parameter basis disagrees on depth shift, same-layer shapes overlap,
+and adjacent-layer variance redistribution is non-monotonic. A15_08 E04 keeps
+one local added-accessibility fact, but two directions retain only 33.24% of
+the full gain. A15_08_01 E02 has a positive depth interaction and negative
+absolute remote two-hop gain, so the next decision is whether to test direct
+absolute $G_{\ell,2F}$.
+
+## Independent A16 Route
+
+A16_00 closes the global Centered-mediation explanation while retaining one
+early counterfactual relief result. A16_01 is active after the NLL-only
+increment branch failed to show a replicated 20B advantage. Its immediate
+decision is the approved two-seed frozen expert-choice-regret gate comparing
+Conditional-Utility with Native, Raw-Utility, and Conditional-Haar. The 30B
+continuations remain fail-closed unless that functional gate passes.
 
 ## Claim Boundary
 
@@ -132,5 +146,5 @@ python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --sourc
 python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
 ```
 
-This root sync was refreshed on 2026-08-09. Project-local anchors, stories,
+This root sync was refreshed on 2026-08-15. Project-local anchors, stories,
 and experiment records remain authoritative.

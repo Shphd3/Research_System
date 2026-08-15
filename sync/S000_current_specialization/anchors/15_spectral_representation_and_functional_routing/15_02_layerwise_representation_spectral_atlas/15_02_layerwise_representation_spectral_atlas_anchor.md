@@ -1,12 +1,12 @@
 ---
 anchor_id: 15_02_layerwise_representation_spectral_atlas
 legacy_anchor_id: 15_01_05_coarse_fine_semantic_variance_atlas
-status: e01_e02_e03_e04_completed_depth_pass_spectral_fail
+status: completed_depth_readability_no_universal_fine_rank_coordinate
 canonical_language: en
 companion_language: zh
 thinking_card: 15_02_layerwise_representation_spectral_atlas_thinking_card.md
 parent_line: 15_spectral_representation_and_functional_routing
-updated: 2026-08-06
+updated: 2026-08-09
 ---
 
 # A15_02 Layerwise Representation Spectral Atlas
@@ -103,8 +103,12 @@ A15_02_E03 added full 4096-dimensional pre-`o_proj` covariance, including cross-
 
 A15_02_E04 added the full post-`o_proj` attention branch after cross-head mixing and before residual addition. With the identical model, 512 semantic records, and 65,536 calibration tokens, early/late median $R$ is 0.131/0.762 and $T_{post}=0.6311$ with hierarchical-bootstrap interval $[0.5529,1.1477]$. Blocks 35/36 have fine/coarse ratios 2.13/2.36, so the last block does not reverse. Actual between-class variance remains F1-maximal for both roles in every block 1--35. Late head/middle/tail relative-enrichment log ratios are -0.106/+0.063/+0.159. Middle narrowly exceeds equal-dimensional random q95=0.059 and passes both calibration halves and local guards; tail fails the independent-half per-late-layer direction guard. The joint typed verdict remains `depth_pass_spectral_fail`. See the [E04 result](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/summary.md).
 
+A15_02_05_E01 then tested an independently frozen balanced taxonomy with sibling-relative residuals and the actual attention-induced MLP-input increment $\Delta n$. Coarse and fine contrasts were reliable, but the paired fine-minus-coarse local-rank interaction was $T_\rho=-0.009573$ with registered one-sided 95% lower/upper bounds [-0.011199, -0.004492]. Both expression halves, both DCLM half-bases, and all eight leave-one-parent-out estimates were negative, giving `nonpositive_location_fail`. The isolated post-`o_proj` write was descriptively positive at +0.011327, so spectral relocation is representation-site dependent. Combinatorics and linear algebra were reliable and had similar band profiles, but their directions were weakly aligned and unstable across layers. See the [A15_02_05 result](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md).
+
 ## 8. Claim Boundary And Next Decision
 
-This anchor now establishes that fine classes become relatively more discriminable late in whole residual states, pre-`o_proj` attention, post-`o_proj` attention, and MLP input; the signal crosses `o_proj` and does not reverse at the final block. Actual semantic variance remains F1-dominant. Post-`o_proj` middle has a modest locally qualified relative-share enrichment, but tail instability prevents a joint fixed-rank non-head coordinate. The evidence cannot prove that deeper layers perform composition, attention or `o_proj` is necessary, covariance rank causes semantics, a band should guide a Router, or expert training would benefit.
+This anchor establishes depth-dependent fine-versus-coarse readability in several named representation objects, but it no longer supports a universal claim that finer semantics receive an extra rightward spectral location. Actual semantic variance remains strongly head-weighted; modest middle/tail observations depend on basis, guard, and representation site. The balanced $\Delta n$ result further shows that stable-looking band profiles may coexist with rotating semantic directions. No fixed non-head coordinate is admitted.
 
-**One next decision:** Decide whether an independent balanced, label-free taxonomy reproduces both positive post-`o_proj` depth contrast and the modest late middle relative enrichment. Only joint replication qualifies middle for expert-utility or compatibility admission; no Router training starts before replication.
+The evidence cannot prove that deeper layers perform composition, attention or `o_proj` is necessary, covariance rank causes semantics, a band should guide a Router, or expert training would benefit.
+
+**One next decision:** close normalized Attention-write rank redistribution as the definition of layer-added information and hand the question to A15_08's residual-relative held-out accessibility test. Completion requires one fixed old state, one named update, one frozen target, and a matched held-out gain comparison; no Router training starts from A15_02.

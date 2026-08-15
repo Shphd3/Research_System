@@ -1,12 +1,12 @@
 ---
 anchor_id: 15_02_layerwise_representation_spectral_atlas
 legacy_anchor_id: 15_01_05_coarse_fine_semantic_variance_atlas
-status: e01_e02_e03_e04_completed_depth_pass_spectral_fail
+status: completed_depth_readability_no_universal_fine_rank_coordinate
 canonical_language: en
 companion_language: zh
 thinking_card: 15_02_layerwise_representation_spectral_atlas_thinking_card_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
-updated: 2026-08-06
+updated: 2026-08-09
 ---
 
 # A15_02 逐层表征频谱图谱
@@ -105,8 +105,12 @@ A15_02_E03 进一步补齐 32 头拼接后的完整 4096 维 pre-`o_proj` covari
 
 A15_02_E04 补齐 `o_proj` 已完成跨头混合、但尚未与 residual 相加的完整 attention branch。复用相同模型、512 条语义文本和 65,536 个 calibration token 后，早层/晚层中位 $R$ 为 0.131/0.762，$T_{post}=0.6311$，层级 bootstrap 区间 $[0.5529,1.1477]$；blocks 35/36 的细粗比为 2.13/2.36，最后一层仍无反转。实际类别间方差在 blocks 1--35 对粗、细语义均以 F1 最大。晚层细语义相对粗语义的方差份额在 head/middle/tail 为 -0.106/+0.063/+0.159；middle 小效应超过同维随机 q95=0.059 并通过两个 calibration-half、模板、干扰变量和 floor 门，但 tail 未通过独立半集逐晚层方向门，因此联合频谱 verdict 仍为 `depth_pass_spectral_fail`。正式结果见 [E04 中文摘要](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/summary_cn.md)。
 
+A15_02_05_E01 随后用独立冻结的平衡 taxonomy、sibling-relative residual 与实际 attention 引起的 MLP 输入增量 $\Delta n$ 进行检验。粗细语义对比都可靠，但配对的 fine-minus-coarse 本地秩交互为 $T_\rho=-0.009573$，注册的单侧 95% 下界/上界为 [-0.011199, -0.004492]。两个 expression halves、两个 DCLM half-bases 和八个 leave-one-parent-out 估计全部为负，因此 verdict 是 `nonpositive_location_fail`。孤立 post-`o_proj` write 的描述值却为 +0.011327，说明谱定位依赖 representation site。组合数学与线性代数残差都可靠、band profile 相似，但实际方向弱对齐且跨层不稳定。见 [A15_02_05 结果](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md)。
+
 ## 8. Claim Boundary And Next Decision
 
-本 Anchor 已建立：冻结 Qwen3-8B 的完整 residual、pre-`o_proj` attention、post-`o_proj` attention branch 与 MLP input 都在晚层呈现更强的细类相对区分度；信号跨过 `o_proj`，最后一层不反转。粗、细语义的实际类别间方差仍由 F1 主导。post-`o_proj` middle 出现通过本地对照的小幅相对份额富集，但 tail 不稳定，因而没有建立完整 fixed-rank non-head 坐标。它不能证明深层执行组合、attention 或 `o_proj` 是必要原因、某头/频带应指导 Router，或专家训练能够受益。
+本 Anchor 建立了若干具名表征对象中随深度变化的 fine-versus-coarse 可读性，但不再支持“更细语义普遍额外向谱后端定位”。实际语义方差仍明显偏 head；middle/tail 的小幅现象依赖具体基底、guard 与 representation site。平衡的 $\Delta n$ 结果进一步说明，稳定的 band profile 可以和旋转的语义方向同时存在，因此尚未准入任何固定 non-head coordinate。
 
-**唯一下一决策：**是否用一套独立、平衡且无标签泄漏的 taxonomy，同时复现 post-`o_proj` 的正向深度差分和晚层 middle 小幅相对富集。只有这两项同时复现，middle 才进入专家反事实效用或共同训练兼容性准入；复现前不进入 Router 训练。
+现有证据不能证明深层执行组合、attention 或 `o_proj` 是必要原因、covariance rank 导致语义、某个 band 应指导 Router，或专家训练能够受益。
+
+**唯一下一决策：**结束用归一化 Attention-write 谱重分配定义“层新增信息”的路径，把问题交给 A15_08 的“相对旧状态、在新鲜留出目标上的增量可访问性”检验。完成标准是固定一个旧状态、一个具名更新、一个冻结目标和一个匹配的留出增益比较；A15_02 不直接开启 Router 训练。

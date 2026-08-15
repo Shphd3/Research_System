@@ -1,159 +1,114 @@
 ---
 anchor_id: 15_02_05_balanced_taxonomy_attention_write_atlas
-status: draft_pending_researcher_confirmation
+status: completed_nonpositive_location_fail_pending_human_judgment
 canonical_language: en
+companion_language: zh
+chinese_companion: 15_02_05_balanced_taxonomy_attention_write_atlas_anchor_cn.md
 thinking_card: 15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
-updated: 2026-08-07
+updated: 2026-08-09
+execution_authorized: false
 ---
 
-# A15_02_05 Balanced Three-Level Taxonomy Attention-Write Atlas
+# A15_02_05 Coarse--Fine Semantic Layerwise Spectral Localization
 
-Thinking Card source: [researcher statements and pending AI proposals](15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md).
+Thinking Card source: [researcher-confirmed scope and unresolved choices](15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md). Chinese companion: [anchor](15_02_05_balanced_taxonomy_attention_write_atlas_anchor_cn.md).
 
 ## 1. Problem Definition
 
-The single decision question is:
+**Decision question:**
 
-> In frozen Qwen3-8B, after class count, node sample count, prompt distribution, and covariance reliability are controlled, does a finer taxonomic distinction relative to a coarser distinction show a larger late-versus-early shift toward higher within-layer DCLM activation-covariance rank at isolated post-`o_proj` attention writes?
+> In frozen Qwen3-8B, does a child concept's sibling-relative semantic residual acquire a reproducible depth-dependent spectral location, beyond the location of coarse parent distinctions, when both absolute strength and normalized allocation are audited; and is the aggregate result visible in preregistered child cases rather than created by averaging?
 
-Three semantic granularities are analyzed on the same hidden states. `G0` is a broad binary distinction inside a root family, `G1` is a binary distinction inside a `G0` node, and `G2` is a binary distinction between leaves inside a `G1` node. Granularity is not relation-hop depth or composition length.
+This is a representation-knowledge experiment. It does not implement or evaluate a Router, expert assignment, causal use, or training gain. It inherits only the A15_02 question of what layerwise semantic objects are present and where they lie in a named local spectrum.
 
-The primary representation is the isolated post-`o_proj` attention write before residual addition. The full 32-head concatenated pre-`o_proj` attention output is a registered secondary boundary. Each layer and representation site receives its own DCLM activation-covariance basis. A larger local rank means lower background variance relative to other directions at the same layer and site; it does not identify the same direction across layers.
+The experiment must partially answer three linked questions:
 
-The primary metric is the post-`o_proj` late-minus-early change in the `G2-G0` normalized rank-centroid gap. Semantic strength and `G1` ordering are mandatory interpretation guards, not competing primary questions.
+1. **Aggregate location:** how do coarse and conditional-fine semantic contrast strength, normalized F1--F16 allocation, and their difference change with layer?
+2. **Difference defects:** can an apparent fine-minus-coarse curve be explained by total-scale growth, normalization, unequal contrast counts, self-inclusion in the parent mean, expression noise, local-basis instability, or cancellation across children?
+3. **Named semantic cases:** do `combinatorics - mathematics` and `linear algebra - mathematics` have reliable layerwise residuals, stable cross-layer correlation structure, and similar or distinct fine-semantic trajectories?
+
+Here, a **coarse residual** is one academic-domain center relative to the other domain centers. A **conditional-fine residual** is one child-subfield center relative to the other child centers within the same domain. The latter is an operational sibling contrast, not a purified or causally isolated “fine feature.” The labels `child - parent` in figures are shorthand for this leave-one-child-out residual because the fixed bank contains child descriptions, not an independent set of parent-only descriptions.
+
+The primary representation is the actual attention-induced change in the current block's MLP input,
+$\Delta n_\ell=\operatorname{RMSNorm}_\ell(h_\ell+a_\ell)-\operatorname{RMSNorm}_\ell(h_\ell)$, where $a_\ell$ is the isolated post-`o_proj` attention write. This same-layer counterfactual subtraction is defined; subtraction of covariance matrices, RMS values, or eigenvectors from different layers is forbidden. The isolated write $a_\ell$ is a source-boundary control only.
+
+Each layer has its own DCLM activation-covariance eigenbasis, divided into 16 equal-rank bands. F1 is the highest-background-variance band, F2--F8 are middle, and F9--F16 are tail. Equal local ranks across layers are comparable percentiles, not the same direction.
+
+The approved and frozen data bank has exactly 512 label-free descriptions: 8 parent domains, 8 child fields per parent, and 8 expressions per child. To include both requested mathematics cases while retaining 512 records, the approved new manifest replaces the old `algebra` child with `linear algebra`. This is not literal record-for-record reuse of the earlier 512-record bank. Treating `linear algebra` and `combinatorics` as same-level children is an operational grouping, not evidence that they have equal taxonomy depth or semantic distance.
+
+Pass supports only a bounded statement about layerwise spectral localization in this model and bank. Fail weakens a fine-specific relocation claim. Insufficient leaves the question open. No outcome authorizes a Router experiment automatically.
 
 ## 2. Physical Priors
 
-1. Re-labeling the same balanced leaf-description states at all three taxonomy levels removes prompt frequency, token length, and input sampling as across-level differences. It does not remove semantic-distance or taxonomy-choice dependence.
-2. Averaging equally normalized binary sibling contrasts estimates variance per taxonomic split; it prevents more classes from mechanically increasing total variance. The number of contrasts still changes estimator precision and rank capacity, so the primary analysis must match contrast count and node sample count across levels.
-3. Finer conditional distinctions may become relatively more represented at later layers and larger local covariance ranks, but this is an empirical proposition. Deeper processing does not logically imply a rightward spectral shift.
+1. **Granularity-location prior.** If deeper layers organize within-domain distinctions differently from between-domain distinctions, conditional-fine residuals should change their normalized local spectral location relative to coarse residuals. The exposing variable is the layerwise fine-minus-coarse F1--F16 allocation; a shared trajectory falsifies fine specificity.
+2. **Absolute-and-relative prior.** A normalized shift has semantic-strength meaning only when the underlying contrast is reproducible across independent expression halves. Absolute per-direction cross-expression energy exposes this requirement. A normalized shift at the absolute reliability floor is an artifact or insufficient evidence, not “more fine information.”
+3. **Aggregate-to-case prior.** A general fine-semantic trajectory should not be carried by one parent or disappear in preregistered child cases. Leave-one-parent-out results and named-case split-half correlations expose this prior. Failure yields an aggregate-heterogeneity conclusion, not a universal fine coordinate.
 
 ## 3. Falsifiable Hypotheses
 
-**Primary hypothesis.** After all matching and reliability gates pass, the post-`o_proj` statistic
+The following operational definitions and verdict rules were confirmed and frozen in Protocol revision `A15_02_05_E01_r1` before execution.
 
-$$
-T_{\rho,\mathrm{post}}
-=\operatorname{median}_{\ell=25:35}(\rho_{\ell,\mathrm{post},G2}-\rho_{\ell,\mathrm{post},G0})
--\operatorname{median}_{\ell=1:12}(\rho_{\ell,\mathrm{post},G2}-\rho_{\ell,\mathrm{post},G0})
-$$
+**H1 — Fine-specific depth localization.** After matched contrast counts and reliability guards, the conditional-fine minus coarse local-rank centroid becomes more rightward from early to late layers in $\Delta n$.
 
-is positive and exceeds a balanced taxonomy-rerandomization null. `G1` must not show a statistically negative intermediate ordering if the result is called a monotone three-level trend.
+**H2 — Non-artifactual difference.** Any H1 effect survives parent-preserving child-label permutation, expression-half and calibration-half replication, and leave-one-parent-out analysis; full absolute and normalized F1--F16 curves identify whether it is absolute growth, relative reallocation, or internal cancellation.
 
-**Strongest rival.** Later layers increase stable semantic strength broadly across all local covariance ranks, while normalized spectral location remains unchanged. A second rival is that unequal class count, center sample count, or contrast rank capacity produces the apparent shift.
+**H3 — Named-case structure.** `combinatorics - mathematics` and `linear algebra - mathematics` each have positive split-half reliability in eligible layers. Their cross-layer direction and 16-band-profile correlation maps determine whether the aggregate trajectory is case-concordant, child-specific, or average-only. H3 is a typed diagnostic and cannot rescue failed H1.
 
-**Main falsifier.** Reliable `G2` strength increases late relative to `G0`, but $T_{\rho,\mathrm{post}}$ is null or negative under matched contrast and sample counts.
+**Strongest rival — common amplification plus heterogeneous averaging.** Depth amplifies or reorients all academic semantics together; normalization and averaging across unlike children create a smooth fine-minus-coarse curve. This rival predicts weak or null H1 after controls, or an aggregate effect that is absent or contradictory in named cases.
 
-**Pass.** All gates pass; the bootstrap lower bound of $T_{\rho,\mathrm{post}}$ is above zero; the statistic exceeds the registered balanced-tree null q95; and its sign replicates across template and DCLM calibration halves. A monotone three-level claim additionally requires coherent `G1` ordering.
-
-**Fail.** All gates pass, but the post-`o_proj` primary statistic does not pass. A positive strength result with no location shift is a typed `strength_pass_rank_shift_fail` result.
-
-**Insufficient.** Taxonomy validity, exact balance, hook reconstruction, semantic reliability, matched-count, or covariance-basis stability fails. A normalized location effect at negligible reliable strength is insufficient.
+**Pass:** H1 and all H2 validity guards pass. The result is typed `case_concordant` or `aggregate_heterogeneous` from H3 rather than forcing one pairwise story. **Fail:** reliable evidence gives a nonpositive fine-specific depth interaction, or the observed interaction does not exceed the registered taxonomy/null controls. **Insufficient:** data identity, absolute semantic reliability, basis replication, numerical reconstruction, or precision fails. An interval that crosses zero is insufficient, not a negative claim.
 
 ## 4. Mathematical Model
 
-Let $h_{\ell,s,r,a,b,c,t,f}$ be the readout activation at layer $\ell$, site $s\in\{\mathrm{pre},\mathrm{post}\}$, root family $r\in\{1,\ldots,8\}$, binary taxonomy path $(a,b,c)\in\{0,1\}^3$, template $t$, and fact bundle $f$. There are $64$ leaves and the same activation belongs to one `G0`, one `G1`, and one `G2` label.
+Let $y_{\ell i}$ be record $i$'s primary $\Delta n_\ell$ representation; replay the same analysis on $a_\ell$ only as a source-boundary control. For expression half $s$, parent $p$, and child $c$, the coarse contrast is $u^s_{\ell p}=\mu^s_{\ell p}-\mu^s_{\ell,-p}$ and the conditional-fine residual is $r^s_{\ell pc}=\mu^s_{\ell pc}-\mu^s_{\ell p,-c}$. Because sibling residuals share a reference and sum to zero up to weighting, their mutual cosine must be compared with matched within-parent child pairs rather than zero.
 
-For granularity $g$ and one immediate parent $p$, let $\mu_{g,p,0}$ and $\mu_{g,p,1}$ be balanced child means and define the normalized sibling contrast
-
-$$
-\delta_{\ell,s,g,p}=\frac{\mu_{\ell,s,g,p,1}-\mu_{\ell,s,g,p,0}}{\sqrt 2}.
-$$
-
-Every primary schedule uses exactly $P=8$ parent contrasts at every granularity:
+Let $P_{\ell k}$ be the 256-direction projector for F$k$. Absolute cross-expression energy $A^\times_{\ell gk}$ is the mean of $v^{A\top}P_{\ell k}v^B$ divided by 256; its unit is activation squared per direction, and it measures reproducible contrast strength rather than causal use. Normalized allocation $q_{\ell gk}$ averages squared projected energy from both expression halves and divides by all-band energy; it sums to one and cannot establish absolute growth. With band midpoint $m_k=(k-0.5)/16$, define $\rho_{\ell g}=\sum_km_kq_{\ell gk}$. The one primary metric is
 
 $$
-B_{\ell,s,g}=\frac1P\sum_{p=1}^{P}\delta_{\ell,s,g,p}\delta_{\ell,s,g,p}^{\top}.
+T_{\rho}
+=\operatorname{median}_{\ell\in L_{late}}(\rho_{\ell F}-\rho_{\ell C})
+-\operatorname{median}_{\ell\in L_{early}}(\rho_{\ell F}-\rho_{\ell C}),
 $$
 
-Thus $\operatorname{tr}(B)$ is mean squared activation contrast per binary semantic split, not a sum over the number of classes. Two disjoint template halves $A,B$ define the cross-template reliable estimator
-
-$$
-B^{\times}_{\ell,s,g}
-=\frac{1}{2P}\sum_p
-\left(\delta^A_p\delta^{B\top}_p+\delta^B_p\delta^{A\top}_p\right).
-$$
-
-The common expression-noise covariance is variation across templates and fact bundles within the same leaf:
-
-$$
-W^{\mathrm{expr}}_{\ell,s}
-=\mathbb E_{r,a,b,c}\operatorname{Cov}_{t,f}(h_{\ell,s,r,a,b,c,t,f}).
-$$
-
-Reliable semantic strength is
-
-$$
-S_{\ell,s,g}
-=\frac{\operatorname{tr}(B^{\times}_{\ell,s,g})}
-{\operatorname{tr}(W^{\mathrm{expr}}_{\ell,s})+\epsilon}.
-$$
-
-It is dimensionless and uses the same denominator for `G0/G1/G2`. It measures stable contrast magnitude relative to wording variation; it does not measure model use or causality.
-
-Let $\Sigma^{\mathrm{bg}}_{\ell,s}=U_{\ell,s}\Lambda_{\ell,s}U_{\ell,s}^{\top}$ be the independent DCLM activation covariance, and let $P_{\ell,s,k}$ project onto equal-rank band $k$. Within each template half, the nonnegative spectral allocation and normalized rank centroid are
-
-$$
-p_{\ell,s,g,k}
-=\frac{\operatorname{tr}(P_{\ell,s,k}B_{\ell,s,g})}
-{\operatorname{tr}(B_{\ell,s,g})+\epsilon},
-\qquad
-\rho_{\ell,s,g}=\sum_{k=1}^{16}\frac{k-\tfrac12}{16}p_{\ell,s,g,k}.
-$$
-
-The two template-half centroids are averaged only after their effect signs are audited separately. $\rho$ is a within-layer rank location, not a transported direction and not raw semantic strength.
-
-For the requested parameter-direction diagnostic, decompose the frozen output projection as
-
-$$
-W^O_\ell=U^O_\ell\operatorname{diag}(\sigma_{\ell,j})V^{O\top}_\ell.
-$$
-
-For centered pre-`o_proj` attention $a_\ell$ and post write $y_\ell=W^O_\ell a_\ell$,
-
-$$
-A^{\mathrm{pre}}_{\ell,j}=\operatorname{Var}(v^{O\top}_{\ell,j}a_\ell),
-\qquad
-A^{\mathrm{post}}_{\ell,j}=\operatorname{Var}(u^{O\top}_{\ell,j}y_\ell)
-=\sigma_{\ell,j}^2A^{\mathrm{pre}}_{\ell,j}.
-$$
-
-This exact paired-direction identity diagnoses deterministic `o_proj` energy reweighting. It is not the DCLM data spectrum and cannot independently establish semantic redistribution.
+where $L_{early}=\{1,\ldots,12\}$ and $L_{late}=\{25,\ldots,35\}$; block 36 is reported separately. $T_\rho$ is a normalized local-rank-percentile interaction. It cannot identify a shared vector or distinguish strength growth from redistribution without $A^\times$. Named-child stability is the average cross-expression cosine across two layers; same-layer child-pair cosine is compared with all mathematics child pairs, and a separate matrix correlates their 16-band profiles. These describe case stability and similarity, not population generality.
 
 ## 5. Computational Realization
 
-Freeze local Qwen3-8B. At the common final `Classification:` colon token, capture for every decoder block:
+Freeze Qwen3-8B (36 blocks, width 4096). At each common readout position, capture $h_\ell$, isolated $a_\ell$, and actual normalized MLP input, then replay $\Delta n_\ell$. Fit no model, probe, Router, or expert parameter.
 
-1. the $4096$-dimensional concatenation of all 32 pre-`o_proj` head outputs;
-2. the $4096$-dimensional isolated `o_proj` output before residual addition.
+The frozen 512-record bank has eight academic domains, eight children per domain, four templates, and two disjoint fact bundles. The same states receive coarse and conditional-fine metadata offline. Mathematics includes both requested cases, with `linear algebra` replacing `algebra` under the approved new-manifest option. Every description omits parent and child labels.
 
-Construct eight manually audited binary taxonomy root families. Every root has two `G0` children, every `G0` node has two `G1` children, and every `G1` node has two `G2` leaves, yielding $8\times2\times2\times2=64$ leaves. Each leaf has four shared templates and two disjoint label-free fact bundles, yielding $512$ texts. Canonical leaf and ancestor labels are forbidden from the description body.
+To prevent a 64-versus-8 contrast-count artifact, eight frozen rotations each select one child per parent, covering all 64 children once; every fine estimate is compared with eight coarse parent contrasts under the same aggregation. Root families, not prompts or layers, are the unit of semantic independence.
 
-The primary matched estimator uses eight parent contrasts and equal child-center sample counts at every level. Four frozen rotation schedules cover all 16 `G1` and 32 `G2` parent contrasts without raising the per-schedule rank cap above eight. The all-parent estimate is secondary. The same independent 65,536-token DCLM manifest supplies separate pre/post covariance bases and calibration halves.
+Independent DCLM activations define one full and two calibration-half bases per layer/site; F1--F16 are frozen before semantic projection. Parent-preserving child-label permutations and same-dimensional Haar partitions control semantic grouping and rank partition. Statistics use unsmoothed directions. Required evidence is the absolute/normalized layerwise atlas, full-band and per-direction cancellation views, named-case direction/profile correlations against the mathematics-pair envelope, and one defect table.
 
-No model training, SAE, residual state, MLP state, Router, parameter update, or expert-utility test enters this Anchor.
+The named-case figures can answer whether the operational residual is stable and whether cases agree. They cannot answer whether an independent `mathematics` concept vector was subtracted, because no parent-only state exists in this bank.
 
 ## 6. Minimal Falsification Tests
 
-1. Audit every taxonomy edge as `is-a`, remove label leakage, and enforce exact $64\times4\times2$ balance. The same 512 states must be used for every granularity.
-2. Match eight binary parent contrasts and equal child-center sample counts per granularity; require the full-parent and matched estimators to preserve the primary effect direction.
-3. Require positive cross-template reliable strength for `G0/G1/G2` in registered early and late windows before interpreting $\rho$.
-4. Test $T_{\rho,\mathrm{post}}$ with root-family bootstrap, balanced-tree leaf rerandomization, template halves, DCLM calibration halves, and leave-one-root-family-out analysis. Report block 36 separately.
-5. Reconstruct pre/post hooks and verify the parameter-direction identity $A^{\mathrm{post}}=\sigma^2A^{\mathrm{pre}}$ numerically. This diagnostic cannot rescue a failed data-spectrum result.
+The decisive comparison is the $\Delta n$ fine-minus-coarse depth interaction $T_\rho$ under matched contrast counts.
+
+1. **Data and numerical gate:** exactly 512 balanced, label-free records; frozen manifest; exact site identity; $\Delta n$ replay and projection-energy reconstruction within the Protocol tolerances.
+2. **Absolute reliability gate:** coarse and fine $A^\times$ are positive with a root-bootstrap lower bound above zero in both early and late windows. A normalized curve without this gate is Insufficient.
+3. **H1 primary test:** the 95% hierarchical-bootstrap lower bound of $T_\rho$ is above zero, the point estimate exceeds parent-preserving permutation q95, both expression halves and both calibration-half bases are positive, and no leave-one-parent-out estimate reverses sign.
+4. **H2 defect audit:** the complete absolute and normalized F1--F16 curves, matched rotations, Haar partitions, and per-direction views must be reported. A positive $T_\rho$ with no absolute increase is typed `relative_reallocation_only`; a null centroid with stable opposing band changes is typed `redistribution_without_centroid_shift` and does not pass H1.
+5. **H3 named cases:** both requested mathematics cases require positive same-layer split-half reliability before their cross-layer cells are unmasked. Agreement with H1 yields `case_concordant`; disagreement yields `aggregate_heterogeneous`. Neither changes the H1 verdict.
+
+The main falsifier is reliable absolute coarse and fine structure with a nonpositive or null-controlled $T_\rho$. The minimum counterexample to an apparently smooth aggregate curve is an aggregate Pass whose two preregistered cases are unreliable or trend in opposite directions.
 
 ## 7. Current Evidence
 
-[A15_02](../15_02_layerwise_representation_spectral_atlas_anchor.md) found that fine classes become relatively more discriminable late at residual, pre-`o_proj`, post-`o_proj`, and MLP-input sites. However, its coarse and fine within-class denominators have different meanings, and it did not estimate a normalized spectral rank centroid under matched hierarchical contrast counts.
+Earlier post-`o_proj`, parameter-rank, and natural-hierarchy atlases motivated a balanced sibling-relative activation test but did not establish fine-specific localization. A15_02_05_E01 has now completed the frozen `A15_02_05_E01_r1` Protocol with eligible data, tensor, basis, reliability, resampling, numerical, and visual evidence.
 
-[A15_02_04](15_02_04_compositional_attention_write_atlas_anchor.md) correctly separated semantic strength from normalized rank location and used local DCLM bases, but its spatial-relation interface failed capability and reliability gates. Its later `is-a` smoke showed that Qwen3-8B can follow explicit one-, two-, and four-hop alias chains, while leaving natural distractor validity unresolved. Relation-hop depth remains parked and is not reused as taxonomy granularity here.
+The registered result is `nonpositive_location_fail`. In actual $\Delta n$, the paired fine-minus-coarse centroid changes from +0.009334 in blocks 1--12 to -0.000239 in blocks 25--35, so $T_\rho=-0.009573$ with registered one-sided 95% lower/upper bounds [-0.011199, -0.004492]. Both expression halves, both calibration-half bases, and all eight leave-one-parent-out estimates are negative. Absolute coarse and fine contrasts are nevertheless reliable in both windows, so the Fail is not absence of a measurable semantic residual.
 
-No current evidence adjudicates the present three-level, same-state, matched-count post-`o_proj` rank-redistribution question. The Anchor is a draft and does not authorize execution.
-
-The complete candidate is recorded in the [`DRAFT_NOT_EXECUTABLE` Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/protocol.md). No `summary.md` or `detailed.md` result record exists before execution.
+The isolated attention write has descriptive $T_\rho=+0.011327$, which shows that the relocation sign is representation-site dependent and cannot be promoted from post-`o_proj` output to the actual MLP-input increment. The two named mathematics residuals are reliable and individually move rightward, but their 16-band profiles remain highly similar while their same-layer and cross-layer directions are weak or unstable. This types the named-case evidence as `aggregate_heterogeneous`; it does not rescue H1. See the [result summary](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md) and [complete evidence record](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/detailed.md).
 
 ## 8. Claim Boundary And Next Decision
 
-This Anchor can establish only a Qwen3-8B-specific association between taxonomy granularity, model layer, and local DCLM covariance-rank location at two attention boundaries under one balanced English taxonomy. It cannot establish composition, relation inference, literal cross-layer direction transport, attention necessity, `o_proj` semantic creation, universal middle/tail meaning, SAE correspondence, Router utility, or training benefit.
+This Anchor now rejects the claim that conditional-fine residuals receive an extra depth-dependent rightward local-rank relocation beyond coarse parent residuals at the actual $\Delta n$ site in this model and bank. It retains three narrower facts: coarse and fine residuals are reproducibly present and strengthen with depth; the sign changes at the isolated-write boundary; and stable-looking band profiles do not imply stable semantic directions.
 
-**Exactly one next decision:** confirm or correct the Thinking Card and Protocol blocks A--G, especially the taxonomy bank, matched-count estimator, primary post-`o_proj` statistic, and pass/fail/insufficient rules. Completion means every block is explicitly confirmed and cross-block consistency passes; only then may the same Protocol be promoted, after which execution scope is decided separately.
+The result does not establish information creation, general semantic complexity, a pure child-minus-parent feature, attention or MLP causal use, cross-layer eigenvector identity, a universal middle/tail meaning, Router compatibility, expert utility, or training benefit. It does not rule out other layerwise semantic organizations or a separately defined middle object.
+
+**One next decision:** stop treating any fixed band or normalized rank shift as conditional novelty and pass the named update to A15_08's residual-relative held-out accessibility gate. Completion requires fresh held-out target gain beyond the old-state readout and matched target-independent controls; do not start a Router experiment from this atlas.
