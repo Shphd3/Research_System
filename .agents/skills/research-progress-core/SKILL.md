@@ -1,6 +1,6 @@
 ---
 name: research-progress-core
-description: "Use when the user asks to audit a research judgment, separate rival explanations, design a minimal falsifier, interpret a result boundary, analyze a failure, write a reader-friendly daily research report, or close one bounded problem as a concise focus. Do not use for project paths, meeting synthesis, remote operations, or publication."
+description: "Use when the user asks to maintain one meeting-cycle core-task Focus, audit a research judgment, separate rival explanations, design a minimal falsifier, interpret a result boundary, analyze a failure, or write the delayed reader-friendly daily report after the human result exists. Do not use for project paths, meeting synthesis, remote operations, or publication."
 ---
 
 # Research Progress Core
@@ -36,18 +36,18 @@ not silently replace the human judgment.
 Use this workflow:
 
 ```text
-one problem and its current judgment
--> identify one blocking issue
+group meeting or explicit research reset
+-> one active two-day core-task Focus
+-> researcher confirms the four-part plain-language design
 -> approved Protocol only if an experiment is needed
 -> execute
 -> AI records evidence
 -> human states result and boundary from memory
 -> AI verifies
--> human states the knowledge update
--> AI writes the reader-friendly daily report
+-> human completes the actual result in the Focus
+-> AI writes the reader-friendly daily report only after that result is complete
 -> human confirms or corrects that report
--> update the smallest owning artifact and, when bounded, condense the report
-   into its problem focus
+-> update the smallest owning artifact and close the cycle
 ```
 
 After execution, ask the human to state:
@@ -62,9 +62,10 @@ next decision
 
 Verify the statement without strengthening it.
 
-## One Advancement Point
+## One Meeting-Cycle Advancement Point
 
-Keep one decision per substantial session:
+Keep one active decision from one group meeting to the next, normally a two-day
+cycle:
 
 ```text
 By the end of this session, make [one relation] clear enough to decide
@@ -75,12 +76,16 @@ Reading, coding, running, and plotting are activities. They count as progress
 only when they change a judgment, boundary, or decision.
 
 Use at most three genuinely different candidates in one divergent round. Then
-choose one and park the rest.
+choose one. The active Focus should contain one self-contained core experiment
+and may contain at most three only when each is necessary for the same core
+answer. Supporting controls remain inside the core experiment. Park only key
+future direction questions; ignore minor tangents.
 
 ## Reader-Friendly Daily Report
 
-After eligible evidence exists and the researcher has stated the result,
-boundary, knowledge update, and next decision, create or update:
+After eligible evidence exists and the researcher has completed or explicitly
+confirmed the direct result, boundary, knowledge update, and one next decision
+in the active Focus, create or update:
 
 ```text
 daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
@@ -90,7 +95,8 @@ Use `templates/research_process/daily_report_template.md`. The daily report
 is a compact, problem-driven paper: it reconstructs one argument from the
 human-owned question to one bounded knowledge update. It is not a run ledger,
 a multi-depth repetition of the verdict, or a replacement for canonical result
-records.
+records. Do not create even an AI-draft placeholder before the Focus reaches
+`HUMAN_RESULT_CONFIRMED`.
 
 Use this positive recipe in order:
 
@@ -162,46 +168,39 @@ Using one meeting note as the named source of one experiment question is not
 meeting synthesis. Route to `meeting-outline-writer` only when the task merges
 multiple meeting problems or prepares the meeting itself.
 
-If the researcher has not confirmed the knowledge wording, keep
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` visible. A draft may reconstruct context
-and verified evidence, but it must not invent the researcher's mechanism
-judgment or create a completed problem focus.
+After the entry gate is satisfied, keep
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` visible until the researcher confirms
+the complete story. A draft must not invent or strengthen the researcher's
+mechanism judgment.
 
-## Problem Knowledge Update Focus
+## Living Core-Task Focus
 
-When one problem reaches a bounded answer and its daily report is
-human-confirmed, create
+At the start of a group-meeting cycle, create or audit exactly one
 `daily_research_reports/MMDD/focus_<problem>.md` from
-`templates/research_process/focus_writing_template.md`. Several problems may
-close on one day; no closure means no invented focus conclusion. Leave legacy
-bare `focus.md` files unchanged.
+`templates/research_process/focus_writing_template.md`. Leave legacy bare
+`focus.md` and historical result-summary Focus files unchanged.
 
-This artifact is a **minimal summary and navigation card**, not an
-experiment-result analysis. Keep it normally within 20--30 lines. Its complete
-shape is:
+This artifact is the **living human-owned task card**, not a Protocol or result
+ledger. Before execution its complete decision shape is:
 
 ```text
-source daily report
-one answered question
-two-to-four-sentence knowledge update
-one sentence: decisive comparison and direct result
-cannot-claim boundary
-exactly one next decision
+1. one core question
+2. experiment purpose, dependent subquestions, and completion standard
+3. at most three plain-language analysis steps
+4. two expected result branches and how each changes the decision
 ```
 
-Do not copy setup, definitions, formulas, metric tutorials, tables, figures,
-flowcharts, evidence lineage, completion criteria, or resume actions into the
-focus. A single number is allowed only when omitting it would make the update
-ambiguous. Send the reader to the daily report for every detail.
+After execution, the researcher adds the direct result, their conclusion,
+cannot-claim boundary, and exactly one next decision. AI verifies those fields
+against canonical evidence without strengthening them. Put formulas, exact
+hyperparameters, statistical details, tables, figures, evidence lineage, and
+run history in the owning Anchor, Protocol, Summary, Detailed, and delayed
+daily report.
 
-The human owns the question, knowledge update, mechanism, boundary, and next
-decision. AI may verify the source link and the one decisive result. Route
-meeting synthesis to `meeting-outline-writer`; do not merge several problem
-focuses through this skill. Name the confirmed daily report as the first
-source. A focus may omit
-detail, but it must not add a result, number, interpretation, boundary, or next
-decision absent from that source. If canonical evidence changes, update in the
-one-way order `canonical records -> daily report -> focus`.
+The human owns the question, expected branches, conclusion, mechanism,
+boundary, and next decision. Ordinary one-problem meetings use this Focus
+directly. Route only an explicitly requested meeting brief, speaking outline,
+or multi-problem synthesis to `meeting-outline-writer`.
 
 ## Decide Whether Work Is Worth Doing
 
@@ -213,8 +212,11 @@ affects claim boundary?
 affects next decision?
 ```
 
-Pursue only if at least one answer is yes. Park plausible but non-decisive work;
-ignore unrelated work.
+Pursue only if it is required to close the active core task. If at least one
+answer is yes but the work is not currently required, add one concise entry to
+the project's `main/parking_lot/README.md` only when it is a key future
+direction and has an explicit reopening condition. Ignore minor or unrelated
+work without creating an artifact.
 
 Before proposing a method, classify the move:
 
@@ -270,6 +272,12 @@ focused on the first unresolved block.
 ## Experiment Contract
 
 Do not run a nontrivial experiment without an approved `protocol.md`.
+
+Before drafting it, require the active Focus's four-part plain-language design
+to be researcher-confirmed. The Protocol must implement the same question and
+may not expand one core experiment into an unbounded suite. A maximum of three
+core experiments is allowed; controls and diagnostics do not count separately
+when they only protect one registered verdict.
 
 Use `experiment-card-writer` to write the complete candidate directly into
 `protocol.md` as `DRAFT_NOT_EXECUTABLE`, then surface only decision-critical
@@ -403,9 +411,10 @@ does not match the downstream decision. Read:
 Use the smallest necessary artifact:
 
 ```text
-daily_report_<topic_slug>.md complete reader-friendly result and knowledge update; derived from canonical evidence
-focus_<problem>.md minimal summary and navigation card derived from the daily report
-focus_meeting_<topic>.md concise progressive meeting knowledge update; owned by meeting-outline-writer
+focus_<problem>.md living meeting-cycle core task and human-owned result account
+daily_report_<topic_slug>.md delayed complete reader-friendly story after the human result; derived from canonical evidence
+focus_meeting_<topic>.md optional requested meeting brief or synthesis; owned by meeting-outline-writer
+main/parking_lot/README.md key non-active future questions and reopening conditions
 Thinking Card new, unformed mechanism judgment only
 anchor        current formal question and claim boundary
 protocol.md   approved experiment contract
@@ -414,11 +423,11 @@ detailed.md   complete evidence and reproducibility ledger
 story         explicit line-level synthesis only
 ```
 
-The one allowed full daily reading surface is the subject-bearing
-`daily_report_<topic_slug>.md`. Do not create additional daily cards,
-briefs, closure reports, or implementation plans that duplicate it. The daily
-report explains canonical evidence; it does not replace `summary.md` or
-`detailed.md` as a truth source.
+The Focus is the single short cycle surface; the subject-bearing
+`daily_report_<topic_slug>.md` is the one full reader-facing story after the
+human result exists. Do not create additional daily cards, briefs, closure
+reports, or implementation plans that duplicate either role. Neither replaces
+`summary.md` or `detailed.md` as a truth source.
 
 Use `research-mainline` for paths and publication rules,
 `problem-anchor-writer` for anchors, and `experiment-card-writer` for Protocol

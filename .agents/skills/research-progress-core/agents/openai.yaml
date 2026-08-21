@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Progress Core"
-  short_description: "Write daily reports and concise problem focuses"
-  default_prompt: "Use $research-progress-core to audit one research judgment, write its evidence-grounded reader-friendly daily_report, and condense a human-confirmed bounded answer into a minimal problem focus."
+  short_description: "Manage one core-task Focus and delayed daily report"
+  default_prompt: "Use $research-progress-core to maintain one meeting-cycle core-task Focus, audit the human-owned result, and only then write its evidence-grounded self-contained daily_report."
 
 policy:
   allow_implicit_invocation: true

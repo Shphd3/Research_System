@@ -21,10 +21,11 @@ prompt, or README.
 | Template | Use |
 |---|---|
 | `research_process/thinking_card_template.md` | Optional human judgment card only when a new mechanism question is promoted. |
-| `research_process/daily_report_template.md` | Full reader-friendly daily experiment or evidence report, with self-contained context, verified results, knowledge update, boundary, and one next decision. |
-| `research_process/focus_writing_template.md` | Minimal summary and navigation card derived from one confirmed daily report: one question, concise update, one decisive result, boundary, and one next decision. |
+| `research_process/daily_report_template.md` | Delayed self-contained experiment story written only after canonical evidence and the researcher's completed result account exist. |
+| `research_process/focus_writing_template.md` | Living two-day core-task card: one question, purpose, at most three plain-language methods, expected branches, and later the human-owned result. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |
-| `research_process/experiment_understanding_and_execution_gate_template_cn.md` | Four minimal Chinese cards for understanding, self-check, execution gating, and result reporting. |
+| `research_process/experiment_understanding_and_execution_gate_template_cn.md` | Chinese gate from the required four-part explanation through Protocol review, separate run authorization, human result, and delayed Daily Report. |
+| `research_process/parking_lot_template.md` | Concise project-level list of important non-active questions and explicit reopening conditions. |
 
 ## Reading Templates
 
@@ -43,7 +44,7 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 | Template | Use |
 |---|---|
-| `meeting/meeting_focus_template.md` | Required concise meeting update: one named problem proceeds directly; multi-problem synthesis first fixes human scope and one core question. |
+| `meeting/meeting_focus_template.md` | Optional concise meeting brief or synthesis; ordinary one-problem cycles use their active Focus directly. |
 | `meeting/meeting_outline_template.md` | Optional speaking order only after a completed meeting focus and an explicit request. |
 | `meeting/meeting_notes_template.md` | Optional short post-meeting note only when the meeting changes judgment or action. |
 
@@ -56,16 +57,17 @@ replace the anchor, protocol, summary, or detailed evidence record.
 
 ## Rules
 
-- Create `focus_<problem>.md` only when that problem reaches a bounded knowledge
-  update and its source daily report is human-confirmed; several problem
-  focuses may exist on one day.
-- Create `docs/daily_report_<topic_slug>.md` for each completed
-  experiment or bounded evidence synthesis delivered as a daily knowledge
-  update. It is the full reader explanation derived from canonical evidence;
-  the problem focus is its minimal summary and navigation card.
-- Create a new `focus_meeting_<topic>.md` for every meeting. A named one-problem
-  meeting uses a progressive question chain directly; a multi-problem meeting
-  waits for exact human scope, exclusions, and one core question.
+- Create exactly one active `focus_<problem>.md` after a meeting or explicit
+  research reset. It owns the next meeting's core task and persists from design
+  through the researcher's result account.
+- Create `docs/daily_report_<topic_slug>.md` only after canonical evidence and a
+  `HUMAN_RESULT_CONFIRMED` Focus exist. It expands that bounded result into a
+  self-contained reasoning story; it is not the source of the Focus.
+- Create `focus_meeting_<topic>.md` only for an explicitly requested meeting
+  brief or synthesis. A multi-problem synthesis waits for exact human scope,
+  exclusions, and one core question.
+- Keep non-active key questions in the project's single concise
+  `main/parking_lot/README.md`; never run them in parallel with the active task.
 - Legacy bare `focus.md` files may remain, but new files use the two patterns
   above unless an explicit migration says otherwise.
 - Do not create separate `recordings.md` files by default. Put meeting-derived

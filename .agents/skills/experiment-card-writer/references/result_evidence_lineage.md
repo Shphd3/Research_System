@@ -253,19 +253,23 @@ decision-bearing setup.
 When a reader-friendly daily report is required, enforce this one-way chain:
 
 ```text
-Protocol + Summary + Detailed + Anchor update
+confirmed plain-language design in the active Focus
+-> Protocol -> authorized execution
+-> Summary + Detailed + Anchor update
+-> researcher-completed result/boundary in the same Focus
 -> daily_report_<topic_slug>.md
--> focus_<problem>.md
+-> cycle close
 ```
 
 The daily report may repeat verified material needed for a cold reader, but
 every decision-bearing number and figure must link to its canonical lineage.
 Its eligibility, verdict, boundary, and one next decision must match Summary,
-Detailed, and the Anchor exactly. Before human confirmation, mark its knowledge
-wording `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. A completed focus must cite a
-human-confirmed daily report and keep only the question, concise update, one
-decisive result, boundary, next decision, and report link. It cannot introduce
-a new number, interpretation, boundary, or decision.
+Detailed, the Anchor, and the researcher's result account in the active Focus.
+Before human confirmation, mark its knowledge wording
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. The already-active Focus must contain
+the researcher's result, boundary, and one next decision before a daily report
+is drafted. The Focus cannot become the sole source of a number, eligibility
+decision, deviation, or verdict; those remain in canonical result records.
 
 ## Final Audit
 
@@ -283,7 +287,7 @@ Detailed is the only complete evidence ledger:
 Figures have source, aggregation, observed result, and limitation:
 Summary, Detailed, and Anchor verdicts and boundaries agree:
 Any daily report preserves canonical eligibility, verdict, lineage, boundary, and next decision:
-Any completed focus cites a human-confirmed daily report and contains only the minimal summary fields:
+The active Focus contains the human-confirmed result before the daily report is drafted, and both remain bounded by canonical evidence:
 Exactly one next decision has a completion criterion and resume action:
 No missing value, expected pattern, or filename was turned into evidence:
 ```

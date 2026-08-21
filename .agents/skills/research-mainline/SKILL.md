@@ -31,6 +31,8 @@ Projects/<project>/
   graph.yaml
   main/
     roadmap.md
+    parking_lot/
+      README.md
     stories/
       <line_id>/
         README.md
@@ -50,13 +52,14 @@ Projects/<project>/
             <parent_id>_<NN>_<topic>_thinking_card.md
             <parent_id>_<NN>_<topic>_thinking_card_cn.md
     experiments/
-      A<anchor_id>/
-        <experiment_id>/
-          protocol.md
-          summary.md
-          detailed.md
-          figures/
-          tables/
+      A<line_number>/
+        <anchor_stem>/
+          <experiment_id>/
+            protocol.md
+            summary.md
+            detailed.md
+            figures/
+            tables/
 ```
 
 Legacy two-file planning records may remain in old experiments, but new work
@@ -154,11 +157,12 @@ seed_sweep
 Store active experiments under the anchor-family folder:
 
 ```text
-main/experiments/A<anchor_id>/<experiment_id>/
+main/experiments/A<line_number>/<anchor_stem>/<experiment_id>/
 ```
 
-For example, experiments whose id starts with `A05_` belong under
-`main/experiments/A05/`.
+For example, experiments for anchor `15_07_<topic>` belong under
+`main/experiments/A15/15_07_<topic>/`. The first folder groups the research
+line; the second keeps sibling anchor families separate.
 
 ### Story Names
 
@@ -185,28 +189,36 @@ archive/<snapshot_id>/<snapshot_id>_cn.md
 
 ### Focus Files
 
+Immediately after a meeting or explicit research reset, place the one active
+cycle task at `daily_research_reports/MMDD/focus_<problem>.md`. It is a living,
+human-owned task card: before execution it contains one core question, purpose,
+at most three plain-language methods, and two expected result branches; after
+execution the researcher adds the actual result, boundary, and one next
+decision. Historical Focus files retain their old role and are not migrated.
+Use the date on which this living card is first created for its `MMDD` folder;
+store the preceding meeting date in `cycle_start` and the intended next meeting
+in `target_meeting`. Do not move the file when the same cycle crosses midnight.
+
 Place the full reader-friendly daily report at
-`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` after
-canonical evidence and human judgment exist. It is derived from the Anchor,
-Protocol, Summary, and Detailed records.
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` only after
+canonical evidence exists and the active Focus has a human-confirmed result.
+It is the self-contained story derived from the Anchor, Protocol, Summary,
+Detailed, and human result account; it is not the source of the Focus.
 
-Place a bounded problem update at
-`daily_research_reports/MMDD/focus_<problem>.md` only by condensing a
-human-confirmed daily report into a minimal summary and navigation card;
-several may exist on one day.
-Place every meeting synthesis in a newly created
-`daily_research_reports/MMDD/focus_meeting_<topic>.md`. A one-problem meeting
-uses the researcher-named problem or note and core question. A multi-problem
-meeting requires exact human-selected source paths, exclusions, and one core
-question before synthesis. Legacy bare `focus.md` files may remain; do not
-migrate them implicitly.
+Place `focus_meeting_<topic>.md` only when the researcher explicitly requests a
+meeting brief, speaking preparation, or a multi-problem synthesis. A multi-
+problem synthesis requires exact human-selected source paths, exclusions, and
+one core question. If any Focus changes a hypothesis, evidence boundary, or
+next decision, also update the smallest canonical owning artifact.
 
-Focus files are human-owned knowledge updates, not experiment-result reports or
-canonical project truth. Results appear below the natural-language conclusion
-as its explanation. Meeting focuses use a concise progressive question chain,
-not a mandatory merge table or evidence ledger. If a focus changes a
-hypothesis, evidence boundary, or next decision, also update the smallest
-canonical owning artifact.
+### Project Parking Lot
+
+Use one `Projects/<project>/main/parking_lot/README.md` for important questions
+outside the active core task. Keep it concise, normally three to seven entries.
+Each entry states why the question can change the long-term direction, why it
+is not part of the current cycle, and the evidence or human decision required
+to reopen it. Do not store minor diagnostics, implementation chores, unbounded
+ablations, or ordinary next actions there.
 
 ## Core Artifact Chain
 
@@ -216,10 +228,12 @@ Default chain:
 anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
-Derived daily reading chain:
+Meeting-cycle chain:
 
 ```text
-canonical result records + anchor update -> daily_report -> minimal problem focus
+meeting -> active Focus -> confirmed plain-language design -> Protocol
+-> explicit execution authorization -> canonical result records + anchor update
+-> human-completed Focus result -> delayed daily_report -> cycle close
 ```
 
 Root sync copies, graph edits, commits, and pushes are explicit follow-up
@@ -239,7 +253,8 @@ anchor                      = one authoritative current research design
 protocol.md                 = one draft-to-approved experiment contract;
                               non-executable until confirmation and consistency
 summary.md + detailed.md    = direct result, evidence, and reproducibility
-daily_report                = derived reader-friendly experiment and knowledge report
+focus                       = living cycle task and human-owned result account
+daily_report                = delayed reader-friendly experiment and knowledge story
 figures / viewer            = optional decision evidence when visual inspection matters
 story pair                  = explicit stable line synthesis; no automatic
                               competing final_report layer
@@ -260,7 +275,9 @@ Artifact roles must stay aligned:
 | `protocol.md` | the single in-file lifecycle from complete candidate to confirmed test | be treated as executable before all audit blocks pass, change the question post hoc, or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
 | `detailed.md` | complete evidence ledger, failure decomposition, artifact map | create a second conclusion stronger than the anchor allows |
-| `daily_report` | self-contained reader explanation and human-confirmed knowledge update derived from canonical evidence | become the sole source of a result, deviation, eligibility label, or verdict |
+| `focus_<problem>.md` | one active meeting-cycle task and the researcher's result account | become a technical Protocol, run ledger, or parallel-question list |
+| `daily_report` | delayed self-contained reader explanation derived from canonical evidence and a human-confirmed Focus result | be drafted before the human result or become the sole source of a result, deviation, eligibility label, or verdict |
+| `main/parking_lot/README.md` | concise key future questions and reopening conditions | become a backlog, ablation list, or parallel execution queue |
 | `figures/` or viewer | visual evidence for the current judgment | include decorative plots or disguise debug plots as decision evidence |
 | anchor update | supported / weakened / insufficient evidence, boundary, next decision | paste a result report into the anchor |
 
@@ -385,17 +402,16 @@ aggregation level, axis/legend meaning, allowed conclusion, and limitation.
 The audit must check that the rendered artifact is readable and understandable
 without source-code knowledge.
 
-### Daily Report And Problem Focus
+### Core-Task Focus And Daily Report
 
-After canonical results and the Anchor update agree, place the full
-reader-friendly report at
-`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`. Use
-`research-progress-core`; preserve canonical evidence lineage, negative
-results, claim boundary, and exactly one next decision. After the researcher
-confirms its knowledge wording, condense it into
-`daily_research_reports/MMDD/focus_<problem>.md` as a minimal summary and
-navigation card. Never reverse this dependency or let the focus strengthen or
-duplicate the daily report.
+Create one active `focus_<problem>.md` before the Protocol and keep it through
+the cycle. After canonical results and the Anchor update agree, require the
+researcher to complete its direct result, conclusion, boundary, and one next
+decision. Only then place the full reader-friendly report at
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` through
+`research-progress-core`. Preserve canonical evidence lineage and material
+negative results. Never reverse this dependency or let either surface replace
+canonical result records.
 
 ### Story
 
@@ -511,8 +527,8 @@ delete it.
 
 - Keep mainline thin; put reasoning in anchors and result records.
 - By default, update only anchor / `protocol.md` / `summary.md` /
-  `detailed.md` / the subject-bearing `daily_report` / its derived minimal
-  problem focus.
+  `detailed.md` / the active core-task Focus / the delayed subject-bearing
+  `daily_report` / the concise project Parking Lot when needed.
 - Do not create separate implementation-plan files for new work.
 - Do not update root sync, edit graph, commit, or push unless the user
   explicitly asks. Never perform external collaborator sync or handoff

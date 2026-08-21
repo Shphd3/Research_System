@@ -142,8 +142,8 @@ default.
 After results exist, first write or update:
 
 ```text
-Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/summary.md
-Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/detailed.md
+Projects/<project>/main/experiments/A<line_number>/<anchor_stem>/<experiment_id>/summary.md
+Projects/<project>/main/experiments/A<line_number>/<anchor_stem>/<experiment_id>/detailed.md
 ```
 
 `summary.md` must explain any central decision-relevant figures.

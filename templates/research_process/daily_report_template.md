@@ -9,15 +9,18 @@ canonical_anchor: <精确路径>
 frozen_protocol: <精确路径；非实验型综合可写 N/A 并解释>
 canonical_summary: <精确路径>
 canonical_detailed: <精确路径>
+source_focus: <状态为 HUMAN_RESULT_CONFIRMED 的本周期核心任务 Focus>
 ```
 
 保存为 `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`。
 
-日报是一篇紧凑的、问题驱动的短论文，不是运行时间线，也不是 `detailed.md`
-的重写。正文只走一遍以下逻辑：
+日报只有在研究者已完成或明确确认 Focus 中的“直接结果—我的结论—仍不能说—
+唯一下一决策”之后才创建。它是一篇紧凑的、问题驱动的自包含 story，用于检查
+实验逻辑是否自洽；不是前置规划、运行时间线或 `detailed.md` 的重写。正文只走
+一遍以下逻辑：
 
 ```text
-人类提出的问题
+已确认的核心任务 Focus
 -> 此前方法为什么不能回答
 -> 本轮把问题缩成什么可判定对象
 -> 如何测量并排除最强竞争解释
@@ -25,6 +28,8 @@ canonical_detailed: <精确路径>
 -> 有边界认识更新
 -> exactly one next decision
 ```
+
+若 `source_focus` 尚未达到 `HUMAN_RESULT_CONFIRMED`，停止，不创建占位日报。
 
 标题只提问题，不提前写答案。通常使用下面七个主节。摘要负责快速同步；正文负责重建推理；结论负责收缩
 claim。三处各有不同职责，不重复粘贴同一段 verdict。正文通常控制在
@@ -39,9 +44,9 @@ claim。三处各有不同职责，不重复粘贴同一段 verdict。正文通�
 
 ## 1. 从人类问题到本轮唯一问题
 
-### 1.1 问题来源与已有缺口
+### 1.1 核心任务来源与已有缺口
 
-[点名 Thinking Card、组会记录、上轮日报或其他人类指定来源。用最少前情说明：
+[先点名本周期 Focus，再点名 Thinking Card、组会记录、上轮日报或其他人类指定来源。用最少前情说明：
 原判断是什么；此前代理指标或方法为什么不能回答；哪一个竞争解释仍然存在。
 会议没有决定的模型、层或对象，不得写成“会议决定”。]
 

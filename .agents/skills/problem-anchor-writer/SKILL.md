@@ -231,8 +231,9 @@ human closed-book summary
 -> AI evidence and boundary audit
 -> summary.md / detailed.md update
 -> anchor sections 7 and 8 update
--> daily_research_reports/MMDD/focus_<problem>.md only after a bounded,
-   human-stated knowledge update exists
+-> researcher completes the actual result in the already-active
+   daily_research_reports/MMDD/focus_<problem>.md
+-> AI writes the delayed daily report only after that human result is confirmed
 ```
 
 The human summary states the question, direct result, confirmed and weakened

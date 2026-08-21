@@ -5,11 +5,14 @@ description: "Use when the user asks to prepare or audit an advisor meeting, gro
 
 # Meeting Focus Writer
 
-A meeting focus is a concise knowledge update, not an experiment correction,
-result audit, or protocol recap. Organize it as a progressive question chain so
-each answer creates the need for the next question.
+A meeting focus is an optional concise knowledge update, not the default
+meeting-cycle task card, an experiment correction, result audit, or Protocol
+recap. Ordinary one-problem cycles use their active `focus_<problem>.md`
+directly. Use this skill only when the researcher explicitly requests a meeting
+brief, speaking preparation, or synthesis; then organize it as a progressive
+question chain so each answer creates the need for the next question.
 
-Create a new artifact:
+For that explicit request, create a new artifact:
 
 ```text
 daily_research_reports/MMDD/focus_meeting_<topic>.md
@@ -22,9 +25,9 @@ Use `templates/meeting/meeting_focus_template.md`. Do not overwrite a source
 
 ### One-problem meeting
 
-Use the lightweight path when the user names one problem, note, or problem
-focus and supplies or clearly states the meeting's core question. This explicit
-request is sufficient scope authorization; do not add an
+Use the lightweight path when the user explicitly asks for a brief and names
+one active problem Focus, note, or problem plus the meeting's core question.
+Do not add an
 `AWAITING_HUMAN_SCOPE` scaffold or demand a merge ledger.
 
 If the user asks AI to draft the knowledge wording, use status
@@ -123,9 +126,9 @@ explicit meeting scope
 -> detailed.md only for numeric or provenance verification
 ```
 
-For a one-problem meeting, one named note and its bounded problem focus are
-enough when they answer the core question. For a multi-problem meeting, include
-only the human-selected sources.
+For a one-problem brief, the active Focus and its linked sources are enough when
+they answer the core question. For a multi-problem meeting, include only the
+human-selected sources.
 
 ## Optional Speaking Outline
 
@@ -139,7 +142,7 @@ not rewrite the knowledge update or become a second evidence record.
 | Wrong shape | Correction |
 | --- | --- |
 | experiment verdicts lead the document | lead with the knowledge update |
-| every meeting starts with a merge gate | use the lightweight path for one named problem |
+| every ordinary cycle creates another meeting focus | use the active core-task Focus unless a separate brief was explicitly requested |
 | sources are copied into a large audit table | link them and keep only decision evidence |
 | questions are parallel topics | make each answer motivate the next question |
 | a figure and flowchart are always present | include visuals only when they clarify a decisive relation |
@@ -147,7 +150,8 @@ not rewrite the knowledge update or become a second evidence record.
 
 ## Validation
 
-1. A new `focus_meeting_<topic>.md` exists and source problem focuses are unchanged.
+1. The user explicitly requested a meeting brief or synthesis; a new
+   `focus_meeting_<topic>.md` exists and source Focus files are unchanged.
 2. The artifact uses the one-problem or multi-problem scope path correctly.
 3. The opening is a knowledge update, not an experiment-result analysis.
 4. Two to four questions form one progressive reasoning chain.

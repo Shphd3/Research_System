@@ -26,11 +26,14 @@ Roles:
 - `detailed.md`: full setup, run evidence, failures, and artifact map.
 
 Do not add separate implementation plans, daily logs, closure reports, or
-competing final reports. When a completed experiment or bounded synthesis is
-delivered in the daily report, write the one full reader-facing artifact at
-`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`. After
-the researcher confirms its knowledge update, condense it into
-`daily_research_reports/MMDD/focus_<problem>.md` as a minimal summary and
-navigation card. A meeting uses a separately
-created `focus_meeting_<topic>.md` after the human chooses its merge scope and
-core question. Link the owning project artifacts.
+competing final reports. At the start of a meeting cycle, create one living
+`daily_research_reports/MMDD/focus_<problem>.md` with the four-part plain-
+language design. After canonical results exist, the researcher completes that
+Focus's result, boundary, and one next decision. Only then write the one full
+reader-facing story at
+`daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`.
+
+Important questions outside the current task live briefly in
+`Projects/<project>/main/parking_lot/README.md`. Create
+`focus_meeting_<topic>.md` only for an explicitly requested meeting brief or
+synthesis, not for every ordinary one-problem cycle.

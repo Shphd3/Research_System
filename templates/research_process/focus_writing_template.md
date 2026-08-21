@@ -1,36 +1,71 @@
-# [用一个完整问句写本文件已经回答的问题]
+# [用一个完整问句写本轮组会要回答的核心问题]
 
 ```text
-type: problem_focus_summary
-problem_slug: <简短、稳定、可作为文件名的英文短语>
-status: AWAITING_HUMAN_JUDGMENT / HUMAN_CONFIRMED
-source_daily_report: <HUMAN_CONFIRMED daily_report 的精确路径>
+type: meeting_cycle_core_task
+status: TASK_DRAFT / HUMAN_CONFIRMED_DESIGN / PROTOCOL_DRAFT_AWAITING_REVIEW / EXECUTION_APPROVED / AWAITING_HUMAN_RESULT / HUMAN_RESULT_CONFIRMED / CYCLE_CLOSED
+core_question: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
+plain_language_design: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION / AI_REVISED_AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
+cycle_start: YYYY-MM-DD
+target_meeting: YYYY-MM-DD / Unknown
+active_project: <精确项目路径>
+anchor: <精确路径>
+protocol: <精确路径或 NOT_YET_WRITTEN>
+source_meeting: <精确会议记录路径>
+core_experiment_count: 1 / 2 / 3
 ```
 
-保存为：`daily_research_reports/MMDD/focus_<problem_slug>.md`。
+保存为：`daily_research_reports/MMDD/focus_<problem_slug>.md`。这是从一次组会
+延续到下一次组会的唯一活动核心任务，不是实验账本，也不是 Daily Report 的
+摘要。`MMDD` 取本卡首次创建日期；上一场组会日期写入 `cycle_start`，下一场
+目标组会写入 `target_meeting`。同一周期跨日时不移动文件。历史 Focus 不因新
+格式而迁移。
 
-本文件只是完整 daily report 的**极简摘要与导航入口**，通常控制在
-20--30 行。它不重新讲实验，也不拥有新的证据或判断。
+## 1. 核心问题
 
-## 认识更新
+[只写一个可由本轮证据改变判断的问题。先定义不可缺少的英文术语或代号，再用
+白话表述。说明它和长期研究方向的关系，但不要把 Router、专家专门化或其他
+下游目标写成本轮已经回答的内容。]
 
-**问题：** [一个已经被来源 daily report 有边界回答的具体问题。]
+## 2. 实验目的
 
-[用两到四句自然、连贯的话说明现在认识到了什么、相对原判断改变了什么，
-以及最强剩余不确定性。研究者未确认时保持
-`AWAITING_HUMAN_JUDGMENT`。]
+[说明本轮要把核心问题解决到什么程度、按依赖关系回答哪些子问题，以及明确的
+完成标准。一个核心实验优先，确有必要时最多三个。支持同一结论的对照、稳健性
+检查和可信度护栏不另算核心实验。]
 
-## 最少依据
+**本轮不回答：**[列出最容易越界的相邻问题。]
 
-**决定性结果：** [用一句话写关键比较及其直接结果。仅当不写数值会造成
-歧义时保留一个数值；不展开设置、指标教程、完整推理或其他诊断。]
+## 3. 分析方法
 
-**完整报告：** [链接到 HUMAN_CONFIRMED `daily_report_<topic_slug>.md`。]
+只允许一到三条，每条都用白话说明“做什么、比较什么、该比较排除什么解释”。
+公式、完整超参数、随机种子、统计细节和运行步骤放在 Protocol。
 
-## 边界与下一决策
+1. [第一步]
+2. [第二步]
+3. [仅确有依赖时保留第三步]
 
-- **仍不能说：** [最容易被过度外推的一句话。]
-- **唯一下一决策：** [一个会改变主线的判断。]
+## 4. 结论
 
-> Focus 不放公式、术语表、完整实验设置、多个结果、图表、流程图、证据
-> lineage、完成判据或恢复动作；这些内容全部在 daily report 中阅读。
+### 执行前：两种预期结果
+
+- **若支持：**[将观察到什么；它对核心问题允许说明什么；仍不能说明什么。]
+- **若不支持或证据不足：**[将观察到什么；应停止、改写还是补哪一个必要条件；
+  它如何防止主线继续建立在假象上。]
+
+### 执行后：由研究者完成
+
+- **直接结果：**[不要先写解释。]
+- **我的结论：**[研究者自己的认识更新。]
+- **仍不能说：**[最重要的一条边界。]
+- **唯一下一决策：**[只能有一个。]
+
+AI 只核对数字、证据资格和结论边界，不替研究者加强结论。研究者完成这一节且
+canonical `summary.md` / `detailed.md` 可追溯后，AI 才写自包含的
+`daily_report_<topic_slug>.md`，供研究者检查实验故事是否自洽。
+
+## 路径
+
+- **Protocol：**[链接；未写时标 `NOT_YET_WRITTEN`]
+- **Summary：**[结果存在后补]
+- **Detailed：**[结果存在后补]
+- **Daily Report：**[研究者完成结果报告后再补]
+- **Parking Lot：**[项目级 `main/parking_lot/README.md`]

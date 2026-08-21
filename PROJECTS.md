@@ -1,8 +1,8 @@
 # Projects
 
-Current-state registry for `Research_System`. Read after `AGENTS.md`. For a
-problem's latest bounded knowledge update and resume point, read its relevant
-`daily_research_reports/MMDD/focus_<problem>.md` when it exists.
+Current-state registry for `Research_System`. Read after `AGENTS.md`. For the
+current meeting-cycle task and resume point, read the one active
+`daily_research_reports/MMDD/focus_<problem>.md` named below.
 
 ## Active Project
 
@@ -13,8 +13,25 @@ problem's latest bounded knowledge update and resume point, read its relevant
 | Worker surface | `Projects/from-attention-to-search/XingyuD/` |
 | Active branch | `Xingyu` |
 | Read-only reference | `Projects/kv_cache/` |
-| Graph | `Projects/graphs/expert_specialization.graph.yaml` |
+| Graph | `Projects/graphs/expert_specialization.graph.yaml` (navigation snapshot; known stale A06 active markers) |
 | Root sync | `sync/S000_current_specialization/` |
+
+## Active Meeting Cycle
+
+| Role | Path / value |
+|---|---|
+| Cadence | 2026-08-21 architecture-level correction of the local/shared functional-subspace experiment |
+| Core task | after explicit softmax contrast correction, decide whether local tasks compress below the class-head ceiling, whether their directions are reproducible yet distinct, and whether a directly learned shared space expands with task count |
+| Active Focus | `daily_research_reports/0821/focus_contrast_corrected_functional_subspace_scaling.md` |
+| Active Anchor | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_06_semantic_conditioned_functional_subspace_anchor.md` |
+| Protocol | `Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E05_contrast_corrected_shared_scaling/protocol.md` (`APPROVED_FOR_FULL_RUN`) |
+| Parking Lot | `Projects/from-attention-to-search/main/parking_lot/README.md` |
+| Current decision | the researcher approved the full E05 redesign and requested execution; old E03 8D/56D values are debugging context only until the contrast-corrected, directly learned, newly confirmed run completes |
+
+Until this Focus is closed or explicitly replaced by the researcher, no other
+research question is execution-active. Existing A06, A15, and A16 states remain
+scientifically valid but are scheduling-paused; this does not create a logical
+dependency between those lines.
 
 `Projects/kv_cache` is read-only unless the user explicitly authorizes edits.
 Only its `xyDeng` branch is managed here; never push its `main` branch.
@@ -25,7 +42,8 @@ load-control gradient interference, are both research lines inside
 learning dynamics, representation atlases, independent middle/tail information
 audits, functional coordinate admission, and online spectral routing; A16 owns load-control mechanism,
 LM-versus-load-gradient interaction, and mechanism-conditioned intervention
-selection. Neither line pauses or gates the other. Their checkpoints, raw logs,
+selection. Neither line scientifically pauses or gates the other, but the
+meeting-cycle rule permits only the single active task above. Their checkpoints, raw logs,
 calibration caches, and full run outputs remain under the verified
 `/data/250010109/MoE_Router/` worker surfaces.
 
@@ -166,7 +184,7 @@ reading surface.
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
 | A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The controlled conditional-functional-rank theorem is retained, while global shared-linear propagation remains closed. E01 established that duplicate exposure is not context diversity and that capability-passing lookup `K=1/4/16` controls used 10.2/11.0/12.8 functional ROOT directions; archived E02-v1 matched seen-pair capability but failed strong unseen-pair recombination in 5/5. Improved E02 now isolates exact frequency inside one learned common mapping: all 10 pairs passed strict zero-exposure capability and rank-validity gates, LowF-minus-HighF functional rank averaged 0.2 directions, and its one-sided 95% upper bound was 0.5 against a frozen two-direction margin. This supports frequency non-inferiority in the registered task, not a shared-versus-independent mapping advantage. E03 was parked before treatment because a 32-probe common AdamW step basis captured only 0.478--0.631 of held-out common-update energy, so raw parameter-space reuse remains unidentified. E04--E06 retain the local-versus-finite bridge result: exact optimizer/ROOT secants were effectively eight-dimensional, while single-point H11 was refuted in 5/5. A14_03 remains blocked and Router utility remains unverified. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md` |
-| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Router-input access, controlled learning dynamics, and layerwise representation non-uniformity remain coordinate-specific; local rank, shared tail, fixed bands, and variance-growth selection do not define added information. A15_08 E04 establishes one bounded layer-25 added-accessibility instance while two frozen directions retain only 33.24%. The layerwise successor E01 is `H2_LC_INSUFFICIENT_STANDARDIZATION` because block-1 $X_1$ is structurally constant. Human-approved E02 evaluates blocks 2--36 and is eligible: $T_{depth}=0.006102$ $[0.004119,0.007669]$ is positive, but $A_{2F}=-0.011422$ $[-0.013994,-0.009812]$, yielding `H2_LC_FAIL_CONTROL_DEGRADATION`. Therefore a stronger interaction does not establish larger absolute remote two-hop added accessibility. Representation rank is non-monotonic and descriptive only. Generalized eigen-directions, task-rank retrieval, and Router remain out of scope; the only next decision is whether to reformulate the successor around direct $G_{\ell,2F}$ absolute gain. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
+| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Earlier local-rank, shared-tail, fixed-band, and variance-growth selectors remain insufficient. E03 established full-$R_U$ held-out added accessibility at blocks 24/28 and found supervised fine-class directions mainly outside the PCA head, but its opened confirmation bank cannot establish successor stability. E04 established reproducible domain-local geometry for accumulated $Z$, not for the candidate update. The researcher has explicitly reactivated and revised A15_07 around $R_U$: one draft experiment first tests sealed-expression and independent-reconstruction stability beyond PCA/random/permutation controls, then audits denominator sensitivity, and only then decomposes qualified shared/specific components. Router and expert utility remain out of scope; the sole current decision is Protocol review. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
 | A16 | Can expert load remain operationally controlled while the Router exposes functionally useful same-layer incremental information? | The DC audit establishes an immediate sustainer of frozen Vanilla collapse, while the completed shadow audit bounds Centered relief to an early counterfactual and rejects a global harmful-LB mechanism. The NLL-only increment branch did not show a replicated 20B advantage. The active decision is the approved A16_01_01 two-seed frozen expert-choice-regret gate comparing Conditional-Utility with Native, Raw-Utility, and Conditional-Haar; 30B continuations remain fail-closed unless that gate passes. | `Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/backup/2026/07/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
@@ -224,13 +242,14 @@ actual Router-input spectral access
 -> fixed Mean Response basis gives coarse < medium < fine, but same-layer shapes overlap and do not identify one continuous semantic band
 -> all 35 adjacent-layer variance redistributions are non-monotonic, so normalized Attention-write variance is closed as a definition of added information
 -> A15_03 band audit archived and removed from the active route
--> A15_07 conditional-fine proposal parked unrun
 -> A15_08 exact transition difference plus conditional held-out accessibility
 -> E03 INELIGIBLE_GUARD; E04 eligible local H2 Pass and registered rank-two H1' Fail at 33.24% retention
 -> researcher parks the layer-25 task-readout rank ladder
 -> A15_08_01 E01 stops at structural-null block-1 standardization
 -> E02 blocks 2--36 completes on Reserved 4xH100: positive depth interaction but negative absolute 2F depth change, typed Fail
--> next: decide whether direct absolute $G_{\ell,2F}$ replaces interaction growth before task-rank or functional admission is reconsidered
+-> E03/E04 expose the next meeting uncertainty: supervised directions with low observed PCA-head overlap look compact, while local geometry is reproducible, but fresh-expression stability, PCA-head non-enrichment, and shared-specific identity remain unproved
+-> researcher reactivates A15_07 with $R_U$ at blocks 24/28 and requires a new sealed expression bank
+-> current: review A15_07_E01; no implementation, confirmation opening, or Router work is authorized
 ```
 
 Draft cross-line meeting route:
@@ -467,22 +486,31 @@ generalized to every layer, model, or repository-code distribution.
 
 ## Exactly One Project-Level Next Decision
 
-Approve or reject one training-time selective-sharing test on an explicit real
-rare/common workload after the `A06_04_01` frozen last-layer failure. Do not
-continue the same frozen-pool mining or design another LLM-scale Router first.
+Confirm, correct, or block the cold-read-revised four-part Focus and the
+A15_07_E01 Protocol choices for the current meeting-cycle core task. In
+particular, decide the sealed-v4 construction,
+the frozen E03 standardization, one-rank/no-C4-scan rule, PCA-head non-enrichment
+gate, denominator guard that finalizes admission, and shared/specific null definitions.
+This decision does not authorize a run.
 
-The 2026-07-17 Q1 functional-retrieval proposal remains a historical discussion
-item and does not replace this A06 decision.
+The earlier A06 training-time selective-sharing decision and A16 expert-regret
+gate retain their evidence state but are parked for this cycle; they do not
+replace the active Focus.
 
 ## Current Working And Published Surfaces
 
-- `daily_research_reports/MMDD/focus_<problem>.md`: one problem's self-contained
-  knowledge update, evidence explanation, next decision, and resume action; it
-  is not project truth.
-- `daily_research_reports/MMDD/focus_meeting_<topic>.md`: a new human-scoped
-  synthesis of explicitly selected problem focuses; it is not project truth.
-- `Projects/graphs/expert_specialization.graph.yaml`: current thin navigation
-  graph.
+- `daily_research_reports/MMDD/focus_<problem>.md`: the one living meeting-cycle
+  task, from confirmed plain-language design through the researcher's result
+  account; it is not canonical result evidence.
+- `daily_research_reports/MMDD/docs/daily_report_<topic>.md`: delayed self-
+  contained story written only after canonical evidence and the human result.
+- `daily_research_reports/MMDD/focus_meeting_<topic>.md`: optional explicitly
+  requested meeting brief or human-scoped synthesis; it is not project truth.
+- `Projects/from-attention-to-search/main/parking_lot/README.md`: concise key
+  non-active questions and reopening conditions.
+- `Projects/graphs/expert_specialization.graph.yaml`: thin navigation snapshot;
+  its A06 `active` markers are known stale and do not override this registry or
+  the active Focus. Updating the graph still requires explicit authorization.
 - `sync/S000_current_specialization/README.md`: root-sync entry.
 - `sync/S000_current_specialization/anchor_index.md`: complete mirrored-anchor
   index.

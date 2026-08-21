@@ -45,20 +45,59 @@ audits logic, formalizes approved work, executes, and maintains technical
 records.
 
 ```text
-one-page problem knowledge update
--> AI identifies one blocking issue
+group meeting or explicit research reset
+-> one active two-day core-task Focus
+-> researcher confirms the plain-language experiment account
 -> approved protocol only when an experiment is needed
 -> execution
 -> AI writes the evidence record
 -> human states the result and boundary from memory
 -> AI verifies
--> human states the resulting knowledge update
--> AI writes the reader-friendly daily report from the verified record and
-   human judgment
--> human confirms or corrects that daily report
--> update only the smallest owning artifact and, when the problem is bounded,
-   condense the confirmed daily report into its problem focus
+-> human completes or corrects the result and conclusion in the Focus
+-> AI writes the self-contained daily report only after that human report is
+   complete enough to audit
+-> human confirms or corrects the daily report
+-> update only the smallest owning artifact and close the cycle
 ```
+
+The default cadence is one group meeting every two days. Immediately after a
+meeting, create or reset exactly one active `focus_<problem>.md` for the next
+meeting. Until its completion criterion is met or the researcher explicitly
+replaces it, do not start another exploratory question. A core task normally
+contains one self-contained experiment and may contain at most three genuinely
+necessary core experiments. Diagnostics and controls do not count as separate
+core experiments when they only protect the same verdict.
+
+The `MMDD` directory is the calendar date on which the active Focus is first
+written. Record the source meeting date separately as `cycle_start` and the
+next meeting as `target_meeting`; do not rename a living Focus merely because a
+two-day cycle crosses midnight.
+
+Before execution, the active Focus must contain a researcher-confirmed plain-
+language account with exactly these decision sections:
+
+```text
+1. Core question
+2. Experiment purpose, including the subquestions and completion standard
+3. Analysis method, with at most three plain-language steps
+4. Conclusion: before execution, two expected outcome branches and how each
+   changes the core question; after execution, the human-owned actual result
+```
+
+Do not use an unexplained English code, run ID, metric abbreviation, or method
+name in that account. Define it in plain Chinese first when it is indispensable.
+Protocol drafting does not authorize implementation, smoke testing, or a run.
+If Protocol audit materially changes any plain-language method, completion
+rule, or expected branch after the researcher's last confirmation, mark the
+Focus `AI_REVISED_AWAITING_HUMAN_CONFIRMATION`. Keep the core question's
+separate ownership record unchanged, and do not promote the Protocol until the
+revised four-part account is confirmed again.
+
+Questions outside the active core task go to the active project's concise
+`main/parking_lot/README.md` only when they are important enough to change the
+long-term direction. Do not use the Parking Lot for minor diagnostics,
+implementation chores, speculative ablations, or questions that do not affect
+a hypothesis, claim boundary, or future mainline decision.
 
 Before formalizing a new question, the human states:
 
@@ -88,7 +127,9 @@ AI verifies numbers, evidence, and wording without strengthening the claim.
 
 ## Focus And Writing
 
-Daily writing has one full explanatory report followed by two focus forms.
+Daily writing starts from one living core-task Focus. The complete explanatory
+report is deliberately delayed until canonical evidence and the researcher's
+own result account exist.
 
 ### Daily Research Report
 
@@ -113,60 +154,50 @@ report must trace to those records. The daily report must preserve material
 negative results, uncertainty, deviations, and failed assumptions; it must not
 reframe `Fail` or `Insufficient` as progress language. Before the researcher
 confirms the knowledge wording, mark it
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. Only a confirmed daily report may be
-the source of a completed problem focus.
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. Do not create this report at task
+selection, Protocol drafting, implementation, or raw-result time. Create it
+only after the researcher has completed or explicitly approved the experiment
+result, boundary, and next decision in the active Focus. The report is then a
+self-contained story used to audit whether the experiment and interpretation
+are coherent; it does not retroactively own the Focus.
 
-### Problem Knowledge Update
+### Core-Task Focus
 
-When one problem reaches a bounded answer, create:
+Immediately after one group meeting or explicit research reset, create:
 
 ```text
 daily_research_reports/MMDD/focus_<problem_slug>.md
 ```
 
-The file is a short, human-owned **summary and navigation card** condensed from
-one confirmed daily report, not a second experiment report. A day may contain
-several problem focus files when several problems reach bounded answers. If no
-problem reaches a bounded answer, or the source daily report is not
-human-confirmed, do not manufacture a focus conclusion. Legacy bare `focus.md`
-files may remain; do not create new ones or bulk-rename them without an explicit
-migration.
+The file is the short, human-owned **living task card** for one meeting cycle,
+not an experiment ledger or a second Protocol. It starts before execution with
+the four-section plain-language account above. After execution, the researcher
+adds or corrects the actual result, cannot-claim boundary, and one next
+decision. AI may verify those statements against `summary.md` and
+`detailed.md`, but must not strengthen them.
 
-Keep the focus normally within 20--30 lines. It contains only:
-
-1. exactly one concrete answered problem;
-2. a two-to-four-sentence human-confirmed knowledge update;
-3. one sentence giving the decisive comparison and direct result;
-4. the cannot-claim boundary and exactly one next decision;
-5. one prominent link to the complete daily report.
-
-Do not repeat setup, terminology tables, formulas, full metrics, multiple
-results, figures, flowcharts, provenance tables, completion criteria, or resume
-instructions in the focus. Those belong to the daily report. A focus may repeat
-one number only when the knowledge update would otherwise be ambiguous.
-
-The researcher writes or explicitly approves the core question, knowledge
-update, mechanism, claim boundary, and next decision. AI may prefill the source
-link and verify the one decisive result. AI must not infer a stronger conclusion
-from experimental results. A focus must name its source daily report first and
-must not introduce a result, interpretation, boundary, or next decision absent
-from that confirmed source. Corrections flow only from canonical evidence to
-the daily report and then to the focus.
+Keep the Focus concise enough to read before a meeting. It may name at most
+three core experiments and at most three analysis steps for the whole task.
+Put formulas, full settings, uncertainty details, controls, plots, provenance,
+and run history in the Anchor, Protocol, Summary, Detailed, and delayed daily
+report. Link those sources rather than copying them. Legacy bare `focus.md` and
+historical result-summary Focus files may remain; do not migrate them
+implicitly.
 
 ### Meeting Knowledge Synthesis
 
-For every meeting synthesis, create a new file:
+Create a separate meeting synthesis only when the researcher explicitly asks
+for a meeting brief, speaking preparation, or a multi-problem synthesis:
 
 ```text
 daily_research_reports/MMDD/focus_meeting_<topic_slug>.md
 ```
 
-A one-problem meeting uses the lightweight path when the researcher names the
-problem, note, or problem focus and states the meeting's core question. A
-multi-problem meeting starts as `AWAITING_HUMAN_SCOPE` until the researcher
-provides the exact source focus paths, exclusions, and core question. AI must
-not infer a multi-problem merge range or introduce a joint judgment that no
-selected source owns.
+For an ordinary one-problem cycle, use the active core-task Focus directly and
+do not create a redundant meeting file. A multi-problem synthesis starts as
+`AWAITING_HUMAN_SCOPE` until the researcher provides the exact source paths,
+exclusions, and core question. AI must not infer a merge range or introduce a
+joint judgment that no selected source owns.
 
 The meeting focus follows the same knowledge-update principle as a problem
 focus, but answers one core question through two to four progressive
@@ -187,9 +218,10 @@ progress only when they change a judgment, boundary, or decision.
 |---|---|
 | `AGENTS.md` | stable repository behavior and hard boundaries |
 | `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` | full reader-friendly experiment or evidence report, verified knowledge update, boundary, and one next decision; derived from canonical evidence |
-| `daily_research_reports/MMDD/focus_<problem>.md` | minimal summary and navigation card: one answered problem, concise knowledge update, one decisive result, boundary, and one next decision |
+| `daily_research_reports/MMDD/focus_<problem>.md` | one living meeting-cycle task: confirmed plain-language design before execution and human-owned result/boundary afterwards |
+| `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` | delayed self-contained experiment story written from canonical evidence only after the human completes the result account |
 | `daily_research_reports/MMDD/focus_meeting_<topic>.md` | one meeting's concise progressive knowledge update from a named problem or a human-scoped multi-problem set |
+| `Projects/<project>/main/parking_lot/README.md` | concise project-level list of important non-active questions and their reopening conditions |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
 | Thinking Card | human's initial mechanism judgment and uncertainty |
 | anchor | one adjudicable research design and its current boundary |
@@ -291,12 +323,12 @@ Canonical experiment chain:
 anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
 ```
 
-Daily reading chain after eligible evidence and human judgment:
+Meeting-cycle chain:
 
 ```text
-summary.md + detailed.md + anchor update
--> daily_report_<topic_slug>.md
--> focus_<problem>.md
+meeting -> active focus_<problem>.md -> confirmed plain-language design
+-> protocol.md -> explicit execution approval -> summary.md + detailed.md
+-> human-completed Focus result -> daily_report_<topic_slug>.md -> cycle close
 ```
 
 - Use `experiment-card-writer` to write the complete candidate directly into
@@ -319,10 +351,9 @@ summary.md + detailed.md + anchor update
   records, explain every central metric and figure in plain language, preserve
   the registered verdict and boundary exactly, and contain exactly one next
   decision.
-- Create the problem focus only by compressing a human-confirmed daily report.
-  The focus keeps only the question, concise update, one decisive result,
-  boundary, one next decision, and report link; it may not add or strengthen
-  content.
+- Require the active Focus's four-part plain-language design to be human-
+  confirmed before Protocol promotion. After execution, verify the human-owned
+  Focus result against canonical evidence before writing the daily report.
 - Add conditions, seeds, and diagnostics only when they separate a named rival
   or protect the primary conclusion.
 - Every central plot needs a contract: question, metric and unit, data source,
@@ -340,14 +371,17 @@ affects next decision? yes/no/unclear
 recommendation: pursue / park / ignore
 ```
 
+`pursue` is allowed only when the tangent is required to close the active core
+task. `park` writes one concise entry only if it is a key long-term research
+question. `ignore` creates no artifact.
+
 ## Meeting Preparation
 
-Always create a new `focus_meeting_<topic>.md` from
-`templates/meeting/meeting_focus_template.md`. For one named problem, proceed
-once the researcher has stated the core question. For multiple independent
-problems, require the exact human-selected merge scope and exclusions before
-synthesis. In both cases, organize the meeting as a concise progressive answer
-to one question, not an experiment correction or source-by-source audit.
+Use the active core-task Focus for an ordinary one-problem meeting. Create a new
+`focus_meeting_<topic>.md` from
+`templates/meeting/meeting_focus_template.md` only for an explicitly requested
+meeting brief or synthesis. For multiple independent problems, require the
+exact human-selected merge scope and exclusions before synthesis.
 
 Use `templates/meeting/meeting_outline_template.md` only when the user
 explicitly asks for a separate speaking outline after the meeting focus is
@@ -365,9 +399,9 @@ records.
 
 ## Explicit Publication And Sync
 
-Default behavior updates only project-local sources, the applicable
-reader-friendly daily report, and the problem or meeting focus files under
-`daily_research_reports/MMDD/`.
+Default behavior updates only project-local sources, the applicable active
+Focus, project Parking Lot when needed, and the delayed daily report or meeting
+brief under `daily_research_reports/MMDD/`.
 
 These actions require an explicit user request:
 

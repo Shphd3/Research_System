@@ -17,13 +17,17 @@ anchor -> protocol.md -> summary.md -> detailed.md -> anchor sections 7-8
 Store the canonical files together:
 
 ```text
-Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/
+Projects/<project>/main/experiments/A<line_number>/<anchor_stem>/<experiment_id>/
   protocol.md
   summary.md
   detailed.md
   figures/
   tables/
 ```
+
+For example, anchor `15_07_<topic>` belongs under
+`main/experiments/A15/15_07_<topic>/`. The anchor-family layer prevents sibling
+anchors in the same A15 line from being mixed together.
 
 ## Mandatory Reference Routing
 
@@ -43,6 +47,31 @@ canonical files.
 
 ## Hard Gates
 
+### 0. Confirmed Core-Task Focus
+
+Before drafting a Protocol, require one active
+`daily_research_reports/MMDD/focus_<problem>.md` whose four-part plain-language
+design is explicitly researcher-confirmed:
+
+```text
+1. core question
+2. experiment purpose, dependent subquestions, and completion standard
+3. at most three plain-language analysis steps
+4. expected supporting and non-supporting outcome branches
+```
+
+The Focus may name at most three core experiments and should normally name one.
+Controls, nulls, robustness checks, and leakage guards that protect the same
+verdict remain supporting analyses inside that experiment. If the Focus is
+missing, unconfirmed, or inconsistent with the Anchor, stop and route the
+conflict to `research-sync-gate` or `problem-anchor-writer`.
+
+If a cold read materially revises the Focus's plain-language method,
+completion rule, or expected branches, set its design state to
+`AI_REVISED_AWAITING_HUMAN_CONFIRMATION`. A separately confirmed core question
+may remain confirmed, but the Protocol cannot be promoted until the revised
+four-part design is confirmed again.
+
 ### 1. Anchor Alignment
 
 Do not let the Protocol invent or redefine the research question, physical
@@ -52,7 +81,8 @@ to `problem-anchor-writer`.
 
 Every added condition, seed, checkpoint, diagnostic, or figure must either
 separate a named rival explanation or protect the validity of the primary
-conclusion. Park everything else.
+conclusion. Put only important future direction questions in the project-level
+Parking Lot; ignore minor extras.
 
 ### 2. Draft First, Then Review
 
@@ -79,6 +109,11 @@ able to state, without opening a link:
 - Pass, Fail, and Insufficient meanings;
 - the smallest approved execution scope;
 - what the experiment cannot claim.
+
+The approval snapshot must link the confirmed active Focus and explain any
+technical label in plain language. It may be more technical than the Focus but
+must preserve the same question, purpose, three-step logic, completion rule,
+and two expected branches.
 
 Require a constructible stage contract, frozen analysis plan, preflight/smoke
 boundary, failure-stop rules, and artifact destinations. Links support audit;
@@ -155,11 +190,12 @@ The two files may repeat only the primary metric definition, primary observed
 value, verdict, claim boundary, and next decision. Those repeated fields must
 match exactly. Neither file may claim more than the Anchor permits.
 
-A reader-friendly daily report is a derived explanatory surface, not a third
+A reader-friendly daily report is a delayed explanatory surface, not a third
 canonical result record. After Summary, Detailed, and the Anchor update agree,
-route daily-report writing and later focus condensation to
-`research-progress-core`. Do not make the daily report the only source of a
-number, eligibility decision, deviation, or verdict.
+the researcher first completes or confirms the actual result, boundary, and one
+next decision in the already-existing Focus. Then route daily-report writing to
+`research-progress-core`. Do not make the Focus or daily report the only source
+of a number, eligibility decision, deviation, or verdict.
 
 ### 8. Visual Evidence
 
@@ -176,18 +212,16 @@ After eligible evidence and researcher judgment are consistent:
 summary.md / detailed.md
 -> update Anchor section 7 with the minimum local evidence unit
 -> update Anchor section 8 with the bounded claim and one next decision
--> after the human states a bounded knowledge update, use
-   `research-progress-core` to create and confirm
+-> researcher completes the actual result in the existing active Focus
+-> after that human result is confirmed, use `research-progress-core` to create
    daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
--> only then condense that confirmed daily report into
-   daily_research_reports/MMDD/focus_<problem>.md
+-> researcher audits the self-contained story and closes or corrects the cycle
 ```
 
 `summary.md` and `detailed.md` analyze and preserve experimental results; they
-do not themselves constitute the daily knowledge update or focus conclusion.
-The daily report provides the complete reader explanation; the problem focus
-keeps only its concise knowledge update, one decisive result, boundary, next
-decision, and report link.
+do not themselves constitute the human-owned Focus conclusion. The Focus owns
+the cycle task and the researcher's result account; the delayed daily report
+provides the complete reader explanation and coherence audit.
 
 Do not create a closure report or line synthesis through this skill. Route an
 explicit line-level synthesis to `research-story-writer` and path/state changes

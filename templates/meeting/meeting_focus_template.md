@@ -7,13 +7,15 @@ scope: one_problem | multi_problem
 ```
 
 保存为：`daily_research_reports/MMDD/focus_meeting_<topic_slug>.md`。
-每次组会新建本文件，不覆盖任何 `focus_<problem>.md`。
+仅在研究者明确要求组会简报、口头汇报准备或多问题综合时新建本文件，不覆盖
+作为两天周期唯一任务卡的 `focus_<problem>.md`。普通单问题组会直接使用活动
+Focus，不重复造一份 meeting focus。
 
-若是单问题组会，研究者已经明确点名问题或 note 并给出核心问题后，直接使用
+若明确要求单问题组会简报，研究者已经点名活动 Focus 并给出核心问题后，使用
 下述结构。若合并多个独立 problem，先把状态设为 `AWAITING_HUMAN_SCOPE`，
 由研究者补全精确来源路径、排除范围和一个核心问题；完成后仍使用同一结构。
 
-**来源范围：**[点名的 note 或 `focus_<problem>.md`；多问题时逐条列出。]
+**来源范围：**[优先点名活动 `focus_<problem>.md`；多问题时逐条列出。]
 **排除范围：**[不进入本次讨论的相邻问题。]
 
 ## 1. 本次组会主题与核心问题
