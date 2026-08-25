@@ -20,6 +20,7 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 | `research-mainline` | Project organization, artifact placement, archive state, status, and explicitly requested root-mirror publication | Research judgment, raw execution, handoff packaging, external collaborator sync | Allowed; guarded actions still require an explicit request |
 | `remote-experiment-workflow` | Container, SSH, CCI, SCO, or ACP experiment workflow, monitoring, logs, artifact maps | Hypothesis design or SCO platform resource semantics | Allowed |
 | `scholar-mode` | Research-intuition audit, theory or methodology critique, paper analysis, literature positioning | Artifact schemas, graph work, runs, ordinary code | Allowed |
+| `research-document-explainer` | Plain-language reading of AI-written research documents, formulas, proofs, experiment logic, and research ideas | Formal Anchor/Protocol/result authoring, active-task ownership, execution, publication | Allowed |
 | `meeting-outline-writer` | Concise progressive `focus_meeting_<topic>.md` for one named problem or a human-scoped multi-problem set, plus optional speaking flow | Researcher's unconfirmed conclusion, multi-problem scope choice, handoff packaging, sync | Allowed |
 | `handoff-report-writer` | Explicit curated package, handoff, copy, or external sync request | New claims, meeting authorship, raw outputs | Explicit only |
 | `research-graph-sop` | Explicit `graph.yaml` inspection, creation, maintenance, or navigation audit | Ordinary research notes or project-state edits without graph scope | Allowed |
@@ -44,6 +45,11 @@ Use `meeting-outline-writer` for meeting content and return to
 external sync. `research-mainline` may locate the canonical sources but does
 not assemble that package. Use `research-graph-sop` for graph structure and
 `sidecar-thinking` only for an explicitly requested Sidecar operation.
+
+Use `research-document-explainer` when the requested outcome is understanding
+a named AI-written research artifact. Route formal research judgment or Focus
+changes to `research-progress-core`, and route theory critique or literature
+positioning beyond the named artifact to `scholar-mode`.
 
 For learnable experiments, localize the uncertainty before choosing a method:
 

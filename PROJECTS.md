@@ -20,16 +20,17 @@ current meeting-cycle task and resume point, read the one active
 
 | Role | Path / value |
 |---|---|
-| Cadence | 2026-08-21 architecture-level correction of the local/shared functional-subspace experiment |
-| Core task | after explicit softmax contrast correction, decide whether local tasks compress below the class-head ceiling, whether their directions are reproducible yet distinct, and whether a directly learned shared space expands with task count |
-| Active Focus | `daily_research_reports/0821/focus_contrast_corrected_functional_subspace_scaling.md` |
-| Active Anchor | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_06_semantic_conditioned_functional_subspace_anchor.md` |
-| Protocol | `Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E05_contrast_corrected_shared_scaling/protocol.md` (`APPROVED_FOR_FULL_RUN`) |
+| Cadence | 2026-08-24 random-projection preservation closure after the 0821--0824 theory correction |
+| Core task | distinguish the standalone $R_U$ boundary from the broader Qwen3-30B-A3B Router-input space by comparing native Router inputs and adjacent-layer Router-input differences under frozen cross-template probes |
+| Active Focus | `daily_research_reports/0824/focus_random_projection_router_preservation.md` |
+| Active Anchor | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_09_random_projection_router_preservation_anchor.md` |
+| Protocol | `Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E03_native_router_representation_controls/protocol.md` (`COMPUTATION_COMPLETE_EXTERNAL_H1_GUARD_UNRESOLVED`) |
 | Parking Lot | `Projects/from-attention-to-search/main/parking_lot/README.md` |
-| Current decision | the researcher approved the full E05 redesign and requested execution; old E03 8D/56D values are debugging context only until the contrast-corrected, directly learned, newly confirmed run completes |
+| Current decision | E03 completed on one reserved four-H100 worker: native Router input at block 42 reaches 0.77898/0.75430 same/new-template balanced accuracy, while adjacent-layer difference at block 41 reaches 0.76398/0.71211; all four intervals clear 0.125 chance, but every 5th-percentile margin remains negative. Thus E02's standalone failure is specific to $R_U$, not missing class readability in the broader Router space. Proposed next decision, awaiting human wording and external H1 review: open representation learning only for expert-utility-aligned positive-margin organization, with native input and adjacent difference frozen as baselines. |
 
 Until this Focus is closed or explicitly replaced by the researcher, no other
-research question is execution-active. Existing A06, A15, and A16 states remain
+research question is execution-active. The displaced 0821 E05 execution task is
+scheduling-paused rather than scientifically resolved. Existing A06, A15, and A16 states remain
 scientifically valid but are scheduling-paused; this does not create a logical
 dependency between those lines.
 

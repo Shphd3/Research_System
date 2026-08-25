@@ -1,0 +1,141 @@
+# Research Document Explanation Contract
+
+## Goal
+
+Rebuild the explanation in the order a reader needs, not the order the author
+wrote it. Assume a capable researcher who lacks the document's local context.
+Do not assume that difficulty means low intelligence.
+
+## Source Lock
+
+After the repository's `Start Here` routing precheck, treat the exact named file
+or passage as the first explanation source.
+
+1. Read that exact named file or passage.
+2. Identify what kind of artifact it is and whether its conclusions are human
+   confirmed, AI draft, proposal, frozen contract, direct evidence, or history.
+3. Open a linked source only when it is needed to define a central object,
+   verify a decision-bearing number, or resolve a claim boundary.
+4. State a missing or conflicting source as `UNKNOWN`; do not repair it from
+   chat memory or general plausibility.
+
+## Progressive Output
+
+### First Pass: default
+
+Keep the first pass to roughly one screen. Use this positive recipe:
+
+1. **What this document is trying to answer** — one concrete question.
+2. **What it currently says** — two to five natural sentences containing the
+   answer, result status, or unresolved state.
+3. **Essential objects** — normally three to six items, each defined by its
+   role before its abbreviation or symbol.
+4. **One reasoning chain** — `input or premise -> operation or comparison ->
+   observation -> allowed conclusion -> boundary`.
+5. **What is source versus interpretation** — one compact status block.
+6. **Zoom-in choices** — name two or three specific nodes, such as one formula,
+   one experimental gate, or one disputed inference.
+
+If the user asked a narrow question, answer that question and omit unrelated
+slots. A simple idea should remain simple.
+
+### Deep Pass: only when requested
+
+Keep the first-pass summary, then expand in dependency order:
+
+```text
+problem and why it exists
+-> objects and their roles
+-> mechanism or proof roadmap
+-> experiment or evidence chain
+-> direct result
+-> allowed inference and strongest rival
+-> proof, experiment, or research proposals requested by the user
+```
+
+Do not repeat the same conclusion at several depths. Each deeper layer must add
+a missing relation, justification, example, or boundary.
+
+## Explanation Units
+
+For a paragraph, formula, figure, or gate, explain:
+
+```text
+plain meaning
+why it is present
+what inputs or assumptions it needs
+what changes or is compared
+what it supports
+what it cannot establish
+```
+
+For every non-obvious term, give its plain Chinese meaning before reusing the
+English name, abbreviation, or symbol. Do not create a glossary dump; define
+terms at the first point where the reasoning needs them.
+
+For a formula:
+
+1. say in words what quantity or relation it represents;
+2. define every symbol and its type or unit;
+3. explain the operation from inside outward;
+4. give one tiny concrete or limiting example when it helps;
+5. state the exact claim and the nearest tempting overclaim.
+
+Use an analogy only when it preserves the relevant structure. State where the
+analogy stops matching. Prefer a direct concrete example when an analogy would
+add another conceptual layer.
+
+Use a small diagram only when three or more objects or dependent gates are hard
+to hold in prose. Every node must carry semantic content; do not draw a diagram
+merely to decorate the explanation.
+
+## Status Language
+
+Use these labels at the smallest useful section level:
+
+| State | Meaning |
+|---|---|
+| `SOURCE` | The named document explicitly says this. |
+| `VERIFIED_EVIDENCE` | A canonical result or source was opened and supports it. |
+| `EXPLANATION` | Same claim translated into a clearer dependency order. |
+| `AI_INFERENCE` | A conclusion derived from named premises but not stated by the source. |
+| `AI_PROPOSAL` | A new experiment, proof route, counterexample, or research direction. |
+| `UNKNOWN` | The material does not establish it or the required source is missing. |
+
+An AI-written or unconfirmed source remains unconfirmed after explanation.
+Readable wording must not upgrade its epistemic status.
+
+## Compact Example
+
+Suppose a document says: “adding representation $R$ lowers DEVELOPMENT loss.”
+The explanation must not silently rewrite this as “$R$ contains new
+information.” Use the states to preserve the gap:
+
+```text
+SOURCE: adding R lowers DEVELOPMENT loss under the registered readout.
+EXPLANATION: the readout predicts better when it can use R.
+AI_INFERENCE: R may carry useful signal, but extra capacity or leakage could
+also explain the improvement unless matched controls rule them out.
+AI_PROPOSAL: compare X+R against a capacity-matched duplicate-X control on a
+held-out split; this is a proposed test, not a result or approved Protocol.
+```
+
+## Comprehension Check
+
+Finish with one check that targets the central dependency, for example:
+
+> 如果去掉对照组 B，这个结果为什么不能再区分“新增信息”和“多一组参数”？
+
+When interaction is more useful than a quiz, instead offer a precise zoom-in
+menu: `对象关系 / 公式第 2 步 / 实验判据 / 结论边界`. Do not end with an
+unbounded offer to explain everything again.
+
+## Common Failures
+
+- A correct encyclopedia answer that is too long to enter.
+- Defining symbols while leaving the research object undefined.
+- Following document chronology instead of reader dependency.
+- Using a cute analogy as a substitute for the real mechanism.
+- Mixing a new experiment or proof idea into the document's own conclusion.
+- Calling a proxy observation a mechanism, a theorem, or a capability result.
+- Repeating the verdict without explaining the comparison that supports it.

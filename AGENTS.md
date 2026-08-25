@@ -491,6 +491,8 @@ Use repository skills when the task matches:
 - `research-graph-sop`: thin graph maintenance.
 - `handoff-report-writer`: explicit curated handoff packaging.
 - `remote-experiment-workflow`: remote execution and artifact maps.
+- `research-document-explainer`: progressive plain-language reading of AI-written
+  research documents, proofs, experiment logic, and bounded research proposals.
 - `sidecar-thinking`: local graph display.
 - `scholar-mode`: unstable research intuition and literature framing.
 

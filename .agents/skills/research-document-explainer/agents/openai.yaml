@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Document Explainer"
+  short_description: "Make AI research documents easier to understand"
+  default_prompt: "Use $research-document-explainer to explain this research document clearly, preserve its evidence boundary, and offer only the requested proof, experiment, or research suggestions."
+
+policy:
+  allow_implicit_invocation: true
