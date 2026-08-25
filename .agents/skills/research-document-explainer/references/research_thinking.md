@@ -39,7 +39,8 @@ rival can still produce the same observation.
 
 ## Suggest Research Directions
 
-When requested, offer at most three `AI_PROPOSAL` directions and recommend one.
+When requested, offer at most three directions labeled `AI 建议` (internal
+state `AI_PROPOSAL`) and recommend one.
 For each direction state:
 
 ```text

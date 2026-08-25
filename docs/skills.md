@@ -49,7 +49,9 @@ not assemble that package. Use `research-graph-sop` for graph structure and
 Use `research-document-explainer` when the requested outcome is understanding
 a named AI-written research artifact. Route formal research judgment or Focus
 changes to `research-progress-core`, and route theory critique or literature
-positioning beyond the named artifact to `scholar-mode`.
+positioning beyond the named artifact to `scholar-mode`. Chinese explanations
+use `docs/research_terminology.md` for recurring English aliases and the
+explainer's local terminology contract for document-specific names.
 
 For learnable experiments, localize the uncertainty before choosing a method:
 

@@ -12,6 +12,9 @@ objects and reasoning links, not make the science childlike.
 ## Required Reference Routing
 
 Always read [explanation_contract.md](references/explanation_contract.md).
+For every Chinese explanation, also read
+[terminology_contract.md](references/terminology_contract.md) and the global
+[Research Terminology Registry](../../../docs/research_terminology.md).
 Then read only the modes requested or required by the source:
 
 - experiment design, method, metric, result, or experiment suggestion:
@@ -36,18 +39,26 @@ For deep treatment, keep the same dependency order and add layers. Define an
 object before using its symbol; explain why a step exists before its technical
 implementation; give the direct claim before qualifications.
 
+In every Chinese explanation, each English alias, abbreviation, run code,
+metric label, or method name must receive a Chinese-first definition earlier in
+that same explanation, even when the alias is globally `APPROVED`. It must also
+be either globally registered or explicitly defined in the local **本次术语**
+block. Speed and source wording do not waive this gate.
+
 ## Source And Judgment Boundary
 
 Use the named document first and follow only links needed to verify a
-decision-bearing statement. Keep these states distinguishable:
+decision-bearing statement. Keep these states distinguishable. In Chinese
+output, use the Chinese labels on the left; the internal codes on the right are
+not reader-facing shorthand:
 
 ```text
-SOURCE             explicitly stated by the document
-VERIFIED_EVIDENCE  checked in a canonical source
-EXPLANATION        faithful plain-language restatement
-AI_INFERENCE       derived interpretation, with premises
-AI_PROPOSAL        suggested experiment, proof route, or research direction
-UNKNOWN            missing or not established
+来源原文      SOURCE
+已核验证据    VERIFIED_EVIDENCE
+解释          EXPLANATION
+AI 推断       AI_INFERENCE
+AI 建议       AI_PROPOSAL
+未知          UNKNOWN
 ```
 
 Group labels by paragraph or section; do not prefix every sentence. Never fill
@@ -56,7 +67,8 @@ glue.
 
 ## Scope
 
-This skill may explain documents and offer bounded `AI_PROPOSAL` suggestions.
+This skill may explain documents and offer bounded AI suggestions (internal
+state `AI_PROPOSAL`).
 It never authors, revises, approves, or changes the status of a formal Anchor,
 Protocol, result record, Focus, meeting artifact, execution, or publication.
 Explaining a named file does not mutate it. Route formal question or Anchor

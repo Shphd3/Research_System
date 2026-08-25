@@ -16,8 +16,33 @@ or passage as the first explanation source.
    confirmed, AI draft, proposal, frozen contract, direct evidence, or history.
 3. Open a linked source only when it is needed to define a central object,
    verify a decision-bearing number, or resolve a claim boundary.
-4. State a missing or conflicting source as `UNKNOWN`; do not repair it from
-   chat memory or general plausibility.
+4. State a missing or conflicting source as `未知` (internal state `UNKNOWN`);
+   do not repair it from chat memory or general plausibility.
+
+## Reader And Writing Calibration
+
+Default to a capable researcher who lacks this document's local context. If the
+user states a different background or names the point of confusion, adapt the
+vocabulary, example, and depth to that information without talking down to the
+reader.
+
+Build each explanation layer in this order:
+
+```text
+what it is
+-> why it is needed
+-> one concrete example when useful
+-> how it works
+-> what the source or evidence supports
+-> what it does not support
+-> what it changes for the current research decision
+```
+
+Use one main relation per sentence. Put purpose before implementation. Prefer a
+concrete example to a decorative analogy; use an analogy only when it preserves
+the causal structure and state where it stops matching. Match length to the
+reader's requested depth, but never trade away an assumption, evidence status,
+or claim boundary for simplicity.
 
 ## Progressive Output
 
@@ -91,33 +116,33 @@ merely to decorate the explanation.
 
 ## Status Language
 
-Use these labels at the smallest useful section level:
+Use the Chinese labels at the smallest useful section level. The internal code
+is shown here for implementation consistency and should not replace the Chinese
+label in Chinese output:
 
-| State | Meaning |
-|---|---|
-| `SOURCE` | The named document explicitly says this. |
-| `VERIFIED_EVIDENCE` | A canonical result or source was opened and supports it. |
-| `EXPLANATION` | Same claim translated into a clearer dependency order. |
-| `AI_INFERENCE` | A conclusion derived from named premises but not stated by the source. |
-| `AI_PROPOSAL` | A new experiment, proof route, counterexample, or research direction. |
-| `UNKNOWN` | The material does not establish it or the required source is missing. |
+| 中文标签 | Internal code | Meaning |
+|---|---|---|
+| 来源原文 | `SOURCE` | The named document explicitly says this. |
+| 已核验证据 | `VERIFIED_EVIDENCE` | A canonical result or source was opened and supports it. |
+| 解释 | `EXPLANATION` | Same claim translated into a clearer dependency order. |
+| AI 推断 | `AI_INFERENCE` | A conclusion derived from named premises but not stated by the source. |
+| AI 建议 | `AI_PROPOSAL` | A new experiment, proof route, counterexample, or research direction. |
+| 未知 | `UNKNOWN` | The material does not establish it or the required source is missing. |
 
 An AI-written or unconfirmed source remains unconfirmed after explanation.
 Readable wording must not upgrade its epistemic status.
 
 ## Compact Example
 
-Suppose a document says: “adding representation $R$ lowers DEVELOPMENT loss.”
-The explanation must not silently rewrite this as “$R$ contains new
-information.” Use the states to preserve the gap:
+Suppose a document says: “加入表示 $R$ 后，开发集损失降低。” The explanation
+must not silently rewrite this as “$R$ contains new information.” Use the
+states to preserve the gap:
 
 ```text
-SOURCE: adding R lowers DEVELOPMENT loss under the registered readout.
-EXPLANATION: the readout predicts better when it can use R.
-AI_INFERENCE: R may carry useful signal, but extra capacity or leakage could
-also explain the improvement unless matched controls rule them out.
-AI_PROPOSAL: compare X+R against a capacity-matched duplicate-X control on a
-held-out split; this is a proposed test, not a result or approved Protocol.
+来源原文：在注册的读出模型下，加入 R 后开发集损失降低。
+解释：当读出模型可以使用 R 时，预测变好。
+AI 推断：R 可能带有有用信号；但在没有匹配对照前，额外容量或信息泄漏也能产生同一现象。
+AI 建议：设原有表示为 X，在留出数据上比较“X 加 R”和“X 加同容量重复 X”两个条件。这是建议的检验，不是已有结果或已批准的实验方案。
 ```
 
 ## Comprehension Check

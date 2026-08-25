@@ -30,7 +30,8 @@ Offer a suggestion only when the user asks or when one missing comparison is
 the direct reason the document cannot answer its own question. Give at most
 three genuinely different candidates and recommend one.
 
-Every candidate is an `AI_PROPOSAL` with this shape:
+In Chinese output, label every candidate `AI 建议` (internal state
+`AI_PROPOSAL`) and use this shape:
 
 ```text
 uncertainty or named rival
@@ -50,7 +51,7 @@ protects the same verdict.
 
 - A suggested experiment is not an approved Protocol or authorization to run.
 - Do not change a frozen Protocol while explaining it. Describe a possible
-  amendment as `AI_PROPOSAL` and route formal work to
+  amendment as `AI 建议` and route formal work to
   `experiment-card-writer`.
 - Do not treat a readable representation, proxy metric, or successful
   classifier as functional or causal evidence without the required contrast.

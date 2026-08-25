@@ -451,6 +451,13 @@ run label, and plot label before using it as evidence. A metric definition must
 state its concrete computation, unit/formula, decision role, and what it cannot
 prove.
 
+For Chinese research explanations, `docs/research_terminology.md` is the
+repository-wide registry of recurring English aliases. An English alias may be
+used only after its mapping is registered or locally proposed and after its
+Chinese-first definition appears earlier in that explanation. Source wording,
+familiarity, and brevity do not authorize an unexplained alias. Repeated terms
+must preserve the registered object, scope, and forbidden confusions.
+
 Use `$...$` for inline formulas and `$$...$$` for display formulas.
 
 ## Repository And Execution Boundary
