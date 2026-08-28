@@ -14,11 +14,12 @@ source_meeting: <精确会议记录路径>
 core_experiment_count: 1 / 2 / 3
 ```
 
-保存为：`daily_research_reports/MMDD/focus_<problem_slug>.md`。这是从一次组会
-延续到下一次组会的唯一活动核心任务，不是实验账本，也不是 Daily Report 的
-摘要。`MMDD` 取本卡首次创建日期；上一场组会日期写入 `cycle_start`，下一场
-目标组会写入 `target_meeting`。同一周期跨日时不移动文件。历史 Focus 不因新
-格式而迁移。
+保存为：`daily_research_reports/MMDD/focus_<problem_slug>.md`。这是一个明确命名
+工作流从一次组会延续到下一次组会的唯一活动核心任务，不是整个仓库的唯一状态，
+也不是实验账本或 Daily Report 的摘要。多个工作流可以并行存在，但每个工作流
+内部只能有一个当前问题和一个下一决策，并须全部登记在 `PROJECTS.md`。`MMDD`
+取本卡首次创建日期；上一场组会日期写入 `cycle_start`，下一场目标组会写入
+`target_meeting`。同一周期跨日时不移动文件。历史 Focus 不因新格式而迁移。
 
 ## 1. 核心问题
 

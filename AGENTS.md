@@ -46,7 +46,7 @@ records.
 
 ```text
 group meeting or explicit research reset
--> one active two-day core-task Focus
+-> one or more explicitly named workstreams, each with one active two-day core-task Focus
 -> researcher confirms the plain-language experiment account
 -> approved protocol only when an experiment is needed
 -> execution
@@ -61,12 +61,16 @@ group meeting or explicit research reset
 ```
 
 The default cadence is one group meeting every two days. Immediately after a
-meeting, create or reset exactly one active `focus_<problem>.md` for the next
-meeting. Until its completion criterion is met or the researcher explicitly
-replaces it, do not start another exploratory question. A core task normally
-contains one self-contained experiment and may contain at most three genuinely
-necessary core experiments. Diagnostics and controls do not count as separate
-core experiments when they only protect the same verdict.
+meeting, create or reset one active `focus_<problem>.md` for every workstream
+that the researcher explicitly keeps active. There is no repository-wide
+singleton Focus: `PROJECTS.md` must list every active workstream, its state,
+priority, dependencies, and resume point. Within each named workstream there is
+still exactly one current Focus, one core question, and one next decision. Do
+not start an unlisted exploratory question or silently replace another
+workstream's Focus. A core task normally contains one self-contained experiment
+and may contain at most three genuinely necessary core experiments. Diagnostics
+and controls do not count as separate core experiments when they only protect
+the same verdict.
 
 The `MMDD` directory is the calendar date on which the active Focus is first
 written. Record the source meeting date separately as `cycle_start` and the

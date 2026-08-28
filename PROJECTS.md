@@ -1,8 +1,9 @@
 # Projects
 
-Current-state registry for `Research_System`. Read after `AGENTS.md`. For the
-current meeting-cycle task and resume point, read the one active
-`daily_research_reports/MMDD/focus_<problem>.md` named below.
+Current-state registry for `Research_System`. Read after `AGENTS.md`. The
+repository may contain multiple explicitly named active workstreams. For any
+task, first select the owning workstream below, then read that workstream's one
+active `daily_research_reports/MMDD/focus_<problem>.md` and resume point.
 
 ## Active Project
 
@@ -16,23 +17,23 @@ current meeting-cycle task and resume point, read the one active
 | Graph | `Projects/graphs/expert_specialization.graph.yaml` (navigation snapshot; known stale A06 active markers) |
 | Root sync | `sync/S000_current_specialization/` |
 
-## Active Meeting Cycle
+## Active Research Workstreams
 
-| Role | Path / value |
-|---|---|
-| Cadence | 2026-08-24 random-projection preservation closure after the 0821--0824 theory correction |
-| Core task | distinguish the standalone $R_U$ boundary from the broader Qwen3-30B-A3B Router-input space by comparing native Router inputs and adjacent-layer Router-input differences under frozen cross-template probes |
-| Active Focus | `daily_research_reports/0824/focus_random_projection_router_preservation.md` |
-| Active Anchor | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_09_random_projection_router_preservation_anchor.md` |
-| Protocol | `Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E03_native_router_representation_controls/protocol.md` (`COMPUTATION_COMPLETE_EXTERNAL_H1_GUARD_UNRESOLVED`) |
-| Parking Lot | `Projects/from-attention-to-search/main/parking_lot/README.md` |
-| Current decision | E03 completed on one reserved four-H100 worker: native Router input at block 42 reaches 0.77898/0.75430 same/new-template balanced accuracy, while adjacent-layer difference at block 41 reaches 0.76398/0.71211; all four intervals clear 0.125 chance, but every 5th-percentile margin remains negative. Thus E02's standalone failure is specific to $R_U$, not missing class readability in the broader Router space. Proposed next decision, awaiting human wording and external H1 review: open representation learning only for expert-utility-aligned positive-margin organization, with native input and adjacent difference frozen as baselines. |
+There is no repository-wide singleton execution state. Every listed workstream
+has its own current Focus, evidence state, and next decision; work in one does
+not silently pause or replace another.
 
-Until this Focus is closed or explicitly replaced by the researcher, no other
-research question is execution-active. The displaced 0821 E05 execution task is
-scheduling-paused rather than scientifically resolved. Existing A06, A15, and A16 states remain
-scientifically valid but are scheduling-paused; this does not create a logical
-dependency between those lines.
+| Workstream | Priority / state | Current Focus | Evidence or contract | Current decision / resume point |
+|---|---|---|---|---|
+| A15 native-$G$ domain-consensus MVP | computation complete; registered machine verdict `PASS`; awaiting human result wording | `daily_research_reports/0828/focus_native_g_domain_consensus_variance_atlas.md` | `Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_01_E01_native_g_domain_consensus_variance_atlas/protocol.md` | Confirm or correct the bounded reading: all eight stability guards passed and Block-46 overlap exceeded its matched-null 97.5% threshold, but the null-corrected effect was only 0.000779 and does not establish that reuse explains the 16-versus-53 compression. Decide only whether to run a frozen retain/remove intervention; do not start Router training. |
+| A15 rank-specific multi-representation subspace audit | computation complete; canonical evidence drafted; awaiting human result wording | `daily_research_reports/0827/focus_rank_specific_multirepresentation_subspace.md` | `Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E06_rank_specific_multirepresentation_shared_scaling/summary.md` | Confirm or correct the bounded evidence update in the active Focus before any Anchor update, daily report, or new representation-learning run. |
+| A15 cross-parent fine-function transfer | evidence complete; 0/6 layers established registered transfer; AI interpretation awaiting human result wording | `daily_research_reports/0828/focus_cross_parent_fine_function_transfer.md` | `Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/summary.md` | Confirm or correct the bounded reading and one next question in the active Focus. Do not start Router training before that human decision and a new approved Protocol. |
+| A15 native-Router representation boundary | computation complete; awaiting human result wording and external H1 review | `daily_research_reports/0824/focus_random_projection_router_preservation.md` | `Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E03_native_router_representation_controls/summary.md` | Preserve the measured readability result and its negative-margin boundary; do not reinterpret it as the current coarse--fine geometry question. |
+| A15 stable discriminant-space evidence | evidence complete; awaiting human judgment | `daily_research_reports/0820/focus_stable_domain_discriminant_subspaces.md` | `Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/summary.md` | Record the human claim boundary for the completed controlled/natural tracks; it is prior evidence, not the current execution contract. |
+
+The 0821 E05 result is now predecessor evidence for the explicitly approved E06
+metric audit rather than an executable task. A06, A15, and A16 retain independent scientific states and
+may be active concurrently when each has an explicit Focus and resume point.
 
 `Projects/kv_cache` is read-only unless the user explicitly authorizes edits.
 Only its `xyDeng` branch is managed here; never push its `main` branch.
@@ -43,8 +44,7 @@ load-control gradient interference, are both research lines inside
 learning dynamics, representation atlases, independent middle/tail information
 audits, functional coordinate admission, and online spectral routing; A16 owns load-control mechanism,
 LM-versus-load-gradient interaction, and mechanism-conditioned intervention
-selection. Neither line scientifically pauses or gates the other, but the
-meeting-cycle rule permits only the single active task above. Their checkpoints, raw logs,
+selection. Neither line scientifically pauses or gates the other. Their checkpoints, raw logs,
 calibration caches, and full run outputs remain under the verified
 `/data/250010109/MoE_Router/` worker surfaces.
 
@@ -185,7 +185,7 @@ reading surface.
 | A12 | Does that earlier signal become useful for structured composition? | Supporting line; E04 Stage A completed but failed the NTP capability and row-removal validity gates. No threshold or MTP run is authorized. | `Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md` |
 | A13 | Which task properties convert earlier task-relevant supervision into ordinary-head utility? | The hard-relay sufficient condition remains established. Soft-relay Stage 0 produced ordered causal path use but no common non-saturated comparison window, so the objective comparison is blocked pending a measurement-only carrier repair decision. | `Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md` |
 | A14 | Can a globally high-capacity hierarchy support conditionally low-dimensional computation? | The controlled conditional-functional-rank theorem is retained, while global shared-linear propagation remains closed. E01 established that duplicate exposure is not context diversity and that capability-passing lookup `K=1/4/16` controls used 10.2/11.0/12.8 functional ROOT directions; archived E02-v1 matched seen-pair capability but failed strong unseen-pair recombination in 5/5. Improved E02 now isolates exact frequency inside one learned common mapping: all 10 pairs passed strict zero-exposure capability and rank-validity gates, LowF-minus-HighF functional rank averaged 0.2 directions, and its one-sided 95% upper bound was 0.5 against a frozen two-direction margin. This supports frequency non-inferiority in the registered task, not a shared-versus-independent mapping advantage. E03 was parked before treatment because a 32-probe common AdamW step basis captured only 0.478--0.631 of held-out common-update energy, so raw parameter-space reuse remains unidentified. E04--E06 retain the local-versus-finite bridge result: exact optimizer/ROOT secants were effectively eight-dimensional, while single-point H11 was refuted in 5/5. A14_03 remains blocked and Router utility remains unverified. | `Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md` |
-| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Earlier local-rank, shared-tail, fixed-band, and variance-growth selectors remain insufficient. E03 established full-$R_U$ held-out added accessibility at blocks 24/28 and found supervised fine-class directions mainly outside the PCA head, but its opened confirmation bank cannot establish successor stability. E04 established reproducible domain-local geometry for accumulated $Z$, not for the candidate update. The researcher has explicitly reactivated and revised A15_07 around $R_U$: one draft experiment first tests sealed-expression and independent-reconstruction stability beyond PCA/random/permutation controls, then audits denominator sensitivity, and only then decomposes qualified shared/specific components. Router and expert utility remain out of scope; the sole current decision is Protocol review. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
+| A15 | How do spectral coordinates arise, what information do different representation regions carry, and when can a coordinate be admitted into functional routing? | Earlier local-rank, shared-tail, fixed-band, and variance-growth selectors remain insufficient. A15_09_E01 establishes stable but null-subordinate coarse--fine geometry. A15_10_E01 establishes no registered bidirectional C4/C5 cross-parent fine-function transfer at any fixed layer: eligible RR is 0.0339--0.1810, only 1/24 directional cells exceeds its full-pipeline null, and later layers include retained insufficient cells. This weakens shared fine coordinates but does not prove strict parent locality because coarse and permuted seven-dimensional controls remain highly readable. Human result wording and the next causal architecture decision are pending. | `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md` |
 | A16 | Can expert load remain operationally controlled while the Router exposes functionally useful same-layer incremental information? | The DC audit establishes an immediate sustainer of frozen Vanilla collapse, while the completed shadow audit bounds Centered relief to an early counterfactual and rejects a global harmful-LB mechanism. The NLL-only increment branch did not show a replicated 20B advantage. The active decision is the approved A16_01_01 two-seed frozen expert-choice-regret gate comparing Conditional-Utility with Native, Raw-Utility, and Conditional-Haar; 30B continuations remain fail-closed unless that gate passes. | `Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md` |
 | Long-context functional retrieval (draft) | What should a long-context Router optimize so that retrieved evidence changes the standard prediction? | Cross-line group-meeting theme only; Q0 is closed by R3/R4, while the proposed Q1 loss-utility audit still requires human judgment and an approved Protocol. | `daily_research_reports/backup/2026/07/0716/docs/long_context_functional_retrieval_working_theme.md` |
 
