@@ -37,8 +37,8 @@ Use this workflow:
 
 ```text
 group meeting or explicit research reset
--> one active two-day core-task Focus
--> researcher confirms the four-part plain-language design
+-> one active two-day core-task Focus per explicitly active workstream
+-> researcher confirms the core question and four-element experiment accounts
 -> approved Protocol only if an experiment is needed
 -> execute
 -> AI records evidence
@@ -80,6 +80,13 @@ choose one. The active Focus should contain one self-contained core experiment
 and may contain at most three only when each is necessary for the same core
 answer. Supporting controls remain inside the core experiment. Park only key
 future direction questions; ignore minor tangents.
+
+Focus creation is human-gated. Never create or reset a Focus because a task
+adds an experiment, control, diagnostic, replication, failure analysis, result
+interpretation, or report. Keep those under the owning Focus when they answer
+its core question. Create or reset a Focus only after the researcher explicitly
+declares an independent core question active for a new meeting cycle and
+confirms its stable `problem_key` and one next decision.
 
 ## Reader-Friendly Daily Report
 
@@ -176,26 +183,39 @@ mechanism judgment.
 ## Living Core-Task Focus
 
 At the start of a group-meeting cycle, create or audit exactly one
-`daily_research_reports/MMDD/focus_<problem>.md` from
-`templates/research_process/focus_writing_template.md`. Leave legacy bare
-`focus.md` and historical result-summary Focus files unchanged.
+`daily_research_reports/MMDD/focus_<problem>.md` for each explicitly active
+workstream from `templates/research_process/focus_writing_template.md`. Leave
+legacy bare `focus.md` and historical result-summary Focus files unchanged.
 
 This artifact is the **living human-owned task card**, not a Protocol or result
-ledger. Before execution its complete decision shape is:
+ledger. It contains one core question and one to three experiments. Each
+experiment has exactly four elements:
 
 ```text
-1. one core question
-2. experiment purpose, dependent subquestions, and completion standard
-3. at most three plain-language analysis steps
-4. two expected result branches and how each changes the decision
+1. purpose: the part of the core question resolved and why this test is needed
+2. hypothesis: predicted contrast, strongest rival, and separating observation
+3. analysis method: one to three plain-language items; each says what is done,
+   what is compared, and why the comparison answers the question
+4. conclusion: before execution, possible result branches and how each changes
+   later experiments; after execution, direct result, bounded conclusion, and
+   effect on the Focus
 ```
 
-After execution, the researcher adds the direct result, their conclusion,
-cannot-claim boundary, and exactly one next decision. AI verifies those fields
+After all current experiment blocks are interpreted, the researcher adds the
+Focus-level knowledge update, cannot-claim boundary, and exactly one next
+decision. AI verifies those fields
 against canonical evidence without strengthening them. Put formulas, exact
 hyperparameters, statistical details, tables, figures, evidence lineage, and
 run history in the owning Anchor, Protocol, Summary, Detailed, and delayed
 daily report.
+
+**REQUIRED WRITING STANDARD:** Use `research-document-explainer` to calibrate
+the Focus's plain-language experiment account. Apply its reader order and
+terminology contract: define the object before its alias or symbol, state why a
+step exists before how it is implemented, use natural complete sentences with
+one main relation each, and keep direct evidence separate from interpretation.
+`research-progress-core` retains ownership of the Focus; the explainer supplies
+the writing standard only.
 
 The human owns the question, expected branches, conclusion, mechanism,
 boundary, and next decision. Ordinary one-problem meetings use this Focus
@@ -273,8 +293,9 @@ focused on the first unresolved block.
 
 Do not run a nontrivial experiment without an approved `protocol.md`.
 
-Before drafting it, require the active Focus's four-part plain-language design
-to be researcher-confirmed. The Protocol must implement the same question and
+Before drafting it, require the active Focus's core question and every
+experiment's four-element plain-language account to be researcher-confirmed.
+The Protocol must implement the same question and
 may not expand one core experiment into an unbounded suite. A maximum of three
 core experiments is allowed; controls and diagnostics do not count separately
 when they only protect one registered verdict.

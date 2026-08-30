@@ -61,8 +61,8 @@ group meeting or explicit research reset
 ```
 
 The default cadence is one group meeting every two days. Immediately after a
-meeting, create or reset one active `focus_<problem>.md` for every workstream
-that the researcher explicitly keeps active. There is no repository-wide
+meeting, retain, create, or reset one active `focus_<problem>.md` only for each
+workstream that the researcher explicitly keeps active. There is no repository-wide
 singleton Focus: `PROJECTS.md` must list every active workstream, its state,
 priority, dependencies, and resume point. Within each named workstream there is
 still exactly one current Focus, one core question, and one next decision. Do
@@ -72,30 +72,78 @@ and may contain at most three genuinely necessary core experiments. Diagnostics
 and controls do not count as separate core experiments when they only protect
 the same verdict.
 
+Focus creation is a human-gated research decision. AI must not create or reset
+a Focus merely because work adds an experiment, control, diagnostic,
+replication, failure analysis, result interpretation, or report. Those items
+remain under the owning Focus when they serve its core question. AI may create
+or reset a Focus only after the researcher explicitly declares one independent
+core question active for a new meeting cycle and confirms both its stable
+`problem_key` and its one next decision.
+
+### Focus Priority And Conversation Ownership
+
+An active project may designate exactly one workstream as `PRIMARY` and zero or
+more workstreams as `SECONDARY`. Priority controls attention and reporting
+order; it does not merge scientific questions or permit one Focus to replace
+another. `PROJECTS.md` owns the current priority registry.
+
+Every new or reset active Focus must record these fields in its metadata:
+
+```text
+problem_key: <stable project-scoped identifier>
+focus_role: PRIMARY / SECONDARY
+conversation_owner: codex-thread:<exact thread id> / UNCLAIMED
+ownership_status: CLAIMED / RELEASED / HANDOFF_PENDING
+```
+
+Before a Codex conversation edits research state, implements an experiment, or
+starts execution for a problem, it must read `PROJECTS.md` and the owning Focus
+and compare both `problem_key` and `conversation_owner`. If another conversation
+already has `ownership_status: CLAIMED` for that same `problem_key`, the current
+conversation may inspect evidence read-only but must not edit, implement, or
+run that problem. It must stop and request an explicit human handoff. A renamed
+file, alias, secondary label, or new date directory does not create a different
+problem. A claim is never assumed stale or stolen automatically; the researcher
+must explicitly release or hand it off. A handoff updates the Focus owner and
+the corresponding `PROJECTS.md` registry entry together before work resumes.
+
+Different conversations may work concurrently only on different registered
+`problem_key` values. This repository-level guard coordinates compliant Codex
+conversations; it is not an operating-system lock and does not protect against
+manual or external writers that ignore `AGENTS.md`.
+
 The `MMDD` directory is the calendar date on which the active Focus is first
 written. Record the source meeting date separately as `cycle_start` and the
 next meeting as `target_meeting`; do not rename a living Focus merely because a
 two-day cycle crosses midnight.
 
 Before execution, the active Focus must contain a researcher-confirmed plain-
-language account with exactly these decision sections:
+language core question and one to three experiment blocks. Every experiment
+block uses exactly these four elements:
 
 ```text
-1. Core question
-2. Experiment purpose, including the subquestions and completion standard
-3. Analysis method, with at most three plain-language steps
-4. Conclusion: before execution, two expected outcome branches and how each
-   changes the core question; after execution, the human-owned actual result
+1. Purpose: which part of the Focus question this experiment resolves and why
+   the experiment is needed
+2. Hypothesis: the predicted contrast, strongest rival, and what observation
+   would separate them
+3. Analysis method: one to three natural-language items that each explain what
+   is done, what is compared, and why that comparison answers the question
+4. Conclusion: before execution, the distinct possible outcome branches and
+   how each would change later experiments or stop the route; after execution,
+   the direct result, bounded experiment conclusion, and effect on the Focus
 ```
 
 Do not use an unexplained English code, run ID, metric abbreviation, or method
 name in that account. Define it in plain Chinese first when it is indispensable.
+Write the experiment blocks using the reader order, natural prose, and
+terminology discipline of `research-document-explainer`: purpose before
+implementation, one main relation per sentence, and evidence before inference.
 Protocol drafting does not authorize implementation, smoke testing, or a run.
 If Protocol audit materially changes any plain-language method, completion
 rule, or expected branch after the researcher's last confirmation, mark the
 Focus `AI_REVISED_AWAITING_HUMAN_CONFIRMATION`. Keep the core question's
 separate ownership record unchanged, and do not promote the Protocol until the
-revised four-part account is confirmed again.
+revised four-element experiment account is confirmed again.
 
 Questions outside the active core task go to the active project's concise
 `main/parking_lot/README.md` only when they are important enough to change the
@@ -174,14 +222,16 @@ daily_research_reports/MMDD/focus_<problem_slug>.md
 ```
 
 The file is the short, human-owned **living task card** for one meeting cycle,
-not an experiment ledger or a second Protocol. It starts before execution with
-the four-section plain-language account above. After execution, the researcher
-adds or corrects the actual result, cannot-claim boundary, and one next
-decision. AI may verify those statements against `summary.md` and
-`detailed.md`, but must not strengthen them.
+not an experiment ledger or a second Protocol. It starts with one core question
+and the four-element plain-language account for every included experiment.
+After execution, the researcher completes or corrects each experiment's result
+and bounded conclusion, then adds the Focus-level knowledge update,
+cannot-claim boundary, and one next decision. AI may verify those statements
+against `summary.md` and `detailed.md`, but must not strengthen them.
 
 Keep the Focus concise enough to read before a meeting. It may name at most
-three core experiments and at most three analysis steps for the whole task.
+three core experiments, and each experiment may contain at most three
+plain-language analysis-method items.
 Put formulas, full settings, uncertainty details, controls, plots, provenance,
 and run history in the Anchor, Protocol, Summary, Detailed, and delayed daily
 report. Link those sources rather than copying them. Legacy bare `focus.md` and
@@ -355,7 +405,8 @@ meeting -> active focus_<problem>.md -> confirmed plain-language design
   records, explain every central metric and figure in plain language, preserve
   the registered verdict and boundary exactly, and contain exactly one next
   decision.
-- Require the active Focus's four-part plain-language design to be human-
+- Require the active Focus's core question and every experiment's four-element
+  plain-language account to be human-
   confirmed before Protocol promotion. After execution, verify the human-owned
   Focus result against canonical evidence before writing the daily report.
 - Add conditions, seeds, and diagnostics only when they separate a named rival
