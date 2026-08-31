@@ -1,14 +1,11 @@
 # A15: Spectral Representation Geometry And Functional Routing
 
-> 主线结论：本地参数秩、broad band 或方差增长都不能单独定义“本层新增信息”。A15_08 E03 因身份与证据记录不符合冻结 Protocol 而为 `INELIGIBLE_GUARD`；E04 在一个受控的第 25 层同归一化 attention transition 上正式建立了旧状态线性读出之外的目标可访问性，但注册的二维表示只保留 33.24% 的全维增益。
-> 谱定位：复杂更新方差的 98.41% 集中在公共基前 256 秩，但两个目标条件候选方向在那里只有 37.90% 的质量；当前证据排除“方差头部就是新增信息位置”，却尚未定位完整增量的最小充分子空间。
-> 新结果：A15_08_01 E02 已完成 blocks 2--36；$T_{depth}=0.006102$ $[0.004119,0.007669]$ 为正，但 $A_{2F}=-0.011422$ $[-0.013994,-0.009812]$，注册 verdict 为 `H2_LC_FAIL_CONTROL_DEGRADATION`。
-> 当前障碍：正的差中差并不等于远程两跳绝对新增可访问量增长；表征秩和公共基能量非单调且只作描述，不能推进到 Router。
+> 主线结论：本地参数秩、broad band、方差增长和 PCA 最大方差头部都不能单独定义分类所需的本层候选信息。A15_07_E01 已完成，证明受控数据中的冻结低秩功能可在新表达上保持，但自然数据的共享维数仍为证据不足。E05 进一步纠正了旧“单域 7 维、联合 56 维”解释：七维首先是八分类对比秩上限，不能当作语义内在秩。
+> 几何边界：A15_09_E01 已完成直接粗—细对齐审计。24/24 个空间单元稳定有效，corrected overlap 为 0.0596--0.1445，且每个 raw overlap 都低于相应标签置换 null 中位数；这排除了“大量沿用共同粗类空间”作为当前默认解释，但仍未证明细类 residual 的因果充分性。
+> 当前组会答案：physics 的 shallow > middle > deep 阶段排序在 C4/C5 复现，mathematics 的完整排序和单调符号不复现；两者都没有可复现的中段极值。最可靠更新是稳定粗细方向大体分离，而不是一条普遍单调的深度定律。
 > 公共坐标阶段：A15_02_06 已完成“公共参数基→Attention-write 方差曲线→粗中细谱位置→同层 shape→全相邻层变化”的完整审计。结果是深度后移依赖基、粗中细只在固定 Mean Response 基中呈轨迹级有序、曲线差异分散且相邻层变化非单调；这些对象仅作描述，不能定义新增信息。
-> 当前研究锚点：A15_08 E04 保留 eligible `H2_PASS_H1_FAIL` 的局部事实；研究者已选择 A15_08_01 作为当前方向，并暂停 $r=3\ldots7$ 任务读出秩阶梯。A15_07 仍暂停且从未执行；A15_03 已归档并退出 active route。
-> 允许范围：现有证据支持指定受控任务、答案 token、线性读出族内的局部新增可访问性，以及 blocks 2--36 的注册深度 Fail；不支持全局低秩、模型原生使用、expert utility 或 Router 收益。
-> 关闭规则：不得把精确差分、谱位置、低 effective rank 或监督方向矩阵本身称为新知识；必须以新鲜留出目标增益和匹配对照裁定新增可访问性，且当前不进入任务读出秩、广义特征方向或 Router。
-> 当前执行：Reserved 4×H100 任务 `pt-f0agvja0` 已成功完成，两组中央图、canonical Summary/Detailed 和日报结果草案已形成；唯一等待是研究者确认认识更新文字。
+> 当前状态：仓库允许多个明确命名的活动工作流。A15_07_E01 与 A15_08_09_E03 均已完成计算并分别等待人的结论或外部数据护栏；A15_08_06_E06 的逐秩多表征审计已独立获得执行授权；这些状态都不阻塞粗—细方向对齐的设计审核。
+> 当前执行：A15_11 的 E01/E03 已在 8×RTX5090 上完成合格证据链。Qwen 的原生 Gate 投影保留大部分父类访问性，主要损失发生在 top-8 稀疏选择；合成 task-only 树在正确分组下实现近零误差、在错误分组下保留 $1/3$ 下界，但逐样本瞬时效用监督无增益且层级没有胜过通用非线性。结果措辞和“是否只做 Router 条件期望效用后继”仍等待研究者确认。该状态不替代 A15_10 尚待确认的人类结果措辞。
 
 This line asks how spectral coordinates arise, what information different
 regions carry, and whether selecting those coordinates can create a useful
@@ -23,16 +20,15 @@ Router, how are they learned and populated by layerwise representations, and
 under what additional evidence may any coordinate be admitted into a routing
 method?
 
-**Current answer:** Router-input covariance defines a real access geometry, and
-training dynamics and layerwise representations are non-uniform in named
-coordinates. Yet local rank, shared tail, fixed band, and variance-growth
-selectors have all failed as sufficient definitions of added information or
-functional coordinates. A15_08 therefore changed the object: at one matched
-layer-25 attention transition, subtract in the shared hidden coordinate, remove
-the update component linearly predictable from the old state, and adjudicate
-what remains by fresh held-out target gain. That local H2 passes; the registered
-two-direction sufficiency H1' fails because it preserves only 33.24% of the
-full gain.
+**Current answer:** Router-input covariance defines a real access geometry, but
+local rank, shared tails, fixed bands, variance growth, and PCA variance heads
+are not sufficient definitions of classification function. A15_07_E01 has now
+completed the previously missing held-out function test: the controlled frozen
+spaces pass, while the natural shared-dimension claim remains insufficient.
+E04 establishes reproducible parent-local fine geometry in complete $Z$, and
+E05 blocks the old intrinsic-rank reading of 7/56. A15_09_E01 now directly
+measures coarse--fine direction alignment in the same native MoE-input state
+and finds stable but null-subordinate overlap at every registered cell.
 
 **Current claim boundary:** The line supports bounded geometry, learning-
 dynamic, linear-readability, controlled-routing observations, and one local
@@ -41,29 +37,45 @@ that the middle or tail is a functional module, that local rank names the same
 direction across layers, that whole representations are low rank, or that the
 A15_08 directions are natively used or improve routing.
 
-**Current bounded answer:** the deep necessity-by-distance interaction is
-positive, but absolute remote two-hop added accessibility declines, so the
-interaction cannot by itself define more deep long-range information. The
-representation spectrum is non-monotonic and has no registered low-rank verdict.
+**Current bounded answer:** Controlled held-out low-rank function and natural
+full-$R_U$ entry are established in their registered settings; natural shared
+dimension is insufficient. In A15_09_E01, complete native MoE-input states
+contain stable coarse and parent-local fine spaces, but their corrected overlap
+is only 0.0596--0.1445 and every raw value falls below its matched permutation
+median. Dominant shared-coarse geometry is disfavoured; residual function and
+architecture utility remain unknown.
 
-**Active parent Anchor:** [A15_08 Target-Conditioned Layer Innovation](15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md).
+**Current active Focuses:** the primary [Qwen3-30B fixed-fact cross-expression
+semantic separability audit](/daily_research_reports/0830/focus_qwen3_30b_semantic_representation_separability.md), the paused secondary
+[semantic-supervision middle-layer formation question](/daily_research_reports/0830/focus_semantic_supervision_middle_layer_separability.md),
+and the released secondary [counterfactual-utility residual expert-growth
+cycle](/daily_research_reports/0829/focus_gradient_consistent_hierarchical_routing.md).
+The Native-$G$ audit, rank-specific multi-representation audit, and cross-parent
+fine-function transfer audit are predecessor evidence, not experiment-level
+Focuses. Their contracts and result records remain linked below.
 
-**Human-confirmed active child direction:** [A15_08_01 Layerwise Long-Range
-Compositional Innovation](15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor.md)
-uses a matched one-hop/two-hop by near/far task to measure blocks 2--36. Its
-functional evidence is the layerwise ridge-gain interaction; its descriptive
-geometry is representation effective rank in a TRAIN-only activation-derived
-common basis. The direction, figure roles, basis, numerical contract, and
-[E02 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md)
-are fixed. The [result](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md)
-is `H2_LC_FAIL_CONTROL_DEGRADATION`.
+**Current transfer Anchor and completed evidence:** [A15_10 Cross-Parent Fine-Function
+Transfer](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md)
+and its [completed Summary](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/summary.md).
+The completed [A15_09_E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/summary.md)
+is the direct geometry predecessor, not the owner of the new functional verdict.
 
-**Why this Anchor owns the decision:** Earlier work closed broad shared-tail,
-fixed-band, and variance-growth shortcuts without defining added information.
-A15_08 supplies an auditable local definition and has established its existence;
-its failed rank-two clause leaves task-readout sufficiency unresolved. The
-researcher has parked that local rank ladder and selected the cross-depth
-long-range accessibility question instead.
+**Current MVP subanchor and contract:** [A15_09_01 Native-$G$ Domain Consensus
+And Variance Atlas](15_09_layerwise_coarse_fine_reuse_geometry/subanchors/15_09_01_native_g_domain_consensus_variance_atlas_anchor.md)
+and its [approved Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_01_E01_native_g_domain_consensus_variance_atlas/protocol.md).
+Block 46 is the sole verdict-bearing layer; the 48-layer atlas is explanatory
+only and cannot turn a Block-46 Fail into support.
+
+**Prior completed experiment contract:** [A15_07_E01 approved Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/protocol.md)
+has completed both registered tracks; its [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/summary.md)
+awaits human judgment. The new coarse--fine alignment workstream is independently
+approved and does not inherit A15_07's functional verdict.
+
+**Why this prior Anchor is relevant but does not own the new verdict:** A15_07
+owns held-out function and stability of fine discriminant spaces on $R_U$.
+The current meeting question instead compares coarse and conditional-fine
+directions on complete $Z$. It therefore begins as a separate Focus and must
+not inherit A15_07's functional verdict or object silently.
 
 **Decision dependency chain:** layerwise local-rank and shared-tail laws failed
 -> two parameter-only common bases gave incompatible depth shifts -> the fixed
@@ -72,37 +84,53 @@ shape differences were distributed and all adjacent-layer changes were
 non-monotonic -> fixed-band functional admission and variance-growth selection failed ->
 A15_08 defined the exact update $U$, conditional residual $R_U$, and held-out
 added-accessibility gate -> E03 failed the frozen identity/record contract ->
-E04 established local H2 but rejected rank-two sufficiency -> the researcher
-parks the task-rank ladder -> E01 exposes structural-null block 1 -> E02 tests
-blocks 2--36 in one activation-derived common basis -> positive interaction but
-negative absolute 2F depth change yields typed Fail -> revise the measurement
-question before any task-rank retrieval or functional admission is reconsidered.
+E04 established local H2 but rejected rank-two sufficiency -> the layerwise
+successor returned a typed Fail -> the aligned E03/E04 studies then showed a
+compact supervised $R_U$ class-contrast result with low PCA-head overlap and
+reproducible domain-local $Z$ geometry, but no sealed-expression direction
+certificate -> A15_07_E01 completes the held-out controlled/natural audit ->
+E05 corrects the old 7/56 intrinsic-rank claim -> the 0826 meeting asks the
+direct coarse--fine alignment question on complete $Z$ -> A15_09_E01 finds
+stable but permutation-null-subordinate alignment -> the researcher rejects
+another global coarse-complement deletion test as the immediate step -> A15_10
+tests whether mathematics and physics fine spaces carry each other's target
+function under a matched full-pipeline null.
 
 **Parked directions and reopening conditions:** A15_04 is closed at a stable
-Fail. A15_03 is archived outside the active route; A15_07 remains parked by the
-researcher without a run or verdict. Neither is silently revived by A15_08.
-A15_05 method construction reopens only
-after a compact coordinate is identified and then independently passes matched
-functional controls. The archived matched spectral-dispatch contract stays
-closed.
+Fail and A15_03 remains archived. Router/expert utility, label-free online
+estimation, transfer, and the other project lines are listed in the project
+[Parking Lot](/Projects/from-attention-to-search/main/parking_lot/README.md). A15_05 method construction reopens
+only after A15_07 admits a stable compact coordinate and a later independent
+expert-relative utility test passes.
 
-**Exactly one next decision:** confirm whether the successor should directly
-adjudicate absolute $G_{\ell,2F}$ rather than interaction growth.
+**Current cross-parent-transfer next decision:** the researcher confirms or
+corrects the bounded result reading and decides whether the next unique
+question is a matched causal comparison of a shared fine Router and a
+correct-parent-conditioned local fine Router. Router training remains out of
+scope until that decision receives a new approved Protocol.
 
-**Completion criterion:** all four identity receipts, the TRAIN/DEV freeze,
-untouched CONFIRMATION analysis, five decision intervals, rank tables, common-
-basis curves, and two registered figure families pass lineage audit.
+**Current A15_11 next decision:** the researcher confirms or corrects the
+bounded reading that the supplied residual tree is a conditional
+representability mechanism, while the current instantaneous hard utility
+target is not a promotable training method. The only proposed successor is a
+matched test of soft conditional expected utility measurable from the exact
+Router-visible state; no Qwen training is authorized.
 
-**Resume action:** confirm or correct the E02 knowledge update in the 0811 daily
-report. No task-rank experiment or Router is currently authorized.
+**A15_10 completion criterion:** all six layers, both transfer directions, and both
+panels produce eligible Own/Cross/full-pipeline-null RR results under one
+frozen cross-fit contract, after which the researcher states the result and
+claim boundary.
+
+**A15_11 resume action:** read the [E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E01_qwen_native_router_access_gap/summary.md), [E03 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03_counterfactual_utility_residual_tree/summary.md), and active Focus; then record the human result, cannot-claim boundary, and one next decision. Do not implement the proposed successor before that confirmation.
 
 ## Coordinate Systems
 
-The line inherits three spectral coordinate systems. E04 added one supervised
-conditional-innovation coordinate for its local rank-two test; the A15_08_01
-child uses a separate target-label-free, activation-derived
-common basis for cross-layer representation spectra. A rank or band label is
-meaningful only together with its basis, target, and decision role.
+The line uses several non-interchangeable coordinate systems. A15_07 now adds
+a per-domain regularized fine-class discriminant basis on $R_U$; E04 used a
+different supervised conditional-innovation coordinate for its local rank-two
+test, and A15_08_01 used a target-label-free activation basis for cross-layer
+spectra. A rank or band label is meaningful only together with its basis,
+target, construction split, and decision role.
 
 | Coordinate system | Concrete object | What rank orders | What it cannot be silently used as |
 | --- | --- | --- | --- |
@@ -111,6 +139,7 @@ meaningful only together with its basis, target, and decision role.
 | MLP parameter geometry | eigensystem of $K_\ell=W_{gate,\ell}^{\top}W_{gate,\ell}+W_{up,\ell}^{\top}W_{up,\ell}$ | local MLP input gain | Router access, semantic usefulness, or identical directions across layers |
 | Mean Response parameter basis | eigensystem of the equal-layer average of trace-normalized $K_\ell$ | average normalized MLP input-side parameter response shared by all layers | a basis-independent semantic axis, a simultaneous eigensystem, or added information |
 | Conditional innovation | generalized eigenvectors of target-residual covariance $K_{new}$ against residual-update covariance $\Sigma_{R_U}+\rho I$ | target-related accessibility in the update not linearly predicted from the old state | a knowledge matrix, label-free coordinate, native-use certificate, or Router |
+| Domain-local fine discriminant | per-domain generalized eigenvectors of fine-class center covariance $B_{p,\ell}$ against within-fine expression covariance $W_{p,\ell}+\rho I$ on E03 TRAIN-standardized $R_U$ | supervised within-domain fine-class separation under registered shrinkage | a PCA axis, Car fixed-axis score, intrinsic representation rank, native-use certificate, or Router |
 | Cross-layer long-range activation basis | eigensystem of the equal-layer average of TRAIN $D_\ell$ covariances after per-layer trace normalization | common-direction energy of the matched necessity-by-distance update across all 36 blocks | target accessibility along each direction, a task-sufficient rank, parameter rank, or Router function |
 
 ## Canonical Hierarchy
@@ -126,6 +155,10 @@ flowchart TD
   A15 --> P06["A15_06 Online Spectral Routing And Relay"]
   A15 --> P07["A15_07 Layerwise Conditional-Fine Discriminant Directions"]
   A15 --> P08["A15_08 Target-Conditioned Layer Innovation"]
+  A15 --> P09["A15_09 Layerwise Coarse--Fine Reuse Geometry"]
+  A15 --> P10["A15_10 Cross-Parent Fine-Function Transfer"]
+  A15 --> P11["A15_11 Counterfactual-Utility Residual Expert Growth"]
+  A15 --> P12["A15_12 Fixed-Fact Cross-Expression Semantic Separability"]
   P00 --> P00a["common, residual, and condition-local geometry"]
   P01 --> P01a["formation, feedback lock-in, low-variance delay"]
   P02 --> P02a["controlled and natural semantic atlases"]
@@ -135,6 +168,10 @@ flowchart TD
   P07 --> P07a["cross-expression low-rank semantic direction certificate"]
   P08 --> P08a["exact update, conditional residual, and held-out accessibility"]
   P08 --> P08b["draft: long-range composition interaction over ten layer pairs"]
+  P09 --> P09a["stable but null-subordinate coarse--fine geometry"]
+  P10 --> P10a["matched bidirectional fine-function transfer"]
+  P11 --> P11a["native access audit plus progressive residual utility falsifier"]
+  P12 --> P12a["parent, conditional-fine, and global joint linear-readout audit"]
 ```
 
 ## Parent-Anchor Map
@@ -147,8 +184,12 @@ flowchart TD
 | A15_04 Tail-Band Information | Whether target-common local rank relocation enters a shared F9--F16 orientation beyond matched Haar geometry | A15_02_06/A15_02_07 frozen objects | completed Fail: local/random/non-tail relocation; stage diagnosis mixed | closes global shared-tail interpretation and does not admit a functional test | [Anchor](15_04_tail_band_information/15_04_tail_band_information_anchor.md) |
 | A15_05 Functional Coordinate Admission | Whether a named coordinate passes capability, compatibility, and matched functional controls before method use | admissible coordinate from A15_00/A15_02/A15_04 | compatibility and matched-dispatch tests failed their registered functional claims; one old training contract archived unrun | no current evidence that selecting a spectral coordinate yields quality gain | [Anchor](15_05_functional_coordinate_admission/15_05_functional_coordinate_admission_anchor.md) |
 | A15_06 Online Spectral Routing And Relay | Whether an online spectral routing rule remains useful against identity and local-random controls | explicitly admitted online coordinate and matched training contract | completed evidence recorded, with control and single-seed boundaries | method evidence must not be back-projected into claims about band semantics | [Anchor](15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md) |
-| A15_07 Layerwise Conditional-Fine Discriminant Directions | Whether within-parent child information concentrates in small layer-local directions that reproduce across expressions beyond Haar and label permutation | A15_02 conditional-fine objects plus A15_04/A15_05 band failures | parked by researcher, unrun, no verdict | preserved as a distinct inactive proposal; it does not own A15_08 | [Anchor](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor.md) |
+| A15_07 Layerwise Conditional-Fine Discriminant Directions | Whether classification-targeted $R_U$ directions with no excess pooled-PCA-head overlap at blocks 24/28 reproduce on sealed expressions and then admit qualified shared/specific components | E03 full-$R_U$ gain and supervised direction location; E04 bounded $Z$ local geometry | registered run complete; controlled stability passes, natural shared dimension insufficient; awaiting human judgment | prior evidence for the current geometry workstream, but not its object or verdict | [Anchor](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor.md) |
 | A15_08 Target-Conditioned Layer Innovation | Whether one matched layer transition adds held-out target accessibility beyond its old state, and how long-range-specific gain and representation rank change across depth | variance-growth failure plus a named layer-25 transition and a matched one-hop/two-hop × near/far intervention | E04 eligible local H2 Pass and rank-two H1' Fail; A15_08_01 E01 standardization Insufficient; E02 blocks-2--36 `H2_LC_FAIL_CONTROL_DEGRADATION` because $T_{depth}>0$ but $A_{2F}<0$ | retains the local E04 fact, rejects interaction growth as sufficient evidence of absolute long-range gain, and keeps rank/Router parked | [Anchor](15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md) |
+| A15_09 Layerwise Coarse--Fine Reuse Geometry | Whether stable parent-conditional fine spaces reuse the common coarse Fisher space across six fixed depths | frozen C4/C5 native MoE-input states and stable rank-seven estimators | completed: 24/24 cells valid, all raw overlaps below matched permutation medians | disfavors dominant shared-coarse geometry but does not establish functional locality or Router value | [Anchor](15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_anchor.md) |
+| A15_10 Cross-Parent Fine-Function Transfer | Whether mathematics and physics fine spaces carry each other's held-out target discrimination under matched cross-fit | A15_09 stable fine spaces and cached native activations | completed: 0/6 layers passed the bidirectional C4/C5 rule; eligible RR 0.0339--0.1810; only 1/24 directional excess | weakens a shared-fine premise without proving strict parent locality; human result wording pending | [Anchor](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md) |
+| A15_11 Counterfactual-Utility Residual Expert Growth | Whether stagewise common→residual→1→2→4 training makes expert utility conditionally separable and sample-efficient only under a correct grouping | A15_09/A15_10 boundaries plus the 08:24 and 08:28 advisor intuitions | E01/E03 complete: access bottleneck localized; aligned mechanism supported; no registered utility or tree gain; human wording pending | retain the conditional theorem, reject current architecture promotion, and require Router-measurable utility before a real-model test | [Anchor](15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md) |
+| A15_12 Fixed-Fact Cross-Expression Semantic Separability | How predictive, low-tail robust, globally coherent, and expression-invariant the parent/fine labels are in actual frozen MoE inputs | A15_09 cached activations plus the 08:28 semantic-versus-variance corrections | E01/E02 complete: Blocks 4/12/44 show robust within-bank but incompatible cross-bank boundaries; full two-bank training gives a common certificate at Blocks 4/12/20/44 | execute only the frozen-probe TAX-C4A joint-shift test next; no Router-utility inference | [Anchor](15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md) |
 
 ## Reading Index
 
@@ -195,7 +236,10 @@ The current primary synthesis is the [A15 full-line Story](/Projects/from-attent
 
 - Parent: [canonical Anchor](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor.md) and [Chinese companion](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md).
 - Human judgment surface: [Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md).
-- Current state: parked by researcher; no Protocol, implementation, run, or scientific verdict exists.
+- Current state: full registered run completed; evidence awaits human judgment;
+  [A15_07_E01](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/protocol.md)
+  is `APPROVED_FOR_FULL_RUN`, and its [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/summary.md)
+  is `EVIDENCE_COMPLETE_AWAITING_HUMAN_JUDGMENT`.
 
 ### A15_08 Target-Conditioned Layer Innovation
 
@@ -203,6 +247,36 @@ The current primary synthesis is the [A15 full-line Story](/Projects/from-attent
 - Active child result: [layerwise long-range compositional innovation](15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor.md), [Chinese companion](15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor_cn.md), [E02 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md), and [E02 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md). State: `RESULT_FAIL_AWAITING_HUMAN_KNOWLEDGE_CONFIRMATION`.
 - Evidence qualification lessons: [E01 invalid-control diagnosis](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E01_layer25_conditional_innovation_matrix/summary.md), [E02 confirmation-label pre-use diagnosis](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E02_fresh_balanced_mismatch_repair/summary.md), and [E03 strict-conformance failure](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E03_fresh_confirmation_freeze_repair/summary.md).
 - Decisive result: [E04 eligible `H2_PASS_H1_FAIL`](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md).
+
+### A15_09 Layerwise Coarse--Fine Reuse Geometry
+
+- Parent: [canonical Anchor](15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_anchor.md).
+- Human judgment surface: [Thinking Card](15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_thinking_card_cn.md).
+- Completed result: [A15_09_E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/summary.md), [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/detailed.md), and [Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/protocol.md).
+- Current state: completed geometry predecessor; stable low overlap is retained, while the superseded coarse-complement deletion proposal is not the active next question.
+
+### A15_10 Cross-Parent Fine-Function Transfer
+
+- Parent: [canonical Anchor](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md).
+- Human judgment surface: [Thinking Card](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_thinking_card_cn.md).
+- Completed evidence: [A15_10_E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/summary.md), [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/detailed.md), and [Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/protocol.md).
+- Current state: evidence complete; no registered transferable layer, with six retained insufficient cells; AI interpretation awaits the researcher's result and boundary confirmation.
+
+### A15_11 Counterfactual-Utility Residual Expert Growth
+
+- Parent: [canonical Anchor](15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md).
+- Human judgment surface: [Thinking Card](15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_thinking_card_cn.md).
+- Active contracts: [Qwen native-access E01](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E01_qwen_native_router_access_gap/protocol.md) and [progressive residual utility E03](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03_counterfactual_utility_residual_tree/protocol.md).
+- Historical boundary: [E02](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E02_synthetic_parent_first_moe/protocol.md) was superseded before implementation because its simultaneous two-bank construction did not instantiate the advisor's $1\rightarrow2\rightarrow4$ freeze-and-residual mechanism.
+- Current state: implementation and one 8×RTX-5090 SPOT full run are explicitly authorized; Qwen semantic accessibility and synthetic counterfactual expert utility remain separate verdicts.
+
+### A15_12 Fixed-Fact Cross-Expression Semantic Separability
+
+- Parent: [canonical Anchor](15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md).
+- Human judgment surface: [Thinking Card](15_12_semantic_representation_separability/15_12_semantic_representation_separability_thinking_card_cn.md).
+- Completed numerical evidence, with AI result wording awaiting human confirmation: [E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E01_qwen3_30b_fixed_fact_expression_separability/summary.md) and [E02 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E02_expression_bank_boundary_coverage_controls/summary.md).
+- Active contract: [A15_12_E03 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E03_tax_c4a_unseen_fact_package_transfer/protocol.md).
+- Current state: E03 implementation and local smoke are complete, but no GPU job has run. The audited 4x RTX5090 candidate awaits researcher confirmation; an 8x choice needs a separately frozen entry. C4E/C5E reuse the same facts, so the maximum current claim is cross-expression fixed-fact readability, not unseen-fact semantic generalization.
 
 ## Legacy Anchor Migration Map
 

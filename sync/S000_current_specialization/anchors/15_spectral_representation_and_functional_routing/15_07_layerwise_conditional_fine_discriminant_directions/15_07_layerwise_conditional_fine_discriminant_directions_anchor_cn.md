@@ -1,207 +1,281 @@
 ---
 anchor_id: 15_07_layerwise_conditional_fine_discriminant_directions
-status: parked_by_researcher_unrun
+status: PROTOCOL_DRAFT_AWAITING_REVIEW
 canonical_companion: 15_07_layerwise_conditional_fine_discriminant_directions_anchor.md
 thinking_card: 15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md
+active_focus: ../../../../../../daily_research_reports/0820/focus_stable_domain_discriminant_subspaces.md
 parent_line: 15_spectral_representation_and_functional_routing
 created: 2026-08-10
-updated: 2026-08-10
+updated: 2026-08-20
 ---
 
-# A15_07：逐层 conditional-fine 判别方向
+# A15_07：稳定的领域内细类判别子空间
 
-研究者判断见 [Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md)。研究者已在 Protocol 构造前暂停这个候选，先由 A15_08 定义并检验层新增信息。A15_07 没有实现或运行，因此没有 scientific verdict。
+研究者判断来源：[中文 Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 
-A15_02 观察到语义方差随层和本地参数秩重排，但没有得到稳定的 fine-specific 后移规律。A15_04 又表明，本地后秩重排没有进入注册的跨层共享 F9--F16 broad tail。A15_05 的功能实验进一步表明，固定 covariance band 即使改变 token-to-expert 分发，也不自动改善功能目标。因此 band 位置现在不是候选语义坐标的选择规则。
+A15 已经排除“方差秩、固定谱段或几何窄”可以单独定义任务信息。
+[对齐层级实验 E03](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E03_aligned_hierarchical_taxonomy_replication/summary.md)
+随后在第 24、28 层观察到：监督细分类修正至多用七个类别对比坐标，就能保留
+完整候选更新的留出增益；主成分分析需要远更多方向，而且没有胜过同秩随机
+空间。监督方向主要位于主成分分析的中后段，而不是最大方差头部。但该结果没有
+使用新的密封表达集，也没有检验方向能否独立重建，更没有把稳定方向拆成共享与
+领域特有成分。
 
-这个已暂停的候选不会重开已经归档的 band 审核，并把唯一语义对象固定为 **conditional-fine**：已知父类后，只区分该父类内部的 child。它不再比较 coarse 与 fine，也不预设信息应位于 head、middle 或 tail。
-
-`AI_PROPOSAL` 的表征对象是冻结 Qwen3-8B 十个采样层中的实际 attention-induced MLP-input increment：
+令 $X_\ell$ 为归一化旧状态，$Z_\ell$ 为同一 token 在 attention 写入后的同口径
+归一化状态，定义
 
 $$
-x_\ell=\Delta n_\ell
-=RMSNorm_\ell(h_\ell+a_\ell)-RMSNorm_\ell(h_\ell).
+U_\ell=Z_\ell-X_\ell,
+\qquad
+R_{U,\ell}=U_\ell-\widehat{\mathbb E}_{lin}[U_\ell\mid X_\ell].
 $$
 
-实际计算可使用其在完整 4,096 维正交参数基中的坐标，因为完整正交变换不会改变本 Anchor 的广义判别问题。采样层固定为 1/5/9/13/17/21/25/29/33/36；第 36 层是 terminal boundary，只描述、不进入主裁定。
+$R_{U,\ell}$ 是冻结线性预测器不能由旧状态预测出的候选同层更新。它不能称为
+新知识，仍可能包含旧信息的非线性重编码、与任务无关的变化或残差化误差。本
+Anchor 只使用第 24、28 层的 $R_U$，不把累计完整表征 $Z_\ell$ 混入主结论。
+
+主分析使用 E03 训练集标准化后的坐标 $\widetilde R_{U,\ell}$：减去旧 TRAIN
+折外原生残差逐维均值，再除以其总体标准差；标准差不大于 $10^{-12}$ 的坐标按
+尺度 1 处理。当前实验先对 T、D、C3、C4 原样应用同一个完整 TRAIN 残差预测器，
+再原样应用这份已保存的标准化器。这个口径属于对象定义，因为各向同性收缩和
+主成分分析都不会在任意逐维缩放下保持不变。
+
+任务包含八个已知父领域，每个领域内部有八个细类。**领域内判别子空间**是在
+每个父领域内部单独拟合、用于区分其细类的方向集合。**公共几何候选**必须在多个
+领域的局部子空间中出现、超过匹配零假设，并在两个构造表达库之间复现；只有它
+还能在新密封表达上为至少两个参与领域提供细分类作用，才叫**合格共享成分**。
+**领域特有成分**是在去除预先冻结的公共几何候选后仍稳定存在的残差；即使该
+候选最后没有通过共享功能门，也先将其扣除，避免把未决公共几何误叫成特有成分。
+该残差在新表达上既要胜过拿到本领域的所有其他领域残差，也要在本领域比它被拿到
+任何其他领域时更有效。只被少数领域共同使用但不满足功能定义的方向记为“组间共享/
+未决”，不强行二分。
 
 **唯一决策问题：**
 
-> 在固定的 conditional-fine 数据和实际 $\Delta n_\ell$ 上，只用一组表达学习出的逐层低秩方向，能否在另一组表达上继续区分同父类 child，并同时超过同秩 Haar 随机空间和父类内标签置乱，形成一个跨表达可复现的逐层线性语义坐标证书？
+> 分类目标选中的、与汇总主成分第 1--32 位的重合相对匹配随机方向没有超额的
+> 方向，能否形成一个非平凡低秩、可由独立表达库重复构造、并能在全新密封表达上
+> 区分领域内细类的子空间；只有在这一点通过后，这个稳定子空间能否被有边界地
+> 拆成跨领域共享与领域特有成分，同时排除小分母和训练集过拟合解释？
 
-这一步只决定是否存在值得进入下一次功能 admission 的候选方向。它不判断 MLP 是否使用这些方向，不判断专家收益，也不判断 Router 训练是否获益。
+这是一个带门控的核心实验：先过新表达与独立重建的初步稳定性门，再由小分母
+护栏完成最终准入；只有最终通过的层才进入共享/特有分解。本轮不检验 Router、
+专家专门化、LoRA、遗忘或共享低秩多任务训练。
 
 ## 2. Physical Priors
 
-1. **判别信号与表达噪声必须分开。**真正的 conditional-fine 方向应使不同 child 的中心分开，同时使同一 child 换模板、事实包或措辞后的波动较小。
-2. **高维小样本需要显式收缩。**当前维度为 4,096，而每个 child 只有少量表达；未正则化的类内协方差必然奇异，最大广义特征值可能只是偶然的近零噪声方向。
-3. **方向必须在未参与构造的表达上验证。**构造集上的特征值、分类准确率或可视化都不能证明方向复现。
-4. **每层可以有自己的方向。**$S_\ell$ 与 $S_m$ 不必共享向量身份；本 Anchor 测逐层候选坐标，不把相同秩或相同 band 当作跨层同一方向。
-5. **语义可分不等于功能可用。**即使一个方向稳定区分 child，也未证明它能预测哪个 expert 对 token 更有益。
+1. **分类作用与总体方差不是同一目标。**主成分分析最小化重构误差，可能优先
+   保留多领域共享的风格、长度或格式变化；细分类目标可以选择较低方差方向。若
+   同秩主成分头部在新表达上与判别方向等效，这个局部先验即被否定。
+2. **语义方向必须同时经受换表达和换构造来源。**构造集上的高准确率或大广义
+   特征值不够；方向既要在密封新表达上有效，又要能由两个独立构造表达库恢复。
+3. **共享与特有结构可以共存。**稳定局部投影可以含有公共方向和领域残差。共享
+   结论需要跨领域复用，特有结论需要去除共享部分后仍有本领域留出功能。
 
 ## 3. Falsifiable Hypotheses
 
-**H1 — 稳定的低秩 conditional-fine 方向。**在 TRAIN 或 DEVELOPMENT 表达上分别求出的前 $r$ 个广义判别方向，在 CONFIRMATION 表达上仍提高同父类 child 的 balanced accuracy，超过同秩 Haar 和父类内样本—child 归属置乱；两组构造表达得到的子空间重合也超过同秩随机基线。
+**H1——稳定的非平凡低秩判别。**在第 24、28 层中至少一层，秩 $r\le4$ 的正则
+领域内判别子空间，无论由原 TRAIN 表达库还是已经打开的 CONFIRMATION-v3
+表达库构造，都能在新的密封 CONFIRMATION-v4 上超过同秩领域内主成分头部、
+同秩随机正交空间和领域内细类归属置乱；两套独立构造的子空间重合还应超过匹配
+随机方向零假设，而且两套方向对汇总主成分第 1--32 位的重合都不能高于匹配随机
+方向阈值。
 
-**R1 — 表达捷径或小样本过拟合。**构造集的广义特征值或准确率很高，但留出优势不超过随机，或者交换表达半后结论反向。此时不能把方向解释为稳定细类语义。
+**H2a——有条件的共享成分。**仅当 H1 通过后，至少一个超过匹配零假设的方向
+能由两个构造来源复现，并在密封 C4 上为至少两个参与领域提供细分类作用。
 
-**R2 — 没有低秩线性集中证书。**全空间正则线性读出能够区分 child，但候选低秩子空间不超过随机。这表示线性信息可能分布在更高维空间；若全空间线性能力本身也不成立，则只能判为任务能力不足。两种情况都不能推出“细类信息不存在”或“必须使用非线性 Router”。
+**H2b——有条件的领域特有成分。**仅当 H1 通过后，至少一个同秩领域残差能由
+两个构造来源复现、在同一个联合置信门下确认本领域的正 C4 细分类增益、胜过拿到
+本领域的七个其他残差，而且在本领域的增益还要大于它被拿到七个其他目标领域时
+的最大增益。
 
-**Pass：**至少一个预注册层的 $G_\ell$ 分组重采样 95% 同时置信下界大于零；该层的 TRAIN-built 与 DEVELOPMENT-built 结果均为正；方向子空间重合超过同秩 Haar q95；全空间能力和数据可靠性 guards 全部通过。Pass 只准入满足全部条件的具体层。
+H2a/H2b 使用固定的正向资格表：真/假是“只确认共享资格”，假/真是“只确认
+特有资格”，真/真是“二者资格都确认”，假/假是“没有合格分解”。联合单侧
+置信只控制正向资格；一侧没有通过不能解释为以 95% 置信度证明它不存在。标签
+逐层给出，不跨第 24/28 层拼出“二者都有”，也不把每条方向强行二分。
 
-**Fail：**全空间线性能力通过，但低秩留出优势稳定不超过零，或构造/确认发生稳定反转。Fail 只关闭当前 $B/W$ 定义和候选秩范围下的低秩线性证书。
+**R1——小分母或构造集过拟合。**构造分数很高，但在 v4 失败、不能独立重建，
+或在预注册的更强收缩下优势消失。这会阻止稳定方向结论。
 
-**Insufficient：**全空间能力不足、表达拆分不独立、标签或缓存不可靠、置信区间跨零、或者 $r/\alpha$ 选择发生确认集泄漏。
+**R2——分布式或当前紧凑方法不稳定。**完整空间的正则线性分类在 v4 上有效，
+但开发集预先选定的秩不能超过匹配对照。这只否定当前方法和冻结秩的紧凑子空间
+证书，不否定细类信息存在。
+
+**R3——任务或证据不足。**完整空间分类失败、身份/泄漏护栏失败或同时不确定性
+无法裁定。此时不能推出几何或非线性结论。
+
+DEVELOPMENT 在打开 C4 前只选定一个秩。若预先选中 $r=7$ 且其他护栏通过，也
+不能称为非平凡低秩：八分类的中心化线性输出天然最多只有七个独立对比。该结果
+单独记为 `STABLE_FULL_CONTRAST_NOT_NONTRIVIAL_LOW_RANK`，不得查看 C4 上未被
+选中的其他秩来修改标签。
 
 ## 4. Mathematical Model
 
-### 4.1 $B_\ell$ 与 $W_\ell$ 的明确对象
-
-令 $x_{pce}^{(\ell)}\in\mathbb R^{4096}$ 表示第 $\ell$ 层、父类 $p$、child $c$、表达 $e$ 的实际 $\Delta n_\ell$。每个父类有 $C_p=8$ 个 child。只在当前构造半上定义
+令 $x_{pce}^{(\ell,b)}\in\mathbb R^{4096}$ 表示领域 $p$、细类 $c$、表达 $e$、
+层 $\ell$、构造表达库 $b$ 的冻结 $\widetilde R_{U,\ell}$。只在当前构造库上定义细类中心
+与领域中心：
 
 $$
-\mu_{pc}^{(\ell)}=\frac{1}{E_{pc}}\sum_e x_{pce}^{(\ell)},
+\mu_{pc}^{(\ell,b)}=\frac1{E_{pc}}\sum_e x_{pce}^{(\ell,b)},
 \qquad
-\mu_p^{(\ell)}=\frac{1}{C_p}\sum_c\mu_{pc}^{(\ell)}.
+\mu_p^{(\ell,b)}=\frac18\sum_{c=1}^8\mu_{pc}^{(\ell,b)}.
 $$
 
-同父类 child 中心之间的协方差为
+领域内细类中心差异矩阵与同一细类跨表达变化矩阵为
 
 $$
-B_\ell=
-\frac{1}{P}\sum_{p=1}^{P}\frac{1}{C_p}
-\sum_{c=1}^{C_p}
-(\mu_{pc}^{(\ell)}-\mu_p^{(\ell)})
-(\mu_{pc}^{(\ell)}-\mu_p^{(\ell)})^\top.
+B_{p,\ell}^{(b)}=\frac18\sum_{c=1}^8
+(\mu_{pc}^{(\ell,b)}-\mu_p^{(\ell,b)})
+(\mu_{pc}^{(\ell,b)}-\mu_p^{(\ell,b)})^\top,
 $$
 
-同一 child 跨表达的协方差为
-
 $$
-W_\ell=
-\frac{1}{P}\sum_{p=1}^{P}\frac{1}{C_p}
-\sum_{c=1}^{C_p}\frac{1}{E_{pc}}
-\sum_e
-(x_{pce}^{(\ell)}-\mu_{pc}^{(\ell)})
-(x_{pce}^{(\ell)}-\mu_{pc}^{(\ell)})^\top.
+W_{p,\ell}^{(b)}=\frac18\sum_{c=1}^8\frac1{E_{pc}}
+\sum_e(x_{pce}^{(\ell,b)}-\mu_{pc}^{(\ell,b)})
+(x_{pce}^{(\ell,b)}-\mu_{pc}^{(\ell,b)})^\top.
 $$
 
-$B_\ell$ 的对象是 child 身份差异，$W_\ell$ 的对象是同一 child 的表达变化。父类共同差异已被 $\mu_{pc}-\mu_p$ 消去，因此两者都不是 coarse/fine 混合量。
-
-### 4.2 广义特征方程从哪里来
-
-对任意方向 $v$，定义判别比
+主构造方法求解
 
 $$
-J_\ell(v)=
-\frac{v^\top B_\ell v}
-{v^\top(W_\ell+\rho I)v}.
+B_{p,\ell}^{(b)}v
+=\lambda\left(W_{p,\ell}^{(b)}+\rho_{p,\ell}^{(b)}I\right)v,
+\qquad
+\rho_{p,\ell}^{(b)}
+=\alpha\frac{\operatorname{tr}(W_{p,\ell}^{(b)})}{4096}.
 $$
 
-分子是在该方向上不同 child 中心的方差，分母是同一 child 跨表达的方差加收缩项。固定分母为 1，最大化分子：
+前 $r$ 个解经过欧氏正交化后组成 $Q_{p,\ell}^{(b)}$，投影矩阵为
+$P_{p,\ell}^{(b)}=Q_{p,\ell}^{(b)}Q_{p,\ell}^{(b)\top}$。该方法通过旋转和组合
+坐标来最大化正则化后的“类间/类内”比值，是 Car 学长诊断的正则化推广，而
+不是其原始固定轴方法。Car 的原始方法固定主成分轴 $q_j$，逐轴计算并排序
+$q_j^\top Bq_j/(q_j^\top Wq_j+\rho)$；本轮只把它作为小分母的辅助诊断。
+
+Balanced accuracy（平衡准确率，下文简称 BA）先在每个领域内对八个细类等权
+平均，再对八个领域等权平均。对构造来源 $b\in\{T,C3\}$，在密封 v4 上定义
 
 $$
-\max_v v^\top B_\ell v
-\quad\text{s.t.}\quad
-v^\top(W_\ell+\rho I)v=1.
+g_{\ell,b}=BA_{\ell,b}^{disc}-
+\max\left\{
+BA_{\ell,b}^{PCA},
+q_{.95}(BA_{\ell,b}^{Haar}),
+q_{.95}(BA_{\ell,b}^{perm})
+\right\},
+\qquad
+G_\ell=\min_{b\in\{T,C3\}}g_{\ell,b}.
 $$
 
-拉格朗日函数为
+这里 `disc` 是判别子空间，`PCA` 是同秩主成分头部，`Haar` 是同秩随机正交
+空间，`perm` 是领域内细类归属置乱。$G_\ell$ 是唯一主指标，单位是平衡准确率
+绝对百分点；取两个构造来源中的较弱者，并要求对第 24、28 层同时校正后的 95%
+置信下界大于零。它不能证明模型原生使用或专家收益。
+
+胜过同秩 PCA 只检验分类作用，不检验方向位置。因此，每个构造来源还要把八个
+领域的判别投影与“按领域去均值后汇总得到的 PCA 第 1--32 位”比较，并用匹配的
+领域内随机投影确定阈值。H1 还要求两个来源中较差者的头部重合超额之同时置信
+上界不大于零。
+
+对共享结构，定义
 
 $$
-\mathcal L(v,\lambda)=
-v^\top B_\ell v-
-\lambda\left[v^\top(W_\ell+\rho I)v-1\right].
+\bar P_\ell^{(b)}=\frac18\sum_{p=1}^8P_{p,\ell}^{(b)}.
 $$
 
-令 $\nabla_v\mathcal L=0$，得到
+一个方向对应的特征值表示八个领域局部投影平均覆盖它的程度。公共几何候选必须
+超过同秩随机方向和细类置乱两种匹配零假设的较高 95% 分位，并在 TRAIN 与 v3
+间复现。令 $P_{geom\text{-}shared,\ell}$ 为这份构造阶段冻结的候选；若没有候选，
+则令它为零。领域残差为
 
 $$
-B_\ell v=\lambda(W_\ell+\rho I)v.
+Q_{p,\ell}^{specific}
+=\operatorname{orth}\!\left[(I-P_{geom\text{-}shared,\ell})Q_{p,\ell}\right].
 $$
 
-所以它不是凭经验写下的拟合式，而是最大化“细类差异 / 表达噪声”这一 Rayleigh quotient 的一阶最优条件。对解向量有 $\lambda=J_\ell(v)$；$\lambda$ 越大，只表示构造数据上这个比值越大。
-
-等价地，令
-
-$$
-C_\ell=(W_\ell+\rho I)^{-1/2}
-B_\ell(W_\ell+\rho I)^{-1/2},
-$$
-
-先解普通特征方程 $C_\ell u=\lambda u$，再令 $v=(W_\ell+\rho I)^{-1/2}u$。这表明该方法先把类内表达波动白化，再在白化空间找 child 中心变化最大的方向。
-
-$\rho>0$ 有两个作用：使 $W_\ell+\rho I$ 可逆；防止模型偏爱构造样本中方差偶然接近零的方向。$\rho$ 不能用确认表达调节。对于 8 个父类、每个 8 个 child，$\operatorname{rank}(B_\ell)\le 8(8-1)=56$，所以超过 56 个非零判别方向没有当前类别结构上的意义。
-
-### 4.3 唯一主指标
-
-令 $S_\ell^{T}(r,\alpha)$ 只用 TRAIN 构造，$r,\alpha$ 只在 TRAIN 内部的预冻结 5/5 表达交叉验证中选择；随后用相同 $r,\alpha$ 从 DEVELOPMENT 独立构造 $S_\ell^{D}$。每个构造集分别使用 $\rho=\alpha\operatorname{tr}(W_\ell)/4096$。令 $V_\ell$ 的列满足 $V_\ell^\top(W_\ell+\rho I)V_\ell=I$，分类坐标为 $z=V_\ell^\top x$。两个分类器都只使用各自构造集的父类内 child 中心，在投影空间对 CONFIRMATION 样本做同父类最近中心预测。
-
-balanced accuracy 是先对每个 child 计算正确率，再对 child 和父类等权平均。令 $BA_\ell^{disc}$ 是 TRAIN-built 与 DEVELOPMENT-built 两个子空间在 CONFIRMATION 上 balanced accuracy 的平均。对每个层和选定秩，用完全相同的数据拆分与分类器计算 512 个同秩 Haar 空间和 512 个父类内样本—child 归属置乱的结果。定义
-
-$$
-G_\ell=BA_\ell^{disc}
--\max\left\{q_{0.95}(BA_\ell^{Haar}),
-q_{0.95}(BA_\ell^{perm})\right\},
-$$
-
-令 $LCB_{0.95}^{sim}(G_\ell)$ 是对九个非终端采样层同时校正的分组重采样下界，并定义可准入层集合
-
-$$
-\mathcal L^*=\left\{\ell\in\mathcal L_{dec}:\,
-LCB_{0.95}^{sim}(G_\ell)>0\right\}.
-$$
-
-逐层 $G_\ell$ 曲线是本 Anchor 的**唯一主指标**，单位是 balanced-accuracy 绝对百分点；$\mathcal L^*$ 只是由同一指标产生的决策集合。这样不会用一个跨层平均掩盖真正的 layerwise 差异。`AI_PROPOSAL`：$\mathcal L^*\ne\varnothing$ 才允许 Pass，并且只准入集合内的层。跨层中位数和 late-minus-early 变化只作解释，不能替换 $G_\ell$。
-
-由 TRAIN、DEVELOPMENT 分别构造的广义特征向量先做 Euclidean QR 正交化，再得到同秩投影 $P_\ell^T,P_\ell^D$。其重合
-
-$$
-O_\ell=\frac{\operatorname{tr}(P_\ell^TP_\ell^D)}{r}
-$$
-
-是稳定方向 guard。它必须超过同秩独立 Haar 的 q95，但不是第二主指标。$\lambda$、构造准确率、band 能量和跨层重合都不能替换 $G_\ell$。
+公共几何候选只有在至少两个固定领域上产生 v4 功能才叫共享；即使这个功能门
+失败，也要先扣除它再检验特有成分。只有当所有来源和领域使用同一个残差秩，且
+该残差在 v4 上对本领域的增益同时超过“把七个其他残差拿到本领域”的最大增益，
+以及“把该残差拿到七个其他目标领域”的最大增益，并通过同时不确定性校正，才
+称为领域特有。
 
 ## 5. Computational Realization
 
-1. 冻结 `/data/share/Qwen3-8B`、A15_02_07 的十层、tokenization、最后 `Classification:` readout 和完整 4,096 维实际 $\Delta n_\ell$ 坐标。
-2. 冻结 A15_02_07 的 TAX 数据，SHA-256 为 `ce91dbbd3c5071e17beeccf0d86a280dc8a3e48e0fdbf2178868da45eea18af4`：父类固定为 mathematics、physics、chemistry、biology、computer science、economics、medicine、linguistics；每个父类 8 个 child，每个 child 10 TRAIN + 10 DEVELOPMENT + 10 CONFIRMATION 表达，共 1,920 条文本。只使用八个 complex/conditional-fine 任务；simple 条件完全排除。父类和 child 等权，chance balanced accuracy 为 $1/8=12.5\%$。
-3. `AI_PROPOSAL`：TRAIN 内按冻结表达 ID 分为 5/5 两半，双向内部交叉验证选择一组共享的 $r,\alpha$；随后分别用全部 TRAIN 和全部 DEVELOPMENT 构造 $S_\ell^T,S_\ell^D$，两者都只在 CONFIRMATION 上裁定。
-4. `AI_PROPOSAL`：$r\in\{1,2,4,8,16,32,56\}$；$\rho=\alpha\operatorname{tr}(W_\ell)/4096$，$\alpha\in\{10^{-4},10^{-3},10^{-2},10^{-1},1\}$。平分时优先更小的 $r$ 和更大的 $\alpha$。
-5. 所有中心、$B_\ell$、$W_\ell$、$r$、$\alpha/\rho$ 和方向只从 TRAIN/DEVELOPMENT 产生；CONFIRMATION 不能决定符号、秩、正则、层、样本或图形范围。现有 CONFIRMATION 已被旧实验查看，因此这里只是新方法的 analysis-heldout split，不是全新总体确认。
-6. 512 个 Haar 和 512 个归属置乱对所有候选使用冻结种子。置乱在每个父类内把单条 TRAIN/DEVELOPMENT 表达重新分配到 child bin，同时保持每个 child 样本数；它不是不会改变 $B_\ell$ 的简单标签改名。置乱对照使用与真方向相同的冻结秩并重新执行 $B/W$ 构造和 CONFIRMATION 评估。
-7. 全空间能力 guard 使用同一 TRAIN-only 超参数纪律下的 4,096 维正则多类线性读出，并在 CONFIRMATION 上裁定。某层只有在 $BA_\ell^{full}$ 减去其父类内归属置乱 q95 的同时置信下界大于 0 时才通过；它回答全空间线性任务是否可做，不能替代低秩 $G_\ell$。
-8. 不必显式形成 4,096×4,096 稠密逆矩阵；Protocol 应要求在样本张成空间中完成稳定的 ridge-whitened 求解，并验证残差、正交性和直接/低秩实现一致。
-9. 不画或裁定 head/middle/tail。可在主 verdict 冻结后描述 $S_\ell$ 在参数秩上的能量分布，但它不能改变结论或事后选 band。
-10. 分组重采样以 8 个父类为外层不确定性单位，并在每个父类内嵌套重采样表达；每次重采样必须重新构造方向和分类中心。九个裁定层使用同一次 max-statistic 同时校正。
+1. 冻结 Qwen3-8B、E03 对齐的 token/readout hook、第 24/28 层、E03 完整
+   TRAIN 线性残差预测器和已保存的 TRAIN $R_U$ 标准化器。对所有表达库原样
+   应用同一预测器和标准化器；禁止根据结果重拟合，也禁止用 $Z_\ell$ 替换主对象。
+2. 保持八领域×每领域八细类×每单元十表达的平衡结构。原 TRAIN 是第一构造
+   来源，DEVELOPMENT 只用于在不接触 v4 的情况下选择一组全局 $(r,\alpha)$；
+   已经打开的 CONFIRMATION-v3 是第二构造来源，不再是留出证据。
+   `AI_PROPOSAL`：新建 640 条密封 CONFIRMATION-v4，并要求其规范化文本、
+   模板族、事实组合和 record identity 与全部旧表达库零重合。
+3. 在打开 v4 前从 $r\in\{1,2,4,7\}$ 和
+   $\alpha\in\{10^{-4},10^{-3},10^{-2},10^{-1},1\}$ 中各选一个值。两层、八领域共用一个
+   选择规则，最终只冻结一组；并列时选择更小的秩和更强的收缩。不得在 v4 上
+   查看未选中的秩。精确的一标准误规则写入 Protocol。
+4. 所有投影都使用相同的领域内最近中心分类器，中心只来自相应构造来源。四个
+   对照保持秩、样本、中心化、分类器和 v4 行完全一致：领域内主成分头部、同秩
+   随机正交空间、领域内样本—细类归属置乱，以及完整空间正则线性能力护栏。
+5. 打开 C4 前冻结 T/C3 的全部方向、中心、分类器和零假设集合。阶段 A 的 2,000
+   次配对总体重采样先有放回地抽领域，再在保留的每个细类内抽 C4 表达；阶段 B
+   固定保留八个具名领域，只在每个“领域×细类”单元内抽 C4 表达，从而始终能为
+   每个固定领域计算区间。两者都不重采样细类身份，都以两个既有构造库为条件，
+   并使用同时校正。共享/特有的全部可定义校准值都在揭示 H1 前为两层一起计算，
+   但只有 H1 最终准入的层可以解释和报告。
+6. 阶段 A 先检查新表达、独立重建、位置和完整空间能力；初步候选再经过小分母
+   护栏，才得到最终准入。只有最终通过的层进入阶段 B；下游描述图不能挽救上游
+   失败。
+
+预期 canonical 产物只有一个 `protocol.md`；获得单独执行授权后才产生一个
+`summary.md`、一个 `detailed.md`、裁定表和最多两张中央图。当前没有运行授权。
 
 ## 6. Minimal Falsification Tests
 
-| 结果类型 | 可检查规则 | 问题更新 |
+| 阶段 / verdict | 注册含义 | 主线更新 |
 | --- | --- | --- |
-| `STABLE_LOW_RANK_LINEAR_DIRECTIONS` | 全空间能力通过；$\mathcal L^*$ 非空；集合内每层的 TRAIN-built 与 DEVELOPMENT-built 结果均为正且子空间重合超过 Haar q95；父类/表达来源分组结果无主导性反转 | 仅集合内层获得 conditional-fine 跨表达低秩候选坐标；可进入独立功能 admission，但尚不能进入 Router 训练 |
-| `EXPRESSION_OR_SMALL_SAMPLE_OVERFIT` | 构造 $\lambda$ 或准确率高，但全部层的 $G_\ell$ 不超过随机，TRAIN-built 与 DEVELOPMENT-built 结果反转，或子空间重合不超过 Haar | 当前方向主要反映表达捷径、采样噪声或不稳定估计；不能按这些方向设计 Router |
-| `DISTRIBUTED_LINEAR_SIGNAL` | 若干层的全空间正则线性读出稳定超过 chance/Haar，但这些层没有低秩 $G_\ell$ 优势 | 细类线性信息存在，但未集中到注册的低秩方向；下一问题应是高维/稀疏/局部判别结构，而不是 band 位置 |
-| `INSUFFICIENT_TASK_CAPABILITY` | 全空间能力本身不稳定超过 chance，或模型/数据/缓存 guard 失败 | 当前实验没有资格判断低秩方向；先修复任务或表征能力，不转向非线性 Router |
+| 证据资格 | v4 清单/hash 与零重合护栏通过；残差预测器/标准化器/缓存身份通过 | 否则为 `INSUFFICIENT_EVIDENCE` 并停止 |
+| 完整空间能力 | 两个来源中较弱的完整空间相对冻结标签置乱阈值之同时置信下界大于零 | 置信上界不大于零为 `NO_REGISTERED_FULL_SPACE_CAPABILITY`；跨零为证据不足 |
+| `STABLE_NONTRIVIAL_LOW_RANK` | 至少一个有完整空间能力的层在唯一预选 $r\le4$ 上满足同时 $LCB_{.95}(G_\ell)>0$；两个来源点估计均为正；跨来源重合通过；PCA 1--32 不富集；两个分母护栏通过 | 只准入该层进入有条件共享/特有分析 |
+| `STABLE_FULL_CONTRAST_NOT_NONTRIVIAL_LOW_RANK` | DEVELOPMENT 预选 $r=7$ 且其他稳定性条件全部通过 | 只说明监督对比坐标稳定，不声称非平凡低秩集中 |
+| `STABLE_BUT_PCA_HEAD_ENRICHED` | 初步稳定性与完整空间能力通过，但 PCA 头部重合超额的置信下界大于零 | 方向可能稳定有用，但没有回答“PCA 头部不额外富集”问题 |
+| `DENOMINATOR_ROBUSTNESS_FAIL` | 初步候选在十倍更强收缩或等领域、对子空间旋转不变的留出类间/类内置乱差上，置信上界不大于零 | 有边界的非支持结果；分解前停止，不把原因唯一归结为小分母 |
+| `DISTRIBUTED_OR_UNSTABLE_LINEAR_SIGNAL` | 完整空间能力通过，但所有有能力的层在冻结秩上的紧凑优势置信上界不大于零 | 否定当前方法/冻结秩证书，不否定细类信息 |
+| `SHARED_ONLY` / `SPECIFIC_ONLY` / `MIXED` / `NO_QUALIFIED_DECOMPOSITION` | 由匹配零假设校正后的共享投影与合格本领域残差得到的条件分类 | 只描述几何复用与留出分类；组间共享方向保持未决 |
+| `INSUFFICIENT_DECOMPOSITION` | H1 已通过，但阶段 B 所需的基、零假设、区间或数值护栏无法定义 | 保留 H1，不强制给共享/特有四分类 |
 
-**最小反例：**在构造半人为加入一个只与 child 标签共同变化、但在确认半独立翻转的模板偏置。它会产生很大的构造 $\lambda$ 和训练准确率，却使确认 $G_\ell\le0$、双向折叠反转。这个反例说明必须用跨表达确认，而不能用广义特征值本身作为结论。
+小分母审计故意不作为第一项独立实验。先用新表达表现和独立重建裁定稳定性；只有
+在正向稳定性候选出现后，才要求更强收缩和留出比值也通过，才能最终形成正结论。
 
 ## 7. Current Evidence
 
-1. [A15_02_05](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md) 表明 conditional-fine residual 可复现，但在实际 $\Delta n$ 中没有得到超出 coarse 的稳定额外本地秩后移；named case 的方向也不一致。它没有求解 $B/W$ 判别方向。
-2. [A15_02_07 TAX](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full/summary.md) 在相同十层和完整谱上没有得到稳定 fine-specific rank relocation；已有线性可读量不等于低秩、跨表达方向证书。
-3. [A15_04](/Projects/from-attention-to-search/main/experiments/A15/15_04_tail_band_information/A15_04_E01_shared_tail_geometry/summary.md) 的全局 shared F9--F16 verdict 为 Fail：本地后移没有进入一个可跨层复用的 broad tail。这是停止用 band 位置替代方向身份的直接依据。
-4. [A15_05_04](/Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_04_E01_cross_update_compatibility_gate/summary.md) 与 [A15_05_05](/Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_05_E01_2b_matched_band_dispatch/summary.md) 没有准入固定 M/T/N band；改变高维邻域或分发不是功能证据。
-5. 当前尚未计算 $B_\ell/W_\ell$ 广义判别方向、跨表达 $G_\ell$ 或子空间重合。A15_07 的全部结果状态均为 `NOT RUN`。
+1. [E03](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E03_aligned_hierarchical_taxonomy_replication/summary.md)
+   已在第 24、28 层建立完整 $R_U$ 的正留出新增可访问性。监督降秩岭在 grid 8
+   达到注册的 80%/90% 保留目标，正确含义是至多七个中心化类别对比；主成分
+   分析要到 512 维才由区间确认，且未胜过同秩随机空间。监督子空间在主成分
+   1--32 段仅约 2%--3%，在 257--639 段约 68%--70%。这些是本轮先验证据，
+   不是当前稳定性 verdict。
+2. [E04](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E04_z_ru_hierarchical_geometry_comparison/summary.md)
+   表明父类中心化的完整表征具有可复现的同领域局部子空间，合并多个领域时并集
+   变宽。它支持“局部方向可能存在”，但 $Z_\ell$ 含有累计旧信息，不能回答本轮
+   $R_U$ 分类方向问题。
+3. CONFIRMATION-v3 和现有图表已经打开，所以旧表达库都不再有资格作为本轮
+   untouched confirmation evidence。
+4. 当前没有运行任何 A15_07 广义判别方向、密封 v4、小分母护栏或合格共享/
+   特有分解；scientific result 为 `NOT RUN`。
 
 ## 8. Claim Boundary And Next Decision
 
-本 Anchor 最多证明：在一个冻结模型、一个已经检查过的 1,920 条英文 TAX bank、一个明确表征位置和注册的线性正则方法下，conditional-fine 差异能否被压缩为逐层、跨表达复现的小秩线性子空间。
+若通过，本 Anchor 最多建立：在冻结 Qwen3-8B 第 24/28 层、八领域×八细类平衡
+任务、冻结标准化 $R_U$ 构造和一个注册正则线性方法下，存在一个紧凑分类目标
+子空间；它与汇总 PCA 第 1--32 位的重合不高于匹配随机方向基线，并能在密封新
+表达上复现。其有资格的条件分解可能得到共享、特有、二者都有，或没有任何合格
+成分。
 
-即使 Pass，也不能声称这些方向是模型自然使用的功能模块、包含 attention 新增信息、跨模型共享、对应固定频谱 band、预测 expert 身份、降低 expert 冲突或改善 Router NLL。要推进 layerwise Router，下一次独立功能 admission 必须在**同一个实际 MoE 的 Router 输入**上冻结这些方向，并检验它们是否预测 expert-specific utility 或已验证的 same-expert compatibility，且超过 native-score、同秩 Haar 和 wrong-layer controls。
+它不能建立模型原生使用这些方向、方向具有因果性或包含新知识、方向能预测哪个
+expert 更有用、低秩 Router 会改善、专家会因此专门化，或结果可迁移到其他模型、
+任务、语言、层和训练方法。“共享”只指几何方向与留出分类功能复用，不表示自然
+语言语义完全相同。
 
-**暂停边界：**A15_07 不拥有当前下一决策，也没有结果可解释。只有在
-A15_08 的目标条件增量及其最小充分检索秩得到有边界回答后，研究者显式
-选择重开，才可恢复本候选。任何 A15_08 结果都不能写成 A15_07 verdict。
+**唯一下一决策：**研究者重新确认冷审后修订的四段白话 Focus，并逐块审核配套
+[Protocol 草案](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/protocol.md)，
+重点确认密封 v4 构造、$r\le4$ 非平凡低秩边界、小分母护栏和共享/特有零假设。
+Protocol 审核不授权实现、表征提取、打开确认集、smoke 或 full run。

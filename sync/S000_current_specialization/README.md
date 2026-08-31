@@ -4,6 +4,16 @@ This is the compact cross-project reading surface for the current
 feature-specialization project. Project-local anchors and experiment records
 remain the source of truth.
 
+## Anchor Mirror Refresh
+
+The anchor mirror was refreshed on 2026-08-31 from
+`Projects/from-attention-to-search/main/problem_anchors/`. The validated
+publication contains 327 Markdown files and rewrites 435 links that leave the
+anchor tree. The claimed `A15_13` problem folder is temporarily excluded
+because two source Thinking Cards contain broken relative links to their 0828
+meeting record; fixing those source files requires an explicit conversation
+handoff. No research judgment was rewritten during this publication.
+
 ## Current State
 
 The synchronized surface now exposes three independent current decisions:
@@ -117,9 +127,10 @@ transfer to real agents.
 
 ## Copy Boundary
 
-The complete `anchors/` tree is a generated mirror of
-`Projects/from-attention-to-search/main/problem_anchors/`, including every
-active parent anchor, subanchor, and bilingual companion.
+The `anchors/` tree is a generated mirror of
+`Projects/from-attention-to-search/main/problem_anchors/`. The 2026-08-31
+publication includes every source folder that passes link validation except
+the temporarily blocked `A15_13` folder documented above.
 Links inside the anchor tree remain relative. Links that leave
 `problem_anchors/` are rewritten to repository-root absolute paths so they are
 directly usable from the published mirror.
@@ -146,5 +157,6 @@ python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --sourc
 python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
 ```
 
-This root sync was refreshed on 2026-08-15. Project-local anchors, stories,
-and experiment records remain authoritative.
+The anchor mirror was refreshed on 2026-08-31. The surrounding narrative,
+story, and protocol summaries were not republished in this bounded task.
+Project-local anchors, stories, and experiment records remain authoritative.

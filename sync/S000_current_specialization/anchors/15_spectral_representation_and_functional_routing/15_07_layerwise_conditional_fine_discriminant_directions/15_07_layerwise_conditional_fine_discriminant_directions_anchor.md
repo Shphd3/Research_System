@@ -1,209 +1,251 @@
 ---
 anchor_id: 15_07_layerwise_conditional_fine_discriminant_directions
-status: parked_by_researcher_unrun
-canonical_language: en
-chinese_companion: 15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md
+status: EXECUTION_APPROVED_RUNNING
+canonical_companion: 15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md
 thinking_card: 15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md
+active_focus: ../../../../../../daily_research_reports/0820/focus_stable_domain_discriminant_subspaces.md
 parent_line: 15_spectral_representation_and_functional_routing
 created: 2026-08-10
-updated: 2026-08-10
+updated: 2026-08-20
 ---
 
-# A15_07 Layerwise Conditional-Fine Discriminant Directions
+# A15_07: Held-Out Function And Spectral Location Of Supervised Low-Rank Subspaces
 
-Researcher judgment: [Chinese Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md). The researcher parked this candidate before Protocol construction in favor of first defining and testing layer-added information in A15_08. No implementation or run occurred, so A15_07 has no scientific verdict.
+Thinking Card source: [researcher-owned Chinese Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md).
 
 ## 1. Problem Definition
 
-A15_02 found layer- and local-parameter-rank-dependent semantic variance, but no stable fine-specific relocation law. A15_04 then showed that retained local rank relocation did not enter the registered cross-layer shared F9--F16 broad tail. A15_05 further showed that fixed covariance bands can change token-to-expert dispatch without improving the registered functional targets. Band position is therefore not an admissible rule for selecting a semantic coordinate.
+A15 has already shown on one opened controlled confirmation bank that the
+candidate layer update at Qwen3-8B blocks 24 and 28 can add fine-class
+classification function beyond the old state. A supervised reduced-rank ridge
+regression (RRR) map retained that gain in eight requested input directions per
+domain, while one shared basis needed 56 directions to retain at least 90% for
+every domain. Those learned directions overlapped little across domains and
+were concentrated outside the largest-variance principal-component analysis
+(PCA) head. Because the confirmation bank used for those observations is now
+open, it cannot validate the post-hoc rank-8, rank-56, or spectral-band claims.
 
-This parked candidate does not reopen the archived band audit and fixes **conditional-fine** as its only semantic object: the task is to distinguish children after the parent is given. It neither compares coarse against fine nor assumes that the signal belongs to head, middle, or tail.
-
-The `AI_PROPOSAL` representation is the actual attention-induced MLP-input increment at ten frozen Qwen3-8B layers:
+For old normalized state $X_\ell$ and the same-token normalized state after
+the attention write $Z_\ell$, define
 
 $$
-x_\ell=\Delta n_\ell
-=RMSNorm_\ell(h_\ell+a_\ell)-RMSNorm_\ell(h_\ell).
+U_\ell=Z_\ell-X_\ell,\qquad
+R_{U,\ell}=U_\ell-\widehat{\mathbb E}_{lin}[U_\ell\mid X_\ell].
 $$
 
-Its complete 4,096-dimensional coordinates in the frozen orthogonal parameter basis may be used because a complete orthogonal change of coordinates does not change the generalized discrimination problem. The sampled layers are 1/5/9/13/17/21/25/29/33/36. Layer 36 is a displayed terminal boundary and is excluded from the primary decision.
+$R_U$ is a candidate layer update after subtracting a TRAIN-fitted linear
+prediction from the old state. It is not new knowledge and may still contain
+nonlinear recoding, residualizer error, or task-irrelevant variation. A
+**functional low-rank subspace** is therefore defined by held-out task gain
+retained after projecting $R_U$, not by covariance rank, class count, or
+coefficient rank alone.
 
-**Exactly one decision question:**
+**Single decision question:**
 
-> On the frozen conditional-fine data and actual $\Delta n_\ell$, does a low-rank layer-local subspace learned from one set of expressions continue to distinguish within-parent children on the other expressions, while beating equal-rank Haar and within-parent label-permutation controls, thereby earning a cross-expression layerwise linear semantic-coordinate certificate?
+> After freezing the previously learned task-specific rank-8 and shared
+> rank-56 subspaces, do they preserve the registered $R_U$ fine-class gain on
+> fresh controlled expressions, which TRAIN-identifiable PCA bands carry that
+> held-out function, and does the same qualitative relation—task-local low
+> dimension but a larger shared dimension—replicate after a full-$R_U$ entry
+> gate on natural hierarchical intent data?
 
-The decision only admits or rejects candidate directions for a later functional-admission question. It does not test native MLP use, expert utility, or Router-training benefit.
+The controlled track validates the exact prior candidates. The natural track
+tests external transport and may stop at its entry gate. The two tracks are not
+pooled into one p-value or used to rescue one another.
 
 ## 2. Physical Priors
 
-1. **Discriminative signal must be separated from expression noise.** A useful conditional-fine direction should separate child centers while remaining stable when the same child is rephrased or instantiated with another fact bundle.
-2. **High-dimensional small-sample estimation requires shrinkage.** The representation has 4,096 dimensions and few expressions per child. An unregularized within-child covariance is singular, and its largest generalized eigenvalue can be an accidental near-zero-noise direction.
-3. **Directions require expression-held-out validation.** Construction eigenvalues, training accuracy, and visual separation are not evidence of reproduction.
-4. **Each layer may own a different subspace.** $S_\ell$ and $S_m$ need not share vector identity. Equal rank or equal band name is not cross-layer direction identity.
-5. **Semantic separation is not functional use.** A stable child-discriminating direction need not predict which expert is useful for a token.
+1. **Task function and total variance are different objectives.** PCA orders
+   reconstruction energy; a supervised correction orders reduction of
+   classification loss beyond $X$. A useful direction can therefore lie in a
+   lower-variance, but still TRAIN-identifiable, spectral band.
+2. **Geometric alignment is not functional evidence.** Projector overlap says
+   where a learned map points. A band is functionally sufficient only when
+   keeping it helps on untouched data, and functionally necessary only when
+   deleting it hurts the frozen low-rank correction.
+3. **Several local task maps may require a larger union.** If domain-local
+   maps point in partly different directions, one common basis can still serve
+   all tasks but should require more dimensions than each local map. A natural
+   replication is admissible only after full $R_U$ itself improves over $X$.
 
 ## 3. Falsifiable Hypotheses
 
-**H1 -- stable low-rank conditional-fine directions.** The top $r$ generalized discriminant directions constructed independently from TRAIN or DEVELOPMENT expressions improve within-parent child balanced accuracy on CONFIRMATION beyond equal-rank Haar and within-parent sample-to-child assignment permutation. The two construction splits also produce subspaces whose overlap exceeds the equal-rank random baseline.
+**H1 — controlled held-out function.** On a sealed expression panel that uses
+new templates and fact combinations, full $R_U$ passes the prior admission
+gate at at least one registered block, the frozen task-specific rank-8 maps
+retain at least 80% of full-$R_U$ gain for every domain, and the frozen shared
+rank-56 basis retains at least 90% for every domain. A second panel containing
+new source propositions is a stronger transport test; failure there limits the
+claim to expression generalization rather than invalidating a pass on the
+primary expression panel.
 
-**R1 -- expression shortcut or small-sample overfit.** Construction eigenvalues or accuracy are high, but held-out advantage does not beat random or reverses when the expression halves are exchanged. The directions are not a stable fine-semantic certificate.
+**H2 — functional spectral location.** Within the pooled TRAIN-identifiable
+PCA span, the frozen supervised maps are not uniformly allocated across five
+registered equal-width bands. A band is called function-bearing only when its
+overlap exceeds a conditional Haar null and either its keep-only gain is
+positive or deleting it reduces the frozen low-rank gain on sealed data.
 
-**R2 -- no low-rank linear concentration certificate.** A regularized full-space linear readout separates children, but the registered low-rank candidate does not beat random. The signal may be distributed over a larger linear space. If full-space linear capability also fails, the outcome is capability-insufficient. Neither case establishes that fine information is absent or that a nonlinear Router is required.
+**H3 — natural external replication.** On the official English MASSIVE
+TRAIN/DEVELOPMENT/TEST split, at least one registered block first shows a
+positive full-$R_U$ loss gain over $X$ beyond matched duplicate-$X$ and
+within-domain mismatched-$R_U$ controls. Conditional on that gate, a supervised
+task-local subspace reaches 90% of full-$R_U$ gain in fewer dimensions than a
+single shared basis needed to reach the same all-task threshold, and their
+spectral locations are measured under the same conditional baseline.
 
-**Pass:** at least one preregistered layer has a grouped-bootstrap 95% simultaneous lower bound of $G_\ell$ above zero; the TRAIN-built and DEVELOPMENT-built results are both positive at that layer; cross-expression subspace overlap beats equal-rank Haar q95; and all full-space capability and data-reliability guards pass. Pass admits only the specific layers satisfying every condition.
-
-**Fail:** full-space linear capability passes, but low-rank held-out advantage is precisely nonpositive or the construction/confirmation directions stably reverse. Fail rejects only the registered $B/W$ construction and rank range.
-
-**Insufficient:** full-space capability is absent, expression splits are not independent, labels or cached representations fail validation, precision crosses zero, or $r/\alpha$ selection leaks confirmation data.
+**Strongest rival.** The earlier result may be a small-sample synthetic or
+opened-confirmation artifact: the exact spaces may fail on new expression
+families, and natural prompts may have no independent $R_U$ gain after $X$.
+That outcome weakens transport, not the arithmetic correctness of the earlier
+opened-bank result.
 
 ## 4. Mathematical Model
 
-### 4.1 Concrete objects in $B_\ell$ and $W_\ell$
+For task/domain $p$, let the frozen supervised correction map be
+$B_p\in\mathbb R^{4096\times C_p}$, with orthonormal input basis $Q_p$ from its
+left singular vectors. The prior controlled candidates use
+$\operatorname{rank}(Q_p)=8$ and shared basis
+$Q_{sh}\in\mathbb R^{4096\times56}$ learned from equally Frobenius-normalized
+task maps.
 
-Let $x_{pce}^{(\ell)}\in\mathbb R^{4096}$ be the actual $\Delta n_\ell$ for layer $\ell$, parent $p$, child $c$, and expression $e$. Each parent has $C_p=8$ children. Using only the current construction half, define
-
-$$
-\mu_{pc}^{(\ell)}=\frac{1}{E_{pc}}\sum_e x_{pce}^{(\ell)},
-\qquad
-\mu_p^{(\ell)}=\frac{1}{C_p}\sum_c\mu_{pc}^{(\ell)}.
-$$
-
-The within-parent between-child covariance is
-
-$$
-B_\ell=
-\frac{1}{P}\sum_{p=1}^{P}\frac{1}{C_p}
-\sum_{c=1}^{C_p}
-(\mu_{pc}^{(\ell)}-\mu_p^{(\ell)})
-(\mu_{pc}^{(\ell)}-\mu_p^{(\ell)})^\top.
-$$
-
-The within-child expression covariance is
+Let $V=[v_1,\ldots,v_{d_{id}}]$ be PCA of pooled TRAIN $R_U$, retaining only
+numerically identified nonzero directions. Partition the ordered columns into
+five registered bands $V_b$. For a rank-$r_p$ projector $P_p=Q_pQ_p^\top$,
 
 $$
-W_\ell=
-\frac{1}{P}\sum_{p=1}^{P}\frac{1}{C_p}
-\sum_{c=1}^{C_p}\frac{1}{E_{pc}}
-\sum_e
-(x_{pce}^{(\ell)}-\mu_{pc}^{(\ell)})
-(x_{pce}^{(\ell)}-\mu_{pc}^{(\ell)})^\top.
+C_{p,b}=\frac{\lVert V_b^\top Q_p\rVert_F^2}{r_p}.
 $$
 
-$B_\ell$ measures child-identity differences, whereas $W_\ell$ measures expression changes within one child. Centering each child against its parent removes the parent-common component; these are not mixed coarse/fine quantities.
+$C_{p,b}$ is the fraction of subspace orientation in band $b$. Under a
+uniform rank-$r_p$ orientation conditioned on the same identifiable span,
+$\mathbb E[C_{p,b}]=d_b/d_{id}$; the ambient $r_p/4096$ baseline is invalid
+when the learned maps lie almost entirely in a smaller TRAIN span.
 
-### 4.2 Origin and role of the generalized eigenproblem
-
-For a direction $v$, define the discriminative Rayleigh quotient
-
-$$
-J_\ell(v)=
-\frac{v^\top B_\ell v}
-{v^\top(W_\ell+\rho I)v}.
-$$
-
-The numerator is between-child center variance along $v$. The denominator is within-child expression variance plus shrinkage. Maximizing the numerator subject to a unit denominator gives
+For the frozen map, define its band component
+$B_{p,b}=V_bV_b^\top B_p$. With frozen $X$-only logits $f_X(x)$, keep-only and
+drop-one predictions are
 
 $$
-\max_v v^\top B_\ell v
-\quad\text{s.t.}\quad
-v^\top(W_\ell+\rho I)v=1.
+f^{keep}_{p,b}=f_X+B_{p,b}^\top R_U,\qquad
+f^{drop}_{p,b}=f_X+(B_p-B_{p,b})^\top R_U.
 $$
 
-The Lagrangian is
-
-$$
-\mathcal L(v,\lambda)=
-v^\top B_\ell v-
-\lambda\left[v^\top(W_\ell+\rho I)v-1\right].
-$$
-
-Setting $\nabla_v\mathcal L=0$ yields
-
-$$
-B_\ell v=\lambda(W_\ell+\rho I)v.
-$$
-
-The equation is therefore the first-order optimality condition for maximizing child separation per unit expression noise, not an empirical identity. At a solution, $\lambda=J_\ell(v)$. A large $\lambda$ describes only the construction data; it is not held-out accuracy, information quantity, or Router utility.
-
-Equivalently, define
-
-$$
-C_\ell=(W_\ell+\rho I)^{-1/2}
-B_\ell(W_\ell+\rho I)^{-1/2}.
-$$
-
-Solve $C_\ell u=\lambda u$ and map back with $v=(W_\ell+\rho I)^{-1/2}u$. The method first whitens within-child expression variability and then finds the directions of largest child-center variation.
-
-$\rho>0$ makes $W_\ell+\rho I$ invertible and suppresses accidental near-zero-variance directions. It may not be tuned on confirmation expressions. With eight parents and eight children per parent, $\operatorname{rank}(B_\ell)\le8(8-1)=56$; more than 56 nonzero discriminant directions have no support from the registered class structure.
-
-### 4.3 One primary metric
-
-Let $S_\ell^{T}(r,\alpha)$ be constructed only from TRAIN, with $r$ and $\alpha$ selected by a preregistered 5/5 internal TRAIN expression cross-validation. Freeze those hyperparameters and construct $S_\ell^{D}$ independently from DEVELOPMENT. Each construction split uses its own $\rho=\alpha\operatorname{tr}(W_\ell)/4096$. Normalize the columns of $V_\ell$ so that $V_\ell^\top(W_\ell+\rho I)V_\ell=I$ and use $z=V_\ell^\top x$ as the classification coordinate. Each classifier uses only its own construction-split within-parent child centroids and predicts each CONFIRMATION item by its nearest projected child center within the known parent.
-
-Balanced accuracy averages correctness equally over children and parents. Let $BA_\ell^{disc}$ be the mean CONFIRMATION balanced accuracy of the TRAIN-built and DEVELOPMENT-built subspaces. For the selected rank at each layer, compute 512 equal-rank Haar subspaces and 512 within-parent sample-to-child assignment permutations with the identical split and classifier. Define
-
-$$
-G_\ell=BA_\ell^{disc}
--\max\left\{q_{0.95}(BA_\ell^{Haar}),
-q_{0.95}(BA_\ell^{perm})\right\},
-$$
-
-Let $LCB_{0.95}^{sim}(G_\ell)$ be the grouped-bootstrap lower bound simultaneously corrected over the nine non-terminal sampled layers, and define the admissible layer set
-
-$$
-\mathcal L^*=\left\{\ell\in\mathcal L_{dec}:\,
-LCB_{0.95}^{sim}(G_\ell)>0\right\}.
-$$
-
-The layerwise $G_\ell$ curve, measured in absolute balanced-accuracy points, is this Anchor's **one primary metric**; $\mathcal L^*$ is only its decision set. This avoids hiding a layer-local result in a cross-layer average. The `AI_PROPOSAL` Pass rule requires $\mathcal L^*\ne\varnothing$ and admits only layers in that set. Cross-layer medians and late-minus-early change are explanatory and cannot replace $G_\ell$.
-
-Euclidean-QR-orthonormalize the generalized eigenvectors constructed from TRAIN and DEVELOPMENT and let $P_\ell^T,P_\ell^D$ be the resulting equal-rank orthogonal projectors. Then
-
-$$
-O_\ell=\frac{\operatorname{tr}(P_\ell^TP_\ell^D)}{r}
-$$
-
-is a direction-stability guard. It must exceed equal-rank independent-Haar q95 but is not a second primary metric. Generalized eigenvalues, construction accuracy, band energy, and cross-layer overlap cannot replace $G_\ell$.
+Held-out cross-entropy reduction over $f_X$ is the functional unit. Keep-only
+tests sufficiency; the loss of gain from drop-one tests necessity. Neither
+alone is a causal claim about native model use.
 
 ## 5. Computational Realization
 
-1. Freeze `/data/share/Qwen3-8B`, the A15_02_07 ten layers, tokenization, final `Classification:` readout, and complete 4,096-dimensional actual-$\Delta n_\ell$ coordinates.
-2. Freeze A15_02_07 TAX data with SHA-256 `ce91dbbd3c5071e17beeccf0d86a280dc8a3e48e0fdbf2178868da45eea18af4`. The eight parents are mathematics, physics, chemistry, biology, computer science, economics, medicine, and linguistics. Each parent has eight children, and each child has 10 TRAIN + 10 DEVELOPMENT + 10 CONFIRMATION expressions, for 1,920 texts. Use only the eight complex/conditional-fine tasks; exclude the simple condition. Weight parents and children equally. Chance balanced accuracy is $1/8=12.5\%$.
-3. `AI_PROPOSAL`: divide TRAIN by frozen expression ID into two 5-expression halves and use bidirectional internal cross-validation to select one shared $r,\alpha$. Then construct $S_\ell^T$ from all TRAIN and $S_\ell^D$ from all DEVELOPMENT; adjudicate both only on CONFIRMATION.
-4. `AI_PROPOSAL`: $r\in\{1,2,4,8,16,32,56\}$ and $\rho=\alpha\operatorname{tr}(W_\ell)/4096$ for $\alpha\in\{10^{-4},10^{-3},10^{-2},10^{-1},1\}$. Break ties toward smaller $r$ and larger $\alpha$.
-5. All centers, $B_\ell$, $W_\ell$, $r$, $\alpha/\rho$, and directions come only from TRAIN/DEVELOPMENT. CONFIRMATION cannot select sign, rank, regularization, layer, sample, or plot range. These CONFIRMATION expressions were inspected under earlier metrics, so they are analysis-held-out for the newly frozen method, not a new population replication.
-6. Freeze seeds for 512 Haar and 512 assignment-permutation controls. Within each parent, reassign individual TRAIN/DEVELOPMENT expressions to child bins while preserving every child count; a simple label renaming would leave $B_\ell$ unchanged and is not a valid control. The permutation pipeline uses the true candidate's frozen rank and reruns $B/W$ construction and CONFIRMATION evaluation.
-7. The full-space capability guard uses a 4,096-dimensional regularized multiclass linear readout under the same TRAIN-only hyperparameter discipline and is adjudicated on CONFIRMATION. A layer passes only if the simultaneous lower bound of $BA_\ell^{full}$ minus its within-parent assignment-permutation q95 is above zero. This establishes full-space linear task capability and cannot replace low-rank $G_\ell$.
-8. Do not form a dense 4,096-by-4,096 inverse merely for convenience. The Protocol must specify a stable ridge-whitened solve in the sample span and verify residuals, orthogonality, and agreement with a direct implementation on a small check.
-9. Do not adjudicate head, middle, or tail. After the primary verdict is frozen, the parameter-rank energy of $S_\ell$ may be described, but it cannot change the result or select a band post hoc.
-10. The grouped bootstrap treats the eight parents as outer uncertainty units and resamples expressions within each parent. Every replicate must rebuild directions and classification centroids. One max-statistic simultaneously corrects the nine decision layers.
+### Controlled confirmation
+
+- Freeze Qwen3-8B, blocks 24/28, token and hooks, E03 TRAIN residualizers and
+  standardizers, task-specific rank-8 states, shared rank-56 bases and heads,
+  and pooled TRAIN PCA before any new activation is opened.
+- Construct two balanced panels with eight domains, eight fine classes and 30
+  rows per cell. C4-expression uses old source propositions only in unseen
+  templates and combinations. C4-atom uses independently sourced, frozen new
+  propositions and separate templates. Exact text, source revision, label
+  leakage, record ID, normalized text, template and proposition receipts are
+  hashed before representation extraction.
+- Fit nothing and choose nothing on either panel. Evaluate full $R_U$, the
+  frozen task rank-8 maps, the frozen shared rank-56 heads, matched random
+  rotations, spectral keep-only and spectral drop-one variants.
+
+### Natural external replication
+
+- Use MASSIVE 1.0 English `en-US`, where `scenario` is the coarse domain,
+  `intent` is the fine class, `utt` is the permitted text, and `partition` is
+  the official TRAIN/DEVELOPMENT/TEST role. Select five domains using only
+  TRAIN/DEVELOPMENT schema and counts: email, transport, and the four most
+  frequent TRAIN intents from each of IoT, play and question answering. Every
+  task has four intents; no TEST value enters selection.
+- Prompt each row as `User request: <utt>\nClassification:`. Fit the same type
+  of TRAIN-only linear residualizer and TRAIN standardizer. Within each domain,
+  use $X$ to fit a base classifier and RRR on $R_U$ to fit a correction. Use
+  DEVELOPMENT only for ridge selection. TEST is opened once after code,
+  selected labels, hyperparameters, controls and thresholds are frozen.
+- First compare full $R_U$ with duplicate-$X$, within-domain mismatched-$R_U$
+  and label-permutation controls. Only admitted layers receive local ranks
+  $\{1,2,3\}$, shared ranks $\{1,2,3,5,8,12,15\}$ and five-band analyses.
+
+All source code, caches, raw runs and logs live under
+`/data/250010109/MoE_Router`. This Anchor owns no run command or artifact
+manifest; those are frozen in the linked Protocol.
 
 ## 6. Minimal Falsification Tests
 
-| Typed outcome | Inspectable rule | Knowledge update |
-| --- | --- | --- |
-| `STABLE_LOW_RANK_LINEAR_DIRECTIONS` | full-space capability passes; $\mathcal L^*$ is nonempty; TRAIN-built and DEVELOPMENT-built results are both positive and subspace overlap beats Haar q95 for every admitted layer; parent/expression-source groups do not reverse | only layers in $\mathcal L^*$ receive a cross-expression low-rank conditional-fine candidate coordinate; they may enter separate functional admission but not Router training |
-| `EXPRESSION_OR_SMALL_SAMPLE_OVERFIT` | construction eigenvalue or accuracy is high, but all $G_\ell$ values fail to beat random, TRAIN-built and DEVELOPMENT-built results reverse, or subspace overlap does not beat Haar | the candidate is dominated by expression shortcuts, sampling noise, or unstable estimation; do not use it for Router design |
-| `DISTRIBUTED_LINEAR_SIGNAL` | a regularized full-space linear readout reliably beats chance/Haar at named layers, but those layers have no low-rank $G_\ell$ advantage | fine linear information exists without registered low-rank concentration; next ask about higher-rank, sparse, or local discriminative structure, not band location |
-| `INSUFFICIENT_TASK_CAPABILITY` | full-space capability does not reliably beat chance, or model/data/cache guards fail | the experiment cannot adjudicate low-rank directions; repair capability before invoking nonlinear routing |
+The primary controlled estimand is the weaker-panel, weaker-domain held-out
+gain retention of the frozen task rank-8 and shared rank-56 systems, after the
+full-$R_U$ entry gate. H1 passes on C4-expression only if simultaneous 95%
+lower bounds exceed 0.80 and 0.90 respectively. C4-atom is reported as a
+separate stronger-transfer outcome.
 
-**Minimal counterexample:** add a construction-only template offset that covaries with child labels and reverses independently in confirmation expressions. It creates a large construction $\lambda$ and training accuracy while producing $G_\ell\le0$ and opposite outer-fold results. This falsifies any inference from generalized eigenvalue alone to stable semantics.
+H2 requires, for at least one admitted layer and band, both overlap above the
+conditional-Haar 95th percentile and positive held-out functional evidence
+from keep-only or drop-one. A high overlap without function is location only;
+function without excess overlap means the map is distributed within the
+registered partition.
+
+The natural track first requires a simultaneous 95% lower bound above zero for
+full-$R_U$ cross-entropy gain beyond the stronger matched control. If this gate
+fails, all natural low-rank and spectral verdicts are `NOT_APPLICABLE`. If it
+passes, H3 requires the all-task 90% crossing of the shared basis to be larger
+than the maximum local-task 90% crossing. Point crossings whose interval does
+not clear the threshold are reported `UNCERTAIN`, not rounded into a pass.
+
+The statistical unit is an example nested inside a fixed named domain; paired
+stratified bootstrap resamples examples within every domain-by-class cell.
+Domains are equally weighted. Claims are conditional on these named domains,
+model and layers, not on a population of all domains or models.
 
 ## 7. Current Evidence
 
-1. [A15_02_05](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md) established reproducible conditional-fine residuals but no stable extra local-rank relocation beyond coarse at actual $\Delta n$; named-case directions were heterogeneous. It did not solve the $B/W$ discriminant problem.
-2. [A15_02_07 TAX](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full/summary.md) found no stable fine-specific rank relocation over the same ten layers. Existing linear readability is not a low-rank cross-expression direction certificate.
-3. [A15_04](/Projects/from-attention-to-search/main/experiments/A15/15_04_tail_band_information/A15_04_E01_shared_tail_geometry/summary.md) failed its global shared F9--F16 claim: local relocation did not enter a reusable broad tail. This directly motivates replacing band position with direction identity.
-4. [A15_05_04](/Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_04_E01_cross_update_compatibility_gate/summary.md) and [A15_05_05](/Projects/from-attention-to-search/main/experiments/A15/15_05_functional_coordinate_admission/A15_05_05_E01_2b_matched_band_dispatch/summary.md) did not admit fixed M/T/N bands. A changed high-dimensional neighborhood or dispatch is not functional evidence.
-5. No A15_07 $B_\ell/W_\ell$ direction, cross-expression $G_\ell$, or subspace-overlap result exists. Every A15_07 result is `NOT RUN`.
+1. The opened E03 result established positive full-$R_U$ held-out gain at
+   blocks 24 and 28 on the earlier controlled bank. Task-specific requested
+   rank 8 recovered the registered 80%/90% curves, while PCA needed many more
+   coordinates. This is the candidate source, not confirmation for H1.
+2. The opened shared analysis found an all-task 90% crossing at 56 shared
+   dimensions versus 8 requested dimensions per task. Off-diagonal task-basis
+   overlap was 0.0127 at block 24 and 0.0179 at block 28. Because more than
+   99.98% of each learned task basis lies in the 639-dimensional TRAIN PCA
+   span, the relevant random-overlap expectation is about $8/639=0.0125$, not
+   $8/4096$. Thus block 24 is near the conditional random baseline and block
+   28 only modestly above it; “nearly disjoint” remains a conditional geometric
+   description rather than proof of unrelated semantics.
+3. The opened spectral diagnostic used a different rank-7 centered
+   discriminant projector. It placed roughly 68--70% of mass in PCA ranks
+   257--639, but it cannot by itself locate the exact rank-8 and shared rank-56
+   functional maps or show held-out band function.
+4. CLINC150 is a natural hierarchical negative boundary: under the previous
+   registered admission statistic, full $R_U$ did not clear the old-state and
+   mismatch controls at blocks 24 or 28. It therefore supplied no admissible
+   natural low-rank verdict. MASSIVE is a new external dataset, not a rescue of
+   CLINC150.
+5. The present C4 and MASSIVE results are `NOT RUN` at Anchor revision time.
 
 ## 8. Claim Boundary And Next Decision
 
-This Anchor can establish only whether conditional-fine differences concentrate into small, expression-reproducible, layer-local linear subspaces for one frozen model, one previously inspected 1,920-text English TAX bank, one representation site, and one registered regularized method.
+A complete Pass can support only this bounded statement: for frozen Qwen3-8B
+blocks 24/28 and the registered linear tasks, supervised low-rank correction
+directions retain function on new controlled expressions, align with specified
+TRAIN-identifiable spectral bands for functional rather than variance reasons,
+and show the same local-versus-shared dimension ordering on one natural
+hierarchical intent dataset after a full-$R_U$ gate.
 
-Even a Pass cannot establish native functional use, attention-specific new information, cross-model sharing, fixed-band identity, expert prediction, reduced expert conflict, or Router NLL gain. To advance a layerwise Router, a later independent functional admission must freeze candidate directions in the **actual Router input of the same MoE** and test whether they predict expert-specific utility or validated same-expert compatibility beyond native-score, equal-rank Haar, and wrong-layer controls.
+A controlled-only Pass with natural failure supports an existence result under
+the controlled construction and weakens external transport. A failure on the
+primary expression panel weakens the stability of the exact prior spaces. A
+natural entry failure says only that this dataset/hook/layer combination does
+not admit downstream low-rank interpretation.
 
-**Parked boundary:** A15_07 owns no active next decision and has no result to
-interpret. Reopening requires an explicit researcher decision after the A15_08
-target-conditioned increment and its minimal sufficient retrieval rank are
-settled. No A15_08 result may be reported as an A15_07 verdict.
+No outcome establishes native causal use, new knowledge, expert utility,
+Router quality, LoRA mechanism, forgetting resistance, or transfer across
+models, languages and layers.
+
+**Exactly one next decision:** after the two tracks produce canonical
+`summary.md` and `detailed.md`, decide whether “functional low rank outside the
+PCA head, with a larger shared union” is credible enough to become a candidate
+prior for a separate Router experiment. Completion requires the researcher to
+state the direct result, updated judgment, cannot-claim boundary and this one
+decision in the active Focus; only then may a reader-facing daily report be
+written.
