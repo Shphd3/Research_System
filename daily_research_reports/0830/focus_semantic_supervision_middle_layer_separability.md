@@ -17,7 +17,7 @@ anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_repre
 protocol: Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E04_frozen_teacher_route_only_dynamic_expert_tree/protocol.md
 source_meeting: daily_research_reports/0828/docs/0828组会_逐句校订与下一步研究方向.md
 core_experiment_count: 3
-execution_status: E04_APPROVED_FOR_IMPLEMENTATION_SMOKE_AND_TWO_SEED_FULL_RUN
+execution_status: E04_AMENDED_AFTER_ROUTING_AUDIT_REAUTHORIZED_FOR_SMOKE_AND_TWO_SEED_FULL_RUN
 interpretation_status: NOT_RUN
 ```
 
@@ -31,7 +31,7 @@ interpretation_status: NOT_RUN
 
 ### 1. 目的
 
-比较平铺续训、无标签层级生长、真实标签层级监督和第三层伪标签层级监督，区分新增容量、层级拓扑、正确语义监督和自产语义监督各自的作用。
+比较平铺续训、带真实或自产标签的平铺监督、无标签层级生长、真实标签层级监督和第三层伪标签层级监督，区分新增容量、层级拓扑、正确语义监督和自产语义监督各自的作用。
 
 ### 2. 假设
 
@@ -40,7 +40,7 @@ interpretation_status: NOT_RUN
 ### 3. 分析方法
 
 1. 所有条件从同一种子教师快照出发，使用同一数据顺序、优化器、总步数和最终步检查点；平铺组匹配层级组的总参数与每样本活动专家计算量。
-2. 第一比较是真实标签层级组减去无标签层级组；第二比较是无标签层级组减去平铺组；第三比较是伪标签层级组减去无标签层级组，并用真实标签层级组作为方向上界。
+2. 第一比较是真实标签层级组减去无标签层级组；第二比较是无标签层级组减去无标签平铺组；第三比较是真实/伪标签平铺组各自减去无标签平铺组，并与同标签来源的层级组对照；第四比较是伪标签层级组减去无标签层级组，并用真实标签层级组作为方向上界。
 3. 第一眼只看未见模板测试集上，父类内细标签的低尾归一化间隔；语言损失、答案损失和答案准确率只负责守卫原任务未被破坏。
 
 ### 4. 结论分支
