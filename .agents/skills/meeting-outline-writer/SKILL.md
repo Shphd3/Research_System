@@ -53,6 +53,29 @@ a mandatory merge table.
 
 ## Output Contract
 
+### Completed Single-Experiment Brief
+
+When the researcher asks for a meeting-ready report of one completed
+experiment, use the project's completed-experiment reply format instead of the
+generic progressive-question layout below:
+
+1. audit the completed comparison set and the actual single-stage or staged
+   training schedule, including optimizer-update counts and the stage handoff;
+2. write Purpose in one sentence;
+3. write one or two short Hypotheses;
+4. write at most three Analysis-method bullets;
+5. write numbered Conclusions, each immediately followed by one eligible
+   decision-bearing figure and one plain `How to read` sentence.
+
+For Router or MoE work, explicitly separate semantic dispatch, intervention-
+measured expert utility, end-task performance, and representation evidence.
+Keep the status `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until the researcher
+confirms the result wording. Preserve exactly one next decision and its
+completion criterion after the four-section report.
+
+Use the generic contract below for other one-problem knowledge syntheses and
+human-scoped multi-problem meetings.
+
 Use these sections in order:
 
 ```text

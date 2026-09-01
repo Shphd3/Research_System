@@ -1,4 +1,4 @@
-# 冻结教师后，高层语义能否通过动态专家树整理第二层有效表示？
+# 冻结基础模型的语义能否启动先粗后细的功能路由？
 
 ```text
 type: meeting_cycle_core_task
@@ -11,98 +11,111 @@ core_question: HUMAN_CONFIRMED
 plain_language_design: HUMAN_CONFIRMED
 data_definition: HUMAN_CONFIRMED
 cycle_start: 2026-08-28
-target_meeting: 2026-08-31
+target_meeting: 2026-09-01
 active_project: Projects/from-attention-to-search/
-anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md
-protocol: Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E04_frozen_teacher_route_only_dynamic_expert_tree/protocol.md
-source_meeting: daily_research_reports/0828/docs/0828组会_逐句校订与下一步研究方向.md
+anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_02_frozen_base_staged_semantic_lora_router_anchor.md
+protocol: Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/protocol.md
+source_meeting: daily_research_reports/0831/docs/0831_组会校订_训练阶段澄清与Post-training研究重定向.md
 core_experiment_count: 3
-execution_status: E04_AMENDED_AFTER_ROUTING_AUDIT_REAUTHORIZED_FOR_SMOKE_AND_TWO_SEED_FULL_RUN
-interpretation_status: NOT_RUN
+execution_status: E05_FULL_RUN_AND_ANALYSIS_COMPLETE
+interpretation_status: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
 ```
 
 ## 1. 核心问题
 
-三层因果语言模型只用整条序列的下一词元损失学会任务后，将其全部冻结。第三层答案前表示形成的语义标签，能否通过第二层之后新增的“先粗分、固定粗路径、再在父类内细分”的动态路由—专家树，把第二层的有效表示整理得比公平的平铺基线更符合真实粗细语义？正确标签能否给出上界，第三层自产标签能否复现该方向，删除粗判别方向是否改善细路由？
+冻结 Qwen3-0.6B-Base 后，能否直接从它已有的自然语言表示中找到粗领域和领域内细意图，并用这些固定标签先训练粗 Router 与粗 LoRA 专家，再固定粗 Router、增加细 Router 与细 LoRA 专家？这种先粗后细的训练，能否比没有语义监督的同结构系统和平铺专家系统，得到更接近真实语义上界的路由、有效表示和任务功能？
 
-原始第二层表示和原模型参数始终固定。本轮所说的“第二层有效表示”是原始第二层表示加上被路由父专家与叶专家的残差输出；因此结果不能表述成原第二层参数被塑造。
+本轮用 CLINC150：10 个粗领域，每个领域 15 个细意图。基础模型不再后训练成教师；真实标签只给出 Oracle 上界，三种聚类标签来自冻结基础模型的训练集最终层表示。原始 Qwen 参数始终不变，变化发生在第 15 个块的一组新增低秩残差、Router 和任务分类头中。
 
-## 2. 实验一：监督、拓扑与标签来源的核心比较
-
-### 1. 目的
-
-比较平铺续训、带真实或自产标签的平铺监督、无标签层级生长、真实标签层级监督和第三层伪标签层级监督，区分新增容量、层级拓扑、正确语义监督和自产语义监督各自的作用。
-
-### 2. 假设
-
-若语义监督确实能整理新增模块形成的有效表示，真实标签层级组应稳定优于结构完全相同但只训练语言损失的组；若只是层级拓扑或额外参数起作用，无标签层级组也会得到同等改善。第三层伪标签只有先通过不看真值的稳定性和非坍缩检查，并在冻结后高于随机地对齐真值，才有资格被解释为语义入口。
-
-### 3. 分析方法
-
-1. 所有条件从同一种子教师快照出发，使用同一数据顺序、优化器、总步数和最终步检查点；平铺组匹配层级组的总参数与每样本活动专家计算量。
-2. 第一比较是真实标签层级组减去无标签层级组；第二比较是无标签层级组减去无标签平铺组；第三比较是真实/伪标签平铺组各自减去无标签平铺组，并与同标签来源的层级组对照；第四比较是伪标签层级组减去无标签层级组，并用真实标签层级组作为方向上界。
-3. 第一眼只看未见模板测试集上，父类内细标签的低尾归一化间隔；语言损失、答案损失和答案准确率只负责守卫原任务未被破坏。
-
-### 4. 结论分支
-
-- 真实标签组不优于无标签层级组：停止解释去粗与伪标签机制；本实现未建立语义路由监督对有效表示的作用。
-- 真实标签有效而伪标签入口或下游比较失败：只支持表示整理可行，标签发现失败。
-- 真实标签有效、伪标签入口通过且伪标签组复现同向改善：才支持第三层自产标签能够指导第二层后的新增模块。
-
-## 3. 实验二：去粗路由与专家输入消融
+## 2. 实验一：粗粒度语义入口
 
 ### 1. 目的
 
-在真实标签上检验导师“固定粗路径后处理剩余细信息”的具体实现，区分细路由是否需要删除粗判别方向，以及叶专家应并行读取原始第二层表示还是顺序读取父专家输出。
+先判断真实领域标签能否训练出不坍缩且具有任务作用的粗 Router，再判断冻结基础模型的三种聚类能否给出同方向的粗分发。没有这一步，细分失败无法归因。
 
 ### 2. 假设
 
-若已解释的粗判别方向会干扰父类内细路由，细路由读取去粗表示应优于读取完整表示；若父、叶专家承担互补残差而非串行改写，并行读取原始表示应不差于顺序读取父专家输出。
+若架构能接收粗语义，真实领域监督应优于只靠意图任务损失形成的粗路由。若基础模型已有可用语义，至少一种聚类标签应在路由熵、与真实领域的一致程度、任务和粗专家删除效应上向 Oracle 靠近。最强竞争解释是聚类只制造了好看的负载分布，没有自然语言语义和功能。
 
 ### 3. 分析方法
 
-1. 在真实标签、粗阶段冻结和并行专家固定时，只改变细路由读取完整表示还是去粗表示。
-2. 在真实标签、去粗细路由和粗阶段冻结固定时，只改变叶专家读取原始表示还是父专家更新后的表示。
-3. 分别比较最终有效表示的同一低尾间隔，并检查路由准确率、熵、负载和语言功能守卫。
+1. 在完全冻结的同一 Qwen 表示上，分别固定真实领域标签、球面 K-means、高斯混合和球面方向混合标签；比较它们的稳定性、负载和与真实领域的评价性对齐。
+2. 用相同的两轮训练、同一 Router 和粗 LoRA 容量，比较任务损失组、Oracle 和三种聚类组；Route 分类损失只更新 Router，专家只通过意图任务损失更新。
+3. 第一眼比较单样本路由熵、专家负载熵和与 Oracle 的差距；选择性专家删除只决定方法是否具有功能，不替代 Oracle 比较。
 
-### 4. 结论分支
+### 4. 结论
 
-- 只有真实标签主比较先通过，去粗或输入消融才可作机制解释。
-- 去粗优于完整输入只支持删除这一条已学粗判别方向有帮助，不等于已经删除全部粗语义。
-- 并行不差于顺序支持使用可并行的父、叶残差路径；反之则保留顺序依赖为后续候选。
+- Oracle 也失败：本轮的层、低秩容量或目标函数不能承载粗语义，后续细分结果只能作诊断。
+- Oracle 成功而聚类失败：层级架构可用，瓶颈在冻结基础模型语义的寻找方法。
+- 至少一种聚类复现 Oracle 方向并通过功能门：允许解释第二阶段的粗到细传递。
 
-## 4. 实验三：粗阶段冻结的次要机制检查
+## 3. 实验二：完整粗到细方法与 Baseline
 
 ### 1. 目的
 
-检查细阶段完全固定粗路由和父专家，是否比粗细共同更新更符合当前渐进生长实现。
+检验导师要求的完整操作：先学粗分发，固定粗 Router，再在每个父分区内学习细 Router 和细 LoRA 专家；同时区分后训练、专家容量、语义标签、层级拓扑和固定随机分组的作用。
 
 ### 2. 假设
 
-若固定粗路径能保护已学父类划分，冻结组应至少不差于联合更新组；若联合更新更好，只说明联合优化在本任务中更有效，不能支持“固定粗路径后学习剩余信息”。
+若逐级语义分发有效，真实标签层级组应优于同结构任务损失组；主要自监督层级组应恢复真实标签改善的一部分，并优于平铺自监督、平铺真实标签以外的容量解释。最强竞争解释是 Dense、平铺或打乱标签组获得同等改善。
 
 ### 3. 分析方法
 
-1. 在真实标签、去粗细路由和并行专家固定时，只改变细阶段是否继续更新粗路由与父专家。
-2. 同时检查粗路由准确率是否保持、有效表示低尾间隔和语言功能是否变化。
+1. 完成冻结 Base、Dense LoRA、平铺任务损失、平铺 Oracle、平铺球面聚类、层级任务损失、层级打乱标签、层级 Oracle 和三种层级聚类的两个种子 full run，并保持每个样本的活动低秩 rank 为 24。
+2. 粗阶段训练两轮；细阶段从冻结的粗 Router 检查点继续两轮。基础模型和聚类标签始终固定，任务分类头在所有训练组中以同一规则继续更新。
+3. 依次比较任务意图宏平均 F1、路由熵与语义一致、有效表示的领域内细意图线性可读性和低尾间隔，最后用专家删除判定是否形成选择性功能。
 
-### 4. 结论分支
+### 4. 结论
 
-- 冻结组更好或不差：保留导师机制的主实现。
-- 联合更新更好：记录优化优势，但不把它用作导师固定粗路径机制的证据。
+- Oracle 层级不优于同结构任务损失组：停止声称本实现承载导师机制。
+- Oracle 有效、自监督无效：保留架构，只诊断语义发现和阶段间标签传递。
+- 自监督在两个种子上都向 Oracle 恢复且功能门通过：支持在本数据和单层低秩实现中继续扩展。
+
+## 4. 实验三：固定什么以及细 Router 读取什么
+
+### 1. 目的
+
+用一个完整的 $2\times2$ 消融回答第二阶段的两个具体问题：粗 Router 固定后，粗专家是否还应继续接受任务梯度；细 Router 是否应读取去掉粗 Router 判别行空间的表示。
+
+### 2. 假设
+
+若固定已经建立的粗功能能保护父类分工，同时粗判别方向会干扰父类内部细分，那么“粗 Router 与粗专家都固定 + 细 Router 读取去粗表示”应最好。竞争解释是只需固定分发规则而让粗专家继续适应，或完整原生表示仍包含细分所需信息而优于去粗。
+
+### 3. 分析方法
+
+1. 在 Oracle 和主要球面聚类两种标签来源下，都运行：粗专家继续训练/冻结 × 细 Router 读取原生/去粗表示四个格子；粗 Router 在四格中始终固定。
+2. 每个格子比较粗路由是否保持、细路由熵、领域内细意图有效表示、任务性能和选择性专家删除，并记录可训练参数与活动计算量。
+3. 只有标签来源的主比较先成立，冻结或去粗差异才解释为机制；否则它们只描述优化行为。
+
+### 4. 结论
+
+- 冻结粗专家更好：保留“固定已学粗功能再学细”的严格实现。
+- 只固定粗 Router 更好：保留粗路径，但允许粗专家随细任务继续适应。
+- 去粗更好：只支持删除当前 Router 的线性粗判别行空间有帮助，不代表去除了全部粗语义。
+- 原生表示更好：放弃当前线性去粗操作，但不否定先粗后细。
 
 ## 5. 当前认识与边界
 
-旧 E02-R 已证明微型模型能够学会修复后的合成语言任务，但旧的“每个专家都预测全部标签”的辅助分类头没有给出稳定 Oracle 效果；E03 在真实 CLINC150 上也未证明自产标签层级路由优于平铺路由。本次 E04 不覆盖这些失败，而是针对最直接的操作错配进行修复：分类监督只训练路由器，专家只通过被选中样本的语言损失训练，并把原始第二层与新增模块形成的有效表示严格分开。
+旧 E03 已证明 Qwen3-0.6B 能学会 CLINC150，但“训练教师后验 → 中层层级 Router”相对平铺 Router 的两个种子方向不一致。旧 E04 是合成数据上 Router-only 监督的独立前驱证据；它不能替代本轮真实自然语言验证。本轮取消教师训练，直接审计冻结基础模型表示，并把语义监督限制在 Router，把专家学习限制在任务损失。
 
-当前不能声称导师直觉成立、原第二层参数被塑造、伪标签天然具有语义、专家已经功能专门化，或结果可迁移到开放域语言。
+即使结果为正，也不能声称聚类发现了开放世界全部语义、原始 Qwen 参数被塑造、方法改善开放式生成、在线动态标签已成立或能够直接迁移到 MASSIVE。CLINC150 的任务输出就是意图分类，因此它首先是层级路由机制实验。
 
-**唯一下一决策：**完成两个配对种子的 E04 全运行后，先裁定真实标签层级组是否稳定优于无标签层级组。只有这一步通过，才依次解释去粗、专家输入、层级拓扑与伪标签结果。
+**唯一下一决策：**完成 E05 全部 32 个最终条件和两个种子的 full run 后，根据 Oracle 上界、自监督 Oracle 恢复、选择性功能门和 $2\times2$ 消融，决定进入 MASSIVE 的领域—意图—槽位扩展，还是回到合成数据逐层定位失败原因。
 
-## 6. 证据入口
+## 6. 执行完成后的机器证据（等待研究者闭卷确认）
 
-- **会议来源：**[0828 组会逐句校订与下一步研究方向](../0828/docs/0828组会_逐句校订与下一步研究方向.md)
-- **Anchor：**[A15.13 Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md)
-- **E04 Protocol：**[A15.13 E04 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E04_frozen_teacher_route_only_dynamic_expert_tree/protocol.md)
-- **历史 E02-R：**[Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E02_repaired_rule_induction_teacher_entrance_and_full_semantic_supervision/summary.md)
+32/32 个最终条件、12 个第一阶段检查点和四份父专家删除效用均已完成。注册判据给出的机器结论是 `INSUFFICIENT_ORACLE`：Oracle 相对同结构任务损失组的领域内细意图线性探针提升为两个种子 `+0.289/+0.093` 个 F1 点，合并均值 `+0.191`，但 95% 区间 `[-0.0003,+0.3866]` 仍跨零；球面聚类组提升 `+0.039/+0.093`，合并区间也跨零。
+
+当前最稳妥的直接观察是：真实标签与聚类标签都能避免任务损失路由的坍缩，并产生为正的父专家选择性删除效用；但有效表征的细意图线性可读性、近邻正确率和类内/类间散布几乎没有变化。细专家残差远小于共享残差，是当前未形成细语义表征改善的主要机制线索。$2\times2$ 消融没有支持“冻结粗专家并对细 Router 去粗”是最佳格子。
+
+这些文字是 AI 对机器证据的草案，不替代研究者的闭卷结果、不能声称边界和唯一下一决策。候选决策是先做 MASSIVE 英语的领域—意图—槽位机制审计；若 Oracle 在非饱和的槽位指标上仍失败，或细残差继续接近零，再回合成数据从目标函数和梯度路径逐层诊断。
+
+## 7. 证据入口
+
+- **会议来源：**[0831 训练阶段澄清](../0831/docs/0831_组会校订_训练阶段澄清与Post-training研究重定向.md)
+- **Anchor：**[A15.13.02 Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_02_frozen_base_staged_semantic_lora_router_anchor.md)
+- **E05 Protocol：**[A15.13 E05 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/protocol.md)
+- **E05 Summary：**[A15.13 E05 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/summary.md)
+- **E05 Detailed：**[A15.13 E05 Detailed](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/detailed.md)
 - **历史 E03：**[Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E03_qwen06b_clinc150_one_layer_backward_hierarchical_router/summary.md)
+- **历史 E04：**[Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E04_frozen_teacher_route_only_dynamic_expert_tree/protocol.md)

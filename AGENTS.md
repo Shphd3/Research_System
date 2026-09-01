@@ -177,6 +177,56 @@ next decision
 
 AI verifies numbers, evidence, and wording without strengthening the claim.
 
+### Completed-Experiment Plain-Language Reply
+
+After a full experiment or bounded evidence synthesis is complete, the default
+human-facing result reply and a requested single-experiment meeting brief use
+the following reader order. This is a presentation rule; `summary.md` and
+`detailed.md` remain the evidence owners.
+
+First audit what actually ran:
+
+1. list the completed treatment, Baseline, Oracle, null, and ablation
+   comparisons by the question each one protects;
+2. state whether training was genuinely staged; for every stage give the
+   trainable and frozen objects, data passes, actual optimizer-update count,
+   batch and accumulation, objective, learning rates, checkpoint rule, and
+   exact handoff to the next stage; if training was not staged, say so;
+3. lead the result with the quantities closest to the meeting question, not
+   with run order or the easiest positive diagnostic.
+
+Then use exactly four sections in the reply:
+
+```text
+1. Purpose: one plain sentence only.
+2. Hypothesis: one or two short falsifiable statements only.
+3. Analysis method: normally three bullets and never more than three; each
+   bullet states what is compared and which uncertainty it resolves.
+4. Conclusion: one numbered item per decision-bearing answer.
+```
+
+Every conclusion item starts with the direct answer, gives the smallest
+decisive value and boundary, and is immediately followed by one audited figure
+that supports that same answer plus a one-sentence `How to read` instruction.
+Group or delete conclusions that do not have eligible visual evidence; never
+manufacture a figure from missing or ineligible data. A figure is not a
+substitute for the direct result or claim boundary.
+
+Use very plain Chinese. Define an indispensable technical term before its
+first use, keep one relation per sentence, and explicitly separate, when
+applicable:
+
+- semantic dispatch or route-label agreement;
+- expert utility measured by an intervention such as matched deletion;
+- end-task performance;
+- representation accessibility or geometry.
+
+Do not call balanced load semantic, route agreement expert utility, positive
+expert utility a task-performance gain, or decodability a causal use result.
+State the registered typed verdict even when a secondary diagnostic is
+positive. If the researcher has not confirmed the knowledge wording, label the
+report `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`.
+
 ## Focus And Writing
 
 Daily writing starts from one living core-task Focus. The complete explanatory

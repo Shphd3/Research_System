@@ -41,6 +41,9 @@ Read the required references completely before acting:
   [result_evidence_lineage.md](references/result_evidence_lineage.md).
 - Before creating or revising `detailed.md`, also read
   [detailed_record_standard.md](references/detailed_record_standard.md).
+- For any completed-experiment user reply or single-experiment meeting-ready
+  result report, also read
+  [plain_language_completion_reply.md](references/plain_language_completion_reply.md).
 
 Do not copy the references into the output. Apply their contracts in the
 canonical files.
@@ -203,6 +206,20 @@ Include a figure only when it supports the current verdict, claim boundary, or
 next decision. Define its data source, metric and unit, aggregation, axes and
 legend, observed result, allowed conclusion, and limitation before promotion.
 Move debug-only figures out of `summary.md`.
+
+### 8.1 Plain-Language Completion Reply
+
+After verifying a completed run, answer the researcher using the project
+completion-reply contract: audit comparisons and actual stage transitions
+first, then use Purpose, Hypothesis, at most three Analysis-method bullets, and
+numbered Conclusions. Keep each conclusion attached to one decision-bearing
+figure and one short reading instruction. The reply must make route semantics,
+expert utility, end-task performance, and representation evidence visibly
+distinct whenever those objects exist.
+
+This reply is a reader surface, not a new evidence owner. Every number and
+figure still traces to `summary.md` or `detailed.md`, and unconfirmed wording
+remains an AI draft.
 
 ### 9. Close The Chain
 
