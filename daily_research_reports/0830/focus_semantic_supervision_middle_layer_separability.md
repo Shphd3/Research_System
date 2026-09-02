@@ -2,11 +2,11 @@
 
 ```text
 type: meeting_cycle_core_task
-status: HUMAN_CONFIRMED_EXECUTION_AUTHORIZED
+status: CYCLE_CLOSED
 problem_key: A15.semantic_supervision_middle_layer_separability
 focus_role: PRIMARY
 conversation_owner: codex-thread:01a0508f-34cb-7d20-bda8-d9271307c0a6
-ownership_status: CLAIMED
+ownership_status: RELEASED
 core_question: HUMAN_CONFIRMED
 plain_language_design: HUMAN_CONFIRMED
 data_definition: HUMAN_CONFIRMED
@@ -18,7 +18,7 @@ protocol: Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_
 source_meeting: daily_research_reports/0831/docs/0831_组会校订_训练阶段澄清与Post-training研究重定向.md
 core_experiment_count: 3
 execution_status: E05_FULL_RUN_AND_ANALYSIS_COMPLETE
-interpretation_status: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
+interpretation_status: HUMAN_CONFIRMED_BOUNDARY_AND_NEXT_DECISION
 ```
 
 ## 1. 核心问题
