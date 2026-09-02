@@ -1,0 +1,130 @@
+{
+  "definitions": {
+    "separability": "S_l,g = tr(B_l,g) / tr(W_l,expr)",
+    "fair_gap": "Q_l = log(S_l,fine / S_l,coarse) = log(tr(B_l,fine) / tr(B_l,coarse))",
+    "raw_rank_centroid": "C_l,g = sum_k p_l,g,k * (k-0.5)/16",
+    "fine_specific_location": "DeltaC_l = C_l,fine - C_l,coarse",
+    "early": "blocks 1-12",
+    "late": "blocks 25-35; block 36 reported separately"
+  },
+  "fair_gap": {
+    "early_median": -0.05737961432279806,
+    "late_median": 0.33234014688747415,
+    "late_minus_early": 0.3897197612102722,
+    "block_36": -0.059733233801295256,
+    "spearman_rho": 0.4401544401544402,
+    "spearman_p": 0.007222612787251058,
+    "adjacent_increases": 17,
+    "adjacent_comparisons": 35,
+    "late_minus_early_bootstrap_ci95": [
+      -0.12629008289715266,
+      0.4437841547765885
+    ],
+    "design_late_minus_early": 0.3379859478220597,
+    "confirmation_late_minus_early": 0.3053708741017716,
+    "leave_one_parent_late_minus_early": [
+      0.30761348280504863,
+      0.34135528626277345,
+      0.3567546540940163,
+      0.39021562925766473,
+      0.48095338358701434,
+      0.4263688762398431,
+      0.28792916146994474,
+      0.467698269390654
+    ]
+  },
+  "coarse_raw_centroid": {
+    "early_median": 0.34175234605507715,
+    "late_median": 0.47910011708622213,
+    "late_minus_early": 0.13734777103114498,
+    "block_36": 0.553441551357175,
+    "spearman_rho": 0.792020592020592,
+    "spearman_p": 8.72045452489756e-09,
+    "adjacent_increases": 18,
+    "adjacent_comparisons": 35,
+    "late_minus_early_bootstrap_ci95": [
+      0.11767009893217582,
+      0.154668918455261
+    ]
+  },
+  "fine_raw_centroid": {
+    "early_median": 0.353005548043297,
+    "late_median": 0.4700238103366702,
+    "late_minus_early": 0.1170182622933732,
+    "block_36": 0.554728150222933,
+    "spearman_rho": 0.8,
+    "spearman_p": 4.791893365614064e-09,
+    "adjacent_increases": 20,
+    "adjacent_comparisons": 35,
+    "late_minus_early_bootstrap_ci95": [
+      0.11635425551556874,
+      0.1409940201189378
+    ]
+  },
+  "raw_fine_minus_coarse": {
+    "early_median": 0.01830143837103948,
+    "late_median": 0.007587161899016204,
+    "late_minus_early": -0.010714276472023276,
+    "block_36": 0.001286598865757993,
+    "spearman_rho": -0.30759330759330755,
+    "spearman_p": 0.06800765647541361,
+    "adjacent_increases": 19,
+    "adjacent_comparisons": 35,
+    "registered_ci95": [
+      -0.0178360872622507,
+      0.004466965803745617
+    ],
+    "local_reanalysis_ci95": [
+      -0.0178360872622507,
+      0.004466965803745617
+    ]
+  },
+  "gain_weighted_input_fine_minus_coarse": {
+    "early_median": 0.0037581893278783723,
+    "late_median": 0.02005678421174889,
+    "late_minus_early": 0.016298594883870518,
+    "block_36": -0.022357882222192926,
+    "spearman_rho": 0.2571428571428572,
+    "spearman_p": 0.13002689628386027,
+    "adjacent_increases": 16,
+    "adjacent_comparisons": 35,
+    "registered_ci95": [
+      0.005992878488449655,
+      0.02832896343544736
+    ]
+  },
+  "nonlinear_response_fine_minus_coarse": {
+    "early_median": 0.008984202499116772,
+    "late_median": 0.014128132566929963,
+    "late_minus_early": 0.0051439300678131905,
+    "block_36": 6.371025974971634e-05,
+    "spearman_rho": 0.027799227799227798,
+    "spearman_p": 0.8721408171050449,
+    "adjacent_increases": 17,
+    "adjacent_comparisons": 35,
+    "registered_ci95": [
+      -0.0029837355354592255,
+      0.016199536858761295
+    ]
+  },
+  "source_files": {
+    "semantic_metrics": "Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_01_09_e01_qwen3_mlp_parameter_commonality_attention_write_semantic_location/runs/a15-01-09-e01-s-20260807T061000Z/semantic/analysis/semantic_layer_metrics.json",
+    "semantic_summary": "Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_01_09_e01_qwen3_mlp_parameter_commonality_attention_write_semantic_location/runs/a15-01-09-e01-s-20260807T061000Z/semantic/analysis/semantic_summary.json",
+    "response_summary": "Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_01_09_e01_qwen3_mlp_parameter_commonality_attention_write_semantic_location/runs/a15-01-09-e01-r-20260807T061000Z/response/analysis/response_summary.json",
+    "post_o_proj_q_band_metrics": "daily_research_reports/backup/2026/08/0807/docs/qwen3_post_o_proj_full_attention_semantic_variance_atlas/tables/band_metrics.csv"
+  },
+  "background_normalized_q": {
+    "coarse": {
+      "block_24_to_25_delta_median_log10_q": 0.7637066230612124,
+      "early_median_log10_q": -1.5860585812823071,
+      "late_median_log10_q": -0.7979151423036557,
+      "adjacent_increases": 20
+    },
+    "fine": {
+      "block_24_to_25_delta_median_log10_q": 0.6049924911947759,
+      "early_median_log10_q": -1.5055605119337154,
+      "late_median_log10_q": -0.5144155105767154,
+      "adjacent_increases": 20
+    }
+  }
+}

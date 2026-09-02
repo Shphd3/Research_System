@@ -14,7 +14,7 @@ target_meeting: Unknown
 active_project: Projects/from-attention-to-search/
 anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_03_semantic_gradient_functional_alignment_anchor.md
 protocol: Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E06_clinc150_hard_route_gradient_functional_audit/protocol.md
-source_meeting: daily_research_reports/0831/docs/0831_组会校订_训练阶段澄清与Post-training研究重定向.md
+source_meeting: daily_research_reports/backup/2026/08/0831/docs/0831_组会校订_训练阶段澄清与Post-training研究重定向.md
 core_experiment_count: 1
 ```
 

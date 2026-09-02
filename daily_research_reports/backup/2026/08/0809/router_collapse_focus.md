@@ -1,6 +1,6 @@
 # 历史快照：相同负载均衡损失下，为什么 Vanilla Router 仍然坍缩？
 
-> 该 focus 已在 2026-08-09 因主线切换归档；当前唯一日常 focus 位于 `daily_research_reports/0809/focus.md`。
+> 该 focus 已在 2026-08-09 因主线切换归档；当前唯一日常 focus 位于 `daily_research_reports/backup/2026/08/0809/focus.md`。
 
 ## 1. 本次回答的问题
 
