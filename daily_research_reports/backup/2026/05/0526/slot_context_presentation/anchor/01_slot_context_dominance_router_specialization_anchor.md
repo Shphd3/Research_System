@@ -4,7 +4,7 @@ parent_node: problem.moe_expert_specialization
 
 # Slot-Context Signal And Route-Utility Binding
 
-## Thinking Card
+## researcher judgment record
 
 我们的父问题是，为什么线性分发在 ABC/DBE slots形式的合成数据实验中，没有形成slot-specialized的分发，怎么才能形成slot-specialized的分发。
 

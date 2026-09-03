@@ -7,7 +7,7 @@ created_from: research_handoff_0605 + 0605 mentor transcript + meeting_brief_cn
 
 # 05_03 Collapse Root-Cause And Anti-Lockin Anchor
 
-## Thinking Card
+## researcher judgment record
 
 父问题：
 

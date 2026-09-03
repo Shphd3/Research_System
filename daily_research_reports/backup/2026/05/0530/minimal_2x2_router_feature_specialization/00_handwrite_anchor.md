@@ -1,6 +1,6 @@
 ﻿# 00 Handwrite Anchor
 
-## Thinking Card
+## researcher judgment record
 
 目的：通过2 * 2的实验来研究，Router无法按照feature分发的原因到底因为什么原因？
 
@@ -110,4 +110,3 @@ Reason:
 Next smallest uncertainty:
 
 Next action:
-

@@ -18,7 +18,7 @@ The formal anchor is the project-local equivalent of
 `docs/design.md` in the research-exploration workflow. It should explain the
 research design, not only summarize a result.
 
-Use `Thinking Card` as a short anchor replay: it should let you recover the
+Use `researcher judgment record` as a short anchor replay: it should let you recover the
 current question, judgment, evidence, boundary, and next decision before
 reading the full anchor. The rest of the anchor is the auditable design layer
 for AI critique, replay, and boundary checks.
@@ -50,7 +50,7 @@ AI should challenge:
 
 Candidate physical priors I am not sure about:
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：如何做一个更好的expert-aware 同时屏蔽common的 router 初始化？
 

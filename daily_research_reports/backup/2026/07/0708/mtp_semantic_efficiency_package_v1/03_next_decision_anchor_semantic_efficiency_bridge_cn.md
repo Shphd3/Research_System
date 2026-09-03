@@ -6,7 +6,7 @@ Question type: controlled mechanism + efficiency adjudication
 
 ---
 
-## Thinking Card
+## researcher judgment record
 
 **Phenomenon.**
 MTP 在 K=2/K=3 的受控任务中能把未来 branch-specific token 的监督直接打到当前 prefix state `h_T` 上。NTP 在全位置训练中也可能间接恢复 `Z`，所以现在不能只问“能不能学”，要问“是否更高效、更稳定、更可用地学”。

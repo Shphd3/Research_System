@@ -46,7 +46,7 @@
 ## 阅读顺序
 
 1. [本轮理论澄清、命题、反例与九项 carrier gate](06_long_horizon_compositional_workload_theory_cn.md)
-2. [本轮待研究者填写的 Thinking Card](07_long_horizon_compositional_workload_thinking_card_cn.md)
+2. 本轮待研究者填写的 研究者判断记录
 3. [前一轮 common/rare 理论](05_theory_clarification_and_meeting_anchor_cn.md)
 4. [录音驱动的 low-hanging fruit](04_recording_driven_low_hanging_fruit_cn.md)
 5. [广义 MTP/NTP 背景理论](01_general_mtp_vs_ntp_theory_cn.md)
@@ -57,6 +57,6 @@
 > test；现有证据不足以直接进入 NTP/MTP Protocol。**
 
 请先填写
-[Thinking Card](07_long_horizon_compositional_workload_thinking_card_cn.md)。
+researcher judgment record。
 收到研究者判断前，不创建正式 anchor、Protocol、代码或实验，不更新 graph、
 root sync，不 commit 或 push。

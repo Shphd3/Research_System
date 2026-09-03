@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06 2x2 Expert-Geometry Gate Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：Switch-style MoE 的 gate 如何和 expert 初始化结构发生联系，而不是作为与 expert 无关的随机分类器。
 

@@ -6,7 +6,7 @@ source_of_truth_status: daily-review-only
 
 # 05_02 Feature Assumption Relaxation
 
-## Thinking Card
+## researcher judgment record
 
 结论：
 

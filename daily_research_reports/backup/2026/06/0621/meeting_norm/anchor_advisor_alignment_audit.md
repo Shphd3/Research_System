@@ -29,7 +29,7 @@ hidden-state routing without jumping directly to a new gating method.
 
 | Advisor-style requirement | Current anchor status | Comment |
 |---|---|---|
-| Problem first | aligned | The Thinking Card and Problem Definition now state the parent problem before the experiment. |
+| Problem first | aligned | The researcher judgment record and Problem Definition now state the parent problem before the experiment. |
 | One decision question | aligned | The decision question is whether removing only row-norm variation reduces Gaussian true-cell imbalance. |
 | Physical prior | aligned | $z_e=\rho_e u_e^\top x$ directly states why row norm can affect top-1 winning probability. |
 | Mathematical model | aligned | The anchor has both row decomposition and observed-load decomposition. |

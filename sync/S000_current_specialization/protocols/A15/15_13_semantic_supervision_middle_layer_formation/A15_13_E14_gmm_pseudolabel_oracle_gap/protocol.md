@@ -9,6 +9,7 @@ Block audit status: A-G CONFIRMED
 Cross-block consistency: PASS
 Execution scope: data acquisition, implementation, tests, every missing two-seed training arm, immutable checkpoint manifest, unified evaluation, completion audit, figures, summary, and detailed record
 Design frozen at: 2026-09-03 before E14 implementation
+Execution amendment: GPQA uses the standard Diamond split from the official OpenAI simple-evals artifact because the Hugging Face GPQA files require interactive authenticated acceptance; no task is substituted
 Primary Anchor: 15_13_05_gmm_pseudolabel_oracle_gap_anchor.md
 Primary evidence: answer/target-token development NLL and learning-efficiency gap to Oracle, guarded by the registered task score and selective expert interventions
 Final verdict vocabulary: A / B / C only
@@ -28,7 +29,7 @@ Fit a rank-64 principal-component basis to TRAIN frozen-Qwen final-layer means o
 
 ### 2.2 Eight-task surface
 
-Use MMLU, MMLU-Pro, BBH, GSM8K, MATH, GPQA, HumanEval, and MBPP. Freeze 512 train, 64 development, and 64 internal-evaluation records per source using deterministic source-local ordering; if a source has fewer unique records, cycle only after exhausting all unique records and record every repeated identifier. Prompts never contain source names. Sequence length is 512; preserve the answer suffix when truncating the prompt; cross entropy applies only to answer tokens including end-of-sequence.
+Use MMLU, MMLU-Pro, BBH, GSM8K, MATH, GPQA Diamond, HumanEval, and MBPP. GPQA Diamond is frozen from the public artifact named by the official OpenAI `simple-evals` implementation because the Hugging Face GPQA repository requires an authenticated acceptance step; record the artifact URL, source-code revision, and file hash. Freeze 512 train, 64 development, and 64 internal-evaluation records per source using deterministic source-local ordering; if a source has fewer unique records, cycle only after exhausting all unique records and record every repeated identifier. Prompts never contain source names. Sequence length is 512; preserve the answer suffix when truncating the prompt; cross entropy applies only to answer tokens including end-of-sequence.
 
 For eight pseudo leaves, fit the same train-only PCA-64 and parent diagonal mixture. Sort parents by train assignment count and allocate child counts `3,3,2`; ties use numeric component index. Fit child diagonal mixtures with the same 20-restart, 100-iteration likelihood-only rule. Source truth is used only after freezing for diagnostics. All task scores are labeled `mixed-task internal capability diagnostics`, not uncontaminated benchmark generalization.
 
@@ -40,7 +41,7 @@ M2D2 adds, for seeds 17 and 29: diagonal-GMM learned hierarchy; its load-bias ve
 
 The exact eight-task surface trains, for seeds 17 and 29: one rank-24 LoRA; flat task-only; hierarchical task-only; frequency-matched random hierarchy; gold-source-supervised hierarchy; diagonal-GMM learned hierarchy with and without load bias; diagonal-GMM hard pseudo path with and without load bias; and gold-source forced-path unit-coefficient Oracle. Use four deterministic train passes and 128 optimizer updates, microbatch 8, accumulation 16, effective batch 128, AdamW weight decay `0.01`, LoRA learning rate `2e-4`, Router learning rate `5e-4`, five-update warmup, cosine decay, and gradient clipping `1.0`. All matched conditions share initialization family, example order, answer-token budget, optimizer, and fixed final-checkpoint rule.
 
-Route cross entropy has unit weight and updates Routers only. Task loss updates active LoRA parameters and, for learned paths, the selected probability coefficient. Hard pseudo and Oracle paths select experts from frozen labels with coefficient exactly one while training a shadow Router for diagnostics. Gradient-free load bias enters only top-one selection; its counts aggregate every valid token across the entire effective batch before one bias update.
+Route cross entropy has unit weight and updates Routers only. Task loss updates active LoRA parameters and, for learned paths, the selected probability coefficient. During training, hard pseudo and Oracle paths select experts from frozen labels with coefficient exactly one while training a shadow Router. At deployment evaluation, the hard-pseudo model uses that causal Router's hard top-one path with coefficient one; forcing the frozen pseudo path is reported separately as a non-deployable diagnostic. The Oracle keeps the true forced path as its declared upper-bound condition. Gradient-free load bias enters only top-one selection; its counts aggregate every valid token across the entire effective batch before one bias update.
 
 ## 4. Preflight And Training-Time Guards
 

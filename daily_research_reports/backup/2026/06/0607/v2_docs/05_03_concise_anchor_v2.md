@@ -6,7 +6,7 @@ status: draft_for_anchor_audit
 
 # 05_03 Uniform MoE Collapse: Common Offset vs Random Initialization
 
-## Thinking Card
+## researcher judgment record
 
 **父问题：** ordinary top-1 MoE router 在 NTP 训练中形成的 route consistency，是否代表 feature-level routing / expert specialization？
 

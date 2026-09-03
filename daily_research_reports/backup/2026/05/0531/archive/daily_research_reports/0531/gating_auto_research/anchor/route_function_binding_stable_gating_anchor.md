@@ -4,7 +4,7 @@ parent_node: problem.moe_expert_specialization
 
 # Stable Route-Function Binding For Synthetic Feature Specialization
 
-## Thinking Card
+## researcher judgment record
 
 目的：
 

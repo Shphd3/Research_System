@@ -47,7 +47,7 @@ the common/rare line remains prior-cycle background.
 ## Reading Order and Human Gate
 
 1. [Theory, propositions, counterexamples, and carrier gates](06_long_horizon_compositional_workload_theory.md)
-2. [Human-owned Thinking Card](07_long_horizon_compositional_workload_thinking_card_cn.md)
+2. Human-owned researcher judgment record
 3. [Prior common/rare theory](05_theory_clarification_and_meeting_anchor.md)
 4. [Recording-driven low-hanging fruit](04_recording_driven_low_hanging_fruit.md)
 5. [Background MTP/NTP theory](01_general_mtp_vs_ntp_theory.md)
@@ -59,6 +59,6 @@ the common/rare line remains prior-cycle background.
 > NTP/MTP Protocol.**
 
 Before the researcher completes the
-[Thinking Card](07_long_horizon_compositional_workload_thinking_card_cn.md),
+researcher judgment record,
 stop before anchor, Protocol, code, experiment, graph, root sync, commit, or
 push.

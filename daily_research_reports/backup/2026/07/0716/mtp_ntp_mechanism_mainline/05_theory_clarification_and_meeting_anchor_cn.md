@@ -402,4 +402,4 @@ G0 定义 rare 与 NTP 失败
 > 将分别判定。
 
 到此进入人类
-[Thinking Card](03_mtp_mainline_thinking_card_cn.md)。未获批准前不进入实验。
+研究者判断记录。未获批准前不进入实验。

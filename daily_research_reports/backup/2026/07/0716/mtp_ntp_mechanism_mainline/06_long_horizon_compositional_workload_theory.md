@@ -345,7 +345,7 @@ its row-removal guard is invalidated by bijection completion.
 > enter an NTP/MTP Protocol.**
 
 The human gate is the
-[Thinking Card](07_long_horizon_compositional_workload_thinking_card_cn.md).
+researcher judgment record.
 Before approval, do not create an anchor, Protocol, implementation, run, graph
 or sync update, commit, or push.
 

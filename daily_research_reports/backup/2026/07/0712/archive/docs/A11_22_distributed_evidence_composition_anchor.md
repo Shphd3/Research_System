@@ -5,7 +5,7 @@ Parent line: `11_long_horizon_mtp_objective`.
 Daily source: `daily_research_reports/0712/docs/`.  
 Benchmark anchor: LongBench multi-document QA, with 2WikiMultiHopQA as the trainable real-data source.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** A11 has established controlled informative-horizon representation and gradient mechanisms, but the downstream bridge failed to produce a stable common-H1 advantage. The failure is no longer productively addressed by bridge, weight, duration, or $K$ sweeps. The unresolved issue is whether the studied mechanism corresponds to a real difficult workload.
 

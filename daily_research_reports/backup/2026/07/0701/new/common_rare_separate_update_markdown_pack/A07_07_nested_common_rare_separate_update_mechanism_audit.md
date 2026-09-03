@@ -2,7 +2,7 @@
 
 Document status: draft anchor for review.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:**  
 In nested prediction, common patterns are learned early and repeatedly. Rare or

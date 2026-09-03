@@ -10,7 +10,7 @@ source_draft: 00_handwrite_anchor.md
 
 # A07_02 Common-Controlled Rare Interference Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：common-control 是否从 anti-collapse 推进到 rare-feature interference reduction。
 当前子问题：在 A07_01 合法 D07 上，common-control 是否比 matched balance-only 降低 rare loss。

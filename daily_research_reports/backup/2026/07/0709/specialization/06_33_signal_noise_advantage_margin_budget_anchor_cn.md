@@ -2,7 +2,7 @@
 
 文档状态：中文 daily anchor draft。该文件用于 2026-07-09 specialization 机制重定义，不是 `Projects/from-attention-to-search/` 下的 canonical anchor。后续若迁入项目主线，应按项目规则转成 English canonical anchor，并保留中文 companion。
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** 当前 top-1 MoE gating 可以在 controlled setting 中通过 route-position centers 建立 feature-to-expert routing，但 ordinary training 会擦除 real-DCLM proxy routing；mixed full-LM synthetic 条件下 even ideal center 也会丢 margin，而 no-background full-slot 条件可以保持。现象说明：问题不只是 feature geometry 是否存在，而是 training feedback 是否把 feature-specific signal 转成稳定 route margin。
 

@@ -496,7 +496,7 @@ NTP/MTP 目标比较；`insufficient` 也不能当作 pass。
 > test；现有证据不足以直接进入 NTP/MTP Protocol。**
 
 下一步的人类审批入口是
-[Thinking Card](07_long_horizon_compositional_workload_thinking_card_cn.md)。
+researcher judgment record。
 在研究者填写并明确批准前，不创建正式 anchor、Protocol、实现或实验，不更新
 graph、sync，不 commit 或 push。
 

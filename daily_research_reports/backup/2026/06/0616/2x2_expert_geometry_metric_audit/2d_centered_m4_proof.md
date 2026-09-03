@@ -4,7 +4,7 @@ Purpose:
 This note turns the A06_E01 experimental observation into a small mathematical
 claim that can be discussed before moving to high-dimensional features.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 结论：原始 M4 分数 $q_e(x)=x^\top A_e^\top A_ex$ 不能保证随机高斯 experts 在二维均匀圆上自然 50/50 分发，因为两个 experts 的平均响应能量可能不同。
 

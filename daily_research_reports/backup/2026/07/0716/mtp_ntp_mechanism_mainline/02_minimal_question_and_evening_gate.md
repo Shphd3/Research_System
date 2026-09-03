@@ -64,7 +64,7 @@ long-tail accuracy, standard-head causal use, or Router utility.
 
 | Time | Output | Decision gate |
 | --- | --- | --- |
-| 16:00–16:30 | Researcher fills the Thinking Card from memory | Freeze one mechanism guess and one strongest rival |
+| 16:00–16:30 | Researcher fills the researcher judgment record from memory | Freeze one mechanism guess and one strongest rival |
 | 16:30–17:15 | Agree on MTP variant, common/rare object, efficiency unit, and main-head-use definition | Reject the question if any object remains mixed |
 | 17:15–18:30 | Audit the two-mode proposition and proof | Confirm theorem assumptions and three sign cases |
 | 18:30–19:00 | Write the cannot-claim boundary and a counterexample | Decide whether the result is new enough for the meeting |

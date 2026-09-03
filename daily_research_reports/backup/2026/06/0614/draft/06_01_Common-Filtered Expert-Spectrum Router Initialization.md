@@ -3,7 +3,7 @@
 Use this by hand before asking AI to polish the anchor. Write rough bullets.
 The canonical anchor is written in English. If Chinese helps thinking, write a
 separate `_cn.md` companion; do not mix two full versions in one file.
-Exception: write the `Thinking Card` section in Chinese as the quick judgment
+Exception: write the `researcher judgment record` section in Chinese as the quick judgment
 surface.
 
 ## AI Use Contract
@@ -66,7 +66,7 @@ Candidate physical priors I am not sure about:
 
 # 06_01 Common-Filtered Expert-Spectrum Router Initialization
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：为什么 random-init sparse top-1 MoE router 不能稳定进入 useful expert specialization？
 

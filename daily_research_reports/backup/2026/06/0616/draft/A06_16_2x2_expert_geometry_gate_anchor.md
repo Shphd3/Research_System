@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_16 2x2 Expert-Geometry Gate Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 - 父问题：Switch-style MoE 的 router 如何与 expert 结构发生联系，而不是作为与 expert 无关的随机分类器。
 - 当前子问题：在两个 expert、二维输入的最小情形下，expert 初始化几何能否诱导一个合理的 routing rule。

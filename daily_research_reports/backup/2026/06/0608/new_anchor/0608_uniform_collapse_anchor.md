@@ -6,7 +6,7 @@ created: 2026-06-08
 
 # Anchor: Why Uniform Features Still Collapse After Removing Position-Seeded Common Offset
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Parent problem:**
 

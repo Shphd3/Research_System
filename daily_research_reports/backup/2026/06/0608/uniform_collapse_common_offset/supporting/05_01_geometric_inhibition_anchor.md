@@ -1,6 +1,6 @@
 ﻿# 05_01 Inhibition And Early Lock-In Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 Parent problem: ordinary top-1 MoE routing can look consistent without forming interpretable feature-level specialization.
 

@@ -4,7 +4,7 @@ Source: `daily_research_reports/0611/draft/moe_storyline_anchor_plan_0611.md`
 
 Scope: This file extracts the Anchor B part. It assumes Anchor A has made the real/semi-real representation geometry worth testing. It asks whether hidden-state geometry can define a label-free router initialization.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：稀疏 top-1 点积 MoE 的 early collapse 可能来自 common-logit bias。  
 当前子问题：没有 slot labels 时，能否用 hidden-state geometry 初始化 router，降低 common-induced expert bias。  

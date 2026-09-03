@@ -6,7 +6,7 @@ source_sandbox: daily_research_reports/0531/exp_2x2_understanding/
 
 # 2x2 Top-1 Router Lock-In Anchor
 
-## Thinking Card
+## researcher judgment record
 
 目的：用最小 2 feature / 2 expert / top-1 NTP-style proxy 审查 router 为什么不能稳定形成 route-pattern specialization。
 

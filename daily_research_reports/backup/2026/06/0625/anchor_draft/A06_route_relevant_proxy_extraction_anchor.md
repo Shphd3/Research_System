@@ -3,7 +3,7 @@
 Document status: compressed draft anchor for review. This is not an approved
 protocol.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** A06_17 shows a sharp mismatch: route-position hidden states
 recover the feature partition perfectly, but all-position clustering often

@@ -1,7 +1,7 @@
-# Thinking Card Handwrite Draft
+# researcher judgment record Handwrite Draft
 
 This is rough user thinking for AI audit. It is not a final anchor, protocol,
-or experiment plan. Fill only the Thinking Card. Do not hand-write the full
+or experiment plan. Fill only the researcher judgment record. Do not hand-write the full
 0-8 anchor here.
 
 ## User Control
@@ -14,7 +14,7 @@ or experiment plan. Fill only the Thinking Card. Do not hand-write the full
 
 **Candidate priors:**
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:**
 

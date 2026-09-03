@@ -62,7 +62,7 @@ core_experiment_count: 2
 
 ## 路径
 
-- **Thinking Card：**[15_11_gradient_consistent_hierarchical_routing_thinking_card_cn.md](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_thinking_card_cn.md)
+- **researcher judgment record：**15_11_gradient_consistent_hierarchical_routing_researcher_judgment_record_cn.md
 - **Anchor：**[15_11_gradient_consistent_hierarchical_routing_anchor.md](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md)
 - **Qwen Protocol：**[A15_11_E01 protocol.md](../../Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E01_qwen_native_router_access_gap/protocol.md)
 - **Synthetic Protocol：**[A15_11_E03 protocol.md](../../Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03_counterfactual_utility_residual_tree/protocol.md)

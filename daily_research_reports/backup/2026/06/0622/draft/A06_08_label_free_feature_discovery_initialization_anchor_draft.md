@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_08 Label-Free Feature Discovery Initialization Anchor Draft
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：uniform feature distribution 下，random-init dot-product top-1 MoE 为什么不能自然形成 feature-level specialization。
 

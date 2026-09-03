@@ -69,7 +69,7 @@ $$
 
 ---
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 ### 现象
 

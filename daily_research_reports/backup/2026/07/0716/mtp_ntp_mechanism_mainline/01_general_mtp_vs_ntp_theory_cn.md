@@ -395,5 +395,5 @@ A07_01/A07_02 只在受控 rank-one 表面支持 common backbone 与显式控制
 - Router 效用。
 
 本文件原先提出的“两模式相对学习率”决定已降为背景问题。当前唯一下一决定改为
-[Thinking Card](03_mtp_mainline_thinking_card_cn.md) 中的同点 matched
+研究者判断记录 中的同点 matched
 rare-loss 一步问题。

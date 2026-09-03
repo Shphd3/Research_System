@@ -1,6 +1,6 @@
 ﻿# 05_01_geometric_inhibition_anchor.md
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 当前 05_01 只保留一个当前主线问题：
 

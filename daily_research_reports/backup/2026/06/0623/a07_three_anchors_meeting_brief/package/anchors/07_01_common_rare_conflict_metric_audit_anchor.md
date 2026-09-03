@@ -9,7 +9,7 @@ source_draft: 00_handwrite_anchor.md
 
 # A07_01 Common / Rare Conflict Metric Audit Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：expert partition 是否真的降低 feature interference，而不是只改善 load。
 当前子问题：先验证 D07 数据和 `Delta_vs_best_null` 是否是合法审计面。

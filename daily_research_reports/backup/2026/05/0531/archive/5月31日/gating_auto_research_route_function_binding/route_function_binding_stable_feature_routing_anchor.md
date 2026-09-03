@@ -6,7 +6,7 @@ proposed_root_sync_copy: sync/S000_current_specialization/anchors/expert_special
 
 # Route-Function Binding For Stable Feature Routing
 
-## Thinking Card
+## researcher judgment record
 
 父问题：
 

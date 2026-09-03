@@ -1,6 +1,6 @@
 ﻿# 05_04_03 Real-Text Common-Logit Initialization Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：为什么 sparse top-1 MoE router 在早期进入 route concentration / expert underuse？
 当前子问题：DCLM real text 上，随机初始化线性 top-1 router 是否在 step 0 就被 common-logit offset 主导？

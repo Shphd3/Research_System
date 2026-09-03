@@ -1,6 +1,6 @@
 ﻿# 05_02 Feature Assumption Relaxation Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 Parent problem: ordinary top-1 MoE route consistency may reflect collapse, shortcut, or early lock-in rather than feature-level specialization.
 

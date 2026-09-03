@@ -12,7 +12,7 @@ Unclear / risky:
 
 Candidate priors:
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 总目标：是否存在一种gating 初始化的方式，能够使得gating初始化的时候让hidden states 均匀分发到不同的experts上，从而缓解早期的负载不均导致的路由坍缩。
 
@@ -31,7 +31,7 @@ Candidate priors:
 
 下一步决策：
 
-### Thinking Card Audit
+### researcher judgment record Audit
 
 Question: 
 

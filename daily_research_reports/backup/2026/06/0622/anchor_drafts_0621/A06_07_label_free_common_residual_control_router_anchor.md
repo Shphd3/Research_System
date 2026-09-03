@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_07 Label-Free Common / Residual-Control Router Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：random-init sparse top-1 MoE 能否在 uniform feature setting 中进入 feature-level specialization basin，而不是 common-collapse basin。
 当前子问题：不用 slot label、slot centroid、oracle feature identity，只通过 router-side common / residual control，能否削弱 early common-logit bias 并提高 slot_NMI。

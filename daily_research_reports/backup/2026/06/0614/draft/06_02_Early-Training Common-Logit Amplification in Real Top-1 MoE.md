@@ -1,6 +1,6 @@
 ﻿# Minimal Anchor Handwrite Draft
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：为什么 sparse top-1 MoE router 在早期进入 route concentration / expert underuse？
 

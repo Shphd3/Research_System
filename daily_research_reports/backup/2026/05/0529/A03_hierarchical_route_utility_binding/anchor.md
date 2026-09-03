@@ -6,7 +6,7 @@ updated_from: hierarchical_route_utility_binding result + linear FFN Zipf eviden
 
 # NTP Factor Attribution And Tail Feature Write-In
 
-## Thinking Card
+## researcher judgment record
 
 一句话结论：
 

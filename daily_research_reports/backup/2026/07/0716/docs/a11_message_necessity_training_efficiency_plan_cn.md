@@ -36,4 +36,4 @@ $$
 
 ## 下午继续讨论的唯一入口
 
-先决定 `relay-required` 如何实现：优先讨论受控 attention mask 是否仍符合我们要研究的一般 LLM 训练流程，以及是否有不依赖人工 mask 的数据构造。该选择确定后，再写 Thinking Card，不直接写 Protocol。
+先决定 `relay-required` 如何实现：优先讨论受控 attention mask 是否仍符合我们要研究的一般 LLM 训练流程，以及是否有不依赖人工 mask 的数据构造。该选择确定后，再写 研究者判断记录，不直接写 Protocol。

@@ -1,6 +1,6 @@
 ﻿# 05_03 Uniform Collapse Common-Offset Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 Parent problem: ordinary top-1 MoE routing collapses even when feature frequencies are uniform.
 

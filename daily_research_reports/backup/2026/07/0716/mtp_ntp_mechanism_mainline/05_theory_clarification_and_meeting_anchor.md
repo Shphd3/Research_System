@@ -264,5 +264,5 @@ and formation/use gates could it supply A06 with a Router signal.
 
 The only current decision is whether the researcher approves the matched
 same-point one-step question in the
-[Thinking Card](03_mtp_mainline_thinking_card_cn.md). Stop before a formal
+researcher judgment record. Stop before a formal
 anchor, Protocol, implementation, or run.

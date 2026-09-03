@@ -9,7 +9,7 @@ source_anchor: A06_2x2_expert_geometry_gate
 
 # A07 High-Dimensional Uniform Expert-Geometry Gate Anchor
 
-## Thinking Card
+## researcher judgment record
 
 - A06 supports M4 matrix response energy as the core 2D static expert-geometry metric.
 - The next decision is whether centered/calibrated M4 can generalize from 2D uniform features to high-dimensional uniform features.

@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_06 Feature-Level Initialization Positive Control Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：uniform feature distribution 下，初始化时能否让 dot-product top-1 MoE 形成 feature-level specialization，而不是进入 common-collapse basin。
 当前子问题：在已知 feature identity / feature centroid 的 oracle 条件下，构造 equal-norm、common-controlled expert centers，判断初始化路由是否可达到 load-balanced feature specialization。

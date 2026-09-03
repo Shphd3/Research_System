@@ -1,6 +1,6 @@
 ﻿# 06_02 Early-Training Common-Logit Amplification In Real Top-1 MoE
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：为什么 sparse top-1 MoE router 在早期进入 route concentration / expert underuse？
 当前子问题：真实 DCLM top-1 MoE 中，为什么 step 0 common dominance 不强，但 step 10 common-logit 和负载集中快速放大？

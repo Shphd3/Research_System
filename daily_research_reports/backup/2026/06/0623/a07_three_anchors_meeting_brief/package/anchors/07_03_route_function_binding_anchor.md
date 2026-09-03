@@ -10,7 +10,7 @@ source_draft: 00_handwrite_anchor.md
 
 # A07_03 Route-Function Binding Anchor
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：rare loss 改善是否真的来自 expert specialization。
 当前子问题：A07_02 通过后，routed experts 是否对对应 conflict group 有因果效用。

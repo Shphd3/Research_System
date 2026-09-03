@@ -10,7 +10,7 @@
 
 ---
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** MoE 训练中，少数专家或少数路由方向吸收大量 token，其他专家欠训练；门控向量可能学习公共高频方向，而不是专家真正需要的区分性方向。
 

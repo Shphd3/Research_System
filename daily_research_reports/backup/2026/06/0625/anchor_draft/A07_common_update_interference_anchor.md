@@ -3,7 +3,7 @@
 Document status: compressed mechanism-reserve draft. This is not an approved
 protocol and does not replace A06 preservation.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** Rare or conflict examples may stay hard after common patterns
 are learned. One possible reason is that rare updates reuse directions already

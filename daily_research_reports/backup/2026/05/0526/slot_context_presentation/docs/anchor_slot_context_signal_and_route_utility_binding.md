@@ -4,7 +4,7 @@ parent_node: problem.moe_expert_specialization
 
 # Slot-Context Signal And Route-Utility Binding
 
-## Thinking Card
+## researcher judgment record
 
 ```text
 slot 变长增强了 B hidden state 中的 slot feature，所以 router 更容易按 slot 分；

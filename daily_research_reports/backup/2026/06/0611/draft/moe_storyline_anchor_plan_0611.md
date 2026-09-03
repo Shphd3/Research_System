@@ -267,7 +267,7 @@ In frozen real/semi-real hidden states, does random dot-product top-1 routing pr
 
 ### 5.4 What you should write in the anchor, section by section
 
-#### Thinking Card
+#### researcher judgment record
 
 Write 3–5 lines:
 
@@ -413,7 +413,7 @@ Can a label-free common-aware initialization reduce or equalize w_e^T C in real/
 
 ### 6.4 What you should write in the anchor, section by section
 
-#### Thinking Card
+#### researcher judgment record
 
 ```text
 Synthetic results show slot-aware init can move routing into a specialization basin, but slot labels are unavailable in real settings.
@@ -898,7 +898,7 @@ Do not start with method. Start with real representation audit because it answer
 Write only rough bullets for:
 
 ```text
-Thinking Card
+researcher judgment record
 Problem Definition
 Physical Prior
 Hypothesis
@@ -978,4 +978,3 @@ The main paper center is:
 ```text
 common-logit bias as a router initialization failure mode.
 ```
-

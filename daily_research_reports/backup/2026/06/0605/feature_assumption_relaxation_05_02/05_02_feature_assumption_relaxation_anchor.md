@@ -6,7 +6,7 @@ source_of_truth_status: project-local-anchor
 
 # 05_02 Feature Assumption Relaxation
 
-## Thinking Card
+## researcher judgment record
 
 结论：
 

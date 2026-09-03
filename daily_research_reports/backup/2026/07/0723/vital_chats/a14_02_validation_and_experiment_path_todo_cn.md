@@ -130,7 +130,7 @@ A14_03 的问题今天只审核、不执行：
 - [ ] 审核 capability / generalization gates。
 - [ ] 审核最小 rank effect 与 seed 规则。
 - [ ] 对 A14_02_E01 给出 `批准 / 修改 / 拒绝`；批准前不运行。
-- [ ] 审核 A14_03 Thinking Card 的现象、机制、rival 和改变判断的证据。
+- [ ] 审核 A14_03 研究者判断记录 的现象、机制、rival 和改变判断的证据。
 - [ ] 对 A14_03 anchor 给出 `提升 / 修改 / park`；A14_02 出结果前不创建 protocol。
 
 **唯一下一决策：**批准、修改或拒绝 A14_02_E01 中文 protocol。

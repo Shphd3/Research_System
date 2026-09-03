@@ -174,7 +174,7 @@ shared 是否比 matched lookup 需要更少方向
 ## 7. 路由与证据
 
 - **原始组会问题：**[0721 组会_笔记.md](meeting_recordings/0721%20组会_笔记.md)
-- **A14_02 Thinking Card：**[14_02 Thinking Card](../../../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_thinking_card_cn.md)
+- **A14_02 researcher judgment record：**14_02 researcher judgment record
 - **A14_02 anchor：**[共享组合规则与任务根状态功能秩](../../../../../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_anchor_cn.md)
 - **A14_02_E01 protocol：**[共享规则与 lookup 的任务根状态功能秩](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E01_shared_rule_vs_lookup_root_rank/protocol_cn.md)
 - **A14_02_E01 result：**[四卡 full-run 结果摘要](../../../../../Projects/from-attention-to-search/main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E01_shared_rule_vs_lookup_root_rank/summary_cn.md)

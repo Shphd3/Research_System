@@ -14,8 +14,6 @@ nodes:
     files:
       - path: /Projects/diffusion-language-models/README.md
         title: project entry
-      - path: /Projects/diffusion-language-models/main/problem_anchors/00_diffusion_language_model_failure_mechanism/00_diffusion_language_model_failure_mechanism_thinking_card_cn.md
-        title: pending human Thinking Card
     status: draft
     tags: [diffusion-lm, failure-mechanism, mainline-draft]
 
@@ -71,18 +69,18 @@ nodes:
     status: done
     tags: [moe, claim-boundary, literature-result]
 
-  - id: task.approve_diffusion_thinking_card
-    title: Approve or correct the diffusion-LM Thinking Card
+  - id: task.confirm_diffusion_question
+    title: Confirm or correct the diffusion-LM parent question
     type: task
     summary: "Exactly one current decision: settle the mechanism guess, strongest rival, judgment-changing evidence, and D00-D03 order before any formal anchor or experiment."
-    file: /Projects/diffusion-language-models/main/problem_anchors/00_diffusion_language_model_failure_mechanism/00_diffusion_language_model_failure_mechanism_thinking_card_cn.md
+    file: /Projects/diffusion-language-models/README.md
     status: active
-    tags: [next-decision, thinking-card, protocol-blocked]
+    tags: [next-decision, human-confirmation, protocol-blocked]
 
 edges:
   - from: source.diffusion_lm_evidence_audit
     to: rq.diffusion_lm_failure
-    kind: informs
+    kind: supports
   - from: rq.diffusion_lm_failure
     to: concept.three_plane_contract
     kind: operationalizes
@@ -99,5 +97,5 @@ edges:
     to: rq.diffusion_moe
     kind: answers
   - from: rq.diffusion_lm_failure
-    to: task.approve_diffusion_thinking_card
+    to: task.confirm_diffusion_question
     kind: leads_to

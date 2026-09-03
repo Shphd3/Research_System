@@ -15,7 +15,7 @@ touchpoint：主裁决仍在 controlled surface 上，真实数据只作为通�
 
 每个 anchor 只需要先读四处：
 
-1. `0. Thinking Card`
+1. `0. researcher judgment record`
 2. `Decision question`
 3. `Primary metric / Minimal Falsification Test`
 4. `Can claim / Cannot claim / Next decision`

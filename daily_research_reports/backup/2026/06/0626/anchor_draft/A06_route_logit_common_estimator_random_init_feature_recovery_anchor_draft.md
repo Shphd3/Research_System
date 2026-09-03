@@ -1,13 +1,13 @@
 ---
 anchor_id: draft_A06_route_logit_common_estimator_random_init_feature_recovery
-status: draft_thinking_card_for_user_review
+status: draft_researcher_judgment_record_for_user_review
 created: 2026-06-26
 canonical_language: en
 ---
 
 # Draft Anchor: Route-Logit Common Estimator Under Random-Init Training
 
-This is a draft Thinking Card only. It is not a formal anchor, not a protocol,
+This is a draft researcher judgment record only. It is not a formal anchor, not a protocol,
 and does not authorize an experiment run.
 
 ## 1. One-Sentence Question

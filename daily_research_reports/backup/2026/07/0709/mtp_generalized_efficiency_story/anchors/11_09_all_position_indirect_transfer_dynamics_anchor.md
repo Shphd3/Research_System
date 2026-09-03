@@ -4,7 +4,7 @@ Status: proposed daily anchor.
 Parent line: `11_long_horizon_mtp_objective`.  
 Purpose: explain when all-position NTP / non-covering MTP can still make `Z` readable from `h_T`.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** A11_07 shows that non-direct conditions can reach nontrivial guarded recovery `Q`, even when native `h_T -> S_Z` accuracy and readout-effective margin remain near zero. This means all-position training can create probe-readable `Z` through indirect transfer.
 

@@ -28,7 +28,7 @@ The anchor must be readable in one pass and must make the decision logic obvious
 ## Required Structure
 
 ```text
-0. Thinking Card
+0. researcher judgment record
 1. Problem Definition
 2. Operational Definitions
 3. Physical Priors

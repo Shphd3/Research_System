@@ -1,6 +1,6 @@
 ﻿# 06_01 Common-Filtered Expert-Spectrum Router Initialization
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：为什么 random-init sparse top-1 MoE router 不能稳定进入 useful expert specialization？
 

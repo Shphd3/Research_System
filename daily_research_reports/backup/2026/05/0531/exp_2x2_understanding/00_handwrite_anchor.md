@@ -1,6 +1,6 @@
 ﻿# 00 Handwrite Anchor
 
-## Thinking Card
+## researcher judgment record
 
 目的：
 
@@ -134,4 +134,3 @@ Reason:如果 2x2 最小设置下都无法稳定形成 router-level feature sepa
 Next smallest uncertainty:
 
 Next action:
-

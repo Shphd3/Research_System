@@ -4,7 +4,7 @@ Status: supported by A11_08 full run on 2026-07-09.
 Parent line: `11_long_horizon_mtp_objective`.  
 Purpose: test the general-K theorem behind MTP semantic efficiency.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** Existing A11 results show K=3 helps in a clean `tau=3` task because it is the first horizon covering `S_Z`. The current theory should not stay K=3-specific. We need to know how the mechanism behaves when several future horizons contain the early variable.
 

@@ -69,7 +69,7 @@ e03_resource_status: audited_4x_candidate_waiting_user_confirmation_8x_not_froze
 
 ## 路径
 
-- **Thinking Card：**[固定事实跨表达语义可分性](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_12_semantic_representation_separability/15_12_semantic_representation_separability_thinking_card_cn.md)
+- **研究者判断记录：**固定事实跨表达语义可分性
 - **Anchor：**[A15_12 Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md)
 - **E01：**[Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E01_qwen3_30b_fixed_fact_expression_separability/protocol.md) · [Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E01_qwen3_30b_fixed_fact_expression_separability/summary.md) · [Detailed](../../Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E01_qwen3_30b_fixed_fact_expression_separability/detailed.md)
 - **E02：**[Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E02_expression_bank_boundary_coverage_controls/protocol.md) · [Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E02_expression_bank_boundary_coverage_controls/summary.md) · [Detailed](../../Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E02_expression_bank_boundary_coverage_controls/detailed.md)

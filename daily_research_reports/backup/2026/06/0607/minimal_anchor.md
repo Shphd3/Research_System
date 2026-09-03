@@ -3,7 +3,7 @@
 Use this by hand before asking AI to polish the anchor. Write rough bullets.
 The goal is to expose your thinking, not to produce the final anchor.
 
-## 0. Thinking Card（中文）
+## 0. 研究者判断记录（中文）
 
 目的：
 

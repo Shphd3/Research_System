@@ -15,7 +15,7 @@ continuous direction. M3 remains unapproved. The central constraint is minimal
 prior: the method may not use feature labels, position labels, slot offset, or
 route-position priors during fitting or selection.
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 **Phenomenon:** A06_18 shows that raw all-token clustering and SAE/PCA/AE
 representation clustering do not reliably find feature-controlling centers.

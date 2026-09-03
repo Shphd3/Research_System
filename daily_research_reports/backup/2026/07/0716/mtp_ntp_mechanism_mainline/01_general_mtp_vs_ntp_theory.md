@@ -381,4 +381,4 @@ Not established:
 The previously proposed two-mode relative-learning decision is now a
 background question. The active decision is the matched same-point rare-loss
 one-step question in the
-[Thinking Card](03_mtp_mainline_thinking_card_cn.md).
+researcher judgment record.

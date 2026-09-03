@@ -1,9 +1,9 @@
-# A14_02 改进后 E02–E03：Thinking Card 审核与执行 Prompt
+# A14_02 改进后 E02–E03：研究者判断记录 审核与执行 Prompt
 
 ## 0. 研究者发送前填写
 
 ```text
-Thinking Card 审核状态：CARDS_APPROVED
+研究者判断记录 审核状态：CARDS_APPROVED
 E02 保留或修改：保留频率非劣效主问题；加入严格零曝光 unseen-cell 复用门，
   unseen-cell accuracy 因小样本与小模型下调并冻结为 0.75。
 E03 保留或修改：保留 outside-common 四分解；主时间尺度冻结为一个实际
@@ -20,9 +20,9 @@ Protocol 审核状态：PROTOCOLS_APPROVED
 
 这是一份可反复发送的同一 Prompt：
 
-1. `DRAFT` 时，AI 只解释和审核两张 Thinking Card；
+1. `DRAFT` 时，AI 只解释和审核两张 研究者判断记录；
 2. 研究者把状态改成 `CARDS_APPROVED` 后，AI 才整理历史归档方案、写正式
-   Thinking Card、更新 anchors，并生成短中文 Protocol 草案；随后停止；
+   研究者判断记录、更新 anchors，并生成短中文 Protocol 草案；随后停止；
 3. 研究者实际阅读中文 Protocol 后，把状态改成 `PROTOCOLS_APPROVED` 并选择
    执行范围；AI 先生成完全一致的英文 canonical Protocol，再实现或运行；
 4. 若选择 `E02_FULL_THEN_E03_IF_GATE`，先完成 E02。只有 E02 的能力、测量和
@@ -85,7 +85,7 @@ Card 构建 active E03；不得同时保留两个 active E03 定义。
 
 ---
 
-# Thinking Card 1：改进后 E02——频率、mapping 数量与三类秩现象
+# 研究者判断记录 1：改进后 E02——频率、mapping 数量与三类秩现象
 
 ## 我的判断
 
@@ -133,7 +133,7 @@ Card 构建 active E03；不得同时保留两个 active E03 定义。
 
 ---
 
-# Thinking Card 2：改进后 E03——rare 更新是否新增功能方向
+# 研究者判断记录 2：改进后 E03——rare 更新是否新增功能方向
 
 ## 我的判断
 
@@ -305,7 +305,7 @@ insufficient 或“该 rare 暴露本身无可测功能增益”，不能强行�
 
 ## 4. AI 审核流程
 
-### 当 `Thinking Card 审核状态 = DRAFT`
+### 当 `研究者判断记录 审核状态 = DRAFT`
 
 不得改文件、写 Protocol 或执行。分别对两张卡只返回：
 
@@ -340,14 +340,14 @@ E03 主因果指标：
 两者不能声称：
 ```
 
-### 当 `Thinking Card 审核状态 = CARDS_APPROVED`
+### 当 `研究者判断记录 审核状态 = CARDS_APPROVED`
 
 只有两张卡的“我的确认”均为 `yes` 时才继续：
 
 1. 先展示 lossless E02-v1 / E03-v0 archive migration 的精确 source→target 表；
 2. 执行迁移并更新所有链接，确保没有两个 active E02/E03，也没有历史证据丢失；
-3. 把本 Prompt 中两张审核后 Thinking Card 原样提取为独立、subject-bearing
-   `_thinking_card_cn.md`；
+3. 把本 Prompt 中两张审核后 研究者判断记录 原样提取为独立、subject-bearing
+   `researcher judgment record`；
 4. 更新中英文 E02/E03 anchors，保持一个 decision question、一个 primary
    metric、一个 falsifier 和一个 next decision；
 5. 只生成短中文 `protocol_cn.md` 草案；此时不生成英文 canonical Protocol；

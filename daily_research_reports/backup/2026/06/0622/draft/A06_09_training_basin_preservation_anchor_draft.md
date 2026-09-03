@@ -8,7 +8,7 @@ canonical_language: en
 
 # A06_09 Training Basin Preservation Anchor Draft
 
-## 0. Thinking Card
+## 0. researcher judgment record
 
 父问题：即使初始化时构造了 feature-level routing partition，top-1 MoE 训练是否会保持这个 partition，还是重新进入 collapse / many-to-one merge basin。
 
