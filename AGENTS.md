@@ -573,6 +573,13 @@ checkpoints, logs, result generation, and cluster submissions. Use Git as the
 normal synchronization path. SSH/SCP is only for explicit small inspection,
 recovery, or port forwarding.
 
+For Hugging Face datasets, prefer downloading from the directly reachable
+local host into the approved shared dataset root, then let ACP jobs read that
+frozen local copy. If an ACP job must contact Hugging Face, set its Hugging
+Face endpoint to the approved mirror (`https://hf-mirror.com`) and record the
+resolved repository revision; do not use the mirror to silently change the
+dataset identity or revision.
+
 Do not promote raw outputs, checkpoints, datasets, or unfiltered logs into the
 research mainline.
 

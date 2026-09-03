@@ -2,10 +2,10 @@
 
 ```text
 type: meeting_cycle_core_task
-status: EXECUTION_APPROVED_IN_PROGRESS
+status: FULL_RUN_COMPLETE_AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
 problem_key: A15.semantic_supervision_middle_layer_separability
 focus_role: SECONDARY
-conversation_owner: codex-thread:01a0652d-8c53-71e0-aab2-4008063e91a3
+conversation_owner: codex-thread:01a054b9-ff32-7012-aae0-ccfea85152cf
 ownership_status: CLAIMED
 core_question: HUMAN_CONFIRMED
 plain_language_design: HUMAN_CONFIRMED
@@ -41,7 +41,7 @@ core_experiment_count: 2
 
 #### 结论
 
-执行前分支：若无监督标签稳定缩小 Oracle 的最终 NLL、曲线面积和专家干预差距且不损害任务性能，进入裁决 A；若只学会语义分发而任务证据不改善，进入 B；若任何注册组、种子、数组或统一评测不完整，进入 C。
+AI 结果草案，待研究者确认：M2D2 的两阶段实现完整运行。对角高斯路由相对频率匹配随机标签出现小幅 NLL 和明显语义一致性优势，但本轮新注册的 M2D2 子集没有同代码路径的 task-only 与 Oracle，因此只作为实现与迁移证据，不能单独裁决主问题。
 
 ### 实验 2：八任务答案监督内部能力诊断
 
@@ -62,9 +62,16 @@ core_experiment_count: 2
 
 #### 结论
 
-执行前分支与实验 1 共用 A/B/C 裁决；本数据含官方评测题，因此八项分数只称为“混合任务内部能力诊断”，不声称无污染泛化。
+AI 结果草案，待研究者确认：裁决为 `B`。Oracle 的平均 NLL 为 `0.794920`，优于同架构 task-only 的 `0.806323`；八任务内部宏平均为 `16.50%`，也高于 task-only 的 `15.82%`。但对角高斯学习路由的 NLL 为 `0.817358`，硬伪路径部署 NLL 为 `0.836757`，两者均未缩小 Oracle 差距。强制恢复伪路径可把硬伪模型降到 `0.805028`，说明主要卡点是因果 Router 无法复现离线整窗分组，而不是专家库完全没有容量。负载均衡偏置未在两个种子的主 NLL 上稳定有效。
 
-## 3. 冻结边界
+## 3. AI 提议的认识更新，待研究者确认
+
+- 直接结果：正确路径具有任务价值；当前无监督分组也确实包含来源或主题信息。
+- 更新判断：这轮失败发生在“离线整窗标签交给在线逐词元 Router”的交接处，不能归结为“语义分组完全无价值”。
+- 不能声称：聚类得到的是推理语义、无污染 benchmark 泛化、或伪标签专家已经形成额外不可互换功能。
+- 唯一下一决策：固定硬伪路径训练出的专家，仅修复前缀条件下的 Router 蒸馏，并加入强制正确伪路径与强制错误伪路径对照；若两个种子不能同时缩小 `0.031729` 的部署差距，就停止这条伪标签路线。
+
+## 4. 冻结边界
 
 - 不使用“减去粗 Router 行空间”。
 - Oracle 与硬伪路径的专家输出系数固定为一；硬伪路径训练时使用冻结伪标签并训练影子 Router，部署评估时使用该因果 Router 的硬 Top-1，强制伪路径只作为不可部署诊断。
@@ -72,7 +79,9 @@ core_experiment_count: 2
 - 训练中检查不用于删组、改配置或按结果选 checkpoint。
 - 第一张结果表必须是完整八项任务表；第一张曲线必须比较 task-only、对角高斯学习路径、对角高斯硬伪路径与 Oracle。
 
-## 4. 路径
+## 5. 路径
 
 - [Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md)
 - [Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/protocol.md)
+- [Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/summary.md)
+- [Detailed evidence](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/detailed.md)
