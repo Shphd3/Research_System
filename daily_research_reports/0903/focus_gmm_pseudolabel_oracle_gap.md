@@ -1,87 +1,70 @@
-# 对角高斯伪标签能否缩小语义 Router 的 Oracle 差距？
+# 真实粗细语义分别从哪一层开始稳定可读？
 
 ```text
 type: meeting_cycle_core_task
 status: FULL_RUN_COMPLETE_AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
-problem_key: A15.semantic_supervision_middle_layer_separability
+problem_key: A15.gold_label_layerwise_static_audit
 focus_role: SECONDARY
-conversation_owner: codex-thread:01a054b9-ff32-7012-aae0-ccfea85152cf
+conversation_owner: codex-thread:01a0679c-7ee2-71f3-91b5-f4df234571db
 ownership_status: CLAIMED
 core_question: HUMAN_CONFIRMED
 plain_language_design: HUMAN_CONFIRMED
+result_account: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
 cycle_start: 2026-09-03
 target_meeting: 2026-09-04
 active_project: Projects/from-attention-to-search/
-anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md
-core_experiment_count: 2
+anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md
+core_experiment_count: 1
 ```
 
 ## 1. 核心问题
 
-最后一层整窗表征拟合出的对角高斯层级伪标签，能否训练出接近强制正确路径 Oracle 的因果 Router，并在不损害八项任务内部能力的同时，提高学习效率和专家不可互换功能；无梯度负载均衡偏置能否进一步缩小差距？
+在冻结的 Qwen3-0.6B-Base 中，M2D2 的真实粗领域和已知真实父领域后的细领域分别从哪一层开始，能够被相同容量、与部署形式相符的分类器稳定读取？
+
+本轮只审核表示中有没有可读信息。它不证明模型原生使用该信息，不证明在线路由已经可用，也不证明在候选层加入专家会提高下一词元任务。
 
 ## 2. 本轮实验
 
-### 实验 1：M2D2 对角高斯伪标签闭环
+### 实验 1：真实粗细标签的逐层静态审计
 
-#### 目的
+#### 1. 目的
 
-在已知自然语言粗细领域结构的数据上，隔离标签几何、学习路径、硬伪路径和负载均衡对 Oracle 差距的影响。
+使用最稳固的真实粗细语义标签，找到粗语义和细语义首次稳定成为路由器可读信息的层，为后续粗细 Oracle LoRA 专家插层实验提供候选位置。
 
-#### 假设
+#### 2. 假设
 
-1. 完整向量的对角高斯伪标签应比旧方向加模长标签更接近 Oracle 的损失与专家干预结果。
-2. 若主要瓶颈是概率缩放或负载偏斜，单位系数硬伪路径或无梯度负载均衡应稳定缩小差距。
+粗领域信息应当比父类内部的细领域信息更早达到稳定可读，因此应得到粗候选层早于细候选层。最强竞争解释是二者同时出现、只有非线性分类器能读取、候选依赖大量样本或特定词元位置、粗类只是记住已见子类，或所有层都没有稳定线性结果。
 
-#### 分析方法
+#### 3. 分析方法
 
-1. 用训练集末层整窗平均表征拟合并冻结 `3×3` 对角高斯标签；真实领域标签只用于事后审计。
-2. 在同一两阶段训练预算下比较学习路径、单位系数硬伪路径、频率匹配随机标签及其负载均衡开关。
-3. 所有 checkpoint 冻结后统一比较留出 NLL 曲线、路由语义、负载、删除与换错专家干预和参数几何。
+1. 冻结与 E14 完全相同的 Qwen3-0.6B-Base 和 M2D2 `3×3` 数据，在全部 28 个 Transformer 块只读取未来 LoRA Router 真正接收的当前词元 MLP 调用前表示；不分析其他表征，不更新基座、语言头或加入 LoRA。
+2. 每层以同容量线性分类器为主判据，并在同一输入上增加固定小型非线性分类器、分层嵌套样本效率曲线、Fisher 判别强度和粗细判别子空间夹角，从而区分线性可路由、非线性折叠、样本难学和粗细方向关系。
+3. 在真实父类条件下做细分类，并增加三个词元位置区间、粗类留一子类泛化、窗口级标签打乱和 2,000 次分层窗口重采样；开发集冻结候选规则后，确认集只评估一次。
 
-#### 结论
+#### 4. 结论
 
-AI 结果草案，待研究者确认：M2D2 的两阶段实现完整运行。对角高斯路由相对频率匹配随机标签出现小幅 NLL 和明显语义一致性优势，但本轮新注册的 M2D2 子集没有同代码路径的 task-only 与 Oracle，因此只作为实现与迁移证据，不能单独裁决主问题。
+1. **直接结果：**开发集与确认集的线性粗、细首次稳定层均为 `(9,9)`；2,000 次窗口重采样的层差区间均为 `[0,0]`，细层至少晚两层的概率均为 `0.0%`。未经资格门否定时，这不支持错层插入。
+2. **稳健性：**三个词元位置区间全部仍选第 9 层；粗分类需要 25% 训练窗口、细分类需要 50%；粗分类在三个留一子类折中都没有稳定层。因此细分类样本脆弱，粗分类依赖已见子类身份。
+3. **正式裁决：**`UNQUALIFIED_SHUFFLE_CONTROL`。确认集条件细分类的打乱标签中位交叉熵为 `1.148744`，比预注册上界 `1.148612` 高 `0.000132`；准确率接近随机且没有稳定层，但硬资格门仍失败。第 9 层只能登记为描述性的同层候选，不能送入 LoRA 验证。
+4. **不能声称：**本实验只观察表示可读性；没有验证在线路由、专家功能或下一词元收益。
 
-### 实验 2：八任务答案监督内部能力诊断
+## 3. 前置证据与冻结边界
 
-#### 目的
+- E14 的历史结果保持不变：正确真实路径在受控八任务答案损失上优于同拓扑 task-only，但当前伪标签与因果 Router 没有缩小 Oracle 差距。E15 不覆盖、重算或加强该结论。
+- E15 不训练稀疏自编码器，不生成伪标签，不更新基座或语言头，不训练 LoRA 专家，也不测量下一词元任务收益。
+- 2026-09-03 的旧作业 `om-kpp7frgn` 在 0 副本、未执行代码时停止；没有通过的冒烟、checkpoint、开发集或确认集结果。
+- 修订方法已由研究者确认。新的冒烟与全量计算只使用单节点 `1×H100 SPOT`；不得回退到保留资源、5090 或其他 GPU 数量。
+- 开发集负责选择层；规则冻结后，确认集只读取一次。不得依据中间结果删层、改阈值、改主指标或选择更好看的种子。
+- 本实验只审核未来 LoRA Router 的当前词元 MLP 调用前输入；其他表征对象不进入本轮结果。
 
-检验同一方法在八种真实任务答案续训中，是否以相同活动秩保持任务能力并提高数据效率与专家功能。
+## 4. 唯一下一决策
 
-#### 假设
-
-1. 对角高斯伪标签的硬路径训练应比普通学习路径更接近真实来源 Oracle。
-2. 最强竞争解释是语义一致性与参数差异上升，但 task-only 的损失、任务分数和专家功能仍不弱于语义方法。
-
-#### 分析方法
-
-1. 在固定的八任务均衡答案混合上，以相同数据顺序、答案词元预算和活动秩训练十个注册条件、两个种子；GPQA 使用官方 `simple-evals` 公开工件中的 Diamond 划分，并记录来源版本与文件哈希。
-2. 全部模型训练完并登记哈希后，用同一提示、解码、答案抽取和代码沙箱做八项逐题评测。
-3. 将任务分数和答案词元 NLL 作为主证据；路由、负载、专家干预和参数谱只用于定位原因。
-
-#### 结论
-
-AI 结果草案，待研究者确认：裁决为 `B`。Oracle 的平均 NLL 为 `0.794920`，优于同架构 task-only 的 `0.806323`；八任务内部宏平均为 `16.50%`，也高于 task-only 的 `15.82%`。但对角高斯学习路由的 NLL 为 `0.817358`，硬伪路径部署 NLL 为 `0.836757`，两者均未缩小 Oracle 差距。强制恢复伪路径可把硬伪模型降到 `0.805028`，说明主要卡点是因果 Router 无法复现离线整窗分组，而不是专家库完全没有容量。负载均衡偏置未在两个种子的主 NLL 上稳定有效。
-
-## 3. AI 提议的认识更新，待研究者确认
-
-- 直接结果：正确路径具有任务价值；当前无监督分组也确实包含来源或主题信息。
-- 更新判断：这轮失败发生在“离线整窗标签交给在线逐词元 Router”的交接处，不能归结为“语义分组完全无价值”。
-- 不能声称：聚类得到的是推理语义、无污染 benchmark 泛化、或伪标签专家已经形成额外不可互换功能。
-- 唯一下一决策：固定硬伪路径训练出的专家，仅修复前缀条件下的 Router 蒸馏，并加入强制正确伪路径与强制错误伪路径对照；若两个种子不能同时缩小 `0.031729` 的部署差距，就停止这条伪标签路线。
-
-## 4. 冻结边界
-
-- 不使用“减去粗 Router 行空间”。
-- Oracle 与硬伪路径的专家输出系数固定为一；硬伪路径训练时使用冻结伪标签并训练影子 Router，部署评估时使用该因果 Router 的硬 Top-1，强制伪路径只作为不可部署诊断。
-- 负载均衡偏置无梯度，只改变前一选择，且统计整个有效批次。
-- 训练中检查不用于删组、改配置或按结果选 checkpoint。
-- 第一张结果表必须是完整八项任务表；第一张曲线必须比较 task-only、对角高斯学习路径、对角高斯硬伪路径与 Oracle。
+请研究者决定：是否授权用一个全新种子原样复现本静态审计，以裁定 `0.000132` nat 的空对照越界。复现通过并重现 `(9,9)` 前，不进入匹配预算的 Oracle LoRA 验证。
 
 ## 5. 路径
 
-- [Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md)
-- [Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/protocol.md)
-- [Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/summary.md)
-- [Detailed evidence](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/detailed.md)
+- [E15 Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md)
+- [E15 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/protocol.md)
+- [E15 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/summary.md)
+- [E15 Detailed evidence](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/detailed.md)
+- [E14 preserved predecessor](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/summary.md)
