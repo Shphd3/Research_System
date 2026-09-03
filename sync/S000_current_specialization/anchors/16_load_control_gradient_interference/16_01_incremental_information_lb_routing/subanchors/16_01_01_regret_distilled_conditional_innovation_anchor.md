@@ -1,6 +1,5 @@
 # A16_01_01 Regret-Distilled Conditional-Innovation Routing
 
-Thinking Card source: [16_01_01_regret_distilled_conditional_innovation_thinking_card.md](16_01_01_regret_distilled_conditional_innovation_thinking_card.md)
 
 ## 1. Problem Definition
 

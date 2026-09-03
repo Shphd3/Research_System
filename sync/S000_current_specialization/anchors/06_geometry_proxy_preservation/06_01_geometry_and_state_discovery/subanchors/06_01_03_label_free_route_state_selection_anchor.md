@@ -1,6 +1,5 @@
 # A06_01_03 Label-Free Route-State Selection
 
-Thinking Card source: [06_01_geometry_and_state_discovery_thinking_card.md](../06_01_geometry_and_state_discovery_thinking_card.md)
 Status: completed subanchor with a negative verdict.
 
 **Parent:** [`A06_01`](../06_01_geometry_and_state_discovery_anchor.md).

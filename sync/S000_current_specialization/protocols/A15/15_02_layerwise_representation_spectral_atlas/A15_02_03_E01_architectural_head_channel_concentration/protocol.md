@@ -258,7 +258,7 @@ The experiment cannot establish that a fixed channel group is an attention head,
 
 **Cross-block audit:** PASS. The two branches share data, labels, calibration, unit shape, metrics, nulls, and thresholds; only the representation site changes.
 
-**Approval note:** the researcher authorized implementation, smoke, two full runs, analysis, experiment records, and `daily_research_reports/0805/focus.md` on 2026-08-05. Graph edits, commit, push, and external sync remain unauthorized.
+**Approval note:** the researcher authorized implementation, smoke, two full runs, analysis, experiment records, and `daily_research_reports/backup/2026/08/0805/focus.md` on 2026-08-05. Graph edits, commit, push, and external sync remain unauthorized.
 
 ## 18. Execution Closure
 

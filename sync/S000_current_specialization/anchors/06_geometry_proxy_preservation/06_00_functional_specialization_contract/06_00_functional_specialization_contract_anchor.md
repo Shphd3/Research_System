@@ -2,7 +2,6 @@
 
 Status: completed parent anchor.
 
-Thinking Card source: [06_00_functional_specialization_contract_thinking_card.md](06_00_functional_specialization_contract_thinking_card.md)
 
 ## 1. Complete Problem
 

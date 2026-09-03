@@ -3,14 +3,12 @@ anchor_id: 15_02_04_compositional_attention_write_atlas
 status: insufficient_capability
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_04_compositional_attention_write_atlas_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-07
 ---
 
 # A15_02_04 Compositional Semantic Rank Redistribution in Isolated Attention Writes
 
-Thinking Card source: [researcher-confirmed Chinese card](15_02_04_compositional_attention_write_atlas_thinking_card_cn.md). Chinese companion: [anchor_cn](15_02_04_compositional_attention_write_atlas_anchor_cn.md).
 
 ## 1. Problem Definition
 

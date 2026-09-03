@@ -2,7 +2,6 @@
 anchor_id: 15_08_02_layerwise_conditional_fine_added_accessibility
 status: COMPLETED_PASS_LAYERS_24_28
 canonical_companion: 15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md
-thinking_card: 15_08_02_layerwise_conditional_fine_added_accessibility_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
 execution_authority: APPROVED_AND_COMPLETED_FULL_FROZEN_ALL_LAYER_RUN
@@ -12,7 +11,7 @@ updated: 2026-08-16
 
 # A15_08_02：逐层 conditional-fine 新增可访问性
 
-研究者判断见 [Thinking Card](15_08_02_layerwise_conditional_fine_added_accessibility_thinking_card_cn.md)。父问题见 [A15_08](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。英文正式 Anchor 见 [Canonical Anchor](15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md)。执行合同草案见 [E01 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_02_E01_layerwise_conditional_fine_added_accessibility/protocol.md)。
+父问题见 [A15_08](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。英文正式 Anchor 见 [Canonical Anchor](15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md)。执行合同草案见 [E01 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_02_E01_layerwise_conditional_fine_added_accessibility/protocol.md)。
 
 ## 1. Problem Definition
 

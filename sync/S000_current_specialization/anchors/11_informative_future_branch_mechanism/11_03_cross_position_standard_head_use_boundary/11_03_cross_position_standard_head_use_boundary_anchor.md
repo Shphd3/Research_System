@@ -2,7 +2,6 @@
 
 Status: model-local K/V causal-use and source-information audits completed; exact K/V is generically readable, while neither MTP-specific readability nor a strong-use increment is established.
 
-Thinking Card source: [11_03_cross_position_standard_head_use_boundary_thinking_card.md](11_03_cross_position_standard_head_use_boundary_thinking_card.md)
 
 ## 1. Problem Definition
 

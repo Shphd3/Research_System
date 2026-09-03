@@ -1,6 +1,5 @@
 # A15_14: Geometric Form of Natural-Language Semantics in Frozen Representations
 
-Thinking Card source: [15_14_semantic_representation_geometric_form_thinking_card_cn.md](15_14_semantic_representation_geometric_form_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

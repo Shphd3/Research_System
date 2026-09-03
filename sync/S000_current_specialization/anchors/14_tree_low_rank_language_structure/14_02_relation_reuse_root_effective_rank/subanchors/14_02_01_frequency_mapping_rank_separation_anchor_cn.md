@@ -4,13 +4,11 @@ status: completed_pass_noninferior
 canonical_language: en
 canonical_file: 14_02_01_frequency_mapping_rank_separation_anchor.md
 parent_anchor: 14_02_relation_reuse_root_effective_rank
-thinking_card: 14_02_01_frequency_mapping_rank_separation_thinking_card_cn.md
 experiment_id: A14_02_E02_frequency_mapping_rank_separation
 ---
 
 # A14_02_01 频次—mapping 功能秩分离
 
-Thinking Card：[研究者批准版本](14_02_01_frequency_mapping_rank_separation_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

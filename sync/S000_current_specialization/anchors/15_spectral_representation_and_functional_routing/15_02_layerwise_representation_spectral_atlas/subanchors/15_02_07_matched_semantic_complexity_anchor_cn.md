@@ -3,14 +3,12 @@ anchor_id: 15_02_07_matched_semantic_complexity
 status: closed_insufficient_complex_specific_effect
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_07_matched_semantic_complexity_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-09
 ---
 
 # A15_02_07 匹配语义复杂度在逐层 MLP 参数谱中的位置
 
-研究者判断：[中文 Thinking Card](15_02_07_matched_semantic_complexity_thinking_card_cn.md)。英文主 Anchor：[anchor](15_02_07_matched_semantic_complexity_anchor.md)。
 
 ## 1. 问题定义
 

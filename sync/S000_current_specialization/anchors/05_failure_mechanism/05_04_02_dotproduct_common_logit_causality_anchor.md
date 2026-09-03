@@ -1,6 +1,5 @@
 ﻿# 05_04_02 Dot-Product Common-Logit Causality Anchor
 
-Thinking Card source: [05_04_02_dotproduct_common_logit_causality_thinking_card.md](05_04_02_dotproduct_common_logit_causality_thinking_card.md)
 
 ## 1. Problem Definition
 

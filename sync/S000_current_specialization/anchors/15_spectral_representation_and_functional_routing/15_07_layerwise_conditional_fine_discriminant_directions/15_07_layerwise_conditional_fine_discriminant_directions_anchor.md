@@ -2,8 +2,7 @@
 anchor_id: 15_07_layerwise_conditional_fine_discriminant_directions
 status: EXECUTION_APPROVED_RUNNING
 canonical_companion: 15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md
-thinking_card: 15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md
-active_focus: ../../../../../../daily_research_reports/0820/focus_stable_domain_discriminant_subspaces.md
+active_focus: ../../../../../../daily_research_reports/backup/2026/08/0820/focus_stable_domain_discriminant_subspaces.md
 parent_line: 15_spectral_representation_and_functional_routing
 created: 2026-08-10
 updated: 2026-08-20
@@ -11,7 +10,6 @@ updated: 2026-08-20
 
 # A15_07: Held-Out Function And Spectral Location Of Supervised Low-Rank Subspaces
 
-Thinking Card source: [researcher-owned Chinese Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md).
 
 ## 1. Problem Definition
 

@@ -2,7 +2,6 @@
 
 状态：已完成；在受控隐藏状态模型中得到支持。
 
-Thinking Card source: [11_01_informative_horizon_supervision_thinking_card_cn.md](11_01_informative_horizon_supervision_thinking_card_cn.md)
 
 ## 1. 问题定义
 

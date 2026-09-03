@@ -11,7 +11,6 @@ source_docs:
 
 # 10_02 Frequency-Singular SGD Instability Anchor
 
-Thinking Card source: [10_02_frequency_singular_sgd_instability_thinking_card.md](10_02_frequency_singular_sgd_instability_thinking_card.md)
 
 ## 1. Problem Definition
 

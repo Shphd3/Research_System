@@ -2,7 +2,6 @@
 
 Status: completed parent anchor with a negative label-free boundary.
 
-Thinking Card source: [06_01_geometry_and_state_discovery_thinking_card.md](06_01_geometry_and_state_discovery_thinking_card.md)
 
 ## 1. Complete Problem
 

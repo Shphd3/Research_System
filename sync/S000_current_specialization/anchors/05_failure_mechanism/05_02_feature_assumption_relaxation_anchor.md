@@ -1,6 +1,5 @@
 ﻿# 05_02 Feature Assumption Relaxation Anchor
 
-Thinking Card source: [05_02_feature_assumption_relaxation_thinking_card.md](05_02_feature_assumption_relaxation_thinking_card.md)
 
 ## 1. Problem Definition
 

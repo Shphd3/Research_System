@@ -1,6 +1,5 @@
 # A16_00_01 DC 维持因素边界
 
-Thinking Card 来源：[16_00_01_dc_sustainer_boundary_thinking_card_cn.md](16_00_01_dc_sustainer_boundary_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

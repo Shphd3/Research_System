@@ -4,18 +4,16 @@ legacy_anchor_id: 15_01_11_shared_tail_semantic_relocation
 status: completed_fail_local_random_or_nontail_relocation
 canonical_language: en
 companion_language: zh
-thinking_card: 15_04_tail_band_information_thinking_card_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
 updated: 2026-08-09
 ---
 
 # A15_04 共同的本地参数秩后移是否进入跨层共享的广义参数 tail
 
-研究者判断：[Thinking Card](15_04_tail_band_information_thinking_card_cn.md)。英文主 Anchor：[anchor](15_04_tail_band_information_anchor.md)。
 
 ## 1. 问题定义
 
-[2026-08-07 会议笔记](/daily_research_reports/0807/meeting_notes/notes.md)从一个方法问题出发：如果每层只用一个低秩 Gate，究竟应该选哪些方向？当时的讨论混合了三个命题，A15 现在必须分别处理：
+[2026-08-07 会议笔记](/daily_research_reports/backup/2026/08/0807/meeting_notes/notes.md)从一个方法问题出发：如果每层只用一个低秩 Gate，究竟应该选哪些方向？当时的讨论混合了三个命题，A15 现在必须分别处理：
 
 | 原始命题 | 可测对象 | 当前所在位置 |
 | --- | --- | --- |

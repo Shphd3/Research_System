@@ -436,7 +436,6 @@ focus_<problem>.md living meeting-cycle core task and human-owned result account
 daily_report_<topic_slug>.md delayed complete reader-friendly story after the human result; derived from canonical evidence
 focus_meeting_<topic>.md optional requested meeting brief or synthesis; owned by meeting-outline-writer
 main/parking_lot/README.md key non-active future questions and reopening conditions
-Thinking Card new, unformed mechanism judgment only
 anchor        current formal question and claim boundary
 protocol.md   approved experiment contract
 summary.md    concise result and decision

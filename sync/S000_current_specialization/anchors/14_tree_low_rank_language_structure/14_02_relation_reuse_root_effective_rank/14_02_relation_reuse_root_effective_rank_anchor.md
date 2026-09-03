@@ -5,13 +5,11 @@ canonical_language: en
 companion_cn: 14_02_relation_reuse_root_effective_rank_anchor_cn.md
 line: 14_tree_low_rank_language_structure
 depends_on: 14_01_relation_reuse_parameter_state_bridge
-thinking_card: 14_02_relation_reuse_root_effective_rank_thinking_card_cn.md
 protocol_status: e02_completed_e03_parked_at_gate
 ---
 
 # A14_02 Shared Compositional Rules And Task-Functional Root-State Rank
 
-Thinking Card source: [14_02_relation_reuse_root_effective_rank_thinking_card_cn.md](14_02_relation_reuse_root_effective_rank_thinking_card_cn.md)
 
 Line foundation: [A14_00 conditional low-rank hierarchy](../14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md).
 

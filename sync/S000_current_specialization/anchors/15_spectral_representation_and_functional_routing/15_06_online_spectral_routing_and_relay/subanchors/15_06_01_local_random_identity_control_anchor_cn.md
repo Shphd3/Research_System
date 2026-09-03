@@ -9,7 +9,6 @@ updated: 2026-08-08
 
 # A15_06_01 本层随机频带身份对照
 
-Thinking Card：[15_06_01_local_random_identity_control_thinking_card_cn.md](15_06_01_local_random_identity_control_thinking_card_cn.md)
 
 本子 Anchor 从临时编号 `A15_01` 迁入；原始 worker 产物保留该历史编号。
 

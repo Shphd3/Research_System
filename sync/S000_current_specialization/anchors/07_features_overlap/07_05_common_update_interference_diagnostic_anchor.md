@@ -4,7 +4,6 @@ Document status: full controlled run completed on 2026-06-25. Result:
 weakened / insufficient for promoting common-update interference as an A07
 utility mechanism. It does not replace A06 preservation.
 
-Thinking Card source: [07_05_common_update_interference_diagnostic_thinking_card.md](07_05_common_update_interference_diagnostic_thinking_card.md)
 
 ## 1. Problem Definition
 

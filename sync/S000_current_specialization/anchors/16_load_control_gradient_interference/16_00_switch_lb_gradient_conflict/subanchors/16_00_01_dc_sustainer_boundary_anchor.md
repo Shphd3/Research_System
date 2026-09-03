@@ -1,6 +1,5 @@
 # A16_00_01 DC Sustainer Boundary
 
-Thinking Card source: [16_00_01_dc_sustainer_boundary_thinking_card.md](16_00_01_dc_sustainer_boundary_thinking_card.md)
 
 ## 1. Problem Definition
 

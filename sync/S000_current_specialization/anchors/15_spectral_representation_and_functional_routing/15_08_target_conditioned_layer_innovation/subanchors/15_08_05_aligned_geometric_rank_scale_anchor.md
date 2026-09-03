@@ -1,7 +1,6 @@
 ---
 anchor_id: 15_08_05_aligned_geometric_rank_scale
 status: EXECUTED_AWAITING_HUMAN_JUDGMENT
-thinking_card: 15_08_05_aligned_geometric_rank_scale_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor.md
 depends_on: 15_08_04_transition_object_spectrum_sensitivity_anchor.md
 created: 2026-08-18

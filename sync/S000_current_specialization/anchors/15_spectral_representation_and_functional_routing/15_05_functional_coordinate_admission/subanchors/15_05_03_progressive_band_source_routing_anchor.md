@@ -2,7 +2,6 @@
 anchor_id: 15_05_03_progressive_band_source_routing
 status: completed_specialization_only_without_quality_pass
 canonical_language: en
-thinking_card: 15_05_03_progressive_band_source_routing_thinking_card.md
 parent_anchor: 15_05_functional_coordinate_admission
 updated: 2026-08-02
 ---

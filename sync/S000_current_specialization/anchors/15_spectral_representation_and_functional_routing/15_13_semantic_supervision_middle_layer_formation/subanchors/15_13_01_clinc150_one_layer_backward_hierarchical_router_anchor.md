@@ -1,6 +1,5 @@
 # A15_13_01: Can a Final-to-Middle Semantic Chain Improve One-Layer Hierarchical Intent Representations?
 
-Thinking Card source: [15_13_01_clinc150_one_layer_backward_hierarchical_router_thinking_card_cn.md](15_13_01_clinc150_one_layer_backward_hierarchical_router_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

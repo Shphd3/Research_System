@@ -3,7 +3,6 @@ anchor_id: 15_08_01_layerwise_long_range_compositional_innovation
 status: RESULT_FAIL_AWAITING_HUMAN_KNOWLEDGE_CONFIRMATION
 canonical_language: en
 chinese_companion: 15_08_01_layerwise_long_range_compositional_innovation_anchor_cn.md
-thinking_card: 15_08_01_layerwise_long_range_compositional_innovation_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor.md
 parent_line: 15_spectral_representation_and_functional_routing
 execution_authority: human_approved_2026_08_11
@@ -13,7 +12,7 @@ updated: 2026-08-11
 
 # A15_08_01 Layerwise Long-Range Added Accessibility And Representation Rank
 
-Researcher judgment: [Chinese Thinking Card](15_08_01_layerwise_long_range_compositional_innovation_thinking_card_cn.md). Parent definition: [A15_08 Target-Conditioned Layer Innovation](../15_08_target_conditioned_layer_innovation_anchor.md). Chinese companion: [Anchor](15_08_01_layerwise_long_range_compositional_innovation_anchor_cn.md). Execution contract: [E02 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md). Result: [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md) / [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/detailed.md).
+Parent definition: [A15_08 Target-Conditioned Layer Innovation](../15_08_target_conditioned_layer_innovation_anchor.md). Chinese companion: [Anchor](15_08_01_layerwise_long_range_compositional_innovation_anchor_cn.md). Execution contract: [E02 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md). Result: [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md) / [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/detailed.md).
 
 E02 completed on the approved Reserved four-H100 surface for registered blocks 2--36. All validity guards and figure contracts passed. The registered verdict is `H2_LC_FAIL_CONTROL_DEGRADATION`: $T_{depth}=0.006102$ $[0.004119,0.007669]$ is positive, but $A_{2F}=-0.011422$ $[-0.013994,-0.009812]$ shows that absolute remote two-hop added accessibility decreases from early to deep blocks. Result wording awaits researcher confirmation; Router remains out of scope.
 
@@ -281,7 +280,7 @@ Because no absolute low-rank threshold has been human-approved, this Anchor regi
 
 ## 7. Current Evidence
 
-1. The [advisor variance-interval report](/daily_research_reports/0810/docs/DAILY_SUMMARY_ADVISOR_VARIANCE_INTERVAL_20260810.md) found that variance-growth-selected 160-dimensional intervals did not consistently beat equal-dimensional random directions. This closed parameter-direction variance growth as a sufficient definition of added information and motivates held-out gain plus an activation-derived common basis.
+1. The [advisor variance-interval report](/daily_research_reports/backup/2026/08/0810/docs/DAILY_SUMMARY_ADVISOR_VARIANCE_INTERVAL_20260810.md) found that variance-growth-selected 160-dimensional intervals did not consistently beat equal-dimensional random directions. This closed parameter-direction variance growth as a sufficient definition of added information and motivates held-out gain plus an activation-derived common basis.
 2. [A15_02_07 TAX](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full/summary.md) found update-only readability without conditional novelty beyond the old state. It demonstrates why a nonzero update spectrum or update-only probe cannot replace conditional gain; TAX had no necessary bridge or distance intervention.
 3. [A15_08_E04](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md) obtained eligible full-$R_U$ added accessibility at block 25: $G_{true}=0.767207$ nats/example with 95% interval $[0.751296,0.785146]$. It validates the local ridge metric, not a complete depth trend, long-range specificity, or representation-rank law.
 4. [E01](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E01_layerwise_long_range_gain_and_representation_rank/summary.md) stopped at the registered block-1 standardization guard because $X_1$ is structurally constant; it carries no H2 verdict.
@@ -301,4 +300,4 @@ Even joint positive gain and compact spectra cannot establish that deeper states
 
 **Completion criterion:** the four rank-local identity receipts, data/extraction/selection freeze, untouched CONFIRMATION evaluation, all five decision intervals, guards, rank tables, common-basis curves, and both registered figure families are complete and lineage-audited.
 
-**Resume action:** first confirm or correct the E02 knowledge update in the [daily report](/daily_research_reports/0811/docs/daily_report_layerwise_long_range_added_accessibility.md); do not start Router work from the descriptive spectra.
+**Resume action:** first confirm or correct the E02 knowledge update in the [daily report](/daily_research_reports/backup/2026/08/0811/docs/daily_report_layerwise_long_range_added_accessibility.md); do not start Router work from the descriptive spectra.

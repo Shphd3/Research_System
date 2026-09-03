@@ -1,6 +1,5 @@
 # Information Inclusion And Output-Geometry Controls
 
-Thinking Card source: [11_01_01_information_and_geometry_controls_thinking_card.md](11_01_01_information_and_geometry_controls_thinking_card.md)
 
 ## 1. Problem Definition
 

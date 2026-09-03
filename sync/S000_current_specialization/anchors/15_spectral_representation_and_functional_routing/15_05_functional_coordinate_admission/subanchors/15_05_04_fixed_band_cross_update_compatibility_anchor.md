@@ -5,12 +5,10 @@ status: completed_fail
 created: 2026-07-30
 updated: 2026-07-30
 canonical_language: en
-thinking_card: 15_05_04_fixed_band_cross_update_compatibility_thinking_card.md
 ---
 
 # A15_05_04 Incremental Prediction Of Co-Training Compatibility
 
-Thinking Card: [researcher judgment](15_05_04_fixed_band_cross_update_compatibility_thinking_card.md).  
 Parent anchor: [A15_05](../15_05_functional_coordinate_admission_anchor.md).
 
 ## 1. Problem Definition

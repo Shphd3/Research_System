@@ -4,13 +4,11 @@ legacy_anchor_id: 15_06_dynamic_online_spectral_routing
 parent_line: 15_spectral_representation_and_functional_routing
 status: completed_30b_downstream_evaluation_recorded
 canonical_language: en
-thinking_card: 15_06_online_spectral_routing_and_relay_thinking_card.md
 updated: 2026-08-09
 ---
 
 # A15_06 Online Spectral Routing And Relay
 
-Thinking Card source: [15_06_online_spectral_routing_and_relay_thinking_card.md](15_06_online_spectral_routing_and_relay_thinking_card.md)
 
 Canonical ownership note: this parent was migrated from the temporary
 `A15_00_dynamic_relay_hmt` identifier. Immutable worker jobs and raw artifacts

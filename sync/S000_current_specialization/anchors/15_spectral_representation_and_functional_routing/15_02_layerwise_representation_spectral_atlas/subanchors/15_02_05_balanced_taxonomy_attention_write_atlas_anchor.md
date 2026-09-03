@@ -4,7 +4,6 @@ status: completed_nonpositive_location_fail_pending_human_judgment
 canonical_language: en
 companion_language: zh
 chinese_companion: 15_02_05_balanced_taxonomy_attention_write_atlas_anchor_cn.md
-thinking_card: 15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-09
 execution_authorized: false
@@ -12,7 +11,6 @@ execution_authorized: false
 
 # A15_02_05 Coarse--Fine Semantic Layerwise Spectral Localization
 
-Thinking Card source: [researcher-confirmed scope and unresolved choices](15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md). Chinese companion: [anchor](15_02_05_balanced_taxonomy_attention_write_atlas_anchor_cn.md).
 
 ## 1. Problem Definition
 

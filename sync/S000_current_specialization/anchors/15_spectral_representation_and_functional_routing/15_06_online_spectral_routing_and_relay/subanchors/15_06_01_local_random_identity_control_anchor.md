@@ -3,13 +3,11 @@ anchor_id: 15_06_01_local_random_identity_control
 parent_anchor: 15_06_online_spectral_routing_and_relay
 status: completed_control_recorded
 canonical_language: en
-thinking_card: 15_06_01_local_random_identity_control_thinking_card.md
 updated: 2026-08-08
 ---
 
 # A15_06_01 Local Random Identity Control
 
-Thinking Card source: [15_06_01_local_random_identity_control_thinking_card.md](15_06_01_local_random_identity_control_thinking_card.md)
 
 This subanchor was migrated from the temporary `A15_01` identifier; raw
 worker artifacts retain that historical identity.

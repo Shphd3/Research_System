@@ -2,11 +2,11 @@
 
 ```text
 type: meeting_cycle_core_task
-status: RESULT_COMPLETE_AWAITING_HUMAN_CONFIRMATION
+status: SUPERSEDED_BY_0903_GMM_PSEUDOLABEL_FOCUS
 problem_key: A15.semantic_supervision_middle_layer_separability
 focus_role: SECONDARY
-conversation_owner: codex-thread:01a054b9-ff32-7012-aae0-ccfea85152cf
-ownership_status: CLAIMED
+conversation_owner: codex-thread:01a0652d-8c53-71e0-aab2-4008063e91a3
+ownership_status: RELEASED
 core_question: HUMAN_CONFIRMED
 plain_language_design: HUMAN_CONFIRMED
 cycle_start: 2026-09-01
@@ -104,3 +104,23 @@ core_experiment_count: 3
 - **我的认识更新：**等待研究者确认：M2D2 的粗—细语义分组在给定正确路径时具有小而稳定的平均下一词元功能价值；当前学习 Router 虽然学到了语义分发和专家功能，却没有恢复这部分任务收益。
 - **仍不能说：**不能说语义分组对所有领域都好，不能把学习失败只归因于路由准确率，也不能说冻结 Base 的原生表征被重塑。
 - **唯一下一决策：**不重新训练，先把预测/正确专家索引与概率/单位专家系数做 `2×2` 交叉评估，定位 Oracle 收益丢在选错专家、概率衰减，还是训练责任分配。
+
+### 冻结后续诊断：学习 Router 的 Oracle 收益丢在哪里？
+
+#### 目的
+
+不重新训练，只用 E07 两个学习语义检查点，区分收益损失来自专家选择、概率缩放，还是已训练专家本身。
+
+#### 假设
+
+如果错误主要来自路由决策，改用正确专家索引或把专家系数固定为一应恢复大部分 NLL；最强竞争解释是即使正确索引与单位系数同时使用，学习专家仍达不到 task-only 或硬 Oracle。
+
+#### 分析方法
+
+1. 交叉评估预测/正确专家索引与学习概率/单位系数四个前向单元，所有模型参数、确认数据和检查点完全不变。
+2. 用配对确认集 NLL 将总恢复量精确分给索引和系数，并报告两者交互；再与既有 task-only 和硬 Oracle 比较剩余差距。
+3. 在四个单元重复删除与同父类换错细专家，确认前向修复没有把专家功能证据变成纯路由标签效果。
+
+#### 结论
+
+执行前分支已由研究者确认：索引贡献更大则下一轮优先修复选路；系数贡献更大则优先取消概率缩放；两者同时不足以达到 task-only 或硬 Oracle，则下一轮必须改专家责任分配或训练目标，而不能只改 Router 推理。

@@ -1,6 +1,5 @@
 # 01_03 Anchor：Gradient Common vs Activation Common
 
-Thinking Card source: [01_03_gradient_common_vs_activation_common_thinking_card_cn.md](01_03_gradient_common_vs_activation_common_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

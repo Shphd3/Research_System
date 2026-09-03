@@ -1,6 +1,5 @@
 # Common Operator Identifiability Anchor
 
-Thinking Card source: [01_01_common_operator_identifiability_thinking_card.md](01_01_common_operator_identifiability_thinking_card.md)
 
 ## 1. Problem Definition
 

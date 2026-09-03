@@ -3,7 +3,6 @@ anchor_id: 15_08_03_function_admitted_update_representation_rank
 status: COMPLETED_INSUFFICIENT_BASIS_SENSITIVE_HREP_FAIL
 canonical_language: en
 chinese_companion: 15_08_03_function_admitted_update_representation_rank_anchor_cn.md
-thinking_card: 15_08_03_function_admitted_update_representation_rank_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor.md
 depends_on: 15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md
 parent_line: 15_spectral_representation_and_functional_routing
@@ -14,7 +13,7 @@ updated: 2026-08-16
 
 # A15_08_03 Cross-Layer Function-Admitted Update Parameter-Spectral Location And Representation Rank
 
-Researcher judgment: [Chinese Thinking Card](15_08_03_function_admitted_update_representation_rank_thinking_card_cn.md). Parent definition: [A15_08 Target-Conditioned Layer Innovation](../15_08_target_conditioned_layer_innovation_anchor.md). Functional prerequisite: [A15_08_02](15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md). Chinese companion: [Anchor](15_08_03_function_admitted_update_representation_rank_anchor_cn.md).
+Parent definition: [A15_08 Target-Conditioned Layer Innovation](../15_08_target_conditioned_layer_innovation_anchor.md). Functional prerequisite: [A15_08_02](15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md). Chinese companion: [Anchor](15_08_03_function_admitted_update_representation_rank_anchor_cn.md).
 
 ## 1. Problem Definition
 
@@ -156,10 +155,10 @@ Cluster instability cannot produce H-REP Fail, and stable clustering cannot resc
 
 ## 7. Current Evidence
 
-1. The 0813 meeting established the method chain “same-token change → centered covariance → PCA → token clustering” because the earlier coordinatewise variance analysis lost token pairing and cross-direction co-variation. It also explicitly limited PCA to geometric compression rather than evidence of new task information; this boundary is recorded in the [merged meeting record](/daily_research_reports/0813/meeting_notes/0813_meeting_merged_clean_record_cn.md).
+1. The 0813 meeting established the method chain “same-token change → centered covariance → PCA → token clustering” because the earlier coordinatewise variance analysis lost token pairing and cross-direction co-variation. It also explicitly limited PCA to geometric compression rather than evidence of new task information; this boundary is recorded in the [merged meeting record](/daily_research_reports/backup/2026/08/0813/meeting_notes/0813_meeting_merged_clean_record_cn.md).
 2. [A15_02_05](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md) did not find stable fine-specific local-rank relocation. It did not compute the present within-parent $R_U$ covariance or held-out PCA retention.
 3. [A15_08_E04](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md) found that two registered target directions retained only 33.24% of one local full gain. This rules out assuming rank two, but it was a task-retrieval result on another target, not a representation-rank measurement.
-4. Prior Attention-write evidence showed a basis-conditioned shift in Mean Response that Rank Consensus did not reproduce, with non-monotonic adjacent-layer changes. This requires a common-basis sensitivity guard and cannot be inherited as an $R_U$ result; see the [0813 meeting update](/daily_research_reports/0813/focus_meeting_common_basis_attention_write.md).
+4. Prior Attention-write evidence showed a basis-conditioned shift in Mean Response that Rank Consensus did not reproduce, with non-monotonic adjacent-layer changes. This requires a common-basis sensitivity guard and cannot be inherited as an $R_U$ result; see the [0813 meeting update](/daily_research_reports/backup/2026/08/0813/focus_meeting_common_basis_attention_write.md).
 5. [A15_08_03_E01](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_03_E01_function_admitted_update_spectral_rank_analysis/summary.md) completed under the frozen Protocol on 2026-08-16. A15_08_02 admitted $\mathcal L^+=\{24,28\}$. The early 2--12 versus deep 25--35 functional contrast is $\Delta_T=-0.0046$ with a simultaneous interval crossing zero. Mean Response gives positive $\Delta_C=0.0285$, while Rank Consensus gives negative $\Delta_C=-0.0397$; the joint outcome is `INSUFFICIENT_BASIS_SENSITIVE`.
 6. No layer passes the four-way stable-representation-low-rank conjunction. Blocks 24/28 have $r_{80}=149/106$, while their TRAIN spaces retain only 42.1%/54.6% confirmation variance. Both pass functional retention first at registered rank 256. This establishes compression to 256 dimensions, not a stable globally low-rank update cloud.
 7. Complete 35-by-35 CKA and clustering analyses are archived as secondary geometry. The with-replacement CKA percentile intervals carry a calibration warning because duplicated token rows raise high-dimensional Gram similarity; they are not used to infer layer breakpoints. Blocks 24/28 clustering ARI also does not beat equal-rank Haar q95.
@@ -172,6 +171,6 @@ It cannot call spectral relocation alone increased new information, treat equal 
 
 **Exactly one next decision:** whether the TRAIN-frozen rank-256 functional-retention spaces at blocks 24 and 28 should enter a separately frozen causal-intervention or Router-utility test. The current experiment cannot establish native use or dispatch benefit and does not authorize that follow-up.
 
-**Completion criterion: satisfied.** The Thinking Card, both Anchor languages, and canonical Protocol are synchronized; parameter bases, bands, depth windows, data, nulls, ranks, uncertainty, artifacts, and A15_08_02 tensor reuse all have archived receipts.
+**Completion criterion: satisfied.** The two Anchor languages and canonical Protocol are synchronized; parameter bases, bands, depth windows, data, nulls, ranks, uncertainty, artifacts, and A15_08_02 tensor reuse all have archived receipts.
 
 **Resume action:** no rerun is required. Later citations must keep four claims separate: function-admitted layers are 24 and 28; common-spectral relocation is basis-sensitive; stable representation low rank failed; functional compression passed first at registered rank 256.

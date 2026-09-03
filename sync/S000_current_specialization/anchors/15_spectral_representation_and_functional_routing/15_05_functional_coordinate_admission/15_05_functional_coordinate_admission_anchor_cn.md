@@ -7,13 +7,11 @@ created: 2026-07-30
 updated: 2026-07-30
 canonical_language: en
 canonical_file: 15_05_functional_coordinate_admission_anchor.md
-thinking_card: 15_05_functional_coordinate_admission_thinking_card_cn.md
 depends_on: 15_00_router_input_spectral_geometry
 ---
 
 # A15_05 功能坐标准入
 
-Thinking Card：[研究者判断](15_05_functional_coordinate_admission_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

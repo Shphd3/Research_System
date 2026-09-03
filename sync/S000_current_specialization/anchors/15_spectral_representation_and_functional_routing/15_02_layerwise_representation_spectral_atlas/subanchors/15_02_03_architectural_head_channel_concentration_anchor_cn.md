@@ -3,14 +3,12 @@ anchor_id: 15_02_03_architectural_head_channel_concentration
 status: completed_attention_sparse_pass_mlp_and_band_fail
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_03_architectural_head_channel_concentration_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-05
 ---
 
 # A15_02_03 MLP 输入固定通道组与真实注意力头的粗细语义集中性
 
-Thinking Card：[研究者冻结的对象与判断](15_02_03_architectural_head_channel_concentration_thinking_card_cn.md)。英文 canonical：[anchor](15_02_03_architectural_head_channel_concentration_anchor.md)。
 
 ## 1. Problem Definition
 

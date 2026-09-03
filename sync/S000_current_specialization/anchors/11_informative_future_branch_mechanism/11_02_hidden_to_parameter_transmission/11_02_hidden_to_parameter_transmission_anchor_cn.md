@@ -2,7 +2,6 @@
 
 状态：已完成；在受控 Transformer 设置中得到条件性支持。
 
-Thinking Card source: [11_02_hidden_to_parameter_transmission_thinking_card_cn.md](11_02_hidden_to_parameter_transmission_thinking_card_cn.md)
 
 ## 1. 问题定义
 

@@ -2,7 +2,6 @@
 
 Status: completed; all guards passed and the preregistered strong behavioral information-content increment failed.
 
-Thinking Card source: [11_03_02_standard_head_causal_use_thinking_card_cn.md](11_03_02_standard_head_causal_use_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

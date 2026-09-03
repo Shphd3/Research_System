@@ -1,7 +1,5 @@
 # A14_00：层次语言组合何时保持共享低秩状态？
 
-Thinking Card：
-[14_00_tree_low_rank_language_structure_thinking_card_cn.md](14_00_tree_low_rank_language_structure_thinking_card_cn.md)
 
 ## 1. 问题定义
 

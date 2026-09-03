@@ -1,6 +1,5 @@
 # 10_02 频率驱动的奇异值放大与 SGD 不稳定 Anchor
 
-Thinking Card source: [10_02_frequency_singular_sgd_instability_thinking_card_cn.md](10_02_frequency_singular_sgd_instability_thinking_card_cn.md)
 
 ## 1. 问题定义
 

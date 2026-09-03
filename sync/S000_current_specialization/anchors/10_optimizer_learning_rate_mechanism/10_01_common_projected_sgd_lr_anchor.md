@@ -1,6 +1,5 @@
 # 10_01 Common-Projected SGD Learning-Rate Anchor
 
-Thinking Card source: [10_01_common_projected_sgd_lr_thinking_card.md](10_01_common_projected_sgd_lr_thinking_card.md)
 
 ## 1. Problem Definition
 

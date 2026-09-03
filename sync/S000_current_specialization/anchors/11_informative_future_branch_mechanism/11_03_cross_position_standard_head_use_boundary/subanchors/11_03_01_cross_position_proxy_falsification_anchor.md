@@ -1,6 +1,5 @@
 # Cross-Position Proxy Falsification
 
-Thinking Card source: [11_03_01_cross_position_proxy_falsification_thinking_card.md](11_03_01_cross_position_proxy_falsification_thinking_card.md)
 
 ## 1. Problem Definition
 

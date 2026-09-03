@@ -4,7 +4,6 @@ status: completed_nonpositive_location_fail_pending_human_judgment
 canonical_language: en
 companion_language: zh
 english_canonical: 15_02_05_balanced_taxonomy_attention_write_atlas_anchor.md
-thinking_card: 15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-09
 execution_authorized: false
@@ -12,7 +11,6 @@ execution_authorized: false
 
 # A15_02_05 粗—细粒度语义的逐层谱定位
 
-Thinking Card 来源：[研究者确认的范围与未决选择](15_02_05_balanced_taxonomy_attention_write_atlas_thinking_card_cn.md)。英文 canonical：[anchor](15_02_05_balanced_taxonomy_attention_write_atlas_anchor.md)。
 
 ## 1. Problem Definition
 

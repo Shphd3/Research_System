@@ -4,7 +4,6 @@ legacy_anchor_id: 15_04_expert_feedback_tail_lockin
 parent_anchor: 15_01_spectral_learning_and_feedback_dynamics
 status: completed_pass_feedback_lockin
 canonical_language: en
-thinking_card: 15_01_01_selected_expert_feedback_lockin_thinking_card_cn.md
 created: 2026-07-31
 ---
 

@@ -1,6 +1,5 @@
 # A16_00_02 Multistage Gradient-Pathway Audit
 
-Thinking Card source: [16_00_02_multistage_gradient_pathway_thinking_card.md](16_00_02_multistage_gradient_pathway_thinking_card.md)
 
 ## 1. Problem Definition
 

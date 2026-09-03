@@ -1,6 +1,5 @@
 # A06_03_02 Selected-Path Blindness
 
-Thinking Card source: [06_03_utility_binding_and_sparse_discovery_thinking_card.md](../06_03_utility_binding_and_sparse_discovery_thinking_card.md)
 Status: completed mechanism subanchor.
 
 **Parent:** [`A06_03`](../06_03_utility_binding_and_sparse_discovery_anchor.md).

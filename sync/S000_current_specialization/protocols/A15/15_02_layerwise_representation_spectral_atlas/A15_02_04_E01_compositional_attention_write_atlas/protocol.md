@@ -19,7 +19,7 @@ updated: 2026-08-07
 
 **Cross-block consistency:** `PASS`. The seven-node hierarchy, equal-sample primary comparison, capability task, two hooked sites, estimators, gates, figures, and execution scope are mutually consistent.
 
-**Execution scope approved:** implementation, local contract tests, smoke, up to four independent single-node `5090-8-spot` ACP jobs, complete extraction/analysis, figure audit, `summary.md`, `detailed.md`, Anchor evidence update, and `daily_research_reports/0807/focus.md`. Registered scientific gates type the result; they do not cancel collection of the complete evidence needed to diagnose a failed gate. Git, graph, sync, publication, and model training remain excluded.
+**Execution scope approved:** implementation, local contract tests, smoke, up to four independent single-node `5090-8-spot` ACP jobs, complete extraction/analysis, figure audit, `summary.md`, `detailed.md`, Anchor evidence update, and `daily_research_reports/backup/2026/08/0807/focus.md`. Registered scientific gates type the result; they do not cancel collection of the complete evidence needed to diagnose a failed gate. Git, graph, sync, publication, and model training remain excluded.
 
 **Purpose:** test whether increasing required semantic composition from one to two to four relation edges causes reliable semantic covariance to occupy relatively lower-background-variance activation directions in deeper isolated attention writes.
 

@@ -1,6 +1,5 @@
 # A16_00_02 训练早中晚阶段的梯度路径审计
 
-Thinking Card 来源：[16_00_02_multistage_gradient_pathway_thinking_card_cn.md](16_00_02_multistage_gradient_pathway_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

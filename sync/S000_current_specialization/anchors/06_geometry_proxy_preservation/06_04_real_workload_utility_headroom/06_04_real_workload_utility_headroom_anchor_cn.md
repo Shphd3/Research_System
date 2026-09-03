@@ -2,7 +2,6 @@
 
 状态：活跃父 anchor；首个已注册子 anchor 已完成，并在 CrossCodeEval 最后一层表面失败。
 
-Thinking Card source: [06_04_real_workload_utility_headroom_thinking_card_cn.md](06_04_real_workload_utility_headroom_thinking_card_cn.md)
 
 ## 1. 问题定义
 

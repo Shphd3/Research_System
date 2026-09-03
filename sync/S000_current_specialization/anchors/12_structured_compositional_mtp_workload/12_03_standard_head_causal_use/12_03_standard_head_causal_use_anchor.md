@@ -2,7 +2,6 @@
 
 Status: active design; revised protocol exists; no run is authorized.
 
-Thinking Card source: [12_03_standard_head_causal_use_thinking_card.md](12_03_standard_head_causal_use_thinking_card.md)
 
 ## 1. Problem Definition
 

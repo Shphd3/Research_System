@@ -4,7 +4,6 @@ parent_node: problem.moe_expert_specialization
 
 # NTP Zipf Feature Write-In And Router Factor Attribution
 
-Thinking Card source: [04_ntp_zipf_feature_factorization_thinking_card.md](04_ntp_zipf_feature_factorization_thinking_card.md)
 
 ## 1. Problem Definition
 

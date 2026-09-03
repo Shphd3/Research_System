@@ -2,7 +2,6 @@
 
 状态：模型内 K/V 因果使用与源信息审计已完成；精确 K/V 普遍可读，但尚未建立 MTP 特异可读性或强使用增量。
 
-Thinking Card source: [11_03_cross_position_standard_head_use_boundary_thinking_card_cn.md](11_03_cross_position_standard_head_use_boundary_thinking_card_cn.md)
 
 ## 1. 问题定义
 

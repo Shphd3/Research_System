@@ -1,7 +1,5 @@
 # A14_01：关系复用是否把 QK 功能压缩转化为任务充分的状态压缩？
 
-Thinking Card：
-[14_01_relation_reuse_parameter_state_bridge_thinking_card_cn.md](14_01_relation_reuse_parameter_state_bridge_thinking_card_cn.md)
 
 研究线基础：[A14_00 条件低秩层次结构](../14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)。
 

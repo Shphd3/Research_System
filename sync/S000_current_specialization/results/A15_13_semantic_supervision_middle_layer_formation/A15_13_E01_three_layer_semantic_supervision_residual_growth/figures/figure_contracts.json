@@ -1,0 +1,55 @@
+{
+  "language_guard_nll.png": {
+    "aggregation": "paired complete-group bootstrap pooled equally across two seeds",
+    "allowed_conclusion": "check whether NLL upper intervals remain below the preregistered guards",
+    "axes": {
+      "x": "registered single-variable contrast",
+      "y": "NLL change in nats"
+    },
+    "contrast_order": [
+      "semantic_oracle",
+      "semantic_search",
+      "hierarchy_oracle",
+      "hierarchy_search",
+      "residual_oracle",
+      "residual_search",
+      "specificity_oracle",
+      "specificity_search"
+    ],
+    "data_source": "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/runs/full-20260830T181100Z/results/aggregate.json",
+    "legend": "circle is full-sequence NLL; square is answer NLL; lines are frozen upper guards",
+    "limitation": "This plot omits the separately recorded answer-accuracy guard and cannot rescue a failed primary metric.",
+    "metric": "treatment-minus-control full-sequence and answer negative log likelihood",
+    "metric_unit": "nats",
+    "question": "Does each registered representation contrast preserve full-sequence and answer language function?"
+  },
+  "primary_margin.png": {
+    "aggregation": "fixed TRAIN probes; equal complete-group pooling across two seeds; 95% group-bootstrap interval",
+    "allowed_conclusion": "compare held-out synthetic representation low-tail geometry in the frozen condition order",
+    "axes": {
+      "x": "registered condition",
+      "y": "conditional-fine q05 normalized margin"
+    },
+    "condition_order": [
+      "T0",
+      "B0",
+      "B1",
+      "O-F",
+      "O-HF",
+      "O-HR",
+      "O-S",
+      "S-F",
+      "S-HF",
+      "S-HR",
+      "S-S",
+      "L1-SEQ",
+      "L1-JOINT"
+    ],
+    "data_source": "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/runs/full-20260830T181100Z/results/aggregate.json",
+    "legend": "color encodes label source; marker encodes architecture",
+    "limitation": "The figure cannot establish Router readability, expert utility, language-function gain, or open-domain semantics.",
+    "metric": "minimum across true parents of the TEST-OOD fifth-percentile normalized fine-label margin",
+    "metric_unit": "normalized margin",
+    "question": "Which registered condition improves difficult-case second-layer fine separation on unseen templates?"
+  }
+}

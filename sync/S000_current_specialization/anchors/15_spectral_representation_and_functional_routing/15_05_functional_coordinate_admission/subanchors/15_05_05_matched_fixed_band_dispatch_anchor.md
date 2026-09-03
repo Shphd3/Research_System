@@ -6,7 +6,6 @@ status: completed_fail_distribution_only
 created: 2026-07-31
 canonical_language: en
 chinese_companion: 15_05_05_matched_fixed_band_dispatch_anchor_cn.md
-thinking_card: 15_05_05_matched_fixed_band_dispatch_thinking_card_cn.md
 depends_on: 15_00_router_input_spectral_geometry
 ---
 

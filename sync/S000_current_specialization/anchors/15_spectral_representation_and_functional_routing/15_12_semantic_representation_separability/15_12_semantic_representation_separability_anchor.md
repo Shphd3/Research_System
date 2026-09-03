@@ -1,6 +1,5 @@
 # A15_12: Fixed-Fact Cross-Expression Semantic Representation Separability
 
-Thinking Card source: [15_12_semantic_representation_separability_thinking_card_cn.md](15_12_semantic_representation_separability_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

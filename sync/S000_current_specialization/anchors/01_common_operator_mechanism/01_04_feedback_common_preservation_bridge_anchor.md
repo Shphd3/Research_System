@@ -1,6 +1,5 @@
 # Feedback Common Preservation Bridge Anchor
 
-Thinking Card source: [01_04_feedback_common_preservation_bridge_thinking_card.md](01_04_feedback_common_preservation_bridge_thinking_card.md)
 
 ## 1. Problem Definition
 

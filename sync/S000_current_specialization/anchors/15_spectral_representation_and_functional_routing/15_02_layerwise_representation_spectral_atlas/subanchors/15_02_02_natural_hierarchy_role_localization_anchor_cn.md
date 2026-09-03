@@ -2,12 +2,10 @@
 anchor_id: 15_02_02_natural_hierarchy_role_localization
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 status: completed_e02_pass_layer_specific_role_selectivity
-thinking_card: 15_02_02_natural_hierarchy_role_localization_thinking_card_cn.md
 ---
 
 # A15_02_02 真实层级概念的频谱位置
 
-Thinking Card source: [Thinking Card](15_02_02_natural_hierarchy_role_localization_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

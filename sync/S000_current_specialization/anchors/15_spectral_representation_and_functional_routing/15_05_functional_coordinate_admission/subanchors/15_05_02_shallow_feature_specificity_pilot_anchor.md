@@ -4,14 +4,11 @@ parent_anchor: 15_05_functional_coordinate_admission
 status: insufficient_stage_a_capability
 canonical_language: en
 companion_language: zh
-thinking_card: 15_05_02_shallow_feature_specificity_pilot_thinking_card_cn.md
 updated: 2026-07-30
 ---
 
 # A15_05_02 Controlled Four-Layer Shallow-Head Guidance Pilot
 
-Thinking Card source:
-[15_05_02_shallow_feature_specificity_pilot_thinking_card_cn.md](15_05_02_shallow_feature_specificity_pilot_thinking_card_cn.md).
 
 ## 1. Problem Definition
 

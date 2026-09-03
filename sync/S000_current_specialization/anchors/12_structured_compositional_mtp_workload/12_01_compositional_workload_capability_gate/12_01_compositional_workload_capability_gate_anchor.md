@@ -2,7 +2,6 @@
 
 Status: workload model supported; current from-scratch small-Transformer capability gate failed and is closed.
 
-Thinking Card source: [12_01_compositional_workload_capability_gate_thinking_card.md](12_01_compositional_workload_capability_gate_thinking_card.md)
 
 ## 1. Problem Definition
 

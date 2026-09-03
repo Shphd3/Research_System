@@ -5,7 +5,7 @@
 > 当前组会答案：physics 的 shallow > middle > deep 阶段排序在 C4/C5 复现，mathematics 的完整排序和单调符号不复现；两者都没有可复现的中段极值。最可靠更新是稳定粗细方向大体分离，而不是一条普遍单调的深度定律。
 > 公共坐标阶段：A15_02_06 已完成“公共参数基→Attention-write 方差曲线→粗中细谱位置→同层 shape→全相邻层变化”的完整审计。结果是深度后移依赖基、粗中细只在固定 Mean Response 基中呈轨迹级有序、曲线差异分散且相邻层变化非单调；这些对象仅作描述，不能定义新增信息。
 > 当前状态：仓库允许多个明确命名的活动工作流。A15_07_E01 与 A15_08_09_E03 均已完成计算并分别等待人的结论或外部数据护栏；A15_08_06_E06 的逐秩多表征审计已独立获得执行授权；这些状态都不阻塞粗—细方向对齐的设计审核。
-> 当前执行：A15_11 的 E01/E03 已在 8×RTX5090 上完成合格证据链。Qwen 的原生 Gate 投影保留大部分父类访问性，主要损失发生在 top-8 稀疏选择；合成 task-only 树在正确分组下实现近零误差、在错误分组下保留 $1/3$ 下界，但逐样本瞬时效用监督无增益且层级没有胜过通用非线性。结果措辞和“是否只做 Router 条件期望效用后继”仍等待研究者确认。该状态不替代 A15_10 尚待确认的人类结果措辞。
+> 当前执行：A15_13_E14 已获批准，统一比较对角高斯伪标签的学习路径、单位系数硬路径、正确标签 Oracle、随机标签和无梯度负载均衡，并在所有 checkpoint 冻结后统一评估。E07--E13 只建立了小幅正确语义路径上界、学习 Router 的任务差距和若干归因诊断；E14 尚未产出结果，不能提前宣称缩小 Oracle 差距。
 
 This line asks how spectral coordinates arise, what information different
 regions carry, and whether selecting those coordinates can create a useful
@@ -47,9 +47,9 @@ architecture utility remain unknown.
 
 **Current active Focuses:** the primary [M2D2 frozen semantic geometric-form
 audit](/daily_research_reports/0901/focus_m2d2_semantic_geometric_form.md), the independently owned secondary
-[M2D2 causal-LM semantic-routing question](/daily_research_reports/0901/focus_m2d2_causal_lm_semantic_routing.md), the secondary
-[Qwen3-30B fixed-fact cross-expression audit](/daily_research_reports/0830/focus_qwen3_30b_semantic_representation_separability.md),
-and the released secondary [counterfactual-utility residual expert-growth cycle](/daily_research_reports/0829/focus_gradient_consistent_hierarchical_routing.md).
+[diagonal-GMM pseudo-label Oracle-gap question](/daily_research_reports/0903/focus_gmm_pseudolabel_oracle_gap.md), the secondary
+[Qwen3-30B fixed-fact cross-expression audit](/daily_research_reports/backup/2026/08/0830/focus_qwen3_30b_semantic_representation_separability.md),
+and the released secondary [counterfactual-utility residual expert-growth cycle](/daily_research_reports/backup/2026/08/0829/focus_gradient_consistent_hierarchical_routing.md).
 The Native-$G$ audit, rank-specific multi-representation audit, and cross-parent
 fine-function transfer audit are predecessor evidence, not experiment-level
 Focuses. Their contracts and result records remain linked below.
@@ -115,6 +115,11 @@ representability mechanism, while the current instantaneous hard utility
 target is not a promotable training method. The only proposed successor is a
 matched test of soft conditional expected utility measurable from the exact
 Router-visible state; no Qwen training is authorized.
+
+**Current A15_13 next decision:** complete every E14 registered condition and
+both seeds, freeze one checkpoint manifest, and accept only verdict A, B, or C
+from the unified M2D2 and eight-task evaluation. Intermediate results may not
+prune conditions or retune the comparison.
 
 **A15_10 completion criterion:** all six layers, both transfer directions, and both
 panels produce eligible Own/Cross/full-pipeline-null RR results under one
@@ -194,7 +199,7 @@ flowchart TD
 | A15_10 Cross-Parent Fine-Function Transfer | Whether mathematics and physics fine spaces carry each other's held-out target discrimination under matched cross-fit | A15_09 stable fine spaces and cached native activations | completed: 0/6 layers passed the bidirectional C4/C5 rule; eligible RR 0.0339--0.1810; only 1/24 directional excess | weakens a shared-fine premise without proving strict parent locality; human result wording pending | [Anchor](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md) |
 | A15_11 Counterfactual-Utility Residual Expert Growth | Whether stagewise common→residual→1→2→4 training makes expert utility conditionally separable and sample-efficient only under a correct grouping | A15_09/A15_10 boundaries plus the 08:24 and 08:28 advisor intuitions | E01/E03 complete: access bottleneck localized; aligned mechanism supported; no registered utility or tree gain; human wording pending | retain the conditional theorem, reject current architecture promotion, and require Router-measurable utility before a real-model test | [Anchor](15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md) |
 | A15_12 Fixed-Fact Cross-Expression Semantic Separability | How predictive, low-tail robust, globally coherent, and expression-invariant the parent/fine labels are in actual frozen MoE inputs | A15_09 cached activations plus the 08:28 semantic-versus-variance corrections | E01/E02 complete: Blocks 4/12/44 show robust within-bank but incompatible cross-bank boundaries; full two-bank training gives a common certificate at Blocks 4/12/20/44 | execute only the frozen-probe TAX-C4A joint-shift test next; no Router-utility inference | [Anchor](15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md) |
-| A15_13 Semantic Supervision And Middle-Layer Formation | Whether coarse--fine semantic partitions can organize learned routing and create non-interchangeable expert function without sacrificing held-out task quality | frozen Qwen3-0.6B, one block-14 LoRA hierarchy, and matched classification or causal-language-model controls | CLINC and M2D2 gold routes have bounded functional value; M2D2 learned routing improves semantic agreement but not NLL, while final-layer pseudo labels beat newly trained simple baselines but not the staged task-only hierarchy | decompose predicted versus gold expert index and learned versus unit coefficient before choosing a recovery method | [Anchor](15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md) |
+| A15_13 Semantic Supervision And Middle-Layer Formation | Whether coarse--fine semantic partitions can organize learned routing and create non-interchangeable expert function without sacrificing task quality | frozen Qwen3-0.6B, one block-14 LoRA hierarchy, and matched causal-language-model or answer-only controls | E07--E13 establish a small gold-route value, learned semantic dispatch without matched M2D2 gain, improved pseudo-label geometry, and path/loss-oscillation diagnostics; E14 is approved but has no result | finish the unified diagonal-GMM learned/hard/Oracle/random/load-bias comparison before choosing a recovery method | [Anchor](15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md) |
 | A15_14 Semantic Representation Geometric Form | Whether M2D2 coarse and conditional-fine semantics in frozen Qwen3-0.6B states are carried by direction, radius, covariance shape, or a mixture | balanced M2D2-Wikipedia 3-by-3 natural text with matched PCA-64 and raw-1024 coordinates | E01 and E02 agree: the mean-pooled fixed cell is direction-primary and `RADIUS_CONTRIBUTING`; independent shape fails and final-position direction is near zero | confirm a current-token versus causal-prefix pooled lexical-control audit before token-Router geometry selection | [Anchor](15_14_semantic_representation_geometric_form/15_14_semantic_representation_geometric_form_anchor.md) |
 
 ## Reading Index
@@ -241,7 +246,6 @@ The current primary synthesis is the [A15 full-line Story](/Projects/from-attent
 ### A15_07 Layerwise Conditional-Fine Discriminant Directions
 
 - Parent: [canonical Anchor](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor.md) and [Chinese companion](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md).
-- Human judgment surface: [Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md).
 - Current state: full registered run completed; evidence awaits human judgment;
   [A15_07_E01](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/protocol.md)
   is `APPROVED_FOR_FULL_RUN`, and its [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/summary.md)
@@ -257,21 +261,18 @@ The current primary synthesis is the [A15 full-line Story](/Projects/from-attent
 ### A15_09 Layerwise Coarse--Fine Reuse Geometry
 
 - Parent: [canonical Anchor](15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_anchor.md).
-- Human judgment surface: [Thinking Card](15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_thinking_card_cn.md).
 - Completed result: [A15_09_E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/summary.md), [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/detailed.md), and [Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse/protocol.md).
 - Current state: completed geometry predecessor; stable low overlap is retained, while the superseded coarse-complement deletion proposal is not the active next question.
 
 ### A15_10 Cross-Parent Fine-Function Transfer
 
 - Parent: [canonical Anchor](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md).
-- Human judgment surface: [Thinking Card](15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_thinking_card_cn.md).
 - Completed evidence: [A15_10_E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/summary.md), [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/detailed.md), and [Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer/protocol.md).
 - Current state: evidence complete; no registered transferable layer, with six retained insufficient cells; AI interpretation awaits the researcher's result and boundary confirmation.
 
 ### A15_11 Counterfactual-Utility Residual Expert Growth
 
 - Parent: [canonical Anchor](15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md).
-- Human judgment surface: [Thinking Card](15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_thinking_card_cn.md).
 - Active contracts: [Qwen native-access E01](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E01_qwen_native_router_access_gap/protocol.md) and [progressive residual utility E03](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03_counterfactual_utility_residual_tree/protocol.md).
 - Historical boundary: [E02](/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E02_synthetic_parent_first_moe/protocol.md) was superseded before implementation because its simultaneous two-bank construction did not instantiate the advisor's $1\rightarrow2\rightarrow4$ freeze-and-residual mechanism.
 - Current state: implementation and one 8×RTX-5090 SPOT full run are explicitly authorized; Qwen semantic accessibility and synthetic counterfactual expert utility remain separate verdicts.
@@ -279,7 +280,6 @@ The current primary synthesis is the [A15 full-line Story](/Projects/from-attent
 ### A15_12 Fixed-Fact Cross-Expression Semantic Separability
 
 - Parent: [canonical Anchor](15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md).
-- Human judgment surface: [Thinking Card](15_12_semantic_representation_separability/15_12_semantic_representation_separability_thinking_card_cn.md).
 - Completed numerical evidence, with AI result wording awaiting human confirmation: [E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E01_qwen3_30b_fixed_fact_expression_separability/summary.md) and [E02 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E02_expression_bank_boundary_coverage_controls/summary.md).
 - Active contract: [A15_12_E03 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_12_semantic_representation_separability/A15_12_E03_tax_c4a_unseen_fact_package_transfer/protocol.md).
 - Current state: E03 implementation and local smoke are complete, but no GPU job has run. The audited 4x RTX5090 candidate awaits researcher confirmation; an 8x choice needs a separately frozen entry. C4E/C5E reuse the same facts, so the maximum current claim is cross-expression fixed-fact readability, not unseen-fact semantic generalization.
@@ -287,14 +287,14 @@ The current primary synthesis is the [A15 full-line Story](/Projects/from-attent
 ### A15_13 Semantic Supervision And Middle-Layer Formation
 
 - Parent: [canonical Anchor](15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md).
-- Current children: [CLINC150 functional-gradient audit](15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_03_semantic_gradient_functional_alignment_anchor.md) and [M2D2 causal-language-model semantic routing](15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_04_m2d2_causal_lm_semantic_routing_anchor.md).
-- Decisive evidence: [E06 CLINC hard-route Summary](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E06_clinc150_hard_route_gradient_functional_audit/summary.md), [E07 M2D2 learned-route Summary](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E07_m2d2_learned_semantic_router_ntp/summary.md), [E08 M2D2 hard-route Summary](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E08_m2d2_hard_semantic_route_ntp/summary.md), and [E09 M2D2 pseudo-route Summary](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/summary.md).
-- Current state: gold semantic partitions have bounded functional value in classification and causal language modeling; learned semantic routing does not recover the M2D2 NLL value; the registered pseudo method beats new simple baselines but remains behind staged task-only routing.
+- Current children: [CLINC150 functional-gradient audit](15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_03_semantic_gradient_functional_alignment_anchor.md), [M2D2 causal-language-model semantic routing](15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_04_m2d2_causal_lm_semantic_routing_anchor.md), and the active [diagonal-GMM Oracle-gap audit](15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md).
+- Decisive completed evidence: [E07 learned route](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E07_m2d2_learned_semantic_router_ntp/summary.md), [E08 gold hard route](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E08_m2d2_hard_semantic_route_ntp/summary.md), [E09 pseudo labels](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/summary.md), [E10 path decomposition](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E10_m2d2_frozen_router_path_decomposition/summary.md), [E12 ablations](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E12_m2d2_decommon_parent_freeze_ablation/summary.md), and [E13 answer-only continuation](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E13_qwen06b_mixed_answer_only_semantic_router/summary.md).
+- Active contract: [E14 unified diagonal-GMM pseudo-label versus Oracle-gap Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/protocol.md).
+- Current state: gold semantic partitions have bounded functional value; ordinary learned routing has not recovered that value. E14 is the only active decision and remains result-free until all registered arms and both seeds finish.
 
 ### A15_14 Semantic Representation Geometric Form
 
 - Parent: [canonical Anchor](15_14_semantic_representation_geometric_form/15_14_semantic_representation_geometric_form_anchor.md).
-- Human judgment surface: [Thinking Card](15_14_semantic_representation_geometric_form/15_14_semantic_representation_geometric_form_thinking_card_cn.md).
 - Approved contracts: [E01 PCA-64 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E01_m2d2_direction_norm_covariance_atlas/protocol.md) and [E02 raw-1024 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness/protocol.md).
 - Completed evidence: [E01 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E01_m2d2_direction_norm_covariance_atlas/summary.md) and [E02 Summary](/Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness/summary.md).
 - Current state: PCA-64 and raw-1024 analyses both return `RADIUS_CONTRIBUTING`. Direction remains the larger carrier, independent shape fails, and final-position clustering is near zero, so token-Router promotion is blocked pending human approval of one causal-prefix audit.

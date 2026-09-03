@@ -454,7 +454,6 @@ construct a Router from route continuity alone.
 - Completed real-code subanchor: `../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/subanchors/06_04_01_context_conditioned_expert_utility_anchor.md`
 - Real-code result: `../../experiments/A06/06_04_real_workload_utility_headroom/A06_04_01_E01_context_conditioned_expert_utility/summary.md`
 - External source fragment: `anchor_threads/06_04/story_fragment.md`
-- Chinese Thinking Card: `../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_thinking_card_cn.md`
 - Utility formation: `../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E01_trainable_expert_utility/summary.md`
 - Wrong-rank failure: `../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E01_wrong_rank_correction/summary.md`
 - One-challenger discovery: `../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger/summary.md`

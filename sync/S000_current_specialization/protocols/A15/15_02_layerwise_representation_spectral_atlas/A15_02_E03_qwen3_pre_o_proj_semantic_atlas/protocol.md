@@ -112,7 +112,7 @@ Typed verdicts:
 3. Run a reduced smoke on representative early/middle/late blocks before full extraction.
 4. Fit full and half-split bases, run the full semantic analysis, bootstrap, random-orientation controls, and sensitivity checks.
 5. Open and audit every decisive figure.
-6. Write `summary.md`, `summary_cn.md`, `detailed.md`, update the owning anchor, and create a self-contained Chinese report under `daily_research_reports/0805/`.
+6. Write `summary.md`, `summary_cn.md`, `detailed.md`, update the owning anchor, and create a self-contained Chinese report under `daily_research_reports/backup/2026/08/0805/`.
 
 ## 9. Required Outputs
 

@@ -13,7 +13,6 @@ source_docs:
 
 # A09_01 Common High-Gain Band / Rare Discrimination Anchor
 
-Thinking Card source: [09_01_common_band_rare_discrimination_thinking_card.md](09_01_common_band_rare_discrimination_thinking_card.md)
 
 ## 1. Problem Definition
 

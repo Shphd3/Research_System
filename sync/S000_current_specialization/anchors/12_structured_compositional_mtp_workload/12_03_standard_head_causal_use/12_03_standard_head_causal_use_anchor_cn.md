@@ -2,7 +2,6 @@
 
 状态：当前活动设计；修订协议已存在；尚未授权运行。
 
-Thinking Card source: [12_03_standard_head_causal_use_thinking_card_cn.md](12_03_standard_head_causal_use_thinking_card_cn.md)
 
 ## 1. 问题定义
 

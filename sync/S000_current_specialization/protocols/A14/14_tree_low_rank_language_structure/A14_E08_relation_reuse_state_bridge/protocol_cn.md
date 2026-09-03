@@ -337,7 +337,7 @@ $$
 
 ## 15. 协议通过后的唯一分支
 
-- **若 Success：**下一张独立 Thinking Card 正交操纵 exact relation repetition 与 independent-rule complexity，裁决“复用/频率”与“函数复杂度”解释；不能直接进入 Router。
+- **若 Success：**下一项独立研究问题 正交操纵 exact relation repetition 与 independent-rule complexity，裁决“复用/频率”与“函数复杂度”解释；不能直接进入 Router。
 - **若 Failure：**关闭“现有 QK 结果支持概率树低维局部状态”的桥接主张；保留参数侧现象，不再用它支持状态理论。
 - **若 Insufficient：**只补齐缺失来源或实现守卫，不改变假设、阈值和主指标。
 

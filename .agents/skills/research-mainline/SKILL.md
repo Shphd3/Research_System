@@ -44,13 +44,9 @@ Projects/<project>/
         <parent_id>_<topic>/
           <parent_id>_<topic>_anchor.md
           <parent_id>_<topic>_anchor_cn.md
-          <parent_id>_<topic>_thinking_card.md
-          <parent_id>_<topic>_thinking_card_cn.md
           subanchors/
             <parent_id>_<NN>_<topic>_anchor.md
             <parent_id>_<NN>_<topic>_anchor_cn.md
-            <parent_id>_<NN>_<topic>_thinking_card.md
-            <parent_id>_<NN>_<topic>_thinking_card_cn.md
     experiments/
       A<line_number>/
         <anchor_stem>/
@@ -107,15 +103,14 @@ parent anchor:
 main/problem_anchors/<line_id>/README.md
 main/problem_anchors/<line_id>/<parent_id>_<topic>/
   <parent_id>_<topic>_anchor.md
-  <parent_id>_<topic>_thinking_card.md
   subanchors/<parent_id>_<NN>_<topic>_anchor.md
 ```
 
 Sibling parent anchors remain sibling folders even when one depends on another.
 Place an anchor in `subanchors/` only when it inherits the parent's decision
 question and tests one local clause, rival, repair, robustness check, or metric
-guard. Keep each Thinking Card beside the anchor it owns. The line `README.md`
-must distinguish sibling-parent dependency order from parent--child ownership.
+guard. The line `README.md` must distinguish sibling-parent dependency order
+from parent--child ownership.
 
 Before creating or reorganizing a line `README.md`, read
 [`references/line_direction_contract.md`](references/line_direction_contract.md)
@@ -270,7 +265,6 @@ Artifact roles must stay aligned:
 
 | Artifact | Owns | Must not do |
 |---|---|---|
-| `<anchor_stem>_thinking_card.md` | independent human judgment before AI formalization | become a formal anchor, protocol, or AI-authored conclusion |
 | anchor | current minimal adjudicable design | become a runbook, full result report, or broad ablation list |
 | `protocol.md` | the single in-file lifecycle from complete candidate to confirmed test | be treated as executable before all audit blocks pass, change the question post hoc, or add unrelated sweeps |
 | `summary.md` | first reading path: conclusion, primary metric, central figures | contain the full evidence ledger |
@@ -308,10 +302,10 @@ decision. Each minimal falsification test should include its operational
 definition, stage-local evidence, and failure meaning before it becomes
 protocol-ready.
 
-The independent `<anchor_stem>_thinking_card.md` is the human-facing judgment surface. The
-formal anchor links that card and contains the auditable design layer for AI
-review, replay, protocol alignment, and boundary checks. Do not duplicate the
-card in new anchors.
+The researcher states the human-owned judgment in conversation or the active
+Focus. The formal Anchor preserves the approved judgment and contains the
+auditable design layer for AI review, replay, protocol alignment, and boundary
+checks. Do not create an intermediate judgment-card artifact.
 
 The required anchor structure is:
 

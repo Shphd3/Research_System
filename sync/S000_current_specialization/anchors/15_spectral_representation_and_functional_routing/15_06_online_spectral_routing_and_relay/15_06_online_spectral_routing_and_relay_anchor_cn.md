@@ -10,7 +10,6 @@ updated: 2026-08-09
 
 # A15_06 在线频谱路由与接力
 
-Thinking Card：[15_06_online_spectral_routing_and_relay_thinking_card_cn.md](15_06_online_spectral_routing_and_relay_thinking_card_cn.md)
 
 归属说明：本父 Anchor 从临时编号 `A15_00_dynamic_relay_hmt` 迁入；不可变的
 worker 作业和原始产物保留历史编号，项目内 canonical 编号统一为 `A15_06`。

@@ -1,6 +1,5 @@
 # Shared-Parameter Reachability And Background-Sign Control
 
-Thinking Card source: [11_02_01_reachability_and_background_sign_thinking_card.md](11_02_01_reachability_and_background_sign_thinking_card.md)
 
 ## 1. Problem Definition
 

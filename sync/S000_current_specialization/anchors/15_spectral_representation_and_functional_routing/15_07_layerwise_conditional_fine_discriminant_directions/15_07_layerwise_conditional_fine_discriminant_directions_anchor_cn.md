@@ -2,8 +2,7 @@
 anchor_id: 15_07_layerwise_conditional_fine_discriminant_directions
 status: PROTOCOL_DRAFT_AWAITING_REVIEW
 canonical_companion: 15_07_layerwise_conditional_fine_discriminant_directions_anchor.md
-thinking_card: 15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md
-active_focus: ../../../../../../daily_research_reports/0820/focus_stable_domain_discriminant_subspaces.md
+active_focus: ../../../../../../daily_research_reports/backup/2026/08/0820/focus_stable_domain_discriminant_subspaces.md
 parent_line: 15_spectral_representation_and_functional_routing
 created: 2026-08-10
 updated: 2026-08-20
@@ -11,7 +10,6 @@ updated: 2026-08-20
 
 # A15_07：稳定的领域内细类判别子空间
 
-研究者判断来源：[中文 Thinking Card](15_07_layerwise_conditional_fine_discriminant_directions_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

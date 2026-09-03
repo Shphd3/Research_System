@@ -3,7 +3,6 @@ anchor_id: 15_08_04_transition_object_spectrum_sensitivity
 status: EXECUTED_AWAITING_HUMAN_JUDGMENT
 canonical_language: en
 chinese_companion: 15_08_04_transition_object_spectrum_sensitivity_anchor_cn.md
-thinking_card: 15_08_04_transition_object_spectrum_sensitivity_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor.md
 depends_on: 15_08_03_function_admitted_update_representation_rank_anchor.md
 parent_line: 15_spectral_representation_and_functional_routing
@@ -14,7 +13,7 @@ updated: 2026-08-17
 
 # A15_08_04 Transition-Object And RMSNorm Spectrum Sensitivity
 
-Researcher judgment: [Chinese Thinking Card](15_08_04_transition_object_spectrum_sensitivity_thinking_card_cn.md). Parent definition: [A15_08 Target-Conditioned Layer Innovation](../15_08_target_conditioned_layer_innovation_anchor.md). Chinese companion: [Anchor](15_08_04_transition_object_spectrum_sensitivity_anchor_cn.md).
+Parent definition: [A15_08 Target-Conditioned Layer Innovation](../15_08_target_conditioned_layer_innovation_anchor.md). Chinese companion: [Anchor](15_08_04_transition_object_spectrum_sensitivity_anchor_cn.md).
 
 ## 1. Problem Definition
 

@@ -12,7 +12,6 @@ source_docs:
 
 # A09_01 常见高增益带 / 稀有判别 Anchor
 
-Thinking Card source: [09_01_common_band_rare_discrimination_thinking_card_cn.md](09_01_common_band_rare_discrimination_thinking_card_cn.md)
 
 ## 1. 问题定义
 

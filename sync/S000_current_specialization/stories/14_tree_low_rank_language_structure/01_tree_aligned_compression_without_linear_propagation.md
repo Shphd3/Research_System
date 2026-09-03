@@ -262,7 +262,7 @@ The strongest safe claim is:
   theorem, the concentrated directions are behaviorally used, or the effect is
   universal across languages and scales.
 - **Exactly one next decision:** close A14's global shared-linear propagation
-  claim. If the research continues, first approve a separate Thinking Card
+  claim. If the research continues, first approve a separate research question
   for a finite node-type/depth/context-conditioned or gated-subspace question.
 
 ## Sources

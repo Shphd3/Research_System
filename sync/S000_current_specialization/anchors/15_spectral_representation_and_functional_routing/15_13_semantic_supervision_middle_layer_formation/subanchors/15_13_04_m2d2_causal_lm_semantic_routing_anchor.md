@@ -1,6 +1,5 @@
 # A15_13_04: Does Coarse-to-Fine Semantic Routing Have Functional Value in Causal Language Modeling?
 
-Thinking Card source: [15_13_04_m2d2_causal_lm_semantic_routing_thinking_card_cn.md](15_13_04_m2d2_causal_lm_semantic_routing_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

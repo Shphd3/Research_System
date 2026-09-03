@@ -1,6 +1,5 @@
 # A15_13_03: Do Fine Intents Align with Functional Task Gradients?
 
-Thinking Card source: [15_13_03_semantic_gradient_functional_alignment_thinking_card_cn.md](15_13_03_semantic_gradient_functional_alignment_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

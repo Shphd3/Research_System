@@ -2,7 +2,6 @@
 
 状态：已完成；所有守卫通过，信息内容的强行为因果使用增量按预注册规则失败。
 
-Thinking Card source: [11_03_02_standard_head_causal_use_thinking_card_cn.md](11_03_02_standard_head_causal_use_thinking_card_cn.md)
 
 ## 1. 问题定义
 

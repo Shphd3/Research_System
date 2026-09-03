@@ -7,12 +7,10 @@ created: 2026-06-23
 retargeted: 2026-06-28
 canonical_language: en
 depends_on: A07_02_common_controlled_rare_interference
-thinking_card_source: 07_03_route_function_binding_thinking_card.md
 ---
 
 # A07_03 Nested Route-Function Binding Anchor
 
-Thinking Card source: [07_03_route_function_binding_thinking_card.md](07_03_route_function_binding_thinking_card.md)
 
 ## 1. Problem Definition
 

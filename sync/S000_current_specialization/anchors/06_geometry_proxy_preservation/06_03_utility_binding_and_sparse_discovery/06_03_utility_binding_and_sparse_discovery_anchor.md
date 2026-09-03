@@ -2,7 +2,6 @@
 
 Status: completed parent anchor in the controlled four-expert bridge.
 
-Thinking Card source: [06_03_utility_binding_and_sparse_discovery_thinking_card.md](06_03_utility_binding_and_sparse_discovery_thinking_card.md)
 
 ## 1. Complete Problem
 

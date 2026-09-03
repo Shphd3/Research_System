@@ -3,14 +3,13 @@ anchor_id: 15_02_06_mlp_parameter_geometry_and_semantic_location
 status: completed_location_without_commonality
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_06_mlp_parameter_geometry_and_semantic_location_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-07
 ---
 
 # A15_02_06 MLP Parameter Commonality And Attention-Write Semantic Location
 
-Researcher judgment: [Chinese Thinking Card](15_02_06_mlp_parameter_geometry_and_semantic_location_thinking_card_cn.md). Protocol: [A15_02_06_E01](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E01_mlp_parameter_geometry_and_semantic_location/protocol.md).
+Protocol: [A15_02_06_E01](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E01_mlp_parameter_geometry_and_semantic_location/protocol.md).
 
 ## 1. Problem Definition
 

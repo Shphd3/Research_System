@@ -1,6 +1,5 @@
 # A15_02_06：MLP 参数共同子空间与 attention write 的粗细语义位置
 
-英文 Anchor 为规范版本：[anchor](15_02_06_mlp_parameter_geometry_and_semantic_location_anchor.md)。研究者原始判断见 [Thinking Card](15_02_06_mlp_parameter_geometry_and_semantic_location_thinking_card_cn.md)。
 
 ## 1. 问题定义
 

@@ -10,8 +10,9 @@ experiment codebase.
   next decision needed for the current question.
 - Canonical research artifacts are English unless the user explicitly chooses
   another language. Chinese companions use `_cn.md`.
-- An independent Thinking Card and human-owned problem or meeting focus may
-  preserve the user's Chinese mechanism judgment.
+- The human-owned Focus and formal Anchor preserve the researcher's mechanism
+  judgment, uncertainty, and confirmation boundary without an intermediate
+  judgment-card artifact.
 - Define technical terms in plain Chinese before reusing English names or
   abbreviations in conversation.
 - Treat user ideas as hypotheses to audit. Point out undefined objects, hidden
@@ -327,7 +328,6 @@ progress only when they change a judgment, boundary, or decision.
 | `daily_research_reports/MMDD/focus_meeting_<topic>.md` | one meeting's concise progressive knowledge update from a named problem or a human-scoped multi-problem set |
 | `Projects/<project>/main/parking_lot/README.md` | concise project-level list of important non-active questions and their reopening conditions |
 | `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
-| Thinking Card | human's initial mechanism judgment and uncertainty |
 | anchor | one adjudicable research design and its current boundary |
 | story | line-level mathematical and evidence synthesis |
 | `protocol.md` | approved test contract |
@@ -338,17 +338,12 @@ progress only when they change a judgment, boundary, or decision.
 If a project-state statement here conflicts with `PROJECTS.md`, move the state
 out of this file and treat `PROJECTS.md` as current.
 
-## Thinking Card And Anchor
+## Anchor
 
-New Thinking Card names are subject-bearing and collision-safe:
-
-```text
-<anchor_stem>_thinking_card.md
-<anchor_stem>_thinking_card_cn.md
-```
-
-The card is independent and human-owned. The formal anchor links it and does
-not duplicate it as section 0.
+The researcher states the current judgment, mechanism, strongest rival,
+decision-changing evidence, and next decision directly in conversation or the
+active Focus. The formal Anchor preserves that approved judgment and turns it
+into an auditable design. Do not create an intermediate judgment-card artifact.
 
 Canonical anchor paths:
 
@@ -357,13 +352,9 @@ Projects/<project>/main/problem_anchors/<line>/README.md
 Projects/<project>/main/problem_anchors/<line>/<parent_id>_<topic>/
   <parent_id>_<topic>_anchor.md
   <parent_id>_<topic>_anchor_cn.md
-  <parent_id>_<topic>_thinking_card.md
-  <parent_id>_<topic>_thinking_card_cn.md
   subanchors/
     <parent_id>_<NN>_<topic>_anchor.md
     <parent_id>_<NN>_<topic>_anchor_cn.md
-    <parent_id>_<NN>_<topic>_thinking_card.md
-    <parent_id>_<NN>_<topic>_thinking_card_cn.md
 ```
 
 A research line may contain several sibling parent anchors, and every parent
@@ -371,8 +362,7 @@ anchor receives its own `<parent_id>_<topic>/` folder. Dependency or reading
 order between parent anchors does not make one a subanchor of another.
 `subanchors/` contains only children that inherit that folder's parent decision
 question and adjudicate one local clause, rival, repair, robustness check, or
-metric guard. Parent anchor files and their Thinking Cards stay together in the
-parent folder; child Thinking Cards stay beside their child anchors in
+metric guard. Parent anchors stay in their parent folders and child anchors in
 `subanchors/`. The line `README.md` indexes sibling parents, dependency order,
 current boundary, and one next decision.
 
@@ -594,7 +584,7 @@ Codex. Do not maintain personal-directory copies of these repository skills.
 Use repository skills when the task matches:
 
 - `research-progress-core`: research logic and uncertainty reduction.
-- `problem-anchor-writer`: Thinking Card audit and anchor construction.
+- `problem-anchor-writer`: human-judgment audit and anchor construction.
 - `experiment-card-writer`: blockwise experiment audit, confirmed protocol,
   summary, and detailed records.
 - `research-story-writer`: line-level mathematical and evidence synthesis.

@@ -5,14 +5,12 @@ parent_anchor: 15_05_functional_coordinate_admission
 status: layer_band_profile_pass_compatibility_pending
 canonical_language: en
 canonical_file: 15_05_01_shallow_feature_guidance_anchor.md
-thinking_card: 15_05_01_shallow_feature_guidance_thinking_card_cn.md
 depends_on: 15_00_router_input_spectral_geometry
 updated: 2026-07-31
 ---
 
 # A15_05_01 浅层 covariance head 指导深层 Router
 
-Thinking Card：[研究者方向已批准版本](15_05_01_shallow_feature_guidance_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

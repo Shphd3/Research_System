@@ -140,4 +140,4 @@ smoke 只验证实现；短程 loss 不作科学裁定。full 中不得降低负
 
 本实验不能证明从初始化形成、H→M→T 顺序最优、covariance rank 具有普遍语义、随机同维日程更差，或扩展到更深模型。它只回答一个公共早期状态后的四层 DCLM 因果分叉。
 
-交付：artifact/branch/data/source manifest；六个 job IDs 与完整 milestones；held-out per-document NLL；route/load/update/conflict/utility/redundancy tables；四张中心图；`summary.md`、`detailed.md`；Anchor 更新；`daily_research_reports/0803/focus.md`。不修改 graph，不 commit/push。
+交付：artifact/branch/data/source manifest；六个 job IDs 与完整 milestones；held-out per-document NLL；route/load/update/conflict/utility/redundancy tables；四张中心图；`summary.md`、`detailed.md`；Anchor 更新；`daily_research_reports/backup/2026/08/0803/focus.md`。不修改 graph，不 commit/push。

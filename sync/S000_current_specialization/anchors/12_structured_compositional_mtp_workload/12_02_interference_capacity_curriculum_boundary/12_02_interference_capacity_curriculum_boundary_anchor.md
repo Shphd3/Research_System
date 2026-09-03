@@ -2,7 +2,6 @@
 
 Status: completed as a controlled mechanism boundary; neural and scale transfer remain untested.
 
-Thinking Card source: [12_02_interference_capacity_curriculum_boundary_thinking_card.md](12_02_interference_capacity_curriculum_boundary_thinking_card.md)
 
 ## 1. Problem Definition
 

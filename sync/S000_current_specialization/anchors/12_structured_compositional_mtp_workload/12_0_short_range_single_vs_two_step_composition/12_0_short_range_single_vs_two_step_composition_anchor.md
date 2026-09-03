@@ -1,6 +1,5 @@
 # Anchor 12_0 — Short-Range Single-Step versus Two-Step Composition
 
-Thinking Card source: [12_0_short_range_single_vs_two_step_composition_thinking_card.md](12_0_short_range_single_vs_two_step_composition_thinking_card.md)
 
 ## 1. Problem Definition
 

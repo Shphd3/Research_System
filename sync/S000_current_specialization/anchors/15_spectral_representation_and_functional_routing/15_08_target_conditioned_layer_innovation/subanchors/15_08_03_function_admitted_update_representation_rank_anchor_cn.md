@@ -2,7 +2,6 @@
 anchor_id: 15_08_03_function_admitted_update_representation_rank
 status: COMPLETED_INSUFFICIENT_BASIS_SENSITIVE_HREP_FAIL
 canonical_companion: 15_08_03_function_admitted_update_representation_rank_anchor.md
-thinking_card: 15_08_03_function_admitted_update_representation_rank_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor_cn.md
 depends_on: 15_08_02_layerwise_conditional_fine_added_accessibility_anchor_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
@@ -13,7 +12,7 @@ updated: 2026-08-16
 
 # A15_08_03：跨层功能准入更新的参数谱位置与表征低秩性
 
-研究者判断见 [Thinking Card](15_08_03_function_admitted_update_representation_rank_thinking_card_cn.md)。父问题见 [A15_08](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。功能前置门见 [A15_08_02](15_08_02_layerwise_conditional_fine_added_accessibility_anchor_cn.md)。英文正式版本见 [Canonical Anchor](15_08_03_function_admitted_update_representation_rank_anchor.md)。
+父问题见 [A15_08](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。功能前置门见 [A15_08_02](15_08_02_layerwise_conditional_fine_added_accessibility_anchor_cn.md)。英文正式版本见 [Canonical Anchor](15_08_03_function_admitted_update_representation_rank_anchor.md)。
 
 ## 1. Problem Definition
 
@@ -150,10 +149,10 @@ H-DEPTH-SPEC 分别报告 `FUNCTION_ONLY`、`SPECTRAL_SHIFT_ONLY`、`BOTH` 或 `
 
 ## 7. Current Evidence
 
-1. 0813 组会因为旧分析丢失同 token 配对和方向间联合变化，形成“同 token 变化 → 中心化 covariance → PCA → token 聚类”的方法链；同时明确 PCA 只能证明几何压缩，不能单独证明新增任务信息。该边界见[合并会议记录](/daily_research_reports/0813/meeting_notes/0813_meeting_merged_clean_record_cn.md)。
+1. 0813 组会因为旧分析丢失同 token 配对和方向间联合变化，形成“同 token 变化 → 中心化 covariance → PCA → token 聚类”的方法链；同时明确 PCA 只能证明几何压缩，不能单独证明新增任务信息。该边界见[合并会议记录](/daily_research_reports/backup/2026/08/0813/meeting_notes/0813_meeting_merged_clean_record_cn.md)。
 2. [A15_02_05](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas/summary.md) 没有得到稳定 fine-specific 本地秩后移，但没有计算当前父类内 $R_U$ covariance 或冻结 PCA 的留出保留率。
 3. [A15_08_E04](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md) 的两个注册目标方向只保留一次局部 full gain 的 33.24%。它排除了直接假定 rank two，但属于另一目标的任务检索结果，不是表征秩测量。
-4. 既有 Attention-write 结果在 Mean Response 基中显示 basis-conditioned 后移，而 Rank Consensus 未复现，且相邻层变化非单调；它说明必须保留公共基敏感性对照，不能继承为当前 $R_U$ 结论。该边界见 [0813 会议知识更新](/daily_research_reports/0813/focus_meeting_common_basis_attention_write.md)。
+4. 既有 Attention-write 结果在 Mean Response 基中显示 basis-conditioned 后移，而 Rank Consensus 未复现，且相邻层变化非单调；它说明必须保留公共基敏感性对照，不能继承为当前 $R_U$ 结论。该边界见 [0813 会议知识更新](/daily_research_reports/backup/2026/08/0813/focus_meeting_common_basis_attention_write.md)。
 5. [A15_08_03_E01](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_03_E01_function_admitted_update_spectral_rank_analysis/summary.md) 已于 2026-08-16 按冻结 Protocol 完成。A15_08_02 给出的功能准入层为 $\mathcal L^+=\{24,28\}$。浅层 2--12 与深层 25--35 的功能中位差 $\Delta_T=-0.0046$，同时区间跨零；Mean Response 的 $\Delta_C=0.0285$ 为正，而 Rank Consensus 的 $\Delta_C=-0.0397$ 为负，因此联合结果为 `INSUFFICIENT_BASIS_SENSITIVE`。
 6. 没有一层通过 H-REP 的稳定表征低秩四项合取。block 24/28 的 $r_{80}$ 分别为 149/106，但 TRAIN 子空间在 CONFIRMATION 仅保留 42.1%/54.6% 方差。两层的功能保留均在最小注册秩 256 通过；这说明功能可压缩到 256 维，不等于更新云整体稳定低秩。
 7. 三切分完整 35×35 CKA 和聚类均已完成，但只作辅助几何。CKA 有放回 percentile 区间受到重复 token 抬高 Gram 相似度的校准警告，不用于认定层间断点；block 24/28 聚类 ARI 也未超过同秩 Haar q95。
@@ -166,6 +165,6 @@ H-DEPTH-SPEC 的 `BOTH` 最多说明：在当前模型、对象、任务、深�
 
 **唯一下一决策：**是否对 blocks 24、28 的 TRAIN-frozen rank-256 功能保留空间进行独立的冻结因果干预或 Router 效用检验。现有实验不能回答模型原生使用或分发收益，且不会自动授权该后续。
 
-**完成条件：已满足。**中英文 Anchor、Thinking Card 与 canonical Protocol 已同步；参数基、谱带、深度窗口、数据、null、秩、统计不确定性和 A15_08_02 张量复用合同均有收据与归档产物。
+**完成条件：已满足。**中英文 Anchor 与 canonical Protocol 已同步；参数基、谱带、深度窗口、数据、null、秩、统计不确定性和 A15_08_02 张量复用合同均有收据与归档产物。
 
 **恢复动作：**无需重跑本实验。后续引用时必须分开写：功能新增层为 24、28；公共谱后移为 basis-sensitive；稳定表征低秩未通过；功能仅能准确写为“最小注册通过秩 256”。

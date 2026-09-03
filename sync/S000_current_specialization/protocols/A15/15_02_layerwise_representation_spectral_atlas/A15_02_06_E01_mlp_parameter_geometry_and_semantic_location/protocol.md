@@ -10,7 +10,7 @@ approved: 2026-08-07
 
 ## 0. Approval Snapshot
 
-- Researcher authorization: the 2026-08-07 instruction confirms the new Anchor and Protocol, treats the review as complete, and authorizes implementation, smoke, multiple single-node eight-5090 full runs, monitoring, analysis, figures, canonical result records, a self-contained report, and `daily_research_reports/0807/focus.md`.
+- Researcher authorization: the 2026-08-07 instruction confirms the new Anchor and Protocol, treats the review as complete, and authorizes implementation, smoke, multiple single-node eight-5090 full runs, monitoring, analysis, figures, canonical result records, a self-contained report, and `daily_research_reports/backup/2026/08/0807/focus.md`.
 - A--G audit blocks: `CONFIRMED`; cross-block consistency: `PASS`.
 - Execution state: `COMPLETED_LOCATION_WITHOUT_COMMONALITY`; all approved smoke/P/S/R jobs succeeded with zero retries.
 - No new semantic-data construction is authorized or needed. Model training, Router construction, graph editing, root sync, commit, and push remain outside scope.

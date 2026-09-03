@@ -1,6 +1,5 @@
 # Rank Competition And Curriculum Controls
 
-Thinking Card source: [12_02_01_rank_and_curriculum_controls_thinking_card.md](12_02_01_rank_and_curriculum_controls_thinking_card.md)
 
 ## 1. Problem Definition
 

@@ -1,6 +1,5 @@
 # A16_01_01 效用蒸馏的条件增量路由
 
-Thinking Card 来源：[16_01_01_regret_distilled_conditional_innovation_thinking_card_cn.md](16_01_01_regret_distilled_conditional_innovation_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

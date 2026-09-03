@@ -1,6 +1,5 @@
 ﻿# Minimal Anchor Handwrite Draft
 
-Thinking Card source: [05_04_01_uniform_feature_specialization_after_position_removal_thinking_card.md](05_04_01_uniform_feature_specialization_after_position_removal_thinking_card.md)
 
 ## 1. Problem Definition
 

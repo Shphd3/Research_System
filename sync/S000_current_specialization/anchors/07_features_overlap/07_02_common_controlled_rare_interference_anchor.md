@@ -7,12 +7,10 @@ created: 2026-06-23
 retargeted: 2026-06-28
 canonical_language: en
 depends_on: A07_01_common_rare_conflict_metric_audit
-thinking_card_source: 07_02_common_controlled_rare_interference_thinking_card.md
 ---
 
 # A07_02 Nested Tail Common-Subspace Control Anchor
 
-Thinking Card source: [07_02_common_controlled_rare_interference_thinking_card.md](07_02_common_controlled_rare_interference_thinking_card.md)
 
 ## 1. Problem Definition
 

@@ -2,7 +2,6 @@
 anchor_id: 15_08_09_random_projection_router_preservation
 status: SUCCESSOR_COMPUTATION_COMPLETE_AWAITING_HUMAN_H1_AND_JUDGMENT
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor.md
-thinking_card: 15_08_09_random_projection_router_preservation_thinking_card_cn.md
 depends_on:
   - 15_08_06_semantic_conditioned_functional_subspace_anchor.md
 protocol: ../../../../experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E02_qwen30b_all_layer_gain_and_preservation/protocol.md

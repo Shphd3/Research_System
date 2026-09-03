@@ -378,7 +378,7 @@ alone.
 
 ## 13. Review Notes And Protocol Changes
 
-- 2026-06-29: protocol written from the 2026-06-26 draft Thinking Card.
+- 2026-06-29: protocol written from the 2026-06-26 research draft.
 - The user specifically requested the route-logit estimator scheme and a clear
   explanation of how results update the mechanism.
 - 2026-06-29: user approved the experiment and requested a local full run.

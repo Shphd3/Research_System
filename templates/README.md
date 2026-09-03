@@ -20,7 +20,6 @@ prompt, or README.
 
 | Template | Use |
 |---|---|
-| `research_process/thinking_card_template.md` | Optional human judgment card only when a new mechanism question is promoted. |
 | `research_process/daily_report_template.md` | Delayed self-contained experiment story written only after canonical evidence and the researcher's completed result account exist. |
 | `research_process/focus_writing_template.md` | Living two-day core-task card: one question, purpose, at most three plain-language methods, expected branches, and later the human-owned result. |
 | `research_process/research_loop_folder_template.md` | Standard daily research loop folder structure after a topic becomes an actual iteration. |

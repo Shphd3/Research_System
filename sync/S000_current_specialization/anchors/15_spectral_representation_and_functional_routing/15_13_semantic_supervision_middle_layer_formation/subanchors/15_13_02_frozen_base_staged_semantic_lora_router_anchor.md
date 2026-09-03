@@ -1,6 +1,5 @@
 # A15_13_02: Can Frozen Base-Model Semantics Seed a Staged Coarse-to-Fine LoRA Router?
 
-Thinking Card source: [15_13_02_frozen_base_staged_semantic_lora_router_thinking_card_cn.md](15_13_02_frozen_base_staged_semantic_lora_router_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

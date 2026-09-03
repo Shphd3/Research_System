@@ -5,7 +5,6 @@ status: complete_pass_conditional_modes_shared_envelope
 created: 2026-07-31
 canonical_language: en
 chinese_companion: 15_00_03_condition_local_residual_modes_anchor_cn.md
-thinking_card: 15_00_03_condition_local_residual_modes_thinking_card_cn.md
 ---
 
 # A15_00_03 Condition-Stratified Residual Modes

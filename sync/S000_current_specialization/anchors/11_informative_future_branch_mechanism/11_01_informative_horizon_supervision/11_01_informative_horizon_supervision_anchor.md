@@ -2,7 +2,6 @@
 
 Status: completed and supported in the controlled hidden-state setting.
 
-Thinking Card source: [11_01_informative_horizon_supervision_thinking_card.md](11_01_informative_horizon_supervision_thinking_card.md)
 
 ## 1. Problem Definition
 

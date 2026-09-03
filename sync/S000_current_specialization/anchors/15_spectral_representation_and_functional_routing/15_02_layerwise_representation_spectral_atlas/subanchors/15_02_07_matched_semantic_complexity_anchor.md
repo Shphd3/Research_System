@@ -3,14 +3,12 @@ anchor_id: 15_02_07_matched_semantic_complexity
 status: closed_insufficient_complex_specific_effect
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_07_matched_semantic_complexity_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-09
 ---
 
 # A15_02_07 Matched Semantic Complexity In The Layerwise MLP Parameter Spectrum
 
-Thinking Card: [researcher-owned Chinese card](15_02_07_matched_semantic_complexity_thinking_card_cn.md). Chinese companion: [anchor](15_02_07_matched_semantic_complexity_anchor_cn.md).
 
 ## 1. Problem Definition
 

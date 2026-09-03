@@ -1,6 +1,5 @@
 # A16_00 Switch 负载均衡梯度冲突
 
-Thinking Card 来源：[16_00_switch_lb_gradient_conflict_thinking_card_cn.md](16_00_switch_lb_gradient_conflict_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

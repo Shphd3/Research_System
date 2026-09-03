@@ -1,6 +1,5 @@
 # A15_11: Counterfactual-Utility-Separable Residual Expert Growth
 
-Thinking Card source: [15_11_gradient_consistent_hierarchical_routing_thinking_card_cn.md](15_11_gradient_consistent_hierarchical_routing_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

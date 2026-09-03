@@ -2,7 +2,6 @@
 
 Status: completed and conditionally supported in controlled Transformer settings.
 
-Thinking Card source: [11_02_hidden_to_parameter_transmission_thinking_card.md](11_02_hidden_to_parameter_transmission_thinking_card.md)
 
 ## 1. Problem Definition
 

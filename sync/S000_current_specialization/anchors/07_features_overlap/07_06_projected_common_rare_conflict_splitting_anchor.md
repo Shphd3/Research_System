@@ -16,7 +16,6 @@ source_notes:
 
 # A07_06 Projected Common / Rare Conflict Splitting Anchor
 
-Thinking Card source: [07_06_projected_common_rare_conflict_splitting_thinking_card.md](07_06_projected_common_rare_conflict_splitting_thinking_card.md)
 
 ## 1. Problem Definition
 

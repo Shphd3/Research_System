@@ -1,6 +1,5 @@
 # A15_13: Can Frozen Final-Layer Semantics Organize an Effective Middle Representation Through a Growing Expert Tree?
 
-Thinking Card source: [15_13_semantic_supervision_middle_layer_formation_thinking_card_cn.md](15_13_semantic_supervision_middle_layer_formation_thinking_card_cn.md)
 
 ## 1. Problem Definition
 
@@ -68,10 +67,10 @@ Pass requires both seed effects above zero, a positive pooled one-sided 95% pair
 
 The meeting record establishes the motivating algorithm: split a manageable representation, freeze or preserve the explained coarse path, then recompute a local split inside each expert's conditional distribution; it also asks for a simple, fully interpretable first case. The later technical alignment proposes using frozen final-layer labels to supervise newly added earlier experts and directly comparing true with model-generated labels.
 
-Historical E02-R showed that the repaired tiny-model task can be learned, but its per-expert semantic classification heads did not produce a replicated Oracle gain and its discovered labels were unstable or chance-aligned. Historical E03 on Qwen3-0.6B and CLINC150 found a near tie between learned hierarchy and flat routing. These results leave the broad prior unresolved and identify objective-to-architecture coupling as the live operational uncertainty. E04 removes per-expert label heads and isolates Router-only supervision; it is approved but not yet run.
+Historical E02-R showed that the repaired tiny-model task can be learned, but its per-expert semantic classification heads did not produce a replicated Oracle gain and its discovered labels were unstable or chance-aligned. E03--E06 moved the question to frozen Qwen3-0.6B and established a bounded hard gold-route value in CLINC150. E07--E09 then showed on M2D2 that learned semantic routing improves semantic agreement without matched negative-log-likelihood gain, while a final-layer pseudo-label hierarchy beats newly trained simple baselines but remains behind staged task-only routing. E10 attributes part of the gap to path choice and probability scaling; E12 audits coarse-removal, coarse-expert freezing, load-bias, and loss oscillation; E13 extends the implementation to an eight-task answer-only continuation mixture. These completed records motivate, but do not answer, E14.
 
 ## 8. Claim Boundary And Next Decision
 
-The strongest allowed positive claim is that, in this controlled frozen-teacher language task, correct or admissible third-layer labels improve the true coarse--fine geometry of a newly added effective second-layer representation through a named dynamic Router--expert tree, without registered language degradation. It cannot establish that original Block 2 parameters changed, the removed direction is all coarse information, clustering discovers open-domain semantics, routing choices cause expert utility, experts specialize functionally, or the result transfers to larger natural-language models.
+The strongest allowed positive claim remains local to a frozen Qwen3-0.6B with one block-14 LoRA routing intervention. Existing evidence supports a small correct semantic-path value and semantic interpretability, but not a learned Router task gain, open-domain semantic discovery, uncontaminated benchmark generalization, optimal expert placement, or full-model benefit.
 
-Exactly one next decision follows E04: decide whether the Oracle-supervised hierarchy reproducibly beats the identical next-token-only hierarchy. Completion requires both paired seeds, all registered conditions and ablations, fixed-final checkpoints, retained representation artifacts, the primary figure, and a bounded Pass, Fail, or Insufficient result. Only a Pass opens interpretation of coarse removal and pseudo-label supervision.
+Exactly one next decision is active: finish E14's two-seed unified comparison of diagonal-GMM learned paths, unit-coefficient hard pseudo paths, gold Oracle paths, frequency-matched random labels, task-only controls, and load-bias switches. Accept only the registered A, B, or C verdict after checkpoint freezing and common evaluation; no intermediate result may prune or retune a condition.

@@ -1,6 +1,5 @@
 # A06_01_07 Static Expert-Geometry Side Theory
 
-Thinking Card source: [06_01_geometry_and_state_discovery_thinking_card.md](../06_01_geometry_and_state_discovery_thinking_card.md)
 Status: completed secondary-theory subanchor.
 
 **Parent:** [`A06_01`](../06_01_geometry_and_state_discovery_anchor.md).

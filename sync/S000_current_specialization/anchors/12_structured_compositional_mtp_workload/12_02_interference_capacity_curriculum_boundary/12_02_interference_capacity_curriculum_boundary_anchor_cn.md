@@ -2,7 +2,6 @@
 
 状态：受控机制边界已完成；神经模型与尺度迁移尚未验证。
 
-Thinking Card source: [12_02_interference_capacity_curriculum_boundary_thinking_card_cn.md](12_02_interference_capacity_curriculum_boundary_thinking_card_cn.md)
 
 ## 1. 问题定义
 

@@ -26,6 +26,7 @@ sync/S000_current_specialization/README.md
 sync/S000_current_specialization/anchor_index.md
 sync/S000_current_specialization/stories/README.md
 sync/S000_current_specialization/protocol_index.md
+sync/S000_current_specialization/result_index.md
 sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
 sync/S000_current_specialization/research_lines/05_failure_mechanism_line_cn.md
 sync/S000_current_specialization/research_lines/06_proxy_preservation_line_cn.md
@@ -43,13 +44,15 @@ Projects/from-attention-to-search/main/roadmap.md
 Projects/graphs/
 ```
 
-Root sync compresses the current logic and links to those files. It should not
-paste complete result ledgers or raw figures.
+Root sync compresses the current logic and links to those files. A user-requested
+curated result package may include canonical Summary/Detailed records and their
+decision-bearing figures, but never raw runs, checkpoints, receipts, or
+unfiltered logs.
 
 The explicitly published `anchors/`, `stories/`, and `protocols/` trees are
-small Markdown mirrors for external reading. They exclude experiment outputs,
-logs, checkpoints, scripts, and figures; links to those assets return to the
-project-local source.
+small Markdown mirrors for external reading. The optional `results/` tree is a
+curated copy of explicitly requested result records and figures. All generated
+mirrors remain secondary to the project-local source.
 
 ## Update Rule
 
@@ -68,7 +71,7 @@ or web-side source links. When updating root sync:
 5. Verify linked source files exist before committing.
 
 Root sync remains a compact reading surface. It must not mirror raw outputs,
-full anchors, checkpoints, logs, or unrelated project material.
+checkpoints, receipts, unfiltered logs, or unrelated project material.
 
 ## External Sync Is Different
 

@@ -4,18 +4,17 @@ legacy_anchor_id: 15_01_11_shared_tail_semantic_relocation
 status: completed_fail_local_random_or_nontail_relocation
 canonical_language: en
 companion_language: zh
-thinking_card: 15_04_tail_band_information_thinking_card_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
 updated: 2026-08-09
 ---
 
 # A15_04 Does The Common Local-Rank Shift Enter A Cross-Layer Shared Broad Parameter Tail?
 
-Researcher judgment: [Chinese Thinking Card](15_04_tail_band_information_thinking_card_cn.md). Chinese companion: [anchor](15_04_tail_band_information_anchor_cn.md).
+Chinese companion: [anchor](15_04_tail_band_information_anchor_cn.md).
 
 ## 1. Problem Definition
 
-The [2026-08-07 meeting note](/daily_research_reports/0807/meeting_notes/notes.md) began from a method question: if every layer uses a low-rank Gate, which directions should it use? The discussion mixed three claims that A15 now treats separately:
+The [2026-08-07 meeting note](/daily_research_reports/backup/2026/08/0807/meeting_notes/notes.md) began from a method question: if every layer uses a low-rank Gate, which directions should it use? The discussion mixed three claims that A15 now treats separately:
 
 | Original claim | Operational object | Current position |
 | --- | --- | --- |

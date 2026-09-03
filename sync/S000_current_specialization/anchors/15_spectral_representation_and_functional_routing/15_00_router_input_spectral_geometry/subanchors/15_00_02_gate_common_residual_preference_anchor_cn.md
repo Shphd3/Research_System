@@ -4,14 +4,11 @@ parent_anchor: 15_00_router_input_spectral_geometry
 status: completed_pass_pooled_alignment_with_native_use
 canonical_language: en
 companion_language: zh
-thinking_card: 15_00_02_gate_common_residual_preference_thinking_card_cn.md
 updated: 2026-07-31
 ---
 
 # A15_00_02 Gate 对 pooled common 与局部 residual 的偏好
 
-Thinking Card 来源：
-[研究者中文判断](15_00_02_gate_common_residual_preference_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

@@ -13,7 +13,6 @@ figures/         # only decision-relevant figures
 Optional:
 
 ```text
-<topic>_thinking_card.md  # only for a new human mechanism judgment
 tables/                   # curated tables referenced by results
 archive/                  # superseded evidence kept for traceability
 ```

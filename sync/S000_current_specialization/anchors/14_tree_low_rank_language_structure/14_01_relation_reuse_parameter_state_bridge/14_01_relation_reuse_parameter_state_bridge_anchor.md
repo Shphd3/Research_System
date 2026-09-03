@@ -1,7 +1,5 @@
 # A14_01 — Does Relation Reuse Convert QK Functional Compression into Task-Sufficient State Compression?
 
-Thinking Card source:
-[14_01_relation_reuse_parameter_state_bridge_thinking_card_cn.md](14_01_relation_reuse_parameter_state_bridge_thinking_card_cn.md)
 
 Line foundation: [A14_00 conditional low-rank hierarchy](../14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md).
 

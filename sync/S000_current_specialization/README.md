@@ -4,25 +4,24 @@ This is the compact cross-project reading surface for the current
 feature-specialization project. Project-local anchors and experiment records
 remain the source of truth.
 
-## Anchor Mirror Refresh
+## Current Publication
 
-The anchor mirror was refreshed on 2026-08-31 from
-`Projects/from-attention-to-search/main/problem_anchors/`. The validated
-publication contains 327 Markdown files and rewrites 435 links that leave the
-anchor tree. The claimed `A15_13` problem folder is temporarily excluded
-because two source Thinking Cards contain broken relative links to their 0828
-meeting record; fixing those source files requires an explicit conversation
-handoff. No research judgment was rewritten during this publication.
+The reading surface was refreshed on 2026-09-03 from the project-local source.
+It contains 199 active Anchor Markdown files, 31 current Story files, 361
+Protocol files, and a curated A15_13 result package with 36 result/design
+documents and 41 figures. Historical `archive/` folders and the retired
+judgment-card structure are excluded from the active publication.
 
 ## Current State
 
-The synchronized surface now exposes three independent current decisions:
+The synchronized surface exposes the current independent decisions, including:
 
 ```text
 A06: decide whether to test training-time selective sharing after the frozen
      CrossCodeEval headroom clause failed.
-A15: decide whether layerwise long-range innovation should be adjudicated by
-     direct absolute G_{ell,2F}, not by a positive interaction alone.
+A15: finish the registered two-seed diagonal-Gaussian-mixture pseudo-label,
+     hard-path, Oracle, random-label, and load-bias comparison before deciding
+     whether semantic routing closes any task or expert-function gap.
 A16: run the approved two-seed frozen expert-choice-regret gate before any
      conditional-innovation 30B continuation.
 ```
@@ -84,18 +83,13 @@ state-to-parameter rank claim remain unverified.
 
 ## Independent A15 Route
 
-A15 is now organized by decision ownership rather than experiment chronology:
-Router-input geometry, learning and feedback dynamics, layerwise representation
-atlases, functional coordinate admission, online routing, and target-
-conditioned layer innovation. A15_03 is archived and A15_07 remains parked
-unrun. The public-coordinate sequence establishes only basis-conditioned
-description: Mean Response orders coarse--medium--fine on average, while a
-second parameter basis disagrees on depth shift, same-layer shapes overlap,
-and adjacent-layer variance redistribution is non-monotonic. A15_08 E04 keeps
-one local added-accessibility fact, but two directions retain only 33.24% of
-the full gain. A15_08_01 E02 has a positive depth interaction and negative
-absolute remote two-hop gain, so the next decision is whether to test direct
-absolute $G_{\ell,2F}$.
+A15 keeps geometry, semantic dispatch, expert utility, and task quality as
+separate claims. For semantic supervision, E07--E13 establish a small gold
+semantic-path value, learned semantic dispatch without matched M2D2 loss gain,
+and path, freezing, load, and answer-only diagnostics. E14 is approved but has
+no result yet; it is the only current pseudo-label versus Oracle-gap decision.
+Read the [A15_13 result index](result_index.md) for the complete design and
+evidence path.
 
 ## Independent A16 Route
 
@@ -128,9 +122,9 @@ transfer to real agents.
 ## Copy Boundary
 
 The `anchors/` tree is a generated mirror of
-`Projects/from-attention-to-search/main/problem_anchors/`. The 2026-08-31
-publication includes every source folder that passes link validation except
-the temporarily blocked `A15_13` folder documented above.
+`Projects/from-attention-to-search/main/problem_anchors/`. The 2026-09-03
+publication includes every active source folder that passes link validation
+and excludes historical `archive/` folders.
 Links inside the anchor tree remain relative. Links that leave
 `problem_anchors/` are rewritten to repository-root absolute paths so they are
 directly usable from the published mirror.
@@ -138,8 +132,8 @@ directly usable from the published mirror.
 Generate or verify the mirror with:
 
 ```text
-python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py
-python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --check
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --exclude-dir archive
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --exclude-dir archive --check
 ```
 
 Do not hand-edit `anchors/`; update the project-local source and republish.
@@ -155,8 +149,10 @@ Generate or verify the additional mirrors with:
 ```text
 python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/stories --target sync/S000_current_specialization/stories --exclude-dir archive
 python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments --target sync/S000_current_specialization/protocols --include-name protocol.md --include-name protocol_cn.md --include-name protocol_for_approval.md --include-name protocol_draft_cn.md
+python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py --source Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation --target sync/S000_current_specialization/results/A15_13_semantic_supervision_middle_layer_formation --exclude-dir evidence --exclude-dir receipts
 ```
 
-The anchor mirror was refreshed on 2026-08-31. The surrounding narrative,
-story, and protocol summaries were not republished in this bounded task.
-Project-local anchors, stories, and experiment records remain authoritative.
+The curated `results/A15_13_semantic_supervision_middle_layer_formation/` tree
+copies protocols, summaries, detailed ledgers, tables, and figures while
+excluding receipts and raw evidence directories. Project-local records remain
+authoritative.

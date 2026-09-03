@@ -2,7 +2,6 @@
 
 状态：工作负载建模成立；当前从零训练的小型 Transformer 未通过能力门槛，该调参分支关闭。
 
-Thinking Card source: [12_01_compositional_workload_capability_gate_thinking_card_cn.md](12_01_compositional_workload_capability_gate_thinking_card_cn.md)
 
 ## 1. 问题定义
 

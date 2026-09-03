@@ -1,6 +1,5 @@
 # A15_09_01: Native-Router Domain Consensus And Variance Atlas
 
-Thinking Card source: [15_09_01_native_g_domain_consensus_variance_atlas_thinking_card_cn.md](15_09_01_native_g_domain_consensus_variance_atlas_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

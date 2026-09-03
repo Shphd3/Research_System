@@ -1,6 +1,5 @@
 ﻿# 05_04_03 Real-Text Common-Logit Initialization Anchor
 
-Thinking Card source: [05_04_03_real_text_common_logit_initialization_thinking_card.md](05_04_03_real_text_common_logit_initialization_thinking_card.md)
 
 ## 1. Problem Definition
 

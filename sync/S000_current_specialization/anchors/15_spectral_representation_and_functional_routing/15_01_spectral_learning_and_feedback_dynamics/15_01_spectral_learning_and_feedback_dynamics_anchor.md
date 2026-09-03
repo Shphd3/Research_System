@@ -5,14 +5,11 @@ parent_line: 15_spectral_representation_and_functional_routing
 status: controlled_pass_real_insufficient_load_guard
 canonical_language: en
 companion_language: zh
-thinking_card: 15_01_spectral_learning_and_feedback_dynamics_thinking_card_cn.md
 updated: 2026-07-30
 ---
 
 # A15_01 Spectral Learning And Feedback Dynamics
 
-Thinking Card source:
-[15_01_spectral_learning_and_feedback_dynamics_thinking_card_cn.md](15_01_spectral_learning_and_feedback_dynamics_thinking_card_cn.md).
 
 ## 1. Problem Definition
 

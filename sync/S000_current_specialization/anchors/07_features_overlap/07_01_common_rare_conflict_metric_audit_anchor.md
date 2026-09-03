@@ -6,13 +6,11 @@ status: supported_controlled_nested_reproduction
 created: 2026-06-23
 retargeted: 2026-06-28
 canonical_language: en
-thinking_card_source: 07_01_common_rare_conflict_metric_audit_thinking_card.md
 depends_on: A07_nested_singular_interference_mainline
 ---
 
 # A07_01 Nested Common Backbone Reproduction Anchor
 
-Thinking Card source: [07_01_common_rare_conflict_metric_audit_thinking_card.md](07_01_common_rare_conflict_metric_audit_thinking_card.md)
 
 ## 1. Problem Definition
 

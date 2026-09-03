@@ -3,13 +3,11 @@ anchor_id: 15_06_02_router_expert_specialization
 parent_anchor: 15_06_online_spectral_routing_and_relay
 status: completed_mixed_not_supportive
 canonical_language: en
-thinking_card: 15_06_02_router_expert_specialization_thinking_card.md
 updated: 2026-08-10
 ---
 
 # A15_06_02 Router--Expert 专业化与利用
 
-Thinking Card 来源：[15_06_02_router_expert_specialization_thinking_card.md](15_06_02_router_expert_specialization_thinking_card.md)
 
 ## 1. Problem Definition
 

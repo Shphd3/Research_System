@@ -5,7 +5,6 @@
 **Approval status:** Approved by the researcher for remote four-GPU execution.  
 **Purpose:** Determine whether informative MTP forms branch information in the exact layer-2 `U03` source K/V and whether that information is more linearly decodable than under matched shared-aux training.  
 **Primary anchor:** [11_03_02 standard-head causal use](/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor.md).  
-**Thinking Card:** [exact source-K/V information formation](/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_03_exact_source_kv_information_thinking_card_cn.md).  
 **Anchor decision relation:** Complete the missing source-information guard for the prior negative K/V patch result and locate the failure before or after exact K/V formation.  
 **Physical prior tested:** If the informative future target specifically strengthens branch representation in exact source K/V, a fixed-complexity held-out linear decoder should obtain lower branch cross-entropy under informative MTP than under shared aux.  
 **Core model term:**

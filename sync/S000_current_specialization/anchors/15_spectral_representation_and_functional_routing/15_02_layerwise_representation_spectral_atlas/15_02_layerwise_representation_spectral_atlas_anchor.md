@@ -4,14 +4,12 @@ legacy_anchor_id: 15_01_05_coarse_fine_semantic_variance_atlas
 status: completed_depth_readability_no_universal_fine_rank_coordinate
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_layerwise_representation_spectral_atlas_thinking_card.md
 parent_line: 15_spectral_representation_and_functional_routing
 updated: 2026-08-09
 ---
 
 # A15_02 Layerwise Representation Spectral Atlas
 
-Thinking Card: [researcher-approved version](15_02_layerwise_representation_spectral_atlas_thinking_card.md). Chinese companion: [anchor_cn](15_02_layerwise_representation_spectral_atlas_anchor_cn.md).
 
 ## 1. Problem Definition
 

@@ -3,14 +3,12 @@ anchor_id: 15_02_04_compositional_attention_write_atlas
 status: insufficient_capability
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_04_compositional_attention_write_atlas_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-08-07
 ---
 
 # A15_02_04 隔离 attention write 中组合语义的谱秩重分配
 
-Thinking Card 来源：[研究者确认的中文卡](15_02_04_compositional_attention_write_atlas_thinking_card_cn.md)。英文 canonical：[anchor](15_02_04_compositional_attention_write_atlas_anchor.md)。
 
 ## 1. Problem Definition
 

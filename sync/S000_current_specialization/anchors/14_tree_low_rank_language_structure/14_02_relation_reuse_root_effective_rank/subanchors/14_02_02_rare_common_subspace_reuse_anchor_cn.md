@@ -4,13 +4,11 @@ status: parked_common_space_gate_failed
 canonical_language: en
 canonical_file: 14_02_02_rare_common_subspace_reuse_anchor.md
 parent_anchor: 14_02_relation_reuse_root_effective_rank
-thinking_card: 14_02_02_rare_common_subspace_reuse_thinking_card_cn.md
 experiment_id: A14_02_E03_rare_common_subspace_reuse
 ---
 
 # A14_02_02 Rare–common 子空间复用
 
-Thinking Card：[研究者批准版本](14_02_02_rare_common_subspace_reuse_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

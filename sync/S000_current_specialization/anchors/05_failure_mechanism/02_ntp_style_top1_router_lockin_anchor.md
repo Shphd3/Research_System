@@ -6,7 +6,6 @@ source_sandbox: daily_research_reports/backup/2026/05/0531/exp_2x2_understanding
 
 # 2x2 Top-1 Router Lock-In Anchor
 
-Thinking Card source: [02_ntp_style_top1_router_lockin_thinking_card.md](02_ntp_style_top1_router_lockin_thinking_card.md)
 
 ## Problem
 

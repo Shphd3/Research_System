@@ -3,7 +3,6 @@ anchor_id: 15_02_01_controlled_layer_information_identity
 status: completed_pass
 canonical_language: en
 companion_language: zh
-thinking_card: 15_02_01_controlled_layer_information_identity_thinking_card_cn.md
 parent_anchor: 15_02_layerwise_representation_spectral_atlas
 updated: 2026-07-31
 ---

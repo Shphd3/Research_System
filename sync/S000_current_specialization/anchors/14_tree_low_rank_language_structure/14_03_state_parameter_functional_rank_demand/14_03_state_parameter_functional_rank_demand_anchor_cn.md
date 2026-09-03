@@ -4,7 +4,6 @@ line: 14_tree_low_rank_language_structure
 status: candidate_for_human_review
 canonical_language: en
 canonical: 14_03_state_parameter_functional_rank_demand_anchor.md
-thinking_card: 14_03_state_parameter_functional_rank_demand_thinking_card_cn.md
 depends_on: 14_02_relation_reuse_root_effective_rank
 protocol_status: not_created
 ---

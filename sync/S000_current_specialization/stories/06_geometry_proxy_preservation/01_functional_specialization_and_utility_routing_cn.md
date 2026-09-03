@@ -385,7 +385,6 @@ A11 多词元预测线保持独立。只有两条线各自通过工作负载门�
 - 已完成真实代码子 anchor：`../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/subanchors/06_04_01_context_conditioned_expert_utility_anchor.md`
 - 真实代码结果：`../../experiments/A06/06_04_real_workload_utility_headroom/A06_04_01_E01_context_conditioned_expert_utility/summary.md`
 - 外部源证据片段：`anchor_threads/06_04/story_fragment.md`
-- 当前中文 Thinking Card：`../../problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_thinking_card_cn.md`
 - 功能形成：`../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E01_trainable_expert_utility/summary.md`
 - 错误排名失败：`../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E01_wrong_rank_correction/summary.md`
 - 单挑战者发现：`../../experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger/summary.md`

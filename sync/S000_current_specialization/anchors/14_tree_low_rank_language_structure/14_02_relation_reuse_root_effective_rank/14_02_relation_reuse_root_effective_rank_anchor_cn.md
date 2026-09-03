@@ -5,13 +5,11 @@ canonical_language: en
 companion_language: zh
 line: 14_tree_low_rank_language_structure
 depends_on: 14_01_relation_reuse_parameter_state_bridge
-thinking_card: 14_02_relation_reuse_root_effective_rank_thinking_card_cn.md
 protocol_status: e02_completed_e03_parked_at_gate
 ---
 
 # A14_02 共享组合规则与任务根状态功能秩
 
-Thinking Card source: [14_02_relation_reuse_root_effective_rank_thinking_card_cn.md](14_02_relation_reuse_root_effective_rank_thinking_card_cn.md)
 
 研究线基础：[A14_00 条件低秩层次结构](../14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md)。
 

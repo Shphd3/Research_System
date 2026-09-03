@@ -1,6 +1,5 @@
 # A16_01 Incremental-Information Routing Under Differentiable Load Balance
 
-Thinking Card source: [16_01_incremental_information_lb_routing_thinking_card.md](16_01_incremental_information_lb_routing_thinking_card.md)
 
 ## 1. Problem Definition
 
@@ -63,7 +62,7 @@ where $\overline p$ is the mean softmax probability and $f$ is the stop-gradient
 
 Use the verified four-layer, hidden-size-768, eight-sparse-expert plus one-shared-expert, top-1 DCLM MoE. Native-LB and Trainable-Innovation-LB start from common step-0 states in seeds 17 and 29 and train to 30B tokens. The engineering rank is fixed at 56, the maximum rank supported by the registered eight-parent/eight-child conditional-fine construction; the trainable factor is an engineering object and is not called a semantic direction.
 
-At Native checkpoints 2B, 5B, and 10B, apply the frozen [incremental-information method](/daily_research_reports/0810/docs/layerwise_incremental_information_routing/README.md). E1 must show that a TRAIN/DEVELOPMENT-built rank-56 direction adds held-out conditional-fine readability beyond the old state and exceeds same-rank Haar and within-parent label permutation. E2 then freezes the model, experts, and direction and requires lower held-out expert-choice regret than old-only and same-rank Haar. The first milestone where both seeds pass at least one common layer is $t^*$; rank is fixed before confirmation and cannot be selected from endpoint results.
+At Native checkpoints 2B, 5B, and 10B, apply the frozen [incremental-information method](/daily_research_reports/backup/2026/08/0810/docs/layerwise_incremental_information_routing/README.md). E1 must show that a TRAIN/DEVELOPMENT-built rank-56 direction adds held-out conditional-fine readability beyond the old state and exceeds same-rank Haar and within-parent label permutation. E2 then freezes the model, experts, and direction and requires lower held-out expert-choice regret than old-only and same-rank Haar. The first milestone where both seeds pass at least one common layer is $t^*$; rank is fixed before confirmation and cannot be selected from endpoint results.
 
 All eight jobs start from paired step-0 states. Certified and Haar contain dormant zero-output branches and must remain tensor-identical to Native on model parameters, optimizer state, data cursor, and Router behavior before activation. At $t^*$, the paired dormant jobs load the frozen Certified/Haar frames without changing existing model or optimizer state, activate zero-output heads, and continue to the same 30B total-token endpoint. If no $t^*$ exists by 10B, both remain dormant to 30B and the scientific comparison is insufficient. Online inference uses only the current sample's $u_\ell$; matched double differences are offline direction-learning data, never Router input.
 

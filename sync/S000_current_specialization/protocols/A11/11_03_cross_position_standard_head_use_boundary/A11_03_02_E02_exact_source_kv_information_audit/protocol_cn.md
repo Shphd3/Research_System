@@ -5,7 +5,6 @@
 **批准状态：** 研究者已批准远程四卡 GPU 执行。  
 **目的：** 判断 informative-MTP 的精确第二层 `U03` 源 K/V 是否形成可跨 nuisance 泛化的 branch 信息，以及该信息是否强于 matched shared-aux。  
 **主要 Anchor：** [11_03_02 标准主头因果使用](/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor_cn.md)。  
-**Thinking Card：** [精确源 K/V 信息形成](/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_03_exact_source_kv_information_thinking_card_cn.md)。  
 **Anchor 决策关系：** 为既有 K/V 因果补丁负结果补齐源信息形成守卫，定位失败发生在精确 K/V 形成之前还是之后。  
 **检验的物理先验：** 若信息性未来目标特异增强精确源 K/V 的 branch 表征，则固定复杂度的 held-out 线性读出在 informative-MTP 上应比 shared-aux 获得更低的 branch 预测交叉熵。  
 **核心模型项：**

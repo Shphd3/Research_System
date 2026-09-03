@@ -2,7 +2,6 @@
 
 Status: completed parent mechanism anchor.
 
-Thinking Card source: [06_02_partition_preservation_dynamics_thinking_card.md](06_02_partition_preservation_dynamics_thinking_card.md)
 
 ## 1. Complete Problem
 

@@ -1,6 +1,5 @@
 # A16_00 Switch Load-Balance Gradient Conflict
 
-Thinking Card source: [16_00_switch_lb_gradient_conflict_thinking_card.md](16_00_switch_lb_gradient_conflict_thinking_card.md)
 
 ## 1. Problem Definition
 

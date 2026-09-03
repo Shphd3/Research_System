@@ -1,6 +1,5 @@
 ﻿# 05_03 Uniform Collapse Common-Offset Anchor
 
-Thinking Card source: [05_03_uniform_collapse_common_offset_thinking_card.md](05_03_uniform_collapse_common_offset_thinking_card.md)
 
 ## 1. Problem Definition
 

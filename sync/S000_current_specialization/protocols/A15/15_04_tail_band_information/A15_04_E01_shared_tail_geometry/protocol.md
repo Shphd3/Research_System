@@ -3,7 +3,7 @@ experiment_id: A15_04_E01_shared_tail_geometry
 legacy_experiment_id: A15_01_11_E01_shared_tail_geometry
 anchor_id: 15_04_tail_band_information
 legacy_anchor_id: 15_01_11_shared_tail_semantic_relocation
-status: DRAFT_NOT_EXECUTABLE
+status: APPROVED_FOR_IMPLEMENTATION_SMOKE_AND_FULL_RUN
 canonical_language: en
 companion_language: zh
 created: 2026-08-09
@@ -16,22 +16,24 @@ Chinese review companion: [protocol_cn.md](protocol_cn.md). Primary source: [A15
 
 ## 0. Approval Snapshot
 
-- **Document state:** `DRAFT_NOT_EXECUTABLE`.
+- **Document state:** `APPROVED_FOR_IMPLEMENTATION_SMOKE_AND_FULL_RUN`.
+- **Registered revision:** `A15_04_E01_r1`, frozen at `2026-08-09T14:05:43Z` before implementation or result access.
 - **Researcher-confirmed spectral partition:** 16 consecutive equal-rank bands of 256 directions; F1=head, F2--F8=middle, F9--F16=tail. Every band and the three broad regions must be reported.
 - **Researcher-confirmed scope:** one geometry-only test on the frozen A15_02_06 set. No activation deletion, task loss, downstream benchmark, Router, or functional claim.
-- **Decision question:** does conditional-fine variance in the actual attention-induced MLP-input increment become more enriched from early to late layers in the cross-layer shared broad F9--F16 tail than in dimension-matched random geometry, F1 head, and F2--F8 middle?
-- **Treatment:** the actual cross-layer shared broad tail constructed only from the opposite layer group.
+- **Researcher-confirmed primary semantic object:** conditional-fine covariance is the only primary semantic object; coarse or complex-minus-simple statistics cannot enter or rescue the verdict.
+- **Decision question:** does conditional-fine variance in the actual attention-induced MLP-input increment become more enriched from early to late layers in the global cross-layer shared broad F9--F16 tail than in dimension-matched random geometry, F1 head, and F2--F8 middle?
+- **Treatment:** the global cross-layer shared broad tail constructed only from the opposite odd/even layer group.
 - **Controls:** matched random 16-band partitions, shared broad head and middle, every shared F1--F16 band, and each layer's local spectrum.
+- **Mandatory stage diagnostics:** early-internal, late-internal, early-built-on-late, and late-built-on-early shared geometry for every band and H/M/T. These diagnose global stability, late formation, or stage redirection and never replace the global primary verdict.
 - **Held fixed:** frozen Qwen3-8B, 512 records, $\Delta n$, conditional-fine covariance, layers 1--35 for decisions, block 36 as descriptive, and sealed expression halves.
-- **Primary proposed statistic:** $D_T=T_T-\max(T_H,T_M)$, where each $T_G$ is a late-minus-early change in capture divided by that region's random expected dimension fraction.
+- **Primary statistic:** $D_T=T_T-\max(T_H,T_M)$, where each $T_G$ is the global late-minus-early change in capture divided by that region's random expected dimension fraction.
 - **Pass:** the original local right shift remains; broad-tail enrichment is positive, exceeds its matched random interval, and exceeds head/middle with a positive 95% lower bound; layer groups and expression halves do not reverse sign.
 - **Fail:** the local shift remains but broad tail is explained by dimension-matched random, is not greater than head/middle, or only local ranks relocate.
 - **Insufficient:** raw-$\Delta n$ replay, local phenomenon, shared-tail estimate, or grouped reliability is unstable.
-- **Critical provenance repair:** old artifacts retain $\Delta n$ only in a layer-local eigencoordinate. One deterministic replay of the unchanged 512 records is proposed to materialize raw 4096-dimensional $\Delta n$ before any cross-layer projection.
-- **Block state:** A `CONFIRMED`; B--F `PROPOSED`; G `BLOCKED_PENDING_EXPLICIT_EXECUTION_APPROVAL`.
-- **Cross-block audit:** `AI_AUDIT_PASS_PENDING_RESEARCHER_CONFIRMATION`.
-- **Execution scope approved:** none.
-- **Review still needed:** odd/even layer separation, 512 random partitions and 2,000 grouped bootstraps, and the strict conjunctive verdict rule.
+- **Critical provenance repair:** old artifacts retain $\Delta n$ only in a layer-local eigencoordinate. One deterministic replay of the unchanged 512 records is approved to materialize raw 4096-dimensional $\Delta n$ before any cross-layer projection.
+- **Block state:** A--G `CONFIRMED` by the researcher's 2026-08-09 instruction to use conditional-fine only, require all four shared-geometry scopes, preserve the global verdict, and complete the experiment directly.
+- **Cross-block audit:** `PASS`.
+- **Execution scope approved:** implementation, deterministic replay, engineering smoke, one full registered analysis, curated result records, Anchor result update, and today's focus update. Publication, sync, commit, and push remain unauthorized.
 
 ## 1. Terminology And Concrete Objects
 
@@ -48,6 +50,9 @@ Chinese review companion: [protocol_cn.md](protocol_cn.md). Primary source: [A15
 | dimension-normalized enrichment $e$ | capture relative to what a random space of the same dimension captures on average | $e=c/(r/4096)$; random expectation 1 | population significance |
 | random spectral partition | one random orthogonal basis split into 16 bands, then aggregated with the same H/M/T rule | same random partition applied to every layer in one draw | a random neural mechanism |
 | mutually exclusive layer groups | one group constructs spaces and the other is measured, then roles reverse | odd versus even blocks among 1--35 | independent model replications |
+| global shared geometry | one cross-layer orientation fitted across blocks 1--35 without using the evaluated layer | opposite odd/even group | stage-specific formation history |
+| early / late internal geometry | consistency estimated separately inside blocks 1--12 or 25--35 | opposite odd/even group inside the same stage | a globally reusable orientation |
+| bidirectional stage transfer | an early-built space measured only on late covariance and a late-built space measured only on early covariance | $E\rightarrow L$ and $L\rightarrow E$ | function or causal transmission |
 
 “Middle” means parameter bands F2--F8. “Middle depth” means blocks 13--24 and is not a parameter band.
 
@@ -55,7 +60,7 @@ Chinese review companion: [protocol_cn.md](protocol_cn.md). Primary source: [A15
 
 - **Anchor uncertainty:** whether target-common local rank relocation aligns with a genuinely cross-layer shared broad low-gain geometry.
 - **Representation:** raw actual $\Delta n$, not the raw post-`o_proj` write.
-- **Semantic object:** conditional-fine covariance only; coarse does not enter the verdict.
+- **Semantic object:** researcher-confirmed conditional-fine covariance only; coarse and complex-minus-simple objects do not enter the verdict or stage labels.
 - **Complete spectral evidence:** local absolute variance, local normalized share, and shared-band enrichment for F1--F16 at every layer.
 - **Decision evidence:** broad H/M/T capture and dimension-normalized enrichment.
 - **Primary proposed metric:** $D_T$; the mandatory random guard tests $T_T$ against matched random partitions.
@@ -187,7 +192,24 @@ $$
 
 Broad $Q_G$ is constructed directly. Independently constructed $Q_k$ spaces may overlap and therefore must not be summed to obtain broad capture.
 
-### 7.4 Projector guards
+### 7.4 Stage-resolved shared geometry
+
+Let $E=\{1,\ldots,12\}$ and $L=\{25,\ldots,35\}$. Four diagnostic scopes are mandatory:
+
+1. **early-internal:** construct from the opposite odd/even subset inside $E$ and evaluate the held-out early layers;
+2. **late-internal:** construct from the opposite odd/even subset inside $L$ and evaluate the held-out late layers;
+3. **early-to-late:** construct $Q_{G,E}$ from all early parameter projectors and evaluate only late conditional-fine covariances;
+4. **late-to-early:** construct $Q_{G,L}$ from all late parameter projectors and evaluate only early conditional-fine covariances.
+
+Apply the same construction to all F1--F16 bands and direct broad H/M/T spaces. Report parameter-only cross-stage overlap
+
+$$
+O_{EL,G}=\frac{\operatorname{tr}(Q_{G,E}Q_{G,L})}{r_G}.
+$$
+
+Global odd/even $Q_G^{(-f)}$ remains the only primary construction. Stage-resolved spaces cannot enter $T_G$, $D_T$, Pass, Fail, or Insufficient except when a numerical construction failure makes required evidence missing.
+
+### 7.5 Projector guards
 
 Every projector requires normalized orthogonality error and eigensolver residual at most $10^{-5}$. The two broad-tail consensus projectors must overlap more than the q95 overlap of 512 matched pairs of random rank-2048 spaces. Report the same stability statistic for all F1--F16 and broad H/M/T; low non-tail commonality is descriptive, while numerical invalidity is a stop condition.
 
@@ -216,6 +238,7 @@ Each Haar draw produces one 4096-dimensional orthogonal basis, split into 16 con
 | middle-depth display | blocks 13--24 |
 | terminal boundary | block 36, descriptive only |
 | construction/evaluation split | odd/even blocks among 1--35 |
+| stage-resolved construction | odd/even within early and late; all-early applied only to late; all-late applied only to early |
 | random control | one shared Haar 16-band partition per draw |
 | wording reliability | templates 1--2 versus 3--4 |
 
@@ -297,7 +320,8 @@ Report percentile 95% intervals for $T_T$, $D_T$, and broad controls. Per-band i
 5. broad H/M/T $c$, $e$, $T_G$, and $D_T$;
 6. matched random-partition comparison;
 7. odd/even and expression-half signs;
-8. one typed verdict.
+8. assign the one global typed verdict;
+9. only after the global verdict is frozen, read early-internal, late-internal, bidirectional transfer, and cross-stage overlap and assign one non-primary stage label.
 
 ## 11. Secondary Metrics And Guards
 
@@ -307,6 +331,14 @@ Report percentile 95% intervals for $T_T$, $D_T$, and broad controls. Per-band i
 4. Separate odd/even evaluated-layer $T_T$ and $D_T$.
 5. Block 36 as one isolated descriptive point.
 6. Raw layer points are mandatory. A centered three-layer moving median may be overlaid for readability; all decisions use unsmoothed values.
+7. For $A,B\in\{E,L\}$, stage tail capture is $S_{A\rightarrow B,T}=\operatorname{median}_{\ell\in B}e_{\ell,T}(Q_{T,A})$; $S_{E\rightarrow E,T}$ and $S_{L\rightarrow L,T}$ use their internal odd/even cross-fits.
+8. Assign exactly one non-primary interpretation after the global verdict:
+   - `globally_stable_compatible` when $O_{EL,T}$ and both cross-stage captures exceed their matched Haar q95 values;
+   - `late_formation_compatible` when late-internal capture exceeds Haar q95 while early-internal capture, $O_{EL,T}$, and both cross-stage captures do not;
+   - `stage_redirection_compatible` when both internal captures exceed Haar q95 while $O_{EL,T}$ and both cross-stage captures do not;
+   - `mixed_stage_geometry` otherwise.
+
+These labels mean “compatible with,” not causal proof. They cannot rescue or downgrade the global verdict.
 
 ## 12. Known Good, Known Bad, And Confusing Cases
 
@@ -335,7 +367,7 @@ Materialize raw $\Delta n$ from only the frozen model and $S_0$; apply every Sec
 
 ### Stage 2 — local and shared spectral construction
 
-Build local F1--F16, broad local H/M/T, cross-fitted shared F1--F16, and direct broad shared H/M/T. Audit ranks, orthogonality, residuals, and group exclusion.
+Build local F1--F16 and H/M/T; global odd/even cross-fitted shared spaces; early-internal and late-internal cross-fits; and both cross-stage spaces. Audit ranks, orthogonality, residuals, group exclusion, and cross-stage overlap.
 
 ### Stage 3 — engineering smoke
 
@@ -355,15 +387,16 @@ Write tables, figures, manifests, `summary.md`, and `detailed.md`; open all cent
 verify immutable inputs
 replay raw delta-n and reproduce old local spectrum
 construct local F1--F16 and direct local H/M/T
-construct cross-fitted shared F1--F16 and direct shared H/M/T
+construct global, early-internal, late-internal, and bidirectional cross-stage shared F1--F16 and direct H/M/T
 generate fixed shared random 16-band partitions
 compute all local/shared band and broad-region metrics
 bootstrap parents/templates in paired form
 apply the broad-tail verdict once
+assign the non-primary stage-geometry label only after the global verdict
 render and audit complete-spectrum and decision figures
 ```
 
-Proposed worker: `Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_01_11_e01_shared_tail_geometry/`. Raw tensors, logs, and complete random draws remain there.
+Approved worker: `Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_04_e01_shared_tail_geometry/`. Reuse the old immutable basis and attention-write artifacts by path; do not modify them. Raw tensors, logs, and complete random draws remain in the new worker. Resource ceiling: one H100 80GB, six wall-clock hours, and 20 GiB of new storage; exceeding any ceiling stops the run before a scientific verdict.
 
 Required curated artifacts after an approved run:
 
@@ -371,12 +404,14 @@ Required curated artifacts after an approved run:
 - `tables/local_spectrum_f1_f16.csv` with every layer, band, $v^{local}$, and $p^{local}$;
 - `tables/shared_spectrum_f1_f16.csv` with every layer, band, $c^{shared}$, and $e^{shared}$;
 - `tables/broad_hmt.csv` with every layer's local/shared H/M/T raw and normalized values;
+- `tables/stage_shared_geometry.csv` with every F1--F16 and H/M/T early-internal, late-internal, early-to-late, and late-to-early measurement;
+- `tables/stage_overlap.csv` with actual and Haar cross-stage projector overlap;
 - `tables/contrast_summary.csv` and `random_null_summary.csv`;
 - `figures/figure0_broad_tail_decision.png`;
 - `figures/figure1_full_16band_spectrum.png`;
 - `summary.md` and `detailed.md`.
 
-The complete-spectrum figure contains local absolute variance, local normalized share, shared-band enrichment heatmaps, and the F1--F16 early-to-late curve. The decision figure contains layerwise H/M/T raw capture and enrichment, broad contrasts, random intervals, and group/split robustness. All files receive SHA-256 provenance.
+The complete-spectrum figure contains local absolute variance, local normalized share, global shared-band enrichment heatmaps, and the F1--F16 early-to-late curve. The decision figure contains global layerwise H/M/T raw capture and enrichment, broad contrasts, random intervals, and group/split robustness. A third diagnostic figure contains stage-internal, bidirectional transfer, and overlap measurements and is visually marked “non-primary.” All files receive SHA-256 provenance.
 
 ## 15. Success, Failure, And Insufficient Evidence
 
@@ -396,6 +431,8 @@ All conditions must hold:
 
 The 16 individual bands are mandatory evidence but are not additional Pass gates.
 
+The stage-geometry label is assigned only after this global verdict and has no effect on it.
+
 ### Fail — `LOCAL_RANDOM_OR_NONTAIL_RELOCATION`
 
 G0 and validity guards hold, but a stable falsifier occurs: broad tail does not increase, does not beat matched random, does not exceed head/middle after dimension correction, or only the local spectrum relocates. Fail closes the broad shared-tail explanation and does not permit activation deletion or Router work.
@@ -412,12 +449,16 @@ No outcome establishes knowledge storage, natural-language ontology, absence fro
 
 | Block | State | Current evidence / required decision |
 | --- | --- | --- |
-| A. question and boundary | `CONFIRMED` | geometry-only question and F1/F2--F8/F9--F16 partition explicitly confirmed |
-| B. data and provenance | `PROPOSED` | confirm $S_0$ reuse and deterministic raw-$\Delta n$ materialization |
-| C. diagnostic task | `PROPOSED` | confirm conditional-fine covariance only and mandatory complete-spectrum output |
-| D. model and spaces | `PROPOSED` | confirm odd/even separation and direct broad shared H/M/T construction |
-| E. precision and randomness | `PROPOSED` | confirm 512 random orthogonal partitions and 2,000 grouped bootstraps |
-| F. comparison and verdict | `PROPOSED` | confirm dimension-normalized $T_G$, primary $D_T$, random gates, and strict conjunctive rule |
-| G. execution and reproducibility | `BLOCKED_PENDING_EXPLICIT_EXECUTION_APPROVAL` | no implementation, smoke, replay, or full run is approved |
+| A. question and boundary | `CONFIRMED` | geometry-only question, global-primary boundary, and F1/F2--F8/F9--F16 partition confirmed |
+| B. data and provenance | `CONFIRMED` | reuse $S_0$ and deterministically materialize raw $\Delta n$ |
+| C. diagnostic task | `CONFIRMED` | conditional-fine is the only primary semantic object; complete spectrum is mandatory |
+| D. model and spaces | `CONFIRMED` | global, early-internal, late-internal, and bidirectional cross-stage geometry are all required |
+| E. precision and randomness | `CONFIRMED` | 512 random orthogonal partitions and 2,000 grouped bootstraps |
+| F. comparison and verdict | `CONFIRMED` | global $D_T$ strict conjunctive rule; stage labels are non-primary and non-rescuing |
+| G. execution and reproducibility | `CONFIRMED` | implementation, replay, smoke, one full run, and local evidence records explicitly authorized |
 
-The revised candidate changes the Anchor-level tail object and therefore reopens D--F. Promotion requires explicit confirmation of all remaining blocks and a final consistency pass. After promotion, any change to $S_0$, $\Delta n$, semantic covariance, layer groups, F1--F16 partition, H/M/T grouping, random construction, primary statistics, or verdict thresholds is a scientific amendment requiring renewed approval.
+Cross-block consistency is `PASS`. The scientific design is frozen as `A15_04_E01_r1` at `2026-08-09T14:05:43Z`. After execution starts, any change to $S_0$, $\Delta n$, semantic covariance, layer groups, stage windows, F1--F16 partition, H/M/T grouping, random construction, primary statistics, verdict thresholds, or the global-primary boundary requires an append-only amendment and an explicit eligibility ruling.
+
+**Append-only amendment A1 — mandatory direction-level visual, `2026-08-09T14:18Z`.** Before: the complete-spectrum artifact required 16-band absolute and normalized summaries. After: it additionally requires unsmoothed raw conditional-fine variance and normalized variance share for all 4,096 local parameter directions at every layer, plus a fixed ten-layer display for blocks 1, 5, 9, 13, 17, 21, 25, 29, 33, and 36. The display overlays a 129-rank third-order Savitzky--Golay curve only for readability; tables, metrics, and verdicts use unsmoothed values. Reason: preserve the researcher's previously mandatory curve and guard against band averaging hiding local shape. No new experiment result was visible; only behavior-level unit tests had run. Affected block: output-only part of G. Approval: inherited from the researcher's earlier explicit mandatory-figure instruction and current full-experiment authorization. Eligibility impact: none; no data, metric, threshold, comparison, or verdict rule changed.
+
+**Append-only amendment A2 — exact-run coordinate recovery, `2026-08-09T14:39Z`.** Before: Section 5.3 required a new H100 replay to materialize raw $\Delta n$. During engineering smoke, the unchanged H100 forward pass disagreed with the frozen 5090 bfloat16 attention cache in all 36 layers (maximum absolute error rose from `0.00390625`--`0.015625` in the first layers to `1.5` at block 36), so that replay is ineligible and is not scientific evidence. After: use only the original registered A15_01_09 response run, which already records exact cache replay (`max_abs_error=0`) and full-basis reconstruction error at most $2.73059\times10^{-6}$, and recover raw residual-coordinate $\Delta n$ by multiplying its complete saved FP16 eigencoordinates by the independently saved complete parameter basis. This repair is eligible only if, at every layer, (i) saved response, semantic, and parameter eigenvalue arrays match exactly, (ii) the saved basis reconstructs the independently cached raw attention write with relative $L_2$ error at most $3\times10^{-4}$, (iii) coordinate round-trip error is at most $10^{-4}$, and (iv) the registered centroid and trace reproduction tolerances remain satisfied. Observed guard maxima before any geometry result was read were $2.13193\times10^{-4}$, $2.81957\times10^{-6}$, $8.39460\times10^{-8}$, and $2.88547\times10^{-7}$ respectively, so the repaired source is eligible. A quantization-perturbation sensitivity check remains mandatory before the verdict. Reason: retain the exact original 5090 semantic forward rather than relax the exact-cache guard for a different GPU architecture. Affected block: B/G provenance implementation only. Approval source: the researcher's direct full-experiment authorization plus the frozen rule that only provenance or estimation repair is allowed after an insufficient replay. Eligibility impact: restored conditionally; $S_0$, $\Delta n$ definition, conditional-fine object, layers, bands, metrics, thresholds, random null, and global-primary boundary are unchanged.

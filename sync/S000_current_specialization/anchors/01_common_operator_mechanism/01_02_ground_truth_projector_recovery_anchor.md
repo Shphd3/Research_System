@@ -1,6 +1,5 @@
 # Ground-Truth Common Projector Recovery Anchor
 
-Thinking Card source: [01_02_ground_truth_projector_recovery_thinking_card.md](01_02_ground_truth_projector_recovery_thinking_card.md)
 
 ## 1. Problem Definition
 

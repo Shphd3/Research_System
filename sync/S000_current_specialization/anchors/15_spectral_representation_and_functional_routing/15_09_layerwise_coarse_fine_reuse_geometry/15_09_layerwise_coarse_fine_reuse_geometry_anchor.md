@@ -1,6 +1,5 @@
 # A15_09: Layerwise Coarse--Fine Discriminant-Space Reuse Geometry
 
-Thinking Card source: [15_09_layerwise_coarse_fine_reuse_geometry_thinking_card_cn.md](15_09_layerwise_coarse_fine_reuse_geometry_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

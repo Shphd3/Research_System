@@ -1,6 +1,5 @@
 # Workload Validity And Learner-Eligibility Guard
 
-Thinking Card source: [12_01_01_workload_validity_and_learner_guard_thinking_card.md](12_01_01_workload_validity_and_learner_guard_thinking_card.md)
 
 ## 1. Problem Definition
 

@@ -4,14 +4,11 @@ parent_anchor: 15_00_router_input_spectral_geometry
 status: completed_pass_energy_transfer_gap_projectors_shared
 canonical_language: en
 companion_language: zh
-thinking_card: 15_00_01_cross_document_subspace_stability_thinking_card_cn.md
 updated: 2026-07-31
 ---
 
 # A15_00_01 去均值后的公共子空间稳定性
 
-Thinking Card 来源：
-[研究者中文判断](15_00_01_cross_document_subspace_stability_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

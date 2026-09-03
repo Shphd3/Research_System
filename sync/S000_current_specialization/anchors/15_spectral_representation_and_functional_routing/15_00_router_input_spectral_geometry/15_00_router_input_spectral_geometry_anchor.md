@@ -17,7 +17,6 @@ source_docs:
 
 # A15_00 Router-Input Spectral Geometry
 
-Thinking Card sources: [researcher-owned Chinese judgment](15_00_router_input_spectral_geometry_thinking_card_cn.md) and [English translation](15_00_router_input_spectral_geometry_thinking_card.md).
 
 The researcher approved and executed E01--E03 on 2026-07-30. E01 supports
 head-dominant equal-energy access from 30k onward but rejects persistent late

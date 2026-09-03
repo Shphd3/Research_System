@@ -19,10 +19,10 @@ detailed evidence, figures, tables, scripts, and run artifacts.
 | A12 structured composition | 20 | [A12 protocols](protocols/A12/) |
 | A13 task-property decomposition | 11 | [A13 protocols](protocols/A13/) |
 | A14 tree low-rank structure | 28 | [A14 protocols](protocols/A14/) |
-| A15 spectral representation and functional routing | 58 | [A15 protocols](protocols/A15/) |
-| A16 load-control gradient interference | 2 | [A16 protocols](protocols/A16/) |
+| A15 spectral representation and functional routing | 122 | [A15 protocols](protocols/A15/) |
+| A16 load-control gradient interference | 10 | [A16 protocols](protocols/A16/) |
 
-Total: 289 documents.
+Total: 361 documents.
 
 ## Status Boundary
 

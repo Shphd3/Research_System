@@ -3,7 +3,6 @@
 Status: active parent anchor; the first registered subanchor is complete and
 failed on its CrossCodeEval final-layer surface.
 
-Thinking Card source: [06_04_real_workload_utility_headroom_thinking_card.md](06_04_real_workload_utility_headroom_thinking_card.md)
 
 ## 1. Problem Definition
 

@@ -50,13 +50,9 @@ Active multi-parent research lines use this structure:
   <parent_id>_<topic>/
     <parent_id>_<topic>_anchor.md
     <parent_id>_<topic>_anchor_cn.md
-    <parent_id>_<topic>_thinking_card.md
-    <parent_id>_<topic>_thinking_card_cn.md
     subanchors/
       <parent_id>_<NN>_<topic>_anchor.md
       <parent_id>_<NN>_<topic>_anchor_cn.md
-      <parent_id>_<NN>_<topic>_thinking_card.md
-      <parent_id>_<NN>_<topic>_thinking_card_cn.md
 ```
 
 Each numbered major decision is a sibling parent folder, even when the line
@@ -65,9 +61,8 @@ reserved for a child that inherits one parent's decision question and tests a
 local clause, rival, repair, robustness check, or metric guard. A dependency
 arrow does not establish parent--child ownership.
 
-Keep the parent anchor and its Thinking Card together; keep a child anchor and
-its Thinking Card together under `subanchors/`. The line README owns reading
-order and dependency order. Structural migrations move the only canonical
+Keep each parent Anchor in its parent folder and each child Anchor under
+`subanchors/`. The line README owns reading order and dependency order. Structural migrations move the only canonical
 copy, update all active references and indexes, remove the old path, and end
 with zero duplicate canonical files and zero broken local links.
 

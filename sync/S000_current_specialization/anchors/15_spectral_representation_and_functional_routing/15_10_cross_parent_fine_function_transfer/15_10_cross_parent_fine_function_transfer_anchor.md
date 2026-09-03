@@ -1,6 +1,5 @@
 # A15_10: Cross-Parent Fine-Function Transfer
 
-Thinking Card source: [15_10_cross_parent_fine_function_transfer_thinking_card_cn.md](15_10_cross_parent_fine_function_transfer_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

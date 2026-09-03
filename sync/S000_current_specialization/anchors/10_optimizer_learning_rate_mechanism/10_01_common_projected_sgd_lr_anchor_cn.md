@@ -1,6 +1,5 @@
 # 10_01 公共投影 SGD 学习率 Anchor
 
-Thinking Card source: [10_01_common_projected_sgd_lr_thinking_card_cn.md](10_01_common_projected_sgd_lr_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

@@ -90,4 +90,4 @@ Pass with functional differentiation requires one treatment to have a paired 95%
 
 ## 14. Boundary And Deliverables
 
-The experiment is a causal continuation from one shared early state, not a from-initialization law. It cannot establish optimal HMT order, universal semantic rank, superiority to a random schedule, or deep-model scaling. Deliver manifests, six job IDs, milestones, per-document NLL, route/load/update/conflict/utility/redundancy tables, central figures, summary, detailed record, Anchor update, and `daily_research_reports/0803/focus.md`. Do not edit the graph or commit/push.
+The experiment is a causal continuation from one shared early state, not a from-initialization law. It cannot establish optimal HMT order, universal semantic rank, superiority to a random schedule, or deep-model scaling. Deliver manifests, six job IDs, milestones, per-document NLL, route/load/update/conflict/utility/redundancy tables, central figures, summary, detailed record, Anchor update, and `daily_research_reports/backup/2026/08/0803/focus.md`. Do not edit the graph or commit/push.

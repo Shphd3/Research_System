@@ -11,7 +11,6 @@ canonical_anchor: 15_00_router_input_spectral_geometry_anchor.md
 
 # A15_00 Router 输入频谱几何
 
-Thinking Card 来源：[中文研究者判断](15_00_router_input_spectral_geometry_thinking_card_cn.md)；[英文翻译](15_00_router_input_spectral_geometry_thinking_card.md)。
 
 研究者已在 2026-07-30 批准并执行 E01--E03。E01 支持 30k 之后明显偏 head
 的等能访问，但否定持续的晚期固定基底强化；E02 表明该对齐在 10k 已更强，

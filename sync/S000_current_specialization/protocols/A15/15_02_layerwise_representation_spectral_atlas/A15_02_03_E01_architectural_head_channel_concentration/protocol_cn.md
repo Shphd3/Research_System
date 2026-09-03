@@ -216,7 +216,7 @@ block 36 单列。每个随机分组计算同样的 $T_g^{(r)}$ 和 $K_g^{(r)}$�
 | F 比较/证据 | CONFIRMED | 两站点 full/fixed/random；median/mean/max；Figures 0--5 |
 | G 执行 | CONFIRMED | 两个独立 ACP 单节点作业；每个 `5090-8-spot`、8 GPU、spot，分别执行 attention 与 MLP 分支 |
 
-Cross-block consistency：PASS。A--G 已全部确认。研究者于 2026-08-05 授权实现、smoke、两个 full、结果分析、实验文档和 `daily_research_reports/0805/focus.md`；未授权 graph、commit、push 或外部同步。
+Cross-block consistency：PASS。A--G 已全部确认。研究者于 2026-08-05 授权实现、smoke、两个 full、结果分析、实验文档和 `daily_research_reports/backup/2026/08/0805/focus.md`；未授权 graph、commit、push 或外部同步。
 
 ## 18. Execution Closure
 

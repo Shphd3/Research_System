@@ -4,13 +4,11 @@ parent_anchor: 15_05_functional_coordinate_admission
 status: insufficient_stage_a_capability
 canonical_language: en
 canonical_file: 15_05_02_shallow_feature_specificity_pilot_anchor.md
-thinking_card: 15_05_02_shallow_feature_specificity_pilot_thinking_card_cn.md
 updated: 2026-07-30
 ---
 
 # A15_05_02 四层浅层 head 指导受控 Pilot
 
-Thinking Card：[研究者方向已批准版本](15_05_02_shallow_feature_specificity_pilot_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

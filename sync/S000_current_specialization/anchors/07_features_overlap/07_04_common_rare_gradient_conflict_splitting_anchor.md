@@ -14,7 +14,6 @@ depends_on:
 
 # A07_04 Common / Rare Gradient Conflict Splitting Anchor
 
-Thinking Card source: [07_04_common_rare_gradient_conflict_splitting_thinking_card.md](07_04_common_rare_gradient_conflict_splitting_thinking_card.md)
 
 ## 1. Problem Definition
 

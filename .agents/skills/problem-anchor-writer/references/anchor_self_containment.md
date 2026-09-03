@@ -117,7 +117,7 @@ code, or interpreting an unexplained label, the anchor fails the gate.
 Classify every decision-bearing statement by its actual basis:
 
 ```text
-HUMAN_CONFIRMED     explicit researcher judgment in the Thinking Card or review
+HUMAN_CONFIRMED     explicit researcher judgment in conversation, Focus, or review
 APPROVED_PARENT     inherited clause from an approved parent Anchor
 VERIFIED_EVIDENCE   direct result or source inspected and linked
 AI_PROPOSAL         candidate definition, prior, variable, metric, or mechanism

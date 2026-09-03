@@ -1,7 +1,5 @@
 # A14_00 — When Does Hierarchical Language Composition Preserve a Shared Low-Rank State?
 
-Thinking Card source:
-[14_00_tree_low_rank_language_structure_thinking_card_cn.md](14_00_tree_low_rank_language_structure_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

@@ -18,7 +18,7 @@ canonical_language: en
 **Approval status:** the user explicitly authorized the same experiment at single-attention-head resolution on one `5090-8-spot` node without another approval stop.  
 **Block audit status:** A--G `CONFIRMED`.  
 **Cross-block consistency:** `PASS`.  
-**Execution scope approved:** implementation, smoke, full frozen-model extraction, analysis, result records, anchor update, and `daily_research_reports/0805/focus.md`; no commit, push, graph edit, or external sync.  
+**Execution scope approved:** implementation, smoke, full frozen-model extraction, analysis, result records, anchor update, and `daily_research_reports/backup/2026/08/0805/focus.md`; no commit, push, graph edit, or external sync.
 **Purpose:** decide whether the late fine-semantic discriminability found in whole residual states is already present in the multi-head attention branch and is localized to reproducible individual heads or distributed across heads.  
 **Primary anchor:** [A15_02](/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/15_02_layerwise_representation_spectral_atlas_anchor.md).  
 **Experiment role:** frozen static mechanism-localization audit.  

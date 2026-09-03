@@ -2,7 +2,6 @@
 anchor_id: 15_08_01_layerwise_long_range_compositional_innovation
 status: RESULT_FAIL_AWAITING_HUMAN_KNOWLEDGE_CONFIRMATION
 canonical_companion: 15_08_01_layerwise_long_range_compositional_innovation_anchor.md
-thinking_card: 15_08_01_layerwise_long_range_compositional_innovation_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
 execution_authority: human_approved_2026_08_11
@@ -12,7 +11,7 @@ updated: 2026-08-11
 
 # A15_08_01：逐层长程新增可访问性与表征秩
 
-研究者判断见 [Thinking Card](15_08_01_layerwise_long_range_compositional_innovation_thinking_card_cn.md)。父定义见 [A15_08 目标条件层创新](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。英文正式版见 [Anchor](15_08_01_layerwise_long_range_compositional_innovation_anchor.md)。执行合同见 [E02 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md)，结果见 [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md) / [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/detailed.md)。
+父定义见 [A15_08 目标条件层创新](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。英文正式版见 [Anchor](15_08_01_layerwise_long_range_compositional_innovation_anchor.md)。执行合同见 [E02 Protocol](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/protocol.md)，结果见 [Summary](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/summary.md) / [Detailed](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36/detailed.md)。
 
 E02 已在批准的 Reserved 四卡 H100 资源上完成 blocks 2--36；全部资格 guard 和图表合同通过。注册 verdict 是 `H2_LC_FAIL_CONTROL_DEGRADATION`：$T_{depth}=0.006102$，区间 $[0.004119,0.007669]$ 为正，但 $A_{2F}=-0.011422$，区间 $[-0.013994,-0.009812]$，说明远程两跳绝对新增可访问量从浅层到深层反而下降。结果性认识文字等待研究者确认；暂不进入 Router。
 
@@ -278,7 +277,7 @@ middle 局部峰值、谱低秩或某个相邻层大跳跃都不能挽救全局 
 
 ## 7. Current Evidence
 
-1. 学长的[方差区间报告](/daily_research_reports/0810/docs/DAILY_SUMMARY_ADVISOR_VARIANCE_INTERVAL_20260810.md)显示，variance-growth 选择的 160 维区间没有稳定超过同维随机方向。它关闭了“参数方向中的方差增长即可定义新增信息”，并促使本 Anchor 改用留出增益和激活数据公共基。
+1. 学长的[方差区间报告](/daily_research_reports/backup/2026/08/0810/docs/DAILY_SUMMARY_ADVISOR_VARIANCE_INTERVAL_20260810.md)显示，variance-growth 选择的 160 维区间没有稳定超过同维随机方向。它关闭了“参数方向中的方差增长即可定义新增信息”，并促使本 Anchor 改用留出增益和激活数据公共基。
 2. [A15_02_07 TAX](/Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full/summary.md)观察到 update-only readability，却没有旧状态之外的 conditional novelty。它证明非零 update 谱或单独可读不能替代条件增益；TAX 没有必要桥接和距离干预。
 3. [A15_08_E04](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md)在 block 25 得到合格的完整 $R_U$ 新增可访问性，$G_{true}=0.767207$ nats/example，95% 区间 $[0.751296,0.785146]$。它验证局部 ridge 度量，但不验证完整深度趋势、长程特异机制或表征秩规律。
 4. [E01](/Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E01_layerwise_long_range_gain_and_representation_rank/summary.md)因 block-1 的 $X_1$ 结构性恒定而触发注册标准化守卫，不承担 H2 verdict。
@@ -298,4 +297,4 @@ middle 局部峰值、谱低秩或某个相邻层大跳跃都不能挽救全局 
 
 **完成标准：**四份 rank-local identity 回执、数据/提取/选择冻结、未触碰的 CONFIRMATION 评估、五项决策区间、全部 guard、秩表、公共基曲线和两组注册主图均完整且通过谱系审核。
 
-**恢复动作：**先确认或纠正[日报](/daily_research_reports/0811/docs/daily_report_layerwise_long_range_added_accessibility.md)中的 E02 认识更新；不要由描述性谱图直接启动 Router。
+**恢复动作：**先确认或纠正[日报](/daily_research_reports/backup/2026/08/0811/docs/daily_report_layerwise_long_range_added_accessibility.md)中的 E02 认识更新；不要由描述性谱图直接启动 Router。

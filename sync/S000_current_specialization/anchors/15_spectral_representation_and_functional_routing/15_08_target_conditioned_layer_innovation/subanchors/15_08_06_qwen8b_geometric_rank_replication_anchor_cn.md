@@ -1,7 +1,6 @@
 ---
 anchor_id: 15_08_06_qwen8b_geometric_rank_replication
 status: EXECUTED_AWAITING_HUMAN_JUDGMENT
-thinking_card: 15_08_06_qwen8b_geometric_rank_replication_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor_cn.md
 depends_on: 15_08_05_aligned_geometric_rank_scale_anchor_cn.md
 created: 2026-08-18
@@ -10,7 +9,6 @@ updated: 2026-08-18
 
 # A15_08_06：Qwen3-8B 是否复现对齐后的层间差谱宽？
 
-Thinking Card source: [15_08_06_qwen8b_geometric_rank_replication_thinking_card_cn.md](15_08_06_qwen8b_geometric_rank_replication_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

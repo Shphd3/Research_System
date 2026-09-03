@@ -1,6 +1,5 @@
 ﻿# 05_01 Inhibition And Early Lock-In Anchor
 
-Thinking Card source: [05_01_geometric_inhibition_thinking_card.md](05_01_geometric_inhibition_thinking_card.md)
 
 ## 1. Problem Definition
 

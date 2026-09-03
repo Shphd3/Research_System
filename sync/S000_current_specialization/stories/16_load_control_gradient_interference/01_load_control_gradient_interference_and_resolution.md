@@ -9,11 +9,11 @@
 
 ## 1. Abstract
 
-A15 matched training exposed a load-control failure that is independent of covariance-band utility: every relevant arm used the same Switch coefficient $\lambda_{LB}=0.01$, yet Vanilla-Full collapsed in deep layers while Centered-Full remained broadly used. A migrated frozen counterfactual establishes that the true token-shared Router-input component immediately sustains current Vanilla collapse, but adding that component to an independently adapted Centered Router is not sufficient beyond random shifts. The unresolved A16 question is therefore whether the differentiable LB update pays a held-out LM cost while improving hard load, or whether it is beneficial regularization or simply ineffective against hard top-1 saturation. A16_00 uses held-out shadow-step NLL as the decision metric and global-batch raw-gradient cosine as the mechanism metric. Dynamic expert bias is the researcher-selected first intervention only after this audit identifies harmful interference or hard/soft control mismatch.
+A15 matched training exposed sharply different hard load between Vanilla-Full and Centered-Full. A migrated frozen counterfactual established that the true token-shared Router-input component immediately sustains current Vanilla collapse. A16 then discovered that the source runs recorded $\lambda_{LB}=0.01$ but did not apply an effective LB gradient because the nested auxiliary tensor was detached by re-entrant activation checkpointing. A qualified counterfactual shadow audit therefore made LB truly differentiable at paired 50M, 6B, and 10B states. Centering reproducibly removed an early LB cost at 50M, but did not globally reduce held-out cost, Router-path conflict, or routed expert conflict across later states. The next problem is no longer “prove LB is uniformly harmful”; it is whether non-gradient dynamic expert bias can provide hard-load control more efficiently than effective differentiable LB in an already centered model.
 
 ## 2. Research Question
 
-Can an MoE maintain operational expert load without slowing language-model learning or preventing useful expert differentiation? The current local decision is narrower: from an identical early AdamW state and identical global batch, does adding the Switch LB gradient improve hard load but worsen one-step held-out NLL through opposing Router gradients?
+Can an MoE maintain operational expert load without slowing language-model learning or preventing useful expert differentiation? The completed local diagnostic asked whether centering reduces the one-step held-out cost and gradient opposition of effective Switch LB. Its global answer is no, with a reproducible early exception. The next local decision is whether dynamic expert bias outperforms effective LB and no added controller under matched Centered training.
 
 ## 3. Why The Previous Framing Was Insufficient
 
@@ -21,7 +21,7 @@ Equal LB coefficients do not imply equal hard routing. A large auxiliary value d
 
 ## 4. Empirical Layout
 
-The source system is the verified four-layer, hidden-768, eight-sparse-expert, top-1 DCLM MoE. A15 provides matched Vanilla-Full and Centered-Full training histories. The migrated A16_00_01 frozen audit uses immutable statistics and validation text. A16_00 will use two registered early states, the complete accumulated global batch, exact copies of parameters, AdamW moments, scheduler, RNG, Router buffers, and independent held-out probe documents.
+The source system is the verified four-layer, hidden-768, eight-sparse-expert, top-1 DCLM MoE. A16_00_02 used paired Vanilla-Full and Centered-Full states for seeds 17/29 at 50M, 6B, and 10B; exact next DCLM batches; complete optimizer states; and 112 independent WoS validation documents. All 12 cells passed the execution guards.
 
 ## 5. Physical Intuition
 
@@ -51,7 +51,7 @@ The one-step update is not the raw gradient alone. AdamW transforms $g_{LM}+g_{L
 
 ## 8. Theorem State
 
-There is no theorem establishing that Switch LB generally harms MoE training. The verified local proposition is narrower: for the registered frozen Vanilla checkpoints, subtracting the independently estimated true mean causes a direction-specific reduction in deep-layer route concentration; the inverse Centered add-back is not direction-specific sufficiency. A16_00's gradient and shadow-update proposition is untested.
+There is no theorem establishing that Switch LB generally harms MoE training. The verified propositions are narrower: mean removal immediately reduces frozen Vanilla concentration; centering removes a repeatable effective-LB cost at the 50M state; and the cost is not uniformly persistent across 6B/10B. The registered global lower-interference hypothesis failed.
 
 ## 9. Current Mechanism Chain
 
@@ -59,9 +59,9 @@ There is no theorem establishing that Switch LB generally harms MoE training. Th
 shared Router-input component
 -> expert-relative constant logit offset
 -> coherent winner margins and hard concentration
--> soft LB may have stage-dependent corrective leverage
--> unresolved LM/LB update interaction
--> mechanism-conditioned choice of load controller
+-> effective soft LB has stage-dependent quality and hard-load effects
+-> centering reduces the early cost but not all later conflict
+-> compare non-gradient hard-load control against effective LB
 ```
 
 ## 10. Anchor Structure
@@ -74,8 +74,8 @@ shared Router-input component
 
 1. The A15 [10B online routing result](/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E01_10b_online_spectral_routing/summary.md) found that equal LB coefficients coexisted with sharply different hard expert use.
 2. The migrated [DC sustainer audit](/Projects/from-attention-to-search/main/experiments/A16/A16_00_01_E01_dc_sustainer_audit/summary.md) returned `necessary_only`: Vanilla mean removal reduced registered deep-layer busiest share by 0.68678 [0.68435, 0.68922], above matched-random q95 0.18326; Centered add-back did not exceed random q95.
-3. The same audit found heterogeneous local LB logit leverage rather than universal gradient death.
-4. Complete-global-batch LM/LB gradients, applied AdamW effects, and held-out shadow-step NLL remain unmeasured.
+3. The source-training audit found the configured LB tensor was detached from backward, so coefficient equality was a config fact rather than an active-loss fact.
+4. The completed [multistage audit](/Projects/from-attention-to-search/main/experiments/A16/A16_00_02_E01_multistage_gradient_pathway_audit/summary.md) found positive Centered mediation in both seeds at 50M, but only seed 29 passed the registered three-stage summary; shared-path and expert-conflict clauses failed.
 
 ## 12. Rival Explanations
 
@@ -86,7 +86,7 @@ shared Router-input component
 
 ## 13. Claim Boundary
 
-Current evidence does not show that all auxiliary balancing losses are harmful, that dynamic expert bias is superior, that one-step effects persist to long training, or that balance creates functional specialization. A16 is about load-control interference; A15 continues independently, A07's common/rare expert-parameter conflict remains a distinct line, and A05 retains general top-1 collapse mechanisms.
+Current evidence shows neither that all auxiliary balancing losses are harmful nor that dynamic expert bias is superior. The shadow audit is counterfactual at frozen states because the source runs did not receive effective LB. It cannot establish long-run effects or useful specialization. A16 remains separate from A15 spectral utility, A07 common/rare expert conflict, and A05 general top-1 collapse.
 
 ## 14. Method Landscape And Resolution Route
 
@@ -95,9 +95,8 @@ The Switch/GShard-style auxiliary objective is the common baseline. Loss-free ba
 The resolution route is:
 
 ```text
-A16_00 harmful-conflict / regularization / ineffective-control audit
--> if harmful conflict or hard/soft mismatch: dynamic expert bias comparison
--> if beneficial regularization: retain LB and study saturation/scale
+A16_00 completed stage-specific conflict / regularization / hard-load audit
+-> compare Centered + dynamic bias / effective LB / no controller
 -> matched same-token, same-FLOP, and wall-clock efficiency test
 ```
 
@@ -107,14 +106,11 @@ A15 owns spectral and Relay routing performance and continues independently. A05
 
 ## 16. One Next Decision
 
-The Vanilla/Centered A16_00 audit is approved for Protocol, implementation,
-smoke, and direct execution. Its eligible result will decide whether the first
-intervention is dynamic expert bias, retained differentiable LB, or a
-hard/soft-control repair. Completion requires identical global batches and full
-optimizer states across LM-only and LM+LB shadow branches, two registered
-seeds, independent probe documents, reconstructable raw gradients, hard-load
-changes, and shadow-step NLL. Do not start dynamic expert bias long training
-before this result.
+The Vanilla/Centered multistage audit is complete. The single next decision is
+whether Centered + dynamic expert bias preserves hard load and held-out NLL/FLOP
+better than Centered + truly differentiable LB and Centered without an added
+controller. The comparison must match two seeds, initialization, data order,
+capacity, tokens, and compute; the current audit alone cannot approve a winner.
 
 ## Source Map
 

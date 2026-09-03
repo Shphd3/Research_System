@@ -6,13 +6,11 @@ status: blocked_by_compatibility_fail
 created: 2026-07-30
 updated: 2026-07-30
 canonical_language: en
-thinking_card: 15_05_functional_coordinate_admission_thinking_card.md
 depends_on: 15_00_router_input_spectral_geometry
 ---
 
 # A15_05 Functional Coordinate Admission
 
-Thinking Card: [researcher judgment](15_05_functional_coordinate_admission_thinking_card.md).
 
 ## 1. Problem Definition
 

@@ -1,6 +1,5 @@
 # A16_01：可微负载均衡下的层增量信息路由
 
-Thinking Card 来源：[16_01_incremental_information_lb_routing_thinking_card_cn.md](16_01_incremental_information_lb_routing_thinking_card_cn.md)
 
 ## 1. Problem Definition
 
@@ -63,7 +62,7 @@ $$
 
 使用已验证的四层、hidden size 768、八稀疏专家加一共享专家、top-1 DCLM MoE。Native-LB 和 Trainable-Innovation-LB 在 seed 17/29 中分别共享 step-0 状态，从头训练到 30B。工程版 rank 固定为 56，这是注册的八父类、每父类八 child 构造所支持的最大判别秩；该端到端因子只是工程对象，不能称为语义方向。
 
-在 Native 的 2B、5B、10B checkpoint 上应用冻结的[层增量信息方法](/daily_research_reports/0810/docs/layerwise_incremental_information_routing/README.md)。E1 要求由 TRAIN/DEVELOPMENT 构造的 rank-56 方向相对旧状态提供 held-out conditional-fine 可读增益，并超过同秩 Haar 与父类内标签置乱；E2 冻结模型、专家和方向，要求 held-out 选专家遗憾低于 old-only 与同秩 Haar。两个 seed 首次至少一个共同层同时通过的里程碑记为 $t^*$；秩在 confirmation 前固定，不能根据终点结果选择。
+在 Native 的 2B、5B、10B checkpoint 上应用冻结的[层增量信息方法](/daily_research_reports/backup/2026/08/0810/docs/layerwise_incremental_information_routing/README.md)。E1 要求由 TRAIN/DEVELOPMENT 构造的 rank-56 方向相对旧状态提供 held-out conditional-fine 可读增益，并超过同秩 Haar 与父类内标签置乱；E2 冻结模型、专家和方向，要求 held-out 选专家遗憾低于 old-only 与同秩 Haar。两个 seed 首次至少一个共同层同时通过的里程碑记为 $t^*$；秩在 confirmation 前固定，不能根据终点结果选择。
 
 全部八个任务从配对 step-0 状态启动。Certified 与 Haar 带有休眠的零输出分支；启用前，它们的模型参数、优化器状态、数据游标和 Router 行为必须与 Native 逐项一致。在 $t^*$，配对休眠任务在不改变已有模型和优化器状态的情况下加载冻结 Certified/Haar frame，激活零输出 head，并继续到相同的 30B 总 token 终点。若 10B 仍没有 $t^*$，两者保持休眠到 30B，科学比较记为 insufficient。在线推理只使用当前样本的 $u_\ell$；匹配双差分只用于离线学方向，绝不是 Router 输入。
 

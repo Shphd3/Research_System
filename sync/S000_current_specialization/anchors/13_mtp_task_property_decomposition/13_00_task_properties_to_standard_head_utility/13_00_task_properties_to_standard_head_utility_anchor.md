@@ -1,7 +1,5 @@
 # Which Task Properties Convert Earlier Future Supervision Into Standard-Head Utility?
 
-Thinking Card source:
-[long_horizon_compositional_workload_thinking_card_cn.md](/daily_research_reports/backup/2026/07/0717/mtp_long_horizon_compositional_workload/long_horizon_compositional_workload_thinking_card_cn.md)
 
 ## 1. Problem Definition
 

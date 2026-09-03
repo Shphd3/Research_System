@@ -1,29 +1,22 @@
 ---
 name: problem-anchor-writer
-description: "Audit a human-owned Thinking Card and create, revise, or cold-read its approved self-contained and source-grounded formal research anchor, including direction placement, data, task, objective, architecture, and confirmation boundaries for learnable designs. Use when the user asks to clarify a research question, formalize a problem, write Anchor sections 1-8, or audit Anchor readability, grounding, and self-containment. Do not use for experiment protocols, run commands, result records, or publication."
+description: "Audit a researcher-owned problem judgment and create, revise, or cold-read its approved self-contained and source-grounded formal research Anchor, including direction placement, data, task, objective, architecture, and confirmation boundaries for learnable designs. Use when the user asks to clarify a research question, formalize a problem, write Anchor sections 1-8, or audit Anchor readability, grounding, and self-containment. Do not use for experiment protocols, run commands, result records, or publication."
 ---
 
 # Problem Anchor Writer
 
-An independent Thinking Card preserves the human's initial mechanism judgment.
-A formal anchor turns the approved judgment into an auditable research design.
-They are linked artifacts, not two sections of one document.
+The researcher states the initial mechanism judgment directly in conversation
+or the active Focus. A formal Anchor preserves the approved judgment and turns
+it into an auditable research design. Do not create an intermediate judgment
+card.
 
 ## Artifact Boundary
 
 ```text
-<anchor_stem>_thinking_card.md
-  human-owned initial judgment and uncertainty
-
 <anchor_id>_<topic>_anchor.md
   AI-auditable design: problem, prior, hypothesis, model, realization,
   minimal test, evidence, claim boundary, and next decision
 ```
-
-The Thinking Card must not become a protocol. The anchor must link the approved
-Thinking Card and must not copy it into section 0. Use
-`<anchor_stem>_thinking_card.md`; Chinese companions use
-`<anchor_stem>_thinking_card_cn.md`.
 
 ## Human-First Gate
 
@@ -43,8 +36,8 @@ Known source material, or Unknown:
 ```
 
 The human may mark an item `unknown`. Do not manufacture a confident answer.
-If no card exists, create or show only the blank template at
-`templates/research_process/thinking_card_template.md`.
+Keep this judgment in the active Focus or the conversation until it is approved
+for formalization in the Anchor.
 
 ## AI Audit
 
@@ -80,7 +73,7 @@ needed to understand its question and boundary.
 
 ## Formalization Gate
 
-The approved Thinking Card must support all of these:
+The approved researcher account must support all of these:
 
 - exactly one phenomenon and one decision question;
 - the parent direction, current blocking uncertainty, and why this is the
@@ -94,7 +87,7 @@ The approved Thinking Card must support all of these:
 - a conservative cannot-claim boundary.
 
 If the metric cannot distinguish the mechanism from its rival, return to the
-Thinking Card. More experiments do not repair an undefined decision.
+researcher account. More experiments do not repair an undefined decision.
 
 ## Physical-Prior Review
 
@@ -147,13 +140,11 @@ the anchor insufficient and keep the next decision on that block.
 
 ## Formal Anchor Structure
 
-Write a formal anchor only when the Thinking Card, prior, and model have been
-approved. Use exactly these top-level sections:
+Write a formal Anchor only when the research question, prior, and model have
+been approved. Use exactly these top-level sections:
 
 ```markdown
 # <Anchor Title>
-
-Thinking Card source: [<anchor_stem>_thinking_card.md](...)
 
 ## 1. Problem Definition
 ## 2. Physical Priors
@@ -165,7 +156,7 @@ Thinking Card source: [<anchor_stem>_thinking_card.md](...)
 ## 8. Claim Boundary And Next Decision
 ```
 
-Do not add an abstract, timeline, literature review, or embedded Thinking Card.
+Do not add an abstract, timeline, literature review, or embedded intake form.
 Keep one decision question, one core model, one primary metric, one main
 falsifier, and one next decision. Put run-level settings in `protocol.md`.
 
@@ -212,17 +203,14 @@ Use one folder per sibling parent anchor:
 main/problem_anchors/<line_id>/README.md
 main/problem_anchors/<line_id>/<parent_id>_<topic>/
   <parent_id>_<topic>_anchor.md
-  <parent_id>_<topic>_thinking_card.md
   subanchors/
     <parent_id>_<NN>_<topic>_anchor.md
-    <parent_id>_<NN>_<topic>_thinking_card.md
 ```
 
 Reading order or `depends_on` between two parent anchors does not make either a
 subanchor. Store an item in `subanchors/` only when it inherits the containing
-parent's decision question. Keep each Thinking Card beside the anchor it owns,
-and make the line `README.md` distinguish sibling-parent dependency order from
-parent--child ownership.
+parent's decision question. The line `README.md` distinguishes sibling-parent
+dependency order from parent--child ownership.
 
 ## Result Update
 
@@ -242,32 +230,26 @@ may improve expression only after that draft exists.
 
 ## Language
 
-The Thinking Card may remain Chinese. The canonical anchor is English unless
-the user says otherwise; a Chinese companion uses `_cn.md`. Translation must
+The researcher's original judgment may remain Chinese. The canonical Anchor is
+English unless the user says otherwise; a Chinese companion uses `_cn.md`. Translation must
 not change the question, model, metric, thresholds, boundary, or next decision.
 
 ## Validation
 
-1. The Thinking Card exists and is linked, not duplicated.
-2. Human judgment and AI proposals remain distinguishable.
-3. Sections 1-8 contain one decision question and one next decision.
-4. The primary metric separates the hypothesis from its rival.
-5. Observation, interpretation, claim, speculation, and boundary are separate.
-6. A cold reader can reconstruct the question-to-decision chain without
+1. The researcher-approved judgment and AI proposals remain distinguishable.
+2. Sections 1-8 contain one decision question and one next decision.
+3. The primary metric separates the hypothesis from its rival.
+4. Observation, interpretation, claim, speculation, and boundary are separate.
+5. A cold reader can reconstruct the question-to-decision chain without
    opening a link; links support audit rather than carry the explanation.
-7. Every term, label, symbol, metric, and identifier needed for the decision is
+6. Every term, label, symbol, metric, and identifier needed for the decision is
    defined at first use in plain language.
-8. Every decision-bearing statement is human-confirmed, inherited from an
+7. Every decision-bearing statement is human-confirmed, inherited from an
    approved linked source, verified from evidence, or explicitly labeled
    `AI_PROPOSAL`, `Unknown`, or `BLOCKED`.
-9. Unresolved or disputed items state their local consequence and link the
+8. Unresolved or disputed items state their local consequence and link the
    direct artifact needed to audit or resolve them.
-10. Readability changes obey zero net growth: added local explanation displaces
+9. Readability changes obey zero net growth: added local explanation displaces
    at least as much chronology, run detail, secondary evidence, or repetition.
-11. Every linked artifact exists.
-12. Inline formulas use `$...$`; display formulas use `$$...$$`.
-
-For legacy migration, use
-`scripts/migrate_embedded_thinking_cards.py`. It extracts section 0 verbatim,
-creates a subject-bearing card, replaces old `source_draft` metadata, and links
-the formal anchor to the new card.
+10. Every linked artifact exists.
+11. Inline formulas use `$...$`; display formulas use `$$...$$`.

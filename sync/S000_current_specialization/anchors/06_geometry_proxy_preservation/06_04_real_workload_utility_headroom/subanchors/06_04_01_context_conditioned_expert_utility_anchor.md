@@ -1,6 +1,5 @@
 # A06_04_01 Context-Conditioned Expert Utility in a Frozen Code MoE
 
-Thinking Card source: [06_04_real_workload_utility_headroom_thinking_card.md](../06_04_real_workload_utility_headroom_thinking_card.md) (inherited from parent `A06_04`; this subanchor adjudicates one local clause of that approved question).
 
 ## 1. Problem Definition
 

@@ -2,7 +2,6 @@
 anchor_id: 15_08_04_transition_object_spectrum_sensitivity
 status: EXECUTED_AWAITING_HUMAN_JUDGMENT
 canonical_companion: 15_08_04_transition_object_spectrum_sensitivity_anchor.md
-thinking_card: 15_08_04_transition_object_spectrum_sensitivity_thinking_card_cn.md
 parent_anchor: ../15_08_target_conditioned_layer_innovation_anchor_cn.md
 depends_on: 15_08_03_function_admitted_update_representation_rank_anchor_cn.md
 parent_line: 15_spectral_representation_and_functional_routing
@@ -13,7 +12,7 @@ updated: 2026-08-17
 
 # A15_08_04：层对象与 RMSNorm 定义的谱敏感性
 
-研究者判断见 [Thinking Card](15_08_04_transition_object_spectrum_sensitivity_thinking_card_cn.md)。父问题见 [A15_08](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。英文正式版本见 [Canonical Anchor](15_08_04_transition_object_spectrum_sensitivity_anchor.md)。
+父问题见 [A15_08](../15_08_target_conditioned_layer_innovation_anchor_cn.md)。英文正式版本见 [Canonical Anchor](15_08_04_transition_object_spectrum_sensitivity_anchor.md)。
 
 ## 1. Problem Definition
 

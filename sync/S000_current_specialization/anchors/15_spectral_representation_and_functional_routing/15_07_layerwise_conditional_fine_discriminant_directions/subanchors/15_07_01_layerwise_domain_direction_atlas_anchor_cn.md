@@ -2,8 +2,7 @@
 anchor_id: 15_07_01_layerwise_domain_direction_atlas
 status: RESULTS_READY_AWAITING_HUMAN_ACCOUNT
 canonical_companion: 15_07_01_layerwise_domain_direction_atlas_anchor.md
-thinking_card: 15_07_01_layerwise_domain_direction_atlas_thinking_card_cn.md
-active_focus: ../../../../../../../daily_research_reports/0820/focus_layerwise_domain_direction_atlas.md
+active_focus: ../../../../../../../daily_research_reports/backup/2026/08/0820/focus_layerwise_domain_direction_atlas.md
 parent_anchor: ../15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md
 created: 2026-08-20
 updated: 2026-08-21
@@ -11,7 +10,6 @@ updated: 2026-08-21
 
 # A15_07_01：逐层领域方向图谱
 
-研究者判断来源：[中文 Thinking Card](15_07_01_layerwise_domain_direction_atlas_thinking_card_cn.md)。
 
 ## 1. Problem Definition
 

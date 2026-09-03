@@ -100,21 +100,14 @@ requested after the meeting focus is complete.
 
 ## Physical-Prior-First Loop
 
-For project research, first write an independent Thinking Card, then let AI
-audit it. Write the formal anchor only after the human approves the question,
-physical prior, rival, metric, boundary, and decision:
+For project research, the researcher first states the current judgment,
+mechanism, strongest rival, decision-changing evidence, and next decision.
+AI audits that account and writes the formal Anchor only after the human
+approves the question, physical prior, rival, metric, boundary, and decision:
 
 ```text
 Projects/graphs/<topic>.graph.yaml
-templates/research_process/thinking_card_template.md
 Projects/<project>/main/problem_anchors/<anchor_id>.md
-```
-
-Name project-local cards with the anchor stem:
-
-```text
-<anchor_stem>_thinking_card.md
-<anchor_stem>_thinking_card_cn.md
 ```
 
 After the anchor is stable, use `experiment-card-writer` to write the complete
