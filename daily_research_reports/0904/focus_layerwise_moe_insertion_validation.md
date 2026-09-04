@@ -2,14 +2,14 @@
 
 ```text
 type: meeting_cycle_core_task
-status: FULL_RUN_RUNNING_AFTER_SMOKE_PASS
+status: FULL_RUN_COMPLETE_AI_DRAFT
 problem_key: A15.layerwise_moe_insertion_validation
 focus_role: SECONDARY
 conversation_owner: codex-thread:01a054b9-ff32-7012-aae0-ccfea85152cf
 ownership_status: CLAIMED
 core_question: HUMAN_CONFIRMED
 plain_language_design: HUMAN_CONFIRMED
-result_account: NOT_RUN
+result_account: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
 cycle_start: 2026-09-04
 target_meeting: 2026-09-05
 active_project: Projects/from-attention-to-search/
@@ -66,13 +66,15 @@ core_experiment_count: 2
 - 若第 9 块只提高标签读出或路由一致性，却不提高任务／专家功能，静态审计只能筛“可读层”，不能筛“有用插层”。
 - 若两个层的方向不一致或种子相反，结果不足，必须增加层位或独立种子，不能给出普遍选层规则。
 
+## AI 草拟结果，等待研究者确认
+
+- 完整性：替代作业 `pt-lxue71oe` 在单节点 reserved 4×H100 上完成；12 个第一阶段 checkpoint、24 个最终层级模型、2 个 Flat Oracle、全部统一评估与图表齐全，`completion_audit` 返回 `FULL_RUN_COMPLETE`。
+- 实验 1：Flat Oracle 相对 Flat task-only 的两种子平均答案词元 NLL 从 `0.831329` 降到 `0.825400`，内部八任务平均从 `0.136719` 升到 `0.152344`；但仍不如层级 task-only 的 `0.806323` NLL 和层级 Oracle 的 `0.794920`。
+- 实验 2：第 9 块的学习 Router 确实更接近真实粗细标签，但主指标 $I=G_1-G_9$ 在 seed 17 为 `+0.000625`、seed 29 为 `-0.000911`，方向相反；第 9 块的专家干预效应也没有全面更强。注册裁决为 `INSUFFICIENT`。
+- 消融：第二阶段冻结粗专家在两层、两种子中都提高 NLL；减去粗 Router 行空间的影响接近零且方向不稳定。当前实现应只冻结粗 Router，粗专家继续训练，并默认保留原生表示。
+
+不能声称：第 9 块是更好的功能插层位置、静态读出性可以独立决定 MoE 层位，或两层结果构成普遍深度规律。E15 的静态候选本身也仍受 `0.000132` nat 的置乱护栏失败限制。
+
 ## 唯一下一决策
 
-全量结果完成后，决定是否把“先做静态可读性审计，再只在候选层训练 MoE”纳入后续实验流程；完成标准是两个种子、两层、全部注册消融、Flat Oracle、统一评估和图表均通过完整性审计。
-
-## 执行进度（不构成实验结果）
-
-- 实现与本地回归测试已经完成，完整测试为 `12/12` 通过。
-- 首次 ACP 作业 `pt-owrlkt10` 在任何训练开始前，被冻结梯度审计的误报阻断。误报原因是审计把注入基座内部、但本应训练的适配器参数错误计入了冻结基座参数；修复后增加了对应回归测试。
-- 替代作业 `pt-lxue71oe` 使用单节点 reserved 4×H100，从第 0 步重新开始。它已通过因果前缀、冻结边界、Flat Oracle 强制路径和单位专家系数检查，当前处于 `RUNNING`。
-- 冒烟损失只用于确认数值有限，不能用来判断第 9 块是否优于第 1 块，也不能用来形成 Flat Oracle 结论。`result_account` 在完整性审计通过前保持 `NOT_RUN`。
+研究者确认或修正上述结果后，决定是否保留“静态审计只生成候选层，再用低成本功能试验定层位”的流程；若继续验证，最小补充是一层中等读出性位置和两个新 seed，而不是直接宣布第 9 块。
