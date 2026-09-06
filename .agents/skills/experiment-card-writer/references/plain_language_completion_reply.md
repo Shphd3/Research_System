@@ -1,9 +1,11 @@
 # Plain-Language Completed-Experiment Reply
 
-Use this reference after execution when the researcher asks what was compared,
-how training actually ran, what the result means, or how to report it clearly.
-It governs the human-facing reply or completed single-experiment meeting brief;
-it does not replace the canonical Summary or Detailed record.
+Use this reference after execution to write the complete first reading in
+`summary.md`, or when the researcher explicitly requests a standalone
+single-experiment speaking or meeting brief. It does not replace the Detailed
+record. When a Summary already exists, do not duplicate these four sections in
+the ordinary chat response; link the Summary first and use the compact result
+delivery rule in `SKILL.md`.
 
 ## 1. Completion And Comparison Audit
 

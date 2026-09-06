@@ -1,618 +1,236 @@
 # Codex Research System
 
-This repository manages research judgment and process, not the remote
-experiment codebase.
+This repository preserves research judgment, designs, evidence, and process.
+Experiment code, remote runs, raw outputs, checkpoints, and logs remain in the
+corresponding execution workspace.
 
-## Language And Response
+## Language And Communication
 
-- Default conversation language: Chinese.
-- Start with the conclusion, then give only the reason, claim boundary, and
-  next decision needed for the current question.
-- Canonical research artifacts are English unless the user explicitly chooses
-  another language. Chinese companions use `_cn.md`.
-- The human-owned Focus and formal Anchor preserve the researcher's mechanism
-  judgment, uncertainty, and confirmation boundary without an intermediate
-  judgment-card artifact.
-- Define technical terms in plain Chinese before reusing English names or
-  abbreviations in conversation.
-- Treat user ideas as hypotheses to audit. Point out undefined objects, hidden
-  assumptions, rival explanations, metric mismatch, causal overclaim, and
-  missing boundary conditions.
-- Separate direct result, observation, interpretation, claim, speculation,
-  boundary, and next decision.
-- When the user asks for a number or run status, return the measured result
-  first. Do not delay it for document cleanup.
+- Default conversation language is Chinese. Canonical research artifacts are
+  English unless the researcher chooses otherwise; Chinese companions use
+  `_cn.md`.
+- Lead with the answer. Include only the reasoning, evidence boundary, and next
+  decision needed for the question.
+- Define an indispensable technical term in plain Chinese before reusing its
+  English name or abbreviation. Use `$...$` and `$$...$$` for formulas.
+- Treat proposed ideas as hypotheses. Distinguish direct result, observation,
+  interpretation, claim, speculation, limitation, and decision.
+- Prefer precise prose to process narration, generic background, or repeated
+  caveats. Use a table or figure only when it makes a decisive relation easier
+  to understand.
 
-## Start Here
+## Human And AI Authority
 
-For research work:
+The researcher owns:
 
-1. Read `PROJECTS.md`.
-2. Read only the relevant `daily_research_reports/MMDD/focus_<problem>.md`, or
-   the human-selected source focuses named by a meeting focus, when they exist.
-3. Identify the active project and worker surface.
-4. Read the graph named in `PROJECTS.md`.
-5. Read only the linked anchor, story, protocol, result, meeting note, paper
-   note, or raw material needed for the question.
-6. Decide whether the work changes an anchor, claim boundary, graph, sync
-   surface, or next decision before writing a long response.
+- the active research question and its priority;
+- mechanism judgment, uncertainty, and the strongest rival;
+- scientific approval, claim boundaries, and scientific state transitions;
+- the final interpretation of completed evidence.
 
-Do not use chat history as the main research memory.
+AI may retrieve evidence, audit logic, propose labeled alternatives, formalize
+approved work, implement in-scope changes, run proportionate checks, and
+maintain operational records. AI must not infer missing human judgment,
+silently strengthen a claim, or treat a filename, run label, diagnostic, or
+expected pattern as evidence.
 
-## Human-AI Research Cycle
+`Unknown` is a valid scientific state.
 
-The human owns the research judgment and approval. AI retrieves evidence,
-audits logic, formalizes approved work, executes, and maintains technical
-records.
+## Context And Concurrent Work
 
-```text
-group meeting or explicit research reset
--> one or more explicitly named workstreams, each with one active two-day core-task Focus
--> researcher confirms the plain-language experiment account
--> approved protocol only when an experiment is needed
--> execution
--> AI writes the evidence record
--> human states the result and boundary from memory
--> AI verifies
--> human completes or corrects the result and conclusion in the Focus
--> AI writes the self-contained daily report only after that human report is
-   complete enough to audit
--> human confirms or corrects the daily report
--> update only the smallest owning artifact and close the cycle
-```
+Load context according to the task:
 
-The default cadence is one group meeting every two days. Immediately after a
-meeting, retain, create, or reset one active `focus_<problem>.md` only for each
-workstream that the researcher explicitly keeps active. There is no repository-wide
-singleton Focus: `PROJECTS.md` must list every active workstream, its state,
-priority, dependencies, and resume point. Within each named workstream there is
-still exactly one current Focus, one core question, and one next decision. Do
-not start an unlisted exploratory question or silently replace another
-workstream's Focus. A core task normally contains one self-contained experiment
-and may contain at most three genuinely necessary core experiments. Diagnostics
-and controls do not count as separate core experiments when they only protect
-the same verdict.
+- For a narrow explanation, number, run status, or named-file audit, begin with
+  that source and follow only links needed to answer.
+- Read `PROJECTS.md` when selecting a workstream or checking project-level
+  scientific state. Read a Graph only for navigation, graph maintenance, or an
+  explicitly graph-dependent synthesis.
+- Before changing a registered scientific problem, use
+  `./researchctl context <problem_key> --task "<concrete part>"` and add
+  `--path <expected-path>` when known. Read only the returned Focus or Anchor
+  and sources needed for that part.
+- Repository maintenance does not invent a scientific `problem_key` and does
+  not require registration.
 
-Focus creation is a human-gated research decision. AI must not create or reset
-a Focus merely because work adds an experiment, control, diagnostic,
-replication, failure analysis, result interpretation, or report. Those items
-remain under the owning Focus when they serve its core question. AI may create
-or reset a Focus only after the researcher explicitly declares one independent
-core question active for a new meeting cycle and confirms both its stable
-`problem_key` and its one next decision.
+One conversation records at most one open task, but many conversations may
+work on different parts of the same problem. `researchctl` reports same-problem
+and path overlap as advisory information only. An overlap never blocks work,
+expires work, transfers scientific authority, or chooses a winner; the
+researcher decides whether coordination is needed. Close the task with
+`./researchctl release` when its stated part is completed or abandoned. A
+named stale task may be closed as registry cleanup; that does not transfer or
+change scientific authority.
 
-### Focus Priority And Conversation Ownership
+Do not use chat history as the canonical research memory.
 
-An active project may designate exactly one workstream as `PRIMARY` and zero or
-more workstreams as `SECONDARY`. Priority controls attention and reporting
-order; it does not merge scientific questions or permit one Focus to replace
-another. `PROJECTS.md` owns the current priority registry.
+## Scientific Invariants
 
-Every new or reset active Focus must record these fields in its metadata:
+### Focus
 
-```text
-problem_key: <stable project-scoped identifier>
-focus_role: PRIMARY / SECONDARY
-conversation_owner: codex-thread:<exact thread id> / UNCLAIMED
-ownership_status: CLAIMED / RELEASED / HANDOFF_PENDING
-```
+Each researcher-activated workstream has one current meeting-cycle
+`focus_<problem>.md`, one core question, and one next decision. A Focus may
+contain up to three genuinely necessary experiments serving that question.
+Creating or resetting a Focus is a human-owned scientific transition; do it
+only after the researcher explicitly activates an independent question and
+confirms its stable `problem_key` and next decision.
 
-Before a Codex conversation edits research state, implements an experiment, or
-starts execution for a problem, it must read `PROJECTS.md` and the owning Focus
-and compare both `problem_key` and `conversation_owner`. If another conversation
-already has `ownership_status: CLAIMED` for that same `problem_key`, the current
-conversation may inspect evidence read-only but must not edit, implement, or
-run that problem. It must stop and request an explicit human handoff. A renamed
-file, alias, secondary label, or new date directory does not create a different
-problem. A claim is never assumed stale or stolen automatically; the researcher
-must explicitly release or hand it off. A handoff updates the Focus owner and
-the corresponding `PROJECTS.md` registry entry together before work resumes.
+Before execution, each experiment in the Focus has a researcher-confirmed
+plain-language account with four parts:
 
-Different conversations may work concurrently only on different registered
-`problem_key` values. This repository-level guard coordinates compliant Codex
-conversations; it is not an operating-system lock and does not protect against
-manual or external writers that ignore `AGENTS.md`.
+1. Purpose: what part of the question it resolves and why it is needed.
+2. Hypothesis: predicted contrast, strongest rival, and separating outcome.
+3. Analysis method: what is compared and why it answers the question.
+4. Conclusion: possible decision branches before execution; direct result,
+   bounded conclusion, and effect on the Focus afterwards.
 
-The `MMDD` directory is the calendar date on which the active Focus is first
-written. Record the source meeting date separately as `cycle_start` and the
-next meeting as `target_meeting`; do not rename a living Focus merely because a
-two-day cycle crosses midnight.
+After execution, the researcher owns the Focus-level updated judgment,
+cannot-claim boundary, and next decision. AI verifies them against evidence
+without strengthening them.
 
-Before execution, the active Focus must contain a researcher-confirmed plain-
-language core question and one to three experiment blocks. Every experiment
-block uses exactly these four elements:
+Focus lifecycle fields are orthogonal: `task_state`, `question_state`,
+`design_state`, and `result_state`. Protocol approval is owned only by
+`protocol.md`; execution status is owned only by `detailed.md` or its execution
+record. Do not combine or mirror these states in a single Focus `status`.
+
+### Anchor
+
+The project Anchor is the sole canonical current research design; do not create
+a parallel `design.md`. It must be self-contained enough to adjudicate the
+question and must connect problem, priors, falsifiable hypotheses,
+mathematical model, constructible computation, minimum falsifier, current
+evidence, claim boundary, and exactly one next decision. Update the same Anchor
+as evidence changes the design. Detailed structure and checks belong to
+`problem-anchor-writer`.
+
+### Formal Experiments And Evidence
+
+The canonical chain is:
 
 ```text
-1. Purpose: which part of the Focus question this experiment resolves and why
-   the experiment is needed
-2. Hypothesis: the predicted contrast, strongest rival, and what observation
-   would separate them
-3. Analysis method: one to three natural-language items that each explain what
-   is done, what is compared, and why that comparison answers the question
-4. Conclusion: before execution, the distinct possible outcome branches and
-   how each would change later experiments or stop the route; after execution,
-   the direct result, bounded experiment conclusion, and effect on the Focus
+Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
 ```
 
-Do not use an unexplained English code, run ID, metric abbreviation, or method
-name in that account. Define it in plain Chinese first when it is indispensable.
-Write the experiment blocks using the reader order, natural prose, and
-terminology discipline of `research-document-explainer`: purpose before
-implementation, one main relation per sentence, and evidence before inference.
-Protocol drafting does not authorize implementation, smoke testing, or a run.
-If Protocol audit materially changes any plain-language method, completion
-rule, or expected branch after the researcher's last confirmation, mark the
-Focus `AI_REVISED_AWAITING_HUMAN_CONFIRMATION`. Keep the core question's
-separate ownership record unchanged, and do not promote the Protocol until the
-revised four-element experiment account is confirmed again.
+- `protocol.md` is the approved test contract. Drafting it does not authorize
+  implementation or execution.
+- A full or expensive remote run requires explicit execution approval for its
+  scope. Small local implementation checks do not.
+- `summary.md` owns the first result reading path; `detailed.md` owns complete
+  setup, provenance, deviations, tables, failures, and artifact map.
+- A reader-friendly daily report is written only after canonical evidence
+  exists and the researcher has stated or approved the result, boundary, and
+  next decision. It explains but does not replace the evidence records.
+- Add conditions, seeds, diagnostics, and artifacts only when they separate a
+  named rival, protect the main conclusion, or are required for reproducibility.
 
-Questions outside the active core task go to the active project's concise
-`main/parking_lot/README.md` only when they are important enough to change the
-long-term direction. Do not use the Parking Lot for minor diagnostics,
-implementation chores, speculative ablations, or questions that do not affect
-a hypothesis, claim boundary, or future mainline decision.
+## Result Reading And Reply
 
-Before formalizing a new question, the human states:
+`summary.md` is the complete first reading surface for a finished experiment.
+Its reader body uses Purpose, Hypothesis, Analysis method, and Conclusion. Put
+the full, evidence-grounded four-part account there once; do not reproduce it
+in chat with merely different wording.
 
-```text
-current judgment
-reason or mechanism
-strongest rival or uncertainty
-evidence that would change the judgment
-next decision
-```
+When `summary.md` exists, the chat response begins with its link so the
+researcher can read that account first. Then give only:
 
-`Unknown` is valid. AI may propose candidate definitions, priors, metrics, and
-counterexamples, but must label them and must not silently invent the user's
-judgment.
+- the direct verdict and smallest decisive value;
+- the smallest sufficient set of important figures, each beside the conclusion
+  it supports with one sentence explaining how to read it;
+- the nearest claim boundary;
+- analysis of the next step: which unresolved uncertainty it targets, why it
+  follows from this result, and what outcome would stop or redirect it.
 
-After execution, the human first states:
+If the next step has not been confirmed by the researcher, label it `AI 建议`;
+do not write it as an owned scientific decision. Use the four-part format in
+chat only when no canonical Summary exists or the researcher explicitly asks
+for a standalone speaking or meeting brief.
 
-```text
-question
-direct result
-updated judgment
-cannot claim
-next decision
-```
-
-AI verifies numbers, evidence, and wording without strengthening the claim.
-
-### Completed-Experiment Plain-Language Reply
-
-After a full experiment or bounded evidence synthesis is complete, the default
-human-facing result reply and a requested single-experiment meeting brief use
-the following reader order. This is a presentation rule; `summary.md` and
-`detailed.md` remain the evidence owners.
-
-First audit what actually ran:
-
-1. list the completed treatment, Baseline, Oracle, null, and ablation
-   comparisons by the question each one protects;
-2. state whether training was genuinely staged; for every stage give the
-   trainable and frozen objects, data passes, actual optimizer-update count,
-   batch and accumulation, objective, learning rates, checkpoint rule, and
-   exact handoff to the next stage; if training was not staged, say so;
-3. lead the result with the quantities closest to the meeting question, not
-   with run order or the easiest positive diagnostic.
-
-Then use exactly four sections in the reply:
-
-```text
-1. Purpose: one plain sentence only.
-2. Hypothesis: one or two short falsifiable statements only.
-3. Analysis method: normally three bullets and never more than three; each
-   bullet states what is compared and which uncertainty it resolves.
-4. Conclusion: one numbered item per decision-bearing answer.
-```
-
-Every conclusion item starts with the direct answer, gives the smallest
-decisive value and boundary, and is immediately followed by one audited figure
-that supports that same answer plus a one-sentence `How to read` instruction.
-Group or delete conclusions that do not have eligible visual evidence; never
-manufacture a figure from missing or ineligible data. A figure is not a
-substitute for the direct result or claim boundary.
-
-Use very plain Chinese. Define an indispensable technical term before its
-first use, keep one relation per sentence, and explicitly separate, when
-applicable:
-
-- semantic dispatch or route-label agreement;
-- expert utility measured by an intervention such as matched deletion;
-- end-task performance;
-- representation accessibility or geometry.
-
-Do not call balanced load semantic, route agreement expert utility, positive
-expert utility a task-performance gain, or decodability a causal use result.
-State the registered typed verdict even when a secondary diagnostic is
-positive. If the researcher has not confirmed the knowledge wording, label the
-report `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`.
-
-## Focus And Writing
-
-Daily writing starts from one living core-task Focus. The complete explanatory
-report is deliberately delayed until canonical evidence and the researcher's
-own result account exist.
-
-### Daily Research Report
-
-For every completed experiment or bounded evidence synthesis that changes a
-research judgment, claim boundary, or next decision and is delivered in the
-daily report, create:
-
-```text
-daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
-```
-
-Use `templates/research_process/daily_report_template.md`. This file is the
-complete, reader-friendly, self-contained explanation of the day's result and
-knowledge update. A reader should understand the question, objects,
-hypotheses, decisive comparison, metrics, direct result, inference, boundary,
-and next decision without chat history. Self-contained means sufficient for
-understanding and judgment; it does not mean copying the complete run ledger.
-
-The project-local `summary.md` and `detailed.md` remain the canonical result
-and evidence sources. Every decision-bearing number and figure in the daily
-report must trace to those records. The daily report must preserve material
-negative results, uncertainty, deviations, and failed assumptions; it must not
-reframe `Fail` or `Insufficient` as progress language. Before the researcher
-confirms the knowledge wording, mark it
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. Do not create this report at task
-selection, Protocol drafting, implementation, or raw-result time. Create it
-only after the researcher has completed or explicitly approved the experiment
-result, boundary, and next decision in the active Focus. The report is then a
-self-contained story used to audit whether the experiment and interpretation
-are coherent; it does not retroactively own the Focus.
-
-### Core-Task Focus
-
-Immediately after one group meeting or explicit research reset, create:
-
-```text
-daily_research_reports/MMDD/focus_<problem_slug>.md
-```
-
-The file is the short, human-owned **living task card** for one meeting cycle,
-not an experiment ledger or a second Protocol. It starts with one core question
-and the four-element plain-language account for every included experiment.
-After execution, the researcher completes or corrects each experiment's result
-and bounded conclusion, then adds the Focus-level knowledge update,
-cannot-claim boundary, and one next decision. AI may verify those statements
-against `summary.md` and `detailed.md`, but must not strengthen them.
-
-Keep the Focus concise enough to read before a meeting. It may name at most
-three core experiments, and each experiment may contain at most three
-plain-language analysis-method items.
-Put formulas, full settings, uncertainty details, controls, plots, provenance,
-and run history in the Anchor, Protocol, Summary, Detailed, and delayed daily
-report. Link those sources rather than copying them. Legacy bare `focus.md` and
-historical result-summary Focus files may remain; do not migrate them
-implicitly.
-
-### Meeting Knowledge Synthesis
-
-Create a separate meeting synthesis only when the researcher explicitly asks
-for a meeting brief, speaking preparation, or a multi-problem synthesis:
-
-```text
-daily_research_reports/MMDD/focus_meeting_<topic_slug>.md
-```
-
-For an ordinary one-problem cycle, use the active core-task Focus directly and
-do not create a redundant meeting file. A multi-problem synthesis starts as
-`AWAITING_HUMAN_SCOPE` until the researcher provides the exact source paths,
-exclusions, and core question. AI must not infer a merge range or introduce a
-joint judgment that no selected source owns.
-
-The meeting focus follows the same knowledge-update principle as a problem
-focus, but answers one core question through two to four progressive
-subquestions. Each direct answer gives only the minimum evidence, its reach,
-and why the next question is necessary. Do not require a merge table, evidence
-ledger, flowchart, or speaking script. Add a visual only when it materially
-clarifies a decisive relation. If AI drafts unconfirmed knowledge wording, keep
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` visible. A separate speaking outline is
-created only when explicitly requested after the meeting focus is complete.
-
-Use at most three genuinely different candidates in one divergent round, then
-choose one and park the rest. Reading, coding, running, and plotting count as
-progress only when they change a judgment, boundary, or decision.
+Background, implementation history, run order, and secondary diagnostics stay
+out unless they determine evidence eligibility or are necessary to understand
+a decisive comparison. Omit decorative, redundant, or ineligible figures and
+never manufacture missing evidence. Keep semantic routing, expert utility under
+intervention, end-task performance, and representation accessibility distinct
+when applicable.
 
 ## State Ownership
 
 | Surface | Owns |
 |---|---|
-| `AGENTS.md` | stable repository behavior and hard boundaries |
-| `PROJECTS.md` | project map, active routes, project-level boundaries and decisions |
-| `daily_research_reports/MMDD/focus_<problem>.md` | one living meeting-cycle task: confirmed plain-language design before execution and human-owned result/boundary afterwards |
-| `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` | delayed self-contained experiment story written from canonical evidence only after the human completes the result account |
-| `daily_research_reports/MMDD/focus_meeting_<topic>.md` | one meeting's concise progressive knowledge update from a named problem or a human-scoped multi-problem set |
-| `Projects/<project>/main/parking_lot/README.md` | concise project-level list of important non-active questions and their reopening conditions |
-| `Projects/graphs/` | thin navigation between questions, claims, evidence, and tasks |
-| anchor | one adjudicable research design and its current boundary |
-| story | line-level mathematical and evidence synthesis |
-| `protocol.md` | approved test contract |
-| `summary.md` | first result reading path |
-| `detailed.md` | complete evidence ledger and artifact map |
-| root `sync/` | explicitly published external-reading surface |
+| `AGENTS.md` | Stable behavior, scientific invariants, and boundaries |
+| `PROJECTS.md` | Scientific project map, active workstreams, priorities, and project decisions |
+| `.research/runtime/state.json` | Machine-written task routing and advisory overlap events only |
+| `focus_<problem>.md` | Human-owned current task, result boundary, and next decision |
+| Anchor | Canonical current research design and its boundary |
+| `protocol.md` | Experiment contract and its approval state |
+| `summary.md` / `detailed.md` | Canonical result reading path / evidence ledger and execution state |
+| Graph, story, daily report, root `sync/` | Derived navigation or reading views |
 
-If a project-state statement here conflicts with `PROJECTS.md`, move the state
-out of this file and treat `PROJECTS.md` as current.
+Machine state must never own scientific claims, approval, priority, verdicts,
+or next decisions. If a derived view conflicts with its canonical source,
+repair or regenerate the view; do not create another source of truth.
 
-## Anchor
+## Autonomy And Approval
 
-The researcher states the current judgment, mechanism, strongest rival,
-decision-changing evidence, and next decision directly in conversation or the
-active Focus. The formal Anchor preserves that approved judgment and turns it
-into an auditable design. Do not create an intermediate judgment-card artifact.
+Proceed by default with local reads, in-scope edits, relevant tests, and
+non-destructive verification. Pause only when the next action requires:
 
-Canonical anchor paths:
+- a human-owned scientific state transition or missing judgment that changes
+  the outcome;
+- an expensive or full remote run;
+- a destructive or external action, including publication, collaborator sync,
+  commit, or push;
+- material expansion beyond the requested scope.
 
-```text
-Projects/<project>/main/problem_anchors/<line>/README.md
-Projects/<project>/main/problem_anchors/<line>/<parent_id>_<topic>/
-  <parent_id>_<topic>_anchor.md
-  <parent_id>_<topic>_anchor_cn.md
-  subanchors/
-    <parent_id>_<NN>_<topic>_anchor.md
-    <parent_id>_<NN>_<topic>_anchor_cn.md
-```
+Warnings from `researchctl` are not approval gates. Protocol drafting is not
+execution approval.
 
-A research line may contain several sibling parent anchors, and every parent
-anchor receives its own `<parent_id>_<topic>/` folder. Dependency or reading
-order between parent anchors does not make one a subanchor of another.
-`subanchors/` contains only children that inherit that folder's parent decision
-question and adjudicate one local clause, rival, repair, robustness check, or
-metric guard. Parent anchors stay in their parent folders and child anchors in
-`subanchors/`. The line `README.md` indexes sibling parents, dependency order,
-current boundary, and one next decision.
+## Completion Rule
 
-Legacy flat layouts may remain until an explicit migration. New or reorganized
-multi-parent lines must use the canonical folder-per-parent layout. A migration
-must move rather than copy the source files, update all indexes and references,
-remove the old path, and verify that no duplicate canonical version or broken
-local link remains.
+Continue until the requested deliverable exists, decision-bearing claims trace
+to evidence, proportionate checks pass, material failures and unknowns are
+recorded, and no remaining in-scope work can proceed without new evidence or
+human authority. A first draft or first successful implementation is not a
+completion condition by itself.
 
-Formal anchors use sections 1-8:
+For a narrow answer, completion means the question is answered and its evidence
+boundary is explicit; it does not require a canonical artifact. For a formal
+design, experiment, result record, or publication task, use the completion
+contract in the matching Skill.
 
-```text
-1. Problem Definition
-2. Physical Priors
-3. Falsifiable Hypotheses
-4. Mathematical Model
-5. Computational Realization
-6. Minimal Falsification Tests
-7. Current Evidence
-8. Claim Boundary And Next Decision
-```
+## Skill Router
 
-Each anchor has one decision question, one core model, one primary metric, one
-main falsifier, pass/fail/insufficient meanings, a conservative boundary, and
-exactly one next decision. Commands, full configs, raw logs, and broad sweeps
-belong outside anchors.
+Repository Skills live in `.agents/skills/`. Load a Skill only when its
+description matches the task; then follow only the relevant reference or
+script it routes to.
 
-After evidence exists, update the same anchor. Do not create a separate
-`hypotheses/`, closure-report, or routine `final_report.md` layer.
+- `research-progress-core`: Focus, research judgment, falsifiers, failures, and
+  delayed daily reports.
+- `problem-anchor-writer`: Anchor creation, revision, and design audit.
+- `experiment-card-writer`: Protocol and canonical result records.
+- `research-document-explainer`: concise explanation of research documents,
+  formulas, evidence, and results.
+- `research-communication`: explicit meeting brief, story, or curated handoff.
+- `research-sync-gate`: readiness for advisor sync or one next question.
+- `research-mainline`: project placement, archive state, and explicit root
+  publication.
+- `research-graph-sop`: graph inspection or maintenance.
+- `remote-experiment-workflow`: remote execution logistics and artifact maps.
+- `scholar-mode`: unsettled scientific ideas, papers, theory, and literature.
+- `sidecar-thinking`: explicit local graph display.
 
-## Story
+User instructions take precedence over Skill workflow preferences. A Skill may
+not invent approval requirements beyond the boundaries above.
 
-Stories live under:
+## Repository And Git Boundaries
 
-```text
-Projects/<project>/main/stories/<line>/README.md
-Projects/<project>/main/stories/<line>/<NN>_<topic>.md
-Projects/<project>/main/stories/<line>/<NN>_<topic>_cn.md
-```
+Keep canonical process artifacts in this repository and raw execution material
+in its execution workspace. Do not promote raw outputs, checkpoints, datasets,
+or unfiltered logs into the research mainline. Root `templates/` is the only
+maintained reusable-template location.
 
-The line README orders story pairs and marks exactly one current primary
-synthesis. English and Chinese companions must agree on theorem state,
-evidence verdict, boundary, and next decision. Stories link to anchors and
-results; they do not replace or strengthen them. Historical snapshots use
-subject-bearing names under `archive/<snapshot_id>/`.
+Never revert user changes. Commit, push, publish, edit an existing Graph, or
+sync to another repository only when explicitly requested.
 
-## Experiment Chain
-
-Canonical experiment chain:
-
-```text
-anchor -> protocol.md -> summary.md -> detailed.md -> anchor update
-```
-
-Meeting-cycle chain:
-
-```text
-meeting -> active focus_<problem>.md -> confirmed plain-language design
--> protocol.md -> explicit execution approval -> summary.md + detailed.md
--> human-completed Focus result -> daily_report_<topic_slug>.md -> cycle close
-```
-
-- Use `experiment-card-writer` to write the complete candidate directly into
-  `protocol.md` as `DRAFT_NOT_EXECUTABLE`, then surface only decision-critical
-  parts for review. Update that same file after corrections; do not create a
-  chat-only or second planning draft.
-- Promote the Protocol only after every block is explicitly confirmed and
-  cross-block consistency passes. Do not implement or run before the promoted
-  `protocol.md` records explicit approval for the requested execution scope.
-- `protocol.md` owns question alignment, conditions, primary metric,
-  pass/fail/insufficient rules, guards, approval state, and execution contract.
-- `summary.md` is conclusion-first: what is established, what the primary
-  metric shows, boundary, central evidence, any decision-relevant figures, and
-  next decision.
-- `detailed.md` owns the complete setup, seeds, commands, job IDs, full tables,
-  stage evidence, failures, artifact map, and visualization audit when figures
-  are decision-relevant.
-- The daily report owns the complete reader explanation, not canonical
-  evidence. It must link the exact Anchor, Protocol, Summary, and Detailed
-  records, explain every central metric and figure in plain language, preserve
-  the registered verdict and boundary exactly, and contain exactly one next
-  decision.
-- Require the active Focus's core question and every experiment's four-element
-  plain-language account to be human-
-  confirmed before Protocol promotion. After execution, verify the human-owned
-  Focus result against canonical evidence before writing the daily report.
-- Add conditions, seeds, and diagnostics only when they separate a named rival
-  or protect the primary conclusion.
-- Every central plot needs a contract: question, metric and unit, data source,
-  aggregation, axes/legend, allowed conclusion, and limitation. Audit the
-  rendered artifact before delivery.
-- Important figures live locally beside the result documents and are embedded,
-  not merely listed by path.
-
-Before pursuing a tangent, apply:
-
-```text
-affects hypothesis? yes/no/unclear
-affects claim boundary? yes/no/unclear
-affects next decision? yes/no/unclear
-recommendation: pursue / park / ignore
-```
-
-`pursue` is allowed only when the tangent is required to close the active core
-task. `park` writes one concise entry only if it is a key long-term research
-question. `ignore` creates no artifact.
-
-## Meeting Preparation
-
-Use the active core-task Focus for an ordinary one-problem meeting. Create a new
-`focus_meeting_<topic>.md` from
-`templates/meeting/meeting_focus_template.md` only for an explicitly requested
-meeting brief or synthesis. For multiple independent problems, require the
-exact human-selected merge scope and exclusions before synthesis.
-
-Use `templates/meeting/meeting_outline_template.md` only when the user
-explicitly asks for a separate speaking outline after the meeting focus is
-complete.
-
-Present every completed experiment as one loop:
-
-```text
-question -> key comparison -> direct result -> conclusion
--> cannot claim -> decision
-```
-
-Keep formulas, complete tables, and run timelines in anchors and result
-records.
-
-## Explicit Publication And Sync
-
-Default behavior updates only project-local sources, the applicable active
-Focus, project Parking Lot when needed, and the delayed daily report or meeting
-brief under `daily_research_reports/MMDD/`.
-
-These actions require an explicit user request:
-
-```text
-edit an existing graph
-publish root sync or a full mirror
-sync to a collaborator repo
-package a handoff
-commit
-push
-```
-
-Project-local anchors remain the source of truth. When a root anchor mirror is
-explicitly requested, generate it with:
-
-```text
-python .agents/skills/research-mainline/scripts/publish_anchor_mirror.py
-```
-
-The publisher copies the complete anchor tree and rewrites links that leave the
-tree to repository-root absolute paths so the published mirror remains
-clickable. Do not hand-edit generated mirror files; update the source and
-republish. Update the root-sync README, line summary, and index in the same
-explicit publication task.
-
-External collaborator sync is a separate curated package. Check the target
-repo status first; do not overwrite dirty collaborator files. Copy only the
-approved anchor, protocol, summary, detailed record, and referenced figures or
-tables. Exclude private notes, raw logs, checkpoints, datasets, full result
-directories, and unrelated anchors. Commit or push only when explicitly asked.
-
-## Graph
-
-Graphs are thin navigation; Markdown artifacts remain the reasoning source.
-Use only these node roles when possible: question, claim, concept, method,
-evidence, source, task, output. Link nodes to concrete source files and keep
-summaries to current previews.
-
-Before changing an existing graph, obtain confirmation unless the current user
-request explicitly authorizes that edit. When asked to display a graph, use the
-local Sidecar app through `sidecar-thinking`; do not substitute a custom graph.
-
-## Terminology And Formula Rules
-
-Define every non-obvious term, abbreviation, metric, condition, method label,
-run label, and plot label before using it as evidence. A metric definition must
-state its concrete computation, unit/formula, decision role, and what it cannot
-prove.
-
-For Chinese research explanations, `docs/research_terminology.md` is the
-repository-wide registry of recurring English aliases. An English alias may be
-used only after its mapping is registered or locally proposed and after its
-Chinese-first definition appears earlier in that explanation. Source wording,
-familiarity, and brevity do not authorize an unexplained alias. Repeated terms
-must preserve the registered object, scope, and forbidden confusions.
-
-Use `$...$` for inline formulas and `$$...$$` for display formulas.
-
-## Repository And Execution Boundary
-
-Keep the root focused on:
-
-```text
-AGENTS.md  PROJECTS.md  README.md
-Projects/  sync/  templates/  prompts/  .agents/
-paper_reading/  papers/  daily_research_reports/  docs/
-```
-
-Root `templates/` is the only maintained reusable-template location.
-
-Local `Research_System` owns research-process artifacts and curated evidence.
-Remote/container workspaces own experiment code, debugging, runs, raw outputs,
-checkpoints, logs, result generation, and cluster submissions. Use Git as the
-normal synchronization path. SSH/SCP is only for explicit small inspection,
-recovery, or port forwarding.
-
-For Hugging Face datasets, prefer downloading from the directly reachable
-local host into the approved shared dataset root, then let ACP jobs read that
-frozen local copy. If an ACP job must contact Hugging Face, set its Hugging
-Face endpoint to the approved mirror (`https://hf-mirror.com`) and record the
-resolved repository revision; do not use the mirror to silently change the
-dataset identity or revision.
-
-Do not promote raw outputs, checkpoints, datasets, or unfiltered logs into the
-research mainline.
-
-## Local Skills
-
-Repository skills live in `.agents/skills/` and are discovered directly by
-Codex. Do not maintain personal-directory copies of these repository skills.
-
-Use repository skills when the task matches:
-
-- `research-progress-core`: research logic and uncertainty reduction.
-- `problem-anchor-writer`: human-judgment audit and anchor construction.
-- `experiment-card-writer`: blockwise experiment audit, confirmed protocol,
-  summary, and detailed records.
-- `research-story-writer`: line-level mathematical and evidence synthesis.
-- `meeting-outline-writer`: human-scoped meeting focus and optional speaking outline.
-- `research-mainline`: project organization and explicit publication.
-- `research-graph-sop`: thin graph maintenance.
-- `handoff-report-writer`: explicit curated handoff packaging.
-- `remote-experiment-workflow`: remote execution and artifact maps.
-- `research-document-explainer`: progressive plain-language reading of AI-written
-  research documents, proofs, experiment logic, and bounded research proposals.
-- `sidecar-thinking`: local graph display.
-- `scholar-mode`: unstable research intuition and literature framing.
-
-Detailed templates and validation checklists live in those skills, not here.
-
-## Git
-
-Never revert user changes. Commit or push only when explicitly requested.
-When committing, prefer one lightweight daily commit:
-
-```text
-MMDD: mainline update - <one sentence conclusion>
-MMDD: daily note - no mainline update
-```
+Use `./researchctl check --repository` for deterministic checks of current
+Focus state, registered references, Protocol authorization records,
+PROJECTS--Focus drift, and Skill references. Treat overlap and derived-view
+drift as visible reminders, not automatic scientific or publication actions.

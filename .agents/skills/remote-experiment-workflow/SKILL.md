@@ -1,6 +1,6 @@
 ---
 name: remote-experiment-workflow
-description: "Plan and execute research experiment logistics across local containers, SSH, CCI, SCO, and ACP, including preflight, submission, monitoring, logs, and artifact maps. Use when the user asks to run, inspect, or manage remote or cluster experiments. Do not design the research hypothesis; pair with sco-control for SCO platform resource commands."
+description: "Use when the user asks to run, inspect, monitor, or manage an experiment across a local container, SSH, CCI, SCO, or ACP. Do not use to design the research hypothesis."
 ---
 
 # Remote Experiment Workflow
@@ -26,7 +26,8 @@ anchor -> protocol.md -> remote/container smoke or run
 
 Root sync, graph edits, commits, and pushes are explicit follow-up actions
 only. Handoff packages and external collaborator repo sync are explicit-only
-work owned by `handoff-report-writer`; do not perform them through this skill.
+work owned by `research-communication` handoff mode; do not perform them through
+this skill.
 
 Local `Research_System` owns graph, anchors, protocols, summary/detailed result
 records, daily notes, meeting material, claim boundaries, and next decisions.
@@ -124,15 +125,15 @@ When the user explicitly asks for a commit, it may include:
 - anchor updates;
 - root sync anchor copies, only when root sync was explicitly requested;
 - artifact-map inputs for a separately requested handoff or external sync;
-  `handoff-report-writer` owns package assembly and copying;
+  `research-communication` handoff mode owns package assembly and copying;
 - artifact maps.
 
 Do not commit raw logs, checkpoints, datasets, full run directories,
 unfiltered generated figures/tables, or temporary cache files unless the user
 explicitly curates them.
 
-When `handoff-report-writer` handles a separately requested external sync, its
-inputs from this skill are limited to the current anchor, `protocol.md`,
+When `research-communication` handoff mode handles a separately requested
+external sync, its inputs from this skill are limited to the current anchor, `protocol.md`,
 `summary.md`, `detailed.md`, referenced figures or tables, and the verified
 artifact map. The experiment workspace and codebase are not package inputs by
 default.
@@ -159,8 +160,9 @@ root sync.
 ## Handoff Routing
 
 If the user explicitly requests a handoff or external collaborator sync,
-switch to `handoff-report-writer`. This skill contributes the verified run and
-artifact map; it does not assemble, copy, or synchronize the package.
+switch to `research-communication` handoff mode. This skill contributes the
+verified run and artifact map; it does not assemble, copy, or synchronize the
+package.
 
 Provide this compact artifact / repro map to the handoff workflow:
 

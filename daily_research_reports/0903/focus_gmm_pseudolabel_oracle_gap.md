@@ -2,14 +2,12 @@
 
 ```text
 type: meeting_cycle_core_task
-status: FULL_RUN_COMPLETE_AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
+task_state: ACTIVE
 problem_key: A15.gold_label_layerwise_static_audit
 focus_role: SECONDARY
-conversation_owner: codex-thread:01a0679c-7ee2-71f3-91b5-f4df234571db
-ownership_status: CLAIMED
-core_question: HUMAN_CONFIRMED
-plain_language_design: HUMAN_CONFIRMED
-result_account: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
+question_state: HUMAN_CONFIRMED
+design_state: HUMAN_CONFIRMED
+result_state: AWAITING_HUMAN_CONFIRMATION
 cycle_start: 2026-09-03
 target_meeting: 2026-09-04
 active_project: Projects/from-attention-to-search/

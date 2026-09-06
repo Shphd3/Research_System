@@ -1,6 +1,6 @@
 ---
 name: sidecar-thinking
-description: "Operate the local Thinking Sidecar app for an explicitly requested display, review session, graph inspection, or API or CLI handoff. Use only when the user asks to open, show, inspect, or call Sidecar. Do not use for ordinary graph editing, research synthesis, or second opinions that do not require the Sidecar app."
+description: "Use only when the user explicitly asks to open, show, inspect, or call the local Thinking Sidecar app."
 ---
 
 # Sidecar Thinking

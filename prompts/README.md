@@ -6,10 +6,10 @@ Use root-level files (`AGENTS.md`, `PROJECTS.md`) as the active research
 system. Prompts here are supporting material, not the primary source of
 research memory.
 
-For web-side theory AI that cannot see `Projects/`, use `AGENTS.md`,
-`PROJECTS.md`, root `sync/` summaries, and user-provided anchor/result snippets.
-Ask the user or Codex to expose project-local graph, anchor, `summary.md`, or
-`detailed.md` files when needed.
+For web-side theory AI that cannot see `Projects/`, start from the user's named
+source. Use `PROJECTS.md` and root `sync/` only for project-state or mainline
+questions, then request the smallest missing Anchor or result excerpt needed to
+verify the answer.
 
 ## Folders
 

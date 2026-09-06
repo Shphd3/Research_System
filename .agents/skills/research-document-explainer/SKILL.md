@@ -1,6 +1,6 @@
 ---
 name: research-document-explainer
-description: "Use when the user asks to read, explain, simplify, unpack, or ELI5 an AI-written research document, experiment, proof, formula, evidence chain, or research idea, especially when they say they cannot quickly get it. Do not use to author or revise formal Anchors, Protocols, results, Focus files, meetings, executions, or publications."
+description: "Use when the user asks to understand or simplify a research document, experiment, result, proof, formula, evidence chain, or idea. Do not use to author or revise canonical research artifacts."
 ---
 
 # Research Document Explainer
@@ -12,9 +12,11 @@ objects and reasoning links, not make the science childlike.
 ## Required Reference Routing
 
 Always read [explanation_contract.md](references/explanation_contract.md).
-For every Chinese explanation, also read
-[terminology_contract.md](references/terminology_contract.md) and the global
-[Research Terminology Registry](../../../docs/research_terminology.md).
+For a Chinese explanation, also read
+[terminology_contract.md](references/terminology_contract.md). Consult the
+global [Research Terminology Registry](../../../docs/research_terminology.md)
+only when the answer needs a recurring English alias; do not load it for a
+plain-language answer that does not use one.
 Then read only the modes requested or required by the source:
 
 - experiment design, method, metric, result, or experiment suggestion:
@@ -75,9 +77,11 @@ Explaining a named file does not mutate it. Route formal question or Anchor
 changes to `problem-anchor-writer`, active research decisions and Focus work to
 `research-progress-core`, formal Protocol/result work to
 `experiment-card-writer`, remote execution to `remote-experiment-workflow`,
-meeting synthesis to `meeting-outline-writer`, publication to
-`research-mainline`, and literature positioning or theory critique beyond the
-named document to `scholar-mode`.
+meeting synthesis or handoff writing to the matching `research-communication`
+mode, publication to `research-mainline`, and literature positioning or theory
+critique beyond the named document to `scholar-mode`.
 
-End with one small comprehension checkpoint or a short menu of the exact nodes
-available for deeper explanation. Do not use a generic “any questions?” ending.
+For completed-result delivery, end with the next-step analysis required by the
+repository result rule. For other explanations, end with one small
+comprehension checkpoint or a short menu of the exact nodes available for
+deeper explanation. Do not use a generic “any questions?” ending.

@@ -2,13 +2,12 @@
 
 ```text
 type: meeting_cycle_core_task
-status: HUMAN_RESULT_CONFIRMED
+task_state: CLOSED
 problem_key: A15.counterfactual_utility_residual_expert_growth
 focus_role: SECONDARY
-conversation_owner: UNCLAIMED
-ownership_status: RELEASED
-core_question: AI_FORMALIZATION_AUTHORIZED_BY_HUMAN_SCOPE
-plain_language_design: AI_FORMALIZATION_AUTHORIZED_BY_HUMAN_SCOPE
+question_state: HUMAN_CONFIRMED
+design_state: HUMAN_CONFIRMED
+result_state: HUMAN_CONFIRMED
 cycle_start: 2026-08-29
 target_meeting: 2026-08-30
 active_project: Projects/from-attention-to-search/

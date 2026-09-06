@@ -122,7 +122,9 @@ are not automatically independent experimental replicates.
 ## Summary Contract
 
 Keep `summary.md` short and conclusion-first. It must be understandable without
-chat history but need not reproduce the complete setup.
+chat history but need not reproduce the complete setup. Its reader body owns
+the four-part result account; ordinary chat should link to it instead of
+paraphrasing the same structure.
 
 Use this structure:
 
@@ -134,41 +136,45 @@ Frozen Protocol:
 Detailed record:
 Result status / eligibility:
 
-## Result Snapshot
+## 1. Purpose
+
+One sentence stating the scientific purpose.
+
+## 2. Hypothesis
+
+One or two falsifiable statements, including the strongest rival when needed.
+
+## 3. Analysis Method
+
+At most three bullets. Each names the comparison, what is held fixed, and the
+uncertainty it resolves. Include the primary metric and unit.
+
+## 4. Conclusion
 
 Verdict:
-What we established:
-What the experiment shows:
-What we do next:
 
-## Decision-Bearing Setup
-
-Question:
-Treatment and control:
-Changed variable:
-Held fixed:
-Primary metric and unit:
-Known limitation:
-
-## Verdict Basis
+1. Direct decision-bearing answer, smallest decisive value, and eligibility.
 
 | Registered rule | Observed value | Guard / eligibility | Verdict | Evidence source |
 | --- | --- | --- | --- | --- |
 | | | | | |
 
-## Key Evidence
+### Important Figure, Only When Decision-Bearing
 
-## Central Figure, Only When Needed
+How to read:
 
-## Claim Boundary
+### Claim Boundary
 
 Can claim:
 Cannot claim:
 
-## Next Decision
+### Next Step Analysis
 
 Decision:
+Why it follows:
+Unresolved uncertainty:
 Completion criterion:
+Stop or redirect condition:
 Resume action:
 ```
 

@@ -16,18 +16,11 @@ explicitly say otherwise.
 Web-side AI may only see `Research_System`. Do not assume project-local folders
 under `Projects/` are visible unless I provide them.
 
-At the start, read:
-
-1. `AGENTS.md`
-2. `PROJECTS.md`
-3. root `sync/` summaries relevant to the active project, if any
-4. `paper_reading/README.md`
-5. `templates/reading/paper_summary_card.md`
-6. user-provided project graph snippets, anchor files, or reading targets
-
-Do not hard-code project state in this prompt. Infer the active project,
-mainline, anchor, key metric, and claim boundary from checkpoint files or
-from my provided material.
+Start from the named paper, article, or passage. Read `PROJECTS.md`, root
+`sync/`, an Anchor, or a result record only when I ask how the reading changes
+a specific project decision. Read a template only when I ask to save a reading
+artifact. If the needed project source is unavailable, name the smallest file
+or excerpt required instead of inferring project state.
 
 ## Core Principle
 
@@ -43,27 +36,10 @@ method, evidence, limitation, and transfer boundary.
 
 ## Default Output
 
-```markdown
-## Conclusion
-
-## What I Should Read First
-
-## Core Problem
-
-## Key Idea / Method
-
-## Most Important Evidence
-
-## What The Paper Actually Claims
-
-## My Research Judgment
-
-## Mainline Update
-
-## Where To File It
-```
-
-Keep this short unless I ask for deep reading.
+Lead with the answer, then give only the evidence, nearest limitation, and
+project implication actually requested. Do not force a fixed section list onto
+a narrow question. Add a mainline-update check or filing recommendation only
+when I ask for it.
 
 ## Reading Modes
 
@@ -117,7 +93,7 @@ Then answer:
 
 ## Mainline Update Rule
 
-A paper updates my mainline only if it changes:
+When project impact is in scope, a paper updates my mainline only if it changes:
 
 - anchor / hypothesis;
 - mathematical modeling;

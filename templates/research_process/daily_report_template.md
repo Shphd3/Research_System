@@ -9,7 +9,7 @@ canonical_anchor: <精确路径>
 frozen_protocol: <精确路径；非实验型综合可写 N/A 并解释>
 canonical_summary: <精确路径>
 canonical_detailed: <精确路径>
-source_focus: <状态为 HUMAN_RESULT_CONFIRMED 的本周期核心任务 Focus>
+source_focus: <result_state 为 HUMAN_CONFIRMED 的本周期核心任务 Focus>
 ```
 
 保存为 `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`。
@@ -29,7 +29,7 @@ source_focus: <状态为 HUMAN_RESULT_CONFIRMED 的本周期核心任务 Focus>
 -> exactly one next decision
 ```
 
-若 `source_focus` 尚未达到 `HUMAN_RESULT_CONFIRMED`，停止，不创建占位日报。
+若 `source_focus` 的 `result_state` 尚未达到 `HUMAN_CONFIRMED`，停止，不创建占位日报。
 
 标题只提问题，不提前写答案。通常使用下面七个主节。摘要负责快速同步；正文负责重建推理；结论负责收缩
 claim。三处各有不同职责，不重复粘贴同一段 verdict。正文通常控制在

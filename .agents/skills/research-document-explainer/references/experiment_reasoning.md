@@ -21,6 +21,15 @@ Reconstruct one experiment in this order:
 7. **Current evidence** — direct result separately from interpretation and
    claim boundary.
 
+When the user asks what completed results mean and `summary.md` exists, link it
+first and do not paraphrase its four-part account. Give the direct
+decision-bearing quantity, the smallest sufficient set of important figures
+with one plain reading sentence each, the nearest boundary, and why the next
+step follows. Label an unconfirmed next step `AI 建议`. Remove generic
+background, run chronology, and secondary positive diagnostics unless they
+change eligibility or the claim boundary. Never use a figure as a substitute
+for the numerical result or bounded conclusion.
+
 Explain a multi-stage design as gates. At each gate state why downstream work
 is not interpretable before it passes.
 

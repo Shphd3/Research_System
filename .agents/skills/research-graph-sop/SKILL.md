@@ -1,6 +1,6 @@
 ---
 name: research-graph-sop
-description: "Inspect, create, or maintain a thin research graph that navigates questions, claims, evidence, methods, sources, outputs, and tasks. Use when the user asks to inspect or change graph.yaml or audit graph navigation. Do not use for ordinary research notes, anchors, results, or project-state edits when no graph is in scope."
+description: "Use when the user explicitly asks to inspect, create, change, or validate a research graph or graph.yaml. Do not use when no graph is in scope."
 ---
 
 # Research Graph SOP

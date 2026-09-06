@@ -13,16 +13,14 @@ Optional files:
 - `math_notes.md` for definitions, equations, and proof sketches
 - `experiment_notes.md` for experimental design and evidence checks
 
-For blogs or essays, use the same category folders and create:
+For blogs or essays, use `reading_record.md`; create `summary_card.md` only if
+the source becomes important enough to retrieve or cite later.
 
-- `recordings.md` or `reading_record.md`
-- `summary_card.md` only if the piece becomes important enough to cite later
+Reusable templates live only under the repository root:
 
-Templates live in `_templates/`:
-
-- `summary_card.md`: shortest first-pass card
-- `paper_reading_record.md`: paper reading process template
-- `blog_reading_record.md`: blog / essay reading process template
+- `templates/reading/paper_summary_card.md`: shortest first-pass card;
+- `templates/reading/paper_reading_record.md`: deeper paper record;
+- `templates/reading/paper_blog_reading_record.md`: deeper blog or essay record.
 
 For web-side paper-reading AI, use:
 
@@ -30,10 +28,9 @@ For web-side paper-reading AI, use:
 prompts/project_instructions/paper_reading_project_prompt.md
 ```
 
-That prompt assumes the AI can only see `Research_System`, so it uses
-`PROJECTS.md` plus root `sync/` summaries as the active project context. Provide
-project-local graph or anchor files when the reading depends on details inside
-`Projects/`.
+That prompt starts from the named paper or article. Provide `PROJECTS.md`, a
+current Anchor, or a root `sync/` entry only when the question asks how the
+reading changes a particular research line.
 
 ## Categories
 
@@ -63,4 +60,6 @@ Example:
 
 The summary card is enough for first-pass reading. Only create deeper notes when the paper changes the mainline, exposes a risk, or becomes necessary for a report.
 
-For any paper, blog, or essay, always end with a `Mainline Update Check`. The useful output is not that you read it, but whether it changes your hypothesis, modeling, experiment design, interpretation, or next decision.
+Perform a mainline-update check only when the user asks about project impact or
+the reading materially challenges a current hypothesis, design, interpretation,
+boundary, or next decision. Otherwise a concise explanation is complete.

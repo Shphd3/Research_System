@@ -194,6 +194,11 @@ component, intervention, or analysis computation. For a scientifically
 meaningful stage, state its goal, how it works, and why it is needed. Exclude
 run settings that belong to the Protocol.
 
+When prior work materially changes which mechanism is admissible, record the
+representative alternative, its relevant mechanism and supervision boundary,
+the direct source, and the local adopt, adapt, baseline, or reject decision in
+this section. Omit prior-art catalogues that do not change the computation.
+
 ### 6. Minimal Falsification Tests
 
 Specify one decisive comparison, one primary metric, and only the guards needed

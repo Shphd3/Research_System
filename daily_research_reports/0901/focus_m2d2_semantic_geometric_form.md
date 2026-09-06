@@ -2,13 +2,12 @@
 
 ```text
 type: meeting_cycle_core_task
-status: RESULT_AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
+task_state: ACTIVE
 problem_key: A15.m2d2_semantic_representation_geometric_form
 focus_role: PRIMARY
-conversation_owner: codex-thread:01a05d72-0a0c-7a61-be1d-d5df101a2ef2
-ownership_status: CLAIMED
-core_question: HUMAN_CONFIRMED
-plain_language_design: HUMAN_CONFIRMED
+question_state: HUMAN_CONFIRMED
+design_state: HUMAN_CONFIRMED
+result_state: AWAITING_HUMAN_CONFIRMATION
 cycle_start: 2026-09-01
 target_meeting: 2026-09-02
 active_project: Projects/from-attention-to-search/

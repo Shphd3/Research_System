@@ -31,9 +31,9 @@ plain Chinese before using it.
 
 Track the core question and the full four-part design separately. If a later
 Protocol audit materially changes a method, completion rule, or expected
-branch, preserve a confirmed core question but mark the design
-`AI_REVISED_AWAITING_HUMAN_CONFIRMATION`; return to this gate before Protocol
-promotion.
+branch, preserve a confirmed core question but set
+`design_state: AWAITING_HUMAN_CONFIRMATION` and record the reason in prose;
+return to this gate before Protocol promotion.
 
 ## Audit Gate
 
@@ -58,7 +58,7 @@ promotion.
    - `NOT_READY_OBJECT_OR_LOGIC`
 
 Do not run experiments or create a Protocol through this skill. Ordinary one-
-problem meetings use the active Focus directly. Use `meeting-outline-writer`
-only when the researcher explicitly requests a meeting brief, speaking outline,
-or multi-problem synthesis. After the researcher confirms the four-part design,
-use `experiment-card-writer` for the canonical Protocol.
+problem meetings use the active Focus directly. Use `research-communication`
+meeting mode only when the researcher explicitly requests a meeting brief,
+speaking outline, or multi-problem synthesis. After the researcher confirms the
+four-part design, use `experiment-card-writer` for the canonical Protocol.

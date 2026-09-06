@@ -2,13 +2,12 @@
 
 ```text
 type: meeting_cycle_core_task
-status: AI_RESULT_DRAFT_AWAITING_HUMAN_CONFIRMATION_E03_PENDING
+task_state: ACTIVE
 problem_key: A15.qwen3_30b_fixed_fact_expression_separability
 focus_role: SECONDARY
-conversation_owner: codex-thread:01a04dd1-ba8c-7131-b880-c48646566d66
-ownership_status: CLAIMED
-core_question: HUMAN_CONFIRMED_BY_DIRECT_EXECUTION_REQUEST
-plain_language_design: HUMAN_CONFIRMED_BY_DIRECT_EXECUTION_REQUEST
+question_state: HUMAN_CONFIRMED
+design_state: HUMAN_CONFIRMED
+result_state: AWAITING_HUMAN_CONFIRMATION
 data_definition: VERIFIED_EXISTING_C4E_C5E_QWEN_CACHE
 cycle_start: 2026-08-30
 target_meeting: Unknown

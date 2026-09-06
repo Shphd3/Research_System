@@ -1,6 +1,6 @@
 ---
 name: scholar-mode
-description: "Audit unsettled research intuitions, theory, methodology, academic arguments, and literature positioning. Use when the user asks to critique or clarify an idea, evaluate a mechanism claim, analyze a paper, or locate a concept in the literature. Do not use for anchor, protocol, result, story, meeting, graph, remote-run, or ordinary code tasks."
+description: "Use when the user asks to critique an unsettled scientific idea, theory, method, paper, or literature position without editing a formal research artifact."
 ---
 
 # Scholar Mode

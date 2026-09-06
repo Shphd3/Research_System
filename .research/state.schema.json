@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "events": {"type": "array"},
+    "schema_version": {"const": 2},
+    "tasks": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "closed_at": {"type": "string"},
+          "conversation_id": {"minLength": 1, "type": "string"},
+          "opened_at": {"minLength": 1, "type": "string"},
+          "paths": {"items": {"type": "string"}, "type": "array"},
+          "problem_key": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{1,127}$",
+            "type": "string"
+          },
+          "status": {"enum": ["OPEN", "CLOSED"]},
+          "task_id": {"minLength": 1, "type": "string"},
+          "task_part": {"minLength": 1, "type": "string"},
+          "updated_at": {"minLength": 1, "type": "string"}
+        },
+        "required": [
+          "task_id",
+          "conversation_id",
+          "problem_key",
+          "task_part",
+          "paths",
+          "opened_at",
+          "updated_at",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    }
+  },
+  "required": ["schema_version", "tasks", "events"],
+  "type": "object"
+}

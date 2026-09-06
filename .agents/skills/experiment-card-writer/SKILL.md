@@ -1,6 +1,6 @@
 ---
 name: experiment-card-writer
-description: "Write, audit, confirm, and freeze an anchor-aligned protocol.md, then create evidence-grounded summary.md and detailed.md records with explicit provenance and claim boundaries. Use for experiment design, Protocol approval or amendment, result interpretation, or result-record maintenance after the Anchor is clear. Do not redefine the research question, invent missing judgment or evidence, operate remote jobs, or publish artifacts."
+description: "Use when the user asks to draft or audit an Anchor-aligned protocol.md, or to write or audit summary.md and detailed.md for a completed experiment. Do not use to redefine the research question, operate remote jobs, or publish artifacts."
 ---
 
 # Experiment Protocol And Result Writer
@@ -70,10 +70,10 @@ missing, unconfirmed, or inconsistent with the Anchor, stop and route the
 conflict to `research-sync-gate` or `problem-anchor-writer`.
 
 If a cold read materially revises the Focus's plain-language method,
-completion rule, or expected branches, set its design state to
-`AI_REVISED_AWAITING_HUMAN_CONFIRMATION`. A separately confirmed core question
-may remain confirmed, but the Protocol cannot be promoted until the revised
-four-part design is confirmed again.
+completion rule, or expected branches, set
+`design_state: AWAITING_HUMAN_CONFIRMATION` and record the reason in prose. A
+separately confirmed core question may remain confirmed, but the Protocol
+cannot be promoted until the revised four-part design is confirmed again.
 
 ### 1. Anchor Alignment
 
@@ -207,19 +207,22 @@ next decision. Define its data source, metric and unit, aggregation, axes and
 legend, observed result, allowed conclusion, and limitation before promotion.
 Move debug-only figures out of `summary.md`.
 
-### 8.1 Plain-Language Completion Reply
+### 8.1 Result Delivery
 
-After verifying a completed run, answer the researcher using the project
-completion-reply contract: audit comparisons and actual stage transitions
-first, then use Purpose, Hypothesis, at most three Analysis-method bullets, and
-numbered Conclusions. Keep each conclusion attached to one decision-bearing
-figure and one short reading instruction. The reply must make route semantics,
-expert utility, end-task performance, and representation evidence visibly
-distinct whenever those objects exist.
+Use the project completion contract to write the complete Purpose, Hypothesis,
+Analysis method, and Conclusion account once in `summary.md`. Audit comparisons
+and actual stage transitions before writing it. Keep each conclusion attached
+to decision-bearing evidence and make route semantics, expert utility,
+end-task performance, and representation evidence distinct whenever those
+objects exist.
 
-This reply is a reader surface, not a new evidence owner. Every number and
-figure still traces to `summary.md` or `detailed.md`, and unconfirmed wording
-remains an AI draft.
+After `summary.md` exists, the chat response links it first and does not repeat
+the four sections. Give only the direct verdict, smallest decisive value,
+important figure and reading instruction when one exists, nearest boundary,
+and the reasoning for the next step. Label an unconfirmed next step `AI 建议`.
+Use a standalone four-section chat reply only when no Summary exists or the
+researcher explicitly requests a speaking or meeting brief. Every number and
+figure still traces to `summary.md` or `detailed.md`.
 
 ### 9. Close The Chain
 
@@ -241,8 +244,8 @@ the cycle task and the researcher's result account; the delayed daily report
 provides the complete reader explanation and coherence audit.
 
 Do not create a closure report or line synthesis through this skill. Route an
-explicit line-level synthesis to `research-story-writer` and path/state changes
-to `research-mainline`.
+explicit line-level synthesis to `research-communication` story mode and
+path/state changes to `research-mainline`.
 
 ## Language And Safety
 

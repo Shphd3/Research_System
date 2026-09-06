@@ -1,0 +1,789 @@
+#!/usr/bin/env python3
+"""Thin, repository-local routing state for Research_System.
+
+The registry records which part of a problem each conversation is working on.
+It is advisory: overlaps are reported for human judgment and never block work.
+It stores no scientific claim, approval, verdict, or artifact content.
+"""
+
+from __future__ import annotations
+
+import argparse
+from contextlib import contextmanager
+from datetime import datetime, timezone
+import fcntl
+import json
+import os
+from pathlib import Path, PurePosixPath
+import re
+import subprocess
+import sys
+import tempfile
+import uuid
+
+
+SCHEMA_VERSION = 2
+PROBLEM_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{1,127}$")
+TOKEN_RE = re.compile(r"`([^`]+)`")
+LINK_RE = re.compile(r"\]\(([^)#]+)(?:#[^)]+)?\)")
+REPOSITORY_PATH_RE = re.compile(
+    r"(?:(?:Projects|daily_research_reports|sync|templates|docs)/[^\s`|;)]+\.md)"
+)
+FOCUS_STATES = {
+    "task_state": {"DRAFT", "ACTIVE", "CLOSED"},
+    "question_state": {"AWAITING_HUMAN_CONFIRMATION", "HUMAN_CONFIRMED"},
+    "design_state": {
+        "NOT_REQUIRED",
+        "AWAITING_HUMAN_CONFIRMATION",
+        "HUMAN_CONFIRMED",
+    },
+    "result_state": {
+        "NOT_AVAILABLE",
+        "AWAITING_HUMAN_CONFIRMATION",
+        "HUMAN_CONFIRMED",
+    },
+}
+
+
+class CtlError(Exception):
+    def __init__(self, code: str, message: str, exit_code: int = 2, **details):
+        super().__init__(message)
+        self.code = code
+        self.message = message
+        self.exit_code = exit_code
+        self.details = details
+
+
+def utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def isoformat(value: datetime) -> str:
+    return value.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace(
+        "+00:00", "Z"
+    )
+
+
+def repository_root() -> Path:
+    override = os.environ.get("RESEARCHCTL_ROOT")
+    root = Path(override) if override else Path(__file__).resolve().parent
+    return root.resolve()
+
+
+def config(root: Path) -> dict:
+    path = root / ".research" / "config.json"
+    if not path.exists():
+        return {"schema_version": SCHEMA_VERSION, "state_path": ".research/runtime/state.json"}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CtlError("INVALID_CONFIG", f"Cannot read {path}: {exc}", 4) from exc
+    if value.get("schema_version") != SCHEMA_VERSION:
+        raise CtlError(
+            "INVALID_CONFIG",
+            f"Unsupported config schema: {value.get('schema_version')!r}",
+            4,
+        )
+    return value
+
+
+def state_path(root: Path, cfg: dict) -> Path:
+    relative = PurePosixPath(str(cfg.get("state_path", "")))
+    if relative.is_absolute() or ".." in relative.parts or not relative.parts:
+        raise CtlError("INVALID_CONFIG", "state_path must stay inside the repository", 4)
+    return root.joinpath(*relative.parts)
+
+
+def empty_state() -> dict:
+    return {"schema_version": SCHEMA_VERSION, "tasks": {}, "events": []}
+
+
+def migrate_v1(state: dict) -> dict:
+    """Preserve only still-active legacy work as advisory tasks."""
+    tasks: dict[str, dict] = {}
+    now = isoformat(utc_now())
+    active_by_conversation: dict[str, list[dict]] = {}
+    for claim in state.get("claims", {}).values():
+        if not isinstance(claim, dict) or claim.get("status") != "ACTIVE":
+            continue
+        conversation = claim.get("owner")
+        if isinstance(conversation, str) and conversation:
+            active_by_conversation.setdefault(conversation, []).append(claim)
+
+    for conversation, claims in active_by_conversation.items():
+        paths = set()
+        problem_key = None
+        opened_at = now
+        for claim in claims:
+            problem_key = problem_key or claim.get("problem_key")
+            acquired_at = claim.get("acquired_at")
+            if isinstance(acquired_at, str):
+                opened_at = min(opened_at, acquired_at)
+            for resource in claim.get("resources", []):
+                if isinstance(resource, str) and resource.startswith("artifact:"):
+                    paths.add(resource.split(":", 1)[1])
+        if not isinstance(problem_key, str) or not PROBLEM_RE.fullmatch(problem_key):
+            continue
+        task_id = f"task-{uuid.uuid5(uuid.NAMESPACE_URL, f'researchctl-v1:{conversation}:{problem_key}')}"
+        tasks[task_id] = {
+            "task_id": task_id,
+            "conversation_id": conversation,
+            "problem_key": problem_key,
+            "task_part": "Migrated active legacy write scope",
+            "paths": sorted(paths),
+            "opened_at": opened_at,
+            "updated_at": now,
+            "status": "OPEN",
+        }
+
+    events = [
+        {
+            "at": now,
+            "event": "STATE_MIGRATED",
+            "from_schema": 1,
+            "to_schema": SCHEMA_VERSION,
+            "open_tasks_preserved": len(tasks),
+        }
+    ]
+    return {"schema_version": SCHEMA_VERSION, "tasks": tasks, "events": events}
+
+
+def validate_task(task_id: str, task: object) -> None:
+    if not isinstance(task, dict):
+        raise CtlError("CORRUPT_STATE", f"Task {task_id!r} must be an object", 4)
+    required_strings = (
+        "task_id",
+        "conversation_id",
+        "problem_key",
+        "task_part",
+        "opened_at",
+        "updated_at",
+        "status",
+    )
+    if any(not isinstance(task.get(key), str) or not task[key] for key in required_strings):
+        raise CtlError("CORRUPT_STATE", f"Task {task_id!r} has invalid fields", 4)
+    if task.get("task_id") != task_id or task.get("status") not in {"OPEN", "CLOSED"}:
+        raise CtlError("CORRUPT_STATE", f"Task {task_id!r} has invalid identity or status", 4)
+    if not PROBLEM_RE.fullmatch(task["problem_key"]):
+        raise CtlError("CORRUPT_STATE", f"Task {task_id!r} has invalid problem_key", 4)
+    paths = task.get("paths")
+    if not isinstance(paths, list) or any(not isinstance(path, str) for path in paths):
+        raise CtlError("CORRUPT_STATE", f"Task {task_id!r} has invalid paths", 4)
+
+
+def validate_state_shape(state: object) -> dict:
+    if not isinstance(state, dict):
+        raise CtlError("CORRUPT_STATE", "State must be an object", 4)
+    if state.get("schema_version") == 1:
+        state = migrate_v1(state)
+    if state.get("schema_version") != SCHEMA_VERSION:
+        raise CtlError("CORRUPT_STATE", "Unsupported or missing state schema", 4)
+    if not isinstance(state.get("tasks"), dict):
+        raise CtlError("CORRUPT_STATE", "State field 'tasks' must be an object", 4)
+    if not isinstance(state.get("events"), list):
+        raise CtlError("CORRUPT_STATE", "State field 'events' must be an array", 4)
+    for task_id, task in state["tasks"].items():
+        validate_task(task_id, task)
+    return state
+
+
+def load_state(path: Path) -> dict:
+    if not path.exists():
+        return empty_state()
+    try:
+        return validate_state_shape(json.loads(path.read_text(encoding="utf-8")))
+    except json.JSONDecodeError as exc:
+        raise CtlError("CORRUPT_STATE", f"Cannot parse {path}: {exc}", 4) from exc
+    except OSError as exc:
+        raise CtlError("CORRUPT_STATE", f"Cannot read {path}: {exc}", 4) from exc
+
+
+def atomic_write(path: Path, state: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix="state.", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            json.dump(state, handle, indent=2, sort_keys=True)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+        directory_fd = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(directory_fd)
+        finally:
+            os.close(directory_fd)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+@contextmanager
+def locked_state(root: Path, cfg: dict):
+    path = state_path(root, cfg)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    lock_path = path.with_suffix(path.suffix + ".lock")
+    with lock_path.open("a+", encoding="utf-8") as lock:
+        fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
+        yield path, load_state(path)
+
+
+def conversation_id(required: bool = True) -> str | None:
+    value = os.environ.get("RESEARCHCTL_THREAD_ID") or os.environ.get("CODEX_THREAD_ID")
+    if value:
+        return value
+    if required:
+        raise CtlError(
+            "CONVERSATION_ID_REQUIRED",
+            "Set CODEX_THREAD_ID or RESEARCHCTL_THREAD_ID for this conversation.",
+        )
+    return None
+
+
+def event(state: dict, kind: str, **details) -> None:
+    state["events"].append({"at": isoformat(utc_now()), "event": kind, **details})
+    del state["events"][:-200]
+
+
+def validate_problem_key(value: str) -> str:
+    if not PROBLEM_RE.fullmatch(value):
+        raise CtlError("INVALID_PROBLEM_KEY", f"Invalid problem key: {value!r}")
+    return value
+
+
+def safe_relative_path(root: Path, raw: str, *, base: Path | None = None) -> str | None:
+    candidate = PurePosixPath(raw)
+    if candidate.is_absolute():
+        return None
+    start = base if base is not None else root
+    resolved = start.joinpath(*candidate.parts).resolve()
+    try:
+        relative = resolved.relative_to(root)
+    except ValueError:
+        return None
+    return relative.as_posix()
+
+
+def normalize_paths(root: Path, paths: list[str]) -> list[str]:
+    normalized = set()
+    for raw in paths:
+        path = safe_relative_path(root, raw)
+        if path is None:
+            raise CtlError("INVALID_PATH", f"Path escapes repository: {raw!r}")
+        normalized.add(path)
+    return sorted(normalized)
+
+
+def find_context(root: Path, problem_key: str) -> list[dict]:
+    projects = root / "PROJECTS.md"
+    if not projects.exists():
+        raise CtlError("UNREGISTERED_PROBLEM", f"PROJECTS.md does not register {problem_key}")
+    text = projects.read_text(encoding="utf-8")
+    matching_lines = [line for line in text.splitlines() if f"`{problem_key}`" in line]
+    if not matching_lines:
+        raise CtlError("UNREGISTERED_PROBLEM", f"Unknown problem key: {problem_key}")
+
+    paths: dict[str, str] = {}
+    for line in matching_lines:
+        for token in TOKEN_RE.findall(line):
+            if token == problem_key:
+                continue
+            relative = safe_relative_path(root, token)
+            if relative and (root / relative).is_file():
+                paths[relative] = "registered problem source"
+
+    focus_paths = [path for path in paths if Path(path).name.startswith("focus_")]
+    for relative in focus_paths:
+        focus = root / relative
+        focus_text = focus.read_text(encoding="utf-8")
+        candidates = LINK_RE.findall(focus_text) + TOKEN_RE.findall(focus_text)
+        for candidate in candidates:
+            linked = safe_relative_path(root, candidate, base=focus.parent)
+            if linked and (root / linked).is_file():
+                paths.setdefault(linked, f"linked from {relative}")
+
+    return [{"path": path, "reason": paths[path]} for path in sorted(paths)]
+
+
+def paths_overlap(left: str, right: str) -> bool:
+    if left == right:
+        return True
+    left_path = PurePosixPath(left)
+    right_path = PurePosixPath(right)
+    return left_path in right_path.parents or right_path in left_path.parents
+
+
+def open_tasks(state: dict, problem_key: str | None = None) -> list[dict]:
+    return [
+        task
+        for task in state["tasks"].values()
+        if task["status"] == "OPEN"
+        and (problem_key is None or task["problem_key"] == problem_key)
+    ]
+
+
+def advisory_findings(tasks: list[dict]) -> list[dict]:
+    findings = []
+    ordered = sorted(tasks, key=lambda task: task["task_id"])
+    for index, left in enumerate(ordered):
+        for right in ordered[index + 1 :]:
+            if left["conversation_id"] == right["conversation_id"]:
+                continue
+            if left["problem_key"] == right["problem_key"]:
+                findings.append(
+                    {
+                        "level": "INFO",
+                        "code": "SAME_PROBLEM",
+                        "tasks": [left["task_id"], right["task_id"]],
+                        "problem_key": left["problem_key"],
+                        "message": "Different conversations are working on parts of the same problem.",
+                    }
+                )
+            overlaps = sorted(
+                {
+                    path
+                    for path in left["paths"]
+                    if any(paths_overlap(path, other) for other in right["paths"])
+                }
+            )
+            if overlaps:
+                findings.append(
+                    {
+                        "level": "WARNING",
+                        "code": "PATH_OVERLAP",
+                        "tasks": [left["task_id"], right["task_id"]],
+                        "paths": overlaps,
+                        "message": "The task paths overlap; the researcher decides whether coordination is needed.",
+                    }
+                )
+    return findings
+
+
+def first_text_block(text: str) -> str | None:
+    match = re.search(r"```text\n(.*?)\n```", text, re.DOTALL)
+    return match.group(1) if match else None
+
+
+def simple_metadata(text: str) -> dict[str, str]:
+    block = first_text_block(text)
+    if block is None:
+        return {}
+    values = {}
+    for line in block.splitlines():
+        if ":" not in line or line.startswith((" ", "-")):
+            continue
+        key, value = line.split(":", 1)
+        values[key.strip()] = value.strip()
+    return values
+
+
+def current_focus_rows(root: Path) -> list[dict]:
+    projects = root / "PROJECTS.md"
+    if not projects.is_file():
+        return []
+    lines = projects.read_text(encoding="utf-8").splitlines()
+    inside_section = False
+    rows = []
+    for line in lines:
+        if line == "## Current Focus Priority":
+            inside_section = True
+            continue
+        if inside_section and line.startswith("## "):
+            break
+        if not inside_section or not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) < 3 or cells[0] in {"Problem key", "---"}:
+            continue
+        key_match = re.fullmatch(r"`([^`]+)`", cells[0])
+        role_match = re.fullmatch(r"`([^`]+)`", cells[1])
+        focus_match = re.search(r"`([^`]*focus_[^`]*\.md)`", cells[2])
+        if key_match and role_match and focus_match:
+            rows.append(
+                {
+                    "problem_key": key_match.group(1),
+                    "focus_role": role_match.group(1),
+                    "focus_path": focus_match.group(1),
+                }
+            )
+    return rows
+
+
+def repository_validation(root: Path) -> dict:
+    """Check structural contracts without judging scientific claims."""
+    errors: list[dict] = []
+    advisories: list[dict] = []
+    rows = current_focus_rows(root)
+    if not rows:
+        errors.append(
+            {
+                "code": "CURRENT_FOCUS_REGISTRY_MISSING",
+                "message": "PROJECTS.md has no parseable Current Focus Priority rows.",
+            }
+        )
+
+    seen_keys: set[str] = set()
+    seen_focuses: set[str] = set()
+    checked_references: set[str] = set()
+    checked_protocols: set[str] = set()
+    for row in rows:
+        problem_key = row["problem_key"]
+        focus_relative = row["focus_path"]
+        if problem_key in seen_keys:
+            errors.append({"code": "DUPLICATE_PROBLEM_KEY", "problem_key": problem_key})
+        if focus_relative in seen_focuses:
+            errors.append({"code": "DUPLICATE_CURRENT_FOCUS", "path": focus_relative})
+        seen_keys.add(problem_key)
+        seen_focuses.add(focus_relative)
+
+        focus = root / focus_relative
+        checked_references.add(focus_relative)
+        if not focus.is_file():
+            errors.append({"code": "MISSING_CURRENT_FOCUS", "path": focus_relative})
+            continue
+        focus_text = focus.read_text(encoding="utf-8")
+        fields = simple_metadata(focus_text)
+        if fields.get("problem_key") != problem_key:
+            errors.append(
+                {
+                    "code": "PROJECTS_FOCUS_KEY_DRIFT",
+                    "path": focus_relative,
+                    "registered": problem_key,
+                    "focus": fields.get("problem_key"),
+                }
+            )
+        if fields.get("focus_role") != row["focus_role"]:
+            errors.append(
+                {
+                    "code": "PROJECTS_FOCUS_ROLE_DRIFT",
+                    "path": focus_relative,
+                    "registered": row["focus_role"],
+                    "focus": fields.get("focus_role"),
+                }
+            )
+        for field, allowed in FOCUS_STATES.items():
+            if fields.get(field) not in allowed:
+                errors.append(
+                    {
+                        "code": "INVALID_FOCUS_STATE",
+                        "path": focus_relative,
+                        "field": field,
+                        "value": fields.get(field),
+                    }
+                )
+        if fields.get("task_state") == "CLOSED" and fields.get("result_state") != "HUMAN_CONFIRMED":
+            errors.append({"code": "INVALID_FOCUS_TRANSITION", "path": focus_relative})
+        if fields.get("result_state") == "HUMAN_CONFIRMED" and fields.get("question_state") != "HUMAN_CONFIRMED":
+            errors.append({"code": "INVALID_FOCUS_TRANSITION", "path": focus_relative})
+        if fields.get("design_state") == "HUMAN_CONFIRMED" and fields.get("question_state") != "HUMAN_CONFIRMED":
+            errors.append({"code": "INVALID_FOCUS_TRANSITION", "path": focus_relative})
+
+        forbidden = {
+            "status",
+            "core_question",
+            "plain_language_design",
+            "protocol_state",
+            "execution_state",
+            "conversation_owner",
+            "ownership_status",
+            "owner",
+        }
+        for field in sorted(forbidden.intersection(fields)):
+            errors.append(
+                {
+                    "code": "FOCUS_OWNS_FOREIGN_STATE",
+                    "path": focus_relative,
+                    "field": field,
+                }
+            )
+
+        block = first_text_block(focus_text) or ""
+        for relative in REPOSITORY_PATH_RE.findall(block):
+            checked_references.add(relative)
+            target = root / relative
+            if not target.is_file():
+                errors.append(
+                    {
+                        "code": "MISSING_REGISTERED_REFERENCE",
+                        "source": focus_relative,
+                        "path": relative,
+                    }
+                )
+                continue
+            if target.name == "protocol.md":
+                checked_protocols.add(relative)
+                opening = "\n".join(target.read_text(encoding="utf-8").splitlines()[:60])
+                if not re.search(r"(?i)approv|authori[sz]", opening):
+                    errors.append(
+                        {
+                            "code": "PROTOCOL_AUTHORIZATION_UNDECLARED",
+                            "path": relative,
+                            "message": "The protocol opening has no explicit approval or authorization declaration.",
+                        }
+                    )
+
+    skill_references = 0
+    skills_root = root / ".agents" / "skills"
+    if skills_root.is_dir():
+        for skill_file in sorted(skills_root.glob("*/SKILL.md")):
+            text = skill_file.read_text(encoding="utf-8")
+            references = sorted(set(re.findall(r"references/([A-Za-z0-9_.-]+\.md)", text)))
+            for reference in references:
+                skill_references += 1
+                target = skill_file.parent / "references" / reference
+                if not target.is_file():
+                    errors.append(
+                        {
+                            "code": "MISSING_SKILL_REFERENCE",
+                            "source": skill_file.relative_to(root).as_posix(),
+                            "path": target.relative_to(root).as_posix(),
+                        }
+                    )
+
+    projects = root / "PROJECTS.md"
+    projects_text = projects.read_text(encoding="utf-8") if projects.is_file() else ""
+    if "known stale" in projects_text.lower():
+        advisories.append(
+            {
+                "level": "WARNING",
+                "code": "DERIVED_GRAPH_DECLARED_STALE",
+                "message": "PROJECTS.md explicitly marks a Graph navigation view as stale.",
+            }
+        )
+
+    mirror_script = root / ".agents/skills/research-mainline/scripts/publish_anchor_mirror.py"
+    mirror_target = root / "sync/S000_current_specialization/anchors"
+    if mirror_script.is_file() and mirror_target.is_dir():
+        completed = subprocess.run(
+            [sys.executable, str(mirror_script), "--exclude-dir", "archive", "--check"],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            timeout=30,
+        )
+        if completed.returncode:
+            detail = (completed.stdout + completed.stderr).strip().splitlines()
+            advisories.append(
+                {
+                    "level": "WARNING",
+                    "code": "DERIVED_ANCHOR_MIRROR_DRIFT",
+                    "message": detail[0] if detail else "Published anchor mirror differs from its source.",
+                    "difference_count": max(0, len(detail) - 1),
+                }
+            )
+
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "advisories": advisories,
+        "checked": {
+            "current_focuses": len(rows),
+            "registered_references": len(checked_references),
+            "protocol_authorizations": len(checked_protocols),
+            "skill_references": skill_references,
+        },
+    }
+
+
+def command_context(args, root: Path, cfg: dict) -> dict:
+    conversation = conversation_id()
+    problem = validate_problem_key(args.problem_key)
+    context = find_context(root, problem)
+    paths = normalize_paths(root, args.paths)
+    task_part = args.task.strip()
+    if not task_part:
+        raise CtlError("TASK_PART_REQUIRED", "--task must name the concrete part being handled.")
+
+    with locked_state(root, cfg) as (path, state):
+        now = isoformat(utc_now())
+        existing = next(
+            (task for task in open_tasks(state) if task["conversation_id"] == conversation),
+            None,
+        )
+        if existing:
+            previous = {
+                "problem_key": existing["problem_key"],
+                "task_part": existing["task_part"],
+                "paths": existing["paths"],
+            }
+            existing.update(
+                {"problem_key": problem, "task_part": task_part, "paths": paths, "updated_at": now}
+            )
+            task = existing
+            event(
+                state,
+                "TASK_UPDATED",
+                task_id=task["task_id"],
+                conversation_id=conversation,
+                previous=previous,
+            )
+        else:
+            task_id = f"task-{uuid.uuid4()}"
+            task = {
+                "task_id": task_id,
+                "conversation_id": conversation,
+                "problem_key": problem,
+                "task_part": task_part,
+                "paths": paths,
+                "opened_at": now,
+                "updated_at": now,
+                "status": "OPEN",
+            }
+            state["tasks"][task_id] = task
+            event(
+                state,
+                "TASK_OPENED",
+                task_id=task_id,
+                conversation_id=conversation,
+                problem_key=problem,
+            )
+        findings = advisory_findings(open_tasks(state))
+        atomic_write(path, state)
+    return {"task": task, "context": context, "advisories": findings}
+
+
+def command_release(args, root: Path, cfg: dict) -> dict:
+    conversation = conversation_id()
+    with locked_state(root, cfg) as (path, state):
+        if args.task_id:
+            task = state["tasks"].get(args.task_id)
+            if not task:
+                raise CtlError("UNKNOWN_TASK", f"Unknown task: {args.task_id}")
+        else:
+            task = next(
+                (value for value in open_tasks(state) if value["conversation_id"] == conversation),
+                None,
+            )
+            if not task:
+                raise CtlError("NO_OPEN_TASK", "This conversation has no open task.")
+        if task["status"] != "OPEN":
+            raise CtlError("TASK_NOT_OPEN", f"Task status is {task['status']!r}.")
+        now = isoformat(utc_now())
+        task["status"] = "CLOSED"
+        task["updated_at"] = now
+        task["closed_at"] = now
+        event(
+            state,
+            "TASK_CLOSED",
+            task_id=task["task_id"],
+            task_conversation_id=task["conversation_id"],
+            closed_by_conversation_id=conversation,
+        )
+        atomic_write(path, state)
+        return {
+            "task_id": task["task_id"],
+            "status": "CLOSED",
+            "closed_by_conversation_id": conversation,
+        }
+
+
+def command_status(args, root: Path, cfg: dict) -> dict:
+    state = load_state(state_path(root, cfg))
+    tasks = list(state["tasks"].values())
+    if args.problem_key:
+        tasks = [task for task in tasks if task["problem_key"] == args.problem_key]
+    if not args.all:
+        tasks = [task for task in tasks if task["status"] == "OPEN"]
+    tasks = sorted(tasks, key=lambda task: (task["problem_key"], task["task_id"]))
+    return {
+        "schema_version": state["schema_version"],
+        "tasks": tasks,
+        "advisories": advisory_findings([task for task in tasks if task["status"] == "OPEN"]),
+    }
+
+
+def command_check(args, root: Path, cfg: dict) -> dict:
+    state = load_state(state_path(root, cfg))
+    active = open_tasks(state, args.problem_key)
+    duplicate_conversations = sorted(
+        {
+            task["conversation_id"]
+            for task in active
+            if sum(other["conversation_id"] == task["conversation_id"] for other in active) > 1
+        }
+    )
+    errors = [
+        {"code": "MULTIPLE_OPEN_TASKS_FOR_CONVERSATION", "conversation_id": conversation}
+        for conversation in duplicate_conversations
+    ]
+    advisories = advisory_findings(active)
+    repository = None
+    if args.repository:
+        repository = repository_validation(root)
+        errors.extend(repository["errors"])
+        advisories.extend(repository["advisories"])
+    result = {"ok": not errors, "errors": errors, "advisories": advisories}
+    if repository is not None:
+        result["repository"] = repository["checked"]
+    return result
+
+
+def parser() -> argparse.ArgumentParser:
+    root = argparse.ArgumentParser(
+        prog="researchctl", description="Record advisory conversation-to-problem task routing."
+    )
+    commands = root.add_subparsers(dest="command", required=True)
+
+    context = commands.add_parser(
+        "context", help="Register the concrete part this conversation is handling."
+    )
+    context.add_argument("problem_key")
+    context.add_argument("--task", required=True, help="Concrete problem part or outcome.")
+    context.add_argument(
+        "--path",
+        dest="paths",
+        action="append",
+        default=[],
+        help="Expected repository path; repeat for multiple paths.",
+    )
+
+    release = commands.add_parser("release", help="Close this conversation's task.")
+    release.add_argument("task_id", nargs="?")
+
+    status = commands.add_parser("status", help="Show registered tasks and advisories.")
+    status.add_argument("problem_key", nargs="?")
+    status.add_argument("--all", action="store_true", help="Include closed tasks.")
+
+    check = commands.add_parser(
+        "check", help="Validate routing state; optionally check repository contracts."
+    )
+    check.add_argument("problem_key", nargs="?")
+    check.add_argument(
+        "--repository",
+        action="store_true",
+        help="Check current Focus state, references, authorization records, and derived-view drift.",
+    )
+    return root
+
+
+def emit(value: dict, *, stream=sys.stdout) -> None:
+    json.dump(value, stream, indent=2, sort_keys=True)
+    stream.write("\n")
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parser().parse_args(argv)
+    root = repository_root()
+    try:
+        cfg = config(root)
+        if args.command == "context":
+            emit(command_context(args, root, cfg))
+            return 0
+        if args.command == "release":
+            emit(command_release(args, root, cfg))
+            return 0
+        if args.command == "status":
+            emit(command_status(args, root, cfg))
+            return 0
+        if args.command == "check":
+            result = command_check(args, root, cfg)
+            emit(result)
+            return 0 if result["ok"] else 4
+        raise AssertionError(args.command)
+    except CtlError as exc:
+        emit({"error": exc.code, "message": exc.message, **exc.details})
+        return exc.exit_code
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

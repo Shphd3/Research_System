@@ -14,15 +14,14 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 | Skill | Trigger scope | Does not own | Implicit invocation |
 | --- | --- | --- | --- |
 | `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, reader-friendly `daily_report`, and its minimal problem-level `focus_<problem>.md` | Project paths, meeting synthesis, remote execution | Allowed |
+| `research-sync-gate` | Readiness audit for choosing one next research question or explaining an evidence boundary before advisor sync | Protocol authoring, execution, meeting artifact writing | Allowed |
 | `problem-anchor-writer` | Researcher-judgment audit, approved Anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
 | `experiment-card-writer` | In-file protocol drafting, critical-item review, promotion, `summary.md`, `detailed.md`, and evidence contracts | Research-question redefinition, remote jobs | Allowed |
-| `research-story-writer` | Explicit research-line story or paper-like stage synthesis | Anchors, experiment records, routine meeting notes | Allowed |
+| `research-communication` | Explicit meeting brief or speaking outline, research-line story or stage synthesis, or curated handoff/copy/sync | New scientific claims, unrequested artifacts, raw outputs | Allowed; handoff and external actions still require an explicit request |
 | `research-mainline` | Project organization, artifact placement, archive state, status, and explicitly requested root-mirror publication | Research judgment, raw execution, handoff packaging, external collaborator sync | Allowed; guarded actions still require an explicit request |
 | `remote-experiment-workflow` | Container, SSH, CCI, SCO, or ACP experiment workflow, monitoring, logs, artifact maps | Hypothesis design or SCO platform resource semantics | Allowed |
 | `scholar-mode` | Research-intuition audit, theory or methodology critique, paper analysis, literature positioning | Artifact schemas, graph work, runs, ordinary code | Allowed |
 | `research-document-explainer` | Plain-language reading of AI-written research documents, formulas, proofs, experiment logic, and research ideas | Formal Anchor/Protocol/result authoring, active-task ownership, execution, publication | Allowed |
-| `meeting-outline-writer` | Concise progressive `focus_meeting_<topic>.md` for one named problem or a human-scoped multi-problem set, plus optional speaking flow | Researcher's unconfirmed conclusion, multi-problem scope choice, handoff packaging, sync | Allowed |
-| `handoff-report-writer` | Explicit curated package, handoff, copy, or external sync request | New claims, meeting authorship, raw outputs | Explicit only |
 | `research-graph-sop` | Explicit `graph.yaml` inspection, creation, maintenance, or navigation audit | Ordinary research notes or project-state edits without graph scope | Allowed |
 | `sidecar-thinking` | Explicit Sidecar display, session, graph inspection, or API/CLI call | Ordinary graph editing or research synthesis | Explicit only |
 
@@ -36,14 +35,14 @@ research-progress-core
 -> experiment-card-writer for in-file drafting, critical review, and promotion
 -> remote-experiment-workflow when execution is remote
 -> research-progress-core for the verified daily_report and minimal focus
--> research-story-writer only for explicit line synthesis
+-> research-communication only for an explicit meeting, story, or handoff deliverable
 -> research-mainline for project placement or explicit publication
 ```
 
-Use `meeting-outline-writer` for meeting content and return to
-`handoff-report-writer` only after the user explicitly requests packaging or
-external sync. `research-mainline` may locate the canonical sources but does
-not assemble that package. Use `research-graph-sop` for graph structure and
+Use `research-communication` and exactly one of its meeting, story, or handoff
+references. Handoff packaging and external sync remain explicit-only actions.
+`research-mainline` may locate the canonical sources but does not assemble that
+package. Use `research-graph-sop` for graph structure and
 `sidecar-thinking` only for an explicitly requested Sidecar operation.
 
 Use `research-document-explainer` when the requested outcome is understanding
@@ -77,7 +76,7 @@ install or duplicate that skill in the root catalog. The local adapter is:
 advisor question/refinement logic      -> research-progress-core
 advisor active design contract         -> problem-anchor-writer and anchor
 advisor experiment-control contract    -> experiment-card-writer and protocol.md
-advisor stable synthesis               -> research-story-writer
+advisor stable synthesis               -> research-communication story mode
 advisor project paths and publication  -> research-mainline
 ```
 

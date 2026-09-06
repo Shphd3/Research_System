@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Communication"
+  short_description: "Write meeting, story, or handoff artifacts"
+  default_prompt: "Use $research-communication for the explicitly requested meeting, story, or handoff deliverable."
+
+policy:
+  allow_implicit_invocation: true

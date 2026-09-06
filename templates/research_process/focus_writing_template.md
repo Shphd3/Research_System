@@ -2,13 +2,12 @@
 
 ```text
 type: meeting_cycle_core_task
-status: TASK_DRAFT / HUMAN_CONFIRMED_DESIGN / PROTOCOL_DRAFT_AWAITING_REVIEW / EXECUTION_APPROVED / AWAITING_HUMAN_RESULT / HUMAN_RESULT_CONFIRMED / CYCLE_CLOSED
+task_state: DRAFT / ACTIVE / CLOSED
 problem_key: <项目内稳定且不随文件改名变化的问题标识>
 focus_role: PRIMARY / SECONDARY
-conversation_owner: codex-thread:<当前对话精确 ID> / UNCLAIMED
-ownership_status: CLAIMED / RELEASED / HANDOFF_PENDING
-core_question: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
-plain_language_design: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION / AI_REVISED_AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
+question_state: AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
+design_state: NOT_REQUIRED / AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
+result_state: NOT_AVAILABLE / AWAITING_HUMAN_CONFIRMATION / HUMAN_CONFIRMED
 cycle_start: YYYY-MM-DD
 target_meeting: YYYY-MM-DD / Unknown
 active_project: <精确项目路径>
@@ -18,6 +17,12 @@ source_meeting: <精确会议记录路径>
 core_experiment_count: 1 / 2 / 3
 ```
 
+这四个状态互不替代：`task_state` 只说明本轮问题是否活动，`question_state` 只说明
+核心问题是否经研究者确认，`design_state` 只说明 Focus 中的白话实验设计是否确认，
+`result_state` 只说明研究者是否确认了结果与边界。Protocol 的草稿/批准状态只由
+`protocol.md` 保存，执行的未开始/运行中/完成/失败状态只由 `detailed.md` 或执行记录
+保存；Focus 不复制这两类状态。旧的历史 Focus 不要求自动迁移。
+
 保存为：`daily_research_reports/MMDD/focus_<problem_slug>.md`。这是一个明确命名
 工作流从一次组会延续到下一次组会的唯一活动核心任务，不是整个仓库的唯一状态，
 也不是实验账本或每日研究报告的摘要。多个工作流可以并行存在，但每个工作流
@@ -25,9 +30,12 @@ core_experiment_count: 1 / 2 / 3
 取本卡首次创建日期；上一场组会日期写入 `cycle_start`，下一场目标组会写入
 `target_meeting`。同一周期跨日时不移动文件。历史 Focus 不因新格式而迁移。
 
-主优先级（`PRIMARY`）与次优先级（`SECONDARY`）只表示当前注意力顺序，不合并问题。编辑、实现或运行前必须先核对
-稳定问题标识（`problem_key`）和会话所有者（`conversation_owner`）；同一问题已被另一对话标记为占用（`CLAIMED`）时，当前对话只能读取，
-除非研究者明确交接或释放。
+主优先级（`PRIMARY`）与次优先级（`SECONDARY`）只表示当前注意力顺序，不合并问题。
+研究问题属于研究者与项目，不属于某一个对话。多个对话可以绑定同一个稳定问题标识
+（`problem_key`）并处理不同部分。修改已登记的科研问题前，使用仓库根目录的
+`./researchctl context <problem_key> --task "<具体部分>"` 登记当前任务，并在已知时用
+`--path` 标记预计涉及的路径。`researchctl` 只提醒同问题或路径重叠，不加锁、不设租约、
+不决定所有权；是否需要协调由研究者判断。Focus 不保存 conversation owner。
 
 创建或重置核心任务卡（Focus）必须由研究者明确决定。人工智能不得因为新增实验、
 对照、诊断、复现、失败分析、结果解释或报告而创建 Focus。只有研究者明确宣布一个独立核心问题

@@ -56,9 +56,9 @@ mirrors remain secondary to the project-local source.
 
 ## Update Rule
 
-For the active specialization line named in `PROJECTS.md`, update root sync
-whenever a mainline state change is accepted in `PROJECTS.md`, or when the user
-explicitly asks for root sync or a web-side research-line summary.
+Update root sync only when the user explicitly requests publication or a
+web-side research-line summary. A mainline state change may make the current
+view stale, but does not itself authorize publication.
 
 A mainline state change means a change to the current decision question,
 active ladder level, route, evidence boundary, claim boundary, next decision,

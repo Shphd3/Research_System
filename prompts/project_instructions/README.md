@@ -1,25 +1,17 @@
 # Project Instructions
 
-Reusable prompts for recurring project-level work.
+Reusable prompts for web-side or project-scoped research conversations. They
+adapt the repository rules to an environment that may not see project-local
+files; they are not a second research system or a source of scientific state.
 
-Current examples:
+| Prompt | Use |
+|---|---|
+| `research_progress_project_prompt.md` | Critical discussion of a current research judgment and next decision. |
+| `rapid_research_explainer_project_prompt.md` | Concise explanation of a named document, result, formula, or idea. |
+| `paper_reading_project_prompt.md` | Paper or technical-essay reading with optional project transfer analysis. |
 
-- `research_progress_project_prompt.md`: compact ChatGPT Project instructions
-  for sync-anchor context, conclusion-first correction, creative exploration,
-  bounded convergence through human writing, and explanation followed by
-  understanding checks.
-- `paper_reading_project_prompt.md`: paper-reading AI prompt for paper/blog reading anchored to the current mainline.
-- `a14_02_rare_common_rank_audit_and_execution_prompt_cn.md`: Chinese-first
-  researcher-judgment and execution gate for the improved active A14_02 E02
-  frequency/mapping-rank experiment and E03 rare outside-common-subspace
-  mechanism experiment; it preserves the old E02-v1 evidence through lossless
-  archive migration and requires staged human authorization.
-
-Important: web-side AI may only see `Research_System`, not project subfolders
-under `Projects/`. Prompts should tell the agent to read `PROJECTS.md` and
-root `sync/` summaries first, then ask the user or Codex to expose
-project-local graph, anchor, `summary.md`, or `detailed.md` files when needed.
-
-When a prompt becomes stable and frequently reused, convert it into a
-repository Codex skill under `.agents/skills/`. Do not install or synchronize a
-second personal-directory copy for this repository.
+Start from the material named by the user. Read `PROJECTS.md`, a root `sync/`
+entry, or user-provided project artifacts only when project placement, current
+state, or transfer to the mainline is part of the question. If a stable workflow
+becomes a repository Skill, remove the duplicated instructions here rather than
+maintaining two versions.

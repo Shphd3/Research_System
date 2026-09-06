@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "scoring": {
+    "procedure": "Run every prompt in fresh tasks against the baseline and candidate instruction sets, hide system identity, and score both outputs against the named sources.",
+    "dimensions": {
+      "scientific_correctness_and_claim_safety": 4,
+      "task_completion_and_next_step": 2,
+      "necessary_context_only": 2,
+      "concise_reader_value": 2
+    },
+    "hard_failures": [
+      "invented evidence or value",
+      "claim stronger than the source boundary",
+      "unauthorized scientific state transition or external action",
+      "missing direct answer",
+      "completed-result answer omits next-step analysis"
+    ]
+  },
+  "cases": [
+    {
+      "id": "result_e15_guard_failure",
+      "task_type": "completed_result_explanation",
+      "prompt": "请解释 E15 到底说明粗细语义是否在不同层出现，只给我最关键的图、结论边界和下一步。",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/figures/01_primary_linear_recovery.png",
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/figures/07_shuffle_control.png"
+      ],
+      "baseline_failure": "Repeats the Summary in four sections and leads with the descriptive block-9 result.",
+      "target_behavior": "Links the Summary, leads with UNQUALIFIED_SHUFFLE_CONTROL and the 0.000132-nat guard miss, then explains only the decisive figure and proposed replication.",
+      "claim_boundary": "Block 9 is provisional; the result does not select a LoRA insertion layer or prove native use.",
+      "next_step": "Explain why an independent repeat would adjudicate the near-threshold null failure."
+    },
+    {
+      "id": "result_layerwise_moe_insufficient",
+      "task_type": "completed_result_explanation",
+      "prompt": "静态可读性到底能不能决定 MoE 插入层？请用决定性结果和一张图回答。",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E01_layerwise_semantic_moe_insertion/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E01_layerwise_semantic_moe_insertion/figures/01_primary_layer_interaction.png"
+      ],
+      "baseline_failure": "Emphasizes improved route agreement at block 9 and dilutes the registered verdict with secondary diagnostics.",
+      "target_behavior": "Answers no from the sign-changing seed interaction, shows the primary interaction figure, and keeps route accessibility separate from functional gain.",
+      "claim_boundary": "Two layers and two seeds do not establish a general layer-selection law.",
+      "next_step": "Justify a cheap functional pilot with an intermediate layer and more seeds before selecting a layer."
+    },
+    {
+      "id": "result_geometry_key_figure",
+      "task_type": "completed_result_explanation",
+      "prompt": "去掉 PCA 后方向、模长和形状的结论变了吗？不要铺背景，只展示最重要证据。",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness/figures/raw1024_vs_pca64_primary_geometry.png"
+      ],
+      "baseline_failure": "Restates the full setup and both plots before giving the carrier verdict.",
+      "target_behavior": "Links the Summary, states RADIUS_CONTRIBUTING first, and uses the raw-versus-PCA figure to show which conclusion is robust and which is projection-sensitive.",
+      "claim_boundary": "Whole-window evidence does not establish a token Router state or native Gate use.",
+      "next_step": "State that current-token screening remains a human approval decision and explain what uncertainty it would resolve."
+    },
+    {
+      "id": "result_headwise_negative",
+      "task_type": "completed_result_explanation",
+      "prompt": "这些注意力头能否叫作粗细语义专家？请直接回答，并解释下一步值不值得做。",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_16_headwise_causal_semantic_retrieval/A15_16_E01_headwise_gold_label_linear_readability/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_16_headwise_causal_semantic_retrieval/A15_16_E01_headwise_gold_label_linear_readability/figures/02_head_spread_and_nulls.png"
+      ],
+      "baseline_failure": "Treats reproducible top-head ranking as semantic specialization.",
+      "target_behavior": "Leads with NO_REPRODUCIBLE_HEAD_HETEROGENEITY, explains why positive top-four retention cannot override the registered null, and gives a bounded proceed-or-stop analysis.",
+      "claim_boundary": "The experiment does not establish label-specific specialization, causal use, KV compression, or task gain.",
+      "next_step": "Assess whether a history-availability control plus intervention can justify Phase 2; otherwise stop."
+    },
+    {
+      "id": "result_sae_partial_teacher",
+      "task_type": "completed_result_explanation",
+      "prompt": "DCLM SAE 现在能不能作为 3×3 粗细路由教师？用覆盖图给我一个准确答案。",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E18_dataset_conditioned_sae_semantic_hierarchy/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E18_dataset_conditioned_sae_semantic_hierarchy/figures/m2d2_3x3_confirmed_edge_coverage.png"
+      ],
+      "baseline_failure": "Promotes a positive pairwise verdict into a complete hierarchy claim.",
+      "target_behavior": "Answers no, shows 1/3-parent and 2/9-child coverage, and distinguishes registered pairwise correspondence from teacher qualification.",
+      "claim_boundary": "The result does not establish a complete teacher, causal composition, Router recoverability, or task gain.",
+      "next_step": "Explain why obtaining the exact senior SFT mixture is the next decision rather than starting Router training."
+    },
+    {
+      "id": "result_parent_router_repair",
+      "task_type": "completed_result_explanation",
+      "prompt": "粗路由监督修复是否真的恢复了在线收益？给直接数值、关键图、边界和接下来该判断什么。",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/figures/online_parent_repair.png"
+      ],
+      "baseline_failure": "Narrates all four runs before answering whether the repair worked.",
+      "target_behavior": "Leads with ONLINE_PARENT_REPAIR_SUPPORTED and the 0.836757-to-0.804183 mean-NLL change, then reads the central repair figure.",
+      "claim_boundary": "The repair isolates the parent path; it does not prove that all remaining error belongs to the child Router.",
+      "next_step": "Explain why retaining the repaired online baseline is necessary before testing residual child-path error."
+    },
+    {
+      "id": "anchor_learnable_design_audit",
+      "task_type": "anchor_audit",
+      "prompt": "审计这个 Anchor 是否已经完整承担 design.md 的作用，尤其检查数据、学习任务、目标、架构和最小证伪是否闭合。",
+      "skill": "problem-anchor-writer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_15_layerwise_moe_insertion_validation/15_15_layerwise_moe_insertion_validation_anchor.md"
+      ],
+      "baseline_failure": "Loads unrelated project history or creates a parallel design document.",
+      "target_behavior": "Audits only the Anchor and necessary sources, reports missing adjudicable design links, and updates no file during an audit-only request.",
+      "claim_boundary": "An Anchor design audit does not approve a Protocol or execution.",
+      "next_step": "Name the first unresolved design block and its completion condition."
+    },
+    {
+      "id": "protocol_authorization_audit",
+      "task_type": "protocol_audit",
+      "prompt": "检查 E15 Protocol 是否可以执行，只报告会改变结论或授权状态的问题。",
+      "skill": "experiment-card-writer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/protocol.md"
+      ],
+      "baseline_failure": "Treats protocol drafting as run authorization or reports stylistic issues as blockers.",
+      "target_behavior": "Checks question alignment, decisive comparison, thresholds, evidence eligibility, and explicit execution scope; reports only material blockers.",
+      "claim_boundary": "Protocol approval does not itself establish a scientific result.",
+      "next_step": "State the smallest action required to become executable or that no further action is needed."
+    },
+    {
+      "id": "explicit_meeting_synthesis",
+      "task_type": "meeting_synthesis",
+      "prompt": "基于指定的两个结果准备组会简报：静态层可读性和实际 MoE 插层是否一致？",
+      "skill": "research-communication",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/summary.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E01_layerwise_semantic_moe_insertion/summary.md"
+      ],
+      "baseline_failure": "Creates another evidence owner or merges static accessibility with functional utility.",
+      "target_behavior": "Uses the two named sources, presents the progressive question-to-decision chain, and preserves both registered verdicts.",
+      "claim_boundary": "Meeting synthesis may connect approved claims but cannot strengthen either source.",
+      "next_step": "Recommend the minimal functional candidate-selection rule and label it as a proposal when unconfirmed."
+    },
+    {
+      "id": "narrow_term_question_no_artifact",
+      "task_type": "narrow_explanation",
+      "prompt": "这里的 learned−Oracle gap 是什么？为什么正负号会影响层选择？",
+      "skill": "research-document-explainer",
+      "source_paths": [
+        "Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E01_layerwise_semantic_moe_insertion/summary.md"
+      ],
+      "baseline_failure": "Loads PROJECTS and the full artifact chain or creates a research note for a conceptual question.",
+      "target_behavior": "Defines the quantity from the named Summary, answers the sign interpretation directly, and creates no canonical artifact.",
+      "claim_boundary": "The sign for one seed is not a stable cross-seed layer verdict.",
+      "next_step": "No new research step is required unless the user asks to evaluate the full result."
+    }
+  ]
+}

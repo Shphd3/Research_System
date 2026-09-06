@@ -1,22 +1,28 @@
 ---
 name: problem-anchor-writer
-description: "Audit a researcher-owned problem judgment and create, revise, or cold-read its approved self-contained and source-grounded formal research Anchor, including direction placement, data, task, objective, architecture, and confirmation boundaries for learnable designs. Use when the user asks to clarify a research question, formalize a problem, write Anchor sections 1-8, or audit Anchor readability, grounding, and self-containment. Do not use for experiment protocols, run commands, result records, or publication."
+description: "Use when the user asks to clarify a research question or create, revise, or audit its formal research Anchor. Do not use for experiment protocols, result records, execution, or publication."
 ---
 
 # Problem Anchor Writer
 
 The researcher states the initial mechanism judgment directly in conversation
-or the active Focus. A formal Anchor preserves the approved judgment and turns
-it into an auditable research design. Do not create an intermediate judgment
-card.
+or the active Focus. A formal Anchor preserves the approved judgment and is the
+sole canonical current research design for that project question. It must carry
+every decision-bearing function needed to move from the question to a falsifier
+and bounded next decision. Do not create a parallel `design.md` or an
+intermediate judgment card.
 
 ## Artifact Boundary
 
 ```text
 <anchor_id>_<topic>_anchor.md
-  AI-auditable design: problem, prior, hypothesis, model, realization,
-  minimal test, evidence, claim boundary, and next decision
+  sole canonical research design: problem, prior, hypothesis, model,
+  constructible realization, minimal falsifier, iterative evidence,
+  claim boundary, and next decision
 ```
+
+If an imported method asks for `design.md`, satisfy that role in this Anchor.
+Do not add a second design owner or require the external method at runtime.
 
 ## Human-First Gate
 
@@ -79,6 +85,8 @@ The approved researcher account must support all of these:
 - the parent direction, current blocking uncertainty, and why this is the
   smallest decision that can change the direction;
 - one mechanism guess with a stated causal direction;
+- the mechanism-selection decision and source-grounded alternatives when prior
+  work materially changes what computation is admissible;
 - a minimal variable set;
 - one primary observable metric;
 - at least one live rival explanation;
@@ -180,7 +188,9 @@ rule and do not add top-level sections to satisfy readability.
 4. Define variables before equations. Separate assumptions, derived results,
    empirical propositions, and intuition.
 5. Map every mathematical object to a tensor, component, dataset field,
-   intervention, or analysis computation.
+   intervention, or analysis computation. When prior work materially selects,
+   adapts, supplies a baseline for, or rules out the mechanism, state that
+   decision and its direct source here; do not add a literature-review section.
 6. Use one decisive test plus necessary guards. State metric, threshold, rival
    separated, allowed claim, and cannot-claim boundary.
 7. State the minimum local evidence unit before linking `protocol.md`,
@@ -253,3 +263,5 @@ not change the question, model, metric, thresholds, boundary, or next decision.
    at least as much chronology, run detail, secondary evidence, or repetition.
 10. Every linked artifact exists.
 11. Inline formulas use `$...$`; display formulas use `$$...$$`.
+12. When prior work changes mechanism choice, Section 5 records the sourced
+    adopt, adapt, baseline, or reject decision.

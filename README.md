@@ -1,162 +1,175 @@
-# Research Files
+# Research System
 
-This repository is a research-process workspace. It is not the remote experiment codebase.
+This repository preserves research judgment, designs, evidence, and process.
+Experiment code, remote runs, raw outputs, checkpoints, and logs stay in the
+corresponding execution workspace.
 
-The goal is to preserve research judgment: project graph, problem anchors,
-evidence, claim boundaries, protocols, result records, stories, and meeting
-materials.
+## Entry Points
 
-## State Location
+- `AGENTS.md`: stable behavior, scientific invariants, authority, and approval
+  boundaries.
+- `PROJECTS.md`: active projects and workstreams, their priorities, current
+  Focus paths, scientific boundaries, and resume points.
+- `daily_research_reports/MMDD/focus_<problem>.md`: one workstream's living
+  meeting-cycle question, confirmed plain-language design, result boundary,
+  and next decision.
+- `Projects/<project>/main/problem_anchors/`: canonical current research
+  designs. An Anchor fulfills the role of `design.md`; do not create both.
+- `Projects/<project>/main/experiments/`: Protocol, Summary, Detailed record,
+  and decision-bearing figures or tables.
+- `.agents/skills/`: repository Skills discovered directly by Codex. See
+  `docs/skills.md` for the trigger index.
+- `templates/`: the only maintained reusable-template area.
+- `sync/`: an explicitly published derived reading surface, never a source of
+  scientific truth.
 
-Project routes, claim boundaries, and project-level next decisions live only in
-`PROJECTS.md`. Complete reader-friendly daily experiment and evidence reports
-live in `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`.
-Bounded problem-level knowledge updates condensed from confirmed reports live in
-`daily_research_reports/MMDD/focus_<problem>.md`; concise progressive meeting
-updates live in new `daily_research_reports/MMDD/focus_meeting_<topic>.md`
-files. Compact web-side research lines live under:
+For a narrow explanation, number, status, or named-file audit, start from that
+source. Do not load this whole map merely because it exists.
 
-```text
-sync/
-```
-
-Do not copy changing research conclusions into this README; use it only for
-repository orientation.
-
-Canonical research artifacts are written in English by default. Chinese
-companion files are allowed when useful; add `_cn` before the extension, for
-example `summary_cn.md` or `<anchor_id>_cn.md`.
-
-## Start Here
-
-- `AGENTS.md`: general Codex rules for this repository.
-- `PROJECTS.md`: current project registry, active route, graph hub, claim
-  boundary, and next decision.
-- `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`: the
-  complete reader-friendly report derived from canonical experiment evidence.
-- `daily_research_reports/MMDD/focus_<problem>.md`: one problem's human-owned,
-  minimal knowledge summary and navigation card derived from a confirmed daily
-  report.
-- `daily_research_reports/MMDD/focus_meeting_<topic>.md`: one meeting's
-  progressive answer to a named problem, or to an explicitly human-scoped
-  multi-problem set.
-- `sync/`: explicitly published research-line summaries and generated
-  link-safe anchor mirrors. Use the current entry named in `PROJECTS.md` and
-  republish mirrors only through
-  `.agents/skills/research-mainline/scripts/publish_anchor_mirror.py`.
-
-## Working Areas
-
-- `daily_research_reports/`: dated problem knowledge updates, human-scoped
-  meeting syntheses, experiment summaries, and report bundles.
-- `paper_reading/`: literature cards and reading notes.
-- `.agents/skills/`: repo-tracked, natively discovered Codex skills; see
-  `docs/skills.md` for the responsibility and trigger index.
-- `sync/`: compact research-line summaries and reusable current-state maps.
-- `templates/`: the single maintained folder for reusable templates.
-- `prompts/`: reusable project prompts and older workflow prompts.
-- `docs/`: setup notes for tooling and workflow maintenance.
-
-## Daily Loop
-
-1. Read `PROJECTS.md`, the relevant prior `focus_<problem>.md`, then the
-   relevant graph under `Projects/graphs/` and only the linked problem anchor,
-   experiment result, paper note, or sync note needed for the current problem.
-2. State the current judgment, strongest rival, evidence that would change the
-   judgment, and one next decision. `Unknown` is valid.
-3. If exploration is needed, generate at most three distinct candidates,
-   select one, and park the rest before further work.
-4. Perform only the derivation, reading, diagnostic, or approved experiment
-   needed to close the advancement point.
-5. After eligible evidence and the researcher's result judgment exist, create
-   `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md` from
-   the maintained daily-report template. It explains the full experiment and
-   knowledge update while linking canonical evidence.
-6. After the researcher confirms that report's knowledge wording, condense it
-   into `daily_research_reports/MMDD/focus_<problem>.md`. AI verifies evidence,
-   drafts the explanation flowchart, and checks that the focus adds nothing not
-   present in the confirmed daily report.
-7. Update anchors only when evidence changes the route, claim boundary,
-   bottleneck, hypothesis status, or next decision.
-8. Do not update root sync, package handoff reports, edit graph manifests,
-   commit, or push unless explicitly requested.
-
-A day may contain several `focus_<problem>.md` files when several problems reach
-bounded answers. If none does, do not invent a conclusion merely to create a
-daily file. Legacy bare `focus.md` files remain valid historical artifacts but
-are not the naming pattern for new files. Problem focuses do not replace
-`PROJECTS.md`, anchors, protocols, or result records.
-
-Reusable templates live in `templates/`. Do not create new reusable templates
-inside daily, paper-reading, docs, or project folders by default.
-
-For a meeting, always create a new `focus_meeting_<topic>.md` from
-`templates/meeting/meeting_focus_template.md`. For one named problem, proceed
-after the human states the core question. For multiple independent problems,
-require exact source paths, exclusions, and one core question before merging.
-The meeting file answers that question progressively and does not overwrite
-source focuses. Create a separate speaking outline only when explicitly
-requested after the meeting focus is complete.
-
-## Physical-Prior-First Loop
-
-For project research, the researcher first states the current judgment,
-mechanism, strongest rival, decision-changing evidence, and next decision.
-AI audits that account and writes the formal Anchor only after the human
-approves the question, physical prior, rival, metric, boundary, and decision:
+## Research Flow
 
 ```text
-Projects/graphs/<topic>.graph.yaml
-Projects/<project>/main/problem_anchors/<anchor_id>.md
+select or activate one workstream
+-> focus_<problem>.md
+-> canonical Anchor
+-> protocol.md
+-> approved execution scope
+-> summary.md + detailed.md
+-> researcher-confirmed result, boundary, and next decision
+-> Focus and Anchor update
+-> optional daily report, meeting material, story, Graph, or sync publication
 ```
 
-After the anchor is stable, use `experiment-card-writer` to write the complete
-candidate directly into `protocol.md` as `DRAFT_NOT_EXECUTABLE`. AI then
-surfaces only decision-critical parts for review and updates the same file.
-Promote it only after every block is confirmed and consistency passes:
+### 1. Focus
+
+Creating or resetting a Focus is a researcher-owned decision. Each active
+workstream has one current Focus, one core question, one next decision, and at
+most three necessary experiments. Each experiment uses:
 
 ```text
-Projects/<project>/main_specialization/problem_anchors/<anchor_id>.md
-Projects/<project>/main/problem_anchors/<anchor_id>.md
-Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/protocol.md
-Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/summary.md
-Projects/<project>/main/experiments/A<anchor_id>/<experiment_id>/detailed.md
-daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
-daily_research_reports/MMDD/focus_<problem>.md
+Purpose -> Hypothesis -> Analysis method -> Conclusion or outcome branches
 ```
 
-The experiment-local `summary.md` and `detailed.md` remain the canonical result
-and evidence records. The `daily_report` is the complete reader-friendly
-explanation derived from them. Only after the researcher confirms its knowledge
-update is it condensed into the one-problem focus. The focus keeps only the
-question, concise update, one decisive result, boundary, next decision, and
-report link; it must not introduce new evidence or strengthen the daily report.
-
-Default principle: fewer, sharper experiments. Each experiment should deepen
-understanding, test a hypothesis, or change a next decision.
-Nontrivial experiments should stop at the promoted `protocol.md` until the
-user explicitly approves the requested scope: implementation, smoke, or full
-run. Approval of one scope does not authorize the next.
-
-When a handoff is explicitly requested, place the handoff report and the most
-important anchor copy in today's folder by default:
+Focus metadata keeps four independent fields:
 
 ```text
-daily_research_reports/MMDD/<topic>/handoff_report.md
-daily_research_reports/MMDD/<topic>/<anchor_id>.md
+task_state
+question_state
+design_state
+result_state
 ```
 
-When syncing a daily result to another project or collaborator repo, copy the
-same curated set: subject-bearing anchor, `protocol.md`, `summary.md`,
-`detailed.md`, and only the figures/tables referenced by those documents.
+Protocol approval and execution status are not copied into the Focus.
 
-## Web-Side AI
+### 2. Anchor
 
-Web-side theory AI should treat this repository as research memory, not as the
-experiment codebase. Start from `AGENTS.md`, `PROJECTS.md`, and root `sync/`.
-Use `Projects/graphs/` for the cross-project map. Use project-local graph,
-anchor, `summary.md`, and `detailed.md` only when the user or Codex exposes
-them.
+The Anchor is the sole canonical current design. It connects the problem,
+physical prior, falsifiable hypotheses, mathematical model, constructible
+computation, minimum falsifier, current evidence, claim boundary, and exactly
+one next decision. Run settings and commands do not belong there.
 
-Web-side AI should propose research judgments and questions. Codex/local agents
-perform repository edits after the user confirms the research-state change.
+### 3. Formal Experiment
+
+```text
+Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
+```
+
+- `protocol.md` owns the frozen test contract and approval scope. Drafting does
+  not authorize execution.
+- `summary.md` owns the complete first result reading: Purpose, Hypothesis,
+  Analysis method, Conclusion, central evidence, boundary, and next-step
+  analysis.
+- `detailed.md` owns execution state, complete setup, conformance and
+  deviations, evidence lineage, failures, full results, and artifact map.
+- Code, logs, checkpoints, datasets, and unfiltered outputs remain in the
+  execution workspace.
+
+After evidence exists, the researcher states or confirms the direct result,
+claim boundary, and one next decision. AI verifies those statements without
+strengthening them. Update the Focus and Anchor only with that confirmed
+meaning.
+
+### 4. Derived Reading Surfaces
+
+- `daily_research_reports/MMDD/docs/daily_report_<topic>.md`: delayed,
+  self-contained explanation written only after the source Focus has
+  `result_state: HUMAN_CONFIRMED`.
+- `focus_meeting_<topic>.md`: created only for an explicitly requested meeting
+  brief or synthesis; an ordinary one-problem meeting uses its Focus.
+- Story: explicitly requested line-level mathematical or evidence synthesis.
+- Graph: thin navigation between questions, claims, methods, evidence, and
+  tasks.
+- Root `sync/`: explicitly requested external-reading publication.
+
+Derived views may summarize canonical sources but cannot create or strengthen
+a scientific claim.
+
+## Operational Coordination
+
+`researchctl` is a tracked repository-local executable. It needs no package
+installation or background process:
+
+```text
+./researchctl context <problem_key> --task "<concrete part>" [--path <path> ...]
+./researchctl release [task_id]
+./researchctl status [problem_key] [--all]
+./researchctl check [problem_key]
+./researchctl check --repository
+```
+
+Use `context` before changing a registered scientific problem. Repository
+maintenance and read-only explanations need no invented problem key. Multiple
+conversations may handle different parts of the same problem; same-problem and
+path overlap are advisory only and never block work or transfer authority.
+
+If this repository directory survives a container restart, both `researchctl`
+and repository Skills remain available without reinstallation. The runtime
+registry survives only when `.research/runtime/` is on persistent storage; it
+is operational state and is not restored by a fresh Git clone.
+
+## Context And Artifact Rule
+
+- Read `PROJECTS.md` only for workstream selection or project-level state.
+- Read a Graph only for navigation, graph work, or graph-dependent synthesis.
+- Load one matching Skill and only the reference needed for the requested
+  outcome.
+- A narrow answer, local diagnosis, or temporary exploration creates no
+  canonical artifact by default.
+- Create a document only when it has a distinct owner and durable research or
+  communication value.
+- Chat history is context, not canonical research memory.
+
+## Communication
+
+Canonical artifacts are English unless the researcher chooses otherwise;
+Chinese companions use `_cn.md`. Lead with the answer, define indispensable
+terms, separate evidence from interpretation, and preserve negative or
+insufficient results.
+
+When a completed experiment has `summary.md`, link it first in chat and do not
+rewrite its four-part account. Give only the direct verdict, smallest decisive
+value, important figure and reading, nearest boundary, and next-step analysis.
+Label an unconfirmed next step `AI 建议`.
+
+## Approval And Completion
+
+Proceed with local reads, in-scope edits, relevant tests, and non-destructive
+verification. Pause for a missing human scientific judgment, an expensive full
+remote run, destructive or external action, material scope expansion,
+publication, collaborator sync, commit, or push.
+
+Finish when the requested deliverable exists, decision-bearing claims trace to
+evidence, proportionate checks pass, and no in-scope work remains without new
+evidence or human authority. A first draft or first successful implementation
+is not completion by itself.
+
+## Supporting Areas
+
+- `paper_reading/`: source-grounded literature records.
+- `papers/`: paper-writing workspaces derived from canonical evidence.
+- `prompts/`: supporting prompts for environments that cannot use repository
+  Skills directly.
+- `docs/`: terminology, Skill index, examples, and setup notes.
+
+No root document should duplicate current project conclusions from
+`PROJECTS.md`, Anchors, or result records.
