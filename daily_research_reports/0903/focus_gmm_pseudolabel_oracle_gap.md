@@ -12,7 +12,7 @@ cycle_start: 2026-09-03
 target_meeting: 2026-09-04
 active_project: Projects/from-attention-to-search/
 anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md
-core_experiment_count: 1
+core_experiment_count: 2
 ```
 
 ## 1. 核心问题
@@ -55,14 +55,47 @@ core_experiment_count: 1
 - 开发集负责选择层；规则冻结后，确认集只读取一次。不得依据中间结果删层、改阈值、改主指标或选择更好看的种子。
 - 本实验只审核未来 LoRA Router 的当前词元 MLP 调用前输入；其他表征对象不进入本轮结果。
 
-## 4. 唯一下一决策
+## 4. 2026-09-07 研究者确认的复核实验
 
-请研究者决定：是否授权用一个全新种子原样复现本静态审计，以裁定 `0.000132` nat 的空对照越界。复现通过并重现 `(9,9)` 前，不进入匹配预算的 Oracle LoRA 验证。
+### 实验 2：实际 Router 输入 A 与 MLP 输入 B 的两种子配对复核
 
-## 5. 路径
+#### 1. 目的
+
+确认真实粗、细领域在当前 Router 实际读取的 block 输入 A 上从哪里达到稳定线性可读，并用 MLP 输入 B 解释同一 block 内的表示变化；只有合格的 A 候选才进入后续功能训练。
+
+#### 2. 假设
+
+A 在中层存在粗、细任务共同稳定的可读区。最强竞争解释是旧第 9 块来自错误读取位置、单种子、窗口伪重复或失格的置乱对照；另一种描述性可能是 B 或两层 MLP 读出略优，但这不能改变 Router 输入或 A 候选。
+
+#### 3. 分析方法
+
+1. 使用固定种子 `170903/170907` 对 A/B 做同初始化、同顺序、同预算的线性与固定两层非线性读出；候选只由 A 的线性粗细联合恢复率决定。
+2. 恢复文章身份和窗口 offset，排除已知跨 split 文章泄漏，并以整文章连通组做 2,000 次配对重采样；旧确认集只作历史桥接，不称全新独立确认。
+3. 保留旧置乱资格门、负恢复分母拒绝和跨种子稳定门。通过后冻结主、浅、深三层并进入独立功能 Protocol；任何门失败即停止，不改阈值、不用 B 救 A。
+
+#### 4. 结论分支
+
+- 若全部资格门通过，保存 `candidate_review.json`，自动启动已冻结的三层功能训练并只监督首波真实更新后的 300 秒。
+- 若任一资格门失败，报告具体缺口并停止；保留 A/B 与非线性结果为描述性证据，不把它们升级成功能候选。
+
+#### 5. AI 执行记录，等待研究者确认
+
+- 四个 A/B×seed 静态 worker 已完整执行，A 的点估计得到浅/主/深层 `{0,10,13}`，两个种子的主层均为 `10`；B 的对应线性起点为 `9`。
+- 固定两层非线性探针没有得到跨种子一致且早于 A 线性第 10 块的起点；它不改变候选。
+- 16 个固定打乱标签检查中有 5 个失败，注册裁决为 `QUALIFICATION_FAILED`。已执行研究者事前确认的停止分支，没有提交功能训练。
+- 以上是 [E19 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E19_ab_paired_router_input_readout_reaudit/summary.md) 中可追溯的合同结果，不代替研究者对结果边界与下一科学决策的确认。
+
+## 5. 唯一下一决策
+
+`UNKNOWN`，等待研究者确认 E19 的资格失败、可声称边界与后续研究方向。已确认的 `STOP_NO_FUNCTIONAL_LAUNCH` 分支已执行；当前没有被授权的后续功能实验。
+
+## 6. 路径
 
 - [E15 Anchor](../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md)
 - [E15 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/protocol.md)
 - [E15 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/summary.md)
 - [E15 Detailed evidence](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/detailed.md)
+- [E19 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E19_ab_paired_router_input_readout_reaudit/protocol.md)
+- [E19 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E19_ab_paired_router_input_readout_reaudit/summary.md)
+- [E19 Detailed evidence](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E19_ab_paired_router_input_readout_reaudit/detailed.md)
 - [E14 preserved predecessor](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap/summary.md)

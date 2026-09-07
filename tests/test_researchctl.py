@@ -153,6 +153,25 @@ class ResearchCtlTests(unittest.TestCase):
         self.assertIn("Projects/demo/main/anchor.md", returned_paths)
         self.assertNotIn("# Anchor", json.dumps(result))
 
+    def test_context_ignores_fenced_block_delimiters_when_scanning_links(self):
+        self.focus.write_text(
+            "# Demo\n\n"
+            "```text\n"
+            "problem_key: demo.problem\n"
+            "task_state: ACTIVE\n"
+            "```\n\n"
+            + ("This prose is not a path. " * 20)
+            + "`0903/focus_other.md` is unrelated.\n\n"
+            "[Anchor](../../Projects/demo/main/anchor.md)\n",
+            encoding="utf-8",
+        )
+
+        result = self.register("scan focus with fenced metadata")
+        returned_paths = {item["path"] for item in result["context"]}
+
+        self.assertIn("daily_research_reports/0906/focus_demo.md", returned_paths)
+        self.assertIn("Projects/demo/main/anchor.md", returned_paths)
+
     def test_release_closes_only_calling_conversation_task(self):
         first = self.register("first part", conversation="conversation-a")
         self.register("second part", conversation="conversation-b")

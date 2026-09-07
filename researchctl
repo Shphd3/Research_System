@@ -24,7 +24,7 @@ import uuid
 
 SCHEMA_VERSION = 2
 PROBLEM_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{1,127}$")
-TOKEN_RE = re.compile(r"`([^`]+)`")
+TOKEN_RE = re.compile(r"`([^`\r\n]+)`")
 LINK_RE = re.compile(r"\]\(([^)#]+)(?:#[^)]+)?\)")
 REPOSITORY_PATH_RE = re.compile(
     r"(?:(?:Projects|daily_research_reports|sync|templates|docs)/[^\s`|;)]+\.md)"
