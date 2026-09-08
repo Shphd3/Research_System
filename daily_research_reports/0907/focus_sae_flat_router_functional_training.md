@@ -7,7 +7,7 @@ problem_key: A15.sae_hierarchical_teacher_construction
 focus_role: SECONDARY
 question_state: HUMAN_CONFIRMED
 design_state: HUMAN_CONFIRMED
-result_state: NOT_AVAILABLE
+result_state: AWAITING_HUMAN_CONFIRMATION
 cycle_start: 2026-09-07
 target_meeting: 2026-09-08
 active_project: Projects/from-attention-to-search/
@@ -43,22 +43,30 @@ core_experiment_count: 1
 
 #### 结论
 
-**尚未得到结果时：可能结果与推进影响**
+**直接结果：**工程资格在 prompt-only 层次 GMM 处失败。父组收敛为
+`[5724, 13697, 363]`，前两个父组的三个子组均非空，最小父组要求的
+两个子组却为 `[363, 0]`；固定 GMM 对照只有七个占用叶组，不能构造
+批准的八专家条件。
 
-- **若支持假设：**SAE 在三个种子中均以不跨零的配对区间优于随机分组和纯任务路由，且专家置乱造成一致损失；只允许登记为本设置中的扁平 SAE 路由功能支持，再决定是否另立扩展实验。
-- **若不支持假设：**SAE 对随机分组没有稳定优势，停止把当前共激活分组当成功能教师；GMM、路由一致率或专家相似度不得救回主结论。
-- **若证据不足：**种子反转、区间跨零、资格失败、泄漏、评估器缺失或产物不完整时停止扩大，只补足直接缺失证据或交研究者裁定。
+**有界结论：**流程按预注册规则停止；没有拟合离线路由，没有完成
+五条件单步 smoke，也没有提交正式训练。因此这不是 SAE 功能成败结果，
+不能比较 SAE、随机分组、GMM 或 task-only，更没有八任务内部成绩。
+
+**对 Focus 的影响：**原“完整结果是否支持 SAE 功能收益”的决策尚未被
+回答。研究者已澄清 GMM 不应有父层，并批准修订为 PCA-64 后直接拟合一个
+八成分对角 GMM；其余条件、随机种子、指标与判定规则不变。已通过的数据
+与激活缓存只可在精确哈希复验后复用，旧层次 GMM 及其下游均不可复用。
 
 ## 3. 核心任务卡总结论
 
-- **我的认识更新：**尚无结果；研究者已批准五条件实现、资格检查、smoke及资格通过后的完整训练与评估。
+- **我的认识更新：**首次数据与缓存资格通过，但旧层次 GMM 的最小父组子模型塌缩为 `[363, 0]`；研究者随后确认应使用无父层、直接八组的平坦 GMM，正式训练仍未启动。
 - **仍不能说：**尚不能声称 SAE 路由有任务收益或专家功能。
-- **唯一下一决策：**完整结果是否支持继续最后层 SAE 扁平路由机制；完成标准是三种子配对损失、八任务内部留出分数和注册专家选择干预均可审核。
+- **唯一下一决策：**完成修订后的全套资格检查；仅在八组 GMM、分组审计、九个离线路由器和五条件真实 GPU smoke 全部通过时提交已批准的完整训练，任一门失败即停止且不再自动改设计。
 
 ## 路径
 
 - **实验协议：**[E20 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training/protocol.md)
-- **结果摘要：**NOT_YET_WRITTEN
-- **完整证据：**NOT_YET_WRITTEN
+- **结果摘要：**[E20 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training/summary.md)
+- **完整证据：**[E20 Detailed](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training/detailed.md)
 - **每日研究报告：**NOT_YET_WRITTEN
 - **待研究问题清单：**[Parking Lot](../../Projects/from-attention-to-search/main/parking_lot/README.md)

@@ -122,6 +122,28 @@ Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
 - Add conditions, seeds, diagnostics, and artifacts only when they separate a
   named rival, protect the main conclusion, or are required for reproducibility.
 
+## Learning And Group Meeting Updates
+
+- Anchor each group meeting in one explicit, bounded, falsifiable mechanism
+  question. A definite question does not require a predetermined or positive
+  answer; `Unknown` remains valid when evidence is insufficient.
+- The primary deliverable is a knowledge update: the prior explanation, its
+  strongest rival, the evidence that separates them, what is now understood
+  about why a method works or fails, and the remaining boundary and next
+  decision. Distinguish a literature-derived insight from a newly established
+  empirical mechanism.
+- Run completion, debugging, parameter sweeps, and metric changes are supporting
+  evidence, not the meeting's central contribution. An experiment matters
+  because it changes a mechanism judgment; do not present implementation
+  progress or a tuning summary as that judgment.
+- Do not manufacture a causal explanation from a performance change or a
+  representation diagnostic. State which link is supported, which rival
+  remains, and what would falsify the proposed explanation.
+- Daily research plans must reserve protected time for learning and independent
+  explanation. Specify the minimum reading order, the question each reading
+  resolves, and a small comprehension output before allocating implementation
+  work. Do not let monitoring or unfinished runs consume the learning plan.
+
 ## Result Reading And Reply
 
 `summary.md` is the complete first reading surface for a finished experiment.
