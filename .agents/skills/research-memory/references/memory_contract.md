@@ -1,35 +1,46 @@
 # Conversation Memory Contract
 
 Use this contract for repository-local continuity across Codex threads,
-accounts, or restarts. It creates working context, not a second research truth.
+accounts, or restarts. Each record is one accumulating working log: a new
+checkpoint appends a new timestamped summary entry on top of the previous
+entries; it never replaces them. It creates working context, not a second
+research truth.
 
 ## Identity And Persistence
 
-One directory represents one source Codex conversation record:
+One directory represents one source Codex conversation record, and one file
+stores that record:
 
 ```text
-.research/memory/conversations/<YYYYMMDD_conversation-slug>/
+.research/memory/conversations/<conversation-name>/
   memory.md
-  history.md
 ```
 
-Several records may continue the same logical work. Before any conversation's
-first memory write, inspect its current title through available Codex task or
-thread metadata. Use a user-supplied conversation name when one is given. If
-the title is unavailable or ambiguous, ask the user instead of inferring a
-name from the research topic.
-
-Use the creation date and a short lowercase hyphenated slug derived from that
-conversation name. If the resulting path already belongs to a different
-conversation, add a short stable disambiguating suffix rather than overwrite
-it. Keep the directory name stable for later checkpoints made within the same
-source conversation.
+- `<conversation-name>` is derived from the conversation title, not from a
+  date. Use lowercase, whitespace to hyphens, and drop decorative punctuation.
+  Keep a date when the conversation name itself contains one (for example
+  `0909-router-regularization`, `0907-sae-routing-validation`). Non-ASCII
+  characters are allowed as they appear; transliteration is not required.
+  Mixed Chinese and English in a name or in the memory content is fine.
+- If the resulting path already belongs to a different conversation, add a
+  short stable disambiguating suffix rather than overwrite it. Keep the
+  directory name stable for later checkpoints made within the same source
+  conversation.
+- Before any conversation's first memory write, inspect its current title
+  through available Codex task or thread metadata. Use a user-supplied
+  conversation name when one is given. If the title is unavailable or
+  ambiguous, ask the user instead of inferring a name from the research topic.
 
 A new Codex conversation may read a previous record to resume the same logical
-work, but its first write creates a new record under its own name and timestamp.
-It must not overwrite the previous conversation's `memory.md`. Here,
-`conversation` is a continuity record; it is not a `researchctl` owner, a lock,
-or scientific authority.
+work, but its first write creates a new record under its own name. It must not
+overwrite the previous conversation's `memory.md`. Here, `conversation` is a
+continuity record; it is not a `researchctl` owner, a lock, or scientific
+authority.
+
+Other files may exist inside the record directory (for example a one-time
+launch prompt). They are operational artifacts, not memory: they follow the
+memory boundary below but are not governed by the entry format of this
+contract, and no approval or scientific status may be derived from them.
 
 These files are ordinary versionable repository content. Sharing a checkout
 makes uncommitted memory visible to other local accounts or threads; sharing
@@ -37,95 +48,75 @@ across checkouts requires an explicitly committed and synchronized checkpoint.
 Being present in Git does not make any statement canonical, approved, or
 consensus. Commit and push retain the repository's normal approval boundary.
 
-## `memory.md`: Current Working Snapshot
+## `memory.md`: Accumulating Working Log
 
-`memory.md` is the only file read by default when resuming conversation work.
-Prefer 2--4 KB of UTF-8 text. Around 8 KB is a compression signal, not a
-validity gate.
+`memory.md` is the read surface when resuming conversation work. It is
+append-only by convention: old entries are preserved, and each checkpoint adds
+one new entry with a UTC timestamp. The newest entry, at the end of the file,
+is the current state; earlier entries form the evolution chain of summaries.
 
-Use these headings:
+Use this shape:
 
 ```markdown
 # Conversation Memory: <short name>
 
 Conversation name: <current Codex conversation title>
+Processed by: <Codex | DeepSeek | DeepSeek via Claude>
 Created at: <UTC timestamp>
-Updated at: <UTC timestamp>
-Continues from: <prior record path or none>
+Latest update at: <UTC timestamp>
+Continues from: <prior record memory.md path or none>
 
-## Objective
-## Current State
-## Working Understanding
-## Decisions And Constraints
-## Open Loops
-## Resume Point
-## Canonical References
+## <UTC timestamp> -- <transition or stage title>
+
+- Summary: <the comprehensive state at this point, built on the previous
+  entries>
+- Current work: <what is being done now, its own status, blockers, and material
+  failures>
+- Next action: <one concrete action, plus any stop or redirect condition
+  already established by an owning source>
+- References: <the smallest set of Focus, Anchor, Protocol, Summary, Detailed,
+  code, or evidence paths needed to verify this entry; state why each matters>
 ```
 
-Keep only information needed to choose and perform the next action:
+- `Created at` is written on creation and never rewritten. `Latest update at`
+  is the timestamp of the newest entry and is updated on every checkpoint.
+  `Continues from` links the previous record when this conversation resumes
+  earlier work. `Processed by` names the agent that performed the recorded
+  work, from exactly three values: `Codex`, `DeepSeek`, or `DeepSeek via
+  Claude`; the harness or model detail may be added as a parenthetical.
+- Every entry carries a `Summary`; the newest entry additionally carries
+  `Current work`, `Next action`, and `References`. Optional `On top of:` and
+  `Supersedes:` bullets may name the prior entry a summary extends or a
+  decision a transition overturns. Never append the old file wholesale as a
+  new entry; each entry re-summarizes, does not replay.
+- Keep only information needed to choose and perform the next action. Mark
+  scientific interpretations as source-backed, provisional, disputed, or
+  unknown when their status is not otherwise obvious. A scientific decision or
+  approval must link to its canonical owner; if it exists only in prior
+  conversation, label it `pending canonicalization` and do not use it to
+  authorize execution or strengthen a claim.
+- Do not include complete code, diffs, command transcripts, logs, result
+  tables, chat messages, credentials, tokens, or private account data. Link to
+  the owning source instead. A short exact value or failure message is allowed
+  only when it is necessary to resume and the source is identified.
 
-- The header identifies the source conversation and timestamps every newly
-  created memory. Update `Updated at` on every checkpoint; never rewrite
-  `Created at`. `Continues from` links the previous record when this
-  conversation resumes earlier work.
+## Growth
 
-- `Objective`: the current bounded outcome, not the original transcript.
-- `Current State`: completed work, active work, blockers, and material failures.
-- `Working Understanding`: the smallest reasoning state needed to continue.
-  Mark scientific interpretations as source-backed, provisional, disputed, or
-  unknown when their status is not otherwise obvious.
-- `Decisions And Constraints`: operational choices and user constraints. A
-  scientific decision or approval must link to its canonical owner. If it
-  exists only in prior conversation, label it `pending canonicalization` and do
-  not use it to authorize execution or strengthen a claim.
-- `Open Loops`: unresolved items that can still change the outcome.
-- `Resume Point`: one concrete next action, plus any stop or redirect condition
-  already established by an owning source.
-- `Canonical References`: the smallest set of repository-relative Focus,
-  Anchor, Protocol, Summary, Detailed, code, or evidence paths needed to verify
-  the snapshot. State why each reference matters.
-
-Do not include complete code, diffs, command transcripts, logs, result tables,
-chat messages, credentials, tokens, or private account data. Link to the owning
-source instead. A short exact value or failure message is allowed only when it
-is necessary to resume and the source is identified.
-
-## `history.md`: Cold Compressed History
-
-`history.md` is append-only and is not loaded during ordinary resume. Add one
-short entry only when the working state materially changes, such as:
-
-- the objective or scope changes;
-- an important decision or constraint is confirmed, superseded, or withdrawn;
-- a blocker, failure, or evidence boundary changes the route;
-- the resume point moves to a different stage;
-- the logical conversation is completed, abandoned, or intentionally paused.
-
-Routine reads, commands, test passes, message exchanges, wording changes, and
-minor progress do not belong in history. Use this compact form:
-
-```markdown
-## <UTC timestamp> -- <transition>
-
-- Change:
-- Why it matters:
-- Supersedes:
-- References:
-```
-
-Record a reference to a canonical scientific transition rather than copying
-its conclusion. Never append the old `memory.md` wholesale.
+The log grows by design; there is no separate cold archive and no automatic
+compaction. `history.md` is not used. If a log becomes unwieldy, prefer a new
+record for the same logical work with `Continues from` pointing here, which is
+already the sanctioned cross-record mechanism. Any in-place consolidation of
+redundant narration requires an explicit researcher request and must preserve
+uncertainty, negative results, and every decision that is not superseded.
 
 ## Creation
 
 Create a record only when the user asks to preserve or resume working context,
 or when the requested work explicitly spans sessions. First identify the
-current conversation name. Initialize both files in a new record for that
-conversation, write UTC `Created at` and `Updated at` timestamps in `memory.md`,
-and add one timestamped creation entry to `history.md`. The dated directory,
-header, and optional `Continues from` link are the saved conversation record;
-do not add a repository-wide index, registry, lock, template, database, or
-background process.
+current conversation name. Initialize `memory.md` with the header, write UTC
+`Created at` and `Latest update at` timestamps, and add one timestamped
+creation entry. Do not add a repository-wide index, registry, lock, template,
+database, or background process.
 
 If the current source conversation already has a record, checkpoint that
 record rather than creating a duplicate. Do not reuse a record merely because
@@ -135,9 +126,10 @@ controls creation and selection; preserve a unique path if names collide.
 ## Checkpoint And Concurrent Writes
 
 Before rewriting the current conversation's `memory.md`, read its latest
-version. Rewrite the snapshot to the new current state, update `Updated at`,
-and preserve `Created at` instead of appending chronology. Append to
-`history.md` only if the checkpoint contains a material transition.
+version. Append one new entry for the new current state, update `Latest update
+at`, and preserve `Created at`. Old entries are not edited; correction of a
+factual error in an old entry is allowed only as an annotated correction, not
+as a silent rewrite.
 
 Version 1 assumes sequential continuation, not concurrent multi-writer merge.
 If the file changed incompatibly since it was loaded, do not silently
@@ -149,33 +141,16 @@ will modify a registered scientific problem, run the normal `researchctl
 context` operation for that thread. Treat any old-thread overlap as advisory;
 do not infer authority from the memory record.
 
-## Compression
-
-When `memory.md` grows beyond roughly 8 KB or contains substantial chronology:
-
-1. Preserve the present objective, current state, live constraints, open loops,
-   resume point, and minimal references.
-2. Collapse repeated reasoning and remove resolved operational detail.
-3. Append only historically material superseded state to `history.md`.
-4. Rewrite `memory.md` as a self-contained current snapshot, preferably 2--4 KB.
-
-Compression must preserve uncertainty and negative results. It must not turn a
-provisional interpretation into an established claim.
-
 ## Retrieval And Resume
 
-When the user names a record, conversation, or path, select it and read only
-its `memory.md` first. When no prior record is specified but memory retrieval
-is requested, select the latest record by its valid `Updated at` timestamp;
-use `Created at` and then the directory name only as deterministic tie-breakers.
-Do not scan every `history.md` or old chat export. If timestamps are missing or
-invalid and the latest record cannot be determined safely, show only the small
-candidate set and ask the user which record to read.
-
-Read `history.md` only when the current snapshot identifies a specific missing
-transition or the user explicitly asks for historical reconstruction. Search
-for the relevant term, date, decision, or reference and read only the matching
-section.
+When the user names a record, conversation, or path, select it and read its
+`memory.md` in full: the cumulative log, from the header through the newest
+entry. The newest entry is the current state. When no prior record is
+specified but memory retrieval is requested, show the small candidate set
+(directory name plus `Latest update at`) and ask which record to read; if one
+record is clearly meant by the conversation name, select it. Use `Latest
+update at` (then `Created at`, then the directory name) only as deterministic
+tie-breakers, never as a substitute for the name. Do not scan old chat exports.
 
 Before acting on resumed scientific content:
 
@@ -186,9 +161,9 @@ Before acting on resumed scientific content:
 
 ## Completion
 
-A memory operation is complete when `memory.md` accurately states the current
-objective, open loops, resume point, and minimal references; any material state
-transition has one concise history entry; and no statement depends on memory
-alone for scientific authority. Retain completed records by default. Deletion,
-commit, push, publication, and external synchronization remain separate
-explicit actions.
+A memory operation is complete when `memory.md` has one newest entry that
+accurately states the current objective, current work, next action, and
+minimal references; older entries remain intact; and no statement depends on
+memory alone for scientific authority. Retain completed records by default.
+Deletion, commit, push, publication, and external synchronization remain
+separate explicit actions.

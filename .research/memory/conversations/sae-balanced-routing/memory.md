@@ -1,0 +1,44 @@
+# Conversation Memory: SAE/GMM online routing and post-training analysis
+
+Conversation name: SAE/GMM online routing and post-training analysis
+Processed by: Codex
+Created at: 2026-09-08 (date-level; the first preserved checkpoint carried no time)
+Latest update at: 2026-09-09T03:33:06Z
+Continues from: none
+
+## 2026-09-08 -- Evaluation handoff requested
+
+- Summary: User requested evaluation planning and a new task `0908-evaluation` (gpt-5.6-sol / high); memory now includes the minimum reading order and a concrete implementation resume point. Evaluation preparation may proceed, but full/expensive remote evaluation scope still needs a concrete budget; task creation is unavailable through the current tool surface.
+- Supersedes: reporting-only objective; does not supersede frozen experiment contracts or authorize new scientific conclusions.
+- References: A5 `detailed.md` section 10 and the frozen run `evaluation_manifest.json`; memory Resume Point.
+
+## 2026-09-08T12:42:04Z -- Completed training to bounded benchmark planning
+
+- Summary: Created the memory checkpoint after live verification of full A5 training and internal evaluation; result figures and mean tables now exist. The seed reversal prevents a stable SAE advantage claim; benchmark runtime must be measured before a large evaluation.
+- Supersedes: this conversation's earlier operational state of formal training just started; not the old E20 result record.
+- References: A5 `summary.md` and `detailed.md`; run manifest `/data/250010109/MoE_Router/experiments/20260908_sae_h_input_balanced_router/runs/full-20260908T111248Z/manifest.json`.
+
+## 2026-09-08T16:16:12Z -- Matched online-router objective clarified
+
+- Summary: User confirmed online joint router/expert training with identical initialization; compare task-only, SAE regularization and GMM regularization only, excluding random and Dense. User requests explanation of A (fixed-target alignment) versus B (pairwise separation), not a run in this turn. Old frozen-teacher arms versus online task-only do not isolate structural regularization; teacher labels may remain fixed while the router learns online. Scientific intent is pending canonicalization; exact regularizer and remote execution scope remain unset.
+- Supersedes: earlier five-arm proposal as the next-training scope; no old results or other task execution is overwritten or cancelled.
+- References: frozen run `source/model.py` and `train.py`; existing Protocol A5.6--A5.9 remains the owner of the old experiment only.
+
+## 2026-09-08 -- Four-condition overnight implementation handoff
+
+- Summary: User confirmed alignment purpose and requested explicit A and B for both SAE/GMM, memory, and a prompt for an experiment Agent to implement and submit full training by next morning. Wrote A6 protocol and `launch_prompt.md`; no job launched in the authoring task. Four new conditions replace the earlier A-first suggestion. Protocol defaults specify three seeds, online teacher targets, loss normalization, one bounded smoke and a four-H100/six-node-hour scope. The launch prompt accepts defaults and authorizes implementation through internal results without repeated approval rounds.
+- Supersedes: earlier next step of choosing A or B; both are now requested. Existing task-only is reusable only if matched.
+- References: `A6_online_regularized_router/protocol.md`; `launch_prompt.md`; memory.
+
+## 2026-09-09T03:19:57Z -- Lower-decay result and S0--S5 objective
+
+- Summary: A6 and A6R1 training/internal evaluations are complete. The researcher requires complete S0--S5 execution after the model list is frozen; S6 is excluded. Recommended list: all five matched A6R1/task-only conditions x three seeds for S0--S3, then task-only plus selected GMM-B-decay x three seeds for S4/S5, with K/R/U and conditional C/G as isolated S5 variants. Existing local S0--S3 artifacts used old constant-`0.1` A6 checkpoints; none establishes post-training behavior for A6R1, so the new execution must restart at S0 after a canonical model-list amendment.
+- Supersedes: the earlier resume point of launching A6 training and the old-A6 post-training target. It does not erase old A6 results or authorize silent reuse of old stage locks.
+- References: `A6R1_online_regularized_router_decay/protocol.md` and `tables/loss_comparison.csv`; `A6_online_regularized_router/post_training_analysis/protocol.md`.
+
+## 2026-09-09T03:33:06Z -- Scope expanded to unified S0--S6 execution
+
+- Summary: The researcher expanded the target from S0--S5 to S0--S6, directed completion of missing smoke first, required S6 to be fully specified and implemented, and authorized one unified reserved four-H100 execution after those gates pass. Evidence state: A6 constant-`0.1` training completed 12/12 trajectories with full internal evaluation; every regularized-minus-task-only delta was positive but the best A6 arm (SAE-B) was still worse by `+0.005936` nats/token, and its Summary remains `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. A6R1 changed only the structural-weight schedule to `0.01` at update 1, linearly decaying to `0.001` at update 512; all four arms x seeds 17/29/43 completed 512 updates and full internal evaluation. Against task-only, SAE-A and GMM-A were worse in every seed; SAE-B and GMM-B improved the mean but reversed at seed 43. GMM-B had the lowest mean test NLL, `0.694560`, versus task-only `0.696578`, with paired deltas `-0.003897/-0.002480/+0.000322` -- eligible measurement, not yet a researcher-confirmed mechanism judgment. A6R1 result figure and table exist; canonical A6R1 Summary/Detailed and Focus/Anchor result updates are still absent. Existing S0--S3 artifacts under `runs/local-smoke-20260908T2210Z` are for the OLD constant-`0.1` A6 checkpoints (local stage files say COMPLETE, no ACP submission or formal-run receipt) and cannot be reused as A6R1 evidence. S4 and S5 each have implementation source and one recorded unit test but no run directory, stage result, or submission receipt. S6 was explicitly out of scope and has no implementation. No S0--S6 stage has yet run on A6R1 checkpoints. Working understanding: the A6R1 B schemes show an average loss signal but not an all-seed ordering, so keep every seed and retain worse A arms as negative controls for distinguishing route change from task benefit; old A6 local diagnostics may inform implementation debugging only, and model-dependent locks, routing relations, interventions, and stage gates must be recomputed from A6R1 starting at S0. S4/S5 selected pair: matched task-only plus GMM-B-decay, all three seeds, where GMM-B is selected by the existing frozen rule (lowest equal-seed mean NLL among the four regularized arms); S5 derived variants are isolated copies of selected checkpoints, not independent pretrained models. S6 starts only from frozen S5 outputs selected by its predeclared development rule and compares against the corresponding no-adaptation and best old-capacity controls. Exclude old constant-`0.1` A6 checkpoints, random, Dense, and unrelated external benchmark models from the new execution matrix.
+- Current work: canonicalize the approved A6R1 S0--S6 contract and S6 design, then adapt and validate the implementation. Nothing is executing; S6's task stream, replay budget, metric, and stop rule are pending canonical design before submission.
+- Next action: write the A6R1 S0--S6 Protocol and S6 stage contract, then adapt and test the implementation. Finish the missing smoke matrix before preparing one immutable run directory and submitting the reserved four-H100 unified job. Restart scientific execution at S0; old A6 local S0--S3 outputs are implementation references only. A legitimate stage stop/insufficient status is a completed decision-tree branch, but must not be mislabeled as a positive result.
+- References: `Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training/A6R1_online_regularized_router_decay/protocol.md` (owns A6R1 training scope and completion ledger); its `tables/loss_comparison.csv` (current A6R1 seed-level task-loss measurements); `A6_online_regularized_router/post_training_analysis/protocol.md` (frozen OLD-A6 S0--S6 decision tree, requires explicit A6R1 adaptation); `A6_online_regularized_router/summary.md` (canonical first reading for constant-`0.1` A6); `daily_research_reports/0907/focus_sae_flat_router_functional_training.md` and the linked A15_13_10 Anchor (current canonical question, both stop before post-training execution); `/data/250010109/MoE_Router/experiments/20260909_online_sae_gmm_regularized_router_decay/runs/full-20260909T020300Z/` (immutable A6R1 checkpoints and raw evaluation evidence); `/data/250010109/MoE_Router/experiments/20260909_a6_post_training_analysis/runs/local-smoke-20260908T2210Z/stage_status.json` (non-canonical old-A6 local S0--S3 status only).

@@ -19,9 +19,10 @@ corresponding execution workspace.
   and decision-bearing figures or tables.
 - `.agents/skills/`: repository Skills discovered directly by Codex. See
   `docs/skills.md` for the trigger index.
-- `.research/memory/conversations/`: compact, versionable working snapshots for
-  continuing one logical conversation across Codex threads or accounts. These
-  records are non-canonical and do not represent scientific consensus.
+- `.research/memory/conversations/`: versionable cumulative working logs for
+  continuing one logical conversation across Codex threads or accounts. Each
+  checkpoint appends a timestamped entry; records are non-canonical and do not
+  represent scientific consensus.
 - `templates/`: the only maintained reusable-template area.
 - `sync/`: an explicitly published derived reading surface, never a source of
   scientific truth.
@@ -134,8 +135,9 @@ Conversation memory is ordinary repository content rather than runtime state.
 It may be versioned when continuity across checkouts is wanted; a fresh clone
 receives only committed checkpoints. Git presence never grants scientific
 approval or makes a memory statement canonical. Each Codex conversation gets
-its own timestamped record on first write; later checkpoints from that same
-conversation update its current snapshot.
+its own conversation-named record on first write; later checkpoints from that
+same conversation append a new timestamped entry instead of replacing the
+snapshot.
 
 ## Context And Artifact Rule
 
@@ -143,9 +145,9 @@ conversation update its current snapshot.
 - Read a Graph only for navigation, graph work, or graph-dependent synthesis.
 - Load one matching Skill and only the reference needed for the requested
   outcome.
-- When resuming conversation memory, read the explicitly named record or,
-  by default, the latest timestamped `memory.md`. Read `history.md` only through
-  a targeted lookup when the snapshot is insufficient.
+- When resuming conversation memory, read the named record's `memory.md` in
+  full (the accumulating log; the newest entry is the current state). There is
+  no `history.md`.
 - A narrow answer, local diagnosis, or temporary exploration creates no
   canonical artifact by default.
 - Create a document only when it has a distinct owner and durable research or

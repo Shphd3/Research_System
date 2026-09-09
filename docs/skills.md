@@ -18,7 +18,7 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 | `problem-anchor-writer` | Researcher-judgment audit, approved Anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
 | `experiment-card-writer` | In-file protocol drafting, critical-item review, promotion, `summary.md`, `detailed.md`, and evidence contracts | Research-question redefinition, remote jobs | Allowed |
 | `research-communication` | Explicit meeting brief or speaking outline, research-line story or stage synthesis, or curated handoff/copy/sync | New scientific claims, unrequested artifacts, raw outputs | Allowed; handoff and external actions still require an explicit request |
-| `research-memory` | Create, checkpoint, compact, resume, or retrieve repository-local conversation working memory | Scientific state, claims, approvals, curated handoff, or publication | Allowed |
+| `research-memory` | Create, checkpoint, resume, or retrieve repository-local conversation working memory | Scientific state, claims, approvals, curated handoff, or publication | Allowed |
 | `research-mainline` | Project organization, artifact placement, archive state, status, and explicitly requested root-mirror publication | Research judgment, raw execution, handoff packaging, external collaborator sync | Allowed; guarded actions still require an explicit request |
 | `remote-experiment-workflow` | Container, SSH, CCI, SCO, or ACP experiment workflow, monitoring, logs, artifact maps | Hypothesis design or SCO platform resource semantics | Allowed |
 | `scholar-mode` | Research-intuition audit, theory or methodology critique, paper analysis, literature positioning | Artifact schemas, graph work, runs, ordinary code | Allowed |

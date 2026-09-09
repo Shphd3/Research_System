@@ -1,34 +1,25 @@
 ---
 name: research-memory
-description: "Use when the user asks to create, checkpoint, compact, resume, or retrieve repository-local non-canonical working memory across Codex threads or accounts. Do not use for scientific-state updates, curated artifact handoff, or publication."
+description: "Create, checkpoint, resume, or retrieve repository-local non-canonical working memory across Codex threads or accounts. Not for scientific state or artifact handoff."
 ---
 
 # Research Memory
 
-Maintain compact working-state snapshots for work that must continue across
-Codex conversations, accounts, or restarts.
+Accumulating append-only per-conversation working log. Checkpoints append one
+timestamped summary entry; they never replace older entries.
 
 Read [references/memory_contract.md](references/memory_contract.md) before
-creating, checkpointing, compressing, or retrieving a conversation memory.
+creating, checkpointing, or retrieving.
 
 ## Boundary
 
-- Use `.research/memory/conversations/<YYYYMMDD_conversation-slug>/`.
-- Before the first write, inspect the current Codex conversation name from
-  available task or thread metadata. If it is unavailable or ambiguous, ask
-  the user to name it; do not infer it from the research topic.
-- Give each Codex conversation a distinct timestamped record. A continued
-  conversation may read a previous record, but its first write creates a new
-  record instead of overwriting the previous conversation's `memory.md`.
-- Unless the user names an older record, retrieve the latest `memory.md`.
-- Treat `memory.md` and `history.md` as non-canonical working context even when
-  they are versioned in Git.
-- Never derive scientific truth, approval, or authority from memory. Verify it
-  against the owning Focus, Anchor, Protocol, Summary, or Detailed record.
-- Do not create memory for every task. Use it only when cross-session
-  continuation or explicit recall is in scope.
-- Do not copy complete chats, code, diffs, logs, tables, or raw outputs into
-  memory; preserve the smallest useful state and direct references.
-
-This Skill does not package approved artifacts for another audience. Route
-that deliverable to `research-communication` handoff mode.
+- Record: `.research/memory/conversations/<conversation-name>/memory.md` —
+  named by conversation, not by date; mixed Chinese and English is fine; no
+  `history.md`.
+- Header records the processing agent: `Codex`, `DeepSeek`, or `DeepSeek via
+  Claude`.
+- One record per Codex conversation; resume reads the whole log; the newest
+  entry at the end is the current state.
+- Non-canonical: never derive truth, approval, or authority from memory;
+  verify against Focus, Anchor, Protocol, Summary, or Detailed.
+- No chats, code, diffs, logs, tables, or credentials; reference instead.

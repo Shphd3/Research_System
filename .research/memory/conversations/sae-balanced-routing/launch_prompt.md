@@ -5,7 +5,7 @@
 工作目录：`/data/250010109/Research_System`。
 
 先读取：
-1. `.research/memory/conversations/20260908-sae-balanced-routing/memory.md`；
+1. `.research/memory/conversations/sae-balanced-routing/memory.md`；
 2. `Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training/A6_online_regularized_router/protocol.md` 全文；
 3. 协议引用的 A5 冻结代码、配置和 task-only 基线，只读必要部分，不重做旧文献或审计流程。
 

@@ -65,17 +65,15 @@ Do not use chat history as the canonical research memory.
 
 For cross-session continuation, use
 `.research/memory/conversations/<conversation>/memory.md` as non-canonical
-working context. Load it only when resuming or explicitly recalling that
-logical conversation; otherwise load no conversation memory. Before the first
-write from a Codex conversation, identify its current conversation name and
-create a distinct timestamped record rather than overwriting another
-conversation's memory. Unless an older record is requested, read the latest
-`memory.md` and keep `history.md` cold unless a targeted lookup is needed.
-Follow its references instead of old chat transcripts, and verify scientific
-claims and approvals against their owning Focus, Anchor, Protocol, Summary, or
-Detailed record. These files may be versioned for continuity, but versioning
-does not make their contents canonical, approved, or consensus. Use
-`research-memory` for creation, checkpointing, compression, and retrieval.
+working context: one log per conversation, named by conversation, where each
+checkpoint appends a timestamped summary and never replaces older ones. Load it
+only when resuming or recalling that conversation; otherwise load none. First
+write creates a distinct record rather than overwriting another conversation's
+memory. Resume reads the whole log; the newest entry is the current state.
+Verify claims and approvals against the owning Focus, Anchor, Protocol, Summary,
+or Detailed record; versioning never makes memory canonical. Each record notes
+its processing agent (Codex, DeepSeek, or DeepSeek via Claude). Use
+`research-memory` for creation, checkpointing, and retrieval.
 
 ## Scientific Invariants
 
@@ -194,7 +192,7 @@ when applicable.
 | `AGENTS.md` | Stable behavior, scientific invariants, and boundaries |
 | `PROJECTS.md` | Scientific project map, active workstreams, priorities, and project decisions |
 | `.research/runtime/state.json` | Machine-written task routing and advisory overlap events only |
-| `.research/memory/conversations/` | Versionable, non-canonical conversation working context only |
+| `.research/memory/conversations/` | Versionable, non-canonical cumulative conversation working context only |
 | `focus_<problem>.md` | Human-owned current task, result boundary, and next decision |
 | Anchor | Canonical current research design and its boundary |
 | `protocol.md` | Experiment contract and its approval state |
