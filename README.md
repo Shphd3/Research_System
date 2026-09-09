@@ -19,6 +19,9 @@ corresponding execution workspace.
   and decision-bearing figures or tables.
 - `.agents/skills/`: repository Skills discovered directly by Codex. See
   `docs/skills.md` for the trigger index.
+- `.research/memory/conversations/`: compact, versionable working snapshots for
+  continuing one logical conversation across Codex threads or accounts. These
+  records are non-canonical and do not represent scientific consensus.
 - `templates/`: the only maintained reusable-template area.
 - `sync/`: an explicitly published derived reading surface, never a source of
   scientific truth.
@@ -127,12 +130,22 @@ and repository Skills remain available without reinstallation. The runtime
 registry survives only when `.research/runtime/` is on persistent storage; it
 is operational state and is not restored by a fresh Git clone.
 
+Conversation memory is ordinary repository content rather than runtime state.
+It may be versioned when continuity across checkouts is wanted; a fresh clone
+receives only committed checkpoints. Git presence never grants scientific
+approval or makes a memory statement canonical. Each Codex conversation gets
+its own timestamped record on first write; later checkpoints from that same
+conversation update its current snapshot.
+
 ## Context And Artifact Rule
 
 - Read `PROJECTS.md` only for workstream selection or project-level state.
 - Read a Graph only for navigation, graph work, or graph-dependent synthesis.
 - Load one matching Skill and only the reference needed for the requested
   outcome.
+- When resuming conversation memory, read the explicitly named record or,
+  by default, the latest timestamped `memory.md`. Read `history.md` only through
+  a targeted lookup when the snapshot is insufficient.
 - A narrow answer, local diagnosis, or temporary exploration creates no
   canonical artifact by default.
 - Create a document only when it has a distinct owner and durable research or
