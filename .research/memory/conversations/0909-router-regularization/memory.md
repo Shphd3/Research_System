@@ -1,7 +1,7 @@
 # Conversation Memory: 0909-Router Regularization
 
 Conversation name: 0909-Router Regularization
-Processed by: Codex
+Processed by: Codex (harness: Codex app-server; model: unknown)
 Created at: 2026-09-09T06:39:43Z
 Latest update at: 2026-09-09T06:39:43Z
 Continues from: none

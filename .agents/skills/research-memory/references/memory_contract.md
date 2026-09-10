@@ -61,7 +61,7 @@ Use this shape:
 # Conversation Memory: <short name>
 
 Conversation name: <current Codex conversation title>
-Processed by: <Codex | DeepSeek | DeepSeek via Claude>
+Processed by: <Codex | DeepSeek | DeepSeek via Claude> (harness: <harness>; model: <model or unknown>)
 Created at: <UTC timestamp>
 Latest update at: <UTC timestamp>
 Continues from: <prior record memory.md path or none>
@@ -82,8 +82,12 @@ Continues from: <prior record memory.md path or none>
   is the timestamp of the newest entry and is updated on every checkpoint.
   `Continues from` links the previous record when this conversation resumes
   earlier work. `Processed by` names the agent that performed the recorded
-  work, from exactly three values: `Codex`, `DeepSeek`, or `DeepSeek via
-  Claude`; the harness or model detail may be added as a parenthetical.
+  work (one of `Codex`, `DeepSeek`, or `DeepSeek via Claude`), then the
+  harness and the model it ran under, as
+  `(harness: <harness>; model: <model or unknown>)`. State the harness only
+  from the environment or an authoritative record, and the model only when it
+  is verified; otherwise write `model: unknown`. Never invent a harness or a
+  model.
 - Every entry carries a `Summary`; the newest entry additionally carries
   `Current work`, `Next action`, and `References`. Optional `On top of:` and
   `Supersedes:` bullets may name the prior entry a summary extends or a

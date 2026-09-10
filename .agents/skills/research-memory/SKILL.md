@@ -16,8 +16,9 @@ creating, checkpointing, or retrieving.
 - Record: `.research/memory/conversations/<conversation-name>/memory.md` —
   named by conversation, not by date; mixed Chinese and English is fine; no
   `history.md`.
-- Header records the processing agent: `Codex`, `DeepSeek`, or `DeepSeek via
-  Claude`.
+- Header records the processing agent and its harness and model:
+  `Processed by: <agent> (harness: <harness>; model: <model or unknown>)`.
+  State the model only when verified; otherwise write `unknown`.
 - One record per Codex conversation; resume reads the whole log; the newest
   entry at the end is the current state.
 - Non-canonical: never derive truth, approval, or authority from memory;

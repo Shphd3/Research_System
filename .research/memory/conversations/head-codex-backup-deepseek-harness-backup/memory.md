@@ -1,7 +1,7 @@
 # Conversation Memory: [Head] Codex backup and DeepSeek Harness backup
 
 Conversation name: [Head] codex 备份 + deepseek harness备份
-Processed by: Codex
+Processed by: Codex (harness: Codex app-server; model: unknown)
 Created at: 2026-09-09T15:47:46+00:00
 Latest update at: 2026-09-09T16:02:39+00:00
 Continues from: none

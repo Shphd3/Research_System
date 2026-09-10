@@ -1,7 +1,7 @@
 # Conversation Memory: 0910-memory-system improvement
 
 Conversation name: 0910-memory-system improvement
-Processed by: DeepSeek (DeepSeek Harness; model deepseek-v4-flash-vision-exp)
+Processed by: DeepSeek (harness: DeepSeek Harness; model: deepseek-v4-flash-vision-exp)
 Created at: 2026-09-09T17:29:37Z
 Latest update at: 2026-09-09T17:29:37Z
 Continues from: none

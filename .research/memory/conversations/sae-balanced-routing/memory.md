@@ -1,7 +1,7 @@
 # Conversation Memory: SAE/GMM online routing and post-training analysis
 
 Conversation name: SAE/GMM online routing and post-training analysis
-Processed by: Codex
+Processed by: Codex (harness: Codex app-server; model: unknown)
 Created at: 2026-09-08 (date-level; the first preserved checkpoint carried no time)
 Latest update at: 2026-09-09T03:33:06Z
 Continues from: none
