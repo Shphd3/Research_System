@@ -17,4 +17,6 @@ problem_key: A15.sae_hierarchical_teacher_construction
 
 **证据：** [Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E21_dynamic_structural_teacher/supplementary_0911/summary.md)、[Detailed](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E21_dynamic_structural_teacher/supplementary_0911/detailed.md)。
 
-**唯一下一决策（AI建议）：** 刷新特征组是否稳定且有足够语义一致性，值得继续用于监督？完成标准是固定h/编码器的分组重复性及独立文本语义核验；任何一项不支持就停止相应动态分组主张。恢复动作是打开固定探针和例子，先由研究者独立解释一组文本。没有新主模型训练授权或科学状态迁移写入本视图。
+**补查后的认识更新（AI草拟）：** 第256步同图重复基本稳定，记录取样和共现单位更敏感。旧分组的段级统计与当前刷新的词元级统计不同；相似位置不一定是相似内容。不能把大幅教师变化直接当新语义，也不能以“停止动态分组”替代导师的结构演化问题。完整解释见 [白话解析](0911_minimal_followup/results_explained_cn.md)。
+
+**唯一下一决策（AI建议）：** 在统一观察规则下，能否识别并持续追踪一种具有明确内容或操作含义的结构？先用同操作不同格式、不同操作同格式的独立判断文本对核验；若只支持格式，就收窄到格式/位置结构，不称为语义专家或动态分组必要性。语义粒度和科学判断仍由研究者确认，未改变原Focus或Anchor。
