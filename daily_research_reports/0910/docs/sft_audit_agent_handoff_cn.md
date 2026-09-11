@@ -1,3 +1,7 @@
+> **⛔ SUPERSEDED — 不要再把它当作入口。**
+> 当前唯一入口：[`continuation.md`](../../../.research/memory/conversations/0910-sft-matrix-execution/continuation.md)（工作流：SFT 路由表示全矩阵）。
+> 本文件内容**原样保留、未删改**，仅作历史来源。它是**执行前**（2026-09-09）的交付合同，**不能当现状依据**。
+
 # 全矩阵执行Agent交付与回审
 
 版本：full_matrix_v2。处理Agent：Codex。唯一最新启动消息见[Renew Prompt](sft_audit_full_run_prompt_cn.md)。先完整读[主计划](sft_representation_audit_plan_cn.md)与[离线附件](sae_hierarchy_offline_extension_cn.md)，不沿用旧单条件预算。

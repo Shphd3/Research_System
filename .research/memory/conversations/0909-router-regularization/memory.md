@@ -5,6 +5,10 @@ Processed by: Codex (harness: Codex app-server; model: unknown)
 Created at: 2026-09-09T06:39:43Z
 Latest update at: 2026-09-09T06:39:43Z
 Continues from: none
+Environment: container /data/250010109 (`repo`=Research_System, `exec`=MoE_Router);
+  also read from the Windows checkout C:\Users\250010109\data\Research_System.
+  /data is a network mount (quarkfs_client); /root/** is container-local and lost
+  on recycle. From the Windows checkout, `exec` and /root/** are not-visible.
 
 ## 2026-09-09T06:39:43Z -- Created from completed formal evaluation
 

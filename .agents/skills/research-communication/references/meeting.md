@@ -12,10 +12,10 @@ Create:
 daily_research_reports/MMDD/focus_meeting_<topic>.md
 ```
 
-Use `templates/meeting/meeting_focus_template.md`. Never overwrite a source
-Focus. Create a separate speaking outline from
-`templates/meeting/meeting_outline_template.md` only when explicitly requested
-after the meeting focus is complete.
+Compose the meeting brief directly from the named Focus and the four-part
+Summary; there is no meeting template. Never overwrite a source Focus. When a
+speaking order is explicitly requested, add it in the same document after the
+brief is complete rather than opening a second template.
 
 ## Scope
 

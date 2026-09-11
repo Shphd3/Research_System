@@ -1,3 +1,7 @@
+> **⛔ SUPERSEDED — 不要再把它当作入口。**
+> 当前唯一入口：[`continuation.md`](../../../.research/memory/conversations/0910-sft-matrix-execution/continuation.md)（工作流：SFT 路由表示全矩阵）。
+> 本文件内容**原样保留、未删改**，仅作历史来源；其状态快照为 2026-09-10T12:33Z，已过期，现状以产物本身为准。
+
 # SFT 矩阵 · 跨对话交接包（可粘贴 Prompt ＋ 资料清单）
 
 日期：2026-09-10。性质：**交接材料，非证据本体**。本文只负责把已完成的工作、未完成的工作、红线与读面完整交给下一位 agent；不含新的科学结论，不改变任何 canonical 记录，不代替 researcher 的科学判断。

@@ -6,6 +6,10 @@ Source conversation ID: 01a08725-f7b0-75e2-bb6d-3e8e86989e47
 Created at: 2026-09-09T18:21:51Z
 Latest update at: 2026-09-09T20:06:32Z
 Continues from: none
+Environment: container /data/250010109 (`repo`=Research_System, `exec`=MoE_Router);
+  also read from the Windows checkout C:\Users\250010109\data\Research_System.
+  /data is a network mount (quarkfs_client); /root/** is container-local and lost
+  on recycle. From the Windows checkout, `exec` and /root/** are not-visible.
 
 ## 2026-09-09T18:21:51Z -- Teaching documents and full-run execution handoff completed
 

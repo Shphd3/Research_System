@@ -48,17 +48,21 @@ owns human confirmation of the result and boundary. Protocol approval stays in
 `protocol.md`; execution status stays in `detailed.md` or the execution record.
 Do not mirror either into one composite Focus status.
 
-Before execution each experiment has:
-
-1. Purpose: which uncertainty it resolves and why it is needed.
-2. Hypothesis: predicted contrast, strongest rival, and separating outcome.
-3. Analysis method: at most three plain-language comparisons and their roles.
-4. Conclusion: possible decision branches before execution; direct result,
-   bounded conclusion, and effect on the Focus afterwards.
+Before execution the experiment's four parts — Purpose, Hypothesis, Analysis
+method, and the pre-registered decision branches — are owned by `protocol.md`.
+The Focus names each experiment, its one-line purpose, the outcome that would
+separate the strongest rival, and the protocol path; it does not restate the
+protocol body.
 
 After execution the researcher supplies or confirms the direct result, updated
-judgment, cannot-claim boundary, and exactly one next decision. AI verifies
-these against canonical evidence without strengthening them.
+judgment, cannot-claim boundary, and exactly one next decision in the Focus. The
+experiment-level four-part result is owned by `summary.md` together with its
+Chinese companion `summary_cn.md`; the full round record is owned by
+`detailed.md`. AI verifies these against canonical evidence without
+strengthening them and never copies a protocol or summary body into the Focus.
+
+The Focus keeps one rolling round summary compressed from `detailed.md`, one row
+per round. Keeping the same round history in two places is `FAIL`.
 
 Keep formulas, full settings, statistical details, figures, provenance, and run
 history in the Anchor, Protocol, Summary, Detailed record, or delayed daily

@@ -86,18 +86,19 @@ Creating or resetting a Focus is a human-owned scientific transition; do it
 only after the researcher explicitly activates an independent question and
 confirms its stable `problem_key` and next decision.
 
-Before execution, each experiment in the Focus has a researcher-confirmed
-plain-language account with four parts:
-
-1. Purpose: what part of the question it resolves and why it is needed.
-2. Hypothesis: predicted contrast, strongest rival, and separating outcome.
-3. Analysis method: what is compared and why it answers the question.
-4. Conclusion: possible decision branches before execution; direct result,
-   bounded conclusion, and effect on the Focus afterwards.
+Before execution, the experiment's four parts — Purpose, Hypothesis, Analysis
+method, and the pre-registered decision branches — are owned by `protocol.md`.
+The Focus names each experiment, its one-line purpose, the outcome that would
+separate the strongest rival, and the protocol path; it does not restate the
+protocol body.
 
 After execution, the researcher owns the Focus-level updated judgment,
-cannot-claim boundary, and next decision. AI verifies them against evidence
-without strengthening them.
+cannot-claim boundary, and next decision. The experiment-level four-part result
+is owned by `summary.md` with its Chinese companion `summary_cn.md`; the full
+round record is owned by `detailed.md`. AI verifies these against evidence
+without strengthening them, and never copies a protocol or summary body into the
+Focus. The Focus keeps one rolling round summary compressed from `detailed.md`,
+one row per round; the same round history kept in two places is `FAIL`.
 
 Focus lifecycle fields are orthogonal: `task_state`, `question_state`,
 `design_state`, and `result_state`. Protocol approval is owned only by
@@ -126,8 +127,9 @@ Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
   implementation or execution.
 - A full or expensive remote run requires explicit execution approval for its
   scope. Small local implementation checks do not.
-- `summary.md` owns the first result reading path; `detailed.md` owns complete
-  setup, provenance, deviations, tables, failures, and artifact map.
+- `summary.md` owns the first result reading path and `summary_cn.md` is its
+  Chinese companion; `detailed.md` owns complete setup, provenance, deviations,
+  tables, failures, and artifact map.
 - A reader-friendly daily report is written only after canonical evidence
   exists and the researcher has stated or approved the result, boundary, and
   next decision. It explains but does not replace the evidence records.
@@ -162,7 +164,8 @@ Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
 
 ## Result Reading And Reply
 
-`summary.md` is the complete first reading surface for a finished experiment.
+`summary.md` is the complete first reading surface for a finished experiment;
+`summary_cn.md` is its Chinese companion and carries the same four-part body.
 Its reader body uses Purpose, Hypothesis, Analysis method, and Conclusion. Put
 the full, evidence-grounded four-part account there once; do not reproduce it
 in chat with merely different wording.
@@ -200,8 +203,8 @@ when applicable.
 | `focus_<problem>.md` | Human-owned current task, result boundary, and next decision |
 | Anchor | Canonical current research design and its boundary |
 | `protocol.md` | Experiment contract and its approval state |
-| `docs/execution_envelope.md` | Target profile, image and runtime-layer registry, submission entry point, and run-receipt contract |
-| `summary.md` / `detailed.md` | Canonical result reading path / evidence ledger and execution state |
+| `docs/execution_envelope.md` | Target profile, image and runtime-layer registry, submission entry point, and execution-certificate contract |
+| `summary.md` / `summary_cn.md` / `detailed.md` | Canonical result reading path and its Chinese companion / evidence ledger and execution state |
 | Graph, story, daily report, root `sync/` | Derived navigation or reading views |
 
 Machine state must never own scientific claims, approval, priority, verdicts,

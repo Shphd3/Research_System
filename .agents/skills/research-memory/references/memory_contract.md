@@ -38,9 +38,20 @@ continuity record; it is not a `researchctl` owner, a lock, or scientific
 authority.
 
 Other files may exist inside the record directory (for example a one-time
-launch prompt). They are operational artifacts, not memory: they follow the
-memory boundary below but are not governed by the entry format of this
-contract, and no approval or scientific status may be derived from them.
+launch prompt, or a `continuation.md` brief). They are operational artifacts,
+not memory: they follow the memory boundary below but are not governed by the
+entry format of this contract, and no approval or scientific status may be
+derived from them.
+
+`continuation.md` is the sanctioned entry point for handing a workstream to a
+different conversation. Keep exactly one CURRENT brief per workstream: rewrite
+it at each checkpoint rather than appending, mark the brief it replaces
+`SUPERSEDED`, and name it under `Supersedes:` so a reader can always find the
+single current entry point. Its shape is fixed by
+`templates/research_process/continuation_brief_template.md`. The mandatory
+sections are the read list and the reusable assets, plus the action list
+whenever the brief authorises any action. A brief points at canonical sources
+and never restates their conclusions.
 
 These files are ordinary versionable repository content. Sharing a checkout
 makes uncommitted memory visible to other local accounts or threads; sharing
@@ -65,6 +76,9 @@ Processed by: <Codex | DeepSeek | DeepSeek via Claude> (harness: <harness>; mode
 Created at: <UTC timestamp>
 Latest update at: <UTC timestamp>
 Continues from: <prior record memory.md path or none>
+Environment: <named roots this record's paths resolve against, for example
+  `repo=<path>` `exec=<path>` `receipts=<path>`; mark every root that the
+  writing environment cannot read as `not-visible`>
 
 ## <UTC timestamp> -- <transition or stage title>
 
@@ -88,11 +102,23 @@ Continues from: <prior record memory.md path or none>
   from the environment or an authoritative record, and the model only when it
   is verified; otherwise write `model: unknown`. Never invent a harness or a
   model.
+- `Environment` names the filesystem roots this record's paths resolve against,
+  and marks any root the writing environment cannot read as `not-visible`. A
+  reference whose root is absent from the current environment is unverifiable,
+  not stale: report it as unverifiable and never silently drop it. Do not
+  assume a path resolves merely because it is written in this record.
 - Every entry carries a `Summary`; the newest entry additionally carries
   `Current work`, `Next action`, and `References`. Optional `On top of:` and
   `Supersedes:` bullets may name the prior entry a summary extends or a
   decision a transition overturns. Never append the old file wholesale as a
   new entry; each entry re-summarizes, does not replay.
+- A checkpoint that covers a change to a canonical artifact (`PROJECTS.md`, a
+  `focus_<problem>.md`, an Anchor, `protocol.md`, `summary.md`, `detailed.md`,
+  or a catalog Skill) must name that artifact under `References` and, when the
+  change supersedes a prior decision or state, under `Supersedes`. Record the
+  pointer and its bounded effect only; never restate the artifact's conclusion
+  as memory-owned content. The change is owned by its artifact, and memory
+  never carries its authority.
 - Keep only information needed to choose and perform the next action. Mark
   scientific interpretations as source-backed, provisional, disputed, or
   unknown when their status is not otherwise obvious. A scientific decision or
@@ -109,9 +135,18 @@ Continues from: <prior record memory.md path or none>
 The log grows by design; there is no separate cold archive and no automatic
 compaction. `history.md` is not used. If a log becomes unwieldy, prefer a new
 record for the same logical work with `Continues from` pointing here, which is
-already the sanctioned cross-record mechanism. Any in-place consolidation of
-redundant narration requires an explicit researcher request and must preserve
-uncertainty, negative results, and every decision that is not superseded.
+already the sanctioned cross-record mechanism.
+
+In-place consolidation of redundant narration happens only on an explicit
+researcher request: never on a schedule, and never automatically. There is no
+expiry signal and no size or age threshold that triggers it. Before
+consolidating, re-verify every open item against its owning source.
+Consolidation must preserve every unresolved uncertainty, every negative or
+`INSUFFICIENT` result, every decision that is not explicitly superseded, and
+the original `Created at`. It may remove only superseded narration and resolved
+operational detail. After consolidating, append one entry stating what was
+removed and why. If a log is merely long rather than redundant, prefer a new
+record with `Continues from` over rewriting the old one.
 
 ## Creation
 

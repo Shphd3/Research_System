@@ -3,8 +3,14 @@
 Conversation name: 0910-sft-matrix-execution (execution continuation of the 0910-clustering change record)
 Processed by: DeepSeek via Claude (harness: Claude Code; model: unknown)
 Created at: 2026-09-09T20:59:00Z
-Latest update at: 2026-09-10T12:40:00Z
+Latest update at: 2026-09-11T14:45:00Z
 Continues from: 0910-clustering-change/memory.md
+Environment: container /data/250010109 (`repo`=Research_System, `exec`=MoE_Router);
+  also read from the Windows checkout C:\Users\250010109\data\Research_System.
+  /data is a network mount (quarkfs_client); /root/** is container-local and lost
+  on recycle. From the Windows checkout, `exec` and /root/** are not-visible.
+Continuation: continuation.md in this record directory is the CURRENT entry point
+  for this workstream. It supersedes the four historical handoff documents.
 
 > **Consolidation note (2026-09-10T12:25Z, explicit researcher request).** The 13 entries written
 > 20:59Z–11:37Z were merged into the four entries below. Merged, not deleted: every decision,
@@ -12,12 +18,25 @@ Continues from: 0910-clustering-change/memory.md
 > the repeated debugging narration of qualification rounds r3–r9, the container-restart log,
 > SCO reinstall steps, and process-management detail. `Created at` is unchanged.
 
+> **Consolidation note (2026-09-11T14:45Z, explicit researcher request — second pass).** Removed:
+> (a) the list of five figure defects that were found and fixed on real data, now resolved
+> operational detail — the two that remain live traps are kept; (b) the per-channel numeric
+> detail of the training-dynamics findings, which is owned by
+> `daily_research_reports/0910/docs/sft_matrix_training_dynamics_cn.md`, replaced by a pointer
+> plus the reading pitfalls; (c) the render-progress counters and per-run file counts, which
+> were superseded by the next checkpoint. Preserved in full: every binding constraint, the
+> identity contract, both `fm` defects, both mechanism closures, both retractions, the typed
+> `INSUFFICIENT` states, the cross-host reproducibility boundary, and every open loop. The
+> 16.3 KB → 13.6 KB reduction is deduplication only, smaller than the first estimate because
+> nearly everything in this record proved decision-bearing; the prior text is recoverable at
+> commit `bcadd93`.
+
 ## 2026-09-09T20:59:00Z -- Setup, identity contract, qualification PASS, full job submitted [consolidated]
 
 - Run root `runs/full-20260909T203104Z/`; execution root `MoE_Router/experiments/20260910_sft_routing_representation_full_matrix/`. 14 conditions (task / sae_a / sae_b / gmm_a / gmm_b / high28_a / high28_b × F/U) × 3 seeds (17/29/43) = 42 trajectories × 512 updates; shared frozen Qwen3-0.6B backbone + injected adapter; teachers frozen; structural gradients router-only.
-- **Identity contract (binding, still in force).** `source_hashes()` covers `fm/**/*.py`. Any edit to a live `fm` source invalidates `run_identity.json` *and* the teacher target manifest — both must be rebuilt as one batch, and the cluster's qualification artifacts recorded under the old hash must be wiped. Cluster pods read the same files over the shared `/data` mount, so live code == node-side code: **never edit `fm/` while a pod runs.** Cluster stages therefore run from the frozen snapshot `$RUN/source/`, not from the live tree. Decision: live `fm` stays frozen for the whole run; the two known `fm` defects are handled by post-processors outside `fm/` (see next entry).
+- **Identity contract (binding, still in force).** `source_hashes()` covers `fm/**/*.py` (and `matrix.json`, `runtime.sh`, `vendor_provenance.json`, `acp_full.sh`, `README.md`). Any edit to a live `fm` source invalidates `run_identity.json` *and* the teacher target manifest — both must be rebuilt as one batch, and the cluster's qualification artifacts recorded under the old hash must be wiped. Cluster pods read the same files over the shared `/data` mount, so live code == node-side code: **never edit `fm/` while a pod runs.** Cluster stages therefore run from the frozen snapshot `$RUN/source/`, not from the live tree. Decision: live `fm` stays frozen for the whole run; the two known `fm` defects are handled by post-processors outside `fm/` (see next entry).
 - **Negative result (preserved).** Bitwise-exact resume is not achievable on these H100s for the open-attention path: resume is exact in adapter params, adapter-group Adam momenta, optimizer step tensors, schedule position, cumulative tokens and RNG, but the open-attention weights and their momenta carry ~1e-8/step cublasLt/SDPA kernel-choice noise (measured 4-step drift: adapter 0.0–2.2e-7, attention 2.1e-8, attention Adam 3.9e-9, history NLL 2.9e-6 — node-dependent). The recovery gate is therefore *discrete fields exact + float fields within a measured backend noise floor*, not bitwise.
-- Qualification PASS (36 updates, 14/14 conditions); full training submitted and completed: **42/42 `training.json` COMPLETE**, 882 checkpoints + sidecars, 1764 representation shards, 0 `failure.json`.
+- Qualification PASS (36 updates, 14/14 conditions); full training completed: **42/42 `training.json` COMPLETE**, 882 checkpoints + sidecars, 1764 representation shards, 0 `failure.json`.
 - Contrast contract `matrix.json`: G1=12 (teacher arm − task), G2=7 (U−F), G3=6 (b−a), G4=4 (sae−gmm), G5=4 (high28−sae), G6=6 (attention interaction) = 39. CI95 (`fm/analysis.py:139-146`) resamples panel records only (2000 draws, multiplicities shared across arms ⇒ arms paired); **it excludes seed-to-seed training variance** — that lives in `seed_values` (≈0.14 nats at u512).
 
 ## 2026-09-10T05:07:00Z -- Cluster segment complete; two `fm` defects frozen not fixed; two mechanism questions closed [consolidated]
@@ -30,37 +49,23 @@ Continues from: 0910-clustering-change/memory.md
 - **Retraction**: the earlier "cross-source share of movers is 0.35–0.43× the independent expectation ⇒ significant deficit" is **withdrawn**. Correct reading: observed 0.56–0.74 against a source-blind, cluster-size-aware null of 0.837, ratio 0.67–0.89, on only 20–31 records per condition — not evidence either way.
 - Offline ten-config hierarchy (G8) computed locally and independently of the cluster: `OFFLINE_COMPUTED_WITH_TYPED_INSUFFICIENCY_NOT_SCIENTIFIC_VERDICT`, 40 views, 1200 matched rows, `path_evidence.json` (158 real deepest paths). Matched-control sign convention: `right_minus_left_* = high − leaf`; on all check records 1014/1026 rows negative (median −0.1056, CI95 contains 0 in 18/1026), reversing to +0.0198 when restricted to records both sets cover. The two must be read as a pair: the overall deficit is carried by coverage/abstention, not by grouping quality on common records.
 
-## 2026-09-10T11:37:00Z -- Analysis moved off the container; full-matrix analysis and all seven figure families complete [consolidated]
+## 2026-09-10T11:37:00Z -- Analysis moved off the container; full-matrix analysis and seven figure families complete [consolidated]
 
 - **Why the host changed**: `fm analyze` has no resume path in `fm/analysis.py`, and the container is recycled roughly every 4 h, so a 7–8 h single-process pass could never finish; it was killed four times. The pass was moved to the reserved ACP pod `pt-qb1ffm7q` via `postprocess/acp_analyze.sh`. Result: **`analysis/compute_receipt.json` at 10:50:45Z**, 42 trajectories × 21 checkpoints × 2 splits, 1764 shards all identity-verified, 641 s; resume accounting 1062 bootstrap artifacts reused / 702 recomputed.
 - **Cross-host reproducibility boundary (measured, canonical).** Same-host recomputation is **bitwise identical** (including through an npz round-trip, at 1 vs 4 BLAS threads). Container ↔ pod is **numerically equivalent, not identical**: `max|ΔS| = 4.4e-16`, `max|ΔNLL| = 6.7e-16`, `max|ΔD| = 3.1e-33`, all CI95 endpoints unchanged to 6 decimals; inputs proven identical (shard sha256 == receipt), so the residual is host-level BLAS GEMM dispatch. **Never call cross-host artifacts bitwise-equal.**
-- Seven figure families `fig01`–`fig07` (`postprocess/figures/`) produced from real data, 162 files + per-family `method_cn.md` + `index.html`, all `DERIVED_NOT_SCIENTIFIC_VERDICT`; `fm/` imported read-only (`fm.legacy.data.render_record`, `fm.geometry` definitions). Five defects surfaced only on real data and were fixed: `SOURCE_COLORS` index modulo (14 conditions > 8 colours); `actual` (chosen expert id) vs `actual_expert` (already-weighted vector) confusion; `fig07` H5 had no direction verdict; `fig02` had picked the wrong `panel_metadata.csv` (`<run>/panel_metadata.csv`'s `index` is the dataset row number 0..8479 — only `analysis/postprocess/panel_metadata.csv`'s `index` is the panel position); `common.axis_limits()` now prefers the canonical `analysis/global_axis_limits.json` written by `fm render` (this run: written 11:27Z, ~37 min after the scan started) and records which source it used in `AXIS_LIMITS_SOURCE`.
+- Seven figure families `fig01`–`fig07` (`postprocess/figures/`) produced from real data, 162 files + per-family `method_cn.md` + `index.html`, all `DERIVED_NOT_SCIENTIFIC_VERDICT`; `fm/` imported read-only (`fm.legacy.data.render_record`, `fm.geometry`). Five defects surfaced only on real data and were fixed (details in the 2026-09-11 consolidation note). **Two remain live traps**:
+  1. `panel_metadata.csv` — `<run>/panel_metadata.csv`'s `index` is the dataset row number 0..8479; only `analysis/postprocess/panel_metadata.csv`'s `index` is the panel position.
+  2. `common.axis_limits()` prefers the canonical `analysis/global_axis_limits.json` written by `fm render` and records its source in `AXIS_LIMITS_SOURCE`; the canonical file is written *after* the scan starts, so axis limits can differ between an early and a late reader.
 - **Deliverable**: `daily_research_reports/0910/docs/sft_matrix_full_analysis_cn.md` — four-part meeting format, no placeholders left. The researcher's boundary sentence in §5 is kept **verbatim** and AI does not lift it.
 - **Completion judging rule for the remote chain**: judge by `<run>/postprocess_chain/*.done` and `acp/REMOTE_STATUS`. Never by the chain log's "finished" line — `complete_chain.sh`'s `step()` logs FAIL but does not abort. Decision taken: do **not** run `complete_chain.sh` locally while the pod's `render` is writing into the same output directory (duplicate render, contention on an 8-CPU cgroup).
 - **Compute conclusion (verified by this round)**: every stage — analysis, bootstrap, clustering, projection, figures — is CPU numerical work; the 4×H100 were never used. The value of the reserved node was its 88 vCPU and independence from container recycles. **Do not re-submit 4-GPU reserved unless a new batch of conditions is to be trained.**
 
-## 2026-09-10T12:25:00Z -- Training-dynamics report: the drastic change is in routing, not in the representation
+## 2026-09-10T12:40:00Z -- Training-dynamics report; handoff [superseded in part]
 
-- Summary: 研究者要求围绕 0909 组会问题的本意——「看训练过程中发生的剧烈变化」——详细讲解结果并汇报训练结果。产出新稿 `daily_research_reports/0910/docs/sft_matrix_training_dynamics_cn.md`（四段式收束 + 训练结果表 + 口径索引），并新增两个只读探针把「变化在**哪一层**、在**什么时候**」量化：
-  `postprocess/probe_change_timing.py` → `analysis/postprocess/change_timing.json`（损失/几何/路由/读出四条通道 × 21 检查点）；`postprocess/probe_routing_churn.py` → `analysis/postprocess/routing_churn.json`（逐记录专家归属改选，读分片 `actual` 成员，npz 为 zip，单成员读取约 13 ms）。
-- **核心结论（均为直接测量，非推测）**：
-  1. **剧烈变化在路由侧**：development 的 1480 条固定记录中，**76.77%** 在 update 512 落到与 t0 不同的专家上（42 轨迹均值；F 条件 0.7762、U 条件 0.7592）。逐条件端点 0.5133（high28_b_u）–0.9446（sae_a_f）。
-  2. **零假设对照**：按 t0 与 t512 各自负载边缘分布独立重抽，期望改选 0.8040；实测/期望 = 0.955（逐轨迹 0.59–1.27）⇒ t0 归属对 t512 几乎无预测力，是整体重掷而非少数记录搬家；同时说明"改选比例大"本身**不能**推出分配变好（该比例主要由负载边缘分布形状决定）。
-  3. **时间**：重掷在 update 64 前基本完成（u16 0.3906 → u32 0.7360 → u64 0.7706 → u512 0.7677）；改选/零假设在 u16 为 0.573、u32 跳到 0.908。负载标准差 0.2372→0.3010，其中 **69% 的增幅发生在 u16→32 一个区间（+0.0437）**。NLL 最大单区间降幅 −0.707（32→64）、−0.605（16→32）。U 条件 $R$ 于 16→32 抬头、$D$ 于 32→64 抬头。
-  4. **读出结构几乎不动**：固定 K8 净换组 U 1.42–1.89%、F 恰 0；但"至少换过组一次"的记录占 14.9–15.6%，其中 ≥2 次者 14.5% ⇒ **边界抖动，不是结构重建**。
-  5. **训练结果**：t0 唯一值 dev 2.79651 / test 2.83464；14/14 下降，dev 1.8596–2.0058、test 1.9106–2.0489 nats；U 组系统性低于 F 组约 0.10 nats（描述性，不分解"多训 attention"与"结构目标"两个来源）。
-- **口径坑（复核必读）**：`clusters/*.npz` 的 `transition_from_previous` 存在于 **display 对齐空间**；对齐置换翻转时会把稳定分区整体改标误报成大量流动，本稿的逐区间流动因此**先做匈牙利重匹配**再读数，且标为**下界**（真实合并可被匹配吸收）。F 条件在全部 20 个区间上流动恒为 0.0000，与"h 逐位不变"互证。
-- **同时说明的边界（写在稿中，不代研究者解除）**：t0 专家输出严格为 0（42/42 分片 `max|E|=max|shared|=0`），故 t0 的专家归属在功能上是空转的——第 1 条比较的是"一次空转的分配"与"一次有效分配"，它度量重掷程度，不是功能上的改换门庭。研究者边界句仍为稿中 §8 原文。
-- Current work: 新稿已落盘；`sft_matrix_full_analysis_cn.md` 已加交叉链接。远端 chain 仍在 `fm render` 的 G7 画廊阶段（11/42 轨迹目录，约 25 文件/分钟），`postprocess_chain/*.done` 与 `acp/REMOTE_STATUS` 仍无标记，远端在正常推进，本地不介入。本轮未 commit/push、未改 Graph、未外部同步。
-- Next action: 继续由 cron `fc9038cb`（每 30 min）监督远端 chain 至 `figures.done`；远端停滞时才在本地兜底 `bash postprocess/complete_chain.sh`。向研究者汇报时先说"剧烈变化在路由侧、且在前 1/8 训练内完成"，再给时间表与训练结果。
-## 2026-09-10T12:40:00Z -- Handoff package written; this conversation's work is being transferred
-
-- Summary: 研究者决定把收尾工作交给一个新对话（DeepSeek V4.1 flash），并接续后续训练。产出交接包 `daily_research_reports/0910/docs/sft_continuation_prompt_cn.md`：§1 状态快照（2026-09-10T12:33Z 清点）、§2 分层资料清单（必读 12 项 / 按需 / 明令不得作证据）、§3 可整段粘贴的新对话 Prompt（Phase A 收尾链、B 回填、C 新建本对话 memory 记录、D 后续训练范围待 researcher 陈述、E 审计入口、红线与复查标准）。另有前置交付 `sft_audit_postrun_brief_cn.md`（审计阅读清单与八个攻击点）。
-- **本记录的接手指示**：新对话按 memory 合约**新建自己的记录**并 `Continues from` 本文件，绝不覆盖本文件。Phase D 的训练范围属 researcher 拥有，未陈述前不得启动任何 GPU 作业、不得自设条件。
-- 未变的状态：远端链仍在 `fm render` 的 G7 画廊（12:33Z 20/42 轨迹目录，`render_progress.json` 每 1–3 分钟更新，当前 `sae_b_f__seed29`）；`postprocess_chain/` 仍无任何 `.done`；`compute_receipt.json` 自 10:50:45Z 起在位。
-- **交接期并发风险（已在交接包 §0 写明）**：本会话的会话内 cron `fc9038cb`（每小时 :11 与 :41）仍在监督同一条链，其第 4 步会在收据已出、链未跑完时自动在本地执行 `complete_chain.sh`。新对话接手前必须让本会话停掉该 cron，否则两个 agent 会同抢同一输出目录。
-- Current work: 交接包已落盘，本记录的职责到此收束，除非 researcher 在本对话继续下指令。
-- Next action: 研究者把 `sft_continuation_prompt_cn.md` §3 贴进新对话。cron `fc9038cb` **已于 2026-09-10T12:41Z 停止**（研究者指示，本会话现无任何定时任务），新对话可全权接手监督与兜底；接手前先确认本会话不再有人碰运行根。
-- References: `daily_research_reports/0910/docs/sft_continuation_prompt_cn.md`（交接包本体）；`sft_audit_postrun_brief_cn.md`（审计入口）；`sft_matrix_postrun_analysis_plan_cn.md`（收尾链与两个 fm 缺陷的完整归因）；`runs/full-20260909T203104Z/{analysis/compute_receipt.json,postprocess_chain/}`（当前状态源）。本记录非 canonical。
-
-- References: 新稿 `daily_research_reports/0910/docs/sft_matrix_training_dynamics_cn.md`（问题原文、五通道表、时间表、训练结果表、边界、四段式收束）；四段式稿 `daily_research_reports/0910/docs/sft_matrix_full_analysis_cn.md`；会议原话 `daily_research_reports/0909/docs/0909_组会逐句校订稿_含原文对照.md`（09:05 / 09:35 / 10:36 / 14:52）；探针 `postprocess/{probe_change_timing.py,probe_routing_churn.py}`；产物 `runs/full-20260909T203104Z/analysis/postprocess/{change_timing.json,routing_churn.json}`。本记录非 canonical；科学判决仍由 researcher 拥有。
+- Summary: 研究者要求围绕 0909 组会问题的本意——「看训练过程中发生的剧烈变化」——讲解结果。产出 `daily_research_reports/0910/docs/sft_matrix_training_dynamics_cn.md`（四段式收束 + 训练结果表 + 口径索引），并新增两个只读探针：`postprocess/probe_change_timing.py` → `analysis/postprocess/change_timing.json`；`postprocess/probe_routing_churn.py` → `analysis/postprocess/routing_churn.json`（读分片 `actual` 成员；npz 为 zip，单成员读取约 13 ms）。
+- **核心结论（指向读面，数值不再在此复制）**：剧烈变化在**路由侧**，且在**前 1/8 训练内基本完成**；零假设对照显示 t0 归属对 t512 几乎无预测力，是整体重掷而非少数记录搬家，因此「改选比例大」本身**不能**推出分配变好；读出结构几乎不动，是边界抖动而非结构重建。全部数值、五通道表、时间表与训练结果表见 `daily_research_reports/0910/docs/sft_matrix_training_dynamics_cn.md`。
+- **必须随稿继承的口径坑（不得绕开）**：`clusters/*.npz` 的 `transition_from_previous` 存在于 **display 对齐空间**；对齐置换翻转会把稳定分区整体改标误报成大量流动，读数前必须**先做匈牙利重匹配**，且结果只能标为**下界**。F 条件在全部 20 个区间上流动恒为 0.0000，与「h 逐位不变」互证。
+- **不得代研究者解除的边界**：t0 专家输出严格为 0（42/42 分片 `max|E|=max|shared|=0`），故 t0 的专家归属在功能上是空转的——该比较度量的是重掷程度，不是功能上的改换门庭。研究者边界句仍为稿中 §8 原文。
+- **交接（已被取代）**：原先的交接包 `sft_continuation_prompt_cn.md` 及另外三份入口文档，已由本记录目录下的 `continuation.md` 取代（四份原件保留，仅标 SUPERSEDED）。接手方按 memory 合约**新建自己的记录**并 `Continues from` 本文件，绝不覆盖本文件。
+- **交接期并发风险**：本会话的会话内 cron `fc9038cb` 会在收据已出、链未跑完时自动本地执行 `complete_chain.sh`。该 cron **已于 2026-09-10T12:41Z 停止**（研究者指示）。接手方接手前**仍须复认**该 cron 已停，否则两个 agent 会同抢同一输出目录。`docs/execution_envelope.md` §6 因此明令：用受管后台作业监控，**不要建会话内定时任务**。
+- References: `daily_research_reports/0910/docs/sft_matrix_training_dynamics_cn.md`（五通道表、时间表、训练结果表、边界）；`daily_research_reports/0910/docs/sft_matrix_full_analysis_cn.md`（四段式读面）；会议原话 `daily_research_reports/0909/docs/0909_组会逐句校订稿_含原文对照.md`（09:05 / 09:35 / 10:36 / 14:52）；`continuation.md`（本工作流当前入口）。本记录非 canonical；科学判决仍由 researcher 拥有。

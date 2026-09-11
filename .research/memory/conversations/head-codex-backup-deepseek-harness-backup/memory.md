@@ -5,6 +5,10 @@ Processed by: Codex (harness: Codex app-server; model: unknown)
 Created at: 2026-09-09T15:47:46+00:00
 Latest update at: 2026-09-09T16:02:39+00:00
 Continues from: none
+Environment: container /data/250010109 (`repo`=Research_System,
+  `ops`=chat_history_backups|tools|runtime_env, plus /root/.codex and /root/.dsh).
+  /root/** is container-local and lost on recycle. From the Windows checkout,
+  `ops` and /root/** are not-visible; `repo` is readable.
 
 ## 2026-09-09T15:47:46+00:00 -- Created during persistence and private-access setup
 

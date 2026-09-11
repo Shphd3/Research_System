@@ -1,3 +1,7 @@
+> **⛔ SUPERSEDED — 不要再把它当作入口。**
+> 当前唯一入口：[`continuation.md`](../../../.research/memory/conversations/0910-sft-matrix-execution/continuation.md)（工作流：SFT 路由表示全矩阵）。
+> 本文件内容**原样保留、未删改**，仅作历史来源。它是**执行前**（2026-09-09T19:54:59Z 暂停点）的启动 Prompt，**不能当现状依据**。
+
 # Renew执行Prompt：14条件完整矩阵＋离线层级扩展
 
 版本：`full_matrix_v2`；暂停交接更新：2026-09-09T19:54:59Z。处理Agent：Codex。以下正文可整体复制给执行Agent。它取代此前单条件/三条件建议的执行Prompt；旧已启动run的快照不可改写。

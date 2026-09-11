@@ -2,7 +2,7 @@
 
 This file is the only canonical owner of where an experiment runs, in which
 image and runtime environment, through which entry point, and what a submitted
-job must leave behind as a run receipt. It does not own the research question,
+job must leave behind as an execution certificate. It does not own the research question,
 the protocol, or the result.
 
 Protocols, Skills, and execution workspaces reference the keys below. They must
@@ -195,7 +195,7 @@ Because a new image becomes the default by moving `default_image`, a protocol
 that omits `image_id` follows the default. Name `image_id` explicitly only when
 the run must keep reproducing under one exact image.
 
-## 5. Run receipt
+## 5. Execution certificate
 
 Submit through `templates/execution/acp_submit_template.sh`. It resolves the
 tuple with `./researchctl envelope`, prints it, defaults to `DRY_RUN=1`, enforces
@@ -203,12 +203,14 @@ the gates, and writes a submission receipt. Point `REMOTE_DIR` at the
 experiment's own workspace and `RUN_ROOT` at its run root; the repository
 defaults exist only for a quick verification.
 
-Every submitted job leaves a receipt with the fields of
-`templates/execution/run_receipt_template.md`. The receipt records the expanded
+Every submitted job leaves an execution certificate with the fields of
+`templates/execution/execution_certificate_template.md`. It records the expanded
 image URL, the resolved tuple, the submission entry point and exact command, the
 activation script, the artifact roots, whether the GPUs were used, and which
-agent and conversation owns monitoring. A receipt that omits the expanded image
-cannot certify what actually ran.
+agent and conversation owns monitoring. A certificate that omits the expanded
+image cannot establish what actually ran. A submission receipt returned by the
+platform is a different object: it records that a submission was accepted, not
+what ran.
 
 The platform keeps no stdout from a finished pod, so `stream-logs` returns only
 the scheduling line. The submit template tees each run's output into

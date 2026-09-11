@@ -5,6 +5,10 @@ Processed by: DeepSeek (harness: DeepSeek Harness; model: deepseek-v4-flash-visi
 Created at: 2026-09-09T17:29:37Z
 Latest update at: 2026-09-09T17:29:37Z
 Continues from: none
+Environment: repository-relative references only (`repo`=/data/250010109/Research_System,
+  also read from the Windows checkout C:\Users\250010109\data\Research_System).
+  The DSH paths cited as processing evidence (/root/.dsh, /data/250010109/tools) are
+  container-local and not-visible from the Windows checkout.
 
 ## 2026-09-09T17:29:37Z -- Memory 系统语义改版、记录迁移与用语润色完成
 

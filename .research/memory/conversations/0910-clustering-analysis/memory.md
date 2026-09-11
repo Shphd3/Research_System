@@ -5,6 +5,10 @@ Processed by: DeepSeek (harness: DeepSeek Harness; model: deepseek-flash)
 Created at: 2026-09-10T12:52:00Z
 Latest update at: 2026-09-10T16:05:00Z
 Continues from: .research/memory/conversations/0910-sft-matrix-execution/memory.md
+Environment: container /data/250010109 (`repo`=Research_System, `exec`=MoE_Router);
+  also read from the Windows checkout C:\Users\250010109\data\Research_System.
+  /data is a network mount (quarkfs_client); /root/** is container-local and lost
+  on recycle. From the Windows checkout, `exec` and /root/** are not-visible.
 
 ## 2026-09-10T12:52:00Z -- New conversation created; takes over chain supervision and the results/meeting interpretation
 

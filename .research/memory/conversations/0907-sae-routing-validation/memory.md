@@ -6,6 +6,10 @@ Source conversation ID: 01a07c43-d099-7d63-8e11-83867d8f7c6b
 Created at: 2026-09-09T08:39:00Z
 Latest update at: 2026-09-09T08:39:00Z
 Continues from: .research/memory/conversations/sae-balanced-routing/memory.md
+Environment: container /data/250010109 (`repo`=Research_System, `exec`=MoE_Router);
+  also read from the Windows checkout C:\Users\250010109\data\Research_System.
+  /data is a network mount (quarkfs_client); /root/** is container-local and lost
+  on recycle. From the Windows checkout, `exec` and /root/** are not-visible.
 
 ## 2026-09-09T08:39:00Z -- 离线框架脚手架与接续记录
 

@@ -140,13 +140,13 @@ python3 <fm 之外的修正器> --run runs/full-20260909T203104Z        # 按真
 python3 -m fm finalize --run runs/full-20260909T203104Z
 ```
 
-- 产出唯一结果草稿：`summary_draft.md` / `summary_zh.md` / `detailed_draft.md` / `evidence_index.md` / `ai_read_guide_cn.md` / `mentor_question_evaluation_cn.md` / `verify_receipt.json` / `receipt.json`（`DRAFT_NOT_CANONICAL`、`scientific_judgment = PENDING_RESEARCHER`）。
+- 产出唯一结果草稿：`summary_draft.md` / `summary_cn.md` / `detailed_draft.md` / `evidence_index.md` / `ai_read_guide_cn.md` / `mentor_question_evaluation_cn.md` / `verify_receipt.json` / `receipt.json`（`DRAFT_NOT_CANONICAL`、`scientific_judgment = PENDING_RESEARCHER`）。
 - 覆盖率表由 fm 外后处理器拼接（见 2.4）。
 - 判定：`receipt.json` 明确 `PENDING_RESEARCHER`；**任何科学结论必须由 researcher 确认后才可写入 canonical Summary。**
 
 ### L5 交付给 researcher（读面顺序）
 
-1. `summary_draft.md`（+ `summary_zh.md`）：Purpose / Hypothesis / Analysis method / Conclusion 四段；
+1. `summary_draft.md`（+ `summary_cn.md`）：Purpose / Hypothesis / Analysis method / Conclusion 四段；
 2. `contrasts.csv` 里 6 组（G1–G6）共 39 个对比的效应量与 CI95（**注意：`R` 指标无 bootstrap，只有固定 panel 点值**）；
 3. `routing.csv`（每 source 的实际计数、平均原生概率、`native_actual_disagreement`）与 `clusters.json`；
 4. `mentor_question_evaluation_cn.md`（对导师问题的可答/不可答边界）。

@@ -5,6 +5,10 @@ Processed by: Codex (harness: Codex app-server; model: unknown)
 Created at: 2026-09-09T13:11:33Z
 Latest update at: 2026-09-09T13:11:33Z
 Continues from: none
+Environment: container /data/250010109 (`repo`=Research_System,
+  `ops`=chat_history_backups, plus /root/.ccswitch and /root/.codex).
+  /root/** is container-local and lost on recycle. From the Windows checkout,
+  `ops` and /root/** are not-visible; `repo` is readable.
 
 ## 2026-09-09T13:11:33Z -- Created after account-switch and history validation
 

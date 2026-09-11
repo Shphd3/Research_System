@@ -160,5 +160,5 @@ print(f"\nreceipt: {receipt_path}")
 PY
 
 echo
-echo "next: ./researchctl check --repository   # then write the run receipt from templates/execution/run_receipt_template.md"
+echo "next: ./researchctl check --repository   # then write the execution certificate from templates/execution/execution_certificate_template.md"
 exit "${STATUS}"
