@@ -13,10 +13,11 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 
 | Skill | Trigger scope | Does not own | Implicit invocation |
 | --- | --- | --- | --- |
-| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, reader-friendly `daily_report`, and its minimal problem-level `focus_<problem>.md` | Project paths, meeting synthesis, remote execution | Allowed |
+| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, and its minimal problem-level `focus_<problem>.md` | Project paths, final reports, meeting synthesis, remote execution | Allowed |
 | `research-sync-gate` | Readiness audit for choosing one next research question or explaining an evidence boundary before advisor sync | Protocol authoring, execution, meeting artifact writing | Allowed |
 | `problem-anchor-writer` | Researcher-judgment audit, approved Anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
 | `experiment-card-writer` | In-file protocol drafting, critical-item review, promotion, `summary.md`, `detailed.md`, and evidence contracts | Research-question redefinition, remote jobs | Allowed |
+| `research-final-report` | One paper-style final report for one settled question, synthesized from its Anchor, protocols, summaries, detailed records, and the confirmed Focus result | New scientific claims, protocols, per-round notes, publication | Allowed |
 | `research-communication` | Explicit meeting brief or speaking outline, research-line story or stage synthesis, or curated handoff/copy/sync | New scientific claims, unrequested artifacts, raw outputs | Allowed; handoff and external actions still require an explicit request |
 | `research-memory` | Create, checkpoint, resume, or retrieve repository-local conversation working memory | Scientific state, claims, approvals, curated handoff, or publication | Allowed |
 | `research-mainline` | Project organization, artifact placement, archive state, status, and explicitly requested root-mirror publication | Research judgment, raw execution, handoff packaging, external collaborator sync | Allowed; guarded actions still require an explicit request |
@@ -35,7 +36,8 @@ research-progress-core
 -> problem-anchor-writer for coherent data/task/objective/architecture design
 -> experiment-card-writer for in-file drafting, critical review, and promotion
 -> remote-experiment-workflow when execution is remote
--> research-progress-core for the verified daily_report and minimal focus
+-> research-progress-core for the human-confirmed result and minimal focus
+-> research-final-report once the question reaches a stable bounded conclusion
 -> research-communication only for an explicit meeting, story, or handoff deliverable
 -> research-mainline for project placement or explicit publication
 ```

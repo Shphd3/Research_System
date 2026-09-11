@@ -59,7 +59,7 @@ what may be run (recycling, mounts, missing tooling, platform-only commands).
 Rules:
 
 - Each row earns its place by changing what the reader may do next. Do not pad.
-- Do not reconstruct a missing `required` file from memory, a daily report, or a
+- Do not reconstruct a missing `required` file from memory, a final report, or a
   derived view. Report the absence and its root.
 - Separate **must not be read as evidence** from **must not be read at all**.
 - A filename, run label, job state, or derived analysis is not a verdict.

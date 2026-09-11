@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Final Report"
+  short_description: "Write one paper-style final report per settled question"
+  default_prompt: "Use $research-final-report to turn one settled research question into a self-contained paper-style report, synthesized from its Anchor, protocols, summaries, detailed records, and the human-confirmed Focus result."
+
+policy:
+  allow_implicit_invocation: true

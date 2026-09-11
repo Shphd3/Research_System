@@ -86,11 +86,13 @@ Creating or resetting a Focus is a human-owned scientific transition; do it
 only after the researcher explicitly activates an independent question and
 confirms its stable `problem_key` and next decision.
 
-Before execution, the experiment's four parts — Purpose, Hypothesis, Analysis
-method, and the pre-registered decision branches — are owned by `protocol.md`.
-The Focus names each experiment, its one-line purpose, the outcome that would
-separate the strongest rival, and the protocol path; it does not restate the
-protocol body.
+Before execution, the Focus carries each experiment's four parts in **plain
+language**: Purpose, Hypothesis, Analysis method, and the pre-registered
+supporting, non-supporting, and insufficient branches. `protocol.md` carries the
+**precise** version of the same four parts. The two never contradict each other:
+when they differ, the Protocol governs execution and the Focus governs what the
+researcher intended. The Focus states plain meaning and does not copy the
+Protocol's numbers.
 
 After execution, the researcher owns the Focus-level updated judgment,
 cannot-claim boundary, and next decision. The experiment-level four-part result
@@ -120,7 +122,7 @@ as evidence changes the design. Detailed structure and checks belong to
 The canonical chain is:
 
 ```text
-Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
+Anchor -> protocol.md -> summary.md / summary_cn.md -> detailed.md -> Anchor update
 ```
 
 - `protocol.md` is the approved test contract. Drafting it does not authorize
@@ -130,15 +132,29 @@ Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
 - `summary.md` owns the first result reading path and `summary_cn.md` is its
   Chinese companion; `detailed.md` owns complete setup, provenance, deviations,
   tables, failures, and artifact map.
-- A reader-friendly daily report is written only after canonical evidence
-  exists and the researcher has stated or approved the result, boundary, and
-  next decision. It explains but does not replace the evidence records.
+- One question gets one paper-style final report, written only after the
+  question's Anchor reaches a stable bounded conclusion and the researcher has
+  confirmed the result, boundary, and next question. It explains and never
+  replaces the evidence records. Use `research-final-report`.
 - Add conditions, seeds, diagnostics, and artifacts only when they separate a
   named rival, protect the main conclusion, or are required for reproducibility.
 - A reader-facing artifact references only figures that physically live under
   its own date `figures/` directory, by a date-local relative path. The
   experiment keeps the evidence copy; the date copy is the reading copy. Copies
   are expected, and the date directory records where each came from.
+
+The chain corresponds to `research-exploration-skill` as follows: the Anchor is
+that method's `design.md`, `protocol.md` is its separate experiment contract,
+`summary.md` / `summary_cn.md` are the result reading surface, and `detailed.md`
+is the iteration record. `focus_<problem>.md` has no counterpart there; it is
+this repository's own operating card.
+
+One round is one day's work, and its full record lives in `detailed.md` in this
+order: question or hypothesis tested; setup and controlled variables; data;
+testing or confirmation split; result, or an explicit `NOT RUN`; insight with
+the claim-boundary update and the next decision. A round that records the first
+four items and `NOT RUN` is a **complete** round; a completed round carries all
+six. This is what makes a day without a result still a finished unit of work.
 
 ## Learning And Group Meeting Updates
 
@@ -205,7 +221,7 @@ when applicable.
 | `protocol.md` | Experiment contract and its approval state |
 | `docs/execution_envelope.md` | Target profile, image and runtime-layer registry, submission entry point, and execution-certificate contract |
 | `summary.md` / `summary_cn.md` / `detailed.md` | Canonical result reading path and its Chinese companion / evidence ledger and execution state |
-| Graph, story, daily report, root `sync/` | Derived navigation or reading views |
+| Final report, Graph, story, root `sync/` | Derived navigation or reading views |
 
 Machine state must never own scientific claims, approval, priority, verdicts,
 or next decisions. If a derived view conflicts with its canonical source,
@@ -248,10 +264,10 @@ Repository Skills live in `.agents/skills/`. Load a Skill only when its
 description matches the task; then follow only the relevant reference or
 script it routes to.
 
-- `research-progress-core`: Focus, research judgment, falsifiers, failures, and
-  delayed daily reports.
+- `research-progress-core`: Focus, research judgment, falsifiers, and failures.
 - `problem-anchor-writer`: Anchor creation, revision, and design audit.
 - `experiment-card-writer`: Protocol and canonical result records.
+- `research-final-report`: one paper-style report for one settled question.
 - `research-document-explainer`: concise explanation of research documents,
   formulas, evidence, and results.
 - `research-communication`: explicit meeting brief, story, or curated handoff.

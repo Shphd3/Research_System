@@ -42,10 +42,10 @@ conclusion.
 
 `summary.md` owns the first canonical result reading path. `detailed.md` owns
 the complete evidence ledger. The Protocol owns the registered plan and must
-not be rewritten with result-derived content. A subject-bearing daily report
-under `daily_research_reports/MMDD/docs/` may provide a fuller reader
-explanation, but it is derived from these canonical records and cannot become
-the sole evidence source.
+not be rewritten with result-derived content. A subject-bearing final report
+written beside the Anchor may provide a fuller reader explanation, but it is
+derived from these canonical records and cannot become the sole evidence
+source.
 
 ## Evidence Eligibility
 
@@ -256,26 +256,27 @@ Full setup, all conditions, stage evidence, deviations, run history, and the
 artifact manifest belong only in Detailed. Summary may state only the minimum
 decision-bearing setup.
 
-When a reader-friendly daily report is required, enforce this one-way chain:
+When a paper-style final report is required, enforce this one-way chain:
 
 ```text
 confirmed plain-language design in the active Focus
 -> Protocol -> authorized execution
--> Summary + Detailed + Anchor update
--> researcher-completed result/boundary in the same Focus
--> daily_report_<topic_slug>.md
+-> Summary / summary_cn.md + Detailed + Anchor update
+-> researcher-completed result and boundary in the same Focus
+-> <anchor_stem>_final_report.md
 -> cycle close
 ```
 
-The daily report may repeat verified material needed for a cold reader, but
+The final report may repeat verified material needed for a cold reader, but
 every decision-bearing number and figure must link to its canonical lineage.
-Its eligibility, verdict, boundary, and one next decision must match Summary,
+Its eligibility, verdict, boundary, and next question must match Summary,
 Detailed, the Anchor, and the researcher's result account in the active Focus.
 Before human confirmation, mark its knowledge wording
 `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. The already-active Focus must contain
-the researcher's result, boundary, and one next decision before a daily report
-is drafted. The Focus cannot become the sole source of a number, eligibility
-decision, deviation, or verdict; those remain in canonical result records.
+the researcher's result and boundary before a final report is drafted, and the
+question must have reached a stable bounded conclusion. The Focus cannot become
+the sole source of a number, eligibility decision, deviation, or verdict; those
+remain in canonical result records.
 
 ## Final Audit
 
@@ -292,8 +293,8 @@ Summary is conclusion-first and links primary sources directly:
 Detailed is the only complete evidence ledger:
 Figures have source, aggregation, observed result, and limitation:
 Summary, Detailed, and Anchor verdicts and boundaries agree:
-Any daily report preserves canonical eligibility, verdict, lineage, boundary, and next decision:
-The active Focus contains the human-confirmed result before the daily report is drafted, and both remain bounded by canonical evidence:
+Any final report preserves canonical eligibility, verdict, lineage, boundary, and next question:
+The active Focus contains the human-confirmed result before the final report is drafted, and both remain bounded by canonical evidence:
 Exactly one next decision has a completion criterion and resume action:
 No missing value, expected pattern, or filename was turned into evidence:
 ```

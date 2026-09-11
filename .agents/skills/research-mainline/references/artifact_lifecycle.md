@@ -12,18 +12,18 @@ surface.
 | `summary.md` | Complete first result reading, central evidence, boundary, next-step analysis | Full evidence ledger |
 | `detailed.md` | Setup, conformance, deviations, evidence lineage, failures, artifact map | A stronger second conclusion |
 | `focus_<problem>.md` | Human-owned meeting-cycle question, design confirmation, result boundary, next decision | Technical Protocol or run history |
-| `daily_report` | Delayed self-contained explanation from canonical evidence | New evidence or a competing verdict |
+| final report | Paper-style self-contained explanation, one per settled question | New evidence or a competing verdict |
 | story | Explicit line-level synthesis | New experimental claim |
 | Graph, roadmap, sync | Derived navigation or reading view | Independent scientific state |
 
 The canonical experiment chain is:
 
 ```text
-Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
+Anchor -> protocol.md -> summary.md / summary_cn.md -> detailed.md -> Anchor update
 ```
 
 The meeting-cycle chain adds the living Focus before Protocol drafting and the
-human-confirmed Focus result before a delayed daily report.
+human-confirmed Focus result before the final report.
 
 ## Smallest Update Test
 

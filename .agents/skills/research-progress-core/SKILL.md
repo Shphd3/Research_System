@@ -1,6 +1,6 @@
 ---
 name: research-progress-core
-description: "Use when the user asks to maintain a Focus, audit a research judgment or failure, choose a minimal falsifier, interpret a result boundary, or write the delayed daily report. Do not use for remote operations or publication."
+description: "Use when the user asks to maintain a Focus, audit a research judgment or failure, choose a minimal falsifier, or interpret a result boundary. Do not use for final reports, remote operations, or publication."
 ---
 
 # Research Progress Core
@@ -28,8 +28,6 @@ with plausible text; `Unknown` is valid.
   [failure_decomposition.md](references/failure_decomposition.md) only when the
   cause is not localized, and [goal_audit.md](references/goal_audit.md) only
   after repeated reasonable attempts or a demonstrated metric mismatch.
-- For writing the delayed reader-friendly daily report, read
-  [daily_report.md](references/daily_report.md).
 - For a fragile multi-stage algorithm, read
   [algorithm_specification.md](references/algorithm_specification.md). For
   complex evidence design or plots, read

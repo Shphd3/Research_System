@@ -134,6 +134,20 @@ Remaining rival explanations:
 
 ## 10. Full Experiment Record
 
+One round is one day's work. Record each round in this order:
+
+1. Question or hypothesis tested.
+2. Setup: the exact model or baseline version, and the controlled variables.
+3. Training data.
+4. Testing or confirmation data, and its split.
+5. Result with linked artifacts and metrics, or an explicit `NOT RUN`.
+6. Insight, claim-boundary update, and next decision.
+
+A round that records items 1-4 and `NOT RUN` is a **complete** round. A completed
+round carries all six. Never fabricate a result; `NOT RUN` is a valid and
+complete state. Do not duplicate the full round history into `summary.md` or
+into the Focus.
+
 ## 11. Interpretation
 
 ## 12. Claim Boundary

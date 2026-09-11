@@ -3,7 +3,7 @@
 Conversation name: 0911-astra-deepseek执行规划
 Processed by: DeepSeek (harness: DeepSeek Harness; model: deepseek-flash)
 Created at: 2026-09-11T14:48:00Z
-Latest update at: 2026-09-11T16:42:05Z
+Latest update at: 2026-09-11T17:09:57Z
 Continues from: .research/memory/conversations/0910-memory-system-improvement/memory.md
 Environment: container /data/250010109 (`repo`=Research_System, `exec`=MoE_Router);
   this record was written from the Windows checkout
@@ -40,3 +40,16 @@ Continuation: continuation.md in this record directory is the CURRENT entry poin
 - Current work: 上述改动已全部落盘；待提交与推送。
 - Next action: ① 提交并推送外层仓库（含研究员本人那 1 行 0907 改动）；② 嵌套仓库 `Projects/from-attention-to-search` **ahead 0 / behind 0，无内容可推**；③ 推送后按需把本次整合写进 daily report。
 - References: `.agents/skills/research-progress-core/references/focus_cycle.md` 与 `templates/research_process/focus_writing_template.md`（Focus 新规）；`AGENTS.md`（Focus / Result Reading / State Ownership 三处）；`PROJECTS.md` 与 `daily_research_reports/0911/0911_PROJECTS_current_focus_priority_archive_cn.md`（迁出与归档）；`docs/execution_envelope.md` 与 `templates/execution/execution_certificate_template.md`（回执改名）；`Projects/research-exploration-skill/.codex/skills/research-exploration/SKILL.md`（写法来源）。本记录非 canonical；科学判决仍由 researcher 拥有。
+
+## 2026-09-11T17:09:57Z -- 全面对齐 research-exploration-skill；final report 取代 daily report；Focus 恢复白话四要素
+
+- Summary: 研究员五项裁决后完成对齐，实验流程至此完整规范化。裁决：(1) **Focus 白话、Protocol 精确**——四段式回到 Focus，但只写白话版，精确设置/阈值/判据留在 Protocol；(2) **Anchor 节名不改名**，保留对应表；(3) **新增 `research-final-report`，去掉 daily report**，一个问题达到稳定结论就按该 skill 写一份最终报告；(4) **问题层级按本仓库 Anchor 规则管**（parent/subanchor），不采纳该 skill 的 `research_map.md` 树；(5) 链条**写全 `summary_cn.md`**。改动：
+  - **新增 skill `.agents/skills/research-final-report/`**（SKILL.md + agents/openai.yaml），按本仓库工件名改写而非逐字照搬：触发条件（Anchor 达到稳定有界结论的 7 项）、输出位置改为 **`<anchor_dir>/<anchor_stem>_final_report.md`** + `_cn.md`（问题所有，不是日期所有）、11 节结构、每结果 8 项契约、声明纪律、完成条件。
+  - **移除 daily report**：删 `.agents/skills/research-progress-core/references/daily_report.md` 与 `templates/research_process/daily_report_template.md`；同步 12 处引用（`AGENTS.md` 3 处、`docs/skills.md` 3 处、`research-progress-core` 的 SKILL+openai.yaml、`experiment-card-writer` 的 SKILL 3 处与 `result_evidence_lineage.md` 4 处、`research-mainline` 的 `artifact_lifecycle.md` 2 处与 `layout_and_naming.md` 3 处、`templates/README.md`、`continuation_brief_template.md`、`problem-anchor-writer` 的 Result Update）。**复查后全仓零残留**。
+  - **Focus 恢复白话四要素**：`focus_writing_template.md` §4 回到「目的/假设/分析方法（≤3 条白话）/结论分支」并加 `→ protocol` 指针；明确「本卡白话、Protocol 精确，不一致时执行以 Protocol 为准、意图以本卡为准，本卡不复制 Protocol 的数字」；自检第 2 条相应改为「第 4 节复制了 Protocol 的精确设置/数字」。同步 `AGENTS.md` Focus 不变量、`focus_cycle.md`、`experiment-card-writer` Gate 0（把我上一轮误删的四段式要求恢复为白话版）。
+  - **层级归属**：`problem-anchor-writer` 的对应段新增一段，明确问题层级（parent/subanchor、sibling README）归本仓库 Anchor 规则，**不得**为满足外部方法而建 `research_map.md`、`docs/problems/<ID>/` 或 `design.md`。
+  - **链条写全**：`Anchor -> protocol.md -> summary.md / summary_cn.md -> detailed.md -> Anchor update`（`AGENTS.md` 与 `artifact_lifecycle.md`）。
+- **附带核实**：`.agents/skills/` 下有 3 个**空目录**（`handoff-report-writer`、`meeting-outline-writer`、`research-story-writer`），无任何文件、无人引用、也不在 `docs/skills.md` 索引里 —— 遗留空目录，不构成断链。
+- Current work: 全部改动已落盘并复查一致；待 commit + push。
+- Next action: ① commit + push 外层仓库；② 嵌套 `from-attention-to-search` 无待推内容；③ 研究员开始科研。
+- References: `.agents/skills/research-final-report/SKILL.md`（新工件）；`templates/research_process/focus_writing_template.md` 与 `.agents/skills/research-progress-core/references/focus_cycle.md`（白话/精确分工）；`.agents/skills/problem-anchor-writer/SKILL.md`（Anchor↔design 对应表 + 层级归属）；`AGENTS.md`（Focus / Formal Experiments / Result Reading / State Ownership / Skill Router）；`docs/skills.md`（Skill 索引）。本记录非 canonical；科学判决仍由 researcher 拥有。

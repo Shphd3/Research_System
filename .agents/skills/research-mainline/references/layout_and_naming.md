@@ -30,7 +30,6 @@ Meeting-cycle files live at:
 
 ```text
 daily_research_reports/MMDD/focus_<problem>.md
-daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
 daily_research_reports/MMDD/focus_meeting_<topic>.md
 daily_research_reports/MMDD/figures/<figure>.png
 daily_research_reports/MMDD/figures/SOURCES.md
@@ -53,7 +52,7 @@ rather than move is correct:
 - the owning experiment's `experiments/A<line>/<experiment_id>/figures/` holds
   the evidence copy beside `summary.md` and `detailed.md`;
 - `daily_research_reports/MMDD/figures/` holds the reading copy that this date's
-  Focus, meeting material, and daily report display.
+  Focus and meeting material display.
 
 Copy byte-identically and record each source in `figures/SOURCES.md`. When a
 figure is regenerated, refresh both copies in the same step. A reading copy
@@ -118,6 +117,6 @@ future direction and have a reopening condition.
 ## Migration Check
 
 Move rather than copy. Update the line README and every in-scope project,
-story, experiment, daily-report, and graph reference. Verify that the old path
+story, experiment, and graph reference. Verify that the old path
 is absent, every new relative link resolves, and no duplicate canonical file
 remains.

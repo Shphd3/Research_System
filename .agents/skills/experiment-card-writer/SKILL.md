@@ -53,15 +53,21 @@ canonical files.
 ### 0. Confirmed Core-Task Focus
 
 Before drafting a Protocol, require one active
-`daily_research_reports/MMDD/focus_<problem>.md` whose four-part plain-language
-design is explicitly researcher-confirmed:
+`daily_research_reports/MMDD/focus_<problem>.md` whose four-part **plain
+language** design is explicitly researcher-confirmed:
 
 ```text
-1. core question
+1. core question and its boundary
 2. experiment purpose, dependent subquestions, and completion standard
 3. at most three plain-language analysis steps
-4. expected supporting and non-supporting outcome branches
+4. expected supporting, non-supporting, and insufficient outcome branches
 ```
+
+The Focus carries the plain-language version; this Protocol carries the
+**precise** version of the same four parts — exact settings, thresholds,
+registered criteria, and audit blocks. The two must not contradict each other.
+When they differ, the Protocol governs execution and the Focus governs what the
+researcher intended.
 
 The Focus may name at most three core experiments and should normally name one.
 Controls, nulls, robustness checks, and leakage guards that protect the same
@@ -193,12 +199,13 @@ The two files may repeat only the primary metric definition, primary observed
 value, verdict, claim boundary, and next decision. Those repeated fields must
 match exactly. Neither file may claim more than the Anchor permits.
 
-A reader-friendly daily report is a delayed explanatory surface, not a third
-canonical result record. After Summary, Detailed, and the Anchor update agree,
-the researcher first completes or confirms the actual result, boundary, and one
-next decision in the already-existing Focus. Then route daily-report writing to
-`research-progress-core`. Do not make the Focus or daily report the only source
-of a number, eligibility decision, deviation, or verdict.
+One question gets one paper-style final report, which is a derived explanatory
+surface, not a third canonical result record. After Summary, Detailed, and the
+Anchor update agree, the researcher first completes or confirms the actual
+result, boundary, and the next question in the already-existing Focus. Then
+route final-report writing to `research-final-report`. Do not make the Focus or
+the final report the only source of a number, eligibility decision, deviation,
+or verdict.
 
 ### 8. Visual Evidence
 
@@ -229,19 +236,19 @@ figure still traces to `summary.md` or `detailed.md`.
 After eligible evidence and researcher judgment are consistent:
 
 ```text
-summary.md / detailed.md
+summary.md / summary_cn.md / detailed.md
 -> update Anchor section 7 with the minimum local evidence unit
 -> update Anchor section 8 with the bounded claim and one next decision
 -> researcher completes the actual result in the existing active Focus
--> after that human result is confirmed, use `research-progress-core` to create
-   daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
--> researcher audits the self-contained story and closes or corrects the cycle
+-> once the question reaches a stable bounded conclusion, use
+   `research-final-report` to write <anchor_stem>_final_report.md
+-> researcher audits the self-contained report and closes or corrects the cycle
 ```
 
 `summary.md` and `detailed.md` analyze and preserve experimental results; they
 do not themselves constitute the human-owned Focus conclusion. The Focus owns
-the cycle task and the researcher's result account; the delayed daily report
-provides the complete reader explanation and coherence audit.
+the cycle task and the researcher's result account; the final report provides
+the complete reader explanation and coherence audit.
 
 Do not create a closure report or line synthesis through this skill. Route an
 explicit line-level synthesis to `research-communication` story mode and

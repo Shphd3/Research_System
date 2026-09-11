@@ -48,11 +48,20 @@ owns human confirmation of the result and boundary. Protocol approval stays in
 `protocol.md`; execution status stays in `detailed.md` or the execution record.
 Do not mirror either into one composite Focus status.
 
-Before execution the experiment's four parts — Purpose, Hypothesis, Analysis
-method, and the pre-registered decision branches — are owned by `protocol.md`.
-The Focus names each experiment, its one-line purpose, the outcome that would
-separate the strongest rival, and the protocol path; it does not restate the
-protocol body.
+Before execution the Focus carries the experiment's four parts in **plain
+language**:
+
+1. Purpose: which uncertainty it resolves and why it is needed.
+2. Hypothesis: predicted contrast, strongest rival, and separating outcome.
+3. Analysis method: at most three plain-language comparisons and their roles.
+4. Conclusion: the expected supporting, non-supporting, and insufficient
+   branches before execution.
+
+`protocol.md` carries the **precise** version of the same four parts: exact
+settings, thresholds, registered criteria, and audit blocks. The two must not
+contradict each other. When they differ, the Protocol is authoritative for
+execution and the Focus is authoritative for what the researcher intended; the
+Focus states plain meaning and does not copy the Protocol's numbers.
 
 After execution the researcher supplies or confirms the direct result, updated
 judgment, cannot-claim boundary, and exactly one next decision in the Focus. The

@@ -9,7 +9,6 @@ one-off formats belong in their original records, not in a template archive.
 | Template | Use only when |
 |---|---|
 | `research_process/focus_writing_template.md` | The researcher activates or resets one workstream question. |
-| `research_process/daily_report_template.md` | Canonical evidence exists and the source Focus has `result_state: HUMAN_CONFIRMED`. |
 | `research_process/parking_lot_template.md` | A project needs a concise list of consequential inactive questions and has no local format. |
 | `research_process/continuation_brief_template.md` | A workstream is handed to a different conversation and needs one current entry point. |
 | `reading/paper_summary_card.md` | A paper or essay needs only a first-pass reading record. |
