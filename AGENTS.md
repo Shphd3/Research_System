@@ -133,6 +133,10 @@ Anchor -> protocol.md -> summary.md -> detailed.md -> Anchor update
   next decision. It explains but does not replace the evidence records.
 - Add conditions, seeds, diagnostics, and artifacts only when they separate a
   named rival, protect the main conclusion, or are required for reproducibility.
+- A reader-facing artifact references only figures that physically live under
+  its own date `figures/` directory, by a date-local relative path. The
+  experiment keeps the evidence copy; the date copy is the reading copy. Copies
+  are expected, and the date directory records where each came from.
 
 ## Learning And Group Meeting Updates
 
@@ -196,6 +200,7 @@ when applicable.
 | `focus_<problem>.md` | Human-owned current task, result boundary, and next decision |
 | Anchor | Canonical current research design and its boundary |
 | `protocol.md` | Experiment contract and its approval state |
+| `docs/execution_envelope.md` | Target profile, image and runtime-layer registry, submission entry point, and run-receipt contract |
 | `summary.md` / `detailed.md` | Canonical result reading path / evidence ledger and execution state |
 | Graph, story, daily report, root `sync/` | Derived navigation or reading views |
 
@@ -210,7 +215,10 @@ non-destructive verification. Pause only when the next action requires:
 
 - a human-owned scientific state transition or missing judgment that changes
   the outcome;
-- an expensive or full remote run;
+- an expensive or full remote run whose profile, image, or scope is not already
+  fixed by an authorized protocol. A submission that resolves to the execution
+  envelope's default profile under an authorized protocol scope is execution,
+  not a new approval gate;
 - a destructive or external action, including publication, collaborator sync,
   commit, or push;
 - material expansion beyond the requested scope.
@@ -250,6 +258,8 @@ script it routes to.
   publication.
 - `research-graph-sop`: graph inspection or maintenance.
 - `remote-experiment-workflow`: remote execution logistics and artifact maps.
+  It resolves the target profile, image key, and submission entry point from
+  `docs/execution_envelope.md` before any submission.
 - `scholar-mode`: unsettled scientific ideas, papers, theory, and literature.
 - `sidecar-thinking`: explicit local graph display.
 
@@ -268,5 +278,6 @@ sync to another repository only when explicitly requested.
 
 Use `./researchctl check --repository` for deterministic checks of current
 Focus state, registered references, Protocol authorization records,
-PROJECTS--Focus drift, and Skill references. Treat overlap and derived-view
-drift as visible reminders, not automatic scientific or publication actions.
+PROJECTS--Focus drift, Skill references, and declared execution keys against
+`docs/execution_envelope.md`. Treat overlap and derived-view drift as visible
+reminders, not automatic scientific or publication actions.

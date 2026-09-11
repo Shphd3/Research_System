@@ -749,7 +749,7 @@ R_{\text{粗纠正}}
 - 实际 Router 与旧静态审计读取的位置不同。
 - 本地重放损失未通过固定容差，已停止扩大运行，避免产生不可比结果。
 
-已保存[审计记录](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/summary.md)，并准备好原运行镜像下的单张 H100 评估作业。
+已保存[审计记录](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/summary.md)，并准备好原运行镜像下的单张 H100 评估作业。
 
 **请在上面的选项中选择标准配额或空闲配额，随后即可提交。**
 
@@ -993,14 +993,14 @@ R_{\text{粗纠正}}
 >
 > A−B measures parent correction, B−C the residual child correction, and D−C the matched-child advantage. The recovery fraction is (A−B)/(A−C), not an order-independent causal attribution. Intervals use 2,000 paired-example resamples separately for each fixed checkpoint; auxiliary intervals are descriptive.
 >
-> ![Frozen path intervention](figures/path_intervention.png)
+> ![Frozen path intervention](../figures/path_intervention.png)
 > How to read: the large A-to-B loss reduction appears in both seeds; the positive D-minus-C contrast shows a cost to selecting the wrong child even with the parent supplied. Fine correction remains positive, so B and C have not been established equivalent.
 >
 > ## Architecture finding
 >
 > The historical eight-task hard-pseudo branch runs only stage 2, where auxiliary supervision reaches the child Router only. Hard forced indices and unit expert coefficients eliminate the task-loss route to parent logits. A small backward check finds no parent gradient. All seven stored snapshots, updates 1 through 128, have exactly unchanged parent weights and biases in both seeds. Child weights change by maximum absolute values 0.032013 and 0.032875.
 >
-> ![Historical Router parameter change](figures/architecture_weight_audit.png)
+> ![Historical Router parameter change](../figures/architecture_weight_audit.png)
 > How to read: parent weight and bias changes are exactly zero; this figure describes historical parameter updates, not the performance of a newly trained Router.
 >
 > This is a concrete supervision defect that must be controlled before attributing the large handoff failure to final-layer teacher semantics or inaccessible early representations. It does not establish that online parent training will recover the privileged intervention benefit. The independently staged M2D2 branch is outside this defect's audited scope.
@@ -1157,7 +1157,7 @@ R_{\text{粗纠正}}
 
    两个种子的粗纠正收益，其 95% 区间下界均大于零。细路径仍有残余差距，不能宣布完全恢复。
 
-   ![路径干预结果](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/figures/path_intervention.png)
+   ![路径干预结果](../figures/path_intervention.png)
 
    读图：左图从 A 到 B 的下降表示粗路径纠正收益；这里的教师是原伪标签，并非真实语义标签。
 
@@ -1165,13 +1165,13 @@ R_{\text{粗纠正}}
 
    该分支只执行细阶段训练，粗路由没有收到梯度；两个种子的七个保存点中，粗路由权重和偏置均未变化。这一发现仅针对本次八任务分支。
 
-   ![历史路由参数审计](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/figures/architecture_weight_audit.png)
+   ![历史路由参数审计](../figures/architecture_weight_audit.png)
 
    读图：粗路由两项变化均为零，细路由参数则发生变化。
 
    **下一步建议：进入第二步，先固定专家和细路由，只训练粗路由，验证补足监督能否恢复真正的在线收益。**本次修复的是干预入口，尚未训练出修复后的在线 Router；第三步标签审计、第四步联合训练仍未启动。
 
-完整记录：[结果摘要](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/summary.md) · [审计与执行证据](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/detailed.md)。
+完整记录：[结果摘要](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/summary.md) · [审计与执行证据](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/detailed.md)。
 
 > 现在我需要你给我一个完整的对话解析，因为我不知道你使用的 checkpoint，它之前运行的时候，它的这个训练情况是怎么样子。我想请问一下，之前我们用的 checkpoint，它是在什么数据集上面训练，并且以什么方式训练？它是两阶段训练吗？并且第一阶段它的出力度专家的路由和吸力度专家的路由是否都训练了，还是说直接给定的？然后我们改变了什么对照变量，从而进行了该实验？这个点我需要明确搞清楚，才能进行下一步分析
 
@@ -1621,7 +1621,7 @@ $$
 
 **我们现在位于四步规划的第二步：验证“补足粗路由监督，能否恢复在线收益”。**标准配额资源已记录为你授权使用，无需再次选择配额。
 
-计划已写入[完整协议草案](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/protocol.md)，并更新了[当前研究任务卡](./daily_research_reports/0906/focus_gmm_pseudolabel_handoff.md)。
+计划已写入[完整协议草案](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/protocol.md)，并更新了[当前研究任务卡](../focus_gmm_pseudolabel_handoff.md)。
 
 **当前位置与后续顺序**
 
@@ -2274,14 +2274,14 @@ $$
 >
 > Source: [registered contrasts](tables/contrasts.csv), [machine-readable result](tables/results.json). The rule requires every lower endpoint above zero. Frozen analysis: 2,000 paired-record bootstrap draws, seed 20260906; no seed pooling, checkpoint selection, outlier removal or post-hoc threshold. Records are paired across conditions, not independent treatment samples.
 >
-> ![Online parent repair](figures/online_parent_repair.png)
+> ![Online parent repair](../figures/online_parent_repair.png)
 > How to read: left panels compare five paths; right panels show both necessary improvements above zero for both seeds, including the record-disjoint subset.
 >
 > ## Readout Evidence And Claim Boundary
 >
 > Full-evaluation pseudo-parent agreement rises from 24.08% to 87.47% in seed 17 and from 31.66% to 86.53% in seed 29. Shuffled-supervision models reach only 38.54% and 34.58%. These are agreement with pseudo labels, not ground-truth semantic accuracy. The task-loss comparison, not agreement alone, establishes the registered success.
 >
-> ![Readout and task evidence](figures/parent_readout_and_task.png)
+> ![Readout and task evidence](../figures/parent_readout_and_task.png)
 > How to read: real-label supervision raises development agreement and improves evaluation task loss; the shuffled control does not reproduce that combination. This descriptive plot is not an estimated causal relationship between accuracy and loss. Source: [classification history](tables/classification_history.json) and [conditions](tables/conditions.csv).
 >
 > The original large handoff failure cannot be used as evidence that final-layer labels necessarily mislead earlier routing: keeping those labels and the input hook fixed while supplying missing supervision suffices for a task-loss repair here. The labels remain full-sequence, privileged training targets; optimal teacher layer, fine semantics, free-generation accuracy, and generalization to clean public tasks remain untested. Class-count matching is at the example level; one fixed shuffled assignment is not a distribution over all possible null partitions.
@@ -2386,10 +2386,10 @@ $$
 >
 > ## 8. Visualization Audit
 >
-> ![Registered online repair contrasts](figures/online_parent_repair.png)
+> ![Registered online repair contrasts](../figures/online_parent_repair.png)
 > Question: does parent-only learning improve task loss beyond original and shuffled routing? Source: paired arrays through conditions/contrasts tables. Left x-axis: O/R/S/B/C; y: answer NLL in nats/token. Right x-axis: O−R/S−R; y: NLL reduction with 95% intervals. Blue/orange are seeds17/29; upper/lower rows are full/disjoint populations. All eight lower endpoints are positive. Both PNG panels are visually inspected; labels/units readable and intervals trace to tables. It cannot establish clean eight-task generalization or a gold-Oracle advantage.
 >
-> ![Readout evidence](figures/parent_readout_and_task.png)
+> ![Readout evidence](../figures/parent_readout_and_task.png)
 > Question: did the parent learn the intended mapping, and is that accompanied by task improvement? Left x: optimizer updates, y: development true-pseudo-parent agreement; solid R versus dashed S. Right x: full-evaluation agreement, y: NLL reduction versus original for each condition. Sources: classification history and condition tables. Both real-label curves improve and both task deltas are positive. Rendered labels and scales inspected. No regression or accuracy-to-loss causal slope is fitted; development includes overlapping records and is monitoring only. No debug-run result is plotted.
 >
 > ## 9. Stage Evidence And Failure Decomposition
@@ -2470,7 +2470,7 @@ $$
 >
 >    相对原在线模型，种子 17 的损失降低 **0.041751**，95% 区间为 **[0.035441, 0.048617]**；种子 29 降低 **0.023398**，区间为 **[0.019734, 0.027878]**。在不重叠记录上，两者仍降低 **0.037415** 和 **0.018620**。修复组相对打乱组的四个区间下界也都大于零。[完整比较表](tables/contrasts.csv)。
 >
->    ![粗路由修复的任务损失与配对区间](figures/online_parent_repair.png)
+>    ![粗路由修复的任务损失与配对区间](../figures/online_parent_repair.png)
 >
 >    读图：左边越低越好；右边两项比较的区间都在零线上方，上下两行分别为完整样本和不重叠样本。图中 O 为原在线，R 为正确标签修复，S 为打乱对照，B 为给定粗路径，C 为给定完整伪路径。
 >
@@ -2480,7 +2480,7 @@ $$
 >
 >    评估集粗伪标签一致率从 **24.08%／31.66%** 提升到 **87.47%／86.53%**；打乱组仅为 **38.54%／34.58%**。一致率表示执行路径与伪标签相同的答案预测位置比例，不是真实语义正确率。任务损失也同步改善，才使本轮通过。
 >
->    ![粗路由学习与任务收益的区别](figures/parent_readout_and_task.png)
+>    ![粗路由学习与任务收益的区别](../figures/parent_readout_and_task.png)
 >
 >    读图：左图实线为正确标签、虚线为打乱标签，纵轴是开发集伪标签一致率；右图分别显示评估一致率和任务损失改善，不能把两者当成同一个指标。
 >
@@ -2506,7 +2506,7 @@ $$
 > p=r/'PROJECTS.md';s=p.read_text();lines=s.splitlines()
 > for i,line in enumerate(lines):
 >  if line.startswith('| `A15.gmm_pseudolabel_oracle_gap`'):
->   parts=line.split('|');parts[-2]=' `CLAIMED`; P2 reserved H100 job `pt-diap9xc9` SUCCEEDED; `ONLINE_PARENT_REPAIR_SUPPORTED`, all 8 required intervals positive; parent-only repair mean NLL 0.836757→0.804183; four training runs and ten evaluations audited; human knowledge wording pending; next: retain repaired online baseline; [Result](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/summary.md) ';lines[i]='|'.join(parts)
+>   parts=line.split('|');parts[-2]=' `CLAIMED`; P2 reserved H100 job `pt-diap9xc9` SUCCEEDED; `ONLINE_PARENT_REPAIR_SUPPORTED`, all 8 required intervals positive; parent-only repair mean NLL 0.836757→0.804183; four training runs and ten evaluations audited; human knowledge wording pending; next: retain repaired online baseline; [Result](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/summary.md) ';lines[i]='|'.join(parts)
 > p.write_text('\n'.join(lines)+'\n')
 > # Add a bounded evidence receipt without promoting unconfirmed human judgment.
 > p=r/'Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md';s=p.read_text();link=os.path.relpath(d/'summary.md',p.parent)
@@ -2541,7 +2541,7 @@ $$
 
 **本轮实验与审核已完成，正式判定：支持“只补足粗路由监督即可恢复在线收益”。**四个训练条件、十组完整评估均完成，八个必要统计比较全部通过。
 
-完整文件：[中文四段式审核](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/summary_cn.md) · [训练账目与证据](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/detailed.md)。
+完整文件：[中文四段式审核](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/summary_cn.md) · [训练账目与证据](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/detailed.md)。
 
 ### 1. 目的
 
@@ -2580,7 +2580,7 @@ $$
 
    在不重叠记录上仍分别降低 **0.037415、0.018620**。两个种子在两种样本范围上也都可靠优于打乱组，八个必要比较的区间下界全部大于零。
 
-   ![在线修复结果](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/figures/online_parent_repair.png)
+   ![在线修复结果](../figures/online_parent_repair.png)
 
    读图：左侧越低越好；右侧区间在零线上方表示修复有效。O 是原在线，R 是修复组，S 是打乱组，B/C 是外部供给路径参考。
 
@@ -2590,7 +2590,7 @@ $$
 
    在标签和读取位置都没变的情况下，评估集粗伪标签一致率从 **24.08%／31.66%** 提升到 **87.47%／86.53%**；打乱组只有 **38.54%／34.58%**。这次不仅分类更准确，任务损失也同步改善。
 
-   ![路由学习与任务收益](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/figures/parent_readout_and_task.png)
+   ![路由学习与任务收益](../figures/parent_readout_and_task.png)
 
    读图：左侧实线表示正确标签监督，虚线表示打乱监督；右侧分别展示伪标签一致率与任务损失改善，两者不是同一个指标。
 
@@ -2653,7 +2653,7 @@ $$
 
    第一实验中，供给粗路径恢复了两个种子 **98.24% 和 93.96%** 的原交接损失。同时，审计发现原粗路由没有梯度、保存的参数没有变化。
 
-   ![第一步路径干预](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/figures/path_intervention.png)
+   ![第一步路径干预](../figures/path_intervention.png)
 
    读图：左图从原在线路径 A 到供给粗路径 B 的下降，说明固定专家后，纠正粗分发本身就有用。
 
@@ -2665,7 +2665,7 @@ $$
 
    第二实验的平均答案损失从 **0.836757 降至 0.804183**；打乱标签训练为 **0.839262**。两个种子在完整样本和不重叠记录上，都可靠优于原在线与打乱对照，八个必要比较全部通过。
 
-   ![第二步在线修复](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/figures/online_parent_repair.png)
+   ![第二步在线修复](../figures/online_parent_repair.png)
 
    读图：修复组 R 的损失明显低于原在线 O 和打乱组 S；右侧区间均在零线上方，表示两种必要比较都通过。
 
@@ -2787,7 +2787,7 @@ $$
 
 打乱标签对照属于第二实验：它确实训练了一个新的粗路由。它没有重新用随机分组训练整套专家，因而不能单独证明“语义分组训练专家优于随机分组”。
 
-来源：[第一实验记录](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/summary.md)、[第二实验记录](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/detailed.md)。
+来源：[第一实验记录](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention/summary.md)、[第二实验记录](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair/detailed.md)。
 
 **三、准确的下一步是什么？**
 
@@ -3372,7 +3372,7 @@ $$
 > </details>
 </details>
 
-已写入：[Sol 执行交接计划](./daily_research_reports/0906/plans/sol_training_comparison_handoff_cn.md)。
+已写入：[Sol 执行交接计划](../plans/sol_training_comparison_handoff_cn.md)。
 
 **还剩四个执行阶段＋一次独立审核：**
 
@@ -3622,7 +3622,7 @@ $$
 > </details>
 </details>
 
-已写入：[Sol 第二步执行计划](./daily_research_reports/0906/plans/sol_p3_second_step_execution_plan_cn.md)。
+已写入：[Sol 第二步执行计划](../plans/sol_p3_second_step_execution_plan_cn.md)。
 
 **结论：Sol 的初步规划基本达标，但应先完成实现验证和训练预审，再启动正式比较。**
 
@@ -3702,7 +3702,7 @@ $$
 
 **是，会实际跑实验；后续步骤已合并，不再只停在规划或预审。**
 
-已更新[执行计划](./daily_research_reports/0906/plans/sol_p3_second_step_execution_plan_cn.md)，明确要求：
+已更新[执行计划](../plans/sol_p3_second_step_execution_plan_cn.md)，明确要求：
 
 - **Sol 在一个对话内完成，禁止 multi-agent、子代理和新建执行任务。**
 - 连续完成：实现检查 → 训练预审 → 固定预算 → 12个正式训练条件 → 测试 → 结果分析。
@@ -3875,7 +3875,7 @@ $$
 > Viewed an image
 </details>
 
-[正式实验总结](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md)和[完整证据记录](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/detailed.md)已经补齐。我也读取了 **“0906 Sol 执行Router实验”** 最新完成的反转审计。
+[正式实验总结](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md)和[完整证据记录](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/detailed.md)已经补齐。我也读取了 **“0906 Sol 执行Router实验”** 最新完成的反转审计。
 
 **我的判断：本轮实验已完成。语义监督没有表现出两个种子一致的任务收益；新审计把问题进一步定位到了训练过程中持续形成的差异，但尚未证明是监督权重过强。下一步可以只做一个“监督强度减半”的配对实验。**
 
@@ -3891,7 +3891,7 @@ $$
 
 下面这张图最关键：
 
-![开发集反转审计](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/figures/reversal_development_effects.png)
+![开发集反转审计](../figures/reversal_development_effects.png)
 
 读图：纵轴是“纯任务模型损失－语义监督模型损失”，正值支持语义监督；蓝线持续为正、红线持续为负，说明两种子的差异在训练中已持续存在。
 

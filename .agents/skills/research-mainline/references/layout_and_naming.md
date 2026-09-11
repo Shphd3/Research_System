@@ -32,10 +32,59 @@ Meeting-cycle files live at:
 daily_research_reports/MMDD/focus_<problem>.md
 daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md
 daily_research_reports/MMDD/focus_meeting_<topic>.md
+daily_research_reports/MMDD/figures/<figure>.png
+daily_research_reports/MMDD/figures/SOURCES.md
 ```
 
 The Focus uses the date it was first created. Keep `cycle_start` and
 `target_meeting` in metadata; do not move a living Focus at midnight.
+
+## Date Figures
+
+Every figure a date's reader-facing artifact references physically lives under
+that date's `figures/` directory, and the artifact links it with a date-local
+relative path such as `figures/x.png` or `../figures/x.png`. Do not link from a
+date directory into `Projects/`, an execution workspace, or an absolute host
+path: such a link breaks on archive, on another machine, and in a clone.
+
+Two copies of the same figure are expected, and this is the one place where copy
+rather than move is correct:
+
+- the owning experiment's `experiments/A<line>/<experiment_id>/figures/` holds
+  the evidence copy beside `summary.md` and `detailed.md`;
+- `daily_research_reports/MMDD/figures/` holds the reading copy that this date's
+  Focus, meeting material, and daily report display.
+
+Copy byte-identically and record each source in `figures/SOURCES.md`. When a
+figure is regenerated, refresh both copies in the same step. A reading copy
+never becomes an independent source: if the two disagree, the experiment copy is
+authoritative and the date copy is stale.
+
+`figures/SOURCES.md` has one row per file in the directory:
+
+```text
+| File | Origin | Source | SHA256 | Note |
+|---|---|---|---|---|
+| `x.png` | copy | `Projects/.../figures/x.png` | <sha256 of the reading copy> | <what it shows> |
+| `y.png` | generated | `<builder>` from `<input>` | <sha256 of the reading copy> | <how it was built> |
+```
+
+`copy` means a byte-identical duplicate of an evidence figure, so its recorded
+hash must still equal the source's. `generated` means the figure was produced
+directly in this directory from a recorded builder and inputs, so there is no
+second copy to compare against. If an evidence source later disappears, keep the
+reading copy and keep its source path in the row: the lineage stays readable
+even when the source does not.
+
+In this repository the experiment copy usually lives under `Projects/`, which is
+outside the root repository's tracked tree, so the date copy is often the only
+version-controlled copy. That is a reason to keep the copy, not a reason to
+treat it as new evidence.
+
+Use a topic subdirectory only when one date has figures from genuinely different
+topics whose filenames would otherwise collide. Debug galleries, unfiltered
+render dumps, and per-run figure directories stay in the execution workspace and
+are never copied here.
 
 ## Anchors
 

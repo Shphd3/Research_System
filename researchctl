@@ -12,6 +12,7 @@ import argparse
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -29,6 +30,21 @@ LINK_RE = re.compile(r"\]\(([^)#]+)(?:#[^)]+)?\)")
 REPOSITORY_PATH_RE = re.compile(
     r"(?:(?:Projects|daily_research_reports|sync|templates|docs)/[^\s`|;)]+\.md)"
 )
+EXECUTION_ENVELOPE_REL = "docs/execution_envelope.md"
+ENVELOPE_REGISTRY_RE = re.compile(r"```yaml\n(.*?)\n```", re.DOTALL)
+PROTOCOL_FRONT_MATTER_RE = re.compile(r"\A---\r?\n(.*?)\r?\n---", re.DOTALL)
+FRONT_MATTER_FIELD_RE = re.compile(r"^([a-z_]+):\s*(.*)$", re.MULTILINE)
+JOB_ID_RE = re.compile(r"\b(?:pt|om)-[a-z0-9]{6,}\b")
+IMAGE_URL_RE = re.compile(
+    r"\bregistry\.[A-Za-z0-9.-]+/[^\s`\"'|)]*:[A-Za-z0-9._-]+"
+)
+MARKDOWN_IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)\s]+)")
+DATE_DIR_RE = re.compile(r"^\d{4}$")
+DAILY_REPORTS_DIR = "daily_research_reports"
+MANIFEST_ROW_RE = re.compile(
+    r"^\|\s*`([^`]+)`\s*\|\s*(copy|generated)\s*\|\s*(.+?)\s*\|\s*`?([0-9a-f]{64})`?\s*\|"
+)
+MANIFEST_SOURCE_RE = re.compile(r"`([^`]+)`")
 FOCUS_STATES = {
     "task_state": {"DRAFT", "ACTIVE", "CLOSED"},
     "question_state": {"AWAITING_HUMAN_CONFIRMATION", "HUMAN_CONFIRMED"},
@@ -409,6 +425,261 @@ def current_focus_rows(root: Path) -> list[dict]:
     return rows
 
 
+def execution_registry(root: Path) -> dict:
+    """Read the execution envelope's single machine-readable registry block.
+
+    The envelope owns the profile and image keys. This reads them; it never
+    keeps a second copy and never judges whether a key is scientifically right.
+    """
+    empty = {
+        "present": False,
+        "default_profile": None,
+        "profiles": set(),
+        "images": set(),
+        "legacy_profiles": set(),
+        "legacy_images": set(),
+    }
+    path = root / EXECUTION_ENVELOPE_REL
+    if not path.is_file():
+        return empty
+    match = ENVELOPE_REGISTRY_RE.search(path.read_text(encoding="utf-8"))
+    if match is None:
+        return empty
+
+    profiles: set[str] = set()
+    images: set[str] = set()
+    legacy_profiles: set[str] = set()
+    legacy_images: set[str] = set()
+    sections = {
+        "profiles": profiles,
+        "images": images,
+        "legacy_images": legacy_images,
+    }
+    default_profile = None
+    section = None
+    for line in match.group(1).splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        indent = len(line) - len(line.lstrip(" "))
+        if indent == 0:
+            section = None
+            if stripped.startswith("legacy_profiles:") and "[" in stripped:
+                body = stripped.split("[", 1)[1]
+                legacy_profiles.update(
+                    key.strip().strip("\"'")
+                    for key in body.rstrip("]").split(",")
+                    if key.strip()
+                )
+                continue
+            if stripped.startswith("default_profile:"):
+                default_profile = stripped.split(":", 1)[1].strip().strip("\"'")
+            if stripped.endswith(":"):
+                section = stripped[:-1]
+            continue
+        if indent == 2 and section in sections and stripped.endswith(":"):
+            sections[section].add(stripped[:-1].strip().strip("\"'"))
+
+    return {
+        "present": True,
+        "default_profile": default_profile,
+        "profiles": profiles,
+        "images": images,
+        "legacy_profiles": legacy_profiles,
+        "legacy_images": legacy_images,
+    }
+
+
+def protocol_environment_findings(root: Path, relative: str, registry: dict) -> list[dict]:
+    """Check one protocol's declared execution keys against the envelope."""
+    findings: list[dict] = []
+    text = (root / relative).read_text(encoding="utf-8").lstrip("\ufeff")
+    front = PROTOCOL_FRONT_MATTER_RE.match(text)
+    fields: dict[str, str] = {}
+    if front:
+        for key, value in FRONT_MATTER_FIELD_RE.findall(front.group(1)):
+            fields[key] = value.split("#", 1)[0].strip().strip("\"'")
+
+    if registry["present"]:
+        known_profiles = registry["profiles"] | registry["legacy_profiles"]
+        known_images = registry["images"] | registry["legacy_images"]
+        profile = fields.get("resource_profile", "")
+        image_id = fields.get("image_id", "")
+        if profile and profile not in known_profiles:
+            findings.append(
+                {
+                    "level": "WARNING",
+                    "code": "PROTOCOL_RESOURCE_PROFILE_UNKNOWN",
+                    "path": relative,
+                    "resource_profile": profile,
+                    "message": (
+                        f"{EXECUTION_ENVELOPE_REL} does not register this "
+                        "resource profile."
+                    ),
+                }
+            )
+        if image_id and image_id not in known_images:
+            findings.append(
+                {
+                    "level": "WARNING",
+                    "code": "PROTOCOL_IMAGE_ID_UNKNOWN",
+                    "path": relative,
+                    "image_id": image_id,
+                    "message": (
+                        f"{EXECUTION_ENVELOPE_REL} does not register this image key."
+                    ),
+                }
+            )
+
+    job = JOB_ID_RE.search(text)
+    if job and not IMAGE_URL_RE.search(text):
+        findings.append(
+            {
+                "level": "WARNING",
+                "code": "EXECUTION_RECEIPT_INCOMPLETE",
+                "path": relative,
+                "job_id": job.group(0),
+                "message": (
+                    "A job id is recorded but no expanded image URL is, so the "
+                    "receipt cannot certify what actually ran."
+                ),
+            }
+        )
+    return findings
+
+
+def figure_manifest_findings(root: Path, date_dir: Path) -> list[dict]:
+    """Check that a date's figures directory is declared and its copies are fresh."""
+    findings: list[dict] = []
+    figures_root = date_dir / "figures"
+    if not figures_root.is_dir():
+        return findings
+    manifest = figures_root / "SOURCES.md"
+    declared: dict[str, tuple[str, str, str]] = {}
+    if manifest.is_file():
+        for line in manifest.read_text(encoding="utf-8", errors="replace").splitlines():
+            match = MANIFEST_ROW_RE.match(line.strip())
+            if not match:
+                continue
+            name, origin, source_cell, digest = match.groups()
+            paths = MANIFEST_SOURCE_RE.findall(source_cell)
+            declared[name] = (origin, paths[0] if paths else "", digest)
+    for item in sorted(figures_root.iterdir()):
+        if not item.is_file() or item.name == "SOURCES.md" or item.name.startswith("."):
+            continue
+        relative = item.relative_to(root).as_posix()
+        if item.name not in declared:
+            findings.append(
+                {
+                    "code": "FIGURE_MANIFEST_MISSING",
+                    "level": "WARNING",
+                    "path": relative,
+                    "message": f"{figures_root.relative_to(root).as_posix()}/SOURCES.md does not list this figure.",
+                }
+            )
+            continue
+        origin, source, digest = declared[item.name]
+        if origin != "copy" or not source:
+            continue
+        target = item.resolve()
+        if source.startswith("/"):
+            candidate = Path(source)
+        else:
+            candidate = (root / source.lstrip("./")).resolve()
+        if candidate == target:
+            findings.append(
+                {
+                    "code": "FIGURE_COPY_SELF_REFERENCE",
+                    "path": relative,
+                    "message": "The manifest names the reading copy as its own source.",
+                }
+            )
+            continue
+        if not candidate.is_file():
+            findings.append(
+                {
+                    "code": "FIGURE_COPY_SOURCE_MISSING",
+                    "level": "WARNING",
+                    "path": relative,
+                    "source": source,
+                    "message": "The recorded evidence copy no longer exists; the reading copy now outlives it.",
+                }
+            )
+            continue
+        if hashlib.sha256(candidate.read_bytes()).hexdigest() != digest:
+            findings.append(
+                {
+                    "code": "FIGURE_COPY_MISMATCH",
+                    "path": relative,
+                    "source": source,
+                    "message": "The evidence figure changed after this reading copy was taken; refresh both copies together.",
+                }
+            )
+    return findings
+
+
+def date_figure_findings(root: Path) -> tuple[list[dict], list[dict]]:
+    """Check that a date's reader-facing figures live in that date's figures/.
+
+    Every image a file under ``daily_research_reports/<MMDD>/`` links must
+    resolve, and must resolve inside ``<MMDD>/figures/``. A copy from the owning
+    experiment is expected; a link into Projects/, an execution workspace, or an
+    absolute host path is not. Each figure must also be declared, and a declared
+    copy must still match its evidence figure.
+    """
+    errors: list[dict] = []
+    advisories: list[dict] = []
+    reports = root / DAILY_REPORTS_DIR
+    if not reports.is_dir():
+        return errors, advisories
+    for date_dir in sorted(reports.iterdir()):
+        if not date_dir.is_dir() or not DATE_DIR_RE.match(date_dir.name):
+            continue
+        for finding in figure_manifest_findings(root, date_dir):
+            (advisories if finding.get("level") == "WARNING" else errors).append(finding)
+        figures_root = (date_dir / "figures").resolve()
+        for document in sorted(date_dir.rglob("*.md")):
+            text = document.read_text(encoding="utf-8", errors="replace")
+            for raw in MARKDOWN_IMAGE_RE.findall(text):
+                if raw.startswith(("http://", "https://", "data:")):
+                    continue
+                target = raw.split("#", 1)[0]
+                relative = document.relative_to(root).as_posix()
+                if target.startswith("/"):
+                    errors.append(
+                        {
+                            "code": "FIGURE_PATH_NOT_DATE_LOCAL",
+                            "path": relative,
+                            "target": raw,
+                            "message": "An absolute or host path cannot be archived or cloned; copy the figure into the date figures directory and link it relatively.",
+                        }
+                    )
+                    continue
+                resolved = (document.parent / target).resolve()
+                if not resolved.is_file():
+                    errors.append(
+                        {
+                            "code": "FIGURE_LINK_UNRESOLVED",
+                            "path": relative,
+                            "target": raw,
+                            "message": "The linked figure does not exist where the link resolves.",
+                        }
+                    )
+                    continue
+                try:
+                    resolved.relative_to(figures_root)
+                except ValueError:
+                    errors.append(
+                        {
+                            "code": "FIGURE_OUTSIDE_DATE_FIGURES",
+                            "path": relative,
+                            "target": raw,
+                            "message": "The figure resolves outside this date's figures directory; copy it there and link it relatively.",
+                        }
+                    )
+    return errors, advisories
+
+
 def repository_validation(root: Path) -> dict:
     """Check structural contracts without judging scientific claims."""
     errors: list[dict] = []
@@ -522,6 +793,27 @@ def repository_validation(root: Path) -> dict:
                         }
                     )
 
+    registry = execution_registry(root)
+    if not registry["present"]:
+        advisories.append(
+            {
+                "level": "WARNING",
+                "code": "EXECUTION_ENVELOPE_MISSING",
+                "message": (
+                    f"{EXECUTION_ENVELOPE_REL} has no parseable machine-readable "
+                    "registry block; declared execution keys cannot be checked."
+                ),
+            }
+        )
+    environment_records = 0
+    for relative in sorted(checked_protocols):
+        environment_records += 1
+        advisories.extend(protocol_environment_findings(root, relative, registry))
+
+    figure_errors, figure_advisories = date_figure_findings(root)
+    errors.extend(figure_errors)
+    advisories.extend(figure_advisories)
+
     skill_references = 0
     skills_root = root / ".agents" / "skills"
     if skills_root.is_dir():
@@ -581,6 +873,7 @@ def repository_validation(root: Path) -> dict:
             "registered_references": len(checked_references),
             "protocol_authorizations": len(checked_protocols),
             "skill_references": skill_references,
+            "date_figure_violations": len(figure_errors),
         },
     }
 
@@ -692,6 +985,121 @@ def command_status(args, root: Path, cfg: dict) -> dict:
     }
 
 
+def envelope_registry_blocks(root: Path) -> dict:
+    """Parse the envelope registry twice: key names and values.
+
+    :func:`execution_registry` only needs key names for drift checks. A
+    submission needs the values, and it needs them without a YAML dependency
+    and without keeping a second copy of the tuple.
+    """
+    path = root / EXECUTION_ENVELOPE_REL
+    if not path.is_file():
+        raise CtlError(
+            "ENVELOPE_MISSING", f"{EXECUTION_ENVELOPE_REL} is missing"
+        )
+    match = ENVELOPE_REGISTRY_RE.search(path.read_text(encoding="utf-8"))
+    if match is None:
+        raise CtlError(
+            "ENVELOPE_REGISTRY_MISSING",
+            f"{EXECUTION_ENVELOPE_REL} has no parseable registry block",
+        )
+
+    top: dict[str, str] = {}
+    fields: dict[str, dict[str, str]] = {}
+    entities: dict[str, dict[str, dict[str, str]]] = {}
+    section = entity = None
+    for line in match.group(1).splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        indent = len(line) - len(line.lstrip(" "))
+        if indent == 0:
+            section = entity = None
+            if stripped.endswith(":"):
+                section = stripped[:-1]
+                fields.setdefault(section, {})
+                entities.setdefault(section, {})
+            elif ":" in stripped:
+                key, value = stripped.split(":", 1)
+                top[key.strip()] = value.strip().strip("\"'")
+            continue
+        if section is None or ":" not in stripped:
+            continue
+        key, value = stripped.split(":", 1)
+        key = key.strip().strip("\"'")
+        value = value.strip().strip("\"'")
+        if indent == 2 and not value:
+            entity = key
+            entities[section].setdefault(entity, {})
+        elif indent == 2:
+            fields[section][key] = value
+        elif indent == 4 and entity is not None:
+            entities[section].setdefault(entity, {})[key] = value
+    return {"top": top, "fields": fields, "entities": entities}
+
+
+def command_envelope(args, root: Path, cfg: dict) -> dict:
+    registry = envelope_registry_blocks(root)
+    top = registry["top"]
+    profiles = registry["entities"].get("profiles", {})
+    images = registry["entities"].get("images", {})
+    legacy_profiles = registry["entities"].get("legacy_profiles", {})
+    legacy_images = registry["entities"].get("legacy_images", {})
+
+    profile_key = args.profile or top.get("default_profile")
+    image_key = args.image or top.get("default_image")
+    if not profile_key:
+        raise CtlError(
+            "DEFAULT_PROFILE_MISSING", "the envelope declares no default_profile"
+        )
+    if not image_key:
+        raise CtlError(
+            "DEFAULT_IMAGE_MISSING", "the envelope declares no default_image"
+        )
+    known_profiles = {**profiles, **legacy_profiles}
+    known_images = {**images, **legacy_images}
+    if profile_key not in known_profiles:
+        raise CtlError("UNKNOWN_PROFILE_KEY", f"unknown profile key: {profile_key}")
+    if image_key not in known_images:
+        raise CtlError("UNKNOWN_IMAGE_KEY", f"unknown image key: {image_key}")
+
+    profile = known_profiles[profile_key]
+    image = known_images[image_key]
+    if profile.get("status") == "deferred" and not args.allow_deferred:
+        raise CtlError(
+            "PROFILE_DEFERRED",
+            f"profile {profile_key} is deferred since "
+            f"{profile.get('deferred_on', '?')}; it is not available for submission",
+        )
+
+    submission = registry["fields"].get("submission", {})
+    resolved = {
+        "resource_profile": profile_key,
+        "profile_status": profile.get("status", ""),
+        "execution_surface": profile.get("surface", ""),
+        "workspace": profile.get("workspace", ""),
+        "aec2": profile.get("aec2", ""),
+        "worker_spec": profile.get("worker_spec", ""),
+        "worker_nodes": profile.get("worker_nodes", "1"),
+        "worker_processes": profile.get("worker_processes", ""),
+        "gpus": profile.get("gpus", ""),
+        "quota_type": profile.get("quota_type", ""),
+        "priority": profile.get("priority", ""),
+        "storage_mount": profile.get("storage_mount", ""),
+        "gpu_used": profile.get("gpu_used", ""),
+        "image_id": image_key,
+        "image_status": image.get("status", ""),
+        "image_url": image.get("url", ""),
+        "image_interpreter": image.get("interpreter", ""),
+        "image_torch": image.get("torch", ""),
+        "image_cuda": image.get("cuda", ""),
+        "image_activation": image.get("activation", ""),
+        "submission_entry_point": submission.get("entry_point", ""),
+        "envelope": EXECUTION_ENVELOPE_REL,
+    }
+    return resolved
+
+
 def command_check(args, root: Path, cfg: dict) -> dict:
     state = load_state(state_path(root, cfg))
     active = open_tasks(state, args.problem_key)
@@ -753,6 +1161,24 @@ def parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Check current Focus state, references, authorization records, and derived-view drift.",
     )
+
+    envelope = commands.add_parser(
+        "envelope",
+        help="Resolve the profile and image tuple from docs/execution_envelope.md.",
+    )
+    envelope.add_argument("--profile", help="Profile key; defaults to the envelope default.")
+    envelope.add_argument("--image", help="Image key; defaults to the envelope default.")
+    envelope.add_argument(
+        "--format",
+        choices=("json", "shell"),
+        default="json",
+        help="json prints the resolved mapping; shell prints KEY=value lines.",
+    )
+    envelope.add_argument(
+        "--allow-deferred",
+        action="store_true",
+        help="Resolve a deferred profile for inspection only; never use it to submit.",
+    )
     return root
 
 
@@ -779,6 +1205,14 @@ def main(argv: list[str] | None = None) -> int:
             result = command_check(args, root, cfg)
             emit(result)
             return 0 if result["ok"] else 4
+        if args.command == "envelope":
+            resolved = command_envelope(args, root, cfg)
+            if args.format == "shell":
+                for key, value in resolved.items():
+                    sys.stdout.write(f"{key.upper()}={json.dumps(str(value))}\n")
+                return 0
+            emit(resolved)
+            return 0
         raise AssertionError(args.command)
     except CtlError as exc:
         emit({"error": exc.code, "message": exc.message, **exc.details})

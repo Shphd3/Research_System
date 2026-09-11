@@ -42,6 +42,12 @@ decision. Curated figures live beside the result records and state their
 question, metric and unit, data and aggregation, axes, visible result, allowed
 conclusion, and limitation. Debug figures stay outside `summary.md`.
 
+A figure that a date's reader-facing artifact displays also has a reading copy
+under `daily_research_reports/MMDD/figures/`, linked by a date-local relative
+path and recorded in that directory's `SOURCES.md`. The experiment keeps the
+evidence copy; the date copy is derived. See `layout_and_naming.md` for the
+placement rule.
+
 ## Completion
 
 After an update, check that every decision-bearing statement has one owner,

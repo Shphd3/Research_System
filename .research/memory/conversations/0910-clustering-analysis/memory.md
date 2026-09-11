@@ -3,7 +3,7 @@
 Conversation name: 0910-clustering analysis
 Processed by: DeepSeek (harness: DeepSeek Harness; model: deepseek-flash)
 Created at: 2026-09-10T12:52:00Z
-Latest update at: 2026-09-10T12:52:00Z
+Latest update at: 2026-09-10T16:05:00Z
 Continues from: .research/memory/conversations/0910-sft-matrix-execution/memory.md
 
 ## 2026-09-10T12:52:00Z -- New conversation created; takes over chain supervision and the results/meeting interpretation
@@ -40,3 +40,35 @@ Continues from: .research/memory/conversations/0910-sft-matrix-execution/memory.
   `runs/full-20260909T203104Z/{postprocess_chain,acp,analysis/render_progress.json,run_identity.json}`
   (current state); `.research/memory/conversations/0910-sft-matrix-execution/memory.md` (prior record,
   non-canonical). This record is non-canonical; scientific judgment stays with the researcher.
+
+## 2026-09-10T16:05:00Z -- task_u reorganization experiment anchored; step 1 run; completion chain closed with two real gaps
+
+- Summary: The completion chain on the pod finished at 14:13:41Z with `acp/REMOTE_STATUS=REMOTE_DONE`, but that
+  name is not a completion proof: `finalize` and `figures` have no `.done` markers. `complete_chain.sh` exits 0
+  because its last statement is an `echo`, so `step()` failures never propagate. Root causes, both outside the
+  frozen `fm` math: (a) `fm/report.py:130` rounds a **string** `mean` read by `csv.DictReader` (`UFuncNoLoopError`)
+  — `finalize` must be fixed by an out-of-`fm` post-processor, never in place; (b) `submit_acp.sh` exports a
+  **relative** `FM_RUN`, which `run_all.sh` will not override, so `fig01/02/06/07` died on relative paths and
+  `fig03/04/05` exited 0 after silently skipping ("missing analysis/metrics.csv"). Verified: **no file under
+  `analysis/postprocess/figures` was modified after 14:00**, so the container's 162-file figure set is intact and
+  a re-run would be bit-identical and information-free. Decision (researcher delegated the assessment): do not
+  re-run figures, defer the `finalize` fix, record both gaps honestly.
+- Researcher decision this turn: anchored the next experiment — object `task_u__seed{17,29,43}` (task-only with
+  open last attention), 21 checkpoints, focus on representation change over training; registered under the
+  existing `A15.sae_hierarchical_teacher_construction` (no new `problem_key`). Plan:
+  `daily_research_reports/0911/docs/task_u_cluster_evolution_plan_cn.md`.
+- **Step 1 executed and complete** (`audits/task_u-cluster-evolution-20260911/`, `step1_relations.py`,
+  81.3 s, read-only). Direct results: `task_f` control is exact (bitwise `h`, R ≡ 0, across-time FM = 1.0000);
+  `task_u` full-dimension relation drift is monotone with R(u512,u0) = 0.0401/0.0449/0.0470 for seeds
+  17/29/43 and the local 32-update rate decays ~50x from t=32 (0.0160) to t=512 (0.0003). At the fixed K8
+  readout the across-checkpoint partition agreement (FM ≈ 0.970) is **the same size as re-running KMeans on the
+  identical H with a different seed** (FM 0.937–1.000, checkpoint-dependent). Read: the relation layer shows a
+  real but small drift that saturates late; the K8 partition layer cannot separate training change from solver
+  noise at this resolution.
+- Current work: figures `F1_relation_diff_matrix.png`, `F3_noise_vs_time.png` written; next is a per-checkpoint
+  paired noise floor plus the structural (spectral) axis and the SAE component layer.
+- Next action: report step 1 to the researcher and get the one confirmation still open — the Focus four-part
+  account and the single next decision (proposed in the plan doc §9) — before creating a Focus.
+- References: `daily_research_reports/0911/docs/task_u_cluster_evolution_plan_cn.md` (anchored plan);
+  `audits/task_u-cluster-evolution-20260911/{step1_results.json,step1_figures.py}` (step-1 evidence);
+  `runs/full-20260909T203104Z/{postprocess_chain/,acp/REMOTE_STATUS}` (chain state). Non-canonical.

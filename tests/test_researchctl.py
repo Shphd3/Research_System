@@ -294,6 +294,330 @@ class ResearchCtlTests(unittest.TestCase):
         self.assertIn("FOCUS_OWNS_FOREIGN_STATE", codes)
         self.assertIn("PROTOCOL_AUTHORIZATION_UNDECLARED", codes)
 
+    def write_execution_envelope(self):
+        envelope = self.root / "docs" / "execution_envelope.md"
+        envelope.parent.mkdir(parents=True, exist_ok=True)
+        envelope.write_text(
+            "# Execution Envelope\n\n"
+            "```yaml\n"
+            "default_profile: h100-4-reserved\n"
+            "profiles:\n"
+            "  h100-4-reserved:\n"
+            "    status: default\n"
+            "images:\n"
+            "  shphd-h100:\n"
+            "    url: \"registry.example.invalid/ns/image:tag\"\n"
+            "legacy_profiles: [local-2xh100]\n"
+            "legacy_images:\n"
+            "  ngc-pytorch-25-06:\n"
+            "    url: \"registry.example.invalid/ns/legacy:tag\"\n"
+            "```\n",
+            encoding="utf-8",
+        )
+
+    def write_protocol_front_matter(self, body):
+        self.write_repository_contract()
+        protocol = self.root / "Projects" / "demo" / "main" / "protocol.md"
+        protocol.write_text(body, encoding="utf-8")
+        return protocol
+
+    def test_repository_check_flags_unregistered_execution_keys(self):
+        self.write_execution_envelope()
+        self.write_protocol_front_matter(
+            "---\n"
+            "status: APPROVED_FOR_EXECUTION\n"
+            "resource_profile: h100-8-reserved\n"
+            "image_id: shphd-unknown\n"
+            "---\n\n"
+            "# Protocol\n"
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+        codes = {item["code"] for item in result["advisories"]}
+
+        self.assertTrue(result["ok"])
+        self.assertIn("PROTOCOL_RESOURCE_PROFILE_UNKNOWN", codes)
+        self.assertIn("PROTOCOL_IMAGE_ID_UNKNOWN", codes)
+
+    def test_repository_check_accepts_registered_and_legacy_execution_keys(self):
+        self.write_execution_envelope()
+        self.write_protocol_front_matter(
+            "---\n"
+            "status: APPROVED_FOR_EXECUTION\n"
+            "resource_profile: h100-4-reserved\n"
+            "image_id: shphd-h100\n"
+            "---\n\n"
+            "# Protocol\n"
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+        codes = {item["code"] for item in result["advisories"]}
+
+        self.assertNotIn("PROTOCOL_RESOURCE_PROFILE_UNKNOWN", codes)
+        self.assertNotIn("PROTOCOL_IMAGE_ID_UNKNOWN", codes)
+
+    def test_repository_check_requires_an_expanded_image_in_a_run_receipt(self):
+        self.write_execution_envelope()
+        self.write_protocol_front_matter(
+            "---\n"
+            "status: APPROVED_FOR_EXECUTION\n"
+            "---\n\n"
+            "# Protocol\n\nExecution: job `pt-abc12345` succeeded.\n"
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+        codes = {item["code"] for item in result["advisories"]}
+
+        self.assertIn("EXECUTION_RECEIPT_INCOMPLETE", codes)
+
+    def test_repository_check_accepts_a_receipt_with_the_image(self):
+        self.write_execution_envelope()
+        self.write_protocol_front_matter(
+            "---\n"
+            "status: APPROVED_FOR_EXECUTION\n"
+            "---\n\n"
+            "# Protocol\n\nExecution: job `pt-abc12345` on "
+            "`registry.example.invalid/ns/image:tag`.\n"
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+        codes = {item["code"] for item in result["advisories"]}
+
+        self.assertNotIn("EXECUTION_RECEIPT_INCOMPLETE", codes)
+
+    def test_missing_execution_envelope_is_reported_not_silently_skipped(self):
+        self.write_repository_contract()
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+
+        codes = {item["code"] for item in result["advisories"]}
+        self.assertIn("EXECUTION_ENVELOPE_MISSING", codes)
+
+    def write_date_report(self, body, *, relative="0901/focus_demo.md"):
+        report = self.root / "daily_research_reports" / relative
+        report.parent.mkdir(parents=True, exist_ok=True)
+        report.write_text(body, encoding="utf-8")
+        return report
+
+    def write_date_figure(self, name="panel.png", *, date="0901"):
+        figure = self.root / "daily_research_reports" / date / "figures" / name
+        figure.parent.mkdir(parents=True, exist_ok=True)
+        figure.write_bytes(b"\x89PNG\r\n\x1a\n")
+        return figure
+
+    def test_repository_check_flags_an_unresolved_figure_link(self):
+        self.write_repository_contract()
+        self.write_date_report("# Focus\n\n![panel](figures/missing.png)\n")
+
+        result = self.run_ctl("check", "--repository", conversation=None, expect=4)
+        codes = {item["code"] for item in result["errors"]}
+
+        self.assertIn("FIGURE_LINK_UNRESOLVED", codes)
+
+    def test_repository_check_flags_a_figure_outside_the_date_directory(self):
+        self.write_repository_contract()
+        outside = self.root / "Projects" / "demo" / "main" / "figures" / "panel.png"
+        outside.parent.mkdir(parents=True, exist_ok=True)
+        outside.write_bytes(b"\x89PNG\r\n\x1a\n")
+        self.write_date_report(
+            "# Focus\n\n![panel](../../Projects/demo/main/figures/panel.png)\n"
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None, expect=4)
+        codes = {item["code"] for item in result["errors"]}
+
+        self.assertIn("FIGURE_OUTSIDE_DATE_FIGURES", codes)
+
+    def test_repository_check_flags_an_absolute_figure_path(self):
+        self.write_repository_contract()
+        self.write_date_report("# Focus\n\n![panel](/tmp/panel.png)\n")
+
+        result = self.run_ctl("check", "--repository", conversation=None, expect=4)
+        codes = {item["code"] for item in result["errors"]}
+
+        self.assertIn("FIGURE_PATH_NOT_DATE_LOCAL", codes)
+
+    def test_repository_check_accepts_a_date_local_figure_copy(self):
+        self.write_repository_contract()
+        self.write_date_figure()
+        self.write_date_report("# Focus\n\n![panel](figures/panel.png)\n")
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+
+        self.assertTrue(result["ok"], result["errors"])
+        self.assertEqual(result["repository"]["date_figure_violations"], 0)
+
+    def test_archived_date_directories_are_not_retrofitted(self):
+        self.write_repository_contract()
+        archived = self.write_date_report(
+            "# Old\n\n![panel](figures/missing.png)\n",
+            relative="backup/2026/08/0830/focus_old.md",
+        )
+        self.assertTrue(archived.is_file())
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+
+        self.assertTrue(result["ok"], result["errors"])
+
+    def write_sources_manifest(self, rows, *, date="0901"):
+        manifest = (
+            self.root / "daily_research_reports" / date / "figures" / "SOURCES.md"
+        )
+        manifest.parent.mkdir(parents=True, exist_ok=True)
+        header = (
+            "# Figure Sources\n\n"
+            "| File | Origin | Source | SHA256 | Note |\n"
+            "|---|---|---|---|---|\n"
+        )
+        manifest.write_text(header + "".join(rows), encoding="utf-8")
+        return manifest
+
+    def test_repository_check_flags_an_undeclared_date_figure(self):
+        self.write_repository_contract()
+        self.write_date_figure()
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+        codes = {item["code"] for item in result["advisories"]}
+
+        self.assertIn("FIGURE_MANIFEST_MISSING", codes)
+
+    def test_repository_check_flags_a_stale_reading_copy(self):
+        self.write_repository_contract()
+        self.write_date_figure()
+        evidence = self.root / "Projects" / "demo" / "main" / "figures" / "panel.png"
+        evidence.parent.mkdir(parents=True, exist_ok=True)
+        evidence.write_bytes(b"\x89PNG\r\n\x1a\nchanged")
+        self.write_sources_manifest(
+            [
+                "| `panel.png` | copy | `Projects/demo/main/figures/panel.png` | "
+                f"`{'0' * 64}` | experiment figure |\n"
+            ]
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None, expect=4)
+        codes = {item["code"] for item in result["errors"]}
+
+        self.assertIn("FIGURE_COPY_MISMATCH", codes)
+
+    def test_repository_check_flags_a_self_referencing_manifest_row(self):
+        self.write_repository_contract()
+        figure = self.write_date_figure()
+        self.write_sources_manifest(
+            [
+                "| `panel.png` | copy | "
+                f"`{figure.relative_to(self.root).as_posix()}` | "
+                f"`{'0' * 64}` | experiment figure |\n"
+            ]
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None, expect=4)
+        codes = {item["code"] for item in result["errors"]}
+
+        self.assertIn("FIGURE_COPY_SELF_REFERENCE", codes)
+
+    def test_repository_check_accepts_a_generated_figure_row(self):
+        self.write_repository_contract()
+        self.write_date_figure()
+        self.write_sources_manifest(
+            [
+                "| `panel.png` | generated | `scripts/build.py` from `tables/x.csv` | "
+                f"`{'0' * 64}` | exact artifact join |\n"
+            ]
+        )
+
+        result = self.run_ctl("check", "--repository", conversation=None)
+
+        self.assertTrue(result["ok"], result["errors"])
+        self.assertNotIn(
+            "FIGURE_MANIFEST_MISSING",
+            {item["code"] for item in result["advisories"]},
+        )
+
+    def write_profiled_envelope(self, *, profile_status="default"):
+        envelope = self.root / "docs" / "execution_envelope.md"
+        envelope.parent.mkdir(parents=True, exist_ok=True)
+        envelope.write_text(
+            "# Execution Envelope\n\n"
+            "```yaml\n"
+            "default_profile: h100-4-reserved\n"
+            "default_image: shphd-lite-0911\n"
+            "profiles:\n"
+            "  h100-4-reserved:\n"
+            f"    status: {profile_status}\n"
+            "    surface: acp\n"
+            "    workspace: share-space\n"
+            "    aec2: share-cluster\n"
+            "    worker_spec: n6ls.iu.i40.4\n"
+            "    worker_nodes: 1\n"
+            "    worker_processes: 4\n"
+            "    quota_type: reserved\n"
+            "    priority: normal\n"
+            '    storage_mount: "vol-1:/data"\n'
+            "  h100-4-spot:\n"
+            "    status: deferred\n"
+            '    deferred_on: "2026-09-10"\n'
+            "    worker_spec: n6ls.iu.i40.4\n"
+            "    quota_type: spot\n"
+            "images:\n"
+            "  shphd-lite-0911:\n"
+            "    status: default\n"
+            '    url: "registry.example.invalid/ns/shphd:tag1"\n'
+            '    interpreter: "Python 3.10"\n'
+            "submission:\n"
+            '  entry_point: "/opt/shim.sh"\n'
+            '  default_mode: "DRY_RUN=1"\n'
+            "```\n",
+            encoding="utf-8",
+        )
+
+    def test_envelope_resolves_the_default_tuple_from_the_registry(self):
+        self.write_profiled_envelope()
+
+        result = self.run_ctl("envelope", conversation=None)
+
+        self.assertEqual(result["resource_profile"], "h100-4-reserved")
+        self.assertEqual(result["image_id"], "shphd-lite-0911")
+        self.assertEqual(result["image_url"], "registry.example.invalid/ns/shphd:tag1")
+        self.assertEqual(result["workspace"], "share-space")
+        self.assertEqual(result["quota_type"], "reserved")
+        self.assertEqual(result["storage_mount"], "vol-1:/data")
+        self.assertEqual(result["submission_entry_point"], "/opt/shim.sh")
+
+    def test_envelope_shell_format_prints_assignments(self):
+        self.write_profiled_envelope()
+
+        completed = subprocess.run(
+            [sys.executable, str(SCRIPT), "envelope", "--format", "shell"],
+            cwd=self.root,
+            env={**os.environ, "RESEARCHCTL_ROOT": str(self.root)},
+            text=True,
+            capture_output=True,
+        )
+
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIn('WORKER_SPEC="n6ls.iu.i40.4"', completed.stdout)
+        self.assertIn(
+            'IMAGE_URL="registry.example.invalid/ns/shphd:tag1"', completed.stdout
+        )
+
+    def test_envelope_refuses_a_deferred_profile(self):
+        self.write_profiled_envelope()
+
+        result = self.run_ctl(
+            "envelope", "--profile", "h100-4-spot", conversation=None, expect=2
+        )
+
+        self.assertEqual(result["error"], "PROFILE_DEFERRED")
+
+    def test_envelope_refuses_an_unknown_key(self):
+        self.write_profiled_envelope()
+
+        result = self.run_ctl(
+            "envelope", "--image", "shphd-does-not-exist", conversation=None, expect=2
+        )
+
+        self.assertEqual(result["error"], "UNKNOWN_IMAGE_KEY")
+
 
 if __name__ == "__main__":
     unittest.main()

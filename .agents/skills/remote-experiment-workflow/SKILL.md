@@ -42,7 +42,32 @@ Read:
 2. the relevant graph or roadmap;
 3. the active anchor under `problem_anchors/`;
 4. `protocol.md` for the experiment;
-5. the experiment workspace `AGENTS.md`, if present.
+5. the experiment workspace `AGENTS.md`, if present;
+6. `docs/execution_envelope.md` for the target profile key, the image key with
+   its runtime layer, and the submission entry point.
+
+The envelope overrides this skill's and `sco-control`'s platform defaults. Do
+not restate a profile tuple, an image URL, or a storage mount from memory: read
+the key. An image alone does not define the environment; the run also needs its
+activation script and frozen dependency layer. A bare `sco acp jobs create` is
+not the supported entry point — `sco` is not on PATH and the envelope names the
+compatibility entry point. `references/remote_hosts.yaml` describes four-hour
+debug containers, not the reserved compute node.
+
+Submit through `templates/execution/acp_submit_template.sh`. It resolves the
+tuple with `./researchctl envelope`, prints it, defaults to a dry run, enforces
+the gates, and writes a submission receipt:
+
+```bash
+JOB_NAME=<name> REMOTE_CMD='<command>' bash templates/execution/acp_submit_template.sh
+DRY_RUN=0 ALLOW_SUBMIT=1 PROTOCOL_APPROVED=1 JOB_NAME=<name> REMOTE_CMD='<command>' \
+  bash templates/execution/acp_submit_template.sh
+```
+
+The platform keeps no stdout from a finished pod: `stream-logs` returns only the
+scheduling line. The template therefore tees every run's output into
+`<REMOTE_DIR>/acp_receipts/pod/` on the mounted storage. Never take evidence
+from `stream-logs`, and do not call a run complete until its pod log exists.
 
 Do not start from scripts or metrics before the anchor states the decision
 question and the protocol states the primary metric, conditions, and
@@ -95,20 +120,32 @@ Before submission, make explicit:
 - config;
 - data or manifest;
 - output directory;
-- GPU count / quota / image;
+- GPU count / quota / profile key and image key resolved from
+  `docs/execution_envelope.md`;
 - smoke command;
 - full command;
 - primary pass/fail metric;
 - expected artifacts.
 
-For ACP/SCO jobs, record:
+A submission that resolves to the envelope's default profile under an already
+authorized protocol scope is execution, not a new approval gate. Anything else —
+a different profile, quota, or image — needs the researcher to write the
+exception into the protocol with its reason.
+
+For ACP/SCO jobs, record the run receipt from
+`templates/execution/run_receipt_template.md`; its fields are:
 
 ```text
+profile key and resolved tuple:
+image key and expanded image URL:
+activation script and dependency layer:
 job id:
-command:
+exact command and submission entry point:
 config:
 log path:
 result dir:
+gpu_used:
+monitor_owner:
 first diagnosis:
 ```
 

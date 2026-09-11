@@ -73,13 +73,13 @@ SAE 两种方案都训练过，也都在固定输入的专家替换中出现“�
 
 当前方法是将29,471个保留原子直接分成八组，没有利用父子关系。它不是“只用叶节点”：和旧深度探索图对照，已有181个深度1节点、23个深度2节点和1个深度3节点被分进当前组。**缺少的是利用层级关系，而不只是使用高层原子。**[交叉核验](/data/250010109/MoE_Router/experiments/20260909_a6r1_post_training_analysis/analysis_reports/20260909_meeting_attribution/hierarchy_membership_audit.json)
 
-![已有高层原子进入当前分组](/data/250010109/Research_System/daily_research_reports/0909/figures/hierarchy_membership.png)
+![已有高层原子进入当前分组](figures/hierarchy_membership.png)
 
 图1怎么读：蓝色是已经进入当前分组的原子，灰色是没有进入的原子；深度1、2、3都有蓝色。深度只来自指定旧图，不是模型层号；该图不测激活频率和训练贡献。[对应数据表](/data/250010109/Research_System/daily_research_reports/0909/tables/hierarchy_membership.csv)
 
 旧层级实验提供了可复现的候选结构，但语义验证只覆盖预设九个细类中的两个；更深节点有时更专一，并没有确立“浅层负责粗类、深层负责细类”的角色转换。[旧实验完整结论](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E18_dataset_conditioned_sae_semantic_hierarchy/summary.md)
 
-![旧层级的语义覆盖边界](/data/250010109/Research_System/daily_research_reports/0909/figures/historical_semantic_coverage.png)
+![旧层级的语义覆盖边界](figures/historical_semantic_coverage.png)
 
 图2怎么读：左图只有两个格子通过原定语义检验；右图额外要求原激活关系也跨数据保留，则没有交集。这是历史层级证据的边界，不是本轮路由效果图，也不是对全部 SAE 特征的否定。图片与原文件逐字节一致，原表及变换记录见图表索引。
 

@@ -30,7 +30,7 @@ scope: one_problem
 
 1. **现有数值显示变化位置不同。** 开放最后注意力时，输入起点到终点的八簇换组比例为 1.55%–1.85%，最终表征为 4.98%–8.78%（逐方法三种子均值）。个别中间时刻输入划分差异约 15%，因此不能用端点小直接断言全过程没有重组。
 
-   ![聚类和路由的真实时间变化](/data/250010109/MoE_Router/experiments/20260910_sft_routing_representation_full_matrix/audits/clustering-explanation-20260910/clustering_and_routing_readout.png)
+   ![聚类和路由的真实时间变化](figures/clustering_and_routing_readout.png)
 
    左图分别看输入和输出，阴影是轨迹范围；右图显示虽然相对起点的路由改选比例约 77% 后趋平，第 64 步到终点仍有 31.9% 换专家。
 

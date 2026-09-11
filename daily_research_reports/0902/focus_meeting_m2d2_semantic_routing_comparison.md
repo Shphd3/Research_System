@@ -34,37 +34,37 @@ source_focus: daily_research_reports/0901/focus_m2d2_causal_lm_semantic_routing.
 
 1. **前一次实验解决了“语义划分有没有潜在价值”，但没有解决“学习 Router 能不能拿到这份价值”。**硬语义 Oracle 相对最强控制改善 `0.001506 [0.001396,0.001618]` NLL；相反，金标签学习 Router 比同架构 task-only 差 `0.001054 [0.000966,0.001142]`。因此当时的结论不是“语义无用”，而是“正确分组有用，但当前学习策略没有恢复收益”。
 
-   ![前一次实验的关键对照](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E07_m2d2_learned_semantic_router_ntp/figures/decisive_contrasts.png)
+   ![前一次实验的关键对照](figures/decisive_contrasts.png)
 
    **怎么读：**最左侧低于零表示学习语义模型输给 task-only；随后两个硬语义对照高于零，说明正确强制路径确实有任务价值。
 
 2. **这一次把方法推进到了“胜过简单基线”，但还没有证明伪标签监督胜过分阶段 task-only。**伪标签层级模型的确认集 NLL 为 `2.881270`，比最强新简单基线——平铺 task-only 的 `2.883111`——低 `0.001841 [0.001684,0.002003]`，两个种子都成立；但它仍比复用的分阶段 task-only 层级模型 `2.880368` 差 `0.000903`。后者与伪标签模型同拓扑、同 `144+144` 日程，却在第一阶段使用金粗标签而不是伪粗标签，所以它是很强但并非只差一个细语义损失的对照。注册裁决为 `PASS_PSEUDO_METHOD`，最窄表述是“实用基线性能得到保留”，不是“伪语义监督已经产生同配置任务增益”。
 
-   ![本次相对最强简单基线的任务对比](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/figures/02_strict_baseline_contrasts.png)
+   ![本次相对最强简单基线的任务对比](figures/02_strict_baseline_contrasts.png)
 
    **怎么读：**纵轴大于零表示方法 NLL 更低；伪标签层级模型及其完整区间都在零线上方。
 
 3. **最后一层确实提供了可无监督提取的领域信息，但它既不是已证最强层，当前聚类器也不是最优。**本次实际训练所用方向加模长聚类的确认集细领域 NMI 为 `0.444`；方向聚类为 `0.457`，对角高斯为 `0.524`。独立逐层几何审计进一步显示，整窗平均方向聚类的细领域最高点在 hidden-state index 23，而不是最终 index 28。因此末层只是本轮已经跑通的离线教师入口，不能写成“末层语义最强”。
 
-   ![最后一层无监督聚类对比](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/figures/05_teacher_cluster_methods.png)
+   ![最后一层无监督聚类对比](figures/05_teacher_cluster_methods.png)
 
    **怎么读：**柱子越高，聚类与真实细领域越一致；对角高斯最高，但本轮只有方向加模长标签真正进入了 Router 训练。
 
 4. **无监督语义已经传入因果 Router，因此“语义解释性增强”成立，但参照物必须写成无语义简单基线。**伪标签 Router 的细领域 NMI 为 `0.237`、匹配宏 F1 为 `0.336`；平铺 task-only 分别只有 `0.007` 和 `0.047`。伪标签结果仍低于直接金标签层级模型的 NMI `0.370`、宏 F1 `0.545`，所以它是无监督可解释性的进步，不是完全恢复人工语义上界。
 
-   ![因果 Router 的语义分发](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/figures/03_route_semantics.png)
+   ![因果 Router 的语义分发](figures/03_route_semantics.png)
 
    **怎么读：**伪标签模型明显高于 task-only 路由，但仍低于两种金标签监督模型。
 
 5. **伪标签专家不仅“名字可解释”，而且承担了不可互换的预测功能。**删除当前细专家使 NLL 增加 `0.000932 [0.000853,0.001011]`，换成错误细专家增加 `0.000485 [0.000417,0.000552]`；两个种子都为正。不过该功能效应小于金标签专家，不能解释为专家已经充分专门化。
 
-   ![专家删除和换错干预](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/figures/04_expert_utility.png)
+   ![专家删除和换错干预](figures/04_expert_utility.png)
 
    **怎么读：**柱子高于零表示删除或换错专家会损害预测；伪标签柱子虽小，但方向稳定为正。
 
 6. **用户提出的“学习效率没有过大损失，但语义解释性增强”可以作为本次最白话的总结，但“学习效率”只能限定为匹配更新数下的语言拟合。**四组都训练 288 次更新；最后 24 次更新的训练语言交叉熵依次为：单一秩 24 适配器 `2.5078`、平铺 task-only `2.5008`、末层伪标签层级模型 `2.5001`、直接九类金标签层级模型 `2.4986`。四条轨迹最终处于很窄的范围，同时伪标签模型的确认集 NLL 低于两个简单基线、语义指标也更高。因此没有观察到明显的语言学习拖慢。
 
-   ![四模型匹配更新数的训练语言损失](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel/figures/07_four_model_learning_curves.png)
+   ![四模型匹配更新数的训练语言损失](figures/07_four_model_learning_curves.png)
 
    **怎么读：**横轴是优化器更新数，纵轴是两个种子的 12 步平滑语言交叉熵；虚线只表示伪标签模型冻结粗路由和粗专家、转入细阶段的位置，其他三组没有在这里切换阶段。
 

@@ -67,7 +67,7 @@ Dense 与平铺条件没有层级交接，为匹配总数据遍历量，直接�
 
 任务损失层级组平均把 `97.2%` 的样本送给同一个父专家，与真实领域的归一化互信息只有 `0.027`。Oracle 把最大负载降到 `12.0%`，语义一致性升到 `0.517`；球面聚类把最大负载降到 `16.0%`，语义一致性达到 `0.287`。打乱标签虽然负载均衡，但语义一致性仍只有 `0.022`，因此“均衡”和“语义正确”被成功区分。
 
-![语义分发与坍缩](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/figures/meeting_semantic_dispatch.png)
+![语义分发与坍缩](figures/meeting_semantic_dispatch.png)
 
 **怎么读：**左图越高表示路由越符合真实领域；右图越低表示越没有挤到单一专家。Oracle 和球面聚类同时满足两个方向，打乱标签只满足右图。
 
@@ -75,7 +75,7 @@ Dense 与平铺条件没有层级交接，为匹配总数据遍历量，直接�
 
 删除匹配领域的父专家，相对删除其他父专家造成了稳定为正的额外损失：Oracle 均值 `0.00533`、95% 区间 `[0.00447,0.00619]`；球面聚类均值 `0.00303`、区间 `[0.00198,0.00409]`。因此在注册定义下，父专家功能门为 `WORK`。但是层级 Oracle 与层级球面聚类的最终意图 F1 只有 `90.63%/90.79%`，低于 Dense 的 `91.35%` 和平铺任务组的 `92.24%`。所以能够声称“形成小幅选择性功能”，不能声称“获得更好的最终任务性能”。
 
-![专家效用与任务性能](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/figures/meeting_expert_utility_and_task.png)
+![专家效用与任务性能](figures/meeting_expert_utility_and_task.png)
 
 **怎么读：**左图误差线整体高于零表示匹配专家确实更有作用；右图越高表示最终任务越好。当前左图通过、右图没有改善。
 
@@ -83,7 +83,7 @@ Dense 与平铺条件没有层级交接，为匹配总数据遍历量，直接�
 
 Oracle 相对同结构任务组的细意图探针提升为 `+0.191` 个 F1 点，但 95% 区间 `[-0.0003,+0.3866]` 跨零；球面聚类提升 `+0.066`，区间也跨零。层级 Oracle 与平铺 Oracle 的探针均值只差 `+0.008`，而打乱标签也产生同量级变化。与此同时，Oracle 细专家残差只有共享残差的 `0.52%--0.56%`，球面聚类也只有 `1.26%--1.39%`。这说明当前系统学会了“送到哪里”，但没有可靠地把细语义写入被送达的细专家表征。
 
-![表征主判据](../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router/figures/primary_probe_effect.png)
+![表征主判据](figures/primary_probe_effect.png)
 
 **怎么读：**虚线零点表示不优于任务组；两个误差线都穿过零，因此不能判定 Oracle 或自监督层级带来了可靠的细表征改善。
 

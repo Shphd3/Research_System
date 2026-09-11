@@ -536,7 +536,7 @@
 > </details>
 </details>
 
-[P3 候选协议](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/protocol.md) 已完成 3.1 并通过独立草案审计，但尚未获得科学设计与资源授权，因此没有创建执行目录，也没有启动实验。
+[P3 候选协议](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/protocol.md) 已完成 3.1 并通过独立草案审计，但尚未获得科学设计与资源授权，因此没有创建执行目录，也没有启动实验。
 
 请确认以下提案：
 
@@ -569,7 +569,7 @@
 > </details>
 </details>
 
-当前起点是：[P3 Protocol 草案](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/protocol.md) 已通过草案审计，但五项科学提案和执行资源仍待你确认。确认后，我将按以下流程工作。
+当前起点是：[P3 Protocol 草案](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/protocol.md) 已通过草案审计，但五项科学提案和执行资源仍待你确认。确认后，我将按以下流程工作。
 
 ## 一、完整执行流程
 
@@ -626,8 +626,8 @@ Astra 的入口应包含：
 
 1. 科学与协议文件
 
-   - [Focus](./daily_research_reports/0906/focus_gmm_pseudolabel_handoff.md)
-   - [Anchor](./Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md)
+   - [Focus](../focus_gmm_pseudolabel_handoff.md)
+   - [Anchor](../../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md)
    - 最终冻结的 `protocol.md`
    - `summary.md`
    - `detailed.md`
@@ -1681,7 +1681,7 @@ GPU-hour ceilings: unchanged
 > </details>
 </details>
 
-[Astra 独立复核草稿](./daily_research_reports/0906/plans/astra_p3_4h100_final_audit_handoff_cn.md)
+[Astra 独立复核草稿](../plans/astra_p3_4h100_final_audit_handoff_cn.md)
 
 作业 `pt-86wcqrbi` 已于 `18:57:28 UTC` 正常 `SUCCEEDED`，实际墙钟约 52 分钟，4 卡 reserved 分配约 `3.45 H100h`，远低于批准上限。
 
@@ -1707,7 +1707,7 @@ H-sem 在两个 seed 都优于 H-shuf，但相对 H-task 出现方向反转：se
 
 [主效应图](/data/250010109/MoE_Router/experiments/20260906_a15_13_e14_p3_matched_training/runs/full-20260906T170500Z/figures/primary_semantic_effects.png)展示四个区间：第三行跨到负方向，是不能通过注册合取门的决定性证据。
 
-完整运行审计见 [acp_and_postrun_audit.json](/data/250010109/MoE_Router/experiments/20260906_a15_13_e14_p3_matched_training/runs/full-20260906T170500Z/receipts/acp_and_postrun_audit.json)，机器裁决见 [verdict.json](/data/250010109/MoE_Router/experiments/20260906_a15_13_e14_p3_matched_training/runs/full-20260906T170500Z/analysis/verdict.json)，批准修订及执行回执已追加到 [protocol.md](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/protocol.md)。
+完整运行审计见 [acp_and_postrun_audit.json](/data/250010109/MoE_Router/experiments/20260906_a15_13_e14_p3_matched_training/runs/full-20260906T170500Z/receipts/acp_and_postrun_audit.json)，机器裁决见 [verdict.json](/data/250010109/MoE_Router/experiments/20260906_a15_13_e14_p3_matched_training/runs/full-20260906T170500Z/analysis/verdict.json)，批准修订及执行回执已追加到 [protocol.md](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/protocol.md)。
 
 H-hard/H-oracle 未运行：虽然核心结果不是 Pass，但研究者尚未确认下一决策确实需要分解 teacher value 与 online handoff，因此条件授权尚未完全触发。Canonical `summary.md`、`detailed.md` 和 Focus/Anchor 认识更新也暂未代写，等待 Astra 独立复核及你的结果判断。
 
@@ -2220,11 +2220,11 @@ H-hard/H-oracle 未运行：虽然核心结果不是 Pass，但研究者尚未�
 > </details>
 </details>
 
-[P3 Summary](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md) 已成为正式结果入口；[Detailed](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/detailed.md) 保存完整证据账目，Astra 交接稿不再承担最终记录。
+[P3 Summary](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md) 已成为正式结果入口；[Detailed](../../../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/detailed.md) 保存完整证据账目，Astra 交接稿不再承担最终记录。
 
 结论保持 `INSUFFICIENT`：12/12 条件在 512、load-off 下合格，但 H-task−H-sem 在种子 17 为 **+0.010320** `[0.009795, 0.010890]`，种子 29 为 **−0.002078** `[-0.002469, -0.001680]`。H-sem 虽在两个种子都优于 H-shuf，仍不能补足相对纯任务训练的反转。
 
-![正式测试效应](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/figures/primary_semantic_effects.png)
+![正式测试效应](../figures/primary_semantic_effects.png)
 
 只读反转审计确认：
 
@@ -2233,7 +2233,7 @@ H-hard/H-oracle 未运行：虽然核心结果不是 Pass，但研究者尚未�
 - 未发现登记范围内的实现、恢复或评估异常。历史连续、初始张量一致、有限值与冻结检查通过，所有专家均有更新，57 项原始 artifact hash 零不匹配。
 - H-sem 明显改变负载并具有正常下降的分类损失，但这些只能定位候选原因，不能证明监督强度是机制。
 
-![开发阶段持续反转](./Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/figures/reversal_development_effects.png)
+![开发阶段持续反转](../figures/reversal_development_effects.png)
 
 唯一后继已锁定为“语义监督强度配对定位”。AI 提议的精确实现是同一 H 架构、教师、512/load-off 和种子 17/29 下比较 $\lambda_p=\lambda_c=0/0.25/0.5$；执行前仍须确认新 Protocol。不得追加种子、H-hard/H-oracle、层位或第二种机制。此次没有启动后继训练。
 

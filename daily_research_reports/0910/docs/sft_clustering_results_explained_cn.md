@@ -94,7 +94,7 @@ SAE 先学习一份描述模型内部向量的“字典”。一个字典成分�
 
 本次独立读取已保存的簇标签和实际专家编号，保留记录身份配对，在原运行之外写出[重算记录](/data/250010109/MoE_Router/experiments/20260910_sft_routing_representation_full_matrix/audits/clustering-explanation-20260910/temporal_recheck.json)与[可重跑脚本](/data/250010109/MoE_Router/experiments/20260910_sft_routing_representation_full_matrix/audits/clustering-explanation-20260910/recheck.py)。
 
-![输入聚类、输出聚类与实际路由变化](/data/250010109/MoE_Router/experiments/20260910_sft_routing_representation_full_matrix/audits/clustering-explanation-20260910/clustering_and_routing_readout.png)
+![输入聚类、输出聚类与实际路由变化](../figures/clustering_and_routing_readout.png)
 
 左图读取开放条件的输入和最终表征，线为 21 条轨迹均值，阴影为轨迹范围；右图保留同一轨迹内专家的实际编号，平均全部 42 条轨迹。两者都是开发集 1480 条记录的描述统计，不能直接比较百分比来判定“谁发生了更大的科学变化”。
 

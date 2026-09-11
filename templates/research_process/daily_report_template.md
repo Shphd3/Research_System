@@ -14,6 +14,13 @@ source_focus: <result_state 为 HUMAN_CONFIRMED 的本周期核心任务 Focus>
 
 保存为 `daily_research_reports/MMDD/docs/daily_report_<topic_slug>.md`。
 
+报告引用的每一张图都必须物理存放在 `daily_research_reports/MMDD/figures/` 下，
+正文一律用日期目录内的相对路径引用（如 `figures/x.png` 或 `../figures/x.png`），
+不得写指向 `Projects/`、工作区或绝对路径的链接。从所属 experiment 的
+`figures/` 复制一份是允许且预期的；复制关系逐条记在
+`daily_research_reports/MMDD/figures/SOURCES.md`，日期目录内的副本只是阅读副本，
+不是独立证据来源。
+
 日报只有在研究者已完成或明确确认 Focus 中的“直接结果—我的结论—仍不能说—
 唯一下一决策”之后才创建。它是一篇紧凑的、问题驱动的自包含 story，用于检查
 实验逻辑是否自洽；不是前置规划、运行时间线或 `detailed.md` 的重写。正文只走
@@ -192,7 +199,8 @@ receipt 和 artifact inventory 留在 `detailed.md`；正文用链接承接。]
 - **Frozen Protocol：** [精确链接]
 - **Canonical Summary：** [精确链接]
 - **Canonical Detailed：** [精确链接]
-- **决定性图表 lineage：** [精确链接]
+- **决定性图表 lineage：** [精确链接；每张图给出 experiment 侧的原始路径与
+  `daily_research_reports/MMDD/figures/` 下的阅读副本路径]
 
 交付前冷读：不了解聊天的读者能否说清“为什么问、每个名词是什么、实验怎样
 区分竞争解释、结果允许说什么、下一步为什么只有一个”；审计读者能否把每个

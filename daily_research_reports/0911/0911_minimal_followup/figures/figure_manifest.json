@@ -1,0 +1,20 @@
+{
+  "producer": "20b17d83f74516c288902ad4f3d94f8989aaa00e900d9a5ea61ac42d716154d6",
+  "font_sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+  "fig1": {
+    "kind": "SYNTHETIC_INTUITION_NOT_DATA",
+    "random_seed": 911
+  },
+  "fig2": {
+    "kind": "MEASURED",
+    "inputs": [
+      "geometry_17.csv",
+      "geometry_29.csv",
+      "geometry_43.csv",
+      "sae_metrics.csv",
+      "grouping_decomposition.csv",
+      "route_response.csv"
+    ],
+    "aggregation": "Three seeds shown; bands are min-max, not confidence intervals"
+  }
+}

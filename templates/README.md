@@ -16,6 +16,8 @@ one-off formats belong in their original records, not in a template archive.
 | `reading/paper_summary_card.md` | A paper or essay needs only a first-pass reading record. |
 | `reading/paper_reading_record.md` | A paper materially needs deeper argument, formula, or experiment notes. |
 | `reading/paper_blog_reading_record.md` | A non-peer-reviewed article materially needs deeper notes. |
+| `execution/run_receipt_template.md` | A job was submitted under `docs/execution_envelope.md` and must certify its resolved tuple, entry point, and monitoring owner. |
+| `execution/acp_submit_template.sh` | Any ACP submission. It resolves the tuple from `docs/execution_envelope.md`, dry-runs by default, enforces the gates, and writes a submission receipt. |
 
 ## Boundaries
 

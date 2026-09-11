@@ -1,0 +1,29 @@
+{
+  "exit_code": 0,
+  "job_name": "verify-env-0911",
+  "raw_output": "job pt-qk9pkesv submitted successfully, please wait for scheduling!\n",
+  "raw_output_path": "/data/250010109/Research_System/acp_receipts/submit-verify-env-0911-20260910T170116Z.txt",
+  "resolved_tuple": {
+    "AEC2": "share-cluster",
+    "ENVELOPE": "docs/execution_envelope.md",
+    "EXECUTION_SURFACE": "acp",
+    "GPUS": "4x H100 80GB SXM5",
+    "GPU_USED": "true",
+    "IMAGE_CUDA": "12.4",
+    "IMAGE_ID": "shphd-lite-0911",
+    "IMAGE_INTERPRETER": "Python 3.10",
+    "IMAGE_TORCH": "2.3",
+    "IMAGE_URL": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+    "PRIORITY": "normal",
+    "QUOTA_TYPE": "reserved",
+    "RESOURCE_PROFILE": "h100-4-reserved",
+    "STORAGE_MOUNT": "01995892-d478-76d8-aec7-13fd8284477e:/data",
+    "SUBMISSION_ENTRY_POINT": "/data/250010109/MoE_Router/experiments/20260808_online_spectral_router_30b_v1/scripts/sco_acp_compat.sh",
+    "WORKER_NODES": "1",
+    "WORKER_PROCESSES": "4",
+    "WORKER_SPEC": "n6ls.iu.i40.4",
+    "WORKSPACE": "share-space"
+  },
+  "status": "SUBMITTED",
+  "submitted_at": "2026-09-10T17:01:20Z"
+}
