@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # ACP submission entry point for Research_System.
 #
-# Every value below comes from docs/execution_envelope.md through
-# `./researchctl envelope`. Nothing in this file restates a profile tuple, an
+# Every value below comes from docs/execution_envelope.md through the dedicated
+# resolver. Nothing in this file restates a profile tuple, an
 # image URL, or a mount.
 #
 # Usage:
@@ -39,10 +39,10 @@ ALLOW_SUBMIT="${ALLOW_SUBMIT:-0}"
 PROTOCOL_APPROVED="${PROTOCOL_APPROVED:-0}"
 SMOKE_GATE_PASSED="${SMOKE_GATE_PASSED:-0}"
 
-args=(envelope --format shell)
+args=(--format shell)
 [[ -n "${SCO_PROFILE}" ]] && args+=(--profile "${SCO_PROFILE}")
 [[ -n "${SCO_IMAGE}" ]] && args+=(--image "${SCO_IMAGE}")
-eval "$("./researchctl" "${args[@]}")"
+eval "$(python3 templates/execution/resolve_execution_envelope.py "${args[@]}")"
 export RESOURCE_PROFILE PROFILE_STATUS EXECUTION_SURFACE WORKSPACE AEC2 WORKER_SPEC \
   WORKER_NODES WORKER_PROCESSES GPUS QUOTA_TYPE PRIORITY STORAGE_MOUNT GPU_USED \
   IMAGE_ID IMAGE_STATUS IMAGE_URL IMAGE_INTERPRETER IMAGE_TORCH IMAGE_CUDA \
@@ -160,5 +160,5 @@ print(f"\nreceipt: {receipt_path}")
 PY
 
 echo
-echo "next: ./researchctl check --repository   # then write the execution certificate from templates/execution/execution_certificate_template.md"
+echo "next: write the execution certificate from templates/execution/execution_certificate_template.md"
 exit "${STATUS}"

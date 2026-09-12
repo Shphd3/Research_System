@@ -150,7 +150,7 @@ legacy_images:
 
 submission:
   entry_point: "/data/250010109/MoE_Router/experiments/20260808_online_spectral_router_30b_v1/scripts/sco_acp_compat.sh"
-  resolver: "./researchctl envelope [--profile KEY] [--image KEY] [--format shell]"
+  resolver: "python3 templates/execution/resolve_execution_envelope.py [--profile KEY] [--image KEY] [--format shell]"
   template: "templates/execution/acp_submit_template.sh"
   note: "sco is not on PATH. The entry point starts a local management proxy, sets SCO_ZONE=cn-sh-01g with the subscription and resource group, then calls the ACP component. Verified working 2026-09-11. The private CCR image listing hangs in this container, so never try to discover an image URL by listing; read it here."
   required_gates: [DRY_RUN=0, ALLOW_SUBMIT=1, PROTOCOL_APPROVED=1, SMOKE_GATE_PASSED=1 for a full run]
@@ -197,9 +197,9 @@ the run must keep reproducing under one exact image.
 
 ## 5. Execution certificate
 
-Submit through `templates/execution/acp_submit_template.sh`. It resolves the
-tuple with `./researchctl envelope`, prints it, defaults to `DRY_RUN=1`, enforces
-the gates, and writes a submission receipt. Point `REMOTE_DIR` at the
+Submit through `templates/execution/acp_submit_template.sh`. Its dedicated
+resolver reads this document, prints the selected tuple, defaults to
+`DRY_RUN=1`, enforces the gates, and writes a submission receipt. Point `REMOTE_DIR` at the
 experiment's own workspace and `RUN_ROOT` at its run root; the repository
 defaults exist only for a quick verification.
 

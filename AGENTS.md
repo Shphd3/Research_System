@@ -45,21 +45,14 @@ Load context according to the task:
 - Read `PROJECTS.md` when selecting a workstream or checking project-level
   scientific state. Read a Graph only for navigation, graph maintenance, or an
   explicitly graph-dependent synthesis.
-- Before changing a registered scientific problem, use
-  `./researchctl context <problem_key> --task "<concrete part>"` and add
-  `--path <expected-path>` when known. Read only the returned Focus or Anchor
-  and sources needed for that part.
-- Repository maintenance does not invent a scientific `problem_key` and does
-  not require registration.
-
-One conversation records at most one open task, but many conversations may
-work on different parts of the same problem. `researchctl` reports same-problem
-and path overlap as advisory information only. An overlap never blocks work,
-expires work, transfers scientific authority, or chooses a winner; the
-researcher decides whether coordination is needed. Close the task with
-`./researchctl release` when its stated part is completed or abandoned. A
-named stale task may be closed as registry cleanup; that does not transfer or
-change scientific authority.
+- Before changing a scientific problem, read its current Focus or Anchor and
+  only the sources needed for the concrete part. Concurrent conversations do
+  not transfer scientific authority; the researcher decides whether
+  coordination is needed.
+- Before proposing model-training implementation, or when the researcher asks
+  to reference or reuse previous project code, read
+  `docs/training_reuse_index.md`, inspect the actual sources, and state what
+  should be reused, adapted, or rejected before writing new code.
 
 Do not use chat history as the canonical research memory.
 
@@ -214,7 +207,6 @@ when applicable.
 |---|---|
 | `AGENTS.md` | Stable behavior, scientific invariants, and boundaries |
 | `PROJECTS.md` | Scientific project map, active workstreams, priorities, and project decisions |
-| `.research/runtime/state.json` | Machine-written task routing and advisory overlap events only |
 | `.research/memory/conversations/` | Versionable, non-canonical cumulative conversation working context only |
 | `focus_<problem>.md` | Human-owned current task, result boundary, and next decision |
 | Anchor | Canonical current research design and its boundary |
@@ -242,8 +234,7 @@ non-destructive verification. Pause only when the next action requires:
   commit, or push;
 - material expansion beyond the requested scope.
 
-Warnings from `researchctl` are not approval gates. Protocol drafting is not
-execution approval.
+Protocol drafting is not execution approval.
 
 ## Completion Rule
 
@@ -295,8 +286,5 @@ maintained reusable-template location.
 Never revert user changes. Commit, push, publish, edit an existing Graph, or
 sync to another repository only when explicitly requested.
 
-Use `./researchctl check --repository` for deterministic checks of current
-Focus state, registered references, Protocol authorization records,
-PROJECTS--Focus drift, Skill references, and declared execution keys against
-`docs/execution_envelope.md`. Treat overlap and derived-view drift as visible
-reminders, not automatic scientific or publication actions.
+Use focused tests and direct source inspection appropriate to the requested
+change. Do not require a repository-wide registry or task-tracking command.

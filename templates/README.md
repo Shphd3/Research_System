@@ -8,6 +8,7 @@ one-off formats belong in their original records, not in a template archive.
 
 | Template | Use only when |
 |---|---|
+| `research_process/task_start_template.md` | The researcher opens a conversation and wants one task clarified and advanced from minimal context. |
 | `research_process/focus_writing_template.md` | The researcher activates or resets one workstream question. |
 | `research_process/parking_lot_template.md` | A project needs a concise list of consequential inactive questions and has no local format. |
 | `research_process/continuation_brief_template.md` | A workstream is handed to a different conversation and needs one current entry point. |

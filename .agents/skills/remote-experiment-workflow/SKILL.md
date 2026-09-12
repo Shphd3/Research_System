@@ -54,9 +54,9 @@ not the supported entry point — `sco` is not on PATH and the envelope names th
 compatibility entry point. `references/remote_hosts.yaml` describes four-hour
 debug containers, not the reserved compute node.
 
-Submit through `templates/execution/acp_submit_template.sh`. It resolves the
-tuple with `./researchctl envelope`, prints it, defaults to a dry run, enforces
-the gates, and writes a submission receipt:
+Submit through `templates/execution/acp_submit_template.sh`. Its dedicated
+resolver reads `docs/execution_envelope.md`, prints the selected tuple, defaults
+to a dry run, enforces the gates, and writes a submission receipt:
 
 ```bash
 JOB_NAME=<name> REMOTE_CMD='<command>' bash templates/execution/acp_submit_template.sh

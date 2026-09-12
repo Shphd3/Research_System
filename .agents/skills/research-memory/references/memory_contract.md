@@ -34,7 +34,7 @@ stores that record:
 A new Codex conversation may read a previous record to resume the same logical
 work, but its first write creates a new record under its own name. It must not
 overwrite the previous conversation's `memory.md`. Here, `conversation` is a
-continuity record; it is not a `researchctl` owner, a lock, or scientific
+continuity record; it is not a task owner, a lock, or scientific
 authority.
 
 Other files may exist inside the record directory (for example a one-time
@@ -175,10 +175,9 @@ If the file changed incompatibly since it was loaded, do not silently
 overwrite the newer checkpoint. Reconcile the two current states or keep
 separate logical-conversation records and let the researcher decide.
 
-A checkpoint does not transfer or close a `researchctl` task. When a new thread
-will modify a registered scientific problem, run the normal `researchctl
-context` operation for that thread. Treat any old-thread overlap as advisory;
-do not infer authority from the memory record.
+A checkpoint does not transfer scientific authority. When a new thread modifies
+a scientific problem, it first reads the owning Focus or Anchor. Do not infer
+authority from the memory record.
 
 ## Retrieval And Resume
 

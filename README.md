@@ -10,6 +10,9 @@ corresponding execution workspace.
   boundaries.
 - `PROJECTS.md`: active projects and workstreams, their priorities, current
   Focus paths, scientific boundaries, and resume points.
+- `docs/training_reuse_index.md`: verified map of previous training code,
+  datasets, tokenizer, historical runs, and reuse warnings. Read it before a
+  new model-training implementation or an explicit prior-code reuse request.
 - `daily_research_reports/MMDD/focus_<problem>.md`: one workstream's living
   meeting-cycle question, confirmed plain-language design, result boundary,
   and next decision.
@@ -110,26 +113,16 @@ a scientific claim.
 
 ## Operational Coordination
 
-`researchctl` is a tracked repository-local executable. It needs no package
-installation or background process:
+Read the owning Focus, Anchor, Protocol, or result record before changing a
+scientific problem. Multiple conversations may work independently; the
+researcher decides when coordination is needed. There is no repository-local
+task registry or mandatory global checker.
 
-```text
-./researchctl context <problem_key> --task "<concrete part>" [--path <path> ...]
-./researchctl release [task_id]
-./researchctl status [problem_key] [--all]
-./researchctl check [problem_key]
-./researchctl check --repository
-```
-
-Use `context` before changing a registered scientific problem. Repository
-maintenance and read-only explanations need no invented problem key. Multiple
-conversations may handle different parts of the same problem; same-problem and
-path overlap are advisory only and never block work or transfer authority.
-
-If this repository directory survives a container restart, both `researchctl`
-and repository Skills remain available without reinstallation. The runtime
-registry survives only when `.research/runtime/` is on persistent storage; it
-is operational state and is not restored by a fresh Git clone.
+Training submission remains deterministic without a general control plane:
+`templates/execution/acp_submit_template.sh` calls the small, dedicated
+`templates/execution/resolve_execution_envelope.py` resolver. Skills explain
+the workflow; this resolver only turns selected profile and image keys into the
+exact runtime values required by the shell command.
 
 Conversation memory is ordinary repository content rather than runtime state.
 It may be versioned when continuity across checkouts is wanted; a fresh clone
