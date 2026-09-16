@@ -44,7 +44,8 @@ Read:
 4. `protocol.md` for the experiment;
 5. the experiment workspace `AGENTS.md`, if present;
 6. `docs/execution_envelope.md` for the target profile key, the image key with
-   its runtime layer, and the submission entry point.
+   its runtime layer, and the submission entry point;
+7. `docs/training_observability_contract.md` for any model-training run.
 
 The envelope overrides this skill's and `sco-control`'s platform defaults. Do
 not restate a profile tuple, an image URL, or a storage mount from memory: read
@@ -72,6 +73,17 @@ from `stream-logs`, and do not call a run complete until its pod log exists.
 Do not start from scripts or metrics before the anchor states the decision
 question and the protocol states the primary metric, conditions, and
 success/failure/insufficient-evidence rules.
+
+For model training, reject a preflight that does not implement the repository's
+TensorBoard and comparison contract. Require the token-axis primary task loss,
+its update-axis copy, the raw and weighted forms of each applicable objective
+component, globally reduced valid-token counting, and exact coordinate
+restoration on resume. Do not impose a named regularizer on a model that does
+not define it. Compare model quality primarily by cumulative valid prediction
+tokens. Optimizer updates are directly comparable only when effective tokens per
+update are identical. A GPU-count change must preserve the effective global
+batch through microbatch or accumulation settings; token-axis alignment alone
+does not make different global batches a strict matched comparison.
 
 Before implementation, smoke, or full run, verify that the Protocol records
 all audit blocks as confirmed, cross-block consistency as passed, and explicit
@@ -126,6 +138,16 @@ Before submission, make explicit:
 - full command;
 - primary pass/fail metric;
 - expected artifacts.
+
+For a model-training submission, also make explicit:
+
+- TensorBoard log directory and logging rank;
+- primary-loss tag and each applicable regularization or auxiliary component,
+  including raw/weighted tags, coefficients, and reduction rules;
+- effective global batch and valid tokens per optimizer update;
+- cumulative token budget and common token checkpoints;
+- token-based warmup, decay, evaluation, checkpoint, and stopping schedule;
+- the smoke evidence that token counting and resume continuity are correct.
 
 A submission that resolves to the envelope's default profile under an already
 authorized protocol scope is execution, not a new approval gate. Anything else —

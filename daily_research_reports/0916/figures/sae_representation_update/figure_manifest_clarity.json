@@ -1,0 +1,83 @@
+{
+  "scope": "CPU-only redraw of frozen metric tables; existing LM figure copied as descriptive context",
+  "primary_representation_tokens_B": [
+    0,
+    0.5,
+    1,
+    3,
+    5,
+    10
+  ],
+  "Fisher": "parent-conditioned fine ratio; absolute point estimates; original paired uncertainty is not recomputed",
+  "LM_context": "0-15B descriptive training curve, 200-update trailing arithmetic mean; Dense joins continuation at 10B; not held-out loss or causal evidence",
+  "inputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/fisher_metrics.csv",
+      "sha256": "dc844ad17a8301487b3ddbb6512c5831eb4fc6f8939099f6c25147ab3938169a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/B_common_direction/tables/fisher_metrics_B.csv",
+      "sha256": "7734ed74fd77e7474a5a3cd624576e2ba964b7117b822ebdf00f5b026bcc3d26"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/representation_health.csv",
+      "sha256": "868e892093f99486cdf165b12a39584543b934f85c34e62ad66f1b0cabb13533"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/runs/sae_mediated_formal50b_4h100_20260914T153000Z/analysis/lm_loss_three_way_to_15b_20260916.png",
+      "sha256": "8079812e4615274fe8f65e1624a321651716e2cf3aa428638aa73201d55b9474"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/runs/sae_mediated_formal50b_4h100_20260914T153000Z/analysis/lm_loss_three_way_to_15b_20260916.json",
+      "sha256": "d31b7feb0e35168aa66512cf60e559206382911771cf22a33b7a95f6cb57a60c"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/07_fisher_absolute_raw.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/07_fisher_absolute_raw.png",
+      "sha256": "b8a4545981f60ca530adaa994948d618f0efe86e4584bf32e8c59b17025b4d50"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/07_fisher_absolute_raw.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/07_fisher_absolute_raw.svg",
+      "sha256": "497195aac5743dba8b580e71c76c530e79c1e211eb88a6d9d43ce545d0ed6384"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/08_fisher_absolute_after_pc1.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/08_fisher_absolute_after_pc1.png",
+      "sha256": "e99e32a58e9e0a494e9665cf16f603688cdcc01d4a3c53f39155030561331638"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/08_fisher_absolute_after_pc1.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/08_fisher_absolute_after_pc1.svg",
+      "sha256": "65a6dd6949f7f24cc7b49ee901b8371157e5a63bfd34177b94871280618b0236"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/09_reconstruction_fvu_trajectory.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/09_reconstruction_fvu_trajectory.png",
+      "sha256": "a1c38af276a35fff2cbda003b2d3bb227a3df552a40d68a4da59a455f624ac8e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/09_reconstruction_fvu_trajectory.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/09_reconstruction_fvu_trajectory.svg",
+      "sha256": "d390266afb8125c5ff5596a8493a45edf005af171f1741c3fe52f1699d28eecd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/reconstruction_10B_explained.csv",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/reconstruction_10B_explained.csv",
+      "sha256": "a2208a96197f350c2c1c05f26f01a785dddaf763d67d84febd190fe4b11f5dbd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/10_training_loss_15B_context.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/10_training_loss_15B_context.png",
+      "sha256": "8079812e4615274fe8f65e1624a321651716e2cf3aa428638aa73201d55b9474"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_clarity/10_training_loss_15B_context.json",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/10_training_loss_15B_context.json",
+      "sha256": "d31b7feb0e35168aa66512cf60e559206382911771cf22a33b7a95f6cb57a60c"
+    }
+  ],
+  "script_sha256": "8039d1b64e624fbc316bc549d8ad90d9f118d223a91b1bf039cc73d4e139d984"
+}

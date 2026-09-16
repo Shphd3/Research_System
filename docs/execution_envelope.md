@@ -30,7 +30,7 @@ still requires its protocol execution scope to be authorized.
 This block is the only copy of these values.
 
 ```yaml
-updated: "2026-09-11"
+updated: "2026-09-15"
 default_profile: h100-4-reserved
 default_image: shphd-lite-0911
 
@@ -50,8 +50,64 @@ researcher_decisions:
   - date: "2026-09-11"
     scope: submission
     decision: "The ACP submission entry point is verified working from the new container. The private CCR image listing hangs there, so an image URL is registered only from the researcher's announcement, never discovered by listing."
+  - date: "2026-09-13"
+    scope: resource
+    decision: "The researcher explicitly reactivated 5090-8-spot for the native Dense baseline Smoke and, only after that Smoke passes, its matched 10B run. The profile requires explicit selection and does not replace h100-4-reserved as the default."
+  - date: "2026-09-13"
+    scope: image
+    decision: "New 5090 jobs must use the current default shphd-lite-0911 image. ngc-pytorch-25-06 is prohibited for new submissions and remains registered only as immutable provenance for earlier runs. If shphd-lite-0911 lacks SM120 support, activate an isolated /data runtime layer inside the job; never modify the base image."
+  - date: "2026-09-13"
+    scope: resource
+    decision: "Use 5090-4-spot for the transitional native Dense baseline Smoke. Keep the formal baseline at the matched 5090-8-spot topology and check live eight-GPU capacity only after the four-GPU Smoke passes."
+  - date: "2026-09-13"
+    scope: resource
+    decision: "For the fixed-heldout SAE checkpoint audit only, the researcher explicitly authorized either two H100 or two RTX 5090 GPUs under SPOT quota. Use h100-2-spot first because it runs the qualified H100 software path without the 5090 SM120 runtime layer; do not treat this as a general profile change."
+  - date: "2026-09-13"
+    scope: resource
+    decision: "For analysis1 only, the researcher explicitly authorized a checkpoint-only Smoke followed by the full semantic analysis on 5090-2-spot. Supervise through normal cluster startup, then stop polling without stopping the job. This authorization excludes training, checkpoint mutation, and interruption of any existing run."
+  - date: "2026-09-14"
+    scope: resource
+    decision: "The researcher explicitly authorized the native Dense baseline to resume from its exact complete 10B checkpoint on 5090-8-spot and extend the same trajectory to a cumulative 50B-token target. Preserve the eight-rank global batch and checkpoint lineage; this does not authorize a fresh initialization or another profile."
+
+  - date: "2026-09-15"
+    scope: resource
+    decision: "For the 0915 four-layer online SAE sidecar exploration, the researcher explicitly made h100-1-spot and TWO independent 5090-2-spot jobs available (four RTX5090 GPUs total). Each 5090 job remains one node with two GPUs; this is not a cross-node distributed job. This supersedes older Spot deferral within this scope, preserves the default profile, and does not approve a token budget or submission."
+  - date: "2026-09-15"
+    scope: resource_and_execution
+    decision: "For the independent 0915 three-model existing-checkpoint representation audit, the researcher explicitly replaced h100-2-spot with one single-node 5090-4-spot full run and authorized submission after local correctness checks. The job must execute all registered S2-S6 analyses, including 0B evolution figures and fit-only first-singular-direction removal; ETA is not a scale-reduction gate. This authorization excludes new training, checkpoint mutation, automatic resource fallback, commit, and push."
+  - date: "2026-09-15"
+    scope: resource_and_execution
+    decision: "For the same independent 0915 three-model audit, the researcher stopped the still-pending 5090-4-spot attempt after observing competing eight-RTX5090 usage and explicitly returned the full S2-S6 submission to one single-node h100-2-spot job. This latest decision supersedes the immediately preceding 5090-4 choice; analysis scope, 0B figures, common-direction removal, no-training boundary, and no ETA scale gate remain unchanged."
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "After the h100-2-spot attempt pt-20q3i7pd failed during S2 before any qualification unit completed, the researcher explicitly replaced it with one single-node h100-4-reserved full run and authorized immediate submission. Use four independent checkpoint workers with whole-task assignment; preserve the complete S2-S6 scope, 0B figures, B2/B3 common-direction removal, no-training boundary, and registered evidence rules."
+
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "For the eight-layer native-forward SAE sidecar C/T pair, the researcher explicitly authorized one two-RTX5090 Spot qualification job followed, only after Smoke PASS, by TWO independent single-node eight-RTX5090 Spot runs, each 50B valid prediction tokens. Both arms share the existing training contract except reconstruction-input detach. Observe formal startup only; no ongoing supervision. This does not replace the default profile."
+
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "The researcher superseded the old post-Norm2 C/T plan with one final-layer raw Attention-output sidecar: no side Norm, one h100-4-reserved Smoke, then only after Smoke PASS one fresh 50B full run on the same reserved node. Once that full run is submitted, the later first-layer raw Attention-output sidecar Smoke must use 5090-2-spot and must not use the reserved H100 node. This does not authorize an eight-RTX5090 run or any old C/T launcher."
 
 profiles:
+  h100-1-spot:
+    status: requires_explicit_selection
+    selected_on: "2026-09-15"
+    allowed_scope: "0915 four-layer online SAE sidecar exploration; resource selection only, experiment execution still follows its approved scope"
+    selection_source: "Researcher explicitly stated one H100 Spot can be submitted in 0914-training scheduling on 2026-09-15"
+    verified_by: "2026-09-15 read-only AEC2 list-workerspec: n6ls.iu.i40.1 exists with one 80GB GPU; Spot availability and queue time are not guaranteed"
+    surface: acp
+    workspace: share-space
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.1
+    worker_nodes: 1
+    worker_processes: 1
+    gpus: "1x H100 80GB SXM5"
+    quota_type: spot
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
   h100-4-reserved:
     status: default
     surface: acp
@@ -78,6 +134,40 @@ profiles:
     priority: normal
     storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
     gpu_used: true
+  h100-2-spot:
+    status: requires_explicit_selection
+    selected_on: "2026-09-13"
+    scope_extended_on: "2026-09-15"
+    allowed_scope: "fixed-heldout SAE checkpoint audit; 0915 three-model common-checkpoint 0-10B representation audit, resource selection only until its execution scope is authorized"
+    selection_source: "Researcher selected remote two-H100 execution and explicitly corrected the quota to Spot for the 0915 three-model audit"
+    verified_by: "2026-09-15 read-only AEC2 list-workerspec: n6ls.iu.i40.2 has two 80GB GPUs, 44 vCPUs and 480 GiB host memory; Spot availability, queue time and uninterrupted runtime are not guaranteed"
+    surface: acp
+    workspace: share-space
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.2
+    worker_nodes: 1
+    worker_processes: 2
+    gpus: "2x H100 80GB SXM5"
+    quota_type: spot
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
+  "5090-2-spot":
+    status: requires_explicit_selection
+    selected_on: "2026-09-13"
+    scope_extended_on: "2026-09-15"
+    allowed_scope: "fixed-heldout SAE checkpoint audits; analysis1 checkpoint-only semantic evaluation; 0915 four-layer online SAE sidecar exploration under separately adopted execution scope; retired 0916 paired sidecar Smoke; later 0916 first-layer raw Attention-output sidecar Smoke after the final-layer 4H100 full run is submitted"
+    surface: acp
+    workspace: share-space
+    aec2: computing-cluster-5090-01g
+    worker_spec: n12lp.nn.i10a.2
+    worker_nodes: 1
+    worker_processes: 2
+    gpus: "2x RTX 5090 32GB"
+    quota_type: spot
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
   h100-4-spot:
     status: deferred
     deferred_on: "2026-09-10"
@@ -92,8 +182,8 @@ profiles:
     priority: normal
     storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
   "5090-8-spot":
-    status: deferred
-    deferred_on: "2026-09-10"
+    status: requires_explicit_selection
+    reactivated_on: "2026-09-13"
     surface: acp
     workspace: share-space
     aec2: computing-cluster-5090-01g
@@ -104,6 +194,24 @@ profiles:
     quota_type: spot
     priority: normal
     storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
+  "5090-4-spot":
+    status: requires_explicit_selection
+    selected_on: "2026-09-13"
+    scope_extended_on: "2026-09-15"
+    allowed_scope: "native Dense baseline scopes already registered; one full 0915 three-model existing-checkpoint representation audit after local correctness checks"
+    selection_source: "Researcher explicitly selected the currently available single-node four-RTX5090 Spot profile and authorized the full registered audit on 2026-09-15"
+    surface: acp
+    workspace: share-space
+    aec2: computing-cluster-5090-01g
+    worker_spec: n12lp.nn.i10a.4
+    worker_nodes: 1
+    worker_processes: 4
+    gpus: "4x RTX 5090 32GB"
+    quota_type: spot
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
   cpu-only-local:
     status: restricted
     surface: local_or_container
@@ -134,12 +242,12 @@ images:
     verified_by: "A15_08 E02/E06 H100 pair; 2026-09-10 reserved analysis pod"
     note: "Replaced by shphd-lite-0911 as the default. Runs that were qualified under it keep reproducing with it."
   ngc-pytorch-25-06:
-    status: superseded
+    status: prohibited_for_new_runs
     url: "registry.cn-sh-01.sensecore.cn/lepton-trainingjob/ngc-pytorch:25.06-cu12.9-py3.12-ubuntu24.04"
     interpreter: "Python 3.12"
     torch: "2.8"
     cuda: "12.9"
-    note: "Used by A6R1 pt-b9r9id8m and earlier A15 protocols. Keep to reproduce those runs; do not pick it for a new run."
+    note: "Used by A6R1 pt-b9r9id8m and earlier A15 protocols. Registry entry is provenance only. The resolver rejects it for every new submission."
 
 legacy_profiles: [local-2xh100, local-2xh100-remote-8x5090-fallback, cpu_cached_activation_analysis_no_gpu, h100-1-spot-user-selected]
 

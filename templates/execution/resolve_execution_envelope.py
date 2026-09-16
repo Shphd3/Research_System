@@ -76,6 +76,8 @@ def resolve(profile_arg: str | None, image_arg: str | None) -> dict[str, str]:
     image = images[image_key]
     if profile.get("status") == "deferred":
         fail(f"profile is deferred and unavailable: {profile_key}")
+    if image.get("status") in {"deferred", "prohibited_for_new_runs"}:
+        fail(f"image is unavailable for new submissions: {image_key}")
     submission = data["fields"].get("submission", {})
     return {
         "resource_profile": profile_key,

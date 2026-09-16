@@ -1,0 +1,160 @@
+{
+  "created_at": "2026-09-14T11:31:17.227034+00:00",
+  "scope": "document and read-only source audit; no implementation, model loading, tests or GPU submissions",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/runs/full_50b_bottleneck8_202609121130/resolved_config.json",
+      "exists": true,
+      "sha256": "3b362f50fba87a4fbe1aeea1c514d3d822abec6129d8e9583eca9e49eb9a9dfd",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0914/meeting/meeting01/0914 SAE model training.md",
+      "exists": true,
+      "sha256": "c89cde2d05106bdb444f41fa1b62ca0de7c66fe2cfe665606e97360fa2ed9986",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/engine.py",
+      "exists": true,
+      "sha256": "f1118762040ba5e380e6b4e763a1b90eed82daa6665aca3d44d9f6b9d02d26db",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/model/sae.py",
+      "exists": true,
+      "sha256": "c8c22d29eb6ce0ace461fd3470e2952a1d55d1c5b82740cb8130984f9536e866",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/model/modeling_qwen3_sae.py",
+      "exists": true,
+      "sha256": "6484b0089efd6a9d0edca512647602d36a2c33223ca8e2db5f6b54b5837b9675",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/model/configuration_qwen3_sae.py",
+      "exists": true,
+      "sha256": "7c953ce91df503eeb92f6ea109074000efb9cfd435c1c372b0c00de47b39799d",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/checkpoint.py",
+      "exists": true,
+      "sha256": "ea3610126caabe8896bee8d4e52380b5fd8ba65a5b96088657da05edaf18468a",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/train.py",
+      "exists": true,
+      "sha256": "18c3cee64882d9f413a1050d0704f8272985d301f13ab22f90701cdca124fb56",
+      "matches_input_audit": true
+    },
+    {
+      "path": "/data/250010109/Research_System/PROJECTS.md",
+      "exists": true,
+      "sha256": "6114382c05ed9dbdf3c36b808d56599255a3c8e9c95db5d858b8ea1a6407964b",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/Research_System/AGENTS.md",
+      "exists": true,
+      "sha256": "3f33b99680f901399d8624e1cce3db7694ac5ddde4db6893ec528a1321ab98d6",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/Research_System/docs/training_reuse_index.md",
+      "exists": true,
+      "sha256": "5807c01834c66c343a3c70331af761aff74f30998aa754e4fed4f1c1764aad2c",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/Research_System/docs/training_observability_contract.md",
+      "exists": true,
+      "sha256": "a8825fc3816c4c48076ad2d5b987963f416524d5761df0d43d1aedd83cc7a5a9",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/Research_System/docs/execution_envelope.md",
+      "exists": true,
+      "sha256": "eb5e01e8256d0aae122242f1498bba9b8c56625a04096ddf33f784f6e3dcfcdb",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0907/focus_sae_flat_router_functional_training.md",
+      "exists": true,
+      "sha256": "8d90f72e1ec301df118b34f0288b6bab05698c557966f2f637480082ebdeefbf",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0914/docs/analysis1/08_complete_experiment_report_cn.md",
+      "exists": true,
+      "sha256": "edf5c4684f9dd50aa72bc7f66653b07ffa2813dd07df1552615117c4a6d13c2b",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/README.md",
+      "exists": true,
+      "sha256": "8b7d89e522712f907899e27d85312f025e1fa2405c0117ee3c6ac5d3cec95536",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/docs/reuse_sources.json",
+      "exists": true,
+      "sha256": "ee7b2946e42473f29a991d42ecbc0ed49edbf54d8ed17bc0b05aacce3e88cde1",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/data.py",
+      "exists": true,
+      "sha256": "cd09bff846a722133d7511f07187a5a95ed240be259d112fbe74872814bacd1f",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/data_contract.py",
+      "exists": true,
+      "sha256": "0930eb39f0fefbd04af0123900549b888f53629c423a2ea4551c28cbacebc962",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/dense_sae/tokenizer_contract.py",
+      "exists": true,
+      "sha256": "88018e5a81a8dbbd937168d4343305d646b45399efede7f6261682ee3cba8481",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/scripts/runtime.sh",
+      "exists": true,
+      "sha256": "520b51f782147815dc6682dfd1150cc08c5598faef946d4fd4ed15d8abdb4cb5",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+      "exists": true,
+      "sha256": "8a91bdbb0eb537bd80612015b99f178ca1cbb54a2fa7cf8442ab1eae7f0a2f2d",
+      "matches_input_audit": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/semantic_confirmation_v1.py",
+      "exists": true,
+      "sha256": "9070571ddb507b4a2e950e5e77c44a957e899c45bb2c2843f52499244f620943",
+      "matches_input_audit": null
+    }
+  ],
+  "input_source_matches": true,
+  "ownership": {
+    "project_map": "Projects/from-attention-to-search/; A15 is a candidate family only",
+    "current_related_focus": "daily_research_reports/0907/focus_sae_flat_router_functional_training.md",
+    "focus_actual_anchor": "15_13_11_structural_routing_incremental_learning_anchor.md",
+    "map_lists_older_anchor": "15_13_10_sae_flat_router_functional_anchor.md",
+    "new_question_owner": "UNCONFIRMED",
+    "candidate_problem_key": "sae_aux_backbone_domain_readability",
+    "project_map_modified": false
+  },
+  "dataset_card": {
+    "url": "https://huggingface.co/datasets/machelreid/m2d2",
+    "checked": "eight requested configurations listed; script-based loading; no corpus download or quotas verified"
+  },
+  "proposed_execution_root_exists": false,
+  "new_training_authorized": false
+}

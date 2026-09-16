@@ -1,0 +1,112 @@
+{
+  "scope": "CPU rendering of existing caches/tables plus explicitly synthetic intuition",
+  "new_model_inference": false,
+  "optimizer_updates": 0,
+  "artifacts": {
+    "01_intuition.png": {
+      "kind": "SYNTHETIC_NOT_EVIDENCE",
+      "description": "Seed914 manually constructed two-layer intuition; no real PCA or SAE output.",
+      "execution_copy": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/output/01_intuition.png",
+      "sha256": "687d55f6c1d484a7a3443b3c97b546b3fdeeb0ae5dc3e239668a78cec0445e87"
+    },
+    "01_intuition.pdf": {
+      "kind": "SYNTHETIC_NOT_EVIDENCE",
+      "description": "Seed914 manually constructed two-layer intuition; no real PCA or SAE output.",
+      "execution_copy": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/output/01_intuition.pdf",
+      "sha256": "3e647a5100d04ce4516e4f7263fb45d71563c6fe2c5dfa595c2f961c51711c4e"
+    },
+    "02_observed_distributions.png": {
+      "kind": "OBSERVED_CACHE_RERENDER",
+      "description": "Real existing h PCA and sparse activation subset, no new model inference; visualization selection is post hoc descriptive.",
+      "execution_copy": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/output/02_observed_distributions.png",
+      "sha256": "9b6762bdd655de35e411e0625282485b89d607f4c9928be3c2c53865a53f2987"
+    },
+    "02_observed_distributions.pdf": {
+      "kind": "OBSERVED_CACHE_RERENDER",
+      "description": "Real existing h PCA and sparse activation subset, no new model inference; visualization selection is post hoc descriptive.",
+      "execution_copy": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/output/02_observed_distributions.pdf",
+      "sha256": "226382596b485c6a4d03616f5ff904d79f3b31c272c41f2088cf33295ffdacdf"
+    },
+    "03_observed_metrics.png": {
+      "kind": "OBSERVED_TABLE_RERENDER",
+      "description": "Existing relation means/intervals and global firing rank correlations only.",
+      "execution_copy": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/output/03_observed_metrics.png",
+      "sha256": "0787b8fcb920ddf3fbf5d6e320f1d100824798990ea439d8fd5c4d826b0ff741"
+    },
+    "03_observed_metrics.pdf": {
+      "kind": "OBSERVED_TABLE_RERENDER",
+      "description": "Existing relation means/intervals and global firing rank correlations only.",
+      "execution_copy": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/output/03_observed_metrics.pdf",
+      "sha256": "4e83b014e954bb72360ff7d905d2be08de92fcbfb63e02ad537a14e81c897eec"
+    },
+    "04_user_training_snapshot.png": {
+      "kind": "USER_SUPPLIED_IMAGE",
+      "source": "/root/.codex/attachments/d9442038-3c4d-46b8-8907-bc259861838c/codex-clipboard-1029605c-a0a3-432d-a27a-e897b8365818.png",
+      "sha256": "47e8a6dc54853957562c9b3512d3447167d5c2fc42378a42a25484dc2e464def",
+      "boundary": "Copied unchanged. Curve source rows and smoothing implementation are not audited by this rendering script."
+    }
+  },
+  "sources": {
+    "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/analysis_runs/analysis1_20260913/full/caches/0p5b.npz": "1fe65a122c868fb7cff2f9e5cc31816a0f69df8cbc295cbeff2b027ad60d789b",
+    "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/analysis_runs/analysis1_20260913/full/caches/1b.npz": "b3021b96b56b73d8b336d53ba5b733befedd1440e65cac3a1604642908a1b7c2",
+    "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/analysis_runs/analysis1_20260913/full/caches/3b.npz": "cf2572d9e2624aed524bf2642e05705d77f1e5f27676f8416bc5c2dc83088785",
+    "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/analysis_runs/analysis1_20260913/full/caches/5b.npz": "4a15bbc3b9113130880b6ac427f89332118ee9582dc6c50774fa15557e7cd45c",
+    "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/analysis_runs/analysis1_20260913/full/caches/10b.npz": "bfb4ae9466a155ebcfc24e0d883410f176db0a1d8f14e75d0bb7936e30711cd9",
+    "/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining/analysis_assets/semantic_panel_v1.jsonl": "7d11e9625eb7fcf4885e46ca7928926b621d6c6e4485d06f5bd86cc91dc69c55",
+    "/data/250010109/Research_System/daily_research_reports/0914/docs/analysis1/tables/semantic_raw_relation_margins.csv": "3138af46754f2539b2a206987268f9feb0f1e7bf31f3d7684224102f655eba78",
+    "/data/250010109/Research_System/daily_research_reports/0914/docs/analysis1/tables/first_stage_metrics.csv": "58475743af86376060dafab0f405cab69eb460b5dfcb5d6b04f87a168781cc8e"
+  },
+  "activation_display": {
+    "feature_ids": [
+      223,
+      1639,
+      5462,
+      6015,
+      6576,
+      6884,
+      8937,
+      9055,
+      9883,
+      10539,
+      12449,
+      13570,
+      15683,
+      15721,
+      15928,
+      16156,
+      17806,
+      21973,
+      22719,
+      24506,
+      24960,
+      27270,
+      28042,
+      29234
+    ],
+    "selection": "24 highest positive firing counts pooled across five train partitions; sorted by numeric ID",
+    "test_row_order": "coarse,leaf,fact_id,style_id",
+    "per_row_normalization": "positive amplitudes divided by total amplitude across all 30000 coordinates",
+    "color_max": 0.22545239329338074,
+    "zero_rows": {
+      "0p5b": 0,
+      "3b": 0,
+      "10b": 0
+    },
+    "semantic_identity_claim": false
+  },
+  "pca": {
+    "fit": "all five train h caches; randomized solver seed17; same as original method",
+    "explained_variance_ratio": [
+      0.3129516839981079,
+      0.17133337259292603
+    ],
+    "axes_fixed": true
+  },
+  "render_seconds": 2.5868205036967993,
+  "script_sha256": "1b532aebde21242b04ed94551c7a6a812c3fffa1572894f59af0ad13c9c2ea0e",
+  "font": {
+    "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/fonts/NotoSansCJKsc-Regular.otf",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf"
+  }
+}

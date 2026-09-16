@@ -13,6 +13,9 @@ corresponding execution workspace.
 - `docs/training_reuse_index.md`: verified map of previous training code,
   datasets, tokenizer, historical runs, and reuse warnings. Read it before a
   new model-training implementation or an explicit prior-code reuse request.
+- `docs/training_observability_contract.md`: required TensorBoard loss records,
+  valid-token comparison coordinate, global-batch matching, and schedule/resume
+  rules for every new model-training run.
 - `daily_research_reports/MMDD/focus_<problem>.md`: one workstream's living
   meeting-cycle question, confirmed plain-language design, result boundary,
   and next decision.

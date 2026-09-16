@@ -1,0 +1,361 @@
+{
+  "kind": "user_requested_posthoc_descriptive_extension",
+  "training_updates": 0,
+  "all_local_inference_completed": true,
+  "requested_endpoint_B": 19,
+  "actual_endpoint_tokens": 19135583744,
+  "features_before": 30,
+  "features_now": 150,
+  "retained_original_feature_ids": [
+    1603,
+    1639,
+    1765,
+    2546,
+    3640,
+    5177,
+    5462,
+    6015,
+    6884,
+    9883,
+    10539,
+    10563,
+    10949,
+    11436,
+    14178,
+    16690,
+    17424,
+    18847,
+    21202,
+    21615,
+    22719,
+    24092,
+    24506,
+    24712,
+    25520,
+    25898,
+    26308,
+    26729,
+    28042,
+    29179
+  ],
+  "groups": {
+    "共享": [
+      28042,
+      6015,
+      10539,
+      1639,
+      22719,
+      5462,
+      12449,
+      12890,
+      7662,
+      16156,
+      15928,
+      6576,
+      27270,
+      8937,
+      15683,
+      223,
+      13744,
+      20766,
+      29234,
+      28987,
+      15093,
+      7953,
+      932,
+      25398,
+      16889,
+      16545,
+      26844,
+      136,
+      27581,
+      15897
+    ],
+    "数学": [
+      9883,
+      2546,
+      10563,
+      16690,
+      29179,
+      11436,
+      28980,
+      27833,
+      17602,
+      14007,
+      22446,
+      6408,
+      14979,
+      10460,
+      7337,
+      27486,
+      4514,
+      9947,
+      21702,
+      34,
+      27610,
+      3982,
+      14954,
+      21069,
+      14779,
+      15124,
+      2228,
+      15721,
+      14466,
+      22342
+    ],
+    "物理": [
+      6884,
+      1603,
+      25898,
+      18847,
+      24092,
+      1765,
+      20320,
+      8711,
+      1477,
+      24960,
+      2885,
+      29374,
+      9055,
+      3217,
+      14666,
+      1537,
+      23824,
+      17595,
+      20248,
+      5205,
+      12776,
+      563,
+      19132,
+      5140,
+      13701,
+      20435,
+      24440,
+      21697,
+      11008,
+      14162
+    ],
+    "生物": [
+      24506,
+      10949,
+      14178,
+      21202,
+      3640,
+      5177,
+      22396,
+      4696,
+      7625,
+      12204,
+      27706,
+      20671,
+      18272,
+      13570,
+      6179,
+      15760,
+      1482,
+      7902,
+      5747,
+      25352,
+      18723,
+      16451,
+      24157,
+      18775,
+      4829,
+      27244,
+      17939,
+      26962,
+      10387,
+      23120
+    ],
+    "历史": [
+      21615,
+      25520,
+      24712,
+      17424,
+      26729,
+      26308,
+      1059,
+      22811,
+      10787,
+      11827,
+      3765,
+      3669,
+      21554,
+      14099,
+      8541,
+      21234,
+      22462,
+      11424,
+      4465,
+      18774,
+      25796,
+      19979,
+      21973,
+      29446,
+      6305,
+      5493,
+      21125,
+      29082,
+      2993,
+      9638
+    ]
+  },
+  "selection": "retain original 6/group; add 24/group from equal-weight pooled fit checkpoints excluding 0B; protect all original IDs from reassignment",
+  "display_split": "confirmation",
+  "color": {
+    "normalization": "sqrt",
+    "vmin": 0,
+    "vmax": 0.24559368134366635,
+    "clipping": false
+  },
+  "data_sha256": "7aaf0ec96fdae2f2eecc4a011cd03539d6dc2268d3198203fcd6e3344781bf61",
+  "cache_sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_0b.npz",
+      "sha256": "dc51d2c0f008086c3b25b1a8fdbbf06e5b329d66059b85bdb0fb2c5012755621",
+      "tokens": 0
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_0p5b.npz",
+      "sha256": "a9cbcbb7d29051982a4f44066b2fefc11b74c4d748736d1af79d132d111dbbcf",
+      "tokens": 500000000
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_1b.npz",
+      "sha256": "83432d372cf95d34bb25143100b45fe91fbf9ddc3a328fefb4c782dbb2c67c8d",
+      "tokens": 1000000000
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_3b.npz",
+      "sha256": "f9865fee0a1a0786267490059d26d01f6269f1c76ebf9653fa1614239f850306",
+      "tokens": 3000000000
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_5b.npz",
+      "sha256": "9b2aaf480218cfd5b21c9f7dd35d4eef64d8616097ecfdc653528ade6edc0d65",
+      "tokens": 5000000000
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_10b.npz",
+      "sha256": "3e145c09c5371660baf0023c0e7fb49b29e63b59952da13c564606b4c976545b",
+      "tokens": 10000000000
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_15b.npz",
+      "sha256": "c53eadf7e0bab14098b5980696a96279882f9034e4d8125ede2ac648f10257ab",
+      "tokens": 15000000000
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/caches/sae_mediated_19p136b.npz",
+      "sha256": "d002f0f4974de270aa1442f0048765eb16ecf873d64373bb4e2ebd38ba120590",
+      "tokens": 19135583744
+    }
+  ],
+  "source": {
+    "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/render_shared_19b.py",
+    "sha256": "54267466b9304828eedbf7152ba7a8fecb37ae70057acc5f410f4e4d849aa0e2"
+  },
+  "outputs": [
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/01_fixed_150_to_19b.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/01_fixed_150_to_19b.png",
+      "sha256": "38e9fe2fee53b5230f624dc5b9b4c48b327b2b60892e821525ff2a9cb67e1d72"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/01_fixed_150_to_19b.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/01_fixed_150_to_19b.pdf",
+      "sha256": "1f051cdbf4e6df8fb435bee85d07fadb1fc0fcc9189d0819edf9f0e8332bae11"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/00_0b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/00_0b_150_features.png",
+      "sha256": "c8f1483d24e678191ffa44f1cb77ecf20b76539dccdb4c121d8d982b2e471d1d"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/00_0b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/00_0b_150_features.pdf",
+      "sha256": "c38744aa448904bb5f158f5e220cc59bd7b11e5f8c5efdce1dd778f245b2aff2"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/01_0p5b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/01_0p5b_150_features.png",
+      "sha256": "aeb48ceb6cf84406140cbd30a3e6fec4719ea325e88214a40f46424f1cc8c706"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/01_0p5b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/01_0p5b_150_features.pdf",
+      "sha256": "9500e74c34ef03037f399b9ec8825823db250ad106a1db61d45723a97437e758"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/02_1b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/02_1b_150_features.png",
+      "sha256": "92df17e4aee6721edfdcf8f12bfcbb8f596cf79d08549aead7474bea9bc222e9"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/02_1b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/02_1b_150_features.pdf",
+      "sha256": "2da98556281e5f757bd6ab1a451fe1881d316419c7c619f9ef37305842f4f166"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/03_3b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/03_3b_150_features.png",
+      "sha256": "896c7e7ca9e830774a4d00c244413a03f396aedf3cf2087f4ba1ef8ba890a500"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/03_3b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/03_3b_150_features.pdf",
+      "sha256": "b2e78e987743f65542cb74f08e46fddeca42a63e67afa934339ba263c959e26f"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/04_5b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/04_5b_150_features.png",
+      "sha256": "6354c3a7d733dc7b28a52e111d1e212e38a7566e3e5233dbc15d57ba29c2c666"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/04_5b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/04_5b_150_features.pdf",
+      "sha256": "11b6869f2946c8cbc40865765b9ee038557548197d86f3e4c7d6e259fec82bf7"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/05_10b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/05_10b_150_features.png",
+      "sha256": "e09bed2fd21118a3b7a68ba7230ef1cd98f251f3185cd21691dec4b1c89f652a"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/05_10b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/05_10b_150_features.pdf",
+      "sha256": "9d8de0611f8b66f77f150a61bcaebaf375d980dbfc50342da913d5f73972f741"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/06_15b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/06_15b_150_features.png",
+      "sha256": "2639126f8d6dcfcac8f91e9563e25ed55052da6c6f3fc7dc0e971dd59e0305cd"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/06_15b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/06_15b_150_features.pdf",
+      "sha256": "e24ed495d929fb370f403d1fc378089f1365b5a2130da8d708df29f8329de053"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/07_19p136b_150_features.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/07_19p136b_150_features.png",
+      "sha256": "1da350fdaaf59b72a62ffe450441c0b5386fdc2bd605167792ce34476222374c"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/details/07_19p136b_150_features.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/details/07_19p136b_150_features.pdf",
+      "sha256": "9160a2698f5847124bf5826cf43bbeb53fb91e403079ca37cf4809210f8ddcd0"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/02_scope_and_coverage.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/02_scope_and_coverage.png",
+      "sha256": "ce951359ef205a9ac1ae860a09ca6814a86349745a5cb9ae1ba8db1745710537"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/02_scope_and_coverage.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_19b_v2/02_scope_and_coverage.pdf",
+      "sha256": "9845d2d1931016d9c089b1167d8e4f9c266ec052a2d381660e552ea06b09ebb4"
+    }
+  ],
+  "extraction_receipt": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_19b_v2/extraction_receipt.json"
+}

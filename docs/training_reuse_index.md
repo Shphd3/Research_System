@@ -9,11 +9,12 @@ Code, datasets, checkpoints, and raw runs remain in their original workspaces.
 
 ## Start Here
 
-Read these three sources first:
+Read these four sources first:
 
 1. [Source audit](../Projects/decommon-router-training/docs/source_audit.md) — what the clean trainer reused from the older project and where the historical runtime evidence lives.
 2. [Training scaffold README](../Projects/decommon-router-training/README.md) — current code layout, supported training path, tests, and known retired configurations.
 3. [Execution envelope](execution_envelope.md) — the current compute profile, image, runtime layer, and only supported submission entry point.
+4. [Training observability contract](training_observability_contract.md) — required TensorBoard loss tags and the valid-token comparison coordinate.
 
 Before writing code, state plainly which assets will be **reused**, **adapted**,
 or **not reused**, and why.
@@ -31,6 +32,32 @@ The 0912 draft under `daily_research_reports/0912/docs/code/` is a design
 reference, not yet a runnable package: its imports expect missing `model/`,
 `analysis/`, `data/`, and `utils/` package directories, and it has no complete
 pretraining/resume loop.
+
+### Current Dense LM / SAE execution package
+
+The runnable adaptation now lives at
+`/data/250010109/MoE_Router/experiments/20260912_dense_sae_pretraining`.
+For this workstream, read its `README.md` and `docs/reuse_sources.json` before
+returning to the historical sources. It reuses the clean data/checkpoint
+framework and now implements an eight-layer Dense LM whose final-block
+post-`norm2` MLP input is mediated by a width-30,000 Top-K SAE. LM loss traverses
+the SAE; a separate detached reconstruction pass restricts reconstruction-loss
+gradients to SAE parameters. The current source passed a bounded four-H100
+Smoke under `runs/smoke_bottleneck8_4h100_202609121034/`. The researcher then
+approved the separate exact 50B execution scope; its config and entrypoint are
+`configs/full_4h100_sae30k_50b.json` and `scripts/run_full_4h100.sh`.
+The flat draft above remains a design reference; it was not overwritten.
+
+- [Execution record](../daily_research_reports/0912/docs/dense_sae_30k_smoke/execution_record.md): completed four-H100 engineering check, preserved failure/repair and evidence boundary.
+- [Code handoff](../daily_research_reports/0912/docs/dense_sae_30k_smoke/code_handoff.md): actual file map, interfaces, confirmed external-process resume gaps and prioritized next audits.
+- Execution `handoff/baseline_manifest.json`: code-only archive and per-file hashes;
+  this execution workspace has no Git repository.
+
+The completed 100-update bottleneck Smoke qualifies the current architecture's
+GPU wiring but not 50B stability. External-process recovery is separately
+qualified at one/two CPU ranks. Preserve both evidence scopes; a formal-run
+startup observation is an operational check, not a long-run or scientific
+result.
 
 ## Key Code Map
 
@@ -153,3 +180,5 @@ or “尽量复用”:
 5. Before execution, read the owning Anchor and Protocol, then resolve the
    current profile, image, runtime layer, and submission entry point from
    `docs/execution_envelope.md`.
+6. Require the TensorBoard tags, valid-token counter, matched global batch, and
+   token-aligned schedules defined in `docs/training_observability_contract.md`.

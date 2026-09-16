@@ -1,0 +1,115 @@
+{
+  "kind": "posthoc_descriptive_cache_only",
+  "model_inference": false,
+  "optimizer_updates": 0,
+  "panel": {
+    "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/data/panel_frozen_v1.jsonl",
+    "sha256": "7aaf0ec96fdae2f2eecc4a011cd03539d6dc2268d3198203fcd6e3344781bf61"
+  },
+  "cache_sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/runs/confirmation_v1_20260914/full/caches/sae_mediated_0b.npz",
+      "sha256": "3c0abc3e7e7cec9fd68cf1fd74bbbf43fa05e162b0d904239aa364bf8c3c0a25"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/runs/confirmation_v1_20260914/full/caches/sae_mediated_0p5b.npz",
+      "sha256": "56df27136d64d079e164de06e869230928feddd59eab2c0510f00025ea743351"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/runs/confirmation_v1_20260914/full/caches/sae_mediated_1b.npz",
+      "sha256": "30142c555693f38386921bd725b5d6b732e40eba18ffe4e8dd51648b02292a08"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/runs/confirmation_v1_20260914/full/caches/sae_mediated_3b.npz",
+      "sha256": "f1a8d0fc927ed08d54c667c7ed9f52cbb0aae27287f7740135b34e025bdbc6f9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/runs/confirmation_v1_20260914/full/caches/sae_mediated_5b.npz",
+      "sha256": "30d876bd77e7af532a12bc4f45a3c8aab6ebbd7e486321f522407ddb291b327e"
+    }
+  ],
+  "source": {
+    "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/render_shared_domain.py",
+    "sha256": "697030acdded48e8d1c0d3e67d4d069e1b718ce8719203decb239a3d3cb5589b"
+  },
+  "selection": "equal pooled fit families and trained checkpoints 0.5/1/3/5B; 0B excluded; no confirmation selection",
+  "shared_score": "min_across_domains(mean_normalized_activation)",
+  "domain_score": "target_mean - max_other_mean; six positive unique features per domain after excluding shared",
+  "groups": {
+    "共享": [
+      28042,
+      6015,
+      10539,
+      1639,
+      22719,
+      5462
+    ],
+    "数学": [
+      9883,
+      2546,
+      10563,
+      16690,
+      29179,
+      11436
+    ],
+    "物理": [
+      6884,
+      1603,
+      25898,
+      18847,
+      24092,
+      1765
+    ],
+    "生物": [
+      24506,
+      10949,
+      14178,
+      21202,
+      3640,
+      5177
+    ],
+    "历史": [
+      21615,
+      25520,
+      24712,
+      17424,
+      26729,
+      26308
+    ]
+  },
+  "color_scale": {
+    "normalization": "sqrt",
+    "vmin": 0,
+    "vmax": 0.24585697222919478,
+    "clipping": false
+  },
+  "outputs": [
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_v1/01_fixed_shared_domain.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_v1/01_fixed_shared_domain.png",
+      "sha256": "ad2309d1017890b914314a0323060eda8cf9d585aa7cf6908621163b3adea193"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_v1/02_shared_stability.png",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_v1/02_shared_stability.png",
+      "sha256": "77f469fb3691e06703cbf7737442c287f88c798cbfdd0105ebddf2487995b263"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_v1/01_fixed_shared_domain.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_v1/01_fixed_shared_domain.pdf",
+      "sha256": "fb4cad8a86878b25104e0b0b087002b3a7a0de21fa5c9869e658bd17189cb1fd"
+    },
+    {
+      "evidence": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/report_assets/shared_domain_v1/02_shared_stability.pdf",
+      "reading": "/data/250010109/Research_System/daily_research_reports/0914/figures/shared_domain_v1/02_shared_stability.pdf",
+      "sha256": "5cc17a8d1ce4a27bacb91a10a4ba3a1f566dafaf5cd231eff2ecde171e8bee45"
+    }
+  ],
+  "limitations": [
+    "fixed ID is not fixed semantic identity",
+    "selection spans later checkpoints: retrospective, not prospective",
+    "30 selected features, not whole dictionary",
+    "0B reconstruction quality differs",
+    "no interval or seed replication"
+  ]
+}

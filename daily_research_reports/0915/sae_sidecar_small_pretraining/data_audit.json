@@ -1,0 +1,411 @@
+{
+  "checked_at": "2026-09-15T03:25:47.791347+00:00",
+  "checks": {
+    "manifest_hash_matches": true,
+    "training_file_count_matches": true,
+    "all_training_file_sizes_match_manifest": true,
+    "panel_count_1200": true,
+    "panel_hash_matches": true,
+    "panel_input_lengths_257": true,
+    "panel_vocab_range": true,
+    "validation_files_present": true
+  },
+  "data_manifest": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+  "data_manifest_sha256": "8a91bdbb0eb537bd80612015b99f178ca1cbb54a2fa7cf8442ab1eae7f0a2f2d",
+  "train_dir": "/data/250010109/training_data_views/dclm_pair_v1/train",
+  "validation_dir": "/data/250010109/training_data_views/dclm_pair_v1/validation",
+  "training_file_count": 2419,
+  "training_raw_token_count": 302089493820,
+  "validation_source": {
+    "relative_path": "global-shard_01_of_10/local-shard_0_of_10_shard_00000001_processed.bin",
+    "size_bytes": 459952424,
+    "source_path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000001_processed.bin",
+    "uint32_tokens": 114988106
+  },
+  "prefix_rule": "sorted recursive .bin paths, continuous uint32 stream; no cycling",
+  "prefix_files": [
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+      "size_bytes": 299003652,
+      "global_raw_start": 0,
+      "raw_tokens_used": 74750913
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000002_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000002_processed.bin",
+      "size_bytes": 493380544,
+      "global_raw_start": 74750913,
+      "raw_tokens_used": 123345136
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000003_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000003_processed.bin",
+      "size_bytes": 498061800,
+      "global_raw_start": 198096049,
+      "raw_tokens_used": 124515450
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000004_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000004_processed.bin",
+      "size_bytes": 438740892,
+      "global_raw_start": 322611499,
+      "raw_tokens_used": 109685223
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000005_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000005_processed.bin",
+      "size_bytes": 397233456,
+      "global_raw_start": 432296722,
+      "raw_tokens_used": 99308364
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000006_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000006_processed.bin",
+      "size_bytes": 444362880,
+      "global_raw_start": 531605086,
+      "raw_tokens_used": 111090720
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000007_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000007_processed.bin",
+      "size_bytes": 408442444,
+      "global_raw_start": 642695806,
+      "raw_tokens_used": 102110611
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000008_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000008_processed.bin",
+      "size_bytes": 537108464,
+      "global_raw_start": 744806417,
+      "raw_tokens_used": 134277116
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000009_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000009_processed.bin",
+      "size_bytes": 384803536,
+      "global_raw_start": 879083533,
+      "raw_tokens_used": 96200884
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000010_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000010_processed.bin",
+      "size_bytes": 407377996,
+      "global_raw_start": 975284417,
+      "raw_tokens_used": 101844499
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000011_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000011_processed.bin",
+      "size_bytes": 539625120,
+      "global_raw_start": 1077128916,
+      "raw_tokens_used": 134906280
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000012_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000012_processed.bin",
+      "size_bytes": 441608236,
+      "global_raw_start": 1212035196,
+      "raw_tokens_used": 110402059
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000013_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000013_processed.bin",
+      "size_bytes": 434154476,
+      "global_raw_start": 1322437255,
+      "raw_tokens_used": 108538619
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000014_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000014_processed.bin",
+      "size_bytes": 458429400,
+      "global_raw_start": 1430975874,
+      "raw_tokens_used": 114607350
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000015_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000015_processed.bin",
+      "size_bytes": 431684016,
+      "global_raw_start": 1545583224,
+      "raw_tokens_used": 107921004
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000016_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000016_processed.bin",
+      "size_bytes": 274456092,
+      "global_raw_start": 1653504228,
+      "raw_tokens_used": 68614023
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000017_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000017_processed.bin",
+      "size_bytes": 4276304,
+      "global_raw_start": 1722118251,
+      "raw_tokens_used": 1069076
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000018_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000018_processed.bin",
+      "size_bytes": 444159804,
+      "global_raw_start": 1723187327,
+      "raw_tokens_used": 111039951
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000019_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000019_processed.bin",
+      "size_bytes": 411375076,
+      "global_raw_start": 1834227278,
+      "raw_tokens_used": 102843769
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000020_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000020_processed.bin",
+      "size_bytes": 598792652,
+      "global_raw_start": 1937071047,
+      "raw_tokens_used": 149698163
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000021_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000021_processed.bin",
+      "size_bytes": 453514424,
+      "global_raw_start": 2086769210,
+      "raw_tokens_used": 113378606
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000022_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000022_processed.bin",
+      "size_bytes": 417305988,
+      "global_raw_start": 2200147816,
+      "raw_tokens_used": 104326497
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000023_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000023_processed.bin",
+      "size_bytes": 494688120,
+      "global_raw_start": 2304474313,
+      "raw_tokens_used": 123672030
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000024_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000024_processed.bin",
+      "size_bytes": 588171764,
+      "global_raw_start": 2428146343,
+      "raw_tokens_used": 147042941
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000025_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000025_processed.bin",
+      "size_bytes": 21410048,
+      "global_raw_start": 2575189284,
+      "raw_tokens_used": 5352512
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000026_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000026_processed.bin",
+      "size_bytes": 405008808,
+      "global_raw_start": 2580541796,
+      "raw_tokens_used": 101252202
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000027_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000027_processed.bin",
+      "size_bytes": 16792524,
+      "global_raw_start": 2681793998,
+      "raw_tokens_used": 4198131
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000028_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000028_processed.bin",
+      "size_bytes": 398104320,
+      "global_raw_start": 2685992129,
+      "raw_tokens_used": 99526080
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000029_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000029_processed.bin",
+      "size_bytes": 489232908,
+      "global_raw_start": 2785518209,
+      "raw_tokens_used": 122308227
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000030_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000030_processed.bin",
+      "size_bytes": 550321728,
+      "global_raw_start": 2907826436,
+      "raw_tokens_used": 137580432
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000031_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000031_processed.bin",
+      "size_bytes": 395715232,
+      "global_raw_start": 3045406868,
+      "raw_tokens_used": 98928808
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000032_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000032_processed.bin",
+      "size_bytes": 532282788,
+      "global_raw_start": 3144335676,
+      "raw_tokens_used": 133070697
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000033_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000033_processed.bin",
+      "size_bytes": 531141536,
+      "global_raw_start": 3277406373,
+      "raw_tokens_used": 132785384
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000035_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000035_processed.bin",
+      "size_bytes": 438206304,
+      "global_raw_start": 3410191757,
+      "raw_tokens_used": 109551576
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000036_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000036_processed.bin",
+      "size_bytes": 442870652,
+      "global_raw_start": 3519743333,
+      "raw_tokens_used": 110717663
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000037_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000037_processed.bin",
+      "size_bytes": 450446524,
+      "global_raw_start": 3630460996,
+      "raw_tokens_used": 112611631
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000038_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000038_processed.bin",
+      "size_bytes": 451926144,
+      "global_raw_start": 3743072627,
+      "raw_tokens_used": 112981536
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000039_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000039_processed.bin",
+      "size_bytes": 512605028,
+      "global_raw_start": 3856054163,
+      "raw_tokens_used": 128151257
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000040_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000040_processed.bin",
+      "size_bytes": 465607776,
+      "global_raw_start": 3984205420,
+      "raw_tokens_used": 116401944
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000041_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000041_processed.bin",
+      "size_bytes": 396397728,
+      "global_raw_start": 4100607364,
+      "raw_tokens_used": 99099432
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000042_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000042_processed.bin",
+      "size_bytes": 454213784,
+      "global_raw_start": 4199706796,
+      "raw_tokens_used": 113553446
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000043_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000043_processed.bin",
+      "size_bytes": 462728172,
+      "global_raw_start": 4313260242,
+      "raw_tokens_used": 115682043
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000044_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000044_processed.bin",
+      "size_bytes": 426103324,
+      "global_raw_start": 4428942285,
+      "raw_tokens_used": 106525831
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000045_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000045_processed.bin",
+      "size_bytes": 415615584,
+      "global_raw_start": 4535468116,
+      "raw_tokens_used": 103903896
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000046_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000046_processed.bin",
+      "size_bytes": 394047444,
+      "global_raw_start": 4639372012,
+      "raw_tokens_used": 98511861
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000047_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000047_processed.bin",
+      "size_bytes": 426074916,
+      "global_raw_start": 4737883873,
+      "raw_tokens_used": 106518729
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000049_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000049_processed.bin",
+      "size_bytes": 438475912,
+      "global_raw_start": 4844402602,
+      "raw_tokens_used": 109618978
+    },
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000050_processed.bin",
+      "resolved_source": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000050_processed.bin",
+      "size_bytes": 462232984,
+      "global_raw_start": 4954021580,
+      "raw_tokens_used": 45979957
+    }
+  ],
+  "required_raw_tokens": 5000001537,
+  "effective_target_tokens": 5000000000,
+  "full_updates": 19073,
+  "last_update_targets": 127488,
+  "last_real_sequence_targets": 512,
+  "world_size_2_terminal_padding": "63 real sequences + one all-masked dummy; 16 microbatches/rank at microbatch2",
+  "content_verification_boundary": "manifest/tokenizer/panel hashed; bin content not hashed; bin existence and sizes checked; compute actual training prefix digest in P0",
+  "tokenizer_files": [
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/tokenizer_config.json",
+      "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+    },
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/merges.txt",
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    }
+  ],
+  "panel_path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/data/natural_panel_v1/natural_domain_panel.jsonl",
+  "panel_sha256": "16eaced1320579b8aa736001a79e3babb699b862d3bc9245e7cd5d4af9929361",
+  "panel_counts": {
+    "cs.CL/dev": 50,
+    "cs.CV/dev": 50,
+    "math.AP/dev": 50,
+    "math.NT/dev": 50,
+    "physics.flu-dyn/dev": 50,
+    "physics.optics/dev": 50,
+    "q-bio.GN/dev": 50,
+    "q-bio.NC/dev": 50,
+    "cs.CL/fit": 100,
+    "cs.CV/fit": 100,
+    "math.AP/fit": 100,
+    "math.NT/fit": 100,
+    "physics.flu-dyn/fit": 100,
+    "physics.optics/fit": 100,
+    "q-bio.GN/fit": 100,
+    "q-bio.NC/fit": 100
+  },
+  "primary_panel_inputs": "first 256 of 257 stored tokens; mean post-norm2 h positions0..255; no lookahead use",
+  "external_domain_labels_used_for_training": false
+}

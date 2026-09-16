@@ -128,6 +128,15 @@ Require a constructible stage contract, frozen analysis plan, preflight/smoke
 boundary, failure-stop rules, and artifact destinations. Links support audit;
 they must not carry information needed to approve the run.
 
+For a model-training Protocol, also apply
+`docs/training_observability_contract.md`. Freeze the effective global batch,
+valid-token counting and loss-reduction rules, cumulative token budget, common
+token checkpoints, token-aligned schedules, TensorBoard directory and required
+tags. Optimizer update may be the primary comparison axis only when all arms
+have identical effective tokens per update; otherwise cumulative valid
+prediction tokens is primary. Treat a different global batch as a non-matched
+optimization condition unless batch size is the registered variable.
+
 ### 4. Protocol Freeze And Amendment
 
 Design confirmation does not authorize execution. Obtain explicit approval for

@@ -1,0 +1,195 @@
+{
+  "created_date": "2026-09-16",
+  "source_run": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4",
+  "scope": "CPU-only derived visualization; no model execution or optimizer updates",
+  "new_posthoc_descriptive_analysis": [
+    "fixed within-model feature IDs selected on pooled trained fit sets, report-only display",
+    "Euclidean aggregation of disjoint parameter-group gradients"
+  ],
+  "selection": {
+    "per_group": 6,
+    "width": 30000,
+    "train_tokens_B": [
+      0.5,
+      1,
+      3,
+      5,
+      10
+    ],
+    "report_sentences": 180,
+    "cross_model_ID_alignment": false,
+    "retrospective": true,
+    "ties": "ascending feature ID"
+  },
+  "inputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_semantic_feature_reuse_analysis/data/panel_frozen_v1.jsonl",
+      "sha256": "7aaf0ec96fdae2f2eecc4a011cd03539d6dc2268d3198203fcd6e3344781bf61"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/gradient_decomposition.csv",
+      "sha256": "4b09b89cde31cb20f691bcec84a152bb30b0cd39aa565bcab15dfb6a52ee75cc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/paired_fisher_differences.csv",
+      "sha256": "b0e163e5b0dcfc24f1fe6303a7053a80c52ec46871d174f10cdfaa88e9bd0be7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/paired_probe_differences.csv",
+      "sha256": "1c1723687cc1733f00fa32fa492a1ce2222dde615327f479dabfdf68e2b3b019"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/probe_metrics.csv",
+      "sha256": "b561ab91ca92381fb6c3e635ccf0178619902fb36df02d9ca384431418bc2e97"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/A_raw/tables/representation_health.csv",
+      "sha256": "868e892093f99486cdf165b12a39584543b934f85c34e62ad66f1b0cabb13533"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/B_common_direction/tables/paired_fisher_differences_B.csv",
+      "sha256": "465578242f8ca8cc60f33d23a78b5bf36dc5d08e072b9bf8442ad64d82b755a0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M1_000000000000.npz",
+      "sha256": "78193b22503217128d46cb5ba137a192e4cf061b68dcb76b2a64910995c816b9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M1_000500000000.npz",
+      "sha256": "95f46eaf2b738e505f08dd93233bbc1e1cf238c2cd0599909aaf10f0fc2c9db6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M1_001000000000.npz",
+      "sha256": "6279845eb1a49020c6c68fd86ddb685caed29112c1ef3ac5d7ecf8c7ac0d5768"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M1_003000000000.npz",
+      "sha256": "ed2579f7f021f70b3eed846b314d745ea7d8f88b74748bec6a0aa3ecf3ab5328"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M1_005000000000.npz",
+      "sha256": "d201fc12804badae8959a610891117c32f6590c44caf74f30dbd6a53d4282e98"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M1_010000000000.npz",
+      "sha256": "51321a3357a3282ad8fcf08c0427b4608e968a4027f0323d47ff4477d3a52804"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M2_000000000000.npz",
+      "sha256": "78193b22503217128d46cb5ba137a192e4cf061b68dcb76b2a64910995c816b9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M2_000500000000.npz",
+      "sha256": "d0e766c7f95101bb3578c1bc225865fd34539f0afaeccdbfa2964834ff5a9fee"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M2_001000000000.npz",
+      "sha256": "d75347adc12746cfb419503ee581c6e3d282ddf553422355fa8312674392641f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M2_003000000000.npz",
+      "sha256": "7c69da6158e23803923abde9507e0a1af6a7b3501585fb389b6dab6a1179c6a0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M2_005000000000.npz",
+      "sha256": "b66102115460b8e0436fb9bcf802488fda23cb765db08317c863905d4ac6830f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/runs/full_h100_reserved_v4/caches/M2_010000000000.npz",
+      "sha256": "8a88171f3fcbc21c99c536510b37a58c7f7a0aead89546659e05974e7c018ed5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/01_hypothesis_and_gradient_paths.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/01_hypothesis_and_gradient_paths.png",
+      "sha256": "68ef29874cdd626b54661a5435999e91708e31da5e748aa4881d9cd7b1ddd298"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/01_hypothesis_and_gradient_paths.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/01_hypothesis_and_gradient_paths.svg",
+      "sha256": "769dfa7a0d8adf8823721775ae8e7df2d18f09c4314ea660a588c4784c5d59bc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/02_domain_readability_trajectories.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/02_domain_readability_trajectories.png",
+      "sha256": "b497e1bf14c45955fd3b768d1774f4ff76ce2ee024c596eb6a251dff76797830"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/02_domain_readability_trajectories.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/02_domain_readability_trajectories.svg",
+      "sha256": "da26e2510340833779bda4bd46bb156ca7da2ca806d957855ff3fe30c626a11c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/03_paired_geometry_and_readability.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/03_paired_geometry_and_readability.png",
+      "sha256": "457d6986a2caa534238549ae6f73b186cfe14cf3ab31df01f33c2f7806e210e3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/03_paired_geometry_and_readability.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/03_paired_geometry_and_readability.svg",
+      "sha256": "c959ddde2a6f80e3e35d025b9ca6411ae56cc23809c42934b119324452c1e05a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/04_fixed_feature_activation_trajectory.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/04_fixed_feature_activation_trajectory.png",
+      "sha256": "8a2a405ccd1eee7e3e6093e1355486da4417fb23a17723d9dca49fe7b177452e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/04_fixed_feature_activation_trajectory.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/04_fixed_feature_activation_trajectory.svg",
+      "sha256": "7f972739bd83a755ad558b8e3bca65774a12d68b287e3cec3328c8ee2defd274"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/05_feature_usage_and_reconstruction.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/05_feature_usage_and_reconstruction.png",
+      "sha256": "764c70fd2b8f2e8b644ff2adc198ebc9d2d4a6963f301e96f3ea34fc9034913b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/05_feature_usage_and_reconstruction.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/05_feature_usage_and_reconstruction.svg",
+      "sha256": "879f98e377bf6c6c6d23d36feec3ea58ed3b2525be2ce71adf8568a3ff8f86e8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/06_reconstruction_gradient_strength.png",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/06_reconstruction_gradient_strength.png",
+      "sha256": "61c56a10283c9f1b21e93ebd221dcebb90721c73333bd6d18b11a62e0d7701cc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260915_three_model_representation_audit/report_assets/20260916_meeting_update/06_reconstruction_gradient_strength.svg",
+      "reading_copy": "/data/250010109/Research_System/daily_research_reports/0916/figures/sae_representation_update/06_reconstruction_gradient_strength.svg",
+      "sha256": "832d62ae44aafa770cb8d6ec9194bdf93ad0c476a6a1e9377d37c29fc193df58"
+    }
+  ],
+  "script_sha256": "df4c7414ef50085f828f7f48828caa1d1470ca27ee25b51a1e20cb2a74cb4e0d",
+  "whole_backbone_gradient": [
+    {
+      "batch_index": 0,
+      "reconstruction_norm": 0.07080967800499388,
+      "lm_norm": 2.6690235900263675,
+      "ratio": 0.026530180650930234,
+      "cosine": -0.06626289245329042
+    },
+    {
+      "batch_index": 1,
+      "reconstruction_norm": 0.0787720687645533,
+      "lm_norm": 2.687360288232178,
+      "ratio": 0.02931206102489957,
+      "cosine": -0.07494199786694156
+    },
+    {
+      "batch_index": 2,
+      "reconstruction_norm": 0.0873861749667452,
+      "lm_norm": 2.7217093361290905,
+      "ratio": 0.03210709307079383,
+      "cosine": -0.10750265579477747
+    },
+    {
+      "batch_index": 3,
+      "reconstruction_norm": 0.07959848946033117,
+      "lm_norm": 2.5965100419252924,
+      "ratio": 0.030655952865604748,
+      "cosine": -0.0645571963497236
+    }
+  ]
+}

@@ -37,6 +37,25 @@ Approved scope: <what this job is authorized to do>
 
 Code root / run root / result root / log path:
 
+TensorBoard directory:
+
+## Training comparison contract
+
+Complete this section for model-training runs; otherwise write `NOT_APPLICABLE`.
+
+| Field | Value |
+| --- | --- |
+| effective global batch | |
+| microbatch / data-parallel size / gradient accumulation | |
+| valid prediction tokens per update | |
+| cumulative token budget | |
+| primary comparison axis | cumulative valid prediction tokens |
+| common token checkpoints | |
+| LM-loss tag and reduction | `tokens/train_lm_loss` / global valid-token mean |
+| applicable loss-component registry | `<name>` / raw tag / weighted tag / coefficient / reduction, or `NONE` |
+| token-aligned schedule | warmup / decay / evaluation / checkpoint / stop |
+| resume coordinate check | |
+
 ## Monitoring
 
 `monitor_owner`: <conversation name, agent, model>

@@ -149,6 +149,32 @@ the claim-boundary update and the next decision. A round that records the first
 four items and `NOT RUN` is a **complete** round; a completed round carries all
 six. This is what makes a day without a result still a finished unit of work.
 
+### Training Observability And Comparison
+
+Every new model-training implementation and run follows
+`docs/training_observability_contract.md`.
+
+- Every language-model run writes TensorBoard events containing globally
+  normalized language-model loss. It also records total loss, learning rate,
+  cumulative valid prediction tokens, optimizer update, and effective tokens
+  per update. Each regularization or auxiliary component is recorded in raw and
+  weighted form only when it exists in the objective or is decision-relevant;
+  no particular named component is mandatory across unrelated models.
+- The primary comparison x-axis is cumulative valid prediction tokens. Optimizer
+  update is secondary and may be used as the comparison axis only when every
+  compared run has identical effective tokens per update throughout training.
+- A strict method comparison keeps effective global batch, token order, loss
+  normalization, optimizer, and token-based schedules fixed. Changing GPU count
+  must be absorbed by microbatch or gradient-accumulation changes; a different
+  global batch is a non-matched optimization condition unless it is the
+  registered variable.
+- Protocols freeze the token-count rule, loss denominators, TensorBoard tags and
+  log path, common token checkpoints, and token-aligned learning-rate,
+  evaluation, checkpoint, and stopping schedules before execution.
+- A smoke must verify finite required scalars, a correct monotonic token counter,
+  and coordinate continuity across resume. Missing or ambiguous required
+  records make cross-run curve comparison ineligible, not silently comparable.
+
 ## Learning And Group Meeting Updates
 
 - Anchor each group meeting in one explicit, bounded, falsifiable mechanism
@@ -212,6 +238,7 @@ when applicable.
 | Anchor | Canonical current research design and its boundary |
 | `protocol.md` | Experiment contract and its approval state |
 | `docs/execution_envelope.md` | Target profile, image and runtime-layer registry, submission entry point, and execution-certificate contract |
+| `docs/training_observability_contract.md` | Required training telemetry, loss normalization, and cross-run comparison coordinates |
 | `summary.md` / `summary_cn.md` / `detailed.md` | Canonical result reading path and its Chinese companion / evidence ledger and execution state |
 | Final report, Graph, story, root `sync/` | Derived navigation or reading views |
 
@@ -235,6 +262,19 @@ non-destructive verification. Pause only when the next action requires:
 - material expansion beyond the requested scope.
 
 Protocol drafting is not execution approval.
+
+### Long-Running Supervision
+
+For an experiment or analysis that will continue for a long time, supervision
+does not keep the conversation active by default. Unless the researcher
+explicitly asks for continuous or completion-time monitoring, observe only a
+short startup window sufficient to establish that the job is scheduled, the
+runtime and required workers are healthy, the Smoke or first bounded progress
+gate passes, and no immediate failure artifact exists. Then report the job ID,
+last verified progress, evidence boundary and evidence-based ETA, stop polling,
+and end the conversation work while leaving the remote job running. A later
+status request resumes inspection of the same job; never resubmit merely
+because supervision stopped.
 
 ## Completion Rule
 
