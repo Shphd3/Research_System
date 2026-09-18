@@ -9,10 +9,10 @@ question_state: HUMAN_CONFIRMED
 design_state: HUMAN_CONFIRMED
 result_state: ELIGIBLE_RESULT_AI_DRAFT_AWAITING_HUMAN_CONFIRMATION
 cycle_start: 2026-09-15
-target_meeting: 2026-09-16
+target_meeting: 2026-09-18
 active_project: Projects/from-attention-to-search/
 anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md
-protocol: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E01_three_model_sae_representation_audit/protocol.md
+protocol: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E05_multimodel_fisher_gradient_coefficient_audit/protocol.md
 core_experiment_count: 1
 ```
 
@@ -43,11 +43,23 @@ core_experiment_count: 1
 | 轮次 | 证据与认识更新 | 边界与下一决策 |
 |---|---|---|
 | A15_17_E01，2026-09-16 | 全矩阵及不可变性审计通过。M1 实际输入的细领域 Fisher 轨迹在去方向后保留；读出优势取决于训练点和测量对象。完整数值、工程重试与资格仅见 Detailed。 | 新版梯度有非零上游作用，但没有一致领域优势；M2 同时改变 AuxK，因果归属未知。待研究者决定是否进入下述同状态最小验证。 |
+| A15_17_E03 及事后可信度审计，2026-09-17 | S7/S37/SALL 在 0/0.5/1/3B、P/N 上的表征和局部梯度测量合格。Fisher 的真实标签几何明显超过置换零假设，但重构后 Fisher 有升有降，且 44 个独立探针对比中 42 个重构读出更低。原先约 90° 的角度经 262,144 维随机方向校准后，43/44 组与随机相容，未发现“比随机更正交”的组。 | 近 90° 不能再作为特殊正交机制；Fisher 只保留为有可信度守卫的几何量。下一决策改为确认 E05 的更多 checkpoint、参数梯度与系数干预设计。 |
+| A15_17_E05，2026-09-18 | 五模型精确 0/0.5/1/3/5/10B 的 30/30 采集与 672/672 probe 单元合格。10B 的 S37/SALL 在部分 Fisher 与 probe 上为正，但 P 大差值受 M0 终点下落影响；三个旁支的冻结 M2D2 NLL 均差于 M0。共享参数梯度接近 90° 但明显不符合随机正交，且总梯度比 S7/S37/SALL 为 3.54%/3.06%/1.24%。 | 当前只支持 checkpoint/数据集相关的几何重排，不支持稳定训练收益或因果机制。AI 建议下一步只做 S7/SALL 的 `lambda=1` 与 `target-rho=0.02` 匹配干预；是否采纳由研究者确认。 |
+
+## 0918 0--10B 测量设计（研究者已确认并授权执行）
+
+**目的。** 判断把 Attention 输出 SAE 旁支作为训练正则，是否让语言模型自身的表征更可分，并在相同训练词元下取得更低或至少不更差的语言模型损失。“增加参数 capacity”保留为动机；本轮指标不能直接证明容量上限提高。
+
+**假设。** 如果旁支正则有益地重组主干，Fisher 几何与留出 probe 应共同改善，直接去掉未中心化表征的第一大奇异方向后仍保留，并且不伴随更差的 token 对齐语言损失。最强竞争解释是 Fisher 仅由类内压缩抬高、单一主导方向造成视觉差异、或近 90° 梯度只是高维随机现象。
+
+**分析方法。** 第一，在 P 与 M2D2 上比较 M0、M2、S7、S37、SALL 的精确 0/0.5/1/3/5/10B，联合报告原始与直接去第一奇异方向后的 B/W/F、线性 probe 和固定两层神经网络 probe；M1 排除。五模型共同端点为精确 10B。第二，分别报告训练日志中的 token 对齐语言损失和冻结 M2D2 报告集上的语言损失，并报告仅重建 loss、loss 比例、共享主干参数上的 $\rho=\lVert g_A\rVert/\lVert g_C\rVert$、有可靠性保护的余弦 $c$ 及同维随机参照；所有图以累计有效预测词元为横轴。第三，在同一模型和层内报告活跃、持续、新出现和消失 feature 的比例，不跨模型解释 feature ID。
+
+**预注册结论分支。** Fisher 与 probe 一起改善且跨 P/N、去方向后保留，才支持有边界的表征改善；只有 Fisher 改变时只报告几何变化；只有语言损失改善时只报告训练曲线观察；均不出现则不支持；精确 checkpoint、模型身份、拟合边界或源数据缺失则证据不足。
+
+完整结果见 [E05 中文 Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E05_multimodel_fisher_gradient_coefficient_audit/summary_cn.md)，组会读法见 [0918 汇报稿](../0918/focus_meeting_sae_sidecar_regularization_0_10b_cn.md)，精确测量合同见 [E05 Protocol](../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E05_multimodel_fisher_gradient_coefficient_audit/protocol.md)。最终执行使用单节点四卡 RTX 5090 Spot；H100 中断轮次与早期无效 Smoke 均不形成科学结果。
 
 ## 当前唯一下一决策
 
-**AI 建议，待批准：**是否进入“同一个 M2 10B 状态、冻结 SAE、只改变主干是否接收重构梯度”的最小局部验证？先定位梯度，再在隔离副本中比较一次真实参数更新后的留出读出变化。选择共同终点是为核查当前配置，不按最漂亮的差异挑点。
+**结果状态：**E05 已完成，30/30 个注册只读单元与真实训练系数通过核验，四卡 RTX 5090 Spot Smoke 和 full 均满足无参数突变、零 optimizer update、精确 checkpoint 与完整结果要求。结果解释仍为 AI 草稿，等待研究者确认；不自动更新 Anchor 的科学判断。
 
-这一建议针对研究者此次强调的“新增梯度是否有帮助”，区别于旧 Summary 提名 M1 3B 来问“模型是否使用已有几何”。两者是不同问题；本次优先建议前者，不把旧建议改写成研究者决定。实施范围、指标、停止条件与预算见后继方案的决策卡；任何新 GPU 计算、参数微步、从零小模型训练均未在本次启动。
-
-**完成条件：**研究者确认或修正本次有界认识，并裁定该局部验证是否值得进行。若进入，另行形成批准的实验契约；不以本 Focus 或工作记忆代替批准。小模型旁路已有工程 Smoke，可以复用，但不自动升级为长期训练授权。
+**AI 建议：**不再用 `0.1/0.2/0.8` 的单旁支等权方案作为公平标准，而以共享主干总梯度比 $\rho$ 为控制量。唯一下一实验是同初始化、同 token 顺序的 S7/SALL `lambda=1` 与 `target-rho=0.02` 对照，先测 `0/0.1/0.25/0.5/1B`，留出 NLL 不恶化且梯度配平后才继续 `3/5/10B`。若配平后差异仍在，就停止把层数差异归因于梯度范数不平衡。

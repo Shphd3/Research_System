@@ -156,3 +156,387 @@ Design frozen and execution approved: 2026-09-16, before the first new submissio
 Superseded history: the earlier post-`Norm2` C/T and two/eight-RTX5090 design in
 this file's prior revision is retired and must not be executed. Source history
 remains in the earlier package and the 05 architecture-confirmation prompt.
+
+## Appendix A — Amendment A01: multi-site plugin engineering Smokes
+
+- Amendment time: 2026-09-16, after the final-layer Smoke and formal submission.
+- Before: this Protocol covered only one block-7 raw Attention-output SAE and
+  explicitly excluded any additional hook implementation or Smoke.
+- After: the researcher authorized implementation and sequential Smoke only for
+  (A) independent SAEs at zero-based blocks `3` and `7`, then (B) independent
+  SAEs at all eight blocks. Both use `5090-2-spot`; neither may use the reserved
+  H100 resource or any retired C/T launcher.
+- Reason: test the engineering feasibility of treating SAEs as training-only,
+  plug-in observers at multiple raw Attention outputs while preserving the
+  native inference path.
+- Data visible before amendment: the original final-layer Smoke and partial
+  formal-run telemetry were already visible. No data from either amended
+  architecture existed.
+- Affected blocks: D (architecture), E (multi-layer auxiliary aggregation), and
+  G (two-RTX5090 execution).
+- Approval: researcher message authorizes both implementations and the two
+  sequential Smokes.
+- Eligibility impact: the original final-layer run remains governed by the
+  frozen body above. The new Smokes are engineering-only and cannot support a
+  scientific comparison. Arithmetic mean across hook layers for reconstruction
+  and AuxK is an explicit AI engineering assumption for Smoke; long-run/Baka
+  submission is blocked until the researcher confirms this choice and the
+  intended long-run task and budget.
+
+## Appendix B — Amendment A02: dual-site 8x5090 50B and all-layer Smoke
+
+- Amendment time: 2026-09-16, after the first dual-site two-RTX5090 Smoke job
+  completed its training body and exposed one mechanical audit-path failure.
+- Before: A01 authorized only two sequential two-RTX5090 Smokes; multi-layer
+  loss aggregation and every long run remained blocked.
+- After: the researcher confirmed arithmetic-mean aggregation across hook
+  layers and authorized the following ordered scope: repair and audit the
+  dual-site Smoke receipt without erasing its original failure record; submit
+  one fresh dual-site 50B run on one node with eight RTX5090 GPUs; then submit
+  the all-eight-layer engineering Smoke on one node with two RTX5090 GPUs.
+  The all-eight-layer 50B run remains unauthorized until its Smoke passes and
+  the researcher separately asks for that submission.
+- Dual-site architecture: independent width-30000 Top-32 SAEs on zero-based
+  blocks `3` and `7`, each reading the raw Attention return after `W_O` and
+  before residual addition. No side Norm or SAE reconstruction enters the
+  native LM path or inference.
+- Frozen multi-layer objective for $m$ hook layers:
+
+  $$L=L_{\mathrm{LM}}+\frac{1}{m}\sum_{\ell}L_{\mathrm{rec}}^{(\ell)}
+  +\frac{1}{32m}\sum_{\ell}L_{\mathrm{AuxK}}^{(\ell)}.$$
+
+  Each reconstruction term uses a live hook input with detached target and
+  denominator; each AuxK term is SAE-only. Layer averaging keeps the total
+  auxiliary-loss scale matched across the two-site and eight-site variants;
+  it does not keep each layer's individual coefficient matched.
+- Formal dual-site execution: fresh seed-17 initialization; exactly 50B valid
+  prediction tokens; fixed DCLM paired view and checkpoint schedule; sequence
+  2048; microbatch 2/GPU; eight ranks; accumulation 8; 262,144 effective valid
+  targets per complete update; `5090-8-spot`; `shphd-lite-0911` plus the
+  registered SM120 runtime layer; 160 GiB run-storage ceiling.
+- Required observability: existing aggregate tags plus raw and weighted
+  reconstruction/AuxK, SAE sample count, dead-feature count, AuxK activity,
+  and SAE gradient norm for every registered hook layer. Cumulative valid
+  prediction tokens remain primary; optimizer update remains secondary.
+- Scale-up evidence: the original dual-site `smoke_receipt.json` remains
+  `FAIL` because the trainer looked for `checks/gradient_contract.json` while
+  the launcher correctly wrote `checks/multisite_contract.json`. The latter
+  is `PASS`, and every other receipt gate passed. A correction audit may issue
+  a separate PASS verification only after checking the immutable receipt,
+  contract, TensorBoard audit, checkpoint replay, hook set, and absence of any
+  non-audit failure. It may not rewrite the original receipt.
+- Eight-layer Smoke: fresh run directory, blocks `0` through `7`, two ranks,
+  accumulation 32, eight logical updates, independent-process resume at update
+  4, per-layer observability, peak-memory and checkpoint/storage gates. It must
+  use the corrected source revision and produce `smoke_verification.json=PASS`.
+- Data visible before amendment: all eight dual-site Smoke updates, recovery
+  artifacts, losses, resource measurements, and its mechanical gate failure;
+  no all-eight-layer GPU Smoke data and no dual-site 8x5090 formal data existed.
+- Affected blocks: D (two- and eight-site architecture), E (confirmed layer
+  mean and per-layer telemetry), and G (one authorized 8x5090 full run followed
+  by one authorized 2x5090 Smoke).
+- Approval: researcher message `请改进，然后提交8卡，然后开启8层的smoke`.
+- Eligibility impact: the original block-7 run remains governed by the frozen
+  body. The dual-site full run is engineering-authorized after the correction
+  audit PASS. The eight-layer Smoke remains engineering evidence only. Neither
+  submission health nor Smoke establishes semantic improvement, functional
+  specialization, or long-run completion.
+
+A02 audit ledger: A--G affected fields **CONFIRMED** for the named execution
+scope; cross-block consistency **PASS**. Full execution approval is limited to
+the dual-site 50B run. The all-layer full run is explicitly excluded.
+
+## Appendix C — Amendment A03: all-layer Smoke before any 8x5090 discussion
+
+- Amendment time: 2026-09-16, before any A02 eight-RTX5090 formal submission.
+- Before: A02 authorized a dual-site 8x5090 50B submission before the all-layer
+  two-RTX5090 Smoke.
+- After: the researcher explicitly changed the order. The only executable scope
+  now is correcting the multi-site implementation and running the all-eight-layer
+  Smoke on `5090-2-spot`. No eight-RTX5090 full job may be submitted in this
+  stage. After the all-layer Smoke reaches a complete audited PASS, the
+  researcher and AI will discuss the eight-card submissions separately.
+- Reason: qualify the largest plugin architecture and its observability before
+  making the full-run resource and submission decision.
+- Data visible before amendment: the dual-site Smoke artifacts and mechanical
+  audit failure were visible; no all-layer GPU Smoke or new multi-site 8x5090
+  formal run had been submitted.
+- Affected block: G execution order and approval scope. Architecture, layer-mean
+  objective, data, seed, optimizer, token counting, and Smoke gates are unchanged.
+- Approval: researcher message `先改成smoke 8层，完成smoke后再讨论8卡提交事宜`.
+- Eligibility impact: A02's 8x5090 authorization is superseded before use. The
+  all-layer Smoke is engineering evidence only and cannot itself authorize a
+  long run or establish a scientific result.
+
+A03 audit ledger: G **CONFIRMED**; A--F unchanged; cross-block consistency
+**PASS** for all-layer Smoke only; 8x5090 full execution is **NOT AUTHORIZED**.
+
+## Appendix D — Amendment A04: Smoke-PASS-gated two-job 8x5090 sequence
+
+- Amendment time: 2026-09-16, before the all-layer Smoke submission and before
+  any multi-site 8x5090 formal submission.
+- Before: A03 deferred every eight-card submission until a later discussion.
+- After: the researcher authorized continuous supervision through completion of
+  the all-eight-layer `5090-2-spot` Smoke. Only if its audited verification is
+  `PASS`, submit two separate single-node `5090-8-spot` 50B jobs in order:
+  first the block-3-plus-block-7 model, then, after the first job has eight
+  healthy ranks, finite first-update telemetry, and durable logs, the all-eight-
+  layer model. The second job need not wait for the first to finish 50B.
+- Each formal job starts fresh from seed 17 and uses its own run directory,
+  checkpoints, optimizer, activity buffers, logs, and submission receipt. No
+  Smoke or sibling checkpoint may be loaded.
+- Both formal jobs use sequence 2048, microbatch 2/GPU, eight ranks,
+  accumulation 8, and 262,144 valid prediction tokens per complete update.
+  Each targets exactly 50B valid prediction tokens and keeps the frozen data,
+  optimizer, token schedules, layer-mean objective, and per-layer telemetry.
+- Storage ceilings: 160 GiB for the two-SAE job and 300 GiB for the eight-SAE
+  job, derived from observed one-/two-SAE full-state checkpoint sizes and the
+  frozen 29-permanent-plus-two-recovery retention plan.
+- Failure stop: any incomplete/missing Smoke gate blocks both submissions. A
+  failed first formal startup blocks the second submission; no fallback profile,
+  resubmission, scale reduction, or old C/T launcher is allowed.
+- Data visible before amendment: the dual-site Smoke artifacts and known audit-
+  path failure were visible; no all-layer GPU Smoke or multi-site 8x5090 formal
+  telemetry existed.
+- Affected block: G execution approval and ordered handoff. A--F and the A02
+  architecture/objective freeze remain unchanged.
+- Approval: researcher message `请监督2卡smoke完成执行，然后顺次提交两个8卡任务，分成两个任务提交`.
+- Eligibility impact: both full runs are engineering-authorized only after the
+  common all-layer Smoke PASS. Submission and startup health are not scientific
+  results and do not establish semantic improvement or long-run completion.
+
+A04 audit ledger: G **CONFIRMED**; A--F unchanged; cross-block consistency
+**PASS**; approved execution is exactly one all-layer 2x5090 Smoke followed by
+two separate PASS-gated 8x5090 50B submissions in the registered order.
+
+## Appendix E — Amendment A05: submit the second formal job while the first is queued
+
+- Amendment time: 2026-09-16, after the all-layer Smoke verification passed and
+  after the dual-site 8x5090 job was accepted but before it acquired a worker.
+- Before: A04 required the dual-site job to show eight healthy ranks, finite
+  first-update telemetry, and durable logs before submitting the all-layer job.
+- After: the researcher explicitly authorized immediate submission of the
+  all-layer job. The two jobs remain separate and ordered by submission time,
+  but may coexist in the Spot queue. Neither may share a run directory,
+  checkpoint, optimizer state, activity buffer, log, or submission receipt.
+- Observed state at the amendment: the common all-layer Smoke had an audited
+  `PASS`; the dual-site formal job `pt-zzl78jg5` was `STARTING` with zero
+  allocated replicas; no formal optimizer update existed.
+- Unchanged: both jobs use `5090-8-spot`, eight ranks, fresh seed-17
+  initialization, 50B valid prediction tokens, 262,144 valid targets per
+  complete update, and the frozen architecture, objective, data, schedules,
+  telemetry, and source manifest. No fallback or old C/T launcher is allowed.
+- Approval: researcher message `可以直接提交第二个，完成提交以后汇报`.
+- Eligibility impact: platform acceptance or queue state is engineering status
+  only; it does not establish healthy startup, long-run completion, or any
+  scientific result.
+
+A05 audit ledger: G **CONFIRMED**; A--F unchanged; cross-block consistency
+**PASS**; the first-startup gate for submitting the second job is superseded.
+
+## Appendix F — Amendment A06: retain queued 5090 jobs and add two 8xH100 Spot jobs
+
+- Amendment time: 2026-09-17, while both A05 8x5090 jobs remained `STARTING`
+  with zero allocated replicas and before either wrote a run artifact.
+- Before: A05 authorized exactly the two independent `5090-8-spot` formal
+  submissions already accepted as `pt-zzl78jg5` and `pt-s4apl31f`.
+- After: keep both 5090 jobs untouched and additionally submit two independent
+  single-node `h100-8-spot` jobs: one for blocks 3+7 and one for all eight
+  blocks. The researcher will coordinate the resulting four queued/running
+  jobs and did not authorize stopping any of them in this amendment.
+- Every H100 job starts fresh from seed 17 in its own run directory and has its
+  own checkpoints, optimizer, activity buffers, TensorBoard events, pod log,
+  and submission receipt. It may not resume from a 5090, Smoke, or sibling run.
+- Matched contract: sequence 2048, microbatch 2/GPU, eight ranks,
+  accumulation 8, exactly 262,144 valid prediction tokens per complete update,
+  exactly 50B valid prediction tokens total, and the same frozen data,
+  objective, optimizer, schedules, checkpoints, and per-layer telemetry.
+- Resource: `h100-8-spot`, `shphd-lite-0911`, one worker node, eight H100 80GB
+  GPUs. The H100 path uses the image's native SM90 runtime and must not activate
+  the RTX5090 SM120 dependency layer.
+- Data visible before amendment: the common all-layer two-RTX5090 Smoke had an
+  audited PASS; both formal 5090 jobs were accepted but still had zero worker
+  replicas; no formal multi-site optimizer update existed.
+- Interpretation boundary: H100 and 5090 executions are duplicate engineering
+  realizations of the same two scientific conditions, not four independent
+  treatment arms or statistical replicates. If more than one sibling reaches
+  training, the researcher must choose the owning trajectory before a result
+  comparison; AI must not pool or cherry-pick them.
+- Approval: researcher message `把4、8层的模型和8层模型都换成8卡H100 spot, 请帮我直接提交，不用把前两个停止`.
+
+A06 audit ledger: G resource and execution routing **CONFIRMED**; A--F
+unchanged; cross-block consistency **PASS**; exactly two additional H100 Spot
+submissions are authorized and no existing job stop is authorized.
+
+## Appendix G — Amendment A07: resume the failed H100 trajectories on 8xRTX5090
+
+- Amendment time: 2026-09-17, after both A06 H100 Spot jobs entered terminal
+  `FAILED` state without a trainer traceback, non-finite loss, OOM record, or
+  graceful process-end record.
+- Durable resume points: the block-3-plus-block-7 trajectory resumes only from
+  its complete step-15000 recovery checkpoint at 3,931,659,776 valid prediction
+  tokens; the all-eight-layer trajectory resumes only from its complete 3B
+  milestone checkpoint at 3,000,000,000 valid prediction tokens. Uncheckpointed
+  tail updates are discarded and are not part of the resumed evidence chain.
+- After: submit two new single-node `5090-8-spot` jobs, one per trajectory,
+  loading those checkpoints and preserving the model, optimizer, scheduler,
+  activity buffers, RNG state, data cursor, optimizer-step coordinate, token
+  coordinate, sequence length, microbatch 2/GPU, accumulation 8, and 262,144
+  valid prediction tokens per complete update. The existing failed H100 jobs
+  and suspended fresh-start 5090 jobs are not stopped, restarted, or repurposed.
+- Runtime-only deviation: the checkpoint's original H100 execution-scope hash
+  is retained so the exact training contract remains loadable. This amendment
+  and the execution workspace's dated resume record own the authorized hardware
+  transition to RTX5090; the old H100 scope text does not authorize a new fresh
+  H100 run or conceal the profile change.
+- Performance boundary: no microbatch, accumulation, CE chunk, checkpointing,
+  logging, objective, optimizer, or schedule change is combined with this
+  hardware migration. Memory-filling candidates for 4xH100, 8xH100, and
+  8xRTX5090 are calculation-only until separately smoked. In future resource
+  changes, GPU memory capacity and the measured model-specific baseline must be
+  used to retune microbatch rather than copying the old hardware configuration.
+- Approval: researcher message beginning `请现在检查一下训练情况` explicitly
+  requests the two 8xRTX5090 continuation submissions and the retained resource
+  calculations.
+- Eligibility impact: a successful resume establishes operational continuity,
+  not bitwise hardware equivalence or a scientific result. The hardware switch
+  and discarded uncheckpointed tails must remain visible in the final evidence
+  record.
+
+A07 audit ledger: G execution routing and recovery point **CONFIRMED**; A--F
+unchanged; cross-block consistency **PASS** for exact-contract 8xRTX5090 resume.
+
+## Appendix H — Amendment A08: per-hook reconstruction coefficient 0.1 and optimized reruns
+
+- Amendment time: 2026-09-17, after inspecting the active final-layer H100 run
+  and while the earlier dual/all-layer trajectories remained separate records.
+- Objective: reconstruction losses remain arithmetically averaged across SAE
+  hooks. Set the coefficient multiplying that mean to `0.1 * N_hooks`, giving
+  total coefficients 0.1, 0.2, and 0.8 for one, two, and eight hooks. Thus each
+  hook's own reconstruction term has direct coefficient 0.1 before downstream
+  path overlap. AuxK losses remain layer-mean aggregated with one total
+  coefficient 1/32; their encoder input and main-reconstruction residual stay
+  detached so AuxK updates SAE parameters only. No layer-sum aggregation is
+  introduced.
+- Final-layer continuation: stop old job `pt-xs9xol7b`. Its durable parent is
+  the complete step-59000 checkpoint at 15,465,567,744 valid prediction tokens;
+  discard the later uncheckpointed tail. After one 4xH100 Reserved capacity and
+  recovery Smoke passes, fork a new training phase on `h100-4-reserved` with
+  reconstruction coefficient 0.1, microbatch 16/GPU, accumulation 2, sequence
+  2048, four ranks, and unchanged 262,144 valid prediction tokens per complete
+  optimizer update. Preserve model, optimizer, scheduler, RNG, data cursor,
+  SAE activity, token schedules, and 50B endpoint. This is a recorded objective
+  and microbatch-partition change, not an exact-contract or bitwise resume.
+- Dual/all-layer reruns: start two new seed-17 trajectories rather than loading
+  the earlier unit-weight checkpoints. First run one matching `5090-2-spot`
+  Smoke for each condition. The dual-site Smoke uses microbatch 4 and
+  accumulation 16; the all-layer Smoke uses microbatch 2 and accumulation 32.
+  Both keep sequence 2048 and 262,144 tokens/update. Each formal submission is
+  gated by its own audited Smoke PASS.
+- Formal resources: submit two separate single-node `5090-8-spot` jobs. The
+  dual-site run uses microbatch 4/GPU and accumulation 4 with total
+  reconstruction coefficient 0.2. The all-layer run uses microbatch 2/GPU and
+  accumulation 8 with total reconstruction coefficient 0.8. Both retain
+  262,144 tokens/update, CE checkpointing, fixed data/order, optimizer and
+  token-based schedules. CE chunk size is 256 for the new performance configs.
+- Capacity policy: perform only the one registered candidate Smoke per
+  condition. Do not run a batch-size grid. A Smoke failure blocks only its
+  matching formal submission and must not trigger an unapproved resource or
+  objective fallback.
+- Supervision: after each formal submission, inspect for at most five minutes.
+  If it has not entered active execution by then, stop polling but leave the
+  platform task scheduled. Do not stop a queued task merely because the
+  supervision window ended.
+- Existing jobs: this amendment authorizes stopping only `pt-xs9xol7b`. It
+  does not stop, rewrite, or reuse any earlier dual/all-layer H100 or RTX5090
+  job or run directory.
+- Approval: researcher message beginning `现在需要有条理地做完以下几件事情`.
+- Evidence boundary: Smoke and runtime health are engineering evidence. The
+  coefficient correction does not itself establish semantic improvement,
+  better validation loss, or a causal architecture advantage.
+
+A08 audit ledger: objective, gradient ownership, batch arithmetic, fork
+boundary, resources, Smoke gates, and supervision window **CONFIRMED**;
+cross-block consistency **PASS** for the three named new execution lineages.
+
+## Appendix I — Amendment A09: four-H100 continuation Smoke for the existing all-layer trajectory
+
+- Amendment time: 2026-09-18, while the existing all-eight-layer continuation
+  `pt-leyy9ey3` was healthy on `5090-8-spot` and the final-layer continuation
+  `pt-2f2s6omm` had passed 21B valid prediction tokens on
+  `h100-4-reserved`.
+- Before: A07 kept the all-layer trajectory on eight RTX5090 ranks with
+  microbatch 2 and accumulation 8. A08 did not authorize stopping or reusing
+  that trajectory or the active four-H100 final-layer allocation.
+- After: pause only `pt-2f2s6omm`, preserving its latest complete recovery
+  checkpoint. Keep `pt-leyy9ey3` running and unmodified. Use the released
+  single-node `h100-4-reserved` allocation for one bounded engineering Smoke
+  that forks from the complete all-layer step-34000 checkpoint at
+  8,912,237,056 valid prediction tokens.
+- Smoke topology and batch: four physical H100 ranks, microbatch 16/GPU,
+  accumulation 2, sequence length 2048, and exactly 262,144 valid prediction
+  tokens per optimizer update. Eight frozen logical reference lanes must map
+  onto the four physical ranks so the source sampler cursor and per-lane SAE
+  sampling RNG continue from the eight-rank checkpoint. The candidate is
+  `mbs16/acc2` only; this amendment authorizes no batch-size grid or fallback.
+- Held fixed: the existing all-layer model and eight Attention-output hooks,
+  unit total reconstruction coefficient 1.0, layer-mean reduction, AuxK
+  coefficient 1/32 with no backbone gradient, optimizer and scheduler state,
+  seed 17, frozen DCLM view, 50B endpoint, token schedules, and cumulative
+  token/update coordinates. This Smoke does not convert the trajectory to the
+  later 0.8 reconstruction-weight contract.
+- Smoke PASS requires: complete source-manifest validation; strict model,
+  optimizer, scheduler, step, and token restoration; exact 262,144 valid
+  tokens/update; the registered eight-lane sample-index and SAE-mask
+  continuation; finite losses and gradients; four synchronized replicas;
+  peak memory below the physical 80 GiB limit; a complete four-rank recovery
+  checkpoint; and a durable `smoke_verification.json` reporting measured
+  throughput and memory. Performance is measured but has no predeclared PASS
+  threshold.
+- Stop rule: any OOM, non-finite value, coordinate discontinuity, source
+  mismatch, sample/RNG mismatch, missing artifact, or incomplete checkpoint is
+  `FAIL` and stops this candidate. Do not stop `pt-leyy9ey3` and do not submit
+  a four-H100 Full run under this amendment.
+- Data visible before amendment: both 5090 and historical H100 throughput,
+  loss, checkpoint, and memory telemetry were visible. The Smoke is therefore
+  an engineering migration qualification, not an untouched scientific
+  comparison or statistical replicate.
+- Approval: researcher message `请先暂停当前的 4×H100 单层任务，然后在这上面进行 smoke，先不用停八卡 5090`.
+- Eligibility impact: a PASS can establish constructible continuation and
+  measured candidate throughput only. It cannot establish bitwise hardware
+  equivalence, model-quality improvement, or authorization for the formal
+  migration.
+
+A09 audit ledger: A--F unchanged; G execution routing, source checkpoint,
+batch arithmetic, Smoke gates, artifact contract, and stop boundary
+**CONFIRMED**; cross-block consistency **PASS**; execution scope
+**APPROVED_FOR_ONE_4xH100_RESERVED_SMOKE_ONLY**.
+
+## Appendix J — Amendment A10: migrate the suspended all-layer trajectory to 4xH100 Reserved
+
+- Amendment time: 2026-09-18, after the A09 migration Smoke passed and after
+  administrator action suspended `pt-leyy9ey3`.
+- Source boundary: resume from the newest complete source checkpoint, step
+  35000 at 9,174,381,056 valid prediction tokens. Discard the later
+  uncheckpointed tail through step 35054.
+- Resource and topology: one `h100-4-reserved` node, four physical H100 ranks,
+  microbatch 16/GPU, accumulation 2, and eight preserved logical source lanes.
+  Each complete update remains 262,144 valid prediction tokens.
+- Held fixed: all eight Attention-output SAE hooks, unit total reconstruction
+  coefficient 1.0 with layer-mean reduction, AuxK coefficient 1/32, detached
+  AuxK backbone boundary, model/optimizer/scheduler state, seed, frozen data
+  order, token schedules, checkpoint targets, and 50B endpoint.
+- Qualification: A09 Smoke `pt-476ixasa` is `PASS`, including exact coordinate,
+  eight-lane sampler/SAE-RNG continuation, finite losses, synchronized replicas,
+  complete four-rank checkpointing, and 51.5GB peak reserved memory below the
+  80GB physical limit.
+- Interpretation: this replaces the runtime continuation of the suspended
+  8xRTX5090 job; it is not a new model arm or evidence of bitwise hardware
+  equivalence. The measured throughput is approximately equal, so the reason
+  for migration is Reserved-resource stability rather than an expected speedup.
+- Approval: researcher request `pt-leyy9ey3 被管理员停止了，请提交4卡H100 reserved的资源，开始训练`.
+
+A10 audit ledger: A--F unchanged; G source checkpoint, four-rank topology,
+logical-lane continuity, batch arithmetic, profile, and 50B continuation scope
+**CONFIRMED**; cross-block consistency **PASS**; execution scope
+**APPROVED_FOR_4xH100_RESERVED_FORMAL_CONTINUATION**.

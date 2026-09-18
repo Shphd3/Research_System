@@ -30,7 +30,7 @@ still requires its protocol execution scope to be authorized.
 This block is the only copy of these values.
 
 ```yaml
-updated: "2026-09-15"
+updated: "2026-09-17"
 default_profile: h100-4-reserved
 default_image: shphd-lite-0911
 
@@ -89,6 +89,33 @@ researcher_decisions:
   - date: "2026-09-16"
     scope: resource_and_execution
     decision: "The researcher superseded the old post-Norm2 C/T plan with one final-layer raw Attention-output sidecar: no side Norm, one h100-4-reserved Smoke, then only after Smoke PASS one fresh 50B full run on the same reserved node. Once that full run is submitted, the later first-layer raw Attention-output sidecar Smoke must use 5090-2-spot and must not use the reserved H100 node. This does not authorize an eight-RTX5090 run or any old C/T launcher."
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "After the final-layer full run was submitted, the researcher authorized implementation and sequential engineering Smokes for two plugin variants on 5090-2-spot only: independent raw Attention-output SAEs at blocks 3 and 7, followed by independent SAEs at all eight blocks. This authorizes the two Smokes, not an old C/T launcher or an unregistered long-run loss aggregation."
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "The researcher confirmed layer-mean multi-SAE loss aggregation and authorized one fresh 50B formal run for the block-3-plus-block-7 raw Attention-output plugin model on one single-node 5090-8-spot job, followed by the all-eight-layer engineering Smoke on 5090-2-spot. Preserve 262,144 valid prediction tokens per complete update by using accumulation 8 on eight ranks and accumulation 32 on two ranks. The all-eight-layer 50B run remains unauthorized until its Smoke passes; no old C/T launcher, resource fallback, or checkpoint reuse is allowed."
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "Before any multi-site eight-RTX5090 formal submission occurred, the researcher superseded the immediately preceding execution order: run and complete the all-eight-layer engineering Smoke on 5090-2-spot first, then discuss eight-card submissions separately. No 5090-8-spot multi-site full run is authorized in this stage."
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "The researcher superseded the immediately preceding deferral and authorized continuous supervision of the all-eight-layer 5090-2-spot Smoke through audited PASS, followed by two separate single-node 5090-8-spot 50B submissions in order: first blocks 3+7, then all eight blocks after the first job shows eight healthy ranks, finite first-update telemetry, and durable logs. Both start fresh and retain matched 262,144-token updates; any Smoke failure or first-job startup failure stops the sequence."
+  - date: "2026-09-16"
+    scope: resource_and_execution
+    decision: "After the common all-layer Smoke reached audited PASS and the blocks-3+7 8x5090 job was accepted but remained queued, the researcher explicitly superseded the first-job startup gate and authorized immediate submission of the separate all-eight-layer 8x5090 job. Both jobs remain fresh, independent 50B runs with matched 262,144-token updates and may coexist in the Spot queue; no fallback, checkpoint sharing, or old C/T launcher is allowed."
+  - date: "2026-09-17"
+    scope: resource_and_execution
+    decision: "While both multi-site 8x5090 formal jobs remained STARTING with zero allocated replicas, the researcher explicitly authorized two additional fresh single-node 8xH100 Spot submissions for the same blocks-3+7 and all-eight-layer 50B conditions. Keep both 5090 jobs untouched. The H100 jobs use separate run directories and receipts, preserve eight ranks and 262,144-token updates, and do not share checkpoints or optimizer state with any sibling job."
+  - date: "2026-09-17"
+    scope: resource_and_execution
+    decision: "For A15_17_E03 only, the researcher explicitly selected one single-node 5090-4-spot Smoke followed after audited PASS by one 5090-4-spot full read-only analysis of the single block-7/eighth-block Attention-output sidecar S7 against the qualified Dense control at common 0/0.5/1/3/5/10B checkpoints. Rebuild the prior representation figures, include 0B, fit-only first-direction removal, fixed-atom contribution figures, and token-aligned loss curves. No training, checkpoint mutation, profile fallback, commit, or push is authorized."
+  - date: "2026-09-17"
+    scope: resource_and_execution
+    decision: "For the reweighted raw-Attention-output SAE sidecar training line, the researcher explicitly authorized stopping final-layer job pt-xs9xol7b, one four-H100 Reserved capacity Smoke, and a PASS-gated fork continuation from its complete step-59000 checkpoint with reconstruction coefficient 0.1 while preserving 262,144 tokens/update. The researcher also authorized two separate two-RTX5090 Spot Smokes followed by two separate PASS-gated eight-RTX5090 Spot fresh 50B jobs for blocks 3+7 and all eight blocks, using layer-mean reconstruction weights 0.2 and 0.8 respectively and layer-mean AuxK coefficient 1/32. Observe each formal submission for at most five minutes; a still-queued job remains scheduled. No resource fallback or batch-size grid is authorized."
+  - date: "2026-09-18"
+    scope: resource_and_execution
+    decision: "For A15_17_E05 after exact SALL 10B became available, the researcher resumed the overall five-model read-only measurement on one single-node 5090-4-spot Smoke, followed only after audited PASS by one same-profile full run. The scope includes exact 0/0.5/1/3/5/10B representation, held-out loss, feature, activation-gradient, and shared-parameter-gradient measurements. No training, checkpoint mutation, profile fallback, commit, push, or publication is authorized."
 
 profiles:
   h100-1-spot:
@@ -156,7 +183,7 @@ profiles:
     status: requires_explicit_selection
     selected_on: "2026-09-13"
     scope_extended_on: "2026-09-15"
-    allowed_scope: "fixed-heldout SAE checkpoint audits; analysis1 checkpoint-only semantic evaluation; 0915 four-layer online SAE sidecar exploration under separately adopted execution scope; retired 0916 paired sidecar Smoke; later 0916 first-layer raw Attention-output sidecar Smoke after the final-layer 4H100 full run is submitted"
+    allowed_scope: "fixed-heldout SAE checkpoint audits; analysis1 checkpoint-only semantic evaluation; 0915 four-layer online SAE sidecar exploration under separately adopted execution scope; retired 0916 paired sidecar Smoke; sequential 0916 raw Attention-output plugin Smokes for blocks 3+7 and all eight blocks after the final-layer 4H100 full run submission"
     surface: acp
     workspace: share-space
     aec2: computing-cluster-5090-01g
@@ -181,6 +208,23 @@ profiles:
     quota_type: spot
     priority: normal
     storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+  h100-8-spot:
+    status: requires_explicit_selection
+    selected_on: "2026-09-17"
+    allowed_scope: "0916 raw Attention-output SAE sidecar duplicate formal submissions for blocks 3+7 and all eight blocks while retaining the queued 8x5090 jobs"
+    selection_source: "Researcher explicitly requested both additional 8xH100 Spot submissions without stopping the two queued 8x5090 jobs"
+    verified_by: "2026-09-17 read-only AEC2 list-workerspec: n6ls.iu.i40.8 has eight NVIDIA N6LS-80G-SXM5 GPUs, 176 vCPUs and 1920 GiB host memory in share-cluster; Spot availability is not guaranteed"
+    surface: acp
+    workspace: share-space
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.8
+    worker_nodes: 1
+    worker_processes: 8
+    gpus: "8x H100 80GB SXM5"
+    quota_type: spot
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
   "5090-8-spot":
     status: requires_explicit_selection
     reactivated_on: "2026-09-13"
@@ -199,7 +243,7 @@ profiles:
     status: requires_explicit_selection
     selected_on: "2026-09-13"
     scope_extended_on: "2026-09-15"
-    allowed_scope: "native Dense baseline scopes already registered; one full 0915 three-model existing-checkpoint representation audit after local correctness checks"
+    allowed_scope: "native Dense baseline scopes already registered; 0915/0917 existing-checkpoint representation audits; A15_17_E05 exact-10B five-model read-only Smoke and pass-gated full measurement"
     selection_source: "Researcher explicitly selected the currently available single-node four-RTX5090 Spot profile and authorized the full registered audit on 2026-09-15"
     surface: acp
     workspace: share-space

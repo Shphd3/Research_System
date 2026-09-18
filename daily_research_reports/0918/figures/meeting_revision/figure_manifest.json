@@ -1,0 +1,182 @@
+{
+  "created_at": "2026-09-18T06:50:05.747170+00:00",
+  "scope": "CPU-only presentation redraw; no model inference, no new statistical test, no training",
+  "script": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/build_meeting_figures.py",
+  "script_sha256": "0a688c46a642aea515bdd539d78fd774932602b52ff0f354f0de53a83b390813",
+  "inputs": {
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/representation_geometry.csv": {
+      "sha256": "19625ef132ea09aa1243080bd59f2b19c06267ed83651d0c20ce9d642df0fec5"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/linear_probe.csv": {
+      "sha256": "dcc0f9685c01a091ab8d902ac347371d63c487ae912764e09a000cbdab98cd75"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/two_layer_neural_probe.csv": {
+      "sha256": "364e6fc0a5806d9b84be3b978d37796d8167f577e3872fc77be31a6f2d98a3ad"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/fisher_10b_credibility.csv": {
+      "sha256": "ffdfa28d41efc7224e1ae7ba934c8ea2e281a1bd0542a0a1a0b6c89ddacbf498"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/terminal_raw_vs_reconstruction.csv": {
+      "sha256": "d870a4bbdcc32e4a640abe05816fb3d9f9f7ad458c5bad5d3df88adb15a41f15"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/feature_trajectory.csv": {
+      "sha256": "6610b2478ab807ec9201d0835c02b3ac3a190cae378229564bce8261ba292d1c"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/heldout_m2d2_language_loss.csv": {
+      "sha256": "3395b94fa8cbdd42af0d69aacb262509f4e854e3e1f4bd1fc710931120f2f650"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/shared_parameter_gradient_checkpoint_summary.csv": {
+      "sha256": "a98b8b8014b97849f3ce9c9fc1a0e6402119cb2f9c7dc09389608c2831089bf1"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/exact_10b_sidecar_loss_gradient_comparison.csv": {
+      "sha256": "f63ef30eda8c218c94ac614a626c73c748882f21b55e98a47873ec3bb42fc3a7"
+    },
+    "/data/250010109/Research_System/daily_research_reports/0918/tables/shared_parameter_gradient_metrics.csv": {
+      "sha256": "5165f1d3f4b9fb5800b97b17fefcdb48cb000aa37433cb0728240bdc4163a166"
+    },
+    "/data/250010109/MoE_Router/experiments/20260918_attention_output_sidecar_all8_4h100_resume/analysis/five_model_lm_loss/five_model_training_lm_loss_source.csv": {
+      "sha256": "4b53a68e4b78da1ea3653efe0fccab51edd273e7b51ab437709c3d26ed49166d"
+    },
+    "/data/250010109/MoE_Router/experiments/20260918_attention_output_sidecar_all8_4h100_resume/analysis/five_model_lm_loss/five_model_training_lm_loss_dense_delta.csv": {
+      "sha256": "7ab3c6515ef07fbcb3774b84e4007442c2b341b7a4c3bfec8a9fb068b07d759a"
+    }
+  },
+  "outputs": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/01_sidecar_graph.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/01_sidecar_graph.png",
+      "sha256": "9feef04ad0c8d869c7b3f7368b2bc8f0ff4f3e77dfbedf16552b12eb904329b1"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/01_sidecar_graph.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/01_sidecar_graph.svg",
+      "sha256": "a55e5f4713e771a955285ca26b0ac2902e39821bee6fb70a7f19e4e7ff8ba9bf"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/02_native_fisher.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/02_native_fisher.png",
+      "sha256": "4addfd2502612f74aa267e8dd2c62a3db882e4a428f974361abc5e726ec83699"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/02_native_fisher.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/02_native_fisher.svg",
+      "sha256": "732558d4b377f6f96d4a98ecf62b42c9e9aef23a41806064648f0384010bab93"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/03_native_between_within.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/03_native_between_within.png",
+      "sha256": "c20568369b852ac9f78dc77eec49de1437f60572ece456e6c298c1731a306d0b"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/03_native_between_within.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/03_native_between_within.svg",
+      "sha256": "7fe42b8aea117c783a9aad7539d277a9af818fe53f7ab39ce069685a321ce70d"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/04_fisher_paired_intervals.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/04_fisher_paired_intervals.png",
+      "sha256": "e93e280cd2008e0b0f98405fb7db58151becd3361a73e8c3893e948a88ba1671"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/04_fisher_paired_intervals.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/04_fisher_paired_intervals.svg",
+      "sha256": "f9758676e0f844eb2b8a9b163638964604fa97cd2cc148720c954df32f13a74f"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/05_native_readability.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/05_native_readability.png",
+      "sha256": "fe0ac8ed0cdb6b3e4cac87af2d25aed9608c06bf81d7b24c7ef664a33f514c6a"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/05_native_readability.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/05_native_readability.svg",
+      "sha256": "edb0dfbb94be843e246e12ee5bb96910fdc96222f69da3571918f57dab93da5d"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/06_reconstruction_N.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/06_reconstruction_N.png",
+      "sha256": "0c81ec6cdabd53289e8277e5103556fa5ba1fd5d427ad4bbb5be5264bf14bfbc"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/06_reconstruction_N.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/06_reconstruction_N.svg",
+      "sha256": "1da347a866601f987263200a6a0657c4ede3ef1a579c6b8b9cda59e1b17d8da3"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/06_reconstruction_P.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/06_reconstruction_P.png",
+      "sha256": "01835e360f7541e1bc2c0e57c36d538999641a8049eb8c37d901f88a4b18a12a"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/06_reconstruction_P.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/06_reconstruction_P.svg",
+      "sha256": "0fbcc030f624ed591231e99d1afd3959dd20ad6e8c490ee4c2c8735825f7065c"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/07_feature_usage.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/07_feature_usage.png",
+      "sha256": "c397b7d2096e625c3b00e516191f37bdaadb2bd6fd891466c522e4ff2c148779"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/07_feature_usage.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/07_feature_usage.svg",
+      "sha256": "8a9f9802e33494c17486cb27721d34134ccb6b95bb62368a9c6d897562bcf177"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/08_training_loss.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/08_training_loss.png",
+      "sha256": "7409133e9d9c3e5793d937d392830438f292e89634bd892131b84743c8f59cad"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/08_training_loss.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/08_training_loss.svg",
+      "sha256": "357f364db0243142da57d975bbfc1166e712978d0769e03e148369b2a1b8afe3"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/09_fixed_text_loss.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/09_fixed_text_loss.png",
+      "sha256": "c2f3063ae3693a9f528ad09f6d86d60f7a330f2f106d18d5e1d73b0c71e821ff"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/09_fixed_text_loss.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/09_fixed_text_loss.svg",
+      "sha256": "6be897a552bbb3c4d713261979c0fd8c950d74b696823312ea87eeca191194e4"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/10_loss_gradient_scale.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/10_loss_gradient_scale.png",
+      "sha256": "313b5221e1c08323630a9e99ff5ba0776aa74df292f10862b223a36a63789807"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/10_loss_gradient_scale.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/10_loss_gradient_scale.svg",
+      "sha256": "9b5aea6b73c6c51d3592bb788bd2f013c0817c5ce0bcaccdfd1075847b00f5d6"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/11_gradient_direction.png",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/11_gradient_direction.png",
+      "sha256": "a9d8e313efda57cb4b954e952aa0f9622ab285b11ed5dc3dd6c63f645bb51b06"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0918/figures/meeting_revision/11_gradient_direction.svg",
+      "source": "/data/250010109/MoE_Router/experiments/20260918_multimodel_fisher_gradient_coefficient_audit/report_assets/20260918_meeting_revision/figures/11_gradient_direction.svg",
+      "sha256": "759cc742790cc7061e29f2d926addf50a081ac04a0b8c746c614754b5211de32"
+    }
+  ],
+  "colors": {
+    "M0": "#171717",
+    "M2": "#D55E00",
+    "S7": "#0072B2",
+    "S37": "#CC79A7",
+    "SALL": "#009E73"
+  },
+  "sources_preserved": true,
+  "interpretation_notes": [
+    "P labels are coarse (4); N labels are category (8).",
+    "Native final is post-norm2/pre-MLP; for M2 it is pre-SAE, not consumed reconstruction.",
+    "Feature exposure counts include all 1200 N rows; not held-out-only and not permanent dead rate.",
+    "Fisher bootstrap resamples rows within class, not P families.",
+    "Loss sources frozen at 10B; screenshot earlier endpoint is obsolete.",
+    "Isotropic bound labeled central 95 percent of signed cosine, avoiding incorrect absolute-quantile naming."
+  ]
+}
