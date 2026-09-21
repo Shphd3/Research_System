@@ -3,7 +3,7 @@
 Conversation name: 0914-training scheduling
 Processed by: Codex (harness: Codex; model: unknown)
 Created at: 2026-09-14T11:26:13Z
-Latest update at: 2026-09-17T09:56:13Z
+Latest update at: 2026-09-20T06:41:13Z
 Continues from: .research/memory/conversations/0912-梳理-sae-动态形成预训练方案/memory.md
 Environment: repo=/data/250010109/Research_System; exec=/data/250010109/MoE_Router. Both roots readable in this conversation.
 
@@ -144,3 +144,14 @@ Source conversation: 01a0a878-2ce3-7a30-99f1-5ab072cea6db (identity unified by r
 - Current work: 本次仅合并记忆。2026-09-17上一条完整保留了既有分析结果边界、数据与流程、执行和制图脚本地址、新模型读点适配及图表改进要求；这些仍是当前工作上下文。没有启动训练、分析或GPU作业，没有修改科学状态。
 - Next action: 新任务完整读取本文件，按上一条“既有分析结果、复用流程与新版图表要求”接续已有模型的分析准备；核对真实checkpoint与相同测量位置，复用旧流程并改进图表，不重新讨论新模型设计。
 - References: 原带后缀目录 `.research/memory/conversations/0914-training-scheduling-01a0a878/` 已按研究者要求删除；唯一入口为本文件；正式证据、协议和脚本路径均见上一条，合并不改变其权威归属。
+
+## 2026-09-20T06:41:13Z -- 0918汇报与梯度口径归档；0920转向冻结表征的深入分析
+
+- Processed by: Codex (harness: Codex desktop; model: unknown).
+- Summary: 已完成0918组会稿修订，讲述顺序为主干表征→SAE feature→语言性能→梯度诊断；基于冻结E05数值重绘12张PNG/SVG，统一颜色与轴单位，loss采用全程/后期放大/对Dense差值布局。已核对链接、图片可解码及源表哈希，未重新推理、拟合或训练。正式科学解读仍由E05 Summary及研究者拥有。
+- Summary: 汇报明确旁路SAE读取W_O之后、残差之前的Attention增量，无额外Norm，重构不进入MLP。原始主干h、Attention a、SAE重构â不能混为一谈。E05部分几何/读出有正差，但P 10B差值受Dense终点下落影响；10B三种旁路在固定M2D2上NLL均高于Dense。旧“全层最好/正交帮助跳出局部最优”的会议设想未获此轮支持，不能当结论。
+- Summary: 按研究者要求，4.4已加入10B loss绝对值与比例、梯度范数与比例表。之后对话补充了必须保留的求导对象：g_LM=∂L_LM/∂θ，g_rec=∂L_rec/∂θ，θ是281,431,040个共享主干参数，排除SAE且共享embedding去重；不是对a/â的梯度。三旁路重构/LM标量比分别2.98%/6.59%/5.15%，范数比分别3.54%/3.06%/1.24%。比例以LM为分母，逐批比值取均值，不是总更新贡献率，更不是AdamW实际参数位移。
+- Current work: 研究者最新要求将认识重点转向表征空间，loss高低不能独立说明问题；新任务应保留语言代价检查，但不只按loss选择研究路线。当前请求仅记忆和新对话prompt。已核对指定 `daily_research_reports/0920/docs/atten执行资料/` 存在但为空；不能声称已读该目录的方法。同级surveys有两份相关调研/规划，其中实验规划已完整阅读；只作为候选参考，文献论断未在本轮重新核查原论文。
+- Current work: 候选逻辑为先检验主干语义组织、再检验SAE观察器、最后有条件诊断稀疏预算。参考规划的Dense/SALL选择、R关系面板、离线SAE与K扫描均不是本轮批准。领域组织为既有主线，命题/关系方向若纳入需单列，不以参考材料偷换主问题。旧target-rho训练建议未获本轮执行授权。
+- Next action: 使用本目录 `0920_representation_analysis_prompt_cn.md` 启动新任务，先读正式证据、审核新增资料和可复用缓存，再给一个最小分阶段分析计划与唯一待裁定动作。可以继续缺资料之外的只读审计；不提交GPU、不改主干、不自动进行离线训练。新任务有独立memory，链接本来源；旧带后缀目录已删，不重建。
+- References: `daily_research_reports/0918/focus_meeting_sae_sidecar_regularization_0_10b_cn.md` 是改进汇报及量级表；`daily_research_reports/0918/tables/exact_10b_sidecar_loss_gradient_comparison.csv` 拥有量级来源；`daily_research_reports/0918/figures/meeting_revision/figure_manifest.json` 拥有12图来源与脚本地址；执行包 `report_assets/20260918_meeting_revision/delivery_validation.json` 保存验证结果。E05正式结果在 `Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E05_multimodel_fisher_gradient_coefficient_audit/`。新增候选参考为 `daily_research_reports/0920/docs/surveys/01_表征几何与SAE语义对应_文献调研_cn.md` 与 `02_冻结检查点表征审计_实验规划_cn.md`；它们不拥有当前执行批准。本条不修改Anchor/Focus状态，不更新其他来源对话memory。

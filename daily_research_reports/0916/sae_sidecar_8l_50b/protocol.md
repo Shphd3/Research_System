@@ -540,3 +540,77 @@ A10 audit ledger: A--F unchanged; G source checkpoint, four-rank topology,
 logical-lane continuity, batch arithmetic, profile, and 50B continuation scope
 **CONFIRMED**; cross-block consistency **PASS**; execution scope
 **APPROVED_FOR_4xH100_RESERVED_FORMAL_CONTINUATION**.
+
+## Appendix K — Amendment A11: fresh S7 lambda-0.1 trajectory moved to 4xH100 Reserved
+
+- Amendment time: 2026-09-20, after a separate fresh-start S7 lambda-0.1
+  two-RTX5090 Smoke passed and after its eight-RTX5090 Spot full job
+  `pt-bbrhajht` was accepted but had not emitted a formal training metric.
+- Before: the fresh seed-17 trajectory was configured for eight RTX5090 ranks,
+  microbatch 8/GPU, accumulation 2, and 262,144 valid prediction tokens per
+  update. The researcher owns stopping `pt-bbrhajht`; this amendment does not
+  authorize the AI to stop, resume, or reuse it.
+- After: create a separate fresh run on one `h100-4-reserved` node. Preserve the
+  block-7 raw Attention-output sidecar architecture, no side Norm, native LM
+  path, objective `L_LM + 0.1 L_rec + (1/32) L_AuxK`, gradient boundaries,
+  seed 17, data/tokenizer/manifest, optimizer, learning-rate schedules,
+  `ce_chunk_tokens=128`, CE checkpointing, 50B endpoint, checkpoint schedule,
+  loss normalization, and observability contract. Loading the RTX5090 Smoke,
+  `pt-bbrhajht`, the 15.466B checkpoint, or any other checkpoint is forbidden.
+- Batch and capacity candidate: four ranks, sequence length 2048, microbatch
+  32/GPU, accumulation 1. This keeps 128 sequences and 262,144 nominal valid
+  prediction tokens per complete update. It is the largest integer microbatch
+  factorization that preserves the frozen global batch on four ranks.
+- Qualification: because microbatch 32 is a new performance configuration, run
+  one bounded eight-update capacity Smoke on `h100-4-reserved`, with intentional
+  stop/recovery after update 4. It must pass the existing hook, gradient,
+  fresh-start, finite-loss, token-count, synchronization, TensorBoard,
+  checkpoint-replay, storage, and physical-memory gates. OOM or any missing
+  gate blocks scale-up; no batch-size grid or silent CE/optimizer change is
+  authorized.
+- Scale-up: only after the matching Smoke writes audited
+  `smoke_verification.json=PASS`, submit one independent 50B full job on the
+  same `h100-4-reserved` profile. Observe only submission and bounded startup;
+  do not resubmit because it queues.
+- Reason: the researcher replaced the eight-RTX5090 Spot execution with the
+  stable four-H100 Reserved resource and requested the largest safe microbatch
+  compatible with the fixed global batch. Existing 4xH100 evidence at
+  microbatch 16/accumulation 2 measured about 33.87 GB reserved per rank, but it
+  does not qualify the untested microbatch-32 setting.
+- Eligibility impact: this is a separate engineering realization of the same
+  fresh S7 lambda-0.1 condition, not a second treatment arm or statistical
+  replicate. Smoke and submission health cannot establish model quality,
+  semantic improvement, or 50B completion.
+- Approval: researcher message `我认为还是不要使用8 * 5090了, 换成4 * H100
+  reserved ... 如果需要 smoke 的话，直接使用 4 卡 H100 reserved`.
+
+A11 audit ledger: A--F unchanged; G resource profile, topology, fresh-run
+lineage, batch partition, capacity Smoke, scale-up gate, and stop ownership
+**CONFIRMED**; cross-block consistency **PASS**; execution scope
+**APPROVED_FOR_ONE_4xH100_RESERVED_CAPACITY_SMOKE_THEN_ONE_PASS_GATED_FRESH_50B_RUN**.
+
+## Appendix L — Amendment A12: repair pre-training H100 topology guard and repeat Smoke
+
+- Amendment time: 2026-09-20, after A11's first H100 Smoke submission
+  `pt-2i57hchd` reached four-GPU preflight but failed before its first
+  optimizer update. The isolated trainer still required the prior RTX5090
+  profile despite the A11 H100 config and launcher.
+- Before: the intended four-rank `mbs32/acc1` capacity test did not run. The
+  failed job and `runs/smoke_S7_lambda0p1_from_scratch_4h100_mbs32` retain
+  their logs and failure artifacts; they are not a capacity result.
+- After: change only the isolated trainer topology guard to require four H100
+  ranks on `h100-4-reserved` and the already approved `mbs32/acc1` partition.
+  Keep all architecture, objective, data, optimizer, CE, schedule, token,
+  and fresh-initialization settings unchanged. Submit one corrected Smoke into
+  a new `_v2` run directory; it may gate the full run only if its own durable
+  verification is `PASS`.
+- Reason: align the safety guard with A11's authorized execution tuple without
+  using or deleting a failed training artifact. The researcher explicitly
+  asked to continue Smoke and submit after completion.
+- Eligibility impact: A11's scientific condition and comparison boundary are
+  unchanged. The first job is an engineering setup failure, not an OOM or
+  training result. No full run is authorized from that failed attempt.
+
+A12 audit ledger: A--F unchanged; G guard repair and clean repeat Smoke
+**CONFIRMED**; cross-block consistency **PASS**; corrected Smoke then one
+PASS-gated independent 4xH100 Reserved full run remains the approved scope.

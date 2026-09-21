@@ -2,7 +2,7 @@
 
 ```text
 type: meeting_cycle_core_task
-task_state: ACTIVE
+task_state: CLOSED
 problem_key: three_model_sae_representation_audit
 focus_role: SECONDARY
 question_state: HUMAN_CONFIRMED

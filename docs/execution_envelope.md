@@ -116,12 +116,27 @@ researcher_decisions:
   - date: "2026-09-18"
     scope: resource_and_execution
     decision: "For A15_17_E05 after exact SALL 10B became available, the researcher resumed the overall five-model read-only measurement on one single-node 5090-4-spot Smoke, followed only after audited PASS by one same-profile full run. The scope includes exact 0/0.5/1/3/5/10B representation, held-out loss, feature, activation-gradient, and shared-parameter-gradient measurements. No training, checkpoint mutation, profile fallback, commit, push, or publication is authorized."
+  - date: "2026-09-18"
+    scope: resource_and_execution
+    decision: "For the post-hoc P-panel mean-token representation and fixed outlier-sensitivity audit only, the researcher explicitly selected one single-node 5090-2-spot Smoke followed after audited PASS by one same-profile full read-only extraction across M0/M2/S7/S37/SALL at exact 0/0.5/1/3/5/10B. This authorization excludes training, checkpoint mutation, profile fallback, commit, push, publication, and replacement of the registered last-token primary result."
+  - date: "2026-09-20"
+    scope: resource_and_execution
+    decision: "For A15_17_E06, the researcher explicitly selected one single-node 5090-4-spot Smoke for the exact-21B Dense, original SALL, and reweighted S7 frozen representation audit, with last and mean pooling on each dataset. After audited Smoke PASS, estimate full duration from measured throughput and submit one same-profile full read-only task. Supervise the formal task for at most five minutes; if still not started, stop polling and hand supervision to the researcher. This excludes training, checkpoint mutation, profile fallback, automatic resubmission, functional intervention, commit, push, and publication."
+  - date: "2026-09-20"
+    scope: resource_and_execution
+    decision: "For A15_17_E06 Smoke only, after four-RTX5090 Spot job pt-lzhq7zvx reached SUSPENDED with its worker Deleted and no pod output, the researcher selected one single-node h100-2-spot attempt. Observe startup for at most three minutes; if it has not started, submit one h100-1-spot Smoke with the same three 21B checkpoints and dual-pooling site checks. The implementation must partition independent case workers so a later four-GPU formal task can run in parallel. This does not select the later four-GPU formal profile, authorize duplicate active Smokes, or authorize training."
+  - date: "2026-09-20"
+    scope: resource_and_execution
+    decision: "For A15_17_E06, after the Spot Smoke attempts produced no model output and were suspended, the researcher explicitly selected a sequential local Smoke on the visible single H100 40GB MIG slice, followed after audited PASS and ETA by one single-node 5090-4-spot full read-only analysis. The local H100 result does not prove RTX5090 runtime or 32GB memory behavior; the full job must fail closed on its own target-GPU/runtime preflight. This replaces the earlier H100 Spot Smoke transport choice for new attempts, does not authorize a new model-training run or another fallback, and preserves the at-most-five-minute full startup supervision rule."
+  - date: "2026-09-20"
+    scope: resource_and_execution
+    decision: "For A15_17_E07 and E08, the researcher explicitly ordered local Smoke of exact-15B models first and exact common 0/0.5/1/3/5/10B models second. Only after both Smokes pass, submit two distinct single-node 5090-4-spot read-only full analysis tasks. Do not observe whether the 21B or either new formal task enters running state; successful submission ends this conversation's supervision. This supersedes E06's earlier five-minute startup supervision request, but does not alter its submitted scope or automatically resubmit it. No model/offline-SAE training, checkpoint mutation, resource fallback, commit, push, or publication is authorized."
 
 profiles:
   h100-1-spot:
     status: requires_explicit_selection
     selected_on: "2026-09-15"
-    allowed_scope: "0915 four-layer online SAE sidecar exploration; resource selection only, experiment execution still follows its approved scope"
+    allowed_scope: "0915 four-layer online SAE sidecar exploration; A15_17_E06 exact-21B three-model dual-pooling Smoke only as the user-selected fallback after a h100-2-spot attempt has not started within three minutes"
     selection_source: "Researcher explicitly stated one H100 Spot can be submitted in 0914-training scheduling on 2026-09-15"
     verified_by: "2026-09-15 read-only AEC2 list-workerspec: n6ls.iu.i40.1 exists with one 80GB GPU; Spot availability and queue time are not guaranteed"
     surface: acp
@@ -165,7 +180,7 @@ profiles:
     status: requires_explicit_selection
     selected_on: "2026-09-13"
     scope_extended_on: "2026-09-15"
-    allowed_scope: "fixed-heldout SAE checkpoint audit; 0915 three-model common-checkpoint 0-10B representation audit, resource selection only until its execution scope is authorized"
+    allowed_scope: "fixed-heldout SAE checkpoint audit; 0915 three-model common-checkpoint 0-10B representation audit; A15_17_E06 exact-21B three-model dual-pooling Smoke with a three-minute startup window and h100-1-spot fallback if not started"
     selection_source: "Researcher selected remote two-H100 execution and explicitly corrected the quota to Spot for the 0915 three-model audit"
     verified_by: "2026-09-15 read-only AEC2 list-workerspec: n6ls.iu.i40.2 has two 80GB GPUs, 44 vCPUs and 480 GiB host memory; Spot availability, queue time and uninterrupted runtime are not guaranteed"
     surface: acp
@@ -242,9 +257,9 @@ profiles:
   "5090-4-spot":
     status: requires_explicit_selection
     selected_on: "2026-09-13"
-    scope_extended_on: "2026-09-15"
-    allowed_scope: "native Dense baseline scopes already registered; 0915/0917 existing-checkpoint representation audits; A15_17_E05 exact-10B five-model read-only Smoke and pass-gated full measurement"
-    selection_source: "Researcher explicitly selected the currently available single-node four-RTX5090 Spot profile and authorized the full registered audit on 2026-09-15"
+    scope_extended_on: "2026-09-20"
+    allowed_scope: "native Dense baseline scopes already registered; 0915/0917 existing-checkpoint representation audits; A15_17_E05 exact-10B five-model read-only Smoke and pass-gated full measurement; A15_17_E06 exact-21B three-model dual-pooling frozen audit; A15_17_E07 exact-15B and E08 verified common 0-10B two-model frozen read-only analyses after ordered local Smoke passes"
+    selection_source: "Researcher explicitly selected the single-node four-RTX5090 Spot profile for scoped audits on 2026-09-15, 2026-09-18, and A15_17_E06 on 2026-09-20; each run still requires its own Protocol gates"
     surface: acp
     workspace: share-space
     aec2: computing-cluster-5090-01g
