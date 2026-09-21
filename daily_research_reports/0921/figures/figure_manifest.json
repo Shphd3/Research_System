@@ -1,0 +1,71 @@
+{
+  "claim_boundaries": [
+    "P last-token SALL-vs-Dense at 21B is the registered primary; all other plotted comparisons are secondary or diagnostic.",
+    "Checkpoints are not independent seeds.",
+    "CKA, norm, spectra, and SAE activation tails do not define semantic quality.",
+    "The intuition map is a hypothesis diagram, not result evidence."
+  ],
+  "colors": {
+    "Dense": "#171717",
+    "S7": "#0072B2",
+    "SALL": "#009E73"
+  },
+  "outputs": [
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/01_21b_native_relation_accessibility.png",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/02_checkpoint_trajectory_and_cost.png",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/03_scope_geometry_and_semantic_margin.png",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/04_sae_activation_spectrum_and_fidelity.png",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/05_intuition_hypothesis_map.png",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/01_21b_native_relation_accessibility.pdf",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/02_checkpoint_trajectory_and_cost.pdf",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/03_scope_geometry_and_semantic_margin.pdf",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/04_sae_activation_spectrum_and_fidelity.pdf",
+    "/data/250010109/Research_System/daily_research_reports/0921/figures/05_intuition_hypothesis_map.pdf"
+  ],
+  "scope": "CPU-only plotting from completed PASS JSON; no new model inference, fitting, resampling, or statistical test",
+  "script": "/data/250010109/Research_System/daily_research_reports/0921/report_assets/build_sae_representation_report_figures.py",
+  "script_sha256": "463450fc798dd0fbe1244bbeb0b77f415332dffb560d09a2bee948f2bf1a7867",
+  "sources": {
+    "e06_cost": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/analysis/cost/n8_test_nll.json",
+      "sha256": "fe969903e9a4a82e8361946afdc39d66740f3ebe081492b02875312354d4d84a"
+    },
+    "e06_geometry": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/analysis/geometry/geometry_cka.json",
+      "sha256": "d9e06389007b103b242f3c6f6ae95448679f60bad604e9f80beae88264c10bbb"
+    },
+    "e06_observer": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/analysis/observer/observer_metrics.json",
+      "sha256": "da4cd6a82a112cf73998e29abe2bbd5bc316af47a5f1f6dd82c14986274d0b7d"
+    },
+    "e06_primary": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/analysis/primary/primary_metrics.json",
+      "sha256": "a77e9a642ec74f1a4e00ad39e29cb29952b0a1af6a23a4947f6820d5d9d18e6a"
+    },
+    "e06_semantic": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/analysis/semantic_controls/p_semantic_controls.json",
+      "sha256": "b5d8c1cba13d1f7d92a5b32ead16f24aa9a38b34c028bea213edb5fff7e438c6"
+    },
+    "e07_cost": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_15b_4x5090_20260920_wave1/analysis/15b/cost/n8_test_nll.json",
+      "sha256": "766f753a37a78cf26bc1bf16c4c910e0aff8b6d25594e279097828fb6dd582ac"
+    },
+    "e07_observer": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_15b_4x5090_20260920_wave1/analysis/15b/observer/observer_metrics.json",
+      "sha256": "c0babf8d7dfea9275d2361fa246403f6bb3a18f64082a2c12826341beed11270"
+    },
+    "e07_primary": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_15b_4x5090_20260920_wave1/analysis/15b/primary/primary_metrics.json",
+      "sha256": "d085e2d14df773acbc987726ad6c90889cc29fb46ca1e81ede42e2b971adc4af"
+    },
+    "e07_semantic": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_15b_4x5090_20260920_wave1/analysis/15b/semantic_controls/p_semantic_controls.json",
+      "sha256": "44d075c3d6c2031d131b5dc2c4c993f037a14e966b73b5c62f87d891d91ee9d6"
+    },
+    "e08_trajectory": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_early_4x5090_20260920_wave1/analysis/trajectory/trajectory_metrics.json",
+      "sha256": "ee965604b874da6345efe285db2ff8be6bb9c78831146e9d79c7e0d02141feb2"
+    }
+  },
+  "status": "PASS"
+}
