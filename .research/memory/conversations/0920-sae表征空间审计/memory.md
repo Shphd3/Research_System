@@ -3,7 +3,7 @@
 Conversation name: 0920-SAE表征空间审计
 Processed by: Codex (harness: Codex desktop; model: unknown)
 Created at: 2026-09-20T06:45:12Z
-Latest update at: 2026-09-21T04:22:38Z
+Latest update at: 2026-09-21T05:54:46Z
 Continues from: `.research/memory/conversations/0914-training-scheduling/memory.md`
 Environment: `repo=/data/250010109/Research_System` `exec=/data/250010109/MoE_Router`; both roots are readable.
 
@@ -66,3 +66,15 @@ Environment: `repo=/data/250010109/Research_System` `exec=/data/250010109/MoE_Ro
 - Current work: 本次 memory checkpoint 已把测试完成事实、主要不利与混合证据、旧失败根、合格结果根、报告入口和仍未确认的人类判断压缩为一个恢复节点；没有删除旧条目，没有更新 Focus/Anchor、没有写正式 Summary、没有训练/提交新实验、没有 commit/push。此前执行包中为完成 E06 而修订的观察器布局检查及 Protocol 追加修订仍留在工作区，不能从 job 名或旧失败缓存重建结果。
 - Next action: 等研究者确认或纠正报告中的 `认识更新 / 不能声称 / 唯一下一决策`；确认前停止科学状态迁移。若研究者确认当前边界，再从合格结果根补齐 E06--E08 的 canonical Summary/Detailed、同步 Anchor/Focus，并由研究者裁定是否采用报告中的唯一 AI 建议：只用现有冻结缓存检验正反关系向量差能否抵消模板偏置并跨新模板同向；未确认时不自动实施该分析或任何训练。
 - References: `daily_research_reports/0920/focus_three_model_sae_representation_audit.md` 与 A15_17 Anchor 拥有人类问题和当前未确认状态；E06/E07/E08 各自 `protocol.md` 拥有判据与边界；E06 合格根 `/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/`、E07 根 `/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_15b_4x5090_20260920_wave1/`、E08 根 `/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_early_4x5090_20260920_wave1/` 拥有执行、采集和分析证据；`daily_research_reports/0921/focus_meeting_sae_representation_space_audit_cn.md` 是当前 AI 解释草案及会议入口，不拥有科学批准。
+
+## 2026-09-21T05:54:46Z -- N8 领域补充 A/B 完成，压缩至 C 分支裁定入口
+
+- Summary: 已按 `daily_research_reports/0921/sae_domain_supplementary_experiments_cn.md` 的授权边界，完成 21B 三模型现有缓存上的 N8 补充分析 A（配对读出、尺度/词汇对照及几何分解）和 B（在线 SAE 观察器、Top-K 分布及同模型跨层 CKA）。A/B 均为本地 CPU 只读复用，没有使用 GPU、加载模型、新提取、优化器更新或远程提交；4×5090 Spot 及“提交后监督两分钟”规则因未使用远程资源而未触发。C 仍为条件分支，本轮 `NOT RUN`。
+- Execution evidence: 最终唯一合格根为 `/data/250010109/MoE_Router/experiments/20260921_sae_domain_supplementary_analysis/runs/full_local_cpu_20260921T0645Z/`；`terminal_receipt.json`、`stages/ANALYSIS_PASS.json` 和 `artifact_manifest.json` 齐全，终态为 `PASS`。A 实测 87.0773 秒、B 实测 135.4090 秒，整体峰值 RSS 1,264,524 KiB。首次 A Smoke 因 BLAS 线程数导致 Dense L8-last 边界样本 0.805625 未精确复现冻结值 0.805000，固定 4 线程后 12 个 N8 条件全部精确复现；首次 B Smoke 仅因 `np.int64` JSON 序列化失败，输出修复后恢复 192 条记录和 49,152 个唯一 token key。中间 full 根 `full_local_cpu_20260921T0605Z` 在完整性审计中被发现缺 Dense–S7 L4 固定 CKA 标定，补齐该条件和 source-group 唯一性守卫后生成上述最终根；失败和中间根不作最终证据。
+- Evidence update: SALL-Dense 的 N8 原生读出在 L8 正文均值为 +0.75 个百分点，配对 95% 区间 [-0.5625,+2.0625]，不足以确立稳定改善；L8 末词为 +2.00 个百分点、区间 [+0.125,+3.8766]，但它是四个事后条件之一，且没有预冻结“任一正差”的多重性规则，不能升级为新确认。单位范数后 L8 均值差缩至 +0.25 个百分点；同位置的 SALL-Dense 为 $\Delta B=-42.4664$、$\Delta W=+45.5040$、$\Delta(B/W)=-0.03854$，且区间均不跨 0，表明小幅读出正差与整体类间/类内组织变差并存，不支持“领域整体更分开”。
+- Observer and cue boundary: N8 的 TF-IDF 读出为 89.8125%，高于 Dense 87.0625% 和 SALL 87.8125%，六个表面特征为 34.375%（机会水平 12.5%），说明面板含强词汇/来源线索。fit-only 选出的 8 原子组在 SALL L4/L8 测试为 43.75%/57.8125%，超过匹配随机组 q97.5 的 32.8125%/35.9375%；S7 L8 为 37.5%，仅略高于 35.9375%。这只证明小观察面板上存在与来源类别相关的原子组合，不证明抽象语义特征。SALL L8 每词元正得分原子约 2,283--2,553 个，Top-32 质量仅 11.36%--13.15%；S7 L8 约 64.27--64.65 个，Top-32 质量 86.09%--87.29%，但 32/33 名的平均相对间隙仅约 4.88%--5.10%。因此两者都不支持把 $K=32$ 直接解释为天然 32 维。缓存只有 token rank/code 和池化后 $a/\hat a/e$，逐位置重构误差仍为 `MISSING`。
+- Structural localization: 均值汇聚的 U-corrected CKA 显示 L7→L8 在 Dense/SALL/S7 分别为 0.8999/0.8670/0.4301；Dense–SALL 同层 L4/L8 为 0.9246/0.9443，Dense–S7 L8 为 0.4092。这定位了 S7 后段的显著结构断点，但 CKA 只衡量表征关系的相似度，不等于语义质量。本轮无功能干预，模型是否使用这些信息仍为 `Unknown`。
+- Provisional knowledge update: 当前证据更符合 H2：旁路改变了字典读法和部分后层结构，但没有建立原生领域组织的整体改善；该解释是等待研究者确认的 AI 读取，不是已批准的科学状态。H3/C 未检验。当前不应把 C 当作“SAE 收益验证”直接启动；若研究者仍选择 C，应将其重写为独立的“共同领域方向”探索，先冻结主 rank/多 rank 规则。
+- Current work: 本次只追加非规范 memory 检查点；主报告 `daily_research_reports/0921/sae_domain_supplementary_results_cn.md` 仍为 `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`。没有更新 Focus/Anchor/canonical Summary，没有新运行、新资源申请、commit 或 push。
+- Next action: 由研究者确认或纠正上述认识边界，并在“停止领域收益分支”与“将 C 改写为独立共同领域方向探索”之间作出裁定。裁定前不执行 C、$K>32$ 扫描、新提取、离线 SAE 拟合、主干训练或选择性干预。
+- References: E06 `protocol.md` 的事后 N8 补充授权拥有 A/B 范围与 C 停止门；`/data/250010109/MoE_Router/experiments/20260921_sae_domain_supplementary_analysis/execution_record_cn.md` 拥有执行史与失败边界；最终合格根的 `terminal_receipt.json`、`stages/ANALYSIS_PASS.json` 和 `artifact_manifest.json` 拥有终态证据；`daily_research_reports/0921/sae_domain_supplementary_results_cn.md` 是当前完整结果解释与图表入口，但在研究者确认前不拥有科学批准。
