@@ -1,0 +1,153 @@
+{
+  "claim_boundary": "Training LM loss on observed tokens only; not throughput, held-out quality, or isolated causal effects.",
+  "common_end_valid_tokens": 21000000000,
+  "comparison_window_valid_tokens": [
+    19000000000,
+    21000000000
+  ],
+  "created_at_utc": "2026-09-23T03:34:00.789491+00:00",
+  "figure": "/data/250010109/Research_System/daily_research_reports/0923/figures/sae_four_model_lm_loss_21b.png",
+  "figure_sha256": "9d15d6d70589d42b3d0d11d410bb107f5275ba42e746ded376eaca5f5a51d885",
+  "models": {
+    "dense": {
+      "at_15b_trailing100m": 3.3289245331309507,
+      "at_17b_trailing100m": 3.286013836371689,
+      "label": "Dense",
+      "last_observed_tokens": 22258029056,
+      "sources": [
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-14T10:28:32.134032+00:00",
+          "filesystem_size_after_read": 25767165,
+          "finite_rows": 38150,
+          "malformed_rows": 0,
+          "parsed_rows": 38150,
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/metrics.jsonl",
+          "raw_last_token": 10000000000,
+          "sha256_of_read_snapshot": "2c66d92d4f5f4019f70d571c045a877fbbfa3b1d9eb72fdadd336108e59dab49",
+          "snapshot_bytes": 25767165,
+          "source_ceiling_tokens": 10000000000,
+          "used_last_token": 10000000000,
+          "used_rows": 38150
+        },
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-16T09:00:33.438003+00:00",
+          "filesystem_size_after_read": 31663268,
+          "finite_rows": 46763,
+          "malformed_rows": 0,
+          "parsed_rows": 46763,
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/metrics.jsonl",
+          "raw_last_token": 22258029056,
+          "sha256_of_read_snapshot": "4bfc85600d279a087d545a467dec0beb2f8eb8ae5ae1fdf9ae2bb004cdb1fcc8",
+          "snapshot_bytes": 31663268,
+          "source_ceiling_tokens": null,
+          "used_last_token": 22258029056,
+          "used_rows": 46763
+        }
+      ],
+      "window_19_21b_mean": 3.2657908914373626
+    },
+    "s7_lambda0p1": {
+      "at_15b_trailing100m": 3.325922764555664,
+      "at_17b_trailing100m": 3.284023818060608,
+      "label": "Fresh S7",
+      "last_observed_tokens": 28295515648,
+      "sources": [
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-23T03:33:54.837537+00:00",
+          "filesystem_size_after_read": 82228439,
+          "finite_rows": 107946,
+          "malformed_rows": 0,
+          "parsed_rows": 107946,
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/metrics.jsonl",
+          "raw_last_token": 28295515648,
+          "sha256_of_read_snapshot": "3e2841984fa0796fe5dc1dc793839fa9baabdb5fc220244784f96db3e5ed623b",
+          "snapshot_bytes": 82228439,
+          "source_ceiling_tokens": null,
+          "used_last_token": 28295515648,
+          "used_rows": 107946
+        }
+      ],
+      "window_19_21b_mean": 3.2624767047304686
+    },
+    "s7_reweighted": {
+      "at_15b_trailing100m": 3.337725522374344,
+      "at_17b_trailing100m": 3.291584046227951,
+      "label": "S7",
+      "last_observed_tokens": 21332136448,
+      "sources": [
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-17T17:18:45.606781+00:00",
+          "filesystem_size_after_read": 45359744,
+          "finite_rows": 59345,
+          "malformed_rows": 0,
+          "parsed_rows": 59345,
+          "path": "/data/250010109/MoE_Router/experiments/20260916_attention_output_sidecar_last_50b/runs/formal50b_last_attention_4h100/metrics.jsonl",
+          "raw_last_token": 15556007424,
+          "sha256_of_read_snapshot": "72c7552719ad620d965ee2c2a387e92bc37f35b35ed05c9ce854f570a2cf254b",
+          "snapshot_bytes": 45359744,
+          "source_ceiling_tokens": 15465567744,
+          "used_last_token": 15465567744,
+          "used_rows": 59000
+        },
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-18T01:28:22.241207+00:00",
+          "filesystem_size_after_read": 17134839,
+          "finite_rows": 22381,
+          "malformed_rows": 0,
+          "parsed_rows": 22381,
+          "path": "/data/250010109/MoE_Router/experiments/20260917_attention_output_sidecar_last_reweighted_resume/runs/formal50b_last_attention_lambda0p1_mbs16_fork_4h100/metrics.jsonl",
+          "raw_last_token": 21332136448,
+          "sha256_of_read_snapshot": "f226475535ac523e899551925bd0d40f4c95ab609b5516c682aa2aad3ffbe65b",
+          "snapshot_bytes": 17134839,
+          "source_ceiling_tokens": null,
+          "used_last_token": 21332136448,
+          "used_rows": 22381
+        }
+      ],
+      "window_19_21b_mean": 3.2689434714765624
+    },
+    "sall": {
+      "at_15b_trailing100m": 3.3239040976481626,
+      "at_17b_trailing100m": 3.279118724725418,
+      "label": "SALL",
+      "last_observed_tokens": 23040108032,
+      "sources": [
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-18T02:00:31.361036+00:00",
+          "filesystem_size_after_read": 106043321,
+          "finite_rows": 35054,
+          "malformed_rows": 0,
+          "parsed_rows": 35054,
+          "path": "/data/250010109/MoE_Router/experiments/20260916_attention_output_sidecar_multisite_50b/runs/formal50b_all_layers_8xh100_spot/metrics.jsonl",
+          "raw_last_token": 9188536832,
+          "sha256_of_read_snapshot": "5526f830d8114ad8cc9b40536d6b7f1dbb6d975885faec49434dec4d2f8fec9e",
+          "snapshot_bytes": 106043321,
+          "source_ceiling_tokens": 9174381056,
+          "used_last_token": 9174381056,
+          "used_rows": 35000
+        },
+        {
+          "filesystem_mtime_utc_after_read": "2026-09-19T08:42:24.065264+00:00",
+          "filesystem_size_after_read": 155527096,
+          "finite_rows": 52898,
+          "malformed_rows": 0,
+          "parsed_rows": 52898,
+          "path": "/data/250010109/MoE_Router/experiments/20260918_attention_output_sidecar_all8_4h100_resume/runs/formal50b_all8_unit_weight_4h100_mbs16_resume/metrics.jsonl",
+          "raw_last_token": 23040108032,
+          "sha256_of_read_snapshot": "a5d03fb5258fd34694ec9718e442f9c2d94b7cca29cff798e06f0d02e78f930c",
+          "snapshot_bytes": 155527096,
+          "source_ceiling_tokens": null,
+          "used_last_token": 23040108032,
+          "used_rows": 52898
+        }
+      ],
+      "window_19_21b_mean": 3.259127509828125
+    }
+  },
+  "reweighted_fork_valid_tokens": 15465567744,
+  "smoothing_window_valid_tokens": 100000000,
+  "source_script": "/data/250010109/Research_System/daily_research_reports/0922/report_assets/build_training_loss_comparison.py",
+  "source_script_sha256": "8af4f7ae717d0f18ac8eee050be2f8993e16c3edfc48dd0c9c6f8c4fa8f715f9",
+  "table": "/data/250010109/Research_System/daily_research_reports/0923/tables/sae_four_model_lm_loss_21b.csv",
+  "table_sha256": "76f0f1fbbe23f94ad86553ecaca0fdb64ecb6dc313bf324f3f8c25111823edce"
+}

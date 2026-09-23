@@ -7,14 +7,14 @@ problem_key: sae_shared_direction_reuse
 focus_role: SECONDARY
 question_state: HUMAN_CONFIRMED
 design_state: HUMAN_CONFIRMED
-result_state: NOT_AVAILABLE
+result_state: EVIDENCE_AVAILABLE_AWAITING_RESEARCHER
 cycle_start: 2026-09-22
 target_meeting: Unknown
 active_project: Projects/from-attention-to-search/
 anchor: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_01_sae_shared_direction_reuse_anchor.md
 protocol: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/protocol.md
 source_meeting: Unknown (2026-09-21 advisor discussion; transcript is not yet a canonical repository artifact)
-core_experiment_count: 1
+core_experiment_count: 2
 ```
 
 2026-09-22 研究者确认本轮独立问题、稳定 `problem_key=sae_shared_direction_reuse` 与唯一下一决策。本轮继承 A15_17 的旁路 SAE 表征审计，但只追问一个更小的机制问题：已经观察到的低有效维数，是否至少伴随跨样本复用相同 SAE 原子方向的增加。
@@ -102,28 +102,45 @@ S7 的稀疏重构压力
 
 → `protocol`: `Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/protocol.md`
 
+### 实验 2：同为S7、当前λ=0.1的17B训练历史对比（研究者新指定）
+
+- **目的：** 排除S7/SALL旁路层数不同这一混淆，检查相同S7结构及当前系数下，训练历史不同是否仍伴随复用/原生几何差异。
+- **假设与竞争解释：** 历史不同可能留下不同端点状态，也可能在当前面板无法区分；不预设哪一支更集中。微批划分等残余差异尚未消融，所以不是纯系数历史因果试验。
+- **分析方法：** 同面板、同原生支持定义与配对不确定性，对比重加权减从零训练的复用差值，并独立列出原生有效维数；先核对同初始化、输入与模型身份，禁止跨模型对齐原子ID。
+- **结果分支：** 区间完全为正或负分别表明相应条件复用更高；跨零只表明未分辨差异，不是等价。几何单列，不用它选择差值方向；测量失败则证据不足。以上为测量解释，不自动确立历史因果或主要机制。
+- **执行范围：** 研究者明确要求直接full、不做本轮smoke；提交后停止轮询，等研究者通知后审计结果与写四段式分析。精确合同：[E02](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E02_s7_17b_training_history_reuse_audit/protocol.md)。
+
 ## 5. 轮次滚动摘要
 
 | 日期（UTC） | 本轮问题 | 结果或 `NOT RUN` | 认识更新 |
 |---|---|---|---|
-| 2026-09-22 | 共享原子复用能否作为低有效维数的候选机制？ | `NOT RUN` | 已把“Top-K 稀疏必然导致全局低维”的错误推理改为可证伪的“跨样本共享原子复用”假设，并明确了 decoder 共线这一竞争解释。 |
+| 2026-09-22 | 共享原子复用能否作为低有效维数的候选机制？ | [E01证据已到位](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md)，预注册必要条件检查通过 | 研究者认识更新待填写；因果及decoder共线竞争解释未裁定。完整本轮记录仅在Detailed。 |
 
 ## 6. 待研究者决定
 
-- [ ] Protocol 中用于量化“跨样本复用”的精确主指标、统计判据和同面板缓存身份仍需在执行前确认；在此之前 Protocol 必须保持 `DRAFT_NOT_EXECUTABLE`。
+- [x] 2026-09-22 研究者明确确认192个固定N8样本、原生Top-32频率向量平均余弦差、2000次配对样本bootstrap与必要条件判据，并授权smoke通过后完成full run。精确合同由E01 Protocol A2拥有；不是对结果或因果机制的预先确认。
+
+2026-09-22 执行范围补充（研究者本次明确要求继续实现并提交 4 卡 5090 smoke）：
+上述待确认项继续约束**正式科学分析**，不把它们默认为已批准。允许 E01
+Protocol 单独登记 `APPROVED_FOR_IMPLEMENTATION_AND_ENGINEERING_SMOKE_ONLY`：
+冻结模型、小面板验证真实 Top-32 原子 ID、同输入/同 mask、统计实现与只读性；
+不运行完整面板主比较、不作机制判断、不自动转正式任务。此补充不改变本轮
+科学问题、结果状态或研究者的唯一下一决策。
+
+后续执行范围更新：上段smoke-only限制已由研究者本次完整运行指令与精确判据确认在E01 A2范围内取代；其他实验、训练、资源切换仍未授权。
 
 ## 7. 本轮总结论（研究者完成审计后填写）
 
 - **我的认识更新：** `NOT AVAILABLE`。
 - **仍不能说：** `NOT AVAILABLE`。
-- **唯一下一决策：** 完成同面板只读审计后，判断“跨样本共享原子复用”是否值得继续作为 S7 低有效维数的主要候选机制；若必要条件失败则停止该解释，若通过则进入 decoder 几何竞争解释的区分实验。
+- **唯一下一决策：** 按研究者新要求，先完成同为S7的17B从零训练/重加权对比，判断控制旁路结构和当前系数后，复用与几何差异是否仍与训练历史相伴；不据此确立历史因果。decoder几何区分实验暂不执行。
 
 ## 路径
 
 - **父 Anchor：** `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md`
 - **本轮 Subanchor：** `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_01_sae_shared_direction_reuse_anchor.md`
 - **实验协议：** `Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/protocol.md`
-- **结果摘要：** `NOT_YET_WRITTEN`
-- **完整证据：** `NOT_YET_WRITTEN`
+- **结果摘要：** [中文四段式分析](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md) / [English](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary.md)
+- **完整证据：** [Detailed](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/detailed.md)
 - **最终报告：** `NOT_YET_WRITTEN`
 - **待研究问题清单：** `Projects/from-attention-to-search/main/parking_lot/README.md`

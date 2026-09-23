@@ -3,25 +3,38 @@
 Conversation name: 0921-表征分析
 Processed by: Codex (harness: Codex desktop; model: unknown)
 Created at: 2026-09-21T05:00:00Z
-Latest update at: 2026-09-21T05:08:08Z
+Latest update at: 2026-09-22T07:51:19Z
 Continues from: `.research/memory/conversations/0920-sae表征空间审计/memory.md`
 Environment: `repo=/data/250010109/Research_System` `exec=/data/250010109/MoE_Router`; both roots readable.
 
-## 2026-09-21T05:00:00Z -- 领域主线组会重构、真实激活折线与交接
+Non-canonical working context. Verify science and authorization against the owning artifacts below; the newest entry is current. Historical entries consolidated at the researcher's explicit request, preserving unresolved boundaries and failures.
 
-- Summary: 研究者要求紧急重构组会，暂不主讲特别构造关系和不同语序/复述实验，聚焦“SAE正则后是否让不同领域分得更开”，并解释S7/SALL原子差距、Top-K=32合理性、CKA标定、同模型跨层测试、训练演化及原实验Agent后续任务。已读取来源累计memory、通过read_thread读取任务`01a0bd8d-fe25-7003-8c9a-15af54823d7f`（host `remote-ssh-codex-managed:mig`），再核对Focus/Anchor/E06 Protocol与E06—E08合格运行根。报告是AI解释草案，不拥有科学批准。
-- Evidence navigation: 三批既定运行的本地terminal/collection/analysis均PASS；此次未查询远端状态。领域结论须同时看线性可读性与B/W：21B第8层均值SALL有小幅准确率正差，但B/W低于Dense；S7原子更集中却领域可读性更差。具体数值与边界在新会议稿和合格JSON中，不由memory拥有。此前旧报告的主要激活统计来自P关系面板，新稿严格使用N8对应统计；三条件排序缓存的样本ID、输入哈希、词元位置逐一一致。S7指重加权续训21B，不能与新从零S7或旧原版曲线混接。
-- Artifacts: `daily_research_reports/0921/focus_meeting_sae_domain_separation_cn.md` 是本次领域组会入口，含四段式正文、测试覆盖矩阵、测量决策建议、按优先级交接清单和8分钟讲述顺序。`figures/domain_01...04*.png/.pdf` 分别是领域读出与几何、领域训练轨迹、真实1—128名激活折线、子空间直觉与证据对照；`figures/domain_figure_manifest.json` 记录来源哈希和配对验证；`report_assets/build_domain_meeting_figures.py` 只读已有合格结果及缓存。旧会议稿、Focus、Anchor和Protocol未修改。
-- Decisions and boundaries: 已落实领域为本次讲述主线、折线优先、P/N8不混面板、稀疏得分质量不当语义/重构能量。AI建议不用通用CKA阈值，利用已有全局/类内置换并补采样不确定性；建议先补21B N8同模型8×8跨层比较，保留均值与末词；K=32保留为训练预算、最优性未知。多子空间及SAE特征对应未直接检验，实际模型使用未干预验证。上述新增分析建议与科学最小效应阈值尚未由研究者确认，不从本memory取得执行授权。未附独立“这张图”，报告明确只能对照旧图框架和本次假设，不能保证另一个未见原图逐项覆盖。
-- Current work: 组会基本材料与交接清单已写出，图由现有缓存生成，四个顶层段落和本地链接通过检查。没有新模型前向、字典/主干训练、远程提交、跨任务发送、commit或push。E06—E08正式Summary缺失、旧Focus/Anchor和部分Detailed仍写无结果的冲突已在稿中列为交接P0，未替研究者更新机制判断。当前领域小差值没有现成N8配对区间，不能称确认改善。
-- Next action: 原实验Agent先读取本稿4.6交接清单，补P0结果记录与N8配对统计最小实现计划；若N8逐题预测未保存，须从已有池化缓存复现冻结C的探针，不能重选超参数。随后按需做N8原子领域/位置分层与21B同模型跨层定位。唯一AI建议的下一决策是：经来源、尺度和不确定性标定后，是否仍值得直接检验领域子空间。若仅剩局部可读性或观察器变化，就不升级语义子空间/功能使用主张；新的低秩拟合、干预或昂贵运行先按所属合同明确范围。
-- References: `daily_research_reports/0921/focus_meeting_sae_domain_separation_cn.md` 拥有本次派生阅读与未批准建议；`daily_research_reports/0920/focus_three_model_sae_representation_audit.md` 及其A15_17 Anchor拥有原科学边界；E06/E07/E08各自Protocol拥有执行范围。合格证据根分别为`/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/`、`/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/runs/full_15b_4x5090_20260920_wave1/`、同执行包`runs/full_early_4x5090_20260920_wave1/`；第一批21B两个失败根不得混用。
+## 2026-09-21T05:00:00Z -- 领域组会重构（压缩保留）
 
-## 2026-09-21T05:08:08Z -- 按新增要求完成补充实验科学内容
+- Summary: 已读0920 memory及原Codex任务，重构领域主线组会：SALL领域线性读出小幅正差但B/W低于Dense；S7原子集中却领域读出更差，不能声称语义空间改善。S7是重加权续训21B，不能与从零训练支线混接。四张折线/直觉对照图使用配对N8缓存，不混旧P关系面板。
+- Boundaries: CKA没有通用相似阈值；K=32是训练预算，不是已证最优维数；子空间并集、模型功能使用和因果机制未检验。用户所指独立原图未提供，无法保证未见图的逐项覆盖。领域小差值的配对不确定性待补。E06—E08结果记录与旧Focus状态冲突当时列交接P0，本次未重新审计其是否修复。
+- References: `daily_research_reports/0921/focus_meeting_sae_domain_separation_cn.md`（派生报告/交接，不拥有批准）；该日期`figures/domain_figure_manifest.json`（四图来源）；原科学边界由0920 Focus与A15_17父Anchor及E06—E08合同拥有。21B合格原始证据：`/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/runs/full_4x5090_retry2_20260921T0200Z/`，不得混入失败根。
 
-- Summary: 研究者追加“继续分析，完成报告和补充实验内容书写”。已在原领域会议稿中补充真实预处理、谱与观察器边界，并新增`daily_research_reports/0921/sae_domain_supplementary_experiments_cn.md`，把补实验写成A领域差异标定、B原子/位置/跨层定位、C条件性领域子空间检验。每部分含目的、假设、数据/统计、竞争解释、结果分支与停止标准；均为`AI_PROPOSED_NOT_RUN`，不是新Protocol或执行批准。
-- Analysis clarification: 分类器实际使用fit均值中心化和单一全局RMS归一化，不可把S7下降简单归于整体幅值。`mean_vector_norm`是均值向量范数，不是样本范数均值。无32断崖不证明K太小，非入选得分尾部也不等于可恢复语义信息。不同子空间可有相同类均值，且不一定全局线性可分，所以现有B/W与分类并不直接检验子空间并集；附录C用留出投影及匹配容量/随机分组对照补这一环，并区分子空间存在与SAE改善两个假设。
-- Implementation handoff: 已核实完整N8原生池化缓存可用于A/B/C，观察器有前128名得分但只有前32名ID，K>32重构及完整逐词元原生子空间仍缺字段。新增领域/位置统计须逐shard把`token_local_row`映射到全局记录；旧`load_observer`仅拼接局部索引，不能直接拿来做新标签映射。N8逐题预测缺失，建议复现已冻结C，不重新挑选。科学最小效应阈值、C的主秩/多秩解释与计算预算仍是提案，不借memory填成确认。
-- Current work: 四张新图与PNG/PDF输出、来源清单、报告/附录本地链接和脚本哈希已检查；原子缓存逐token身份验证PASS。交付包含主报告、补充实验附录、图和本次memory。没有执行补充探针拟合、重采样、跨层新统计、PCA、模型加载、新提取或远程任务；本次仅读既有指标/源码并汇总已有rank缓存制图。原对话memory的已有工作区修改未动，未commit/push。
-- Next action: 原实验Agent读取本次报告和附录，先处理现有结果记录与A/B缓存分析范围，再由研究者决定是否推进C；对旧test新分析必须标探索，对缺字段/资源未实测明确标不足。不要把本次“报告完成”解读为“补充实验已完成”。
-- References: `daily_research_reports/0921/focus_meeting_sae_domain_separation_cn.md`为组会入口；`daily_research_reports/0921/sae_domain_supplementary_experiments_cn.md`为唯一补充内容详细入口；`daily_research_reports/0921/figures/domain_figure_manifest.json`为新图谱系；E06合格运行根、原`analyze_primary.py`、`analyze_geometry.py`、`analyze_observer.py`、`observe_online.py`拥有本次核对的字段与真实计算口径。原Focus/Anchor/Protocol未变化。
+## 2026-09-21T05:08:08Z -- 补充实验设计（压缩保留）
+
+- Summary: 已写A领域差异标定、B原子/位置/跨层定位、C条件性子空间检验，状态仍为AI_PROPOSED_NOT_RUN，不能由后续E01授权推及这些提案。最小效应阈值、C主秩/多秩解释和预算未获确认；旧test新增分析只能探索，不是独立确认。
+- Boundaries: 原探针使用fit均值中心化+单一全局RMS，不能仅以整体幅值解释S7下降；均值向量范数不是样本范数均值。没有32断崖不证明K不足，尾部得分不等于可恢复语义。不同子空间可有相同类均值，分类/BW不是子空间并集检验。
+- Handoff: 新标签映射需将逐shard的token_local_row映射至全局记录，不能直接拼接旧load_observer。原缓存缺K>32的原子ID、完整逐token原生字段及当时的N8逐题预测；如复现探针应沿用冻结C，不重选参数。新E01只补原生Top32和原生均值，未填补全部缺字段或完成A/B/C。
+- References: `daily_research_reports/0921/sae_domain_supplementary_experiments_cn.md`为详细提案入口，原会议稿和图谱系为阅读入口。未执行这些补实验或提交/推送仓库。
+
+## 2026-09-22T07:34:17Z -- 共享方向复用实现及smoke修复（压缩保留）
+
+- Summary: 承接0922-sae-feature-analysis，读取其完整memory及仓库0921聊天导出；本轮无read_thread，未宣称在线聊天/附件已核验。新建15_17_01 subanchor、E01 Protocol/Detailed及只读原生支持提取代码。旧缓存top128前32与原生topk32在边界同分时存在ID差异风险，不能直接称原缓存为原生支持。
+- Negative evidence: 首个smoke `pt-jztyb3sy` 因零维int64计数器Byte view哈希失败，无有效support批次/科学结果；flatten修复及回归记录在Protocol A1。原terminal的gpu_used=false是默认值错误，实际已GPU加载，不得解释为CPU-only。失败根及source_snapshot_v1保留。
+- Historical state: 修复版 `pt-1hi96knu` 此时仅STARTING；当时完整科学判据和full待确认，已被下条A2批准及smoke终态取代。原E06用户修改未动，无commit/push。
+
+## 2026-09-22T07:51:19Z -- 用户要求暂停：补记smoke通过/full提交并显式压缩
+
+- Summary: 用户要求先停止、续写并压缩记忆。本次已终止本会话本地轮询进程，不再监控/分析；**未取消远端full**，也未重提、切资源或设置后续监控。压缩仅去除已被终态/A2取代的等待叙述、重复路径与已解决操作细节；原Created at、历史失败和未决科学边界保留，未改其他对话memory。
+- Supersedes: Protocol Amendment A2已承接研究者明确确认，取代旧“指标未确认/full未授权”：固定192条N8、每条256正文token、第8层原生Top32使用频率的样本间平均余弦差ΔR=S7−SALL，2,000次配对记录bootstrap（种子20260922）。合格且同面板S7有效维数更低时，95%区间全大于0才PASS必要条件；上界≤0为FAIL；其余或维数条件不成立为INSUFFICIENT。精确规则由Protocol拥有，不从memory授权。
+- Verified smoke: 修复版 `pt-1hi96knu` 于07:39:42Z终态PASS，4 worker合格，每模型16条/4096token、零优化更新；186.92秒，峰值allocated/reserved 3407407104/3535798272 bytes。原生Top32与top128前32支持差异在此smoke为0：边界同分是风险，不是已观测的支持错误。12项本地测试、full聚合对smoke复现及合成绘图检查通过；合成图不是实测证据。
+- Current work: full `pt-5snx2hrj` 于07:44:51Z提交，最后平台核验07:47:21Z为STARTING，worker Pending、已分配host、未分配pod IP；**终态与科学结果未核验，不能称完成或PASS**。资源为5090-4-spot（单节点4×5090）、shphd-lite-0911与既有SM120层；每模型192条/49152token，无训练、标签、优化或checkpoint写入。4独立worker，每worker96条，900秒执行安全上限不是排队ETA。当前用户暂停覆盖先前持续追终态的安排。
+- Claim boundary: frozen21B S7重加权与原SALL的模型谱系/系数历史不同，不是匹配系数因果实验。复用增加与字典共线/系数协方差解释可并存；PASS仅必要条件，不是机制证明。继承分层面板、记录bootstrap不保证文章独立或训练seed泛化；smoke子集已开发暴露。旧全N8有效维数不能替代当前192条同面板计算。研究者机制判断仍AWAITING_RESEARCHER；没有full Summary。
+- Next action: 仅在研究者恢复后，先查**同一个full任务**及其terminal、四worker/stage receipts，绝不因暂停/排队重复提交。终态合格后运行只读`scripts/audit_completed.py`独立核验哈希、余弦/维数/2000次bootstrap与判据，再写E01 summary.md/summary_cn.md/detailed.md及日期本地图/来源。该CPU审计脚本在full冻结后新增，尚未运行，不影响已提交GPU源码快照；工程失败与科学FAIL分开记录。最终机制判断/下一科学决策留给研究者。
+- References: canonical Focus `daily_research_reports/0922/focus_sae_shared_direction_reuse.md`；Anchor `Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_01_sae_shared_direction_reuse_anchor.md`；E01合同/执行账本目录 `Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/`（protocol.md A1/A2、detailed.md §§11–12）；资源登记 `docs/execution_envelope.md`。只更新本次Memory，不做commit/push，不触碰其他Agent改动。
+- Execution entry: `/data/250010109/MoE_Router/experiments/20260922_sae_shared_direction_reuse_audit`；`manifests/current_full_run.txt`指向`runs/full_4x5090_20260922T074451Z`，其中execution_certificate.md、34文件冻结及source_snapshot拥有提交谱系，platform_describe_latest.json为最后已核验平台快照。合格smoke为`runs/smoke_v2_4x5090_20260922T072907Z`，失败为`runs/smoke_4x5090_20260922T072342Z`。独立审计脚本、tests及checks均在执行根，checks/synthetic_plot_only不得用于结果报告。聊天导出 `daily_research_reports/0922/docs/meeting_plans/chats/0921-研究逻辑梳理.md` 仅为背景，不取代合同。
