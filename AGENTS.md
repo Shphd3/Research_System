@@ -295,6 +295,9 @@ Repository Skills live in `.agents/skills/`. Load a Skill only when its
 description matches the task; then follow only the relevant reference or
 script it routes to.
 
+- `research-reasoning-auditor`: pre-formalization audit of research purpose,
+  hypotheses, causal direction, rival explanations, proxy/construct boundaries,
+  and separating experiments.
 - `research-progress-core`: Focus, research judgment, falsifiers, and failures.
 - `problem-anchor-writer`: Anchor creation, revision, and design audit.
 - `experiment-card-writer`: Protocol and canonical result records.
