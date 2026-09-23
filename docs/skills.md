@@ -13,6 +13,7 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 
 | Skill | Trigger scope | Does not own | Implicit invocation |
 | --- | --- | --- | --- |
+| `research-reasoning-auditor` | Clarify a research purpose, hypothesis, causal chain, rival explanation, proxy/construct relation, or experiment rationale before formalization | Evidence retrieval, formal artifacts, execution, scientific approval | Allowed |
 | `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, and its minimal problem-level `focus_<problem>.md` | Project paths, final reports, meeting synthesis, remote execution | Allowed |
 | `research-sync-gate` | Readiness audit for choosing one next research question or explaining an evidence boundary before advisor sync | Protocol authoring, execution, meeting artifact writing | Allowed |
 | `problem-anchor-writer` | Researcher-judgment audit, approved Anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
@@ -32,7 +33,8 @@ model](https://developers.openai.com/codex/concepts/customization#skills).
 Use the smallest matching skill. Typical composition is:
 
 ```text
-research-progress-core
+research-reasoning-auditor when the question or causal chain is not yet clean
+-> research-progress-core for the human-owned research judgment and minimal falsifier
 -> problem-anchor-writer for coherent data/task/objective/architecture design
 -> experiment-card-writer for in-file drafting, critical review, and promotion
 -> remote-experiment-workflow when execution is remote
@@ -53,6 +55,14 @@ accounts. Its files may be versioned, but they remain non-canonical and cannot
 establish a claim, approval, or consensus. Use `research-communication`
 handoff mode instead when the requested deliverable is a curated package of
 approved research artifacts.
+
+Use `research-reasoning-auditor` before formalization when the user's own
+Purpose, Hypothesis, mechanism story, metric interpretation, or causal direction
+is conceptually mixed. It reconstructs the observation-to-decision chain and
+requires a strongest rival plus a separating prediction. Use `scholar-mode`
+for broader theory, method, paper, or literature critique; use
+`research-progress-core` once the scientific question is stable enough to own a
+Focus-level judgment.
 
 Use `research-document-explainer` when the requested outcome is understanding
 a named AI-written research artifact. Route formal research judgment or Focus
