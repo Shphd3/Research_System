@@ -67,3 +67,17 @@ Projects/academic_writing/**/exports/
 Projects/academic_writing/**/*.zip
 Projects/academic_writing/**/*.pdf
 Projects/academic_writing/**/~$*
+
+# Daily research: retain canonical Markdown and scripts, keep generated payloads local.
+/daily_research_reports/**/*.csv
+/daily_research_reports/**/*.png
+/daily_research_reports/**/*.svg
+/daily_research_reports/**/*.pdf
+/daily_research_reports/**/*.jsonl
+/daily_research_reports/**/*.npz
+/daily_research_reports/**/*.npy
+/daily_research_reports/**/*.html
+/daily_research_reports/**/tables/**/*.json
+/daily_research_reports/**/figures/**/*.json
+/daily_research_reports/**/results/**/*.json
+/daily_research_reports/**/report_assets/fonts/

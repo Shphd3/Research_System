@@ -196,6 +196,13 @@ Every new model-training implementation and run follows
   explanation. Specify the minimum reading order, the question each reading
   resolves, and a small comprehension output before allocating implementation
   work. Do not let monitoring or unfinished runs consume the learning plan.
+- A daily report is a delayed, short synthesis after the canonical result and
+  the researcher's Focus-level judgment are available. Link the owning Focus,
+  Anchor, Summary, and Detailed record; state one knowledge update, its strongest
+  remaining rival, the claim boundary, and the researcher-owned next decision.
+  Do not copy the Summary's four-part result, Detailed ledger, or large tables.
+  If judgment is still `Unknown`, leave the daily report pending rather than
+  filling its conclusion with an AI proposal.
 
 ## Result Reading And Reply
 
@@ -245,6 +252,11 @@ when applicable.
 Machine state must never own scientific claims, approval, priority, verdicts,
 or next decisions. If a derived view conflicts with its canonical source,
 repair or regenerate the view; do not create another source of truth.
+
+Before relying on an active workstream's links, run
+`python tools/check_current_entrypoints.py`. It checks whether the Focus and
+evidence entrypoints named in `PROJECTS.md` exist and are versioned; its result
+is a routing check, not a scientific verdict or approval.
 
 ## Autonomy And Approval
 
@@ -325,6 +337,13 @@ Keep canonical process artifacts in this repository and raw execution material
 in its execution workspace. Do not promote raw outputs, checkpoints, datasets,
 or unfiltered logs into the research mainline. Root `templates/` is the only
 maintained reusable-template location.
+
+Git tracks research text, scripts, configs, and small provenance manifests.
+Generated daily-report tables, figures, logs, caches, and embedded fonts stay
+local or in execution storage; record their exact source path and digest in the
+owning Detailed record. Use `python tools/check_git_payload.py` before a commit
+to catch accidentally tracked generated payloads. A curated external package,
+when explicitly requested, may carry its own reading copies.
 
 Never revert user changes. Commit, push, publish, edit an existing Graph, or
 sync to another repository only when explicitly requested.

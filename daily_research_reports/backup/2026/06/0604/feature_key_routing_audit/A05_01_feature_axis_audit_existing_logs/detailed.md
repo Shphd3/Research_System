@@ -341,13 +341,16 @@ tables/feature_axis_consistency_by_condition.csv
 tables/feature_axis_nmi_by_condition.csv
 tables/feature_axis_per_feature_consistency.csv
 tables/feature_expert_matrix_slot.csv
-tables/feature_expert_matrix_b_id.csv
 tables/feature_expert_matrix_slot_b_id.csv
 tables/per_expert_composition_slot.csv
 tables/per_expert_composition_b_id.csv
 tables/per_expert_composition_slot_b_id.csv
 tables/collapse_filtered_branch_decision.csv
 ```
+
+The dated `feature_expert_matrix_b_id.csv` copy was removed on 2026-09-24.
+The [byte-identical project evidence copy](../../../../../../../Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/tables/feature_expert_matrix_b_id.csv)
+has SHA-256 `c56cc2e0aaa7ae701da0ae462f1c6aa0178bb1e4c78c28ee93c3506dfae8b5bc`.
 
 Figures:
 

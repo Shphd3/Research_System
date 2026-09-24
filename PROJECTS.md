@@ -28,11 +28,13 @@ reference under an unreadable root is unverifiable, not stale.
 
 This file is a low-frequency project map. It does not carry a per-day current
 state. What is being worked on now is the owning workstream's
-`focus_<problem>.md` in its date folder, which the researcher maintains; AI
-does not write it.
+`focus_<problem>.md` in its date folder. The researcher owns its question,
+judgment, and next decision; AI may formalize a confirmed answer or restore a
+missing entrypoint without inventing those decisions.
 
 The 2026-09-11 snapshot of the former `Current Focus Priority` table is kept at
 `daily_research_reports/0911/0911_PROJECTS_current_focus_priority_archive_cn.md`.
+
 ## Active Research Workstreams
 
 There is no repository-wide singleton execution state. Every listed workstream
@@ -41,7 +43,7 @@ not silently pause or replace another.
 
 | Workstream | Priority / state | Current Focus | Evidence or contract | Current decision / resume point |
 |---|---|---|---|---|
-| A15_17 SAE representation audit | **SECONDARY**; A15_17_02 is active. Prior 17B evidence established a training-history-associated geometry/atom-use difference, while historical 21B N8 evidence did not establish general domain-separability improvement. The exact-17B N8 implementation and bounded Smoke passed; the full scientific comparison is `NOT RUN`. | `daily_research_reports/0923/focus_sae_n8_separability.md` | Parent [Anchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md); active [subanchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md); [Protocol](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/protocol.md); [Detailed Smoke record](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/detailed.md). | Researcher decides whether to authorize the frozen full-panel audit. Until eligible full evidence exists, do not infer N8 readability, clustering, model quality, utility, or mechanism from the passed Smoke. |
+| A15_17 SAE representation audit | **SECONDARY**; A15_17_02 is active. E01 exact-17B N8 measurement is complete and eligible, with the main fresh-S7 versus Dense direction `INSUFFICIENT`; E02's original job failed, and a bounded CPU recovery produced a descriptive 15B/17B matrix. Scientific interpretation awaits the researcher. | `daily_research_reports/0923/focus_sae_n8_separability.md` | Parent [Anchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md); active [subanchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md); E01 [Protocol](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/protocol.md), [Summary](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md), and [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/detailed.md); E02 [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E02_n8_15b17b_matrix/detailed.md). | **Unknown／待研究者判断。** The scale/whitening test is an AI suggestion only. Do not infer coefficient causality, model use, quality, utility, or broad semantics from these measurements. |
 | A15 M2D2 semantic representation geometric form | **PRIMARY**; PCA-64 E01 and centered raw-1,024 E02 full runs complete; E02 passes 14/14 guards and reproduces `RADIUS_CONTRIBUTING`; AI wording awaits human confirmation | `daily_research_reports/0901/focus_m2d2_semantic_geometric_form.md` | E01 Summary: `Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E01_m2d2_direction_norm_covariance_atlas/summary.md`; E02 Summary: `Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness/summary.md` | Preserve the bounded answer: whole-window domain information is direction-primary and radius-contributing with or without PCA; fine diagonal-density advantage weakens in raw 1,024 dimensions, final-token signal remains near zero, and independent shape is not established. Stop and await explicit approval before current-token versus causal-prefix screening; the second gate remains unauthorized. |
 | A15 gold-label layerwise static audit | **SECONDARY**; E15 one-H100-SPOT full run is complete. The descriptive current-token estimates are `(9,9)` with zero estimated probability of a gap of at least two layers, while the registered verdict is `UNQUALIFIED_SHUFFLE_CONTROL` because confirmation child-shuffle cross-entropy missed its fixed qualification bound by `0.000132` nat. AI result wording awaits human confirmation. | `daily_research_reports/0903/focus_gmm_pseudolabel_oracle_gap.md` | E15 [Anchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md), [Protocol](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/protocol.md), [Summary](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/summary.md), and [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/detailed.md) | Human decides whether to authorize one exact fresh-seed replication of the qualification miss. Static readability only nominates layer candidates; LoRA expert training remains unauthorized. |
 | A15 layerwise MoE insertion validation | **SECONDARY**; E02 is operationally complete and eligible. All three candidates have replicated positive $H$; point order `13 > 10 > 0`, but both block-13 lead intervals overlap zero, so the registered verdict is `MULTIPLE_TESTED_FUNCTIONAL_POSITIONS`. Task-only Routers remain near chance and load-collapsed. AI interpretation awaits human confirmation; E01 remains `INSUFFICIENT` and E19 `QUALIFICATION_FAILED`. | `daily_research_reports/0904/focus_layerwise_moe_insertion_validation.md` | [Anchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_15_layerwise_moe_insertion_validation/15_15_layerwise_moe_insertion_validation_anchor.md); E02 [Summary](Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E02_exploratory_functional_candidate_test/summary.md), [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E02_exploratory_functional_candidate_test/detailed.md), and [Protocol](Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E02_exploratory_functional_candidate_test/protocol.md) | Researcher confirms or corrects the result boundary and decides whether a unique block is operationally necessary. No further run is authorized; do not select block 13 from the point estimate or promote any candidate to a 28-layer optimum. |
@@ -509,18 +511,13 @@ evidence establishes routability and overwrite behavior, not causal expert
 utility. The CrossCodeEval result is a registered local failure and must not be
 generalized to every layer, model, or repository-code distribution.
 
-## Exactly One Project-Level Next Decision
+## Workstream Decisions
 
-Confirm, correct, or block the cold-read-revised four-part Focus and the
-A15_07_E01 Protocol choices for the current meeting-cycle core task. In
-particular, decide the sealed-v4 construction,
-the frozen E03 standardization, one-rank/no-C4-scan rule, PCA-head non-enrichment
-gate, denominator guard that finalizes admission, and shared/specific null definitions.
-This decision does not authorize a run.
-
-The earlier A06 training-time selective-sharing decision and A16 expert-regret
-gate retain their evidence state but are parked for this cycle; they do not
-replace the active Focus.
+There is no repository-wide next decision. Each active workstream in the table
+above owns one Focus and one next decision. The former A15_07_E01 design choice
+was a dated cycle decision, not a standing project-wide instruction; consult its
+own Focus, Protocol, and result records before reopening it. A06 and A16 retain
+their independent evidence states and do not inherit an A15 decision.
 
 ## Current Working And Published Surfaces
 
@@ -528,7 +525,9 @@ replace the active Focus.
   task, from confirmed plain-language design through the researcher's result
   account; it is not canonical result evidence.
 - `daily_research_reports/MMDD/docs/daily_report_<topic>.md`: delayed self-
-  contained story written only after canonical evidence and the human result.
+  contained knowledge update written only after canonical evidence and the
+  human result. Use `templates/research_process/daily_report_template.md`;
+  link the owning records instead of repeating their four-part body or tables.
 - `daily_research_reports/MMDD/focus_meeting_<topic>.md`: optional explicitly
   requested meeting brief or human-scoped synthesis; it is not project truth.
 - `Projects/from-attention-to-search/main/parking_lot/README.md`: concise key
@@ -537,10 +536,8 @@ replace the active Focus.
   its A06 `active` markers are known stale and do not override this registry or
   the active Focus. Updating the graph still requires explicit authorization.
 - `sync/S000_current_specialization/README.md`: root-sync entry.
-- `sync/S000_current_specialization/anchor_index.md`: complete mirrored-anchor
-  index.
-- `sync/S000_current_specialization/anchors/`: generated full mirror of current
-  project-local anchors with repository-root-safe external links.
+- `sync/S000_current_specialization/anchor_index.md`: compact index linking
+  canonical project Anchors. The duplicated generated mirror was retired.
 
 Root sync, graph edits, external collaborator sync, handoff packages, commits,
 and pushes remain explicit actions. This registry does not authorize them

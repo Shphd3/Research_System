@@ -44,9 +44,9 @@ flowchart LR
 - 总计 $8\times8\times4\times2=512$ 条无标签泄漏英文描述；
 - 所有序列读取同一个最终 `Classification:` 冒号 token，绝对位置为 57。
 
-这里“粗语义”是跨父类的区别；“细语义”是同一父类内部 8 个子类的区别。实际文本、token ids、层级标签、模板、事实包和读出位置见 [actual_semantic_text_sequences.json](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/provenance/actual_semantic_text_sequences.json)。语义数据 SHA-256 为 `cb440b98d81bac3f9813344f85e6efdbd994b7b988d8009ba64e207e64a11859`。
+这里“粗语义”是跨父类的区别；“细语义”是同一父类内部 8 个子类的区别。实际文本、token ids、层级标签、模板、事实包和读出位置见 [actual_semantic_text_sequences.json](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/provenance/actual_semantic_text_sequences.json)。语义数据 SHA-256 为 `cb440b98d81bac3f9813344f85e6efdbd994b7b988d8009ba64e207e64a11859`。
 
-自然背景 covariance 使用独立的 128 篇 DCLM 文档、每篇 512 token，共 65,536 token，并固定两个 calibration half。来源与顺序见 [calibration_manifest.json](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/provenance/calibration_manifest.json)。本次抽取张量 SHA-256 为 `d88620267dbdc9c2b87ec24c2f51d9e6fb317cb8c051ec96503414ea9bff60b9`。
+自然背景 covariance 使用独立的 128 篇 DCLM 文档、每篇 512 token，共 65,536 token，并固定两个 calibration half。来源与顺序见 [calibration_manifest.json](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/provenance/calibration_manifest.json)。本次抽取张量 SHA-256 为 `d88620267dbdc9c2b87ec24c2f51d9e6fb317cb8c051ec96503414ea9bff60b9`。
 
 ## 3. 测量什么
 
@@ -168,8 +168,8 @@ post-`o_proj` 主差分 $T=0.631$，95% 区间 [0.553, 1.148]。早层 $e^R=1.14
 
 ## 9. 完整证据入口
 
-- [正式 Protocol](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/protocol_cn.md)
-- [中文结果摘要](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/summary_cn.md)
-- [完整证据账本](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/detailed.md)
-- [完整表格目录](tables)
-- [typed verdict](../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/provenance/verdict.json)
+- [正式 Protocol](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/protocol_cn.md)
+- [中文结果摘要](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/summary_cn.md)
+- [完整证据账本](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/detailed.md)
+- [日期表格目录](tables)；7.41 MB 的频谱逐行表保留在[正式实验表格](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/tables/eigenvalue_spectrum.csv)，日期副本于 2026-09-24 移除（SHA-256 `facc4f7af4111e537144be54ac04ff700d875d869e6bbb4e479752ecf00bd4da`）。
+- [typed verdict](../../../../../../../Projects/from-attention-to-search/main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas/provenance/verdict.json)

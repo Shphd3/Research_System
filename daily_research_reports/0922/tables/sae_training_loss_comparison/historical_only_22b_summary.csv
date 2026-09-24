@@ -1,5 +1,0 @@
-model_key,model_label,range_start_tokens,range_stop_tokens,mean_lm_loss,delta_vs_dense_millinats
-m2,M2（末层 MLP 前串联 SAE，λ=1）,20000000000,22000000000,3.241236206019,-10.169713719
-sall,SALL（8层 Attention 旁路，λ=1）,20000000000,22000000000,3.244100622945,-7.305296794
-s7_lambda0p1,S7（第8层 Attention 旁路，λ=0.1，fresh）,20000000000,22000000000,3.247963893468,-3.442026271
-dense,Dense（原生主干）,20000000000,22000000000,3.251405919739,0.000000000

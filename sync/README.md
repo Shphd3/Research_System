@@ -1,8 +1,9 @@
 # Root Sync
 
-Root `sync/` is the compact external-reading surface for the research system.
-It is written for a web-side research partner or cross-project reader who
-should understand the current research line without scanning project folders.
+Root `sync/` is a compact navigation surface. The 2026-09-03 generated copies
+were retired on 2026-09-24 because they duplicated project records and carried
+stale state. Current scientific state is in `PROJECTS.md`, the owning Focus,
+Anchor, and result records. A reader needs the project checkout for those links.
 
 Root sync is not:
 
@@ -24,13 +25,8 @@ Read it in this order:
 ```text
 sync/S000_current_specialization/README.md
 sync/S000_current_specialization/anchor_index.md
-sync/S000_current_specialization/stories/README.md
 sync/S000_current_specialization/protocol_index.md
 sync/S000_current_specialization/result_index.md
-sync/S000_current_specialization/research_lines/00_overall_current_line_cn.md
-sync/S000_current_specialization/research_lines/05_failure_mechanism_line_cn.md
-sync/S000_current_specialization/research_lines/06_proxy_preservation_line_cn.md
-sync/S000_current_specialization/research_lines/07_interference_value_line_cn.md
 ```
 
 ## Source Of Truth
@@ -44,15 +40,8 @@ Projects/from-attention-to-search/main/roadmap.md
 Projects/graphs/
 ```
 
-Root sync compresses the current logic and links to those files. A user-requested
-curated result package may include canonical Summary/Detailed records and their
-decision-bearing figures, but never raw runs, checkpoints, receipts, or
-unfiltered logs.
-
-The explicitly published `anchors/`, `stories/`, and `protocols/` trees are
-small Markdown mirrors for external reading. The optional `results/` tree is a
-curated copy of explicitly requested result records and figures. All generated
-mirrors remain secondary to the project-local source.
+Root sync links to those files without copying their bodies. A separately
+requested external package may still be curated for a specific reader.
 
 ## Update Rule
 

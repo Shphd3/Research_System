@@ -123,13 +123,17 @@ tables/feature_axis_consistency_by_condition.csv
 tables/feature_axis_consistency_by_seed.csv
 tables/feature_axis_nmi_by_condition.csv
 tables/feature_expert_matrix_slot.csv
-tables/feature_expert_matrix_b_id.csv
 tables/feature_expert_matrix_slot_b_id.csv
 tables/per_expert_composition_slot.csv
 tables/per_expert_composition_b_id.csv
 tables/per_expert_composition_slot_b_id.csv
 tables/collapse_filtered_branch_decision.csv
 ```
+
+The 1.01 MB `feature_expert_matrix_b_id.csv` is retained in the
+[project evidence copy](../../../../../../../Projects/from-attention-to-search/main/experiments/A05/A05_01_feature_axis_audit_existing_logs/tables/feature_expert_matrix_b_id.csv).
+The byte-identical dated copy was removed on 2026-09-24; the historical result
+and verdict are unchanged.
 
 Runner:
 
