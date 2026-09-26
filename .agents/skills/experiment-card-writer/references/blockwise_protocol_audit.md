@@ -153,9 +153,12 @@ At promotion, the candidate conditions, configuration, commands, metrics,
 artifacts, and stop rules become the confirmed design. Preserve a compact
 confirmation ledger in the file, not the full conversation.
 
-Design confirmation does not authorize execution. Obtain an explicit scope
-decision for each requested step: implementation, smoke, full run, and optional
-publication or Git action; then record only that scope in the document state.
+Design confirmation alone does not authorize execution. Record the exact
+scope already explicitly authorized in the user request, current session or
+owning contract; obtain only genuinely missing approval under the repository
+rules. Implementation, smoke, full execution and publication/Git are distinct
+scopes, not mandatory separate confirmation turns. Small local checks retain
+the root exemption. Never treat silence as new authorization.
 
 ## Change Control
 

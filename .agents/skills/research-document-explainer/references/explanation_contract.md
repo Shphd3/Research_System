@@ -8,8 +8,9 @@ Do not assume that difficulty means low intelligence.
 
 ## Source Lock
 
-After the repository's `Start Here` routing precheck, treat the exact named file
-or passage as the first explanation source.
+Treat the exact named file or passage as the first explanation source. Apply
+root entrypoint checks only when relying on active-workstream routing; no
+separate `Start Here` precheck is required.
 
 1. Read that exact named file or passage.
 2. Identify what kind of artifact it is and whether its conclusions are human
@@ -147,11 +148,13 @@ AI 建议：设原有表示为 X，在留出数据上比较“X 加 R”和“X 
 
 ## Comprehension Check
 
-Finish with one check that targets the central dependency, for example:
+For a requested teaching session, one check can target the central dependency,
+for example:
 
 > 如果去掉对照组 B，这个结果为什么不能再区分“新增信息”和“多一组参数”？
 
-When interaction is more useful than a quiz, instead offer a precise zoom-in
+For a narrow answer, stop once the question is answered. When interaction is
+requested and more useful than a quiz, offer a precise zoom-in
 menu: `对象关系 / 公式第 2 步 / 实验判据 / 结论边界`. Do not end with an
 unbounded offer to explain everything again.
 

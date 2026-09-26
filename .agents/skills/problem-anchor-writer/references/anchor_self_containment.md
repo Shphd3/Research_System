@@ -3,6 +3,7 @@
 ## Contents
 
 1. [Purpose and boundary](#purpose-and-boundary)
+   - [Formal Anchor structure](#formal-anchor-structure)
 2. [Research-question contract](#research-question-contract)
 3. [Zero-net-growth rule](#zero-net-growth-rule)
 4. [Cold-reader gate](#cold-reader-gate)
@@ -38,6 +39,37 @@ Commands, full configurations, run histories, complete tables, logs, and raw
 artifacts remain in `protocol.md`, `summary.md`, and `detailed.md`. Links make
 the anchor auditable; they must never carry meaning required to understand the
 decision.
+
+## Formal Anchor Structure
+
+Write a formal Anchor only when the research question, prior, and model have
+been approved. Use exactly these top-level sections:
+
+```markdown
+# <Anchor Title>
+
+## 1. Problem Definition
+## 2. Physical Priors
+## 3. Falsifiable Hypotheses
+## 4. Mathematical Model
+## 5. Computational Realization
+## 6. Minimal Falsification Tests
+## 7. Current Evidence
+## 8. Claim Boundary And Next Decision
+```
+
+Do not add an abstract, timeline, literature review, or embedded intake form.
+Keep one decision question, one core model, one primary metric, one main
+falsifier, and one next decision. Put run-level settings in `protocol.md`.
+
+Keep exactly one phenomenon and decision question with a minimal variable set.
+Retain at most three physical priors, preferably one. Section 4 distinguishes
+assumptions, derived results, empirical propositions and intuition; each equation
+must map to a prior, concrete computation and experiment/analysis artifact.
+Section 6 states metric, threshold, separated rival, allowed claim and boundary.
+Every linked artifact must exist. Inline formulas use `$...$`, displays `$$...$$`.
+Canonical English and `_cn.md` companions preserve the same question, model,
+metric, thresholds, boundary and next decision unless the user chooses otherwise.
 
 ## Research-Question Contract
 
@@ -275,6 +307,30 @@ A parent anchor must close its complete major decision. A subanchor must be
 self-contained for its local decision while restating only the inherited
 parent clause needed to understand that decision, usually in one sentence. It
 must not copy the parent's full background, model, or evidence chain.
+
+### Placement
+
+A parent anchor owns one complete major research problem. A subanchor inherits
+the parent question and adjudicates one local clause, rival explanation,
+robustness check, or metric guard. It must not repeat the full story or create a
+parallel mainline.
+
+Existing project layout remains valid; do not silently migrate a flat line.
+For a new or explicitly migrated parent/subanchor layout, use one folder per
+sibling parent:
+
+```text
+main/problem_anchors/<line_id>/README.md
+main/problem_anchors/<line_id>/<parent_id>_<topic>/
+  <parent_id>_<topic>_anchor.md
+  subanchors/
+    <parent_id>_<NN>_<topic>_anchor.md
+```
+
+Reading order or `depends_on` between two parent anchors does not make either a
+subanchor. Store an item in `subanchors/` only when it inherits the containing
+parent's decision question. The line `README.md` distinguishes sibling-parent
+dependency order from parent--child ownership.
 
 ## Final Audit
 

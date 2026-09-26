@@ -1,0 +1,1053 @@
+{
+  "status": "STRUCTURE_AND_ROUTING_VERIFIED_WITH_VERSIONING_GAPS",
+  "recorded_utc": "2026-09-26T05:24:46.507754+00:00",
+  "scope": "First-round entrypoint/rule refactor; not scientific re-adjudication or a model-performance benchmark",
+  "source": "0924 mentor transcript supplied by researcher; ongoing 0926 analysis read-only",
+  "file_sizes": [
+    {
+      "path": "AGENTS.md",
+      "before_bytes": 19252,
+      "after_bytes": 11244,
+      "before_lines": 352,
+      "after_lines": 199,
+      "before_sha256": "5f29e77bfeb43d4aaf6d738a9343635772d4c1c99683afd9c7fee969374b2d23",
+      "after_sha256": "4f4dfc3096cbc1d5c36d918d8d5b270daf34430528a0ec6f30521d46c4935ac4",
+      "bytes_reduced_percent": 41.5957
+    },
+    {
+      "path": "Projects/from-attention-to-search/AGENTS.md",
+      "before_bytes": 12345,
+      "after_bytes": 4743,
+      "before_lines": 271,
+      "after_lines": 77,
+      "before_sha256": "8934d14be94e900bdca887964571d38629888168d10bb24e815ef57a7eea742c",
+      "after_sha256": "45bc7d86cf454ba12ac865ca337d05577a1ce65f3084fa64426dc7e3376254bc",
+      "bytes_reduced_percent": 61.5796
+    },
+    {
+      "path": "PROJECTS.md",
+      "before_bytes": 52294,
+      "after_bytes": 14763,
+      "before_lines": 598,
+      "after_lines": 102,
+      "before_sha256": "bf907936e41aaf5e1c9d52248ae2e6622ef6c6991d3f1bbec63421a8a9c799dd",
+      "after_sha256": "a074e68b107618804eef5e9b54605d14b682f8bf6d65d4b637c883c8ec759405",
+      "bytes_reduced_percent": 71.7692
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/roadmap.md",
+      "before_bytes": 5265,
+      "after_bytes": 4759,
+      "before_lines": 57,
+      "after_lines": 70,
+      "before_sha256": "2ba630a0ae2cf3654e7b2160d480f58faeda4ba4ec37d93b88926cc443cbb13c",
+      "after_sha256": "95d70141a7d5b9bc32bbd4788e9f0cac62d8494375da4cfea16e637a1bf97ebd",
+      "bytes_reduced_percent": 9.6106
+    }
+  ],
+  "both_agents_bytes": {
+    "before": 31597,
+    "after": 15987
+  },
+  "workstream_names_focus_evidence_cells_preserved": 13,
+  "legacy_checked_pairs_preserved": 33,
+  "previously_skipped_existing_pairs_added": 10,
+  "current_analysis_pairs_added": 4,
+  "current_entrypoints": 47,
+  "entrypoint_check": {
+    "exit_code": 1,
+    "output": "UNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/protocol.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/detailed.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E02_n8_15b17b_matrix/detailed.md\nUNTRACKED Default analysis route: daily_research_reports/0926/docs/structure_update/summary_cn.md\nUNTRACKED Default analysis route: daily_research_reports/0926/focus_meeting_structure_update_cn.md\nUNTRACKED Default analysis route: daily_research_reports/0926/01_思路纠偏与聊天计划_cn.md\nChecked 47 current entrypoints; 8 issue(s).\n",
+    "missing_count": 0,
+    "untracked_count": 8,
+    "scope_expansion_explains_new_untracked": 3
+  },
+  "parser_behaviors_verified": [
+    "old five-column and current four-column workstream table",
+    "ordinary and backtick paths with deduplication and fragment stripping",
+    "external URI skipping",
+    "missing section/header/required column, empty table, malformed row and empty default route raise ValueError",
+    "independent main() check returns 2 for invalid routing input"
+  ],
+  "historical_snapshot_body_identical_except_markdown_rebasing": true,
+  "local_links_checked": 123,
+  "missing_links": [],
+  "mapping_source_hashes_verified": 124,
+  "prior_anchor_wording_revisions_hashes_verified": 6,
+  "rule_preservation": {
+    "scope": "Only root and project AGENTS.md modified; existing contracts and scientific/experiment records untouched.",
+    "backup": "/tmp/first_round_rules_before.json",
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "before_bytes": 19252,
+        "after_bytes": 11244,
+        "before_lines": 352,
+        "after_lines": 199,
+        "before_sha256": "5f29e77bfeb43d4aaf6d738a9343635772d4c1c99683afd9c7fee969374b2d23",
+        "after_sha256": "4f4dfc3096cbc1d5c36d918d8d5b270daf34430528a0ec6f30521d46c4935ac4"
+      },
+      {
+        "path": "Projects/from-attention-to-search/AGENTS.md",
+        "before_bytes": 12345,
+        "after_bytes": 4743,
+        "before_lines": 271,
+        "after_lines": 77,
+        "before_sha256": "8934d14be94e900bdca887964571d38629888168d10bb24e815ef57a7eea742c",
+        "after_sha256": "45bc7d86cf454ba12ac865ca337d05577a1ce65f3084fa64426dc7e3376254bc"
+      }
+    ],
+    "rules": [
+      {
+        "id": "language_and_reply_style",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 7,
+          "anchor": "## Language And Communication"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 6,
+          "anchor": "## Communication And Authority"
+        },
+        "coverage": [
+          "Chinese conversation; English canonical unless researcher chooses; Chinese companion suffix",
+          "Plain Chinese terms before aliases; formula syntax; answer first",
+          "Precise prose and decisive figures/tables only",
+          "Direct result, observation, interpretation, hypothesis, claim, speculation, limitation, decision remain distinct"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "human_authority_and_ai_scope",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 22,
+          "anchor": "## Human And AI Authority"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 14,
+          "anchor": "The researcher owns questions"
+        },
+        "coverage": [
+          "Question, priority, mechanism judgment, uncertainty, strongest rival, approval, claim boundary, state transition, final interpretation remain human-owned",
+          "Unknown is valid",
+          "AI retrieves/audits/proposes/formalizes approved work/implements and checks in scope",
+          "No invented judgment, claim strengthening, or name/diagnostic treated as proof"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "targeted_context_and_concurrency",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 39,
+          "anchor": "## Context And Concurrent Work"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 22,
+          "anchor": "## Read Only The Context Needed"
+        },
+        "coverage": [
+          "Named source first; PROJECTS for workstream selection",
+          "Current Focus/Anchor before problem change",
+          "Graphs optional; matched Skills only",
+          "Concurrent chats do not transfer authority; human decides coordination"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "training_reuse_before_code",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 54,
+          "anchor": "docs/training_reuse_index.md"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 29,
+          "anchor": "docs/training_reuse_index.md"
+        },
+        "coverage": [
+          "Read index and actual sources; decide reuse/adapt/reject before code"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": "docs/training_reuse_index.md",
+          "sha256": "5807c01834c66c343a3c70331af761aff74f30998aa754e4fed4f1c1764aad2c"
+        }
+      },
+      {
+        "id": "memory_identity_and_authority",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 57,
+          "anchor": "Do not use chat history"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 35,
+          "anchor": "Chat/memory is never scientific authority"
+        },
+        "coverage": [
+          "No chat/memory-owned scientific authority",
+          "Conversation-named distinct append-only timestamped log",
+          "Processing-agent identity; do not overwrite older entries or another conversation",
+          "Load only on resume/recall; full log; newest entry is current working state",
+          "Verify approval and claims against canonical records; versioning does not grant authority"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-memory/references/memory_contract.md",
+          "sha256": "05580f56734d6303e3290b54b9f6f4187f32d5de27e8897412f5b6e1f852cfdb"
+        }
+      },
+      {
+        "id": "focus_activation_scope",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 73,
+          "anchor": "### Focus"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 44,
+          "anchor": "### Focus"
+        },
+        "coverage": [
+          "One current Focus/question/next decision per researcher-activated workstream",
+          "At most three necessary experiments",
+          "Human activation plus stable problem_key and next decision before create/reset"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-progress-core/references/focus_cycle.md",
+          "sha256": "b2741544f430cb114d9aecf5e7dffb7fd2411fb3ed2924452b6fd57e916df885"
+        }
+      },
+      {
+        "id": "focus_plain_design_and_judgment",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 82,
+          "anchor": "Before execution, the Focus"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 51,
+          "anchor": "Focus states Purpose"
+        },
+        "coverage": [
+          "Plain Purpose/Hypothesis/Analysis and supporting/non-supporting/insufficient branches before run",
+          "Protocol precise counterpart; no contradictions; Protocol owns execution, Focus intended meaning",
+          "No copying Protocol numbers or Protocol/Summary bodies into Focus",
+          "Human owns post-result judgment, cannot-claim boundary and next decision; no strengthened evidence"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-progress-core/references/focus_cycle.md",
+          "sha256": "b2741544f430cb114d9aecf5e7dffb7fd2411fb3ed2924452b6fd57e916df885"
+        }
+      },
+      {
+        "id": "focus_history_lifecycle",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 95,
+          "anchor": "The Focus keeps one rolling"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 58,
+          "anchor": "Keep one rolling summary"
+        },
+        "coverage": [
+          "One row per round compressed from Detailed; duplicate round histories FAIL",
+          "Separate task_state/question_state/design_state/result_state",
+          "No composite status or mirrored Protocol approval/execution state"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "anchor_unique_complete_design",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 103,
+          "anchor": "### Anchor"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 66,
+          "anchor": "Anchor is the sole current design"
+        },
+        "coverage": [
+          "One canonical Anchor, no parallel design.md",
+          "Problem, priors, falsifiable hypotheses, mathematical model, constructible computation, minimum falsifier, evidence, boundary, one decision",
+          "Update the same self-contained Anchor"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/problem-anchor-writer/SKILL.md",
+          "sha256": "8cf6f8aab1145c6a85bf796e5b05a1536cd62b61a0fd46ad69ca3c4b31f0ec08"
+        }
+      },
+      {
+        "id": "canonical_chain_and_contract_authorization",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 113,
+          "anchor": "### Formal Experiments And Evidence"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 72,
+          "anchor": "Anchor -> protocol.md"
+        },
+        "coverage": [
+          "Canonical Anchor -> Protocol -> Summary/Chinese Summary -> Detailed -> Anchor update",
+          "Protocol owns contract and approval; draft authorizes neither implementation nor execution",
+          "Scoped approval required for full/expensive remote work; small local checks exempt"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "result_ownership_and_four_parts",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 125,
+          "anchor": "`summary.md` owns the first"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 78,
+          "anchor": "Summary is the complete first"
+        },
+        "coverage": [
+          "Summary first reading surface; synchronized Chinese companion",
+          "Purpose/Hypothesis/Analysis method/Conclusion body",
+          "Detailed owns setup, provenance, deviations, tables, failures and artifact map"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "daily_round_not_run_complete",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 145,
+          "anchor": "One round is one day's work"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 81,
+          "anchor": "One round is one day's work"
+        },
+        "coverage": [
+          "Question; setup/controls; data; test/confirmation split; result or NOT RUN; insight/boundary/decision",
+          "First four plus NOT RUN is a complete round; completed result requires all six"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "evidence_minimality_and_final_report",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 128,
+          "anchor": "One question gets one paper-style"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 89,
+          "anchor": "One question gets one paper-style"
+        },
+        "coverage": [
+          "Extra conditions/seeds/diagnostics only for named rival, conclusion protection or reproducibility",
+          "One final report per settled question after human result/boundary/next-question confirmation",
+          "Final report explains, never replaces evidence"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-final-report/SKILL.md",
+          "sha256": "759554f21afd0c7f1d367d75d1f45f594d176ce1195a7dabc735deec38c84934"
+        }
+      },
+      {
+        "id": "external_workflow_design_equivalence",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 139,
+          "anchor": "research-exploration-skill"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 92,
+          "anchor": "In external exploration workflows"
+        },
+        "coverage": [
+          "Anchor replaces external design.md; Protocol/Summary/Detailed retain contract/result/iteration roles; Focus remains additional card"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "training_contract_mandatory",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 152,
+          "anchor": "### Training Observability And Comparison"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 95,
+          "anchor": "Before any new training implementation/run"
+        },
+        "coverage": [
+          "Mandatory read/follow; exact rules remain in existing contract rather than copied global prose",
+          "Required global token-normalized LM loss, total loss, LR, tokens, updates, effective tokens/update",
+          "Only relevant defined auxiliary terms, raw/weighted, no arbitrary universally mandatory component",
+          "Primary cumulative valid token coordinate; update axis only for equal effective tokens/update",
+          "Matched batch/order/reduction/optimizer/schedules; GPU changes absorbed without changing batch",
+          "Protocol frozen tags/logs/counting/denominators/checkpoints/token schedules",
+          "Finite scalars, independent count, monotonicity and resume continuity smoke",
+          "Missing/ambiguous telemetry makes affected comparison ineligible"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": "docs/training_observability_contract.md",
+          "sha256": "a8825fc3816c4c48076ad2d5b987963f416524d5761df0d43d1aedd83cc7a5a9"
+        }
+      },
+      {
+        "id": "meeting_knowledge_not_engineering",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 178,
+          "anchor": "## Learning And Group Meeting Updates"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 103,
+          "anchor": "Meetings center one bounded"
+        },
+        "coverage": [
+          "One bounded falsifiable mechanism question; positive result not required",
+          "Prior/rival/separating evidence/knowledge update/boundary/decision",
+          "Literature insight vs new empirical mechanism",
+          "Execution/debugging/sweeps/metric changes are supporting work",
+          "No causality from performance or geometry; supported link/rival/falsifier explicit"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "protected_learning_and_daily_reports",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 195,
+          "anchor": "Daily research plans must reserve"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 111,
+          "anchor": "Daily plans protect learning"
+        },
+        "coverage": [
+          "Learning/independent explanation protected before implementation; order/question/comprehension output",
+          "Monitoring/unfinished runs cannot consume learning time",
+          "Reports wait for canonical result + human Focus judgment; Unknown remains pending",
+          "Link owning records; one update/rival/boundary/human decision; no result body or ledger copy"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "summary_first_chat_contract",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 207,
+          "anchor": "## Result Reading And Reply"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 118,
+          "anchor": "With Summary, start replies"
+        },
+        "coverage": [
+          "Begin result reply with Summary link",
+          "Decisive value and minimal figures near conclusions with reading sentence",
+          "Boundary and next-step uncertainty/rationale/stop outcome",
+          "Unconfirmed next step labeled AI 建议",
+          "Four-part chat only absent Summary or explicit standalone brief",
+          "History/secondary diagnostics only for eligibility or comparison",
+          "No fabricated/ineligible/redundant/decorative evidence",
+          "Accessibility, semantic routing, intervened expert utility and end-task performance distinct"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "all_state_owners",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 237,
+          "anchor": "## State Ownership"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 126,
+          "anchor": "## Remaining State Ownership"
+        },
+        "coverage": [
+          "Focus/Anchor/Protocol/Summary/Detailed owners defined directly in their sections",
+          "Execution owned only by Detailed/execution record",
+          "AGENTS stable policy; PROJECTS scientific map/priorities/decisions",
+          "Conversation memory noncanonical",
+          "Execution envelope profiles/images/runtime/submission/certificates",
+          "Training contract telemetry/normalization/comparison",
+          "Final report/Graph/Story/roadmap/sync derived"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "machine_state_and_conflicting_views",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 252,
+          "anchor": "Machine state must never own"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 140,
+          "anchor": "Machine state owns no scientific"
+        },
+        "coverage": [
+          "Machine state cannot own science/approval/priority/verdict/next decision",
+          "Repair derived view from canonical source; do not create second authority"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "entrypoint_check_routing_only",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 257,
+          "anchor": "python tools/check_current_entrypoints.py"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 32,
+          "anchor": "python tools/check_current_entrypoints.py"
+        },
+        "coverage": [
+          "Run before relying on current workstream links; existence/versioning not scientific judgment/approval"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "autonomy_and_approval_gates",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 261,
+          "anchor": "## Autonomy And Approval"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 143,
+          "anchor": "## Autonomy, Execution And Completion"
+        },
+        "coverage": [
+          "Proceed reads/in-scope edits/relevant checks",
+          "Pause only human scientific transition/missing judgment, expanded scope, destructive/external action, unauthorized expensive/full remote run",
+          "Authorized protocol plus default execution profile creates no new gate",
+          "User instructions override Skill workflow; Skill cannot add approval gates"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "bounded_supervision",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 278,
+          "anchor": "### Long-Running Supervision"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 153,
+          "anchor": "Absent requested continuous/completion-time monitoring"
+        },
+        "coverage": [
+          "Unless explicitly monitoring, only verify startup scheduling/runtime/workers/smoke/progress/immediate failure",
+          "Report job/progress/boundary/evidence-based ETA then end polling",
+          "Later inspect same job, never resubmit because monitoring ended"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "completion_contract",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 291,
+          "anchor": "## Completion Rule"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 158,
+          "anchor": "Complete the deliverable"
+        },
+        "coverage": [
+          "Deliverable, evidence trace, proportionate checks, failures/unknowns",
+          "Continue while authorized progress possible; first draft/first successful implementation insufficient",
+          "Narrow answers need no canonical artifact; formal work follows owning Skill completion contract"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "skill_router",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 304,
+          "anchor": "## Skill Router"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 163,
+          "anchor": "## Skills And Storage"
+        },
+        "coverage": [
+          "All 14 existing repository Skills retained with task-specific dispatch",
+          "Only matching Skill/references; remote workflow resolves envelope before submit"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "storage_and_git_authority",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 334,
+          "anchor": "## Repository And Git Boundaries"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 186,
+          "anchor": "Root `templates/` alone"
+        },
+        "coverage": [
+          "Root templates only reusable template location",
+          "Research text/scripts/configs/provenance Git; raw/generated payloads local or execution-side",
+          "Detailed records exact origin/digest; explicit curated reading packages allowed",
+          "No revert user work; explicit commit/push/publish/Graph edit/external sync",
+          "Root payload check before commit; focused inspection/checks, not global registry requirement"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "date_figure_reading_copy",
+        "old": {
+          "path": "AGENTS.md",
+          "line": 134,
+          "anchor": "A reader-facing artifact references only figures"
+        },
+        "new": {
+          "path": "AGENTS.md",
+          "line": 191,
+          "anchor": "Dated reader artifacts display only figures"
+        },
+        "coverage": [
+          "Physical date-local figure with relative link",
+          "Experiment evidence copy plus date reading copy; origins recorded"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-mainline/references/layout_and_naming.md",
+          "sha256": "610e6cb9a2e1dc62c879a30e483ec46e2200d61d7083fc9631d2274cb20d5832"
+        }
+      },
+      {
+        "id": "project_inherit_root",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 3,
+          "anchor": "Conversation defaults to Chinese"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 3,
+          "anchor": "Inherit [root AGENTS]"
+        },
+        "coverage": [
+          "No repetition of root language, epistemics, evidence, approval, training, memory and Git contracts"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": "AGENTS.md",
+          "sha256": "4f4dfc3096cbc1d5c36d918d8d5b270daf34430528a0ec6f30521d46c4935ac4"
+        }
+      },
+      {
+        "id": "project_terms_meeting_scope",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 6,
+          "anchor": "## Response Rules"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 53,
+          "anchor": "## Meetings And Explicit Handoffs"
+        },
+        "coverage": [
+          "Define shorthand and dominant metric; self-contained reports with Terminology section when needed",
+          "Single-center meeting uses Focus; human answers before AI audit",
+          "Separate outline only multi-focus or explicit request"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "project_reading_route_optional",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 97,
+          "anchor": "Current research state does not live"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 9,
+          "anchor": "Select work through"
+        },
+        "coverage": [
+          "Named source first; select through PROJECTS/Focus",
+          "Maps/Stories/Graph optional; no state in AGENTS"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "project_workspace_and_branch",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 201,
+          "anchor": "## Workspace Boundary"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 12,
+          "anchor": "Research-line edits belong here"
+        },
+        "coverage": [
+          "This project branch Xingyu; other repos including kv_cache read-only unless explicitly authorized",
+          "Inspect/pull only when explicitly needed; do not edit/stage/commit/push other repos",
+          "Copy relevant conclusion as self-contained local note instead of editing reference source"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "project_remote_windows_boundaries",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 215,
+          "anchor": "## Execution And Sync Loop"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 16,
+          "anchor": "Resolve execution from"
+        },
+        "coverage": [
+          "Resolve current target from Protocol/envelope rather than historical host",
+          "Remote execution/code/analysis vs Windows rules/review/curated Git pulls",
+          "Only small explicit useful Windows smoke; no full local experiment",
+          "Git sync default; SSH/SCP only explicit small inspection/recovery, not raw dumps",
+          "Project payload check and root explicit-commit gate"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "project_layout_migration",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 60,
+          "anchor": "Use hierarchical IDs"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 37,
+          "anchor": "Use parent/child identities"
+        },
+        "coverage": [
+          "Existing flat layouts remain valid; no mixed flat/nested line",
+          "Sibling major decisions; child local clauses/rivals/repairs/guards",
+          "Explicit move-only canonical migration updates numbers/indexes/references with link checks",
+          "Immutable remote/result IDs retained",
+          "Matching experiment ownership and path layout"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-mainline/references/layout_and_naming.md",
+          "sha256": "610e6cb9a2e1dc62c879a30e483ec46e2200d61d7083fc9631d2274cb20d5832"
+        }
+      },
+      {
+        "id": "project_no_parallel_design_trees",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 134,
+          "anchor": "New hypotheses are written"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 35,
+          "anchor": "closure trees"
+        },
+        "coverage": [
+          "No separate hypotheses/closure tree; hypotheses in owning Anchor",
+          "Same parent updated by human judgment; formal sections 1–8 preserve confirmed design"
+        ],
+        "disposition": "compressed_inline"
+      },
+      {
+        "id": "project_story_conventions",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 67,
+          "anchor": "## Story Naming And Language Pair"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 45,
+          "anchor": "Stories live in"
+        },
+        "coverage": [
+          "Numbered topic filenames; no generic story or one full story per Anchor",
+          "One primary ordered synthesis among distinct scopes",
+          "English canonical unless reversed; normal bilingual delivery with aligned claims",
+          "Divergent older argument archived, not presented as translation",
+          "Snapshot directory identifier repeated in filename"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-communication/references/story.md",
+          "sha256": "b38756cbbda9fb9fb9cdb4693cca672ff7694703855e900da0a212180abd535a"
+        }
+      },
+      {
+        "id": "project_handoff_scope_paths",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 132,
+          "anchor": "## Anchor And Handoff Rule"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 62,
+          "anchor": "Handoffs/sync occur only"
+        },
+        "coverage": [
+          "Explicit handoff/sync only; approved existing records plus referenced curated figures/tables",
+          "No new scientific content; date/topic folder and concise scope/boundary index",
+          "Private questions/rehearsal/interruption scripts excluded",
+          "Daily, project, root paths retained; root sync is synthesis, not mirror; verify source links"
+        ],
+        "disposition": "compressed_inline_with_mandatory_existing_detail",
+        "existing_detail_owner": {
+          "path": ".agents/skills/research-communication/references/handoff.md",
+          "sha256": "a90f855c2716d77b84dc9b81656ae41cbd40efe6c0c8450d9f72d7ec6540633b"
+        }
+      },
+      {
+        "id": "project_historical_paths_and_retired_views",
+        "old": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 242,
+          "anchor": "## File Roles"
+        },
+        "new": {
+          "path": "Projects/from-attention-to-search/AGENTS.md",
+          "line": 22,
+          "anchor": "`XingyuD/Attention_Search_Experiments/`"
+        },
+        "coverage": [
+          "Historical execution/reusable material paths retained as nonauthoritative",
+          "Graph optional, branch Graph legacy",
+          "No dependencies on retired current_mainline/consensus/status",
+          "No raw logs/unfiltered output in main/docs/sync"
+        ],
+        "disposition": "compressed_inline"
+      }
+    ],
+    "clarifications": [
+      {
+        "id": "no_repeated_approval",
+        "meaning": "Makes session authorization persistence explicit for same action/scope; no new permission granted."
+      },
+      {
+        "id": "separating_test_three_branches",
+        "meaning": "Makes existing reasoning-auditor rule visible: proposed research test distinguishes explanations and specifies support/non-support/insufficient effects on judgment."
+      }
+    ],
+    "removed_nonrule_material": [
+      {
+        "path": "Projects/from-attention-to-search/AGENTS.md",
+        "old_line": 114,
+        "content": "Copied historical reverse-KV archived status",
+        "reason": "Scientific status must live in PROJECTS/Focus/Anchor, not AGENTS. No scientific state or archive record modified; reactivation still researcher-owned."
+      }
+    ],
+    "validation": {
+      "existing_detail_sources_checked": true,
+      "mapped_source_and_destination_anchors_exist": true,
+      "rule_groups": 37,
+      "scope": "Manual rule-group coverage plus source existence; not a model-performance benchmark"
+    }
+  },
+  "concurrent_analysis_protection": [
+    {
+      "path": "daily_research_reports/0926/01_思路纠偏与聊天计划_cn.md",
+      "sha256_before": "fedbd87068f6de8e23d1edaa5d385f8f39617d9a243165c73c5bcd6822bb491d",
+      "sha256_after": "fedbd87068f6de8e23d1edaa5d385f8f39617d9a243165c73c5bcd6822bb491d"
+    },
+    {
+      "path": "daily_research_reports/0926/focus_meeting_structure_update_cn.md",
+      "sha256_before": "c067a955cf692e17737590e1fa6b2e92c3058d97b3b1f5049c807419bf4d33ee",
+      "sha256_after": "c067a955cf692e17737590e1fa6b2e92c3058d97b3b1f5049c807419bf4d33ee"
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/detailed.md",
+      "sha256_before": "5a5f904fa599b7c3f278c283e8c9ce4362e630419ef3c146300a65a3f2a148f6",
+      "sha256_after": "5a5f904fa599b7c3f278c283e8c9ce4362e630419ef3c146300a65a3f2a148f6"
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/summary.md",
+      "sha256_before": "be3c23c2a68708a54d6c352d963a4fc68d7f462734e7f89dd162e3ada2771da7",
+      "sha256_after": "be3c23c2a68708a54d6c352d963a4fc68d7f462734e7f89dd162e3ada2771da7"
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/summary_cn.md",
+      "sha256_before": "c28847f8a048743708b22f8cabfac8f0b51ca242f1e1269d0e4c04e356bd3c5d",
+      "sha256_after": "c28847f8a048743708b22f8cabfac8f0b51ca242f1e1269d0e4c04e356bd3c5d"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/SOURCES.md",
+      "sha256_before": "216c1109cadae81cbd063338474592a435b87ad830a15e6da665e9e9fdc2b917",
+      "sha256_after": "216c1109cadae81cbd063338474592a435b87ad830a15e6da665e9e9fdc2b917"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/a_common_axes_and_spectrum.pdf",
+      "sha256_before": "d435fea2c1c1d5df8249248dfc83c6574d7e71160d10354cdb3a6aef7c9e661f",
+      "sha256_after": "d435fea2c1c1d5df8249248dfc83c6574d7e71160d10354cdb3a6aef7c9e661f"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/a_common_axes_and_spectrum.png",
+      "sha256_before": "4ebf92e416afdf85d21565fd53cce7599046a243aa2c5f61d9b0686cfca416d5",
+      "sha256_after": "4ebf92e416afdf85d21565fd53cce7599046a243aa2c5f61d9b0686cfca416d5"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/anchor_atlas_all_20260926.png",
+      "sha256_before": "835902529890fb0f4bed87d9880843bbf6b071ca0d593ccbf36b74c1a6a6332b",
+      "sha256_after": "835902529890fb0f4bed87d9880843bbf6b071ca0d593ccbf36b74c1a6a6332b"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/anchor_atlas_all_20260926.svg",
+      "sha256_before": "3ef08d9cf306ba97d7690814092a42cfa1b2b00d3c4192c1403b8b4c5831c077",
+      "sha256_after": "3ef08d9cf306ba97d7690814092a42cfa1b2b00d3c4192c1403b8b4c5831c077"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/default_mechanism_route_20260926.png",
+      "sha256_before": "cd17a3cc0620f293b7825274e0518530055135a48bafb71b5a2f757df6023b63",
+      "sha256_after": "cd17a3cc0620f293b7825274e0518530055135a48bafb71b5a2f757df6023b63"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/research_lines_renumbered_20260926.png",
+      "sha256_before": "c673f9dffed43a13f6351a14599e4cb6bd4e0bff39725f74fdacbba90695db01",
+      "sha256_after": "c673f9dffed43a13f6351a14599e4cb6bd4e0bff39725f74fdacbba90695db01"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/same_panel_update_consequences.pdf",
+      "sha256_before": "328f903656c8728ba91edd8e592588b2537db344a781a7c3a24efbc154764e14",
+      "sha256_after": "328f903656c8728ba91edd8e592588b2537db344a781a7c3a24efbc154764e14"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/same_panel_update_consequences.png",
+      "sha256_before": "b5ebea647d6cc47b00e48996639946dc92502873679a35ea83915858f7de8a0b",
+      "sha256_after": "b5ebea647d6cc47b00e48996639946dc92502873679a35ea83915858f7de8a0b"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/structure_update_manifest.json",
+      "sha256_before": "5fbb43b5c8651302c697bc1fdd2b357e7d69c51f11a37b932fd744bf1a916853",
+      "sha256_after": "5fbb43b5c8651302c697bc1fdd2b357e7d69c51f11a37b932fd744bf1a916853"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/u_common_axes_and_spectrum.pdf",
+      "sha256_before": "44e0a3d8b03ae85817d2394fef9ae1c2cf2cd6c28dd9b546d02d978b8f3f6521",
+      "sha256_after": "44e0a3d8b03ae85817d2394fef9ae1c2cf2cd6c28dd9b546d02d978b8f3f6521"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/u_common_axes_and_spectrum.png",
+      "sha256_before": "1091fb7ebddc1c680141e53a8fb0e88aa3739ee1a4ddb20c03b255129bb1dedb",
+      "sha256_after": "1091fb7ebddc1c680141e53a8fb0e88aa3739ee1a4ddb20c03b255129bb1dedb"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/analyze_structure_update.py",
+      "sha256_before": "c56b822e419dc70559f7110302b508ba4980149526efe4a9599fb70791d8e1d8",
+      "sha256_after": "c56b822e419dc70559f7110302b508ba4980149526efe4a9599fb70791d8e1d8"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/anchor_atlas_data.json",
+      "sha256_before": "0fe77e4c85dfa0e064e11a804dfc77fc4e27aa3007281f120a56d4406a99850e",
+      "sha256_after": "0fe77e4c85dfa0e064e11a804dfc77fc4e27aa3007281f120a56d4406a99850e"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/anchor_atlas_layout.json",
+      "sha256_before": "d097838867670e1383434d306dfe9897e5b557cf5268e61f4177403f8d0c3198",
+      "sha256_after": "d097838867670e1383434d306dfe9897e5b557cf5268e61f4177403f8d0c3198"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/build_reorganization_review.py",
+      "sha256_before": "12909e28f3e654bae38f739f83e593f9dffaa3f565495823bd36b58c98990ae4",
+      "sha256_after": "12909e28f3e654bae38f739f83e593f9dffaa3f565495823bd36b58c98990ae4"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/collect_structure_update.py",
+      "sha256_before": "8acc7703676ed5179fb6679c0f4f6b00e15ddd86191202db03e9a06c7e1fcd41",
+      "sha256_after": "8acc7703676ed5179fb6679c0f4f6b00e15ddd86191202db03e9a06c7e1fcd41"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/reasoning_anchor_revisions_20260926.json",
+      "sha256_before": "bcf9ee7373381f98dd6cf82f504ce2b2bd0d5b0f74ca630f404cb948b0a7b3f1",
+      "sha256_after": "bcf9ee7373381f98dd6cf82f504ce2b2bd0d5b0f74ca630f404cb948b0a7b3f1"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/render_anchor_atlas.py",
+      "sha256_before": "c48be8ed1f8e274ff7526cc0a684d971ef830cd9aa8b3b80c8bae39598be3bc4",
+      "sha256_after": "c48be8ed1f8e274ff7526cc0a684d971ef830cd9aa8b3b80c8bae39598be3bc4"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/__pycache__/analyze_structure_update.cpython-310.pyc",
+      "sha256_before": "4aa58612bee1105f660da8453e8ad30304a4e099e27ae3ce98cda79b0e7fb68b",
+      "sha256_after": "4aa58612bee1105f660da8453e8ad30304a4e099e27ae3ce98cda79b0e7fb68b"
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/__pycache__/collect_structure_update.cpython-310.pyc",
+      "sha256_before": "c0f34fdfaa77d754a6569283fae285acc2659204dc7be18fb2c9f623c1a32155",
+      "sha256_after": "c0f34fdfaa77d754a6569283fae285acc2659204dc7be18fb2c9f623c1a32155"
+    }
+  ],
+  "independent_audit": {
+    "source_sha256": "05dfd4ea7f527ba7a25335ad88f216b3564fa2948f193ffb655949e2c84911c6",
+    "finding": "No new blocking issue; 10 core rule boundaries retained. Versioning gaps remain explicit.",
+    "final_incremental_review": "Project rule 13-byte explicit-needed restriction rechecked; project AGENTS final size 4743 bytes and SHA verified."
+  },
+  "owned_file_sha256": {
+    "AGENTS.md": "4f4dfc3096cbc1d5c36d918d8d5b270daf34430528a0ec6f30521d46c4935ac4",
+    "PROJECTS.md": "a074e68b107618804eef5e9b54605d14b682f8bf6d65d4b637c883c8ec759405",
+    "Projects/from-attention-to-search/AGENTS.md": "45bc7d86cf454ba12ac865ca337d05577a1ce65f3084fa64426dc7e3376254bc",
+    "Projects/from-attention-to-search/main/roadmap.md": "95d70141a7d5b9bc32bbd4788e9f0cac62d8494375da4cfea16e637a1bf97ebd",
+    "tools/check_current_entrypoints.py": "205f0e84f41b750aea2e1ca6fe33f2cc7750c8d766c2753719346c942cd4580e",
+    "docs/archive/project_map_20260926_before_refactor.md": "9e70c3a7455b007f7dde0839efbcbc5c42a3d77a0717a40d47ac64dd883e7ffa",
+    "docs/research_system_astra_review_20260926_cn.md": "d05e928ecae5c03a212ed99cf9ed2b306e471dca93ec82bed62acbf1deb06b8b",
+    "docs/research_reorganization_20260926_cn.md": "1ebdcfad45a25c9b5e51c4d90946b52849b4164de142054ab416cd4ea9fd4386",
+    "docs/research_reorganization_20260926_manifest.json": "cbff275f05e42f4bdc3c154119d8eddf4d44d54db1a5aa3cfad8dad9845532dc",
+    "docs/research_system_restructure_20260926_checks.json": "b205a7942963504812f3196e10a0724b65bddbaadf79453bf11b117247d71181"
+  },
+  "git_diff_check": "PASS for changed tracked root and project paths",
+  "canonical_anchor_path_migrations": 0,
+  "physical_deletions": 0,
+  "experiment_runs_started": 0,
+  "scientific_state_transitions": 0,
+  "git_commits_or_pushes": 0,
+  "model_performance_measured": false
+}

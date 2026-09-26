@@ -81,3 +81,8 @@ Projects/academic_writing/**/~$*
 /daily_research_reports/**/figures/**/*.json
 /daily_research_reports/**/results/**/*.json
 /daily_research_reports/**/report_assets/fonts/
+
+# Skip walking local generated-result trees during Git status/commit.
+/daily_research_reports/**/figures/
+/daily_research_reports/**/tables/
+/daily_research_reports/**/results/

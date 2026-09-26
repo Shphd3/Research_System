@@ -1,0 +1,1278 @@
+{
+  "generated_utc": "2026-09-26T06:06:14.203855+00:00",
+  "scope": "Repository workflow and Skill compatibility; no scientific verdict, live experiment, billing or latency benchmark",
+  "baseline_created_utc": "2026-09-26T05:43:14.363717+00:00",
+  "baseline_path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_compat_before.json",
+  "changed_files": [
+    {
+      "path": ".agents/skills/experiment-card-writer/SKILL.md",
+      "before_bytes": 11695,
+      "after_bytes": 4780,
+      "before_sha256": "f68eb0f41ed3fc35dccc28b8022d780a6310a69c518d0297b0b54876acfcf79d",
+      "after_sha256": "ffb4a6fa68f8f4b5943ee0bd77d4b7e9c6a596cdb16f823e5fbd9efaa0b6fa65"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/agents/openai.yaml",
+      "before_bytes": 320,
+      "after_bytes": 333,
+      "before_sha256": "1cc95f1ce62d9acbe1738cc8d01183eb05651be337ea808ace0de46c32ad4aa1",
+      "after_sha256": "3ce4d67e1c26ecf44a01b77971f11e76ee2a4aab7d0ad9326b233fcc26ffc782"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/references/blockwise_protocol_audit.md",
+      "before_bytes": 7193,
+      "after_bytes": 7403,
+      "before_sha256": "858748bd82b6fb0dff6475f8cb3ec9ce144a6e72d1773787c51fb31e876c25df",
+      "after_sha256": "0d1d8a67d7917d6efff81d4748785135a4aaa373f57894b94fff1a7ab24f66c4"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/references/plain_language_completion_reply.md",
+      "before_bytes": 4010,
+      "after_bytes": 4023,
+      "before_sha256": "d1d3c882d7f8d3ce054f171e1664e8641a0cf3ac4288d16131d4e0064f0aea72",
+      "after_sha256": "c76e20f691aff22af7e57e7d5af1cb6222c643a16ed1700c8a52c21ebd57426f"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/references/protocol_focus_alignment.md",
+      "before_bytes": null,
+      "after_bytes": 2093,
+      "before_sha256": null,
+      "after_sha256": "e0cb5205a3647e5149c4305139eaf25f20614e13c053c95c2d78714546115659"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/references/protocol_self_containment_and_freeze.md",
+      "before_bytes": 11251,
+      "after_bytes": 12091,
+      "before_sha256": "b2ca136d0f589a34a522d3d41b22741182ed5ef8f38052943d434509c39a958e",
+      "after_sha256": "380cc94d34d1c7cc8fb8d99088a73474eaf0ecaa0fdc2b5ccc28966e7d4aaa11"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+      "before_bytes": 10242,
+      "after_bytes": 11304,
+      "before_sha256": "61ac18736f20f2812cffa4671e7c5c4ac3401c6d4436e624ef48149a47194538",
+      "after_sha256": "fc6d30cbf131ab207fd0e8e9d750a43613806e5b5e15a185e8828240270187cb"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/SKILL.md",
+      "before_bytes": 12591,
+      "after_bytes": 3543,
+      "before_sha256": "8cf6f8aab1145c6a85bf796e5b05a1536cd62b61a0fd46ad69ca3c4b31f0ec08",
+      "after_sha256": "3439cb43ff6533c73287ef58b794048aadb2b2163a116c7a0f7ff1fc62266d47"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "before_bytes": 12477,
+      "after_bytes": 14737,
+      "before_sha256": "d43d447c2f194ca0e976c79982c17eee930db77c2731326739ba4d59e50d90e7",
+      "after_sha256": "5fc4c756f6a8b093f61fb6c8b1230c8588c33cc5d0120d98a0a8c7fc48d553bb"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/references/external_method_mapping.md",
+      "before_bytes": null,
+      "after_bytes": 1970,
+      "before_sha256": null,
+      "after_sha256": "3f1aa4b9bdb13c4ebe669e976f62930fb2fc02a3b52604237f93ce916bbc4b0b"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "before_bytes": null,
+      "after_bytes": 3642,
+      "before_sha256": null,
+      "after_sha256": "8260e34bd887df321025eab089caf0c22f1502c03623bec2f2bd8c712c243af2"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/references/learnable_research_design.md",
+      "before_bytes": 4319,
+      "after_bytes": 4949,
+      "before_sha256": "c2be3f069f740cc4565a4190ee26489ff862e5a86d69511a1d663088794c68ee",
+      "after_sha256": "46b5bfb41af115af202d858cf89e64370432ef90306d48be898ccb7f2f8d7d6a"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/references/result_update.md",
+      "before_bytes": null,
+      "after_bytes": 1092,
+      "before_sha256": null,
+      "after_sha256": "33bdf1b6564b8eb1eeeebb51ee5ad102ffac50a82adc7188c919206cf1fa3ed3"
+    },
+    {
+      "path": ".agents/skills/remote-experiment-workflow/SKILL.md",
+      "before_bytes": 9935,
+      "after_bytes": 2515,
+      "before_sha256": "e78fa852e3c5f4c5a2aa8d7ceae2ddc81856b905d3be1112972bfa538ae0edba",
+      "after_sha256": "7e4260ba4d38b33415512f1cf16f988fa9f4c2c53a25228474eb037089107c66"
+    },
+    {
+      "path": ".agents/skills/remote-experiment-workflow/agents/openai.yaml",
+      "before_bytes": 297,
+      "after_bytes": 322,
+      "before_sha256": "4aa7e136991bb28d86eb427ae5363d54f43a4b5ecdf8b7d96b9326fdca4f8940",
+      "after_sha256": "d4a3a0a63f3fec7684dd10e462204533157e8fcb5881198268202e81d5c9abaf"
+    },
+    {
+      "path": ".agents/skills/remote-experiment-workflow/references/artifacts.md",
+      "before_bytes": null,
+      "after_bytes": 1187,
+      "before_sha256": null,
+      "after_sha256": "9b43b703deca4874e25bd8f7c3cb110ccacc5a740f86ed930c1b0abd86524bbb"
+    },
+    {
+      "path": ".agents/skills/remote-experiment-workflow/references/execution.md",
+      "before_bytes": null,
+      "after_bytes": 3107,
+      "before_sha256": null,
+      "after_sha256": "caa931d274be24273e7b2b85951dfb62f72e73de4ef1eebad2561d7f2052f756"
+    },
+    {
+      "path": ".agents/skills/remote-experiment-workflow/references/startup.md",
+      "before_bytes": null,
+      "after_bytes": 1342,
+      "before_sha256": null,
+      "after_sha256": "9eeb29eff8d5a3466d17ba8ff10770682e8ec90ed8dc1caf8fd5c1f0395db488"
+    },
+    {
+      "path": ".agents/skills/remote-experiment-workflow/references/transport.md",
+      "before_bytes": null,
+      "after_bytes": 828,
+      "before_sha256": null,
+      "after_sha256": "9547ca7612bf244d969d5b8aed769622faf28f682e2ad9f9cf58cb4757073077"
+    },
+    {
+      "path": ".agents/skills/research-document-explainer/SKILL.md",
+      "before_bytes": 4098,
+      "after_bytes": 2999,
+      "before_sha256": "d6cfbe967b7283a35191bf083069d91556f4dc8bdce1441c5d546fea661b28ac",
+      "after_sha256": "0184977d583536eeeda3d4975892911f1ac8b8a6589229cc662ea6e70eabd41d"
+    },
+    {
+      "path": ".agents/skills/research-document-explainer/references/explanation_contract.md",
+      "before_bytes": 6846,
+      "after_bytes": 6999,
+      "before_sha256": "272fc4c9f98ca3f0624b5e6433c46ec30aad3a6d216982f5abd00ee101b550b4",
+      "after_sha256": "8a4a2c0c5b2df60b6b37242a6e7dfb9e83b940f929ded2461c633f914b31788b"
+    },
+    {
+      "path": ".agents/skills/research-document-explainer/references/terminology_contract.md",
+      "before_bytes": 2668,
+      "after_bytes": 2588,
+      "before_sha256": "8ea521927c2233e463f16307d7fd6b3c3ca19edb50e6021a93fc8e6e036af998",
+      "after_sha256": "38650314cdb44ecbe8109168fe860d8bd43e17007c76722fd382b5c95462ece2"
+    },
+    {
+      "path": ".agents/skills/research-memory/SKILL.md",
+      "before_bytes": 1202,
+      "after_bytes": 2167,
+      "before_sha256": "4752d7064c04f1381ad3a53d808469f1e7839b3f0a4f409e67895d5c02e49bf1",
+      "after_sha256": "fcf61eab27bb56fc2426d85ae2112909df9d8e17693f0024f9f7b91a06c320be"
+    },
+    {
+      "path": ".agents/skills/research-memory/references/continuation_contract.md",
+      "before_bytes": null,
+      "after_bytes": 3832,
+      "before_sha256": null,
+      "after_sha256": "8e534c2961ca6b32cb7b4e28a0f9e92ddf893b58cdb591004c7119ebc2200588"
+    },
+    {
+      "path": ".agents/skills/research-memory/references/memory_contract.md",
+      "before_bytes": 11123,
+      "after_bytes": 11128,
+      "before_sha256": "05580f56734d6303e3290b54b9f6f4187f32d5de27e8897412f5b6e1f852cfdb",
+      "after_sha256": "027a6f3bad73ae3ba87c0c1765f2f6e348bf0daaac63e2427ea05d8b84b1eb51"
+    },
+    {
+      "path": ".agents/skills/research-reasoning-auditor/SKILL.md",
+      "before_bytes": 3993,
+      "after_bytes": 3172,
+      "before_sha256": "6954db8bfdceea5d9c12cc87a0936a50c6593552b65dc578c707b22e7245f9f8",
+      "after_sha256": "6d7513a7630930a84de4d2d7c2a07e0b34940d69a715d214cc30218807c9e4a1"
+    },
+    {
+      "path": ".agents/skills/research-sync-gate/SKILL.md",
+      "before_bytes": 3122,
+      "after_bytes": 2934,
+      "before_sha256": "ab5edece78f12b2fa1ab7f67f47b04f9f20829362c95c27eb50cd8b70ea8c6d5",
+      "after_sha256": "b12de0ea6e1d174bd01529d41e923779d792271a24c2f66e84ab8b6ef61fcaaa"
+    },
+    {
+      "path": "AGENTS.md",
+      "before_bytes": 11244,
+      "after_bytes": 11775,
+      "before_sha256": "4f4dfc3096cbc1d5c36d918d8d5b270daf34430528a0ec6f30521d46c4935ac4",
+      "after_sha256": "2ebe03ee863382fcf211864bc0e9f34b78082e548c885b1cbda95527f2e9cdd9"
+    },
+    {
+      "path": "docs/ai_workflow_compatibility_20260926_cn.md",
+      "before_bytes": null,
+      "after_bytes": 7338,
+      "before_sha256": null,
+      "after_sha256": "2501ea4f9670dee12d9b6bcc2492aec60378714cddcce3729b78f6fdbd7f5267"
+    },
+    {
+      "path": "templates/research_process/continuation_brief_template.md",
+      "before_bytes": 5456,
+      "after_bytes": 2697,
+      "before_sha256": "b25762637007e81a312e5e0402ad4d446cd477e6e2ebf4ab8934c7d07da8a2d5",
+      "after_sha256": "c2b55290af83b95c71959b21c90ceb43f850ae320d3ca301d3bf039ba275b4ee"
+    },
+    {
+      "path": "tools/check_skills.py",
+      "before_bytes": null,
+      "after_bytes": 4992,
+      "before_sha256": null,
+      "after_sha256": "99cd7d23756541cf066e08a11a28b00b565c6dcc0494bfbe6dc249deabd327c2"
+    }
+  ],
+  "skill_entry_bytes": {
+    "before": 78379,
+    "after": 53853
+  },
+  "readpaths": {
+    "shared": [
+      {
+        "mode": "quick_reasoning",
+        "before_files": [
+          ".agents/skills/research-reasoning-auditor/SKILL.md",
+          ".agents/skills/research-reasoning-auditor/references/reasoning_audit_contract.md"
+        ],
+        "after_files": [
+          ".agents/skills/research-reasoning-auditor/SKILL.md"
+        ],
+        "before_bytes": 12155,
+        "after_bytes": 3172,
+        "reduction_percent": 73.9
+      },
+      {
+        "mode": "short_chinese_explanation",
+        "before_files": [
+          ".agents/skills/research-document-explainer/SKILL.md",
+          ".agents/skills/research-document-explainer/references/explanation_contract.md",
+          ".agents/skills/research-document-explainer/references/terminology_contract.md"
+        ],
+        "after_files": [
+          ".agents/skills/research-document-explainer/SKILL.md"
+        ],
+        "before_bytes": 13612,
+        "after_bytes": 2999,
+        "reduction_percent": 77.97
+      },
+      {
+        "mode": "write_continuation",
+        "before_files": [
+          ".agents/skills/research-memory/SKILL.md",
+          ".agents/skills/research-memory/references/memory_contract.md",
+          "templates/research_process/continuation_brief_template.md"
+        ],
+        "after_files": [
+          ".agents/skills/research-memory/SKILL.md",
+          ".agents/skills/research-memory/references/continuation_contract.md",
+          "templates/research_process/continuation_brief_template.md"
+        ],
+        "before_bytes": 17781,
+        "after_bytes": 8696,
+        "reduction_percent": 51.09
+      }
+    ],
+    "writers": [
+      {
+        "request": "Clarify a new question, without formal Anchor writing",
+        "before_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/judgment_review.md"
+        ],
+        "before_bytes": 12591,
+        "after_bytes": 7185,
+        "saved_bytes": 5406,
+        "reduction_percent": 42.94,
+        "qualification": "Only clarification/intake contracts; no claim approval inferred."
+      },
+      {
+        "request": "Audit an existing fixed-diagnostic Anchor",
+        "before_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md"
+        ],
+        "before_bytes": 25068,
+        "after_bytes": 18280,
+        "saved_bytes": 6788,
+        "reduction_percent": 27.08,
+        "qualification": "Existing scientific core; no model fitting or external-method import."
+      },
+      {
+        "request": "Audit an existing model-fitting Anchor",
+        "before_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+          ".agents/skills/problem-anchor-writer/references/learnable_research_design.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+          ".agents/skills/problem-anchor-writer/references/learnable_research_design.md"
+        ],
+        "before_bytes": 29387,
+        "after_bytes": 23229,
+        "saved_bytes": 6158,
+        "reduction_percent": 20.95,
+        "qualification": "Learnable-model contract remains mandatory."
+      },
+      {
+        "request": "Draft a new fixed-diagnostic Anchor after human scientific confirmation",
+        "before_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md"
+        ],
+        "before_bytes": 25068,
+        "after_bytes": 21922,
+        "saved_bytes": 3146,
+        "reduction_percent": 12.55,
+        "qualification": "New/reopened scientific core explicitly includes judgment review."
+      },
+      {
+        "request": "Draft a new model-fitting Anchor after human scientific confirmation",
+        "before_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+          ".agents/skills/problem-anchor-writer/references/learnable_research_design.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+          ".agents/skills/problem-anchor-writer/references/learnable_research_design.md"
+        ],
+        "before_bytes": 29387,
+        "after_bytes": 26871,
+        "saved_bytes": 2516,
+        "reduction_percent": 8.56,
+        "qualification": "Full new-design path retains all applicable scientific gates."
+      },
+      {
+        "request": "Update Anchor evidence and boundary from confirmed results",
+        "before_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/problem-anchor-writer/SKILL.md",
+          ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+          ".agents/skills/problem-anchor-writer/references/result_update.md"
+        ],
+        "before_bytes": 25068,
+        "after_bytes": 19372,
+        "saved_bytes": 5696,
+        "reduction_percent": 22.72,
+        "qualification": "Owning experimental evidence is additional task-specific input, excluded on both sides."
+      },
+      {
+        "request": "Protocol draft, revision or audit",
+        "before_read_paths": [
+          ".agents/skills/experiment-card-writer/SKILL.md",
+          ".agents/skills/experiment-card-writer/references/blockwise_protocol_audit.md",
+          ".agents/skills/experiment-card-writer/references/protocol_self_containment_and_freeze.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/experiment-card-writer/SKILL.md",
+          ".agents/skills/experiment-card-writer/references/protocol_focus_alignment.md",
+          ".agents/skills/experiment-card-writer/references/blockwise_protocol_audit.md",
+          ".agents/skills/experiment-card-writer/references/protocol_self_containment_and_freeze.md"
+        ],
+        "before_bytes": 30139,
+        "after_bytes": 26367,
+        "saved_bytes": 3772,
+        "reduction_percent": 12.52,
+        "qualification": "Full A-G and approval/freeze contracts remain mandatory. Training contract adds identical task-dependent bytes on both sides."
+      },
+      {
+        "request": "Write Summary and deliver completed result",
+        "before_read_paths": [
+          ".agents/skills/experiment-card-writer/SKILL.md",
+          ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+          ".agents/skills/experiment-card-writer/references/plain_language_completion_reply.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/experiment-card-writer/SKILL.md",
+          ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+          ".agents/skills/experiment-card-writer/references/plain_language_completion_reply.md"
+        ],
+        "before_bytes": 25947,
+        "after_bytes": 20107,
+        "saved_bytes": 5840,
+        "reduction_percent": 22.51,
+        "qualification": "Full lineage and plain-language result contracts are included."
+      },
+      {
+        "request": "Write Summary and Detailed and deliver completed result",
+        "before_read_paths": [
+          ".agents/skills/experiment-card-writer/SKILL.md",
+          ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+          ".agents/skills/experiment-card-writer/references/detailed_record_standard.md",
+          ".agents/skills/experiment-card-writer/references/plain_language_completion_reply.md"
+        ],
+        "after_read_paths": [
+          ".agents/skills/experiment-card-writer/SKILL.md",
+          ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+          ".agents/skills/experiment-card-writer/references/detailed_record_standard.md",
+          ".agents/skills/experiment-card-writer/references/plain_language_completion_reply.md"
+        ],
+        "before_bytes": 31570,
+        "after_bytes": 25730,
+        "saved_bytes": 5840,
+        "reduction_percent": 18.5,
+        "qualification": "Full Detailed standard remains mandatory; no Protocol-authoring references loaded."
+      }
+    ],
+    "remote_sync": [
+      {
+        "mode": "existing_run_status",
+        "skill_files": [
+          ".agents/skills/remote-experiment-workflow/SKILL.md"
+        ],
+        "bytes": 2515,
+        "previous_monolithic_entry_bytes": 9935,
+        "reduction_fraction": 0.7468545546049321,
+        "external_reads": "Named artifacts and relevant contracts remain required; excluded from these skill-only byte counts."
+      },
+      {
+        "mode": "startup_check",
+        "skill_files": [
+          ".agents/skills/remote-experiment-workflow/SKILL.md",
+          ".agents/skills/remote-experiment-workflow/references/startup.md"
+        ],
+        "bytes": 3857,
+        "previous_monolithic_entry_bytes": 9935,
+        "reduction_fraction": 0.6117765475591344,
+        "external_reads": "Named artifacts and relevant contracts remain required; excluded from these skill-only byte counts."
+      },
+      {
+        "mode": "authorized_execution_and_startup",
+        "skill_files": [
+          ".agents/skills/remote-experiment-workflow/SKILL.md",
+          ".agents/skills/remote-experiment-workflow/references/execution.md",
+          ".agents/skills/remote-experiment-workflow/references/startup.md"
+        ],
+        "bytes": 6964,
+        "previous_monolithic_entry_bytes": 9935,
+        "reduction_fraction": 0.29904378459989933,
+        "external_reads": "Named artifacts and relevant contracts remain required; excluded from these skill-only byte counts."
+      },
+      {
+        "mode": "completed_outputs",
+        "skill_files": [
+          ".agents/skills/remote-experiment-workflow/SKILL.md",
+          ".agents/skills/remote-experiment-workflow/references/artifacts.md"
+        ],
+        "bytes": 3702,
+        "previous_monolithic_entry_bytes": 9935,
+        "reduction_fraction": 0.6273779567186714,
+        "external_reads": "Named artifacts and relevant contracts remain required; excluded from these skill-only byte counts."
+      },
+      {
+        "mode": "ssh_optional_addition",
+        "skill_files": [
+          ".agents/skills/remote-experiment-workflow/references/transport.md",
+          ".agents/skills/remote-experiment-workflow/references/remote_hosts.yaml"
+        ],
+        "bytes": 2211,
+        "previous_monolithic_entry_bytes": null,
+        "reduction_fraction": null,
+        "external_reads": "Named artifacts and relevant contracts remain required; excluded from these skill-only byte counts."
+      },
+      {
+        "mode": "sync_audit",
+        "skill_files": [
+          ".agents/skills/research-sync-gate/SKILL.md"
+        ],
+        "bytes": 2934,
+        "previous_monolithic_entry_bytes": 3122,
+        "reduction_fraction": 0.06021780909673291,
+        "external_reads": "Named artifacts and relevant contracts remain required; excluded from these skill-only byte counts."
+      }
+    ]
+  },
+  "structural_check": {
+    "skills": [
+      {
+        "name": "experiment-card-writer",
+        "entry_bytes": 4780,
+        "markdown_bytes": 47317
+      },
+      {
+        "name": "problem-anchor-writer",
+        "entry_bytes": 3543,
+        "markdown_bytes": 29933
+      },
+      {
+        "name": "remote-experiment-workflow",
+        "entry_bytes": 2515,
+        "markdown_bytes": 8979
+      },
+      {
+        "name": "research-communication",
+        "entry_bytes": 1910,
+        "markdown_bytes": 9392
+      },
+      {
+        "name": "research-document-explainer",
+        "entry_bytes": 2999,
+        "markdown_bytes": 20992
+      },
+      {
+        "name": "research-final-report",
+        "entry_bytes": 6024,
+        "markdown_bytes": 6024
+      },
+      {
+        "name": "research-graph-sop",
+        "entry_bytes": 8186,
+        "markdown_bytes": 8186
+      },
+      {
+        "name": "research-mainline",
+        "entry_bytes": 2106,
+        "markdown_bytes": 15318
+      },
+      {
+        "name": "research-memory",
+        "entry_bytes": 2167,
+        "markdown_bytes": 17127
+      },
+      {
+        "name": "research-progress-core",
+        "entry_bytes": 2429,
+        "markdown_bytes": 15698
+      },
+      {
+        "name": "research-reasoning-auditor",
+        "entry_bytes": 3172,
+        "markdown_bytes": 17803
+      },
+      {
+        "name": "research-sync-gate",
+        "entry_bytes": 2934,
+        "markdown_bytes": 2934
+      },
+      {
+        "name": "scholar-mode",
+        "entry_bytes": 8584,
+        "markdown_bytes": 8584
+      },
+      {
+        "name": "sidecar-thinking",
+        "entry_bytes": 2504,
+        "markdown_bytes": 2504
+      }
+    ],
+    "local_links_checked": 48,
+    "errors": [],
+    "scope": "Structural checks only; not a model or scientific verdict"
+  },
+  "bundled_quick_validate": [
+    {
+      "skill": "experiment-card-writer",
+      "pass": true
+    },
+    {
+      "skill": "problem-anchor-writer",
+      "pass": true
+    },
+    {
+      "skill": "remote-experiment-workflow",
+      "pass": true
+    },
+    {
+      "skill": "research-communication",
+      "pass": true
+    },
+    {
+      "skill": "research-document-explainer",
+      "pass": true
+    },
+    {
+      "skill": "research-final-report",
+      "pass": true
+    },
+    {
+      "skill": "research-graph-sop",
+      "pass": true
+    },
+    {
+      "skill": "research-mainline",
+      "pass": true
+    },
+    {
+      "skill": "research-memory",
+      "pass": true
+    },
+    {
+      "skill": "research-progress-core",
+      "pass": true
+    },
+    {
+      "skill": "research-reasoning-auditor",
+      "pass": true
+    },
+    {
+      "skill": "research-sync-gate",
+      "pass": true
+    },
+    {
+      "skill": "scholar-mode",
+      "pass": true
+    },
+    {
+      "skill": "sidecar-thinking",
+      "pass": true
+    }
+  ],
+  "validator_behavior_checks": {
+    "observed_previous_execution": "PASS",
+    "cases": [
+      "valid local and external links plus fenced examples",
+      "missing local link",
+      "invalid name",
+      "empty description",
+      "bad YAML",
+      "missing skill root"
+    ],
+    "scope": "Previously run isolated fixtures; not rerun merely for report creation"
+  },
+  "writer_rule_migrations": [
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Human-First Gate",
+      "new_path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "new_section": "Human-First Gate",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: AI Audit",
+      "new_path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "new_section": "AI Audit",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Grounding And No-Invention Gate",
+      "new_path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "new_section": "Grounding And No-Invention Gate",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Formalization Gate",
+      "new_path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "new_section": "Formalization Gate",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Physical-Prior Review",
+      "new_path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "new_section": "Physical-Prior Review",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Mathematical-Model Review",
+      "new_path": ".agents/skills/problem-anchor-writer/references/judgment_review.md",
+      "new_section": "Mathematical-Model Review",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Artifact Boundary",
+      "new_path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "new_section": "Required form / eight sections / placement / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Formal Anchor Structure",
+      "new_path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "new_section": "Required form / eight sections / placement / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Section Requirements",
+      "new_path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "new_section": "Required form / eight sections / placement / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Parent and Subanchor Rule",
+      "new_path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "new_section": "Required form / eight sections / placement / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Language",
+      "new_path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "new_section": "Required form / eight sections / placement / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Validation",
+      "new_path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "new_section": "Required form / eight sections / placement / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Learnable Research Design Gate",
+      "new_path": ".agents/skills/problem-anchor-writer/references/learnable_research_design.md",
+      "new_section": "Design order / Anchor gate / Section Ownership",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: External correspondence",
+      "new_path": ".agents/skills/problem-anchor-writer/references/external_method_mapping.md",
+      "new_section": "Correspondence",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "problem-anchor-writer/SKILL.md: Result Update",
+      "new_path": ".agents/skills/problem-anchor-writer/references/result_update.md",
+      "new_section": "Result Update",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "experiment-card-writer/agents/openai.yaml: default_prompt",
+      "new_path": ".agents/skills/experiment-card-writer/agents/openai.yaml",
+      "new_section": "interface.default_prompt",
+      "disposition": "scope-preserving_invocation_example_only"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 0. Confirmed Core-Task Focus",
+      "new_path": ".agents/skills/experiment-card-writer/references/protocol_focus_alignment.md",
+      "new_section": "Confirmed Core-Task Focus",
+      "disposition": "relocated"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 2. Draft First, Then Review",
+      "new_path": ".agents/skills/experiment-card-writer/references/blockwise_protocol_audit.md",
+      "new_section": "Draft-first / promotion / amendment",
+      "disposition": "deduplicated_to_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 4. Protocol Freeze And Amendment",
+      "new_path": ".agents/skills/experiment-card-writer/references/blockwise_protocol_audit.md",
+      "new_section": "Draft-first / promotion / amendment",
+      "disposition": "deduplicated_to_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 3. Self-Contained Approval Contract",
+      "new_path": ".agents/skills/experiment-card-writer/references/protocol_self_containment_and_freeze.md",
+      "new_section": "Approval snapshot / stage contract / frozen analysis / training telemetry",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 5. Result Grounding And Human Judgment",
+      "new_path": ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+      "new_section": "Ownership / lineage / Summary / Detailed / cross-file consistency / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 6. Evidence Lineage",
+      "new_path": ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+      "new_section": "Ownership / lineage / Summary / Detailed / cross-file consistency / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 7. Summary And Detailed Ownership",
+      "new_path": ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+      "new_section": "Ownership / lineage / Summary / Detailed / cross-file consistency / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 8. Visual Evidence",
+      "new_path": ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+      "new_section": "Ownership / lineage / Summary / Detailed / cross-file consistency / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 9. Close The Chain",
+      "new_path": ".agents/skills/experiment-card-writer/references/result_evidence_lineage.md",
+      "new_section": "Ownership / lineage / Summary / Detailed / cross-file consistency / final audit",
+      "disposition": "merged_with_existing_complete_contract"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 8.1 Result Delivery",
+      "new_path": ".agents/skills/experiment-card-writer/references/plain_language_completion_reply.md",
+      "new_section": "Four-section reader format / separations",
+      "disposition": "retained_existing_contract_plus_entrypoint_compact_reply"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: 1. Anchor Alignment",
+      "new_path": ".agents/skills/experiment-card-writer/SKILL.md",
+      "new_section": "Shared boundary / inputs / output",
+      "disposition": "compressed_shared_invariant"
+    },
+    {
+      "old_section": "experiment-card-writer/SKILL.md: Language And Safety",
+      "new_path": ".agents/skills/experiment-card-writer/SKILL.md",
+      "new_section": "Output and authorization",
+      "disposition": "compressed_shared_invariant"
+    }
+  ],
+  "writer_forward_test": {
+    "status": "completed",
+    "fixture": "/tmp/writer_forward_fixture",
+    "output": "/tmp/writer_forward_check_result.md",
+    "output_sha256": "41f4b53665cb0d45ad6136b86b0f7005235f2dde4fc61a81fb9139e6cb0b1bed",
+    "scope": "Independent read-only application of both skills to synthetic fixed-diagnostic Anchor and Protocol; no experiment execution.",
+    "findings_count": 5,
+    "read_contracts": [
+      "problem-anchor-writer/SKILL.md",
+      "problem-anchor-writer/references/anchor_self_containment.md",
+      "experiment-card-writer/SKILL.md",
+      "experiment-card-writer/references/protocol_focus_alignment.md",
+      "experiment-card-writer/references/blockwise_protocol_audit.md",
+      "experiment-card-writer/references/protocol_self_containment_and_freeze.md"
+    ],
+    "new_human_input_needed_for_audit": false,
+    "scientific_state_or_execution_changed": false,
+    "not_a_cross_model_benchmark": true
+  },
+  "models": [
+    {
+      "requested_model": "gpt-6-astra",
+      "agent": "/root/compat_astra",
+      "cases": [
+        {
+          "case_id": "case1",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case2",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case3",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case4",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case5",
+          "root_review": "PASS"
+        }
+      ],
+      "bidirectional_handoff": "PASS",
+      "receipt_path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/receipt.json",
+      "cross_handoff_path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/cross_handoff.json"
+    },
+    {
+      "requested_model": "gpt-6-sol",
+      "agent": "/root/compat_sol",
+      "cases": [
+        {
+          "case_id": "case1",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case2",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case3",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case4",
+          "root_review": "PASS"
+        },
+        {
+          "case_id": "case5",
+          "root_review": "PASS"
+        }
+      ],
+      "bidirectional_handoff": "PASS",
+      "receipt_path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/receipt.json",
+      "cross_handoff_path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/cross_handoff.json"
+    }
+  ],
+  "grading": "Root inspected both model responses and receipts against separate expected criteria; checked exact local counts and immutable fixture hashes. The cases are artificial. Named model tests are bounded, not a guarantee of general reliability.",
+  "protected_analysis": [
+    {
+      "path": "daily_research_reports/0926/01_思路纠偏与聊天计划_cn.md",
+      "before_sha256": "fedbd87068f6de8e23d1edaa5d385f8f39617d9a243165c73c5bcd6822bb491d",
+      "after_sha256": "fedbd87068f6de8e23d1edaa5d385f8f39617d9a243165c73c5bcd6822bb491d",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/focus_meeting_structure_update_cn.md",
+      "before_sha256": "c067a955cf692e17737590e1fa6b2e92c3058d97b3b1f5049c807419bf4d33ee",
+      "after_sha256": "c067a955cf692e17737590e1fa6b2e92c3058d97b3b1f5049c807419bf4d33ee",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/detailed.md",
+      "before_sha256": "5a5f904fa599b7c3f278c283e8c9ce4362e630419ef3c146300a65a3f2a148f6",
+      "after_sha256": "5a5f904fa599b7c3f278c283e8c9ce4362e630419ef3c146300a65a3f2a148f6",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/summary.md",
+      "before_sha256": "be3c23c2a68708a54d6c352d963a4fc68d7f462734e7f89dd162e3ada2771da7",
+      "after_sha256": "be3c23c2a68708a54d6c352d963a4fc68d7f462734e7f89dd162e3ada2771da7",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/summary_cn.md",
+      "before_sha256": "c28847f8a048743708b22f8cabfac8f0b51ca242f1e1269d0e4c04e356bd3c5d",
+      "after_sha256": "c28847f8a048743708b22f8cabfac8f0b51ca242f1e1269d0e4c04e356bd3c5d",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/SOURCES.md",
+      "before_sha256": "216c1109cadae81cbd063338474592a435b87ad830a15e6da665e9e9fdc2b917",
+      "after_sha256": "216c1109cadae81cbd063338474592a435b87ad830a15e6da665e9e9fdc2b917",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/a_common_axes_and_spectrum.pdf",
+      "before_sha256": "d435fea2c1c1d5df8249248dfc83c6574d7e71160d10354cdb3a6aef7c9e661f",
+      "after_sha256": "d435fea2c1c1d5df8249248dfc83c6574d7e71160d10354cdb3a6aef7c9e661f",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/a_common_axes_and_spectrum.png",
+      "before_sha256": "4ebf92e416afdf85d21565fd53cce7599046a243aa2c5f61d9b0686cfca416d5",
+      "after_sha256": "4ebf92e416afdf85d21565fd53cce7599046a243aa2c5f61d9b0686cfca416d5",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/anchor_atlas_all_20260926.png",
+      "before_sha256": "835902529890fb0f4bed87d9880843bbf6b071ca0d593ccbf36b74c1a6a6332b",
+      "after_sha256": "835902529890fb0f4bed87d9880843bbf6b071ca0d593ccbf36b74c1a6a6332b",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/anchor_atlas_all_20260926.svg",
+      "before_sha256": "3ef08d9cf306ba97d7690814092a42cfa1b2b00d3c4192c1403b8b4c5831c077",
+      "after_sha256": "3ef08d9cf306ba97d7690814092a42cfa1b2b00d3c4192c1403b8b4c5831c077",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/default_mechanism_route_20260926.png",
+      "before_sha256": "cd17a3cc0620f293b7825274e0518530055135a48bafb71b5a2f757df6023b63",
+      "after_sha256": "cd17a3cc0620f293b7825274e0518530055135a48bafb71b5a2f757df6023b63",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/research_lines_renumbered_20260926.png",
+      "before_sha256": "c673f9dffed43a13f6351a14599e4cb6bd4e0bff39725f74fdacbba90695db01",
+      "after_sha256": "c673f9dffed43a13f6351a14599e4cb6bd4e0bff39725f74fdacbba90695db01",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/same_panel_update_consequences.pdf",
+      "before_sha256": "328f903656c8728ba91edd8e592588b2537db344a781a7c3a24efbc154764e14",
+      "after_sha256": "328f903656c8728ba91edd8e592588b2537db344a781a7c3a24efbc154764e14",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/same_panel_update_consequences.png",
+      "before_sha256": "b5ebea647d6cc47b00e48996639946dc92502873679a35ea83915858f7de8a0b",
+      "after_sha256": "b5ebea647d6cc47b00e48996639946dc92502873679a35ea83915858f7de8a0b",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/structure_update_manifest.json",
+      "before_sha256": "5fbb43b5c8651302c697bc1fdd2b357e7d69c51f11a37b932fd744bf1a916853",
+      "after_sha256": "5fbb43b5c8651302c697bc1fdd2b357e7d69c51f11a37b932fd744bf1a916853",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/u_common_axes_and_spectrum.pdf",
+      "before_sha256": "44e0a3d8b03ae85817d2394fef9ae1c2cf2cd6c28dd9b546d02d978b8f3f6521",
+      "after_sha256": "44e0a3d8b03ae85817d2394fef9ae1c2cf2cd6c28dd9b546d02d978b8f3f6521",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/figures/u_common_axes_and_spectrum.png",
+      "before_sha256": "1091fb7ebddc1c680141e53a8fb0e88aa3739ee1a4ddb20c03b255129bb1dedb",
+      "after_sha256": "1091fb7ebddc1c680141e53a8fb0e88aa3739ee1a4ddb20c03b255129bb1dedb",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/analyze_structure_update.py",
+      "before_sha256": "c56b822e419dc70559f7110302b508ba4980149526efe4a9599fb70791d8e1d8",
+      "after_sha256": "c56b822e419dc70559f7110302b508ba4980149526efe4a9599fb70791d8e1d8",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/anchor_atlas_data.json",
+      "before_sha256": "0fe77e4c85dfa0e064e11a804dfc77fc4e27aa3007281f120a56d4406a99850e",
+      "after_sha256": "0fe77e4c85dfa0e064e11a804dfc77fc4e27aa3007281f120a56d4406a99850e",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/anchor_atlas_layout.json",
+      "before_sha256": "d097838867670e1383434d306dfe9897e5b557cf5268e61f4177403f8d0c3198",
+      "after_sha256": "d097838867670e1383434d306dfe9897e5b557cf5268e61f4177403f8d0c3198",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/build_reorganization_review.py",
+      "before_sha256": "12909e28f3e654bae38f739f83e593f9dffaa3f565495823bd36b58c98990ae4",
+      "after_sha256": "12909e28f3e654bae38f739f83e593f9dffaa3f565495823bd36b58c98990ae4",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/collect_structure_update.py",
+      "before_sha256": "8acc7703676ed5179fb6679c0f4f6b00e15ddd86191202db03e9a06c7e1fcd41",
+      "after_sha256": "8acc7703676ed5179fb6679c0f4f6b00e15ddd86191202db03e9a06c7e1fcd41",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/reasoning_anchor_revisions_20260926.json",
+      "before_sha256": "bcf9ee7373381f98dd6cf82f504ce2b2bd0d5b0f74ca630f404cb948b0a7b3f1",
+      "after_sha256": "bcf9ee7373381f98dd6cf82f504ce2b2bd0d5b0f74ca630f404cb948b0a7b3f1",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/render_anchor_atlas.py",
+      "before_sha256": "c48be8ed1f8e274ff7526cc0a684d971ef830cd9aa8b3b80c8bae39598be3bc4",
+      "after_sha256": "c48be8ed1f8e274ff7526cc0a684d971ef830cd9aa8b3b80c8bae39598be3bc4",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/__pycache__/analyze_structure_update.cpython-310.pyc",
+      "before_sha256": "4aa58612bee1105f660da8453e8ad30304a4e099e27ae3ce98cda79b0e7fb68b",
+      "after_sha256": "4aa58612bee1105f660da8453e8ad30304a4e099e27ae3ce98cda79b0e7fb68b",
+      "unchanged": true
+    },
+    {
+      "path": "daily_research_reports/0926/report_assets/__pycache__/collect_structure_update.cpython-310.pyc",
+      "before_sha256": "c0f34fdfaa77d754a6569283fae285acc2659204dc7be18fb2c9f623c1a32155",
+      "after_sha256": "c0f34fdfaa77d754a6569283fae285acc2659204dc7be18fb2c9f623c1a32155",
+      "unchanged": true
+    }
+  ],
+  "fixture_inputs_unchanged": true,
+  "artifacts": [
+    {
+      "origin": "/tmp/research_model_compat_20260926/case2/continuation.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case2/continuation.md",
+      "bytes": 977,
+      "sha256": "6f14cf98465f74ed71fa29aa3d2ced399639bd30facae5327e5154dc277940d2"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case2/summarize.py",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case2/summarize.py",
+      "bytes": 388,
+      "sha256": "810ae22abde29cb33363165ce6eab14f838a6b396ac2359de966cc905946ed4c"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case2/values.csv",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case2/values.csv",
+      "bytes": 24,
+      "sha256": "0239ae79a1eb8c311366a18c2e859eb0a1e28cffe62b0ac538739d5b10fa5707"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case3/continuation.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case3/continuation.md",
+      "bytes": 371,
+      "sha256": "80a1edea6167ba9a957b214589a594cbd7250f529b1fdc0b96d5d4ca18b6e8d0"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case3/detailed.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case3/detailed.md",
+      "bytes": 199,
+      "sha256": "68253a766bee7910d418a76ad1a61ff0f6fbd0f12b8b91a6419d7f7293c98e25"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case3/protocol.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case3/protocol.md",
+      "bytes": 176,
+      "sha256": "7134cda1c864687223f89a08d472784f4f5b564124ccb758ce923436ca696f04"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case4/focus.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case4/focus.md",
+      "bytes": 753,
+      "sha256": "68cdd3add2b7ce08eab9c4c5fb88639db59287fb35d8539d3ecee36505d22a66"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/case5/status.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/case5/status.json",
+      "bytes": 271,
+      "sha256": "6dab51290c4c7b4123ae6c4600f31720ca016f2375ae63aa19b93daa03f24ceb"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_astra/continuation.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/continuation.md",
+      "bytes": 3029,
+      "sha256": "6372e1a15335461b250c0587030b16cb27feb5688ad04f4faadbe2a507ed7192"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_astra/counts.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/counts.json",
+      "bytes": 17,
+      "sha256": "fba3eb6a9aac009310f61bd63c68286d4c0247b9323c54cc79af8f08be77c7f0"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_astra/cross_handoff.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/cross_handoff.json",
+      "bytes": 2487,
+      "sha256": "9ad88b42275431c2cde3c1d81e8dac9b10d18e2cc7972693f9fccd55bbe201cb"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_astra/receipt.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/receipt.json",
+      "bytes": 4691,
+      "sha256": "cfbc55391028242465ed85d9bca6de0e6a7032807b73eaa79bf9bbd9037af7c4"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_astra/responses.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_astra/responses.md",
+      "bytes": 2472,
+      "sha256": "1ecb867d4a3190d79435e9d2b35ba21b263341e0a1fb8a18fbc9a26056a0099a"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_sol/continuation.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/continuation.md",
+      "bytes": 2790,
+      "sha256": "77908c7ebe21f30fdd40dfd90dbd07d6882a14d09fad228e901140c37880d61c"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_sol/counts.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/counts.json",
+      "bytes": 17,
+      "sha256": "fba3eb6a9aac009310f61bd63c68286d4c0247b9323c54cc79af8f08be77c7f0"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_sol/cross_handoff.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/cross_handoff.json",
+      "bytes": 1856,
+      "sha256": "f9834a2ecbe30d395ba4b2db0eb118f4d16a3e0463b90bfba2c53993ddd670db"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_sol/receipt.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/receipt.json",
+      "bytes": 4669,
+      "sha256": "27444845cc8da514d779f992f9f873cb7be2704e1db5b5e7f9a1cdcbaf23bb41"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/out_sol/responses.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/out_sol/responses.md",
+      "bytes": 2119,
+      "sha256": "2380b2055ecc04da9243731d1b360f5abfbfa90ce09c65917006abdbcf4d49f3"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/requests.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/requests.md",
+      "bytes": 1355,
+      "sha256": "d793cff0d5e4ca8464810f21dfddd2d3f171573108cf5b16f56e6f782e63eb05"
+    },
+    {
+      "origin": "/tmp/research_model_compat_20260926/source_hashes.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_cases/source_hashes.json",
+      "bytes": 821,
+      "sha256": "b71f442425f1252552a8ccb9c83be29ff722b43e56276266143c16e60f22e114"
+    },
+    {
+      "origin": "/tmp/model_compat_before.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/model_compat_before.json",
+      "bytes": 263521,
+      "sha256": "def18c6b8eca26ca336ac6e49b2f8fa3b6d020c358827c3ad38c4685254fb364"
+    },
+    {
+      "origin": "/tmp/skill_writers_compat_result.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/skill_writers_compat_result.json",
+      "bytes": 31913,
+      "sha256": "e8cda65d2ab3da60ea420e139659e824a020baa4986d710fc6e90b119d1246c3"
+    },
+    {
+      "origin": "/tmp/skill_remote_sync_compat_result.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/skill_remote_sync_compat_result.json",
+      "bytes": 15375,
+      "sha256": "73c83f69157b58f2c188498380a499da01b3f74c86aa2f1b321360331ddf7f7d"
+    },
+    {
+      "origin": "/tmp/shared_skill_paths.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/shared_skill_paths.json",
+      "bytes": 1432,
+      "sha256": "bc8b0441103c5f942a118e19ef285079ebc4f3d33279df9ddbcd56f8b9de7238"
+    },
+    {
+      "origin": "/tmp/research_model_compat_expected.json",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/research_model_compat_expected.json",
+      "bytes": 431,
+      "sha256": "62cf8f657d30ef1f9af5c57ae5862e37254492304e593f16f5befc41758fcd75"
+    },
+    {
+      "origin": "/tmp/build_compat_fixture.py",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/build_compat_fixture.py",
+      "bytes": 5819,
+      "sha256": "c669786f4f5457405fe7aba3b049989a5e33ab81e110311f5651abe6546d4fc8"
+    },
+    {
+      "origin": "/tmp/writer_forward_check_result.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/writer_forward_check_result.md",
+      "bytes": 5831,
+      "sha256": "41f4b53665cb0d45ad6136b86b0f7005235f2dde4fc61a81fb9139e6cb0b1bed"
+    },
+    {
+      "origin": "/tmp/writer_forward_fixture/anchor.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/writer_forward_fixture/anchor.md",
+      "bytes": 2778,
+      "sha256": "bf72bd843b8e151ec866d91cbeea58d153b3b29b70646e5b900a00125416b360"
+    },
+    {
+      "origin": "/tmp/writer_forward_fixture/focus.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/writer_forward_fixture/focus.md",
+      "bytes": 823,
+      "sha256": "c23258dd31267facdc5d3b4b29575f6111d5eb2b98854ba3cfd9e025dd248470"
+    },
+    {
+      "origin": "/tmp/writer_forward_fixture/protocol.md",
+      "path": "/data/250010109/MoE_Router/tooling/research_system_compatibility/20260926_054314/writer_forward_fixture/protocol.md",
+      "bytes": 1260,
+      "sha256": "97dbf08ef694777b9ba1a6e268d8c77a461ce8250cd20753172ca2dc6f278b04"
+    }
+  ],
+  "sources": [
+    "https://learn.chatgpt.com/docs/build-skills",
+    "https://developers.openai.com/api/docs/guides/latest-model#gpt-6-astra-instruction-following"
+  ],
+  "boundary": {
+    "model_speed_or_billed_tokens_measured": false,
+    "scientific_records_changed": false,
+    "jobs_submitted": false,
+    "git_commit_or_push": false,
+    "conversation_logs_changed": false
+  },
+  "final_verification": {
+    "verified_utc": "2026-09-26T06:07:33.520667+00:00",
+    "report_local_links": {
+      "checked": 7,
+      "result": "PASS"
+    },
+    "changed_file_hashes": {
+      "checked": 31,
+      "result": "PASS"
+    },
+    "archived_artifact_hashes": {
+      "checked": 30,
+      "result": "PASS"
+    },
+    "protected_analysis_hashes": {
+      "checked": 26,
+      "result": "PASS"
+    },
+    "scoped_git_diff_check": "PASS",
+    "independent_report_review": {
+      "agent": "/root/compat_sol",
+      "result": "No concrete issue found",
+      "scope": "Compare final report and provenance with completed synthetic cases and cross-handoff; check claim and byte/token boundaries; no test rerun"
+    }
+  }
+}

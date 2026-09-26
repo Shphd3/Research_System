@@ -1,7 +1,7 @@
 interface:
   display_name: "Remote Experiment Workflow"
   short_description: "Run and track remote research experiments"
-  default_prompt: "Use $remote-experiment-workflow to preflight, run, monitor, and record an approved remote or cluster experiment."
+  default_prompt: "Use $remote-experiment-workflow to inspect, execute, or monitor my experiment in the mode I requested, within its existing authorization."
 
 policy:
   allow_implicit_invocation: true

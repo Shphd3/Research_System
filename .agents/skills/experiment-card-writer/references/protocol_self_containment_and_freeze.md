@@ -93,6 +93,17 @@ name, or Anchor label cannot substitute for an explanation.
 
 ## Approval Snapshot
 
+Link the confirmed active Focus. Preserve its question, purpose, at-most-three
+plain-language analysis steps, completion rule and supporting/non-supporting/
+insufficient branches. Explain technical labels locally; links support audit.
+
+For a training Protocol, read and apply the repository's
+`docs/training_observability_contract.md`: freeze effective global batch,
+valid-token counting, loss reduction, token budget/checkpoints/schedules,
+TensorBoard directory and required tags. Optimizer-update comparisons require
+equal effective tokens/update; otherwise compare cumulative valid prediction
+tokens. A different batch is unmatched unless it is the registered variable.
+
 Put this compact snapshot first:
 
 ```text
@@ -104,6 +115,7 @@ Execution scope approved:
 Design frozen at / registered revision:
 Purpose:
 Primary Anchor:
+Confirmed active Focus:
 Anchor decision question:
 Anchor physical prior tested:
 Anchor core model term tested:
@@ -231,8 +243,9 @@ criterion that permits scale-up
 ```
 
 Passing a smoke proves only the registered smoke properties. It does not
-authorize a full run or scientific claim. Record separate approval scopes for
-implementation, smoke, and full execution.
+authorize a full run or scientific claim. Record distinct authorization scopes for implementation, smoke and full
+execution. Reuse explicit scope approval already given; do not add a fresh
+approval turn for each phase or for local checks exempt under root rules.
 
 ## Frozen Choices And Provenance
 

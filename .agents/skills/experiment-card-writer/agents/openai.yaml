@@ -1,7 +1,7 @@
 interface:
   display_name: "Experiment Card Writer"
   short_description: "Freeze protocols and trace result evidence"
-  default_prompt: "Use $experiment-card-writer to draft and freeze an anchor-aligned Protocol, then write evidence-lineage-safe Summary and Detailed records."
+  default_prompt: "Use $experiment-card-writer for the requested Protocol draft, result record, or audit; preserve human approval and existing execution-scope boundaries."
 
 policy:
   allow_implicit_invocation: true

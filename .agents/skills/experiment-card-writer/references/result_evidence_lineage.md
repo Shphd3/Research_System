@@ -36,9 +36,22 @@ correlated diagnostic into an observed result. Use `NOT RUN`, `UNKNOWN`,
 `MISSING`, `INVALID`, or `INELIGIBLE` when appropriate.
 
 The researcher owns the initial result judgment. AI verifies measurements,
-sources, consistency, and wording. If the researcher has not provided the
-closed-book judgment, present the required scaffold rather than inventing a
-conclusion.
+sources, consistency and wording. Reuse judgment already provided in this session
+or active Focus; do not demand a duplicate closed-book account. If interpretation
+is missing, complete the authorized factual records and evidence lineage. Mark
+the missing human judgment `Unknown`, keep any AI interpretation `AI_PROPOSAL`,
+and scaffold only the unfilled interpretation/decision fields below. This does
+not finalize or promote human scientific judgment:
+
+```text
+Question:
+Direct result:
+Confirmed:
+Weakened or rejected:
+Current mechanism and reason:
+Cannot claim:
+Exactly one next decision:
+```
 
 `summary.md` owns the first canonical result reading path. `detailed.md` owns
 the complete evidence ledger. The Protocol owns the registered plan and must
@@ -299,4 +312,12 @@ Exactly one next decision has a completion criterion and resume action:
 No missing value, expected pattern, or filename was turned into evidence:
 ```
 
-Any `FAIL` blocks result finalization or Anchor promotion.
+Any `FAIL` blocks result finalization or Anchor promotion, not the requested
+read-only audit or independent evidence verification. Report the failing item
+and its evidence without changing human-owned scientific state. Result records
+do not constitute the human-owned Focus conclusion; update Anchor sections 7–8
+only after eligible evidence and human judgment agree. After a stable bounded
+question and the human-completed Focus, route its one final report to
+`research-final-report`; the researcher closes or corrects the cycle. Explicit
+line synthesis belongs to `research-communication`, placement/state changes to
+`research-mainline`; do not create a separate closure report here.

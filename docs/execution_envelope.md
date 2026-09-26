@@ -30,11 +30,17 @@ still requires its protocol execution scope to be authorized.
 This block is the only copy of these values.
 
 ```yaml
-updated: "2026-09-22"
+updated: "2026-09-25"
 default_profile: h100-4-reserved
 default_image: shphd-lite-0911
 
 researcher_decisions:
+  - date: "2026-09-25"
+    scope: resource_selection
+    decision: "For human_semantic_update_alignment only, the researcher explicitly selected multiple independent single-node 5090-4-spot allocations plus one h100-4-reserved allocation and requested maximum feasible parallelism. This supersedes the single-allocation draft within this experiment; it does not change the separate task_update_compatibility H100 prohibition. Keep comparison blocks and Solo references hardware-matched, qualify both runtime paths, and obey the experiment aggregate budget. The researcher plans to start execution in a new task; this records resource/concurrency selection, not a job submission in the current task."
+  - date: "2026-09-25"
+    scope: resource_selection
+    decision: "For the proposed task_update_compatibility experiment only, the researcher selected single-node 5090-4-spot per task and explicitly prohibited h100-4-reserved. Task count is unrestricted and independent qualified tasks may be submitted concurrently to use available Spot capacity. This selects a profile and concurrency policy; the experiment Protocol still owns scientific approval, stage gates, and any aggregate GPU-hour ceiling. The researcher said they would submit Smoke and formal service after clarifying the design; this entry does not record that either job has been submitted."
   - date: "2026-09-23"
     scope: resource_and_execution
     decision: "For A15_17_02_E01, the researcher explicitly selected one single-node 5090-4-spot full read-only exact-17B Dense/fresh-S7/reweighted-S7 N8 separability audit and requested direct submission without any additional Spot Smoke. Reuse the passed bounded local H100 engineering Smoke plus the existing exact-17B S7 and Dense 5090 runtime qualifications; the full job must keep embedded target-GPU, identity, numerical, immutability, artifact and terminal-receipt guards. Submit exactly one full job; no extra Spot job, training, checkpoint mutation, resource fallback, automatic retry, commit, push, or publication is authorized."
@@ -279,9 +285,9 @@ profiles:
   "5090-4-spot":
     status: requires_explicit_selection
     selected_on: "2026-09-13"
-    scope_extended_on: "2026-09-23"
-    allowed_scope: "native Dense baseline scopes already registered; 0915/0917 existing-checkpoint representation audits; A15_17_E05 exact-10B five-model read-only Smoke and pass-gated full measurement; A15_17_E06 exact-21B three-model dual-pooling frozen audit; A15_17_E07 exact-15B and E08 verified common 0-10B two-model frozen read-only analyses after ordered local Smoke passes; A15_17_01_E01 frozen 21B S7/SALL implementation, engineering Smoke and smoke-pass-gated 192-example full read-only audit under its 2026-09-22 Protocol A2; A15_17_01_E02 user-authorized direct-full17B S7 history comparison with explicit Smoke waiver; A15_17_01_E03 user-authorized direct-full exact-15B pre-lambda1 versus exact-17B post-lambda0.1 transition audit; A15_17_01_E04 user-authorized direct-full exact-15B S7 lambda0.1 versus lambda1 comparison with embedded guards; A15_17_02_E01 one user-authorized exact-17B Dense/fresh-S7/reweighted-S7 N8 full read-only audit with no additional Spot Smoke and embedded guards"
-    selection_source: "Researcher explicitly selected the single-node four-RTX5090 Spot profile for scoped audits on 2026-09-15, 2026-09-18, and A15_17_E06 on 2026-09-20; each run still requires its own Protocol gates"
+    scope_extended_on: "2026-09-25"
+    allowed_scope: "native Dense baseline scopes already registered; 0915/0917 existing-checkpoint representation audits; A15_17_E05 exact-10B five-model read-only Smoke and pass-gated full measurement; A15_17_E06 exact-21B three-model dual-pooling frozen audit; A15_17_E07 exact-15B and E08 verified common 0-10B two-model frozen read-only analyses after ordered local Smoke passes; A15_17_01_E01 frozen 21B S7/SALL implementation, engineering Smoke and smoke-pass-gated 192-example full read-only audit under its 2026-09-22 Protocol A2; A15_17_01_E02 user-authorized direct-full17B S7 history comparison with explicit Smoke waiver; A15_17_01_E03 user-authorized direct-full exact-15B pre-lambda1 versus exact-17B post-lambda0.1 transition audit; A15_17_01_E04 user-authorized direct-full exact-15B S7 lambda0.1 versus lambda1 comparison with embedded guards; A15_17_02_E01 one user-authorized exact-17B Dense/fresh-S7/reweighted-S7 N8 full read-only audit with no additional Spot Smoke and embedded guards; task_update_compatibility researcher-selected four-card Spot target with parallel independent task permission, subject to its own Protocol execution gates; human_semantic_update_alignment multiple independent four-card Spot allocations alongside one four-card H100 Reserved allocation under hardware-matched block and aggregate-budget gates"
+    selection_source: "Researcher explicitly selected the single-node four-RTX5090 Spot profile for scoped audits on 2026-09-15, 2026-09-18, and A15_17_E06 on 2026-09-20; researcher selected it for task_update_compatibility on 2026-09-25; each run still requires its own Protocol gates"
     surface: acp
     workspace: share-space
     aec2: computing-cluster-5090-01g

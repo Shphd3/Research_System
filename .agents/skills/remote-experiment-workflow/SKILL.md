@@ -1,254 +1,45 @@
 ---
 name: remote-experiment-workflow
-description: "Use when the user asks to run, inspect, monitor, or manage an experiment across a local container, SSH, CCI, SCO, or ACP. Do not use to design the research hypothesis."
+description: "Inspect experiment status, check startup, or execute an authorized container/SSH/CCI/SCO/ACP experiment. Does not design the research hypothesis."
 ---
 
 # Remote Experiment Workflow
 
-Use this skill for execution-environment logistics. It does not define the
-research question; the anchor and protocol do that.
+Connect the requested operation to its Protocol, job and evidence. Paths below
+are Research_System-root-relative unless linked. Read only the selected mode.
 
-Use `sco-control` for SCO platform-specific resource, image, storage, cluster,
-and job commands; use this skill to connect those operations to the approved
-research protocol and evidence chain.
+| Request | Input / reading | Finish with |
+|---|---|---|
+| Existing-run status | Job ID or execution record; Status below | Verified progress, source/time and failure/unknown |
+| Startup / requested monitoring | Submission receipt; [startup.md](references/startup.md) | Bounded startup report or requested monitoring outcome |
+| Implementation / Smoke / submit / resume | Owning Anchor/Protocol; [execution.md](references/execution.md) | Authorized stage receipt, then startup boundary |
+| Completed outputs / recovery | Named run/result records; [artifacts.md](references/artifacts.md) | Verified requested artifacts and evidence links |
 
-If the active project provides a narrower transport skill, such as
-`kv-cache-remote-collaboration` for a server that Codex cannot access directly,
-use that project skill for the transport loop. Keep this skill responsible for
-the Research_System protocol, run, evidence, and artifact-map chain.
+Use `PROJECTS.md` only to resolve unknown ownership; no Graph/roadmap preamble.
+For explicit SSH/CCI, read [transport.md](references/transport.md). Use
+`sco-control` for needed platform commands; the execution envelope governs.
 
-Core rule:
+## Status: Inspect The Existing Job
 
-```text
-anchor -> protocol.md -> remote/container smoke or run
--> curated result artifacts -> summary.md / detailed.md -> anchor update
-```
+Resolve job/output from its receipt. Inspect relevant durable logs and
+progress/completion receipts, plus platform state when needed. Read the
+Protocol only for a disputed gate; skip submission/training instructions.
+Distinguish scheduled/running, measured progress, engineering completion and
+scientific judgment. ACP completion needs the durable pod log and stage outputs,
+not a platform success label or scheduling/stream-log line.
 
-Root sync, graph edits, commits, and pushes are explicit follow-up actions
-only. Handoff packages and external collaborator repo sync are explicit-only
-work owned by `research-communication` handoff mode; do not perform them through
-this skill.
+Return job ID, last verified progress/time, evidence path and failure/unknown;
+ETA requires observed throughput. Stop after answering. A later status request
+inspects the same job; it does not resubmit it.
 
-Local `Research_System` owns graph, anchors, protocols, summary/detailed result
-records, daily notes, meeting material, claim boundaries, and next decisions.
-Remote/container workspaces own code edits, debug runs, full runs, result
-analysis, figures, tables, raw outputs, checkpoints, and logs.
+## Boundaries
 
-## Before Any Run
+Existing scoped authorization needs no repeat approval. Protocol drafting is
+not execution approval. Full/expensive runs, changed scope and confirmation
+access follow existing authorization and frozen gates; never relax a failed
+gate. Small in-scope local checks follow root AGENTS without added gates.
 
-Read:
-
-1. `PROJECTS.md`;
-2. the relevant graph or roadmap;
-3. the active anchor under `problem_anchors/`;
-4. `protocol.md` for the experiment;
-5. the experiment workspace `AGENTS.md`, if present;
-6. `docs/execution_envelope.md` for the target profile key, the image key with
-   its runtime layer, and the submission entry point;
-7. `docs/training_observability_contract.md` for any model-training run.
-
-The envelope overrides this skill's and `sco-control`'s platform defaults. Do
-not restate a profile tuple, an image URL, or a storage mount from memory: read
-the key. An image alone does not define the environment; the run also needs its
-activation script and frozen dependency layer. A bare `sco acp jobs create` is
-not the supported entry point — `sco` is not on PATH and the envelope names the
-compatibility entry point. `references/remote_hosts.yaml` describes four-hour
-debug containers, not the reserved compute node.
-
-Submit through `templates/execution/acp_submit_template.sh`. Its dedicated
-resolver reads `docs/execution_envelope.md`, prints the selected tuple, defaults
-to a dry run, enforces the gates, and writes a submission receipt:
-
-```bash
-JOB_NAME=<name> REMOTE_CMD='<command>' bash templates/execution/acp_submit_template.sh
-DRY_RUN=0 ALLOW_SUBMIT=1 PROTOCOL_APPROVED=1 JOB_NAME=<name> REMOTE_CMD='<command>' \
-  bash templates/execution/acp_submit_template.sh
-```
-
-The platform keeps no stdout from a finished pod: `stream-logs` returns only the
-scheduling line. The template therefore tees every run's output into
-`<REMOTE_DIR>/acp_receipts/pod/` on the mounted storage. Never take evidence
-from `stream-logs`, and do not call a run complete until its pod log exists.
-
-Do not start from scripts or metrics before the anchor states the decision
-question and the protocol states the primary metric, conditions, and
-success/failure/insufficient-evidence rules.
-
-For model training, reject a preflight that does not implement the repository's
-TensorBoard and comparison contract. Require the token-axis primary task loss,
-its update-axis copy, the raw and weighted forms of each applicable objective
-component, globally reduced valid-token counting, and exact coordinate
-restoration on resume. Do not impose a named regularizer on a model that does
-not define it. Compare model quality primarily by cumulative valid prediction
-tokens. Optimizer updates are directly comparable only when effective tokens per
-update are identical. A GPU-count change must preserve the effective global
-batch through microbatch or accumulation settings; token-axis alignment alone
-does not make different global batches a strict matched comparison.
-
-Before implementation, smoke, or full run, verify that the Protocol records
-all audit blocks as confirmed, cross-block consistency as passed, and explicit
-approval for the requested execution scope. Approval for one scope does not
-authorize a later scope.
-
-## Local / Remote Boundary
-
-- If Codex is already inside the target remote/container, work there directly
-  within the approved execution scope: edit, smoke, run, analyze, and write
-  curated docs. Commit and push only when the user explicitly asks.
-- If Codex is local, do not SSH by default. Use local work for research-process
-  edits, Git pull/review, and small explicit smoke checks.
-- Use SSH/SCP only for explicit small status checks, port forwarding, quick
-  artifact recovery, or CCI control.
-- Full experiments and formal cluster submissions should run from the
-  remote/container or SCO/ACP path.
-
-## Remote / CCI Preflight
-
-If SSH/CCI is explicitly needed, read
-`references/remote_hosts.yaml` before choosing a host unless the user gives a
-newer target.
-
-Check before editing or submitting:
-
-```bash
-hostname
-pwd
-nvidia-smi
-git status --short --branch
-which sco || ls /root/.sco/bin/sco
-ps -eo pid,lstart,etime,cmd | grep -E '[s]leep 4h|setup_env'
-```
-
-Do not overwrite remote work. Pull only after checking the working tree.
-
-## SCO / ACP Submission
-
-Submission is a substep, not a separate research workflow.
-
-Before submission, make explicit:
-
-- code workspace;
-- runner or launch script;
-- config;
-- data or manifest;
-- output directory;
-- GPU count / quota / profile key and image key resolved from
-  `docs/execution_envelope.md`;
-- smoke command;
-- full command;
-- primary pass/fail metric;
-- expected artifacts.
-
-For a model-training submission, also make explicit:
-
-- TensorBoard log directory and logging rank;
-- primary-loss tag and each applicable regularization or auxiliary component,
-  including raw/weighted tags, coefficients, and reduction rules;
-- effective global batch and valid tokens per optimizer update;
-- cumulative token budget and common token checkpoints;
-- token-based warmup, decay, evaluation, checkpoint, and stopping schedule;
-- the smoke evidence that token counting and resume continuity are correct.
-
-A submission that resolves to the envelope's default profile under an already
-authorized protocol scope is execution, not a new approval gate. Anything else —
-a different profile, quota, or image — needs the researcher to write the
-exception into the protocol with its reason.
-
-For ACP/SCO jobs, record the run receipt from
-`templates/execution/run_receipt_template.md`; its fields are:
-
-```text
-profile key and resolved tuple:
-image key and expanded image URL:
-activation script and dependency layer:
-job id:
-exact command and submission entry point:
-config:
-log path:
-result dir:
-gpu_used:
-monitor_owner:
-first diagnosis:
-```
-
-When smoke scope is approved, run a smoke/debug path before a formal long run
-when possible. Do not treat smoke approval as full-run approval.
-
-## Curated Artifacts
-
-When the user explicitly asks for a commit, it may include:
-
-- code changes, configs, launch scripts, runbooks;
-- small curated tables or report-ready figures;
-- experiment `protocol.md`, `summary.md`, and `detailed.md`;
-- anchor updates;
-- root sync anchor copies, only when root sync was explicitly requested;
-- artifact-map inputs for a separately requested handoff or external sync;
-  `research-communication` handoff mode owns package assembly and copying;
-- artifact maps.
-
-Do not commit raw logs, checkpoints, datasets, full run directories,
-unfiltered generated figures/tables, or temporary cache files unless the user
-explicitly curates them.
-
-When `research-communication` handoff mode handles a separately requested
-external sync, its inputs from this skill are limited to the current anchor, `protocol.md`,
-`summary.md`, `detailed.md`, referenced figures or tables, and the verified
-artifact map. The experiment workspace and codebase are not package inputs by
-default.
-
-## Result Writing Boundary
-
-After results exist, first write or update:
-
-```text
-Projects/<project>/main/experiments/A<line_number>/<anchor_stem>/<experiment_id>/summary.md
-Projects/<project>/main/experiments/A<line_number>/<anchor_stem>/<experiment_id>/detailed.md
-```
-
-`summary.md` must explain any central decision-relevant figures.
-`detailed.md` must include protocol compliance audit, stage evidence, and the
-artifact map; include full visualization results only when visual evidence is
-decision-relevant.
-
-Then update the relevant anchor if the result changes the physical prior,
-mathematical model, computational realization, claim boundary, or next decision.
-Do not copy the updated anchor to root sync unless the user explicitly requests
-root sync.
-
-## Handoff Routing
-
-If the user explicitly requests a handoff or external collaborator sync,
-switch to `research-communication` handoff mode. This skill contributes the
-verified run and artifact map; it does not assemble, copy, or synchronize the
-package.
-
-Provide this compact artifact / repro map to the handoff workflow:
-
-```text
-code workspace:
-runner:
-config:
-key code files:
-data / manifest:
-result dir:
-figure dir:
-key files:
-checkpoints / logs:
-repro command:
-job id:
-```
-
-## Report Writing Standard
-
-All curated reports, and all report inputs passed to a handoff workflow, must
-be decision records rather than timelines. They should separate:
-
-- observation;
-- interpretation;
-- decision;
-- claim boundary.
-
-Every central metric must say what question it answers, what failure mode it
-catches, and what it cannot prove. Every central figure must explain purpose,
-setup, how to read, observed result, take-home, and remaining uncertainty.
+Completion cannot update scientific judgment. Code/raw outputs/checkpoints/logs
+stay execution-side; research records stay here. Preserve concurrent work.
+Commit/push/publication, Graph edits and collaborator sync are explicit actions
+outside this skill.

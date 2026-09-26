@@ -1,0 +1,966 @@
+{
+  "date": "2026-09-26",
+  "status": "AI_REVIEW_NOT_SCIENTIFIC_STATE",
+  "project_anchor_count": 121,
+  "dated_draft_count": 3,
+  "selected_anchor_count": 30,
+  "result_summary_count": 12,
+  "raw_experiment_arrays_recomputed": false,
+  "canonical_sources_modified": false,
+  "anchors": [
+    {
+      "id": "A01_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/01_01_common_operator_identifiability_anchor.md",
+      "sha256": "dc17470b4b77906c6fbdf1e5fca8d3681a0be7793e6fc9ffcdf63127002ec6a4",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A01_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/01_02_ground_truth_projector_recovery_anchor.md",
+      "sha256": "a48125085e1ce2312570753f82ce13e96100135fc29c19d1c43fc2cf4aea6d6d",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A01_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/01_03_gradient_common_vs_activation_common_anchor.md",
+      "sha256": "7dd2da3713c23323bed35f34b20cabe919c9400e0099e6c50df4f2a4b85680d2",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A01_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/01_04_feedback_common_preservation_bridge_anchor.md",
+      "sha256": "d0700a4f3f9380c72d675b540132748257459523c53b20bc68bda0fce453c7bc",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/02_ntp_style_top1_router_lockin_anchor.md",
+      "sha256": "adeaeff19ed34cf3b4b75b50c280dae25e69e304461b430bad5a08663dee4b10",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A05_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md",
+      "sha256": "473aa0332d3a0173b839d6d68db5f8d67a302cfee96363163c9f03152e8d2b0e",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A05_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md",
+      "sha256": "38e685ce72f306dcb0a2a27c4dc04b648f22ebf342d8f5a2eca219c983e42bb3",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A05_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md",
+      "sha256": "b3747e31e2ad7f1f11f05332b41a6daa9129dc603a93c2dbda74d8d2b3b7efc1",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A05_04_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_01_uniform_feature_specialization_after_position_removal_anchor.md",
+      "sha256": "0ea687245760695396a03e8dfa6e88816132c242765dcba45ce73fd85b342a75",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A05_04_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md",
+      "sha256": "4f69fbda01a705edbeed4f1b45db8fe556be24f564c07139c7e9aa12894e4a9c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A05_04_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md",
+      "sha256": "a7db9c4145e36bc920e16d2e12e280eed2a5e1975edb11fcb80e0e9042d6f83c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A06_00",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md",
+      "sha256": "38a28eb6b7923c3a2e8ec6ec8b5ef22ebd8c3576ba323874b5df4b681172e95c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A06_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_01_geometry_and_state_discovery/06_01_geometry_and_state_discovery_anchor.md",
+      "sha256": "bb895de2df479e567e64a592458c0cd1c711b63df0dd8adbd3e3a06b7d2c532a",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A06_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_02_partition_preservation_dynamics/06_02_partition_preservation_dynamics_anchor.md",
+      "sha256": "ce2044de83f87046f7df8d91d07922f3b253171da62191687d8a508440e82d07",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A06_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_03_utility_binding_and_sparse_discovery/06_03_utility_binding_and_sparse_discovery_anchor.md",
+      "sha256": "b5da493d3766767864e823e606cb586e51f1dc2f60d0b0073bc5a323cab529f0",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A06_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md",
+      "sha256": "5b67f23bd19906dddc53e2e2f596a03209e10d83fa7e9bf562eade1e4a0f9379",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A06_04_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/subanchors/06_04_01_context_conditioned_expert_utility_anchor.md",
+      "sha256": "22584728c9dc1a71be01ef4619f072f7bd09ac3b71aff2dc8c84f889b365127f",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07.md",
+      "sha256": "17b467f078be681660493c00a01f319214ecc57c45544a7e4f754152165d713d",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md",
+      "sha256": "307326618a5279cdafa9d47dc731f76cd6342dd04cee4f60b5011dcea515d7be",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_02_common_controlled_rare_interference_anchor.md",
+      "sha256": "7fa34a23a039aa8e431b30e25984a68d4453a0570ea81f5d93b8310245b27f8c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md",
+      "sha256": "1771fa754a4ef4bc089a489bcc93e77864160a7588893df2d82c4711f5a4859c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md",
+      "sha256": "eeb69571959cd1d393cc169fffde32304af76f9781143c0f4d59ddcacf53c62c",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_05_common_update_interference_diagnostic_anchor.md",
+      "sha256": "3dd24fa96cf1fa1383297a28e74158b88ab8306464a4c022faaef759993f8021",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A07_06",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_06_projected_common_rare_conflict_splitting_anchor.md",
+      "sha256": "339a32e8b8f70a311295c7ff842b544d794f25c88a17fd4862b89b1c3168c384",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/04_ntp_zipf_feature_factorization_anchor.md",
+      "sha256": "a7ce6f397e8228682e46d0939533266a49846646e381af8531d3d9a94f63c305",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A09_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/09_01_common_band_rare_discrimination_anchor.md",
+      "sha256": "7ba94074f997d26ff4b2f1757bc71c109bad6993fbdc5afbd6b23d00f7d0b125",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A10_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/10_01_common_projected_sgd_lr_anchor.md",
+      "sha256": "d39a13bc427a4af886add36e36419458b25c03c54246f7723332b044b6d31d89",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A10_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/10_02_frequency_singular_sgd_instability_anchor.md",
+      "sha256": "61603effc5b69ece04eff7d0f4a92c750c928d0fb88a29fec0051d8435a9065a",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_01_informative_horizon_supervision/11_01_informative_horizon_supervision_anchor.md",
+      "sha256": "0b2fab140d773ea24ba25e3c9b641c4ad47eb4ad9de2f70d082b6cd57ae4b4e4",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_01_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_01_informative_horizon_supervision/subanchors/11_01_01_information_and_geometry_controls_anchor.md",
+      "sha256": "a13c809bbf3763371787efb948580fc0f2cda92652e9b066d4f58ea486a3b9ff",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_02_hidden_to_parameter_transmission/11_02_hidden_to_parameter_transmission_anchor.md",
+      "sha256": "52044222861383ef7faf53ce7452a574df7c4e6767dacaf59571a3977ba9574d",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_02_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_02_hidden_to_parameter_transmission/subanchors/11_02_01_reachability_and_background_sign_anchor.md",
+      "sha256": "847f83e574f5d83f3317e16508e659c8a327d6f69cd1b746a9f1e294c32c6fa5",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor.md",
+      "sha256": "381d9ce3040601dbe77bf54ae129e6ff6e68f12e7d5235eb38b7aa6e2beaa4a2",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_03_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_01_cross_position_proxy_falsification_anchor.md",
+      "sha256": "ad6287efd4a330f7a59d06b6c4915a5541f227a7bf6e6558a424bd619b2a4b58",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A11_03_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor.md",
+      "sha256": "f1bd72184f87ee985f826ddb4c2bbc00c9efc255ead4d2a6df7e8535129ceac7",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A12_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor.md",
+      "sha256": "47d09468ba92f98c815da5d9c79c6b524c933cf00a7bd1751060f45beb866e9e",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A12_01_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md",
+      "sha256": "b9b29acd739a79e1eeab9e3e437f1e59633a0be6d7eb75fe09854da64592df9f",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A12_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_02_interference_capacity_curriculum_boundary/12_02_interference_capacity_curriculum_boundary_anchor.md",
+      "sha256": "5f310ad8e42300f8ce910c8b3ee32161da74cd0984c5274de854c71db18b2304",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A12_02_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_02_interference_capacity_curriculum_boundary/subanchors/12_02_01_rank_and_curriculum_controls_anchor.md",
+      "sha256": "10bdf63482fccf526cce5fc559cf38beb28ff8e197ca836615673e188db63094",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A12_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md",
+      "sha256": "f4eccad74fbe6a4236c950bd2b8e931fab5f0fa2dbda63519694195c76552558",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A12_0",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md",
+      "sha256": "ae9a1a298d0d34122babcc58c7d99a4d08d57b7c7503d5683d99e9a1d57593bf",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md",
+      "sha256": "94045a117057966f52f6babeb1bf535783e02e8c0b2908c9538c6d2f9aae6288",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_01_query_conditioned_relay_carrier_anchor.md",
+      "sha256": "4b0f1d9e7f74854124a00e7c790e3a10a525557be385edd79a813d5b4751ce27",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_02_single_value_relay_carrier_anchor.md",
+      "sha256": "4025336db83eed00774f4dbf8772878f4d4c71e200e85c7f52c345e394f0d1c3",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_03_relay_necessity_objective_interaction_anchor.md",
+      "sha256": "baf967613613d514bdcac1ede72190b08d5e82f6a0a7e8664f75c5b827442c4d",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_04_relay_target_localization_anchor.md",
+      "sha256": "ce8ca6a23b19f37a4a2aa527e879ffd543a817523442592c27e91c28ef494bea",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_05_task_relevant_relay_target_anchor.md",
+      "sha256": "a3f7eefa12425abb93d04c03cc2cc240a732e2f2a0017e94566802137b8953ba",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A13_00_06",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_06_soft_relay_mtp_ntp_audit_anchor.md",
+      "sha256": "1796f441d2f980de3dbdb67211418e9b48367e4bb13dfbf910e0394ef38cdfe0",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_00",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md",
+      "sha256": "5ea9b86492a5a827f6c46e4cd951afd5459a079147a4cc88fada9fe1369b5e7a",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_01_relation_reuse_parameter_state_bridge/14_01_relation_reuse_parameter_state_bridge_anchor.md",
+      "sha256": "43aff758135a9e7e30c92aa5383b28c85202097ed018f65e7c7985024d111d9f",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_anchor.md",
+      "sha256": "a28cc6b56c8bc310cb423e7479884df796fa678b2dc5f6949343763be5fd256b",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_02_01〔旧版归档〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/archive/e02_v1_component_recombination_capability/14_02_01_component_recombination_capability_anchor.md",
+      "sha256": "ff901025167a0277ebfa14ac65f942718b10ab5f90a686b55b44f353ec7d82d9",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_02_02〔旧版归档〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/archive/e03_v0_low_frequency_common_mapping_rank/14_02_02_low_frequency_common_mapping_rank_anchor.md",
+      "sha256": "fb4624bb7397f39add402e6be687f5287a75d01d5435a00a6043d6caaa2ec5ea",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_02_01〔现版〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_01_frequency_mapping_rank_separation_anchor.md",
+      "sha256": "416dfb10d618ac2468b7a4267c998378da8fae0eab4b33fb44aa38541563cfe2",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_02_02〔现版〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_02_rare_common_subspace_reuse_anchor.md",
+      "sha256": "700834eace4cd3b392abc4be4ab2f92924aa271ed484d705f621a70d2bdc66ce",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A14_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_03_state_parameter_functional_rank_demand/14_03_state_parameter_functional_rank_demand_anchor.md",
+      "sha256": "9b5c4246fefb96ec10765306ec38a70a6dd3203805e87f0360b178bf380cdb3c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_00",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/15_00_router_input_spectral_geometry_anchor.md",
+      "sha256": "17c59c54eb99587d1a4d2f233f14f904462383ceabe701e153e144a690718122",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_00_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_01_cross_document_subspace_stability_anchor.md",
+      "sha256": "e7afda23dd914d5c59136ceaef42ffa4367c7b4af36351d32c814266c318659d",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_00_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_02_gate_common_residual_preference_anchor.md",
+      "sha256": "f529966dc63ece2a0ad70bcb4394b7cf74d88eddc6191d09a0fa47a0c1fc083c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_00_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_03_condition_local_residual_modes_anchor.md",
+      "sha256": "51ab0c530cf80f501be5481efa0bd5e5502ddf705a84cad1d5aebc6412ac55b4",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/15_01_spectral_learning_and_feedback_dynamics_anchor.md",
+      "sha256": "e783609e930c8e1048664377d8e220f806c876838ef9b68aa20cc4c75459db59",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_01_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/subanchors/15_01_01_selected_expert_feedback_lockin_anchor.md",
+      "sha256": "6d3b50276005c479e402c85f49761f3cff1ced576feeb7e6a5a513d465b8bc97",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_01_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/subanchors/15_01_02_low_variance_functional_delay_anchor.md",
+      "sha256": "bcfab90581a8a34da5965d3a00e6a097adb095e3b3dc435adee14e0728a931da",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/15_02_layerwise_representation_spectral_atlas_anchor.md",
+      "sha256": "ef8792e37877236080d6c300ac5f44b4dad96841ea4bc80f8eedbca04582aa12",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_01_controlled_layer_information_identity_anchor.md",
+      "sha256": "6ddb00b163ebb40073fe04dccba47a33f062669fb0d581e62ef8ac1adac46be2",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_02_natural_hierarchy_role_localization_anchor.md",
+      "sha256": "50cda5dbd111a60262700e5770e57d593afcdb9a7ef7756616b537e65015ab5d",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_03_architectural_head_channel_concentration_anchor.md",
+      "sha256": "77ffc256c2d99ee32918486edd18dabef6ff5994fae2cf2c68488a6da2dae29e",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_04_compositional_attention_write_atlas_anchor.md",
+      "sha256": "8c8a9e85e02664f13484008381056a75816704cd4a178d44edb262af976db871",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_05_balanced_taxonomy_attention_write_atlas_anchor.md",
+      "sha256": "00940608cb0c499c47fd362497da6492cd51e3a32bf0f27f0cea22c27cc6aa9f",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_06",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_06_mlp_parameter_geometry_and_semantic_location_anchor.md",
+      "sha256": "da288f9fff571d6ec89358e75ace1a67960131596a42ac1ad772fd281424a5a1",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_02_07",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_07_matched_semantic_complexity_anchor.md",
+      "sha256": "78b1f10500137d66ab945e57863af39b2376a03b7a810a2e047beb752f94c5f0",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_04_tail_band_information/15_04_tail_band_information_anchor.md",
+      "sha256": "d1987c18b8f5574b68c4f47c7ac39fcf9552877b90435af03504505f2a0cf47b",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/15_05_functional_coordinate_admission_anchor.md",
+      "sha256": "3212c052498a5ea7c0c632159ffc12f7bcac2aeb24f581399c6def01c78ffcff",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_05_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_01_shallow_feature_guidance_anchor.md",
+      "sha256": "e1231ae6a5602eabf0eaf1c7b8e7b789396663c74e7ddb29944fb08ddc3e55d2",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_05_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_02_shallow_feature_specificity_pilot_anchor.md",
+      "sha256": "7423d9e81cff2c94c4f0bbfde45cd6a9160ad899b6bb08d429faa59d16178255",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_05_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md",
+      "sha256": "7e29591ba19918bba892e625da14633ea2a1cc64e68644f3a48f967aea7f4280",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_05_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_04_fixed_band_cross_update_compatibility_anchor.md",
+      "sha256": "d6e9292c07d3a1af7bb9493f70db65f2100f586179cc12b12c9ae977b440eebc",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_05_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_05_matched_fixed_band_dispatch_anchor.md",
+      "sha256": "516299df13f3783a48151694cfc2e13c678c9d713da873a20b4c03d466d5ea1b",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_06",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md",
+      "sha256": "8eed34c8d53b8dd2bca9f5a68e62208b94458c151872fa8c06f1608a74e33090",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_06_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_01_local_random_identity_control_anchor.md",
+      "sha256": "b7565c9be35dde9b9a924e54949162f2ec36220911ebc8cb241553166af4245e",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_06_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_02_router_expert_specialization_anchor.md",
+      "sha256": "5c380d074c258b806027f39d05cef8b4bee748c008860e2b99893aa95ac1c4d6",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_07",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor.md",
+      "sha256": "a179733d67212ff4cbd02206c9526ee87432765163ece233b22622b052456fd1",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_07_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_07_layerwise_conditional_fine_discriminant_directions/subanchors/15_07_01_layerwise_domain_direction_atlas_anchor.md",
+      "sha256": "18cef1b3cc5b04ea84e01cc1d9c56f5316e4c4f640830a59364a9644706d72a3",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md",
+      "sha256": "9090319eeab944e172aabdf2112c87b19fcfdb11027e122cb9742584dc11abef",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor.md",
+      "sha256": "d1e8accaeb25ebe4bb8dc74aea3c23334051ec9442147b2862ac2e304a227bd1",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md",
+      "sha256": "806c80cdde78624c8c8b82f124829fbfa071ddbd8a8595fc870533a8193278f5",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_03_function_admitted_update_representation_rank_anchor.md",
+      "sha256": "e02bbf10e83e4a8fc3b032ec5a0d91e9fc705b887be398d28855644564040e15",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_04_transition_object_spectrum_sensitivity_anchor.md",
+      "sha256": "5fe37e19ea0f21c23cabf9e38ad01356deaaced516fa8f662600002fca3008a9",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_05_aligned_geometric_rank_scale_anchor.md",
+      "sha256": "be625d588c596465bbe0f080d0f049e7b1f4797e775c03fc835cc38707fae126",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_06〔8B复现〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_06_qwen8b_geometric_rank_replication_anchor.md",
+      "sha256": "c72a5041677ba8ec280111b4dd739c5261da6b25dbb485c14c92965546766572",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_06〔语义子空间〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_06_semantic_conditioned_functional_subspace_anchor.md",
+      "sha256": "332b4ffb3f460fc31b85092a941103ca5fd8d82be19c42d50ed5e9479dcfff02",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_08_09",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_09_random_projection_router_preservation_anchor.md",
+      "sha256": "c6ca7d5eaf97c1da542dad56116a15fe9f3b9c619021debe0762b06d79a30225",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_09",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_anchor.md",
+      "sha256": "761e7a8a205764c3580a8ff17033ee1d2347c5ced946c338805d500f89792078",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_09_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_09_layerwise_coarse_fine_reuse_geometry/subanchors/15_09_01_native_g_domain_consensus_variance_atlas_anchor.md",
+      "sha256": "91514493c4ec79a14d69cbfbb4a0c91f70db5710b3f9eb100353bb6c15dfec61",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_10",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md",
+      "sha256": "a1808cd342e128275a694461fcadc2d88095ef99b9e84d155266216c9e546951",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_11",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md",
+      "sha256": "1128db5c36455985ef909337eab0a49bae3683b32678fbef6dac1f849d21a064",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_12",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md",
+      "sha256": "affa1385d6c182d4edba4d9be2db519dcb3098a3b4e1723eda339e2aa91539e7",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md",
+      "sha256": "356f62b5bdbbe1a5f06523e18401e7de33a20e40642afc4038bd7fcf618dcae2",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_01_clinc150_one_layer_backward_hierarchical_router_anchor.md",
+      "sha256": "e90f949976e4d72a1faf544323d478897c4042097c2e1850f89576eafb3f070c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_02_frozen_base_staged_semantic_lora_router_anchor.md",
+      "sha256": "3379ecc0c11f30f1180e4bc651b6cd71eae06e210fe8282001a19841e09ad6eb",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_03",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_03_semantic_gradient_functional_alignment_anchor.md",
+      "sha256": "9330322094c9bca19da68f75f16b11ddf1b83324841447e9c1d653c2a9eb987b",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_04",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_04_m2d2_causal_lm_semantic_routing_anchor.md",
+      "sha256": "942a01551610490d793a611971cb4285e2eb0b9e318711c37cf4eb45d35d733a",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_05",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md",
+      "sha256": "54bae4d295dca2af3996d409efad9b442835eaa5fbe3d187e81258d97e68c12a",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_06",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_06_dclm_final_layer_topk_sae_teacher_anchor.md",
+      "sha256": "a35e266b6657d06dca0fc5cbc1808bea4b51b85463a35a7ac98bbad188a00cc4",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_07",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md",
+      "sha256": "c16915e5888a43af1a64f06ecd894333b33d1455e15bb489a752e55912bda3b8",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_08",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_08_dclm_sae_candidate_hierarchy_anchor.md",
+      "sha256": "d49184c981d4c1edd56a40cbe640a68ce6862c28512eb15f2c7a12c639b9c175",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_09",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_09_dataset_conditioned_sae_semantic_hierarchy_anchor.md",
+      "sha256": "afa81d1aab00a062ae3881032cd746a99f3142acde6dd354363efff107e3b0a3",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_10",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_10_sae_flat_router_functional_anchor.md",
+      "sha256": "317357b73515e5dd4a712c0a14434c2109f361cbe2e6636e13201330c5295401",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_13_11",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_11_structural_routing_incremental_learning_anchor.md",
+      "sha256": "428b4f791ce3f66bca014869c28b64921d6a5e8892623f8cb30dace312e67521",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_14",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_14_semantic_representation_geometric_form/15_14_semantic_representation_geometric_form_anchor.md",
+      "sha256": "54b725fc0dea7b5c8ea68632429a5de51ef41c1fa49813f248a10d7b48617589",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_15",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_15_layerwise_moe_insertion_validation/15_15_layerwise_moe_insertion_validation_anchor.md",
+      "sha256": "ee22e0d5562c990be055b582508aee8273dcc301ec36ed582e4210098682c355",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_16",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_16_headwise_causal_semantic_retrieval/15_16_headwise_causal_semantic_retrieval_anchor.md",
+      "sha256": "b26ce635b5135ff6e07a753d6265779780be356ca8808e9d514d4beffa9a48a4",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_17",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md",
+      "sha256": "278f73041a74c54e515e892edc14ffb16fc44fd0877fc44c72315a1c2e97600d",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_17_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_01_sae_shared_direction_reuse_anchor.md",
+      "sha256": "3041f14a7eaa58dd50e7e45d002e28d0ca06196d795cfead82f4a545a753de5b",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_17_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md",
+      "sha256": "c58d125da67f583f80f6deea77d15a757e1ea91c6e0d2d5bc1592b65541a3bef",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A15_03〔归档〕",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/archive/15_03_middle_band_information/15_03_middle_band_information_anchor.md",
+      "sha256": "1675feac8b87e7949b7d57af65573dd0a02d3f4b4dd25d7e0417a0861deaba81",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A16_00",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/16_00_switch_lb_gradient_conflict_anchor.md",
+      "sha256": "7f1513f41061691ac1e5a058f727584f7bbd5948210c75730f7a8dd46b50edd5",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A16_00_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/subanchors/16_00_01_dc_sustainer_boundary_anchor.md",
+      "sha256": "332451ae4c91e1efeff78d2aa66883ce7da9e84587b174bbed91736e8080129c",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A16_00_02",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/subanchors/16_00_02_multistage_gradient_pathway_anchor.md",
+      "sha256": "bd5d6d1ed32474113d8a5b0a33735bae3f3ee9b256bba883a8552443234d6e2e",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A16_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/16_01_incremental_information_lb_routing/16_01_incremental_information_lb_routing_anchor.md",
+      "sha256": "052004921e2b8c2322ae4c7f5149bbdc99dfa5d17d2b1bb822d53e8254a7907f",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "A16_01_01",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/16_01_incremental_information_lb_routing/subanchors/16_01_01_regret_distilled_conditional_innovation_anchor.md",
+      "sha256": "27f6e42c9bb14a3139637242fa3ca37e348abd7e19f00b3f09d7ecf3efa85476",
+      "review": "key_hypothesis_intervention_or_boundary",
+      "whole_document_certified": false
+    },
+    {
+      "id": "草案 D1 · 0924",
+      "path": "/data/250010109/Research_System/daily_research_reports/0924/docs/plan/anchor_cn.md",
+      "sha256": "b952c35a8924bebc0498a7dcb4a5efcaa60e3c5e90f26e2390d45056790ee1ba",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "草案 D2 · 0925",
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/update_compatibility/anchor_cn.md",
+      "sha256": "2a047ea87264a2948e60dcb5369354db65e9b5f0b354ad38ed652f041a186ad1",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    },
+    {
+      "id": "草案 D3 · 0925",
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/human_semantic_updates/anchor_cn.md",
+      "sha256": "765451949eae144669ceef410012d6ba858595529fb69a32f7c57aec7c6dad83",
+      "review": "question_definition_and_selected_context",
+      "whole_document_certified": false
+    }
+  ],
+  "result_and_context_sources": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md",
+      "sha256": "e731599e94dfdfb52589ad5cfd52245d6f68c8c79b0bf3b58088d9805c68efed"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary.md",
+      "sha256": "dffe7e0f6660ef7f48e0d625812a7c6d37eba6028302c3bb96762b1f4adcec71"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E02_exploratory_functional_candidate_test/summary.md",
+      "sha256": "b6f455af0b64b69f37ec9f347ee4cc9834b81522344982717de31655212e9cd8"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A16/A16_00_02_E01_multistage_gradient_pathway_audit/summary.md",
+      "sha256": "cded8dcb6ed523422cfa2dd3e4afd7fb38e5304983b55aa2432ee12e026bca28"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/summary.md",
+      "sha256": "d7aa88bd66e0dd2b0bc8b4cc36cd6addadcda7d75ff5e12e9808446c5a948155"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03H_counterfactual_utility_residual_tree_h100/summary.md",
+      "sha256": "4a1ce9cb1f87f4a2020a2fe0e70f7b9d3bc37da181a50cdb9f23e01c0bc988d5"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E06_clinc150_hard_route_gradient_functional_audit/summary.md",
+      "sha256": "f5613a95a1f6cd0ddfe520d749659689b2cbe84fb512f409569bce3e9922707a"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E02_local_random_identity_control/summary.md",
+      "sha256": "c8c02328573002058a06236c48d92f25b8b642e40e0f10334609ddeecf3d4dd7"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A16/A16_00_01_E01_dc_sustainer_audit/summary.md",
+      "sha256": "4b8ebeb03e115ed09f7872bc0bf382e29e57feef20a5d42497e5cafa603a5348"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md",
+      "sha256": "03d5ca05f42f84c9ad74ef9c512e7b4deac48b438d776dd5128e1a9fcac58ee2"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E07_m2d2_learned_semantic_router_ntp/summary.md",
+      "sha256": "4bc9b1d963d4be3a50eddc07e617b7cc6a75ce3d69909b1b2874c052e10b60a4"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E08_m2d2_hard_semantic_route_ntp/summary.md",
+      "sha256": "b4d8ff49debd40e56d5fa1c5d47e444a3b761b4c7ca19d980c22a3b9c086a737"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0923/focus_sae_n8_separability.md",
+      "sha256": "aec0b9ab8006558637be8c9707a6d0deff5e5ba400cc91a633057af264ae6830"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+      "sha256": "b91147fe1e68720262a1b1cbcc4368ab6cebd2750e3e354636ef5c4b30e57d32"
+    },
+    {
+      "path": "/data/250010109/Research_System/.agents/skills/research-reasoning-auditor/SKILL.md",
+      "sha256": "6954db8bfdceea5d9c12cc87a0936a50c6593552b65dc578c707b22e7245f9f8"
+    },
+    {
+      "path": "/data/250010109/Research_System/.agents/skills/research-reasoning-auditor/references/reasoning_audit_contract.md",
+      "sha256": "ac99e3fcb69de49b582719bf64ba21e9857f9e5c29b620332cf184b1f8827375"
+    },
+    {
+      "path": "/data/250010109/Research_System/.agents/skills/research-reasoning-auditor/references/recurrent_failure_modes.md",
+      "sha256": "495a80bf5d28cd09ab2d81a72a9a58294cbe73313d7f82f295e78cf6533e12e1"
+    }
+  ],
+  "counterexample": {
+    "type": "mathematical_counterexample_not_project_experiment",
+    "loss_A": "(x-1)^2/2",
+    "loss_B": "(x-0.1)^2/2",
+    "x_before": 0,
+    "x_after_A_update": 1,
+    "gradient_inner_product": 0.1,
+    "A_losses": [
+      0.5,
+      0
+    ],
+    "B_losses": [
+      0.005,
+      0.405
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "status": "LOCAL_REWRITE_VERIFIED_NOT_A_MODEL_BENCHMARK",
+  "date": "2026-09-26",
+  "local_links_checked": 296,
+  "new_missing_links": [],
+  "preexisting_missing_links": [],
+  "known_backtick_source_missing": [
+    "daily_research_reports/backup/2026/06/0625/docs/07.md"
+  ],
+  "inventory_rows": 124,
+  "numbered_current_or_draft": 121,
+  "archived_not_renumbered": 3,
+  "continuous_number_groups": 30,
+  "anchor_wording_revisions": 6,
+  "existing_workstream_rows_unchanged": 13,
+  "result_record_changes": [
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/summary.md",
+      "result_body_unchanged": true,
+      "change": "AI next-decision paragraph only"
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/summary_cn.md",
+      "result_body_unchanged": true,
+      "change": "AI next-decision paragraph only"
+    },
+    {
+      "path": "daily_research_reports/0926/docs/structure_update/detailed.md",
+      "result_body_unchanged": true,
+      "change": "AI next-decision paragraph only"
+    }
+  ],
+  "figure_checks": [
+    {
+      "path": "daily_research_reports/0926/figures/research_lines_renumbered_20260926.png",
+      "sha256": "c673f9dffed43a13f6351a14599e4cb6bd4e0bff39725f74fdacbba90695db01"
+    },
+    {
+      "path": "daily_research_reports/0926/figures/default_mechanism_route_20260926.png",
+      "sha256": "cd17a3cc0620f293b7825274e0518530055135a48bafb71b5a2f757df6023b63"
+    }
+  ],
+  "entrypoint_check": {
+    "exit_code": 1,
+    "output": "UNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/protocol.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/detailed.md\nUNTRACKED A15_17 SAE representation audit: Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E02_n8_15b17b_matrix/detailed.md\nChecked 33 current entrypoints; 5 issue(s).\n",
+    "meaning": "routing/versioning check; existing 5 UNTRACKED records preserved, not a scientific verdict"
+  },
+  "scope_checks": [
+    {
+      "repo": "/data/250010109/Research_System",
+      "paths": [
+        "PROJECTS.md"
+      ],
+      "diff_check": "PASS"
+    },
+    {
+      "repo": "/data/250010109/Research_System/Projects/from-attention-to-search",
+      "paths": [
+        "AGENTS.md",
+        "main/roadmap.md",
+        "main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md",
+        "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md",
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md",
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor_cn.md",
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md",
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor_cn.md"
+      ],
+      "diff_check": "PASS"
+    }
+  ],
+  "entry_document_sizes": [
+    {
+      "path": "AGENTS.md",
+      "before_bytes": 19252,
+      "after_bytes": 19252,
+      "before_lines": 352,
+      "after_lines": 352
+    },
+    {
+      "path": "PROJECTS.md",
+      "before_bytes": 49276,
+      "after_bytes": 52294,
+      "before_lines": 557,
+      "after_lines": 598
+    },
+    {
+      "path": "Projects/from-attention-to-search/AGENTS.md",
+      "before_bytes": 12000,
+      "after_bytes": 12345,
+      "before_lines": 268,
+      "after_lines": 271
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/README.md",
+      "before_bytes": 10850,
+      "after_bytes": 10850,
+      "before_lines": 130,
+      "after_lines": 130
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/roadmap.md",
+      "before_bytes": 4714,
+      "after_bytes": 5265,
+      "before_lines": 41,
+      "after_lines": 57
+    }
+  ],
+  "before_total_bytes": 96092,
+  "after_total_bytes": 100006,
+  "physical_renames": 0,
+  "actual_deletions": 0,
+  "training_runs_started": 0,
+  "scientific_state_transitions": 0,
+  "model_performance_measured": false,
+  "phase": "Earlier default-route and Anchor-wording revision; entrypoint measurements are historical",
+  "newer_entrypoint_refactor_checks": "docs/research_system_refactor_20260926_checks.json"
+}

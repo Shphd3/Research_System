@@ -5,7 +5,7 @@ Use this reference after execution to write the complete first reading in
 single-experiment speaking or meeting brief. It does not replace the Detailed
 record. When a Summary already exists, do not duplicate these four sections in
 the ordinary chat response; link the Summary first and use the compact result
-delivery rule in `SKILL.md`.
+delivery rule in [SKILL.md](../SKILL.md).
 
 ## 1. Completion And Comparison Audit
 

@@ -1,0 +1,956 @@
+{
+  "document_role": "Noncanonical local copy-review evidence. This file grants no deletion, publication, execution, or scientific-state authority.",
+  "created_utc": "2026-09-26T02:22:50.485742+00:00",
+  "audit_report": "docs/reasoning_audit_20260926_cn.md",
+  "workspace_root": "/data/250010109/Research_System",
+  "scope": {
+    "duplicate_scan_roots": [
+      "daily_research_reports",
+      "docs",
+      "prompts",
+      "templates",
+      "sync",
+      "Projects/from-attention-to-search/main"
+    ],
+    "included_extensions": [
+      ".md",
+      ".txt"
+    ],
+    "minimum_bytes_exclusive": 400,
+    "excluded_payload_directories": [
+      "figures",
+      "logs",
+      "tables"
+    ],
+    "incoming_reference_scan": "Markdown links and code-formatted path tokens under root research docs, daily reports, skills, paper notes, papers, sync, and from main/docs/skills/XingyuD docs and sync; does not cover arbitrary source code, external references, execution storage, or conversation memory. Adjacent JSON/YAML/script and graph filename checks were performed for D01 and D02 only.",
+    "matching": "SHA-256 byte equality rechecked when writing this manifest; translated, edited, and structurally equivalent text are not detected.",
+    "reference_snapshot_note": "Incoming references were scanned before the new audit report and this manifest were written. These two review artifacts add candidate-path references; a future approved deletion must update those references as well as recheck source hashes and dependencies."
+  },
+  "summary": {
+    "duplicate_groups": 42,
+    "extra_copies": 43,
+    "maximum_duplicate_body_bytes": 538967,
+    "first_batch_proposed_deletions": 2,
+    "first_batch_bytes": 70797,
+    "conditional_second_batch_copies": 4,
+    "preserved_groups_pending_role_review": 36,
+    "actual_deletions": 0
+  },
+  "groups": [
+    {
+      "group_id": "C01",
+      "sha256": "08beca2c51e423ed5b81a525bdfb4e589bb8a6842a9ff51b7536245724809371",
+      "bytes_each": 32081,
+      "files": [
+        {
+          "path": "daily_research_reports/0908/docs/deep-research-report.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/0920/docs/kvcache_moe_retrieval/moe_retrieval.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C02",
+      "sha256": "88890a0d58cb292ba8fc52e6cc0ec03ba36859bc265bbc6726a30332505df430",
+      "bytes_each": 19590,
+      "files": [
+        {
+          "path": "daily_research_reports/0922/docs/meeting_plans/meeting.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/0923/docs/0922_SAE_N8_separability_v3/sources/meeting.md",
+          "incoming_text_sources": [
+            "daily_research_reports/0923/docs/0922_SAE_N8_separability_v3/README.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C03",
+      "sha256": "d619f1cfff096a3b7ac28f1377f420c96cafbbabfadf9eb1cd67213bef23e3c8",
+      "bytes_each": 20528,
+      "files": [
+        {
+          "path": "daily_research_reports/0923/docs/0922_SAE_N8_separability_v3/0923_SAE_N8_组会汇报整理稿.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/0923/docs/draft/0923_SAE_N8_组会汇报整理稿.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "AI_DELETE_ONE_AFTER_USER_APPROVAL",
+      "review_action_id": "D01",
+      "proposed_delete_path": "daily_research_reports/0923/docs/draft/0923_SAE_N8_组会汇报整理稿.md",
+      "retained_path_if_approved": "daily_research_reports/0923/docs/0922_SAE_N8_separability_v3/0923_SAE_N8_组会汇报整理稿.md",
+      "reason": "Isolated draft duplicates the retained delivery-package historical text; current daily main draft is also preserved."
+    },
+    {
+      "group_id": "C04",
+      "sha256": "a58e906c1f0cb34b47d26ea5afe86b31cbe6ac2d00095bb7a2c40e64ef8d14c0",
+      "bytes_each": 9752,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/03/0322/round1230_4models_ckpt40000_report.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/03/0324/round1230_4models_ckpt40000_report.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "CONDITIONAL_REVIEW_OF_DAILY_SNAPSHOT_ROLE",
+      "review_action_id": "SECOND_BATCH",
+      "proposed_delete_path": "daily_research_reports/backup/2026/03/0324/round1230_4models_ckpt40000_report.md",
+      "retained_path_if_approved": "daily_research_reports/backup/2026/03/0322/round1230_4models_ckpt40000_report.md",
+      "reason": "Byte-identical cross-date text; preserve both until researcher decides whether each date must remain self-contained."
+    },
+    {
+      "group_id": "C05",
+      "sha256": "f70096fee0ec8512b93e966cf7011dd8dbb3293f946829898d5fdc7bae5795d7",
+      "bytes_each": 21794,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/03/0329/MoE - 迭代状态存档 v6.0.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/03/0330/MoE - 迭代状态存档 v6.0.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "CONDITIONAL_REVIEW_OF_DAILY_SNAPSHOT_ROLE",
+      "review_action_id": "SECOND_BATCH",
+      "proposed_delete_path": "daily_research_reports/backup/2026/03/0330/MoE - 迭代状态存档 v6.0.md",
+      "retained_path_if_approved": "daily_research_reports/backup/2026/03/0329/MoE - 迭代状态存档 v6.0.md",
+      "reason": "Byte-identical cross-date text; preserve both until researcher decides whether each date must remain self-contained."
+    },
+    {
+      "group_id": "C06",
+      "sha256": "7eebb4582d5a0b31c57be9474bead8af952aeaab762c90114e143682b13bb5a4",
+      "bytes_each": 13407,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/04/0402/round12l_ckpt40000_full_experiment_synthesis.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/04/0403/round12l_ckpt40000_full_experiment_synthesis.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "CONDITIONAL_REVIEW_OF_DAILY_SNAPSHOT_ROLE",
+      "review_action_id": "SECOND_BATCH",
+      "proposed_delete_path": "daily_research_reports/backup/2026/04/0403/round12l_ckpt40000_full_experiment_synthesis.md",
+      "retained_path_if_approved": "daily_research_reports/backup/2026/04/0402/round12l_ckpt40000_full_experiment_synthesis.md",
+      "reason": "Byte-identical cross-date text; preserve both until researcher decides whether each date must remain self-contained."
+    },
+    {
+      "group_id": "C07",
+      "sha256": "4c0633d6c8e92b4a855954ea0d9e2f665cbeb550913f94ab9ac24e8c87b8c812",
+      "bytes_each": 9994,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/04/0428/daily_record_hierarchical_moe.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/04/0429/daily_record_hierarchical_moe.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "CONDITIONAL_REVIEW_OF_DAILY_SNAPSHOT_ROLE",
+      "review_action_id": "SECOND_BATCH",
+      "proposed_delete_path": "daily_research_reports/backup/2026/04/0429/daily_record_hierarchical_moe.md",
+      "retained_path_if_approved": "daily_research_reports/backup/2026/04/0428/daily_record_hierarchical_moe.md",
+      "reason": "Byte-identical cross-date text; preserve both until researcher decides whether each date must remain self-contained."
+    },
+    {
+      "group_id": "C08",
+      "sha256": "94ada49a3915f716f1180d5e5aabb3dbb4f87b2e850964f5e1f33ae5c58c36c2",
+      "bytes_each": 1823,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0513/0513_cognitive_correction.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/source_notes/0513_cognitive_correction.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C09",
+      "sha256": "8e5c59a394d10aab150b2912c69663fce7625376aaac38e177866ea7f2fb88ca",
+      "bytes_each": 9040,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0513/0513_experiment_cards.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/source_notes/0513_experiment_cards.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C10",
+      "sha256": "7b261c947bb96481e83569b5bd38496e700f0cf2dff2d99a5749be9a9688f7eb",
+      "bytes_each": 1698,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0513/0513_plan_E0_E1_minimal_data_sanity.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/source_notes/0513_plan_E0_E1_minimal_data_sanity.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C11",
+      "sha256": "d8b362a6de4a3d85e466a363e1193dcca2888d0eaacad63f7fbfab96972e4473",
+      "bytes_each": 1586,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0513/0513_plan_E2_dense_before_moe.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/source_notes/0513_plan_E2_dense_before_moe.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C12",
+      "sha256": "b0b710f4d7cb9c4a0768cdc3ab4d2e5935f250540977675ab6c624a94a905ab5",
+      "bytes_each": 1565,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0513/0513_plan_E3_four_expert_moe.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/source_notes/0513_plan_E3_four_expert_moe.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C13",
+      "sha256": "46a6684b8e73de76add2f5cf7f451076c4793fb0bb9f9c21ba904288fe5e0243",
+      "bytes_each": 1650,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0513/0513_plan_E4_synthetic_vs_real.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/source_notes/0513_plan_E4_synthetic_vs_real.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C14",
+      "sha256": "aaf7fe4833244e15a8faecc281a3e1c9d191d502ba1ff73ea4de8e970c31cc84",
+      "bytes_each": 3350,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0517/E2_theory_ai_prompt.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/stages/E2_moe_feature_separation/E2_theory_ai_prompt.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/stages/E2_moe_feature_separation/README.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C15",
+      "sha256": "313819b1c55feac9ecc7ada5369c41a39b21460df330a70480d07cb95ba9623b",
+      "bytes_each": 1476,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/05/0531/exp_2x2_understanding/01_protocol_for_approval.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/05/0531/exp_2x2_understanding/02_execution_plan.md",
+            "daily_research_reports/backup/2026/05/0531/exp_2x2_understanding/03_summary.md",
+            "daily_research_reports/backup/2026/05/0531/exp_2x2_understanding/04_detailed.md",
+            "daily_research_reports/backup/2026/05/0531/exp_2x2_understanding/README.md"
+          ]
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/protocol_for_approval.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/README.md",
+            "Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/detailed.md",
+            "Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/execution_plan.md",
+            "Projects/from-attention-to-search/main/experiments/A02/A02_top1_router_lockin_2x2/summary.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C16",
+      "sha256": "15bb62ad325937a72d91ea29d5a6d7a87b5b599043720ff2fd607608c3d445d8",
+      "bytes_each": 5568,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0603/geometric_inhibition/05_report_card.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0603/geometric_inhibition/README.md"
+          ]
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0604/0501_geometric_inhibition_ai_audit_package/report_card.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0604/0501_geometric_inhibition_ai_audit_package/README.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C17",
+      "sha256": "b3e2fe17355121739fffaf0abd5db0e6ef5c9a704fd76f67184c2ff6b0e03a53",
+      "bytes_each": 6914,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0604/0501_geometric_inhibition_ai_audit_package/protocol_for_approval.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0604/0501_geometric_inhibition_ai_audit_package/README.md"
+          ]
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A05/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/A05/A05_01_geometric_inhibition_center_separation/execution_plan.md",
+            "daily_research_reports/backup/2026/06/0604/0501_geometric_inhibition_ai_audit_package/execution_plan.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C18",
+      "sha256": "195080820b0b9d662ff8d1f69a8852f09fd885136479efd7bc904d239f6abf9f",
+      "bytes_each": 4681,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0607/v2_docs/05_03_gating_init_and_common_subtraction_notes.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/gating_init_and_common_subtraction_notes.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C19",
+      "sha256": "c649d8a131df1684155bc9f7bbb578c6934849dafb767d80ff91937a4fb27565",
+      "bytes_each": 16937,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0608/uniform_collapse_common_offset/protocol_for_approval.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0608/uniform_collapse_common_offset/README.md",
+            "daily_research_reports/backup/2026/06/0608/uniform_collapse_common_offset/detailed.md",
+            "daily_research_reports/backup/2026/06/0608/uniform_collapse_common_offset/execution_plan.md"
+          ]
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/protocol_for_approval.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/detailed.md",
+            "Projects/from-attention-to-search/main/experiments/A05/A05_03_uniform_collapse_common_offset/execution_plan.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C20",
+      "sha256": "4a83cc609b4987004f3eed5e65b7ac04a04929ff252a5b139373177f55d921ee",
+      "bytes_each": 11947,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0609/docs/inter_feature_interference_derivation.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0613/mainline_features/inter_feature_interference_derivation.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C21",
+      "sha256": "657aa965f1bbca19a5cd4cf54d7e4a0a2effe30916ccb2f3cef44ed924dc2bc5",
+      "bytes_each": 14269,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0614/draft/A06_02_02_freeze_split_common_stability_protocol.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0614/meeting/experiments/A06_02_02_freeze_split_common_stability/protocol_for_approval.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C22",
+      "sha256": "5013d129eb744f57cbc8a5c0f44ecf86d34537bc2b7a65b8a17848f44f1c5687",
+      "bytes_each": 9399,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0614/meeting/meeting_brief_anchor2_final.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0615/sync_common_filtered_expert_spectrum/sources/0614_meeting_brief_anchor2_final.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0615/sync_common_filtered_expert_spectrum/README.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C23",
+      "sha256": "ec2e58da394131aea8f4b934ee861de41be05aa083393c3a44efb0e0f71431d4",
+      "bytes_each": 5760,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0615/meeting/meeting_talk_plan.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0615/sync_common_filtered_expert_spectrum/meeting_talk_plan.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0615/sync_common_filtered_expert_spectrum/README.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C24",
+      "sha256": "604ca2d2fadefcc1d92654fa6ed93e2d4ac81984370bbcf8d330a8082b6f23b2",
+      "bytes_each": 12961,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0615/next/0615_recording.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0616/meeting/0615_recording.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C25",
+      "sha256": "86b8865037687a8a07a05ddda77d830b4dc6b361aa00e84904a891b255abcfe9",
+      "bytes_each": 12625,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0616/2x2_expert_geometry_metric_audit/2d_centered_m4_proof.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/06/0616/2x2_expert_geometry_metric_audit/README.md"
+          ]
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0616/meeting/2d_centered_m4_proof.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C26",
+      "sha256": "e421d250d03aeb34149a7ab32645c60079219271cea5815b705c0858f50d29d3",
+      "bytes_each": 12349,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0617/theory_proof/theoretical_analysis.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0618/docs/theoretical_analysis.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/07/0703/resources/theoretical_analysis.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C27",
+      "sha256": "1353ce3a76074f36de54b2e9c604e63ca3d5491bec3923ae19125d676f9bc19d",
+      "bytes_each": 34177,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0622/docs/research_draft_compositional_singular_concentration_with_loss_and_qk_descent.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/docs/research_draft_compositional_singular_concentration_with_loss_and_qk_descent.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C28",
+      "sha256": "d816c45e5a1e3bef54ff56f79cf5cebaa53616f141f78e8ce4f52d89322395e3",
+      "bytes_each": 30550,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0622/docs/research_draft_compositional_singular_concentration_with_loss_and_qk_descent_cn.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/docs/research_draft_compositional_singular_concentration_with_loss_and_qk_descent_cn.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md",
+            "daily_research_reports/backup/2026/06/0623/docs/ai_co_reading_research_chain_template_cn.md",
+            "daily_research_reports/backup/2026/06/0623/docs/reading_card_scale_free_and_singular_concentration_cn.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C29",
+      "sha256": "3e639c4159ac51a37a7611a2780eaeee6f67f2a853d8cb52499ff8c9f01d0119",
+      "bytes_each": 3391,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/a07_three_anchors_meeting_brief/package/experiments/A07_01_common_rare_conflict_metric_audit/detailed.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/detailed.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C30",
+      "sha256": "090992f93272e1ab14776a19f70676a94831dd90c9a4f1ebddb6b937322a9e8c",
+      "bytes_each": 2006,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/a07_three_anchors_meeting_brief/package/experiments/A07_01_common_rare_conflict_metric_audit/summary.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A07/A07_01_common_rare_conflict_metric_audit/summary.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07.md",
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md",
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_05_common_update_interference_diagnostic_anchor.md",
+            "daily_research_reports/backup/2026/06/0624/meetings/meeting_brief.md",
+            "daily_research_reports/backup/2026/06/0625/anchor_draft/A07_common_update_interference_anchor.md",
+            "daily_research_reports/backup/2026/07/0702/organization/07_partition_value_common_rare_interference_model_cn.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C31",
+      "sha256": "a69f5dc4269445cd12db8912c9fe862029b438321fb0a5a1e80abfc324d0cf42",
+      "bytes_each": 3317,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/a07_three_anchors_meeting_brief/package/experiments/A07_02_common_controlled_rare_interference/detailed.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/detailed.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C32",
+      "sha256": "ea679b0b8c42a88cc2df00f1ea10171b5260d129e3e94e5ef1a71320c73f7f49",
+      "bytes_each": 1755,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/a07_three_anchors_meeting_brief/package/experiments/A07_02_common_controlled_rare_interference/summary.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A07/A07_02_common_controlled_rare_interference/summary.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_02_common_controlled_rare_interference_anchor.md",
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_05_common_update_interference_diagnostic_anchor.md",
+            "daily_research_reports/backup/2026/06/0624/meetings/meeting_brief.md",
+            "daily_research_reports/backup/2026/06/0625/anchor_draft/A07_common_update_interference_anchor.md",
+            "daily_research_reports/backup/2026/07/0702/organization/07_partition_value_common_rare_interference_model_cn.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C33",
+      "sha256": "b295dbb0510bcaa80fa7cc735c8c4d872418e22abb92d02808011a959e4b6d8b",
+      "bytes_each": 3765,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/a07_three_anchors_meeting_brief/package/experiments/A07_03_route_function_binding/detailed.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/detailed.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C34",
+      "sha256": "05256e1f4eb0843f98b29f07a5a5e1e27da5319c64cf47fd1304bbed2fc1ac06",
+      "bytes_each": 1767,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/06/0623/a07_three_anchors_meeting_brief/package/experiments/A07_03_route_function_binding/summary.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A07/A07_03_route_function_binding/summary.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md",
+            "Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_05_common_update_interference_diagnostic_anchor.md",
+            "daily_research_reports/backup/2026/06/0624/meetings/meeting_brief.md",
+            "daily_research_reports/backup/2026/06/0625/anchor_draft/A07_common_update_interference_anchor.md",
+            "daily_research_reports/backup/2026/07/0702/organization/07_partition_value_common_rare_interference_model_cn.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C35",
+      "sha256": "4a9f70ff47ecf736f438be9b970092c84999ca08cb66a710e0c948a0ce302f0f",
+      "bytes_each": 45873,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/07/0703/docs/MTP.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/07/0706/resources/MTP.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C36",
+      "sha256": "f19d3a37d44dead149b20853b2e5ca88ee7723023b37973a1f42e2b1613c5554",
+      "bytes_each": 38993,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/07/0703/docs/MTP_中文翻译.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/07/0706/resources/MTP_中文翻译.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C37",
+      "sha256": "aa8e2d12ec72850fe9254db18934174f528d420234315dc1af19cfed010ad2f7",
+      "bytes_each": 21304,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/07/0706/resources/long_horizon_next_k_theory_design.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/07/0707/mtp_k2/long_horizon_next_k_theory_design.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C38",
+      "sha256": "d74e51612016ea37606a23b4f6f5cc4f317e0e8197894757454bc1057b4a2031",
+      "bytes_each": 2246,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/08/0810/docs/layer25_conditional_innovation/README.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/08/0810/docs/daily_report_layer25_conditional_innovation.md"
+          ]
+        },
+        {
+          "path": "daily_research_reports/backup/2026/08/0811/sync/layer25_conditional_innovation/README.md",
+          "incoming_text_sources": [
+            "daily_research_reports/backup/2026/08/0811/sync/README.md",
+            "daily_research_reports/backup/2026/08/0811/sync/daily_report_layer25_conditional_innovation.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C39",
+      "sha256": "930186ef6d909238355e04e6f85125800b061b96bf1cc817bea49f32ca3551ea",
+      "bytes_each": 50269,
+      "files": [
+        {
+          "path": "daily_research_reports/backup/2026/08/0823/docs/random_projection_router_proof_protocol.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "daily_research_reports/backup/2026/08/0823/docs/随机降维与可路由低维语义结构_正式证明与实验协议.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "AI_DELETE_ONE_AFTER_USER_APPROVAL",
+      "review_action_id": "D02",
+      "proposed_delete_path": "daily_research_reports/backup/2026/08/0823/docs/随机降维与可路由低维语义结构_正式证明与实验协议.md",
+      "retained_path_if_approved": "daily_research_reports/backup/2026/08/0823/docs/random_projection_router_proof_protocol.md",
+      "reason": "Same-directory alternate filename, identical content, not an English/Chinese pair."
+    },
+    {
+      "group_id": "C40",
+      "sha256": "ad3af84b56b4d39b0fbfc3b3a8578c7d9bd71e63010fb7cb677be5e56c961a23",
+      "bytes_each": 415,
+      "files": [
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A05/A05_04_01_round1_slot_specialization_protocol/results/round1_slot_specialization_4gpu_20260609/p0_dataset_audit.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/A05/A05_04_01_round1_slot_specialization_protocol/detailed.md"
+          ]
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A05/A05_04_01_round1_slot_specialization_protocol_dot_product/results/round1_slot_specialization_dot_product_4gpu_20260609/p0_dataset_audit.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C41",
+      "sha256": "566c688d8916270681cf7296809b24c23ca4d2c7dfbf835055ea5d53d046efa0",
+      "bytes_each": 17354,
+      "files": [
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E02H_synthetic_parent_first_moe_h100/protocol.md",
+          "incoming_text_sources": []
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E02_synthetic_parent_first_moe/protocol.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/A15/README.md",
+            "daily_research_reports/backup/2026/08/0829/focus_gradient_consistent_hierarchical_routing.md"
+          ]
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    },
+    {
+      "group_id": "C42",
+      "sha256": "18ff12693b35b21d17268a25c2d512c0f80fc8e9fa5040cf2448e4503de93030",
+      "bytes_each": 6692,
+      "files": [
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/stages/E4_oracle_moe_router_phase1/detailed.md",
+          "incoming_text_sources": [
+            "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/stages/E4_oracle_moe_router_phase1/README.md"
+          ]
+        },
+        {
+          "path": "Projects/from-attention-to-search/main/experiments/archive/E0_E3_synthetic_data_understanding/stages/E4_oracle_moe_router_phase1/versions/E4_LN_legacy_20260519/detailed.md",
+          "incoming_text_sources": []
+        }
+      ],
+      "ai_recommendation": "PRESERVE_PENDING_ROLE_REVIEW",
+      "review_action_id": null,
+      "proposed_delete_path": null,
+      "retained_path_if_approved": null,
+      "reason": "Text identity alone does not establish redundant provenance, execution-contract, handoff, translation, or historical-snapshot responsibility."
+    }
+  ]
+}

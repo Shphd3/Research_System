@@ -1,132 +1,62 @@
-# Continuation Brief Template
+# Operational Continuation Brief Template
 
-Copy to `.research/memory/conversations/<conversation-name>/continuation.md`.
+Copy to `.research/memory/conversations/<this-conversation>/continuation.md`
+after verifying its name. Keep one CURRENT brief **per conversation record**;
+replace your own brief only after checking it has not changed. A new thread
+links the predecessor, never edits another thread's status or log.
 
-- **One CURRENT brief per workstream.** Rewrite it at each checkpoint; never
-  append. Mark the brief it replaces `SUPERSEDED` and name it under
-  `Supersedes:`, so a reader can always find exactly one current entry point.
-- **Non-canonical operational artifact.** It points at canonical sources and
-  owns no claim, approval, verdict, or next decision.
-- **Two sections are mandatory in every brief: B and H** (what to read, what to
-  reuse). **E is mandatory whenever the brief authorises any action.** Omit D
-  when the brief authorises nothing; keep the rest short rather than padded.
-- A brief is written so that an agent with **no** conversation history can
-  start working from it without asking a question it could have answered.
+This brief points to authority; it never grants it. Fill only what the next
+requested action needs. Read list, next action and reusable assets are required;
+`none needed` is valid for assets. Omit execution details for non-execution work.
 
 ---
 
-# Continuation Brief: `<workstream / stage>`
+# Continuation: <bounded task>
 
-```text
-Workstream:     <name>            Problem key: <stable key or none>
-Role:           PRIMARY | SECONDARY
-Record:         .research/memory/conversations/<conversation-name>/
-Continues from: <previous continuation.md or none>
-Supersedes:     <previous continuation.md or none>
-Updated at:     <UTC>             Status: CURRENT | SUPERSEDED
-Non-canonical:  points at canonical sources; owns no claim, approval, verdict,
-                or next decision.
-```
+Record: <this conversation record>
+Continues from: <prior brief or none>
+Updated at: <UTC> | Status: CURRENT (in this record only)
+Processed by: <agent> (harness: <verified or unknown>; model: <verified or unknown>)
+Non-canonical: source pointers only; owns no scientific claim, approval or decision.
 
-## A. Environment roots
+## Objective and scope
 
-Name every root this brief's paths resolve against, and say whether the writing
-environment can read it.
+- Requested deliverable:
+- Existing authorization and its source; missing human decisions, if any:
+- Writable files / protected concurrent work:
+- Environment roots and which are visible here:
 
-| Root | Path | Readable here? |
-| --- | --- | --- |
-| Repository root | `<path>` | yes / no |
-| Execution workspace | `<path>` | yes / no |
-| Evidence and receipts | `<path>` | yes / no |
+## Read list for the next action
 
-A reference under a root marked `no` is **unverifiable here, not stale**: report
-it as unverifiable and never silently drop it. Never assume a path resolves
-merely because it is written down. State any environment hazard that changes
-what may be run (recycling, mounts, missing tooling, platform-only commands).
+| Path or section | Why it changes this action | Required now? |
+|---|---|---|
+| <exact source> | <question it resolves> | yes / no |
 
-## B. Read list — in order; stop if a `required` item is absent
+Include the Focus/Anchor/Protocol/result only when this action depends on it.
+A simple result explanation can start with its Summary; local code work need
+not invent a scientific Focus. Verify required paths and current identities;
+use a hash/version when a stale source would alter the action. An inaccessible
+root is unverifiable, not stale. Missing required evidence blocks its dependent
+action; missing optional background does not block the requested work.
 
-| # | Path | Answers which question | Required? |
-| --- | --- | --- | --- |
-| 1 | `<Focus>` | the current question and the one next decision | yes |
-| 2 | `<Anchor>` | the canonical design and its claim boundary | yes |
-| 3 | `<protocol.md>` | the approved contract, its scope, its approval ledger | yes |
-| 4 | `<summary.md / detailed.md>` | what is established versus not | yes |
-| 5 | `<definition owner>` | the experiment's own scientific definition | yes |
-| 6 | `<evidence index / manifest>` | which artifacts are eligible evidence | yes |
-| 7 | `<PROJECTS.md row>` | priority and role | no |
+## Current work and reusable assets
 
-Rules:
+- Done, with artifact/receipt; pending work and material failures/unknowns:
+- Existing scripts, inputs, outputs or analyses to reuse (paths or none):
+- Tried and rejected; do not repeat:
+- Existing job and last verified progress, only if relevant:
 
-- Each row earns its place by changing what the reader may do next. Do not pad.
-- Do not reconstruct a missing `required` file from memory, a final report, or a
-  derived view. Report the absence and its root.
-- Separate **must not be read as evidence** from **must not be read at all**.
-- A filename, run label, job state, or derived analysis is not a verdict.
+Inspect reusable assets before reimplementing. Their presence proves neither
+eligibility nor approval. Do not copy source conclusions or entire histories.
 
-## C. Authority and boundaries
+## Next action and completion
 
-- Approved scope and its owner (exact reference):
-- NOT approved — do not start:
-- May not claim (keep the researcher's wording **verbatim**, never lift it):
-- Human-owned decisions still open, and what the agent must do meanwhile:
+- Next authorized action:
+- Verification and expected output:
+- Stop/redirect condition and independent work still possible:
+- Complete when:
 
-## D. Execution prerequisites — only if this brief authorises running anything
-
-- Target profile and image key, resolved from `docs/execution_envelope.md`:
-- Submission entry point and its gates:
-- Working directory and repo roots:
-- Inputs (data / model / checkpoint) and their verified identities:
-- Fixed parameters (conditions, seeds, steps, budget, qualification gates):
-- Outputs (result location, receipt path, artifact map):
-- Pre-run gates that must pass before a run counts as evidence:
-
-Do not inline values that another file owns; name the key and the owner.
-
-## E. Action list — in order; every step carries a branch
-
-| # | Action (one verb) | Verify | If pass | If fail |
-| --- | --- | --- | --- | --- |
-| 1 | | | next | report / stop |
-
-Rules:
-
-- No step may depend on a file absent from section B.
-- No step may be reported as done without its verification.
-- Stop and redirect conditions are steps here, not an afterthought.
-- Name the completion marker to poll, and say explicitly which signal is **not**
-  a completion signal.
-
-## F. Current state
-
-- Done / Pending / Blocked, each with the artifact that shows it.
-- Material failures, typed `INSUFFICIENT` states, and **retracted claims**.
-- Already tried and rejected — do not repeat:
-- Live concurrency risk: who else may be writing into the same output, and how
-  the new owner takes over safely.
-
-## G. Completion contract
-
-- Deliverables:
-- Done when:
-- Stop and ask the researcher when:
-- Never trade a reduced contract for a `COMPLETE` label.
-
-## H. Reusable assets — reuse before rewriting
-
-| Asset | Path | Reuse for | Verified? |
-| --- | --- | --- | --- |
-| Code / entry scripts | | | |
-| Post-processors / patches | | | |
-| Data, caches, presets | | | |
-| Figure and plotting code | | | |
-| Prior analyses worth not redoing | | | |
-| Templates | | | |
-
-Rules:
-
-- **Do not re-implement or re-derive anything listed here.** Read it first.
-- Verify an asset's identity (hash, version, provenance) before reuse, and record
-  any deviation you introduce.
-- An asset listed here is a tool, not evidence. Eligibility is owned by the
-  evidence records, not by this table.
+For execution only, point to the approved Protocol, resolved envelope profile,
+image, submission entry, input identities, budget, existing job and completion
+receipt. Do not inline a second copy of those settings or resubmit merely
+because the receiving model changed. Unapproved execution remains unapproved.

@@ -128,3 +128,17 @@ checkpoint selection, thresholds, or per-example decisions.
   deterministic computation and fits no parameters.
 
 Do not request a run-ready Protocol while this gate is `FAIL`.
+
+## Section Ownership
+
+Keep their ownership explicit:
+
+- section 2 owns claims about the external data-generating process;
+- section 4 owns the learning task, exact objective, variables, and constraints;
+- section 5 owns the constructible data pipeline, architecture,
+  objective-to-computation map, optimization class, and inference path;
+- section 6 owns only the smallest falsifier and necessary guards.
+
+Do not let the Protocol invent a missing task, supervision source, objective,
+or scientific architecture rationale. If any design block is unresolved, mark
+the anchor insufficient and keep the next decision on that block.

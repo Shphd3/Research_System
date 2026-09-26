@@ -43,15 +43,13 @@ not memory: they follow the memory boundary below but are not governed by the
 entry format of this contract, and no approval or scientific status may be
 derived from them.
 
-`continuation.md` is the sanctioned entry point for handing a workstream to a
-different conversation. Keep exactly one CURRENT brief per workstream: rewrite
-it at each checkpoint rather than appending, mark the brief it replaces
-`SUPERSEDED`, and name it under `Supersedes:` so a reader can always find the
-single current entry point. Its shape is fixed by
-`templates/research_process/continuation_brief_template.md`. The mandatory
-sections are the read list and the reusable assets, plus the action list
-whenever the brief authorises any action. A brief points at canonical sources
-and never restates their conclusions.
+For a model/thread handoff, use
+[continuation_contract.md](continuation_contract.md) and the root
+`templates/research_process/continuation_brief_template.md`. A brief never
+creates authority. `CURRENT` is local to its conversation record; do not edit
+another record or impose a repository-wide task lock to hand work over.
+A named brief routes directly to its required sources; explicit log retrieval
+continues to read `memory.md` in full as specified below.
 
 These files are ordinary versionable repository content. Sharing a checkout
 makes uncommitted memory visible to other local accounts or threads; sharing
@@ -133,9 +131,10 @@ Environment: <named roots this record's paths resolve against, for example
 ## Growth
 
 The log grows by design; there is no separate cold archive and no automatic
-compaction. `history.md` is not used. If a log becomes unwieldy, prefer a new
-record for the same logical work with `Continues from` pointing here, which is
-already the sanctioned cross-record mechanism.
+compaction. `history.md` is not used. A handoff to a new conversation may create
+that conversation's record with `Continues from` pointing here. A long log alone
+does not justify duplicate records in the same conversation; keep appending
+and use a bounded continuation brief for a specifically scoped handoff.
 
 In-place consolidation of redundant narration happens only on an explicit
 researcher request: never on a schedule, and never automatically. There is no
@@ -145,8 +144,9 @@ Consolidation must preserve every unresolved uncertainty, every negative or
 `INSUFFICIENT` result, every decision that is not explicitly superseded, and
 the original `Created at`. It may remove only superseded narration and resolved
 operational detail. After consolidating, append one entry stating what was
-removed and why. If a log is merely long rather than redundant, prefer a new
-record with `Continues from` over rewriting the old one.
+removed and why. If a log is merely long rather than redundant, retain it. At an actual handoff
+to a new conversation, use its own record with `Continues from` rather than
+rewriting the old one.
 
 ## Creation
 
