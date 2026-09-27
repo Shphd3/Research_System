@@ -131,7 +131,7 @@ H100官方高峰值表里存在采用稀疏性的数值，不能直接当稠密�
 
 目标定义为：
 
-$$L=L_{\mathrm{next\ token}}+\beta T^2\mathrm{KL}(p_T^{\mathrm{coarse}}\Vert p_S^{\mathrm{coarse}}).$$
+\[L=L_{\mathrm{next\ token}}+\beta T^2\mathrm{KL}(p_T^{\mathrm{coarse}}\Vert p_S^{\mathrm{coarse}}).\]
 
 “coarse”指最大16项各自保留，再把其余词表合成一个尾部类别。它不是完整词表KL，不能把教师最大项重新归一化后假装忽略的概率为零。温度T必须在生成缓存时确定，之后不能用同一缓存随意改温度。`utils/distillation.py`实现该损失的参考计算。
 

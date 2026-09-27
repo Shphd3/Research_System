@@ -40,7 +40,7 @@
 | 断言类别 | 唯一来源 | 审计者应核 |
 |---|---|---|
 | 14 条件训练/留出 NLL、t0 值 | `analysis/points.json` | t0 是否真的唯一（dev 2.79651 / test 2.83464）；14/14 是否都下降；端点数是否与表一致 |
-| 方向位移 $D$、关系变化 $R$、$S$ | `analysis/metrics.csv`、`analysis/contrasts.csv` | 39 对照 × 21 时刻的规模、配对定义、是否把单个区间不跨零当成发现 |
+| 方向位移 \(D\)、关系变化 \(R\)、\(S\) | `analysis/metrics.csv`、`analysis/contrasts.csv` | 39 对照 × 21 时刻的规模、配对定义、是否把单个区间不跨零当成发现 |
 | 路由负载、原生 argmax 与实际路由的不一致 | `analysis/routing.csv` | 负载标准差 0.2372→0.3010；不一致率的定义（逐记录 vs 按来源加权是两个不同统计量，须看作者用哪个） |
 | 教师覆盖 | `analysis/teacher_coverage_metrics.csv` | high28 在 dev/test 面板的覆盖量（34/1480、36/1481）；`MISSING_SOURCE_SUPPORT` 不等于效果为零 |
 | 长度敏感性 | `analysis/length_sensitivity.csv` | 主结论是否对长度分层稳健 |

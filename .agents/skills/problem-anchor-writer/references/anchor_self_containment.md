@@ -67,7 +67,7 @@ Retain at most three physical priors, preferably one. Section 4 distinguishes
 assumptions, derived results, empirical propositions and intuition; each equation
 must map to a prior, concrete computation and experiment/analysis artifact.
 Section 6 states metric, threshold, separated rival, allowed claim and boundary.
-Every linked artifact must exist. Inline formulas use `$...$`, displays `$$...$$`.
+Every linked artifact must exist. Inline formulas use `\(...\)`, displays `\[...\]`.
 Canonical English and `_cn.md` companions preserve the same question, model,
 metric, thresholds, boundary and next decision unless the user chooses otherwise.
 

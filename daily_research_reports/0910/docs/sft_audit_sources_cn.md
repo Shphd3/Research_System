@@ -31,7 +31,7 @@
 | [snapshot train.py](/data/250010109/MoE_Router/experiments/20260909_online_sae_gmm_regularized_router_decay/runs/full-20260909T020300Z/source/train.py) | 优化器只含shared/expert和router两组；保存仅adapter；直接加载旧task-only起点与日程 | 复用身份、样本和损失口径；优化器、日程、裁剪、冻结断言、checkpoint必须一起改 |
 | [本地Qwen实现](/data/250010109/dependency_packages/hf_transformers_qwen3/transformers/models/qwen3/modeling_qwen3.py) | 最后attention后残差→post_attention_layernorm→MLP→残差→模型最终norm | 支撑h、b、v的取点定义；还须锁定实际运行所导入的transformers路径/版本 |
 
-每个低秩分支的参数数为 $2\times1024\times16=32768$；九个分支加 $1024\times8+8$ 的router共303,112。attention投影为 $1024(2048+1024+1024)+2048\times1024=6,291,456$，再加两个长度128的归一化权重，共6,291,712；本次还从实际model.safetensors文件头逐张量形状核验了该数。执行时仍须用参数白名单验证真正被优化的成员。
+每个低秩分支的参数数为 \(2\times1024\times16=32768\)；九个分支加 \(1024\times8+8\) 的router共303,112。attention投影为 \(1024(2048+1024+1024)+2048\times1024=6,291,456\)，再加两个长度128的归一化权重，共6,291,712；本次还从实际model.safetensors文件头逐张量形状核验了该数。执行时仍须用参数白名单验证真正被优化的成员。
 
 ## 3. 可重放的旧检查点与数据
 

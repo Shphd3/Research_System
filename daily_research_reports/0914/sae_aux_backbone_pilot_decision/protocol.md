@@ -21,7 +21,7 @@ separately authorized and may run.
 | Treatment | Fresh serial SAE-mediated T with the same AuxK and live sampled main reconstruction input. |
 | Unique difference | `model.aux_backbone_grad: false -> true` plus the condition label. |
 | Held fixed | Full initial tensor state, forward path, architecture, data/order, RNG construction, objective coefficients and denominators, AdamW, schedules, global batch, DDP, clipping, checkpoints, panel and analysis. |
-| Primary metric | At 268,435,456 valid prediction targets, T-minus-C macro-F1 from unit-normalized raw $h$ on the frozen M2D2 development rows, after fit-only regularization selection. |
+| Primary metric | At 268,435,456 valid prediction targets, T-minus-C macro-F1 from unit-normalized raw \(h\) on the frozen M2D2 development rows, after fit-only regularization selection. |
 | Cost metric | T-minus-C globally normalized held-out next-token NLL on the same fixed 1,048,576-target DCLM window. |
 | Approved execution ceiling | One forced four-H100 qualification, then C and T each at most 1024 updates. No 4096 continuation, alternate lambda, or additional seed. |
 | Pass / fail / insufficient | Engineering eligibility is PASS only if every identity, counter, replay, finite-scalar and artifact gate passes. Scientific direction is reported as positive, non-positive or insufficient; it does not itself approve 4096. |
@@ -33,7 +33,7 @@ The superseded no-AuxK coefficient-0.1 draft is preserved read-only at
 
 ## 1. Definitions
 
-The raw representation $h$ is the final Transformer's post-attention-residual,
+The raw representation \(h\) is the final Transformer's post-attention-residual,
 post-`norm2`, pre-SAE 1024-vector. The serial forward path is
 
 ```text
@@ -50,7 +50,7 @@ have not fired within the natural activity window.
 State: `BLOCKED` only on stable ownership. The local uncertainty, rival and
 claim boundary are researcher-confirmed by the current instruction.
 
-The tested local hypothesis is that the T gradient connection changes raw $h$
+The tested local hypothesis is that the T gradient connection changes raw \(h\)
 domain readability relative to an otherwise matched serial-SAE control. The
 strongest rival is that an observed difference comes from unmatched AuxK,
 initial state, data/RNG, optimization, forward architecture or measurement.
@@ -97,7 +97,7 @@ State: `CONFIRMED`.
 
 Both arms use 8 blocks, hidden size 1024, intermediate size 3072, 16 query and
 8 KV heads, head dimension 128, tied input/output embeddings, random seed 17,
-and a width-30,000 nonnegative TopK SAE with $k=32$. Both use the identical
+and a width-30,000 nonnegative TopK SAE with \(k=32\). Both use the identical
 serial forward path. No native no-SAE arm, Router, MoE, sidecar, resampling,
 pretrained warm start or third condition is introduced.
 
@@ -109,25 +109,25 @@ or common random seed alone is not sufficient evidence.
 
 State: `CONFIRMED`.
 
-For sampled state $h_i$ and SAE $A$,
+For sampled state \(h_i\) and SAE \(A\),
 
-$$
+\[
 r_i = \frac{\|A(x_i)-\operatorname{sg}(h_i)\|_2^2}
 {\max(\|\operatorname{sg}(h_i)\|_2^2,1024\times10^{-4})},
 \quad x_i=\operatorname{sg}(h_i)\;\text{in C},\;x_i=h_i\;\text{in T}.
-$$
+\]
 
 For the natural dead set, AuxK uses the largest 256 eligible encoder values to
 reconstruct the detached main residual. Its branch input and target are
 detached, so AuxK directly owns only SAE gradients. With global valid LM count
-$N$ and sampled SAE count $M$,
+\(N\) and sampled SAE count \(M\),
 
-$$
+\[
 L = \frac{\sum\ell_{LM}}{N} + \frac{\sum r_i}{M}
   + \frac{1}{32}\frac{\sum a_i}{M}.
-$$
+\]
 
-Natural deadness means no selected main TopK value above $10^{-3}$ during more
+Natural deadness means no selected main TopK value above \(10^{-3}\) during more
 than 10,000,000 globally sampled SAE positions. At 1024 updates each arm sees
 33,554,432 sampled positions. The forced qualification never persists its
 call-local dead mask into either training config or checkpoint lineage.
@@ -148,22 +148,22 @@ exactly `condition` and `model.aux_backbone_grad`. The primary coordinate is
 cumulative valid prediction targets; update is eligible as a secondary axis
 because tokens/update is identical.
 
-At exactly 1024 updates, unit-normalize raw $h$. Select logistic-regression
-$C\in\{0.01,0.1,1,10\}$ by 5-fold stratified macro-F1 on fit rows only, refit on
+At exactly 1024 updates, unit-normalize raw \(h\). Select logistic-regression
+\(C\in\{0.01,0.1,1,10\}\) by 5-fold stratified macro-F1 on fit rows only, refit on
 all fit rows and report macro-F1 on development rows. Report T-minus-C in
 percentage points. Report held-out NLL T-minus-C in nats/valid target.
 
 SAE reconstruction, training activity, natural dead count, fixed-panel feature
 coverage and domain selectivity are separate explanatory columns. Training
-activity counts and fixed-panel coverage must never be conflated. Raw $h$ is
+activity counts and fixed-panel coverage must never be conflated. Raw \(h\) is
 the primary representation result; reconstructed and sparse views cannot rescue
-a non-positive raw-$h$ result.
+a non-positive raw-\(h\) result.
 
 Typed endpoint branches:
 
-- positive direction: eligible raw-$h$ T-minus-C macro-F1 $>0$;
-- non-positive direction: eligible difference $\leq0$;
-- joint degradation flag: raw-$h$ difference $\leq0$ and T-minus-C NLL $>0$;
+- positive direction: eligible raw-\(h\) T-minus-C macro-F1 \(>0\);
+- non-positive direction: eligible difference \(\leq0\);
+- joint degradation flag: raw-\(h\) difference \(\leq0\) and T-minus-C NLL \(>0\);
 - insufficient: any identity, data, replay, coordinate, artifact or fitting
   gate fails.
 

@@ -44,7 +44,7 @@
 - 模型：M0 Dense；M1 最后层串联 SAE、重构输入 detach、无 AuxK；M2 live 重构输入、SAE-only AuxK。
 - checkpoint：每模型 0/0.5/1/3/5/10B，共 18 个。
 - 数据：冻结 P 360 句；学术 M2D2 N 1200 行，仅作开发复核；两者不合并标签或冒充未触碰确认集。
-- 表征：最后块 `norm2` 后 raw-$h$；实际 MLP 输入 $\hat h$；M1/M2 的 SAE Top-k 稀疏码。
+- 表征：最后块 `norm2` 后 raw-\(h\)；实际 MLP 输入 \(\hat h\)；M1/M2 的 SAE Top-k 稀疏码。
 - M2−M1 只解释为 live+AuxK 组合差，不解释为纯 detach 或纯 AuxK 因果效应。
 - 不追加种子、checkpoint、数据、模型或新训练。
 
@@ -53,8 +53,8 @@
 **AI 建议全部批准，不能挑有利分支替代：**
 
 1. S2：三个来源严格加载；hook 读点；0B/5B 旧缓存桥接；0B/10B 小前向；10B FP32 分目标梯度；显存与 probe 实测计时。
-2. S3：18 点 P/N 前向、raw-$h$、$\hat h$、SAE Top-k、健康指标和每点 4×8 行梯度。
-3. S4 Part A：原空间领域 probe、固定 $h\rightarrow\hat h$ 迁移、余弦关系、Fisher、稀疏读出/重合、词面参照。
+2. S3：18 点 P/N 前向、raw-\(h\)、\(\hat h\)、SAE Top-k、健康指标和每点 4×8 行梯度。
+3. S4 Part A：原空间领域 probe、固定 \(h\rightarrow\hat h\) 迁移、余弦关系、Fisher、稀疏读出/重合、词面参照。
 4. S5 Part B：中心化、未中心化矩阵去第一奇异方向、中心化后去第一奇异方向；A 与 B 独立保留。
 5. S6：逐样本预测、三模型配对差、5000 次分层配对 bootstrap、A/B 图表、完整性校验、执行回执和证据包。
 

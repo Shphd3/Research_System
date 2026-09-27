@@ -47,7 +47,7 @@ Do not reset scientific state because an audit found a proposed correction.
   zero-net-growth for readability rewrites. Do not add top-level sections.
 - Preserve English canonical / `_cn.md` companion roles unless the user chooses
   otherwise; translations cannot change model, metrics, thresholds or judgment.
-  Use `$...$` and `$$...$$` for mathematics.
+  Use `\(...\)` and `\[...\]` for mathematics.
 
 Finish the requested audit or authorized edit and verify its links/consistency.
 If scientific judgment is missing, identify the exact blocked decision and

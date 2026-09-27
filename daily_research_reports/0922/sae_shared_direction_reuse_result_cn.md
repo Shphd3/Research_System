@@ -22,8 +22,8 @@ Verified: 2026-09-22T09:08:48.084508+00:00. No new scientific judgment or subseq
 ## 3. 分析方法
 
 1. **先保证对应测试。** 比较训练到同一21B有效预测token位置的两个冻结模型：S7是仅末层旁路SAE、重加权续训的分支；SALL是原版八层旁路SAE分支。二者使用相同192条N8记录、每条256个正文token、第8层、30,000个原子、每词元32个入选原子。原生注意力写入指输出投影之后、加残差之前的向量，不是SAE重构。四个提取worker均合格；没有训练、标签参与或样本剔除。**SALL不是无SAE的Dense基线，两模型也不是只改变正则强度的匹配对照。**
-2. **再测跨样本“用的是不是同一批原子”。** 对每条记录统计原子占全部入选槽位的频率：$u_{ij}=\sum_t1[j\in S_{it}]/(256\times32)$。对同模型不同记录的频率向量取平均余弦相似度$R$；越高表示使用分布越相似，不表示语义越相似。主对比为$\Delta R=R_{S7}-R_{SALL}$。以同一记录ID配对、有放回重采样2,000次，种子20260922，计算百分位95%区间；不是把相关的样本对或词元当独立重复。原子ID只在各自模型内比较，不跨模型对齐编号。
-3. **最后联合判断复用和低维。** 同次前向、相同正文token均值得到每条记录的原生表征；中心化协方差$\Sigma$的有效维数为$d_{eff}=(\mathrm{tr}\Sigma)^2/\mathrm{tr}(\Sigma^2)$，意为方差分布相当于多少个等权方向，不是语义概念数。预注册判据：测量合格、S7维数更低且$\Delta R$区间下界大于0才通过必要条件检查；维数更低但区间上界不大于0则不通过；区间跨0或维数条件不成立则证据不足。事后独立CPU重算复用、维数和全部bootstrap，均复现，并核验22份产物哈希；该检查不改变判据。
+2. **再测跨样本“用的是不是同一批原子”。** 对每条记录统计原子占全部入选槽位的频率：\(u_{ij}=\sum_t1[j\in S_{it}]/(256\times32)\)。对同模型不同记录的频率向量取平均余弦相似度\(R\)；越高表示使用分布越相似，不表示语义越相似。主对比为\(\Delta R=R_{S7}-R_{SALL}\)。以同一记录ID配对、有放回重采样2,000次，种子20260922，计算百分位95%区间；不是把相关的样本对或词元当独立重复。原子ID只在各自模型内比较，不跨模型对齐编号。
+3. **最后联合判断复用和低维。** 同次前向、相同正文token均值得到每条记录的原生表征；中心化协方差\(\Sigma\)的有效维数为\(d_{eff}=(\mathrm{tr}\Sigma)^2/\mathrm{tr}(\Sigma^2)\)，意为方差分布相当于多少个等权方向，不是语义概念数。预注册判据：测量合格、S7维数更低且\(\Delta R\)区间下界大于0才通过必要条件检查；维数更低但区间上界不大于0则不通过；区间跨0或维数条件不成立则证据不足。事后独立CPU重算复用、维数和全部bootstrap，均复现，并核验22份产物哈希；该检查不改变判据。
 
 ## 4. 结论
 
@@ -31,10 +31,10 @@ Verified: 2026-09-22T09:08:48.084508+00:00. No new scientific judgment or subseq
 
 | 测量 | SALL | S7 |
 |---|---:|---:|
-| 跨样本使用频率平均余弦$R$ | 0.512117 | 0.597905 |
+| 跨样本使用频率平均余弦\(R\) | 0.512117 | 0.597905 |
 | 同面板原生有效维数 | 17.160447 | 14.486918 |
 
-**$\Delta R=+0.085788$，95%区间$[0.072687,\ 0.098599]$，整个区间大于0，且S7有效维数更低。因此按已批准规则，必要条件检查为PASS。** 数据源：[主结果表](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/tables/primary.csv)、[条件表](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/tables/conditions.csv)；[独立复算](/data/250010109/MoE_Router/experiments/20260922_sae_shared_direction_reuse_audit/runs/full_4x5090_20260922T074451Z/independent_audit.json)。这是冻结模型间的对比，不是观察同一个模型从17.16降到14.49的训练轨迹。维数排序是已注册点估计条件，本轮没有给维数差做置信区间，不能称其“统计显著下降”。
+**\(\Delta R=+0.085788\)，95%区间\([0.072687,\ 0.098599]\)，整个区间大于0，且S7有效维数更低。因此按已批准规则，必要条件检查为PASS。** 数据源：[主结果表](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/tables/primary.csv)、[条件表](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/tables/conditions.csv)；[独立复算](/data/250010109/MoE_Router/experiments/20260922_sae_shared_direction_reuse_audit/runs/full_4x5090_20260922T074451Z/independent_audit.json)。这是冻结模型间的对比，不是观察同一个模型从17.16降到14.49的训练轨迹。维数排序是已注册点估计条件，本轮没有给维数差做置信区间，不能称其“统计显著下降”。
 
 ![必要条件检验及集中度](figures/e01_reuse_necessary_condition.png)
 

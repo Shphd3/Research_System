@@ -32,46 +32,46 @@ representation geometry that makes top-1 routing naturally uniform.
 
 | Term | Plain meaning | Concrete computation | Why it matters | Cannot prove |
 | --- | --- | --- | --- | --- |
-| Expert usage frequency | Fraction of examples routed to each expert | $\widehat p_e=N^{-1}\sum_i 1\{a_i=e\}$ | Decides whether experts are used equally | Feature identity or utility |
-| Directional uniformity | Feature directions are evenly spread on the sphere | $z=(h-\mu)/\|h-\mu\|$ is close to $\mathrm{Unif}(\mathbb S^{d-1})$ | Direct token-side condition for equal-cell top-1 load | Natural language semantics |
+| Expert usage frequency | Fraction of examples routed to each expert | \(\widehat p_e=N^{-1}\sum_i 1\{a_i=e\}\) | Decides whether experts are used equally | Feature identity or utility |
+| Directional uniformity | Feature directions are evenly spread on the sphere | \(z=(h-\mu)/\|h-\mu\|\) is close to \(\mathrm{Unif}(\mathbb S^{d-1})\) | Direct token-side condition for equal-cell top-1 load | Natural language semantics |
 | Hidden spectral uniformity | Feature covariance has no dominant direction | condition number near 1, high effective rank | Second-order route toward directional uniformity in controlled settings | Expert usage by itself |
-| Geometric uniformization | Center, flatten, and normalize the representation | $z=C^{-1/2}(h-\mu)/\|C^{-1/2}(h-\mu)\|$ | Converts an elliptical toy feature distribution back toward the spherical routing model | A trained model will learn it spontaneously |
+| Geometric uniformization | Center, flatten, and normalize the representation | \(z=C^{-1/2}(h-\mu)/\|C^{-1/2}(h-\mu)\|\) | Converts an elliptical toy feature distribution back toward the spherical routing model | A trained model will learn it spontaneously |
 | Prototype spread | Expert centers are well distributed over feature directions | pairwise cosine / equal-measure cell behavior | Expert-side condition for top-1 load uniformity | Expert functional quality |
 | Balanced assignment | Capacity-constrained finite-batch routing | greedy capacity fill or exact assignment over expanded expert slots | Diagnostic control for forced usage uniformity | Natural top-1 geometry |
-| Spectral shrinkage | Controlled flattening of feature covariance | multiply eigenmode $i$ by $\lambda_i^{-\beta/2}$ | Toy proxy for spectral regularization | A trained model will learn this spontaneously |
+| Spectral shrinkage | Controlled flattening of feature covariance | multiply eigenmode \(i\) by \(\lambda_i^{-\beta/2}\) | Toy proxy for spectral regularization | A trained model will learn this spontaneously |
 
 ## 2. Theory-to-Experiment Map
 
 | Claim | Theoretical object | Experiment |
 | --- | --- | --- |
-| Uniform sphere + equal-measure cells gives uniform expected expert load | Spherical Voronoi partition in $d$ dimensions | E1 |
+| Uniform sphere + equal-measure cells gives uniform expected expert load | Spherical Voronoi partition in \(d\) dimensions | E1 |
 | Random prototypes are only balanced in expectation over initializations | Monte Carlo estimate of high-dimensional cell masses | E2 |
 | Expert singular directions are candidate prototypes, not a balance guarantee | Controlled expert matrices with prescribed principal directions | E3 |
-| Covariance isotropy is not directional uniformity | Four-axis distribution with covariance $I/2$ | E4 |
+| Covariance isotropy is not directional uniformity | Four-axis distribution with covariance \(I/2\) | E4 |
 | Spectral flattening can restore the spherical routing geometry in a toy setting | Centering, normalization, shrinkage, whitening | E5 |
 | Forced load balance is not a representation-geometric explanation | Capacity-constrained assignment / OT-style expanded slots | E6 control |
 
-## 3. E1: $d$-Dimensional Uniform Sphere And Prototype Geometry
+## 3. E1: \(d\)-Dimensional Uniform Sphere And Prototype Geometry
 
 Question: If token features are uniformly distributed on the high-dimensional
 sphere, does prototype geometry determine expert usage?
 
 Data:
 
-$$
+\[
 z_i \sim \mathrm{Unif}(\mathbb S^{d-1}).
-$$
+\]
 
 Full setting:
 
-- $N=100000$ examples;
-- $d\in\{64,128\}$;
-- $E\in\{4,8,16\}$;
+- \(N=100000\) examples;
+- \(d\in\{64,128\}\);
+- \(E\in\{4,8,16\}\);
 - 5 seeds.
 
 Prototype modes:
 
-1. `symmetric`: regular-simplex prototypes, padded to dimension $d$;
+1. `symmetric`: regular-simplex prototypes, padded to dimension \(d\);
 2. `random`: independent random unit prototypes;
 3. `clustered`: prototypes generated around one shared direction.
 
@@ -79,7 +79,7 @@ Primary metric: LoadCV.
 
 Pass: symmetric top-1 has low LoadCV; clustered top-1 has higher LoadCV.
 
-Allowed claim: under $d$-dimensional spherical feature geometry, prototype
+Allowed claim: under \(d\)-dimensional spherical feature geometry, prototype
 spread controls top-1 expert usage uniformity.
 
 ## 4. E2: High-Dimensional Random Prototype Geometry Floor
@@ -89,34 +89,34 @@ random prototype realization in high dimension?
 
 Construction:
 
-1. sample random expert prototypes $u_e\in\mathbb S^{d-1}$;
-2. estimate their true cell masses $p_e$ with a large Monte Carlo reference set;
-3. sample smaller routed batches to measure $\widehat p_e$.
+1. sample random expert prototypes \(u_e\in\mathbb S^{d-1}\);
+2. estimate their true cell masses \(p_e\) with a large Monte Carlo reference set;
+3. sample smaller routed batches to measure \(\widehat p_e\).
 
 Metrics:
 
-$$
+\[
 \mathrm{init\_error}=E\max_e |p_e-1/E|,
-$$
+\]
 
-$$
+\[
 \mathrm{sampling\_error}=E\max_e |\widehat p_e-p_e|,
-$$
+\]
 
-$$
+\[
 \mathrm{total\_error}=E\max_e |\widehat p_e-1/E|.
-$$
+\]
 
 Full setting:
 
 - reference samples: 100000;
-- $d\in\{16,64,128\}$;
-- $E\in\{4,8,16\}$;
-- routed batch sizes $N\in\{1000,10000,50000\}$;
+- \(d\in\{16,64,128\}\);
+- \(E\in\{4,8,16\}\);
+- routed batch sizes \(N\in\{1000,10000,50000\}\);
 - 5 seeds.
 
-Pass: sampling error decreases with $N$; initialization error does not depend on
-$N$; total error approaches the geometry floor.
+Pass: sampling error decreases with \(N\); initialization error does not depend on
+\(N\); total error approaches the geometry floor.
 
 Allowed claim: in high dimension, random prototype imbalance is a
 single-realization geometry effect, not merely finite-token noise.
@@ -128,14 +128,14 @@ and does spectral alignment alone guarantee uniform expert usage?
 
 Expert construction:
 
-$$
+\[
 W_e = \sigma_1 v_e a_e^\top + \sigma_0 \Xi_e,
-$$
+\]
 
-where $v_e$ is the prescribed input-side top direction, $a_e$ is a random unit
-vector, and $\Xi_e$ is small Gaussian noise.
+where \(v_e\) is the prescribed input-side top direction, \(a_e\) is a random unit
+vector, and \(\Xi_e\) is small Gaussian noise.
 
-Prototype modes for $v_e$:
+Prototype modes for \(v_e\):
 
 1. symmetric;
 2. random;
@@ -150,9 +150,9 @@ Router variants:
 
 Metrics:
 
-$$
+\[
 \lambda_e=\frac{\|r_e^\top W_e\|_2}{\|r_e\|_2\|W_e\|_2},
-$$
+\]
 
 plus LoadCV and max/min load ratio.
 
@@ -170,16 +170,16 @@ routing geometry?
 
 Construction:
 
-1. use equal mass on four axis points $(1,0),(0,1),(-1,0),(0,-1)$;
-2. route to three regular-simplex prototypes at $20^\circ$, $140^\circ$, and
-   $260^\circ$;
+1. use equal mass on four axis points \((1,0),(0,1),(-1,0),(0,-1)\);
+2. route to three regular-simplex prototypes at \(20^\circ\), \(140^\circ\), and
+   \(260^\circ\);
 3. compare covariance condition number with LoadCV.
 
 Full setting:
 
-- $N=40000$ repeated axis points;
-- $d=2$;
-- $E=3$;
+- \(N=40000\) repeated axis points;
+- \(d=2\);
+- \(E=3\);
 - deterministic single setting.
 
 Metrics:
@@ -202,34 +202,34 @@ back toward the spherical geometry required by the top-1 theorem?
 
 Data:
 
-Start from $z_i\sim\mathrm{Unif}(\mathbb S^{d-1})$ and form anisotropic
+Start from \(z_i\sim\mathrm{Unif}(\mathbb S^{d-1})\) and form anisotropic
 features:
 
-$$
+\[
 h_i=Dz_i,\qquad D=\mathrm{diag}(\alpha,1,\ldots,1).
-$$
+\]
 
 Sweep:
 
-$$
+\[
 \alpha\in\{1,2,5,10,20\}.
-$$
+\]
 
 Preprocessing variants:
 
 1. raw;
 2. centered;
 3. centered + row normalization;
-4. partial spectral shrinkage with $\beta=0.5$;
+4. partial spectral shrinkage with \(\beta=0.5\);
 5. whitening + row normalization.
 
 Spectral shrinkage uses:
 
-$$
+\[
 x_\beta=(h-\mu)U\Lambda^{-\beta/2}U^\top,
-$$
+\]
 
-where $U\Lambda U^\top$ is the empirical covariance eigendecomposition.
+where \(U\Lambda U^\top\) is the empirical covariance eigendecomposition.
 
 Metrics:
 
@@ -239,7 +239,7 @@ Metrics:
 
 Pass: raw anisotropy increases condition number and lowers effective rank;
 partial shrinkage improves both; whitening returns condition number near 1 and
-effective rank near $d$.
+effective rank near \(d\).
 
 Allowed claim: in the elliptical toy setting, explicit geometric
 uniformization can flatten the covariance spectrum and restore the downstream
@@ -259,9 +259,9 @@ Methods:
 
 Full setting:
 
-- $N=2048$;
-- $d=64$;
-- $E=8$;
+- \(N=2048\);
+- \(d=64\);
+- \(E=8\);
 - 5 seeds;
 - symmetric, random, and clustered prototypes.
 

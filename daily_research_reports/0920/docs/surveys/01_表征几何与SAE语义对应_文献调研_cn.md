@@ -45,15 +45,15 @@
 
 假设解码器是固定线性的：
 
-$$\hat h=b+Dz,\qquad D\in\mathbb R^{d\times M},\quad \|z\|_0\le K.$$
+\[\hat h=b+Dz,\qquad D\in\mathbb R^{d\times M},\quad \|z\|_0\le K.\]
 
 固定激活位置集合S后：
 
-$$\hat h\in b+\operatorname{span}(D_S),\qquad \operatorname{rank}(D_S)\le K.$$
+\[\hat h\in b+\operatorname{span}(D_S),\qquad \operatorname{rank}(D_S)\le K.\]
 
 允许集合随输入变化，得到：
 
-$$\hat h\in\bigcup_{|S|\le K}\left(b+\operatorname{span}(D_S)\right).$$
+\[\hat h\in\bigcup_{|S|\le K}\left(b+\operatorname{span}(D_S)\right).\]
 
 这是从模型定义直接得到的结论。即使K=1，输入也可以分别位于很多不同坐标轴上，整体线性张成空间远大于1维。因此“总体协方差有160个方向”不必与“每次只用32个原子”矛盾。
 
@@ -63,7 +63,7 @@ $$\hat h\in\bigcup_{|S|\le K}\left(b+\operatorname{span}(D_S)\right).$$
 
 当前约束在旁支，主网络使用的是h，而不是强制替换为hat h。写成：
 
-$$h=\hat h+e.$$
+\[h=\hat h+e.\]
 
 重构误差e可以保留其他信息；有限权重的正则也不要求误差严格为零。因此，真正需要问的是：**哪些信息被重构了，哪些留在误差里，它们是否影响任务？**
 
@@ -73,7 +73,7 @@ $$h=\hat h+e.$$
 
 不要先追问“语义真实维度到底是32还是160”，先测：
 
-$$K\longmapsto\{\text{重构失真、语义保留、误差中的可读信息、任务影响}\}.$$
+\[K\longmapsto\{\text{重构失真、语义保留、误差中的可读信息、任务影响}\}.\]
 
 分别训练K=16、32、64、128的离线观察器。Gao等人的研究指出，对只在一个K上训练的SAE直接改变推理K，甚至可能使重构误差非单调变化。因此仅修改已有SAE的Top-K开关，不能作为预算充分性的决定性检验。[R01]
 
@@ -123,7 +123,7 @@ CCGP源自对跨实验条件抽象表示的研究。[R11] 在本项目的具体�
 
 对相同样本得到表征距离矩阵：
 
-$$D^h_{ij}=1-\cos(h_i,h_j).$$
+\[D^h_{ij}=1-\cos(h_i,h_j).\]
 
 另外构造语义关系、模板、词汇重合、长度等候选距离矩阵。比较这些矩阵与表征距离的对应，观察语义是否解释了不同于模板的部分。[R15]
 
@@ -133,7 +133,7 @@ $$D^h_{ij}=1-\cos(h_i,h_j).$$
 
 全局参与比定义为：
 
-$$d_{\rm PR}=\frac{(\sum_i\lambda_i)^2}{\sum_i\lambda_i^2},$$
+\[d_{\rm PR}=\frac{(\sum_i\lambda_i)^2}{\sum_i\lambda_i^2},\]
 
 其中lambda是中心化协方差特征值。它度量方差分散在多少方向，不直接度量拓扑维度或语义数量。类内PR、总体PR和局部PR应分开；如果只看类均值的协方差，C个类别本来就至多有C−1个独立均值差方向。
 
@@ -193,7 +193,7 @@ P面板可预先探索簇数Q∈{4,8,16}；N面板Q∈{8,16,32}。这里Q是簇�
 
 先用字典方向相似性或响应关系提出分组，再分析组的部分重构：
 
-$$h_G=D_Gz_G.$$
+\[h_G=D_Gz_G.\]
 
 检查其方向、有效维度、与独立语义变量的关系，并与同样组大小、活跃频率、贡献范数的随机分组比较。Engels等的工作提供了字典分组—部分重构—多维结构分析的范例。[R03]
 

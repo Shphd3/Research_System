@@ -50,7 +50,7 @@ parent_node: <parent_problem>
 ## 1. Problem Definition
 
 1. broader question
-   $$\downarrow$$
+   \[\downarrow\]
 2. sharper question
    Used to clarify which parent question this sharper question belongs to.
 

@@ -49,11 +49,11 @@ G = g(X)           expert selected by a static router
 
 The controlled distribution is:
 
-$$
+\[
 F \sim \mathrm{Unif}(\{1,\ldots,K\}),
 \qquad
 X \mid F=k = \mu_k + \epsilon.
-$$
+\]
 
 Assumptions:
 
@@ -61,9 +61,9 @@ Assumptions:
 
 Each feature family appears with equal probability:
 
-$$
+\[
 \mathbb{P}(F=k)=1/K.
-$$
+\]
 
 This is the clean-case mass condition.
 
@@ -71,9 +71,9 @@ This is the clean-case mass condition.
 
 After centering and optional whitening, the aggregate representation is approximately isotropic:
 
-$$
+\[
 \operatorname{Cov}(\widetilde X) \approx I_d.
-$$
+\]
 
 This is the clean-case metric condition.  It removes global anisotropic directions but does not create feature identity.
 
@@ -107,19 +107,19 @@ Spectral isotropy is a global second-order condition.  It does not define which 
 
 Null anchor:
 
-$$
+\[
 X \sim \mathcal N(0,I_d),
 \qquad
 F \perp X,
 \qquad
 F \sim \mathrm{Unif}(\{1,\ldots,K\}).
-$$
+\]
 
-For any deterministic router $g(X)$,
+For any deterministic router \(g(X)\),
 
-$$
+\[
 I(g(X);F)=0.
-$$
+\]
 
 Thus no feature-specializing router can be recovered from \(X\). This proves that isotropy alone cannot be the causal source of good routing.
 

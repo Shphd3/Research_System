@@ -1,0 +1,714 @@
+{
+  "kind": "researcher_requested_collection_with_historical_reading_copies_and_new_canonical_experiment_records",
+  "created_utc": "2026-09-26T15:08:45.352651+00:00",
+  "processing_agent": "Codex",
+  "scope": "20260926 shared-update reasoning, prior structure/atom copies, controlled-direction theory and new experiment records",
+  "copy_policy": "Source scientific text preserved; provenance header added; Markdown local links rebased to reading copies when included, otherwise to existing owners. Existing date figures are reused through date-local relative paths. No raw arrays/logs/model files copied.",
+  "copies": [
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/01_route_and_knowledge_update.md",
+      "source_sha256": "cdc75a4f1a9515c0bddd09c2bbda13e9c0563240d749a870dbf788d186d6656d",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/01_route_and_knowledge_update.md",
+      "reading_copy_sha256": "a16a61983c95e9b3219aa9a5d26e289a8c8f61d294bfeff4ac23172b29a0bd54",
+      "link_rewrites": [
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/01_route_and_knowledge_update_cn.md",
+      "source_sha256": "5f1a1595c209dccdcbda6eb053b92651a4c973c5031dc2b2f60eb9f08f82a77b",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/01_route_and_knowledge_update_cn.md",
+      "reading_copy_sha256": "e7d2eeb2ed6f3573eb23aef564ea330d3daa8a76d69b870c517110901dc8e42d",
+      "link_rewrites": [
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/anchor.md",
+      "source_sha256": "53f628000ef2104938ce1bc6069384cc1fea26ecfa9500e66ef70b2fa016c7ea",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/anchor.md",
+      "reading_copy_sha256": "9cd0c4354fcc90fe71a8ed7fa45b38269fb58c43da4e9327271f0a50bf8a9825",
+      "link_rewrites": [
+        {
+          "before": "../structure_update/summary_cn.md",
+          "after": "../20260926_structure_update/summary_cn.md"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/detailed.md",
+      "source_sha256": "e9e7eb5fe355afa58367f6a1038ab1919280550bf37c9df63fa15797e7df66a6",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/detailed.md",
+      "reading_copy_sha256": "0f1ba9437942ed37da57cc1d3878b17d1ee4ec8932029844315fe11356de0b4f",
+      "link_rewrites": [
+        {
+          "before": "../structure_update/summary_cn.md",
+          "after": "../20260926_structure_update/summary_cn.md"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/protocol.md",
+      "source_sha256": "a69b458eff2ac9ffe12d45c98fb6d2a29a4d2d03d2640a061b3eaa9c9cac9775",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/protocol.md",
+      "reading_copy_sha256": "698cc44eb34faed8d84c760ca361d37900ebec2f6c8d1311ac16fe92bf06409d",
+      "link_rewrites": []
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/summary.md",
+      "source_sha256": "e0330aec980b7da6b6bf818352a70a5ff62e4c89d99aca2b3ee7cd2558e94db3",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/summary.md",
+      "reading_copy_sha256": "442b42e0fa3629e64f54a0a896710fb08a3f39e1f2eb16524e3abb5a40826804",
+      "link_rewrites": [
+        {
+          "before": "../../figures/atom_usage_portrait.png",
+          "after": "../../../figures/atom_usage_portrait.png"
+        },
+        {
+          "before": "../../figures/atom_contribution_concentration.png",
+          "after": "../../../figures/atom_contribution_concentration.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_statistics.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/static_statistics.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_profiles.npz",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_profiles.npz"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_manifest.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/static_manifest.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_results.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_results.json"
+        },
+        {
+          "before": "../../figures/atom_update_consequences.png",
+          "after": "../../../figures/atom_update_consequences.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/atom_mechanism/summary_cn.md",
+      "source_sha256": "5b081973c0761a2ac97d6ff18970c67a38fa1d797d2d37abcfeaa24f96ec20e8",
+      "reading_copy": "experiment_copies/20260926_atom_mechanism/summary_cn.md",
+      "reading_copy_sha256": "fa724cb844f1905627f1a06664c487b02966428ad551665f00afe354601a6939",
+      "link_rewrites": [
+        {
+          "before": "../../figures/atom_usage_portrait.png",
+          "after": "../../../figures/atom_usage_portrait.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_statistics.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/static_statistics.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_profiles.npz",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_profiles.npz"
+        },
+        {
+          "before": "../../figures/atom_contribution_concentration.png",
+          "after": "../../../figures/atom_contribution_concentration.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_findings.md",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/static_findings.md"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_results.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_results.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_source_target_contrasts.csv",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_source_target_contrasts.csv"
+        },
+        {
+          "before": "../../figures/atom_update_consequences.png",
+          "after": "../../../figures/atom_update_consequences.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/structure_update/detailed.md",
+      "source_sha256": "c0b0f72a2993ce0aecf94c59751a28e17748a1585d55a2b9a35c4864287e07f1",
+      "reading_copy": "experiment_copies/20260926_structure_update/detailed.md",
+      "reading_copy_sha256": "6238a08a2e2fd0f15ffa562b1707d95e7b840122e7252ffb7fcab88a57e0c6be",
+      "link_rewrites": [
+        {
+          "before": "../../focus_meeting_structure_update_cn.md",
+          "after": "../../background_copies/02_structure_update_meeting_figures_cn.md"
+        },
+        {
+          "before": "../../../0925/docs/sae_domain_activation/detailed.md",
+          "after": "../../../../0925/docs/sae_domain_activation/detailed.md"
+        },
+        {
+          "before": "../../../0925/docs/human_semantic_updates/anchor_cn.md",
+          "after": "../../../../0925/docs/human_semantic_updates/anchor_cn.md"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/analysis_contract.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/analysis_contract.json"
+        },
+        {
+          "before": "../../figures/a_common_axes_and_spectrum.png",
+          "after": "../../../figures/a_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "../../figures/u_common_axes_and_spectrum.png",
+          "after": "../../../figures/u_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "../../figures/same_panel_update_consequences.png",
+          "after": "../../../figures/same_panel_update_consequences.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/figure_manifest.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/figure_manifest.json"
+        },
+        {
+          "before": "../../figures/structure_update_manifest.json",
+          "after": "../../../figures/structure_update_manifest.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/complete.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/complete.json"
+        },
+        {
+          "before": "../../report_assets/collect_structure_update.py",
+          "after": "../../../report_assets/collect_structure_update.py"
+        },
+        {
+          "before": "../../report_assets/analyze_structure_update.py",
+          "after": "../../../report_assets/analyze_structure_update.py"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/raw_manifest.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/raw_manifest.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/validation.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/validation.json"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/structure_update/summary.md",
+      "source_sha256": "be3c23c2a68708a54d6c352d963a4fc68d7f462734e7f89dd162e3ada2771da7",
+      "reading_copy": "experiment_copies/20260926_structure_update/summary.md",
+      "reading_copy_sha256": "c72f195d88072d8759c4b11ace948571543eeb74f580842ece5f54f13aeeb911",
+      "link_rewrites": [
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/structure_results.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/structure_results.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv"
+        },
+        {
+          "before": "../../figures/a_common_axes_and_spectrum.png",
+          "after": "../../../figures/a_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "../../figures/u_common_axes_and_spectrum.png",
+          "after": "../../../figures/u_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "../../figures/same_panel_update_consequences.png",
+          "after": "../../../figures/same_panel_update_consequences.png"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/structure_update/summary_cn.md",
+      "source_sha256": "c28847f8a048743708b22f8cabfac8f0b51ca242f1e1269d0e4c04e356bd3c5d",
+      "reading_copy": "experiment_copies/20260926_structure_update/summary_cn.md",
+      "reading_copy_sha256": "9d623ba7563b722e19b835ecb923adb88c48100922f9432a3f4172836c576e9e",
+      "link_rewrites": [
+        {
+          "before": "../../01_思路纠偏与聊天计划_cn.md",
+          "after": "../../background_copies/01_reasoning_and_conversation_plan_cn.md"
+        },
+        {
+          "before": "../../focus_meeting_structure_update_cn.md",
+          "after": "../../background_copies/02_structure_update_meeting_figures_cn.md"
+        },
+        {
+          "before": "../../figures/a_common_axes_and_spectrum.png",
+          "after": "../../../figures/a_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/structure_results.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/structure_results.json"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/common_axes.npz",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/common_axes.npz"
+        },
+        {
+          "before": "../../figures/u_common_axes_and_spectrum.png",
+          "after": "../../../figures/u_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "../../figures/same_panel_update_consequences.png",
+          "after": "../../../figures/same_panel_update_consequences.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/update_results.json",
+          "after": "../../../../../../MoE_Router/experiments/20260926_structure_update_bridge/update_results.json"
+        }
+      ]
+    },
+    {
+      "source": "/root/.codex/attachments/8a24fa10-711d-4412-9a0d-07fb0a903094/0924-指导.md",
+      "source_sha256": "4174abc31b88c8f9fbc091c6f6c3cc2ddcead593cdb5146f4036588c62ca8aa9",
+      "reading_copy": "background_copies/0924_mentor_guidance.md",
+      "reading_copy_sha256": "1e90938be7093a072cbd9f4672b7173ea27a886743aee4ddc7b5d35c07e8a60f",
+      "link_rewrites": []
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/01_思路纠偏与聊天计划_cn.md",
+      "source_sha256": "fedbd87068f6de8e23d1edaa5d385f8f39617d9a243165c73c5bcd6822bb491d",
+      "reading_copy": "background_copies/01_reasoning_and_conversation_plan_cn.md",
+      "reading_copy_sha256": "e395732103831c95bbba66e8c62546f55b43fe3ccb33b01e3dc63b928fc33c42",
+      "link_rewrites": [
+        {
+          "before": "docs/structure_update/summary_cn.md",
+          "after": "../experiment_copies/20260926_structure_update/summary_cn.md"
+        },
+        {
+          "before": "focus_meeting_structure_update_cn.md",
+          "after": "02_structure_update_meeting_figures_cn.md"
+        },
+        {
+          "before": "../../docs/research_reorganization_20260926_mapping_cn.md",
+          "after": "../../../../docs/research_reorganization_20260926_mapping_cn.md"
+        },
+        {
+          "before": "../../.research/memory/conversations/0920-sae表征空间审计/memory.md",
+          "after": "../../../../.research/memory/conversations/0920-sae表征空间审计/memory.md"
+        },
+        {
+          "before": "../../.research/memory/conversations/0921-表征分析/memory.md",
+          "after": "../../../../.research/memory/conversations/0921-表征分析/memory.md"
+        },
+        {
+          "before": "../../.research/memory/conversations/0922-sae-feature-analysis/memory.md",
+          "after": "../../../../.research/memory/conversations/0922-sae-feature-analysis/memory.md"
+        },
+        {
+          "before": "../../.research/memory/conversations/0923-sae-representation-analysis/memory.md",
+          "after": "../../../../.research/memory/conversations/0923-sae-representation-analysis/memory.md"
+        },
+        {
+          "before": "../../.research/memory/conversations/0924-共享参数干扰与数据可学性审计/memory.md",
+          "after": "../../../../.research/memory/conversations/0924-共享参数干扰与数据可学性审计/memory.md"
+        },
+        {
+          "before": "../../.research/memory/conversations/0924-共享参数干扰与数据可学性实验验证/memory.md",
+          "after": "../../../../.research/memory/conversations/0924-共享参数干扰与数据可学性实验验证/memory.md"
+        },
+        {
+          "before": "../0924/docs/analysis/dev_rollback_reading_cn.md",
+          "after": "../../../0924/docs/analysis/dev_rollback_reading_cn.md"
+        },
+        {
+          "before": "../0925/docs/human_semantic_updates/summary_cn.md",
+          "after": "../../../0925/docs/human_semantic_updates/summary_cn.md"
+        },
+        {
+          "before": "docs/structure_update/summary_cn.md",
+          "after": "../experiment_copies/20260926_structure_update/summary_cn.md"
+        },
+        {
+          "before": "../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md",
+          "after": "../../../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md"
+        },
+        {
+          "before": "../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary_cn.md",
+          "after": "../../../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary_cn.md"
+        },
+        {
+          "before": "../0925/docs/update_compatibility/detailed.md",
+          "after": "../../../0925/docs/update_compatibility/detailed.md"
+        },
+        {
+          "before": "../0925/docs/sae_domain_activation/summary_cn.md",
+          "after": "../../../0925/docs/sae_domain_activation/summary_cn.md"
+        },
+        {
+          "before": "docs/structure_update/summary_cn.md",
+          "after": "../experiment_copies/20260926_structure_update/summary_cn.md"
+        },
+        {
+          "before": "focus_meeting_structure_update_cn.md#3-为什么表征不同仍可能相互帮助",
+          "after": "02_structure_update_meeting_figures_cn.md#3-为什么表征不同仍可能相互帮助"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/focus_meeting_structure_update_cn.md",
+      "source_sha256": "2400eb2cbe4166e3cd2f1f917514d946cefb57a5e2ab01697bf4e83f2eab6de2",
+      "reading_copy": "background_copies/02_structure_update_meeting_figures_cn.md",
+      "reading_copy_sha256": "5db63b6585763ae42d7a64aef01932224fd7a2ae6a90ee1f90d422b18122d123",
+      "link_rewrites": [
+        {
+          "before": "docs/structure_update/summary_cn.md",
+          "after": "../experiment_copies/20260926_structure_update/summary_cn.md"
+        },
+        {
+          "before": "docs/structure_update/detailed.md",
+          "after": "../experiment_copies/20260926_structure_update/detailed.md"
+        },
+        {
+          "before": "01_思路纠偏与聊天计划_cn.md",
+          "after": "01_reasoning_and_conversation_plan_cn.md"
+        },
+        {
+          "before": "figures/a_common_axes_and_spectrum.png",
+          "after": "../../figures/a_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "figures/u_common_axes_and_spectrum.png",
+          "after": "../../figures/u_common_axes_and_spectrum.png"
+        },
+        {
+          "before": "figures/same_panel_update_consequences.png",
+          "after": "../../figures/same_panel_update_consequences.png"
+        },
+        {
+          "before": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv",
+          "after": "../../../../../MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv"
+        },
+        {
+          "before": "../0925/docs/human_semantic_updates/summary_cn.md",
+          "after": "../../../0925/docs/human_semantic_updates/summary_cn.md"
+        }
+      ]
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/resources/01_reasoning_audit_and_alignment.md",
+      "source_sha256": "baa39695870cd867810c8a5f169e35d32abc9f61572828bd5d7d95aa8a0aad10",
+      "reading_copy": "background_copies/03_prior_reasoning_audit.md",
+      "reading_copy_sha256": "3b204a34eda2b6fb379bab65c7da4f93a43e555962e77abb1035de92d7df4d2e",
+      "link_rewrites": []
+    },
+    {
+      "source": "/data/250010109/Research_System/daily_research_reports/0926/docs/resources/02_next_meeting_figure_and_mechanism_draft.md",
+      "source_sha256": "50316f363029a9edc66d8c166787a78703cfe6b5c517723e6ae1e7c8c0b7b7f0",
+      "reading_copy": "background_copies/04_prior_figure_and_mechanism_draft.md",
+      "reading_copy_sha256": "24b9547b96695618b7761bd8d9718d8b8af922670c36de73291d99e1b1943b76",
+      "link_rewrites": []
+    }
+  ],
+  "original_documents": [
+    {
+      "path": "00_reading_guide_cn.md",
+      "sha256": "0487522412aad2a5d543b620b867304dc3e4c3f2ac34767a8ad23cf510812cd9",
+      "role": "reasoning/navigation; theory is also an archived pre-readout derivation"
+    },
+    {
+      "path": "01_mechanism_analysis_cn.md",
+      "sha256": "be0a437b78c5baac431bc7c63090f2f6f694e892bfcfe1162e40b97edee59c6c",
+      "role": "reasoning/navigation; theory is also an archived pre-readout derivation"
+    },
+    {
+      "path": "02_core_question_and_mechanism_cn.md",
+      "sha256": "7ba1a096bfcd0509d3014ad3ca09a79df8a8e70f5d91384092f801b580537870",
+      "role": "reasoning/navigation; theory is also an archived pre-readout derivation"
+    },
+    {
+      "path": "03_theory_derivation_cn.md",
+      "sha256": "b8197730ade5289ee19ab77fa8326d1f747337ea8159433b413b79abdcac8e21",
+      "role": "reasoning/navigation; theory is also an archived pre-readout derivation"
+    },
+    {
+      "path": "experiment_copies/future/README_cn.md",
+      "sha256": "e05bcbabd8d540aecaf4db0518b93ef3239ab400182415237312de8fc7062ddf",
+      "role": "copy-placement guidance"
+    }
+  ],
+  "external_local_references": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_supplementary_readout.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/atom_usage_portrait.png",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/atom_contribution_concentration.png",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_statistics.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_profiles.npz",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_results.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/atom_update_consequences.png",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/static_findings.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/mechanism_source_target_contrasts.csv",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/sae_domain_activation/detailed.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/human_semantic_updates/anchor_cn.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/analysis_contract.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/a_common_axes_and_spectrum.png",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/u_common_axes_and_spectrum.png",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/same_panel_update_consequences.png",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/figure_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/structure_update_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/complete.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/report_assets/collect_structure_update.py",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/report_assets/analyze_structure_update.py",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/raw_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/validation.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/structure_results.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/update_summary.csv",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/common_axes.npz",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_structure_update_bridge/update_results.json",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/docs/research_reorganization_20260926_mapping_cn.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0920-sae表征空间审计/memory.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0921-表征分析/memory.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0922-sae-feature-analysis/memory.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0923-sae-representation-analysis/memory.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0924-共享参数干扰与数据可学性审计/memory.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0924-共享参数干扰与数据可学性实验验证/memory.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0924/docs/analysis/dev_rollback_reading_cn.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/human_semantic_updates/summary_cn.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary_cn.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/update_compatibility/detailed.md",
+      "exists": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0925/docs/sae_domain_activation/summary_cn.md",
+      "exists": true
+    }
+  ],
+  "figures": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/atom_usage_portrait.png",
+      "sha256": "72666e63de83d11fc10fcfddd2a35adca3d1469be6bf007ba5d15655c10905ff",
+      "placement": "existing_date_reading_figure"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/atom_contribution_concentration.png",
+      "sha256": "761be67252e2035ae11b9ea4ebdfae78ea24fd1a80ffd48e97e0fbe4cb6a238c",
+      "placement": "existing_date_reading_figure"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/atom_update_consequences.png",
+      "sha256": "573f634ac2437ccaa5f7d23d33137c346c375ed011d86e4e46417b15c01fb38d",
+      "placement": "existing_date_reading_figure"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/a_common_axes_and_spectrum.png",
+      "sha256": "4ebf92e416afdf85d21565fd53cce7599046a243aa2c5f61d9b0686cfca416d5",
+      "placement": "existing_date_reading_figure"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/u_common_axes_and_spectrum.png",
+      "sha256": "1091fb7ebddc1c680141e53a8fb0e88aa3739ee1a4ddb20c03b255129bb1dedb",
+      "placement": "existing_date_reading_figure"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/same_panel_update_consequences.png",
+      "sha256": "b5ebea647d6cc47b00e48996639946dc92502873679a35ea83915858f7de8a0b",
+      "placement": "existing_date_reading_figure"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/directional_conflict_key_result.pdf",
+      "sha256": "ceb15b4d09e5e012e931262dbcf3b6539ec8024c09f17f60602e9822bcc528c5",
+      "placement": "date_local_reading_copy",
+      "origin": "/data/250010109/MoE_Router/experiments/20260926_direction_conflict/figures/directional_conflict_key_result.pdf"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/directional_conflict_key_result.png",
+      "sha256": "be3f3c876eeff37a77c003891298358f554c3b1a45a477460091704c5fcb42c8",
+      "placement": "date_local_reading_copy",
+      "origin": "/data/250010109/MoE_Router/experiments/20260926_direction_conflict/figures/directional_conflict_key_result.png"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/directional_conflict_mechanism.pdf",
+      "sha256": "8a77132d2d1f6ca6652a5fcda36b6c5055d294bcf4bfd139d15a810e1d0fba76",
+      "placement": "date_local_reading_copy",
+      "origin": "/data/250010109/MoE_Router/experiments/20260926_direction_conflict/figures/directional_conflict_mechanism.pdf"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/0926/figures/directional_conflict_mechanism.png",
+      "sha256": "85b7ce91996fab5be046bb0b7c7d67c41f67c7c107e35dd6eec8c2b4284b3318",
+      "placement": "date_local_reading_copy",
+      "origin": "/data/250010109/MoE_Router/experiments/20260926_direction_conflict/figures/directional_conflict_mechanism.png"
+    }
+  ],
+  "unresolved_links": [],
+  "verified_example_sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_sets.json",
+      "sha256": "90c61d1b803df6c0589849e036eefac332612075217ca125f16fbdb634d86b32"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260926_atom_mechanism/analysis/atom_profiles.npz",
+      "sha256": "f7d90cb5dffbc18fe0b0d21eac498ae06e1529841533a590723eba59b4c77fa7"
+    }
+  ],
+  "updated_utc": "2026-09-26T15:58:17.135302+00:00",
+  "canonical_new_experiment": {
+    "path": "experiments/20260926_direction_conflict",
+    "job_id": "pt-hef6bdtm",
+    "execution": "COMPLETE",
+    "verdict": "INSUFFICIENT_OR_HETEROGENEOUS",
+    "human_scientific_judgment": "Unknown",
+    "files": [
+      {
+        "path": "experiments/20260926_direction_conflict/anchor.md",
+        "sha256": "e8a628061a0b68e9abac4ecb4b2505414d8a9743c6d471d301500114ff8c6943"
+      },
+      {
+        "path": "experiments/20260926_direction_conflict/detailed.md",
+        "sha256": "41584040758dcc62a1b4ab9097e76fe091088bd94ff18b68839ff713d9cedbb6"
+      },
+      {
+        "path": "experiments/20260926_direction_conflict/protocol.md",
+        "sha256": "20c0e68bdb55902253c530987e81950ee42e3d0e90fb2c668316709b87bbee8f"
+      },
+      {
+        "path": "experiments/20260926_direction_conflict/summary.md",
+        "sha256": "ab0e412757cc5ad63bda83001d63eca3d9e45e688d5577a8eb309fee3092d9be"
+      },
+      {
+        "path": "experiments/20260926_direction_conflict/summary_cn.md",
+        "sha256": "912eb7b7f9369a58577d38db2215d5b74f21260039df83bddfa51695afcf751e"
+      }
+    ],
+    "registration": "/data/250010109/MoE_Router/experiments/20260926_direction_conflict/registration.json",
+    "artifact_manifest": "/data/250010109/MoE_Router/experiments/20260926_direction_conflict/analysis/artifact_manifest.json"
+  },
+  "verified_local_link_count": 209
+}

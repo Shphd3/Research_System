@@ -78,7 +78,7 @@ machine learning but has not seen this project.
   under intervention, end-task performance, and representation accessibility are
   different objects and may not substitute for one another.
 - No buzzwords, unexplained abbreviations, or private nicknames.
-- Mathematics uses `$...$` inline and `$$...$$` display.
+- Mathematics uses `\(...\)` inline and `\[...\]` display.
 
 ## Required Structure
 

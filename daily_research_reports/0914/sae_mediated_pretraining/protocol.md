@@ -30,14 +30,14 @@ that one seed establishes stable long-run behavior.
 
 ## 1. Model and gradient contract
 
-For pre-SAE state $h$ and SAE $A$,
+For pre-SAE state \(h\) and SAE \(A\),
 
-$$
+\[
 L=L_{LM}+L_R+\frac{1}{32}L_{AuxK}.
-$$
+\]
 
-$L_{LM}$ traverses the SAE.  $L_R$ uses live $h$ as encoder input and detached
-$h$ as target, so it updates the SAE and upstream LM.  AuxK uses a detached
+\(L_{LM}\) traverses the SAE.  \(L_R\) uses live \(h\) as encoder input and detached
+\(h\) as target, so it updates the SAE and upstream LM.  AuxK uses a detached
 input and detached main residual, so it updates only the SAE.  Targets and
 normalization denominators remain detached.  The architecture is 8 layers,
 hidden size 1024, FFN 3072, tied embeddings, and width-30,000 TopK-32 SAE.

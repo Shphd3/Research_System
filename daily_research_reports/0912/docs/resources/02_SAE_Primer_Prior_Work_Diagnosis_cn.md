@@ -23,8 +23,8 @@
 
 本包的实现是：
 
-$$
-u=W_e(h-b_d)+b_e,\qquad z=\operatorname{TopK}(\operatorname{ReLU}(\nu)),\qquad \hat h=Dz+b_d.$$
+\[
+u=W_e(h-b_d)+b_e,\qquad z=\operatorname{TopK}(\operatorname{ReLU}(\nu)),\qquad \hat h=Dz+b_d.\]
 
 这里，D∈R^{d×m}的每一列是一根可参与重构的方向，m>d称为过完备；z∈Rᵐ只有少量正数。保留最大k项的操作称为Top-K。先取非负激活再筛选，所以实际正激活数可以小于k，而不是强制每次恰好k个概念。
 
@@ -40,7 +40,7 @@ u=W_e(h-b_d)+b_e,\qquad z=\operatorname{TopK}(\operatorname{ReLU}(\nu)),\qquad \
 
 令g(j)表示第j个特征被分入哪一组，组分数为：
 
-$$a_{ig}=\sum_{j:g(j)=g}z_{ij},\qquad q_{ig}=a_{ig}/\max(\sum_j z_{ij},\varepsilon).$$
+\[a_{ig}=\sum_{j:g(j)=g}z_{ij},\qquad q_{ig}=a_{ig}/\max(\sum_j z_{ij},\varepsilon).\]
 
 未被分组的特征仍留在分母中，因此Σgqᵢg可能小于1；剩余质量就是未覆盖部分。不能删掉这些位置，再宣布分组非常清晰。
 

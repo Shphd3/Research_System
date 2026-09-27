@@ -7,8 +7,10 @@ logs, datasets and checkpoints belong in the execution workspace.
 
 - Converse in Chinese; canonical artifacts are English unless the researcher
   chooses otherwise, with `_cn.md` companions. Define essential terms in plain
-  Chinese; use `$...$` / `$$...$$`. Lead with the answer, boundary and needed
+  Chinese; use `\(...\)` / `\[...\]`. Lead with the answer, boundary and needed
   decision; favor precise prose over narration and decorative figures/tables.
+  Math formatting follows [docs/markdown_math.md](docs/markdown_math.md): Codex-first
+  delimiters, standalone display blocks, and unchanged literal code/currency.
 - Distinguish direct result, observation, interpretation, hypothesis, claim,
   speculation, limitation and decision; proposed/expected patterns are not evidence.
 - The researcher owns questions, priorities, mechanism judgments, uncertainty,

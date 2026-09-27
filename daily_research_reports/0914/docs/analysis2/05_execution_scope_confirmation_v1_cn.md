@@ -21,7 +21,7 @@
 ## 固定分析
 
 1. 在原始 1024 维空间计算粗领域、细领域和同命题关系的正例相似度、反例相似度及差值；按 family 做配对 bootstrap 区间。
-2. 对线上 SAE 计算激活集合 Jaccard、幅度加权 Jaccard、同命题重合 $S^+$、异命题重合 $S^-$ 和选择性差值 $G=S^+-S^-$；并列重构误差、正激活数、固定面板覆盖与激活频率。
+2. 对线上 SAE 计算激活集合 Jaccard、幅度加权 Jaccard、同命题重合 \(S^+\)、异命题重合 \(S^-\) 和选择性差值 \(G=S^+-S^-\)；并列重构误差、正激活数、固定面板覆盖与激活频率。
 3. 在 fit family 上为每个粗领域选择 6 个相对其他领域更强的 feature，在独立 confirmation family 上显示其领域富集；每个 checkpoint 独立选择，feature 编号不解释为跨时期稳定语义身份。
 4. 联合两臂四个主 checkpoint 的 confirmation 表征，无标签拟合 PCA、UMAP 和 t-SNE。降维图仅作描述；原空间关系量和 family-disjoint 线性读出用于检查信息是否存在于二维主轴之外。
 5. 对两个模型在 0.5B、1B、3B、5B 的原始表示趋势逐点作 token-aligned 对照；两臂差使用相同 family 的配对区间。

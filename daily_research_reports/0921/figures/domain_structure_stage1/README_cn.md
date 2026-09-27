@@ -16,6 +16,6 @@
 | `stage1_04_within_model_time_cka` | 同模型跨时间CKA矩阵 | 查看样本关系是否持续 |
 | `stage1_05_temporal_cka_profiles` | 相邻及相对21B的CKA曲线 | 提供时间关系的读图切面 |
 | `stage1_06_direction_stability` | 固定秩8/16/32主方向传递 | 区分关系稳定与坐标方向稳定 |
-| `stage1_07_observer_readout` | $a$、重构、误差的匹配秩读出 | 检查SAE观察器保留哪些可读信号 |
+| `stage1_07_observer_readout` | \(a\)、重构、误差的匹配秩读出 | 检查SAE观察器保留哪些可读信号 |
 
 边界：这些图只呈现事后缓存分析；不能单独证明语义质量、训练因果、模型实际使用或功能收益。

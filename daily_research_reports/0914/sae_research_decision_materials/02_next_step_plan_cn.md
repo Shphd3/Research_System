@@ -23,8 +23,8 @@
 
 设 SAE 重构函数为 A，sg 表示前向值不变但停止反向传播：
 
-$$x_C=\operatorname{sg}(h),\quad x_T=h,$$
-$$R=\frac{\|A(x)-\operatorname{sg}(h)\|_2^2}{\max(\|\operatorname{sg}(h)\|_2^2,1024\times10^{-4})},\qquad L=L_{LM}+0.1\,\operatorname{mean}(R).$$
+\[x_C=\operatorname{sg}(h),\quad x_T=h,\]
+\[R=\frac{\|A(x)-\operatorname{sg}(h)\|_2^2}{\max(\|\operatorname{sg}(h)\|_2^2,1024\times10^{-4})},\qquad L=L_{LM}+0.1\,\operatorname{mean}(R).\]
 
 两组 target 和分母都保持 sg。新梯度经过编码/重构路径进入主干。该目标可能促进可重构性，**没有保证领域更可分**；表示幅度变化与梯度冲突都需要实测。λ=0.1来自包内提案，不是已验证最优值；采用它必须同时修复当前只支持 λ=1 的配置/目标链路。
 

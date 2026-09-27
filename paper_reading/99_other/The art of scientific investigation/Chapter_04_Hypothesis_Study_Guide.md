@@ -154,7 +154,7 @@ Ehrlich 的化疗设想部分错误，但它组织了系统搜索，最后推动
 我当前应把数学建模理解为六步：
 
 1. **对象化**：研究对象是什么？例如 token、hidden state、router logit、expert choice、attention mass。
-2. **变量化**：哪些量代表对象状态？例如 $h_t$、expert id、feature identity、loss、attention top-k mass。
+2. **变量化**：哪些量代表对象状态？例如 \(h_t\)、expert id、feature identity、loss、attention top-k mass。
 3. **关系化**：变量之间被假设有什么关系？
 4. **竞争解释化**：还有哪些 rival explanations 能解释同一现象？
 5. **预测化**：不同解释分别预测什么可观测结果？
@@ -214,13 +214,13 @@ router / MoE / H-MoE bucket 没有比 random matched candidates 更好地恢复 
 
 ### 7.2 可建模对象
 
-- 查询位置的 hidden state：$h_t$
-- 候选 KV 的表示：$k_i, v_i$
-- dense attention mass：$a_{t,i}$
-- router logits：$r_t$
-- expert choice：$e_t$
-- feature identity 或 context relation：$z_t$
-- retrieval-relevant variable：$u_t$
+- 查询位置的 hidden state：\(h_t\)
+- 候选 KV 的表示：\(k_i, v_i\)
+- dense attention mass：\(a_{t,i}\)
+- router logits：\(r_t\)
+- expert choice：\(e_t\)
+- feature identity 或 context relation：\(z_t\)
+- retrieval-relevant variable：\(u_t\)
 
 ### 7.3 主假设示例
 

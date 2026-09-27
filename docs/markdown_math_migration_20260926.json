@@ -1,0 +1,148 @@
+{
+  "date": "2026-09-26",
+  "operation": "Markdown delimiter normalization only",
+  "target": "Codex chat and file preview; both sample renderings confirmed by researcher in this conversation",
+  "inline": "\\(...\\)",
+  "display": "\\[...\\]",
+  "by_repository": {
+    "system": {
+      "formula_documents": 116,
+      "inline_formulas": 2540,
+      "display_formulas": 334
+    },
+    "from": {
+      "formula_documents": 1062,
+      "inline_formulas": 22309,
+      "display_formulas": 3366
+    }
+  },
+  "formatting_rule_surfaces": [
+    {
+      "path": "AGENTS.md",
+      "before_sha256": "2ebe03ee863382fcf211864bc0e9f34b78082e548c885b1cbda95527f2e9cdd9",
+      "after_sha256": "6a1516d76a364fb263ea8da02f3df8433f40022b1ebf6fc3a9607ea93b2b20b0",
+      "kind": "formatting_rule"
+    },
+    {
+      "path": ".agents/skills/experiment-card-writer/SKILL.md",
+      "before_sha256": "ffb4a6fa68f8f4b5943ee0bd77d4b7e9c6a596cdb16f823e5fbd9efaa0b6fa65",
+      "after_sha256": "44bb8ae44d3674c183c399c9b27ae8fdd8546f309e30659d936e8f9a490510a0",
+      "kind": "formatting_rule"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/SKILL.md",
+      "before_sha256": "3439cb43ff6533c73287ef58b794048aadb2b2163a116c7a0f7ff1fc62266d47",
+      "after_sha256": "944c979656cca1db454169434b31acf126fa6d079e1835782daa6bd8d864a166",
+      "kind": "formatting_rule"
+    },
+    {
+      "path": ".agents/skills/research-final-report/SKILL.md",
+      "before_sha256": "759554f21afd0c7f1d367d75d1f45f594d176ce1195a7dabc735deec38c84934",
+      "after_sha256": "ce80bff96c72686549cb7491ba8c02e00db6da60a281bf797924f2ccb254cd9f",
+      "kind": "formatting_rule"
+    },
+    {
+      "path": ".agents/skills/scholar-mode/SKILL.md",
+      "before_sha256": "36e708f12220b81fe91ae885d4b4e5027fa142ee542d486e59e5cc961678e3c1",
+      "after_sha256": "33c35e7fd8baa2859901b4a3cf4facc06e2babe37282e04147bb8b8bc4062e51",
+      "kind": "formatting_rule"
+    },
+    {
+      "path": ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+      "before_sha256": "5fc4c756f6a8b093f61fb6c8b1230c8588c33cc5d0120d98a0a8c7fc48d553bb",
+      "after_sha256": "2a3e74bd0017b1f511cc213d9f697581af468d65ca61416718f0cb13311f0199",
+      "kind": "formatting_rule"
+    },
+    {
+      "path": "Projects/from-attention-to-search/.agents/skills/scholar-mode/SKILL.md",
+      "before_sha256": "bc064796863c27aff6dc28c87a3a2ba23fabc7d6d7533bdf36b50e1aca3ab0fa",
+      "after_sha256": "f4c5aac56d82cea50601dbe9b39d4e59956a555aed842fee28dcf80a636f496b",
+      "kind": "formatting_rule"
+    }
+  ],
+  "new_policy": "docs/markdown_math.md",
+  "manual_delimiter_repairs": [
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A05/A05_01_geometric_inhibition_center_separation/protocol_for_approval.md",
+      "delimiter_repairs": 4
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E01_common_residual_trajectory/protocol.md",
+      "delimiter_repairs": 2
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission/detailed.md",
+      "delimiter_repairs": 1
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E06_rank_specific_multirepresentation_shared_scaling/protocol.md",
+      "delimiter_repairs": 1
+    }
+  ],
+  "verification": {
+    "automatic_inverse_roundtrip": "PASS for every converted document; original formula bodies and all non-delimiter text recovered exactly",
+    "second_conversion_idempotent": "PASS for every converted document",
+    "unpaired_math_dollars_after_conversion": 0,
+    "protected_existing_files": {
+      "count": 1282,
+      "hash_check": "PASS"
+    },
+    "converter_behavior_cases": {
+      "count": 10,
+      "result": "PASS",
+      "coverage": [
+        "inline and display math",
+        "adjacent formulas",
+        "literal code and fenced shell",
+        "escaped currency and amounts",
+        "URL/link destinations",
+        "YAML frontmatter",
+        "existing LaTeX delimiters",
+        "idempotence"
+      ]
+    },
+    "skill_structure": {
+      "skills": 14,
+      "local_links": 48,
+      "result": "PASS"
+    },
+    "changed_skill_frontmatter": {
+      "count": 5,
+      "result": "PASS"
+    },
+    "current_entrypoints": {
+      "count": 47,
+      "issues": 0
+    },
+    "generated_payload_checks": {
+      "system": 0,
+      "from": 0
+    },
+    "active_rule_template_legacy_delimiter_instructions": 0,
+    "final_hash_recheck": "PASS",
+    "diff_check": "System clean; from preserves existing Markdown end-of-line whitespace on edited formula lines; no other diff-check issues.",
+    "staged_changes": 0
+  },
+  "provenance": {
+    "manifest": "/data/250010109/MoE_Router/tooling/markdown_math_migration/20260926/manifest.json",
+    "manifest_sha256": "0e4588eb797fa1c8dda19e1c2bf3cc0aea34150ca5996a828f0f9144a02f8310",
+    "backup_directory": "/data/250010109/MoE_Router/tooling/markdown_math_migration/20260926/before",
+    "migration_script": "/data/250010109/MoE_Router/tooling/markdown_math_migration/20260926/apply_math_migration.py",
+    "converter": "/data/250010109/MoE_Router/tooling/markdown_math_migration/20260926/normalize_markdown_math_candidate.py"
+  },
+  "excluded": "Named archive/backup/history/snapshot/chats paths, append-only conversation logs, other project repositories, historical execution subtree, untracked concurrent documents, and literal code/URLs/currency. No source snapshots or past provenance hashes overwritten.",
+  "known_existing_body_issues": {
+    "description": "Some older XingyuD notes contain Markdown heading fragments inside equation bodies. Bodies preserved; delimiter migration is not a mathematical rewrite or a full LaTeX syntax repair.",
+    "paths": [
+      "Projects/from-attention-to-search/XingyuD/docs/0524failureMode/H0528a_router_prior_decay_audit.md"
+    ],
+    "review_inventory": "/data/250010109/MoE_Router/tooling/markdown_math_migration/20260926/math_suspicious.json"
+  },
+  "compatibility": "MathJax supports these delimiters. GitHub documents different delimiter conventions; an exported reading copy may need adaptation. Codex sample confirmation is not a universal renderer guarantee.",
+  "git_commit_or_push": false,
+  "scientific_state_changed": false,
+  "sources": [
+    "https://docs.mathjax.org/en/latest/input/tex/delimiters.html",
+    "https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions"
+  ]
+}

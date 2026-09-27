@@ -40,7 +40,7 @@ Code source: `/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_
 
 The sidecar observes the last block's attention output `a`, after `attn.o` and before the residual addition. It does not modify the forward language-model path. The input of the adapted `blocks[7].down` is instead
 
-$$u=\operatorname{silu}(W_g\operatorname{norm2}(x+a))\odot W_{up}\operatorname{norm2}(x+a).$$
+\[u=\operatorname{silu}(W_g\operatorname{norm2}(x+a))\odot W_{up}\operatorname{norm2}(x+a).\]
 
 Here `a` has 1,024 coordinates, `u` has 3,072, and `down.weight` has shape 1,024×3,072. See the source's `attention_residual`, `mlp_input`, `finish_mlp`, and `forward_intermediates` methods. The native observer identity and captured pre-hook input were checked during extraction.
 

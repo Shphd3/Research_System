@@ -1,7 +1,7 @@
 # 共享学习何时互相拖累：冻结模型上的两组数据适配
 
 > 2026-09-24 修订；`DRAFT_FOR_REVIEW`，本轮实验 `NOT RUN`。本稿按研究者要求用中文。
-> 研究者已明确选择从零即以 $\lambda_{rec}=0.1$ 训练的 S7 及基础工程 Smoke，并要求将秩 16 的 A-only/B-only 升为正式曲线。其余新增判据仍为 **AI_PROPOSAL（AI 建议，待确认）**；正式父问题、稳定 problem_key 和 Focus 尚未确定。精确契约见 [Protocol](protocol.md)，通俗说明见 [阅读入口](README_cn.md)。
+> 研究者已明确选择从零即以 \(\lambda_{rec}=0.1\) 训练的 S7 及基础工程 Smoke，并要求将秩 16 的 A-only/B-only 升为正式曲线。其余新增判据仍为 **AI_PROPOSAL（AI 建议，待确认）**；正式父问题、稳定 problem_key 和 Focus 尚未确定。精确契约见 [Protocol](protocol.md)，通俗说明见 [阅读入口](README_cn.md)。
 
 ## 1. Problem Definition
 
@@ -39,23 +39,23 @@
 
 ## 4. Mathematical Model
 
-冻结主干，仅给最后一层前馈网络的下投影增加低秩适配（LoRA，用两个小矩阵的乘积表示权重变化）。设块输入为 $x$，原生注意力写入为 $a$，下投影的输入为 $u$，冻结权重为 $W_d$，唯一可训练矩阵为 $A_e,B_e$：
+冻结主干，仅给最后一层前馈网络的下投影增加低秩适配（LoRA，用两个小矩阵的乘积表示权重变化）。设块输入为 \(x\)，原生注意力写入为 \(a\)，下投影的输入为 \(u\)，冻结权重为 \(W_d\)，唯一可训练矩阵为 \(A_e,B_e\)：
 
-$$y=x+a+W_du+sB_eA_eu,\qquad z=\operatorname{Encoder}_{SAE}(a).$$
+\[y=x+a+W_du+sB_eA_eu,\qquad z=\operatorname{Encoder}_{SAE}(a).\]
 
-$e$ 由外部分组指定，共享条件只有一套矩阵；$s$ 为固定缩放。$A_e$ 的形状为 $r\times d_{in}$，$B_e$ 为 $d_{out}\times r$。每个秩 $r$ 分支有 $r(d_{in}+d_{out})$ 个参数。损失是正文下一个词元的负对数概率，按全局有效预测词元平均；没有 SAE、分类或路由辅助损失。
+\(e\) 由外部分组指定，共享条件只有一套矩阵；\(s\) 为固定缩放。\(A_e\) 的形状为 \(r\times d_{in}\)，\(B_e\) 为 \(d_{out}\times r\)。每个秩 \(r\) 分支有 \(r(d_{in}+d_{out})\) 个参数。损失是正文下一个词元的负对数概率，按全局有效预测词元平均；没有 SAE、分类或路由辅助损失。
 
-单组正式曲线 $O_d$ 使用与共享主对照相同的秩 16、同一组训练窗口与更新次序，每次更新只接收组 $d$ 的窗口。以本组累计有效词元 $n$ 对齐，$G_d(n)=L_{0,d}^{dev}-L_{O_d,d}^{dev}(n)$ 检查可学性；$G_d>0$ 不保证出现干扰，未改善也不能证明知识已经学完。
+单组正式曲线 \(O_d\) 使用与共享主对照相同的秩 16、同一组训练窗口与更新次序，每次更新只接收组 \(d\) 的窗口。以本组累计有效词元 \(n\) 对齐，\(G_d(n)=L_{0,d}^{dev}-L_{O_d,d}^{dev}(n)\) 检查可学性；\(G_d>0\) 不保证出现干扰，未改善也不能证明知识已经学完。
 
-共享拖累的领域读数为 $I_d(n)=L_{S16,d}(2n)-L_{O_d,d}(n)$。共享每步一半为 $d$，所以 $2n$ 总词元对应 $n$ 个本组词元；$I_d>0$ 表示该组在本次单组训练对照下共享确认损失更高，单位为 nats/token。它不能单独剥离批量和目标权重差异。
+共享拖累的领域读数为 \(I_d(n)=L_{S16,d}(2n)-L_{O_d,d}(n)\)。共享每步一半为 \(d\)，所以 \(2n\) 总词元对应 \(n\) 个本组词元；\(I_d>0\) 表示该组在本次单组训练对照下共享确认损失更高，单位为 nats/token。它不能单独剥离批量和目标权重差异。
 
 主指标是两组等权损失之差：
 
-$$\Delta L=\bar L_{S_{2r}}(N_{max})-\bar L_{D_r}(N_{max}),\qquad \bar L=\tfrac12(L_A+L_B).$$
+\[\Delta L=\bar L_{S_{2r}}(N_{max})-\bar L_{D_r}(N_{max}),\qquad \bar L=\tfrac12(L_A+L_B).\]
 
-$S_{2r}$ 为共享秩 $2r$，$D_r$ 为两个按组分配的秩 $r$ 专家；两者总可训练参数相同。$N_{max}$ 是新增有效预测词元预算。单位为 nats/token，即每个预测词元的自然对数损失；正值表示隔离的末端预测更好，不能直接换算速度倍数。
+\(S_{2r}\) 为共享秩 \(2r\)，\(D_r\) 为两个按组分配的秩 \(r\) 专家；两者总可训练参数相同。\(N_{max}\) 是新增有效预测词元预算。单位为 nats/token，即每个预测词元的自然对数损失；正值表示隔离的末端预测更好，不能直接换算速度倍数。
 
-局部读数为 $H_{A\to B}=L_B^{hold}(\phi+\Delta\phi_A)-L_B^{hold}(\phi)$。$\phi$ 是同一共享适配器状态，$\Delta\phi_A$ 为只接受 A 新梯度的虚拟更新。只有独立 A 改善且 B 受损，并通过动量／步长检查，才支持这一局部效应。$G,I,\Delta L,H$ 回答不同问题，不能互相代替。
+局部读数为 \(H_{A\to B}=L_B^{hold}(\phi+\Delta\phi_A)-L_B^{hold}(\phi)\)。\(\phi\) 是同一共享适配器状态，\(\Delta\phi_A\) 为只接受 A 新梯度的虚拟更新。只有独立 A 改善且 B 受损，并通过动量／步长检查，才支持这一局部效应。\(G,I,\Delta L,H\) 回答不同问题，不能互相代替。
 
 ## 5. Computational Realization
 
@@ -67,15 +67,15 @@ $S_{2r}$ 为共享秩 $2r$，$D_r$ 为两个按组分配的秩 $r$ 专家；两�
 
 所有路线都先按原始文档／题目家族及近重复簇分割，再切窗或分词。正式训练、开发、诊断更新、诊断读出、确认互不混用；正式确认不参与选数据。无法恢复旧测试使用历史的题目，不标作新的未见确认数据。基座历史预训练污染若不可核查，明确为未知。
 
-结构仍取末块下投影，因其位于 SAE 读点之后。同一输入、确定性冻结前向下，$a,z,u$ 不随本轮适配改变。所有训练在新建的增量与新优化器状态上开始，不继承旧任务的适配器。
+结构仍取末块下投影，因其位于 SAE 读点之后。同一输入、确定性冻结前向下，\(a,z,u\) 不随本轮适配改变。所有训练在新建的增量与新优化器状态上开始，不继承旧任务的适配器。
 
 | 条件 | 变化 | 排除或保留的解释 |
 |---|---|---|
 | A-only / B-only，秩 16 | 各自只学本组，正式曲线 | 可学性与同本组暴露量的共享拖累对照 |
-| 共享 $S_r$ | 一套秩 r | 与隔离每词元活跃秩相同，但总参数更少 |
-| 共享 $S_{2r}$ | 一套秩 2r | 总参数匹配的主对照 |
-| 按组 $D_r$ | 两套秩 r，按 A/B 分开 | 隔离处理 |
-| 混合 $R_r$ | 两套秩 r，每套都混学 A/B | 与 D 匹配参数、活跃秩和负载，检验分组是否有特殊价值 |
+| 共享 \(S_r\) | 一套秩 r | 与隔离每词元活跃秩相同，但总参数更少 |
+| 共享 \(S_{2r}\) | 一套秩 2r | 总参数匹配的主对照 |
+| 按组 \(D_r\) | 两套秩 r，按 A/B 分开 | 隔离处理 |
+| 混合 \(R_r\) | 两套秩 r，每套都混学 A/B | 与 D 匹配参数、活跃秩和负载，检验分组是否有特殊价值 |
 
 采用 LoRA 的低秩参数化，适配任务分组研究中“一个任务更新对另一个任务损失的影响”这一诊断思想；不继承其性能结论。[LoRA 原论文](https://arxiv.org/abs/2106.09685)、[任务分组原论文](https://arxiv.org/abs/2109.04617)。本地代码可复用加载、恢复和词元计数；需改写固定分组与回滚诊断，不复用旧 SAE 串联结构或旧可学习路由目标。
 
@@ -95,7 +95,7 @@ $S_{2r}$ 为共享秩 $2r$，$D_r$ 为两个按组分配的秩 $r$ 专家；两�
 
 本次只读核验建立了材料身份：
 
-- 研究者选定从训练开始即取 $\lambda_{rec}=0.1$ 的 S7；其 [21B manifest](/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_021000000000/manifest.json) 记 21,000,000,000 词元，4.1GB `state.pt` 的 SHA-256 已重新核对。本地 H100 单步检查和四卡 H100 [Smoke 审计](/data/250010109/MoE_Router/experiments/20260924_shared_interference_smoke/runs/smoke_h100_20260924T131529Z/smoke_verification.json) 均通过；它们只证明这一路径在合成数据上可运行。
+- 研究者选定从训练开始即取 \(\lambda_{rec}=0.1\) 的 S7；其 [21B manifest](/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_021000000000/manifest.json) 记 21,000,000,000 词元，4.1GB `state.pt` 的 SHA-256 已重新核对。本地 H100 单步检查和四卡 H100 [Smoke 审计](/data/250010109/MoE_Router/experiments/20260924_shared_interference_smoke/runs/smoke_h100_20260924T131529Z/smoke_verification.json) 均通过；它们只证明这一路径在合成数据上可运行。
 - 已检查原生旁路 [modeling_qwen3_sae.py](/data/250010109/MoE_Router/experiments/20260916_attention_output_sidecar_last_50b/dense_sae/model/modeling_qwen3_sae.py)：属性是 `blocks[7].down`，注意力读点在残差相加之前。执行时仍须核对所选检查点的实际源码快照、配置和张量形状。
 - 旧八来源与答案监督由 [旧 config.py](/data/250010109/MoE_Router/experiments/20260908_sae_h_input_balanced_router/config.py) 和 [data.py](/data/250010109/MoE_Router/experiments/20260908_sae_h_input_balanced_router/data.py) 核验。其来源、旧划分和模型差异见 [0910 来源审计](../../../0910/docs/sft_audit_sources_cn.md)；未据此推断本轮可学性。
 - [M2D2 官方数据卡](https://huggingface.co/datasets/machelreid/m2d2)列有数学、生物配置；[论文](https://aclanthology.org/2022.emnlp-main.63/)说明多领域语言建模用途，均不证明这对数据在本模型上互损。

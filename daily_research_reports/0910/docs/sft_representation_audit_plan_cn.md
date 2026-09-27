@@ -60,14 +60,14 @@
 
 设最后块输入x，注意力A，块内两个归一化N1/N2，原MLP为M。共同计算为：
 
-$$
+\[
 r=x+A(N_1(x)),\quad h=N_2(r),\quad
 p=\mathrm{softmax}(Wh+c),\quad k=\arg\max_e((Wh+c)_e+\beta_e),
-$$
-$$
+\]
+\[
 e_{\rm actual}=p_kE_k(h),\quad\delta=E_{\rm shared}(h)+e_{\rm actual},\quad
 b=r+M(h),\quad v=N_{\rm final}(b+\delta).
-$$
+\]
 
 系数p_k来自原生概率，不是平衡bias后的softmax。八专家、一个共享分支，各低秩16、缩放1/8；专家输出是1024维修正，不是完整最终hidden state。
 

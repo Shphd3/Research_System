@@ -57,7 +57,7 @@ requests their outputs; a result task does not reload Protocol-authoring guides.
   lineage, failures, run record and artifact manifest. Finalization requires
   the chosen contracts' checks, consistent repeated fields and valid links.
 - Canonical files are English unless the user chooses otherwise; companions
-  preserve all rules, values and boundaries. Use `$...$` / `$$...$$`.
+  preserve all rules, values and boundaries. Use `\(...\)` / `\[...\]`.
 
 With Summary, link it first in chat, then give the verdict, smallest decisive
 value, essential figure/read instruction, boundary and next-step rationale.

@@ -51,8 +51,8 @@ SAE还可能把一个宽泛概念拆成多个特征，把不同现象合在一�
 
 固定前缀集合P={pᵢ}。令θt为语言模型参数，φt为SAE参数，Gt为分组映射。定义：
 
-$$r_i^t=f_{\theta_t}(p_i),\qquad h_i^t=\operatorname{RMSNorm}(r_i^t),$$
-$$z_i^{t,s}=E_{\phi_s}(h_i^t),\qquad q_i^{t,s,u}=\operatorname{Group}_{G_u}(z_i^{t,s}).$$
+\[r_i^t=f_{\theta_t}(p_i),\qquad h_i^t=\operatorname{RMSNorm}(r_i^t),\]
+\[z_i^{t,s}=E_{\phi_s}(h_i^t),\qquad q_i^{t,s,u}=\operatorname{Group}_{G_u}(z_i^{t,s}).\]
 
 t、s、u分别控制“模型何时的表示”“哪一版SAE”“哪一版分组”。正常在线观察得到q^{t,t,t}，但只有这一条时间线不足以归因。
 

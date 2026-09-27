@@ -73,30 +73,30 @@ SAE 仍是 DCLM 训练的权重，不重新训练；只在目标混合数据上�
 令 x_bj = 1[片段 b 的至少一个真实位置满足 a_tj > 0]。
 B 是非空片段数，n_j = sum_b x_bj，p_j = n_j/B，p_ij = sum_b x_bi x_bj/B。
 
-$$\phi_{ij}=\frac{p_{ij}-p_ip_j}{\sqrt{p_i(1-p_i)p_j(1-p_j)}}.$$
+\[\phi_{ij}=\frac{p_{ij}-p_ip_j}{\sqrt{p_i(1-p_i)p_j(1-p_j)}}.\]
 
 保留 n_j >= 32 且 B-n_j >= 32 的特征。每行取最大的至多 50 个正关联，平局按特征编号，
 邻接矩阵为双向邻居并集，边权 max(phi_ij,0)，A_ii=0。每 128 行分块计算，避免常驻全稠密矩阵。
 孤立特征不参与标签，映射为 -1；有效特征不足或连通分量超过八个时停止，不强制桥接。
 
-$$D_{ii}=\sum_jA_{ij},\quad L=I-D^{-1/2}AD^{-1/2},\quad
-\min_{U^TU=I_8}\operatorname{tr}(U^TLU).$$
+\[D_{ii}=\sum_jA_{ij},\quad L=I-D^{-1/2}AD^{-1/2},\quad
+\min_{U^TU=I_8}\operatorname{tr}(U^TLU).\]
 
 取最小八个特征值的特征向量，对 U 每行归一化，再作八组 K-means：种子17、20次初始化。
 报告前九个特征值、间隔、组规模、有效特征覆盖率。八组是容量约束，不表示八个真实语义类别。
 
 ### 4.2 软监督与位置对齐
 
-$$s_{tk}=\sum_{j\in G_k}a_{tj},\qquad q_{tk}=s_{tk}/\sum_l s_{tl},\qquad
-p_t=\operatorname{softmax}(Wu_t+b).$$
+\[s_{tk}=\sum_{j\in G_k}a_{tj},\qquad q_{tk}=s_{tk}/\sum_l s_{tl},\qquad
+p_t=\operatorname{softmax}(Wu_t+b).\]
 
 组分数不除以组大小、不锐化、不强制均匀。无组激活则跳过监督并报告覆盖率。
 离线拟合只监督**用于预测答案的状态位置**：m_t = 1[labels_(t+1) != -100]，同时要求当前位置有效且教师覆盖。
 不能把 a_(t+1) 当作预测答案 y_(t+1) 的教师；它已经看到了目标词元，会泄漏。
 这一掩码与 v1 的全部256位置监督不同，必须新增回归测试。
 
-$$\mathcal L_R=\frac{\sum_t m_tD_{KL}(q_t\Vert p_t)}{\sum_t m_t}
-+\frac{\lambda_W}{2}\|W\|_F^2.$$
+\[\mathcal L_R=\frac{\sum_t m_tD_{KL}(q_t\Vert p_t)}{\sum_t m_t}
++\frac{\lambda_W}{2}\|W\|_F^2.\]
 
 Adam lr=0.001，自带weight_decay=0，仅W做显式正则；lambda=0/1e-5/1e-4/1e-3，
 最多20轮，验证KL三轮不改善停止，每批4096有效监督位置；四候选相同初始权重及数据顺序。
@@ -269,26 +269,26 @@ Research_System 只新增本方案；不修改 E16 SAE、E17/E18 图分析、P3/
 
 ## 4. 数学定义到函数的对应
 
-令 $u_t$ 为路由输入，$a_t=\operatorname{Top}_{32}^{+}(W_eu_t+b_e)$。
+令 \(u_t\) 为路由输入，\(a_t=\operatorname{Top}_{32}^{+}(W_eu_t+b_e)\)。
 只保存每词元 32 个索引和激活值，不缓存 30,000 维稠密激活。
 
 ### 4.1 共激活图与谱聚类：`graph.py`
 
-片段 $b$ 上特征 $j$ 是否出现：
+片段 \(b\) 上特征 \(j\) 是否出现：
 
-$$x_{bj}=\mathbf1[\max_{t\in b}a_{tj}>0].$$
+\[x_{bj}=\mathbf1[\max_{t\in b}a_{tj}>0].\]
 
-$$p_j=B^{-1}\sum_bx_{bj},\qquad p_{ij}=B^{-1}\sum_bx_{bi}x_{bj}.$$
+\[p_j=B^{-1}\sum_bx_{bj},\qquad p_{ij}=B^{-1}\sum_bx_{bi}x_{bj}.\]
 
-$$\phi_{ij}=\frac{p_{ij}-p_ip_j}{\sqrt{p_i(1-p_i)p_j(1-p_j)}}.$$
+\[\phi_{ij}=\frac{p_{ij}-p_ip_j}{\sqrt{p_i(1-p_i)p_j(1-p_j)}}.\]
 
 只保留至少 32 次出现和 32 次不出现的特征。每个特征选择最强的至多 50 条正关联，
-取双向邻居的并集形成对称矩阵 $A$，对角线为零。相同分数按特征编号打破平局。
+取双向邻居的并集形成对称矩阵 \(A\)，对角线为零。相同分数按特征编号打破平局。
 以 128 行为一块计算关联，避免常驻整个 30,000×30,000 稠密矩阵。
 
-$$L=I-D^{-1/2}AD^{-1/2},\qquad D_{ii}=\sum_jA_{ij}.$$
+\[L=I-D^{-1/2}AD^{-1/2},\qquad D_{ii}=\sum_jA_{ij}.\]
 
-$$\min_{U^TU=I_8}\operatorname{tr}(U^TLU).$$
+\[\min_{U^TU=I_8}\operatorname{tr}(U^TLU).\]
 
 取最小八个特征值的向量、按行归一化、聚为八组；固定种子 17、20 次初始化。
 小图使用精确稠密特征分解，大图使用稀疏求解。报告前九个特征值和第八/九个间隔。
@@ -298,7 +298,7 @@ $$\min_{U^TU=I_8}\operatorname{tr}(U^TLU).$$
 
 ### 4.2 教师：`teacher.py`
 
-$$s_{tk}=\sum_{j\in G_k}a_{tj},\qquad q_{tk}=s_{tk}/\sum_\ell s_{t\ell}.$$
+\[s_{tk}=\sum_{j\in G_k}a_{tj},\qquad q_{tk}=s_{tk}/\sum_\ell s_{t\ell}.\]
 
 分母为零的词元不参与离线监督，覆盖率必须报告。不做组大小校正、温度锐化、
 硬标签化或强制均匀负载。所有真实任务目标仍参与专家训练与任务评估。
@@ -306,11 +306,11 @@ $$s_{tk}=\sum_{j\in G_k}a_{tj},\qquad q_{tk}=s_{tk}/\sum_\ell s_{t\ell}.$$
 
 ### 4.3 路由与正则：`router.py`、`teacher.py`
 
-$$p_t=\operatorname{softmax}(Wu_t+b),\qquad
+\[p_t=\operatorname{softmax}(Wu_t+b),\qquad
 \mathcal L_R=N^{-1}\sum_{t\in\mathrm{covered}}D_{KL}(q_t\Vert p_t)
-+\frac{\lambda_W}{2}\|W\|_F^2.$$
++\frac{\lambda_W}{2}\|W\|_F^2.\]
 
-$N$ 是当前批次被覆盖的词元数。权重矩阵使用显式平方正则，偏置不惩罚。
+\(N\) 是当前批次被覆盖的词元数。权重矩阵使用显式平方正则，偏置不惩罚。
 Adam 学习率 0.001、自带 weight decay 为零，避免重复正则。
 正则候选为 `0 / 1e-5 / 1e-4 / 1e-3`；各候选从相同初始化、相同数据顺序开始。
 每批 4096 个词元，最多 20 轮，验证集 KL 连续三轮不改善则停止；保存最低验证 KL 的权重。
@@ -320,10 +320,10 @@ Adam 学习率 0.001、自带 weight decay 为零，避免重复正则。
 
 ### 4.4 专家训练：`model.py`、`train.py`
 
-$$e_t=\arg\max_kp_{tk},\qquad
-y_t=y_t^{\rm base}+S(v_t)+p_{t,e_t}E_{e_t}(v_t).$$
+\[e_t=\arg\max_kp_{tk},\qquad
+y_t=y_t^{\rm base}+S(v_t)+p_{t,e_t}E_{e_t}(v_t).\]
 
-$v_t$ 是 3072 维专家输入，$S$ 是共享适配器，$E_k$ 是第 $k$ 个专家。
+\(v_t\) 是 3072 维专家输入，\(S\) 是共享适配器，\(E_k\) 是第 \(k\) 个专家。
 采用原始选中概率作为系数，不把单个概率重新归一化为一。
 硬选择没有导数；任务驱动条件的路由梯度来自输出系数，因此只证明这条梯度路径有效，
 不等于对离散选择求得精确梯度。零输出初始化时最初一步路由梯度可能为零，
@@ -392,7 +392,7 @@ $v_t$ 是 3072 维专家输入，$S$ 是共享适配器，$E_k$ 是第 $k$ 个�
 固定模型后，对每个位置在全部测试记录之间置乱专家选择，精确保留该位置的专家使用数量，
 并原样保留各词元原系数。报告实际改变的路由比例，避免塌缩路由下“置乱”等于没改变。
 
-$$\Delta_{\rm route}=L_{\rm shuffled\ choice}-L_{\rm native\ choice}.$$
+\[\Delta_{\rm route}=L_{\rm shuffled\ choice}-L_{\rm native\ choice}.\]
 
 每个训练种子只做一次固定置乱；文档重采样区间不包含置乱种子的不确定性，结果只支持该干预。
 

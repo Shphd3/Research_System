@@ -34,7 +34,7 @@
 
 每个抽样位置的重构误差：
 
-$$R(h)=\frac{\operatorname{mean}_d[(A_\phi(g(h))-\operatorname{sg}(h))^2]}{\max(\operatorname{mean}_d[\operatorname{sg}(h)^2],10^{-4})},\quad g_C(h)=\operatorname{sg}(h),\quad g_T(h)=h. $$
+\[R(h)=\frac{\operatorname{mean}_d[(A_\phi(g(h))-\operatorname{sg}(h))^2]}{\max(\operatorname{mean}_d[\operatorname{sg}(h)^2],10^{-4})},\quad g_C(h)=\operatorname{sg}(h),\quad g_T(h)=h. \]
 
 总目标：有效预测位置平均的 LM 交叉熵 + 抽样位置平均的 R + 1/32 × 抽样位置平均的 AuxK。LM 与 SAE 使用各自的全局分母。本文的“正则”就是稀疏重构反馈，不是额外领域监督，不另加 L1、聚类标签或多尺度损失。
 

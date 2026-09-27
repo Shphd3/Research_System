@@ -56,16 +56,16 @@ optimizer update; log `progress/optimizer_step` against cumulative valid
 prediction tokens. This makes the mapping between the two coordinates explicit.
 
 Do not compare a per-rank mean with a global token-weighted mean. For language
-model loss at update $u$:
+model loss at update \(u\):
 
-$$
+\[
 L_{\mathrm{LM},u} =
 \frac{\sum_{r,m,t} \ell_{r,m,t}\,\mathbf{1}[y_{r,m,t}\neq\mathrm{ignore}]}
 {\sum_{r,m,t}\mathbf{1}[y_{r,m,t}\neq\mathrm{ignore}]}.
-$$
+\]
 
-The sums cover data-parallel ranks $r$, accumulation microbatches $m$, and
-valid prediction positions $t$. Count each example once: tensor- or
+The sums cover data-parallel ranks \(r\), accumulation microbatches \(m\), and
+valid prediction positions \(t\). Count each example once: tensor- or
 pipeline-parallel replicas do not create additional training tokens.
 
 On resume, restore both cumulative token count and optimizer update. Prevent
@@ -85,13 +85,13 @@ The optimizer update is a required secondary axis, but it is a valid primary
 comparison axis only when every compared run has exactly the same effective
 tokens per update throughout training. In the common fixed-length case:
 
-$$
+\[
 \text{tokens/update} =
 \text{microbatch sequences/GPU}
 \times \text{gradient accumulation}
 \times \text{data-parallel size}
 \times \text{valid prediction tokens/sequence}.
-$$
+\]
 
 For padded or packed batches, use the observed non-ignored target count rather
 than this nominal product.

@@ -6,8 +6,8 @@
 
 第l个解码块包含注意力、门控前馈层与两次残差相加。令最后一个完整块的残差输出为rᵢ，最终均方根归一化后的状态为hᵢ：
 
-$$r_i=\mathrm{Block}_{10}(\cdots\mathrm{Block}_{1}(\mathrm{Embed}(p))\cdots)_i,$$
-$$h_i=\mathrm{RMSNorm}_{final}(r_i),\quad \ell_i=W_Uh_i.$$
+\[r_i=\mathrm{Block}_{10}(\cdots\mathrm{Block}_{1}(\mathrm{Embed}(p))\cdots)_i,\]
+\[h_i=\mathrm{RMSNorm}_{final}(r_i),\quad \ell_i=W_Uh_i.\]
 
 W_U是输出词表映射，与输入嵌入共享权重。hᵢ预测下一个词元xᵢ₊₁。SAE读取hᵢ，不读取采样生成的词元嵌入，不读取整个答案的平均状态，也不把当前token的目标错放成xᵢ。
 
@@ -38,8 +38,8 @@ W_U是输出词表映射，与输入嵌入共享权重。hᵢ预测下一个词�
 
 用θ表示主干参数，φ表示SAE参数，sg表示停止梯度。本包SAE重构目标为：
 
-$$L_{SAE}=\frac1{|I|}\sum_{i\in I}\frac{\|D_\phi E_\phi(u_i)+b_\phi-\mathrm{sg}(h_i)\|_2^2/d}
-{\max(\mathrm{sg}(\|h_i\|_2^2/d),10^{-4})}.$$
+\[L_{SAE}=\frac1{|I|}\sum_{i\in I}\frac{\|D_\phi E_\phi(u_i)+b_\phi-\mathrm{sg}(h_i)\|_2^2/d}
+{\max(\mathrm{sg}(\|h_i\|_2^2/d),10^{-4})}.\]
 
 I是本次抽样的有效位置。分母与目标都停止梯度；这是本包的定义，并不声称所有SAE文献如此。
 
@@ -94,7 +94,7 @@ A保持旁路观察器；B仅打开辅助重构对主干的梯度。两者看到
 
 将选择的特征组系数置零得到z′，使用：
 
-$$h'=h+D(z'-z).$$
+\[h'=h+D(z'-z).\]
 
 这样保留原始重构残差h−ĥ。直接使用Dz′+b会同时删除原有重构误差，两种作用混在一起。代码`patch_feature_group`采用前一种。
 

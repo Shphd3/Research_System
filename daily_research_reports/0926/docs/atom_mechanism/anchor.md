@@ -14,9 +14,9 @@ H1: redirecting a source update away from a target domain's enriched-atom span p
 
 ## 4. Mathematical Model
 
-At the last attention output, $a=Wc$, where $c$ is the attention context and $W$ the output projection. A small update produces the exact local change $\Delta a=\Delta Wc$. All subsequent residual, normalization, gated MLP and prediction operations are retained. For a selected decoder span with orthonormal basis $Q$, remove $QQ^\top\Delta W$; for the primary comparison rescale the remainder to the original update's Frobenius norm. This changes update direction while matching total parameter-step size. It is a decoder-span intervention, not zeroing individual latent coefficients.
+At the last attention output, \(a=Wc\), where \(c\) is the attention context and \(W\) the output projection. A small update produces the exact local change \(\Delta a=\Delta Wc\). All subsequent residual, normalization, gated MLP and prediction operations are retained. For a selected decoder span with orthonormal basis \(Q\), remove \(QQ^\top\Delta W\); for the primary comparison rescale the remainder to the original update's Frobenius norm. This changes update direction while matching total parameter-step size. It is a decoder-span intervention, not zeroing individual latent coefficients.
 
-For source $s$, selected target span $b$, and readout domain $t$, let $R_{sbt}$ be redirected loss minus full-update loss, in nats per predicted token. Target selectivity is $R_{sbb}-\operatorname{mean}_{t\ne b}R_{sbt}$. The primary quantity $M$ subtracts the mean selectivity of three matched control spans, then averages the twelve $s\ne b$ pairs. A positive $M$ supports target-selective loss of benefit under redirection; it does not establish a universal interference law.
+For source \(s\), selected target span \(b\), and readout domain \(t\), let \(R_{sbt}\) be redirected loss minus full-update loss, in nats per predicted token. Target selectivity is \(R_{sbb}-\operatorname{mean}_{t\ne b}R_{sbt}\). The primary quantity \(M\) subtracts the mean selectivity of three matched control spans, then averages the twelve \(s\ne b\) pairs. A positive \(M\) supports target-selective loss of benefit under redirection; it does not establish a universal interference law.
 
 ## 5. Computational Realization
 
@@ -24,7 +24,7 @@ Reuse the frozen fresh-S7 exact-21B-token checkpoint, its 30,000-atom Top-32 dic
 
 ## 6. Minimal Falsification Tests
 
-Compare full updates with equal-norm redirections around target and matched control spans at a full and half step. Keep unrescaled target-span removal as a compensation check. Directly measure affected attention outputs, SAE activation changes and losses. Supporting evidence requires positive conditional 95% lower bounds for $M$ at both steps, positive target-domain point contrasts for each of four targets, positive mean unrescaled target selectivity at both steps, and qualified source improvement. An upper bound at or below zero at both steps is non-supporting; other cases are insufficient or heterogeneous. Guards and the exact source-improvement criterion are in the Protocol.
+Compare full updates with equal-norm redirections around target and matched control spans at a full and half step. Keep unrescaled target-span removal as a compensation check. Directly measure affected attention outputs, SAE activation changes and losses. Supporting evidence requires positive conditional 95% lower bounds for \(M\) at both steps, positive target-domain point contrasts for each of four targets, positive mean unrescaled target selectivity at both steps, and qualified source improvement. An upper bound at or below zero at both steps is non-supporting; other cases are insufficient or heterogeneous. Guards and the exact source-improvement criterion are in the Protocol.
 
 ## 7. Current Evidence
 

@@ -79,40 +79,40 @@ This connects to the earlier path-integration intuition. A high-level belief can
 ## 4. Mathematical Model
 Let the low-level observation at time \(t\) be \(o_t\), and let a fixed feature extractor produce a feature tensor:
 
-$$
+\[
 \phi_t = \phi(o_t) \in \mathbb{R}^{C \times H \times W}
-$$
+\]
 
 Let the high-level workflow maintain a belief \(b_t\) and a compact target \(z_t^\*\), such as a target frame, target object, target contact state, or target keyframe. The high-level module outputs an attention vector:
 
-$$
+\[
 a_t^{attn} = A_\psi(b_t, z_t^\*) \in [0,1]^C
-$$
+\]
 
 The low-level loop receives a gated feature tensor:
 
-$$
+\[
 \tilde{\phi}_t = a_t^{attn} \odot \phi_t
-$$
+\]
 
 where the same channel weights are applied over spatial positions. For adjacent-frame matching, descriptors are extracted from the gated feature tensor:
 
-$$
+\[
 d_t(p) = \operatorname{Normalize}
 \left(
 \operatorname{Patch}(\tilde{\phi}_t, p)
 \right)
-$$
+\]
 
 Given a source point \(p_t\) and candidate target-frame points \(q_{t+1,j}\), the matcher selects:
 
-$$
+\[
 \hat j =
 \arg\min_j
 \left\|
 d_t(p_t) - d_{t+1}(q_{t+1,j})
 \right\|_2
-$$
+\]
 
 The attention hypothesis predicts that task-relevant attention should:
 
@@ -125,12 +125,12 @@ increase descriptor margin between the best and second-best match.
 
 Descriptor margin is:
 
-$$
+\[
 \Delta =
 \operatorname{dist}_{2nd}
 -
 \operatorname{dist}_{best}.
-$$
+\]
 
 A larger margin means the low-level match is less ambiguous.
 

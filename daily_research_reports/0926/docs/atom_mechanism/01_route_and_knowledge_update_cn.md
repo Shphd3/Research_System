@@ -29,9 +29,9 @@
 
 ## 这条机制链现在解释到哪一步
 
-令 $a$ 是模型真正使用的注意力输出，$c$ 是进入输出投影的上下文，$\Delta W$ 是一次参数改变。此时 $\Delta a=\Delta Wc$。令 $g_t=\partial L_t/\partial a$ 表示目标文本损失对这层表征的敏感方向，则小步下：
+令 \(a\) 是模型真正使用的注意力输出，\(c\) 是进入输出投影的上下文，\(\Delta W\) 是一次参数改变。此时 \(\Delta a=\Delta Wc\)。令 \(g_t=\partial L_t/\partial a\) 表示目标文本损失对这层表征的敏感方向，则小步下：
 
-$$\text{帮助量}=L_t(a)-L_t(a+\Delta a)\approx-\langle g_t,\Delta a\rangle.$$
+\[\text{帮助量}=L_t(a)-L_t(a+\Delta a)\approx-\langle g_t,\Delta a\rangle.\]
 
 白话是：**先看更新把表征往哪里推，再看目标任务希望表征往哪里走。** 两者方向的关系才能解释局部帮助或伤害。原子画像告诉我们常用哪些坐标；稀疏自编码器（SAE）是描述和选择候选方向的工具，不能单独给出这两个方向的关系。
 

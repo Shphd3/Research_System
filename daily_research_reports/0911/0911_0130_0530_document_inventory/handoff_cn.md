@@ -131,7 +131,7 @@
 | `dynamic_representations/` | 504 | 18,766,268,979 | 252 `.npz` + 252 `.json` |
 
 表征面板覆盖 6 个动态条件/种子轨迹，每条 21 个更新点，每点 development/test 两个
-split，即 $6\times21\times2=252$ 个 NPZ 分片及 252 个配套 JSON。不要把这些原始产物
+split，即 \(6\times21\times2=252\) 个 NPZ 分片及 252 个配套 JSON。不要把这些原始产物
 复制进 Research_System；按执行工作区原位读取。
 
 运行日志边界：`run_dynamic.log` 末尾记录 `full finished trained=3 shards=252`；

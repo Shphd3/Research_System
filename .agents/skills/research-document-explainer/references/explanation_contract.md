@@ -135,8 +135,8 @@ Readable wording must not upgrade its epistemic status.
 
 ## Compact Example
 
-Suppose a document says: “加入表示 $R$ 后，开发集损失降低。” The explanation
-must not silently rewrite this as “$R$ contains new information.” Use the
+Suppose a document says: “加入表示 \(R\) 后，开发集损失降低。” The explanation
+must not silently rewrite this as “\(R\) contains new information.” Use the
 states to preserve the gap:
 
 ```text

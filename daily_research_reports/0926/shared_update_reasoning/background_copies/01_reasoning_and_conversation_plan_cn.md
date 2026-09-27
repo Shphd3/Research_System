@@ -1,12 +1,17 @@
+> 阅读副本 · 2026-09-26T15:08:45.352651+00:00 · 处理者 Codex
+> 来源：[原始文件](../../01_思路纠偏与聊天计划_cn.md)
+> 源文件 SHA256：`fedbd87068f6de8e23d1edaa5d385f8f39617d9a243165c73c5bcd6822bb491d`
+> 这是来源文本的阅读副本，保留原来的时间、建议和证据边界；科研状态以原始记录为准。 历史文中的未取得附件、待运行或下一步，不代表当前状态；机制解释以本目录新分析为阅读入口。
+
 # 思路纠偏与聊天计划：把结构图接到学习后果
 
 **当前最需要调整的是推理顺序：先确认要解释的学习后果，再判断哪些表征信号与它有关。领域能被区分，是其中一项观察，不能单独决定是否隔离参数。**
 
-本轮已完成：[同数据的新结果](docs/structure_update/summary_cn.md)、[导师图稿与逐段解析](focus_meeting_structure_update_cn.md)。本文负责来源审计与讨论顺序，不重复结果摘要。
+本轮已完成：[同数据的新结果](../experiment_copies/20260926_structure_update/summary_cn.md)、[导师图稿与逐段解析](02_structure_update_meeting_figures_cn.md)。本文负责来源审计与讨论顺序，不重复结果摘要。
 
 **默认推进重构（研究者于9月26日本轮明确要求）：**以“在明确学习条件下，共享更新为什么帮助或伤害另一组数据”为讨论中心。结构图和同数据更新检查已经完成；当前先选择一个有实测依据的后果与最强竞争解释，再决定区分检验。帮助、伤害、证据不足都必须能改变判断，不能把找到负值当作成功条件。具体机制判断与新实验设计仍待研究者确认。
 
-原先十条主线编号保留为[问题检索目录](../../docs/research_reorganization_20260926_mapping_cn.md)，不作为十条并行待办。当前入口为“结果摘要 → 图稿中对象与参数连接 → 本文的讨论步骤”。这份讨论计划不是新的科学 Focus，也不覆盖其它工作流的状态或批准。
+原先十条主线编号保留为[问题检索目录](../../../../docs/research_reorganization_20260926_mapping_cn.md)，不作为十条并行待办。当前入口为“结果摘要 → 图稿中对象与参数连接 → 本文的讨论步骤”。这份讨论计划不是新的科学 Focus，也不覆盖其它工作流的状态或批准。
 
 ## 1. 这次实际读到了什么
 
@@ -18,12 +23,12 @@
 
 | 会话 memory | 本轮核对的主要变化 |
 | --- | --- |
-| [0920-SAE表征空间审计](../../.research/memory/conversations/0920-sae表征空间审计/memory.md) | 9月21日记录原生表征、读出和观察器的分离；旧重加权模型不能混作从头训练模型 |
-| [0921-表征分析](../../.research/memory/conversations/0921-表征分析/memory.md) | 共享原子复用测量的起点、停止与后续提交；终态回查结果文件 |
-| [0922-sae-feature-analysis](../../.research/memory/conversations/0922-sae-feature-analysis/memory.md) | 当时暂停状态；不是后续结果不存在的证据 |
-| [0923-SAE representation analysis](../../.research/memory/conversations/0923-sae-representation-analysis/memory.md) | 原生领域读出与集中度的反例；正式摘要仍保留研究者判断边界 |
-| [0924-共享参数干扰与数据可学性审计](../../.research/memory/conversations/0924-共享参数干扰与数据可学性审计/memory.md) | 单学资格、容量竞争解释、按更新兼容性筛选的新设计 |
-| [0924-共享参数干扰与数据可学性实验验证](../../.research/memory/conversations/0924-共享参数干扰与数据可学性实验验证/memory.md) | 18条轨迹、早期回滚和确认集封存；开发趋势不等于确认结论 |
+| [0920-SAE表征空间审计](../../../../.research/memory/conversations/0920-sae表征空间审计/memory.md) | 9月21日记录原生表征、读出和观察器的分离；旧重加权模型不能混作从头训练模型 |
+| [0921-表征分析](../../../../.research/memory/conversations/0921-表征分析/memory.md) | 共享原子复用测量的起点、停止与后续提交；终态回查结果文件 |
+| [0922-sae-feature-analysis](../../../../.research/memory/conversations/0922-sae-feature-analysis/memory.md) | 当时暂停状态；不是后续结果不存在的证据 |
+| [0923-SAE representation analysis](../../../../.research/memory/conversations/0923-sae-representation-analysis/memory.md) | 原生领域读出与集中度的反例；正式摘要仍保留研究者判断边界 |
+| [0924-共享参数干扰与数据可学性审计](../../../../.research/memory/conversations/0924-共享参数干扰与数据可学性审计/memory.md) | 单学资格、容量竞争解释、按更新兼容性筛选的新设计 |
+| [0924-共享参数干扰与数据可学性实验验证](../../../../.research/memory/conversations/0924-共享参数干扰与数据可学性实验验证/memory.md) | 18条轨迹、早期回滚和确认集封存；开发趋势不等于确认结论 |
 
 这些日志是导航。关键事实已回查结果摘要、完整记录或实际输出；没有把日志里的下一步自动当作当前决定。当前项目入口检查发现5条既有路径未版本化，但文件存在；本轮直接核验相关源文件，未替其它工作提交这些材料。
 
@@ -39,7 +44,7 @@
 | 结构图后配最小更新检查 | 本轮已在相同四领域自然文本上实现两个幅度、四种来源的8个独立分支，补上数据对象一致的直接联系 |
 | “为什么不遵守”可由双方验收标准不同解释 | 只保留为AI推断。可见材料没有完整原句，无法确定学长动机或评价态度 |
 
-旧结果以[9月24日开发与回滚记录](../0924/docs/analysis/dev_rollback_reading_cn.md)、[9月25日主题与格式结果](../0925/docs/human_semantic_updates/summary_cn.md)为准；新测量以[本轮摘要](docs/structure_update/summary_cn.md)为准。
+旧结果以[9月24日开发与回滚记录](../../../0924/docs/analysis/dev_rollback_reading_cn.md)、[9月25日主题与格式结果](../../../0925/docs/human_semantic_updates/summary_cn.md)为准；新测量以[本轮摘要](../experiment_copies/20260926_structure_update/summary_cn.md)为准。
 
 ## 3. 五天证据共同指出的是哪一个断点
 
@@ -49,7 +54,7 @@
 
 本轮9月26日把自然文本的表征和更新后果配在一起，看到的仍是：领域分布有差异，但所测跨组平均更新后果为帮助。上述各轮不是在同一个数据集、模型历史和损失定义下反复测量同一件事；它们共同限制的是一条推断捷径，而不是合并成一个实验总分。
 
-**AI分析：你反复卡住的位置，是把“我找到数据不同的地方”当成“我解释了为什么它们不能一起学”。** 前一句可以成立，后一句仍需单独验证。来源入口：[共享复用结果](../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md)、[17B领域读出结果](../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary_cn.md)、[筛选停止记录](../0925/docs/update_compatibility/detailed.md)、[自然文本激活结果](../0925/docs/sae_domain_activation/summary_cn.md)。
+**AI分析：你反复卡住的位置，是把“我找到数据不同的地方”当成“我解释了为什么它们不能一起学”。** 前一句可以成立，后一句仍需单独验证。来源入口：[共享复用结果](../../../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary_cn.md)、[17B领域读出结果](../../../../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary_cn.md)、[筛选停止记录](../../../0925/docs/update_compatibility/detailed.md)、[自然文本激活结果](../../../0925/docs/sae_domain_activation/summary_cn.md)。
 
 ## 4. 三类可改进的工作模式
 
@@ -63,7 +68,7 @@
 
 ## 5. 建议的聊天计划：四轮，总计约45分钟
 
-先留出15分钟独立阅读与复述，不分配给监控或实现：5分钟读[本轮摘要](docs/structure_update/summary_cn.md)，5分钟读[图稿的数学连接](focus_meeting_structure_update_cn.md#3-为什么表征不同仍可能相互帮助)，5分钟合上材料写三句“测到了什么—不能推出什么—哪个证据会改变判断”。
+先留出15分钟独立阅读与复述，不分配给监控或实现：5分钟读[本轮摘要](../experiment_copies/20260926_structure_update/summary_cn.md)，5分钟读[图稿的数学连接](02_structure_update_meeting_figures_cn.md#3-为什么表征不同仍可能相互帮助)，5分钟合上材料写三句“测到了什么—不能推出什么—哪个证据会改变判断”。
 
 | 讨论轮次 | 直接可用的开场问题 | 本轮应留下的具体产物 | 完成标准 |
 | --- | --- | --- | --- |

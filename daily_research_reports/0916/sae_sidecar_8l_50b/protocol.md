@@ -23,12 +23,12 @@
 
 Let `x_7` be the input to Python `blocks[7]`, the eighth Transformer block. Let
 
-$$a_7=\operatorname{Attention}_7(\operatorname{Norm1}_7(x_7))$$
+\[a_7=\operatorname{Attention}_7(\operatorname{Norm1}_7(x_7))\]
 
 denote the Attention module return after output projection `W_O` and before the
 residual addition. The native main path remains
 
-$$r_7=x_7+a_7,\qquad x_8=r_7+\operatorname{MLP}_7(\operatorname{Norm2}_7(r_7)).$$
+\[r_7=x_7+a_7,\qquad x_8=r_7+\operatorname{MLP}_7(\operatorname{Norm2}_7(r_7)).\]
 
 The SAE sidecar reads `a_7` directly. There is no sidecar normalization and the
 SAE reconstruction is not consumed by the main path or inference logits.
@@ -59,11 +59,11 @@ It is not yet a scientific test of domain-semantic improvement.
 - Initialization: fresh random seed17; do not resume from Smoke, serial SAE, or
   retired C/T checkpoints.
 
-For sampled raw Attention outputs $a_i$, the objective is
+For sampled raw Attention outputs \(a_i\), the objective is
 
-$$L=L_{\mathrm{LM}}+L_{\mathrm{rec}}+\frac{1}{32}L_{\mathrm{AuxK}}.$$
+\[L=L_{\mathrm{LM}}+L_{\mathrm{rec}}+\frac{1}{32}L_{\mathrm{AuxK}}.\]
 
-The SAE encoder input in $L_{\mathrm{rec}}$ is live. Its target copy and target
+The SAE encoder input in \(L_{\mathrm{rec}}\) is live. Its target copy and target
 energy denominator are detached. AuxK receives a detached input and detached
 main-reconstruction residual, so it updates SAE parameters only. Global LM loss
 uses the valid-target denominator; both SAE terms use the global sampled-position
@@ -200,10 +200,10 @@ remains in the earlier package and the 05 architecture-confirmation prompt.
   blocks `3` and `7`, each reading the raw Attention return after `W_O` and
   before residual addition. No side Norm or SAE reconstruction enters the
   native LM path or inference.
-- Frozen multi-layer objective for $m$ hook layers:
+- Frozen multi-layer objective for \(m\) hook layers:
 
-  $$L=L_{\mathrm{LM}}+\frac{1}{m}\sum_{\ell}L_{\mathrm{rec}}^{(\ell)}
-  +\frac{1}{32m}\sum_{\ell}L_{\mathrm{AuxK}}^{(\ell)}.$$
+  \[L=L_{\mathrm{LM}}+\frac{1}{m}\sum_{\ell}L_{\mathrm{rec}}^{(\ell)}
+  +\frac{1}{32m}\sum_{\ell}L_{\mathrm{AuxK}}^{(\ell)}.\]
 
   Each reconstruction term uses a live hook input with detached target and
   denominator; each AuxK term is SAE-only. Layer averaging keeps the total
