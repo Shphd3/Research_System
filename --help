@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "TOY_KERNEL_TEST_NOT_S7",
+  "microbatch_reduction": "PASS",
+  "zero_update": "PASS",
+  "span_closure": "PASS",
+  "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "records": [
+    {
+      "rule": "y_same",
+      "mean_I": -2.698771897060026e-05,
+      "mean_I1": -2.699711280393246e-05,
+      "closure_error": 2.0328790734103208e-20
+    },
+    {
+      "rule": "y_flip",
+      "mean_I": -1.0790476000058224e-05,
+      "mean_I1": -1.079987052712479e-05,
+      "closure_error": 5.082197683525802e-21
+    }
+  ]
+}
