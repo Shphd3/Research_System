@@ -9,8 +9,10 @@ on current entrypoints; it checks routing and versioning, not scientific approva
 
 The researcher prioritized the 2026-09-24 mentor discussion on 2026-09-26:
 **what does one data group's update do to another group through shared
-parameters, and which process explains help or harm?** This is the current
-analysis priority, not a new experimental Focus or an execution authorization.
+parameters, and which process explains help or harm?** The researcher has now
+activated a separate controlled S7 one-step question with its own
+[Focus](daily_research_reports/0927/focus_shared_update_conditional_interference.md).
+This does not authorize an unqualified full run.
 
 First give the effect a testable working definition, with a fixed model state,
 updated parameters, comparator and independent readout. Distinguish local
@@ -54,7 +56,8 @@ Paths unavailable from a Windows checkout are unverifiable there, not stale.
 
 ## Active Research Workstreams
 
-These 13 existing registrations are retained, including predecessor evidence.
+The 13 earlier registrations are retained, including predecessor evidence;
+the researcher-confirmed controlled shared-update question is added below.
 Their labels summarize previously registered states and do not create a global
 execution queue or override the default discussion route. Each owning Focus
 carries its human decision; Summary carries results, Protocol approval, and
@@ -63,6 +66,7 @@ from this table. One workstream does not silently pause another.
 
 | Workstream | Priority / state | Current Focus | Evidence or contract |
 |---|---|---|---|
+| Controlled S7 shared-update interference | Active independent question; priority not specified; main experiment NOT RUN. | [Focus](daily_research_reports/0927/focus_shared_update_conditional_interference.md) ([中文](daily_research_reports/0927/focus_shared_update_conditional_interference_cn.md)) | [Candidate Anchor](daily_research_reports/0927/docs/shared_update_research_pack/documents/anchor.md); [draft Protocol](daily_research_reports/0927/docs/shared_update_research_pack/documents/protocol.md) |
 | A15_17 SAE representation audit | **SECONDARY**; E01 `INSUFFICIENT`; E02 descriptive recovery; researcher judgment pending. | `daily_research_reports/0923/focus_sae_n8_separability.md` | Parent [Anchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md); active [subanchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md); E01 [Protocol](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/protocol.md), [Summary](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md), and [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/detailed.md); E02 [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E02_n8_15b17b_matrix/detailed.md). |
 | A15 M2D2 semantic representation geometric form | **PRIMARY** within its registered line; E01/E02 complete; bounded geometry result awaits human wording. | `daily_research_reports/0901/focus_m2d2_semantic_geometric_form.md` | E01 Summary: `Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E01_m2d2_direction_norm_covariance_atlas/summary.md`; E02 Summary: `Projects/from-attention-to-search/main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness/summary.md` |
 | A15 gold-label layerwise static audit | **SECONDARY**; E15 `UNQUALIFIED_SHUFFLE_CONTROL`; replication decision pending. | `daily_research_reports/0903/focus_gmm_pseudolabel_oracle_gap.md` | E15 [Anchor](Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md), [Protocol](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/protocol.md), [Summary](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/summary.md), and [Detailed](Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit/detailed.md) |

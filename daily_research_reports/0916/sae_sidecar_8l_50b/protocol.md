@@ -614,3 +614,141 @@ lineage, batch partition, capacity Smoke, scale-up gate, and stop ownership
 A12 audit ledger: A--F unchanged; G guard repair and clean repeat Smoke
 **CONFIRMED**; cross-block consistency **PASS**; corrected Smoke then one
 PASS-gated independent 4xH100 Reserved full run remains the approved scope.
+
+## Appendix M — Amendment A13: return the unit-weight SALL trajectory to 8xRTX5090
+
+- Amendment time: 2026-09-28, after the four-H100 continuation produced its
+  exact 23B milestone and later stopped.
+- Source boundary: use only the complete 23,000,000,000-token milestone at
+  optimizer step 87,745.  Discard the computed but uncheckpointed tail through
+  step 87,898 / 23,040,108,032 valid prediction tokens.
+- Resource: submit one single-node `5090-8-spot` continuation under the current
+  `shphd-lite-0911` plus mounted SM120 runtime.  Split the four-rank
+  checkpoint's paired RNG/data lanes back into the original eight logical
+  lanes; do not initialize a new trajectory.
+- Held fixed: eight raw Attention outputs after `W_O` and before residual add;
+  no side Norm; native LM path; layer-mean unit-weight reconstruction loss;
+  AuxK coefficient 1/32 and SAE-only AuxK gradient; model, optimizer,
+  scheduler, activity state, frozen data order, seed, CE chunk/checkpointing,
+  token schedules, milestones, 50B endpoint, normalization, and observability.
+- Capacity qualification: inside that one allocation, test the frozen
+  descending microbatch list 8, 4, 2.  Regroup the original logical
+  `mbs2/acc8` stream, so corresponding accumulations are 2, 4, 8 and every
+  complete update remains exactly 262,144 valid targets.  Select the largest
+  candidate with two finite updates and peak reserved memory no greater than
+  94 percent of physical memory.  Each candidate is an in-memory fork and must
+  not publish over or mutate the 23B source.  No batch candidate outside this
+  list, objective fallback, resource fallback, or silent CE change is allowed.
+- Formal gate: freeze the selected factorization in a durable receipt before
+  the first formal update.  If no candidate passes, do not train.  Once one
+  passes, continue the same trajectory to 50B with normal complete recovery
+  and milestone checkpoints.
+- Approval: researcher request on 2026-09-28 to inspect Dense/SALL progress and
+  immediately submit one eight-RTX5090 Spot continuation for each while using
+  memory as fully as safely possible.
+- Evidence boundary: capacity qualification and startup health are engineering
+  evidence only.  The hardware/microbatch migration is not a new model arm,
+  independent replicate, bitwise-equivalence result, or model-quality result.
+
+A13 audit ledger: A--F unchanged; G source checkpoint, eight-lane RNG/data
+continuity, profile, bounded capacity selection, global-batch arithmetic,
+50B endpoint, and fail-closed boundary **CONFIRMED**; cross-block consistency
+**PASS**; execution scope **APPROVED_FOR_ONE_CAPACITY_QUALIFIED_8xRTX5090_SPOT_CONTINUATION**.
+
+## Appendix N — Amendment A14: replace the stopped RTX5090 attempts with 8xH100 Spot
+
+- Amendment time: 2026-09-28. The researcher stopped both A13-era RTX5090
+  jobs after single-process device preflight. Neither job completed distributed
+  preflight, capacity qualification, formal checkpoint load, or a formal
+  optimizer update; neither created a run directory. They are not continuation
+  evidence and must not be resumed.
+- Replacement: submit two separate single-node `h100-8-spot` jobs, one for the
+  native Dense control and one for the unit-weight SALL trajectory. SALL loads
+  only the exact 23B / step-87,745 milestone and restores the original eight
+  logical data/RNG lanes from the four-rank checkpoint. Dense separately loads
+  its complete 22.018691584B / step-84,000 recovery checkpoint.
+- H100 capacity: each 80GB rank tests microbatch 16, 8, 4, 2 with corresponding
+  accumulation 1, 2, 4, 8. At sequence length 2048 and eight ranks,
+  microbatch 16 is the largest possible integer factorization preserving
+  262,144 valid targets/update. Select the largest candidate with two finite
+  updates and peak reserved memory no greater than 94 percent of physical
+  memory. Candidate runs are in-memory source-immutable forks.
+- Held fixed for SALL: all eight raw Attention-output hooks, no side Norm,
+  native LM path, unit layer-mean reconstruction objective, SAE-only AuxK at
+  1/32, model/optimizer/scheduler/activity state, seed, data, CE settings,
+  schedules, checkpoint targets, observability, and 50B endpoint.
+- Gate and boundary: no formal optimizer update begins until the matching H100
+  capacity receipt is PASS and the selected factorization is frozen. No
+  resource fallback, fresh start, objective change, or inference about model
+  quality is authorized.
+- Approval: researcher messages stating that eight-H100 resources are likely
+  available, that the eight-RTX5090 jobs were stopped, and that 80GB memory
+  should be used to raise parallel computation before continuing submission.
+
+A14 audit ledger: A--F unchanged; G stopped-job boundary, H100 profile,
+source coordinates, maximum batch factorization, capacity gate, eight-lane
+continuity, and 50B endpoint **CONFIRMED**; cross-block consistency **PASS**;
+execution scope **APPROVED_FOR_TWO_CAPACITY_QUALIFIED_8xH100_SPOT_CONTINUATIONS**.
+
+## Appendix O — Amendment A15: stop Smoke and submit direct mbs16 Full
+
+- Amendment time: 2026-09-28, after both H100 jobs obtained eight GPUs.
+- Observation: Dense completed the two update calls at microbatch 16 but the
+  post-update qualification receipt raised `KeyError('total_loss')`; the
+  native Dense engine reports `lm_loss` only, while its canonical trainer sets
+  Dense `total_loss = lm_loss`.  The same receipt-only error repeated at lower
+  candidates.  This is an implementation defect, not OOM or non-finite loss.
+  SALL passed single- and distributed-H100 preflight and entered its mbs16
+  capacity process but was stopped before publishing a capacity result.
+- Repair: normalize Dense `total_loss` to `lm_loss` in the shared continuation
+  telemetry path.  SALL already returns all required loss components and needs
+  no analogous change.  Revalidate exact source manifests, state coordinates,
+  contract hashes, batch arithmetic, syntax, and eight-lane RNG mapping.
+- Stop boundary: Dense Smoke job `pt-1dn724fr` is terminal failed after the
+  receipt defect.  Stop SALL Smoke job `pt-90ugh1cc` and require terminal
+  `SUSPENDED` before submitting either Full job.  Do not resume either Smoke.
+- Capacity decision: the researcher explicitly judges microbatch 16 safe on
+  eight 80GB H100 GPUs and waives only the A14 capacity-receipt requirement.
+  Freeze microbatch 16 / accumulation 1 for both formal continuations, keeping
+  exactly 262,144 valid targets/update.
+- Formal scope: after the non-capacity repair and stop boundary are verified,
+  submit exactly two new `h100-8-spot` formal jobs, one Dense and one unit-weight
+  SALL, from the same registered complete source checkpoints toward 50B.  No
+  Smoke prefix runs inside those jobs.
+- Evidence boundary: the researcher's capacity judgment is an execution
+  decision, not measured memory evidence or a scientific result.  All A14
+  architecture, objective, gradient, lineage, data, optimizer, schedule,
+  checkpoint, observability, and interpretation boundaries remain fixed.
+
+A15 audit ledger: Smoke stop **CONFIRMED**; Dense telemetry repair, source
+identity, batch arithmetic, direct-Full tuple, and user capacity override
+**CONFIRMED**; cross-block consistency **PASS**; execution scope
+**APPROVED_FOR_EXACTLY_TWO_DIRECT_8xH100_SPOT_FORMAL_CONTINUATIONS**.
+
+## Appendix P — Amendment A16: H100 exhaustion and 8xRTX5090 replacement
+
+- Amendment time: 2026-09-28.  Direct H100 Full jobs `pt-qfgz4tjh` and
+  `pt-c91mxih3` remained unallocated with zero replicas and created no pod log,
+  run directory, checkpoint load, or optimizer update.  Both were stopped and
+  verified terminal `SUSPENDED` before replacement submission.
+- Resource replacement: submit exactly two new single-node `5090-8-spot`
+  formal continuations, one Dense and one unit-weight SALL, under the current
+  `shphd-lite-0911` image plus the mounted SM120 runtime.
+- Batch partition: use the already exercised eight-rank microbatch 2 /
+  accumulation 8 partition for both jobs.  Sequence length remains 2048 and
+  every update remains 262,144 valid targets.  The researcher's H100 mbs16
+  non-OOM judgment does not transfer to 32GB RTX5090 cards; no unqualified
+  larger RTX5090 partition or new capacity Smoke is introduced.
+- Source boundary: Dense still loads only step 84,000 / 22.018691584B.  SALL
+  still loads only exact 23B / step 87,745 and splits the four-rank checkpoint's
+  paired data/RNG state back to the original eight logical lanes.
+- Held fixed: all architecture, no-side-Norm, native LM path, unit SALL
+  reconstruction and detached AuxK gradient contract, model/optimizer/
+  scheduler/activity state, seed, data, CE settings, schedules, checkpoint
+  targets, observability, 50B endpoint, and interpretation boundaries.
+- Approval: researcher instruction `全部改成8卡5090 spot吧，H100资源枯竭`.
+
+A16 audit ledger: H100 stop boundary, RTX5090 profile, qualified batch
+partition, source coordinates, eight-lane continuity, and two-job submission
+scope **CONFIRMED**; cross-block consistency **PASS**; execution scope
+**APPROVED_FOR_EXACTLY_TWO_DIRECT_8xRTX5090_SPOT_FORMAL_CONTINUATIONS**.

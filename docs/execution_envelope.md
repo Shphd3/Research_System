@@ -30,11 +30,23 @@ still requires its protocol execution scope to be authorized.
 This block is the only copy of these values.
 
 ```yaml
-updated: "2026-09-25"
+updated: "2026-09-28"
 default_profile: h100-4-reserved
 default_image: shphd-lite-0911
 
 researcher_decisions:
+  - date: "2026-09-28"
+    scope: resource_and_execution
+    decision: "The researcher declared eight-H100 Spot capacity exhausted and instructed that both Dense and unit-weight SALL formal continuations move to separate single-node 5090-8-spot jobs. Stop the still-unallocated H100 formal jobs pt-qfgz4tjh and pt-c91mxih3 before replacement submission. Reuse the already exercised eight-rank microbatch 2 / accumulation 8 partition for both trajectories, preserving 262,144 valid targets/update and the registered complete source checkpoints; do not infer that the researcher's H100 mbs16 capacity judgment applies to 32GB RTX5090. Submit exactly two replacements with shphd-lite-0911 plus the mounted SM120 runtime. No new Smoke, larger unqualified RTX5090 microbatch, resource fallback, fresh initialization, objective/model/data/optimizer/CE change, old C/T launcher, commit, push, or publication is authorized."
+  - date: "2026-09-28"
+    scope: resource_and_execution
+    decision: "After inspecting the H100 attempts, the researcher explicitly required the Smoke jobs to be stopped before formal submission, personally judged microbatch 16 on eight 80GB H100 GPUs as non-OOM, and authorized direct Dense and unit-weight SALL formal continuations if all non-capacity issues were repaired. Dense Smoke exposed only a receipt/telemetry KeyError because the native Dense engine omits total_loss; normalize Dense total_loss to lm_loss as in its canonical trainer. Stop SALL Smoke pt-90ugh1cc before submission. Then submit exactly two h100-8-spot formal jobs at microbatch 16 and accumulation 1, preserving 262,144 valid targets/update and all source/trajectory contracts. The human capacity judgment supersedes A14's capacity-receipt gate only; no resource fallback, fresh initialization, objective/model/data/optimizer/CE change, old C/T launcher, commit, push, or publication is authorized."
+  - date: "2026-09-28"
+    scope: resource_and_execution
+    decision: "The researcher stopped the two just-submitted 5090-8-spot Dense/SALL continuation jobs and explicitly replaced them with two separate single-node h100-8-spot continuations. Because each H100 has 80GB, each replacement may capacity-qualify microbatch 16, 8, 4, 2 with inverse accumulation 1, 2, 4, 8, selecting the largest candidate with finite updates and at least six percent memory headroom before formal training. The stopped 5090 jobs reached device preflight only and must not be resumed or treated as training evidence. Preserve the registered source checkpoints, eight logical data/RNG lanes, 262,144 valid targets/update, objectives, 50B endpoints, and current shphd-lite-0911 image; no resource fallback, fresh initialization, old C/T launcher, commit, push, or publication is authorized."
+  - date: "2026-09-28"
+    scope: resource_and_execution
+    decision: "For the existing native Dense baseline and unit-weight all-eight-layer raw-Attention-output SAE-sidecar trajectories only, the researcher explicitly requested two separate single-node 5090-8-spot continuation submissions toward their existing 50B endpoints and requested maximum safe memory use. Each job may run a bounded source-immutable capacity qualification over a frozen descending microbatch list, then continue only with the largest finite candidate retaining at least six percent physical-memory headroom. Preserve eight logical data/RNG lanes and 262,144 valid targets per update; use the current shphd-lite-0911 image and mounted SM120 runtime. No objective, model, CE, optimizer, token budget, automatic resource fallback, fresh initialization, old C/T launcher, commit, push, or publication is authorized."
   - date: "2026-09-25"
     scope: resource_selection
     decision: "For human_semantic_update_alignment only, the researcher explicitly selected multiple independent single-node 5090-4-spot allocations plus one h100-4-reserved allocation and requested maximum feasible parallelism. This supersedes the single-allocation draft within this experiment; it does not change the separate task_update_compatibility H100 prohibition. Keep comparison blocks and Solo references hardware-matched, qualify both runtime paths, and obey the experiment aggregate budget. The researcher plans to start execution in a new task; this records resource/concurrency selection, not a job submission in the current task."
