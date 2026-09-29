@@ -1,6 +1,8 @@
 # Mathematical Mechanism Closure
 
-Use when equations, toy models, curves or computational models explain a mechanism.
+Use when a mechanism is claimed to produce an observed or predicted outcome,
+including claims made without equations, or when toy models, curves or
+computational models explain that mechanism.
 This extends the [audit contract](reasoning_audit_contract.md); it does not demand
 closed-form theory or a new model for every empirical question.
 
@@ -22,6 +24,9 @@ Read source content, not its title. State what changed if an earlier audit was w
 
 ## Follow The Actual Computation
 
+Name the target outcome first: measured result or prediction, signed direction,
+and local contribution or net effect. Keep these distinct throughout the audit.
+
 For each consequential relation identify objects and dimensions, initial/frozen
 state, model mapping, objective or observable, intervention/update rule and output.
 The usual learning chain is input -> prediction -> loss -> gradient -> parameter
@@ -36,6 +41,8 @@ with fixed input and only a linear matrix updated, \(a=Wc\) implies
 \(\Delta a=\Delta Wc\) exactly; loss changes still require the downstream map.
 A scalar schematic illustrates possibilities; it cannot establish the high-dimensional
 mechanism, feasibility, observed curve or experimental result.
+Labels constructed to create a conflict demonstrate only that toy setting's
+possibility, not the same effect in the actual model.
 
 Audit the actual optimizer, normalization, sample aggregation and model state.
 Single-sample factorization need not survive taking separate averages. A normalized

@@ -28,8 +28,8 @@ autoencoders (SAEs) are candidate explanatory signals or tools.
   have not been measured, so the mechanism remains unresolved.
 - [Objects and figures](daily_research_reports/0926/focus_meeting_structure_update_cn.md):
   open when explaining the measured objects, axes or parameter connection.
-- [Discussion plan](daily_research_reports/0926/01_思路纠偏与聊天计划_cn.md):
-  open for discussion preparation; new scientific choices remain researcher-owned.
+- [Historical discussion plan](daily_research_reports/0926/shared_update_reasoning/background_copies/01_reasoning_and_conversation_plan_cn.md):
+  retained for discussion context; new scientific choices remain researcher-owned.
 - [Project roadmap](Projects/from-attention-to-search/main/roadmap.md):
   short mechanism route and historical question-family lookup.
 

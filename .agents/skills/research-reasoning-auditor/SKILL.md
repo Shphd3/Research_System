@@ -13,7 +13,8 @@ a quick question does not require a new artifact or a full research workflow.
 - Quick audit: use the checks below; no extra reference merely to repeat them.
 - Deep chain, experiment rationale or formalization: read the
   [audit contract](references/reasoning_audit_contract.md).
-- Equations, toy models, loss curves or missing-model claims: also read
+- A claimed mechanism-to-outcome link, equations, toy models, loss curves or
+  missing-model claims: also read
   [mechanism closure](references/mathematical_mechanism_closure.md).
 - Repeated confusion: inspect only the relevant
   [failure pattern](references/recurrent_failure_modes.md).

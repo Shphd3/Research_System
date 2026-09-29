@@ -1,41 +1,42 @@
-# Continuation：任务信号作用定位与 SAE／PCA／probe 对照
+# Continuation：0929 表征能否预测共享更新的相容性
 
 Record: 0926-共享参数冲突整理分析（01a0db36-5ae0-7e23-8e61-6f154608d8a4）  
 Continues from: none  
-Updated at: 2026-09-28T02:41:38Z | Status: CURRENT（仅在本记录内）  
+Updated at: 2026-09-29T14:24:07Z | Status: CURRENT（仅在本记录内）  
 Processed by: Codex（harness: Codex desktop; model: unknown）  
 Non-canonical：本说明只导航，不持有科学结论、批准或状态。
 
 ## Objective and scope
 
-- 下一任务：用**已保存的192次虚拟更新**完成信号／非信号位移与候选表征空间的交叉分析，解释任务相关不利作用被何种帮助抵消。SAE不是要优化的目标；PCA/SVD和线性probe提供不同的测量视角。
-- 唯一具体方案：[追加分析 Protocol](/data/250010109/Research_System/daily_research_reports/0928/docs/shared_update_signal_localization/protocol.md)，当前SHA256 `b81893d50079f177217b0b082b6bc2bdf62bf673d5c36ec890ea9390531ce8cf`。这是新一轮事后分析，不改原注册实验。
-- 用户当前要求：完成memory、to do与具体计划，交给自己的Agent；本交接尚未执行新增分析。接收“按方案执行”的明确用户指令时，核对本地范围并在Protocol中登记；不要把此说明本身当作GPU提交或科学裁决授权，也不要重复请求已给出的同范围许可。
-- 可写：新计划目录的结果文档、新执行目录和0928日期图。保护：原0927的Protocol、Anchor、Focus、Summary/Detailed、原raw和源码；不commit/push。repo=/data/250010109/Research_System，exec=/data/250010109/MoE_Router，当前均可见。
+用户要求依据“0929-实验推进计划”接续研究。下一对话建议题名：**0929-表征能否预测共享更新的相容性**。先把候选数学模型和最小区分实验讲清楚，不从本交接直接启动实验。
+
+候选问题：**固定模型状态，只看更新前的表征，能否判断两条数据的一步学习会相互帮助还是妨碍？** 最终目的是为共享／分开处理提供依据；局部预测与路由收益仍是不同待验证问题。SAE只是候选工具，先检查完整表征包含多少可预测信息。
+
+来源会话：[0929-实验推进计划](chatgpt-conversation://6abb78f3-6d08-83ee-8052-381d6bf4b8d1)，本轮已读全部六轮、无更早分页；对话只提供思路。末轮用户要求候选数学模型，不能把助手的模型及实验建议当成已确认设计。会话提到的sandbox docx未读取，不作为证据。
 
 ## Read list for the next action
 
-| 来源 | 用途 | 现在必读 |
-| --- | --- | --- |
-| [新Protocol](/data/250010109/Research_System/daily_research_reports/0928/docs/shared_update_signal_localization/protocol.md)全文 | 完整对象、切分、计算、秩、probe标签权限、分支和产物 | 是 |
-| [原Summary](/data/250010109/Research_System/daily_research_reports/0927/docs/shared_update_research_pack/summary_cn.md)；[Detailed](/data/250010109/Research_System/daily_research_reports/0927/docs/shared_update_research_pack/detailed.md)第4—7节 | 核对原完成结果与限制 | 是 |
-| [原Focus](/data/250010109/Research_System/daily_research_reports/0927/focus_shared_update_conditional_interference.md)；[Anchor](/data/250010109/Research_System/daily_research_reports/0927/docs/shared_update_research_pack/documents/anchor.md)第4—5、8节 | 保留研究者问题／判断所有权，不从本计划切换科学状态 | 是 |
-| [配对补查](/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/checks/pairwise_direction_audit_y4hq_pjj/result.json)及同目录reproduce.py | 复现原生信号／非信号分解；不是新确认证据 | 是 |
-| [原Protocol](/data/250010109/Research_System/daily_research_reports/0927/docs/shared_update_research_pack/documents/protocol.md)第5、10—11、15节 | 核对数据与旧判据；不修改 | 实现遇到接口或解释疑问时 |
+以下路径相对 `/data/250010109/Research_System`，现在必读：
+
+- `daily_research_reports/0927/focus_shared_update_conditional_interference.md` 与 `daily_research_reports/0927/docs/shared_update_research_pack/documents/anchor.md`：原问题与研究者判断边界。
+- `daily_research_reports/0927/docs/shared_update_research_pack/documents/01_机制推导与原论文审计.md` 第2—4节：已有参数—表征—损失推导及多位置聚合，避免重新声称缺少推导。
+- `daily_research_reports/0927/docs/shared_update_research_pack/summary_cn.md` 与 `daily_research_reports/0928/docs/shared_update_signal_localization/summary_cn.md`：已完成结果和限制；遇到数据细节再查各自Detailed/Protocol。
+- 上述引用会话：确认新候选问题与用户措辞。读不到时明确缺口，可先依据本说明和已验证本地来源开展对象澄清。
 
 ## Current work and reusable assets
 
-- 已完成：原四卡full run、冻结SAE分析、导师稿润色、配对分解补查、当前计划与memory。未完成：新方案的空间交叉分解、PCA/probe读数、配对区间与新结果报告。
-- 关键区别：参数位移≠表征位移≠任务所需变化；b（不随t翻转的位移）含背景及无关变化≠SAE common；原生任务差重构≠更新预测。
-- 原执行根：`/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z`。旧作业pt-yzq8kkur已在执行记录中终态成功；本任务不需要重启或新提交。
-- 复用：原analyze_full.py的配对bootstrap语义、原common_span.npz、结构a/a_hat和更新da/e；新Protocol第14节给出确切源码与数组。原PCA-32未截数值秩，不能照搬为本轮低秩对照。
-- 数据已查看；新切分只防拟合泄漏，不能制造未见确认集。工具失败照实报告，不追加扫参寻找支持。
+- 原四卡full run和0928事后定位均已完成；旧交接中的待执行任务已过时，不重跑。原注册裁决仍为 `MODULATION_WITHOUT_NET_HARM`：局部任务相关增损被较大减损抵消；SAE事前预测与参数隔离收益未测。研究者最终科学判断待确认。
+- 已有阶段读物：`daily_research_reports/0928/shared_update_stage_report_cn.md`。本轮不改正式来源、不改研究状态。
+- 0929候选模型：共享矩阵输入为c、输出为a=Wc、输出损失导数为e；单位置G=ecᵀ，梯度内积K=(cᵢᵀcⱼ)(eᵢᵀeⱼ)。小步普通梯度下降时，跨样本损失变化一阶近似为−ηK。c与e都依赖模型状态，代数分解不意味着统计独立。
+- 新问题是只给更新前表征能预测多少K或实际损失变化，不是再证明这个恒等式。包含e的结果是参考真值／代数校验，不能冒充仅凭表征的独立预测。
 
 ## Next action and completion
 
-1. 核验用户给接手Agent的执行范围与新Protocol版本，检查输入身份，复现已存I/I1/C_S及配对分解。
-2. 只在结构集拟合坐标和probe，固定配置后流式评价全部条件；先做原生分量，后做各工具同秩定位。
-3. 新执行输出写`/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/posthoc/signal_localization_<UTC>/`；研究结果写新Protocol同目录summary.md、summary_cn.md、detailed.md。
-4. 数值闭合或必需数据身份失败，停依赖结论并留下具名失败；某个工具秩不足或无定位信息，不阻止其他独立分析。
+1. 先列清对象：具体模型检查点、更新矩阵、c/a/e分别在哪里取、token或序列样本、损失归一化、更新规则、预测目标、预测时能看到什么。未确认项标待定，不能从旧实验自动继承。
+2. 核对四个边界：真实序列梯度须聚合各位置外积；参数变化方向与表征位移不在同一空间；普通SGD、范数归一化和Adam的预测式不能混用；旧SAE测的是输出a，不可直接当输入c的分解。
+3. 提出一个最小比较（AI建议）：简单输入相似度、完整表征预测器、含e的参考真值。按独立文档／样本先切分再组数据对，防止同一样本跨训练和测试；已看过的12族不能重新称为未见确认集。无人工领域标签不等于评估时不使用真实下一词目标。
+4. 写清最强竞争解释及支持／不支持／不足各会改变什么判断；先交研究者讨论，再决定是否正式更新设计。预测成对相容性尚不能直接推出单样本路由有效。
 
-完成标准：全部必需条件有数值或具名失败，四项分解与原损失闭合，有同秩对照及配对区间，三张必要图可追溯；最终回答“任务相关不利作用在哪里、总体帮助在哪里、各工具能测到什么”。不能宣布共同原子因果成立、事前预测成功或隔离有收益。唯一后续科学判断交研究者：这些定位证据是否足以提出针对性表征干预；本轮不执行该干预。
+完成标准：新对话能解释“已知什么、待测什么、为什么这个比较能区分解释”，交付对象表和简短候选实验，而非新结果或结题判断。
+
+环境：研究根 `/data/250010109/Research_System`；执行根 `/data/250010109/MoE_Router`。本轮可写范围是本对话memory与交接材料。后续讨论不覆盖原Focus、Anchor、冻结Protocol、Summary/Detailed或raw；不提交新GPU任务，不commit/push。新对话建立自己的memory，并用Continues from链接本记录，不能冒用本对话ID。当前工具无创建对话入口，**新对话尚未创建**；启动词见同目录 `new_conversation_prompt_cn.md`。

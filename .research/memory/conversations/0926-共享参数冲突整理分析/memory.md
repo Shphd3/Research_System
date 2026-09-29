@@ -4,7 +4,7 @@ Conversation name: 0926-共享参数冲突整理分析
 Conversation ID: 01a0db36-5ae0-7e23-8e61-6f154608d8a4
 Processed by: Codex (harness: Codex desktop; model: unknown)
 Created at: 2026-09-27T14:20:08Z
-Latest update at: 2026-09-28T04:11:53Z
+Latest update at: 2026-09-29T14:24:07Z
 Continues from: none
 Environment: repo=/data/250010109/Research_System; exec=/data/250010109/MoE_Router; both visible
 
@@ -69,3 +69,15 @@ Environment: repo=/data/250010109/Research_System; exec=/data/250010109/MoE_Rout
 - To do: [x] 完成0928追加分析结果独立审计；[x] 完成四段式阶段主报告与语言审计；[x] 保存本对话检查点；[ ] 研究者阅读报告并形成判断；[ ] 之后再决定是否设计任务信号位移的针对性干预；[ ] 若适用，再冻结新自然文本验证；[ ] 预测和资源匹配的共享／分开收益实验为更后续目标，均未执行。
 - Next action: 等待研究者阅读反馈，优先澄清其疑问；本轮不继续启动实验。唯一建议决策是是否将局部信号作用推进为针对性的表征干预检验；若不支持则修正解释，资格不足则保留未知，不以找到净伤害为成功条件。
 - References: daily_research_reports/0928/shared_update_stage_report_cn.md（当前主要阅读入口及后续AI建议）；daily_research_reports/0928/docs/shared_update_signal_localization/summary_cn.md、detailed.md、protocol.md（本轮结果与条件限制）；daily_research_reports/0927/docs/shared_update_research_pack/summary_cn.md、detailed.md、documents/protocol.md与daily_research_reports/0927/focus_shared_update_conditional_interference.md（原裁决、设计和研究者状态）；daily_research_reports/0926/docs/structure_update/summary_cn.md、docs/atom_mechanism/summary_cn.md及shared_update_reasoning/experiments/20260926_direction_conflict/summary_cn.md（历史自然文本证据）。执行原件为MoE_Router/experiments/20260927_common_rule_controlled/posthoc/signal_localization_20260928T025800Z。
+
+
+## 2026-09-29T14:24:07Z -- 读取0929推进对话，刷新研究接续入口
+
+- Processed by: Codex (harness: Codex desktop; model: unknown). Conversation ID: 01a0db36-5ae0-7e23-8e61-6f154608d8a4.
+- Summary: 用户要求解释memory结构、精简后续记录，并依据“0929-实验推进计划”创建新研究对话。已通过read_thread读取该会话（6abb78f3-6d08-83ee-8052-381d6bf4b8d1）全部六轮，无更早分页；其末轮要求具体候选数学模型，不是正式实验批准。会话附件docx未读取。
+- Summary: 新候选问题为固定模型状态下，仅用更新前表征预测局部更新相容性；c与e均依赖模型状态，外积／内积分解不意味着统计独立。已有0927机制文档已给参数—表征—损失关系及序列聚合，不能声称本轮首次建立。SAE只是后续测量工具，不要求胜出。
+- Supersedes: 本记录continuation.md仍停留在0928定位分析待执行，已根据现存Summary刷新；旧memory条目保留。原四卡和0928定位已完成，新预测实验未执行；原注册裁决和研究者待确认状态保持不变。
+- Current work: 已更新本记录continuation.md，写好new_conversation_prompt_cn.md。当前工具无create_thread或同等创建入口，未创建新对话，未分配新会话ID。准备启动词不能报告为对话已创建。
+- To do: [x] 读新引用会话与现存结果入口；[x] 核对已有机制推导；[x] 刷新交接并提供启动词；[ ] 新对话按真实身份建立独立记录并链接前序；[ ] 明确模型状态、测量位置、样本粒度、损失归一化及预测许可信息；[ ] 讨论完整表征与相似度基线、含导数参考真值的最小比较；[ ] 由研究者确定下一设计。新增实验仍未执行。
+- Next action: 接手对话先核对交接必读来源，输出对象表与候选最小比较。避免序列平均表征冒充参数梯度、把含B导数的事后量称为事前预测、跨样本切分泄漏、把成对预测直接当作路由收益。
+- References: 本记录continuation.md与new_conversation_prompt_cn.md；引用会话6abb78f3-6d08-83ee-8052-381d6bf4b8d1（讨论上下文）；daily_research_reports/0927/docs/shared_update_research_pack/documents/01_机制推导与原论文审计.md（已有推导）；0927与0928对应summary_cn.md（当前结果），原Focus/Anchor（研究者问题及设计所有权）。
