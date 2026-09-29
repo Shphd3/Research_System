@@ -1,53 +1,37 @@
 ---
 name: research-progress-core
-description: "Use when the user asks to maintain a Focus, audit a research judgment or failure, choose a minimal falsifier, or interpret a result boundary. Do not use for final reports, remote operations, or publication."
+description: "Maintain Focus-level research judgment, discover or refine a question, choose a minimal falsifier, or interpret results and failures. Not remote operations, publication or final-report ownership."
 ---
 
 # Research Progress Core
 
-Reduce one important uncertainty through the shortest test that can change a
-judgment:
+Reduce one consequential uncertainty with the smallest test that can change a
+judgment. The researcher owns scientific choices; AI audits, proposes labeled
+alternatives and maintains authorized facts. `Unknown` is valid.
 
-```text
-judgment -> rival -> minimal test -> direct result -> boundary -> decision
-```
+## Select The Applicable Reference
 
-The researcher owns the question, mechanism judgment, claim boundary, and
-scientific decision. AI may retrieve evidence, audit logic, propose labeled
-alternatives, and maintain approved artifacts. Never fill missing judgment
-with plausible text; `Unknown` is valid.
+- New/reopened question: [discovery](references/problem_discovery.md).
+- Evidence-driven child/dependency or upward answer:
+  [refinement](references/question_refinement.md).
+- Focus creation/reset/maintenance: [Focus cycle](references/focus_cycle.md).
+- Completed result or failure: [interpretation](references/result_interpretation.md).
+  Add [failure decomposition](references/failure_decomposition.md) only when the
+  cause is unresolved; [goal audit](references/goal_audit.md) after repeated failure
+  or a demonstrated metric/purpose mismatch.
+- Fragile algorithm: [specification](references/algorithm_specification.md).
+  Stage-level evidence design: [profiling](references/profiling_and_evidence.md).
 
-## Route By Requested Outcome
+Do not run every mode. Reuse unchanged instructions and verify relevant sources.
 
-- For creating, resetting, or maintaining a meeting-cycle Focus, or deciding
-  whether a tangent belongs in it, read
-  [focus_cycle.md](references/focus_cycle.md).
-- For interpreting completed evidence, selecting decision-bearing figures, or
-  localizing a failure, read
-  [result_interpretation.md](references/result_interpretation.md). Read
-  [failure_decomposition.md](references/failure_decomposition.md) only when the
-  cause is not localized, and [goal_audit.md](references/goal_audit.md) only
-  after repeated reasonable attempts or a demonstrated metric mismatch.
-- For a fragile multi-stage algorithm, read
-  [algorithm_specification.md](references/algorithm_specification.md). For
-  complex evidence design or plots, read
-  [profiling_and_evidence.md](references/profiling_and_evidence.md).
+## Boundaries And Completion
 
-Do not load references for modes outside the request.
+Return requested status/numbers first. Separate direct evidence, interpretation,
+claim and next decision. Do not confuse readable features, route agreement,
+intervention utility or end-task gain, or local effects with a design decision.
 
-## Shared Boundaries
-
-- Return a requested number or run status first.
-- Keep observation, interpretation, claim, speculation, boundary, and decision
-  distinct.
-- A readable representation, route agreement, expert intervention, and end-task
-  gain are different objects and may not substitute for one another.
-- Route formal Anchor work to `problem-anchor-writer`, Protocol and canonical
-  result records to `experiment-card-writer`, remote work to
-  `remote-experiment-workflow`, and explicit meetings, stories, or handoffs to
-  `research-communication`.
-- Do not create, approve, execute, publish, commit, or push beyond the user's
-  requested scope.
-
-Completion means the requested judgment or artifact is evidence-grounded, its
-boundary and next decision are explicit, and no in-scope verification remains.
+Finish factual audit despite missing human interpretation, labeling proposals.
+Do not activate/reset Focus, execute, publish or change scientific state beyond
+scope. Anchor, Protocol/results, remote operations and requested communications
+retain their respective owners. Completion is an evidenced bounded answer or
+artifact with the exact remaining decision, not a new automatic workflow.

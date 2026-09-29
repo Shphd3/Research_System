@@ -1,0 +1,73 @@
+# Mathematical Mechanism Closure
+
+Use when equations, toy models, curves or computational models explain a mechanism.
+This extends the [audit contract](reasoning_audit_contract.md); it does not demand
+closed-form theory or a new model for every empirical question.
+
+## Check What Already Exists
+
+Inspect the named current report and relevant existing derivation/Anchor/result
+before declaring a gap. Separate these findings; several may coexist:
+
+| Finding | Appropriate repair |
+|---|---|
+| No suitable model found in the inspected sources | State search/access limits; define the missing relation |
+| Model exists but is absent or opaque in the report | Reconstruct its explanation, not a replacement experiment |
+| Model exists but an empirical link is untested | Name that link and a discriminating test |
+| Local model is valid but a broader decision is unsupported | State the missing comparison or assumption |
+| Model and evidence answer the scoped question | Preserve the bounded answer; do not invent another gap |
+
+A missing file, stale summary or inaccessible repository is not proof of absence.
+Read source content, not its title. State what changed if an earlier audit was wrong.
+
+## Follow The Actual Computation
+
+For each consequential relation identify objects and dimensions, initial/frozen
+state, model mapping, objective or observable, intervention/update rule and output.
+The usual learning chain is input -> prediction -> loss -> gradient -> parameter
+update -> another prediction/loss. Other models use their own valid chain.
+Explain why each arrow follows and label it exact, approximate (with regime and
+remainder), assumed, empirical or interpretive. Numerical simulation can close a
+specified computation without proving its real-world applicability.
+
+Distinguish parameter coordinates, matrix inputs, output representations, sparse
+codes, and actual displacements. Do not substitute one for another. For example,
+with fixed input and only a linear matrix updated, \(a=Wc\) implies
+\(\Delta a=\Delta Wc\) exactly; loss changes still require the downstream map.
+A scalar schematic illustrates possibilities; it cannot establish the high-dimensional
+mechanism, feasibility, observed curve or experimental result.
+
+Audit the actual optimizer, normalization, sample aggregation and model state.
+Single-sample factorization need not survive taking separate averages. A normalized
+update does not imply a common learning rate across conditions. An identity test
+checks implementation; an empirical proposition requires independent evidence.
+
+## Locate The Empirical Obligation
+
+Map the decisive term to a measured quantity, manipulation/comparison, held-fixed
+conditions and surviving alternative. If changing geometry also changes the source
+update or downstream sensitivity, do not attribute the whole contrast to geometry.
+Use a fixed-source control or another justified identification strategy where feasible;
+if factors cannot be isolated, state the identifiable joint claim.
+
+A first-order attribution is not an intervention. Compare approximation error to
+the particular component claimed; accuracy relative to a large total can conceal
+an error larger than a small adverse component. Verify finite interventions when
+claiming their finite effect, and distinguish representation edits from realizable
+shared-parameter changes. A failed operationalization leaves other ones open.
+
+## Match The Question Level
+
+State whether the output explains an instantaneous effect, training trajectory,
+prediction on unseen data or resource/architecture decision. A negative cross-update
+term alone cannot establish that separate experts train better. That claim needs
+shared/separate objectives, comparable parameters/compute/data/update budgets,
+initialization, useful transfer and a stated time horizon. Mark this bridge open
+without invalidating the local result or making it the mandatory next project.
+
+## Return Only The Decisive Finding
+
+Give the existing source, exact gap type, smallest missing arrow and maximum
+supported claim. Propose a separator only when needed, with support, non-support
+and insufficient outcomes. Keep scientific decisions with the researcher; route
+requested explanation repairs to communication and formal design to Anchor.

@@ -1,64 +1,31 @@
 # Result Interpretation
 
-Use this reference to interpret completed evidence or diagnose a failed result.
+Check eligibility before interpretation: frozen Protocol, completed conditions,
+primary metric/guards, independence unit, deviations, provenance and selection
+history. Ineligible evidence may be described but cannot support the registered
+claim. Return requested numbers/status first; preserve negative and insufficient
+outcomes rather than renaming success after the fact.
 
-## Eligibility First
+State direct observation, proposed explanation, safest claim, remaining rival
+and researcher-owned decision separately. Use the decisive comparison, units and
+actual aggregation; tokens, layers, checkpoints and workers are not automatically
+independent replications. With Summary, link it rather than duplicating its body.
+Include only necessary figures with a reading sentence and nearest boundary.
 
-Before interpreting, verify the frozen Protocol, completed conditions, primary
-metric, hard guards, seeds or independence units, deviations, and evidence
-paths. Incomplete or ineligible evidence may be described but cannot support a
-registered conclusion.
+For mechanism claims check the existing derivation, actual implementation and
+which factor the comparison identifies. Distinguish static structure, actual
+change and its signed functional consequence. A local attribution is not a finite
+intervention; a small total Taylor error may be large relative to a small claimed
+component. Neither is unseen-data prediction or a shared/separate strategy test.
 
-Separate:
+Localize failure before changing the method: invalid measurement, implementation,
+proxy/operationalization, mathematical model, prior/boundary, question/importance,
+or insufficient evidence. Test the smallest live bottleneck. Use
+[failure decomposition](failure_decomposition.md) if several causes remain and
+[goal audit](goal_audit.md) only when the purpose/metric itself warrants review.
 
-```text
-observation      directly measured
-interpretation   explanation suggested by the observation
-claim            safest supported statement
-speculation      untested possibility
-boundary         what the evidence cannot support
-decision         what happens next
-```
-
-Return requested numbers and run status before explanation.
-
-## Decision-Bearing Evidence
-
-Lead with the comparison and metric closest to the research question. Define a
-metric by its concrete computation, unit, decision role, and non-claim. Name
-the true independence unit; layers, tokens, checkpoints, and arms are not
-automatically independent replicates.
-
-Use the smallest sufficient figure set. Each retained figure states the
-question, metric and unit, data and aggregation, axes, visible result, allowed
-conclusion, and limitation. Prefer the decisive negative or mixed result over
-an easier positive diagnostic. Do not promote debug plots.
-
-When `summary.md` exists, link it instead of repeating its four-part account.
-The chat response gives only the direct verdict, smallest decisive value,
-important figure and reading instruction, nearest boundary, and why the next
-step follows. Label an unconfirmed next step `AI 建议`.
-
-## Failure Localization
-
-Classify a failure before changing the method:
-
-```text
-prior failure
-model failure
-proxy or operationalization failure
-implementation failure
-metric failure
-```
-
-Test the smallest candidate bottleneck. A negative result is progress when it
-removes a rival explanation. Use `failure_decomposition.md` when several causes
-remain live and `goal_audit.md` only when repeated attempts or the metric itself
-show that the target may be wrong.
-
-## Next Step
-
-The next-step analysis must name the unresolved uncertainty, why the completed
-result makes that uncertainty next, the smallest separating action, its
-completion condition, and the observation that would stop or redirect it. It
-does not authorize a new experiment or scientific transition.
+Propagate only the bounded result to the affected question; use
+[refinement](question_refinement.md) when parent/dependency relations change.
+A next-step proposal names the uncertainty, why it follows, separator, stop/redirect
+outcome and completion criterion. It neither authorizes execution nor supplies
+missing human scientific judgment.

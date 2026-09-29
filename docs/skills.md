@@ -1,132 +1,90 @@
 # Repository Skills
 
-The canonical repository skills live in `.agents/skills/<skill-name>/`. Codex
-discovers this path directly; do not copy these skills into a personal Codex
-directory or maintain a second installed version.
+Canonical skills live only in `.agents/skills/<name>/`. Keep one installed root
+catalog, not personal copies. Select by task, then read that entry and applicable
+references; never treat the following ownership table as a serial workflow.
 
-Codex first reads each skill's `name` and `description` to decide whether it
-matches a task. It loads the `SKILL.md` body, references, and scripts only after
-selection. This follows the current [Codex customization
-model](https://developers.openai.com/codex/concepts/customization#skills).
+## Task Ownership
 
-## Responsibility And Trigger Index
+| Requested outcome | Skill |
+|---|---|
+| Purpose, hypothesis, causal/mathematical chain or proxy audit | `research-reasoning-auditor` |
+| Question discovery/refinement, Focus judgment, falsifier, result/failure | `research-progress-core` |
+| Formal Anchor and scientific design | `problem-anchor-writer` |
+| Protocol, Summary, Detailed and evidence lineage | `experiment-card-writer` |
+| Settled-question final synthesis | `research-final-report` |
+| Plain-language explanation of a named document | `research-document-explainer` |
+| Explicit meeting, Story or curated handoff/sync | `research-communication` |
+| Repository-local conversation context | `research-memory` |
+| Advisor readiness or one next question | `research-sync-gate` |
+| Placement, archival or explicit publication | `research-mainline` |
+| Remote jobs, logs and artifact transport | `remote-experiment-workflow` |
+| Unsettled theory, method or literature critique | `scholar-mode` |
+| Explicit graph maintenance | `research-graph-sop` |
+| Explicit local Sidecar display/API operations | `sidecar-thinking` |
 
-| Skill | Trigger scope | Does not own | Implicit invocation |
-| --- | --- | --- | --- |
-| `research-reasoning-auditor` | Clarify a research purpose, hypothesis, causal chain, rival explanation, proxy/construct relation, or experiment rationale before formalization | Evidence retrieval, formal artifacts, execution, scientific approval | Allowed |
-| `research-progress-core` | Research judgment, rivals, minimal falsification, result boundary, failure analysis, and its minimal problem-level `focus_<problem>.md` | Project paths, final reports, meeting synthesis, remote execution | Allowed |
-| `research-sync-gate` | Readiness audit for choosing one next research question or explaining an evidence boundary before advisor sync | Protocol authoring, execution, meeting artifact writing | Allowed |
-| `problem-anchor-writer` | Researcher-judgment audit, approved Anchor, and conditional learnable-research design contract | Protocols, run commands, result records | Allowed |
-| `experiment-card-writer` | In-file protocol drafting, critical-item review, promotion, `summary.md`, `detailed.md`, and evidence contracts | Research-question redefinition, remote jobs | Allowed |
-| `research-final-report` | One paper-style final report for one settled question, synthesized from its Anchor, protocols, summaries, detailed records, and the confirmed Focus result | New scientific claims, protocols, per-round notes, publication | Allowed |
-| `research-communication` | Explicit meeting brief or speaking outline, research-line story or stage synthesis, or curated handoff/copy/sync | New scientific claims, unrequested artifacts, raw outputs | Allowed; handoff and external actions still require an explicit request |
-| `research-memory` | Create, checkpoint, resume, or retrieve repository-local conversation working memory | Scientific state, claims, approvals, curated handoff, or publication | Allowed |
-| `research-mainline` | Project organization, artifact placement, archive state, status, and explicitly requested root-mirror publication | Research judgment, raw execution, handoff packaging, external collaborator sync | Allowed; guarded actions still require an explicit request |
-| `remote-experiment-workflow` | Container, SSH, CCI, SCO, or ACP experiment workflow, monitoring, logs, artifact maps; it resolves profile and image keys from `docs/execution_envelope.md` | Hypothesis design, SCO platform resource semantics, or the execution envelope's profile and image registry | Allowed |
-| `scholar-mode` | Research-intuition audit, theory or methodology critique, paper analysis, literature positioning | Artifact schemas, graph work, runs, ordinary code | Allowed |
-| `research-document-explainer` | Plain-language reading of AI-written research documents, formulas, proofs, experiment logic, and research ideas | Formal Anchor/Protocol/result authoring, active-task ownership, execution, publication | Allowed |
-| `research-graph-sop` | Explicit `graph.yaml` inspection, creation, maintenance, or navigation audit | Ordinary research notes or project-state edits without graph scope | Allowed |
-| `sidecar-thinking` | Explicit Sidecar display, session, graph inspection, or API/CLI call | Ordinary graph editing or research synthesis | Explicit only |
+Implicit selection does not authorize writes, runs, publication or state changes.
+Add an owner only for a necessary subtask. A brief audit may finish in chat;
+a requested document follows its owning contract. Existing decisions and scope
+carry across models; do not demand repeated approvals or duplicate checks.
 
-## Routing Rules
+## Method Integration, Not Another Skill
 
-Use the smallest matching skill. Typical composition is:
+The [kernel](methodology/research_exploration_kernel.md) integrates the pinned
+research-exploration method. The [coverage mapping](methodology/research_exploration_mapping.md)
+records each obligation, local owner, regression case and intentional exclusion.
+This preserves methodology without importing a competing root skill, `design.md`,
+automatic viewer or second question tree. Attribution is in
+[THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md).
 
-```text
-research-reasoning-auditor when the question or causal chain is not yet clean
--> research-progress-core for the human-owned research judgment and minimal falsifier
--> problem-anchor-writer for coherent data/task/objective/architecture design
--> experiment-card-writer for in-file drafting, critical review, and promotion
--> remote-experiment-workflow when execution is remote
--> research-progress-core for the human-confirmed result and minimal focus
--> research-final-report once the question reaches a stable bounded conclusion
--> research-communication only for an explicit meeting, story, or handoff deliverable
--> research-mainline for project placement or explicit publication
-```
+Use only the relevant stage:
+- New question: importance and structure before choosing a mechanism.
+- Mechanism diagnosis: inspect existing work, then distinguish derivation,
+  empirical, presentation and decision-bridge gaps.
+- Active design: exact variables/objective/constraints, permitted information,
+  prior-art decision when material, and stage-local Goal/How/Why.
+- Experiment/results: identifiable comparison, micro-test, frozen confirmation,
+  stage evidence, failure localization and bounded upward update.
+- Communication: explain the mechanism to a first reader without turning a
+  missing slide into missing science or a local effect into a design verdict.
 
-Use `research-communication` and exactly one of its meeting, story, or handoff
-references. Handoff packaging and external sync remain explicit-only actions.
-`research-mainline` may locate the canonical sources but does not assemble that
-package. Use `research-graph-sop` for graph structure and
-`sidecar-thinking` only for an explicitly requested Sidecar operation.
+This is a reading guide, not required extra calls or reply headings. Deep rules
+are read when the selected task needs them; quick questions do not load the
+mapping, fixture suite or all downstream owners.
 
-Use `research-memory` only to continue working context across Codex threads or
-accounts. Its files may be versioned, but they remain non-canonical and cannot
-establish a claim, approval, or consensus. Use `research-communication`
-handoff mode instead when the requested deliverable is a curated package of
-approved research artifacts.
+## Artifact And Authority Boundaries
 
-Use `research-reasoning-auditor` before formalization when the user's own
-Purpose, Hypothesis, mechanism story, metric interpretation, or causal direction
-is conceptually mixed. It reconstructs the observation-to-decision chain and
-requires a strongest rival plus a separating prediction. Use `scholar-mode`
-for broader theory, method, paper, or literature critique; use
-`research-progress-core` once the scientific question is stable enough to own a
-Focus-level judgment.
+Focus owns current human judgment; Anchor the sole scientific design; Protocol
+the precise contract/approval; Summary the first complete result; Detailed the
+preserved evidence/round ledger. Stories, final reports, graphs and memory cannot
+replace those sources. Keep complete history once and derive summaries from it.
 
-Use `research-document-explainer` when the requested outcome is understanding
-a named AI-written research artifact. Route formal research judgment or Focus
-changes to `research-progress-core`, and route theory critique or literature
-positioning beyond the named artifact to `scholar-mode`. Chinese explanations
-use `docs/research_terminology.md` for recurring English aliases and the
-explainer's local terminology contract for document-specific names.
+Protocol drafting remains one `DRAFT_NOT_EXECUTABLE` file with A-G critical review;
+promotion does not silently authorize execution. Results may finish factual work
+while human interpretation stays unknown. Learned designs require distinct data,
+task, objective, architecture, selection and confirmation boundaries.
 
-For learnable experiments, localize the uncertainty before choosing a method:
+Communication selects the requested meeting, Story or handoff mode. Handoff,
+external copying, commit/push, graph changes and publication remain explicitly
+scoped. Memory resumption is not scientific authorization; operational briefs and
+explicit full-log resumption retain their different reading contracts.
 
-```text
-data construction -> learning task -> training objective
--> architecture -> optimization -> untouched evaluation
-```
+Repositories under `Projects/` remain independently owned. Project-specific skills
+are not root duplicates to merge. SCO platform semantics stay with the project's
+`sco-control`; remote research execution uses the root envelope and remote owner.
 
-The anchor owns this scientific design. `experiment-card-writer` first writes
-one complete `DRAFT_NOT_EXECUTABLE` Protocol covering question/boundary, data,
-task/supervision, architecture, objective/optimization, comparison/evidence,
-and execution/reproducibility. AI then surfaces only decision-critical items;
-the researcher may confirm several sections per reply. The same file is
-promoted only after every block is confirmed and consistency passes.
+## Validation And Load Budget
 
-## Advisor Method Integration
+After skill edits run `python tools/check_skills.py`. Use the installed
+skill-creator `quick_validate.py` when available; report its absence rather than
+claiming execution. Run `python -m unittest discover -s tools/tests` for local
+regression tests and `python tools/check_markdown_math.py <changed-math-files>`
+for source containers. These checks establish structure/code behavior, not
+scientific correctness, target rendering or live model trigger quality.
 
-Research_System adapts selected method gates from the MIT-licensed
-`Projects/research-exploration-skill` release at commit `0963fe5`. It does not
-install or duplicate that skill in the root catalog. The local adapter is:
-
-```text
-advisor question/refinement logic      -> research-progress-core
-advisor active design contract         -> problem-anchor-writer and anchor
-advisor experiment-control contract    -> experiment-card-writer and protocol.md
-advisor stable synthesis               -> research-communication story mode
-advisor project paths and publication  -> research-mainline
-```
-
-The advisor's automatic `final_report.md`, mandatory exported `docs/` layout,
-and optional viewer/tooling are not imported as competing canonical surfaces.
-
-For SCO work, `remote-experiment-workflow` owns the research experiment chain;
-the independently maintained `Projects/sco-skill/skills/sco-control` owns
-platform-specific SCO resources and commands. Do not merge or move it into the
-root skill catalog.
-
-## Project-Private Skills
-
-Directories under `Projects/` are independent Git repositories. Their private,
-historical, or divergent skills are not root-catalog duplicates and must not be
-silently merged with `.agents/skills/`. A project may keep its own
-`.agents/skills/` when the workflow is genuinely project-specific. The
-narrower project skill takes precedence for its named transport or document
-workflow, while root safety, approval, and canonical-artifact boundaries still
-apply.
-
-## Validation
-
-Run structural validation from the repository root:
-
-```bash
-for skill_dir in .agents/skills/*; do
-  python /root/.codex/skills/.system/skill-creator/scripts/quick_validate.py "$skill_dir"
-done
-```
-
-After changing skill metadata, start a new Codex task or restart Codex before
-testing catalog discovery and automatic triggering. Static validation confirms
-format and files, not live trigger selection in the already-running task.
+Preserve lean entrypoints. Compare like-for-like read paths, including required
+references, rather than claiming all tasks save the entrypoint percentage.
+Web project instructions must not exceed the recorded pre-refactor character or
+UTF-8 byte budget. Optional references are not free when actually loaded.
+Verify live skill discovery in a fresh client task separately; this refactor does
+not silently change a running client's context or model settings.

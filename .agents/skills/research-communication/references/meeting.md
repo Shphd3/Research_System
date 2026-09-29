@@ -1,79 +1,52 @@
 # Meeting Mode
 
-Use this mode only when the researcher explicitly requests a meeting brief,
-speaking preparation, or multi-problem synthesis. An ordinary one-problem cycle
-uses its active `focus_<problem>.md` directly.
+Use for an explicitly requested brief or speaking preparation. Ordinary cycles
+use their Focus; do not create an extra document by default. A requested file is
+`daily_research_reports/MMDD/focus_meeting_<topic>.md`; keep a requested speaking
+order in that same file and never overwrite the source Focus.
 
-## Output
+## Scope And Sources
 
-Create:
+For one problem use the named source and core question. For a multi-problem merge
+require its scope, source Focus paths, exclusions and relevant advisor decision;
+resolve these from the explicit request before asking. Do not infer merge scope
+from recency. Unresolved multi-problem scope may be `AWAITING_HUMAN_SCOPE`.
+Read Focus/Anchor/Summary and the derivation needed for mechanism claims; Detailed
+only for decisive setup, numbers or provenance. Chat locates but does not prove.
 
-```text
-daily_research_reports/MMDD/focus_meeting_<topic>.md
-```
+## Make The Mechanism Understandable
 
-Compose the meeting brief directly from the named Focus and the four-part
-Summary; there is no meeting template. Never overwrite a source Focus. When a
-speaking order is explicitly requested, add it in the same document after the
-brief is complete rather than opening a second template.
+Start with concrete data/model objects, not unexplained A/B or private labels.
+Explain what is changed/frozen and the shortest relation from that change to the
+observed consequence. Define the few necessary symbols in words. State which
+arrows are exact, approximate, hypothesized and experimentally tested. A loss
+curve is either derived, measured or illustrative; do not blur these roles.
 
-## Scope
+Search relevant existing work before saying a derivation is unfinished. A missing
+slide, an empirical gap and a local-to-design leap require different repairs.
+Do not use a local effect to claim shared/separate training benefit without its
+comparison. Present current negative results and limitations without hiding them.
 
-For one problem, use the named Focus or source and the meeting's core question.
-Do not create an `AWAITING_HUMAN_SCOPE` scaffold.
+## Organization
 
-For two or more independent problems, require one core question, exact source
-Focus paths, explicit exclusions, and the advisor decision when one is needed.
-Until supplied, the only permitted scaffold status is `AWAITING_HUMAN_SCOPE`.
-Do not infer the merge range from recency, `PROJECTS.md`, chat, or similarity.
+For a completed single experiment retain Purpose, Hypothesis, Analysis method,
+Conclusion. Fit the mechanism bridge inside Analysis rather than adding a template.
+Audit staged training objects, data, optimizer, selection and handoffs from sources;
+include only details necessary to understand the decisive comparison.
 
-AI-drafted knowledge wording remains
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until the researcher approves or corrects
-it.
+For wider requested synthesis use the core question, knowledge update, a few
+progressive questions, claim boundary and one next decision. Each question needs
+an answer, decisive evidence and reason the next follows. Remove ornamental steps.
+Each retained figure needs an eligible source and one reading sentence.
 
-## Completed Single Experiment
+## First-Listener Check
 
-First audit the completed comparisons and whether training was staged. For each
-stage state the trainable and frozen objects, data passes, actual optimizer
-updates, batch and accumulation, objective, learning rates, checkpoint rule,
-and handoff.
+Without chat history, can a listener say what is studied, what is unknown, what
+changes, why the relation predicts an effect, what was measured, what remains
+untested and what understanding changed? If not, repair presentation, not the
+research record. A scientific gap may be clearly presented and ready for discussion;
+readiness is not a requirement for positive or complete scientific findings.
 
-Then use exactly four sections:
-
-1. **Purpose:** one plain sentence.
-2. **Hypothesis:** one or two short falsifiable statements.
-3. **Analysis method:** at most three bullets; each states the comparison and
-   uncertainty resolved.
-4. **Conclusion:** one numbered item per decision-bearing answer, with the
-   smallest decisive value, boundary, one eligible supporting figure when one
-   exists, and one sentence explaining how to read it.
-
-Keep exactly one next decision and its completion condition. For Router or MoE
-work, separate semantic dispatch, intervention-measured expert utility,
-end-task performance, and representation evidence.
-
-## Other Meeting Syntheses
-
-Use this order:
-
-```text
-meeting theme and one core question
-current knowledge update
-two to four progressive questions
-claim boundary and exactly one next decision
-```
-
-For each progressive question give its direct answer, minimum decisive evidence,
-reach, and why the next question is necessary. Delete a question that does not
-change the final boundary or decision.
-
-## Sources And Validation
-
-Read the explicit scope, then the named Focus, linked Anchor and Summary, and
-Detailed only when a number or provenance needs verification. Use the fewest
-results needed. Preserve source conflicts rather than smoothing them over.
-
-Before delivery verify that the request was explicit, source Focus files remain
-unchanged, direct result and interpretation are separate, the question chain is
-progressive, and the document ends with one decision, completion criterion, and
-resume action.
+Keep `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until scientific wording is confirmed.
+Finish with the supported boundary and one decision/completion criterion where the
+meeting calls for one; do not invent human judgment or unauthorized experiments.

@@ -1,55 +1,44 @@
 ---
 name: research-reasoning-auditor
-description: "Audit a research purpose, hypothesis, causal explanation or result interpretation before formalization. Use for confused inference or proxy/mechanism boundaries; not artifact writing or execution."
+description: "Audit research purposes, hypotheses, causal or mathematical mechanisms, rivals, proxies and result interpretations; distinguish missing research from missing explanation. Not formal artifact ownership or execution."
 ---
 
 # Research Reasoning Auditor
 
-Clarify the inference before polishing the story. Use the user's statement and
-only the named evidence needed to judge it; do not turn a quick question into a
-new research artifact or execution plan.
+Clarify inference before polishing. Use the named evidence and requested depth;
+a quick question does not require a new artifact or a full research workflow.
 
-## Choose the depth
+## Read By Need
 
-- **Narrow question / quick audit:** apply the checks below and answer at the
-  requested length. No reference is required merely to repeat these checks.
-- **Full chain, experiment rationale, deep audit or formalization:** read
-  [reasoning_audit_contract.md](references/reasoning_audit_contract.md) in full.
-- **A repeated reasoning failure needing diagnosis:** also read the relevant
-  pattern in [recurrent_failure_modes.md](references/recurrent_failure_modes.md).
-  Its examples are aids, not extra experiments or mandatory output sections.
+- Quick audit: use the checks below; no extra reference merely to repeat them.
+- Deep chain, experiment rationale or formalization: read the
+  [audit contract](references/reasoning_audit_contract.md).
+- Equations, toy models, loss curves or missing-model claims: also read
+  [mechanism closure](references/mathematical_mechanism_closure.md).
+- Repeated confusion: inspect only the relevant
+  [failure pattern](references/recurrent_failure_modes.md).
 
-Reuse instructions already read and still in context; reopen if changed or
-unavailable. Evidence and approval sources must be current for the action.
+Reuse unchanged rules; refresh decision-bearing sources. Before saying a model
+or experiment is absent, inspect relevant existing work and state search limits.
 
-## Checks used at every depth
+## Checks
 
 1. Separate observation, unknown, purpose, hypothesis, mechanism, prediction,
-   measurement/intervention, conclusion and decision. Expected results are not facts.
-2. Start from the unresolved phenomenon, not an easy metric or desired answer.
-   State the scientific objects before introducing mathematics.
-3. For each causal arrow, identify the tested link, assumptions and unmeasured
-   mediator. Consider training history, data, architecture and measurement
-   alternatives when applicable; association alone is not identification.
-4. Name the strongest rival at the same explanatory level and a prediction on
-   which it differs. Shared predictions cannot distinguish the explanations.
-5. Map each proxy to what it measures and cannot establish. Do not jump from
-   geometry to semantics, accessibility to use, or co-movement to mechanism.
-6. Any proposed test states supporting, non-supporting and insufficient outcomes
-   and how each changes judgment. If none changes the decision, revise or stop
-   that proposal; continue other authorized work.
-7. Limit the conclusion to the tested link. Keep uncertainty and missing human
-   judgment explicit. Rewrite only after repairing material logic breaks.
+   measurement/intervention, conclusion and decision.
+2. Start from the phenomenon and system structure, not a convenient metric or
+   preferred method. State objects before mathematics.
+3. Check each explanatory arrow, assumptions, competing cause and evidence.
+   Distinguish absent derivation, untested link, missing explanation and decision leap.
+4. Name a credible rival at the same level and a prediction on which it differs.
+   Do not invent a rival to a proved identity or force a defect in sound reasoning.
+5. State what each proxy measures and cannot prove; geometry, accessibility,
+   functional use and performance are not interchangeable.
+6. A proposed test must say how supporting, non-supporting and insufficient
+   results change judgment. Do not add tests with no decision value.
+7. Limit the claim to the scoped model and tested relation. Apply later-stage
+   requirements only to later-stage claims; preserve useful conjectures as such.
 
-For a quick audit, give the real unknown, decisive unsupported link, rival,
-minimal separator if needed, and maximum allowed claim. If the argument is
-already coherent, say so and proceed; do not invent a defect or fill every slot.
-
-## Boundary and completion
-
-The researcher owns the question, mechanism judgment, boundary and decision.
-This skill audits or proposes; it does not approve, create formal artifacts or
-run experiments. A quick audit is complete when the question and its boundary
-are answered; it need not activate another skill. For requested artifacts use
-the owning Focus/Anchor/experiment Skill; for broad literature critique use
-`scholar-mode`. Never load all downstream skills in anticipation of future work.
+Return the core answer, material gap if any, evidence boundary and only the
+necessary repair. No compulsory checklist-shaped reply. The researcher owns
+scientific judgment; this skill audits/proposes, not approval, execution or
+unrequested documents. Formal outputs retain their existing task owners.

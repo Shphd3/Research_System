@@ -1,209 +1,121 @@
-# Codex Research System
+# Research System
 
-Research judgment/designs/evidence belong here; experiment code, raw outputs,
-logs, datasets and checkpoints belong in the execution workspace.
+Research judgment, designs and evidence belong here. Experiment code, raw data,
+outputs, logs and checkpoints belong in the execution workspace.
 
-## Communication And Authority
+## Authority And Communication
 
-- Converse in Chinese; canonical artifacts are English unless the researcher
-  chooses otherwise, with `_cn.md` companions. Define essential terms in plain
-  Chinese; use `\(...\)` / `\[...\]`. Lead with the answer, boundary and needed
-  decision; favor precise prose over narration and decorative figures/tables.
-  Math formatting follows [docs/markdown_math.md](docs/markdown_math.md): Codex-first
-  delimiters, standalone display blocks, and unchanged literal code/currency.
-- Distinguish direct result, observation, interpretation, hypothesis, claim,
-  speculation, limitation and decision; proposed/expected patterns are not evidence.
-- The researcher owns questions, priorities, mechanism judgments, uncertainty,
-  strongest rivals, scientific approval, claim boundaries, state transitions
-  and final interpretations. `Unknown` is valid.
-- AI may retrieve/audit, propose labeled alternatives, formalize approved work,
-  implement/verify in-scope changes and maintain operational records. Never
-  invent judgment, strengthen claims or treat names/diagnostics as proof.
-  Concurrent chats transfer no authority; the researcher decides coordination.
+Converse in Chinese. Canonical artifacts are English with `_cn.md` companions
+unless the researcher chooses otherwise. Lead with the answer and its boundary;
+define essential terms before notation. Use precise prose, not compulsory
+headings or decorative tables. Math follows [docs/markdown_math.md](docs/markdown_math.md).
 
-## Read Only The Context Needed
+Separate observations, derivations, interpretations, hypotheses and decisions.
+The researcher owns questions, priorities, strongest rivals, mechanism judgment,
+scientific approval, claim boundaries and state transitions. AI may inspect,
+audit, offer labeled alternatives, formalize confirmed choices, and implement
+and verify authorized work. Missing judgment stays `Unknown`; a successful run,
+audit, model switch or another conversation supplies no scientific authority.
 
-- Named question/result/status: start at its source; follow needed links only.
-- Select/check a workstream through `PROJECTS.md` and its Focus/Anchor; read
-  current Focus or Anchor before changing the problem. Graphs/indexes/Stories
-  are optional navigation/synthesis. Load only matching Skills/references.
-- Before proposing training implementation or reusing prior project code, read
-  `docs/training_reuse_index.md`, inspect sources, and state what to reuse,
-  adapt or reject before writing code.
-- Before relying on active workstream links, run
-  `python tools/check_current_entrypoints.py`: existence/versioning only, never
-  a scientific verdict or approval.
+## Context And Reasoning
 
-Use the same authority and output contracts across models. Select the Skill
-that owns the requested deliverable; add another only for a necessary subtask.
-Reuse unchanged instructions already in context, but refresh decision-bearing
-sources before acting or editing. A model switch is not new authorization.
-For a supplied operational continuation brief, use `research-memory` brief mode
-and its required sources; an explicitly resumed log still follows the full-log
-rule below. Keep write scopes disjoint during concurrent work.
+Start at the named source. Use `PROJECTS.md` only to select a workstream; inspect
+its current Focus/Anchor before changing its question. Check existing derivations
+and evidence before declaring something missing. Distinguish an absent model,
+an unshown derivation, an untested mechanism and an unsupported decision leap.
+If access is incomplete, bound the search claim rather than asserting absence.
 
-Chat/memory is never scientific authority. Use `research-memory` and
-`.research/memory/conversations/<conversation>/memory.md`: one distinct log per
-conversation, timestamped append-only checkpoints with processing-agent identity.
-Never overwrite earlier entries/other conversations. Load only to resume/recall
-that conversation; read the whole log, newest entry last as working state. Verify claims/approvals
-against Focus/Anchor/Protocol/Summary/Detailed; versioning grants no authority.
+Use the smallest task owner in [docs/skills.md](docs/skills.md), then only its
+applicable references. Reuse unchanged instructions; refresh decision-bearing
+sources before acting. The [method kernel](docs/methodology/research_exploration_kernel.md)
+guides open research and mechanism work, not routine deterministic tasks or a
+mandatory serial skill chain. Allow reasoned conjectures and counterexamples;
+apply only the current stage, without inventing future models or documents.
 
-## Scientific Records
+Before relying on active workstream paths run `python tools/check_current_entrypoints.py`;
+it checks navigation, not scientific validity. Before new training implementation
+or code reuse inspect `docs/training_reuse_index.md` and the actual source;
+state reuse, adaptation or rejection. Training and comparisons must follow
+`docs/training_observability_contract.md`; do not duplicate or weaken its
+telemetry, token/batch normalization, freeze or resume checks.
 
-### Focus
+Memory is non-canonical. Use `research-memory`: one conversation log,
+timestamped append-only entries with processing-agent identity. Never overwrite
+other conversations or earlier entries. Explicit log resumption reads the full
+log; operational briefs read their required sources instead. Verify approval
+and scientific claims against their owning records, not memory.
 
-Each researcher-activated workstream has one current `focus_<problem>.md`, one
-core question and one next decision, with at most three necessary experiments.
-Create/reset only after the researcher activates an independent question and
-confirms its stable `problem_key` and next decision.
+## Record Ownership
 
-Focus states Purpose, Hypothesis, Analysis method and preregistered supporting/
-non-supporting/insufficient branches in plain language before execution;
-Protocol states them precisely. No contradictions: Protocol governs execution,
-Focus intended meaning, without copying Protocol numbers. Afterward, the
-researcher owns judgment, cannot-claim boundary and next decision. Never paste
-Protocol/Summary bodies into Focus or strengthen evidence.
-
-Keep one rolling summary from Detailed, one row per round; duplicate round
-histories are `FAIL`. Lifecycle fields are independent:
-`task_state`, `question_state`, `design_state`, `result_state`. Do not combine
-them into `status`, mirror Protocol approval, or mirror execution state.
-Use `research-progress-core` for the detailed Focus contract.
-
-### Anchor And Experiments
-
-Anchor is the sole current design, with no parallel `design.md`: self-contained
-problem, priors, falsifiable hypotheses, mathematical model, constructible
-computation, minimum falsifier, evidence, boundary, exactly one next decision.
-Update the same Anchor; use `problem-anchor-writer` for structure/checks.
-
-```text
-Anchor -> protocol.md -> summary.md / summary_cn.md -> detailed.md -> Anchor update
-```
-
-- Protocol owns contract/approval; drafting authorizes neither implementation
-  nor execution. Full/expensive remote runs require scoped approval; small local
-  implementation checks do not.
-- Summary is the complete first result reading surface; its Chinese companion
-  carries the same **Purpose, Hypothesis, Analysis method, Conclusion** body.
-  Detailed owns setup, provenance, deviations, tables, failures and artifact map.
-- One round is one day's work. Detailed records in order: question/hypothesis;
-  setup/controls; data; test/confirmation split; result or `NOT RUN`; insight,
-  boundary update and next decision. First four plus `NOT RUN` is a complete
-  round; completed results require all six.
-- Add conditions, seeds, diagnostics or artifacts only to separate a named
-  rival, protect the conclusion or reproduce it.
-- A proposed research test must separate named explanations and state how
-  supporting, non-supporting and insufficient outcomes change the judgment.
-- One question gets one paper-style final report after its Anchor settles and
-  the researcher confirms result, boundary and next question. Use
-  `research-final-report`; it explains, never replaces evidence.
-- In external exploration workflows, Anchor replaces `design.md`; Protocol,
-  Summary and Detailed remain contract/result/iteration, Focus an extra card.
-
-Before any new training implementation/run, read and follow
-`docs/training_observability_contract.md`. It owns required TensorBoard scalars
-and normalization, token-based comparison/batch matching, Protocol freezes and
-finite/token-count/resume smoke checks. Missing/ambiguous records make affected
-comparisons ineligible. Do not duplicate or weaken that contract.
-
-## Learning, Meetings And Result Replies
-
-Meetings center one bounded falsifiable mechanism question, not a required
-positive answer. Deliver prior explanation, strongest rival, separating
-evidence, knowledge update, boundary and next decision. Separate literature
-insight from newly measured mechanism. Completion/debugging/sweeps/metric changes
-are supporting work, not mechanism judgment. Performance/geometry alone cannot
-establish causality: state the supported link, rival and falsifier. Keep
-accessibility, semantic routing, intervened expert utility and performance distinct.
-
-Daily plans protect learning/independent explanation before implementation:
-minimum reading order, each source's question and a small comprehension output.
-Monitoring/unfinished runs cannot consume this time. Daily reports wait for
-canonical results and human Focus judgment; `Unknown` leaves them pending.
-Link Focus/Anchor/Summary/Detailed; state one update, rival, boundary and human
-next decision without copying result bodies, ledgers or large tables.
-
-With Summary, start replies with its link, then give verdict/smallest decisive
-value, minimal decisive figures beside their conclusions with one reading
-sentence, nearest boundary and next-step uncertainty/rationale/stop outcome.
-Unconfirmed next steps are `AI 建议`. Repeat the four-part body in chat only
-without Summary or for a requested standalone speaking/meeting brief. Include
-history/secondary diagnostics only for eligibility or the decisive comparison;
-never manufacture evidence or show ineligible/redundant/decorative figures.
-
-## Remaining State Ownership
-
-Focus, Anchor, Protocol, Summary and Detailed own the roles specified above;
-execution state belongs only to Detailed or its execution record.
-
-| Surface | Owns |
+| Record | Owns |
 |---|---|
-| `AGENTS.md` | Stable behavior and scientific boundaries |
-| `PROJECTS.md` | Project map, workstreams, priorities and project decisions |
-| Conversation memory | Non-canonical working context only |
-| `docs/execution_envelope.md` | Profiles, image/runtime registry, submission and execution certificates |
-| `docs/training_observability_contract.md` | Telemetry, normalization and comparison coordinates |
-| Final report, Graph, Story, roadmap, sync | Derived reading/navigation |
+| `PROJECTS.md` | Navigation, workstreams, priorities and project decisions |
+| Focus | One activated question and researcher-owned next decision |
+| Anchor | Sole current scientific design; never a parallel `design.md` |
+| Protocol | Exact experiment contract, review, approval and amendments |
+| Summary / `_cn.md` | Complete Purpose, Hypothesis, Analysis method, Conclusion |
+| Detailed / execution record | Setup, provenance, deviations, results and execution state |
+| Final report / Story / Graph / sync | Derived reading or navigation, not new authority |
+| `docs/execution_envelope.md` | Profiles, images, submission and execution certificates |
 
-Machine state owns no scientific claims, approvals, priorities, verdicts or next
-decisions. Repair conflicting derived views from their source, not another authority.
+A Focus is created/reset only after researcher activation, stable `problem_key`
+and next decision are confirmed. Keep at most three necessary experiments per
+question. Preserve independent `task_state`, `question_state`, `design_state`,
+`result_state`; do not mirror execution/approval into a combined status. Focus
+states scientific meaning, Protocol exact execution; resolve contradictions
+without silently rewriting either. One rolling round summary derives from Detailed.
 
-## Autonomy, Execution And Completion
+Anchor keeps its eight-section contract through `problem-anchor-writer`.
+A round records question/hypothesis, setup/controls, data, confirmation split,
+result or `NOT RUN`, and insight/boundary/next decision. Planned rounds may stop
+at `NOT RUN`; completed rounds need all six. Preserve full evidence once, not
+duplicate histories. Finish authorized factual records even when human
+interpretation is unknown. Never reinterpret frozen results during refactoring.
 
-Proceed with local reads, in-scope edits/tests and non-destructive checks. Pause
-only for missing human scientific judgment/state transitions, material scope
-expansion, destructive/external actions, or full/expensive remote runs without
-authorized profile/image/scope. An authorized Protocol using the envelope's
-default profile creates no new gate. User instructions outrank Skill preferences;
-Skills cannot invent approval gates. Do not re-request approval already given
-for the same action and scope.
+Experiments need a named uncertainty, credible alternative, distinguishing
+comparison and supporting/non-supporting/insufficient outcomes. A formula's
+implementation check is not a new empirical discovery. Local effects, long-term
+training and design decisions require separate evidence or an explicit bridge.
+Question closure and its one final report require a researcher-confirmed bounded
+answer; negative or insufficient results cannot be polished into support.
 
-Absent requested continuous/completion-time monitoring, verify bounded startup
-(scheduling, runtime/workers, Smoke/first progress gate, immediate failures),
-report job ID, verified progress, boundary and evidence-based ETA, then stop
-polling while it runs. Later inspect that job; do not resubmit because monitoring ended.
+## Meetings And Delivery
 
-Complete the deliverable, evidence trace, proportionate checks and failure/
-unknown record; continue while authorized work remains possible. First drafts
-or first successful implementations are insufficient. Narrow answers need no
-formal artifact; formal work follows its Skill completion contract.
+Protect reading and independent explanation before implementation. Meetings
+center one falsifiable question, not a positive result. A first-time listener
+must understand the objects, what changes, why, which relation was tested and
+what remains open. A schematic loss curve cannot replace a mechanism derivation.
+Keep accessibility, semantic routing, intervention-measured utility and end-task
+gain distinct. Repair presentation without pretending valid prior work is absent.
 
-## Skills And Storage
+With a Summary, link it first, then give the decisive comparison/value, essential
+figure and reading sentence when useful, boundary and next uncertainty. Repeat
+the four-part body only for a requested standalone brief or absent Summary.
+Unconfirmed next steps are `AI 建议`. Daily synthesis waits for canonical results
+and human Focus judgment; link sources rather than copying histories.
 
-Use `.agents/skills/<name>/SKILL.md` only for its matching task, then only the
-references it routes to:
+## Execution, Storage And Completion
 
-| Task | Skill |
-|---|---|
-| Purpose, causal logic, rivals, proxy/construct audit | `research-reasoning-auditor` |
-| Focus, judgment, falsifier, failure | `research-progress-core` |
-| Anchor creation/revision/design audit | `problem-anchor-writer` |
-| Protocol and canonical result records | `experiment-card-writer` |
-| Settled-question final report | `research-final-report` |
-| Explain documents, formulas, evidence | `research-document-explainer` |
-| Requested meeting, Story, handoff/sync | `research-communication` |
-| Conversation working context | `research-memory` |
-| Advisor readiness or one next question | `research-sync-gate` |
-| Placement, archival, explicit root publication | `research-mainline` |
-| Explicit Graph work | `research-graph-sop` |
-| Remote operations/artifact maps | `remote-experiment-workflow` |
-| Unsettled theory/method/literature | `scholar-mode` |
-| Explicit local graph display | `sidecar-thinking` |
+Proceed with reads, in-scope edits, local tests and non-destructive checks.
+Pause only for missing consequential human judgment, scope expansion,
+destructive/external actions, or unapproved full/expensive remote runs. User
+instructions prevail over skill preferences; never re-request approval already
+given for the same scope. A drafted or confirmed design alone is not run approval.
+Keep concurrent write scopes disjoint and never revert user changes.
 
-Resolve remote profile/image/entry point from `docs/execution_envelope.md`.
-Root `templates/` alone owns reusable templates. Git tracks research text,
-scripts, configs and small provenance manifests. Raw execution and generated
-tables/figures/logs/caches/fonts stay local/execution-side with paths/digests in
-Detailed; explicitly requested curated packages may carry reading copies.
+Absent requested ongoing monitoring, verify bounded startup, first progress
+and immediate failures; report verified status, job ID and evidence-based ETA,
+then stop polling. Later inspect the existing job, not resubmit it.
 
-Dated reader artifacts display only figures physically in their date's
-`figures/`, linked date-relatively. Keep experiment evidence/date reading copies
-with recorded origins; `research-mainline` owns placement details. No raw outputs
-in the mainline.
+Root `templates/` owns reusable templates. Track research text, scripts, configs
+and small provenance manifests, not raw outputs, caches, checkpoints or fonts.
+Requested curated packages may contain reading copies. Dated documents use their
+own date's `figures/` with relative links and recorded origins. Independent
+repositories under `Projects/` keep their own ownership; do not silently merge them.
 
-Never revert user changes. Commit, push, publish, edit an existing Graph or sync
-to another repository only on explicit request. Before commit run
-`python tools/check_git_payload.py`. Use focused tests/source inspection; do not
-require a repository-wide registry or task-tracking command.
+Commit, push, publish, external sync and existing Graph edits require explicit
+request. Before commit run `python tools/check_git_payload.py` and proportionate
+changed-scope tests; report unavailable checks honestly. Skill edits require
+structural/link checks; changed math requires source checks, not claims of rendered
+verification. Complete the authorized deliverable and evidence trace; a first
+draft is not completion. Narrow answers need no formal artifact.
