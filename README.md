@@ -8,17 +8,18 @@ corresponding execution workspace.
 
 - `AGENTS.md`: stable behavior, scientific invariants, authority, and approval
   boundaries.
-- `PROJECTS.md`: active projects and workstreams, their priorities, current
-  Focus paths, scientific boundaries, and resume points.
+- `PROJECTS.md`: stable workstream navigation and current Focus/Summary paths;
+  scientific judgments and results remain in their owning records.
 - `docs/training_reuse_index.md`: verified map of previous training code,
   datasets, tokenizer, historical runs, and reuse warnings. Read it before a
   new model-training implementation or an explicit prior-code reuse request.
 - `docs/training_observability_contract.md`: required TensorBoard loss records,
   valid-token comparison coordinate, global-batch matching, and schedule/resume
   rules for every new model-training run.
-- `daily_research_reports/MMDD/focus_<problem>.md`: one workstream's living
-  meeting-cycle question, confirmed plain-language design, result boundary,
-  and next decision.
+- `daily_research_reports/MMDD/focus_<problem>.md`: one workstream's stable
+  scientific question and next decision; reuse the path across meetings.
+- `daily_research_reports/MMDD/meeting_report/meeting_brief_<topic>_cn.md`: one requested
+  speaking entry, derived from Focus and evidence, with Q&A below the short core.
 - `Projects/<project>/main/problem_anchors/`: canonical current research
   designs. An Anchor fulfills the role of `design.md`; do not create both.
 - `Projects/<project>/main/experiments/`: Protocol, Summary, Detailed record,
@@ -39,22 +40,24 @@ source. Do not load this whole map merely because it exists.
 ## Research Flow
 
 ```text
-select or activate one workstream
--> focus_<problem>.md
--> canonical Anchor
--> protocol.md
--> approved execution scope
--> summary.md + detailed.md
--> researcher-confirmed result, boundary, and next decision
--> Focus and Anchor update
--> optional daily report, meeting material, story, Graph, or sync publication
+question, importance and scope
+-> candidate explanation or formal claim, assumptions and alternatives
+-> appropriate model and smallest distinguishing check
+-> eligible evidence and bounded answer
+-> affected question or assumption and researcher-owned next decision
 ```
+
+Return to the unresolved step when a check fails. Evidence may be a proof,
+counterexample, observation, intervention or system comparison. A chosen route
+is not a necessary prerequisite without a justified dependency. Artifact owners
+below support this loop; no new question, run or publication is automatic.
 
 ### 1. Focus
 
-Creating or resetting a Focus is a researcher-owned decision. Each active
-workstream has one current Focus, one core question, one next decision, and at
-most three necessary experiments. Each experiment uses:
+Creating or resetting a Focus is a researcher-owned decision about an independent
+question, not a date or reporting deadline. Each active workstream has one current
+Focus, one core question, one next decision, and at most three necessary experiments.
+Language companions, diagnostics and meeting briefs do not create extra Focuses. Each experiment uses:
 
 ```text
 Purpose -> Hypothesis -> Analysis method -> Conclusion or outcome branches
@@ -104,8 +107,9 @@ meaning.
 - `daily_research_reports/MMDD/docs/daily_report_<topic>.md`: delayed,
   self-contained explanation written only after the source Focus has
   `result_state: HUMAN_CONFIRMED`.
-- `focus_meeting_<topic>.md`: created only for an explicitly requested meeting
-  brief or synthesis; an ordinary one-problem meeting uses its Focus.
+- `daily_research_reports/MMDD/meeting_report/meeting_brief_<topic>_cn.md`: one explicitly
+  requested short speaking core plus linked evidence and optional Q&A. Focus
+  supplies the question, not the script. Keep older reports as reading history.
 - Story: explicitly requested line-level mathematical or evidence synthesis.
 - Graph: thin navigation between questions, claims, methods, evidence, and
   tasks.
@@ -157,10 +161,10 @@ Chinese companions use `_cn.md`. Lead with the answer, define indispensable
 terms, separate evidence from interpretation, and preserve negative or
 insufficient results.
 
-When a completed experiment has `summary.md`, link it first in chat and do not
-rewrite its four-part account. Give only the direct verdict, smallest decisive
-value, important figure and reading, nearest boundary, and next-step analysis.
-Label an unconfirmed next step `AI 建议`.
+For ordinary result replies, link `summary.md` and give the decisive evidence,
+boundary and next uncertainty. For requested meetings, use the short speaking
+entry rather than reading Summary aloud. Separate exact mechanism, measured result
+and untested decision bridge. Label an unconfirmed next step `AI 建议`.
 
 ## Approval And Completion
 
@@ -182,5 +186,6 @@ is not completion by itself.
   Skills directly.
 - `docs/`: terminology, Skill index, examples, and setup notes.
 
-No root document should duplicate current project conclusions from
-`PROJECTS.md`, Anchors, or result records.
+Root documents provide navigation and rules, not copies of current experiment
+conclusions. Focus owns scientific decisions; Anchor and result records own their
+corresponding designs and evidence.

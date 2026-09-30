@@ -80,7 +80,9 @@ skill-creator `quick_validate.py` when available; report its absence rather than
 claiming execution. Run `python -m unittest discover -s tools/tests` for local
 regression tests and `python tools/check_markdown_math.py <changed-math-files>`
 for source containers. These checks establish structure/code behavior, not
-scientific correctness, target rendering or live model trigger quality.
+scientific correctness, target rendering or live model trigger quality. Behavioral
+checks use cross-domain [scenarios](methodology/research_exploration_regression_cases.md)
+and actual answers; distinguish self-review from independent evaluation.
 
 Preserve lean entrypoints. Compare like-for-like read paths, including required
 references, rather than claiming all tasks save the entrypoint percentage.

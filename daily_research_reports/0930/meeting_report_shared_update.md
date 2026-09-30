@@ -1,5 +1,7 @@
 # Meeting report: from shared-update mechanisms to structure in natural language
 
+> Retained as the previous expanded report. The current speaking entry is the [three-minute brief](meeting_report/0930_组会汇报稿.md). Historical content and evidence boundaries below are preserved, not promoted to new scientific state.
+
 [Current natural-text Summary](docs/domain_update_geometry/summary.md) · [Detailed evidence](docs/domain_update_geometry/detailed.md) · [中文](meeting_report_shared_update_cn.md)
 
 Status: AI_DRAFT_AWAITING_HUMAN_CONFIRMATION. This is a meeting synthesis of completed evidence, audited for mechanism, evidence eligibility and clarity. It changes no registered verdict or researcher-owned question state. Filed under 0930; written on 2026-09-29 UTC. The original purpose is reconstructed from research records, not presented as a verbatim advisor-meeting transcript.

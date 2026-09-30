@@ -1,5 +1,7 @@
 # 组会报告：共享更新怎样影响另一条数据，以及这种关系如何进入自然语言研究
 
+> 本文保留为原六页展开稿；当前唯一短讲入口是[三分钟主稿](meeting_report/0930_组会汇报稿.md)。以下历史内容与原有证据边界保留，不作为新研究状态。
+
 [本轮自然文本结果摘要](docs/domain_update_geometry/summary_cn.md) · [完整证据](docs/domain_update_geometry/detailed_cn.md) · [English](meeting_report_shared_update.md)
 
 状态：AI_DRAFT_AWAITING_HUMAN_CONFIRMATION。这是已完成证据的组会表述稿，已作机制、证据资格和表达三轮审计；不改变原裁决，也不替研究者关闭问题。归档日期0930，编写于2026-09-29 UTC。下文按现有研究记录还原最初问题，不冒充导师会议的逐字纪要。

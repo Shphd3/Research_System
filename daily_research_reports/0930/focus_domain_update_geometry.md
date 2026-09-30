@@ -1,6 +1,6 @@
 # Common and domain-specific natural-language update geometry
 
-[Day index](README.md) · [Current Summary](docs/domain_update_geometry/summary.md) · [Meeting report](meeting_report_shared_update.md) · [中文](focus_domain_update_geometry_cn.md)
+[Day index](README.md) · [Current Summary](docs/domain_update_geometry/summary.md) · [Three-minute brief](meeting_report/0930_组会汇报稿.md) · [中文](focus_domain_update_geometry_cn.md)
 
 ~~~text
 type: meeting_cycle_core_task

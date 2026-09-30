@@ -44,7 +44,7 @@ mechanism, feasibility, observed curve or experimental result.
 Labels constructed to create a conflict demonstrate only that toy setting's
 possibility, not the same effect in the actual model.
 
-Audit the actual optimizer, normalization, sample aggregation and model state.
+For learning models audit optimizer, normalization, aggregation and model state.
 Single-sample factorization need not survive taking separate averages. A normalized
 update does not imply a common learning rate across conditions. An identity test
 checks implementation; an empirical proposition requires independent evidence.
@@ -65,12 +65,16 @@ shared-parameter changes. A failed operationalization leaves other ones open.
 
 ## Match The Question Level
 
-State whether the output explains an instantaneous effect, training trajectory,
-prediction on unseen data or resource/architecture decision. A negative cross-update
-term alone cannot establish that separate experts train better. That claim needs
-shared/separate objectives, comparable parameters/compute/data/update budgets,
-initialization, useful transfer and a stated time horizon. Mark this bridge open
-without invalidating the local result or making it the mandatory next project.
+State whether the output is a formal result, descriptive relation, intervention
+effect, unseen-data prediction or design decision. A broader population, time
+horizon or use needs a justified bridge, assumptions and comparison appropriate
+to its objective and resources. An open bridge neither invalidates the bounded
+result nor makes the broader comparison the mandatory next project.
+
+For example, a negative cross-update alone does not show separate experts train
+better; that requires matched objectives, parameter/compute/data/update budgets,
+initialization, useful transfer and a time horizon. This example is not a general
+research sequence.
 
 ## Return Only The Decisive Finding
 

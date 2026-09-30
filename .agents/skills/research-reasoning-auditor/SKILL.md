@@ -32,12 +32,12 @@ or experiment is absent, inspect relevant existing work and state search limits.
    Distinguish absent derivation, untested link, missing explanation and decision leap.
 4. Name a credible rival at the same level and a prediction on which it differs.
    Do not invent a rival to a proved identity or force a defect in sound reasoning.
-5. State what each proxy measures and cannot prove; geometry, accessibility,
-   functional use and performance are not interchangeable.
-6. A proposed test must say how supporting, non-supporting and insufficient
-   results change judgment. Do not add tests with no decision value.
-7. Limit the claim to the scoped model and tested relation. Apply later-stage
-   requirements only to later-stage claims; preserve useful conjectures as such.
+5. State what each proxy measures and cannot prove; description, prediction,
+   causation and practical utility are not interchangeable.
+6. Choose evidence appropriate to the claim; state how support, non-support or
+   insufficiency changes judgment and the next check.
+7. Bound the claim; justify necessary dependencies before imposing gates.
+   Apply only current-stage obligations; preserve conjectures as such.
 
 Return the core answer, material gap if any, evidence boundary and only the
 necessary repair. No compulsory checklist-shaped reply. The researcher owns

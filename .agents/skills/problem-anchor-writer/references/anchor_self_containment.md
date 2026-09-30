@@ -24,8 +24,8 @@ linked document can reconstruct the research judgment:
 
 ```text
 decision question
--> physical prior
--> primary hypothesis versus strongest rival
+-> world claims or mathematical assumptions
+-> formal claim or empirical hypothesis versus rival
 -> mathematical relation
 -> computational realization
 -> decisive falsifier
@@ -59,17 +59,18 @@ been approved. Use exactly these top-level sections:
 ```
 
 Do not add an abstract, timeline, literature review, or embedded intake form.
-Keep one decision question, one core model, one primary metric, one main
+Keep one decision question, one core model, one decisive criterion, one main
 falsifier, and one next decision. Put run-level settings in `protocol.md`.
 
 Keep exactly one phenomenon and decision question with a minimal variable set.
-Retain at most three physical priors, preferably one. Section 4 distinguishes
-assumptions, derived results, empirical propositions and intuition; each equation
-must map to a prior, concrete computation and experiment/analysis artifact.
-Section 6 states metric, threshold, separated rival, allowed claim and boundary.
+Retain at most three priors/assumptions, preferably one. Section 4 separates
+assumptions, derivations, empirical claims and intuition; each equation maps to
+its assumptions, proof/computation and evidence.
+Section 6 states the decisive check, separated rival, allowed claim and boundary;
+experimental claims also state the metric and justified threshold.
 Every linked artifact must exist. Inline formulas use `\(...\)`, displays `\[...\]`.
 Canonical English and `_cn.md` companions preserve the same question, model,
-metric, thresholds, boundary and next decision unless the user chooses otherwise.
+criterion, boundary and next decision unless the user chooses otherwise.
 
 ## Research-Question Contract
 
@@ -83,7 +84,7 @@ Section 1 must establish:
 parent direction or root problem
 current established boundary
 one blocking uncertainty
-why this uncertainty is the smallest decision that can change the direction
+why this answer changes the parent judgment; chosen route or necessary dependency
 exact decision question
 in-scope and out-of-scope objects
 what each Pass / Fail / Insufficient outcome would change or stop
@@ -101,6 +102,11 @@ meaning.
 Self-contained does not mean self-justifying. If the question depends on an
 unsettled premise, state the premise as unsettled, explain its consequence,
 and link the artifact that records or could resolve it.
+
+For theory-only questions, label mathematical assumptions instead of inventing
+physical priors. Use proof/counterexample obligations instead of an experimental
+metric, dataset or threshold. Keep the eight-section ownership and apply only
+the active claim's requirements; a preferred route is not a necessary dependency.
 
 ## Zero-Net-Growth Rule
 
@@ -128,21 +134,20 @@ The anchor passes only if a reader can answer all of these from the anchor
 alone:
 
 1. What exact decision question is being adjudicated, and what is out of scope?
-2. What claim about the physical or data-generating world motivates the design?
-3. What are the primary hypothesis and strongest live rival, and how do their
-   predictions differ?
+2. Which world claims or mathematical assumptions motivate the design?
+3. What claim or empirical hypothesis is checked, and what would refute it?
 4. What is the one mathematical relation or objective that encodes the idea?
 5. How does each decision-bearing mathematical object become an actual data,
    model, intervention, or analysis object?
-6. What single comparison and primary metric can falsify the hypothesis, and
-   what do pass, fail, and insufficient mean?
+6. What proof/counterexample or empirical comparison adjudicates it, and what
+   do supporting, non-supporting and insufficient evidence change?
 7. What was directly observed, what is the safest interpretation, and what
    remains unresolved?
 8. What is the conservative claim boundary and the one next decision, including
    its completion criterion and resume action?
 
-If any answer requires opening a link, recalling a conversation, inspecting
-code, or interpreting an unexplained label, the anchor fails the gate.
+Apply only the active claim's questions. If an applicable answer requires hidden
+context or an unexplained label, repair its explanation in the Anchor.
 
 ## Grounding And No-Invention Contract
 
@@ -202,27 +207,27 @@ use, including what is measured and what is excluded.
 
 ### 2. Physical Priors
 
-State the prior first as a plain claim about the world. Then name the observable
-that exposes it and what would make it false. Prefer one prior; retain another
-only when it changes the core prediction.
+State empirical priors as testable world claims; formal assumptions as such.
+Explain their consequences and limits. Retain only those affecting the claim.
 
 ### 3. Falsifiable Hypotheses
 
-Place the primary hypothesis beside the strongest live rival. State the causal
-direction and distinct observable prediction of each. A hypothesis name or
+For an empirical claim, place the hypothesis beside its strongest live rival.
+State the tested relation and each prediction. For a formal claim state its
+assumptions and proof/refutation obligation. A hypothesis name or
 condition label is not an explanation.
 
 ### 4. Mathematical Model
 
-State the physical or causal idea before the equation. Define every symbol at
+State the scientific relation before the equation. Define every symbol at
 first use, retain one core relation when possible, and say what decision the
 relation supports and what it cannot establish.
 
 ### 5. Computational Realization
 
-Follow causal order rather than implementation chronology. Map every
+Follow logical order, including causal order where relevant. Map every
 decision-bearing mathematical object to a constructible data field, tensor,
-component, intervention, or analysis computation. For a scientifically
+component, proof step, intervention, or analysis computation. For a scientifically
 meaningful stage, state its goal, how it works, and why it is needed. Exclude
 run settings that belong to the Protocol.
 
@@ -233,10 +238,10 @@ this section. Omit prior-art catalogues that do not change the computation.
 
 ### 6. Minimal Falsification Tests
 
-Specify one decisive comparison, one primary metric, and only the guards needed
-to rule out the named rival. Define the metric's concrete computation, unit or
-formula, decision role, threshold logic, and what it cannot prove. State pass,
-fail, and insufficient outcomes before any evidence is interpreted.
+Specify the decisive proof/refutation or empirical comparison and necessary
+guards. Empirical metrics need a computation, unit, decision role, justified
+threshold and limitation. State supporting, non-supporting and insufficient
+branches and their decision consequences before interpreting evidence.
 
 ### 7. Current Evidence
 
@@ -275,7 +280,7 @@ parent direction. Do not replace the decision with a broad backlog.
 
 ## Formula And Metric Rules
 
-Before a formula, state the causal or decision idea in plain language. After
+Before a formula, state the logical, causal or decision idea in words. After
 the formula, state:
 
 ```text
@@ -285,9 +290,8 @@ decision role
 what the value cannot prove
 ```
 
-Keep only the formula and primary metric needed to distinguish the hypothesis
-from its strongest rival. Move derivations and secondary diagnostics to their
-owning artifacts.
+Keep formulas or metrics needed for the claim and decisive check. Link fuller
+proofs or diagnostics after the Anchor explains the essential relation.
 
 ## Compression Replacements
 
@@ -334,25 +338,9 @@ dependency order from parent--child ownership.
 
 ## Final Audit
 
-Read the anchor once without opening links and mark each item `PASS` or `FAIL`:
-
-```text
-Question and scope are explicit:
-Prior and causal direction are explicit:
-Hypothesis and strongest rival predict different observations:
-Core model is understandable before its equation:
-Model-to-computation mapping is complete:
-Primary metric and verdict rules are defined:
-Evidence separates observation from interpretation:
-Boundary and one next decision are reconstructible:
-Question placement explains why this decision is next:
-Pass / Fail / Insufficient implications for the parent direction are explicit:
-Every proposal, unknown, and blocked item is unmistakable:
-No human judgment, source, value, threshold, or result was invented:
-No link carries required explanatory content:
-No sentence can be removed without weakening the decision chain:
-```
-
-Approval requires every item to pass. If a missing explanation is needed,
-rewrite or replace lower-value content under the zero-net-growth rule rather
-than adding a new document layer or top-level section.
+Apply the cold-reader gate and grounding rules to the active claim. Check source
+identity, language consistency, placement, branch consequences and one next
+decision. Mark applicable gaps `FAIL`; do not manufacture requirements for an
+inactive stage or a sound argument. Passing checks grants no scientific approval.
+Replace lower-value content to repair gaps under the zero-net-growth rule;
+add no document layer or top-level section.

@@ -1,24 +1,21 @@
 ---
 name: research-communication
-description: "Create an explicitly requested meeting brief, speaking outline, research Story/stage synthesis, or curated handoff/sync from approved sources."
+description: "Write a requested meeting brief, speaking outline, stage Story or curated handoff from named research sources, without changing scientific authority."
 ---
 
 # Research Communication
 
-Explain the requested scientific material without changing its claim boundary.
-Select exactly the applicable mode; add another only for a requested second output.
+Choose the requested mode; do not run a serial skill chain:
+- Meeting or speaking: [meeting](references/meeting.md).
+- Research-line synthesis: [story](references/story.md).
+- Curated copy or external sync: [handoff](references/handoff.md).
 
-- Meeting or speaking brief: [meeting](references/meeting.md).
-- Research-line or stage synthesis: [story](references/story.md).
-- Curated package/copy/external sync: [handoff](references/handoff.md).
+Use canonical evidence. Lead with the question and bounded answer; define objects
+before symbols. Separate derivation, measurement, interpretation and decision.
+Inspect existing work before calling a model or experiment missing. Preserve
+negative results, unrun branches and source disagreements.
 
-Use named canonical evidence, not chat as scientific truth. Define objects before
-symbols, give the answer before supporting detail, and distinguish measured
-result, derivation, interpretation, uncertainty and decision. A new listener must
-understand what changes, why and which relation was actually tested.
-
-Inspect existing derivations before diagnosing missing research. Repair missing
-exposition without inventing a proof, data or scientific approval. Preserve
-negative/insufficient results and source disagreements. Commands, full tables and
-chronology remain in their owners. Create only the requested output; publication,
-external sync, Graph changes and scientific transitions retain explicit scope.
+Focus owns the current question, not the talk. A requested meeting brief is one
+dated derived file, never another Focus. Repair exposition without silently
+changing research state. Detailed tables and history remain in their owners.
+Create only the requested output; execution and publication require their own scope.

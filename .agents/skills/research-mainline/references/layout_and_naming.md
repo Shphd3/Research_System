@@ -26,17 +26,17 @@ Projects/<project>/main/
     <NN>_<topic>_cn.md
 ```
 
-Meeting-cycle files live at:
+Research Focus and requested meeting files live at:
 
 ```text
 daily_research_reports/MMDD/focus_<problem>.md
-daily_research_reports/MMDD/focus_meeting_<topic>.md
+daily_research_reports/MMDD/meeting_report/meeting_brief_<topic>_cn.md
 daily_research_reports/MMDD/figures/<figure>.png
 daily_research_reports/MMDD/figures/SOURCES.md
 ```
 
-The Focus uses the date it was first created. Keep `cycle_start` and
-`target_meeting` in metadata; do not move a living Focus at midnight.
+Focus keeps its original date/path. Briefs use the reporting date, never a
+meeting Focus; the day index links one speaking entry.
 
 ## Date Figures
 

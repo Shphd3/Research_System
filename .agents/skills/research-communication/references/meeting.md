@@ -1,52 +1,48 @@
 # Meeting Mode
 
-Use for an explicitly requested brief or speaking preparation. Ordinary cycles
-use their Focus; do not create an extra document by default. A requested file is
-`daily_research_reports/MMDD/focus_meeting_<topic>.md`; keep a requested speaking
-order in that same file and never overwrite the source Focus.
+Use for a requested brief or speaking preparation. Keep the existing Focus and
+problem_key stable across meetings, dates and model switches. Focus holds the
+question and researcher decision; Summary holds results; this mode owns delivery.
 
-## Scope And Sources
+## One Speaking Entry
 
-For one problem use the named source and core question. For a multi-problem merge
-require its scope, source Focus paths, exclusions and relevant advisor decision;
-resolve these from the explicit request before asking. Do not infer merge scope
-from recency. Unresolved multi-problem scope may be `AWAITING_HUMAN_SCOPE`.
-Read Focus/Anchor/Summary and the derivation needed for mechanism claims; Detailed
-only for decisive setup, numbers or provenance. Chat locates but does not prove.
+Reuse a named brief; otherwise create the requested file at
+`daily_research_reports/MMDD/meeting_report/meeting_brief_<topic>_cn.md` (or requested language).
+Never create a meeting Focus or reset a question just to prepare a talk. Keep the
+spoken core, evidence links and optional Q&A in the same file. Point the day index
+to this single speaking entry; preserve older reports as labeled reading history.
+A language companion is not another Focus. No document for routine chat.
 
-## Make The Mechanism Understandable
+## Read Only What Changes The Answer
 
-Start with concrete data/model objects, not unexplained A/B or private labels.
-Explain what is changed/frozen and the shortest relation from that change to the
-observed consequence. Define the few necessary symbols in words. State which
-arrows are exact, approximate, hypothesized and experimentally tested. A loss
-curve is either derived, measured or illustrative; do not blur these roles.
+Read the current Focus and named Summary; inspect Anchor/derivation for mechanism
+claims and Detailed only for decisive setup, numbers or eligibility. Earlier
+experiments may explain progress but do not become one pooled scientific verdict.
+Resolve scope from the request and sources. Distinguish missing explanation,
+missing derivation, untested link and unsupported design leap before editing.
 
-Search relevant existing work before saying a derivation is unfinished. A missing
-slide, an empirical gap and a local-to-design leap require different repairs.
-Do not use a local effect to claim shared/separate training benefit without its
-comparison. Present current negative results and limitations without hiding them.
+## Match The Talk To The Question
 
-## Organization
+Follow the requested duration and order: question/update, explanatory relation,
+decisive evidence, boundary and next decision. Use concrete objects; explain what
+varies, what stays fixed and why the relation matters. Match proof, observation
+or experiment to the claim. Define symbols and label exact, approximate and
+measured relations. A schematic is not a derivation.
 
-For a completed single experiment retain Purpose, Hypothesis, Analysis method,
-Conclusion. Fit the mechanism bridge inside Analysis rather than adding a template.
-Audit staged training objects, data, optimizer, selection and handoffs from sources;
-include only details necessary to understand the decisive comparison.
+Use only evidence needed for the update; full tables and settings stay in linked
+sources. One retained figure needs a source and one reading sentence. Do not call
+an unrun gate a negative result or a bounded effect a general design benefit.
+Keep live rivals and unknowns. Explain why the next question follows; a chosen
+route is not automatically necessary. An unconfirmed next step
+is an AI suggestion, not run approval. A single-experiment brief still conveys
+purpose, hypothesis, method and conclusion without forcing four extra headings.
 
-For wider requested synthesis use the core question, knowledge update, a few
-progressive questions, claim boundary and one next decision. Each question needs
-an answer, decisive evidence and reason the next follows. Remove ornamental steps.
-Each retained figure needs an eligible source and one reading sentence.
+## Rehearse Understanding
 
-## First-Listener Check
+Ask a first-time listener to restate the question, why the comparison or proof
+answers it, the knowledge update, boundary and next decision. Use interrupted
+Q&A to locate unclear relations; match detail to the audience. Without a listener,
+label the check self-review. No mandatory rehearsal records.
 
-Without chat history, can a listener say what is studied, what is unknown, what
-changes, why the relation predicts an effect, what was measured, what remains
-untested and what understanding changed? If not, repair presentation, not the
-research record. A scientific gap may be clearly presented and ready for discussion;
-readiness is not a requirement for positive or complete scientific findings.
-
-Keep `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until scientific wording is confirmed.
-Finish with the supported boundary and one decision/completion criterion where the
-meeting calls for one; do not invent human judgment or unauthorized experiments.
+A draft may present incomplete or negative science. Mark scientific wording as
+pending when appropriate; do not wait for another experiment or invent approval.

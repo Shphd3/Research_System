@@ -33,11 +33,12 @@ not successful external-model runs.
 | Evidence propagation and closure compaction / problem_refinement.md, research_documentation.md | Progress refinement, Anchor 7-8, Detailed, final report | Extended; one history | R10, R11 |
 | Plot contract and bounded rendering audit / research_viewer_design.md | [Visual contract](../../.agents/skills/experiment-card-writer/references/visual_evidence_contract.md) | Extended, no forced viewer | R12 |
 | First-reader clarity / research_documentation.md, research_loop_checklist.md | Existing Anchor gate; [meeting](../../.agents/skills/research-communication/references/meeting.md), Story, sync, final report | Extended; clarity is not scientific approval | R04, R07 |
-| Stage-aware audit and forward fixtures / research_loop_checklist.md | [Regression scenarios](research_exploration_regression_cases.md), applicable owner checks | Adapted without duplicate full checklist | R01-R18 |
+| Stage-aware audit and forward fixtures / research_loop_checklist.md | [Regression scenarios](research_exploration_regression_cases.md), applicable owner checks | Adapted without duplicate full checklist | R01-R21 |
 | Math-source vs rendering / scripts/check_markdown_math.py | [Local source checker](../../tools/check_markdown_math.py), existing math convention | Adapted, scoped checker not renderer | R12, R16 |
 | Stable bounded final synthesis / SKILL.md stable-conclusion stage | [Existing final-report owner](../../.agents/skills/research-final-report/SKILL.md) | Retained, compacted | R05, R07 |
 | Existing-proof search and absence limits / local 0928 audit correction | [Mechanism closure](../../.agents/skills/research-reasoning-auditor/references/mathematical_mechanism_closure.md) | New local safeguard | R04, R13 |
 | Factor identification and local-to-decision bridge / local correction | Mechanism closure; experiment entry | New conditional safeguard | R05, R06, R14, R15 |
+| Claim-appropriate evidence, justified dependencies and decision branches / local generalization | Kernel 1/5, progress refinement/interpretation, Anchor contract | Domain-independent adaptation | R19-R21 |
 
 ## Intentional Non-Imports
 

@@ -1,6 +1,6 @@
 # 自然文本更新需求的共同结构与领域特有结构
 
-[当天入口](README_cn.md) · [结果摘要](docs/domain_update_geometry/summary_cn.md) · [组会报告](meeting_report_shared_update_cn.md) · [English](focus_domain_update_geometry.md)
+[当天入口](README_cn.md) · [结果摘要](docs/domain_update_geometry/summary_cn.md) · [三分钟组会稿](meeting_report/0930_组会汇报稿.md) · [English](focus_domain_update_geometry.md)
 
 问题标识：domain_update_geometry。任务ANALYSIS_DELIVERED；问题HUMAN_CONFIRMED；设计HUMAN_CONFIRMED_DIRECTION_WITH_DELEGATED_OPERATIONALIZATION；结果MEASURED_BOUNDED；研究者科学判断Unknown；核心实验1个。结果已测量，不等于科学解释已确认。
 

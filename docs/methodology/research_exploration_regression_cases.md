@@ -24,15 +24,23 @@ Use the relevant source/rule and judge the answer, not keyword presence alone.
 | R16 | Routine edit, quick explanation or known deterministic identity | Complete the scoped task; use no irrelevant design gates | Mandatory full methodology/model/artifact cycle |
 | R17 | Desired properties, no exact objective; or fixed diagnostic with no fitted model | Supply a precise active goal; learned annex only for fitting | Force a training loss onto every model |
 | R18 | Related work is a list of names | Explain input/computation/why/limits/teacher and actual decision | A citation substitutes for mechanism selection |
+| R19 | Strict convexity on the real line is claimed to guarantee a minimizer | Separate existence from uniqueness; check assumptions using proof/counterexample | Invent an experiment or physical prior to assess a formal claim |
+| R20 | A group-average proxy fails, so all individual prediction routes are blocked | Justify necessity; allow a counterexample where averages cancel but individuals remain predictable | Chosen route becomes a universal prerequisite |
+| R21 | A prototype wins on one trace, so choose it for deployment | Bound the result; connect the workload/resource comparison to the intended decision and explain the open bridge | A benchmark win establishes general utility |
 
 ## Review Procedure
 
-For an exercised case record input/source version, inspected rules, actual answer,
-expected versus observed behavior, reviewer and limitation. Mark unexecuted cases
-`NOT RUN`; do not convert a checklist or presence test into behavioral validation.
-No extra model call is required in ordinary research conversations.
+For reasoning-rule changes, choose a few scenarios across different domains and
+claim types, including a sound argument that needs no repair. Review actual
+answers: bounded claim, appropriate evidence, justified next decision and
+first-reader explanation. Keyword presence is not a pass criterion.
 
-The 0928 discussion motivates R03-R06 and R14: existing local derivations,
-empirical attribution and broader routing decisions must remain distinct.
-These fixtures do not alter the historical experiment's conclusions. A future
-external-model evaluation must independently inspect its evidence and authorization.
+Record input/source version, actual answer, expected versus observed behavior,
+reviewer and limitation. Label author self-review separately from an independent
+evaluation; mark unexecuted cases `NOT RUN`. Compare the same inputs when claiming
+an improvement. No extra model call or evaluation gate for ordinary research.
+
+Historical shared-update discussions motivate R03-R06 and R14; they are examples,
+not defaults for other domains. R19-R21 exercise formal reasoning, statistical
+proxies and systems decisions. No fixture changes historical scientific results
+or establishes generalization without actual behavior evidence.

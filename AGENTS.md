@@ -50,7 +50,7 @@ and scientific claims against their owning records, not memory.
 | Record | Owns |
 |---|---|
 | `PROJECTS.md` | Navigation, workstreams, priorities and project decisions |
-| Focus | One activated question and researcher-owned next decision |
+| Focus | One stable activated question and researcher-owned next decision |
 | Anchor | Sole current scientific design; never a parallel `design.md` |
 | Protocol | Exact experiment contract, review, approval and amendments |
 | Summary / `_cn.md` | Complete Purpose, Hypothesis, Analysis method, Conclusion |
@@ -58,12 +58,13 @@ and scientific claims against their owning records, not memory.
 | Final report / Story / Graph / sync | Derived reading or navigation, not new authority |
 | `docs/execution_envelope.md` | Profiles, images, submission and execution certificates |
 
-A Focus is created/reset only after researcher activation, stable `problem_key`
-and next decision are confirmed. Keep at most three necessary experiments per
-question. Preserve independent `task_state`, `question_state`, `design_state`,
+Create/reset Focus only for a researcher-activated independent question with
+confirmed `problem_key` and next decision. Reuse its path across dates/meetings;
+translations are companions. Keep at most three necessary experiments per question.
+Preserve independent `task_state`, `question_state`, `design_state`,
 `result_state`; do not mirror execution/approval into a combined status. Focus
 states scientific meaning, Protocol exact execution; resolve contradictions
-without silently rewriting either. One rolling round summary derives from Detailed.
+without silently rewriting either. Focus links to Summary; round history stays in Detailed.
 
 Anchor keeps its eight-section contract through `problem-anchor-writer`.
 A round records question/hypothesis, setup/controls, data, confirmation split,
@@ -72,8 +73,8 @@ at `NOT RUN`; completed rounds need all six. Preserve full evidence once, not
 duplicate histories. Finish authorized factual records even when human
 interpretation is unknown. Never reinterpret frozen results during refactoring.
 
-Experiments need a named uncertainty, credible alternative, distinguishing
-comparison and supporting/non-supporting/insufficient outcomes. A formula's
+Experiments need an uncertainty, credible rival, distinguishing comparison and
+supporting/non-supporting/insufficient decision branches. A formula's
 implementation check is not a new empirical discovery. Local effects, long-term
 training and design decisions require separate evidence or an explicit bridge.
 Question closure and its one final report require a researcher-confirmed bounded
@@ -81,18 +82,18 @@ answer; negative or insufficient results cannot be polished into support.
 
 ## Meetings And Delivery
 
-Protect reading and independent explanation before implementation. Meetings
-center one falsifiable question, not a positive result. A first-time listener
-must understand the objects, what changes, why, which relation was tested and
-what remains open. A schematic loss curve cannot replace a mechanism derivation.
-Keep accessibility, semantic routing, intervention-measured utility and end-task
-gain distinct. Repair presentation without pretending valid prior work is absent.
+Focus owns the question; a requested brief goes in the day's `meeting_report/`,
+never a meeting Focus. The day index links one speaking entry. Follow requested
+order: question/update, model, result/boundary/decision; then evidence and Q&A.
 
-With a Summary, link it first, then give the decisive comparison/value, essential
-figure and reading sentence when useful, boundary and next uncertainty. Repeat
-the four-part body only for a requested standalone brief or absent Summary.
-Unconfirmed next steps are `AI 建议`. Daily synthesis waits for canonical results
-and human Focus judgment; link sources rather than copying histories.
+Explain before implementation. Define objects/computation; separate derivation,
+measurement and open bridges. A schematic is no mechanism; bounded results do not
+establish broader design benefit. Distinguish description, prediction, causation
+and utility. Check prior work before absence claims.
+
+Link Summary with decisive evidence and boundary; briefs may restate these.
+Unconfirmed wording stays pending; next steps are
+`AI 建议`. Daily synthesis keeps its human-judgment gate; drafts grant no run authority.
 
 ## Execution, Storage And Completion
 
