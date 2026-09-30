@@ -6,40 +6,38 @@ description: "Audit research purposes, hypotheses, causal or mathematical mechan
 # Research Reasoning Auditor
 
 Clarify inference before polishing. Use the named evidence and requested depth;
-a quick question does not require a new artifact or a full research workflow.
+a quick question needs no new artifact or full research workflow.
 
 ## Read By Need
 
-- Quick audit: use the checks below; no extra reference merely to repeat them.
-- Deep chain, experiment rationale or formalization: read the
-  [audit contract](references/reasoning_audit_contract.md).
-- A claimed mechanism-to-outcome link, equations, toy models, loss curves or
-  missing-model claims: also read
+- Quick audit: use the checks below; do not load references to repeat them.
+- Deep chain or experiment rationale: [audit contract](references/reasoning_audit_contract.md).
+- Mechanism-to-outcome claims, toy models, equations or loss curves:
   [mechanism closure](references/mathematical_mechanism_closure.md).
-- Repeated confusion: inspect only the relevant
+- Repeated confusion: only the relevant
   [failure pattern](references/recurrent_failure_modes.md).
 
-Reuse unchanged rules; refresh decision-bearing sources. Before saying a model
-or experiment is absent, inspect relevant existing work and state search limits.
+Reuse unchanged rules and refresh decision-bearing sources. Inspect existing
+derivations and results before claiming absence; state access/search limits.
 
 ## Checks
 
 1. Separate observation, unknown, purpose, hypothesis, mechanism, prediction,
-   measurement/intervention, conclusion and decision.
-2. Start from the phenomenon and system structure, not a convenient metric or
-   preferred method. State objects before mathematics.
-3. Check each explanatory arrow, assumptions, competing cause and evidence.
-   Distinguish absent derivation, untested link, missing explanation and decision leap.
-4. Name a credible rival at the same level and a prediction on which it differs.
-   Do not invent a rival to a proved identity or force a defect in sound reasoning.
-5. State what each proxy measures and cannot prove; geometry, accessibility,
-   functional use and performance are not interchangeable.
-6. A proposed test must say how supporting, non-supporting and insufficient
-   results change judgment. Do not add tests with no decision value.
-7. Limit the claim to the scoped model and tested relation. Apply later-stage
-   requirements only to later-stage claims; preserve useful conjectures as such.
+   measurement, conclusion and decision.
+2. Start with objects and the phenomenon, not a preferred method or metric.
+3. Check the computational chain, assumptions and evidence. Distinguish missing
+   derivation, untested relation, missing explanation and unsupported decision leap.
+4. Name a credible live rival and a separating prediction when needed; do not
+   invent a rival to an identity or manufacture a defect in sound reasoning.
+5. State what a proxy measures. Readability, functional use, energy coverage and
+   performance differ; failed estimation/readout does not prove absent structure.
+6. A proposed test explains how support, non-support or insufficient evidence
+   changes judgment. A skipped test stays unmeasured.
+7. Bound the claim to the actual data, parameter block, aggregation and update
+   rule. Separate derivation, local attribution, finite intervention and long-term
+   design benefit. Do not pool different tests into one verdict.
 
-Return the core answer, material gap if any, evidence boundary and only the
-necessary repair. No compulsory checklist-shaped reply. The researcher owns
-scientific judgment; this skill audits/proposes, not approval, execution or
-unrequested documents. Formal outputs retain their existing task owners.
+Return the core answer, material gap if any, evidence boundary and necessary
+repair, not a compulsory checklist. Explain valid existing work before proposing
+more experiments. Scientific judgment remains researcher-owned; formal artifacts
+retain their task owners. This audit does not activate Focus or approve execution.
