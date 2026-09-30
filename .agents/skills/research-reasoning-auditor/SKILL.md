@@ -33,7 +33,8 @@ or experiment is absent, inspect relevant existing work and state search limits.
 4. Name a credible rival at the same level and a prediction on which it differs.
    Do not invent a rival to a proved identity or force a defect in sound reasoning.
 5. State what each proxy measures and cannot prove; description, prediction,
-   causation and practical utility are not interchangeable.
+   causation and practical utility differ; failed estimation/readout does not
+   establish absent structure, and skipped tests remain unmeasured.
 6. Choose evidence appropriate to the claim; state how support, non-support or
    insufficiency changes judgment and the next check.
 7. Bound the claim; justify necessary dependencies before imposing gates.

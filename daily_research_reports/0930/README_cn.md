@@ -27,3 +27,5 @@ Focus 随研究问题延续，不随组会重建；组会稿只是当前证据�
 | docs/review_handoff.md | [reviews/natural_ntp_audit_handoff.md](reviews/natural_ntp_audit_handoff.md) |
 
 2026-09-30：更新阅读入口，不复制即时实验状态；以各自 Summary 和执行记录为准。
+
+远端新增短稿保留为[备查版本](meeting_report/meeting_brief_shared_update_backup_cn.md)，不作为第二个主讲入口。冻结设计中的 NOT RUN 是当时快照，当前情况以 Summary、Detailed 为准。

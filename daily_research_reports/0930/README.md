@@ -27,3 +27,5 @@ Read [early reasoning](background/natural_ntp_reasoning_cn.md) or the [review ha
 | docs/review_handoff.md | [reviews/natural_ntp_audit_handoff.md](reviews/natural_ntp_audit_handoff.md) |
 
 Navigation updated 2026-09-30. Current numerical and execution states remain in their owning records, not copied here.
+
+Remote edits are preserved as [backup reading](meeting_report/meeting_brief_shared_update_backup_cn.md); this is not a second speaking entry.
