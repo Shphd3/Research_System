@@ -22,4 +22,4 @@ Full 应在 `/data/250010109/MoE_Router/experiments/20260930_natural_ntp_compati
 
 上文的 `RUNNING` 和“尚无结果”是带时间的启动历史。ACP 任务 `pt-dgpld36j` 随后到达 `SUCCEEDED`；持久 pod log 与 [Full 验证收据](</data/250010109/MoE_Router/experiments/20260930_natural_ntp_compatibility/runs/full_20260929T175901Z/result/verification.json>) 共同确认 `COMPLETE_OPERATIONAL`，实测 210.54 秒、产物 4,699,652,035 字节，原检查点未变。四组共 7,232 个事件、34,336 个数据对和 24 次预测器拟合全部完成。封存的 CONFIRM 主结果已合格，类型为 **`NON_SUPPORT`**，不再是“结果 Unknown”：DEV 选中的完整表征读出器 \(Q=-0.000138\)，95% 区间 \([-0.002768,0.002294]\)，注册支持门槛为 0.05。有限步确认因 DEV 作用分辨率门槛失败而 `NOT_RUN_BY_BRIDGE`；14 个结构读出均 `NOT_RUN_BY_GATE`。研究者解释和 Focus 转移仍为 `Unknown`。
 
-结果请先读[中文摘要](summary_cn.md)，再读[完整中文证据记录](detailed_cn.md)；[理论审计交接索引](review_handoff.md)列出各结果与证据优先级。本补记不改冻结 Protocol，也不授权下一次实验。
+结果请先读[中文摘要](summary_cn.md)，再读[完整中文证据记录](detailed_cn.md)；[理论审计交接索引](../reviews/natural_ntp_audit_handoff.md)列出各结果与证据优先级。本补记不改冻结 Protocol，也不授权下一次实验。
