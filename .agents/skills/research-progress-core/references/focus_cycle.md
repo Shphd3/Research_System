@@ -1,93 +1,48 @@
 # Focus Cycle
 
-Use this reference only for one active meeting-cycle question or its living
-`focus_<problem>.md`.
+Maintain one living question and next scientific decision per active workstream.
+A Focus spans meetings, dates and conversations; it is not a meeting script.
 
-## Entry And Authority
+## Entry And Continuity
 
-At the start, obtain the researcher's:
+Read the existing Focus and decision-bearing sources first. Reuse its stable
+`problem_key` and file path. New controls, diagnostics, replications, result
+explanations and reports stay under that question.
 
-```text
-current judgment
-reason or mechanism
-strongest rival or uncertainty
-evidence that would change the judgment
-next decision
-```
+Create/reset a Focus only when the researcher activates an independent question
+and confirms its key and next decision. A date, new model or approaching meeting
+does not authorize this transition. Historical Focuses retain their evidence;
+only one path is designated current for a workstream in `PROJECTS.md`. Language
+companions describe the same Focus.
 
-Creating or resetting a Focus is a human-owned scientific transition. Do it
-only after the researcher explicitly activates an independent question and
-confirms its stable `problem_key` and one next decision. An added control,
-diagnostic, replication, failure analysis, or report stays under the existing
-Focus when it serves the same question.
+## Keep Only Scientific Judgment
 
-## Advancement Point
+Use `templates/research_process/focus_writing_template.md` for a new Focus.
+Keep the question and importance, live explanation/rival, what evidence would
+change judgment, bounded human understanding and one next decision. Link the
+Anchor and current Summary. Normally one experiment suffices; at most three
+must serve the same answer. Do not duplicate their four-part bodies.
 
-Keep one inspectable decision from one meeting to the next:
+Keep existing state fields independent. Researcher confirmation is not execution
+approval; a measured result is not a confirmed interpretation. Protocol owns
+exact design/approval, Summary the result, Detailed the run and round history.
+Do not maintain a second round ledger, numerical result table or meeting script
+in Focus. Record a changed understanding only after researcher confirmation;
+otherwise preserve Unknown and label the proposal.
 
-```text
-Make [one relation] clear enough to decide [one action],
-with completion defined by [one inspectable criterion].
-```
+Update factual source links when needed. Do not refresh the question or invent a
+new judgment merely because a run finished. Missing human interpretation does
+not block an authorized factual Summary or requested meeting brief.
 
-Reading, coding, running, and plotting count as progress only when they change
-a judgment, boundary, or decision. Consider at most three genuinely different
-candidates in one divergent round, then choose one.
+## Meetings And Completion
 
-## Focus Contract
+Prepare a requested brief through `research-communication` using this question
+and its evidence. The brief lives under the meeting date's `docs/`, not a second
+`focus_meeting_*`. No new experiment is required to explain existing evidence.
 
-Create or audit the current Focus from
-`templates/research_process/focus_writing_template.md`. It is a short,
-human-owned task and result card, not a Protocol or run ledger. It contains one
-core question and normally one experiment, with at most three when all are
-necessary for the same answer.
+Keep consequential tangents only when they affect the active hypothesis,
+boundary or next decision; otherwise use the existing parking lot when warranted.
+Do not generate an artifact for implementation chores.
 
-Keep its states orthogonal: `task_state` owns whether the cycle is active,
-`question_state` and `design_state` own human confirmation, and `result_state`
-owns human confirmation of the result and boundary. Protocol approval stays in
-`protocol.md`; execution status stays in `detailed.md` or the execution record.
-Do not mirror either into one composite Focus status.
-
-Before execution the Focus carries the experiment's four parts in **plain
-language**:
-
-1. Purpose: which uncertainty it resolves and why it is needed.
-2. Hypothesis: predicted contrast, strongest rival, and separating outcome.
-3. Analysis method: at most three plain-language comparisons and their roles.
-4. Conclusion: the expected supporting, non-supporting, and insufficient
-   branches before execution.
-
-`protocol.md` carries the **precise** version of the same four parts: exact
-settings, thresholds, registered criteria, and audit blocks. The two must not
-contradict each other. When they differ, the Protocol is authoritative for
-execution and the Focus is authoritative for what the researcher intended; the
-Focus states plain meaning and does not copy the Protocol's numbers.
-
-After execution the researcher supplies or confirms the direct result, updated
-judgment, cannot-claim boundary, and exactly one next decision in the Focus. The
-experiment-level four-part result is owned by `summary.md` together with its
-Chinese companion `summary_cn.md`; the full round record is owned by
-`detailed.md`. AI verifies these against canonical evidence without
-strengthening them and never copies a protocol or summary body into the Focus.
-
-The Focus keeps one rolling round summary compressed from `detailed.md`, one row
-per round. Keeping the same round history in two places is `FAIL`.
-
-Keep formulas, full settings, statistical details, figures, provenance, and run
-history in the Anchor, Protocol, Summary, Detailed record, or delayed daily
-report. Use clear reader order and define indispensable terms before aliases.
-
-## Tangents
-
-Ask whether a tangent affects the hypothesis, claim boundary, or next decision.
-Pursue it only when required to close the active question. Park it only when it
-is a consequential future direction with an explicit reopening condition.
-Minor diagnostics and implementation chores create no artifact.
-Use `templates/research_process/parking_lot_template.md` only when a project
-does not already have its own concise Parking Lot structure.
-
-## Close
-
-Close the cycle only after the requested evidence is recorded, the researcher
-has confirmed the Focus-level result and boundary, and the one next decision is
-clear. A first run or AI draft is not completion.
+Close/reset only after the researcher confirms the bounded answer and next
+decision. File cleanup and a successful run cannot make that scientific choice.
