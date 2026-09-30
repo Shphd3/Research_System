@@ -25,12 +25,10 @@ and evidence before declaring something missing. Distinguish an absent model,
 an unshown derivation, an untested mechanism and an unsupported decision leap.
 If access is incomplete, bound the search claim rather than asserting absence.
 
-Use the smallest task owner in [docs/skills.md](docs/skills.md), then only its
-applicable references. Reuse unchanged instructions; refresh decision-bearing
-sources before acting. The [method kernel](docs/methodology/research_exploration_kernel.md)
-guides open research and mechanism work, not routine deterministic tasks or a
-mandatory serial skill chain. Allow reasoned conjectures and counterexamples;
-apply only the current stage, without inventing future models or documents.
+Select the task owner in [docs/skills.md](docs/skills.md) and only needed references.
+Reuse unchanged guidance; refresh decision-bearing sources. Apply the
+[method kernel](docs/methodology/research_exploration_kernel.md) by research stage,
+not as a serial skill chain. Preserve useful conjectures and counterexamples.
 
 Before relying on active workstream paths run `python tools/check_current_entrypoints.py`;
 it checks navigation, not scientific validity. Before new training implementation
@@ -39,31 +37,32 @@ state reuse, adaptation or rejection. Training and comparisons must follow
 `docs/training_observability_contract.md`; do not duplicate or weaken its
 telemetry, token/batch normalization, freeze or resume checks.
 
-Memory is non-canonical. Use `research-memory`: one conversation log,
-timestamped append-only entries with processing-agent identity. Never overwrite
-other conversations or earlier entries. Explicit log resumption reads the full
-log; operational briefs read their required sources instead. Verify approval
-and scientific claims against their owning records, not memory.
+Memory is non-canonical. `research-memory` keeps one conversation log with
+timestamped, agent-identified append-only entries; never overwrite earlier or
+other conversations' entries. Explicit resumption reads the full log. Verify
+scientific claims and approval against their owners, not memory.
 
 ## Record Ownership
 
 | Record | Owns |
 |---|---|
-| `PROJECTS.md` | Navigation, workstreams, priorities and project decisions |
+| `PROJECTS.md` | Stable workstream navigation and source links, not copied results or next steps |
 | Focus | One activated question and researcher-owned next decision |
 | Anchor | Sole current scientific design; never a parallel `design.md` |
 | Protocol | Exact experiment contract, review, approval and amendments |
 | Summary / `_cn.md` | Complete Purpose, Hypothesis, Analysis method, Conclusion |
 | Detailed / execution record | Setup, provenance, deviations, results and execution state |
-| Final report / Story / Graph / sync | Derived reading or navigation, not new authority |
+| Meeting brief / Story / final report / Graph / sync | Derived explanation or navigation, not new authority |
 | `docs/execution_envelope.md` | Profiles, images, submission and execution certificates |
 
-A Focus is created/reset only after researcher activation, stable `problem_key`
-and next decision are confirmed. Keep at most three necessary experiments per
-question. Preserve independent `task_state`, `question_state`, `design_state`,
-`result_state`; do not mirror execution/approval into a combined status. Focus
-states scientific meaning, Protocol exact execution; resolve contradictions
-without silently rewriting either. One rolling round summary derives from Detailed.
+Keep one current Focus per workstream at its existing path across dates,
+meetings and conversations; language companions are one record. Create/reset
+only after researcher activation of an independent question, stable `problem_key`
+and next decision. New results or reports do not create another Focus.
+Keep at most three necessary experiments. Preserve independent `task_state`,
+`question_state`, `design_state`, `result_state`; do not mirror execution/approval.
+Focus holds human scientific judgment and source links, not duplicated result
+tables, round ledgers or speaking scripts.
 
 Anchor keeps its eight-section contract through `problem-anchor-writer`.
 A round records question/hypothesis, setup/controls, data, confirmation split,
@@ -81,18 +80,21 @@ answer; negative or insufficient results cannot be polished into support.
 
 ## Meetings And Delivery
 
-Protect reading and independent explanation before implementation. Meetings
-center one falsifiable question, not a positive result. A first-time listener
-must understand the objects, what changes, why, which relation was tested and
-what remains open. A schematic loss curve cannot replace a mechanism derivation.
-Keep accessibility, semantic routing, intervention-measured utility and end-task
-gain distinct. Repair presentation without pretending valid prior work is absent.
+Protect independent understanding before more implementation. A missing
+explanation needs repair, not automatically a new experiment. Explain the objects,
+what changes, why, the tested relation and its boundary; schematic loss curves
+cannot replace derivations or local effects establish long-term design benefit.
 
-With a Summary, link it first, then give the decisive comparison/value, essential
-figure and reading sentence when useful, boundary and next uncertainty. Repeat
-the four-part body only for a requested standalone brief or absent Summary.
-Unconfirmed next steps are `AI 建议`. Daily synthesis waits for canonical results
-and human Focus judgment; link sources rather than copying histories.
+Requested speaking preparation uses `research-communication`: one dated
+`docs/meeting_brief_<topic>[_cn].md` derived from Focus and evidence, not a new
+`focus_meeting_*`. Follow the user's timing, keep detail in backup, and do not
+wait for a positive result. Unknown human judgment does not block a factual
+brief; the brief does not activate, confirm or close a scientific question.
+
+Ordinary result delivery links Summary first, with the decisive comparison,
+useful figure/reading, boundary and next uncertainty, not a repeated full body.
+A requested brief is the speaking entry instead. Unconfirmed steps are `AI 建议`.
+Daily synthesis still waits for canonical results and human Focus judgment.
 
 ## Execution, Storage And Completion
 
@@ -109,7 +111,7 @@ then stop polling. Later inspect the existing job, not resubmit it.
 
 Root `templates/` owns reusable templates. Track research text, scripts, configs
 and small provenance manifests, not raw outputs, caches, checkpoints or fonts.
-Requested curated packages may contain reading copies. Dated documents use their
+Curated packages may contain reading copies. Dated documents use their
 own date's `figures/` with relative links and recorded origins. Independent
 repositories under `Projects/` keep their own ownership; do not silently merge them.
 
@@ -117,5 +119,4 @@ Commit, push, publish, external sync and existing Graph edits require explicit
 request. Before commit run `python tools/check_git_payload.py` and proportionate
 changed-scope tests; report unavailable checks honestly. Skill edits require
 structural/link checks; changed math requires source checks, not claims of rendered
-verification. Complete the authorized deliverable and evidence trace; a first
-draft is not completion. Narrow answers need no formal artifact.
+verification. Complete the authorized deliverable and evidence trace. Narrow answers need no artifact.
