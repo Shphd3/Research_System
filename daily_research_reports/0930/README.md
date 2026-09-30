@@ -2,52 +2,51 @@
 
 [中文](README_cn.md)
 
-**This date has one research Focus: [domain update geometry](focus_domain_update_geometry.md).** Its Chinese companion is the same question, not a second Focus. The [meeting report](meeting_report_shared_update.md) owns the presentation; its filename no longer carries the focus prefix.
+**For this meeting, open the [three-minute Chinese brief](docs/meeting_brief_shared_update_cn.md).**
+The [current Focus](focus_domain_update_geometry.md) still owns the research
+question. Its language companion is the same Focus; a new date or meeting does
+not create another. The brief keeps problem, model, results and optional backup
+together.
 
-## Choose a reading task
+## Read By Need
 
-| Task | Start here | Responsibility |
-| --- | --- | --- |
-| Inspect the current question, evidence and next decision | [Current Focus](focus_domain_update_geometry.md) | One research question and pending researcher judgment |
-| Prepare the meeting or understand the full reasoning chain | [Meeting report](meeting_report_shared_update.md) | Six-slide outline, two central figures and backup; no new scientific approval |
-| Read the current domain/SVD/SAE result | [Domain-update Summary](docs/domain_update_geometry/summary.md) | First result reading |
-| Audit setup, all statistics and inference limitations | [Domain-update Detailed](docs/domain_update_geometry/detailed.md) | Complete evidence; consult the [frozen Protocol](docs/domain_update_geometry/protocol.md) when needed |
-| Revisit the earlier full-representation compatibility test | [Natural-NTP prediction Summary](docs/summary.md) | A distinct completed primary comparison, not a verdict to pool with domain geometry |
-| Inspect historical reasoning or review questions | [Early reasoning note](background/natural_ntp_reasoning_cn.md), [review handoff](reviews/natural_ntp_audit_handoff.md) | Optional support material, not a current Focus or a new run instruction |
-| Read a supplementary long-form draft | [Self-contained long report](docs/summary_report/0930_shared_update_self_contained_meeting_report_cn.md) | Appeared during cleanup and retained in place; not reviewed or merged here, and does not inherit the speaking report's audit |
-
-For everyday work read **Focus → current Summary**. For speaking, open the meeting report directly. Anchor owns modeling, Protocol execution, and Detailed evidence traceability; these are distinct roles rather than mandatory repeated reading.
-
-## Keep the two scientific records separate
-
-| Question | Formal location | Current facts and boundary |
-| --- | --- | --- |
-| Can pre-update representations predict natural next-token compatibility? | Anchor, Protocol, Summary, Detailed and natural_ntp_execution_record at the first level of docs, with language companions | The qualified primary comparison did not support the specified 5% gain; finite-step and 14 structure-reader branches were skipped by their gates, not measured |
-| Do domains have repeatable update structure, and how do SVD/SAE describe it? | [docs/domain_update_geometry/](docs/domain_update_geometry/) | All registered analyses delivered; the current domain-mean descriptor gives no gain, while population directional inference is limited by uncalibrated bootstrap coverage; human judgment remains Unknown |
-
-Their targets, data and decision rules differ. This cleanup consolidates **navigation and repeated status prose**, while keeping the designs and results separate. The earlier experiment retains registered paths to preserve source identity and execution contracts.
-
-NOT RUN in frozen Anchors/Protocols is the premeasurement snapshot. Read Summary, Detailed and execution records for current completion; do not restart a task from that snapshot. Target-conditioned association remains a proposed next question, not one activated by this reorganization.
-
-## Directory roles
-
-- Root: this index, one research Focus with its companion, and one meeting report with its companion.
-- docs first level: formal natural-NTP prediction design, results and execution records.
-- docs/domain_update_geometry: current domain-analysis design, results, execution records and evidence.
-- docs/summary_report: supplementary long-form draft, retained independently and not a new Focus.
-- background: early reasoning material.
-- reviews: theoretical-review handoff.
-- figures: date-local reading figures and provenance; generated images, PDFs and CSVs remain local under repository policy and are not guaranteed in a Git-only checkout.
-
-## Historical path lookup
-
-Append-only memory and immutable audit receipts retain their historical paths. Use this table to resolve them. Relevant links in current editable documents have been updated.
-
-| Former path relative to 0930 | Current path |
+| Purpose | Entry |
 | --- | --- |
-| focus_meeting_shared_update_mechanism.md | [meeting_report_shared_update.md](meeting_report_shared_update.md) |
-| focus_meeting_shared_update_mechanism_cn.md | [meeting_report_shared_update_cn.md](meeting_report_shared_update_cn.md) |
-| docs/0930_自然NTP更新相容性_两轮Reasoning报告.md | [background/natural_ntp_reasoning_cn.md](background/natural_ntp_reasoning_cn.md) |
-| docs/review_handoff.md | [reviews/natural_ntp_audit_handoff.md](reviews/natural_ntp_audit_handoff.md) |
+| Current question, boundary and human next decision | [Domain-update Focus](focus_domain_update_geometry.md) |
+| Speaking and interruption practice | [Meeting brief](docs/meeting_brief_shared_update_cn.md) |
+| Current domain/SVD/SAE evidence | [Domain-update Summary](docs/domain_update_geometry/summary.md) |
+| Predecessor full-representation prediction evidence | [Natural-NTP prediction Summary](docs/summary.md) |
+| Complete setup and statistical qualifications | [Domain Detailed](docs/domain_update_geometry/detailed.md); [NTP Detailed](docs/detailed.md) |
+| Full model and earlier results | [Mechanism long report](docs/summary_report/0930_shared_update_self_contained_meeting_report_cn.md); [older six-slide report](meeting_report_shared_update.md) |
+| Historical reasoning and reviews | [Background](background/natural_ntp_reasoning_cn.md); [review index](reviews/natural_ntp_audit_handoff.md) |
 
-Organized on 2026-09-30, Asia/Shanghai. This is navigation, not a merged scientific question, revised verdict or question closure.
+Do not read every artifact by default. Long reports remain backup, not competing
+primary speaking entries. Resolve disagreements against the owning qualified
+Summary, not the length or apparent completeness of a derived report.
+
+## Preserve Distinct Scientific Records
+
+Natural-NTP prediction owns the formal files at the first level of `docs/`;
+domain analysis owns [docs/domain_update_geometry](docs/domain_update_geometry/).
+Their targets, data and criteria differ. Navigation cleanup does not merge their
+verdicts, rewrite frozen designs or confirm the researcher's Unknown judgment.
+
+NOT RUN in a frozen design is a historical snapshot. Current results and
+execution belong to Summary and Detailed. Candidate follow-ups remain pending
+in Focus; meeting preparation does not activate or approve an experiment.
+
+## Historical Path Lookup
+
+Append-only memory and immutable receipts retain their original paths:
+
+| Former path relative to 0930 | Retained location |
+| --- | --- |
+| focus_meeting_shared_update_mechanism.md | [Older English report](meeting_report_shared_update.md) |
+| focus_meeting_shared_update_mechanism_cn.md | [Older Chinese report](meeting_report_shared_update_cn.md) |
+| docs/0930_自然NTP更新相容性_两轮Reasoning报告.md | [Background](background/natural_ntp_reasoning_cn.md) |
+| docs/review_handoff.md | [Review index](reviews/natural_ntp_audit_handoff.md) |
+
+Figures and provenance stay under `figures/`; generated images/PDFs/CSVs are not
+guaranteed in a Git-only checkout. The new brief uses sourced numerical tables
+and does not depend on unavailable images. Updated 2026-09-30 for reading and
+communication ownership only.
