@@ -1,24 +1,26 @@
 ---
 name: research-communication
-description: "Create an explicitly requested meeting brief, speaking outline, research Story/stage synthesis, or curated handoff/sync from approved sources."
+description: "Create an explicitly requested meeting brief, speaking outline, research Story/stage synthesis, or curated handoff/sync from named evidence."
 ---
 
 # Research Communication
 
-Explain the requested scientific material without changing its claim boundary.
-Select exactly the applicable mode; add another only for a requested second output.
+Explain the requested science without changing its evidence or authority.
+Select only the requested mode and its applicable reference:
 
-- Meeting or speaking brief: [meeting](references/meeting.md).
+- Meeting or speaking preparation: [meeting](references/meeting.md).
 - Research-line or stage synthesis: [story](references/story.md).
 - Curated package/copy/external sync: [handoff](references/handoff.md).
 
-Use named canonical evidence, not chat as scientific truth. Define objects before
-symbols, give the answer before supporting detail, and distinguish measured
-result, derivation, interpretation, uncertainty and decision. A new listener must
-understand what changes, why and which relation was actually tested.
+Start at the named sources. Use Focus for the question and pending decision,
+Summary for results, and the existing derivation for mechanism claims. A brief
+is a derived view, never a new Focus or a prerequisite for new experiments.
 
-Inspect existing derivations before diagnosing missing research. Repair missing
-exposition without inventing a proof, data or scientific approval. Preserve
-negative/insufficient results and source disagreements. Commands, full tables and
-chronology remain in their owners. Create only the requested output; publication,
-external sync, Graph changes and scientific transitions retain explicit scope.
+Lead with concrete objects and the bounded answer. Separate derivation,
+measurement, interpretation and proposal. Preserve negative results, skipped
+tests and source disagreements. Inspect existing work before calling a model
+missing; repair exposition without inventing evidence or human confirmation.
+
+Keep full tables, execution detail and history with their owners. Create only
+the requested output; do not impose a serial skill chain or extra templates.
+Publication, sync, Graph edits and scientific transitions remain explicitly scoped.
