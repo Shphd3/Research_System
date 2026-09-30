@@ -26,17 +26,21 @@ Projects/<project>/main/
     <NN>_<topic>_cn.md
 ```
 
-Meeting-cycle files live at:
+Research and meeting files have distinct roles:
 
 ```text
 daily_research_reports/MMDD/focus_<problem>.md
-daily_research_reports/MMDD/focus_meeting_<topic>.md
+daily_research_reports/MMDD/docs/meeting_brief_<topic>[_cn].md
 daily_research_reports/MMDD/figures/<figure>.png
 daily_research_reports/MMDD/figures/SOURCES.md
 ```
 
-The Focus uses the date it was first created. Keep `cycle_start` and
-`target_meeting` in metadata; do not move a living Focus at midnight.
+Focus stays at its first creation date across meetings and dates; a new meeting
+uses a dated brief, not another Focus. `cycle_start` and `target_meeting`, when
+present in legacy metadata, do not cause file creation or movement.
+Historical `focus_meeting_*` documents remain reading references; do not create
+new ones or register them as current Focus. One requested brief keeps speaking
+text and backup together; use the communication skill rather than a new template.
 
 ## Date Figures
 
@@ -51,8 +55,7 @@ rather than move is correct:
 
 - the owning experiment's `experiments/A<line>/<experiment_id>/figures/` holds
   the evidence copy beside `summary.md` and `detailed.md`;
-- `daily_research_reports/MMDD/figures/` holds the reading copy that this date's
-  Focus and meeting material display.
+- `daily_research_reports/MMDD/figures/` holds the date's meeting reading copy.
 
 Copy byte-identically and record each source in `figures/SOURCES.md`. When a
 figure is regenerated, refresh both copies in the same step. A reading copy
@@ -116,7 +119,7 @@ future direction and have a reopening condition.
 
 ## Migration Check
 
-Move rather than copy. Update the line README and every in-scope project,
-story, experiment, and graph reference. Verify that the old path
-is absent, every new relative link resolves, and no duplicate canonical file
-remains.
+For an actual move, update all in-scope references and verify the new links.
+Do not move or delete historical evidence merely to enforce current naming.
+When cleanup changes navigation, it does not close questions, reinterpret results
+or edit append-only memory and immutable receipts.
