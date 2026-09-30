@@ -22,7 +22,7 @@
 
 ## 4. Mathematical Model
 
-上下文 x、真实目标 y、领域 s，固定全部参数。c 为共享矩阵输入，a=Wc 为 native 输出，r 为残差，logits z=g(a,r)、概率 p、one-hot u_y、损失 -log p(y)，J=partial z/partial a。于是
+上下文 \(x\)、真实目标 \(y\)、领域 \(s\)，固定全部参数 \(\theta_0\)。\(c\) 为共享矩阵输入，\(a=W_0c\) 为 native 输出，\(r\) 为残差，logits \(z=g_{\theta_0}(a,r)\)、概率 \(p=\operatorname{softmax}(z)\)、one-hot \(u_y\)、损失 \(\ell=-\log p(y)\)，\(J=\partial z/\partial a\)。于是
 
 \[
 e=J^\top(p-u_y),\qquad G=ec^\top,\qquad
@@ -30,7 +30,7 @@ K_{ij}=\langle G_i,G_j\rangle_F=(c_i^\top c_j)(e_i^\top e_j),\qquad
 \Delta\ell_j=-\eta K_{ij}+O(\eta^2).
 \]
 
-末式要求仅 W 做足够小的普通 SGD 步。未知真实续写 q_x 给出 E[G|x]=J^T(p-q_x)c^T。p=q_x 时选出目标均值仍可非零；单续写/上下文不能辨识校准。
+末式要求仅 W 做足够小的普通 SGD 步。未知真实续写 \(q_x=P_{\rm data}(Y\mid X=x)\) 给出 \(\mathbb E[G\mid x]=J_x^\top(p_x-q_x)c_x^\top\)。p=q_x 时选出目标均值仍可非零；单续写/上下文不能辨识校准。
 
 定义**模型 Fisher**，对模型 p 下的目标求期望，无须预设校准：
 
@@ -47,7 +47,7 @@ D_{\rm KL}(p_a\Vert p_{a+\delta a})=\tfrac12\delta a^\top F_a(x)\delta a+o(\|\de
 
 这是条件恒等式，不是总体低秩结论。未校准时，真实目标二阶矩/协方差不等于模型 Fisher。直接测模型敏感性，不推断 q_x，也不以真实目标代替模型期望。[经验 Fisher 的局限](https://arxiv.org/abs/1905.12558)支持这项区分。
 
-已有 SAE 编码 a，不编码 c：a 近似为固定 decoder bias 加 D alpha，d_k 是单位 decoder 列，alpha 是稀疏系数。局部读出为
+已有 SAE 编码 \(a\)，不编码 \(c\)：\(a\approx b_{\rm SAE}+D\alpha\)，bias 固定，\(d_k\) 是单位 decoder 列，\(\alpha\) 是稀疏系数。局部读出为
 
 \[
 I_k(x)=d_k^\top F_a(x)d_k,\qquad F_\alpha(x)=D^\top F_a(x)D,\qquad \delta a=D\delta\alpha.
@@ -55,7 +55,7 @@ I_k(x)=d_k^\top F_a(x)d_k,\qquad F_\alpha(x)=D^\top F_a(x)D,\qquad \delta a=D\de
 
 这个坐标图在 native a 周围固定重构残差，不以重构替换 a，也不对 TopK encoder 求导。并列激活与 I_k，区分是否出现、预测对该方向是否敏感。F_alpha 半正定但非对角可为负，该符号不是跨数据帮助/不利。非正交 atom 敏感性不可相加为独立容量或能量份额。
 
-保留主选择均值 mu_s,y^b、两池 b=F,R、四目标 Y_*、历史参考 v0：
+保留主选择均值 \(\mu^b_{s,y}=\mathbb E_b[G\mid s,y,\text{selection}]\)、两池 \(b=F,R\)、四目标 \(\mathcal Y_*\)、历史参考 \(v_0\)：
 
 \[
 T=\frac1{24v_0}\sum_{y\in\mathcal Y_*}\sum_{s<t}

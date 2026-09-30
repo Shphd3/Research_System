@@ -1,11 +1,9 @@
-# Revised candidate: language statistics and local compatibility
+# Candidate: natural-language statistics and local update structure
 
 [中文](README_cn.md)
 
-Read [Anchor](anchor.md) for purpose, hypotheses, mechanism and claim boundary, then [Protocol](protocol.md) for the concrete experiment. The researcher requested the design and confirmed signed compatibility and separate natural-target-mixture analysis; precise estimators remain proposed and no run is authorized. The existing Focus and completed frozen experiments retain their ownership.
+Read [Anchor](anchor.md) for purpose, hypotheses, mechanism and boundaries, then [Protocol](protocol.md) for the exact candidate experiment. The researcher confirmed signed compatibility, separate natural-target mixtures, and using the existing SAE as an analysis tool. Exact operationalization remains proposed; no run is authorized and existing Focus/frozen evidence retain their ownership.
 
-The chain is natural context/continuation statistics plus current parameters → prediction error and downstream sensitivity → parameter gradient → local gradient inner product → independently replicated, target-fixed domain contrasts. Marginal frequency and covariance anisotropy are explanatory diagnostics; neither alone entails signed interference. Long-term mutual updates remain outside this draft.
+Two objects are distinguished: signed mean update demand, and model prediction sensitivity. T adjudicates the first-order conditional mean contrast; functional profiles have separate descriptive outcomes even if H1 is not supported. Native-a SAE occurrence/decoder directions are paired with model-Fisher sensitivity, with same-space/rank PCA and random controls. SAE superiority is not required and sensitivity is not capacity competition or sharing benefit.
 
-[Source preflight](source_preflight.json) records metadata-only coverage, inspected source hashes and the previously measured gradient-energy reference. It is not a new empirical result. Individual-record exposure, duplicate eligibility, interval calibration and engineering resource fit remain unresolved.
-
-The researcher confirmed adding signed group compatibility and a separate natural-target-mixture analysis. T still tests recurring differences; signed S describes average first-order cross-effects. Primary-selected same-target populations and all-position natural mixtures are kept separate, with covariance as a distinct diagnostic. Exact estimators remain proposed; all new measurements are NOT RUN.
+[Original source preflight](source_preflight.json) records coverage and historical references. [SAE source audit](sae_tool_source_audit.json) records verified interfaces and small mathematical source checks, not new natural-language measurement or actual-model Smoke. All new T/S, mixture, Fisher and feature-control results remain NOT RUN; exposure/duplicate qualification, inference calibration and resource feasibility remain unresolved.

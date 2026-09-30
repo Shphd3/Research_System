@@ -43,5 +43,30 @@
     "probe noise and finite KL qualification"
   ],
   "result": "NOT_RUN",
-  "resource_feasibility": "NOT_BENCHMARKED"
+  "resource_feasibility": "NOT_BENCHMARKED",
+  "mathematical_source_checks": {
+    "kind": "small_analytic_numerical_source_checks",
+    "date": "2026-09-30",
+    "status": "PASS",
+    "checks": [
+      "exact_enumerated_logit_probe_fisher",
+      "fisher_psd",
+      "model_label_zero_mean_and_second_moment",
+      "real_label_covariance_mean_decomposition",
+      "empirical_moments_not_model_fisher",
+      "column_major_parameter_fisher",
+      "decoder_direction_sensitivity",
+      "local_KL_quadratic_convergence",
+      "negative_offdiagonal_psd_feature_metric",
+      "nonorthogonal_atoms_not_energy_partition",
+      "orthogonal_trace_fraction",
+      "native_residual_preserving_decoder_chart",
+      "context_averaging_not_kronecker_factorization"
+    ],
+    "new_model_collection": false,
+    "new_natural_language_result": false,
+    "interval_calibration_performed": false,
+    "actual_model_probe_or_KL_smoke_performed": false,
+    "source_rendering_checked": false
+  }
 }

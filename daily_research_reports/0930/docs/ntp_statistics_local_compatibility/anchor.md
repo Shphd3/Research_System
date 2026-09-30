@@ -22,7 +22,7 @@ Marginal Zipf-like frequencies, activation anisotropy, centered gradient fluctua
 
 ## 4. Mathematical Model
 
-For context x, actual target y and domain s, freeze all parameters. Let c be the shared matrix input, a=Wc its native output, r the residual, logits z=g(a,r), probabilities p, one-hot target u_y, loss -log p(y), and J=partial z/partial a. Then
+For context \(x\), actual target \(y\) and domain \(s\), freeze all parameters at \(\theta_0\). Let \(c\) be the matrix input, \(a=W_0c\) its native output, \(r\) the residual, logits \(z=g_{\theta_0}(a,r)\), probabilities \(p=\operatorname{softmax}(z)\), one-hot \(u_y\), loss \(\ell=-\log p(y)\), and \(J=\partial z/\partial a\). Then
 
 \[
 e=J^\top(p-u_y),\qquad G=ec^\top,\qquad
@@ -30,7 +30,7 @@ K_{ij}=\langle G_i,G_j\rangle_F=(c_i^\top c_j)(e_i^\top e_j),\qquad
 \Delta\ell_j=-\eta K_{ij}+O(\eta^2).
 \]
 
-The last relation assumes a sufficiently small ordinary SGD step on W alone. Unknown real continuations q_x give E[G|x]=J^T(p-q_x)c^T. Selected-target means may remain nonzero even at p=q_x; one continuation/context does not identify calibration.
+The last relation assumes a sufficiently small ordinary SGD step on W alone. Unknown real continuations \(q_x=P_{\rm data}(Y\mid X=x)\) give \(\mathbb E[G\mid x]=J_x^\top(p_x-q_x)c_x^\top\). Selected-target means may remain nonzero even at p=q_x; one continuation/context does not identify calibration.
 
 Define **model Fisher**, with labels averaged under model p, regardless of calibration:
 
@@ -47,7 +47,7 @@ Hold x/r/other parameters fixed for this local native-output change. At p_x=q_x,
 
 This is a conditional identity, not a low-rank population finding. Outside calibration, true-target second moments/covariance are not model Fisher. Estimate model sensitivity directly; do not infer q_x or replace it with observed targets. [Empirical-Fisher limitations](https://arxiv.org/abs/1905.12558) motivate this separation.
 
-The existing SAE encodes a, not c: a approximately equals its fixed decoder bias plus D alpha, with unit decoder columns d_k and sparse code alpha. Its local readout is
+The existing SAE encodes \(a\), not \(c\): \(a\approx b_{\rm SAE}+D\alpha\), with fixed bias, unit decoder columns \(d_k\) and sparse code \(\alpha\). Its local readout is
 
 \[
 I_k(x)=d_k^\top F_a(x)d_k,\qquad F_\alpha(x)=D^\top F_a(x)D,\qquad \delta a=D\delta\alpha.
@@ -55,7 +55,7 @@ I_k(x)=d_k^\top F_a(x)d_k,\qquad F_\alpha(x)=D^\top F_a(x)D,\qquad \delta a=D\de
 
 Here the chart keeps reconstruction residual fixed around native a; it does not replace a with its reconstruction or differentiate through TopK encoding. Pair activation with I_k to distinguish occurrence from directional prediction sensitivity. F_alpha is positive semidefinite but off-diagonal entries can be negative; those signs are not cross-data help/harm. Nonorthogonal atom sensitivities cannot be summed as independent capacity or energy shares.
 
-Retain primary-selected means mu_s,y^b, pools b=F,R, four targets Y_*, and historical reference v0:
+Retain primary-selected means \(\mu^b_{s,y}=\mathbb E_b[G\mid s,y,\text{selection}]\), pools \(b=F,R\), four targets \(\mathcal Y_*\), and historical reference \(v_0\):
 
 \[
 T=\frac1{24v_0}\sum_{y\in\mathcal Y_*}\sum_{s<t}
