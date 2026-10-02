@@ -1,9 +1,11 @@
-# 候选设计：自然语言统计与局部更新结构
+# 自然语言统计与局部更新结构
 
 [English](README.md)
 
-先读 [Anchor](anchor_cn.md)的目的、假设、机制和边界，再读 [Protocol](protocol_cn.md)的精确候选实验。研究者确认有符号相容性、独立自然目标混合，以及将已有 SAE 作为分析工具。精确操作化仍为提案，未授权运行；既有 Focus 与冻结证据保留职责。
+研究者已授权本轮实现、Smoke 与通过门槛后的完整 Full。[Anchor](anchor_cn.md)拥有候选机制；[Protocol](protocol_cn.md)拥有运行范围与工程修订；[执行记录](execution_record_cn.md)记录真实状态。科学解释与 Focus 转移仍待研究者判断。
 
-区分两个对象：有符号平均更新需求、模型预测敏感性。T 裁决一阶条件均值对比；即使 H1 不支持，功能 profile 也有独立描述结果。native-a SAE 出现/decoder 方向与模型 Fisher 敏感性配对，必做同空间/同秩 PCA 和随机对照。不要求 SAE 胜出，敏感性不等于容量竞争或共享收益。
+区分有符号平均更新需求与模型方向敏感性：T 裁决一阶条件均值对比；SAE 激活、decoder 方向及 Fisher 敏感性独立描述，配同空间／同秩 PCA 与随机对照，不要求 SAE 胜出。
 
-[原来源预检](source_preflight.json)记录覆盖和历史参考；[SAE 来源审计](sae_tool_source_audit.json)记录核实接口与小型数学源码检查，不是新自然语言测量或真实模型 Smoke。新 T/S、混合、Fisher、feature 对照均为 NOT RUN；曝光/重复资格、推断校准、资源可行性仍待核定。
+原来源预检与 SAE 来源审计是历史元数据／数学接口记录；实际新测量、失败 Smoke 与 Full 由执行记录及最终 Summary/Detailed 引用。
+
+已完成：先读[Summary](summary_cn.md)，细节见[Detailed](detailed_cn.md)。严格Smoke PASS；Full SUCCEEDED；主判INSUFFICIENT；研究者解释Unknown。

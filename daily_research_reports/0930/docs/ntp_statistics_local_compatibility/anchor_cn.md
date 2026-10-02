@@ -1,6 +1,9 @@
 # Anchor：自然语言统计与局部更新结构
 
-2026-09-30，Asia/Shanghai。`CANDIDATE_FOR_REVIEW`；结果 `NOT RUN`；候选标识 `ntp_statistics_local_compatibility`。研究者确认有符号相容性、自然目标混合，以及将已有 SAE 用作领域/方向敏感性分析工具；具体假设、估计器、取样和阈值仍为 **AI_PROPOSAL**。[英文](anchor.md)；[实验方案](protocol_cn.md)。不重置 Focus，未授权执行。
+执行更新2026-09-30：严格 Smoke 与完整 Full 已记录于 [Summary](summary_cn.md)和 [Detailed](detailed_cn.md)；主裁决 INSUFFICIENT，研究者科学判断 Unknown。下方登记科学正文（含运行前证据／下一决定快照）保持原值，未提升科学结论状态。
+
+
+2026-09-30，Asia/Shanghai。`CANDIDATE_FOR_REVIEW`；结果 `NOT RUN`；候选标识 `ntp_statistics_local_compatibility`。研究者确认有符号相容性、自然目标混合，以及将已有 SAE 用作领域/方向敏感性分析工具；具体假设、估计器、取样和阈值仍为 **AI_PROPOSAL**。[英文](anchor.md)；[实验方案](protocol_cn.md)。不重置 Focus。研究者现已授权初始实现、Smoke 与资格通过后的 Full，不确认科学结果或解释。
 
 ## 1. Problem Definition
 

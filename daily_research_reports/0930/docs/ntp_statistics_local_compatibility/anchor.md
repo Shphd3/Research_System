@@ -1,6 +1,9 @@
 # Anchor: natural-language statistics and local update structure
 
-2026-09-30, Asia/Shanghai. `CANDIDATE_FOR_REVIEW`; result `NOT RUN`; proposed key `ntp_statistics_local_compatibility`. The researcher confirmed signed compatibility, natural-target mixtures, and using the existing SAE as a domain/direction-sensitivity analysis tool. Exact hypotheses, estimators, sampling and thresholds remain **AI_PROPOSAL**. [Chinese](anchor_cn.md); [Protocol](protocol.md). No Focus reset or execution approval.
+Execution update2026-09-30: strict Smoke and complete Full are recorded in [Summary](summary.md) and [Detailed](detailed.md). Primary typed verdict INSUFFICIENT; human scientific judgment Unknown. The registered scientific body below, including its pre-run evidence/next-decision snapshot, is preserved without scientific promotion.
+
+
+2026-09-30, Asia/Shanghai. `CANDIDATE_FOR_REVIEW`; result `NOT RUN`; proposed key `ntp_statistics_local_compatibility`. The researcher confirmed signed compatibility, natural-target mixtures, and using the existing SAE as a domain/direction-sensitivity analysis tool. Exact hypotheses, estimators, sampling and thresholds remain **AI_PROPOSAL**. [Chinese](anchor_cn.md); [Protocol](protocol.md). No Focus reset. The researcher now authorizes initial implementation, Smoke and gated Full; no scientific result or interpretation is confirmed.
 
 ## 1. Problem Definition
 

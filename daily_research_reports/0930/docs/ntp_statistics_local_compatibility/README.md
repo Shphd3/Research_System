@@ -1,9 +1,9 @@
-# Candidate: natural-language statistics and local update structure
+# Natural-language statistics and local update structure
 
-[中文](README_cn.md)
+[Chinese](README_cn.md)
 
-Read [Anchor](anchor.md) for purpose, hypotheses, mechanism and boundaries, then [Protocol](protocol.md) for the exact candidate experiment. The researcher confirmed signed compatibility, separate natural-target mixtures, and using the existing SAE as an analysis tool. Exact operationalization remains proposed; no run is authorized and existing Focus/frozen evidence retain their ownership.
+The researcher authorized implementation, numerical Smoke and gated complete Full. [Anchor](anchor.md) owns the candidate mechanism; [Protocol](protocol.md) owns scope and pre-unsealing amendments; [execution record](execution_record.md) owns factual state. Scientific interpretation and Focus transition remain researcher-owned.
 
-Two objects are distinguished: signed mean update demand, and model prediction sensitivity. T adjudicates the first-order conditional mean contrast; functional profiles have separate descriptive outcomes even if H1 is not supported. Native-a SAE occurrence/decoder directions are paired with model-Fisher sensitivity, with same-space/rank PCA and random controls. SAE superiority is not required and sensitivity is not capacity competition or sharing benefit.
+Keep signed average update demand separate from model directional sensitivity. T adjudicates the conditional mean contrast; SAE activation/decoder directions and model Fisher are independent descriptive measurements, with same-space/equal-rank PCA/random controls and no required SAE victory. Historical source preflights are metadata/interface checks; fresh results and failed attempts are linked from execution and final Summary/Detailed.
 
-[Original source preflight](source_preflight.json) records coverage and historical references. [SAE source audit](sae_tool_source_audit.json) records verified interfaces and small mathematical source checks, not new natural-language measurement or actual-model Smoke. All new T/S, mixture, Fisher and feature-control results remain NOT RUN; exposure/duplicate qualification, inference calibration and resource feasibility remain unresolved.
+Complete: read[Summary](summary.md), then[Detailed](detailed.md). StrictSmokePASS; FullSUCCEEDED; primaryINSUFFICIENT; human interpretationUnknown.

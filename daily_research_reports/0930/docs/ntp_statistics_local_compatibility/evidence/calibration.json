@@ -1,0 +1,288 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "isotropic",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.9512,
+      "bias": -2.435133298084216e-06,
+      "median_se": 0.0028451573905483286,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "isotropic",
+      "truth": 0.005,
+      "repetitions": 5000,
+      "coverage": 0.9458,
+      "bias": 7.972041616743746e-05,
+      "median_se": 0.003022320744598241,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "isotropic",
+      "truth": 0.01,
+      "repetitions": 5000,
+      "coverage": 0.9552,
+      "bias": -8.80233048459831e-05,
+      "median_se": 0.0031965862624696107,
+      "false_support_at_boundary": 0.0198,
+      "pass": true
+    },
+    {
+      "case": "isotropic",
+      "truth": 0.02,
+      "repetitions": 5000,
+      "coverage": 0.9552,
+      "bias": -1.2625006829171392e-06,
+      "median_se": 0.0035042536115218147,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "rank_one",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.9558,
+      "bias": 1.023927567662589e-05,
+      "median_se": 0.00141588505170054,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "rank_one",
+      "truth": 0.005,
+      "repetitions": 5000,
+      "coverage": 0.9478,
+      "bias": -1.2592923363966523e-05,
+      "median_se": 0.001742178347196596,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "rank_one",
+      "truth": 0.01,
+      "repetitions": 5000,
+      "coverage": 0.951,
+      "bias": 5.868109218147219e-05,
+      "median_se": 0.0020155238193792337,
+      "false_support_at_boundary": 0.0204,
+      "pass": true
+    },
+    {
+      "case": "rank_one",
+      "truth": 0.02,
+      "repetitions": 5000,
+      "coverage": 0.955,
+      "bias": 3.6247867353088326e-05,
+      "median_se": 0.002471576633929294,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "heteroskedastic",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.9518,
+      "bias": -0.00015825455140232848,
+      "median_se": 0.0101014545727432,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "heteroskedastic",
+      "truth": 0.005,
+      "repetitions": 5000,
+      "coverage": 0.9516,
+      "bias": 4.342895550395968e-05,
+      "median_se": 0.010258802369326431,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "heteroskedastic",
+      "truth": 0.01,
+      "repetitions": 5000,
+      "coverage": 0.9512,
+      "bias": 0.00012261721990202215,
+      "median_se": 0.010461415521675716,
+      "false_support_at_boundary": 0.0256,
+      "pass": true
+    },
+    {
+      "case": "heteroskedastic",
+      "truth": 0.02,
+      "repetitions": 5000,
+      "coverage": 0.9486,
+      "bias": 4.051038578829769e-05,
+      "median_se": 0.01083908218564994,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "student_t5",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.9536,
+      "bias": 4.0579802439772485e-05,
+      "median_se": 0.0028239557534275525,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "student_t5",
+      "truth": 0.005,
+      "repetitions": 5000,
+      "coverage": 0.9514,
+      "bias": 7.760108429388617e-06,
+      "median_se": 0.0029982772767018894,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "student_t5",
+      "truth": 0.01,
+      "repetitions": 5000,
+      "coverage": 0.9552,
+      "bias": 3.6952224832277614e-06,
+      "median_se": 0.0031695509432563204,
+      "false_support_at_boundary": 0.0212,
+      "pass": true
+    },
+    {
+      "case": "student_t5",
+      "truth": 0.02,
+      "repetitions": 5000,
+      "coverage": 0.9528,
+      "bias": -3.652929895216206e-05,
+      "median_se": 0.003471984408262087,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "target_shared",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.95,
+      "bias": -5.975609794054624e-05,
+      "median_se": 0.002848739744646109,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "target_shared",
+      "truth": 0.005,
+      "repetitions": 5000,
+      "coverage": 0.9516,
+      "bias": -3.9497629367574866e-05,
+      "median_se": 0.003024539190935028,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "target_shared",
+      "truth": 0.01,
+      "repetitions": 5000,
+      "coverage": 0.95,
+      "bias": 4.102041365476247e-05,
+      "median_se": 0.00319105447168904,
+      "false_support_at_boundary": 0.0236,
+      "pass": true
+    },
+    {
+      "case": "target_shared",
+      "truth": 0.02,
+      "repetitions": 5000,
+      "coverage": 0.9464,
+      "bias": 2.0950459082846873e-05,
+      "median_se": 0.003495088322038778,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "recurring",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.9522,
+      "bias": 3.872947621858173e-05,
+      "median_se": 0.0028490838869295932,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "recurring",
+      "truth": 0.005,
+      "repetitions": 5000,
+      "coverage": 0.9468,
+      "bias": -1.5479147770561946e-05,
+      "median_se": 0.0030233220993104845,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "recurring",
+      "truth": 0.01,
+      "repetitions": 5000,
+      "coverage": 0.9502,
+      "bias": -2.9744611409010177e-05,
+      "median_se": 0.003183879237097047,
+      "false_support_at_boundary": 0.023,
+      "pass": true
+    },
+    {
+      "case": "recurring",
+      "truth": 0.02,
+      "repetitions": 5000,
+      "coverage": 0.9526,
+      "bias": -6.248836031936753e-05,
+      "median_se": 0.0034947079050985244,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "reversed",
+      "truth": 0.0,
+      "repetitions": 5000,
+      "coverage": 0.9476,
+      "bias": -9.939989945467611e-06,
+      "median_se": 0.002848643417517655,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "reversed",
+      "truth": -0.005,
+      "repetitions": 5000,
+      "coverage": 0.9528,
+      "bias": -1.7529679830086825e-05,
+      "median_se": 0.0030286498257565005,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "reversed",
+      "truth": -0.01,
+      "repetitions": 5000,
+      "coverage": 0.9488,
+      "bias": 2.0290925311925237e-05,
+      "median_se": 0.003195114443037047,
+      "false_support_at_boundary": null,
+      "pass": true
+    },
+    {
+      "case": "reversed",
+      "truth": -0.02,
+      "repetitions": 5000,
+      "coverage": 0.9542,
+      "bias": 1.585556061534793e-05,
+      "median_se": 0.0035010616750972014,
+      "false_support_at_boundary": null,
+      "pass": true
+    }
+  ],
+  "seed": 2026093002,
+  "actual_plan": "24 strata x8 independent quartets",
+  "source": "synthetic gradients only, not natural-text evidence"
+}
