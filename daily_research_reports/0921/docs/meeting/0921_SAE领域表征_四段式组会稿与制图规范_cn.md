@@ -298,10 +298,10 @@ SALL 的准确率比 Dense 高 **0.75个百分点**，相当于1,600条测试记
 
 本索引用于Agent定位，不是新的科学结果来源。仓库快照统一为 `4d69a12065a93e1ef361dd995a1e4cf51fc8a8d5`。
 
-- **[S1] 领域主线报告：** `daily_research_reports/0921/focus_meeting_sae_domain_separation_cn.md`，§3、§4.1—4.5。拥有本稿主要N8点估计、CKA标定及激活结论的已同步阅读依据；原稿仍标为AI草稿。
-- **[S2] 全范围报告：** `daily_research_reports/0921/focus_meeting_sae_representation_space_audit_cn.md`，§4第1—5项。用于保留原关系主检验、N8语言预测损失与机制边界。
-- **[S3] 补充设计与资产核查：** `daily_research_reports/0921/sae_domain_supplementary_experiments_cn.md`，§2—3；文件状态为`AI_PROPOSED_NOT_RUN`，新增配对统计、来源对照和子空间实验不能写成完成。
-- **[S4] 截断前诊断定义：** `daily_research_reports/0920/representation_analysis_followup/05_SAE截断前激活谱与K预算审查计划_cn.md`。用于区分候选得分、实际系数、字典原子及不同K比较；该文件是计划，实际样本数以S1/S5为准。
+- **[S1] 领域主线报告：** `daily_research_reports/0921/meeting_report/history/meeting_brief_sae_domain_separation_cn.md`，§3、§4.1—4.5。拥有本稿主要N8点估计、CKA标定及激活结论的已同步阅读依据；原稿仍标为AI草稿。
+- **[S2] 全范围报告：** `daily_research_reports/0921/meeting_report/history/meeting_brief_sae_representation_space_audit_cn.md`，§4第1—5项。用于保留原关系主检验、N8语言预测损失与机制边界。
+- **[S3] 补充设计与资产核查：** `Projects/from-attention-to-search/main/research_notes/sae_representation/20260921/sae_domain_supplementary_experiments_cn.md`，§2—3；文件状态为`AI_PROPOSED_NOT_RUN`，新增配对统计、来源对照和子空间实验不能写成完成。
+- **[S4] 截断前诊断定义：** `Projects/from-attention-to-search/main/research_notes/sae_representation/20260920/representation_analysis_followup/05_SAE截断前激活谱与K预算审查计划_cn.md`。用于区分候选得分、实际系数、字典原子及不同K比较；该文件是计划，实际样本数以S1/S5为准。
 - **[S5] N8制图与已保存摘录：** `daily_research_reports/0921/report_assets/build_domain_meeting_figures.py`；`daily_research_reports/0921/figures/domain_figure_manifest.json`。已核对其排名输入身份检查、排序字段、Top32质量中位数及实际训练点差值摘录；未在本次环境执行脚本。
 - **[S6] 全范围制图来源：** `daily_research_reports/0921/figures/figure_manifest.json`，特别是`e06_cost`与`e06_geometry`源路径和哈希。
 - **[S7] 已上传下游报告：** `benchmark_evaluation_report_cn.md`。用于确认S7谱系及M2不同推理路径，不把常规下游均值混入本稿领域总分。

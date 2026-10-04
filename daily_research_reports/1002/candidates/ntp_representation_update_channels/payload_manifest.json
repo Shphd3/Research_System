@@ -1,0 +1,1255 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-02T10:31:39Z",
+  "generator": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/build_reading_evidence.py",
+  "generator_sha256": "29db08113dbed2c58a09e803f775f75943f2ec0f41822f3dde01446d717dd0ea",
+  "raw_workspace": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels",
+  "raw_arrays_copied": false,
+  "files": [
+    {
+      "path": "evidence/cases.json",
+      "bytes": 4714,
+      "sha256": "70b99cbae9075793e5def9e7dfce812ff26b94d5013be34f5d746afff9b30195",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/natural_cases_01/cases.json",
+          "sha256": "70b99cbae9075793e5def9e7dfce812ff26b94d5013be34f5d746afff9b30195"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/correlation_addendum.json",
+      "bytes": 483,
+      "sha256": "4aaa277fbeef1227ef21b623193770f9286bb418938224164daf1c0ac757f252",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_half1_finite_01/correlation_addendum.json",
+          "sha256": "4aaa277fbeef1227ef21b623193770f9286bb418938224164daf1c0ac757f252"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/correlation_receipt.json",
+      "bytes": 1127,
+      "sha256": "d9f6968dad9237ae6bd6c4e7c80122843d3ac6999059597d4fb8822095719c96",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_half1_finite_01/correlation_receipt.json",
+          "sha256": "d9f6968dad9237ae6bd6c4e7c80122843d3ac6999059597d4fb8822095719c96"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/derived_identities.json",
+      "bytes": 258,
+      "sha256": "ee286514d1281ae5fc809f4267cd2d7699e052ae0ddc948ddf1985f08d090e48",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/mechanism_checks_01/derived_identities.json",
+          "sha256": "ee286514d1281ae5fc809f4267cd2d7699e052ae0ddc948ddf1985f08d090e48"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/endpoint_summary.csv",
+      "bytes": 26467,
+      "sha256": "ff9a5a0894fd7d4463d0fef8eb2d2cc6baea7944525e79ca6ea1f9ccac95b155",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/endpoint_summary.csv",
+          "sha256": "ff9a5a0894fd7d4463d0fef8eb2d2cc6baea7944525e79ca6ea1f9ccac95b155"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/execution_receipts.json",
+      "bytes": 10348,
+      "sha256": "e294ebdb3b45c27625f6c6b82bac074ae9f8d81fff987170e920fb1615381c03",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/receipt.json",
+          "sha256": "7ffb3580d1ac69c16c8471cf919ffda1b8ed98968a53e9a8787e553fce36fd26"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/receipt.json",
+          "sha256": "d8dd16b7b98c79e9022bd38a05200b89b054394c6ccfe2ae23470bac40028c5f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/probe_robustness_01/receipt.json",
+          "sha256": "22037e6bfa4f228df587c569fa75bcde1fbee0ddfae0772f7947d69737f2a5dd"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/receipt.json",
+          "sha256": "e2ef9e39736e24451e5281943125a68669c491d8ccd64f747b9f5632b0e03a57"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/receipt.json",
+          "sha256": "263bc4ebe00c03e77d7e50da3e8bf2e19add069743436992dd7218e9319e611f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/mechanism_checks_01/receipt.json",
+          "sha256": "828c1d4744f967fd91006487ca13de705516e33ac6e4d6d8edc96652878ca170"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/natural_cases_01/receipt.json",
+          "sha256": "b5bf629ce1bfc8a4257f2ec3ec9ece958574c0f9fe2abe37bd50d84c186357df"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_repeatability_01/receipt.json",
+          "sha256": "e227e08290901c12706738f2f8893cf7f1513415f2edc30e04e9d0d610d34827"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_half1_finite_01/receipt.json",
+          "sha256": "4c166149c4f34e86d2b131d617ff5bdd65546402b4dca0c192dab9b09321e054"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/finite_panel_summary.csv",
+      "bytes": 13814,
+      "sha256": "cb206ef355903aa82d1e63933707c144b2694a6f5f38d6454f8c27afae09e8df",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/finite_panel_summary.csv",
+          "sha256": "cb206ef355903aa82d1e63933707c144b2694a6f5f38d6454f8c27afae09e8df"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/finite_prediction_readout.csv",
+      "bytes": 8342,
+      "sha256": "db94b5ee058b794441ce26f1fd4d9533ec7dfdcb6952cc715d217bdc51dba364",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/finite_prediction_readout.csv",
+          "sha256": "db94b5ee058b794441ce26f1fd4d9533ec7dfdcb6952cc715d217bdc51dba364"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/finite_response_correlation.csv",
+      "bytes": 200,
+      "sha256": "879dd35ded0dfce566ca6b537e97e7fd4e44ffed1b57a8dc7326018922132eee",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_half1_finite_01/finite_response_correlation.csv",
+          "sha256": "879dd35ded0dfce566ca6b537e97e7fd4e44ffed1b57a8dc7326018922132eee"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/finite_source_repeatability.csv",
+      "bytes": 3690,
+      "sha256": "b6c6eb11c887104aa3b049f753bb853564f3d82d42506c0b4ce3cd17ea001fc8",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_half1_finite_01/finite_source_repeatability.csv",
+          "sha256": "b6c6eb11c887104aa3b049f753bb853564f3d82d42506c0b4ce3cd17ea001fc8"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/finite_two_component_attribution.csv",
+      "bytes": 14682,
+      "sha256": "e60803324aa8e86a6e29813e42848b5cce4c79a34824633a8edb9887211ce9cf",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/finite_two_component_attribution.csv",
+          "sha256": "e60803324aa8e86a6e29813e42848b5cce4c79a34824633a8edb9887211ce9cf"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/local_map.csv",
+      "bytes": 4808,
+      "sha256": "e0ef493f1635ca0f88a97d3aae1aad9e22cd6131e67ff94f2ef521aa513ff8b0",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/mechanism_checks_01/local_map.csv",
+          "sha256": "e0ef493f1635ca0f88a97d3aae1aad9e22cd6131e67ff94f2ef521aa513ff8b0"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/response_repeatability.csv",
+      "bytes": 4992,
+      "sha256": "ac364af256749a76c9d50cfb76eb5d37dcc5d577f14ab84f88fb782384a51400",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_repeatability_01/response_repeatability.csv",
+          "sha256": "ac364af256749a76c9d50cfb76eb5d37dcc5d577f14ab84f88fb782384a51400"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/robust_prediction_readout.csv",
+      "bytes": 13015,
+      "sha256": "6f86197bc5992036abac1116789a6d19bdf9d8244c664174d4b08365f3e8c4cb",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/probe_robustness_01/robust_prediction_readout.csv",
+          "sha256": "6f86197bc5992036abac1116789a6d19bdf9d8244c664174d4b08365f3e8c4cb"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/source_matrix_repeatability.csv",
+      "bytes": 643,
+      "sha256": "e5df10df381cdbc33887fbac16ac34db2e108f4b48aa755aaea8f5c2708d4e5a",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_repeatability_01/source_matrix_repeatability.csv",
+          "sha256": "e5df10df381cdbc33887fbac16ac34db2e108f4b48aa755aaea8f5c2708d4e5a"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/topk_counterexample.csv",
+      "bytes": 642,
+      "sha256": "ad1ad4169bf9c3d08b0e59c6dccfe482ddfe4c0ecbeeed8a8eed57ddbd183844",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/mechanism_checks_01/topk_counterexample.csv",
+          "sha256": "ad1ad4169bf9c3d08b0e59c6dccfe482ddfe4c0ecbeeed8a8eed57ddbd183844"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "figures/finite_mean_and_events.png",
+      "bytes": 145810,
+      "sha256": "1fc4a19780ed29b91a4b6653f452dafa510095077475110b89ab13a2b7d82716",
+      "sources": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/finite_panel_summary.csv",
+          "sha256": "cb206ef355903aa82d1e63933707c144b2694a6f5f38d6454f8c27afae09e8df"
+        }
+      ],
+      "role": "derived scientific figure",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "figures/response_readout.png",
+      "bytes": 118507,
+      "sha256": "124e450967ad8e5d8fd0fb0c0ffb81a616de48e5036de37883ebee756a352d1f",
+      "sources": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/finite_prediction_readout.csv",
+          "sha256": "db94b5ee058b794441ce26f1fd4d9533ec7dfdcb6952cc715d217bdc51dba364"
+        },
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/robust_prediction_readout.csv",
+          "sha256": "6f86197bc5992036abac1116789a6d19bdf9d8244c664174d4b08365f3e8c4cb"
+        }
+      ],
+      "role": "derived scientific figure",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "figures/sae_static_and_dynamic.png",
+      "bytes": 129378,
+      "sha256": "907455c37dba359601f761291599575cd0856b98d5f11f8a931a574f8b0313dc",
+      "sources": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/endpoint_summary.csv",
+          "sha256": "ff9a5a0894fd7d4463d0fef8eb2d2cc6baea7944525e79ca6ea1f9ccac95b155"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/qualification.json",
+          "sha256": "5c9315e8a9977db819ecdd1fac23738c879a98b73de498949263cd865328df43"
+        }
+      ],
+      "role": "derived scientific figure",
+      "scope": "exploratory old panel; no new confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_finite_readout.csv",
+      "bytes": 43430,
+      "sha256": "4735de494485071ad3a5378960f3c25051b362518b037dc1787d470bad3d1b6d",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_summary_01/finite_transfer_readout.csv",
+          "sha256": "4735de494485071ad3a5378960f3c25051b362518b037dc1787d470bad3d1b6d"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_gain_accounting.csv",
+      "bytes": 2580,
+      "sha256": "e857ae3092706e137e2a86421ad73d9ca5199d7366525ee7ff25df4b52559533",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_summary_01/finite_gain_accounting.csv",
+          "sha256": "e857ae3092706e137e2a86421ad73d9ca5199d7366525ee7ff25df4b52559533"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_error_decomposition.csv",
+      "bytes": 2835,
+      "sha256": "b4960180e4028866d56af5b57a7eb5db36fcd5504d4250cb42d3580a4d2c1121",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_summary_01/finite_error_decomposition.csv",
+          "sha256": "b4960180e4028866d56af5b57a7eb5db36fcd5504d4250cb42d3580a4d2c1121"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_finite_effects.csv",
+      "bytes": 12467,
+      "sha256": "d38f19fab392d06edf5b8445cba562a18a84988313ac6c623d1c1feef47d078e",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/summary.csv",
+          "sha256": "d38f19fab392d06edf5b8445cba562a18a84988313ac6c623d1c1feef47d078e"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_derivative_readout.csv",
+      "bytes": 36479,
+      "sha256": "97b1ef33aed8a42e4ccd38a99d82d9cb56a8f6791ac90ca0bff89efc78988216",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/transfer_readout.csv",
+          "sha256": "97b1ef33aed8a42e4ccd38a99d82d9cb56a8f6791ac90ca0bff89efc78988216"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_contrast_cv.csv",
+      "bytes": 5302,
+      "sha256": "44f91e950187518444af188d7085389e2f8af5e67f88c251c5911e565a4211e4",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_contrast_01/contrast_readout.csv",
+          "sha256": "44f91e950187518444af188d7085389e2f8af5e67f88c251c5911e565a4211e4"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_identity_checks.json",
+      "bytes": 781,
+      "sha256": "2879b0eeacb047a77d82c55939c06d66bebcf744bd5fd2e68893ab3d3cf78fa5",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_summary_01/identity_checks.json",
+          "sha256": "2879b0eeacb047a77d82c55939c06d66bebcf744bd5fd2e68893ab3d3cf78fa5"
+        }
+      ],
+      "role": "selected continuation evidence",
+      "scope": "two fixed source samples; old exposed R; no independent confirmation"
+    },
+    {
+      "path": "evidence/source_transfer_receipts.json",
+      "bytes": 6142,
+      "sha256": "f4617ba4e89f22f71dd183837e0b41af886ad4aa1e2df1d43aca6bf5f05eea71",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/receipt.json",
+          "sha256": "6fc48b14e5a003928b8abf17698d57d63da81452b50f1c97ece22b82ee240b1f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/receipt.json",
+          "sha256": "8018a96b7897c73db2f9b797fc1356dadbe2eb62f76798280336071b839db399"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_contrast_01/receipt.json",
+          "sha256": "37a632f830f0e4daef9267c318da3710fbafe1ee27864998bfc37f10b0fb016e"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_summary_01/receipt.json",
+          "sha256": "54b81195356884c744f7ddd3b23c43dd13ccc6ed4480ebf975f9f1fee303add3"
+        }
+      ],
+      "role": "continuation receipts",
+      "scope": "bounded local analysis"
+    },
+    {
+      "path": "figures/source_transfer.png",
+      "bytes": 142288,
+      "sha256": "b3fd9741f3785f1437e8914b83233b324dfb037502e839c89ac732eda89ddd4b",
+      "sources": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/source_transfer_finite_readout.csv",
+          "sha256": "4735de494485071ad3a5378960f3c25051b362518b037dc1787d470bad3d1b6d"
+        }
+      ],
+      "role": "derived scientific figure",
+      "scope": "finite labels; two fixed source samples; conditional old-R readout"
+    },
+    {
+      "path": "evidence/domain_prediction_readout.csv",
+      "bytes": 40929,
+      "sha256": "24b406ac53b48977f7af8f900078694c24198ef66157a61d652c3afa95d58e98",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/between_domain_response_01/prediction_risk.csv",
+          "sha256": "6d1a71cd57c9081aaad341a86213ed9f3eb645f3a7f8169e0548a360d26f4f06"
+        }
+      ],
+      "selection": "readout_scope=='pooled' and label=='actual_finite'",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_response_repeatability.csv",
+      "bytes": 2060,
+      "sha256": "22e0e1f8a581f275bccd60e181c8a12c782c919b605c1063d657bdf1e112586a",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/between_domain_response_01/truth_repeatability.csv",
+          "sha256": "a2166f4901c6ce48189182347ce5fb2317e92608a6c8b4f756d1f11906384cdf"
+        }
+      ],
+      "selection": "readout_scope=='pooled' and label=='actual_finite'",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_response_energy.csv",
+      "bytes": 1553,
+      "sha256": "613ca20a4d640985c92c9113f0a4b175e55d0cb5cea5863b20332c56e4f5ecfb",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/between_domain_response_01/response_energy.csv",
+          "sha256": "8781ed0248295c22f97d0757a7ce8caccb4df78088ab7756907491912b0c89a1"
+        }
+      ],
+      "selection": "readout_scope=='pooled'",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_response_scales.csv",
+      "bytes": 8711,
+      "sha256": "bbded65837e350e0535418f94cd100618d99134f13eb61158e16da8a9cb48592",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/response_scale_diagnostics_01/response_scale_readout.csv",
+          "sha256": "d81381cfb50b04afa30fef59af2ec42d557b593a54b072c94b68ee5cc2de44bf"
+        }
+      ],
+      "selection": "label=='finite_I' and component=='source_domain_centered'",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_target_composition.csv",
+      "bytes": 1211,
+      "sha256": "e8fc5ec68f78acd7a5cab5f1356d3e3dba4536445eda2edc7131a0017b179d8c",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/response_scale_diagnostics_01/composition_readout.csv",
+          "sha256": "e8fc5ec68f78acd7a5cab5f1356d3e3dba4536445eda2edc7131a0017b179d8c"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/prefix_forecast.csv",
+      "bytes": 10946,
+      "sha256": "3f5067d46183fc2366a4bf02822c2251e55c6f5fa4c209a65ff4d89472cfa2aa",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/prefix_forecast_01/forecast_readout.csv",
+          "sha256": "3f5067d46183fc2366a4bf02822c2251e55c6f5fa4c209a65ff4d89472cfa2aa"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/prefix_forecast_causal_audit.json",
+      "bytes": 1697,
+      "sha256": "b1fd057fce721d428a94fa0c9d7907f527971686e811af24e4c07cb6acc20b6a",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/prefix_forecast_01/causal_source_audit.json",
+          "sha256": "b1fd057fce721d428a94fa0c9d7907f527971686e811af24e4c07cb6acc20b6a"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/input_nullspace_geometry.csv",
+      "bytes": 2579,
+      "sha256": "2d12b3a2b3826911d236a45c0f05546ba0f923a2a33fd8e89f5d818dd9683277",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/input_nullspace_response_01/input_geometry.csv",
+          "sha256": "2d12b3a2b3826911d236a45c0f05546ba0f923a2a33fd8e89f5d818dd9683277"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/input_nullspace_response.csv",
+      "bytes": 2828,
+      "sha256": "9c62a84fb816f837dc78bc48243355340db45095e5b50494f592b005c8a30996",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/input_nullspace_response_01/response_components_summary.csv",
+          "sha256": "cef03a4b1fd5b8e316bca0dcf94352fd782f519db06146eb276be15a0cff923f"
+        }
+      ],
+      "selection": "readout_scope=='pooled'",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/input_nullspace_cross_moment.csv",
+      "bytes": 690,
+      "sha256": "d30846d5fe8c13c4ece8829650760f22a3e0736d3371e5cc4bac34eeeed25ebd",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/input_nullspace_response_01/centered_AB_cross_moment_decomposition.csv",
+          "sha256": "d15a3978f29b27c476d23d747342592f2b016db037ff2bcfe882ae450e5a4e00"
+        }
+      ],
+      "selection": "readout_scope=='pooled'",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_case_followup.json",
+      "bytes": 6419,
+      "sha256": "8954992051cabb8e50330b604da4caedaca6ac6883861cbffedffdb8a697a212",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/domain_cases_01/cases.json",
+          "sha256": "8954992051cabb8e50330b604da4caedaca6ac6883861cbffedffdb8a697a212"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_mechanism_checks.json",
+      "bytes": 595,
+      "sha256": "50cb8352e5dfb698b337a5fb04497121624968dbc5878861a938402dad3d2706",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/domain_mechanism_checks_01/checks.json",
+          "sha256": "50cb8352e5dfb698b337a5fb04497121624968dbc5878861a938402dad3d2706"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "selected domain-response evidence",
+      "scope": "old exposed panel;fixed source samples;not confirmation"
+    },
+    {
+      "path": "evidence/domain_response_receipts.json",
+      "bytes": 9609,
+      "sha256": "b4d9ec4654b724e34e2dbe237cc308261a98d7d7da9f529fd92c4e14fbf63cc6",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/between_domain_response_01/receipt.json",
+          "sha256": "0d7b9ea1a029f8c70b9c75243bc732f9dcb18edeed622162091cb1e917c6a679"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/response_scale_diagnostics_01/receipt.json",
+          "sha256": "97caf78197be3258df9b512752f097c1c6be47b81ee5cfceb17d3555c9f184ac"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/prefix_forecast_01/receipt.json",
+          "sha256": "d762f978ae8d517f4b56566c4dbd43700a536efe9a88a7c3bc86bceeef56c917"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/input_nullspace_response_01/receipt.json",
+          "sha256": "a34facf6e00526ce4010ba62dfd0624ab8c29e0825d01003280c639b0b03cbdc"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/domain_cases_01/receipt.json",
+          "sha256": "e221333de33219c7e6cc7b32180bef868127c13ac20c7ef9e4da93b1bd2b129a"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/domain_mechanism_checks_01/receipt.json",
+          "sha256": "180ea05fbedc341b51c46d5996f2aa5e7a504147be7e8354aff21507e6f70623"
+        }
+      ],
+      "role": "run receipts",
+      "scope": "bounded local exploration"
+    },
+    {
+      "path": "figures/domain_response_structure.png",
+      "bytes": 167410,
+      "sha256": "da8249aef942bd7c471b81bfe22e74741bd8c53b3f64afe5bb754b610730b646",
+      "sources": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/domain_response_repeatability.csv",
+          "sha256": "22e0e1f8a581f275bccd60e181c8a12c782c919b605c1063d657bdf1e112586a"
+        },
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/domain_response_scales.csv",
+          "sha256": "bbded65837e350e0535418f94cd100618d99134f13eb61158e16da8a9cb48592"
+        },
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/prefix_forecast.csv",
+          "sha256": "3f5067d46183fc2366a4bf02822c2251e55c6f5fa4c209a65ff4d89472cfa2aa"
+        }
+      ],
+      "role": "derived scientific figure",
+      "scope": "fixed sources;old exposed R;different readout horizons"
+    },
+    {
+      "path": "evidence/common_direction_geometry.json",
+      "bytes": 1617,
+      "sha256": "27f1eae446e0017f016465edd34d4044a77eb3a86d24fd8c49901a8bdee2b045",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/common_direction_control_01/direction_geometry.json",
+          "sha256": "27f1eae446e0017f016465edd34d4044a77eb3a86d24fd8c49901a8bdee2b045"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "source-defined common parameter direction sensitivity",
+      "scope": "step-scaled derivatives only;fixed sources;exposed old R"
+    },
+    {
+      "path": "evidence/common_direction_replication.csv",
+      "bytes": 10324,
+      "sha256": "29a21c65dd6fb68dd92bdfdb30cb936679f4088afaca231f957c48a914f843ca",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/common_direction_control_01/response_replication.csv",
+          "sha256": "29a21c65dd6fb68dd92bdfdb30cb936679f4088afaca231f957c48a914f843ca"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "source-defined common parameter direction sensitivity",
+      "scope": "step-scaled derivatives only;fixed sources;exposed old R"
+    },
+    {
+      "path": "evidence/common_direction_readout.csv",
+      "bytes": 7746,
+      "sha256": "0e1c16ba3cae6825722a0f088eca6062ca2f87ff1b20824c4e85e947b6c9117c",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/common_direction_control_01/prediction_readout.csv",
+          "sha256": "0e1c16ba3cae6825722a0f088eca6062ca2f87ff1b20824c4e85e947b6c9117c"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "source-defined common parameter direction sensitivity",
+      "scope": "step-scaled derivatives only;fixed sources;exposed old R"
+    },
+    {
+      "path": "evidence/common_direction_receipt.json",
+      "bytes": 1192,
+      "sha256": "4ed87423cc4b672eb2f94814bfdc89d14717e21c15e6bc39116797f6f9fda664",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/common_direction_control_01/receipt.json",
+          "sha256": "4ed87423cc4b672eb2f94814bfdc89d14717e21c15e6bc39116797f6f9fda664"
+        }
+      ],
+      "selection": "whole compact file",
+      "role": "source-defined common parameter direction sensitivity",
+      "scope": "step-scaled derivatives only;fixed sources;exposed old R"
+    },
+    {
+      "path": "evidence/input_nullspace_centered_energy.csv",
+      "bytes": 484,
+      "sha256": "ccb0f04e0c1265018ad8b83d1eee7d498c04dd43cf7ab7741dc2d5619b3b8e70",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/input_nullspace_response_01/centered_response_energy.csv",
+          "sha256": "f62f8f1901d400a41fd9d1798da69df4f8c43ead1ba8937c859f072d2ae1d5bc"
+        }
+      ],
+      "selection": "readout_scope=='pooled'",
+      "role": "within-half row/null/cross response energy accounting",
+      "scope": "derivatives only;old exposed R"
+    },
+    {
+      "path": "evidence/capacity_budget_counts.json",
+      "bytes": 4452,
+      "sha256": "cbf971ffec6391935d629dba590e22db2867b14f3dc925d0f1d4fcad3e5f891a",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/resource_counts/budget_counts.json",
+          "sha256": "cbf971ffec6391935d629dba590e22db2867b14f3dc925d0f1d4fcad3e5f891a"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_resource_budget.py",
+          "sha256": "4970ac7a7c3e6019cd875530646bc9b8e6836cc482ee95c65990829906204c20"
+        }
+      ],
+      "role": "selected parameter-count evidence / derived figure",
+      "scope": "20261003 frozen implementation counts; not training performance, FLOPs, latency or capacity saturation"
+    },
+    {
+      "path": "figures/capacity_resource_budget.png",
+      "bytes": 127216,
+      "sha256": "f77f84a3daa01f95562e5b9995a9021e8a04c83c3d9a7a2edee080c0364a7d39",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/resource_counts/resource_budget.png",
+          "sha256": "f77f84a3daa01f95562e5b9995a9021e8a04c83c3d9a7a2edee080c0364a7d39"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_resource_budget.py",
+          "sha256": "4970ac7a7c3e6019cd875530646bc9b8e6836cc482ee95c65990829906204c20"
+        }
+      ],
+      "role": "selected parameter-count evidence / derived figure",
+      "scope": "20261003 frozen implementation counts; not training performance, FLOPs, latency or capacity saturation"
+    },
+    {
+      "path": "figures/capacity_resource_budget.pdf",
+      "bytes": 19188,
+      "sha256": "3f8afe47f6c7df830aad4350454e7f064890aa69c4cecfbb5ad443523134272a",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/resource_counts/resource_budget.pdf",
+          "sha256": "3f8afe47f6c7df830aad4350454e7f064890aa69c4cecfbb5ad443523134272a"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_resource_budget.py",
+          "sha256": "4970ac7a7c3e6019cd875530646bc9b8e6836cc482ee95c65990829906204c20"
+        }
+      ],
+      "role": "selected parameter-count evidence / derived figure",
+      "scope": "20261003 frozen implementation counts; not training performance, FLOPs, latency or capacity saturation"
+    },
+    {
+      "path": "evidence/capacity_task_examples.json",
+      "bytes": 5389,
+      "sha256": "7067185ce25a5dde159c2a7e3d9c82e30945019ce273ef7c28d4eede626fdf57",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/resource_counts/task_examples.json",
+          "sha256": "7067185ce25a5dde159c2a7e3d9c82e30945019ce273ef7c28d4eede626fdf57"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/extract_reading_examples.py",
+          "sha256": "6a232612116d4b3a4a126e891d97b5491f5308bd1e968df2e62d6a76a6892407"
+        }
+      ],
+      "role": "fixed first training-record/domain task illustration",
+      "scope": "text examples selected by array index before model results; not representative common knowledge or compatibility evidence"
+    },
+    {
+      "path": "figures/capacity_design.png",
+      "bytes": 504960,
+      "sha256": "1c1350159c4033c7865768c01c62a92f340c90b4cc6a51565e7f47e5344e4b6d",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/design/capacity_design.png",
+          "sha256": "1c1350159c4033c7865768c01c62a92f340c90b4cc6a51565e7f47e5344e4b6d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_capacity_design.py",
+          "sha256": "a551eb909ba2da647a4a999cb529b610c92bb5f30ae04ecb902dca0a7b2722be"
+        }
+      ],
+      "role": "derived method diagram or provenance; not scientific outcome",
+      "scope": "frozen six-arm architecture and planned exposure schedule; no losses read"
+    },
+    {
+      "path": "figures/capacity_design.pdf",
+      "bytes": 34935,
+      "sha256": "6caec8d28aa11bb578a1e4d16d641921ee7ab81c64c949f94da562474b1d3092",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/design/capacity_design.pdf",
+          "sha256": "6caec8d28aa11bb578a1e4d16d641921ee7ab81c64c949f94da562474b1d3092"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_capacity_design.py",
+          "sha256": "a551eb909ba2da647a4a999cb529b610c92bb5f30ae04ecb902dca0a7b2722be"
+        }
+      ],
+      "role": "derived method diagram or provenance; not scientific outcome",
+      "scope": "frozen six-arm architecture and planned exposure schedule; no losses read"
+    },
+    {
+      "path": "evidence/capacity_design.json",
+      "bytes": 5612,
+      "sha256": "100d8406506e404b3b4ed366ce96ee11b82d6fb897533eac913c5612ba40d5cf",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/design/capacity_design.json",
+          "sha256": "100d8406506e404b3b4ed366ce96ee11b82d6fb897533eac913c5612ba40d5cf"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_capacity_design.py",
+          "sha256": "a551eb909ba2da647a4a999cb529b610c92bb5f30ae04ecb902dca0a7b2722be"
+        }
+      ],
+      "role": "derived method diagram or provenance; not scientific outcome",
+      "scope": "frozen six-arm architecture and planned exposure schedule; no losses read"
+    },
+    {
+      "path": "evidence/routing_utility.csv",
+      "bytes": 210483,
+      "sha256": "445aff3067d4b32d0b171888757ffe3a359587520e829851b6064895c1ce9545",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_routing_utility_01/summary.csv",
+          "sha256": "445aff3067d4b32d0b171888757ffe3a359587520e829851b6064895c1ce9545"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "evidence/routing_utility_receipt.json",
+      "bytes": 5254,
+      "sha256": "31e41dd0f30342222eeb76713dc3e85f13375d511df1212cd1364955aa3150d7",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_routing_utility_01/receipt.json",
+          "sha256": "31e41dd0f30342222eeb76713dc3e85f13375d511df1212cd1364955aa3150d7"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "evidence/routing_utility_audit.json",
+      "bytes": 1766,
+      "sha256": "7ea5f0aab6f40dfb3386ecf009c88a927e7ae2a56be0aa2f58282b80829ddd73",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_routing_utility_01/postrun_audit.json",
+          "sha256": "7ea5f0aab6f40dfb3386ecf009c88a927e7ae2a56be0aa2f58282b80829ddd73"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "evidence/routing_group_decomposition.csv",
+      "bytes": 164379,
+      "sha256": "e5590bad594c7b01d06325fb1911d6fc77680937cb60686c0d65f4faf6d26369",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_policy_group_decomposition_01/summary.csv",
+          "sha256": "e5590bad594c7b01d06325fb1911d6fc77680937cb60686c0d65f4faf6d26369"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "evidence/routing_group_receipt.json",
+      "bytes": 3959,
+      "sha256": "42e7b2b64c4c9d0e6b66f2bd068ace0efb3f7034d02662712e02640f49a8255a",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_policy_group_decomposition_01/receipt.json",
+          "sha256": "42e7b2b64c4c9d0e6b66f2bd068ace0efb3f7034d02662712e02640f49a8255a"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "evidence/causal_sharing_toy_checks.json",
+      "bytes": 494,
+      "sha256": "80ef45c30cfec862b70062f44e0b83059b56dec03e6fd730829b62a6ffa0209b",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/causal_sharing_toy_checks.json",
+          "sha256": "80ef45c30cfec862b70062f44e0b83059b56dec03e6fd730829b62a6ffa0209b"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "evidence/routing_figures_manifest.json",
+      "bytes": 2335,
+      "sha256": "27bb256089be61b3fa5897a8454aae1de372cafaec86cd2076d729932d7b5bcd",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/routing_figures_manifest.json",
+          "sha256": "27bb256089be61b3fa5897a8454aae1de372cafaec86cd2076d729932d7b5bcd"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "figures/cached_routing_utility.png",
+      "bytes": 126603,
+      "sha256": "920e157f16dd36ad52b7190a98698b3e4e0a7aa53837e74983043abca6b74171",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_routing_utility.png",
+          "sha256": "920e157f16dd36ad52b7190a98698b3e4e0a7aa53837e74983043abca6b74171"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "figures/cached_routing_utility.svg",
+      "bytes": 38621,
+      "sha256": "03429f33831619836b1299705c31f2b671b3b6030db20578966fce8da77c32fd",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_routing_utility.svg",
+          "sha256": "03429f33831619836b1299705c31f2b671b3b6030db20578966fce8da77c32fd"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "figures/router_expert_information.png",
+      "bytes": 165235,
+      "sha256": "d826019508ee700790a6cc8630856e5ca339b54a363313e9ce3e48c950a17405",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/router_expert_information.png",
+          "sha256": "d826019508ee700790a6cc8630856e5ca339b54a363313e9ce3e48c950a17405"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "figures/router_expert_information.svg",
+      "bytes": 9585,
+      "sha256": "6781c68c0a0e4321c4dcb2ac17a0e0122e5055a1a18fb331128f0e12c4845069",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/router_expert_information.svg",
+          "sha256": "6781c68c0a0e4321c4dcb2ac17a0e0122e5055a1a18fb331128f0e12c4845069"
+        }
+      ],
+      "role": "selected routing evidence or derived mechanism figure",
+      "scope": "routing-r2 old exposed panel exploratory utility; synthetic CE example and schematic explicitly labelled; no confirmation or architecture benefit"
+    },
+    {
+      "path": "figures/training_curve_20_33b.png",
+      "bytes": 474022,
+      "sha256": "940dfbc48d124425e681517585cb2b2e397df63d90464400e0e41b7fc9ea44ad",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/training_curve_20_33b.png",
+          "sha256": "940dfbc48d124425e681517585cb2b2e397df63d90464400e0e41b7fc9ea44ad"
+        }
+      ],
+      "role": "selected descriptive training-curve evidence or derived figure",
+      "scope": "20–33B training CE; token-overlap weighted bins, not held-out, paired late updates, independent seeds or time-to-quality"
+    },
+    {
+      "path": "figures/training_curve_20_33b.svg",
+      "bytes": 107194,
+      "sha256": "ff15e90abbe0963d24b6096959aafdf869c6dd86282118e04528200ee3e2f301",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/training_curve_20_33b.svg",
+          "sha256": "ff15e90abbe0963d24b6096959aafdf869c6dd86282118e04528200ee3e2f301"
+        }
+      ],
+      "role": "selected descriptive training-curve evidence or derived figure",
+      "scope": "20–33B training CE; token-overlap weighted bins, not held-out, paired late updates, independent seeds or time-to-quality"
+    },
+    {
+      "path": "evidence/training_curve_20_33b.csv",
+      "bytes": 84187,
+      "sha256": "70804dfe346abccd90ce5467d4fb3e0a4b936b80e0be455cbf241d31f78ee36e",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/analysis/training_curve_20_33b.csv",
+          "sha256": "70804dfe346abccd90ce5467d4fb3e0a4b936b80e0be455cbf241d31f78ee36e"
+        }
+      ],
+      "role": "selected descriptive training-curve evidence or derived figure",
+      "scope": "20–33B training CE; token-overlap weighted bins, not held-out, paired late updates, independent seeds or time-to-quality"
+    },
+    {
+      "path": "evidence/training_curve_20_33b.json",
+      "bytes": 18648,
+      "sha256": "1e7ad46efe30b6618c7f0f486c13f014eb39f97bbe8c076a6bd87f6152fec5a0",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/analysis/training_curve_20_33b.json",
+          "sha256": "1e7ad46efe30b6618c7f0f486c13f014eb39f97bbe8c076a6bd87f6152fec5a0"
+        }
+      ],
+      "role": "selected descriptive training-curve evidence or derived figure",
+      "scope": "20–33B training CE; token-overlap weighted bins, not held-out, paired late updates, independent seeds or time-to-quality"
+    },
+    {
+      "path": "evidence/training_curve_manifest.json",
+      "bytes": 1583,
+      "sha256": "bc1391438f842684178d8d66064f25ab2dcdf1d75ef4e3dccc8cfc02b37e75de",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/training_curve_manifest.json",
+          "sha256": "bc1391438f842684178d8d66064f25ab2dcdf1d75ef4e3dccc8cfc02b37e75de"
+        }
+      ],
+      "role": "selected descriptive training-curve evidence or derived figure",
+      "scope": "20–33B training CE; token-overlap weighted bins, not held-out, paired late updates, independent seeds or time-to-quality"
+    },
+    {
+      "path": "evidence/finite_sample_sharing_checks.json",
+      "bytes": 14629,
+      "sha256": "c8355fcc57923d110a7c0580f51cc661675343933b058e56fddd2c997ab387ee",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/analysis/finite_sample_sharing_checks.json",
+          "sha256": "c8355fcc57923d110a7c0580f51cc661675343933b058e56fddd2c997ab387ee"
+        }
+      ],
+      "role": "conditional-model analytical enumeration; not language-model evidence",
+      "scope": "same-sample finite-gradient sharing calculation and assumption controls"
+    },
+    {
+      "path": "evidence/cached_router_inputs.csv",
+      "bytes": 113461,
+      "sha256": "55f18c28a292a0a7dcb9990c93bf4d836b9db8b00bbc6578ab041d7806ddb19d",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/summary.csv",
+          "sha256": "55f18c28a292a0a7dcb9990c93bf4d836b9db8b00bbc6578ab041d7806ddb19d"
+        }
+      ],
+      "role": "selected routing-input result, provenance or derived figure",
+      "scope": "posthoc old S7 panel; four fixed pooled actions; no independent confirmation or new LM forward"
+    },
+    {
+      "path": "evidence/cached_router_inputs_receipt.json",
+      "bytes": 11415,
+      "sha256": "bb1763b6b8061c0a183165f006b0f0a2b52eaf91ac529b6890e2bf766c502b39",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/receipt.json",
+          "sha256": "bb1763b6b8061c0a183165f006b0f0a2b52eaf91ac529b6890e2bf766c502b39"
+        }
+      ],
+      "role": "selected routing-input result, provenance or derived figure",
+      "scope": "posthoc old S7 panel; four fixed pooled actions; no independent confirmation or new LM forward"
+    },
+    {
+      "path": "evidence/cached_router_inputs_audit.json",
+      "bytes": 36528,
+      "sha256": "2f519494c4313fd5acc32676326efd5da91663f81ff1fd7364f2aae7fad592c5",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/independent_audit.json",
+          "sha256": "2f519494c4313fd5acc32676326efd5da91663f81ff1fd7364f2aae7fad592c5"
+        }
+      ],
+      "role": "selected routing-input result, provenance or derived figure",
+      "scope": "posthoc old S7 panel; four fixed pooled actions; no independent confirmation or new LM forward"
+    },
+    {
+      "path": "figures/cached_router_inputs.png",
+      "bytes": 432280,
+      "sha256": "6f8d525d1a3314ec3101a40afdf79c02f53df2c096c024013558f571c0e135b0",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_router_inputs.png",
+          "sha256": "6f8d525d1a3314ec3101a40afdf79c02f53df2c096c024013558f571c0e135b0"
+        }
+      ],
+      "role": "selected routing-input result, provenance or derived figure",
+      "scope": "posthoc old S7 panel; four fixed pooled actions; no independent confirmation or new LM forward"
+    },
+    {
+      "path": "figures/cached_router_inputs.svg",
+      "bytes": 48661,
+      "sha256": "3bc27e9de723fdca245dec98ac3612ae62b14d200b3674ce267cee5a86514340",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_router_inputs.svg",
+          "sha256": "3bc27e9de723fdca245dec98ac3612ae62b14d200b3674ce267cee5a86514340"
+        }
+      ],
+      "role": "selected routing-input result, provenance or derived figure",
+      "scope": "posthoc old S7 panel; four fixed pooled actions; no independent confirmation or new LM forward"
+    },
+    {
+      "path": "evidence/cached_router_inputs_manifest.json",
+      "bytes": 16873,
+      "sha256": "d72bbe28c821c6940e1322bc3b8cb787b4b4ce31ac2be790b432f4dc604a23c4",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_router_inputs_manifest.json",
+          "sha256": "d72bbe28c821c6940e1322bc3b8cb787b4b4ce31ac2be790b432f4dc604a23c4"
+        }
+      ],
+      "role": "selected routing-input result, provenance or derived figure",
+      "scope": "posthoc old S7 panel; four fixed pooled actions; no independent confirmation or new LM forward"
+    }
+  ],
+  "extensions": [
+    {
+      "created_at_utc": "2026-10-02T16:54:00Z",
+      "generator": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/build_transfer_evidence.py",
+      "generator_sha256": "ba6fc766bdd0e0789a0f2f6d4fd5802fab5a578012df2b00f48e58b1e522dfb9",
+      "files": [
+        "evidence/source_transfer_finite_readout.csv",
+        "evidence/source_transfer_gain_accounting.csv",
+        "evidence/source_transfer_error_decomposition.csv",
+        "evidence/source_transfer_finite_effects.csv",
+        "evidence/source_transfer_derivative_readout.csv",
+        "evidence/source_contrast_cv.csv",
+        "evidence/source_transfer_identity_checks.json",
+        "evidence/source_transfer_receipts.json",
+        "figures/source_transfer.png"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-02T17:56:37Z",
+      "generator": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/build_domain_evidence.py",
+      "generator_sha256": "a95da730a344f00813e742efa41fa15c7f2a4786c04be4e0b8165f5d1f9f8478",
+      "files": [
+        "evidence/domain_prediction_readout.csv",
+        "evidence/domain_response_repeatability.csv",
+        "evidence/domain_response_energy.csv",
+        "evidence/domain_response_scales.csv",
+        "evidence/domain_target_composition.csv",
+        "evidence/prefix_forecast.csv",
+        "evidence/prefix_forecast_causal_audit.json",
+        "evidence/input_nullspace_geometry.csv",
+        "evidence/input_nullspace_response.csv",
+        "evidence/input_nullspace_cross_moment.csv",
+        "evidence/domain_case_followup.json",
+        "evidence/domain_mechanism_checks.json",
+        "evidence/domain_response_receipts.json",
+        "figures/domain_response_structure.png"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-02T18:09:12Z",
+      "generator": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/build_direction_evidence.py",
+      "generator_sha256": "4d87dbe0fc4ebc61e3ca5b84f17ab11fa2b4909446ceec8cc09e18ab778076e4",
+      "files": [
+        "evidence/common_direction_geometry.json",
+        "evidence/common_direction_replication.csv",
+        "evidence/common_direction_readout.csv",
+        "evidence/common_direction_receipt.json"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-02T18:12:31Z",
+      "generator": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/build_domain_audit_evidence.py",
+      "generator_sha256": "45d21618c06b50e82247dffce9d09de9b4bf3fa03cd69ddf0db1f1242b732660",
+      "files": [
+        "evidence/input_nullspace_centered_energy.csv"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-03T09:25:15.167166+00:00",
+      "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/prepare_training_curve.py",
+      "generator_sha256": "536b21347b3b85e0faf0c29d0865b5e2993dcb24fac2a0e151e8bcc82bc06ff3",
+      "files": [
+        "evidence/training_curve_20_33b.csv",
+        "evidence/training_curve_20_33b.json"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-03T09:25:15.167166+00:00",
+      "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/plot_training_curve.py",
+      "generator_sha256": "d4b4b29e659d9000cc3dc3de161a94bf11463a53af3f59552534c45c625d5636",
+      "files": [
+        "figures/training_curve_20_33b.png",
+        "figures/training_curve_20_33b.svg",
+        "evidence/training_curve_manifest.json"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-03T09:52:54.474263+00:00",
+      "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/check_finite_sample_sharing.py",
+      "generator_sha256": "36df15a2bc17524653010e521ddebe5da65525f35b1da96f2f80da38db66de38",
+      "files": [
+        "evidence/finite_sample_sharing_checks.json"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-03T10:01:37.267186+00:00",
+      "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_router_inputs.py",
+      "generator_sha256": "f4462599628b1d5771e9840adc7e1145bf3d92d82626478541224049fa39c569",
+      "files": [
+        "evidence/cached_router_inputs.csv",
+        "evidence/cached_router_inputs_receipt.json"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-03T10:01:37.267186+00:00",
+      "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/audit_cached_router_inputs.py",
+      "generator_sha256": "b5b80ff185732b14b811b6252502a753d44fe30746de1354e8cdbd056d32586e",
+      "files": [
+        "evidence/cached_router_inputs_audit.json"
+      ]
+    },
+    {
+      "created_at_utc": "2026-10-03T10:01:37.267186+00:00",
+      "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/plot_cached_router_inputs.py",
+      "generator_sha256": "7f71a99a6f8ff5e98ea48b1f7b4b3e4e355c7192b541cf82a194d0a41f6aeb1b",
+      "files": [
+        "figures/cached_router_inputs.png",
+        "figures/cached_router_inputs.svg",
+        "evidence/cached_router_inputs_manifest.json"
+      ],
+      "caption_clarified_at_utc": "2026-10-03T10:29:23.269923+00:00"
+    }
+  ],
+  "updated_at_utc": "2026-10-03T10:29:23.269923+00:00",
+  "additional_execution_roots": [
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing"
+  ],
+  "routing_added_at_utc": "2026-10-03T08:33:54.751030+00:00"
+}

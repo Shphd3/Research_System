@@ -1,0 +1,36 @@
+# 每日阅读与会议
+
+[Project research route](../Projects/from-attention-to-search/main/roadmap.md) · [English](README.md) · [中文](README_cn.md)
+
+当天目录保存组会稿、会议记录、简短进展和日期图件。正式研究归项目。backup 保存历史快照，不作为默认当前来源；仍被登记为当前问题的 Focus 已迁出 backup。
+
+- [0930](0930/README_cn.md)
+- [0928](0928/README_cn.md)
+- [0927](0927/README_cn.md)
+- [0926](0926/README_cn.md)
+- [0925](0925/README_cn.md)
+- [0924](0924/README_cn.md)
+- [0923](0923/README_cn.md)
+- [0922](0922/README_cn.md)
+- [0921](0921/README_cn.md)
+- [0920](0920/README_cn.md)
+- [0918](0918/README_cn.md)
+- [0917](0917/README_cn.md)
+- [0916](0916/README_cn.md)
+- [0915](0915/README_cn.md)
+- [0914](0914/README_cn.md)
+- [0913](0913/README_cn.md)
+- [0912](0912/README_cn.md)
+- [0911](0911/README_cn.md)
+- [0910](0910/README_cn.md)
+- [0909](0909/README_cn.md)
+- [0908](0908/README_cn.md)
+- [0907](0907/README_cn.md)
+- [0906](0906/README_cn.md)
+- [0905](0905/README_cn.md)
+- [0904](0904/README_cn.md)
+- [0903](0903/README_cn.md)
+- [0902](0902/README_cn.md)
+- [0901](0901/README_cn.md)
+
+[Historical backup](backup/) — retain original meaning; use project records for current questions.

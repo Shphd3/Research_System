@@ -45,8 +45,9 @@ conclusion, and limitation. Debug figures stay outside `summary.md`.
 A figure that a date's reader-facing artifact displays also has a reading copy
 under `daily_research_reports/MMDD/figures/`, linked by a date-local relative
 path and recorded in that directory's `SOURCES.md`. The experiment keeps the
-evidence copy; the date copy is derived. See `layout_and_naming.md` for the
-placement rule.
+evidence copy; the date copy is derived. Neither is automatically tracked. Select
+small deliverable evidence through the payload manifest or include it in a local
+reading bundle. See `layout_and_naming.md` for placement and source rules.
 
 ## Completion
 

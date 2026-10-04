@@ -11,4 +11,4 @@ the experiment copy disagree, the experiment copy is authoritative and this one 
 | `historical_semantic_coverage.png` | copy | `Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E18_dataset_conditioned_sae_semantic_hierarchy/figures/m2d2_3x3_confirmed_edge_coverage.png` | `c843a5064a8f4d66b208f973d8069ccbb3b69feb98a9b6d4fd19b2fa69f18816` | Byte-identical copy of the historical canonical figure; no recalc or relabel. |
 
 Full provenance for every table and transformation is in
-[`../evidence_manifest.json`](../evidence_manifest.json).
+[`../evidence_manifest.json`](../../../Projects/from-attention-to-search/main/research_notes/sae_representation/20260909/evidence_manifest.json).

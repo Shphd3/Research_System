@@ -1,0 +1,193 @@
+{
+  "between_domain_response_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/between_domain_response_01/receipt.json",
+    "sha256": "0d7b9ea1a029f8c70b9c75243bc732f9dcb18edeed622162091cb1e917c6a679",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_BETWEEN_DOMAIN_RESPONSE",
+      "elapsed_seconds": 3.2769137416034937,
+      "eta": 0.05731845587090156,
+      "records": 1024,
+      "events": 16384,
+      "source_domains": [
+        "computer_science",
+        "mathematics",
+        "physics",
+        "biology"
+      ],
+      "cases": [
+        "A_to_A",
+        "A_to_B",
+        "B_to_A",
+        "B_to_B",
+        "AB_mean"
+      ],
+      "label_versions": [
+        "derivative_times_eta",
+        "actual_finite"
+      ],
+      "output_row_counts": {
+        "prediction_risk.csv": 1400,
+        "truth_repeatability.csv": 70,
+        "response_energy.csv": 20,
+        "prediction_error_decomposition.csv": 200,
+        "pair_error_decomposition.csv": 1200,
+        "finite_remainder_error_decomposition.csv": 700,
+        "finite_derivative_differences.csv": 700,
+        "energy_label_differences.csv": 10,
+        "repeatability_label_differences.csv": 35
+      },
+      "input_hashes_unchanged": true,
+      "identities_pass": true,
+      "CPU_threads": 8,
+      "max_seconds": 300,
+      "model_loads": 0,
+      "new_fits": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "code_sha256": "b1c084e64637c78c5f536cbc831b257a07c396cca1507a687a51c8efaca4e90e",
+      "registration_sha256": "fd4be3eb38d10cb566e5c443b164347cdd79b9493ca9207ce3deceb52ccc3e50",
+      "output_sha256": {
+        "prediction_risk.csv": "6d1a71cd57c9081aaad341a86213ed9f3eb645f3a7f8169e0548a360d26f4f06",
+        "truth_repeatability.csv": "a2166f4901c6ce48189182347ce5fb2317e92608a6c8b4f756d1f11906384cdf",
+        "response_energy.csv": "8781ed0248295c22f97d0757a7ce8caccb4df78088ab7756907491912b0c89a1",
+        "prediction_error_decomposition.csv": "67934c21ae236df6a3421e110d398c43c1f5e83b28687e81f7918bccbed521a3",
+        "pair_error_decomposition.csv": "8775ddbf747dd00546ba95a9d34bd44b3dba9db401f01330407b56b57ae360e2",
+        "finite_remainder_error_decomposition.csv": "4415ce68f3d3de4ca24946e9c957f701a1cdb05ac26588da145fdc077a044a53",
+        "finite_derivative_differences.csv": "0de61fa8618cc71f725f0af9a9a0ada450e4957f092da23c5fe39e0f0737321a",
+        "energy_label_differences.csv": "e67c8037e1c5b25be196212afb61c39a40d1898a01779d25126afb7d485fe8f5",
+        "repeatability_label_differences.csv": "20daaca3ec90707366705d371a392ddc67c9612d452e5b93a758e5075b8884d4"
+      },
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "response_scale_diagnostics_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/response_scale_diagnostics_01/receipt.json",
+    "sha256": "97caf78197be3258df9b512752f097c1c6be47b81ee5cfceb17d3555c9f184ac",
+    "receipt": {
+      "status": "COMPLETE_POST_READOUT_EXPLORATORY_RESPONSE_SCALE_DIAGNOSTIC",
+      "elapsed_seconds": 0.5814916845411062,
+      "code_sha256": "e6d6137c488cf170b09e9eb747abaf30efe28df0d0d65005cc43672b0efaa779",
+      "registration_sha256": "97675b89a8b66e0e598136d9a106e84e9da5b393de151ebafd93da10ce0a6d25",
+      "input_hashes_sha256": "018ff6a81aada7ba72d022682546d8ee11c494c5962c88753e971109bf18d858",
+      "readout_sha256": "d81381cfb50b04afa30fef59af2ec42d557b593a54b072c94b68ee5cc2de44bf",
+      "composition_sha256": "e8fc5ec68f78acd7a5cab5f1356d3e3dba4536445eda2edc7131a0017b179d8c",
+      "closure_sha256": "e7932a48fcbf7bc2af421661cb11168bfd2b94d82b697da02aa8254c2649df51",
+      "inputs_unchanged": true,
+      "metadata_alignment_passed": true,
+      "aggregation_closure_passed": true,
+      "prior_full_source_mean_match_passed": true,
+      "eta": 0.05731845587090156,
+      "bootstrap_draws": 2000,
+      "readout_rows": 160,
+      "composition_rows": 4,
+      "CPU_threads": 8,
+      "max_seconds": 120,
+      "model_loads": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "new_probe_fits": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "scientific_judgment": "Unknown",
+      "boundary": "Observed 16-target record averages do not identify q or remove all noise. Conditional descriptive intervals are not confirmation."
+    }
+  },
+  "prefix_forecast_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/prefix_forecast_01/receipt.json",
+    "sha256": "d762f978ae8d517f4b56566c4dbd43700a536efe9a88a7c3bc86bceeef56c917",
+    "receipt": {
+      "status": "COMPLETE_POST_READOUT_EXPLORATORY_PREFIX_FORECAST",
+      "elapsed_seconds": 25.801517494022846,
+      "code_sha256": "3e716349766150993356798e071bd79bb1cbd25086426d7d622254c03578bca9",
+      "registration_sha256": "084c45709a949caddf52016eb2c37349bee87b47f7bed41748023c43ad17ebf6",
+      "input_hashes_sha256": "977241810519a1df7937c352545503ed893dc3ffa301fe87421b582b2b8bd706",
+      "selection_sha256": "a32c7f75a598502569bdc0c0f7bb0c1e844b740cdcfc8f086c25a4936bf9e6da",
+      "predictions_sha256": "860ec541129839edef97d6afb8dd4d85cce421108e6b6eec8bb02e09c5523ac4",
+      "readout_sha256": "3f5067d46183fc2366a4bf02822c2251e55c6f5fa4c209a65ff4d89472cfa2aa",
+      "inputs_unchanged": true,
+      "R_used_for_selection": false,
+      "CPU_threads": 8,
+      "max_seconds": 300,
+      "LM_loads": 0,
+      "LM_forward_calls": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "scientific_judgment": "Unknown",
+      "boundary": "Observed future-target mean forecast under two fixed source samples; not absence of information, new confirmation, or population source generalization."
+    }
+  },
+  "input_nullspace_response_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/input_nullspace_response_01/receipt.json",
+    "sha256": "a34facf6e00526ce4010ba62dfd0624ab8c29e0825d01003280c639b0b03cbdc",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_INPUT_NULLSPACE_RESPONSE",
+      "elapsed_seconds": 62.86002458631992,
+      "checkpoint_file_sha256": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+      "weight_tensor_sha256": "4f5415cabc55df4b8e94c48d57c3b3600295fbde055f0f3634f093ed534c0786",
+      "numerical_rank": 1024,
+      "null_dimension": 1024,
+      "source_conditions": 8,
+      "readout_events": 16384,
+      "input_hashes_unchanged": true,
+      "identities_pass": true,
+      "output_row_counts": {
+        "input_geometry.csv": 10,
+        "response_components_summary.csv": 40,
+        "centered_response_energy.csv": 10,
+        "centered_AB_cross_moment_decomposition.csv": 10
+      },
+      "CPU_threads": 8,
+      "max_seconds": 300,
+      "model_constructions": 0,
+      "checkpoint_payload_loads": 1,
+      "forward_passes": 0,
+      "new_fits": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "code_sha256": "340f2f0a941f506e82d03fa76645497e233a78a14289bf816985472190371a6c",
+      "registration_sha256": "cd05e61af839984f9c62f58d643cbe9e8a112d8b50fdbaa81cd7532705fef45a",
+      "output_sha256": {
+        "input_geometry.csv": "2d12b3a2b3826911d236a45c0f05546ba0f923a2a33fd8e89f5d818dd9683277",
+        "response_components_summary.csv": "cef03a4b1fd5b8e316bca0dcf94352fd782f519db06146eb276be15a0cff923f",
+        "centered_response_energy.csv": "f62f8f1901d400a41fd9d1798da69df4f8c43ead1ba8937c859f072d2ae1d5bc",
+        "centered_AB_cross_moment_decomposition.csv": "d15a3978f29b27c476d23d747342592f2b016db037ff2bcfe882ae450e5a4e00"
+      },
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "domain_cases_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/domain_cases_01/receipt.json",
+    "sha256": "e221333de33219c7e6cc7b32180bef868127c13ac20c7ef9e4da93b1bd2b129a",
+    "receipt": {
+      "status": "COMPLETE_POSTHOC_FIXED_CASE_FOLLOWUP",
+      "code_sha256": "016ad7d1d3a6b1a9eed861dd5db6c55fd1675bb5ec5a651b2ec4a9b7d89026d6",
+      "registration_sha256": "cde48ed391bcb26b3c7d1aba5d932515f5c6abfe796e7c159a122b57dc316818",
+      "inputs": {
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/natural_cases_01/cases.json": "70b99cbae9075793e5def9e7dfce812ff26b94d5013be34f5d746afff9b30195",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/truth.npz": "a1cbf9ecdd4bc37368f3919a5a9fcbcd526663b2f980c41d942cc41ec617296c",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/effects.npz": "41ec782d72895f4a293ee095030e70c1681aa35a39b722cd2088e121199065f8"
+      },
+      "new_case_selection": false,
+      "model_calls": 0,
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "domain_mechanism_checks_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/domain_mechanism_checks_01/receipt.json",
+    "sha256": "180ea05fbedc341b51c46d5996f2aa5e7a504147be7e8354aff21507e6f70623",
+    "receipt": {
+      "status": "PASS_DERIVATION_CHECKS",
+      "time_utc": "2026-10-02T17:48:04Z",
+      "code_sha256": "b609c6eb22a1c01136c507e28db5ec3a6ae86c07cb907c6c4c5024882e33c3ae",
+      "maximum_identity_error": 1.9743288302704224e-15,
+      "model_calls": 0,
+      "scientific_judgment": "Unknown"
+    }
+  }
+}

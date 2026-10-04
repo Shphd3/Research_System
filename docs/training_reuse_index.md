@@ -48,8 +48,8 @@ approved the separate exact 50B execution scope; its config and entrypoint are
 `configs/full_4h100_sae30k_50b.json` and `scripts/run_full_4h100.sh`.
 The flat draft above remains a design reference; it was not overwritten.
 
-- [Execution record](../daily_research_reports/0912/docs/dense_sae_30k_smoke/execution_record.md): completed four-H100 engineering check, preserved failure/repair and evidence boundary.
-- [Code handoff](../daily_research_reports/0912/docs/dense_sae_30k_smoke/code_handoff.md): actual file map, interfaces, confirmed external-process resume gaps and prioritized next audits.
+- [Execution record](../Projects/from-attention-to-search/main/experiments/sae_pretraining/dense_sae_30k/20260912/execution_record.md): completed four-H100 engineering check, preserved failure/repair and evidence boundary.
+- [Code handoff](../Projects/from-attention-to-search/main/experiments/sae_pretraining/dense_sae_30k/20260912/code_handoff.md): actual file map, interfaces, confirmed external-process resume gaps and prioritized next audits.
 - Execution `handoff/baseline_manifest.json`: code-only archive and per-file hashes;
   this execution workspace has no Git repository.
 

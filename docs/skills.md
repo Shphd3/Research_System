@@ -64,6 +64,11 @@ promotion does not silently authorize execution. Results may finish factual work
 while human interpretation stays unknown. Learned designs require distinct data,
 task, objective, architecture, selection and confirmation boundaries.
 
+Reports share [writing and medium rules](report_writing.md). Local HTML is a derived
+view when it improves reading, not another evidence owner. Project Focuses and
+formal records stay outside daily folders; [access](project_access.md) covers
+incomplete checkouts and legacy paths.
+
 Communication selects the requested meeting, Story or handoff mode. Handoff,
 external copying, commit/push, graph changes and publication remain explicitly
 scoped. Memory resumption is not scientific authorization; operational briefs and

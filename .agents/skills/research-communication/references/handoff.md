@@ -1,16 +1,17 @@
 # Handoff Mode
 
-Use this mode only after an explicit user request to package, copy, hand off, or
-synchronize an already approved set of research artifacts. It packages existing
+Use this mode after an explicit request to package, copy, hand off, or
+synchronize selected research artifacts. It packages existing
 meaning; it does not author meeting content, create a claim, or reinterpret a
 result.
 
 ## Entry Gate
 
-Confirm the destination, selected source scope, and requested action. When
-meeting material is included, it must already contain the researcher-approved
-question, answer, boundary, and next decision. If the user is still asking to
-write or revise that material, use meeting mode first and do not package it yet.
+Resolve destination, source scope and action from the request; reuse confirmed
+instructions. Preserve the sources' approval, draft and Unknown labels. A local
+reading copy may include pending material without confirming it. If writing is
+also requested, complete it through the owning mode before packaging. Ask only
+when a consequential destination, scope or required scientific judgment is missing.
 
 Use source priority:
 
@@ -30,7 +31,7 @@ Do not use chat or debug plots as evidence.
 Include only requested and directly referenced items:
 
 ```text
-meeting Focus or outline
+meeting brief or outline
 selected problem Focus
 Anchor
 protocol.md

@@ -1,0 +1,400 @@
+{
+  "created_at_utc": "2026-10-03T10:28:51.293565+00:00",
+  "kind": "POSTHOC_CACHED_ROUTER_INPUT_COMPARISON",
+  "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/plot_cached_router_inputs.py",
+  "generator_sha256": "7f71a99a6f8ff5e98ea48b1f7b4b3e4e355c7192b541cf82a194d0a41f6aeb1b",
+  "sources": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/summary.csv": "55f18c28a292a0a7dcb9990c93bf4d836b9db8b00bbc6578ab041d7806ddb19d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/receipt.json": "bb1763b6b8061c0a183165f006b0f0a2b52eaf91ac529b6890e2bf766c502b39",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/preexecution_registration.json": "fc8e4cab5cd0048ee8e2841ed0307e98dbfdca74ea767f6378b7f05ddff8b4e8",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/validation_receipt.json": "e03576df24b1ab8cce1b036ac2d456bc5120889d2262437b60833c30fc3df755"
+  },
+  "analysis_code_hashes_recorded_by_receipt": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_router_inputs.py": "f4462599628b1d5771e9840adc7e1145bf3d92d82626478541224049fa39c569",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/tests/test_cached_router_inputs.py": "1fb0a20d61d1c313f2589c2e0dc1a7056a0e509ca8dd0c1327095c502eb666db",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/cache_study.py": "61e48fc03daaf4562bcdb8c7e2f275a6ee8c0761952be89477852a35856ee0ac",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_panel.py": "56b7b200a97c228d522f81b48751a7b36df500f16883122e55b82592b953bf5a",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_replay.py": "8b5a0127e904310c879f4795d1b09f3f2f6b43da768dd4534779392372db6c4a"
+  },
+  "analysis_code_hashes_observed_now": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_router_inputs.py": "f4462599628b1d5771e9840adc7e1145bf3d92d82626478541224049fa39c569",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/tests/test_cached_router_inputs.py": "1fb0a20d61d1c313f2589c2e0dc1a7056a0e509ca8dd0c1327095c502eb666db",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/cache_study.py": "61e48fc03daaf4562bcdb8c7e2f275a6ee8c0761952be89477852a35856ee0ac",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_panel.py": "56b7b200a97c228d522f81b48751a7b36df500f16883122e55b82592b953bf5a",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_replay.py": "8b5a0127e904310c879f4795d1b09f3f2f6b43da768dd4534779392372db6c4a"
+  },
+  "observed_analysis_code_matches_receipt": true,
+  "source_receipt_status": "COMPLETE_POSTHOC_CACHED_ROUTER_INPUTS",
+  "selection": "Every registered family (8) x both action sets (2), pooled old R; no sorting by result or winner selection.",
+  "families_in_order": [
+    "base",
+    "base+a_pca64",
+    "base+c_pca64",
+    "base+x_pca64",
+    "base+cx_pca64",
+    "base+a_random64",
+    "base+sae64",
+    "base+cx_full"
+  ],
+  "action_sets": [
+    "forced_four",
+    "zero_plus_four"
+  ],
+  "metrics": [
+    "gain_vs_F_fixed",
+    "gain_vs_category_usage"
+  ],
+  "plotted_point_count": 32,
+  "plotted_values": [
+    {
+      "family": "base",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -0.00011656804878007758,
+      "plot_value_micro_nat": -116.56804878007758,
+      "plot_ci_low_micro_nat": -171.49560198553306,
+      "plot_ci_high_micro_nat": -65.42968217605404
+    },
+    {
+      "family": "base+a_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -9.319494939000303e-06,
+      "plot_value_micro_nat": -9.319494939000304,
+      "plot_ci_low_micro_nat": -57.94247422601572,
+      "plot_ci_high_micro_nat": 37.30642490495836
+    },
+    {
+      "family": "base+c_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -4.879094734917453e-06,
+      "plot_value_micro_nat": -4.8790947349174525,
+      "plot_ci_low_micro_nat": -56.55843017931165,
+      "plot_ci_high_micro_nat": 45.924958468819185
+    },
+    {
+      "family": "base+x_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": 1.3937218226163267e-05,
+      "plot_value_micro_nat": 13.937218226163267,
+      "plot_ci_low_micro_nat": -35.7647195863191,
+      "plot_ci_high_micro_nat": 62.13762592188037
+    },
+    {
+      "family": "base+cx_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": 6.045044741342671e-06,
+      "plot_value_micro_nat": 6.045044741342671,
+      "plot_ci_low_micro_nat": -45.0163443094917,
+      "plot_ci_high_micro_nat": 54.17275885958924
+    },
+    {
+      "family": "base+a_random64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -4.390934325269077e-05,
+      "plot_value_micro_nat": -43.909343252690775,
+      "plot_ci_low_micro_nat": -92.7282351884114,
+      "plot_ci_high_micro_nat": 3.5126094242900137
+    },
+    {
+      "family": "base+sae64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -3.98921541743723e-05,
+      "plot_value_micro_nat": -39.8921541743723,
+      "plot_ci_low_micro_nat": -91.82278597766786,
+      "plot_ci_high_micro_nat": 11.40085063482167
+    },
+    {
+      "family": "base+cx_full",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -4.939485975892011e-05,
+      "plot_value_micro_nat": -49.39485975892011,
+      "plot_ci_low_micro_nat": -106.71024374865299,
+      "plot_ci_high_micro_nat": 8.487405686969383
+    },
+    {
+      "family": "base",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -0.00015550090615664108,
+      "plot_value_micro_nat": -155.5009061566411,
+      "plot_ci_low_micro_nat": -214.53923067272405,
+      "plot_ci_high_micro_nat": -102.51565289227352
+    },
+    {
+      "family": "base+a_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -3.3526482931854856e-05,
+      "plot_value_micro_nat": -33.52648293185486,
+      "plot_ci_low_micro_nat": -83.01723198285482,
+      "plot_ci_high_micro_nat": 14.909273650217578
+    },
+    {
+      "family": "base+c_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -2.1969935416699116e-05,
+      "plot_value_micro_nat": -21.969935416699116,
+      "plot_ci_low_micro_nat": -73.61238474377352,
+      "plot_ci_high_micro_nat": 30.855449606128825
+    },
+    {
+      "family": "base+x_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -6.329000191573875e-06,
+      "plot_value_micro_nat": -6.329000191573876,
+      "plot_ci_low_micro_nat": -57.72987285402202,
+      "plot_ci_high_micro_nat": 43.498511038183295
+    },
+    {
+      "family": "base+cx_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -1.3730959100188476e-05,
+      "plot_value_micro_nat": -13.730959100188475,
+      "plot_ci_low_micro_nat": -66.15851201518662,
+      "plot_ci_high_micro_nat": 35.01573932732429
+    },
+    {
+      "family": "base+a_random64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -7.504090671821436e-05,
+      "plot_value_micro_nat": -75.04090671821436,
+      "plot_ci_low_micro_nat": -124.88565218314658,
+      "plot_ci_high_micro_nat": -23.18918132372066
+    },
+    {
+      "family": "base+sae64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -6.194940356558161e-05,
+      "plot_value_micro_nat": -61.94940356558161,
+      "plot_ci_low_micro_nat": -115.65711151311206,
+      "plot_ci_high_micro_nat": -9.555910749747046
+    },
+    {
+      "family": "base+cx_full",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_F_fixed",
+      "csv_value_nat": -7.010878613273588e-05,
+      "plot_value_micro_nat": -70.10878613273589,
+      "plot_ci_low_micro_nat": -127.75608175632317,
+      "plot_ci_high_micro_nat": -10.499202300354883
+    },
+    {
+      "family": "base",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 5.3313153739383355e-05,
+      "plot_value_micro_nat": 53.31315373938335,
+      "plot_ci_low_micro_nat": 5.955399830172525,
+      "plot_ci_high_micro_nat": 98.6689896696872
+    },
+    {
+      "family": "base+a_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.000162263167825107,
+      "plot_value_micro_nat": 162.263167825107,
+      "plot_ci_low_micro_nat": 119.27864839833576,
+      "plot_ci_high_micro_nat": 206.9514696446261
+    },
+    {
+      "family": "base+c_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00017251489205554304,
+      "plot_value_micro_nat": 172.51489205554304,
+      "plot_ci_low_micro_nat": 126.48141536584424,
+      "plot_ci_high_micro_nat": 219.21319482749524
+    },
+    {
+      "family": "base+x_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00019362153099560818,
+      "plot_value_micro_nat": 193.6215309956082,
+      "plot_ci_low_micro_nat": 147.91775101976796,
+      "plot_ci_high_micro_nat": 239.0912644211214
+    },
+    {
+      "family": "base+cx_pca64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00018690921459299116,
+      "plot_value_micro_nat": 186.90921459299116,
+      "plot_ci_low_micro_nat": 140.98494121672852,
+      "plot_ci_high_micro_nat": 233.70673038924096
+    },
+    {
+      "family": "base+a_random64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00011206317728462113,
+      "plot_value_micro_nat": 112.06317728462113,
+      "plot_ci_low_micro_nat": 69.36636866843172,
+      "plot_ci_high_micro_nat": 158.06628860029537
+    },
+    {
+      "family": "base+sae64",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00012876120554663,
+      "plot_value_micro_nat": 128.76120554663,
+      "plot_ci_low_micro_nat": 82.12533067235236,
+      "plot_ci_high_micro_nat": 174.84004713283016
+    },
+    {
+      "family": "base+cx_full",
+      "action_set": "forced_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00019514464927924174,
+      "plot_value_micro_nat": 195.14464927924175,
+      "plot_ci_low_micro_nat": 145.6710981163423,
+      "plot_ci_high_micro_nat": 246.48253402842514
+    },
+    {
+      "family": "base",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 4.7958071418099554e-05,
+      "plot_value_micro_nat": 47.95807141809956,
+      "plot_ci_low_micro_nat": -0.1104848069781128,
+      "plot_ci_high_micro_nat": 96.23810656394795
+    },
+    {
+      "family": "base+a_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00018077873549033596,
+      "plot_value_micro_nat": 180.77873549033598,
+      "plot_ci_low_micro_nat": 135.94792010490107,
+      "plot_ci_high_micro_nat": 227.999233465226
+    },
+    {
+      "family": "base+c_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.0002000919554125979,
+      "plot_value_micro_nat": 200.09195541259788,
+      "plot_ci_low_micro_nat": 153.20399389469173,
+      "plot_ci_high_micro_nat": 247.86554168503895
+    },
+    {
+      "family": "base+x_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00021931111945909287,
+      "plot_value_micro_nat": 219.31111945909288,
+      "plot_ci_low_micro_nat": 171.37412203559632,
+      "plot_ci_high_micro_nat": 268.25320418790307
+    },
+    {
+      "family": "base+cx_pca64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00021315414848969443,
+      "plot_value_micro_nat": 213.15414848969442,
+      "plot_ci_low_micro_nat": 164.62744569585223,
+      "plot_ci_high_micro_nat": 262.2180437546287
+    },
+    {
+      "family": "base+a_random64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.00012317286202871182,
+      "plot_value_micro_nat": 123.17286202871182,
+      "plot_ci_low_micro_nat": 78.58509644100204,
+      "plot_ci_high_micro_nat": 172.29477539886727
+    },
+    {
+      "family": "base+sae64",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.0001451954790983047,
+      "plot_value_micro_nat": 145.1954790983047,
+      "plot_ci_low_micro_nat": 97.37030956006154,
+      "plot_ci_high_micro_nat": 195.06771437124272
+    },
+    {
+      "family": "base+cx_full",
+      "action_set": "zero_plus_four",
+      "receiving_domain": "pooled",
+      "metric": "gain_vs_category_usage",
+      "csv_value_nat": 0.0002311718665046053,
+      "plot_value_micro_nat": 231.1718665046053,
+      "plot_ci_low_micro_nat": 179.09392016041934,
+      "plot_ci_high_micro_nat": 284.8775897689702
+    }
+  ],
+  "conversion": "CSV nats/event multiplied by 1,000,000; same multiplier for mean and both CI endpoints.",
+  "positive_direction": "Reference CE minus selected-policy CE; positive favors the policy.",
+  "uncertainty": "2000 category-stratified paired whole-record bootstrap draws, seed1003; keep all16 events; pointwise percentile95%; fixed sources/FIT models/panel.",
+  "multiplicity": "No adjustment; no winner selection or confirmatory threshold.",
+  "figure_size_inches": [
+    12.6,
+    8.8
+  ],
+  "png_dpi": 300,
+  "shared_x_limits_micro_nat": [
+    -235,
+    310
+  ],
+  "outputs": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_router_inputs.png": "6f8d525d1a3314ec3101a40afdf79c02f53df2c096c024013558f571c0e135b0",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_router_inputs.svg": "3bc27e9de723fdca245dec98ac3612ae62b14d200b3674ce267cee5a86514340",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_router_inputs.pdf": "40e52d65c0409e5ab1ca23b8c328dd024674b5d606fe1a3dba546c33503ab361"
+  },
+  "visual_inspection": {
+    "status": "PENDING_MANUAL_VIEW"
+  },
+  "no_new_fit_or_model_computation": true,
+  "boundaries": [
+    "Old exposed readout and one fixed pooled bank; this is not the earlier A/B transfer experiment.",
+    "FIT labels and FIT-fixed action use finite losses; no new finite LM replay was performed for this plot.",
+    "Conditional pointwise intervals, no multiplicity correction or winner declaration.",
+    "Full cx is a different fitted predictor capacity, not a dimension-matched 64-feature control."
+  ]
+}

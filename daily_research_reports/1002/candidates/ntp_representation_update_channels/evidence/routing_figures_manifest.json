@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-10-03T08:28:15.296692+00:00",
+  "script_sha256": "802695b170dde345f473954a6130cbc946203f35b2f2a5965987027d5ed76556",
+  "figures": [
+    {
+      "kind": "MEASURED_EXPLORATORY_RESULTS",
+      "sources": {
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_policy_group_decomposition_01/summary.json": "1a0eb1680c900c5b9aaf74137b35c52488e7d7c20a631c91cc9933ce8355678e"
+      },
+      "selection": "All 4 frozen features x both cross-source directions; forced domain actions; pooled readout",
+      "outputs": {
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_routing_utility.png": "920e157f16dd36ad52b7190a98698b3e4e0a7aa53837e74983043abca6b74171",
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_routing_utility.svg": "03429f33831619836b1299705c31f2b671b3b6030db20578966fce8da77c32fd",
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/cached_routing_utility.pdf": "5a7ec8c42d7f9e0217bb7ade29a3adfe537d3aab7d151ed6361a83909bd75222"
+      }
+    },
+    {
+      "kind": "METHOD_SCHEMATIC_NOT_RESULTS",
+      "sources": {
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/router_expert_information_round1.md": "c30928385d1d6835eb4af8585dae54a5e40c0a8d0b6ce6fc9dad7e3ec3317669",
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/decision_information_round2.md": "231f5e4fa3abca9fd8899292e869ce16eca61b6c3abf88742a8e38cb6e4d98e1"
+      },
+      "outputs": {
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/router_expert_information.png": "d826019508ee700790a6cc8630856e5ca339b54a363313e9ce3e48c950a17405",
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/router_expert_information.svg": "6781c68c0a0e4321c4dcb2ac17a0e0122e5055a1a18fb331128f0e12c4845069",
+        "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/router_expert_information.pdf": "a16d9a10d50d81ea310521da4d8ef75bbea26355f373c7283a62098dc1f19c3f"
+      },
+      "boundary": "Full h means the current complete causal layer vector, not future tokens or a guarantee of raw-prefix information preservation."
+    }
+  ],
+  "no_new_model_computation_or_fit": true
+}

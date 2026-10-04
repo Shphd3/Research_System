@@ -191,6 +191,10 @@ Stop or redirect condition:
 Resume action:
 ```
 
+When the next decision is unconfirmed, state `Unknown` once with the unresolved
+uncertainty. Add completion, stop and resume details only when an actual next
+action has been chosen and those details matter.
+
 Define only decision-critical terms. Give the primary result and its source
 before supporting diagnostics. Link each decision-bearing table or figure to
 its curated source table or lineage row; a final generic link to `detailed.md`
@@ -269,7 +273,7 @@ Full setup, all conditions, stage evidence, deviations, run history, and the
 artifact manifest belong only in Detailed. Summary may state only the minimum
 decision-bearing setup.
 
-When a paper-style final report is required, enforce this one-way chain:
+For a settled-question final report and question closure, use this ownership chain:
 
 ```text
 confirmed plain-language design in the active Focus
@@ -285,9 +289,11 @@ every decision-bearing number and figure must link to its canonical lineage.
 Its eligibility, verdict, boundary, and next question must match Summary,
 Detailed, the Anchor, and the researcher's result account in the active Focus.
 Before human confirmation, mark its knowledge wording
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. The already-active Focus must contain
-the researcher's result and boundary before a final report is drafted, and the
-question must have reached a stable bounded conclusion. The Focus cannot become
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. A settled-question final report requires
+the researcher's result and boundary in the active Focus and a stable bounded
+conclusion. An explicitly requested provisional synthesis may be written earlier:
+complete source-backed facts, label it provisional, and leave unresolved judgment
+unknown. It neither closes the question nor promotes evidence. The Focus cannot become
 the sole source of a number, eligibility decision, deviation, or verdict; those
 remain in canonical result records.
 
@@ -307,8 +313,8 @@ Detailed is the only complete evidence ledger:
 Figures have source, aggregation, observed result, and limitation:
 Summary, Detailed, and Anchor verdicts and boundaries agree:
 Any final report preserves canonical eligibility, verdict, lineage, boundary, and next question:
-The active Focus contains the human-confirmed result before the final report is drafted, and both remain bounded by canonical evidence:
-Exactly one next decision has a completion criterion and resume action:
+A settled final report has a human-confirmed Focus result; a requested provisional synthesis remains labeled and preserves unknowns:
+A confirmed next decision has the necessary completion conditions; an unconfirmed decision is stated as Unknown without empty fields:
 No missing value, expected pattern, or filename was turned into evidence:
 ```
 

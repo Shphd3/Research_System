@@ -1,0 +1,237 @@
+{
+  "cache_audit_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/receipt.json",
+    "sha256": "7ffb3580d1ac69c16c8471cf919ffda1b8ed98968a53e9a8787e553fce36fd26",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY",
+      "code_sha256": "61e48fc03daaf4562bcdb8c7e2f275a6ee8c0761952be89477852a35856ee0ac",
+      "registration_sha256": "f67866014f8d1e9ab87869c4b2b716736c9503c3bebc18e9ce19b45bf14b2649",
+      "elapsed_seconds": 31.508778674528003,
+      "records": {
+        "source": 512,
+        "fit": 512,
+        "readout": 1024
+      },
+      "events": {
+        "source": 8192,
+        "fit": 8192,
+        "readout": 16384
+      },
+      "model_loads": 0,
+      "model_updates": 0,
+      "sae_updates": 0,
+      "remote_jobs": 0,
+      "GPU_used": false,
+      "protected_hashes_unchanged": true,
+      "conditional_interval_not_population_confirmation": true,
+      "researcher_scientific_judgment": "Unknown"
+    }
+  },
+  "finite_replay_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/receipt.json",
+    "sha256": "d8dd16b7b98c79e9022bd38a05200b89b054394c6ccfe2ae23470bac40028c5f",
+    "receipt": {
+      "status": "COMPLETE_BOUNDED_EXPLORATORY",
+      "elapsed_seconds": 137.6110121794045,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "optimizer_updates": 0,
+      "saved_changed_checkpoints": 0,
+      "temporary_W_validation_updates": 2,
+      "W_restored_exactly": true,
+      "model_before": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_after": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "source_means_unchanged": true,
+      "checkpoint_state_sha256": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+      "code_sha256": "8b5a0127e904310c879f4795d1b09f3f2f6b43da768dd4534779392372db6c4a",
+      "registration_sha256": "6c4b41873b0ce1928bc069aef269fdeee59b057784cb00919fb22ce92d2ca62d",
+      "contexts_per_arm": 2048,
+      "readout_contexts_per_arm": 1024,
+      "arms_including_source_and_scale": 40,
+      "researcher_scientific_judgment": "Unknown",
+      "qualification": {
+        "noop_max_abs": 0.0,
+        "cached_cpu_e_relative_error": [
+          9.553986058829926e-07,
+          7.400264832093584e-07,
+          4.805621847765958e-06,
+          3.1131596334545946e-06,
+          1.0337340531019092e-06,
+          4.952799665228919e-07,
+          7.536655785978826e-07,
+          9.467811892994043e-07
+        ],
+        "full_forward_checks": [
+          {
+            "record": 31,
+            "output_max_abs": 3.0517578125e-05,
+            "logit_max_abs": 8.106231689453125e-06,
+            "loss_max_abs": 2.2938910468894846e-06,
+            "relative_update_rounding": 0.00010529176506679505,
+            "c_unchanged": true,
+            "r_unchanged": true
+          },
+          {
+            "record": 1026,
+            "output_max_abs": 3.0517578125e-05,
+            "logit_max_abs": 7.62939453125e-06,
+            "loss_max_abs": 1.6599826526686456e-06,
+            "relative_update_rounding": 8.35774335428141e-05,
+            "c_unchanged": true,
+            "r_unchanged": true
+          }
+        ],
+        "gradient_pass": true,
+        "full_replay_pass": true
+      }
+    }
+  },
+  "probe_robustness_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/probe_robustness_01/receipt.json",
+    "sha256": "22037e6bfa4f228df587c569fa75bcde1fbee0ddfae0772f7947d69737f2a5dd",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_SENSITIVITY",
+      "elapsed_seconds": 108.23981092870235,
+      "model_loads": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "source_halves": [
+        0,
+        1
+      ],
+      "code_sha256": "2151e671957fba86a568a5ef34446400426d8e593f078b4604b3153c58d6aa11",
+      "registration_sha256": "b9f806f5d2bb0d1d19b2d1bf9724689d056f847ffb1a922853edbd42958f80e1",
+      "original_results_overwritten": false,
+      "researcher_scientific_judgment": "Unknown"
+    }
+  },
+  "sae_displacement_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/receipt.json",
+    "sha256": "e2ef9e39736e24451e5281943125a68669c491d8ccd64f747b9f5632b0e03a57",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_DIAGNOSTIC",
+      "seconds": 15.369699243456125,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "optimizer_updates": 0,
+      "SAE_updates": 0,
+      "SAE_state_unchanged": true,
+      "code_sha256": "ace014ea8ea6702590f616cd53f2f249cdee47e913c6f954ba7823160242802a",
+      "registration_sha256": "1bb9c852ff4e07a68d24314a93d39fb358983ff5faebb4fd0f3cc59b82874b5c",
+      "old_finite_results_unchanged": true,
+      "researcher_scientific_judgment": "Unknown"
+    }
+  },
+  "finite_panel_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/receipt.json",
+    "sha256": "263bc4ebe00c03e77d7e50da3e8bf2e19add069743436992dd7218e9319e611f",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_FINITE_PANEL",
+      "elapsed_seconds": 265.8972629290074,
+      "model_state_before": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_state_after": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_unchanged": true,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "eta": 0.05731845587090156,
+      "conditions": 8,
+      "source_fit_events": 8192,
+      "readout_events": 16384,
+      "all_contexts_per_condition": 24576,
+      "baseline_overlap_max_abs": 0.0,
+      "effect_overlap_max_abs": {
+        "computer_science__full_step": 0.0,
+        "computer_science__half_step": 0.0,
+        "mathematics__full_step": 0.0,
+        "mathematics__half_step": 0.0,
+        "physics__full_step": 0.0,
+        "physics__half_step": 0.0,
+        "biology__full_step": 0.0,
+        "biology__half_step": 0.0
+      },
+      "code_sha256": "56b7b200a97c228d522f81b48751a7b36df500f16883122e55b82592b953bf5a",
+      "registration_sha256": "ce27bb08ea0fd017c634fc859eb8941eea72ba93398e00dc8d5d1831d9dc2ae8",
+      "qualification_source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/qualification.json",
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "mechanism_checks_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/mechanism_checks_01/receipt.json",
+    "sha256": "828c1d4744f967fd91006487ca13de705516e33ac6e4d6d8edc96652878ca170",
+    "receipt": {
+      "status": "COMPLETE_NUMERICAL_AND_LOCAL_MECHANISM_AUDIT",
+      "seconds": 45.806875778362155,
+      "code_sha256": "95098cc6906dce804a77d8375f9795d31e8ddd60f7a13d3a3b4c8df455c1514d",
+      "registration_sha256": "8701a095791d2a829e13a9b42fa7b8fc85b3cb98642eaf6b903aeb4e932d9219",
+      "optimizer_updates": 0,
+      "model_mutations": 0,
+      "identities": {
+        "conditional_mean_abs": 6.938893903907228e-17,
+        "conditional_variance_abs": 8.881784197001252e-16,
+        "target_gradient_second_moment_max_abs": 4.440892098500626e-16,
+        "finite_KL_identity_abs": 0.0,
+        "fisher_tensor_overlap_abs": 6.245004513516506e-17
+      },
+      "all_stable_affine_checks_pass": true,
+      "all_sufficient_margin_certificates_hold": true,
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "natural_cases_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/natural_cases_01/receipt.json",
+    "sha256": "b5bf629ce1bfc8a4257f2ec3ec9ece958574c0f9fe2abe37bd50d84c186357df",
+    "receipt": {
+      "time_utc": "2026-10-02T09:37:59Z",
+      "status": "POST_HOC_ILLUSTRATIONS",
+      "eligible_mixed_sign_events": 9629,
+      "readout_events": 16384,
+      "minimum_each_sign_nats": 0.0001,
+      "selection": "hash-min eligible event per domain",
+      "inference_role": "illustration only; no population prevalence conclusion from four cases",
+      "code_sha256": "2feb2f8675dd40e4f243034198522695a9dfdb2eae01cb2fb410f28825b2e3bb",
+      "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "model_calls": 0
+    }
+  },
+  "source_repeatability_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_repeatability_01/receipt.json",
+    "sha256": "e227e08290901c12706738f2f8893cf7f1513415f2edc30e04e9d0d610d34827",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_TWO_HALF_SENSITIVITY",
+      "elapsed_seconds": 16.72946684807539,
+      "LM_calls": 0,
+      "optimizer_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "code_sha256": "7a20d2e2c42c212a7a32ec19fb7960ba7111c9cb9b688a1e1aba57e904eadab5",
+      "registration_sha256": "8aa0ae2cdb0c461a34adbac6d0e52cddb58ab95f6f3cf15a159779ed276afa6d",
+      "inference": "two observed source sets only; old data exposed; record independence approximate"
+    }
+  },
+  "source_half1_finite_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_half1_finite_01/receipt.json",
+    "sha256": "4c166149c4f34e86d2b131d617ff5bdd65546402b4dca0c192dab9b09321e054",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_FINITE_SOURCE_SENSITIVITY",
+      "elapsed_seconds": 112.36369481310248,
+      "readout_events": 16384,
+      "source_half": 1,
+      "eta": 0.05731845587090156,
+      "conditions": 4,
+      "baseline_matches_old_exactly": true,
+      "model_state_before": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_state_after": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_unchanged": true,
+      "optimizer_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "code_sha256": "e562ed8f7c9b06fa9ae338dff012a6d1b24198761654ed91b153c30d7a5e98ac",
+      "registration_sha256": "624a1f554e96368d87840ad285df761c988b75bee7f1ffc80c5fcda7127b04c8",
+      "scientific_judgment": "Unknown"
+    }
+  }
+}

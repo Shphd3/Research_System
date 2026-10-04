@@ -22,12 +22,14 @@ researcher chooses otherwise. Do not invent numbers, verdicts or approval, or co
 full round histories into another editable source. A link audits meaning; the
 report must carry its own explanation.
 
-## Structure
+## Explanation And Structure
 
-Keep Abstract; 1 Motivation; 2 Problem Formulation; 3 Physical Priors;
-4 Mathematical Model; 5 Computational Implementation; 6 Experimental Design;
-7 Results; 8 Analysis; 9 Claim Boundary And Limitations; 10 Conclusion;
-11 Next Research Question (or none); Reproducibility Appendix.
+Use the shared [writing and medium rules](../../../docs/report_writing.md).
+Cover motivation, exact question, assumptions, model or argument, method,
+decisive evidence, analysis, limits, bounded answer and next question (or none).
+Include reproducibility information when applicable. Choose headings for the
+research: proofs need no invented experiment; observations need no invented
+implementation. Merge short sections; preserve the complete explanatory chain.
 
 Define objects before equations. Explain assumptions, objective/constraints,
 permitted information and the shortest model-to-consequence bridge. Distinguish
@@ -43,7 +45,10 @@ live rivals; causal wording needs the actual intervention/identification basis.
 ## Completion
 
 A new reader must understand the question, computation, tested arrows, result and
-boundary without chat/code. Verify source identity, links, language companions and
-reproducibility paths. Keep `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until wording is
+boundary without chat/code. Verify source identity through canonical records or
+manifests and link them; inline hashes only when needed to distinguish sources.
+Check links, language companions and reproducibility paths. Explain each limitation
+once, reusing it across results with the same scope. Keep
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until wording is
 confirmed. Closure compacts the living design without deleting evidence, duplicating
 histories, activating a new question or publishing beyond explicit authorization.

@@ -30,8 +30,9 @@ in plain Chinese.
 
 ## 2. Actual Training Audit
 
-Say explicitly whether the implementation contains distinct stages. For each
-stage report:
+Apply this section when training occurred. For a fixed-model analysis, identify
+the model state, frozen objects and actual measurement procedure instead.
+For training, distinguish actual stages and report for each stage:
 
 | Required field | Meaning |
 | --- | --- |
@@ -61,7 +62,7 @@ the second statement when needed.
 
 ### Analysis Method
 
-Use normally three bullets and never more than three. Each bullet says:
+Group the necessary comparisons into a few short bullets. Each bullet says:
 
 ```text
 what is compared -> what uncertainty it resolves
@@ -77,14 +78,12 @@ contains, in order:
 
 1. a plain direct answer;
 2. the smallest decisive result and uncertainty or eligibility boundary;
-3. one figure directly supporting that answer;
-4. `How to read:` one short sentence explaining axis/direction and the visible
-   observation;
-5. what the figure cannot establish, when omission would invite overclaim.
+3. a figure or table when it makes the comparison easier to assess, with one
+   sentence explaining its axes/columns, observation and relevant limitation.
 
-Do not add a conclusion merely to display another metric. If no eligible figure
-can support a conclusion, merge it into a bounded paragraph or mark the visual
-evidence missing; never manufacture evidence.
+Text or numerical evidence can be sufficient. An absent optional figure is not
+missing evidence. Do not add a conclusion merely to display another metric;
+report an actual evidence gap without manufacturing a visual to fill it.
 
 ## 4. Required Separations
 

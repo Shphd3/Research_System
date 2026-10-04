@@ -1,6 +1,6 @@
 # 第二版备答：先说白话，再用公式检查
 
-解释稿，处理Agent：Codex。只解释[第二版讲稿](../focus_meeting_sae_coordinate_evolution_v2.md)；不新增科学结论或执行授权。
+解释稿，处理Agent：Codex。只解释[第二版讲稿](../meeting_report/history/meeting_brief_sae_coordinate_evolution_v2.md)；不新增科学结论或执行授权。
 
 ## 1. 一个点、一个节点、一个组分别是谁？
 

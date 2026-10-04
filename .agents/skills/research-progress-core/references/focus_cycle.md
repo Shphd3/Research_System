@@ -1,7 +1,8 @@
 # Focus Cycle
 
-Maintain one active research question, not one meeting's script. Reuse its stable
-problem_key and path across dates, meetings, added controls and model switches.
+Maintain one active research question in the project's `main/focus/`, not a
+meeting script. Reuse its problem_key and path across dates and model switches.
+An authorized directory migration preserves identity and records the old path.
 A companion translation is the same Focus; independent workstreams may have their
 own researcher-activated questions. No global one-Focus-only rule.
 

@@ -46,6 +46,7 @@ verdict or next decision. Four-part bilingual Summary and complete Detailed must
 agree with frozen scope and actual evidence. Never rewrite source results to fit
 an explanation.
 
+Use the shared [writing rules](../../../docs/report_writing.md) for result delivery.
 With Summary link it first; deliver the decisive result, necessary figure/reading
 sentence, boundary and next uncertainty. Unconfirmed proposals are `AI 建议`.
 Verify chosen contracts, links and repeated fields. Execution, publication and

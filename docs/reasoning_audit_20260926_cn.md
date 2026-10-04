@@ -208,13 +208,13 @@
 
 [projects]: ../PROJECTS.md
 [check]: ../tools/check_current_entrypoints.py
-[s26]: ../daily_research_reports/0926/docs/structure_update/summary_cn.md
+[s26]: ../Projects/from-attention-to-search/main/experiments/shared_updates/structure_update/20260926/summary_cn.md
 [reuse]: ../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit/summary.md
 [n8]: ../Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary_cn.md
-[activation]: ../daily_research_reports/0925/docs/sae_domain_activation/summary_cn.md
-[dev24]: ../daily_research_reports/0924/docs/analysis/dev_rollback_reading_cn.md
-[screen]: ../daily_research_reports/0925/docs/update_compatibility/detailed.md
-[semantic25]: ../daily_research_reports/0925/docs/human_semantic_updates/summary_cn.md
+[activation]: ../Projects/from-attention-to-search/main/experiments/shared_updates/sae_domain_activation/20260925/summary_cn.md
+[dev24]: ../Projects/from-attention-to-search/main/research_notes/shared_updates/20260924/docs/analysis/dev_rollback_reading_cn.md
+[screen]: ../Projects/from-attention-to-search/main/experiments/shared_updates/update_compatibility/20260925/detailed.md
+[semantic25]: ../Projects/from-attention-to-search/main/experiments/shared_updates/human_semantic_updates/20260925/summary_cn.md
 [oracle]: ../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E06_clinc150_hard_route_gradient_functional_audit/summary.md
 [code]: ../Projects/from-attention-to-search/main/experiments/A06/06_04_real_workload_utility_headroom/A06_04_01_E01_context_conditioned_expert_utility/summary.md
 [a00]: ../Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/README.md
@@ -233,5 +233,5 @@
 [parent13]: ../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md
 [p3]: ../Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md
 [parent17]: ../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md
-[a6source]: ../daily_research_reports/0910/docs/sft_audit_sources_cn.md
+[a6source]: ../Projects/from-attention-to-search/main/research_notes/sae_representation/20260910/docs/sft_audit_sources_cn.md
 [a6done]: /data/250010109/MoE_Router/experiments/20260909_a6r1_post_training_analysis/runs/full-20260909T052900Z/completion.json

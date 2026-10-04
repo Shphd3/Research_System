@@ -186,11 +186,11 @@
 [speed]: /data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/15_01_spectral_learning_and_feedback_dynamics_anchor.md:1
 [admission]: /data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/15_05_functional_coordinate_admission_anchor.md:1
 [load]: /data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/16_00_switch_lb_gradient_conflict_anchor.md:6
-[compat]: /data/250010109/Research_System/daily_research_reports/0925/docs/update_compatibility/anchor_cn.md:1
+[compat]: /data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/shared_updates/update_compatibility/anchor_cn.md:1
 [relayresult]: /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target/summary.md
 [randomresult]: /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E02_local_random_identity_control/summary.md
 [hardresult]: /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E08_m2d2_hard_semantic_route_ntp/summary.md
 [learnedresult]: /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E07_m2d2_learned_semantic_router_ntp/summary.md
 [p3result]: /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison/summary.md
 [n8result]: /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md
-[n8focus]: /data/250010109/Research_System/daily_research_reports/0923/focus_sae_n8_separability.md
+[n8focus]: /data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_sae_n8_separability.md

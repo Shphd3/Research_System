@@ -2,7 +2,7 @@
 
 > 远端版本备查；当天唯一主讲入口为[组会主稿](0930_组会汇报稿.md)。保留本稿以核对两边更新，不作为第二个当前讲稿。
 > 本稿是已有证据的汇报视图，不是新 Focus，也不改变研究问题或实验批准。
-> [当前 Focus](../focus_domain_update_geometry_cn.md) · [当天入口](../README_cn.md)
+> [当前 Focus](../../../Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md) · [当天入口](../README_cn.md)
 
 ## 第 1 分钟｜研究问题与这次更新
 
@@ -51,7 +51,7 @@ I_{i\to j}=\ell_j(W-\alpha_iG_i)-\ell_j(W)
 | 更新前完整表征能否预测样本对的梯度内积？ | \(Q=-0.000138\)，95% 区间 \([-0.002768,0.002294]\)；预定改善门槛 0.05 | 指定读出器不支持至少 5% 的留出 MSE 改善；不是证明表征没有信息 |
 | 领域平均梯度能否更好描述新记录的梯度？ | \(Q_D=-0.005715\) | 本面板、此估计方式下没有增益；区间未校准，不能否定总体领域结构 |
 
-来源：[自然 NTP 预测 Summary](../docs/summary_cn.md)；[领域更新 Summary，R2](../docs/domain_update_geometry/summary_cn.md)。
+来源：[自然 NTP 预测 Summary](../../../Projects/from-attention-to-search/main/experiments/shared_updates/natural_ntp_representation_compatibility/20260930/summary_cn.md)；[领域更新 Summary，R2](../../../Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md)。
 
 **口述：**
 
@@ -92,17 +92,17 @@ K_{ij}=\sum_{t,u}(c_{it}^{\top}c_{ju})(e_{it}^{\top}e_{ju}).
 
 \(\alpha_i>0\) 是该次标量梯度步的尺度，不默认所有实验共享同一学习率。Adam等不同更新规则应检查实际 \(\Delta W_i\) 与目标梯度的内积，不能直接套未加权的 \(K\)。
 
-来源：[机制长稿第3节](../docs/summary_report/0930_shared_update_self_contained_meeting_report_cn.md)；[自然 NTP 设计](../docs/anchor_natural_ntp_representation_compatibility_cn.md)。本段重述现有计算关系，不新增实验证据。
+来源：[机制长稿第3节](../../../Projects/from-attention-to-search/main/stories/shared_updates/02_shared_update_synthesis_cn.md)；[自然 NTP 设计](../../../Projects/from-attention-to-search/main/problem_anchors/shared_updates/natural_ntp_representation_compatibility/anchor_cn.md)。本段重述现有计算关系，不新增实验证据。
 
 ## 备查 B｜此前实验怎样接上来
 
 | 材料 | 它在主线中的作用 | 不要越过的边界 |
 | --- | --- | --- |
-| [0926 自然跨领域更新](../../0926/docs/structure_update/summary_cn.md) | 测试的12个跨领域方向，在两个幅度下平均仍为帮助；表征不同不足以推出平均互害 | 21B词元检查点、末块MLP下投影；不是0930矩阵上的连续测量，也不排除个别记录受害 |
-| [0927 受控实验](../../0927/docs/shared_update_research_pack/summary_cn.md) | 方向构造与任务规则的联合对照能调节跨数据作用；高重合翻转条件仍净帮助 | 受控任务不等于自然文本；不同条件的有效更新尺度不必相同 |
-| [0928 局部分解](../../0928/docs/shared_update_signal_localization/summary_cn.md) | 正的任务相关局部项约 \(8.31\times10^{-5}\)，实际总变化约 \(-0.006665\) | 事后局部归因，不是分别干预；局部不利不等于净伤害 |
-| [0930 自然 NTP 预测](../docs/summary_cn.md) | 指定完整表征读出未达到5%改善，形成当前预测边界 | 确认集有限步未运行；14个结构读出按门槛未运行，不是14次失败 |
-| [0930 领域更新分析](../docs/domain_update_geometry/summary_cn.md) | 激活模式复现，但领域均值描述器无增益；两者不是同一对象 | 高维估计误差与真实差异弱仍未区分；不同面板不能合成一个统计裁决 |
+| [0926 自然跨领域更新](../../../Projects/from-attention-to-search/main/experiments/shared_updates/structure_update/20260926/summary_cn.md) | 测试的12个跨领域方向，在两个幅度下平均仍为帮助；表征不同不足以推出平均互害 | 21B词元检查点、末块MLP下投影；不是0930矩阵上的连续测量，也不排除个别记录受害 |
+| [0927 受控实验](../../../Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md) | 方向构造与任务规则的联合对照能调节跨数据作用；高重合翻转条件仍净帮助 | 受控任务不等于自然文本；不同条件的有效更新尺度不必相同 |
+| [0928 局部分解](../../../Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260928_signal_localization/summary_cn.md) | 正的任务相关局部项约 \(8.31\times10^{-5}\)，实际总变化约 \(-0.006665\) | 事后局部归因，不是分别干预；局部不利不等于净伤害 |
+| [0930 自然 NTP 预测](../../../Projects/from-attention-to-search/main/experiments/shared_updates/natural_ntp_representation_compatibility/20260930/summary_cn.md) | 指定完整表征读出未达到5%改善，形成当前预测边界 | 确认集有限步未运行；14个结构读出按门槛未运行，不是14次失败 |
+| [0930 领域更新分析](../../../Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md) | 激活模式复现，但领域均值描述器无增益；两者不是同一对象 | 高维估计误差与真实差异弱仍未区分；不同面板不能合成一个统计裁决 |
 
 **SAE问答。** 共同rank64输出空间覆盖8.96%的留出梯度能量，在指定对照中较高；非对角 \(K\) 重建相对平方误差仍为0.803。能量覆盖与有符号相容性不是同一指标，不能据此宣布“SAE找到干扰空间”。完整数值与资格见领域更新 Summary。
 

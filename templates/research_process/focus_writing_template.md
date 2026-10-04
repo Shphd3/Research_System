@@ -9,9 +9,9 @@ result_state: <沿用项目结果状态>
 human_result_judgment: <已确认判断或 Unknown>
 ```
 
-保存于首次创建日期的 `daily_research_reports/MMDD/focus_<problem>.md`；
-跨日、跨组会继续使用同一路径。只有研究者激活独立问题才新建；对照、诊断、
-复现、汇报和语言伴随均不算新 Focus。旧记录不因模板变化自动迁移。
+保存于 `Projects/<project>/main/focus/focus_<problem>.md`；跨日、跨组会沿用。
+只有研究者激活独立问题才新建；对照、诊断、复现、汇报和翻译均不算新 Focus。
+经授权迁移目录时保留 problem_key、科学状态及旧路径映射，不重建问题。
 
 ## 问题、假设与边界
 

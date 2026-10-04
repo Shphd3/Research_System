@@ -6,7 +6,7 @@ promoting, reopening or rewriting scientific records.
 ## Confirmed Core-Task Focus
 
 Before drafting a Protocol, require one active
-`daily_research_reports/MMDD/focus_<problem>.md` whose four-part **plain
+`Projects/<project>/main/focus/focus_<problem>.md` whose four-part **plain
 language** design is explicitly researcher-confirmed:
 
 ```text

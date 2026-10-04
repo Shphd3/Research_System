@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE_EXPLORATORY_COMMON_DIRECTION_CONTROL",
+  "elapsed_seconds": 2.400672510266304,
+  "code_sha256": "071d9236031bd7ddd3314a4a6ed467e38ef074b571ad28fa1ee24576e880dd01",
+  "registration_sha256": "5f490b2afed250cc03f114220c67f22033d430f3fa2e9928c3d05e458c8d3bf4",
+  "input_hashes_unchanged": true,
+  "eta": 0.05731845587090156,
+  "source_conditions": 8,
+  "readout_events": 16384,
+  "alpha_mean_and_orthogonality_checks": "PASS",
+  "response_zero_sum_maxabs": 2.546574062733953e-15,
+  "energy_identity_maxabs": 2.541098841762901e-21,
+  "output_sha256": {
+    "direction_geometry.json": "27f1eae446e0017f016465edd34d4044a77eb3a86d24fd8c49901a8bdee2b045",
+    "response_replication.csv": "29a21c65dd6fb68dd92bdfdb30cb936679f4088afaca231f957c48a914f843ca",
+    "transformed_responses.npz": "481a4d3a99c29f35c49f286739c0faa8531a5a2f23b9f403d8fc9ab080f84a7d",
+    "prediction_readout.csv": "0e1c16ba3cae6825722a0f088eca6062ca2f87ff1b20824c4e85e947b6c9117c"
+  },
+  "CPU_threads": 8,
+  "max_seconds": 120,
+  "LM_loads": 0,
+  "LM_forward_calls": 0,
+  "LM_updates": 0,
+  "SAE_updates": 0,
+  "new_fits": 0,
+  "GPU_used": false,
+  "remote_jobs": 0,
+  "scientific_judgment": "Unknown"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "audited_at_utc": "2026-10-03T08:03:17.123393+00:00",
+  "scope": "Independent direct-array recomputation of all frozen selections, all comparator point estimates and conditional intervals; no model/forward/update; no change to original registered script or receipt.",
+  "original_receipt_sha256": "31e41dd0f30342222eeb76713dc3e85f13375d511df1212cd1364955aa3150d7",
+  "audit_code_sha256": "b85b5378b73511a54d7c7a92bff12ee765a12f453feb3ef870b430684af0869f",
+  "input_hashes_verified": 15,
+  "output_hashes_verified": 10,
+  "conditions": 32,
+  "summary_rows": 160,
+  "scalar_metric_checks": 3440,
+  "max_absolute_difference": {
+    "event": 0.0,
+    "record": 0.0,
+    "point": 7.549516567451064e-15,
+    "ci": 4.440892098500626e-15
+  },
+  "registration_guards_selection_completion_timeline_ordered": true,
+  "bootstrap_regenerated_exactly": true,
+  "F_fixed_domain_for_both_sources": "mathematics",
+  "F_fixed_training_labels": "A-to-B uses F true A derivatives; B-to-A uses F true B derivatives; score same chosen domain in evaluation bank",
+  "predictor_target_structure": "Original ridge has eight separable output columns, [A four domains, B four domains]. Each policy chooses only within one four-domain bank, or no_update plus that bank.",
+  "marginal_scope": "Global R selector frequencies; not per receiving domain; recomputed globally in every category-stratified record bootstrap draw. Conditional on this vector, randomized comparator action is independent of event/domain/category/target.",
+  "inference_boundary": "Conditional on fixed source A/B, fitted predictors and the previously exposed R panel. Not independent confirmation, source-population uncertainty, or new-model generalization.",
+  "scientific_judgment": "Unknown"
+}

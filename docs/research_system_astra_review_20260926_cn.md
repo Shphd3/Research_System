@@ -8,7 +8,7 @@
 
 因此，[默认入口](../PROJECTS.md)与[roadmap](../Projects/from-attention-to-search/main/roadmap.md)现在串起：**工作定义 → 真实结构 → 参数更新与受影响的表征/预测变化 → 独立后果 → 区分解释**。这是理解依赖，不是五个自动获准的新实验。新测量前仍需明确最强竞争解释及支持、未支持、证据不足怎样改变判断。
 
-[0926结果摘要](../daily_research_reports/0926/docs/structure_update/summary_cn.md)已有结构与局部更新后果；当前跨组均值为帮助。新增的入口边界是：受影响下游表征的前后变化尚未报告，不能宣称机制已解释完整。局部伤害、长期共同训练落后和隔离收益分别需要自己的比较条件。
+[0926结果摘要](../Projects/from-attention-to-search/main/experiments/shared_updates/structure_update/20260926/summary_cn.md)已有结构与局部更新后果；当前跨组均值为帮助。新增的入口边界是：受影响下游表征的前后变化尚未报告，不能宣称机制已解释完整。局部伤害、长期共同训练落后和隔离收益分别需要自己的比较条件。
 
 原文来源：`/root/.codex/attachments/1eba59a7-b3ec-4acd-b972-b7090095470e/0924-指导.md`；SHA-256：`4174abc31b88c8f9fbc091c6f6c3cc2ddcead593cdb5146f4036588c62ca8aa9`。转写没有保留完整黑板图；本轮没有把示意图形或含混口述升级成数学定理。
 

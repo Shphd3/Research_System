@@ -1,0 +1,44 @@
+{
+  "collector": {
+    "path": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/collect.py",
+    "lines": [
+      51,
+      55,
+      64
+    ],
+    "registered_snapshot_hash_matches": true,
+    "operation": "capture whole sequence then select causal c/a at fixed positions; separately compute labels and per-position SAE codes"
+  },
+  "core": {
+    "path": "/data/250010109/MoE_Router/experiments/20260930_natural_ntp_compatibility/scripts/core.py",
+    "lines": [
+      34,
+      61,
+      81,
+      100
+    ],
+    "registered_snapshot_hash_matches": true,
+    "operation": "load exact S7 module; call forward_intermediates(ids) with default masks"
+  },
+  "attention": {
+    "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/dense_sae/model/modeling_qwen3_sae.py",
+    "lines": [
+      46,
+      57,
+      111,
+      154
+    ],
+    "is_causal": "True when allowed is None; explicit alternate mask is lower triangular",
+    "layer_norm": "RMS normalization is over last/channel dimension, not sequence"
+  },
+  "sae": {
+    "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/dense_sae/model/sae.py",
+    "lines": [
+      42,
+      45
+    ],
+    "operation": "encoder and TopK act independently on each position"
+  },
+  "qualification": "Static source/provenance check, not a new LM truncation/perturbation forward check. Current loader-target model source hash is preserved; cache provenance and prior model identity are reused.",
+  "time_boundary": "Input features visible by index126; no token127 or later included in X. Future labels use actual targets143..255 only as Y."
+}
