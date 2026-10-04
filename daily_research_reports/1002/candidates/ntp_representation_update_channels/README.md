@@ -1,5 +1,13 @@
 # 1002 temporary candidate: sharing, finite utility and MoE routing
 
+## 2026-10-04 current reading entry (Asia/Shanghai, UTC+8)
+
+Start with the [reading guide](reading_guide.md), then read sections 1 through 6 of the [sharing and routing stage report](sharing_routing_report.md): purpose, observations, hypotheses and rivals, mathematical stages, experimental checks and result analysis, and updated understanding with the next question. For an initial overview, read sections 1, 2, 3, and 6, then return to sections 4 and 5 to check the derivations and evidence.
+
+The guide locates five stage documents, three mathematical explanations, and the process record, Anchor, and Protocol. The main report carries the complete argument. Their project-relative paths are `daily_research_reports/1002/candidates/ntp_representation_update_channels/reading_guide.md` and `daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report.md`. Result analysis explains measurements; conclusions explain how evidence changes understanding. Keep proofs in conditional models distinct from natural-text measurements.
+
+The dated historical text below is preserved. Its job states and authorization statements describe their own snapshots. Read current execution facts in the main report and its cited receipts. The “about 99% mean component” always means the within-domain A/B source-batch mean, not an absence of differences across the four domains. Pre-rewrite versions are preserved in `daily_research_reports/1002/candidates/ntp_representation_update_channels/history/20261004_before_reading_rewrite/`.
+
 ## 2026-10-03 07:27–10:47 UTC: sharing decisions and MoE routing
 
 Start with the [current sharing/routing report](sharing_routing_report.md), then the [decision mathematics](sharing_routing_mathematics.md). The researcher authorized approximately 3h20 of continued work toward better MoE routing and architecture; SAE and spectra remain analysis tools.

@@ -22,6 +22,11 @@ or insufficient evidence. Test the smallest live bottleneck. Use
 [failure decomposition](failure_decomposition.md) if several causes remain and
 [goal audit](goal_audit.md) only when the purpose/metric itself warrants review.
 
+Separate result analysis from the scientific conclusion: measurements and
+validity explain the evidence; the conclusion states how that evidence changes
+understanding of the original question, hypothesis or model. A list of improved
+metrics is not a knowledge update. An unresolved mechanism remains unresolved.
+
 Propagate only the bounded result to the affected question; use
 [refinement](question_refinement.md) when parent/dependency relations change.
 A next-step proposal states the remaining rival/uncertainty, why a check separates

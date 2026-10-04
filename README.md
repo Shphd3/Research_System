@@ -42,7 +42,7 @@ not a necessary prerequisite without a justified dependency.
 | Protocol | Exact experiment contract, approval and amendments |
 | Summary | Complete Purpose, Hypothesis, Analysis method and Conclusion |
 | Detailed / execution record | Setup, conformance, results, deviations and lineage |
-| Meeting brief, Story, final report, HTML | Derived explanations of named sources |
+| Meeting brief, Story, final report | Derived explanations of named sources |
 
 Focus keeps `task_state`, `question_state`, `design_state` and `result_state`
 independent. A run or completed report does not confirm scientific judgment.
@@ -60,10 +60,10 @@ Use short, direct sentences and consistent terms. Define objects before symbols,
 and keep assumptions and uncertainty. Put the answer early, with enough reasoning
 for a new reader to understand it. Match headings to the research type.
 
-Markdown is the stable reading source. Use diagrams for relations, measured
-figures for evidence, and local HTML for useful interaction or progressive detail.
-Pages and videos remain derived; they do not create stronger evidence. A meeting
-brief keeps the short core and Q&A together. A stable bounded question may have
+Markdown carries the complete explanation without a webpage. State decisive values
+and figure findings in prose; define formulas and use headings for deeper detail.
+Figures and evidence links support verification. A meeting brief keeps the short
+core and Q&A together. A stable bounded question may have
 one researcher-confirmed final synthesis. See [writing rules](docs/report_writing.md).
 
 ## Shared working rules

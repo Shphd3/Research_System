@@ -1,5 +1,13 @@
 # 1002 临时候选：共享学习、有限效用与MoE路由
 
+## 2026-10-04 当前阅读入口（Asia/Shanghai，UTC+8）
+
+先读[阅读指南](reading_guide_cn.md)，再按第1至第6节完整阅读[共享学习与路由阶段报告](sharing_routing_report_cn.md)：目的、观察、假设及竞争解释、分阶段数学、实验验证与结果分析、认识更新与下一问题。时间有限时，可先读第1、2、3、6节，再回到第4、5节核对推导和证据。
+
+阅读指南负责历史五篇材料、三份数学说明和过程／Anchor／Protocol的定位；主报告负责完整论证。两者的项目相对路径分别为 `daily_research_reports/1002/candidates/ntp_representation_update_channels/reading_guide_cn.md` 与 `daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report_cn.md`。结果分析解释测量，认识结论说明证据改变了什么理解；条件模型中的证明与自然文本实测分别阅读。
+
+下方保留各日期历史原文，其中作业状态与授权说明属于当时快照。当前执行事实读主报告的执行说明及所引收据；“约99%的平均部分”始终指同域A/B来源批次的平均，不表示四域没有差异。重写前版本保存在 `daily_research_reports/1002/candidates/ntp_representation_update_channels/history/20261004_before_reading_rewrite/`。
+
 ## 2026-10-03 07:27—10:47 UTC：共享决策与MoE路由
 
 当前先读[何时共享、何时分开：本轮完整报告](sharing_routing_report_cn.md)，再读[决策与路由数学](sharing_routing_mathematics_cn.md)。用户授权约3小时20分钟继续研究，目标是改进MoE路由与架构；SAE与谱是工具。

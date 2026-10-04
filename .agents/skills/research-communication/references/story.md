@@ -11,9 +11,15 @@ No generic parallel `story.md` or routine per-Anchor final report. Canonical Eng
 and Chinese preserve meaning unless the researcher chooses otherwise.
 
 Match prospective, retrospective or stable-stage structure to the evidence.
+Use the shared [research-progress writing chain](../../../../docs/report_writing.md):
+purpose, observations, hypothesis, connected model stages, checks and knowledge
+update. Supply a short reading route for a long report; the chain is not a fixed
+section template and does not authorize new science.
 Introduce the question, study setup and concrete objects before notation;
 then connect priors, mathematical relation, implemented mechanism, tested comparison,
-actual results, rivals, boundary and the justified next decision. Do not narrate
+actual results, rivals, boundary and the justified next decision. Conclude with
+what is now understood and what remains unresolved; keep detailed result analysis
+in its owner instead of ending with a second metric inventory. Do not narrate
 all attempts or impose inactive future sections.
 
 Explain the existing derivation's shortest bridge; label exact/approximate/assumed

@@ -12,7 +12,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from research_paths import local_links, rebase_links, link_path, relocated
-from build_reading_bundle import build, render_markdown, select_documents
+from build_reading_bundle import build, reading_copy, select_documents
 from check_current_entrypoints import inspect, current_entrypoints
 
 
@@ -94,8 +94,9 @@ class BundleTests(unittest.TestCase):
         self.assertIn('outside allowed source workspace', reasons)
         self.assertIn('outside selected documents or asset/size limit', reasons)
         with zipfile.ZipFile(str(self.output)+'.zip') as archive:
-            self.assertIn('bundle/index.html', archive.namelist())
-        self.assertIn('Unknown', (self.output/'index.html').read_text())
+            self.assertIn('bundle/README.md', archive.namelist())
+        self.assertIn('Unknown', (self.output/'documents/Projects/p/main/q/summary.md').read_text())
+        self.assertFalse(list(self.output.rglob('*.html')))
 
     def test_symlink_does_not_copy_outside_data(self):
         secret = self.base/'outside.json'; secret.write_text('NOT FOR BUNDLE')
@@ -118,16 +119,15 @@ class BundleTests(unittest.TestCase):
             build(self.root, 'p', self.output, ['missing.md'])
         self.assertFalse(self.output.exists())
 
-    def test_active_html_escaped_and_math_literal_preserved(self):
-        result, _ = render_markdown('<script>alert(1)</script>\n\n' + r'\(x^2\) and `\(y\)`')
-        self.assertNotIn('<script>', result)
-        self.assertNotIn('READINGBUNDLEMATH', result)
-        self.assertIn(r'\(y\)', result)
-        self.assertTrue('<math' in result or r'\(x^2\)' in result)
+    def test_reading_copy_preserves_prose_math_and_code(self):
+        text = '# Explanation\nUnknown\n' + r'\(x^2\) and `\(y\)` and `[code](unchanged.md)`'
+        self.assertEqual(reading_copy(text, lambda url: 'REPLACED'), text)
+        text += '\n~~~text\n[fenced](also-unchanged.md)\n~~~\n[real](source.md)\n'
+        self.assertEqual(reading_copy(text, lambda url: 'new.md'), text.replace('[real](source.md)', '[real](new.md)'))
 
-    def test_remote_image_is_not_loaded_automatically(self):
-        result, _ = render_markdown('![remote](https://example.org/figure.png)')
-        self.assertNotIn('<img', result)
+    def test_remote_inline_image_becomes_source_link(self):
+        text = '![remote](https://example.org/figure.png)'
+        self.assertEqual(reading_copy(text, lambda url: url), '[remote](https://example.org/figure.png)')
 
     def test_incomplete_checkout_is_diagnostic(self):
         (self.root/'PROJECTS.md').write_text('[Missing project](Projects/absent/main/roadmap.md)')
@@ -147,7 +147,7 @@ class BundleTests(unittest.TestCase):
         self.assertNotIn('Projects/p/main/q/anchor.md', paths)
         self.assertNotIn('Projects/p/main/focus.md', paths)
         self.assertTrue(any(row['target'].endswith('protocol.md') for row in manifest['omitted_links']))
-        self.assertIn('指定来源', (self.output/'index.html').read_text())
+        self.assertIn('指定来源', (self.output/'README.md').read_text())
 
     def test_cross_project_source_version_is_in_manifest(self):
         other = self.root/'Projects/other'
@@ -156,8 +156,9 @@ class BundleTests(unittest.TestCase):
         source.write_text('# Historical report\nSource remains historical.')
         manifest = build(self.root, 'p', self.output, [str(source)])
         self.assertIn(str(other), {row['path'] for row in manifest['source_versions']})
-        page = (self.output/'index.html').read_text()
-        self.assertIn('data-initial="open" open', page)
+        page = (self.output/'README.md').read_text()
+        self.assertIn('Historical report', page)
+        self.assertTrue((self.output/'documents/Projects/other/report.md').is_file())
         self.assertIn('指定来源', page)
 
     def test_metadata_owners_are_reported_when_missing_or_unselected(self):
@@ -165,7 +166,7 @@ class BundleTests(unittest.TestCase):
         manifest = build(self.root, 'p', self.output, [])
         self.assertTrue(any(row['kind'] == 'owner field' and row['reason'] == 'source unavailable'
                             for row in manifest['omitted_links']))
-        self.assertIn('Projects/p/main/focus.md', (self.output/'index.html').read_text())
+        self.assertIn('Projects/p/main/focus.md', (self.output/'README.md').read_text())
 
     def test_default_uses_explicit_protocols_not_problem_key_directory(self):
         (self.main/'r').mkdir()
@@ -186,23 +187,40 @@ class BundleTests(unittest.TestCase):
         (self.main/'focus.md').write_text('# Focus\nproblem_key: A15.unrelated_identity\n[Summary](q/summary.md)')
         self.assertIn(self.summary, select_documents(self.root, self.project, []))
 
-    def test_section_links_reference_links_and_asset_fragments(self):
-        (self.main/'focus.md').write_text('# Focus\n[Local](#answer)\n[Other](q/summary.md#answer)\n'
-            '[Missing section](q/summary.md#absent)\n\n## Answer\nFocus answer\n')
+    def test_portable_inline_reference_and_asset_links(self):
+        (self.main/'focus.md').write_text('# Focus\n[Local](#answer)\n[Other](q/summary.md#answer)\n\n## Answer\nFocus answer\n')
         self.summary.write_text('# Summary\n## Answer\nEvidence\n\n[Reference image][plot]\n\n'
             '[Missing reference][missing]\n\n![SVG](plot.svg#part)\n\n'
-            '[plot]: plot.svg#part\n[missing]: absent-reference.json\n')
+            '[plot]: plot.svg#part "title"\n[missing]: absent-reference.json\n')
         manifest = build(self.root, 'p', self.output, [])
-        page = (self.output/'index.html').read_text()
-        ids = set(re.findall(r' id="([^"]+)"', page))
-        hrefs = re.findall(r' href="#([^"]+)"', page)
-        self.assertTrue(all(target in ids for target in hrefs))
-        self.assertEqual(len([target for target in ids if target.endswith('--answer')]), 2)
-        self.assertIn('plot.svg#part', page)
+        doc = self.output/'documents/Projects/p/main/q/summary.md'
+        text = doc.read_text()
+        self.assertIn('plot.svg#part "title"', text)
+        self.assertIn('[Reference image][plot]', text)
+        self.assertIn('UNAVAILABLE.md', text)
+        self.assertNotIn('absent-reference.json', text)
         self.assertTrue(any(row['target'].endswith('absent-reference.json') for row in manifest['omitted_links']))
-        self.assertTrue(any(row['reason'] == 'section unavailable; opens document' for row in manifest['omitted_links']))
-        self.assertNotIn('href="absent-reference.json"', page)
-        self.assertIn('if(location.hash)reveal', page)
+        focus = self.output/'documents/Projects/p/main/focus.md'
+        self.assertIn('[Local](#answer)', focus.read_text())
+        self.assertIn('[Other](q/summary.md#answer)', focus.read_text())
+        # Both inline and reference destinations resolve within the portable copy.
+        from research_paths import link_matches, reference_matches
+        from urllib.parse import unquote
+        for path in self.output.rglob('*.md'):
+            if path.is_relative_to(self.output/'sources'):
+                continue  # Exact originals deliberately keep original destinations.
+            for match in [*link_matches(path.read_text()), *reference_matches(path.read_text())]:
+                target = match['target'].strip('<>')
+                if target.startswith('#'):
+                    continue
+                self.assertTrue((path.parent/unquote(target.split('#')[0])).is_file(), (path, target))
+        row = next(r for r in manifest['files'] if r['path'].endswith('/q/summary.md'))
+        self.assertEqual(row['reading_sha256'], hashlib.sha256(doc.read_bytes()).hexdigest())
+
+    def test_reference_definitions_in_code_and_math_are_not_rebased(self):
+        text = '~~~md\n[inside]: untouched.md\n~~~\n[outside]: <a b.md> "title"\n'
+        result = reading_copy(text, lambda url: 'new.md')
+        self.assertEqual(result, text.replace('<a b.md>', 'new.md'))
 
     def test_existing_zip_with_dotted_output_name_is_untouched(self):
         output = self.base/'reading.v1'
@@ -229,14 +247,18 @@ class BundleTests(unittest.TestCase):
         self.assertEqual(len(reads), 1)
         self.assertEqual((self.output/row['copy']).read_bytes(), original)
         self.assertEqual(row['sha256'], hashlib.sha256(original).hexdigest())
-        self.assertNotIn('NEW SOURCE VERSION', (self.output/'index.html').read_text())
+        self.assertNotIn('NEW SOURCE VERSION', (self.output/row['reading_copy']).read_text())
 
-    def test_missing_renderer_preserves_readable_source(self):
-        with patch.dict(sys.modules, {'mistune': None}):
-            manifest = build(self.root, 'p', self.output, [])
-        self.assertEqual(manifest['rendering'], ['escaped Markdown source'])
-        self.assertIn('&lt;', render_markdown('<literal>')[0])
-        self.assertIn('# Summary', (self.output/'index.html').read_text())
+    def test_bundle_works_without_site_packages(self):
+        script = ('import sys; from pathlib import Path; '
+                  'sys.path.insert(0, sys.argv[1]); from build_reading_bundle import build; '
+                  'build(Path(sys.argv[2]), "p", Path(sys.argv[3]), [])')
+        result = subprocess.run([sys.executable, '-S', '-c', script, str(Path(__file__).resolve().parents[1]),
+                                 str(self.root), str(self.output)], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue((self.output/'README.md').is_file())
+        self.assertFalse((self.output/'index.html').exists())
+        self.assertIn('# Summary', (self.output/'documents/Projects/p/main/q/summary.md').read_text())
 
     def test_chinese_roadmap_and_git_failure_are_diagnostic(self):
         (self.root/'PROJECTS.md').write_text('[Route](Projects/p/main/roadmap.md)')

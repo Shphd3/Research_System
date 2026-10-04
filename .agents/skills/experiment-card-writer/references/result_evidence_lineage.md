@@ -155,7 +155,9 @@ One sentence stating the scientific purpose.
 
 ## 2. Hypothesis
 
-One or two falsifiable statements, including the strongest rival when needed.
+One or two falsifiable statements at the original Purpose's population, conditions
+and time horizon. A rival about transfer limits the claim; it does not replace a
+fixed-panel question with a new transfer hypothesis. Do not invent registration.
 
 ## 3. Analysis Method
 
@@ -164,9 +166,13 @@ uncertainty it resolves. Include the primary metric and unit.
 
 ## 4. Conclusion
 
-Verdict:
+Answer the original scientific purpose and explain the resulting change in
+understanding: which hypothesis or assumption is strengthened, weakened or still
+unresolved, and why. A metric change or typed verdict alone is not this answer.
+Use the smallest decisive result and eligibility boundary to justify it.
 
-1. Direct decision-bearing answer, smallest decisive value, and eligibility.
+The evidence table below is optional when it helps assess that answer; complete
+result analysis and diagnostics remain in Detailed.
 
 | Registered rule | Observed value | Guard / eligibility | Verdict | Evidence source |
 | --- | --- | --- | --- | --- |

@@ -68,22 +68,25 @@ Group the necessary comparisons into a few short bullets. Each bullet says:
 what is compared -> what uncertainty it resolves
 ```
 
-Order the bullets as a gate: for example, dispatch first, function second,
-representation or task benefit last.
+Order the comparisons by the assumptions or derived predictions they test;
+do not impose a tool-specific sequence on a different question.
 
 ### Conclusion
 
 Use one numbered item per answer that changes the research judgment. Each item
 contains, in order:
 
-1. a plain direct answer;
+1. a plain answer to the original purpose and the resulting change in understanding;
 2. the smallest decisive result and uncertainty or eligibility boundary;
 3. a figure or table when it makes the comparison easier to assess, with one
    sentence explaining its axes/columns, observation and relevant limitation.
 
 Text or numerical evidence can be sufficient. An absent optional figure is not
 missing evidence. Do not add a conclusion merely to display another metric;
-report an actual evidence gap without manufacturing a visual to fill it.
+report an actual evidence gap without manufacturing a visual to fill it. Result
+analysis explains measurements; the conclusion explains what those measurements
+change about the hypothesis, model or remaining uncertainty. Do not invent a
+mechanism or broaden the original question to make this update sound stronger.
 
 ## 4. Required Separations
 

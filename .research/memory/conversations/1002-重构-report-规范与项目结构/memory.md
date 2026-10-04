@@ -1,9 +1,9 @@
-# Conversation Memory: 1002-重构 report 规范与项目结构
+# Conversation Memory: [System]重构Report用语规范以及工作流
 
-Conversation name: 1002-重构 report 规范与项目结构
+Conversation name: [System]重构Report用语规范以及工作流
 Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
 Created at: 2026-10-03 14:23:03 UTC
-Latest update at: 2026-10-03 14:23:03 UTC
+Latest update at: 2026-10-04 03:36:20 UTC
 Continues from: none
 Environment: `repo=/data/250010109/Research_System`; `project=/data/250010109/Research_System/Projects/from-attention-to-search`; `exec=/data/250010109/MoE_Router`。本次均可读取。System 与 project 是独立 Git 仓库。
 
@@ -40,3 +40,53 @@ Environment: `repo=/data/250010109/Research_System`; `project=/data/250010109/Re
   - [跨仓库读取说明](../../../../docs/project_access_cn.md)、[阅读包工具](../../../../tools/build_reading_bundle.py)、[路径工具](../../../../tools/research_paths.py)、[入口检查](../../../../tools/check_current_entrypoints.py)、[接口测试](../../../../tools/tests/test_research_access.py)：本轮接口行为与回归。
   - [本轮核验清单](../../../runtime/validation/20261003_writing_access/review.json)：11 处修改的前后哈希、浏览器结果、合成试写与边界；同目录保留截图、输入和输出，均为本地产物。
   - [默认阅读页](../../../runtime/reading/20261003_writing_access/index.html)、[便携 ZIP](../../../runtime/reading/20261003_writing_access.zip)、[指定 Summary 阅读页](../../../runtime/reading/20261003_writing_access_explicit/index.html)：重新生成并验证过的派生交付，不是新科学原件。
+
+## 2026-10-04 02:57:11 UTC -- 按用户要求改为完整文字交付
+
+Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
+
+- Summary: 用户说明可能无法使用网页查看，要求取消网页这一项并把文字规范做好。已将研究交付改为可独立阅读的 Markdown：开头给问题、有边界的回答和证据状态；按理解顺序展开；公式解释目的、符号、条件和含义；结果写清对象、基线、指标、关键数值与不确定性；图件发现写入正文；证据链接用于核查，长文通过标题与文件路径导航。规则是内容要求，不增加固定栏目或重复说明。此前目录归属、稳定 Focus 和科学判断边界继续有效。
+- Supersedes: 上一条记录中的“本地 HTML 阅读副本”和“便携跳转使用 index.html”不再是现行交付方式。现行依据是 [文字规范](../../../../docs/report_writing_cn.md)、[读取说明](../../../../docs/project_access_cn.md)、[沟通技能](../../../../.agents/skills/research-communication/SKILL.md) 与[最终报告技能](../../../../.agents/skills/research-final-report/SKILL.md)。旧网页及其核验保留为历史产物，不再作为本轮阅读入口。
+- Current work: 修改完成。根与项目 AGENTS、README、技能导航、会议规则及中英写作/读取说明已同步。阅读工具改为 Markdown 包，删除 HTML/CSS/JavaScript 生成和可选排版依赖；`README.md` 给出阅读顺序和路径，`documents/` 只调整链接并附来源，`sources/` 保留原始字节，`UNAVAILABLE.md` 列出缺失或未选入来源，manifest 记录版本和两类哈希。正文与公式内容不被工具重写。仅用 Python 标准库即可生成。
+
+  47 项测试、61 个工作区入口、14 个技能的 71 条链接和 2 个技能包结构检查通过；31 个入口仍未跟踪。4 份修改文稿的数学源码检查通过。实际默认包为 14 份文档、22 个资产，记录 130 条未包含引用；另生成写作规范包检验指定来源范围。两包共 441 个本地链接目标可达，原件/阅读副本哈希与 ZIP 一致性通过，没有生成 HTML 文件。检查是代码、结构与文字自审，不是科学正确性或独立读者理解实验。现有历史文稿不会因打包自动补足解释，后续写作按新规则执行。本轮未提交、推送或启动实验；未改动科学原件内容。
+- Next action: 直接使用 Markdown 原件或下面的新文字阅读入口；本轮无待办。后续按指定来源完成文字写作，不自动恢复网页交付。提交、推送与运行仍按独立请求和原件授权处理。
+- References:
+  - [根规则](../../../../AGENTS.md)、[项目规则](../../../../Projects/from-attention-to-search/AGENTS.md)、[技能导航](../../../../docs/skills.md)、[会议规则](../../../../.agents/skills/research-communication/references/meeting.md)：交付方式的一致入口。
+  - [文字规范](../../../../docs/report_writing_cn.md)、[读取说明](../../../../docs/project_access_cn.md)：现行写作与使用要求；各自链接英文伴随稿。
+  - [打包工具](../../../../tools/build_reading_bundle.py)、[路径工具](../../../../tools/research_paths.py)、[回归测试](../../../../tools/tests/test_research_access.py)：Markdown 副本、原始身份、范围和可移植链接行为。
+  - [文字阅读入口](../../../runtime/reading/20261004_markdown/README.md)、[文字包 ZIP](../../../runtime/reading/20261004_markdown.zip)、[核验记录](../../../runtime/validation/20261004_markdown/review.json)：本地派生产物及边界，不替代研究原件。
+
+
+## 2026-10-04 03:25:16 UTC -- Karpathy 简明表达核对、6.1 Sol 实测与发布检查
+
+Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra); writing checks: gpt-6.1-sol
+
+- Summary: 用户确认所指的是 Karpathy 的文字建议，要求核验 6.1 Sol 能否使用这套规范，并授权提交、推送当前更改及全部暂存内容。对话已按请求更名为 `[System]重构Report用语规范以及工作流`，经 App 列表复核；同一对话的 memory 路径保持稳定。现行规范采用短句、明确主语、统一术语、按理解顺序解释的原则，保留研究条件和不确定性；不宣称符合 ASD-STE100 全部标准。用户此前选择纯文字交付继续有效。
+- Current work: 规则修订与本轮范围内检查完成。研究推进报告明确连接“目的→观察→假设→模型与分阶段推导→检验→阶段认识更新”，每阶段交代输入、关系、输出和依据。结果分析解释测量、比较与有效性，结论回答理解怎样改变。简单任务不必另建模型或实验；数值模型、证明、反例和观察性研究保留各自证据边界；缺口不靠编造补齐，研究者判断仍由原件持有。
+
+  实际指定 gpt-6.1-sol 完成六份合成写作。首轮四份中发现一项实质失败：Summary 把固定题集目的扩大为迁移假设。已在共享规范和结果契约中限定假设须保持原问题范围。修订后由新会话生成固定题集 Summary 与分阶段模型报告，两份经另一个审阅代理检查通过；有限步算术另行精确复算。原失败产物保留，不能把本轮写成六份初次全部通过。这是少量指定任务的可用性检查，不是通用模型保证、真实研究结果或人类理解效果实验。
+
+  47 项单元测试、61 个 System/项目入口、14 个技能的 72 条本地链接、4 个修改技能包结构和 7 份变更文稿的数学源码检查通过。项目发布审计覆盖 544 个候选文件，65 个精选资产及 465 个迁移文件的来源身份全部匹配；84 个既有科学文稿只调整链接或登记路径，没有科学正文改写。System 已有本地提交及新增载荷另作检查，未发现本轮扫描范围内的发布阻碍。测试与路径检查不证明科学结论。
+
+  System 与独立项目按用户授权分别提交推送；本条随规则提交，实际完成状态与提交身份以两个仓库 Git 记录和远端核对为准，不由 memory 自行证明。发布检查开始后，另一个仍 active 的研究对话继续修改 1002 候选报告；其未完成工作保留在工作区，不主动暂存到本次 System 提交。未启动实验、改写 Graph、批准机制结论或关闭问题。
+- Next action: 本轮规则修改无待办。后续直接使用现行文字规范；对模型输出仍按来源检查问题范围、算术和推理，不能由本轮样例通过推断未来输出必然正确。恢复发布操作前先核对分支和远端，不重复提交或覆盖并行工作。
+- References:
+  - [现行文字规范](../../../../docs/report_writing_cn.md)：简明表达、六段论证关系、结果分析与结论的职责；链接英文伴随稿和 Karpathy/STE 来源。
+  - [结果证据契约](../../../../.agents/skills/experiment-card-writer/references/result_evidence_lineage.md)、[完成回复](../../../../.agents/skills/experiment-card-writer/references/plain_language_completion_reply.md)：原问题范围和认识更新。
+  - [结果解释](../../../../.agents/skills/research-progress-core/references/result_interpretation.md)、[阶段 Story](../../../../.agents/skills/research-communication/references/story.md)、[最终报告技能](../../../../.agents/skills/research-final-report/SKILL.md)：相同论证关系在不同文档中的使用，未改变科学权限。
+  - [Sol 实测核验](../../../runtime/validation/20261004_language_portability/review.json)、[修订后产物审阅](../../../runtime/validation/20261004_language_portability/final_output_audit.json)：本地合成输入、六份输出、失败与修复、规则版本、检查边界。runtime 不随 Git 发布。
+  - [文字包核验](../../../runtime/validation/20261004_markdown/review.json)、[读取说明](../../../../docs/project_access_cn.md)：无网页依赖的接口及范围。
+  - [迁移身份清单](../../../../docs/research_locations.json)、[项目精选载荷](../../../../Projects/from-attention-to-search/main/curated_evidence.json)：项目重构发布所需的来源身份，不是科研确认。
+
+
+## 2026-10-04 03:36:20 UTC -- 暂存范围核对与项目推送完成
+
+Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
+
+- Summary: 项目重构已提交并普通推送到 `BinaryCheater/from-attention-to-search` 的 `Xingyu` 分支，提交为 `0959b841cb82997f8c845b3e871a0d978cf36db4`。544 个提交文件均与审计快照逐字节一致。自动审批最初因目的地授权不够明确拒绝推送；用户随后明确批准这个提交、544 个文件和该分支，之后推送成功。此授权只涉及发布，不涉及科学确认或实验。
+- Current work: System 本轮 19 个文件已完成暂存和核验，本条随规则一并提交；System 远端 `Shphd3/Research_System` 经 GitHub 连接核实为当前账号管理的私有仓库，具备写入权限。实际远端完成状态以 `origin/master` 与本条所属提交的核对为准。另一个活跃对话的 1002 报告仍留在工作区，未混入此次暂存。
+
+  最终入口检查的精确边界是：61 个工作区入口均可达，60 个已跟踪；diffusion-language-models 的一个既有文献入口未跟踪，该独立仓库无远端，未在此任务初始化提交或建立远端。故全局严格跟踪检查仍报告这一项，不能记为全部通过。其余 47 项测试、技能与载荷检查通过。项目暂存空白检查有 5 处文末空行提示；允许 Markdown 硬换行和文末空行后通过，原件内容保留不动。
+- Next action: 本轮内容修改无待办。恢复时先核对两个既有远端；不要重复推送已完成的项目提交。diffusion 项目的远端、并行报告和其他独立仓库未暂存工作不由本条创建发布状态或科学授权。
+- References: [发布与检查记录](../../../runtime/validation/20261004_language_portability/review.json)、[现行文字规范](../../../../docs/report_writing_cn.md)、[项目导航](../../../../Projects/from-attention-to-search/main/roadmap_cn.md)。运行记录在本地 runtime，Git 提交与远端是发布状态的核验来源。

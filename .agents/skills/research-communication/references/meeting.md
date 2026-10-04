@@ -13,10 +13,10 @@ spoken core, evidence links and optional Q&A in the same file. Point the day ind
 to this single speaking entry; preserve older reports as labeled reading history.
 A language companion is not another Focus. No document for routine chat.
 
-Use the short Markdown brief as the portable reading source. A local HTML view
-may reveal the derivation, comparisons or Q&A progressively when that helps the
-listener. Do not add a second script to maintain or make animation a completion
-gate. Follow the shared medium rules; scientific plots keep their evidence lineage.
+Deliver the brief as self-contained Markdown: speaking core first, then titled
+derivation, evidence and Q&A sections as needed. Explain the decisive values and
+figure findings in prose so the brief is readable without opening an image or
+webpage. Follow the shared writing rules; plots keep their evidence lineage.
 
 ## Read Only What Changes The Answer
 

@@ -10,7 +10,7 @@ Choose the requested mode; do not run a serial skill chain:
 - Research-line synthesis: [story](references/story.md).
 - Curated copy or external sync: [handoff](references/handoff.md).
 
-Use canonical evidence and the shared [writing and medium rules](../../../docs/report_writing.md).
+Use canonical evidence and the shared [Markdown writing rules](../../../docs/report_writing.md).
 Separate derivation, measurement, interpretation and decision. Inspect existing
 work before calling it missing. Preserve negative results and source disagreements.
 

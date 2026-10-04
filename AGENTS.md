@@ -84,8 +84,8 @@ answer; negative or insufficient results cannot be polished into support.
 
 Focus owns the question; a requested brief goes in the day's `meeting_report/`.
 Link one speaking entry from the day index: question, model, result, boundary,
-decision, then evidence and Q&A. Explain in Markdown; use a figure or local HTML
-when it helps understanding. Generated pages are derived, never new evidence.
+decision, then evidence and Q&A. Deliver self-contained Markdown; explain decisive
+values, formulas and figure findings in prose. No webpage is needed for reading.
 
 Explain objects and computation before implementation. Separate derivation,
 measurement and open bridges; description, prediction, causation and utility.

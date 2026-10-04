@@ -52,27 +52,30 @@ design/experiment owners. With `--source <System-relative-path.md>`, it includes
 only the named documents, their available language companions, the project route
 and referenced small assets. Repeat `--source` to include another record; links
 do not silently expand the document selection. Add `--zip` for one portable archive.
-Both output directory and ZIP must be new. Rich Markdown and
-formula rendering use the optional `tools/reading_requirements.txt` dependencies
-(`python -m pip install -r tools/reading_requirements.txt`). Without them the
-builder preserves readable source text; the manifest states the rendering mode.
+Both output directory and ZIP must be new. The builder uses only the Python
+standard library and generates no HTML page or browser interface.
 
-The bundle contains the project route, selected records, a static HTML
-reader, original source copies and a manifest of source versions, hashes and
-omitted dependencies. Versions cover all repositories used by the selection.
-It includes existing Unknown/draft states as labeled source
-content; it neither confirms wording nor approves work. It is local and generated,
-not a second place to edit the research. The inventory covers owner fields and
-inline links; rich rendering also resolves reference-style Markdown links.
-Without the renderer, reference-style links remain literal source text. Other code
-paths are not dependencies. History and worker data are not recursively copied.
-Section links open the matching heading; unavailable headings are listed and fall
-back to the document. Exact Markdown copies retain their original links; use
-`index.html` for portable navigation.
+Open `README.md` in a text editor or Markdown reader. It lists the reading order
+and package-relative file paths, so clickable links are optional. `documents/`
+contains Markdown reading copies with package-relative links and a source note;
+`sources/` keeps exact original bytes, including the original links.
+`manifest.json` records all selected repositories' versions, both kinds of file
+hashes and omitted dependencies. `UNAVAILABLE.md` explains missing, unselected or
+out-of-scope sources; unavailable local links lead there instead of silently
+pointing outside the package.
 
-Inspect the delivered HTML/Markdown and its manifest before relying on it. Missing
-worker data, figures or unavailable historical sources remain visible limitations.
-External distribution, collaborator sync and publication keep their own scope.
+Existing Unknown/draft states remain source content; packaging does not confirm
+wording or approve work. Edit the owning records, not the reading copies. The
+inventory covers owner fields, inline links and single-line reference definitions.
+Other code paths remain literal text. History and worker data are not recursively
+copied. Heading fragments and TeX formulas are retained; if the reader does not
+support them, use headings/file paths and the document's verbal explanation.
+The builder does not author missing explanations; apply the shared
+[writing rules](report_writing.md) to the requested text.
+
+Check the Markdown and manifest before relying on the bundle. Missing worker data,
+figures or historical sources remain explicit limitations. External distribution,
+collaborator sync and publication keep their own scope.
 
 ## Small evidence assets
 

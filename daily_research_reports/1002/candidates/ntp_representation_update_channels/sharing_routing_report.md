@@ -1,160 +1,276 @@
-# When to share and when to separate: from readable representations to useful routing
+# When to share and when to learn separately: models, evidence and current understanding
 
-2026-10-03. Interim research report in the researcher-selected 1002 candidate location; not a final scientific report or formal project migration. [中文](sharing_routing_report_cn.md). The [Anchor](anchor.md) owns the current design; the [Protocol](protocol.md) owns exact comparisons and authorization.
+Revised 2026-10-04 (Asia/Shanghai). This report reorganizes work completed on October 2–3 and retains the temporary candidate location chosen by the researcher. [中文](sharing_routing_report_cn.md) · [Reading guide](reading_guide.md). It explains the current stage of the research. The [Anchor](anchor.md) still owns the scientific design, and the [Protocol](protocol.md) still owns the experiment contract.
 
-**We now have a more specific account of when sharing or separation can help, but not a verified better MoE.** This round separates present routing utility, future learning allocation and finite-sample costs: input-predictable mean learning differences create specialization opportunities, while curvature, estimation noise and resource costs can favor sharing. Two completed old-cache analyses find routing information in several representations without stable gains over a strong FIT-fixed action. The full-input fitted linear router does not dominate lower-dimensional representations. SAE and spectral methods remain replaceable analysis tools, not an architectural winner.
+**Our current understanding is that separate learning can be useful when different inputs impose different learning demands that an allocation rule can exploit. Whether separation is worthwhile also depends on statistical pooling, the role of common computation, and the additional parameter and computation costs.** We have measured how different updates affect a fixed model and tested whether some of those differences support selection. We have not established that a new MoE improves long-term learning or downstream performance.
 
-A second conclusion is structural: **routers and experts may read different representations; experts can retain the complete causal input within a layer while specializing.** Different parameters, sample exposure, and update responsibilities can produce specialization without first dividing input coordinates into disjoint blocks. A smaller router representation must justify itself through decision quality and actual cost.
+The report proceeds through purpose, observations, hypotheses, models and derivations, experimental checks and results analysis, and an update in understanding. Section 4 defines common objects and several restricted comparisons. Together, they do not constitute a theorem explaining the full training process of a language model. Section 5 explains what was measured and which explanations remain viable. Section 6 states how our understanding of the research question has changed, without repeating the numerical tables. The text contains the main argument; links provide the evidence and complete derivations.
 
-## Why move from prediction accuracy to selection utility?
+## 1. Purpose: learn more with limited resources and retain what has been learned
 
-Earlier work connected natural text, source updates, local displacements, and measured finite losses. It also found limited readability of responses across source samples. The missing application link was direct: after predicting more accurately, does choosing an action from those predictions actually reduce loss? Overall MSE can improve by correcting an offset common to every action while preserving exactly the same ranking. It can also decrease while reversing an important action ordering. The [mathematical companion](sharing_routing_mathematics.md) gives exact counterexamples.
+The research aims to improve learning allocation in a mixture-of-experts model (MoE). When should different inputs update the same parameters, and when should they update separate experts, to improve acquisition of new knowledge and retention of existing knowledge?
 
-Three evidence activities remain distinct: the original six-arm common/specialized architecture experiment; actual routing utility and its decomposition using existing S7 finite actions; and a new panel comparing decision information and finite routing within Dense, S7, and SALL at matched token milestones. Each has its own unresolved object. One positive result does not complete the entire argument.
+Three objects matter. The **shared part** consists of parameters used and updated by multiple input groups. An **expert** is a parameter module that receives samples under an allocation rule and performs part of the computation. A **router** uses currently available input to decide which experts to invoke. Specialization can change the data and update history of each expert. It does not require dividing the input vector into disjoint blocks first.
 
-## Sharing first requires a finite-utility comparison
+Greater specialization is not the final measure of benefit. An expert might become worse at other tasks without improving at its own task. A claim that a small expert approaches a large Dense model also needs an explicit resource basis: computation activated for one sample, parameters stored by the whole system, device memory and elapsed time are different quantities. This research reports them separately. It does not choose their exchange rates against loss on the researcher's behalf.
 
-An exact local comparison holds the new source at the same updated parameters, \(w+\delta\), in both shared and private arrangements. Old tasks use \(w+\delta\) under sharing and their original \(w\) under separation. With other computation and task weights fixed, shared-minus-separated risk equals the weighted sum of old-task finite loss changes. Equal source learning follows here from using the same update in both arrangements; it is not another empirical discovery.
+We therefore distinguish four questions: can the architecture represent the target function; can finite training learn it; can subsequent learning retain it; and are those effects worthwhile under specified resources? SAE and spectral analysis are tools for examining representations and effects. They are not the research objective, and no tool is required to win.
 
-This suggests a useful decision criterion: assess the finite net effect on other users, together with parameter-copying, computation, and future-adaptation costs. Gradient inner products are small-step approximations. Even gradient cosine 1 can accompany a finite step that helps the source and harms an old task because of curvature. Statistical pooling supplies another benefit: more independent observations can reduce estimation variance at the cost of sharing bias. The earlier [capacity derivation](capacity_mathematics.md) states that tradeoff. Repeated tokens cannot be counted as additional independent observations.
+## 2. Observations: what needs explaining
 
-**Many harmed realized tokens do not necessarily imply a deployable separation rule.** When comparing CE without extra costs or joint capacity constraints, if the update lowers expected CE at every observable prefix, a router should accept it even though some subsequently revealed targets produce positive loss changes. In a binary CE example, 40% of realized events are harmed, yet always updating is the optimal causal rule. The hindsight oracle's lower loss comes entirely from knowing the answer beforehand. Thus a high harm fraction alone does not establish useful separation. The relevant quantity is expected cost under observable conditions, not grouping events only by their target-informed gradient signs.
+First, **the average effect of a shared update can differ from its effect on individual events.** At a fixed S7 state, we used each of four scientific-text domains to produce a small parameter update, then measured actual next-token loss on other texts. Mean loss decreased in all 16 source-domain–receiving-domain combinations. Yet, in every combination, about 44%–53% of events had loss increases beyond the specified resolution band. These are measurements of finite updates, not predictions based only on gradient signs. Average benefit therefore does not mean every text benefits. It remains unknown whether the harmed events form stable tasks that a router can identify. [Initial experiment and conditions](research_report.md)
 
-## Completed test: select full-input residual experts without the target
+Second, **some effect differences repeat, but they may be difficult to predict in advance.** Some relative effects persisted when the source texts were replaced by another sample from the same domain. Representations available before the update also improved effect prediction slightly. However, evaluating an effect after observing the actual next token differs from predicting future effects using only an earlier prefix. Prediction under the latter information condition was weaker. The [source-transfer study](source_transfer_addendum.md) and [domain-response analysis](domain_response_structure.md) examine these two levels.
 
-Freeze fresh S7 at 33 billion training tokens (33B below denotes training tokens, not parameter count). The final Attention block first computes the common output \(a_0=W_0c\), where \(c\) is its complete 2048-dimensional input. Each of four source domains provides a fixed mean-gradient matrix \(M_d\). Its residual expert computes \(-\eta M_dc\). After selection, \(a_0-\eta M_dc\) passes through the native residual, MLP, normalization, and vocabulary head to obtain actual finite CE. No Attention follows this block, so the complete measured action table exactly supports token-conditional selection without another model forward pass.
+Third, **the ability to predict differences has not consistently produced selection gains over a strong fixed action.** Later cached analyses selected an action from predicted costs, then read the actual finite loss under that action. Several representations outperformed random allocation with matching action-use rates, but did not consistently outperform the fixed action selected on the fitting records. A fixed linear learner using the full input also did not consistently dominate lower-dimensional representations. These observations concern a particular action bank and finite learner, not an MoE whose router and experts have already been trained together.
 
-This is a local forward test of fixed linear residual experts. The common output is inherited backbone computation, and the source matrices are gradient-constructed fixed actions; neither is a newly jointly trained nonlinear expert. Different tokens may select different matrices; that generally differs from applying one uniform parameter update. It is not yet an online-trained MoE. The model, step size, eight A/B source actions, four predictor families, and readout data were frozen. Router features use only causal token history, position, norms, and optional SAE, PCA, or random coordinates. SAE320 still requires the complete width-30000 encoder; it is not a cheap 320-dimensional layer.
+Existing fresh-S7 training logs also show lower training cross-entropy than Dense in some intervals. Cross-entropy measures prediction error on the actual next token. We abbreviate it as CE; it uses natural logarithms, is measured in nats, and is better when lower. This observation belongs to the existing Dense-backbone training setup. It does not establish a benefit for this round's routing or common/specialized architectures, whose training has not completed.
 
-A→B uses scores fitted for source A to choose a domain label, then scores the corresponding expert constructed from source B. B→A reverses this mapping. Mathematics is the FIT-best fixed domain for both sources. That control does not inspect readout targets, but it is selected from first-order FIT labels, so it is not guaranteed to be the best constant action under finite CE. Old R contains 1024 records with 16 fixed positions each. It was already exposed; this entire analysis is exploratory reuse.
+## 3. Hypotheses: explanations that connect the observations to the purpose
 
-The table retains every feature family and both primary source directions with **rejection disabled**. Units are \(10^{-6}\) nat per selected event. Positive gains favor the policy. Brackets show conditional 95% intervals from 2000 category-stratified, paired whole-record bootstrap draws. They exclude source-population uncertainty and have no multiplicity correction.
+The following restates the explanatory directions in the current design. It creates no new experiment contract or scientific approval.
 
-| Source transfer | Features | Gain over FIT-fixed expert | Gain over global usage-matched random | Gain over category-matched random |
-|---|---|---:|---:|---:|
-| A→B | Prefix baseline | 2.54 [-9.63, 12.63] | 5.96 [-6.03, 16.24] | 5.49 [-6.65, 16.02] |
-| A→B | + SAE320 | 3.39 [-14.08, 20.48] | 22.99 [5.85, 40.29] | 5.25 [-11.38, 22.12] |
-| A→B | + PCA320 | 2.68 [-12.92, 17.08] | 14.11 [-1.36, 28.97] | 9.02 [-6.44, 23.52] |
-| A→B | + Random320 | 43.57 [11.71, 77.41] | 122.77 [88.27, 155.49] | 42.98 [12.30, 71.28] |
-| B→A | Prefix baseline | -0.72 [-17.59, 14.97] | 12.08 [-4.61, 27.36] | 9.72 [-6.90, 24.75] |
-| B→A | + SAE320 | -5.79 [-29.89, 20.42] | 57.40 [32.23, 83.97] | 16.58 [-7.11, 40.64] |
-| B→A | + PCA320 | -8.90 [-28.77, 11.23] | 23.92 [4.03, 44.36] | 12.51 [-7.08, 32.13] |
-| B→A | + Random320 | 6.41 [-36.23, 48.02] | 184.40 [140.41, 227.20] | 62.30 [25.27, 99.10] |
-
-![Actual finite routing utility and controls](figures/cached_routing_utility.png)
-
-[All 32 conditions across five receiving scopes](evidence/routing_utility.csv) also include within-source cases and action sets permitting no update; favorable cells were not selected. Rejection-enabled primary cells still have 99.92676%–100% update coverage. The main pattern therefore does not arise from broadly abandoning updates. Mean unchanged CE is 3.4370429761. The increments are small, no practical threshold is defined, and whether an interval crosses zero does not decide architecture adoption. [Execution and independent recomputation](evidence/routing_utility_audit.json) verified all 160 rows, selection order, pairing, and hashes.
-
-## Does beating random assignment merely reflect coarse domain matching?
-
-The global usage-matched comparator preserves a policy's overall expert frequencies but assigns experts independently of events. Beating it establishes an association between input and useful action; coarse domain or category information could produce that association. After observing the first results, a post-hoc decomposition was explicitly registered: preserve the policy frequencies within each domain or category, then randomize assignment within that group.
-
-These controls use known group labels. They diagnose the observed mechanism; they are not new deployment rules. Global gain exactly equals “global random minus group random” plus “group random minus policy.” This arithmetic identity is not causal proof. The [complete decomposition](evidence/routing_group_decomposition.csv) retains all conditions and intervals.
-
-For SAE, A→B global gain 22.99 becomes category-level residual 5.25, with interval [−11.38,22.12]. B→A falls from 57.40 to 16.58, with interval [−7.11,40.64]. Coarse category matching therefore accounts for most of these point gains under this comparison. It does not establish exactly zero residual or a unique causal explanation. Random projections retain residuals 42.98 and 62.30 with positive conditional intervals, so all representation-dependent utility cannot be attributed to coarse labels.
-
-The fixed-expert comparison supplies a more direct limit. SAE A→B changes the expert on only about 4.99% of events. Multiplying the mean advantage on those events by their frequency gives total gain 3.39. B→A changes about 11.15%; those changed decisions are worse on average, giving −5.79 overall. More varied choices are not themselves success: the changed choices must improve outcomes. These are readings from a fixed, exposed panel, not a new generalization verdict.
-
-## Further test: does a more complete router input improve useful choice?
-
-**Purpose and hypothesis:** preserve full expert input and fixed actions while testing whether router observations a, preprojection c, post-residual x=r+a or their combination improve measured finite-loss selection. Rivals are finite fitting capacity, regularization and an already strong fixed action. Registered at 09:38, this cached analysis completed in 45.49 CPU seconds without loading or forwarding a model. Previously exposed R makes it post-hoc exploration.
-
-The four actions use all of F-half0 and the original full-step scale. FIT is F-half1; both supervision and the fixed comparator use actual finite CE. Eight families share base389 (prefix/position features and c/a/x norms): six add 64 coordinates, with full (c,x) as a larger reference. Axes/atoms, scaling and ridge use FIT only. Compared with the A/B transfer experiment above, the bank, labels and baseline dimension change, so their numerical difference cannot be attributed entirely to input choice. The checkpoint and complete expert interface are preserved. These compare added coordinates: a-PCA64 retains the common base and does not literally observe only a.
-
-The table retains all eight forced-action families. Units are micro-nats per selected event; positive gains favor the policy and intervals condition on the fixed fits, sources and exposed R. [All 80 rows](evidence/cached_router_inputs.csv) also retain zero-plus-four actions and four receiving domains.
-
-| Input feature | Gain over finite-FIT-fixed expert | Gain over category-usage random |
-|---|---:|---:|
-| Prefix base | -116.57 [-171.50, -65.43] | 53.31 [5.96, 98.67] |
-| + a-PCA64 | -9.32 [-57.94, 37.31] | 162.26 [119.28, 206.95] |
-| + c-PCA64 | -4.88 [-56.56, 45.92] | 172.51 [126.48, 219.21] |
-| + x-PCA64 | 13.94 [-35.76, 62.14] | 193.62 [147.92, 239.09] |
-| + (c,x)-PCA64 | 6.05 [-45.02, 54.17] | 186.91 [140.98, 233.71] |
-| + a-Random64 | -43.91 [-92.73, 3.51] | 112.06 [69.37, 158.07] |
-| + SAE64 | -39.89 [-91.82, 11.40] | 128.76 [82.13, 174.84] |
-| + Full (c,x) | -49.39 [-106.71, 8.49] | 195.14 [145.67, 246.48] |
-
-![Router inputs against two different-strength controls](figures/cached_router_inputs.png)
-
-**Available information and net adoption benefit diverge.** Every feature-added family beats category-usage random assignment under both action sets, yet none of the 16 pooled policies has a stable positive gain over the finite-FIT-fixed expert. That action is again the mathematics-source update, improving R by about 808.23 micro-nats on average: a strong input-independent strategy. A policy can be smarter than randomized allocation while still losing to always using this action. Allowing rejection does not change that conclusion.
-
-Full (c,x) also does not dominate. Against this prespecified paired reference, x-PCA64 reduces policy cost by 63.33 micro-nats, with conditional 95% interval [9.33,119.60] under forced-four actions. All comparisons are retained without multiplicity correction. **More information does not imply a better finite-sample fitted learner.** A post-outcome diagnostic without refitting finds full-input contrast-error MSE rising from 5.151 on FIT to 16.035 on R, in units of 10⁻⁶ nat²; x-PCA64 gives 8.606 and 9.069. This contrast error removes the eventwise common error across four nonzero actions; it diagnoses relative four-action predictions and cannot alone explain rejection against zero. FIT is an in-sample diagnostic. The gap is consistent with estimation/regularization or FIT/R distribution differences, identifies no unique cause and does not establish that the raw interface contains less information. MSE itself still does not guarantee selection benefit.
-
-The [execution receipt](evidence/cached_router_inputs_receipt.json), [independent reconstruction](evidence/cached_router_inputs_audit.json) and [post-hoc fitting diagnostic](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/posthoc_fit_diagnostics.json) preserve labels, choices, transformations, record pairing and hashes. The frozen new-panel analysis was not retuned after these old-R observations. Even positive within-category residual utility can be error correction for a particular fixed gradient-action bank; it does not establish creation or retention of multistep expert specialization.
-
-## Why compress the router while retaining complete expert input?
-
-Let \(h\) be the complete causal vector within the layer. A valid computation forms \(z=\phi(h)\), selects \(e=\pi(z)\), then evaluates expert \(E_e(h)\). The router selects computation; the expert performs it. “Complete input” means the whole current-layer hidden vector, not future tokens or a guarantee that every detail of the original prefix survives. **The two inputs need not differ.** The same h can support distinct parameters, computations and update responsibilities; changing router observations is a design choice to test. Full input is relative to an expert interface: an MoE FFN can receive the whole hidden vector at its interface, including its prescribed normalization. The fixed Attention residual actions here receive complete 2048-dimensional c; r remains in the shared native tail, rather than being concatenated with c or the entire token history.
-
-![Router information and complete expert input](figures/router_expert_information.png)
-
-For fixed experts and an input distribution, lossless router compression requires a rule depending only on z that still chooses an optimal action at almost every complete state h. It need not reconstruct all of h. Conversely, a representation sufficient for predicting the target need not suffice for choosing experts: their errors may depend on another variable. In a multiplicative example, the router needs only sign S, while the expert needs complete numerical value C. Compressing the entire prediction to S prevents zero error. See the [derivations and counterexamples](sharing_routing_mathematics.md).
-
-An architectural precedent already exists: X-MoE uses a lower-dimensional routing projection while experts process the full hidden vector. This establishes feasibility, not performance for the present causal NTP setting. [X-MoE, §§2–3](https://arxiv.org/html/2204.09179). DeepSeekMoE's shared and routed experts likewise do not require splitting input into common/residual coordinate groups. [DeepSeekMoE, §3.2](https://arxiv.org/html/2401.06066v1).
-
-Identical available inputs can still support specialization because gating changes sample exposure and expert gradients. Router and expert parameters also receive different derivatives. Hard argmax without continuous weighting of the selected output does not give the discrete index an ordinary task gradient; its training estimator must be specified separately. The frozen ridge supervision here does not pretend to solve online router learning.
-
-Complete expert input is a useful comparison baseline, not a universal architectural theorem. Compression sufficient for the expert's own computation could work, but requires separate evidence. The serial form defines \(u=h+C(h)\). An expert can read its entire interface u, although u need not recover the earlier h; h and C(h) are not retained as separate inputs. Holding expert input fixed while changing router information reduces this confounding.
-
-## Weak frozen-bank results do not settle learning allocation
-
-Sharing versus separation also has a time dimension: selecting today's computations differs from allocating examples to train tomorrow's experts. In the fourth analytical example, two zero-initialized, bias-free linear experts have identical costs on every input, leaving no initial routing gain for any representation. A prescribed allocation by input sign, using conditional-mean gradients with \(0<\eta<2\), produces risk \(R_t=\tfrac12(1-\eta)^{2t}\), converging to zero. Both experts retain the full input.
-
-The example deliberately restricts the function class, initialization, per-update balance and tie rule. It does not imply that standard MoE generally stalls or learns the proposed allocation. It establishes a narrower boundary: absent useful differences in a current expert bank do not rule out future specialization; future possibility does not validate an ineffective present selector. Frozen-action analysis locates local information and selection problems, while the architecture training independently tests subsequent acquisition and retention. [Full derivation](sharing_routing_mathematics.md).
-
-The fifth derivation gives a broader local relation: from common initialization, small-step SGD with equal conditional learning rates gives private copies a first-order risk advantage equal to the variance of group-conditional mean gradients times the step size. Copies are free and estimation error is excluded, so separation does not universally win. The relevant object is **mean learning differences predictable from the input**: opposing gradients revealed only after the target need not support routing. Full input may contain allocation information; SAE and spectral methods attempt to read or compress part of it. Current empirical results do not estimate this population coefficient. [Mathematics and precise conditions](sharing_routing_mathematics.md).
-
-Round six puts the opportunity and costs in one finite-sample model: with the same data, conditional step and common quadratic curvature, the expected advantage of splitting equals the benefit from mean-demand differences minus finite-step curvature and noisier group estimates. The same genuine differences can favor sharing with few samples and splitting with more. Independent enumeration verifies this conditional derivation; the current NTP work does not estimate its quantities. A fuller decision asks whether **input-predictable learning differences outweigh estimation error, update size and resource costs**. [Derivation and examples](sharing_routing_mathematics.md).
-
-## Which information gap does the new panel test?
-
-The new task uses exact 33B checkpoints of Dense, fresh S7, and SALL, with 256 source-A, 256 source-B, 512 FIT, and 1024 DEV records. Records and complete token strings are disjoint within the new panel; TEST is unopened. Cross-panel auditing found four exact text/prefix matches with the old panel: two new source-A records and two new FIT records, none in new R. The two entire panels are not fully independent, and article-level near duplication remains Unknown. All three have Dense LM backbones, with different training objectives and continuation histories. Cross-model comparison is descriptive replication.
-
-Within each model, four domain mean gradients and their raw common mean are independently normalized to relative weight displacement 0.001. The common update is replayed directly; averaging four losses cannot substitute for it. With complete expert input and the native tail preserved, comparisons add 64-dimensional PCA of a/c/x/(c,x), a 64-dimensional random projection of a, or 64 SAE atoms to the prefix baseline, alongside a fixed full-(c,x) linear learner. FIT supervision uses measured finite action losses, with cross-source selection primary. Here \(a=Wc\) and \(x=r+a\): the comparison tests preprojection and residual information. Full (c,x) remains a finite-sample fixed learner, not an unrestricted optimal router.
-
-The [registration](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/probe_33b_registration.json) precedes new forward passes. Separate [execution](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/probe_execution_freeze.json) and [analysis freezes](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/probe_analysis_freeze.json) record code, data, model identities, and comparisons. Qualification checks native forward computation, local gradients, temporary perturbations, and complete weight restoration. CPU implementation tests do not replace GPU numerical qualification. A 09:22 pre-execution interface review repaired SALL sequence-container equivalence and scheduler termination cleanup; the [amendment receipt](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/preexecution_amendment_01/amendment.json) preserves originals, 33 CPU regression checks and the unchanged scientific recipe.
-
-<!-- NEW_PROBE_RESULTS_START -->
-At the 10:44 UTC live check, `pt-meoxfrko` remained STARTING / worker Pending, with no real GPU qualification or new-panel values. Results remain NOT RUN; missing observations are not zero effects or expected winners. The [job ledger](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/job_ledger.json) and timestamped execution receipts govern subsequent state.
-<!-- NEW_PROBE_RESULTS_END -->
-
-## Evidence for faster loss reduction and better downstream performance
-
-![Training CE and differences from Dense over 20–33B exposures](figures/training_curve_20_33b.png)
-
-The plot retains all 130 consecutive 100M-valid-target bins from 20B to 33B, giving 390 model/bin rows. Boundary updates contribute their logged mean loss in proportion to token overlap. Fresh S7 is lower in 125/130 bins and SALL in 97/130; adjacent bins are not independent repetitions. Correct continuation lineages exclude discarded old suffixes, and vertical lines mark Dense/SALL continuation starts. The [complete curve table](evidence/training_curve_20_33b.csv) and [provenance](evidence/training_curve_20_33b.json) preserve original line ranges. These are pre-update training-batch LM losses, not fixed checkpoints evaluated on one common held-out set.
-
-Recomputed logs show fresh S7 training CE below Dense by 0.003442 nat over 20–22B tokens and by 0.002349 over 31–33B. SALL moves from 0.007305 below Dense in the earlier window to 0.000524 above in the later window. This uses pure LM CE weighted by valid tokens, not total objectives. Twenty adjacent 100M-token blocks per window are not twenty independent seeds. The actual later sampling has now been checked: 99.8780672% of valid target positions overlap between Dense and fresh S7 in the 31–33B window, but updates are not paired. Thirteen of 15 prespecified updates have disjoint global sample-ID sets; all 30 historical rank-0 input digests were reproduced. Similar window data do not imply that identical batches were learned at identical parameter states. SAE cannot receive causal credit for the entire difference, nor does this audit estimate how much the sampling differences explain. The [sampler audit](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/sampler_pairing_audit.md) preserves the conditions. Lower training CE is descriptive evidence, not proof of reaching a quality target with fewer tokens, FLOPs, or seconds.
-
-The completed 21B N8 domain-classification probe places fresh S7 1.375 percentage points above Dense, but the 97.5% paired interval is [−0.125,+2.876] points and the old test was exposed. It measures information readability. Old 10B held-out M2D2 records offer a contrasting observation: SALL had slightly lower training loss but held-out CE about 0.006185 nat above Dense. That historical S7 used λ=1 and must not be conflated with fresh λ=0.1. A bounded search found no general downstream benchmark table tied to the three current exact-33B identities; it does not claim none exists anywhere.
-
-The [training and downstream evidence inventory](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/training_and_downstream_evidence.md) preserves source log rows, token coordinates, lineage, actual results, and hashes. It also corrects an outdated-ledger reading: although the old Detailed still labels the 21B probe NOT RUN, terminal receipts establish completion. Recording that fact does not revise a formal scientific verdict.
-
-## Remaining claims and the next decision
-
-The main gaps are narrower. Local selection must improve on strong fixed/common computation. Compressed routing must yield repeatable selection utility while preserving expert computation. An MoE claim needs joint expert learning with source acquisition, retention, and resource costs. Downstream utility requires its own task endpoint. These are evidence requirements for different claims, not a mandatory serial experiment checklist.
-
-The two queued jobs each address only part of the empirical bridge:
-
-| Job | What it actually tests | What remains unanswered |
+| Hypothesis | Why it could hold | Equally important rival and distinguishing comparison |
 |---|---|---|
-| pt-uasnh61d | Small-model acquisition, retention and cost under known-domain assignment and shared/private, serial/parallel structures | Learning routing from causal input and general downstream improvement |
-| pt-meoxfrko | Input information and finite-action choice at fixed Dense/S7/SALL 33B states | Long-term gains after joint router/expert training |
+| Inputs contain information about the relative utility of candidate computations, which a router can use to improve selection. | Updates from different sources affect the same event differently, and some of these relationships can be predicted from representations available before the target. | A predictor might estimate only difficulty common to all actions, or prefer one generally better action. Compare actual selected loss against strong fixed actions and controls with matching action-use rates. |
+| A router can use a representation suited to its decision while experts retain the full input at their interfaces. | Deciding who should compute may require less information than performing the computation. | Compression may work because of lower estimation noise or suitable regularization, without retaining all useful information. Experts can also specialize while receiving identical inputs. |
+| Common processing may help limited experts learn through reused computation or pooled data. | Several tasks may repeatedly need the same computation or jointly estimate the same regularity. | A serial structure may benefit from depth or optimization changes. Shared updates may also alter inputs on which old experts depend. Examine acquisition, retention, resources and finite effects through the shared path together. |
 
-Even if both jobs subsequently complete, learning a better router remains a distinct empirical bridge. A direct follow-up (AI suggestion) would preserve full expert input, initialization, data and explicit resource coordinates while comparing a trainable causal gate with strong fixed allocation on learned acquisition/retention. SAE need not be selected first. No new execution contract or submission is created here.
+These hypotheses do not make a non-supporting result a rejection of the whole direction. A lack of selection gain from the current action bank limits the current selector; experts trained together may develop new differences. Conversely, that future possibility does not turn an unrealized present benefit into an established result.
 
-**Provisional AI assessment:** The direction has reasons to continue: descriptive lower-training-CE feedback and pre-target action information beyond coarse category matching. The strongest limits are that this information has not become stable gains over a strong constant action, and the same rule has not been shown to improve multistep expert learning. The specific opportunity is learning allocation and finite-sample estimation, rather than treating SAE or spectral structure itself as an architectural result. Adoption and practical-value judgments remain with the researcher.
+## 4. Mathematical model: define common objects, then ask bounded questions
 
-**AI suggestion:** use the new panel to locate the bottleneck. If no representation beats fixed/common actions, inspect whether the candidate experts offer stable useful differences. If full (c,x) helps but a does not, investigate available-information differences while retaining dimensionality, regularization and fitting error as rival explanations. Similar low- and full-dimensional results require comparing estimation error and actual cost, not declaring sufficiency. Read acquisition and retention from the existing architecture comparison independently, without requiring the local selector to win first. Local routing results inform whether this particular selector merits an online-learning extension. Ordinary projections must not be ignored to preserve an SAE narrative.
+### 4.1 Fix the data, model state, computation interfaces and evaluation objects
 
-**A more direct learning comparison (AI suggestion):** prioritize the existing `common_parallel` versus `private_active` contrast. Within a seed/order combination, it matches the initial function, activated FFN width, full expert input and data sequence, while tying a common channel across domains or copying it privately. Total parameters differ, and tying changes update frequency and optimizer history; acquisition, retention and cost must be read together. Known-domain routing remains privileged information, so the comparison cannot itself establish a better learned router. The [story audit](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/story_gap_audit_round5.md) specifies the reading scope.
+The raw data consist of an observable prefix and its actual next token, denoted by random variables \(X\) and \(Y\). The data distribution is defined over these objects. Representations inside the model change with its parameters and architecture. Hidden vectors from different models therefore cannot be treated as one fixed data distribution.
 
-Costs must remain concrete. A residual-expert multiply costs about 2.097 million MAC; the width-30000 SAE encoder costs about 30.72 million, before TopK. A 64-dimensional linear PCA followed by five linear scores can fold into a direct gate. Lower dimensionality therefore does not itself prove computational savings. These are operator counts, not throughput measurements. Architectural potential rests on better deployable choices at lower actual cost, not the representation's name.
+Let \(\mathcal A\) denote the architecture: which parameters are tied and shared, which are kept separate, and how common modules connect to experts. Let \(\omega_s\) denote the complete state at training stage \(s\), including parameters, optimizer state and any other state that affects subsequent updates. Given stage data \(D_s\) and fixed or recorded randomness, the training rule is
 
-<!-- EXECUTION_STATUS_START -->
-This window submitted `pt-meoxfrko` at 08:11 and retained the earlier `pt-uasnh61d`. Both use 8×RTX5090 SPOT, conservatively consuming two of the five permitted allocations. At 10:44 UTC both remained STARTING / worker Pending, without real GPU qualification or a training step; scheduling and completion ETA are unknown. Completed work comprises cached routing utility, group decomposition, the eight-family input comparison, training curves and sampler verification, six rounds of conditional derivation, and independent recalculation. No new MoE training or downstream improvement is established. No duplicate submission, resource substitution or frozen-budget reduction occurred.
-<!-- EXECUTION_STATUS_END -->
+\[
+\omega_{s+1}=\mathcal U_{\mathcal A,s}(\omega_s,D_s).
+\]
 
-The direct update is that **sharing must be evaluated through actual utility under observable conditions; routing information is defined by differences between experts; experts may retain full input.** We now have a more discriminating research object and two executed local utility comparisons. Architecture adoption, practical thresholds, and scientific question closure remain researcher decisions.
+This equation defines the model. It does not claim that all architectures follow the same learning trajectory. Parameter updates must follow the actual optimizer. Ordinary gradient descent below is an explicitly restricted case.
 
-[Continuing process](research_process.md) · [Previous capacity report](capacity_report.md) · [Execution directory](/data/250010109/MoE_Router/experiments/20261003_sharing_routing)
+At a fixed state, the prefix produces a causal state within the layer, \(h=h_{\omega,\mathcal A}(X)\). The router reads \(z=\phi(h)\) and selects an expert \(e=\pi(z)\). Write the expert's input as \(u\): the complete vector at that module's specified interface. A parallel structure may use \(u=h\); a serial structure may use \(u=h+C(h)\), where \(C\) is the common module. The latter supplies only the sum. It does not guarantee recovery of the earlier \(h\). In the old cached study, residual-matrix experts instead read the complete projection input \(c\), while native downstream computation retains the other residual information. These are related computation patterns, but their input tensors are not identical.
+
+Let \(F_{\mathcal A}(\omega,X)\) be the full model prediction and \(\ell\) its loss. The language experiments use CE. Analytical examples may instead use half squared error. Half squared error is not an exact special case of CE; each conclusion retains its own conditions.
+
+To evaluate learning and forgetting, let \(d\) identify the task being evaluated and let \(P_d^{\rm eval}\) be its fixed evaluation distribution. The index \(s\) continues to identify the training stage reached. Evaluation risk is
+
+\[
+R_{d,s}=\mathbb E_{(X,Y)\sim P_d^{\rm eval}}
+\ell\bigl(F_{\mathcal A}(\omega_s,X),Y\bigr).
+\]
+
+Comparing the same task before and after its own training measures acquisition. Comparing its risk just after that training with its risk at later stages measures retention. The evaluation distribution of an old task must stay fixed to attribute changes to the model rather than to a changed task. Aggregating across tasks requires separately specified weights. Here we first retain the complete task-by-stage matrix. Parameters, activated computation and time are recorded separately; they are not directly subtracted from CE.
+
+The following steps hold different parts of this full model fixed. Each change in the comparison is stated explicitly. The equations cannot be chained together without their conditions.
+
+### 4.2 Step one: for a fixed update, who should share its effects?
+
+First fix the other computation and the task weights. Let \(w\) be the parameter group to be updated, and let \(\delta\) be an already specified finite update. The new source task uses \(w+\delta\) under both sharing and separation. Under sharing, old tasks also use the updated parameters. Under separation, the new source receives a private copy with the same initial value, while old tasks continue using \(w\).
+
+Let \(L_d(w)\) be task \(d\)'s risk and let \(p_d\) be its prespecified nonnegative weight in this comparison. The new-source terms are identical and cancel, giving
+
+\[
+R_{\rm share}-R_{\rm separate}
+=\sum_{d\in\mathrm{old}}p_d\bigl[L_d(w+\delta)-L_d(w)\bigr].
+\]
+
+This is an exact finite-step relation. Under these controls, whether old tasks should also receive the update depends on their actual net change. It does not yet include the cost of copying parameters or of future learning, and it does not compare two separately optimized updates.
+
+For a small-step approximation, let \(G_A\) be the source gradient, \(\eta\) the step size, and \(\delta=-\eta G_A\). With old-task gradient \(G_d\) and Hessian \(H_d\), smoothness gives
+
+\[
+L_d(w-\eta G_A)-L_d(w)
+=-\eta\langle G_d,G_A\rangle
++\tfrac12\eta^2G_A^\top H_dG_A+o(\eta^2).
+\]
+
+The first term describes first-order help or harm for a small step; the second describes curvature. Aligned gradients do not guarantee a helpful finite step. For example, suppose two tasks favor scalar parameter values of 1 and 0.1. Moving from 0 to 0.5 helps the first and harms the second, although both initial gradients point in the same direction. Gradient similarity is therefore a local measurement, not a rule for deciding when to learn separately. [Exact examples](sharing_routing_mathematics.md)
+
+### 4.3 Step two: with current computations fixed, what can be selected before the target appears?
+
+Now freeze the model and candidate action bank. Each action \(e\) invokes a fixed computation. In this round's cache, it is a fixed residual matrix operating on its full input. Let \(\ell_e(X,Y)\) be the loss when action \(e\) is forced. Given the complete causal state \(h\) before routing, define the action's conditional risk as
+
+\[
+q_e(h)=\mathbb E[\ell_e(X,Y)\mid h].
+\]
+
+This is the average loss expected from the action under the information currently available. It is not the loss of a single event after its target is known. Using actual targets to fit the rule during training is valid. The restriction is that deployment cannot inspect the target it is about to predict.
+
+First compare only accepting and rejecting one update. Let its actual loss difference be \(D=\ell_{\rm update}-\ell_{\rm unchanged}\). A rule observing only \(z\) should use \(\mathbb E[D\mid z]\). With no additional cost or joint capacity constraint, it should accept a negative conditional mean and reject a positive one.
+
+This explains why the harmed-event fraction cannot directly specify a routing rule. In a binary CE example, the true target is 1 with probability 0.6. Changing the predicted probability from 0.5 to 0.6 harms the other 40% of events, but lowers mean CE by about 0.02014 nat. If all events have identical information available at routing time, accepting the update for all of them is already the best causal decision. Selecting only events that eventually benefit would require knowing the answer in advance. This counterexample rules out an inference; it does not estimate the causes of harm in the real corpus.
+
+Next compare complete and compressed routing information. For finitely many actions, integrable losses and rules free to select using their respective available information, the optimal risks are
+
+\[
+R_h=\mathbb E\min_e q_e(h),\qquad
+R_z=\mathbb E\min_e\mathbb E[q_e(h)\mid z]\ge R_h.
+\]
+
+Compression preserves ideal risk if and only if some choice based only on \(z\) still selects an optimal action at the complete state almost everywhere. The router need not reconstruct the whole input. It needs to retain distinctions that affect the current expert choice. One sufficient condition is that information removed from action costs contributes only a common offset, leaving the preferred action unchanged.
+
+Experts may still receive complete \(u\). For example, suppose the input contains a numerical value \(\xi\) and an equally likely positive or negative sign \(S\). They are independent, and the numerical value has variance 1. The target is \(S\xi\), and two fixed experts output \(\xi\) and \(-\xi\). The router needs only the sign to choose the expert; the expert needs the numerical value to perform the computation. If the entire computation retains only the sign, numerical variation remains even after conditioning on that sign, preventing zero prediction error. This example shows that the two roles can have different information requirements. It does not prove that every expert must retain uncompressed input.
+
+The inequality above compares unrestricted ideal selection. A fitted learner has finite samples and a fixed function class. More inputs can be harder to estimate from, so worse fitting with complete input does not imply less information in that input. Prediction error is also distinct from selection utility. If two true action costs are \((0,0.1)\), predictions \((1,1.1)\) have a large offset but select correctly. Predictions \((0.1,0)\) have smaller mean squared error but select incorrectly. Experiments must therefore measure the actual loss caused by the final choice. [Complete proof and limits](sharing_routing_mathematics.md)
+
+### 4.4 Step three: once experts learn, why might grouping become useful?
+
+The comparison changes here. Earlier steps fixed one update or one action bank. We now compare different updates produced by shared and separate learning. We can no longer assume that the source-learning term cancels or that old tasks remain unchanged.
+
+Start from a common initial value \(w\). Let \(g(X,Y)\) be the sample gradient and let \(K=\kappa(h)\) be a finite grouping. Fix the grouping before this comparison, using only information available before the target. It does not change with the parameter update being compared. Define the population mean gradient \(G=\mathbb E[g]\), group mean gradients \(G_k=\mathbb E[g\mid K=k]\), and group probabilities \(p_k\). Shared parameters receive \(-\eta G\); each private copy receives \(-\eta G_k\). The two use the same conditional learning rate. Parameter-copying costs are temporarily excluded.
+
+With finite second moments, valid interchange of differentiation and expectation, and sufficient smoothness, the first-order risk improvement is \(\eta\|G\|^2\) under sharing and \(\eta\sum_kp_k\|G_k\|^2\) under separate learning. Using \(G=\sum_kp_kG_k\) and subtracting gives
+
+\[
+R_{\rm shared}-R_{\rm private}
+=\eta\sum_kp_k\|G_k-G\|^2+O(\eta^2).
+\]
+
+This nonnegative first-order term comes from **different mean learning demands across input groups**. Variation in realized sample gradients does not necessarily contribute to it. If all prefixes are identical and targets randomly take positive or negative signs, sample gradients may oppose each other while every causal group still has the same mean gradient. The prefix then provides no basis for assigning different learning responsibilities.
+
+The equation also depends on update normalization. If each private copy instead uses its gradient under the entire population objective, its update includes the group probability \(p_k\), changing the comparison. AdamW histories cannot automatically replace the SGD rule used here. The relation identifies a possible source of benefit; it does not establish that separate learning is always better.
+
+A lack of differences between current experts also does not rule out useful future specialization. Consider a half-squared-error instance of the full model. The complete input is an equally likely positive or negative sign \(S\), and the target is always 1. Two linear experts without biases both compute \(\theta_e S\), starting from \(\theta_e=0\). Initially, either choice incurs loss 1/2, so there is no current selection gain.
+
+Now prespecify an allocation by input sign and update each expert once per round using its group's conditional mean gradient. The sample gradient is \(\theta_e-S\), so the recurrence is \(\theta_e(t+1)=(1-\eta)\theta_e(t)+\eta S\), where \(t\) counts learning rounds. Its solution is
+
+\[
+\theta_\pm(t)=\pm[1-(1-\eta)^t],\qquad
+R_t=\tfrac12(1-\eta)^{2t}.
+\]
+
+For \(0<\eta<2\), risk tends to zero, while both experts always receive the complete input. With its prescribed allocation, restricted function class and symmetric initialization, this example proves only that learning allocation can create useful differences that do not yet exist. Adding a bias lets a single expert solve the problem. The example does not show that a standard MoE automatically learns this routing rule or that separation is generally necessary. A fixed-bank test therefore cannot replace a training comparison. [Complete recurrence and conditions](sharing_routing_mathematics.md)
+
+### 4.5 Step four: with finite samples, when should learning remain shared?
+
+The previous relation uses true population mean gradients and omits estimation error. We now retain the same initialization, fixed grouping, conditional step size and data for both schemes. Each group has a fixed positive integer number \(n_k\) of independent gradient samples. A single gradient within each group has mean \(\mu_k\) and covariance \(\Sigma_k\); samples are also independent across groups. Let \(\mu=\sum_kp_k\mu_k\). Shared learning uses the \(p_k\)-weighted average of the group sample means. Private learning uses each group's sample mean separately.
+
+For an exact finite-step relation, further assume that every group's population risk is quadratic throughout the displacement, with the same positive semidefinite curvature matrix \(B\). Define
+
+\[
+V=\sum_kp_k\|\mu_k-\mu\|^2,\qquad
+V_B=\sum_kp_k(\mu_k-\mu)^\top B(\mu_k-\mu),
+\]
+
+\[
+N_B=\sum_k\frac{p_k(1-p_k)}{n_k}\operatorname{tr}(B\Sigma_k).
+\]
+
+The norms above are Euclidean norms of parameter vectors, and \(\operatorname{tr}\) denotes the sum of a matrix's diagonal entries. Here \(V\) measures differences in mean learning demand; \(V_B\) measures curvature along those differences; and \(N_B\) measures the extra noise cost of separate rather than pooled estimation. The derivation substitutes the updates into the quadratic risks and uses the identity that the expected quadratic form of a random vector equals the quadratic form of its mean plus the trace of curvature times covariance. The shared mean has noise covariance \(\sum_kp_k^2\Sigma_k/n_k\); the weighted noise contribution to private risk is \(\sum_kp_k\Sigma_k/n_k\). Subtraction yields the factor \(p_k(1-p_k)\), giving
+
+\[
+\mathbb E[R_{\rm shared}-R_{\rm private}]
+=\eta V-\tfrac12\eta^2V_B-\tfrac12\eta^2N_B.
+\]
+
+The first term is the opportunity to exploit different mean demands separately. The other two terms are the finite-step and estimation costs in this conditional model. Evaluation concerns an independent population risk, not the fitting batch just used to estimate gradients.
+
+A half-squared-error example makes the tradeoff concrete. Two equally probable groups have gradient means of plus and minus 1, single-sample variance 4, and common curvature and step size both equal to 1. With one independent observation per group, expected shared risk minus private risk is −0.50, favoring sharing. With four per group, it becomes +0.25, favoring private learning. The true group difference is unchanged; the amount of data changes which form of learning is more reliable. Repeated token exposures cannot substitute for the independent sample count in this example.
+
+Different group curvatures, correlated samples, adaptive optimizers or choosing the grouping on the same data change this contract. The current language experiments have not estimated \(V,V_B,N_B\). The equation is therefore not a validated MoE decision threshold. Resource costs must still be reported separately. Until the researcher specifies how they are valued, parameter counts cannot simply be deducted from this risk difference. [Complete derivation and enumeration checks](sharing_routing_mathematics.md)
+
+### 4.6 Step five: does common computation change representation, estimation or the learning path?
+
+Return to architecture choice in the full model. Common computation may avoid storing the same regularity separately in every expert, or it may pool data from multiple tasks. These are different benefits. The first concerns storage within a specified function class; the second can reduce estimation error without changing the representable function class. Naming a branch “common” does not establish that it has learned reusable knowledge.
+
+A serial connection also changes function composition. Represent the common module and expert \(k\) by linear residual matrices \(C\) and \(E_k\). With \(I\) the identity map, the parallel mapping is \(I+C+E_k\), whereas the serial mapping is \((I+E_k)(I+C)\). Expanding gives
+
+\[
+(I+E_k)(I+C)=I+C+E_k(I+C).
+\]
+
+If \(I+C\) is invertible, defining the parallel private matrix as \(\widetilde E_k=E_k(I+C)\) gives the same function and preserves matrix rank. Under these linear assumptions and the corresponding rank constraints, a cross term does not guarantee a larger function class. Nonlinear composition may change what finite experts can represent, but additional depth remains an explanation to distinguish.
+
+Identical function classes do not guarantee identical update paths. In the serial structure, changing the common module changes both its output and the input received by the expert. An old expert's function can therefore change even when its parameters are frozen. Now consider an additive scalar special case with fixed old-expert output and half squared error. Let the old combined prediction be \(\hat y_{\rm old}\), its target be \(y\), and its error be \(\varepsilon=\hat y_{\rm old}-y\). Suppose the old expert has compensated for the old common module's error. Increasing the common output by \(\Delta\) increases the combined prediction by the same \(\Delta\), so the old loss changes by
+
+\[
+\Delta L=\varepsilon\Delta+\tfrac12\Delta^2.
+\]
+
+This additive formula does not directly apply to the serial nonlinear model discussed above. It shows that a more accurate common estimate in isolation need not make the whole old prediction more accurate. We must evaluate the loss of the combined computation. In a language model, the shared backbone also includes Attention, embeddings and normalization. A condition without an extra common FFN is not a condition without any sharing. [Capacity and learning dynamics](capacity_mathematics.md)
+
+The full model now connects current selection, learning updates, finite samples and computation structure through a common set of objects. Each part retains its own assumptions. It does not supply unmeasured causal relationships for the real training process.
+
+## 5. Experimental checks and results analysis: which step does each result support?
+
+### 5.1 How the implementation corresponds to the model
+
+The old S7 analysis fixes the model at 33 billion cumulative training tokens. Here 33B is a token count, not a parameter count. The final-block Attention projection receives a 2048-dimensional input \(c\) and produces a 1024-dimensional output \(a=Wc\). Let \(M_d\) be the mean gradient matrix from a source domain's texts. Its candidate action applies displacement \(-\eta M_dc\). We pass that displacement through the native residual computation, MLP, normalization and vocabulary head to measure actual CE change. No Attention follows this site, so the complete action table supports selection at individual token positions.
+
+Each action here is a fixed residual computation receiving its full input. Selecting different actions across events generally does not correspond to one uniform parameter update, and these actions are not newly trained nonlinear MoE experts. Router features come from history, position and representations available before the target; actual targets are used for fitting and evaluation. Fitting and readout records are separate. The old readout panel has already been exposed, and article-level independence has not been established. The evidence below is exploratory.
+
+| Relation to check in the derivation | Completed corresponding check | Relation still not covered |
+|---|---|---|
+| How one finite update affects different users | Replay source updates through the native model tail and measure actual CE changes | Net benefit of long-term shared or private training |
+| Whether available representations support current action selection | Source transfer, actual finite selection, usage controls and group controls | Effects after joint router and expert learning |
+| Whether more complete input improves this learner | Compare eight input families under fixed actions and supervision | Information sufficiency with unlimited samples or a universally optimal routing interface |
+| How group differences compete with estimation noise | Quadratic-model derivation and independent enumeration | Population gradient, curvature and noise quantities in language models |
+| Whether common and serial computation improve acquisition and retention | Six-arm comparison and mechanism diagnostics implemented; execution state is in Section 5.5 | Architecture benefits and their mechanism after completed training |
+
+Enumeration of mathematical counterexamples checks derivations and computation. It is not validation on natural text. Placing these checks in one table does not make them the same kind of evidence.
+
+### 5.2 Result analysis one: predictable effects do not yet identify separate learning responsibilities
+
+In the initial fixed-source experiment, all 16 source-domain–receiving-domain mean CE changes were negative, ranging from about −0.001953 to −0.000182 nat. An adverse event was defined by \(\Delta\mathrm{CE}>10^{-5}\) nat, and adverse fractions ranged from 43.97% to 52.81%. Each receiving domain contained 256 records with 16 positions per record. This supports coexistence of average benefit and event-level heterogeneity, not a stable separation rule. [Complete finite-response table](evidence/finite_panel_summary.csv)
+
+In the source-transfer test, A and B were two sets of records drawn within each source domain. Relative to the history baseline, the SAE-augmented predictor improved response prediction error by 0.481% [0.383%, 0.574%] for A→B and 0.602% [0.502%, 0.695%] for B→A. Relative error improvement was computed within each source domain and then averaged equally across the four domains. These percentages describe **error in predicting update effects**, not a percentage decrease in language-model CE. Ordinary projections also helped. [Complete source-transfer table](evidence/source_transfer_finite_readout.csv)
+
+Of the error improvement across the two predictions evaluated on their own sources, 99.02% came from the within-domain mean of the A/B responses. This is not the fraction of knowledge common to all four domains, and it does not rule out differences across domains. The subsequent cross-domain analysis specifically corrected this confusion about the object being measured. The result limits a claim that we have already predicted fine differences in learning effects between sources. It does not establish that information about those differences is absent. [Error decomposition](evidence/source_transfer_gain_accounting.csv)
+
+### 5.3 Result analysis two: input-dependent selection information exists, but a strong fixed action remains difficult to beat
+
+The first cached selection study used A/B source actions and previously frozen first-order response predictors. The second used four actions built from all of F-half0, actual finite-CE supervision on F-half1, and a new common baseline. The action bank, labels and baseline changed between the two studies. Their numerical difference cannot be attributed entirely to the input interface.
+
+The second study compared eight feature families: a history/position/norm baseline, plus 64 principal components of the output, preprojection input, post-residual state or combined state; a random output projection; SAE coordinates; or the full combined state. All transformations and linear fitting used only 512 fitting records. Evaluation used 1024 old readout records with 16 positions each. The fixed action was also selected using only actual finite CE on the fitting records.
+
+The table below uses the same four actions with rejection disallowed to explain the distinction between two controls. Here \(x\) is the residual before Attention plus the current Attention output, and \((c,x)\) is the full combined input. Values are in micro-nats, or \(10^{-6}\) nat per selected event. Positive values mean that the first policy has lower loss. These comparisons explain the judgment; they do not select a winner. [All 80 rows](evidence/cached_router_inputs.csv) retain the eight families, both action sets and every receiving scope.
+
+| Comparison | Actual selection gain and conditional 95% interval |
+|---|---:|
+| x-PCA64 policy versus the fixed action selected on fitting records | +13.94 [−35.76, 62.14] |
+| The same policy versus random allocation with matching within-category use rates | +193.62 [147.92, 239.09] |
+| Full-(c,x) policy versus the same fixed action | −49.39 [−106.71, 8.49] |
+| x-PCA64 policy versus the full-(c,x) policy | +63.33 [9.33, 119.60] |
+
+The within-category random control preserves the policy's action-use rates within each known category to examine matching within groups. It is not another trained category router. Beating this control indicates a usable association in the current input-dependent allocation. The fixed action is already strong, however, so that association may still provide no additional benefit from adopting the policy. In the complete eight-family comparison, every feature-added family beats category-usage random allocation under both action sets. Yet none of the 16 pooled policies provides stable evidence of beating the fixed action selected on finite fitting losses.
+
+Intervals use 2000 category-stratified, paired whole-record bootstrap draws, keeping all 16 positions together. They condition on the fixed sources, fitted learners and old readout panel. They exclude source-population uncertainty and are not corrected for multiple comparisons. A practically acceptable benefit has not been defined. Worse fitting with complete input is consistent with estimation noise, regularization or differences between fitting and readout distributions. It does not establish that the complete interface contains less information. The [execution receipt](evidence/cached_router_inputs_receipt.json) and [independent reconstruction](evidence/cached_router_inputs_audit.json) preserve numerical provenance.
+
+### 5.4 Result analysis three: old training curves provide a separate clue, not evidence for the new routing design
+
+Over 31–33B cumulative valid training targets, existing Dense and fresh-S7 pure LM training CE values were 3.233073 and 3.230724 nat per valid target, respectively, a difference of about −0.002349. These compare the existing Dense backbone and its training configurations. They are not training results for this round's common/specialized design or new router. Later updates are not paired, and neighboring training intervals are not independent seeds.
+
+This observation supports a descriptive claim of lower training CE in the specified interval. It does not establish fewer tokens, less computation or less time to reach the same held-out quality, or improved general downstream performance. The old 21B domain-classification probe measures representation readability; it does not replace general downstream tasks. The [training curve and provenance](evidence/training_curve_20_33b.json) and [training/downstream evidence inventory](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/training_and_downstream_evidence.md) retain the lineage and complete conditions.
+
+### 5.5 New execution facts and scientific results still unavailable
+
+During this rewrite on October 4, we inspected persistent files without modifying them. All times below are Asia/Shanghai. These are local execution records, not a query of current platform state.
+
+- One GPU Smoke attempt for capacity job `pt-uasnh61d` recorded failure at 19:40 on October 3, with training step and valid targets seen both equal to zero. The error reports a Float/BFloat16 dtype mismatch in `index_copy_()`. This records that failure; it does not diagnose its root cause or show that the architecture is ineffective. [Original failure record](/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/runs/gpu_smoke_20261003T114015046497Z/common_parallel_continuous/failure_1791027646839763462.json)
+- The [scheduler record](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/scheduler.json) for exact-33B panel job `pt-meoxfrko` records `COMPLETE_MEASUREMENTS` at 20:25 on October 3. Dense, fresh S7 and SALL each have a `COMPLETE_AGGREGATE` receipt. At this inspection, none of the three models had an `analysis/receipt.json`. This report does not treat saved measurements as completed utility analysis, and draws no update in understanding from the new arrays.
+
+The previous report's Pending observation at 18:44 on October 3 is therefore only a historical snapshot. Numerical interpretations in this report still come from the completed and independently reconstructed old analyses described above. This rewrite establishes no new scientific conclusion about six-arm architecture effects, new-panel utility or general downstream benefits.
+
+## 6. Update in understanding: how we now think about sharing and separate learning
+
+The following is an AI synthesis of the current evidence at this stage. It does not establish a new mechanism or close the scientific question.
+
+**First, learning relationships must be tied to specific computation and state.** Whether a text benefits depends on which update acts on which model state and on the downstream computation through which its effect passes. Domain names can organize comparisons, but cannot directly determine sharing groups. We now have grounds to study these conditional relationships further, rather than labeling a harmed event as a task that should be isolated.
+
+**Second, sharing and separation each have identifiable potential benefits.** Separation can give different parameter responses to different mean learning demands across inputs. Sharing can reuse computation and pool limited data to estimate a common regularity. The conditional derivations show that the choice can change with data quantity, update size and estimation error. The question is which differences deserve separate parameters, not how to maximize specialization itself. We have not measured a complete criterion for language models.
+
+**Third, routing information is valuable relative to differences between experts.** A representation that describes content, predicts the target or reconstructs current activations does not automatically select the right expert. The router needs information about the relative utility of candidate computations. Experts perform those computations and may continue to read the full input at their interfaces. Identical inputs can still support specialization through different parameters and learning responsibilities. Whether compression helps depends on selection quality, estimation difficulty and actual cost together.
+
+**Fourth, current selection and future specialization require separate study.** Fixed-action tests show that some input information has not consistently produced gains over a strong fixed action. This limits the present implementation's utility, but does not rule out training allocation creating expert differences later. Using actual targets to update routers and experts during training is valid. We do not need to predict every local loss change accurately before studying learning allocation.
+
+**Fifth, a common module does not automatically add capacity.** It may save duplicated storage or improve estimation, but it may also change inputs on which old experts rely. Serial coupling can change representation or learning paths; it is not an established necessary condition. If future experiments show improvement, they will need to distinguish reusable common regularities, data pooling, depth and optimization history. If they show deterioration, they must distinguish failure to acquire knowledge from disruption of knowledge already learned.
+
+These five points are bounded updates in understanding. They make the question more specific, but do not identify a winning MoE architecture or require SAE or spectral methods. Two constraints remain on our own interpretation: a strong fixed-action control is not an entry requirement for research on joint training, and lower training CE in the existing S7 does not validate a new routing architecture that has not been trained.
+
+**AI suggestion for the next question:** under explicit resource measures and comparable initial functions, does assigning the same kind of training samples to shared parameters or separately learning experts produce a better acquisition–retention relationship? Can a router learn a useful allocation from visible input alone? The existing capacity comparison first tests tying versus separation under known-domain allocation. The new panel first tests information and utility at fixed states. They provide different evidence, and neither automatically establishes a better learned router. This is a research suggestion, not a new execution contract or closure of the current question.
+
+Complete calculations, individual results and historical attempts remain in the [mathematical explanation](sharing_routing_mathematics.md), [previous report snapshot](history/20261004_before_reading_rewrite/sharing_routing_report.md) and [research process](research_process.md). The snapshot preserves its original bytes; its relative links are interpreted from the original directory. Use this report and the reading guide as the current reading entrypoints.

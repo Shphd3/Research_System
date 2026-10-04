@@ -24,12 +24,16 @@ report must carry its own explanation.
 
 ## Explanation And Structure
 
-Use the shared [writing and medium rules](../../../docs/report_writing.md).
+Use the shared [Markdown writing rules](../../../docs/report_writing.md).
 Cover motivation, exact question, assumptions, model or argument, method,
 decisive evidence, analysis, limits, bounded answer and next question (or none).
 Include reproducibility information when applicable. Choose headings for the
 research: proofs need no invented experiment; observations need no invented
 implementation. Merge short sections; preserve the complete explanatory chain.
+Connect purpose, observations, hypothesis, model stages and their checks; provide
+a short reading route for a long report. Conclude with the change in understanding
+of the original question, supported by decisive evidence, rather than repeating
+the result analysis or extending the claim beyond its evidence.
 
 Define objects before equations. Explain assumptions, objective/constraints,
 permitted information and the shortest model-to-consequence bridge. Distinguish

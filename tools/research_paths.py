@@ -83,8 +83,8 @@ def inline_matches(text: str):
             yield LinkMatch(text, start.start(), i + 1, dest_start, dest_end)
 
 
-def link_matches(text: str):
-    """Ignore code and math: bracket/parenthesis expressions are not file links."""
+def masked_prose(text: str) -> str:
+    """Preserve offsets/newlines while hiding code and math from link scanners."""
     masked = list(text)
     spans = []
     fence_start = None
@@ -102,13 +102,25 @@ def link_matches(text: str):
     if fence_start is not None:
         spans.append((fence_start[0], len(text)))
     for start, end in spans:
-        masked[start:end] = ' ' * (end - start)
+        masked[start:end] = ['\n' if c == '\n' else ' ' for c in text[start:end]]
     remaining = ''.join(masked)
     pattern = re.compile(r'(`+)([^`]*?)\1|\\\[.*?\\\]|\\\(.*?\\\)|\$\$.*?\$\$|(?<!\\)\$[^$\n]+(?<!\\)\$', re.S)
     for match in pattern.finditer(remaining):
-        masked[match.start():match.end()] = ' ' * len(match[0])
-    for match in inline_matches(''.join(masked)):
+        masked[match.start():match.end()] = ['\n' if c == '\n' else ' ' for c in match[0]]
+    return ''.join(masked)
+
+
+def link_matches(text: str):
+    """Ignore code and math: bracket/parenthesis expressions are not file links."""
+    for match in inline_matches(masked_prose(text)):
         yield LinkMatch(text, match.begin, match.finish, match.destination_start, match.destination_end)
+
+
+def reference_matches(text: str):
+    """Single-line reference definitions; leave labels and titles unchanged."""
+    pattern = re.compile(r'^ {0,3}\[(?:\\.|[^\]\\\n])+\]:[ \t]*(?P<target><[^>\n]+>|(?:\\.|[^\s])+)', re.M)
+    for match in pattern.finditer(masked_prose(text)):
+        yield LinkMatch(text, match.start(), match.end(), match.start('target'), match.end('target'))
 
 
 def relocations(root: Path = ROOT) -> dict[str, str]:
