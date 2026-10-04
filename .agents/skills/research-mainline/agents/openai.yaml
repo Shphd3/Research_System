@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Mainline"
-  short_description: "Organize research direction and artifact ownership"
-  default_prompt: "Use $research-mainline to organize a source-grounded research direction map and update only the smallest owning project surface."
+  short_description: "Place, archive or publish research artifacts"
+  default_prompt: "Use $research-mainline to place, reorganize, archive or publish the requested artifacts while preserving their ownership and scientific meaning."
 
 policy:
   allow_implicit_invocation: true

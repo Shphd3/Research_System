@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Progress Core"
-  short_description: "Manage one core-task Focus and its result boundary"
-  default_prompt: "Use $research-progress-core to maintain one meeting-cycle core-task Focus and to audit the human-owned result and boundary."
+  short_description: "Refine a research question and its next decision"
+  default_prompt: "Use $research-progress-core to refine the named research question or maintain its stable Focus, using evidence to clarify the researcher-owned next decision."
 
 policy:
   allow_implicit_invocation: true

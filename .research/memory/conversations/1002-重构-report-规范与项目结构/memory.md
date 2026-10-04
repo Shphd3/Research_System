@@ -3,7 +3,7 @@
 Conversation name: [System]重构Report用语规范以及工作流
 Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
 Created at: 2026-10-03 14:23:03 UTC
-Latest update at: 2026-10-04 03:42:25 UTC
+Latest update at: 2026-10-04 04:09:24 UTC
 Continues from: none
 Environment: `repo=/data/250010109/Research_System`; `project=/data/250010109/Research_System/Projects/from-attention-to-search`; `exec=/data/250010109/MoE_Router`。本次均可读取。System 与 project 是独立 Git 仓库。
 
@@ -101,3 +101,21 @@ Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
 - Current work: 原定 19 个 System 文件在最终提交中仍与已核验快照逐字节一致。追加的 17 个并行文件已作最终载荷复核：6 份历史快照与原件一致，19 份受保护文档未改，8 份重写阅读文件与该任务核验记录的哈希一致；未发现本轮检查范围内的载荷阻碍。该任务的 `PASS_SOURCE_SCOPE` 只验证来源、链接、格式与身份，不由本对话新增科学判断。diffusion 项目既有入口未跟踪且无远端的边界仍保留。
 - Next action: 本轮内容、memory 与发布工作完成；最终 memory 补记提交号以 Git 为准。后续发布遇到并行任务时，须在推送前复核实际提交文件清单，不能只依据提交前的共享暂存区快照。未来研究仍回到其原件和授权范围。
 - References: [本轮核验与发布记录](../../../runtime/validation/20261004_language_portability/review.json)、[并行最终载荷审计](../../../runtime/validation/20261004_language_portability/root_committed_parallel_audit.json)、[并行任务自身的来源检查](../../../../daily_research_reports/1002/candidates/ntp_representation_update_channels/report_rewrite_20261004.json)。
+
+
+## 2026-10-04 04:09:24 UTC -- 最后一轮技能路由、读取成本与报告规范重构
+
+Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra); forward checks: gpt-6-astra and gpt-6.1-sol
+
+- Summary: 用户确认“6 extra”指 GPT-6 Astra，要求两个模型准确选择技能、减少不必要读取，报告参考导师 research-exploration，日常回复遵循“内容与深度”；随后明确授权提交推送全部暂存内容，包括他人修改。已检查仓库 14 个技能，保留唯一目录与分工，没有安装第二套导师技能或修改独立项目源。按所请求产物选择一个主要 owner，只为独立子任务增加技能。
+- Current work: 13 个规则/技能文件已修订。Graph 的自动创建、自动研究方向改写及仅限当轮授权被删除；检查与修改分开，格式细节按需读取，同时修复原示例引用不存在节点的问题。Mainline/Progress 界面提示词同步现行职责。普通 Summary 短答不再强制读完整报告指南，机制审计由实际推理问题触发，解释修复回到正确 owner。报告保留导师的前提—模型—计算—检查—认识更新；短答只展开必要环节。网页残留路由已清理。既有科研判断、Graph、实验和模型配置未改动。
+
+  14 个技能及 73 条本地链接、14 个包结构、47 项单元测试、11 份 Markdown 数学源码检查通过。两模型各处理 19 个独立路由场景，主要 owner 与写入范围均符合预设意图；各自实际完成短答和阶段稿，独立审阅通过。算例的对数损失、梯度和有限步结果正确，未把数学核对当成真实机制证据。这是给定元数据下的隔离任务验证，不是生产客户端自动触发率、普遍正确性或人类理解实验。
+
+  按相同规则文件范围比较，全部技能入口字节下降 12.48%，任务目录下降 22.75%；Graph 编辑含格式引用的总路径下降 27.02%，经实验卡技能读取已有 Summary 的短答路径下降 56.18%。完整报告入口因补清导师方法而增加 10.23%。这些是 UTF-8 字节，不是实测模型 tokens 或账单节省；完整来源、共享规则及缓存影响另计。未为追求数字禁用技能或改变模型。
+- Next action: 本轮内容核验完成，按用户授权提交推送所有实际暂存内容；推送前必须核对实际提交清单以捕获并发暂存。发布状态以 Git 与远端为准，后续不因样例通过而免除具体来源和推理检查。
+- References:
+  - [技能选择与按需读取](../../../../docs/skills.md)、[报告及回复规范](../../../../docs/report_writing_cn.md)、[导师映射](../../../../docs/methodology/research_exploration_mapping.md)：现行规则；上游固定为 `0963fe5`。
+  - [Graph 技能](../../../../.agents/skills/research-graph-sop/SKILL.md)、[实验卡技能](../../../../.agents/skills/experiment-card-writer/SKILL.md)、[推理审计技能](../../../../.agents/skills/research-reasoning-auditor/SKILL.md)、[最终报告技能](../../../../.agents/skills/research-final-report/SKILL.md)：本轮正文路由修改。
+  - [Mainline 界面](../../../../.agents/skills/research-mainline/agents/openai.yaml)、[Progress 界面](../../../../.agents/skills/research-progress-core/agents/openai.yaml)：旧职责提示词修正。
+  - [本轮核验](../../../runtime/validation/20261004_skill_routing/review.json)、[读取成本](../../../runtime/validation/20261004_skill_routing/load_comparison.json)：本地输入、输出、独立审阅、前后规则版本及边界；runtime 不随 Git 发布。

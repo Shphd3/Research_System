@@ -7,7 +7,9 @@ description: "Write one paper-style final report for a settled bounded research 
 
 One settled question, one self-contained derived report. Preserve the pinned
 upstream's synthesis method with local Anchor/Protocol/Summary/Detailed ownership;
-see [mapping](../../../docs/methodology/research_exploration_mapping.md).
+The upstream method is already integrated here; read the
+[mapping](../../../docs/methodology/research_exploration_mapping.md) only to audit
+that integration, not for every report.
 
 ## Readiness And Inputs
 
@@ -27,9 +29,12 @@ report must carry its own explanation.
 Use the shared [Markdown writing rules](../../../docs/report_writing.md).
 Cover motivation, exact question, assumptions, model or argument, method,
 decisive evidence, analysis, limits, bounded answer and next question (or none).
-Include reproducibility information when applicable. Choose headings for the
-research: proofs need no invented experiment; observations need no invented
-implementation. Merge short sections; preserve the complete explanatory chain.
+Include reproducibility information when applicable. For a requested full report,
+use the advisor method's order: question/motivation -> priors -> model -> computation
+-> experimental checks -> analysis -> bounded conclusion, with a short abstract
+and reproducibility appendix when useful. Adapt headings to the research: proofs
+need no invented experiment; observations need no invented implementation. Merge
+short sections; preserve the complete explanatory chain.
 Connect purpose, observations, hypothesis, model stages and their checks; provide
 a short reading route for a long report. Conclude with the change in understanding
 of the original question, supported by decisive evidence, rather than repeating

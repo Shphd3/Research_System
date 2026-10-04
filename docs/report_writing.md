@@ -43,16 +43,23 @@ For a research-progress report, preserve this reasoning chain:
 6. Stage update: explain what is now understood, which hypothesis/assumption is
    strengthened, weakened or unresolved, and why the remaining question matters.
 
-This is an explanatory chain, not six compulsory headings or a required new
-experiment for every task. Reuse existing derivations. Theory-only work uses
-proof/counterexample obligations; observational work must not invent a mechanism.
-Put the meeting's speaking core first and detail/Q&A later. A short answer needs
-no report; a long requested report starts with a brief route through its sections.
+Use this logic in replies too, at the depth needed for the question. A short
+reply gives the answer, decisive reason and boundary; a complex reply retains the
+necessary model, derivation and evidence. Do not expand every reply into a report.
+
+The chain is not six compulsory headings or a required new experiment. Reuse
+existing derivations; theory uses proof/counterexamples and observations must not
+invent a mechanism. Put the meeting's speaking core first and detail/Q&A later.
+A long requested report starts with a brief route through its sections.
 
 Use headings suited to the research. Formal arguments, observational studies,
 interventions and engineering comparisons need different evidence; none requires
 an invented experiment or model to fill a template. The existing eight-section
-Anchor and four-part Summary keep their owning contracts.
+Anchor and four-part Summary keep their owning contracts. Full reports use the
+advisor research-exploration method already integrated in the
+[final-report skill](../.agents/skills/research-final-report/SKILL.md): explain
+priors, model, computation, checks and what was learned to a reader who knows
+basic mathematics and ML but has not seen the conversation.
 
 ## Results analysis and scientific conclusion
 

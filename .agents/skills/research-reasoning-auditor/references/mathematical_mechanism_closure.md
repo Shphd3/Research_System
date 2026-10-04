@@ -80,5 +80,7 @@ research sequence.
 
 Give the existing source, exact gap type, smallest missing arrow and maximum
 supported claim. Propose a separator only when needed, with support, non-support
-and insufficient outcomes. Keep scientific decisions with the researcher; route
-requested explanation repairs to communication and formal design to Anchor.
+and insufficient outcomes. Keep scientific decisions with the researcher. Explain
+a local gap in the reply; use the explainer for a requested deeper explanation,
+communication for a requested brief/Story/handoff, and the artifact owner for
+canonical edits. Do not load another skill merely to restate the finding.

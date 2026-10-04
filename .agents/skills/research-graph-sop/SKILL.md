@@ -1,213 +1,50 @@
 ---
 name: research-graph-sop
-description: "Use when the user explicitly asks to inspect, create, change, or validate a research graph or graph.yaml. Do not use when no graph is in scope."
+description: "Inspect or maintain a research graph when the user asks for graph work. Not automatic context refresh, hypothesis development or result interpretation."
 ---
 
-# Research Graph SOP
+# Research Graph
 
-Use the graph as a small, inspectable map of the research state. Put structure and relationships in `graph.yaml`; put reasoning, evidence details, quotes, experiment notes, and drafts in Markdown files.
+Keep the graph a small navigation map. Scientific judgments and evidence remain
+in their owning Focus, Anchor, Protocol and result records; a tidy graph cannot
+confirm a claim or choose a research direction.
 
-Core principle: **thin graph, thick notes, active agent**. The graph should reduce cognitive load, not become a database the researcher has to maintain.
+## Choose the requested operation
 
-## User-Confirmed Research Judgment Rule
+- **Inspect:** read the named graph and only the sources needed to check its
+  claims, links or relationships. Report discrepancies; inspection does not
+  authorize edits. If no graph exists, report that fact instead of creating one.
+- **Create or edit:** proceed within the user's current or earlier explicit scope.
+  Reuse that authorization. If a proposed change needs a new scientific judgment,
+  leave it unresolved and ask only for that missing decision. Finish independent
+  authorized link or structure repairs without repeating approval.
+- **Schema validation or editing:** read the [format contract](references/graph_format.md)
+  for node/edge vocabulary and YAML fields. A source-consistency explanation
+  does not need the whole schema or a viewer.
 
-The graph is the navigation layer for the user's research judgment. Do not edit
-`graph.yaml` just because a structure looks cleaner.
+Opening a repository, receiving a hypothesis or completing an experiment does
+not itself request graph work. If only a report changed and the research route
+did not, no graph update is needed.
 
-Before changing an existing project graph, first present the proposed research
-state change to the user and ask for confirmation unless the user explicitly
-requested that exact graph edit in the current turn.
+## Keep sources and graph consistent
 
-The proposal should name:
+Represent the confirmed source question, claim, evidence relation and boundary.
+Flag an unsupported edge instead of changing the scientific interpretation to
+fit it. Distinguish question hierarchy, logical dependence and shared evidence.
+A graph edge is not evidence by itself.
 
-```text
-which question, claim, evidence, method, output, or task changes
-why the change matters for the research route
-which anchor, summary, detailed report, handoff report, or source supports it
-what would remain uncertain or unrepresented
-```
+Use the smallest set of nodes that need navigation, reuse or tracking. Keep long
+reasoning, quotations, round histories and drafts in Markdown. Link existing
+notes; do not create a document for every node or invent future questions.
 
-After confirmation, make the smallest graph edit that improves navigation. If
-only a Markdown anchor, summary, detailed record, or handoff report changed and the research route
-did not change, do not edit the graph.
+New proposed nodes remain `draft` unless an owning source establishes another
+state. `active`, `blocked` and `done` follow their source meanings; a completed
+task does not close a scientific question. Preserve source uncertainty.
 
-## First Move
+## Complete the requested work
 
-If `graph.yaml` exists, read it before proposing structure changes. Then read only the linked Markdown/source files needed to understand the active question, claims, evidence, methods, and tasks.
-
-If no graph exists, inspect nearby research notes, source files, experiment notes, and task files. Build the smallest useful graph that lets a reader answer:
-
-- What is being investigated?
-- What is currently believed or hypothesized?
-- Why believe, doubt, or test it?
-- What should happen next?
-
-## Three Entry Points
-
-### Explore Current Research
-
-Use this when opening an existing research repo or refreshing context.
-
-1. Identify the root question or active hypothesis.
-2. List active claims, rival explanations, methods, evidence, sources, and next tasks.
-3. Detect gaps: unsupported claims, missing rivals, unclear concepts, weak methods, stale tasks.
-4. Update the graph only when the update improves navigation or analysis.
-
-### Start From A Hypothesis
-
-Use this when the user gives a hypothesis before a graph exists or before the project is well framed.
-
-Create a minimal validation graph:
-
-- a `claim` node for the hypothesis
-- a `question` node it answers
-- one or more rival `claim` nodes when plausible
-- `concept` nodes only for necessary definitions or boundaries
-- `method`, `evidence`, `source`, or `task` nodes only when they need tracking
-
-Do not force every prediction, assumption, or falsifier into the graph. Put local details in the claim or method note unless they need separate links.
-
-### Maintain During Research
-
-Use this after experiments, readings, observations, or analysis updates.
-
-1. Add or update the relevant Markdown note first when there is substantive content.
-2. Link evidence to the exact claim it bears on.
-3. Use `supports` only for genuine support, `contradicts` for negative evidence or rival pressure, and `depends_on` for assumptions.
-4. If evidence changes the research direction, revise the question, boundary, method, or task instead of forcing the old hypothesis to survive.
-
-## Minimal Graph Vocabulary
-
-Prefer the existing Sidecar vocabulary:
-
-| Node type | Use for |
-| --- | --- |
-| `question` | research questions and decomposed subquestions |
-| `claim` | hypotheses, mechanism claims, rival explanations |
-| `concept` | definitions, variables, scope, boundary conditions |
-| `method` | experiments, operationalization, identification strategy |
-| `evidence` | observations, results, patterns, counterexamples |
-| `source` | papers, datasets, documents, external materials |
-| `task` | next research action |
-| `output` | draft conclusions, reports, paper sections |
-
-| Edge kind | Use for |
-| --- | --- |
-| `decomposes` | breaks a question into subquestions |
-| `answers` | a claim answers a question |
-| `operationalizes` | a method makes a claim observable |
-| `supports` | evidence/source supports a claim |
-| `contradicts` | evidence/source/rival weakens a claim |
-| `depends_on` | a claim or method relies on a premise |
-| `cites` | a node uses a source |
-| `leads_to` | a result creates a task or next step |
-
-Use only the edge kinds in this table. Do not invent near-synonyms such as
-`motivates`, `uses`, `contextualizes`, or `informs`; map them to the closest
-allowed kind instead:
-
-- `motivates` -> `leads_to` when a result opens a next question/task; otherwise `supports`
-- `uses` or `contextualizes` -> `cites` when pointing to a source; otherwise `supports`
-- `informs` -> `supports` when it bears on a claim, or `leads_to` when it creates a next step
-
-## YAML Contract
-
-When creating or editing `graph.yaml`, keep it valid, boring YAML. Use two-space indentation, arrays with `-`, no tabs, and quote strings only when they contain characters that could confuse YAML (`:`, `#`, `{}`, `[]`, leading `*`, or multiline text).
-
-Top-level shape:
-
-```yaml
-root: rq.main
-
-ui:
-  layout: LR
-  expanded: [rq.main]
-
-nodes:
-  - id: rq.main
-    title: Core research question
-    type: question
-    summary: One sentence is enough when no note exists yet.
-    status: active
-    tags: [framing]
-
-edges:
-  - from: rq.main
-    to: claim.001
-    kind: answers
-```
-
-Required:
-
-- `root`: id of an existing node.
-- `nodes`: array of node objects.
-- each node: `id`, `title`, `type`.
-- `edges`: array, empty is fine.
-- each edge: `from`, `to`, `kind`; both ids must exist in `nodes`.
-
-Optional node fields:
-
-- `summary`: use for short, one-sentence nodes that do not need a document yet.
-- `file`: one linked Markdown/HTML/text document.
-- `files`: multiple linked documents. Use either strings or `{ path, title }` objects.
-- `status`: `active`, `draft`, `blocked`, or `done`.
-- `tags`: array of short labels.
-
-Valid document-link patterns:
-
-```yaml
-nodes:
-  - id: claim.short
-    title: Short claim
-    type: claim
-    summary: This node is intentionally just one sentence for now.
-
-  - id: evidence.single
-    title: Single note
-    type: evidence
-    file: ./evidence.md
-
-  - id: source.bundle
-    title: Source bundle
-    type: source
-    files:
-      - ./paper.md
-      - path: ./appendix.html
-        title: Appendix preview
-```
-
-Do not force every node to link to a document. Add `file` or `files` only when the longer note exists or when creating the link improves navigation. Missing linked files are allowed while drafting, but they should be intentional and called out in the change report.
-
-## Agent Discipline
-
-Act primarily as an active research assistant: propose subquestions, hypotheses, rival explanations, operationalizations, and next tasks.
-
-Also apply two constraints:
-
-- **Reviewer:** attack weak claims, hidden assumptions, unclear concepts, non-falsifiable hypotheses, and methods that build in their conclusion.
-- **Gatekeeper:** do not present a claim as settled unless it has relevant evidence and plausible rival explanations have been considered.
-
-New agent-created nodes should usually be `status: draft`. Use `active` when the researcher is actually pursuing the node, `blocked` when progress depends on missing material, and `done` only for completed tasks or stable source nodes.
-
-## Keep It Lightweight
-
-Add a graph node only when the item needs to be navigated, connected, reused, challenged, or tracked over time.
-
-Avoid:
-
-- duplicating long Markdown content in `summary`
-- making every sentence a node
-- adding schema fields the current repo does not already use
-- treating the graph as proof by itself
-- hiding uncertainty behind tidy structure
-
-Good graph changes make the current research easier to inspect in under a minute.
-
-## Change Report
-
-When updating the graph, summarize:
-
-- nodes added, changed, or removed
-- important edges added or changed
-- Markdown notes created or updated
-- remaining methodological gaps or next tasks
+For inspection, give the supported finding and any unavailable source. For edits,
+verify the requested relationships, valid ids/types, links and unchanged scientific
+meaning. Report changed nodes/edges, relevant source links and remaining gaps.
+Missing links in a draft must be intentional and named. Do not launch a service,
+publish, or modify other research artifacts merely to complete graph maintenance.
