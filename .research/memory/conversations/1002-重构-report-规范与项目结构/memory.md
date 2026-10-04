@@ -3,7 +3,7 @@
 Conversation name: [System]重构Report用语规范以及工作流
 Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
 Created at: 2026-10-03 14:23:03 UTC
-Latest update at: 2026-10-04 03:36:20 UTC
+Latest update at: 2026-10-04 03:42:25 UTC
 Continues from: none
 Environment: `repo=/data/250010109/Research_System`; `project=/data/250010109/Research_System/Projects/from-attention-to-search`; `exec=/data/250010109/MoE_Router`。本次均可读取。System 与 project 是独立 Git 仓库。
 
@@ -90,3 +90,14 @@ Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
   最终入口检查的精确边界是：61 个工作区入口均可达，60 个已跟踪；diffusion-language-models 的一个既有文献入口未跟踪，该独立仓库无远端，未在此任务初始化提交或建立远端。故全局严格跟踪检查仍报告这一项，不能记为全部通过。其余 47 项测试、技能与载荷检查通过。项目暂存空白检查有 5 处文末空行提示；允许 Markdown 硬换行和文末空行后通过，原件内容保留不动。
 - Next action: 本轮内容修改无待办。恢复时先核对两个既有远端；不要重复推送已完成的项目提交。diffusion 项目的远端、并行报告和其他独立仓库未暂存工作不由本条创建发布状态或科学授权。
 - References: [发布与检查记录](../../../runtime/validation/20261004_language_portability/review.json)、[现行文字规范](../../../../docs/report_writing_cn.md)、[项目导航](../../../../Projects/from-attention-to-search/main/roadmap_cn.md)。运行记录在本地 runtime，Git 提交与远端是发布状态的核验来源。
+
+
+## 2026-10-04 03:42:25 UTC -- 已推送状态及并发暂存范围更正
+
+Processed by: Codex (harness: Codex Desktop; model: gpt-6-astra)
+
+- Summary: 两个远端已通过只读 `ls-remote` 确认收到提交：System `master` 为 `c82da4c29aaba7ff6588cf1cc164b681f05da3e5`，项目 `Xingyu` 为 `0959b841cb82997f8c845b3e871a0d978cf36db4`。当时两仓库均无已暂存、未暂存或非忽略新增文件，HEAD 与各自 upstream 一致。本条仅补记核验事实，随后的 memory 提交不改变规则或研究内容。
+- Supersedes: 上两条中“并行报告未混入此次暂存、仍在工作区”的表述仅反映提交前计划，最终并未成立。共享 Git 索引在范围检查与实际提交之间又加入了另一任务的 17 个报告文件；System 实际提交为 36 个文件，按用户“全部暂存内容”请求一同推送。此处显式更正，未改写旧记录或 Git 历史。
+- Current work: 原定 19 个 System 文件在最终提交中仍与已核验快照逐字节一致。追加的 17 个并行文件已作最终载荷复核：6 份历史快照与原件一致，19 份受保护文档未改，8 份重写阅读文件与该任务核验记录的哈希一致；未发现本轮检查范围内的载荷阻碍。该任务的 `PASS_SOURCE_SCOPE` 只验证来源、链接、格式与身份，不由本对话新增科学判断。diffusion 项目既有入口未跟踪且无远端的边界仍保留。
+- Next action: 本轮内容、memory 与发布工作完成；最终 memory 补记提交号以 Git 为准。后续发布遇到并行任务时，须在推送前复核实际提交文件清单，不能只依据提交前的共享暂存区快照。未来研究仍回到其原件和授权范围。
+- References: [本轮核验与发布记录](../../../runtime/validation/20261004_language_portability/review.json)、[并行最终载荷审计](../../../runtime/validation/20261004_language_portability/root_committed_parallel_audit.json)、[并行任务自身的来源检查](../../../../daily_research_reports/1002/candidates/ntp_representation_update_channels/report_rewrite_20261004.json)。
