@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "Exact restricted analytical counterexample; no LM measurement",
+  "conditional_costs": {
+    "1": [
+      "0",
+      "1",
+      "3"
+    ],
+    "2": [
+      "0",
+      "3",
+      "1"
+    ]
+  },
+  "events": [
+    {
+      "x": 1,
+      "z": -1,
+      "costs": [
+        "0",
+        "-3",
+        "7"
+      ],
+      "policy": "-3",
+      "matched_marginal": "2",
+      "oracle": "-3"
+    },
+    {
+      "x": 1,
+      "z": 1,
+      "costs": [
+        "0",
+        "5",
+        "-1"
+      ],
+      "policy": "5",
+      "matched_marginal": "2",
+      "oracle": "-1"
+    },
+    {
+      "x": 2,
+      "z": -1,
+      "costs": [
+        "0",
+        "-1",
+        "5"
+      ],
+      "policy": "5",
+      "matched_marginal": "2",
+      "oracle": "-1"
+    },
+    {
+      "x": 2,
+      "z": 1,
+      "costs": [
+        "0",
+        "7",
+        "-3"
+      ],
+      "policy": "-3",
+      "matched_marginal": "2",
+      "oracle": "-3"
+    }
+  ],
+  "R_fixed": "0",
+  "R_X": "0",
+  "R_oracle": "-2",
+  "policy_risk": "1",
+  "marginal_risk": "2",
+  "learnable_value": "0",
+  "outcome_only_value": "2",
+  "script_sha256": "13c696570f78cc3886b48d6cfe8d99c53e24ec075a2248ce2bc2180b7469b87e"
+}

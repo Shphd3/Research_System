@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-04T16:39:02.806572+00:00",
+  "agent": "Codex / root",
+  "independence": "Separate readout recomputation; imports no diagnostic/analyzer. Does not refit feature coefficients.",
+  "source_hashes_reverified": 68,
+  "output_hashes_reverified": 14,
+  "whole_record_folds_and_alpha_choices_match": true,
+  "alpha0_and_alpha1_choices_match": true,
+  "cv_rows": 300,
+  "DEV_rows": 600,
+  "selected_rows": 120,
+  "numerical_checks": 12240,
+  "max_abs_error": 3.552713678800501e-15,
+  "selections": [
+    {
+      "model": "dense_33b",
+      "family": "base",
+      "bank": "A",
+      "alpha": 0.0
+    },
+    {
+      "model": "dense_33b",
+      "family": "base",
+      "bank": "B",
+      "alpha": 0.0
+    },
+    {
+      "model": "dense_33b",
+      "family": "base+cx_full",
+      "bank": "A",
+      "alpha": 0.0
+    },
+    {
+      "model": "dense_33b",
+      "family": "base+cx_full",
+      "bank": "B",
+      "alpha": 0.0
+    },
+    {
+      "model": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "bank": "A",
+      "alpha": 0.0
+    },
+    {
+      "model": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "bank": "B",
+      "alpha": 0.0
+    },
+    {
+      "model": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "bank": "A",
+      "alpha": 0.0
+    },
+    {
+      "model": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "bank": "B",
+      "alpha": 0.0
+    },
+    {
+      "model": "sall_unit_weight_33b",
+      "family": "base",
+      "bank": "A",
+      "alpha": 0.1
+    },
+    {
+      "model": "sall_unit_weight_33b",
+      "family": "base",
+      "bank": "B",
+      "alpha": 0.0
+    },
+    {
+      "model": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "bank": "A",
+      "alpha": 0.0
+    },
+    {
+      "model": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "bank": "B",
+      "alpha": 0.0
+    }
+  ],
+  "script_sha256": "3a6c7b9e209b963002738ee5b4b2690f9c72e5ad713f072d514dfaa90bfaa9b2",
+  "limits": "Computational audit adds no independent data, scientific approval, or confirmation."
+}

@@ -1,5 +1,7 @@
 # Sharing, learning and routing: stage-report reading guide
 
+**Later-window entry:** [2026-10-04 understanding update](../../../1004/cognition_update.md) and [daily summary](../../../1004/daily_summary.md). The body preserves the argument and status from before the second window. Later CPU results are in [amplitude checks](router_shrinkage_summary.md) and [within-category controls](probe_33b_group_summary.md); later execution status is in Section 7 of the update.
+
 Updated: 2026-10-04, Asia/Shanghai (UTC+8). [中文](reading_guide_cn.md).
 
 These two days of work pursue one question: **when should texts share learning, when is separate learning worthwhile, and how can routing decide using information available before the target?** The work models update responses, finite action selection, learning from finite samples, and common computation separately, then examines their connections. Predictable local responses do not by themselves establish routing gains. Sharing gains in a conditional model do not by themselves establish gains in natural-text training.
@@ -7,6 +9,10 @@ These two days of work pursue one question: **when should texts share learning, 
 Start with the [current stage report](sharing_routing_report.md). It carries the complete argument; this guide supplies the reading order and source locations. This remains a daily candidate folder. Reading materials do not change researcher-owned scientific judgments or formal record states.
 
 All project-relative paths start at `Research_System/`. The reading directory is `daily_research_reports/1002/candidates/ntp_representation_update_channels/`. Add `_cn` before `.md` to locate each Chinese companion.
+
+This round adds the [33B Summary](probe_33b_summary.md) and [Detailed](probe_33b_detailed.md), owning the four-part result and complete setup/domain/action-use/audit record, plus [17 primary-paper comparisons](sharing_literature_20261004.md) for external methods, information costs and limits. Their project-relative paths are this reading directory followed by `probe_33b_summary.md`, `probe_33b_detailed.md` and `sharing_literature_20261004.md`.
+
+The new panel has been analyzed and reconstructed; the capacity repair passes CPU checks. Exact GPU Smoke and formal trajectories have not run. Sections 5.5–5.6 of the main report own current result/state reading. Historical Pending observations below are no longer current state.
 
 ## 1. Read the current report in full first
 

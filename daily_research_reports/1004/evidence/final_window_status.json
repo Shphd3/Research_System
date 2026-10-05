@@ -1,0 +1,671 @@
+{
+  "observed_at_utc": "2026-10-04T17:51:35.250092+00:00",
+  "window_start_utc": "2026-10-04T15:53:50Z",
+  "window_end_utc": "2026-10-04T17:53:50Z",
+  "gpu_cutoff_utc": "2026-10-04T17:48:00Z",
+  "checkpoint_grace_seconds": 90,
+  "scientific_judgment": "Unknown",
+  "question_state": "OPEN",
+  "formal_completion_target_updates": 4608,
+  "valid_tokens_per_update": 8192,
+  "diagnostics": {
+    "router_shrinkage_20261004": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/receipt.json",
+      "sha256": "791492c453f07390424a1c79b9b4d6948e0aa555431be3a522bd1123a56aad44",
+      "value": {
+        "status": "COMPLETE_EXPLORATORY_SHRINKAGE_DIAGNOSTIC",
+        "completed_at_utc": "2026-10-04T16:34:54.356141+00:00",
+        "elapsed_seconds": 70.57624249719083,
+        "recipe": {
+          "version": 1,
+          "models": [
+            "dense_33b",
+            "s7_fresh_lambda0p1_33b",
+            "sall_unit_weight_33b"
+          ],
+          "families": [
+            "base",
+            "base+cx_full"
+          ],
+          "feature_dimensions": {
+            "base": 389,
+            "base+cx_full": 3461
+          },
+          "actions": "fixed_five only; common included, no rejection",
+          "alphas": [
+            0.0,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "folds": 4,
+          "fold_seed": 1004,
+          "fold_assignment": "FIT whole records; categories sorted; record_id sorted within category; one numpy Generator(1004) shuffles each category sequentially; index modulo 4 assigns fold; all16 events together",
+          "fit": "Original ridge_fit_predict(raw_features, FIT_labels, trainfold_mask, regularization=10); trainfold mean/std and label intercept only; ten independent A/B outputs in one solve",
+          "scores": "mu_trainfold + alpha*(fold_prediction-mu_trainfold); alpha1 returns prediction directly; alpha0 broadcasts trainfold means",
+          "selection": "Lowest pooled OOF FIT actual mean finite deltaCE; exact ties use smaller alpha; separate model/family/source-bank; selected alpha shared across evaluation banks",
+          "final": "Original allFIT frozen prediction and allFIT mean; freeze every alpha choice and selected alpha for every model before DEV scoring",
+          "readout": "All alpha same/cross source pooled and four domains; paired gains versus alpha1 and alpha0; reuse original bootstrap_freeze 2000 category-stratified whole-record draws without refitting",
+          "priorDEVexposed": true,
+          "OOF_selected_mean_unbiased": false,
+          "inference": "Post-hoc exploratory DEV, conditional on sources, fits, alpha selection and panel; no new confirmation and no multiplicity correction",
+          "cpu_threads": 8,
+          "max_wall_seconds": 1800,
+          "LM_forwards": 0,
+          "GPU_jobs": 0
+        },
+        "registration_sha256": "e4fd6ee226988e6a1d9b9c2e2eccf57377bb05ed0fe9cb9407c01933929afd17",
+        "selection_freeze_sha256": "4238e426921fa61827aaa79ebd81e5438f8a55b1fa63e8c97c9b35c85720de41",
+        "tests": {
+          "endpoint_identity": true,
+          "whole_record_fold_balance": true,
+          "heldout_labels_do_not_affect_fold_fit": true,
+          "heldout_features_do_not_affect_trainfold_scaling": true,
+          "exact_alpha_tie_uses_smallest": true,
+          "duplicate_record_ids_rejected": true,
+          "unique_mean_best_switch_sets_nested": true,
+          "real_arrays_loaded": false
+        },
+        "evaluation_rows": 600,
+        "selected_rows": 120,
+        "alpha1_original_mean_and_CI_max_abs_error": 8.673617379884035e-19,
+        "switch_identity_max_abs_error": 1.0842021724855044e-19,
+        "all_source_bytes_reverified": true,
+        "output_sha256": {
+          "OOF__dense_33b__base.npz": "ecff928841ecb26bb193fec340f588a633a0a48be6bf40c0a551d2b2cce906b0",
+          "OOF__dense_33b__base__cx_full.npz": "b023a14310daa8976cd74dfbd8134f209e4e53f075da56d9159a313867788d04",
+          "OOF__s7_fresh_lambda0p1_33b__base.npz": "66ad93b93f0bbc15cd2dcb275d33fa5ce5b38a4e7942d9ef673a38e44636b317",
+          "OOF__s7_fresh_lambda0p1_33b__base__cx_full.npz": "a342a500acc2242f223959b26698c1ee59c07f92e66961a8315bfccad0fde05f",
+          "OOF__sall_unit_weight_33b__base.npz": "18bd3109f27653157f2ad2b420860d7d707a18ab1361ec4f0ef89dfe2080418e",
+          "OOF__sall_unit_weight_33b__base__cx_full.npz": "f613195b5b4a280c829cc2472c175164f36b3b41f35d49a1dc8eb72f3cf56676",
+          "cv_table.csv": "4ecdf8e20c26f38e3b21d15fb85eb62d0254d6217be44967eb9f5fb8d15eef78",
+          "evaluation_all_alpha.csv": "c8c4ed249449eff3ccb2233e5888f7b7e1f020fba503a95474b1223af436bcf3",
+          "evaluation_selected_alpha.csv": "023b8455d7eda05751a268f3e4ec7128075a951cbbdfe16a1a9785e275de5c08",
+          "fold_assignment.csv": "26ec922677d2901868796d0b5804a415403973561a93c2c55d0835bbb1f168a3",
+          "fold_assignment.npz": "794aefaec08d37f36191899abfd4c97d98eead552d872c5ee65aae71a34aad54",
+          "registration.json": "e4fd6ee226988e6a1d9b9c2e2eccf57377bb05ed0fe9cb9407c01933929afd17",
+          "selection_freeze.json": "4238e426921fa61827aaa79ebd81e5438f8a55b1fa63e8c97c9b35c85720de41",
+          "selection_freeze.npz": "75c8eef49f7660fc0dd4bb4b4e9374ae5c01fe56ed5f4f4aae24a485dfbe20fe"
+        },
+        "scientific_judgment": "Unknown",
+        "priorDEVexposed": true
+      }
+    },
+    "probe_33b_group_decomposition_20261004": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_group_decomposition_20261004/receipt.json",
+      "sha256": "7af84ae3944f4eaaf37af75fe71f3d6e28c65d237d11757c70be361394d4f24c",
+      "value": {
+        "status": "COMPLETE_EXPLORATORY_33B_GROUP_DECOMPOSITION",
+        "completed_at_utc": "2026-10-04T16:49:13.100993+00:00",
+        "elapsed_seconds": 28.546233903616667,
+        "code_sha256": "708e8319d1cdcc425fc27031d5c9f4e6c66ee719e553bacc4cfcebdd48bf0c4c",
+        "helper_sha256": "3251c2077c47c6e1adb34a6717597076916960de0a8f45f04f21307b5d4fbf1a",
+        "registration_sha256": "607b288da930cf2b8370d5819bf936d72099287a42ef9856c3323474da2ad7b2",
+        "input_sha256": {
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/probe_33b_group_decomposition_20261004.py": "708e8319d1cdcc425fc27031d5c9f4e6c66ee719e553bacc4cfcebdd48bf0c4c",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_policy_group_decomposition.py": "3251c2077c47c6e1adb34a6717597076916960de0a8f45f04f21307b5d4fbf1a",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/data/probe_33b/panel.npz": "0b637001d81f5ac0f5a203d1c55578bef7cf106b41b5e8cb68c0126f331c86ed",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/effects.npz": "ec02a5ce8fc14cb6bddeddf78051c6ece18a8194bc2876b4da06d440656d08bf",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/analysis_registration.json": "dcafd468834bc7e00afb5e627b530d575f36d6d09cbeacb84460a715ac2ee36c",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.json": "3da54a86e3434116ef0353c4ca6121801d1bc4dabdb7083c232fd5814f0f5c8f",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.npz": "1004e5c3ee4011a2d7dd1095de10ee787f7ab23a3dc6ee3c6d4b8ddb5963bc39",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/bootstrap_freeze.npz": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.csv": "01776ec8bb559bf551dba49df3ccccb8a6f81b293804112b5fc9b08368e53a7b",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/effects.npz": "31e3d56f468449ce502f0dae30c071f4c80358becf3dea2f45fd803bf549a9b6",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/analysis_registration.json": "1e7c744e2e97814b8babd6bac53669a98d70f7e8fa7b2ed3365b63e490085f34",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.json": "1ad9b762ab9ac102e180fdfad6cbe95cb6d7f4a62cb25901afcab726af094b24",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.npz": "96d2476d899dd95c8b2b9bd5be3385f77b30164951df81c6c22891b97c137b01",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/bootstrap_freeze.npz": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.csv": "4b2757e6dfe0305cab5d5dc80efc2b1484797e55c24c990f12dc60ff2d2cebf9",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/effects.npz": "dcc4582c301f5c086c4c826d6417f4aa31854e4914cc63b414e083890b795658",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/analysis_registration.json": "1d76a05a66345260ca038e10b9bff3fbdb2bbc5013bb60cba31a431f4b67a48e",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.json": "303959d2169132c6c94c30c4864e3bdd6e681efde86f0b41e56d1449a51a5602",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.npz": "35d4b8278c3c0f2d68abf38eb9240885c7396aeb86358bf4249b77378016883c",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/bootstrap_freeze.npz": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+          "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.csv": "c729e99328f155bc739a3a76fd8a68062e939b556afb4379f3d178d792bb0d7c"
+        },
+        "output_sha256": {
+          "registration.json": "607b288da930cf2b8370d5819bf936d72099287a42ef9856c3323474da2ad7b2",
+          "synthetic_guards.json": "29d478eaa6154163b81a25ae3c6438f33b98211c8321ec2ef431763a3055ff8b",
+          "group_frequency_freeze.json": "23381d71e5126e6cf644d660257bb046b653a7cedfc043e38831d5c020e8f108",
+          "group_frequency_freeze.npz": "656dcc03f2662e528bf9427f4ee2413f2e56718cd54af0e1e355a8cf6161e3dc",
+          "bootstrap_freeze.npz": "d42baad1e1fd9f9ae7a669aa38557a02ec6245bb486a26d876be25c5b3937ac1",
+          "record_results.npz": "7f89769b2747256dbd22e74b57f7e47dd202b435a8671f6f84293d6d43d096a6",
+          "bootstrap_draws.npz": "f7861da8274188ae821193a178a2e9d29c213797355d18b69ddb91c39e9d2280",
+          "summary.json": "d0735091f93f56b70cc71e60d8d186aabc3825925b5100bc1970de1482c694bf",
+          "summary.csv": "bc0a5e17084c06bacacdaf8f4e19591e1cc9989ba7baad0035ec070b283f1eff"
+        },
+        "protected_inputs_unchanged": true,
+        "bootstrap_matches_original_exactly": true,
+        "all_group_frequencies_frozen_before_any_effect_array_read": true,
+        "policies": 92,
+        "conditions": 184,
+        "bootstrap_draws": 2000,
+        "first_effect_array_read_at_utc": "2026-10-04T16:48:47.018714+00:00",
+        "summary_rows": 184,
+        "maximum_original_metric_or_interval_error": 4.336808689942018e-19,
+        "maximum_decomposition_error": 2.168404344971009e-18,
+        "recipe": {
+          "version": 1,
+          "models": [
+            "dense_33b",
+            "s7_fresh_lambda0p1_33b",
+            "sall_unit_weight_33b"
+          ],
+          "family_counts": [
+            7,
+            8,
+            8
+          ],
+          "policies": 92,
+          "conditions": 184,
+          "scopes": [
+            "pooled"
+          ],
+          "action_sets": [
+            "fixed_five",
+            "no_update_plus_five"
+          ],
+          "evaluation_role": "readout",
+          "selection": "Reuse all original frozen choices and FIT-fixed action indices without modification; no fitting, policy selection, threshold or hyperparameter search.",
+          "controls": "For global/domain/category groups, average each action finite delta CE weighted by the original policy action frequencies within that same group; weight groups by their event counts.",
+          "identities": [
+            "gain_global = domain_matching_component + within_domain_gain",
+            "gain_global = category_matching_component + within_category_gain",
+            "category_matching_component = domain_matching_component + domain_to_category_component"
+          ],
+          "bootstrap": "Original model-specific 2000 category-stratified paired whole-record count matrices; all 16 positions stay together; reestimate frequencies and action means in each draw. No refitting or new selection.",
+          "timeline": "Protect historical hashes; freeze all 92 policy group frequencies using choices and metadata before loading any effect array values; score all 184 conditions; recheck hashes.",
+          "priorDEVexposed": true,
+          "evidence_role": "POSTHOC_EXPLORATORY_EXPOSED_DEV",
+          "inference_boundary": "Conditional on the original checkpoints, banks, fits and panel; pointwise percentile intervals with no multiplicity correction. Conditions and model panels are dependent. Group labels are explanatory, not deployable routing inputs. A residual spanning zero is not equivalence or proof of composition-only utility.",
+          "CPU_threads": 8,
+          "max_wall_seconds": 600,
+          "LM_loads": 0,
+          "LM_forwards": 0,
+          "optimizer_updates": 0,
+          "remote_jobs": 0,
+          "scientific_judgment": "Unknown",
+          "practical_effect_threshold": "Unknown"
+        },
+        "processes_spawned": 0,
+        "priorDEVexposed": true,
+        "scientific_judgment": "Unknown"
+      }
+    }
+  },
+  "jobs": {
+    "pt-scl8ek3y": {
+      "job_id": "pt-scl8ek3y",
+      "platform_evidence": {
+        "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/second_window_20261004/final_platform/pt-scl8ek3y.json",
+        "sha256": "a0a11b0cfba948a555cbbc45ce7abf0b7989cb0f205012ba91e0aac049fdb563",
+        "value": {
+          "async_checkpoint": {
+            "max_ckpt_rounds": 0
+          },
+          "complete_time": "2026-10-04T17:14:49Z",
+          "create_time": "2026-10-04T16:10:03Z",
+          "display_name": "common-capacity-1004-4gpu-staged",
+          "env": [],
+          "fault_tolerance": {
+            "backoff_limit": 0,
+            "rules": []
+          },
+          "fine_tuning_specs": "",
+          "framework": "PYTORCH",
+          "id": "/subscriptions/0197ee17-b6eb-7846-b2b4-a77c5f509b92/resourceGroups/default/zones/cn-sh-01z/workspaces/share-space/trainingJobs/pt-scl8ek3y",
+          "lme": {
+            "current_retries": 0,
+            "enable_checker": false,
+            "enable_health_monitor": false,
+            "enable_warmingup": false,
+            "max_retries": 0
+          },
+          "metadata": null,
+          "mount": [
+            {
+              "access_mode": "VOLUME_ACCESS_MODE_UNSPECIFIED",
+              "endpoint": "",
+              "id": "01995892-d478-76d8-aec7-13fd8284477e",
+              "metadata": null,
+              "mount_options": "",
+              "mount_path": "/data",
+              "name": "",
+              "region": "",
+              "subdir": "",
+              "type": "PV_AFS",
+              "zone": "cn-sh-01g"
+            }
+          ],
+          "name": "pt-scl8ek3y",
+          "ownership": {
+            "requestor_id": "",
+            "tenant_id": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+            "user_id": "019952d2-3447-7608-a4a9-a943eb912b73",
+            "user_name": "250010109"
+          },
+          "resource_group_name": "default",
+          "resource_pool": {
+            "display_name": "computing_cluster_5090_01g",
+            "name": "computing-cluster-5090-01g",
+            "vpc_id": "0198a254-1d71-7211-9a41-d5783abfe9aa",
+            "zone": "cn-sh-01g"
+          },
+          "roles": [
+            {
+              "image_path": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+              "name": "Worker",
+              "resource_spec": [
+                {
+                  "description": "4Xn12lp-32GB",
+                  "limits": {
+                    "cpu": "56",
+                    "device": "4",
+                    "memory": "240",
+                    "nvidia.com/gpu": "4"
+                  },
+                  "name": "n12lp.nn.i10a.4",
+                  "replicas": 1,
+                  "requests": {
+                    "cpu": "56",
+                    "device": "4",
+                    "memory": "240",
+                    "nvidia.com/gpu": "4"
+                  }
+                }
+              ],
+              "startup_script": "set -euo pipefail; cd /data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity; export RESOURCE_PROFILE=5090-4-spot; export IMAGE_ID=shphd-lite-0911; export IMAGE_URL=registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423; mkdir -p /data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/pod; POD_LOG=/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/pod/common-capacity-1004-4gpu-staged-$(date -u +%Y%m%dT%H%M%SZ).log; echo \"[env] profile=5090-4-spot image=shphd-lite-0911 host=$(hostname)\" | tee \"$POD_LOG\"; { bash scripts/run_second_window_4gpu_20261004.sh ; } 2>&1 | tee -a \"$POD_LOG\"; echo \"[pod] full output: $POD_LOG\"",
+              "total_replicas": 1
+            }
+          ],
+          "root_mapping": false,
+          "scheduling": {
+            "priority": "NORMAL",
+            "quota_type": "SPOT",
+            "scoring_strategy": {
+              "type": "LEAST_ALLOCATED"
+            }
+          },
+          "ssh": {
+            "auto_key_setup": false,
+            "config_mount_path": ""
+          },
+          "start_time": "2026-10-04T17:07:43Z",
+          "state": "FAILED",
+          "subscription_name": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+          "tensorboard": {
+            "log_path": ""
+          },
+          "uid": "c09666699e694ee4ade32f692f6f8799",
+          "update_time": "2026-10-04T17:15:50.882458Z",
+          "workspace_name": "share-space",
+          "zone": "cn-sh-01z"
+        }
+      },
+      "platform_state": "FAILED",
+      "platform_complete_time": "2026-10-04T17:14:49Z",
+      "runtime_exists": true,
+      "qualification": {
+        "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/runtime/qualification.json",
+        "sha256": "c1ab8cc57618ae222bba1a1613f64717c494a124cab0d096d6cb977963a86ba2",
+        "value": {
+          "at_utc": "2026-10-04T17:14:44.275393+00:00",
+          "error": "RuntimeError: One or both Smoke processes failed or deadline reached",
+          "execution_freeze_sha256": "62511426437b2f6849a0c4ee91e76fe755189079373a4c471e6f2442f69f444f",
+          "formal_trajectories_started_at_qualification": 0,
+          "hardware_preflight": {
+            "exit_code": 0,
+            "finished_at": "2026-10-04T17:08:31.085981+00:00",
+            "label": "hardware_preflight",
+            "log": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/runtime/001.hardware_preflight.log",
+            "pid": 78,
+            "started_at": "2026-10-04T17:08:10.065024+00:00"
+          },
+          "per_condition_data_parallel_world_size": 1,
+          "processes": [
+            {
+              "exit_code": 0,
+              "finished_at": "2026-10-04T17:14:44.275209+00:00",
+              "label": "smoke_seed1003",
+              "log": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/runtime/002.smoke_seed1003.log",
+              "pid": 89,
+              "started_at": "2026-10-04T17:08:46.906187+00:00"
+            },
+            {
+              "exit_code": 1,
+              "finished_at": "2026-10-04T17:14:44.275379+00:00",
+              "label": "smoke_seed1004",
+              "log": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/runtime/003.smoke_seed1004.log",
+              "pid": 90,
+              "started_at": "2026-10-04T17:08:46.916119+00:00"
+            }
+          ],
+          "reports": {},
+          "resource_profile": "5090-4-spot",
+          "scientific_judgment": "Unknown",
+          "status": "FAILED_GPU_SMOKE",
+          "training_freeze_sha256": "72a604a09238323f0e5141f450ec82495968c40d28371d52b0f6cae6438f7bfd",
+          "visible_gpu_count": 4
+        }
+      },
+      "entry_result": {
+        "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/runtime/entry_result.json",
+        "sha256": "15774828cd0c0852cd82d3352dc280b95c96942e7ee64f8205a9482628627375",
+        "value": {
+          "at_utc": "2026-10-04T17:14:44.536630+00:00",
+          "deadline_utc": "2026-10-04T17:48:00Z",
+          "error": "RuntimeError: One or both Smoke processes failed or deadline reached",
+          "scientific_judgment": "Unknown",
+          "status": "FAILED_OR_INTERRUPTED",
+          "stop_reason": null,
+          "traceback": "Traceback (most recent call last):\n  File \"/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/run_second_window_conditions_20261004.py\", line 488, in main\n    qualification = qualify(controller, freeze)\n  File \"/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/run_second_window_conditions_20261004.py\", line 290, in qualify\n    raise RuntimeError('One or both Smoke processes failed or deadline reached')\nRuntimeError: One or both Smoke processes failed or deadline reached\n"
+        }
+      },
+      "scheduler": null,
+      "seeds": {
+        "1003": {
+          "status": "PASS",
+          "tiny_cpu": false,
+          "source": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/runtime/smoke/seed1003/smoke_result.json",
+          "sha256": "229f9bbb66d34a3d9ae82e7f82291fd7c2ff2afdfd20da12c569fe15da2920ea",
+          "arms": 6,
+          "resume_checks_passed": 42,
+          "resume_checks_total": 42,
+          "initial_function": {
+            "atol": 1e-06,
+            "configured_precision_hidden_max_abs_error": 0.01990485191345215,
+            "configured_precision_mean_ce_difference": -9.5367431640625e-07,
+            "fp32_hidden_max_abs_error": 1.430511474609375e-06,
+            "fp32_match": true,
+            "rtol": 1e-05
+          }
+        },
+        "1004": {
+          "status": "NO_COMPLETION_RECEIPT"
+        }
+      }
+    },
+    "pt-c44kwvx3": {
+      "job_id": "pt-c44kwvx3",
+      "platform_evidence": {
+        "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/second_window_20261004/final_platform/pt-c44kwvx3.json",
+        "sha256": "116518fb602d289f5085665974841d81a4b9a5f63702e13a70d8db98bad0a774",
+        "value": {
+          "async_checkpoint": {
+            "max_ckpt_rounds": 0
+          },
+          "create_time": "2026-10-04T17:23:54Z",
+          "display_name": "common-capacity-1004-4gpu-recovery",
+          "env": [],
+          "fault_tolerance": {
+            "backoff_limit": 0,
+            "rules": []
+          },
+          "fine_tuning_specs": "",
+          "framework": "PYTORCH",
+          "id": "/subscriptions/0197ee17-b6eb-7846-b2b4-a77c5f509b92/resourceGroups/default/zones/cn-sh-01z/workspaces/share-space/trainingJobs/pt-c44kwvx3",
+          "lme": {
+            "current_retries": 0,
+            "enable_checker": false,
+            "enable_health_monitor": false,
+            "enable_warmingup": false,
+            "max_retries": 0
+          },
+          "metadata": null,
+          "mount": [
+            {
+              "access_mode": "VOLUME_ACCESS_MODE_UNSPECIFIED",
+              "endpoint": "",
+              "id": "01995892-d478-76d8-aec7-13fd8284477e",
+              "metadata": null,
+              "mount_options": "",
+              "mount_path": "/data",
+              "name": "",
+              "region": "",
+              "subdir": "",
+              "type": "PV_AFS",
+              "zone": "cn-sh-01g"
+            }
+          ],
+          "name": "pt-c44kwvx3",
+          "ownership": {
+            "requestor_id": "",
+            "tenant_id": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+            "user_id": "019952d2-3447-7608-a4a9-a943eb912b73",
+            "user_name": "250010109"
+          },
+          "resource_group_name": "default",
+          "resource_pool": {
+            "display_name": "computing_cluster_5090_01g",
+            "name": "computing-cluster-5090-01g",
+            "vpc_id": "0198a254-1d71-7211-9a41-d5783abfe9aa",
+            "zone": "cn-sh-01g"
+          },
+          "roles": [
+            {
+              "image_path": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+              "name": "Worker",
+              "resource_spec": [
+                {
+                  "description": "4Xn12lp-32GB",
+                  "limits": {
+                    "cpu": "56",
+                    "device": "4",
+                    "memory": "240",
+                    "nvidia.com/gpu": "4"
+                  },
+                  "name": "n12lp.nn.i10a.4",
+                  "replicas": 0,
+                  "requests": {
+                    "cpu": "56",
+                    "device": "4",
+                    "memory": "240",
+                    "nvidia.com/gpu": "4"
+                  }
+                }
+              ],
+              "startup_script": "set -euo pipefail; cd /data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity; export RESOURCE_PROFILE=5090-4-spot; export IMAGE_ID=shphd-lite-0911; export IMAGE_URL=registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423; mkdir -p /data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/initial_equivalence_recovery_20261004/pod; POD_LOG=/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/initial_equivalence_recovery_20261004/pod/common-capacity-1004-4gpu-recovery-$(date -u +%Y%m%dT%H%M%SZ).log; echo \"[env] profile=5090-4-spot image=shphd-lite-0911 host=$(hostname)\" | tee \"$POD_LOG\"; { bash scripts/run_initial_equivalence_recovery_20261004.sh ; } 2>&1 | tee -a \"$POD_LOG\"; echo \"[pod] full output: $POD_LOG\"",
+              "total_replicas": 1
+            }
+          ],
+          "root_mapping": false,
+          "scheduling": {
+            "priority": "NORMAL",
+            "quota_type": "SPOT",
+            "scoring_strategy": {
+              "type": "LEAST_ALLOCATED"
+            }
+          },
+          "ssh": {
+            "auto_key_setup": false,
+            "config_mount_path": ""
+          },
+          "state": "SUSPENDED",
+          "subscription_name": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+          "suspend_time": "2026-10-04T17:48:26Z",
+          "tensorboard": {
+            "log_path": ""
+          },
+          "uid": "31ccce3922224809936fc14b19f60fd6",
+          "update_time": "2026-10-04T17:48:26.071767Z",
+          "workspace_name": "share-space",
+          "zone": "cn-sh-01z"
+        }
+      },
+      "platform_state": "SUSPENDED",
+      "platform_complete_time": null,
+      "runtime_exists": false,
+      "qualification": null,
+      "entry_result": null,
+      "scheduler": null,
+      "seeds": {
+        "1003": {
+          "status": "NO_COMPLETION_RECEIPT"
+        },
+        "1004": {
+          "status": "NO_COMPLETION_RECEIPT"
+        }
+      }
+    }
+  },
+  "formal_runs": [
+    {
+      "condition": "common_parallel_s1003",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "common_parallel_s1004",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "common_serial_s1003",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "common_serial_s1004",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "private_active_s1003",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "private_active_s1004",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "dense_total_s1003",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "dense_total_s1004",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "private_total_s1003",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "private_total_s1004",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "dense_active_s1003",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    },
+    {
+      "condition": "dense_active_s1004",
+      "run_exists": false,
+      "observed_updates": 0,
+      "observed_valid_tokens": 0,
+      "metric_rows": 0,
+      "status": "NOT_RUN",
+      "receipt": null,
+      "latest_checkpoint": null,
+      "endpoint_verified": false
+    }
+  ],
+  "cutoff_control": {
+    "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/second_window_20261004/final_platform/cutoff_action.json",
+    "sha256": "d7a6f197768f19327c1e7094085e5501256f8fac8aa4672bbaccd84b5fb3c501",
+    "value": {
+      "at_utc": "2026-10-04T17:48:21.956487+00:00",
+      "job_id": "pt-c44kwvx3",
+      "reason": "authorized bounded GPU cutoff reached",
+      "state_before": "STARTING",
+      "runtime_exists": false,
+      "action": "STOP_OWN_PENDING_JOB_AT_WINDOW_CUTOFF",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "time=\"2026-10-04T17:48:22Z\" level=info msg=\"successfully stop job: [pt-c44kwvx3]\"\n"
+    }
+  },
+  "formal_runs_with_any_progress": 0,
+  "verified_complete_endpoints": 0,
+  "formal_observed_valid_tokens_total": 0,
+  "analysis_endpoint_boundary": "Only complete registered 4608-update endpoints permit final arm ranking or frozen endpoint mechanisms; partial/Smoke progress does not.",
+  "collector_sha256": "4a471fbffe6b3e6f564943e7ae73825e03a41adc9650b255ea7914e6c6608a64"
+}

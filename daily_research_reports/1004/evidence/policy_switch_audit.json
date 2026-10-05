@@ -1,0 +1,901 @@
+{
+  "created_at_utc": "2026-10-04T16:18:08.370437+00:00",
+  "processing_agent": "Codex / daily_summary_1004",
+  "role": "Read-only post-hoc accounting of existing frozen policies; no fit, new threshold, bootstrap, LM forward or training.",
+  "unit": "nats per selected prediction event; probabilities are descriptive event fractions",
+  "ties": "Exact stored floating-point equality; no resolution threshold chosen.",
+  "prediction": "Source-bank frozen fitted prediction used to make the choice. Cross-source keeps this choice and scores the other bank.",
+  "sampling": "1024 DEV records per model, 16 events per record; no new event-independent inference.",
+  "existing_intervals": "Original category-stratified whole-record paired bootstrap conditional 95% intervals; no multiplicity correction.",
+  "checks": {
+    "mean_vs_original_summary_max_abs_error": 6.071532165918825e-18,
+    "switch_product_max_abs_error": 5.421010862427522e-20,
+    "improve_worsen_decomposition_max_abs_error": 1.1384122811097797e-18,
+    "gain_event_vector_max_abs_error": 0.0,
+    "oracle_vs_original_summary_max_abs_error": 1.8214596497756474e-17,
+    "fit_action_means_vs_freeze_max_abs_error": 0.0,
+    "frozen_argmin_mismatches": 0,
+    "policies": 92,
+    "conditions": 184
+  },
+  "by_case": {
+    "within_source": {
+      "conditions": 92,
+      "negative_gain_point_estimates": 92,
+      "existing_gain_ci_entirely_negative": 92,
+      "predicted_switch_gain_positive_actual_negative": 92,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.74365234375,
+          0.87298583984375
+        ],
+        "switch_actual_improve_probability": [
+          0.47809427414690575,
+          0.5178090865917366
+        ],
+        "switch_actual_worsen_probability": [
+          0.4821909134082634,
+          0.5219057258530942
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.003708932577969175,
+          0.00682530277622812
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.004014768802972875,
+          0.008241880396617166
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.0014670368044876806,
+          0.012183646366085814
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0009311640417707266,
+          -0.0001353688175794994
+        ],
+        "switch_mean_actual_cost": [
+          0.0001353688175794994,
+          0.0009311640417707266
+        ],
+        "switch_mean_optimism_gap": [
+          0.0018192091013496054,
+          0.012915777410637897
+        ],
+        "net_cost_vs_common": [
+          0.00010216280696841493,
+          0.0007919782056930588
+        ],
+        "oracle_gain_over_common": [
+          0.004764120617138463,
+          0.008347024694703498
+        ],
+        "oracle_strictly_better_probability": [
+          0.88958740234375,
+          0.91021728515625
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "cross_source": {
+      "conditions": 92,
+      "negative_gain_point_estimates": 92,
+      "existing_gain_ci_entirely_negative": 92,
+      "predicted_switch_gain_positive_actual_negative": 92,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.74365234375,
+          0.87298583984375
+        ],
+        "switch_actual_improve_probability": [
+          0.4759540360334799,
+          0.5045893719806763
+        ],
+        "switch_actual_worsen_probability": [
+          0.4954106280193237,
+          0.52404596396652
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.0037296963301637264,
+          0.006592076020364546
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.004151360461978002,
+          0.008278249146810445
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.0014670368044876806,
+          0.012183646366085814
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0009735009414036568,
+          -0.0002478273924698
+        ],
+        "switch_mean_actual_cost": [
+          0.0002478273924698,
+          0.0009735009414036568
+        ],
+        "switch_mean_optimism_gap": [
+          0.001953290150451963,
+          0.01315714730748947
+        ],
+        "net_cost_vs_common": [
+          0.00019192101780131973,
+          0.0008073094049591971
+        ],
+        "oracle_gain_over_common": [
+          0.004764120617138463,
+          0.008347024694703498
+        ],
+        "oracle_strictly_better_probability": [
+          0.88958740234375,
+          0.91021728515625
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "by_model_case": {
+    "dense_33b/within_source": {
+      "conditions": 28,
+      "negative_gain_point_estimates": 28,
+      "existing_gain_ci_entirely_negative": 28,
+      "predicted_switch_gain_positive_actual_negative": 28,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.75457763671875,
+          0.87298583984375
+        ],
+        "switch_actual_improve_probability": [
+          0.4874171127266917,
+          0.5031471595888773
+        ],
+        "switch_actual_worsen_probability": [
+          0.4968528404111226,
+          0.5125828872733083
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.003708932577969175,
+          0.003938628465991417
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.004014768802972875,
+          0.00464809440028261
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.0014670368044876806,
+          0.006835481081373967
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0004962534390983851,
+          -0.0001353688175794994
+        ],
+        "switch_mean_actual_cost": [
+          0.0001353688175794994,
+          0.0004962534390983851
+        ],
+        "switch_mean_optimism_gap": [
+          0.0018192091013496054,
+          0.007329738269031224
+        ],
+        "net_cost_vs_common": [
+          0.00010216280696841493,
+          0.0004314795260657809
+        ],
+        "oracle_gain_over_common": [
+          0.004764120617138463,
+          0.004952092715199939
+        ],
+        "oracle_strictly_better_probability": [
+          0.9078369140625,
+          0.91021728515625
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "dense_33b/cross_source": {
+      "conditions": 28,
+      "negative_gain_point_estimates": 28,
+      "existing_gain_ci_entirely_negative": 28,
+      "predicted_switch_gain_positive_actual_negative": 28,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.75457763671875,
+          0.87298583984375
+        ],
+        "switch_actual_improve_probability": [
+          0.48259991925716594,
+          0.49395193378959096
+        ],
+        "switch_actual_worsen_probability": [
+          0.506048066210409,
+          0.5174000807428341
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.0037296963301637264,
+          0.003905555898169178
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.004151360461978002,
+          0.004699353213488035
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.0014670368044876806,
+          0.006835481081373967
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0005782927890864711,
+          -0.00026263911543995225
+        ],
+        "switch_mean_actual_cost": [
+          0.00026263911543995225,
+          0.0005782927890864711
+        ],
+        "switch_mean_optimism_gap": [
+          0.001953290150451963,
+          0.0074137738704604375
+        ],
+        "net_cost_vs_common": [
+          0.0001982136634774786,
+          0.0005048414161562375
+        ],
+        "oracle_gain_over_common": [
+          0.004764120617138463,
+          0.004952092715199939
+        ],
+        "oracle_strictly_better_probability": [
+          0.9078369140625,
+          0.91021728515625
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "s7_fresh_lambda0p1_33b/within_source": {
+      "conditions": 32,
+      "negative_gain_point_estimates": 32,
+      "existing_gain_ci_entirely_negative": 32,
+      "predicted_switch_gain_positive_actual_negative": 32,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.74365234375,
+          0.85052490234375
+        ],
+        "switch_actual_improve_probability": [
+          0.48752462245567957,
+          0.5178090865917366
+        ],
+        "switch_actual_worsen_probability": [
+          0.4821909134082634,
+          0.5124753775443204
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.005979807591139135,
+          0.00682530277622812
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.007132467036047078,
+          0.008241880396617166
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.002416020868532299,
+          0.012183646366085814
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0009311640417707266,
+          -0.0001883160943254149
+        ],
+        "switch_mean_actual_cost": [
+          0.0001883160943254149,
+          0.0009311640417707266
+        ],
+        "switch_mean_optimism_gap": [
+          0.0031183767556904494,
+          0.012915777410637897
+        ],
+        "net_cost_vs_common": [
+          0.0001452139609196345,
+          0.0007919782056930588
+        ],
+        "oracle_gain_over_common": [
+          0.007898082957938105,
+          0.008347024694703498
+        ],
+        "oracle_strictly_better_probability": [
+          0.88958740234375,
+          0.9071044921875
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "s7_fresh_lambda0p1_33b/cross_source": {
+      "conditions": 32,
+      "negative_gain_point_estimates": 32,
+      "existing_gain_ci_entirely_negative": 32,
+      "predicted_switch_gain_positive_actual_negative": 32,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.74365234375,
+          0.85052490234375
+        ],
+        "switch_actual_improve_probability": [
+          0.4865397242284964,
+          0.5045893719806763
+        ],
+        "switch_actual_worsen_probability": [
+          0.4954106280193237,
+          0.5134602757715037
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.006046433339970048,
+          0.006592076020364546
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.007321414470666249,
+          0.008278249146810445
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.002416020868532299,
+          0.012183646366085814
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0009735009414036568,
+          -0.00045571338028082306
+        ],
+        "switch_mean_actual_cost": [
+          0.00045571338028082306,
+          0.0009735009414036568
+        ],
+        "switch_mean_optimism_gap": [
+          0.0032942260135645053,
+          0.01315714730748947
+        ],
+        "net_cost_vs_common": [
+          0.0003455554658945112,
+          0.0008073094049591971
+        ],
+        "oracle_gain_over_common": [
+          0.007898082957938105,
+          0.008347024694703498
+        ],
+        "oracle_strictly_better_probability": [
+          0.88958740234375,
+          0.9071044921875
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "sall_unit_weight_33b/within_source": {
+      "conditions": 32,
+      "negative_gain_point_estimates": 32,
+      "existing_gain_ci_entirely_negative": 32,
+      "predicted_switch_gain_positive_actual_negative": 32,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.7562255859375,
+          0.8604736328125
+        ],
+        "switch_actual_improve_probability": [
+          0.47809427414690575,
+          0.5037349014621741
+        ],
+        "switch_actual_worsen_probability": [
+          0.4962650985378258,
+          0.5219057258530942
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.003927978858724306,
+          0.004222020206871082
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.004432894933487321,
+          0.004946789118911212
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.0014784823136680637,
+          0.006974842660247869
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0005326808255023545,
+          -0.00014294322885644495
+        ],
+        "switch_mean_actual_cost": [
+          0.00014294322885644495,
+          0.0005326808255023545
+        ],
+        "switch_mean_optimism_gap": [
+          0.0018511142091784507,
+          0.007436895873338012
+        ],
+        "net_cost_vs_common": [
+          0.00010978989208554096,
+          0.0004376536191405013
+        ],
+        "oracle_gain_over_common": [
+          0.005039015179465469,
+          0.005220179376289479
+        ],
+        "oracle_strictly_better_probability": [
+          0.8983154296875,
+          0.9010009765625
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "sall_unit_weight_33b/cross_source": {
+      "conditions": 32,
+      "negative_gain_point_estimates": 32,
+      "existing_gain_ci_entirely_negative": 32,
+      "predicted_switch_gain_positive_actual_negative": 32,
+      "ranges_not_pooled_estimates": {
+        "switch_probability": [
+          0.7562255859375,
+          0.8604736328125
+        ],
+        "switch_actual_improve_probability": [
+          0.4759540360334799,
+          0.4944285259471506
+        ],
+        "switch_actual_worsen_probability": [
+          0.5055714740528494,
+          0.52404596396652
+        ],
+        "switch_actual_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_mean_improvement_if_improved": [
+          0.0039733308299789135,
+          0.004255870914481365
+        ],
+        "switch_mean_worsening_if_worsened": [
+          0.004446124007702846,
+          0.00506629452791714
+        ],
+        "switch_mean_predicted_advantage_train_bank": [
+          0.0014784823136680637,
+          0.006974842660247869
+        ],
+        "switch_mean_actual_advantage": [
+          -0.0006098401953183744,
+          -0.0002478273924698
+        ],
+        "switch_mean_actual_cost": [
+          0.0002478273924698,
+          0.0006098401953183744
+        ],
+        "switch_mean_optimism_gap": [
+          0.002002468150858368,
+          0.007481431986453416
+        ],
+        "net_cost_vs_common": [
+          0.00019192101780131973,
+          0.0005148504383327486
+        ],
+        "oracle_gain_over_common": [
+          0.005039015179465469,
+          0.005220179376289479
+        ],
+        "oracle_strictly_better_probability": [
+          0.8983154296875,
+          0.9010009765625
+        ],
+        "predicted_argmin_tie_probability": [
+          0.0,
+          0.0
+        ],
+        "switch_predicted_common_tie_probability": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "fit_same_source_in_sample": {
+    "dense_33b": {
+      "conditions": 28,
+      "positive_gain_count": 28,
+      "gain_range_nats": [
+        0.0008565401741353815,
+        0.0031222211569800584
+      ],
+      "readout_gain_range_nats": [
+        -0.0004314795260657809,
+        -0.00010216280696841493
+      ],
+      "readout_minus_fit_gain_range_nats": [
+        -0.0035537006830458394,
+        -0.0010908925388350068
+      ],
+      "inference": "FIT labels were used to fit these policies. Descriptive in-sample reuse; no bootstrap, no isolated cause of FIT/DEV difference."
+    },
+    "s7_fresh_lambda0p1_33b": {
+      "conditions": 32,
+      "positive_gain_count": 32,
+      "gain_range_nats": [
+        0.0014329158846780074,
+        0.005310348366713347
+      ],
+      "readout_gain_range_nats": [
+        -0.0007919782056930588,
+        -0.0001452139609196345
+      ],
+      "readout_minus_fit_gain_range_nats": [
+        -0.006088968180384421,
+        -0.0019221605575806084
+      ],
+      "inference": "FIT labels were used to fit these policies. Descriptive in-sample reuse; no bootstrap, no isolated cause of FIT/DEV difference."
+    },
+    "sall_unit_weight_33b": {
+      "conditions": 32,
+      "positive_gain_count": 32,
+      "gain_range_nats": [
+        0.0009092411430212046,
+        0.003347956828553446
+      ],
+      "readout_gain_range_nats": [
+        -0.0004376536191405013,
+        -0.00010978989208554096
+      ],
+      "readout_minus_fit_gain_range_nats": [
+        -0.003785610447693947,
+        -0.0011300020551726305
+      ],
+      "inference": "FIT labels were used to fit these policies. Descriptive in-sample reuse; no bootstrap, no isolated cause of FIT/DEV difference."
+    }
+  },
+  "cross_vs_within_pairs": {
+    "pairs": 92,
+    "cross_more_costly_count": 63,
+    "cross_less_costly_count": 29,
+    "equal_count": 0,
+    "range_nats": [
+      -8.970125226202721e-05,
+      0.0003967420386543711
+    ],
+    "inference": "Descriptive paired differences only; no new CI."
+  },
+  "oracle_boundary": "Event-outcome-informed, not deployable; does not estimate target-free available information or achievable utility.",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/policy_switch_audit.py",
+      "sha256": "8a7f297219bd48b1b4d259a9c308e953dbd68a0273367431201cdf8415f76d1a",
+      "bytes": 27845,
+      "mtime_ns": 1791130674195725766
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py",
+      "sha256": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+      "bytes": 40280,
+      "mtime_ns": 1791015820253689033
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/effects.npz",
+      "sha256": "ec02a5ce8fc14cb6bddeddf78051c6ece18a8194bc2876b4da06d440656d08bf",
+      "bytes": 2589311,
+      "mtime_ns": 1791030271664369456
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/events.npz",
+      "sha256": "553affe425eb32b52a81a80b0077851160c574693d07d2a9b28cde22ed5041de",
+      "bytes": 626248420,
+      "mtime_ns": 1791029869219476638
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/event_results.npz",
+      "sha256": "bcb07e8ab9ad77bd3f049162f250003053a600d1a6c97de84b21360ff207e8a9",
+      "bytes": 231708532,
+      "mtime_ns": 1791109395875707602
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.npz",
+      "sha256": "1004e5c3ee4011a2d7dd1095de10ee787f7ab23a3dc6ee3c6d4b8ddb5963bc39",
+      "bytes": 341596,
+      "mtime_ns": 1791109355182761986
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.json",
+      "sha256": "3da54a86e3434116ef0353c4ca6121801d1bc4dabdb7083c232fd5814f0f5c8f",
+      "bytes": 8924,
+      "mtime_ns": 1791109355200862256
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.csv",
+      "sha256": "01776ec8bb559bf551dba49df3ccccb8a6f81b293804112b5fc9b08368e53a7b",
+      "bytes": 504147,
+      "mtime_ns": 1791109397319527404
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base/predictions.npz",
+      "sha256": "f77105b953f927b6005012c89a16b988e3e07eb500af12248b2db958444a6c51",
+      "bytes": 2512419,
+      "mtime_ns": 1791109334274768208
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__a_pca64/predictions.npz",
+      "sha256": "4ec36250f3fcb233340bc64a2726cc109e08313e6ee681f86114f51f4253697c",
+      "bytes": 2512243,
+      "mtime_ns": 1791109336069481657
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__a_random64/predictions.npz",
+      "sha256": "132ec57d1772a5ef65d4c7281a0a0279ef2762880c629b7739eb4fd2c9a219d8",
+      "bytes": 2512240,
+      "mtime_ns": 1791109352722820124
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__c_pca64/predictions.npz",
+      "sha256": "bc34353deabc427aad96352fd0d9e3da3ffd411e29186d97839399ac340084d9",
+      "bytes": 2512489,
+      "mtime_ns": 1791109340820590736
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__cx_full/predictions.npz",
+      "sha256": "8a5be3396a1b97dc47698def252ec6b9b0a66434e6b8ac32c828b2be61bd1ea0",
+      "bytes": 2512386,
+      "mtime_ns": 1791109354940622503
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__cx_pca64/predictions.npz",
+      "sha256": "7768d53e0bc5f863b4e79ecd954c41c6b77972caf7c4070aa6bacca810f01f6c",
+      "bytes": 2512479,
+      "mtime_ns": 1791109351816534541
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__x_pca64/predictions.npz",
+      "sha256": "1133b283a8805ca8e3c9e1722097588c4bb652108bf2801e2c31df64cf6236de",
+      "bytes": 2512572,
+      "mtime_ns": 1791109342312110479
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/effects.npz",
+      "sha256": "31e3d56f468449ce502f0dae30c071f4c80358becf3dea2f45fd803bf549a9b6",
+      "bytes": 2619156,
+      "mtime_ns": 1791030289436531810
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/events.npz",
+      "sha256": "597945866df2b2884eff7e21dd8b09f33b6b413b92275de2c402a2ad4f55364b",
+      "bytes": 631737277,
+      "mtime_ns": 1791029923860614574
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/event_results.npz",
+      "sha256": "148ca542151ac88e678f564d6fb1fff19b965474f21d028552ed6d268c8b8d9a",
+      "bytes": 266036075,
+      "mtime_ns": 1791109567295339419
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.npz",
+      "sha256": "96d2476d899dd95c8b2b9bd5be3385f77b30164951df81c6c22891b97c137b01",
+      "bytes": 390001,
+      "mtime_ns": 1791109522084883570
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.json",
+      "sha256": "1ad9b762ab9ac102e180fdfad6cbe95cb6d7f4a62cb25901afcab726af094b24",
+      "bytes": 10108,
+      "mtime_ns": 1791109522139088755
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.csv",
+      "sha256": "4b2757e6dfe0305cab5d5dc80efc2b1484797e55c24c990f12dc60ff2d2cebf9",
+      "bytes": 577563,
+      "mtime_ns": 1791109568917973349
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base/predictions.npz",
+      "sha256": "39000f3d8284726abc06b1ba2878821698fd5a73d45bdee761e7d3cf45033414",
+      "bytes": 2511533,
+      "mtime_ns": 1791109501052168607
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__a_pca64/predictions.npz",
+      "sha256": "6c1f3b7a9151f4bc7ac3ecb2a88587c8852fa50541ce830b9e68a09e4ba24352",
+      "bytes": 2511537,
+      "mtime_ns": 1791109502570159624
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__a_random64/predictions.npz",
+      "sha256": "7bbe0052e4678f70fab9822d6acccd3de3cf419c9d6d07b23a820cf8f3f68e0e",
+      "bytes": 2511457,
+      "mtime_ns": 1791109518812876406
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__c_pca64/predictions.npz",
+      "sha256": "aff11b796558cf00d74441a9869a55dc859c809f3e313c602931c824d2bad4c7",
+      "bytes": 2511697,
+      "mtime_ns": 1791109507012186738
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__cx_full/predictions.npz",
+      "sha256": "b37e5ce61639e3580dd31dfc8a811d5746e97c7a8dd832ef82721f07af3ccebb",
+      "bytes": 2512161,
+      "mtime_ns": 1791109521858910096
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__cx_pca64/predictions.npz",
+      "sha256": "5f70f783c07205bd69767cea22082e76032a250af57dfef0a004df82bc3ae92f",
+      "bytes": 2511811,
+      "mtime_ns": 1791109517979921179
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__sae64/predictions.npz",
+      "sha256": "9838e418c968d28cdbbdd2ba2d08cf40f99624f71e11392242fbb2af77c0b09f",
+      "bytes": 2511560,
+      "mtime_ns": 1791109519371435577
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__x_pca64/predictions.npz",
+      "sha256": "2a5e7ae6fa69313fd7bbc9d559b49564c8ce533f2466a7c8b651cdefdd86c80a",
+      "bytes": 2512023,
+      "mtime_ns": 1791109508784424889
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/effects.npz",
+      "sha256": "dcc4582c301f5c086c4c826d6417f4aa31854e4914cc63b414e083890b795658",
+      "bytes": 2596872,
+      "mtime_ns": 1791030306562619868
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/events.npz",
+      "sha256": "10d2b5c7053b174fd51c7b15a1f61d4d168bdd2b0a5f2b772eb29be81be670c8",
+      "bytes": 631715740,
+      "mtime_ns": 1791029978281056274
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/event_results.npz",
+      "sha256": "1cf43513e723dce8fb9ad534159024d18dbf74aed09406ee131f5ad2ebc1b2c7",
+      "bytes": 265764405,
+      "mtime_ns": 1791109713308900343
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.npz",
+      "sha256": "35d4b8278c3c0f2d68abf38eb9240885c7396aeb86358bf4249b77378016883c",
+      "bytes": 388313,
+      "mtime_ns": 1791109666703008698
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.json",
+      "sha256": "303959d2169132c6c94c30c4864e3bdd6e681efde86f0b41e56d1449a51a5602",
+      "bytes": 10092,
+      "mtime_ns": 1791109666723221281
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.csv",
+      "sha256": "c729e99328f155bc739a3a76fd8a68062e939b556afb4379f3d178d792bb0d7c",
+      "bytes": 579420,
+      "mtime_ns": 1791109714905177271
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base/predictions.npz",
+      "sha256": "0a517e53ae0e139eeb2667f4efaf4860f6f551939deb50bbbd7bbe25f5a4c580",
+      "bytes": 2512103,
+      "mtime_ns": 1791109644012102767
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__a_pca64/predictions.npz",
+      "sha256": "ed2dad729552eb45fbe1e73ad7d35909b608c17721600fa967987d732e941479",
+      "bytes": 2512136,
+      "mtime_ns": 1791109645834259752
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__a_random64/predictions.npz",
+      "sha256": "89fb045f25e41e975d00f50900d4c9cd7b1e02452ce6001d987a8091d015f4c6",
+      "bytes": 2511973,
+      "mtime_ns": 1791109663107964982
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__c_pca64/predictions.npz",
+      "sha256": "78d00bbd545b37e694631b4bd326f1f1bf6f99d25aae8f0a6defffd72b2b5bd6",
+      "bytes": 2512329,
+      "mtime_ns": 1791109650685697534
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__cx_full/predictions.npz",
+      "sha256": "5fe0097bf8bf7d3462887b7fe5c502d2bfc0068529d27d52fbf9041edd688630",
+      "bytes": 2512634,
+      "mtime_ns": 1791109666353388811
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__cx_pca64/predictions.npz",
+      "sha256": "40fc3ce0bb4cf21de655b177e4fa390ba43b99228ef41c18ab296bf12d492349",
+      "bytes": 2512389,
+      "mtime_ns": 1791109662434663714
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__sae64/predictions.npz",
+      "sha256": "bc72196b5da34040fb1b1658922bb70d8cf7b0db6caf1f4783c8e9658a58c07b",
+      "bytes": 2512355,
+      "mtime_ns": 1791109664126414077
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__x_pca64/predictions.npz",
+      "sha256": "d424423a50bd99f2f461811f8e9d7524111d75deafb257fed53de0a74ec4f019",
+      "bytes": 2512356,
+      "mtime_ns": 1791109652488073043
+    }
+  ],
+  "source_size_mtime_unchanged_at_end": true,
+  "thread_limits": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  }
+}

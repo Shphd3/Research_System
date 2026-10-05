@@ -1,5 +1,11 @@
 # 1002 临时候选：共享学习、有限效用与MoE路由
 
+## 2026-10-04 第二个研究窗口：最新认识入口
+
+先读[新的认识更新报告](../../../1004/cognition_update_cn.md)，项目相对路径为 `daily_research_reports/1004/cognition_update_cn.md`；[今日总结](../../../1004/daily_summary_cn.md)保留15:53:50 UTC前的独立截止面。新报告继续同一Anchor，加入同来源与切换审计、类别内匹配对照、FIT折外幅度选择，以及即时作用如何经过未来学习的明确推导。实际四卡任务状态由新报告第7节与执行收据持有。
+
+新增规范结果：[路由幅度Summary](router_shrinkage_summary_cn.md)／[Detailed](router_shrinkage_detailed_cn.md)，以及[类别组成分解Summary](probe_33b_group_summary_cn.md)／[Detailed](probe_33b_group_detailed_cn.md)。它们属于已曝光固定库的探索分析，不是新的联合训练结果。下文早期收尾中的未提交／待许可说明仅代表当时快照；本窗口已获研究者明确执行授权。
+
 ## 2026-10-04 当前阅读入口（Asia/Shanghai，UTC+8）
 
 先读[阅读指南](reading_guide_cn.md)，再按第1至第6节完整阅读[共享学习与路由阶段报告](sharing_routing_report_cn.md)：目的、观察、假设及竞争解释、分阶段数学、实验验证与结果分析、认识更新与下一问题。时间有限时，可先读第1、2、3、6节，再回到第4、5节核对推导和证据。
@@ -7,6 +13,16 @@
 阅读指南负责历史五篇材料、三份数学说明和过程／Anchor／Protocol的定位；主报告负责完整论证。两者的项目相对路径分别为 `daily_research_reports/1002/candidates/ntp_representation_update_channels/reading_guide_cn.md` 与 `daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report_cn.md`。结果分析解释测量，认识结论说明证据改变了什么理解；条件模型中的证明与自然文本实测分别阅读。
 
 下方保留各日期历史原文，其中作业状态与授权说明属于当时快照。当前执行事实读主报告的执行说明及所引收据；“约99%的平均部分”始终指同域A/B来源批次的平均，不表示四域没有差异。重写前版本保存在 `daily_research_reports/1002/candidates/ntp_representation_update_channels/history/20261004_before_reading_rewrite/`。
+
+## 2026-10-04 收尾更新：新分析、修复与文献
+
+新33B面板的冻结分析和独立数值复算已经完成：92个总体跨来源条件都优于全局使用率随机分配，但都劣于FIT固定共同动作。当前策略有匹配信息，尚无采用收益。容量dtype错误已作最小修复并通过CPU回归；精确GPU Smoke未提交，12条正式轨迹及18项机制结果仍为NOT RUN。
+
+- [当前阶段报告](sharing_routing_report_cn.md)：第5.5节解释新结果，第5.6节给出当前平台／修复／未运行清单，第6节把结果接回原始问题。
+- [33B Summary](probe_33b_summary_cn.md)与[Detailed](probe_33b_detailed_cn.md)：实际有限CE、逐域结果、动作比例、同来源次比较及完整证据。全部[920行DEV表](evidence/probe_33b_all_readout.csv)均保留。
+- [17篇原始文献对照](sharing_literature_20261004_cn.md)：共同表示、多任务分组、旧功能保护与MoE对比，逐项注明信息、计算成本和适用边界。
+
+本轮没有重跑旧80行比较、提交新GPU任务、改变研究范围或科学状态。新GPU Smoke已单独征求许可；CPU完成不替代GPU资格。收尾更新前的9个入口／manifest原件在[快照](history/20261004_before_closeout_update/snapshot.json)中保留。
 
 ## 2026-10-03 07:27—10:47 UTC：共享决策与MoE路由
 

@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "created_at_utc": "2026-10-04T17:36:18.325210+00:00",
+  "processing_agent": "/root/daily_summary_1004",
+  "purpose": "Append-only addendum for root 17:33 section-5 symbol clarification; does not overwrite the 17:32 reading audit.",
+  "original_audit_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/final_reading_audit.json": "d4c8405b73c90aa6ba54a85d7775161109b4d3358e4cccc47e39163d5dfdee8f",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/final_reading_audit.md": "777f3ccf7d51a648d03ed72b00b7351acd4545b6e382d9261751c8dec8291005"
+  },
+  "original_audit_unchanged": true,
+  "checks": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1004/cognition_update.md",
+      "scope": "sections 1-6; from exact ## 1. heading to before ## 7.",
+      "prior_scoped_sha256": "7b584f42b8500094f7dcfbc7cd7385713bf9060ce65ba8328edecf050d36a4dc",
+      "new_scoped_sha256": "76814daa671c96d3774f5bde3427500391f4d2715beed5fd0e788f43625f860b",
+      "after_reversing_only_listed_edits_sha256": "7b584f42b8500094f7dcfbc7cd7385713bf9060ce65ba8328edecf050d36a4dc",
+      "exact_prior_hash_recovered": true,
+      "edits": [
+        {
+          "type": "symbol_disambiguation_sentence",
+          "added_text": "Here C labels the future task, independently of the common-FFN label in the previous section."
+        },
+        {
+          "type": "one_ASCII_space_before_inline_math",
+          "before": "step on\\(L_C",
+          "after": "step on \\(L_C"
+        },
+        {
+          "type": "one_ASCII_space_before_inline_math",
+          "before": "matrix is\\(\\operatorname{diag}",
+          "after": "matrix is \\(\\operatorname{diag}"
+        },
+        {
+          "type": "one_ASCII_space_before_inline_math",
+          "before": "branch becomes\\((0.02",
+          "after": "branch becomes \\((0.02"
+        }
+      ],
+      "math_bodies_byte_identical": true,
+      "number_tokens_identical": true,
+      "link_targets_identical": true
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1004/cognition_update_cn.md",
+      "scope": "sections 1-6; from exact ## 1. heading to before ## 7.",
+      "prior_scoped_sha256": "9897382ccd3c2eea6f58b114c789247e158339638917951a1cc835b5a4c9c4ab",
+      "new_scoped_sha256": "84ef024a48d838dd60349324b154db4579f65d1e0261abfbffca15baf4083c07",
+      "after_reversing_only_listed_edits_sha256": "9897382ccd3c2eea6f58b114c789247e158339638917951a1cc835b5a4c9c4ab",
+      "exact_prior_hash_recovered": true,
+      "edits": [
+        {
+          "type": "symbol_disambiguation_sentence",
+          "added_text": "这里下标C表示未来任务，与上节共同FFN的名称C不同。"
+        }
+      ],
+      "math_bodies_byte_identical": true,
+      "number_tokens_identical": true,
+      "link_targets_identical": true
+    }
+  ],
+  "bilingual_meaning": "Both added sentences distinguish the future-task subscript C in L_C from the previous common-FFN label C. They introduce no new mathematical condition or result.",
+  "math_source_check": {
+    "exit_code": 0,
+    "output": "SOURCE PASS: 2 file(s), 0 issue(s); rendering and mathematical truth NOT checked.",
+    "rendering_checked": false
+  },
+  "blocking_findings": [],
+  "source_or_document_edits": 0,
+  "unchanged_boundary": "Cognition preamble and section 7 remain outside the content audit. Root may update those scopes without invalidating these sections-1–6 hashes."
+}

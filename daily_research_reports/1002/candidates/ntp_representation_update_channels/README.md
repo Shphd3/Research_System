@@ -1,5 +1,11 @@
 # 1002 temporary candidate: sharing, finite utility and MoE routing
 
+## Second research window, 2026-10-04: latest understanding
+
+Read the [new understanding update](../../../1004/cognition_update.md), at `daily_research_reports/1004/cognition_update.md`. The separate [daily summary](../../../1004/daily_summary.md) retains its 15:53:50 UTC cutoff. The update keeps the same Anchor and adds within-source/switch accounting, category-matched controls, out-of-fold amplitude selection, and explicit derivations of effects through future learning. Its Section 7 and execution receipts own the current four-GPU job status.
+
+New canonical results: [amplitude Summary](router_shrinkage_summary.md) / [Detailed](router_shrinkage_detailed.md), and [group-decomposition Summary](probe_33b_group_summary.md) / [Detailed](probe_33b_group_detailed.md). These are exploratory analyses of exposed fixed banks, not new joint-training results. Earlier statements below about no submission or pending permission are historical snapshots; this window has explicit researcher execution authorization.
+
 ## 2026-10-04 current reading entry (Asia/Shanghai, UTC+8)
 
 Start with the [reading guide](reading_guide.md), then read sections 1 through 6 of the [sharing and routing stage report](sharing_routing_report.md): purpose, observations, hypotheses and rivals, mathematical stages, experimental checks and result analysis, and updated understanding with the next question. For an initial overview, read sections 1, 2, 3, and 6, then return to sections 4 and 5 to check the derivations and evidence.
@@ -7,6 +13,16 @@ Start with the [reading guide](reading_guide.md), then read sections 1 through 6
 The guide locates five stage documents, three mathematical explanations, and the process record, Anchor, and Protocol. The main report carries the complete argument. Their project-relative paths are `daily_research_reports/1002/candidates/ntp_representation_update_channels/reading_guide.md` and `daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report.md`. Result analysis explains measurements; conclusions explain how evidence changes understanding. Keep proofs in conditional models distinct from natural-text measurements.
 
 The dated historical text below is preserved. Its job states and authorization statements describe their own snapshots. Read current execution facts in the main report and its cited receipts. The “about 99% mean component” always means the within-domain A/B source-batch mean, not an absence of differences across the four domains. Pre-rewrite versions are preserved in `daily_research_reports/1002/candidates/ntp_representation_update_channels/history/20261004_before_reading_rewrite/`.
+
+## 2026-10-04 closeout: new analysis, repair and literature
+
+Frozen new-panel analysis and independent numerical reconstruction are complete. All 92 pooled cross-source conditions beat global usage-matched random allocation but lose to the FIT-fixed common action. Matching information does not yet justify adoption. The capacity dtype error has a minimal CPU-validated repair; exact GPU Smoke remains unsubmitted, with all 12 formal trajectories and 18 mechanism outputs NOT RUN.
+
+- [Current stage report](sharing_routing_report.md): Section 5.5 explains the new result, Section 5.6 inventories live state, repair and missing runs, and Section 6 reconnects evidence to the original question.
+- [33B Summary](probe_33b_summary.md) and [Detailed](probe_33b_detailed.md): actual finite CE, domains, action use, within-source secondary comparisons and provenance. All [920 DEV rows](evidence/probe_33b_all_readout.csv) are retained.
+- [17 primary-paper comparisons](sharing_literature_20261004.md): shared representations, multitask grouping, old-function protection and MoE evidence, with information, computation and transfer limits.
+
+This round did not rerun the old 80-row comparison, submit another GPU job, expand scientific scope or change scientific state. New GPU Smoke permission was requested separately; CPU completion does not certify GPU execution. A [snapshot](history/20261004_before_closeout_update/snapshot.json) preserves nine entrypoint/manifest originals from before this update.
 
 ## 2026-10-03 07:27–10:47 UTC: sharing decisions and MoE routing
 

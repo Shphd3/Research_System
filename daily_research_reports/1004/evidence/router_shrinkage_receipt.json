@@ -1,0 +1,79 @@
+{
+  "status": "COMPLETE_EXPLORATORY_SHRINKAGE_DIAGNOSTIC",
+  "completed_at_utc": "2026-10-04T16:34:54.356141+00:00",
+  "elapsed_seconds": 70.57624249719083,
+  "recipe": {
+    "version": 1,
+    "models": [
+      "dense_33b",
+      "s7_fresh_lambda0p1_33b",
+      "sall_unit_weight_33b"
+    ],
+    "families": [
+      "base",
+      "base+cx_full"
+    ],
+    "feature_dimensions": {
+      "base": 389,
+      "base+cx_full": 3461
+    },
+    "actions": "fixed_five only; common included, no rejection",
+    "alphas": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "folds": 4,
+    "fold_seed": 1004,
+    "fold_assignment": "FIT whole records; categories sorted; record_id sorted within category; one numpy Generator(1004) shuffles each category sequentially; index modulo 4 assigns fold; all16 events together",
+    "fit": "Original ridge_fit_predict(raw_features, FIT_labels, trainfold_mask, regularization=10); trainfold mean/std and label intercept only; ten independent A/B outputs in one solve",
+    "scores": "mu_trainfold + alpha*(fold_prediction-mu_trainfold); alpha1 returns prediction directly; alpha0 broadcasts trainfold means",
+    "selection": "Lowest pooled OOF FIT actual mean finite deltaCE; exact ties use smaller alpha; separate model/family/source-bank; selected alpha shared across evaluation banks",
+    "final": "Original allFIT frozen prediction and allFIT mean; freeze every alpha choice and selected alpha for every model before DEV scoring",
+    "readout": "All alpha same/cross source pooled and four domains; paired gains versus alpha1 and alpha0; reuse original bootstrap_freeze 2000 category-stratified whole-record draws without refitting",
+    "priorDEVexposed": true,
+    "OOF_selected_mean_unbiased": false,
+    "inference": "Post-hoc exploratory DEV, conditional on sources, fits, alpha selection and panel; no new confirmation and no multiplicity correction",
+    "cpu_threads": 8,
+    "max_wall_seconds": 1800,
+    "LM_forwards": 0,
+    "GPU_jobs": 0
+  },
+  "registration_sha256": "e4fd6ee226988e6a1d9b9c2e2eccf57377bb05ed0fe9cb9407c01933929afd17",
+  "selection_freeze_sha256": "4238e426921fa61827aaa79ebd81e5438f8a55b1fa63e8c97c9b35c85720de41",
+  "tests": {
+    "endpoint_identity": true,
+    "whole_record_fold_balance": true,
+    "heldout_labels_do_not_affect_fold_fit": true,
+    "heldout_features_do_not_affect_trainfold_scaling": true,
+    "exact_alpha_tie_uses_smallest": true,
+    "duplicate_record_ids_rejected": true,
+    "unique_mean_best_switch_sets_nested": true,
+    "real_arrays_loaded": false
+  },
+  "evaluation_rows": 600,
+  "selected_rows": 120,
+  "alpha1_original_mean_and_CI_max_abs_error": 8.673617379884035e-19,
+  "switch_identity_max_abs_error": 1.0842021724855044e-19,
+  "all_source_bytes_reverified": true,
+  "output_sha256": {
+    "OOF__dense_33b__base.npz": "ecff928841ecb26bb193fec340f588a633a0a48be6bf40c0a551d2b2cce906b0",
+    "OOF__dense_33b__base__cx_full.npz": "b023a14310daa8976cd74dfbd8134f209e4e53f075da56d9159a313867788d04",
+    "OOF__s7_fresh_lambda0p1_33b__base.npz": "66ad93b93f0bbc15cd2dcb275d33fa5ce5b38a4e7942d9ef673a38e44636b317",
+    "OOF__s7_fresh_lambda0p1_33b__base__cx_full.npz": "a342a500acc2242f223959b26698c1ee59c07f92e66961a8315bfccad0fde05f",
+    "OOF__sall_unit_weight_33b__base.npz": "18bd3109f27653157f2ad2b420860d7d707a18ab1361ec4f0ef89dfe2080418e",
+    "OOF__sall_unit_weight_33b__base__cx_full.npz": "f613195b5b4a280c829cc2472c175164f36b3b41f35d49a1dc8eb72f3cf56676",
+    "cv_table.csv": "4ecdf8e20c26f38e3b21d15fb85eb62d0254d6217be44967eb9f5fb8d15eef78",
+    "evaluation_all_alpha.csv": "c8c4ed249449eff3ccb2233e5888f7b7e1f020fba503a95474b1223af436bcf3",
+    "evaluation_selected_alpha.csv": "023b8455d7eda05751a268f3e4ec7128075a951cbbdfe16a1a9785e275de5c08",
+    "fold_assignment.csv": "26ec922677d2901868796d0b5804a415403973561a93c2c55d0835bbb1f168a3",
+    "fold_assignment.npz": "794aefaec08d37f36191899abfd4c97d98eead552d872c5ee65aae71a34aad54",
+    "registration.json": "e4fd6ee226988e6a1d9b9c2e2eccf57377bb05ed0fe9cb9407c01933929afd17",
+    "selection_freeze.json": "4238e426921fa61827aaa79ebd81e5438f8a55b1fa63e8c97c9b35c85720de41",
+    "selection_freeze.npz": "75c8eef49f7660fc0dd4bb4b4e9374ae5c01fe56ed5f4f4aae24a485dfbe20fe"
+  },
+  "scientific_judgment": "Unknown",
+  "priorDEVexposed": true
+}

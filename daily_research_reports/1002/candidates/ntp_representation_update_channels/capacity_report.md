@@ -1,5 +1,7 @@
 # How common computation might help small experts
 
+**2026-10-04 reading update:** This document preserves the earlier capacity-stage argument. The latest fixed-bank diagnostics, optimizer/future-learning derivations and actual bounded execution status are in the [second-window cognition update](../../../1004/cognition_update.md). Historical job states below are dated snapshots.
+
 Working stage report, 2026-10-03. This temporary synthesis is not a final report and does not move the work into the formal project. The execution section and linked receipts distinguish preparation, GPU qualification and scientific results.
 
 The current theoretical boundary is conditional: **common computation may improve finite-budget learning by avoiding repeated storage or pooling data across tasks to improve estimation. Those benefits and drift from shared updates require separate measurements. Serial coupling changes computation and gradients; it does not itself guarantee greater capacity or better learning.** Natural-text trajectories and finite checkpoint interventions still await empirical evidence.

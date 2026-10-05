@@ -1,0 +1,497 @@
+{
+  "created_at_utc": "2026-10-04T11:05:08.555925+00:00",
+  "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/build_probe_closeout_evidence_20261004.py",
+  "generator_sha256": "657f15d351584d807962b39d874b905827fdeb38a65d7293741ecf0043e698ba",
+  "raw_arrays_copied": false,
+  "source_artifacts": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+      "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+      "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+      "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+      "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+      "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+      "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+      "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+      "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+      "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+      "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+      "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+      "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+      "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+      "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+      "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+    }
+  ],
+  "files": [
+    {
+      "path": "evidence/probe_33b_pooled_cross_source.csv",
+      "bytes": 175614,
+      "sha256": "9ad0aa30cdd9d72657d414091570f0a23773e741405248e49fb658f0e62e5573",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+          "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+          "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+          "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+          "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+          "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+          "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+          "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+          "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+          "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+          "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+          "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+          "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+          "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+          "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+          "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    },
+    {
+      "path": "evidence/probe_33b_all_readout.csv",
+      "bytes": 1655736,
+      "sha256": "0a5d6e35cf0803f7164babed58e4eee9819825059b4c1764bb17c6157a7bdfb4",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+          "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+          "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+          "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+          "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+          "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+          "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+          "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+          "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+          "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+          "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+          "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+          "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+          "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+          "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+          "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    },
+    {
+      "path": "evidence/probe_33b_inventory.json",
+      "bytes": 8010,
+      "sha256": "2201815fad763875b09379bfa9d2c9296abd361861282cbe8a390d73d9c78f24",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+          "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+          "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+          "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+          "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+          "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+          "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+          "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+          "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+          "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+          "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+          "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+          "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+          "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+          "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+          "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    },
+    {
+      "path": "evidence/probe_33b_independent_audit.json",
+      "bytes": 10534,
+      "sha256": "994a346abb61a871189b0f7e5b480d52872c932509798edae22a293f86fd32bf",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+          "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+          "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+          "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+          "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+          "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+          "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+          "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+          "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+          "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+          "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+          "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+          "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+          "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+          "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+          "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    },
+    {
+      "path": "evidence/probe_33b_gain_accounting.json",
+      "bytes": 629,
+      "sha256": "5c62e8849f22a090e05f171f01ae67b126cf0b947706420e816d4ec0c5239409",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+          "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+          "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+          "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+          "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+          "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+          "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+          "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+          "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+          "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+          "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+          "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+          "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+          "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+          "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+          "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    },
+    {
+      "path": "evidence/probe_33b_figure_manifest.json",
+      "bytes": 1294,
+      "sha256": "127afe794900496b669f7059906b33c5601dc2a84af4c02b3a8665617fa4c61f",
+      "sources": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+          "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+          "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/source_summary.json",
+          "sha256": "617a8cab0be55212ce28993d0f78fea411c3160411b39405b8da9571baae68f3"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/diagnostics.json",
+          "sha256": "16d67cf672abb7993ecf8172f679c62e4a9f4b9b04d2cf8eace6e9837a54e72b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/dense_independent_audit.json",
+          "sha256": "81868528489dd8ac99536b3b88855c240a1baaa7b4088719cc5379e45f2f5877"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+          "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+          "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/source_summary.json",
+          "sha256": "f91ac407812a4440b9280cc807f1fc7b9dabb5a55933d1b46e34948b59a79f12"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/diagnostics.json",
+          "sha256": "c2c1676780df61c9eab7dc211e4c637ea03ee6ed2b3b17cfd8514fde63876d8d"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/s7_independent_audit.json",
+          "sha256": "318d6c8be932aaed182ae379f950a08743af61f8b1de696fd77f7c383d90c089"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+          "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+          "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/source_summary.json",
+          "sha256": "a5c8bcd7fe762f40fd5349437a894e912bcf4598f5b5955cff249447b35e3797"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/diagnostics.json",
+          "sha256": "79327027d878fb1117a31ad2e0651ecea3531b04202f29e2544a39e2615b8b97"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/sall_independent_audit.json",
+          "sha256": "484ba32fb13aa17e05156605cba4a376ed456d14491812e9fcee1fca5c73986b"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    },
+    {
+      "path": "figures/probe_33b_fixed_vs_marginal.png",
+      "bytes": 252837,
+      "sha256": "63a968db8cc2b7a431c8257381ea8e04de86a8b1fa1927fdb4f0d7f83754668d",
+      "sources": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/probe_33b_pooled_cross_source.csv",
+          "sha256": "9ad0aa30cdd9d72657d414091570f0a23773e741405248e49fb658f0e62e5573"
+        }
+      ],
+      "role": "selected compact evidence",
+      "scope": "fixed-model conditional finite routing; no scientific closure"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "CPU tiny integration only",
+  "arms": [
+    "common_parallel",
+    "common_serial",
+    "dense_active",
+    "dense_total",
+    "private_active",
+    "private_total"
+  ],
+  "resume_fields": 42,
+  "all_resume_fields_equal": true,
+  "guard_certified": true,
+  "smoke_result": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/initial_guard_cpu_smoke/smoke_result.json",
+  "smoke_sha256": "5bd19402112d477f21613ed81640cafbf1fcc4a65670aed7c50c44b5b39cd086",
+  "source_hashes_unchanged": true
+}

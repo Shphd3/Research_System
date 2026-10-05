@@ -1,5 +1,7 @@
 # 共享学习与路由：阶段报告阅读指南
 
+**后续窗口入口：**[2026-10-04新的认识更新](../../../1004/cognition_update_cn.md)及[今日总结](../../../1004/daily_summary_cn.md)。本文主体保留第二窗口开始前的阶段论证与当时状态；后续CPU结果见[幅度检查](router_shrinkage_summary_cn.md)、[类别内对照](probe_33b_group_summary_cn.md)，后续执行状态见新报告第7节。
+
 更新：2026-10-04，Asia/Shanghai（UTC+8）。[English](reading_guide.md)。
 
 这两天的研究围绕同一个问题推进：**不同文本何时应共享学习，何时值得分别学习，怎样让路由使用事前可见的信息作决定？** 现有工作把更新响应、有限动作选择、有限样本学习和共同计算分开建模，再检查它们之间的联系。局部响应可预测，不自动说明路由有收益；条件模型中的共享收益，也不自动证明自然文本训练获益。
@@ -7,6 +9,10 @@
 首次阅读从[当前阶段报告](sharing_routing_report_cn.md)开始。它负责完整论证；本指南负责阅读顺序和来源定位。本目录仍是当日备选位置，研究者的科学判断与正式记录的状态不由阅读材料改变。
 
 所有项目相对路径以 `Research_System/` 为根。阅读目录为 `daily_research_reports/1002/candidates/ntp_representation_update_channels/`；中文文件的英文伴随文件去掉 `_cn` 即可定位。
+
+本轮新增的结果入口是[33B Summary](probe_33b_summary_cn.md)与[Detailed](probe_33b_detailed_cn.md)，分别负责四段结论和完整设置／逐域／动作比例／核验；[17篇文献对照](sharing_literature_20261004_cn.md)负责外部方法、信息成本与边界。项目相对路径均在本阅读目录下，文件名分别为`probe_33b_summary_cn.md`、`probe_33b_detailed_cn.md`、`sharing_literature_20261004_cn.md`。
+
+目前新面板已分析并复算，容量代码已通过CPU修复检查；精确GPU Smoke与正式轨迹仍未运行。主报告第5.5—5.6节是当前结果和执行状态入口。下方历史材料中的Pending不再代表当前状态。
 
 ## 1. 先完整阅读当前报告
 

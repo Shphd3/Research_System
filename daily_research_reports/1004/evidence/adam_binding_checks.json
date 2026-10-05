@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-10-04T16:25:35.405680+00:00",
+  "processing_agent": "/root/cognition_audit_1004",
+  "script_sha256": "04e851b5ae3542cb9577499a59a51bf02a09368323004714c77977fab6e02684",
+  "exact_moment_identity": [
+    {
+      "step": 1,
+      "given_conditional_gradients": [
+        3,
+        3,
+        -1,
+        -1
+      ],
+      "mean_gradient": 1.0,
+      "instant_between_group_squared_deviation": 4.0,
+      "pooled_first_moment": 0.1,
+      "pooled_second_moment": 0.05,
+      "mean_conditional_second_moment": 0.25,
+      "ema_between_group_squared_deviation": 0.2,
+      "exact_second_moment_identity_residual": "0"
+    },
+    {
+      "step": 2,
+      "given_conditional_gradients": [
+        2,
+        -4,
+        1,
+        5
+      ],
+      "mean_gradient": 1.0,
+      "instant_between_group_squared_deviation": 10.5,
+      "pooled_first_moment": 0.19,
+      "pooled_second_moment": 0.0975,
+      "mean_conditional_second_moment": 0.8125,
+      "ema_between_group_squared_deviation": 0.715,
+      "exact_second_moment_identity_residual": "0"
+    },
+    {
+      "step": 3,
+      "given_conditional_gradients": [
+        -3,
+        1,
+        4,
+        2
+      ],
+      "mean_gradient": 1.0,
+      "instant_between_group_squared_deviation": 6.5,
+      "pooled_first_moment": 0.271,
+      "pooled_second_moment": 0.142625,
+      "mean_conditional_second_moment": 1.146875,
+      "ema_between_group_squared_deviation": 1.00425,
+      "exact_second_moment_identity_residual": "0"
+    },
+    {
+      "step": 4,
+      "given_conditional_gradients": [
+        0,
+        2,
+        -2,
+        4
+      ],
+      "mean_gradient": 1.0,
+      "instant_between_group_squared_deviation": 5.0,
+      "pooled_first_moment": 0.3439,
+      "pooled_second_moment": 0.18549375,
+      "mean_conditional_second_moment": 1.38953125,
+      "ema_between_group_squared_deviation": 1.2040375,
+      "exact_second_moment_identity_residual": "0"
+    }
+  ],
+  "first_step_matching_functions_do_not_commute_with_AdamW": {
+    "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+    "device": "cpu",
+    "dtype": "float64",
+    "scope": "four fixed quadratic scalar-output tasks; manually supplied exact globally averaged gradients; no clipping; initial zero parameters make decay contribution zero; not a language-model training result",
+    "targets": [
+      -3.0,
+      -3.0,
+      1.0,
+      1.0
+    ],
+    "initial_predictions": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "eta": 0.1,
+    "epsilon": 1e-08,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "weight_decay": 0.1,
+    "common_prediction_after": -0.09999999900000002,
+    "copied_predictions_after": [
+      -0.09999999866666667,
+      -0.09999999866666667,
+      0.09999999600000017,
+      0.09999999600000017
+    ],
+    "common_risk_after": 2.4050000009000003,
+    "copied_risk_after": 2.3050000037333334,
+    "max_formula_vs_cpu_AdamW_error": 1.3877787807814457e-17,
+    "limit_epsilon_zero": {
+      "common_parameter_step": -0.1,
+      "mean_copied_parameter_step": 0.0,
+      "common_bias_corrected_second_moment": 1.0,
+      "mean_conditional_bias_corrected_second_moment": 5.0,
+      "mean_actual_copied_bias_corrected_second_moment": 0.3125,
+      "between_group_squared_deviation": 4.0
+    }
+  },
+  "limits": [
+    "Fixed common external gradient streams are required for the moment identity; true model trajectories diverge.",
+    "Fixed positive group weights, synchronized active counts, matched beta values, zero initial moments, and no differing clipping scales are required.",
+    "Conditional-moment mean and disagreement are not recoverable from a shared checkpoint alone.",
+    "Do not extend the identity across grad=None inactive periods by substituting zero gradients.",
+    "CPU scalar AdamW validates the formula, not BF16 fused GPU qualification or LM science."
+  ]
+}
