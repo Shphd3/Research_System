@@ -4,6 +4,8 @@
 
 ## A more precise question than whether serial is stronger
 
+This note separates three questions: which functions a common module can represent, how changing it affects old tasks with experts fixed, and whether pooled samples improve task-mean estimation. A common module \(C\) and private expert \(E_d\) are trainable functions, not matrix increments from the frozen-update experiment. Parallel computation adds their outputs on the same input; serial computation feeds the common transformation into the expert. The proofs and counterexamples manipulate only their stated objects, with no natural-text training; representability does not establish learning or retention.
+
 Let the common residual representation be h(z)=z+C(z), and let \(\mathcal F\) be the permitted expert function family. With C fixed, the parallel private contribution belongs to \(\mathcal F\); the serial contribution belongs to
 
 \[
@@ -70,13 +72,17 @@ Representation, acquisition, retention and resource usefulness remain distinct. 
 
 ## Sharing can improve estimation without enlarging a function family
 
-A second mechanism differs from storage compression. Let K fixed task means be \(\mu+\delta_d\), with zero mean task offsets and mean squared offset \(V_\delta\). Each task has n independent observations with independent zero-mean noise of variance \(\sigma^2\). Write the task sample mean as \(\bar y_d\), the grand mean as m, and fix the estimator
+A second mechanism differs from storage compression. Let K fixed task means be \(\mu+\delta_d\), with zero mean task offsets and mean squared offset \(V_\delta\). Each task has n independent observations with independent zero-mean noise of variance \(\sigma^2\). Write the task sample mean as \(\bar y_d\), the pooled sample mean as m, and fix the estimator
+
+Compute m from observations: \(m=K^{-1}\sum_d\bar y_d=(Kn)^{-1}\sum_{d,j}y_{dj}\). It changes with sampling and is not the unknown true population mean \(\mu\). A task mean shares data with m; the variance formula below includes that dependence.
 
 \[
 \widehat\theta_d=m+\alpha(\bar y_d-m),\qquad 0\le\alpha\le1.
 \]
 
 Here \(\alpha\) is a prespecified shrinkage amount, not expert width or a serial gate. Averaging task-mean squared estimation error over repeated datasets gives
+
+Here \(R(\alpha)\) means \(R_{\rm est}\): full-squared error of each estimated task mean relative to its true mean, averaged equally over K tasks and over independently resampled datasets. It is not fitting-sample error and excludes irreducible variation in a fresh observation. Under an independent fresh observation with the same conditional mean and variance \(\sigma^2\), full-squared prediction risk is \(\sigma^2+R_{\rm est}\); half-squared loss divides the entire result by 2. \(V_\delta\) measures genuine task-mean differences, while \(\sigma^2/n\) is mean-estimation variance. Later gradient models' \(V\) and \(\Sigma_k\) concern gradient means and covariances and cannot be substituted here.
 
 \[
 R(\alpha)=(1-\alpha)^2V_\delta+\frac{\sigma^2}{Kn}

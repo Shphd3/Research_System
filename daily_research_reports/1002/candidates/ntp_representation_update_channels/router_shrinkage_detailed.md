@@ -4,11 +4,15 @@
 
 ## 0. Quick Recap
 
+Results compare selection among constructed matrix increments on a frozen model, not continuing expert training. Pooling raw domain mean gradients before scaling constructs common; FIT chooses one candidate everywhere on DEV, defining fixed selection. Candidates never learn further; a selector fits coefficients predicting consequences. Usage-matched random retains policy proportions and removes input correspondence, separating matching gain from net gain over fixed. Exact operations, grouping and prediction-shrinkage conditions are defined below.
+
 This round asks whether choosing the strength of input-dependent predictions within FIT reduces the original selector's loss while retaining gain over fixed common. Three models, two feature families and two selecting banks produce 12 alpha selections: 11 choose0 and only SALL/base/A chooses0.1. All24 selected pooled conditions improve over original alpha1 with corresponding conditional intervals above zero. In22, selected choices exactly equal common; the remaining two also have negative gain estimates against common. Reducing original-policy loss is observed; pooled adaptive gain over common is not delivered here.
 
 Execution includes24 fold-specific ridge solves,300 OOF rows,60 full final choice arrays,600 all-candidate DEV rows and120 selected-alpha pooled/domain rows. No new LM/SAE forward, GPU job, TEST access or neural-network training occurs. [Completion receipt](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/receipt.json)
 
 ## 1. Objects and Units
+
+This section defines the changed score and data roles. Candidates are previously normalized and measured matrix increments: four domain directions plus a pooled raw-gradient common direction, with no zero update and no further candidate learning. Whole-record FIT folds refit ridge predictors and measured finite CE chooses how much input prediction to use; DEV evaluates that chosen rule. Common describes construction, fixed describes selection, and shrinkage describes deviation of prediction scores from candidate means; these are not expert-training architectures.
 
 | Object | Meaning here | Boundary |
 |---|---|---|

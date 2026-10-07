@@ -33,14 +33,10 @@ the term.
 
 ## Definition Shape
 
-A useful first-use definition states:
-
-```text
-Chinese research object (approved or local alias)
-what it is in this document
-what role it plays
-nearest object it must not be confused with
-```
+The maintained authority for a first-use definition's operational content is the shared
+[writing contract](../../../../docs/report_writing.md#objects-operations-and-first-use-terms):
+include how the object is obtained and used and which question it answers.
+Do not maintain a competing definition template here.
 
 Do not define one unexplained English word using two more English words. For an
 abbreviation, expand it in Chinese before or beside the original-language full

@@ -1,5 +1,7 @@
 # 共享学习与路由：阶段报告阅读指南
 
+**2026-10-07表达版本说明：**本目录仍是1002的临时候选位置，没有迁为正式Focus。报告与数学正文按对象、操作、对照理由和证据边界修订，数值及冻结合同不变。下方日期记录保留原截止点，“当前”只指相应历史窗口；不把容量的NOT RUN泛化为其他项目状态。独立路由反馈的新状态由[其Summary](/data/250010109/Research_System/Projects/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary_cn.md)持有，不替本目录容量六臂补结果。本轮文件职责、修订清单与未改历史见[修订交付](../../../1007/editorial_revision_audit_cn.md)。
+
 **后续窗口入口：**[2026-10-04新的认识更新](../../../1004/cognition_update_cn.md)及[今日总结](../../../1004/daily_summary_cn.md)。本文主体保留第二窗口开始前的阶段论证与当时状态；后续CPU结果见[幅度检查](router_shrinkage_summary_cn.md)、[类别内对照](probe_33b_group_summary_cn.md)，后续执行状态见新报告第7节。
 
 更新：2026-10-04，Asia/Shanghai（UTC+8）。[English](reading_guide.md)。
@@ -15,6 +17,8 @@
 目前新面板已分析并复算，容量代码已通过CPU修复检查；精确GPU Smoke与正式轨迹仍未运行。主报告第5.5—5.6节是当前结果和执行状态入口。下方历史材料中的Pending不再代表当前状态。
 
 ## 1. 先完整阅读当前报告
+
+现在按两个问题阅读：先看[两分钟稿与展开解释](../../../1006/meeting_report/meeting_brief_sharing_research_recovery_cn.md)确认研究对象，再读[固定更新选择Summary](probe_33b_summary_cn.md)区分共同更新、固定选择和固定候选库。随后主报告第4节解释一次作用为何还不能决定长期共享；数学按需要展开。术语解释已放进这些正文，不必先背一份术语表。
 
 文件职责：把目的、观察、解释、模型、检验和认识更新连成一条论证。项目相对路径：`daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report_cn.md`。
 

@@ -10,6 +10,10 @@ This is not a claim to discover a new universal learning law. The additions are 
 
 ## 1. The question is unchanged; three decision objects differ
 
+The measured objects here are matrix increments: four raw domain mean gradients, their equal-weight pooled direction and separately normalized candidates. Candidates remain unchanged. FIT measured costs fit a predictor and choose one candidate for every DEV position, which is fixed selection; here it selects common. The input-dependent policy chooses per position. Usage-matched random retains the policy's candidate proportions while removing input correspondence; within-category controls also retain category proportions. Matching gain is random cost minus policy cost, whereas net gain is fixed cost minus policy cost. Neither quantity compares continuing common-module or expert training.
+
+Read states and suggestions at the October 4 cutoffs stated in each section. October 7 revises exposition only and does not backdate later execution. The separate router-feedback project's [current Summary](/data/250010109/Research_System/Projects/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary.md) owns its current state, not a result for the capacity six-arm study.
+
 The question remains: when should different inputs share parameter updates, and when should they use separately learned experts, to improve acquisition and retention under limited resources? The [Anchor](../1002/candidates/ntp_representation_update_channels/anchor.md) owns that question; the [Protocol](../1002/candidates/ntp_representation_update_channels/protocol.md) owns exact execution. The Anchor already separates current selection, later learning and optimizer boundaries. This window adds empirical localization and explicit derivations, without claiming those distinctions are newly discovered. The temporary location is retained, without a new Focus or scientific closure.
 
 | Object | Actual comparison | What it can answer |
@@ -142,6 +146,8 @@ A first-order guarantee is also precise. Write P for the product of future state
 Future sensitivity is also not a signal already available to a router. The expression fixes or retrospectively reads the future training process and terminal risk. When that future is unknown at decision time, a risk-neutral allocation rule would need expected later utility conditional on its allowed information. A retrospective identity does not supply that forecast. As with the outcome-informed oracle, an explainable effect is not automatically deployable decision information.
 
 ## 6. Read the complete acquisition–retention trajectory
+
+Measure total token CE divided by valid targets on the same heldout records for a domain at mixed-stage end, immediately before/after its concentrated stage and final training end: \(L_M,L_{\rm pre},L_{\rm post},L_F\). Acquisition improvement is \(L_{\rm pre}-L_{\rm post}\); subsequent forgetting is \(L_F-L_{\rm post}\). A negative forgetting value means further improvement and must not be clipped. Retention uses final absolute loss together with this change. Each domain already saw 4096 records/1,048,576 targets in mixed training, so acquisition here is additional concentrated learning, not first exposure. These are Protocol definitions, not new measured outcomes.
 
 The existing contract has 512 mixed updates followed by four 1024-update domain phases. Shared parameters participate in 4608 updates, each private expert in 1536. The globally declining LR sums over the four domain phases are 0.283852, 0.205944, 0.108722 and 0.042958, a first/last ratio 6.608. **This is not a 6.608-fold learning amount or parameter displacement.** Equal update counts do not imply equal learning opportunities; weak later acquisition cannot automatically be called insufficient capacity.
 

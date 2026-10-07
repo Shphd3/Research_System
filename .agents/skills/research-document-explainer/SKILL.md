@@ -35,6 +35,11 @@ look up only the needed entries in the
 
 ## Explain in dependency order
 
+Apply the shared [operational definition and comparison contract](../../../docs/report_writing.md#objects-operations-and-first-use-terms).
+The body must explain operations and why the comparison matters; a terminology
+appendix alone does not satisfy it. Recheck experiment-specific interfaces and
+scales instead of borrowing a familiar definition from another experiment.
+
 Lead with the question and answer, then the indispensable objects, their
 relation, supporting evidence and boundary. Define the object before its symbol
 and Chinese meaning before an English alias. An inline local definition is

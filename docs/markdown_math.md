@@ -11,6 +11,9 @@ following LaTeX delimiters render correctly there.
   into `\\(...\\)`; string literals in programs may need their own escaping.
 - Explain essential symbols in ordinary prose. Keep equations out of code
   spans/fences unless explicitly showing literal source.
+- For quantities, averaging, randomness, risk/loss conventions and exact versus
+  approximate claims, use the shared [formula meaning contract](report_writing.md#formula-meaning-and-evidence-scope).
+  This file owns Markdown syntax; the writing contract owns semantic explanation.
 - Preserve code, shell variables, currency, URLs and quoted syntax examples.
   A dollar sign in those contexts is not a mathematical delimiter.
 - Formatting changes must preserve formula bodies, values, scientific meaning,

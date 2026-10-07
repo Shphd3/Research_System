@@ -6,6 +6,8 @@
 
 ## 1. Define all objects in the same chain
 
+This note connects how source data demand learning to how a recipient's loss changes. Source records supply mean pure next-token CE gradients for the final projection \(W\): input c has 2048 coordinates and output a1024. Changing only this matrix induces \(\Delta a=\Delta Wc\), then the unchanged model remainder computes loss. This relation is exact at the fixed interface; gradient-inner-product and curvature descriptions of loss introduce local approximations. It is a one-matrix ordinary-SGD diagnostic, not full-model AdamW or SAE optimization.
+
 Freeze one S7 checkpoint and change only the final attention output matrix \(W\). An event contains visible prefix \(x\) and actual next token \(y\).
 
 | Object | Definition | Question answered |
@@ -139,6 +141,8 @@ At \(p=q\), target expectation removes the second term. Unverified calibration d
 
 ## 5. Why second-order overlap is not a separation criterion
 
+Here \(\Sigma_A/m\) is covariance of a mean gradient from m independent source units; \(\Sigma_A\) is single-unit gradient covariance. Variation of a recipient's true next token given its prefix is a different conditional random object. Empirical gradient second moments and Fisher under model-sampled targets also differ unless the stated calibration assumptions hold. Mean-estimation error, conditional target variation and minibatch fluctuation during evolving training are separate quantities.
+
 Vectorize \(W\) by columns into \(w\). Let a source estimate \(\widehat g_A\) have mean \(\mu_A\) and covariance \(\Sigma_A/m\). Let target population loss \(L_B\) have gradient \(\mu_B\) and Hessian \(H_B\). The quantity \(m\) counts the assumed independent sampling units; correlated tokens in one document cannot automatically be counted as independent units.
 
 With an integrable controlled remainder and permission to exchange expectation and expansion,
@@ -248,6 +252,8 @@ One can split \(u_P,u_R\) along that fixed path, but the removal intervention ta
 
 Let \(B\) be the pre-target baseline, \(Z\) the pre-update representation/code and \(H\) the scalar response for one fixed source; apply the identity separately to the four sources. Assume \(\mathbb E[H^2]<\infty\). For optimal squared-error predictors,
 
+Here \(R^*\) is optimal population **full-squared** prediction error for the random response H, averaging new events in this model. It is not LM CE, a training residual or half-squared loss. B here is lexical baseline information, not the later sharing model's curvature matrix; Z is added representation information. Risk includes irreducible response variance conditional on predictor inputs. The identity measures explainable conditional-mean variation; heldout ridge SSE improvement Q measures a finite fitted predictor and cannot be substituted for the ideal risk.
+
 \[
 R^*(B)-R^*(B,Z)=\mathbb E\left[\{\mathbb E(H\mid B,Z)-\mathbb E(H\mid B)\}^2\right]\ge0.
 \]
@@ -318,6 +324,8 @@ The current affine diagnostic fits \(H_B\approx\alpha+\beta H_A\) on F and appli
 ## 10. Three distinct objects: domain averages, source replication and target-conditional means
 
 ### 10.1 Two different averages
+
+The local \(V_{s,id}\) is a signed centered-response array indexed by source batch s, recipient event i and source domain d. It may be negative and inherits H's derivative-response or finite-nat units. It is neither the later model's nonnegative scalar gradient heterogeneity \(V\) nor estimator noise. A/B are batches within each domain; averaging A/B within domains and averaging four domains are different operations.
 
 A/B in §9 are two source samples **within each source domain**. Their average retains that domain's complete mean effect, including differences from other domains. It is not the four-domain common response. The earlier99.02% error accounting cannot show that between-domain differences disappear.
 

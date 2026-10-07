@@ -22,6 +22,70 @@ they do not create another review stage or change scientific authority.
   on Chinese, impose a controlled dictionary on scientific notation, or claim
   ASD-STE100 compliance without a separate compliance check.
 
+## Objects, operations and first-use terms
+
+Before naming a technical term, explain **what object it refers to, how it is
+obtained, how it is used, and which question it answers**. A translation or another
+abstract noun is not a definition. Put this explanation in the body at first use;
+a glossary may help retrieval but cannot carry the argument alone.
+
+Separate construction, selection and learning status. For example, averaging raw
+domain gradients constructs a **common update**; selecting one update on fitting
+data and using it everywhere is **fixed selection**; keeping all candidate updates
+unchanged throughout evaluation defines a **frozen candidate library**. Neither
+selection rule is a trained expert. Distinguish a parameter increment, its induced
+activation displacement, an expert with learned weights and a shared module whose
+weights continue to train. Reconstruct these operations from the owning Protocol
+and implementation; do not transfer a step size or interface between experiments.
+
+## Why a comparison is performed
+
+For each experiment, make the following reasoning readable in this order, within
+its existing artifact structure:
+
+1. The concrete uncertainty and its relation to the root question.
+2. The prior judgment or candidate hypothesis and a credible competing explanation.
+3. What changes, what stays fixed and what is compared.
+4. What each control rules out, and what it leaves unresolved.
+5. Which outcomes would change the judgment, including non-support and insufficiency.
+6. The observed outcome, supported claim, remaining boundary and resulting decision
+   or explicitly labeled AI suggestion.
+
+“Further analysis” or “validate effectiveness” is not a purpose. A proved identity
+does not need an invented empirical rival. Keep Summary's four parts and Anchor's
+eight sections; these requirements concern their content, not extra forms.
+
+## Formula meaning and evidence scope
+
+Near each equation, define the objects/symbols, dimensions or units, random variables,
+expectation or averaging domain, necessary assumptions and intended use. State whether
+the quantity is empirical training loss, heldout loss or population risk; total risk
+or excess risk after subtracting irreducible randomness; squared or half-squared
+loss; and an exact relation, local approximation or conjecture. Disambiguate symbols
+reused by different models with a local correspondence, or rename in maintained
+exposition without changing frozen evidence. A variance of group mean gradients is
+not an estimator-noise covariance.
+
+Name the random object behind “noise”: conditional variation of the true target
+given the observed input, finite-sample error of an estimated mean, or minibatch
+gradient fluctuation at a stated model state. “Denoising” requires an operation and
+conditions; it does not mean deleting real group differences or correcting labels.
+
+Distinguish model derivations, teaching examples, language-model measurements,
+interpretations and unfinished work. One-step selection on a frozen model does not
+establish continuing expert training. Winning a usage-matched random control does
+not establish a win over a strong fixed baseline. An interval crossing zero does
+not prove no effect. A failed implementation or unrun comparison is not an
+architecture result. Keep values, uncertainty, versions and evidence identities.
+Do not rewrite raw data, logs, receipts or frozen protocols as new history; clarify
+their historical scope in the current report. Personal anxiety and assessments of
+an advisor do not belong in research reports.
+
+Each substantive section starts with the question it resolves and ends with the
+judgment it changes and the uncertainty it leaves. Remove repeated exposition that
+does not help understanding. These are meaning requirements, not mandatory repeated
+labels or a requirement to lengthen every section.
+
 ## Content and depth
 
 For a research-progress report, preserve this reasoning chain:
@@ -114,6 +178,9 @@ Read the delivered Markdown sequentially with figures, link targets and rich
 rendering unavailable. Can a new reader state the question, why the argument or
 comparison answers it, the decisive finding and what remains unresolved? Check
 symbol definitions, conditions, evidence links and agreement with the source.
+Check whether the body alone lets a mathematically trained new reader identify
+the research object, actual steps, rationale, meaningful controls, change in
+judgment and unanswered questions. Record which sources could not be accessed.
 Without an independent reader, call this self-review. Path and source checks do
 not establish scientific correctness or independently measured comprehension.
 

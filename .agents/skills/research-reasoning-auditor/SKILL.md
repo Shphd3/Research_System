@@ -24,6 +24,11 @@ or experiment is absent, inspect relevant existing work and state search limits.
 
 ## Checks
 
+Use the shared [objects, comparison rationale and formula meaning rules](../../../docs/report_writing.md#objects-operations-and-first-use-terms).
+Audit an actual first-use passage, not just a glossary. Reconstruct its operations
+from the owning evidence before proposing clearer terms. Distinguish an exposition
+repair from missing research; preserve frozen protocols and result identities.
+
 1. Separate observation, unknown, purpose, hypothesis, mechanism, prediction,
    measurement/intervention, conclusion and decision.
 2. Start from the phenomenon and system structure, not a convenient metric or

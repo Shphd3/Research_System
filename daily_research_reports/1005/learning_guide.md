@@ -1,4 +1,4 @@
-# Understand the Recent Research in One Day: From Update Effects to Learning Allocation
+# Review the Recent Research: From Update Effects to Learning Allocation
 
 [中文](learning_guide_cn.md) · [Daily entry](README.md)
 
@@ -7,6 +7,8 @@
 This is the teaching plan and derived reading guide requested by the user. The original Summaries own the results; the Anchor and Protocol own the design. Exercises and suggested learning criteria are not scientific decision thresholds. The researcher's mechanism judgment, practical benefit threshold, and next scientific decision remain Unknown. Execution status refers to the archived observations through 2026-10-04 17:48:35 UTC, or October 5 at 01:48:35 Beijing time. No GPU status was queried again and no GPU job was started for this guide.
 
 ## 1. How to Study Today, and What to Be Able to Do
+
+Reading version: exposition revised on 2026-10-07. October 5 study times below are historical examples that can be shifted; they do not promise one-day mastery. Execution counts retain the October 4 archived cutoff cited in each section, not a global current state. The independent router-feedback project has a separate [current Summary](/data/250010109/Research_System/Projects/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary.md); it supplies no result for the capacity six-arm comparison. Learning means explaining a comparison and its boundary, without adding experiments.
 
 Start with this document alone. In each session, read the explanation, check one decisive piece of evidence in the specified source, then close the document and complete the task. When a formula is difficult, return to its objects and assumptions rather than expanding immediately to all 17 papers. Consult long proofs, complete result tables, and execution logs as needed.
 
@@ -31,6 +33,8 @@ Today's target is to explain the main line for 10 minutes without looking at the
 
 ### 2.1 The Starting Point Was Not a Blank Slate
 
+Define the operations first. A source mean loss gradient constructs one specified parameter increment and recipient next-token losses measure its before/after effect. Choosing among already constructed, unchanged increments is frozen-library selection. Continuing to update shared weights or private copies is learning allocation. INSUFFICIENT means the old registered effect was unresolved; NON_SUPPORT means the original prediction lacked support. Q measures relative squared-error improvement for response prediction, not LM CE improvement or an architectural verdict.
+
 The original concern was how relationships in natural-language data affect shared parameter updates, and whether SAE analysis could help explain them. Representation, gradient, and sensitivity analyses already existed; it would be wrong to say these had never been studied. Two earlier formal conclusions still stand: the natural-statistics primary test was INSUFFICIENT, with statistic 0.006637 and interval [−0.003738, 0.017012]; the primary test of predicting the gradient inner product between two DCLM events before seeing their targets was NON_SUPPORT, with Q of −0.000138. Later questions and new data cannot retroactively rewrite either verdict.
 
 We then posed a more directly operational question: **Given a source batch, how does one specific update produced by it affect other texts? Can these differences be used before the target appears?** This was a concrete research choice, not the only next step logically permitted by the earlier negative result. The researcher subsequently focused the goal on whether small experts could approach a larger Dense model under limited resources, and whether placing specialized computation after a common module would help. That required studying actual learning and retention.
@@ -40,7 +44,7 @@ We then posed a more directly operational question: **Given a source batch, how 
 | Object | What is held fixed, and what changes? | Progress over these two days |
 |---|---|---|
 | Update effects and selection among existing actions | Freeze the model and candidate updates; change the source or select an action from the input | Native finite-loss measurements, prediction, and selection diagnostics are available |
-| Learning allocation | From a common starting point, let data update shared parameters or private copies | Six-arm design and implementation checks; 0/12 formal trajectories |
+| Learning allocation | From a common starting point, let data update shared parameters or private copies | Six-arm design and implementation checks; 0/12 formal trajectories at the cited October 4 cutoff |
 | The future effect of one update | Accept or reject the current update, then execute the same future training | Computational relations and analytical counterexamples; no corresponding causal LM trajectory result |
 
 The research route can be drawn as:
@@ -53,7 +57,7 @@ Representation description → Actual update effects → Response prediction bef
                                                     Shared/private learning → Optimizer and subsequent training → Acquisition and retention
 ```
 
-An arrow means that evidence must be added or the comparison object must change. It does not mean that the preceding item has already established the next.
+The map has two research branches: fixed-state diagnosis/selection and state-changing learning trajectories. They inform each other, but successful frozen-library selection is not a prerequisite for studying continued learning. Connections indicate that a changed object needs its own evidence, not a unique direction deduced from a negative result.
 
 Also distinguish four kinds of evidence: **description** says that a difference exists; **prediction** says it can be forecast from permitted information; **intervention** says what finite effect a specified change produces; and **utility** asks whether adopting a scheme beats an available control. These are different questions, not a ranking of results from low to high.
 
@@ -77,6 +81,8 @@ Also distinguish four kinds of evidence: **description** says that a difference 
 ## 3. Session 2: Derive the Actual Effect from the Gradient, Then Check the SAE (70 Minutes)
 
 ### 3.1 Why We Started at This Level
+
+Why change only one matrix? It makes source gradients, recipient activation changes and subsequent loss auditable at one interface. Native continuation executes the same residual, MLP, normalization and vocabulary head from the changed a. W is 1024×2048, c has 2048 coordinates a has 1024 coordinates, and e is the 1024-coordinate loss gradient with respect to a; other parameters and recipient input remain fixed. Full-model AdamW changes more parameters and history states, so this relation does not replay it.
 
 Seeing an SAE coordinate activate frequently only tells us what it describes. Seeing sensitivity along a direction only tells us that moving along it could matter. We still need to know: **Does source learning actually move the model in that direction, and how does the receiving event's loss change?** We therefore derive the actual update chain first, then check whether the analysis tool tracks it faithfully.
 
@@ -103,6 +109,8 @@ The F subscript denotes the sum of products of corresponding matrix entries. The
 
 ### 3.2 Why We Then Audited the SAE
 
+The trained encoder computes coordinates from a; TopK retains 32 active coordinates and zeros the rest. Decoder D linearly reconstructs activation from the retained code. Reconstruct each endpoint first, then subtract to test the actual displacement. Activation a has 1024 coordinates, the full code α30000 and D shape 1024×30000. Static error uses activation energy as denominator; dynamic error uses displacement energy.
+
 The SAE expresses an activation as its decoder reconstruction plus a residual. Let α be the sparse encoding, D the decoder matrix, b the decoder bias, and ε the reconstruction residual. Freezing D and b before and after the update gives the exact relations:
 
 \[
@@ -123,6 +131,8 @@ Here TopK is 32, so D_SE_S has rank at most 32. It cannot equal I in every direc
 
 ### 3.3 Why the Prediction Checks Needed Several Controls
 
+The learned object is a response predictor. Fitting-record update effects supervise ridge coefficients predicting labels from pre-target inputs; LM and SAE states stay unchanged. The initial label is a derivative response; the frozen predictor is later step-scaled to score finite labels. This is not selector training. Q=1−augmented SSE/baseline SSE, summing squared response residuals on the same evaluation events. PCA 320 supplies 320 variance directions from fitting data and random 320 fixed random directions; these differ from the later panel's64-coordinate checks.
+
 The initial finite-response prediction Q was about 1.41%, versus 2.26% for PCA320 and 2.53% for random projection320. Q measures the reduction in prediction error relative to a baseline, not the reduction in language-model loss. After a stronger prefix baseline, the SAE's incremental improvement for first-order responses was about 1.11% / 1.21%. Adding the actual target improved prediction by about 21%–24%; adding the SAE after the target brought no improvement.
 
 These controls separately ask whether the result is only lexical and scale information, whether it is specific to SAE features, and whether the actual target carries much of the explanation. The actual target can be used in analysis and as training supervision. If the action must be selected before predicting that target, however, the decision input cannot look ahead to it.
@@ -134,6 +144,8 @@ These controls separately ask whether the result is only lexical and scale infor
 ## 4. Session 3: Source Stability and Information Available Before the Target (50 Minutes)
 
 ### 4.1 Why We Changed the Source Samples
+
+Old F has 1024 records, each half 512; old R has 1024 previously exposed scoring records. The first half-swap also refits predictors. The later check splits A/B inside F-half 0, with 64 records per domain/bank, fits on F-half 1 and scores R. A/B are within-domain source batches, not domain names. The later new panel's256-record source banks retain their own construction; these splits are not interchangeable.
 
 A “list of victims” produced by one fixed source update might reflect properties of that particular source batch. The first check swapped the two halves of F as sources while keeping receiving events fixed. Average help remained, but about 20.87%–36.36% of events resolved in both measurements changed sign. This means that a single observed effect cannot be named a stable task conflict.
 
@@ -170,6 +182,8 @@ There is also an information issue: a=Wc may have discarded directions used by t
 ## 5. Session 4: From Prediction to Decisions, Then to Learning (60 Minutes)
 
 ### 5.1 Decisions Require Relative Costs
+
+Cost is loss after a candidate computation, or finite loss change relative to the same original model. Risk-neutral here means comparing mean cost without an additional tail-harm penalty, averaging the true-target/data distribution specified by the model. This explains expectation-based ranking but does not set researcher-owned resource or harm prices.
 
 Let h denote information available at decision time, a a candidate action, and C_a the actual cost observed after executing it. Risk-neutral selection should compare conditional expected costs:
 
@@ -216,11 +230,13 @@ For 0<η<2, separate learning creates useful differences that did not previously
 
 ### 6.1 First Identify the Three Sets of Research Materials
 
+The sequence is: compute four raw domain mean gradients within each A/B bank; pool them into a common direction; independently scale each as \(\Delta W_a=-0.001\|W\|_FM_a/\|M_a\|_F\); measure each FIT candidate's finite CE; fit ridge; choose the predicted minimum on DEV and read its true consequence. The Frobenius norm is the square root of summed squared matrix entries. Equal increment norms can produce different activation displacements. Candidates no longer learn during evaluation, defining a frozen library, not five trained experts. Common describes construction; fixed selection describes using one candidate everywhere. Predictor coefficients can be fitted while LM/candidates remain frozen. Zero update is a zero matrix increment, not turning the model off.
+
 | Material | Identity and operation | What must not be conflated |
 |---|---|---|
 | October 2 old panel | One S7 checkpoint, itself trained for 33B tokens; the old receiving panel | Not a 21B model; the strong fixed action among the old four actions is not the new common action |
 | New fixed-library panel | Three exact 33B-token states: Dense, fresh S7, and SALL; new records and a common action | No new MoE was trained; this is not a parameter-count experiment |
-| Six capacity arms | Randomly initialized eight-layer small models; mixed training followed by sequential domain training | 0/12 formal trajectories; fixed-library results cannot supply the missing training comparison |
+| Six capacity arms | Randomly initialized eight-layer small models; mixed training followed by sequential domain training | 0/12 formal trajectories at the cited October 4 cutoff; fixed-library results cannot supply the missing training comparison |
 
 Sources A/B in the new panel each produce four domain actions and one common action. There are 512 FIT records for fitting and 1,024 DEV records for evaluation, with 16 positions per record. The common action is formed by **averaging raw gradients first, then normalizing that average separately**. Teaching example: for raw gradients (3,0) and (0,1), the unit direction after averaging is (3,1)/√10. Normalizing each first and then averaging instead gives a direction along (1,1). Nor can the average loss of four actions be treated as the common action's loss.
 
@@ -251,6 +267,8 @@ Global matching gains might arise simply because different categories prefer dif
 The switching audit further asks why departures from the common action lose value. Let S indicate a switch and D the additional cost relative to the common action. Because D=0 without a switch, E[D]=P(S)E[D|S]. In the Dense A→A example, about 75.46% of events switch. The prediction says each switch saves 1,467 micronats; the actual average extra cost is 352 micronats. About 49% of switches do improve loss. The issue is that the probabilities and magnitudes of gains and losses still sum to a loss, not that every choice is wrong.
 
 ### 6.4 Why We Checked Amplitude on Held-Out FIT Folds
+
+Out-of-fold prediction holds out whole FIT records and predicts using scaling/fitting from the other folds, keeping 16 positions together. Alpha shrinks input-score deviation from candidate means, not physical update magnitude or expert weights. Alpha 0 selects by means alone; improving over alpha 1 can simply mean reverting to fixed, requiring a separate fixed-baseline comparison.
 
 The original estimator was too optimistic within FIT. We therefore shrink its input-dependent predictions toward action means and ask whether using the same information more conservatively helps. This check contains only five fixed update actions, with no no-update action: 12 selections = 3 models × 2 input families × 2 source libraries, and the 24 evaluations multiply this again by same-/cross-source evaluation. The original 92 conditions also include other input families and action sets containing no update, so the two grids' “success proportions” cannot be compared. Let μ_a be action a's mean on the training fold and q̂_a its input-dependent prediction:
 
@@ -284,6 +302,8 @@ The derivation only requires expanding the square and using Σp_k(G_k−G)=0. Th
 
 ### 7.2 Finite Data Can Change Which Scheme Is Better
 
+Noise here is a sample gradient's deviation from its true group mean: \(g_{ki}=\mu_k+\xi_{ki}\), \(\mathbb E\xi_{ki}=0\). Independence within/between groups yields \(\operatorname{Cov}(\widehat\mu_k)=\Sigma_k/n_k\). True-target randomness given a prefix can contribute variance without mislabeled data; genuine group mean differences are not noise to erase. Training minibatch fluctuation also occurs at evolving model states. Risk averages independent population loss with the same group proportions, then averages sampled updates. The half-squared example below includes irreducible target variance. n_k is not cumulative training tokens.
+
 Replace G_k with an estimate. Each group has n_k samples, mutually independent both within and across groups, with gradient mean μ_k and covariance Σ_k; group risks are exact quadratic functions with the same positive semidefinite curvature B. Let μ=Σp_kμ_k and define mean-gradient heterogeneity V, curvature-weighted heterogeneity V_B, and the additional noise cost of separate estimation N_B:
 
 \[
@@ -303,7 +323,11 @@ For a hand calculation, use two equiprobable groups with means ±1, variance 4, 
 
 This is not a grouping threshold already validated in the current LM. Different curvatures, correlated samples, choosing groups on the same data, AdamW, or global normalization all change the derivation. In particular, private gradients in the actual mixed batch include p_k=1/4, whereas the equation compares equal conditional step sizes. It cannot be applied directly to the six-arm endpoints.
 
+The−0.50 difference only means shared has lower risk than private. The example uses w=0, loss½(w−Y)² and group target means±1 with single-observation variance 4. At n=1 it starts at 2.5 and ends at 3.5/shared or 4.0/private: both worsen. At n=4 endpoints are 2.75 and 2.5, difference+0.25. Between-policy preference and improvement over the starting state are distinct.
+
 ### 7.3 What Does the Common Structure Actually Change?
+
+FFN means a positionwise feed-forward network. Common module C and domain expert E_d have continuously learned weights; T denotes the remaining shared backbone. Parallel computes C(z)+E_d(z); serial feeds z+C(z) into E_d. Private copies only the specified common module, not T into four independent models. The six arms compare connection, tying and resources; initial function matching does not guarantee matched future paths.
 
 A common module may save repeated storage or pool data to reduce estimation error; these are distinct from expanding the function class. In a linear residual example, the parallel form is I+C+E_d and the serial form is (I+E_d)(I+C). If I+C is invertible, setting Ẽ_d=E_d(I+C) reparameterizes the same function while preserving the corresponding matrix rank. The appearance of a cross term does not automatically establish greater expressivity. Finite nonlinear networks require a separate check, and equivalent function classes do not guarantee equivalent learning dynamics.
 
@@ -366,6 +390,8 @@ Future updates reweight today's directions. Hard routing, clipping boundaries, a
 
 ### 8.4 Which Losses Must Actual Training Read Out?
 
+Recompute CE on the same heldout domain records at mixed end, immediately before/after its concentrated stage and final end; divide token loss sum by valid targets to obtain \(L_M,L_{\rm pre},L_{\rm post},L_F\). Own-stage improvement is \(L_{\rm pre}-L_{\rm post}\); subsequent forgetting is \(L_F-L_{\rm post}\), retaining negatives as further improvement. Read final absolute loss as well. Each domain already saw 4096 records/1,048,576 targets in mixed training, so acquisition means additional concentrated learning, not first exposure. This capacity Protocol measure cannot be inferred from router-feedback endpoint CE alone.
+
 Each contracted trajectory has 512 mixed-training steps followed by four stages of 1,024 steps each. Shared parameters participate in 4,608 steps and each expert in 1,536. The learning rate decays with the global step, and the ratio of summed learning rates in the first versus last single-domain stage is 6.608. This is not 6.608 times as much learning. The two seeds are coupled to domain orders, so seed and order effects cannot be estimated independently either.
 
 For the same domain, let L_M, L_pre, L_post, and L_F be its losses after mixed training, before its own stage, after its own stage, and at the end:
@@ -377,7 +403,7 @@ L_M-L_F=(L_M-L_{\rm pre})+(L_{\rm pre}-L_{\rm post})
 
 The three terms are transfer before the domain's own stage, acquisition during that stage, and subsequent forgetting. Teaching values 2.0, 1.8, 1.2, and 1.4 give net improvement 0.6=0.2+0.6−0.2. The first domain has no prior-stage transfer and the last has no subsequent forgetting. These zeros arise from the order of stages, not from superior capability. Absolute losses and these components must be compared together.
 
-**At the final archived cutoff:** Four-GPU job pt-scl8ek3y passed the hardware check and all 42 resume checks for the six seed1003 arms. For seed1004, however, 1 of 524,288 elements in the initial FP32 equivalence check failed the original tolerance. Qualification failed and formal training did not start. The amended qualification conditions passed CPU checks. GPU recovery job pt-c44kwvx3 remained pending, was then stopped, and was verified as SUSPENDED. There were 0/12 formal trajectories and 0/18 endpoint mechanism readouts. No architecture won. Numerical qualification failure and queue waiting are not scientific counterevidence.
+**At the final archived cutoff:** Four-GPU job pt-scl8ek3y passed the hardware check and all 42 resume checks for the six seed 1003 arms. For seed 1004, however, 1 of 524,288 elements in the initial FP 32 equivalence check failed the original tolerance. Qualification failed and formal training did not start. The amended qualification conditions passed CPU checks. GPU recovery job pt-c44kwvx3 remained pending, was then stopped, and was verified as SUSPENDED. There were 0/12 formal trajectories at the cited October 4 cutoff and 0/18 endpoint mechanism readouts. No architecture won. Numerical qualification failure and queue waiting are not scientific counterevidence.
 
 **Check the sources:** [Understanding update](../1004/cognition_update.md) §4–7 and [final status receipt](../1004/evidence/final_window_status.json).
 
@@ -412,11 +438,13 @@ Score each question as 0 for an incorrect answer or inability to explain, 1 for 
 | 9. Why can future specialization matter when current actions are identical? | Allocation during training changes future parameters. Give the sign-expert example and state the restricted-function-class/predetermined-grouping conditions. |
 | 10. Why can the SGD variance gain not directly predict the six-arm outcome? | It assumes conditional step sizes, fixed groups, and, for the quadratic result, common curvature and independent data. Actual AdamW, global normalization, counts, and resources differ. |
 | 11. Why can immediate help reverse, and why is final loss alone insufficient? | Future training preserves different directions differently. Calculate the counterexample and decompose net change into prior-stage transfer + acquisition − forgetting. |
-| 12. What evidence is most missing next? Can architectures be ranked now? | Qualified complete shared/private trajectories and resource measurements are missing. Formal completion is 0/12, so there is no winner. The researcher confirms the concrete next decision. |
+| 12. What evidence is most missing next? Can architectures be ranked now? | Qualified complete shared/private trajectories and resource measurements are missing. Formal completion is 0/12 at the cited October 4 cutoff, so there is no winner. The researcher confirms the concrete next decision. |
 
 If you fall below the suggested target, do not reread everything. Map each wrong answer to Sessions 2–7, redo an example, and answer in new words. Use the remaining time tonight to correct critical misreadings first.
 
 ### 9.3 What to Do Next (20 Minutes)
+
+The priorities below are AI suggestions at the cited October 4 cutoff. October 7 work revises documents only; current research decisions remain with project owners and no experiment is launched.
 
 **AI suggestion: prioritize completing the original shared/private learning comparison, rather than adding more router tuning on the same exposed DEV.** The researcher is concerned with learning and retention under limited resources. Fixed-library diagnostics have already produced a clear, bounded negative utility result, while the decisive evidence about actual learning allocation is still missing. This is a priority suggestion, not scientific confirmation or new run authorization.
 

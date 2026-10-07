@@ -1,5 +1,7 @@
 # 1002 temporary candidate: sharing, finite utility and MoE routing
 
+**2026-10-07 exposition version note:** This remains the 1002 temporary candidate directory, not a promoted Focus. Maintained report/math bodies now explain objects, operations, control rationale and boundaries; values and frozen contracts remain unchanged. Dated records below retain their cutoffs: “current” refers to that historical window, and capacity NOT RUN does not describe other projects. The separate router-feedback [Summary](/data/250010109/Research_System/Projects/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary.md) owns its new state, not results for these capacity arms. See the [revision delivery](../../../1007/editorial_revision_audit_cn.md) for roles, edits and retained history.
+
 ## Second research window, 2026-10-04: latest understanding
 
 Read the [new understanding update](../../../1004/cognition_update.md), at `daily_research_reports/1004/cognition_update.md`. The separate [daily summary](../../../1004/daily_summary.md) retains its 15:53:50 UTC cutoff. The update keeps the same Anchor and adds within-source/switch accounting, category-matched controls, out-of-fold amplitude selection, and explicit derivations of effects through future learning. Its Section 7 and execution receipts own the current four-GPU job status.

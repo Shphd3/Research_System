@@ -3,7 +3,7 @@
 Conversation name: 1002-自然语言统计规律与更新相容性：两小时研究
 Processed by: Codex (harness: Codex desktop; model: unknown)
 Created at: 2026-10-02T08:50:00Z
-Latest update at: 2026-10-03T10:47:56Z
+Latest update at: 2026-10-05T09:24:36.116749+00:00
 Continues from: /data/250010109/Research_System/.research/memory/conversations/0930-自然语言统计规律与相容性/memory.md
 Environment: repo=/data/250010109/Research_System; exec=/data/250010109/MoE_Router. Both roots are readable.
 
@@ -82,3 +82,37 @@ Processed by: Codex (harness: Codex desktop; model: unknown); processing agent: 
 - Next action: 先检查两个相同job，若启动则读取硬件/原生资格、第一条进展与即时失败。容量按原只读汇总器读取；新面板每模型aggregate_receipt完成后，按执行README用8 CPU线程和1800秒界限串行运行既有analyze_probe_33b.py。缺失保留NOT RUN/INCOMPLETE，不填零、不重提、不根据旧R改冻结recipe。可训练因果gate与强固定分配的长期比较仍为AI建议，没有新增合同或提交。
 - Verification: 最终源码范围审计与交付收据在sharing_routing/receipts；本轮四图已实际查看，完整payload保留来源。全库导航30个既有UNTRACKED仍未解决，未声称全库通过；无commit/push。此memory只供续接，不持有批准或科学结论。
 - References: [临时Anchor](/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/anchor_cn.md)与[Protocol](/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/protocol_cn.md)持有当前问题和精确合同；[本轮报告](/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report_cn.md)、[数学](/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_mathematics_cn.md)和[过程](/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_process_cn.md)持有认识及边界；[执行索引](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/README_cn.md)持有现有任务、冻结、产物与后续命令；[交付收据](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/delivery_receipt.json)持有窗口时刻和最终文件身份。
+
+
+## 2026-10-05T03:47:51Z -- 八小时学习交付与独立教学对话
+
+Processed by: Codex (harness: Codex desktop; model: unknown); processing agent: /root
+
+- Summary: 研究者要求当天约8小时掌握10月2日起点至两天研究推进，包含公式推导与证据抽查；已完成中英文八段学习指南和原研究记录整理，并按明确请求commit/push至origin/master，提交b1bcd933f8540512f995a966f134f3fcb7b2c1db。指南是派生教学材料，未改变科学判断。
+- Current work: 本轮用户进一步要求新开6.1 Sol ultrafast教学对话。已由官方本地app-server创建持久对话并启动首轮；教学对话ID：01a10a2a-b783-7752-9149-ed2ffd48a40a，指定名称「1005-研究学习：从更新作用到共享与路由」。thread/start实际返回model=gpt-6.1-sol、reasoningEffort=ultra、serviceTier=priority（本机Fast名称）。首轮已在读取完整指南、研究过程、最初报告、共享主报告、认识更新、Anchor及三份Summary；学生尚未提交任何答案。
+- Supersedes: 本日志10月3日的Pending与NOT RUN属于当时观察。最新执行读数必须读1004认识更新§7和final_window_status.json：截止2026-10-04T17:48:35Z原资格失败、恢复任务停止，正式轨迹0/12和端点读数0/18。此处不重释裁决，也不续展旧时段授权。
+- Next action: 在新对话以一次一题方式开始第1段，用户作答后解释、纠错和推进。新对话只做教学；学习进度写入自己的记录并链接此前记录，不覆盖本日志。原始数据分析、训练、GPU状态查询、科学状态变更不由本教学任务授权。
+- References: [学习指南](/data/250010109/Research_System/daily_research_reports/1005/learning_guide_cn.md)持有8小时路线、公式和练习；[本次交接](/data/250010109/Research_System/.research/memory/conversations/1002-自然语言统计规律与更新相容性两小时研究/continuation.md)指向最小必读集与操作边界；[认识更新](/data/250010109/Research_System/daily_research_reports/1004/cognition_update_cn.md)持有最新阶段读数；[最终执行回执](/data/250010109/Research_System/daily_research_reports/1004/evidence/final_window_status.json)持有截止事实；三份Summary及Anchor/Protocol均由交接表链接到原所有者。本次交接文件保存在共享工作区，尚未另行commit/push。
+
+
+## 2026-10-05T03:48:57Z -- 教学首轮就绪
+
+Processed by: Codex (harness: Codex desktop; model: unknown); processing agent: /root
+
+- Summary: 新对话01a10a2a-b783-7752-9149-ed2ffd48a40a首轮已完成，官方thread/read核验名称为「1005-研究学习：从更新作用到共享与路由」、独立thread且idle。观察到必读材料完整读取，模块1开场与第一道理解题已生成。
+- Current work: 等待研究者在新对话回答第一题；尚无已完成学习模块或测验。
+- Next action: 在新对话作答后继续逐步教学；本对话不继续替学生作答或启动研究运行。
+- References: [教学会话回执](/data/250010109/Research_System/.research/memory/conversations/1002-自然语言统计规律与更新相容性两小时研究/teaching_thread_receipt_20261005.json)核验新ID、设置和首轮完成；[操作交接](/data/250010109/Research_System/.research/memory/conversations/1002-自然语言统计规律与更新相容性两小时研究/continuation.md)提供来源与边界；[学习指南](/data/250010109/Research_System/daily_research_reports/1005/learning_guide_cn.md)持有课程。
+
+
+## 2026-10-05T09:24:36.116749+00:00 -- 独立路由梯度对照项目已交接
+
+Processed by: Codex (harness: Codex desktop; model: unknown); processing agent: /root
+
+- Summary: 研究者要求把路由输入梯度对照交给gpt-6.1-sol/high执行，在独立临时项目中读取必要来源、实现、提交训练，并预先确定后测与独立memory。已建立Projects/router-representation-coupling并从PROJECTS.md导航；未改变原共享容量实验。
+- Scope correction: 最新用户指令覆盖最初“两项8卡5090”：A正常路由用4H100 reserved、同规格Smoke；B路由输入detach用8RTX5090 spot、2RTX5090 spot Smoke。两种Smoke通过后只发出正式创建并保存直接返回，不等待正式调度/启动/进度，不监控、不自动重提。直接请求位于新项目handoff/researcher_request_cn.md，待执行者规范化到正式Protocol；memory不持批准。
+- Current work: 已创建并核验独立持久对话01a10b5e-939f-7302-ab6f-bac7b48758d9，名称「1005-路由表征共同学习：梯度反馈对照执行」，gpt-6.1-sol/high、default service tier；首轮已启动，执行者已读取交接并建立自己的memory与continuation，正在推进。尚未在本轮观察到Smoke或正式job提交，不声称训练已开始。
+- Planning boundary: prompt设置首轮每臂不超过10B有效token、一对seed，属于规划者的有界实施选择，不是用户原话；以262144有效token/update可取9999745024为终点。两臂不同硬件完全混杂；Smoke中交叉短重放只能诊断数值差异，不足以消除长期硬件竞争解释。辅助梯度路径须保持一致，不能把额外切断辅助梯度包装成纯LM门控效应。
+- Next action: 执行者在新项目补齐唯一Anchor、训练/后测Protocol，独立适配源码，完成本地测试和两种Smoke，按授权提交后停止正式轮询。根对话仅规划并派发，不同时操纵这些run。后测包括heldout CE、梯度路径、组成控制后的几何、使用率匹配路由干预及有限更新相容性；无新大规模SAE或更多正式臂授权。
+- Verification: 13个必需源路径存在且已保存身份manifest；工作树导航65项0错误、5项待跟踪；新项目静态本地链接通过。项目沿用独立项目ignore策略；没有commit/push。
+- References: [完整执行prompt](/data/250010109/Research_System/Projects/router-representation-coupling/handoff/execution_prompt_cn.md)持有范围与后测要求；[直接用户请求](/data/250010109/Research_System/Projects/router-representation-coupling/handoff/researcher_request_cn.md)持有最新修订；[派发回执](/data/250010109/Research_System/Projects/router-representation-coupling/handoff/executor_thread_receipt.json)持有模型设置和thread ID；[执行对话memory](/data/250010109/Research_System/.research/memory/conversations/1005-路由表征共同学习梯度反馈对照执行/memory.md)供后续工作续接。此前teaching continuation仍仅属于教学委托，本次从新项目prompt进入。

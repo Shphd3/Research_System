@@ -4,6 +4,8 @@
 
 Daily folders contain meeting briefs, meeting records, small progress notes and date-local figures. Formal research belongs to the project. Backup contains historical snapshots, not default current sources. Registered current Focuses have moved out of backup.
 
+- [1007: research exposition revision and report delivery (Chinese)](1007/editorial_revision_audit_cn.md)
+- [1006: two-minute meeting preparation and research understanding (Chinese)](1006/README_cn.md)
 - [1005: eight-hour research learning guide](1005/README.md)
 - [1004: daily summary and understanding update](1004/README.md)
 - [0930](0930/README.md)

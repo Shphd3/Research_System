@@ -6,6 +6,8 @@
 
 ## 1. Shared representations: similarity is not the only useful condition
 
+This literature review checks an inference: whether task differences or gradient conflict alone justify parameter separation. Identify what each paper shares first—backbone weights, an always-active expert or a frozen function used by new modules—then identify changed connections, assignment or learning status. Frozen-update selection is not those training ablations. The review retains versions, sections and values checked on October 4, without claiming later coverage; external configuration-specific findings cannot supply this project's unrun results.
+
 | Primary source and reading scope | Method, information and cost conditions | Use and boundary here |
 |---|---|---|
 | [Maurer, Pontil and Romera-Paredes, 2016](https://jmlr.org/papers/volume17/15-242/15-242.pdf), Sections 2–3 | Generalization bounds for shared features and task mappings depend on tasks, samples and function classes; tasks and supervised targets are available. | Supports conditional statistical pooling. A bound does not establish this AdamW trajectory, compute savings or retention. |

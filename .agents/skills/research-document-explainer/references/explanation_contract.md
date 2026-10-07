@@ -78,6 +78,10 @@ a missing relation, justification, example, or boundary.
 
 ## Explanation Units
 
+Use the shared [operational first-use and formula meaning contract](../../../../docs/report_writing.md#objects-operations-and-first-use-terms).
+This reference controls explanation depth and source handling; it does not maintain
+a second terminology or loss/risk convention.
+
 For a paragraph, formula, figure, or gate, explain:
 
 ```text

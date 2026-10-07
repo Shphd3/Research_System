@@ -1,6 +1,6 @@
 # Natural-text responses to shared updates: a stage study in S7's representation space
 
-**S7 shows helpful domain means with mixed individual finite-update effects, and modest response information readable from pre-update representations. SAE coefficients provide useful coordinates, but their differences do not faithfully reconstruct these small native displacements.** All measurements use previously exposed natural texts and are exploratory. Long-term net separation benefit remains unresolved.
+**S7 shows helpful domain means with mixed individual finite-update effects, and modest response information readable from pre-update representations. A sparse autoencoder (SAE), an analysis network encoding activations into a few nonzero coordinates and reconstructing them, provides useful coordinates, but their differences do not faithfully reconstruct these small native displacements.** All measurements use previously exposed natural texts and are exploratory. Long-term net separation benefit remains unresolved.
 
 2026-10-02. Candidate work outside the formal project. The researcher requested mechanism analysis together with exact natural texts, using S7 and its existing SAE sidecar. New design choices and the next decision are AI proposals. [中文](research_report_cn.md) · [Anchor](history/20261002_before_capacity_refinement/reading/anchor.md) · [Protocol](history/20261002_before_capacity_refinement/reading/protocol.md) · [Full derivations](mathematical_analysis.md) · [Process](research_process.md).
 
@@ -9,6 +9,10 @@
 **Continuation update (from 2026-10-02 16:35 UTC):** frozen predictors retain about 0.48%–0.60% finite-response prediction-error improvement across two sources with disjoint records. About 99% of the current fixed-regularization own-source absolute MSE improvement comes from the within-domain A/B mean response. Within-domain A/B contrast-specific tuning yields an SAE gain of about 0.009%: very small, but not established as zero. These are two-source exploratory readings on the old panel under previously constructed features, not general source-population transfer. See the [source-transfer continuation](source_transfer_addendum.md).
 
 ## 1. Purpose: what response are we trying to explain?
+
+The operation begins with source texts supplying mean pure next-token loss gradients and recipient texts measuring consequences. Source A and recipient B here are data roles, unlike the later A/B source banks. Change only the final attention output matrix. Send the recipient's changed activation through the unchanged residual, MLP, normalization and vocabulary head, and recompute true-next-token cross-entropy. Updated minus original loss is the finite loss change; negative means help. This comparison distinguishes apparent representation/gradient association from the measured consequence of a specified update.
+
+The sparse autoencoder (SAE) is a separately trained, frozen analysis tool: an encoder extracts a few nonzero activation coordinates and a decoder reconstructs the activation. Coordinate prediction and endpoint differences test whether this tool explains the actual update, not whether it replaces LM training. The old INSUFFICIENT verdict means evidence did not resolve the registered effect; NON_SUPPORT means the original registered prediction lacked support. Those verdicts remain attached to their original questions.
 
 The broader question asks which data should share parameters and when separation has net value. Human domain labels organize observations but should not supply the answer in advance.
 
@@ -55,6 +59,8 @@ Split old F again. Its half0 supplies512 source records, 128/domain. Its half1 s
 The F-determined step is \(\eta=0.05731845587090156\), giving a pooled-source relative RMS output displacement of 0.001. Also evaluate half-step. Use the same step for all four sources. Full-R evaluation has 16384 events under each of four sources and two step lengths. There is no new LM/SAE training or remote submission.
 
 ### 3.3 Each analysis step answers one question
+
+The learned object in this step is a response predictor. Measured source-update responses supervise coefficients mapping pre-target features to predicted effects; a squared-coefficient penalty constrains fitting. This is ridge regression; neither the LM nor the SAE continues to learn. PCA selects linear activation-variance directions from fitting data, whereas random projection uses fixed random directions. They test whether an apparent SAE advantage is also available through ordinary projections, not the information-theoretic ordering of representations.
 
 | Step | Operation | Question |
 | --- | --- | --- |

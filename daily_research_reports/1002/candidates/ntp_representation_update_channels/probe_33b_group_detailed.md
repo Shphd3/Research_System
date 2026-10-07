@@ -4,11 +4,15 @@
 
 ## 0. Quick Recap
 
+Results compare selection among constructed matrix increments on a frozen model, not continuing expert training. Pooling raw domain mean gradients before scaling constructs common; FIT chooses one candidate everywhere on DEV, defining fixed selection. Candidates never learn further; a selector fits coefficients predicting consequences. Usage-matched random retains policy proportions and removes input correspondence, separating matching gain from net gain over fixed. Exact operations, grouping and prediction-shrinkage conditions are defined below.
+
 Purpose: separate coarse receiving-group composition from matching within those groups. Hypothesis: the policy retains matching gain beyond domain/category composition. Rival: all global-random gain is composition. Exact group-frequency controls and paired resampling test that descriptive contrast.
 
 All 184 conditions complete. Every within-domain and within-category residual interval is positive; every fixed-common gain interval is negative. Coarse composition does not exhaust matching gain on this panel. This is an `AI_PROPOSAL` interpretation of verified statistics, not researcher-confirmed mechanism or question closure. Group labels are explanatory; no label-aware deployment policy was tested.
 
 ## 1. Terminology and Exact Accounting
+
+This section explains reallocating measured finite costs, not retraining a router. The four domain increments and pooled raw-gradient common increment are constructed separately from A/B, normalized individually and kept unchanged, as are FIT-fitted predictors. Fixed selection uses one FIT-chosen candidate everywhere, here common. The within-category control retains candidate counts in each of eight categories and removes only within-category input–update correspondence. Residual gain cannot be exhausted by those between-category proportions, but does not exclude other groupings or establish semantics.
 
 An event is one selected target position. Each record contains 16 events. A frozen policy chooses action q_i before reading that target. Y_ia is the previously measured finite delta CE from action a at event i, in nats. Policy cost P is the average selected cost. Positive comparator-minus-policy gain favors the policy; negative finite delta CE improves on no update.
 

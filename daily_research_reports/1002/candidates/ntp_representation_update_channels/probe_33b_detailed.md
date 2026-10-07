@@ -4,6 +4,8 @@
 
 ## 0. Quick Recap
 
+Results compare selection among constructed matrix increments on a frozen model, not continuing expert training. Pooling raw domain mean gradients before scaling constructs common; FIT chooses one candidate everywhere on DEV, defining fixed selection. Candidates never learn further; a selector fits coefficients predicting consequences. Usage-matched random retains policy proportions and removes input correspondence, separating matching gain from net gain over fixed. Exact operations, grouping and prediction-shrinkage conditions are defined below.
+
 Purpose: determine whether pre-target information improves selection among fixed computations. Hypothesis: predictable relative utility beats a strong fixed action. Rival: matching information exists but the pooled common action is stronger.
 
 All three checkpoints, 23 model-specific families and 184 conditions are complete: 920 DEV rows and 1840 descriptive source rows. All 92 pooled cross-source conditions beat global-frequency random allocation and lose to the FIT-fixed common action, with the respective conditional pointwise intervals excluding zero. These are not independent replications.
@@ -11,6 +13,18 @@ All three checkpoints, 23 model-specific families and 184 conditions are complet
 Eligibility: frozen-recipe DEV evidence about local finite utility. No LM/SAE updates, general downstream testing, acquisition trajectory or retention result. The prediction that these policies beat the strong fixed action is unsupported here; scientific judgment remains `Unknown`.
 
 ## 1. Terminology
+
+The manipulated objects are increments of the frozen language model's final attention output matrix \(W\), not five trained experts. Compute one raw mean gradient \(M_d\) per source domain and then their equal-weight mean \(M_{\rm common}\). Normalize each direction separately:
+
+\[
+\Delta W_a=-0.001\|W\|_F M_a/\|M_a\|_F.
+\]
+
+Both matrices have shape 1024×2048; the Frobenius norm is the square root of the sum of all squared entries. Equal parameter-increment norms do not imply equal activation displacements or losses on a recipient. The pooled direction constructs the **common update**, called `common action` in result fields. All candidates remain unchanged during evaluation: this is a **frozen candidate library**, a learning-status statement distinct from a selection rule.
+
+FIT contains 512 fitting records: measured finite loss changes for each candidate supervise a ridge predictor of those changes from information available before the target. Only predictor coefficients are learned; the LM and increments remain unchanged. The selector takes the candidate with the lowest predicted cost at each position. Separately, FIT's measured mean costs choose one candidate for every position in 1024 DEV evaluation records: **fixed selection**. Here it chooses the common update, but “common” describes construction and “fixed” describes selection. Each DEV record contributes 16 positions; previously exposed DEV is exploratory. A/B are two source-record banks, each constructing the same five candidate types. A→B fits/selects from A and scores the corresponding B-bank candidate; A/B are not domains.
+
+The controls answer different questions. Globally usage-matched random allocation preserves the policy's candidate proportions while removing their correspondence with inputs; it tests matching but leaves domain/category composition uncontrolled. FIT-fixed selection asks whether input-dependent switching is worth adopting over one strong candidate everywhere. The zero update, \(\Delta W=0\), supplies the original-model reference and is selectable in a separate candidate set. Pre-target information includes only the currently visible prefix and its model state: the true next token supplies fitting supervision and retrospective scores, not DEV selection input.
 
 | Object | Concrete meaning | Use | Cannot establish |
 |---|---|---|---|
@@ -57,6 +71,8 @@ Exact paths and complete SHA256 identities are in the [config](/data/250010109/M
 **Coverage.** A→B/B→A are primary transfer cases; A→A/B→B are secondary. Two action sets and pooled/four-domain scopes yield 184 conditions and 920 DEV rows. The two source roles yield another 1840 descriptive rows; they participate in direction construction.
 
 ## 5. Metrics and Decision Rules
+
+The bookkeeping symbols \(R_f,R_\pi,R_m\) denote empirical mean finite \(\Delta CE\) on the fixed DEV panel, not training error or a theoretical population risk. Adding each event's original CE recovers absolute CE; that reference cancels exactly between rules on the same panel. Matching gain is usage-random cost minus policy cost; net gain is fixed-selection cost minus policy cost. Net gain therefore equals matching gain minus usage-random excess cost over fixed: an exact accounting identity, not a causal mechanism. Bootstrap randomness resamples whole records while source banks and fitted predictors remain fixed.
 
 Retain FIT-fixed, uniform, global-frequency random, common, no-update, oracle and fullcx controls, alongside coverage, harm and selection/rejection decomposition. Use 2000 paired whole-record draws stratified by category. Reestimate global DEV action frequencies in every DEV draw, including domain-specific tables; source intervals hold DEV frequencies fixed.
 

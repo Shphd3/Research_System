@@ -1,5 +1,7 @@
 # Sharing, learning and routing: stage-report reading guide
 
+**2026-10-07 exposition version note:** This remains the 1002 temporary candidate directory, not a promoted Focus. Maintained report/math bodies now explain objects, operations, control rationale and boundaries; values and frozen contracts remain unchanged. Dated records below retain their cutoffs: “current” refers to that historical window, and capacity NOT RUN does not describe other projects. The separate router-feedback [Summary](/data/250010109/Research_System/Projects/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary.md) owns its new state, not results for these capacity arms. See the [revision delivery](../../../1007/editorial_revision_audit_cn.md) for roles, edits and retained history.
+
 **Later-window entry:** [2026-10-04 understanding update](../../../1004/cognition_update.md) and [daily summary](../../../1004/daily_summary.md). The body preserves the argument and status from before the second window. Later CPU results are in [amplitude checks](router_shrinkage_summary.md) and [within-category controls](probe_33b_group_summary.md); later execution status is in Section 7 of the update.
 
 Updated: 2026-10-04, Asia/Shanghai (UTC+8). [中文](reading_guide_cn.md).
@@ -15,6 +17,8 @@ This round adds the [33B Summary](probe_33b_summary.md) and [Detailed](probe_33b
 The new panel has been analyzed and reconstructed; the capacity repair passes CPU checks. Exact GPU Smoke and formal trajectories have not run. Sections 5.5–5.6 of the main report own current result/state reading. Historical Pending observations below are no longer current state.
 
 ## 1. Read the current report in full first
+
+Read by question: start with the [two-minute brief and expanded explanation](../../../1006/meeting_report/meeting_brief_sharing_research_recovery_cn.md), then the [frozen-update Summary](probe_33b_summary.md) to distinguish common construction, fixed selection and frozen candidates. Stage-report Section 4 explains why one effect cannot decide long-term sharing; expand the mathematics as needed. Definitions are in those bodies, not required glossary memorization.
 
 Responsibility: connect purpose, observations, explanations, models, checks, and changes in understanding. Project-relative path: `daily_research_reports/1002/candidates/ntp_representation_update_channels/sharing_routing_report.md`.
 

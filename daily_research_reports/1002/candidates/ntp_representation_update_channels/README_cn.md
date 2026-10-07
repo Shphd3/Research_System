@@ -1,5 +1,7 @@
 # 1002 临时候选：共享学习、有限效用与MoE路由
 
+**2026-10-07表达版本说明：**本目录仍是1002的临时候选位置，没有迁为正式Focus。报告与数学正文按对象、操作、对照理由和证据边界修订，数值及冻结合同不变。下方日期记录保留原截止点，“当前”只指相应历史窗口；不把容量的NOT RUN泛化为其他项目状态。独立路由反馈的新状态由[其Summary](/data/250010109/Research_System/Projects/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary_cn.md)持有，不替本目录容量六臂补结果。本轮文件职责、修订清单与未改历史见[修订交付](../../../1007/editorial_revision_audit_cn.md)。
+
 ## 2026-10-04 第二个研究窗口：最新认识入口
 
 先读[新的认识更新报告](../../../1004/cognition_update_cn.md)，项目相对路径为 `daily_research_reports/1004/cognition_update_cn.md`；[今日总结](../../../1004/daily_summary_cn.md)保留15:53:50 UTC前的独立截止面。新报告继续同一Anchor，加入同来源与切换审计、类别内匹配对照、FIT折外幅度选择，以及即时作用如何经过未来学习的明确推导。实际四卡任务状态由新报告第7节与执行收据持有。

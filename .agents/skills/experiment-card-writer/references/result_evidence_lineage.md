@@ -136,8 +136,10 @@ are not automatically independent experimental replicates.
 
 Keep `summary.md` short and conclusion-first. It must be understandable without
 chat history but need not reproduce the complete setup. Its reader body owns
-the four-part result account; ordinary chat should link to it instead of
-paraphrasing the same structure.
+the four-part result account. Ordinary chat links to it and explains the minimal
+objects, comparison and boundary needed to answer the user's question, without
+repeating the full result ledger. For first-use operations, rationale and formula
+meaning, use the shared [writing contract](../../../../docs/report_writing.md#objects-operations-and-first-use-terms).
 
 Use this structure:
 

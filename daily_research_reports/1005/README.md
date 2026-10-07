@@ -1,5 +1,7 @@
 # 2026-10-05 research learning entry
 
+**2026-10-07 revision:** The guide explains objects, operations, hypotheses/rivals, controls and judgment changes. Timings remain historical examples, not a mastery promise;0/12 and other execution counts retain their cited October 4 cutoffs. Read the [two-minute brief](../1006/meeting_report/meeting_brief_sharing_research_recovery_cn.md) first and use the guide for specific gaps. See the [delivery inventory](../1007/editorial_revision_audit_cn.md).
+
 [中文](README_cn.md) · [Daily index](../README.md)
 
 Start with the [eight-hour learning guide](learning_guide.md). It follows the researcher's request to understand the recent research within today: rebuild the October 2 starting point, then focus on the reasoning from October 3 through early October 5 Beijing time. Each step explains why it was taken, what comparison was made, what the evidence permits and what remains for the next decision.

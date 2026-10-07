@@ -22,6 +22,8 @@ Cross-source prediction gain alone cannot separate them. We therefore read the m
 
 ## 3. Analysis method
 
+Only source records constructing updates change here; recipient events and the predictor used at transfer stay fixed. A/B each contain batches within the four domains and supply a separate mean gradient per domain; they are not two domains or FIT/DEV. F-half 1 fits ridge coefficients predicting responses from pre-target lexical/activation features; the LM and SAE remain unchanged. This isolates transfer of one fitted predictor, although earlier feature selection saw A+B and remains a dependence. The 99.02% mean component averages A/B within the same domain, not common knowledge across domains.
+
 We retain the S7 state, final attention-output matrix, pure-NTP ordinary-gradient diagnostic and earlier step size. A/B independently define their average source gradients. The original model tail evaluates actual finite loss differences in eight conditions, each containing all 16,384 R events. Predictors do not receive the true next token.
 
 Features retain the strong lexical/history/position/scale baseline and SAE320, PCA320 or random320 augmentation. The main analysis freezes the earlier ridge choice, \(\lambda=10\). The main predictors fit first-order responses; finite predictions multiply their derivative predictions by the step size. A→B fits to A derivatives and freezes every prediction parameter when scoring B's finite responses; the baseline and augmented predictor transfer together. B→A reverses the roles. A→A and B→B provide corresponding references.

@@ -10,6 +10,10 @@ The report proceeds through purpose, observations, hypotheses, models and deriva
 
 ## 1. Purpose: learn more with limited resources and retain what has been learned
 
+Separate the two operations before reading the observations. A frozen-model diagnostic constructs one parameter increment and measures its recipient loss change; frozen-library selection chooses among already constructed increments that do not continue learning. In the new 33B panel, a common update pools four raw domain mean gradients and then normalizes the pooled direction separately. Fixed selection chooses one candidate on FIT fitting data for every DEV evaluation position. Construction, input-dependent selection and continued candidate learning are three distinct axes.
+
+Long-term learning compares neural modules and their optimizer states: multiple data groups update the same shared weights, whereas private modules retain and update separate copies. A trained expert accepts an input, computes an output and undergoes many updates; one matrix increment is not such an expert. The analytical examples, old S7 responses, new 33B selection and capacity training retain their own data, scales and interfaces throughout this report.
+
 The research aims to improve learning allocation in a mixture-of-experts model (MoE). When should different inputs update the same parameters, and when should they update separate experts, to improve acquisition of new knowledge and retention of existing knowledge?
 
 Three objects matter. The **shared part** consists of parameters used and updated by multiple input groups. An **expert** is a parameter module that receives samples under an allocation rule and performs part of the computation. A **router** uses currently available input to decide which experts to invoke. Specialization can change the data and update history of each expert. It does not require dividing the input vector into disjoint blocks first.
@@ -149,6 +153,12 @@ For \(0<\eta<2\), risk tends to zero, while both experts always receive the comp
 
 ### 4.5 Step four: with finite samples, when should learning remain shared?
 
+Group proportions here satisfy \(p_k>0\), \(\sum_kp_k=1\), and are fixed and known. For D-dimensional parameters, \(\mu_k\) is a D-vector and \(\Sigma_k\)/B are D×D matrices. All group averages and population expectations use those weights, not fitting-batch risk.
+
+“Noise” here is random deviation of a finite-sample mean gradient from its true group mean. Write \(g_{ki}=\mu_k+\xi_{ki}\), with \(\mathbb E\xi_{ki}=0\); independent samples yield \(\operatorname{Cov}(\widehat\mu_k)=\Sigma_k/n_k\). Different true group means are learning-demand differences, not noise to erase. Conditional variation of a true next token can contribute gradient variance without representing incorrect labels; minibatch fluctuation also requires a stated model state.
+
+Risk here is independent population loss after updating, weighted by the same group proportions; the outer expectation averages sampled source gradients. The quadratic relation is exact under its assumptions. Enumeration uses half-squared total risk including irreducible target variance; a risk difference between policies is not improvement over the initial model. Curvature B maps to Q in the mathematical note's last section. This V concerns gradient means, unlike capacity-model \(V_\delta\) or centered-response \(V_{s,d}\).
+
 The previous relation uses true population mean gradients and omits estimation error. We now retain the same initialization, fixed grouping, conditional step size and data for both schemes. Each group has a fixed positive integer number \(n_k\) of independent gradient samples. A single gradient within each group has mean \(\mu_k\) and covariance \(\Sigma_k\); samples are also independent across groups. Let \(\mu=\sum_kp_k\mu_k\). Shared learning uses the \(p_k\)-weighted average of the group sample means. Private learning uses each group's sample mean separately.
 
 For an exact finite-step relation, further assume that every group's population risk is quadratic throughout the displacement, with the same positive semidefinite curvature matrix \(B\). Define
@@ -249,6 +259,8 @@ Over 31–33B cumulative valid training targets, existing Dense and fresh-S7 pur
 This observation supports a descriptive claim of lower training CE in the specified interval. It does not establish fewer tokens, less computation or less time to reach the same held-out quality, or improved general downstream performance. The old 21B domain-classification probe measures representation readability; it does not replace general downstream tasks. The [training curve and provenance](evidence/training_curve_20_33b.json) and [training/downstream evidence inventory](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/training_and_downstream_evidence.md) retain the lineage and complete conditions.
 
 ### 5.5 New 33B panel: matching information exists, but current selection loses to the fixed common action
+
+The judgment tested here is whether the current input-dependent rule should replace strong fixed selection, not whether separate training must be better. Measure every candidate's finite CE change at each FIT position and fit a predictor of those values. DEV selects using pre-target features and then reads the measured selected cost. Common is a1024×2048 matrix increment, each candidate having 0.001 of W's norm. Uniform allocation changes proportions; usage-matched random retains them but removes input correspondence; fixed selection uses FIT's chosen common increment everywhere. Shared events, model and measured costs make these differences meaningful but do not match long-term parameters or resources. Random wins support matching; fixed-baseline wins would support adoption of these rules.
 
 **Purpose and rival.** On new records at exact-33B checkpoints, can pre-target information improve choice over a strong fixed action, or only matching at the same action frequencies? 33B means 33 billion training tokens, not parameters. Dense, fresh S7 and SALL are existing Dense backbones with different sidecar training histories; no MoE was trained here.
 

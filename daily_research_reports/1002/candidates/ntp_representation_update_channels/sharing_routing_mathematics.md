@@ -4,6 +4,10 @@
 
 ## What determines sharing for the same learning step?
 
+Separate the computational objects first. A fixed parameter increment \(\delta\) is one update; input-dependent choice among existing increments is a selection rule; creating and continuing to update group-specific parameter copies is separate learning. The note first asks whether one increment should affect old tasks, then studies information for frozen-candidate selection, then compares risks of separately estimated versus pooled gradients. Each model states its own loss and population; these are not successive stages of one experiment.
+
+The conditional action risk \(Q_e(H)\), also readable as \(q_e(H)\), averages true-target loss given pre-target H; it is distinct from scalar prediction-error improvement Q. The final section's curvature matrix \(Q\) corresponds to \(B\) in the stage report, so \(V_Q=V_B\) and \(N_Q=N_B\). Original notation is retained for traceability, not for interchange across models.
+
 Let w be the current shared parameters, δ a fixed update, L_k a task loss with other computation fixed, and p_k nonnegative task weights. The new source A uses w+δ under both alternatives. Sharing exposes old receivers B to w+δ; separation creates a private copy from the same initial value and keeps old receivers at w. Then
 
 \[
@@ -165,7 +169,7 @@ Conditional expectations also give
 =\mathbb E\|G_Z-G\|^2+\mathbb E\|m(H)-G_Z\|^2.
 \]
 
-The first identity separates mean gradient variation available from H from remaining target-conditional variation. The second separates retained and discarded mean variation under the partition. With constant H, uniform target Y in ±1, and squared loss at w=0, gradients equal −Y and have variance 1, yet every causal partition has G_Z=0. The same realized gradient histogram permits grouping information if H reveals Y in advance. Post-target gradient conflict alone cannot decide an architecture.
+The first identity separates mean gradient variation available from H from remaining target-conditional variation. The second separates retained and discarded mean variation under the partition. With constant H, uniform target Y in ±1, and half-squared loss at w=0, gradients equal −Y and have variance 1, yet every causal partition has G_Z=0. The same realized gradient histogram permits grouping information if H reveals Y in advance. Post-target gradient conflict alone cannot decide an architecture.
 
 Richer nested causal information retains at least as much exact population conditional-mean variance under these premises. Finite fitting and finite steps do not inherit an unconditional monotonic guarantee. The current finite-action results do not estimate these population gradients. The [full derivation](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/conditional_gradient_allocation_round5.md) and [independent audit](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/conditional_gradient_math_audit.md) preserve optimizer conditions and counterexamples.
 
@@ -173,6 +177,8 @@ The underlying drafts received independent formula, numerical-counterexample and
 
 
 ## Why predictable differences can still favor sharing
+
+Risk here is population expected loss on an independent fresh target after the update; the outer expectation also averages sampled gradients constructing that update. The enumeration uses half-squared loss and includes irreducible target variance, rather than fitting-batch or excess-only risk. Group probabilities are positive and sum to 1. For D-dimensional parameters, \(\mu_z\) is a D-vector, \(\Sigma_z\) and curvature Q are D×D matrices. \(n_z\) counts independent observations used for this estimate, not cumulative training tokens. A gradient is its population mean plus zero-mean random deviation; independence yields mean-estimator covariance \(\Sigma_z/n_z\). Pooling reduces this estimation fluctuation; it neither removes genuine group differences nor corrects labels.
 
 Round six adds finite samples to round five. Fix a finite causal partition Z, known probabilities p_z and positive integer counts n_z. Experts start at the same w and use the same independent gradient samples with the same positive conditional step eta. Sharing uses the p_z-weighted mean of group averages; private copies use individual averages. Evaluate fixed population risk, not the fitting batch. If group risks share the same quadratic curvature Q over every compared displacement, let mu_z be group gradient means, Sigma_z their single-sample covariances and mu=sum p_z mu_z. Then
 
@@ -200,3 +206,5 @@ For two equiprobable scalar groups with Q=1, mu_±=±d, variance sigma² and n i
 These are analytical half-squared-loss examples. Identical genuine group differences can favor different choices at different sample sizes; richer pre-target information does not guarantee a finite-sample benefit from splitting. Independent enumeration also finds that incorrectly evaluating the fitting batch at n=1 yields +1.5 instead of the true population −0.5. Fully correlated cross-group noise likewise invalidates the independence formula. These establish why conditions matter, not new LM findings.
 
 [Full derivation](/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/finite_sample_sharing_round6.md) · [Independent enumeration](evidence/finite_sample_sharing_checks.json). Current empirical work does not estimate these population means, covariances or curvatures and adopts no scientific threshold from them.
+
+The difference is not improvement over the initial model. At n=1, initial population risk is 2.5, shared post-update risk 3.5 and private risk 4.0: −0.5 favors shared relatively, yet both updates worsen the initial risk. At n=4, post-update risks are 2.75 and 2.5, giving+0.25. Between-policy comparison and benefit over the starting state are different questions; enumeration values are unchanged.

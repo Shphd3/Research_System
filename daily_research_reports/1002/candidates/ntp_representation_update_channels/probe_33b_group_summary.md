@@ -4,6 +4,8 @@
 
 ## 1. Purpose
 
+The original policy chooses measured matrix increments. Its frozen candidate library contains four domain directions and the pooled raw-gradient common direction, with a separate set allowing zero update. FIT-fixed selection uses one candidate everywhere on DEV, here common. Globally usage-matched random allocation retains total candidate proportions but removes input correspondence. This note asks whether gain remains when domain/category-specific proportions are also retained.
+
 Determine whether the original policies' gains over globally usage-matched random allocation remain after preserving action frequencies within receiving domains or categories.
 
 ## 2. Hypothesis
@@ -11,6 +13,10 @@ Determine whether the original policies' gains over globally usage-matched rando
 The policies may match actions to individual events beyond those coarse groups. The rival is that their global-random gain is explained entirely by different action frequencies between groups. Neither explanation implies that the policy beats the strong fixed common action.
 
 ## 3. Analysis Method
+
+Here an action remains a measured, scaled matrix increment: four domain directions and one pooled raw-gradient direction, with a separate set permitting zero update. Candidates and predictors are frozen; each DEV position chooses one increment and reads its previously measured finite CE. No new experts are trained. FIT chooses a single candidate for all positions, here the common update. A/B identify source banks; FIT/DEV identify fitting/evaluation roles.
+
+Why add a within-group control? Global random allocation preserves total candidate frequencies but destroys domain–choice association. Reallocate choices only within the same recipient domain or category to retain that association and each group's counts, removing only within-group input–choice matching. If the residual vanishes, coarse composition remains credible; a strictly positive residual interval shows that these labels do not exhaust matching. Either outcome still needs the FIT-fixed comparison to assess adoption utility.
 
 - Retain all original Dense, fresh-S7 and SALL policies at 33 billion cumulative training tokens: 92 frozen policies, each evaluated on both source banks, for 184 pooled conditions. Preserve all feature families, same-source and cross-source directions, and both action sets. No model is fit or run again.
 - Read the original finite action costs on 1,024 DEV records, with 16 events per record. The domain control randomly reallocates the policy's own choices within four receiving domains; the category control does so within eight categories. Their expected costs are calculated exactly. These explanatory labels are not a tested deployment-time routing input.

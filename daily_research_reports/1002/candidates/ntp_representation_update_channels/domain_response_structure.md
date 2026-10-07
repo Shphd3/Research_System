@@ -20,6 +20,8 @@ Three rivals require distinct checks: apparent domain differences are amplitudes
 
 ## 3. Analysis method
 
+The concrete question is whether two within-domain source batches reproduce all-source response strength on a text or differences between domains. Keep S7 state, step, recipient event and true target fixed; exchange A/B batches and center each event's four source responses. Local \(V_{s,d}\) is a signed relative response in nats, not scalar gradient-mean heterogeneity V or noise variance. Reproduction weakens a common-strength-only explanation, but a shared realized target and fixed-panel dependence can still contribute correlation; this does not establish a cross-corpus mechanism.
+
 Reuse S7 at33B cumulative training tokens, the final attention output matrix, and pure-NTP ordinary-gradient diagnostics. The matrix input is2048-dimensional \(c\), and its current output is1024-dimensional \(a=Wc\). Source matrix \(M_{s,d}\) averages gradients for source half \(s\in\{A,B\}\) and domain \(d\). Finite effect \(I_{s,d}\) is the realized next-token loss change after \(-\eta M_{s,d}\): positive is adverse, negative helpful.
 
 A/B are complementary category/hash partitions of old F-half0, each with64 records per domain. Old F-half1 supplies512 fit records; old R supplies1024 readout records with16 targets each. The four roles have disjoint record identities, but this is not new independent-paper confirmation: R was exposed and earlier feature construction used A+B. The complementary halves are dependent conditional on their fixed finite pool.

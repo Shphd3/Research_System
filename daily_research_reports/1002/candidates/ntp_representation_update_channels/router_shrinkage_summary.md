@@ -4,6 +4,8 @@
 
 ## 1. Purpose
 
+Candidates remain five normalized matrix increments with measured consequences; common pools four raw domain mean gradients before scaling. This set has no zero update and never learns further. FIT-fixed selection uses its chosen common increment everywhere; the input-dependent selector predicts candidate losses before choosing. This note shrinks the input-varying part of predictions, not the physical update, distinguishing better selection from simple reversion to fixed.
+
 Test whether choosing the strength of input-dependent predictions using FIT alone reduces the current fixed-action selector's loss while retaining utility beyond a strong fixed common action.
 
 ## 2. Hypothesis
@@ -11,6 +13,10 @@ Test whether choosing the strength of input-dependent predictions using FIT alon
 Shrinking predictions toward FIT action means may improve the current rule. The rival is that improvement mainly comes from reverting to common, so reducing the original rule's loss does not establish useful adaptive selection. This diagnostic does not isolate estimation error, function-class limitations, record-composition differences or irreducible target uncertainty.
 
 ## 3. Analysis Method
+
+This diagnostic changes prediction scores used to rank candidates, not parameter-increment magnitude. Four domain-gradient directions and one pooled raw-gradient direction retain their original separate normalization and remain frozen; this candidate set has no zero update. For each candidate, combine its training-fold mean finite loss change \(\mu\) and input prediction \(q\) as \(\mu+\alpha(q-\mu)\). Alpha 0 selects by candidate means alone; alpha 1 uses the original input prediction. Shrinkage may reduce selection error, or merely revert to strong fixed selection, so both the original rule and the fixed rule are necessary comparators.
+
+FIT fits the predictor and chooses alpha; DEV scores the selected rule. A/B remain candidate-construction source banks, not a train/test split. Out-of-fold (OOF) predictions hold out entire records, keeping their 16 positions together. The LM, SAE and experts are not trained further.
 
 - Freeze Dense, fresh S7 and SALL checkpoints at 33 billion cumulative training tokens and their original measured A/B action tables. Retain only base389 and base+full-(c,x)3461, with five nonzero actions including common and no rejection action. No language-model forward or training occurs; the ridge selectors below are refitted by fold.
 - Cross-fit within 512 FIT records, keeping each record's 16 positions together. Each of four folds re-estimates scaling and fits the original λ=10 ridge on 384 training records. Select α from {0,0.1,0.25,0.5,1} by pooled out-of-fold measured finite delta CE. Within each fold, alpha 0 selects by training-fold means and alpha 1 uses that fold prediction. Final DEV uses the original all-FIT predictions and means: alpha 0 reproduces fixed common and alpha 1 the original selector. Freeze all 12 selections and every candidate's final choices before DEV scoring.

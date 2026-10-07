@@ -1,5 +1,7 @@
 # Two-hour research process
 
+**Historical-record note (2026-10-07):** The timeline, contemporaneous judgments and execution states below remain verbatim. They record how the work developed, not the latest scientific verdict or live status. Read the maintained [stage report](sharing_routing_report.md) and [revision list](../../../1007/editorial_revision_audit_cn.md); the independent router-feedback project has its own Summary. Only this note is added; past events are not rewritten.
+
 This record describes questions, operations, artifacts and bounded stage conclusions. It does not supply scientific approval. Times below are 2026-10-02 Asia/Shanghai, UTC+8; machine receipts retain UTC. [中文](research_process_cn.md) · [Report](research_report.md).
 
 ## 16:44–16:50: recover the question and verify prior evidence
