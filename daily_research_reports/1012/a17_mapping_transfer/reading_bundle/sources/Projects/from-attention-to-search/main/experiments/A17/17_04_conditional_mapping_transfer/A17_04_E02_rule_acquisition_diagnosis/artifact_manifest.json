@@ -1,0 +1,199 @@
+{
+  "schema": "a17_acquisition_delivery_v1",
+  "created_at_utc": "2026-10-11T13:38:27.943177+00:00",
+  "processing_agent": "/root",
+  "task_state": "EXECUTION_AND_FACTUAL_DELIVERY_COMPLETE",
+  "result_state": "TWO_QUALIFIED_ACQUISITION_ROUTES_SINGLE_SEED_DEV_DIAGNOSIS",
+  "scientific_mechanism_judgment": "Unknown",
+  "question_closure": "Unknown",
+  "parent_result_unchanged": "INSUFFICIENT_OLD_MAPPING_NOT_ACQUIRED",
+  "jobs": {
+    "pt-2x5gujhd": "SUCCEEDED",
+    "pt-qsqimkvo": "SUCCEEDED"
+  },
+  "run_root": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z",
+  "source_freeze": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/freeze.json",
+  "post_execution_freeze_check": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/post_execution_freeze_check.json",
+  "data_asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+  "main_updates_per_arm": 1200,
+  "main_valid_answers_per_arm": 24000,
+  "main_valid_answers_all_arms": 120000,
+  "tiny_updates_per_arm": 160,
+  "tiny_valid_answers_all_arms": 16000,
+  "smoke_training_valid_answers": 600,
+  "external_resume_valid_answers_separate": 200,
+  "actual_saved_states": {
+    "smoke": 30,
+    "full": 40
+  },
+  "checkpoint_families": 20,
+  "native_analysis_families": 2,
+  "independent_native_checks": {
+    "checkpoint_files": 40,
+    "checkpoint_validation_scope": "actual file hash/size and declared manifest fields; no independent tensor deserialization",
+    "maximum_loss_identity_error": 9.99675536239586e-07,
+    "prediction_files": 91,
+    "prediction_records": 46560,
+    "status": "PASS"
+  },
+  "independent_tensor_check": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/independent_checkpoint_tensor_audit.json",
+  "precision_audit": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/precision_decomposition_audit.json",
+  "smoke_registration_receipt": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/smoke_registration_receipt.json",
+  "full_registration_receipt": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/full_registration_receipt.json",
+  "outcomes": [
+    {
+      "arm": "o_sgd",
+      "train_panel_accuracy": 0.5175,
+      "DEV_order_accuracy": 0.4775,
+      "DEV_combination_accuracy": 0.515,
+      "DEV_combined_accuracy": 0.49625,
+      "DEV_min_cell_accuracy": 0.43,
+      "qualified": false,
+      "first_qualified_saved_milestone": null,
+      "trainable_parameter_count": 2097152
+    },
+    {
+      "arm": "o_adam",
+      "train_panel_accuracy": 0.8225,
+      "DEV_order_accuracy": 0.6425,
+      "DEV_combination_accuracy": 0.7275,
+      "DEV_combined_accuracy": 0.685,
+      "DEV_min_cell_accuracy": 0.58,
+      "qualified": false,
+      "first_qualified_saved_milestone": null,
+      "trainable_parameter_count": 2097152
+    },
+    {
+      "arm": "attn4_adam",
+      "train_panel_accuracy": 1.0,
+      "DEV_order_accuracy": 1.0,
+      "DEV_combination_accuracy": 1.0,
+      "DEV_combined_accuracy": 1.0,
+      "DEV_min_cell_accuracy": 1.0,
+      "qualified": true,
+      "first_qualified_saved_milestone": 240,
+      "trainable_parameter_count": 25165824
+    },
+    {
+      "arm": "explicit_o_adam",
+      "train_panel_accuracy": 0.9725,
+      "DEV_order_accuracy": 0.8475,
+      "DEV_combination_accuracy": 0.8875,
+      "DEV_combined_accuracy": 0.8675,
+      "DEV_min_cell_accuracy": 0.82,
+      "qualified": true,
+      "first_qualified_saved_milestone": 600,
+      "trainable_parameter_count": 2097152
+    },
+    {
+      "arm": "neutral_normalized_o_adam",
+      "train_panel_accuracy": 0.81,
+      "DEV_order_accuracy": 0.5825,
+      "DEV_combination_accuracy": 0.7275,
+      "DEV_combined_accuracy": 0.655,
+      "DEV_min_cell_accuracy": 0.46,
+      "qualified": false,
+      "first_qualified_saved_milestone": null,
+      "trainable_parameter_count": 2097152
+    }
+  ],
+  "boundaries": [
+    "one diagnostic training seed29; not replicated confirmation",
+    "DEV openly diagnosed; original TEST previously exposed; new generator/trainer/analysis use TRAIN/DEV only",
+    "expanded scope changes count and computation location, not a pure capacity intervention",
+    "AdamW/SGD changes actual update scale, not a matched-step optimizer mechanism",
+    "explicit instructions change pretrained semantics and presentation",
+    "normalized separator changes presentation, tokenization and positions together",
+    "No new-mode transfer, experts or SAE run in this child"
+  ],
+  "deviations": [
+    "Early CPU source QA inspected original TEST structure and tokenization; mixed old evaluation JSON was deserialized but model-readout computations filtered DEV, no TEST result selected settings.",
+    "Data generation contract hash precedes final pre-GPU wording clarification; final bilingual contract snapshots frozen before GPU; data selection and scientific settings unchanged.",
+    "CPU qualifier selected pure-Python protobuf for local dependency conflict; GPU runtime preserved the approved mounted dependency environment.",
+    "Smoke recovery metadata uses legacy stage alias full_data for actual main directory; actual source restores tiny and main states.",
+    "Near-zero mixed FP32 CE/double-logmass readouts can contain tiny negative selection rounding; double-logp audit verifies nonnegative conditional loss without overwriting frozen outputs.",
+    "First root registration call used a relative run argument and failed before catalog mutation; absolute-run retry registered actual outputs successfully."
+  ],
+  "asset_ids": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "data_a17_conditional_mapping_v1",
+    "data_a17_mapping_acquisition_diagnostic_v1",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_29_old",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_43_old",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_71_old",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_o_sgd_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_o_sgd_main",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_o_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_o_adam_main",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_attn4_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_attn4_adam_main",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_explicit_o_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_explicit_o_adam_main",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_neutral_normalized_o_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_smoke_neutral_normalized_o_adam_main",
+    "analysis_a17_04_acquisition_20261011t130809z_smoke",
+    "adapter_a17_04_acquisition_20261011t130809z_full_o_sgd_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_full_o_sgd_main",
+    "adapter_a17_04_acquisition_20261011t130809z_full_o_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_full_o_adam_main",
+    "adapter_a17_04_acquisition_20261011t130809z_full_attn4_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_full_attn4_adam_main",
+    "adapter_a17_04_acquisition_20261011t130809z_full_explicit_o_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_full_explicit_o_adam_main",
+    "adapter_a17_04_acquisition_20261011t130809z_full_neutral_normalized_o_adam_tiny",
+    "adapter_a17_04_acquisition_20261011t130809z_full_neutral_normalized_o_adam_main",
+    "analysis_a17_04_acquisition_20261011t130809z_full"
+  ],
+  "selected_delivery_access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-11_a17_acquisition_delivery_access.json",
+  "canonical_files": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis/detailed.md",
+      "sha256": "ec772e89be79d19e08f8b7d941fc1f654d1577fa4fdebc43bdbd2b0da33202ae",
+      "bytes": 36609
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis/detailed_cn.md",
+      "sha256": "71d53971f6f77c1a5270e9c5172426487e4a45281a51f93f9533c2f7fa8cc3e0",
+      "bytes": 33559
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis/protocol.md",
+      "sha256": "1ddc77dce61f26c5ef804d2375bf33c6dc1adfe1facf67b2e4895b04b76d0126",
+      "bytes": 29725
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis/protocol_cn.md",
+      "sha256": "86fbd7cc8c64cc050090eebe3752e87bf0953b8475212d5e6dbb990322ec4a7d",
+      "bytes": 24187
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis/summary.md",
+      "sha256": "abad0fb7d0f3f7e58a827a15f564c1ab3a8bd7acf099c2df1bcc5352bdafc62a",
+      "bytes": 10136
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis/summary_cn.md",
+      "sha256": "2aa68236b71f521b0a95c99ebd16deb697ab86ad5b39f91208a1ecc7e1be4de6",
+      "bytes": 8345
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_01_rule_acquisition_diagnosis_anchor.md",
+      "sha256": "0cb0994da1133a4be2984e74e780843047b061afdf9e85e50adbb9934b47edd3",
+      "bytes": 11144
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_01_rule_acquisition_diagnosis_anchor_cn.md",
+      "sha256": "548d53f1429cffc46de28068a2ef058a6bf0d6605f3a3e70dce886a1d0f48bc4",
+      "bytes": 9126
+    }
+  ],
+  "final_local_validation": {
+    "local_links": "PASS",
+    "math_source_single_backslashes": "PASS; rendered math NOT_CHECKED",
+    "summary_section_order": "PASS",
+    "root_git_payload": "0 generated payload tracked",
+    "project_payload": "65 selected evidence; 0 prohibited or invalid payload",
+    "entrypoint_check": "paths exist; reports 4 new untracked owner files and 1 pre-existing unrelated untracked diffusion document; no commit requested for new diagnosis"
+  }
+}

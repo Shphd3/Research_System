@@ -1,7 +1,9 @@
-# 2026-10-12 meeting preparation
+# 2026-10-12 experiment results and discussion
 
 [中文](README_cn.md)
 
-One speaking entry: [conditional mappings, candidate probability and rule learning](meeting_report/meeting_brief_conditional_mapping.md).
+Current Web AI entry: [A17 steps, results and claim boundaries](a17_mapping_transfer/handoff_report.md). It covers qualified consistent/reversed transfer, joint-supervision feasibility and34 local optimizer conditions.
 
-This derives from bounded experiments completed on 2026-10-11. The second-round old mapping did not qualify; training completion does not establish interference between acquired rules. The brief explains the merger, the first-to-second-round logical chain, decisive results, remaining rivals and an explicitly proposed next diagnostic.
+[Portable reading bundle](a17_mapping_transfer/reading_bundle/README.md) retains Focus, Anchor, Protocol, Summary, Detailed and source hashes. Raw worker payloads are excluded and unavailable dependencies listed.
+
+[Earlier speaking brief (historical R01)](meeting_report/meeting_brief_conditional_mapping.md) retains the old unqualified-acquisition result; it must not replace the later E03 acquisition and R02 transfer evidence.

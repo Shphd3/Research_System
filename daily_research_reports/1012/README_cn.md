@@ -1,7 +1,9 @@
-# 2026-10-12 组会准备
+# 2026-10-12 实验结果与讨论入口
 
 [English](README.md)
 
-本次口述入口：[条件映射、候选概率与规则学习](meeting_report/meeting_brief_conditional_mapping_cn.md)。
+当前 Web AI 阅读入口：[A17 实验步骤、结果与认识边界](a17_mapping_transfer/handoff_report_cn.md)。它包含合格旧起点后的同向/反转迁移、联合监督对照，以及34条件优化器小干预。
 
-本稿整理 2026-10-11 已完成的有限实验。第二轮旧映射未达到学习资格；训练完成不代表已经证明已学规则之间的干扰。阅读稿讲清合并方式、两轮逻辑链、决定性数值、竞争解释和标为 AI 建议的下一项诊断。
+[完整便携阅读包](a17_mapping_transfer/reading_bundle/README_cn.md)保存Focus、Anchor、Protocol、Summary、Detailed及来源哈希；原始训练载荷不上传，缺省依赖明确列出。
+
+[此前组会稿（R01历史）](meeting_report/meeting_brief_conditional_mapping_cn.md)保留早期结果。当时旧映射尚未达标；不能将该限制替代后来E03合格起点与R02迁移结果。

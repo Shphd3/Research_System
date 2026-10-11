@@ -1,0 +1,209 @@
+{
+  "schema": "a17_single_attention_delivery_v1",
+  "created_at_utc": "2026-10-11T15:22:12.214855+00:00",
+  "processing_agent": "/root",
+  "task_state": "EXECUTION_AND_FACTUAL_DELIVERY_COMPLETE",
+  "result_state": "SINGLE_LAYER_ADAMW_QUALIFIED_SGD_NOT_QUALIFIED_SINGLE_SEED_DEV",
+  "scientific_mechanism_judgment": "Unknown",
+  "question_closure": "Unknown",
+  "parent_result_unchanged": "INSUFFICIENT_OLD_MAPPING_NOT_ACQUIRED",
+  "jobs": {
+    "pt-gwd1382k": "SUCCEEDED",
+    "pt-8fizcddl": "SUCCEEDED"
+  },
+  "run_root": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z",
+  "execution_certificate": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/execution_certificate.md",
+  "full_terminal_status": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full_platform_terminal_status.json",
+  "source_freeze": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/freeze.json",
+  "post_execution_freeze_check": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/postexecution_freeze_verification.json",
+  "data_asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+  "main_updates_per_arm": 1200,
+  "main_valid_answers_per_arm": 24000,
+  "tiny_updates_per_arm": 160,
+  "tiny_valid_answers_per_arm": 3200,
+  "full_fitting_valid_answers_all_arms": 54400,
+  "smoke_training_valid_answers": 240,
+  "external_resume_valid_answers_separate": 80,
+  "actual_saved_states": {
+    "smoke": 12,
+    "full": 16
+  },
+  "checkpoint_families": 8,
+  "native_analysis_families": 2,
+  "independent_native_checks": {
+    "checkpoint_files": 16,
+    "checkpoint_validation_scope": "actual file hash/size and independent CPU tensor/optimizer/counter deserialization",
+    "maximum_loss_identity_error": 1.623109028514591e-06,
+    "prediction_files": 34,
+    "prediction_records": 17184,
+    "status": "PASS"
+  },
+  "independent_peer_audit": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/independent_final_audit.json",
+  "smoke_registration_receipt": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/smoke_registration_receipt.json",
+  "full_registration_receipt": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full_registration_receipt.json",
+  "selected_delivery_access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-11_a17_single_attention_delivery_access.json",
+  "asset_ids": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "data_a17_mapping_acquisition_diagnostic_v1",
+    "analysis_a17_04_acquisition_20261011t130809z_full",
+    "adapter_a17_04_single_attention_20261011t145214z_smoke_attn1_sgd_tiny",
+    "adapter_a17_04_single_attention_20261011t145214z_smoke_attn1_sgd_main",
+    "adapter_a17_04_single_attention_20261011t145214z_smoke_attn1_adam_tiny",
+    "adapter_a17_04_single_attention_20261011t145214z_smoke_attn1_adam_main",
+    "analysis_a17_04_single_attention_20261011t145214z_smoke",
+    "adapter_a17_04_single_attention_20261011t145214z_full_attn1_sgd_tiny",
+    "adapter_a17_04_single_attention_20261011t145214z_full_attn1_sgd_main",
+    "adapter_a17_04_single_attention_20261011t145214z_full_attn1_adam_tiny",
+    "adapter_a17_04_single_attention_20261011t145214z_full_attn1_adam_main",
+    "analysis_a17_04_single_attention_20261011t145214z_full"
+  ],
+  "outcomes": [
+    {
+      "arm": "attn1_sgd",
+      "trainable_parameters": 6291456,
+      "train_panel_accuracy": 0.615,
+      "DEV_order_accuracy": 0.52,
+      "DEV_combination_accuracy": 0.535,
+      "DEV_combined_accuracy": 0.5275,
+      "DEV_CE": 0.9419824464991688,
+      "DEV_minimum_cell_accuracy": 0.465,
+      "DEV_joint_correct": 0.1675,
+      "DEV_same_argmax": 0.7625,
+      "qualified": false,
+      "first_qualified_saved_milestone": null
+    },
+    {
+      "arm": "attn1_adam",
+      "trainable_parameters": 6291456,
+      "train_panel_accuracy": 1.0,
+      "DEV_order_accuracy": 1.0,
+      "DEV_combination_accuracy": 1.0,
+      "DEV_combined_accuracy": 1.0,
+      "DEV_CE": 0.0006910316764666824,
+      "DEV_minimum_cell_accuracy": 1.0,
+      "DEV_joint_correct": 1.0,
+      "DEV_same_argmax": 0.0,
+      "qualified": true,
+      "first_qualified_saved_milestone": 240
+    }
+  ],
+  "boundaries": [
+    "attn1_adam versus attn1_sgd changes optimizer and nominal step scale at identical four-matrix scope.",
+    "Both arms change the same last-layer q/k/v/o weights; all other model parameters remain frozen.",
+    "One order seed and already exposed DEV panels support bounded acquisition diagnosis, not confirmation.",
+    "Tiny fitting and unseen-list generalization are separate measurements; low CE alone is not acquisition.",
+    "No new-mode transfer, parameter-mechanism analysis, or architecture adoption is authorized by this run.",
+    "No later experiment submitted; user postponed later steps.",
+    "Q/K norm parameters remain frozen; trainable scope is exactly four projection weights."
+  ],
+  "protocol_amendments": [
+    {
+      "id": "A01",
+      "kind": "arithmetic erratum appended after Smoke",
+      "actual_budget_unchanged": true,
+      "summary": "Smoke summed target count120 corrected to240; replay80 and Full fitting54400 unchanged."
+    }
+  ],
+  "scientific_adoption_decision": "Unknown; no architecture decision automatically follows acquisition diagnosis.",
+  "completed_at_utc": "2026-10-11T15:25:56.128704+00:00",
+  "smoke_terminal_status": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/smoke_platform_terminal_status.json",
+  "document_source_checks": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/delivery_document_checks.json",
+  "artifact_hashes": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/protocol.md",
+      "sha256": "35feaca1b07e4b2ee130a156f0cb8f0bed24654146ab0198776e2f210ca62702",
+      "bytes": 29608
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/protocol_cn.md",
+      "sha256": "03273834f33d4ff03780f85e6e05bdd65b72ecb8c7ca62734dc32b8df7dd6e04",
+      "bytes": 18114
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/summary.md",
+      "sha256": "5963fe2f220f97dedb69b2aa4c31ed7c84a70f6616252355482503006e4525ad",
+      "bytes": 9668
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/summary_cn.md",
+      "sha256": "8a99efb05fd5c92c9a4c1fa887ae87b8114fbf428a34f2cf108b5de4f2bcff21",
+      "bytes": 7606
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/detailed.md",
+      "sha256": "02073e0e5dae7adbb3558cf45c8e6cfa2417f90bc7d97d22ae63da4d88e8974a",
+      "bytes": 32400
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/detailed_cn.md",
+      "sha256": "e7ed769981a03ed8a83ea3e7c884590a2fe566322f7b9f606b24ac5047d2f5f4",
+      "bytes": 29402
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/freeze.json",
+      "sha256": "3b8847f6cf9a958cd9d99cd0e428669dc54e2ec57fee60fa0c64a43e40b5ce7e",
+      "bytes": 8966
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/config.json",
+      "sha256": "bb48841e814e7b93725b165b8eadc4f8481763f01f1746401b570080445f6aa8",
+      "bytes": 3192
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/analysis/results.json",
+      "sha256": "223252d2117a77f40ac54c5df9f982eb580333e45099c3e7472c4a798b670567",
+      "bytes": 221694
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/analysis/analysis_manifest.json",
+      "sha256": "a2a1aaff3a3f96e1faf6f3c9e3833469ff79bc12b2348f2bb76a3f4f65c245ed",
+      "bytes": 17335
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/postexecution_freeze_verification.json",
+      "sha256": "8b93c873bf690b5c264d9fd99a6f460c14276876e6e162d8d7a13db2a0547d43",
+      "bytes": 212
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/smoke_registration_receipt.json",
+      "sha256": "32b70d91b582585615eea98b4f7162769041f8b086e33967afb975e825d53ced",
+      "bytes": 834
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full_registration_receipt.json",
+      "sha256": "15af11d35bcc72ee8cada4efc7fe640fbc6fff546d336911d46698e8e0027730",
+      "bytes": 827
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/independent_final_audit.json",
+      "sha256": "55748474b5f6c168f54f4a875272adef58d9e14241ea7cb7e3f1ae5fcfd58e51",
+      "bytes": 2606
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/execution_certificate.md",
+      "sha256": "a00ec95e3be46f45c9ea40efa310a0316cad1baec94ebc8cc42675f655e44edf",
+      "bytes": 5199
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full_platform_terminal_status.json",
+      "sha256": "6b8d1ca4babbbdb1c3065d52bfb661c084e37cea329aecdf3b488829e05e9e1b",
+      "bytes": 3796
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/smoke_platform_terminal_status.json",
+      "sha256": "70e39829b43852ed60b22ee0814d7d9c3041a83fef0384d176b6b4ff14229efa",
+      "bytes": 3799
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/delivery_document_checks.json",
+      "sha256": "bf088b6b85c19f63815d3f8a822011fbdf8e54ef8887e18278c6c17fb6d0f5e7",
+      "bytes": 633
+    },
+    {
+      "path": "/data/250010109/Research_System/assets/checks/2026-10-11_a17_single_attention_delivery_access.json",
+      "sha256": "29b782bd652deb1f26468510d21662a8143a9f2ea8c58bc75921afe2358db783",
+      "bytes": 41071
+    }
+  ]
+}
