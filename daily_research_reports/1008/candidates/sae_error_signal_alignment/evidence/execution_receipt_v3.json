@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-08T09:12:26.807209+00:00",
+  "kind": "candidate second numerical-repair execution receipt; no scientific result inferred",
+  "job_id": "pt-c33caya0",
+  "job_name": "h2-sae-delta-1008-repair2-diagnostic",
+  "submitted_at_utc": "2026-10-08T09:02:41Z",
+  "execution_status": "SUCCEEDED",
+  "retry_count": 2,
+  "previous_jobs": [
+    "pt-hsy9grzm",
+    "pt-ahl6i4wr"
+  ],
+  "previous_jobs_terminal": "FAILED",
+  "resource_profile": "h100-4-reserved",
+  "gpu_count_requested": 4,
+  "gpu_used_observed": true,
+  "quota_type": "reserved",
+  "priority": "normal",
+  "image_id": "shphd-lite-0911",
+  "image_url": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+  "workspace": "share-space",
+  "aec2": "share-cluster",
+  "worker_spec": "n6ls.iu.i40.4",
+  "worker_nodes": 1,
+  "worker_processes_requested": 4,
+  "storage_mount": "01995892-d478-76d8-aec7-13fd8284477e:/data",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z",
+  "entry_command": "timeout --signal=TERM --kill-after=30s 12600s env H2_CONFIG_PATH=/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/configs/h2_v3.json bash /data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/scripts/run.sh /data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z",
+  "amendment": "amendment_02.md",
+  "runtime_ceiling_seconds": 12600,
+  "prior_attempt_budget_reserved_seconds": 1800,
+  "planned_aggregate_gpu_hour_ceiling": 16,
+  "measurement_status": "COMPLETE_BOTH_MODELS",
+  "scientific_judgment": "Unknown",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/submit-h2-sae-delta-1008-repair2-diagnostic-20261008T090240Z.json",
+      "sha256": "80e47ee3e748044462262d1e16162e349e6eae0e9d30cb875cf32c888b2c02ea"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/pipeline_started.json",
+      "sha256": "b034fab01398c06a6472b410abf6d5eb84d1d980be5e8d9ee9c96ba2823c0276"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/preflight.json",
+      "sha256": "c7690d1d17dab77b97d3d32d6e9cf9c2bf6cb010d100e2ba913a2552d66c0499"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/completion.json",
+      "sha256": "d6366450d5a8b9d3262581ccb10cbb92b4b7737e9ca0372dc0b543ce6cae94ec"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/platform_describe_20261008T090738Z.txt",
+      "sha256": "32d821b9af3b40659eb6e944e775805d236819ffa6ddf22258e67ad43efb2aaa"
+    }
+  ],
+  "platform_state_observed": "SUCCEEDED",
+  "platform_state_observed_at_utc": "2026-10-08T09:07:38Z",
+  "runtime_started_at_utc": "2026-10-08T09:03:30.606815+00:00",
+  "completed_at_utc": "2026-10-08T09:05:37.784649+00:00",
+  "terminal_at_utc": "2026-10-08T09:06:00.321537Z",
+  "runtime_elapsed_seconds": 127.1816630475223,
+  "gpus_observed": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "measured_events_per_model": 16384,
+  "readout_queries_per_model": 8192,
+  "measurement_eligible_both_models": true,
+  "source_assets_unchanged": true,
+  "model_optimizer_updates": 0,
+  "sae_optimizer_updates": 0,
+  "registered_model_verdicts": {
+    "s7": "SUPPORT_BOUNDED_H2",
+    "qwen": "SUPPORT_BOUNDED_H2"
+  },
+  "aggregate_requested_gpu_hours_using_submit_to_terminal_upper_bound": 1.2531063666666666
+}

@@ -7,6 +7,12 @@ System 与 `Projects/` 下的研究项目是独立仓库。只取得 System，�
 本地项目配置的上游是 [BinaryCheater/from-attention-to-search](https://github.com/BinaryCheater/from-attention-to-search)，
 分支为 `Xingyu`。本地修改只有在另行请求提交和推送后才会上游可见，读取仍需要相应仓库权限。
 
+[资产库](../assets/README_cn.md)维护模型／SAE 检查点、保存表征和数据集的身份与存储地址，
+并统一规定“先查找并实际访问，必需资产仍不可访问再暂停”的流程。
+其中包含 `/data/share/109_cache_dir`、执行检查点、内嵌 SAE 权重及表征面板。
+访问快照只代表检查时的主机、时间和用户上下文，不能保证另一个工作区或 GPU 任务也可访问。
+数据集和检查点继续留在原存储位置，不纳入 System Git 或阅读包。
+
 完整工作区中，优先读用户指定的文件。否则由 `PROJECTS.md` 选择项目，由项目 roadmap 选择
 研究线路，再读需要的 Focus、Anchor 或 Summary。项目维护自己的研究入口，System 不再复制工作流表。
 `python tools/check_current_entrypoints.py` 检查已跟踪入口；修改期间可用 `--working-tree` 检查现有文件，

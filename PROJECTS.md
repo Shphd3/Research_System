@@ -21,6 +21,7 @@ workstream/status table here.
 
 - [Daily reading](daily_research_reports/README_cn.md): meetings and short date indexes.
 - [Project access](docs/project_access.md) ([中文](docs/project_access_cn.md)): complete workspace, incomplete checkout and portable reading bundles.
+- [Asset registry](assets/README.md) ([中文](assets/README_cn.md)): checkpoint, representation and dataset locations, access snapshots and required-asset checks.
 - [Legacy path resolver](tools/research_paths.py): find migrated files from earlier chats and receipts.
 - [Earlier project map](docs/archive/project_map_20260926_before_refactor.md): historical context.
 

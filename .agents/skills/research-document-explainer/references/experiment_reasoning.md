@@ -22,7 +22,8 @@ Reconstruct one experiment in this order:
    claim boundary.
 
 When the user asks what completed results mean and `summary.md` exists, link it
-first. Reuse its four-part reasoning without duplicating the full ledger; explain
+first. Reuse its Purpose → Model → Hypothesis → Conclusion → Analysis account
+without duplicating the full ledger; explain
 the indispensable objects and operations in the answer itself. Give the direct
 decision-bearing quantity, the smallest sufficient set of important figures
 with one plain reading sentence each, the nearest boundary, and why the next

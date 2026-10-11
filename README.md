@@ -18,6 +18,9 @@ logs and checkpoints. Daily folders hold meetings and short reading indexes.
 [from project](Projects/from-attention-to-search/main/roadmap_cn.md) ·
 [Skills](docs/skills.md) · [Writing](docs/report_writing_cn.md)
 
+[Research assets](assets/README.md) ([中文](assets/README_cn.md)) indexes local
+model/SAE checkpoints, saved representations and datasets, with live access checks.
+
 ## Research logic
 
 ```text
@@ -40,7 +43,7 @@ not a necessary prerequisite without a justified dependency.
 | Project `main/focus/` | Stable question and researcher-owned next decision |
 | Anchor | Sole current scientific design, eight-section contract |
 | Protocol | Exact experiment contract, approval and amendments |
-| Summary | Complete Purpose, Hypothesis, Analysis method and Conclusion |
+| Summary | Complete Purpose, Model, Hypothesis, Conclusion and Analysis, in that order |
 | Detailed / execution record | Setup, conformance, results, deviations and lineage |
 | Meeting brief, Story, final report | Derived explanations of named sources |
 

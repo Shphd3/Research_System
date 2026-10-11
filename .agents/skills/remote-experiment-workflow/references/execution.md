@@ -17,6 +17,12 @@ Before training implementation/code reuse, inspect actual sources following
 batch, token schedules and finite/counting/resume Smoke checks. Do not duplicate
 that contract or impose an objective component absent from the model.
 
+For training/resume and analysis that reads checkpoints, datasets or saved
+representations, follow the [asset lifecycle](../../../../assets/README.md#training-and-analysis-lifecycle).
+Record and check the stage's required input IDs and their exact parent/interface.
+The training contract names final/required checkpoint saves; artifact completion
+registers the actual outputs through [artifacts.md](artifacts.md).
+
 Before submission, resolve profile, image, activation/dependency layer and
 entry point from `docs/execution_envelope.md`, never memory. An authorized scope
 using the envelope default creates no new gate. A different resource/image/scope

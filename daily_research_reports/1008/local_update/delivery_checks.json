@@ -1,0 +1,156 @@
+{
+  "checked_at_utc": "2026-10-07T17:51:51.173116+00:00",
+  "status": "PASS_FOR_RECORDED_DELIVERY_CHECKS",
+  "new_markdown_links_verified": 91,
+  "png_svg_pairs": 10,
+  "small_csv_files": 14,
+  "new_source_cumulative_conditions": 64,
+  "natural_main_cells": 16,
+  "protected_source_files_hash_verified": 38,
+  "figure_and_table_output_hashes_verified": 34,
+  "execution_receipt_and_small_copy_hashes_verified": true,
+  "independent_numerical_audit": "PASS; direct rectangular SVD vs Gram eig and independent bootstrap",
+  "reasoning_audit": "Original independent audit preserved; latest conclusion/formula revision rechecked by root with research-reasoning-auditor; see evidence/reasoning_audit_cn.md",
+  "visual_inspection": "all plots reviewed by figure author; root additionally viewed natural heatmap and both gradient compound figures",
+  "script_check": "AST syntax; production and independent analysis already completed successfully; no repeated LM execution",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "tools/check_markdown_math.py",
+        "daily_research_reports/1008/README.md",
+        "daily_research_reports/1008/README_cn.md",
+        "daily_research_reports/1008/local_update/README_cn.md",
+        "daily_research_reports/1008/local_update/full_report_cn.md",
+        "daily_research_reports/1008/local_update/evidence/figure_notes_cn.md",
+        "daily_research_reports/1008/local_update/evidence/reasoning_audit_cn.md",
+        "daily_research_reports/1008/meeting_report/meeting_brief_local_update_cn.md"
+      ],
+      "exit_code": 0,
+      "output": "SOURCE PASS: 7 file(s), 0 issue(s); rendering and mathematical truth NOT checked.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_current_entrypoints.py",
+        "--working-tree"
+      ],
+      "exit_code": 0,
+      "output": "Pending tracking: 1 present entrypoints (not committed/tracked evidence).\nChecked 77 System/project entrypoints; 0 issue(s).",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_git_payload.py"
+      ],
+      "exit_code": 0,
+      "output": "Root generated payload tracked: 0",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": "",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "Math checker verifies Markdown source only, not rendering or mathematical truth.",
+    "Research entrypoint checker has one pre-existing present untracked entrypoint; working-tree mode passes.",
+    "Git payload checker checks tracked payload only. New local figures remain ignored/untracked; manifest records selected local assets.",
+    "No listener timing test, new held-out confirmation, semantic causal identification or long-term sharing/routing utility evaluation."
+  ],
+  "model_only_revision": {
+    "file": "daily_research_reports/1008/meeting_report/meeting_brief_local_update_cn.md",
+    "old_sha256": "6222c394b83219f99ce98ded5c3056f01d2d28e7daf3f904fb1898bc4fef36a9",
+    "new_sha256": "159fa15da091180ae83a9bbcb20c1667ded403b9528214b334488b0cacf55178",
+    "only_section_2_changed": true,
+    "conclusions_and_other_sections_unchanged": true,
+    "checked_at_utc": "2026-10-08T00:35:22.860833+00:00",
+    "math_source_check": {
+      "exit_code": 0,
+      "output": "SOURCE PASS: 1 file(s), 0 issue(s); rendering and mathematical truth NOT checked."
+    },
+    "all_selected_asset_hashes_verified": true,
+    "model_source": "domain_update_geometry/20260930/detailed_cn.md:67; 1002/mathematical_analysis_cn.md:1-2"
+  },
+  "conclusion_formula_revision": {
+    "checked_at_utc": "2026-10-08T00:59:40.467564+00:00",
+    "kind": "root reasoning skill self-review and bounded derived report edits",
+    "previous_artifact_sha256": {
+      "local_update/evidence/reasoning_audit_cn.md": "a9df3cfb62635563a811bd922adbcb31e7eb2bdfcc8b7fb9b0e9faeaccaad866",
+      "local_update/full_report_cn.md": "b402d7a2e539f61d39ae33c71b87efe150f68576c91f783cbde7ec71de4c1d5f",
+      "meeting_report/meeting_brief_local_update_cn.md": "159fa15da091180ae83a9bbcb20c1667ded403b9528214b334488b0cacf55178"
+    },
+    "three_conclusions_identical_between_full_and_brief": true,
+    "new_markdown_links_verified": 91,
+    "all_selected_asset_hashes_refreshed_and_verified": true,
+    "figure_tables_and_execution_receipts_unchanged": true,
+    "gradient_factorization_scope": "two single prediction positions; batch pair average explicitly retained",
+    "same_source_cosine_vs_receiver_gradient_sign_distinguished": true,
+    "canonical_results_and_scientific_judgment_unchanged": true,
+    "checks": [
+      {
+        "command": [
+          "python",
+          "tools/check_markdown_math.py",
+          "daily_research_reports/1008/meeting_report/meeting_brief_local_update_cn.md",
+          "daily_research_reports/1008/local_update/full_report_cn.md",
+          "daily_research_reports/1008/local_update/evidence/reasoning_audit_cn.md"
+        ],
+        "exit_code": 0,
+        "output": "SOURCE PASS: 3 file(s), 0 issue(s); rendering and mathematical truth NOT checked."
+      },
+      {
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "output": ""
+      }
+    ]
+  },
+  "clean_figure_revision": {
+    "checked_at_utc": "2026-10-08T01:19:40.656597+00:00",
+    "kind": "root rendering and evidence-boundary review only; no new model execution or statistics",
+    "previous_artifact_sha256": {
+      "local_update/README_cn.md": {
+        "old_sha256": "e13376e937db306cd3748890fe7eb88b6f3abec880d242e3d7ee6195efb5be5f",
+        "new_sha256": "eaadb9013f2e33e3068f9f9b75e05dc4d09ff6f25f787e729251c9ea228ca4bf"
+      },
+      "local_update/evidence/reasoning_audit_cn.md": {
+        "old_sha256": "07342064d90d68d4ff74ea3962118b4db6ff1cb10f7866eb2b9d35840758fc74",
+        "new_sha256": "b3405f7f70d133dc141704b267280e8b3969755771d0fda36049c1f3ec8d8d57"
+      },
+      "local_update/full_report_cn.md": {
+        "old_sha256": "015e87d0fb0fe0cae65b3d360574878ba7e5c346de12b6dfebced9667155e481",
+        "new_sha256": "4f1d71b4513ef3cd78a47dec7c681fa18124b675b70d5361f5d2ffe525ff5d6e"
+      },
+      "meeting_report/meeting_brief_local_update_cn.md": {
+        "old_sha256": "ec72420789edbb0abaef4eb50abc77e60e07e2b4e8a2d530b68079088213f819",
+        "new_sha256": "dbc1790fab60de351d27bfeb84d52ef02d89c19632bb053ddab15777be681006"
+      }
+    },
+    "new_png_svg_pairs": 4,
+    "images_verified": "PNG integrity, SVG XML and visual inspection of all four plot layouts",
+    "all_new_inputs_and_outputs_hash_verified": true,
+    "old_unmodified_selected_assets_hash_verified": true,
+    "exact_canonical_sae_table_copy": true,
+    "new_markdown_links_verified": 103,
+    "three_conclusions_identical_between_full_brief_and_figure_pack": true,
+    "all_12_cross_domain_cells_mean_help": true,
+    "sae_reconstruction_removed_from_meeting_figures": true,
+    "sae_prediction_not_claimed": true,
+    "math_source_check": "SOURCE PASS: 5 file(s), 0 issue(s); no rendered verification claim",
+    "git_diff_check": "PASS",
+    "no_experiments_gpu_or_agents": true
+  }
+}

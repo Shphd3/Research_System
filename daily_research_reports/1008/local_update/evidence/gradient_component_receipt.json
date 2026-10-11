@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE_EXPLORATORY_COMPONENT_AUDIT",
+  "completed_at_utc": "2026-10-07T17:29:31.074320+00:00",
+  "elapsed_seconds": 6.9265378303825855,
+  "inputs_unchanged": true,
+  "source_recipe_sha256": "5569a4565b47a9e3a77fc656fd61ed9260444ee95aae97a7df7e4f184a137184",
+  "implementation_sha256": "f0d156cb3159a4845099d55e4fa27c53f24dcef19c079fb5515c5f5e91748fde",
+  "output_sha256": {
+    "component_arrays.npz": "fa8462f3c364a3b6ee0cf0b62bd406a65add5834197c41120b60540864138353",
+    "gradient_component_loadings.csv": "f7e02bb0eb4f5e244c27065a6c0e3e35db0aefd3b019fc95ef0fd284dcae131b",
+    "gradient_component_response_correlations.csv": "ae5114807baf83ab838dc7274761b3a7d35edc2d7cfa06307eb30d618e465fb3",
+    "gradient_component_spectrum.csv": "edf4ec26300da41e1b6d52d377f43665654dafb7168d412232d0f708a7a74453",
+    "gradient_cumulative_vs_finite.csv": "e62f7da78eaa829de29ae586f1ba08f02175c76b9c46253000fb56c35c5ee73d",
+    "gradient_geometry_vs_loss.csv": "b2f6c508e987fe95f8e23cb0c9dad4db3c813dfeb410a8c3da5547a81d94b46a",
+    "implementation_checks.json": "1ab67b1aebc0bcb9b982aec6d5984dd130819b51e48b2586a7bfea4ca46897ce",
+    "recipe.json": "5569a4565b47a9e3a77fc656fd61ed9260444ee95aae97a7df7e4f184a137184",
+    "summary.json": "bea59727e387c6c674a70674d448a39e5a86bb07fb7d5ea82b4482d6c619554b"
+  },
+  "direct_factorized_response_events": 64,
+  "direct_factorized_response_max_abs_error": 0.0,
+  "old_finite_linear_alignment_max_abs_error": 0.0,
+  "LM_forwards": 0,
+  "LM_updates": 0,
+  "SAE_updates": 0,
+  "GPU_used": false,
+  "remote_jobs": 0,
+  "scientific_judgment": "Unknown"
+}

@@ -1,0 +1,54 @@
+{
+  "registered_at_utc": "2026-10-07T17:29:15.235294+00:00",
+  "kind": "post_hoc_exploratory_gradient_component_relationship_audit",
+  "authorization": "Researcher explicitly requested 1008 complete reports, existing figures and gradient-component/loss relationship audit; four H100 reserved permitted if necessary. Existing caches suffice for this bounded CPU analysis.",
+  "source_workspace": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels",
+  "feature_run": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial",
+  "record_manifest": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/selected.jsonl",
+  "eta": 0.05731845587090156,
+  "source_choice": "All four original F-half0 domain-average gradients; no response-based selection",
+  "modes": [
+    "raw",
+    "unit_norm"
+  ],
+  "decomposition": "Uncentered SVD of four vectorized domain-mean gradients; exact 4x4 Gram eigendecomposition. It is not PCA over all receiver-event gradients.",
+  "components": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "sign_convention": "largest absolute source eigenvector loading is positive",
+  "readout": "all 1024 original R records, all 16 fixed positions, all four sources and both originally measured step sizes",
+  "metrics": [
+    "source gradient Frobenius cosine",
+    "finite response Pearson",
+    "component receiver-response Pearson",
+    "cumulative parameter-gradient energy",
+    "Pearson and Spearman cumulative first-order versus measured finite effect",
+    "relative signed-response squared error preserving cross terms",
+    "relative absolute finite error",
+    "original 1e-5 deadband sign agreement"
+  ],
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 1008,
+  "bootstrap_unit": "whole record (16 positions together); stratified within eight original categories; fixed gradients/basis; no refit/source uncertainty; no multiplicity adjustment",
+  "decision_rule": "Report complete descriptive grid and conditional intervals; no new scientific support threshold",
+  "reuse": "Reuses frozen numerical arrays and equation h=-<G,M>; independently implements source-only SVD and record bootstrap; no training/model/SAE forward or source-file mutation",
+  "resource": "8 CPU numerical threads; 900 seconds maximum externally",
+  "inputs": {
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/source_mean_gradients.npy": "81ec5a1451b61e8b78a5505d3c06aff574aa48e1405b35ce709d1fc3ef5a0eae",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/responses.npz": "b7a1c569adf05a9fd66fb9cbb65a0ded97f9426b6b7b3793a70e7c637630b141",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/effects.npz": "a1c78e4d3df7f13c71fceda4f59f4d8e30a665c80e3a97b4717b05b9dd5d3d43",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/first_order.npz": "39ae1776b68c37b73bfa020a09dc9b44a36a1ef56497bf6033437f9b4ae603c8",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/panel_metadata.npz": "2aa1711699d34c7b6619193f9264bd433e2287f4f293c39d4bdb3a05a8a49ab7",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/receipt.json": "263bc4ebe00c03e77d7e50da3e8bf2e19add069743436992dd7218e9319e611f",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/selected.jsonl": "2c6f6ea5a1c3b97acbdb3f2d4f630ed4247f18dce915868b9b04c5457301a82b",
+    "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/scripts/gradient_component_audit.py": "f0d156cb3159a4845099d55e4fa27c53f24dcef19c079fb5515c5f5e91748fde",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_0/features.npz": "dac2e894456a1f86e5f0c19af58371d4d90e3e9716fd8703e250501265aa424d",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_1/features.npz": "f79b20ccd86fca1f4378af5f013f2fb6a6324d6045bea703cb7a31a98d1affe2",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_2/features.npz": "71795ac99e9b752d35f84aa983baaa65aebfac4cffcf38040e67574fcf009c43",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_3/features.npz": "8906ee1211d22d55cfdbc6b27403eb5e8a8cbc5ffee3f4614faac1c1adb115e5"
+  },
+  "scientific_judgment": "Unknown"
+}

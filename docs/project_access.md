@@ -10,6 +10,15 @@ The local project's configured upstream is
 on branch `Xingyu`. Local edits appear upstream only after separately requested
 commits and pushes; repository access is still required.
 
+## Model, representation and dataset assets
+
+The [asset registry](../assets/README.md) ([中文](../assets/README_cn.md)) owns local
+asset identities, storage addresses and the lookup-before-pause procedure.
+It includes `/data/share/109_cache_dir`, execution checkpoints, embedded SAE
+weights and saved representation panels. Its access snapshots describe one
+host/time/user context, not a guarantee for another checkout or GPU job.
+Datasets and checkpoints remain outside System Git and portable reading bundles.
+
 ## Full workspace
 
 Start at a named file. Otherwise use `PROJECTS.md` to select a project, its

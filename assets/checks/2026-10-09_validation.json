@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-10-09T07:45:15.243707+00:00",
+  "scope": "asset-registry-only edits",
+  "unit_tests": {
+    "suite": "tools/tests/test_asset_registry.py",
+    "passed": 10
+  },
+  "local_markdown_links": "PASS",
+  "changed_scope_whitespace": "PASS",
+  "navigation_working_tree": {
+    "entrypoints": 79,
+    "issues": 0,
+    "pending_tracking": 3
+  },
+  "selected_live_access": "S7 checkpoint, embedded SAE, eighttask tensor and GSM8K passed; Qwen3-Next known incomplete correctly fails strict",
+  "not_checked": [
+    "GB content hashes",
+    "full tensor/dataset deserialization",
+    "GPU load",
+    "future host/user access",
+    "upstream full-download completeness"
+  ],
+  "prior_unrelated_changes_preserved": [
+    "daily_research_reports/README.md",
+    "daily_research_reports/README_cn.md",
+    "daily_research_reports/1008/"
+  ],
+  "publication": "not requested in this turn"
+}

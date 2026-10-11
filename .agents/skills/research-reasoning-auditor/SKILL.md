@@ -21,6 +21,9 @@ a quick question does not require a new artifact or a full research workflow.
 
 Reuse unchanged rules; refresh decision-bearing sources. Before saying a model
 or experiment is absent, inspect relevant existing work and state search limits.
+When several questions compete, locate the confusion in phenomenon, mechanism,
+evidence or decision; resolve the dependency that blocks understanding first.
+Name the parent unknown and which part this round can actually answer.
 
 ## Checks
 
@@ -32,7 +35,8 @@ repair from missing research; preserve frozen protocols and result identities.
 1. Separate observation, unknown, purpose, hypothesis, mechanism, prediction,
    measurement/intervention, conclusion and decision.
 2. Start from the phenomenon and system structure, not a convenient metric or
-   preferred method. State objects before mathematics.
+   preferred method. Explain object -> operation/update -> prediction/loss
+   consequence in words before necessary mathematics.
 3. Check each explanatory arrow, assumptions, competing cause and evidence.
    Distinguish absent derivation, untested link, missing explanation and decision leap.
 4. Name a credible rival at the same level and a prediction on which it differs.
@@ -41,9 +45,12 @@ repair from missing research; preserve frozen protocols and result identities.
    causation and practical utility differ; failed estimation/readout does not
    establish absent structure, and skipped tests remain unmeasured.
 6. Choose evidence appropriate to the claim; state how support, non-support or
-   insufficiency changes judgment and the next check.
+   insufficiency changes a prior judgment, not merely a metric or status.
+   Report when a round only qualifies measurement or narrows a claim.
 7. Bound the claim; justify necessary dependencies before imposing gates.
    Apply only current-stage obligations; preserve conjectures as such.
+   Suggest only a check that could change a named judgment; stopping is valid
+   when another measurement would not change the current bounded answer.
 
 Return the core answer, material gap if any, evidence boundary and only the
 necessary repair. No compulsory checklist-shaped reply. The researcher owns

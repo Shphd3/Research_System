@@ -18,6 +18,10 @@ are Research_System-root-relative unless linked. Read only the selected mode.
 Use `PROJECTS.md` only to resolve unknown ownership; no Graph/roadmap preamble.
 For explicit SSH/CCI, read [transport.md](references/transport.md). Use
 `sco-control` for needed platform commands; the execution envelope governs.
+Training/resume or analysis that reads asset payloads uses the
+[asset lifecycle](../../../assets/README.md#training-and-analysis-lifecycle).
+Completed-training artifact handoff includes registration of actual saved
+checkpoints; status-only inspection does not trigger a full asset inventory.
 
 ## Status: Inspect The Existing Job
 

@@ -38,6 +38,14 @@ state reuse, adaptation or rejection. Training and comparisons must follow
 `docs/training_observability_contract.md`; do not duplicate or weaken its
 telemetry, token/batch normalization, freeze or resume checks.
 
+Before using model/SAE checkpoints, saved representations or datasets, consult
+the [asset registry](assets/README.md) and check required IDs with
+`tools/check_assets.py --strict`. Follow its lookup-before-pause rule; an older
+access snapshot does not establish access in the current conversation.
+Authorized training completion must register actually saved checkpoints through
+the registry's [training and analysis lifecycle](assets/README.md#training-and-analysis-lifecycle);
+keep payloads execution-side and record missing saves explicitly.
+
 Memory is non-canonical. Use `research-memory`: one conversation log,
 timestamped append-only entries with processing-agent identity. Never overwrite
 other conversations or earlier entries. Explicit log resumption reads the full
@@ -52,7 +60,7 @@ and scientific claims against their owning records, not memory.
 | Focus | One stable activated question and researcher-owned next decision |
 | Anchor | Sole current scientific design; never a parallel `design.md` |
 | Protocol | Exact experiment contract, review, approval and amendments |
-| Summary / `_cn.md` | Complete Purpose, Hypothesis, Analysis method, Conclusion |
+| Summary / `_cn.md` | Complete Purpose, Model, Hypothesis, Conclusion, Analysis, in that order |
 | Detailed / execution record | Setup, provenance, deviations, results and execution state |
 | Final report / Story / Graph / sync | Derived reading or navigation, not new authority |
 | `docs/execution_envelope.md` | Profiles, images, submission and execution certificates |
@@ -92,6 +100,11 @@ measurement and open bridges; description, prediction, causation and utility.
 A schematic is no mechanism; bounded results do not establish broader benefit.
 
 Link Summary with decisive evidence and boundary; briefs may restate these.
+Use Purpose → Model → Hypothesis → Conclusion → Analysis for new or revised
+experiment summaries and multi-paragraph research analyses. Define the actual
+system and measured quantities before hypotheses; state the bounded answer
+before its detailed evidence. Follow the shared writing contract and template.
+This changes exposition, not frozen evidence, approval or scientific state.
 Unconfirmed wording stays pending; next steps are
 `AI 建议`. Daily synthesis keeps its human-judgment gate; drafts grant no run authority.
 

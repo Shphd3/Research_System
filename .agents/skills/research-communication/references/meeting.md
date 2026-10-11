@@ -28,8 +28,10 @@ missing derivation, untested link and unsupported design leap before editing.
 
 ## Match The Talk To The Question
 
-Follow the requested duration and order: question/update, explanatory relation,
-decisive evidence, boundary and next decision. Use concrete objects; explain what
+Follow the requested duration and order: purpose, concrete model, candidate
+mechanism/hypothesis, why this comparison separates explanations, one or two
+decisive results, belief update, boundary and next scientific decision. Use
+concrete objects; explain what
 varies, what stays fixed and why the relation matters. Match proof, observation
 or experiment to the claim. Define symbols and label exact, approximate and
 measured relations. A schematic is not a derivation.
@@ -39,8 +41,9 @@ sources. One retained figure needs a source and one reading sentence. Do not cal
 an unrun gate a negative result or a bounded effect a general design benefit.
 Keep live rivals and unknowns. Explain why the next question follows; a chosen
 route is not automatically necessary. An unconfirmed next step
-is an AI suggestion, not run approval. A single-experiment brief still conveys
-purpose, hypothesis, method and conclusion without forcing four extra headings.
+is an AI suggestion, not run approval. For a two-minute recap keep only numbers
+needed for the belief update; link the existing Summary rather than maintain a
+second conclusion. A speaking order does not replace Summary's five-section contract.
 
 ## Rehearse Understanding
 
@@ -48,6 +51,9 @@ Ask a first-time listener to restate the question, why the comparison or proof
 answers it, the knowledge update, boundary and next decision. Use interrupted
 Q&A to locate unclear relations; match detail to the audience. Without a listener,
 label the check self-review. No mandatory rehearsal records.
+For requested pre-meeting preparation include two real follow-ups: why does this
+comparison distinguish the live explanations, and why is the stronger claim still
+unsupported? Answer from the source; do not invent another experiment to rehearse.
 
 A draft may present incomplete or negative science. Mark scientific wording as
 pending when appropriate; do not wait for another experiment or invent approval.

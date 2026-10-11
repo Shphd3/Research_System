@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE",
+  "completed_at_utc": "2026-10-08T09:05:37.784649+00:00",
+  "seconds": 127.1816630475223,
+  "source_assets_unchanged": true,
+  "model_optimizer_updates": 0,
+  "sae_optimizer_updates": 0,
+  "engineering_completion": true,
+  "scientific_judgment": "Unknown",
+  "model_verdicts": {
+    "s7": "SUPPORT_BOUNDED_H2",
+    "qwen": "SUPPORT_BOUNDED_H2"
+  },
+  "summaries_sha256": {
+    "s7": "4581a26f9c62a0edfdd43bcd77a259b2e9475b75b52eb79b34f80dec9df5af96",
+    "qwen": "1eaece457907bdb095c4def1824b21c57ecf8a9b4828fa55a953a05a6c78bc44"
+  },
+  "gpus": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ]
+}

@@ -52,7 +52,7 @@ its existing artifact structure:
    or explicitly labeled AI suggestion.
 
 “Further analysis” or “validate effectiveness” is not a purpose. A proved identity
-does not need an invented empirical rival. Keep Summary's four parts and Anchor's
+does not need an invented empirical rival. Keep Summary's five parts and Anchor's
 eight sections; these requirements concern their content, not extra forms.
 
 ## Formula meaning and evidence scope
@@ -88,38 +88,54 @@ labels or a requirement to lengthen every section.
 
 ## Content and depth
 
-For a research-progress report, preserve this reasoning chain:
+### Purpose, Model, Hypothesis, Conclusion, Analysis
 
-1. Purpose: which uncertainty matters, and what understanding an answer changes.
-2. Observations: what is already seen, under which conditions; distinguish facts
-   from the explanation being proposed.
-3. Hypothesis: which explanation could account for the observations, its strongest
-   rival, and what could distinguish them. Keep the named question's population,
-   conditions and time horizon; a transfer limitation is not a new main hypothesis.
-4. Model and staged derivation: define the objects, state, assumptions, mappings,
-   update and observable needed for the scoped question. Each stage explains its
-   input, relation, output and why it follows; connect adjacent stages. Mark exact,
-   approximate, assumed and still-untested relations. Numerical models are valid;
-   missing links stay visible instead of being invented to make a complete story.
-5. Experimental check: map the derived predictions or unresolved assumptions to
-   actual comparisons and evidence. An implementation check of an identity is not
-   independent empirical support for a mechanism.
-6. Stage update: explain what is now understood, which hypothesis/assumption is
-   strengthened, weakened or unresolved, and why the remaining question matters.
+For new or revised experiment summaries and multi-paragraph research analyses,
+use this reading order:
+
+1. **Purpose:** which uncertainty matters, how it relates to the root question,
+   and what understanding an answer changes.
+2. **Model:** define the actual system, data/task, trainable and frozen objects,
+   update or intervention, and measured quantities. Explain necessary mathematical
+   relations and their assumptions before using them. Distinguish the implemented
+   system from a proposed explanatory model; mark exact, approximate and untested
+   relations. Do not invent a model to fill the section.
+3. **Hypothesis:** state falsifiable expectations, the strongest credible rival,
+   and the comparison that distinguishes them. Keep the original population,
+   conditions and time horizon; identify post-hoc interpretations explicitly.
+4. **Conclusion:** answer the Purpose with the smallest decisive values and their
+   scope. State what is supported, weakened or unresolved. Keep absent researcher
+   judgment Unknown; exposition does not confer scientific approval.
+5. **Analysis:** explain how the conclusion follows. Separate observations from
+   interpretation; state baselines, changed/held-fixed quantities, actual steps,
+   metric/unit, aggregation, uncertainty, controls and remaining rivals. Connect
+   derivations to measurements. Report material residuals, approximation error
+   and numerical error separately. An identity check is not mechanism evidence.
+
+Conclusion precedes detailed Analysis so readers know which answer the evidence
+supports. This is a reading order, not the chronology of research or permission
+to choose an answer before inspecting evidence. Use the
+[English template](../templates/research_process/experiment_summary_template.md)
+and [Chinese companion](../templates/research_process/experiment_summary_template_cn.md)
+when writing a full Summary.
 
 Use this logic in replies too, at the depth needed for the question. A short
 reply gives the answer, decisive reason and boundary; a complex reply retains the
 necessary model, derivation and evidence. Do not expand every reply into a report.
 
-The chain is not six compulsory headings or a required new experiment. Reuse
-existing derivations; theory uses proof/counterexamples and observations must not
+The five sections apply to full Summaries and requested multi-paragraph analyses;
+short answers need no fixed headings or new artifact. Reuse existing derivations;
+theory uses proof/counterexamples and observations must not
 invent a mechanism. Put the meeting's speaking core first and detail/Q&A later.
 A long requested report starts with a brief route through its sections.
 
 Use headings suited to the research. Formal arguments, observational studies,
 interventions and engineering comparisons need different evidence; none requires
 an invented experiment or model to fill a template. The existing eight-section
-Anchor and four-part Summary keep their owning contracts. Full reports use the
+Anchor keeps its eight-section contract; Summary uses the five-part order above.
+Detailed retains its evidence-ledger structure. This format update does not
+rewrite historical records or frozen Protocols; a requested revision preserves
+their values, evidence identities and claim boundaries. Full reports use the
 advisor research-exploration method already integrated in the
 [final-report skill](../.agents/skills/research-final-report/SKILL.md): explain
 priors, model, computation, checks and what was learned to a reader who knows

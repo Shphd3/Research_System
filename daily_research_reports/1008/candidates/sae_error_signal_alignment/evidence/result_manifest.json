@@ -1,0 +1,182 @@
+{
+  "created_at_utc": "2026-10-08T09:09:39.640579+00:00",
+  "run_owner": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z",
+  "kind": "selected candidate measurement evidence; no scientific state transition or publication",
+  "delivery_script": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/scripts/deliver.py",
+  "delivery_script_sha256": "a736e0d80d65cd710eb8b23d61721af5bf1f8d7543c87ea5549bdcba82024654",
+  "assets": [
+    {
+      "path": "evidence/completion.json",
+      "sha256": "d6366450d5a8b9d3262581ccb10cbb92b4b7737e9ca0372dc0b543ce6cae94ec",
+      "bytes": 694,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/completion.json",
+      "source_sha256": "d6366450d5a8b9d3262581ccb10cbb92b4b7737e9ca0372dc0b543ce6cae94ec"
+    },
+    {
+      "path": "evidence/preflight.json",
+      "sha256": "c7690d1d17dab77b97d3d32d6e9cf9c2bf6cb010d100e2ba913a2552d66c0499",
+      "bytes": 1936,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/preflight.json",
+      "source_sha256": "c7690d1d17dab77b97d3d32d6e9cf9c2bf6cb010d100e2ba913a2552d66c0499"
+    },
+    {
+      "path": "evidence/s7_summary.json",
+      "sha256": "4581a26f9c62a0edfdd43bcd77a259b2e9475b75b52eb79b34f80dec9df5af96",
+      "bytes": 5798,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/s7/summary.json",
+      "source_sha256": "4581a26f9c62a0edfdd43bcd77a259b2e9475b75b52eb79b34f80dec9df5af96"
+    },
+    {
+      "path": "evidence/s7_domain_scores.csv",
+      "sha256": "39016f6491c45ac5c91c5ad63403be1f8dab098dda4dd8ed7e96521c556a86b7",
+      "bytes": 2670,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/s7/domain_scores.csv",
+      "source_sha256": "39016f6491c45ac5c91c5ad63403be1f8dab098dda4dd8ed7e96521c556a86b7"
+    },
+    {
+      "path": "evidence/s7_worker_0_receipt.json",
+      "sha256": "d4c1fd780a90b3cfbd6bbc2fc1b244af96b5556a62f6ff3d56a0a57b8e2f6d03",
+      "bytes": 1115,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_0/s7/receipt.json",
+      "source_sha256": "d4c1fd780a90b3cfbd6bbc2fc1b244af96b5556a62f6ff3d56a0a57b8e2f6d03"
+    },
+    {
+      "path": "evidence/s7_worker_1_receipt.json",
+      "sha256": "0749b0f987a875cb98710eb82c14ff47d3663febde02b87aaba9ca7bee0e94d5",
+      "bytes": 1114,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_1/s7/receipt.json",
+      "source_sha256": "0749b0f987a875cb98710eb82c14ff47d3663febde02b87aaba9ca7bee0e94d5"
+    },
+    {
+      "path": "evidence/s7_worker_2_receipt.json",
+      "sha256": "08f2f1a0b1e1d57ea9a2616054cb55df5065c78df134f2fde6f53dc91c370f0a",
+      "bytes": 1114,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_2/s7/receipt.json",
+      "source_sha256": "08f2f1a0b1e1d57ea9a2616054cb55df5065c78df134f2fde6f53dc91c370f0a"
+    },
+    {
+      "path": "evidence/s7_worker_3_receipt.json",
+      "sha256": "11dac7d54a027eda59c2a2a261b37cd758c77cef12ab7d91f06df03ae1407541",
+      "bytes": 1111,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_3/s7/receipt.json",
+      "source_sha256": "11dac7d54a027eda59c2a2a261b37cd758c77cef12ab7d91f06df03ae1407541"
+    },
+    {
+      "path": "evidence/qwen_summary.json",
+      "sha256": "1eaece457907bdb095c4def1824b21c57ecf8a9b4828fa55a953a05a6c78bc44",
+      "bytes": 5769,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/qwen/summary.json",
+      "source_sha256": "1eaece457907bdb095c4def1824b21c57ecf8a9b4828fa55a953a05a6c78bc44"
+    },
+    {
+      "path": "evidence/qwen_domain_scores.csv",
+      "sha256": "496ab7b1998ee522bedee631ae20055f6b9d13643d65dadd9066d6b5e577cb3b",
+      "bytes": 2614,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/qwen/domain_scores.csv",
+      "source_sha256": "496ab7b1998ee522bedee631ae20055f6b9d13643d65dadd9066d6b5e577cb3b"
+    },
+    {
+      "path": "evidence/qwen_worker_0_receipt.json",
+      "sha256": "6c9eede51a2d49e8f12f8692d232d5d806f359163c82b218704636b81793a18f",
+      "bytes": 3053,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_0/qwen/receipt.json",
+      "source_sha256": "6c9eede51a2d49e8f12f8692d232d5d806f359163c82b218704636b81793a18f"
+    },
+    {
+      "path": "evidence/qwen_worker_1_receipt.json",
+      "sha256": "625348e29ec4a310c4282efd2177b0bd13ad8818c400f04f07cecebac934b13e",
+      "bytes": 3054,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_1/qwen/receipt.json",
+      "source_sha256": "625348e29ec4a310c4282efd2177b0bd13ad8818c400f04f07cecebac934b13e"
+    },
+    {
+      "path": "evidence/qwen_worker_2_receipt.json",
+      "sha256": "61b899d93acffb85827d7acf4e1ae9d9ef76f2d11e499f3a7d996c5c1cec7355",
+      "bytes": 3053,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_2/qwen/receipt.json",
+      "source_sha256": "61b899d93acffb85827d7acf4e1ae9d9ef76f2d11e499f3a7d996c5c1cec7355"
+    },
+    {
+      "path": "evidence/qwen_worker_3_receipt.json",
+      "sha256": "817804c0bf86108bd23c16e9dd80a83fecc2d017e05ce701fb43b1e47053224f",
+      "bytes": 3054,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/collection/shard_3/qwen/receipt.json",
+      "source_sha256": "817804c0bf86108bd23c16e9dd80a83fecc2d017e05ce701fb43b1e47053224f"
+    },
+    {
+      "path": "evidence/figures_control_comparison.csv",
+      "sha256": "0b7dce9cfbe774534b051c903af69d041f13f4405844d29a1270ced7a14ca91d",
+      "bytes": 1240,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/control_comparison.csv",
+      "source_sha256": "0b7dce9cfbe774534b051c903af69d041f13f4405844d29a1270ced7a14ca91d"
+    },
+    {
+      "path": "figures/h2_controls.png",
+      "sha256": "4343983511f7a68f742a7ea735d85b4b91134904071266702cb8c71df745301e",
+      "bytes": 99353,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/h2_controls.png",
+      "source_sha256": "4343983511f7a68f742a7ea735d85b4b91134904071266702cb8c71df745301e"
+    },
+    {
+      "path": "figures/h2_controls.svg",
+      "sha256": "86b3499a06653cd0c0bd37fb90d2639f1badee014da1a9493ae7c47bbcaa4cbd",
+      "bytes": 19692,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/h2_controls.svg",
+      "source_sha256": "86b3499a06653cd0c0bd37fb90d2639f1badee014da1a9493ae7c47bbcaa4cbd"
+    },
+    {
+      "path": "figures/h2_domains.png",
+      "sha256": "323459617cab9312f417c668910d41d0aad07334cb9325fc5c725487380883e2",
+      "bytes": 80919,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/h2_domains.png",
+      "source_sha256": "323459617cab9312f417c668910d41d0aad07334cb9325fc5c725487380883e2"
+    },
+    {
+      "path": "figures/h2_domains.svg",
+      "sha256": "ab9296181db6518d35a53e87095f2c94fc648055fb33249a3d7ce9ffea39201b",
+      "bytes": 10419,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/h2_domains.svg",
+      "source_sha256": "ab9296181db6518d35a53e87095f2c94fc648055fb33249a3d7ce9ffea39201b"
+    },
+    {
+      "path": "figures/h2_primary.png",
+      "sha256": "ec708ccae77642697c334a9b4e2e77449f1f2da6c15f9a182bd1cfba21adabea",
+      "bytes": 88396,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/h2_primary.png",
+      "source_sha256": "ec708ccae77642697c334a9b4e2e77449f1f2da6c15f9a182bd1cfba21adabea"
+    },
+    {
+      "path": "figures/h2_primary.svg",
+      "sha256": "8b34a29629daa4502f3dc1eaf01133246fd2e8a23ef4531393be522ae81f68fc",
+      "bytes": 20087,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/h2_primary.svg",
+      "source_sha256": "8b34a29629daa4502f3dc1eaf01133246fd2e8a23ef4531393be522ae81f68fc"
+    },
+    {
+      "path": "evidence/figures_manifest.json",
+      "sha256": "ae9048da1634b968c8b79178ce5cda9be8db8eb3dc7f2538ddfd73899f649529",
+      "bytes": 1837,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/manifest.json",
+      "source_sha256": "ae9048da1634b968c8b79178ce5cda9be8db8eb3dc7f2538ddfd73899f649529"
+    },
+    {
+      "path": "evidence/figures_primary_comparison.csv",
+      "sha256": "7a71e305701490dfbd437e6850bab5809030575a88b0594f45f64f23c77e0ad0",
+      "bytes": 1350,
+      "source": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/figures/primary_comparison.csv",
+      "source_sha256": "7a71e305701490dfbd437e6850bab5809030575a88b0594f45f64f23c77e0ad0"
+    },
+    {
+      "path": "summary.md",
+      "sha256": "561100df7f1e3bade4f16b967d771f3c3d723501aea2ecb78b13ef215ed1dcea",
+      "bytes": 5549,
+      "source": "derived from the registered statistics and existing scientific contract"
+    },
+    {
+      "path": "summary_cn.md",
+      "sha256": "15abd61e9faae18eba6dc589f14f23d02aa344605c0714f69b663a5d8c4a13de",
+      "bytes": 6004,
+      "source": "derived from the registered statistics and existing scientific contract"
+    }
+  ]
+}

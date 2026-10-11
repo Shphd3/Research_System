@@ -134,70 +134,41 @@ are not automatically independent experimental replicates.
 
 ## Summary Contract
 
-Keep `summary.md` short and conclusion-first. It must be understandable without
-chat history but need not reproduce the complete setup. Its reader body owns
-the four-part result account. Ordinary chat links to it and explains the minimal
+Keep `summary.md` short, with the conclusion before detailed analysis. It must
+be understandable without chat history but need not reproduce the complete setup.
+Its reader body owns
+the five-part result account: Purpose → Model → Hypothesis → Conclusion → Analysis.
+Ordinary chat links to it and explains the minimal
 objects, comparison and boundary needed to answer the user's question, without
 repeating the full result ledger. For first-use operations, rationale and formula
 meaning, use the shared [writing contract](../../../../docs/report_writing.md#objects-operations-and-first-use-terms).
 
-Use this structure:
+Use the maintained root [Summary template](../../../../templates/research_process/experiment_summary_template.md)
+and its [Chinese companion](../../../../templates/research_process/experiment_summary_template_cn.md).
+The five sections have these roles:
 
-```markdown
-# Summary: <experiment_id>
+1. **Purpose:** state the scientific uncertainty and what an answer changes.
+2. **Model:** define the actual system, task, trainable/frozen objects, update or
+   intervention and observable. Explain needed relations, assumptions and units.
+3. **Hypothesis:** state one or two falsifiable expectations and the strongest
+   credible rival at the original population, conditions and time horizon.
+   Name the distinguishing comparison; do not invent registration.
+4. **Conclusion:** answer the Purpose with the smallest decisive values and
+   eligibility boundary. State what is supported, weakened or unresolved.
+   A metric change or typed verdict alone is not a scientific answer.
+5. **Analysis:** explain comparisons, baselines, held-fixed quantities, actual
+   steps, metrics, aggregation, uncertainty and rival adjudication. Link decisive
+   claims to source evidence. Material residuals and approximation errors remain
+   visible; complete diagnostics and history stay in Detailed.
 
-Primary Anchor:
-Frozen Protocol:
-Detailed record:
-Result status / eligibility:
+An optional evidence table names the registered rule, observed value, guard or
+eligibility, verdict and source. Optional figures include a reading sentence.
+Claim boundaries belong in the Conclusion and are justified in Analysis;
+next-step reasoning follows the evidence without adding a second conclusion.
 
-## 1. Purpose
-
-One sentence stating the scientific purpose.
-
-## 2. Hypothesis
-
-One or two falsifiable statements at the original Purpose's population, conditions
-and time horizon. A rival about transfer limits the claim; it does not replace a
-fixed-panel question with a new transfer hypothesis. Do not invent registration.
-
-## 3. Analysis Method
-
-At most three bullets. Each names the comparison, what is held fixed, and the
-uncertainty it resolves. Include the primary metric and unit.
-
-## 4. Conclusion
-
-Answer the original scientific purpose and explain the resulting change in
-understanding: which hypothesis or assumption is strengthened, weakened or still
-unresolved, and why. A metric change or typed verdict alone is not this answer.
-Use the smallest decisive result and eligibility boundary to justify it.
-
-The evidence table below is optional when it helps assess that answer; complete
-result analysis and diagnostics remain in Detailed.
-
-| Registered rule | Observed value | Guard / eligibility | Verdict | Evidence source |
-| --- | --- | --- | --- | --- |
-| | | | | |
-
-### Important Figure, Only When Decision-Bearing
-
-How to read:
-
-### Claim Boundary
-
-Can claim:
-Cannot claim:
-
-### Next Step Analysis
-
-Decision:
-Why it follows:
-Unresolved uncertainty:
-Completion criterion:
-Stop or redirect condition:
-Resume action:
-```
+Apply this order to new or requested revised summaries. Do not batch rewrite
+historical records, frozen Protocols or evidence to satisfy a new presentation
+format. A layout change preserves scientific meaning and researcher authority.
 
 When the next decision is unconfirmed, state `Unknown` once with the unresolved
 uncertainty. Add completion, stop and resume details only when an actual next
@@ -239,6 +210,13 @@ Include the frozen Protocol revision, code/config/data identity, primary source
 tables, analysis outputs, central figures, job receipts, and required failure
 artifacts. Raw logs and checkpoints may remain on the worker surface; link
 their manifest rather than copying them into the research mainline.
+
+For actual trained checkpoints and reusable analysis caches, link their asset
+IDs and current access evidence following the
+[asset lifecycle](../../../../assets/README.md#training-and-analysis-lifecycle).
+Plans and `NOT_RUN` conditions have no produced checkpoint; failed saves remain
+missing/partial. A pure audit reports gaps rather than implying it performed
+registration or a new payload check.
 
 ## Figure Contract
 

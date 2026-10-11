@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-09T16:32:14.309650+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-cpg2g",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9472,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "adapter_a17_e02_l_lrminus5_smoke_4h100_20261009t162413z_u00",
+      "title_cn": "A17 E02 l_lr-5 实际保存0步受限更新状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ADAPTER_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/l_lr-5/checkpoints/update_00000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_restricted_update_state",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/l_lr-5/checkpoints/update_00000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8403860,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/l_lr-5/checkpoints/update_00000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 882,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "adapter_a17_e02_l_lrminus4_smoke_4h100_20261009t162413z_u00",
+      "title_cn": "A17 E02 l_lr-4 实际保存0步受限更新状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ADAPTER_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/l_lr-4/checkpoints/update_00000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_restricted_update_state",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/l_lr-4/checkpoints/update_00000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8403860,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/l_lr-4/checkpoints/update_00000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 882,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "adapter_a17_e02_r8_lrminus5_smoke_4h100_20261009t162413z_u00",
+      "title_cn": "A17 E02 r8_lr-5 实际保存0步受限更新状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ADAPTER_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/r8_lr-5/checkpoints/update_00000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_restricted_update_state",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/r8_lr-5/checkpoints/update_00000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113808,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/r8_lr-5/checkpoints/update_00000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 883,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "adapter_a17_e02_r8_lrminus4_smoke_4h100_20261009t162413z_u00",
+      "title_cn": "A17 E02 r8_lr-4 实际保存0步受限更新状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ADAPTER_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/r8_lr-4/checkpoints/update_00000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_restricted_update_state",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/r8_lr-4/checkpoints/update_00000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113808,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261010_a17_restricted_update/runs/smoke_4h100_20261009T162413Z/r8_lr-4/checkpoints/update_00000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 883,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

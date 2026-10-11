@@ -1,0 +1,74 @@
+{
+  "created_at_utc": "2026-10-08T01:19:24.417758+00:00",
+  "kind": "report-ready rendering of existing selected tables; no new measurement",
+  "input_sha256": {
+    "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/controlled_cells.csv": "b2a65265c280f6db1275e09d44b8259e6d877b87c0814cbc96bea1e0f1ea3caa",
+    "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/controlled_rule_interaction.csv": "7189d4ba2669e43555db9985f71b45fb7769588ce05311489a8816c34c0135b7",
+    "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/natural_cells_main16.csv": "011e7543bb3dc087102f4f0ef22a369ef7e652740b6aeeae3e477ebb6dbad5ae",
+    "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_activation_pattern_distances.csv": "c056dac9801cc933ed588fcd55d5781e168901909760b673c7efd8aba82b8a95",
+    "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_geometry_vs_loss.csv": "b2f6c508e987fe95f8e23cb0c9dad4db3c813dfeb410a8c3da5547a81d94b46a"
+  },
+  "script_sha256": "e66273089ba1c1b38cc554124672089ad9cb3a4b35cfacc27e067e676d96e24e",
+  "font": {
+    "path": "/tmp/1008_report_NotoSansCJKsc-Regular.otf",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "in_repository": false,
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf"
+  },
+  "policy": "No explanatory findings, causal claims or long footers inside figures; panel titles, axes, units, legends and numbers only.",
+  "row_scope": {
+    "controlled": "12 fixed direction families; existing paired bootstrap intervals unchanged",
+    "natural": "16 source/receiver cells; 1024 receiver records, 16 positions each; original threshold 1e-5 retained",
+    "sae": "existing domain activation result; frequency mode, all 30000 atoms; fit/readout domain axes; not source/receiver loss axes",
+    "gradient": "four source averages; two SOURCE axes; same 16384 receiver positions; self-pairs masked for display"
+  },
+  "new_statistics": false,
+  "sae_source": {
+    "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/evidence/activation_pattern_distances.csv",
+    "sha256": "c056dac9801cc933ed588fcd55d5781e168901909760b673c7efd8aba82b8a95",
+    "transformation": "frequency mode only; plotted difference = 1 - existing cosine; no new estimation",
+    "boundary": "fit/readout activation panel differs from source/receiver finite-update panel; no pairwise prediction claim"
+  },
+  "outputs": [
+    {
+      "path": "figures/report/conclusion01_controlled.png",
+      "sha256": "f7ad386cc177459dfb5a476a66057dabb6ab12a640ff96d7cc3362210d0df7dd",
+      "bytes": 175668
+    },
+    {
+      "path": "figures/report/conclusion01_controlled.svg",
+      "sha256": "c3436f8d8dbe914dc69db7b7e504e7df78768633417ef75d0fdd571c96626f22",
+      "bytes": 81138
+    },
+    {
+      "path": "figures/report/conclusion02_natural.png",
+      "sha256": "c10738dbe34d0a2b2087961da45a8463c5911a02a558c9e85f21c1d432ad5644",
+      "bytes": 266880
+    },
+    {
+      "path": "figures/report/conclusion02_natural.svg",
+      "sha256": "7a5e79401bdc1200006548e06783817069dfc3769c975b48f11470fcca7d1349",
+      "bytes": 106740
+    },
+    {
+      "path": "figures/report/conclusion02_sae_domains.png",
+      "sha256": "7038581a12b6fb747851b50e2b85b127b320330a2c4dbe76b435a7b367f7717f",
+      "bytes": 186302
+    },
+    {
+      "path": "figures/report/conclusion02_sae_domains.svg",
+      "sha256": "19371e26b7baccf27b301e2dca20bd8e16932b5ea7bf5063b741fce3d8754894",
+      "bytes": 68084
+    },
+    {
+      "path": "figures/report/conclusion03_geometry_response.png",
+      "sha256": "1c6e8fda34f4956956ad60af88ce480fa4f99ec976e7864e9e215bc5aa1a1a5e",
+      "bytes": 264846
+    },
+    {
+      "path": "figures/report/conclusion03_geometry_response.svg",
+      "sha256": "a52372159e275b2d2aa5369b380f0c068e3b3f67b74cb6d6be9ff3a54f0d59e6",
+      "bytes": 105059
+    }
+  ]
+}

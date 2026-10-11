@@ -1,0 +1,22 @@
+{
+  "kind": "derived display of the registered statistics; no additional hypothesis tests",
+  "ci": "95% query-record bootstrap, domain stratified, fixed reference pool",
+  "sources": {
+    "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/s7/summary.json": "4581a26f9c62a0edfdd43bcd77a259b2e9475b75b52eb79b34f80dec9df5af96",
+    "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/qwen/summary.json": "1eaece457907bdb095c4def1824b21c57ecf8a9b4828fa55a953a05a6c78bc44"
+  },
+  "domain_sources": {
+    "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/s7/domain_scores.csv": "39016f6491c45ac5c91c5ad63403be1f8dab098dda4dd8ed7e96521c556a86b7",
+    "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v3_20261008T090146Z/analysis/qwen/domain_scores.csv": "496ab7b1998ee522bedee631ae20055f6b9d13643d65dadd9066d6b5e577cb3b"
+  },
+  "files_sha256": {
+    "control_comparison.csv": "0b7dce9cfbe774534b051c903af69d041f13f4405844d29a1270ced7a14ca91d",
+    "h2_controls.png": "4343983511f7a68f742a7ea735d85b4b91134904071266702cb8c71df745301e",
+    "h2_controls.svg": "86b3499a06653cd0c0bd37fb90d2639f1badee014da1a9493ae7c47bbcaa4cbd",
+    "h2_domains.png": "323459617cab9312f417c668910d41d0aad07334cb9325fc5c725487380883e2",
+    "h2_domains.svg": "ab9296181db6518d35a53e87095f2c94fc648055fb33249a3d7ce9ffea39201b",
+    "h2_primary.png": "ec708ccae77642697c334a9b4e2e77449f1f2da6c15f9a182bd1cfba21adabea",
+    "h2_primary.svg": "8b34a29629daa4502f3dc1eaf01133246fd2e8a23ef4531393be522ae81f68fc",
+    "primary_comparison.csv": "7a71e305701490dfbd437e6850bab5809030575a88b0594f45f64f23c77e0ad0"
+  }
+}

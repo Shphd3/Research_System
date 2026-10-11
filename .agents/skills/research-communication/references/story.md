@@ -12,13 +12,15 @@ and Chinese preserve meaning unless the researcher chooses otherwise.
 
 Match prospective, retrospective or stable-stage structure to the evidence.
 Use the shared [research-progress writing chain](../../../../docs/report_writing.md):
-purpose, observations, hypothesis, connected model stages, checks and knowledge
-update. Supply a short reading route for a long report; the chain is not a fixed
-section template and does not authorize new science.
+Purpose → Model → Hypothesis → Conclusion → Analysis. Define the actual system
+before expectations; give the bounded answer before detailed comparisons,
+derivations, observations and knowledge-update rationale. Supply a short reading
+route for a long report; the reading order does not authorize new science or
+replace a specialized artifact's owning contract.
 Introduce the question, study setup and concrete objects before notation;
 then connect priors, mathematical relation, implemented mechanism, tested comparison,
-actual results, rivals, boundary and the justified next decision. Conclude with
-what is now understood and what remains unresolved; keep detailed result analysis
+actual results, rivals, boundary and the justified next decision. The Conclusion
+states what is now understood and what remains unresolved; keep detailed result analysis
 in its owner instead of ending with a second metric inventory. Do not narrate
 all attempts or impose inactive future sections.
 

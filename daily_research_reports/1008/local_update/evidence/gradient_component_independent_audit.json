@@ -1,0 +1,222 @@
+{
+  "status": "PASS",
+  "method": "Direct rectangular np.linalg.svd plus independent reconstruction and correlation formulas; never imports production script",
+  "scope": "four fixed F-half0 domain means; original 1024 R records and 16 positions; all 64 cumulative cells and CIs",
+  "max_discrepancies": {
+    "svd_eigenvalues_relative": 2.220446049250313e-15,
+    "parameter_orthogonality": 3.3306690738754696e-15,
+    "raw_M_reconstruction_relative": 8.898651180260192e-16,
+    "direction_response": 3.0142555118573e-14,
+    "component_arrays": 5.773159728050814e-15,
+    "component_closure": 8.881784197001252e-16,
+    "loading_coefficient": 4.773959005888173e-15,
+    "response_correlation": 3.747002708109903e-15,
+    "cumulative_pearson": 2.886579864025407e-15,
+    "cumulative_spearman": 1.1102230246251565e-16,
+    "relative_squared_error": 5.134781488891349e-15,
+    "relative_abs_finite_error": 1.5265566588595902e-14,
+    "finite_mean": 0.0,
+    "predicted_mean": 1.951563910473908e-18,
+    "CI": 2.9976021664879227e-15,
+    "gradient_cosine": 8.881784197001252e-16,
+    "geometry_finite_pearson": 1.6653345369377348e-16,
+    "direct_explicit_bootstrap_correlation": 8.881784197001252e-16
+  },
+  "bootstrap_verified": {
+    "whole_record": true,
+    "positions_per_record": 16,
+    "records_per_draw": 1024,
+    "preserved_category_counts": true,
+    "draws": 2000,
+    "explicit_event_correlation_draws": [
+      0,
+      137,
+      1999
+    ]
+  },
+  "unit_norm_raw_M_coefficient_formula": "norm_d * U_dk * singular_value_k; verified by direct reconstruction",
+  "parameter_vs_response_objects": "V rows are orthonormal parameter directions; receiver response correlations may be nonzero due to receiver gradient covariance",
+  "important_reporting_notes": [
+    "unit_norm gradient energy is equalized-source energy, not raw gradient energy",
+    "sign agreement field filters finite |I|>1e-5 only; predicted response may be inside deadband",
+    "four aggregated gradients, not all-event gradient PCA; correlation is post-hoc and target-aware, not prospective routing success"
+  ],
+  "selected_independent_readings": [
+    {
+      "basis": "raw",
+      "k": 1,
+      "source": "computer_science",
+      "finite_pearson": 0.4846274996980187,
+      "CI": [
+        0.4643779447522962,
+        0.5046332036929267
+      ],
+      "relative_signed_response_squared_error": 0.7611556492493933
+    },
+    {
+      "basis": "raw",
+      "k": 1,
+      "source": "mathematics",
+      "finite_pearson": 0.9858156054061217,
+      "CI": [
+        0.9845101754027753,
+        0.9869394842486652
+      ],
+      "relative_signed_response_squared_error": 0.028290005646756537
+    },
+    {
+      "basis": "raw",
+      "k": 1,
+      "source": "physics",
+      "finite_pearson": 0.7718045175044921,
+      "CI": [
+        0.7553756080306678,
+        0.7868258936847391
+      ],
+      "relative_signed_response_squared_error": 0.3993110167623201
+    },
+    {
+      "basis": "raw",
+      "k": 1,
+      "source": "biology",
+      "finite_pearson": 0.5813108767659979,
+      "CI": [
+        0.5614033621301084,
+        0.6011708696907
+      ],
+      "relative_signed_response_squared_error": 0.660163772559053
+    },
+    {
+      "basis": "raw",
+      "k": 4,
+      "source": "computer_science",
+      "finite_pearson": 0.9999984673443246,
+      "CI": [
+        0.9999983869477448,
+        0.9999985451221731
+      ],
+      "relative_signed_response_squared_error": 4.2297685271263206e-32
+    },
+    {
+      "basis": "raw",
+      "k": 4,
+      "source": "mathematics",
+      "finite_pearson": 0.999986262279291,
+      "CI": [
+        0.999984651663865,
+        0.9999877175115502
+      ],
+      "relative_signed_response_squared_error": 2.283760270818516e-32
+    },
+    {
+      "basis": "raw",
+      "k": 4,
+      "source": "physics",
+      "finite_pearson": 0.9999983954453007,
+      "CI": [
+        0.9999982890442934,
+        0.9999985010214412
+      ],
+      "relative_signed_response_squared_error": 8.70651253153676e-32
+    },
+    {
+      "basis": "raw",
+      "k": 4,
+      "source": "biology",
+      "finite_pearson": 0.999998876426059,
+      "CI": [
+        0.9999988075088315,
+        0.999998944842151
+      ],
+      "relative_signed_response_squared_error": 3.961260350800376e-31
+    },
+    {
+      "basis": "unit_norm",
+      "k": 1,
+      "source": "computer_science",
+      "finite_pearson": 0.6216608843613223,
+      "CI": [
+        0.6041787764534636,
+        0.6385275187695122
+      ],
+      "relative_signed_response_squared_error": 0.6574085560717898
+    },
+    {
+      "basis": "unit_norm",
+      "k": 1,
+      "source": "mathematics",
+      "finite_pearson": 0.9128142519277661,
+      "CI": [
+        0.9060546691463387,
+        0.9188750223217528
+      ],
+      "relative_signed_response_squared_error": 0.25833475150186674
+    },
+    {
+      "basis": "unit_norm",
+      "k": 1,
+      "source": "physics",
+      "finite_pearson": 0.819456780870911,
+      "CI": [
+        0.8074947215348871,
+        0.830965996358794
+      ],
+      "relative_signed_response_squared_error": 0.35683597752680996
+    },
+    {
+      "basis": "unit_norm",
+      "k": 1,
+      "source": "biology",
+      "finite_pearson": 0.7140414531522085,
+      "CI": [
+        0.6973699708388494,
+        0.7304918505211808
+      ],
+      "relative_signed_response_squared_error": 0.5780835810299628
+    },
+    {
+      "basis": "unit_norm",
+      "k": 4,
+      "source": "computer_science",
+      "finite_pearson": 0.9999984673443248,
+      "CI": [
+        0.9999983869477448,
+        0.9999985451221731
+      ],
+      "relative_signed_response_squared_error": 3.8644728448330885e-31
+    },
+    {
+      "basis": "unit_norm",
+      "k": 4,
+      "source": "mathematics",
+      "finite_pearson": 0.999986262279291,
+      "CI": [
+        0.9999846516638646,
+        0.99998771751155
+      ],
+      "relative_signed_response_squared_error": 1.3122880679262114e-31
+    },
+    {
+      "basis": "unit_norm",
+      "k": 4,
+      "source": "physics",
+      "finite_pearson": 0.9999983954453003,
+      "CI": [
+        0.9999982890442938,
+        0.9999985010214413
+      ],
+      "relative_signed_response_squared_error": 1.3351156929373887e-31
+    },
+    {
+      "basis": "unit_norm",
+      "k": 4,
+      "source": "biology",
+      "finite_pearson": 0.9999988764260593,
+      "CI": [
+        0.9999988075088316,
+        0.9999989448421508
+      ],
+      "relative_signed_response_squared_error": 7.787500660439339e-32
+    }
+  ]
+}

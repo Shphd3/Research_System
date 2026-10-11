@@ -3,7 +3,7 @@
 Use this reference after execution to write the complete first reading in
 `summary.md`, or when the researcher explicitly requests a standalone
 single-experiment speaking or meeting brief. It does not replace the Detailed
-record. When a Summary already exists, do not duplicate these four sections in
+record. When a Summary already exists, do not duplicate these five sections in
 the ordinary chat response; link the Summary first and use the compact result
 delivery rule in [SKILL.md](../SKILL.md).
 
@@ -48,28 +48,27 @@ Distinguish a real checkpoint-and-freeze transition from a continuous run that
 is only divided during analysis. State protocol deviations that narrow the
 claim.
 
-## 3. Four-Section Reader Format
+## 3. Five-Section Reader Format
+
+Use Purpose → Model → Hypothesis → Conclusion → Analysis. The root
+[Summary template](../../../../templates/research_process/experiment_summary_template.md)
+owns reusable layout; the shared writing rules own first-use definitions.
 
 ### Purpose
 
 One sentence stating the whole scientific purpose. Do not clarify
 implementation here.
 
+### Model
+
+Define the actual task and system, trainable/frozen objects, update or intervention,
+and observable. Explain necessary equations, assumptions, units and sign conventions.
+Keep an implemented mechanism separate from an untested explanatory hypothesis.
+
 ### Hypothesis
 
 Use one or two short falsifiable statements. Include the strongest rival in
 the second statement when needed.
-
-### Analysis Method
-
-Group the necessary comparisons into a few short bullets. Each bullet says:
-
-```text
-what is compared -> what uncertainty it resolves
-```
-
-Order the comparisons by the assumptions or derived predictions they test;
-do not impose a tool-specific sequence on a different question.
 
 ### Conclusion
 
@@ -87,6 +86,18 @@ report an actual evidence gap without manufacturing a visual to fill it. Result
 analysis explains measurements; the conclusion explains what those measurements
 change about the hypothesis, model or remaining uncertainty. Do not invent a
 mechanism or broaden the original question to make this update sound stronger.
+
+### Analysis
+
+Explain the Conclusion with the actual comparisons and observations. Each
+comparison names its baseline, changed/held-fixed quantities and the uncertainty
+it resolves. State metrics/units, actual steps, aggregation, uncertainty, guards
+and remaining rivals. Explain material residuals and finite-change approximation
+remainder separately from numerical error. Keep full diagnostics in Detailed.
+
+Order the evidence by the assumptions or predictions it tests; do not impose a
+tool-specific sequence on a different question. Conclusion-first evidence delivery
+means Conclusion precedes detailed Analysis, after Purpose, Model and Hypothesis.
 
 ## 4. Required Separations
 

@@ -53,6 +53,14 @@ operationalization, not all routes to the parent goal. Distinguish necessary
 dependency from a chosen route. State what each outcome changes, leaves open,
 and motivates next; keep failed or inconclusive predictions as such.
 
+For each decisive result connect the prior judgment, actual treatment/control
+evidence (population, unit and source), surviving rival, permitted belief change
+and unproved remainder in prose. If no belief changed, say so and identify any
+measurement repair or exclusion instead. A beneficial cross-rule update does not
+locate a common function; a failed SAE explanation limits that dictionary/reader/
+intervention, not the existence of functional structure. These are different
+inference failures, not reasons to abandon all valid observations.
+
 Rewrite purpose to name the unknown, hypothesis to give a candidate mechanism and
 differing prediction, method to test that difference, conclusion to reflect actual
 evidence. Use natural prose at the user's requested length; no fixed seven-section
