@@ -1,6 +1,6 @@
 # Research asset registry
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **380 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **414 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
 
 [中文](README_cn.md) · [Sole machine-readable catalog](catalog.json) · [Historical whole-library access snapshot](checks/2026-10-09_access_v4.json) · [Checker](../tools/check_assets.py) · [Project access](../docs/project_access.md)
 
@@ -218,3 +218,12 @@ Registered actual analysis asset `representation_a17_paired_rule_margin_20261010
 Registered40actualcheckpointfamilies(16Smoke,24Full)plusone native-readout/parameter-subspacefamily,44Smoke/114Fullstates. Parent,data,source,valid-answercounters andmemberhashesare bound inreceipt;registration confers no mechanism judgment. [Receipt](/data/250010109/MoE_Router/experiments/20261011_a17_old_task_sensitive_update/audit/registration_request_registered_outputs.json) · [Selected access](checks/2026-10-10_a17_outputs_20261010T172742Z.json).
 
 2026-10-11 A17 component-analysis outputs: [current selected-access check](checks/2026-10-11_a17_component_causality_outputs_0233.json) covers exactly the new Smoke and Full readout families. Both are accessible; this is not a whole-library refresh. Smoke140 cells and Full630 cells, no new trained checkpoints.
+
+
+### A17 trajectory-state analysis completed (2026-10-11)
+
+Smoke12/replay4 and Full108 actual finite readouts are registered, no new trained checkpoints. [Current selected access](/data/250010109/Research_System/assets/checks/2026-10-11_a17_trajectory_20261011T090921Z.json) covers these two output IDs only. [Canonical Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_03_old_task_sensitive_update/A17_03_E03_trajectory_mechanism/summary_cn.md) preserves state/order heterogeneity and incomplete100-step mechanism boundary.
+
+### A17_04 conditional mapping completed (2026-10-11)
+
+Smoke and Full saved 120 actual states in 28 adapter families and two native-readout families. Derived analysis `analysis_a17_04_mapping_20261011t095038z` has a separate identity. [30-output access](checks/2026-10-11_a17_mapping_output_access.json) and [derived-analysis access](checks/2026-10-11_a17_mapping_analysis_access.json) pass selected checks, not a fresh whole-library inventory. [Canonical Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/summary.md) records insufficient old-mapping acquisition; completion does not establish acquired-rule interference. Checkpoints require the exact registered parent Base.

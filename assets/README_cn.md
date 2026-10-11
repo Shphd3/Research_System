@@ -1,6 +1,6 @@
 # 研究资产库
 
-本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **380 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **414 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
 
 [English](README.md) · [唯一机器可读目录](catalog.json) · [历史全库访问快照](checks/2026-10-09_access_v4.json) · [检查工具](../tools/check_assets.py) · [项目访问与旧路径处理](../docs/project_access_cn.md)
 
@@ -207,3 +207,12 @@ Full `pt-h5t3h09w`成功完成244,380次更新：1,000,002,960个有效预测位
 已登记40个实际检查点家族（16Smoke、24Full）、一个原生读数/梯度子空间家族，保存状态44Smoke/114Full。全部父模型、数据、代码、有效答案计数和状态哈希在收据；登记不授予科学机制结论。 [Receipt](/data/250010109/MoE_Router/experiments/20261011_a17_old_task_sensitive_update/audit/registration_request_registered_outputs.json) · [Selected access](checks/2026-10-10_a17_outputs_20261010T172742Z.json).
 
 2026-10-11 A17成分分析输出：[本次选择访问检查](checks/2026-10-11_a17_component_causality_outputs_0233.json)仅覆盖新登记的Smoke和Full读数家族，两者可访问；不是全库刷新。实际Smoke140条件、Full630条件，没有新训练检查点。
+
+
+### A17 trajectory-state analysis completed (2026-10-11)
+
+Smoke12/replay4 and Full108 actual finite readouts are registered, no new trained checkpoints. [Current selected access](/data/250010109/Research_System/assets/checks/2026-10-11_a17_trajectory_20261011T090921Z.json) covers these two output IDs only. [Canonical Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_03_old_task_sensitive_update/A17_03_E03_trajectory_mechanism/summary_cn.md) preserves state/order heterogeneity and incomplete100-step mechanism boundary.
+
+### A17_04 条件映射执行完成（2026-10-11）
+
+Smoke 与 Full 实际保存120个状态，归入28个 adapter 族与两个原生读数族。派生分析 `analysis_a17_04_mapping_20261011t095038z` 独立登记。[30产物访问](checks/2026-10-11_a17_mapping_output_access.json)与[派生分析访问](checks/2026-10-11_a17_mapping_analysis_access.json)通过选定检查，不是全库刷新。[正式 Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/summary_cn.md)记录旧映射学习资格不足；完成不证明已学规则干扰。检查点需要精确登记的父 Base。
