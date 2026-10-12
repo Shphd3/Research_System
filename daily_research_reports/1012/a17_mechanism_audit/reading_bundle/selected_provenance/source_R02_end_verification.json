@@ -1,0 +1,260 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-11T18:09:50.311033+00:00",
+  "source_freeze": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/freeze.json",
+  "checked_files": 42,
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/dev.jsonl",
+      "expected_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "actual_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/manifest.json",
+      "expected_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "actual_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/qualification.json",
+      "expected_sha256": "f8116acbe9274a6539a027d5b1e8760243a9a819553ce26f8d0f5fa193d1ec7f",
+      "actual_sha256": "f8116acbe9274a6539a027d5b1e8760243a9a819553ce26f8d0f5fa193d1ec7f",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/train.jsonl",
+      "expected_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "actual_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/dev_neutral.jsonl",
+      "expected_sha256": "ccf3e7133c78bb9301d53ca7681649c8e9a48ea0cdbbfad43437257425964de6",
+      "actual_sha256": "ccf3e7133c78bb9301d53ca7681649c8e9a48ea0cdbbfad43437257425964de6",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/manifest.json",
+      "expected_sha256": "05dfb9ac05ebf20dcf560b51d880acdb9472596b2a0a346aa8401d0dc9438a89",
+      "actual_sha256": "05dfb9ac05ebf20dcf560b51d880acdb9472596b2a0a346aa8401d0dc9438a89",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_neutral.jsonl",
+      "expected_sha256": "0147146c13daff0db5ebb0633c657360cfc6b0b4397d6c692c607ef6d0890475",
+      "actual_sha256": "0147146c13daff0db5ebb0633c657360cfc6b0b4397d6c692c607ef6d0890475",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_adam/main/checkpoints/update_00000/state.pt",
+      "expected_sha256": "a3628c5c31f78a147424d5ca7a911a1a58e3932ceff9cfda050101917ca17fa4",
+      "actual_sha256": "a3628c5c31f78a147424d5ca7a911a1a58e3932ceff9cfda050101917ca17fa4",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_adam/main/checkpoints/update_00240/state.pt",
+      "expected_sha256": "1723e2527e957696294ee5972f1ec37fbbbc4580450b82da1519dfdecc782f2e",
+      "actual_sha256": "1723e2527e957696294ee5972f1ec37fbbbc4580450b82da1519dfdecc782f2e",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_adam/main/checkpoints/update_01200/state.pt",
+      "expected_sha256": "48595673c24579164e271cfeb1b86be6a234e2dfc06218b74d8ca07e16411b75",
+      "actual_sha256": "48595673c24579164e271cfeb1b86be6a234e2dfc06218b74d8ca07e16411b75",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_sgd/main/checkpoints/update_00240/state.pt",
+      "expected_sha256": "22ff856c3e1f1e4ee45d38999639308267f233a0a3817a2d293e89898ac940f6",
+      "actual_sha256": "22ff856c3e1f1e4ee45d38999639308267f233a0a3817a2d293e89898ac940f6",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/configs/cpu_qualification.json",
+      "expected_sha256": "77f3cc4014423e9863fd28f4e4f8c719d223d1af676d78394b64b8e33bcddfea",
+      "actual_sha256": "77f3cc4014423e9863fd28f4e4f8c719d223d1af676d78394b64b8e33bcddfea",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/configs/probe_cpu_qualification.json",
+      "expected_sha256": "caa8e18caa9bb39e87f053e415ef013cb15ad4dbbbf40327938d06f59b3f101b",
+      "actual_sha256": "caa8e18caa9bb39e87f053e415ef013cb15ad4dbbbf40327938d06f59b3f101b",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/configs/probe_reuse_sources.json",
+      "expected_sha256": "021b0e35569e97defdf9c27d98e64d8a8407e9888d24c87a06d9b92f40459f73",
+      "actual_sha256": "021b0e35569e97defdf9c27d98e64d8a8407e9888d24c87a06d9b92f40459f73",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/configs/probe_sample.json",
+      "expected_sha256": "d4d7ac795ee76adb86bc874306ac68e43eefb1f7748a5fec596ab05d6375603a",
+      "actual_sha256": "d4d7ac795ee76adb86bc874306ac68e43eefb1f7748a5fec596ab05d6375603a",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/launch/prepare_submit.py",
+      "expected_sha256": "55300c420c1488ccc0bf2ae43a976d5fd7507fe879b4e88329519e9a27c0e511",
+      "actual_sha256": "55300c420c1488ccc0bf2ae43a976d5fd7507fe879b4e88329519e9a27c0e511",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/launch/register_outputs.py",
+      "expected_sha256": "53f764e6078e9e6479aa963e5f3ce89fe7113f59a49ca60ce513a98b191f41d8",
+      "actual_sha256": "53f764e6078e9e6479aa963e5f3ce89fe7113f59a49ca60ce513a98b191f41d8",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/launch/run_phase.py",
+      "expected_sha256": "3568f26f60095b176b5a643f437a75ed1439f19ee5bc049c64413c7374ba3d26",
+      "actual_sha256": "3568f26f60095b176b5a643f437a75ed1439f19ee5bc049c64413c7374ba3d26",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/provenance/data_guard.json",
+      "expected_sha256": "bc05480e81b13ff54d4d9991e5bf512349ee8d931889bd9cc045bc65d2d0945c",
+      "actual_sha256": "bc05480e81b13ff54d4d9991e5bf512349ee8d931889bd9cc045bc65d2d0945c",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/provenance/input_access.json",
+      "expected_sha256": "176e57fcbacf68448ba5f09078e314a293e24519d30012db2581145e4b4eb6e9",
+      "actual_sha256": "176e57fcbacf68448ba5f09078e314a293e24519d30012db2581145e4b4eb6e9",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/provenance/input_checkpoint_identity.json",
+      "expected_sha256": "04f86567b7d62c27857d26c6d51b53b8a9009ab353bb450767f32e242aa2b5a1",
+      "actual_sha256": "04f86567b7d62c27857d26c6d51b53b8a9009ab353bb450767f32e242aa2b5a1",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/provenance/reasoning_audit.json",
+      "expected_sha256": "9fac08146e07bdd623be81fc28a873711f608af89f5fd81b34b6823d23e73fbf",
+      "actual_sha256": "9fac08146e07bdd623be81fc28a873711f608af89f5fd81b34b6823d23e73fbf",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/provenance/reuse_decisions.json",
+      "expected_sha256": "72fa6ed68e0eede434e2d0947d43f892d87841182a6d9ca24823f980fe10297a",
+      "actual_sha256": "72fa6ed68e0eede434e2d0947d43f892d87841182a6d9ca24823f980fe10297a",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/anchor_frozen.md",
+      "expected_sha256": "9821bf4917b51fc733574ac50c65b5aea3915b2283f34dd030c6daf91713e906",
+      "actual_sha256": "9821bf4917b51fc733574ac50c65b5aea3915b2283f34dd030c6daf91713e906",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/anchor_frozen_cn.md",
+      "expected_sha256": "2277d3d0d94f91e7309f28be47a4a11f157d1e7386896f0bbcdd810a3abda214",
+      "actual_sha256": "2277d3d0d94f91e7309f28be47a4a11f157d1e7386896f0bbcdd810a3abda214",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/config.json",
+      "expected_sha256": "5bb5754ce2f8622ec31265a605f6563c1021950c42b70f0d884a414faeeddc1d",
+      "actual_sha256": "5bb5754ce2f8622ec31265a605f6563c1021950c42b70f0d884a414faeeddc1d",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/focus_frozen.md",
+      "expected_sha256": "732ccd2f43c34cf305bfe20c2126ed74527dad80da1d16da51eda7ffdf971689",
+      "actual_sha256": "732ccd2f43c34cf305bfe20c2126ed74527dad80da1d16da51eda7ffdf971689",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/focus_frozen_cn.md",
+      "expected_sha256": "9719525a61fe5f6b02cc4ea1e1c67db4599e0d8cbc04e62717e98d32f3dfc7c9",
+      "actual_sha256": "9719525a61fe5f6b02cc4ea1e1c67db4599e0d8cbc04e62717e98d32f3dfc7c9",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/probe_config.json",
+      "expected_sha256": "d4d7ac795ee76adb86bc874306ac68e43eefb1f7748a5fec596ab05d6375603a",
+      "actual_sha256": "d4d7ac795ee76adb86bc874306ac68e43eefb1f7748a5fec596ab05d6375603a",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/protocol_frozen.md",
+      "expected_sha256": "dc1da949870f36bbb50f41d2b04e28833c7a748219b4b046d85a80972e515a21",
+      "actual_sha256": "dc1da949870f36bbb50f41d2b04e28833c7a748219b4b046d85a80972e515a21",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/protocol_frozen_cn.md",
+      "expected_sha256": "a205f803d871178c6adcdf1fc46a660d698c7fc9daf46287adb18b1d4a1b2035",
+      "actual_sha256": "a205f803d871178c6adcdf1fc46a660d698c7fc9daf46287adb18b1d4a1b2035",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/analyze.py",
+      "expected_sha256": "357deb740dcb0798754c95ef889ac818411062a661230f63b1abcf0914f1fdbb",
+      "actual_sha256": "357deb740dcb0798754c95ef889ac818411062a661230f63b1abcf0914f1fdbb",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/carriers.py",
+      "expected_sha256": "802f596b655fbf0c415437925c987ca7ae62ecc4de25860b78a807e1fd46e354",
+      "actual_sha256": "802f596b655fbf0c415437925c987ca7ae62ecc4de25860b78a807e1fd46e354",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/native.py",
+      "expected_sha256": "321d7bad377e2bdf26f7d24b93ade5feb7e4047ff2ec9711e7328c643b549c31",
+      "actual_sha256": "321d7bad377e2bdf26f7d24b93ade5feb7e4047ff2ec9711e7328c643b549c31",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/optimizer_probe.py",
+      "expected_sha256": "ad253c4d558c9df2be1292fda95f0a14f71eb2c0be0bcbb41ba12392841018d6",
+      "actual_sha256": "ad253c4d558c9df2be1292fda95f0a14f71eb2c0be0bcbb41ba12392841018d6",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/qualify_cpu.py",
+      "expected_sha256": "38a653dd80ed6b56f61ee35e94a5507a84e047c7a9805ccac0a78061efbebd24",
+      "actual_sha256": "38a653dd80ed6b56f61ee35e94a5507a84e047c7a9805ccac0a78061efbebd24",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/runtime.sh",
+      "expected_sha256": "f50f57b336dc88442ef4acd3fd855f8d14d2a01071290dbbffd088d1c99e1c8e",
+      "actual_sha256": "f50f57b336dc88442ef4acd3fd855f8d14d2a01071290dbbffd088d1c99e1c8e",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/source/transfer.py",
+      "expected_sha256": "bb021d9109f4aa87d1b3686d430dbed7c1cc476bc2e8601942bcc273854a775d",
+      "actual_sha256": "bb021d9109f4aa87d1b3686d430dbed7c1cc476bc2e8601942bcc273854a775d",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+      "expected_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "actual_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+      "expected_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "actual_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json",
+      "expected_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "actual_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "pass": true
+    },
+    {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json",
+      "expected_sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "actual_sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "pass": true
+    }
+  ]
+}

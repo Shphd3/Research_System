@@ -1,0 +1,365 @@
+{
+  "analysis_role": "POSTHOC_DESCRIPTIVE_OUTPUT_COUNT; not a new primary estimand or confirmation",
+  "created_at_utc": "2026-10-11T16:27:13.385697+00:00",
+  "definition": "Opposite endpoint is last_id when target_id==first_id, else first_id; predict other categories by full-vocabulary argmax",
+  "processing_agent": "/root/single_attention_contract",
+  "rows": [
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 400,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "order_new",
+      "seed": 29
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 400,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "combination_new",
+      "seed": 29
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 800,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 800,
+      "panel": "combined",
+      "seed": 29
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 0,
+        "opposite_endpoint": 400,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 1.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "order_new",
+      "seed": 29
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 0,
+        "opposite_endpoint": 400,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 1.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "combination_new",
+      "seed": 29
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 0,
+        "opposite_endpoint": 800,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 1.0,
+        "outside_list": 0.0
+      },
+      "n": 800,
+      "panel": "combined",
+      "seed": 29
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 400,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "order_new",
+      "seed": 43
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 400,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "combination_new",
+      "seed": 43
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 800,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 800,
+      "panel": "combined",
+      "seed": 43
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 0,
+        "opposite_endpoint": 400,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 1.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "order_new",
+      "seed": 43
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 0,
+        "opposite_endpoint": 400,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 1.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "combination_new",
+      "seed": 43
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 0,
+        "opposite_endpoint": 800,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 1.0,
+        "outside_list": 0.0
+      },
+      "n": 800,
+      "panel": "combined",
+      "seed": 43
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 400,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "order_new",
+      "seed": 71
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 400,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 400,
+      "panel": "combination_new",
+      "seed": 71
+    },
+    {
+      "branch": "consistent",
+      "counts": {
+        "correct_endpoint": 800,
+        "middle_word": 0,
+        "opposite_endpoint": 0,
+        "outside_list": 0
+      },
+      "fractions": {
+        "correct_endpoint": 1.0,
+        "middle_word": 0.0,
+        "opposite_endpoint": 0.0,
+        "outside_list": 0.0
+      },
+      "n": 800,
+      "panel": "combined",
+      "seed": 71
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 8,
+        "opposite_endpoint": 386,
+        "outside_list": 6
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.02,
+        "opposite_endpoint": 0.965,
+        "outside_list": 0.015
+      },
+      "n": 400,
+      "panel": "order_new",
+      "seed": 71
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 4,
+        "opposite_endpoint": 394,
+        "outside_list": 2
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.01,
+        "opposite_endpoint": 0.985,
+        "outside_list": 0.005
+      },
+      "n": 400,
+      "panel": "combination_new",
+      "seed": 71
+    },
+    {
+      "branch": "reversed",
+      "counts": {
+        "correct_endpoint": 0,
+        "middle_word": 12,
+        "opposite_endpoint": 780,
+        "outside_list": 8
+      },
+      "fractions": {
+        "correct_endpoint": 0.0,
+        "middle_word": 0.015,
+        "opposite_endpoint": 0.975,
+        "outside_list": 0.01
+      },
+      "n": 800,
+      "panel": "combined",
+      "seed": 71
+    }
+  ],
+  "scope": "Saved full final old-mode DEV predictions only; no GPU/forward/backward/TEST; no source changes",
+  "source_files": [
+    {
+      "bytes": 2220940,
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full/seed_29/consistent/eval_01200.json",
+      "sha256": "fc4870af03ade9d02a551e8f2016b15ba2eb122b4d338bcbc91fb1f26fcf4639"
+    },
+    {
+      "bytes": 2209717,
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full/seed_29/reversed/eval_01200.json",
+      "sha256": "7b4c9c7dba9c0961c9734ae7cb4b98bf85e35ee00b690000868050c3d4686422"
+    },
+    {
+      "bytes": 2218646,
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full/seed_43/consistent/eval_01200.json",
+      "sha256": "01b08ecf800eb540f2e968426d1ce8d8dc292ab120b6381357b7eee9f7df2ba4"
+    },
+    {
+      "bytes": 2209524,
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full/seed_43/reversed/eval_01200.json",
+      "sha256": "5d63ab9b12a843c70447e22419708b6996e3e7ce1974ab93ae77f3e1aa7ed2b1"
+    },
+    {
+      "bytes": 2220865,
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full/seed_71/consistent/eval_01200.json",
+      "sha256": "a5ceef8959557663b83aaa52900f1fa5972bad1bd7b4878de5d453509d78c975"
+    },
+    {
+      "bytes": 2206616,
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full/seed_71/reversed/eval_01200.json",
+      "sha256": "62105055010bbd67ebfd29609d536efeb076ff2e261f40855cd646a6ab72ead5"
+    }
+  ]
+}
