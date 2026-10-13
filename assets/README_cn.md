@@ -1,6 +1,6 @@
 # 研究资产库
 
-本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **414 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **468 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
 
 [English](README.md) · [唯一机器可读目录](catalog.json) · [历史全库访问快照](checks/2026-10-09_access_v4.json) · [检查工具](../tools/check_assets.py) · [项目访问与旧路径处理](../docs/project_access_cn.md)
 
@@ -216,3 +216,6 @@ Smoke12/replay4 and Full108 actual finite readouts are registered, no new traine
 ### A17_04 条件映射执行完成（2026-10-11）
 
 Smoke 与 Full 实际保存120个状态，归入28个 adapter 族与两个原生读数族。派生分析 `analysis_a17_04_mapping_20261011t095038z` 独立登记。[30产物访问](checks/2026-10-11_a17_mapping_output_access.json)与[派生分析访问](checks/2026-10-11_a17_mapping_analysis_access.json)通过选定检查，不是全库刷新。[正式 Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/summary_cn.md)记录旧映射学习资格不足；完成不证明已学规则干扰。检查点需要精确登记的父 Base。
+
+
+[CrossCoder阶段一实存缓存与分析](crosscoder_feature_phase1_cn.md)：最终14层完整VAL；图、文本、热图与当前访问检查。不授予因果或学习收益结论。

@@ -1,0 +1,59 @@
+{
+  "status": "COMPLETE",
+  "job_id": "pt-zwh6g95p",
+  "monitor_owner": "current conversation Codex /root",
+  "protocol": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/phase1_joint_feature_graph/protocol.md",
+  "protocol_sha256": "16dd4dd46fd3c301a8a39919da7680bf97f1e787d6f4cb9b1b5772d7acb403dd",
+  "design_snapshot": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/design_snapshot.json",
+  "code_snapshot_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_manifest_v2.json",
+  "profile": {
+    "AEC2": "share-cluster",
+    "ENVELOPE": "docs/execution_envelope.md",
+    "EXECUTION_SURFACE": "acp",
+    "GPUS": "4x H100 80GB SXM5",
+    "GPU_USED": "true",
+    "IMAGE_CUDA": "12.4",
+    "IMAGE_ID": "shphd-lite-0911",
+    "IMAGE_INTERPRETER": "Python 3.10",
+    "IMAGE_TORCH": "2.3",
+    "IMAGE_URL": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+    "PRIORITY": "normal",
+    "QUOTA_TYPE": "reserved",
+    "RESOURCE_PROFILE": "h100-4-reserved",
+    "STORAGE_MOUNT": "01995892-d478-76d8-aec7-13fd8284477e:/data",
+    "SUBMISSION_ENTRY_POINT": "/data/250010109/MoE_Router/experiments/20260808_online_spectral_router_30b_v1/scripts/sco_acp_compat.sh",
+    "WORKER_NODES": "1",
+    "WORKER_PROCESSES": "4",
+    "WORKER_SPEC": "n6ls.iu.i40.4",
+    "WORKSPACE": "share-space"
+  },
+  "scope": "authorized phase1 only; zero training; no phase2 auto-advance",
+  "estimated_formal_minutes": [
+    30,
+    100
+  ],
+  "formal_active_cap_seconds": 13200,
+  "user_approval": "latest message explicitly confirms design and launch continuously; no repeated approvals",
+  "correctness_checks": "CPU direction/reduction and 30 independent NetworkX DAG comparisons PASS; GPU and real256 pending runtime; no timing smoke",
+  "output_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+  "frozen_input_assets": [
+    "model_qwen3_0p6b_base",
+    "tokenizer_qwen3_0p6b_base",
+    "dclm_crosscoder_direct_bins_1b_a15_20261013",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013"
+  ],
+  "jobs": [
+    "pt-io5c5h2p",
+    "pt-zwh6g95p"
+  ],
+  "code_revision": "A1_IMPL_2",
+  "actual_environment": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/execution_environment.json",
+  "correctness": "GPU ones/tail,real256 fullF integer count,original forward equality,batch/buffers all PASS",
+  "terminal_receipt": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/terminal_receipt.json",
+  "delivery_receipt": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/delivery_receipt.json",
+  "summary": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/phase1_joint_feature_graph/summary_cn.md",
+  "asset_ids": [
+    "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+    "analysis_crosscoder_feature_relation_phase1_20261013t173130z"
+  ]
+}

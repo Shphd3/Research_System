@@ -66174,6 +66174,215 @@
       ],
       "storage_owner": "moe-router-execution",
       "title_cn": "A17_04 R03 固定80DEV四状态O与QKV表征桥"
+    },
+    {
+      "category": "representation",
+      "id": "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+      "identity": {
+        "features": 16384,
+        "full_chunk_hashes": "fresh SHA256 at generation, per-chunk JSON; not recomputed in registry",
+        "inference_buffers_unchanged": true,
+        "interface": "global gated z from14 selected residual-post layers before global norm; layer numbers2,4,...28 one-based; no independent layer-specific feature activation",
+        "loader": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/features.py",
+        "mean_l0": 254.538978767395,
+        "nonzeros": 2669034642,
+        "original_document_independence": "UNKNOWN",
+        "original_validation_hit_counts": "16384/16384 exact match",
+        "parent_asset_ids": [
+          "model_qwen3_0p6b_base",
+          "tokenizer_qwen3_0p6b_base",
+          "dclm_crosscoder_direct_bins_1b_a15_20261013",
+          "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013"
+        ],
+        "positions": 10485760,
+        "producer_job_id": "pt-zwh6g95p",
+        "producer_run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+        "protocol_path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/phase1_joint_feature_graph/protocol.md",
+        "protocol_revision": "A1",
+        "source_positions": "canonical global VAL eligible index; joined to index_val records/prefix plus excluded IDs, source SHA and absolute token offset",
+        "state_binding": {
+          "F": 16384,
+          "SDPA": true,
+          "base_batch": 16,
+          "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+          "data_manifest_sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+          "layers_zero_based": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27
+          ],
+          "microbatch": 1024,
+          "normalization": "complete saved TRAIN state",
+          "precision": "original BF16 / FP32",
+          "threshold": "complete saved TRAIN EMA",
+          "window_positions": 10485760
+        },
+        "storage": "CSR: uint64 ptr; uint16 sorted feature IDs; FP32 positive gated z; logical row identity fixed global eligible index; source dictionary and offsets join from input indices",
+        "training_updates": 0
+      },
+      "kind": "crosscoder_sparse_gated_feature_cache",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/manifest.json"
+            }
+          ],
+          "required": true,
+          "role": "complete immutable sparse activation cache"
+        }
+      ],
+      "notes_cn": [
+        "同bin发现／复核，不是独立原始文档测试集；文档和近重复去重未验证。",
+        "完整冻结TRAIN阈值、归一化和原始16上下文／1024位置推理；仅供阶段一统计与文本核查，不证明因果或学习收益。",
+        "原始checkpoint可恢复训练；本缓存只是表征，不包含优化器或训练恢复状态。"
+      ],
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/run_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_manifest_v2.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/input_identity.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/original_validation_replay_check.json"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "最终14层CrossCoder阶段一完整VAL稀疏激活"
+    },
+    {
+      "category": "representation",
+      "id": "analysis_crosscoder_feature_relation_phase1_20261013t173130z",
+      "identity": {
+        "analysis_positions": 10485760,
+        "discovery_raw_edges": 214711,
+        "formal_pairs": 4,
+        "human_semantics_and_scientific_judgment": "PENDING",
+        "independence": "same bin review; original documents and near-duplicates UNKNOWN",
+        "parent_asset_ids": [
+          "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z"
+        ],
+        "producer_job_id": "pt-zwh6g95p",
+        "protocol_revision": "A1",
+        "resume_capability": "stage receipts and immutable sparse/count shards; not a training checkpoint",
+        "review_passed_raw_edges": 206136,
+        "review_reduced_edges": 146947,
+        "scope": "bounded descriptive stage1; no expert learning comparison, no model updates",
+        "source_raw_edge_block_counts": "all214711edge counts agree exactly with corresponding D/V totals"
+      },
+      "kind": "frozen_feature_relation_analysis_artifacts",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/terminal_receipt.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_D.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_V.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/pair_metrics.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/pair_examples.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/candidate_metrics.csv"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/layer_contribution.csv"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/figures/local_graph.png"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/figures/layer_contribution_heatmap.png"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/phase1_summary_cn.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/completion_audit.json"
+            }
+          ],
+          "required": true,
+          "role": "phase1 actual saved analysis"
+        }
+      ],
+      "notes_cn": [
+        "4对候选中两对J=1、两对J=0；高J共同8项有7项属于Top10，不能当作主题相似或学习收益证明。",
+        "0/3复核both=0，1/17复核both=2；118条按候选对去重展示记录，随机和高激活标签保留。",
+        "原始payload、完整机器图与分块证据位于执行侧；研究者未关闭科学问题。"
+      ],
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/run_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/design_snapshot.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_manifest_v2.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/output_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/completion_audit.json"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "CrossCoder特征关系阶段一完整图、候选与文本交付"
     }
   ],
   "catalog_amendments": [
@@ -66831,6 +67040,22 @@
       "boundary": "engineering/math checks are separate from mechanism identification",
       "date": "2026-10-11T10:20:42.318281+00:00",
       "kind": "A17_04_ACTUAL_INDEPENDENT_ANALYSIS"
+    },
+    {
+      "asset_ids": [
+        "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z"
+      ],
+      "boundary": "actual complete reusable frozen inference cache; not shared-learning evidence",
+      "date": "2026-10-13T18:05:06.005285+00:00",
+      "kind": "CROSSCODER_PHASE1_ACTUAL_SPARSE_CACHE"
+    },
+    {
+      "asset_ids": [
+        "analysis_crosscoder_feature_relation_phase1_20261013t173130z"
+      ],
+      "boundary": "actual outputs only; no causal/utility conclusion or scientific state transition",
+      "date": "2026-10-13T18:11:57.320028+00:00",
+      "kind": "CROSSCODER_PHASE1_ACTUAL_ANALYSIS"
     }
   ],
   "created_at_utc": "2026-10-09T07:34:26.241550+00:00",

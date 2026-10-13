@@ -1,6 +1,6 @@
 # Research asset registry
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **414 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **468 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
 
 [中文](README_cn.md) · [Sole machine-readable catalog](catalog.json) · [Historical whole-library access snapshot](checks/2026-10-09_access_v4.json) · [Checker](../tools/check_assets.py) · [Project access](../docs/project_access.md)
 
@@ -240,3 +240,6 @@ E03 registers eight actual adapter families (12 Smoke states and16 Full states),
 ### A17_04 qualified single-layer mapping transfer (2026-10-12 Shanghai)
 
 R02 registers twelve adapter families and four native analysis/readout families across Smoke and Full. Full saved 72 actual states across nine branches; these are adapters requiring the exact registered Base. [Full output access](checks/2026-10-11_a17_transfer_20261011t160256z_full_outputs.json) records selected lifecycle checks. [Canonical Summary](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/summary.md) separates consistent/reversed sequential transfer, joint-learning feasibility and 34 local optimizer interventions. Full within-branch external continuation was NOT_RUN. [Daily reading handoff](../daily_research_reports/1012/a17_mapping_transfer/handoff_report_cn.md) provides portable steps and results without checkpoint payloads.
+
+
+[CrossCoder phase-one saved cache and analysis](crosscoder_feature_phase1.md): final14-layer completeVAL; selected graphs,texts,heatmaps and scoped current access. No causal or learning-benefit conclusion.
