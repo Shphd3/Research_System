@@ -13,3 +13,7 @@
 [此前 R02 阅读包](a17_mapping_transfer/reading_bundle/README.md)保存Focus、Anchor、Protocol、Summary、Detailed及来源哈希；原始训练载荷不上传，缺省依赖明确列出。
 
 [此前组会稿（R01历史）](meeting_report/meeting_brief_conditional_mapping_cn.md)保留早期结果。当时旧映射尚未达标；不能将该限制替代后来E03合格起点与R02迁移结果。
+
+[R04 O矩阵谱补测与认识更新](a17_o_spectral_geometry/knowledge_update_cn.md)：既有检查点的37次分解完成，B/C完整O接近但旧规则表现不同；前16空间没有形成超出续训顺序扰动的稳定分区。正式双语Protocol／Summary／Detailed、三组图及独立复算已齐。此为组会稿的补充，图载荷仍在执行机，本次未上传便携包。
+
+[R04直接A→C／B→C参数比较](a17_o_spectral_geometry/comparison_to_c_cn.md)：12次端点差值分解和完整前16项算子比较完成。B/C比A/C更近；进一步区分完整矩阵的大通道与续训差值的大通道，并定位C变化输出空间与其他输入的耦合差别。无梯度或新前向。

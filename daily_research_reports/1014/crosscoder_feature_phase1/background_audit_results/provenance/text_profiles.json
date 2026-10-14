@@ -1,0 +1,805 @@
+[
+  {
+    "feature": 0,
+    "mode": "random",
+    "unique_active_display_positions": 15,
+    "unique_contexts": 15,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 15,
+      "punctuation": 0,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 1,
+      "citation_year_prefix": 2,
+      "code_html_prefix": 0,
+      "officer_target": 6
+    },
+    "context_counts": [
+      [
+        799,
+        1
+      ],
+      [
+        927,
+        1
+      ],
+      [
+        1060,
+        1
+      ],
+      [
+        1334,
+        1
+      ],
+      [
+        2007,
+        1
+      ],
+      [
+        2046,
+        1
+      ],
+      [
+        4015,
+        1
+      ],
+      [
+        4314,
+        1
+      ],
+      [
+        4526,
+        1
+      ],
+      [
+        4586,
+        1
+      ],
+      [
+        4878,
+        1
+      ],
+      [
+        8207,
+        1
+      ],
+      [
+        8469,
+        1
+      ],
+      [
+        9866,
+        1
+      ],
+      [
+        10227,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " Deputy",
+      " deputies",
+      " offic",
+      " officer",
+      " officers",
+      " policemen",
+      " sergeant",
+      " uniforms",
+      "icer"
+    ]
+  },
+  {
+    "feature": 0,
+    "mode": "high_activation",
+    "unique_active_display_positions": 10,
+    "unique_contexts": 10,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 10,
+      "punctuation": 0,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 1,
+      "citation_year_prefix": 1,
+      "code_html_prefix": 0,
+      "officer_target": 5
+    },
+    "context_counts": [
+      [
+        27,
+        1
+      ],
+      [
+        806,
+        1
+      ],
+      [
+        1986,
+        1
+      ],
+      [
+        2007,
+        1
+      ],
+      [
+        2046,
+        1
+      ],
+      [
+        2171,
+        1
+      ],
+      [
+        4015,
+        1
+      ],
+      [
+        4526,
+        1
+      ],
+      [
+        4586,
+        1
+      ],
+      [
+        5915,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " Officer",
+      " offic",
+      " officer",
+      " officers",
+      "icer",
+      "ici"
+    ]
+  },
+  {
+    "feature": 1,
+    "mode": "random",
+    "unique_active_display_positions": 17,
+    "unique_contexts": 17,
+    "token_classes": {
+      "whitespace": 6,
+      "digits": 2,
+      "letters": 3,
+      "punctuation": 6,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 5,
+      "citation_year_prefix": 3,
+      "code_html_prefix": 1,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        309,
+        1
+      ],
+      [
+        313,
+        1
+      ],
+      [
+        315,
+        1
+      ],
+      [
+        980,
+        1
+      ],
+      [
+        2552,
+        1
+      ],
+      [
+        2670,
+        1
+      ],
+      [
+        3143,
+        1
+      ],
+      [
+        3147,
+        1
+      ],
+      [
+        3196,
+        1
+      ],
+      [
+        4295,
+        1
+      ],
+      [
+        4391,
+        1
+      ],
+      [
+        4623,
+        1
+      ],
+      [
+        5375,
+        1
+      ],
+      [
+        7446,
+        1
+      ],
+      [
+        8919,
+        1
+      ],
+      [
+        9107,
+        1
+      ],
+      [
+        10188,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      "\n",
+      "\n\n\n",
+      " ",
+      " Gr",
+      " •",
+      "()",
+      ".",
+      ".\n",
+      "1",
+      ":",
+      "C",
+      " "
+    ]
+  },
+  {
+    "feature": 1,
+    "mode": "high_activation",
+    "unique_active_display_positions": 12,
+    "unique_contexts": 7,
+    "token_classes": {
+      "whitespace": 1,
+      "digits": 5,
+      "letters": 3,
+      "punctuation": 3,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 7,
+      "citation_year_prefix": 3,
+      "code_html_prefix": 1,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        3196,
+        3
+      ],
+      [
+        10239,
+        3
+      ],
+      [
+        3197,
+        2
+      ],
+      [
+        4002,
+        1
+      ],
+      [
+        4295,
+        1
+      ],
+      [
+        6004,
+        1
+      ],
+      [
+        9107,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      "()",
+      ".\n",
+      "3",
+      "5",
+      "6",
+      "Methods",
+      "Results",
+      " "
+    ]
+  },
+  {
+    "feature": 3,
+    "mode": "random",
+    "unique_active_display_positions": 5,
+    "unique_contexts": 5,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 5,
+      "punctuation": 0,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 0,
+      "citation_year_prefix": 0,
+      "code_html_prefix": 0,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        4512,
+        1
+      ],
+      [
+        4580,
+        1
+      ],
+      [
+        6176,
+        1
+      ],
+      [
+        8904,
+        1
+      ],
+      [
+        9861,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " dependable",
+      " depending",
+      " rested",
+      " unreliable",
+      "ies"
+    ]
+  },
+  {
+    "feature": 3,
+    "mode": "high_activation",
+    "unique_active_display_positions": 5,
+    "unique_contexts": 5,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 5,
+      "punctuation": 0,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 1,
+      "citation_year_prefix": 1,
+      "code_html_prefix": 0,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        999,
+        1
+      ],
+      [
+        1135,
+        1
+      ],
+      [
+        1694,
+        1
+      ],
+      [
+        4251,
+        1
+      ],
+      [
+        8536,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " rely"
+    ]
+  },
+  {
+    "feature": 4,
+    "mode": "random",
+    "unique_active_display_positions": 10,
+    "unique_contexts": 10,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 8,
+      "punctuation": 1,
+      "mixed": 1
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 2,
+      "citation_year_prefix": 4,
+      "code_html_prefix": 0,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        280,
+        1
+      ],
+      [
+        927,
+        1
+      ],
+      [
+        1313,
+        1
+      ],
+      [
+        1327,
+        1
+      ],
+      [
+        1591,
+        1
+      ],
+      [
+        2046,
+        1
+      ],
+      [
+        4015,
+        1
+      ],
+      [
+        4526,
+        1
+      ],
+      [
+        4586,
+        1
+      ],
+      [
+        5394,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " offic",
+      " sergeant",
+      "-",
+      "-part",
+      "anas",
+      "icer",
+      "k",
+      "static"
+    ]
+  },
+  {
+    "feature": 4,
+    "mode": "high_activation",
+    "unique_active_display_positions": 10,
+    "unique_contexts": 10,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 10,
+      "punctuation": 0,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 2,
+      "citation_year_prefix": 2,
+      "code_html_prefix": 0,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        27,
+        1
+      ],
+      [
+        374,
+        1
+      ],
+      [
+        1338,
+        1
+      ],
+      [
+        2046,
+        1
+      ],
+      [
+        2500,
+        1
+      ],
+      [
+        3998,
+        1
+      ],
+      [
+        4015,
+        1
+      ],
+      [
+        4526,
+        1
+      ],
+      [
+        4586,
+        1
+      ],
+      [
+        5161,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " offic",
+      "asc",
+      "ctr",
+      "human",
+      "icer",
+      "ici",
+      "up",
+      "yst"
+    ]
+  },
+  {
+    "feature": 17,
+    "mode": "random",
+    "unique_active_display_positions": 7,
+    "unique_contexts": 7,
+    "token_classes": {
+      "whitespace": 1,
+      "digits": 1,
+      "letters": 2,
+      "punctuation": 3,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 2,
+      "citation_year_prefix": 3,
+      "code_html_prefix": 1,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        1015,
+        1
+      ],
+      [
+        1294,
+        1
+      ],
+      [
+        1295,
+        1
+      ],
+      [
+        4295,
+        1
+      ],
+      [
+        8920,
+        1
+      ],
+      [
+        9107,
+        1
+      ],
+      [
+        9864,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      " William",
+      "()",
+      ",",
+      ".",
+      "8",
+      "ed",
+      " "
+    ]
+  },
+  {
+    "feature": 17,
+    "mode": "high_activation",
+    "unique_active_display_positions": 7,
+    "unique_contexts": 7,
+    "token_classes": {
+      "whitespace": 1,
+      "digits": 0,
+      "letters": 3,
+      "punctuation": 1,
+      "mixed": 2
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 1,
+      "citation_year_prefix": 0,
+      "code_html_prefix": 1,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        1027,
+        1
+      ],
+      [
+        4295,
+        1
+      ],
+      [
+        7769,
+        1
+      ],
+      [
+        8462,
+        1
+      ],
+      [
+        8565,
+        1
+      ],
+      [
+        9107,
+        1
+      ],
+      [
+        9197,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      "()",
+      "-ch",
+      "-k",
+      "e",
+      "en",
+      "i",
+      " "
+    ]
+  },
+  {
+    "feature": 242,
+    "mode": "random",
+    "unique_active_display_positions": 10,
+    "unique_contexts": 10,
+    "token_classes": {
+      "whitespace": 2,
+      "digits": 2,
+      "letters": 3,
+      "punctuation": 3,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 5,
+      "citation_year_prefix": 2,
+      "code_html_prefix": 0,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        309,
+        1
+      ],
+      [
+        311,
+        1
+      ],
+      [
+        315,
+        1
+      ],
+      [
+        2670,
+        1
+      ],
+      [
+        3097,
+        1
+      ],
+      [
+        3196,
+        1
+      ],
+      [
+        4903,
+        1
+      ],
+      [
+        5458,
+        1
+      ],
+      [
+        5466,
+        1
+      ],
+      [
+        10188,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      "\n",
+      " ",
+      " include",
+      "):",
+      ".\n",
+      "3",
+      "9",
+      ":",
+      "C",
+      "copy"
+    ]
+  },
+  {
+    "feature": 242,
+    "mode": "high_activation",
+    "unique_active_display_positions": 10,
+    "unique_contexts": 7,
+    "token_classes": {
+      "whitespace": 0,
+      "digits": 0,
+      "letters": 7,
+      "punctuation": 3,
+      "mixed": 0
+    },
+    "flag_counts": {
+      "numbered_or_choice_prefix": 7,
+      "citation_year_prefix": 8,
+      "code_html_prefix": 0,
+      "officer_target": 0
+    },
+    "context_counts": [
+      [
+        3196,
+        3
+      ],
+      [
+        3197,
+        2
+      ],
+      [
+        110,
+        1
+      ],
+      [
+        4600,
+        1
+      ],
+      [
+        4898,
+        1
+      ],
+      [
+        6014,
+        1
+      ],
+      [
+        6150,
+        1
+      ]
+    ],
+    "distinct_targets": [
+      ",",
+      ".\n",
+      "Methods",
+      "Practice",
+      "Results",
+      "et"
+    ]
+  }
+]

@@ -13,3 +13,7 @@ Current Web AI entry: [A17 mechanism steps, results and discussion boundaries](a
 [Earlier R02 reading bundle](a17_mapping_transfer/reading_bundle/README.md) retains Focus, Anchor, Protocol, Summary, Detailed and source hashes. Raw worker payloads are excluded and unavailable dependencies listed.
 
 [Earlier speaking brief (historical R01)](meeting_report/meeting_brief_conditional_mapping.md) retains the old unqualified-acquisition result; it must not replace the later E03 acquisition and R02 transfer evidence.
+
+[R04 O spectral supplement and knowledge update](a17_o_spectral_geometry/knowledge_update.md):37 existing-checkpoint SVDs complete. B/C have similar full O but different old behavior; leading16 spaces do not form stable partitions beyond continuation-order variation. Bilingual Protocol/Summary/Detailed, three figure groups and independent checks are complete. This supplements the speaking brief; figure payloads remain execution-side and no portable package was uploaded this turn.
+
+[R04 direct A-to-C/B-to-C parameter comparison](a17_o_spectral_geometry/comparison_to_c.md):12 endpoint-difference SVDs and full leading16 operator comparisons complete. B/C are closer than A/C. Distinguish full-matrix versus learned-difference channels and locate differing input couplings. No gradients or new forward.

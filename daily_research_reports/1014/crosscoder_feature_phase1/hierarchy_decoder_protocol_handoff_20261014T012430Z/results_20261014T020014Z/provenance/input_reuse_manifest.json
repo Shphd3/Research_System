@@ -1,0 +1,81 @@
+{
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/decoder_geometry.npz",
+      "sha256": "b74cc20f563ea535c5b4d05e9f58bb3411f6bd6138d969afe4b25edbe4c28a8e",
+      "bytes": 2868312
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_frequency.npz",
+      "sha256": "f345204412633144a7f1af36668cb3e2a98dbcaf03ef66f43ce3ace40c916c7c",
+      "bytes": 21758946
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_D.json",
+      "sha256": "d1c42c3c82c34057b8edb3a5203aee607e592bcc7318260dc7f2e60e5ae878b5",
+      "bytes": 2136116
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_V.json",
+      "sha256": "5615253d0aba4ee186c2e3498f8f538db159e50d98b080c1c5dd7c23870b701a",
+      "bytes": 2098761
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz",
+      "sha256": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1",
+      "bytes": 4510135
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json",
+      "sha256": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35",
+      "bytes": 21834
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/input_identity.json",
+      "sha256": "cb5d65d45fcb345af207e767afbd429dcc45f71768e47a8139e280081cdd1113",
+      "bytes": 4625
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/cache_binding.json",
+      "sha256": "f0808ca0dd060a97b2b4b3dcb219a45c2c60976cf63299507803152e52ec7ee8",
+      "bytes": 559
+    }
+  ],
+  "binding": {
+    "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "data_manifest_sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+    "normalization": "complete saved TRAIN state",
+    "threshold": "complete saved TRAIN EMA",
+    "window_positions": 10485760,
+    "F": 16384,
+    "precision": "original BF16 / FP32",
+    "base_batch": 16,
+    "microbatch": 1024,
+    "layers_zero_based": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+    ],
+    "SDPA": true
+  },
+  "asset_ids": [
+    "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+    "analysis_crosscoder_feature_relation_phase1_20261013t173130z",
+    "dclm_crosscoder_direct_bins_1b_a15_20261013",
+    "tokenizer_qwen3_0p6b_base"
+  ],
+  "code_sha256": "e1f42998860e69a99f34e1a9b4195b9acfad17de27e6f0eddc6846f4ea21dca0",
+  "protocol_sha256": "39530a9a36eee0403a8bc3ee53ad19d3e82a5dcb18c86fa7287c1ca4cc8894fb",
+  "no_checkpoint_or_model_load": true
+}

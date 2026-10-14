@@ -1,0 +1,81 @@
+{
+  "high_pairs": [
+    "1_17",
+    "1_242"
+  ],
+  "unique_common_lists": 1,
+  "unique_common_nodes": 8,
+  "per_pair_top10_fraction": 0.875,
+  "whole_graph_fraction_estimated": false,
+  "top10": [
+    {
+      "node": 13964,
+      "n_D": 5201208,
+      "p_D": 0.9929575569142763,
+      "p_V": 0.9926359600454526
+    },
+    {
+      "node": 516,
+      "n_D": 5154369,
+      "p_D": 0.984015569012945,
+      "p_V": 0.9831980445390643
+    },
+    {
+      "node": 8060,
+      "n_D": 5106638,
+      "p_D": 0.9749032902598024,
+      "p_V": 0.976242376844702
+    },
+    {
+      "node": 10807,
+      "n_D": 5078782,
+      "p_D": 0.9695853284122077,
+      "p_V": 0.9704706647511473
+    },
+    {
+      "node": 7388,
+      "n_D": 5052496,
+      "p_D": 0.964567093736523,
+      "p_V": 0.9663265343067953
+    },
+    {
+      "node": 5913,
+      "n_D": 4906109,
+      "p_D": 0.9366204940458338,
+      "p_V": 0.9352723297970925
+    },
+    {
+      "node": 7415,
+      "n_D": 4886462,
+      "p_D": 0.9328697043983721,
+      "p_V": 0.9293765624812417
+    },
+    {
+      "node": 5147,
+      "n_D": 4789315,
+      "p_D": 0.9143234651821072,
+      "p_V": 0.9118651483527048
+    },
+    {
+      "node": 8345,
+      "n_D": 4480966,
+      "p_D": 0.855456857709966,
+      "p_V": 0.8590448738800491
+    },
+    {
+      "node": 13830,
+      "n_D": 4269125,
+      "p_D": 0.8150144985860323,
+      "p_V": 0.8197542410783619
+    }
+  ],
+  "top10_definition": "descending D node support; ID ties",
+  "tie_group_size": 5353627,
+  "tie_rank_interval": [
+    115027260,
+    120380886
+  ],
+  "formal_pool_pairs": 120380886,
+  "selection_bias": "at most8ID-ordered representatives per extreme J group; final high pairs share1; not representative of all high-J objects",
+  "rerankings": 0
+}

@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-14T02:14:16.867543+00:00",
+  "scope": "Delivery-only full CSV consistency validation",
+  "issue": "npz member accessed inside each CSV row, causing repeated decoding; stopped own validator PID89901 before any validation receipt was written",
+  "scientific_outputs_changed": false,
+  "source_cache_rescanned": false,
+  "fix": "Load p and L arrays once before checking CSV rows",
+  "conservative_failed_check_active_seconds": 130,
+  "eligibility_impact": "None; analysis results and source tables unchanged"
+}

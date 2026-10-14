@@ -1,6 +1,6 @@
 # 研究资产库
 
-本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **468 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **502 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
 
 [English](README.md) · [唯一机器可读目录](catalog.json) · [历史全库访问快照](checks/2026-10-09_access_v4.json) · [检查工具](../tools/check_assets.py) · [项目访问与旧路径处理](../docs/project_access_cn.md)
 
@@ -218,4 +218,18 @@ Smoke12/replay4 and Full108 actual finite readouts are registered, no new traine
 Smoke 与 Full 实际保存120个状态，归入28个 adapter 族与两个原生读数族。派生分析 `analysis_a17_04_mapping_20261011t095038z` 独立登记。[30产物访问](checks/2026-10-11_a17_mapping_output_access.json)与[派生分析访问](checks/2026-10-11_a17_mapping_analysis_access.json)通过选定检查，不是全库刷新。[正式 Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/summary_cn.md)记录旧映射学习资格不足；完成不证明已学规则干扰。检查点需要精确登记的父 Base。
 
 
-[CrossCoder阶段一实存缓存与分析](crosscoder_feature_phase1_cn.md)：最终14层完整VAL；图、文本、热图与当前访问检查。不授予因果或学习收益结论。
+## A17联合与模式分区视图（2026-10-12）
+
+`data_a17_shared_routed_joint_v1`登记4800条TRAIN／1600条已暴露DEV；`data_a17_shared_routed_mode_partition_v1`登记同一数据的模式一／二精确分区。两ID引用同一派生版本，不增加标签，不建立未暴露TEST。载荷位于 `/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/data/mapping_view_v1`。[本次严格可读性检查](checks/2026-10-12_a17_e04_prepared_views.json)不证明学习或路由收益。
+
+
+E04实际输出已登记10族／55状态，来自pt-1rb3s2t0。[严格输出可读性](checks/2026-10-12_a17_e04_actual_checkpoints.json)。工程PASS与学习资格NOT_PASSED分别记录，不构成正式结构收益结论。
+
+### Qwen3 全层 CrossCoder 的 DCLM 试跑数据（2026-10-12）
+
+`data_qwen3_alllayer_crosscoder_dclm_pilot_50m_v3` 登记实际生成的 50,000,000 个 TRAIN 位置和 1,048,576 个 VAL 位置，使用冻结 Qwen3 Base 的分词器，并按文档及已发现的重复组划分。[本次定向访问检查](checks/2026-10-12_qwen_crosscoder_pilot_50m.json)通过；这不是计划中的正式 20 亿数据集。近重复检索有上限，不代表穷举去重。登记时尚无训练后的 CrossCoder checkpoint。
+
+[S7 跨checkpoint CrossCoder输入与任务](s7_temporal_crosscoder_cn.md)：精确1B/5B/15B/31B输入已核验；提交任务不等于存在训练完成的字典。
+
+
+[CrossCoder阶段一实存缓存与分析](crosscoder_feature_phase1_cn.md)：最终14层完整VAL；图、文本、热图与当前访问检查。登记不授予科研结论或下一阶段执行权。

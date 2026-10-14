@@ -1,0 +1,31 @@
+{
+  "host": "pt-5ae309fc5cd34269b8f294f47299d6a4-worker-0",
+  "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+  "numpy": "1.24.4",
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "cuda": "12.4",
+  "gpu_names": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "gpu_total_bytes": [
+    85017624576,
+    85017624576,
+    85017624576,
+    85017624576
+  ],
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "profile": "h100-4-reserved",
+  "image": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423"
+}

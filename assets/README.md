@@ -1,6 +1,6 @@
 # Research asset registry
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **468 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **502 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
 
 [中文](README_cn.md) · [Sole machine-readable catalog](catalog.json) · [Historical whole-library access snapshot](checks/2026-10-09_access_v4.json) · [Checker](../tools/check_assets.py) · [Project access](../docs/project_access.md)
 
@@ -104,6 +104,8 @@ Qwen3-Next-80B has eight `.incomplete` files and is not registered as complete w
 - In the 1003 cache, `c` is projection input, `a` projection output, `r` native incoming residual and `e` the loss gradient w.r.t. `a`, not SAE reconstruction error. Different model coordinates are not aligned by registration. 0927 displacement is a virtual matrix update; 1007 readouts follow actual short adapter training.
 - Eight-task internal splits include official-test-origin data; existing natural panels are exposed. Availability does not create fresh confirmation evidence. M2D2 `math.AG` in N8 differs from legacy `math.AP`. A3's locked panel exists; TEST/function analysis remains NOT_RUN.
 - The 0927 worker still hardcodes a moved daily helper. Its verified relocated path/small-source identity is recorded. Saved arrays remain readable; rerunning the worker requires a reference repair without rewriting history.
+
+[S7 temporal CrossCoder input and producer guide](s7_temporal_crosscoder.md): exact1B/5B/15B/31B native Fresh/Dense inputs, selected current access and separately queued A24 producers. A queued producer is not a saved trained asset.
 
 ## Training and analysis lifecycle
 
@@ -241,5 +243,23 @@ E03 registers eight actual adapter families (12 Smoke states and16 Full states),
 
 R02 registers twelve adapter families and four native analysis/readout families across Smoke and Full. Full saved 72 actual states across nine branches; these are adapters requiring the exact registered Base. [Full output access](checks/2026-10-11_a17_transfer_20261011t160256z_full_outputs.json) records selected lifecycle checks. [Canonical Summary](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/summary.md) separates consistent/reversed sequential transfer, joint-learning feasibility and 34 local optimizer interventions. Full within-branch external continuation was NOT_RUN. [Daily reading handoff](../daily_research_reports/1012/a17_mapping_transfer/handoff_report_cn.md) provides portable steps and results without checkpoint payloads.
 
+### A17 R04 O spectral supplement (2026-10-12)
 
-[CrossCoder phase-one saved cache and analysis](crosscoder_feature_phase1.md): final14-layer completeVAL; selected graphs,texts,heatmaps and scoped current access. No causal or learning-benefit conclusion.
+`analysis_a17_04_o_spectral_geometry_20261012_r04_v1` registers37 actual CPU FP64 SVD basis files and full/displacement spectra, overlap and cached-DEV tables from18 selected endpoints plus the common acquired-old O. No new training checkpoint or forward was produced. [Selected output access](checks/2026-10-12_a17_r04_spectral_outputs.json) passed; [selected input access](checks/2026-10-12_a17_r04_spectral_inputs.json) is a fresh scoped check, not a whole-library refresh. [Result entry](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R04_o_spectral_geometry/summary.md) retains geometry-versus-function boundaries and independent numerical evidence.
+
+`analysis_a17_04_o_to_c_20261012_v1` adds12 actual A-to-C/B-to-C endpoint-difference bases, full-weight truncated-operator comparisons, and separately labeled full-C/displacement-C coordinate blocks. [Fresh selected output access](checks/2026-10-12_a17_r04_to_c_outputs.json) passed. This parameter-only supplement uses no gradient, new forward or training; endpoint differences are not executed trajectories. [Result entry](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R04_o_spectral_geometry/comparison_to_c/summary.md).
+
+
+## A17 matched joint and mode-partition views (2026-10-12)
+
+`data_a17_shared_routed_joint_v1` registers4800 TRAIN/1600 exposed DEV records; `data_a17_shared_routed_mode_partition_v1` registers their exact mode1/mode2 partitions. Both refer to the same derived release; they do not add labels or make TEST untouched. Payloads stay at `/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/data/mapping_view_v1`. [Current strict access](checks/2026-10-12_a17_e04_prepared_views.json) qualifies readable files, not learning or routing benefit.
+
+
+E04 actual save registration:10 families/55 states from pt-1rb3s2t0. [Strict output access](checks/2026-10-12_a17_e04_actual_checkpoints.json). Engineering PASS and acquisition qualification NOT_PASSED are separate metadata; no formal utility claim.
+
+### Qwen3 all-layer CrossCoder DCLM pilot (2026-10-12)
+
+`data_qwen3_alllayer_crosscoder_dclm_pilot_50m_v3` registers the actual 50,000,000-position TRAIN and 1,048,576-position VAL document-group split, retokenized with the frozen Qwen3 Base tokenizer. [Scoped access](checks/2026-10-12_qwen_crosscoder_pilot_50m.json) passes; this is pilot data, not the planned formal 2B dataset. Exact text and URL duplicates and discovered near-duplicate groups are kept together; bounded near-duplicate retrieval is not exhaustive. No trained CrossCoder checkpoint was available at registration.
+
+
+[CrossCoder phase-one saved cache and analysis](crosscoder_feature_phase1.md): final14-layer completeVAL graphs,texts,heatmaps and scoped current access. Registration grants neither scientific conclusions nor next-stage execution authority.
