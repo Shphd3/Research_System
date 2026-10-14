@@ -42,6 +42,7 @@ valid outcomes; finding harm is not a completion requirement.
 
 | Project | Role and retained boundary | Entry |
 |---|---|---|
+| ntp-learning-mechanisms | Independent NTP evidence project; completed P1/A1, S1 and descriptive SP1 remain frozen. Proposed frequency/expert-grouping stage question awaits researcher confirmation; no new Focus or run is activated. | [GitHub project](https://github.com/Shphd3/ntp-learning-mechanisms); [local entry](Projects/ntp_learning_mechanisms/README_cn.md); [single runtime-asset registry](https://github.com/Shphd3/ntp-learning-mechanisms/blob/main/asset_manifest.json); [cross-machine rules](https://github.com/Shphd3/ntp-learning-mechanisms/blob/main/docs/working_cycle_cn.md) |
 | from-attention-to-search | Active research home. Shared-update analysis is the default discussion route; A06, A15 and A16 retain independent scientific states. | [Roadmap](Projects/from-attention-to-search/main/roadmap.md); [Anchor index](Projects/from-attention-to-search/main/problem_anchors/README.md) |
 | diffusion-language-models | Incubating; literature audit complete. D00–D03 are candidates; question, design and execution are not approved. | [Literature audit](Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md) |
 | decommon-router-training | Implementation surface. Pairs 01–04 invalidated/retired; no replacement production configuration approved. Engineering qualification does not establish functional value. | `Projects/decommon-router-training/` |
