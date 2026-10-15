@@ -42,6 +42,12 @@ not successful external-model runs.
 
 ## Intentional Non-Imports
 
+Upstream subsection-order failures and the former local zero-net-growth gate
+are not adopted as scientific criteria. Preserve purpose-to-evidence logic and
+content ownership, allow necessary modest growth and layered detail, and use the
+[shared positive/negative examples and acceptance checks](../report_writing.md#check-the-text-itself).
+The upstream source remains unchanged; this is an explicit local adaptation.
+
 Upstream four/five-section `design.md` and automatic research map are replaced by
 local eight-section Anchor and typed existing relationships. Full round history
 stays in Detailed, not copied into each design. Root Focus remains additional

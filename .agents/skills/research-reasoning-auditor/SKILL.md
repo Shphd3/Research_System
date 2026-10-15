@@ -31,6 +31,9 @@ Use the shared [objects, comparison rationale and formula meaning rules](../../.
 Audit an actual first-use passage, not just a glossary. Reconstruct its operations
 from the owning evidence before proposing clearer terms. Distinguish an exposition
 repair from missing research; preserve frozen protocols and result identities.
+Check the purpose-to-evidence inference, not compliance with heading order or a
+no-growth budget. Use natural, accurately defined terms and layered detail; a
+co-occurrence is not an identified mechanism and a proposed test is not a result.
 
 1. Separate observation, unknown, purpose, hypothesis, mechanism, prediction,
    measurement/intervention, conclusion and decision.

@@ -5,7 +5,7 @@
 1. [Purpose and boundary](#purpose-and-boundary)
    - [Formal Anchor structure](#formal-anchor-structure)
 2. [Research-question contract](#research-question-contract)
-3. [Zero-net-growth rule](#zero-net-growth-rule)
+3. [Clarity and layered detail](#clarity-and-layered-detail)
 4. [Cold-reader gate](#cold-reader-gate)
 5. [Grounding and no-invention contract](#grounding-and-no-invention-contract)
 6. [Eight-section writing contract](#eight-section-writing-contract)
@@ -108,13 +108,16 @@ physical priors. Use proof/counterexample obligations instead of an experimental
 metric, dataset or threshold. Keep the eight-section ownership and apply only
 the active claim's requirements; a preferred route is not a necessary dependency.
 
-## Zero-Net-Growth Rule
+## Clarity And Layered Detail
 
-Improving self-containment must not make the anchor longer by default.
+Keep the first reading concise, but allow the explanation to grow when a
+necessary definition, causal connection or material boundary is missing.
+Do not require an equal deletion for each addition, join words to save space,
+or fail a sound argument merely because its subsections use another order.
 
-For every sentence added to explain a decision-bearing relation, remove or
-compress at least as much material that belongs elsewhere or repeats existing
-meaning. Remove these first:
+Remove repetition and move execution or audit detail to its owning record.
+The Anchor still explains the shortest reasoning needed to assess its decision;
+a link cannot replace that reasoning. Review these candidates first:
 
 - run IDs, seed lists, exact commands, and configuration detail;
 - chronology that does not change the current judgment;
@@ -342,5 +345,5 @@ Apply the cold-reader gate and grounding rules to the active claim. Check source
 identity, language consistency, placement, branch consequences and one next
 decision. Mark applicable gaps `FAIL`; do not manufacture requirements for an
 inactive stage or a sound argument. Passing checks grants no scientific approval.
-Replace lower-value content to repair gaps under the zero-net-growth rule;
-add no document layer or top-level section.
+Repair missing meaning before optimizing length. Remove repetition, layer full
+derivations in their owning detail, and retain the eight top-level content owners.

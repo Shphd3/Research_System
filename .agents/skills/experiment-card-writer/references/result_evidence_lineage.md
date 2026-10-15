@@ -136,8 +136,8 @@ are not automatically independent experimental replicates.
 
 Keep `summary.md` short, with the conclusion before detailed analysis. It must
 be understandable without chat history but need not reproduce the complete setup.
-Its reader body owns
-the five-part result account: Purpose → Model → Hypothesis → Conclusion → Analysis.
+Its reader body covers purpose, necessary model, hypothesis, bounded conclusion
+and supporting analysis in an order that makes their logical links clear.
 Ordinary chat links to it and explains the minimal
 objects, comparison and boundary needed to answer the user's question, without
 repeating the full result ledger. For first-use operations, rationale and formula
@@ -145,7 +145,7 @@ meaning, use the shared [writing contract](../../../../docs/report_writing.md#ob
 
 Use the maintained root [Summary template](../../../../templates/research_process/experiment_summary_template.md)
 and its [Chinese companion](../../../../templates/research_process/experiment_summary_template_cn.md).
-The five sections have these roles:
+The content roles are:
 
 1. **Purpose:** state the scientific uncertainty and what an answer changes.
 2. **Model:** define the actual system, task, trainable/frozen objects, update or
@@ -166,7 +166,8 @@ eligibility, verdict and source. Optional figures include a reading sentence.
 Claim boundaries belong in the Conclusion and are justified in Analysis;
 next-step reasoning follows the evidence without adding a second conclusion.
 
-Apply this order to new or requested revised summaries. Do not batch rewrite
+Apply this coverage to new or requested revised summaries; headings and order
+may change for clarity, and necessary explanations may grow. Do not batch rewrite
 historical records, frozen Protocols or evidence to satisfy a new presentation
 format. A layout change preserves scientific meaning and researcher authority.
 

@@ -40,8 +40,8 @@ and implementation; do not transfer a step size or interface between experiments
 
 ## Why a comparison is performed
 
-For each experiment, make the following reasoning readable in this order, within
-its existing artifact structure:
+For each experiment, make the following logical links readable within its
+existing structure. Adapt the reading order to the reader's dependencies:
 
 1. The concrete uncertainty and its relation to the root question.
 2. The prior judgment or candidate hypothesis and a credible competing explanation.
@@ -52,8 +52,8 @@ its existing artifact structure:
    or explicitly labeled AI suggestion.
 
 “Further analysis” or “validate effectiveness” is not a purpose. A proved identity
-does not need an invented empirical rival. Keep Summary's five parts and Anchor's
-eight sections; these requirements concern their content, not extra forms.
+does not need an invented empirical rival. Summary's content roles and Anchor's
+eight content owners aid retrieval; template order is not scientific evidence.
 
 ## Formula meaning and evidence scope
 
@@ -90,8 +90,8 @@ labels or a requirement to lengthen every section.
 
 ### Purpose, Model, Hypothesis, Conclusion, Analysis
 
-For new or revised experiment summaries and multi-paragraph research analyses,
-use this reading order:
+For new or revised summaries and research analyses, cover the following content.
+The numbered order is a useful example, not a mandatory sequence or set of headings:
 
 1. **Purpose:** which uncertainty matters, how it relates to the root question,
    and what understanding an answer changes.
@@ -112,9 +112,9 @@ use this reading order:
    derivations to measurements. Report material residuals, approximation error
    and numerical error separately. An identity check is not mechanism evidence.
 
-Conclusion precedes detailed Analysis so readers know which answer the evidence
-supports. This is a reading order, not the chronology of research or permission
-to choose an answer before inspecting evidence. Use the
+Usually give a bounded answer before detailed analysis so readers know what the
+evidence supports. Reorder or combine sections when this improves understanding;
+do not choose an answer before inspecting evidence. Use the
 [English template](../templates/research_process/experiment_summary_template.md)
 and [Chinese companion](../templates/research_process/experiment_summary_template_cn.md)
 when writing a full Summary.
@@ -123,8 +123,12 @@ Use this logic in replies too, at the depth needed for the question. A short
 reply gives the answer, decisive reason and boundary; a complex reply retains the
 necessary model, derivation and evidence. Do not expand every reply into a report.
 
-The five sections apply to full Summaries and requested multi-paragraph analyses;
-short answers need no fixed headings or new artifact. Reuse existing derivations;
+These are coverage checks for full Summaries and requested analyses, not fixed
+headings, word limits or a no-growth rule. Allow modest growth for a missing
+definition, logical bridge or material limitation; remove redundant prose instead
+of compressing words together. Put full derivations, sensitivity tables and audit
+evidence in their owning appendix or Detailed record. The body retains enough
+reasoning and decisive evidence to assess its answer. Reuse existing derivations;
 theory uses proof/counterexamples and observations must not
 invent a mechanism. Put the meeting's speaking core first and detail/Q&A later.
 A long requested report starts with a brief route through its sections.
@@ -132,7 +136,8 @@ A long requested report starts with a brief route through its sections.
 Use headings suited to the research. Formal arguments, observational studies,
 interventions and engineering comparisons need different evidence; none requires
 an invented experiment or model to fill a template. The existing eight-section
-Anchor keeps its eight-section contract; Summary uses the five-part order above.
+Anchor keeps its eight content owners; Summary covers the roles above in a
+reader-driven order. Subsection order alone cannot fail an otherwise sound argument.
 Detailed retains its evidence-ledger structure. This format update does not
 rewrite historical records or frozen Protocols; a requested revision preserves
 their values, evidence identities and claim boundaries. Full reports use the
@@ -189,6 +194,37 @@ whole result at every level. A portable Markdown bundle is a derived reading cop
 edit the owning sources. External distribution retains its requested scope.
 
 ## Check the text itself
+
+Use the following acceptance questions on an actual delivered passage, not a
+filled template. No fixed word count or unchanged byte budget substitutes for them:
+
+- Can a new reader state the purpose/question and explain why the hypothesis,
+  comparison and controls can distinguish its live alternatives?
+- Are observed evidence, derivation, candidate explanation and bounded conclusion
+  separate? A spectrum co-occurring with failure does not identify a mediator.
+- Are question confirmation, design discussion, execution approval and actual
+  execution independent? A proposal alone is NOT RUN. Report an actual start,
+  failure or completion from execution evidence; a missing result does not prove
+  that nothing ran.
+- Are conditions, baseline, metric/unit, decisive values and remaining uncertainty
+  stated near the claim, with full evidence kept once under its owner?
+- Is the body quick to follow without losing an essential definition or inference?
+  Are full calculations and audit histories layered rather than repeated?
+- Do both languages preserve objects, quantifiers, sign, scope and status? At
+  first use, give a precise Chinese explanation and the necessary English term;
+  avoid English shorthand, invented labels and joined words such as
+  `IndependentstandardAdamW`. Use “each condition uses its own standard AdamW
+  optimizer” when that is the actual operation. Do not overtranslate established
+  symbols or change mathematical meaning.
+
+Examples below are writing fixtures, **not measured experiment results**:
+
+| Avoid | Prefer | Why |
+|---|---|---|
+| “Concentration caused U failure.” from co-occurrence | “Concentration and failure co-occur; direction/scale and optimizer history remain alternatives.” | Observation does not identify mechanism. |
+| “C did not slow U because both losses decreased.” | “With the same model and optimizer state, U batch and coefficient, the illustrative U loss starts at 1.0. It falls to 0.9 with C supervision and to 0.8 without C supervision. The positive difference of 0.1 means less improvement with C.” | Less improvement is relative to the matched comparator, not absolute harm. |
+| “The ablation confirms the pathway.” while only discussing it | “The question is confirmed; the ablation design is under discussion and NOT RUN.” | A plan is not evidence or execution approval. |
+| Delete a necessary explanation to preserve length/order | Add the missing bridge briefly, move full proof to its appendix, and remove duplicate setup | Clarity and logical completeness determine the length. |
 
 Read the delivered Markdown sequentially with figures, link targets and rich
 rendering unavailable. Can a new reader state the question, why the argument or

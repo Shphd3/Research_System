@@ -3,7 +3,7 @@
 Use this reference after execution to write the complete first reading in
 `summary.md`, or when the researcher explicitly requests a standalone
 single-experiment speaking or meeting brief. It does not replace the Detailed
-record. When a Summary already exists, do not duplicate these five sections in
+record. When a Summary already exists, do not duplicate its full content in
 the ordinary chat response; link the Summary first and use the compact result
 delivery rule in [SKILL.md](../SKILL.md).
 
@@ -48,16 +48,19 @@ Distinguish a real checkpoint-and-freeze transition from a continuous run that
 is only divided during analysis. State protocol deviations that narrow the
 claim.
 
-## 3. Five-Section Reader Format
+## 3. Reader Content And Reasoning
 
-Use Purpose → Model → Hypothesis → Conclusion → Analysis. The root
+Cover purpose, necessary model, hypothesis, bounded conclusion and supporting
+analysis. Reorder or combine their explanation to follow the reader's needs;
+these are content roles, not mandatory headings or a fixed length. The root
 [Summary template](../../../../templates/research_process/experiment_summary_template.md)
 owns reusable layout; the shared writing rules own first-use definitions.
 
 ### Purpose
 
-One sentence stating the whole scientific purpose. Do not clarify
-implementation here.
+State which uncertainty matters, how it relates to the question, and why an
+answer changes the research judgment. Include necessary context without a
+fixed sentence count; implementation detail stays with the model or Detailed.
 
 ### Model
 
@@ -72,8 +75,7 @@ the second statement when needed.
 
 ### Conclusion
 
-Use one numbered item per answer that changes the research judgment. Each item
-contains, in order:
+For each answer that changes the research judgment, connect:
 
 1. a plain answer to the original purpose and the resulting change in understanding;
 2. the smallest decisive result and uncertainty or eligibility boundary;
@@ -96,8 +98,8 @@ and remaining rivals. Explain material residuals and finite-change approximation
 remainder separately from numerical error. Keep full diagnostics in Detailed.
 
 Order the evidence by the assumptions or predictions it tests; do not impose a
-tool-specific sequence on a different question. Conclusion-first evidence delivery
-means Conclusion precedes detailed Analysis, after Purpose, Model and Hypothesis.
+tool-specific sequence on a different question. A brief bounded answer can lead;
+explain the necessary objects before relying on them, then layer detailed evidence.
 
 ## 4. Required Separations
 

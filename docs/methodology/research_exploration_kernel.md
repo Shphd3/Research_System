@@ -6,6 +6,13 @@ not an installed skill, extra approval layer or required output template.
 AGENTS owns authority; [task owners](../skills.md) own artifacts. Read only the
 applicable stage; reuse verified work rather than restarting the sequence.
 
+The purpose, question, hypothesis, controls, evidence, interpretation and bounded
+answer must form an explicit argument. Section order, fixed word counts and
+unchanged length do not establish validity. Use the shared
+[writing examples and acceptance checks](../report_writing.md#check-the-text-itself):
+keep the first reading clear, permit necessary modest growth, and layer full
+derivations/audits. No phenomenon becomes a mechanism or discussed test a result.
+
 ## 1. Question And Structure
 
 Start with the phenomenon, genuine uncertainty, importance and scope. Identify

@@ -6,6 +6,8 @@ still needs an evaluation objective but not a fabricated training loss.
 Follow data -> task -> objective/constraints -> architecture -> optimization and
 selection -> inference and untouched confirmation. Later contradictions reopen
 the earliest affected block, not a downstream patch around it.
+This is a dependency check, not a mandatory subsection order. Explain why the
+data, task and comparison answer the purpose; arrange the text for understanding.
 
 ## Scientific Contract
 

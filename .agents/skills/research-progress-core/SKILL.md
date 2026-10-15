@@ -30,6 +30,14 @@ Return requested status/numbers first. Separate direct evidence, interpretation,
 claim and next decision. Do not confuse readable features, route agreement,
 intervention utility or end-task gain, or local effects with a design decision.
 
+Connect the purpose and question to the hypothesis, distinguishing comparison,
+evidence and bounded answer in plain language. Use the shared
+[writing and acceptance rules](../../../docs/report_writing.md#check-the-text-itself),
+not a fixed heading order or length cap. Confirming a question does not approve
+its design; a discussed experiment stays NOT RUN until execution is evidenced.
+Execution approval is separate from both; record an evidenced start or failure
+even if no completed result exists.
+
 Finish factual audit despite missing human interpretation, labeling proposals.
 Do not activate/reset Focus, execute, publish or change scientific state beyond
 scope. Anchor, Protocol/results, remote operations and requested communications

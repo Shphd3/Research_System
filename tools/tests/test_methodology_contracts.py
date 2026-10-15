@@ -1,4 +1,4 @@
-"""Structural/budget checks only; semantic scenarios need actual answer review."""
+"""Structural checks only; semantic scenarios need actual answer review."""
 from pathlib import Path
 import re
 import unittest
@@ -7,15 +7,9 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class MethodContractTests(unittest.TestCase):
-    def test_web_prompt_does_not_grow(self):
+    def test_web_prompt_routes_to_owner(self):
         text = (ROOT / 'prompts/project_instructions/research_progress_project_prompt.md').read_text(encoding='utf-8')
-        # Pinned pre-refactor blob: 326ee74ff2d832fc1154d424c4ce033260e70b67.
-        self.assertLessEqual(len(text), 474)
-        self.assertLessEqual(len(text.encode('utf-8')), 1264)
         self.assertIn('research-reasoning-auditor', text)
-
-    def test_root_budget(self):
-        self.assertLessEqual((ROOT / 'AGENTS.md').stat().st_size, 11941)
 
     def test_no_competing_root_skill(self):
         self.assertFalse((ROOT / '.agents/skills/research-exploration').exists())

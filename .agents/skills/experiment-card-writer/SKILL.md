@@ -6,8 +6,8 @@ description: "Draft or audit an Anchor-aligned Protocol, or write and audit cano
 # Experiment Protocol And Result Writer
 
 The Anchor owns question, model and scientific choices; Protocol owns exact
-execution/approval; Summary owns Purpose, Model, Hypothesis, Conclusion, Analysis
-in that order; Detailed owns
+execution/approval; Summary owns purpose, necessary model, hypothesis, bounded
+conclusion and supporting analysis in a reader-driven order; Detailed owns
 setup, provenance, deviations, full rounds and artifact lineage. Do not invent
 missing scientific choices or create a parallel implementation plan.
 
@@ -45,7 +45,7 @@ its owner contract; design confirmation alone is not execution authorization.
 For results, eligibility and source lineage precede interpretation. Preserve
 `NOT RUN`, `UNKNOWN`, `MISSING`, `INELIGIBLE` and failed predictions. Complete
 factual records while missing human judgment stays unknown; do not fabricate a
-verdict or next decision. Five-part bilingual Summary and complete Detailed must
+verdict or next decision. Bilingual Summary content and complete Detailed must
 agree with frozen scope and actual evidence. Never rewrite source results to fit
 an explanation.
 

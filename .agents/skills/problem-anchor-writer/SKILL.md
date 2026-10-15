@@ -35,7 +35,9 @@ constraints, allowed information, assumptions and derived/empirical relations.
 Section 5 maps each consequential item to constructible computation beside its
 Goal, How and Why; engineering choices are not invented physical priors.
 
-Use existing self-containment, grounding, parent/child and zero-net-growth rules.
+Use existing self-containment, grounding and parent/child rules. Clarity takes
+priority over unchanged length or subsection order; retain the eight content
+owners, allow necessary modest growth, and put full derivations in linked detail.
 Explain the shortest derivation needed before linking fuller proof; local closure
 does not settle a larger design decision. Links audit meaning, not replace it.
 Preserve language companions and mathematical meaning.

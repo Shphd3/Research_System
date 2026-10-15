@@ -1,7 +1,8 @@
 # Methodology Regression Scenarios
 
 These are expected behaviors for review or a separately authorized model evaluation,
-not evidence that any model passed. Structural tests check wiring and budgets only.
+not evidence that any model passed. Structural tests check wiring only;
+text size is a diagnostic, not a validity or unchanged-length gate.
 Use the relevant source/rule and judge the answer, not keyword presence alone.
 
 | ID | Input situation | Required response | Disallowed shortcut |

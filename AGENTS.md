@@ -10,6 +10,14 @@ unless the researcher chooses otherwise. Lead with the answer and its boundary.
 Use short, direct sentences, explicit actors and consistent terms; define objects
 before notation. Preserve conditions and uncertainty when simplifying. Use [writing](docs/report_writing.md) and [math](docs/markdown_math.md) guidance.
 
+Make purpose, question, hypothesis, controls, evidence, interpretation and claim
+boundary logically connected. Headings and preferred order are aids, not scientific
+pass/fail criteria. Permit modest growth when needed for understanding; remove
+redundancy without deleting essential meaning. Keep the first reading concise,
+with full derivations and audit detail in the owning appendix or Detailed record.
+Translate naturally and precisely; define necessary Chinese/English terms at first
+use, preserve mathematical meaning and avoid jargon or joined-word compression.
+
 Separate observations, derivations, interpretations, hypotheses and decisions.
 The researcher owns questions, priorities, strongest rivals, mechanism judgment,
 scientific approval, claim boundaries and state transitions. AI may inspect,
@@ -60,7 +68,7 @@ and scientific claims against their owning records, not memory.
 | Focus | One stable activated question and researcher-owned next decision |
 | Anchor | Sole current scientific design; never a parallel `design.md` |
 | Protocol | Exact experiment contract, review, approval and amendments |
-| Summary / `_cn.md` | Complete Purpose, Model, Hypothesis, Conclusion, Analysis, in that order |
+| Summary / `_cn.md` | Complete purpose, necessary model, hypothesis, conclusion and supporting analysis; reader-driven order |
 | Detailed / execution record | Setup, provenance, deviations, results and execution state |
 | Final report / Story / Graph / sync | Derived reading or navigation, not new authority |
 | `docs/execution_envelope.md` | Profiles, images, submission and execution certificates |
@@ -100,10 +108,10 @@ measurement and open bridges; description, prediction, causation and utility.
 A schematic is no mechanism; bounded results do not establish broader benefit.
 
 Link Summary with decisive evidence and boundary; briefs may restate these.
-Use Purpose → Model → Hypothesis → Conclusion → Analysis for new or revised
-experiment summaries and multi-paragraph research analyses. Define the actual
-system and measured quantities before hypotheses; state the bounded answer
-before its detailed evidence. Follow the shared writing contract and template.
+Cover purpose, necessary model, hypothesis, bounded conclusion and supporting
+analysis in new or revised summaries. Organize their explanation by the reader's
+dependencies; a conclusion-first overview is useful. A template does not replace
+the logical links or require a fixed order, length, or invented missing content.
 This changes exposition, not frozen evidence, approval or scientific state.
 Unconfirmed wording stays pending; next steps are
 `AI 建议`. Daily synthesis keeps its human-judgment gate; drafts grant no run authority.

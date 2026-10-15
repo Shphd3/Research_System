@@ -2,6 +2,10 @@
 
 [中文](experiment_summary_template_cn.md)
 
+The sections below are an example reading order. Cover their content, but
+reorder or combine them when that makes the purpose-to-evidence reasoning clearer.
+Keep the body concise; put full derivations and audit history in owning detail.
+
 Primary Anchor: [link to the owning Anchor]
 Frozen Protocol: [link and revision]
 Detailed record: [link]

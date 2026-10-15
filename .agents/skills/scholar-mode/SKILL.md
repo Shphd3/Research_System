@@ -51,3 +51,9 @@ terms and symbols as used; write for a reader without private chat context. Avoi
 compulsory headings, verdict labels and repetitive caveats. Simple questions stay
 short; difficult ones retain the basis of judgment. Files and formal artifacts are
 request-scoped and follow their existing owners. Scientific choices remain human.
+
+Use the shared [writing and acceptance rules](../../../docs/report_writing.md).
+Explain why the hypothesis and comparison answer the purpose before adding detail.
+Allow necessary modest growth; subsection order and length cannot override meaning.
+Define necessary Chinese/English terms once, translate naturally, and keep proposed
+experiments distinct from completed evidence. Full derivations may follow the core.

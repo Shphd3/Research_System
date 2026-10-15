@@ -43,7 +43,8 @@ Keep live rivals and unknowns. Explain why the next question follows; a chosen
 route is not automatically necessary. An unconfirmed next step
 is an AI suggestion, not run approval. For a two-minute recap keep only numbers
 needed for the belief update; link the existing Summary rather than maintain a
-second conclusion. A speaking order does not replace Summary's five-section contract.
+second conclusion. A speaking order does not replace Summary's content coverage
+or its purpose-to-evidence reasoning.
 
 ## Rehearse Understanding
 

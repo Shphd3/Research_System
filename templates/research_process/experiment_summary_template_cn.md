@@ -2,6 +2,9 @@
 
 [English](experiment_summary_template.md)
 
+以下小节提供一种阅读顺序。内容应完整覆盖，但可按理解需要调整顺序或合并。
+正文简练，说明目的、比较、证据与结论的联系；完整推导和审计历史保留在所属详细记录。
+
 所属 Anchor：[链接]
 冻结 Protocol：[链接与版本]
 Detailed：[链接]

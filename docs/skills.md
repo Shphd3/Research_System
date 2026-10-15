@@ -2,6 +2,21 @@
 
 Canonical research skills live in `.agents/skills/<name>/`. Keep one root catalog;
 project-specific skills and installed platform skills keep their own ownership.
+For independent repositories such as NTP, install thin home routes with
+`python tools/install_skill_routes.py --backup <outside-discovery-directory> --apply`.
+The default destination is `~/.codex/skills`, verified on the installed clients;
+`--destination` can select another supported user or persistent skill directory.
+The script preserves replaced directories, copies canonical metadata and points
+to the actual source. It changes no model, authentication or invocation policy.
+Keep route targets on each host, never copy a Windows path to Linux. On 11109,
+also install routes into the existing persistent `codex_skills/` source used by
+bootstrap. No separate NTP skill implementation or copied reference tree is needed.
+
+A repeated name may appear at repo and user scope. The user entry must only route
+to the same canonical owner; it must not carry a second workflow. Verify both
+working directories through the installed runtime's `skills/list` with
+`forceReload: true`. This proves discovery and metadata, not that a model read
+or followed the body; verify actual reads separately in a bounded read-only test.
 
 ## Select by the requested outcome
 
@@ -61,7 +76,9 @@ behavior, not scientific truth or model routing.
 Test realistic requests and actual outputs on the named models when behavior is
 in scope. Compare like-for-like paths including required references, not only
 entrypoint size. Bytes or tokenizer estimates are not observed API billing.
-Preserve the existing Web project-instruction budget. Do not change model settings
+Keep routing concise; measure size as a diagnostic, not an unchanged-length gate.
+If a delivery surface has an actual limit, link detailed sources rather than
+discarding essential explanation. Do not change model settings
 or implicit invocation policy merely to make a context-cost number smaller.
 
 Codex discovers names/descriptions before loading selected skill bodies. If a

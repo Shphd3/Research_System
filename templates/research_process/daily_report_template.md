@@ -11,7 +11,8 @@ Sources: Focus path · Anchor path · Summary path · Detailed path (replace wit
 unknown and its parent question; prior expectation; decisive treatment/control
 evidence with data, unit and Summary link; changed belief or “没有形成新认识”;
 surviving rival and maximum supported claim. Reuse this paragraph, not a second
-rolling conclusion. The full five-section result remains in Summary.]
+rolling conclusion. The full result account remains in Summary; the suggested
+length yields to a necessary definition, logical connection or claim boundary.]
 
 ## Boundary and next decision
 
