@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-02",
+  "scope": "September baseline research records and current registered Focuses; concurrent 1002 candidate drafts excluded and untouched.",
+  "authority": "Layout, access and writing refactor only; no scientific state transition, execution, commit, push, Graph edit or external sync.",
+  "migration": {
+    "files": 465,
+    "project_destinations": 443,
+    "daily_meeting_destinations": 22,
+    "original_hashes_verified": 465,
+    "exact_original_bytes_at_destination": 244,
+    "other_destination_changes": "Markdown navigation or recorded path substitution only",
+    "missing_destinations": 0,
+    "unexpected_non_path_changes": 0,
+    "verified_legacy_root_repairs": 35
+  },
+  "integrity": {
+    "protected_snapshots_checked": 1133,
+    "existing_canonical_markdown_checked": 1428,
+    "unexpected_changes": []
+  },
+  "navigation": {
+    "system_project_entrypoints": 56,
+    "entrypoint_issues": 0,
+    "pending_untracked_entrypoints": 30,
+    "audited_changed_or_moved_markdown": 516,
+    "introduced_unresolved_links": 0,
+    "inherited_unresolved_links": 174,
+    "scope_limit": "Inline Markdown links; unchanged history is not exhaustively revalidated."
+  },
+  "validation": {
+    "unit_tests_passed": 34,
+    "rich_rendering_test_configuration": "Access tests also passed with optional MathML support.",
+    "skills_checked": 14,
+    "skill_links_checked": 71,
+    "skill_link_issues": 0,
+    "quick_validate_changed_skill_packages": 6,
+    "curated_evidence_assets": 65,
+    "curated_evidence_bytes": 4186344,
+    "invalid_curated_or_generated_payload": 0,
+    "root_generated_tracked_payload": 0,
+    "math_source": {
+      "checked": 517,
+      "inherited_diagnostics": 974,
+      "introduced": []
+    },
+    "whitespace": "Both repositories passed git -c core.whitespace=-blank-at-eol diff --check; existing Markdown hard breaks retained."
+  },
+  "interface": {
+    "source_documents": 14,
+    "source_assets": 22,
+    "omitted_inline_links": 132,
+    "browser": {
+      "base": {
+        "articles": 14,
+        "math": 57,
+        "images": 2,
+        "brokenImages": [],
+        "overflow": false
+      },
+      "opened": true,
+      "filtered": 1,
+      "errors": [],
+      "external": [],
+      "mobileOverflow": false
+    },
+    "review_boundary": "Browser navigation and sampled desktop/mobile, math and figure rendering; no independent comprehension study."
+  },
+  "instruction_sizes_bytes": {
+    "AGENTS.md": {
+      "before": 7301,
+      "after": 7299
+    },
+    "README.md": {
+      "before": 8840,
+      "after": 4381
+    },
+    "PROJECTS.md": {
+      "before": 10677,
+      "after": 2288
+    },
+    "prompts/project_instructions/research_progress_project_prompt.md": {
+      "before": 1104,
+      "after": 1104
+    }
+  },
+  "local_audit_artifacts": [
+    {
+      "path": "/data/250010109/MoE_Router/research_record_archives/20261002_system_layout/validation/links_unresolved.json",
+      "sha256": "2356a912c28aeb95d1b44dce75b3c65f7d6c03e32974639dac97b08022649048"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/research_record_archives/20261002_system_layout/validation/audit_content_differences.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/research_record_archives/20261002_system_layout/validation/verified_legacy_link_repairs.json",
+      "sha256": "3e1c5536ae2ec9f4b1c3fa68012b733b8d4a48769a0deba1c0f6e9c67b2a3456"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/research_record_archives/20261002_system_layout/validation/canonical_integrity.json",
+      "sha256": "c40ac0e4f2b6066a67822b16c69ccf3a7e75b86c5664b3ac3a469b7cc1c56771"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/research_record_archives/20261002_system_layout/validation/math_audit.json",
+      "sha256": "8294b04f6bf42943f1d9903a6fa7dc54c86c58fbb100c504cdf0d7e7f662a824"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/research_record_archives/20261002_system_layout/validation/browser_validation.json",
+      "sha256": "3f429972966f387e49e58c7c7a885f91ffc125b566e179e946e19e339dcdf7cb"
+    }
+  ]
+}

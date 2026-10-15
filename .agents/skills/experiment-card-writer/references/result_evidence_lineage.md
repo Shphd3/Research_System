@@ -134,62 +134,45 @@ are not automatically independent experimental replicates.
 
 ## Summary Contract
 
-Keep `summary.md` short and conclusion-first. It must be understandable without
-chat history but need not reproduce the complete setup. Its reader body owns
-the four-part result account; ordinary chat should link to it instead of
-paraphrasing the same structure.
+Keep `summary.md` short, with the conclusion before detailed analysis. It must
+be understandable without chat history but need not reproduce the complete setup.
+Its reader body owns
+the five-part result account: Purpose → Model → Hypothesis → Conclusion → Analysis.
+Ordinary chat links to it and explains the minimal
+objects, comparison and boundary needed to answer the user's question, without
+repeating the full result ledger. For first-use operations, rationale and formula
+meaning, use the shared [writing contract](../../../../docs/report_writing.md#objects-operations-and-first-use-terms).
 
-Use this structure:
+Use the maintained root [Summary template](../../../../templates/research_process/experiment_summary_template.md)
+and its [Chinese companion](../../../../templates/research_process/experiment_summary_template_cn.md).
+The five sections have these roles:
 
-```markdown
-# Summary: <experiment_id>
+1. **Purpose:** state the scientific uncertainty and what an answer changes.
+2. **Model:** define the actual system, task, trainable/frozen objects, update or
+   intervention and observable. Explain needed relations, assumptions and units.
+3. **Hypothesis:** state one or two falsifiable expectations and the strongest
+   credible rival at the original population, conditions and time horizon.
+   Name the distinguishing comparison; do not invent registration.
+4. **Conclusion:** answer the Purpose with the smallest decisive values and
+   eligibility boundary. State what is supported, weakened or unresolved.
+   A metric change or typed verdict alone is not a scientific answer.
+5. **Analysis:** explain comparisons, baselines, held-fixed quantities, actual
+   steps, metrics, aggregation, uncertainty and rival adjudication. Link decisive
+   claims to source evidence. Material residuals and approximation errors remain
+   visible; complete diagnostics and history stay in Detailed.
 
-Primary Anchor:
-Frozen Protocol:
-Detailed record:
-Result status / eligibility:
+An optional evidence table names the registered rule, observed value, guard or
+eligibility, verdict and source. Optional figures include a reading sentence.
+Claim boundaries belong in the Conclusion and are justified in Analysis;
+next-step reasoning follows the evidence without adding a second conclusion.
 
-## 1. Purpose
+Apply this order to new or requested revised summaries. Do not batch rewrite
+historical records, frozen Protocols or evidence to satisfy a new presentation
+format. A layout change preserves scientific meaning and researcher authority.
 
-One sentence stating the scientific purpose.
-
-## 2. Hypothesis
-
-One or two falsifiable statements, including the strongest rival when needed.
-
-## 3. Analysis Method
-
-At most three bullets. Each names the comparison, what is held fixed, and the
-uncertainty it resolves. Include the primary metric and unit.
-
-## 4. Conclusion
-
-Verdict:
-
-1. Direct decision-bearing answer, smallest decisive value, and eligibility.
-
-| Registered rule | Observed value | Guard / eligibility | Verdict | Evidence source |
-| --- | --- | --- | --- | --- |
-| | | | | |
-
-### Important Figure, Only When Decision-Bearing
-
-How to read:
-
-### Claim Boundary
-
-Can claim:
-Cannot claim:
-
-### Next Step Analysis
-
-Decision:
-Why it follows:
-Unresolved uncertainty:
-Completion criterion:
-Stop or redirect condition:
-Resume action:
-```
+When the next decision is unconfirmed, state `Unknown` once with the unresolved
+uncertainty. Add completion, stop and resume details only when an actual next
+action has been chosen and those details matter.
 
 Define only decision-critical terms. Give the primary result and its source
 before supporting diagnostics. Link each decision-bearing table or figure to
@@ -227,6 +210,13 @@ Include the frozen Protocol revision, code/config/data identity, primary source
 tables, analysis outputs, central figures, job receipts, and required failure
 artifacts. Raw logs and checkpoints may remain on the worker surface; link
 their manifest rather than copying them into the research mainline.
+
+For actual trained checkpoints and reusable analysis caches, link their asset
+IDs and current access evidence following the
+[asset lifecycle](../../../../assets/README.md#training-and-analysis-lifecycle).
+Plans and `NOT_RUN` conditions have no produced checkpoint; failed saves remain
+missing/partial. A pure audit reports gaps rather than implying it performed
+registration or a new payload check.
 
 ## Figure Contract
 
@@ -269,7 +259,7 @@ Full setup, all conditions, stage evidence, deviations, run history, and the
 artifact manifest belong only in Detailed. Summary may state only the minimum
 decision-bearing setup.
 
-When a paper-style final report is required, enforce this one-way chain:
+For a settled-question final report and question closure, use this ownership chain:
 
 ```text
 confirmed plain-language design in the active Focus
@@ -285,9 +275,11 @@ every decision-bearing number and figure must link to its canonical lineage.
 Its eligibility, verdict, boundary, and next question must match Summary,
 Detailed, the Anchor, and the researcher's result account in the active Focus.
 Before human confirmation, mark its knowledge wording
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. The already-active Focus must contain
-the researcher's result and boundary before a final report is drafted, and the
-question must have reached a stable bounded conclusion. The Focus cannot become
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. A settled-question final report requires
+the researcher's result and boundary in the active Focus and a stable bounded
+conclusion. An explicitly requested provisional synthesis may be written earlier:
+complete source-backed facts, label it provisional, and leave unresolved judgment
+unknown. It neither closes the question nor promotes evidence. The Focus cannot become
 the sole source of a number, eligibility decision, deviation, or verdict; those
 remain in canonical result records.
 
@@ -307,8 +299,8 @@ Detailed is the only complete evidence ledger:
 Figures have source, aggregation, observed result, and limitation:
 Summary, Detailed, and Anchor verdicts and boundaries agree:
 Any final report preserves canonical eligibility, verdict, lineage, boundary, and next question:
-The active Focus contains the human-confirmed result before the final report is drafted, and both remain bounded by canonical evidence:
-Exactly one next decision has a completion criterion and resume action:
+A settled final report has a human-confirmed Focus result; a requested provisional synthesis remains labeled and preserves unknowns:
+A confirmed next decision has the necessary completion conditions; an unconfirmed decision is stated as Unknown without empty fields:
 No missing value, expected pattern, or filename was turned into evidence:
 ```
 

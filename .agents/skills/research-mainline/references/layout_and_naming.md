@@ -1,122 +1,86 @@
-# Layout And Naming
+# Layout and naming
 
-Use this reference only for artifact placement or reorganization.
+Use for placement or authorized reorganization. The project owns research;
+System owns shared process and access; daily folders own dated communication.
 
-## Canonical Layout
+## Stable project layout
 
 ```text
 Projects/<project>/main/
-  roadmap.md
-  parking_lot/README.md
-  problem_anchors/<line_id>/
-    README.md
-    <parent_id>_<topic>/
-      <parent_id>_<topic>_anchor.md
-      <parent_id>_<topic>_anchor_cn.md
-      subanchors/<parent_id>_<NN>_<topic>_anchor.md
-  experiments/A<line_number>/<anchor_stem>/<experiment_id>/
+  roadmap.md                         project workstreams and reading route
+  focus/focus_<problem>.md            stable question and researcher decision
+  problem_anchors/<line>/<question>/  sole design and any settled-question report
+  experiments/<line>/<question>/<experiment>/
     protocol.md
-    summary.md
+    summary.md / summary_cn.md
     detailed.md
-    figures/
-    tables/
-  stories/<line_id>/
-    README.md
-    <NN>_<topic>.md
-    <NN>_<topic>_cn.md
+    figures/                         selected evidence with provenance
+  stories/<line>/                    requested stage/line synthesis
+  research_notes/<topic>/<date>/      supporting notes and historical packages
+  parking_lot/README.md
 ```
 
-Meeting-cycle files live at:
+Preserve existing numbered line/Anchor identities and experiment conventions.
+A stable topic key may name a previously unnumbered storage family; it does not
+activate a question or infer a scientific dependency. Supporting notes never
+replace a formal owner. Do not invent new Anchors to fill a directory.
+
+A Focus keeps its problem_key and project path across meetings, dates and model
+switches. Move an existing Focus only as part of authorized reorganization, with
+old/new paths recorded. A translation is a companion, not another question.
+Retained legacy records do not become current merely by appearing in an index.
+
+## Daily reading
 
 ```text
-daily_research_reports/MMDD/focus_<problem>.md
-daily_research_reports/MMDD/focus_meeting_<topic>.md
-daily_research_reports/MMDD/figures/<figure>.png
-daily_research_reports/MMDD/figures/SOURCES.md
+daily_research_reports/MMDD/
+  README.md / README_cn.md            short index into project owners
+  meeting_report/                     requested speaking core and Q&A
+  figures/                           date-local reading copies
+    SOURCES.md
 ```
 
-The Focus uses the date it was first created. Keep `cycle_start` and
-`target_meeting` in metadata; do not move a living Focus at midnight.
+Meeting records and short progress notes may remain on the date surface. Do not
+create a new Focus, Anchor, Protocol or complete result ledger there. Historical
+backup snapshots retain their original meaning; they are not a placement template.
+Keep one primary speaking entry when a meeting is requested, and label older
+versions as history. No formal document is needed for a routine short answer.
 
-## Date Figures
+## Anchors, experiments and stories
 
-Every figure a date's reader-facing artifact references physically lives under
-that date's `figures/` directory, and the artifact links it with a date-local
-relative path such as `figures/x.png` or `../figures/x.png`. Do not link from a
-date directory into `Projects/`, an execution workspace, or an absolute host
-path: such a link breaks on archive, on another machine, and in a clone.
+Names describe stable questions or comparisons, not temporary runtime state.
+Keep independent parent questions as siblings. `subanchors/` is for a local
+clause, rival, repair or robustness question that inherits its parent's decision;
+a prerequisite relationship alone does not make one question a child.
 
-Two copies of the same figure are expected, and this is the one place where copy
-rather than move is correct:
+Keep experiment settings and full evidence with the experiment, and the current
+scientific design with its Anchor. An Anchor fulfills `design.md`; do not create
+both. Stories use the existing numbered subject filenames and aligned language
+companions. Their index names the reading scope rather than creating a new verdict.
 
-- the owning experiment's `experiments/A<line>/<experiment_id>/figures/` holds
-  the evidence copy beside `summary.md` and `detailed.md`;
-- `daily_research_reports/MMDD/figures/` holds the reading copy that this date's
-  Focus and meeting material display.
+## Evidence and delivery assets
 
-Copy byte-identically and record each source in `figures/SOURCES.md`. When a
-figure is regenerated, refresh both copies in the same step. A reading copy
-never becomes an independent source: if the two disagree, the experiment copy is
-authoritative and the date copy is stale.
+The experiment keeps its selected evidence figures and source tables. A dated
+report displaying a figure keeps a date-local reading copy with a relative link.
+Record source path, purpose and SHA256 in `figures/SOURCES.md`; refresh reading
+copies when the source changes. A labeled schematic is not measured evidence.
 
-`figures/SOURCES.md` has one row per file in the directory:
+Generated figures and tables are excluded from Git by default. Select only small,
+necessary evidence in the project's curated-evidence manifest; payload checks
+verify the exact paths, sources, sizes and hashes. A local image is not guaranteed
+in a clone. For a portable reading bundle, carry selected available assets and
+list missing dependencies. Never copy raw runs, caches, datasets or checkpoints
+into the research mainline. See [project access](../../../../docs/project_access.md).
 
-```text
-| File | Origin | Source | SHA256 | Note |
-|---|---|---|---|---|
-| `x.png` | copy | `Projects/.../figures/x.png` | <sha256 of the reading copy> | <what it shows> |
-| `y.png` | generated | `<builder>` from `<input>` | <sha256 of the reading copy> | <how it was built> |
-```
+## Migration completion
 
-`copy` means a byte-identical duplicate of an evidence figure, so its recorded
-hash must still equal the source's. `generated` means the figure was produced
-directly in this directory from a recorded builder and inputs, so there is no
-second copy to compare against. If an evidence source later disappears, keep the
-reading copy and keep its source path in the row: the lineage stays readable
-even when the source does not.
+Move the sole current source; rebase live references and remove its old path.
+Preserve original bytes/hashes for frozen identity and record relocation separately
+from amendments. Do not rewrite memory, immutable receipts or historical snapshots
+as current state; provide the old-path resolver instead. Preserve legacy science
+and language roles rather than manufacturing translations or confirmations.
 
-In this repository the experiment copy usually lives under `Projects/`, which is
-outside the root repository's tracked tree, so the date copy is often the only
-version-controlled copy. That is a reason to keep the copy, not a reason to
-treat it as new evidence.
-
-Use a topic subdirectory only when one date has figures from genuinely different
-topics whose filenames would otherwise collide. Debug galleries, unfiltered
-render dumps, and per-run figure directories stay in the execution workspace and
-are never copied here.
-
-## Anchors
-
-An Anchor name describes a stable question or mechanism, not a date, seed, or
-single run. Sibling parent Anchors remain sibling folders even when one depends
-on another. Use `subanchors/` only for a child that inherits its parent's
-decision question and tests one local clause, rival, repair, robustness check,
-or metric guard.
-
-When an external method asks for `design.md`, the Anchor fulfills that role
-without renaming or duplication.
-
-## Experiments
-
-In `A<anchor_id>_<topic>`, the number is the primary Anchor ID, not a date.
-Use suffixes such as `smoke`, `full`, `followup`, or `ablation` only when they
-identify a real experimental role. Put experiments beneath their Anchor family
-rather than directly under the line folder.
-
-## Stories And Focuses
-
-Story filenames carry two-digit reading order and subject; English and `_cn`
-companions share a stem. Do not create generic new `story.md` files or one
-story per Anchor.
-
-One active workstream has one current Focus, one question, and one next
-decision. A meeting synthesis exists only when explicitly requested. Important
-inactive questions go to the project Parking Lot only when they can change the
-future direction and have a reopening condition.
-
-## Migration Check
-
-Move rather than copy. Update the line README and every in-scope project,
-story, experiment, and graph reference. Verify that the old path
-is absent, every new relative link resolves, and no duplicate canonical file
-remains.
+Check both repository indexes, new file discoverability, links and evidence
+identity. Distinguish inherited missing sources from migration regressions. Verify
+root-to-project and project-only reading. Graph and external publication remain
+separately scoped; no question closes or gains approval through migration.

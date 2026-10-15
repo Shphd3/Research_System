@@ -11,7 +11,7 @@ human closed-book summary
 -> summary.md / summary_cn.md / detailed.md update
 -> anchor sections 7 and 8 update
 -> researcher completes the actual result in the already-active
-   daily_research_reports/MMDD/focus_<problem>.md
+   Projects/<project>/main/focus/focus_<problem>.md
 -> `research-final-report` writes <anchor_stem>_final_report.md once the question
    reaches a stable bounded conclusion
 ```

@@ -1,0 +1,69 @@
+{
+  "inputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_frequency.npz",
+      "bytes": 21758946,
+      "sha256": "f345204412633144a7f1af36668cb3e2a98dbcaf03ef66f43ce3ace40c916c7c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz",
+      "bytes": 4510135,
+      "sha256": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_D.json",
+      "bytes": 2136116,
+      "sha256": "d1c42c3c82c34057b8edb3a5203aee607e592bcc7318260dc7f2e60e5ae878b5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_V.json",
+      "bytes": 2098761,
+      "sha256": "5615253d0aba4ee186c2e3498f8f538db159e50d98b080c1c5dd7c23870b701a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/candidates.json",
+      "bytes": 162408,
+      "sha256": "510aa335bfc9e48c16f67d770ba4511b30e244a33e7a029b9a36db66cf289d3a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/sensitivity.json",
+      "bytes": 72583,
+      "sha256": "9cab2259f5a0d6178460fb3aef5bac669c8331059b59cac033e3205f1f59061b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/pair_metrics.json",
+      "bytes": 103377,
+      "sha256": "0346a5ab9d195607093a51a03274dcc27e4bbcfff8127d72140c46948f6aab43"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/pair_examples.json",
+      "bytes": 426089,
+      "sha256": "dc6c712f40eb918d04c7f12a66157f936b2f24f3fdd7a7123163bf75d77f00d5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/decoder_geometry.npz",
+      "bytes": 2868312,
+      "sha256": "b74cc20f563ea535c5b4d05e9f58bb3411f6bd6138d969afe4b25edbe4c28a8e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json",
+      "bytes": 21834,
+      "sha256": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/counts/total0.npy",
+      "bytes": 2147483776,
+      "sha256": "NOT_REHASHED",
+      "access": "selected64pairs scalar mmap cells; no full matrix read/computation"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/counts/total1.npy",
+      "bytes": 2147483776,
+      "sha256": "NOT_REHASHED",
+      "access": "selected64pairs scalar mmap cells; no full matrix read/computation"
+    }
+  ],
+  "block_access": "26existingedge columns in81blocks",
+  "context_access": "existing class_positions support vectors",
+  "full_pool_read": false
+}

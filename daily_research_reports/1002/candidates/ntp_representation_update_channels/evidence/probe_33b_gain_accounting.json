@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_ACCOUNTING_IDENTITY",
+  "posthoc": true,
+  "models_or_policies_refitted": 0,
+  "definition": "gain_vs_fixed = gain_vs_global_marginal - (global_marginal_loss - fixed_loss)",
+  "conditions": 92,
+  "maximum_absolute_residual": 6.613633252161577e-18,
+  "matching_gain_range": [
+    0.00013348623394040585,
+    0.0007595457373249687
+  ],
+  "marginal_minus_fixed_range": [
+    0.0005108931959637882,
+    0.0012568456553086686
+  ],
+  "matching_gain_smaller_than_marginal_cost_in_every_condition": true,
+  "boundary": "Arithmetic explanation of two comparators; no new empirical mechanism or decision rule."
+}

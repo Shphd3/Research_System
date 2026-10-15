@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-12T02:30:09.944916+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-hl8vw",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11792,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_a17_04_o_to_c_20261012_v1",
+      "title_cn": "A17_04 R04 A到C和B到C的参数算子差值及大通道分析",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_endpoint_difference_basis_and_tables",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_AC_seed29_step00240.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_AC_seed29_step01200.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_AC_seed43_step00240.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_AC_seed43_step01200.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_AC_seed71_step00240.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_AC_seed71_step01200.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_BC_seed29_step00240.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_BC_seed29_step01200.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_BC_seed43_step00240.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_BC_seed43_step01200.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_BC_seed71_step00240.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/bases/T_BC_seed71_step01200.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 795376,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/to_c_block_energy.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 24285,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/to_c_pair_overlap.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 31980,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/to_c_reference_overlap.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 126423,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/to_c_singular_spectra.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1791926,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/to_c_spectrum_summary.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 10034,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/to_c_truncated_operator.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5865,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_o_spectral_geometry/runs/to_c_20261012_v1/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 50179,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

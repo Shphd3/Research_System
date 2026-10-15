@@ -1,0 +1,17 @@
+{
+  "created_at_utc": "2026-10-03T09:23:32.386432+00:00",
+  "kind": "DESCRIPTIVE_TRAINING_LOG_COMPARISON",
+  "generator": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/plot_training_curve.py",
+  "generator_sha256": "d4b4b29e659d9000cc3dc3de161a94bf11463a53af3f59552534c45c625d5636",
+  "sources": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/analysis/training_curve_20_33b.csv": "70804dfe346abccd90ce5467d4fb3e0a4b936b80e0be455cbf241d31f78ee36e",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/analysis/training_curve_20_33b.json": "1e7ad46efe30b6618c7f0f486c13f014eb39f97bbe8c076a6bd87f6152fec5a0"
+  },
+  "outputs": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/training_curve_20_33b.png": "940dfbc48d124425e681517585cb2b2e397df63d90464400e0e41b7fc9ea44ad",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/training_curve_20_33b.svg": "ff15e90abbe0963d24b6096959aafdf869c6dd86282118e04528200ee3e2f301",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/figures/training_curve_20_33b.pdf": "07c653f0dfe4cbbd51ad9e1ff21bd6c2ffd43ad2fed9d3e10ab16f8f593401d3"
+  },
+  "selection": "All three recorded lineages, all 130 consecutive 100M-token bins from 20B to 33B; no smoothing, fits or uncertainty bands.",
+  "boundary": "Training-batch pre-update CE, partial boundary updates allocated by observed update mean. No independent seeds, matched late batches, causal architecture effect, downstream benefit, or time-to-quality claim."
+}

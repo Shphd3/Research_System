@@ -7,7 +7,9 @@ description: "Write one paper-style final report for a settled bounded research 
 
 One settled question, one self-contained derived report. Preserve the pinned
 upstream's synthesis method with local Anchor/Protocol/Summary/Detailed ownership;
-see [mapping](../../../docs/methodology/research_exploration_mapping.md).
+The upstream method is already integrated here; read the
+[mapping](../../../docs/methodology/research_exploration_mapping.md) only to audit
+that integration, not for every report.
 
 ## Readiness And Inputs
 
@@ -22,12 +24,21 @@ researcher chooses otherwise. Do not invent numbers, verdicts or approval, or co
 full round histories into another editable source. A link audits meaning; the
 report must carry its own explanation.
 
-## Structure
+## Explanation And Structure
 
-Keep Abstract; 1 Motivation; 2 Problem Formulation; 3 Physical Priors;
-4 Mathematical Model; 5 Computational Implementation; 6 Experimental Design;
-7 Results; 8 Analysis; 9 Claim Boundary And Limitations; 10 Conclusion;
-11 Next Research Question (or none); Reproducibility Appendix.
+Use the shared [Markdown writing rules](../../../docs/report_writing.md).
+Cover motivation, exact question, assumptions, model or argument, method,
+decisive evidence, analysis, limits, bounded answer and next question (or none).
+Include reproducibility information when applicable. For a requested full report,
+use the advisor method's order: question/motivation -> priors -> model -> computation
+-> experimental checks -> analysis -> bounded conclusion, with a short abstract
+and reproducibility appendix when useful. Adapt headings to the research: proofs
+need no invented experiment; observations need no invented implementation. Merge
+short sections; preserve the complete explanatory chain.
+Connect purpose, observations, hypothesis, model stages and their checks; provide
+a short reading route for a long report. Conclude with the change in understanding
+of the original question, supported by decisive evidence, rather than repeating
+the result analysis or extending the claim beyond its evidence.
 
 Define objects before equations. Explain assumptions, objective/constraints,
 permitted information and the shortest model-to-consequence bridge. Distinguish
@@ -43,7 +54,10 @@ live rivals; causal wording needs the actual intervention/identification basis.
 ## Completion
 
 A new reader must understand the question, computation, tested arrows, result and
-boundary without chat/code. Verify source identity, links, language companions and
-reproducibility paths. Keep `AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until wording is
+boundary without chat/code. Verify source identity through canonical records or
+manifests and link them; inline hashes only when needed to distinguish sources.
+Check links, language companions and reproducibility paths. Explain each limitation
+once, reusing it across results with the same scope. Keep
+`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION` until wording is
 confirmed. Closure compacts the living design without deleting evidence, duplicating
 histories, activating a new question or publishing beyond explicit authorization.

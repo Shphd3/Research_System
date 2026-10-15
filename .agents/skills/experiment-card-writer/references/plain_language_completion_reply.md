@@ -3,7 +3,7 @@
 Use this reference after execution to write the complete first reading in
 `summary.md`, or when the researcher explicitly requests a standalone
 single-experiment speaking or meeting brief. It does not replace the Detailed
-record. When a Summary already exists, do not duplicate these four sections in
+record. When a Summary already exists, do not duplicate these five sections in
 the ordinary chat response; link the Summary first and use the compact result
 delivery rule in [SKILL.md](../SKILL.md).
 
@@ -30,8 +30,9 @@ in plain Chinese.
 
 ## 2. Actual Training Audit
 
-Say explicitly whether the implementation contains distinct stages. For each
-stage report:
+Apply this section when training occurred. For a fixed-model analysis, identify
+the model state, frozen objects and actual measurement procedure instead.
+For training, distinguish actual stages and report for each stage:
 
 | Required field | Meaning |
 | --- | --- |
@@ -47,44 +48,56 @@ Distinguish a real checkpoint-and-freeze transition from a continuous run that
 is only divided during analysis. State protocol deviations that narrow the
 claim.
 
-## 3. Four-Section Reader Format
+## 3. Five-Section Reader Format
+
+Use Purpose → Model → Hypothesis → Conclusion → Analysis. The root
+[Summary template](../../../../templates/research_process/experiment_summary_template.md)
+owns reusable layout; the shared writing rules own first-use definitions.
 
 ### Purpose
 
 One sentence stating the whole scientific purpose. Do not clarify
 implementation here.
 
+### Model
+
+Define the actual task and system, trainable/frozen objects, update or intervention,
+and observable. Explain necessary equations, assumptions, units and sign conventions.
+Keep an implemented mechanism separate from an untested explanatory hypothesis.
+
 ### Hypothesis
 
 Use one or two short falsifiable statements. Include the strongest rival in
 the second statement when needed.
-
-### Analysis Method
-
-Use normally three bullets and never more than three. Each bullet says:
-
-```text
-what is compared -> what uncertainty it resolves
-```
-
-Order the bullets as a gate: for example, dispatch first, function second,
-representation or task benefit last.
 
 ### Conclusion
 
 Use one numbered item per answer that changes the research judgment. Each item
 contains, in order:
 
-1. a plain direct answer;
+1. a plain answer to the original purpose and the resulting change in understanding;
 2. the smallest decisive result and uncertainty or eligibility boundary;
-3. one figure directly supporting that answer;
-4. `How to read:` one short sentence explaining axis/direction and the visible
-   observation;
-5. what the figure cannot establish, when omission would invite overclaim.
+3. a figure or table when it makes the comparison easier to assess, with one
+   sentence explaining its axes/columns, observation and relevant limitation.
 
-Do not add a conclusion merely to display another metric. If no eligible figure
-can support a conclusion, merge it into a bounded paragraph or mark the visual
-evidence missing; never manufacture evidence.
+Text or numerical evidence can be sufficient. An absent optional figure is not
+missing evidence. Do not add a conclusion merely to display another metric;
+report an actual evidence gap without manufacturing a visual to fill it. Result
+analysis explains measurements; the conclusion explains what those measurements
+change about the hypothesis, model or remaining uncertainty. Do not invent a
+mechanism or broaden the original question to make this update sound stronger.
+
+### Analysis
+
+Explain the Conclusion with the actual comparisons and observations. Each
+comparison names its baseline, changed/held-fixed quantities and the uncertainty
+it resolves. State metrics/units, actual steps, aggregation, uncertainty, guards
+and remaining rivals. Explain material residuals and finite-change approximation
+remainder separately from numerical error. Keep full diagnostics in Detailed.
+
+Order the evidence by the assumptions or predictions it tests; do not impose a
+tool-specific sequence on a different question. Conclusion-first evidence delivery
+means Conclusion precedes detailed Analysis, after Purpose, Model and Hypothesis.
 
 ## 4. Required Separations
 

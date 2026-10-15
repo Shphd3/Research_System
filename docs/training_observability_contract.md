@@ -148,7 +148,16 @@ wrong/non-monotonic token counter makes the affected cross-run loss-curve
 comparison `INELIGIBLE` until repaired. It does not automatically invalidate
 unrelated artifacts from the run.
 
-## 5. Basis For This Convention
+## 5. Checkpoint And Asset Handoff
+
+The Protocol/config names final and required milestone checkpoint saves in the
+execution run directory. After an authorized training stage, register actual
+saved states through the [asset lifecycle](../assets/README.md#training-and-analysis-lifecycle)
+and link their IDs/access evidence in the artifact manifest. Report missing or
+partial saves explicitly. Weight availability, exact resume qualification and
+scientific eligibility remain separate; no new run is authorized by registration.
+
+## 6. Basis For This Convention
 
 - [DeepSpeed batch configuration](https://www.deepspeed.ai/docs/config-json/)
   defines effective training batch as microbatch per GPU times gradient

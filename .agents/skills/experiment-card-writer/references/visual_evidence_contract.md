@@ -1,7 +1,7 @@
 # Visual Evidence Contract
 
-Apply only when a figure/viewer materially helps inspect a claim. Text or a table
-may be better. Do not create a viewer, service or extra review task by default.
+Apply when a static figure helps inspect a claim. Text or a table may be better.
+Research delivery remains self-contained Markdown; no webpage or service is needed.
 
 Before plotting state the question, exact data/checkpoint, metric/unit,
 aggregation/independence unit, axes/legend/conditions, scaling, expected pattern,
@@ -19,4 +19,5 @@ in a bounded cycle. If rendering is unavailable say unverified. Source/math
 checks do not verify rendering. Do not delay direct results for visual polish.
 
 Keep data/figure provenance and permitted date-local reading copies in the
-existing evidence records. No raw-output promotion or automatic external serving.
+existing evidence records. Do not promote raw outputs or distribute artifacts
+beyond the authorized scope.

@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-30",
+  "purpose": "Domain-independent evidence selection, parent-answer obligations, justified dependencies and conditional next decisions.",
+  "scope": "System rules, existing skill references, reusable Focus template and review scenarios; no canonical research result or scientific state changed.",
+  "priorities": [
+    "State how a bounded answer changes a parent question and distinguish necessary dependency from a chosen route.",
+    "Match proof, counterexample, observation, intervention or system comparison to the claim; bind next decisions to evidence eligibility and result branches.",
+    "Review actual cross-domain answers and first-reader explanations; distinguish source checks, author self-review and independent behavior evaluation."
+  ],
+  "files_changed": [
+    "AGENTS.md",
+    "README.md",
+    "docs/skills.md",
+    "docs/methodology/research_exploration_kernel.md",
+    "docs/methodology/research_exploration_regression_cases.md",
+    "docs/methodology/research_exploration_mapping.md",
+    ".agents/skills/research-reasoning-auditor/SKILL.md",
+    ".agents/skills/research-reasoning-auditor/references/reasoning_audit_contract.md",
+    ".agents/skills/research-progress-core/references/question_refinement.md",
+    ".agents/skills/research-progress-core/references/result_interpretation.md",
+    ".agents/skills/research-communication/references/meeting.md",
+    ".agents/skills/research-communication/references/story.md",
+    ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md",
+    "templates/research_process/focus_writing_template.md",
+    "tools/tests/test_methodology_contracts.py",
+    ".agents/skills/research-reasoning-auditor/references/mathematical_mechanism_closure.md"
+  ],
+  "utf8_byte_budget": {
+    "AGENTS.md": {
+      "before": 7320,
+      "after": 7301
+    },
+    "docs/methodology/research_exploration_kernel.md": {
+      "before": 6323,
+      "after": 6320
+    },
+    ".agents/skills/research-reasoning-auditor/SKILL.md": {
+      "before": 2476,
+      "after": 2451
+    },
+    ".agents/skills/research-reasoning-auditor/references/reasoning_audit_contract.md": {
+      "before": 3557,
+      "after": 3315
+    },
+    ".agents/skills/problem-anchor-writer/references/anchor_self_containment.md": {
+      "before": 14739,
+      "after": 14509
+    }
+  },
+  "checks": {
+    "unittest_cases_passed": 23,
+    "skill_entries_checked": 14,
+    "skill_local_links_checked": 67,
+    "official_quick_validate": [
+      "research-reasoning-auditor",
+      "research-progress-core",
+      "research-communication",
+      "problem-anchor-writer"
+    ],
+    "protected_research_and_prompt_hashes_checked": 2887,
+    "protected_hash_changes": 0,
+    "changed_document_local_links_checked": 39,
+    "local_link_errors": 0,
+    "math_source_files_checked": 15,
+    "final_auditor_and_mechanism_edits_rechecked": true,
+    "scope_payload": "Passed using isolated root index; live staging untouched.",
+    "whitespace": "Passed."
+  },
+  "behavior_review": {
+    "kind": "author self-review",
+    "reviewer": "Codex author in current chat",
+    "domain_types": [
+      "formal reasoning",
+      "statistical inference",
+      "systems design"
+    ],
+    "actual_review_answers": [
+      {
+        "scenario": "R19",
+        "type": "formal refutation",
+        "input": "Does strict convexity of a real-valued function on the real line alone imply a unique minimizer?",
+        "actual_answer": "It implies at most one minimizer, not existence. The strictly convex function exp(x) has infimum zero but never attains it. Add an attainment assumption before concluding a unique minimizer. No dataset or empirical threshold answers this formal implication.",
+        "finding": "Separates existence from uniqueness and uses a counterexample."
+      },
+      {
+        "scenario": "R19",
+        "type": "sound formal argument",
+        "input": "If a strictly convex function attains its minimum on a convex domain, is the minimizer unique?",
+        "actual_answer": "Yes. Two distinct minimizers would have a midpoint in the domain whose value is strictly below the minimum, a contradiction. This proves uniqueness under the stated attainment and domain assumptions; no extra empirical gate is needed.",
+        "finding": "Preserves a sound bounded argument without inventing a research gap."
+      },
+      {
+        "scenario": "R20",
+        "type": "statistical dependency counterexample",
+        "input": "Does failure of a group-mean descriptor rule out prediction from individual features?",
+        "actual_answer": "No. Let C be equally likely -1 or +1 in every group and G=C. Every group mean is zero, while C predicts G exactly and a pair product C_i*C_j predicts G_i*G_j. The mean descriptor is one operationalization; its success is not a necessary dependency for every prediction route.",
+        "finding": "Counterexample blocks an unsupported universal gate; not an empirical discovery."
+      },
+      {
+        "scenario": "R21",
+        "type": "systems decision",
+        "input": "A prototype measures 40 ms versus a baseline at 50 ms on one warm-cache trace. Does this justify deployment?",
+        "actual_answer": "The measured advantage is scoped to that trace and cache state. A deployment decision needs the actual service objective and a matched comparison on its relevant workload/resource conditions. Investigate the decision-bearing uncertainty; do not assert general benefit, authorize deployment or prescribe unrelated experiments.",
+        "finding": "Connects a scoped result to a decision while retaining unknown scope and authority."
+      }
+    ],
+    "independent_evaluation": "NOT RUN",
+    "first_time_human_listener": "NOT RUN",
+    "before_after_behavior_improvement": "NOT CLAIMED"
+  },
+  "limits": [
+    "Expected scenarios and passing structural tests do not establish model generalization.",
+    "Author self-review is not an independent or blind evaluation.",
+    "Budget counts are UTF-8 bytes, not tokens; optional read paths may change.",
+    "No experiments, scientific approvals, client reload, commit or push performed."
+  ]
+}

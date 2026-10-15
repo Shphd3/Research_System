@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "worker": 3,
+  "model": "s7",
+  "records": 256,
+  "valid_targets": 4096,
+  "model_optimizer_updates": 0,
+  "sae_optimizer_updates": 0,
+  "parameter_versions_unchanged": true,
+  "guards": [
+    {
+      "parameter_outer_rel": 0.0,
+      "other_position_delta_ratio": 0.0,
+      "tail_vs_native_single_delta_rel": 2.378472572672763e-06
+    },
+    {
+      "parameter_outer_rel": 0.0,
+      "other_position_delta_ratio": 0.0,
+      "tail_vs_native_single_delta_rel": 2.420450073259417e-06
+    },
+    {
+      "repeat_exact": true,
+      "tail_ce_abs": 8.91823992610341e-06,
+      "qualification": "native per-position replay; pure CE; no SAE reconstruction in loss"
+    }
+  ],
+  "tail_ce_abs_max": 1.7892689308851573e-05,
+  "model_meta": {
+    "hook": "blocks.7.attn.o.output",
+    "parameter_weight": "blocks.7.attn.o.weight",
+    "delta_definition": "d(next-token CE)/d(raw attention output)"
+  },
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "seconds": 15.2271463945508,
+  "peak_allocated_bytes": 1863572480,
+  "features_sha256": "1b82669d43c47357ce92efba44dec42fd11de6ba826e90fa347bd373463a8235"
+}

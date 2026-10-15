@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-10-04T17:26:34.749613+00:00",
+  "status": "PASS",
+  "scope": "Trace older analytical audit sources across explicitly recorded resource/qualification amendments; not a new numerical result",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/train_condition.py",
+      "historical_sha256": "fef60442d8208bdd7f262c9e453867acf6dba3acc6fa5765d928b56a8448981a",
+      "preserved_source": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/before/scripts/train_condition.py",
+      "current_sha256": "ac49025809a221cdc04b46e794f3d5f6dda8011680d4a82cfd3db8ee8167608a",
+      "status": "AMENDED_METADATA_OR_RESOURCE_GATE",
+      "checked_scope": "learning_rate and settings AST identical; resource-only trainer amendment preserved separately"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1003.json",
+      "historical_sha256": "0ceded79e39d9ca7a444443ffd1e0548abe655b0a5d51105bc640cac0d875839",
+      "preserved_source": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/before_trainer_gate/configs/common_parallel_s1003.json",
+      "current_sha256": "09c9005d202279e7ba4cac67f6c70d4c1c4c394648bb4794e93430b44ee26862",
+      "status": "AMENDED_METADATA_OR_RESOURCE_GATE",
+      "checked_scope": "All scientific configuration fields identical; only resource/protected-file metadata differ"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1004.json",
+      "historical_sha256": "6089884bd2423069fb45c897c3a1488c7a875b89ebbd3e504933100f01fe0fd7",
+      "preserved_source": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/second_window_20261004T155350Z/before_trainer_gate/configs/common_parallel_s1004.json",
+      "current_sha256": "83277c8edfc4ed2c6ebd3af216385c1388a453623c94f70134539c219e38c2c1",
+      "status": "AMENDED_METADATA_OR_RESOURCE_GATE",
+      "checked_scope": "All scientific configuration fields identical; only resource/protected-file metadata differ"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/src/capacity_model.py",
+      "status": "UNCHANGED",
+      "sha256": "1d999891e7b0caeea8aef0aba3a10df923449450d56aa68dcb8548ca0bbe4ebb"
+    }
+  ]
+}

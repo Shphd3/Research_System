@@ -1,0 +1,38 @@
+{
+  "question": "persistent readable joint feature relations; not learning benefit",
+  "checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+  "data": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15",
+  "sources": [
+    "graphs/reduced_V.json",
+    "counts/total0.npy",
+    "counts/total1.npy",
+    "feature_frequency.npz",
+    "layer_contribution.csv",
+    "pair_metrics.json"
+  ],
+  "figures": [
+    "local_0_00.png",
+    "local_0_01.png",
+    "local_0_02.png",
+    "local_0_03.png",
+    "local_0_04.png",
+    "local_0_05.png",
+    "local_1_00.png",
+    "local_1_01.png",
+    "local_3_00.png",
+    "local_3_01.png",
+    "local_4_00.png",
+    "local_4_01.png",
+    "local_17_00.png",
+    "local_17_01.png",
+    "local_242_00.png",
+    "local_242_01.png",
+    "layer_contribution_heatmap.png"
+  ],
+  "node_labels": "V source-frequency,absolute support,full reduced graph depth",
+  "edge_labels": "D and V joint support; V conditional P(u|A)",
+  "heatmap": "normalized-coordinate decoder norm and mean gated z*norm; includes zeros; norm share same shape as amplitude share",
+  "independence": "one bin; original documents UNKNOWN",
+  "allowed_claim": "statistical candidate description only",
+  "render_inspection": "PASS: all16facets contact sheet; dense source0/source1 originals and complete layer heatmap inspected, no clipped labels; source tables checked"
+}

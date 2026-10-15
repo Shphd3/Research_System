@@ -1,24 +1,26 @@
 # Research Exploration Method Kernel
 
 Adapted from the pinned upstream listed in [mapping](research_exploration_mapping.md)
-and [notices](../../THIRD_PARTY_NOTICES.md). This is a shared reasoning contract,
+and [notices](../../THIRD_PARTY_NOTICES.md). This is a reasoning contract,
 not an installed skill, extra approval layer or required output template.
-AGENTS owns authority; existing skills own artifacts. Read only the applicable
-stage in the same task. Reuse verified work rather than restarting the sequence.
+AGENTS owns authority; [task owners](../skills.md) own artifacts. Read only the
+applicable stage; reuse verified work rather than restarting the sequence.
 
 ## 1. Question And Structure
 
 Start with the phenomenon, genuine uncertainty, importance and scope. Identify
-who experiences the limitation, its cost, which decision an answer changes,
-what happens without a solution, and when the benefit becomes too small.
-A researcher-prescribed method is a constraint, not a reason to invent a purpose.
+the limitation, its cost, the decision an answer changes, and the significance
+boundary.
+A prescribed method constrains the work; it does not supply its purpose.
 
 Describe what stays fixed, what varies, locality, repetition, capacity, timing
 of available information and costly failure. Priors are falsifiable claims about
 this system or data process, not names of tools, splits or validation rules.
 Mark structure observed or conjectured. When structure is unknown, an
 observational/profiling test may precede a solution mechanism.
-Owner: `research-progress-core`, discovery/refinement modes.
+For formal questions state mathematical assumptions without inventing world
+claims. Evidence may be proof, counterexample, observation, intervention or a
+system comparison, as appropriate to the claim and stage.
 
 ## 2. Explanation And Mathematical Model
 
@@ -39,10 +41,8 @@ exact objective, units/aggregation, constraint enforcement, shortcuts and collap
 supervision provenance, and operational/train/development/confirmation roles.
 No evaluation-only truth may leak through pseudo-targets, selection or fitting.
 
-A local effect does not settle cumulative training or a design choice. Name
-what additional comparison, resource normalization or assumption would bridge
-those levels. Do not demand future-stage closure for a bounded local claim.
-Owners: `research-reasoning-auditor` for closure; `problem-anchor-writer` for design.
+A bounded result does not settle a broader design choice. Name the comparison
+or assumption needed to bridge levels; do not require future-stage closure.
 
 ## 3. Mechanism Choice And Computation
 
@@ -57,7 +57,6 @@ failure. Label engineering choices honestly. An independent implementer must
 not invent outcome-changing settings: freeze them, freeze a sweep/selection rule,
 or mark the missing choice. Include input/output, architecture when applicable,
 training, inference/refusal, and evaluation. Commands/resources remain in Protocol.
-Owners: `scholar-mode`, `problem-anchor-writer`, `experiment-card-writer`.
 
 ## 4. Distinguishing Evidence
 
@@ -78,29 +77,32 @@ Report direct results before polish. Diagnose invalid measurement, implementatio
 model, prior/boundary, question/importance or insufficient evidence at the supported
 level. A failed proxy does not refute every lawful mechanism. Check finite-step
 remainders against the component actually claimed, not merely the total effect.
-Owners: experiment contracts/records and `research-progress-core` interpretation.
 
 ## 5. Update, Refine And Explain
 
-Return eligible evidence to the affected model/prior and bounded answer, then to
-its parent obligation. Distinguish refines, depends-on and coupled-with; do not
-pre-build inactive question trees. For coupled questions state a joint prediction,
-identifiability limit and what could separate them. Researcher activation and
-scientific judgment remain required; factual maintenance need not wait for them.
+Return eligible evidence to the affected claim/assumption and bounded answer,
+then its parent obligation. State what each supporting, non-supporting or
+insufficient outcome changes, leaves open, and makes worth checking next.
+Distinguish refinement, necessary dependency, chosen route and coupled questions.
+A failed proxy or one route's missing structure does not block all other routes;
+justify necessity before imposing a gate. For coupled questions state the joint
+prediction, identification limit and separator. Do not pre-build inactive trees.
+Activation and scientific judgment remain human-owned; factual work may continue.
 
 Keep one preserved round history and derived rolling summary. Audit a goal when
 repeated failures or unequal error costs expose a metric/purpose mismatch; never
 silently redefine success. Close only a settled bounded question.
 
-A new reader must understand the question, assumptions, changed object, shortest
+A reader must understand the question, assumptions, changed object, shortest
 mechanism bridge, tested relation, result and remaining uncertainty. Preserve
 source disagreements. Use figures only for a distinct evidential question;
-state units, scales, alternatives and boundary. Source math checks do not verify
-rendering or scientific reasoning. Owners: communication, sync-gate, final-report.
+state units, scales, alternatives and boundary. Math-source checks verify neither
+rendering nor scientific reasoning.
 
 ## Proportional Completion
 
-Check applicable obligations, not inactive future stages. Repair the smallest
-material gap; do not force every check into the reply or request redundant approval.
-See [regression cases](research_exploration_regression_cases.md) for expected
-behavior. Structural checks and self-review do not establish live model reliability.
+Check applicable obligations; repair the smallest material gap. Do not force
+inactive stages, reply headings or redundant approval. When reasoning rules
+change, use small cross-domain [scenarios](research_exploration_regression_cases.md)
+to review actual decisions and explanations. Structure and self-review do not
+establish independent model reliability or cross-domain scientific validity.

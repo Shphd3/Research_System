@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "gpus": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "cuda": "12.4",
+  "asset_identities": {
+    "s7_checkpoint": {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000/state.pt",
+      "sha256": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+      "bytes": 4115421500
+    },
+    "qwen_model": {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+      "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "bytes": 1192135096
+    },
+    "qwen_config": {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+      "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "bytes": 727
+    },
+    "qwen_sae": {
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "bytes": 245887459
+    },
+    "tokenizer": {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "bytes": 7031645
+    }
+  },
+  "freeze_path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/configs/freeze_manifest_v3.json",
+  "freeze_sha256": "dcd4bf7827219156bc2b376fc0a37bd17666be4804b22cf6fcb5f1c6ca722408",
+  "config_path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/configs/h2_v3.json",
+  "config_sha256": "ff0395b50f2a1ab19d6cfa7e08e482591f55decd9a5ba68125a293bfcf50c6d5",
+  "source_sha256_verified": true
+}

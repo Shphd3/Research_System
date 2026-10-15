@@ -1,0 +1,1055 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-11T17:57:04.442879+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-2zxt7",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11792,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_a17_04_r03_audit_20261012_r03_v1_full_finite_native",
+      "title_cn": "A17_04 R03 full 实际原生四角有限干预分析",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_forward_only_analysis",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/mapping_audit_results.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 26515,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/delta_stats.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9075,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/existing_trajectory.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 87084,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/cpu_preflight_provenance.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 692,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/freeze.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 37174,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full_gate.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5792,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full_parameter_rollback.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 121736,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full_interpolation_compatibility.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 784,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 197,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/gpu_replay_audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1613,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/evaluation_members.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 48769,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/parameter_rollback.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 41714,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00000/old_endpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/full_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205035,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/no_op_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205035,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/restoration_check_old.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/rollback_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2195200,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/rollback_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2194952,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/rollback_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2199277,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/rollback_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2197967,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/insert_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201113,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/insert_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204209,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/insert_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205557,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/insert_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2207220,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/interpolate_0.25.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204459,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/interpolate_0.5.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2198293,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_00240/interpolate_0.75.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2200646,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/full_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209717,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/no_op_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209717,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/restoration_check_old.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/rollback_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2198728,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/rollback_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2200008,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/rollback_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201571,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/rollback_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2199404,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/insert_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201032,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/insert_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204025,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/insert_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206888,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/insert_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2208393,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/interpolate_0.25.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205090,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/interpolate_0.5.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2200259,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/interpolate_0.75.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204711,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/old_endpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 196,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/gpu_replay_audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1613,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/evaluation_members.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 48769,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/parameter_rollback.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 40374,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00000/old_endpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/full_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205667,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/no_op_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205667,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/restoration_check_old.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/rollback_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2198816,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/rollback_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2198273,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/rollback_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2199807,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/rollback_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201559,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/insert_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206444,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/insert_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205062,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/insert_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206698,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/insert_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2207249,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/interpolate_0.25.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2207457,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/interpolate_0.5.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2200107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_00240/interpolate_0.75.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201587,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/full_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209524,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/no_op_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209524,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/restoration_check_old.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/rollback_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204312,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/rollback_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2203170,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/rollback_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201840,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/rollback_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2202100,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/insert_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206768,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/insert_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204675,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/insert_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2207741,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/insert_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2208513,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/interpolate_0.25.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2207976,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/interpolate_0.5.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201912,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_43/step_01200/interpolate_0.75.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206266,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 196,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/gpu_replay_audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1614,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/evaluation_members.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 48769,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/parameter_rollback.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 40470,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00000/old_endpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/full_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2198555,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/no_op_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2198555,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/restoration_check_old.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/rollback_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2191510,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/rollback_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2192998,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/rollback_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2195981,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/rollback_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2196259,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/insert_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2203103,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/insert_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205985,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/insert_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204922,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/insert_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2204675,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/interpolate_0.25.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206213,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/interpolate_0.5.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2196867,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_00240/interpolate_0.75.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2195608,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/full_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206616,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/no_op_reversed.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206616,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/restoration_check_old.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2209107,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/rollback_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2197257,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/rollback_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2199982,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/rollback_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2200633,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/rollback_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2197312,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/insert_q_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2203569,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/insert_k_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205725,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/insert_v_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2205755,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/insert_o_proj.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2206633,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/interpolate_0.25.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2207075,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/interpolate_0.5.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2199479,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_71/step_01200/interpolate_0.75.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2201948,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_a17_04_r03_audit_20261012_r03_v1_full_o_qkv_four_state_dev80",
+      "title_cn": "A17_04 R03 固定80DEV四状态O与QKV表征桥",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_native_representations",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/representation_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12349,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/representation_analysis.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 901,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/representation_per_record.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18327,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/representations/full_reversed.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1230977,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/representations/insert_o_proj.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1228654,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/representations/old_endpoint.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1228823,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/step_01200/representations/rollback_o_proj.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1231283,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

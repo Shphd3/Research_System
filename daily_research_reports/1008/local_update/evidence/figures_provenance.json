@@ -1,0 +1,375 @@
+{
+  "created_by": "figures_1008; root thread 01a10a2a-b783-7752-9149-ed2ffd48a40a",
+  "kind": "derived selected evidence and figures; not canonical scientific judgment",
+  "checkpoint_state_sha256": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+  "checkpoint_training_tokens": 33000000000,
+  "model_updates": 0,
+  "GPU_jobs": 0,
+  "attachment_hashes_match": true,
+  "source_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/finite_panel_summary.csv",
+      "sha256": "cb206ef355903aa82d1e63933707c144b2694a6f5f38d6454f8c27afae09e8df",
+      "bytes": 13814
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/endpoint_summary.csv",
+      "sha256": "ff9a5a0894fd7d4463d0fef8eb2d2cc6baea7944525e79ca6ea1f9ccac95b155",
+      "bytes": 26467
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/finite_two_component_attribution.csv",
+      "sha256": "e60803324aa8e86a6e29813e42848b5cce4c79a34824633a8edb9887211ce9cf",
+      "bytes": 14682
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/analysis/primary_by_condition.csv",
+      "sha256": "ed5a653cd800da0d9b24daee225efb4067a06bba800a2486bcafbc9b85b8edf7",
+      "bytes": 73596
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/analysis/primary_by_family.csv",
+      "sha256": "d9c59c2046912fe32c8da3dd69396655be8ed2fefa588c58eecf007a4e6bd725",
+      "bytes": 3048
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/analysis/verdict.json",
+      "sha256": "4d3950d48d53bfb2e642991783aede02034f59857088949896801c86ec6eb080",
+      "bytes": 3877
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/registration.json",
+      "sha256": "ab201f81cdcfa9ff9b5be7e745d7125ffe4f7908df3d8727f1b479c8c397616c",
+      "bytes": 4887
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/environment.json",
+      "sha256": "16ffd42241604912b0cc05de8099c7d80c60df381de482790fe1efad4b04adb8",
+      "bytes": 601
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/measurement_complete.json",
+      "sha256": "e3ee791665dd7e3e80bdaae50891fb51fe2f7a68720a20650a4d1497bd102f26",
+      "bytes": 567
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/dataset_manifest.json",
+      "sha256": "0ce194caef7b331689b8e1d0612ddb7bb3eb8ad230337c9adb7071fff05371ed",
+      "bytes": 108454
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_panel.py",
+      "sha256": "56b7b200a97c228d522f81b48751a7b36df500f16883122e55b82592b953bf5a",
+      "bytes": 6959
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_replay.py",
+      "sha256": "8b5a0127e904310c879f4795d1b09f3f2f6b43da768dd4534779392372db6c4a",
+      "bytes": 12857
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/sae_displacement.py",
+      "sha256": "ace014ea8ea6702590f616cd53f2f249cdee47e913c6f954ba7823160242802a",
+      "bytes": 7728
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/receipt.json",
+      "sha256": "263bc4ebe00c03e77d7e50da3e8bf2e19add069743436992dd7218e9319e611f",
+      "bytes": 1235
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/registration.json",
+      "sha256": "ce27bb08ea0fd017c634fc859eb8941eea72ba93398e00dc8d5d1831d9dc2ae8",
+      "bytes": 1327
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/effects.npz",
+      "sha256": "a1c78e4d3df7f13c71fceda4f59f4d8e30a665c80e3a97b4717b05b9dd5d3d43",
+      "bytes": 1771938
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/panel_metadata.npz",
+      "sha256": "2aa1711699d34c7b6619193f9264bd433e2287f4f293c39d4bdb3a05a8a49ab7",
+      "bytes": 787430
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/effects.npz",
+      "sha256": "33f1ffbe4e4ca427444ebd6dc677ad50c201a470ffe2d84022482b562d394756",
+      "bytes": 684082
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/panel_metadata.npz",
+      "sha256": "2ee017d5176fb4d81b68cfea8690c5b221a95587da6ef7a09445ef77242909fc",
+      "bytes": 83164
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/panel_freeze.json",
+      "sha256": "3f87da9764ddebca72dc2ffbb6f4ac4fa2f0bb9f867faff9a2c071f768429de7",
+      "bytes": 1647
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/receipt.json",
+      "sha256": "d8dd16b7b98c79e9022bd38a05200b89b054394c6ccfe2ae23470bac40028c5f",
+      "bytes": 1896
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/endpoint_arrays.npz",
+      "sha256": "c3341fa8108de601e8b9280d6694000e36639bbaa6ebc040a4dd08b478b42a6c",
+      "bytes": 3860636
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/qualification.json",
+      "sha256": "5c9315e8a9977db819ecdd1fac23738c879a98b73de498949263cd865328df43",
+      "bytes": 282
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/sae_displacement_01/registration.json",
+      "sha256": "1bb9c852ff4e07a68d24314a93d39fb358983ff5faebb4fd0f3cc59b82874b5c",
+      "bytes": 1566
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/source_mean_gradients.npy",
+      "sha256": "81ec5a1451b61e8b78a5505d3c06aff574aa48e1405b35ce709d1fc3ef5a0eae",
+      "bytes": 67108992
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/atom_sets.json",
+      "sha256": "a56f21a765707f030269ac1c3dfa83de47cb0983c0a3acbbd6217183a0bb7375",
+      "bytes": 15138
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/fit_readouts.npz",
+      "sha256": "cbe8ca0a8f6bbaed736276c82fce5079251484177de9ddd688ff6eec759214cf",
+      "bytes": 6649866
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/fit/shard_0/decoder.npy",
+      "sha256": "0904c7488b1dacbf334438944f5698a17f9d95e9247288c412a5d6a7d30f15a2",
+      "bytes": 122880128
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/analyze.py",
+      "sha256": "3790c3e8af511f6056e742e7592ded2790d4ec870f7d65bec9f275244c2b3288",
+      "bytes": 11551
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/scripts/build_existing_figures.py",
+      "sha256": "3c19f8f291e33515a070009b381d62df3aa37e786b64ef2e7379d38b1f8359f6",
+      "bytes": 32603
+    }
+  ],
+  "source_column_mapping": {
+    "controlled": "B_I -> mean_finite_loss_delta_nat; group mean checked against verdict.point; existing verdict.interval_95 preserved",
+    "natural": "mean_delta_loss -> heatmap I; conditional_lo/hi -> existing interval; event_adverse_fraction_gt_1e_5 -> 100*value percent; event_unresolved_fraction_1e_5 -> 100*value percent; records*16 -> exact event count",
+    "endpoint": "dynamic_pooled_rse -> sum residual energy/sum true displacement energy within source/step/stratum, verified in sae_displacement.py",
+    "components": "adverse_component_total_help_fraction_1e_5 -> 100*value percent; random31 denotes seed31 basis truncated to32 columns",
+    "activity": "fit_frequency -> positive activation count/positions; fit_positive_amplitude -> positive coefficient sum/positive activation count; original selected order retained",
+    "spectrum": "SVD existing decoder[:,selected_common64]; s^2/sum(s^2); no model invocation"
+  },
+  "summary": {
+    "rank32_decoder_column_energy_fraction": 0.7128989035985315,
+    "dictionary_sha256": "0904c7488b1dacbf334438944f5698a17f9d95e9247288c412a5d6a7d30f15a2",
+    "gradient_figures": "complete; raw main and unit_norm sensitivity retained",
+    "source_svd_object": "four aggregated source gradients only"
+  },
+  "event_arrays_preserved": {
+    "path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/effects.npz",
+    "metadata_path": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/panel_metadata.npz",
+    "readout_selection": "part==1",
+    "records": 1024,
+    "positions_per_record": 16,
+    "events_per_source_step": 16384,
+    "fields": {
+      "docs": "record row id in selected.jsonl",
+      "positions": "0..15 per-record evaluation position index (actual contexts 14,30,...,254)",
+      "domains": "0..3 in DOMAINS order",
+      "effect_keys": "source__full_step or source__half_step; actual finite CE difference, nat/target"
+    },
+    "policy": "arrays remain with execution owner; no large per-event array or raw event CSV copied into Git"
+  },
+  "new_statistics": "plotting script adds no test or interval; existing tables and deterministic decoder SVD only. Separately authorized gradient audit is recorded below and owns its new conditional intervals.",
+  "font": {
+    "runtime_path": "/tmp/1008_NotoSansCJKsc-Regular.otf",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "copied_to_repository": false
+  },
+  "outputs": [
+    {
+      "path": "figures/aux01_controlled_lines.png",
+      "sha256": "e902dc3d354c565f95c2aba0fe3ff3e78a781a9207613281bc4465c0aa64bce8",
+      "bytes": 170183
+    },
+    {
+      "path": "figures/aux01_controlled_lines.svg",
+      "sha256": "44fd4881c47b6b620ea48d30eb3d3234a75d045dcd74bf933a2ebbf547249766",
+      "bytes": 152709
+    },
+    {
+      "path": "figures/aux02_natural_mean_adverse.png",
+      "sha256": "e85193a677bcb7592cde0fe3596a405d0ab95498953274671fdac85c5ad74310",
+      "bytes": 203216
+    },
+    {
+      "path": "figures/aux02_natural_mean_adverse.svg",
+      "sha256": "6aa96a15740173f8bbff6137c31b58d0252d9be2c380c1aa25afca0da6abbe5f",
+      "bytes": 160162
+    },
+    {
+      "path": "figures/aux03_sae_three_checks.png",
+      "sha256": "d0326aaca63231c357a79bb37e19710d9d6aa4670553a4929d0f9c4288010039",
+      "bytes": 219490
+    },
+    {
+      "path": "figures/aux03_sae_three_checks.svg",
+      "sha256": "31ef914b9b521c8068860b378a7d46861ab94874a5619417297e3ba84b04bec9",
+      "bytes": 165489
+    },
+    {
+      "path": "figures/main01_controlled_heatmap.png",
+      "sha256": "df78d2f2d6b982373a586bc61b9e529864fbaefa17194804b7629aa84862c634",
+      "bytes": 186727
+    },
+    {
+      "path": "figures/main01_controlled_heatmap.svg",
+      "sha256": "20bae91e86dc236c96580d570eab963f95e56ffa1e6933fdee7d1a5ceeb36c74",
+      "bytes": 137267
+    },
+    {
+      "path": "figures/main02_natural_loss_heatmap.png",
+      "sha256": "9c7380bb01bc2df1cbcfc6a4c7f83e8d46ebd14090cad0fccbfbfc8c53ac4202",
+      "bytes": 247269
+    },
+    {
+      "path": "figures/main02_natural_loss_heatmap.svg",
+      "sha256": "0ac43244583db2efcb3c4451a5f76339580442a4517d7881e013e085a64c6ac8",
+      "bytes": 160010
+    },
+    {
+      "path": "figures/main03_sae_fidelity_heatmap.png",
+      "sha256": "5a975e59c0e889a400ef7b1152bff0632c912a498d58aa433d23353a27ffd440",
+      "bytes": 213784
+    },
+    {
+      "path": "figures/main03_sae_fidelity_heatmap.svg",
+      "sha256": "58574a165c8bd90e6bffaf01465f201ee09f55dcc5783537f50efbecf7ab74e9",
+      "bytes": 161221
+    },
+    {
+      "path": "figures/main04_sae_components_heatmap.png",
+      "sha256": "f62eaf1278452caf05af134f67f39158202ccace9cb85cffa3aa28fdc25437d1",
+      "bytes": 174640
+    },
+    {
+      "path": "figures/main04_sae_components_heatmap.svg",
+      "sha256": "db51ba5e4be018a2959bd099f33dbeb0e51274a7a3be54da69168377f729b87b",
+      "bytes": 146515
+    },
+    {
+      "path": "figures/main05_sae_atom_activity.png",
+      "sha256": "9233ea71ab68d6546033cee06d9267b6ca15c0499b0ca103c976890f3178fcf9",
+      "bytes": 426410
+    },
+    {
+      "path": "figures/main05_sae_atom_activity.svg",
+      "sha256": "c16a308f744c09ee691bd9df7fa9c2977b4d6b5b82a87e8889bbe4a42dc6fceb",
+      "bytes": 234430
+    },
+    {
+      "path": "figures/main06_gradient_geometry_vs_finite_heatmaps.png",
+      "sha256": "3eccf21d7d1b5b99d2fc7ae239f8f11538472f54ba55229b4b3ac439ccfc28c5",
+      "bytes": 345070
+    },
+    {
+      "path": "figures/main06_gradient_geometry_vs_finite_heatmaps.svg",
+      "sha256": "62b9197ea283e3fc0b1a050321624192e3482a42b743346c5fe68f2543a6f6a6",
+      "bytes": 217817
+    },
+    {
+      "path": "figures/main07_gradient_components_response_heatmaps.png",
+      "sha256": "6b9aa06aa63fa3af38758c2c800c31bb58691bf43b37d41d73eeffc4d120de53",
+      "bytes": 311706
+    },
+    {
+      "path": "figures/main07_gradient_components_response_heatmaps.svg",
+      "sha256": "c2ac8714a2d381b2abd244e94c6b21cdf0ec5ecd5a73288d0b9809f82cdd29d8",
+      "bytes": 192446
+    },
+    {
+      "path": "evidence/controlled_cells.csv",
+      "sha256": "b2a65265c280f6db1275e09d44b8259e6d877b87c0814cbc96bea1e0f1ea3caa",
+      "bytes": 2427
+    },
+    {
+      "path": "evidence/controlled_rule_interaction.csv",
+      "sha256": "7189d4ba2669e43555db9985f71b45fb7769588ce05311489a8816c34c0135b7",
+      "bytes": 506
+    },
+    {
+      "path": "evidence/gradient_component_loadings.csv",
+      "sha256": "f7e02bb0eb4f5e244c27065a6c0e3e35db0aefd3b019fc95ef0fd284dcae131b",
+      "bytes": 2056
+    },
+    {
+      "path": "evidence/gradient_component_response_correlations.csv",
+      "sha256": "ae5114807baf83ab838dc7274761b3a7d35edc2d7cfa06307eb30d618e465fb3",
+      "bytes": 1119
+    },
+    {
+      "path": "evidence/gradient_component_spectrum.csv",
+      "sha256": "edf4ec26300da41e1b6d52d377f43665654dafb7168d412232d0f708a7a74453",
+      "bytes": 1165
+    },
+    {
+      "path": "evidence/gradient_cumulative_vs_finite.csv",
+      "sha256": "e62f7da78eaa829de29ae586f1ba08f02175c76b9c46253000fb56c35c5ee73d",
+      "bytes": 15379
+    },
+    {
+      "path": "evidence/gradient_geometry_vs_loss.csv",
+      "sha256": "b2f6c508e987fe95f8e23cb0c9dad4db3c813dfeb410a8c3da5547a81d94b46a",
+      "bytes": 1968
+    },
+    {
+      "path": "evidence/natural_cells_full_and_half.csv",
+      "sha256": "ff7a916f5f479ce0835aca47eedde8ea17d8911176b415d755cf404e09c7161a",
+      "bytes": 14989
+    },
+    {
+      "path": "evidence/natural_cells_main16.csv",
+      "sha256": "011e7543bb3dc087102f4f0ef22a369ef7e652740b6aeeae3e477ebb6dbad5ae",
+      "bytes": 7687
+    },
+    {
+      "path": "evidence/sae_component_pooled.csv",
+      "sha256": "4966cfc67906ba91a0acb77eb658a47687dfdf8de2b2352e17d9d09bb4c6f936",
+      "bytes": 5571
+    },
+    {
+      "path": "evidence/sae_endpoint_pooled.csv",
+      "sha256": "c65480429e87ff0a2805e100f8177585363f366c0d4657ed492d2cac006b2d2d",
+      "bytes": 8388
+    },
+    {
+      "path": "evidence/sae_selected_common_activity.csv",
+      "sha256": "887bced3b4fdc5848c7eb384f9ba301e45d0319129480729dffea7606e34c478",
+      "bytes": 51504
+    },
+    {
+      "path": "evidence/sae_selected_decoder_spectrum.csv",
+      "sha256": "13d4a0ec2bd5796b08ea9ede5ddf678150b112fb21c521bea72fbd9d94dcc1b0",
+      "bytes": 9788
+    },
+    {
+      "path": "evidence/sae_static_reconstruction.csv",
+      "sha256": "0a33c40536d96121ea5cd2c2486778db726780c2a2bab9e22165acf0817acf19",
+      "bytes": 201
+    }
+  ],
+  "separately_authorized_gradient_audit": {
+    "recipe_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_recipe.json",
+    "recipe_sha256": "5569a4565b47a9e3a77fc656fd61ed9260444ee95aae97a7df7e4f184a137184",
+    "receipt_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_receipt.json",
+    "source_column_mapping": "gradient_cosine -> parameter geometry; finite_response_pearson -> response correlation; receiver_response_pearson -> derivative component correlation; finite_pearson -> cumulative first-order versus finite I; cumulative_gradient_energy_fraction -> basis-specific source energy",
+    "intervals": "new post-hoc fixed-source record bootstrap belongs to gradient audit; figures show point estimates; complete conditional intervals in gradient_cumulative_vs_finite.csv"
+  }
+}

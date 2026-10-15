@@ -1,0 +1,300 @@
+{
+  "status": "PASS_WITH_EXPLICIT_SCOPE",
+  "created_at_utc": "2026-10-04T17:32:07.828456+00:00",
+  "processing_agent": "/root/daily_summary_1004",
+  "authorship_disclosure": "Read-only final reading audit. Reviewer authored the eight result documents and is not presented as their independent scientific reviewer; raw group numerical recomputation was independently implemented relative to the group producer. Cognition synthesis belongs to root.",
+  "scope": "cognition_update English/Chinese sections 1-6 only; eight new router_shrinkage and probe_33b_group Summary/Detailed documents in full. Excludes cognition headings/preamble, section 7, research_process, and window-end execution claims.",
+  "document_scoped_sha256": {
+    "/data/250010109/Research_System/daily_research_reports/1004/cognition_update.md": "7b584f42b8500094f7dcfbc7cd7385713bf9060ce65ba8328edecf050d36a4dc",
+    "/data/250010109/Research_System/daily_research_reports/1004/cognition_update_cn.md": "9897382ccd3c2eea6f58b114c789247e158339638917951a1cc835b5a4c9c4ab",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_summary.md": "370938174553dca1343175b10c4709e2a39f6cf2dd603aefac2c25a746f926b5",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_summary_cn.md": "a9bcfd8f9e46e85b25d98288a4845ce7359e05e75f38a747dceb0c378a57aee6",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_detailed.md": "c59042e403022bb72101247dccc10a76850d044a56ed6cfa3e02015fc11207a9",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_detailed_cn.md": "3be2c9d42fb67de730c9ace2287f0f7bdd06c7db55c7be13637e8915a6a93039",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_summary.md": "0e8e0521e7676ecabf0e07937723ae89999547e17b3ae282fe5d6d18d0623e6a",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_summary_cn.md": "654c0634921366855b2c0647db39bc9f56fb7acf606b3f8684b9f9fe357e4262",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed.md": "c1bfbc957018be4b998ebd06bc621fea514fa3f7a54e7ddc286215c7d5163838",
+    "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed_cn.md": "ba1072a762190419cd9ac4894301662c41f96d19ea7f096106a6210c0b05bfee"
+  },
+  "source_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/evaluation_all_alpha.csv": "c8c4ed249449eff3ccb2233e5888f7b7e1f020fba503a95474b1223af436bcf3",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/evaluation_selected_alpha.csv": "023b8455d7eda05751a268f3e4ec7128075a951cbbdfe16a1a9785e275de5c08",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/cv_table.csv": "4ecdf8e20c26f38e3b21d15fb85eb62d0254d6217be44967eb9f5fb8d15eef78",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/receipt.json": "791492c453f07390424a1c79b9b4d6948e0aa555431be3a522bd1123a56aad44",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_group_decomposition_20261004/summary.csv": "bc0a5e17084c06bacacdaf8f4e19591e1cc9989ba7baad0035ec070b283f1eff",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_group_decomposition_20261004/receipt.json": "7af84ae3944f4eaaf37af75fe71f3d6e28c65d237d11757c70be361394d4f24c",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/policy_switch_audit.csv": "2169725cc773b7e0470bb995a2c14e54548121ce606862799b5b34a2bae0ffb7",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/scientific_bridge_checks.json": "bbfaa710d0f6e0661d857e1537ff5676aa265fad0722f347541a4b172c72df24",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/future_sign_certificate.md": "3109eec4bcf0c7a2d7ba4dd6137ad954b50d17b90bb1b91ba3fdbf9a044139e7",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/future_sign_certificate_cn.md": "906fc1c2d61aa3131f44f125923103e95e40a79b367d365f25fb98df74a033d4",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/decision_value_bridge.md": "6bdf0587fa02f3c7e93e5c10cd51ddf6479d1f1b8e08314dc46f3153f5a2b260",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/decision_value_bridge_cn.md": "06565e230732fcb5f310dee17f3ec879210191746a4ab7391843b3db2be2152f",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/adam_and_readout_audit.md": "6068e346521a333f8f3e898725cfe55b3439dbd72cb139900837f613d96cb7be",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/adam_and_readout_audit_cn.md": "0ddfd56db1a67cf56f4f7b84f91425b1da5f9442c940e8ff4a2e5e016899daa2",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/train_condition.py": "ac49025809a221cdc04b46e794f3d5f6dda8011680d4a82cfd3db8ee8167608a",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1003.json": "09c9005d202279e7ba4cac67f6c70d4c1c4c394648bb4794e93430b44ee26862"
+  },
+  "local_links": {
+    "occurrences": 158,
+    "missing": []
+  },
+  "external_link_check": {
+    "url": "https://proceedings.mlr.press/v37/maclaurin15.pdf",
+    "status": "Retrieved primary PMLR PDF; title and section 2 support only the cited differentiation-through-training attribution, not a new empirical mechanism.",
+    "title": "Gradient-based Hyperparameter Optimization through Reversible Learning",
+    "new_literature_search": false
+  },
+  "math_source_check": {
+    "command": "python tools/check_markdown_math.py daily_research_reports/1004/cognition_update.md daily_research_reports/1004/cognition_update_cn.md daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_summary.md daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_summary_cn.md daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_detailed.md daily_research_reports/1002/candidates/ntp_representation_update_channels/router_shrinkage_detailed_cn.md daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_summary.md daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_summary_cn.md daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed.md daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed_cn.md",
+    "exit_code": 0,
+    "output": "SOURCE PASS: 10 file(s), 0 issue(s); rendering and mathematical truth NOT checked.",
+    "rendering_checked": false,
+    "mathematical_truth_not_inferred_from_syntax_pass": true
+  },
+  "bilingual_display_formulas": [
+    {
+      "pair": "/data/250010109/Research_System/daily_research_reports/1004/cognition_update",
+      "display_formulas": 6,
+      "equivalent_after_whitespace_text_label_and_punctuation_normalization": true
+    },
+    {
+      "pair": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed",
+      "display_formulas": 3,
+      "equivalent_after_whitespace_text_label_and_punctuation_normalization": true
+    }
+  ],
+  "bilingual_numeric_tables": [
+    {
+      "pair": "router_shrinkage_summary",
+      "numeric_rows": 0,
+      "identical": true
+    },
+    {
+      "pair": "router_shrinkage_detailed",
+      "numeric_rows": 9,
+      "identical": true
+    },
+    {
+      "pair": "probe_33b_group_summary",
+      "numeric_rows": 3,
+      "identical": true
+    },
+    {
+      "pair": "probe_33b_group_detailed",
+      "numeric_rows": 190,
+      "identical": true
+    }
+  ],
+  "complete_group_reading_ledger": [
+    {
+      "file": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed.md",
+      "rows": 184,
+      "means_and_interval_endpoints_checked": 1104
+    },
+    {
+      "file": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/probe_33b_group_detailed_cn.md",
+      "rows": 184,
+      "means_and_interval_endpoints_checked": 1104
+    }
+  ],
+  "manifest_hash_checks": [
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/second_window_20261004/group_decomposition_protocol.md",
+      "prefix": "b3781394c3dff15dca2fc415b93c9d850706cc8f69c5d4d24322d277dd304034",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/probe_33b_group_decomposition_20261004.py",
+      "prefix": "708e8319d1cdcc425fc27031d5c9f4e6c66ee719e553bacc4cfcebdd48bf0c4c",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_policy_group_decomposition.py",
+      "prefix": "3251c2077c47c6e1adb34a6717597076916960de0a8f45f04f21307b5d4fbf1a",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_group_decomposition_20261004/registration.json",
+      "prefix": "607b288da930cf2b8370d5819bf936d72099287a42ef9856c3323474da2ad7b2",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_group_decomposition_20261004/receipt.json",
+      "prefix": "7af84ae3944f4eaaf37af75fe71f3d6e28c65d237d11757c70be361394d4f24c",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_group_decomposition_20261004/summary.csv",
+      "prefix": "bc0a5e17084c06bacacdaf8f4e19591e1cc9989ba7baad0035ec070b283f1eff",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/group_decomposition_independent_audit.py",
+      "prefix": "708eb2568b253ce44d8604bda107f2bfe385650a00b9b149adc4fcf7a44be303",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/second_window_20261004/group_decomposition_independent_audit.json",
+      "prefix": "034217209b4b810f686859322b9f99e16befd99795f4de6d84994c39b0cab5d5",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/registration.json",
+      "prefix": "e4fd6ee22698",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/crossfit_router_shrinkage_20261004.py",
+      "prefix": "a25dc736e56b",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/fold_assignment.npz",
+      "prefix": "794aefaec08d",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/cv_table.csv",
+      "prefix": "4ecdf8e20c26",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/selection_freeze.json",
+      "prefix": "4238e426921f",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/evaluation_all_alpha.csv",
+      "prefix": "c8c4ed249449",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/evaluation_selected_alpha.csv",
+      "prefix": "023b8455d7ed",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/receipt.json",
+      "prefix": "791492c453f0",
+      "matches": true
+    }
+  ],
+  "verified_key_counts": {
+    "all_alpha_rows": 600,
+    "selected_rows": 120,
+    "selected_pooled": 24,
+    "selected_exact_common_zero_mean_and_CI": 22,
+    "fit_selections": 12,
+    "fit_selected_alpha_zero": 11,
+    "nonzero_alpha_pooled_grid": 96,
+    "negative_nonzero_alpha_point_estimates": 95,
+    "positive_nonzero_alpha_point_estimates": 1,
+    "positive_unselected_case": {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "train_bank": "B",
+      "evaluation_bank": "A",
+      "case_role": "cross_source",
+      "alpha": "0.1",
+      "selected_by_OOF": "False",
+      "selected_alpha": "0.0",
+      "receiving_domain": "pooled",
+      "records": "1024",
+      "events": "16384",
+      "priorDEVexposed": "True",
+      "inference_scope": "posthoc_DEV_conditional_original_2000_record_bootstrap_no_refit",
+      "policy_delta_ce": "-0.0015783918905913279",
+      "policy_delta_ce__ci_lo": "-0.0017502221101194505",
+      "policy_delta_ce__ci_hi": "-0.0014106806372053545",
+      "policy_absolute_ce": "3.4970273842649577",
+      "policy_absolute_ce__ci_lo": "3.447528305758432",
+      "policy_absolute_ce__ci_hi": "3.546491534856421",
+      "gain_vs_alpha1": "0.00036907280428882935",
+      "gain_vs_alpha1__ci_lo": "0.0002717062440291098",
+      "gain_vs_alpha1__ci_hi": "0.0004620568816500814",
+      "gain_vs_alpha0_fixed": "1.297873240110577e-06",
+      "gain_vs_alpha0_fixed__ci_lo": "-3.7674883767292387e-06",
+      "gain_vs_alpha0_fixed__ci_hi": "6.172238501155861e-06",
+      "common_selection_rate": "0.99639892578125",
+      "common_selection_rate__ci_lo": "0.99530029296875",
+      "common_selection_rate__ci_hi": "0.997314453125",
+      "switch_rate": "0.00360107421875",
+      "conditional_switch_extra_cost_vs_common": "-0.00036041279942324907",
+      "switch_rate_times_conditional_extra_cost": "-1.297873240110577e-06",
+      "switch_identity_residual": "0.0",
+      "switch_diagnostics_inference": "point_only; conditional cost undefined when no switch"
+    },
+    "OOF_rows": 300,
+    "OOF_alpha1_worse_than_own_alpha0_cases": 12,
+    "group_conditions": 184,
+    "group_cross_source": 92,
+    "group_domain_residual_positive_CI": 184,
+    "group_category_residual_positive_CI": 184,
+    "group_fixed_common_negative_CI": 184,
+    "domain_composition_positive_CI": 184,
+    "category_composition_positive_CI": 183,
+    "domain_to_category_CI_includes_zero": 184
+  },
+  "schedule_and_exact_arithmetic": {
+    "phase_lr_sums": [
+      0.28385170920482405,
+      0.2059436131716912,
+      0.10872226392114483,
+      0.04295772892868124
+    ],
+    "phase1_to4_ratio": 6.607698225296708,
+    "shared_updates": 4608,
+    "private_expert_active_updates": 1536,
+    "extra_C_copy_parameters": 4718592,
+    "source_old_risk": 0.405,
+    "one_future_step_old_risk": 0.57245,
+    "immediate_gap": -0.095,
+    "future_gap": 0.07245
+  },
+  "manual_boundary_review": [
+    {
+      "topic": "95/96 versus 24/22",
+      "result": "PASS",
+      "basis": "Full candidate grid point signs are distinct from FIT-selected evaluation count; the single positive candidate is unselected and its interval includes zero. Selected 22 zeros are exact action identities, not equivalence tests."
+    },
+    {
+      "topic": "Original model versus OOF folds",
+      "result": "PASS",
+      "basis": "Both languages distinguish alpha1 fold predictions from original all-FIT predictions. Only final DEV alpha1 reproduces the old event choices. OOF selected minimum is not an unbiased estimate; smaller folds and fixed lambda change relative regularization."
+    },
+    {
+      "topic": "184 pooled versus each group",
+      "result": "PASS",
+      "basis": "Positive group residuals are weighted pooled comparisons. No claim of positivity in each individual category/domain. Group metadata are explanatory, not deployment inputs; positive residuals do not beat common."
+    },
+    {
+      "topic": "Inference and authority",
+      "result": "PASS",
+      "basis": "Exposed DEV/post-hoc status, frozen-fit conditional bootstrap, no refitting/multiplicity, dependent conditions, and Unknown human judgment retained in both languages."
+    },
+    {
+      "topic": "Complete-state future certificate",
+      "result": "PASS",
+      "basis": "Sign iff uses every direction and nonzero current gradient in one continuous complete-state coordinate system with fixed future program and smooth branch; positive collinearity c>0. Restricted subspaces/finite actions do not require full-space collinearity; finite changes need remainder control. No empirical estimate of those sensitivities is claimed."
+    },
+    {
+      "topic": "Decision value and optimizer algebra",
+      "result": "PASS",
+      "basis": "Population R_fixed >= R_X >= R_oracle distinguished from sample oracle; exact toy counterexample not a model mechanism. Adam moment identity uses prescribed external streams, fixed positive weights, zero initial moments, synchronized clocks and conditional rather than already-scaled private moments."
+    },
+    {
+      "topic": "Trajectory readout",
+      "result": "PASS",
+      "basis": "LR sums are allocation descriptors, not parameter displacement or learning amount. Exact acquisition/transfer/forgetting identity and intervention-versus-path distinction preserved."
+    }
+  ],
+  "figure_reading_check": {
+    "file": "/data/250010109/Research_System/daily_research_reports/1004/figures/finite_reversal.png",
+    "sha256": "cb518cd484809293f4f7b5d33b1b24594cd3500a64acde69a24172bdacfe49f9",
+    "result": "Existing raster visually matches text: green accepted source, red future state, gains -0.095/+0.07245, eventual difference tends to zero; explicitly an analytical illustration. This is not Markdown/TeX rendering verification."
+  },
+  "blocking_findings": [],
+  "document_edits": 0,
+  "new_research_or_execution": false,
+  "remaining_owner_work": "Root owns final cognition preamble/section 7 and research_process; not audited here. If sections 1-6 or source results change, refresh this scoped audit."
+}

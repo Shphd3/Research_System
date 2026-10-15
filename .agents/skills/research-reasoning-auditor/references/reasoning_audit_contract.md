@@ -17,10 +17,11 @@ For mathematical explanations use [mechanism closure](mathematical_mechanism_clo
 
 ## Reconstruct The Inference
 
-Observation -> uncertainty -> candidate explanation versus credible rival ->
-differing prediction -> measurement/intervention -> eligible result -> bounded update.
-Do not reverse this into convenient metric -> desired change -> invented mechanism
--> retrofitted purpose. State what matters even if the favored result never appears.
+Question -> assumptions and candidate claim/alternatives -> distinguishing check
+-> eligible evidence -> bounded update -> affected decision. Use proof or
+counterexample for formal claims; observations or experiments for empirical ones.
+A convenient metric cannot supply a purpose. Explain the decision value even
+when the favored result does not appear.
 
 For each causal arrow ask what produces the effect, what mediates it, which
 assumptions matter and what alternative could do the same. Classify its basis:
@@ -28,18 +29,15 @@ derivation under stated assumptions, direct intervention, structural/temporal
 evidence, association or unsupported narrative. An exact model relationship and
 an empirical identification claim need different support.
 
-Consider relevant training history, data composition, architecture, checkpoint,
-optimization and measurement alternatives. A joint intervention may establish only
-a joint effect. Preserve informative observational evidence without calling it
-isolated causation. A theory's existence example is not its natural-data validation.
+Consider relevant state/history, sampling, system and measurement alternatives.
+A joint intervention may establish only a joint effect. Observational evidence
+need not identify causation; an existence example need not generalize empirically.
 
 ## Test Meaning And Discrimination
 
-For each proxy connect its computation -> measured property -> intended claim ->
-non-claim. Examples: linear readout success shows accessibility, effective rank
-shows concentration, sparse-feature reuse shows shared activation; none alone
-establishes model use, selective preservation or beneficial specialization.
-Several correlated proxies are not automatically independent evidence.
+For each proxy connect computation -> measured property -> intended claim ->
+non-claim. Predictive accuracy, association and intervention utility are distinct;
+correlated proxies are not automatically independent evidence.
 
 For an empirical explanation name the strongest live rival at the same level.
 A shared prediction cannot discriminate them. Specify the smallest comparison
@@ -50,10 +48,18 @@ repeat a proved example as scientific confirmation.
 
 ## Update And Communicate
 
-Update only the relation tested. Separate local attribution, finite intervention,
-unseen-data prediction and design benefit. Failed or inconclusive registered
-predictions stay failed or inconclusive; do not rename reduced benefit as net harm.
-State remaining uncertainty and the maximum supported claim before polishing.
+Update only the relation checked. A negative result weakens the tested claim or
+operationalization, not all routes to the parent goal. Distinguish necessary
+dependency from a chosen route. State what each outcome changes, leaves open,
+and motivates next; keep failed or inconclusive predictions as such.
+
+For each decisive result connect the prior judgment, actual treatment/control
+evidence (population, unit and source), surviving rival, permitted belief change
+and unproved remainder in prose. If no belief changed, say so and identify any
+measurement repair or exclusion instead. A beneficial cross-rule update does not
+locate a common function; a failed SAE explanation limits that dictionary/reader/
+intervention, not the existence of functional structure. These are different
+inference failures, not reasons to abandon all valid observations.
 
 Rewrite purpose to name the unknown, hypothesis to give a candidate mechanism and
 differing prediction, method to test that difference, conclusion to reflect actual

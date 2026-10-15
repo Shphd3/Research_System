@@ -1,0 +1,94 @@
+[
+  {
+    "sample_id": "N8_v1.cs.CL.test.000009274",
+    "source_record_id": "cs.CL/test/9274",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "e897e90619a3f3f54187a2011aea550061eb83302e2aee0cbfa22bb8550d2c90",
+    "input_ids_sha256": "4dd47f9123c124d262449c235221e7b043792cb7103f2b786e6053f789532631",
+    "domain": "computer_science",
+    "record_row": 1025,
+    "position_index": 12,
+    "input_token_position_zero_based": 206,
+    "prefix_tail_21_tokens": " are end-to-end learnable. On top of the architecture, various models have been proposed to tackle the",
+    "current_token": " the",
+    "target_token": " notorious",
+    "target_id": 42981,
+    "finite_delta_loss_nats": {
+      "computer_science": 0.003779325194884109,
+      "mathematics": 0.0005395075714247355,
+      "physics": -0.0010757271603178964,
+      "biology": 0.0019343343643001276
+    },
+    "display_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label"
+  },
+  {
+    "sample_id": "N8_v1.math.NT.test.000005479",
+    "source_record_id": "math.NT/test/5479",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "243f521e4a3d8423937ab327de19dd561d4a52f27000f0f5b598749ad8c4e182",
+    "input_ids_sha256": "17b616fca585460307f97fffe424c9aec70a5882fcd0adea0938384745203a09",
+    "domain": "mathematics",
+    "record_row": 1450,
+    "position_index": 4,
+    "input_token_position_zero_based": 78,
+    "prefix_tail_21_tokens": "ank one groups in [23] , Langlands constructs in sections 8 and 9 of [",
+    "current_token": " [",
+    "target_token": "1",
+    "target_id": 16,
+    "finite_delta_loss_nats": {
+      "computer_science": -0.0019377349913796138,
+      "mathematics": -0.0008217034069506468,
+      "physics": 0.0007059209829076707,
+      "biology": 0.00042350498305410156
+    },
+    "display_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label"
+  },
+  {
+    "sample_id": "N8_v1.physics.optics.test.000000223",
+    "source_record_id": "physics.optics/test/223",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "6792fe724b9f89a86ecee59cd9923eab2ffa43ccbefb6a8d45bb99efa83516cc",
+    "input_ids_sha256": "aa2db52281d05245c957af5fef6f5e039f1a6247763ae88b0e8d3fa253b65e0b",
+    "domain": "physics",
+    "record_row": 1697,
+    "position_index": 0,
+    "input_token_position_zero_based": 14,
+    "prefix_tail_21_tokens": "is not only enhanced but it will depend on the distance between the tip and",
+    "current_token": " and",
+    "target_token": " the",
+    "target_id": 279,
+    "finite_delta_loss_nats": {
+      "computer_science": 2.9521920978936578e-05,
+      "mathematics": 4.539749370380264e-05,
+      "physics": -0.00016681992836709014,
+      "biology": 0.00020536121274261632
+    },
+    "display_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label"
+  },
+  {
+    "sample_id": "N8_v1.q-bio.GN.test.000000039",
+    "source_record_id": "q-bio.GN/test/39",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "4cee7182b731eca10d644ae23369b3edc76cc2c63aa05330e0373f54fd68114f",
+    "input_ids_sha256": "467f741703f241eaec18bbac851b22a6824e56e2a08e795a9fe75e4f8a36f0f8",
+    "domain": "biology",
+    "record_row": 1836,
+    "position_index": 12,
+    "input_token_position_zero_based": 206,
+    "prefix_tail_21_tokens": " the time series {x n }, and then computing the periodogram (equation 5), values randomly",
+    "current_token": " randomly",
+    "target_token": " distributed",
+    "target_id": 4237,
+    "finite_delta_loss_nats": {
+      "computer_science": 0.003253640835369609,
+      "mathematics": 0.0018560338595641213,
+      "physics": -0.00400551185303577,
+      "biology": -0.004170176352211286
+    },
+    "display_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label"
+  }
+]

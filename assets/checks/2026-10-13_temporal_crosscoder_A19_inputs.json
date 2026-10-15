@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-13T02:21:40.316051+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-7l247",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11792,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "checkpoint_family_fresh_s7_lambda0p1",
+      "title_cn": "fresh S7 从头预训练checkpoint家族",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "训练家族入口",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/resolved_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11917,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/latest_checkpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 156,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/latest_milestone.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 203,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "已有token milestone入口",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_021000000000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4115421500,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4115421500,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/checkpoints",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "滚动恢复checkpoint入口",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/checkpoints/step_00130000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4115421500,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/checkpoints/step_00130000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1193,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "model_s7_fresh_lambda0p1_33b",
+      "title_cn": "精确33B token fresh S7模型及末层SAE",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "精确token milestone",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4115421500,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1211,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/resolved_config.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 11917,
+          "ok": true,
+          "role": "对应resolved config",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/s7_fresh_lambda0p1_33b",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "1003冻结对应原生源码",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/s7_fresh_lambda0p1_33b/dense_sae/model/modeling_qwen3_sae.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 13574,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "model_dense_33b",
+      "title_cn": "精确33B token Dense模型",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "精确token milestone",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3377283823,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1843,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/resolved_config.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 5136,
+          "ok": true,
+          "role": "对应resolved config",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/dense_33b",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "1003冻结对应原生源码",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/dense_33b/dense_sae/model/modeling_qwen3_sae.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12537,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_families_dense_sall_continue",
+      "title_cn": "Dense / SALL续训checkpoint家族",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "Dense/SALL续训家族入口",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/resolved_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5136,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/latest_milestone.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 203,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/latest_checkpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 156,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/sall_unit_weight_continue_from_23b_8x5090",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "Dense/SALL续训家族入口",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/sall_unit_weight_continue_from_23b_8x5090/resolved_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6191,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/sall_unit_weight_continue_from_23b_8x5090/latest_milestone.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 203,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/sall_unit_weight_continue_from_23b_8x5090/latest_checkpoint.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 156,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

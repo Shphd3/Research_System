@@ -1,0 +1,83 @@
+{
+  "stage": "limited CPU cached background audit",
+  "authorization": "user latest messages; execution is not scientific endorsement",
+  "source_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+  "anchor": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/background_audit_handoff/crosscoder_background_audit_anchor_cn.md",
+  "anchor_sha256": "21cfb9653c639575ac4334ac6a555b86dbdfea715ac4b1074ce2dc75307c847d",
+  "ETA_minutes": [
+    15,
+    25
+  ],
+  "expected_compute_minutes": [
+    1,
+    5
+  ],
+  "hardware": "current host cgroup8CPUtime cores/128GiB; no paid allocation",
+  "max_workers": 2,
+  "expected_RSS_GiB": 1,
+  "engineering_wall_cap_seconds": 900,
+  "science_thresholds": "UNCHANGED",
+  "seed": 20261014,
+  "fixed_pairs": [
+    [
+      1,
+      17
+    ],
+    [
+      1,
+      242
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "bounded_counterexample_edges": [
+    [
+      0,
+      327
+    ],
+    [
+      0,
+      10915
+    ]
+  ],
+  "controls": {
+    "max_pairs_per_high_pair": 32,
+    "selection_information": "Dfrequency and Dlist-size only; no J,V or text in selection",
+    "D_node_support_min": 200,
+    "frequency_ratio_interval": [
+      0.8,
+      1.25
+    ],
+    "D_list_size": "exact equality to each endpoint target",
+    "exclude_nodes": [
+      0,
+      1,
+      3,
+      4,
+      17,
+      242
+    ],
+    "sampling": "fixed derived seed; unique role-ordered pairs without replacement; endpoint sharing allowed and reported",
+    "shortfall": "retain shortage; do not widen matching or resample after V",
+    "V_use": "descriptive review after controls frozen; no V-based eligibility filtering"
+  },
+  "joint_delete": "fixed discovery Top10 removed once from D raw and V passed raw; exact relevant reachability reduction; compare filtering old lists separately",
+  "text_checks": "all118existing display records; use target/prefix; token mechanical class, numbered-choice/citation-year/code markers are limited descriptive flags, not semantic labels; existing class/context support concentration; no new text extraction",
+  "plots_max": 3,
+  "forbidden": [
+    "new inference",
+    "full cooccurrence computation",
+    "120Mpair reranking",
+    "GPU allocation",
+    "training",
+    "commit/push",
+    "old results/handoff modification"
+  ],
+  "output": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/background_audit_results/"
+}

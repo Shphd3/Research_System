@@ -1,0 +1,22 @@
+{
+  "O_input_identical_with_same_QKV": true,
+  "decomposition": "Da=DW*c0+W0*Dc+DW*Dc",
+  "decomposition_max_abs_residual": 7.088904613361535e-05,
+  "decomposition_relative_residual": 5.38849323932257e-07,
+  "endpoint_logit_interaction_mean": -0.3194460153579712,
+  "endpoint_logit_interaction_mean_abs": 8.367598176002502,
+  "final_h_delta_mean_norm": 86.7662188917185,
+  "mean_delta_a_norm": 227.52204545184978,
+  "mean_delta_c_norm": 222.19819700762324,
+  "mean_term_norms": {
+    "input_only": 225.48903739707217,
+    "interaction": 73.94099955242908,
+    "weight_only": 67.9383033814657
+  },
+  "n_records": 80,
+  "raw_output_interaction_vs_DW_Dc_relative_error": 2.3364659008287747e-06,
+  "scope": "four actual finite O x QKV counterfactuals; algebraic verification is not a scientific discovery; norms are not unique functional contributions",
+  "seed": 29,
+  "status": "PASS",
+  "step": 1200
+}

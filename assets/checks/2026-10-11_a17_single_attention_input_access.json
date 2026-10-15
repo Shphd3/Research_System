@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-11T14:51:37.008846+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-cj4dw",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11411,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "model_qwen3_0p6b_base_official_a5",
+      "title_cn": "原始 Qwen3-0.6B-Base official 本地副本（A5/A6/E16 lineage）",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "历史实际 parent",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 727,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1192135096,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "tokenizer_qwen3_0p6b_base_official_a5",
+      "title_cn": "Qwen3-0.6B-Base official tokenizer（A5/A6本地副本）",
+      "category": "tokenizer",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "实际tokenizer目录",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7031645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9678,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/merges.txt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1671853,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/vocab.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2776833,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "data_a17_mapping_acquisition_diagnostic_v1",
+      "title_cn": "A17_04旧规则学习诊断三种呈现TRAIN/DEV v1",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PREPARED_DATA_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "derived_acquisition_release",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11278,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 14382,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_neutral.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1899280,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_explicit.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1986880,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_normalized.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1914400,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/dev_neutral.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 633960,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/dev_explicit.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 663160,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/dev_normalized.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 639000,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_panel_neutral.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 316520,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_panel_explicit.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 331120,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/train_panel_normalized.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 319040,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/tiny_neutral.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 50572,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/tiny_explicit.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 52908,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1/tiny_normalized.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 50990,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_a17_04_acquisition_20261011t130809z_full",
+      "title_cn": "A17_04学习诊断 full 原生读数及校验证据",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "native_readout_family",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/full/o_sgd/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1238,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/full/o_adam/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1241,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/full/attn4_adam/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1254,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/full/explicit_o_adam/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1269,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/full/neutral_normalized_o_adam/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1301,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/runs/acquisition_20261011T130809Z/analysis/analysis_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 44375,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

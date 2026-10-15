@@ -1,0 +1,107 @@
+{
+  "artifacts": {
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/design/capacity_design.pdf": "6caec8d28aa11bb578a1e4d16d641921ee7ab81c64c949f94da562474b1d3092",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/analysis/design/capacity_design.png": "1c1350159c4033c7865768c01c62a92f340c90b4cc6a51565e7f47e5344e4b6d"
+  },
+  "count_semantics": {
+    "each_expert_updates": "512 mixed updates plus 1024 own-domain updates; not 1536 full-domain batches",
+    "mixed_expert_fraction": "8 of 32 records per update, one quarter of target exposures",
+    "scope": "common/expert counts refer to their parameter blocks, not distinct optimizer instances",
+    "targets": "valid next-token target exposures, including repeated records"
+  },
+  "equations": {
+    "parallel": "r + C(z) + E_d(z)",
+    "r": "post-attention residual",
+    "serial": "r + C(z) + E_d(z + C(z))",
+    "z": "norm2(r)"
+  },
+  "generated_at": "2026-10-03T05:57:52.017454+00:00",
+  "no_result_files_read": true,
+  "plot_script": {
+    "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/plot_capacity_design.py",
+    "sha256": "a551eb909ba2da647a4a999cb529b610c92bb5f30ae04ecb902dca0a7b2722be"
+  },
+  "rendering": {
+    "figure_inches": [
+      18,
+      13
+    ],
+    "matplotlib": "3.8.4",
+    "png_dpi": 200
+  },
+  "scope": "Derived illustration of frozen training architecture and planned parameter exposure",
+  "source_contract": "training_freeze.json; all illustrated configs and model/trainer sources verified against its hashes",
+  "source_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1003.json": "70d303bded7abfcfada5cd3c96741d0be6ca1c9a274c6fa01ec258c55b840c88",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1004.json": "50d09bde0c5592d9bdd24f27f602cdb80efb05158c7c93e9027bd3e25740d539",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_serial_s1003.json": "7cdc273fa822d0bd8eb5002ace170fca555f88496049d155f1f471c4da97348d",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_serial_s1004.json": "3075efbec70814120df2beb00135179b1766851105cc9d6ff065a3d45cb36017",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/condition_queue.json": "c9aa64e1ec62415e2286b9b763c560bbcb5c3839a6a24a76483cae48c2e29ed1",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/dense_active_s1003.json": "ed6623284a474f041ee957eace07677201b7af4267906421c4eb250978f0e425",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/dense_active_s1004.json": "71b91ef3e49c0d36524a3aa5d5a74c39db0ec56abca06b843e015e9ce8ab7ebe",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/dense_total_s1003.json": "9d8652bd3f0d4ea256c4fad603912e488b277464675eeccc2ac04c3c9539483c",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/dense_total_s1004.json": "dbe2c18d8b3d38cad03db09c0daa1193d107c4718ceb8993077d3b3ce382b028",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/private_active_s1003.json": "d6ea94e478fa5fc1d4f40eae77bdacb5528f30c2d942d9c5b9adf0e376890ed0",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/private_active_s1004.json": "2b04bbf61a8a7d634af5799237b0dcb77868b4fab3f6bcc3a02297355c30bf9a",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/private_total_s1003.json": "9fb3e73641f32c7bc50fdbc7bf5874d79b49a8712d5585ae9de10eb8b98570a6",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/private_total_s1004.json": "7b4e4d719cfdb6ebd1cb13462e8d429f22bffcae24a37815b3d4c3806cb15c39",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/training_freeze.json": "978d7591286ea22f0c842d3863608e26272047556dd77a0d8debfe539f09b056",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/train_condition.py": "fef60442d8208bdd7f262c9e453867acf6dba3acc6fa5765d928b56a8448981a",
+    "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/src/capacity_model.py": "177e9657f9c77454a48078b041b85ce32bff68c61638d2ea5d6018a0ddbef362"
+  },
+  "status": "METHOD_NOT_RESULTS",
+  "values": {
+    "arms": [
+      "common_parallel",
+      "common_serial",
+      "dense_active",
+      "dense_total",
+      "private_active",
+      "private_total"
+    ],
+    "blocks": [
+      {
+        "domain_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "name": "A",
+        "seed": 1003
+      },
+      {
+        "domain_order": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "name": "B",
+        "seed": 1004
+      }
+    ],
+    "common_targets": 37748736,
+    "common_updates": 4608,
+    "common_width": 256,
+    "each_expert_targets": 9437184,
+    "each_expert_updates": 1536,
+    "layers": 8,
+    "mixed_records_per_domain_per_update": 8,
+    "mixed_updates": 512,
+    "private_width": 384,
+    "records_per_update": 32,
+    "single_domain_updates": 1024,
+    "stage_boundaries": [
+      0,
+      512,
+      1536,
+      2560,
+      3584,
+      4608
+    ],
+    "targets_per_record": 256,
+    "targets_per_update": 8192,
+    "total_updates": 4608
+  }
+}

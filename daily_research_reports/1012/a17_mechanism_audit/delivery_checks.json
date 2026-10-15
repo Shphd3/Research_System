@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-12T00:20:45.956041+00:00",
+  "processing_agent": "/root",
+  "checked_local_links": 532,
+  "documents": 22,
+  "exact_selected_figures": 5,
+  "lossless_selected_markdown_tables": 7,
+  "source_and_reading_hashes": "PASS",
+  "scientific_prose_and_math_unchanged": "PASS; only link targets and reading-source headers differ",
+  "execution_only_reader_links": 0,
+  "source_project_commit": "839cdf5585744115903a0a526f7adb3fafd98f1c",
+  "math_source_check": "PASS; rendered math not verified",
+  "payload_check": "PASS; no generated payload under Daily; five selected figure delivery copies have exact source manifest",
+  "remote_initial_figure_check": "Anonymous access to private/cross-repository raw URLs returned404; same-repository relative images are the delivered path",
+  "exclusions": [
+    "raw native predictions",
+    "weights/checkpoints",
+    "NPZ representation arrays",
+    "datasets",
+    "logs",
+    "unrelated dirty/staged edits"
+  ],
+  "errors": []
+}

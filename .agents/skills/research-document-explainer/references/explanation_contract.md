@@ -49,21 +49,15 @@ or claim boundary for simplicity.
 
 ### First Pass: default
 
-Keep the first pass to roughly one screen. Use this positive recipe:
+Keep the first pass to roughly one screen unless greater depth was requested.
+Cover the question, current answer or uncertainty, essential objects, decisive
+reasoning and boundary. These are content checks, not required headings or item
+counts; combine them in natural paragraphs and define only objects that matter.
 
-1. **What this document is trying to answer** — one concrete question.
-2. **What it currently says** — two to five natural sentences containing the
-   answer, result status, or unresolved state.
-3. **Essential objects** — normally three to six items, each defined by its
-   role before its abbreviation or symbol.
-4. **One reasoning chain** — `input or premise -> operation or comparison ->
-   observation -> allowed conclusion -> boundary`.
-5. **What is source versus interpretation** — one compact status block.
-6. **Zoom-in choices** — name two or three specific nodes, such as one formula,
-   one experimental gate, or one disputed inference.
-
-If the user asked a narrow question, answer that question and omit unrelated
-slots. A simple idea should remain simple.
+Distinguish source statements from AI interpretation where confusion is likely.
+Use a separate status block only when it helps track several different claims.
+Offer specific zoom-in choices when teaching or guided exploration is requested;
+an ordinary explanation needs no follow-up menu. Answer a narrow question directly.
 
 ### Deep Pass: only when requested
 
@@ -83,6 +77,10 @@ Do not repeat the same conclusion at several depths. Each deeper layer must add
 a missing relation, justification, example, or boundary.
 
 ## Explanation Units
+
+Use the shared [operational first-use and formula meaning contract](../../../../docs/report_writing.md#objects-operations-and-first-use-terms).
+This reference controls explanation depth and source handling; it does not maintain
+a second terminology or loss/risk convention.
 
 For a paragraph, formula, figure, or gate, explain:
 

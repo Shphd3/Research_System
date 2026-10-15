@@ -1,0 +1,305 @@
+{
+  "created_at": "2026-10-04T16:00:39.363453+00:00",
+  "processing_agent": "/root/cognition_audit_1004",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/scripts/train_condition.py",
+      "sha256": "fef60442d8208bdd7f262c9e453867acf6dba3acc6fa5765d928b56a8448981a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1003.json",
+      "sha256": "0ceded79e39d9ca7a444443ffd1e0548abe655b0a5d51105bc640cac0d875839"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/configs/common_parallel_s1004.json",
+      "sha256": "6089884bd2423069fb45c897c3a1488c7a875b89ebbd3e504933100f01fe0fd7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/src/capacity_model.py",
+      "sha256": "1d999891e7b0caeea8aef0aba3a10df923449450d56aa68dcb8548ca0bbe4ebb"
+    }
+  ],
+  "lr_clock": {
+    "source_function": "def learning_rate(step, train, total):\n    maximum, minimum = float(train.get('learning_rate', 3e-4)), float(train.get('min_learning_rate', 3e-5))\n    warm = int(train.get('warmup_updates', 256))\n    if warm and step < warm:\n        return maximum*(step+1)/warm\n    fraction = (step-warm)/max(total-warm-1, 1)\n    return minimum+(maximum-minimum)*.5*(1+math.cos(math.pi*min(max(fraction, 0.), 1.)))",
+    "shared": {
+      "updates": 4608,
+      "lr_first": 1.171875e-06,
+      "lr_last": 3e-05,
+      "sum_lr": 0.7566299999999999,
+      "sum_lr_squared": 0.00016587497109374997,
+      "decay_only_multiplier": 0.9271278273062278
+    },
+    "mixed": {
+      "updates": 512,
+      "lr_first": 1.171875e-06,
+      "lr_last": 0.0002977181952625405,
+      "sum_lr": 0.11515468477365895,
+      "sum_lr_squared": 3.064813803570902e-05,
+      "decay_only_multiplier": 0.9885504292683656
+    },
+    "phases": [
+      {
+        "phase_position_1_based": 1,
+        "global_steps_zero_based": [
+          512,
+          1535
+        ],
+        "own_phase": {
+          "updates": 1024,
+          "lr_first": 0.00029770031474713734,
+          "lr_last": 0.00024641057378759894,
+          "sum_lr": 0.2838517092048238,
+          "sum_lr_squared": 7.891796343080371e-05,
+          "decay_only_multiplier": 0.9720135196459718
+        },
+        "expert_all_active_steps": {
+          "updates": 1536,
+          "lr_first": 1.171875e-06,
+          "lr_last": 0.00024641057378759894,
+          "sum_lr": 0.3990063939784827,
+          "sum_lr_squared": 0.00010956610146651272,
+          "decay_only_multiplier": 0.9608843821006814
+        },
+        "source_gradient_weighted_sum_lr_sgd_only": 0.3126403803982385
+      },
+      {
+        "phase_position_1_based": 2,
+        "global_steps_zero_based": [
+          1536,
+          2559
+        ],
+        "own_phase": {
+          "updates": 1024,
+          "lr_first": 0.0002463327955578589,
+          "lr_last": 0.00015258944724121787,
+          "sum_lr": 0.2059436131716912,
+          "sum_lr_squared": 4.218454628171357e-05,
+          "decay_only_multiplier": 0.9796160476068451
+        },
+        "expert_all_active_steps": {
+          "updates": 1536,
+          "lr_first": 1.171875e-06,
+          "lr_last": 0.00015258944724121787,
+          "sum_lr": 0.32109829794535016,
+          "sum_lr_squared": 7.283268431742259e-05,
+          "decay_only_multiplier": 0.9683998643799258
+        },
+        "source_gradient_weighted_sum_lr_sgd_only": 0.23473228436510593
+      },
+      {
+        "phase_position_1_based": 3,
+        "global_steps_zero_based": [
+          2560,
+          3583
+        ],
+        "own_phase": {
+          "updates": 1024,
+          "lr_first": 0.0001524923879518414,
+          "lr_last": 6.524924906940403e-05,
+          "sum_lr": 0.1087222639211448,
+          "sum_lr_squared": 1.2207804679783454e-05,
+          "decay_only_multiplier": 0.9891866022702341
+        },
+        "expert_all_active_steps": {
+          "updates": 1536,
+          "lr_first": 1.171875e-06,
+          "lr_last": 6.524924906940403e-05,
+          "sum_lr": 0.22387694869480376,
+          "sum_lr_squared": 4.285594271549247e-05,
+          "decay_only_multiplier": 0.977860840300757
+        },
+        "source_gradient_weighted_sum_lr_sgd_only": 0.13751093511455953
+      },
+      {
+        "phase_position_1_based": 4,
+        "global_steps_zero_based": [
+          3584,
+          4607
+        ],
+        "own_phase": {
+          "updates": 1024,
+          "lr_first": 6.518359415840197e-05,
+          "lr_last": 3e-05,
+          "sum_lr": 0.04295772892868124,
+          "sum_lr_squared": 1.916518665740217e-06,
+          "decay_only_multiplier": 0.9957134312000093
+        },
+        "expert_all_active_steps": {
+          "updates": 1536,
+          "lr_first": 1.171875e-06,
+          "lr_last": 3e-05,
+          "sum_lr": 0.1581124137023402,
+          "sum_lr_squared": 3.256465670144923e-05,
+          "decay_only_multiplier": 0.9843129398410473
+        },
+        "source_gradient_weighted_sum_lr_sgd_only": 0.07174640012209597
+      }
+    ],
+    "phase1_to_phase4_own_sum_lr_ratio": 6.607698225296701,
+    "phase1_to_phase4_expert_sum_lr_ratio": 2.5235614626037237,
+    "reverse_order_two_block_exposure": [
+      {
+        "domain": 0,
+        "positions_a_b_1_based": [
+          1,
+          4
+        ],
+        "two_block_own_phase_sum_lr": 0.326809438133505
+      },
+      {
+        "domain": 1,
+        "positions_a_b_1_based": [
+          2,
+          3
+        ],
+        "two_block_own_phase_sum_lr": 0.314665877092836
+      },
+      {
+        "domain": 2,
+        "positions_a_b_1_based": [
+          3,
+          2
+        ],
+        "two_block_own_phase_sum_lr": 0.314665877092836
+      },
+      {
+        "domain": 3,
+        "positions_a_b_1_based": [
+          4,
+          1
+        ],
+        "two_block_own_phase_sum_lr": 0.326809438133505
+      }
+    ],
+    "semantics": "Configuration arithmetic only. Sum LR is not AdamW displacement; decay-only multiplier omits additive gradient terms. Experts have grad=None outside their active stages. Mixed gradients use the global token denominator."
+  },
+  "future_transport_counterexample": {
+    "source_risk_before": 2.5,
+    "source_risk_after": 2.025,
+    "future_hessian_eigenvalues": [
+      0.9,
+      0.1
+    ],
+    "future_lr": 1.0,
+    "update_map_eigenvalues": [
+      0.1,
+      0.9
+    ],
+    "rows": [
+      {
+        "future_steps": 0,
+        "w": [
+          0.2,
+          -0.1
+        ],
+        "old_risk": 0.405,
+        "delta_old_risk": -0.095,
+        "exact_delta_fraction": "-19/200",
+        "transported_signal": 1.0
+      },
+      {
+        "future_steps": 1,
+        "w": [
+          0.02,
+          -0.09
+        ],
+        "old_risk": 0.57245,
+        "delta_old_risk": 0.07245,
+        "exact_delta_fraction": "1449/20000",
+        "transported_signal": -0.7
+      },
+      {
+        "future_steps": 2,
+        "w": [
+          0.002,
+          -0.081
+        ],
+        "old_risk": 0.5821205,
+        "delta_old_risk": 0.0821205,
+        "exact_delta_fraction": "164241/2000000",
+        "transported_signal": -0.79
+      },
+      {
+        "future_steps": 3,
+        "w": [
+          0.0002,
+          -0.0729
+        ],
+        "old_risk": 0.575342645,
+        "delta_old_risk": 0.075342645,
+        "exact_delta_fraction": "15068529/200000000",
+        "transported_signal": -0.727
+      },
+      {
+        "future_steps": 4,
+        "w": [
+          2e-05,
+          -0.06561
+        ],
+        "old_risk": 0.56774102405,
+        "delta_old_risk": 0.06774102405,
+        "exact_delta_fraction": "1354820481/20000000000",
+        "transported_signal": -0.6559
+      },
+      {
+        "future_steps": 5,
+        "w": [
+          2e-06,
+          -0.059049
+        ],
+        "old_risk": 0.5607902741045,
+        "delta_old_risk": 0.0607902741045,
+        "exact_delta_fraction": "121580548209/2000000000000",
+        "transported_signal": -0.59047
+      },
+      {
+        "future_steps": 6,
+        "w": [
+          2e-07,
+          -0.0531441
+        ],
+        "old_risk": 0.554556037053605,
+        "delta_old_risk": 0.054556037053605,
+        "exact_delta_fraction": "10911207410721/200000000000000",
+        "transported_signal": -0.531439
+      },
+      {
+        "future_steps": 7,
+        "w": [
+          2e-08,
+          -0.04782969
+        ],
+        "old_risk": 0.5489735086661545,
+        "delta_old_risk": 0.04897350866615445,
+        "exact_delta_fraction": "979470173323089/20000000000000000",
+        "transported_signal": -0.4782967
+      }
+    ],
+    "semantics": "Exact rational quadratic counterexample, not empirical evidence or NTP prediction. Future training is fixed and identically applied to both branches."
+  },
+  "tied_untied_counterexample": {
+    "source_predictions": [
+      0.2,
+      0.2
+    ],
+    "old_predictions": [
+      0.1,
+      0.0
+    ],
+    "source_self_kernel": [
+      2,
+      2
+    ],
+    "cross_domain_kernel": [
+      1,
+      0
+    ],
+    "semantics": "Only common and selected expert are trainable; shared trunk omitted. Equal local source learning does not imply equal transfer."
+  },
+  "checks": {
+    "source_lr_matches_independent_formula": true,
+    "quadratic_rational_identities": true,
+    "immediate_and_future_risk_signs_differ": true,
+    "no_lm_forward_or_training": true
+  }
+}

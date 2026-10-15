@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-08T08:50:12.488539+00:00",
+  "kind": "derived candidate execution certificate; not measurement or scientific approval",
+  "job_id": "pt-hsy9grzm",
+  "job_name": "h2-sae-delta-1008-diagnostic",
+  "submitted_at_utc": "2026-10-08T08:32:35Z",
+  "execution_status": "FAILED",
+  "platform_state_observed": "FAILED",
+  "platform_state_observed_at_utc": "2026-10-08T08:43:26Z",
+  "worker_phase_observed": "Pending",
+  "worker_phase_observed_at_utc": "2026-10-08T08:37:33Z",
+  "resource_profile": "h100-4-reserved",
+  "workspace": "share-space",
+  "aec2": "share-cluster",
+  "worker_spec": "n6ls.iu.i40.4",
+  "worker_nodes": 1,
+  "worker_processes_requested": 4,
+  "gpu_count_requested": 4,
+  "gpu_model_requested": "H100 80GB SXM5",
+  "gpu_used_observed": true,
+  "quota_type": "RESERVED",
+  "priority": "NORMAL",
+  "image_id": "shphd-lite-0911",
+  "image_url": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+  "storage_mount": "01995892-d478-76d8-aec7-13fd8284477e:/data",
+  "retry_count": 0,
+  "model_optimizer_updates_requested": 0,
+  "sae_optimizer_updates_requested": 0,
+  "measurement_status": "PARTIAL_S7_ONLY_QWEN_QUALIFICATION_FAILED",
+  "scientific_judgment": "Unknown",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z",
+  "entry_command": "bash /data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/scripts/run.sh /data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z/submit-h2-sae-delta-1008-diagnostic-20261008T083234Z.json",
+      "sha256": "13647ce972c16fd9dc9457abfdd1a7eb292021104ba03edf146f86edecb30a74"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z/platform_describe_20261008T083640Z.txt",
+      "sha256": "cdc0ada845e265cddde24e2d2ddb8601b5e8e18b3a0dc5c551ae7dbb098b3b07"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z/platform_workers_20261008T083733Z.txt",
+      "sha256": "81661c1d2d67c0bdabad9adf4a41ee602b59534e7172e00aef5608d397806330"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z/preflight.json",
+      "sha256": "e2baf6401bbeace6fedca4e0ef7b28589ab19371cfafffb63cabcf3d7c09e6a9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z/failure.json",
+      "sha256": "dca1379d51b4361b444c32e1c19587ec67e4a058a00a0085e1d474a7a6db237b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_20261008T083130Z/platform_describe_20261008T084326Z.txt",
+      "sha256": "c3b607629592b582e4c3b1c5fd87258985d3b264789910da141e99ba0cde0f01"
+    }
+  ],
+  "monitor_owner": "01a10a2a-b783-7752-9149-ed2ffd48a40a/root",
+  "monitoring": "bounded startup check; no indefinite polling or automatic resubmission",
+  "runtime_ceiling_seconds": 14400,
+  "eta": "Unknown until first qualified progress",
+  "status_boundary": "S7 collection completed, but Qwen qualification failed before eligible measurements. No H2 analysis was used to tune the repair.",
+  "initial_observation": {
+    "execution_status": "SUBMITTED",
+    "platform_state_observed": "STARTING",
+    "platform_state_observed_at_utc": "2026-10-08T08:36:40Z",
+    "worker_phase_observed": "Pending",
+    "worker_phase_observed_at_utc": "2026-10-08T08:37:33Z",
+    "gpu_used_observed": null,
+    "measurement_status": "NOT_RUN"
+  },
+  "terminal_at_utc": "2026-10-08T08:40:51.532023Z",
+  "gpus_observed": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "scientific_result": "NOT_RUN_OR_INCOMPLETE"
+}

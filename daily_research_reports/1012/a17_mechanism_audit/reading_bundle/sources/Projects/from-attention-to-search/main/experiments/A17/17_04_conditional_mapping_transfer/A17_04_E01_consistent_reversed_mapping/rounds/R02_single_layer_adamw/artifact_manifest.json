@@ -1,0 +1,211 @@
+{
+  "schema": "a17_04_e01_r02_delivery_v1",
+  "processing_agent": "/root",
+  "created_at_utc": "2026-10-11T16:12:12.337838+00:00",
+  "task_state": "BOUNDED_EXECUTION_AND_FACTUAL_DELIVERY_COMPLETE",
+  "result_state": "DIAGNOSTIC_RESULTS_AVAILABLE_RESEARCHER_JUDGMENT_PENDING",
+  "scientific_mechanism_judgment": "Unknown",
+  "question_closure": "Unknown",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z",
+  "source_freeze": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/freeze.json",
+  "execution_certificate": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/execution_certificate.md",
+  "data_asset_id": "data_a17_conditional_mapping_v1",
+  "old_adapter_asset_id": "adapter_a17_04_single_attention_20261011t145214z_full_attn1_adam_main",
+  "old_checkpoint_step": 1200,
+  "old_optimizer_at_branch_start": "RESET_FRESH_ADAMW",
+  "continuation_seeds": [
+    29,
+    43,
+    71
+  ],
+  "replication_unit": "continuation order conditional on one old acquired state",
+  "authorized_scope": "same/reversed taskrelation transfer + bounded same-state optimizerdiagnosis",
+  "jobs": {
+    "smoke": "pt-022fae06",
+    "full": "pt-x0czuelx"
+  },
+  "noTESTpayload": true,
+  "later_architecture_comparison": "NOT_RUN",
+  "updated_at_utc": "2026-10-11T16:44:05.197229+00:00",
+  "smoke_qualification": "PASS",
+  "smoke_registration_receipt": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/smoke_registration_receipt.json",
+  "full_qualification": "PASS",
+  "actual_full_saved_states": 72,
+  "actual_full_training_answers": 216000,
+  "actual_full_prediction_record_appearances": 115200,
+  "full_optimizer_conditions": 34,
+  "full_registration_receipt": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full_registration_receipt.json",
+  "full_terminal_status": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full_terminal_status.json",
+  "freeze_end_verification": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/freeze_end_verification.json",
+  "independent_mapping_audit": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/independent_mapping_audit.json",
+  "independent_optimizer_audit": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/optimizer_probe/full/independent_audit.json",
+  "missing_planned_states": [],
+  "retries": 0,
+  "authorized_scope_completed": true,
+  "delivery_document_checks": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/delivery_document_checks.json",
+  "navigation_check": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/delivery_navigation_check.txt",
+  "full_registered_asset_ids": [
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_29_consistent",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_29_reversed",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_29_joint_reversed",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_43_consistent",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_43_reversed",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_43_joint_reversed",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_71_consistent",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_71_reversed",
+    "adapter_a17_04_transfer_20261011t160256z_full_seed_71_joint_reversed",
+    "analysis_a17_04_transfer_20261011t160256z_full_mapping",
+    "analysis_a17_04_transfer_20261011t160256z_full_optimizer_probe"
+  ],
+  "smoke_registered_asset_ids": [
+    "adapter_a17_04_transfer_20261011t160256z_smoke_seed_29_consistent",
+    "adapter_a17_04_transfer_20261011t160256z_smoke_seed_29_reversed",
+    "adapter_a17_04_transfer_20261011t160256z_smoke_seed_29_joint_reversed",
+    "analysis_a17_04_transfer_20261011t160256z_smoke_mapping",
+    "analysis_a17_04_transfer_20261011t160256z_smoke_optimizer_probe"
+  ],
+  "selected_evidence_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full_registration_receipt.json",
+      "sha256": "9626cc64676017c6016982f73705366b4c3100f693862f3116808fce7d34327f",
+      "bytes": 1230
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/smoke_registration_receipt.json",
+      "sha256": "821e0272b5d77ce2b726ae600d095faef3dec41bc1381ac8ce970e8cacda46cb",
+      "bytes": 801
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis/results.json",
+      "sha256": "047e5a9fde82312647c7de10d2fa98d22b332f173f6ecfe6384ed49b7392865b",
+      "bytes": 91804
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis/analysis_manifest.json",
+      "sha256": "dc3ca7e37b2682382b86c2c9c365692e12b7e98d1f475a7d024835f59444cd39",
+      "bytes": 2438
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis/checkpoint_verification.json",
+      "sha256": "8323b1d2437481c99016f84cce0ee0a067120687103c83ea1549b9d2a263bf1e",
+      "bytes": 37963
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/independent_mapping_audit.json",
+      "sha256": "9dee8b98b6f4c7cb960643624a3bd7757d9f8b61d26eeb5053ee4c80fdbd779d",
+      "bytes": 165140
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/optimizer_probe/full/results.json",
+      "sha256": "3691eca6e9897fabb6fc1650ea85357cc0d75ba7e3a3c4530cab2904fbad04a9",
+      "bytes": 526220
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/optimizer_probe/full/manifest.json",
+      "sha256": "bc94ae56e93063fd0d003e350b1aa338588ae766bc217a49aaef688f5715f32d",
+      "bytes": 16982
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/optimizer_probe/full/independent_audit.json",
+      "sha256": "bfe4e056377db8600b258ab1acb8f7da726b049d512d0034fe3e451c1e93ac3d",
+      "bytes": 81953
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/optimizer_probe/full/independent_audit_cn.md",
+      "sha256": "04e73fb6866c675263eb930b02b76ff5fbc74e0f399d1bede78442157fb3850b",
+      "bytes": 10770
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis_posthoc_rule_choice.json",
+      "sha256": "5076a83443c68780f338b8cc33ef11f9bf4a61db9f5e66383d1c074d41aed794",
+      "bytes": 9485
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis/illustrative_sample.json",
+      "sha256": "6d15954707c365461167bb4522516950ea9686aa9e32d57e6f53ede452352e3c",
+      "bytes": 11438
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis/reasoning_audit.json",
+      "sha256": "2dad947458ea7c30f58efadc95e3cca227ef9cbe49894ea8e16e4cb341592f2f",
+      "bytes": 5463
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/analysis/figures/provenance.json",
+      "sha256": "b50a7037196ac279b43dbdbb8fde2aa087140faf998765f0f552c9cebf91b4b4",
+      "bytes": 1168
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/freeze.json",
+      "sha256": "accb6e360d935278dfa2bbdd3a27e776896eea46482a4730cb7580db97136950",
+      "bytes": 10676
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/freeze_end_verification.json",
+      "sha256": "85d858212eda11aa6c8a2dd0480c9e80881241cf1e668a6fbfd056abeac86ffa",
+      "bytes": 11767
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/full_terminal_status.json",
+      "sha256": "743155c036b9b3ebf9c5c381d805ad11b29b89baf3f87b2d2f365278889d3336",
+      "bytes": 4285
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/smoke_terminal_status.json",
+      "sha256": "781c757c7d95785dae9f8e23104fcff25e418fedbc47248f993a69ff34644a27",
+      "bytes": 4288
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/delivery_document_checks.json",
+      "sha256": "5c234ebc4c003a7e007e6a8caf0894c5aedd15618d5e174d770c4d1e767a3107",
+      "bytes": 3632
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/delivery_navigation_check.txt",
+      "sha256": "3991a86c1a782a9bd95da90a2b5830cf0dd6fc85ecec24193425ee0775fa3121",
+      "bytes": 125
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_layer_mapping_transfer/runs/transfer_20261011T160256Z/execution_certificate.md",
+      "sha256": "f8560004cf4caef79d8bbf955570cd614f85d2457517c7c6c6ede6c3dc25143e",
+      "bytes": 5650
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/protocol.md",
+      "sha256": "dc1da949870f36bbb50f41d2b04e28833c7a748219b4b046d85a80972e515a21",
+      "bytes": 29937
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/protocol_cn.md",
+      "sha256": "a205f803d871178c6adcdf1fc46a660d698c7fc9daf46287adb18b1d4a1b2035",
+      "bytes": 19548
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/summary.md",
+      "sha256": "786f9f3ff4d7bce816789ae0c9b23a3f1523a307b95cdd26ab719b1aa7aa3f46",
+      "bytes": 14490
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/summary_cn.md",
+      "sha256": "9ea52101c709fa81d216b0d2be5805ac2c1a5a0af6113f17ff67ae94a52edb34",
+      "bytes": 11169
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/detailed.md",
+      "sha256": "36d296ff12c3eb572f80a3041ee1f7d4a644ba647896b1bd321c3f018454c2d8",
+      "bytes": 38912
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/detailed_cn.md",
+      "sha256": "3246d8477a1bce4658dff32789b7ec058ef0fef2064f0a1ff13256818a53b807",
+      "bytes": 35129
+    }
+  ],
+  "posthoc_evidence_boundary": "sample selection, wrong-answer category counts, visualization and reasoning audit are derived posthoc descriptions, not new primary confirmation or altered training",
+  "outside_scope_not_run": [
+    "parameter-separation utility comparison",
+    "independent old-model replication and untouched confirmation",
+    "long-run matched SGD tuning/trajectory intervention",
+    "mode-specific parameter-component causal identification"
+  ]
+}

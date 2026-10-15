@@ -1,0 +1,137 @@
+{
+  "checked_at_utc": "2026-10-04T12:01:14.368511+00:00",
+  "status": "PASS_SELECTED_DELIVERY_SOURCE_CHECKS",
+  "self_review": true,
+  "reviewer": "root Codex conversation; not an independent reviewer",
+  "verifier": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/verify_closeout_delivery_20261004.py",
+  "verifier_sha256": "0de3f380cf4d97e51292d5733e965a52a14380912be52541246dd6ffb1e12a58",
+  "source_artifacts": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.json",
+      "sha256": "c08e8e7503bcbbd0e3f19a790c536bd01906873818ddab5e8bb836373e85b20f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.json",
+      "sha256": "6050ee78f91a6804b517a2e436fd3a3bd5f55dd9a8ecbbfcfaea7ad6bff26b7f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.json",
+      "sha256": "ceba9b45e2e1c46fa73c4675f2e1180e057daa31ebe64db0f11a5a5e3dae6ece"
+    }
+  ],
+  "tables": {
+    "all_readout": {
+      "rows": 920,
+      "source_fields_exactly_matched": 91540,
+      "sha256": "0a5d6e35cf0803f7164babed58e4eee9819825059b4c1764bb17c6157a7bdfb4"
+    },
+    "pooled_cross_source": {
+      "rows": 92,
+      "source_fields_exactly_matched": 9338,
+      "sha256": "9ad0aa30cdd9d72657d414091570f0a23773e741405248e49fb658f0e62e5573"
+    }
+  },
+  "facts": {
+    "cross_source_pooled_rows": 92,
+    "cross_source_fixed_CI_negative": 92,
+    "cross_source_global_random_CI_positive": 92,
+    "within_source_pooled_rows": 92,
+    "within_source_fixed_CI_negative": 92,
+    "within_source_global_random_CI_positive": 92,
+    "cross_source_domain_rows": 368,
+    "cross_source_domain_fixed_point_negative": 368,
+    "cross_source_domain_global_random_point_negative": 1,
+    "fixed_five_baseline_indices": [
+      4
+    ],
+    "six_action_baseline_indices": [
+      5
+    ],
+    "not_independent_replication_counts": true
+  },
+  "report_table_source_checks": {
+    "rounded_numeric_tokens_checked_both_languages": 456,
+    "scope": "Main new-result and resource tables; Summary main table; Detailed absolute CE, domain and action-use tables",
+    "boundary": "Source arithmetic and rounding only; prose semantics and rendering require reading"
+  },
+  "markdown_files_checked": 12,
+  "missing_local_links": [],
+  "math_source_issues": [],
+  "bilingual_source_checks": {
+    "sharing_routing_report": {
+      "matching_display_equations": 13,
+      "matching_quantitative_table_rows": 9
+    },
+    "probe_33b_summary": {
+      "matching_display_equations": 0,
+      "matching_quantitative_table_rows": 3
+    },
+    "probe_33b_detailed": {
+      "matching_display_equations": 1,
+      "matching_quantitative_table_rows": 21
+    },
+    "sharing_literature_20261004": {
+      "matching_display_equations": 1,
+      "matching_quantitative_table_rows": 0,
+      "matching_primary_source_URLs": 17
+    }
+  },
+  "document_hashes": [
+    {
+      "path": "sharing_routing_report.md",
+      "sha256": "e81d67c138ac488d05c5649fb53d2846ffb85c1de9a76bb89ac12e24f7a77404"
+    },
+    {
+      "path": "sharing_routing_report_cn.md",
+      "sha256": "399fdb68aface6783159b58f4164f7689f2ae4d12d60c7783f4171dc97a5e90d"
+    },
+    {
+      "path": "probe_33b_summary.md",
+      "sha256": "3b70a3b3cf931efc1a5ec4f8488482545a7049ac95be295950a27da5a00f9b18"
+    },
+    {
+      "path": "probe_33b_summary_cn.md",
+      "sha256": "3f24b04097c7f8c049c1efe4bd28282a0e9ece8cc93f418ae5bc2f71a109c752"
+    },
+    {
+      "path": "probe_33b_detailed.md",
+      "sha256": "be7fa64be5056b6ca488d6aec34d0457a7db7a7a0b3b1be9ae9e6a1cc3cb2300"
+    },
+    {
+      "path": "probe_33b_detailed_cn.md",
+      "sha256": "5eb15d8c9a763a30f261af48b594c71995c6d1b89d2a90ca851aa7aebd0e58f4"
+    },
+    {
+      "path": "sharing_literature_20261004.md",
+      "sha256": "a5e179996bda55610a4562750744311b54699eeb0da72877a660a6f2266636b7"
+    },
+    {
+      "path": "sharing_literature_20261004_cn.md",
+      "sha256": "2632925e5041d4a48d5fc80569c04f6a26ab6856ad6546324cfcf05d56b53834"
+    },
+    {
+      "path": "reading_guide.md",
+      "sha256": "4de2aea69f849efce9cc8182d03b807b1f9b9aebdb8bfdd6cd61e037dc327350"
+    },
+    {
+      "path": "reading_guide_cn.md",
+      "sha256": "1eb19c1f6a919f0d2db9fe71b5134dfd47c2f8019d68809bb1f150bb60d03f95"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d674416eba78609497ba1a9479614d3eb59aaff013cf062299bcf6d77835bdd3"
+    },
+    {
+      "path": "README_cn.md",
+      "sha256": "0c7b4f5c8f9566e4c326a37fb4a907bdae655e5558b26b2840f3cd0b2efee1c7"
+    }
+  ],
+  "payload_files_checked": 86,
+  "payload_mismatches": [],
+  "new_analysis_sources_checked": 15,
+  "new_source_mismatches": [],
+  "rendered_math_verified": false,
+  "figure_png_sha256": "63a968db8cc2b7a431c8257381ea8e04de86a8b1fa1927fdb4f0d7f83754668d",
+  "figure_visual_check": "Actual PNG opened after Dense N/A label correction; identity is recorded, not automated visual proof",
+  "boundary": "Export fields, row coverage, source hashes, local links and source delimiters only. No refit, new LM forward, scientific replication, rendering claim or publication/staging check."
+}

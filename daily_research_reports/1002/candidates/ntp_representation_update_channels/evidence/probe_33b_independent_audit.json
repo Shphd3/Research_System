@@ -1,0 +1,293 @@
+{
+  "dense_33b": {
+    "status": "PASS_INDEPENDENT_CPU_READBACK",
+    "model_id": "dense_33b",
+    "completed_at_utc": "2026-10-04T10:34:00.899276+00:00",
+    "auditor_sha256": "27cad78f17d1761217deddd4b6083dad3103960a117f82a2532b73ecb2aa8c0b",
+    "analysis_receipt_sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d",
+    "input_and_output_files_hashed": 54,
+    "family_checks": [
+      {
+        "family": "base",
+        "features": 389,
+        "transform_checks": [],
+        "ridge_normal_equation_relative_error": 3.786899045264198e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+a_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 3.0637600482785244e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+c_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.80029249362119e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+x_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.806870172103729e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+cx_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.809777833066799e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+a_random64",
+        "features": 453,
+        "transform_checks": [
+          "seeded_QR_basis"
+        ],
+        "ridge_normal_equation_relative_error": 2.6568552511932204e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+cx_full",
+        "features": 3461,
+        "transform_checks": [],
+        "ridge_normal_equation_relative_error": 3.215660403483978e-15,
+        "prediction_max_abs_error": 0.0
+      }
+    ],
+    "summary_rows_recomputed": 840,
+    "numeric_summary_values_recomputed": 71820,
+    "maximum_summary_absolute_error": 1.734723475976807e-18,
+    "bootstrap_draws": 2000,
+    "bootstrap_unit": "whole record stratified by category; globally reestimated readout action frequencies",
+    "first_order_sample_events": 128,
+    "first_order_sample_max_abs_errors": {
+      "A": 6.938893903907228e-18,
+      "B": 6.938893903907228e-18
+    },
+    "limitations": [
+      "PCA eigen-equations checked; full remaining spectrum not independently reranked",
+      "First-order arrays checked on 128 deterministic events, finite-summary audit exhaustive",
+      "No independent GPU forward rerun; relies on existing native-tail qualification",
+      "Conditional pointwise uncertainty; no multiplicity or source-bank population inference"
+    ],
+    "producer_modules_imported": false,
+    "ridge_refits": 0,
+    "LM_loads": 0,
+    "LM_updates": 0,
+    "elapsed_seconds": 26.54197354055941,
+    "scientific_judgment": "Unknown"
+  },
+  "s7_fresh_lambda0p1_33b": {
+    "status": "PASS_INDEPENDENT_CPU_READBACK",
+    "model_id": "s7_fresh_lambda0p1_33b",
+    "completed_at_utc": "2026-10-04T10:36:10.635624+00:00",
+    "auditor_sha256": "27cad78f17d1761217deddd4b6083dad3103960a117f82a2532b73ecb2aa8c0b",
+    "analysis_receipt_sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42",
+    "input_and_output_files_hashed": 58,
+    "family_checks": [
+      {
+        "family": "base",
+        "features": 389,
+        "transform_checks": [],
+        "ridge_normal_equation_relative_error": 3.75821751216433e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+a_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.81484657108383e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+c_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.6809599522943137e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+x_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.7654613095193103e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+cx_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.7426556585322555e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+a_random64",
+        "features": 453,
+        "transform_checks": [
+          "seeded_QR_basis"
+        ],
+        "ridge_normal_equation_relative_error": 2.4904310200286715e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+sae64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_only_SAE_frequency_and_ties"
+        ],
+        "ridge_normal_equation_relative_error": 3.0056499969103855e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+cx_full",
+        "features": 3461,
+        "transform_checks": [],
+        "ridge_normal_equation_relative_error": 2.6987566549670906e-15,
+        "prediction_max_abs_error": 0.0
+      }
+    ],
+    "summary_rows_recomputed": 960,
+    "numeric_summary_values_recomputed": 82080,
+    "maximum_summary_absolute_error": 1.734723475976807e-18,
+    "bootstrap_draws": 2000,
+    "bootstrap_unit": "whole record stratified by category; globally reestimated readout action frequencies",
+    "first_order_sample_events": 128,
+    "first_order_sample_max_abs_errors": {
+      "A": 1.3877787807814457e-17,
+      "B": 1.3877787807814457e-17
+    },
+    "limitations": [
+      "PCA eigen-equations checked; full remaining spectrum not independently reranked",
+      "First-order arrays checked on 128 deterministic events, finite-summary audit exhaustive",
+      "No independent GPU forward rerun; relies on existing native-tail qualification",
+      "Conditional pointwise uncertainty; no multiplicity or source-bank population inference"
+    ],
+    "producer_modules_imported": false,
+    "ridge_refits": 0,
+    "LM_loads": 0,
+    "LM_updates": 0,
+    "elapsed_seconds": 27.275334168225527,
+    "scientific_judgment": "Unknown"
+  },
+  "sall_unit_weight_33b": {
+    "status": "PASS_INDEPENDENT_CPU_READBACK",
+    "model_id": "sall_unit_weight_33b",
+    "completed_at_utc": "2026-10-04T10:39:11.232852+00:00",
+    "auditor_sha256": "27cad78f17d1761217deddd4b6083dad3103960a117f82a2532b73ecb2aa8c0b",
+    "analysis_receipt_sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f",
+    "input_and_output_files_hashed": 58,
+    "family_checks": [
+      {
+        "family": "base",
+        "features": 389,
+        "transform_checks": [],
+        "ridge_normal_equation_relative_error": 3.843008903512687e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+a_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 3.024398304024611e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+c_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.937613605856301e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+x_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.8952082014637617e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+cx_pca64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_center_orthogonality_sign_covariance_eigen_equation"
+        ],
+        "ridge_normal_equation_relative_error": 2.894947954395331e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+a_random64",
+        "features": 453,
+        "transform_checks": [
+          "seeded_QR_basis"
+        ],
+        "ridge_normal_equation_relative_error": 2.5244113864373035e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+sae64",
+        "features": 453,
+        "transform_checks": [
+          "FIT_only_SAE_frequency_and_ties"
+        ],
+        "ridge_normal_equation_relative_error": 3.4556469385143077e-15,
+        "prediction_max_abs_error": 0.0
+      },
+      {
+        "family": "base+cx_full",
+        "features": 3461,
+        "transform_checks": [],
+        "ridge_normal_equation_relative_error": 3.291182097335659e-15,
+        "prediction_max_abs_error": 0.0
+      }
+    ],
+    "summary_rows_recomputed": 960,
+    "numeric_summary_values_recomputed": 82080,
+    "maximum_summary_absolute_error": 1.734723475976807e-18,
+    "bootstrap_draws": 2000,
+    "bootstrap_unit": "whole record stratified by category; globally reestimated readout action frequencies",
+    "first_order_sample_events": 128,
+    "first_order_sample_max_abs_errors": {
+      "A": 1.3877787807814457e-17,
+      "B": 1.3877787807814457e-17
+    },
+    "limitations": [
+      "PCA eigen-equations checked; full remaining spectrum not independently reranked",
+      "First-order arrays checked on 128 deterministic events, finite-summary audit exhaustive",
+      "No independent GPU forward rerun; relies on existing native-tail qualification",
+      "Conditional pointwise uncertainty; no multiplicity or source-bank population inference"
+    ],
+    "producer_modules_imported": false,
+    "ridge_refits": 0,
+    "LM_loads": 0,
+    "LM_updates": 0,
+    "elapsed_seconds": 32.75543829239905,
+    "scientific_judgment": "Unknown"
+  }
+}

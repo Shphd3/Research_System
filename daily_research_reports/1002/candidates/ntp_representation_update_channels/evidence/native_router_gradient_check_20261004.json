@@ -1,0 +1,110 @@
+{
+  "status": "PASS_ARITHMETIC_CHAIN_RULE_ONLY",
+  "at_utc": "2026-10-04T11:28:11.605168+00:00",
+  "script": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/check_native_router_gradient_20261004.py",
+  "script_sha256": "82555d090aa2ea9fb46ef4675ae9201b5d2d385bfe83cf8e44be4a87135d2438",
+  "cases": [
+    {
+      "logits": [
+        0.6,
+        0.1,
+        -0.2
+      ],
+      "expert_outputs": [
+        0.8,
+        -0.3,
+        0.1
+      ],
+      "binary_target": 1,
+      "selected_expert": 0,
+      "analytic_gradient": [
+        -0.08072563176305354,
+        0.04637223508117968,
+        0.03435339668187386
+      ],
+      "central_difference_gradient": [
+        -0.08072563173477931,
+        0.04637223499637244,
+        0.03435339668289572
+      ],
+      "max_absolute_error": 8.480723762138709e-11,
+      "selected_weight_renormalized_to_one_gradient": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "logits": [
+        -0.1,
+        0.9,
+        0.2
+      ],
+      "expert_outputs": [
+        -0.7,
+        1.2,
+        0.5
+      ],
+      "binary_target": 0,
+      "selected_expert": 1,
+      "analytic_gradient": [
+        -0.08325259983713622,
+        0.19563185498089505,
+        -0.11237925514375884
+      ],
+      "central_difference_gradient": [
+        -0.0832525998140099,
+        0.19563185504889447,
+        -0.11237925512386227
+      ],
+      "max_absolute_error": 6.799941165702705e-11,
+      "selected_weight_renormalized_to_one_gradient": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "logits": [
+        0.1,
+        -0.2,
+        0.8
+      ],
+      "expert_outputs": [
+        0.3,
+        -0.6,
+        -1.1
+      ],
+      "binary_target": 1,
+      "selected_expert": 2,
+      "analytic_gradient": [
+        -0.10109574676799274,
+        -0.07489357123915392,
+        0.17598931800714665
+      ],
+      "central_difference_gradient": [
+        -0.10109574666294918,
+        -0.07489357123358076,
+        0.17598931811857454
+      ],
+      "max_absolute_error": 1.1142789468898684e-10,
+      "selected_weight_renormalized_to_one_gradient": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "epsilon": 1e-06,
+  "comparison_tolerance": 1e-09,
+  "formula": "d loss / d v_j = p_i (1[j=i]-p_j) <d loss / d m, E_i(h)>",
+  "assumptions": [
+    "fixed input and expert outputs",
+    "unique selected expert unchanged by perturbation",
+    "retained all-expert softmax gate amplitude",
+    "no capacity overflow or other routing constraints",
+    "smooth scalar logistic loss"
+  ],
+  "no_LM_data_or_training": true,
+  "scientific_support": "NONE: arithmetic check of a standard formula; not a native MoE experiment, guarantee of successful routing or new design"
+}

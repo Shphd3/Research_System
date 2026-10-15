@@ -1,0 +1,130 @@
+{
+  "selection": "npz_row=0 in each train_domain; fixed before model results; not selected for representativeness",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "records": [
+    {
+      "domain": 0,
+      "record": {
+        "category": "cs.CL",
+        "split": "train",
+        "archive": "cs.CL.tar.gz",
+        "member": "cs.CL/train.txt",
+        "line_index_zero_based": 90070,
+        "record_id": "cs.CL/train/90070",
+        "text_sha256": "9586dc8bda9c161ac4e7deeb56848d9e7f89c4e1b1e8e10ceb7eeb31a786b2b0",
+        "tokens257_sha256": "2baab170f7c38efc1afc3fbf730991fd68d0b852256774a6081af5d0642afa5d",
+        "prefix256_sha256": "02c18bf89c43f9682b094c671cc57663c5dba1de5de0d075d1ec9e4daec5c666",
+        "selection_sha256": "000023fdda041f32b29a6c9c139420afa998f19f724ad5dc8c6d64068079c8b1",
+        "text_chars": 1668,
+        "full_token_count": 351,
+        "npz_field": "train_0",
+        "npz_row": 0,
+        "domain_index": 0
+      },
+      "prefix_32_tokens": "A promising way to limit manual attribute annotation effort is to extend recently proposed zero-shot learning methods, until now applied to object recognition, to the task of labeling images",
+      "observed_next_8_tokens": " with attributedenoting adjectives. The",
+      "illustrated_prefix_positions": [
+        0,
+        31
+      ],
+      "illustrated_target_positions": [
+        32,
+        39
+      ],
+      "role": "train example only; not evidence of a common feature or update compatibility"
+    },
+    {
+      "domain": 1,
+      "record": {
+        "category": "math.AP",
+        "split": "train",
+        "archive": "math.AP.tar.gz",
+        "member": "math.AP/train.txt",
+        "line_index_zero_based": 269543,
+        "record_id": "math.AP/train/269543",
+        "text_sha256": "bcf5e61892906deadaff639f7be5733c408d6ca71bbe299dd7a444ac8efa20ae",
+        "tokens257_sha256": "4dd18f89b04a89fc66524824413c1c89460ef76c3de14b3e6793afa5b66c1296",
+        "prefix256_sha256": "3d2fcdc38c12f924eed43b702423bf2ac9f06c2e24bc3ac628dab6c88d803c80",
+        "selection_sha256": "0002828fbfe3811c922b6dfaa2a7119e11d40f34b35259b8bc0a0f2892f52f4e",
+        "text_chars": 1325,
+        "full_token_count": 304,
+        "npz_field": "train_1",
+        "npz_row": 0,
+        "domain_index": 1
+      },
+      "prefix_32_tokens": "Miura [14] recently improved the result in [11] and proved the local in time existence of a unique regular solution for large initial data in",
+      "observed_next_8_tokens": " the critical Sobolev space H ",
+      "illustrated_prefix_positions": [
+        0,
+        31
+      ],
+      "illustrated_target_positions": [
+        32,
+        39
+      ],
+      "role": "train example only; not evidence of a common feature or update compatibility"
+    },
+    {
+      "domain": 2,
+      "record": {
+        "category": "physics.optics",
+        "split": "train",
+        "archive": "physics.optics.tar.gz",
+        "member": "physics.optics/train.txt",
+        "line_index_zero_based": 51135,
+        "record_id": "physics.optics/train/51135",
+        "text_sha256": "67f0e4b788d1560322caa0a1000d4a215e9dfdafce046fc4bea1143ea1884f00",
+        "tokens257_sha256": "1da3a80380e8adaaad7705b74528ea130bbe94bc095762e0bb4e4a05a2284441",
+        "prefix256_sha256": "c6e54e9d977db949461aaddda2ed3699fd592721e2b8ae5b358017e21a9c206f",
+        "selection_sha256": "00075c9957397ca13fdc94aad7c3be271419d2aa7cc8e743eaae6086fc65928e",
+        "text_chars": 1200,
+        "full_token_count": 332,
+        "npz_field": "train_2",
+        "npz_row": 0,
+        "domain_index": 2
+      },
+      "prefix_32_tokens": "In the measurement setup of Fig. 1 , the bias point of the MZM is chosen by minimizing the power at the carrier frequency at the MZ",
+      "observed_next_8_tokens": "M-spectrum output. The MZ",
+      "illustrated_prefix_positions": [
+        0,
+        31
+      ],
+      "illustrated_target_positions": [
+        32,
+        39
+      ],
+      "role": "train example only; not evidence of a common feature or update compatibility"
+    },
+    {
+      "domain": 3,
+      "record": {
+        "category": "q-bio.GN",
+        "split": "train",
+        "archive": "q-bio.GN.tar.gz",
+        "member": "q-bio.GN/train.txt",
+        "line_index_zero_based": 600,
+        "record_id": "q-bio.GN/train/600",
+        "text_sha256": "337d6a14987899a3342599df1c7c2a090f18fcafc4178f3763102833d54739aa",
+        "tokens257_sha256": "a70597606c43d11cec965d55a7b57d26a856727e0ea34c6e1b74757345afa788",
+        "prefix256_sha256": "ac56b9ee07a5d335539402760a054ebe5526aa74ac412573c4bb11d03c931a47",
+        "selection_sha256": "000070db07aed01a1a2e6005c7dcf8d504ed700eb462338a447d9a10c249f930",
+        "text_chars": 1187,
+        "full_token_count": 261,
+        "npz_field": "train_3",
+        "npz_row": 0,
+        "domain_index": 3
+      },
+      "prefix_32_tokens": "For each metabolome correlation coefficient that we calculated, we also corrected its associated 489 P -value, in order to account for the two adjustable parameters",
+      "observed_next_8_tokens": " in our model. We did this by",
+      "illustrated_prefix_positions": [
+        0,
+        31
+      ],
+      "illustrated_target_positions": [
+        32,
+        39
+      ],
+      "role": "train example only; not evidence of a common feature or update compatibility"
+    }
+  ]
+}

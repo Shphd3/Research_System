@@ -1,0 +1,146 @@
+[
+  {
+    "sample_id": "N8_v1.cs.CL.test.000009274",
+    "source_record_id": "cs.CL/test/9274",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "e897e90619a3f3f54187a2011aea550061eb83302e2aee0cbfa22bb8550d2c90",
+    "input_ids_sha256": "4dd47f9123c124d262449c235221e7b043792cb7103f2b786e6053f789532631",
+    "domain": "computer_science",
+    "record_row": 1025,
+    "position_index": 12,
+    "input_token_position_zero_based": 206,
+    "prefix_tail_21_tokens": " are end-to-end learnable. On top of the architecture, various models have been proposed to tackle the",
+    "current_token": " the",
+    "target_token": " notorious",
+    "target_id": 42981,
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label",
+    "previous_selection_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "display_rule": "same four previously selected cases, no new filtering",
+    "source_half_effects": {
+      "A": {
+        "computer_science": 0.0035679001278179356,
+        "mathematics": 0.0017162996091784066,
+        "physics": 0.001146019331560666,
+        "biology": -0.001659902074775843
+      },
+      "B": {
+        "computer_science": 0.0039884483738283905,
+        "mathematics": -0.0006376616063619167,
+        "physics": -0.0032849475198482025,
+        "biology": 0.005529616318325381
+      }
+    },
+    "mathematics_minus_physics": {
+      "A": 0.0005702802776177407,
+      "B": 0.002647285913486286
+    }
+  },
+  {
+    "sample_id": "N8_v1.math.NT.test.000005479",
+    "source_record_id": "math.NT/test/5479",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "243f521e4a3d8423937ab327de19dd561d4a52f27000f0f5b598749ad8c4e182",
+    "input_ids_sha256": "17b616fca585460307f97fffe424c9aec70a5882fcd0adea0938384745203a09",
+    "domain": "mathematics",
+    "record_row": 1450,
+    "position_index": 4,
+    "input_token_position_zero_based": 78,
+    "prefix_tail_21_tokens": "ank one groups in [23] , Langlands constructs in sections 8 and 9 of [",
+    "current_token": " [",
+    "target_token": "1",
+    "target_id": 16,
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label",
+    "previous_selection_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "display_rule": "same four previously selected cases, no new filtering",
+    "source_half_effects": {
+      "A": {
+        "computer_science": -0.0011411167440407155,
+        "mathematics": -0.0015760340985515597,
+        "physics": -3.973222809072752e-05,
+        "biology": -0.0011022139099576833
+      },
+      "B": {
+        "computer_science": -0.0027286416068310615,
+        "mathematics": -7.425180956666111e-05,
+        "physics": 0.0014424530716166117,
+        "biology": 0.0019475457317259526
+      }
+    },
+    "mathematics_minus_physics": {
+      "A": -0.0015363018704608322,
+      "B": -0.0015167048811832728
+    }
+  },
+  {
+    "sample_id": "N8_v1.physics.optics.test.000000223",
+    "source_record_id": "physics.optics/test/223",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "6792fe724b9f89a86ecee59cd9923eab2ffa43ccbefb6a8d45bb99efa83516cc",
+    "input_ids_sha256": "aa2db52281d05245c957af5fef6f5e039f1a6247763ae88b0e8d3fa253b65e0b",
+    "domain": "physics",
+    "record_row": 1697,
+    "position_index": 0,
+    "input_token_position_zero_based": 14,
+    "prefix_tail_21_tokens": "is not only enhanced but it will depend on the distance between the tip and",
+    "current_token": " and",
+    "target_token": " the",
+    "target_id": 279,
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label",
+    "previous_selection_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "display_rule": "same four previously selected cases, no new filtering",
+    "source_half_effects": {
+      "A": {
+        "computer_science": -2.5751469959089945e-05,
+        "mathematics": 8.859578787934197e-05,
+        "physics": -0.0004089725403488842,
+        "biology": 0.00020489790582445266
+      },
+      "B": {
+        "computer_science": 8.524296548273469e-05,
+        "mathematics": 2.7276891785277257e-06,
+        "physics": 7.417199724457646e-05,
+        "biology": 0.00020558613013221816
+      }
+    },
+    "mathematics_minus_physics": {
+      "A": 0.0004975683282282262,
+      "B": -7.144430806604873e-05
+    }
+  },
+  {
+    "sample_id": "N8_v1.q-bio.GN.test.000000039",
+    "source_record_id": "q-bio.GN/test/39",
+    "source_revision": "6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+    "text_sha256": "4cee7182b731eca10d644ae23369b3edc76cc2c63aa05330e0373f54fd68114f",
+    "input_ids_sha256": "467f741703f241eaec18bbac851b22a6824e56e2a08e795a9fe75e4f8a36f0f8",
+    "domain": "biology",
+    "record_row": 1836,
+    "position_index": 12,
+    "input_token_position_zero_based": 206,
+    "prefix_tail_21_tokens": " the time series {x n }, and then computing the periodogram (equation 5), values randomly",
+    "current_token": " randomly",
+    "target_token": " distributed",
+    "target_id": 4237,
+    "interpretation": "same target event and same pre-update representation; effects differ by source update, not a semantic feature label",
+    "previous_selection_rule": "one case per domain, hash-min among old R events with at least one source >1e-4 and another <-1e-4; selected after seeing effects",
+    "display_rule": "same four previously selected cases, no new filtering",
+    "source_half_effects": {
+      "A": {
+        "computer_science": -0.0011225108914239001,
+        "mathematics": 0.004333643191232639,
+        "physics": -0.010246142896765065,
+        "biology": -0.003897112576229489
+      },
+      "B": {
+        "computer_science": 0.007616906932357281,
+        "mathematics": -0.0006208688892428427,
+        "physics": 0.002232992559004998,
+        "biology": -0.0044457875428634
+      }
+    },
+    "mathematics_minus_physics": {
+      "A": 0.014579786087997704,
+      "B": -0.002853861448247841
+    }
+  }
+]

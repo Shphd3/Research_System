@@ -1,0 +1,106 @@
+{
+  "date": "2026-09-30",
+  "purpose": "Stable research Focus with a separate dated speaking brief; local documentation refactor.",
+  "inputs": {
+    "conversation_id": "6abc72ce-ad5c-83e8-8dea-ab9fe45f76d4",
+    "update_bundle": {
+      "filename": "research_system_0930_update.zip",
+      "sha256": "386804d6a506f4231fcc5d15a41c42f11083210947b9278a5acf425e8653cd34"
+    },
+    "uploaded_brief": {
+      "filename": "0930_组会汇报稿.md",
+      "sha256": "8dc41f47a8a1802322134d8055c4725d7938ecfec5e6aed83f95d2eb9d6119e7"
+    }
+  },
+  "brief": "daily_research_reports/0930/meeting_report/0930_组会汇报稿.md",
+  "adaptations": [
+    "Dedicated meeting_report folder requested by the researcher; all relative evidence links rebased.",
+    "Single-position assumption stated before the speaking-core outer-product formulas.",
+    "Concurrent candidate-design directory and its bilingual day-index rows preserved.",
+    "Placement/lifecycle references reconciled with stable Focus and independent meeting delivery."
+  ],
+  "scientific_state_changed": false,
+  "new_run_authorized": false,
+  "commit_or_push_performed": false,
+  "files_changed": [
+    "daily_research_reports/0930/meeting_report/0930_组会汇报稿.md",
+    ".agents/skills/research-communication/SKILL.md",
+    ".agents/skills/research-communication/references/meeting.md",
+    ".agents/skills/research-progress-core/references/focus_cycle.md",
+    "templates/research_process/focus_writing_template.md",
+    "AGENTS.md",
+    "README.md",
+    "PROJECTS.md",
+    "daily_research_reports/0930/README_cn.md",
+    "daily_research_reports/0930/README.md",
+    "daily_research_reports/0930/focus_domain_update_geometry_cn.md",
+    "daily_research_reports/0930/focus_domain_update_geometry.md",
+    "daily_research_reports/0930/meeting_report_shared_update_cn.md",
+    "daily_research_reports/0930/meeting_report_shared_update.md",
+    "daily_research_reports/0930/docs/summary_report/0930_shared_update_self_contained_meeting_report_cn.md",
+    ".agents/skills/research-mainline/references/layout_and_naming.md",
+    ".agents/skills/research-mainline/references/artifact_lifecycle.md"
+  ],
+  "utf8_byte_budget": {
+    "AGENTS.md": {
+      "before": 7327,
+      "after": 7320
+    },
+    ".agents/skills/research-communication/SKILL.md": {
+      "before": 1297,
+      "after": 1087
+    },
+    ".agents/skills/research-communication/references/meeting.md": {
+      "before": 2901,
+      "after": 2617
+    },
+    ".agents/skills/research-progress-core/references/focus_cycle.md": {
+      "before": 4054,
+      "after": 2355
+    },
+    "templates/research_process/focus_writing_template.md": {
+      "before": 7573,
+      "after": 2033
+    }
+  },
+  "checks": {
+    "unittest_cases_passed": 23,
+    "skills": {
+      "entries_checked": 14,
+      "local_links_checked": 67,
+      "issues": 0
+    },
+    "official_quick_validate": [
+      "research-communication",
+      "research-progress-core",
+      "research-mainline"
+    ],
+    "changed_document_links": {
+      "checked": 184,
+      "missing": 0
+    },
+    "entrypoints": {
+      "checked": 57,
+      "issues": 0,
+      "scope": "Isolated root Git index including the new brief, with the independent project native index; live staging unchanged."
+    },
+    "math_source": {
+      "files_checked": 17,
+      "issues": 0,
+      "final_four_text_edits_rechecked": true
+    },
+    "protected_evidence_and_candidate_hashes": {
+      "checked": 135,
+      "changed": 0
+    },
+    "focus_changes": "Navigation links only; both scientific bodies identical to pre-edit versions.",
+    "prior_reports": "Backup banner only; prior report bodies preserved.",
+    "git_payload": "Passed on isolated scoped index; no generated output staged.",
+    "whitespace": "git diff --check and isolated cached check passed."
+  },
+  "limits": [
+    "Byte counts are not token counts. Applicable references still consume context when loaded.",
+    "No rendered math, oral timing, independent model behavior, or fresh-client skill loading verified.",
+    "New files remain untracked in the live working tree until explicitly staged/committed."
+  ]
+}

@@ -1,0 +1,886 @@
+{
+  "FIT_finite_action_means": {
+    "base+a_pca64__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+a_pca64__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+a_random64__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+a_random64__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+c_pca64__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+c_pca64__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+cx_full__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+cx_full__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+cx_pca64__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+cx_pca64__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+sae64__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+sae64__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+x_pca64__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base+x_pca64__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base__forced_four": [
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ],
+    "base__zero_plus_four": [
+      0.0,
+      -0.00035988486634358106,
+      -0.0009492981907223202,
+      -0.0003990350950368979,
+      -0.00031329607587675563
+    ]
+  },
+  "LM_forwards": 0,
+  "SAE_forwards": 0,
+  "auditor_sha256": "b5b80ff185732b14b811b6252502a753d44fe30746de1354e8cdbd056d32586e",
+  "boundaries": [
+    "All 80 saved rows and their pointwise 2000-draw intervals reconstructed from cached effects and predictions.",
+    "Prediction fitting and feature transforms are not rerun; their frozen hashes and interface dimensions are checked and fitting code is read only.",
+    "Original finite-action values are checked against their hashed saved producer payload; no model forward or large checkpoint hash is repeated.",
+    "Record/category pairing and whole-record bootstrap are checked; intervals condition on the exposed panel, source bank and FIT predictors.",
+    "No independent confirmation, multiplicity correction, causal architecture judgment, practical threshold or future-learning claim."
+  ],
+  "checked_file_sha256": {
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/data_manifest.json": "7dff72e97a1e4ec0d0d90d8645f7609b8419c894276440e784bbf1b5b076b74d",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/selected.jsonl": "2c6f6ea5a1c3b97acbdb3f2d4f630ed4247f18dce915868b9b04c5457301a82b",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/fit/shard_0/features.npz": "21847420b7d32edb40d54edbb9a3288d4732939ee14361d0f7283b4d93b08300",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/fit/shard_1/features.npz": "34060a2f90d9d2f229ba33bed7d84568875756feecb0076edb0d4102dadb7499",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/fit/shard_2/features.npz": "e3b1f3bab656ded0ed17129cf67253b5f72a3b674fb88a12101466112c173b47",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/fit/shard_3/features.npz": "89bce1a04e3f3cb0b483f2a736230915db3d94e39af86f08fa6457392c5d34cd",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_0/features.npz": "dac2e894456a1f86e5f0c19af58371d4d90e3e9716fd8703e250501265aa424d",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_1/features.npz": "f79b20ccd86fca1f4378af5f013f2fb6a6324d6045bea703cb7a31a98d1affe2",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_2/features.npz": "71795ac99e9b752d35f84aa983baaa65aebfac4cffcf38040e67574fcf009c43",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/readout/shard_3/features.npz": "8906ee1211d22d55cfdbc6b27403eb5e8a8cbc5ffee3f4614faac1c1adb115e5",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/receipt.json": "7ffb3580d1ac69c16c8471cf919ffda1b8ed98968a53e9a8787e553fce36fd26",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/registration.json": "f67866014f8d1e9ab87869c4b2b716736c9503c3bebc18e9ce19b45bf14b2649",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/cache_audit_01/source_mean_gradients.npy": "81ec5a1451b61e8b78a5505d3c06aff574aa48e1405b35ce709d1fc3ef5a0eae",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/effects.npz": "a1c78e4d3df7f13c71fceda4f59f4d8e30a665c80e3a97b4717b05b9dd5d3d43",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/panel_metadata.npz": "2aa1711699d34c7b6619193f9264bd433e2287f4f293c39d4bdb3a05a8a49ab7",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/receipt.json": "263bc4ebe00c03e77d7e50da3e8bf2e19add069743436992dd7218e9319e611f",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_panel_01/registration.json": "ce27bb08ea0fd017c634fc859eb8941eea72ba93398e00dc8d5d1831d9dc2ae8",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/panel_freeze.json": "3f87da9764ddebca72dc2ffbb6f4ac4fa2f0bb9f867faff9a2c071f768429de7",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/finite_replay_01/qualification.json": "66b863d9bc198d01a62d355939cfbc00752088042348dbde166efd39a9978d2b",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/input_hashes.json": "9e5dd098f9a9200e66fad9a5dca04ca7af0e79b09610f2720b367b31baa245b0",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/split_freeze.json": "0ad33fc2172da1bba427c60192f0314976b9d88cb84582cd362df2f65a60bab3",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/receipt.json": "8018a96b7897c73db2f9b797fc1356dadbe2eb62f76798280336071b839db399",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/registration.json": "61ce5825f5750e49fa83781224feab22ea37403391e1a66fe7c91663be07ce11",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/cache_study.py": "61e48fc03daaf4562bcdb8c7e2f275a6ee8c0761952be89477852a35856ee0ac",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_panel.py": "56b7b200a97c228d522f81b48751a7b36df500f16883122e55b82592b953bf5a",
+    "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/scripts/finite_replay.py": "8b5a0127e904310c879f4795d1b09f3f2f6b43da768dd4534779392372db6c4a",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/cached_router_inputs_feasibility.json": "7fad91f7ccc235a2529f6f9982aab73d4d7381e31fc7300b1141da85b2656977",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/notes/cached_router_inputs_feasibility.md": "9b5cad0948d1dcee52c0be817fbcdfde30936f2b14df4be61f0b6e2afdf892d6",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/bootstrap_freeze.npz": "95df0b8ab64d00eb9f45e99aaa06d17ce59dfc932da2c2f11aa988507b45e2cf",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/event_metadata.npz": "5d0b600a990a34571edf546156c0aa894b07d2826965997598f2ecbaf940670f",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/event_results.npz": "528e1ca400d95dfa09000c50ee1773b3f014a08bfe49b1a286503e05e1c10241",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base/feature_transform.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base/predictions.npz": "b91b2aab897d98873ef434e16f3a69ecf65b679bcd3e83fac99d980f3d640f6d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base/receipt.json": "3fca22a61a7e974a31a56041d87d69bc7b48bd398c2159e3fe0dec3d9c337b77",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base/ridge.npz": "74e32230793871d2b7c8bce7f07cece4318f41cc8565cfa2ed3049622ba62d2d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_pca64/feature_transform.npz": "847a01f5633d7f0cfac5dbc9b8ac309815b7cabbcb85363db379a8d82ad1899d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_pca64/predictions.npz": "117014c071a4f7d8deed30f39ea1ffc9c2beb2a047ee6a111e7bb5ae9b1ae138",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_pca64/receipt.json": "bae171f562ec82db13d5b6f44b9c8096990055b44a522747a3845941def51946",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_pca64/ridge.npz": "cb7afc21a83a64089ab973ea9bddd56da6f8c4fc1751678b302ac83a9630aadd",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_random64/feature_transform.npz": "34935cfa1f50305ca47a5073fc645dd2d683c3cb277f787285309901227663af",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_random64/predictions.npz": "9ef21c90798bfed4f411817635677585aed23b16ab316d805ee2ec2339f3445c",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_random64/receipt.json": "b66473e6f2518ef0d79b6db818a7ca83eb5719f7ec8535e30dc43f1a6b445de3",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__a_random64/ridge.npz": "459482086337cc82ba4f1e7ee90e6ee45012e283268160e2d7bb4a9c35f5aea4",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__c_pca64/feature_transform.npz": "c460815f053adda8bc8bb6c447a1b487270c920cb97895294faef148d01ac09e",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__c_pca64/predictions.npz": "344df2751a13077b519ceead66d40887a3d0a4c55a608c9f0b7649ca36c3f35c",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__c_pca64/receipt.json": "7215bb0a2c0fe7472d143bbfc17a73745bc4bb07c9b4365be4dc75b32ee791eb",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__c_pca64/ridge.npz": "4d08669c2446bffbb3170b431a36088fff260b99907cd50cc40b1952ae1f5b99",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_full/feature_transform.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_full/predictions.npz": "930d35db5c14b5772cacce7670a771c6e2fd80bcadb8c86edaf91ac597731ed1",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_full/receipt.json": "d673bf4c666eb0b458f104e5ab03ba9a679f4906cbdd29f7fd1bc1718e8cfa24",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_full/ridge.npz": "1a9ae7f538f6ed858a0f1ef7d7b63e4d69974ea578f25ed89402223c23ff492a",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_pca64/feature_transform.npz": "161c6b4262552b455f0b9e47759914d304a432f1dbd5f33da067c3b0b293d58b",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_pca64/predictions.npz": "2cf4850415e0e02db09eadadb8c70d1a667f87da07d5d4a9bf189fc6c268b8f4",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_pca64/receipt.json": "cdb7c54269b758a8053c0d5deaf36d81f51e3295340dcaa4e9e532ec0d37c7b5",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__cx_pca64/ridge.npz": "7f482f39d1df7837b43474df9494348343ad060fd9e0bfd4c1dc3483086963e7",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__sae64/feature_transform.npz": "f69be4812d271e351290f2e2ddd1847eb65f0aff214acfb26d5dc89ea5816487",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__sae64/predictions.npz": "ca8dcffa799ce74ff3d5768a6e835548d44bb05c4285edbcb17a806d7878fa3d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__sae64/receipt.json": "694c21f6c7e5d71520c1ec2e0397379606dafadc2517de621c5a20b525f12589",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__sae64/ridge.npz": "5a5add788f2c5f6269e229cecd424311b13196bb66c4f38350ef5d093222299a",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__x_pca64/feature_transform.npz": "f0556063da3a8ac4b35fdc96c2b59ef5b34077e24d182ba02e960f8a832dcf4e",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__x_pca64/predictions.npz": "d84f9540c29a9c4fba0577d49f0b3feba85aa384cac28e55e074b819608f7885",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__x_pca64/receipt.json": "309b472b673951162e122a192036342f966e34bdddcd80596aa3528e9db963d3",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/families/base__x_pca64/ridge.npz": "f1caf11756ecf1d40afc66ece6f0d0c66e8d959fa1229062c153571fe8feaf80",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/finite_labels.npz": "e933c88702072963e4cf187cb9e6c057fcc88a5e7b2319733ebb64b165134ee8",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/panel_metadata.npz": "d775e7349f3fa5e631767d883febd01020dd71e8981bfdcbce753316adef88c2",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/preexecution_registration.json": "fc8e4cab5cd0048ee8e2841ed0307e98dbfdca74ea767f6378b7f05ddff8b4e8",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/reading.md": "f0abf0cbd35ea44dda906ab775a741e4300178f9dbc708fcd1d82305b470daf1",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/receipt.json": "bb1763b6b8061c0a183165f006b0f0a2b52eaf91ac529b6890e2bf766c502b39",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/record_results.npz": "bf23317fd1ee4d3ab088cf82f3e67c30a3932926110b65ff8f4d08a382d63a9e",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/selection_freeze.json": "af6b7517553a393ccfac62d401c9d7d92a160f94fb54050e6cc09eb7b83e84aa",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/selection_freeze.npz": "20a447bd0ebcf57c4144191b5d43120d2f82adc691097e63f4cd12fdf1fd2c62",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/summary.csv": "55f18c28a292a0a7dcb9990c93bf4d836b9db8b00bbc6578ab041d7806ddb19d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/summary.json": "b25f22d6f260ad18302733666f3c061e7ed0b19b003109d7cf55319a0778e88a",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/usage_frequencies.npz": "d833c3f15ec084a591173f09655127e4d12260f760c8eefae30b9d7f8b5abc60",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01/validation_receipt.json": "e03576df24b1ab8cce1b036ac2d456bc5120889d2262437b60833c30fc3df755",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_router_inputs.py": "f4462599628b1d5771e9840adc7e1145bf3d92d82626478541224049fa39c569",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/tests/test_cached_router_inputs.py": "1fb0a20d61d1c313f2589c2e0dc1a7056a0e509ca8dd0c1327095c502eb666db"
+  },
+  "checked_rows": [
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_pca64",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+c_pca64",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+x_pca64",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_pca64",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+a_random64",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+sae64",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 22,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 22,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 22,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 22,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "forced_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 22,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 23,
+      "receiving_domain": "pooled",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 23,
+      "receiving_domain": "computer_science",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 23,
+      "receiving_domain": "mathematics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 23,
+      "receiving_domain": "physics",
+      "status": "PASS"
+    },
+    {
+      "action_set": "zero_plus_four",
+      "bootstrap_draws": 2000,
+      "family": "base+cx_full",
+      "metrics": 23,
+      "receiving_domain": "biology",
+      "status": "PASS"
+    }
+  ],
+  "checks": {
+    "FIT_fixed_selection_and_all_predicted_argmins": "PASS",
+    "all_event_argmin_choices_checked": 393216,
+    "all_point_estimates_and_all_percentile_intervals": "PASS",
+    "all_summary_rows": 80,
+    "bootstrap_draws": 2000,
+    "csv_and_json_numeric_statistics": 10800,
+    "dynamic_global_and_category_usage_each_bootstrap": "PASS",
+    "paired_fit_records": 512,
+    "paired_policy_minus_fullcx_each_bootstrap": "PASS",
+    "paired_readout_records": 1024,
+    "positions_per_record": 16,
+    "receipt_input_hashes": 31,
+    "receipt_output_hashes": 46
+  },
+  "completed_at_utc": "2026-10-03T09:59:35.440875+00:00",
+  "elapsed_seconds": 8.785783605650067,
+  "errors": [],
+  "fixed_action_indices": {
+    "base+a_pca64__forced_four": 1,
+    "base+a_pca64__zero_plus_four": 2,
+    "base+a_random64__forced_four": 1,
+    "base+a_random64__zero_plus_four": 2,
+    "base+c_pca64__forced_four": 1,
+    "base+c_pca64__zero_plus_four": 2,
+    "base+cx_full__forced_four": 1,
+    "base+cx_full__zero_plus_four": 2,
+    "base+cx_pca64__forced_four": 1,
+    "base+cx_pca64__zero_plus_four": 2,
+    "base+sae64__forced_four": 1,
+    "base+sae64__zero_plus_four": 2,
+    "base+x_pca64__forced_four": 1,
+    "base+x_pca64__zero_plus_four": 2,
+    "base__forced_four": 1,
+    "base__zero_plus_four": 2
+  },
+  "input_run": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/cached_router_inputs_01",
+  "maximum_absolute_difference": 1.3877787807814457e-17,
+  "maximum_difference_comparison": "Event metric: base+a_pca64__forced_four/global_usage_expected_delta_ce",
+  "model_loads": 0,
+  "numeric_elements_compared": 6352288,
+  "predictor_fits": 0,
+  "scope": "Independent reconstruction of saved fixed predictions and finite effects; no fitting or model forward.",
+  "started_at_utc": "2026-10-03T09:59:26.655113+00:00",
+  "status": "PASS_INDEPENDENT_RECONSTRUCTION",
+  "tolerance_absolute": 1e-12
+}

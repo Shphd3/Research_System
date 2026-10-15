@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-09T08:12:21.092630+00:00",
+  "catalog_sha256_at_validation": "5ee7a1ca7703552278e1343f684a7fb3ad21b901e0f18890ed8aeeba8527639a",
+  "new_entries": 26,
+  "new_source_paths_checked": 90,
+  "local_document_links_checked": 100,
+  "errors": [],
+  "recorded_checks": {
+    "asset_checker_unit_tests": "10 passed on 2026-10-09",
+    "skill_structure": "14 skills, 85 local links; 0 issues",
+    "changed_skill_creator_validators": "remote-experiment-workflow and experiment-card-writer valid",
+    "current_entrypoints": "79 entrypoints; 0 issues; 3 pending tracking"
+  },
+  "access_evidence": "2026-10-09_access_v4.json",
+  "available_qwen_evidence": "2026-10-09_qwen3_available_assets.json",
+  "access_counts": {
+    "ACCESSIBLE": 150,
+    "UNAVAILABLE": 1
+  },
+  "boundaries": "Lightweight access and source/link/structure checks; no full weights load, GB digest recomputation, resume, GPU, training or scientific validation. Data source/ref wording was clarified after access checks without changing checked paths."
+}

@@ -1,0 +1,106 @@
+{
+  "source_transfer_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/receipt.json",
+    "sha256": "6fc48b14e5a003928b8abf17698d57d63da81452b50f1c97ece22b82ee240b1f",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_SOURCE_TRANSFER",
+      "elapsed_seconds": 23.77513874322176,
+      "code_sha256": "7875cb985655f78db3c525d009db5a11a69448048782f9501d67ce23b52337df",
+      "registration_sha256": "5202bc46bd5ec32fc8a0a8be834d4d6126524d7ccd29e822828035cf24b015bc",
+      "source_means_sha256": "ca7b65b01e412a960205946f70fb1d307d792f1c96c318730e26bf9e85077bcf",
+      "all_roles_pairwise_disjoint": true,
+      "historical_source_mean_closure_maxabs": 3.469446951953614e-18,
+      "MSE_identity_maxabs": 2.2898349882893854e-16,
+      "model_loads": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "source_transfer_finite_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/receipt.json",
+    "sha256": "8018a96b7897c73db2f9b797fc1356dadbe2eb62f76798280336071b839db399",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_FINITE_SOURCE_TRANSFER",
+      "elapsed_seconds": 186.27850188873708,
+      "readout_events": 16384,
+      "conditions": 8,
+      "eta": 0.05731845587090156,
+      "baseline_matches_old_exactly": true,
+      "readout_metadata_matches_old_exactly": true,
+      "model_state_before": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_state_after": "0d8cf812ff3c299a53b392c79ebc650759991453aa7963f98291582592308cbf",
+      "model_unchanged": true,
+      "model_matches_qualified_old_panel": true,
+      "protected_inputs_unchanged": true,
+      "source_split_record_guards_pass": true,
+      "first_order_matches_parent_truth": true,
+      "checkpoint_state_sha256": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+      "source_means_sha256": "ca7b65b01e412a960205946f70fb1d307d792f1c96c318730e26bf9e85077bcf",
+      "split_freeze_sha256": "0ad33fc2172da1bba427c60192f0314976b9d88cb84582cd362df2f65a60bab3",
+      "CPU_threads": 8,
+      "max_seconds": 600,
+      "optimizer_updates": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "code_sha256": "6576f434f33664b5afaa290f5781f72cea53364e4a5005cd4d34af7df2d31e20",
+      "registration_sha256": "61ce5825f5750e49fa83781224feab22ea37403391e1a66fe7c91663be07ce11",
+      "effects_sha256": "41ec782d72895f4a293ee095030e70c1681aa35a39b722cd2088e121199065f8",
+      "first_order_sha256": "d57bf693705f806930c6c5f5afa05489b3eaf874b2606e523ca3b73c7d8586fb",
+      "scientific_judgment": "Unknown"
+    }
+  },
+  "source_contrast_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_contrast_01/receipt.json",
+    "sha256": "37a632f830f0e4daef9267c318da3710fbafe1ee27864998bfc37f10b0fb016e",
+    "receipt": {
+      "status": "COMPLETE_POST_READOUT_EXPLORATORY_CONTRAST_SENSITIVITY",
+      "elapsed_seconds": 41.745211731642485,
+      "code_sha256": "5793d61fe50947c442c21971a5eac0db84a6d61738a5a4309d0ecd02849e2669",
+      "registration_sha256": "c1f06394d9df8e14ddabf2f84743f33bfc6035fe0ee1a55727ba36e34aa1582a",
+      "input_hashes_sha256": "da9a7d4b84e2de50aff21e167cdf8523363db77c711e1df7b425714ac99d6fc1",
+      "predictions_sha256": "1db78252f430bd397701bf89651b437784e2ab149bf05d65b0ac583e785b1b60",
+      "selection_sha256": "dfe43aa7034d7feff6c847b8691c9ea6960dd152dbdca3caa52feed3230f950a",
+      "inputs_unchanged": true,
+      "strict_alignment_passed": true,
+      "CPU_threads": 8,
+      "max_seconds": 300,
+      "model_loads": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "GPU_used": false,
+      "remote_jobs": 0,
+      "scientific_judgment": "Unknown",
+      "boundary": "Descriptive regularization sensitivity, not absence of information or independent confirmation."
+    }
+  },
+  "source_transfer_summary_01": {
+    "source": "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_summary_01/receipt.json",
+    "sha256": "54b81195356884c744f7ddd3b23c43dd13ccc6ed4480ebf975f9f1fee303add3",
+    "receipt": {
+      "status": "COMPLETE_EXPLORATORY_FINITE_TRANSFER_SUMMARY",
+      "elapsed_seconds": 0.34723683446645737,
+      "code_sha256": "132c33bda0024e08a0199ee465e5296f85d299321e9e779b5d783a027d498ab6",
+      "registration_sha256": "55aa88c0b074f1b5a159eacd5d537f4b264a6157732070c3c20495d20486a712",
+      "inputs": {
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/predictions.npz": "87345562937a5fa3e861f18e0230059d1cdca12b864ea1e4b579506808d69b79",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_01/truth.npz": "a1cbf9ecdd4bc37368f3919a5a9fcbcd526663b2f980c41d942cc41ec617296c",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/effects.npz": "41ec782d72895f4a293ee095030e70c1681aa35a39b722cd2088e121199065f8",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_transfer_finite_01/receipt.json": "8018a96b7897c73db2f9b797fc1356dadbe2eb62f76798280336071b839db399",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_contrast_01/predictions.npz": "1db78252f430bd397701bf89651b437784e2ab149bf05d65b0ac583e785b1b60",
+        "/data/250010109/MoE_Router/experiments/20261002_s7_representation_update_channels/runs/source_contrast_01/receipt.json": "37a632f830f0e4daef9267c318da3710fbafe1ee27864998bfc37f10b0fb016e"
+      },
+      "eta": 0.05731845587090156,
+      "new_fits": 0,
+      "LM_updates": 0,
+      "SAE_updates": 0,
+      "remote_jobs": 0,
+      "identity_maxabs": 3.0899761915836876e-18,
+      "scientific_judgment": "Unknown"
+    }
+  }
+}

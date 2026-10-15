@@ -1,0 +1,42 @@
+{
+  "revision": "A1_IMPL_2",
+  "time": "2026-10-13T17:55:48.023306+00:00",
+  "reason": "torch._int_mm requires M>16; pad logical16-column correctness case to32 with zeros; small pair pool operands minimum32; display coordinate label clarified",
+  "scientific_definition_changed": false,
+  "new_features_visible": false,
+  "active_compute_used_prior_seconds": 41.22113413363695,
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/candidates.py",
+      "sha256": "5c129830e1c5b106f94ae3d64af54f010e6d061a1536ff99ddaa6822a4506e8f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/core.py",
+      "sha256": "cca787eed861413a1f07573854a9b5f0a6e5a2fb7daa0c4dd6a98c24306b0a3f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/features.py",
+      "sha256": "839b475881609057579ddd0205cac8544b2a594e9ed9f9113eeaa123b17c3450"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/graphs.py",
+      "sha256": "c9aaa1c80e787c8c3cbd153554a85547fe887ee6773cb13778def363e5a48e26"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/inspection.py",
+      "sha256": "0294b18e442db7444fd45fc73089ad294c522b7f3f5148c085cae996e8eaaf1b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/launch.sh",
+      "sha256": "a87814070f093fcfdc9e5fb9a3ccf0aeb929692f0151eb07a92073fbd4aae69d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/reporting.py",
+      "sha256": "64177275d1829227fd845ad334df5d26af61ca927a3a4ca9f1f4c056181e22e8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/run.py",
+      "sha256": "d8579576ddcf7caffe02b6c9cfea26877058b9f09ae41e9df6214031d6645281"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# 阅读入口
+
+先读[简短中文结论](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/summary_cn.md)，再读[完整中文报告](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/detailed_cn.md)。
+
+[三类图及读图说明](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures_cn.md)；[全部源表索引](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables_cn.md)；[全部随机／高激活文本](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/text_examples_cn.md)。同一目录含CSV、JSONL、PNG/PDF/SVG及来源／代码，数据与图可携带。
+
+结果：整体平均位置关系不支持原正向预期；分布浅深并存；频率比较混合。任务pt-icv8hyi3已成功结束。没有训练、推理、全量共现计数或重建图。科学判断及下一步待研究者讨论。

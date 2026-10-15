@@ -8,13 +8,17 @@ models, datasets, thresholds or directories.
 
 Distinguish logical relations from filesystem ownership:
 - `refines`: opens a part of the parent question;
-- `depends-on`: needs another answer for interpretation;
+- `depends-on`: needs another answer; state why that answer is necessary;
 - `coupled-with`: current evidence cannot identify the answers independently.
 
 For materially coupled questions state the joint prediction, model/test, each
 answer obligation, identifiability limit and evidence that would separate them.
 Joint evidence does not independently prove every prior. Sibling dependency does
 not make one question the other's child.
+
+A chosen exploration route is not a necessary dependency. State which parent
+claim a bounded child answer updates and why each result branch matters. One
+proxy's failure cannot exclude other lawful routes without further evidence.
 
 Propagate eligible result -> affected implementation/model/prior -> bounded answer
 -> parent obligation and relevant relations -> proposed next decision. Preserve

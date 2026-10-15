@@ -1,0 +1,16 @@
+{
+  "question": "Does input-dependent matching outperform a strong fixed action as well as randomized matching?",
+  "data": "Dense, fresh S7 and SALL at exactly 33,000,000,000 training tokens; fresh panel R=1024 records, 16 positions each",
+  "metric_unit": "Comparator CE minus policy CE, micro-nat per selected event",
+  "aggregation": "Pooled equal-domain readout; 2000 category-stratified paired whole-record draws",
+  "conditions": "All families, both A/B transfer directions, both action sets; Dense omits SAE",
+  "scale": "Linear axes; intervals unadjusted; checkpoints and source banks fixed",
+  "expected_support": "Positive gain against both controls would support this frozen policy within the panel",
+  "observed": "Every fixed-comparator interval is negative; every global-marginal interval is positive",
+  "rival": "Predictable matching can coexist with a better pooled common action",
+  "maximum_claim": "Frozen policy utility in this panel; no training, retention, semantic-specialization or architecture claim",
+  "source": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/probe_33b_pooled_cross_source.csv",
+    "sha256": "9ad0aa30cdd9d72657d414091570f0a23773e741405248e49fb658f0e62e5573"
+  }
+}

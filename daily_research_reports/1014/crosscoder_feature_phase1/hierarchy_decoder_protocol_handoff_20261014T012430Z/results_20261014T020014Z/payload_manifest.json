@@ -1,0 +1,456 @@
+{
+  "files": [
+    {
+      "relative_path": "README_cn.md",
+      "bytes": 1386,
+      "sha256": "18ac8f18ca1b629736f4df85cd5ac34c365e917fadabb3f532c0bfcc30ea9ab8",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/README_cn.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/analyze.py",
+      "bytes": 26519,
+      "sha256": "e1f42998860e69a99f34e1a9b4195b9acfad17de27e6f0eddc6846f4ea21dca0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/analyze.py",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/finalize.py",
+      "bytes": 28615,
+      "sha256": "98d3aa43b67a7b116906b0864c1ca23b82eabcc9f38d5a0620bc010e179c7d54",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/finalize.py",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/render.py",
+      "bytes": 8149,
+      "sha256": "5480df63b2d014b67ee49a584d2007d85e601c1ef3c36b55fd9b00e1b4b0c2f3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/render.py",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/render_initial.py",
+      "bytes": 6208,
+      "sha256": "e3bb7f9cc195fb67c8b6ddf058326d950fcf9e6024db686a83ae95215e10dd01",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/render_initial.py",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/run.sh",
+      "bytes": 510,
+      "sha256": "4eeb2036936e2faad277e2d9a37f3ec383f6f3de4d1337dee408eb088f05ae56",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/run.sh",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/validate_delivery.py",
+      "bytes": 3968,
+      "sha256": "779a7478366e494ac47f7a2f3dc7c4463a2c9eb796a917e1fbdaa5186afcd2ab",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/validate_delivery.py",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "code/watchdog.py",
+      "bytes": 2265,
+      "sha256": "c814bfd149a8959164041a61920cbe9edf38dc9e64b1ce5b263c427fbe560da7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/watchdog.py",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "completion_receipt.json",
+      "bytes": 1680,
+      "sha256": "4c0fa72601503fa5bb349b4bac2bb9e35ebbd03f36d6877c01369e0d5bd759af",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/completion_receipt.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "derived_geometry.npz",
+      "bytes": 4738016,
+      "sha256": "5a197371680c6913491dcb9b009f277e53a5936ec536e28940c06ebc5ecb3cb4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/derived_geometry.npz",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "detailed_cn.md",
+      "bytes": 20585,
+      "sha256": "6bf711ad28cf9132149c94835286e19d90360e645f5f943c7ca47e37d10a5e9b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/detailed_cn.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461.pdf",
+      "bytes": 22587,
+      "sha256": "92e4647ace684e0508168a6c362d4f3fb79f606b87fee86a3d973b67a365751b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461.pdf",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461.png",
+      "bytes": 598949,
+      "sha256": "017448c268df1a1157b17c35e39c26e1c863f33567af0eba45c21525cfc75615",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461.png",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461.svg",
+      "bytes": 54031,
+      "sha256": "639a0888dfb3a0bc29c46c250a7089dd0e836b4e663643873262c12a6c0d58d9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461.svg",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461_details.pdf",
+      "bytes": 25421,
+      "sha256": "1c7d350bb0f9d098040a844bc49fe43cee53f51618ca258f98d9d65a5acbdd7e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461_details.pdf",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461_details.png",
+      "bytes": 851831,
+      "sha256": "ffbb50baff3bb75f9a143221b986f7f6e37d55069edef27a5043e32953ab2302",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461_details.png",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461_details.svg",
+      "bytes": 90656,
+      "sha256": "63a0d30a04400393252abd39b9a5b4f0e9da0dcba810cd4657246dd3a90d39d4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461_details.svg",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937.pdf",
+      "bytes": 21108,
+      "sha256": "925251fa0183d15ca319f2e254ae3c954c6e9337eebab3b8512ecfde50c1b6b0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937.pdf",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937.png",
+      "bytes": 481338,
+      "sha256": "678f2993b4dbdc2665590ceeb73024cbd7bdc9975cb42ac67dbd6e1d68454dca",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937.png",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937.svg",
+      "bytes": 45009,
+      "sha256": "9067eb62df549558b65134d988c42d1f80c5929889bf73e685beefcfb98f5e83",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937.svg",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937_details.pdf",
+      "bytes": 23523,
+      "sha256": "cd4e7f0ed632e35697cf9ad8ae05e8717cf1d6c47e0a4fa27af3a958b3b477a4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937_details.pdf",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937_details.png",
+      "bytes": 696953,
+      "sha256": "8dabe2b8644a59220c0a885b579b5959dafe9121c0795d8b2fb18f52309defda",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937_details.png",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937_details.svg",
+      "bytes": 75449,
+      "sha256": "8fa4f5405820ed80d4235bfe068b19acff1259a9021bbd5734791d61eba2eee2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937_details.svg",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure2_decoder_distribution.pdf",
+      "bytes": 79449,
+      "sha256": "eeedd2048d2b27f486cee55cfecc5ac8dda0001b45c555186beb05a8361942c9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure2_decoder_distribution.pdf",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure2_decoder_distribution.png",
+      "bytes": 558930,
+      "sha256": "3b7466a538e5da1ca3999aca4bd83d8db5e95c57fb5cf8740a5daba5e96d0005",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure2_decoder_distribution.png",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure2_decoder_distribution.svg",
+      "bytes": 138124,
+      "sha256": "d8abc6ce5bb8b5dee3fb5f767d1ff6b5ff2a9f47c905344815cfb275613c5db3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure2_decoder_distribution.svg",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure3_all_features.pdf",
+      "bytes": 102622,
+      "sha256": "6ff84ece8e16e658eb9091b583973e86b3c19b89d43b455c0df7b4c33c541b39",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure3_all_features.pdf",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure3_all_features.png",
+      "bytes": 308943,
+      "sha256": "c990393efe48f0341731964a5633a4eddc72f4bdc0ce465e7ceb4368a43e5e3c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure3_all_features.png",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures/figure3_all_features.svg",
+      "bytes": 209378,
+      "sha256": "5caa183139d844ebee62eab964492084ce16a4584eebdefaf70805f1c4d61126",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure3_all_features.svg",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "figures_cn.md",
+      "bytes": 2678,
+      "sha256": "68ddee3346b938ef0a276f8ca1d624a912d8fdd17a0504431b47d6b01f519db1",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures_cn.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/analysis_state.json",
+      "bytes": 561,
+      "sha256": "a3c8a85ac2fb2bc90058342b50c37210bd686eb4bebeee3634717ad2a6349da2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/analysis_state.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/cache_scan_receipt.json",
+      "bytes": 224078,
+      "sha256": "6930ea75ac1cf2c434eaea582a9a28d2c8cdd032b26a2a96da8ed0f5328f5ca2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/cache_scan_receipt.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/compute_completion_receipt.json",
+      "bytes": 430,
+      "sha256": "909cfa41e28fa8b8dfad18abf00c6ca0446e0ae264208ca2a854729297f4e4b4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/compute_completion_receipt.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/correctness.json",
+      "bytes": 222,
+      "sha256": "db6e88f81efe527f5232016f1a23b7afad628ca69614b2d644b9ae6757ac1ba3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/correctness.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/delivery_checks.json",
+      "bytes": 1135,
+      "sha256": "1d4c461c35259d13fbcc3518d12f8b182b7605bf7b28d1f7ad18ecc405f2672f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/delivery_checks.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/environment.json",
+      "bytes": 654,
+      "sha256": "9b90bc15e9713bd0b05f1a289f69e57c426cfc7ed4ef15352d9a8c5fe6e3b26a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/environment.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/execution_certificate.md",
+      "bytes": 1288,
+      "sha256": "3158ae43adde5985842a19096c7628d4cf46a2075b2005f4ef3e48a5d720ee7f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/execution_certificate.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/execution_record.json",
+      "bytes": 2841,
+      "sha256": "c19ae33c16a6b7a08f549fa1280ba790b3049f73e0b047866e3d33da2284349f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/execution_record.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/input_reuse_manifest.json",
+      "bytes": 3298,
+      "sha256": "139c15f6e1135a3ad4d153cfd536e99455122471f671d6b0047ee013e17ccca2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/input_reuse_manifest.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/platform_status_terminal.json",
+      "bytes": 4068,
+      "sha256": "115b2d0b446660a6f301cea55ede065c240c33e0de96004f8d38522ed40fec70",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/platform_status_terminal.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/protocol_frozen.md",
+      "bytes": 40358,
+      "sha256": "39530a9a36eee0403a8bc3ee53ad19d3e82a5dcb18c86fa7287c1ca4cc8894fb",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/protocol_frozen.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/render_fix_receipt.json",
+      "bytes": 195,
+      "sha256": "5e60a57f9f6660d91cee3a4fe1c2aecc9e360170e3adc9f7d6425712b6abdf63",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/render_fix_receipt.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/render_receipt.json",
+      "bytes": 529,
+      "sha256": "839f54dd7f5304290cbca423daf25444f030b12dd6c1a03fe1efbcffe2336012",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/render_receipt.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/results.json",
+      "bytes": 23275,
+      "sha256": "9541f1b27d1f7423d0649a8d0620d8d8b392485cb4b1157b1399a9610a847d7d",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/results.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/selection_frozen_before_geometry.json",
+      "bytes": 4910,
+      "sha256": "c710c09b9a489bf0ee69dbd8e15b90a32a111a39da9fa962211fe5123d43f489",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/selection_frozen_before_geometry.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/text_profiles.json",
+      "bytes": 18943,
+      "sha256": "ced75fe80646582d4dabc942735db94f9153b26dfed63fe07a01a4353e2f948c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_profiles.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/text_sample_selection.json",
+      "bytes": 38799,
+      "sha256": "656322bd86d0fd633f46c019adf93b1e6497dca5e241eab96731529b97f5014e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_sample_selection.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "provenance/validation_retry_note.json",
+      "bytes": 528,
+      "sha256": "02016cf024fc19c6a14dade3d7817385f9dd50b39a6d6ee9de68a1a0092e7309",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/validation_retry_note.json",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "summary_cn.md",
+      "bytes": 4495,
+      "sha256": "a92d2b015fd020e01ac0278fdf7169b13342d347173542e46c56a87ac2eca2d2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/summary_cn.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/depth_vs_layer_summary.csv",
+      "bytes": 2973,
+      "sha256": "7fc72e103286a8e596d488d5f45a75ebefbab658282132f0c4282cd953e888b6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/depth_vs_layer_summary.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/feature_layer_response.csv",
+      "bytes": 75347149,
+      "sha256": "0dc86baee0ad3fa243001f09d72309f0c9262614cfaf3b088935a242c8227641",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/feature_layer_response.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/figure2_source.csv",
+      "bytes": 13148,
+      "sha256": "433714b70e0f6d626d9ea18c8b053d083270f26be569560f61b6baba3a676508",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figure2_source.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/figure3_source.csv",
+      "bytes": 830157,
+      "sha256": "62ee76465c8d37807836f1d561a4664b2a1739ac06b44495ae55fd65d71c3d72",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figure3_source.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/frequency_bin_counts.csv",
+      "bytes": 639,
+      "sha256": "070bdb991c5a39eb6b3251e0c1d3da0edc932d9eb3dfa80bdad26533be83d3e3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/frequency_bin_counts.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/frequency_overlap_comparison.csv",
+      "bytes": 20176,
+      "sha256": "1c50b5dd04d4d75aab7725094638c57f6553ad37f1554e33da366cfb62f71e4e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/frequency_overlap_comparison.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/graph1_edges.csv",
+      "bytes": 8583,
+      "sha256": "15a5edb83aeed7142deb445824d619378573515526e93ddc704fb9330aad72e8",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/graph1_edges.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/graph1_nodes.csv",
+      "bytes": 1519,
+      "sha256": "dce5b3ecef8600a1de01fd81fdfc477417d9e3e4a87a737c5b298b1095073548",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/graph1_nodes.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/hierarchy_counts.csv",
+      "bytes": 1701,
+      "sha256": "038b349c2a2f84e3302378304d18e0185ede4f161aa7e0c1c10b31ca2910082a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_counts.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/hierarchy_mean_p.csv",
+      "bytes": 5907,
+      "sha256": "b2535624d6de8ec1f3fd982dd430159a371297d2989681f6240ba4841367106e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_mean_p.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/hierarchy_members.csv",
+      "bytes": 1275370,
+      "sha256": "fd0047257f8f161ddbae167578777cc4f9ca8bf2baf20673a38bb970ae623904",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_members.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables/text_layer_amplitude.csv",
+      "bytes": 257749,
+      "sha256": "3f956cae1b932160bf52787fe5f370429f25cc8e0bcf252150828116e0408ad2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_layer_amplitude.csv",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "tables_cn.md",
+      "bytes": 3614,
+      "sha256": "398e8835832e4f499cee9c566838a9439706b1eaa24a7286fd06da542fe24baf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/tables_cn.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "text_examples.jsonl",
+      "bytes": 893261,
+      "sha256": "1927be360b796d3c404387730f6d61ef21811459d52f97f6a5a5fdb652b654ac",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_examples.jsonl",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    },
+    {
+      "relative_path": "text_examples_cn.md",
+      "bytes": 641886,
+      "sha256": "3722cfabd93985034f21cd5997695cc10194fe829ce058ec23839dc1105d65b7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_examples_cn.md",
+      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+    }
+  ],
+  "manifest_excludes_itself_and_archive_receipt": true,
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z",
+  "primary_inputs": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+  "documentation_generated_by": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/finalize.py"
+}

@@ -1,0 +1,865 @@
+{
+  "status": "AUTHOR_RECOMPUTATION_PASS",
+  "checked_at_utc": "2026-10-04T16:40:36.751833+00:00",
+  "processing_agent": "Codex / daily_summary_1004",
+  "authorship_disclosure": "This agent authored the diagnostic script. Recalculation uses a separately written path without importing diagnostic or production analysis helpers; it is author self-audit, not an independent reviewer.",
+  "run_receipt_sha256": "791492c453f07390424a1c79b9b4d6948e0aa555431be3a522bd1123a56aad44",
+  "registration_sha256": "e4fd6ee226988e6a1d9b9c2e2eccf57377bb05ed0fe9cb9407c01933929afd17",
+  "diagnostic_code_sha256": "a25dc736e56b1c951c4180bda272739212e39c6ce9287064adbdecabdda86252",
+  "elapsed_seconds": 42.84304174222052,
+  "max_abs_errors": {
+    "trainfold_mean": 0.0,
+    "trainfold_std": 0.0,
+    "trainfold_intercept": 0.0,
+    "coefficient_rebuilt_OOF_prediction": 1.3357370765021415e-16,
+    "fold_label_means": 0.0,
+    "raw_features_original_FIT_prediction": 6.245004513516506e-17,
+    "OOF_table_delta_mean": 0.0,
+    "OOF_table_absolute_mean": 0.0,
+    "OOF_frozen_loss_vector": 0.0,
+    "DEV_point_policy_delta_ce": 6.071532165918825e-18,
+    "DEV_point_policy_absolute_ce": 1.1102230246251565e-14,
+    "DEV_point_gain_vs_alpha1": 5.421010862427522e-20,
+    "DEV_point_gain_vs_alpha0_fixed": 5.421010862427522e-20,
+    "DEV_point_common_selection_rate": 0.0,
+    "switch_rate": 0.0,
+    "switch_product": 0.0,
+    "switch_identity": 1.0842021724855044e-19,
+    "conditional_switch_cost": 0.0
+  },
+  "normal_equations": [
+    {
+      "model_id": "dense_33b",
+      "family": "base",
+      "fold": 0,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 2.639295032524913e-14,
+      "normal_equation_relative_frobenius_residual": 4.224074722564269e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base",
+      "fold": 1,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.127793163359982e-14,
+      "normal_equation_relative_frobenius_residual": 4.272468094379164e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base",
+      "fold": 2,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 2.6862193025500858e-14,
+      "normal_equation_relative_frobenius_residual": 3.822206060824235e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base",
+      "fold": 3,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 2.1597307275911248e-14,
+      "normal_equation_relative_frobenius_residual": 3.9164510998383014e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base+cx_full",
+      "fold": 0,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.888035726706818e-14,
+      "normal_equation_relative_frobenius_residual": 3.809667855253239e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base+cx_full",
+      "fold": 1,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.562731706874267e-14,
+      "normal_equation_relative_frobenius_residual": 3.779363875070243e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base+cx_full",
+      "fold": 2,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 4.130723540995973e-14,
+      "normal_equation_relative_frobenius_residual": 4.353044647309118e-15
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base+cx_full",
+      "fold": 3,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.40691017064465e-14,
+      "normal_equation_relative_frobenius_residual": 4.3965180873876834e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "fold": 0,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 5.0622700475955185e-14,
+      "normal_equation_relative_frobenius_residual": 4.155852775128978e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "fold": 1,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 4.1924796967407474e-14,
+      "normal_equation_relative_frobenius_residual": 4.242981603089531e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "fold": 2,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 4.395268871082436e-14,
+      "normal_equation_relative_frobenius_residual": 3.782808033557191e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "fold": 3,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.583678492846687e-14,
+      "normal_equation_relative_frobenius_residual": 4.0508604717921875e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "fold": 0,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 5.75477165920546e-14,
+      "normal_equation_relative_frobenius_residual": 3.152496697766872e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "fold": 1,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 8.123363093304192e-14,
+      "normal_equation_relative_frobenius_residual": 3.182572857770249e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "fold": 2,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 5.638545186315014e-14,
+      "normal_equation_relative_frobenius_residual": 3.4583644019903793e-15
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "fold": 3,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 7.269879143123603e-14,
+      "normal_equation_relative_frobenius_residual": 3.6636376726372615e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "fold": 0,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 2.520900155289496e-14,
+      "normal_equation_relative_frobenius_residual": 4.096237867042238e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "fold": 1,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.268392501087902e-14,
+      "normal_equation_relative_frobenius_residual": 4.402884135435523e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "fold": 2,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 1.9187776367779463e-14,
+      "normal_equation_relative_frobenius_residual": 3.920489596548028e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "fold": 3,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 1.8884199759483522e-14,
+      "normal_equation_relative_frobenius_residual": 3.927961878725576e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "fold": 0,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.5746579307716075e-14,
+      "normal_equation_relative_frobenius_residual": 3.861950137354163e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "fold": 1,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.825260420919907e-14,
+      "normal_equation_relative_frobenius_residual": 4.085623401792068e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "fold": 2,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.741885273855772e-14,
+      "normal_equation_relative_frobenius_residual": 4.351679685109793e-15
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "fold": 3,
+      "train_records": 384,
+      "valid_records": 128,
+      "record_overlap": 0,
+      "normal_equation_max_abs_residual": 3.6131687919382927e-14,
+      "normal_equation_relative_frobenius_residual": 4.391113891056638e-15
+    }
+  ],
+  "normal_equation_relative_threshold": 1e-08,
+  "normal_equation_relative_denominator": "Frobenius norm of Z.T centered_labels plus 10 times Frobenius norm of coefficients; no Gram matrix constructed",
+  "selected_alphas": [
+    {
+      "model_id": "dense_33b",
+      "family": "base",
+      "bank": "A",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0012859104423742541,
+        -0.0012730166557172729,
+        -0.0011365233292774408,
+        -0.0010281430743450462,
+        -0.001001569046392251
+      ]
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base",
+      "bank": "B",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0012872701564743678,
+        -0.00128422603384447,
+        -0.0011790426894205883,
+        -0.0010909097932249718,
+        -0.0010163740436536393
+      ]
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base+cx_full",
+      "bank": "A",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0012859104423742541,
+        -0.0012312413595582774,
+        -0.0010914886526826855,
+        -0.0010715154079357185,
+        -0.001036199547297602
+      ]
+    },
+    {
+      "model_id": "dense_33b",
+      "family": "base+cx_full",
+      "bank": "B",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0012872701564743678,
+        -0.0010547935443919938,
+        -0.0009581387140194382,
+        -0.0009069362725728632,
+        -0.0008707299587149147
+      ]
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "bank": "A",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.002430781338036028,
+        -0.0024154882417535477,
+        -0.0022439951184247816,
+        -0.0021892084517927133,
+        -0.0020083550857031
+      ]
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base",
+      "bank": "B",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0022368465722455355,
+        -0.0022343646571656413,
+        -0.0020398359870015255,
+        -0.0019177058609437677,
+        -0.0018766775625887176
+      ]
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "bank": "A",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.002430781338036028,
+        -0.0022195546601587084,
+        -0.0021222341870186555,
+        -0.002078559062781723,
+        -0.0020106742168182956
+      ]
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "family": "base+cx_full",
+      "bank": "B",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0022368465722455355,
+        -0.001989570689212355,
+        -0.0017540757812923454,
+        -0.001694799519554333,
+        -0.0016238389256116286
+      ]
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "bank": "A",
+      "selected_alpha": 0.1,
+      "losses": [
+        -0.0014538791944231613,
+        -0.0014700234168302652,
+        -0.00139276635709906,
+        -0.00126815841602696,
+        -0.0011846357551038274
+      ]
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base",
+      "bank": "B",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.001394908962549955,
+        -0.0013909034155620457,
+        -0.0013647475531981647,
+        -0.0011821284800369936,
+        -0.0011300248470103753
+      ]
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "bank": "A",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.0014538791944231613,
+        -0.0012482459845375466,
+        -0.0010878638992381578,
+        -0.0010275903645222857,
+        -0.0009873612369572236
+      ]
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "family": "base+cx_full",
+      "bank": "B",
+      "selected_alpha": 0.0,
+      "losses": [
+        -0.001394908962549955,
+        -0.001213586367489936,
+        -0.001062402367301978,
+        -0.0010384309942077243,
+        -0.0010071856203025037
+      ]
+    }
+  ],
+  "evaluation_rows_recomputed": 600,
+  "selected_rows_checked": 120,
+  "CV_rows_recomputed": 300,
+  "whole_record_folds_checked": true,
+  "original_inputs_and_completed_outputs_sha256_verified": true,
+  "sources": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/receipt.json": {
+      "sha256": "791492c453f07390424a1c79b9b4d6948e0aa555431be3a522bd1123a56aad44",
+      "bytes": 4318,
+      "mtime_ns": 1791131694362413996
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/registration.json": {
+      "sha256": "e4fd6ee226988e6a1d9b9c2e2eccf57377bb05ed0fe9cb9407c01933929afd17",
+      "bytes": 16174,
+      "mtime_ns": 1791131603612672916
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/crossfit_router_shrinkage_20261004.py": {
+      "sha256": "a25dc736e56b1c951c4180bda272739212e39c6ce9287064adbdecabdda86252",
+      "bytes": 35028,
+      "mtime_ns": 1791131480799552992
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py": {
+      "sha256": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+      "bytes": 40280,
+      "mtime_ns": 1791015820253689033
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json": {
+      "sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d",
+      "bytes": 7198,
+      "mtime_ns": 1791109406028877997
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/configs/probe_33b.json": {
+      "sha256": "70e6efb02cbc3437949e59bbd9b838dcb6747dc0f5a4ec4b96ff3a95cb483542",
+      "bytes": 24397,
+      "mtime_ns": 1791019375602990217
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/data/probe_33b/panel.npz": {
+      "sha256": "0b637001d81f5ac0f5a203d1c55578bef7cf106b41b5e8cb68c0126f331c86ed",
+      "bytes": 809770,
+      "mtime_ns": 1791013782404307190
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/data/probe_33b/manifest.json": {
+      "sha256": "acdbb11b2255e7e4bb8f5d219d6581d5d2b0a8358d9263c69d38c7eb59b01210",
+      "bytes": 1108,
+      "mtime_ns": 1791013782749790071
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/directions_receipt.json": {
+      "sha256": "8cf3662d13e404cc6f7b890b4099c9c90520a8f1eade16bbfd6a654409325300",
+      "bytes": 3882,
+      "mtime_ns": 1791029888051908208
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/W0.npy": {
+      "sha256": "7907cdca153a184a1a80cf2570752b01bbe5c381433a8b5201bd71032384522c",
+      "bytes": 8388736,
+      "mtime_ns": 1791029486219687108
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/directions.npz": {
+      "sha256": "c9ec98a6c0d25f46d7315f4229d08dfa5eea42fbd582e0c42b253e9355b35dc1",
+      "bytes": 162805957,
+      "mtime_ns": 1791029874387743075
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/events.npz": {
+      "sha256": "553affe425eb32b52a81a80b0077851160c574693d07d2a9b28cde22ed5041de",
+      "bytes": 626248420,
+      "mtime_ns": 1791029869219476638
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/source_gradients.npz": {
+      "sha256": "ad70473260cc299b1224afa029806d8bf03dd05fc9b2cf7058ac46e5a3199976",
+      "bytes": 162114359,
+      "mtime_ns": 1791029879687236795
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/aggregate_receipt.json": {
+      "sha256": "940747d1431fb119c78fe409d2ebb636a5c0dffc4cdd682a28e5bb948e6b2227",
+      "bytes": 1232,
+      "mtime_ns": 1791030271711976090
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/effects.npz": {
+      "sha256": "ec02a5ce8fc14cb6bddeddf78051c6ece18a8194bc2876b4da06d440656d08bf",
+      "bytes": 2589311,
+      "mtime_ns": 1791030271664369456
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base/feature_transform.npz": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "bytes": 22,
+      "mtime_ns": 1791109334098179225
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base/predictions.npz": {
+      "sha256": "f77105b953f927b6005012c89a16b988e3e07eb500af12248b2db958444a6c51",
+      "bytes": 2512419,
+      "mtime_ns": 1791109334274768208
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base/ridge.npz": {
+      "sha256": "1d720767727e8ba54ede81c781df27bde4e5b978a170c53aa8e98da3e789c6c5",
+      "bytes": 34671,
+      "mtime_ns": 1791109334114671633
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__cx_full/feature_transform.npz": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "bytes": 22,
+      "mtime_ns": 1791109354718425921
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__cx_full/predictions.npz": {
+      "sha256": "8a5be3396a1b97dc47698def252ec6b9b0a66434e6b8ac32c828b2be61bd1ea0",
+      "bytes": 2512386,
+      "mtime_ns": 1791109354940622503
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__cx_full/ridge.npz": {
+      "sha256": "b5aa1a7f6c9b9b1ff77c73ecf491b64790b12ab019f71e940df0efbd5b98310e",
+      "bytes": 316991,
+      "mtime_ns": 1791109354806304959
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/analysis_registration.json": {
+      "sha256": "dcafd468834bc7e00afb5e627b530d575f36d6d09cbeacb84460a715ac2ee36c",
+      "bytes": 5400,
+      "mtime_ns": 1791109324349046265
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.json": {
+      "sha256": "3da54a86e3434116ef0353c4ca6121801d1bc4dabdb7083c232fd5814f0f5c8f",
+      "bytes": 8924,
+      "mtime_ns": 1791109355200862256
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.npz": {
+      "sha256": "1004e5c3ee4011a2d7dd1095de10ee787f7ab23a3dc6ee3c6d4b8ddb5963bc39",
+      "bytes": 341596,
+      "mtime_ns": 1791109355182761986
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/bootstrap_freeze.npz": {
+      "sha256": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+      "bytes": 1095187,
+      "mtime_ns": 1791109355969035255
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.csv": {
+      "sha256": "01776ec8bb559bf551dba49df3ccccb8a6f81b293804112b5fc9b08368e53a7b",
+      "bytes": 504147,
+      "mtime_ns": 1791109397319527404
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base/receipt.json": {
+      "sha256": "ece61fe85e862bd28ed5dd651b5ba4fb125588c92a42af2d2aafe1264280da03",
+      "bytes": 823,
+      "mtime_ns": 1791109334341065022
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/families/base__cx_full/receipt.json": {
+      "sha256": "f50452a6d3b0b4b3f0f8633b7ae9b6030224068f14ee09b7f31b2c973d5cad90",
+      "bytes": 832,
+      "mtime_ns": 1791109354973021913
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json": {
+      "sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42",
+      "bytes": 7765,
+      "mtime_ns": 1791109575971793611
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/directions_receipt.json": {
+      "sha256": "962b81ecfb33cce56737ba649f290eafb81b13b0f63d7c83679199d7f863b163",
+      "bytes": 3992,
+      "mtime_ns": 1791029942920800758
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/W0.npy": {
+      "sha256": "83df40a0e638c24dd5cd51a88e2ddd5826349d4217dd913170731c4ffdb7b6ad",
+      "bytes": 8388736,
+      "mtime_ns": 1791029495792478168
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/directions.npz": {
+      "sha256": "9d7448dc506f0ab019564004ea29d425b86f6a0740679000d699d04fe6dd34f9",
+      "bytes": 162758546,
+      "mtime_ns": 1791029929034922028
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/events.npz": {
+      "sha256": "597945866df2b2884eff7e21dd8b09f33b6b413b92275de2c402a2ad4f55364b",
+      "bytes": 631737277,
+      "mtime_ns": 1791029923860614574
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/source_gradients.npz": {
+      "sha256": "d384315c73bf0fde7339d94770620ae83a39c6eb7387ed45619a2014039f6f02",
+      "bytes": 161996248,
+      "mtime_ns": 1791029934342151289
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/aggregate_receipt.json": {
+      "sha256": "a7eb84cac3cd2bf0c938b9dcf88430c3788ace4427c4b8c59249e33145db9a7b",
+      "bytes": 1297,
+      "mtime_ns": 1791030289483798985
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/effects.npz": {
+      "sha256": "31e3d56f468449ce502f0dae30c071f4c80358becf3dea2f45fd803bf549a9b6",
+      "bytes": 2619156,
+      "mtime_ns": 1791030289436531810
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base/feature_transform.npz": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "bytes": 22,
+      "mtime_ns": 1791109500845090902
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base/predictions.npz": {
+      "sha256": "39000f3d8284726abc06b1ba2878821698fd5a73d45bdee761e7d3cf45033414",
+      "bytes": 2511533,
+      "mtime_ns": 1791109501052168607
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base/ridge.npz": {
+      "sha256": "aab13bda6f5da0d43e6fcbcd965b4e4801d964ad63e290c4310c546bc3855a37",
+      "bytes": 34585,
+      "mtime_ns": 1791109500858264664
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__cx_full/feature_transform.npz": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "bytes": 22,
+      "mtime_ns": 1791109521581633294
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__cx_full/predictions.npz": {
+      "sha256": "b37e5ce61639e3580dd31dfc8a811d5746e97c7a8dd832ef82721f07af3ccebb",
+      "bytes": 2512161,
+      "mtime_ns": 1791109521858910096
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__cx_full/ridge.npz": {
+      "sha256": "e7674282f2c886e0978aacdd9d49bf86afd50e0024c7c5fa5cfa788674a6c2a6",
+      "bytes": 316314,
+      "mtime_ns": 1791109521668960483
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/analysis_registration.json": {
+      "sha256": "1e7c744e2e97814b8babd6bac53669a98d70f7e8fa7b2ed3365b63e490085f34",
+      "bytes": 5504,
+      "mtime_ns": 1791109491035096244
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.json": {
+      "sha256": "1ad9b762ab9ac102e180fdfad6cbe95cb6d7f4a62cb25901afcab726af094b24",
+      "bytes": 10108,
+      "mtime_ns": 1791109522139088755
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.npz": {
+      "sha256": "96d2476d899dd95c8b2b9bd5be3385f77b30164951df81c6c22891b97c137b01",
+      "bytes": 390001,
+      "mtime_ns": 1791109522084883570
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/bootstrap_freeze.npz": {
+      "sha256": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+      "bytes": 1095187,
+      "mtime_ns": 1791109522921255473
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.csv": {
+      "sha256": "4b2757e6dfe0305cab5d5dc80efc2b1484797e55c24c990f12dc60ff2d2cebf9",
+      "bytes": 577563,
+      "mtime_ns": 1791109568917973349
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base/receipt.json": {
+      "sha256": "388b345487e9f4e8c58201fc42ea4eb201ecfcc5eb2d895d36924cabbf503021",
+      "bytes": 823,
+      "mtime_ns": 1791109501084824260
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/families/base__cx_full/receipt.json": {
+      "sha256": "b7c4591b2e82f599bd683d09f0425feb8248d0034982c448a9188fba73572ab9",
+      "bytes": 832,
+      "mtime_ns": 1791109521893257967
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json": {
+      "sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f",
+      "bytes": 7749,
+      "mtime_ns": 1791109720859833776
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/directions_receipt.json": {
+      "sha256": "59bf2a401fb10c62397009455a3f9524fe816bb13e8478cfd942cc54c5844a16",
+      "bytes": 3752,
+      "mtime_ns": 1791029999921346168
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/W0.npy": {
+      "sha256": "656ce5de8ab831a2f2d9cc061d5fdb1bb516b0dc77be14bc27505533ef5411dc",
+      "bytes": 8388736,
+      "mtime_ns": 1791029588510142745
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/directions.npz": {
+      "sha256": "73af72c2f9619bbe0de850666378647bc8da7f9de7669eb561cce5a0e9d30d6e",
+      "bytes": 162797879,
+      "mtime_ns": 1791029983451142296
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/events.npz": {
+      "sha256": "10d2b5c7053b174fd51c7b15a1f61d4d168bdd2b0a5f2b772eb29be81be670c8",
+      "bytes": 631715740,
+      "mtime_ns": 1791029978281056274
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/source_gradients.npz": {
+      "sha256": "23eaa52aed2b559843cc79c9bd9f006cc0c0d5921fb98baa4e81d94f9bca28bf",
+      "bytes": 162117984,
+      "mtime_ns": 1791029988734033855
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/aggregate_receipt.json": {
+      "sha256": "96948d3b6838f220aa0e00d618c62eb1bf948fb797e6359a5f63ed5147fbdcfa",
+      "bytes": 1072,
+      "mtime_ns": 1791030306610114784
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/effects.npz": {
+      "sha256": "dcc4582c301f5c086c4c826d6417f4aa31854e4914cc63b414e083890b795658",
+      "bytes": 2596872,
+      "mtime_ns": 1791030306562619868
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base/feature_transform.npz": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "bytes": 22,
+      "mtime_ns": 1791109643812097820
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base/predictions.npz": {
+      "sha256": "0a517e53ae0e139eeb2667f4efaf4860f6f551939deb50bbbd7bbe25f5a4c580",
+      "bytes": 2512103,
+      "mtime_ns": 1791109644012102767
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base/ridge.npz": {
+      "sha256": "ded6cea7c93c7b7b02b47b2989b5e9158b9d62190230dab487b526fe96254c62",
+      "bytes": 34687,
+      "mtime_ns": 1791109643827558621
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__cx_full/feature_transform.npz": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "bytes": 22,
+      "mtime_ns": 1791109666074869451
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__cx_full/predictions.npz": {
+      "sha256": "5fe0097bf8bf7d3462887b7fe5c502d2bfc0068529d27d52fbf9041edd688630",
+      "bytes": 2512634,
+      "mtime_ns": 1791109666353388811
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__cx_full/ridge.npz": {
+      "sha256": "82e63a628903693445d755480be470b788baf442a06c116a16b4b7dc9afae3eb",
+      "bytes": 316893,
+      "mtime_ns": 1791109666131563366
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/analysis_registration.json": {
+      "sha256": "1d76a05a66345260ca038e10b9bff3fbdb2bbc5013bb60cba31a431f4b67a48e",
+      "bytes": 5488,
+      "mtime_ns": 1791109633156817502
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.json": {
+      "sha256": "303959d2169132c6c94c30c4864e3bdd6e681efde86f0b41e56d1449a51a5602",
+      "bytes": 10092,
+      "mtime_ns": 1791109666723221281
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.npz": {
+      "sha256": "35d4b8278c3c0f2d68abf38eb9240885c7396aeb86358bf4249b77378016883c",
+      "bytes": 388313,
+      "mtime_ns": 1791109666703008698
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/bootstrap_freeze.npz": {
+      "sha256": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+      "bytes": 1095187,
+      "mtime_ns": 1791109667562650462
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.csv": {
+      "sha256": "c729e99328f155bc739a3a76fd8a68062e939b556afb4379f3d178d792bb0d7c",
+      "bytes": 579420,
+      "mtime_ns": 1791109714905177271
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base/receipt.json": {
+      "sha256": "eea453a69ac1c598857a1afc60c9df7c53f45daad1c0e31d260f0ef85b84f8fe",
+      "bytes": 823,
+      "mtime_ns": 1791109644079330290
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/families/base__cx_full/receipt.json": {
+      "sha256": "3fcf7622538d5088cd36f6d7db0570cfc14d23d534d81e57360ead6b7a8fbf95",
+      "bytes": 832,
+      "mtime_ns": 1791109666482495314
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/OOF__dense_33b__base.npz": {
+      "sha256": "ecff928841ecb26bb193fec340f588a633a0a48be6bf40c0a551d2b2cce906b0",
+      "bytes": 795904,
+      "mtime_ns": 1791131643879341674
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/OOF__dense_33b__base__cx_full.npz": {
+      "sha256": "b023a14310daa8976cd74dfbd8134f209e4e53f075da56d9159a313867788d04",
+      "bytes": 1930333,
+      "mtime_ns": 1791131648849350426
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/OOF__s7_fresh_lambda0p1_33b__base.npz": {
+      "sha256": "66ad93b93f0bbc15cd2dcb275d33fa5ce5b38a4e7942d9ef673a38e44636b317",
+      "bytes": 794962,
+      "mtime_ns": 1791131656133492994
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/OOF__s7_fresh_lambda0p1_33b__base__cx_full.npz": {
+      "sha256": "a342a500acc2242f223959b26698c1ee59c07f92e66961a8315bfccad0fde05f",
+      "bytes": 1928161,
+      "mtime_ns": 1791131661006573078
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/OOF__sall_unit_weight_33b__base.npz": {
+      "sha256": "18bd3109f27653157f2ad2b420860d7d707a18ab1361ec4f0ef89dfe2080418e",
+      "bytes": 795647,
+      "mtime_ns": 1791131668234177680
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/OOF__sall_unit_weight_33b__base__cx_full.npz": {
+      "sha256": "f613195b5b4a280c829cc2472c175164f36b3b41f35d49a1dc8eb72f3cf56676",
+      "bytes": 1929465,
+      "mtime_ns": 1791131673137074253
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/cv_table.csv": {
+      "sha256": "4ecdf8e20c26f38e3b21d15fb85eb62d0254d6217be44967eb9f5fb8d15eef78",
+      "bytes": 42534,
+      "mtime_ns": 1791131673337907692
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/evaluation_all_alpha.csv": {
+      "sha256": "c8c4ed249449eff3ccb2233e5888f7b7e1f020fba503a95474b1223af436bcf3",
+      "bytes": 321431,
+      "mtime_ns": 1791131680672365307
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/evaluation_selected_alpha.csv": {
+      "sha256": "023b8455d7eda05751a268f3e4ec7128075a951cbbdfe16a1a9785e275de5c08",
+      "bytes": 53608,
+      "mtime_ns": 1791131680681763238
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/fold_assignment.csv": {
+      "sha256": "26ec922677d2901868796d0b5804a415403973561a93c2c55d0835bbb1f168a3",
+      "bytes": 17691,
+      "mtime_ns": 1791131636355343317
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/fold_assignment.npz": {
+      "sha256": "794aefaec08d37f36191899abfd4c97d98eead552d872c5ee65aae71a34aad54",
+      "bytes": 5184,
+      "mtime_ns": 1791131636362765223
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/selection_freeze.json": {
+      "sha256": "4238e426921fa61827aaa79ebd81e5438f8a55b1fa63e8c97c9b35c85720de41",
+      "bytes": 11451,
+      "mtime_ns": 1791131673700774085
+    },
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/router_shrinkage_20261004/selection_freeze.npz": {
+      "sha256": "75c8eef49f7660fc0dd4bb4b4e9374ae5c01fe56ed5f4f4aae24a485dfbe20fe",
+      "bytes": 460354,
+      "mtime_ns": 1791131673536032759
+    }
+  },
+  "source_size_mtime_unchanged_after_audit": true,
+  "no_refit": true,
+  "no_new_model_forward": true,
+  "bootstrap_CIs_recomputed_here": false,
+  "boundaries": [
+    "DEV was already exposed; this is a post-hoc conditional diagnostic.",
+    "OOF-selected minimum is optimistically selected, not an unbiased utility estimate.",
+    "Correct normal equations and fold statistics verify these saved fold fits; they do not certify the broader dataset is independent of pretraining.",
+    "No scientific state transition or mechanism conclusion."
+  ],
+  "recomputation_code": "import os\nfor key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS'):\n    os.environ[key]='8'\nimport csv,json,hashlib,time,traceback\nfrom pathlib import Path\nfrom datetime import datetime,timezone\nimport numpy as np\n\nROOT=Path('/data/250010109/MoE_Router/experiments/20261003_sharing_routing')\nRUN=ROOT/'runs/router_shrinkage_20261004'\nSOURCE=ROOT/'runs/probe_33b_01'\nOUT=ROOT/'notes/second_window_20261004'\nMODELS=('dense_33b','s7_fresh_lambda0p1_33b','sall_unit_weight_33b')\nFAMILIES=('base','base+cx_full')\nALPHAS=(0.,.1,.25,.5,1.)\nDOMAINS=('computer_science','mathematics','physics','biology')\nchecks={}; sources={}; normal=[]; selected=[]\nstarted=time.monotonic()\n\ndef sha(p):\n    h=hashlib.sha256()\n    with Path(p).open('rb') as f:\n        for b in iter(lambda:f.read(8<<20),b''):h.update(b)\n    return h.hexdigest()\n\ndef src(p,expected=None):\n    p=Path(p).resolve(); h=sha(p)\n    if expected is not None:assert h==expected,(str(p),'hash')\n    sources[str(p)]={'sha256':h,'bytes':p.stat().st_size,'mtime_ns':p.stat().st_mtime_ns}\n    return p\n\ndef error(name,a,b,tolerance=1e-12):\n    e=float(np.max(np.abs(np.asarray(a)-np.asarray(b))))\n    checks[name]=max(checks.get(name,0.),e)\n    assert e<=tolerance,(name,e,tolerance)\n\ndef loadjson(p):return json.loads(src(p).read_text())\ndef readcsv(p):return list(csv.DictReader(src(p).open()))\ndef key(model,family,bank,alpha):return f'{model}__{family}__{bank}__alpha{str(alpha).replace(\".\",\"p\")}'\n\ndef feature_base(ids,rows,positions,c,a,x):\n    n=len(rows); base=np.zeros((n,389),np.float64)\n    def hashed(tokens):\n        return (((np.asarray(tokens,np.uint64)*2654435761)%(2**32))%128).astype(int)\n    for j,(row,position) in enumerate(zip(rows,positions)):\n        prefix=ids[row,:position+1]\n        base[j,hashed(prefix[-1])]=1.\n        base[j,128+hashed(prefix[-2])]=1.\n        base[j,256:384]=np.bincount(hashed(prefix),minlength=128)/len(prefix)\n    fraction=positions.astype(float)/256.\n    base[:,384]=fraction;base[:,385]=fraction**2\n    for j,values in enumerate((c,a,x)):\n        base[:,386+j]=np.log1p(np.linalg.norm(values.astype(np.float64),axis=1))\n    return base\n\ndef audit():\n    receipt=loadjson(RUN/'receipt.json');registration=loadjson(RUN/'registration.json')\n    assert receipt['status']=='COMPLETE_EXPLORATORY_SHRINKAGE_DIAGNOSTIC'\n    assert sha(RUN/'registration.json')==receipt['registration_sha256']\n    for path,digest in registration['source_sha256'].items():src(path,digest)\n    for path,digest in receipt['output_sha256'].items():src(RUN/path,digest)\n    freeze=loadjson(RUN/'selection_freeze.json')\n    assert sha(RUN/'selection_freeze.json')==receipt['selection_freeze_sha256']\n    assert freeze['DEV_scored_in_this_run'] is False and freeze['DEV_used_for_alpha_selection'] is False\n    assert freeze['frozen_at_utc']<receipt['completed_at_utc']\n    config=loadjson(ROOT/'configs/probe_33b.json')\n    with np.load(config['panel_path']) as z:panel={k:z[k] for k in ('ids','record_id','role','category','domain')}\n    fit_records=panel['role']=='fit'; fit_ids=panel['record_id'][fit_records]; cats=panel['category'][fit_records]\n    fold=np.full(512,-1,np.int8);rng=np.random.default_rng(1004)\n    for category in sorted(set(cats.tolist())):\n        order=np.array(sorted(np.flatnonzero(cats==category),key=lambda i:fit_ids[i]))\n        rng.shuffle(order)\n        for number,record in enumerate(order):fold[record]=number%4\n        assert np.array_equal(np.bincount(fold[order],minlength=4),np.full(4,16))\n    assert np.array_equal(np.bincount(fold),np.full(4,128))\n    with np.load(RUN/'fold_assignment.npz') as z:\n        assert np.array_equal(z['record_id'],fit_ids)\n        assert np.array_equal(z['record_fold'],fold)\n        assert np.array_equal(z['fit_event_fold'],np.repeat(fold,16))\n    eventfold=np.repeat(fold,16)\n    cv=readcsv(RUN/'cv_table.csv')\n    cvidx={(r['model_id'],r['family'],r['train_bank'],float(r['alpha']),r['fold']):r for r in cv}\n    assert len(cv)==len(cvidx)==300\n    ev=readcsv(RUN/'evaluation_all_alpha.csv');evselected=readcsv(RUN/'evaluation_selected_alpha.csv')\n    assert len(ev)==600 and len(evselected)==120\n    frozen=np.load(RUN/'selection_freeze.npz')\n    for model in MODELS:\n        with np.load(SOURCE/model/'events.npz') as e:\n            roles=e['role'];fit=roles=='fit';readout=roles=='readout'\n            rows=e['row'];positions=e['position'];record_ids=e['record_id'];domains=e['domain']\n            c=e['c'][fit];a=e['a'][fit];r=e['r'][fit]\n        assert np.array_equal(record_ids,np.repeat(panel['record_id'],16))\n        assert np.array_equal(roles,np.repeat(panel['role'],16))\n        assert np.array_equal(record_ids[fit],np.repeat(fit_ids,16))\n        x=(r+a).astype(np.float64)\n        base=feature_base(panel['ids'],rows[fit],positions[fit],c,a,x)\n        with np.load(SOURCE/model/'effects.npz') as effects:\n            all_effects={b:effects[b] for b in 'AB'};baseline=effects['baseline']\n        labels=np.column_stack([all_effects[b][fit] for b in 'AB'])\n        original_choices=np.load(SOURCE/model/'analysis/selection_freeze.npz')\n        for family in FAMILIES:\n            raw=base if family=='base' else np.concatenate((base,c,x),axis=1)\n            with np.load(RUN/f'OOF__{model}__{family.replace(\"+\",\"__\")}.npz') as oo:\n                assert np.array_equal(oo['event_fold'],eventfold)\n                assert np.array_equal(oo['fit_record_id'],record_ids[fit])\n                prediction=oo['prediction'];means=np.empty((4,10))\n                for f in range(4):\n                    train=eventfold!=f;valid=~train\n                    assert not(set(record_ids[fit][train])&set(record_ids[fit][valid]))\n                    mu=raw[train].mean(axis=0);sd=raw[train].std(axis=0);sd[sd==0]=1.\n                    intercept=labels[train].mean(axis=0);means[f]=intercept\n                    error('trainfold_mean',mu,oo[f'fold{f}__mean'])\n                    error('trainfold_std',sd,oo[f'fold{f}__std'])\n                    error('trainfold_intercept',intercept,oo[f'fold{f}__intercept'])\n                    beta=oo[f'fold{f}__coefficients']\n                    z=(raw[train]-mu)/sd;target=labels[train]-intercept\n                    residual=z.T@(z@beta-target)+10.*beta\n                    rhs=z.T@target\n                    relative=float(np.linalg.norm(residual)/(np.linalg.norm(rhs)+10*np.linalg.norm(beta)))\n                    assert relative<1e-8,(model,family,f,relative)\n                    rebuilt=(raw[valid]-mu)/sd@beta+intercept\n                    error('coefficient_rebuilt_OOF_prediction',rebuilt,prediction[valid])\n                    normal.append({'model_id':model,'family':family,'fold':f,'train_records':384,\n                      'valid_records':128,'record_overlap':0,'normal_equation_max_abs_residual':float(np.max(np.abs(residual))),\n                      'normal_equation_relative_frobenius_residual':relative})\n                    del z,target,residual,rhs,rebuilt\n                error('fold_label_means',means,oo['fold_label_mean'])\n                original_path=SOURCE/model/'analysis/families'/family.replace('+','__')\n                with np.load(original_path/'predictions.npz') as orig:original_prediction=orig['prediction']\n                with np.load(original_path/'ridge.npz') as oldfit:\n                    oldrebuilt=(raw-oldfit['mean'])/oldfit['std']@oldfit['coefficients']+oldfit['intercept']\n                error('raw_features_original_FIT_prediction',oldrebuilt,original_prediction[fit])\n                for j,bank in enumerate('AB'):\n                    columns=slice(j*5,j*5+5);losses=[];actual=labels[:,columns]\n                    for alpha in ALPHAS:\n                        mu=means[eventfold,columns]\n                        score=prediction[:,columns] if alpha==1 else mu if alpha==0 else mu+alpha*(prediction[:,columns]-mu)\n                        choice=score.argmin(axis=1)\n                        assert np.array_equal(choice,oo[f'{bank}__alpha{str(alpha).replace(\".\",\"p\")}__choices'])\n                        delta=actual[np.arange(len(actual)),choice]\n                        losses.append(float(delta.mean()))\n                        for f in list(range(4))+['pooled']:\n                            m=np.ones(len(delta),bool) if f=='pooled' else eventfold==f\n                            stored=cvidx[(model,family,bank,alpha,str(f))]\n                            error('OOF_table_delta_mean',delta[m].mean(),float(stored['mean_finite_delta_ce']))\n                            error('OOF_table_absolute_mean',(baseline[fit][m]+delta[m]).mean(),float(stored['mean_absolute_ce']))\n                        muall=actual.mean(axis=0)\n                        fullpred=original_prediction[:,columns]\n                        fullscore=fullpred if alpha==1 else np.broadcast_to(muall,fullpred.shape) if alpha==0 else muall+alpha*(fullpred-muall)\n                        assert np.array_equal(frozen[key(model,family,bank,alpha)],fullscore.argmin(axis=1))\n                        if alpha==1:assert np.array_equal(frozen[key(model,family,bank,alpha)],original_choices[f'{family}__{bank}__fixed_five'])\n                        if alpha==0:assert np.all(frozen[key(model,family,bank,alpha)]==4)\n                    alpha=ALPHAS[int(np.argmin(losses))]\n                    stored=freeze['selections'][f'{model}__{family}__{bank}']\n                    assert alpha==stored['selected_alpha']\n                    error('OOF_frozen_loss_vector',losses,stored['OOF_mean_finite_delta_ce_by_alpha'])\n                    selected.append({'model_id':model,'family':family,'bank':bank,'selected_alpha':alpha,'losses':losses})\n            del raw\n        # Recompute all scope point estimates directly from event values, without\n        # invoking the production summarizer or its helper functions.\n        for row in (v for v in ev if v['model_id']==model):\n            family=row['family'];train=row['train_bank'];bank=row['evaluation_bank'];alpha=float(row['alpha'])\n            choice=frozen[key(model,family,train,alpha)][readout]\n            choice1=frozen[key(model,family,train,1.)][readout]\n            actual=all_effects[bank][readout];index=np.arange(len(actual))\n            policy=actual[index,choice];common=actual[:,4];original=actual[index,choice1]\n            scope=np.ones(len(index),bool) if row['receiving_domain']=='pooled' else domains[readout]==DOMAINS.index(row['receiving_domain'])\n            values={'policy_delta_ce':policy,'policy_absolute_ce':baseline[readout]+policy,\n                    'gain_vs_alpha1':original-policy,'gain_vs_alpha0_fixed':common-policy,\n                    'common_selection_rate':(choice==4).astype(float)}\n            for name,value in values.items():error('DEV_point_'+name,value[scope].mean(),float(row[name]))\n            switch=scope&(choice!=4);rate=float(switch.sum()/scope.sum())\n            conditional=float((policy-common)[switch].mean()) if switch.any() else None\n            error('switch_rate',rate,float(row['switch_rate']))\n            if conditional is None:assert row['conditional_switch_extra_cost_vs_common']==''\n            else:error('conditional_switch_cost',conditional,float(row['conditional_switch_extra_cost_vs_common']))\n            product=0 if conditional is None else rate*conditional\n            error('switch_product',product,float(row['switch_rate_times_conditional_extra_cost']))\n            error('switch_identity',product,(policy-common)[scope].mean())\n            target=freeze['selections'][f'{model}__{family}__{train}']['selected_alpha']\n            assert (row['selected_by_OOF']=='True')==(alpha==target)\n        original_choices.close()\n        print(json.dumps({'model_audited':model,'folds_checked':len(normal)}),flush=True)\n    frozen.close()\n    assert len(normal)==24 and len(selected)==12\n    assert evselected==[r for r in ev if r['selected_by_OOF']=='True']\n    for path,item in sources.items():\n        stat=Path(path).stat();assert stat.st_size==item['bytes'] and stat.st_mtime_ns==item['mtime_ns']\n    return receipt,evselected\n\ntry:\n    receipt,evselected=audit()\n    data={'status':'AUTHOR_RECOMPUTATION_PASS','checked_at_utc':datetime.now(timezone.utc).isoformat(),\n      'processing_agent':'Codex / daily_summary_1004','authorship_disclosure':'This agent authored the diagnostic script. Recalculation uses a separately written path without importing diagnostic or production analysis helpers; it is author self-audit, not an independent reviewer.',\n      'run_receipt_sha256':sha(RUN/'receipt.json'),'registration_sha256':sha(RUN/'registration.json'),\n      'diagnostic_code_sha256':sha(ROOT/'scripts/crossfit_router_shrinkage_20261004.py'),\n      'elapsed_seconds':time.monotonic()-started,'max_abs_errors':checks,'normal_equations':normal,\n      'normal_equation_relative_threshold':1e-8,'normal_equation_relative_denominator':'Frobenius norm of Z.T centered_labels plus 10 times Frobenius norm of coefficients; no Gram matrix constructed',\n      'selected_alphas':selected,'evaluation_rows_recomputed':600,'selected_rows_checked':120,\n      'CV_rows_recomputed':300,'whole_record_folds_checked':True,'original_inputs_and_completed_outputs_sha256_verified':True,\n      'sources':sources,'source_size_mtime_unchanged_after_audit':True,\n      'no_refit':True,'no_new_model_forward':True,'bootstrap_CIs_recomputed_here':False,\n      'boundaries':['DEV was already exposed; this is a post-hoc conditional diagnostic.','OOF-selected minimum is optimistically selected, not an unbiased utility estimate.','Correct normal equations and fold statistics verify these saved fold fits; they do not certify the broader dataset is independent of pretraining.','No scientific state transition or mechanism conclusion.'],\n      'recomputation_code':Path(__file__).read_text()}\n    (OUT/'crossfit_author_audit.json').write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\\n')\n    maxrel=max(x['normal_equation_relative_frobenius_residual'] for x in normal)\n    maxabs=max(x['normal_equation_max_abs_residual'] for x in normal)\n    lines=['# 收缩诊断作者复算审计','',\n      '2026-10-04 UTC。处理代理：Codex / daily_summary_1004。**本代理是诊断脚本作者；这是作者自检，不是独立审阅人。** 复算代码另写，未导入诊断脚本或原生产分析器，完整复算源码保存在同名JSON。','',\n      '**已保存结果通过作者复算。** 没有重拟合、模型前向、GPU或原输出修改。读取最终COMPLETE收据，并核对登记输入及全部结果文件的SHA-256。','',\n      f'- 24个训练折各384记录、验证折各128记录；8类别各折16记录，每记录16位置始终同折，记录交集为0。',\n      f'- 从原始token前缀和c/a/r独立重建389维base及3461维fullcx，核对训练折均值、标准差、标签截距，以及保存系数重建的OOF预测。最大OOF预测差{checks[\"coefficient_rebuilt_OOF_prediction\"]:.3g}。',\n      f'- 以训练折数据检查24个ridge正规方程，最大绝对残差{maxabs:.3g}、最大相对Frobenius残差{maxrel:.3g}。检验式为Zᵀ(Zβ−中心化标签)+10β；分母为右端Frobenius范数加10倍系数范数。',\n      '- 300行折内／总体OOF读数与12次精确选α均重算；11组α=0，只有SALL/base/A为α=0.1。60套完整选择均从原allFIT预测和FIT均值重建，α0严格等于固定common，α1严格等于原选择。',\n      f'- 600行DEV总体／分域点估计及switch概率×条件额外代价全部重算；120行selected输出是预先选定α的准确子集。gain_vs_alpha0最大点估计差{checks[\"DEV_point_gain_vs_alpha0_fixed\"]:.3g}，switch恒等式最大残差{checks[\"switch_identity\"]:.3g}。','',\n      '本作者审计没有重新计算bootstrap区间；它检查原始逐事件值导出的点估计、切换分解及折内求解。原始数据每记录16位置相关，不按独立事件推断。','',\n      '11组α0的改善来自退回固定共同动作，不是证明自适应选择优于共同动作。SALL/base/A选α0.1的读数应结合原条件区间单独报告。选择规则仅看FIT，但整套诊断是在DEV此前曝光后提出，仍不是新确认；OOF选优均值也不是无偏效用估计。作者自检通过不改变研究者科学结论Unknown。','',\n      '[完整数值、来源和复算代码](crossfit_author_audit.json) · [运行收据](../../runs/router_shrinkage_20261004/receipt.json)']\n    (OUT/'crossfit_author_audit.md').write_text('\\n'.join(lines)+'\\n')\n    print(json.dumps({'status':data['status'],'max_abs_errors':checks,'normal_equation_relative_max':maxrel,'elapsed_seconds':data['elapsed_seconds']},indent=2))\nexcept BaseException as exc:\n    failure={'status':'AUTHOR_AUDIT_FAILED','error':str(exc),'traceback':traceback.format_exc(),\n             'partial_checks':checks,'partial_normal_equations':normal,'authorship_disclosure':'Author self-audit; not independent reviewer.'}\n    (OUT/'crossfit_author_audit.json').write_text(json.dumps(failure,indent=2)+'\\n')\n    raise\n"
+}

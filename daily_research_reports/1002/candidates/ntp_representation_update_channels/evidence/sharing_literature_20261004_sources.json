@@ -1,0 +1,162 @@
+{
+  "created_at_utc": "2026-10-04T11:02:56.279245+00:00",
+  "scope": "Targeted primary-source reading for the researcher-requested 2026-10-04 closeout; not exhaustive; not an execution contract.",
+  "full_papers_read_cover_to_cover": false,
+  "method": "Read primary text at listed sections; distinguish source claims, assumptions and AI project-specific interpretation.",
+  "sources": [
+    {
+      "id": "maurer2016",
+      "title": "The Benefit of Multitask Representation Learning",
+      "year": 2016,
+      "url": "https://jmlr.org/papers/volume17/15-242/15-242.pdf",
+      "version": "JMLR final paper",
+      "read_scope": "Abstract; Sections 2 and 3; Theorems 1 and 4",
+      "boundary": "Task-dependent shared-representation bounds; not SGD or retention guarantees"
+    },
+    {
+      "id": "tripuraneni2020",
+      "title": "On the Theory of Transfer Learning: The Importance of Task Diversity",
+      "year": 2020,
+      "url": "https://proceedings.nips.cc/paper_files/paper/2020/file/59587bffec1c7846f3e34230141556ae-Paper.pdf",
+      "version": "NeurIPS proceedings",
+      "read_scope": "Sections 2 and 3; assumptions and task-diversity definitions",
+      "boundary": "Common covariate distribution, realizability, regularity and task coverage matter"
+    },
+    {
+      "id": "standley2020",
+      "title": "Which Tasks Should Be Learned Together in Multi-task Learning?",
+      "year": 2020,
+      "url": "https://proceedings.mlr.press/v119/standley20a/standley20a.pdf",
+      "version": "ICML/PMLR proceedings",
+      "read_scope": "Experimental setup, capacity/data comparisons and grouping",
+      "boundary": "Supervised task combinations and resource-sensitive affinity"
+    },
+    {
+      "id": "fifty2021",
+      "title": "Efficiently Identifying Task Groupings for Multi-Task Learning",
+      "year": 2021,
+      "url": "https://proceedings.neurips.cc/paper/2021/file/e77910ebb93b511588557806310f78f1-Paper.pdf",
+      "version": "NeurIPS proceedings",
+      "read_scope": "Sections 4, 4.3 and 6; shared update, counterexamples and changing affinity",
+      "boundary": "Local lookahead and retrained-group performance remain separate"
+    },
+    {
+      "id": "yu2020",
+      "title": "Gradient Surgery for Multi-Task Learning",
+      "year": 2020,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/3fe78a8acf5fda99de95303940a2420c-Paper.pdf",
+      "version": "NeurIPS proceedings",
+      "read_scope": "Method and theory, first four pages",
+      "boundary": "Conflict, domination and curvature; per-task gradients cost work"
+    },
+    {
+      "id": "sun2020",
+      "title": "AdaShare: Learning What To Share For Efficient Deep Multi-Task Learning",
+      "year": 2020,
+      "url": "https://proceedings.neurips.cc/paper/2020/file/634841a6831464b64c072c8510c7f35c-Paper.pdf",
+      "version": "NeurIPS proceedings",
+      "read_scope": "Section 3",
+      "boundary": "Known-task block execution policy, regularization and training curriculum"
+    },
+    {
+      "id": "kirkpatrick2017",
+      "title": "Overcoming catastrophic forgetting in neural networks",
+      "year": 2017,
+      "url": "https://arxiv.org/html/1612.00796v2",
+      "version": "arXiv v2 of 2017 work",
+      "read_scope": "Methods and empirical limitations of Fisher approximation",
+      "boundary": "Soft diagonal-Fisher protection; not frozen functions"
+    },
+    {
+      "id": "rusu2016",
+      "title": "Progressive Neural Networks",
+      "year": 2016,
+      "url": "https://arxiv.org/html/1606.04671v4",
+      "version": "arXiv v4, revised 2022; original 2016",
+      "read_scope": "Section 2 and Appendix B",
+      "boundary": "Frozen old columns; task selection and growing storage"
+    },
+    {
+      "id": "mallya2018",
+      "title": "PackNet: Adding Multiple Tasks to a Single Network by Iterative Pruning",
+      "year": 2018,
+      "url": "https://arxiv.org/html/1711.05769v2",
+      "version": "arXiv v2; CVPR 2018 work",
+      "read_scope": "Section 3 including biases and batch-normalization state",
+      "boundary": "Task masks, prune/retrain cost, finite free capacity; no automatic hardware speed claim"
+    },
+    {
+      "id": "deepseekmoe2024",
+      "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models",
+      "year": 2024,
+      "url": "https://arxiv.org/html/2401.06066v1",
+      "version": "arXiv v1",
+      "read_scope": "Sections 3.2, 4.4 and 4.5",
+      "boundary": "Matched-budget shared-expert ablation; branch importance does not identify universal semantics"
+    },
+    {
+      "id": "olmoe2024",
+      "title": "OLMoE: Open Mixture-of-Experts Language Models",
+      "year": 2024,
+      "url": "https://arxiv.org/html/2409.02060v1",
+      "version": "arXiv v1",
+      "read_scope": "Section 4.1.3 and Figure 6",
+      "boundary": "Opposite shared-expert ablation under a different setup; routing-freedom explanation is a hypothesis"
+    },
+    {
+      "id": "openmoe2024",
+      "title": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+      "year": 2024,
+      "url": "https://arxiv.org/html/2402.01739v1",
+      "version": "arXiv v1",
+      "read_scope": "Section 4",
+      "boundary": "Token-dependent early routing in studied models only"
+    },
+    {
+      "id": "flexolmo2025",
+      "title": "FlexOlmo: Open Language Models for Flexible Data Use",
+      "year": 2025,
+      "url": "https://allenai.org/papers/flexolmo",
+      "version": "Author-hosted PDF; arXiv identity 2507.07024 verified",
+      "read_scope": "Sections 3.3, 4.3 and 4.4",
+      "boundary": "Frozen public/shared parameters, external domain embedder and optional router tuning"
+    },
+    {
+      "id": "yoon2026",
+      "title": "When Are Experts Misrouted? Counterfactual Routing Analysis in Mixture-of-Experts Language Models",
+      "year": 2026,
+      "url": "https://arxiv.org/html/2605.07260v1",
+      "version": "arXiv v1, 2026-05-08 preprint",
+      "read_scope": "Sections 3, 5 and limitations",
+      "boundary": "Post-hoc target CE; bounded last-layer router-only existence check, extra counterfactual training cost"
+    },
+    {
+      "id": "fedus2022",
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "year": 2022,
+      "url": "https://jmlr.org/papers/volume23/21-0998/21-0998.pdf",
+      "version": "JMLR 2022 final paper; initial preprint 2021",
+      "read_scope": "Sections 2.1-2.4; gate derivatives, capacity, objective and precision",
+      "boundary": "Task gradient through retained gate amplitude; T5-style denoising, not a direct causal NTP result"
+    },
+    {
+      "id": "zhou2022",
+      "title": "Mixture-of-Experts with Expert Choice Routing",
+      "year": 2022,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/2f00ecd787b432c1d36f3de9800728eb-Paper-Conference.pdf",
+      "version": "NeurIPS 2022 proceedings",
+      "read_scope": "Sections 3.2-3.3, 4.1 and 6",
+      "boundary": "Batch-coupled expert capacity and variable token compute; future-token access explicitly limits direct autoregressive use"
+    },
+    {
+      "id": "chi2022",
+      "title": "On the Representation Collapse of Sparse Mixture of Experts",
+      "year": 2022,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/df4f371f1f89ec8ba5014b3310578048-Paper-Conference.pdf",
+      "version": "NeurIPS 2022 proceedings",
+      "read_scope": "Sections 2-4.5; Jacobian decomposition, learned projection and component ablations",
+      "boundary": "Existing project precedent reread; low-rank gate component alone is not a universal full-state collapse theorem; MLM differs from NTP"
+    }
+  ],
+  "extended_at_utc": "2026-10-04T11:27:15.059806+00:00"
+}

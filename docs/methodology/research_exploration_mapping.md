@@ -31,13 +31,14 @@ not successful external-model runs.
 | Downstream goal and unequal error-cost audit / goal_audit.md | Existing progress goal audit; kernel 5 | Retained | R01 |
 | Typed question relations, coupled evidence and activation / problem_refinement.md | [Question refinement](../../.agents/skills/research-progress-core/references/question_refinement.md), existing Anchor hierarchy | Extended, local paths retained | R05, R10 |
 | Evidence propagation and closure compaction / problem_refinement.md, research_documentation.md | Progress refinement, Anchor 7-8, Detailed, final report | Extended; one history | R10, R11 |
-| Plot contract and bounded rendering audit / research_viewer_design.md | [Visual contract](../../.agents/skills/experiment-card-writer/references/visual_evidence_contract.md) | Extended, no forced viewer | R12 |
+| Plot contract and bounded rendering audit / research_viewer_design.md | [Visual contract](../../.agents/skills/experiment-card-writer/references/visual_evidence_contract.md) | Adapted to static figures; no webpage | R12 |
 | First-reader clarity / research_documentation.md, research_loop_checklist.md | Existing Anchor gate; [meeting](../../.agents/skills/research-communication/references/meeting.md), Story, sync, final report | Extended; clarity is not scientific approval | R04, R07 |
-| Stage-aware audit and forward fixtures / research_loop_checklist.md | [Regression scenarios](research_exploration_regression_cases.md), applicable owner checks | Adapted without duplicate full checklist | R01-R18 |
+| Stage-aware audit and forward fixtures / research_loop_checklist.md | [Regression scenarios](research_exploration_regression_cases.md), applicable owner checks | Adapted without duplicate full checklist | R01-R21 |
 | Math-source vs rendering / scripts/check_markdown_math.py | [Local source checker](../../tools/check_markdown_math.py), existing math convention | Adapted, scoped checker not renderer | R12, R16 |
-| Stable bounded final synthesis / SKILL.md stable-conclusion stage | [Existing final-report owner](../../.agents/skills/research-final-report/SKILL.md) | Retained, compacted | R05, R07 |
+| Stable bounded final synthesis / SKILL.md stable-conclusion stage and upstream research-final-report/SKILL.md | [Existing final-report owner](../../.agents/skills/research-final-report/SKILL.md) | Explanatory coverage retained; flexible headings and human-confirmed finality | R05, R07 |
 | Existing-proof search and absence limits / local 0928 audit correction | [Mechanism closure](../../.agents/skills/research-reasoning-auditor/references/mathematical_mechanism_closure.md) | New local safeguard | R04, R13 |
 | Factor identification and local-to-decision bridge / local correction | Mechanism closure; experiment entry | New conditional safeguard | R05, R06, R14, R15 |
+| Claim-appropriate evidence, justified dependencies and decision branches / local generalization | Kernel 1/5, progress refinement/interpretation, Anchor contract | Domain-independent adaptation | R19-R21 |
 
 ## Intentional Non-Imports
 
@@ -48,8 +49,9 @@ human judgment, not another experiment ledger.
 
 LaTeX build/toolchain, installer, viewer-server script and optional dashboard
 infrastructure are not imported: they are peripheral tooling, not missing research
-methodology. A requested paper/viewer may use its own tools later. No automatic
-service, extra model invocation, external repository edit or historical result
+methodology. Paper writing follows the requested format; research delivery uses
+self-contained Markdown with optional static figures. No automatic service, extra
+model invocation, external repository edit or historical result
 migration is authorized by this integration.
 
 ## Compression Basis And Limits

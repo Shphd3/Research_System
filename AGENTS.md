@@ -1,43 +1,50 @@
 # Research System
 
-Research judgment, designs and evidence belong here. Experiment code, raw data,
-outputs, logs and checkpoints belong in the execution workspace.
+System owns rules and navigation; projects own research; daily folders hold
+meetings and short updates. Code, raw outputs and checkpoints belong in execution.
 
 ## Authority And Communication
 
-Converse in Chinese. Canonical artifacts are English with `_cn.md` companions
-unless the researcher chooses otherwise. Lead with the answer and its boundary;
-define essential terms before notation. Use precise prose, not compulsory
-headings or decorative tables. Math follows [docs/markdown_math.md](docs/markdown_math.md).
+Use Chinese. Canonical artifacts are English with `_cn.md` companions
+unless the researcher chooses otherwise. Lead with the answer and its boundary.
+Use short, direct sentences, explicit actors and consistent terms; define objects
+before notation. Preserve conditions and uncertainty when simplifying. Use [writing](docs/report_writing.md) and [math](docs/markdown_math.md) guidance.
 
 Separate observations, derivations, interpretations, hypotheses and decisions.
 The researcher owns questions, priorities, strongest rivals, mechanism judgment,
 scientific approval, claim boundaries and state transitions. AI may inspect,
-audit, offer labeled alternatives, formalize confirmed choices, and implement
-and verify authorized work. Missing judgment stays `Unknown`; a successful run,
-audit, model switch or another conversation supplies no scientific authority.
+audit, suggest alternatives, formalize choices, and complete authorized work.
+Missing judgment stays `Unknown`; execution, audits and other chats grant no
+scientific authority.
 
 ## Context And Reasoning
 
-Start at the named source. Use `PROJECTS.md` only to select a workstream; inspect
-its current Focus/Anchor before changing its question. Check existing derivations
+Start at the named source. `PROJECTS.md` selects a project; its roadmap selects
+the Focus/Anchor. Read those owners before changing a question. Check existing derivations
 and evidence before declaring something missing. Distinguish an absent model,
 an unshown derivation, an untested mechanism and an unsupported decision leap.
 If access is incomplete, bound the search claim rather than asserting absence.
 
 Use the smallest task owner in [docs/skills.md](docs/skills.md), then only its
-applicable references. Reuse unchanged instructions; refresh decision-bearing
-sources before acting. The [method kernel](docs/methodology/research_exploration_kernel.md)
-guides open research and mechanism work, not routine deterministic tasks or a
-mandatory serial skill chain. Allow reasoned conjectures and counterexamples;
-apply only the current stage, without inventing future models or documents.
+applicable references. Reuse instructions; refresh decision-bearing sources.
+The [method kernel](docs/methodology/research_exploration_kernel.md) guides open
+research, not routine tasks or a serial skill chain. Allow reasoned conjectures
+and counterexamples; apply the current stage without inventing future documents.
 
-Before relying on active workstream paths run `python tools/check_current_entrypoints.py`;
-it checks navigation, not scientific validity. Before new training implementation
+Check navigation with `python tools/check_current_entrypoints.py` before using
+active workstream paths; this does not validate science. Before new training implementation
 or code reuse inspect `docs/training_reuse_index.md` and the actual source;
 state reuse, adaptation or rejection. Training and comparisons must follow
 `docs/training_observability_contract.md`; do not duplicate or weaken its
 telemetry, token/batch normalization, freeze or resume checks.
+
+Before using model/SAE checkpoints, saved representations or datasets, consult
+the [asset registry](assets/README.md) and check required IDs with
+`tools/check_assets.py --strict`. Follow its lookup-before-pause rule; an older
+access snapshot does not establish access in the current conversation.
+Authorized training completion must register actually saved checkpoints through
+the registry's [training and analysis lifecycle](assets/README.md#training-and-analysis-lifecycle);
+keep payloads execution-side and record missing saves explicitly.
 
 Memory is non-canonical. Use `research-memory`: one conversation log,
 timestamped append-only entries with processing-agent identity. Never overwrite
@@ -49,31 +56,33 @@ and scientific claims against their owning records, not memory.
 
 | Record | Owns |
 |---|---|
-| `PROJECTS.md` | Navigation, workstreams, priorities and project decisions |
-| Focus | One activated question and researcher-owned next decision |
+| `PROJECTS.md` / project roadmap | Project access / workstream navigation and priority |
+| Focus | One stable activated question and researcher-owned next decision |
 | Anchor | Sole current scientific design; never a parallel `design.md` |
 | Protocol | Exact experiment contract, review, approval and amendments |
-| Summary / `_cn.md` | Complete Purpose, Hypothesis, Analysis method, Conclusion |
+| Summary / `_cn.md` | Complete Purpose, Model, Hypothesis, Conclusion, Analysis, in that order |
 | Detailed / execution record | Setup, provenance, deviations, results and execution state |
 | Final report / Story / Graph / sync | Derived reading or navigation, not new authority |
 | `docs/execution_envelope.md` | Profiles, images, submission and execution certificates |
 
-A Focus is created/reset only after researcher activation, stable `problem_key`
-and next decision are confirmed. Keep at most three necessary experiments per
-question. Preserve independent `task_state`, `question_state`, `design_state`,
+Create/reset Focus only for a researcher-activated independent question with
+confirmed `problem_key` and next decision. Keep it in the project's `main/focus/`;
+reuse its path across dates/meetings. An authorized relocation preserves identity;
+translations are companions. Keep at most three necessary experiments per question.
+Preserve independent `task_state`, `question_state`, `design_state`,
 `result_state`; do not mirror execution/approval into a combined status. Focus
 states scientific meaning, Protocol exact execution; resolve contradictions
-without silently rewriting either. One rolling round summary derives from Detailed.
+without silently rewriting either. Focus links to Summary; round history stays in Detailed.
 
 Anchor keeps its eight-section contract through `problem-anchor-writer`.
 A round records question/hypothesis, setup/controls, data, confirmation split,
 result or `NOT RUN`, and insight/boundary/next decision. Planned rounds may stop
 at `NOT RUN`; completed rounds need all six. Preserve full evidence once, not
-duplicate histories. Finish authorized factual records even when human
-interpretation is unknown. Never reinterpret frozen results during refactoring.
+duplicate histories. Finish factual records even when human interpretation is
+unknown. Never reinterpret frozen results during refactoring.
 
-Experiments need a named uncertainty, credible alternative, distinguishing
-comparison and supporting/non-supporting/insufficient outcomes. A formula's
+Experiments need an uncertainty, credible rival, distinguishing comparison and
+supporting/non-supporting/insufficient decision branches. A formula's
 implementation check is not a new empirical discovery. Local effects, long-term
 training and design decisions require separate evidence or an explicit bridge.
 Question closure and its one final report require a researcher-confirmed bounded
@@ -81,18 +90,23 @@ answer; negative or insufficient results cannot be polished into support.
 
 ## Meetings And Delivery
 
-Protect reading and independent explanation before implementation. Meetings
-center one falsifiable question, not a positive result. A first-time listener
-must understand the objects, what changes, why, which relation was tested and
-what remains open. A schematic loss curve cannot replace a mechanism derivation.
-Keep accessibility, semantic routing, intervention-measured utility and end-task
-gain distinct. Repair presentation without pretending valid prior work is absent.
+Focus owns the question; a requested brief goes in the day's `meeting_report/`.
+Link one speaking entry from the day index: question, model, result, boundary,
+decision, then evidence and Q&A. Deliver self-contained Markdown; explain decisive
+values, formulas and figure findings in prose. No webpage is needed for reading.
 
-With a Summary, link it first, then give the decisive comparison/value, essential
-figure and reading sentence when useful, boundary and next uncertainty. Repeat
-the four-part body only for a requested standalone brief or absent Summary.
-Unconfirmed next steps are `AI 建议`. Daily synthesis waits for canonical results
-and human Focus judgment; link sources rather than copying histories.
+Explain objects and computation before implementation. Separate derivation,
+measurement and open bridges; description, prediction, causation and utility.
+A schematic is no mechanism; bounded results do not establish broader benefit.
+
+Link Summary with decisive evidence and boundary; briefs may restate these.
+Use Purpose → Model → Hypothesis → Conclusion → Analysis for new or revised
+experiment summaries and multi-paragraph research analyses. Define the actual
+system and measured quantities before hypotheses; state the bounded answer
+before its detailed evidence. Follow the shared writing contract and template.
+This changes exposition, not frozen evidence, approval or scientific state.
+Unconfirmed wording stays pending; next steps are
+`AI 建议`. Daily synthesis keeps its human-judgment gate; drafts grant no run authority.
 
 ## Execution, Storage And Completion
 
@@ -107,15 +121,14 @@ Absent requested ongoing monitoring, verify bounded startup, first progress
 and immediate failures; report verified status, job ID and evidence-based ETA,
 then stop polling. Later inspect the existing job, not resubmit it.
 
-Root `templates/` owns reusable templates. Track research text, scripts, configs
-and small provenance manifests, not raw outputs, caches, checkpoints or fonts.
-Requested curated packages may contain reading copies. Dated documents use their
-own date's `figures/` with relative links and recorded origins. Independent
-repositories under `Projects/` keep their own ownership; do not silently merge them.
+Root `templates/` owns reusable templates. Track text, scripts, configs and small
+provenance manifests, not raw outputs, caches, checkpoints or fonts. Selected
+evidence exceptions require the payload manifest. Date-local figures record origins.
+Independent repositories keep their ownership. For incomplete checkouts or legacy
+paths use [project access](docs/project_access.md), not a duplicate editable source.
 
 Commit, push, publish, external sync and existing Graph edits require explicit
-request. Before commit run `python tools/check_git_payload.py` and proportionate
+request. Before commit run `python tools/check_git_payload.py` and relevant
 changed-scope tests; report unavailable checks honestly. Skill edits require
 structural/link checks; changed math requires source checks, not claims of rendered
-verification. Complete the authorized deliverable and evidence trace; a first
-draft is not completion. Narrow answers need no formal artifact.
+verification. Complete deliverables and evidence traces. Narrow answers need no formal artifact.

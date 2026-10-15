@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-08T08:55:55.726082+00:00",
+  "kind": "candidate corrective execution certificate, not a measured scientific result",
+  "job_id": "pt-ahl6i4wr",
+  "job_name": "h2-sae-delta-1008-retry1-diagnostic",
+  "submitted_at_utc": "2026-10-08T08:49:02Z",
+  "execution_status": "FAILED",
+  "retry_count": 1,
+  "previous_job": "pt-hsy9grzm",
+  "previous_job_terminal": "FAILED",
+  "resource_profile": "h100-4-reserved",
+  "gpu_count_requested": 4,
+  "gpu_used_observed": true,
+  "quota_type": "reserved",
+  "priority": "normal",
+  "image_id": "shphd-lite-0911",
+  "image_url": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+  "workspace": "share-space",
+  "aec2": "share-cluster",
+  "worker_spec": "n6ls.iu.i40.4",
+  "worker_nodes": 1,
+  "worker_processes_requested": 4,
+  "storage_mount": "01995892-d478-76d8-aec7-13fd8284477e:/data",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z",
+  "entry_command": "H2_CONFIG_PATH=/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/configs/h2_v2.json bash /data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/scripts/run.sh /data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z",
+  "amendment": "amendment_01.md",
+  "runtime_ceiling_seconds": 13500,
+  "aggregate_gpu_hour_ceiling": 16,
+  "prior_attempt_budget_reserved_seconds": 900,
+  "measurement_status": "PARTIAL_S7_ONLY_QWEN_WORKER1_QUALIFICATION_FAILED",
+  "scientific_judgment": "Unknown",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z/submit-h2-sae-delta-1008-retry1-diagnostic-20261008T084900Z.json",
+      "sha256": "b091167cc6e54afe4134ebd579c5ffa842d16bfd13e867ee0873fa92a657271b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z/platform_describe_20261008T085257Z.txt",
+      "sha256": "59ee89bfa8f7dc210290420e3b94e1f751267b882388502469b46caa60cb714c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z/pipeline_started.json",
+      "sha256": "5d638a9ee987191602ea50c20978316cb2a0fdc529ce60dee7a780db7ac0e0f5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z/preflight.json",
+      "sha256": "3882e76be3972e6e8259760fef4a09cbb6a5636cf848b5df4ecf1c2fc4c10738"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z/failure.json",
+      "sha256": "8d49e66b1a4b69fc09b5a383afa0e64b189710d5a256229c709d6e9f1e3c7d5d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261008_sae_error_signal_alignment/runs/diagnostic_v2_20261008T084832Z/platform_describe_20261008T085947Z.txt",
+      "sha256": "5f32b0610a3f9be901e02810f979a87a7d120588d612cf58903d9a89ff1d39a8"
+    }
+  ],
+  "platform_state_observed": "FAILED",
+  "platform_state_observed_at_utc": "2026-10-08T08:52:57Z",
+  "initial_observation": {
+    "execution_status": "SUBMITTED",
+    "platform_state_observed": "STARTING",
+    "platform_state_observed_at_utc": "2026-10-08T08:52:57Z",
+    "gpu_used_observed": null,
+    "measurement_status": "NOT_RUN"
+  },
+  "runtime_started_at_utc": "2026-10-08T08:54:24.910576+00:00",
+  "gpus_observed": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "terminal_at_utc": "2026-10-08T08:56:13.94217Z",
+  "scientific_result": "NOT_RUN_OR_INCOMPLETE"
+}

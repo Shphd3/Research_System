@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "worker": 0,
+  "model": "qwen",
+  "records": 256,
+  "valid_targets": 4096,
+  "model_optimizer_updates": 0,
+  "sae_optimizer_updates": 0,
+  "parameter_versions_unchanged": true,
+  "guards": [
+    {
+      "parameter_outer_rel": 0.0,
+      "other_position_delta_ratio": 0.0,
+      "tail_vs_native_single_delta_rel": 0.0
+    },
+    {
+      "parameter_outer_rel": 0.0,
+      "other_position_delta_ratio": 0.0,
+      "tail_vs_native_single_delta_rel": 0.0
+    },
+    {
+      "repeat_exact": true,
+      "tail_ce_abs": 0.0,
+      "qualification": "native per-position replay; pure CE; no SAE reconstruction in loss"
+    }
+  ],
+  "tail_ce_abs_max": 0.0,
+  "model_meta": {
+    "model_path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+    "sae_path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+    "model_config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "sae_checkpoint_sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+    "sae_source": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+    "sae_source_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+    "sae_checkpoint_metadata": {
+      "contract": "a15-e16-full-1b-v1",
+      "manifest_sha256": "a82ee6a3f6dd5b56259a6bc384481ddf6522c48307f57cb8569752f82886bbe4",
+      "model_config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "layer": 27,
+      "d_model": 1024,
+      "n_latents": 30000,
+      "k": 32,
+      "sequence_length": 1024,
+      "micro_batch_size": 1,
+      "world_size": 4,
+      "steps": 244141,
+      "milestone_steps": [
+        24415,
+        73243,
+        244141
+      ],
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0,
+      "warmup_steps": 10,
+      "grad_clip": 1.0,
+      "aux_weight": 0.03125,
+      "aux_k": 512,
+      "dead_after_steps": 50,
+      "outlier_quantile": 0.999,
+      "seed": 17
+    },
+    "sae_config": {
+      "d_model": 1024,
+      "n_latents": 30000,
+      "k": 32,
+      "postact_fn": "relu_topk"
+    },
+    "sae_hook": "model.layers.27.post_attention_layernorm.output",
+    "delta_definition": "d(next-token CE)/d(final mlp input)",
+    "parameter_weight": "model.layers.27.mlp.down_proj.weight",
+    "param_input_definition": "silu(gate_proj(a))*up_proj(a)",
+    "param_delta_definition": "d(next-token CE)/d(down_proj output)",
+    "c_alias": "param_input, not the SAE observation",
+    "sae_decoder_norm_min": 0.9999998907617645,
+    "sae_decoder_norm_max": 1.0000001331083657,
+    "dtype": "float32",
+    "ce_reduction_dtype": "float64",
+    "attn_implementation": "sdpa",
+    "optimizer_updates": 0,
+    "native_reconstruction_substitution": false
+  },
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "seconds": 25.30330666527152,
+  "peak_allocated_bytes": 3222246912,
+  "features_sha256": "5b5d8c2eb11b5df0f8587fd370744f76fccfad69560139646f904d4b1a3f288b"
+}

@@ -1,0 +1,261 @@
+{
+  "updated_at_utc": "2026-10-04T11:05:07.870717+00:00",
+  "scientific_judgment": "Unknown",
+  "practical_effect_threshold": "Unknown",
+  "models": [
+    {
+      "model_id": "dense_33b",
+      "label": "Dense",
+      "analysis_receipt": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json",
+      "analysis_receipt_sha256": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d",
+      "readout_summary_rows": 280,
+      "source_summary_rows": 560,
+      "all_conditions": 56,
+      "families": [
+        "base",
+        "base+a_pca64",
+        "base+c_pca64",
+        "base+x_pca64",
+        "base+cx_pca64",
+        "base+a_random64",
+        "base+cx_full"
+      ],
+      "pooled_cross_source_rows": 28,
+      "domain_counts": {
+        "computer_science": {
+          "rows": 28,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 22
+        },
+        "mathematics": {
+          "rows": 28,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 28
+        },
+        "physics": {
+          "rows": 28,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 28
+        },
+        "biology": {
+          "rows": 28,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 25
+        }
+      },
+      "pooled_fixed_five_action_indices": [
+        4
+      ],
+      "analysis_elapsed_seconds": 86.02672659605742,
+      "analysis_completed_at_utc": "2026-10-04T10:23:26.021635+00:00",
+      "policy_delta_ce": {
+        "mean_range": [
+          -0.0012721489734378731,
+          -0.0009465693714580022
+        ],
+        "conditional_CI_positive": 0,
+        "conditional_CI_negative": 28
+      },
+      "gain_vs_F_fixed": {
+        "mean_range": [
+          -0.0005048414161562376,
+          -0.0001982136634774786
+        ],
+        "conditional_CI_positive": 0,
+        "conditional_CI_negative": 28
+      },
+      "gain_vs_global_marginal": {
+        "mean_range": [
+          0.00013348623394040585,
+          0.0003866346150798586
+        ],
+        "conditional_CI_positive": 28,
+        "conditional_CI_negative": 0
+      },
+      "gain_vs_uniform": {
+        "mean_range": [
+          9.844343246896716e-05,
+          0.0005022764082536442
+        ],
+        "conditional_CI_positive": 28,
+        "conditional_CI_negative": 0
+      }
+    },
+    {
+      "model_id": "s7_fresh_lambda0p1_33b",
+      "label": "fresh S7",
+      "analysis_receipt": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json",
+      "analysis_receipt_sha256": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42",
+      "readout_summary_rows": 320,
+      "source_summary_rows": 640,
+      "all_conditions": 64,
+      "families": [
+        "base",
+        "base+a_pca64",
+        "base+c_pca64",
+        "base+x_pca64",
+        "base+cx_pca64",
+        "base+a_random64",
+        "base+sae64",
+        "base+cx_full"
+      ],
+      "pooled_cross_source_rows": 32,
+      "domain_counts": {
+        "computer_science": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 24
+        },
+        "mathematics": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 32
+        },
+        "physics": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 32
+        },
+        "biology": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 25
+        }
+      },
+      "pooled_fixed_five_action_indices": [
+        4
+      ],
+      "analysis_elapsed_seconds": 89.36604468151927,
+      "analysis_completed_at_utc": "2026-10-04T10:26:15.961678+00:00",
+      "policy_delta_ce": {
+        "mean_range": [
+          -0.0024280074401137413,
+          -0.0018014989698918091
+        ],
+        "conditional_CI_positive": 0,
+        "conditional_CI_negative": 32
+      },
+      "gain_vs_F_fixed": {
+        "mean_range": [
+          -0.0008073094049591971,
+          -0.0003455554658945112
+        ],
+        "conditional_CI_positive": 0,
+        "conditional_CI_negative": 32
+      },
+      "gain_vs_global_marginal": {
+        "mean_range": [
+          0.00024042683259699473,
+          0.0007595457373249687
+        ],
+        "conditional_CI_positive": 32,
+        "conditional_CI_negative": 0
+      },
+      "gain_vs_uniform": {
+        "mean_range": [
+          0.00027504557113541936,
+          0.0009434862508373264
+        ],
+        "conditional_CI_positive": 32,
+        "conditional_CI_negative": 0
+      }
+    },
+    {
+      "model_id": "sall_unit_weight_33b",
+      "label": "SALL",
+      "analysis_receipt": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json",
+      "analysis_receipt_sha256": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f",
+      "readout_summary_rows": 320,
+      "source_summary_rows": 640,
+      "all_conditions": 64,
+      "families": [
+        "base",
+        "base+a_pca64",
+        "base+c_pca64",
+        "base+x_pca64",
+        "base+cx_pca64",
+        "base+a_random64",
+        "base+sae64",
+        "base+cx_full"
+      ],
+      "pooled_cross_source_rows": 32,
+      "domain_counts": {
+        "computer_science": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 27
+        },
+        "mathematics": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 30
+        },
+        "physics": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 31
+        },
+        "biology": {
+          "rows": 32,
+          "gain_vs_fixed_point_positive": 0,
+          "gain_vs_fixed_CI_above_zero": 0,
+          "gain_vs_fixed_CI_below_zero": 28
+        }
+      },
+      "pooled_fixed_five_action_indices": [
+        4
+      ],
+      "analysis_elapsed_seconds": 92.37925503775477,
+      "analysis_completed_at_utc": "2026-10-04T10:28:40.840440+00:00",
+      "policy_delta_ce": {
+        "mean_range": [
+          -0.0013851729995498965,
+          -0.0011228639122704877
+        ],
+        "conditional_CI_positive": 0,
+        "conditional_CI_negative": 32
+      },
+      "gain_vs_F_fixed": {
+        "mean_range": [
+          -0.0005148504383327485,
+          -0.00019192101780131973
+        ],
+        "conditional_CI_positive": 0,
+        "conditional_CI_negative": 32
+      },
+      "gain_vs_global_marginal": {
+        "mean_range": [
+          0.00015786319774721417,
+          0.00042275449394661284
+        ],
+        "conditional_CI_positive": 32,
+        "conditional_CI_negative": 0
+      },
+      "gain_vs_uniform": {
+        "mean_range": [
+          0.0001567804043702518,
+          0.0005663959449074026
+        ],
+        "conditional_CI_positive": 32,
+        "conditional_CI_negative": 0
+      }
+    }
+  ],
+  "total_readout_rows": 920,
+  "total_source_rows": 1840,
+  "pooled_cross_source_conditions": 92,
+  "all_fixed_action_CIs_negative": true,
+  "all_global_marginal_CIs_positive": true,
+  "boundary": "Pointwise intervals, fixed source banks and fitted predictors. Counts are descriptive, not independent replications."
+}

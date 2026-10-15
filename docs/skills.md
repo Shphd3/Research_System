@@ -1,90 +1,69 @@
-# Repository Skills
+# Repository skills
 
-Canonical skills live only in `.agents/skills/<name>/`. Keep one installed root
-catalog, not personal copies. Select by task, then read that entry and applicable
-references; never treat the following ownership table as a serial workflow.
+Canonical research skills live in `.agents/skills/<name>/`. Keep one root catalog;
+project-specific skills and installed platform skills keep their own ownership.
 
-## Task Ownership
+## Select by the requested outcome
 
-| Requested outcome | Skill |
+Choose one primary owner. An explicitly named artifact determines its authoring
+owner; a question about that artifact may need only explanation or audit. Add
+another skill only for a distinct necessary subtask, not as a serial checklist.
+Routine rewriting, arithmetic or file inspection may need no research skill.
+
+| Requested outcome | Primary skill |
 |---|---|
-| Purpose, hypothesis, causal/mathematical chain or proxy audit | `research-reasoning-auditor` |
-| Question discovery/refinement, Focus judgment, falsifier, result/failure | `research-progress-core` |
-| Formal Anchor and scientific design | `problem-anchor-writer` |
-| Protocol, Summary, Detailed and evidence lineage | `experiment-card-writer` |
-| Settled-question final synthesis | `research-final-report` |
-| Plain-language explanation of a named document | `research-document-explainer` |
-| Explicit meeting, Story or curated handoff/sync | `research-communication` |
-| Repository-local conversation context | `research-memory` |
-| Advisor readiness or one next question | `research-sync-gate` |
-| Placement, archival or explicit publication | `research-mainline` |
-| Remote jobs, logs and artifact transport | `remote-experiment-workflow` |
-| Unsettled theory, method or literature critique | `scholar-mode` |
-| Explicit graph maintenance | `research-graph-sop` |
-| Explicit local Sidecar display/API operations | `sidecar-thinking` |
+| Audit a specific inference, causal chain, mathematical mechanism or proxy | `research-reasoning-auditor` |
+| Discover/refine a research question, maintain Focus or choose its next falsifier | `research-progress-core` |
+| Write or audit a formal Anchor and scientific design | `problem-anchor-writer` |
+| Write/audit Protocol, Summary, Detailed or their evidence lineage | `experiment-card-writer` |
+| Write/audit a settled-question final synthesis | `research-final-report` |
+| Understand a named document, result, formula or idea | `research-document-explainer` |
+| Write a requested meeting brief, stage Story or curated handoff | `research-communication` |
+| Checkpoint/resume conversation context or prepare an operational continuation | `research-memory` |
+| Assess advisor-discussion readiness or its next question | `research-sync-gate` |
+| Place, reorganize, archive or explicitly publish artifacts | `research-mainline` |
+| Inspect or execute an authorized remote job; retrieve logs/artifacts | `remote-experiment-workflow` |
+| Critique an unsettled idea, theory, method or literature position | `scholar-mode` |
+| Inspect, create, edit or validate an explicitly requested research graph | `research-graph-sop` |
+| Explicitly requested local Sidecar display/API work | `sidecar-thinking` |
 
-Implicit selection does not authorize writes, runs, publication or state changes.
-Add an owner only for a necessary subtask. A brief audit may finish in chat;
-a requested document follows its owning contract. Existing decisions and scope
-carry across models; do not demand repeated approvals or duplicate checks.
+A brief explanation or audit may finish in chat. Missing human interpretation does
+not block independent factual work. Scientific authority, execution and publication
+follow [AGENTS.md](../AGENTS.md); skill selection grants none of them.
 
-## Method Integration, Not Another Skill
+## Read only what this task needs
 
-The [kernel](methodology/research_exploration_kernel.md) integrates the pinned
-research-exploration method. The [coverage mapping](methodology/research_exploration_mapping.md)
-records each obligation, local owner, regression case and intentional exclusion.
-This preserves methodology without importing a competing root skill, `design.md`,
-automatic viewer or second question tree. Attribution is in
-[THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md).
+Read the selected `SKILL.md`, then its applicable references and named source
+artifacts. Reuse unchanged instructions already in context; refresh sources that
+can change the decision. Do not reread the whole catalog or all linked references
+at every turn. A reference link is a route, not an instruction to load everything.
 
-Use only the relevant stage:
-- New question: importance and structure before choosing a mechanism.
-- Mechanism diagnosis: inspect existing work, then distinguish derivation,
-  empirical, presentation and decision-bridge gaps.
-- Active design: exact variables/objective/constraints, permitted information,
-  prior-art decision when material, and stage-local Goal/How/Why.
-- Experiment/results: identifiable comparison, micro-test, frozen confirmation,
-  stage evidence, failure localization and bounded upward update.
-- Communication: explain the mechanism to a first reader without turning a
-  missing slide into missing science or a local effect into a design verdict.
+The advisor research-exploration method is integrated into these owners. Read the
+[kernel](methodology/research_exploration_kernel.md) for open research stages;
+read the [coverage mapping](methodology/research_exploration_mapping.md) only when
+auditing that integration. Do not invoke a second top-level research-exploration
+workflow or import its `design.md`, automatic graph, closure or viewer behavior.
+Attribution remains in [THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md).
 
-This is a reading guide, not required extra calls or reply headings. Deep rules
-are read when the selected task needs them; quick questions do not load the
-mapping, fixture suite or all downstream owners.
+Reports and replies use the shared [content and depth rules](report_writing.md#content-and-depth).
+A full report preserves the model-to-evidence chain; a short answer expands only
+the parts needed for the current question. No webpage is required. Root owns
+process, projects own research and daily folders own dated communication; use
+[project access](project_access.md) for missing checkouts or legacy paths.
 
-## Artifact And Authority Boundaries
+## Validate changes and measure the right cost
 
-Focus owns current human judgment; Anchor the sole scientific design; Protocol
-the precise contract/approval; Summary the first complete result; Detailed the
-preserved evidence/round ledger. Stories, final reports, graphs and memory cannot
-replace those sources. Keep complete history once and derive summaries from it.
+Run `python tools/check_skills.py` and the installed skill-creator
+`quick_validate.py` for changed skills. Run relevant local tests; changed math
+uses `python tools/check_markdown_math.py <files>`. These check structure/source
+behavior, not scientific truth or model routing.
 
-Protocol drafting remains one `DRAFT_NOT_EXECUTABLE` file with A-G critical review;
-promotion does not silently authorize execution. Results may finish factual work
-while human interpretation stays unknown. Learned designs require distinct data,
-task, objective, architecture, selection and confirmation boundaries.
+Test realistic requests and actual outputs on the named models when behavior is
+in scope. Compare like-for-like paths including required references, not only
+entrypoint size. Bytes or tokenizer estimates are not observed API billing.
+Preserve the existing Web project-instruction budget. Do not change model settings
+or implicit invocation policy merely to make a context-cost number smaller.
 
-Communication selects the requested meeting, Story or handoff mode. Handoff,
-external copying, commit/push, graph changes and publication remain explicitly
-scoped. Memory resumption is not scientific authorization; operational briefs and
-explicit full-log resumption retain their different reading contracts.
-
-Repositories under `Projects/` remain independently owned. Project-specific skills
-are not root duplicates to merge. SCO platform semantics stay with the project's
-`sco-control`; remote research execution uses the root envelope and remote owner.
-
-## Validation And Load Budget
-
-After skill edits run `python tools/check_skills.py`. Use the installed
-skill-creator `quick_validate.py` when available; report its absence rather than
-claiming execution. Run `python -m unittest discover -s tools/tests` for local
-regression tests and `python tools/check_markdown_math.py <changed-math-files>`
-for source containers. These checks establish structure/code behavior, not
-scientific correctness, target rendering or live model trigger quality.
-
-Preserve lean entrypoints. Compare like-for-like read paths, including required
-references, rather than claiming all tasks save the entrypoint percentage.
-Web project instructions must not exceed the recorded pre-refactor character or
-UTF-8 byte budget. Optional references are not free when actually loaded.
-Verify live skill discovery in a fresh client task separately; this refactor does
-not silently change a running client's context or model settings.
+Codex discovers names/descriptions before loading selected skill bodies. If a
+running task still shows old metadata, verify a fresh task rather than claiming
+its already-loaded context changed. See [official skill documentation](https://learn.chatgpt.com/docs/build-skills).

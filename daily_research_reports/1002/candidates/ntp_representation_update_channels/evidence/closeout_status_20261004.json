@@ -1,0 +1,133 @@
+{
+  "recorded_at_utc": "2026-10-04T11:18:34.203881+00:00",
+  "processing_agent": "Codex root conversation",
+  "scientific_judgment": "Unknown",
+  "research_window": {
+    "authorized_at_utc": "2026-10-04T10:20:58Z",
+    "planned_end_utc": "2026-10-04T12:20:58Z",
+    "original_question": "Under finite resources, when should inputs jointly update shared parameters versus separately trained experts to improve acquisition and retention?",
+    "independently_actionable_work_delivered_at_utc": "2026-10-04T12:03:22.178257+00:00",
+    "elapsed_minutes_at_delivery": 102.40297095,
+    "remaining_work_requires_new_GPU_authorization": true
+  },
+  "jobs": [
+    {
+      "job_id": "pt-meoxfrko",
+      "checked_at_utc": "2026-10-04T11:03:39.233777+00:00",
+      "state": "SUCCEEDED",
+      "start_time": "2026-10-03T12:09:09Z",
+      "complete_time": "2026-10-03T12:25:11Z",
+      "retries": 0,
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/pt-meoxfrko_live_status_20261004.json",
+        "sha256": "6ddb397038d51851c1d6f0dfa29d66e7ec54829af1b8aac37d8a82a70432451e"
+      }
+    },
+    {
+      "job_id": "pt-uasnh61d",
+      "checked_at_utc": "2026-10-04T11:03:39.234220+00:00",
+      "state": "FAILED",
+      "start_time": "2026-10-03T11:39:30Z",
+      "complete_time": "2026-10-03T11:40:53Z",
+      "retries": 0,
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/receipts/closeout_20261004T102058Z/pt-uasnh61d_live_status_20261004.json",
+        "sha256": "4dfdb33799fd625b79dd5ab23e55297d390aebaa189ea84dfac031082335430a"
+      }
+    }
+  ],
+  "measurement_analysis": {
+    "measured_models": 3,
+    "analyzed_models": 3,
+    "independent_numerical_audits_passed": 3,
+    "readout_rows": 920,
+    "in_sample_source_rows": 1840,
+    "pending_analysis_models": 0,
+    "production_analyzer_changed": false,
+    "new_LM_forwards_this_analysis_round": 0,
+    "source": {
+      "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/probe_33b_inventory.json",
+      "sha256": "2201815fad763875b09379bfa9d2c9296abd361861282cbe8a390d73d9c78f24"
+    }
+  },
+  "capacity": {
+    "original_GPU_smoke": "FAILED_AT_ZERO_UPDATES",
+    "implementation_amendment": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/dtype_amendment_20261004T102058Z/amendment.json",
+      "sha256": "a784e6a82b4fe9c7f9926b17a30a75ec5da21f8b7ed4dbb62bfb8338c90d0ad3"
+    },
+    "cpu_regression_checks": 8,
+    "tiny_cpu_smoke_six_arms": "PASS",
+    "exact_GPU_smoke": "NOT_RUN",
+    "new_GPU_job_permission": "REQUESTED_2026-10-04T10:37:30Z_PENDING",
+    "new_GPU_jobs_submitted": 0,
+    "formal_trajectories_completed": 0,
+    "formal_trajectories_expected": 12,
+    "registered_mechanism_outputs": 18,
+    "registered_mechanism_NOT_RUN": 18,
+    "resource_accounting": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/dtype_amendment_20261004T102058Z/static_resource_audit.json",
+      "sha256": "750a96174ff6265ec802c96c76d75747d65d2048331b80b63003196cdc5864f7"
+    },
+    "training_inventory": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/dtype_amendment_20261004T102058Z/training_status/summary.json",
+      "sha256": "f276ba0b2c83dfeaaf74e84ad4cb3020ba9915b7d75e8a79a09f3360a287ea39"
+    },
+    "mechanism_inventory": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/dtype_amendment_20261004T102058Z/mechanism_status_20261004.json",
+      "sha256": "af7b9e608039059b89bd695b013cbf3ef7829c765c6dd236a899cebf6e9f1390"
+    },
+    "planned_exposure_accounting": {
+      "path": "/data/250010109/MoE_Router/experiments/20261003_common_specialized_capacity/receipts/dtype_amendment_20261004T102058Z/planned_exposure_audit.json",
+      "sha256": "19f3f0b5a9f176aca992c58496cd977584ee25c54fefc5c3c0d1cd01e516be40",
+      "is_actual_training_result": false
+    }
+  },
+  "unable_to_verify_from_available_evidence": [
+    "Article-level/near-duplicate/pretraining overlap",
+    "Exact GPU qualification after repair",
+    "Formal acquisition/retention, final dev/test, GPU peak memory, throughput and elapsed-time outcomes",
+    "Researcher-selected practical-effect threshold or final mechanism judgment"
+  ],
+  "literature": {
+    "primary_papers": 17,
+    "exhaustive_review": false,
+    "source_index": {
+      "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/sharing_literature_20261004_sources.json",
+      "sha256": "0d10086367b2373ca0ec9a81d421ffb583a03d24e33f5e5cf7fa21a41ede3ff2"
+    }
+  },
+  "boundary": "No new task delegation, GPU submission, budget expansion, scientific state transition, commit or push. NOT RUN is not a zero result.",
+  "updated_at_utc": "2026-10-04T12:03:22.178257+00:00",
+  "remaining_required_evidence": [
+    {
+      "item": "Exact RTX5090/BF16 Smoke for all six arms and both configurations",
+      "state": "NOT_RUN",
+      "dependency": "Separate new-GPU-job permission pending"
+    },
+    {
+      "item": "Twelve full trajectories, domain by stage acquisition/forgetting and final dev/test",
+      "state": "NOT_RUN",
+      "dependency": "Exact Smoke qualification and current authorization for formal submission"
+    },
+    {
+      "item": "Eight C/T rollback, eight expert swap and two serial-path outcomes",
+      "state": "NOT_RUN",
+      "dependency": "Required qualified endpoint checkpoints"
+    },
+    {
+      "item": "Actual formal peak memory, valid tokens/s and total time including resumes",
+      "state": "NOT_RUN",
+      "dependency": "Formal execution records"
+    },
+    {
+      "item": "Scientific adoption, final mechanism judgment and bounded question closure",
+      "state": "Unknown",
+      "dependency": "Researcher judgment on completed evidence"
+    }
+  ],
+  "delivery_verification": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/evidence/closeout_document_checks_20261004.json",
+    "sha256": "3dfb9bfde26abad7fe39fe7bb0e9646f4ff3de37a61a5720e533e48ae619ae92"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "status": "COMPLETE_EXPLORATORY_33B_GROUP_DECOMPOSITION",
+  "completed_at_utc": "2026-10-04T16:49:13.100993+00:00",
+  "elapsed_seconds": 28.546233903616667,
+  "code_sha256": "708e8319d1cdcc425fc27031d5c9f4e6c66ee719e553bacc4cfcebdd48bf0c4c",
+  "helper_sha256": "3251c2077c47c6e1adb34a6717597076916960de0a8f45f04f21307b5d4fbf1a",
+  "registration_sha256": "607b288da930cf2b8370d5819bf936d72099287a42ef9856c3323474da2ad7b2",
+  "input_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/probe_33b_group_decomposition_20261004.py": "708e8319d1cdcc425fc27031d5c9f4e6c66ee719e553bacc4cfcebdd48bf0c4c",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/cached_policy_group_decomposition.py": "3251c2077c47c6e1adb34a6717597076916960de0a8f45f04f21307b5d4fbf1a",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/scripts/analyze_probe_33b.py": "0814a6993db1d04b0e23d9b4086cc1a4cc135b08a83f95e8dc258fbb8ed0c545",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/receipt.json": "81976f0258f67d9fba3d6ff11d702df32b0695c7c406a2f7b936b9fc29da204d",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/data/probe_33b/panel.npz": "0b637001d81f5ac0f5a203d1c55578bef7cf106b41b5e8cb68c0126f331c86ed",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/effects.npz": "ec02a5ce8fc14cb6bddeddf78051c6ece18a8194bc2876b4da06d440656d08bf",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/analysis_registration.json": "dcafd468834bc7e00afb5e627b530d575f36d6d09cbeacb84460a715ac2ee36c",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.json": "3da54a86e3434116ef0353c4ca6121801d1bc4dabdb7083c232fd5814f0f5c8f",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/selection_freeze.npz": "1004e5c3ee4011a2d7dd1095de10ee787f7ab23a3dc6ee3c6d4b8ddb5963bc39",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/bootstrap_freeze.npz": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/dense_33b/analysis/summary.csv": "01776ec8bb559bf551dba49df3ccccb8a6f81b293804112b5fc9b08368e53a7b",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/receipt.json": "8d2a842301f9316ebf0d51229893f020edcfa98214f4ea4702910d8c726afe42",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/effects.npz": "31e3d56f468449ce502f0dae30c071f4c80358becf3dea2f45fd803bf549a9b6",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/analysis_registration.json": "1e7c744e2e97814b8babd6bac53669a98d70f7e8fa7b2ed3365b63e490085f34",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.json": "1ad9b762ab9ac102e180fdfad6cbe95cb6d7f4a62cb25901afcab726af094b24",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/selection_freeze.npz": "96d2476d899dd95c8b2b9bd5be3385f77b30164951df81c6c22891b97c137b01",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/bootstrap_freeze.npz": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/s7_fresh_lambda0p1_33b/analysis/summary.csv": "4b2757e6dfe0305cab5d5dc80efc2b1484797e55c24c990f12dc60ff2d2cebf9",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/receipt.json": "11a11501366bf4a2653b57b83ff238c343d005da1f21dfd10dfc3fc25db8b65f",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/effects.npz": "dcc4582c301f5c086c4c826d6417f4aa31854e4914cc63b414e083890b795658",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/analysis_registration.json": "1d76a05a66345260ca038e10b9bff3fbdb2bbc5013bb60cba31a431f4b67a48e",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.json": "303959d2169132c6c94c30c4864e3bdd6e681efde86f0b41e56d1449a51a5602",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/selection_freeze.npz": "35d4b8278c3c0f2d68abf38eb9240885c7396aeb86358bf4249b77378016883c",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/bootstrap_freeze.npz": "9fd979184dbfa4fa9339b894f081f1cc41ae8ae24cd1e56f97db1e0503d63567",
+    "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/runs/probe_33b_01/sall_unit_weight_33b/analysis/summary.csv": "c729e99328f155bc739a3a76fd8a68062e939b556afb4379f3d178d792bb0d7c"
+  },
+  "output_sha256": {
+    "registration.json": "607b288da930cf2b8370d5819bf936d72099287a42ef9856c3323474da2ad7b2",
+    "synthetic_guards.json": "29d478eaa6154163b81a25ae3c6438f33b98211c8321ec2ef431763a3055ff8b",
+    "group_frequency_freeze.json": "23381d71e5126e6cf644d660257bb046b653a7cedfc043e38831d5c020e8f108",
+    "group_frequency_freeze.npz": "656dcc03f2662e528bf9427f4ee2413f2e56718cd54af0e1e355a8cf6161e3dc",
+    "bootstrap_freeze.npz": "d42baad1e1fd9f9ae7a669aa38557a02ec6245bb486a26d876be25c5b3937ac1",
+    "record_results.npz": "7f89769b2747256dbd22e74b57f7e47dd202b435a8671f6f84293d6d43d096a6",
+    "bootstrap_draws.npz": "f7861da8274188ae821193a178a2e9d29c213797355d18b69ddb91c39e9d2280",
+    "summary.json": "d0735091f93f56b70cc71e60d8d186aabc3825925b5100bc1970de1482c694bf",
+    "summary.csv": "bc0a5e17084c06bacacdaf8f4e19591e1cc9989ba7baad0035ec070b283f1eff"
+  },
+  "protected_inputs_unchanged": true,
+  "bootstrap_matches_original_exactly": true,
+  "all_group_frequencies_frozen_before_any_effect_array_read": true,
+  "policies": 92,
+  "conditions": 184,
+  "bootstrap_draws": 2000,
+  "first_effect_array_read_at_utc": "2026-10-04T16:48:47.018714+00:00",
+  "summary_rows": 184,
+  "maximum_original_metric_or_interval_error": 4.336808689942018e-19,
+  "maximum_decomposition_error": 2.168404344971009e-18,
+  "recipe": {
+    "version": 1,
+    "models": [
+      "dense_33b",
+      "s7_fresh_lambda0p1_33b",
+      "sall_unit_weight_33b"
+    ],
+    "family_counts": [
+      7,
+      8,
+      8
+    ],
+    "policies": 92,
+    "conditions": 184,
+    "scopes": [
+      "pooled"
+    ],
+    "action_sets": [
+      "fixed_five",
+      "no_update_plus_five"
+    ],
+    "evaluation_role": "readout",
+    "selection": "Reuse all original frozen choices and FIT-fixed action indices without modification; no fitting, policy selection, threshold or hyperparameter search.",
+    "controls": "For global/domain/category groups, average each action finite delta CE weighted by the original policy action frequencies within that same group; weight groups by their event counts.",
+    "identities": [
+      "gain_global = domain_matching_component + within_domain_gain",
+      "gain_global = category_matching_component + within_category_gain",
+      "category_matching_component = domain_matching_component + domain_to_category_component"
+    ],
+    "bootstrap": "Original model-specific 2000 category-stratified paired whole-record count matrices; all 16 positions stay together; reestimate frequencies and action means in each draw. No refitting or new selection.",
+    "timeline": "Protect historical hashes; freeze all 92 policy group frequencies using choices and metadata before loading any effect array values; score all 184 conditions; recheck hashes.",
+    "priorDEVexposed": true,
+    "evidence_role": "POSTHOC_EXPLORATORY_EXPOSED_DEV",
+    "inference_boundary": "Conditional on the original checkpoints, banks, fits and panel; pointwise percentile intervals with no multiplicity correction. Conditions and model panels are dependent. Group labels are explanatory, not deployable routing inputs. A residual spanning zero is not equivalence or proof of composition-only utility.",
+    "CPU_threads": 8,
+    "max_wall_seconds": 600,
+    "LM_loads": 0,
+    "LM_forwards": 0,
+    "optimizer_updates": 0,
+    "remote_jobs": 0,
+    "scientific_judgment": "Unknown",
+    "practical_effect_threshold": "Unknown"
+  },
+  "processes_spawned": 0,
+  "priorDEVexposed": true,
+  "scientific_judgment": "Unknown"
+}

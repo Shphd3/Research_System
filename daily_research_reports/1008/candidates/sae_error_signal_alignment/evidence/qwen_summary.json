@@ -1,0 +1,205 @@
+{
+  "model": "qwen",
+  "verdict": "SUPPORT_BOUNDED_H2",
+  "measurement_eligible": true,
+  "primary_valid_event_fraction": 1.0,
+  "query_records": 512,
+  "reference_records": 512,
+  "query_events": 8192,
+  "primary": {
+    "delta_cosine_uplift": {
+      "mean": 0.02727977429364497,
+      "lo": 0.023390301971296875,
+      "hi": 0.030990137120928494,
+      "records": 512
+    },
+    "neighbor_delta_cosine": {
+      "mean": 0.030817124373934066,
+      "lo": 0.0269871322317977,
+      "hi": 0.03445941385068321,
+      "records": 512
+    }
+  },
+  "statistics": {
+    "sae_nn_delta": {
+      "mean": 0.030817124373934066,
+      "lo": 0.0269871322317977,
+      "hi": 0.03445941385068321,
+      "records": 512
+    },
+    "random_delta": {
+      "mean": 0.003537350080289097,
+      "lo": 0.0028100374356834715,
+      "hi": 0.004312757790681906,
+      "records": 512
+    },
+    "uplift": {
+      "mean": 0.02727977429364497,
+      "lo": 0.023390301971296875,
+      "hi": 0.030990137120928494,
+      "records": 512
+    },
+    "sae_nn_negative_fraction": {
+      "mean": 0.498291015625,
+      "lo": 0.4928948974609375,
+      "hi": 0.5035400390625,
+      "records": 512
+    },
+    "native_nn_delta": {
+      "mean": 0.034521604908620836,
+      "lo": 0.030533148537279352,
+      "hi": 0.038381740351905135,
+      "records": 512
+    },
+    "native_nn_similarity": {
+      "mean": 0.8006582925336261,
+      "lo": 0.7967031265697188,
+      "hi": 0.8043925985831265,
+      "records": 512
+    },
+    "native_random_delta": {
+      "mean": 0.003275333319693236,
+      "lo": 0.002500899639618412,
+      "hi": 0.00405629598172328,
+      "records": 512
+    },
+    "native_uplift": {
+      "mean": 0.031246271588927607,
+      "lo": 0.026990423416582837,
+      "hi": 0.03534229661622218,
+      "records": 512
+    },
+    "sae_minus_native": {
+      "mean": -0.0037044805346867745,
+      "lo": -0.005966454917417139,
+      "hi": -0.0013904339917475157,
+      "records": 512
+    },
+    "centered_code_nn_delta": {
+      "mean": 0.03242620700640942,
+      "lo": 0.028549279832497342,
+      "hi": 0.036211028237346586,
+      "records": 512
+    },
+    "centered_code_uplift": {
+      "mean": 0.029415796268950915,
+      "lo": 0.02565810703697394,
+      "hi": 0.03325324023043361,
+      "records": 512
+    },
+    "centered_delta_uplift": {
+      "mean": 0.03516513535906407,
+      "lo": 0.03105113620085436,
+      "hi": 0.03928960258018669,
+      "records": 512
+    },
+    "shuffled_delta_uplift": {
+      "mean": -0.0011328319650894133,
+      "lo": -0.0027441169666232767,
+      "hi": 0.00046400114782877696,
+      "records": 512
+    },
+    "sae_nn_parameter_cosine": {
+      "mean": 0.027251932703525546,
+      "lo": 0.024054628948682367,
+      "hi": 0.030679138741942277,
+      "records": 512
+    },
+    "random_parameter_cosine": {
+      "mean": 0.002772631903949701,
+      "lo": 0.002153762135053297,
+      "hi": 0.0033813921765846995,
+      "records": 512
+    },
+    "sae_nn_parameter_negative_fraction": {
+      "mean": 0.5311279296875,
+      "lo": 0.526220703125,
+      "hi": 0.536182861328125,
+      "records": 512
+    },
+    "current_matched_uplift": {
+      "mean": 0.01590047935556132,
+      "lo": 0.007105991891519339,
+      "hi": 0.02505228029045641,
+      "records": 509
+    },
+    "current_matched_nn_delta": {
+      "mean": 0.02644749920372815,
+      "lo": 0.018792285563903038,
+      "hi": 0.034253567006840825,
+      "records": 509
+    },
+    "current_matched_native_nn_delta": {
+      "mean": 0.026243319272630312,
+      "lo": 0.018844621697175535,
+      "hi": 0.034004281031797964,
+      "records": 509
+    },
+    "current_matched_native_uplift": {
+      "mean": 0.01525140638372393,
+      "lo": 0.006465388835147607,
+      "hi": 0.024028642324108174,
+      "records": 509
+    },
+    "different_target_uplift": {
+      "mean": -0.04742999498687351,
+      "lo": -0.05062669866796723,
+      "hi": -0.04416500949185633,
+      "records": 512
+    },
+    "same_target_uplift": {
+      "mean": 0.08279829487103782,
+      "lo": 0.06961685254290532,
+      "hi": 0.09700091201547485,
+      "records": 336
+    },
+    "same_target_pair_fraction": {
+      "mean": 0.08212890625,
+      "lo": 0.078125,
+      "hi": 0.08608398437499999,
+      "records": 512
+    },
+    "sae_nn_similarity": {
+      "mean": 0.7994203979642407,
+      "lo": 0.7947817458255031,
+      "hi": 0.8039883175427576,
+      "records": 512
+    },
+    "sae_nn_jaccard": {
+      "mean": 0.2316512425557534,
+      "lo": 0.22906336960257276,
+      "hi": 0.2340684377751379,
+      "records": 512
+    }
+  },
+  "conditional_reference_fixed_bootstrap_draws": 2000,
+  "bootstrap_unit": "query source record, domain stratified; paper identity unavailable",
+  "invalid_zero_delta_events": 0,
+  "invalid_zero_code_events": 0,
+  "delta_norm_quantiles": [
+    6.242680249518477e-06,
+    0.1698465789044772,
+    0.3299570841622733,
+    0.4532134736276548,
+    1.468902401575028
+  ],
+  "delta_norm_mean": 0.3231648276963856,
+  "static_reconstruction_mean_relative_squared_error": 0.09771230425048663,
+  "current_token_matched_diagnostic_eligible": true,
+  "native_baseline_role": "competitor, not automatic SAE superiority",
+  "parameters_compared": "model.layers.27.mlp.down_proj.weight",
+  "model_updates": 0,
+  "sae_updates": 0,
+  "scientific_judgment": "Unknown",
+  "limits": [
+    "fixed checkpoints/hooks",
+    "historically exposed N8 corpus",
+    "fixed reference pool",
+    "no routing or long-term expert intervention"
+  ],
+  "outputs_sha256": {
+    "domain_scores.csv": "496ab7b1998ee522bedee631ae20055f6b9d13643d65dadd9066d6b5e577cb3b",
+    "event_scores.csv": "f206c2e345d7dde265e28f0981dfa274c774ef73f2ab62286c67749e100c14f4",
+    "record_scores.csv": "f7058dbc9712e73431da1953ba3cfcca5692782adbbaecf25129bd6bf0b70075"
+  }
+}

@@ -11,16 +11,24 @@ No generic parallel `story.md` or routine per-Anchor final report. Canonical Eng
 and Chinese preserve meaning unless the researcher chooses otherwise.
 
 Match prospective, retrospective or stable-stage structure to the evidence.
-Introduce the question, data/training layout and concrete objects before notation;
+Use the shared [research-progress writing chain](../../../../docs/report_writing.md):
+Purpose → Model → Hypothesis → Conclusion → Analysis. Define the actual system
+before expectations; give the bounded answer before detailed comparisons,
+derivations, observations and knowledge-update rationale. Supply a short reading
+route for a long report; the reading order does not authorize new science or
+replace a specialized artifact's owning contract.
+Introduce the question, study setup and concrete objects before notation;
 then connect priors, mathematical relation, implemented mechanism, tested comparison,
-actual results, rivals, boundary and the justified next decision. Do not narrate
+actual results, rivals, boundary and the justified next decision. The Conclusion
+states what is now understood and what remains unresolved; keep detailed result analysis
+in its owner instead of ending with a second metric inventory. Do not narrate
 all attempts or impose inactive future sections.
 
 Explain the existing derivation's shortest bridge; label exact/approximate/assumed
-relations and separate missing explanation from missing evidence. Local mechanism,
-training trajectory and design decision are distinct claim levels. A parent's open
-decision does not negate a valid child result. Use counterexamples to locate scope,
-not to force a preferred story.
+relations and separate missing explanation from missing evidence. Show which
+parent claim a child answer updates and why the next question follows. Separate
+necessary dependencies from chosen routes. An open parent does not negate a
+valid child result; counterexamples locate scope, not a preferred story.
 
 Verify first-reader comprehension, source traceability, bilingual consistency and
 no new numbers, theorem status, approval or strengthened conclusions. Mention

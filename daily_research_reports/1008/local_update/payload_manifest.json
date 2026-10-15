@@ -1,0 +1,847 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-07T17:51:49.532190+00:00",
+  "report_date": "2026-10-08",
+  "report_timezone": "Asia/Shanghai",
+  "kind": "local date-scoped selected evidence; not canonical scientific result or publication",
+  "repositories": {
+    "Research_System": "6838ffb759b1d0e9a8dd6b042ada9c5f6a649094",
+    "from-attention-to-search": "0959b841cb82997f8c845b3e871a0d978cf36db4"
+  },
+  "sources": [
+    {
+      "path": "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+      "sha256": "bf76be610cc5c36331074430185dbe2262a5df11341e48fca4d7b518fc21835f",
+      "bytes": 12284,
+      "role": "user-supplied source; latest direct request governs execution"
+    },
+    {
+      "path": "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md",
+      "sha256": "6bf937bc23c9c1ab16aced1dea9e0a6f50cb2f2ae7c98c303e3774996cc84129",
+      "bytes": 11360,
+      "role": "user-supplied source; latest direct request governs execution"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+      "sha256": "3325acc1763fd18902fe0c6de4ca0be2413237b1055c989aacd0f0838b704b47",
+      "bytes": 29662,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+      "sha256": "aa1929b781894fa5f163c65df1197047992a86f49279e2cfb52bb4e2bb8255de",
+      "bytes": 23073,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+      "sha256": "3be88116b94a2cc9538600400c7e35e92327735a8c6e0eb643b2bb4fec2cd212",
+      "bytes": 6232,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+      "sha256": "bbf69f751ec35f0052745e3294dbe6a3a41f428e131a15c27f66d6e230b83f4d",
+      "bytes": 29664,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+      "sha256": "b7a708a854d2f40eeee7ce9e97daf8e13fddd722169d5bb26bbd8f9ebbc77460",
+      "bytes": 12248,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+      "sha256": "9b0597cb3c45c43da15b5cad34cee77e71834106fee885df16eb098649a82194",
+      "bytes": 7438,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+      "sha256": "34b4075f99c445ece9bb7725f081bffff0ad0b2e14f29545f79a58bf1f0f2b12",
+      "bytes": 3297,
+      "role": "refreshed scientific/derivation source; authority retained by owner"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/detailed_cn.md",
+      "sha256": "f60a4894fbda9f0b66f3151c4d7dd9b9244d15e1b7bc47602e8aeb120cbb2077",
+      "bytes": 26565,
+      "role": "source for user-requested model-only wording revision"
+    },
+    {
+      "path": "/root/.codex/attachments/380685bc-64ef-4470-af07-a677659d70a4/codex-clipboard-2e2a4c8e-3847-4c52-bb4d-652447b7f611.png",
+      "sha256": "6f6c008c6b9eaff838cad3f2478d0df8782977ffe823819948bb2d2a82ac599b",
+      "bytes": 61144,
+      "role": "source for user-requested model-only wording revision"
+    },
+    {
+      "path": "/root/.codex/attachments/d33ac626-c9ca-4f3d-a4cd-068462045b51/codex-clipboard-93042019-10ee-49f4-85ee-7f267e17e05e.png",
+      "sha256": "4fce4d34799d93fe50bcc427a68269bc8fb5589d2d502466a872ce356fd0f0dc",
+      "bytes": 113979,
+      "role": "source for user-requested model-only wording revision"
+    },
+    {
+      "path": "/root/.codex/attachments/1bb5d07f-9aa1-45d8-8883-cffb79897679/codex-clipboard-921a8a2e-7b43-4939-8bbc-ab1475334713.png",
+      "sha256": "fe4b05cd8aef909f400024b1a1e52bd5338edb553ae6ad0e2350244417ffbd26",
+      "bytes": 386088,
+      "role": "controlled answer-mapping source or latest user report snapshot for conclusion/formula revision"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/evidence/activation_pattern_distances.csv",
+      "sha256": "c056dac9801cc933ed588fcd55d5781e168901909760b673c7efd8aba82b8a95",
+      "bytes": 4344,
+      "role": "existing canonical 30000-atom domain activation result, exact copied small evidence table"
+    }
+  ],
+  "raw_execution_owner": "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+  "independent_code": {
+    "path": "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01/gradient_component_independent_audit_1008.py",
+    "sha256": "1c2cadb86732ade99a8109b79244b0b4fca33fd6b8190e0a4f7dc532d391dd62"
+  },
+  "raw_payload_policy": "Large arrays, model weights, checkpoints, logs and font remain with execution or runtime owners. These local figures are not promised in Git clones. No commit or push performed.",
+  "selected_assets": [
+    {
+      "path": "README.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/README.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md"
+      ],
+      "sha256": "e15ae382890d3499bff1f660ddf3a1795445bf57ee519ce2029f440ce0ee9831",
+      "bytes": 1407
+    },
+    {
+      "path": "README_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/README_cn.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md"
+      ],
+      "sha256": "136a0212bf1137ea0c2f9deacdc8121bb36af29f4dafae501c830a211131a9c6",
+      "bytes": 1392
+    },
+    {
+      "path": "local_update/README_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/README_cn.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md"
+      ],
+      "sha256": "eaadb9013f2e33e3068f9f9b75e05dc4d09ff6f25f787e729251c9ea228ca4bf",
+      "bytes": 3284
+    },
+    {
+      "path": "local_update/evidence/controlled_cells.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/controlled_cells.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "b2a65265c280f6db1275e09d44b8259e6d877b87c0814cbc96bea1e0f1ea3caa",
+      "bytes": 2427
+    },
+    {
+      "path": "local_update/evidence/controlled_rule_interaction.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/controlled_rule_interaction.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "7189d4ba2669e43555db9985f71b45fb7769588ce05311489a8816c34c0135b7",
+      "bytes": 506
+    },
+    {
+      "path": "local_update/evidence/figure_notes_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/figure_notes_cn.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md"
+      ],
+      "sha256": "e44913e16a9c01e45798e6f2ad0ae290595109d95b71bf53d1636701a01d6914",
+      "bytes": 5577
+    },
+    {
+      "path": "local_update/evidence/figures_provenance.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/figures_provenance.json",
+      "purpose": "source identity, method, completion or independent audit receipt",
+      "source": [
+        "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "c56a23fc3391f896f8176fda5f23767bb31a8b67c21924984e3a702c36336c82",
+      "bytes": 17588
+    },
+    {
+      "path": "local_update/evidence/gradient_component_checks.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_checks.json",
+      "purpose": "source identity, method, completion or independent audit receipt",
+      "source": [
+        "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "1ab67b1aebc0bcb9b982aec6d5984dd130819b51e48b2586a7bfea4ca46897ce",
+      "bytes": 200
+    },
+    {
+      "path": "local_update/evidence/gradient_component_independent_audit.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_independent_audit.json",
+      "purpose": "source identity, method, completion or independent audit receipt",
+      "source": [
+        "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "f2d821cffc1c6372d2df76378a4953268eea0f87a6718e2ee680c553758ff866",
+      "bytes": 6496
+    },
+    {
+      "path": "local_update/evidence/gradient_component_loadings.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_loadings.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "f7e02bb0eb4f5e244c27065a6c0e3e35db0aefd3b019fc95ef0fd284dcae131b",
+      "bytes": 2056
+    },
+    {
+      "path": "local_update/evidence/gradient_component_receipt.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_receipt.json",
+      "purpose": "source identity, method, completion or independent audit receipt",
+      "source": [
+        "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "1bb1b14b5784edf597082a0e353ef9b8d28d439ee710f6cde8fcb9821f7e5bf6",
+      "bytes": 1599
+    },
+    {
+      "path": "local_update/evidence/gradient_component_recipe.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_recipe.json",
+      "purpose": "source identity, method, completion or independent audit receipt",
+      "source": [
+        "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "5569a4565b47a9e3a77fc656fd61ed9260444ee95aae97a7df7e4f184a137184",
+      "bytes": 4755
+    },
+    {
+      "path": "local_update/evidence/gradient_component_response_correlations.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_response_correlations.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "ae5114807baf83ab838dc7274761b3a7d35edc2d7cfa06307eb30d618e465fb3",
+      "bytes": 1119
+    },
+    {
+      "path": "local_update/evidence/gradient_component_spectrum.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_spectrum.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "edf4ec26300da41e1b6d52d377f43665654dafb7168d412232d0f708a7a74453",
+      "bytes": 1165
+    },
+    {
+      "path": "local_update/evidence/gradient_component_summary.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_component_summary.json",
+      "purpose": "source identity, method, completion or independent audit receipt",
+      "source": [
+        "/data/250010109/MoE_Router/experiments/20261008_local_update_component_audit/runs/full_cpu_01",
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "bea59727e387c6c674a70674d448a39e5a86bb07fb7d5ea82b4482d6c619554b",
+      "bytes": 56133
+    },
+    {
+      "path": "local_update/evidence/gradient_cumulative_vs_finite.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_cumulative_vs_finite.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "e62f7da78eaa829de29ae586f1ba08f02175c76b9c46253000fb56c35c5ee73d",
+      "bytes": 15379
+    },
+    {
+      "path": "local_update/evidence/gradient_geometry_vs_loss.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/gradient_geometry_vs_loss.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "b2f6c508e987fe95f8e23cb0c9dad4db3c813dfeb410a8c3da5547a81d94b46a",
+      "bytes": 1968
+    },
+    {
+      "path": "local_update/evidence/natural_cells_full_and_half.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/natural_cells_full_and_half.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "ff7a916f5f479ce0835aca47eedde8ea17d8911176b415d755cf404e09c7161a",
+      "bytes": 14989
+    },
+    {
+      "path": "local_update/evidence/natural_cells_main16.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/natural_cells_main16.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "011e7543bb3dc087102f4f0ef22a369ef7e652740b6aeeae3e477ebb6dbad5ae",
+      "bytes": 7687
+    },
+    {
+      "path": "local_update/evidence/reasoning_audit_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/reasoning_audit_cn.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md",
+        "/root/.codex/attachments/1bb5d07f-9aa1-45d8-8883-cffb79897679/codex-clipboard-921a8a2e-7b43-4939-8bbc-ab1475334713.png"
+      ],
+      "sha256": "b3405f7f70d133dc141704b267280e8b3969755771d0fda36049c1f3ec8d8d57",
+      "bytes": 5859
+    },
+    {
+      "path": "local_update/evidence/sae_component_pooled.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_component_pooled.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "4966cfc67906ba91a0acb77eb658a47687dfdf8de2b2352e17d9d09bb4c6f936",
+      "bytes": 5571
+    },
+    {
+      "path": "local_update/evidence/sae_endpoint_pooled.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_endpoint_pooled.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "c65480429e87ff0a2805e100f8177585363f366c0d4657ed492d2cac006b2d2d",
+      "bytes": 8388
+    },
+    {
+      "path": "local_update/evidence/sae_selected_common_activity.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_selected_common_activity.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "887bced3b4fdc5848c7eb384f9ba301e45d0319129480729dffea7606e34c478",
+      "bytes": 51504
+    },
+    {
+      "path": "local_update/evidence/sae_selected_decoder_spectrum.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_selected_decoder_spectrum.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "13d4a0ec2bd5796b08ea9ede5ddf678150b112fb21c521bea72fbd9d94dcc1b0",
+      "bytes": 9788
+    },
+    {
+      "path": "local_update/evidence/sae_static_reconstruction.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_static_reconstruction.csv",
+      "purpose": "small selected plotting/analysis table",
+      "source": [
+        "local_update/evidence/figures_provenance.json"
+      ],
+      "sha256": "0a33c40536d96121ea5cd2c2486778db726780c2a2bab9e22165acf0817acf19",
+      "bytes": 201
+    },
+    {
+      "path": "local_update/figures/aux01_controlled_lines.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/aux01_controlled_lines.png",
+      "purpose": "attached drawing-prompt supplementary figure",
+      "source": [
+        "local_update/evidence/controlled_cells.csv",
+        "local_update/evidence/controlled_rule_interaction.csv"
+      ],
+      "sha256": "e902dc3d354c565f95c2aba0fe3ff3e78a781a9207613281bc4465c0aa64bce8",
+      "bytes": 170183
+    },
+    {
+      "path": "local_update/figures/aux01_controlled_lines.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/aux01_controlled_lines.svg",
+      "purpose": "attached drawing-prompt supplementary figure",
+      "source": [
+        "local_update/evidence/controlled_cells.csv",
+        "local_update/evidence/controlled_rule_interaction.csv"
+      ],
+      "sha256": "44fd4881c47b6b620ea48d30eb3d3234a75d045dcd74bf933a2ebbf547249766",
+      "bytes": 152709
+    },
+    {
+      "path": "local_update/figures/aux02_natural_mean_adverse.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/aux02_natural_mean_adverse.png",
+      "purpose": "attached drawing-prompt supplementary figure",
+      "source": [
+        "local_update/evidence/natural_cells_main16.csv"
+      ],
+      "sha256": "e85193a677bcb7592cde0fe3596a405d0ab95498953274671fdac85c5ad74310",
+      "bytes": 203216
+    },
+    {
+      "path": "local_update/figures/aux02_natural_mean_adverse.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/aux02_natural_mean_adverse.svg",
+      "purpose": "attached drawing-prompt supplementary figure",
+      "source": [
+        "local_update/evidence/natural_cells_main16.csv"
+      ],
+      "sha256": "6aa96a15740173f8bbff6137c31b58d0252d9be2c380c1aa25afca0da6abbe5f",
+      "bytes": 160162
+    },
+    {
+      "path": "local_update/figures/aux03_sae_three_checks.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/aux03_sae_three_checks.png",
+      "purpose": "attached drawing-prompt supplementary figure",
+      "source": [
+        "local_update/evidence/sae_static_reconstruction.csv",
+        "local_update/evidence/sae_endpoint_pooled.csv",
+        "local_update/evidence/sae_component_pooled.csv"
+      ],
+      "sha256": "d0326aaca63231c357a79bb37e19710d9d6aa4670553a4929d0f9c4288010039",
+      "bytes": 219490
+    },
+    {
+      "path": "local_update/figures/aux03_sae_three_checks.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/aux03_sae_three_checks.svg",
+      "purpose": "attached drawing-prompt supplementary figure",
+      "source": [
+        "local_update/evidence/sae_static_reconstruction.csv",
+        "local_update/evidence/sae_endpoint_pooled.csv",
+        "local_update/evidence/sae_component_pooled.csv"
+      ],
+      "sha256": "31ef914b9b521c8068860b378a7d46861ab94874a5619417297e3ba84b04bec9",
+      "bytes": 165489
+    },
+    {
+      "path": "local_update/figures/main01_controlled_heatmap.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main01_controlled_heatmap.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/controlled_cells.csv",
+        "local_update/evidence/controlled_rule_interaction.csv"
+      ],
+      "sha256": "df78d2f2d6b982373a586bc61b9e529864fbaefa17194804b7629aa84862c634",
+      "bytes": 186727
+    },
+    {
+      "path": "local_update/figures/main01_controlled_heatmap.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main01_controlled_heatmap.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/controlled_cells.csv",
+        "local_update/evidence/controlled_rule_interaction.csv"
+      ],
+      "sha256": "20bae91e86dc236c96580d570eab963f95e56ffa1e6933fdee7d1a5ceeb36c74",
+      "bytes": 137267
+    },
+    {
+      "path": "local_update/figures/main02_natural_loss_heatmap.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main02_natural_loss_heatmap.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/natural_cells_main16.csv"
+      ],
+      "sha256": "9c7380bb01bc2df1cbcfc6a4c7f83e8d46ebd14090cad0fccbfbfc8c53ac4202",
+      "bytes": 247269
+    },
+    {
+      "path": "local_update/figures/main02_natural_loss_heatmap.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main02_natural_loss_heatmap.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/natural_cells_main16.csv"
+      ],
+      "sha256": "0ac43244583db2efcb3c4451a5f76339580442a4517d7881e013e085a64c6ac8",
+      "bytes": 160010
+    },
+    {
+      "path": "local_update/figures/main03_sae_fidelity_heatmap.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main03_sae_fidelity_heatmap.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/sae_endpoint_pooled.csv",
+        "local_update/evidence/sae_static_reconstruction.csv"
+      ],
+      "sha256": "5a975e59c0e889a400ef7b1152bff0632c912a498d58aa433d23353a27ffd440",
+      "bytes": 213784
+    },
+    {
+      "path": "local_update/figures/main03_sae_fidelity_heatmap.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main03_sae_fidelity_heatmap.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/sae_endpoint_pooled.csv",
+        "local_update/evidence/sae_static_reconstruction.csv"
+      ],
+      "sha256": "58574a165c8bd90e6bffaf01465f201ee09f55dcc5783537f50efbecf7ab74e9",
+      "bytes": 161221
+    },
+    {
+      "path": "local_update/figures/main04_sae_components_heatmap.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main04_sae_components_heatmap.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/sae_component_pooled.csv"
+      ],
+      "sha256": "f62eaf1278452caf05af134f67f39158202ccace9cb85cffa3aa28fdc25437d1",
+      "bytes": 174640
+    },
+    {
+      "path": "local_update/figures/main04_sae_components_heatmap.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main04_sae_components_heatmap.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/sae_component_pooled.csv"
+      ],
+      "sha256": "db51ba5e4be018a2959bd099f33dbeb0e51274a7a3be54da69168377f729b87b",
+      "bytes": 146515
+    },
+    {
+      "path": "local_update/figures/main05_sae_atom_activity.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main05_sae_atom_activity.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/sae_selected_common_activity.csv",
+        "local_update/evidence/sae_selected_decoder_spectrum.csv"
+      ],
+      "sha256": "9233ea71ab68d6546033cee06d9267b6ca15c0499b0ca103c976890f3178fcf9",
+      "bytes": 426410
+    },
+    {
+      "path": "local_update/figures/main05_sae_atom_activity.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main05_sae_atom_activity.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/sae_selected_common_activity.csv",
+        "local_update/evidence/sae_selected_decoder_spectrum.csv"
+      ],
+      "sha256": "c16a308f744c09ee691bd9df7fa9c2977b4d6b5b82a87e8889bbe4a42dc6fceb",
+      "bytes": 234430
+    },
+    {
+      "path": "local_update/figures/main06_gradient_geometry_vs_finite_heatmaps.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main06_gradient_geometry_vs_finite_heatmaps.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/gradient_geometry_vs_loss.csv",
+        "local_update/evidence/gradient_component_response_correlations.csv"
+      ],
+      "sha256": "3eccf21d7d1b5b99d2fc7ae239f8f11538472f54ba55229b4b3ac439ccfc28c5",
+      "bytes": 345070
+    },
+    {
+      "path": "local_update/figures/main06_gradient_geometry_vs_finite_heatmaps.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main06_gradient_geometry_vs_finite_heatmaps.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/gradient_geometry_vs_loss.csv",
+        "local_update/evidence/gradient_component_response_correlations.csv"
+      ],
+      "sha256": "62b9197ea283e3fc0b1a050321624192e3482a42b743346c5fe68f2543a6f6a6",
+      "bytes": 217817
+    },
+    {
+      "path": "local_update/figures/main07_gradient_components_response_heatmaps.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main07_gradient_components_response_heatmaps.png",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/gradient_cumulative_vs_finite.csv",
+        "local_update/evidence/gradient_component_spectrum.csv"
+      ],
+      "sha256": "6b9aa06aa63fa3af38758c2c800c31bb58691bf43b37d41d73eeffc4d120de53",
+      "bytes": 311706
+    },
+    {
+      "path": "local_update/figures/main07_gradient_components_response_heatmaps.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/main07_gradient_components_response_heatmaps.svg",
+      "purpose": "primary heatmap/analysis figure",
+      "source": [
+        "local_update/evidence/gradient_cumulative_vs_finite.csv",
+        "local_update/evidence/gradient_component_spectrum.csv"
+      ],
+      "sha256": "c2ac8714a2d381b2abd244e94c6b21cdf0ec5ecd5a73288d0b9809f82cdd29d8",
+      "bytes": 192446
+    },
+    {
+      "path": "local_update/full_report_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/full_report_cn.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md",
+        "/root/.codex/attachments/1bb5d07f-9aa1-45d8-8883-cffb79897679/codex-clipboard-921a8a2e-7b43-4939-8bbc-ab1475334713.png"
+      ],
+      "sha256": "4f1d71b4513ef3cd78a47dec7c681fa18124b675b70d5361f5d2ffe525ff5d6e",
+      "bytes": 27611
+    },
+    {
+      "path": "local_update/scripts/build_existing_figures.py",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/scripts/build_existing_figures.py",
+      "purpose": "reproducible derived analysis/plotting code",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "3c19f8f291e33515a070009b381d62df3aa37e786b64ef2e7379d38b1f8359f6",
+      "bytes": 32603
+    },
+    {
+      "path": "local_update/scripts/gradient_component_audit.py",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/scripts/gradient_component_audit.py",
+      "purpose": "reproducible derived analysis/plotting code",
+      "source": [
+        "local_update/evidence/figures_provenance.json",
+        "local_update/evidence/gradient_component_recipe.json"
+      ],
+      "sha256": "f0d156cb3159a4845099d55e4fa27c53f24dcef19c079fb5515c5f5e91748fde",
+      "bytes": 13122
+    },
+    {
+      "path": "meeting_report/meeting_brief_local_update_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/meeting_report/meeting_brief_local_update_cn.md",
+      "purpose": "derived Chinese report, reading route or audit explanation",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md",
+        "/data/250010109/Research_System/daily_research_reports/1002/candidates/ntp_representation_update_channels/research_report_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/detailed.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_domain_update_geometry_cn.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/local_update_meeting.md",
+        "/root/.codex/attachments/912224b5-fc6f-45b8-ae13-e636ec31b13e/drawing_prompt.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/detailed_cn.md",
+        "/root/.codex/attachments/380685bc-64ef-4470-af07-a677659d70a4/codex-clipboard-2e2a4c8e-3847-4c52-bb4d-652447b7f611.png",
+        "/root/.codex/attachments/d33ac626-c9ca-4f3d-a4cd-068462045b51/codex-clipboard-93042019-10ee-49f4-85ee-7f267e17e05e.png",
+        "/root/.codex/attachments/1bb5d07f-9aa1-45d8-8883-cffb79897679/codex-clipboard-921a8a2e-7b43-4939-8bbc-ab1475334713.png"
+      ],
+      "sha256": "dbc1790fab60de351d27bfeb84d52ef02d89c19632bb053ddab15777be681006",
+      "bytes": 7134
+    },
+    {
+      "path": "local_update/conclusion_figures_cn.md",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/conclusion_figures_cn.md",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "c587a22400e1c1c8617f1c777e631ae759e35bdbbdf9e0bdedb01d450f24d5cb",
+      "bytes": 4422
+    },
+    {
+      "path": "local_update/scripts/build_report_figures.py",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/scripts/build_report_figures.py",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "e66273089ba1c1b38cc554124672089ad9cb3a4b35cfacc27e067e676d96e24e",
+      "bytes": 10688
+    },
+    {
+      "path": "local_update/evidence/report_figures_provenance.json",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "59d4c1d72eecbdec480d8e002dc02723d19225285e65f2e941118c99611a27d8",
+      "bytes": 4137
+    },
+    {
+      "path": "local_update/evidence/sae_activation_pattern_distances.csv",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/sae_activation_pattern_distances.csv",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/evidence/activation_pattern_distances.csv"
+      ],
+      "sha256": "c056dac9801cc933ed588fcd55d5781e168901909760b673c7efd8aba82b8a95",
+      "bytes": 4344
+    },
+    {
+      "path": "local_update/figures/report/conclusion01_controlled.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion01_controlled.png",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "f7ad386cc177459dfb5a476a66057dabb6ab12a640ff96d7cc3362210d0df7dd",
+      "bytes": 175668
+    },
+    {
+      "path": "local_update/figures/report/conclusion01_controlled.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion01_controlled.svg",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "c3436f8d8dbe914dc69db7b7e504e7df78768633417ef75d0fdd571c96626f22",
+      "bytes": 81138
+    },
+    {
+      "path": "local_update/figures/report/conclusion02_natural.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion02_natural.png",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "c10738dbe34d0a2b2087961da45a8463c5911a02a558c9e85f21c1d432ad5644",
+      "bytes": 266880
+    },
+    {
+      "path": "local_update/figures/report/conclusion02_natural.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion02_natural.svg",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "7a5e79401bdc1200006548e06783817069dfc3769c975b48f11470fcca7d1349",
+      "bytes": 106740
+    },
+    {
+      "path": "local_update/figures/report/conclusion02_sae_domains.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion02_sae_domains.png",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "7038581a12b6fb747851b50e2b85b127b320330a2c4dbe76b435a7b367f7717f",
+      "bytes": 186302
+    },
+    {
+      "path": "local_update/figures/report/conclusion02_sae_domains.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion02_sae_domains.svg",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "19371e26b7baccf27b301e2dca20bd8e16932b5ea7bf5063b741fce3d8754894",
+      "bytes": 68084
+    },
+    {
+      "path": "local_update/figures/report/conclusion03_geometry_response.png",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion03_geometry_response.png",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "1c6e8fda34f4956956ad60af88ce480fa4f99ec976e7864e9e215bc5aa1a1a5e",
+      "bytes": 264846
+    },
+    {
+      "path": "local_update/figures/report/conclusion03_geometry_response.svg",
+      "absolute_path": "/data/250010109/Research_System/daily_research_reports/1008/local_update/figures/report/conclusion03_geometry_response.svg",
+      "purpose": "selected clean meeting figure, existing small table, figure caption or rendering provenance",
+      "source": [
+        "/data/250010109/Research_System/daily_research_reports/1008/local_update/evidence/report_figures_provenance.json"
+      ],
+      "sha256": "a52372159e275b2d2aa5369b380f0c068e3b3f67b74cb6d6be9ff3a54f0d59e6",
+      "bytes": 105059
+    }
+  ],
+  "selected_total_bytes": 4531425,
+  "self_and_delivery_checks": "Manifest and delivery_checks.json excluded from selected hashes to avoid circular identity.",
+  "model_only_revision_at_utc": "2026-10-08T00:35:22.653399+00:00",
+  "conclusion_formula_revision_at_utc": "2026-10-08T00:59:39.372984+00:00",
+  "clean_figure_revision_utc": "2026-10-08T01:19:40.656597+00:00",
+  "navigation_updates": [
+    {
+      "at_utc": "2026-10-08T08:39:03.312518+00:00",
+      "changes": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1008/README.md",
+          "previous_sha256": "aa827a2aaa1a0bf8ef9398a49e6be87de0869d598a6b43f452ba68e41b7001d7",
+          "sha256": "53daef64d36f349a7353b17ba58e1654e3026707df638c0ba94ab9b2c581596b",
+          "reason": "Add the user-requested H2 candidate reading entry; report content and scientific claims are unchanged."
+        },
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1008/README_cn.md",
+          "previous_sha256": "20bdec1663e849d59d26729bcf0da1148a518589d1f43c3a41151e5bb8640cab",
+          "sha256": "fea47d282a3f307a22ee20ea47ff9bb642ddae7b5949bed86a68a0ccac45a1dc",
+          "reason": "Add the user-requested H2 candidate reading entry; report content and scientific claims are unchanged."
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-10-08T09:14:20.145806+00:00",
+      "changes": [
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1008/README.md",
+          "previous_sha256": "53daef64d36f349a7353b17ba58e1654e3026707df638c0ba94ab9b2c581596b",
+          "sha256": "e15ae382890d3499bff1f660ddf3a1795445bf57ee519ce2029f440ce0ee9831",
+          "reason": "Link completed user-authorized H2 candidate and its decisive rival controls."
+        },
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1008/README_cn.md",
+          "previous_sha256": "fea47d282a3f307a22ee20ea47ff9bb642ddae7b5949bed86a68a0ccac45a1dc",
+          "sha256": "136a0212bf1137ea0c2f9deacdc8121bb36af29f4dafae501c830a211131a9c6",
+          "reason": "Link completed user-authorized H2 candidate and its decisive rival controls."
+        }
+      ]
+    }
+  ]
+}
