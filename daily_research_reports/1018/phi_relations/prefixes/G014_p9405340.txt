@@ -1,0 +1,68 @@
+ application.
+Raja Sagar Panamgipalli
+Ranch Hand
+
+Joined: Aug 13, 2003
+Posts: 109
+Thanx Dima..
+
+I some what get it but don't get it..
+can u do a favor by expalianing the following piece of code..
+
+PreparedStatement pstmt=con.prepareStatement("INSERT INTO EMP(NAME,PHONE)VALUES(? ,?)");
+then i give
+pstmt.setString(2,"274 7071");
+
+what exactly happens here...
+In a preparedstatment we are specifying the arguments while creating an object of PreparedStatement from Connection Obj.when unlike in a createStatement method of the Connection we don't do that.
+Have i messed up...sorry...plz elaborate..
+
+God bless mankind..
+Wayne L Johnson
+Ranch Hand
+
+Joined: Sep 03, 2003
+Posts: 399
+You are on the right track, Raja. The basic "createStatement()" method returns a "Statement" instance that can be used to send SQL to the database for execution. Every SQL you send will get validated, compiled, and executed.
+With the "prepareStatement(...)" method call you pass in the SQL once (at creation time) where it can be validated and compiled. It will throw an exeception if the SQL is syntactically invalid, or references tables or columns that don't exist, or if there number of parameters (?) don't match up with the number of values specified. That's what happens when you do:
+
+With this prepared statement you can do only one thing: insert records into the "EMP" table. You have now told the database what you want to do, but not what values to insert. That comes with the second set of statements:
+
+This means that using the given prepared statement (pstmt), you want to use "Jim" as the first parameter and "274 7071" as the second parameter, and then execute the SQL against the database.
+There is overhead in using prepared statements, and if you only insert a few records it will probably take a little more time. However if you insert many records you will see a performance gain.
+There is another advantage to using prepared statements, and that is with handling String and Date/Time data. Some databases use single quotes as text delimiters, others use double quotes, and some recognize either. However if you want to insert character data containing single- and/or double-quotes, this can be tricky using a regular Statement. And if you move from one database to another this can force you to modify your SQL. The same can be said about inserting dates and times: each database has a different format that you have to follow.
+But when you use a PreparedStatement, the values you specify with "setString(...)" can contain single quotes or double quotes and the underlying JDBC classes will take care of the conversion for you. This is a big advantage of using prepared statements.
+Good luck!
+Raja Sagar Panamgipalli
+Ranch Hand
+
+Joined: Aug 13, 2003
+Posts: 109
+Hey Thanx John,
+That was elaborate..and can go into my notes..
+Thanx buddy
+shyam sunder prasad
+Ranch Hand
+
+Joined: Mar 23, 2011
+Posts: 62
+thanks john,i too understand very from reading your explanation prepared statement.
+shyam sunder prasad
+Ranch Hand
+
+Joined: Mar 23, 2011
+Posts: 62
+Hi Raja ,
+
+with my knowledge i can say the what does it really mean.
+
+preparedStatement is compiled onlyyonce.
+
+above code compiled once, because java compiler checks for syntax validation.
+
+and sql is validation will be done by database driver.
+
+mainly we use it in loops for better performance.
+
+if we go for Statement,this will be compiled ,validated and executed every time.
+chris webster

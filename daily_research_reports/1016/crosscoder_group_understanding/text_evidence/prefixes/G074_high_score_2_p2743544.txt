@@ -1,0 +1,32 @@
+ the drop shadow from the combination of
+    an assumed-opaque "everything outside the border box" and the
+    alpha channels of the border image within the border box. Then
+    only paint the drop-shadow inside the border box.
+
+If the author wants to alter the boundaries of the masking behavior,
+he can use the border-image-width and border-image-offset properties.
+But that still limits us to a straight line boundary somewhere. A
+wavy border will need to be opaque on one side for 'box-shadow' to
+work on it.
+
+It seems to me this definition will handle the most common, if not the
+most interesting, cases. I'm happy to add it to the spec if roc and
+hyatt are planning to implement it.
+
+The main missing piece to this definition is the handling of 'spread'.
+   * Using a spread radius is an intensive graphical calculation, and
+     fails on sharp convex corners.
+   * Increasing the size of the shadow works for convex shapes, but
+     not concave or perforated ones.
+   * I am not a graphics person, I was hoping Chris's proposal included
+     a discussion of this.
+
+[1] http://weblogs.mozillazine.org/roc/archives/2009/02/svg_filter_effe.html
+
+Received on Thursday, 23 July 2009 22:41:52 GMT
+<|im_end|>
+
+
+From: Brad Kemper <brad.kemper@gmail.com>
+Date: Wed, 28 Apr 2010 17:45:25 -0700
+Message-Id: <3A14BD

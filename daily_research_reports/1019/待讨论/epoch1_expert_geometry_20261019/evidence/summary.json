@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "seconds": 30.694169549271464,
+  "models": 20,
+  "experts_total": 160,
+  "exposure_qualified": 130,
+  "heldout_benefit": 49,
+  "zero_train": 26,
+  "spectral_metric_rows": 1170,
+  "response_PCA_experts": 130,
+  "pair_rows": 4350,
+  "singular_values_per_nonzero_matrix": 1024,
+  "actual_unique_SVDs": 682,
+  "first_epoch_input_config_matches": true,
+  "max_decomposition_test_vector_error": 1.0716409404591169e-14,
+  "max_basis_orthogonality_error": 2.6645352591003757e-14,
+  "max_energy_identity_error": 3.1189406841926218e-15,
+  "aggregation": "all experts/pairs are dependent within model; descriptive distributions, not independent replications",
+  "naming": "exposure-qualified is not convergence; heldout labels exploratory",
+  "down_initial_normalized_geometry": "NA"
+}

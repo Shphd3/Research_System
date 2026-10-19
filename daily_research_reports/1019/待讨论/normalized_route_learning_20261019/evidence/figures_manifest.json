@@ -1,0 +1,326 @@
+[
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure1_fixed_activation_profiles.png",
+    "sha256": "5780fa16081dcea33522d92aa7b501b6e3c0038c5eddd03a64363d58fd3465e7",
+    "source": "cache/profile_train.npz; cache/profile_eval.npz; texts/fixed_windows.json",
+    "question": "Are low features absent or merely competing with larger contributions?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure1_fixed_activation_profiles.svg",
+    "sha256": "e9294106097ff2330b8535943e909b13ff36118ce75c333f5e9c7ce25ddad078",
+    "source": "cache/profile_train.npz; cache/profile_eval.npz; texts/fixed_windows.json",
+    "question": "Are low features absent or merely competing with larger contributions?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure1_fixed_activation_profiles.pdf",
+    "sha256": "f610c833e0328424601633b28f8772bb54e28e120cfdf746113c2ec67026531a",
+    "source": "cache/profile_train.npz; cache/profile_eval.npz; texts/fixed_windows.json",
+    "question": "Are low features absent or merely competing with larger contributions?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure2_conditional_amplitudes.png",
+    "sha256": "eb6f8d165db7e7c196aa44bffa26cf62edef3ee70e876ba6727ca56c1935f998",
+    "source": "tables/conditional_amplitudes.csv",
+    "question": "Compare conditional amplitudes separately from frequency and sample count"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure2_conditional_amplitudes.svg",
+    "sha256": "4cfb6c7dcb28d0406e424a23ba6f759145323efec9de3792679ef6d24c6ab3bd",
+    "source": "tables/conditional_amplitudes.csv",
+    "question": "Compare conditional amplitudes separately from frequency and sample count"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure2_conditional_amplitudes.pdf",
+    "sha256": "913cc99ff9b4365b7b59bbe4d53d46ccd7d7e88565bb34dab9420f1baf25649e",
+    "source": "tables/conditional_amplitudes.csv",
+    "question": "Compare conditional amplitudes separately from frequency and sample count"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure3_train_low_position_ranks.png",
+    "sha256": "d367707dd8807f444f9811efe93b93bd2584d6bbfa9bc08a3c76c91da50e3515",
+    "source": "tables/low_window_rankings.csv",
+    "question": "Which actual positions supply the displayed low-feature contribution?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure3_train_low_position_ranks.svg",
+    "sha256": "096ee3855608443cae88382aa44089660d043f6d79a9a66d67ec5ddc36b01f25",
+    "source": "tables/low_window_rankings.csv",
+    "question": "Which actual positions supply the displayed low-feature contribution?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure3_train_low_position_ranks.pdf",
+    "sha256": "bf206086068eb93d1919d6eed90c450a536c1f67b5b4ed1ce1865827984fde9f",
+    "source": "tables/low_window_rankings.csv",
+    "question": "Which actual positions supply the displayed low-feature contribution?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure3_eval_low_position_ranks.png",
+    "sha256": "9b27ddaec739431ce258fc436c7b4c22c1fd84d3eefc609a14c2cea34aa275a9",
+    "source": "tables/low_window_rankings.csv",
+    "question": "Which actual positions supply the displayed low-feature contribution?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure3_eval_low_position_ranks.svg",
+    "sha256": "db089371d79c6afaf211e5732835f6c49cd9e460b112181f25b5104911c805f2",
+    "source": "tables/low_window_rankings.csv",
+    "question": "Which actual positions supply the displayed low-feature contribution?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure3_eval_low_position_ranks.pdf",
+    "sha256": "3c6bfc3139e25c9069ad7a8fafc50eff00b0ab26775799ef175434b4d02bc601",
+    "source": "tables/low_window_rankings.csv",
+    "question": "Which actual positions supply the displayed low-feature contribution?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure4_train_same_text_scores.png",
+    "sha256": "8c544685b463f8ed37cbfbba0acc33a4913f639a54479c0958f2a3a0b36a95a2",
+    "source": "tables/fixed_text_score_contributors.csv; routes/*.npz",
+    "question": "Does calibrated competition change the selected expert on the same text?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure4_train_same_text_scores.svg",
+    "sha256": "b2fd84b662486b665039525e37f6faf5db0902b9b157a08c4ab686e90138f219",
+    "source": "tables/fixed_text_score_contributors.csv; routes/*.npz",
+    "question": "Does calibrated competition change the selected expert on the same text?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure4_train_same_text_scores.pdf",
+    "sha256": "0d584961ba19914c98afd50bebe4e1d08e035b22a24e93abeb2befd478fe9b7c",
+    "source": "tables/fixed_text_score_contributors.csv; routes/*.npz",
+    "question": "Does calibrated competition change the selected expert on the same text?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure4_eval_same_text_scores.png",
+    "sha256": "9b3887930023a71ba12d28d612abbec5e5abe49740a4b26b1b00fbcc50673306",
+    "source": "tables/fixed_text_score_contributors.csv; routes/*.npz",
+    "question": "Does calibrated competition change the selected expert on the same text?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure4_eval_same_text_scores.svg",
+    "sha256": "cf3fbac1630d5328940691c5fe2e0eff7d7ef91e8fbc058b077a40cbe99e390f",
+    "source": "tables/fixed_text_score_contributors.csv; routes/*.npz",
+    "question": "Does calibrated competition change the selected expert on the same text?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure4_eval_same_text_scores.pdf",
+    "sha256": "c9faaa1c7e6fe9b75ebd29862df9a075ac244edc176d0a63fa37fc08863294db",
+    "source": "tables/fixed_text_score_contributors.csv; routes/*.npz",
+    "question": "Does calibrated competition change the selected expert on the same text?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure5_dispatch_outcomes.png",
+    "sha256": "73986d99869349b65fc290f560dd0d21b68620a6e3c8743f1607b66622ba1f8e",
+    "source": "metrics/routing_summary.json",
+    "question": "Which calibration changes actual target reception, and with what load?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure5_dispatch_outcomes.svg",
+    "sha256": "9341ffcbe5fdeebbc628fa9dec4d9f11c3734b324b9c1ef406940e63d204bfd0",
+    "source": "metrics/routing_summary.json",
+    "question": "Which calibration changes actual target reception, and with what load?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure5_dispatch_outcomes.pdf",
+    "sha256": "565502a37c2443f3d5b223feb7434c638bb77a93cb87b84ae2cd77bc50673084",
+    "source": "metrics/routing_summary.json",
+    "question": "Which calibration changes actual target reception, and with what load?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure6_actual_frequency_profiles.png",
+    "sha256": "9dfb5cfecf37f00a0929689dbd79c287c82158c0c9ea7a13b30f31529498f1a4",
+    "source": "metrics/exposure/eval_*.npz",
+    "question": "Did same-frequency lists become same-frequency actual input?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure6_actual_frequency_profiles.svg",
+    "sha256": "045eb40faa2832ed66328e1b8865ecb59cc84b9f0cfff2df97e32d4199ea026c",
+    "source": "metrics/exposure/eval_*.npz",
+    "question": "Did same-frequency lists become same-frequency actual input?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure6_actual_frequency_profiles.pdf",
+    "sha256": "96726827865b673c2240e7999f8948e8ba661529fbc196a3941eaafae1391f6b",
+    "source": "metrics/exposure/eval_*.npz",
+    "question": "Did same-frequency lists become same-frequency actual input?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_primary_learning_curves.png",
+    "sha256": "b230937f27440bd206711c8a7a75d52f4298e39772081d2170323f681d95c760",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_primary_learning_curves.svg",
+    "sha256": "d133701feb04d42d95a93aa5553cce03fe6f70286af187c3f6d5fa0b74039e3d",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_primary_learning_curves.pdf",
+    "sha256": "bea88dbbc7460cf11db0673b41fdd55ce365e0ffc5a736a5b432f25737be2590",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_learned_references_learning_curves.png",
+    "sha256": "8709e4a13d4fce9bbe5aa59b00075c81556e74843e60e8de93ea14554317614e",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_learned_references_learning_curves.svg",
+    "sha256": "93a8a7e0ba3b85b0abcd542a6b8a889f5f096c1a7d603f48bcb1522d99649212",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_learned_references_learning_curves.pdf",
+    "sha256": "deb77aef7a5bfe2774138b25e116137b80f1e67ed563a0b1108b0c60e46b1408",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_expanded_fixed_learning_curves.png",
+    "sha256": "32cbe0a9c57ce21c220b079f907b3c88efb061f0cc98244e31b2ee6c582d2722",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_expanded_fixed_learning_curves.svg",
+    "sha256": "00b727bc12cbee54c82251f3c15f1613d05c08523073d049a3d5da8df5f05364",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure7_expanded_fixed_learning_curves.pdf",
+    "sha256": "3194ea292b82d2c8bfb2bd63f424176be42f8390ccc4b3101a604ffcc4ccca8b",
+    "source": "tables/training_metrics.csv",
+    "question": "Does a routing change improve held-out learning, rather than only reception?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure8_primary_paired_differences.png",
+    "sha256": "80942759dd0e3b1e2dfa8b6b7a1793d231570e2520ce96f642979cd341f467b0",
+    "source": "tables/paired_outcomes.csv",
+    "question": "Do primary comparisons meet the predeclared .01 practical threshold?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure8_primary_paired_differences.svg",
+    "sha256": "7fec59406ea8de257cbd1ede712c408a907fe0e609302e0a88ffdb0ec8963b78",
+    "source": "tables/paired_outcomes.csv",
+    "question": "Do primary comparisons meet the predeclared .01 practical threshold?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure8_primary_paired_differences.pdf",
+    "sha256": "5aeadd797088d41bf23458a8a23b0aec963b9af40d6e5f911f52b4cf8be2d83b",
+    "source": "tables/paired_outcomes.csv",
+    "question": "Do primary comparisons meet the predeclared .01 practical threshold?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure9_same_input_expert_probes.png",
+    "sha256": "58dd09b1e85198a2d5efded29d961007c06120e2d9665aad8483fb3e63c93f91",
+    "source": "tables/expert_probe.csv; functional/*/probe.npz",
+    "question": "Do experts produce different outputs/losses on identical inputs?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure9_same_input_expert_probes.svg",
+    "sha256": "9144dca0e8524fb8d87e817b3a22ebd63c8e38fb0d46a76e77e3f0c7e2307be1",
+    "source": "tables/expert_probe.csv; functional/*/probe.npz",
+    "question": "Do experts produce different outputs/losses on identical inputs?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure9_same_input_expert_probes.pdf",
+    "sha256": "e8f95de9278d2894bca93eda9bd6d53734860ce2d879ec43b1293179c7f2eb51",
+    "source": "tables/expert_probe.csv; functional/*/probe.npz",
+    "question": "Do experts produce different outputs/losses on identical inputs?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure10_target_assignment.png",
+    "sha256": "f3622fb581592a626f9956c5adc35d5a56d4a14b423799ae696159bdba535862",
+    "source": "tables/new_input_assignment.csv; target/recommendations.json",
+    "question": "Does pre-update attribution predict safe adaptation with low absolute target NLL?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure10_target_assignment.svg",
+    "sha256": "3b08bb34b3fec0655ce8ab9957ba0e9f2651d77bd388c362a35349b079c99135",
+    "source": "tables/new_input_assignment.csv; target/recommendations.json",
+    "question": "Does pre-update attribution predict safe adaptation with low absolute target NLL?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure10_target_assignment.pdf",
+    "sha256": "b69f9eda88085971410eb30add0aef483b9db67aba933a43f90b76bbfe58ad10",
+    "source": "tables/new_input_assignment.csv; target/recommendations.json",
+    "question": "Does pre-update attribution predict safe adaptation with low absolute target NLL?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure11_parameter_spectra.png",
+    "sha256": "f2a09aa2c0c6df1f2dcbcdab6f6b850f427ca5959a3a19e34ff75f3547363247",
+    "source": "tables/parameter_response_spectra.csv; functional/*/full_spectra.npz",
+    "question": "Separate original weight geometry from parameter changes"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure11_parameter_spectra.svg",
+    "sha256": "504de245668b53421203f166e47bb5ed5e572921d8525d55d4084355ba733f09",
+    "source": "tables/parameter_response_spectra.csv; functional/*/full_spectra.npz",
+    "question": "Separate original weight geometry from parameter changes"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure11_parameter_spectra.pdf",
+    "sha256": "3c2a8f5ba57b53aa223ab26bdcde32ebc0aaa301b48c6ab630e8330f8f928fb8",
+    "source": "tables/parameter_response_spectra.csv; functional/*/full_spectra.npz",
+    "question": "Separate original weight geometry from parameter changes"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure12_response_spectra.png",
+    "sha256": "79e57b846d600d4a71b9a43bef54ef660c8da6a35e50c3a27a5dcef68656846e",
+    "source": "functional/*/seed*/full_spectra.npz",
+    "question": "Separate response amplitude, shape and functional evidence"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure12_response_spectra.svg",
+    "sha256": "e8fce1aba9e672acb2a0f735669617ee017ece75421f2e409f29d45dee703d20",
+    "source": "functional/*/seed*/full_spectra.npz",
+    "question": "Separate response amplitude, shape and functional evidence"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure12_response_spectra.pdf",
+    "sha256": "9c70220210fac5e3df7c162890b16e413963480f922065d9111839ade29ed8a5",
+    "source": "functional/*/seed*/full_spectra.npz",
+    "question": "Separate response amplitude, shape and functional evidence"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure13_group_to_actual_expert.png",
+    "sha256": "992131be883c0a07e998bda887e43a65f482cef12d3a407c94d67ddc9a5db5b2",
+    "source": "tables/group_to_actual_expert.csv",
+    "question": "Does list membership become actual arrival?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure13_group_to_actual_expert.svg",
+    "sha256": "d8e90ea852e6d45413c197f04da8096aae70dba954fe2ea2fdb2c844fd42d7f6",
+    "source": "tables/group_to_actual_expert.csv",
+    "question": "Does list membership become actual arrival?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure13_group_to_actual_expert.pdf",
+    "sha256": "5461ac4629bd4aa50ba54c64bb2c85f9d4696a6315a7368c9a44e06db257b42d",
+    "source": "tables/group_to_actual_expert.csv",
+    "question": "Does list membership become actual arrival?"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure14_expert_frequency_distributions.png",
+    "sha256": "190435b2ae95404acdd242c4b28870cd1eb2604c6b2b1058ad63ee746da432d5",
+    "source": "metrics/exposure/eval_*.npz",
+    "question": "Compare all actual feature frequencies, retaining zero exposure and empty experts"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure14_expert_frequency_distributions.svg",
+    "sha256": "1e63fba7cdf09a998d5114ac8cb15b0eab769fd2b49bedcc9b83b7f90463b816",
+    "source": "metrics/exposure/eval_*.npz",
+    "question": "Compare all actual feature frequencies, retaining zero exposure and empty experts"
+  },
+  {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/figures/figure14_expert_frequency_distributions.pdf",
+    "sha256": "054addf3c5fa433af1d588160e9c6634e18fdfe93f8fc60ae82be8cc0858de15",
+    "source": "metrics/exposure/eval_*.npz",
+    "question": "Compare all actual feature frequencies, retaining zero exposure and empty experts"
+  }
+]

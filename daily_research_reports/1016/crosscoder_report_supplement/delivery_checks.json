@@ -1,0 +1,98 @@
+{
+  "created_at_utc": "2026-10-16T04:14:39.548305+00:00",
+  "status": "PASS_EXECUTION_AND_DELIVERY_NOT_SCIENTIFIC_APPROVAL",
+  "screenshot_source_preservation": {
+    "status": "PASS",
+    "source": "sources/user_report_transcription_cn.md",
+    "visible_source_nonempty_lines_preserved_in_order": 32,
+    "declared_original_phrase_replacements": 3,
+    "original_heading_order": [
+      "1016",
+      "目的",
+      "机制直觉 & 假设",
+      "模型",
+      "实验分析",
+      "结论"
+    ],
+    "unseen_text_inferred": false,
+    "new_training": false
+  },
+  "figures": 8,
+  "formats": [
+    "PNG",
+    "PDF"
+  ],
+  "four_part_captions": 8,
+  "PNG_all_visually_inspected": true,
+  "PDF_independently_rendered": false,
+  "replot": {
+    "status": "PASS",
+    "PNG_byte_identical": 8,
+    "no_model_training_cache_required": true,
+    "runtime_dependencies": "Python, NumPy, Matplotlib and external CJK font; no Torch/GPU",
+    "comparisons": [
+      {
+        "file": "appendix_shuffled_figure3_normalized_spectrum.png",
+        "sha256": "50fa2546974fc33878a146293201a9d4258f48943fc93d53eef37e505e5b9b30",
+        "original_sha256": "50fa2546974fc33878a146293201a9d4258f48943fc93d53eef37e505e5b9b30",
+        "byte_identical": true
+      },
+      {
+        "file": "appendix_shuffled_figure4_first_direction_share.png",
+        "sha256": "45fb26fa822ef4804c99fb1aae8ab4e676a682a312616bd0c1d6a026a09bfa90",
+        "original_sha256": "45fb26fa822ef4804c99fb1aae8ab4e676a682a312616bd0c1d6a026a09bfa90",
+        "byte_identical": true
+      },
+      {
+        "file": "figure1_frequency_difference.png",
+        "sha256": "6a95d179ca60a7e2520301004d8a45f3def7d6921f098c444adca6dd5abe7766",
+        "original_sha256": "6a95d179ca60a7e2520301004d8a45f3def7d6921f098c444adca6dd5abe7766",
+        "byte_identical": true
+      },
+      {
+        "file": "figure2_prediction_loss.png",
+        "sha256": "91f96a8106875564425352f3853a2950ed1d47a6e818f6fb6d0cd5e35b64dc02",
+        "original_sha256": "91f96a8106875564425352f3853a2950ed1d47a6e818f6fb6d0cd5e35b64dc02",
+        "byte_identical": true
+      },
+      {
+        "file": "figure3_normalized_spectrum.png",
+        "sha256": "c19afe812c83e58d7e3c177910964909484ebc7abb14b8848829a7d2c8513cd0",
+        "original_sha256": "c19afe812c83e58d7e3c177910964909484ebc7abb14b8848829a7d2c8513cd0",
+        "byte_identical": true
+      },
+      {
+        "file": "figure4_first_direction_share.png",
+        "sha256": "0568c0fba06430baf456f88002ca6bd8215fdb2db2e4d387b14b9ce52d99b623",
+        "original_sha256": "0568c0fba06430baf456f88002ca6bd8215fdb2db2e4d387b14b9ce52d99b623",
+        "byte_identical": true
+      },
+      {
+        "file": "figure5_raw_hidden_normalized_spectrum.png",
+        "sha256": "2900a384ce9222d6133ba114805cec793af5944f14d96dc34eeab854f601ced9",
+        "original_sha256": "2900a384ce9222d6133ba114805cec793af5944f14d96dc34eeab854f601ced9",
+        "byte_identical": true
+      },
+      {
+        "file": "figure6_raw_hidden_first_direction_share.png",
+        "sha256": "9f44f8f0876833d7ee8b55f58c1efd3b2d0cdf2250536cb43575646401abb765",
+        "original_sha256": "9f44f8f0876833d7ee8b55f58c1efd3b2d0cdf2250536cb43575646401abb765",
+        "byte_identical": true
+      }
+    ]
+  },
+  "contribution_groups_each": 1119,
+  "contribution_positions": 131072,
+  "raw_groups_each": 1119,
+  "raw_positions_each": 128,
+  "new_training_updates": 0,
+  "new_model_forwards": 0,
+  "graph_parameter_changes": 0,
+  "new_branches": 0,
+  "math_source_check": "SOURCE PASS: 10 file(s), 0 issue(s); rendering and mathematical truth NOT checked.",
+  "math_rendering_verified": false,
+  "local_links_verified": 61,
+  "forbidden_payloads": [],
+  "artifact_files_verified": 88,
+  "artifact_manifest_sha256": "54a5c1cb4c1c43b36fef80d7f78c055f37d75878c829d5b6ac57ef4b8f9ca667"
+}

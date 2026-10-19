@@ -1,0 +1,209 @@
+{
+  "paths": {
+    "stamp": "20261018T173143Z",
+    "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z",
+    "experiment": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning",
+    "anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/activation_to_expert_learning",
+    "old_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z",
+    "previous_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z",
+    "staging": "/tmp/normalized_route_learning_20261018T173143Z"
+  },
+  "received_utc": "2026-10-18T17:24:39+00:00",
+  "training_deadline_utc": "2026-10-18T22:24:39+00:00",
+  "report_deadline_utc": "2026-10-18T23:09:39+00:00",
+  "hard_no_new_training_after_CST": "2026-10-19 07:15",
+  "primary": "T_S1",
+  "conditions": [
+    {
+      "id": "T_S0",
+      "group": "T",
+      "score": 0,
+      "alias": "A",
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "T_S1",
+      "group": "T",
+      "score": 1,
+      "alias": "B",
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "T_S2",
+      "group": "T",
+      "score": 2,
+      "alias": null,
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "T_S3",
+      "group": "T",
+      "score": 3,
+      "alias": null,
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "R11_S0",
+      "group": "R11",
+      "score": 0,
+      "alias": null,
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "R11_S1",
+      "group": "R11",
+      "score": 1,
+      "alias": "C",
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "R11_S2",
+      "group": "R11",
+      "score": 2,
+      "alias": null,
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "R11_S3",
+      "group": "R11",
+      "score": 3,
+      "alias": null,
+      "router": "fixed",
+      "lambda_balance": 0.0,
+      "gate_multiplier": 1
+    },
+    {
+      "id": "Learned",
+      "alias": "D",
+      "router": "learned",
+      "lambda_balance": 0.0,
+      "gate_multiplier": "selected softmax probability"
+    },
+    {
+      "id": "LearnedLB",
+      "alias": "E",
+      "router": "learned",
+      "lambda_balance": 0.01,
+      "gate_multiplier": "selected softmax probability"
+    }
+  ],
+  "seeds": [
+    11,
+    22
+  ],
+  "experts": 8,
+  "dim": 1024,
+  "width": 1024,
+  "expert_architecture": "bias-free SwiGLU, full matrices",
+  "expert_params": 25165824,
+  "router_params": 8192,
+  "epochs": 3,
+  "batch": 512,
+  "microbatch": 128,
+  "train_N": 130712,
+  "eval_N": 65402,
+  "steps_per_epoch": 256,
+  "total_steps": 768,
+  "positions_per_model": 392136,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "warmup_steps": 39,
+    "warmup_rounding": "ceil(.05*768)",
+    "final_lr_ratio": 0.1,
+    "gradient_clip": 1.0
+  },
+  "head": "frozen native Qwen BF16 RMSNorm and tied vocabulary head, input gradient enabled",
+  "input_normalization": "u=h/a, a=sqrt(mean_TRAIN ||h||^2/1024), no mean subtraction",
+  "init": "CPU generator seeded11/22 shared by all conditions; gate/up N(0,1/1024), down=0; router independent generator N(0,.02^2), no bias",
+  "data_order": "seeded PCG64 no-replacement TRAIN permutation each epoch, shared by same seed across all conditions",
+  "fixed_stats": "TRAIN once; m_i conditional mean z_i*w_i, p_i original hit fraction; no EVAL fitting",
+  "denominator_floors": {
+    "rule": "positive median of the denominator class *1e-6",
+    "feature_reference": "all9615 original reliable feature pool, same for T and R11; report full/candidate trigger counts",
+    "group_reference": "the eight positive group means for that frozen grouping",
+    "zero_handling": "original0 contributes0/excluded group; not tiny-floor amplification"
+  },
+  "score_definitions": {
+    "S0": "group mean z*w",
+    "S1": "S0 / frozen TRAIN mean S0 of that group",
+    "S2": "group mean z*w/m_i",
+    "S3": "group mean z*w/(p_i*m_i)"
+  },
+  "tie_seed": 20261019,
+  "load_balance": "K sum_e stopgrad(hard_freq_full_effective_batch_e)*mean_full_batch(P_e), lambda=.01 only LearnedLB",
+  "loss_normalization": "CE exact valid positions/microbatch weighted by actual full batch size, LB only once per full effective batch",
+  "bootstrap": {
+    "replicates": 1000,
+    "seed": 20261019,
+    "unit": "original EVAL context block"
+  },
+  "target_scenario": {
+    "feature_selection": "first ID in L with TRAIN n>=256 and >=20contexts; fallback n>=200 &20, no EVAL selection",
+    "background_seed": 11,
+    "background_condition": "T_S1",
+    "background_epochs": 2,
+    "adapt_experts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "adapt_steps": 32,
+    "adapt_batch": 64,
+    "adapt_lr": 0.0001,
+    "adapt_eval_steps": [
+      0,
+      8,
+      32
+    ],
+    "old_cost_limit": 0.01
+  },
+  "resource_profile": "h100-4-reserved",
+  "image_id": "shphd-lite-0911",
+  "worker_nodes": 1,
+  "gpu_processes": 4,
+  "limits": {
+    "GPU_allocated_GiB_each": 32,
+    "CPU_RSS_GiB_aggregate": 256,
+    "new_disk_GiB": 64
+  },
+  "priority": [
+    "A/B/C seed11",
+    "A/B/C seed22",
+    "D/E paired",
+    "additional fixed score conditions paired",
+    "expert functional probes",
+    "target held-out background and matched8adaptations",
+    "parameter and response spectra detail"
+  ],
+  "all_safe_scores_train_even_if_bad_load": true,
+  "no_base_dictionary_training": true,
+  "no_gpu_reservation_expansion": true,
+  "no_commit_push": true,
+  "researcher_scientific_judgment": "Unknown"
+}

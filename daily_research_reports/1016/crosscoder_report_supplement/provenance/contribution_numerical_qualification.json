@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "direct_explicit_h_SVD_checks": [
+    {
+      "fixed_check_index": 0,
+      "positions": 512,
+      "explicit_h_shape": [
+        512,
+        1024
+      ],
+      "SVD_vs_small_Gram_max_relative_error": 0.0,
+      "raw_scale_r_squared_relative_error": 0.0,
+      "direct_centered_h_trace": 0.0,
+      "small_trace": 0.0
+    },
+    {
+      "fixed_check_index": 1,
+      "positions": 512,
+      "explicit_h_shape": [
+        512,
+        1024
+      ],
+      "SVD_vs_small_Gram_max_relative_error": 1.1130893709265603e-15,
+      "raw_scale_r_squared_relative_error": 4.947063870784713e-15,
+      "direct_centered_h_trace": 66.42681629040128,
+      "small_trace": 66.42681629040125
+    },
+    {
+      "fixed_check_index": 2,
+      "positions": 512,
+      "explicit_h_shape": [
+        512,
+        1024
+      ],
+      "SVD_vs_small_Gram_max_relative_error": 1.1644786378576981e-15,
+      "raw_scale_r_squared_relative_error": 1.7467179567865472e-15,
+      "direct_centered_h_trace": 31312.817167517616,
+      "small_trace": 31312.81716751756
+    },
+    {
+      "fixed_check_index": 3,
+      "positions": 512,
+      "explicit_h_shape": [
+        512,
+        1024
+      ],
+      "SVD_vs_small_Gram_max_relative_error": 1.1558546320400777e-15,
+      "raw_scale_r_squared_relative_error": 3.2635895492896315e-15,
+      "direct_centered_h_trace": 33.83853126155757,
+      "small_trace": 33.83853126155758
+    },
+    {
+      "fixed_check_index": 4,
+      "positions": 512,
+      "explicit_h_shape": [
+        512,
+        1024
+      ],
+      "SVD_vs_small_Gram_max_relative_error": 1.7829766419568778e-15,
+      "raw_scale_r_squared_relative_error": 1.7829766419568778e-15,
+      "direct_centered_h_trace": 33.69479588954557,
+      "small_trace": 33.69479588954554
+    },
+    {
+      "fixed_check_index": 5,
+      "positions": 512,
+      "explicit_h_shape": [
+        512,
+        1024
+      ],
+      "SVD_vs_small_Gram_max_relative_error": 1.1369487329065992e-16,
+      "raw_scale_r_squared_relative_error": 4.206710311754417e-15,
+      "direct_centered_h_trace": 4029.7320491943588,
+      "small_trace": 4029.732049194357
+    }
+  ],
+  "synthetic_orthogonal_shares": [
+    0.5,
+    0.5
+  ],
+  "synthetic_collinear_shares": [
+    1.0,
+    0
+  ],
+  "all_eigendecompositions_FP64": true
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "observed_condition_counterexample": {
+    "Q": 0.5,
+    "Q0": 0.25,
+    "Q0_cond": 0.5,
+    "excess_unconditional": 0.25,
+    "excess_conditional": 0.0,
+    "attenuation": 0.25,
+    "Q0_crossblock": 0.25,
+    "Q0_cond_crossblock": 0.5,
+    "excess_cross_unconditional": 0.25,
+    "excess_cross_conditional": 0.0,
+    "attenuation_crossblock": 0.25
+  },
+  "explicit_cross_block_enumeration_error": 5.551115123125783e-17,
+  "checks": [
+    "condition-only dependence removed as expected",
+    "ordered pair denominator matches direct enumeration",
+    "cross-block uses counts and excludes within-block position pairs"
+  ],
+  "scientific_validation": false
+}

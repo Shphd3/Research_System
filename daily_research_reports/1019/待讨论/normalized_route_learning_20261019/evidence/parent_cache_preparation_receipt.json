@@ -1,0 +1,615 @@
+{
+  "schema": "frequency_interval_moe_cache_preparation_v1",
+  "started_utc": "2026-10-18T10:58:32Z",
+  "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z",
+  "processor": "Codex /root/frequency_branch_cache_audit",
+  "operation": "frozen extraction and TRAIN-only preprocessing; no training",
+  "gpu_memory": {
+    "device": 0,
+    "budget_bytes": 34359738368,
+    "device_total_memory_bytes": 85017624576,
+    "per_process_memory_fraction": 0.4041484167472207,
+    "accounting": "PyTorch allocated/reserved peak; CUDA context and non-PyTorch allocations are outside these counters",
+    "peak_allocated_bytes": 8998948352,
+    "peak_reserved_bytes": 11951669248,
+    "allocated_bytes_at_check": 33554432,
+    "reserved_bytes_at_check": 33554432,
+    "within_32gib_budget": true
+  },
+  "inputs": {
+    "old_cache": {
+      "train": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train.pt",
+        "recorded_sha256": "e7ff8530a006749e3811ee1f07f1de35da3cc3fc5fd5c3d78976f134d7c14f97",
+        "fresh_full_payload_hash": false,
+        "manifest": {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train_manifest.json",
+          "bytes": 2904,
+          "sha256": "f4e7b4f95a921c39b59f9ee5f43e07b9537aee16f319cb7f1ddd69035707b2ce"
+        }
+      },
+      "eval": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/eval.pt",
+        "recorded_sha256": "43715c78f97db1ae50bdfae60a82274445e19dc5e01ff5e25f1f937d10cab004",
+        "fresh_full_payload_hash": false,
+        "manifest": {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/eval_manifest.json",
+          "bytes": 2390,
+          "sha256": "fdcab918f0eef6ab2af5c7eaf48ea859e73b4ce3cc66f52d73be0ff1c039f7a5"
+        }
+      }
+    },
+    "base_model": "/data/share/Qwen3-0.6B-Base",
+    "crosscoder_checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+    "checkpoint_sha256_inherited_from_phase1_binding": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "bin_index_manifest": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_train/manifest.json",
+      "bytes": 3490,
+      "sha256": "25878f4e6e554d3b197060581cb383ccb48f37cc08d8f38044661bf738bbbfb7"
+    },
+    "sources": [
+      {
+        "bytes": 448370876,
+        "mtime_ns": 1765876048802258392,
+        "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_5_of_10_shard_00000041_processed.bin",
+        "sha256": "d17bbe927ea567857c540cb988f7f16ce7bd5fa7528fdbfc1e1b7d854b7853ce",
+        "fresh_source_hash": false,
+        "current_stat_verified": true
+      },
+      {
+        "bytes": 779698984,
+        "mtime_ns": 1765872985672944516,
+        "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+        "sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+        "fresh_source_hash": false,
+        "current_stat_verified": true
+      }
+    ]
+  },
+  "source_manifest": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/code/prepare_cache.py",
+      "bytes": 33699,
+      "sha256": "257be3ac3f3579512bd97f98e24238e56d54c80fc8b4e81d41572b3678e7a10a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/relation_learning/data_routes.py",
+      "bytes": 29291,
+      "sha256": "935e0f2c0b7de3788ffe45e6fa0ab8b5c7e0073065aac43c86d6afcfe5f73d98"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/extraction_a16.py",
+      "bytes": 13551,
+      "sha256": "df2931b3b961153331bfc26ad7b879dcffd41981b9f2aa8a88b975e48c7cef94"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/bin_data_a15.py",
+      "bytes": 6548,
+      "sha256": "1ad979e94b44b11edc3ad75da0848f9510c2a75175f2073da565b67947ff8501"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/model.py",
+      "bytes": 8361,
+      "sha256": "ab34d7d57c15d3293c6e3b125b5df31c673a4ce252a3e4ac67d01706d0c14e73"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/batchtopk_a18.py",
+      "bytes": 18056,
+      "sha256": "6c9c7e9c4ad825517e3b910ef2b8253ebc47d68b4d10d213c4e94cfad48f1a8b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/fast_batchtopk_a21.py",
+      "bytes": 4534,
+      "sha256": "7f2dc16cfc98f6246b0257fce90a7ee804ce5684c395cffc703ce6e8518ab9ad"
+    }
+  ],
+  "load_frozen_models_seconds": 21.579811731353402,
+  "decoder_norm_quality": {
+    "sum14_l2_norm_quantiles": [
+      2.433133602142334,
+      5.695228099822998,
+      7.825391674041748,
+      10.026318626403809,
+      12.988748550415039
+    ],
+    "zero_norm_features": [],
+    "zero_norm_policy": "retained under the unchanged support rule; zero contribution and positive-route gates remain explicit"
+  },
+  "freeze_checks": {
+    "base_parameters_requires_grad_false": true,
+    "crosscoder_parameters_requires_grad_false": true,
+    "base_parameter_versions_unchanged": true,
+    "crosscoder_parameter_versions_unchanged": true,
+    "base_buffers_unchanged": true,
+    "crosscoder_buffers_unchanged": true,
+    "saved_train_normalization_unchanged": true,
+    "crosscoder_threshold": 0.051281172782182693,
+    "inference_mode": true
+  },
+  "fresh_native_zero_guard": {
+    "status": "PASS",
+    "positions": 32,
+    "native_full_model_forward": true,
+    "cached_hidden_CPU_roundtrip": true,
+    "output_head_matrix_shapes_matched": true,
+    "native_RMSNorm_exact": true,
+    "logits_exact": true,
+    "max_absolute_logit_error": 0.0,
+    "mean_absolute_logit_error": 0.0,
+    "mean_native_NTP_loss": 3.5367581844329834,
+    "mean_cached_NTP_loss": 3.5367581844329834,
+    "max_absolute_NTP_loss_error": 0.0,
+    "zero_adapter_reference": "unchanged raw h plus zero expert residual, followed by original final norm and head",
+    "fresh_original_model_forward": true
+  },
+  "extraction": {
+    "train": {
+      "timing": {
+        "base_forward_seconds": 1.2717306856065989,
+        "crosscoder_encode_seconds": 0.3580513186752796,
+        "native_zero_guard_seconds": 0.08512349426746368,
+        "contexts": 128,
+        "base_raw_tokens": 131072,
+        "coder_batches": 128,
+        "native_zero_guard_extra_contexts": 8,
+        "native_zero_guard_extra_raw_tokens": 8192,
+        "wall_seconds": 3.0846282690763474,
+        "valid_positions": 130712,
+        "nnz": 33567565
+      },
+      "old_cache_comparison": {
+        "hidden": {
+          "new_shape": [
+            130712,
+            1024
+          ],
+          "old_shape": [
+            130712,
+            1024
+          ],
+          "new_dtype": "torch.bfloat16",
+          "old_dtype": "torch.bfloat16",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "target": {
+          "new_shape": [
+            130712
+          ],
+          "old_shape": [
+            130712
+          ],
+          "new_dtype": "torch.int64",
+          "old_dtype": "torch.int64",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "feature_ptr": {
+          "new_shape": [
+            130713
+          ],
+          "old_shape": [
+            130713
+          ],
+          "new_dtype": "torch.int64",
+          "old_dtype": "torch.int64",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "feature_ids": {
+          "new_shape": [
+            33567565
+          ],
+          "old_shape": [
+            33567565
+          ],
+          "new_dtype": "torch.int32",
+          "old_dtype": "torch.int32",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "block_id": {
+          "new_shape": [
+            130712
+          ],
+          "old_shape": [
+            130712
+          ],
+          "new_dtype": "torch.int32",
+          "old_dtype": "torch.int32",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "position_id": {
+          "new_shape": [
+            130712
+          ],
+          "old_shape": [
+            130712
+          ],
+          "new_dtype": "torch.int64",
+          "old_dtype": "torch.int64",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        }
+      },
+      "representation_origin": "all h and z newly extracted together; no old/new stitching",
+      "source_paths": [
+        "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_5_of_10_shard_00000041_processed.bin"
+      ],
+      "contexts": [
+        8192,
+        8193,
+        8194,
+        8195,
+        8196,
+        8197,
+        8198,
+        8199,
+        8200,
+        8201,
+        8202,
+        8203,
+        8204,
+        8205,
+        8206,
+        8207,
+        8208,
+        8209,
+        8210,
+        8211,
+        8212,
+        8213,
+        8214,
+        8215,
+        8216,
+        8217,
+        8218,
+        8219,
+        8220,
+        8221,
+        8222,
+        8223,
+        8224,
+        8225,
+        8226,
+        8227,
+        8228,
+        8229,
+        8230,
+        8231,
+        8232,
+        8233,
+        8234,
+        8235,
+        8236,
+        8237,
+        8238,
+        8239,
+        8240,
+        8241,
+        8242,
+        8243,
+        8244,
+        8245,
+        8246,
+        8247,
+        8248,
+        8249,
+        8250,
+        8251,
+        8252,
+        8253,
+        8254,
+        8255,
+        8256,
+        8257,
+        8258,
+        8259,
+        8260,
+        8261,
+        8262,
+        8263,
+        8264,
+        8265,
+        8266,
+        8267,
+        8268,
+        8269,
+        8270,
+        8271,
+        8272,
+        8273,
+        8274,
+        8275,
+        8276,
+        8277,
+        8278,
+        8279,
+        8280,
+        8281,
+        8282,
+        8283,
+        8284,
+        8285,
+        8286,
+        8287,
+        8288,
+        8289,
+        8290,
+        8291,
+        8292,
+        8293,
+        8294,
+        8295,
+        8296,
+        8297,
+        8298,
+        8299,
+        8300,
+        8301,
+        8302,
+        8303,
+        8304,
+        8305,
+        8306,
+        8307,
+        8308,
+        8309,
+        8310,
+        8311,
+        8312,
+        8313,
+        8314,
+        8315,
+        8316,
+        8317,
+        8318,
+        8319
+      ]
+    },
+    "eval": {
+      "timing": {
+        "base_forward_seconds": 0.4932122826576233,
+        "crosscoder_encode_seconds": 0.1628276351839304,
+        "native_zero_guard_seconds": 0.0,
+        "contexts": 64,
+        "base_raw_tokens": 65536,
+        "coder_batches": 64,
+        "wall_seconds": 1.328860456123948,
+        "valid_positions": 65402,
+        "nnz": 16416360
+      },
+      "old_cache_comparison": {
+        "hidden": {
+          "new_shape": [
+            65402,
+            1024
+          ],
+          "old_shape": [
+            65402,
+            1024
+          ],
+          "new_dtype": "torch.bfloat16",
+          "old_dtype": "torch.bfloat16",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "target": {
+          "new_shape": [
+            65402
+          ],
+          "old_shape": [
+            65402
+          ],
+          "new_dtype": "torch.int64",
+          "old_dtype": "torch.int64",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "feature_ptr": {
+          "new_shape": [
+            65403
+          ],
+          "old_shape": [
+            65403
+          ],
+          "new_dtype": "torch.int64",
+          "old_dtype": "torch.int64",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "feature_ids": {
+          "new_shape": [
+            16416360
+          ],
+          "old_shape": [
+            16416360
+          ],
+          "new_dtype": "torch.int32",
+          "old_dtype": "torch.int32",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "block_id": {
+          "new_shape": [
+            65402
+          ],
+          "old_shape": [
+            65402
+          ],
+          "new_dtype": "torch.int32",
+          "old_dtype": "torch.int32",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        },
+        "position_id": {
+          "new_shape": [
+            65402
+          ],
+          "old_shape": [
+            65402
+          ],
+          "new_dtype": "torch.int64",
+          "old_dtype": "torch.int64",
+          "exact": true,
+          "max_absolute_difference": 0.0
+        }
+      },
+      "representation_origin": "all h and z newly extracted together; no old/new stitching",
+      "source_paths": [
+        "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin"
+      ],
+      "contexts": [
+        117658,
+        117659,
+        117660,
+        117661,
+        117662,
+        117663,
+        117664,
+        117665,
+        117666,
+        117667,
+        117668,
+        117669,
+        117670,
+        117671,
+        117672,
+        117673,
+        117674,
+        117675,
+        117676,
+        117677,
+        117678,
+        117679,
+        117680,
+        117681,
+        117682,
+        117683,
+        117684,
+        117685,
+        117686,
+        117687,
+        117688,
+        117689,
+        117690,
+        117691,
+        117692,
+        117693,
+        117694,
+        117695,
+        117696,
+        117697,
+        117698,
+        117699,
+        117700,
+        117701,
+        117702,
+        117703,
+        117704,
+        117705,
+        117706,
+        117707,
+        117708,
+        117709,
+        117710,
+        117711,
+        117712,
+        117713,
+        117714,
+        117715,
+        117716,
+        117717,
+        117718,
+        117719,
+        117720,
+        117721
+      ]
+    }
+  },
+  "extraction_cost": {
+    "base_contexts": 192,
+    "base_raw_tokens": 196608,
+    "selected_layers_zero_based": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+    ],
+    "base_batch_contexts": 8,
+    "coder_batch_positions": 1024,
+    "extra_native_check_contexts": 8,
+    "extra_native_check_raw_tokens": 8192,
+    "base_forward_seconds": 1.7649429682642221,
+    "crosscoder_encode_seconds": 0.52087895385921,
+    "native_check_seconds": 0.08512349426746368
+  },
+  "grouping_and_statistics_seconds": 3.6403334699571133,
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/train.pt",
+      "bytes": 556911904,
+      "sha256": "87f6f3544d81aa2d1272be0fc4db7c9947fffbf456b1a3f064a1e81b1f8dd6d6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/eval.pt",
+      "bytes": 275628256,
+      "sha256": "51eaa1ce7188b6049858933b2c8f24b5922051a73b17bce83876e6e94be5e616"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/model_input_norm.pt",
+      "bytes": 5720,
+      "sha256": "1476e59160ab0d27ac4e5721ed168747b9e53a18b13eee29dffa417e8844faca"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/grouping.json",
+      "bytes": 580064,
+      "sha256": "f76201cde39473c34b07d249acf63677e1d6bdd90d408d585e063e28bbf24980"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/tables/feature_members.csv",
+      "bytes": 1072691,
+      "sha256": "3c0902eb6021bf13ef6e598f8e7861656b018db277cd60219ed8aafe376bcdb9"
+    }
+  ],
+  "output_hash_seconds": 3.362050535157323,
+  "status": "COMPLETE",
+  "cache_preparation": "PASS",
+  "formal_eligibility": {
+    "eligible": false,
+    "status": "FAIL",
+    "reasons": [
+      "A/seed20261018/group0: positive-score actual routing has 0 positions and 0 contexts; requires >=200 and >=20",
+      "A/seed20261018/group1: positive-score actual routing has 0 positions and 0 contexts; requires >=200 and >=20",
+      "A/seed20261018/group2: positive-score actual routing has 0 positions and 0 contexts; requires >=200 and >=20",
+      "A/seed20261018/group3: positive-score actual routing has 129 positions and 128 contexts; requires >=200 and >=20",
+      "A/seed20261019/group0: positive-score actual routing has 0 positions and 0 contexts; requires >=200 and >=20",
+      "A/seed20261019/group1: positive-score actual routing has 0 positions and 0 contexts; requires >=200 and >=20",
+      "A/seed20261019/group2: positive-score actual routing has 0 positions and 0 contexts; requires >=200 and >=20",
+      "A/seed20261019/group3: positive-score actual routing has 129 positions and 128 contexts; requires >=200 and >=20"
+    ],
+    "fit_split": "TRAIN",
+    "required_positions": 200,
+    "required_contexts": 20,
+    "fallback_does_not_count": true,
+    "no_automatic_bin_repair": true,
+    "no_training_started": true
+  },
+  "wall_seconds": 35.501381343230605,
+  "completed_utc": "2026-10-18T10:59:07Z",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "scientific_verdict": "UNKNOWN",
+  "no_training_started": true
+}

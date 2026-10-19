@@ -1,0 +1,38 @@
+{
+  "N_V": 5247663,
+  "N_D": 5238097,
+  "groups": 186,
+  "counts": {
+    "none": 1818978,
+    "unique": 2073616,
+    "multiple": 1355069
+  },
+  "fractions": {
+    "none": 0.34662629822075086,
+    "unique": 0.39515037455720764,
+    "multiple": 0.2582233272220415
+  },
+  "none_fraction": 0.34662629822075086,
+  "unique_fraction": 0.39515037455720764,
+  "multiple_fraction": 0.2582233272220415,
+  "threshold_rule": "D-only smallest integer count with <=1% hits; >=2 active; no forced top1",
+  "sampling_unit": "V eligible positions; original documents UNKNOWN",
+  "random_examples": "uniform hash-ranked hit contexts; hash-ranked hit position within each selected context",
+  "high_examples": "largest member count within each distinct context, then smallest position ID; ratio score=count/group size",
+  "seconds_to_coverage": 496.60336982645094,
+  "conditional_block_bootstrap_95pct": {
+    "none": [
+      0.3427524817004366,
+      0.34980106911547293
+    ],
+    "unique": [
+      0.39314389822413554,
+      0.39725479311116774
+    ],
+    "multiple": [
+      0.25479043428981835,
+      0.2631079657003153
+    ]
+  },
+  "bootstrap_independence": "conditional on contiguous block independence, not document-valid"
+}

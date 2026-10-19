@@ -1,0 +1,9 @@
+ousai (Remote host closed the connection)
+21:52:30 Join Battousai [0] (~bryan@gentoo/developer/battousai)
+22:00:01 Join matsl [0] (
+22:00:01 Join Horscht [0] (~Horscht2@xbmc/user/horscht)
+22:01:07 Join Strife89 [0] (
+22:06:08 Join Blue_Dude [0] (
+22:07:09 Quit alexbobp (Ping timeout: 276 seconds)
+22:07:18Blue_DudePartially fixed FS #10614, at least the resume from bookmark error. You can now resume a bookmark even if the index is incorrect, e.g. you've deleted some files from the directory and you're trying to resume one of the remaining files.
+22:08:50CIA-5New commit by 03Blue_Dude (r25558): Partial fix for FS #10614.

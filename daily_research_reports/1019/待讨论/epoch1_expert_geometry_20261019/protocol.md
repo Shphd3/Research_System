@@ -1,0 +1,11 @@
+# Epoch-one expert evidence and spectral geometry
+
+Authorized bounded read-only analysis by the researcher's2026-10-19 request, under the activation-to-expert-learning Anchor. Use all20 actual Tulu epoch1 models,160experts. No training,router changes,Base/CrossCoder extraction,commit or push.
+
+Freeze exposure qualification before spectra:2048unique answer-prediction positions,20distinct dialogues,20expert updates,nonzero down update. These are AI diagnostic floors,not convergence guarantees. Fixed routes reconstruct actual exposure exactly; learned routers have actual cumulative counts but no token-level history,so dialogue diversity uses a conservative capacity lower bound. Geometry includes every exposure-qualified expert; held-out benefit is a separate descriptive label requiring natural EVAL200positions/20dialogues,negative TRAIN change and EVAL bootstrap95%upper<0 against zero branch.
+
+For gate/up/down compute FP64 full1024-value SVD ofW0,W1,delta. Initial gate/up can be reused across matched seeds/IDs; initial down is zero and its normalized geometry stays NA;delta-down equalsW1. Compare common-input right singular subspaces for gate/up and common-output left subspaces for down,not arbitrary neuron coordinates. Fixed rank16 overlap=||Qa.TQb||F²/16; report top1 absolute cosine,principal angles,numerical rank and16/17gap. Metrics:q1,top16 squared-energy share,stable/effective rank,absolute spectra and full normalized curves. No flat-spectrum success assumption.
+
+Use one fixed1024-position,dialogue-balanced EVAL probe. Center ungated residual expert outputs across positions and compare PCA in the common1024-dimensional output space. Actual TRAIN/EVAL natural-route NLL and zero-branch reference verify learning separately. Same-ID across strategies is not functional matching. All negative and insufficient results retained; multiple-viewed EVAL is exploratory.
+
+Single h100-4-reserved/shphd-lite-0911 allocation,32GiB allocated/GPU,256GiB aggregateRSS,8GiB new disk,30active minutes. Internal numerical checks,no new training smoke. Save full machine tables/bases plus readable plots,Chinese/English Summary/Detailed and<20MBdiscussion package. Full computational clauses:protocol_cn.md. Human scientific judgment Unknown.

@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-10-15T17:12:04.349841+00:00",
+  "status": "FROZEN_BEFORE_CONTROL_OUTCOMES",
+  "posthoc": true,
+  "reason": "original raw v1 removal doubled meanL0 while fixed TRAIN centering retained; affine shift suspected after observing primary sensitivity",
+  "fixed_objects": "same saved raw v_l, same contexts128:144 and measurementlast8, original TRAIN mu/rms and original gating threshold; no new SVD or training",
+  "intervention": "H_center_pres=H-(((H-mu) dot v_l) v_l); hence normalize(H_center_pres)=P normalize(H)",
+  "prediction_if_affine_shift_dominates": "center-preserved L0 moves closer to original than raw-removed L0, and original/center-preserved gated-event Jaccard exceeds original/raw-removed Jaccard",
+  "rival_prediction": "if directionally varying centered content dominates, centering-preservation does not substantially restore activation count or event overlap",
+  "readouts": "all3 meanL0, eventJaccard, reconstruction errors and fixedoldedgephi with common-estimable-edge support; continuous contrasts, no posthoc significance or primaryaux rewrite",
+  "boundary": "separates constant offset from projected centered changes under fixed preprocessing; not semanticcommon content or learning benefit"
+}

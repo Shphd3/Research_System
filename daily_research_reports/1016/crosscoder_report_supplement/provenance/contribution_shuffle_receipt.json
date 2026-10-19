@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE",
+  "seed": 20261016,
+  "replicates": 1,
+  "columns": 15666,
+  "positions_per_column": 131072,
+  "all_permutations_bijective": true,
+  "all_reordered_values_exact": true,
+  "sample_z_sha256": "a72178e43b483853c11aaf8b479beb42fc07abc12a8d900c1ccb942834a3ab54",
+  "shuffled_raw_C_order_FP32_value_sha256": "e9e1fc28ed1d768e180bbd4b2b86374b2c0ed3c54d693c0f9518ffc15996847b",
+  "shared_between_rules": true,
+  "seconds": 74.94825388118625,
+  "inferential_p_values": null,
+  "large_shuffled_matrix_retained": false,
+  "regeneration": "Read saved sample_z_feature_major.npy in C-order; for each ordered pool feature i in sequence, rng=np.random.default_rng(seed); b[i]=a[i,rng.permutation(N)] (one shared rng stream). All definition/data hashes frozen."
+}

@@ -1,0 +1,48 @@
+ swing music. He showed that country music could absorb nearly every genre it touched. His upbeat mix kept people entertained during the Depression.
+
+4. Flatt & Scruggs
+Essential Album: The Essential Flatt & Scruggs: 'Tis Sweet to Be Remembered
+Monroe may have created bluegrass, but his students Flatts & Scruggs popularized it with virtuosic banjo-playing and high lonesome vocals. Earl Scruggs and Lester Flatt both played in Monroe's Blue Grass Boys before forming their own outfit. In the 1950s and '60s, they epitomized bluegrass.
+
+5. Alabama
+Essential Album: 50 Years of Hits
+Alabama escaped the urban cowboy curse to become one of the most successful acts of the '80s and '90s. Their rich harmonies resulted in chart-topping hits such as "Dixieland Delight" and "Love in the First Degree."
+
+6. The Louvin Brothers
+Essential Album: When I Stop Dreaming
+Ira and Charlie Louvin created magic on wax. Their religious songs and high harmonies resulted in the cult gospel album Satan Is Real and left a heavy influence on the Everly Brothers.
+
+7. Charlie Daniels Band
+Essential Album:The Essential Charlie Daniels Band
+Fiddle-player Charlie Daniels helped invent country rock with this off-the-rails band. It formed in the early 1970s and made headway with the Mason-Dixon rocker "The Devil Went Down to Georgia."
+
+8. The Flying Burrito Brothers
+Essential Album: Gilded Palace of Sin
+The Byrds were more popular, but The Flying Burritos Brothers gained a cult following that outlasted them. The group, founded by Gram Parsons, provided the country-rock blueprint to subsequent genre-benders.
+
+9. The Stanley Brothers
+Essential Album: The Complete Mercury Recordings
+Performing from the 1940s to the '60s, Carter and Ralph Stanley were were heavily indebted to Bill Monroe for their traditional sound. Yet their versions of "Little Maggie" and "I'm a Man of Constant Sorrow" remain an invigorating bridge between mountain music and bluegrass.
+
+10. Dixie Chicks
+Essential Album: Wide Open Spaces
+The Dixie Chicks re-engineered bluegrass for a stadium crowd in the late 1990s. Their debut Wide Open Spaces became one of the biggest-selling country albums of all time, but controversy cast a shadow on the group's later years.
+
+11 - 25
+
+©2013 About.com. All rights reserved.<|im_end|>Take the tour ×
+
+If I have received an AES encrypted message, and if I do know the key with which it was encrypted, do I also need to know the mode of operation with which it was encrypted in order to decrypt it? My understanding is that this is indeed the case.
+
+If so, how is the mode of operation transmitted along with the encrypted file?
+
+share|improve this question
+add comment
+
+2 Answers
+
+up vote 4 down vote accepted
+
+Yes, of course you need to know the mode of operation in order to decrypt.
+
+On the other hand, the mode of operation isn't usually explicitly transmitted in the ciphertext. Using the same key with different modes of operation may cause unexpected weaknesses. For example, consider one message encrypted with CFB mode with IV=2 (which is perfectly secure) and another message encrypted with CTR mode with IV=0 (also secure). If we give the attacker both ciphertexts, he knows a relationship between the first block of

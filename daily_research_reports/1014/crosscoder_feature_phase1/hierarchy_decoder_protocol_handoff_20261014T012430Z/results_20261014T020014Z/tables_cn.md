@@ -18,3 +18,20 @@ CSV保留原始精度。路径下的表是本轮派生输出，原输入hash与�
 | [text_layer_amplitude.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/text_layer_amplitude.csv) | 3360 | 240位置×14层幅度 |
 
 派生几何数组derived_geometry.npz供复绘使用；完整文本为text_examples.jsonl；统计公式和冻结选择见provenance/protocol_frozen.md及code。
+
+## 本次图表修订新增展示源表
+
+除峰值类别计数外均为原表／已存几何的展示转换。峰值计数为用户要求的事后描述，没有新增正式检验。
+
+| 表 | 数据行数 | 用途 |
+|---|---:|---|
+| [figure1_nodes_display.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/figure1_nodes_display.csv) | 30 | 图1术语修订：V命中、激活频率百分比与h；原节点未变 |
+| [figure3_coordinate_comparison_source.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/figure3_coordinate_comparison_source.csv) | 15,537 | 图3同一15537节点、h、固定抖动及两坐标L |
+| [group_mean_p_source.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/group_mean_p_source.csv) | 168 | 原V均值表转长表，2坐标×6h×14层；p仍为0—1 |
+| [peak_feature_labels_posthoc.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/peak_feature_labels_posthoc.csv) | 31,074 | 事后描述：每个坐标—Feature唯一最大层及峰值类别 |
+| [peak_composition_posthoc.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/peak_composition_posthoc.csv) | 36 | 事后描述：2坐标×6h×3类别计数与比例 |
+| [h0_individual_source.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/h0_individual_source.csv) | 560 | 全部20合格h0节点，2坐标×14层p |
+| [h5_curves_source.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/h5_curves_source.csv) | 56 | 937、3461的2坐标×14层p及L |
+| [frequency_comparison_25cells_source.csv](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/frequency_comparison_25cells_source.csv) | 25 | 原V全部25格加显示标记；不足显示为NA而非0 |
+
+CSV中的p与share保留0—1原始精度，图中乘100显示%。原12张表均未覆盖修改。来源hash见 [修订记录](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/provenance/visual_revision_record.json)。

@@ -1,0 +1,43 @@
+{
+  "main_RFN": {
+    "R": {
+      "group_position_slots": 18560,
+      "unique_positions": 18560,
+      "maximum_reuse": 1
+    },
+    "F": {
+      "group_position_slots": 18560,
+      "unique_positions": 18560,
+      "maximum_reuse": 1
+    },
+    "N": {
+      "group_position_slots": 18560,
+      "unique_positions": 18560,
+      "maximum_reuse": 1
+    },
+    "R_F": {
+      "shared_unique_positions": 644,
+      "jaccard": 0.01765544467595131
+    },
+    "R_N": {
+      "shared_unique_positions": 679,
+      "jaccard": 0.018632858593342662
+    }
+  },
+  "supplement_RN": {
+    "R": {
+      "group_position_slots": 20608,
+      "unique_positions": 20608,
+      "maximum_reuse": 1
+    },
+    "N": {
+      "group_position_slots": 20608,
+      "unique_positions": 20608,
+      "maximum_reuse": 1
+    },
+    "R_N": {
+      "shared_unique_positions": 823,
+      "jaccard": 0.020374817418859704
+    }
+  }
+}

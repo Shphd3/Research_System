@@ -1,0 +1,113 @@
+{
+  "scope": "requested epoch1-only regional interpretation and equal-exposure comparison",
+  "processing_agent": "/root",
+  "producer": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/presentation/epoch1_region_efficiency/analyze_saved_tables.py",
+  "producer_sha256": "05a0d209ebe8a817892ab684336bd1712e435abefeedd4c8994237cee4c1da02",
+  "source_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/learning_curves.csv",
+      "sha256": "9929eb30cda15aa0d73dffe30e0f693926f479176ddde7984d1536b4edb108c7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/expert_training_evidence.csv",
+      "sha256": "77fb20efda26661bd9a4b9b60b283ced2f1520440600a63dd08b10ddd89e49ed"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/epoch1_source_dispatch.csv",
+      "sha256": "3eba75309d85301c6b96b3b70335441ae840f163d47a842fc10191acde09d582"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/eval.jsonl",
+      "sha256": "63a31b625a8b55c709c777d50f12db44fa8ca05d6b611f8a1d2998485d320962"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/eval_epoch0.npz",
+      "sha256": "5249de7284ec9181b445d0a5f9e66519bd18c476054a9ef95e8803eda8a7d17d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/eval_epoch1.npz",
+      "sha256": "0cfb97c267606fd6a82228c1d0a8aa4542ef6702d2b5e8dcb176160717fced29"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/eval_epoch1.npz",
+      "sha256": "34a643cdb3d8c5dc45567d9dc85370c93086a97ec923d44d63705c37923fa030"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/common.py",
+      "sha256": "c3a789dd59e84e7b1a9fb8cefff2a260c7b1417f4ef9466e25261c14e53c0afe"
+    }
+  ],
+  "assets": [
+    "analysis_tulu_sft_route_20261019t012300z",
+    "analysis_tulu_epoch1_expert_geometry_20261019t030056z",
+    "data_tulu_sft_route_20261019t012300z"
+  ],
+  "checks": {
+    "EVAL_json_answer_count_and_N": 22446,
+    "source_counts_vs_original_dispatch": "PASS every source and region",
+    "saved_loss_region_delta_vs_existing_expert_table": "PASS tolerance1e-8 both seeds",
+    "fixed_routes_identical_across_seeds": true,
+    "same_target_count_85548_and_updates168": true,
+    "zero_support": "NA",
+    "new_inference_training_or_bootstrap": false
+  },
+  "interpretation": "source point estimates exploratory; matched implementation comparison, not isolated frequency-grouping causality; end-to-end efficiency and new-router learning efficiency NA",
+  "selected_evidence_exception": "requested date-local tables and comparison figure, not raw states or arrays",
+  "files": [
+    {
+      "path": "evidence/analysis_access.json",
+      "sha256": "dffb2c9362927257461f2d2096808a5ab77854e7dca3a44762d7b5a58a95e5f6",
+      "bytes": 10629
+    },
+    {
+      "path": "evidence/data_access.json",
+      "sha256": "18656c7496b5a6ecdbc47e4b70ef634041c51b8afe03a0ba7612af2bec938f60",
+      "bytes": 4140
+    },
+    {
+      "path": "figures/epoch1_efficiency_table.pdf",
+      "sha256": "65b6ed9bc142f1ed2ef5a449e96f0f52088bb5384b977cb7ac29177ea5d4c892",
+      "bytes": 22816
+    },
+    {
+      "path": "figures/epoch1_efficiency_table.png",
+      "sha256": "40cb0a90e44c5e93e92f6a74f21ccf72ad46cf4ff260a0860361a6848238d89a",
+      "bytes": 111659
+    },
+    {
+      "path": "figures/epoch1_efficiency_table.svg",
+      "sha256": "a1bfcfb1007c9052f7b22a4ba333dd934c334aba37f87c6c961553650455dce2",
+      "bytes": 9934
+    },
+    {
+      "path": "report.md",
+      "sha256": "4663836c12f8e8812f89fd1fa4b806b7a7f384b6322c4b7cefa042431bc93497",
+      "bytes": 4469
+    },
+    {
+      "path": "report_cn.md",
+      "sha256": "dcbc449b463c34758faafeb31398d371f8c7861520ddfa7974c957ee407be4c9",
+      "bytes": 6412
+    },
+    {
+      "path": "tables/T_S1_region_profile.csv",
+      "sha256": "f5f5ba45b5884aaa5fb8e61c25873f81065ad6760383f31ae4f7986ae9c423ca",
+      "bytes": 1958
+    },
+    {
+      "path": "tables/T_S1_region_source_loss.csv",
+      "sha256": "2c26770df04fa07d325a55bed7268a83c6dbf4d643beabe4fea905ef28905666",
+      "bytes": 13074
+    },
+    {
+      "path": "tables/epoch1_method_comparison.csv",
+      "sha256": "0c4299bb8b3b0c238564baf5bedb20e5aa69f5aed2bfb39ce05dae5a0687dbc4",
+      "bytes": 1050
+    },
+    {
+      "path": "tables/epoch1_method_comparison_per_seed.csv",
+      "sha256": "14c7ba0198ce31f6afa384d5936bb9bd5341a39760ace04e03cd6d4864345acc",
+      "bytes": 542
+    }
+  ]
+}

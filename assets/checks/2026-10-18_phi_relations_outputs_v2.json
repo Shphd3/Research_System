@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-18T06:20:28.092026+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-vfxth",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11792,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_crosscoder_phi_relations_sources_20261018",
+      "title_cn": "冻结186个φ组的关系来源分析与三例实际decoder贡献组织",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual cached-analysis payload owner",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/artifact_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 893,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/panel.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4483444,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/result_validation.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1362,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/conditional_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4928,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/all186_core_decomposition.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 63459,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/geometry_G068.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 20259,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/geometry_G034.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 842388,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/geometry_G014.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5692731,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "selected reading evidence",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations/payload_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 72148,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations/report_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6716,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations/overview_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2285,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations/delivery_checks.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1455,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations/data/all_members_frequency.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1227063,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations/data/all186_group_index.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 105435,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual reproducible source",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/analyze.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 19687,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/validate_results.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3888,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

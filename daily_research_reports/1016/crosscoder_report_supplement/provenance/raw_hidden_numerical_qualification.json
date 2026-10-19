@@ -1,0 +1,38 @@
+{
+  "gram_trace": true,
+  "significant_negative_eigenvalues": false,
+  "direct_covariance_comparisons": [
+    {
+      "rule": "same_frequency",
+      "group_id": 0,
+      "shape": [
+        128,
+        1024
+      ],
+      "trace": 125536.31339418872,
+      "direct_covariance_max_eigenvalue_absolute_error": 3.637978807091713e-11,
+      "normalized_by_trace_error": 2.8979493731573296e-16
+    },
+    {
+      "rule": "mixed_frequency",
+      "group_id": 0,
+      "shape": [
+        128,
+        1024
+      ],
+      "trace": 182890.96714330275,
+      "direct_covariance_max_eigenvalue_absolute_error": 3.637978807091713e-11,
+      "normalized_by_trace_error": 1.989151713677146e-16
+    }
+  ],
+  "synthetic_comparison": {
+    "shape": [
+      128,
+      1024
+    ],
+    "direct_covariance_max_eigenvalue_absolute_error": 7.815970093361102e-14
+  },
+  "source_hidden_unchanged": "Read-only mmap, no in-place hidden operation; gathered matrices cast to FP64 before centering",
+  "cached_BF16_values_upcast_exact": true,
+  "spectra_unit_sum_max_error": 4.440892098500626e-16
+}

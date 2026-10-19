@@ -1,0 +1,9 @@
+{
+  "loader": "local byte-level BPE decoder only, using frozen tokenizer.json/vocab; token IDs already cached, no tokenization/model forward",
+  "reason": "transformers and tokenizers packages absent in current interpreter; no installation or download",
+  "bytelevel_config_verified": true,
+  "golden_reference": "previous audit12 HuggingFace Qwen2TokenizerFast-decoded cards",
+  "golden_checks": 36,
+  "all_exact": true,
+  "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+}

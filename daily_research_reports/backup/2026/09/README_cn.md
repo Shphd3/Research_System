@@ -1,0 +1,35 @@
+# 2026年9月 Daily归档
+
+2026-10-19按研究者要求归档29个日期目录、589个原文件。这里保存历史会议与阅读记录；当前研究请从[项目入口](../../../../Projects/from-attention-to-search/main/roadmap.md)查找。
+
+- [0901](0901/README_cn.md)
+- [0902](0902/README_cn.md)
+- [0903](0903/README_cn.md)
+- [0904](0904/README_cn.md)
+- [0905](0905/README_cn.md)
+- [0906](0906/README_cn.md)
+- [0907](0907/README_cn.md)
+- [0908](0908/README_cn.md)
+- [0909](0909/README_cn.md)
+- [0910](0910/README_cn.md)
+- [0911](0911/README_cn.md)
+- [0912](0912/README_cn.md)
+- [0913](0913/README_cn.md)
+- [0914](0914/README_cn.md)
+- [0915](0915/README_cn.md)
+- [0916](0916/README_cn.md)
+- [0917](0917/README_cn.md)
+- [0918](0918/README_cn.md)
+- [0920](0920/README_cn.md)
+- [0921](0921/README_cn.md)
+- [0922](0922/README_cn.md)
+- [0923](0923/README_cn.md)
+- [0924](0924/README_cn.md)
+- [0925](0925/README_cn.md)
+- [0926](0926/README_cn.md)
+- [0927](0927/README_cn.md)
+- [0928](0928/README_cn.md)
+- [0929](0929)
+- [0930](0930/README_cn.md)
+
+[原址／现址／哈希清单](../maintenance_20261019/manifest.json) · [整理说明](../maintenance_20261019/README_cn.md)。需要核对冻结哈希时，请使用清单中的`source_archive`原字节，不用改过导航链接的阅读副本。

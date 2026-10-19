@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-18T05:55:23.277974+00:00",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/groups_D.json",
+      "sha256": "3a16291d38acb92270c921507b1023dbce8bae986bde18cfcc3e9b760f032588",
+      "bytes": 331121
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/edges_D.csv",
+      "sha256": "006d028e27d4d9ac40d81c24ba68f871c6c8eadbbbf1520e76959dba1bc5b3a0",
+      "bytes": 1887615
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json",
+      "sha256": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35",
+      "bytes": 21834
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json",
+      "sha256": "b77072420e07f1581df143522e18009354f181736787deafcf0c527d7bed0c9e",
+      "bytes": 1863
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/manifest.json",
+      "sha256": "4e9b4ba51b3568d694c5cfc423736b20d763488756042befae80dd86d6848919",
+      "bytes": 1145
+    }
+  ],
+  "model_checkpoint_sha256_from_registry_and_cache_binding": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+  "fresh_complete_checkpoint_hash_this_turn": false,
+  "cache_z_definition_source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/batchtopk_a18.py:246-255",
+  "shared_z": true,
+  "same_structure_raw_hidden_located": false,
+  "no_new_model_forward": true
+}

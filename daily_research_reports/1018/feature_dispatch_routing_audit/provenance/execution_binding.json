@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-18T14:42:32Z",
+  "new_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z",
+  "source_cache_asset": "representation_crosscoder_frequency_interval_moe_20261018t103820z",
+  "frozen_parent_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z",
+  "rules": {
+    "A": "fixed_routes[20261018][A], equality with seed20261019 checked",
+    "B1": "fixed_routes[20261018][B]",
+    "B2": "fixed_routes[20261019][B]"
+  },
+  "pool_size": 9615,
+  "low_ids_source": "cache/grouping.json:low_ids,964",
+  "common_ids_source": "cache/grouping.json:high_ids,962; original TRAIN q90 definition, NOT p>=0.5 fallback",
+  "C_members_per_A_group": [
+    600,
+    183,
+    124,
+    34,
+    7,
+    3,
+    2,
+    9
+  ],
+  "source_mask": "original valid prediction positions; no filtering",
+  "case_selection": "TRAIN-only original low, n>=30/context>=5; if all a_owner equal select three distinct IDs by contexts descending then ID ascending",
+  "case_seed": 20261018,
+  "conflict_search": "only three frozen TRAIN case features versus reliable pool; top3 cross-owner overlap/(n_i+n_j) per rule, ties feature ID; freeze before EVAL",
+  "coverage_tau": "No numeric target supplied; report necessary bound as conditional statement, do not invent a pass/fail tau",
+  "counterfactual": "Only C score terms zero; original group denominators, feature values, input, labels, hash/ties unchanged; virtual routes not deployment modification",
+  "matched_ablation_control": "reuse if already suitable; no new large matching search; explicitly report impossibility when A groups fully occupied by C",
+  "table_storage": "Full low-target x C results retained in machine NPZ plus compressed CSV; no targets removed; CSV previews explicitly labeled",
+  "bootstrap": "200 context-block resamples, seed20261018, descriptive only, selected aggregate metrics; not document independence",
+  "authorization": "Current user authorizes supplied CPU diagnosis, formal placement and Daily curation; no training/job/GPU/commit/push",
+  "scientific_interpretation": "AI recommendation pending researcher judgment, no question closure"
+}

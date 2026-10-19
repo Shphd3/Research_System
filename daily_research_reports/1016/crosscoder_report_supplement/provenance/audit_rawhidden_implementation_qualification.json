@@ -1,0 +1,17 @@
+{
+  "status": "PASS_RAW_HIDDEN_DEFINITION_AND_SYNTHETIC_IMPLEMENTATION",
+  "processing_agent": "Codex /root/spectrum_audit",
+  "script": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/raw_hidden.py",
+  "script_sha256": "017b380e8bf5ff8c34ce09757f8fe06840391cb11314e71033320f2c8c8ee68d",
+  "frozen_config_sha256": "495fc39dffff219cc2396db82090792f9b90ce9f3bad5c4ad0e05fb467c3718c",
+  "no_empirical_raw_hidden_spectrum_read": true,
+  "synthetic_rawH_direct_cov_vs_rowGram_max_abs": 1.0658141036401503e-14,
+  "constant_H_total_variance_zero_ratio_NA": true,
+  "input_not_mutated": true,
+  "sample_without_replacement": true,
+  "sample_independent_of_member_order": true,
+  "source_raw_cache_aligned_CSR_confirmed": true,
+  "source_scope": "Existing adapter EVAL, original CrossCoder TRAIN file local-shard_2_of_10_shard_00000247; not original structure V",
+  "method_boundary": "Different group-hit selected input sets; same-frequency group is not original phi relation group. Overlapping positions and contexts make group spectra correlated. N128 centered rank theoretical<=127 not model capacity. Hash priorities fixed deterministic pseudorandom, not a claim of independent documents or strict IID inference.",
+  "numerical_boundary": "128th row-Gram eigenvalue is theoretical null from centering; tiny FP residual must not be interpreted as a true direction."
+}

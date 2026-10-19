@@ -1,456 +1,921 @@
 {
+  "revision_id": "visual_revision_20261014T025700Z",
+  "primary_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z",
   "files": [
     {
       "relative_path": "README_cn.md",
-      "bytes": 1386,
-      "sha256": "18ac8f18ca1b629736f4df85cd5ac34c365e917fadabb3f532c0bfcc30ea9ab8",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/README_cn.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 4894,
+      "sha256": "9bf9a75e27f6fa57765303868d75d90bf9fbf4b1273b1a097aa90f56ba5fed06",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/parent_README_cn.md_after.md",
+      "scope": "navigation only: link expanded graph package"
     },
     {
       "relative_path": "code/analyze.py",
       "bytes": 26519,
       "sha256": "e1f42998860e69a99f34e1a9b4195b9acfad17de27e6f0eddc6846f4ea21dca0",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/analyze.py",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "code/finalize.py",
       "bytes": 28615,
       "sha256": "98d3aa43b67a7b116906b0864c1ca23b82eabcc9f38d5a0620bc010e179c7d54",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/finalize.py",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "code/fix_h0_layout.py",
+      "bytes": 2476,
+      "sha256": "829bfb7a78ec74e0739776794c09fff98f1024529548c64658f9345b415e9706",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/code/fix_h0_layout.py",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "code/render.py",
       "bytes": 8149,
       "sha256": "5480df63b2d014b67ee49a584d2007d85e601c1ef3c36b55fd9b00e1b4b0c2f3",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/render.py",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "code/render_initial.py",
       "bytes": 6208,
       "sha256": "e3bb7f9cc195fb67c8b6ddf058326d950fcf9e6024db686a83ae95215e10dd01",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/render_initial.py",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "code/revise_figures.py",
+      "bytes": 20677,
+      "sha256": "e8426f2ab6211b5c56b5a2847ebd9c0f797bc10ddec89ed3f2be691b78f54e48",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/code/revise_figures.py",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "code/rewrite_report.py",
+      "bytes": 27999,
+      "sha256": "7cb819017b57aa19690f9d8882e0d38b4c691e79b443787bbe9eaf7f2c4edfb1",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/code/rewrite_report.py",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "code/run.sh",
       "bytes": 510,
       "sha256": "4eeb2036936e2faad277e2d9a37f3ec383f6f3de4d1337dee408eb088f05ae56",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/run.sh",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "code/validate_delivery.py",
       "bytes": 3968,
       "sha256": "779a7478366e494ac47f7a2f3dc7c4463a2c9eb796a917e1fbdaa5186afcd2ab",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/validate_delivery.py",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "code/validate_revision.py",
+      "bytes": 10687,
+      "sha256": "07d6de5257f68a0f6fa9be481928d3c24add02ae5225cd437d7ce9bd6b9994bf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/code/validate_revision.py",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "code/watchdog.py",
       "bytes": 2265,
       "sha256": "c814bfd149a8959164041a61920cbe9edf38dc9e64b1ce5b263c427fbe560da7",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/watchdog.py",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "completion_receipt.json",
       "bytes": 1680,
       "sha256": "4c0fa72601503fa5bb349b4bac2bb9e35ebbd03f36d6877c01369e0d5bd759af",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/completion_receipt.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "derived_geometry.npz",
       "bytes": 4738016,
       "sha256": "5a197371680c6913491dcb9b009f277e53a5936ec536e28940c06ebc5ecb3cb4",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/derived_geometry.npz",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "detailed_cn.md",
-      "bytes": 20585,
-      "sha256": "6bf711ad28cf9132149c94835286e19d90360e645f5f943c7ca47e37d10a5e9b",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/detailed_cn.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 28094,
+      "sha256": "4aa523443e25749d2de345663a43352caf5358cd79df3613d4219ffded880b01",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/detailed_cn.md",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/README_cn.md",
+      "bytes": 13527,
+      "sha256": "c91e6b4ccf9ce62611e077540a132bd286281f518f5e0fd40c47a82d61250e98",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/README_cn.md",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/code/deliver_expanded_graph.py",
+      "bytes": 15244,
+      "sha256": "f448d3740292f1d0edd591b718d0a044bac7331eba70d0cd2959f67bdf2f128c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/code/deliver_expanded_graph.py",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/code/draw_expanded_graph.py",
+      "bytes": 17919,
+      "sha256": "ef845fb2e6899148fdb0cead738e855dcd24c574cd6e855624f64aebaa3db082",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/code/draw_expanded_graph.py",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/code/fix_graph_layout.py",
+      "bytes": 2370,
+      "sha256": "2e2f520080621169244a1158ff003a84fc76d03b818ea13319c8a323a26239fa",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/code/fix_graph_layout.py",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/code/retitle_expanded_main.py",
+      "bytes": 3553,
+      "sha256": "75b3700131c20fe327f96448a97e3bf2bcb895b7c0603350f37afb7eefa24965",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/title_revision_20261014T033332Z/retitle_expanded_main.py",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/engineering_note.json",
+      "bytes": 202,
+      "sha256": "87403a5b49c3571a030072103342be7ec807007c4739043bee84d078bcc33605",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/engineering_note.json",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/facets_index.json",
+      "bytes": 5648,
+      "sha256": "ef141edd489860d04c718b5faf8809f98386762615d0e7bcb6c10599d20baabb",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/facets_index.json",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.pdf",
+      "bytes": 117789,
+      "sha256": "ea10fc2d9b772614ab288175bc9cfae059fbcf3fc224f6b6169109e7a91bc1f8",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.pdf",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.png",
+      "bytes": 7822316,
+      "sha256": "92b6c53a5bc2bfe124f19cf1590fa2abb5c2b7698db5991264d7fa9f9e16c563",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.png",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.svg",
+      "bytes": 1084069,
+      "sha256": "2f8775a3102f52679c10f4dac930d5025871c30c1efb74d5178085199907a4cf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.svg",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_expanded_connections_facets.pdf",
+      "bytes": 227104,
+      "sha256": "14de6d3bc2b2a02bdd0303acfee44e2ecd03d07151b334b02fedcf299d882c1e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections_facets.pdf",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.pdf",
+      "bytes": 35278,
+      "sha256": "9030bc45a759c3593c23231639020ac7c6fa98697c1106c7a878b836b5e20be2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.pdf",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.png",
+      "bytes": 298098,
+      "sha256": "9d62968bf4969505e243a18b4b416af91fcb3e451fffdedd98fe98cbe1be396b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.png",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.svg",
+      "bytes": 1474838,
+      "sha256": "309c7180ab512ac238862ea7545c05b7a046afa96a2f451328306c9b8456dc7e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.svg",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.pdf",
+      "bytes": 122357,
+      "sha256": "c8cd0dadb7cab9ef36038c46d5a61d61e4d2fe83f0632fa396d79675c1b6fd09",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.pdf",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.png",
+      "bytes": 614589,
+      "sha256": "0c397dd235f1061f4bc2c6d432dff7dc2076987859e31a9a8ba06bd5e14d27a3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.png",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.svg",
+      "bytes": 441685,
+      "sha256": "95341278de22d3676e9e05036c9166b41a85b9c94e7128d08f00eb1b4bf31069",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.svg",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.pdf",
+      "bytes": 144687,
+      "sha256": "cf0d8e8e8c0a9cc371623b48c3c00559aa8ef3f8031cf9db552d281ff2610ba8",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.pdf",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.png",
+      "bytes": 785174,
+      "sha256": "b8c838d6b3d7af63885760d0340b8ba75c37a2c7ea9377a9549c416d549f4514",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.png",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.svg",
+      "bytes": 552628,
+      "sha256": "8711a2ca4b928e62315631d0ab91f176c5f583e4b3c1c5ee0681230ad1cff8de",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.svg",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.pdf",
+      "bytes": 147158,
+      "sha256": "f39779ab97c4a537077d5a84fde87ca2f201b3f9f8d0f833c1540ad14882cb76",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.pdf",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.png",
+      "bytes": 782765,
+      "sha256": "238ee4067ac38c0054fb01bf241b2ef66c3907ee3e535adfea6cca5150d6870a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.png",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.svg",
+      "bytes": 552300,
+      "sha256": "d06827e4f65fa9bde9f5faf080a37fa3a88c31739483174a60d0af3fc640190b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.svg",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/provenance/title_revision_20261014T033332Z.json",
+      "bytes": 2741,
+      "sha256": "4836fa229476a2d1b94c1fcd7f6680a1459bdc5dae524dbf9f1db774acc4a836",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/title_revision_20261014T033332Z/record.json",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/reading_guide_cn.md",
+      "bytes": 7687,
+      "sha256": "82e3b4239280148edf9c763f452b0d9f5ec251bc90f9379e6b8f218bcb836d57",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/reading_guide_cn.md",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/receipt.json",
+      "bytes": 4985,
+      "sha256": "0009597d65ef04e69d8f3188bcafec62be8a8e5bd95f914cc8f0fb305d47ff98",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/receipt.json",
+      "scope": "main title/footer revision and external reading guide; node/edge data unchanged"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/selection_frozen_before_p.json",
+      "bytes": 12092,
+      "sha256": "a5089b2a78f2226c4690c01cf00187500e1a2bb1a70810e0450fd12ea2a06e43",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/selection_frozen_before_p.json",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/selection_rules_frozen.json",
+      "bytes": 2256,
+      "sha256": "74496be3d61c219488c2cbea9592ff15f4f3c872942183f4e06adc4eacf54b48",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/selection_rules_frozen.json",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/tables/display_frequency_coverage.csv",
+      "bytes": 1275,
+      "sha256": "b39a135101cae077dacbe42fb55625436e76ba1ee10dd0de0295bff70a3cd315",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/display_frequency_coverage.csv",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/tables/expanded_decoder_p.csv",
+      "bytes": 357921,
+      "sha256": "1cb86ed08bef859029282ea5275671fce37d534410f136b7964dbb9dc9b3a69b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_decoder_p.csv",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/tables/expanded_edges.csv",
+      "bytes": 246471,
+      "sha256": "b5e9d68de2e3e95e2b8c000bdd1b9215c34b7f0e347188673b18c6fef4f81a48",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_edges.csv",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/tables/expanded_nodes.csv",
+      "bytes": 37798,
+      "sha256": "4896efb110a460e6f1f637da4728626fa3263cca522a48b76e572e56b5400a15",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_nodes.csv",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
+    },
+    {
+      "relative_path": "expanded_graph_20261014T032050Z/tables/overview_counts.csv",
+      "bytes": 132,
+      "sha256": "62beb2261af271f2c123b0c8b2e3ca549d12c2d416d994b321e6c1bbe6d482c3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/overview_counts.csv",
+      "scope": "saved-V-graph visualization; frozen320-node selection; no graph/threshold change"
     },
     {
       "relative_path": "figures/figure1_anchor_3461.pdf",
-      "bytes": 22587,
-      "sha256": "92e4647ace684e0508168a6c362d4f3fb79f606b87fee86a3d973b67a365751b",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461.pdf",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 40293,
+      "sha256": "2dac7c560e1416bee1a7161d1d60f70301e0e191a57629bb9733dabd5c6779b5",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_3461.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_3461.png",
-      "bytes": 598949,
-      "sha256": "017448c268df1a1157b17c35e39c26e1c863f33567af0eba45c21525cfc75615",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461.png",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 686210,
+      "sha256": "59106f220daef802340ecdb674133f1a61b9f528d2517e6d355c9813ebbc67bc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_3461.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_3461.svg",
-      "bytes": 54031,
-      "sha256": "639a0888dfb3a0bc29c46c250a7089dd0e836b4e663643873262c12a6c0d58d9",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461.svg",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 194759,
+      "sha256": "5f065caf5e0341bef1a71d4f428eee0fd30d2b24e56bd7fede4d176f3ed8c20d",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_3461.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_3461_details.pdf",
-      "bytes": 25421,
-      "sha256": "1c7d350bb0f9d098040a844bc49fe43cee53f51618ca258f98d9d65a5acbdd7e",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461_details.pdf",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 36947,
+      "sha256": "c1137b9966fbf72e58c2720edfb20a86695431e8c0c69b54d5c1883d7ec9ccd2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_3461_details.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_3461_details.png",
-      "bytes": 851831,
-      "sha256": "ffbb50baff3bb75f9a143221b986f7f6e37d55069edef27a5043e32953ab2302",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461_details.png",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 1010292,
+      "sha256": "1b22953df8938e1b0321c0c05e5f2f70cdad6ccbcc3f556b783f7b8da4ab3e5a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_3461_details.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_3461_details.svg",
-      "bytes": 90656,
-      "sha256": "63a0d30a04400393252abd39b9a5b4f0e9da0dcba810cd4657246dd3a90d39d4",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_3461_details.svg",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 429670,
+      "sha256": "ade62ad72b81e8085a258b8571cca684ffd527eeb7c321fe8d4a002f5c8d76ce",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_3461_details.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_937.pdf",
-      "bytes": 21108,
-      "sha256": "925251fa0183d15ca319f2e254ae3c954c6e9337eebab3b8512ecfde50c1b6b0",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937.pdf",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 38774,
+      "sha256": "69382a38d2b2f6a379666b373a3c09e0851c1d4aa2264d68f2edc2ef77517f78",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_937.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_937.png",
-      "bytes": 481338,
-      "sha256": "678f2993b4dbdc2665590ceeb73024cbd7bdc9975cb42ac67dbd6e1d68454dca",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937.png",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 569532,
+      "sha256": "a9add98968cb644e8c1fb3c49331c6012100368f95f77b3992704181ff336bd7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_937.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_937.svg",
-      "bytes": 45009,
-      "sha256": "9067eb62df549558b65134d988c42d1f80c5929889bf73e685beefcfb98f5e83",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937.svg",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 176324,
+      "sha256": "c88f605360bf9f1deb06bba0bf8e10e32153069a6bd680db0ee2e392c1b9f1be",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_937.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_937_details.pdf",
-      "bytes": 23523,
-      "sha256": "cd4e7f0ed632e35697cf9ad8ae05e8717cf1d6c47e0a4fa27af3a958b3b477a4",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937_details.pdf",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 35253,
+      "sha256": "1bbeeae0883dd48fcf7823047a9900dec2aa65b8d8def98f4010a285b41cda75",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_937_details.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_937_details.png",
-      "bytes": 696953,
-      "sha256": "8dabe2b8644a59220c0a885b579b5959dafe9121c0795d8b2fb18f52309defda",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937_details.png",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 819138,
+      "sha256": "2a2f4508234bc55c1fdd56cb7882e6ef8a90240b3dce96548e3be6e9cbeaf104",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_937_details.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure1_anchor_937_details.svg",
-      "bytes": 75449,
-      "sha256": "8fa4f5405820ed80d4235bfe068b19acff1259a9021bbd5734791d61eba2eee2",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure1_anchor_937_details.svg",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 364010,
+      "sha256": "7bfe166aa09eaa31970ceabce079d4ed130ec93d95a19afdf6eef494829a1051",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure1_anchor_937_details.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure2_decoder_distribution.pdf",
-      "bytes": 79449,
-      "sha256": "eeedd2048d2b27f486cee55cfecc5ac8dda0001b45c555186beb05a8361942c9",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure2_decoder_distribution.pdf",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 93412,
+      "sha256": "bffa856b558bf64e5f0defecac7cab4e2c07df84a63d2b5dfdaa7bb20dc6454e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure2_decoder_distribution.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure2_decoder_distribution.png",
-      "bytes": 558930,
-      "sha256": "3b7466a538e5da1ca3999aca4bd83d8db5e95c57fb5cf8740a5daba5e96d0005",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure2_decoder_distribution.png",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 497132,
+      "sha256": "cd3603bcea74c86838d96c1cb3c7f79c091396fea24f0e2898eec1de59cd11ff",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure2_decoder_distribution.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure2_decoder_distribution.svg",
-      "bytes": 138124,
-      "sha256": "d8abc6ce5bb8b5dee3fb5f767d1ff6b5ff2a9f47c905344815cfb275613c5db3",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure2_decoder_distribution.svg",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 288352,
+      "sha256": "75e7b06766e381bd00bc554dc7f4df10672ec947c67f8e77e08b6d41946e2989",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure2_decoder_distribution.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure3_all_features.pdf",
-      "bytes": 102622,
-      "sha256": "6ff84ece8e16e658eb9091b583973e86b3c19b89d43b455c0df7b4c33c541b39",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure3_all_features.pdf",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 150297,
+      "sha256": "9581cb971c2bed1fca604b7f9f114daf7544af4b6deaf8a1054d4cf7be1c8cf9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure3_all_features.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure3_all_features.png",
-      "bytes": 308943,
-      "sha256": "c990393efe48f0341731964a5633a4eddc72f4bdc0ce465e7ceb4368a43e5e3c",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure3_all_features.png",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 416998,
+      "sha256": "20ff9f08ced05e310b970bae31c2a377da5d0dab17773b766dabe4d657ad0c16",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure3_all_features.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures/figure3_all_features.svg",
-      "bytes": 209378,
-      "sha256": "5caa183139d844ebee62eab964492084ce16a4584eebdefaf70805f1c4d61126",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures/figure3_all_features.svg",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 376869,
+      "sha256": "e72ec46ec83fd244002af4507c6c95c3216f2af7e441e2c4ab652002eb6b26eb",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure3_all_features.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_raw.pdf",
+      "bytes": 50886,
+      "sha256": "150d0b624af4940a7b850d6909bb0b77730ec871821c0da57ce544c27a9b5424",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure4_mean_p_raw.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_raw.png",
+      "bytes": 155582,
+      "sha256": "eb25e21d63b2bd494f796bfa38daf43a20b2ec0e0bf361e2df1afe534a603c8c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure4_mean_p_raw.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_raw.svg",
+      "bytes": 113110,
+      "sha256": "7ed19cc10357d19609b58c93b9f90292adfb0321a85bb81e70ab02bebf5b14cc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure4_mean_p_raw.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_train.pdf",
+      "bytes": 49256,
+      "sha256": "499f100c652378c28f08ad0417d5f9822b7bf432e23df93af2f0870349f1283c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure4_mean_p_train.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_train.png",
+      "bytes": 156746,
+      "sha256": "2b776a688acda4af690b91e689cd1427ccccf61bf1dc4367bfea4e0c7fff2b6f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure4_mean_p_train.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_train.svg",
+      "bytes": 111735,
+      "sha256": "4ee0c27ce8ed5cdbe29a71e648e42ed7dd1b56c5b311dc9cb57c9f302c73621e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure4_mean_p_train.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure5_peak_composition_posthoc.pdf",
+      "bytes": 37256,
+      "sha256": "ab308f4808d864e6c7d9c27d4fcc4defcaa0ceaaf297a3169425a19080a02c60",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure5_peak_composition_posthoc.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure5_peak_composition_posthoc.png",
+      "bytes": 158002,
+      "sha256": "50d04ed2cfac447607f82185d52e6503c07832c70eb1ca24afdd07df4b0aabf9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure5_peak_composition_posthoc.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure5_peak_composition_posthoc.svg",
+      "bytes": 122114,
+      "sha256": "3040afacdc5a01fc2dadb41dc6ba3b0f398ca24988cf361f5803de38e6e49e43",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure5_peak_composition_posthoc.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure6_h0_individual.pdf",
+      "bytes": 59091,
+      "sha256": "43578497fbd084f8fb132c4d1defb7f180e9e3a32b2cd336efaa8caa8d2bae35",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure6_h0_individual.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure6_h0_individual.png",
+      "bytes": 514504,
+      "sha256": "b1c3986c88eb55ad5addb1156c9ab42354a3355a184caf25a2e30babf68200a9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure6_h0_individual.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure6_h0_individual.svg",
+      "bytes": 337761,
+      "sha256": "2e59afae5c3eed1407480dd1bf6aac0cb28236c858bd393fcf9cec12bb655dcb",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure6_h0_individual.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure7_h5_individual_curves.pdf",
+      "bytes": 29188,
+      "sha256": "86d9dadb3f472806e7b2eb929b360a9746b55377f515e2cabd55f1bcb742ba3b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure7_h5_individual_curves.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure7_h5_individual_curves.png",
+      "bytes": 136814,
+      "sha256": "8b3a0029ef179ffa69d8769a68488b85d6f8d7b81d9b3f3bc6d5eb4f0eae7cf6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure7_h5_individual_curves.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure7_h5_individual_curves.svg",
+      "bytes": 104618,
+      "sha256": "2cb24f26e120de7b0ec4508011dd6d77594d72ce7abd3f1d01360cb1af7fe7c2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure7_h5_individual_curves.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure8_frequency_all25.pdf",
+      "bytes": 54897,
+      "sha256": "ded02b9136cd87179d8e9c8fb4ebc5e62d5a9fe9a7c35f11a6fad72966721ff7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure8_frequency_all25.pdf",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure8_frequency_all25.png",
+      "bytes": 322630,
+      "sha256": "9b04ae4986f0e3f1d75f8cdb9185c47d652d3770a8c953954bb458ab434427c6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure8_frequency_all25.png",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "figures/figure8_frequency_all25.svg",
+      "bytes": 175627,
+      "sha256": "31efa071db03083475e6e2e524cca097e27975d7aeac3bc690947e854c1aa4e0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/figures/figure8_frequency_all25.svg",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "figures_cn.md",
-      "bytes": 2678,
-      "sha256": "68ddee3346b938ef0a276f8ca1d624a912d8fdd17a0504431b47d6b01f519db1",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figures_cn.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 12710,
+      "sha256": "256b3f9708790e619449e072b3f86ccfa8a2a47fa5ab77a8be403a1df29d601c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/parent_figures_cn.md_after.md",
+      "scope": "navigation only: link expanded graph package"
     },
     {
       "relative_path": "provenance/analysis_state.json",
       "bytes": 561,
       "sha256": "a3c8a85ac2fb2bc90058342b50c37210bd686eb4bebeee3634717ad2a6349da2",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/analysis_state.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/cache_scan_receipt.json",
       "bytes": 224078,
       "sha256": "6930ea75ac1cf2c434eaea582a9a28d2c8cdd032b26a2a96da8ed0f5328f5ca2",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/cache_scan_receipt.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/compute_completion_receipt.json",
       "bytes": 430,
       "sha256": "909cfa41e28fa8b8dfad18abf00c6ca0446e0ae264208ca2a854729297f4e4b4",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/compute_completion_receipt.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/correctness.json",
       "bytes": 222,
       "sha256": "db6e88f81efe527f5232016f1a23b7afad628ca69614b2d644b9ae6757ac1ba3",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/correctness.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/delivery_checks.json",
       "bytes": 1135,
       "sha256": "1d4c461c35259d13fbcc3518d12f8b182b7605bf7b28d1f7ad18ecc405f2672f",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/delivery_checks.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/environment.json",
       "bytes": 654,
       "sha256": "9b90bc15e9713bd0b05f1a289f69e57c426cfc7ed4ef15352d9a8c5fe6e3b26a",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/environment.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/execution_certificate.md",
       "bytes": 1288,
       "sha256": "3158ae43adde5985842a19096c7628d4cf46a2075b2005f4ef3e48a5d720ee7f",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/execution_certificate.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/execution_record.json",
       "bytes": 2841,
       "sha256": "c19ae33c16a6b7a08f549fa1280ba790b3049f73e0b047866e3d33da2284349f",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/execution_record.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/input_reuse_manifest.json",
       "bytes": 3298,
       "sha256": "139c15f6e1135a3ad4d153cfd536e99455122471f671d6b0047ee013e17ccca2",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/input_reuse_manifest.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/platform_status_terminal.json",
       "bytes": 4068,
       "sha256": "115b2d0b446660a6f301cea55ede065c240c33e0de96004f8d38522ed40fec70",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/platform_status_terminal.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/protocol_frozen.md",
       "bytes": 40358,
       "sha256": "39530a9a36eee0403a8bc3ee53ad19d3e82a5dcb18c86fa7287c1ca4cc8894fb",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/protocol_frozen.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/render_fix_receipt.json",
       "bytes": 195,
       "sha256": "5e60a57f9f6660d91cee3a4fe1c2aecc9e360170e3adc9f7d6425712b6abdf63",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/render_fix_receipt.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/render_receipt.json",
       "bytes": 529,
       "sha256": "839f54dd7f5304290cbca423daf25444f030b12dd6c1a03fe1efbcffe2336012",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/render_receipt.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/results.json",
       "bytes": 23275,
       "sha256": "9541f1b27d1f7423d0649a8d0620d8d8b392485cb4b1157b1399a9610a847d7d",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/results.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/selection_frozen_before_geometry.json",
       "bytes": 4910,
       "sha256": "c710c09b9a489bf0ee69dbd8e15b90a32a111a39da9fa962211fe5123d43f489",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/selection_frozen_before_geometry.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/text_profiles.json",
       "bytes": 18943,
       "sha256": "ced75fe80646582d4dabc942735db94f9153b26dfed63fe07a01a4353e2f948c",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_profiles.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/text_sample_selection.json",
       "bytes": 38799,
       "sha256": "656322bd86d0fd633f46c019adf93b1e6497dca5e241eab96731529b97f5014e",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_sample_selection.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "provenance/validation_retry_note.json",
       "bytes": 528,
       "sha256": "02016cf024fc19c6a14dade3d7817385f9dd50b39a6d6ee9de68a1a0092e7309",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/validation_retry_note.json",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "provenance/visual_revision_record.json",
+      "bytes": 17108,
+      "sha256": "e97f0cbd4cec24495434c19a71f4a79c504587d54bd031feecfdb74cee91b49e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/revision_record.json",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "provenance/visual_revision_scope_cn.md",
+      "bytes": 1847,
+      "sha256": "778f3d2fbbd358ea76cf467efae559bbbcede28ce64dcd286127e1b86270de92",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/visual_revision_scope_cn.md",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "summary_cn.md",
-      "bytes": 4495,
-      "sha256": "a92d2b015fd020e01ac0278fdf7169b13342d347173542e46c56a87ac2eca2d2",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/summary_cn.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 10039,
+      "sha256": "c9d5c957d60a4bf4d0f7f799ecdcc0f17f46ab01b2b6638f2564c8648fe8c9f0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/summary_cn.md",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/depth_vs_layer_summary.csv",
       "bytes": 2973,
       "sha256": "7fc72e103286a8e596d488d5f45a75ebefbab658282132f0c4282cd953e888b6",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/depth_vs_layer_summary.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/feature_layer_response.csv",
       "bytes": 75347149,
       "sha256": "0dc86baee0ad3fa243001f09d72309f0c9262614cfaf3b088935a242c8227641",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/feature_layer_response.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/figure1_nodes_display.csv",
+      "bytes": 1065,
+      "sha256": "c8f876a6c9a1715d6c453728ecbf2e4291e915c5fd2f426a2bbddd7fc98abe49",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/figure1_nodes_display.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/figure2_source.csv",
       "bytes": 13148,
       "sha256": "433714b70e0f6d626d9ea18c8b053d083270f26be569560f61b6baba3a676508",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figure2_source.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/figure3_coordinate_comparison_source.csv",
+      "bytes": 999002,
+      "sha256": "9d75824475a2c562054f564d7c2c95d2cebf8f451aba3c8e6071f58d4f8df5ac",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/figure3_coordinate_comparison_source.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/figure3_source.csv",
       "bytes": 830157,
       "sha256": "62ee76465c8d37807836f1d561a4664b2a1739ac06b44495ae55fd65d71c3d72",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figure3_source.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/frequency_bin_counts.csv",
       "bytes": 639,
       "sha256": "070bdb991c5a39eb6b3251e0c1d3da0edc932d9eb3dfa80bdad26533be83d3e3",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/frequency_bin_counts.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/frequency_comparison_25cells_source.csv",
+      "bytes": 11213,
+      "sha256": "a6ac1be0d61b6875642fe49a96f13a74b24e3bf2f04f139b0240a7ffffdf8b11",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/frequency_comparison_25cells_source.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/frequency_overlap_comparison.csv",
       "bytes": 20176,
       "sha256": "1c50b5dd04d4d75aab7725094638c57f6553ad37f1554e33da366cfb62f71e4e",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/frequency_overlap_comparison.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/graph1_edges.csv",
       "bytes": 8583,
       "sha256": "15a5edb83aeed7142deb445824d619378573515526e93ddc704fb9330aad72e8",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/graph1_edges.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/graph1_nodes.csv",
       "bytes": 1519,
       "sha256": "dce5b3ecef8600a1de01fd81fdfc477417d9e3e4a87a737c5b298b1095073548",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/graph1_nodes.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/group_mean_p_source.csv",
+      "bytes": 5883,
+      "sha256": "7efebf974e028211a347f1dbab88bf78a5b470f5c9650c23defa799cdc06dffd",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/group_mean_p_source.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/h0_individual_source.csv",
+      "bytes": 20367,
+      "sha256": "98200788f95282a9d693c55dcce45b9db513b09f118d0e87bff34096352be853",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/h0_individual_source.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/h5_curves_source.csv",
+      "bytes": 3080,
+      "sha256": "36bab557cb58573b83c782a6aa8733a35514f8757978d5a5e2c65af44865c3ae",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/h5_curves_source.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/hierarchy_counts.csv",
       "bytes": 1701,
       "sha256": "038b349c2a2f84e3302378304d18e0185ede4f161aa7e0c1c10b31ca2910082a",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_counts.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/hierarchy_mean_p.csv",
       "bytes": 5907,
       "sha256": "b2535624d6de8ec1f3fd982dd430159a371297d2989681f6240ba4841367106e",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_mean_p.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/hierarchy_members.csv",
       "bytes": 1275370,
       "sha256": "fd0047257f8f161ddbae167578777cc4f9ca8bf2baf20673a38bb970ae623904",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_members.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/peak_composition_posthoc.csv",
+      "bytes": 2081,
+      "sha256": "b177d3613eb9f59ca2fd0576c92592c56553656735375614e87cb08da3895eec",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/peak_composition_posthoc.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "tables/peak_feature_labels_posthoc.csv",
+      "bytes": 2078919,
+      "sha256": "60a72a06848c506f7e50e0a93902ba3c7ba2560c87b103b9713c5596c9433e30",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables/peak_feature_labels_posthoc.csv",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables/text_layer_amplitude.csv",
       "bytes": 257749,
       "sha256": "3f956cae1b932160bf52787fe5f370429f25cc8e0bcf252150828116e0408ad2",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_layer_amplitude.csv",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "tables_cn.md",
-      "bytes": 3614,
-      "sha256": "398e8835832e4f499cee9c566838a9439706b1eaa24a7286fd06da542fe24baf",
-      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/tables_cn.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "bytes": 6575,
+      "sha256": "1504bf554e7fdd8c76d811fb437299817b116a12917d96c8742e4ea5a8523a22",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/tables_cn.md",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "text_examples.jsonl",
       "bytes": 893261,
       "sha256": "1927be360b796d3c404387730f6d61ef21811459d52f97f6a5a5fdb652b654ac",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_examples.jsonl",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     },
     {
       "relative_path": "text_examples_cn.md",
       "bytes": 641886,
       "sha256": "3722cfabd93985034f21cd5997695cc10194fe829ce058ec23839dc1105d65b7",
       "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/text_examples_cn.md",
-      "scope": "derived figures/tables/text/provenance; no raw activation cache or checkpoint"
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
+    },
+    {
+      "relative_path": "visual_revision_receipt.json",
+      "bytes": 2047,
+      "sha256": "5790933e22c5f453dc6c6c40e87f36f8c9b934cc9e5cb6c1e4404ff74497dac8",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/visual_revision_receipt.json",
+      "scope": "derived reports/figures/tables/text/provenance; peak labels and proportions explicitly post hoc; no cache/checkpoint/font"
     }
   ],
-  "manifest_excludes_itself_and_archive_receipt": true,
-  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z",
-  "primary_inputs": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
-  "documentation_generated_by": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/code/finalize.py"
+  "prior_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/before/payload_manifest.json",
+  "old_committed_zip_unchanged": true,
+  "complete": true,
+  "supplementary_expanded_graph": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z",
+  "latest_graph_caption_revision": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/provenance/title_revision_20261014T033332Z.json"
 }

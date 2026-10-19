@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-10-16T04:14:27.943554+00:00",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum",
+  "report_root": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum",
+  "inputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/frozen_config.json",
+      "sha256": "ee0c94d86ca2e380cb5b4db17a5f6dbcdba9544f8e2517a6329d7d79cd1353f1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/phi_input_hidden_summary.json",
+      "sha256": "583e450426162e8dff1ff5fd60aec31f42fb6182c383ec2677afd6ca34883b29"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/support_only_summary.json",
+      "sha256": "ce8203c7ba089c3b1192259c622b3a0283ef6a6778486364946afff61d75c8fe"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/cache_identity_check.json",
+      "sha256": "1cbc2b68f369e2457d980f807ef228c5615576852c14e7e5138fa4030b1481f4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/plot_selection.json",
+      "sha256": "61d0b6fde267773dbf2f163f1a87dc6f216b75be5f7a7544dd7ad16377a7a5bd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/audit/result_audit.json",
+      "sha256": "20de6919ad14d22bcb08f9300efb2a8c9c8d0ec0454e0a2ad2dde691f2e55100"
+    }
+  ],
+  "source_code": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/phi_input_hidden.py",
+      "sha256": "8b6d59d4557d977d7bb12613c4ab1bcb040d07c7021c6e24c61f7a67a2dec757"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/plot_phi_input_hidden.py",
+      "sha256": "ce51b67cc87c27c357bc2453d7c1c8c29e208c69dacfcbbdfd97b192a8d9fcb3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/phi_context_diagnostic.py",
+      "sha256": "e596bb5ccb12ab89967f4e2eae0165ea531b320e1f622ff5b08192bdfe120659"
+    }
+  ],
+  "selected_evidence_payloads": "four PNG/PDF pairs; three small derived NPZ containing spectra and sampling IDs; CSV tables, no hidden matrices or model weights",
+  "new_training_updates": 0,
+  "new_model_forwards": 0,
+  "graph_changes": 0,
+  "scientific_approval": "Unknown",
+  "question_closure": "Unknown"
+}

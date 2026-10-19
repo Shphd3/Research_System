@@ -1,0 +1,291 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-10-16T04:00:42.293264+00:00",
+  "processing_agent": "Codex /root/raw_hidden_spectrum",
+  "definition_sha256": "ee0c94d86ca2e380cb5b4db17a5f6dbcdba9544f8e2517a6329d7d79cd1353f1",
+  "sample_N_per_group": 128,
+  "hidden_dimension": 1024,
+  "all_group_count": 186,
+  "main_common_support_groups": 145,
+  "main_common_estimable_original_and_residual_groups": 145,
+  "RN_common_support_groups": 161,
+  "RN_common_estimable_groups": 161,
+  "conditions": {
+    "R": {
+      "sufficient_groups": 176,
+      "insufficient_groups": 10,
+      "zero_variance_original_groups": 0,
+      "zero_variance_residual_groups": 0
+    },
+    "F": {
+      "sufficient_groups": 168,
+      "insufficient_groups": 18,
+      "zero_variance_original_groups": 0,
+      "zero_variance_residual_groups": 0
+    },
+    "N": {
+      "sufficient_groups": 171,
+      "insufficient_groups": 15,
+      "zero_variance_original_groups": 0,
+      "zero_variance_residual_groups": 0
+    }
+  },
+  "coverage": {
+    "main_RFN": {
+      "groups": 145,
+      "total_groups": 186,
+      "group_fraction": 0.7795698924731183,
+      "members": 8814,
+      "total_members": 13807,
+      "member_fraction": 0.6383718403708264
+    },
+    "supplement_RN": {
+      "groups": 161,
+      "total_groups": 186,
+      "group_fraction": 0.8655913978494624,
+      "members": 8846,
+      "total_members": 13807,
+      "member_fraction": 0.6406895053233866
+    },
+    "all_supported_per_condition": {
+      "R": {
+        "groups": 176,
+        "total_groups": 186,
+        "group_fraction": 0.946236559139785,
+        "members": 13728,
+        "total_members": 13807,
+        "member_fraction": 0.9942782646483668
+      },
+      "F": {
+        "groups": 168,
+        "total_groups": 186,
+        "group_fraction": 0.9032258064516129,
+        "members": 13771,
+        "total_members": 13807,
+        "member_fraction": 0.9973926269283697
+      },
+      "N": {
+        "groups": 171,
+        "total_groups": 186,
+        "group_fraction": 0.9193548387096774,
+        "members": 8925,
+        "total_members": 13807,
+        "member_fraction": 0.6464112406750199
+      }
+    }
+  },
+  "missing_support_by_group_size": {
+    "R": {
+      "small": {
+        "all_groups_in_stratum": 94,
+        "missing_groups": 7,
+        "missing_members": 14,
+        "group_ids": [
+          122,
+          131,
+          148,
+          153,
+          162,
+          170,
+          173
+        ]
+      },
+      "medium": {
+        "all_groups_in_stratum": 23,
+        "missing_groups": 1,
+        "missing_members": 11,
+        "group_ids": [
+          80
+        ]
+      },
+      "large": {
+        "all_groups_in_stratum": 69,
+        "missing_groups": 2,
+        "missing_members": 54,
+        "group_ids": [
+          65,
+          67
+        ]
+      }
+    },
+    "F": {
+      "small": {
+        "all_groups_in_stratum": 94,
+        "missing_groups": 18,
+        "missing_members": 36,
+        "group_ids": [
+          117,
+          118,
+          125,
+          157,
+          163,
+          164,
+          170,
+          173,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185
+        ]
+      },
+      "medium": {
+        "all_groups_in_stratum": 23,
+        "missing_groups": 0,
+        "missing_members": 0,
+        "group_ids": []
+      },
+      "large": {
+        "all_groups_in_stratum": 69,
+        "missing_groups": 0,
+        "missing_members": 0,
+        "group_ids": []
+      }
+    },
+    "N": {
+      "small": {
+        "all_groups_in_stratum": 94,
+        "missing_groups": 2,
+        "missing_members": 6,
+        "group_ids": [
+          93,
+          97
+        ]
+      },
+      "medium": {
+        "all_groups_in_stratum": 23,
+        "missing_groups": 0,
+        "missing_members": 0,
+        "group_ids": []
+      },
+      "large": {
+        "all_groups_in_stratum": 69,
+        "missing_groups": 13,
+        "missing_members": 4876,
+        "group_ids": [
+          0,
+          1,
+          3,
+          4,
+          10,
+          12,
+          14,
+          15,
+          17,
+          18,
+          20,
+          26,
+          41
+        ]
+      }
+    }
+  },
+  "main_population": {
+    "R": {
+      "population": "main_RFN",
+      "stratum": "all",
+      "condition": "R",
+      "groups": 145,
+      "first_share_original_mean": 0.12532352886112688,
+      "first_share_original_median": 0.10664987847523145,
+      "first_share_residual_mean": 0.08574929238948399,
+      "first_share_residual_median": 0.07808207056138161,
+      "original_trace_mean": 134909.14222431197,
+      "remaining_trace_mean": 116139.86765845952,
+      "mean_remaining_trace_fraction": 0.8746764711388731,
+      "mean_group_member_log10p_D": -2.2047741533748986,
+      "median_sampled_contexts": 106.0,
+      "median_largest_context_fraction": 0.0234375,
+      "maximum_largest_context_fraction": 0.3203125
+    },
+    "F": {
+      "population": "main_RFN",
+      "stratum": "all",
+      "condition": "F",
+      "groups": 145,
+      "first_share_original_mean": 0.13143935570291412,
+      "first_share_original_median": 0.11269196858930082,
+      "first_share_residual_mean": 0.09089649389654551,
+      "first_share_residual_median": 0.08083141874377833,
+      "original_trace_mean": 144313.41197380924,
+      "remaining_trace_mean": 124375.37978193,
+      "mean_remaining_trace_fraction": 0.868560644297086,
+      "mean_group_member_log10p_D": -1.173156650902503,
+      "median_sampled_contexts": 105.0,
+      "median_largest_context_fraction": 0.03125,
+      "maximum_largest_context_fraction": 0.078125
+    },
+    "N": {
+      "population": "main_RFN",
+      "stratum": "all",
+      "condition": "N",
+      "groups": 145,
+      "first_share_original_mean": 0.14050205144488295,
+      "first_share_original_median": 0.12150688379407015,
+      "first_share_residual_mean": 0.0934018449901143,
+      "first_share_residual_median": 0.09154060731883244,
+      "original_trace_mean": 149138.02362525093,
+      "remaining_trace_mean": 127005.78167252478,
+      "mean_remaining_trace_fraction": 0.859497948555117,
+      "mean_group_member_log10p_D": -2.225348073967914,
+      "median_sampled_contexts": 103.0,
+      "median_largest_context_fraction": 0.03125,
+      "maximum_largest_context_fraction": 0.140625
+    }
+  },
+  "RN_supplement": {
+    "R": {
+      "population": "supplement_RN",
+      "stratum": "all",
+      "condition": "R",
+      "groups": 161,
+      "first_share_original_mean": 0.12294832343382445,
+      "first_share_original_median": 0.10664987847523145,
+      "first_share_residual_mean": 0.08542893533367084,
+      "first_share_residual_median": 0.07808207056138161,
+      "original_trace_mean": 133955.93927892635,
+      "remaining_trace_mean": 115781.44546204126,
+      "mean_remaining_trace_fraction": 0.8770516765661757,
+      "mean_group_member_log10p_D": -2.191208986950146,
+      "median_sampled_contexts": 106.0,
+      "median_largest_context_fraction": 0.0234375,
+      "maximum_largest_context_fraction": 0.3203125
+    },
+    "N": {
+      "population": "supplement_RN",
+      "stratum": "all",
+      "condition": "N",
+      "groups": 161,
+      "first_share_original_mean": 0.14246849943470072,
+      "first_share_original_median": 0.12200143872011052,
+      "first_share_residual_mean": 0.09432263425538495,
+      "first_share_residual_median": 0.0907797762939632,
+      "original_trace_mean": 149319.47659346322,
+      "remaining_trace_mean": 126660.19722908124,
+      "mean_remaining_trace_fraction": 0.8575315005652993,
+      "mean_group_member_log10p_D": -2.2072203225299942,
+      "median_sampled_contexts": 104.0,
+      "median_largest_context_fraction": 0.03125,
+      "maximum_largest_context_fraction": 0.1640625
+    }
+  },
+  "files": {
+    "F_input_hidden_spectra.npz": {
+      "bytes": 808810,
+      "sha256": "276c8fb9cdfa051a43ef4ab75840bc956c0ff463773c49bd7049508a16053006"
+    },
+    "N_input_hidden_spectra.npz": {
+      "bytes": 821729,
+      "sha256": "e88554e7e533f5db900da25000f446620b61115788a3f6a6a359daa24176ecd7"
+    },
+    "R_input_hidden_spectra.npz": {
+      "bytes": 843970,
+      "sha256": "393f00c84caaf7d4c8c22aabe7b6b1bc40d0e93bad8b9d1da82843cece5fb671"
+    }
+  }
+}

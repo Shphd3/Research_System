@@ -1,0 +1,93 @@
+{
+  "status": "PASS_RESULT_IDENTITY_AND_BOUNDED_INTERPRETATION",
+  "processing_agent": "Codex /root/spectrum_audit",
+  "definition_sha256": "ee0c94d86ca2e380cb5b4db17a5f6dbcdba9544f8e2517a6329d7d79cd1353f1",
+  "script_sha256": "8b6d59d4557d977d7bb12613c4ab1bcb040d07c7021c6e24c61f7a67a2dec757",
+  "checks": {
+    "R": {
+      "supported_groups": 176,
+      "missing_groups": 10,
+      "main_original_mean": 0.12532352886112688,
+      "main_residual_mean": 0.08574929238948399,
+      "all_supported_hash_selection_exact": true,
+      "main_maximum_single_context_fraction": 0.3203125,
+      "main_groups_with_single_context_fraction_above_10pct": [
+        59,
+        85,
+        119,
+        127,
+        135,
+        152
+      ]
+    },
+    "F": {
+      "supported_groups": 168,
+      "missing_groups": 18,
+      "main_original_mean": 0.13143935570291412,
+      "main_residual_mean": 0.09089649389654551,
+      "all_supported_hash_selection_exact": true,
+      "main_maximum_single_context_fraction": 0.078125,
+      "main_groups_with_single_context_fraction_above_10pct": []
+    },
+    "N": {
+      "supported_groups": 171,
+      "missing_groups": 15,
+      "main_original_mean": 0.14050205144488295,
+      "main_residual_mean": 0.0934018449901143,
+      "all_supported_hash_selection_exact": true,
+      "main_maximum_single_context_fraction": 0.140625,
+      "main_groups_with_single_context_fraction_above_10pct": [
+        53,
+        109,
+        119,
+        152,
+        161
+      ]
+    }
+  },
+  "main_population_groups": 145,
+  "main_population_members": 8814,
+  "main_member_fraction": 0.6383718403708264,
+  "RN_population_groups": 161,
+  "RN_population_members": 8846,
+  "original_and_residual_use_identical_rows_and_population": true,
+  "no_post_outcome_endpoint_selection": "Frozen support masks match all resulting common estimable masks; zero-variance additions0",
+  "maximum_residual_drop_first_lambda_relative_error": 2.2894270673905455e-16,
+  "independent_actual_N_group_SVD_check": {
+    "group_id": 2,
+    "original_error_by_trace": 9.72556027188003e-16,
+    "residual_error_by_trace": 1.0286650287565417e-16
+  },
+  "posthoc_context_10pct_diagnostic": {
+    "groups": 136,
+    "means": {
+      "R": {
+        "original": 0.12549323195282416,
+        "residual": 0.08548093250654502
+      },
+      "F": {
+        "original": 0.13171989471269066,
+        "residual": 0.09107482958335467
+      },
+      "N": {
+        "original": 0.14033791682114627,
+        "residual": 0.09227337617968881
+      }
+    },
+    "boundary": "Posthoc existing-metric sensitivity only. Does not match all text composition or establish independent documents."
+  },
+  "mandatory_interpretation_cn": "主145共同组内R原谱与去各自PC1后的残谱第一占比平均较低，差异不只局限于首方向，但仍是固定胜组规则选择出的输入关联。R-F与R-N的大小分层方向不一致，不能概括所有组或所有大小。主集合只覆盖63.84%成员，不能写全部186关系组。",
+  "stratum_caveats": [
+    "R-F中组原与残均反向，原大组反向、残大组近0",
+    "R-N原中组反向、残中组接近0；大组残差更低",
+    "逐组删除自己的PC1不是删除同一个common方向"
+  ],
+  "non_claims": [
+    "phi因果",
+    "频率单变量因果",
+    "模型容量",
+    "学习相容或收益",
+    "新的独立文档确认",
+    "先前m14同频混频方案的同一实验"
+  ]
+}

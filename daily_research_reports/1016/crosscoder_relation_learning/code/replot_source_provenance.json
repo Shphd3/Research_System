@@ -1,0 +1,16 @@
+{
+  "master_source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/relation_learning/analysis_learning.py",
+  "master_sha256": "06a3d1c3e7952f91078d3270046818a8a3f3442adf29bbeb97a756b086d3f414",
+  "center_source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/relation_learning/plot_centering_control.py",
+  "center_sha256": "109c33b197dcbc9cc8f11b57cf149b3daf087dc43e5518b695615fdb92635044",
+  "extracted_function_source_sha256": {
+    "save": "267c0325877d6506b001207d6fba72763e13170655fede73a41113d95727402b",
+    "unavailable": "ae2668fea7b0b6780bfe6e22fca4e9f4fa6ed24bb621856bdc9d2e86de7d465e",
+    "structure_figure": "018ee3ceceb4877d8ea184fae241efa1077d16ccb158fbc89090e626f35c6c1c",
+    "direction_figure": "40fb742df0a1c5de1d4bd54e651e9970eaa7ad01e72735c9b51211555f514c5d",
+    "learning_figures": "cf1bf4db3c049fa736f774d0782aaf9b158fb39f1bd08269cc7cd1b50193a03c",
+    "intervention_figure": "40999605bfab3998faa1f357b692147843e6f3b676c97ea97236c24b94d75aec",
+    "response_figure": "74a1724f72d7101c791fdc699ef0b8bb70c67c1c5dae2effa9a1cd6c0859e451"
+  },
+  "modifications": "response prefix reads already audited small effects.csv and omits analysis writes; center metrics equivalent plot reads saved control_metrics.csv; no model/gradient/training/cache code imported"
+}

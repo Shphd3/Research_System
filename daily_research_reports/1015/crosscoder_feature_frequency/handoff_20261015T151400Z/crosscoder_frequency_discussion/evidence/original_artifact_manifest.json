@@ -1,0 +1,859 @@
+{
+  "created_utc": "2026-10-15T15:10:09.281048+00:00",
+  "run_id": "20261015T143300Z",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+  "asset_id": "analysis_crosscoder_feature_frequency_20261015t143300z",
+  "output_strict_access": "/data/250010109/Research_System/assets/checks/2026-10-15_crosscoder_frequency_20261015T143300Z_outputs.json",
+  "protocol": "/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/protocol_draft.md",
+  "execution_registration": "/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/execution_amendment.md",
+  "config_sha256": "569b8ee9595a4455fd98f8a6912665b282f02925018186a180071bacafa7e7d9",
+  "terminal": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/terminal_receipt.json",
+  "analysis_status": "COMPLETE_BOUNDED_DESCRIPTIVE",
+  "H1": "INSUFFICIENT",
+  "H2": "NOT_RUN",
+  "formal_null_B": 0,
+  "scientific_judgment": "UNKNOWN_RESEARCHER_OWNED",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/analysis_receipt_pre_figures.json",
+      "bytes": 1226,
+      "sha256": "84981f19dfdd297237588f62f01d5a8bdfdc0cfe5867e54eb3b9bb53d4f2e692",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/asset_access_preflight.json",
+      "bytes": 18772,
+      "sha256": "d55fc0982b4bf2b0523a63db797bbeaf8fbf0093973c728289ba1aac61290ea5",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/candidate_mask.npy",
+      "bytes": 16512,
+      "sha256": "23d7da8fc4461011fccc71ec27252bcfa4a2d66a2b5d1ab1ade33d9a1709c589",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/core_analysis.py",
+      "bytes": 29860,
+      "sha256": "ae3567e7e24052e54e09c70cc7ccea34ce9c509fbe166cbb121e84509c904dc3",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/dispersion_bootstrap.py",
+      "bytes": 2333,
+      "sha256": "5b0ba3accf3f660989f6936aa0545b41da79a42597693ba2a4421c55fdc9df77",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/input_analysis.py",
+      "bytes": 12676,
+      "sha256": "92fc3ba986dc9b59c3061e70b8585fdb8bdfbeb793f80d8ad87250dafb156fa8",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/null_analysis.py",
+      "bytes": 30200,
+      "sha256": "052f5cda5742f53c7ba5a68db03dd0195e0d8adc0a2bfd2a78acc31870e603e5",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/plot_all_groups.py",
+      "bytes": 3031,
+      "sha256": "21f7cc6fb4f6fe0a0dba4187d04936370d6504dff5f5792be7647e8c741b0325",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/plot_results.py",
+      "bytes": 29293,
+      "sha256": "78b7367ef84e50c34402816fca6459ea64ff3ffc489e1bdb50f95882e98e0a68",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/core_output_validation.json",
+      "bytes": 861,
+      "sha256": "43eef1fe2500a742570040ed9ab45361a08907b32c917c2bf1a4a2d3ee7824ee",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/core_self_test.json",
+      "bytes": 381,
+      "sha256": "ec9e0387e84f80d63c6831b734a57e0569abc616a776ea36b85792c0c7f64bae",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/core_source_receipt.json",
+      "bytes": 465,
+      "sha256": "02d8c4675b9b575564c912d692518b34fac3203579a48f04bd5e6eeb7c2cbc78",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/descriptive_digest.json",
+      "bytes": 1177,
+      "sha256": "2e0063466e0d45b462010aebdc0a9cce1bf6c98784d02140f3c0b7a2c4b6e2cf",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figure3_phi_D.npy",
+      "bytes": 360128,
+      "sha256": "003e699052a9cb9772c48e4caa4e3facd319051b063f1c2005e643209cefb710",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figure3_phi_V.npy",
+      "bytes": 360128,
+      "sha256": "075ae6b172d944d0e17f08e8b509914efeb11f4aac5b87c0b66d6d5cbceb4c6b",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figure3_selected_ids.npy",
+      "bytes": 1328,
+      "sha256": "3a50856d9701a671f184f520f0cf153090835bb65dd2217225ce3c313868c1eb",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figure3_selection.json",
+      "bytes": 3266,
+      "sha256": "a2e003e9c72ded8fc8c0aa7be69d7da83ef1f3800db2c6ab3f99db90eb532a71",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/all_groups_provenance.json",
+      "bytes": 1058,
+      "sha256": "b0ccfb6ada41072c4ad7da4dd20f7f19dfcdf34788c66b86de0066aca7ee91ce",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure1_frequency_rank.pdf",
+      "bytes": 105087,
+      "sha256": "abc7f6e06567facbe09decc21b80891b1dfb8efb0ac0050894dbceb2c8ce7001",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure1_frequency_rank.png",
+      "bytes": 122553,
+      "sha256": "ba721528e04dbb6e3922efaa924626251b889e5c17aef946680655206187280d",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure1_frequency_rank.svg",
+      "bytes": 286798,
+      "sha256": "046f749ac660a9d5b1a644126dad893cc35f37ed2e4753bbe44efd5f94c6375d",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure2_frequency_stability.pdf",
+      "bytes": 211517,
+      "sha256": "f8d47ea8632d5ddecc4997c42fb0da656fb933359d3f09214bb12a870448ec3c",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure2_frequency_stability.png",
+      "bytes": 184818,
+      "sha256": "b6547004189ff123a5da965724f87e52dc43b97cb7224ffd6d83f91044d217ed",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure2_frequency_stability.svg",
+      "bytes": 1855779,
+      "sha256": "ec90387719fcee02510a3dddda63e5576520462064f1033ef2dc50ef552b6cac",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure3_relations_groups.pdf",
+      "bytes": 244120,
+      "sha256": "8ba9a556187e5cc50ea86b3b4b6dd5284ece7510d9252fec552bea962949aa3f",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure3_relations_groups.png",
+      "bytes": 830810,
+      "sha256": "33afb1dffbaaad7f835e4a674e4193c202a50d8d8202bad6dfe4734308a31c84",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure3_relations_groups.svg",
+      "bytes": 856478,
+      "sha256": "3f022be6d3206a40201934ebd873a22f1eaf35ebaa5e6d72380ee2f3875ff500",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_all_groups.pdf",
+      "bytes": 65385,
+      "sha256": "fd2b2e4f4bb6522afc402e571177783a7cedd522429383f2bc5d432950d6d8a4",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_all_groups_page01_preview.png",
+      "bytes": 79031,
+      "sha256": "f4e75e9e5c41e492c362f3750c3696c7b2099e9c59051838091ffa4c28d08505",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_all_groups_page10_preview.png",
+      "bytes": 67382,
+      "sha256": "1115860db1f842e6525852f91c7d792be9db1551efd62ac8ce9230336959381e",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_group_frequency_controls.pdf",
+      "bytes": 76414,
+      "sha256": "34ed4ca1fe0a4c4d5468a83f51525fd74584d511e93b3d3dcd263769c5d3c2cd",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_group_frequency_controls.png",
+      "bytes": 174945,
+      "sha256": "fc22383b71cf224c9062e97968f7528d5c98c98b6230dd494ccf874367b9d0c1",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_group_frequency_controls.svg",
+      "bytes": 243441,
+      "sha256": "e8a9848e61f234ed53af8d1d04caf9214f3be975ca4d48c97b6dfd69c354f23e",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure5_inputs_activations.pdf",
+      "bytes": 34174,
+      "sha256": "56c05ba17db64369581e4fe4e151505c3be6137d76d1ef76f930bae7b00933aa",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure5_inputs_activations.png",
+      "bytes": 504967,
+      "sha256": "2639f1b5eb3e3266bc8a93d1f8edef3ecf50383d7e3499463e48ddaa44e7025b",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure5_inputs_activations.svg",
+      "bytes": 210248,
+      "sha256": "571cdf5ad05abc4179c786b38c3ddff7db1853931bc7637c04c2c06428fff735",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/plot_command.txt",
+      "bytes": 1623,
+      "sha256": "e404656b2aaeb95c58ebff98f0547df85fe5a5775fe31d80b8e3756ad9622b81",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/plot_provenance.json",
+      "bytes": 17066,
+      "sha256": "6ded9edc3cbd4c299233a5127b2cc0d8a48e361191e5d841c56ce4a846c9e5b1",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/plot_results.py",
+      "bytes": 29293,
+      "sha256": "78b7367ef84e50c34402816fca6459ea64ff3ffc489e1bdb50f95882e98e0a68",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure1_rank.csv",
+      "bytes": 2540625,
+      "sha256": "af3e12d97268289102b8210ba49420c38a19c432979471310f59fb9132dd297c",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure2_stability.csv",
+      "bytes": 2712338,
+      "sha256": "136a782c2439ab6f9f1a32b36dbdf7b6893308d838143dbabe08882ec95f9e38",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure3_display_ids.csv",
+      "bytes": 15082,
+      "sha256": "7e384b9c4d5f666348195ca4fadc50d85de07213e7269066dfc4945606070dd3",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure3_phi_D.csv",
+      "bytes": 1201161,
+      "sha256": "9528e6045fad8273861d10ec352815808307d242b482ef2bcc879a7e7c12c450",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure3_phi_V.csv",
+      "bytes": 1200521,
+      "sha256": "3dd81bcff17dfc6af8aaa67accdd9d2a815f5c440a235e62031699617c603340",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure4_all_groups.csv",
+      "bytes": 49538,
+      "sha256": "06fa83c7084b9e74555dd1612dd661073f46c5fcef803d8f89d5ced9c183e778",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure4_display_groups.csv",
+      "bytes": 5485,
+      "sha256": "61dfb52c1c5a93af7b1899f443458809e470e1a7d0e3e872d9038cb1c67e359e",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure5_all_examples.csv",
+      "bytes": 9373352,
+      "sha256": "1d0d5fa53958347ec6560f58182f07d1529889fd254cfbe48b2abe7bba763074",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure5_coverage.csv",
+      "bytes": 98,
+      "sha256": "ddb03ca86157c77e78a4409facf30d8adadf532c8e359ae3bb10084a05001c38",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/source_tables/figure5_display_examples.csv",
+      "bytes": 49860,
+      "sha256": "5cb6a3d1a912fcda10a9b48328d2e21ad529073a8e365281437d686c98c35dcb",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/frequency.csv",
+      "bytes": 2688630,
+      "sha256": "583a297c2c252f263ff83c368ac86e42c44c98123e80f3030710f774cf6ceb85",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/frequency_bootstrap.json",
+      "bytes": 349,
+      "sha256": "00e43f5084c4929680ab29712dcb2a2afc09063cfba34381329c478ac3a48c58",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/independent_core_checks.json",
+      "bytes": 3277,
+      "sha256": "955bceb4640817a9adf2c597cbcb72400331662c5bd74d281cde337dc6b42abb",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/input.log",
+      "bytes": 1723,
+      "sha256": "06a4734d90b8eae14c6577583ea3cbdd674de280929149a4a386bdf77153ec72",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/artifact_checks.json",
+      "bytes": 374,
+      "sha256": "e3d1321fddca1d0a2e8fbbc38be2b59994a95590581d10e55a9f5fa147af100c",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/completion.json",
+      "bytes": 277,
+      "sha256": "a8439b775136d8841b343c5e9f898277bba4d8c962a1eada4ba9824605265545",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/context_coverage.npz",
+      "bytes": 609014,
+      "sha256": "9204f892c0e575afb901d6422db0380a499387340c646c62920248242aa0a799",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/coverage.json",
+      "bytes": 1213,
+      "sha256": "1cc826fa0a7d4f2491e37f882b93c8ee35b085b8370c9fad9a3d73aa6c860e7f",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/examples.json",
+      "bytes": 11209846,
+      "sha256": "c3634a959f04dcc90a86c02847d8828924f652c36fdc3896c43da88d3de14730",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/thresholds.json",
+      "bytes": 33584,
+      "sha256": "467ce28cf81bc4677a91ab668788b99cc907ce5a7e9dc121865064366f69a9fa",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/candidate_ids.npy",
+      "bytes": 125456,
+      "sha256": "69fc0fae33571febfe7dc62e801e5fa9a5cd6a46270bdec9723901822be22e02",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/dispersion_uncertainty.json",
+      "bytes": 560,
+      "sha256": "97d18a7f522a32cf838ec3286ad19da13a263a963b686804ac6a145a507bfc73",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/edges_D.csv",
+      "bytes": 1887615,
+      "sha256": "006d028e27d4d9ac40d81c24ba68f871c6c8eadbbbf1520e76959dba1bc5b3a0",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/edges_V.csv",
+      "bytes": 1887320,
+      "sha256": "fa6f439240a41cf67aa00cf198e27ed7ccceb5ece7fc1c898c8580828cc26384",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/fixed_group_dispersion_block_bootstrap.npz",
+      "bytes": 1490004,
+      "sha256": "0eaabc85f3ec98974f8eb869ba65de912172d5b40109654ed633c420637ff671",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/group_metrics.csv",
+      "bytes": 50588,
+      "sha256": "9c857cc520712af4edce80fc336736fad2d658f98d528d5af51f61538046239e",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/groups_D.json",
+      "bytes": 331121,
+      "sha256": "3a16291d38acb92270c921507b1023dbce8bae986bde18cfcc3e9b760f032588",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/groups_V.json",
+      "bytes": 330239,
+      "sha256": "754ee12d10f26455bc6c2183d5b973e4f57f46ce3c1c529e78f0ba104bf8ffd8",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/matches.csv",
+      "bytes": 3801,
+      "sha256": "86e21580e1d1c3d50e82ba85749b4373788b3989aa901e793b11ba43a41172ef",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/matches.json",
+      "bytes": 17906,
+      "sha256": "77fbb4a48251d58a5c06e35d9bd055cf3dc96fa53350d30d58ba9208a53fa9e1",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/matching_jaccard.npy",
+      "bytes": 275408,
+      "sha256": "3660987cdf1ac58b4ecc2ab79131038f1da9a58b9a31b92b11680b1ee2486ce0",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/phi_D.npy",
+      "bytes": 1073741952,
+      "sha256": null,
+      "hash_status": "NOT_REHASHED_LARGE_DERIVED_PAYLOAD",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/phi_V.npy",
+      "bytes": 1073741952,
+      "sha256": null,
+      "hash_status": "NOT_REHASHED_LARGE_DERIVED_PAYLOAD",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/random_controls.npz",
+      "bytes": 1192944,
+      "sha256": "426fa2f444c50cb747f0681c6403e71934c4e3c084e9fabc831300e4220d5d45",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/summary.json",
+      "bytes": 6940,
+      "sha256": "8eb6063cff160036a1c2865ebe4602003ea1b66724c3364f30bb555ad95bf28f",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main.log",
+      "bytes": 1524,
+      "sha256": "b5473c943b35e8fac05fa873d211558a332d84a6b506bce1f14d3b3df7babdcf",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main_completion.json",
+      "bytes": 14533,
+      "sha256": "451ebc5eb186ea908e10b345545370e743d374d448d882c1589ee411c0fb095a",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main_process_receipt.json",
+      "bytes": 201,
+      "sha256": "03b43b9759b2cd3ed1d8d216c2acd7e4cfb0ffaa7efff006fe4690ddea516709",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main_start.json",
+      "bytes": 302,
+      "sha256": "f40997f0acb4b88447356d0b042ca57e17f82b37a5bd734dcf88244d74039572",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/execution_start.json",
+      "bytes": 66,
+      "sha256": "06a2604305e001af84b0494157d066f303dd29c02a659f911bdaf10f98aae2c5",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/input_identity.json",
+      "bytes": 320,
+      "sha256": "48d9cd71a8115a5565e65a509f04c897095ed4c605eee685fb9d9c983f278c6c",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/null_results.json",
+      "bytes": 9755,
+      "sha256": "794af984a3f7584c797f8a5dd1d812e6b4f48f3bf352c26471002b2094779ad6",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/plot_summary.json",
+      "bytes": 505,
+      "sha256": "56b077566cbd1b72f94e7d95f75c87db45957e0d87263e5bda2259bdb3c7b34a",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/qualification.json",
+      "bytes": 53694,
+      "sha256": "41755f301c5bdc04a5aa92796821259b9c68f96b65ebee3b252d96dc4ab16a18",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/sample_analysis.json",
+      "bytes": 3263419,
+      "sha256": "879ec8e5f09a0fb50fb05626fbce78a5abfb48b2e65523704bb1b622e6d3f0dd",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/sample_events.npz",
+      "bytes": 3759828,
+      "sha256": "c63fd69d7a4887b860305798a8ff3544eff78e94919ed5ddf9f8690d755837d1",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/sample_manifest.json",
+      "bytes": 79468,
+      "sha256": "1c67a6be4a60249648ae9334df3495e32d61263b04dff1b55c4f7c193ab83638",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/sample_observed.json",
+      "bytes": 8978,
+      "sha256": "46b7447d93fd1a2a84a278afa08168cf999b7c1f88b216fa79107bc9506e65ce",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/self_test.json",
+      "bytes": 246,
+      "sha256": "a9161f914a037e6bc87610b9a42ba579c3b1fe5a2bcd157d1cf9731409762ae9",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "QUALIFICATION_ONLY_NOT_FORMAL_NULL"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/plot.log",
+      "bytes": 196,
+      "sha256": "7ea9f62933e61291f46b74d84ca9f87c6dd9ce12b6a4e69b4501626a2a92d91a",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/plot_all_groups.log",
+      "bytes": 933,
+      "sha256": "51c59aee5bb8d8c0d5782d6a2ceab50ab3d44e3245041f284619b8d7e99c4dc0",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/registered_config.json",
+      "bytes": 4630,
+      "sha256": "569b8ee9595a4455fd98f8a6912665b282f02925018186a180071bacafa7e7d9",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/registered_config_R0_pre_sampling_correction.json",
+      "bytes": 3736,
+      "sha256": "389fac6f2575bcc46809c375e616280159f00c7c987a7455c54e92f6b01fba27",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/candidate_ids.npy",
+      "bytes": 125456,
+      "sha256": "69fc0fae33571febfe7dc62e801e5fa9a5cd6a46270bdec9723901822be22e02",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/edges_D.csv",
+      "bytes": 3934523,
+      "sha256": "99fc2094578b46ec332c53672d3ab19de181dee775f09501a1f9e46472ee8579",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/edges_V.csv",
+      "bytes": 3928232,
+      "sha256": "1dc7371c05d8d98329fbf325dfa9fed11aa8d35c761fe6cb95aaf2e0ff7cad57",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/group_metrics.csv",
+      "bytes": 17735,
+      "sha256": "1d16472593d7da4962bce5ba68adea75170f76a02a2a0d5cfda137cccedc6520",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/groups_D.json",
+      "bytes": 260955,
+      "sha256": "56c742d01781d86decbfab51855da40692f008af6aa8a840f6ac988ef75b7ecc",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/groups_V.json",
+      "bytes": 261705,
+      "sha256": "70043b9b27fd743127c8e6746f8cd422abeb2410cbe52a44bd696317f358d3c3",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/matches.csv",
+      "bytes": 1448,
+      "sha256": "453ac8b28d7d7ea494627d48cf8d052199218904dda8666eb8fbfde8d24aaf3e",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/matches.json",
+      "bytes": 6369,
+      "sha256": "4548ed23db8d70201e053f5bfb6b60d0b7bd583c115b010c7561c3aae18ccb91",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/matching_jaccard.npy",
+      "bytes": 31848,
+      "sha256": "9ea6eb361fdb0262a2c35350b8b9d3ce4d07e7e35ce30baeab05c40546184885",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/random_controls.npz",
+      "bytes": 417939,
+      "sha256": "11c49e0a11bf217db6a7f71dc746658e6a94784d8d557f634ab8d603025b8375",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/sensitivity_q20/summary.json",
+      "bytes": 6936,
+      "sha256": "af2d17dce8ccad5bcae58ce80057a05e25d89505c604b41717a75f067415f2af",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/terminal_receipt.json",
+      "bytes": 3418,
+      "sha256": "325e19441c5a298442768636f329f0f03f1f73fb7768e5982380ae459efd0728",
+      "hash_status": "FRESH_SMALL_FILE_SHA256",
+      "complete": true,
+      "eligibility": "BOUNDED"
+    }
+  ],
+  "not_produced": [
+    "H2 learning result",
+    "independent-document confirmation",
+    "formal99-draw null calibration",
+    "valid primary p-values"
+  ],
+  "no_model_mutation": true,
+  "no_reencoding": true,
+  "no_commit_push_sync": true
+}

@@ -1,0 +1,84 @@
+{
+  "status": "GPU_SMOKE_AND_NINE_PAIRED_RUNS_COMPLETE",
+  "checked_at_utc": "2026-10-15T17:45:53.817459+00:00",
+  "previous_CPU_qualification_preserved": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/implementation_qualification.json",
+  "GPU_smoke": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/smoke/smoke.json",
+  "runs": [
+    {
+      "seed": 20261016,
+      "arm": "R",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261016/R/completion.json"
+    },
+    {
+      "seed": 20261016,
+      "arm": "F",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261016/F/completion.json"
+    },
+    {
+      "seed": 20261016,
+      "arm": "N",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261016/N/completion.json"
+    },
+    {
+      "seed": 20261017,
+      "arm": "R",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261017/R/completion.json"
+    },
+    {
+      "seed": 20261017,
+      "arm": "F",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261017/F/completion.json"
+    },
+    {
+      "seed": 20261017,
+      "arm": "N",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261017/N/completion.json"
+    },
+    {
+      "seed": 20261018,
+      "arm": "R",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261018/R/completion.json"
+    },
+    {
+      "seed": 20261018,
+      "arm": "F",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261018/F/completion.json"
+    },
+    {
+      "seed": 20261018,
+      "arm": "N",
+      "tokens": 1566720,
+      "updates": 6120,
+      "telemetry": "PASS",
+      "completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/learning/seed_20261018/N/completion.json"
+    }
+  ],
+  "all_same_budget": true,
+  "external_process_resume": "NOT_QUALIFIED; only CPU and serialized GPU next-update replay qualified",
+  "scientific_verdict": "NOT_GRANTED_BY_ENGINEERING",
+  "analysis": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/analysis_status.json"
+}

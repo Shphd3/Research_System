@@ -1,0 +1,49 @@
+{
+  "no_hidden_spectrum_computed": true,
+  "no_new_forward": true,
+  "no_training": true,
+  "cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval.pt",
+  "hit_rule": "at least one saved positive gated feature ID in group at position",
+  "rules": {
+    "same_frequency": {
+      "groups": 1119,
+      "m": 14,
+      "minimum_union_hit_rows": 240,
+      "max_union_hit_rows": 522620,
+      "support_quantiles": {
+        "min": 240.0,
+        "p10": 1499.4,
+        "p25": 4484.0,
+        "median": 27386.0,
+        "p75": 99345.0,
+        "p90": 186243.2,
+        "max": 522620.0
+      },
+      "groups_support_lt64": 0,
+      "groups_support_lt128": 0,
+      "groups_support_lt256": 1,
+      "groups_support_lt512": 18,
+      "zero_hit_groups": 0
+    },
+    "mixed_frequency": {
+      "groups": 1119,
+      "m": 14,
+      "minimum_union_hit_rows": 49566,
+      "max_union_hit_rows": 519099,
+      "support_quantiles": {
+        "min": 49566.0,
+        "p10": 62686.8,
+        "p25": 68379.5,
+        "median": 82399.0,
+        "p75": 124955.0,
+        "p90": 195962.2,
+        "max": 519099.0
+      },
+      "groups_support_lt64": 0,
+      "groups_support_lt128": 0,
+      "groups_support_lt256": 0,
+      "groups_support_lt512": 0,
+      "zero_hit_groups": 0
+    }
+  }
+}

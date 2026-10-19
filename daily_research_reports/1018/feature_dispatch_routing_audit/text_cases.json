@@ -1,0 +1,2582 @@
+[
+  {
+    "feature_id": 9297,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 18758,
+    "block_id": 117676,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8407040,
+    "absolute_token_offset": 8407392,
+    "local_context_position": 352,
+    "current_token_id": 9555,
+    "current_token": " established",
+    "next_token_id": 11,
+    "next_token": ",",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 353,
+    "shown_prefix_first_local_token": 252,
+    "prefix_last_up_to_100_tokens": " project has unfolded, it has taken on a life of its own. It was not yet complete when I began writing this essay in 2001. Using different types and sizes of paper to make the Grain prints proved to be a mistake, another wrong turn in the process of creation. The entire paper issue eventually seemed irrelevant to my goal. But what was the goal? Or, more accurately, what has it become?\n\nI think it has become an effort to create a new version of the",
+    "full_visible_prefix_before_current": " of music.”\n\nMy friend and Walter Pater teamed up to quash any final doubts I had about the Grain prints.\n\nClifford Ross, Horizon I, 2001, silver gelatin print, 9 3/4 × 8 3/16â€.\n\nAs work on the Grain prints proceeded, I felt that I needed to find a link connecting them to the Hurricanes, but one that would not undermine the aesthetic dialectic between the two series. The Horizon images became the perfect bridge. Their necessarily small scale ensured their proper role. If they had been similar in size to the Hurricane and Grain images, they would have inserted themselves too strongly between the other two series. And their position on the continuum of abstraction and realism, classicism, and romanticism, was ideal. The Horizons became the natural division between the Grains and the Hurricanes.\n\nAs I selected and proofed the Horizon images, I became increasingly aware of the impact that the Horizon series had as a unit unto itself, as well as the strange intensity of the individual works. They may have been small, but they asked big questions. They had the aesthetic power to pull one in, and the conceptual power to make one think.\n\nAs this project has unfolded, it has taken on a life of its own. It was not yet complete when I began writing this essay in 2001. Using different types and sizes of paper to make the Grain prints proved to be a mistake, another wrong turn in the process of creation. The entire paper issue eventually seemed irrelevant to my goal. But what was the goal? Or, more accurately, what has it become?\n\nI think it has become an effort to create a new version of the",
+    "target_z": 0.04592932388186455,
+    "target_train_p": 0.002325723728502356,
+    "major_companions": [
+      {
+        "feature_id": 4120,
+        "z": 0.21673227846622467,
+        "weighted_z": 1.67065046833536,
+        "train_p": 0.0001989105820429647,
+        "owners": {
+          "A": -1,
+          "B1": -1,
+          "B2": -1
+        }
+      },
+      {
+        "feature_id": 7415,
+        "z": 0.09441441297531128,
+        "weighted_z": 0.8326382099428429,
+        "train_p": 0.9477018177367036,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 516,
+        "z": 0.08191363513469696,
+        "weighted_z": 0.7956675499232233,
+        "train_p": 0.9834904216904339,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13964,
+        "z": 0.07200215011835098,
+        "weighted_z": 0.754252900594139,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5793,
+        "z": 0.08627519756555557,
+        "weighted_z": 0.6776454380396935,
+        "train_p": 0.034817002264520475,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 2317,
+        "z": 0.08340898901224136,
+        "weighted_z": 0.6771009708750597,
+        "train_p": 0.050538588652916334,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5410,
+        "z": 0.07433441281318665,
+        "weighted_z": 0.6608430219264108,
+        "train_p": 0.18535406083603648,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 11364,
+        "z": 0.05852839723229408,
+        "weighted_z": 0.6136456653936158,
+        "train_p": 0.39069098476038927,
+        "owners": {
+          "A": 3,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0022422028705477715,
+          0.019772090017795563,
+          0.043750014156103134,
+          0.11375566571950912,
+          0.1839832067489624,
+          0.07450539618730545,
+          0.16304855048656464,
+          0.4382443130016327
+        ],
+        "actual_expert": 7,
+        "runner": 4,
+        "winner_score": 0.4382443130016327,
+        "runner_score": 0.1839832067489624,
+        "margin": 0.2542611062526703,
+        "target_weighted_z": 0.2558422199922781,
+        "target_score_contribution": 2.7649650923190107e-05,
+        "scores_without_target": [
+          0.0022145533002913,
+          0.019772090017795563,
+          0.043750014156103134,
+          0.11375566571950912,
+          0.1839832067489624,
+          0.07450539618730545,
+          0.16304855048656464,
+          0.4382443130016327
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.004053025972098112,
+          0.0021101604215800762,
+          0.010036707855761051,
+          0.005779072642326355,
+          0.015705058351159096,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 2,
+        "winner_score": 0.015705058351159096,
+        "runner_score": 0.010036707855761051,
+        "margin": 0.005668350495398045,
+        "target_weighted_z": 0.2558422199922781,
+        "target_score_contribution": 2.7649650923190107e-05,
+        "scores_without_target": [
+          0.0040253764018416405,
+          0.0021101604215800762,
+          0.010036707855761051,
+          0.005779072642326355,
+          0.015705058351159096,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 2
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.004159271717071533,
+          0.0014398538041859865,
+          0.00280447443947196,
+          0.002368842251598835,
+          0.02958923950791359,
+          0.0,
+          0.02756603993475437,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 6,
+        "winner_score": 0.02958923950791359,
+        "runner_score": 0.02756603993475437,
+        "margin": 0.002023199573159218,
+        "target_weighted_z": 0.2558422199922781,
+        "target_score_contribution": 2.7649650923190107e-05,
+        "scores_without_target": [
+          0.004131621681153774,
+          0.0014398538041859865,
+          0.00280447443947196,
+          0.002368842251598835,
+          0.02958923950791359,
+          0.0,
+          0.02756603993475437,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 2
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 9297,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 62248,
+    "block_id": 117718,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8450048,
+    "absolute_token_offset": 8450974,
+    "local_context_position": 926,
+    "current_token_id": 10820,
+    "current_token": " identified",
+    "next_token_id": 448,
+    "next_token": " with",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 927,
+    "shown_prefix_first_local_token": 826,
+    "prefix_last_up_to_100_tokens": " caught up in the right-left false meme. It keeps decent people from both sides from awakening to a greater truth. It creates a sort of closed-mindedness. Everyone creates their own reality and most of what all of us believe is some degree of bullshit. There is almost always a greater truth to any particular belief we may have. And, we most usually are unaware of it.\n\nThanks Lambert.... :)\n\nSubmitted by lambert on\n\n... I'm speaking more sociologically, in that media seem to be",
+    "full_visible_prefix_before_current": " in its intents there can be no other interpretation or explanation. It is class-based looting and enslavement using the force of the state. Corporate capitalism and the force of the state allows people who literally have no meaningful skills other than control (psychopathy, narcissism, megalomania, etc) to become the most powerful people on earth. If we were all dropped on an island and forced to survive and recreate a new society, they would either be the first to die or the relegated to menial tasks. They have no skills or craft other than manipulation and control. Without the force of the state and the class-based structure of corporate capitalism, they literally offer nothing. They would be store managers at a local Taco Bell. (Not to denigrate a store manager at Taco Bell by comparing them to predators.) That they now control society all across the world is why we see endless insanity. Our society’s literally are dumbed-down by the control of people who create nothing other than economic slavery. The solutions to this crisis are easy - end economic slavery and create democratic economics. The solutions aren’t hard. Breaking the tyranny and control of the looters are the fundamentals issue of our time.\n\nMark my word. We are going to see a massive wealth redistribution in this country because our public lands, public properties, national income, all private assets and the public treasury have been stolen using the force of the state. Democracy has been completely destroyed. That may occur by collapse or by taxation or by force or all of the above. No one knows. But, I guarantee you it is coming. And, it is likely coming to more many places than the United States as the capitalist corporate states around the world collapse under the weight of their evil, injustices, illegitimacy and corruption. Volatility is compressing or contracting everywhere. The pigs are again feeding at the trough without a worry in the world. It’s about time for some volatility expansion. Some range expansion. Stretch your legs and get ready. At some point we are going to see the biggest spectacle in our nation’s history.\n\nChange you can believe in. It is coming.\n\nNo votes yet\n\n\nSubmitted by lambert on\n\nFrom the discussion at Snopes, which debunks the proferred quote, this:\n\nThe great object [of political parties] should be to combat the evil: 1. By establishing a political equality among all. 2. By withholding unnecessary opportunities from a few, to increase the inequality of property, by an immoderate, and especially an unmerited, accumulation of riches. 3. By the silent operation of laws, which, without violating the rights of property, reduce extreme wealth towards a state of mediocrity, and raise extreme indigence towards a state of comfort.\n\nWhat I like about this quote is that it's policy oriented!\n\n* * *\n\nThe larger point (and I don't want to be coming down on you on your first post, it's just that the epigraph is the first thing I read) is that I strongly believe that the best and in fact one of the only things we on the left have going for us is the truth -- and this is a good thing, because we don't have the money to maintain the vast structure of bullshit and lies that constitutes official discourse in Washington. Ask yourself who's circulating bad quotes and memes without evidence and you'll get answers like right wingers in email chains or Obama fans on Facebook. Not good company to be in!\n\nIn addition, by offering an actual quote with a link, one enables readers to further educate themselves about the sources of our political economy!\n\n\nTimingLogic's picture\nSubmitted by TimingLogic on\n\nI don't worry that someone is going to come down too hard on me. I don't personalize remarks. lol. I knew the quote was likely bogus and that is why I said as much..... although Snopes itself can also be suspect. But the quote served a purpose because of when it first publicly appeared. That is, during a time of great economic slavery by the capitalist class. I also don't get caught up in the right-left false meme. It keeps decent people from both sides from awakening to a greater truth. It creates a sort of closed-mindedness. Everyone creates their own reality and most of what all of us believe is some degree of bullshit. There is almost always a greater truth to any particular belief we may have. And, we most usually are unaware of it.\n\nThanks Lambert.... :)\n\nSubmitted by lambert on\n\n... I'm speaking more sociologically, in that media seem to be",
+    "target_z": 0.016632448881864548,
+    "target_train_p": 0.002325723728502356,
+    "major_companions": [
+      {
+        "feature_id": 11177,
+        "z": 0.26117563247680664,
+        "weighted_z": 2.0390781581454576,
+        "train_p": 0.00042077238509088683,
+        "owners": {
+          "A": -1,
+          "B1": -1,
+          "B2": -1
+        }
+      },
+      {
+        "feature_id": 8345,
+        "z": 0.0621519610285759,
+        "weighted_z": 0.6665408042849208,
+        "train_p": 0.8822678866515699,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13774,
+        "z": 0.11071526259183884,
+        "weighted_z": 0.6475979588014411,
+        "train_p": 0.13417283799498134,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 556,
+        "z": 0.06488976627588272,
+        "weighted_z": 0.5785080442185375,
+        "train_p": 0.5775598261827529,
+        "owners": {
+          "A": 4,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13830,
+        "z": 0.055286090821027756,
+        "weighted_z": 0.5633740473297593,
+        "train_p": 0.8115934267703042,
+        "owners": {
+          "A": 6,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13373,
+        "z": 0.07470941543579102,
+        "weighted_z": 0.5623808715929499,
+        "train_p": 0.011368504804455597,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5410,
+        "z": 0.06310394406318665,
+        "weighted_z": 0.561002630033471,
+        "train_p": 0.18535406083603648,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7388,
+        "z": 0.05056857317686081,
+        "weighted_z": 0.5576741733493549,
+        "train_p": 0.9686792337352347,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.00173597049433738,
+          0.02868206612765789,
+          0.029399020597338676,
+          0.10834626853466034,
+          0.18154865503311157,
+          0.08676201850175858,
+          0.3303179144859314,
+          0.39682289958000183
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.39682289958000183,
+        "runner_score": 0.3303179144859314,
+        "margin": 0.06650498509407043,
+        "target_weighted_z": 0.09264849308013723,
+        "target_score_contribution": 1.0012805909449608e-05,
+        "scores_without_target": [
+          0.001725957728922367,
+          0.02868206612765789,
+          0.029399020597338676,
+          0.10834626853466034,
+          0.18154865503311157,
+          0.08676201850175858,
+          0.3303179144859314,
+          0.39682289958000183
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.0034558880142867565,
+          0.006776865571737289,
+          0.005430198274552822,
+          0.003341692266985774,
+          0.057101864367723465,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 1,
+        "winner_score": 0.057101864367723465,
+        "runner_score": 0.006776865571737289,
+        "margin": 0.050324998795986176,
+        "target_weighted_z": 0.09264849308013723,
+        "target_score_contribution": 1.0012805909449608e-05,
+        "scores_without_target": [
+          0.003445875132456422,
+          0.006776865571737289,
+          0.005430198274552822,
+          0.003341692266985774,
+          0.057101864367723465,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 4
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.0036311279982328415,
+          0.0023018920328468084,
+          0.001905160374008119,
+          0.0043488298542797565,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 3,
+        "runner": 0,
+        "winner_score": 0.0043488298542797565,
+        "runner_score": 0.0036311279982328415,
+        "margin": 0.0007177018560469151,
+        "target_weighted_z": 0.09264849308013723,
+        "target_score_contribution": 1.0012805909449608e-05,
+        "scores_without_target": [
+          0.003621115116402507,
+          0.0023018920328468084,
+          0.001905160374008119,
+          0.0043488298542797565,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 3,
+        "target_removal_changes_route": false,
+        "route_without_common": 3
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 9297,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 7198,
+    "block_id": 117665,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8395776,
+    "absolute_token_offset": 8395813,
+    "local_context_position": 37,
+    "current_token_id": 553,
+    "current_token": " by",
+    "next_token_id": 50507,
+    "next_token": " Europeans",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 38,
+    "shown_prefix_first_local_token": 0,
+    "prefix_last_up_to_100_tokens": "awe\" moment because this is something that I have been noticing and try to get my Black counterparts to understand all along! I soo appreciate you saying this and breaking it down the issues created",
+    "full_visible_prefix_before_current": "awe\" moment because this is something that I have been noticing and try to get my Black counterparts to understand all along! I soo appreciate you saying this and breaking it down the issues created",
+    "target_z": 0.03176916763186455,
+    "target_train_p": 0.002325723728502356,
+    "major_companions": [
+      {
+        "feature_id": 3842,
+        "z": 0.11617962270975113,
+        "weighted_z": 1.1878604578308938,
+        "train_p": 0.0028918538466246404,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 11471,
+        "z": 0.18230441212654114,
+        "weighted_z": 0.9697382371304855,
+        "train_p": 0.03306505906114205,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 556,
+        "z": 0.10785851627588272,
+        "weighted_z": 0.961584898268697,
+        "train_p": 0.5775598261827529,
+        "owners": {
+          "A": 4,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 516,
+        "z": 0.09131304919719696,
+        "weighted_z": 0.8869686958865941,
+        "train_p": 0.9834904216904339,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 6470,
+        "z": 0.10245935618877411,
+        "weighted_z": 0.8078080627994311,
+        "train_p": 0.002341024542505661,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5147,
+        "z": 0.07055456936359406,
+        "weighted_z": 0.7384440789343358,
+        "train_p": 0.9586036477140584,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7388,
+        "z": 0.06558322161436081,
+        "weighted_z": 0.723256888650198,
+        "train_p": 0.9686792337352347,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 8345,
+        "z": 0.0674009844660759,
+        "weighted_z": 0.7228332887993361,
+        "train_p": 0.8822678866515699,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0019815361592918634,
+          0.014104792848229408,
+          0.05739272013306618,
+          0.12784531712532043,
+          0.23251737654209137,
+          0.11660359054803848,
+          0.2300645112991333,
+          0.5868659019470215
+        ],
+        "actual_expert": 7,
+        "runner": 4,
+        "winner_score": 0.5868659019470215,
+        "runner_score": 0.23251737654209137,
+        "margin": 0.3543485254049301,
+        "target_weighted_z": 0.17696525198474333,
+        "target_score_contribution": 1.9125175833215532e-05,
+        "scores_without_target": [
+          0.0019624109845608473,
+          0.014104792848229408,
+          0.05739272013306618,
+          0.12784531712532043,
+          0.23251737654209137,
+          0.11660359054803848,
+          0.2300645112991333,
+          0.5868659019470215
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.004246244207024574,
+          0.0,
+          0.003665229072794318,
+          0.0060944510623812675,
+          0.020989393815398216,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 3,
+        "winner_score": 0.020989393815398216,
+        "runner_score": 0.0060944510623812675,
+        "margin": 0.014894942753016949,
+        "target_weighted_z": 0.17696525198474333,
+        "target_score_contribution": 1.9125175833215532e-05,
+        "scores_without_target": [
+          0.004227119032293558,
+          0.0,
+          0.003665229072794318,
+          0.0060944510623812675,
+          0.020989393815398216,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.004234624095261097,
+          0.0032006585970520973,
+          0.0016351285157725215,
+          0.0016413768753409386,
+          0.010266142897307873,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 0,
+        "winner_score": 0.010266142897307873,
+        "runner_score": 0.004234624095261097,
+        "margin": 0.006031518802046776,
+        "target_weighted_z": 0.17696525198474333,
+        "target_score_contribution": 1.9125175833215532e-05,
+        "scores_without_target": [
+          0.004215498920530081,
+          0.0032006585970520973,
+          0.0016351285157725215,
+          0.0016413768753409386,
+          0.010266142897307873,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 1
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 9297,
+    "split": "EVAL",
+    "sample_kind": "highest_z_unseen_context",
+    "row": 24669,
+    "block_id": 117682,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8413184,
+    "absolute_token_offset": 8413311,
+    "local_context_position": 127,
+    "current_token_id": 3465,
+    "current_token": " created",
+    "next_token_id": 553,
+    "next_token": " by",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 128,
+    "shown_prefix_first_local_token": 27,
+    "prefix_last_up_to_100_tokens": "In order to assess sensitivity to dissonance, we used pleasantness judgements for a set of 24 musical excerpts that were presented in two versions (for a full description, see Peretzet al., 2001). In the original version, the excerpts that comprise a melody and an accompaniment are highly consonant and are taken from pre‐existing classical music (e.g. the first bars of Albinoni’s Adagio). The dissonant version was",
+    "full_visible_prefix_before_current": "ical individuals will be indifferent to the presence of dissonance. The test of this particular prediction was the goal of the present investigation.\n\nIn order to assess sensitivity to dissonance, we used pleasantness judgements for a set of 24 musical excerpts that were presented in two versions (for a full description, see Peretzet al., 2001). In the original version, the excerpts that comprise a melody and an accompaniment are highly consonant and are taken from pre‐existing classical music (e.g. the first bars of Albinoni’s Adagio). The dissonant version was",
+    "target_z": 0.14651526510715485,
+    "target_train_p": 0.002325723728502356,
+    "major_companions": [
+      {
+        "feature_id": 6118,
+        "z": 0.18192525207996368,
+        "weighted_z": 1.6633742659516457,
+        "train_p": 0.0007650407001652488,
+        "owners": {
+          "A": -1,
+          "B1": -1,
+          "B2": -1
+        }
+      },
+      {
+        "feature_id": 7388,
+        "z": 0.08316134661436081,
+        "weighted_z": 0.9171098236365509,
+        "train_p": 0.9686792337352347,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 9297,
+        "z": 0.14651526510715485,
+        "weighted_z": 0.8161407031417838,
+        "train_p": 0.002325723728502356,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13373,
+        "z": 0.10498285293579102,
+        "weighted_z": 0.7902665011090448,
+        "train_p": 0.011368504804455597,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 8060,
+        "z": 0.08329284936189651,
+        "weighted_z": 0.7513907440368186,
+        "train_p": 0.9818991370340903,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 11364,
+        "z": 0.06975886225700378,
+        "weighted_z": 0.7313923748313584,
+        "train_p": 0.39069098476038927,
+        "owners": {
+          "A": 3,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13964,
+        "z": 0.06153462082147598,
+        "weighted_z": 0.6446011149010076,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 15664,
+        "z": 0.08351337164640427,
+        "weighted_z": 0.6274456389489202,
+        "train_p": 0.19542199645021116,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.002662802115082741,
+          0.0329793319106102,
+          0.05298363417387009,
+          0.06728624552488327,
+          0.11238765716552734,
+          0.06753697991371155,
+          0.19685021042823792,
+          0.4548894464969635
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.4548894464969635,
+        "runner_score": 0.19685021042823792,
+        "margin": 0.2580392360687256,
+        "target_weighted_z": 0.8161407031417838,
+        "target_score_contribution": 8.820282104633997e-05,
+        "scores_without_target": [
+          0.0025745993480086327,
+          0.0329793319106102,
+          0.05298363417387009,
+          0.06728624552488327,
+          0.11238765716552734,
+          0.06753697991371155,
+          0.19685021042823792,
+          0.4548894464969635
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.004563876893371344,
+          0.0036889282055199146,
+          0.011075285263359547,
+          0.00582467345520854,
+          0.038785580545663834,
+          0.0,
+          0.0,
+          0.02903974987566471
+        ],
+        "actual_expert": 4,
+        "runner": 7,
+        "winner_score": 0.038785580545663834,
+        "runner_score": 0.02903974987566471,
+        "margin": 0.009745830669999123,
+        "target_weighted_z": 0.8161407031417838,
+        "target_score_contribution": 8.820282104633997e-05,
+        "scores_without_target": [
+          0.0044756741262972355,
+          0.0036889282055199146,
+          0.011075285263359547,
+          0.00582467345520854,
+          0.038785580545663834,
+          0.0,
+          0.0,
+          0.02903974987566471
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 7
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.004797112196683884,
+          0.0020393929444253445,
+          0.0004198888491373509,
+          0.005761878099292517,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 3,
+        "runner": 0,
+        "winner_score": 0.005761878099292517,
+        "runner_score": 0.004797112196683884,
+        "margin": 0.000964765902608633,
+        "target_weighted_z": 0.8161407031417838,
+        "target_score_contribution": 8.820282104633997e-05,
+        "scores_without_target": [
+          0.0047089094296097755,
+          0.0020393929444253445,
+          0.0004198888491373509,
+          0.005761878099292517,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 3,
+        "target_removal_changes_route": false,
+        "route_without_common": 3
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 1133,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 17769,
+    "block_id": 117675,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8406016,
+    "absolute_token_offset": 8406402,
+    "local_context_position": 386,
+    "current_token_id": 264,
+    "current_token": " a",
+    "next_token_id": 5810,
+    "next_token": " natural",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 387,
+    "shown_prefix_first_local_token": 286,
+    "prefix_last_up_to_100_tokens": "ful looks on more than one occasion.\n\nOne day, during a break in the Hurricane work, I pinned three of the Grain prints back up on the wall next to each other, but oriented vertically instead of horizontally, because that was the only way they would fit on the available wall space. Once they were up, I couldn’t take my eyes off them.\n\nAs I looked at them, something led me to see the flat gray rectangles as light-filled spaces. Was it photographic expectation, the result of",
+    "full_visible_prefix_before_current": " aimed at. In fact, as I proceeded, I began to see the “lightscapes” as “grain portraits.”\n\nHaving eventually photographed the light from my enlarger with a variety of film types and other, large-format cameras, I proceeded to develop the film in various ways to explore the resulting changes in the shape and structure of the film grain. I began to feel like a sculptor, but a sculptor working on an insane nanoscale. Instead of using chisels to carve marble or an acetylene torch to cut steel, I was using chemistry to shape miniature grains of silver.\n\nThe day I printed the first Grain prints at the same size as the Hurricanes, I arranged them on the wall together. I expected trumpets to sound, that the effect would be unified and transcendent. The perfect art conundrum. It was, of course, a self-conscious disaster.\n\nThe direct juxtaposition completely undermined the best qualities of the individual components. The Hurricanes were diminished in their immediacy and the Grain prints were static. In frustration, I took the Grain prints down and threw them on the floor in the corner of the studio. As I continued work on the Hurricanes, the Grain prints just lay on the floor, face up. The Hurricanes went back to looking pretty good. But the Grain prints were muttering to themselves in the corner. And I caught them staring at me with rather baleful looks on more than one occasion.\n\nOne day, during a break in the Hurricane work, I pinned three of the Grain prints back up on the wall next to each other, but oriented vertically instead of horizontally, because that was the only way they would fit on the available wall space. Once they were up, I couldn’t take my eyes off them.\n\nAs I looked at them, something led me to see the flat gray rectangles as light-filled spaces. Was it photographic expectation, the result of",
+    "target_z": 0.06650501489639282,
+    "target_train_p": 0.0021574147744660016,
+    "major_companions": [
+      {
+        "feature_id": 15953,
+        "z": 0.15499691665172577,
+        "weighted_z": 1.8588474281025213,
+        "train_p": 0.021688903849684804,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1963,
+        "z": 0.1247287392616272,
+        "weighted_z": 1.2198551253130177,
+        "train_p": 0.020426586694412142,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 72,
+        "z": 0.1031949371099472,
+        "weighted_z": 0.6598406859801642,
+        "train_p": 0.30183915784319726,
+        "owners": {
+          "A": 2,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 9728,
+        "z": 0.08480693399906158,
+        "weighted_z": 0.6052377362838683,
+        "train_p": 0.020755554195483198,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5147,
+        "z": 0.05456335470080376,
+        "weighted_z": 0.571075503245762,
+        "train_p": 0.9586036477140584,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7388,
+        "z": 0.04959201067686081,
+        "weighted_z": 0.546904565850113,
+        "train_p": 0.9686792337352347,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 556,
+        "z": 0.06098351627588272,
+        "weighted_z": 0.543682875668523,
+        "train_p": 0.5775598261827529,
+        "owners": {
+          "A": 4,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 516,
+        "z": 0.05508868396282196,
+        "weighted_z": 0.5351035651771099,
+        "train_p": 0.9834904216904339,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0019499348709359765,
+          0.008604614064097404,
+          0.0486394427716732,
+          0.09418798238039017,
+          0.1998348832130432,
+          0.05506342276930809,
+          0.25990810990333557,
+          0.4030440151691437
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.4030440151691437,
+        "runner_score": 0.25990810990333557,
+        "margin": 0.1431359052658081,
+        "target_weighted_z": 0.3862698848824664,
+        "target_score_contribution": 4.1745367435692896e-05,
+        "scores_without_target": [
+          0.001908189500682056,
+          0.008604614064097404,
+          0.0486394427716732,
+          0.09418798238039017,
+          0.1998348832130432,
+          0.05506342276930809,
+          0.25990810990333557,
+          0.4030440151691437
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.003623390570282936,
+          0.0017192144878208637,
+          0.0034785966854542494,
+          0.003869385924190283,
+          0.02250954695045948,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 3,
+        "winner_score": 0.02250954695045948,
+        "runner_score": 0.003869385924190283,
+        "margin": 0.018640161026269197,
+        "target_weighted_z": 0.3862698848824664,
+        "target_score_contribution": 4.1745367435692896e-05,
+        "scores_without_target": [
+          0.0035816452000290155,
+          0.0017192144878208637,
+          0.0034785966854542494,
+          0.003869385924190283,
+          0.02250954695045948,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 1
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.0036436018999665976,
+          0.0013842968037351966,
+          0.0031326322350651026,
+          0.0020370669662952423,
+          0.010131954215466976,
+          0.0,
+          0.03305847570300102,
+          0.0
+        ],
+        "actual_expert": 6,
+        "runner": 4,
+        "winner_score": 0.03305847570300102,
+        "runner_score": 0.010131954215466976,
+        "margin": 0.022926521487534046,
+        "target_weighted_z": 0.3862698848824664,
+        "target_score_contribution": 4.1745367435692896e-05,
+        "scores_without_target": [
+          0.003601856529712677,
+          0.0013842968037351966,
+          0.0031326322350651026,
+          0.0020370669662952423,
+          0.010131954215466976,
+          0.0,
+          0.03305847570300102,
+          0.0
+        ],
+        "route_without_target": 6,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 1133,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 25504,
+    "block_id": 117682,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8413184,
+    "absolute_token_offset": 8414146,
+    "local_context_position": 962,
+    "current_token_id": 458,
+    "current_token": " an",
+    "next_token_id": 73932,
+    "next_token": " octave",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 963,
+    "shown_prefix_first_local_token": 862,
+    "prefix_last_up_to_100_tokens": " unable to perceive and interpret musical pitch differences normally. Yet, this is not the result of poor auditory attention or of a deficient affective system in general, since they are able to infer the happy or sad tone of music in a rather consistent manner.\n\nDiscrimination of pitch variations (intonation) in speech\n\nFine‐grained discrimination of pitch is probably more relevant to music processing than to any other domain. Speech intonation contours, for example, use variations in pitch that are larger than half",
+    "full_visible_prefix_before_current": "ical individuals will be indifferent to the presence of dissonance. The test of this particular prediction was the goal of the present investigation.\n\nIn order to assess sensitivity to dissonance, we used pleasantness judgements for a set of 24 musical excerpts that were presented in two versions (for a full description, see Peretzet al., 2001). In the original version, the excerpts that comprise a melody and an accompaniment are highly consonant and are taken from pre‐existing classical music (e.g. the first bars of Albinoni’s Adagio). The dissonant version was created by shifting the pitch of all tones of the leading voice by one semitone either upward or downward. Each excerpt was presented in its consonant version and in its new dissonant version, amounting to 48 trials. The task of the subject was to judge the pleasantness of each excerpt on a 10‐point scale, with 1 referring to very unpleasant and 10 to very pleasant. Since half the excerpts evoke a sense of happiness (they were all played in the major mode with a median tempo of 138) and the other half a sense of sadness (they were played in the minor mode at a median tempo of 53), these were presented in their consonant version in a separate control task. The task was to judge, on a similar 10‐point scale, if each excerpt was sad (corresponding to a rating of 1) or happy (corresponding to 10). In this happy–sad distinction task, the pitch intervals (defining the mode) were not the only cue that the subject could use to recognize the emotion; the tempo was also available. To the extent that amusical subjects can derive the tempo of music, they should be able to attribute the correct emotional label to the 24 original excerpts.\n\nThe mean pleasantness ratings given by the amusical and control subjects to the consonant and dissonant version of the same excerpts are presented in Fig. 2 (left panel). As shown, control subjects judge the consonant versions as generally pleasant whereas they judge the dissonant versions as unpleasant. This distinction does not emerge in the ratings of the amusical subjects, who tend to judge all excerpts as weakly pleasant [one amusic subject (A6) did not perform this test]. The ratings were submitted to an ANOVA considering dissonance (consonant versus dissonant version) as the within‐subjects factor and group as the between‐subjects factor. The analysis gives rise to a highly significant interaction between dissonance and group, with F(1,24) = 52.37, P < 0.001. The interaction supports the observation that control subjects find the consonant versions much more pleasant than the dissonant versions of the same excerpts [t(15) = 12.456; P < 0.001], whereas the amusical group shows a less marked preference [t(9) = 2.123; P < 0.05]. Thus, amusical subjects appear less sensitive to dissonance than normal controls.\n\nFig. 2 Mean ratings obtained in pleasantness judgements of dissonance (left panel) and in happy–sad control judgements (right panel).\n\nHowever, amusical subjects are able to recognize the affective tone of music to some extent. They are able to distinguish happy from sad music reliably [see Fig. , right panel; t(9) = 9.692; P < 0.001], although their judgements are less extreme than those of their controls. This difference is supported by a significant interaction between structure (major/fast excerpts versus minor/slow excerpts) and group, with F(1,23) = 5.78, P < 0.025.\n\nAltogether, the results obtained with emotional judgements are consistent with those obtained in non‐emotional tasks. Amusical subjects are unable to perceive and interpret musical pitch differences normally. Yet, this is not the result of poor auditory attention or of a deficient affective system in general, since they are able to infer the happy or sad tone of music in a rather consistent manner.\n\nDiscrimination of pitch variations (intonation) in speech\n\nFine‐grained discrimination of pitch is probably more relevant to music processing than to any other domain. Speech intonation contours, for example, use variations in pitch that are larger than half",
+    "target_z": 0.02793079987168312,
+    "target_train_p": 0.0021574147744660016,
+    "major_companions": [
+      {
+        "feature_id": 2402,
+        "z": 0.1657792031764984,
+        "weighted_z": 2.153264384947704,
+        "train_p": 0.00313666687067752,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13964,
+        "z": 0.17429706454277039,
+        "weighted_z": 1.825835287978748,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1115,
+        "z": 0.24013926088809967,
+        "weighted_z": 1.1880945445588793,
+        "train_p": 0.0015453822143338025,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 15512,
+        "z": 0.15874001383781433,
+        "weighted_z": 0.9941484397339337,
+        "train_p": 0.0012317155272660505,
+        "owners": {
+          "A": -1,
+          "B1": -1,
+          "B2": -1
+        }
+      },
+      {
+        "feature_id": 11382,
+        "z": 0.14761660993099213,
+        "weighted_z": 0.8059297510847543,
+        "train_p": 0.008782667237897055,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1456,
+        "z": 0.15742871165275574,
+        "weighted_z": 0.7498246228713015,
+        "train_p": 0.0031596180916824775,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 15953,
+        "z": 0.06124691292643547,
+        "weighted_z": 0.7345221378070299,
+        "train_p": 0.021688903849684804,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 3950,
+        "z": 0.13477563858032227,
+        "weighted_z": 0.6988454822601398,
+        "train_p": 0.001254666748271008,
+        "owners": {
+          "A": -1,
+          "B1": -1,
+          "B2": -1
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0036261274944990873,
+          0.015471959486603737,
+          0.04839093238115311,
+          0.08905871957540512,
+          0.04109381139278412,
+          0.18911811709403992,
+          0.041611261665821075,
+          0.5193921327590942
+        ],
+        "actual_expert": 7,
+        "runner": 5,
+        "winner_score": 0.5193921327590942,
+        "runner_score": 0.18911811709403992,
+        "margin": 0.3302740156650543,
+        "target_weighted_z": 0.16222576399566258,
+        "target_score_contribution": 1.7532234301919657e-05,
+        "scores_without_target": [
+          0.0036085951142013073,
+          0.015471959486603737,
+          0.04839093238115311,
+          0.08905871957540512,
+          0.04109381139278412,
+          0.18911811709403992,
+          0.041611261665821075,
+          0.5193921327590942
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.005316085647791624,
+          0.00438516354188323,
+          0.006947699002921581,
+          0.0017273223493248224,
+          0.016099099069833755,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 2,
+        "winner_score": 0.016099099069833755,
+        "runner_score": 0.006947699002921581,
+        "margin": 0.009151400066912174,
+        "target_weighted_z": 0.16222576399566258,
+        "target_score_contribution": 1.7532234301919657e-05,
+        "scores_without_target": [
+          0.0052985530346632,
+          0.00438516354188323,
+          0.006947699002921581,
+          0.0017273223493248224,
+          0.016099099069833755,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.0053849308751523495,
+          0.0036114566028118134,
+          0.0029798371251672506,
+          0.0021672595757991076,
+          0.0,
+          0.0,
+          0.0,
+          0.010479173623025417
+        ],
+        "actual_expert": 7,
+        "runner": 0,
+        "winner_score": 0.010479173623025417,
+        "runner_score": 0.0053849308751523495,
+        "margin": 0.005094242747873068,
+        "target_weighted_z": 0.16222576399566258,
+        "target_score_contribution": 1.7532234301919657e-05,
+        "scores_without_target": [
+          0.005367398727685213,
+          0.0036114566028118134,
+          0.0029798371251672506,
+          0.0021672595757991076,
+          0.0,
+          0.0,
+          0.0,
+          0.010479173623025417
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 1
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 1133,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 8369,
+    "block_id": 117666,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8396800,
+    "absolute_token_offset": 8396985,
+    "local_context_position": 185,
+    "current_token_id": 264,
+    "current_token": " a",
+    "next_token_id": 2696,
+    "next_token": " lot",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 186,
+    "shown_prefix_first_local_token": 85,
+    "prefix_last_up_to_100_tokens": " system takes innocent children, turn them into monsters. If Black women think this has nothing to do with them wait until you have a black child, pray its a girl, if its a boy he wont turn 10 before they try to get him into the system.\n    Now the administrations call, late as it has been, is timely. But we as black men have to act in our children's interest and defense in order to save their lives and souls. One thing I have been thinking about",
+    "full_visible_prefix_before_current": " to schools to seek remedies within the school system. It underlines what Black communities have been saying for decades, that young black men are renditioned out of schools into the justice system in extraordinarily high numbers. They spend more time in jail, being emasculated and emasculating other black me. When they graduate from jail that invariably turns them into predators they are released into the black population to prey on us. The system takes innocent children, turn them into monsters. If Black women think this has nothing to do with them wait until you have a black child, pray its a girl, if its a boy he wont turn 10 before they try to get him into the system.\n    Now the administrations call, late as it has been, is timely. But we as black men have to act in our children's interest and defense in order to save their lives and souls. One thing I have been thinking about",
+    "target_z": 0.03867298737168312,
+    "target_train_p": 0.0021574147744660016,
+    "major_companions": [
+      {
+        "feature_id": 15953,
+        "z": 0.20089535415172577,
+        "weighted_z": 2.409298329603402,
+        "train_p": 0.021688903849684804,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13964,
+        "z": 0.12131855636835098,
+        "weighted_z": 1.270863062926793,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 10807,
+        "z": 0.1512782722711563,
+        "weighted_z": 1.2500332125521254,
+        "train_p": 0.9736519982863089,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 76,
+        "z": 0.13165521621704102,
+        "weighted_z": 0.9898028910790799,
+        "train_p": 0.010932431605361405,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 516,
+        "z": 0.08142535388469696,
+        "weighted_z": 0.7909246332498014,
+        "train_p": 0.9834904216904339,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7176,
+        "z": 0.09102296829223633,
+        "weighted_z": 0.7905510110035721,
+        "train_p": 0.02318073321500704,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 8345,
+        "z": 0.0715513750910759,
+        "weighted_z": 0.7673436253921295,
+        "train_p": 0.8822678866515699,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5147,
+        "z": 0.07067663967609406,
+        "weighted_z": 0.7397217013518826,
+        "train_p": 0.9586036477140584,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0025003559421747923,
+          0.00854396540671587,
+          0.03302689641714096,
+          0.085721455514431,
+          0.13654343783855438,
+          0.08302301913499832,
+          0.33517417311668396,
+          0.6227808594703674
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.6227808594703674,
+        "runner_score": 0.33517417311668396,
+        "margin": 0.28760668635368347,
+        "target_weighted_z": 0.2246178036858293,
+        "target_score_contribution": 2.4275132787834138e-05,
+        "scores_without_target": [
+          0.002476080786436796,
+          0.00854396540671587,
+          0.03302689641714096,
+          0.085721455514431,
+          0.13654343783855438,
+          0.08302301913499832,
+          0.33517417311668396,
+          0.6227808594703674
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.004039911553263664,
+          0.005124022718518972,
+          0.004420206882059574,
+          0.00749938702210784,
+          0.009624452330172062,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 3,
+        "winner_score": 0.009624452330172062,
+        "runner_score": 0.00749938702210784,
+        "margin": 0.0021250653080642223,
+        "target_weighted_z": 0.2246178036858293,
+        "target_score_contribution": 2.4275132787834138e-05,
+        "scores_without_target": [
+          0.0040156361646950245,
+          0.005124022718518972,
+          0.004420206882059574,
+          0.00749938702210784,
+          0.009624452330172062,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 1
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.004128796514123678,
+          0.0032268804498016834,
+          0.0009152541169896722,
+          0.002979902783408761,
+          0.007481737993657589,
+          0.0,
+          0.03337232768535614,
+          0.006805949844419956
+        ],
+        "actual_expert": 6,
+        "runner": 4,
+        "winner_score": 0.03337232768535614,
+        "runner_score": 0.007481737993657589,
+        "margin": 0.02589058969169855,
+        "target_weighted_z": 0.2246178036858293,
+        "target_score_contribution": 2.4275132787834138e-05,
+        "scores_without_target": [
+          0.004104521591216326,
+          0.0032268804498016834,
+          0.0009152541169896722,
+          0.002979902783408761,
+          0.007481737993657589,
+          0.0,
+          0.03337232768535614,
+          0.006805949844419956
+        ],
+        "route_without_target": 6,
+        "target_removal_changes_route": false,
+        "route_without_common": 7
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 1133,
+    "split": "EVAL",
+    "sample_kind": "highest_z_unseen_context",
+    "row": 296,
+    "block_id": 117658,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8388608,
+    "absolute_token_offset": 8388904,
+    "local_context_position": 296,
+    "current_token_id": 264,
+    "current_token": " a",
+    "next_token_id": 7653,
+    "next_token": " leader",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 297,
+    "shown_prefix_first_local_token": 196,
+    "prefix_last_up_to_100_tokens": " he's Mr. Right and not Mr. Right Now) and how to just \"GROW\" with the flow. And please, don't mistake a \"Grown Boy\" for a\"Knight In Shinning Armor\". Quality Black men today should NOT be held accountable for \"what you allowed\" some grown boy to do to you in the past. This is also a major problem for most Black women today! They don't know what a real man is, especially in the form of",
+    "full_visible_prefix_before_current": " understand, I'm not suggesting that Black women leave the church, or quit their government jobs or stop doing things for the community. Again, all I'm suggesting is that Black single and seeking women must learn the importance of \"BALANCE\" in a relationship setting, and master those other \"FEMININE\" skills and qualities that are very necessary to maintain a happy, healthy relationship. It's one thing to get a man ladies, but it takes a great deal of other skills and qualifications to keep him\n\nAnd Ladies please hear me very clearly, I'm ONLY speaking on behalf of \"QUALITY\" Black men, I'm NOT referencing thugs, momma's boys, dead beats, grown boys, or any other classless group of Black males perpetrating manhood.\n\n  Dancing solo, many of you SISTAHS have mastered that! \n\nWith that being said: Sistahs, you must all learn how to accept his lead (assuming he's Mr. Right and not Mr. Right Now) and how to just \"GROW\" with the flow. And please, don't mistake a \"Grown Boy\" for a\"Knight In Shinning Armor\". Quality Black men today should NOT be held accountable for \"what you allowed\" some grown boy to do to you in the past. This is also a major problem for most Black women today! They don't know what a real man is, especially in the form of",
+    "target_z": 0.08554798364639282,
+    "target_train_p": 0.0021574147744660016,
+    "major_companions": [
+      {
+        "feature_id": 15953,
+        "z": 0.15890316665172577,
+        "weighted_z": 1.9056943133366389,
+        "train_p": 0.021688903849684804,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 516,
+        "z": 0.11755816638469696,
+        "weighted_z": 1.141900467083019,
+        "train_p": 0.9834904216904339,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5913,
+        "z": 0.07750749588012695,
+        "weighted_z": 0.7946823056909125,
+        "train_p": 0.9518483383315992,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13830,
+        "z": 0.06517378985881805,
+        "weighted_z": 0.6641312711264504,
+        "train_p": 0.8115934267703042,
+        "owners": {
+          "A": 6,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5147,
+        "z": 0.06249792501330376,
+        "weighted_z": 0.6541209603863045,
+        "train_p": 0.9586036477140584,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7415,
+        "z": 0.06755894422531128,
+        "weighted_z": 0.5958005415984644,
+        "train_p": 0.9477018177367036,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1960,
+        "z": 0.05845373496413231,
+        "weighted_z": 0.5618629580076018,
+        "train_p": 0.419425913458596,
+        "owners": {
+          "A": 3,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1963,
+        "z": 0.0534396767616272,
+        "weighted_z": 0.5226434900139907,
+        "train_p": 0.020426586694412142,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0018708329880610108,
+          0.01649327017366886,
+          0.043321430683135986,
+          0.08672041445970535,
+          0.04857686907052994,
+          0.10174749046564102,
+          0.3646165132522583,
+          0.580344021320343
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.580344021320343,
+        "runner_score": 0.3646165132522583,
+        "margin": 0.21572750806808472,
+        "target_weighted_z": 0.4968739552423074,
+        "target_score_contribution": 5.369868747890493e-05,
+        "scores_without_target": [
+          0.0018171342089772224,
+          0.01649327017366886,
+          0.043321430683135986,
+          0.08672041445970535,
+          0.04857686907052994,
+          0.10174749046564102,
+          0.3646165132522583,
+          0.580344021320343
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.003714899066835642,
+          0.000647207722067833,
+          0.005028344225138426,
+          0.0019047511741518974,
+          0.009481447748839855,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 2,
+        "winner_score": 0.009481447748839855,
+        "runner_score": 0.005028344225138426,
+        "margin": 0.004453103523701429,
+        "target_weighted_z": 0.4968739552423074,
+        "target_score_contribution": 5.369868747890493e-05,
+        "scores_without_target": [
+          0.0036612004041671753,
+          0.000647207722067833,
+          0.005028344225138426,
+          0.0019047511741518974,
+          0.009481447748839855,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.0037861804012209177,
+          0.0003057798312511295,
+          0.001270655426196754,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 0,
+        "runner": 2,
+        "winner_score": 0.0037861804012209177,
+        "runner_score": 0.001270655426196754,
+        "margin": 0.0025155249750241637,
+        "target_weighted_z": 0.4968739552423074,
+        "target_score_contribution": 5.369868747890493e-05,
+        "scores_without_target": [
+          0.003732481738552451,
+          0.0003057798312511295,
+          0.001270655426196754,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 0,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 2704,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 56828,
+    "block_id": 117713,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8444928,
+    "absolute_token_offset": 8445541,
+    "local_context_position": 613,
+    "current_token_id": 700,
+    "current_token": " out",
+    "next_token_id": 4217,
+    "next_token": " players",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 614,
+    "shown_prefix_first_local_token": 513,
+    "prefix_last_up_to_100_tokens": ". It's also helpful that the Hornets, Jazz and Nuggets are absolute disasters right now.\n\nThey're really just barely gotten by too during this little win streak, even having to max out their starters minutes.\n\nWith 17 out of the 26 against +.500 teams it's gonna be rough for Portland. However, knowing Blazer fans, they will point to Roy's return and not the level of competition. When you're 27th in rebounding, maxing",
+    "full_visible_prefix_before_current": " Portland is, so I'm not in love with this like I initially was. Portland still has assets to play with, I just don't like the trade game forcing pieces to fit together. I've seen Portland go down this road before and it blew up in their faces...I'm crossing my fingers on this one.\n\nI think the Grizz will be fine, even with Gay out I have them finishing 6th in the West. They have enough scoring power even with him out and Conley is way underrated so I think they can weather the storm. Most those games are at Memphis too where they are 19-8 this season.\n\nHornets will finish 5th because they actually defend the basketball really well and their schedule looks to be the easiest out of the bottom four teams.\n\nThat leaves Portland & Utah to slug it out for the 7th and 8th spots.\n\nNot from me. I never liked the kid's game. Yeah, he's nice guy and all and a good teammate, but he's issues. It's funny reading comments on Net's blogs about \"OutLOL\" because they echo many of the same sentiments that were said repeatedly at no end. Poor conditioning, doesn't put in the effort to improve his game, awful rebounding instincts, get's lost in defensive schemes, takes poor shots, etc.. It's a freaking broken record with him and it's a shame because with a body like his it's all just wasted potential.\n\nBy the's how the Nets feel about, Outlaw.\n\nI wouldn't want to be tied to down to Trav-Trav's contract. He's pretty terrible anyways and you can't say he didn't get an opportunity to show you what he's worth. .376 FG%? Yikitty yikes.\n\nConsidering their \"progressive\" core vaules it's kind of odd that they would be advocating something like this.\n\nHow much more money is BV gonna make by putting in a drive-thru? I can see doing it or something more substantial but for a drive-thru lane? Forget about it.\n\nThey were a poor rebounding team even with Camby. They move up from 27th to 22nd ...maybe? He'll help, but the Blazers are still gonna struggle on the boards nightly.\n\nRoy is still an unknown, so you can't pencil him in for anything and I doubt he winds up on the bench for the whole season.\n\nIt's fun to be in 5th place while the Blazers have it. It's also helpful that the Hornets, Jazz and Nuggets are absolute disasters right now.\n\nThey're really just barely gotten by too during this little win streak, even having to max out their starters minutes.\n\nWith 17 out of the 26 against +.500 teams it's gonna be rough for Portland. However, knowing Blazer fans, they will point to Roy's return and not the level of competition. When you're 27th in rebounding, maxing",
+    "target_z": 0.023397531360387802,
+    "target_train_p": 0.0020273578554379093,
+    "major_companions": [
+      {
+        "feature_id": 14199,
+        "z": 0.20851780474185944,
+        "weighted_z": 1.802575269158183,
+        "train_p": 0.0022951221004957464,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 16242,
+        "z": 0.24118348956108093,
+        "weighted_z": 1.4575339836149226,
+        "train_p": 0.036423587734867494,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5913,
+        "z": 0.09264421463012695,
+        "weighted_z": 0.9498786827671211,
+        "train_p": 0.9518483383315992,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 516,
+        "z": 0.09778277575969696,
+        "weighted_z": 0.9498123418094337,
+        "train_p": 0.9834904216904339,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7415,
+        "z": 0.10442417860031128,
+        "weighted_z": 0.9209140681439294,
+        "train_p": 0.9477018177367036,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 8345,
+        "z": 0.0754576250910759,
+        "weighted_z": 0.8092357068912293,
+        "train_p": 0.8822678866515699,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 11046,
+        "z": 0.08732175081968307,
+        "weighted_z": 0.778448172443575,
+        "train_p": 0.399986229267397,
+        "owners": {
+          "A": 3,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 13964,
+        "z": 0.07154438644647598,
+        "weighted_z": 0.7494576329982294,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0024488794151693583,
+          0.018658922985196114,
+          0.061616115272045135,
+          0.10828743875026703,
+          0.1542947143316269,
+          0.1108471006155014,
+          0.3578864634037018,
+          0.6461886763572693
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.6461886763572693,
+        "runner_score": 0.3578864634037018,
+        "margin": 0.2883022129535675,
+        "target_weighted_z": 0.1269012655632018,
+        "target_score_contribution": 1.3714607755668626e-05,
+        "scores_without_target": [
+          0.0024351647589355707,
+          0.018658922985196114,
+          0.061616115272045135,
+          0.10828743875026703,
+          0.1542947143316269,
+          0.1108471006155014,
+          0.3578864634037018,
+          0.6461886763572693
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.004697737749665976,
+          0.003405546071007848,
+          0.0082175824791193,
+          0.006763240788131952,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 2,
+        "runner": 3,
+        "winner_score": 0.0082175824791193,
+        "runner_score": 0.006763240788131952,
+        "margin": 0.0014543416909873486,
+        "target_weighted_z": 0.1269012655632018,
+        "target_score_contribution": 1.3714607755668626e-05,
+        "scores_without_target": [
+          0.004684023093432188,
+          0.003405546071007848,
+          0.0082175824791193,
+          0.006763240788131952,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 2,
+        "target_removal_changes_route": false,
+        "route_without_common": 2
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.004845903255045414,
+          0.0011440988164395094,
+          0.0023531983606517315,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 0,
+        "runner": 2,
+        "winner_score": 0.004845903255045414,
+        "runner_score": 0.0023531983606517315,
+        "margin": 0.0024927048943936825,
+        "target_weighted_z": 0.1269012655632018,
+        "target_score_contribution": 1.3714607755668626e-05,
+        "scores_without_target": [
+          0.0048321885988116264,
+          0.0011440988164395094,
+          0.0023531983606517315,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 0,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 2704,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 45582,
+    "block_id": 117702,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8433664,
+    "absolute_token_offset": 8434270,
+    "local_context_position": 606,
+    "current_token_id": 1933,
+    "current_token": "land",
+    "next_token_id": 812,
+    "next_token": "ish",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 607,
+    "shown_prefix_first_local_token": 506,
+    "prefix_last_up_to_100_tokens": " as the snack of choice in movie theaters worldwide (yes, korea, its even better than that toasted dried squid!).\n\ni usually like really simple and fresh sashimi and nigiri. i'm not opposed to american style maki rolls, but they just don't really appeal when they have five kinds of fish, are deep-fried, slathered in spicy mayo with tiled avocado armor. i want a place in SF that has GOOD fish, but might also serve up more creative or out",
+    "full_visible_prefix_before_current": ".\n\n            1. re: chefj\n\n              When's the last time I used bacon grease? Man, it made things taste good! And we always had plenty of it in the \"recycled\" (though we wouldn't have thought of it that way!) coffee can! Times do change....\n\n              1. re: peppergal\n\n                I still keep all my bacon grease and pork fat both at home and at work. It is no worse than butter.\n                You should treat yourself sometimes ( -;\n\n                1. re: chefj\n\n                  And a treat it would be! I may have to start buying bacon again:) I do miss it.... No other flavor quite like it. I'll take that as permission, chefj!<|im_end|>HOME > Chowhound > San Francisco Bay Area >\n\n\nhe likes ___. where do i take him for sushi in SF?\n\nfor years i've had many wonderful meals at koo in SF. unfortunately, i am not terribly familiar with other sushi restaurants in the city. i want to treat a friend to a sushi dinner for his birthday, but koo is closed until june 7th, which makes planning a dinner with a few more friends a bit more difficult around the birthday boy's actual birthday.\n\nso i'm trying to think of alternatives. i've been throwing around sebo and sushi aka tombo in my head. maybe kiss, but its been so long since i've been there.\n\ni want to tailor the meal to my friend's taste, while leaving room for my own. he loves mackerel. i think its delicious when it is fresh, and inedible when its less so. but recently when he tasted kohada, which i think is fairly similar (strongly flavored, oily, not unlike herring, anchovy, sardines), but to me, better, he just shrugged and said, \"it's like mackerel.\" well yes, but...ok! he likes maguro, and i don't think he's had nice toro yet, but tuna in general is good. he likes scallops. he isn't terribly adventuresome but i think that given the option of nice fish for free on his birthday, he'd try a lot of things he usually wouldn't. he likes spicy tuna rolls. i don't. usually.\n\ni think he would really like the aji sashimi prep at koo, which also comes with the skeleton deep fried into what should probably replace popcorn as the snack of choice in movie theaters worldwide (yes, korea, its even better than that toasted dried squid!).\n\ni usually like really simple and fresh sashimi and nigiri. i'm not opposed to american style maki rolls, but they just don't really appeal when they have five kinds of fish, are deep-fried, slathered in spicy mayo with tiled avocado armor. i want a place in SF that has GOOD fish, but might also serve up more creative or out",
+    "target_z": 0.016317453235387802,
+    "target_train_p": 0.0020273578554379093,
+    "major_companions": [
+      {
+        "feature_id": 13964,
+        "z": 0.15525409579277039,
+        "weighted_z": 1.6263521559889114,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 10807,
+        "z": 0.1605556160211563,
+        "weighted_z": 1.3266931825376105,
+        "train_p": 0.9736519982863089,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 169,
+        "z": 0.17010413110256195,
+        "weighted_z": 1.1259850995500287,
+        "train_p": 0.022025521757757512,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1107,
+        "z": 0.08208464086055756,
+        "weighted_z": 0.7791576353056655,
+        "train_p": 0.1695865720056307,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 11894,
+        "z": 0.11703759431838989,
+        "weighted_z": 0.7727499761296031,
+        "train_p": 0.003213170940694045,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1712,
+        "z": 0.07761157304048538,
+        "weighted_z": 0.7564116653739674,
+        "train_p": 0.23520411285880408,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 14,
+        "z": 0.08129626512527466,
+        "weighted_z": 0.737460602640283,
+        "train_p": 0.6668400758920374,
+        "owners": {
+          "A": 5,
+          "B1": 2,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 16231,
+        "z": 0.07507605105638504,
+        "weighted_z": 0.7218629439451547,
+        "train_p": 0.22129567292979987,
+        "owners": {
+          "A": 1,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.004552390426397324,
+          0.05976451560854912,
+          0.031119853258132935,
+          0.08038847893476486,
+          0.05670738220214844,
+          0.35339081287384033,
+          0.0,
+          0.5621312260627747
+        ],
+        "actual_expert": 7,
+        "runner": 5,
+        "winner_score": 0.5621312260627747,
+        "runner_score": 0.35339081287384033,
+        "margin": 0.20874041318893433,
+        "target_weighted_z": 0.08850102322524478,
+        "target_score_contribution": 9.56457616181182e-06,
+        "scores_without_target": [
+          0.004542825743556023,
+          0.05976451560854912,
+          0.031119853258132935,
+          0.08038847893476486,
+          0.05670738220214844,
+          0.35339081287384033,
+          0.0,
+          0.5621312260627747
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.006905057467520237,
+          0.004984178580343723,
+          0.007727120071649551,
+          0.005937337409704924,
+          0.019831184297800064,
+          0.0,
+          0.0325477197766304,
+          0.0
+        ],
+        "actual_expert": 6,
+        "runner": 4,
+        "winner_score": 0.0325477197766304,
+        "runner_score": 0.019831184297800064,
+        "margin": 0.012716535478830338,
+        "target_weighted_z": 0.08850102322524478,
+        "target_score_contribution": 9.56457616181182e-06,
+        "scores_without_target": [
+          0.006895493250340223,
+          0.004984178580343723,
+          0.007727120071649551,
+          0.005937337409704924,
+          0.019831184297800064,
+          0.0,
+          0.0325477197766304,
+          0.0
+        ],
+        "route_without_target": 6,
+        "target_removal_changes_route": false,
+        "route_without_common": 6
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.006816965062171221,
+          0.011159908026456833,
+          0.003370279213413596,
+          0.007738545071333647,
+          0.01956939697265625,
+          0.0,
+          0.0,
+          0.025655264034867287
+        ],
+        "actual_expert": 7,
+        "runner": 4,
+        "winner_score": 0.025655264034867287,
+        "runner_score": 0.01956939697265625,
+        "margin": 0.006085867062211037,
+        "target_weighted_z": 0.08850102322524478,
+        "target_score_contribution": 9.56457616181182e-06,
+        "scores_without_target": [
+          0.00680740037932992,
+          0.011159908026456833,
+          0.003370279213413596,
+          0.007738545071333647,
+          0.01956939697265625,
+          0.0,
+          0.0,
+          0.025655264034867287
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 1
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 2704,
+    "split": "EVAL",
+    "sample_kind": "random",
+    "row": 54620,
+    "block_id": 117711,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8442880,
+    "absolute_token_offset": 8443327,
+    "local_context_position": 447,
+    "current_token_id": 2267,
+    "current_token": "oh",
+    "next_token_id": 323,
+    "next_token": " and",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 448,
+    "shown_prefix_first_local_token": 347,
+    "prefix_last_up_to_100_tokens": " It kind of got it right, too.\nYou need to go to an art forum to discuss whatever it is you're on about. You use a camera to create whatever you want. Maybe don't worry about what photographers are up to or interested in and don't bother trying to define something that you haven't really thought through\n\nReservoir Dan\n\nSomeone who buys a limited edition artwork does so because they love the piece and want it in their life in some capacity. The general public may still o",
+    "full_visible_prefix_before_current": " question. It's not photography. It's iphonic art and \"street\" photography is just one subset of the movement.\nThe problem I have with photography is photoshop, which is endemic to the medium.\nIphonic art, on the other hand, is something entirely different. Having produced more gallery shows than everybody else combined, I can tell you it is very important to people that the work be done only on the iOS device. Also, people love the more painterly and artistic images, much more so than the street work. My observation over the past three years.\nThat's not to say I don't like street photography: most of mine is shot on the street. I just app the hell out of it afterwards.\nWhat is mobile photography? It's not photography.\n\n\nKnox, you treat your iPhone like a 'canvas'. Others treat their iPhones like a 'camera'. Both approaches can develop beautiful results. When are you ever going to get over yourself? Until then, just shut the f*#ck up. Nobody cares what you think.\n\nComment edited 4 minutes after posting\n\nHaHa! \"Having produced more gallery shows than everybody else combined...\"\nWho the hell do you think you are?! Your last comment about photography not being photography (it's something MORE than that!) is simply a pretentious version of an age old argument that has been going on since photographers and painters would clash at the beginnings of photography. To lay claim to any kind of artistic process is simply misunderstanding the purpose of producing photographs, art or otherwise.\nThe article was not asking the wrong question. On a photographic equipment forum, where the question is photography, the article covered a relevant angle on how photography is perhaps defined today by users. It kind of got it right, too.\nYou need to go to an art forum to discuss whatever it is you're on about. You use a camera to create whatever you want. Maybe don't worry about what photographers are up to or interested in and don't bother trying to define something that you haven't really thought through\n\nReservoir Dan\n\nSomeone who buys a limited edition artwork does so because they love the piece and want it in their life in some capacity. The general public may still o",
+    "target_z": 0.024862375110387802,
+    "target_train_p": 0.0020273578554379093,
+    "major_companions": [
+      {
+        "feature_id": 13964,
+        "z": 0.14353534579277039,
+        "weighted_z": 1.5035933055336272,
+        "train_p": 0.9846838851826917,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 10807,
+        "z": 0.1678798347711563,
+        "weighted_z": 1.3872142114735198,
+        "train_p": 0.9736519982863089,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 8232,
+        "z": 0.17698420584201813,
+        "weighted_z": 1.0385366582630766,
+        "train_p": 0.009976130730154844,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 7768,
+        "z": 0.10911854356527328,
+        "weighted_z": 1.0255114480244387,
+        "train_p": 0.0209162127425179,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 16,
+        "z": 0.11526880413293839,
+        "weighted_z": 0.9751478143551964,
+        "train_p": 0.5021115123324561,
+        "owners": {
+          "A": 4,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 12439,
+        "z": 0.14446210861206055,
+        "weighted_z": 0.9250966021320437,
+        "train_p": 0.027082440785849808,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5147,
+        "z": 0.07873328030109406,
+        "weighted_z": 0.824044780909972,
+        "train_p": 0.9586036477140584,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1955,
+        "z": 0.09537214040756226,
+        "weighted_z": 0.8052506142105926,
+        "train_p": 0.004544341758981578,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.004248183686286211,
+          0.05569704622030258,
+          0.03969014436006546,
+          0.11657778173685074,
+          0.2937649190425873,
+          0.24708211421966553,
+          0.15713994204998016,
+          0.6747118234634399
+        ],
+        "actual_expert": 7,
+        "runner": 4,
+        "winner_score": 0.6747118234634399,
+        "runner_score": 0.2937649190425873,
+        "margin": 0.38094690442085266,
+        "target_weighted_z": 0.13484614328829636,
+        "target_score_contribution": 1.4573234981983828e-05,
+        "scores_without_target": [
+          0.004233610350638628,
+          0.05569704622030258,
+          0.03969014436006546,
+          0.11657778173685074,
+          0.2937649190425873,
+          0.24708211421966553,
+          0.15713994204998016,
+          0.6747118234634399
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.007001107092946768,
+          0.006489292718470097,
+          0.010481029748916626,
+          0.004837540909647942,
+          0.019657639786601067,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 2,
+        "winner_score": 0.019657639786601067,
+        "runner_score": 0.010481029748916626,
+        "margin": 0.00917661003768444,
+        "target_weighted_z": 0.13484614328829636,
+        "target_score_contribution": 1.4573234981983828e-05,
+        "scores_without_target": [
+          0.006986533757299185,
+          0.006489292718470097,
+          0.010481029748916626,
+          0.004837540909647942,
+          0.019657639786601067,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 1
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.006898402702063322,
+          0.01085479836910963,
+          0.011400737799704075,
+          0.004937808029353619,
+          0.016857458278536797,
+          0.0,
+          0.0,
+          0.005953946150839329
+        ],
+        "actual_expert": 4,
+        "runner": 2,
+        "winner_score": 0.016857458278536797,
+        "runner_score": 0.011400737799704075,
+        "margin": 0.005456720478832722,
+        "target_weighted_z": 0.13484614328829636,
+        "target_score_contribution": 1.4573234981983828e-05,
+        "scores_without_target": [
+          0.006883829366415739,
+          0.01085479836910963,
+          0.011400737799704075,
+          0.004937808029353619,
+          0.016857458278536797,
+          0.0,
+          0.0,
+          0.005953946150839329
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 2
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  },
+  {
+    "feature_id": 2704,
+    "split": "EVAL",
+    "sample_kind": "highest_z_unseen_context",
+    "row": 10861,
+    "block_id": 117668,
+    "source_file": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "source_sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29",
+    "context_start_absolute_offset": 8398848,
+    "absolute_token_offset": 8399479,
+    "local_context_position": 631,
+    "current_token_id": 700,
+    "current_token": " out",
+    "next_token_id": 279,
+    "next_token": " the",
+    "next_token_used_for_routing": false,
+    "model_visible_prefix_including_current_tokens": 632,
+    "shown_prefix_first_local_token": 531,
+    "prefix_last_up_to_100_tokens": " know that we both gave it 110%... I don't like the idea of him taking the lead. We share it. He can't let me down, nor can I let him down. It's a team in all things.\n\n  34. I think it has something to do with the fast lifestyle in the cities these days, I would say it is best to meet single black men on dating sites like, it helps to make an informed decision there as you can check",
+    "full_visible_prefix_before_current": "30. It's amazing how we learn in feminist class in our college years that black women are posed to be at the bottom of the social class. Textbooks glorify white men as the superior and black men and white women struggle to be second runner up. Leaving black women in last place. Can I ask black men to take this into consideration.? Society makes it harder for black women to reach the corporate level of success as their counterparts. I do understand BALANCE and compromise. I understand the neck rolling and confrontational behavior pose a problem with black women, but I do feel that it's important for black men to communicate and motivate because for black women to compete with other races, we must have the support of our professional black men.\n\n  31. Feminism is the biggest contributor to Women unhappiness. Here in Africa our mothers and grandmothers were very happy to let the men take the lead. Now women want to lead in everything and it makes them so so sad. So sad that it is hard not to pity them.\n\n    1. I agree feminism is ugly. When I went to pre marriage counseling with my husband; it was made clear that he is to be the head/lead of the family...I'm 100% obliged and I 100% happy.\n\n    2. I have no pity for women who want to be the mAn or stand in the battle front of the infantry.I thought we were designed to take the shots and protect our women but it became a challenge for them to get there too! So whatever stress comes with being the breadwinner or recon soldier I hope they will learn to appreciate the stress we go through in those positions !\n\n  32. Black lesbians are the biggest trend.\n\n  33. Very good article and discussions below. What is the response to women who are seeking an alpha companion? A man who takes the lead, and doesn't require a woman to lower her crown so that he can wear his? For example, if his wife were an alpha woman, why couldn't they join as a force to be reckoned with? Unstoppable as a team. Why is it that so many men want a woman to pull back? It leaves her feeling like she operate at her full potential, if he's around. Why can't bith people learn to balance strengths and weaknesses? I refuse to shrink back so he can shine, and I'd be disappointed if he did the same. It's not a competition, nobody is trying to outshine the other. We both will win and take some losses. As long as we know that we both gave it 110%... I don't like the idea of him taking the lead. We share it. He can't let me down, nor can I let him down. It's a team in all things.\n\n  34. I think it has something to do with the fast lifestyle in the cities these days, I would say it is best to meet single black men on dating sites like, it helps to make an informed decision there as you can check",
+    "target_z": 0.3058682382106781,
+    "target_train_p": 0.0020273578554379093,
+    "major_companions": [
+      {
+        "feature_id": 2704,
+        "z": 0.3058682382106781,
+        "weighted_z": 1.6589385404238044,
+        "train_p": 0.0020273578554379093,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 14199,
+        "z": 0.13136936724185944,
+        "weighted_z": 1.1356496525958164,
+        "train_p": 0.0022951221004957464,
+        "owners": {
+          "A": 0,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 1960,
+        "z": 0.09727209061384201,
+        "weighted_z": 0.9349887496053526,
+        "train_p": 0.419425913458596,
+        "owners": {
+          "A": 3,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5147,
+        "z": 0.08263953030109406,
+        "weighted_z": 0.8649286982714699,
+        "train_p": 0.9586036477140584,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 116,
+        "z": 0.16243420541286469,
+        "weighted_z": 0.8526954626514538,
+        "train_p": 0.0031749189056857825,
+        "owners": {
+          "A": 0,
+          "B1": 2,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 5913,
+        "z": 0.07262468338012695,
+        "weighted_z": 0.7446189582469742,
+        "train_p": 0.9518483383315992,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 8345,
+        "z": 0.0676451250910759,
+        "weighted_z": 0.7254515438930298,
+        "train_p": 0.8822678866515699,
+        "owners": {
+          "A": 7,
+          "B1": 0,
+          "B2": 0
+        }
+      },
+      {
+        "feature_id": 10343,
+        "z": 0.0962863489985466,
+        "weighted_z": 0.6516157934206923,
+        "train_p": 0.0006120325601321991,
+        "owners": {
+          "A": -1,
+          "B1": -1,
+          "B2": -1
+        }
+      }
+    ],
+    "rules": {
+      "A": {
+        "owner": 0,
+        "scores": [
+          0.0022995583713054657,
+          0.018825488165020943,
+          0.05860580503940582,
+          0.18771512806415558,
+          0.08515471965074539,
+          0.06199680641293526,
+          0.2341299206018448,
+          0.49247637391090393
+        ],
+        "actual_expert": 7,
+        "runner": 6,
+        "winner_score": 0.49247637391090393,
+        "runner_score": 0.2341299206018448,
+        "margin": 0.25834645330905914,
+        "target_weighted_z": 1.6589385404238044,
+        "target_score_contribution": 0.00017928656008038522,
+        "scores_without_target": [
+          0.0021202717907726765,
+          0.018825488165020943,
+          0.05860580503940582,
+          0.18771512806415558,
+          0.08515471965074539,
+          0.06199680641293526,
+          0.2341299206018448,
+          0.49247637391090393
+        ],
+        "route_without_target": 7,
+        "target_removal_changes_route": false,
+        "route_without_common": 0
+      },
+      "B1": {
+        "owner": 0,
+        "scores": [
+          0.004448094870895147,
+          0.003798848483711481,
+          0.012793739326298237,
+          0.010362708009779453,
+          0.03753814473748207,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_expert": 4,
+        "runner": 2,
+        "winner_score": 0.03753814473748207,
+        "runner_score": 0.012793739326298237,
+        "margin": 0.024744405411183834,
+        "target_weighted_z": 1.6589385404238044,
+        "target_score_contribution": 0.00017928656008038522,
+        "scores_without_target": [
+          0.004268808290362358,
+          0.003798848483711481,
+          0.012793739326298237,
+          0.010362708009779453,
+          0.03753814473748207,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 2
+      },
+      "B2": {
+        "owner": 0,
+        "scores": [
+          0.004527800716459751,
+          0.001810834277421236,
+          0.0072848256677389145,
+          0.018955418840050697,
+          0.020061880350112915,
+          0.0,
+          0.0,
+          0.015508459880948067
+        ],
+        "actual_expert": 4,
+        "runner": 3,
+        "winner_score": 0.020061880350112915,
+        "runner_score": 0.018955418840050697,
+        "margin": 0.0011064615100622177,
+        "target_weighted_z": 1.6589385404238044,
+        "target_score_contribution": 0.00017928656008038522,
+        "scores_without_target": [
+          0.004348514135926962,
+          0.001810834277421236,
+          0.0072848256677389145,
+          0.018955418840050697,
+          0.020061880350112915,
+          0.0,
+          0.0,
+          0.015508459880948067
+        ],
+        "route_without_target": 4,
+        "target_removal_changes_route": false,
+        "route_without_common": 3
+      }
+    },
+    "target_and_source_token_checks": "PASS"
+  }
+]

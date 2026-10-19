@@ -1,0 +1,1708 @@
+{
+  "status": "COMPLETE",
+  "sample_N": 131072,
+  "pool_size": 15666,
+  "source_chunks": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000000000_000000016384.npz",
+      "sha256": "66a0b9589ef35c54cd43d48d96e3f4767b047ba1952db9c8f893ddbc2705edc0",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000016384_000000032768.npz",
+      "sha256": "12510641fce5caa39738227d852708369e4bce3d86d0461089c65acc16b7199c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000032768_000000049152.npz",
+      "sha256": "fbdef6327de981f73af28c918e399cf397f352dcd002ff487f15366795459771",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000049152_000000065536.npz",
+      "sha256": "a46911ebc8ba70017bed4ced2e289d6acad9721ba69c6be03d03eb1521b9eb8f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000065536_000000081920.npz",
+      "sha256": "6141b020284b02e72b17808da6742b2bbdafffc3ce4f36f318cc29d91f5b86dd",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000081920_000000098304.npz",
+      "sha256": "af6a5fdefdb124c7ce28a2f49f617438fc49120e4c507ac38e8fb8c4a2bfe69c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000098304_000000114688.npz",
+      "sha256": "334508843e4344150e57a2243611b16fbbc4c79972f5e64f4d6bb847a1876fe8",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000114688_000000131072.npz",
+      "sha256": "5e066edbacafdef1da39f15c13f33dfc7002b01d762b1c6b6fbe684aac1c2e79",
+      "selected_rows": 407
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000245760_000000262144.npz",
+      "sha256": "eee64b040ebbbad85ddc23795a920b3f664a84395f62f3d0760c94d4311c2001",
+      "selected_rows": 5
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000262144_000000278528.npz",
+      "sha256": "a30394c9635ec4b93fbf556fc39ab55c41750b44d2510286478fb6da6cfc00b8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000278528_000000294912.npz",
+      "sha256": "ac1dbc2dffcbdf506b3e844f826e158640eddcb8a6bba626e50b9db5ee32cb75",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000294912_000000311296.npz",
+      "sha256": "808a62a2888af03fd13b6b0be02930338c0a7581b901263bc69c346d1c67c2b9",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000311296_000000327680.npz",
+      "sha256": "8e91fad7691b4059eefdb0ab05649962e65f25834f94834b51b6068e5441c8f3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000327680_000000344064.npz",
+      "sha256": "438c41f9307a01eee7623ec3fb9ae2fb5a11e839ce02582d54a428f4f57229d0",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000344064_000000360448.npz",
+      "sha256": "211ccc3b6d5a79626320ddc23f978bbccff3b897c0148c671813033b1e7ed1a3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000360448_000000376832.npz",
+      "sha256": "21e20ca756f7ebfe6b13b6c04771e71df634ce8f7e07b854b21545592f1a5b13",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000376832_000000393216.npz",
+      "sha256": "0f07b254dd48604c3247c8ed8ff8ccfed4c075be211df2b6a9b21bcd62529280",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000393216_000000409600.npz",
+      "sha256": "6e1235c33e2fabc800809100828436f645b07bd29916552f27bf165e459d9caf",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000409600_000000425984.npz",
+      "sha256": "fed6175d21f1fe5221f6241a002e0d5381740842b856647e1147e0a6805fa884",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000425984_000000442368.npz",
+      "sha256": "ce7be4041554f107e492e11c7f4974f039d2bb0de85d17303482905c32d448c8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000442368_000000458752.npz",
+      "sha256": "1e38920602fa19028b01fa4315bb2725ebff10e3d32510b25f4293fb7f828151",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000458752_000000475136.npz",
+      "sha256": "fe31aa803f876f184a26007a65ad1f1d3efe13d64d2cbd79a52ce7254405d1e0",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000475136_000000491520.npz",
+      "sha256": "4f15d3660783dad1e44d06ff9527b27b09dc782f548a7c545365758bc702444f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000491520_000000507904.npz",
+      "sha256": "34ba367d4a6850770b2d94329c536ad39b56debe5c374ff02e60c5521a3820d7",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000507904_000000524288.npz",
+      "sha256": "d14f4675a44cf071758c6785dd7f8ebf66dca597a6aff270a542734ca3d4d387",
+      "selected_rows": 400
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000770048_000000786432.npz",
+      "sha256": "23596143bd81120dc82f675d246bbe85213538b17639e4fe1a6fcd1a7f48a910",
+      "selected_rows": 15
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000786432_000000802816.npz",
+      "sha256": "6a0129135f2269dc080b3009d9d4f6c993f462513f6a23dcc379b59b8266c622",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000802816_000000819200.npz",
+      "sha256": "2a9f8fb28d00b0853d01e8f624860e2ca23833e4eb1b8cd743a95903f579bc0f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000819200_000000835584.npz",
+      "sha256": "090891cc508aca39c73f667469dec85e7978e1b0c756a463f96919a3afb5f1d6",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000835584_000000851968.npz",
+      "sha256": "420e3572f2b468c14735a9653044caf630ceabd085e760be21bd1da80337f140",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000851968_000000868352.npz",
+      "sha256": "ec4cfbed5f439865abec64b896f7afb45b96e954757b2cb53a96d32d4c393512",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000868352_000000884736.npz",
+      "sha256": "1bcc56f55f24ff2925e25040fe8108132ee9e06f026e9a2e31432d4e3743c217",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000884736_000000901120.npz",
+      "sha256": "fbe9ebb0f14b173ea7c19b7966d40ed4ba723c79c078d11438bd05aebf339c78",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000901120_000000917504.npz",
+      "sha256": "af41d9de98de749fb9149a8a6f4db5826640afd34e2da834abf393ae1fb1acbe",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000917504_000000933888.npz",
+      "sha256": "f37743eef3be6956e2a0d6768a4285d4daebcd471a9b4d96f868bc2908291354",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000933888_000000950272.npz",
+      "sha256": "daaeb5f434aeaa2d738e7e592c160128aa9d09a8834f6260a42220f9079aa90c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000950272_000000966656.npz",
+      "sha256": "c07e3f7abb713543f6d3d99d4923b1254ab1d800a689b7283a88a6e500b52153",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000966656_000000983040.npz",
+      "sha256": "a5edd29ef2864dc80e9b57c98b54fb28524ebfde0bdae022828105716990cf9e",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000983040_000000999424.npz",
+      "sha256": "0a57c477a3ed615da7d7d2750a4ec77bf99e075956c270effdb96250ad77eea1",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000999424_000001015808.npz",
+      "sha256": "548887df78ffd38f0c20dff23187bdbf1192756127301714238c7e15f3b71459",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001015808_000001032192.npz",
+      "sha256": "629de2445b3e0c535070f0255eaa7e4578fbb07a0d0fbccd6d14d7d085b134b4",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001032192_000001048576.npz",
+      "sha256": "d9b6cceca25feb957e5e8ea8a9b9387386677ae549c58d8553d1a4a4b4cb0f69",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001048576_000001064960.npz",
+      "sha256": "1577e91a49a9b8034d779030e071c248f3be9c54fd63b893718b391ec07c37f2",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001064960_000001081344.npz",
+      "sha256": "d41ed42333be3f38e8ff7969c84255f47a877d5690e475835ae8e1b38bc31e7a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001081344_000001097728.npz",
+      "sha256": "7e1ffe664b6cc79b98e8b04887ce530bc96c3f7aa84b16ab4c44d7e9922a6971",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001097728_000001114112.npz",
+      "sha256": "ba4cee5c2213dfefa2aece55392de3f4e176cbbe3f2a00f78854bf6cf891a59f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001114112_000001130496.npz",
+      "sha256": "53ba2bb8bc034b4a90aefda343fc7bc5902c62edc82da84bf61781613c394f6e",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001130496_000001146880.npz",
+      "sha256": "23411f41c50b57869d3bad41c6ddb80417255b613e709936c67a01421a68d65c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001146880_000001163264.npz",
+      "sha256": "5909d68b372221a124d8133652d1912eb34d3a1dfb3305b7c436479f9cbc6bfb",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001163264_000001179648.npz",
+      "sha256": "ad28a26388ad46badd3346f9bed0d9d06dd15052ad7d8c5a1f35a6031145db3d",
+      "selected_rows": 386
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001294336_000001310720.npz",
+      "sha256": "5f187de7c0b9c07a786d3478a016018f1f9783c27a962cf93e145582d8f541f4",
+      "selected_rows": 26
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001310720_000001327104.npz",
+      "sha256": "9f378cb5991cc5e51411cd6c3416088104d62b9409427a0beba16cc1a2267087",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001327104_000001343488.npz",
+      "sha256": "32ce80c6099fec4235ccbe6f6c355d5ff28e57da45689727b5d7b5e0c2562335",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001343488_000001359872.npz",
+      "sha256": "7e515eac27761ac5c55301a16071061a3df2a99fdee4d904c26faf16aa0a2948",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001359872_000001376256.npz",
+      "sha256": "ce265a5edf10ff1f101b75e5f8ba3a70eab13db82114d9ccb9049a21b519df2a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001376256_000001392640.npz",
+      "sha256": "6aff97ccaf07dced88eba0e719608def0042751b94aed769dfddca01968a95f0",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001392640_000001409024.npz",
+      "sha256": "f7edd44e5cf964c47f0e740822ed1547c32c85c1c5b6200e0a46bf1a26f2518c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001409024_000001425408.npz",
+      "sha256": "e79ac548d479b4295014b9665a3572135e40c921b1ac8b278291aeb3d6910e23",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001425408_000001441792.npz",
+      "sha256": "b0f385514afc51a34a75072f491564058f087b4ce83cd955215cc48e6802f474",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001441792_000001458176.npz",
+      "sha256": "72ba61cc16eeb21d1c83ed6ff692d8ef33c512348d78dc539d34d510baf8dc61",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001458176_000001474560.npz",
+      "sha256": "8f2ad3ed5690410156a47f8e34c2563585d5a4980e341d05679ff95bf7d7e9ba",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001474560_000001490944.npz",
+      "sha256": "99d6752bf64e413e095c10e290a5b315e20019d0127a5c2995645e9cf46f534d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001490944_000001507328.npz",
+      "sha256": "4346bfe5734ae666ce385ed02cde81f6e929797e1c1fee526a135ea04dc3d315",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001507328_000001523712.npz",
+      "sha256": "8ae5d022c8427d726d426e73e56a5ed0cae30c658528fbc0cdc840d70dfb96d8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001523712_000001540096.npz",
+      "sha256": "f4e32cb4bd33a60c87143df4e3db32f71ea685e625c896551e296d362e91dbef",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001540096_000001556480.npz",
+      "sha256": "c8ca971f2184916c38be9cd918bc51e01277fd7f888a2e87a76fbc574c3dd0f7",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001556480_000001572864.npz",
+      "sha256": "a0376a172996ff3eddd1402586d90517c1821f413ad77690c6514497f0a793ba",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001572864_000001589248.npz",
+      "sha256": "80754f1ffe93f991e9f9c5f31f7516f868c9cfbc96cafb4a5463ee2058126aef",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001589248_000001605632.npz",
+      "sha256": "3120daae336ae02beee560fae8f5ad76636bc497623a2c5500f6a4a40af82fd0",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001605632_000001622016.npz",
+      "sha256": "6e3b3b48e8868dad896c15f4935625988e3b5cf09a2539a7c4d78798d5591750",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001622016_000001638400.npz",
+      "sha256": "d712b4c4297ef383c7464d196416eb4663924d54d5442ca7617d68cfa8c4b619",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001638400_000001654784.npz",
+      "sha256": "bd88348eb1f797d0de38564be270482526be701ba437c8609d4e299408f503d8",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001654784_000001671168.npz",
+      "sha256": "6dcfd71346413dd85c708bf5c25c71d7f273fbc603426bb5e6e9967b8dc6ec4a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001671168_000001687552.npz",
+      "sha256": "79e9238e6695e6ed8c5383c02011d8b637b469aac23f3e11059956d99cb1d3b4",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001687552_000001703936.npz",
+      "sha256": "ca1893e83c7c0f7ebd9664dd8b230cf38fbd716616bc27cae902e313d8a4c374",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001703936_000001720320.npz",
+      "sha256": "be6d3bbccf4b1d3244154c6c5c3fcbae84a0616c459a8ae144aa7787ce72119c",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001720320_000001736704.npz",
+      "sha256": "466af33e51a23a4084e40025f119de47fb018da429acfaaeaca5f488df83a804",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001736704_000001753088.npz",
+      "sha256": "55d57139d42393732bf92a400e4c7542e6f5c70bc27aeec89010c939cb91458c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001753088_000001769472.npz",
+      "sha256": "1558c2ed5fa51e1a0d09aac08492333a879e88cfc38e3d76a10318aa4c01daeb",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001769472_000001785856.npz",
+      "sha256": "6a671214adca98000607cad133d12b81ba50bbdbdd22693f5a366f474d342c6f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001785856_000001802240.npz",
+      "sha256": "b9b2fe447f9e1f83bc641b842eabfa7f2f7a89b87ee6075c53c61434ce15af1e",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001802240_000001818624.npz",
+      "sha256": "26da46d822845832fbca3a23101b00bddaae22108673cc6ae766dec327933728",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001818624_000001835008.npz",
+      "sha256": "83406a45bc79dd50efd05f4751294a93f45135eb528cb4a2493b97dcbb4e4f78",
+      "selected_rows": 374
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001949696_000001966080.npz",
+      "sha256": "5f1f716ac71054a3c24b0d7cfc3d320613c87b3a7d07334abd3ea7490c6708a4",
+      "selected_rows": 39
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001966080_000001982464.npz",
+      "sha256": "d9a46dcba37a00d8f40e3a79d91dd8e781840caf6ad52f2438e34af5d403cdcf",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001982464_000001998848.npz",
+      "sha256": "8a1d8c5e20d27de2261b70c2dd12b0a06736f66fce931ad5c6bd0261d59d7ca8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001998848_000002015232.npz",
+      "sha256": "8b546156c084f9f99b6eabd9a092da5aa552fa09ac874b2af907c147c4170ad9",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002015232_000002031616.npz",
+      "sha256": "b916ad6484b48e0b51ea2b6e4ebc84026a1ef0b20ccd0031e63777b8aae3ca69",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002031616_000002048000.npz",
+      "sha256": "425f86c719f1fbc8f249f8d4d9a368e478eb9a1c92bf4462eca8b1a4175ce62d",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002048000_000002064384.npz",
+      "sha256": "b155ba97abbf982b3f74d21ce1ba9b5910b4205408561f840a8b9032039f12f6",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002064384_000002080768.npz",
+      "sha256": "79ceacd3f625d8e6fae60ece2a52896ac89a27c25606869b5816c158e921fb12",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002080768_000002097152.npz",
+      "sha256": "8d06b5c5c8c043464f102199c441b5ec09009150b1e0e6dcfe23cda534f12f6d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002097152_000002113536.npz",
+      "sha256": "396c42db9a77d4a23d84bc09f47a6d15db801ef034754c73b27983dbae366b6d",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002113536_000002129920.npz",
+      "sha256": "66ba7fad9c9ed36177377c20d6b15f5962fc9c8d9fb3ccfe903fce4d5340726c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002129920_000002146304.npz",
+      "sha256": "1a4d66ebf8cb76249706d40708459bcf6bbab8a425427fa80b2eb6e349fa4365",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002146304_000002162688.npz",
+      "sha256": "48e50c74b7a97f91086e41c86eb6680b9e578e1d66ff8c910461e67b71d34c0d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002162688_000002179072.npz",
+      "sha256": "cd255506c9eea5ab5df3f3318457e019839a7bb74baab2ca0bd7a62986593732",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002179072_000002195456.npz",
+      "sha256": "e53e784007f78f466cbeed9920d3d5516195f31ad355e0fd0f28e98f08b0cd7a",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002195456_000002211840.npz",
+      "sha256": "0fd3dc0b4591000effbe89c3b4c064a5a4e851db7cecb6aebe0d5d161e3a8d53",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002211840_000002228224.npz",
+      "sha256": "c76d2b43ce3df2e4eac7f40b027b6eb797b89bf92aa515366fb93bd72185fabe",
+      "selected_rows": 365
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002342912_000002359296.npz",
+      "sha256": "cc165cc8506d71084fd17e05d4f7d4b80d76eef778a89368d8c05e73ab6ce322",
+      "selected_rows": 47
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002359296_000002375680.npz",
+      "sha256": "ed17eabb3a587cf36d94fad2ed82ad284647c35fbdff20999dc8167629a3e97d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002375680_000002392064.npz",
+      "sha256": "cae62cbf1e6c82be4377d854e79c73bf8fb99d60bfcea7f5235371b0957fe9f9",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002392064_000002408448.npz",
+      "sha256": "006711e10b7ecd2027c32ac6052f24aa522e9ce76d4619028b7236a3958583a2",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002408448_000002424832.npz",
+      "sha256": "9e45467414210dc225015c02ceaee08e934d5b18290fa19ecfc73c9af9e84df1",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002424832_000002441216.npz",
+      "sha256": "c3b3e525d9cda06c4af7bc25cf978aae618a1b2f3f15b906b32f5df97530275c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002441216_000002457600.npz",
+      "sha256": "77e9c0979efe6532cd67877817d145b941eabbb819fb43919985f9197839bf2c",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002457600_000002473984.npz",
+      "sha256": "1cf05bd6af6f258db71d7ebf02d3680a57356aa7235fc3eb3f178090272b5b85",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002473984_000002490368.npz",
+      "sha256": "0d5bd65d90e55b386740b21f52b4bad074002afd5ef24e150bd10ed954cd4c85",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002490368_000002506752.npz",
+      "sha256": "10d817e9ceb816deafb11f7770c14a927edc074c362f098a9b54c8b0f62e1837",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002506752_000002523136.npz",
+      "sha256": "04370081347a9d2b59be2039ce0c57c3e4924b9342e8e7939a0bd5f498c469b5",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002523136_000002539520.npz",
+      "sha256": "f6d7554890b8db7b2bf1e4db3d93125489064d86b2258046bbd6300d567f1dc5",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002539520_000002555904.npz",
+      "sha256": "75ecb65b0b34c183b6f8d05faca89d59788fdde4cb0e550e04af307eafce4d87",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002555904_000002572288.npz",
+      "sha256": "6be91fea698887f8d217edb48fa3e3ac5909377a5ab8d648f96a9106ef0c9fa2",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002572288_000002588672.npz",
+      "sha256": "a17390882f02c9482b009281643376a2f50f004e4bc11042eaa3b94f25966ec8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002588672_000002605056.npz",
+      "sha256": "ded1e57d993c2e210b42ba9d0ae0a26c2f85798f24fb1e8dba2e4fd5501622ac",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002605056_000002621440.npz",
+      "sha256": "1b090d25164e7bb1ef470ffcf5ceb1c6c7ee88ca3f82f91052fe4268cb56162a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002621440_000002637824.npz",
+      "sha256": "2bfc5ab754a61368d0f7bb59853935ef051c41efe2a7aed820689f3333f31bcf",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002637824_000002654208.npz",
+      "sha256": "f9091c799542aab7def46864228a82ba7d7889b771ab39d04c542318ff6b1bb5",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002654208_000002670592.npz",
+      "sha256": "e3346234a0c7b92f4785142fb931e947608c4415219bda7db097c9e163690040",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002670592_000002686976.npz",
+      "sha256": "0bca4300f897af83e0463dda6c6739215e8fcedf754949182532ad4bdab00fd3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002686976_000002703360.npz",
+      "sha256": "506025211071f54350eeedc38b965a74288b23453d23f42a7ce4c3b89b90a880",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002703360_000002719744.npz",
+      "sha256": "42d485d107283c745753d7040cd8954e6c6a95171726d197b404554089dfd5f0",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002719744_000002736128.npz",
+      "sha256": "606f1200172f21b3b03c8ea443ac1e5f09cbfe678baa449cb0d7ed9e542eabb7",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002736128_000002752512.npz",
+      "sha256": "3157601bc074fdc9f7ca43440fd5b1c9628449cf94237e46613d524954a98bd5",
+      "selected_rows": 356
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003129344_000003145728.npz",
+      "sha256": "d906be4a03f07ee1bdbfbdeab695523c35b5e6c87c6bb487f2adbcbc296d33cd",
+      "selected_rows": 64
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003145728_000003162112.npz",
+      "sha256": "52d60138e019589d47fe11f05ed09ee7258e594e88c22188b44056b4cb54d9c3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003162112_000003178496.npz",
+      "sha256": "e9e4369563afee910683d45138cf4decebdf76e509cacfd9992f8cb6a7a3bd39",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003178496_000003194880.npz",
+      "sha256": "9437934e7021ad3e610a77d2b349f46cf0c7d083f0b33768b2643b30ca957f62",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003194880_000003211264.npz",
+      "sha256": "e853bfa4a3b2241da3f2e396656768aedcef8d1aa8a9bca9144e01cd228bd09a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003211264_000003227648.npz",
+      "sha256": "c1ad0756f697744c82334b70218a343bea8db988b37d8693538b27aa887a4c27",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003227648_000003244032.npz",
+      "sha256": "91ea053a4afb0b494f5767165df286be367b24f9ccbf2ad19e32eac029ea83d5",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003244032_000003260416.npz",
+      "sha256": "4cbd265d9d456d749dc98563079ca6646ea241f9ee3a549794ca09537b4b3b79",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000003260416_000003276800.npz",
+      "sha256": "6376ae26a132e57b8926f7e573a3ea04ca1a5e6f522e0a792b0db2e53b076d75",
+      "selected_rows": 341
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004046848_000004063232.npz",
+      "sha256": "c5d19b6712eeab9aaeded4903a4a25039601b4acf4d04d2b84834a7fc2301506",
+      "selected_rows": 85
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004063232_000004079616.npz",
+      "sha256": "7a9c450b324d216328c09dad016d8a82eccd72a34846deadfe2ef5c8c3b0c93b",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004079616_000004096000.npz",
+      "sha256": "8567894d0d820d4e39df10c4f283ce0f9561938bba05d806353761a43b193388",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004096000_000004112384.npz",
+      "sha256": "24a3d162ea76670faf772fd2e3487415edb20059663f8ee29c51031094e62223",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004112384_000004128768.npz",
+      "sha256": "6876ed8481081755c153ec51eb7a45919df93c579392ce937e89f063c175ba9c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004128768_000004145152.npz",
+      "sha256": "da29dc1e976d17dd8588e23527f1ee6dd2101a2934378f9f53a13aa50db19cc1",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004145152_000004161536.npz",
+      "sha256": "4ea9f6ef69beae589afe1ef56291e4b8682f76027925e6c956b591b4092d1058",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004161536_000004177920.npz",
+      "sha256": "b7b92ee3705e9238d87b6d0dfba7cfdc367f09f03adb988fc51f453a104fe1a8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004177920_000004194304.npz",
+      "sha256": "a6b304a4811cdfeaa3f83cf29fa2b631b60b9eab8c11928e99d9b14f95ea7801",
+      "selected_rows": 321
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004308992_000004325376.npz",
+      "sha256": "2e21c09b97c728f7743750c9589517352dd95a0d6154c2f4ea4b9bd2af7d95af",
+      "selected_rows": 91
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004325376_000004341760.npz",
+      "sha256": "9d58e821d2457775bf86ba756a7409e8acbd3165ad8372780982db08690fc0cd",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004341760_000004358144.npz",
+      "sha256": "d0fb280518c03f0df1caec9226d3108d8f624d5e9719d99d1d85852ee9088418",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004358144_000004374528.npz",
+      "sha256": "fe7d396229137acd61e617c3969928576b44f416ba2e7aa603095691afce6f65",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004374528_000004390912.npz",
+      "sha256": "07ee7307390f755dcd7ffc51b91a7f54779286294c92d6c9eb5af0ee56b03fe2",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004390912_000004407296.npz",
+      "sha256": "6fbc6307dcacc8bd8fd58440ad09b880a95049e852f8d42c5e36b123fd973ed2",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004407296_000004423680.npz",
+      "sha256": "05a942e3a0b4a3a57482d3c9623bdba8235bfea015dab6d67de37055dc4608d7",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004423680_000004440064.npz",
+      "sha256": "4745c61614d4ea731fd739fc5be4cdb85a95fc3f87cb587be4669d8decedd6a2",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004440064_000004456448.npz",
+      "sha256": "7c4e1bce9c93fe195a81110ee9d77a98eea558d84a4a03bdb6760e7967367283",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004456448_000004472832.npz",
+      "sha256": "4f950d9946e4cf338afd540d79a086b28b4805d81f3f81fab32b21f8f213fd03",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004472832_000004489216.npz",
+      "sha256": "4f759eefe997c2376b35fcc5200b8c1fd36dc68e3d7c622acca01ade7fad41c4",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004489216_000004505600.npz",
+      "sha256": "aeed579c9018622f51e59f1ff6b39b6d8dcb3e892ea99827f37137ad5efa9787",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004505600_000004521984.npz",
+      "sha256": "bf81a2f13642fb4977991401bd19229a333818264d2e1595859fdfc71560950b",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004521984_000004538368.npz",
+      "sha256": "0b9f20bd9cf0b3ba91d9b7c3cecde25826cdbb9b87cbac5625e70daf3084d489",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004538368_000004554752.npz",
+      "sha256": "a1295327668c94772987e8e996391febe7dcd68c9c1c2745b692c71714993a83",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004554752_000004571136.npz",
+      "sha256": "7d00bc0c1d1e7c14cbb7f6dae3dd05e8a6c3781670ee953c29778f2535d00b90",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004571136_000004587520.npz",
+      "sha256": "8793a25611e7f26d7b0dab08ec20e6cb21be9f646bd34e98a282d63143756a09",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004587520_000004603904.npz",
+      "sha256": "88df1af3f7494075b7075c29e0b1059006db61e109386cca65d19d8f6de51d92",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004603904_000004620288.npz",
+      "sha256": "e50408dfb494f0a6707e013d5bcfdf9f9eec9be208fd1724d149c2e6ad7d7896",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004620288_000004636672.npz",
+      "sha256": "7d86ef34b47bf873555e2cfef032eb8d369ef94ba9258106eb9d17ee92f82ece",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004636672_000004653056.npz",
+      "sha256": "d66f92932d37c4cdaf3ae42b845cb3425a8e7f772d3e5328a4bc7ed43235e23b",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004653056_000004669440.npz",
+      "sha256": "830ae47e39a74136bed05f79e478b0247e5e9dfb17b3ccd95216cf155d5dd7ac",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004669440_000004685824.npz",
+      "sha256": "2bb2fea3c36dd7cce8b806f270f47d23ea5e284470c121a85b92489547f2bcfc",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004685824_000004702208.npz",
+      "sha256": "eb2a64eef8bd63141e7c57e7f012dc95cee0a412de0777e688356443026e8606",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004702208_000004718592.npz",
+      "sha256": "9953dbb875fe439c00d8f6bbc7dfea28f576cf80f428ecd84a0a29743b3169f7",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004718592_000004734976.npz",
+      "sha256": "306228118e957472aebe2493dc5279a062ea44f75f07e8db0c46045a99972fdb",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004734976_000004751360.npz",
+      "sha256": "102fad7bc6f087719e7377e66670b824f00ff4134084260d77c5740fdabe0c45",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004751360_000004767744.npz",
+      "sha256": "82070bc7b80028381a9da36d564a8c68e0d073e01ab683194d0dd954a846fb80",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004767744_000004784128.npz",
+      "sha256": "ec2d610778ef6e5bc52c318f1c4d4b0b77fa18ccc338042d1366bec3df673c45",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004784128_000004800512.npz",
+      "sha256": "366d6740b6155cadc26a83a00846126ff92f175ee70137f4185b280dcac0fa48",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004800512_000004816896.npz",
+      "sha256": "7206cb00c357a9cec3dccdff97c4f88e77a8f11edff14bbef29c3074ae818e17",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004816896_000004833280.npz",
+      "sha256": "3d20768c7db44a82bdf644e9f1031793a85927a839355ef748915646154fb967",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004833280_000004849664.npz",
+      "sha256": "3dc7dc79022ef98ec29fdf2baebe16e4647d819bfef7db125cfc707a1e43505b",
+      "selected_rows": 306
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004964352_000004980736.npz",
+      "sha256": "2bf7bf7454b5a2bed4d30d3d4d96118a652cd88bc2b008cdf40f406d1e576522",
+      "selected_rows": 107
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004980736_000004997120.npz",
+      "sha256": "b737e0191caddc82b03ecf0c595af79adce28651573802238c36d3a449ee3287",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004997120_000005013504.npz",
+      "sha256": "fd93f928a4d8f8d5a7767ca6f7bcba9fb33b81b1f15117dd092a60521f72536f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005013504_000005029888.npz",
+      "sha256": "c34fb0090a991683481b81330d4ae4aba7057644e7c5cb2b106cbbe0db35fdd6",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005029888_000005046272.npz",
+      "sha256": "6301c3b816e8d63d7b4d5b42239b9d9642a924405f7eacc30a1d825f927ef4e8",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005046272_000005062656.npz",
+      "sha256": "618240ced8fcab917086f775c61791b35c4dbbe83fe15eff0cf39f44d87f9071",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005062656_000005079040.npz",
+      "sha256": "34551c19e436b2002764b94a09df848651b438a07f1358ca8192ccd47700c94f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005079040_000005095424.npz",
+      "sha256": "7e52818fddd8988369840dcbeab186fbf506a0405ccb3bba4088386bc2dcb0ec",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005095424_000005111808.npz",
+      "sha256": "79a143d9f76d160dff298de1536c6445628d40f7460b09dffe8b7c0c22fae31d",
+      "selected_rows": 301
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000005226496_000005242880.npz",
+      "sha256": "65fe6780e3da8025b7760af819c4abde52b9ce5eeb405b9f1982f22203615227",
+      "selected_rows": 112
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005242880_000005259264.npz",
+      "sha256": "d1a1a18cab11e636e0558a756d05623c55dcbda929014c322c7aed1ad8121c39",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005259264_000005275648.npz",
+      "sha256": "2b5d2e70afaff8d6f510edccf316d73bb26fd27eef7b8f6f8f02df2d95714e8f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005275648_000005292032.npz",
+      "sha256": "b2a2344b5e42e07bbaa33b4fdeea73a30c07a10bde3474ce7823ab5a96a9d0c1",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005292032_000005308416.npz",
+      "sha256": "bb5c4eb6d3b0985143cd2676e5731cc231ee6dfb84bb1dc8ce5f6922cfc188b9",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005308416_000005324800.npz",
+      "sha256": "8375a105e92ae0db494bb73583f82066adfb46af284b69542513b84885dbd69c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005324800_000005341184.npz",
+      "sha256": "6e643fff97be89b05ac2a6ae2d46ba293fdada7139f226b3100e3716cb681a10",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005341184_000005357568.npz",
+      "sha256": "b7f156df0eacb62a9bfc49a108b1f2ca5e72b400a8e2b0ee35869240619f892b",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005357568_000005373952.npz",
+      "sha256": "fc930a486db7173ff93a352da32805d3525a2465a6e1922f081b100b364300da",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005373952_000005390336.npz",
+      "sha256": "722cb3953e3e92d0d711db59a390e6fe8a5f4089fa638df4db3e521aa7b6c8a8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005390336_000005406720.npz",
+      "sha256": "bd555342f8c0d661692db1291f9bb950f074c4e9f3fa2ec692ddc8ad839b5315",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005406720_000005423104.npz",
+      "sha256": "be72820fb9829b21cce09a459dbf5c2aa3d587db2dd8cd447cde646301590ed6",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005423104_000005439488.npz",
+      "sha256": "c6c8f0a266c35d30be28c882d59db5f8226dd9b74f0c894ed2b94218fc0d6870",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005439488_000005455872.npz",
+      "sha256": "0eef15443d4db7fce1bb76d08b4fca306f9077709df4682179d15033aaaa357d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005455872_000005472256.npz",
+      "sha256": "9fddfa749a63d4a69ec3812de6b36a148f7c5927ef6a1ef2ce3c45cd291e55a1",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005472256_000005488640.npz",
+      "sha256": "2e3640e9d83f49a57cfd8e61160e327e374efda12be76b2c4052126c2340ff09",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005488640_000005505024.npz",
+      "sha256": "c7f2e486c48f71c42dd4e28c78f66f462ceb7f9f6b94bae31da181ba7b62604a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005505024_000005521408.npz",
+      "sha256": "94f0638c3a97dded10dfa7f09d156d6ab14a51aff17930b62dda8f94fb7797d8",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005521408_000005537792.npz",
+      "sha256": "7e3bec36b672eb09fb82c7f870b0a25fa157afe165298352122c288af91cf874",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005537792_000005554176.npz",
+      "sha256": "b58fc0de1efbab60ddedb9104d77e58e6e3e3d4c0b375f6937db567fd0119e1d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005554176_000005570560.npz",
+      "sha256": "7ecf4d6bef22cc9d4ce3f4867a46ec83331b6d3726496160580ad516dd2eb25d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005570560_000005586944.npz",
+      "sha256": "2c2ed7d31500917e35d0face2599ab253d06c5336923fa9ffe8ceb5a09022ea8",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005586944_000005603328.npz",
+      "sha256": "46423babf717ee49e5a13797808176d2c73d033b74877bb31d5d04df26c6bd99",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005603328_000005619712.npz",
+      "sha256": "0e7bd3987a5f077d8ca9f0f6124c87faaf6b818e2113cc2efe3dea61844c9a2e",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005619712_000005636096.npz",
+      "sha256": "624854354166afb7c7a464fd088f1bb914f811d1733972289d835c617c471388",
+      "selected_rows": 289
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005750784_000005767168.npz",
+      "sha256": "5b8aac946a895be37b011457bda25f1b6bb496dccaa68fece1815c0ad7846c44",
+      "selected_rows": 123
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005767168_000005783552.npz",
+      "sha256": "afa195759e64f6e9658bd295f23bee5473dc8d1262457252962c0db8dd10778c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005783552_000005799936.npz",
+      "sha256": "c84a2aab4a56b7d81d02b36b652bdd65fd878bfa560f4dc173c93f7698430ec6",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005799936_000005816320.npz",
+      "sha256": "72747559276b339d895784159439ffcff3ca9cc785c4a98a5a15e7ab4a33fc17",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005816320_000005832704.npz",
+      "sha256": "0b5f68d8dffcd42ac8ed79ab89ad2a24347637e98169ec8f05337d184ceec5c5",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005832704_000005849088.npz",
+      "sha256": "aef590073e043e3a71ffcff417dac5ac92713db7cfe4a81fb33b54cf7aad533f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005849088_000005865472.npz",
+      "sha256": "a008d82e180ca6e53669a7f2cca8a394591b978bdc7595464124a8e73404de0a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005865472_000005881856.npz",
+      "sha256": "33cafd504edeaa66eb60f212b9e931609bb384575e3b30432c7a00a2128f7b18",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005881856_000005898240.npz",
+      "sha256": "a500ff55621039d1bef499ca7205e0e66c65de40fc6f896250bb2500a4b97991",
+      "selected_rows": 285
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006012928_000006029312.npz",
+      "sha256": "5d6cfab6eebb8d0917a3cafb19815409c0314caa7496fcf6b2bece70e2d88530",
+      "selected_rows": 128
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006029312_000006045696.npz",
+      "sha256": "92b59d1ca3d59e528c3855741a95ac57e09c7fa10367ee583f17d23a62c42ede",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006045696_000006062080.npz",
+      "sha256": "0436ab2471b64a9c70fbdc4b010ac9a1c78a9666fb6a77102142c6a252047558",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006062080_000006078464.npz",
+      "sha256": "ee3b8ad7e466c0fdd457512b1ac9604ef8fd14883d18a1a61730b377fd2fa197",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006078464_000006094848.npz",
+      "sha256": "4a64a2c24e788dfe029fb4f9bccc8198a2822d4ffb14037097af16b69faee444",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006094848_000006111232.npz",
+      "sha256": "ec0b323502f63402dcdd16b6307c57ce44015e927a8e8db7d257b5b8d098a765",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006111232_000006127616.npz",
+      "sha256": "8fc9d1d371081dd8f4f6aef45a84cd9153ce9a5143125f2d2056e47051787d90",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006127616_000006144000.npz",
+      "sha256": "92522eadcca17f3c2f5fc371647eb3b8a8f335427b0acc1666efe0ea2cf954d6",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006144000_000006160384.npz",
+      "sha256": "4562f119d0de1af919a0da6fb71838c4a69c7d3a26a22547cb04f45e555ef065",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006160384_000006176768.npz",
+      "sha256": "ad59812f73b96ea86a9a95c5741cba92737ee7fa5e229b9b0aae4c5295d45a19",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006176768_000006193152.npz",
+      "sha256": "f47513ece7ca30f686a40dec6fc8272cff47d4d466fef45ce2c6868db2c9063c",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006193152_000006209536.npz",
+      "sha256": "2406479817680efda30b8c0f379200f821b6a0b06b4a0a91a019c3078d9c97bd",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006209536_000006225920.npz",
+      "sha256": "4b23d2a486b25d6423d7d5b8f5c7076cbd4498eac0c3b39a2e92ce4f15b376c3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006225920_000006242304.npz",
+      "sha256": "f9c4bd0cdd31b2e736626af20e26911cc05f15c2e13e2cc1183868472c8d4578",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006242304_000006258688.npz",
+      "sha256": "72f9c76d6e68cfce7b63f3199b719c773ae9a37b3831506c8914011afca19d90",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006258688_000006275072.npz",
+      "sha256": "66cd6f338478f02c592b1e8ffa5902de14658746b433b429e98f148d9aa3e270",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006275072_000006291456.npz",
+      "sha256": "323f296fd15d9bf8c169ea34e27f4f3decfe2aea91b149bb5073496141509817",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006291456_000006307840.npz",
+      "sha256": "c31d3aedef0d40b40baf34abc6adc95e8a59e8b0cc63620d64fc5c5ea53b1810",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006307840_000006324224.npz",
+      "sha256": "c5859645ab64766b3494ef429fd5e9f858574c77ac346c97540aa995bdf079e0",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006324224_000006340608.npz",
+      "sha256": "cbe95ea9d23d590f8207b5f2ceeee98cb3c8d0d4ebe24ed52f4431bccefe1815",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006340608_000006356992.npz",
+      "sha256": "49125096b7e08e2dfda54c6320cb4facb43f47df8070dd04c316b25a5a387c6d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006356992_000006373376.npz",
+      "sha256": "a3b28dfc2a6e10938e8ccf0b79bbec3c11d0881fe6cca15c9b859e36cef91c30",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006373376_000006389760.npz",
+      "sha256": "fb30d7ec22eed06539c7d0e23969af3597a88d1a4c1e6bc83f9fd134b78225c8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006389760_000006406144.npz",
+      "sha256": "9ef983fac23192c5fd0efb8723f608badee332b54562b30ecbda2445c93b8565",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006406144_000006422528.npz",
+      "sha256": "20717a133dd66e128da5f8d3f80ee2ec7ab4fc6ce3b500a21f62f90a93919ce6",
+      "selected_rows": 272
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007585792_000007602176.npz",
+      "sha256": "ea04700f3493804c7d0d38d4358dae4e883a74837b5121085d4b86d973a066a2",
+      "selected_rows": 164
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007602176_000007618560.npz",
+      "sha256": "5f14c2a3e439699c612ba1679729d5669380f9eca96a7cf52859dcfdec9e8501",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007618560_000007634944.npz",
+      "sha256": "060cb2d8ee3e584d65870499658cd87189f27f135654291e49fe10bec31c5511",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007634944_000007651328.npz",
+      "sha256": "e8f79b1652869dea9efa8332ad445874c3aff550f4b8209d42661d2cdfd1087d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007651328_000007667712.npz",
+      "sha256": "45442543609271deea34b54e87d80393d53645d6a0a55009518c321a317f1e43",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007667712_000007684096.npz",
+      "sha256": "6159042ed35b04324a08372a429a10c936071e3edcfb10883fd6d4a6e3201998",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007684096_000007700480.npz",
+      "sha256": "9b72e16930e2ee516e34330f99cd8a2fab9bdd8869eedccafa69598e0f1a18b3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007700480_000007716864.npz",
+      "sha256": "1fddd617f1e3801d9176049fea128a33e1c934959ebf96f8cc9e46ebc5557dd0",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007716864_000007733248.npz",
+      "sha256": "1ce3cbe4025073a0f424d5135f38e0a50ad042c05f1b40a16e91b79fb16b2d13",
+      "selected_rows": 242
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000007847936_000007864320.npz",
+      "sha256": "fbc7b8e203840ebf5002a558af7e23485d630393111b91937b1107e29d8b23e5",
+      "selected_rows": 170
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007864320_000007880704.npz",
+      "sha256": "7b78aa8299bf0f3c33282058ab1003d0d8228befc4d8142671d62d1226375e40",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007880704_000007897088.npz",
+      "sha256": "8b600ac83163029e8a9e769a1e5b1764a92e42a84f00f32031ae87bf466e5e88",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007897088_000007913472.npz",
+      "sha256": "271d9afb8084b5b5257ca732d40bd97e3ea6a1a1df74608bdcaf484635ad952e",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007913472_000007929856.npz",
+      "sha256": "14069caf5373d33be9371a6248bad3ec2b58a46f5659a621f23eddc99db131ac",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007929856_000007946240.npz",
+      "sha256": "2538eed634a77e42720c9e233994af378eca27aaceac99f3aaced5326e78c7fa",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007946240_000007962624.npz",
+      "sha256": "fcfd840614ec9fdafa655dd73004ee5cd74364918838c38ad666103a8f1d5936",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007962624_000007979008.npz",
+      "sha256": "107ca85e46cd1945ef3d132bc9c768baa265d870c36a33f854a4a7cb88a2a899",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007979008_000007995392.npz",
+      "sha256": "c709c5f0adb60428507059ef145db45bf3546aab6557a771157888cdb3982b3e",
+      "selected_rows": 238
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008110080_000008126464.npz",
+      "sha256": "a579e4aa2d7a534c1d4c70cb1e220cbe28b4cde16ef32cf6254954721151ab91",
+      "selected_rows": 175
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008126464_000008142848.npz",
+      "sha256": "70be0a7862b294dd9415e23a333464ce302b6aa33576e7023f932b791301f30f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008142848_000008159232.npz",
+      "sha256": "6937962752d566581408ef72529236eac8078761a8c8b107463aa669e54b45d4",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008159232_000008175616.npz",
+      "sha256": "f1afc4a28f8395c4aa5b056436ed83b434c816d5319e77b80550e3e88f5adf6d",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008175616_000008192000.npz",
+      "sha256": "6960524930788e000a4505be823aade0e9088cc46dbc1a612ed5ec8f05da937d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008192000_000008208384.npz",
+      "sha256": "9d6a924345e16b9a9cc1de4137a8e7dc26ee6f9a4a1af27949668e16e6ed8e02",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008208384_000008224768.npz",
+      "sha256": "5122712ab0421845214cfc05d77c779962fa50adfe4587b1a855860bcad4a7b2",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008224768_000008241152.npz",
+      "sha256": "9d2e67e10995b70630e6c8f2f696641f50d4c321a2730bad8c407a0fa2f64dd7",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008241152_000008257536.npz",
+      "sha256": "2bc4aa5e42a8f7eeb02210c1673ffb6af04604e8efc8e3b9c031ec20de50ec62",
+      "selected_rows": 230
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008372224_000008388608.npz",
+      "sha256": "36b843ea622c3feb31435965c4e77aa0219f4c2dd9d53ffecfa2eee0c15a31c9",
+      "selected_rows": 182
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008388608_000008404992.npz",
+      "sha256": "ff4a651dbef80772a56a6ce1861bf180c89bf2db81c17bc2c65092d5a322df60",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008404992_000008421376.npz",
+      "sha256": "8f64a5421a46d14d1c04500c64135b85637806a3bb29451c9c9fced5e48ed938",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008421376_000008437760.npz",
+      "sha256": "1e21d19c7b32d83e75600aef72748c2e426a69a6fee4e0f52f40d84cd6621eb5",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008437760_000008454144.npz",
+      "sha256": "a4e947301cb4b29d7dc226dca3f54bc843c57cfde87db19b6abbcb5add589746",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008454144_000008470528.npz",
+      "sha256": "e0733ee223dd2503968797eef6516af240ecdcf066e5967060f76ed50eaf1685",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008470528_000008486912.npz",
+      "sha256": "d2c6906afa8e745ac0c4e7382aaf18dcabe72b8a72856c5f7d58ec53bf492299",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008486912_000008503296.npz",
+      "sha256": "252b1c049b5c2ff3cc83a0647b15de6a80c1bfdc0bf0c88dd27df345e92f7414",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008503296_000008519680.npz",
+      "sha256": "62c005a5d2991d644e6dc76cdd7f92078dea835aee7364169f71e19dff08bc46",
+      "selected_rows": 226
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008634368_000008650752.npz",
+      "sha256": "5871368906d9c5ebc3c6c1bfd60e5cdc7d7545f4d762deb45b8d571d6405b38a",
+      "selected_rows": 187
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008650752_000008667136.npz",
+      "sha256": "3a6899dbddcb1e1ce6fb12030c2bed6ac1453643e124f6634f7878cda84f890c",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008667136_000008683520.npz",
+      "sha256": "a374c3406454a06e786326a0b7f582d08f86100a81e837184b68f112af86e801",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008683520_000008699904.npz",
+      "sha256": "7d440eb7081fd25717755c26632992d369d1d840e178ae408fcbe5c4751c44d8",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008699904_000008716288.npz",
+      "sha256": "921a3fcba1d9e4400141a9a0a12f84b13b3c271dc92baa9189f8d3dd087a57f7",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008716288_000008732672.npz",
+      "sha256": "2f825ca7825f0d8b1ca3545bbe01bb7c1dc0d5e74f6a271375815d7ec07dae3d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008732672_000008749056.npz",
+      "sha256": "00d74e5a08b896504ef5ec8aa8a43d1a94540edfac00a4db00237cc84bcd08ad",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008749056_000008765440.npz",
+      "sha256": "4d6a9f27df6be9f5db49eeab5d0639e60decfddf401b031aba5b79976d364b42",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008765440_000008781824.npz",
+      "sha256": "1846e18ef274342841c964f6014f274c3284350c59c494720ae0de8a8e4dc7e2",
+      "selected_rows": 220
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009027584_000009043968.npz",
+      "sha256": "1a6409ee15ebb53efa28960063d97f9c88b79b404cced4ed83008cae348c69ec",
+      "selected_rows": 194
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009043968_000009060352.npz",
+      "sha256": "dfb689c7698053af0b061890c3a030647ab6e680b4f8e5b87fea2210c318153b",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009060352_000009076736.npz",
+      "sha256": "b3242c7d788b182ccc5a87ec10a9866fbe0385172951b99c527633d29d67b251",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009076736_000009093120.npz",
+      "sha256": "34351c2f1e5a4738b03b509cf1555e217c0909600e59505c708abf78e20c927f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009093120_000009109504.npz",
+      "sha256": "a349df8507a81b084dcbccc4964bfa176be311b69503468fb2f15f9c987778b8",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009109504_000009125888.npz",
+      "sha256": "196437148acb189b8c0318ff85824d535fe5be2bc0c134bb2645d986b69f7388",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009125888_000009142272.npz",
+      "sha256": "bb2c9638c1080fbc7832e5d5294d4a8d35a4e21d998a6c3b50d9978586f9a375",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009142272_000009158656.npz",
+      "sha256": "76466b94263c1fe766ae60222d136480926d945203e7c6307a98ce3101a64354",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009158656_000009175040.npz",
+      "sha256": "d270799dea157e9780d7e9dab9295f0ae59573549cbc92eab316cf4d571a5022",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009175040_000009191424.npz",
+      "sha256": "a57c16e1a711252be5c15c435c67553cf7298674d0572a69dca94c9acdd489eb",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009191424_000009207808.npz",
+      "sha256": "892734c11fc417a832013d2cb1ccdab233ec39fde4aa5b1957e72d50a411fba5",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009207808_000009224192.npz",
+      "sha256": "d4eac6564d5d15441d9f97fdebcbc4f4987370146cbdab71c3f84039d06abcaf",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009224192_000009240576.npz",
+      "sha256": "7413a9f96539b15818378d59c2b0d9fb0828c2f6634b99e91fb131716d6e2774",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009240576_000009256960.npz",
+      "sha256": "7aaa0d0191839c27a8dfba25b95a844e73985382ab69ffa8df36f0834152cb15",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009256960_000009273344.npz",
+      "sha256": "ed63f75eb9a254789c80b6b8aac77cbee66e1ebb0783c0d3b77d318205e89bb3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009273344_000009289728.npz",
+      "sha256": "1059228c81e1ec0ce77fc388ca4902bb1e4ab5ed0fe43bc57e814562771450c2",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009289728_000009306112.npz",
+      "sha256": "23b1d11df8ba12d5a39f52d48d81d816bd98ff3f54815e18b459905caa1f9aa5",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009306112_000009322496.npz",
+      "sha256": "b4d9798bfb59d98d5b58c455cc5fe2c82adb2a49824a9214608bc9386065a454",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009322496_000009338880.npz",
+      "sha256": "fdfa7dc5fb553eb568406bc5263db75eab5ec33e5bf13fa8b7a2201bdb497317",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009338880_000009355264.npz",
+      "sha256": "a2277c0e0aed0853f576b9cd6b96eed471d7925ace458a65c5fbe1a85c2d878c",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009355264_000009371648.npz",
+      "sha256": "c916c152453c6f53044bc81692e985db697bf717d603858a1b386e7a5aa4580f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009371648_000009388032.npz",
+      "sha256": "55d2ecd7242b2fd78b72b0c9f36ed78f6f6f4bfcbf6c054f152c47c73f469911",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009388032_000009404416.npz",
+      "sha256": "f03159bae1fcd71807386a2d12b2afd98fff4308efd9e4b243396f846ef0b960",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009404416_000009420800.npz",
+      "sha256": "dd0890474aab07b78397b1b0e67078527628dfd908b647dd2ff54ff488003245",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009420800_000009437184.npz",
+      "sha256": "80aac0d0b32d89ecf8e72ae654cd7b862878b2ffdf51a042af50688996a371a5",
+      "selected_rows": 207
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010076160_000010092544.npz",
+      "sha256": "709cfb7266d7cfd5aa5d86285ecd15c1137c2bbc17266ae58f14bc69f6b06f8f",
+      "selected_rows": 218
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010092544_000010108928.npz",
+      "sha256": "0ef9df5e78d73323cbcd871221af9271a70d9e0e5c97dda2dd1f3823722746ef",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010108928_000010125312.npz",
+      "sha256": "740b212113905226e824223002702861bc1325d3716fbe58e411cac2a36a6331",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010125312_000010141696.npz",
+      "sha256": "9b392c3b7791fd6166c6571b042d91147e139832875e78e8fdc1e95655e0dd8d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010141696_000010158080.npz",
+      "sha256": "299ec961d62b278f7c5a11dbec873f70187825c4ab60315e47484b557d99bed1",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010158080_000010174464.npz",
+      "sha256": "27d7e14082aa45db4570459861b2aa6989b00b736dfed00118153cbd54b56106",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010174464_000010190848.npz",
+      "sha256": "cd145fe381a1bfe57e3ed372cd99f8876ee605264a813ce8bfd5fd063aef550f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010190848_000010207232.npz",
+      "sha256": "b213940707a7afd22e814a9976dc0aefdc645209c6343db31e9f0c3b7178cac3",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010207232_000010223616.npz",
+      "sha256": "da99ae59b52da5484db51acb321e8ff2d1b8c7c1214fb5a82e4fcd89f08c962a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010223616_000010240000.npz",
+      "sha256": "3a52c8f441e5dc9be36a9539ada832784af0465d3fa8af95dfe4c3bed07cddd9",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010240000_000010256384.npz",
+      "sha256": "0cd8ae121c404e9abc5a731d490fe825df058f60491807b3e11109ddebef01be",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010256384_000010272768.npz",
+      "sha256": "c9f37a99f4cdb0592e8dc448730dfca0e037d001f785e15ffff58a26ed17478d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010272768_000010289152.npz",
+      "sha256": "885a6652394aac865deda3451a50bceb8da86d03d93bfc647eab3d6a32d0fe9a",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010289152_000010305536.npz",
+      "sha256": "5bec3143af3b791e82b2327c8d558c43227fa337f139a8ee3b8fa2abbf8f1090",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010305536_000010321920.npz",
+      "sha256": "026dd77081f4c308966539d3ead30b3bfa495acf899688c595719268245a277b",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010321920_000010338304.npz",
+      "sha256": "45bb9b69956551f52571a0da721f85bf8562335f9ddaddd09d065e3be4a1be1d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010338304_000010354688.npz",
+      "sha256": "557707dedc52955a781bd1f4705c1da4f4ac8d9d35a5acbd7ccbe0d70eb6832d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010354688_000010371072.npz",
+      "sha256": "580f29b53c22b6b2ea1e093998cd2edc76379a370a27763eef13e3b771e1845d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010371072_000010387456.npz",
+      "sha256": "a82d63dd72f75055739c6a725721c5215f0329147eb9247c1de9f1b90d8c9387",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010387456_000010403840.npz",
+      "sha256": "8cee9d80f62214ede4e1800ab1520c0cba425199d5fb63a5d4077bfc3142032f",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010403840_000010420224.npz",
+      "sha256": "91db2eb6bec8a30d4b04af8915575d9d9e48dd94ca6cdc0b0f6951c249a7f0cc",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010420224_000010436608.npz",
+      "sha256": "bf317bdb1dc7af40a61392dbb1a99ab02c4e6d47c965fc0f99c0208ccbb4da9d",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010436608_000010452992.npz",
+      "sha256": "a6afce730255a32c31945a35fabcd78de2beff06d7ed02e685c2b8c2c9161832",
+      "selected_rows": 410
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010452992_000010469376.npz",
+      "sha256": "a4f1671403928ce1b84fd94d00e913d40126ae2e1351bc9a51cff629847c074b",
+      "selected_rows": 409
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000010469376_000010485760.npz",
+      "sha256": "71c9063567c4be91ff773143c65bb9238852e9ceab4771da47617da88f6dd459",
+      "selected_rows": 409
+    }
+  ],
+  "source_chunk_hashes_verified": true,
+  "sample_z_path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_spectrum/sample_z_feature_major.npy",
+  "sample_z_sha256": "a72178e43b483853c11aaf8b479beb42fc07abc12a8d900c1ccb942834a3ab54",
+  "seconds": 408.79854751192033,
+  "new_model_forwards": 0,
+  "training_updates": 0
+}

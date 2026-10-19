@@ -1,0 +1,868 @@
+{
+  "figures": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureA_comparison_map.png",
+      "source": [
+        "provenance/design_freeze.json",
+        "provenance/branch_assets.json"
+      ],
+      "question": "Separate regrouping, Top10 removal, relation adjustment and blocked projection",
+      "sha256": "0cd57e9eb95122b75574db5bba4f8e1b71dafaf446e3f00a46b75c957de51402",
+      "bytes": 134818
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureA_comparison_map.svg",
+      "source": [
+        "provenance/design_freeze.json",
+        "provenance/branch_assets.json"
+      ],
+      "question": "Separate regrouping, Top10 removal, relation adjustment and blocked projection",
+      "sha256": "bdf66a25fe0dcb7d714c6e9807099a786518a90249f0365fda08843cc2af9a60",
+      "bytes": 6038
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureA_comparison_map.pdf",
+      "source": [
+        "provenance/design_freeze.json",
+        "provenance/branch_assets.json"
+      ],
+      "question": "Separate regrouping, Top10 removal, relation adjustment and blocked projection",
+      "sha256": "b5f7e1e5ab721582f91cda734acb6cd4d79851caa84db12cee9af405dfa97089",
+      "bytes": 15767
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_O_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_O.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "631b9f7898d62789575e54582916dec26506f08217b60ff47f8474cbdfb041fb",
+      "bytes": 247728,
+      "display_revision": {
+        "previous_sha256": "17bb12630d13f8f53ff9035c2d003a280692195912457066ec44fd1a77efae7c",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_O_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_O.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "ed609e672ea637cf619de655d39a992968c2c798ff9e269e10c038512461bb12",
+      "bytes": 16494,
+      "display_revision": {
+        "previous_sha256": "ab3e247064095adf65f3fb19eb3f15de98e58ddc0cd3fb4856e9ea2160f83597",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_O_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_O.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "c8ba91f3d208413f919a5563ea46cff70432d296429817018eae7d0c70a665a4",
+      "bytes": 36759,
+      "display_revision": {
+        "previous_sha256": "d7623ef23f7f818ee881f5fba044206d178a40d140774eb30cc617b31190bdfe",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_O_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_O.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "0fbe6e0e039b8d44c609759766eb6ccdd1b2352c6f6cd5aef76c153fed4cfc51",
+      "bytes": 426779,
+      "display_revision": {
+        "previous_sha256": "f397ef89eeadbc7efe620ee46edca9a5590311138725de89ad050ea606332f60",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_O_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_O.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "08fe2a452811af198acc612dba2deb16117d614d66f80cbddf320ed77e424e07",
+      "bytes": 38892,
+      "display_revision": {
+        "previous_sha256": "6774571583ec25ec11900e39d68988c8cac2bfb284ac8d79eed90a78225397bf",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_O_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_O.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "39066a9b92d82f788321650efbd03b90f5d5440e9025a2985ebb356a0f86a20f",
+      "bytes": 40046,
+      "display_revision": {
+        "previous_sha256": "a7dbaef73cfcb6f72def4009c8b370ca487f9f8b559c5f00937f14b26b6512b8",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_F_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_F.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "0548a2a473105469fe37a241147c39f92966bfc05f43a3ed8833eea42c67e433",
+      "bytes": 136937,
+      "display_revision": {
+        "previous_sha256": "3f9f688e87cbfe0aff597ea5b03619149ed35e0ce6aacd07cb745820625fe3d8",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_F_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_F.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "50043c5d65720a4f5fd898bb169303ae3e754f90c06609cdcc43bc84f9759a77",
+      "bytes": 9317,
+      "display_revision": {
+        "previous_sha256": "4140dee69d7cb388667d7750579bb17e5441dae98489a4ba29aca5508da5b08e",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_F_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_F.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "5e36cc22af42fcd155ab3ab84e47c5fb03b83730855ece6cdc007e3c832bdbcd",
+      "bytes": 25100,
+      "display_revision": {
+        "previous_sha256": "024474338aac9438e0395d175c92dc995bf718c12f4721d0fa192784e747beed",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_F_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_F.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "e1c3a6eb086f1bb7f0de6d6ff334e0c9eb8838369f0bd59ca7a69c5e78571fab",
+      "bytes": 264709,
+      "display_revision": {
+        "previous_sha256": "a17289ad5386b22be20361b3a4fdfac3a9896293134c93a3f82cc6e70456d91b",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_F_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_F.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "2b2cff7900bb4c0b293816a82aeec73e3b5a5b7ce3acdd89ba2bd499cd0fc7e4",
+      "bytes": 16807,
+      "display_revision": {
+        "previous_sha256": "bf3e933798179dbd03bc7677dda443eaaebf913f391871151ffae964554705aa",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_F_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_F.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "4d588f1594f812e0ee63e77dde2f8af2f0b6ed430db9fa0a1208d0f43caa1d79",
+      "bytes": 37586,
+      "display_revision": {
+        "previous_sha256": "51b7b2b72c82e6bc758da9c973d5958a8b81889303ca149fa54c7c46ce23f6d3",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_T_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_T.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "dc1f3d203227ca2c5cfc54c1836b542d048fa1e6f407850a4c4d235758be272d",
+      "bytes": 238833,
+      "display_revision": {
+        "previous_sha256": "5a7dec287b867302cb0a20a74c8574cc42a6dba5f1f53a90826815372040c0cb",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_T_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_T.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "036c7a254a094ae879ca026086a364fb2a08ce0a13c7cffb5d5e86844c8544f7",
+      "bytes": 16370,
+      "display_revision": {
+        "previous_sha256": "76b9c745ee54359f8a439564b99c3483c6a500be5618486a7daac62dee73fa13",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_T_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_T.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "0d7ad7cadff0ef05904c17c3a257dcee054ab03cf54242e96fca5f943f74bf08",
+      "bytes": 34391,
+      "display_revision": {
+        "previous_sha256": "5a53fd04a94a6c2fe7b6ee3034021ff91db39757f3e67172e592efbc2d159e28",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_T_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_T.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "28499edba583e727aa0a52d2c37d2a083805b4f12273a6f104623d2de5af950a",
+      "bytes": 260319,
+      "display_revision": {
+        "previous_sha256": "894e483ed8f1f587013921dee0c2e4137b9dfc1b6726c00990baf94ac9590b6b",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_T_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_T.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "ba2fe7e69ef42b20e4ffa94c1acfad64b4a120c83afa297d0f74b679deb86800",
+      "bytes": 16724,
+      "display_revision": {
+        "previous_sha256": "f6501ea6534fe91e09cb5bdd4a0fa05d86499e2ec117953cc3794268ab1d9d84",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_T_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_T.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "07e65d646bccce806905c29e289c159588765ab0bba812a4493eecaccc1c1182",
+      "bytes": 37536,
+      "display_revision": {
+        "previous_sha256": "2fc762aadc8be8df5a93849bf2f8124517cdee668f50ba4b109786ce1af08fcb",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_Tphi_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_Tphi.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "c95954badcc9286574f600650f96be325a6130fc2ed0c47fd303ae8c0cc09504",
+      "bytes": 239481,
+      "display_revision": {
+        "previous_sha256": "773b3bc80cb852128c3b252a78e486300bceb81f5d0e2c0cee9fc91cd743b008",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_Tphi_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_Tphi.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "08571f6b93c68dba4c399658d474e269b5cd3bb7cd37c64a207a5a986eccc843",
+      "bytes": 16373,
+      "display_revision": {
+        "previous_sha256": "bad6626a82f2e3a77ff596eddacc3de146bb75258711b1b603f57fe55dd25e6b",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_Tphi_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_Tphi.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "c475b0b7cd63fb0dbdc667ede52abc6e836507ea160cc41f803d559a282765e5",
+      "bytes": 34390,
+      "display_revision": {
+        "previous_sha256": "abb1a5af32130411a18a06bfa8e155313a2874e3a278e422ddea627a8447626d",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_Tphi_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_Tphi.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "3129cfbbc65d27acf4fcf32f2d0ab4240727f7320a58e23d889390fbcc5e94a8",
+      "bytes": 260864,
+      "display_revision": {
+        "previous_sha256": "48f14e9aa7feb1e602683f52a635f56c7a05979c782f3e80de1b1b8c7a6b752e",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_Tphi_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_Tphi.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "58a623dc8735ebbb32e13b96efcf7918bebfdf0f3b30eb3e9221671ba04917c0",
+      "bytes": 16735,
+      "display_revision": {
+        "previous_sha256": "775a7512127d1f70a62497c72f287dc28e3aac55d3109b821c5189917e4a2fe6",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_Tphi_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_Tphi.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "ac27598c05bbe99d44fe9e41e42c9519955a2fed0f01163c67cae1e0a1ccd09b",
+      "bytes": 37350,
+      "display_revision": {
+        "previous_sha256": "2d1ae0de11afcc9d073a2cc507cf74afbf3d1040dec97d3fadb70bcba35e065e",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R11_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R11.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "889caddc19b6b5fd2e244c3eca3fa997a135c82361f333e1d7dad0eada2c2c9a",
+      "bytes": 557122,
+      "display_revision": {
+        "previous_sha256": "f30e00a47c6865140dc7a9a8d7a9f15c268a75008c3ca3201856de2878737415",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R11_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R11.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "a1b3973ba18f7773c00af736f4854ead58fa47485ce9d72182cc1ab85605eae4",
+      "bytes": 47615,
+      "display_revision": {
+        "previous_sha256": "5dee5e79c75fdc7dcd670e6e8f83450563bd1e65fe6817928a25aa1a202d414d",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R11_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R11.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "df7164816e0886ecc546e95fc40c84dec6d4feae8f028cb2f70de09a3e6ac4e4",
+      "bytes": 42580,
+      "display_revision": {
+        "previous_sha256": "ba89c593931701c4d990b62690049a87732b18eaa554f0eccdb78a369347e4d5",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R11_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R11.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "bf769d67fe5c69d92f504bda22796db0fe39e54d7c5c4c72359975cc72ecd7ee",
+      "bytes": 513192,
+      "display_revision": {
+        "previous_sha256": "5ed8efd1840699a82f50ad2a1717277dec6d18588cd8bfdba568193ffc2fd405",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R11_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R11.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "164e94cd8cf226038ae35c9d44945755718a855bb63af19bf4b68fdd9ac35221",
+      "bytes": 47685,
+      "display_revision": {
+        "previous_sha256": "58e8b156715bdd2fb32baafb0ccf28489b70ce2786f9e9aa311174e33c2fdbaf",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R11_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R11.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "cdec02927592121816cbb04d0d869649aaeaa4e43064bfab2380d6e81178659a",
+      "bytes": 42292,
+      "display_revision": {
+        "previous_sha256": "860f58f825098f0ed88fa41bc9330e9b372a2ac23b4d6cfd731156877b30ecd4",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R22_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R22.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "a642dc8ae2ea4ad573fa0b918d7bad2f712743ef9da5afe4606ce99b75924089",
+      "bytes": 570559,
+      "display_revision": {
+        "previous_sha256": "b43d7f17b253eb86ae60a033a5b02fcfd4a5cc69d2af2fffcd37981ffa573d12",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R22_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R22.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "04acac9439a5ab20c17fddaee4537d488a9cbd3c1b8fe05f34dad6e4a7cf8c1a",
+      "bytes": 48009,
+      "display_revision": {
+        "previous_sha256": "5344045c96270ee3e80a00c28dd99aef4325e7fae0884a50a720a15db88e70a6",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R22_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R22.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "d62578d5df6af1123077986e989a29c0fa38a9adb91143f85abc2b4a7ec10557",
+      "bytes": 43547,
+      "display_revision": {
+        "previous_sha256": "f677a97a063eed14804183efa977dc7efcb45c9cbc632d72452f84866d87c158",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R22_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R22.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "2ac6537e150ea011d81f006f047be9b94229ed5693319dc5b6a6bbe60b080372",
+      "bytes": 534670,
+      "display_revision": {
+        "previous_sha256": "759b95767f60ef4485b7d25e061defaf99ae456c70525011de2c3c635c88ffcc",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R22_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R22.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "7bf0751416d60f07a1a7a321ea2d576f3adea1f208f940863721daae52f8d841",
+      "bytes": 47733,
+      "display_revision": {
+        "previous_sha256": "254e52b297170445d019f9d1a46c9e88f1d487291f09f243bfd651d3d9ace7ce",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R22_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R22.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "1a4a67b87181838bfe6cbcef47ca8d27f7269d6ee65db7e179aeb969b40b43a5",
+      "bytes": 43188,
+      "display_revision": {
+        "previous_sha256": "1cc6d4ed313cc4d73cc9e724ada2e75f18d271ad8cf6731b9e255aa72a3dd4ff",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R33_experts_0_3.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R33.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "216318c49f0b57bd4f0792c493b77ae4725f25a04d3febbf2f2310248817a948",
+      "bytes": 537697,
+      "display_revision": {
+        "previous_sha256": "5705c1a304c4737f9624643f31a153ace25870cdcf0d847e00e01e8dfe0756dc",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R33_experts_0_3.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R33.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "64751ee29af8d83d2d2b5557ae318c289b0d4e352f660a6411c5aae907aad457",
+      "bytes": 47433,
+      "display_revision": {
+        "previous_sha256": "e18f89e5568a7e56d8dd25789618f353a7aa1cba5994036f43925c8d6c09d7ea",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R33_experts_0_3.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R33.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "491533f1da45b2a062bc440c69b7878b7262262121c1fe5f2269247bc844e3dd",
+      "bytes": 42701,
+      "display_revision": {
+        "previous_sha256": "fc97442f59f94401407d1b9a657b95011c7f07860af0bd290ff33729a0c5e0b0",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R33_experts_4_7.png",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R33.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "dda513c772b5b77faa94e473f750410e5e62262f63ab31f3f6f2a98065472e31",
+      "bytes": 523957,
+      "display_revision": {
+        "previous_sha256": "4809c218c2b6904eb931fc5137c2d87db61a7ad9c978e748599c141443c1faa4",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R33_experts_4_7.svg",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R33.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "1baa6acb901a083494aa7188d6233c6832f0d059c3c6537bb9dca4938fcfc6a8",
+      "bytes": 47780,
+      "display_revision": {
+        "previous_sha256": "b83508b7a9435d59b1ea52ae96631d57cde19f7d0b012c0ec8bf36bb9fea98e2",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureB_R33_experts_4_7.pdf",
+      "source": [
+        "metrics/visual/selected_text_index.csv",
+        "texts/dispatch_text_cases.json",
+        "metrics/core/counts_eval_R33.npz"
+      ],
+      "question": "Show actual received features and fixed random token positions, not list membership alone",
+      "sha256": "0a027b2be16f935556f7356e092f59513aa83feb1b3102ac8b3815d083635f33",
+      "bytes": 42441,
+      "display_revision": {
+        "previous_sha256": "b4bbe9e3ef6f3eb47a9b3cdac452aca16d2014129ba910dd037766c0cabeee39",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Decode each frozen token ID separately for reading; preserve arrays/boundaries, wrap45 characters, maximum3 lines with explicit ellipsis; no reselection"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC1_actual_counts.png",
+      "source": [
+        "metrics/visual/figureC_counts.csv",
+        "metrics/core/expert_metrics.csv"
+      ],
+      "question": "Separate token load and feature type coverage; counts are not capacity",
+      "sha256": "990bb90b5475a89c6adf682dae5cdb0561ed6e0a5fe8c143e4f6aae13f5377a1",
+      "bytes": 260107,
+      "display_revision": {
+        "previous_sha256": "5090e27429da4280308383a2379e4bff582c5ad4f0332346b8795da19bb88b86",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Load percentage annotation only: four decimals, preserving exact original values, scales and other panels"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC1_actual_counts.svg",
+      "source": [
+        "metrics/visual/figureC_counts.csv",
+        "metrics/core/expert_metrics.csv"
+      ],
+      "question": "Separate token load and feature type coverage; counts are not capacity",
+      "sha256": "2c50040ec79e85badc85a70f5895a7ac6990323e72fc0a88d3ca90044f98a724",
+      "bytes": 114365,
+      "display_revision": {
+        "previous_sha256": "e122dac4f273f7631180fa5489cfb01cd7b8cb8ce6ba915acc0e58a703245836",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Load percentage annotation only: four decimals, preserving exact original values, scales and other panels"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC1_actual_counts.pdf",
+      "source": [
+        "metrics/visual/figureC_counts.csv",
+        "metrics/core/expert_metrics.csv"
+      ],
+      "question": "Separate token load and feature type coverage; counts are not capacity",
+      "sha256": "548bb6a4fc7f47abe8815a113ce77f55ea1c089ac4675d9c357d50e0ee3f1220",
+      "bytes": 38823,
+      "display_revision": {
+        "previous_sha256": "f4dee151627af7af5fede2ed060f07015905e2c54a5530c91fb4c5ef5c66380b",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Load percentage annotation only: four decimals, preserving exact original values, scales and other panels"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC2_low_target_outcomes.png",
+      "source": [
+        "metrics/core/low_target_metrics.csv",
+        "metrics/core/core_summary.json"
+      ],
+      "question": "Retain target reception distributions, fixed-denominator B rates and undefined states",
+      "sha256": "7e0cb3b8f10d831eb134d8157a6acfb5176cca59015eb0f08d09a6aeb2c29793",
+      "bytes": 155139,
+      "display_revision": {
+        "previous_sha256": "e04736d57cd1ef167f32e7008e2c9c441640c52f50360331698d01cc24fb3f20",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Move right-bottom panel legend outside plotting area into figure bottom; preserve data, order and axis limits"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC2_low_target_outcomes.svg",
+      "source": [
+        "metrics/core/low_target_metrics.csv",
+        "metrics/core/core_summary.json"
+      ],
+      "question": "Retain target reception distributions, fixed-denominator B rates and undefined states",
+      "sha256": "4ebb2b1b8c87bf5b1861d95da2a70203c0d2c1b904d54652625c81aed8de3e29",
+      "bytes": 53440,
+      "display_revision": {
+        "previous_sha256": "25cf6a9ce6cec6b6a45273ca27bff98b2019424a93cd8fca6e7c2fce5fea752f",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Move right-bottom panel legend outside plotting area into figure bottom; preserve data, order and axis limits"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC2_low_target_outcomes.pdf",
+      "source": [
+        "metrics/core/low_target_metrics.csv",
+        "metrics/core/core_summary.json"
+      ],
+      "question": "Retain target reception distributions, fixed-denominator B rates and undefined states",
+      "sha256": "d6b82eb555bfbdac6b82d0dd38983fef1fc027d7a47768ba3c59eb6e08a312fb",
+      "bytes": 19278,
+      "display_revision": {
+        "previous_sha256": "c1a8aa689b65284216be0b134b43a301f99f59061fa4ede369f63e7ff198f54a",
+        "renderer": "scripts/render_display_fixes.py",
+        "description": "Move right-bottom panel legend outside plotting area into figure bottom; preserve data, order and axis limits"
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC3_all_feature_q_profiles.png",
+      "source": [
+        "metrics/core/counts_eval_*.npz",
+        "metrics/visual/actual_frequency_profile_summary.csv"
+      ],
+      "question": "Audit all actual feature frequencies, not only the displayed six or assigned lists",
+      "sha256": "77deba48b422ae5ce263c0908179ce7bf8109b5ecbebbcadeea24613bb4ccdab",
+      "bytes": 229920
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC3_all_feature_q_profiles.svg",
+      "source": [
+        "metrics/core/counts_eval_*.npz",
+        "metrics/visual/actual_frequency_profile_summary.csv"
+      ],
+      "question": "Audit all actual feature frequencies, not only the displayed six or assigned lists",
+      "sha256": "d638b67d44314e862cc3ffb1c3362a07619b8a053d2e09d90fcda5a6783d2687",
+      "bytes": 174301
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureC3_all_feature_q_profiles.pdf",
+      "source": [
+        "metrics/core/counts_eval_*.npz",
+        "metrics/visual/actual_frequency_profile_summary.csv"
+      ],
+      "question": "Audit all actual feature frequencies, not only the displayed six or assigned lists",
+      "sha256": "6a5e4c471fa801d340d87b3d5d2da00ca18129f0d54aba8108fc139c74e56d11",
+      "bytes": 74405
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureD_relation_increment.png",
+      "source": [
+        "metrics/visual/figureD_construction_and_dispatch.csv",
+        "metrics/relation/relation_summary.json",
+        "metrics/relation/fixed_edges_DV.csv"
+      ],
+      "question": "Distinguish optimizing list relation reward from improving actual dispatch",
+      "sha256": "647c15fb3a3916208caa219e1a173f16455f9bd34c882d9d1d1b72c30fea6623",
+      "bytes": 154256
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureD_relation_increment.svg",
+      "source": [
+        "metrics/visual/figureD_construction_and_dispatch.csv",
+        "metrics/relation/relation_summary.json",
+        "metrics/relation/fixed_edges_DV.csv"
+      ],
+      "question": "Distinguish optimizing list relation reward from improving actual dispatch",
+      "sha256": "f74e44a86bad98be68bfc5065953e8b1de0a4824c778ff16562676888663d4ee",
+      "bytes": 33196
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/figures/figureD_relation_increment.pdf",
+      "source": [
+        "metrics/visual/figureD_construction_and_dispatch.csv",
+        "metrics/relation/relation_summary.json",
+        "metrics/relation/fixed_edges_DV.csv"
+      ],
+      "question": "Distinguish optimizing list relation reward from improving actual dispatch",
+      "sha256": "d0d02bd637e9953c4bb8b56dd1e0b770e027d330091851b34d8626f630458de6",
+      "bytes": 18283
+    }
+  ],
+  "producer": "scripts/visual_dispatch.py",
+  "text_seed": 20261019,
+  "model_forward": false,
+  "original_raw_input_retained": true,
+  "display_revision": {
+    "renderer": "scripts/render_display_fixes.py",
+    "modified_figure_count": 16,
+    "original_text_selection_unchanged": true
+  }
+}

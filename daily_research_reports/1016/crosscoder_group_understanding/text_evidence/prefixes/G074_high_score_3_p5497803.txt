@@ -1,0 +1,67 @@
+ to cdrom/KNOPPIX/copy/.
+
+The examples in there for password setting, shadow changing and X11 config 
+creation should be quite easy to understand.
+
+If there are anymore questions, you can of course reach me per mail or over 
+one of this mailing lists.
+
+
+
+PS: It would be possible to replace the first stage of the CD also with 
+debian-installer (just add cloop and unionfs udebs), but I have not looked 
+into it - as Knoppix is what I know best.
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+
+Reply to:<|im_end|>
+
+Re: RFS: julius - speech recognition engine
+
+Hi Felipe,
+
+Thank you for taking a look at the Julius package.
+
+2010/7/13 Felipe Sateler <fsateler@debian.org>:
+> - Why do you modify the manpages via sed instead of patching them?
+
+Because IMHO it's much easier to maintain than having a big patch
+which I have to update every time a manpage changes.
+
+> - You say you remove a manpage because you have a better one, but there
+> is not actually one (dfa_minimize)?
+
+Good catch, fixed.
+
+> - Any reason why you don't enable parallel builds with DEB_BUILD_PARALLEL?
+
+Not really. I've added that now.
+
+> - Why are there only static libraries?
+
+It's what upstream's build system provides, and I was told that the
+libraries do stuff like calling abort() so I haven't really bothered
+about it. I want to look into this some day though and maybe patch it.
+
+> ... and I'm not quite confident about the license, specially about the
+> Kyoto District Court venue thing (clause 5).
+
+Uhm, isn't that a common thing in licenses? It's the least clause I'd
+have expected to be problematic, personally I'm more worried about the
+advertising clause. In any case, I could live with it if the package
+goes into non-free.
+
+I've updated the package to include the manpage and to enable parallel
+building. http://mentors.debian.net/debian/pool/main/j/julius/julius_4.1.5-1.dsc
+
+
+Siegfried-Angel Gevatter Pujals (RainCT)
+Free Software Developer       363DEAE3
+
+Reply to:<|im_end|>
+
+Re: [PageVisibility] specific visibility states
+
+From: Kyle Simpson <getify@gmail.com>
+Date: Mon, 2 May 2011 01:55:51 -0500
+Message-ID: <A49722F84BA

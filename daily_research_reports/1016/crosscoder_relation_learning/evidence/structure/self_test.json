@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ENGINEERING_NOT_SCIENTIFIC",
+  "heatbath_detailed_balance_enumerated": true,
+  "heatbath_empirical_moment": 0.18182432868163134,
+  "enumerated_moment": 0.1817496819840656,
+  "fixed_step_schedule": true,
+  "no_draw_filtering": true,
+  "exact_iid_pair_counting_verified": true,
+  "exact_iid_triple_rejection_verified": true,
+  "exact_iid_triple_counting_verified": true,
+  "triple_cdf_exhaustive_targets": 112,
+  "projected_counts_identity": true,
+  "Rhat_ESS_sanity": [
+    1.0015360269726523,
+    1840.957898146345
+  ],
+  "inherited_swap_selftest": {
+    "status": "ENGINEERING_SELF_TEST_PASSED_NOT_SCIENTIFIC_PASS",
+    "hand_counts": true,
+    "exact_margins": true,
+    "enumerated_symmetric_uniform_proposal": true,
+    "tiny_states": 5,
+    "hash_sample_reproducible": true,
+    "mixing_proved": false
+  }
+}

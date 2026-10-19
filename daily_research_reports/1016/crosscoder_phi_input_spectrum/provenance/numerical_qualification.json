@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-16T04:00:11.709797+00:00",
+  "trace_identity_max_relative_error": 6.802676867291412e-16,
+  "residual_dropfirst_spectrum_max_relative_error": 2.2894270673905455e-16,
+  "residual_mean_vector_max_abs": 1.3766765505351941e-14,
+  "direct_covariance_comparisons": [
+    {
+      "condition": "R",
+      "group_id": 0,
+      "original_error_by_trace": 1.2457158670812363e-16,
+      "residual_error_by_trace": 4.2237724796211695e-17
+    },
+    {
+      "condition": "F",
+      "group_id": 0,
+      "original_error_by_trace": 2.0468711414797328e-16,
+      "residual_error_by_trace": 7.078545691004407e-17
+    }
+  ],
+  "original_theoretical_rank": 127,
+  "residual_theoretical_rank": 126,
+  "original_direction128_share_max": 5.3748532588879705e-17,
+  "residual_beyond126_share_max": 2.68839722882356e-17,
+  "no_hidden_inplace_write": "Read-only mmap; selectedrows copied and FP64centered/projection arrays allocated separately"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS_SYNTHETIC_MATHEMATICS_ONLY",
+  "seed": 20261016,
+  "shape": {
+    "positions": 113,
+    "features": 14,
+    "hidden": 37
+  },
+  "full_vs_reduced_eigenvalue_max_abs": 1.3642420526593924e-12,
+  "verified": [
+    "exact covariance low-rank identity",
+    "constant covariance cancellation",
+    "model scalar normalization restores lambda scale",
+    "normalized spectrum scale invariance",
+    "independent column shuffle preserves every value",
+    "zero total variance remains unestimable",
+    "phi upper-bound numerical example"
+  ],
+  "phi_p01_q50_upper": 0.10050378152592121,
+  "boundary": "Synthetic qualification is not an empirical result or mechanism confirmation."
+}

@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE",
+  "arm": "N",
+  "seed": 20261017,
+  "config_sha256": "dc32d3037009c1db9a9cb04e6702dcd07a96a3e198fe90ebda2f38e01a0d6e13",
+  "source_sha256": "cdc91c2404d83a5288abbece38fab306734d599726620538c85783e7219d298b",
+  "checkpoint_sha256": "3d316ba56cb46e0803caf51f2b3eeb39158d3e5c743c4c6aa20975d3e1402c17",
+  "prepared_sha256": "4e5c4143a1d4e707ee22ff8d749dfd7cecb1b1abd52c83f1b920aec1d68c0b8b",
+  "zero_full_guards": {
+    "zero": {
+      "per_position_loss_exact": true,
+      "max_absolute_loss_error": 0.0
+    },
+    "full": {
+      "per_position_loss_exact": true,
+      "max_absolute_loss_error": 0.0
+    }
+  },
+  "linear_response_decomposition": {
+    "sample_positions": 4096,
+    "max_abs_response_error": 0.000152587890625,
+    "relative_response_L2_error": 2.9425891365913755e-07,
+    "check": "U D h versus U D mu + U D(h-mu), before final norm/head",
+    "loss_additivity_not_assumed": true
+  },
+  "no_training": true,
+  "original_routes_fixed": true,
+  "complete_input_preserved": true,
+  "means_from_TRAIN_only": true,
+  "elapsed_seconds": 26.299368519335985,
+  "boundary": "functional adapter-response components at this checkpoint, not semantic common or complete training cause"
+}

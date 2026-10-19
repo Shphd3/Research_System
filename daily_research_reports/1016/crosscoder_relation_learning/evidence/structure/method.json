@@ -1,0 +1,66 @@
+{
+  "utc": "2026-10-15T16:49:45.997819+00:00",
+  "conditional_target": "Uniform size-s subsets of the current candidate pool whose D-only mean empirical log10 frequency lies within real D group mean +/-0.1 dex. V never selects members or proposals.",
+  "size2_exact_IID": {
+    "steps": [
+      "Sort candidate features by D empirical log frequency, stable original IDs.",
+      "For every first sorted rank i, count second ranks j>i with sum in 2*(target +/- .1); find lower/upper ranks by binary search.",
+      "Compute cumulative legal-pair counts. Draw one integer uniformly in [0,total_legal_pairs), invert cumulative counts, obtain exact pair.",
+      "Repeat independently for every retained draw. No burn-in or accepted-step issue. Degenerate finite support is valid and reported."
+    ],
+    "law": "Each legal unordered pair has exactly one integer representation, so iid uniform exactly, up to pseudorandomness.",
+    "qualification": "Exact algorithm self-test + every requested draw exists. Rhat/ESS/initial overlap descriptive only; no empirical fluctuation can invalidate exact iid sampling."
+  },
+  "size3_exact_IID": {
+    "steps": [
+      "Independently draw three uniform candidate IDs with replacement.",
+      "Reject repeated IDs or mean D log frequency outside target +/- .1.",
+      "Keep each valid triple, irrespective of V properties, until frozen draw count or 10000000-proposal group budget.",
+      "Each valid subset has exactly 3! ordered representations, hence retained draws are iid uniform over legal subsets."
+    ],
+    "qualification": "All requested draws must exist; every group is retained. Underfilled group invalidates complete endpoint. Acceptance count/total proposals saved. V zero is missing in strict score, not grounds for redraw."
+  },
+  "size4plus_MCMC": {
+    "steps": [
+      "Use original real D group as fixed initial ordered distinct member slots.",
+      "At each fixed update choose one slot uniformly. Remove its value, hold all other slots.",
+      "Compute D-log interval for replacement that preserves group mean target +/- .1.",
+      "Uniformly select among eligible candidates not occupying other slots, including current value as a self-loop.",
+      "The full-conditional random-scan Gibbs kernel is reversible for uniform ordered valid subsets. Each subset has s! representations, so uniform subset stationary.",
+      "Exactly50*s burn-in updates, then every5*s updates retain one draw. Two independently seeded chains. No draw filtering, repeats retained."
+    ],
+    "qualification": {
+      "split_Rhat_SD_and_D_mean_max": 1.1,
+      "ESS_SD_and_D_mean_min": 20,
+      "mean_original_group_Jaccard_per_chain_max": 0.5,
+      "exact_original_state_draw_fraction_max": 0.25
+    },
+    "limitation": "Necessary finite diagnostics only; no proof all constrained states communicate or globally mix."
+  },
+  "draws": {
+    "full_per_chain": 100,
+    "sample_null_per_chain": 200,
+    "chains": 2,
+    "sample_spacing_updates_per_member": 10,
+    "full_spacing_updates_per_member": 5
+  },
+  "strict_and_exploratory": {
+    "original": "log10(nV/NV), any zero/one or unqualified group => complete original Tb missing.",
+    "new_postobservational": "log10((nV+.5)/(NV+1)), same real/null operations; score is not original confirmatory Tb."
+  },
+  "source_code_sha256": "551e9a8e92b1a5de58b320d5f81c3c1b44c4fe687323339c32d1fec1c2c07c97",
+  "formal_workers": 3,
+  "repair2": "Uniform sample real/null Monte Carlo budget enlargement approved by root before any formal draw; original qualification kept. No thresholds changed or groups filtered. Original strict endpoint remains missing on V zero; H1a can calibrate separately if H1b unavailable.",
+  "null_state_chains": 2,
+  "null_draw_allocation": {
+    "chain0_even_draw_ids": 50,
+    "chain1_odd_draw_ids": 49,
+    "score_workers": 3,
+    "score_parallelism_does_not_create_state_chains": true
+  },
+  "MonteCarlo_limitations": [
+    "Same-real-group starts for heatbath may share slow/global components; Rhat/ESS and turnover do not prove all feasible subsets communicate.",
+    "Fixed-margin null draws are serially dependent within each of two state chains. Three workers score snapshots only; no extra null state chain.",
+    "B99 raw p resolution 1/100; approximate MCMC rank calibration, not exact iid permutation p or nominal FWER guarantee."
+  ]
+}

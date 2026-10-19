@@ -1,0 +1,263 @@
+{
+  "checked_at_utc": "2026-10-15T14:12:48.318390+00:00",
+  "actor": "Codex /root/assets_inventory",
+  "scope": "local metadata/read-access only; no checkpoint deserialization, full tensor hash, model inference, new statistics or plot",
+  "phase1_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+  "cache_registry_id": "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+  "cache_manifest_has_asset_id_field": false,
+  "cache_complete_manifest": {
+    "status": "COMPLETE",
+    "positions": 10485760,
+    "F": 16384,
+    "ranks": [
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/manifest.json",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/manifest.json",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/manifest.json",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/manifest.json"
+    ],
+    "nnz": 2669034642,
+    "mean_l0": 254.538978767395,
+    "zero_hit_features": 290,
+    "binding": {
+      "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "data_manifest_sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+      "normalization": "complete saved TRAIN state",
+      "threshold": "complete saved TRAIN EMA",
+      "window_positions": 10485760,
+      "F": 16384,
+      "precision": "original BF16 / FP32",
+      "base_batch": 16,
+      "microbatch": 1024,
+      "layers_zero_based": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27
+      ],
+      "SDPA": true
+    },
+    "storage": "CSR: uint64 ptr; uint16 sorted feature IDs; FP32 positive gated z; logical row identity fixed global eligible index; source dictionary and offsets join from input indices",
+    "original_inference": "4 original rank ranges,16 whole1024-token contexts/Base forward,1024eligible positions/coder batch,SDPA BF16,strict saved TRAIN score cutoff",
+    "original_document_independence": "UNKNOWN",
+    "full_hashes_in_rank_chunk_manifests": true
+  },
+  "ranks": [
+    {
+      "rank": 0,
+      "status": "COMPLETE",
+      "positions": 2621440,
+      "chunks": 160,
+      "state": {
+        "threshold_full": 0.051281172782182693,
+        "completed_updates": 244140,
+        "k": 256,
+        "normalization_count": 65536,
+        "normalization": "frozen TRAIN centered vector RMS; target1",
+        "loaded_all_state_keys": [
+          "encoder",
+          "decoder",
+          "shared_bias",
+          "decoder_bias",
+          "k",
+          "threshold",
+          "last_selection_threshold",
+          "num_tokens_since_fired",
+          "completed_updates"
+        ],
+        "compute_dtype": "BF16 GEMM / FP32 state and scores",
+        "optimizer_loaded_for_analysis": false
+      }
+    },
+    {
+      "rank": 1,
+      "status": "COMPLETE",
+      "positions": 2621440,
+      "chunks": 160,
+      "state": {
+        "threshold_full": 0.051281172782182693,
+        "completed_updates": 244140,
+        "k": 256,
+        "normalization_count": 65536,
+        "normalization": "frozen TRAIN centered vector RMS; target1",
+        "loaded_all_state_keys": [
+          "encoder",
+          "decoder",
+          "shared_bias",
+          "decoder_bias",
+          "k",
+          "threshold",
+          "last_selection_threshold",
+          "num_tokens_since_fired",
+          "completed_updates"
+        ],
+        "compute_dtype": "BF16 GEMM / FP32 state and scores",
+        "optimizer_loaded_for_analysis": false
+      }
+    },
+    {
+      "rank": 2,
+      "status": "COMPLETE",
+      "positions": 2621440,
+      "chunks": 160,
+      "state": {
+        "threshold_full": 0.051281172782182693,
+        "completed_updates": 244140,
+        "k": 256,
+        "normalization_count": 65536,
+        "normalization": "frozen TRAIN centered vector RMS; target1",
+        "loaded_all_state_keys": [
+          "encoder",
+          "decoder",
+          "shared_bias",
+          "decoder_bias",
+          "k",
+          "threshold",
+          "last_selection_threshold",
+          "num_tokens_since_fired",
+          "completed_updates"
+        ],
+        "compute_dtype": "BF16 GEMM / FP32 state and scores",
+        "optimizer_loaded_for_analysis": false
+      }
+    },
+    {
+      "rank": 3,
+      "status": "COMPLETE",
+      "positions": 2621440,
+      "chunks": 160,
+      "state": {
+        "threshold_full": 0.051281172782182693,
+        "completed_updates": 244140,
+        "k": 256,
+        "normalization_count": 65536,
+        "normalization": "frozen TRAIN centered vector RMS; target1",
+        "loaded_all_state_keys": [
+          "encoder",
+          "decoder",
+          "shared_bias",
+          "decoder_bias",
+          "k",
+          "threshold",
+          "last_selection_threshold",
+          "num_tokens_since_fired",
+          "completed_updates"
+        ],
+        "compute_dtype": "BF16 GEMM / FP32 state and scores",
+        "optimizer_loaded_for_analysis": false
+      }
+    }
+  ],
+  "chunk_metadata_checks": {
+    "chunks": 640,
+    "nnz_sum_from_manifests": 2669034642,
+    "total_file_bytes": 16098567532,
+    "missing": [],
+    "size_or_binding_mismatch": [],
+    "payload_hash_freshly_checked": false
+  },
+  "saved_code_source_hash_checks": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/candidates.py",
+      "sha256": "5c129830e1c5b106f94ae3d64af54f010e6d061a1536ff99ddaa6822a4506e8f",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/core.py",
+      "sha256": "cca787eed861413a1f07573854a9b5f0a6e5a2fb7daa0c4dd6a98c24306b0a3f",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/features.py",
+      "sha256": "839b475881609057579ddd0205cac8544b2a594e9ed9f9113eeaa123b17c3450",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/graphs.py",
+      "sha256": "c9aaa1c80e787c8c3cbd153554a85547fe887ee6773cb13778def363e5a48e26",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/inspection.py",
+      "sha256": "0294b18e442db7444fd45fc73089ad294c522b7f3f5148c085cae996e8eaaf1b",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/launch.sh",
+      "sha256": "a87814070f093fcfdc9e5fb9a3ccf0aeb929692f0151eb07a92073fbd4aae69d",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/reporting.py",
+      "sha256": "64177275d1829227fd845ad334df5d26af61ca927a3a4ca9f1f4c056181e22e8",
+      "matches_saved_manifest": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/run.py",
+      "sha256": "d8579576ddcf7caffe02b6c9cfea26877058b9f09ae41e9df6214031d6645281",
+      "matches_saved_manifest": true
+    }
+  ],
+  "array_headers": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/counts/total0.npy",
+      "shape": [
+        16384,
+        16384
+      ],
+      "dtype": "int64",
+      "bytes": 2147483776,
+      "header_only": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/counts/total1.npy",
+      "shape": [
+        16384,
+        16384
+      ],
+      "dtype": "int64",
+      "bytes": 2147483776,
+      "header_only": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/block_edges/block_000.npy",
+      "shape": [
+        214711
+      ],
+      "dtype": "uint32",
+      "bytes": 858972,
+      "header_only": true
+    }
+  ],
+  "a23_local_snapshot": {
+    "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/recovery_20261015/a23/run_retry_01",
+    "current_progress_file_mtime_utc": "2026-10-15T14:12:14.512415+00:00",
+    "position_exposures": 35635200,
+    "optimizer_step": 8700,
+    "latest_saved": {
+      "asset_id": null,
+      "contract_sha256": "83de65fa460fb0bdb9b640e20926c9f64e337a4b4919377ec875650c0bde47a9",
+      "immutable": false,
+      "optimizer_step": 6103,
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/recovery_20261015/a23/run_retry_01/latest.pt",
+      "position_exposures": 24997888,
+      "reason": "IN_PROGRESS_MILESTONE",
+      "save_and_registration_seconds": 373.0837443289347,
+      "sha256": "9c1071633c2ff1e729a84255240d59a23b1db22fdd0eacbcf2e712012cca96bb",
+      "source_positions_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/recovery_20261015/a23/run_retry_01/source_positions_000024997888.json",
+      "source_positions_manifest_sha256": "a823cb5fbd11b8c49c4e6cc01a24d5256569684af3b5de6d1ce19ba29554fb03"
+    },
+    "half_billion_or_final_found_in_original_and_retry_run_roots": false,
+    "platform_state_checked": false
+  },
+  "new_analysis": "NOT_RUN"
+}

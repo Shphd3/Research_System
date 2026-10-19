@@ -1,0 +1,27 @@
+{
+  "processing_agent": "Codex /root/spectrum_data",
+  "viewed_utc": "2026-10-16T04:02:26.512113+00:00",
+  "method": "Actual PNG rendered via view_image for all4 figures; first-share figures re-viewed after final common y-axis adjustment.",
+  "checks": {
+    "all_titles_axes_legends_readable": true,
+    "no_clipping": true,
+    "white_background_short_quantities": true,
+    "fixed_RFN_palette": true,
+    "linear_axes": true,
+    "common_first_share_y_range": [
+      0,
+      0.7
+    ],
+    "all145_selected_group_points_visible": true,
+    "normalized_spectra_group_equal": true,
+    "no_inferential_error_bars": true,
+    "original_data_unchanged": true
+  },
+  "PNG_SHA256": {
+    "figure7_phi_raw_spectrum": "d2503b4faf877af3d4566766e06b49fe6e3d6911c5e4dd38592cef302c7720fd",
+    "figure8_phi_raw_first_share": "e15c4f1d2fa9c8249f07bcf9fdc7419d12466472b615868bd1209693415388be",
+    "figure9_phi_residual_spectrum": "170bb8a67d8d88acca23cb362b983bcfb8260607eb1a4e5eab5a8f4f7b54f60a",
+    "figure10_phi_residual_first_share": "006d4fec6249f69b8b3beb9d1929cce0b06c178f442cc7602b32fcb5edf5b211"
+  },
+  "PDF_verification": "Saved successfully from same Matplotlib figure; PDF was not separately rasterized/viewed."
+}

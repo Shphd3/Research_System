@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "initial_logits_max_abs": 0.0,
+  "expert_params": 25165824,
+  "router_params": 8192,
+  "first_router_CE_grad": 0.0,
+  "post_first_update_router_CE_grad": 5.302343368530273,
+  "first_down_grad": 2.3383145481348038,
+  "frozen_head_no_grad": true,
+  "small_fit_steps": 100,
+  "small_fit_start": 3.653855800628662,
+  "small_fit_end": 1.0281778486387338e-06,
+  "small_fit_min": 1.0263153171763406e-06,
+  "resume_next_update_exact": true,
+  "timing_full_batch512_micro128_seconds": [
+    0.06028777360916138,
+    0.05073079466819763,
+    0.048606373369693756,
+    0.04785808175802231,
+    0.04811345040798187,
+    0.04821234196424484,
+    0.04834049195051193,
+    0.04815579578280449,
+    0.04840119555592537,
+    0.04807519167661667
+  ],
+  "median_step_seconds": 0.048184068873524666,
+  "eval_seconds_per_position": 3.984461727668531e-06,
+  "estimated20_training_eval_wall_seconds": 190.23865979259426,
+  "rss_peak_bytes": 2267492352,
+  "gpu_peak_allocated_bytes": 1207213056,
+  "gpu_allocated_bytes": 895520256
+}

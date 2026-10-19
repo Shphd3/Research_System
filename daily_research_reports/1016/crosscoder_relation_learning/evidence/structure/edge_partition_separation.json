@@ -1,0 +1,12 @@
+{
+  "post_observation_descriptive": true,
+  "D_edges": 34757,
+  "V_edges": 34743,
+  "common_edges": 30101,
+  "edge_Jaccard_D_V": 0.7640041625421965,
+  "fraction_D_edges_retained_V": 0.8660413729608424,
+  "phi_Spearman_common_edges_only": 0.9711666333156382,
+  "q10_edges_all_in_q20_expected_by_definition": true,
+  "scope": "Mutual-top-q edge sets on fixed full candidate pool. Common-edge phi correlation is selected descriptive, not all-pair replication. q10 edge nesting within q20 is a deterministic consequence of the neighbor rule, not a new scientific observation.",
+  "interpretation": "Separate pair-edge repeatability from community partition repeatability; changing q may reorganize communities even though the q10 edges are retained. Do not call all relations unstable from partition statistics alone."
+}

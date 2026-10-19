@@ -1,6 +1,6 @@
 # Research asset registry
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **502 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **548 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
 
 [中文](README_cn.md) · [Sole machine-readable catalog](catalog.json) · [Historical whole-library access snapshot](checks/2026-10-09_access_v4.json) · [Checker](../tools/check_assets.py) · [Project access](../docs/project_access.md)
 
@@ -263,3 +263,18 @@ E04 actual save registration:10 families/55 states from pt-1rb3s2t0. [Strict out
 
 
 [CrossCoder phase-one saved cache and analysis](crosscoder_feature_phase1.md): final14-layer completeVAL graphs,texts,heatmaps and scoped current access. Registration grants neither scientific conclusions nor next-stage execution authority.
+
+## 2026-10-16 CrossCoder relation-to-learning outputs
+
+[Reading entry](../daily_research_reports/1016/crosscoder_relation_learning/README.md). Registered cache versions,54formal states/9finals, saved Smoke and complete bounded analysis have current selected strict-access receipts. IDs: `representation_crosscoder_relation_learning_20261015t164000z`, `representation_crosscoder_relation_learning_eval512_20261015t164000z`, `checkpoint_family_crosscoder_relation_learning_20261015t164000z`, `checkpoint_crosscoder_relation_learning_smoke_20261015t164000z`, `analysis_crosscoder_relation_learning_20261015t164000z`. Access is not scientific approval; the report preserves negative learning results and original strict-sample NA.
+
+[Normalized routing and expert-learning outputs](normalized_route_learning.md):20 actual three-epoch model families, separate target background/8adapt family, engineering replay and analysis. Selected access is distinct from scientific approval.
+
+
+### 2026-10-19 frequency-contribution bridge
+
+`analysis_crosscoder_frequency_contribution_bridge_20261019t025630z` registers cached no-training A–C results:4frequency bands,21groupings,42routes,84split-condition exposure matrices and302text cards. [Summary](../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md). [Selected access](checks/2026-10-19_frequency_contribution_bridge_outputs.json). Exposed-EVAL exploratory evidence; no learning or capacity claim, no additional execution authority.
+
+## Large-data cross-layer token/feature association
+
+Registered `analysis_crosscoder_token_feature_layer_validation_20261019`: cached CPU analysis with corpus-local and fixed-pool comparisons, four figures and exact numeric tables. Read access is not independent scientific confirmation or next-run approval.

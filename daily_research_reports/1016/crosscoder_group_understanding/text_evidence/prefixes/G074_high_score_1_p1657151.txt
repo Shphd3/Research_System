@@ -1,0 +1,46 @@
+
+     is load nvidia_drv for you, or fglrx. It still has a way to go yet
+     - including porting the rest of hw/xorg/drivers - and thus is not
+     able to be considered at this point in time.
+[1]: Firstly, we're building first-class shared libraries, instead of
+     the abortion encouraged by MetroLink. Secondly, you can't have
+     interdepencies with variables; all variables need to be resolved at
+     load time, whereas functions get lazy resolution.
+[2]: Not so Joe Blow can be arsing around with driver code, but so
+     people will feel empowered to help with FTBFSes and packaging
+     problems, to submit bugs with patches, et al - so they're not
+     scared off X for whatever reason.
+
+Daniel Stone                                                <daniels@debian.org>
+Debian: the universal operating system                     http://www.debian.org
+
+Attachment: signature.asc
+Description: Digital signature
+
+Reply to:<|im_end|>
+
+tidy on html-kit: "new tags" question
+
+From: Alex Fung <Alex.Fung.Ho-san@graduate.hku.hk>
+Date: Fri, 18 Aug 2000 05:54:50 -0400 (EDT)
+To: <html-tidy@w3.org>
+Message-ID: <000401c008fa$4f1e35c0$444d1e0a@itsd.hksarg>
+I wished to tidy my XML document. However, I found several problems:
+
+1) unless I manually typed all custom tags to the edit-preference, tidy
+complains about each of them. Is there anyway to make Tidy assume all new
+tags are OK? Or better still can Tidy accept microsoft x-schema definitions?
+
+2) If I do not say input is XML, then it will do a lovely thing: it converts
+"<br>"s to "<BR />". However, it won't happen if I tell tidy that it is XML.
+OTOH, if I don't say input is XML, then Tidy always add some HTML tags
+(head, title, etc) to my file. How can I have <BR /> conversion but without
+the <head> etc tags added?
+Received on Friday, 18 August 2000 16:00:07 GMT
+<|im_end|>
+
+Seminar format, participation, outcomes
+
+From: Shawn Henry <shawn@w3.org>
+Date: Tue, 30 Aug 2011 19:13:56 -0500
+Message-ID: <4E5D7CC

@@ -1,0 +1,53 @@
+{
+  "created_at_utc": "2026-10-16T01:35:56.137141+00:00",
+  "status": "PASS_DERIVED_READING_DELIVERABLE_NOT_SCIENTIFIC_APPROVAL",
+  "group_index_rows": 186,
+  "complete_member_rows": 13807,
+  "per_group_member_and_edge_files": 186,
+  "case_group_sizes": [
+    4,
+    14,
+    149
+  ],
+  "text_cases": 18,
+  "random_and_high_per_case_group": [
+    3,
+    3
+  ],
+  "all_member_case_z_rows_including_zero": 1002,
+  "prefix_text_exact_checks": 18,
+  "complete_nonzero_z_exact_checks": 18,
+  "full_prefix_appendix_checks": 3,
+  "case_pair_table_rows": [
+    6,
+    91,
+    11026
+  ],
+  "figures": {
+    "types": 6,
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "visual_checks": "figures/figure_audit.json",
+    "partial_large_graph": "30/149nodes;85/310edges;149member frequency/table"
+  },
+  "local_markdown_links_checked": 491,
+  "missing_links": [],
+  "links_outside_deliverable": [],
+  "math_source_check": "SOURCE PASS: 1 file(s), 0 issue(s); rendering and mathematical truth NOT checked.",
+  "math_rendering_verified": false,
+  "forbidden_payloads": [],
+  "original_source_copies_byte_equal": true,
+  "artifact_files_verified": 470,
+  "artifact_manifest_sha256": "4ddfe9b9625d550fa0282db9fedb94321089f9e83709a47074612cfd651eda63",
+  "original_graph_config": {
+    "q": 10,
+    "resolution": 1,
+    "min_D_hits": 100,
+    "min_D_blocks": 10,
+    "joint_min": 10
+  },
+  "model_inference_training_new_graph_runs": 0
+}

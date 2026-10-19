@@ -1,0 +1,38 @@
+{
+  "time_utc": "2026-10-15T16:53:59.202989+00:00",
+  "hostname": "pt-147df69b54924618a78315d7e8061c73-worker-0",
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "cuda": "12.4",
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA H100 80GB HBM3",
+      "bytes": 85017624576,
+      "finite_bf16_matmul": true
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA H100 80GB HBM3",
+      "bytes": 85017624576,
+      "finite_bf16_matmul": true
+    },
+    {
+      "index": 2,
+      "name": "NVIDIA H100 80GB HBM3",
+      "bytes": 85017624576,
+      "finite_bf16_matmul": true
+    },
+    {
+      "index": 3,
+      "name": "NVIDIA H100 80GB HBM3",
+      "bytes": 85017624576,
+      "finite_bf16_matmul": true
+    }
+  ],
+  "dependencies": {
+    "safetensors": true,
+    "transformers": true,
+    "tensorboard": true
+  },
+  "status": "DEVICE_PREFLIGHT_PASS"
+}

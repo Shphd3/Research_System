@@ -1,0 +1,33 @@
+{
+  "source": "full fixed D/V frequency and group tables",
+  "N_D": 5238097,
+  "N_V": 5247663,
+  "F": 16384,
+  "spearman_all_features": 0.9979155919190026,
+  "spearman_both_positive": 0.9977512477780375,
+  "V_positive_frequency_quantiles": {
+    "min": 1.9056101735191455e-07,
+    "p10": 0.000171695476634,
+    "median": 0.0037955943436154,
+    "p90": 0.0305213959051867,
+    "p99": 0.25710057982000767,
+    "max": 0.9926359600454526
+  },
+  "V_zero": 393,
+  "D_zero": 353,
+  "both_zero": 290,
+  "total_zero": 290,
+  "mean_L0_V": 254.68414568542153,
+  "top10_total_activation_mass_share": 0.03670263827171411,
+  "group_SD_V_mean_group_equal": 0.35331053268862533,
+  "group_SD_V_median": 0.2965188145161177,
+  "size_control_SD_mean_group_equal": 0.6756509586929553,
+  "all_group_simple_delta": -0.32234042600432994,
+  "meanmatched_eligible_groups": 142,
+  "meanmatched_ineligible_groups": 44,
+  "meanmatched_eligible_members": 6679,
+  "all_group_members": 13807,
+  "semantic_boundary": "All derived values descriptive; no calibrated full-population H1 p-values.",
+  "group_SD_V_mean_feature_equal": 0.6684555655420157,
+  "size_control_SD_mean_feature_equal": 0.852566337664876
+}

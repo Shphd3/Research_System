@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-14T03:33:32.514412+00:00",
+  "scope": "User-requested main-graph title/footer edit and external Chinese terminology guide only",
+  "inputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_nodes.csv",
+      "sha256": "4896efb110a460e6f1f637da4728626fa3263cca522a48b76e572e56b5400a15"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_edges.csv",
+      "sha256": "b5e9d68de2e3e95e2b8c000bdd1b9215c34b7f0e347188673b18c6fef4f81a48"
+    }
+  ],
+  "no_new_selection_counts_graph_inference_training_gpu_commit_push": true,
+  "backup": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/expanded_graph_20261014T032050Z/title_revision_20261014T033332Z/before",
+  "render_seconds": 17.219754997640848,
+  "max_rss_bytes": 1016909824,
+  "status": "COMPLETE",
+  "checks": {
+    "same320_nodes1250_edges": true,
+    "same_source_x_h_colors_and_sizes": true,
+    "no_footer_text": true,
+    "left_count_labels_display_total": true,
+    "node_edge_CSV_hashes_unchanged": true
+  },
+  "completed_utc": "2026-10-14T03:36:00.979607+00:00",
+  "visual_review": "Final PNG viewed; footer absent; title and subtitle legible; all six h rows retained.",
+  "reasoning_audit": "Definitions distinguish graph h, model depth, activation frequency, observed associations, and display versus full analysis set.",
+  "outputs": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.png",
+      "sha256": "92b6c53a5bc2bfe124f19cf1590fa2abb5c2b7698db5991264d7fa9f9e16c563"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.pdf",
+      "sha256": "ea10fc2d9b772614ab288175bc9cfae059fbcf3fc224f6b6169109e7a91bc1f8"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.svg",
+      "sha256": "2f8775a3102f52679c10f4dac930d5025871c30c1efb74d5178085199907a4cf"
+    }
+  ]
+}

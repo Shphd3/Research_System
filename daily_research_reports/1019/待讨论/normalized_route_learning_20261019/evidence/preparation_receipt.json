@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "seconds": 17.173392295837402,
+  "scale": 20.43508931539708,
+  "source_labels": "all TRAIN/EVAL targets equal source[position+1], no cross-context label",
+  "S0_routes_reproduce_previous": true,
+  "train_only": true,
+  "probe_N": 1526,
+  "target": {
+    "feature_id": 2,
+    "TRAIN_hits": 269,
+    "TRAIN_contexts": 98,
+    "threshold": 256
+  },
+  "precision": "FP64 sparse accumulation rounded FP32, exact saved FP32 argmax",
+  "no_model_inference": true
+}

@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-10-14T03:20:50.681453+00:00",
+  "scope": "User-authorized visualization only from saved V reduced graph; no graph reconstruction/threshold/model change",
+  "seed": 20261014,
+  "target_counts_h0_to_h5": [
+    20,
+    80,
+    80,
+    75,
+    63,
+    2
+  ],
+  "target_total": 320,
+  "selection_order": [
+    "Keep old complete outgoing reachable union of anchors9373461 (30 nodes).",
+    "Keep all qualified h0,h4,h5 nodes (20,63,2).",
+    "For every h4 root in ascending ID, retain one full-graph longest-path witness down to h0: choose among h-1 direct successors by fixed seeded draw, sorted IDs; reuse an already selected successor if available. Preserve all path nodes.",
+    "For h3 then h2 then h1, fill to fixed per-h quota by D-frequency rank quartiles of that h. Repeatedly pick from the least-filled available quartile, ties low to high quartile; fixed seeded draw among sorted remaining IDs.",
+    "If protected/path nodes exceed a quota, retain them and report the increase; no deletion of path nodes or re-selection based on geometry."
+  ],
+  "quartile_rule": "Within each full Q h group sort by (D activation frequency,feature ID), split ranks into four nearly equal parts. Same frequency ties use feature ID; report as rank-strata, not disjoint exact-frequency intervals.",
+  "edges": "ALL saved V reduced direct edges with both endpoints selected, including h-skipping edges; no new reduction. Raw passV edge table is support lookup only.",
+  "h": "Frozen full V graph depth; never recomputed in display subgraph.",
+  "layout": "Uniform node size, color by full h; reorder within each h using barycenter of displayed neighbors for crossing reduction only. Horizontal distance has no similarity meaning.",
+  "omitted_neighbors": "Record full versus shown in/out degree per node; omitted neighbors do not mean absent relations.",
+  "geometry": "AFTER selection JSON is frozen, use saved p and p_raw; same selected IDs, order h5 to h0 then stable layout order. New plot, not a new trend test.",
+  "overview": "All15537Q nodes; one dot per Feature, fixed 200-column matrix within each h strip; h5 at top, h0 at bottom. Internal dot position is packing only.",
+  "no_inference_training_cache_scan_gpu_commit_push": true
+}

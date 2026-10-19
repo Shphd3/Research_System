@@ -1,0 +1,1484 @@
+{
+  "created_utc": "2026-10-18T06:20:27.421206+00:00",
+  "owner": "/data/250010109/Research_System/daily_research_reports/1018/phi_relations",
+  "execution_owner": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018",
+  "purpose": "Selected, auditable reading evidence for the current user-authorized relation-source analysis",
+  "selected_payload_exception": true,
+  "no_raw_cache_checkpoint_or_font_payload": true,
+  "asset_id": "analysis_crosscoder_phi_relations_sources_20261018",
+  "output_access_check": "/data/250010109/Research_System/assets/checks/2026-10-18_phi_relations_outputs_v2.json",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 989,
+      "sha256": "3deccabf0e01a24a42295b8f2d6f5d0526c41cb8cff313eb2a8c27bb71c28c58",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "case_G014_cn.md",
+      "bytes": 9462,
+      "sha256": "c562b15d85af0b35f5fd81c3fecede6597fc259acdb87e28d002df8e0aa43acb",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "case_G034_cn.md",
+      "bytes": 7621,
+      "sha256": "88c643621cc8b01f36a7c10f6b54145ce661a8ceeec603bc1abf3c22d05acf48",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "case_G068_cn.md",
+      "bytes": 9640,
+      "sha256": "5378e6dfe9dc0583de3297d2bf60c715b3bca22730ddc213f350c51bb782acb3",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "cases/G014_texts_cn.md",
+      "bytes": 14981,
+      "sha256": "c6031197f3f154a44844bc309deed267638d766c3421ab3ac64263d03553c20e",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "cases/G034_texts_cn.md",
+      "bytes": 13112,
+      "sha256": "e511fb9d142cccb94204671f3b672d4299db9fcabca6c935ff6016473c9c7898",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "cases/G068_texts_cn.md",
+      "bytes": 12483,
+      "sha256": "486ffacf87883ab2395f6ed50da2edb475420eac5ae82b0bcfadc547852bd21b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "code/README.md",
+      "bytes": 1232,
+      "sha256": "6e783ae34228584ff0cfba0ed121a84a1a533a0bdd36207e9bdc41a3207d0c02",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "code/analyze.py",
+      "bytes": 19687,
+      "sha256": "79d6e294d915f5d9f37c0a977a49354117c44b359aee92236853fe3625bba3ff",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/analyze.py"
+    },
+    {
+      "path": "code/build_report.py",
+      "bytes": 54067,
+      "sha256": "479ba3e3a4408fcf935d335e78fdf49bc2f7977e6503b8232109000b399af158",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/build_report.py"
+    },
+    {
+      "path": "code/chain_text.py",
+      "bytes": 6457,
+      "sha256": "b1448572b7e46a22c1a4f1cb75ffbdccd44f099c5ce5296d0d40ed6f0a8edb2b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/chain_text.py"
+    },
+    {
+      "path": "code/extract.py",
+      "bytes": 8880,
+      "sha256": "6d31fcb9e878831607a70930e063047b9a6f14799e8a2e23a4ad48d4ee4b8598",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/extract.py"
+    },
+    {
+      "path": "code/finalize.py",
+      "bytes": 7522,
+      "sha256": "5019039f860411c981e68634b3ba14529bb0f22a845fd5d362699ebaafacf24a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/finalize.py"
+    },
+    {
+      "path": "code/plot.py",
+      "bytes": 13536,
+      "sha256": "2e3beb97926861e084f1f4ee7a7fb5637d33ae6c1a2460fdbbe38057c1fe9d33",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/plot.py"
+    },
+    {
+      "path": "code/qualify.py",
+      "bytes": 2163,
+      "sha256": "47a65126d79f7ba7726abae025288ae73906d3740c0474b1e8246a0b15d465de",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/qualify.py"
+    },
+    {
+      "path": "code/validate_results.py",
+      "bytes": 3888,
+      "sha256": "74ef60c5679454d110cecf92bf93b40230b02d201b4c7f727ae0285cda2d75ab",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/phi_relations_20261018/validate_results.py"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 1814,
+      "sha256": "8ebd34f51b3c3d47f7256ba84a7f23d19d437a4a9f0d9b032fc2eb41c0eece5b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/all186_core_decomposition.csv",
+      "bytes": 63459,
+      "sha256": "d9453ca7888e1e31d65239d6d9d3d91ab618b341d1f4a1d6e3e4cd9981b17c68",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/all186_group_index.csv",
+      "bytes": 105435,
+      "sha256": "dc55c2d6aa29ca8423e8a36bc7411e7396cff73804f8b1a00d97ce185c5c40f5",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/all_members_frequency.csv",
+      "bytes": 1227063,
+      "sha256": "824ce76f6ee608b44d7b9132dde5716839d0885e9b486e51ed989aacac78cc09",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_G014_chain_full_matrix.csv",
+      "bytes": 10157,
+      "sha256": "98a83089a4672d4e26930f33f2879ed98a7db2a81df9c0bee4da05d37d13c79a",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_G014_full_matrix.csv",
+      "bytes": 12386,
+      "sha256": "daa6fec406abe8b97c11de2f72ba0fa26b1a4b6151be11af375c3284b370d2ef",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_G034_full_matrix.csv",
+      "bytes": 5619,
+      "sha256": "40ee2cdb9e7d1158d22df754a6001f9ff1e569ab8b49721c0658b00ad5a70b15",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_G068_full_matrix.csv",
+      "bytes": 1096,
+      "sha256": "3305c75a8e2bd3907d6cc1dcb3b9b06f303edb39e7fa9ff417ea7339d67f0fe6",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_all_member_values.csv",
+      "bytes": 295079,
+      "sha256": "0fac2edb7015c4771eb6cc17ae9f1b56f7d5c87c0eda95432124eb932d9c3420",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_positions.csv",
+      "bytes": 31847,
+      "sha256": "0c808f047c2ccffd3418402ba1201a9fdba4a7dd3a9e2c1e81d265ce5dab3500",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/case_sampling_summary.json",
+      "bytes": 909,
+      "sha256": "c2e099cd54bd8fc4868e82ae5f10d6cfa743960af4f1f9713fac8920f3221072",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/cases.json",
+      "bytes": 209522,
+      "sha256": "c3978aa8ea5a0fe1586db512780d571c0708b7a272959003848f4aa62da47c90",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/chain_cases.json",
+      "bytes": 58171,
+      "sha256": "b74dca9841ff0df91b3b9af7d3880a90aaa468d2b7d85aa03e5cd5773b28ba05",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/chain_pair_summary.csv",
+      "bytes": 498,
+      "sha256": "4e4a1eca32c7fddbdaf05c75149c97ba3c7c714948379fb2404731f5f5724c7e",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/condition_support.csv",
+      "bytes": 9958,
+      "sha256": "72fdfb1edf713178bcdeebe5ba2fbe4a9e4c9cb917324af73ae8ec51afc7e545",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/conditional_metrics.csv",
+      "bytes": 4928,
+      "sha256": "8b5dcbd8e0dce69648596b18cb8b04d1b5270f34b4a3a06771788fa9cc520e92",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/contribution_energy.csv",
+      "bytes": 2044,
+      "sha256": "7d48d471a0fa07f6c4ac9cff88f34b48ab032f18cf8bdca6b5a81abb03e1ffe9",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/evidence_rivals.csv",
+      "bytes": 1368,
+      "sha256": "77da8e06025f9ffbc293f4f771b59e7d97071afd492a3e1bdb7696f8058708ca",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/frozen_edges_G014.csv",
+      "bytes": 31743,
+      "sha256": "67113b34baadcd4d24f343e97625f5724bb28ed11a29008f28e67020acc3e0ed",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/frozen_edges_G034.csv",
+      "bytes": 16786,
+      "sha256": "54e6b779f5193ae1c388a01f607f344e2c42d86e576500ec73479d27d65c1d76",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/frozen_edges_G068.csv",
+      "bytes": 3461,
+      "sha256": "3dc572da69401e7fadcf6b3cc56c4224a8f0fe5bfd0fbaa2bef89198ce3a1ca9",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/full_V_K_histogram.csv",
+      "bytes": 10393,
+      "sha256": "36381cdf1804ff870d699e9729d6d50a4a3f04876b86f2dbbec401ab9181b343",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/geometry_G014.npz",
+      "bytes": 5692731,
+      "sha256": "e58de3ddf36590a81589a628b8eb326238c441d569108aebefc27af3f7a3186b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/geometry_G034.npz",
+      "bytes": 842388,
+      "sha256": "84a888a4a3bc1ba572085f5792597fee798941ebb337952761e46c43f0363e6e",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/geometry_G068.npz",
+      "bytes": 20259,
+      "sha256": "509343f9d22fc3a11f2adcd40140033ba8ec78400108edcefa459e71213ef595",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/members_G014.csv",
+      "bytes": 30568,
+      "sha256": "ae6f5f0cc495bd984669757d62de4eae61388eb3e2de32ace3a4d8580b3c5603",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/members_G034.csv",
+      "bytes": 13382,
+      "sha256": "2da0abcde42ec187c8c54994e2b488089af47a1e898c02d31874404e12060037",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/members_G068.csv",
+      "bytes": 1933,
+      "sha256": "7af707ac7a81050995d90750327cbd55db42731cb590eb59eede3d3e118007d5",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/membership_review_G014.csv",
+      "bytes": 51608,
+      "sha256": "73f5c88512617276af8ed34ff78a329543826b45923ceece6465e2897a27ce04",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/membership_review_G034.csv",
+      "bytes": 24176,
+      "sha256": "54c076eaf554f9af594fe50eea5da24c7925d768c05a925665f30970b4ea0297",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/membership_review_G068.csv",
+      "bytes": 3326,
+      "sha256": "4814a03ad975f48292ce02e4763d3b2b8e5c72c220a9709c9b465dea5904829a",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/old_spectrum_individual_paired.csv",
+      "bytes": 27489,
+      "sha256": "bca7374f2c2913a1989c99e0851d60a5e1527b31ceab91b92f9e9026fb7fdc4f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/old_spectrum_paired_strata.csv",
+      "bytes": 1477,
+      "sha256": "ec52edd8693df618100bab9a3b71fc8aa0d586c5c18c1e0d49aea6cdd6d31ea3",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/original_D_V_matches.csv",
+      "bytes": 3801,
+      "sha256": "86e21580e1d1c3d50e82ba85749b4373788b3989aa901e793b11ba43a41172ef",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/original_group_metrics.csv",
+      "bytes": 50588,
+      "sha256": "9c857cc520712af4edce80fc336736fad2d658f98d528d5af51f61538046239e",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/position_composition.csv",
+      "bytes": 732,
+      "sha256": "56b51849a67da40b6814e79f4c5160b53b23fece3932a48d04e5ec171efb8370",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "data/token_composition.csv",
+      "bytes": 4060,
+      "sha256": "6b17658f34c965e326bb8ab3edfdb7c04d58a6f494fa2c10f056e7c5735ce7fc",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "delivery_checks.json",
+      "bytes": 1455,
+      "sha256": "420ab39263df7d35baddea999b40890cefd41d8d68251a71d5299f5bb49f342f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "detailed.md",
+      "bytes": 1859,
+      "sha256": "f55f04b0ccd54ba493f5c88036c74ef4365fcb2df6618387ed6cf226ca04e053",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "detailed_cn.md",
+      "bytes": 321,
+      "sha256": "457eae2e1c5046a3d3cbebd47055e4cc7a0e1a011cc59516dc176e70f8ced5a4",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "evidence_cn.md",
+      "bytes": 1823,
+      "sha256": "93d99eb534d1561aff5dd34ac917a0a092b72fda25e77d1e69643a59ef67fadb",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "figures/appendix_spectrum_mean_original.csv",
+      "bytes": 17361,
+      "sha256": "9ddcdcd9518de8d9b5103d2891bf478ce84a79b3296a3d8599cec524d20c7537",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_mean_original.csv"
+    },
+    {
+      "path": "figures/appendix_spectrum_mean_original.pdf",
+      "bytes": 13502,
+      "sha256": "25a3b65dac8ccd790a413e99980a84965b3cf93857f2bf43d5166bb9bd951a21",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_mean_original.pdf"
+    },
+    {
+      "path": "figures/appendix_spectrum_mean_original.png",
+      "bytes": 77124,
+      "sha256": "fa9f9b8c359f315f279656ab84e36f788e367e95e8985659301542b9fc38c557",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_mean_original.png"
+    },
+    {
+      "path": "figures/appendix_spectrum_mean_residual.csv",
+      "bytes": 17225,
+      "sha256": "8672abbb12ee242b13e0d62c45fb349b92d67da49e90b340030d7c16ea06ef11",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_mean_residual.csv"
+    },
+    {
+      "path": "figures/appendix_spectrum_mean_residual.pdf",
+      "bytes": 14392,
+      "sha256": "f29090261e08db6a2252c16af4d01d2521d2499ac35e2f4326205a3582bca212",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_mean_residual.pdf"
+    },
+    {
+      "path": "figures/appendix_spectrum_mean_residual.png",
+      "bytes": 78967,
+      "sha256": "ad043dd44a10fe7ac753e437e9867d1dafa79a86743b0f4df286519ca9bed3f1",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_mean_residual.png"
+    },
+    {
+      "path": "figures/appendix_spectrum_paired_original.csv",
+      "bytes": 13738,
+      "sha256": "f8d5d0a464500782e8bba5bb7c168ad872db9dd721def642a588015146c2d861",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_paired_original.csv"
+    },
+    {
+      "path": "figures/appendix_spectrum_paired_original.pdf",
+      "bytes": 19795,
+      "sha256": "37c75f9b698b283d5b0d9e64b30ab3726a40d37a8c0a7a901fc81a0c40d995a0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_paired_original.pdf"
+    },
+    {
+      "path": "figures/appendix_spectrum_paired_original.png",
+      "bytes": 136104,
+      "sha256": "beaddc353b5cbd7aca6aa3b52b04a4d8fd73e28f40ce2a5296708b1e259a198a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_paired_original.png"
+    },
+    {
+      "path": "figures/appendix_spectrum_paired_residual.csv",
+      "bytes": 13811,
+      "sha256": "4c6a88adf0b84f720d4a354696a14c8e0df8527b9c4c7f5ca010740708200ce9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_paired_residual.csv"
+    },
+    {
+      "path": "figures/appendix_spectrum_paired_residual.pdf",
+      "bytes": 20227,
+      "sha256": "ce1b7233db3cd887f7097dd57422845b41f944dfdf4117c2c6862841c7cf9b65",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_paired_residual.pdf"
+    },
+    {
+      "path": "figures/appendix_spectrum_paired_residual.png",
+      "bytes": 139228,
+      "sha256": "4e1e5875fd040341f0a5787803e5691bd6dba61480b94ac3cd103b977d350675",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/appendix_spectrum_paired_residual.png"
+    },
+    {
+      "path": "figures/figure1_G014_activation.csv",
+      "bytes": 1243,
+      "sha256": "3d502b5488bd37c01ffee4803ac32fecc087e046d40be8cbb6e6195846510991",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_activation.csv"
+    },
+    {
+      "path": "figures/figure1_G014_activation.pdf",
+      "bytes": 17506,
+      "sha256": "c95bdb457bbb563a24e61bd3aea2980729c776dcc2335b1543e3d56b2e36ae86",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_activation.pdf"
+    },
+    {
+      "path": "figures/figure1_G014_activation.png",
+      "bytes": 212736,
+      "sha256": "ec8a73d41f5342337ae7e802b6a537d5e0eaeacef0cefd7d04587ef41fa22bb4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_activation.png"
+    },
+    {
+      "path": "figures/figure1_G014_chain_graph.csv",
+      "bytes": 48,
+      "sha256": "9d736df6dc2734b94fd687f490528d63a844052211eadb6b2f634ef53f222dd9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_chain_graph.csv"
+    },
+    {
+      "path": "figures/figure1_G014_chain_graph.pdf",
+      "bytes": 7784,
+      "sha256": "3551dcf1d1c181536bae78ff344063f99e0f29fff3a8a31baa00d0c4352ac939",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_chain_graph.pdf"
+    },
+    {
+      "path": "figures/figure1_G014_chain_graph.png",
+      "bytes": 31021,
+      "sha256": "c3973194773cd2cff292c703167b7c8679d7d89f7f6f9b5e1f96d231e594cf71",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_chain_graph.png"
+    },
+    {
+      "path": "figures/figure1_G014_chain_matrix.csv",
+      "bytes": 225,
+      "sha256": "49ce4768031c44fdef8988568c69243e6afad171d5ce78509f57c88555529348",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_chain_matrix.csv"
+    },
+    {
+      "path": "figures/figure1_G014_chain_matrix.pdf",
+      "bytes": 14265,
+      "sha256": "61d0bfb059d756123588d9b3f2782ac32084c8f192ea023051f7e079a86b6a22",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_chain_matrix.pdf"
+    },
+    {
+      "path": "figures/figure1_G014_chain_matrix.png",
+      "bytes": 141536,
+      "sha256": "3da710d92465c4b9fac9296f54021b5eb31bf322240c13e2915c83399fe61476",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_chain_matrix.png"
+    },
+    {
+      "path": "figures/figure1_G014_graph.csv",
+      "bytes": 385,
+      "sha256": "2fdfcbba09728b6c8aa48bdcb24c7d5518259072e8d8b2c643b4f816888ed704",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_graph.csv"
+    },
+    {
+      "path": "figures/figure1_G014_graph.pdf",
+      "bytes": 11964,
+      "sha256": "dde74d65c109e9110b2748c999708ee30a80e8cc16a84db8570b3d039d62359a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_graph.pdf"
+    },
+    {
+      "path": "figures/figure1_G014_graph.png",
+      "bytes": 188204,
+      "sha256": "76668eb09b6024bc4645417db9d0c25083356b2745d11e3ce8e997fd8e5f78d5",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_graph.png"
+    },
+    {
+      "path": "figures/figure1_G014_nodes.csv",
+      "bytes": 1862,
+      "sha256": "787771924c21e2bac3ff016f449f29541fee5f65a57946570902883db130c290",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G014_nodes.csv"
+    },
+    {
+      "path": "figures/figure1_G034_activation.csv",
+      "bytes": 1241,
+      "sha256": "e7f94bdf36d1696657946e55916f17fff44284b42b1eebf4c20b1b4a9eae3378",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_activation.csv"
+    },
+    {
+      "path": "figures/figure1_G034_activation.pdf",
+      "bytes": 17341,
+      "sha256": "9a1190288b49caaf0172404dedd563fe9194cf12198434474e4d6963d5c6e840",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_activation.pdf"
+    },
+    {
+      "path": "figures/figure1_G034_activation.png",
+      "bytes": 201585,
+      "sha256": "72ea6163d1b3b738d56949261a15c4c87f84ca453db024d9d05a0e8c30eeba62",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_activation.png"
+    },
+    {
+      "path": "figures/figure1_G034_graph.csv",
+      "bytes": 962,
+      "sha256": "9366cbbd3ace7c6a2a08c8fca2d9b993b0f332f6b64e245033e3a11ee4b48024",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_graph.csv"
+    },
+    {
+      "path": "figures/figure1_G034_graph.pdf",
+      "bytes": 12071,
+      "sha256": "7b7b388c54a898aed48179d55b342cd94b8a27279dbeca51b73f8eb4d1b432fe",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_graph.pdf"
+    },
+    {
+      "path": "figures/figure1_G034_graph.png",
+      "bytes": 272194,
+      "sha256": "1605ea85a39777fe23f63bde0fdccfb43422e344d3d92157cab0ec11fb184027",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_graph.png"
+    },
+    {
+      "path": "figures/figure1_G034_nodes.csv",
+      "bytes": 1891,
+      "sha256": "df689981174436a500495770369fddc48d61a0e782e18e3ec33bb3ad3eb49aca",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G034_nodes.csv"
+    },
+    {
+      "path": "figures/figure1_G068_activation.csv",
+      "bytes": 1143,
+      "sha256": "9bce7fa0533c82cb2bbc9382b9ff12854acf449da29838dd9ab92f8b1d350c82",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_activation.csv"
+    },
+    {
+      "path": "figures/figure1_G068_activation.pdf",
+      "bytes": 17555,
+      "sha256": "6a3a2dd8270f4e0a56b1ec0ff3df07af94f245783c8d3633574e2bb4e68d3de4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_activation.pdf"
+    },
+    {
+      "path": "figures/figure1_G068_activation.png",
+      "bytes": 205157,
+      "sha256": "e90922a79377481d993317026ef659b2c737d7cb666d4377b923a0fd4f0f69a0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_activation.png"
+    },
+    {
+      "path": "figures/figure1_G068_graph.csv",
+      "bytes": 1962,
+      "sha256": "e8a01ebe72c92e0159aa9eb56ef77ba839068a4e6781c900ae92d5ff035683da",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_graph.csv"
+    },
+    {
+      "path": "figures/figure1_G068_graph.pdf",
+      "bytes": 12064,
+      "sha256": "a12b27a55c57277265b4e521f42ba347b8e26f71efef0796a8c5411ea7e6edd6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_graph.pdf"
+    },
+    {
+      "path": "figures/figure1_G068_graph.png",
+      "bytes": 454865,
+      "sha256": "f47b6985595ef2d521049e3fd14b3418f953e232e5dec2c1775fb0d619ceed2f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_graph.png"
+    },
+    {
+      "path": "figures/figure1_G068_nodes.csv",
+      "bytes": 1678,
+      "sha256": "4651d36fe2e82ecff5d3681bfdfb4e14f066e72691b89b268490c74b25df853c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure1_G068_nodes.csv"
+    },
+    {
+      "path": "figures/figure2_G014_positions.csv",
+      "bytes": 290,
+      "sha256": "8ab4ddea1c42b1737385acafb9d6371b6911670f72dace002850779d18b526b6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G014_positions.csv"
+    },
+    {
+      "path": "figures/figure2_G014_positions.pdf",
+      "bytes": 13930,
+      "sha256": "137c0b87f512d74bbf16566bb577f9da39f123e557b012fc04e75ec9b00984e0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G014_positions.pdf"
+    },
+    {
+      "path": "figures/figure2_G014_positions.png",
+      "bytes": 63590,
+      "sha256": "8efd206819085bffe62d69268d5049f32e784ff1af1a2cad918b309a47c691c9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G014_positions.png"
+    },
+    {
+      "path": "figures/figure2_G014_tokens.csv",
+      "bytes": 509,
+      "sha256": "017e653e99a84ea7d186afe66f6d9ed172a8d700f8aed57ca768377b4a561335",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G014_tokens.csv"
+    },
+    {
+      "path": "figures/figure2_G014_tokens.pdf",
+      "bytes": 16188,
+      "sha256": "d0556511386fc24e57e720848b4a595bd2afc08c129387c2c962405650837301",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G014_tokens.pdf"
+    },
+    {
+      "path": "figures/figure2_G014_tokens.png",
+      "bytes": 76777,
+      "sha256": "9a1eea33a81e362400294c21f33da7a8fdbcfcc840de458c0e681301a8cf641f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G014_tokens.png"
+    },
+    {
+      "path": "figures/figure2_G034_positions.csv",
+      "bytes": 293,
+      "sha256": "b81be222f3a24352c1d5d9dc79bfe1df1355de314d48d5f140a4d4c6732f6649",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G034_positions.csv"
+    },
+    {
+      "path": "figures/figure2_G034_positions.pdf",
+      "bytes": 13929,
+      "sha256": "e9a829113883e880b2f57359fe5a44c85614d7a9b384a49d00188046b3e70e7f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G034_positions.pdf"
+    },
+    {
+      "path": "figures/figure2_G034_positions.png",
+      "bytes": 64727,
+      "sha256": "ba919d5fc1372d171ccf5148f29e8e54899b0ce24093fb5c8893662028b071f7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G034_positions.png"
+    },
+    {
+      "path": "figures/figure2_G034_tokens.csv",
+      "bytes": 510,
+      "sha256": "dbedaa13fc51acd368c6b38a41ce8690de96c93e5d21db4f29605e7ec8006a20",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G034_tokens.csv"
+    },
+    {
+      "path": "figures/figure2_G034_tokens.pdf",
+      "bytes": 16103,
+      "sha256": "5ba6277716a8b8d9e3e2426743355d7a8f1f08d67a6745b3fe8c2da72b9e644f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G034_tokens.pdf"
+    },
+    {
+      "path": "figures/figure2_G034_tokens.png",
+      "bytes": 73311,
+      "sha256": "c37dbbe3383d6b9e8145a10dc9a348b71b804f44171bab2228d93a16d4b1d54b",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G034_tokens.png"
+    },
+    {
+      "path": "figures/figure2_G068_positions.csv",
+      "bytes": 291,
+      "sha256": "1e1f84662f1b95e8ff041e6a8df2b190b4dffcb1a9149b0d66b457e9d9491902",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G068_positions.csv"
+    },
+    {
+      "path": "figures/figure2_G068_positions.pdf",
+      "bytes": 13839,
+      "sha256": "f1b0cabdf5bed936733b0f9d58dc411593fedc1a3561f9864f205f7ae985263c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G068_positions.pdf"
+    },
+    {
+      "path": "figures/figure2_G068_positions.png",
+      "bytes": 65387,
+      "sha256": "79a50980181c829414d402675f56333840b89e16ef1530fd9ce95dd1acbd7973",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G068_positions.png"
+    },
+    {
+      "path": "figures/figure2_G068_tokens.csv",
+      "bytes": 507,
+      "sha256": "87b538c1a6b45c05da13c37598a4235fc406e3d829da6eaf8286215fd2be4937",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G068_tokens.csv"
+    },
+    {
+      "path": "figures/figure2_G068_tokens.pdf",
+      "bytes": 15450,
+      "sha256": "0ac417589a90f05f53bd0871d0614ad63585b512205c3f4a464132c9da5d06dc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G068_tokens.pdf"
+    },
+    {
+      "path": "figures/figure2_G068_tokens.png",
+      "bytes": 73713,
+      "sha256": "453b374d1ee6fc27ca1c30519f5974cdc0914889411a5324ba8a3ec8df0e4f67",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure2_G068_tokens.png"
+    },
+    {
+      "path": "figures/figure3_G014_conditions.csv",
+      "bytes": 427,
+      "sha256": "40d05084b9d3d183ff4d8ef9578d10b1720625935b88c93d996004bba986f4c1",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G014_conditions.csv"
+    },
+    {
+      "path": "figures/figure3_G014_conditions.pdf",
+      "bytes": 12579,
+      "sha256": "407cf1ad7bd2e201767dc4c8b14e2ba44840bd6114cace13e5ad73dab8cbe47e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G014_conditions.pdf"
+    },
+    {
+      "path": "figures/figure3_G014_conditions.png",
+      "bytes": 64113,
+      "sha256": "045702fe8242701aceaba35fab0eb6fd0e975aff7000ce530c974eaf206e54b6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G014_conditions.png"
+    },
+    {
+      "path": "figures/figure3_G034_conditions.csv",
+      "bytes": 433,
+      "sha256": "4eb6c7a680794548d0bea542a99d4d63ad4954906586abf8672a700b7c7d13e4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G034_conditions.csv"
+    },
+    {
+      "path": "figures/figure3_G034_conditions.pdf",
+      "bytes": 12968,
+      "sha256": "5ac033521dafbec5683bcb8b44dd3b800ab72cd0349a1f0f8e3451a2b3e7dc85",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G034_conditions.pdf"
+    },
+    {
+      "path": "figures/figure3_G034_conditions.png",
+      "bytes": 81739,
+      "sha256": "20df60a51720c34ed4eca0b4f9dfecd24b6e297e0a095c463426e3e13691936e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G034_conditions.png"
+    },
+    {
+      "path": "figures/figure3_G068_conditions.csv",
+      "bytes": 418,
+      "sha256": "15d49e3365916727dbd597a16881611872666cf1e40f41c7f04a662a714b5440",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G068_conditions.csv"
+    },
+    {
+      "path": "figures/figure3_G068_conditions.pdf",
+      "bytes": 12984,
+      "sha256": "0e906fad912a699d8bbc296fc3544322e901767bcc6a38b348cf32dd97bf2f57",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G068_conditions.pdf"
+    },
+    {
+      "path": "figures/figure3_G068_conditions.png",
+      "bytes": 66528,
+      "sha256": "f837c5e7764dbb3537e9775c6e0f7e07935eba349e094fb1f19c7065113bfec9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure3_G068_conditions.png"
+    },
+    {
+      "path": "figures/figure4_G014_core.csv",
+      "bytes": 299,
+      "sha256": "5735f92284612955774131049afb366d403fd677d5d89cb1f7893a1e04545bc7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G014_core.csv"
+    },
+    {
+      "path": "figures/figure4_G014_core.pdf",
+      "bytes": 14068,
+      "sha256": "66d6b97625d991699392d30b3fc41f8c01f1f11f00d5647ab8428c259f89dc44",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G014_core.pdf"
+    },
+    {
+      "path": "figures/figure4_G014_core.png",
+      "bytes": 71183,
+      "sha256": "06492e0fcfc62a93e2961278250e8624a760d141b339e86765c17c21f19fcdc4",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G014_core.png"
+    },
+    {
+      "path": "figures/figure4_G034_core.csv",
+      "bytes": 298,
+      "sha256": "f3c5b9161fa54a85944e51eee6b5976596ae52f4e9ca7834d37a68183aec4e91",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G034_core.csv"
+    },
+    {
+      "path": "figures/figure4_G034_core.pdf",
+      "bytes": 14602,
+      "sha256": "7ec3cf342db9b70dd30e5d286e7bec53b61a4358c18b7b846660f2311c95ee87",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G034_core.pdf"
+    },
+    {
+      "path": "figures/figure4_G034_core.png",
+      "bytes": 73889,
+      "sha256": "8c6dde5020b5d75479ca077f2032feb87e847cb66e5bb625e491e323dcb29354",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G034_core.png"
+    },
+    {
+      "path": "figures/figure4_G068_core.csv",
+      "bytes": 218,
+      "sha256": "705f29d7e2be2e433b50338e22f9652f06ff42a4fe2c93bccda292dfc0758600",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G068_core.csv"
+    },
+    {
+      "path": "figures/figure4_G068_core.pdf",
+      "bytes": 14832,
+      "sha256": "e6e2ab968f983dee4b38849c8be5eec28ac993da15eeeea25fb6facad56a7e17",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G068_core.pdf"
+    },
+    {
+      "path": "figures/figure4_G068_core.png",
+      "bytes": 76141,
+      "sha256": "93e21847970fcd28dffcbaa94010892d74d7c315bd17cce41718a61c77c32164",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure4_G068_core.png"
+    },
+    {
+      "path": "figures/figure5_G014_cosine.csv",
+      "bytes": 18565,
+      "sha256": "bae66f816fb81600da56138fe072d2714103b7d4da896353f9b1c9fd190577b6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G014_cosine.csv"
+    },
+    {
+      "path": "figures/figure5_G014_cosine.pdf",
+      "bytes": 29459,
+      "sha256": "bd234490bad1f18f55804711a17f1ec3216d720074982bf5fa08da4ea1d2b513",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G014_cosine.pdf"
+    },
+    {
+      "path": "figures/figure5_G014_cosine.png",
+      "bytes": 166525,
+      "sha256": "ae1cf8f91b318908b0de01ca68289c9c8f7af0de4ae627ea757eed43e9a7e965",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G014_cosine.png"
+    },
+    {
+      "path": "figures/figure5_G014_phi.csv",
+      "bytes": 18206,
+      "sha256": "6919e0758957c834e37c51131babb717d86eea9218f905276b2f26a0f1785d6a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G014_phi.csv"
+    },
+    {
+      "path": "figures/figure5_G014_phi.pdf",
+      "bytes": 26307,
+      "sha256": "b5f0960607138ad4906519cc582e5735fd5dcb8711ef436c17c550b60cc6f1e7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G014_phi.pdf"
+    },
+    {
+      "path": "figures/figure5_G014_phi.png",
+      "bytes": 165039,
+      "sha256": "ad0de2cf69f57f77b2cb01571bc4a59001c4f1e1c69143fe6e652abf8298cb28",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G014_phi.png"
+    },
+    {
+      "path": "figures/figure5_G034_cosine.csv",
+      "bytes": 18437,
+      "sha256": "9052545e46af81299768459dbc1b3d74a029ab28ecb818b3b70fbbac05571748",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G034_cosine.csv"
+    },
+    {
+      "path": "figures/figure5_G034_cosine.pdf",
+      "bytes": 24580,
+      "sha256": "3b4bcfa0d55b46e7b01f2bb2ab8caeb487d218cfc783646e4b67d07a34b33832",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G034_cosine.pdf"
+    },
+    {
+      "path": "figures/figure5_G034_cosine.png",
+      "bytes": 166487,
+      "sha256": "8bf39e305b31204941c590919eb05e4e9e297285570e01b28f3cb55e0365531f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G034_cosine.png"
+    },
+    {
+      "path": "figures/figure5_G034_phi.csv",
+      "bytes": 17936,
+      "sha256": "5cef7d6c25a0f7ddacb6824144de857118250150b26178b7d2994bfd314841e1",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G034_phi.csv"
+    },
+    {
+      "path": "figures/figure5_G034_phi.pdf",
+      "bytes": 24836,
+      "sha256": "91fd826a87d14b81fb55ccd1ba74518d1ee009d6219251578d2c4d1840a24b8a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G034_phi.pdf"
+    },
+    {
+      "path": "figures/figure5_G034_phi.png",
+      "bytes": 164069,
+      "sha256": "562a2eeff031a6dcb6b0c5443b1ac63c778aa4462cdc6a581dab5c484d3794fb",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G034_phi.png"
+    },
+    {
+      "path": "figures/figure5_G068_cosine.csv",
+      "bytes": 14133,
+      "sha256": "f46b648f272905d607845b80a24f86bc9972074ab64a880c2e9a607938a2142e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G068_cosine.csv"
+    },
+    {
+      "path": "figures/figure5_G068_cosine.pdf",
+      "bytes": 23111,
+      "sha256": "833f4ec12bbbbef20b066edb63fb711ace200c3ba814f0225037705bd1062a65",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G068_cosine.pdf"
+    },
+    {
+      "path": "figures/figure5_G068_cosine.png",
+      "bytes": 158408,
+      "sha256": "cdaa74a4a6f80c6fe455113af3fb1becc4f82078da064bad23e5a056b79104bc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G068_cosine.png"
+    },
+    {
+      "path": "figures/figure5_G068_phi.csv",
+      "bytes": 13521,
+      "sha256": "dc516e7a6d3f8061a259666b735541dfdc5ca2e00c00c672c5fee2ef9cbba2bf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G068_phi.csv"
+    },
+    {
+      "path": "figures/figure5_G068_phi.pdf",
+      "bytes": 22762,
+      "sha256": "10a9ab3e0b79be041568795dbd4acefa711da1c6759f6d7d4cd532b9a3617876",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G068_phi.pdf"
+    },
+    {
+      "path": "figures/figure5_G068_phi.png",
+      "bytes": 155882,
+      "sha256": "c9bc8b2a3691adbf53d626c078361a1c73ef7d41f8b6db0c273b3647d55df805",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_G068_phi.png"
+    },
+    {
+      "path": "figures/figure5_contribution_energy.csv",
+      "bytes": 828,
+      "sha256": "27d05cea9d0761cd272283b60fd0195b8914ceabdfe2640569f5d1760c770da3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_contribution_energy.csv"
+    },
+    {
+      "path": "figures/figure5_contribution_energy.pdf",
+      "bytes": 12281,
+      "sha256": "941523205085588e7411563e0283775cdaa01c0cfd076ee9f0c7a3a88aa917b9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_contribution_energy.pdf"
+    },
+    {
+      "path": "figures/figure5_contribution_energy.png",
+      "bytes": 62468,
+      "sha256": "0ff6f0b4b00bc17fd11222de153990607b3f25e5bcbaf7b9c94c51114d462e78",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_contribution_energy.png"
+    },
+    {
+      "path": "figures/figure5_cross_layer.csv",
+      "bytes": 2044,
+      "sha256": "7d48d471a0fa07f6c4ac9cff88f34b48ab032f18cf8bdca6b5a81abb03e1ffe9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_cross_layer.csv"
+    },
+    {
+      "path": "figures/figure5_cross_layer.pdf",
+      "bytes": 11779,
+      "sha256": "962fd8467b6b7103efef1c3ff675d0ab19c6baa9d58c83c160108868baeb43c6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_cross_layer.pdf"
+    },
+    {
+      "path": "figures/figure5_cross_layer.png",
+      "bytes": 100181,
+      "sha256": "84113a1e340f1818167c1ea9dc7e4af68bbe8bb1d042e9462e1f12419419754e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/phi_relations_20261018/figures/figure5_cross_layer.png"
+    },
+    {
+      "path": "figures_cn.md",
+      "bytes": 26676,
+      "sha256": "70d1b4f2d3ded6e7cc8f5e78d03f70a232391cc928d49a1ba13f3f7091850b18",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "members/G014_cn.md",
+      "bytes": 17218,
+      "sha256": "70d77d61b6924e932391e1a2a4e11aa54250c81e3c31422be182b93c105f4856",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "members/G034_cn.md",
+      "bytes": 7679,
+      "sha256": "cca5f8a473f9a60da1fa6dd4bd0c241a70e8f65edd210d6a208db67d39ca7f6d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "members/G068_cn.md",
+      "bytes": 1346,
+      "sha256": "e6f714d986e6e7a497498aee85a44d2fb02b03a4cc71c19d6b713497ba3f8b60",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "methods_cn.md",
+      "bytes": 6662,
+      "sha256": "e2c6656be10c2d5a95a7141abd9ed11b34670ab2d9d9a1830ccf66bc3832c791",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "overview_cn.md",
+      "bytes": 2285,
+      "sha256": "2ecdfe420b0e11a7358ad645075eaa2a11280afabe5f03a6f25089e1b6d6a735",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain3_p1379.txt",
+      "bytes": 1578,
+      "sha256": "ccf046d08500812b639b0c987f3cd960273a451d6b85e95199641e2d0570bd0f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain3_p1392.txt",
+      "bytes": 1649,
+      "sha256": "59b898b3f659777fc706099c4c06892fe838749efa4b7c2b1f50fb18124dee3c",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain3_p1418.txt",
+      "bytes": 1771,
+      "sha256": "1b043c23e9494e4661e79eb185403668692fdd538f446c31ecfd26f6a456701f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain5_p1654153.txt",
+      "bytes": 2407,
+      "sha256": "0b3b6d78bd1e425a9466e1bb9e6cbba346e3b3c0b36db5531d2ded22d9883fa0",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain5_p2537694.txt",
+      "bytes": 737,
+      "sha256": "4585787b6818f5602ba68e37fa43a9d4d0b56613554f0e62ca5e0f1f50026e1c",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain5_p83345.txt",
+      "bytes": 2005,
+      "sha256": "4341e5f52a835335f78bffe7d7bbff9b46aa1fb16f7337ee3b61fccbb4e2ae1f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain6_p2703.txt",
+      "bytes": 3057,
+      "sha256": "23c9b2635f5ccb16785366084537d0909897301f241f9ced6272e0ff8feb8725",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain6_p3422.txt",
+      "bytes": 1572,
+      "sha256": "6d573bd7f7998f8022108385698751ecba9c9b0adcdeea98bb07dc7d64623509",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain6_p4305.txt",
+      "bytes": 1020,
+      "sha256": "bdd66cf04d572d2c286508d8babc2cdddb3ccea20742a244b9127c252f944234",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain7_p22395.txt",
+      "bytes": 3586,
+      "sha256": "d19dcf8e890613c8e68fe1cc2658145637e720542b79899a45ab812248e3e8e9",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain7_p31688.txt",
+      "bytes": 3845,
+      "sha256": "fb38dfdbb96b8b4fa20f4ee091802b0afdb177bb689043561f94e03220a90f78",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_chain7_p90893.txt",
+      "bytes": 3476,
+      "sha256": "20a188fbac0a05346adacdacadc6834d58f63511e8e9a154613d4373f9be2a6c",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p10392874.txt",
+      "bytes": 71,
+      "sha256": "1647313d85c8faa998c8e746e8861218ccc0c80291b64703008a27b1e19221f9",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p2118046.txt",
+      "bytes": 253,
+      "sha256": "ddace70773fb551412d66ae28f27cb13544eca159cf533d1546a700facbadfce",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p2224851.txt",
+      "bytes": 1812,
+      "sha256": "f61d4ebd393d36f7375dda7b196afad3407d387324a1959c9adf11ccaa2ae912",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p3187607.txt",
+      "bytes": 1951,
+      "sha256": "3e394bc486ba664cb5ffe8d1465b7555c3d3be3b7bf6ad3af715feaebd3b8d08",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p346907.txt",
+      "bytes": 4813,
+      "sha256": "2a51e7f6e588a0e60a4dd60921339e6c4d9852b3e6a91986b6b4cc38b85000cb",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p4099276.txt",
+      "bytes": 2619,
+      "sha256": "0ef156ce6270c870b0c0ed6bc79736698f487aac716542701c3555f32815d3a8",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p4582888.txt",
+      "bytes": 1370,
+      "sha256": "7d2c9b27a1362171d26e6081e3541ba7650fadedafa792faa044176364dab355",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p4603003.txt",
+      "bytes": 3933,
+      "sha256": "21ec8d2c322637250249daa9b1836befde247131bafc4caaa2716e05f1007c06",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p5268443.txt",
+      "bytes": 1478,
+      "sha256": "a773b93816cfc6e857d5bf3f1d7f96810bd734bd2f2b1018d103c869f0b55f7b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p7719121.txt",
+      "bytes": 3208,
+      "sha256": "e7ada8b52e065983163445ac8cfb5ec5f5f2d7bd6cd999c56ed4df7466c56800",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p7928942.txt",
+      "bytes": 3382,
+      "sha256": "4ffe10a0b8da9bb5996a65f94de5e1f9a32228dc6cf2925270b528ee589e7a7b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p852401.txt",
+      "bytes": 417,
+      "sha256": "3449915201242e0845421557383aa53f8ab19a294e1b4fc67910cbea57e3611d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p9073076.txt",
+      "bytes": 256,
+      "sha256": "ab8991028b66f2c5bbaf31e4f7be40a6c5f28985528bce5da1f31d9b5d3ef663",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p9285236.txt",
+      "bytes": 2084,
+      "sha256": "d673aa2c7a3a8b46ff417328e7b375799f1bf0757b83a49c418446269bbf2f63",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G014_p9405340.txt",
+      "bytes": 3439,
+      "sha256": "e7ed94167ff04447fb97ff8bd59203ac264bd7eacc48cbf1020f6eb0a3379fa1",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p1340487.txt",
+      "bytes": 560,
+      "sha256": "057713d7736d6a2ce25385ebddb4453f874d245f1ea0068128e071087c8a0b77",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p1373600.txt",
+      "bytes": 2410,
+      "sha256": "ae27ac0d3ae56dd40e9e888623ad108f084eb0d6cf074280ccd0aafa2bdff62c",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p1996480.txt",
+      "bytes": 663,
+      "sha256": "5c6644dc3a47dd7c873480e4a19402dbf73c80e0dc5d5c1de56cafe9f2cee74d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p2523251.txt",
+      "bytes": 320,
+      "sha256": "98542750b0b3a6d4588954bab7d30ef51b3d8a726d7ee34d3cb039597efc1f5d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p2564538.txt",
+      "bytes": 1529,
+      "sha256": "a79b2d03b02c90c838396cf39dc680ea6369e1059d10346912a392fbc93e9c61",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p312864.txt",
+      "bytes": 2983,
+      "sha256": "6420692ab8ad538d233d8a88a10e109592caf863b51fcf188e131360731f4af6",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p4567112.txt",
+      "bytes": 3549,
+      "sha256": "e0a6e4e7f6545a6fd7887837e031133564cc3c2e51b687fd348e1d6e4cdc4395",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p4588973.txt",
+      "bytes": 603,
+      "sha256": "6f34531df8539268545f638f5b7806f43106152a80e225ebc34dedead70d232d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p5104845.txt",
+      "bytes": 1948,
+      "sha256": "5e90479cd60179ad701ff7e6473e58cdca89d72200f32c2829a710ebc4f4c31a",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p6053579.txt",
+      "bytes": 3489,
+      "sha256": "13ac37ef225c31d8c81cdb8d29065157aacfdc0ee3305baae9db10f5ba25d73b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p6125193.txt",
+      "bytes": 3226,
+      "sha256": "97454cff1754702976fc865d65ce50408474522555a298b8faccfd69c0f0d41d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p837400.txt",
+      "bytes": 1751,
+      "sha256": "d8c01f235fc6a58d8cc679ae5b7735e0a973834a2d75215ad6d7ddfa96a08193",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p864505.txt",
+      "bytes": 4335,
+      "sha256": "f73aeb1aa3db5b4d14c80a17230a132905dd7160223ea72a63b2ebad3f5f7c5b",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p9071224.txt",
+      "bytes": 1142,
+      "sha256": "53f6ad8b4e70101a15629d349c5d1a2c277d1ca35bd4df62014fefe72f666d71",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G034_p9171203.txt",
+      "bytes": 4127,
+      "sha256": "e6a9bde1f99b67c5b2291b0c93ec1ed624be897c9ecc632a0687914114517f50",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p10206003.txt",
+      "bytes": 1723,
+      "sha256": "bf4f2dff3e731612b334afecb3b8872ce14be026798bab2a932b0496055e77ba",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p1429893.txt",
+      "bytes": 2222,
+      "sha256": "895e74f56f0b80512e0f0d519ae4408fb2fd3281521cb440b8961dc809a5a551",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p2215877.txt",
+      "bytes": 2905,
+      "sha256": "e7556e7286dac6d472fe6d08ee2de5d6539d12484fd7c2c8f9003ecd39179367",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p32473.txt",
+      "bytes": 3095,
+      "sha256": "5738f5882face6870c3508d31087adc567a686fec50a78a12b0e2e922048d33f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p389311.txt",
+      "bytes": 2058,
+      "sha256": "86936efbdc493876418883bdef2c2c71555b67975d250fe241f5495c4022e7ba",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p4103533.txt",
+      "bytes": 3150,
+      "sha256": "884ccd4a5ebd3ea8df21dbe85a008bb3993c5f9a7db36736ff80e13f440e1084",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p4727815.txt",
+      "bytes": 3657,
+      "sha256": "ea39e452f7da06069b931e0e0ee2b7515851926a66309227d3e7d0e1b2eeaa40",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p5360957.txt",
+      "bytes": 3420,
+      "sha256": "f56f528df74d2a6e1b981a475dc070450c18815be5643d005178cb2775a7e058",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p5443250.txt",
+      "bytes": 658,
+      "sha256": "587737496756f0ca61ff7c91d0c873e004f2284392e6b4c4d85944dde865b65a",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p5854429.txt",
+      "bytes": 300,
+      "sha256": "d9bd283d26bce9249c4288deb7a3597aac33e33815614e35cc7d6f48615e62b3",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p6216423.txt",
+      "bytes": 3247,
+      "sha256": "3a66370f9e6258a56a6fc0bf52be1c3a296fd8b592fc7b2c1f45bdb657b66fa9",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p7984509.txt",
+      "bytes": 334,
+      "sha256": "6f94bef957a7fd6e0c4e18b71139e5c7f21f225478463cd3a29b0acf91c99b43",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p8391006.txt",
+      "bytes": 2118,
+      "sha256": "cbeeeca5e236d9a29aa910373efece20f674db1088b3d36e70dcdf1f7d906ea1",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p8456293.txt",
+      "bytes": 632,
+      "sha256": "284f5cbe71a4aafd3df46c081c7effd2c8d64d3bddea3d6c44b9ba19cd37bc80",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "prefixes/G068_p9247601.txt",
+      "bytes": 3087,
+      "sha256": "eda5e58f739574abca740e1c55a86f1a8f482c58a70535cbb3edd2e2082b0cd2",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 5864,
+      "sha256": "81b914b0e8f3ad59edfcf4d9af019b2f63f6d5ceb7e8b16dcc4e12698f47a78f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "protocol_amendments_cn.md",
+      "bytes": 1216,
+      "sha256": "1cf156faa707de1eb13fe57b630aa4d156478ba50bd0036d48e0c77c2b9640ec",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "protocol_cn.md",
+      "bytes": 8929,
+      "sha256": "ff2d3f1b9d63e8087856b1621370ba7cbf54ce61d9d397c814e17ef79f3cc4c8",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/amendment_receipt.json",
+      "bytes": 292,
+      "sha256": "c34458761e56806c1eb4aec50c6eec9b5f84ea5be144411872f289c30d9d8070",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/asset_inventory.csv",
+      "bytes": 2503,
+      "sha256": "3c162f6bf852f9e36fe4fa050689cdd815a11d92628eaabc140b0a47cfc29354",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/completion.json",
+      "bytes": 379,
+      "sha256": "943573b48944928dff9b1226e9f5ac53e74111070284b8808ea0fc08d742d82a",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/conditional_summary.json",
+      "bytes": 1555,
+      "sha256": "f1d95e0e24b83ba39aaf5a29410209f242fcc9e64dd5954507b58ac5dfc5eb32",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/environment.json",
+      "bytes": 368,
+      "sha256": "6aaa33d9dc9384cab3f06558488d4e41523fa979ce953cae6f11654fa2345a68",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/estimator_qualification.json",
+      "bytes": 682,
+      "sha256": "0f7364701924a78586edebb71cdbbfd7603f316e592f7a48d84103dcc5225ce1",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/extraction_receipt.json",
+      "bytes": 2039,
+      "sha256": "ed25086b176fce1a86ca7d564dac5f7f45533a5d594602e1649bd348f8b31333",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/figure_captions.json",
+      "bytes": 22212,
+      "sha256": "1a9dab8b978abdaa9429e343921b4027b270efce434bcb32c88df47eb653a918",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/full_chain_counts.json",
+      "bytes": 576,
+      "sha256": "c47d498d6ee673250542cf4f44471e2dec9e8121a70a45a64cd43448fcea75c5",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/geometry_qualification.json",
+      "bytes": 1102,
+      "sha256": "ac843c817bacfbe262770c0ddf92993a3b86846b0870594f87177a17b57751d7",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/input_manifest.json",
+      "bytes": 1811,
+      "sha256": "63955502c04bbac4fa87b69171ada87ac0da8c10fe629d59146017b53819c04c",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/minimal_sync_needed_cn.md",
+      "bytes": 1022,
+      "sha256": "a18fb652a8393fe1ed29938eca7834532a32885825e4092cf0aa483c1eb460a3",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/output_asset.json",
+      "bytes": 646,
+      "sha256": "2ba6c75d2c865e0f860422aa28afcdd1a66cd1b2bcd02dff98a99fa37a1fd235",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/protocol_freeze.json",
+      "bytes": 1029,
+      "sha256": "de796ffb544ecde890f384077ace6cf7beb119b2773ddf85cbdb38d07b99ff74",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/result_validation.json",
+      "bytes": 1362,
+      "sha256": "8927b3b978676886bbbe6f998be4558471e68ff87ba1fd0dc4c8a7bf7769859e",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/reused_text_decoder.json",
+      "bytes": 295,
+      "sha256": "305a43f9dccea5809c650f58d473184ba2724e33d10eb001f094aa2a601c5183",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/selection_D.json",
+      "bytes": 30322,
+      "sha256": "dd65127f39de9c37b635428923782e887ffbfe3019e64201e0a6083a5478734d",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "provenance/visual_review.json",
+      "bytes": 3960,
+      "sha256": "24b06748acc90bc6a83fc3a86a5e7a6b9fbe67325ae96ba9fb9547753951b120",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "reasoning_audit_cn.md",
+      "bytes": 2338,
+      "sha256": "2a0ae2aebf751288a68a84cff38b1346ea5d2138befa854a98e2b59dd3f1bb04",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "report_cn.md",
+      "bytes": 6716,
+      "sha256": "403921c32a821f6d0cb566ac7e7fd71d43ba540c688335dede6d3e3d99396b5f",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "status_cn.md",
+      "bytes": 1537,
+      "sha256": "54d40a69145e39bd185201de8961970522209d28fc97d64e0a5c2c4d7c02dd43",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 1696,
+      "sha256": "c8b228872043690baa845440804b63a413b9f6c6f2d67146db5a2191d3b7542c",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    },
+    {
+      "path": "summary_cn.md",
+      "bytes": 231,
+      "sha256": "da94f247bb7681f4f1b99f0eb4ff22fac3bb89fa843f305fea53065de6ef02ec",
+      "origin": "Selected derived evidence or reading synthesis; exact sources in input manifest and methods"
+    }
+  ],
+  "file_count": 245,
+  "total_bytes": 14185879
+}

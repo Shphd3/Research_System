@@ -1,0 +1,42 @@
+{
+  "status": "PASS_FINAL_RAW_HIDDEN_SPECTRUM_AUDIT",
+  "processing_agent": "Codex /root/spectrum_audit",
+  "definition_sha256": "495fc39dffff219cc2396db82090792f9b90ce9f3bad5c4ad0e05fb467c3718c",
+  "checks": [
+    {
+      "rule": "same_frequency",
+      "groups": 1119,
+      "N_per_group": 128,
+      "unique_rows_each_group": true,
+      "members_exact_frozen": true,
+      "NPZ_CSV_summary_consistency": true,
+      "mean_first_share": 0.13205107982115377,
+      "128th_theoretical_null_eigenvalue_max_share": 1.9908032190392244e-17,
+      "groups_zero_or_insufficient": 0
+    },
+    {
+      "rule": "mixed_frequency",
+      "groups": 1119,
+      "N_per_group": 128,
+      "unique_rows_each_group": true,
+      "members_exact_frozen": true,
+      "NPZ_CSV_summary_consistency": true,
+      "mean_first_share": 0.10977701913430504,
+      "128th_theoretical_null_eigenvalue_max_share": 2.261922712666406e-17,
+      "groups_zero_or_insufficient": 0
+    }
+  ],
+  "raw_hidden_mean_first_share_same_minus_mixed": 0.02227406068684873,
+  "contribution_spectrum_mean_first_share_same_minus_mixed": -0.08247504612270612,
+  "permitted_update_cn": "当前固定组命中规则与每组128个原始hidden位置下，同频组的第一方向占比平均更高，而组贡献表征谱中同频更低。不能将decoder贡献较分散推为命中输入hidden较分散；当前原始hidden测量不支持该方向预测。",
+  "essential_boundaries": [
+    "原始hidden不是decoder贡献或重建",
+    "两测量的对象、位置规则和文本出处不同，方向不同不能识别是哪项造成",
+    "same-frequency不是186个phi关系组",
+    "anyhit输入集合可能由混频组高频成员主导，结果不是频率单变量因果",
+    "raw cache来自原CrossCoder TRAIN文件的适配器EVAL窗口，非结构V",
+    "N128中心样本rank<=127是估计代数上限，非模型capacity",
+    "跨组位置/context重叠，不作独立组显著性或文档泛化CI",
+    "不证明或反驳所有同频学习方案"
+  ]
+}

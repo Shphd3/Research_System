@@ -1,0 +1,101 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-10-16T03:35:04.200961+00:00",
+  "processing_agent": "Codex /root/raw_hidden_spectrum",
+  "definition_sha256": "495fc39dffff219cc2396db82090792f9b90ce9f3bad5c4ad0e05fb467c3718c",
+  "groups_per_rule": 1119,
+  "sample_N_per_group": 128,
+  "hidden_dimension": 1024,
+  "maximum_sample_rank": 127,
+  "source_positions": 523136,
+  "source_contexts": 512,
+  "rules": {
+    "same_frequency": {
+      "groups": 1119,
+      "estimable_groups": 1119,
+      "insufficient_groups": 0,
+      "zero_variance_groups": 0,
+      "source_hit_positions_quantiles": {
+        "0": 240.0,
+        "0.25": 4484.0,
+        "0.5": 27386.0,
+        "0.75": 99345.0,
+        "1": 522620.0
+      },
+      "sample_contexts_quantiles": {
+        "0": 31.0,
+        "0.25": 105.0,
+        "0.5": 109.0,
+        "0.75": 112.5,
+        "1": 121.0
+      },
+      "first_direction_share_mean": 0.13205107982115377,
+      "first_direction_share_median": 0.11936424855626766,
+      "first_direction_share_quantiles": {
+        "0": 0.06443796724335822,
+        "0.05": 0.08688318385840639,
+        "0.25": 0.10375605248575656,
+        "0.5": 0.11936424855626766,
+        "0.75": 0.14396961389858792,
+        "0.95": 0.2225945245279209,
+        "1": 0.6401503507086835
+      },
+      "total_variance_mean": 157506.2582259467,
+      "total_sampled_group_position_slots": 143232,
+      "unique_sampled_source_positions": 121607,
+      "source_position_reuse_maximum": 7,
+      "source_position_reuse_median": 1.0
+    },
+    "mixed_frequency": {
+      "groups": 1119,
+      "estimable_groups": 1119,
+      "insufficient_groups": 0,
+      "zero_variance_groups": 0,
+      "source_hit_positions_quantiles": {
+        "0": 49566.0,
+        "0.25": 68379.5,
+        "0.5": 82399.0,
+        "0.75": 124955.0,
+        "1": 519099.0
+      },
+      "sample_contexts_quantiles": {
+        "0": 99.0,
+        "0.25": 109.0,
+        "0.5": 112.0,
+        "0.75": 114.0,
+        "1": 121.0
+      },
+      "first_direction_share_mean": 0.10977701913430504,
+      "first_direction_share_median": 0.10560239055884695,
+      "first_direction_share_quantiles": {
+        "0": 0.0646449659654868,
+        "0.05": 0.07811559687773895,
+        "0.25": 0.09380035286598415,
+        "0.5": 0.10560239055884695,
+        "0.75": 0.12038732631239844,
+        "0.95": 0.1565248095301555,
+        "1": 0.3072407652409914
+      },
+      "total_variance_mean": 150596.57037636184,
+      "total_sampled_group_position_slots": 143232,
+      "unique_sampled_source_positions": 124086,
+      "source_position_reuse_maximum": 5,
+      "source_position_reuse_median": 1.0
+    }
+  },
+  "descriptive_mean_first_share_same_minus_mixed": 0.02227406068684873,
+  "files": {
+    "mixed_frequency_raw_hidden_spectra.npz": {
+      "bytes": 3157267,
+      "sha256": "d7e4d789a44d9397c13baf6bc65d91ae8befb057ac904bdcd062da03c6e21ca6"
+    },
+    "same_frequency_raw_hidden_spectra.npz": {
+      "bytes": 3148277,
+      "sha256": "596ff239aea0f7c841516521915c41eac2c88bf07aa5ee21bcf4d0ea5e0ea8ab"
+    },
+    "per_group_raw_hidden_metrics.csv": {
+      "bytes": 201535,
+      "sha256": "d5cdfaf1c977d425f9a5a93a8afb7fa8a95319e058677cb9617a6ed06e0c9233"
+    }
+  }
+}

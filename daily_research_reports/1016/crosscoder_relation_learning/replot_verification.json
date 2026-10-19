@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-10-15T18:02:52.219111+00:00",
+  "reviewer": "Codex /root/learning_trainer",
+  "execution": {
+    "temporary_output_dir": "/tmp/crosscoder_replot_verify_9iyuj5f8",
+    "torch_imported": false,
+    "cuda_visible_devices": "",
+    "isolated_python": true,
+    "argv": [
+      "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_relation_learning/code/replot.py",
+      "--output-dir",
+      "/tmp/crosscoder_replot_verify_9iyuj5f8"
+    ],
+    "status": "PASS"
+  },
+  "libraries": {
+    "numpy": "1.24.4",
+    "matplotlib": "3.8.4",
+    "python": "3.10.12"
+  },
+  "no_PyTorch_import": true,
+  "no_GPU_visible": true,
+  "no_model_or_training_cache_required": true,
+  "replot_script": "code/replot.py",
+  "script_sha256": "6afad00681d480cb893e61e372f1efae10f4851f090afa86cf04fc11cc0b20df",
+  "figure_types": 9,
+  "main_figures": 5,
+  "formats_per_figure": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "output_files": 27,
+  "all_nine_PNGs_byte_identical_to_original": true,
+  "PNG_comparisons": [
+    {
+      "name": "figure1_structure.png",
+      "replot_sha256": "7c6cd78ac659b3cd00635419cc658b11a30985cedf1c247b1a50647be0a6c681",
+      "copied_original_sha256": "7c6cd78ac659b3cd00635419cc658b11a30985cedf1c247b1a50647be0a6c681",
+      "bytes_identical": true
+    },
+    {
+      "name": "figure2_direction_sensitivity.png",
+      "replot_sha256": "3946bea0dd34fd68544b4adce0970b2245b5c5f879ddb499cc8a3ba8ce3b2f00",
+      "copied_original_sha256": "3946bea0dd34fd68544b4adce0970b2245b5c5f879ddb499cc8a3ba8ce3b2f00",
+      "bytes_identical": true
+    },
+    {
+      "name": "figure3_learning_curves.png",
+      "replot_sha256": "813485567fec473326c1cf67f7e55ed2851c0ad73974080aa629532183384139",
+      "copied_original_sha256": "813485567fec473326c1cf67f7e55ed2851c0ad73974080aa629532183384139",
+      "bytes_identical": true
+    },
+    {
+      "name": "figure4_paired_endpoints.png",
+      "replot_sha256": "5565dfb3084d53d0961bb7c5ef3766807abcd70a9e8712875e078e6ad9ec5549",
+      "copied_original_sha256": "5565dfb3084d53d0961bb7c5ef3766807abcd70a9e8712875e078e6ad9ec5549",
+      "bytes_identical": true
+    },
+    {
+      "name": "figure5_local_update.png",
+      "replot_sha256": "503d646e0528137b3fe32f0fa8edc11553112c0729d5ac777d32f7c62002b67d",
+      "copied_original_sha256": "503d646e0528137b3fe32f0fa8edc11553112c0729d5ac777d32f7c62002b67d",
+      "bytes_identical": true
+    },
+    {
+      "name": "supplement_centering_control.png",
+      "replot_sha256": "c202815dc31f67d922375a73534b08772b422fd5754a3580fe29c914f9c259a3",
+      "copied_original_sha256": "c202815dc31f67d922375a73534b08772b422fd5754a3580fe29c914f9c259a3",
+      "bytes_identical": true
+    },
+    {
+      "name": "supplement_expert_load.png",
+      "replot_sha256": "d3248adec2390983ab8fbc763e2382c65dd852ef8ddfda69354fba303532af60",
+      "copied_original_sha256": "d3248adec2390983ab8fbc763e2382c65dd852ef8ddfda69354fba303532af60",
+      "bytes_identical": true
+    },
+    {
+      "name": "supplement_response_decomposition.png",
+      "replot_sha256": "3cc8ebd57073c9b33397204cff78ab4213bb5759bf68cc190117a0ed449c159c",
+      "copied_original_sha256": "3cc8ebd57073c9b33397204cff78ab4213bb5759bf68cc190117a0ed449c159c",
+      "bytes_identical": true
+    },
+    {
+      "name": "supplement_zero_reference.png",
+      "replot_sha256": "f53004fb7f89aafbea9483f686bac4d139fadaafa9760af4912f760629d05afd",
+      "copied_original_sha256": "f53004fb7f89aafbea9483f686bac4d139fadaafa9760af4912f760629d05afd",
+      "bytes_identical": true
+    }
+  ],
+  "representative_PNG_visual_review": {
+    "figure1_structure.png": "PASS: complete repaired B99 reference and full-cache controls; labels/readouts correct",
+    "figure2_direction_sensitivity.png": "PASS: fixed32feature IDs,256positions, common original/removed color scale"
+  },
+  "PDF_SVG": "generated and existence checked; PNG visual inspection and byte-identity recorded, no separate PDF rendering claim",
+  "evidence_curating_checks": {
+    "null_draw_control_tables": 99,
+    "selected_small_npz_payloads": 3,
+    "training_states_in_evidence": 0
+  },
+  "source_provenance": "code/replot_source_provenance.json",
+  "evidence_origin_manifest": "evidence/evidence_origin_manifest.json",
+  "scope": "only replotting from saved evidence; no recomputation of scientific tests or training"
+}

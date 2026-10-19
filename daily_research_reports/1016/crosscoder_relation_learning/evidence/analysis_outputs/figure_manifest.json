@@ -1,0 +1,86 @@
+{
+  "figure2_direction_sensitivity": {
+    "heatmap_source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/first_direction/heatmap_data.npz",
+    "summary": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/first_direction/summary.json",
+    "feature_selection": "D-only top16 reliable frequencies plus16 from upper boundary of fixed bottomquartile; shared order unchanged",
+    "feature_selection_provenance": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/first_direction/figures/provenance.json",
+    "fixed_feature_ids": [
+      7803,
+      5494,
+      556,
+      1053,
+      14,
+      10778,
+      13830,
+      8345,
+      5147,
+      7415,
+      5913,
+      7388,
+      10807,
+      8060,
+      516,
+      13964,
+      4028,
+      7160,
+      6374,
+      6007,
+      2332,
+      13601,
+      5175,
+      7847,
+      13018,
+      15655,
+      13901,
+      11220,
+      4648,
+      7969,
+      13398,
+      14703
+    ],
+    "measurement_positions": 8182,
+    "plotted_positions": 256,
+    "no_random_direction_control": true
+  },
+  "figure3_learning_curves": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/learning_metrics.csv",
+    "thin_lines": "individual trained seeds",
+    "thick_lines": "arithmetic seed mean",
+    "frozen_baseline": "initial zero-adapter loss, identical all routes/seeds",
+    "evaluation_set": "fixed across checkpoints and conditions"
+  },
+  "supplement_zero_reference": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/zero_reference_changes.csv",
+    "quantity": "final_minus_initial_nat; positive is worse than frozen base",
+    "points": "individual paired seeds",
+    "bars": "seed means"
+  },
+  "figure4_paired_endpoints": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/paired_endpoints.csv",
+    "interval": "approximate 95% paired 4-consecutive-context block bootstrap, linearized fixed-feature mean; conditional on each seed; not document independent",
+    "no_seed_mean_ci": true
+  },
+  "supplement_expert_load": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/expert_exposure.csv",
+    "averaging": "mean over paired seeds; raw per-seed values retained"
+  },
+  "figure5_local_update": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/intervention_paired_effects.csv",
+    "interval": "95% paired donor/probe batch bootstrap, conditional on each trained seed",
+    "donor": "frequency-bin route-label exchange preserves each expert token count",
+    "probe": "original routing always fixed"
+  },
+  "figure1_structure": {
+    "full_cache_summary": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/structure/full_repair_summary.json",
+    "bounded_null_summary": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/structure/triple_counting_repair/null_results.json",
+    "bounded_scope": "4096 positions/side; cannot calibrate full-cache score"
+  },
+  "supplement_response_decomposition": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/response_decomposition_effects.csv",
+    "prediction": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/response_decomposition/prediction.json",
+    "states": "original complete h plus full / constant-only / centered-only adapter response",
+    "means": "TRAIN original-route expert means; no targets or EVAL fitting",
+    "interaction": "Lfull-Lconstant-Lcentered+Lzero; effects are not assumed additive",
+    "boundary": "functional response components at this fixed checkpoint; not common semantics or complete training root cause"
+  }
+}

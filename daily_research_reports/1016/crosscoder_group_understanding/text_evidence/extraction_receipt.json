@@ -1,0 +1,203 @@
+{
+  "completed_at_utc": "2026-10-16T01:25:16.379900+00:00",
+  "selected_groups": [
+    87,
+    74,
+    34
+  ],
+  "case_count": 18,
+  "per_group_count": {
+    "87": 6,
+    "74": 6,
+    "34": 6
+  },
+  "all_old_prefix_suffix_checks": 1760,
+  "all_selected_z_exact_cache_checks": 18,
+  "all_selected_prefix_exact_original_checks": 18,
+  "all_selected_context_position_join_checks": 18,
+  "all_selected_side_V_checks": 18,
+  "full_active_values_retained_no_top_k_truncation": true,
+  "verified_chunks": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000000000_000000016384.npz",
+      "sha256": "66a0b9589ef35c54cd43d48d96e3f4767b047ba1952db9c8f893ddbc2705edc0",
+      "start": 0,
+      "end": 16384,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000032768_000000049152.npz",
+      "sha256": "fbdef6327de981f73af28c918e399cf397f352dcd002ff487f15366795459771",
+      "start": 32768,
+      "end": 49152,
+      "rows_selected": 2
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001474560_000001490944.npz",
+      "sha256": "99d6752bf64e413e095c10e290a5b315e20019d0127a5c2995645e9cf46f534d",
+      "start": 1474560,
+      "end": 1490944,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001605632_000001622016.npz",
+      "sha256": "6e3b3b48e8868dad896c15f4935625988e3b5cf09a2539a7c4d78798d5591750",
+      "start": 1605632,
+      "end": 1622016,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000001654784_000001671168.npz",
+      "sha256": "6dcfd71346413dd85c708bf5c25c71d7f273fbc603426bb5e6e9967b8dc6ec4a",
+      "start": 1654784,
+      "end": 1671168,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000002113536_000002129920.npz",
+      "sha256": "66ba7fad9c9ed36177377c20d6b15f5962fc9c8d9fb3ccfe903fce4d5340726c",
+      "start": 2113536,
+      "end": 2129920,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002637824_000002654208.npz",
+      "sha256": "f9091c799542aab7def46864228a82ba7d7889b771ab39d04c542318ff6b1bb5",
+      "start": 2637824,
+      "end": 2654208,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002719744_000002736128.npz",
+      "sha256": "606f1200172f21b3b03c8ea443ac1e5f09cbfe678baa449cb0d7ed9e542eabb7",
+      "start": 2719744,
+      "end": 2736128,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000002736128_000002752512.npz",
+      "sha256": "3157601bc074fdc9f7ca43440fd5b1c9628449cf94237e46613d524954a98bd5",
+      "start": 2736128,
+      "end": 2752512,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/000004784128_000004800512.npz",
+      "sha256": "366d6740b6155cadc26a83a00846126ff92f175ee70137f4185b280dcac0fa48",
+      "start": 4784128,
+      "end": 4800512,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005406720_000005423104.npz",
+      "sha256": "be72820fb9829b21cce09a459dbf5c2aa3d587db2dd8cd447cde646301590ed6",
+      "start": 5406720,
+      "end": 5423104,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005488640_000005505024.npz",
+      "sha256": "c7f2e486c48f71c42dd4e28c78f66f462ceb7f9f6b94bae31da181ba7b62604a",
+      "start": 5488640,
+      "end": 5505024,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000005521408_000005537792.npz",
+      "sha256": "7e3bec36b672eb09fb82c7f870b0a25fa157afe165298352122c288af91cf874",
+      "start": 5521408,
+      "end": 5537792,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/000006144000_000006160384.npz",
+      "sha256": "4562f119d0de1af919a0da6fb71838c4a69c7d3a26a22547cb04f45e555ef065",
+      "start": 6144000,
+      "end": 6160384,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000007979008_000007995392.npz",
+      "sha256": "c709c5f0adb60428507059ef145db45bf3546aab6557a771157888cdb3982b3e",
+      "start": 7979008,
+      "end": 7995392,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000008224768_000008241152.npz",
+      "sha256": "9d2e67e10995b70630e6c8f2f696641f50d4c321a2730bad8c407a0fa2f64dd7",
+      "start": 8224768,
+      "end": 8241152,
+      "rows_selected": 1
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/000009355264_000009371648.npz",
+      "sha256": "c916c152453c6f53044bc81692e985db697bf717d603858a1b386e7a5aa4580f",
+      "start": 9355264,
+      "end": 9371648,
+      "rows_selected": 1
+    }
+  ],
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/examples.json",
+      "sha256": "c3634a959f04dcc90a86c02847d8828924f652c36fdc3896c43da88d3de14730",
+      "bytes": 11209846
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/groups_D.json",
+      "sha256": "3a16291d38acb92270c921507b1023dbce8bae986bde18cfcc3e9b760f032588",
+      "bytes": 331121
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/registered_config.json",
+      "sha256": "569b8ee9595a4455fd98f8a6912665b282f02925018186a180071bacafa7e7d9",
+      "bytes": 4630
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json",
+      "sha256": "b77072420e07f1581df143522e18009354f181736787deafcf0c527d7bed0c9e",
+      "bytes": 1863
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json",
+      "sha256": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35",
+      "bytes": 21834
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/manifest.json",
+      "sha256": "4e9b4ba51b3568d694c5cfc423736b20d763488756042befae80dd86d6848919",
+      "bytes": 1145
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/records.npy",
+      "sha256": "6e15c254fa92c6f2f3d42bc049143d494b1d0bab67e00a112c1022e92dde472e",
+      "bytes": 328096
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/prefix.npy",
+      "sha256": "a10b39f911c8ebf933262fa6027b2d1ef28f965b3021468891fcacb3a0ada630",
+      "bytes": 82128
+    },
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "bytes": 7031645
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/group_understanding/extract_cases.py",
+      "sha256": "be7ed1b499ccaed816f6c6d93b6fcfa8eb5f3cf95c7e298f30ad29712fd3db2e",
+      "bytes": 14408
+    }
+  ],
+  "model_forward_calls": 0,
+  "training_updates": 0,
+  "graph_parameter_changes": 0,
+  "reasoning_audit": {
+    "position": "The original target field described the current already-visible token; derivative labels current t and next t+1 separately.",
+    "future": "Full prefix contains tokens0..t only. Next token is separately marked label-only and is not used to explain activation.",
+    "representation": "Cache contains frozen joint CrossCoder z; nonzero counts are coordinates, not automatically concepts or independent features.",
+    "selection": "Three saved hash-random cases and three saved high active-fraction cases per group, with no selection by semantic content.",
+    "scope": "Case similarities and counterexamples are descriptive. Coactivation does not identify semantic composition or learning compatibility."
+  }
+}

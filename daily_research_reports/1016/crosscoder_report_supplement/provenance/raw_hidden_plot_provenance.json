@@ -1,0 +1,39 @@
+{
+  "plot_script": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/plot_raw_hidden.py",
+  "plot_script_sha256": "a25ac840f626a0e5314f6c5ea033c48a5590687c8650d81e047e99a61e0b6891",
+  "font_path": "/data/250010109/Research_System/daily_research_reports/0921/report_assets/fonts/NotoSansCJKsc-Regular.otf",
+  "font_sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+  "colors": {
+    "同频组": "#3572B0",
+    "混频组": "#D98928"
+  },
+  "matrix": "Original cached raw layer28 hidden at group-hit positions, not reconstructed contribution",
+  "plot_directions": 127,
+  "full_stored_directions": 1024,
+  "rank_note": "N128 position-centered sample rank<=127. Remaining897 directions are theoretically zero; direction128 in row-Gram may contain floating-point residual.",
+  "first_direction_plot": "All1119 group points per rule shown; boxes median/IQR,1.5IQR whiskers; diamonds equal-group means, no inferential error bars.",
+  "source_config_sha256": "495fc39dffff219cc2396db82090792f9b90ce9f3bad5c4ad0e05fb467c3718c",
+  "source_summary_sha256": "af87408ea42cb1e755ea2fe6c056ce2370d5d35bccca077459806894b10695d7",
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_raw_hidden/figures/figure5_raw_hidden_normalized_spectrum.png",
+      "bytes": 122149,
+      "sha256": "2900a384ce9222d6133ba114805cec793af5944f14d96dc34eeab854f601ced9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_raw_hidden/figures/figure5_raw_hidden_normalized_spectrum.pdf",
+      "bytes": 15158,
+      "sha256": "9f405b72f3144507b04c2423fcafd59c82fd9a86e282acb6617b8825ecf1277f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_raw_hidden/figures/figure6_raw_hidden_first_direction_share.png",
+      "bytes": 269310,
+      "sha256": "9f44f8f0876833d7ee8b55f58c1efd3b2d0cdf2250536cb43575646401abb765"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_raw_hidden/figures/figure6_raw_hidden_first_direction_share.pdf",
+      "bytes": 48444,
+      "sha256": "0400160b8ef42ff7945c8ce7f8c85d497c8e3cb6f764bcf92432875598f488ad"
+    }
+  ]
+}

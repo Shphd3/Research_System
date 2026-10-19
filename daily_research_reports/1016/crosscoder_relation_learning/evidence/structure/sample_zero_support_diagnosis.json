@@ -1,0 +1,13 @@
+{
+  "zero_V_candidates": [
+    {
+      "feature_id": 10045,
+      "sample_n_D": 30,
+      "sample_n_V": 0,
+      "sample_context_coverage_D": 9,
+      "full_n_D": 19655,
+      "full_n_V": 12743
+    }
+  ],
+  "inference": "Empirical zero in bounded V sample makes log10 empirical frequency undefined, despite nonzero full-window support. This is readout/coverage failure, not proof feature frequency is zero or H1 false. Smoothed score is new exploratory estimand, not imputed evidence for original strict endpoint."
+}

@@ -1,44 +1,31 @@
 # Daily reading and meetings
 
-[Project research route](../Projects/from-attention-to-search/main/roadmap.md) · [English](README.md) · [中文](README_cn.md)
+[项目研究入口](../Projects/from-attention-to-search/main/roadmap.md) · [English](README.md) · [中文](README_cn.md)
 
-Daily folders contain meeting briefs, meeting records, small progress notes and date-local figures. Formal research belongs to the project. Backup contains historical snapshots, not default current sources. Registered current Focuses have moved out of backup.
+October remains on the active reading surface. September is archived in backup; superseded or duplicate October ZIPs have a separate recoverable archive. Project records retain scientific authority.
 
-- [1012: conditional mapping results and meeting reasoning chain](1012/README.md)
-- [1011: shared-update component causality and group meeting brief (Chinese)](1011/README.md)
-- [1010: local Dense/S7/SALL text continuation scripts](1010/README.md)
-- [1008: shared local updates, full report and one-minute meeting brief (Chinese)](1008/README.md)
-- [1007: research exposition revision and report delivery (Chinese)](1007/editorial_revision_audit_cn.md)
-- [1006: two-minute meeting preparation and research understanding (Chinese)](1006/README_cn.md)
-- [1005: eight-hour research learning guide](1005/README.md)
-- [1004: daily summary and understanding update](1004/README.md)
-- [0930](0930/README.md)
-- [0928](0928/README.md)
-- [0927](0927/README.md)
-- [0926](0926/README.md)
-- [0925](0925/README.md)
-- [0924](0924/README.md)
-- [0923](0923/README.md)
-- [0922](0922/README.md)
-- [0921](0921/README.md)
-- [0920](0920/README.md)
-- [0918](0918/README.md)
-- [0917](0917/README.md)
-- [0916](0916/README.md)
-- [0915](0915/README.md)
-- [0914](0914/README.md)
-- [0913](0913/README.md)
-- [0912](0912/README.md)
-- [0911](0911/README.md)
-- [0910](0910/README.md)
-- [0909](0909/README.md)
-- [0908](0908/README.md)
-- [0907](0907/README.md)
-- [0906](0906/README.md)
-- [0905](0905/README.md)
-- [0904](0904/README.md)
-- [0903](0903/README.md)
-- [0902](0902/README.md)
-- [0901](0901/README.md)
+| Date | Topic | Reading entry |
+|---|---|---|
+| 10-19 | CrossCoder归一化分发、SFT、频率贡献与跨层复核 | [Open](1019/README.md) |
+| 10-18 | CrossCoder逐feature分发诊断与φ关系 | [Open](1018/README.md) |
+| 10-16 | CrossCoder关系分组、输入谱与学习记录 | [Open](1016/README.md) |
+| 10-15 | CrossCoder特征频率与关系分组 | [Open](1015/README.md) |
+| 10-14 | CrossCoder层级图与跨层解码分布 | [Open](1014/README.md) |
+| 10-12 | 条件映射、机制审计与组会材料 | [Open](1012/README.md) |
+| 10-11 | 共享更新成分因果分析 | [Open](1011/README.md) |
+| 10-10 | Dense／S7／SALL实际续写 | [Open](1010/README.md) |
+| 10-08 | 共享参数局部更新与组会材料 | [Open](1008/README.md) |
+| 10-07 | 科研表达修订记录 | [Open](1007/editorial_revision_audit_cn.md) |
+| 10-06 | 组会准备与研究理解 | [Open](1006/README_cn.md) |
+| 10-05 | 研究学习指南 | [Open](1005/README.md) |
+| 10-04 | 研究入口与认识更新 | [Open](1004/README.md) |
+| 10-02 | 共享学习与路由候选资料 | [Open](1002/README.md) |
 
-[Historical backup](backup/) — retain original meaning; use project records for current questions.
+## History and maintenance
+
+- [September archive](backup/2026/09/README.md)
+- [Archived October packages](backup/2026/10/cleanup_20261019/README.md)
+- [Maintenance manifest and verification](backup/2026/maintenance_20261019/README.md)
+- [All historical backup](backup/README.md)
+
+Original paths in frozen receipts and conversation history retain their historical meaning and resolve through `tools/research_paths.py`. No scientific verdict, commit or push is part of this maintenance.

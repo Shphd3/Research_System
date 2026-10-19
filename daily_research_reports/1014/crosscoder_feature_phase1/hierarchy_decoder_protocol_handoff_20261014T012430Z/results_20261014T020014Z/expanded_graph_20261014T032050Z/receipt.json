@@ -1,0 +1,133 @@
+{
+  "status": "COMPLETE",
+  "utc": "2026-10-14T03:24:59.716937+00:00",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/reduced_V.json",
+      "sha256": "5615253d0aba4ee186c2e3498f8f538db159e50d98b080c1c5dd7c23870b701a",
+      "bytes": 2098761
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz",
+      "sha256": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1",
+      "bytes": 4510135
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_frequency.npz",
+      "sha256": "f345204412633144a7f1af36668cb3e2a98dbcaf03ef66f43ce3ace40c916c7c",
+      "bytes": 21758946
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/selection_frozen_before_geometry.json",
+      "sha256": "c710c09b9a489bf0ee69dbd8e15b90a32a111a39da9fa962211fe5123d43f489",
+      "bytes": 4910
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/derived_geometry.npz",
+      "sha256": "5a197371680c6913491dcb9b009f277e53a5936ec536e28940c06ebc5ecb3cb4",
+      "bytes": 4738016
+    }
+  ],
+  "selection_rule_sha256": "74496be3d61c219488c2cbea9592ff15f4f3c872942183f4e06adc4eacf54b48",
+  "selection_sha256": "a5089b2a78f2226c4690c01cf00187500e1a2bb1a70810e0450fd12ea2a06e43",
+  "nodes": 320,
+  "edges": 1250,
+  "figures": [
+    "figure1_full_hierarchy_overview",
+    "figure1_expanded_connections",
+    "figure2_expanded_decoder_train",
+    "figure2_expanded_decoder_raw",
+    "figure2_expanded_decoder_facets"
+  ],
+  "facet_pages": 17,
+  "checks": {
+    "all_primary_hashes_unchanged": true,
+    "full_Q_counts_exact": [
+      20,
+      8896,
+      5347,
+      1209,
+      63,
+      2
+    ],
+    "selected_counts": [
+      20,
+      80,
+      80,
+      75,
+      63,
+      2
+    ],
+    "original_h_preserved": true,
+    "all_induced_saved_direct_edges": true,
+    "all_old_30_nodes_and101_edges_retained": true,
+    "skipping_edges": 261,
+    "full_h4_branches": 63,
+    "selected_frequency_strata_coverage": "tables/display_frequency_coverage.csv",
+    "facets_each_edge_once": true,
+    "same_ids_heatmap": true,
+    "p_row_sum1": true,
+    "selected_view_isolated_nodes": 15,
+    "omitted_in_neighbor_incidences": 102824,
+    "omitted_out_neighbor_incidences": 1693,
+    "no_training_inference_count_or_graph_rebuild": true
+  },
+  "CPU_seconds_wall": 63.911342145875096,
+  "max_rss_bytes": 1217056768,
+  "gpu_jobs": 0,
+  "cache_scans": 0,
+  "no_commit_push": true,
+  "layout_only_fix": {
+    "seconds": 18.273043390363455,
+    "max_rss_bytes": 463351808,
+    "changes": [
+      "Separate dot markers in overview",
+      "Increase ordinary edge visibility without changing any edges",
+      "Mark15 nodes with no induced edges but non-isolated in full graph"
+    ],
+    "source_CSV_unchanged": true
+  },
+  "completed_utc": "2026-10-14T03:29:04.460497+00:00",
+  "visual_review": {
+    "final_overview_and_main_graph": "Actual final PNGs viewed; markers separated, ordinary lines visible, dagger shown",
+    "heatmaps": "TRAIN/raw tall plots reviewed via top/bottom PNG crops; grouped TRAIN plot viewed",
+    "PDF_SVG": "PDF headers/endings and SVG XML checked; same figure source as PNG. Independent PDF client rendering not available; do not claim client display issue resolved."
+  },
+  "validation": {
+    "selected_graph_exact_induced_edge_set": true,
+    "original_h_all320": true,
+    "same320_ids_all8960_decoder_cells_exact": true,
+    "p_each_row_sum1": true,
+    "omitted_counts_match_full_minus_shown": true,
+    "all_source_hashes_unchanged": true,
+    "old_zip_unchanged": true,
+    "image_sizes": {
+      "figure1_expanded_connections.png": [
+        6877,
+        3031
+      ],
+      "figure1_full_hierarchy_overview.png": [
+        4710,
+        2847
+      ],
+      "figure2_expanded_decoder_facets.png": [
+        3927,
+        4193
+      ],
+      "figure2_expanded_decoder_raw.png": [
+        2025,
+        9855
+      ],
+      "figure2_expanded_decoder_train.png": [
+        2025,
+        9855
+      ]
+    },
+    "seconds": 1.1174677647650242
+  },
+  "reasoning_audit": {
+    "skill": "research-reasoning-auditor",
+    "bounded_conclusion": "Visualization of existing associations; not a model depth, causal or semantic combination claim; no new trend comparison or learning conclusion."
+  },
+  "latest_main_title_revision": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/provenance/title_revision_20261014T033332Z.json"
+}

@@ -1,0 +1,50 @@
+{
+  "status": "PASS_DEFINITIONS_AND_SYNTHETIC_IMPLEMENTATION",
+  "created_utc": "2026-10-16T03:11:18.012440+00:00",
+  "processing_agent": "Codex /root/spectrum_audit",
+  "production_source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/compute_spectrum.py",
+  "source_sha256": "ca6bab40ab8f851b25c4fe781e235db180f624716c9c028850d0292f6949dcaf",
+  "frozen_config": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_spectrum/frozen_config.json",
+  "frozen_config_sha256": "d0918eb818c1e39d68a8963dbfdcb07745f16cd391b16ee175055bc149fd8e09",
+  "no_empirical_spectrum_results_read": true,
+  "synthetic_full_covariance_vs_small_matrix_max_abs": 1.3642420526593924e-12,
+  "synthetic_constant_checks": [
+    {
+      "N": 113,
+      "total_variance": 0.0,
+      "first_share_NA": true
+    },
+    {
+      "N": 131072,
+      "total_variance": 0.0,
+      "first_share_NA": true
+    }
+  ],
+  "synthetic_exact_decoder_cancellation": "zero variance -> NA",
+  "input_immutability": true,
+  "model_scale_and_normalized_share_qualification": true,
+  "frozen_assignments_every_feature_exactly_once": true,
+  "frozen_systematic_positions_exact": true,
+  "source_review": {
+    "last_decoder": "source index13 / model block28 residual-post before final RMSNorm",
+    "inverse_scale": "saved centered TRAIN vector RMS times saved decoder; no unit normalization",
+    "coefficients": "cached gated raw ReLU z, not norm-weighted gate score",
+    "no_repeated_bias_or_mean": true,
+    "covariance_centering": "explicit position centering, all fixed V rows including zero rows, ddof1",
+    "exact_low_rank_identity": "Gram^(1/2) Cz Gram^(1/2), same nonzero representation covariance eigenvalues",
+    "per_group_normalization_then_group_equal_average": true,
+    "support_postselection_absent": true,
+    "shared_independent_feature_position_permutations": true,
+    "same_versus_mixed_mean_frequency_distribution_exported": [
+      "mean p_D",
+      "mean log10 p_D"
+    ],
+    "no_p_values_from_one_permutation": true
+  },
+  "seed_history": "Unexecuted proposal2026101603 replaced pre-outcome by formal frozen seed20261016.",
+  "repairs": [
+    "raw second moment subtraction -> explicit centered Gram for constant-column numerical safety",
+    "exact trace0 contribution covariance -> zero eigenvalues and NA ratios before tiny roundoff PSD error"
+  ],
+  "boundary": "This receipt qualifies definitions, fixed assignment/position inputs and synthetic implementation. It does not verify the empirical endpoint or turn the descriptive comparison into frequency-only causation, capacity or learning benefit."
+}

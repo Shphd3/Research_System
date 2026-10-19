@@ -1,0 +1,9 @@
+[
+  {
+    "kind": "engineering decoder-loader repair",
+    "cause": "transformers/tokenizers absent locally",
+    "change": "read existing frozen ByteLevel tokenizer.json directly for ID decoding only; validate36 exact strings against previously saved HuggingFace decoder results before any new text output",
+    "scientific_parameters_changed": false,
+    "new_training_or_model_forward": false
+  }
+]

@@ -41,6 +41,18 @@ class PathTests(unittest.TestCase):
         text = r'\(\mathbb{E}[G](x)\) and `[literal](x)` plus [real](x.md)'
         self.assertEqual(len(list(local_links(text, Path('/work/a.md'), Path('/work')))), 1)
 
+    def test_archiving_a_previously_relocated_record(self):
+        root = Path('/workspace')
+        mapping = {'old/meeting.md': 'daily/0930/meeting.md',
+                   'daily/0930/meeting.md': 'daily/backup/09/0930/meeting.md'}
+        self.assertEqual(relocated(root/'old/meeting.md', mapping, root),
+                         root/'daily/backup/09/0930/meeting.md')
+
+    def test_relocation_cycle_reports_an_error(self):
+        with self.assertRaisesRegex(ValueError, 'Cyclic research relocation'):
+            relocated(Path('/workspace/a.md'),
+                      {'a.md': 'b.md', 'b.md': 'a.md'}, Path('/workspace'))
+
     def test_relative_worker_link_keeps_same_identity_after_move(self):
         root = Path('/workspace')
         result = rebase_links('[data](../../worker/result.csv)', root/'old/page.md', root/'new/deep/page.md', {}, root)

@@ -1,0 +1,18 @@
+{
+  "status": "BLOCKED",
+  "reason": "engineering smoke failed",
+  "records": [
+    {
+      "task": "smoke",
+      "exit_code": 1,
+      "status": "FAILED",
+      "seconds": 8.02418628334999
+    },
+    {
+      "task": "profiles",
+      "exit_code": 0,
+      "status": "PROCESS_EXIT_SUCCESS",
+      "seconds": 32.13923490419984
+    }
+  ]
+}

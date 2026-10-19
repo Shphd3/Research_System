@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE",
+  "zip": "/data/250010109/Research_System/daily_research_reports/1019/待讨论/normalized_route_learning_20261019_brief_under20MB.zip",
+  "bytes": 10043865,
+  "decimal_MB": 10.043865,
+  "files": 117,
+  "figures": 18,
+  "under20MB": true,
+  "sha256": "abf405106e257057da86c1c31a1296c72ce38d473c2c8acc3873f670ca61f213",
+  "links": "PASS",
+  "member_hashes": "PASS",
+  "exact_subsets": [
+    {
+      "path": "tables/low_and_top10_routing.csv.gz",
+      "source": "/data/250010109/Research_System/daily_research_reports/1019/待讨论/normalized_route_learning_20261019/tables/routing_before_after.csv",
+      "source_sha256": "1463f44ff8923167d87b52899d843f7ffaa1a5bd2157f11a30429490f5a58d1b",
+      "filter": "is_low==1 OR feature_id in original fixed Top10; all splits/conditions retained",
+      "rows": 23376,
+      "values_unchanged": true
+    },
+    {
+      "path": "tables/low_feature_learning.csv.gz",
+      "source": "/data/250010109/Research_System/daily_research_reports/1019/待讨论/normalized_route_learning_20261019/tables/per_feature_learning.csv",
+      "source_sha256": "5bf0be07280d717f46251399349e7bc59b027a30ebd2861a2f39b9374e435024",
+      "filter": "is_low==1; all20 condition/seed endpoints retained",
+      "rows": 19280,
+      "values_unchanged": true
+    }
+  ],
+  "new_experiment": false
+}

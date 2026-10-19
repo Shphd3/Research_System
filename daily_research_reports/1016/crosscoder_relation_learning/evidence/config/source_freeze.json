@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-15T16:52:12.290167+00:00",
+  "sources": [
+    {
+      "file": "data_routes.py",
+      "sha256": "9b8457ce6d9e1ae9c8add2c290885ede55433bc52e9d2e3c374a50ccd145eb89"
+    },
+    {
+      "file": "train_adapters.py",
+      "sha256": "c7b9867fdd1966f8ec5651247795d0a82e57b29375a4f82bce4b41da4fb9ebbe"
+    },
+    {
+      "file": "intervene.py",
+      "sha256": "42733eb84d49e80a8dc8b23e4c897117c76d8db6ffc3b1e837be3137efbfac84"
+    },
+    {
+      "file": "reserved_worker.sh",
+      "sha256": "c765c00d2890932f578c70397175448563385ce33fa0b263066157da8fb46f00"
+    }
+  ],
+  "amendment": "Pre-execution source-identity split guard repair: source paths + global context IDs instead of file-local integer offsets",
+  "updated_utc": "2026-10-15T16:53:32.231014+00:00"
+}

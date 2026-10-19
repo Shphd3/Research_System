@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-15T14:56:03.577239+00:00",
+  "status": "COMPLETE_BOUNDED_WITH_INSUFFICIENT_PRIMARY_CALIBRATION",
+  "execution_profile": "cpu-only-local",
+  "job_id": "NOT_APPLICABLE_CPU_LOCAL",
+  "training_updates": 0,
+  "new_encoded_positions": 0,
+  "gpu_used": false,
+  "authorised_scope": "cached feature relationships/frequency checks, figures and analysis; no H2 learning",
+  "inputs": {
+    "status": "COMPLETE",
+    "seconds": 542.6646722815931,
+    "N_D_scanned": 5238097,
+    "N_V_scanned": 5247663,
+    "decoder_saved_example_checks": 10,
+    "all_decoder_checks_equal": true,
+    "groups": 186,
+    "examples": 1760,
+    "training_updates": 0,
+    "new_encoded_positions": 0
+  },
+  "main_elapsed_seconds": 186.0312740802765,
+  "null_status": "NOT_QUALIFIED",
+  "B_requested": 99,
+  "B_formal_completed": 0,
+  "H1": "INSUFFICIENT",
+  "H1a": "BOUNDED_DESCRIPTIVE_REPLICATION_ONLY",
+  "H1b": "INSUFFICIENT_MATCHED_CONTROLS_AND_CALIBRATION",
+  "H2": "NOT_RUN",
+  "independence": "exposed D/V same bin; original documents UNKNOWN",
+  "scientific_judgment": "UNKNOWN_RESEARCHER_OWNED",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+  "ended_utc": "2026-10-15T15:07:23.620871+00:00",
+  "figures": {
+    "types": 5,
+    "formats": [
+      "PDF",
+      "SVG",
+      "PNG"
+    ],
+    "all_groups_pdf_pages": 10,
+    "source_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/plot_provenance.json",
+    "visual_check": "ACTUAL_PNG_INSPECTION_DONE_MAIN5_AND_APPENDIX_FIRST_LAST",
+    "limitations": "Appendix intermediate pages use same source rendering; not all separately opened"
+  },
+  "config_sha256": "569b8ee9595a4455fd98f8a6912665b282f02925018186a180071bacafa7e7d9",
+  "source_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/core_analysis.py",
+      "sha256": "ae3567e7e24052e54e09c70cc7ccea34ce9c509fbe166cbb121e84509c904dc3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/dispersion_bootstrap.py",
+      "sha256": "5b0ba3accf3f660989f6936aa0545b41da79a42597693ba2a4421c55fdc9df77"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/input_analysis.py",
+      "sha256": "92fc3ba986dc9b59c3061e70b8585fdb8bdfbeb793f80d8ad87250dafb156fa8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/null_analysis.py",
+      "sha256": "052f5cda5742f53c7ba5a68db03dd0195e0d8adc0a2bfd2a78acc31870e603e5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/plot_all_groups.py",
+      "sha256": "21f7cc6fb4f6fe0a0dba4187d04936370d6504dff5f5792be7647e8c741b0325"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/plot_results.py",
+      "sha256": "78b7367ef84e50c34402816fca6459ea64ff3ffc489e1bdb50f95882e98e0a68"
+    }
+  ],
+  "all_primary_pvalues": null
+}

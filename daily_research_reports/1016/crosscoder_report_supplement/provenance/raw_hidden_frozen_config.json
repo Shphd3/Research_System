@@ -1,0 +1,47 @@
+{
+  "schema": "group_hit_raw_hidden_covariance_spectrum_v1",
+  "frozen_utc": "2026-10-16T03:34:56.818599+00:00",
+  "processing_agent": "Codex /root/raw_hidden_spectrum",
+  "authority": "Root explicit collaboration instruction: anyhit>=1, N128, original m14 same/mixed all1119, seed20261016; no hidden spectra seen before this freeze",
+  "source_cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval.pt",
+  "source_cache_sha256": "d37dbcd979067b83bc5088b25c1fbb251fac8e1b98cef8c97bc35d4f58d98e83",
+  "source_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/cache_manifest.json",
+  "source_scope": "Existing adapter EVAL cache, original CrossCoder TRAIN source bin local-shard_2_of_10_shard_00000247_processed.bin. Not original structure V or the contribution-spectrum sampled V positions.",
+  "original_document_independence": "UNKNOWN",
+  "layer_model_one_based": 28,
+  "layer_model_zero_based": 27,
+  "matrix_object": "Raw cached Qwen3 block28 residual-post before final RMSNorm, shape N128 x hidden1024; no CrossCoder reconstruction, decoder, coefficients or parameter matrices",
+  "hidden_storage_dtype": "BF16",
+  "arithmetic_dtype": "FP64",
+  "group_size": 14,
+  "groups_per_rule": 1119,
+  "pool_size": 15666,
+  "rules": {
+    "same_frequency": "Original D-log-frequency adjacent groups, not original phi relationship groups",
+    "mixed_frequency": "Original one-from-each-of14 equal-count D-frequency band groups"
+  },
+  "hit_rule": "Any member of the group occurs in the positive gated cached CrossCoder latent event CSR at that exact position; at least1 member; no alternative thresholds in the spectrum comparison",
+  "source_positions": 523136,
+  "sample_N_per_group": 128,
+  "sampling_seed": 20261016,
+  "sampling": "No replacement. SHA256(sorted group members bytes + seed) gives group key; SplitMix64(key XOR absolute cached position_id) gives fixed pseudorandom priorities; smallest128 priorities with absolute-position tie break. Priority selection uses no hidden values.",
+  "center": "Subtract the position mean from each original hidden coordinate separately in each sampled group matrix",
+  "covariance": "H_centered.T @ H_centered/(128-1), represented equivalently by its 128x128 row Gram eigenvalues. Total dimension1024, centered sample rank<=127; remaining>=897 zero directions are a sampling rank limit, not model capacity.",
+  "normalized": "Per group lambda_j/sum(lambda), then equal-weight average within each rule. First share per group retained, never replace zero total variance by0 share.",
+  "insufficient": "If available<128 retain row in support/metrics but no spectrum; do not change grouping or pool. Current pre-spectrum support all1119 per rule sufficient.",
+  "inference": "Descriptive selection-associated input representation distribution. Input sets differ across groups/rules; positions overlap and share contexts. No independent-group CI/p-value or frequency/learning/capacity causal claim.",
+  "forbidden_operations": [
+    "new model forward",
+    "training",
+    "checkpoint load",
+    "decoder load",
+    "CrossCoder reconstruction",
+    "outcome-based grouping or sampling"
+  ],
+  "files": {
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_spectrum/same_frequency_members.npy": "89e821c733cda7da80e128e978d1ef4372ab5650632b2e58dbe0dfbce34cfc3f",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_spectrum/mixed_frequency_members.npy": "c64affb9b42ad269b65f86631ac96c51577c6a1093d3b27853ebe5772055f819"
+  },
+  "support_only_summary_sha256": "1c72e61aa38f37f1e31a125c2329b1e5e0f3b66a2b58faaace12fde00fbb4c3b",
+  "script_sha256": "017b380e8bf5ff8c34ce09757f8fe06840391cb11314e71033320f2c8c8ee68d"
+}

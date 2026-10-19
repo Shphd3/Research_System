@@ -1,0 +1,242 @@
+{
+  "processor": "Codex /root/routing_audit_cases_conflicts",
+  "scope": "cache-only limited pairs and tokenizer-only text",
+  "seed": 20261018,
+  "common_definition": "original frozen high_ids (TRAIN >= original q90), NOT p>=.5",
+  "n_common": 962,
+  "n_low": 964,
+  "n_pool": 9615,
+  "case_ids": [
+    9297,
+    1133,
+    2704
+  ],
+  "all_pairs_scan": false,
+  "model_forward": false,
+  "training": false,
+  "gpu": false,
+  "stages": {
+    "train": {
+      "seconds": 20.266287660226226,
+      "N": 130712,
+      "nnz": 33567565,
+      "common_csv": {
+        "rows": 927368,
+        "bytes": 52583117,
+        "decompressed_bytes_estimate": 196193217,
+        "header": [
+          "split",
+          "feature_i",
+          "common_c",
+          "N",
+          "n_i",
+          "n_c",
+          "n_ic",
+          "P_c_given_i",
+          "p_i",
+          "p_c",
+          "A_owner_i",
+          "A_N_owner",
+          "A_n_owner_i",
+          "A_n_owner_c",
+          "A_q_i",
+          "A_q_c",
+          "A_log10_qc_over_qi",
+          "A_NA_reason",
+          "B1_owner_i",
+          "B1_N_owner",
+          "B1_n_owner_i",
+          "B1_n_owner_c",
+          "B1_q_i",
+          "B1_q_c",
+          "B1_log10_qc_over_qi",
+          "B1_NA_reason",
+          "B2_owner_i",
+          "B2_N_owner",
+          "B2_n_owner_i",
+          "B2_n_owner_c",
+          "B2_q_i",
+          "B2_q_c",
+          "B2_log10_qc_over_qi",
+          "B2_NA_reason"
+        ],
+        "compression": "gzip level 1"
+      }
+    },
+    "eval": {
+      "seconds": 18.756697960197926,
+      "N": 65402,
+      "nnz": 16416360,
+      "common_csv": {
+        "rows": 927368,
+        "bytes": 49165047,
+        "decompressed_bytes_estimate": 190338857,
+        "header": [
+          "split",
+          "feature_i",
+          "common_c",
+          "N",
+          "n_i",
+          "n_c",
+          "n_ic",
+          "P_c_given_i",
+          "p_i",
+          "p_c",
+          "A_owner_i",
+          "A_N_owner",
+          "A_n_owner_i",
+          "A_n_owner_c",
+          "A_q_i",
+          "A_q_c",
+          "A_log10_qc_over_qi",
+          "A_NA_reason",
+          "B1_owner_i",
+          "B1_N_owner",
+          "B1_n_owner_i",
+          "B1_n_owner_c",
+          "B1_q_i",
+          "B1_q_c",
+          "B1_log10_qc_over_qi",
+          "B1_NA_reason",
+          "B2_owner_i",
+          "B2_N_owner",
+          "B2_n_owner_i",
+          "B2_n_owner_c",
+          "B2_q_i",
+          "B2_q_c",
+          "B2_log10_qc_over_qi",
+          "B2_NA_reason"
+        ],
+        "compression": "gzip level 1"
+      }
+    }
+  },
+  "texts": {
+    "cards": 12,
+    "tokenizer_class": "Qwen2TokenizerFast",
+    "tokenizer_model": "/data/share/Qwen3-0.6B-Base",
+    "model_forward": false,
+    "source_target_checks": "PASS",
+    "target_removal_changed": 0
+  },
+  "total_seconds": 49.102315647527575,
+  "peak_rss_bytes": 1478324224,
+  "conflict_pairs_selected": 27,
+  "tau_max_by_rule_split": {
+    "A_train": {
+      "min": 0.9918057510557008,
+      "max": 0.9961342198855729
+    },
+    "A_eval": {
+      "min": 0.9883680755499251,
+      "max": 0.9971779141104294
+    },
+    "B1_train": {
+      "min": 0.9290187891440501,
+      "max": 0.9829164124466138
+    },
+    "B1_eval": {
+      "min": 0.8983957219251337,
+      "max": 0.9851116625310173
+    },
+    "B2_train": {
+      "min": 0.9372319688109162,
+      "max": 0.988822459059007
+    },
+    "B2_eval": {
+      "min": 0.9191011235955057,
+      "max": 1.0
+    }
+  },
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/case_common_plot_selection_train.json",
+      "bytes": 834,
+      "sha256": "fe3d3b2f6c81c4e208383005d45e09077656e779c1209493e9445c611e1311c9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/case_common_plot_source.csv",
+      "bytes": 18907,
+      "sha256": "15a85001593ed0e9ce9601037a5a197a725c0d71b44d7f1a9ee815ba2027c617"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/case_common_top10.csv",
+      "bytes": 21836,
+      "sha256": "4e104d80aa4c9b786c00629f60dd2b8c71b57aa9397073606a57bf71c748c95e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/case_to_pool_train.npz",
+      "bytes": 92394,
+      "sha256": "252f3cb0aed6fec3c0053cb0cb1bc2b613371670021066c260602eeed356ba11"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/common_companions_eval.csv.gz",
+      "bytes": 49165047,
+      "sha256": "6a9a73b97118a272360dd9bdfe90e64049ca5d020447bcfed3a2fa1f507af01a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/common_companions_eval.npz",
+      "bytes": 1586289,
+      "sha256": "0d7ea30a3f13bf07541ac580bceb0dd73462d5231ece6cc928f30031f28f3994"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/common_companions_train.csv.gz",
+      "bytes": 52583117,
+      "sha256": "cf0d52cd33daa0f930eb690cee344f30579881f0cbab5c7405468381e00a87cc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/common_companions_train.npz",
+      "bytes": 1803110,
+      "sha256": "e724bd02b31d8edd44b1e462cf18677a7be674adc36babbb70d9ebe88f5f5e1c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/conflict_pair_selection_train.json",
+      "bytes": 8960,
+      "sha256": "0f3bac3b6c9c4f1f6ee9b70a848b22d751eed68bfc0ccee3397964a30f84fbd1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/conflict_pairs.csv",
+      "bytes": 8686,
+      "sha256": "b1b3ba69020bd4f67ca12e1a86e2292d492687420e4c416da94184a3f4b94362"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/text_case_scores.csv",
+      "bytes": 4434,
+      "sha256": "1750a88025cd9d7a7d6dd71429b3f4ca200e9da32d9b35ca30dc595b84ed386f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/text_sampling.json",
+      "bytes": 1370,
+      "sha256": "bf4d7435a34f4a9b29a6063bd0b17e0742d95bf589745139fd8b2c100f48472c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/texts/text_cases.json",
+      "bytes": 100630,
+      "sha256": "597cdddc2337b16469eac5b9e85850854f5f516fd6974d13e094ad411573b28f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/texts/text_cases_cn.md",
+      "bytes": 27662,
+      "sha256": "63902df2b7578546042e8e3f1951b726e20ed7957a64a784f1dbe8116ca63e37"
+    }
+  ],
+  "text_refinement": {
+    "seconds": 8.280993597581983,
+    "purpose": "Use exact original saved decoder norm sum rather than summing display norm table; attach now-complete common-score diagnostics. Existing count matrices unchanged.",
+    "core_count_recompute": false,
+    "plot_source_rows": 108
+  },
+  "validation": {
+    "source_current_next_token_all_12_cases": "PASS",
+    "sample_scores_12_cases_3_rules_8_experts_bitwise_equal_to_original": true,
+    "max_absolute_score_difference": 0.0,
+    "low_or_common_zero_support_features_train": 0,
+    "low_or_common_zero_support_features_eval": 0,
+    "U_removal_unchanged_winner": "36/36 case-rule combinations; scoring sensitivity only, not feature usefulness",
+    "group_minus1_explained": true,
+    "all_heavy_scans_complete_no_more_required": true
+  },
+  "script_sha256": "2b0c91194bd4770d117864ac97c3e3eb30d3d6f0f2a6fdcfcec8127ce1c6031a",
+  "completion_state": "COMPLETE",
+  "completed_utc": "2026-10-18T14:48:52.957037+00:00"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETE",
+  "config_sha256": "dc32d3037009c1db9a9cb04e6702dcd07a96a3e198fe90ebda2f38e01a0d6e13",
+  "source_sha256": "cdc91c2404d83a5288abbece38fab306734d599726620538c85783e7219d298b",
+  "eval_positions": 523136,
+  "eligible_low_features": 3737,
+  "eligible_high_features": 3916,
+  "conditional_position_weights_sum": {
+    "low": 1.0,
+    "high": 1.0
+  },
+  "TRAIN_expert_counts": {
+    "R": [
+      31271,
+      35627,
+      31479,
+      32335
+    ],
+    "F": [
+      30779,
+      37822,
+      31462,
+      30649
+    ],
+    "N": [
+      29625,
+      33406,
+      32619,
+      35062
+    ]
+  },
+  "mu_fitted_without_EVAL_or_targets": true,
+  "precomputed_sha256": "4e5c4143a1d4e707ee22ff8d749dfd7cecb1b1abd52c83f1b920aec1d68c0b8b"
+}

@@ -1,0 +1,92 @@
+{
+  "source_stats": "original frozen TRAIN CenteredRMSStats in decoder_geometry.npz",
+  "no_new_forward": true,
+  "exact_identity": "normalize(PH)=P(normalize(H))-(mu dot v)v/rms, where P=I-vvT",
+  "boundary": "removing an uncentered raw direction while retaining original centering introduces an affine shift; alignment/shift do not identify semantics or actual cause of L0 increase",
+  "layers": [
+    {
+      "source_block_1based": 2,
+      "TRAIN_mean_alignment_squared": 0.9773077240321533,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.6454419314951549,
+      "measurement_removed_raw_energy_share": 0.3026285171508789
+    },
+    {
+      "source_block_1based": 4,
+      "TRAIN_mean_alignment_squared": 0.7792879382051465,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.06458394596038876,
+      "measurement_removed_raw_energy_share": 0.9947762489318848
+    },
+    {
+      "source_block_1based": 6,
+      "TRAIN_mean_alignment_squared": 0.7117495973965453,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.07238501981444011,
+      "measurement_removed_raw_energy_share": 0.9901813268661499
+    },
+    {
+      "source_block_1based": 8,
+      "TRAIN_mean_alignment_squared": 0.6728450276361483,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.07603523494091058,
+      "measurement_removed_raw_energy_share": 0.9869813919067383
+    },
+    {
+      "source_block_1based": 10,
+      "TRAIN_mean_alignment_squared": 0.6537205840003295,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.09026753083932852,
+      "measurement_removed_raw_energy_share": 0.9804981350898743
+    },
+    {
+      "source_block_1based": 12,
+      "TRAIN_mean_alignment_squared": 0.6963320794365426,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.1317944227351208,
+      "measurement_removed_raw_energy_share": 0.9645170569419861
+    },
+    {
+      "source_block_1based": 14,
+      "TRAIN_mean_alignment_squared": 0.6994479681372422,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.1492372966102823,
+      "measurement_removed_raw_energy_share": 0.957848072052002
+    },
+    {
+      "source_block_1based": 16,
+      "TRAIN_mean_alignment_squared": 0.6904211872944124,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.1670166059142618,
+      "measurement_removed_raw_energy_share": 0.9437902569770813
+    },
+    {
+      "source_block_1based": 18,
+      "TRAIN_mean_alignment_squared": 0.7375131832982756,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.24913426274284467,
+      "measurement_removed_raw_energy_share": 0.875657856464386
+    },
+    {
+      "source_block_1based": 20,
+      "TRAIN_mean_alignment_squared": 0.7542745742099352,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.3624230918653441,
+      "measurement_removed_raw_energy_share": 0.7583596706390381
+    },
+    {
+      "source_block_1based": 22,
+      "TRAIN_mean_alignment_squared": 0.8432562253120011,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.581205262316283,
+      "measurement_removed_raw_energy_share": 0.6215453147888184
+    },
+    {
+      "source_block_1based": 24,
+      "TRAIN_mean_alignment_squared": 0.9242140768961771,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 0.8534352579921832,
+      "measurement_removed_raw_energy_share": 0.579459011554718
+    },
+    {
+      "source_block_1based": 26,
+      "TRAIN_mean_alignment_squared": 0.9669887302278521,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 1.1863638695638967,
+      "measurement_removed_raw_energy_share": 0.6252909302711487
+    },
+    {
+      "source_block_1based": 28,
+      "TRAIN_mean_alignment_squared": 0.9592010557446851,
+      "projected_TRAIN_mean_shift_in_TRAIN_vector_RMS": 1.3265413647355984,
+      "measurement_removed_raw_energy_share": 0.6137027144432068
+    }
+  ]
+}

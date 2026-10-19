@@ -1,0 +1,77 @@
+{
+  "status": "ALL_COMPUTATION_AND_TRACE_CHECKS_PASSED_NOT_SCIENTIFIC_PASS",
+  "utc": "2026-10-15T17:40:16.242891+00:00",
+  "B": 99,
+  "null_state_chains": 2,
+  "score_workers": 3,
+  "draw_allocation": [
+    50,
+    49
+  ],
+  "all_draw_ids_exactly_once": true,
+  "all_observed_and_null_groups_qualified": true,
+  "strict_original_sample_Tb": null,
+  "approx_p_recomputed": {
+    "H1a": 0.01,
+    "H1b_smoothed": 0.01
+  },
+  "holm_approx_recomputed": {
+    "H1a": 0.02,
+    "H1b_smoothed": 0.02
+  },
+  "diagnostics": {
+    "T_a": {
+      "observed": 0.19531144737678222,
+      "null_mean": 0.0392741640999749,
+      "null_SD": 0.004276350035177399,
+      "null_min": 0.03335298342716929,
+      "null_max": 0.059838032510292086,
+      "null_q025": 0.03382473004115281,
+      "null_q975": 0.052214813459619154,
+      "observed_minus_null_mean": 0.15603728327680733,
+      "split_Rhat_equal_first49_per_chain": 0.9909920487824707,
+      "ESS_equal_first49_per_chain": 96.0,
+      "all99_retained_for_p": true,
+      "ESS_not_p_denominator": true
+    },
+    "T_b_smoothed": {
+      "observed": -0.067769736813641,
+      "null_mean": 0.015066358019533628,
+      "null_SD": 0.009023349875940657,
+      "null_min": -0.007959490038505455,
+      "null_max": 0.03877575371981403,
+      "null_q025": -0.0033230212725271916,
+      "null_q975": 0.03315150887592074,
+      "observed_minus_null_mean": -0.08283609483317463,
+      "split_Rhat_equal_first49_per_chain": 1.0002144242109285,
+      "ESS_equal_first49_per_chain": 96.0,
+      "all99_retained_for_p": true,
+      "ESS_not_p_denominator": true
+    },
+    "T_b_smoothed_memberweighted": {
+      "observed": -0.06056208385949588,
+      "null_mean": -0.010646414590757727,
+      "null_SD": 0.0038637630823209223,
+      "null_min": -0.02355966629516082,
+      "null_max": -0.005251104001508463,
+      "null_q025": -0.02190532078669295,
+      "null_q975": -0.0056706995348770675,
+      "observed_minus_null_mean": -0.04991566926873815,
+      "split_Rhat_equal_first49_per_chain": 0.9911825578743997,
+      "ESS_equal_first49_per_chain": 96.0,
+      "all99_retained_for_p": true,
+      "ESS_not_p_denominator": true
+    }
+  },
+  "observed_weighted_Ta": 0.24829749466399817,
+  "null_weighted_Ta_range": [
+    0.04988161996945029,
+    0.05740077851223825
+  ],
+  "sample_candidate_count": 6750,
+  "sample_N_per_side": 4096,
+  "full_run_seconds": 2715.580652700737,
+  "original_sampling_result_retained": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/structure/null_results.json",
+  "repaired_result": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/structure/triple_counting_repair/null_results.json",
+  "scope": "Bounded, already exposed same-bin post-observation exploration; global MCMC mixing and document independence unproved; no full-cache p, semantic/expert hierarchy, causal or capacity claim."
+}

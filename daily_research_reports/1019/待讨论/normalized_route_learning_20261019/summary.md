@@ -1,0 +1,13 @@
+# Summary: improved reception did not produce held-out learning benefit
+
+[中文](summary_cn.md) · [Detailed](detailed.md) · [Protocol](protocol.md). All10conditions times2seeds completed3epochs, plus20functional/spectral analyses and8target adaptations. Researcher scientific judgment remains Unknown.
+
+The purpose is useful specialization under a fixed budget. A frozen Qwen3-0.6B Base and14-layer joint CrossCoder feed a residual branch of8full SwiGLU experts after block28, before frozen original norm/head. Low frequency denotes TRAIN feature hit probability, not hard/unlearned knowledge.
+
+1. T/S1 raises EVAL low-feature assigned reception from0.0023% to33.4033% (zero-reception960to5). S2 remains0%/964zeros; S3 reaches41.6942%. This supports calibration of this competition scale, not learning usefulness. [Figure5](figures/figure5_dispatch_outcomes.png), [table](tables/routing_before_after.csv).
+2. Primary S1-S0 low-feature macro NLL differences are+0.1807/+0.1853, worse. S1-R11/S1 is−0.0326/−0.0256, relatively better, but the joint preregistered criterion fails. All20endpoints worsen overall and low-feature NLL against the frozen baseline (3.023366/2.593718). TRAIN diagnostic improves while EVAL worsens; generalization/update size remains a live explanation. [Curves](figures/figure7_primary_learning_curves.png), [paired outcomes](tables/paired_outcomes.csv).
+3. Independent target-feature2background excludes269TRAIN hits. All8matched adaptations worsen target EVAL NLL on94positions/40contexts and incur old-input harm0.0206–0.0517, exceeding.01; no safe assignment exists. List/modal-route recommend0, pre-adapt TRAIN prediction recommends5. Unsafe retrospective expert6 is not a validated recommendation. [Figure10](figures/figure10_target_assignment.png).
+
+M_L equally averages each fixed L964feature's mean hit-position NLL; positions overlap. Negative differences are better. The primary S1 must beat both S0 and fixed R11/S1 by.01without overall harm>.01 in both model seeds. One random organization is not two independent random lists. Context-block intervals are descriptive; different bin files do not establish document independence and EVAL was previously inspected.
+
+This rejects reception as sufficient evidence of learning benefit in the present setting. It does not establish from-scratch capacity, meaningful semantic expert roles, or phi-learning utility. Original high-frequency information remains in full h. AI next proposal, not authorized: use a separate development set to predefine one shared smaller update scale, then recheck A/B/C on fresh held-out text to separate update/generalization failure from organization effects. No follow-on experiment was started.

@@ -1,0 +1,190 @@
+{
+  "status": "COMPLETE",
+  "rules": [
+    "O",
+    "F",
+    "T",
+    "R11",
+    "R22",
+    "R33",
+    "Tphi"
+  ],
+  "operation": "finite CPU-only regrouping/scoring of existing paired CSR cache; no inference, training, GPU",
+  "seconds": 11.372259881347418,
+  "max_RSS_KiB": 1092432,
+  "threads": 2,
+  "sklearn": "1.2.0",
+  "checks": {
+    "train": {
+      "O": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": true,
+        "original_count_match": true,
+        "tie_positions": 0,
+        "all_zero_positions": 0
+      },
+      "F": {
+        "q_identity_max_error": 0.0,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "T": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "R11": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "R22": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "R33": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "Tphi": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      }
+    },
+    "eval": {
+      "O": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": true,
+        "original_count_match": true,
+        "tie_positions": 0,
+        "all_zero_positions": 0
+      },
+      "F": {
+        "q_identity_max_error": 0.0,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "T": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "R11": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "R22": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "R33": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      },
+      "Tphi": {
+        "q_identity_max_error": 2.220446049250313e-16,
+        "count_conservation": true,
+        "O_reused_and_64_sample_scores_exact": false,
+        "original_count_match": null,
+        "tie_positions": 0,
+        "tie_rate": 0.0,
+        "all_zero_positions": 0,
+        "all_zero_fallback_rate": 0.0
+      }
+    }
+  },
+  "sources": {
+    "cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache",
+    "score_code": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/code/prepare_cache.py"
+  },
+  "script_sha256": "dfcae5c945cdf5a3e5b937a70bc04eb83e98d12aeecf80248587feea3302644b",
+  "output_bytes": 145761694,
+  "no_model_forward": true,
+  "no_training": true,
+  "no_GPU": true,
+  "torch_cuda_initialized": false,
+  "phases": [
+    {
+      "phase": "O_F_T_and_random_cache_scan",
+      "seconds": 36.21882446296513,
+      "max_RSS_KiB": 1148444,
+      "log": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/core.log"
+    },
+    {
+      "phase": "Tphi_only_increment_and_final_tables",
+      "seconds": 11.372259881347418,
+      "max_RSS_KiB": 1092432,
+      "log": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/core_final.log"
+    }
+  ],
+  "total_active_seconds": 47.59108434431255,
+  "all_phases_max_RSS_KiB": 1148444,
+  "T_vs_Tphi_route_difference": {
+    "train": 0,
+    "eval": 0
+  },
+  "initial_OFT_random_results_reused_without_cache_recount_in_increment": true
+}

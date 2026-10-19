@@ -1,0 +1,682 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-18T16:22:14.908849+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-mvcb6",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11792,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "router-representation-coupling",
+      "title_cn": "路由表征梯度反馈独立项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/router-representation-coupling",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/router-representation-coupling/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1364,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "shared-data-cache",
+      "title_cn": "共享数据与模型缓存存储",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/share/109_cache_dir",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/share/109_cache_dir/hf_data/hub",
+              "expected": "directory",
+              "status": "LISTABLE_DIRECTORY",
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/109_cache_dir/hf_data/datasets",
+              "expected": "directory",
+              "status": "LISTABLE_DIRECTORY",
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/109_cache_dir/hf_data/dclm_bin",
+              "expected": "directory",
+              "status": "LISTABLE_DIRECTORY",
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "dclm_token_bins_global01",
+      "title_cn": "DCLM uint32 token bins（global shard 01）",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "shared-data-cache"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "pretokenized_source",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 299003652,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "tokenizer_qwen3_0p6b_base",
+      "title_cn": "Qwen3-0.6B-Base分词器（S7/A3数据身份）",
+      "category": "tokenizer",
+      "projects": [
+        "from-attention-to-search",
+        "router-representation-coupling"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/share/Qwen3-0.6B-Base",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "tokenizer_files",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7031645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/tokenizer_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9678,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/vocab.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2776833,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/merges.txt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1671853,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_crosscoder_feature_frequency_20261015t143300z",
+      "title_cn": "CrossCoder最终14层特征频率/关系分组/输入分析与五图（主校准不足）",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual saved derived analysis",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/terminal_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3418,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/registered_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4630,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/frequency.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2688630,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/groups_D.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 331121,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/group_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 50588,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 53694,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/null/null_results.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9755,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/examples.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11209846,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/inputs/coverage.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1213,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure1_frequency_rank.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 122553,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure2_frequency_stability.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 184818,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure3_relations_groups.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 830810,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_group_frequency_controls.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 174945,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure5_inputs_activations.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 504967,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/figures/figure4_all_groups.pdf",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 65385,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_crosscoder_frequency_interval_moe_20261018t103820z",
+      "title_cn": "频率线性8区间旁支：完整同窗冻结h/z及路由缓存",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual same-window h/z/target and frozen-route cache family",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/train.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 556911904,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/eval.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 275628256,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/model_input_norm.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5720,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/cache/grouping.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 580064,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/tables/feature_members.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1072691,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_crosscoder_feature_owner_routing_audit_20261018t143950z",
+      "title_cn": "CrossCoder特征分组到实际分发：逐feature负责专家接收、评分路径及有限共现诊断",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "new derived CPU diagnostic outputs; original cache remains in parent run",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/core_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9515,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/score_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 25242,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/cases_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8951,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/feature_expert_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 69263943,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/core_checks.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5562,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/score/virtual_routing_summary.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 805,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/common_companions_eval.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1586289,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/cases/conflict_pairs.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8686,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/texts/text_cases.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100630,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/figures_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5502,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_crosscoder_frequency_priority_dispatch_20261018t160918z",
+      "title_cn": "CrossCoder频率优先与实际分发：冻结缓存CPU对照（P未运行、无训练）",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "Completed O/F/T/Tphi/random numeric dispatch analysis; no new representations or checkpoint",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/design_freeze.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4336,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/core_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6195,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/relation_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5161,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/branch_assets.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3320,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/group_membership.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 696176,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/feature_owner_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 20604474,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/low_target_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2081406,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/counts_eval_Tphi.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 297186,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/fixed_edges_DV.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2292835,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/owner_Tphi.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 65664,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

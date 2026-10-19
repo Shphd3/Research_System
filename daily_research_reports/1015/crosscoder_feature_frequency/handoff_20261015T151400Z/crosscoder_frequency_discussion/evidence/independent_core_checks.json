@@ -1,0 +1,70 @@
+{
+  "status": "PASS_FOR_CHECKED_SCOPE",
+  "checked_utc": "2026-10-15T14:49:14Z",
+  "actor": "Codex /root/assets_inventory",
+  "scope": "No full cache scan; count diag and edges, small source/index/token reads, preserved outputs",
+  "core_checks": [
+    {
+      "side": "D",
+      "all_edges_count_and_phi_equal": 34757,
+      "mutual_top10_independently_sorted_directed_endpoint_checks": 22,
+      "diag_all_F_equal": true
+    },
+    {
+      "side": "V",
+      "all_edges_count_and_phi_equal": 34743,
+      "mutual_top10_independently_sorted_directed_endpoint_checks": 22,
+      "diag_all_F_equal": true
+    }
+  ],
+  "partition_all_fixed_P_exact": true,
+  "Jaccard_membership_recomputed_for_all_D_groups": 186,
+  "T_a_recomputed": 0.5483796212553805,
+  "q_sensitivity": {
+    "q10_D_nontrivial": 186,
+    "q10_V_nontrivial": 185,
+    "q20_D_nontrivial": 65,
+    "q20_V_nontrivial": 61
+  },
+  "control_missingness": {
+    "unqualified_groups": 44,
+    "insufficient_scheduled_draws": 15,
+    "burnin_acceptance_below_size": 29
+  },
+  "pre_post_identity": {
+    "core_start_sha": "ae3567e7e24052e54e09c70cc7ccea34ce9c509fbe166cbb121e84509c904dc3",
+    "core_current_sha": "ae3567e7e24052e54e09c70cc7ccea34ce9c509fbe166cbb121e84509c904dc3",
+    "core_snapshot_sha": "ae3567e7e24052e54e09c70cc7ccea34ce9c509fbe166cbb121e84509c904dc3",
+    "config_start_sha": "569b8ee9595a4455fd98f8a6912665b282f02925018186a180071bacafa7e7d9",
+    "config_current_sha": "569b8ee9595a4455fd98f8a6912665b282f02925018186a180071bacafa7e7d9",
+    "unchanged": true
+  },
+  "input_source_check": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/feature_frequency/input_analysis.py",
+    "sha256": "92fc3ba986dc9b59c3061e70b8585fdb8bdfbeb793f80d8ad87250dafb156fa8",
+    "old_saved_examples_exact_location_token_and_fullprefix_checks": 118,
+    "index_files_hash_match": true,
+    "source_size_mtime_checks": [
+      {
+        "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000001_processed.bin",
+        "bytes_and_mtime_match": true
+      }
+    ],
+    "D_threshold_records_bounded": 186,
+    "code_review": [
+      "D-only minimum integer hit count with tail<=0.01 and >=2 active members",
+      "V denominator is all fixed valid positions NV; none/unique/multiple exhaustive",
+      "context location uses searchsorted(prefix,right)-1; local eligible offset handles specials and last limited context",
+      "target included in causal model-visible prefix; right text reading-only",
+      "random examples use five lowest seeded hash context keys then lowest seeded position hash within each selected hit context",
+      "high-score uses member count then original position ID; within fixed group score=count/size"
+    ],
+    "limitations": [
+      "Document and near-duplicate independence UNKNOWN",
+      "Hash sampling is over hit contexts then hit positions, not uniform over all hit positions",
+      "Full input coverage/example artifact checks pending producer completion; no full cache rescan in this audit",
+      "High-score exact tie uses position ID, not activation-amplitude secondary sorting; actual rule must be reported"
+    ]
+  },
+  "scientific_verdict": "UNKNOWN_RESEARCHER_OWNED"
+}

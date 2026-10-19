@@ -1,0 +1,153 @@
+{
+  "claims": [
+    {
+      "claim": "A TRAIN low reception distribution",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/group_summary.csv",
+      "sha256": "740984e53c239f0bda397e5ed2b0e3e8184b480642d2d64f67cf425cbde003b1",
+      "csv_line": 7,
+      "selector": {
+        "rule": "A",
+        "split": "train",
+        "subset": "low",
+        "measure": "owner_a"
+      },
+      "values": {
+        "features": "964",
+        "q25": "0.0",
+        "median": "0.0",
+        "q75": "0.0",
+        "zero_features": "964",
+        "event_weighted_mean": "0.0"
+      }
+    },
+    {
+      "claim": "A EVAL low reception distribution",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/group_summary.csv",
+      "sha256": "740984e53c239f0bda397e5ed2b0e3e8184b480642d2d64f67cf425cbde003b1",
+      "csv_line": 139,
+      "selector": {
+        "rule": "A",
+        "split": "eval",
+        "subset": "low",
+        "measure": "owner_a"
+      },
+      "values": {
+        "features": "964",
+        "q25": "0.0",
+        "median": "0.0",
+        "q75": "0.0",
+        "zero_features": "964",
+        "event_weighted_mean": "0.0"
+      }
+    },
+    {
+      "claim": "B1 EVAL low reception",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/group_summary.csv",
+      "sha256": "740984e53c239f0bda397e5ed2b0e3e8184b480642d2d64f67cf425cbde003b1",
+      "csv_line": 183,
+      "selector": {
+        "rule": "B1",
+        "split": "eval",
+        "subset": "low",
+        "measure": "owner_a"
+      },
+      "values": {
+        "features": "964",
+        "q25": "0.013888888888888888",
+        "median": "0.03280758403709223",
+        "q75": "0.0566573756432247",
+        "zero_features": "122",
+        "event_weighted_mean": "0.043728921702670676"
+      }
+    },
+    {
+      "claim": "B2 EVAL low reception",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/group_summary.csv",
+      "sha256": "740984e53c239f0bda397e5ed2b0e3e8184b480642d2d64f67cf425cbde003b1",
+      "csv_line": 227,
+      "selector": {
+        "rule": "B2",
+        "split": "eval",
+        "subset": "low",
+        "measure": "owner_a"
+      },
+      "values": {
+        "features": "964",
+        "q25": "0.05",
+        "median": "0.09090909090909091",
+        "q75": "0.1372923215087562",
+        "zero_features": "48",
+        "event_weighted_mean": "0.11140734664114484"
+      }
+    },
+    {
+      "claim": "TRAIN winner minus A0 decomposition: total",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/score/winner_vs_A0_margin_components.csv",
+      "sha256": "15545c29507f26cad128f256a6f8f5e5dddfec0f4b5610b23621d5549da6253c",
+      "csv_line": 5,
+      "selector": {
+        "split": "train",
+        "scope": "contains_original_low_feature",
+        "component": "total"
+      },
+      "values": {
+        "N": "95544",
+        "mean": "0.5674922984165728",
+        "negative_positions": "0",
+        "positive_positions": "95544"
+      }
+    },
+    {
+      "claim": "TRAIN winner minus A0 decomposition: common",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/score/winner_vs_A0_margin_components.csv",
+      "sha256": "15545c29507f26cad128f256a6f8f5e5dddfec0f4b5610b23621d5549da6253c",
+      "csv_line": 6,
+      "selector": {
+        "split": "train",
+        "scope": "contains_original_low_feature",
+        "component": "common"
+      },
+      "values": {
+        "N": "95544",
+        "mean": "0.5694275885094199",
+        "negative_positions": "0",
+        "positive_positions": "95544"
+      }
+    },
+    {
+      "claim": "TRAIN winner minus A0 decomposition: noncommon",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/score/winner_vs_A0_margin_components.csv",
+      "sha256": "15545c29507f26cad128f256a6f8f5e5dddfec0f4b5610b23621d5549da6253c",
+      "csv_line": 7,
+      "selector": {
+        "split": "train",
+        "scope": "contains_original_low_feature",
+        "component": "noncommon"
+      },
+      "values": {
+        "N": "95544",
+        "mean": "-0.0019352900923322084",
+        "negative_positions": "95544",
+        "positive_positions": "0"
+      }
+    },
+    {
+      "claim": "C scoring-only diagnostic is degenerate",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/score/virtual_routing_summary.csv",
+      "sha256": "9f402c5814fbf513585387b86440c35723b6a4f4e0da978749057bb290c63d6a",
+      "csv_line": 2,
+      "selector": {
+        "split": "train",
+        "rule": "A"
+      },
+      "values": {
+        "N": "130712",
+        "changed_positions": "130712",
+        "cf_zero_experts": "7",
+        "cf_allzero": "0",
+        "cf_ties": "0"
+      }
+    }
+  ],
+  "scope": "small saved-table selectors; no new inference or experimental statistics"
+}

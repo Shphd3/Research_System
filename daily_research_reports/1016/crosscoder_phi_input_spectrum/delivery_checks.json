@@ -1,0 +1,92 @@
+{
+  "created_utc": "2026-10-16T04:14:28.894401+00:00",
+  "status": "PASS_EXECUTION_AND_DELIVERY_NOT_SCIENTIFIC_APPROVAL",
+  "asset_id": "analysis_crosscoder_phi_group_input_spectrum_20261016",
+  "all_condition_group_rows": 558,
+  "supported_group_arms": 515,
+  "main_common_groups": 145,
+  "main_member_fraction": 0.6383718403708264,
+  "sample_N_per_group": 128,
+  "figures_png_pdf": 4,
+  "PNG_all_visually_inspected": true,
+  "PDF_independently_rendered": false,
+  "independent_replot": {
+    "status": "PASS",
+    "verified_utc": "2026-10-16T04:04:12.708296+00:00",
+    "processing_agent": "Codex /root/spectrum_data",
+    "test": "Actual local independent replot from only copied small NPZ/selection and identical plot script; final production figures/script unchanged.",
+    "python": "/usr/bin/python",
+    "numpy_version": "1.24.4",
+    "matplotlib_version": "3.8.4",
+    "runtime_dependencies": "NumPy and Matplotlib plus Python standard library; no Torch, raw hidden/cache, model/checkpoint, GPU or training. Existing CJK font read at frozen path.",
+    "torch_imported": false,
+    "scipy_imported": false,
+    "CUDA_VISIBLE_DEVICES": "",
+    "script_sha256": "ce51b67cc87c27c357bc2453d7c1c8c29e208c69dacfcbbdfd97b192a8d9fcb3",
+    "source_script_copy_sha256": "ce51b67cc87c27c357bc2453d7c1c8c29e208c69dacfcbbdfd97b192a8d9fcb3",
+    "inputs": [
+      {
+        "path": "/tmp/phi_input_replot_verify_20261016/inputs/R_input_hidden_spectra.npz",
+        "sha256": "393f00c84caaf7d4c8c22aabe7b6b1bc40d0e93bad8b9d1da82843cece5fb671"
+      },
+      {
+        "path": "/tmp/phi_input_replot_verify_20261016/inputs/F_input_hidden_spectra.npz",
+        "sha256": "276c8fb9cdfa051a43ef4ab75840bc956c0ff463773c49bd7049508a16053006"
+      },
+      {
+        "path": "/tmp/phi_input_replot_verify_20261016/inputs/N_input_hidden_spectra.npz",
+        "sha256": "e88554e7e533f5db900da25000f446620b61115788a3f6a6a359daa24176ecd7"
+      },
+      {
+        "path": "/tmp/phi_input_replot_verify_20261016/inputs/plot_selection.json",
+        "sha256": "61d0b6fde267773dbf2f163f1a87dc6f216b75be5f7a7544dd7ad16377a7a5bd"
+      }
+    ],
+    "output_directory": "/tmp/phi_input_replot_verify_20261016/figures",
+    "PNG_comparisons": [
+      {
+        "file": "figure7_phi_raw_spectrum.png",
+        "original_sha256": "d2503b4faf877af3d4566766e06b49fe6e3d6911c5e4dd38592cef302c7720fd",
+        "regenerated_sha256": "d2503b4faf877af3d4566766e06b49fe6e3d6911c5e4dd38592cef302c7720fd",
+        "byte_identical": true,
+        "bytes": 123854
+      },
+      {
+        "file": "figure8_phi_raw_first_share.png",
+        "original_sha256": "e15c4f1d2fa9c8249f07bcf9fdc7419d12466472b615868bd1209693415388be",
+        "regenerated_sha256": "e15c4f1d2fa9c8249f07bcf9fdc7419d12466472b615868bd1209693415388be",
+        "byte_identical": true,
+        "bytes": 170874
+      },
+      {
+        "file": "figure9_phi_residual_spectrum.png",
+        "original_sha256": "170bb8a67d8d88acca23cb362b983bcfb8260607eb1a4e5eab5a8f4f7b54f60a",
+        "regenerated_sha256": "170bb8a67d8d88acca23cb362b983bcfb8260607eb1a4e5eab5a8f4f7b54f60a",
+        "byte_identical": true,
+        "bytes": 126385
+      },
+      {
+        "file": "figure10_phi_residual_first_share.png",
+        "original_sha256": "006d4fec6249f69b8b3beb9d1929cce0b06c178f442cc7602b32fcb5edf5b211",
+        "regenerated_sha256": "006d4fec6249f69b8b3beb9d1929cce0b06c178f442cc7602b32fcb5edf5b211",
+        "byte_identical": true,
+        "bytes": 161612
+      }
+    ],
+    "all_4_PNG_byte_identical": true,
+    "production_final_PNG_visual_check": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/figures/visual_inspection.json",
+    "production_all4_final_PNG_actually_viewed": true,
+    "PDF": "Both original and verification runs wrote4PDFs from same figures; PDF was not independently rasterized/viewed. PDF byte identity not claimed because metadata timestamps differ."
+  },
+  "math_source_check": "SOURCE PASS: 9 file(s), 0 issue(s); rendering and mathematical truth NOT checked.",
+  "math_rendering_verified": false,
+  "local_links_verified": 38,
+  "artifact_files_verified": 55,
+  "manifest_sha256": "f988f1154e34919cee5c2d6c34490cecc64d0885aebaced1d03eb4099121e1d0",
+  "new_training_updates": 0,
+  "new_model_forwards": 0,
+  "graph_parameter_changes": 0,
+  "new_branches": 0,
+  "prior_report_exact_prefix_preserved": true,
+  "forbidden_payloads": []
+}

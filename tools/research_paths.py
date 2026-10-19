@@ -159,7 +159,15 @@ def relocated(path: Path, mapping: dict[str, str], root: Path = ROOT) -> Path:
         relative = path.relative_to(root).as_posix()
     except ValueError:
         return path
-    return root / mapping.get(relative, relative)
+    # A previously relocated reading file may later be archived again.
+    # Follow its recorded destinations without rewriting historical entries.
+    visited = set()
+    while relative in mapping and mapping[relative] != relative:
+        if relative in visited:
+            raise ValueError(f"Cyclic research relocation: {relative}")
+        visited.add(relative)
+        relative = mapping[relative]
+    return root / relative
 
 
 def local_links(text: str, source: Path, root: Path = ROOT):

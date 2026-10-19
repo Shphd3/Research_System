@@ -1,0 +1,12 @@
+{
+  "status": "PASS_ORIGINAL_SCORER_EDGE_CASES",
+  "scorer_sha256": "935e0f2c0b7de3788ffe45e6fa0ab8b5c7e0073065aac43c86d6afcfe5f73d98",
+  "cases": {
+    "member_count_300_no_uint8_overflow": true,
+    "negative_maximum_still_selects_winner": true,
+    "equal_negative_scores_obey_saved_tie_order": true,
+    "nohit_winner_is_minus_one": true,
+    "zero_D_std_yields_score0": true
+  },
+  "scope": "Synthetic existing scorer qualification only; no hidden spectrum or model forward."
+}

@@ -1,0 +1,60 @@
+{
+  "spec": "context_diagnostic_spec.json",
+  "retained_groups": 136,
+  "excluded_group_ids": [
+    53,
+    59,
+    85,
+    109,
+    119,
+    127,
+    135,
+    152,
+    161
+  ],
+  "population": "same group IDs in all conditions, all original frozen samples retained",
+  "rules": {
+    "R": {
+      "first_share_original": 0.12549323195282416,
+      "first_share_residual": 0.08548093250654502,
+      "main_group_spearman": {
+        "first_share_original": {
+          "largest_context_position_fraction": 0.3464224290088706,
+          "group_size": 0.13299687268062474
+        },
+        "first_share_residual": {
+          "largest_context_position_fraction": 0.27655871465469845,
+          "group_size": 0.06456029095953944
+        }
+      }
+    },
+    "F": {
+      "first_share_original": 0.13171989471269066,
+      "first_share_residual": 0.09107482958335467,
+      "main_group_spearman": {
+        "first_share_original": {
+          "largest_context_position_fraction": 0.26161370039520654,
+          "group_size": -0.1784450654600659
+        },
+        "first_share_residual": {
+          "largest_context_position_fraction": 0.24626272326071924,
+          "group_size": -0.13229209254216187
+        }
+      }
+    },
+    "N": {
+      "first_share_original": 0.14033791682114627,
+      "first_share_residual": 0.09227337617968881,
+      "main_group_spearman": {
+        "first_share_original": {
+          "largest_context_position_fraction": 0.10412699198052978,
+          "group_size": 0.29162303459184646
+        },
+        "first_share_residual": {
+          "largest_context_position_fraction": 0.17496592275283923,
+          "group_size": 0.25911201285982166
+        }
+      }
+    }
+  }
+}

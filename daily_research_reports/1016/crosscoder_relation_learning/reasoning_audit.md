@@ -1,0 +1,37 @@
+# Continuous reasoning audit
+
+Processor: Codex /root, using the research-reasoning-auditor reasoning_audit_contract. This audit provides self-refutation and repairs; it does not grant scientific approval.
+
+## 2026-10-15T16:45Z: before execution
+
+- **Claim.** Relationship groups contain information beyond marginal frequency, and these combinations may help fixed experts learn low-frequency conditions more effectively. Keep structure and learning evidence separate, and distinguish local interventions from complete trajectories.
+- **Refutation 1.** Large groups were missing from the original mean-matched controls. Good results in the qualified subset do not establish the complete estimand. Repair with group-size-proportional budgets, conditional-uniform heat-bath updates and two-chain qualification; preserve old NA values and the new posthoc label.
+- **Refutation 2.** Phi graphs themselves prefer similar frequencies. Preserve row/column counts and rerun screening, graph construction, grouping and scoring. A sampled null explains only that sample, not the original complete graph. New zero-count smoothing is exploratory; do not rewrite the original strict result.
+- **Refutation 3.** The original frequency control tied on 99.896% of positions, so the comparison could primarily test the hash. Before observing learning loss, apply common D standardization and preserve the initial diagnosis. Do not subsequently choose scores based on winners.
+- **Refutation 4.** Equal parameter counts do not ensure equal load, and equal load does not ensure equal input-update interactions. Record actual loads; exchange with exact token-count conservation, then match norms per expert to distinguish local direction from magnitude. This local intervention still cannot identify all training root causes.
+- **Refutation 5.** The training origin is not new-document confirmation. CrossCoder encountered this TRAIN origin, so do not claim new-document generalization. Fix nonoverlapping contexts and record document independence as Unknown; scientific interpretation stays within the current budget and distribution.
+- **Refutation 6.** Rank 32 adapters being able to learn does not establish sufficient learning under this budget. Before interpreting a null result, check route diversity, gradients, primary-metric support and the zero baseline. Numerical failure is not a scientific negative result.
+
+Current conclusion: proceed with bounded structural supplements and exploratory learning without prejudging H1/H2. Persistent pre-execution receipts must still establish resource qualification and the actual common budget.
+
+## 2026-10-15T17:08Z: second refutation after measurement qualification
+
+Requiring complete bitmask identity across matrix shapes conflated causality with numerical invariance. Fixed-shape future replacement/zeroing is exactly invariant; FP32 truncation changes no gated events, while BF16 truncation changes a few events without changing routes. The actual conclusion is no future dependence in these finite tests plus BF16 shape sensitivity. It neither hides the FAIL nor extrapolates three positions to every input. Native full-model→cached-head zero error has now been verified.
+
+Original EVAL covered only 33.2% of the fixed low-feature list. Calling this the low quarter would conceal a small, more readily estimated subset. Before condition outcomes, expand EVAL once to 512 contexts based only on support counts, preserve the original version and keep TRAIN/budget unchanged. Report actual expanded support rather than claiming validation of every low-frequency feature.
+
+D loads are similar, but allocation can shift on new files. Equal per-expert token counts still do not establish equal update interactions. After optimal expert relabeling, the three routes agree on only about 26% of positions, excluding differences that merely rename experts. All 144 donor batches in intervention preflight exchange at least 64.1% of positions with unchanged counts in every bin/expert. Do not relax constraints based on measured effects.
+
+Local probes equally weight only low features appearing in that batch and qualified across full EVAL. Their support scope differs from the full-EVAL primary metric. They test local update causality and cannot substitute for a complete remeasurement of the primary metric. If R/F/N all favor their own trained routes, generic expert specialization remains an explanation; an R endpoint win alone does not establish reduced conflict.
+
+Update each bridge separately: co-occurrence→replicable organization, organization→learning benefit under the current K4 terminal allocation, and benefit→local update direction. Narrow any bridge lacking evidence rather than filling it with significance from another part of the study.
+
+## 2026-10-15T17:48Z: third self-refutation and independent audit after results
+
+1. **Structural support does not replace learning benefit.** Full 186-group matching and sampled B99 completed. Sample candidates require≥25/4096 hits and omit the dictionary's rarest tail; approximate p-values concern the new exploratory smoothed statistic, while original strict sampled Tb remains NA. Relatively stable local edges coexist with unstable hard communities; do not select only the observation favoring a narrative.
+2. **Condition rankings do not replace improvement over the original model.** Every registered nonzero endpoint in all nine runs is worse than the zero reference. R has worse low-feature loss than F in all three seeds and mixed direction against N; the predeclared benefit was not reached. The original mean low-feature conditional loss was also lower, rejecting representation frequency as a direct proxy for task difficulty.
+3. **Do not upgrade point estimates.** All nine D run-level mean actual−exchange point estimates are negative, including norm-matched versions; some batch-conditional intervals cross zero. Same-parameter pairing holds only within a seed/condition, while R/F/N midpoints differ. Do not claim a whole-trajectory effect or same-state causality across conditions.
+4. **Explicitly refute a convenient explanation we proposed.** Doubled L0 after raw direction removal largely involves the frozen-preprocessing offset. We then conjectured that adapter harm was likewise dominated by a TRAIN-constant response. Nine response counterfactuals reject that conjecture: removing this constant still leaves about 0.86 nat harm. The two means/operations differ, and the input-deviation component may retain an EVAL mean shift; not every calibration explanation is excluded.
+5. **Do not attribute every failure to one bad expert.** All 36 expert cells worsen on all three metrics, fixed-weight contributions conserve the total change, and every update has nonzero gradients. Harm is broad; the causal shares of training origin, repetition and optimization remain Unknown.
+
+Three independent agents responsible for structure, training and data reviewed the main report using the same reasoning skill. Repairs distinguish feature coordinates from activation events, qualify the summary's D quantifiers, bound cross-condition checkpoint comparisons, identify smoothed p-values as posthoc, and limit the proposed next readout to origin associations rather than transfer causality. English/Chinese companions follow their sources, with final values verified against CSVs and durable receipts. Missing human confirmation during the audit did not halt authorized work, and added controls did not rewrite the original H2 conclusion.

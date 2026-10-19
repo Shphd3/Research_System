@@ -1,0 +1,163 @@
+{
+  "status": "COMPLETE_PRIMARY_ANALYSIS_WITH_BOUNDED_AUXILIARY",
+  "recorded_at_utc": "2026-10-19T03:26:17.679340+00:00",
+  "processing_agent": "/root",
+  "job_id": "pt-96wch7l2",
+  "platform_terminal_status": "SUCCEEDED",
+  "execution_completion": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/completion.json",
+  "primary_counts": {
+    "status": "COMPLETE",
+    "seconds": 30.694169549271464,
+    "models": 20,
+    "experts_total": 160,
+    "exposure_qualified": 130,
+    "heldout_benefit": 49,
+    "zero_train": 26,
+    "spectral_metric_rows": 1170,
+    "response_PCA_experts": 130,
+    "pair_rows": 4350,
+    "singular_values_per_nonzero_matrix": 1024,
+    "actual_unique_SVDs": 682,
+    "first_epoch_input_config_matches": true,
+    "max_decomposition_test_vector_error": 1.0716409404591169e-14,
+    "max_basis_orthogonality_error": 2.6645352591003757e-14,
+    "max_energy_identity_error": 3.1189406841926218e-15,
+    "aggregation": "all experts/pairs are dependent within model; descriptive distributions, not independent replications",
+    "naming": "exposure-qualified is not convergence; heldout labels exploratory",
+    "down_initial_normalized_geometry": "NA"
+  },
+  "auxiliary": {
+    "status": "COMPLETE",
+    "seconds": 55.34066149033606,
+    "models": 20,
+    "expert_probes": 130,
+    "Base_CrossCoder_or_expert_forward": false,
+    "CPU_threads": 4,
+    "numerical_statuses": {
+      "PASS": 7,
+      "BOUNDED": 13
+    }
+  },
+  "frozen_files_unchanged": {
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/config/frozen.json": true,
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/protocol_cn.md": true,
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/protocol.md": true,
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/common.py": true
+  },
+  "input_checkpoint_stat_preservation": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed11/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed22/epoch1.pt",
+      "size_same": true,
+      "mtime_same": true
+    }
+  ],
+  "input_checkpoint_SHA256_evidence": "freshly computed in each per-model outputs/*/seed*/complete.json during analysis; final delivery checks size/mtime only",
+  "max_gpu_peak_allocated_bytes_per_worker": 757646336,
+  "max_worker_peak_RSS_bytes": 2061434880,
+  "four_worker_conservative_peak_RSS_sum_upper_bound": 8245739520,
+  "execution_payload_bytes": 890010799,
+  "new_training": false,
+  "new_checkpoint": false,
+  "scientific_approval": "Unknown",
+  "next_decision": "Unknown",
+  "local_links": "PASS",
+  "figure_legend_correction": "figure1 now labels light bars and left/right seed identity; data unchanged",
+  "followup_experiment": "NOT_RUN",
+  "selected_output_access": "PASS: evidence/asset_access_final.json (analysis and array assets only, not a whole library refresh)",
+  "figure_visual_review": "Primary rendered figures checked; figure1 legend corrected without changing data"
+}

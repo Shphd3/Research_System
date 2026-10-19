@@ -1,0 +1,1044 @@
+{
+  "status": "NOT_QUALIFIED",
+  "chains": [
+    {
+      "chain_id": 0,
+      "checkpoints": [
+        {
+          "accepted_per_nnz_target": 1,
+          "sides": {
+            "D": {
+              "accepted": 1054177,
+              "proposals": 1514194,
+              "accepted_per_nnz": 1.0,
+              "acceptance": 0.6961967885224747,
+              "original_edge_overlap": 0.24112459292889143,
+              "phi_quantiles": [
+                -0.009540040288978296,
+                -0.0022195901128465186,
+                0.018034686120926454,
+                0.06930518815272466
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 1040225,
+              "proposals": 1492789,
+              "accepted_per_nnz": 1.0,
+              "acceptance": 0.6968332430102312,
+              "original_edge_overlap": 0.24043163738614243,
+              "phi_quantiles": [
+                -0.00976072923314916,
+                -0.0022769339670035377,
+                0.01823234088226834,
+                0.0695322187947074
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "seconds": 8.324419867247343
+        },
+        {
+          "accepted_per_nnz_target": 2,
+          "sides": {
+            "D": {
+              "accepted": 2108354,
+              "proposals": 3030486,
+              "accepted_per_nnz": 2.0,
+              "acceptance": 0.6957148127396068,
+              "original_edge_overlap": 0.17214092130638403,
+              "phi_quantiles": [
+                -0.009830883759517873,
+                -0.0023032055509732085,
+                0.017405337306375224,
+                0.06239383517439094
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 2080450,
+              "proposals": 2989918,
+              "accepted_per_nnz": 2.0,
+              "acceptance": 0.6958217583224691,
+              "original_edge_overlap": 0.17135619697661564,
+              "phi_quantiles": [
+                -0.009642375029033156,
+                -0.0022224785481400728,
+                0.018318713401215627,
+                0.06120017777394062
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "seconds": 7.894406940788031
+        },
+        {
+          "accepted_per_nnz_target": 4,
+          "sides": {
+            "D": {
+              "accepted": 4216708,
+              "proposals": 6062734,
+              "accepted_per_nnz": 4.0,
+              "acceptance": 0.6955126185644959,
+              "original_edge_overlap": 0.16414985339274143,
+              "phi_quantiles": [
+                -0.009505406598725927,
+                -0.0022444401238024035,
+                0.01832520787439349,
+                0.06398869923370129
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 4160900,
+              "proposals": 5983181,
+              "accepted_per_nnz": 4.0,
+              "acceptance": 0.6954327472292748,
+              "original_edge_overlap": 0.1646182316325795,
+              "phi_quantiles": [
+                -0.009627625264762818,
+                -0.0022817002121552805,
+                0.017889630121513872,
+                0.06654544608970132
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "endpoint": {
+            "T_a": 0.03494212646695791,
+            "T_b": null,
+            "candidate_count": 6781,
+            "groups_D": 40,
+            "groups_V": 122,
+            "summary": {
+              "N_D": 4096,
+              "N_V": 4096,
+              "F": 16384,
+              "T_a": 0.03494212646695791,
+              "T_b": null,
+              "T_b_strict_all_groups": true,
+              "T_b_reason": "MISSING_REAL_OR_MEANMATCHED_CONTROL",
+              "T_b_estimable_groups_only_descriptive": 0.01742872170671675,
+              "nontrivial_D_groups": 18,
+              "estimable_real_groups": 17,
+              "T_b_eligible_groups": 6,
+              "nontrivial_members": 6759,
+              "T_b_eligible_member_coverage": 0.09069388962864329,
+              "random_repetitions": 20,
+              "mean_match_tolerance_dex": 0.1,
+              "mean_match_max_attempts": 10000,
+              "mean_match_min_accepted": 20,
+              "control_sampling": "Simple size controls: uniform permutation of P. Mean-matched controls: D-only symmetric group-membership swaps initialized at real D group, constrained mean +/-tolerance, burn-in exactly10*size proposals; >=size accepted swaps qualifies without extending burn-in. Keep every size-proposal scheduled draw including rejections/self-loops/repeats; qualify whole chain by final initial Jaccard<=0.5 (never filter individual draws). MCMC approximation; samples correlated and global constrained-state mixing not established. V-missing controls are never redrawn; any inadequate group makes strict T_b undefined.",
+              "graph_D": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6781,
+                "edges": 24631,
+                "groups": 40,
+                "nontrivial_groups": 18,
+                "nontrivial_members": 6759,
+                "largest_group_size": 789,
+                "largest_group_share": 0.11635451998230349,
+                "modularity": 0.37264559794510016,
+                "q": 10
+              },
+              "graph_V": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6780,
+                "edges": 24325,
+                "groups": 122,
+                "nontrivial_groups": 18,
+                "nontrivial_members": 6677,
+                "largest_group_size": 758,
+                "largest_group_share": 0.11178292287273263,
+                "modularity": 0.36958242906619787,
+                "q": 10
+              },
+              "networkx_version": "2.6.3",
+              "elapsed_seconds": 51.07343607023358,
+              "independence": "Exposed within-bin blocks; original-document independence UNKNOWN",
+              "T_a_direction": "D nontrivial groups matched one-to-one to V nontrivial groups; unmatched D=0",
+              "config": {
+                "run_id": "20261015T143300Z",
+                "frozen_utc": "2026-10-15T14:36:00.258280+00:00",
+                "authorization": "Current user explicitly requested execution, hypothesis checks, five figures and analysis. Scope: cached H1 structural/frequency analysis only; H2 learning is planning only.",
+                "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+                "source_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/feature_frequency",
+                "prior_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "execution_profile": "cpu-only-local",
+                "wall_seconds_ceiling": 3600,
+                "qualification_seconds_ceiling": 1800,
+                "rss_gib_ceiling": 32,
+                "cpu_workers": 8,
+                "seed": 20261015,
+                "q": 10,
+                "q_sensitivity": 20,
+                "resolution": 1.0,
+                "candidate_min_hits": 100,
+                "candidate_min_D_blocks": 10,
+                "joint_min": 5,
+                "bootstrap_repetitions": 1000,
+                "random_repetitions": 20,
+                "mean_match_tolerance": 0.1,
+                "mean_match_max_attempts": 10000,
+                "mean_match_min_accepted": 20,
+                "mean_match_method": "D-only fixed-size within-mean-interval symmetric membership-swap MCMC; initialized at original D group; random member/nonmember proposals; reject outside target D mean +/- tolerance; no V selection",
+                "mean_match_burnin_proposals_per_member": 10,
+                "mean_match_burnin_min_accepted_per_member": 1,
+                "mean_match_max_initial_jaccard": 0.5,
+                "mean_match_missing_rule": "Preserve every D non-singleton group. Undefined observed or any null T_b under common coverage rule makes primary H1b calibration insufficient. No selective null filtering or resampling.",
+                "input_tail_probability": 0.01,
+                "input_min_active_members": 2,
+                "text_random_per_group": 5,
+                "text_high_per_group": 5,
+                "plot_max_feature_ids": 300,
+                "display_group_rule": "D size descending, stable IDs and deterministic per-group hash quotas",
+                "sample": {
+                  "contexts_per_side": 128,
+                  "positions_per_context": 32,
+                  "candidate_min_hits": 25,
+                  "candidate_min_contexts": 8,
+                  "joint_min": 5,
+                  "q": 10,
+                  "resolution": 1.0,
+                  "random_repetitions": 20,
+                  "mean_match_tolerance": 0.1,
+                  "mean_match_max_attempts": 10000,
+                  "mean_match_min_accepted": 20,
+                  "seed": 20261015
+                },
+                "null": {
+                  "B": 99,
+                  "chains": 2,
+                  "qualification_max_null_pairs": 4,
+                  "checkpoints_accepted_swaps_per_nnz": [
+                    1,
+                    2,
+                    4,
+                    8
+                  ],
+                  "checkpoint_drift_relative_tolerance": 0.1,
+                  "chain_relative_difference_tolerance": 0.1,
+                  "minimum_acceptance_rate": 0.05,
+                  "summary_scale_floor": 0.02,
+                  "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                  "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                  "qualification_endpoint_checkpoints": [
+                    4,
+                    8
+                  ],
+                  "diagnostic_absolute_tolerance": 0.01,
+                  "endpoint_absolute_tolerance": 0.02,
+                  "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                  "formal_burnin_proposals_per_nnz": 32,
+                  "formal_spacing_proposals_per_nnz": 4
+                },
+                "familywise_alpha_proposal": 0.05,
+                "practical_effect_thresholds": "UNKNOWN: report effect size/uncertainty, no researcher-confirmed scientific PASS or practical-equivalence claim.",
+                "independence": "exposed D/V within same bin; original documents/near duplicates UNKNOWN",
+                "h2_training": "NOT_RUN_NOT_AUTHORIZED",
+                "execution_authorized": true,
+                "mean_match_record_spacing_proposals_per_member": 1,
+                "mean_match_burnin_rule": "Exactly10*size proposals including rejections; acceptance>=size is qualification only, not a random stopping time. Fixed proposal intervals preserve self-loops.",
+                "mean_match_jaccard_rule": "Qualification of whole matched chain after fixed burn-in, not individual draw rejection. Retain all scheduled draws including repeats. If chain insufficient, entire group match insufficient.",
+                "sampling_correction": {
+                  "utc": "2026-10-15T14:39:07.175382+00:00",
+                  "basis": "Pre-endpoint reasoning audit: sampling after fixed accepted swaps creates an acceptance-biased jump chain. Formal retention must use fixed proposals including rejected self-loops. Qualification accepted-count checkpoints remain diagnostic only.",
+                  "pre_endpoint": true
+                },
+                "B": 99,
+                "chains": 2,
+                "qualification_max_null_pairs": 4,
+                "checkpoints_accepted_swaps_per_nnz": [
+                  1,
+                  2,
+                  4,
+                  8
+                ],
+                "checkpoint_drift_relative_tolerance": 0.1,
+                "chain_relative_difference_tolerance": 0.1,
+                "minimum_acceptance_rate": 0.05,
+                "summary_scale_floor": 0.02,
+                "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                "qualification_endpoint_checkpoints": [
+                  4,
+                  8
+                ],
+                "diagnostic_absolute_tolerance": 0.01,
+                "endpoint_absolute_tolerance": 0.02,
+                "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                "formal_burnin_proposals_per_nnz": 32,
+                "formal_spacing_proposals_per_nnz": 4,
+                "sample_contexts_per_side": 128,
+                "sample_positions_per_context": 32,
+                "sample_n_min": 25,
+                "sample_context_min": 8,
+                "sample_joint_min": 5,
+                "sample_random_repetitions": 20,
+                "old_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "qualification_seconds": 1800,
+                "formal_seconds": 3600,
+                "ram_gib": 32,
+                "null_repetitions": 99,
+                "execution_start_epoch": 1792075303.858525
+              }
+            },
+            "endpoint_seconds": 51.07348044030368
+          },
+          "seconds": 59.71034986525774
+        },
+        {
+          "accepted_per_nnz_target": 8,
+          "sides": {
+            "D": {
+              "accepted": 8433416,
+              "proposals": 12122417,
+              "accepted_per_nnz": 8.0,
+              "acceptance": 0.6956876669066903,
+              "original_edge_overlap": 0.1642949903099764,
+              "phi_quantiles": [
+                -0.009554312060453577,
+                -0.0022335274230422648,
+                0.01705457963515539,
+                0.06320652614586551
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 8321800,
+              "proposals": 11967221,
+              "accepted_per_nnz": 8.0,
+              "acceptance": 0.6953828294806288,
+              "original_edge_overlap": 0.16394433896512775,
+              "phi_quantiles": [
+                -0.009393900172304338,
+                -0.0022224785481400728,
+                0.019026291362402144,
+                0.061786830279327916
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "endpoint": {
+            "T_a": 0.03501848273494611,
+            "T_b": null,
+            "candidate_count": 6781,
+            "groups_D": 50,
+            "groups_V": 106,
+            "summary": {
+              "N_D": 4096,
+              "N_V": 4096,
+              "F": 16384,
+              "T_a": 0.03501848273494611,
+              "T_b": null,
+              "T_b_strict_all_groups": true,
+              "T_b_reason": "MISSING_REAL_OR_MEANMATCHED_CONTROL",
+              "T_b_estimable_groups_only_descriptive": 0.05061779997424054,
+              "nontrivial_D_groups": 18,
+              "estimable_real_groups": 17,
+              "T_b_eligible_groups": 7,
+              "nontrivial_members": 6749,
+              "T_b_eligible_member_coverage": 0.07334419914061342,
+              "random_repetitions": 20,
+              "mean_match_tolerance_dex": 0.1,
+              "mean_match_max_attempts": 10000,
+              "mean_match_min_accepted": 20,
+              "control_sampling": "Simple size controls: uniform permutation of P. Mean-matched controls: D-only symmetric group-membership swaps initialized at real D group, constrained mean +/-tolerance, burn-in exactly10*size proposals; >=size accepted swaps qualifies without extending burn-in. Keep every size-proposal scheduled draw including rejections/self-loops/repeats; qualify whole chain by final initial Jaccard<=0.5 (never filter individual draws). MCMC approximation; samples correlated and global constrained-state mixing not established. V-missing controls are never redrawn; any inadequate group makes strict T_b undefined.",
+              "graph_D": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6781,
+                "edges": 24665,
+                "groups": 50,
+                "nontrivial_groups": 18,
+                "nontrivial_members": 6749,
+                "largest_group_size": 792,
+                "largest_group_share": 0.11679693260581035,
+                "modularity": 0.37144305610216155,
+                "q": 10
+              },
+              "graph_V": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6780,
+                "edges": 24304,
+                "groups": 106,
+                "nontrivial_groups": 17,
+                "nontrivial_members": 6692,
+                "largest_group_size": 778,
+                "largest_group_share": 0.11473234036277835,
+                "modularity": 0.3703614123646788,
+                "q": 10
+              },
+              "networkx_version": "2.6.3",
+              "elapsed_seconds": 51.59011537954211,
+              "independence": "Exposed within-bin blocks; original-document independence UNKNOWN",
+              "T_a_direction": "D nontrivial groups matched one-to-one to V nontrivial groups; unmatched D=0",
+              "config": {
+                "run_id": "20261015T143300Z",
+                "frozen_utc": "2026-10-15T14:36:00.258280+00:00",
+                "authorization": "Current user explicitly requested execution, hypothesis checks, five figures and analysis. Scope: cached H1 structural/frequency analysis only; H2 learning is planning only.",
+                "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+                "source_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/feature_frequency",
+                "prior_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "execution_profile": "cpu-only-local",
+                "wall_seconds_ceiling": 3600,
+                "qualification_seconds_ceiling": 1800,
+                "rss_gib_ceiling": 32,
+                "cpu_workers": 8,
+                "seed": 20261015,
+                "q": 10,
+                "q_sensitivity": 20,
+                "resolution": 1.0,
+                "candidate_min_hits": 100,
+                "candidate_min_D_blocks": 10,
+                "joint_min": 5,
+                "bootstrap_repetitions": 1000,
+                "random_repetitions": 20,
+                "mean_match_tolerance": 0.1,
+                "mean_match_max_attempts": 10000,
+                "mean_match_min_accepted": 20,
+                "mean_match_method": "D-only fixed-size within-mean-interval symmetric membership-swap MCMC; initialized at original D group; random member/nonmember proposals; reject outside target D mean +/- tolerance; no V selection",
+                "mean_match_burnin_proposals_per_member": 10,
+                "mean_match_burnin_min_accepted_per_member": 1,
+                "mean_match_max_initial_jaccard": 0.5,
+                "mean_match_missing_rule": "Preserve every D non-singleton group. Undefined observed or any null T_b under common coverage rule makes primary H1b calibration insufficient. No selective null filtering or resampling.",
+                "input_tail_probability": 0.01,
+                "input_min_active_members": 2,
+                "text_random_per_group": 5,
+                "text_high_per_group": 5,
+                "plot_max_feature_ids": 300,
+                "display_group_rule": "D size descending, stable IDs and deterministic per-group hash quotas",
+                "sample": {
+                  "contexts_per_side": 128,
+                  "positions_per_context": 32,
+                  "candidate_min_hits": 25,
+                  "candidate_min_contexts": 8,
+                  "joint_min": 5,
+                  "q": 10,
+                  "resolution": 1.0,
+                  "random_repetitions": 20,
+                  "mean_match_tolerance": 0.1,
+                  "mean_match_max_attempts": 10000,
+                  "mean_match_min_accepted": 20,
+                  "seed": 20261015
+                },
+                "null": {
+                  "B": 99,
+                  "chains": 2,
+                  "qualification_max_null_pairs": 4,
+                  "checkpoints_accepted_swaps_per_nnz": [
+                    1,
+                    2,
+                    4,
+                    8
+                  ],
+                  "checkpoint_drift_relative_tolerance": 0.1,
+                  "chain_relative_difference_tolerance": 0.1,
+                  "minimum_acceptance_rate": 0.05,
+                  "summary_scale_floor": 0.02,
+                  "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                  "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                  "qualification_endpoint_checkpoints": [
+                    4,
+                    8
+                  ],
+                  "diagnostic_absolute_tolerance": 0.01,
+                  "endpoint_absolute_tolerance": 0.02,
+                  "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                  "formal_burnin_proposals_per_nnz": 32,
+                  "formal_spacing_proposals_per_nnz": 4
+                },
+                "familywise_alpha_proposal": 0.05,
+                "practical_effect_thresholds": "UNKNOWN: report effect size/uncertainty, no researcher-confirmed scientific PASS or practical-equivalence claim.",
+                "independence": "exposed D/V within same bin; original documents/near duplicates UNKNOWN",
+                "h2_training": "NOT_RUN_NOT_AUTHORIZED",
+                "execution_authorized": true,
+                "mean_match_record_spacing_proposals_per_member": 1,
+                "mean_match_burnin_rule": "Exactly10*size proposals including rejections; acceptance>=size is qualification only, not a random stopping time. Fixed proposal intervals preserve self-loops.",
+                "mean_match_jaccard_rule": "Qualification of whole matched chain after fixed burn-in, not individual draw rejection. Retain all scheduled draws including repeats. If chain insufficient, entire group match insufficient.",
+                "sampling_correction": {
+                  "utc": "2026-10-15T14:39:07.175382+00:00",
+                  "basis": "Pre-endpoint reasoning audit: sampling after fixed accepted swaps creates an acceptance-biased jump chain. Formal retention must use fixed proposals including rejected self-loops. Qualification accepted-count checkpoints remain diagnostic only.",
+                  "pre_endpoint": true
+                },
+                "B": 99,
+                "chains": 2,
+                "qualification_max_null_pairs": 4,
+                "checkpoints_accepted_swaps_per_nnz": [
+                  1,
+                  2,
+                  4,
+                  8
+                ],
+                "checkpoint_drift_relative_tolerance": 0.1,
+                "chain_relative_difference_tolerance": 0.1,
+                "minimum_acceptance_rate": 0.05,
+                "summary_scale_floor": 0.02,
+                "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                "qualification_endpoint_checkpoints": [
+                  4,
+                  8
+                ],
+                "diagnostic_absolute_tolerance": 0.01,
+                "endpoint_absolute_tolerance": 0.02,
+                "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                "formal_burnin_proposals_per_nnz": 32,
+                "formal_spacing_proposals_per_nnz": 4,
+                "sample_contexts_per_side": 128,
+                "sample_positions_per_context": 32,
+                "sample_n_min": 25,
+                "sample_context_min": 8,
+                "sample_joint_min": 5,
+                "sample_random_repetitions": 20,
+                "old_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "qualification_seconds": 1800,
+                "formal_seconds": 3600,
+                "ram_gib": 32,
+                "null_repetitions": 99,
+                "execution_start_epoch": 1792075303.858525
+              }
+            },
+            "endpoint_seconds": 51.59014726430178
+          },
+          "seconds": 61.23491773754358
+        }
+      ]
+    },
+    {
+      "chain_id": 1,
+      "checkpoints": [
+        {
+          "accepted_per_nnz_target": 1,
+          "sides": {
+            "D": {
+              "accepted": 1054177,
+              "proposals": 1512127,
+              "accepted_per_nnz": 1.0,
+              "acceptance": 0.6971484538005075,
+              "original_edge_overlap": 0.24061329359301142,
+              "phi_quantiles": [
+                -0.0095350257067998,
+                -0.0022496960805623227,
+                0.017265205174842188,
+                0.06200757537492296
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 1040225,
+              "proposals": 1493589,
+              "accepted_per_nnz": 1.0,
+              "acceptance": 0.6964600033878129,
+              "original_edge_overlap": 0.24101035833593693,
+              "phi_quantiles": [
+                -0.009757358871701243,
+                -0.0022766014314699336,
+                0.01830985142561976,
+                0.06816745475142474
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "seconds": 8.583178356289864
+        },
+        {
+          "accepted_per_nnz_target": 2,
+          "sides": {
+            "D": {
+              "accepted": 2108354,
+              "proposals": 3028757,
+              "accepted_per_nnz": 2.0,
+              "acceptance": 0.6961119693656507,
+              "original_edge_overlap": 0.17163246779241056,
+              "phi_quantiles": [
+                -0.009556267809103021,
+                -0.0022444401238024035,
+                0.01794252797556673,
+                0.06044083176670808
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 2080450,
+              "proposals": 2989223,
+              "accepted_per_nnz": 2.0,
+              "acceptance": 0.6959835381970498,
+              "original_edge_overlap": 0.17139657285683385,
+              "phi_quantiles": [
+                -0.00969630302388036,
+                -0.002299794531326202,
+                0.016715777583616382,
+                0.06300575891331582
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "seconds": 8.546820938587189
+        },
+        {
+          "accepted_per_nnz_target": 4,
+          "sides": {
+            "D": {
+              "accepted": 4216708,
+              "proposals": 6059940,
+              "accepted_per_nnz": 4.0,
+              "acceptance": 0.6958332920787995,
+              "original_edge_overlap": 0.16449514645073834,
+              "phi_quantiles": [
+                -0.009580730998395261,
+                -0.0022766014314699336,
+                0.017653943936095238,
+                0.06906105280824902
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 4160900,
+              "proposals": 5982714,
+              "accepted_per_nnz": 4.0,
+              "acceptance": 0.6954870314710013,
+              "original_edge_overlap": 0.16434329111490303,
+              "phi_quantiles": [
+                -0.009486745461222112,
+                -0.0022766014314699336,
+                0.016898580812188185,
+                0.05887040871674154
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "endpoint": {
+            "T_a": 0.038634348154226554,
+            "T_b": null,
+            "candidate_count": 6781,
+            "groups_D": 33,
+            "groups_V": 120,
+            "summary": {
+              "N_D": 4096,
+              "N_V": 4096,
+              "F": 16384,
+              "T_a": 0.038634348154226554,
+              "T_b": null,
+              "T_b_strict_all_groups": true,
+              "T_b_reason": "MISSING_REAL_OR_MEANMATCHED_CONTROL",
+              "T_b_estimable_groups_only_descriptive": 0.002743216837625191,
+              "nontrivial_D_groups": 16,
+              "estimable_real_groups": 15,
+              "T_b_eligible_groups": 4,
+              "nontrivial_members": 6764,
+              "T_b_eligible_member_coverage": 0.04050857480780603,
+              "random_repetitions": 20,
+              "mean_match_tolerance_dex": 0.1,
+              "mean_match_max_attempts": 10000,
+              "mean_match_min_accepted": 20,
+              "control_sampling": "Simple size controls: uniform permutation of P. Mean-matched controls: D-only symmetric group-membership swaps initialized at real D group, constrained mean +/-tolerance, burn-in exactly10*size proposals; >=size accepted swaps qualifies without extending burn-in. Keep every size-proposal scheduled draw including rejections/self-loops/repeats; qualify whole chain by final initial Jaccard<=0.5 (never filter individual draws). MCMC approximation; samples correlated and global constrained-state mixing not established. V-missing controls are never redrawn; any inadequate group makes strict T_b undefined.",
+              "graph_D": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6781,
+                "edges": 24746,
+                "groups": 33,
+                "nontrivial_groups": 16,
+                "nontrivial_members": 6764,
+                "largest_group_size": 813,
+                "largest_group_share": 0.11989382097035835,
+                "modularity": 0.3702025540011386,
+                "q": 10
+              },
+              "graph_V": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6780,
+                "edges": 24253,
+                "groups": 120,
+                "nontrivial_groups": 17,
+                "nontrivial_members": 6678,
+                "largest_group_size": 807,
+                "largest_group_share": 0.11900899572334464,
+                "modularity": 0.3721344201377189,
+                "q": 10
+              },
+              "networkx_version": "2.6.3",
+              "elapsed_seconds": 52.37836270965636,
+              "independence": "Exposed within-bin blocks; original-document independence UNKNOWN",
+              "T_a_direction": "D nontrivial groups matched one-to-one to V nontrivial groups; unmatched D=0",
+              "config": {
+                "run_id": "20261015T143300Z",
+                "frozen_utc": "2026-10-15T14:36:00.258280+00:00",
+                "authorization": "Current user explicitly requested execution, hypothesis checks, five figures and analysis. Scope: cached H1 structural/frequency analysis only; H2 learning is planning only.",
+                "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+                "source_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/feature_frequency",
+                "prior_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "execution_profile": "cpu-only-local",
+                "wall_seconds_ceiling": 3600,
+                "qualification_seconds_ceiling": 1800,
+                "rss_gib_ceiling": 32,
+                "cpu_workers": 8,
+                "seed": 20261015,
+                "q": 10,
+                "q_sensitivity": 20,
+                "resolution": 1.0,
+                "candidate_min_hits": 100,
+                "candidate_min_D_blocks": 10,
+                "joint_min": 5,
+                "bootstrap_repetitions": 1000,
+                "random_repetitions": 20,
+                "mean_match_tolerance": 0.1,
+                "mean_match_max_attempts": 10000,
+                "mean_match_min_accepted": 20,
+                "mean_match_method": "D-only fixed-size within-mean-interval symmetric membership-swap MCMC; initialized at original D group; random member/nonmember proposals; reject outside target D mean +/- tolerance; no V selection",
+                "mean_match_burnin_proposals_per_member": 10,
+                "mean_match_burnin_min_accepted_per_member": 1,
+                "mean_match_max_initial_jaccard": 0.5,
+                "mean_match_missing_rule": "Preserve every D non-singleton group. Undefined observed or any null T_b under common coverage rule makes primary H1b calibration insufficient. No selective null filtering or resampling.",
+                "input_tail_probability": 0.01,
+                "input_min_active_members": 2,
+                "text_random_per_group": 5,
+                "text_high_per_group": 5,
+                "plot_max_feature_ids": 300,
+                "display_group_rule": "D size descending, stable IDs and deterministic per-group hash quotas",
+                "sample": {
+                  "contexts_per_side": 128,
+                  "positions_per_context": 32,
+                  "candidate_min_hits": 25,
+                  "candidate_min_contexts": 8,
+                  "joint_min": 5,
+                  "q": 10,
+                  "resolution": 1.0,
+                  "random_repetitions": 20,
+                  "mean_match_tolerance": 0.1,
+                  "mean_match_max_attempts": 10000,
+                  "mean_match_min_accepted": 20,
+                  "seed": 20261015
+                },
+                "null": {
+                  "B": 99,
+                  "chains": 2,
+                  "qualification_max_null_pairs": 4,
+                  "checkpoints_accepted_swaps_per_nnz": [
+                    1,
+                    2,
+                    4,
+                    8
+                  ],
+                  "checkpoint_drift_relative_tolerance": 0.1,
+                  "chain_relative_difference_tolerance": 0.1,
+                  "minimum_acceptance_rate": 0.05,
+                  "summary_scale_floor": 0.02,
+                  "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                  "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                  "qualification_endpoint_checkpoints": [
+                    4,
+                    8
+                  ],
+                  "diagnostic_absolute_tolerance": 0.01,
+                  "endpoint_absolute_tolerance": 0.02,
+                  "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                  "formal_burnin_proposals_per_nnz": 32,
+                  "formal_spacing_proposals_per_nnz": 4
+                },
+                "familywise_alpha_proposal": 0.05,
+                "practical_effect_thresholds": "UNKNOWN: report effect size/uncertainty, no researcher-confirmed scientific PASS or practical-equivalence claim.",
+                "independence": "exposed D/V within same bin; original documents/near duplicates UNKNOWN",
+                "h2_training": "NOT_RUN_NOT_AUTHORIZED",
+                "execution_authorized": true,
+                "mean_match_record_spacing_proposals_per_member": 1,
+                "mean_match_burnin_rule": "Exactly10*size proposals including rejections; acceptance>=size is qualification only, not a random stopping time. Fixed proposal intervals preserve self-loops.",
+                "mean_match_jaccard_rule": "Qualification of whole matched chain after fixed burn-in, not individual draw rejection. Retain all scheduled draws including repeats. If chain insufficient, entire group match insufficient.",
+                "sampling_correction": {
+                  "utc": "2026-10-15T14:39:07.175382+00:00",
+                  "basis": "Pre-endpoint reasoning audit: sampling after fixed accepted swaps creates an acceptance-biased jump chain. Formal retention must use fixed proposals including rejected self-loops. Qualification accepted-count checkpoints remain diagnostic only.",
+                  "pre_endpoint": true
+                },
+                "B": 99,
+                "chains": 2,
+                "qualification_max_null_pairs": 4,
+                "checkpoints_accepted_swaps_per_nnz": [
+                  1,
+                  2,
+                  4,
+                  8
+                ],
+                "checkpoint_drift_relative_tolerance": 0.1,
+                "chain_relative_difference_tolerance": 0.1,
+                "minimum_acceptance_rate": 0.05,
+                "summary_scale_floor": 0.02,
+                "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                "qualification_endpoint_checkpoints": [
+                  4,
+                  8
+                ],
+                "diagnostic_absolute_tolerance": 0.01,
+                "endpoint_absolute_tolerance": 0.02,
+                "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                "formal_burnin_proposals_per_nnz": 32,
+                "formal_spacing_proposals_per_nnz": 4,
+                "sample_contexts_per_side": 128,
+                "sample_positions_per_context": 32,
+                "sample_n_min": 25,
+                "sample_context_min": 8,
+                "sample_joint_min": 5,
+                "sample_random_repetitions": 20,
+                "old_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "qualification_seconds": 1800,
+                "formal_seconds": 3600,
+                "ram_gib": 32,
+                "null_repetitions": 99,
+                "execution_start_epoch": 1792075303.858525
+              }
+            },
+            "endpoint_seconds": 52.37839638069272
+          },
+          "seconds": 61.20730385184288
+        },
+        {
+          "accepted_per_nnz_target": 8,
+          "sides": {
+            "D": {
+              "accepted": 8433416,
+              "proposals": 12123972,
+              "accepted_per_nnz": 8.0,
+              "acceptance": 0.6955984391913805,
+              "original_edge_overlap": 0.16418779768482902,
+              "phi_quantiles": [
+                -0.009684245874348543,
+                -0.0022766014314699336,
+                0.01703786121595348,
+                0.0621158182224954
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            },
+            "V": {
+              "accepted": 8321800,
+              "proposals": 11967013,
+              "accepted_per_nnz": 8.0,
+              "acceptance": 0.6953949160078626,
+              "original_edge_overlap": 0.16446634141652047,
+              "phi_quantiles": [
+                -0.009725419841139993,
+                -0.0022766014314699336,
+                0.017650127598324798,
+                0.05922790374481693
+              ],
+              "row_margins_equal": true,
+              "column_margins_equal": true
+            }
+          },
+          "endpoint": {
+            "T_a": 0.040795703196593126,
+            "T_b": null,
+            "candidate_count": 6781,
+            "groups_D": 34,
+            "groups_V": 111,
+            "summary": {
+              "N_D": 4096,
+              "N_V": 4096,
+              "F": 16384,
+              "T_a": 0.040795703196593126,
+              "T_b": null,
+              "T_b_strict_all_groups": true,
+              "T_b_reason": "MISSING_REAL_OR_MEANMATCHED_CONTROL",
+              "T_b_estimable_groups_only_descriptive": 0.034651394576817145,
+              "nontrivial_D_groups": 15,
+              "estimable_real_groups": 14,
+              "T_b_eligible_groups": 6,
+              "nontrivial_members": 6762,
+              "T_b_eligible_member_coverage": 0.1518781425613724,
+              "random_repetitions": 20,
+              "mean_match_tolerance_dex": 0.1,
+              "mean_match_max_attempts": 10000,
+              "mean_match_min_accepted": 20,
+              "control_sampling": "Simple size controls: uniform permutation of P. Mean-matched controls: D-only symmetric group-membership swaps initialized at real D group, constrained mean +/-tolerance, burn-in exactly10*size proposals; >=size accepted swaps qualifies without extending burn-in. Keep every size-proposal scheduled draw including rejections/self-loops/repeats; qualify whole chain by final initial Jaccard<=0.5 (never filter individual draws). MCMC approximation; samples correlated and global constrained-state mixing not established. V-missing controls are never redrawn; any inadequate group makes strict T_b undefined.",
+              "graph_D": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6781,
+                "edges": 24841,
+                "groups": 34,
+                "nontrivial_groups": 15,
+                "nontrivial_members": 6762,
+                "largest_group_size": 813,
+                "largest_group_share": 0.11989382097035835,
+                "modularity": 0.36998216355091745,
+                "q": 10
+              },
+              "graph_V": {
+                "candidate_count": 6781,
+                "estimable_candidate_count": 6780,
+                "edges": 24191,
+                "groups": 111,
+                "nontrivial_groups": 15,
+                "nontrivial_members": 6685,
+                "largest_group_size": 856,
+                "largest_group_share": 0.12623506857395664,
+                "modularity": 0.3726667595719856,
+                "q": 10
+              },
+              "networkx_version": "2.6.3",
+              "elapsed_seconds": 52.732646465301514,
+              "independence": "Exposed within-bin blocks; original-document independence UNKNOWN",
+              "T_a_direction": "D nontrivial groups matched one-to-one to V nontrivial groups; unmatched D=0",
+              "config": {
+                "run_id": "20261015T143300Z",
+                "frozen_utc": "2026-10-15T14:36:00.258280+00:00",
+                "authorization": "Current user explicitly requested execution, hypothesis checks, five figures and analysis. Scope: cached H1 structural/frequency analysis only; H2 learning is planning only.",
+                "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z",
+                "source_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/feature_frequency",
+                "prior_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "execution_profile": "cpu-only-local",
+                "wall_seconds_ceiling": 3600,
+                "qualification_seconds_ceiling": 1800,
+                "rss_gib_ceiling": 32,
+                "cpu_workers": 8,
+                "seed": 20261015,
+                "q": 10,
+                "q_sensitivity": 20,
+                "resolution": 1.0,
+                "candidate_min_hits": 100,
+                "candidate_min_D_blocks": 10,
+                "joint_min": 5,
+                "bootstrap_repetitions": 1000,
+                "random_repetitions": 20,
+                "mean_match_tolerance": 0.1,
+                "mean_match_max_attempts": 10000,
+                "mean_match_min_accepted": 20,
+                "mean_match_method": "D-only fixed-size within-mean-interval symmetric membership-swap MCMC; initialized at original D group; random member/nonmember proposals; reject outside target D mean +/- tolerance; no V selection",
+                "mean_match_burnin_proposals_per_member": 10,
+                "mean_match_burnin_min_accepted_per_member": 1,
+                "mean_match_max_initial_jaccard": 0.5,
+                "mean_match_missing_rule": "Preserve every D non-singleton group. Undefined observed or any null T_b under common coverage rule makes primary H1b calibration insufficient. No selective null filtering or resampling.",
+                "input_tail_probability": 0.01,
+                "input_min_active_members": 2,
+                "text_random_per_group": 5,
+                "text_high_per_group": 5,
+                "plot_max_feature_ids": 300,
+                "display_group_rule": "D size descending, stable IDs and deterministic per-group hash quotas",
+                "sample": {
+                  "contexts_per_side": 128,
+                  "positions_per_context": 32,
+                  "candidate_min_hits": 25,
+                  "candidate_min_contexts": 8,
+                  "joint_min": 5,
+                  "q": 10,
+                  "resolution": 1.0,
+                  "random_repetitions": 20,
+                  "mean_match_tolerance": 0.1,
+                  "mean_match_max_attempts": 10000,
+                  "mean_match_min_accepted": 20,
+                  "seed": 20261015
+                },
+                "null": {
+                  "B": 99,
+                  "chains": 2,
+                  "qualification_max_null_pairs": 4,
+                  "checkpoints_accepted_swaps_per_nnz": [
+                    1,
+                    2,
+                    4,
+                    8
+                  ],
+                  "checkpoint_drift_relative_tolerance": 0.1,
+                  "chain_relative_difference_tolerance": 0.1,
+                  "minimum_acceptance_rate": 0.05,
+                  "summary_scale_floor": 0.02,
+                  "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                  "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                  "qualification_endpoint_checkpoints": [
+                    4,
+                    8
+                  ],
+                  "diagnostic_absolute_tolerance": 0.01,
+                  "endpoint_absolute_tolerance": 0.02,
+                  "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                  "formal_burnin_proposals_per_nnz": 32,
+                  "formal_spacing_proposals_per_nnz": 4
+                },
+                "familywise_alpha_proposal": 0.05,
+                "practical_effect_thresholds": "UNKNOWN: report effect size/uncertainty, no researcher-confirmed scientific PASS or practical-equivalence claim.",
+                "independence": "exposed D/V within same bin; original documents/near duplicates UNKNOWN",
+                "h2_training": "NOT_RUN_NOT_AUTHORIZED",
+                "execution_authorized": true,
+                "mean_match_record_spacing_proposals_per_member": 1,
+                "mean_match_burnin_rule": "Exactly10*size proposals including rejections; acceptance>=size is qualification only, not a random stopping time. Fixed proposal intervals preserve self-loops.",
+                "mean_match_jaccard_rule": "Qualification of whole matched chain after fixed burn-in, not individual draw rejection. Retain all scheduled draws including repeats. If chain insufficient, entire group match insufficient.",
+                "sampling_correction": {
+                  "utc": "2026-10-15T14:39:07.175382+00:00",
+                  "basis": "Pre-endpoint reasoning audit: sampling after fixed accepted swaps creates an acceptance-biased jump chain. Formal retention must use fixed proposals including rejected self-loops. Qualification accepted-count checkpoints remain diagnostic only.",
+                  "pre_endpoint": true
+                },
+                "B": 99,
+                "chains": 2,
+                "qualification_max_null_pairs": 4,
+                "checkpoints_accepted_swaps_per_nnz": [
+                  1,
+                  2,
+                  4,
+                  8
+                ],
+                "checkpoint_drift_relative_tolerance": 0.1,
+                "chain_relative_difference_tolerance": 0.1,
+                "minimum_acceptance_rate": 0.05,
+                "summary_scale_floor": 0.02,
+                "p_values": "Approximate conditional calibration only; no guaranteed FWER with MCMC draws. If mixing/coverage fails, no primary p-values.",
+                "stop_rule": "Stop null inference on qualification failure or budget. Preserve diagnostics; continue bounded descriptive figures and factual records.",
+                "qualification_endpoint_checkpoints": [
+                  4,
+                  8
+                ],
+                "diagnostic_absolute_tolerance": 0.01,
+                "endpoint_absolute_tolerance": 0.02,
+                "comparison_rule": "last two checkpoints and between-chain final summaries: abs difference <= max(absolute floor,0.1*max(abs(a),abs(b),0.02)); endpoints floor0.02, overlap/phi floor0.01. Necessary diagnostics, not a mixing proof.",
+                "formal_burnin_proposals_per_nnz": 32,
+                "formal_spacing_proposals_per_nnz": 4,
+                "sample_contexts_per_side": 128,
+                "sample_positions_per_context": 32,
+                "sample_n_min": 25,
+                "sample_context_min": 8,
+                "sample_joint_min": 5,
+                "sample_random_repetitions": 20,
+                "old_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+                "qualification_seconds": 1800,
+                "formal_seconds": 3600,
+                "ram_gib": 32,
+                "null_repetitions": 99,
+                "execution_start_epoch": 1792075303.858525
+              }
+            },
+            "endpoint_seconds": 52.73267687112093
+          },
+          "seconds": 62.77048120088875
+        }
+      ]
+    }
+  ],
+  "p_values": null,
+  "sampling": "uniform ordered two labeled edges with replacement; rejected proposals retained",
+  "mixing_claim": "diagnostic qualification only, not proof of uniform mixing",
+  "scope": "bounded sample only",
+  "failures": [
+    "chain0: T_b undefined or endpoint drift",
+    "chain1: T_b undefined or endpoint drift",
+    "T_b: undefined or final between-chain discrepancy"
+  ],
+  "thresholds": {
+    "diagnostic_absolute_floor": 0.01,
+    "endpoint_absolute_floor": 0.02,
+    "relative": 0.1,
+    "scale_floor": 0.02
+  },
+  "seconds": 279.6642297357321,
+  "peak_rss_gib": 2.9642295837402344
+}

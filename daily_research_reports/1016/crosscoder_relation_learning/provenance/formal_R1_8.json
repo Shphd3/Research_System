@@ -1,0 +1,71 @@
+{
+  "protocol": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_relation_learning/protocol_cn.md",
+  "train_cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/train.pt",
+  "eval_cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval.pt",
+  "model_dir": "/data/share/Qwen3-0.6B-Base",
+  "batch_size": 256,
+  "eval_batch_size": 256,
+  "updates": 6120,
+  "midpoint": 3060,
+  "eval_steps": [
+    0,
+    510,
+    1530,
+    3060,
+    4590,
+    6120
+  ],
+  "min_eval_support": 20,
+  "gradient_clip": 1.0,
+  "optimizer": {
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0
+  },
+  "practical_low_gain_nat": 0.01,
+  "overall_noninferiority_nat": 0.01,
+  "paired_seeds": [
+    20261016,
+    20261017,
+    20261018
+  ],
+  "intervention": {
+    "donor_batch": 256,
+    "probe_batch": 512,
+    "batches": 16,
+    "lr": 0.1,
+    "frequency_cuts": [
+      -1.3207013625249255,
+      -1.263620685017223,
+      -1.2293411583877754,
+      -1.2031241173372065,
+      -1.1813120588334187,
+      -1.160818572291987,
+      -1.1396387169214648,
+      -1.1166215771779422,
+      -1.0857861595436755
+    ],
+    "probe_seed": 20261015,
+    "exchange_seed": 20261016,
+    "norm_floor": 1e-12,
+    "min_exchange_fraction": 0.1
+  },
+  "epochs": 12,
+  "drop_last": true,
+  "cache_sha256": {
+    "train": "e7ff8530a006749e3811ee1f07f1de35da3cc3fc5fd5c3d78976f134d7c14f97",
+    "eval": "d37dbcd979067b83bc5088b25c1fbb251fac8e1b98cef8c97bc35d4f58d98e83"
+  },
+  "bootstrap": {
+    "method": "paired fixed-feature ratio linearization, four consecutive contexts per block",
+    "contexts_per_block": 4,
+    "draws": 2000,
+    "seed": 20261016
+  },
+  "cache_asset_id": "representation_crosscoder_relation_learning_eval512_20261015t164000z",
+  "protocol_revision": "R1.8"
+}

@@ -1,0 +1,184 @@
+{
+  "scope": "requested scientific figure redraw from existing saved tables",
+  "recorded_at_utc": "2026-10-19T04:26:47.006410+00:00",
+  "processing_agent": "/root",
+  "new_analysis_id": "analysis_crosscoder_frequency_contribution_bridge_20261019t025630z",
+  "old_training_analysis_id": "analysis_tulu_epoch1_expert_geometry_20261019t030056z",
+  "old_checkpoints": [
+    {
+      "condition": "T_S1",
+      "seed": 11,
+      "epoch": 1,
+      "step": 168,
+      "seen": 85548,
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/epoch1.pt",
+      "bytes": 302916988,
+      "mtime_ns": 1792373176059145350,
+      "sha256_from_producing_analysis": "04ba0ce696463d318d2e5d99045053b09185d2bd5bafcdeea75a210f74e578b8",
+      "hash_evidence_kind": "copied from prior analysis, checkpoint not loaded or rehashed in redraw"
+    },
+    {
+      "condition": "T_S1",
+      "seed": 22,
+      "epoch": 1,
+      "step": 168,
+      "seen": 85548,
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/epoch1.pt",
+      "bytes": 302916988,
+      "mtime_ns": 1792373288139653259,
+      "sha256_from_producing_analysis": "74fb56881bdd876bdc77843c16a517e6971ee7c37484ad7d737e08569ad783d8",
+      "hash_evidence_kind": "copied from prior analysis, checkpoint not loaded or rehashed in redraw"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/frequency_bands.csv",
+      "sha256": "b4a3fc347a040390548038fbeeaf29b41df2c9f12228967e39788e7e10b4eac1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/eval_profile_summary.json",
+      "sha256": "f97b7a7d23202ea7a97560ca92c4fddc77b031efa12b3658a7073cb59fae1f3a"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_summary.csv",
+      "sha256": "5513062a10315394ee9cf40f8fe2e8dfc579cc0f48c08df7d4bc1e4c7404001d"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv",
+      "sha256": "64be1335e03194ad718a7881c0aaafa9db7e3106d73680158a93e3603dd7e2eb"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/half_stability.csv",
+      "sha256": "df7e2ededdbbd1209420eaaf2011cf251f3a642aae45ca5e1661ea0aed9f6564"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/tables/expert_training_evidence.csv",
+      "sha256": "77fb20efda26661bd9a4b9b60b283ced2f1520440600a63dd08b10ddd89e49ed"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/input_checkpoints.json",
+      "sha256": "94a56eeee64c6995b71000f1647fdda60f53e8446b37cc0d8c4d4511da1a1f84"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/code/analyze.py",
+      "sha256": "e06a1dfa979db3ab8dfcfd4f5f6bdf97770261a3010271cdb5242ca1547844a9"
+    }
+  ],
+  "producer_script": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/presentation/three_findings_redraw_20261019/redraw_three_findings.py",
+    "sha256": "57a1aac88fd5be37dcf4afbb44d608d8e7ee744f6d5620d13e62ded28f019d67"
+  },
+  "files": [
+    {
+      "path": "evidence/asset_access.json",
+      "bytes": 13558,
+      "sha256": "6af8465a6c4e30801a01ab21a8eff1400b508170d593ef0409ab2014bdde8606"
+    },
+    {
+      "path": "figures/figure1_feature_count_vs_contribution.pdf",
+      "bytes": 15916,
+      "sha256": "e0c27b30d9d450a7e2cef3d09c6a16fc4494204afe007f616e7c3f82124f1840"
+    },
+    {
+      "path": "figures/figure1_feature_count_vs_contribution.png",
+      "bytes": 113841,
+      "sha256": "90cca0d92553cb8115297eb7b9673e60839f40d15b208eccde5c799778fb3a60"
+    },
+    {
+      "path": "figures/figure1_feature_count_vs_contribution.svg",
+      "bytes": 14887,
+      "sha256": "c473a0c26f52925cce2085089a0b872a082f31ae8d410629596bbd749dce71da"
+    },
+    {
+      "path": "figures/figure2a_heldout_phi_vs_matched_random.pdf",
+      "bytes": 17425,
+      "sha256": "3047d8662bcd7b7dd20d66ad393131d263a50db4e40ee453b55f55876410cba2"
+    },
+    {
+      "path": "figures/figure2a_heldout_phi_vs_matched_random.png",
+      "bytes": 109058,
+      "sha256": "45a747b66b20f38c4ec65ff2a5a499ce830dcf41710a8f0cfed6de34a0f6e6c9"
+    },
+    {
+      "path": "figures/figure2a_heldout_phi_vs_matched_random.svg",
+      "bytes": 13478,
+      "sha256": "734a9d5d6d75fa16d4b1a38e60bd422d0606e611679c171728b8201db5fdb84e"
+    },
+    {
+      "path": "figures/figure2b_membership_stability.pdf",
+      "bytes": 18760,
+      "sha256": "a85bffe4ae466253c0e82f81261b644ee890feda96dfef389f0af570f6dab043"
+    },
+    {
+      "path": "figures/figure2b_membership_stability.png",
+      "bytes": 112332,
+      "sha256": "45afcfee2c081fadf8ffb7d7e6e78e501c6c77e0404b599a94d83141a1521bd1"
+    },
+    {
+      "path": "figures/figure2b_membership_stability.svg",
+      "bytes": 14022,
+      "sha256": "ea40b23a8c2867c570cc6ed99b02bd04c937153758a350e8b2e04891a4f4e456"
+    },
+    {
+      "path": "figures/figure3_old_T_S1_epoch1_expert_DeltaNLL.pdf",
+      "bytes": 18810,
+      "sha256": "cad8b7dfb402d1318e815c0ba3323496996cd5e5e8814ac826162d250e7242d1"
+    },
+    {
+      "path": "figures/figure3_old_T_S1_epoch1_expert_DeltaNLL.png",
+      "bytes": 107387,
+      "sha256": "04028ec6bf3655a4d9ea7fc77369e3f8b9313d981e964da23bcd8bcb3c054682"
+    },
+    {
+      "path": "figures/figure3_old_T_S1_epoch1_expert_DeltaNLL.svg",
+      "bytes": 21090,
+      "sha256": "f0b3257713dfa6ab0a153cd98cb9fc88b94fc4798da16546adf89e1a567b2660"
+    },
+    {
+      "path": "report.md",
+      "bytes": 6672,
+      "sha256": "9ce26ff7dd734365bdc76781e3c782541632947acf4cd47862c25bc357fe89d7"
+    },
+    {
+      "path": "report_cn.md",
+      "bytes": 9367,
+      "sha256": "1cd4acccf518ec7d90de8c53f89181cb6832f4e1505b5db2eddc91e547b77ab0"
+    },
+    {
+      "path": "tables/figure1_feature_counts_contribution.csv",
+      "bytes": 541,
+      "sha256": "10ea25e1d5bf6fff3204dd0a6398a97348bdda6b6ad2b106db38cc76cd64dcb2"
+    },
+    {
+      "path": "tables/figure2a_heldout_phi.csv",
+      "bytes": 945,
+      "sha256": "0778be11e10da712472f324d7d664c433ac28165d599625f4ffe074fc0f920eb"
+    },
+    {
+      "path": "tables/figure2b_membership_stability.csv",
+      "bytes": 1167,
+      "sha256": "6b733913c24e0392c58beea8a6ea155b6a3cdd95b4ea5a6353c1af75aab78a14"
+    },
+    {
+      "path": "tables/figure3_old_T_S1_epoch1_DeltaNLL.csv",
+      "bytes": 2517,
+      "sha256": "791612802574dc8087ce47bd4534e05d344d92f45782e02ec01bdba551ec8aa4"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 474,
+      "sha256": "8020cf218aa4d73d534604b5837a866fd4bc925bcf0093e56a19458d14205c8b"
+    }
+  ],
+  "figure_contract": {
+    "figure1": "TRAIN-defined membership vs EVAL mean contribution; two aligned panels; no dual axes",
+    "figure2a": "heldout signed pair-weighted phi vs 20 matched random means/ranges; singleton NA",
+    "figure2b": "separate stability; full/half and half/half matched Jaccard; both subgroup sizes",
+    "figure3": "only original T_S1 epoch1; two seeds; zero line; unchanged prior dialogue bootstrap intervals"
+  },
+  "selected_evidence_exception": "Requested date-local research figures and small plotted tables; source owners unchanged",
+  "missing_policy": "missing/nonfinite source quantities emitted as NA; true zeros retained",
+  "inference_limit": "no claim of gradient interference,learning value,capacity from co-occurrence,active counts or reception",
+  "new_training_inference_resampling": false,
+  "verification": "verification.json; all 4 rendered plots inspected; source-to-plot and original intervals verified"
+}

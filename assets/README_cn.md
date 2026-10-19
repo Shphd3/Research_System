@@ -1,6 +1,6 @@
 # 研究资产库
 
-本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **502 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **514 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
 
 [English](README.md) · [唯一机器可读目录](catalog.json) · [历史全库访问快照](checks/2026-10-09_access_v4.json) · [检查工具](../tools/check_assets.py) · [项目访问与旧路径处理](../docs/project_access_cn.md)
 
@@ -233,3 +233,16 @@ E04实际输出已登记10族／55状态，来自pt-1rb3s2t0。[严格输出可�
 
 
 [CrossCoder阶段一实存缓存与分析](crosscoder_feature_phase1_cn.md)：最终14层完整VAL；图、文本、热图与当前访问检查。登记不授予科研结论或下一阶段执行权。
+
+## 2026-10-16 CrossCoder关系分组到学习验证产物
+
+[阅读入口](../daily_research_reports/1016/crosscoder_relation_learning/README_cn.md)。两版缓存、54正式状态/9final、Smoke及完整有界分析已登记并通过选定严格访问检查。稳定ID见英文同节与catalog；访问不授予科学批准，报告保留负学习结果及原strict样本NA。
+
+
+### 2026-10-19 频率贡献桥梁与关系细分
+
+`analysis_crosscoder_frequency_contribution_bridge_20261019t025630z` 登记已保存的无训练A–C分析：4个频率段、21种名单、42种路由、84套分发矩阵及302张文本卡。[中文概要](../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md) · [本次输出访问核验](checks/2026-10-19_frequency_contribution_bridge_outputs.json)。仅为已查看EVAL上的探索性结构与分发证据，不授予学习、容量结论或下一轮执行权限。
+
+## 大样本与跨层token—feature关联
+
+注册资产 `analysis_crosscoder_token_feature_layer_validation_20261019`：复用DCLM发现/复核5,238,097/5,247,663位置及原Tulu，14层共享z上的解码幅度；无模型前向或训练。分开保留feature、位置、tokenID等权及旧池迁移。仅注册实际分析产物，不提升科学结论。

@@ -1,0 +1,57 @@
+{
+  "checked_utc": "2026-10-18T16:13:11.334957+00:00",
+  "scope": "Bounded read-only source qualification; subsequent Tphi counts authorized, P NOT RUN",
+  "Tphi": {
+    "status": "QUALIFIED",
+    "candidate_file": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/edges_D.csv",
+    "candidate_bytes": 1887615,
+    "candidate_rows": 34757,
+    "candidate_sha256": "006d028e27d4d9ac40d81c24ba68f871c6c8eadbbbf1520e76959dba1bc5b3a0",
+    "columns": [
+      "u",
+      "v",
+      "phi",
+      "joint",
+      "log2lift"
+    ],
+    "original_selection": "D mutual-top10 phi on D-qualified features; candidate>=100D hits,>=10D blocks,pD<1; no V intersection or community surrogate",
+    "selection_code": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/code_snapshot/core_analysis.py:373-379,425-426",
+    "source_bin": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000001_processed.bin",
+    "source_bin_sha256_inherited": "664d07bcb4db743ac9ec62a9c6e4df245f3fd4fde35b8536dece439fcaac9697",
+    "current_eval_bin": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+    "current_eval_used_to_select_candidates": false,
+    "dictionary_checkpoint_sha256_inherited": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "gate": "positive original z after fixed complete saved TRAIN threshold0.051281172782182693; complete TRAIN normalization; same final14/F16384 dictionary",
+    "document_overlap": "Unknown; different source bins not proof of document independence"
+  },
+  "P": {
+    "status": "NOT RUN",
+    "reason": "Same-position original-preprocessed fourteen-layer joint H not located in bounded inspected owners. Existing hidden is only block28 BF16 [N,1024].",
+    "inspected_owners": [
+      "registry crosscoder representation assets",
+      "parent frequency_interval_moe cache and preparation source/receipt",
+      "relation_learning data/data_eval512 interfaces",
+      "phase1 sparse z cache and manifest",
+      "phi_relations input manifest and asset inventory"
+    ],
+    "saving_source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/code/prepare_cache.py:200-214",
+    "registered_interface": "hidden BF16 [130712,1024] TRAIN / [65402,1024] EVAL, terminal residual-post before final global norm; CSR full shared z",
+    "minimum_missing_input": "Original actual CrossCoder preprocessed joint H [N,14,1024], same retained position order/split, layer order1,3,...27 zero-based and saved TRAIN preprocessing identity",
+    "prohibited_substitutions": [
+      "zD reconstruction",
+      "last-layer h treated as joint H",
+      "hidden from other positions/windows"
+    ],
+    "no_model_forward": true,
+    "no_new_GPU": true
+  },
+  "access_check": {
+    "utc": "2026-10-18T16:10:28.082607+00:00",
+    "strict_exit_code": 0,
+    "ids": [
+      "analysis_crosscoder_feature_frequency_20261015t143300z",
+      "representation_crosscoder_frequency_interval_moe_20261018t103820z",
+      "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z"
+    ]
+  }
+}

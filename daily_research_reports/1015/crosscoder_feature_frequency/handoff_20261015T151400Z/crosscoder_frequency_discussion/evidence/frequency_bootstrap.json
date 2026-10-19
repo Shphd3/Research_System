@@ -1,0 +1,11 @@
+{
+  "replicates": 1000,
+  "unit": "entire existing contiguous blocks",
+  "interval": "percentile 2.5%/97.5%; conditional, independence unverified",
+  "resample_D_V": "separately, fixed side labels",
+  "candidate_count": 15666,
+  "candidate_rule": "D hits>=100 and coverage>=10 D blocks; pD<1",
+  "zero_D": 353,
+  "zero_V": 393,
+  "both_zero": 290
+}

@@ -1,7 +1,22 @@
-# 阅读入口
+# 阅读入口：统计图层级与跨层解码幅度分布
 
-先读[简短中文结论](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/summary_cn.md)，再读[完整中文报告](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/detailed_cn.md)。
+当前为 **2026-10-14 图表修订版**。同一正式运行的读取副本，不是第二次实验。原始趋势、频率格、文本与节点选择保持不变；新增峰值比例明确为事后描述。
 
-[三类图及读图说明](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures_cn.md)；[全部源表索引](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables_cn.md)；[全部随机／高激活文本](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/text_examples_cn.md)。同一目录含CSV、JSONL、PNG/PDF/SVG及来源／代码，数据与图可携带。
+先读 [简短中文报告](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/summary_cn.md)，再看 [全部图与读图说明](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures_cn.md) 和 [完整中文报告与追溯](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/detailed_cn.md)。
 
-结果：整体平均位置关系不支持原正向预期；分布浅深并存；频率比较混合。任务pt-icv8hyi3已成功结束。没有训练、推理、全量共现计数或重建图。科学判断及下一步待研究者讨论。
+- [全部源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables_cn.md)：原12表＋本次8张展示／峰值表。
+- [随机及高激活文本](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/text_examples_cn.md)：原240条，未重抽。
+- [本次修订范围](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/provenance/visual_revision_scope_cn.md) 与 [修订完成回执](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/visual_revision_receipt.json)。
+- [原正式计算完成回执](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/completion_receipt.json)：只代表原任务pt-icv8hyi3，不代表本次成本。
+
+执行侧本次修订：`/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z`。原报告和图的修订前版本完整保存在该目录的 before/；原正式输出仍在 `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z`。
+
+此前已推送的 [portable ZIP（此前版本）](../../../../backup/2026/10/cleanup_20261019/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip) 保持原字节，其SHA256为 `2411367ff2f533e7e98bc7f64699db4a9dcac01cd898c28049a633033bfaca75`；它不含本次修订，不应与当前报告混用。本次没有commit/push或重打该ZIP。
+
+图中的统计图层级 h、模型层号、激活频率、跨层解码幅度占比 p、幅度加权平均层号 L 是五种不同量。频率格不是因果效应；峰值类别不是层功能。交付后停止，后续研究决策由研究者讨论。
+
+## 大范围补图：整体概览、320节点连接与同ID热图
+
+[完整阅读入口及冻结选择规则](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/README_cn.md)。总体概览用全部15,537个节点；连接图含320个节点与1,250条已有直接边（261条跨h）。h=0至5展示数为20、80、80、75、63、2，主图同时标总体数；这是分层展示子图，不是总体比例。
+
+[主图PDF](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.pdf) · [主图SVG](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.svg) · [17页直接边分面](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections_facets.pdf) · [同ID解码占比热图](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.pdf)。原19／22节点图仅代表各自可达分支，保留为局部图，不代表整体层级数量。

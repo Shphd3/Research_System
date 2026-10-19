@@ -1,16 +1,20 @@
-# 完整结果：特征图层级与跨层解码幅度分布
+# 完整报告：统计图层级与跨层解码幅度分布（图表修订版）
 
-结果记录日期：2026-10-14T10:19:13.139328+08:00（北京时间）。处理者Codex，原科研线程01a1343f-32aa-7500-9835-000956218089。运行20261014T020014Z，平台任务pt-icv8hyi3。
+本报告是原运行 `20261014T020014Z` 的图表与解释修订，不是第二次正式实验。处理者：Codex，线程 `01a1343f-32aa-7500-9835-000956218089`。原任务 `pt-icv8hyi3`。**原全体趋势、频率比较、节点选择和文本均保持不变；新峰值类别统计标记为事后描述。**
 
-主Anchor：[完整Anchor](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/hierarchy_decoder_distribution_anchor_user_20261014_cn.md)。冻结Protocol：[本次批准的完整契约](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/provenance/protocol_frozen.md)，SHA256 `39530a9a36eee0403a8bc3ee53ad19d3e82a5dcb18c86fa7287c1ca4cc8894fb`。[简短中文结论](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/summary_cn.md)。
+Anchor：[研究者给定问题](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/hierarchy_decoder_distribution_anchor_user_20261014_cn.md)。冻结 Protocol：[原执行契约](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/provenance/protocol_frozen.md)，SHA256 `39530a9a36eee0403a8bc3ee53ad19d3e82a5dcb18c86fa7287c1ca4cc8894fb`。[简短报告](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/summary_cn.md)；[本次修订范围](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/provenance/visual_revision_scope_cn.md)。
 
-## 0. 先读结果与证据资格
+执行结果可用于冻结定义下的描述性比较；不能升级为机制或效用证明。研究者的机制判断、科学状态转移与后续实验决策仍为 Unknown。本次修订没有改变 Focus、Anchor 或原冻结 Protocol。
 
-整体不支持“统计图层级越高，解码幅度平均位置整体越深”；没有由此证明整个p分布向浅层移动。主相关−0.277976；频率内11格7正4负，方向混合。局部图不替代全体结果，正向格不能补救主结果。
+## 目的
 
-执行测量为ELIGIBLE：按冻结对象、窗口、主集合、坐标和比较规则完成；解释为BOUNDED：频率耦合、同bin、节点依赖和工具保真限制仍在。研究者的机制判断、科学状态转移和下一轮决策为Unknown，本报告不关闭问题。
+本轮要判断统计图层级 h 是否可以直接作为模型深度的正向排序。这关系到未来如何选择学习对象，但目前不直接测共享／分离学习的收益。原待检验预期是较高 h 对应更偏深层的解码分布；竞争解释是建边规则使 h 与激活频率耦合，且不同模型层的尺度改变幅度比较。
 
-## 1. 目的与实际对象
+若两种坐标均支持正向，且完整 p 与频率内比较一致，才可能保留这种描述性排序；若方向不支持或高度依赖尺度，必须缩窄代理含义；覆盖不足的频率格保持不足。以上不把相关升级为因果或训练效用。
+
+## 方法
+
+### 实际对象与术语
 
 研究问题是统计图层级与跨层解码幅度分布是否对应。本轮减少的是“图层级能否作为模型深度代理”的不确定性，不是判断何种专家结构更有训练收益。
 
@@ -20,21 +24,35 @@
 
 数据为原10,485,760合格位置、10,249完整／尾上下文；按128上下文成块共81块，种子20261014。D=5,238,097，V=5,247,663。原bin同一份，原文档ID未保留、近重复独立性未知。
 
-## 2. 图层级、解码量与假设的边界
 
-边A→u要求两端支持≥200、共同支持≥20、P(u|A)≥0.8、P(A|u)≤0.5、n_u≥2n_A。在D发现、V只复核这些原始边，分别约简。组成列表是直接出邻居，尚非认证的语义组成。
 
-h为完整约简图到无出边节点的最长路径：叶节点0，其他节点1＋最大后继h。沿路径频率至少翻倍，所以无环性由构造保证。孤立、零支持、低支持的h=0不自动成为基础语义。
+| 固定术语 | 对象、计算与单位 | 不能当作什么 |
+|---|---|---|
+| 统计图层级 h | 在完整约简统计图中，到无出边节点的最长出边路径；叶节点为 0；无量纲 | 模型层号、语义复杂度或因果先后 |
+| 模型层号 | Qwen3 实际 block 的一基编号：2、4、…、28 | 图中节点的纵向位置 |
+| 激活频率 | 某侧有效位置中该 Feature 命中的比例；图节点明确写“V 激活频率：×%” | 解码占比 p |
+| 跨层解码幅度占比 p | 同一 Feature 的 14 层 decoder 向量 L2 范数分别除以其总和；图中单位 %，每 Feature 合计 100% | 激活概率、重构能量或功能贡献 |
+| 幅度加权平均层号 L | 用 p 对实际模型层号求加权平均；单位为模型层号 | 整条 p 分布后移或前移的证明 |
 
-一个Feature在一个位置只有一个联合非负z，各层解码分量为z乘本层decoder向量；分量幅度为z乘decoder L2范数。p把14层范数按总范数归一，L以实际一基层号对p加权。共同z约消，p/L是decoder几何，不随该Feature的文本改变。
 
-零总范数应记NA；本轮16,384个Feature均无零总范数或非有限几何，主集合全部15,537个有效。GPU FP64归一化与CPU公式最大差约0；所有p行和为1。
+固定最终 14 个选定模型层、16,384 个 Feature 的 CrossCoder，复用冻结 TRAIN 归一化和原推理规则产生的已有统计图与 decoder 几何。主集合是 D/V 支持均 ≥200、且 V 图非孤立的同一批 **15,537 个 Feature**。各统计图层级 h 的样本数依次为 **20、8,896、5,347、1,209、63、2**。每个 Feature 等权；图中四分位范围描述节点差异，不是置信区间。
 
-**L仅表示幅度加权平均位置。** 浅层和深层可以同时有峰。L增加不推出整条分布后移；本轮也不从负相关推出整个分布向浅层移动。不同Feature向量可能抵消，幅度相加不等于重构能量，更不是独立预测贡献。
+三类图回答不同问题：图1看固定节点的统计关联；图2及图4—7看跨层解码幅度占比 p；图3看全部合格 Feature 的 h—L 关系。图8是频率解释边界。TRAIN 归一化坐标与恢复原始坐标使用同一批节点；恢复原始坐标是将各层范数乘回保存的 TRAIN 向量 RMS，再计算 p 和 L。
 
-原假设预期较高h整体更深。最强竞争解释是频率与h由建边规则耦合，另有层尺度与工具保真差异。沿长度h路径，节点支持≤N/2^h，这是结构约束，不能当作新机制发现。
+本次按用户要求重画已有结果，并从保存的 p **新增一次事后峰值比例描述**：逐 Feature 取 14 层最大 p，分为“第 2 层最大”“第 28 层最大”“其他层最大”。两种坐标均无精确并列最大值。类别只描述幅度峰值，不命名功能。没有重跑推理、训练、缓存扫描、关系计数或频率比较，也没有新 GPU 任务。
 
-## 3. 既有图事实与完整集合
+
+### p 和 L 的具体含义
+
+一个 Feature 在一个位置只有一个联合非负激活值 z。该 Feature 在某模型层的解码向量是 z 乘该层 decoder 向量，幅度是 z 乘 decoder L2 范数。p 将同一 Feature 的 14 层幅度按总和归一；共同 z 约消，所以 p 和 L 是固定 decoder 的几何描述，不随展示文本改变。
+
+对模型层号 ℓ∈{2,4,…,28}，记该层的 decoder 范数为 dℓ，则 pℓ=dℓ/Σdℓ，L=Σℓ·pℓ。恢复原始坐标时先以保存的该层 TRAIN 向量 RMS 乘 dℓ，再重复同样计算。p 无量纲，图中乘 100 显示百分比；L 的单位是实际模型层号。p 总和为 1；16,384 个 Feature 都没有零总范数或非有限几何，主集合 15,537 个全部有效。
+
+L 只表示幅度加权平均层号。浅层与深层可同时有峰；L 增减不推出整个分布平移。不同 Feature 的解码向量可能抵消，因此幅度相加不是重构能量，更不是独立功能贡献。
+
+### 图、集合与比较规则
+
+边 A→u 要求两端支持 ≥200、共同支持 ≥20、P(u|A)≥0.8、P(A|u)≤0.5、n_u≥2n_A。在 D 发现，在 V 只复核这些原始边，然后分别约简。箭头标签固定为“A→更常见的 u”。h 在完整约简图上计算；显示子图不会另改 h。沿路径频率至少翻倍是构造约束，不是机制发现。
 
 D/V约简边分别149,945／146,947。V全字典h直方图为867、8,896、5,347、1,209、63、2；其中847个是孤立节点，h=0的另20个为非孤立合格叶节点。主集合Q=两侧支持≥200且V非孤立，为15,537个；仅支持合格集合恰好与Q相同，引用同一结果，不算独立稳健性证据。
 
@@ -42,97 +60,87 @@ D全字典h直方图835、8,563、5,544、1,356、82、4；同一Q上为20、8,5
 
 最高V层级5仅937、3461。按h和ID选锚点，再完整沿出边展开，分别19节点45边、22节点56边，并集30节点101边；节点选择在新p/L读取前冻结，不按解码结果或文本内容筛选。
 
-## 4. 本次新结果：全体平均位置
-
-| 图层级h | Feature数 | L中位数 | L四分位范围 |
-|---|---|---|---|
-| 0 | 20 | 22.717 | 22.321—23.414 |
-| 1 | 8,896 | 19.902 | 14.319—22.759 |
-| 2 | 5,347 | 15.007 | 12.660—20.696 |
-| 3 | 1,209 | 14.305 | 12.420—18.297 |
-| 4 | 63 | 16.226 | 13.527—19.187 |
-| 5 | 2 | 18.509 | 16.704—20.313 |
 
 
-L以实际模型block号计量。每Feature一票，无激活频率加权。主描述性相关采用平均并列秩；未计算p值、独立节点置信区间或事后合并h组。表中的四分位区间是Feature分布，不是估计误差区间。
+频率规则保持原样：Q 上以 D 侧 log10 激活频率固定 5 个分位组，在每组内比较相邻 h 的实际频率共同范围；双方有效节点各 ≥20 才可比较。共同范围只有一个值时同样适用各 ≥20 的规则。本轮无合格单值格。频率比较使用 TRAIN 归一化坐标；本次没有追加恢复原始坐标的频率版本。
 
-h=1到3的中位数下降；h=4回升，h=5两点分散。整体负相关与“逐档严格单调”是不同命题。这份证据缩窄原预期：目前不能把统计图层级当作更深平均解码位置的整体代理。
+原全体结果与 D/raw 参照直接复用。新图3共享节点、横向抖动、横纵轴范围及绘图规则。新组平均热图直接取旧表中各 Feature 等权平均的 p，未按激活频率加权。新峰值比例从已存 p 取唯一最大层后分类计数，不做检验；小于 3% 的柱段仍保留，精确值在源表。h=0 热图包括全部 20 个合格非孤立叶节点；h=5 为两个个体曲线。
 
-[图3实际源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/figure3_source.csv)含全部15,537个点。图上抖动仅改变排版横坐标，源h保持整数。
+## 现象
 
-## 5. 本次新结果：14层分布形状
+整体描述性 Spearman 在 TRAIN 归一化坐标为 **−0.277976**，恢复原始坐标为 **−0.157788**；方向保留，数值差异明显。TRAIN 归一化坐标下，h=1、2、3 的 L 中位数为 **19.902、15.007、14.305**，h=4 回升至 16.226；不是逐级严格单调。
 
-下表为主Q内每Feature等权的平均p，单位**百分比**；每行和约100%，显示舍入误差。不是把范数相加后再归一，未按频率或z加权。各层原始精度及D/raw参照见[各层级14层平均p](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/hierarchy_mean_p.csv)。
+完整 6×14 组平均 p 显示，TRAIN 归一化坐标下 h=1、2、3 的第 2 层平均 p 为 **15.39%、25.06%、30.20%**，第 28 层平均 p 为 **17.00%、13.95%、13.25%**。浅层和深层可以同时有幅度，不能把 L 的变化说成整条分布平移。两种坐标的完整热图使用相同 0–40% 色标。
 
-| h | n | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 0 | 20 | 2.508 | 0.284 | 0.493 | 0.776 | 1.136 | 1.878 | 2.373 | 3.395 | 5.662 | 9.507 | 12.339 | 14.721 | 17.715 | 27.214 |
-| 1 | 8896 | 15.391 | 1.076 | 1.535 | 1.820 | 2.127 | 2.838 | 3.084 | 3.625 | 5.599 | 7.896 | 10.687 | 12.745 | 14.581 | 16.998 |
-| 2 | 5347 | 25.057 | 1.530 | 1.896 | 2.012 | 2.241 | 2.817 | 2.919 | 3.222 | 4.941 | 6.822 | 9.475 | 11.091 | 12.030 | 13.947 |
-| 3 | 1209 | 30.196 | 1.970 | 2.241 | 2.249 | 2.397 | 2.845 | 2.885 | 3.123 | 4.494 | 6.044 | 8.028 | 9.736 | 10.543 | 13.249 |
-| 4 | 63 | 24.541 | 1.625 | 1.928 | 2.028 | 2.348 | 2.891 | 3.026 | 3.371 | 5.044 | 7.053 | 8.958 | 10.739 | 11.618 | 14.831 |
-| 5 | 2 | 17.748 | 1.430 | 2.188 | 2.178 | 2.617 | 2.888 | 2.883 | 3.135 | 4.494 | 5.396 | 7.431 | 8.994 | 10.858 | 27.760 |
+事后峰值比例中，TRAIN 归一化坐标下 h=1、2、3 的“第 2 层最大”分别占 **34.95%、60.58%、74.19%**；恢复原始坐标下，这一类别均为 0，但第 2 层的 p 并非为 0。h=0 的 20 个节点在两种坐标下都以第 28 层为最大分量，完整轮廓仍不同。h=5 仅 937、3461 两点，其 TRAIN 归一化坐标 L 分别为 **22.118、14.899**。
 
 
-h=1、2、3的第2层平均p递增，第28层平均p递减，同时深层仍有非零幅度。这是轮廓组成的变化，并非单峰平移。h=4和5又不同，最高级只含两点。
+![TRAIN归一化坐标6×14组平均p](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure4_mean_p_train.png)
 
-937的p在第28层为46.07%，第2层为12.04%，L=22.118；3461在第2层为23.46%，第28层9.45%，L=14.899。两个最高层级Feature也不能概括为相同解码深度或相同功能。图2保留同30节点的全部14层，按h再ID排序，没有按L重排来制造层级对应。
+![恢复原始坐标6×14组平均p](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure4_mean_p_raw.png)
 
-平均p会掩盖组内差异；个体表与热图仍保留。没有做分布随机支配、整分布平移或功能检验；这类结论不能由均值表代替。
+读图：行是统计图层级 h 与该组 Feature 数，列是实际模型层号；每格为组内等权平均 p 的百分比，每行合计 100%。两图共用 0–40% 色标；少数单元超过 40% 时以色标上限显示，格内数字保留实值。均值保留双端幅度，但不能说明组内每个节点都相同。[原完整均值源表（含D参照）](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/hierarchy_mean_p.csv)；[两坐标168格展示源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/group_mean_p_source.csv)。
 
-## 6. 本次新结果：频率竞争解释检查
+| 统计图层级 h | n | TRAIN 归一化坐标 L 中位数 | 恢复原始坐标 L 中位数 |
+|---|---:|---:|---:|
+| 0 | 20 | 22.717 | 24.015 |
+| 1 | 8,896 | 19.902 | 22.359 |
+| 2 | 5,347 | 15.007 | 21.099 |
+| 3 | 1,209 | 14.305 | 21.025 |
+| 4 | 63 | 16.226 | 21.905 |
+| 5 | 2 | 18.509 | 22.778 |
 
-在Q上用D侧log10(n_D/N_D)固定5个分位组，重复边界合并，本轮实际5组。组内预先比较相邻h，在两组观测频率范围交集中保留实际节点，各≥20才作为可比较格。即使交集只一个值，只要双方实际有效节点各≥20也允许固定频率局部比较；本轮没有通过这一单值格门槛的情况，不表示该情况在定义上不可能。
+这不是逐级严格单调，也不是同一个 Feature 的变化轨迹。源表含每组四分位数以及 D 参照；h=5 正文与图均保留两个个体，不用两点概括总体。
 
-以下列出主V的**全部25格**；组编号1为最低频组，5为最高频组。NO_GROUP缺一个h组；NO_OVERLAP观测频率范围不交；SMALL_N交集内至少一侧<20；COMPARABLE_RANGE为达到门槛的区间格。完整频率边界、两组x/L四分位数与D参照在[全部频率比较格](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/frequency_overlap_comparison.csv)。
+## 解释
 
-| D频率组 | 相邻h | 交集内n低／高 | L中位差（高−低） | 状态 |
-|---|---|---|---|---|
-| 1 | 0—1 | 0/0 | NA | NO_GROUP |
-| 1 | 1—2 | 733/1642 | +0.1700 | COMPARABLE_RANGE |
-| 1 | 2—3 | 1640/682 | +0.9182 | COMPARABLE_RANGE |
-| 1 | 3—4 | 678/38 | +0.6882 | COMPARABLE_RANGE |
-| 1 | 4—5 | 19/2 | +3.5431 | SMALL_N |
-| 2 | 0—1 | 0/0 | NA | NO_GROUP |
-| 2 | 1—2 | 1422/1367 | +0.1940 | COMPARABLE_RANGE |
-| 2 | 2—3 | 1352/291 | +0.4572 | COMPARABLE_RANGE |
-| 2 | 3—4 | 290/20 | +4.6153 | COMPARABLE_RANGE |
-| 2 | 4—5 | 0/0 | NA | NO_GROUP |
-| 3 | 0—1 | 0/0 | NA | NO_GROUP |
-| 3 | 1—2 | 1809/1126 | +0.4123 | COMPARABLE_RANGE |
-| 3 | 2—3 | 1098/165 | -6.9652 | COMPARABLE_RANGE |
-| 3 | 3—4 | 42/4 | +3.7703 | SMALL_N |
-| 3 | 4—5 | 0/0 | NA | NO_GROUP |
-| 4 | 0—1 | 0/0 | NA | NO_GROUP |
-| 4 | 1—2 | 2208/829 | -0.5367 | COMPARABLE_RANGE |
-| 4 | 2—3 | 814/62 | -8.9823 | COMPARABLE_RANGE |
-| 4 | 3—4 | 0/0 | NA | NO_GROUP |
-| 4 | 4—5 | 0/0 | NA | NO_GROUP |
-| 5 | 0—1 | 0/0 | NA | NO_OVERLAP |
-| 5 | 1—2 | 2443/371 | -0.3998 | COMPARABLE_RANGE |
-| 5 | 2—3 | 181/8 | -10.5028 | SMALL_N |
-| 5 | 3—4 | 0/0 | NA | NO_GROUP |
-| 5 | 4—5 | 0/0 | NA | NO_GROUP |
+为什么整体负相关，频率内却有 7 格为正？两者比较的对象与权重不同。整体相关包含不同 h 组之间的频率构成差异，使用全部 15,537 个节点的秩；频率格只比较固定频率组的共同范围内、某一对相邻 h 的 L 中位数。建边规则要求箭头指向至少常见两倍的节点，所以 h 与激活频率本来就耦合。不同频率构成可能与整体负向同时出现，但本轮没有识别它造成了多少差异。
+
+必须看全部 **25 格**：11 格可比较，7 正、4 负；其余 10 格缺组、1 格无共同范围、3 格样本不足。可比较格的差值大小并不对称，例如 +0.170 与 −8.982 都各被算作“一格”。h=0↔1 和 h=4↔5 都没有合格格，不能用 11 格替代整体。五分位和范围交集也不保证组内频率分布相同。这不是“控制频率后的效应”。
+
+![全部25格频率共同范围内比较](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure8_frequency_all25.png)
+
+读图：横轴为相邻统计图层级 h 对，纵轴为预定的 5 个 D 激活频率组。颜色是高 h 减低 h 的 L 中位差，单位为模型层号；每格标低 h／高 h 的样本数。灰格保留原因，不表示差值为 0。缺组／无共同范围格另标交集前组内人数。[完整频率源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/frequency_comparison_25cells_source.csv)。
+
+坐标尺度是另一条边界：恢复原始坐标后，整体负向仍在，但相关数值和峰值类别明显改变。这说明数值依赖层尺度；它没有删除 Feature，也不能被讲成功能差异。峰值类别相同也不代表完整 p 相同。
+
+D 图参照的描述性 Spearman 为 **−0.279321**，D 频率检查也有 11 个合格格、7 正 4 负。D/V 来自同 bin，V 曾参与资格筛选和原始边复核，文档独立性未知；这些不是独立总体检验。节点也不独立，不报告 p 值或独立节点置信区间。h=5 只有两个节点，不能代表最高统计图层级的总体规律。
 
 
-11个区间格达到门槛，7正4负，格差值中位数+0.193974层。它是11个格等权的摘要，不是所有Feature的平均效应、调整后相关或因果效应。方向差异明显，例如中间频率组h=2→3为−6.9652层，而较低频率组h=3→4为+4.6153层，后者较高h只有20个节点。
+另外，原第 28 层工具 FVE 86.4722%、固定替换 CE +0.305962 nats 是既有评估，本轮没有重测。解码几何无法直接说明语义复杂度、模型层功能、层间因果组合，亦不能证明训练或专家分发收益。
 
-可比较格覆盖h对1—2、2—3、3—4；h=0与1无可比范围，h=4与5小样本。五分位和连续范围交集不保证两组频率分布相同，仍有组内频率残差。整体负向、若干频率内局部正向可以同时成立，不能据此断言“控制频率后整体反转”，也不能宣布频率已造成原趋势。
+## 结论
 
-## 7. 固定D/raw参照
+### 认识一：统计图层级 h 不能直接承担模型深度的正向排序，需要另外测跨层分布
 
-| 条件 | 同一Q有效数 | 描述性Spearman |
-|---|---|---|
-| V_train_normalized | 15537 | -0.277975867 |
-| D_train_normalized | 15537 | -0.279321478 |
-| V_raw_coordinate | 15537 | -0.157788083 |
+![相同15537节点两种坐标的h—L对照](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure3_all_features.png)
+
+关键数据：两面板使用完全相同的 **15,537 个 Feature、横向抖动、坐标范围和绘图规则**，分别给出中位数、四分位范围、各组 n 与描述性 Spearman；h=5 单列两个点。相关分别为 −0.277976、−0.157788。[逐点双坐标源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/figure3_coordinate_comparison_source.csv)；[中位数与四分位源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/depth_vs_layer_summary.csv)。
+
+推断的变化：保留 h 作为统计关联结构的描述，不再直接用“h 更高”代替“模型中更深”。**下一项研究决策（待研究者讨论）：选取学习对象时，是否要求明确所用坐标，并同时保留完整 p，而不是只按 h 排序？** 本报告不因此启动新的学习实验。
+
+### 认识二：同级内部存在不同轮廓，后续应同时看具体节点、关联分支和跨层分布
+
+![同级内部峰值类别比例，事后描述](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure5_peak_composition_posthoc.png)
+
+关键数据：TRAIN 归一化坐标 h=1 有 3,109 个“第 2 层最大”、4,493 个“第 28 层最大”、1,294 个“其他层最大”，都在同一个 h 内。h=5 的 937 与 3461 也具有不同 p 轮廓。恢复原始坐标改变峰值排序，因此不把类别命名成功能。[完整峰值比例与计数（事后描述）](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/peak_composition_posthoc.csv)。
+
+![最高统计图层级的两个个体轮廓](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure7_h5_individual_curves.png)
+
+图7保留两个节点各自的 14 层 p 与 L；n=2，不作最高级总体推断。[两个节点逐层源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/h5_curves_source.csv)。全部 20 个 h=0 节点的逐个热图、固定 30 节点热图，以及原关联分支见 [完整图与读图说明](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures_cn.md)。
+
+推断的变化：组平均和 L 能概括差异，但不能替代个体轮廓。不同 h 组含不同 Feature，本轮没有观察“同一个 Feature 随 h 增长而移动”。**下一项研究决策（待研究者讨论）：比较候选学习对象时，是否将具体节点、关联分支和 p 作为共同保留的信息，而不是仅使用层级或峰值类别？** 当前不能据此判断 common／unique、共享／分离学习或专家收益。
 
 
-D参照保持同一Q、同一decoder、同一D频率分组，只换h定义。D频率检查同样11格、7正4负，中位差+0.237944层。D/V高度相关且V来自D候选边复核，不是独立重复。
+认识变化是：原先待检验“较高 h 也许对应更深解码分布”；现在全体 L 的方向不支持正向排序，完整 p 显示同级差异和尺度依赖；保留 h 对统计关联的描述，缩窄 h 作为模型深度代理的说法。频率构成能解释多少、具体分支为何形成、何种对象值得共同学习仍未回答。AI 建议下一次只先讨论上述信息应如何共同保留；不自动启动计算。
 
-raw参照使用保存的每层RMS恢复范数，再计算p_raw/L_raw；只做预定整体摘要，不追加频率版本或选择更好坐标。raw相关仍负，但数值变化提醒层尺度影响。三个参照都没有证明整体分布移动、层功能或因果关系。[整体与参照统计](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/depth_vs_layer_summary.csv)。
+## 附录 A：全部图与文本的可追溯性
 
-## 8. 文本与同位置幅度：完整交付
+![全部20个合格h=0节点的两坐标p](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures/figure6_h0_individual.png)
+
+图6两面板共用 0–50% 色标；每行是一个 Feature，百分比在全部 14 层合计 100%。20 个节点都以第 28 层为最大分量，但各层幅度比例不同，不能将相同峰值类别当成相同完整轮廓。源表 [20节点×14层×2坐标](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables/h0_individual_source.csv)。这不是新增文本选择，新增展示的 h=0 节点不自动有新的文本例子。
+
+[图索引](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures_cn.md)完整保留两个原关联子图及密集边分面、同 30 节点 p 热图；不能用 30 个局部节点代替全体比较。
 
 30节点各5个随机、3个最高z，合计240个Feature—位置记录，随机150、高激活90，没有两类重合导致的减少。共226个上下文，跨Feature可共享位置／上下文；这不是226个独立文档样本。
 
@@ -146,7 +154,11 @@ raw参照使用保存的每层RMS恢复范数，再计算p_raw/L_raw；只做预
 
 交付核对逐条重新连接原索引与bin，240个目标token ID／offset一致，14层a与z×范数一致。完整前文留档；本轮只对展示目标及必要前文做辅助阅读，不声称完成人工语义验证。
 
-## 9. Protocol符合性、修正与成本
+
+
+本次没有重扫缓存、重抽文本或新语义标注。原 240 记录全部保留。
+
+## 附录 B：原正式执行符合性、历史与成本
 
 | 条款 | 实际 | 对证据的影响 |
 |---|---|---|
@@ -167,26 +179,26 @@ raw参照使用保存的每层RMS恢复范数，再计算p_raw/L_raw；只做预
 
 图1本地排版修正5.096秒；成功交付验证2.787秒；第一次验证被停止，预算保守计≤130秒（没有精确进程耗时回执，不将130当作实测精确值）。连同打包仍远低于主动计算30分钟；全部阶段、工程成本和可核验的墙钟时间见[最终完成回执](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/completion_receipt.json)。报告撰写不计正式主动计算，墙钟单独记录，未超90分钟。
 
-CPU affinity限制8核，aggregate RSS上限16GiB，新磁盘上限1GiB。没有模型推理、训练、全量共现统计、图重建、额外参数扫描或commit/push。代码／配置／环境／任务提交来源见provenance及code目录。
+CPU affinity限制8核，aggregate RSS上限16GiB，新磁盘上限1GiB。没有模型推理、训练、全量共现统计、图重建、额外参数扫描。正式计算之后曾按用户明确请求单独提交并推送旧版portable ZIP；本次修订没有commit/push。代码／配置／环境／任务提交来源见provenance及code目录。
 
-## 10. 证据链与缺项
 
-| 有界结论 | 原输入→计算→源表 | 资格／限制 |
+
+以上是原正式执行历史，不是本次修订的新开销。原始报告、图与 manifest 的修订前版本另存于 `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/before/`，此前已推送的 portable ZIP 保持原字节及 hash。原执行目录与冻结表不被覆盖。
+
+## 附录 C：本次图表修订与证据链
+
+| 项目 | 输入／操作 | 输出与边界 |
 |---|---|---|
-| 整体平均位置不随h增大而整体更深 | reduced_V.depth＋decoder_geometry.norm→p/L→figure3_source、depth_vs_layer_summary | 15,537节点，描述性负相关；不推出整分布后移／前移 |
-| 分布有浅深并存、最高两点轮廓不同 | norm→完整p→figure2_source、hierarchy_mean_p | 同30局部节点及全Q均值；均值会掩盖异质性 |
-| 频率内方向混合，未排除频率解释 | D n＋固定分位边界＋V h/L→frequency_overlap_comparison | 全25格，11合格；组内残差与缺覆盖仍在 |
-| D/raw负向参照存在 | 固定Q，h_D或raw_norm→预定摘要 | 同一字典／数据，不是独立确认 |
-| 文本与位置及共享幅度可追溯 | 原CSR＋prefix/records＋bin/tokenizer→text_examples、text_layer_amplitude | 240记录，语义功能验证未做 |
+| 术语与箭头 | 原节点支持数、频率及原图；只更换标签 | V 激活频率明确单位 %；图层级与模型层号分开 |
+| 双坐标 h—L | 原 p/L、固定 Q、原抖动、原分位数和相关 | 同 15,537 节点；源表 figure3_coordinate_comparison_source；无重新选择 |
+| 完整均值 p | 原 hierarchy_mean_p | 2×6×14 展示格，共用色标；无新均值口径 |
+| 峰值类别【事后描述】 | 原 p 逐 Feature 取唯一最大层 | 31,074 个坐标—Feature 标签、36 个比例格；不是预注册检验 |
+| 逐节点 p | 原 p 与固定 h | h=0 的全部 20 个、h=5 的原两点；不是扩展文本抽样 |
+| 全部频率格 | 原 frequency_overlap_comparison 的 V 25 行 | 原差值与样本数，灰格保留原因；不将不足数值用于比较 |
+| 推理审计 | research-reasoning-auditor 对定义、尺度、比较和决策桥的核查 | 保留两个有限认识；不能从描述跳到功能、因果或效益 |
 
-所有必需计算与交付已完成；没有用缺项补造值。仍未检验的事项为文档独立性、单义语义、层功能、因果组合、长程学习效益及MoE分发收益。原第28层工具FVE86.4722%、固定替换CE+0.305962nats来自既有报告，本轮没有重测。
+本次本地 CPU 渲染与事后比例计数 23.424 秒，修复图6色标排版另用 3.921 秒；这两个测量程序的最大 RSS 分别约 0.421、0.781 GiB。复核／复制／写报告成本另计，完成回执记录其墙钟。没有新 GPU 分配或远程任务。中文字体只保留执行侧；PDF/SVG 以嵌入字形／路径保证可读，不将字体包加入交付。
 
-## 11. 认识变化、下一问题与停止
+修订执行侧：`/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z`；源输入：`/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z` 与原阶段一目录；阅读副本：`/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z`。[修订记录与输入hash](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/provenance/visual_revision_record.json)；[修订完成回执](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/visual_revision_receipt.json)；[全部源表](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables_cn.md)；`payload_manifest.json` 记录当前每个文件的来源、字节与 hash。
 
-原先待检验的直觉是：统计图较高的Feature可能对应更深解码分布。今天全体数据给出相反的平均位置方向；14层p显示浅深成分并存；频率局部比较混合。保留局部结构可用于选对象的可能性，但缩窄“h是模型深度代理”的整体说法；频率、词片／格式与工具尺度如何共同影响仍未回答。
-
-AI建议的唯一下一讨论问题：**我们应如何理解统计图层级与频率的耦合，才决定是否继续把h作为后续分层分析对象的索引？** 这是讨论建议，不授权下一轮计算或训练。研究者的下一步决策Unknown。
-
-本轮交付后停止，不修改Focus、旧Anchor、旧统计或科学状态，不启动共享／分离学习实验。
-
-完整来源：执行目录 `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z`；原输入目录 `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z`；portable目录 `/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z`。[全部源表索引](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/tables_cn.md)；[三类图及读图说明](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/figures_cn.md)；payload_manifest.json列每文件来源和hash。
+本次用户只要求图与报告修订；未 commit/push，未修改 Focus、Anchor 或原科学状态。完成后停止，不启动共享／分离学习实验、额外参数扫描或训练。

@@ -1,0 +1,48 @@
+{
+  "same_frequency": {
+    "sampled_contexts_quantiles": {
+      "0": 31.0,
+      "0.25": 105.0,
+      "0.5": 109.0,
+      "0.75": 112.5,
+      "1": 121.0
+    },
+    "largest_context_fraction_quantiles": {
+      "0": 0.015625,
+      "0.25": 0.0234375,
+      "0.5": 0.0234375,
+      "0.75": 0.03125,
+      "0.95": 0.0546875,
+      "1": 0.3046875
+    },
+    "direction128_share_max": 1.9908032190392244e-17,
+    "all_beyond128_exactzero": true
+  },
+  "mixed_frequency": {
+    "sampled_contexts_quantiles": {
+      "0": 99.0,
+      "0.25": 109.0,
+      "0.5": 112.0,
+      "0.75": 114.0,
+      "1": 121.0
+    },
+    "largest_context_fraction_quantiles": {
+      "0": 0.015625,
+      "0.25": 0.0234375,
+      "0.5": 0.0234375,
+      "0.75": 0.0234375,
+      "0.95": 0.03125,
+      "1": 0.046875
+    },
+    "direction128_share_max": 2.261922712666406e-17,
+    "all_beyond128_exactzero": true
+  },
+  "across_rules_unique_sample_positions": {
+    "intersection": 31194,
+    "same_unique": 121607,
+    "mixed_unique": 124086,
+    "shared_fraction_same": 0.2565148387839516,
+    "shared_fraction_mixed": 0.2513901648856438,
+    "jaccard": 0.14542725140909749
+  }
+}

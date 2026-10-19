@@ -1,0 +1,117 @@
+{
+  "created_at_utc": "2026-10-15T18:10:30.738166+00:00",
+  "processing_agent": "Codex /root",
+  "scope": "Researcher-authorized relation-to-learning execution and local reading package",
+  "new_report_tree": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_relation_learning",
+  "new_execution_tree": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z",
+  "execution_code": [
+    {
+      "path": "analysis_learning.py",
+      "bytes": 36938,
+      "sha256": "06a3d1c3e7952f91078d3270046818a8a3f3442adf29bbeb97a756b086d3f414"
+    },
+    {
+      "path": "aux_centering_control.py",
+      "bytes": 7144,
+      "sha256": "f567d59d194ab75f0cd221e8762a8f6e1142810e16aec71e8d902fda9ba8cd6f"
+    },
+    {
+      "path": "aux_direction.py",
+      "bytes": 7942,
+      "sha256": "3e958932d788cfc9355d3131a9f61e996ca63dc8de2b4c83dbef2264b10c0562"
+    },
+    {
+      "path": "build_handoff.py",
+      "bytes": 14827,
+      "sha256": "6d5b815e70aa6ce9f613b47ee05a568e116dd72f9036629a040cf86493b6c7cb"
+    },
+    {
+      "path": "data_routes.py",
+      "bytes": 29291,
+      "sha256": "935e0f2c0b7de3788ffe45e6fa0ab8b5c7e0073065aac43c86d6afcfe5f73d98"
+    },
+    {
+      "path": "expert_loss_phenotype.py",
+      "bytes": 7078,
+      "sha256": "e6ebdf86e7ab5d854228b2be71a922f336eea85027523cd335c491af81ff3812"
+    },
+    {
+      "path": "intervene.py",
+      "bytes": 13219,
+      "sha256": "42733eb84d49e80a8dc8b23e4c897117c76d8db6ffc3b1e837be3137efbfac84"
+    },
+    {
+      "path": "plot_aux_direction.py",
+      "bytes": 3346,
+      "sha256": "c0def90cd831830a4af81496801dc3618cb5dfd2b435fdf843a30302ad262bcc"
+    },
+    {
+      "path": "plot_centering_control.py",
+      "bytes": 5097,
+      "sha256": "109c33b197dcbc9cc8f11b57cf149b3daf087dc43e5518b695615fdb92635044"
+    },
+    {
+      "path": "prefix_precision.py",
+      "bytes": 4050,
+      "sha256": "d892506122f2bd01e33b3d27bde7ea18a6307c86aa5642a549669b64aacf4999"
+    },
+    {
+      "path": "register_saved_outputs.py",
+      "bytes": 6678,
+      "sha256": "aa9c3717be0014dcfccb7e589a497ee35ae13a40e08f8fcd13efbfa09832042f"
+    },
+    {
+      "path": "reserved_worker.sh",
+      "bytes": 3133,
+      "sha256": "c765c00d2890932f578c70397175448563385ce33fa0b263066157da8fb46f00"
+    },
+    {
+      "path": "response_decomposition.py",
+      "bytes": 14841,
+      "sha256": "cdc91c2404d83a5288abbece38fab306734d599726620538c85783e7219d298b"
+    },
+    {
+      "path": "structure_a.py",
+      "bytes": 43443,
+      "sha256": "206383e66a86db3ec1fc38f7c2dda7c8a97f96c401c4110951bcedabe08de92a"
+    },
+    {
+      "path": "train_adapters.py",
+      "bytes": 31208,
+      "sha256": "c7b9867fdd1966f8ec5651247795d0a82e57b29375a4f82bce4b41da4fb9ebbe"
+    }
+  ],
+  "existing_files_modified_in_scope": [
+    {
+      "path": "/data/250010109/Research_System/assets/catalog.json",
+      "operation": "add five actually saved asset identities; preserve preexisting changes"
+    },
+    {
+      "path": "/data/250010109/Research_System/assets/README.md",
+      "operation": "append final asset entry"
+    },
+    {
+      "path": "/data/250010109/Research_System/assets/README_cn.md",
+      "operation": "append final asset entry"
+    },
+    {
+      "path": "/data/250010109/Research_System/.research/memory/conversations/1015-crosscoder-特征频率与共同出现-protocol/memory.md",
+      "operation": "timestamped append only; private conversation memory excluded from package"
+    }
+  ],
+  "asset_ids": [
+    "representation_crosscoder_relation_learning_20261015t164000z",
+    "representation_crosscoder_relation_learning_eval512_20261015t164000z",
+    "checkpoint_family_crosscoder_relation_learning_20261015t164000z",
+    "checkpoint_crosscoder_relation_learning_smoke_20261015t164000z",
+    "analysis_crosscoder_relation_learning_20261015t164000z"
+  ],
+  "selected_evidence_exceptions": "evidence_origin_manifest.json: figures and three small plot/audit NPZ payloads",
+  "prior_results_and_previous_handoff": "preserved; no edits to earlier frequency results or their ZIP",
+  "unrelated_preexisting_dirty_paths": "preserved; not attributed to this task",
+  "base_or_crosscoder_training": false,
+  "skill_modifications": false,
+  "git_commit_or_push": false,
+  "external_send_or_sync": false,
+  "scientific_state_transitions": false
+}

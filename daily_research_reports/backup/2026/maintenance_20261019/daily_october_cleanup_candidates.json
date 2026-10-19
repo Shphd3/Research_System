@@ -1,0 +1,276 @@
+{
+  "audit_date": "2026-10-19",
+  "audit_mode": "read_only; no Daily changes; no experiments",
+  "recommended_zip_candidates": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip",
+      "repository_relative_path": "daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip",
+      "bytes": 36783147,
+      "sha256": "2411367ff2f533e7e98bc7f64699db4a9dcac01cd898c28049a633033bfaca75",
+      "candidate_type": "explicit_previous_version",
+      "why": "Current results README identifies this ZIP as the previous version, states it excludes the visual revision, and says not to mix it with current reports. Preserve exact historical ZIP bytes in recoverable backup; it is NOT an exact duplicate of current expanded directory.",
+      "evidence": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/README_cn.md",
+        "line": 14
+      },
+      "retain_primary_path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z",
+      "backup_destination": "/data/250010109/Research_System/backup/2026/10_cleanup_20261019/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip",
+      "suitable_for_recoverable_move": true,
+      "suitable_for_permanent_delete": false,
+      "link_preservation_required": true,
+      "incoming_reference_scan_scope": "October Daily text files only; parent must also repair/audit other repository text references",
+      "incoming_references": [
+        {
+          "name": "results_20261014T020014Z_portable.zip",
+          "path": "daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_archive_receipt.json",
+          "line": 2,
+          "text": "  \"archive_path\": \"/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip\","
+        },
+        {
+          "name": "results_20261014T020014Z_portable.zip",
+          "path": "daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/README_cn.md",
+          "line": 14,
+          "text": "此前已推送的 [portable ZIP（此前版本）](/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip) 保持原字节，其SHA256为 `2411367ff2f533e7e98bc7f64699db4a9dcac01cd898c28049a633033bfaca75`；它不含本次修订，不应与当前报告混用。本次没有commit/push或重打该ZIP。"
+        }
+      ],
+      "zip_validation": {
+        "zip": "daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z_portable.zip",
+        "zip_bytes": 36783147,
+        "zip_sha256": "2411367ff2f533e7e98bc7f64699db4a9dcac01cd898c28049a633033bfaca75",
+        "entries": 68,
+        "exact_matches": 40,
+        "missing": [
+          "results_20261014T020014Z/code/make_portable.py",
+          "results_20261014T020014Z/provenance/anchor_cn.md",
+          "results_20261014T020014Z/provenance/canonical_payload_manifest.json"
+        ],
+        "mismatch": [
+          "results_20261014T020014Z/README_cn.md",
+          "results_20261014T020014Z/detailed_cn.md",
+          "results_20261014T020014Z/figures/figure1_anchor_3461.pdf",
+          "results_20261014T020014Z/figures/figure1_anchor_3461.png",
+          "results_20261014T020014Z/figures/figure1_anchor_3461.svg",
+          "results_20261014T020014Z/figures/figure1_anchor_3461_details.pdf",
+          "results_20261014T020014Z/figures/figure1_anchor_3461_details.png",
+          "results_20261014T020014Z/figures/figure1_anchor_3461_details.svg",
+          "results_20261014T020014Z/figures/figure1_anchor_937.pdf",
+          "results_20261014T020014Z/figures/figure1_anchor_937.png",
+          "results_20261014T020014Z/figures/figure1_anchor_937.svg",
+          "results_20261014T020014Z/figures/figure1_anchor_937_details.pdf",
+          "results_20261014T020014Z/figures/figure1_anchor_937_details.png",
+          "results_20261014T020014Z/figures/figure1_anchor_937_details.svg",
+          "results_20261014T020014Z/figures/figure2_decoder_distribution.pdf",
+          "results_20261014T020014Z/figures/figure2_decoder_distribution.png",
+          "results_20261014T020014Z/figures/figure2_decoder_distribution.svg",
+          "results_20261014T020014Z/figures/figure3_all_features.pdf",
+          "results_20261014T020014Z/figures/figure3_all_features.png",
+          "results_20261014T020014Z/figures/figure3_all_features.svg",
+          "results_20261014T020014Z/figures_cn.md",
+          "results_20261014T020014Z/provenance/protocol_frozen.md",
+          "results_20261014T020014Z/summary_cn.md",
+          "results_20261014T020014Z/tables_cn.md",
+          "results_20261014T020014Z/payload_manifest.json"
+        ],
+        "unpacked_extras": [
+          "results_20261014T020014Z/code/fix_h0_layout.py",
+          "results_20261014T020014Z/code/revise_figures.py",
+          "results_20261014T020014Z/code/rewrite_report.py",
+          "results_20261014T020014Z/code/validate_revision.py",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/README_cn.md",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/code/deliver_expanded_graph.py",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/code/draw_expanded_graph.py",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/code/fix_graph_layout.py",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/code/retitle_expanded_main.py",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/engineering_note.json",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/facets_index.json",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.pdf",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.png",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections.svg",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_expanded_connections_facets.pdf",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.pdf",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.png",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure1_full_hierarchy_overview.svg",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.pdf",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.png",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_facets.svg",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.pdf",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.png",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_raw.svg",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.pdf",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.png",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/figures/figure2_expanded_decoder_train.svg",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/provenance/title_revision_20261014T033332Z.json",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/reading_guide_cn.md",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/receipt.json",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/selection_frozen_before_p.json",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/selection_rules_frozen.json",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/tables/display_frequency_coverage.csv",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_decoder_p.csv",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_edges.csv",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/tables/expanded_nodes.csv",
+          "results_20261014T020014Z/expanded_graph_20261014T032050Z/tables/overview_counts.csv",
+          "results_20261014T020014Z/figures/figure4_mean_p_raw.pdf",
+          "results_20261014T020014Z/figures/figure4_mean_p_raw.png",
+          "results_20261014T020014Z/figures/figure4_mean_p_raw.svg",
+          "results_20261014T020014Z/figures/figure4_mean_p_train.pdf",
+          "results_20261014T020014Z/figures/figure4_mean_p_train.png",
+          "results_20261014T020014Z/figures/figure4_mean_p_train.svg",
+          "results_20261014T020014Z/figures/figure5_peak_composition_posthoc.pdf",
+          "results_20261014T020014Z/figures/figure5_peak_composition_posthoc.png",
+          "results_20261014T020014Z/figures/figure5_peak_composition_posthoc.svg",
+          "results_20261014T020014Z/figures/figure6_h0_individual.pdf",
+          "results_20261014T020014Z/figures/figure6_h0_individual.png",
+          "results_20261014T020014Z/figures/figure6_h0_individual.svg",
+          "results_20261014T020014Z/figures/figure7_h5_individual_curves.pdf",
+          "results_20261014T020014Z/figures/figure7_h5_individual_curves.png",
+          "results_20261014T020014Z/figures/figure7_h5_individual_curves.svg",
+          "results_20261014T020014Z/figures/figure8_frequency_all25.pdf",
+          "results_20261014T020014Z/figures/figure8_frequency_all25.png",
+          "results_20261014T020014Z/figures/figure8_frequency_all25.svg",
+          "results_20261014T020014Z/provenance/visual_revision_record.json",
+          "results_20261014T020014Z/provenance/visual_revision_scope_cn.md",
+          "results_20261014T020014Z/tables/figure1_nodes_display.csv",
+          "results_20261014T020014Z/tables/figure3_coordinate_comparison_source.csv",
+          "results_20261014T020014Z/tables/frequency_comparison_25cells_source.csv",
+          "results_20261014T020014Z/tables/group_mean_p_source.csv",
+          "results_20261014T020014Z/tables/h0_individual_source.csv",
+          "results_20261014T020014Z/tables/h5_curves_source.csv",
+          "results_20261014T020014Z/tables/peak_composition_posthoc.csv",
+          "results_20261014T020014Z/tables/peak_feature_labels_posthoc.csv",
+          "results_20261014T020014Z/visual_revision_receipt.json"
+        ],
+        "unpacked_bytes": 112664595
+      }
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/CrossCoder_特征频率与关系分组_讨论包_20261015.zip",
+      "repository_relative_path": "daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/CrossCoder_特征频率与关系分组_讨论包_20261015.zip",
+      "bytes": 7551056,
+      "sha256": "e79ea7fd6928d7635f0d4be7d670ba52f7601782826822f7c3fbfea4a4135800",
+      "candidate_type": "strict_duplicate_packaging",
+      "why": "All 83 ZIP file members match the retained expanded discussion package by SHA256, with no missing, changed or extra files. Candidate is ZIP container only; retain expanded package and all scientific results.",
+      "evidence": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/crosscoder_frequency_discussion/README.md",
+        "line": 3
+      },
+      "retain_primary_path": "/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/crosscoder_frequency_discussion",
+      "backup_destination": "/data/250010109/Research_System/backup/2026/10_cleanup_20261019/daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/CrossCoder_特征频率与关系分组_讨论包_20261015.zip",
+      "suitable_for_recoverable_move": true,
+      "suitable_for_permanent_delete": false,
+      "link_preservation_required": true,
+      "incoming_reference_scan_scope": "October Daily text files only; parent must also repair/audit other repository text references",
+      "incoming_references": [
+        {
+          "name": "CrossCoder_特征频率与关系分组_讨论包_20261015.zip",
+          "path": "daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/package_receipt.json",
+          "line": 2,
+          "text": "  \"archive\": \"/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/CrossCoder_特征频率与关系分组_讨论包_20261015.zip\","
+        }
+      ],
+      "zip_validation": {
+        "zip": "daily_research_reports/1015/crosscoder_feature_frequency/handoff_20261015T151400Z/CrossCoder_特征频率与关系分组_讨论包_20261015.zip",
+        "zip_bytes": 7551056,
+        "zip_sha256": "e79ea7fd6928d7635f0d4be7d670ba52f7601782826822f7c3fbfea4a4135800",
+        "entries": 83,
+        "exact_matches": 83,
+        "missing": [],
+        "mismatch": [],
+        "unpacked_extras": [],
+        "unpacked_bytes": 17756221
+      }
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1018/feature_dispatch_routing_audit_20261018_portable.zip",
+      "repository_relative_path": "daily_research_reports/1018/feature_dispatch_routing_audit_20261018_portable.zip",
+      "bytes": 10440579,
+      "sha256": "40af3a66880e850008e53fdb149dfb23722ed55cad7cee8ec1f587eb58ee3e65",
+      "candidate_type": "strict_duplicate_packaging",
+      "why": "All 62 ZIP file members match the retained expanded discussion package by SHA256, with no missing, changed or extra files. Candidate is ZIP container only; retain expanded package, project canonical records and meeting brief.",
+      "evidence": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1018/README_cn.md",
+        "line": 17
+      },
+      "retain_primary_path": "/data/250010109/Research_System/daily_research_reports/1018/feature_dispatch_routing_audit",
+      "backup_destination": "/data/250010109/Research_System/backup/2026/10_cleanup_20261019/daily_research_reports/1018/feature_dispatch_routing_audit_20261018_portable.zip",
+      "suitable_for_recoverable_move": true,
+      "suitable_for_permanent_delete": false,
+      "link_preservation_required": true,
+      "incoming_reference_scan_scope": "October Daily text files only; parent must also repair/audit other repository text references",
+      "incoming_references": [
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1018/README.md",
+          "line": 17,
+          "text": "[Download ZIP](feature_dispatch_routing_audit_20261018_portable.zip) · [Principal-agent handoff (Chinese)](feature_dispatch_routing_audit/director_agent_handoff_cn.md) · [Package entry](feature_dispatch_routing_audit/README.md) · [Package verification receipt](feature_dispatch_routing_audit_package_receipt.json)."
+        },
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1018/README_cn.md",
+          "line": 17,
+          "text": "[下载ZIP结果包](feature_dispatch_routing_audit_20261018_portable.zip) · [先读交接稿](feature_dispatch_routing_audit/director_agent_handoff_cn.md) · [包内目录](feature_dispatch_routing_audit/README_cn.md) · [打包校验回执](feature_dispatch_routing_audit_package_receipt.json)"
+        },
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1018/feature_dispatch_routing_audit_package_receipt.json",
+          "line": 3,
+          "text": "  \"zip_path\": \"/data/250010109/Research_System/daily_research_reports/1018/feature_dispatch_routing_audit_20261018_portable.zip\","
+        },
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1018/payload_manifest.json",
+          "line": 6,
+          "text": "      \"path\": \"feature_dispatch_routing_audit_20261018_portable.zip\","
+        },
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1019/待讨论/frequency_priority_dispatch_20261019/protocol.md",
+          "line": 27,
+          "text": "Completed audit: `routing_audit_20261018T143950Z`. The local portable package is named `feature_dispatch_routing_audit_20261018_portable.zip`."
+        },
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1019/待讨论/frequency_priority_dispatch_20261019/protocol_cn.md",
+          "line": 24,
+          "text": "已完成审计：`routing_audit_20261018T143950Z`。本地便携包名 `feature_dispatch_routing_audit_20261018_portable.zip`。"
+        },
+        {
+          "name": "feature_dispatch_routing_audit_20261018_portable.zip",
+          "path": "daily_research_reports/1019/待讨论/frequency_priority_dispatch_20261019/protocol_frozen.md",
+          "line": 24,
+          "text": "已完成审计：`routing_audit_20261018T143950Z`。本地便携包名 `feature_dispatch_routing_audit_20261018_portable.zip`。"
+        }
+      ],
+      "zip_validation": {
+        "zip": "daily_research_reports/1018/feature_dispatch_routing_audit_20261018_portable.zip",
+        "zip_bytes": 10440579,
+        "zip_sha256": "40af3a66880e850008e53fdb149dfb23722ed55cad7cee8ec1f587eb58ee3e65",
+        "entries": 62,
+        "exact_matches": 62,
+        "missing": [],
+        "mismatch": [],
+        "unpacked_extras": [],
+        "unpacked_bytes": 29570675
+      }
+    }
+  ],
+  "recommended_total_bytes": 54774782,
+  "retain": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1019/待讨论",
+      "reason": "Current 1019 index explicitly keeps latest discussion ZIPs and full normalized-learning reading snapshot. All three current ZIPs have exact expanded copies, but remain current requested delivery surfaces."
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z",
+      "reason": "Current revised formal-reading copy and large source tables. Old ZIP differs in 25 members and misses 3; no current payload is discarded."
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1015/crosscoder_feature_frequency/protocol_draft.md",
+      "reason": "Execution contract explicitly preserves original draft and points to execution amendment. Do not declare evidence obsolete from filename."
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/background_audit_handoff/crosscoder_background_audit_anchor_v1_cn.md",
+      "reason": "Explicit historical initial Anchor identity is tied to original send receipt hash; current Anchor is clarified version, but history is scientifically meaningful."
+    }
+  ],
+  "all_zip_audit_path": "/tmp/daily_october_zip_audit.json"
+}

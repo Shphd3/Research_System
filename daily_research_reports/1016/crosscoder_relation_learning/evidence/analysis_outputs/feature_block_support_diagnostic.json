@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETE",
+  "block_definition": "4 consecutive EVAL contexts,128 total",
+  "sets_unchanged": true,
+  "readout": {
+    "low": {
+      "eligible_features": 3737,
+      "min_blocks": 1,
+      "one_block": 1,
+      "two_or_fewer_blocks": 4,
+      "four_or_fewer_blocks": 21,
+      "block_support_quantiles": [
+        1.0,
+        11.0,
+        28.0,
+        50.0,
+        74.0,
+        98.0,
+        126.0
+      ]
+    },
+    "high": {
+      "eligible_features": 3916,
+      "min_blocks": 61,
+      "one_block": 0,
+      "two_or_fewer_blocks": 0,
+      "four_or_fewer_blocks": 0,
+      "block_support_quantiles": [
+        61.0,
+        127.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0
+      ]
+    }
+  },
+  "boundary": "features supported in very few clusters have weak between-cluster uncertainty identification; linearized intervals remain conditional approximations"
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "fixed_group_contribution_representation_spectrum_v1",
+  "frozen_utc": "2026-10-16T03:08:24.694217+00:00",
+  "processing_agent": "Codex /root/spectrum_data",
+  "pre_outcome_statement": "No representation covariance spectrum or first-direction endpoint has been computed or inspected before this freeze. Only D frequency/support, cache schemas and checkpoint decoder/normalization metadata were inspected.",
+  "root_authorization": "Root user-authorized bounded descriptive analysis; root froze definitions in collaboration message before this receipt.",
+  "m": 14,
+  "groups_per_rule": 1119,
+  "pool_size": 15666,
+  "pool_rule": "Existing D hits>=100, D-block coverage>=10, 0<p_D<1; every feature exactly once per rule.",
+  "m_rationale": "Largest divisor of15666 not exceeding16; all candidate features retained. D summed column hits per group>=1400; neither unique position count nor independent signal guarantee; no optimality claim.",
+  "same_rule": "Ascending(log10p_D,feature_id).reshape(1119,14)",
+  "mixed_rule": "Same ordered feature IDs reshape(14,1119).T; one member from each of14 equal-count D-frequency bands.",
+  "sample_N": 131072,
+  "full_N_V": 5247663,
+  "V_blocks": 41,
+  "positions_rule": "floor((j+0.5)*N_V/N) in concatenated V eligible positions; map to original global eligible IDs; no activation-dependent selection",
+  "layer_model_one_based": 28,
+  "layer_model_zero_based": 27,
+  "source_index_zero_based": 13,
+  "layer_object": "residual-post before final RMSNorm",
+  "model_coordinate_direction": "d_i = saved TRAIN_centered_vector_L2_RMS[13] * saved decoder[13,i,:]; never unit-normalize.",
+  "h_G": "sum_i cached_z_i(t) d_i; no per-group decoder bias or TRAIN mean",
+  "center": "Position mean over exactly the same fixed N V rows including zeros, ddof1 covariance",
+  "statistic": "Nonzero eigenvalues of group-contribution representation covariance, not parameter spectrum or capacity",
+  "shuffle_replicates": 1,
+  "shuffle_seed": 20261016,
+  "shuffle_rule": "Independent uniform permutation of all N positions for every feature column; exact original value multiset including zeros; one shared randomized matrix for both rules.",
+  "zero_variance_rule": "NA first-direction share; count and report, never recode0; no post-outcome support deletion",
+  "inference_boundary": "Fixed model/rules/V-position set descriptive comparison, composite grouping rules not frequency-only causation. One statistical permutation no p values. Not model-input intervention or evidence of learning benefit.",
+  "files": {
+    "feature_pool_ordered.npy": {
+      "sha256": "c3324395435139f434a4c07b1d84f70a6252a94b4fec6a914cbb28091649dee1",
+      "bytes": 125456
+    },
+    "same_frequency_members.npy": {
+      "sha256": "89e821c733cda7da80e128e978d1ef4372ab5650632b2e58dbe0dfbce34cfc3f",
+      "bytes": 125456
+    },
+    "mixed_frequency_members.npy": {
+      "sha256": "c64affb9b42ad269b65f86631ac96c51577c6a1093d3b27853ebe5772055f819",
+      "bytes": 125456
+    },
+    "V_global_position_ids.npy": {
+      "sha256": "889d6a2cb616fa03789fd59e9aba8f17fe976d43b333052d990b0402595cabd4",
+      "bytes": 1048704
+    },
+    "V_stream_position_ids.npy": {
+      "sha256": "055016e15241963962f235983fe362f0f5d1aad67e618af6c21f537cd9364e1a",
+      "bytes": 1048704
+    },
+    "grouping_members.csv": {
+      "sha256": "9799967d4d5323449bf11ba2a7a9271172059684da8785dac9d1c75eb8b55514",
+      "bytes": 1822975
+    },
+    "grouping_D_frequency.csv": {
+      "sha256": "7a96f66eba15f6cac55d765b01cba18446692d56908a00a161fe741e33fa0d90",
+      "bytes": 215979
+    }
+  },
+  "input_files": {
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/frequency.csv": "583a297c2c252f263ff83c368ac86e42c44c98123e80f3030710f774cf6ceb85",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/candidate_mask.npy": "23d7da8fc4461011fccc71ec27252bcfa4a2d66a2b5d1ab1ade33d9a1709c589",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json": "b77072420e07f1581df143522e18009354f181736787deafcf0c527d7bed0c9e"
+  },
+  "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+  "proposal_seed_note": "Proposal seed2026101603 superseded before outcomes by explicit root freeze seed20261016."
+}

@@ -1,0 +1,246 @@
+{
+  "operation": "CPU-only reuse of cached routing and CSR events; no inference/training/GPU",
+  "processor": "Codex /root/routing_audit_core",
+  "rules": [
+    "A deterministic route (two seeds checked equal)",
+    "B1 seed20261018",
+    "B2 seed20261019"
+  ],
+  "pool_size": 9615,
+  "low_size": 964,
+  "high_size": 962,
+  "status": "COMPLETE",
+  "wall_seconds": 22.126560620963573,
+  "maximum_RSS_KiB": 992248,
+  "threads": 1,
+  "bootstrap_replicates": 200,
+  "bootstrap_seed": 20261018,
+  "checks": {
+    "train": {
+      "N": 130712,
+      "contexts": 128,
+      "nnz": 33567565,
+      "source_path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_5_of_10_shard_00000041_processed.bin",
+      "source_stat_matches_saved_manifest": true,
+      "all_target_shift_verified": true,
+      "low_high_union_masks_recount_match": true,
+      "block_id_minus_source_block_constant": 0,
+      "row_id_strict_sorted_unique": true,
+      "positive_finite_z": true,
+      "A_seed_routes_identical": true,
+      "matrix_and_position_hashes": {
+        "feature_ptr": "5cf6c37634f1fb6b3cd7e45a022108d35bbd999402b7a05b22aa411f59a6cce5",
+        "feature_ids": "7f7daa4006cfe662b8cfa2f6feb963580b9e76ad02a5af5a5d10a5ecfd95567a",
+        "block_id": "b96d7c2f3bc87f07ecb444a07f635155757b8516ceedf19179c70e2d86d2a6db",
+        "position_id": "b2504507c81004c5396436a75a07606cf7edb1f2af9ecfdc6bddccac51449f81",
+        "target": "faffa030eb06439e2f207d31f1a98f7d282872b6ea310af52d3e2c5917188dc2"
+      },
+      "rules": {
+        "A": {
+          "reused_npz_counts_exactly_match_CSR_recount": true,
+          "top1_count_conservation": true,
+          "p_a_q_identity_max_absolute_error": 2.220446049250313e-16,
+          "empty_experts": 3,
+          "N_e": [
+            0,
+            0,
+            0,
+            129,
+            201,
+            646,
+            9893,
+            119843
+          ],
+          "low_union_count": 95544,
+          "low_union_route_counts": [
+            0,
+            0,
+            0,
+            0,
+            136,
+            603,
+            6281,
+            88524
+          ]
+        },
+        "B1": {
+          "reused_npz_counts_exactly_match_CSR_recount": true,
+          "top1_count_conservation": true,
+          "p_a_q_identity_max_absolute_error": 2.220446049250313e-16,
+          "empty_experts": 0,
+          "N_e": [
+            8239,
+            5728,
+            26589,
+            11791,
+            61270,
+            3499,
+            3231,
+            10365
+          ],
+          "low_union_count": 95544,
+          "low_union_route_counts": [
+            5629,
+            4236,
+            20528,
+            8351,
+            45326,
+            1966,
+            2294,
+            7214
+          ]
+        },
+        "B2": {
+          "reused_npz_counts_exactly_match_CSR_recount": true,
+          "top1_count_conservation": true,
+          "p_a_q_identity_max_absolute_error": 3.3306690738754696e-16,
+          "empty_experts": 0,
+          "N_e": [
+            11388,
+            4183,
+            5973,
+            6622,
+            51372,
+            1741,
+            18887,
+            30546
+          ],
+          "low_union_count": 95544,
+          "low_union_route_counts": [
+            8312,
+            2886,
+            4511,
+            4918,
+            36334,
+            1271,
+            13376,
+            23936
+          ]
+        }
+      },
+      "elapsed_seconds": 13.176908768713474
+    },
+    "eval": {
+      "N": 65402,
+      "contexts": 64,
+      "nnz": 16416360,
+      "source_path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+      "source_stat_matches_saved_manifest": true,
+      "all_target_shift_verified": true,
+      "low_high_union_masks_recount_match": true,
+      "block_id_minus_source_block_constant": 109466,
+      "row_id_strict_sorted_unique": true,
+      "positive_finite_z": true,
+      "A_seed_routes_identical": true,
+      "matrix_and_position_hashes": {
+        "feature_ptr": "312efc665208813aaf65e196790480a49938877a51de3060dc34cbdf9168a251",
+        "feature_ids": "57697b5ab9f4886a0c27c495f7e44402ba6cfffcbe41199bd8d9f816729c4326",
+        "block_id": "9af7e31a3f10587104b3632b805807c387d4ae1ac2793610f1340a0e27e0cc09",
+        "position_id": "77e4f1c2a18549765b2776be54d0764eb67632c04e43e0c389d60e64a59771d1",
+        "target": "293d46a1627b70e8d68f094fa2e9f25e889bc98a2e9af6122e6ee700a7131c0b"
+      },
+      "rules": {
+        "A": {
+          "reused_npz_counts_exactly_match_CSR_recount": true,
+          "top1_count_conservation": true,
+          "p_a_q_identity_max_absolute_error": 2.220446049250313e-16,
+          "empty_experts": 3,
+          "N_e": [
+            0,
+            0,
+            0,
+            64,
+            97,
+            184,
+            6934,
+            58123
+          ],
+          "low_union_count": 49291,
+          "low_union_route_counts": [
+            0,
+            0,
+            0,
+            0,
+            69,
+            175,
+            4439,
+            44608
+          ]
+        },
+        "B1": {
+          "reused_npz_counts_exactly_match_CSR_recount": true,
+          "top1_count_conservation": true,
+          "p_a_q_identity_max_absolute_error": 2.220446049250313e-16,
+          "empty_experts": 0,
+          "N_e": [
+            2939,
+            2178,
+            12774,
+            6009,
+            32123,
+            1818,
+            1873,
+            5688
+          ],
+          "low_union_count": 49291,
+          "low_union_route_counts": [
+            2088,
+            1591,
+            10105,
+            4458,
+            24386,
+            1033,
+            1450,
+            4180
+          ]
+        },
+        "B2": {
+          "reused_npz_counts_exactly_match_CSR_recount": true,
+          "top1_count_conservation": true,
+          "p_a_q_identity_max_absolute_error": 2.220446049250313e-16,
+          "empty_experts": 0,
+          "N_e": [
+            7363,
+            2930,
+            3418,
+            3679,
+            21422,
+            981,
+            11415,
+            14194
+          ],
+          "low_union_count": 49291,
+          "low_union_route_counts": [
+            5391,
+            1992,
+            2640,
+            2636,
+            15937,
+            817,
+            8384,
+            11494
+          ]
+        }
+      },
+      "elapsed_seconds": 8.546091953292489
+    }
+  },
+  "outputs": [
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/block_counts_eval_A.npz",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/block_counts_eval_B1.npz",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/block_counts_eval_B2.npz",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/block_counts_train_A.npz",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/block_counts_train_B1.npz",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/block_counts_train_B2.npz",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/bootstrap_summary.csv",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/case_selection.json",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/core_checks.json",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/core_summary.json",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/expert_summary.csv",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/feature_expert_metrics.csv",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/feature_owner_summary.csv",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/group_summary.csv",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/paired_feature_summary.csv",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/metrics/core/train_support_verified.npz"
+  ]
+}

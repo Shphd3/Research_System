@@ -1,0 +1,23 @@
+{
+  "reviewed_at_utc": "2026-10-15T17:45:29.631325+00:00",
+  "reviewer": "Codex /root/learning_trainer",
+  "PNG_actual_visual_inspection": "PASS: zero line, full/constant/centered/interaction labels and all seed markers visible",
+  "pdf_svg": "exported; not separately visually rendered",
+  "source_prediction": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/response_decomposition/prediction.json",
+  "source_table": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/response_decomposition_effects.csv",
+  "files": {
+    "png": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/figures/supplement_response_decomposition.png",
+      "sha256": "3cc8ebd57073c9b33397204cff78ab4213bb5759bf68cc190117a0ed449c159c"
+    },
+    "pdf": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/figures/supplement_response_decomposition.pdf",
+      "sha256": "8d429cc539606d68b3904bb7cf6ddb70f1be5423a6b1fa87a87bfbdeec9907d2"
+    },
+    "svg": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/figures/supplement_response_decomposition.svg",
+      "sha256": "58a25c30a8721946799ffdb5802a96f565428362dbd2f759e82a52da40987f3a"
+    }
+  },
+  "boundary": "TRAIN-centered response retains most harm; no semantic common deletion or additive-loss attribution"
+}

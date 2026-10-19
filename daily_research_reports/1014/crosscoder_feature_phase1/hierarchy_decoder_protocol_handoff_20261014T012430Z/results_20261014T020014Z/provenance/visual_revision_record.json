@@ -1,0 +1,429 @@
+{
+  "revision_id": "visual_revision_20261014T025700Z",
+  "created_utc": "2026-10-14T02:58:09.424495+00:00",
+  "processing_agent": "Codex original thread 01a1343f-32aa-7500-9835-000956218089",
+  "scope": "User-authorized terminology, visualization and report revision; one post-hoc peak-composition description from saved geometry",
+  "primary_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z",
+  "delivery_root": "/data/250010109/Research_System/daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z",
+  "source_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/derived_geometry.npz",
+      "sha256": "5a197371680c6913491dcb9b009f277e53a5936ec536e28940c06ebc5ecb3cb4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/results.json",
+      "sha256": "9541f1b27d1f7423d0649a8d0620d8d8b392485cb4b1157b1399a9610a847d7d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/figure3_source.csv",
+      "sha256": "62ee76465c8d37807836f1d561a4664b2a1739ac06b44495ae55fd65d71c3d72"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/depth_vs_layer_summary.csv",
+      "sha256": "7fc72e103286a8e596d488d5f45a75ebefbab658282132f0c4282cd953e888b6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/hierarchy_mean_p.csv",
+      "sha256": "b2535624d6de8ec1f3fd982dd430159a371297d2989681f6240ba4841367106e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/frequency_overlap_comparison.csv",
+      "sha256": "1c50b5dd04d4d75aab7725094638c57f6553ad37f1554e33da366cfb62f71e4e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/graph1_nodes.csv",
+      "sha256": "dce5b3ecef8600a1de01fd81fdfc477417d9e3e4a87a737c5b298b1095073548"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/graph1_edges.csv",
+      "sha256": "15a5edb83aeed7142deb445824d619378573515526e93ddc704fb9330aad72e8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/selection_frozen_before_geometry.json",
+      "sha256": "c710c09b9a489bf0ee69dbd8e15b90a32a111a39da9fa962211fe5123d43f489"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/protocol_frozen.md",
+      "sha256": "39530a9a36eee0403a8bc3ee53ad19d3e82a5dcb18c86fa7287c1ca4cc8894fb"
+    }
+  ],
+  "posthoc_peak_rule": "Use unique maximum among the 14 saved p values; classes model layer2 / layer28 / other. Exact ties absent in both coordinates, checked before drawing; no semantic or common/unique labels.",
+  "no_model_inference": true,
+  "no_training": true,
+  "no_new_cache_scan": true,
+  "no_gpu_or_new_job": true,
+  "no_commit_push": true,
+  "old_committed_zip_unchanged": true,
+  "status": "COMPLETE",
+  "figure_manifest": [
+    {
+      "name": "figure1_anchor_937",
+      "question": "固定节点的统计关联如何组织？",
+      "sources": [
+        "graph1_nodes.csv",
+        "graph1_edges.csv"
+      ],
+      "note": "节点激活频率单位%；无传播／功能标签",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure1_anchor_937_details",
+      "question": "密集边的支持与条件概率是多少？",
+      "sources": [
+        "graph1_edges.csv",
+        "graph1_nodes.csv"
+      ],
+      "note": "",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure1_anchor_3461",
+      "question": "固定节点的统计关联如何组织？",
+      "sources": [
+        "graph1_nodes.csv",
+        "graph1_edges.csv"
+      ],
+      "note": "节点激活频率单位%；无传播／功能标签",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure1_anchor_3461_details",
+      "question": "密集边的支持与条件概率是多少？",
+      "sources": [
+        "graph1_edges.csv",
+        "graph1_nodes.csv"
+      ],
+      "note": "",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure2_decoder_distribution",
+      "question": "同一节点的 14 层解码轮廓是否相同？",
+      "sources": [
+        "figure2_source.csv"
+      ],
+      "note": "",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure3_all_features",
+      "question": "方向是否保留、幅度差异有多依赖坐标？",
+      "sources": [
+        "figure3_coordinate_comparison_source.csv",
+        "depth_vs_layer_summary.csv"
+      ],
+      "note": "",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure4_mean_p_train",
+      "question": "组平均轮廓在两种坐标下如何变化？",
+      "sources": [
+        "hierarchy_mean_p.csv"
+      ],
+      "note": "两图共同色标；不是先加幅度再归一",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure4_mean_p_raw",
+      "question": "组平均轮廓在两种坐标下如何变化？",
+      "sources": [
+        "hierarchy_mean_p.csv"
+      ],
+      "note": "两图共同色标；不是先加幅度再归一",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure5_peak_composition_posthoc",
+      "question": "同级内不同峰值类别的比例如何、是否依赖坐标？",
+      "sources": [
+        "peak_composition_posthoc.csv",
+        "peak_feature_labels_posthoc.csv"
+      ],
+      "note": "事后描述；无因果／功能／common-unique命名",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure6_h0_individual",
+      "question": "20个合格叶节点是否具有相同轮廓？",
+      "sources": [
+        "h0_individual_source.csv"
+      ],
+      "note": "不包含847个孤立节点",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure7_h5_individual_curves",
+      "question": "同为最高统计图层级的两个Feature，轮廓是否相同？",
+      "sources": [
+        "h5_curves_source.csv"
+      ],
+      "note": "",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    },
+    {
+      "name": "figure8_frequency_all25",
+      "question": "频率比较的效应大小、样本数和缺覆盖分别是什么？",
+      "sources": [
+        "frequency_overlap_comparison.csv",
+        "frequency_comparison_25cells_source.csv"
+      ],
+      "note": "",
+      "n_Q": 15537,
+      "graph": "V full saved graph",
+      "no_independent_node_inference": true
+    }
+  ],
+  "render_seconds": 23.42437302134931,
+  "max_rss_bytes": 452124672,
+  "font": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_decoder_distribution/20261014T020014Z/visual_revision_20261014T025700Z/font/NotoSansCJKsc-Regular.otf",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+    "not_copied_to_git_or_delivery": true
+  },
+  "source_files_unchanged": true,
+  "peak_exact_ties": {
+    "train": 0,
+    "raw": 0
+  },
+  "new_statistics": "POST_HOC_DESCRIPTIVE_PEAK_COUNTS_ONLY",
+  "layout_only_fix": {
+    "figure": "figure6_h0_individual",
+    "reason": "place colorbar outside panels without hiding model layer28",
+    "seconds": 3.9205339774489403,
+    "max_rss_bytes": 838086656,
+    "source_cells_unchanged": true
+  },
+  "delivery_check_retry_note": "Initial delivery check found two completion artifacts not yet written; completion-artifact creation and final link checks reordered. No numeric/source check failed. First check runtime not individually retained; revision wall time includes it.",
+  "completed_utc": "2026-10-14T03:13:57.646675+00:00",
+  "checks": {
+    "all_registered_primary_inputs_unchanged": true,
+    "all_original_tables_geometry_text_code_and_receipts_unchanged": true,
+    "previously_pushed_zip_unchanged": true,
+    "figure3_identical_15537_ids_h_jitter_both_coordinates": true,
+    "group_mean_p_all_168_cells_match_original_and_sum1": true,
+    "posthoc_peaks_unique_and_counts_proportions_exact": true,
+    "h0_all20_h5_both_and_all_p_cells_exact": true,
+    "frequency_25_original_cells_invalid_not_displayed_as0": true,
+    "unambiguous_chinese_frequency_p_and_arrow_labels": true,
+    "report_local_links_and_requested_structure": true,
+    "12_final_figures_in_three_formats_copied_exactly": true
+  },
+  "visual_review": {
+    "status": "ALL_12_FINAL_PNGS_VIEWED",
+    "figure6": "Colorbar moved outside panels and final PNG reviewed; model28 unobscured",
+    "font_glyph_check": "all text supported by NotoSansCJKsc",
+    "changes": "layout and labels plus user-requested paired/full-cell plots; no scientific source edits"
+  },
+  "reasoning_audit": {
+    "skill": "research-reasoning-auditor",
+    "boundary": "L is a weighted average only; h/frequency/model layer/p are distinct; frequency cells are not adjusted effects; peak categories post hoc not functional; no shared/expert benefit claim"
+  },
+  "validation_seconds": 1.1879278104752302,
+  "validation_max_rss_bytes": 838086656,
+  "figure_hashes": [
+    {
+      "relative_path": "figures/figure1_anchor_3461.pdf",
+      "bytes": 40293,
+      "sha256": "2dac7c560e1416bee1a7161d1d60f70301e0e191a57629bb9733dabd5c6779b5"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461.png",
+      "bytes": 686210,
+      "sha256": "59106f220daef802340ecdb674133f1a61b9f528d2517e6d355c9813ebbc67bc"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461.svg",
+      "bytes": 194759,
+      "sha256": "5f065caf5e0341bef1a71d4f428eee0fd30d2b24e56bd7fede4d176f3ed8c20d"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461_details.pdf",
+      "bytes": 36947,
+      "sha256": "c1137b9966fbf72e58c2720edfb20a86695431e8c0c69b54d5c1883d7ec9ccd2"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461_details.png",
+      "bytes": 1010292,
+      "sha256": "1b22953df8938e1b0321c0c05e5f2f70cdad6ccbcc3f556b783f7b8da4ab3e5a"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_3461_details.svg",
+      "bytes": 429670,
+      "sha256": "ade62ad72b81e8085a258b8571cca684ffd527eeb7c321fe8d4a002f5c8d76ce"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937.pdf",
+      "bytes": 38774,
+      "sha256": "69382a38d2b2f6a379666b373a3c09e0851c1d4aa2264d68f2edc2ef77517f78"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937.png",
+      "bytes": 569532,
+      "sha256": "a9add98968cb644e8c1fb3c49331c6012100368f95f77b3992704181ff336bd7"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937.svg",
+      "bytes": 176324,
+      "sha256": "c88f605360bf9f1deb06bba0bf8e10e32153069a6bd680db0ee2e392c1b9f1be"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937_details.pdf",
+      "bytes": 35253,
+      "sha256": "1bbeeae0883dd48fcf7823047a9900dec2aa65b8d8def98f4010a285b41cda75"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937_details.png",
+      "bytes": 819138,
+      "sha256": "2a2f4508234bc55c1fdd56cb7882e6ef8a90240b3dce96548e3be6e9cbeaf104"
+    },
+    {
+      "relative_path": "figures/figure1_anchor_937_details.svg",
+      "bytes": 364010,
+      "sha256": "7bfe166aa09eaa31970ceabce079d4ed130ec93d95a19afdf6eef494829a1051"
+    },
+    {
+      "relative_path": "figures/figure2_decoder_distribution.pdf",
+      "bytes": 93412,
+      "sha256": "bffa856b558bf64e5f0defecac7cab4e2c07df84a63d2b5dfdaa7bb20dc6454e"
+    },
+    {
+      "relative_path": "figures/figure2_decoder_distribution.png",
+      "bytes": 497132,
+      "sha256": "cd3603bcea74c86838d96c1cb3c7f79c091396fea24f0e2898eec1de59cd11ff"
+    },
+    {
+      "relative_path": "figures/figure2_decoder_distribution.svg",
+      "bytes": 288352,
+      "sha256": "75e7b06766e381bd00bc554dc7f4df10672ec947c67f8e77e08b6d41946e2989"
+    },
+    {
+      "relative_path": "figures/figure3_all_features.pdf",
+      "bytes": 150297,
+      "sha256": "9581cb971c2bed1fca604b7f9f114daf7544af4b6deaf8a1054d4cf7be1c8cf9"
+    },
+    {
+      "relative_path": "figures/figure3_all_features.png",
+      "bytes": 416998,
+      "sha256": "20ff9f08ced05e310b970bae31c2a377da5d0dab17773b766dabe4d657ad0c16"
+    },
+    {
+      "relative_path": "figures/figure3_all_features.svg",
+      "bytes": 376869,
+      "sha256": "e72ec46ec83fd244002af4507c6c95c3216f2af7e441e2c4ab652002eb6b26eb"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_raw.pdf",
+      "bytes": 50886,
+      "sha256": "150d0b624af4940a7b850d6909bb0b77730ec871821c0da57ce544c27a9b5424"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_raw.png",
+      "bytes": 155582,
+      "sha256": "eb25e21d63b2bd494f796bfa38daf43a20b2ec0e0bf361e2df1afe534a603c8c"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_raw.svg",
+      "bytes": 113110,
+      "sha256": "7ed19cc10357d19609b58c93b9f90292adfb0321a85bb81e70ab02bebf5b14cc"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_train.pdf",
+      "bytes": 49256,
+      "sha256": "499f100c652378c28f08ad0417d5f9822b7bf432e23df93af2f0870349f1283c"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_train.png",
+      "bytes": 156746,
+      "sha256": "2b776a688acda4af690b91e689cd1427ccccf61bf1dc4367bfea4e0c7fff2b6f"
+    },
+    {
+      "relative_path": "figures/figure4_mean_p_train.svg",
+      "bytes": 111735,
+      "sha256": "4ee0c27ce8ed5cdbe29a71e648e42ed7dd1b56c5b311dc9cb57c9f302c73621e"
+    },
+    {
+      "relative_path": "figures/figure5_peak_composition_posthoc.pdf",
+      "bytes": 37256,
+      "sha256": "ab308f4808d864e6c7d9c27d4fcc4defcaa0ceaaf297a3169425a19080a02c60"
+    },
+    {
+      "relative_path": "figures/figure5_peak_composition_posthoc.png",
+      "bytes": 158002,
+      "sha256": "50d04ed2cfac447607f82185d52e6503c07832c70eb1ca24afdd07df4b0aabf9"
+    },
+    {
+      "relative_path": "figures/figure5_peak_composition_posthoc.svg",
+      "bytes": 122114,
+      "sha256": "3040afacdc5a01fc2dadb41dc6ba3b0f398ca24988cf361f5803de38e6e49e43"
+    },
+    {
+      "relative_path": "figures/figure6_h0_individual.pdf",
+      "bytes": 59091,
+      "sha256": "43578497fbd084f8fb132c4d1defb7f180e9e3a32b2cd336efaa8caa8d2bae35"
+    },
+    {
+      "relative_path": "figures/figure6_h0_individual.png",
+      "bytes": 514504,
+      "sha256": "b1c3986c88eb55ad5addb1156c9ab42354a3355a184caf25a2e30babf68200a9"
+    },
+    {
+      "relative_path": "figures/figure6_h0_individual.svg",
+      "bytes": 337761,
+      "sha256": "2e59afae5c3eed1407480dd1bf6aac0cb28236c858bd393fcf9cec12bb655dcb"
+    },
+    {
+      "relative_path": "figures/figure7_h5_individual_curves.pdf",
+      "bytes": 29188,
+      "sha256": "86d9dadb3f472806e7b2eb929b360a9746b55377f515e2cabd55f1bcb742ba3b"
+    },
+    {
+      "relative_path": "figures/figure7_h5_individual_curves.png",
+      "bytes": 136814,
+      "sha256": "8b3a0029ef179ffa69d8769a68488b85d6f8d7b81d9b3f3bc6d5eb4f0eae7cf6"
+    },
+    {
+      "relative_path": "figures/figure7_h5_individual_curves.svg",
+      "bytes": 104618,
+      "sha256": "2cb24f26e120de7b0ec4508011dd6d77594d72ce7abd3f1d01360cb1af7fe7c2"
+    },
+    {
+      "relative_path": "figures/figure8_frequency_all25.pdf",
+      "bytes": 54897,
+      "sha256": "ded02b9136cd87179d8e9c8fb4ebc5e62d5a9fe9a7c35f11a6fad72966721ff7"
+    },
+    {
+      "relative_path": "figures/figure8_frequency_all25.png",
+      "bytes": 322630,
+      "sha256": "9b04ae4986f0e3f1d75f8cdb9185c47d652d3770a8c953954bb458ab434427c6"
+    },
+    {
+      "relative_path": "figures/figure8_frequency_all25.svg",
+      "bytes": 175627,
+      "sha256": "31efa071db03083475e6e2e524cca097e27975d7aeac3bc690947e854c1aa4e0"
+    }
+  ]
+}

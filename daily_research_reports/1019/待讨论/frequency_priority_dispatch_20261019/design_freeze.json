@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-10-18T16:09:18.736412+00:00",
+  "authorization": "Current user authorizes this finite distribution comparison, no expert training; uploaded design is executed, source originals retained",
+  "inputs": {
+    "stamp": "20261018T160918Z",
+    "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z",
+    "old_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z",
+    "audit_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z",
+    "anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/frequency_priority_actual_dispatch",
+    "experiment": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_priority_actual_dispatch/20261019_dispatch",
+    "daily": "/data/250010109/Research_System/daily_research_reports/1019"
+  },
+  "protocol_sha256": "afb665b48d03e670e6a8b4a553b7c4c13025f15b1dfc09a27de0cf08aadf8863",
+  "anchor_sha256": "071fcd3694ca05a74111b2bc0697ffb0c2ca6c491758eacf8031e16eca67d912",
+  "K": 8,
+  "reliable_pool": 9615,
+  "L_size": 964,
+  "C_size": 962,
+  "T10_selection": "TRAIN p descending in frozen supported pool, ties feature ID ascending, exact10",
+  "grouping": {
+    "algorithm": "sklearn.cluster.KMeans on log10 TRAIN p, feature equal weights",
+    "random_state": 20261019,
+    "n_init": 20,
+    "max_iter": 300,
+    "tol": 1e-06,
+    "cluster_labels": "mean log10p ascending",
+    "dtype": "float64",
+    "implementation": "scikit-learn1.2.0",
+    "init": "k-means++",
+    "algorithm_": "lloyd",
+    "sample_weight": null
+  },
+  "Tphi": {
+    "frequency_max_ratio": 1.05,
+    "swap_rounds": 10,
+    "nearest_candidates_per_target_group": 5,
+    "minimum_cohits": 10,
+    "phi_positive": true,
+    "objective_epsilon": 1e-12,
+    "candidate_eligibility": "must have raw edge source and no selection using this EVAL",
+    "candidate_file": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_frequency/20261015T143300Z/main/edges_D.csv",
+    "candidate_sha256": "006d028e27d4d9ac40d81c24ba68f871c6c8eadbbbf1520e76959dba1bc5b3a0",
+    "candidate_source": "D-only mutual-top10 phi edges on global01/local0/shard1; no current EVAL local2/shard247 selection",
+    "graph": "undirected simple graph, both endpoints in P_T, no self loops, pair counted once",
+    "degree_definition": "sum raw positive TRAIN phi on filtered graph, fixed before swaps"
+  },
+  "random_membership_seeds": [
+    11,
+    22,
+    33
+  ],
+  "routing_hash_seed_for_new_conditions": 20261019,
+  "tie_rule": "unchanged parent stateless hash, modulo saved FP32 score maximizers; shared seed isolates grouping, O original seed retained",
+  "score": "original FP64 sparse accumulation z * original sum14 decoder L2 norms / all group member counts -> FP32 before argmax",
+  "bootstrap": {
+    "replicates": 200,
+    "seed": 20261019,
+    "unit": "original1024-token context block",
+    "claims": "descriptive only"
+  },
+  "text_seed": 20261019,
+  "text_display": "previous2/current/next2 tokens, context boundaries, next target not input",
+  "cost_bands": "five TRAIN log10p quantile bins, fixed edges, duplicates collapsed and reported; C/L/T10 explicitly separate, allowed overlap",
+  "limits": {
+    "CPU_aggregate_cores": 8,
+    "RSS_GiB": 16,
+    "new_disk_GiB": 2,
+    "no_new_GPU_job": true,
+    "no_training": true,
+    "no_model_forward_for_main_conditions": true
+  },
+  "P": "conditional only if original preprocessed joint14layer H exists and original encoding reproduced; otherwise NOT RUN; no h_last or zD substitute",
+  "no_score_calibration": true,
+  "no_delete_count_scan": true,
+  "no_PCA_rank_scan": true,
+  "no_commit_push": true,
+  "scientific_authority": "final researcher judgment Unknown",
+  "P_status": "NOT RUN: original same-position preprocessed fourteen-layer joint H missing in bounded inspected assets; last-layer hidden and zD do not qualify",
+  "wording_clarification": "T removes10 features, not10percent; other high-frequency features remain, not exclusively middle/low frequency"
+}

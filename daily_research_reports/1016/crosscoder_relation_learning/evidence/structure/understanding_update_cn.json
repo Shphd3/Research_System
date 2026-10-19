@@ -1,0 +1,30 @@
+{
+  "processing_agent": "Codex /root/structure_recheck",
+  "utc": "2026-10-15T17:42:10.648929+00:00",
+  "type": "AI解释草稿；执行侧；不修改研究者拥有的科学状态",
+  "prior_judgment": "旧结果只给出候选分组，严格均值匹配和全流程随机对照尚不可估计，无法判断同频优势是否超出边际与算法偏好。",
+  "observation": "局部q10边在D/V中保留86.60%；社区成员加权Jaccard只有0.32190。全量D均值匹配186/186组合格，同频离散度优势在成员加权和大组中仍保留。冻结4096/side样本的99次行列守恒、全流程null中，复核与新平滑同频端点均未达到真实读数。",
+  "candidate_causes": [
+    "仅边际频率、每位置激活数和相同建图过程即可制造这些读数。",
+    "真实文本结构、编码/门控几何或冗余特征带来额外的位置级共同出现。",
+    "硬社区边界对q和图扰动敏感，导致局部边较稳定而全局分区重排。"
+  ],
+  "distinguishing_operations": [
+    "条件组对照保持候选池、组大小和D平均log频率。",
+    "行列守恒null保每位置和每feature命中数，每draw重做资格、phi、互选q10、社区和评分。",
+    "固定原计数将q10改q20；边的包含关系由定义必然，社区重排是该操作点的尺度敏感性。"
+  ],
+  "excluded_with_boundary": "在该已接触有界样本和现有混合诊断下，只靠所保留边际加相同建图流程不足以复现观察读数。优势并非完全由大量小组制造。不能因此排除文本构成、字典几何、近重复、跨文档依赖或所有可能的频率背景。",
+  "remaining_unidentified": "未确定共同出现来自哪一种语义或计算机制；未建立自然专家的唯一硬边界；原严格样本log端点仍NA；平滑端点是见过旧结果后的探索；全局MCMC混合和文档独立性未证明；学习用途等待独立R/F/N与局部更新证据。",
+  "belief_update": "从“只有候选组且对照测量失败”推进到“局部关系和频率集中已有超出规定边际基线的有界探索证据；将它们直接离散成天然专家仍缺依据”。应保留关系作为学习分配候选，同时收窄关于固定组数、语义层级和容量提升的说法。",
+  "counterevidence_preserved": "成员权null本身有弱同频优势（Tb均值-0.01065），说明算法/频率偏好确实存在；真实成员权Tb=-0.06056更强，但不能称整个差异的机制已识别。",
+  "next_decision_AI_suggestion": "用已冻结R/F/N配对学习与保持负载的局部参数更新，判断关系是否提供超出频率的增量用途。若失败，应区分关系信息不足、硬分区利用方式不足和测量效力不足，不从单一实验跳到整个路线失败。",
+  "sources": [
+    "full_repair_summary.json",
+    "recheck_summary.json",
+    "edge_partition_separation.json",
+    "sample_stability_weighted_descriptive.json",
+    "final_checks_and_digest.json",
+    "triple_counting_repair/null_results.json"
+  ]
+}

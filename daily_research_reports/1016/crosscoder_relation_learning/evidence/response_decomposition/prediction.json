@@ -1,0 +1,42 @@
+{
+  "registered_at_utc": "2026-10-15T17:36:27.118171+00:00",
+  "role": "post-observation intervention prompted by completed R damage; not a new training comparison or original confirmation",
+  "fixed_scope": {
+    "arms": [
+      "R",
+      "F",
+      "N"
+    ],
+    "seeds": [
+      20261016,
+      20261017,
+      20261018
+    ],
+    "checkpoint": "final frozen adapter",
+    "input": "complete original final-block residual",
+    "routes": "original unchanged",
+    "mu": "expert-specific mean original TRAIN hidden, no target/loss/EVAL fitting",
+    "eval": "same complete EVAL and fixed supported low/high cohorts as C"
+  },
+  "operation": "delta_full(h)=U D h; delta_constant=U D mu; delta_centered(h)=U D(h-mu)",
+  "four_states": [
+    "zero",
+    "full",
+    "constant_only",
+    "centered_only"
+  ],
+  "predictions": {
+    "constant_response_dominates": "constant-only reproduces most full damage; removing it (centered-only) restores performance toward zero; small residual loss interaction",
+    "input_dependent_response_dominates": "centered-only reproduces most full damage; constant-only stays near zero; small residual loss interaction",
+    "nonlinear_interaction_dominates": "neither component alone reproduces full damage; Lfull-Lconstant-Lcentered+Lzero is large; or components cancel strongly",
+    "mixed_or_unidentified": "components and interaction are comparable or seed/metric patterns conflict; no single-cause conclusion"
+  },
+  "registered_primary_readout": "overall loss damage relative to zero; fixed low-feature conditional result is also reported",
+  "interaction": "Lfull-Lconstant-Lcentered+Lzero, separately for overall/low/high loss",
+  "guards": [
+    "original zero/full per-position loss arrays reproduced exactly",
+    "linear response decomposition residual measured",
+    "same target, route, head, normalization, eval membership and loss reduction in all four states"
+  ],
+  "boundary": "identifies functional response components at this frozen checkpoint; no common semantics, no optimizer history or full training root-cause proof"
+}

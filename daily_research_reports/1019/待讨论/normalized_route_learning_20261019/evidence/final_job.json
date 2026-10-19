@@ -1,0 +1,102 @@
+{
+    "async_checkpoint": {
+        "max_ckpt_rounds": 0
+    },
+    "complete_time": "2026-10-18T18:02:26Z",
+    "create_time": "2026-10-18T17:51:22Z",
+    "display_name": "cc-normalized-closedloop-1019-repair1",
+    "env": [],
+    "fault_tolerance": {
+        "backoff_limit": 0,
+        "rules": []
+    },
+    "fine_tuning_specs": "",
+    "framework": "PYTORCH",
+    "id": "/subscriptions/0197ee17-b6eb-7846-b2b4-a77c5f509b92/resourceGroups/default/zones/cn-sh-01z/workspaces/share-space/trainingJobs/pt-falmqs6x",
+    "lme": {
+        "current_retries": 0,
+        "enable_checker": false,
+        "enable_health_monitor": false,
+        "enable_warmingup": false,
+        "max_retries": 0
+    },
+    "metadata": null,
+    "mount": [
+        {
+            "access_mode": "VOLUME_ACCESS_MODE_UNSPECIFIED",
+            "endpoint": "",
+            "id": "01995892-d478-76d8-aec7-13fd8284477e",
+            "metadata": null,
+            "mount_options": "",
+            "mount_path": "/data",
+            "name": "",
+            "region": "",
+            "subdir": "",
+            "type": "PV_AFS",
+            "zone": "cn-sh-01g"
+        }
+    ],
+    "name": "pt-falmqs6x",
+    "ownership": {
+        "requestor_id": "",
+        "tenant_id": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+        "user_id": "019952d2-3447-7608-a4a9-a943eb912b73",
+        "user_name": "250010109"
+    },
+    "resource_group_name": "default",
+    "resource_pool": {
+        "display_name": "computing_cluster",
+        "name": "share-cluster",
+        "vpc_id": "0198a254-1d71-7211-9a41-d5783abfe9aa",
+        "zone": "cn-sh-01g"
+    },
+    "roles": [
+        {
+            "image_path": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+            "name": "Worker",
+            "resource_spec": [
+                {
+                    "description": "4XN6lS-80GB",
+                    "limits": {
+                        "cpu": "88",
+                        "device": "4",
+                        "memory": "960",
+                        "nvidia.com/gpu": "4"
+                    },
+                    "name": "n6ls.iu.i40.4",
+                    "replicas": 1,
+                    "requests": {
+                        "cpu": "88",
+                        "device": "4",
+                        "memory": "960",
+                        "nvidia.com/gpu": "4"
+                    }
+                }
+            ],
+            "startup_script": "set -euo pipefail; cd /data/250010109/Research_System; export RESOURCE_PROFILE=h100-4-reserved; export IMAGE_ID=shphd-lite-0911; export IMAGE_URL=registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423; mkdir -p /data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/logs/pod; POD_LOG=/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/logs/pod/cc-normalized-closedloop-1019-repair1-$(date -u +%Y%m%dT%H%M%SZ).log; echo \"[env] profile=h100-4-reserved image=shphd-lite-0911 host=$(hostname)\" | tee \"$POD_LOG\"; { export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2; python -u /data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/code/pipeline.py ; } 2\u003e\u00261 | tee -a \"$POD_LOG\"; echo \"[pod] full output: $POD_LOG\"",
+            "total_replicas": 1
+        }
+    ],
+    "root_mapping": false,
+    "scheduling": {
+        "priority": "NORMAL",
+        "quota_type": "RESERVED",
+        "scoring_strategy": {
+            "type": "LEAST_ALLOCATED"
+        }
+    },
+    "ssh": {
+        "auto_key_setup": false,
+        "config_mount_path": ""
+    },
+    "start_time": "2026-10-18T17:52:01Z",
+    "state": "SUCCEEDED",
+    "subscription_name": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+    "tensorboard": {
+        "log_path": ""
+    },
+    "uid": "37e0db60840b427daa9539ff06a984e7",
+    "update_time": "2026-10-18T18:02:26.548323Z",
+    "workspace_name": "share-space",
+    "zone": "cn-sh-01z"
+}

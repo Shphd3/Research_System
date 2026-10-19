@@ -1,0 +1,55 @@
+{
+  "status": "PASS_FINAL_CONTRIBUTION_SPECTRUM_RESULT_AUDIT",
+  "processing_agent": "Codex /root/spectrum_audit",
+  "checks": [
+    {
+      "state": "original",
+      "rule": "same_frequency",
+      "groups": 1119,
+      "zero_variance_groups": 0,
+      "first_direction_mean": 0.3594141149569863,
+      "npz_csv_summary_agree": true
+    },
+    {
+      "state": "original",
+      "rule": "mixed_frequency",
+      "groups": 1119,
+      "zero_variance_groups": 0,
+      "first_direction_mean": 0.4418891610796924,
+      "npz_csv_summary_agree": true
+    },
+    {
+      "state": "column_shuffled",
+      "rule": "same_frequency",
+      "groups": 1119,
+      "zero_variance_groups": 0,
+      "first_direction_mean": 0.3536899064285356,
+      "npz_csv_summary_agree": true
+    },
+    {
+      "state": "column_shuffled",
+      "rule": "mixed_frequency",
+      "groups": 1119,
+      "zero_variance_groups": 0,
+      "first_direction_mean": 0.4410584451800506,
+      "npz_csv_summary_agree": true
+    }
+  ],
+  "original_same_minus_mixed": -0.08247504612270612,
+  "one_shuffle_same_minus_mixed": -0.08736853875151501,
+  "shuffle_change_in_difference": -0.004893492628808893,
+  "permitted_update_cn": "当前固定第28层与分组规则下，同频组贡献的第一方向占比平均较低；独立逐列置乱后差异同向且接近，因此边际激活幅度/频率与decoder几何仍可产生该方向。一次随机化不能说明显著性，也不能证明共同出现完全无关。",
+  "non_claims": [
+    "不是参数谱",
+    "不是容量证明",
+    "不是学习收益",
+    "不是频率异质性单变量因果识别",
+    "同频不是原phi关系组",
+    "两rules组均值分布不同但全体均值相等是组大小固定且池相同的算术恒等式",
+    "m14导致最多14非零方向，不是模型容量"
+  ],
+  "source_storage_adjustment_review": "Precompute source receipt records in-RAM shared shuffled matrix instead of redundant persistent8GB file. Frozen config/position/group/seed unchanged; code still independently permutes every feature once and shares resulting matrix between rules.",
+  "actual_computed_source_sha256": "30b300fbb8cf600ddc94f880b3272ba6881ccf9cae8c41a25546c8fa627ec1f5",
+  "matches_precompute_source_receipt": true,
+  "prior_implementation_qualification_sha_scope": "Original mathematical qualification source ca6bab40...; final source30b300fb... adds RAM storage execution only; mathematical one_spectrum unchanged and reviewed."
+}

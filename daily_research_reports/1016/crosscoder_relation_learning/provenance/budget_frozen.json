@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-15T17:02:07.316613+00:00",
+  "config_sha256": "c2d8b038aec7a86f55adc1d54008ee6079cb8ad24592b7d798739cf1df307b65",
+  "updates_each": 6120,
+  "tokens_each": 1566720,
+  "conditions": 3,
+  "seeds": 3,
+  "training_exposures_total": 14100480,
+  "unique_train_positions": 130712,
+  "eval_positions": 65402,
+  "reason": "12 equal epochs selected from smoke throughput before condition comparisons; contains original preliminary3epoch readout; no outcome-based extension",
+  "smoke_update_seconds": 0.005719943903386593,
+  "minimum_kernel_train_seconds_9arms": 315.05451019853354,
+  "completion_eta_boundary": "does not include shared-filesystem/checkpoint/eval/contention overhead"
+}

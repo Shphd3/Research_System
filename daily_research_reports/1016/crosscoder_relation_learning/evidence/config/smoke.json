@@ -1,0 +1,47 @@
+{
+  "protocol": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_relation_learning/protocol_cn.md",
+  "train_cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train.pt",
+  "eval_cache": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/eval.pt",
+  "model_dir": "/data/share/Qwen3-0.6B-Base",
+  "batch_size": 256,
+  "eval_batch_size": 256,
+  "updates": 1533,
+  "midpoint": 766,
+  "eval_steps": [
+    0,
+    128,
+    383,
+    766,
+    1150,
+    1533
+  ],
+  "min_eval_support": 20,
+  "gradient_clip": 1.0,
+  "optimizer": {
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0
+  },
+  "practical_low_gain_nat": 0.01,
+  "overall_noninferiority_nat": 0.01,
+  "paired_seeds": [
+    20261016,
+    20261017,
+    20261018
+  ],
+  "intervention": {
+    "donor_batch": 256,
+    "probe_batch": 512,
+    "batches": 16,
+    "lr": 0.1,
+    "frequency_cuts": [],
+    "probe_seed": 20261015,
+    "exchange_seed": 20261016,
+    "norm_floor": 1e-12,
+    "min_exchange_fraction": 0.1
+  }
+}

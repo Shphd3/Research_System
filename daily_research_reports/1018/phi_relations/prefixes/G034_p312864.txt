@@ -1,0 +1,28 @@
+, it's not too hard to see that if you use gravity for the force that $F = mg$ which leads to $$ \frac{1}{2} m v^2 + mgh = C . $$ Raimon also has to assume the independence of $p$ on $S$. To integrate he will have to evaluate $T$ as a function of $S$ (and possibly $p$) or use the heat capacity.
+
+Now notice that we required the changes in $v$ to be small. In fact, kinetic energy is not always proportional to $v^2$. If you go close to the speed of light the whole thing breaks down and for light itself there is no mass, but photons do have kinetic energy equal to $c p$ where $c$ is the speed of light. Therefore, it's better to think of kinetic energy as $$ E_{kin} = \int v dp $$ and just carry out the integration to find the true dependence on $v$.
+
+So, in summary, I suggest the "why" of the question is the same as the "why" of the first law.
+
+share|improve this answer
+add comment
+
+Imagine a cannon that fires a bed spring at 10 m/s (22 mph); the momentum of the fired bed spring carries it 25 meters. A second cannon fires the bed spring at 20 m/s (44 mph); the momentum of the spring carries it 50 meters. Doubling the speed, doubles the momentum.
+
+In a second set of tests the first cannon fires the spring into an immovable brick wall from a distance of one meter. Upon impact the spring which has a length of 20 cm compresses to a length of 16 cm (20% compressed). When the second cannon fires the spring into the wall, traveling at twice the speed, the 24 cm spring compresses to a length of 4 cm (80% compressed); this of course requires 4 times more energy than the first collision with the wall. Double the speed, quadruple the kinetic energy!
+
+Please correct me if I'm off base. thanks
+
+share|improve this answer
+add comment
+
+The general form of the kinetic energy includes higher order corrections due to relativity. The quadratic term is only a Newtonian approximation valid when velocities are low in comparison to the speed of light c.
+
+There is another fundamental reason for which kinetic energy cannot depend linearly with the velocity. Kinetic energy is a scalar, velocity is a vector. Moreover, if the dependency was linear this would mean that the kinetic energy would vary by substituting $\mathbf{v}$ by $-\mathbf{v}$. I.e. the kinetic energy would depend of the orientation, which again makes no sense. The Newtonian quadratic dependence and the relativistic corrections $v^4$, $v^6$... satisfy both requirements: kinetic energy is a scalar and invariant to substituting $\mathbf{v}$ by $-\mathbf{v}$.
+
+share|improve this answer
+Why can't it depend on the speed then? –  Larry Harson Oct 13 '12 at 14:08
+The kinetic energy for photons depends linearly on the speed. $E = |\mathbf{p}|c$. But this describes particles moving always at constant speed. –  juanrga Oct 15 '12 at 10:06
+add comment
+
+Basically, momentum is related to force times time, and KE is related to force times distance. It is all a metter of frame of reference, either time or

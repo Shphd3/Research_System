@@ -1,0 +1,150 @@
+{
+  "completed_utc": "2026-10-18T16:15:04.682000+00:00",
+  "processor": "Codex /root/frequency_priority_assets",
+  "wall_seconds": 8.847793338820338,
+  "peak_RSS_KiB": 1035416,
+  "torch_threads": 1,
+  "BLAS_threads": 1,
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/candidate_filter.json",
+      "bytes": 243,
+      "sha256": "6617672ed95cf99c7850afc4f38197e5b0dd6ed1eb893c5b70ca92cba18410f8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/candidate_train_counts.csv",
+      "bytes": 947907,
+      "sha256": "7795c15ba88e9b57b16d90e795480e7a615bcb38c8d84ca0500a9ce74ef5010c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/execution.log",
+      "bytes": 3233,
+      "sha256": "d9149ee8ab348d1670d47a3b74b72103fbeda6a09372a695adf4bddb8f7aaf69"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/fixed_edges_DV.csv",
+      "bytes": 2292835,
+      "sha256": "bc0a19c96644d0eb5fbcba8a5a241b792a2a10a9dce55627995f719d630b1b6b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/owner_Tphi.npy",
+      "bytes": 65664,
+      "sha256": "6bb50f536007074a0e0dff30473e8142c54b613f8f76fbb5f3527c8cb3664f29"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/relation_summary.json",
+      "bytes": 1723,
+      "sha256": "1d1757faf1571b6757c48ef7fe9bea4ffac51ef2bf09057d8006d48b9f2e33d5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/rounds.csv",
+      "bytes": 445,
+      "sha256": "5ab0015446aabb53eb81398587f984c7e4137ee5bf05221ff1c83c06b161585c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/swaps.csv",
+      "bytes": 50404,
+      "sha256": "231afd77cfd6a6d708da8ebc2494654d702ccba5b21b73f4d40103d137d65111"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/tphi_membership.csv",
+      "bytes": 356570,
+      "sha256": "f0f3d5f8bb51faf9f46cbea9c96ec3b2c0ea0215d7c125db682c5c754bc88894"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/tphi_membership.npz",
+      "bytes": 102216,
+      "sha256": "c0ec135026de9f7141e94187fb170f50a8de0e00daa7ae0da355a626eb7bd3be"
+    }
+  ],
+  "summary": {
+    "status": "COMPLETE",
+    "Tphi_membership_ready": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/owner_Tphi.npy",
+    "candidate_rows": 34757,
+    "candidate_eligible_pairs": 16763,
+    "train_retained_edges": 16740,
+    "normalization": "raw TRAIN phi / sqrt(fixed sum-phi degree_i * degree_j); undirected each edge once",
+    "T_sizes": [
+      1257,
+      1347,
+      1506,
+      1629,
+      1824,
+      1189,
+      523,
+      330
+    ],
+    "Tphi_sizes": [
+      1257,
+      1347,
+      1506,
+      1629,
+      1824,
+      1189,
+      523,
+      330
+    ],
+    "D_T": 0.006344674374962871,
+    "D_max": 0.006661908093711015,
+    "D_final": 0.006661886699638858,
+    "D_ratio_final": 1.049996628026768,
+    "initial_objective": 1098.9512528177024,
+    "final_objective": 1221.536240686196,
+    "accepted_swaps": 489,
+    "changed_members": 175,
+    "rounds": 5,
+    "proposals_checked": 357565,
+    "stop_reason": "no_legal_improving_swap",
+    "objective_improvement_epsilon": 1e-12,
+    "candidate_D_acceptance": "computed float64 D<=1.05*D_T, no relaxed acceptance",
+    "independent_round_recompute_tolerance": {
+      "D": 1e-12,
+      "SSE": 1e-07,
+      "objective": 1e-08
+    },
+    "candidate_selection_eval_used": false,
+    "model_forward_calls": 0,
+    "GPU_calls": 0,
+    "training_updates": 0,
+    "self_checks": {
+      "closest_five_duplicate_ties": "PASS_100_synthetic_cases",
+      "swap_gain_cross_edge_correction": "PASS_exhaustive_toy"
+    },
+    "eval_review": {
+      "N": 65402,
+      "fixed_edges": 16740,
+      "positive_phi": 16605,
+      "nonpositive_phi": 135,
+      "unestimable_phi": 0,
+      "joint_ge10": 15921,
+      "positive_phi_and_joint_ge10": 15918,
+      "used_to_change_graph_or_membership": false
+    }
+  },
+  "source_script_sha256": "a49893aabc39b0cc4bed47c6c999f69896a006ee15f626e1092159340a9d6240",
+  "P_status": "NOT RUN: joint original H missing; see branch_assets.json",
+  "log_hash_closure_correction": {
+    "corrected_utc": "2026-10-18T16:29:53.315013+00:00",
+    "processor": "Codex /root/frequency_priority_assets",
+    "reason": "Producer originally hashed execution.log before emitting its final completion line. Confirmed original process exit_code=0 and closed output stream; updated only log member bytes/hash, preserving old binding here. No statistics, membership, edge counts, routes, or numerical outputs rerun or changed.",
+    "old_receipt_binding_before_correction": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/relation_receipt.json",
+      "bytes": 5161,
+      "sha256": "c85552b812c88b4f0db60e9cd02113a46aa6ee83262dd142c6034fa40757100a",
+      "hash_verification": "Fresh SHA256 after producer exit and log closure; no statistical recomputation"
+    },
+    "old_execution_log_binding": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/execution.log",
+      "bytes": 1563,
+      "sha256": "de72d35cf6af6e8bad485ad0e387e44b75f0b1507cb5683073840839362ef78b"
+    },
+    "closed_execution_log_binding": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/execution.log",
+      "bytes": 3233,
+      "sha256": "d9149ee8ab348d1670d47a3b74b72103fbeda6a09372a695adf4bddb8f7aaf69",
+      "hash_verification": "Fresh SHA256 after producer exit and log closure; no statistical recomputation"
+    },
+    "original_exec_session": 49482,
+    "confirmed_exit_code": 0
+  }
+}

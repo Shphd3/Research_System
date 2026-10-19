@@ -1,0 +1,30 @@
+{
+  "full_frequency_spearman_recomputed": 0.9979155919190026,
+  "D_V_Jaccard_groupweighted_recomputed": 0.5483796212553805,
+  "D_V_Jaccard_memberweighted": 0.32189865093893993,
+  "q10_q20": {
+    "nontrivial_groups": [
+      186,
+      65
+    ],
+    "q10_wholly_contained_in_one_q20": 107,
+    "member_retention_groupweighted": 0.8298457420098408,
+    "member_retention_memberweighted": 0.5747084812051858,
+    "same_pair_fraction_pairweighted": 0.3826482834386158
+  },
+  "full_control": {
+    "observed_strict_SD": {
+      "groupweighted": 0.3533105326886254,
+      "memberweighted": 0.6684555655420158
+    },
+    "meanmatched_strict_SD": {
+      "groupweighted": 0.6047811717225541,
+      "memberweighted": 0.823456315330946
+    },
+    "delta_strict": {
+      "groupweighted": -0.25147063903392874,
+      "memberweighted": -0.15500074978893025
+    }
+  },
+  "boundary": "D/V exposed same-bin windows, original document and near-duplicate independence not established. q20 is a scale perturbation, not a new q search. Mean-matched controls fix size and D mean, but still do not control graph/phi selection; bounded full-pipeline null needed."
+}

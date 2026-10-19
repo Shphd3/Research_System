@@ -1,0 +1,578 @@
+{
+  "learning": {
+    "completed_runs": 9,
+    "missing_runs": [],
+    "expected_runs": 9,
+    "zero_reference_changes": [
+      {
+        "seed": 20261016,
+        "arm": "R",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.3540320188801926,
+        "initial_minus_final_nat": -0.9144170272647689,
+        "final_minus_initial_nat": 0.9144170272647689,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "R",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8637872380108957,
+        "initial_minus_final_nat": -0.9146836177079818,
+        "final_minus_initial_nat": 0.9146836177079818,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "R",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.874576675637557,
+        "initial_minus_final_nat": -1.0020674630795146,
+        "final_minus_initial_nat": 1.0020674630795146,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "F",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.3511402679370828,
+        "initial_minus_final_nat": -0.911525276321659,
+        "final_minus_initial_nat": 0.911525276321659,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "F",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8735762216267537,
+        "initial_minus_final_nat": -0.9244726013238398,
+        "final_minus_initial_nat": 0.9244726013238398,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "F",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.8775278119330716,
+        "initial_minus_final_nat": -1.0050185993750294,
+        "final_minus_initial_nat": 1.0050185993750294,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "N",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.3630635098538,
+        "initial_minus_final_nat": -0.9234485182383763,
+        "final_minus_initial_nat": 0.9234485182383763,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "N",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8817398493141484,
+        "initial_minus_final_nat": -0.9326362290112344,
+        "final_minus_initial_nat": 0.9326362290112344,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261016,
+        "arm": "N",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.888444728618418,
+        "initial_minus_final_nat": -1.0159355160603756,
+        "final_minus_initial_nat": 1.0159355160603756,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "R",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.360833056035143,
+        "initial_minus_final_nat": -0.9212180644197194,
+        "final_minus_initial_nat": 0.9212180644197194,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "R",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.869488365565889,
+        "initial_minus_final_nat": -0.9203847452629752,
+        "final_minus_initial_nat": 0.9203847452629752,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "R",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.8801863814024324,
+        "initial_minus_final_nat": -1.0076771688443902,
+        "final_minus_initial_nat": 1.0076771688443902,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "F",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.330803877944646,
+        "initial_minus_final_nat": -0.8911888863292221,
+        "final_minus_initial_nat": 0.8911888863292221,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "F",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8612747021162526,
+        "initial_minus_final_nat": -0.9121710818133386,
+        "final_minus_initial_nat": 0.9121710818133386,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "F",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.865288646913422,
+        "initial_minus_final_nat": -0.9927794343553797,
+        "final_minus_initial_nat": 0.9927794343553797,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "N",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.34903042701522,
+        "initial_minus_final_nat": -0.9094154353997963,
+        "final_minus_initial_nat": 0.9094154353997963,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "N",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8741407415323037,
+        "initial_minus_final_nat": -0.9250371212293897,
+        "final_minus_initial_nat": 0.9250371212293897,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261017,
+        "arm": "N",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.8777048754395036,
+        "initial_minus_final_nat": -1.0051956628814613,
+        "final_minus_initial_nat": 1.0051956628814613,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "R",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.3612742960658157,
+        "initial_minus_final_nat": -0.921659304450392,
+        "final_minus_initial_nat": 0.921659304450392,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "R",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8608823223741897,
+        "initial_minus_final_nat": -0.9117787020712758,
+        "final_minus_initial_nat": 0.9117787020712758,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "R",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.8696211210265594,
+        "initial_minus_final_nat": -0.9971119084685172,
+        "final_minus_initial_nat": 0.9971119084685172,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "F",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.3467071059020173,
+        "initial_minus_final_nat": -0.9070921142865935,
+        "final_minus_initial_nat": 0.9070921142865935,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "F",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8641798846106292,
+        "initial_minus_final_nat": -0.9150762643077153,
+        "final_minus_initial_nat": 0.9150762643077153,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "F",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.8676781178520114,
+        "initial_minus_final_nat": -0.9951689052939692,
+        "final_minus_initial_nat": 0.9951689052939692,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "N",
+        "metric": "low",
+        "initial_loss_nat": 2.4396149916154237,
+        "final_loss_nat": 3.346095213166673,
+        "initial_minus_final_nat": -0.9064802215512491,
+        "final_minus_initial_nat": 0.9064802215512491,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "N",
+        "metric": "overall",
+        "initial_loss_nat": 2.949103620302914,
+        "final_loss_nat": 3.8609868063426034,
+        "initial_minus_final_nat": -0.9118831860396894,
+        "final_minus_initial_nat": 0.9118831860396894,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      },
+      {
+        "seed": 20261018,
+        "arm": "N",
+        "metric": "high",
+        "initial_loss_nat": 2.8725092125580423,
+        "final_loss_nat": 3.8674128297751107,
+        "initial_minus_final_nat": -0.9949036172170684,
+        "final_minus_initial_nat": 0.9949036172170684,
+        "sign": "positive means improvement from original frozen zero-adapter reference"
+      }
+    ],
+    "eval_positions": 523136,
+    "eval_contexts": 512,
+    "eval_cluster_blocks": 128,
+    "contexts_per_cluster": 4,
+    "coverage": {
+      "low": {
+        "defined": 3916,
+        "eligible": 3737,
+        "fraction": 0.9542900919305414
+      },
+      "high": {
+        "defined": 3916,
+        "eligible": 3916,
+        "fraction": 1.0
+      }
+    },
+    "interval_method": "approximate paired four-consecutive-context block bootstrap of linearized fixed-feature conditional mean; 2000 draws; seed-conditioned; not document independent",
+    "baseline_variability": [
+      {
+        "metric": "low",
+        "baseline_loss_nat": 2.4396149916154237,
+        "baseline_block_robust_se": 0.027873416343716574,
+        "eval_contexts": 512,
+        "eval_blocks": 128,
+        "contexts_per_block": 4,
+        "fixed_practical_threshold_nat": 0.01,
+        "threshold_over_baseline_se": 0.35876477704371074,
+        "threshold_selection": "fixed beforehand; variability is descriptive, not used to choose threshold"
+      },
+      {
+        "metric": "overall",
+        "baseline_loss_nat": 2.9491036203029144,
+        "baseline_block_robust_se": 0.03509063642920545,
+        "eval_contexts": 512,
+        "eval_blocks": 128,
+        "contexts_per_block": 4,
+        "fixed_practical_threshold_nat": 0.01,
+        "threshold_over_baseline_se": 0.2849763075735252,
+        "threshold_selection": "fixed beforehand; variability is descriptive, not used to choose threshold"
+      },
+      {
+        "metric": "high",
+        "baseline_loss_nat": 2.8725092125580423,
+        "baseline_block_robust_se": 0.03176377159828912,
+        "eval_contexts": 512,
+        "eval_blocks": 128,
+        "contexts_per_block": 4,
+        "fixed_practical_threshold_nat": 0.01,
+        "threshold_over_baseline_se": 0.3148240746240168,
+        "threshold_selection": "fixed beforehand; variability is descriptive, not used to choose threshold"
+      }
+    ],
+    "initial_logits_and_losses_exact_across_conditions": true,
+    "paired_differences": {
+      "low": {
+        "R-F": [
+          0.0028917509431104333,
+          0.03002917809049732,
+          0.014567190163798822
+        ],
+        "R-N": [
+          -0.009031490973606589,
+          0.011802629019923332,
+          0.015179082899143215
+        ]
+      },
+      "overall": {
+        "R-F": [
+          -0.009788983615857312,
+          0.008213663449636595,
+          -0.0032975622364397506
+        ],
+        "R-N": [
+          -0.01795261130325238,
+          -0.004652375966414587,
+          -0.00010448396841361691
+        ]
+      },
+      "high": {
+        "R-F": [
+          -0.0029511362955156,
+          0.014897734489009603,
+          0.001943003174547578
+        ],
+        "R-N": [
+          -0.013868052980861282,
+          0.0024815059629282364,
+          0.002208291251448844
+        ]
+      }
+    },
+    "paired_trajectory_mean": {
+      "low": {
+        "R-F": [
+          {
+            "step": 0,
+            "train_tokens": 0,
+            "mean_difference_nat": 0.0
+          },
+          {
+            "step": 510,
+            "train_tokens": 130560,
+            "mean_difference_nat": -0.00031314401034247716
+          },
+          {
+            "step": 1530,
+            "train_tokens": 391680,
+            "mean_difference_nat": -0.008052914562109876
+          },
+          {
+            "step": 3060,
+            "train_tokens": 783360,
+            "mean_difference_nat": -0.00495719230528674
+          },
+          {
+            "step": 4590,
+            "train_tokens": 1175040,
+            "mean_difference_nat": 0.003276417333319115
+          },
+          {
+            "step": 6120,
+            "train_tokens": 1566720,
+            "mean_difference_nat": 0.015829373065802194
+          }
+        ],
+        "R-N": [
+          {
+            "step": 0,
+            "train_tokens": 0,
+            "mean_difference_nat": 0.0
+          },
+          {
+            "step": 510,
+            "train_tokens": 130560,
+            "mean_difference_nat": 0.001432586204426349
+          },
+          {
+            "step": 1530,
+            "train_tokens": 391680,
+            "mean_difference_nat": -0.00325526782701073
+          },
+          {
+            "step": 3060,
+            "train_tokens": 783360,
+            "mean_difference_nat": 0.003935228615319409
+          },
+          {
+            "step": 4590,
+            "train_tokens": 1175040,
+            "mean_difference_nat": 0.012118289131702953
+          },
+          {
+            "step": 6120,
+            "train_tokens": 1566720,
+            "mean_difference_nat": 0.005983406981819986
+          }
+        ]
+      },
+      "overall": {
+        "R-F": [
+          {
+            "step": 0,
+            "train_tokens": 0,
+            "mean_difference_nat": 0.0
+          },
+          {
+            "step": 510,
+            "train_tokens": 130560,
+            "mean_difference_nat": 0.0006574087480052463
+          },
+          {
+            "step": 1530,
+            "train_tokens": 391680,
+            "mean_difference_nat": -0.008442699021315175
+          },
+          {
+            "step": 3060,
+            "train_tokens": 783360,
+            "mean_difference_nat": -0.015583862771144095
+          },
+          {
+            "step": 4590,
+            "train_tokens": 1175040,
+            "mean_difference_nat": -0.012879359402740057
+          },
+          {
+            "step": 6120,
+            "train_tokens": 1566720,
+            "mean_difference_nat": -0.001624294134220156
+          }
+        ],
+        "R-N": [
+          {
+            "step": 0,
+            "train_tokens": 0,
+            "mean_difference_nat": 0.0
+          },
+          {
+            "step": 510,
+            "train_tokens": 130560,
+            "mean_difference_nat": 0.002395817540287484
+          },
+          {
+            "step": 1530,
+            "train_tokens": 391680,
+            "mean_difference_nat": -0.0028745402050503886
+          },
+          {
+            "step": 3060,
+            "train_tokens": 783360,
+            "mean_difference_nat": -0.00503378789978778
+          },
+          {
+            "step": 4590,
+            "train_tokens": 1175040,
+            "mean_difference_nat": -0.0017546270267686126
+          },
+          {
+            "step": 6120,
+            "train_tokens": 1566720,
+            "mean_difference_nat": -0.007569823746026861
+          }
+        ]
+      },
+      "high": {
+        "R-F": [
+          {
+            "step": 0,
+            "train_tokens": 0,
+            "mean_difference_nat": 0.0
+          },
+          {
+            "step": 510,
+            "train_tokens": 130560,
+            "mean_difference_nat": 0.0007083951400011786
+          },
+          {
+            "step": 1530,
+            "train_tokens": 391680,
+            "mean_difference_nat": -0.007799302372409912
+          },
+          {
+            "step": 3060,
+            "train_tokens": 783360,
+            "mean_difference_nat": -0.01269115092506643
+          },
+          {
+            "step": 4590,
+            "train_tokens": 1175040,
+            "mean_difference_nat": -0.008274869003141042
+          },
+          {
+            "step": 6120,
+            "train_tokens": 1566720,
+            "mean_difference_nat": 0.004629867122680527
+          }
+        ],
+        "R-N": [
+          {
+            "step": 0,
+            "train_tokens": 0,
+            "mean_difference_nat": 0.0
+          },
+          {
+            "step": 510,
+            "train_tokens": 130560,
+            "mean_difference_nat": 0.00251316563909798
+          },
+          {
+            "step": 1530,
+            "train_tokens": 391680,
+            "mean_difference_nat": -0.0022105436475232153
+          },
+          {
+            "step": 3060,
+            "train_tokens": 783360,
+            "mean_difference_nat": -0.0021428623155778826
+          },
+          {
+            "step": 4590,
+            "train_tokens": 1175040,
+            "mean_difference_nat": 0.0028677802931208734
+          },
+          {
+            "step": 6120,
+            "train_tokens": 1566720,
+            "mean_difference_nat": -0.003059418588828067
+          }
+        ]
+      }
+    },
+    "feature_exposure_csv": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/feature_exposure.csv",
+    "same_total_low_and_high_position_exposure": true
+  },
+  "direction": {
+    "status": "COMPLETE"
+  },
+  "intervention_completed_runs": 9,
+  "scientific_judgment": "UNASSIGNED",
+  "all_intervals_seed_conditioned": true
+}

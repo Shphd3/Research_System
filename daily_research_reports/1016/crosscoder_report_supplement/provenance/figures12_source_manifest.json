@@ -1,0 +1,127 @@
+{
+  "operation": "Redraw existing frozen numerical results only; no training, no graph parameter change",
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/structure/full_repair_summary.json",
+      "bytes": 2171,
+      "sha256": "261ef71b65d36ad53ec638b1850ab7bb0b78a5bdc54037c06f57e5b627a6f804"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/structure/full_group_controls.csv",
+      "bytes": 55621,
+      "sha256": "c64535fb328dc963eed8834f99db42c0af03ced82b1f8cd6953b4bf067c23628"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/analysis_outputs/learning_metrics.csv",
+      "bytes": 6431,
+      "sha256": "cc6e19652010cffd3bc08b21a7b38812931a2a990b11a92b7dde9ad3f20975be"
+    }
+  ],
+  "script": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/report_spectrum/figures12.py",
+    "bytes": 10970,
+    "sha256": "5762f7b7cdef521f3470561cce185d6c6b4a9cb016f557db4b8a0d5ba3a87181"
+  },
+  "runtime_font_resource": {
+    "path": "/data/250010109/Research_System/daily_research_reports/0921/report_assets/fonts/NotoSansCJKsc-Regular.otf",
+    "bytes": 16437364,
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+  },
+  "font_is_not_bundled": true,
+  "style": {
+    "white_background": true,
+    "palette": {
+      "R": "#3264A0",
+      "F": "#D78230",
+      "N": "#338C66"
+    },
+    "no_errorbars": true,
+    "figure1_group_equal": true,
+    "figure2_no_overall_loss": true
+  },
+  "validation": {
+    "qualified_groups": 186,
+    "full_strict_qualification": true,
+    "learning_rows": 54,
+    "paired_seeds": [
+      20261016,
+      20261017,
+      20261018
+    ],
+    "updates": [
+      0,
+      510,
+      1530,
+      3060,
+      4590,
+      6120
+    ],
+    "training_exposures": [
+      0,
+      130560,
+      391680,
+      783360,
+      1175040,
+      1566720
+    ],
+    "initial_loss_identical": true,
+    "original_model_low_loss": 2.4396149916154237,
+    "final_low_loss_seed_means": {
+      "R": 3.3587131236603835,
+      "F": 3.342883750594582,
+      "N": 3.352729716678564
+    }
+  },
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/captions_cn.md",
+      "bytes": 2789,
+      "sha256": "4a86c46f0a84c893eb52d8669b5055c26b86900bdd79330333cd9a6ae2a5feb5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure1_frequency_difference.pdf",
+      "bytes": 12866,
+      "sha256": "0973ece6f1295584547ff19d20d1f6062fadc4e2b0f56e580758472af4d27a63"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure1_frequency_difference.png",
+      "bytes": 83645,
+      "sha256": "6a95d179ca60a7e2520301004d8a45f3def7d6921f098c444adca6dd5abe7766"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure1_plot_data.csv",
+      "bytes": 123,
+      "sha256": "c390b78cd7ef28dd614aaca34abd68171af24535f0436bb4083dc3e734d2e959"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure2_mean_plot_data.csv",
+      "bytes": 784,
+      "sha256": "1655e3cb65afefe3b5393f4ae3d32d99eb2a900c8b65b9c8990050d5852366e6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure2_prediction_loss.pdf",
+      "bytes": 15608,
+      "sha256": "210eb7f1d7a233c2e8881f80d0accea21d0fe72c50c57b0b0e7248fd2660da42"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure2_prediction_loss.png",
+      "bytes": 152220,
+      "sha256": "91f96a8106875564425352f3853a2950ed1d47a6e818f6fb6d0cd5e35b64dc02"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/figure2_seed_plot_data.csv",
+      "bytes": 2797,
+      "sha256": "9bbb806074cefbec8cd5db8378e5c5dc42020b3b25a186d8e40af3c1f8ac6fd5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/overall_loss_table.csv",
+      "bytes": 2773,
+      "sha256": "4de758eeb677a6629e00ecd15e518c068c0ad2cf8e2cfd261a6dc26127823447"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_figures12/reasoning_audit_cn.md",
+      "bytes": 1690,
+      "sha256": "69b2ba604ef2583c9a696bb4e2e8ea53d438a5d3c2188b86136f6fc0deb12c70"
+    }
+  ]
+}

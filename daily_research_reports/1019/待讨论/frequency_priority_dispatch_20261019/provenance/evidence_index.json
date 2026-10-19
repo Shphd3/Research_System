@@ -1,0 +1,329 @@
+{
+  "claims": [
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/expert_metrics.csv",
+      "csv_line": 66,
+      "selector": {
+        "split": "eval",
+        "rule": "F",
+        "expert": 0
+      },
+      "values": {
+        "split": "eval",
+        "rule": "F",
+        "expert": "0",
+        "N": "65402",
+        "N_e": "0",
+        "load": "0.0",
+        "routed_contexts": "0",
+        "positive_positions": "0",
+        "positive_contexts": "0",
+        "future_training_ready_200_and20": "False",
+        "members": "1253",
+        "reliable_seen_ge1": "0",
+        "reliable_seen_ge5": "0",
+        "low_seen_ge1": "0",
+        "low_seen_ge5": "0",
+        "T10_seen_ge1": "0"
+      },
+      "sha256": "9bbc167e90d194f40cd8f96b8c2c855ffbe7857d756c3788f2ff5dd21a6746f8"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/expert_metrics.csv",
+      "csv_line": 73,
+      "selector": {
+        "split": "eval",
+        "rule": "F",
+        "expert": 7
+      },
+      "values": {
+        "split": "eval",
+        "rule": "F",
+        "expert": "7",
+        "N": "65402",
+        "N_e": "65402",
+        "load": "1.0",
+        "routed_contexts": "64",
+        "positive_positions": "65402",
+        "positive_contexts": "64",
+        "future_training_ready_200_and20": "True",
+        "members": "334",
+        "reliable_seen_ge1": "9615",
+        "reliable_seen_ge5": "9609",
+        "low_seen_ge1": "964",
+        "low_seen_ge5": "961",
+        "T10_seen_ge1": "10"
+      },
+      "sha256": "9bbc167e90d194f40cd8f96b8c2c855ffbe7857d756c3788f2ff5dd21a6746f8"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/expert_metrics.csv",
+      "csv_line": 74,
+      "selector": {
+        "split": "eval",
+        "rule": "T",
+        "expert": 0
+      },
+      "values": {
+        "split": "eval",
+        "rule": "T",
+        "expert": "0",
+        "N": "65402",
+        "N_e": "1",
+        "load": "1.529005229197884e-05",
+        "routed_contexts": "1",
+        "positive_positions": "1",
+        "positive_contexts": "1",
+        "future_training_ready_200_and20": "False",
+        "members": "1257",
+        "reliable_seen_ge1": "42",
+        "reliable_seen_ge5": "0",
+        "low_seen_ge1": "4",
+        "low_seen_ge5": "0",
+        "T10_seen_ge1": "6"
+      },
+      "sha256": "9bbc167e90d194f40cd8f96b8c2c855ffbe7857d756c3788f2ff5dd21a6746f8"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/expert_metrics.csv",
+      "csv_line": 81,
+      "selector": {
+        "split": "eval",
+        "rule": "T",
+        "expert": 7
+      },
+      "values": {
+        "split": "eval",
+        "rule": "T",
+        "expert": "7",
+        "N": "65402",
+        "N_e": "65401",
+        "load": "0.999984709947708",
+        "routed_contexts": "64",
+        "positive_positions": "65401",
+        "positive_contexts": "64",
+        "future_training_ready_200_and20": "True",
+        "members": "330",
+        "reliable_seen_ge1": "9615",
+        "reliable_seen_ge5": "9609",
+        "low_seen_ge1": "964",
+        "low_seen_ge5": "961",
+        "T10_seen_ge1": "10"
+      },
+      "sha256": "9bbc167e90d194f40cd8f96b8c2c855ffbe7857d756c3788f2ff5dd21a6746f8"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/expert_metrics.csv",
+      "csv_line": 106,
+      "selector": {
+        "split": "eval",
+        "rule": "Tphi",
+        "expert": 0
+      },
+      "values": {
+        "split": "eval",
+        "rule": "Tphi",
+        "expert": "0",
+        "N": "65402",
+        "N_e": "1",
+        "load": "1.529005229197884e-05",
+        "routed_contexts": "1",
+        "positive_positions": "1",
+        "positive_contexts": "1",
+        "future_training_ready_200_and20": "False",
+        "members": "1257",
+        "reliable_seen_ge1": "42",
+        "reliable_seen_ge5": "0",
+        "low_seen_ge1": "4",
+        "low_seen_ge5": "0",
+        "T10_seen_ge1": "6"
+      },
+      "sha256": "9bbc167e90d194f40cd8f96b8c2c855ffbe7857d756c3788f2ff5dd21a6746f8"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/expert_metrics.csv",
+      "csv_line": 113,
+      "selector": {
+        "split": "eval",
+        "rule": "Tphi",
+        "expert": 7
+      },
+      "values": {
+        "split": "eval",
+        "rule": "Tphi",
+        "expert": "7",
+        "N": "65402",
+        "N_e": "65401",
+        "load": "0.999984709947708",
+        "routed_contexts": "64",
+        "positive_positions": "65401",
+        "positive_contexts": "64",
+        "future_training_ready_200_and20": "True",
+        "members": "330",
+        "reliable_seen_ge1": "9615",
+        "reliable_seen_ge5": "9609",
+        "low_seen_ge1": "964",
+        "low_seen_ge5": "961",
+        "T10_seen_ge1": "10"
+      },
+      "sha256": "9bbc167e90d194f40cd8f96b8c2c855ffbe7857d756c3788f2ff5dd21a6746f8"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/low_target_metrics.csv",
+      "csv_line": 8717,
+      "selector": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": 601
+      },
+      "values": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": "601",
+        "train_p": "0.001836097680396597",
+        "n_i": "173",
+        "N": "65402",
+        "p": "0.0026451790465123392",
+        "is_low": "True",
+        "is_C": "False",
+        "is_T10": "False",
+        "owner_expert": "0",
+        "owner_n_ei": "1",
+        "owner_N_e": "1",
+        "owner_a": "0.005780346820809248",
+        "owner_q": "1.0",
+        "owner_enrichment": "378.04624277456645",
+        "owner_NA_reason": "",
+        "max_receiving_expert": "7",
+        "B": "0.0",
+        "B_status": "finite"
+      },
+      "sha256": "138b7201a2dfb26946e827269b51b376f8f356864d16bc5a977441476497fe46"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/low_target_metrics.csv",
+      "csv_line": 9022,
+      "selector": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": 5412
+      },
+      "values": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": "5412",
+        "train_p": "0.0018896505294081645",
+        "n_i": "198",
+        "N": "65402",
+        "p": "0.00302743035381181",
+        "is_low": "True",
+        "is_C": "False",
+        "is_T10": "False",
+        "owner_expert": "0",
+        "owner_n_ei": "1",
+        "owner_N_e": "1",
+        "owner_a": "0.005050505050505051",
+        "owner_q": "1.0",
+        "owner_enrichment": "330.31313131313135",
+        "owner_NA_reason": "",
+        "max_receiving_expert": "7",
+        "B": "0.0",
+        "B_status": "finite"
+      },
+      "sha256": "138b7201a2dfb26946e827269b51b376f8f356864d16bc5a977441476497fe46"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/low_target_metrics.csv",
+      "csv_line": 9571,
+      "selector": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": 15067
+      },
+      "values": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": "15067",
+        "train_p": "0.00162953669135198",
+        "n_i": "149",
+        "N": "65402",
+        "p": "0.002278217791504847",
+        "is_low": "True",
+        "is_C": "False",
+        "is_T10": "False",
+        "owner_expert": "0",
+        "owner_n_ei": "1",
+        "owner_N_e": "1",
+        "owner_a": "0.006711409395973154",
+        "owner_q": "1.0",
+        "owner_enrichment": "438.9395973154363",
+        "owner_NA_reason": "",
+        "max_receiving_expert": "7",
+        "B": "0.0",
+        "B_status": "finite"
+      },
+      "sha256": "138b7201a2dfb26946e827269b51b376f8f356864d16bc5a977441476497fe46"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/low_target_metrics.csv",
+      "csv_line": 9604,
+      "selector": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": 15519
+      },
+      "values": {
+        "split": "eval",
+        "rule": "T",
+        "feature_id": "15519",
+        "train_p": "0.0023945773915172285",
+        "n_i": "213",
+        "N": "65402",
+        "p": "0.003256781138191493",
+        "is_low": "True",
+        "is_C": "False",
+        "is_T10": "False",
+        "owner_expert": "0",
+        "owner_n_ei": "1",
+        "owner_N_e": "1",
+        "owner_a": "0.004694835680751174",
+        "owner_q": "1.0",
+        "owner_enrichment": "307.05164319248826",
+        "owner_NA_reason": "",
+        "max_receiving_expert": "7",
+        "B": "0.0",
+        "B_status": "finite"
+      },
+      "sha256": "138b7201a2dfb26946e827269b51b376f8f356864d16bc5a977441476497fe46"
+    },
+    {
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/paired_comparison.csv",
+      "csv_line": 13,
+      "selector": {
+        "split": "eval",
+        "before": "T",
+        "after": "Tphi"
+      },
+      "values": {
+        "split": "eval",
+        "before": "T",
+        "after": "Tphi",
+        "low_a_macro_difference": "0.0",
+        "low_zero_fraction_difference": "0.0",
+        "B_common_finite": "4",
+        "B_new_finite": "0",
+        "B_lost_finite": "0",
+        "B_common_mean_difference": "0.0",
+        "B_common_median_difference": "0.0",
+        "B_le1_fixed964_difference": "0.0",
+        "B_le2_fixed964_difference": "0.0"
+      },
+      "sha256": "a80be53b05c9bb9145c822119af1270253c90cb2c602d0fd71af36798b7ff331"
+    }
+  ],
+  "aggregate_sources": [
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/core_summary.json",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/relation/relation_summary.json"
+  ],
+  "no_new_statistics": true
+}

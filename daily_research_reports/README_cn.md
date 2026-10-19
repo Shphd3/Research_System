@@ -1,44 +1,31 @@
 # 每日阅读与会议
 
-[Project research route](../Projects/from-attention-to-search/main/roadmap.md) · [English](README.md) · [中文](README_cn.md)
+[项目研究入口](../Projects/from-attention-to-search/main/roadmap.md) · [English](README.md) · [中文](README_cn.md)
 
-当天目录保存组会稿、会议记录、简短进展和日期图件。正式研究归项目。backup 保存历史快照，不作为默认当前来源；仍被登记为当前问题的 Focus 已迁出 backup。
+当前列表保留10月材料。9月已完整归入backup；10月已确认的旧版／重复ZIP可在备份索引找到。Daily保存会议与短更新，正式研究及科学状态由项目记录持有。
 
-- [1012：条件映射结果与组会逻辑链](1012/README_cn.md)
-- [1011：共享更新成分因果分析与组会汇报](1011/README.md)
-- [1010：Dense／S7／SALL本地续写脚本](1010/README_cn.md)
-- [1008：共享参数局部更新，完整版与一分钟组会](1008/README_cn.md)
-- [1007：科研表达规范修订与现有报告重写](1007/editorial_revision_audit_cn.md)
-- [1006：两分钟组会与研究理解](1006/README_cn.md)
-- [1005：八小时研究学习指南](1005/README_cn.md)
-- [1004：今日总结与认识更新](1004/README_cn.md)
-- [0930](0930/README_cn.md)
-- [0928](0928/README_cn.md)
-- [0927](0927/README_cn.md)
-- [0926](0926/README_cn.md)
-- [0925](0925/README_cn.md)
-- [0924](0924/README_cn.md)
-- [0923](0923/README_cn.md)
-- [0922](0922/README_cn.md)
-- [0921](0921/README_cn.md)
-- [0920](0920/README_cn.md)
-- [0918](0918/README_cn.md)
-- [0917](0917/README_cn.md)
-- [0916](0916/README_cn.md)
-- [0915](0915/README_cn.md)
-- [0914](0914/README_cn.md)
-- [0913](0913/README_cn.md)
-- [0912](0912/README_cn.md)
-- [0911](0911/README_cn.md)
-- [0910](0910/README_cn.md)
-- [0909](0909/README_cn.md)
-- [0908](0908/README_cn.md)
-- [0907](0907/README_cn.md)
-- [0906](0906/README_cn.md)
-- [0905](0905/README_cn.md)
-- [0904](0904/README_cn.md)
-- [0903](0903/README_cn.md)
-- [0902](0902/README_cn.md)
-- [0901](0901/README_cn.md)
+| 日期 | 内容 | 阅读入口 |
+|---|---|---|
+| 10-19 | CrossCoder归一化分发、SFT、频率贡献与跨层复核 | [进入](1019/README_cn.md) |
+| 10-18 | CrossCoder逐feature分发诊断与φ关系 | [进入](1018/README_cn.md) |
+| 10-16 | CrossCoder关系分组、输入谱与学习记录 | [进入](1016/README_cn.md) |
+| 10-15 | CrossCoder特征频率与关系分组 | [进入](1015/README_cn.md) |
+| 10-14 | CrossCoder层级图与跨层解码分布 | [进入](1014/README_cn.md) |
+| 10-12 | 条件映射、机制审计与组会材料 | [进入](1012/README_cn.md) |
+| 10-11 | 共享更新成分因果分析 | [进入](1011/README.md) |
+| 10-10 | Dense／S7／SALL实际续写 | [进入](1010/README_cn.md) |
+| 10-08 | 共享参数局部更新与组会材料 | [进入](1008/README_cn.md) |
+| 10-07 | 科研表达修订记录 | [进入](1007/editorial_revision_audit_cn.md) |
+| 10-06 | 组会准备与研究理解 | [进入](1006/README_cn.md) |
+| 10-05 | 研究学习指南 | [进入](1005/README_cn.md) |
+| 10-04 | 研究入口与认识更新 | [进入](1004/README_cn.md) |
+| 10-02 | 共享学习与路由候选资料 | [进入](1002/README_cn.md) |
 
-[Historical backup](backup/) — retain original meaning; use project records for current questions.
+## 历史与整理记录
+
+- [9月完整归档](backup/2026/09/README_cn.md)
+- [10月旧版／重复包归档](backup/2026/10/cleanup_20261019/README_cn.md)
+- [本次整理清单与校验](backup/2026/maintenance_20261019/README_cn.md)
+- [全部历史备份](backup/README_cn.md)
+
+旧对话、冻结回执中的原地址保留历史含义，可通过 `tools/research_paths.py` 解析现址；本次不改变科研结论，不包含commit/push。

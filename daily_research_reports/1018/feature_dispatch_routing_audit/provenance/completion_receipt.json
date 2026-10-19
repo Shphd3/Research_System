@@ -1,0 +1,95 @@
+{
+  "schema": "finite_feature_dispatch_diagnostic_completion_v1",
+  "completed_utc": "2026-10-18T15:16:38.907083+00:00",
+  "run_created_utc": "2026-10-18T14:39:50.990463+00:00",
+  "elapsed_since_run_creation_seconds": 2207.91662,
+  "statistics_completed_utc": "2026-10-18T14:48:52.957037+00:00",
+  "execution_state": "COMPLETE",
+  "record_state": "RESULTS_AND_DAILY_DISCUSSION_DELIVERED",
+  "question_state": "Unknown; researcher interpretation pending",
+  "learning_utility": "NOT_TESTED",
+  "coverage": {
+    "TRAIN_positions": 130712,
+    "EVAL_positions": 65402,
+    "rules": [
+      "A",
+      "B1",
+      "B2"
+    ],
+    "reliable_features": 9615,
+    "low_features": 964,
+    "C_features": 962,
+    "text_cards": 12,
+    "TRAIN_fixed_conflict_pairs": 27,
+    "common_pairs_per_split": 927368,
+    "bootstrap_replicates": 200
+  },
+  "completed": [
+    "input ID/position/target mask/source shift checks",
+    "full p/a/q/enrichment with zero and NA records",
+    "existing route count cross-check",
+    "200 context-block descriptive resamples",
+    "full low x C companions",
+    "original score decomposition",
+    "C scoring-term-only virtual routes and per-feature costs",
+    "TRAIN case selection and random/high-activation EVAL text",
+    "fixed case-to-pool cross-owner pairs and necessary bounds",
+    "four figures each PNG/SVG/PDF",
+    "project Anchor/Protocol/results and recent-results index",
+    "Daily discussion brief and portable result package"
+  ],
+  "not_performed": [
+    "matched ablation without an existing valid per-group comparator",
+    "new score calibration or grouping changes",
+    "full-dictionary pair scan or optimal assignment",
+    "new model forward/GPU/training/job submission",
+    "learning utility experiment or post-training spectrum",
+    "commit/push/external messaging"
+  ],
+  "CPU": {
+    "quota_cores": 8,
+    "producer_threads_at_most": [
+      1,
+      2,
+      2
+    ],
+    "GPU_count_used": 0,
+    "RSS_limit_GiB": 16,
+    "single_producer_peak_RSS_GiB": {
+      "core": 0.9462814331054688,
+      "score": 1.4545173645019531,
+      "cases": 1.3767967224121094
+    },
+    "sampled_aggregate_peak_RSS_GiB": 1.9835739135742188,
+    "monitor_note": "2-second samples over diagnostic entrypoints, supplemented by per-producer maxRSS; no claim of full continuous peak or separate plot RSS measurement"
+  },
+  "time": {
+    "core_entry_wall_seconds": 22.126560620963573,
+    "score_entry_wall_seconds": 15.25714373588562,
+    "cases_main_wall_seconds": 49.102315647527575,
+    "cases_text_refinement_seconds": 8.280993597581983,
+    "note": "Entries overlap; do not sum as end-to-end duration. Remaining time includes verification, code, figures, audits, bilingual records and packaging."
+  },
+  "disk": {
+    "new_selected_outputs_snapshot_bytes": 332169380,
+    "limit_bytes": 2147483648,
+    "scope": "new execution run + canonical experiment/Anchor + current package + ZIP + date-local selected figures; small navigation/notes/receipts excluded from exact byte sum",
+    "within_budget": true
+  },
+  "checks": {
+    "input_assets_strict": "PASS",
+    "derived_analysis_asset_strict": "PASS",
+    "integer_counts_and_masks": "PASS",
+    "original_scores_and_sample_score_equality": "PASS",
+    "original_CN_Anchor_Protocol_byte_identical": "PASS",
+    "selected_payload_hashes": "PASS",
+    "source_math_delimiters": "PASS; rendered math not asserted",
+    "independent_reasoning_audit": "PASS with wording fixes applied; no scientific approval",
+    "navigation_checker": "2 preexisting unrelated issues: missing NTP README and untracked diffusion literature record; unchanged"
+  },
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z",
+  "project_result_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit",
+  "Daily_entry": "/data/250010109/Research_System/daily_research_reports/1018/README_cn.md",
+  "analysis_asset_id": "analysis_crosscoder_feature_owner_routing_audit_20261018t143950z",
+  "stop": "Finite diagnosis complete. No score tuning, regrouping or learning experiment started. Researcher/primary-agent discussion is next."
+}

@@ -1,0 +1,704 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-19T03:26:40.426061+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-bgsbx",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11792,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "representation_tulu_epoch1_expert_pca_svd_20261019t030056z",
+      "title_cn": "Tulu第一轮130专家完整SVD与共同探针输出PCA",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual per-model SVD/PCA and cached residual responses",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/Learned/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 839,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/Learned/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634492,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/Learned/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16593100,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/Learned/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 831,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/Learned/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7226111,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/Learned/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12446278,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/LearnedLB/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 857,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/LearnedLB/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634522,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/LearnedLB/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16603184,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/LearnedLB/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 877,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/LearnedLB/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634739,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/LearnedLB/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16605197,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S0/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 844,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S0/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634472,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S0/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16577190,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S0/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 844,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S0/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634211,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S0/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16573316,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S1/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 841,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S1/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634780,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S1/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16574716,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S1/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 837,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S1/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634310,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S1/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16574469,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S2/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 844,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S2/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634723,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S2/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16578312,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S2/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 850,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S2/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634262,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S2/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16580657,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S3/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 830,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S3/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634624,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S3/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16577871,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S3/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 830,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S3/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634385,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/R11_S3/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16582654,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S0/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 774,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S0/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1204318,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S0/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2077103,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S0/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 773,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S0/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1204326,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S0/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2077307,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S1/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 840,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S1/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634481,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S1/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16578785,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S1/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 832,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S1/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634725,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S1/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16578452,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S2/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 773,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S2/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1204308,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S2/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2077036,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S2/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 774,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S2/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1204398,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S2/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2077320,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S3/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 832,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S3/seed11/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9635000,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S3/seed11/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16580015,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S3/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 833,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S3/seed22/spectra_and_directions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9634746,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/outputs/T_S3/seed22/probe_responses.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16581057,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_tulu_epoch1_expert_geometry_20261019t030056z",
+      "title_cn": "Tulu第一轮专家训练证据、输出主方向与参数谱完整分析",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual read-only analysis execution",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2150,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/summary.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 803,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/probe_loss_checks.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6633,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/expert_training_evidence.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 43721,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/parameter_spectral_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 288332,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/within_model_similarity.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1538236,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure11_benefit_subset_top16_energy.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 437516,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "canonical bilingual Summary/Detailed and selected evidence",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/summary.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11161,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/summary_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 10862,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/detailed.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11984,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/detailed_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11929,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/artifact_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 49379,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/completion_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7463,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

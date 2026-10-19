@@ -1,0 +1,35 @@
+# September 2026 Daily archive
+
+Archived on2026-10-19:29 date directories and589 original files. These are historical meeting and reading records; use project owners for current science.
+
+- [0901](0901/README.md)
+- [0902](0902/README.md)
+- [0903](0903/README.md)
+- [0904](0904/README.md)
+- [0905](0905/README.md)
+- [0906](0906/README.md)
+- [0907](0907/README.md)
+- [0908](0908/README.md)
+- [0909](0909/README.md)
+- [0910](0910/README.md)
+- [0911](0911/README.md)
+- [0912](0912/README.md)
+- [0913](0913/README.md)
+- [0914](0914/README.md)
+- [0915](0915/README.md)
+- [0916](0916/README.md)
+- [0917](0917/README.md)
+- [0918](0918/README.md)
+- [0920](0920/README.md)
+- [0921](0921/README.md)
+- [0922](0922/README.md)
+- [0923](0923/README.md)
+- [0924](0924/README.md)
+- [0925](0925/README.md)
+- [0926](0926/README.md)
+- [0927](0927/README.md)
+- [0928](0928/README.md)
+- [0929](0929)
+- [0930](0930/README.md)
+
+[Relocation and hash manifest](../maintenance_20261019/manifest.json). Frozen hashes refer to exact original bytes at source_archive; navigation-rebased reading copies carry separate relocated hashes.

@@ -1,0 +1,67 @@
+{
+  "completed_at_utc": "2026-10-19T07:04:53.451027+00:00",
+  "processing_agent": "/root",
+  "task": "Daily September archive and bounded October cleanup",
+  "operation_status": "COMPLETE",
+  "scientific_state_changed": false,
+  "permanent_deletions": 0,
+  "released_disk_bytes": 0,
+  "archive_check": {
+    "status": "PASS",
+    "moved_files_checked": 592,
+    "moved_file_final_hash_pass": 592,
+    "original_byte_hash_pass": 592,
+    "old_file_location_absent": 592,
+    "existing_relocation_rows_checked": 467,
+    "meeting_chains_checked": 22,
+    "external_preexisting_targets_checked": 337,
+    "external_current_source_links_checked": 281,
+    "navigation_edits_checked_excluding_concurrent_indices": 86,
+    "history_captured_lines_checked": 229,
+    "historical_curated_origins_checked": 65,
+    "asset_historical_import_fields_checked": 1,
+    "failures": 0,
+    "limits": [
+      "History captures compare captured literal lines only; untracked whole-file pre-migration hashes were not independently available.",
+      "Daily/month indices excluded while root agent edits them."
+    ],
+    "moved_markdown_local_link_pairs_checked": 807,
+    "moved_markdown_link_target_semantics_preserved": 807,
+    "moved_markdown_available_targets": 750,
+    "moved_markdown_inherited_unavailable_targets": 57,
+    "write_scope_script_review": "Only moving Markdown, selected live Markdown link destinations, relocation registry and new archive manifests/indices are written. Historical memory, receipts, asset catalog and curated source fields are outside its write set."
+  },
+  "tests": {
+    "command": "python -m unittest tools.tests.test_research_access",
+    "result": "PASS",
+    "tests": 26,
+    "observed_seconds": 0.138
+  },
+  "entrypoint_check": {
+    "command": "python tools/check_current_entrypoints.py --working-tree",
+    "checked": 101,
+    "status": "EXISTING_ISSUE",
+    "issues": [
+      "MISSING Projects/ntp_learning_mechanisms/README_cn.md"
+    ],
+    "pending_tracking": 3,
+    "note": "Missing NTP entrypoint predated this maintenance; this operation did not repair unrelated projects."
+  },
+  "index_check": {
+    "files": 16,
+    "local_links": 163,
+    "missing": 0,
+    "note": "Final index check includes final validation receipt and independent audit links."
+  },
+  "limitations": [
+    "57 archived local links already had unavailable targets before migration; zero new archived-link regressions.",
+    "Historical-line and provenance checks cover captured sources, not a whole-repository pre-operation hash snapshot."
+  ],
+  "authority": {
+    "commit": false,
+    "push": false,
+    "external_sync": false,
+    "training": false,
+    "new_experiment": false
+  }
+}
