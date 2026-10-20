@@ -127,7 +127,9 @@ def relocations(root: Path = ROOT) -> dict[str, str]:
     path = root / "docs/research_locations.json"
     if not path.is_file():
         return {}
-    return {row["old"]: row["new"] for row in json.loads(path.read_text())["files"]}
+    data = json.loads(path.read_text())
+    return {row["old"]: row["new"]
+            for row in [*data["files"], *data.get("directories", [])]}
 
 
 def link_path(target: str, source: Path, root: Path = ROOT) -> tuple[Path | None, str]:
@@ -161,12 +163,20 @@ def relocated(path: Path, mapping: dict[str, str], root: Path = ROOT) -> Path:
         return path
     # A previously relocated reading file may later be archived again.
     # Follow its recorded destinations without rewriting historical entries.
+    # Whole-project moves also cover descendants without copying a record for
+    # every file. Exact file moves take precedence over directory ancestors.
     visited = set()
-    while relative in mapping and mapping[relative] != relative:
-        if relative in visited:
+    while True:
+        key = next((candidate for candidate in
+                    [relative, *(p.as_posix() for p in Path(relative).parents)]
+                    if candidate != '.' and candidate in mapping), None)
+        if key is None or mapping[key] == key:
+            break
+        if key in visited:
             raise ValueError(f"Cyclic research relocation: {relative}")
-        visited.add(relative)
-        relative = mapping[relative]
+        visited.add(key)
+        suffix = Path(relative).relative_to(key)
+        relative = (Path(mapping[key]) / suffix).as_posix()
     return root / relative
 
 

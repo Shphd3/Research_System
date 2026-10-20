@@ -3,12 +3,24 @@
 [中文](project_access_cn.md)
 
 `Research_System` and repositories under `Projects/` are separate repositories.
-A clone of System does not contain `from-attention-to-search`. A relative link is
+A clone of System does not contain these independent project repositories. A relative link is
 navigation, not a copy of another repository's files.
 The local project's configured upstream is
 [`BinaryCheater/from-attention-to-search`](https://github.com/BinaryCheater/from-attention-to-search),
 on branch `Xingyu`. Local edits appear upstream only after separately requested
 commits and pushes; repository access is still required.
+
+`ntp-learning-mechanisms` is checked out at `Projects/ntp_learning_mechanisms/`.
+Start at its [roadmap](../Projects/ntp_learning_mechanisms/main/roadmap.md) or
+[Chinese entry](../Projects/ntp_learning_mechanisms/README_cn.md). Its
+[asset manifest](../Projects/ntp_learning_mechanisms/asset_manifest.json) remains
+the runtime-asset authority. The ignored `.local/asset_locations.json` inside
+that checkout holds this host's absolute roots; update those roots after a move,
+then use the project's `tools/asset_workflow.py verify` to check size and hashes.
+The historical lowercase `projects/ntp_learning_mechanisms/` location resolves
+through `tools/research_paths.py`, including file paths beneath it. Historical
+receipts retain their original addresses. The [relocation record](project_relocations/20261020_ntp_learning_mechanisms.json)
+records this move and verification without changing source identities.
 
 ## Model, representation and dataset assets
 
@@ -38,7 +50,7 @@ For a path from an earlier chat, receipt or unchanged archive, run:
 python tools/research_paths.py daily_research_reports/0930/docs/domain_update_geometry/summary.md
 ```
 
-`research_locations.json` records old/new paths, original and relocated hashes,
+`research_locations.json` records file and directory relocations, original and relocated hashes,
 source repository commits and immutable original-byte locations. Navigation-only
 rewrites do not amend registered settings, results or approval. Verify a frozen
 hash against the original bytes, not a relocated Markdown file with rebased links.

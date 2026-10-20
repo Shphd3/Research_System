@@ -2,10 +2,19 @@
 
 [English](project_access.md)
 
-System 与 `Projects/` 下的研究项目是独立仓库。只取得 System，不会同时取得 `from` 文件。
+System 与 `Projects/` 下的研究项目是独立仓库。只取得 System，不会同时取得这些独立项目的文件。
 相对链接提供导航，不会复制另一个仓库。
 本地项目配置的上游是 [BinaryCheater/from-attention-to-search](https://github.com/BinaryCheater/from-attention-to-search)，
 分支为 `Xingyu`。本地修改只有在另行请求提交和推送后才会上游可见，读取仍需要相应仓库权限。
+
+`ntp-learning-mechanisms` 位于 `Projects/ntp_learning_mechanisms/`。
+从[项目路线](../Projects/ntp_learning_mechanisms/main/roadmap_cn.md)或
+[中文入口](../Projects/ntp_learning_mechanisms/README_cn.md)读取；
+[资产清单](../Projects/ntp_learning_mechanisms/asset_manifest.json)继续持有该项目的运行资产身份。
+主机绝对路径由项目内不入 Git 的 `.local/asset_locations.json` 保存；迁移后更新其中的根路径，
+再用项目的 `tools/asset_workflow.py verify` 检查大小与哈希。
+历史小写路径 `projects/ntp_learning_mechanisms/` 及其下的文件可用 `tools/research_paths.py` 查询新位置。
+历史凭据保留原地址；[迁移记录](project_relocations/20261020_ntp_learning_mechanisms.json)保存本次位置调整和检查结果。
 
 [资产库](../assets/README_cn.md)维护模型／SAE 检查点、保存表征和数据集的身份与存储地址，
 并统一规定“先查找并实际访问，必需资产仍不可访问再暂停”的流程。
@@ -24,7 +33,7 @@ System 与 `Projects/` 下的研究项目是独立仓库。只取得 System，�
 python tools/research_paths.py daily_research_reports/0930/docs/domain_update_geometry/summary.md
 ```
 
-`research_locations.json` 保存旧新路径、迁移前后摘要值、原仓库版本和原始字节归档位置。
+`research_locations.json` 保存文件及目录的旧新路径、迁移前后摘要值、原仓库版本和原始字节归档位置。
 链接重定位不修改注册设置、结果或批准。核对冻结哈希时使用原始字节，不拿调整过链接的 Markdown
 冒充同一个文件版本。记忆、不可变凭据和历史快照保持原样；原始字节归档不是第二份现行原件。
 

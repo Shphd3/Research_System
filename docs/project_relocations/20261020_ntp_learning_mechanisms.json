@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-20T10:21:57.237450+08:00",
+  "operation": "Authorized relocation of one independent project checkout",
+  "old": "projects/ntp_learning_mechanisms",
+  "new": "Projects/ntp_learning_mechanisms",
+  "repository": {
+    "origin": "https://github.com/Shphd3/ntp-learning-mechanisms.git",
+    "head_before_and_after": "acf7c11d69c43bc93d775aecde291bfea172eb03",
+    "branch_before_and_after": "main",
+    "independent_git_metadata_preserved": true,
+    "root_repository_ignores_project_payload": true
+  },
+  "content_verification": {
+    "files_checked": 414,
+    "missing": 0,
+    "byte_identical": 411,
+    "tracked_files": 265,
+    "tracked_files_byte_identical": 263,
+    "changed_files": [
+      {
+        "path": ".local/asset_locations.json",
+        "before": {
+          "sha256": "d23be36c0179cac22a3439f9d454df0b12d5aee63abf1c6967aa523230dec633",
+          "size_bytes": 377
+        },
+        "after": {
+          "sha256": "dad64fe38beacd2ccb955c8d4d36e0ad1f287dccb5d60db231e4aee6d7f2cea7",
+          "size_bytes": 378
+        }
+      },
+      {
+        "path": "docs/remote_operations.md",
+        "before": {
+          "sha256": "69969ee650b790bcb5a4b65b0948dccb234197199a2eea4ad8cdb6f9bd94d629",
+          "size_bytes": 2143
+        },
+        "after": {
+          "sha256": "3d3727c9f851051c06452692c0ce0a019d344c08143069a78dd9f44b6f88d07c",
+          "size_bytes": 2424
+        }
+      },
+      {
+        "path": "docs/remote_operations_cn.md",
+        "before": {
+          "sha256": "b5522a7eedf6ec6e85591c8e43df87fb03a39f695aea8815896a8420adcf88e7",
+          "size_bytes": 1779
+        },
+        "after": {
+          "sha256": "ed624750d624faf1f90b2e63257fbd14a128820924723b2e95a13bd3456960a4",
+          "size_bytes": 2018
+        }
+      }
+    ],
+    "tracked_original_bytes_available_at_project_commit": "acf7c11d69c43bc93d775aecde291bfea172eb03",
+    "frozen_scientific_records_changed": false,
+    "frozen_source_hashes_verified": true,
+    "provenance_manifest_hashes_verified": 153,
+    "unchanged_inventory_sha256": "e074fddb375030c7a658b18100666867d79e823b96a8972db0789a0ab4c54d46"
+  },
+  "dependency_repairs": [
+    "PROJECTS.md routes to the project roadmap, README, local asset manifest and cross-machine rules",
+    "Two bilingual operation guides use the new checkout path; relocation notes distinguish historical authentication observations; edited guides use LF line endings",
+    "Ignored host-local asset roots rebased; stable asset IDs and payload bytes preserved",
+    "Existing exact safe.directory entry moved from old to new path; all other trust entries and ownership unchanged",
+    "research_paths.py supports whole-directory moves and descendants, exact-file precedence, chained moves and cycle detection",
+    "Bilingual project access guidance documents canonical location and legacy-path lookup"
+  ],
+  "checks": {
+    "system_unit_tests": {
+      "passed": 74,
+      "failed": 0
+    },
+    "project_asset_workflow_tests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "project_validation": {
+      "included_hashes": 153,
+      "runtime_asset_ids": 167,
+      "python_syntax": 28,
+      "local_links": 431,
+      "broken_links": 0,
+      "frozen_sources": "verified",
+      "csv_rows": "48/3072/12"
+    },
+    "asset_hash_verification": {
+      "mig-curated_present": 65,
+      "mig-execution_present": 112,
+      "failures": 0,
+      "scope": "Previously declared present replicas; no tensor loading or transfer"
+    },
+    "current_entrypoints_working_tree": {
+      "checked": 109,
+      "issues": 0,
+      "preexisting_untracked_entrypoints": 1
+    },
+    "current_entrypoints_tracked_only": {
+      "remaining_issues": 1,
+      "issue": "UNTRACKED Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md",
+      "scope": "Pre-existing unrelated untracked source; not modified"
+    },
+    "root_payload_check": "PASS",
+    "project_payload_check": "PASS",
+    "legacy_directory_and_nested_file_resolution": "PASS",
+    "old_source_reading_bundle": {
+      "built": true,
+      "source_files": 9,
+      "omitted_links": 12,
+      "omission_scope": "Bounded explicit-source selection; inspect bundle manifest for unselected and unavailable sources",
+      "temporary_output": "/tmp/ntp_project_relocation_20261020/reading_check"
+    },
+    "old_absolute_path_search": {
+      "live_sources_using_old_checkout": 0,
+      "historical_packaging_records_preserved": [
+        "Projects/ntp_learning_mechanisms/docs/packaging_record.md",
+        "Projects/ntp_learning_mechanisms/docs/packaging_record_cn.md"
+      ]
+    },
+    "changed_document_links": {
+      "checked": 35,
+      "missing": 0
+    },
+    "markdown_math_source": {
+      "files": 5,
+      "issues": 0,
+      "rendering_checked": false,
+      "mathematical_truth_checked": false
+    },
+    "changed_scope_git_whitespace": "PASS for both repositories"
+  },
+  "unchanged_boundaries": {
+    "scientific_state_changed": false,
+    "training_started": false,
+    "asset_payload_changed": false,
+    "asset_ids_changed": false,
+    "commit_created": false,
+    "push_performed": false,
+    "preexisting_and_concurrent_unrelated_edits_retained": true
+  }
+}

@@ -11,7 +11,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from research_paths import local_links, rebase_links, link_path, relocated
+from research_paths import local_links, rebase_links, link_path, relocated, relocations
 from build_reading_bundle import build, reading_copy, select_documents
 from check_current_entrypoints import inspect, current_entrypoints
 
@@ -52,6 +52,47 @@ class PathTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Cyclic research relocation'):
             relocated(Path('/workspace/a.md'),
                       {'a.md': 'b.md', 'b.md': 'a.md'}, Path('/workspace'))
+
+    def test_project_directory_move_covers_root_and_unlisted_descendants(self):
+        root = Path('/workspace')
+        old, new = 'projects/ntp', 'Projects/ntp'
+        mapping = {old: new}
+        for suffix in ('', '/main/summary.md', '/.local/assets/checkpoint.pt'):
+            self.assertEqual(relocated(root/(old + suffix), mapping, root),
+                             root/(new + suffix))
+        self.assertEqual(relocated(root/'projects/ntp_other/page.md', mapping, root),
+                         root/'projects/ntp_other/page.md')
+        self.assertEqual(relocated(Path('/outside/projects/ntp/page.md'), mapping, root),
+                         Path('/outside/projects/ntp/page.md'))
+
+    def test_specific_move_precedes_parent_and_follows_later_relocation(self):
+        root = Path('/workspace')
+        mapping = {'projects/p': 'Projects/p',
+                   'projects/p/main/old.md': 'Projects/p/main/current.md',
+                   'Projects/p/main/current.md': 'Projects/p/archive/old.md'}
+        self.assertEqual(relocated(root/'projects/p/main/old.md', mapping, root),
+                         root/'Projects/p/archive/old.md')
+        self.assertEqual(rebase_links('[result](../projects/p/main/new.md#answer)',
+                                     root/'docs/page.md', root/'docs/page.md', mapping, root),
+                         '[result](../Projects/p/main/new.md#answer)')
+
+    def test_directory_relocation_rejects_expanding_cycles(self):
+        root = Path('/workspace')
+        for mapping in ({'a': 'a/nested'}, {'a': 'b/x', 'b': 'a/y'}):
+            with self.assertRaisesRegex(ValueError, 'Cyclic research relocation'):
+                relocated(root/'a/page.md', mapping, root)
+
+    def test_directory_entries_load_with_legacy_file_entries(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root/'docs').mkdir()
+            (root/'docs/research_locations.json').write_text(json.dumps({
+                'files': [{'old': 'old.md', 'new': 'new.md'}],
+                'directories': [{'old': 'projects/p', 'new': 'Projects/p'}]}))
+            mapping = relocations(root)
+            self.assertEqual(mapping['old.md'], 'new.md')
+            self.assertEqual(relocated(root/'projects/p/page.md', mapping, root),
+                             root/'Projects/p/page.md')
 
     def test_relative_worker_link_keeps_same_identity_after_move(self):
         root = Path('/workspace')
