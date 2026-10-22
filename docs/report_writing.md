@@ -160,8 +160,9 @@ and next-step suggestions remain labeled proposals.
 
 ## Complete Markdown delivery
 
-Use Markdown/text for research delivery. Do not generate or require a webpage,
-interactive viewer or video as part of this workflow. Static figures may supplement
+Use self-contained Markdown/text as the durable research record. When the
+researcher requests a visual map or interactive view, provide it as a derived
+reading surface linked to those records. Static figures may supplement
 the text, but the question, decisive findings, reasoning and boundary must remain
 understandable without opening an image, clicking a link or expanding hidden content.
 
@@ -240,3 +241,17 @@ This adapts the clear-language ideas in
 [Karpathy's post](https://x.com/karpathy/status/2105819303471976479), while choosing text-only delivery locally. It does not impose a new report template. The [STE maintenance group's FAQ](https://asd-ste100.org/STE_faq.html)
 supports applying short sentences, clear terms and active voice beyond maintenance
 documents. The post's informal "80%" is not a compliance level.
+
+
+## Direct writing and readable AI work
+
+Use [anti-defensive-writing](../.agents/skills/anti-defensive-writing/SKILL.md)
+when drafting or revising result explanations, meeting briefs and technical
+reports. State the result or question first, then the decisive basis and the
+uncertainty that affects its interpretation. Consolidate repeated disclaimers;
+retain the conditions, adverse results and evidence distinctions the claim needs.
+
+For AI work, report the completed change, evidence and next material step.
+Full commands, routine checks and execution history stay in the owning record.
+Requested coverage and researcher-first factual review remain intact. The
+writing helper edits expression; Focus/Anchor/Protocol keep their authority.

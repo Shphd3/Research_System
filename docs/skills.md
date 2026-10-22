@@ -34,6 +34,7 @@ Routine rewriting, arithmetic or file inspection may need no research skill.
 | Write/audit a settled-question final synthesis | `research-final-report` |
 | Understand a named document, result, formula or idea | `research-document-explainer` |
 | Write a requested meeting brief, stage Story or curated handoff | `research-communication` |
+| Edit research prose for direct, readable expression within its existing owner | `anti-defensive-writing` |
 | Checkpoint/resume conversation context or prepare an operational continuation | `research-memory` |
 | Assess advisor-discussion readiness or its next question | `research-sync-gate` |
 | Place, reorganize, archive or explicitly publish artifacts | `research-mainline` |

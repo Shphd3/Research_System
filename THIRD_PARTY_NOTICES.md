@@ -29,3 +29,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## anti-defensive-writing
+
+Writing helper imported from [Kiterlin/anti-defensive-writing](https://github.com/Kiterlin/anti-defensive-writing),
+pinned to `f516147d017a3fe43ae99192cb89d8261b0c8679`. MIT License,
+Copyright (c) 2026 Kiterlin. The complete [license](.agents/skills/anti-defensive-writing/LICENSE),
+[unmodified source](.agents/skills/anti-defensive-writing/references/upstream.md)
+and [local adaptation](.agents/skills/anti-defensive-writing/UPSTREAM.md) are retained.
+Existing research ownership, evidence and review boundaries remain controlling.
