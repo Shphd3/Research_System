@@ -38,6 +38,9 @@ python tools/research_paths.py daily_research_reports/0930/docs/domain_update_ge
 冒充同一个文件版本。记忆、不可变凭据和历史快照保持原样；原始字节归档不是第二份现行原件。
 
 环境无法访问项目时，明确说明未读到哪些来源，不凭项目名、System 索引或聊天补全。
+先看[按Anchor同步的阅读副本](../sync/anchors/README_cn.md)。研究者已要求在每轮实质性Anchor指导
+交付后刷新这类材料；[同步规则](anchor_sync_cn.md)规定固定目录、来源选择、哈希与发布范围。
+只拥有System的读者可直接读已选正式记录的完整副本；科学修改仍回到原项目。
 能访问两个仓库就分别读取；否则在完整工作区生成本地阅读包：
 
 ```sh

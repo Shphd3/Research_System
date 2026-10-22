@@ -5,6 +5,13 @@ for archive maintenance.
 
 ## Root Anchor Mirror
 
+For the researcher's standing per-Anchor guidance sync, use the bounded
+[Anchor reading sync](../../../../docs/anchor_sync.md) workflow. It reuses the
+portable reading-bundle builder and preserves explicit source hashes and missing
+dependencies for readers who have only System access. The tree publisher below
+serves explicitly requested Anchor-tree mirrors; it is not a portable multi-record
+reading package.
+
 Project-local Anchors remain canonical. When the user explicitly requests the
 root mirror, publish and verify it with:
 

@@ -89,6 +89,16 @@ at `NOT RUN`; completed rounds need all six. Preserve full evidence once, not
 duplicate histories. Finish factual records even when human interpretation is
 unknown. Never reinterpret frozen results during refactoring.
 
+After delivering a substantive Anchor guidance or revision round, synchronize
+its bounded reading materials into `sync/anchors/<project>/<anchor_id>/` under
+the researcher's standing request. Follow [Anchor sync](docs/anchor_sync.md):
+reuse the existing reading-bundle builder, select exact owner/round records,
+preserve source bytes, hashes, language and pending states, and verify the
+portable copy before delivery. The project remains the editable scientific owner.
+Ordinary discussion does not require inventing an Anchor. Local synchronization
+is authorized within this scope; commit/push follow an applicable existing
+authorization, and publication status must be reported accurately.
+
 Experiments need an uncertainty, credible rival, distinguishing comparison and
 supporting/non-supporting/insufficient decision branches. A formula's
 implementation check is not a new empirical discovery. Local effects, long-term
@@ -136,7 +146,7 @@ Independent repositories keep their ownership. For incomplete checkouts or legac
 paths use [project access](docs/project_access.md), not a duplicate editable source.
 
 Commit, push, publish, external sync and existing Graph edits require explicit
-request. Before commit run `python tools/check_git_payload.py` and relevant
+request, including an applicable standing authorization already given. Before commit run `python tools/check_git_payload.py` and relevant
 changed-scope tests; report unavailable checks honestly. Skill edits require
 structural/link checks; changed math requires source checks, not claims of rendered
 verification. Complete deliverables and evidence traces. Narrow answers need no formal artifact.

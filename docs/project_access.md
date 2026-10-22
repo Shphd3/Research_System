@@ -59,6 +59,13 @@ state. Never treat the immutable byte archive as another live research source.
 
 ## Incomplete workspace or one-repository reader
 
+First check [Anchor reading copies](../sync/anchors/README.md). The researcher
+requested a bounded refresh after each substantive Anchor guidance delivery;
+[the sync workflow](anchor_sync.md) records the stable destination, source profile,
+hashes and publication boundary. These copies let a System-only reader inspect
+selected full records when an independent project is unavailable. Scientific
+edits still return to the original project.
+
 If the project is unavailable, say which sources could not be read. Do not infer
 their contents from the project name, System index or earlier chat. An environment
 with access to both repositories can read them separately; otherwise create a

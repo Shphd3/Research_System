@@ -246,3 +246,7 @@ E04实际输出已登记10族／55状态，来自pt-1rb3s2t0。[严格输出可�
 ## 大样本与跨层token—feature关联
 
 注册资产 `analysis_crosscoder_token_feature_layer_validation_20261019`：复用DCLM发现/复核5,238,097/5,247,663位置及原Tulu，14层共享z上的解码幅度；无模型前向或训练。分开保留feature、位置、tokenID等权及旧池迁移。仅注册实际分析产物，不提升科学结论。
+
+## 列表首末规则与顺序遗忘
+
+[A17_04 E01/R02阅读入口](a17_list_rule_mapping_cn.md)（[English](a17_list_rule_mapping.md)）说明实际任务、顺序与混合结果、已登记数据版本和GitHub正式来源。只阅读Research_System也能理解该项内容；完整JSONL仍在执行存储。

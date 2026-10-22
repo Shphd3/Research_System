@@ -18,6 +18,10 @@ logs and checkpoints. Daily folders hold meetings and short reading indexes.
 [from project](Projects/from-attention-to-search/main/roadmap_cn.md) ·
 [Skills](docs/skills.md) · [Writing](docs/report_writing_cn.md)
 
+For project material readable from System alone, use the
+[Anchor reading copies](sync/anchors/README_cn.md). They refresh after an Anchor
+guidance delivery under the [shared sync workflow](docs/anchor_sync.md).
+
 [Research assets](assets/README.md) ([中文](assets/README_cn.md)) indexes local
 model/SAE checkpoints, saved representations and datasets, with live access checks.
 

@@ -278,3 +278,7 @@ E04 actual save registration:10 families/55 states from pt-1rb3s2t0. [Strict out
 ## Large-data cross-layer token/feature association
 
 Registered `analysis_crosscoder_token_feature_layer_validation_20261019`: cached CPU analysis with corpus-local and fixed-pool comparisons, four figures and exact numeric tables. Read access is not independent scientific confirmation or next-run approval.
+
+## First/last list rules and sequential forgetting
+
+[A17_04 E01/R02 reading entry](a17_list_rule_mapping.md) ([中文](a17_list_rule_mapping_cn.md)) explains the actual task, sequential and joint results, registered dataset versions and GitHub sources. It is self-contained for a Research_System-only reader. Complete JSONL payloads remain execution-side.
