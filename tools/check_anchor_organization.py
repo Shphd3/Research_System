@@ -8,6 +8,7 @@ owner scan; a topic-key directory is not an exemption for a live Anchor.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from collections import Counter
@@ -218,7 +219,63 @@ def inspect(project_root: Path = DEFAULT_PROJECT) -> tuple[list[str], dict[str, 
             # Nested roots can refine the same owner; different owners cannot overlap.
             if len({owner for _, owner in matches}) > 1:
                 issues.append(f"AMBIGUOUS_EXPERIMENT {path.relative_to(project)}: {sorted({owner for _, owner in matches})}")
+    map_path = project / "main/research_map.json"
+    if map_path.is_file():
+        issues.extend(inspect_reading_map(project, map_path, data))
     return sorted(set(issues)), counts
+
+
+def inspect_reading_map(project: Path, path: Path, registry: dict) -> list[str]:
+    """Keep the derived reading view aligned without evaluating its claims."""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict) or not isinstance(data.get("anchors"), list):
+            return ["INVALID_READING_MAP expected an anchors list"]
+        rows = data["anchors"]
+        if any(not isinstance(row, dict) for row in rows):
+            return ["INVALID_READING_MAP expected Anchor objects"]
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        return [f"INVALID_READING_MAP {exc}"]
+    issues: list[str] = []
+    owners = {row["id"]: row for row in registry["anchors"] if isinstance(row.get("id"), str)}
+    identifiers = [row.get("id") for row in rows]
+    if any(not isinstance(identifier, str) for identifier in identifiers):
+        return ["INVALID_READING_MAP expected string Anchor IDs"]
+    for identifier, n in Counter(identifiers).items():
+        if n > 1:
+            issues.append(f"DUPLICATE_MAP_ANCHOR {identifier}")
+    for identifier in sorted(set(owners) - set(identifiers)):
+        issues.append(f"MISSING_MAP_ANCHOR {identifier}")
+    for row in rows:
+        identifier = row["id"]
+        owner = owners.get(identifier)
+        if owner is None:
+            issues.append(f"UNKNOWN_MAP_ANCHOR {identifier}")
+            continue
+        if row.get("line") != owner.get("line") or row.get("parent_id") != owner.get("parent_id"):
+            issues.append(f"WRONG_MAP_OWNER {identifier}")
+        if row.get("source") != owner.get("path"):
+            issues.append(f"WRONG_MAP_SOURCE {identifier}")
+            continue
+        source = project / owner["path"]
+        if source.is_file() and row.get("source_sha256") != hashlib.sha256(source.read_bytes()).hexdigest():
+            issues.append(f"STALE_MAP_SOURCE {identifier}: refresh the derived explanation against its Anchor")
+        for field in ("title_cn", "question_cn", "why_cn", "approach_cn", "role_for_parent_cn", "evidence_state_cn", "boundary_cn"):
+            if not isinstance(row.get(field), str) or not row[field].strip():
+                issues.append(f"EMPTY_MAP_EXPLANATION {identifier}.{field}")
+        for field in ("evidence_sources", "related_results"):
+            references = row.get(field, [])
+            if not isinstance(references, list):
+                issues.append(f"INVALID_MAP_REFERENCES {identifier}.{field}")
+                continue
+            for reference in references:
+                if not isinstance(reference, str):
+                    issues.append(f"INVALID_MAP_REFERENCE {identifier}.{field}")
+                    continue
+                target = (project / reference).resolve()
+                if not target.is_relative_to(project) or not target.is_file():
+                    issues.append(f"MISSING_MAP_REFERENCE {identifier}: {reference}")
+    return issues
 
 
 def main() -> int:

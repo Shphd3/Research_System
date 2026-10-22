@@ -134,9 +134,9 @@ nodes:
     type: claim
     summary: "E02 was positive only in the exact-fit tail, and E03 had asymmetric query-relevant structure; neither supports a clean broad-convergence mechanism claim."
     files:
-      - path: /Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md
+      - path: /Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_00_short_range_single_vs_two_step_composition/12_00_short_range_single_vs_two_step_composition_anchor.md
         title: A12_0 anchor
-      - path: /Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E02_in_support_capability_calibration/summary.md
+      - path: /Projects/from-attention-to-search/main/experiments/A12/12_00_short_range_single_vs_two_step_composition/A12_0_E02_in_support_capability_calibration/summary.md
         title: E02 calibration summary
     status: done
     tags: [a12, operationalization, claim-boundary]
@@ -145,7 +145,7 @@ nodes:
     title: Close E04 or reopen carrier design
     type: task
     summary: "All 12 NTP trajectories completed, but no scale passed both depths and the row-removal guard was invalid. Decide whether to close E04 or reopen carrier/capability design under a new Protocol; do not run MTP."
-    file: /Projects/from-attention-to-search/main/experiments/A12/12_0_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md
+    file: /Projects/from-attention-to-search/main/experiments/A12/12_00_short_range_single_vs_two_step_composition/A12_0_E04_balanced_per_sample_dual_map/summary.md
     status: active
     tags: [a12, next-decision, carrier-validity, mtp-blocked]
 

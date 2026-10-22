@@ -5,6 +5,11 @@
 The sections below are an example reading order. Cover their content, but
 reorder or combine them when that makes the purpose-to-evidence reasoning clearer.
 Keep the body concise; put full derivations and audit history in owning detail.
+Begin with the concrete question and bounded observation so a reader can explain
+what happened before following methods. These are coverage prompts, not fields
+to fill mechanically. Define essential terms beside their first use, preferably
+with a real example. Link to Detailed for the actual procedure and controls,
+and to its appendix for complete per-condition records.
 
 Primary Anchor: [link to the owning Anchor]
 Frozen Protocol: [link and revision]

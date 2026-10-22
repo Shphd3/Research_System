@@ -59,7 +59,11 @@ once for the whole report:
 3. Functional interventions and quality: whether changes affect predictions and
    whether measurements are credible.
 
-Then explain every requested item in its registered order: purpose and need;
+Use a layered factual delivery: Summary explains the question, key comparison
+and decisive measurements; Detailed explains the actual steps and why controls
+are needed; linked appendices retain the complete per-item record and audit.
+Do not put the full ledger on the first reading surface. Across these linked
+records, explain every requested item in its registered order: purpose and need;
 real input/control/operation; raw values, baseline, difference, units, counts
 and uncertainty; first-use terms; every plot/table encoding; validity and limits.
 At first use of a term give its Chinese name, plain meaning, experiment-specific

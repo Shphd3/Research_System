@@ -5,22 +5,32 @@ Apply `result_evidence_lineage.md` before using this structure.
 ## Contents
 
 - [Purpose](#purpose)
-- [Required structure](#required-structure)
+- [Content coverage and reader organization](#content-coverage-and-reader-organization)
 - [Evidence ownership](#evidence-ownership)
 - [Figure boundary](#figure-boundary)
 
 ## Purpose
 
-`detailed.md` is the only complete evidence ledger. A future reader or AI must
+`detailed.md` and its explicitly linked appendices own the complete evidence ledger. A future reader or AI must
 be able to verify execution against the frozen Protocol, trace every
 decision-bearing result, understand failures, and locate artifacts without
 re-discovering the project.
 
-It may be long, but it must be layered: verdict and eligibility first, full
-audit afterward. It must not create a stronger conclusion than `summary.md` or
+It may be long, but it must be layered: the question, comparison, observed result
+and eligibility first, full audit afterward. Scientific judgment remains with
+the researcher. Explain how the actual experiment works before listing its
+provenance fields: input construction, changed/fixed quantities, the purpose
+of each control, measurement steps and how to read the result. Use a worked
+real example where it helps. A list of parameters and paths is not that explanation. It must not create a stronger conclusion than `summary.md` or
 the Anchor.
 
-## Required Structure
+## Content Coverage And Reader Organization
+
+The checklist below records content ownership; it is not a mandatory fifteen-
+section reading order. Combine and order material by what a new reader needs
+to understand first. Put full tables, logs and technical audits in linked
+appendices under this record, without dropping requested conditions. Do not
+create empty sections merely to reproduce the checklist.
 
 ```markdown
 # Detailed: <experiment_id>
@@ -134,7 +144,9 @@ Remaining rival explanations:
 
 ## 10. Full Experiment Record
 
-One round is one day's work. Record each round in this order:
+A round retains its registered experimental identity and may span days.
+Record its six content fields without converting the main explanation into a
+day-by-day execution diary:
 
 1. Question or hypothesis tested.
 2. Setup: the exact model or baseline version, and the controlled variables.

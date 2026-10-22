@@ -1,5 +1,6 @@
 """Regressions for ownership omissions that a link-only check cannot detect."""
 import json
+import hashlib
 import sys
 import tempfile
 import unittest
@@ -108,6 +109,39 @@ class AnchorOrganizationTests(unittest.TestCase):
         issues, _ = self.check()
         self.assertTrue(any(issue.startswith("OUTSIDE_PROJECT") for issue in issues))
         self.assertTrue(any(issue.startswith("HISTORICAL_CANONICAL_OWNER") for issue in issues))
+
+    def reading_map(self):
+        row = {"id": "15_18", "line": "A15", "parent_id": None,
+               "source": self.anchor,
+               "source_sha256": hashlib.sha256((self.project / self.anchor).read_bytes()).hexdigest()}
+        row.update({key: "Existing bounded explanation" for key in
+                    ("title_cn", "question_cn", "why_cn", "approach_cn", "role_for_parent_cn", "evidence_state_cn", "boundary_cn")})
+        return {"anchors": [row]}
+
+    def test_current_derived_map_preserves_registered_ownership(self):
+        self.write("main/research_map.json", json.dumps(self.reading_map()))
+        self.assertEqual(self.check()[0], [])
+
+    def test_map_cannot_silently_drop_or_invent_an_owner(self):
+        data = self.reading_map()
+        data["anchors"][0]["id"] = "15_99"
+        self.write("main/research_map.json", json.dumps(data))
+        issues, _ = self.check()
+        self.assertTrue(any(issue.startswith("MISSING_MAP_ANCHOR 15_18") for issue in issues))
+        self.assertTrue(any(issue.startswith("UNKNOWN_MAP_ANCHOR 15_99") for issue in issues))
+
+    def test_map_must_refresh_when_anchor_changes(self):
+        self.write("main/research_map.json", json.dumps(self.reading_map()))
+        self.write(self.anchor, "# Revised design\nUnknown\n")
+        self.assertTrue(any(issue.startswith("STALE_MAP_SOURCE 15_18") for issue in self.check()[0]))
+
+    def test_map_cannot_reparent_a_question_or_link_absent_results(self):
+        data = self.reading_map()
+        data["anchors"][0].update(parent_id="15_99", related_results=["main/absent.md"])
+        self.write("main/research_map.json", json.dumps(data))
+        issues, _ = self.check()
+        self.assertTrue(any(issue.startswith("WRONG_MAP_OWNER 15_18") for issue in issues))
+        self.assertTrue(any(issue.startswith("MISSING_MAP_REFERENCE 15_18") for issue in issues))
 
 
 if __name__ == "__main__":

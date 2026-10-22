@@ -238,10 +238,35 @@ Without an independent reader, call this self-review. Path and source checks do
 not establish scientific correctness or independently measured comprehension.
 
 This adapts the clear-language ideas in
-[Karpathy's post](https://x.com/karpathy/status/2105819303471976479), while choosing text-only delivery locally. It does not impose a new report template. The [STE maintenance group's FAQ](https://asd-ste100.org/STE_faq.html)
+[Karpathy's post](https://x.com/karpathy/status/2105819303471976479), with complete text as the formal record and requested derived reading views. It does not impose a new report template or scientific authority. The [STE maintenance group's FAQ](https://asd-ste100.org/STE_faq.html)
 supports applying short sentences, clear terms and active voice beyond maintenance
 documents. The post's informal "80%" is not a compliance level.
 
+
+## Reading roles: Summary, Detailed and appendices
+
+Summary gives the reader a coherent answer: why this question matters, what
+comparison was made, what happened, how the key evidence supports that reading,
+and what decision remains. Start with an actual example when it makes the task
+concrete. Include the decisive baseline, values and uncertainty beside the point
+they explain. Put the full condition catalogue and audit history in Detailed or
+its appendices. Length follows the explanation needed; it is not a compression
+or completeness score.
+
+Detailed explains the actual procedure in a reader's order: input construction,
+changed and fixed quantities, why each control exists, how measurements are
+computed and interpreted, results, deviations and evidence lineage. A parameter
+list or directory of logs does not provide those explanations. Keep a worked
+example alongside the calculation where it helps.
+
+Appendices retain complete per-item explanations, all conditions, technical
+checks, run history and raw-artifact indexes under the same Detailed owner.
+The primary reading path should identify what each appendix lets the reader
+verify. Full scope remains traceable without repeating the full audit in Summary.
+
+For the researcher's first review, separate the factual answer from a pending
+mechanism judgment throughout all three layers. The scientific content and
+recorded uncertainty are preserved when moving exposition between them.
 
 ## Direct writing and readable AI work
 

@@ -8,7 +8,8 @@ description: "Draft or audit an Anchor-aligned Protocol, or write and audit cano
 The Anchor owns question, model and scientific choices; Protocol owns exact
 execution/approval; Summary owns purpose, necessary model, hypothesis, bounded
 conclusion and supporting analysis in a reader-driven order; Detailed owns
-setup, provenance, deviations, full rounds and artifact lineage. Do not invent
+an understandable account of the actual procedure, provenance, deviations,
+full rounds and artifact lineage, with full audits in owned appendices. Do not invent
 missing scientific choices or create a parallel implementation plan.
 
 ## Read For The Requested Output

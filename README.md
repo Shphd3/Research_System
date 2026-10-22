@@ -43,8 +43,8 @@ not a necessary prerequisite without a justified dependency.
 | Project `main/focus/` | Stable question and researcher-owned next decision |
 | Anchor | Sole current scientific design, eight-section contract |
 | Protocol | Exact experiment contract, approval and amendments |
-| Summary | Complete Purpose, Model, Hypothesis, Conclusion and Analysis, in that order |
-| Detailed / execution record | Setup, conformance, results, deviations and lineage |
+| Summary | A readable answer connecting purpose, necessary model, hypothesis, key observations and bounded meaning |
+| Detailed / execution record | Explain how the comparison was performed and calculated; retain setup, controls, deviations and provenance |
 | Meeting brief, Story, final report | Derived explanations of named sources |
 
 Focus keeps `task_state`, `question_state`, `design_state` and `result_state`
@@ -63,9 +63,10 @@ Use short, direct sentences and consistent terms. Define objects before symbols,
 and keep assumptions and uncertainty. Put the answer early, with enough reasoning
 for a new reader to understand it. Match headings to the research type.
 
-Markdown carries the complete explanation without a webpage. State decisive values
+Markdown carries the complete explanation; requested interactive maps provide a derived reading view. State decisive values
 and figure findings in prose; define formulas and use headings for deeper detail.
-Figures and evidence links support verification. A meeting brief keeps the short
+Move complete audits and long per-item explanations to the owning appendices,
+with clear links from Summary and Detailed. Figures and evidence links support verification. A meeting brief keeps the short
 core and Q&A together. A stable bounded question may have
 one researcher-confirmed final synthesis. See [writing rules](docs/report_writing.md).
 
