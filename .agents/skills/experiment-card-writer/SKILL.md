@@ -30,6 +30,12 @@ canonical result writing uses the frozen Protocol, evidence and researcher judgm
 Reuse confirmations and unchanged rules. Do not load authoring guides just to
 read a frozen result contract. Preserve existing valid layouts and language roles.
 
+For a requested complete analysis matrix, first delivery of the researcher's own new results, or
+several fitting/learning protocols, apply the shared
+[coverage, fitting-audit and two-pass review contract](../../../docs/research_analysis_review_contract.md).
+Keep its task ledger and three recorded audit rounds proportionate; this adds
+no execution authority and does not force unrelated tasks into a full matrix.
+
 ## Mechanism And Evidence Checks
 
 Map each decisive model term to actual computation, changed/held-fixed quantities,
@@ -51,6 +57,8 @@ an explanation.
 
 Use the shared [writing rules](../../../docs/report_writing.md) for result delivery.
 With Summary link it first; deliver the decisive result, necessary figure/reading
-sentence, boundary and next uncertainty. Unconfirmed proposals are `AI 建议`.
+sentence and boundary. When researcher-first review is requested, keep mechanism
+judgment and scientific next steps pending until that review; otherwise include
+the next uncertainty. Unconfirmed proposals are `AI 建议`.
 Verify chosen contracts, links and repeated fields. Execution, publication and
 scientific transitions remain within explicit authority, without redundant gates.

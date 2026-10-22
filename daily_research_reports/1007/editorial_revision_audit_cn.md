@@ -13,7 +13,7 @@
 | 1005-路由表征共同学习：梯度反馈对照执行 | [独立临时项目](../../Projects/router-representation-coupling/README_cn.md)。其roadmap→Focus→Anchor→Protocol→Summary/Detailed独立；不是把1002固定更新实验改名。本地此目录没有独立.git，研究职责独立与Git仓库身份不能混用。 |
 | 1006-共享还是分开：组会收束与科研掌控 | [唯一组会入口](../1006/meeting_report/meeting_brief_sharing_research_recovery_cn.md)。只负责讲述、解释和备答，不改科学状态。 |
 
-System的[PROJECTS](../../PROJECTS.md)负责导航；既有正式主线仍由[from项目roadmap](../../Projects/from-attention-to-search/main/roadmap.md)指向原Focus。旧0930域更新Summary已通过迁移解析器核实为`Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary.md`，没有复制第二个可编辑原件。1002→1005学习→1006汇报是派生阅读关系，1002→独立路由项目是另一个获激活问题，均不是自动提升原结果。
+System的[PROJECTS](../../PROJECTS.md)负责导航；既有正式主线仍由[from项目roadmap](../../Projects/from-attention-to-search/main/roadmap.md)指向原Focus。旧0930域更新Summary已通过迁移解析器核实为`Projects/from-attention-to-search/main/experiments/A17/17_12_domain_update_geometry/20260930/summary.md`，没有复制第二个可编辑原件。1002→1005学习→1006汇报是派生阅读关系，1002→独立路由项目是另一个获激活问题，均不是自动提升原结果。
 
 代码、数据、权重和收据在`/data/250010109/MoE_Router/experiments/`。当前路由共同均衡条件为`20261006_router_representation_coupling_balanced`；`20261005_router_representation_coupling`保留原零均衡条件。两者不可合成同一实验。更新的训练状态只引用已有10月7日09:33持久化完成记录，没有本轮新测量。
 

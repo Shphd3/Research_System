@@ -77,7 +77,7 @@ CE单位为nat/有效目标；窗口为updates4110—4173。A训练CE低0.013008
 
 | 内容 | 已经带来的认识 | 明天读什么 |
 | --- | --- | --- |
-| 前序受控规则干扰 | 规则反转调节帮助幅度，注册条件未出现净伤害；不能将冲突成分当净伤害 | [受控Summary](../../../Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md) |
+| 前序受控规则干扰 | 规则反转调节帮助幅度，注册条件未出现净伤害；不能将冲突成分当净伤害 | [受控Summary](../../../Projects/from-attention-to-search/main/experiments/A17/17_10_shared_update_conditional_interference/20260927_controlled/summary_cn.md) |
 | 自然域与更新统计 | 领域关系、目标信息和估计误差要分开；旧INSUFFICIENT/NON_SUPPORT不由后续改写 | [学习指南第2节](../../1005/learning_guide_cn.md)；需要时回其源记录 |
 | 来源更新→真实位移→有限CE | 结构线索接到了指定更新的实际后果 | [数学分析](../../1002/candidates/ntp_representation_update_channels/mathematical_analysis_cn.md) |
 | SAE动态忠实性与作用预测 | 静态重构、动态位移、预测Q回答不同问题 | [原报告](../../1002/candidates/ntp_representation_update_channels/research_report_cn.md) |

@@ -1,6 +1,6 @@
 # Normalized routing and frozen-base expert learning assets
 
-[中文结果](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/summary_cn.md) · [Full record](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/detailed_cn.md) · [Protocol](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/protocol.md)
+[中文结果](../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/summary_cn.md) · [Full record](../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/detailed_cn.md) · [Protocol](../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/protocol.md)
 
 The sole payload root is `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z`. Base, dictionary and original output path are frozen; saved states contain the residual branch and optional learned router, not a standalone language model.
 

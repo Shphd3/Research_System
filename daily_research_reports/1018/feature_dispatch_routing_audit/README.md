@@ -18,7 +18,7 @@ The [machine-readable cards with full visible prefixes](text_cases.json), [core 
 
 ## Sources and exclusions
 
-Canonical reports, figures, and small tables originate from `/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/`. The Anchor comes from the same project's `main/problem_anchors/crosscoder_feature_relations/feature_group_to_actual_dispatch/`; recent indexes come from `main/research_notes/qwen3_crosscoder_tooling/`.
+Canonical reports, figures, and small tables originate from `/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/`. The Anchor comes from the same project's `main/problem_anchors/15_spectral_representation_and_functional_routing/15_19_feature_group_to_actual_dispatch/`; recent indexes come from `main/research_notes/qwen3_crosscoder_tooling/`.
 
 The four additional complete final-result tables were copied only into this discussion package, not back into the project. They originate in `metrics/core/` or `metrics/score/` under execution root `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/`.
 

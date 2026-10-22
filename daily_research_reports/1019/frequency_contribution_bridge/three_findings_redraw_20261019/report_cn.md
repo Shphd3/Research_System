@@ -96,6 +96,6 @@
 
 ## 来源与可复核范围
 
-- 新分析：[原Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md)；固定模型、字典，TRAIN分组、EVAL复核，不训练。
-- 旧训练检查：[epoch1 Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/summary_cn.md)；旧T_S1原名单/原S1校准评分，与新四频率段、两子组的名单不同。
+- 新分析：[原Summary](../../../../Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md)；固定模型、字典，TRAIN分组、EVAL复核，不训练。
+- 旧训练检查：[epoch1 Summary](../../../../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_epoch1_expert_geometry/summary_cn.md)；旧T_S1原名单/原S1校准评分，与新四频率段、两子组的名单不同。
 - [来源及图像manifest](artifact_manifest.json)记录每个源表、脚本、图像的SHA256、数据版本与允许解释。PNG/PDF/SVG同名，均可直接导出。未做新训练、模型推理、激活提取或区间估计。

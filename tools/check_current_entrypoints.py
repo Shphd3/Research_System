@@ -58,6 +58,14 @@ def inspect(root: Path = ROOT, working_tree: bool = False) -> tuple[list[str], l
                 failures.append(f'DAILY_FOCUS {name}: current questions belong to the project')
     if len(sources) == 1:
         failures.append('NO_PROJECT_ROUTE: no available project roadmap was loaded')
+    # Projects opt into the explicit ownership contract in their own AGENTS.
+    # Once adopted, deleting the registry must fail rather than disable checking.
+    from check_anchor_organization import inspect as inspect_organization
+    for project in sorted(projects):
+        rules = project / 'AGENTS.md'
+        if rules.is_file() and 'anchor_ownership.json' in rules.read_text():
+            organization_issues, _ = inspect_organization(project)
+            failures.extend(f'ORGANIZATION {project.name}: {issue}' for issue in organization_issues)
     return failures, pending, len(checked)
 
 

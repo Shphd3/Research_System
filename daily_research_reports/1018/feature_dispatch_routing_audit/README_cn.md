@@ -29,7 +29,7 @@
 
 ## 原件与打包边界
 
-项目正式结果源为 `/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/`。Anchor源为对应项目的 `main/problem_anchors/crosscoder_feature_relations/feature_group_to_actual_dispatch/`。`recent_results/` 来自项目 `main/research_notes/qwen3_crosscoder_tooling/`。
+项目正式结果源为 `/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/`。Anchor源为对应项目的 `main/problem_anchors/15_spectral_representation_and_functional_routing/15_19_feature_group_to_actual_dispatch/`。`recent_results/` 来自项目 `main/research_notes/qwen3_crosscoder_tooling/`。
 
 上表额外四份完整最终源表只进入本讨论包，不回写项目：`feature_owner_summary.csv`、`feature_owner_original_and_C_zero.csv`、`expert_loads_original_and_C_zero.csv`、`winner_runner_margin_components.csv`。它们分别来自执行目录的 `metrics/core/` 或 `metrics/score/`，便于离线核查图1／2与评分分解。包内其余小表、四图与报告来自上述项目正式目录。
 

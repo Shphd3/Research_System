@@ -21,8 +21,18 @@ Projects/<project>/main/
 ```
 
 Preserve existing numbered line/Anchor identities and experiment conventions.
-A stable topic key may name a previously unnumbered storage family; it does not
-activate a question or infer a scientific dependency. Supporting notes never
+Follow the project's numbered ownership convention when it has one. In
+`from-attention-to-search`, register each current formal Anchor in
+`main/anchor_ownership.json` with its A-line, unique parent/child ID, canonical
+path, language companions and owned experiment roots. Register a new formal
+owner before treating its placement as complete. The line index and roadmap
+must lead to that owner; a valid link alone does not establish correct ownership.
+
+A topic key can name supporting material or the descriptive suffix of a
+numbered owner. It cannot create an unnumbered parallel family of formal Anchors
+or experiments. Preserve explicitly registered legacy flat layouts and legacy
+experiment IDs with their recorded owner and reason; do not mechanically
+renumber them merely to match a newer folder style. Supporting notes never
 replace a formal owner. Do not invent new Anchors to fill a directory.
 
 A Focus keeps its problem_key and project path across meetings, dates and model
@@ -84,3 +94,15 @@ Check both repository indexes, new file discoverability, links and evidence
 identity. Distinguish inherited missing sources from migration regressions. Verify
 root-to-project and project-only reading. Graph and external publication remain
 separately scoped; no question closes or gains approval through migration.
+
+For a project with an ownership registry, run
+`python tools/check_anchor_organization.py --project-root Projects/from-attention-to-search`
+from the System root in addition to link checks. Require unique Anchor IDs,
+registered ownership for current formal records, correct numbered placement and
+valid parent/child paths. The check excludes historical archive snapshots from
+the current-owner scan; it does not exempt a live design merely because its
+topic directory was called supporting material. Record old-to-new paths using
+the System relocation registry, with exact file moves or directory-prefix moves
+as appropriate. Keep historical snapshots, immutable job IDs and frozen evidence
+unchanged; the resolver provides their current reading destination. Placement
+checks never establish design approval, execution validity or scientific truth.

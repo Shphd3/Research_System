@@ -241,7 +241,7 @@ E04实际输出已登记10族／55状态，来自pt-1rb3s2t0。[严格输出可�
 
 ### 2026-10-19 频率贡献桥梁与关系细分
 
-`analysis_crosscoder_frequency_contribution_bridge_20261019t025630z` 登记已保存的无训练A–C分析：4个频率段、21种名单、42种路由、84套分发矩阵及302张文本卡。[中文概要](../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md) · [本次输出访问核验](checks/2026-10-19_frequency_contribution_bridge_outputs.json)。仅为已查看EVAL上的探索性结构与分发证据，不授予学习、容量结论或下一轮执行权限。
+`analysis_crosscoder_frequency_contribution_bridge_20261019t025630z` 登记已保存的无训练A–C分析：4个频率段、21种名单、42种路由、84套分发矩阵及302张文本卡。[中文概要](../Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md) · [本次输出访问核验](checks/2026-10-19_frequency_contribution_bridge_outputs.json)。仅为已查看EVAL上的探索性结构与分发证据，不授予学习、容量结论或下一轮执行权限。
 
 ## 大样本与跨层token—feature关联
 

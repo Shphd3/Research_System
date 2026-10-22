@@ -10,7 +10,7 @@ The previous statement that99.02% of improvement came from the mean referred to 
 
 We now separate changing the sampled records within one domain from comparing different source domains on the same recipient text and asking whether that comparison survives replacement of source records. The former includes source-sampling variation; the latter is closer to the data relationship of interest.
 
-The [formal0930 natural-statistics study](../../../../Projects/from-attention-to-search/main/experiments/shared_updates/ntp_statistics_local_compatibility/20260930/summary.md) already examined domain mean updates and sampling variation. This continuation adds their functional effects on recipient texts. Parameter distances and response distances use different metrics and cannot be exchanged directly. Earlier results and verdicts remain unchanged.
+The [formal0930 natural-statistics study](../../../../Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/20260930/summary.md) already examined domain mean updates and sampling variation. This continuation adds their functional effects on recipient texts. Parameter distances and response distances use different metrics and cannot be exchanged directly. Earlier results and verdicts remain unchanged.
 
 ## 2. Hypothesis and rivals
 

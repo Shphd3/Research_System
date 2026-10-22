@@ -27,6 +27,12 @@ needed mode:
 - mechanism, research direction or evidence-chain interpretation:
   [research_thinking.md](references/research_thinking.md).
 
+For a complete experiment matrix or first explanation of the researcher's own
+new experimental results, apply
+the [coverage and two-pass review contract](../../../docs/research_analysis_review_contract.md).
+It governs first-use explanations, three analysis paths, factual-first delivery
+and deferred AI judgments; it does not expand the authorized experiment scope.
+
 A passing mention of a formula or experiment does not require its mode. Read
 [terminology_contract.md](references/terminology_contract.md) when recurring
 English aliases, ambiguous terminology or a requested glossary need consistency;
@@ -54,7 +60,9 @@ AI 建议 and 未知 only where the distinction matters; do not label every sent
 ## Output and completion
 
 For completed-result delivery, link the Summary first and give the decisive
-value/figure, boundary and AI-labeled next-step analysis required by root rules.
+value/figure and boundary. In researcher-first review, wait for the researcher's
+observations before AI mechanism judgments or next-step analysis; otherwise use
+the AI-labeled next-step analysis required by root rules.
 For other requests, finish when the user's question is answered. A comprehension
 check or precise zoom-in menu is useful when teaching is requested, not a gate.
 

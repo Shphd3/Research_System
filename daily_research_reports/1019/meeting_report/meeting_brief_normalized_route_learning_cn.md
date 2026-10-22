@@ -14,7 +14,7 @@
 
 **唯一下一问题（AI建议，未运行）。** 用独立开发集预先固定各条件共用的较小更新强度后，在新留出文本上A/B/C差异是否仍存在？先区分当前学习设置的泛化失败与评分组织差异。
 
-[完整概要](../../../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/summary_cn.md) · [完整报告与全部结果](../../../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/detailed_cn.md) · [逐图解释/术语](../../../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/figures_cn.md) · [冻结Protocol](../../../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/protocol_cn.md)。
+[完整概要](../../../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/summary_cn.md) · [完整报告与全部结果](../../../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/detailed_cn.md) · [逐图解释/术语](../../../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/figures_cn.md) · [冻结Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/protocol_cn.md)。
 
 ## 讨论时看哪几张图
 

@@ -18,9 +18,9 @@
 
 本轮先解决一个更小的问题：**一批自然文本推动共享参数变化以后，另一条自然文本的内部表征怎样移动，真实下一词损失怎样变化，更新前的表征又能解释其中多少？**这个对象可以把表征分析接到真实学习后果上。
 
-前序工作已经有梯度几何、SAE 激活、方向敏感性和部分有限干预证据。本轮不是从零开始。旧自然语言统计主检验仍是 INSUFFICIENT：\(T=0.006637\)，95%区间 \([-0.003738,0.017012]\)，不足以区分零与历史候选1%尺度。今天改变了问题、比较和分析对象，不能用新结果改写旧裁决。[旧结果](../../../../Projects/from-attention-to-search/main/experiments/shared_updates/ntp_statistics_local_compatibility/20260930/summary_cn.md)
+前序工作已经有梯度几何、SAE 激活、方向敏感性和部分有限干预证据。本轮不是从零开始。旧自然语言统计主检验仍是 INSUFFICIENT：\(T=0.006637\)，95%区间 \([-0.003738,0.017012]\)，不足以区分零与历史候选1%尺度。今天改变了问题、比较和分析对象，不能用新结果改写旧裁决。[旧结果](../../../../Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/20260930/summary_cn.md)
 
-另一个[旧表征预测实验](../../../../Projects/from-attention-to-search/main/experiments/shared_updates/natural_ntp_representation_compatibility/20260930/summary_cn.md)得到合格的NON_SUPPORT：它从矩阵输入预测两条DCLM事件的梯度内积，与均值常数相比检验至少5%改善，实际 \(Q=-0.000138\)。今天预测的是固定来源**聚合更新**对N8科学文本的响应，使用不同输入、词面与尺度基线及已曝光面板。旧5%门槛和裁决继续属于旧实验；新候选的零界限只检测指定读出关系，科学效用尺度仍Unknown。它们不能作为同一预测任务的成功率比较。
+另一个[旧表征预测实验](../../../../Projects/from-attention-to-search/main/experiments/A17/17_11_natural_ntp_representation_compatibility/20260930/summary_cn.md)得到合格的NON_SUPPORT：它从矩阵输入预测两条DCLM事件的梯度内积，与均值常数相比检验至少5%改善，实际 \(Q=-0.000138\)。今天预测的是固定来源**聚合更新**对N8科学文本的响应，使用不同输入、词面与尺度基线及已曝光面板。旧5%门槛和裁决继续属于旧实验；新候选的零界限只检测指定读出关系，科学效用尺度仍Unknown。它们不能作为同一预测任务的成功率比较。
 
 ## 2. Hypothesis：为什么表征可能有用，最强竞争解释是什么？
 

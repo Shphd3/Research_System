@@ -93,7 +93,7 @@ I_{A\to B}=-\eta\rho s+\tfrac12\eta^2\rho^2.
 
 在小步区域，重合增加会放大已有的一阶帮助或伤害。有限帮助幅度的单调性还需 ηρ＜1；不能从公式省略这个条件。两种规则都存在共同零损失解 \(w_s^*=(v_A+s v_B)/(1+s\rho)\)，所以局部交叉伤害也不等于共享模型无法同时学好。
 
-这是已有解析构造，承担“机制可以发生”的证明，不承担自然语言实测。[机制来源第5节](../../../Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md)。
+这是已有解析构造，承担“机制可以发生”的证明，不承担自然语言实测。[机制来源第5节](../../../Projects/from-attention-to-search/main/experiments/A17/17_10_shared_update_conditional_interference/20260927_controlled/documents/01_机制推导与原论文审计.md)。
 
 ## 3. 要测量的量
 
@@ -170,7 +170,7 @@ I_{A\to B}=-\eta\rho s+\tfrac12\eta^2\rho^2.
 
 **读图：**左侧显示全部条件平均降损，规则差异在高重合时扩大。总 I 与规则差异分开显示；大背景改善占主导是相容解释，尚未被独立干预确认为机制。
 
-[受控 Summary](../../../Projects/from-attention-to-search/main/experiments/shared_updates/shared_update_conditional_interference/20260927_controlled/summary_cn.md)持有原裁决；[图用格子](evidence/controlled_cells.csv)与[规则交互](evidence/controlled_rule_interaction.csv)保留精确值。
+[受控 Summary](../../../Projects/from-attention-to-search/main/experiments/A17/17_10_shared_update_conditional_interference/20260927_controlled/summary_cn.md)持有原裁决；[图用格子](evidence/controlled_cells.csv)与[规则交互](evidence/controlled_rule_interaction.csv)保留精确值。
 
 ### 6.2 自然文本：来源更新对四域的完整热力图
 
@@ -194,7 +194,7 @@ I_{A\to B}=-\eta\rho s+\tfrac12\eta^2\rho^2.
 
 ![SAE领域激活差异](figures/report/conclusion02_sae_domains.png)
 
-**读图：**同领域跨split差异为0.009—0.028，跨领域为0.106—0.389，说明激活模式的领域差异能够复现。结合6.2中12个跨域组合平均降损，不能把这种激活差异直接解释为梯度更新造成平均增损。两项测量的记录面板不同，横纵轴含义也不同；此处不是逐格预测检验，更不证明SAE信息完全无用。[领域激活原表](evidence/sae_activation_pattern_distances.csv) · [原Summary](../../../Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/summary_cn.md)。原64个共同原子的频率与解码列谱继续保存在[原子频率](evidence/sae_selected_common_activity.csv)及[解码列谱](evidence/sae_selected_decoder_spectrum.csv)，不当作领域差异的全部依据。
+**读图：**同领域跨split差异为0.009—0.028，跨领域为0.106—0.389，说明激活模式的领域差异能够复现。结合6.2中12个跨域组合平均降损，不能把这种激活差异直接解释为梯度更新造成平均增损。两项测量的记录面板不同，横纵轴含义也不同；此处不是逐格预测检验，更不证明SAE信息完全无用。[领域激活原表](evidence/sae_activation_pattern_distances.csv) · [原Summary](../../../Projects/from-attention-to-search/main/experiments/A17/17_12_domain_update_geometry/20260930/summary_cn.md)。原64个共同原子的频率与解码列谱继续保存在[原子频率](evidence/sae_selected_common_activity.csv)及[解码列谱](evidence/sae_selected_decoder_spectrum.csv)，不当作领域差异的全部依据。
 
 **位移审计。**自然读出中按元数据固定64条记录、1024位置；冻结30,000坐标SAE。令α为编码、D为decoder、b_D为偏置、ε为重构残差：
 

@@ -1,6 +1,6 @@
 # 频率区间残差MoE：实存缓存与Smoke状态
 
-[English](frequency_interval_moe.md) · [Protocol](../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/protocol_cn.md) · [本次限定访问检查](checks/2026-10-18_frequency_interval_moe_20261018T103820Z.json)
+[English](frequency_interval_moe.md) · [Protocol](../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/historical_support/frequency_interval_residual_moe/protocol_cn.md) · [本次限定访问检查](checks/2026-10-18_frequency_interval_moe_20261018T103820Z.json)
 
 生产任务`pt-vv7zkyxf`，run为`20261018T103820Z`，72.462秒完成有界诊断。缓存准备和工程Smoke通过。TRAIN正分数路由覆盖未通过事前门槛，正式八臂比较**NOT RUN**。登记不证明学习收益，也不授予科学批准。
 

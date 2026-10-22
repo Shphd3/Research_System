@@ -1,6 +1,6 @@
 # Discussion brief: listed features versus actual expert dispatch
 
-[Full Chinese discussion brief](meeting_brief_feature_dispatch_cn.md) · [Canonical Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/summary.md) · [Detailed record](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/detailed.md) · [Recent-results index](/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes/qwen3_crosscoder_tooling/20261018_routing_progress.md)
+[Full Chinese discussion brief](meeting_brief_feature_dispatch_cn.md) · [Canonical Summary](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/summary.md) · [Detailed record](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/detailed.md) · [Recent-results index](/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes/qwen3_crosscoder_tooling/20261018_routing_progress.md)
 
 The current evidence favors clarifying and calibrating the scoring rule before prioritizing regrouping. This is an AI recommendation for discussion, not researcher approval or evidence of learning benefit.
 

@@ -273,7 +273,7 @@ E04 actual save registration:10 families/55 states from pt-1rb3s2t0. [Strict out
 
 ### 2026-10-19 frequency-contribution bridge
 
-`analysis_crosscoder_frequency_contribution_bridge_20261019t025630z` registers cached no-training A–C results:4frequency bands,21groupings,42routes,84split-condition exposure matrices and302text cards. [Summary](../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md). [Selected access](checks/2026-10-19_frequency_contribution_bridge_outputs.json). Exposed-EVAL exploratory evidence; no learning or capacity claim, no additional execution authority.
+`analysis_crosscoder_frequency_contribution_bridge_20261019t025630z` registers cached no-training A–C results:4frequency bands,21groupings,42routes,84split-condition exposure matrices and302text cards. [Summary](../Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md). [Selected access](checks/2026-10-19_frequency_contribution_bridge_outputs.json). Exposed-EVAL exploratory evidence; no learning or capacity claim, no additional execution authority.
 
 ## Large-data cross-layer token/feature association
 

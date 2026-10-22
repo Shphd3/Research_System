@@ -1,6 +1,6 @@
 # Frequency-interval residual MoE: saved cache and Smoke states
 
-[中文](frequency_interval_moe_cn.md) · [Protocol](../Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/protocol.md) · [Scoped access check](checks/2026-10-18_frequency_interval_moe_20261018T103820Z.json)
+[中文](frequency_interval_moe_cn.md) · [Protocol](../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/historical_support/frequency_interval_residual_moe/protocol.md) · [Scoped access check](checks/2026-10-18_frequency_interval_moe_20261018T103820Z.json)
 
 Producer `pt-vv7zkyxf`, run `20261018T103820Z`, completed bounded diagnostics in 72.462 seconds. Cache preparation and engineering Smoke passed. The formal eight-arm comparison was **NOT RUN** because the predeclared TRAIN positive-route coverage gate failed. Registration supplies no learning-benefit or scientific-approval claim.
 

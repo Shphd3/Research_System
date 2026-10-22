@@ -2,7 +2,7 @@
 
 受控执行完成；主学习比较NOT RUN，原因是原评分导致A前三专家零路由、八专家覆盖资格不通过。工程smoke PASS不代表学习收益。
 
-[一页中文概要](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/summary_cn.md) · [完整Protocol](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/protocol_cn.md) · [Detailed与三类图](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/detailed_cn.md) · [执行目录](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z)
+[一页中文概要](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/historical_support/frequency_interval_residual_moe/summary_cn.md) · [完整Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/historical_support/frequency_interval_residual_moe/protocol_cn.md) · [Detailed与三类图](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/historical_support/frequency_interval_residual_moe/detailed_cn.md) · [执行目录](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z)
 
 任务pt-vv7zkyxf，pipeline72.46秒，CPU分析22.55秒。旧结果保留，未commit/push，未启动下一轮。
 

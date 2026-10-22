@@ -2,7 +2,7 @@
 
 **当前证据更支持先规定并校准评分。** 本轮已定位原评分的胜出路径，有限共现检查没有迫使零接收；但新评分是否可用、全局分组是否可行、学习是否改善，都还没有答案。本稿是已保存证据的讨论摘录与AI建议，待研究者审阅。
 
-[一页正式概要](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/summary_cn.md) · [完整执行与解释](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/detailed_cn.md) · [Anchor](/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/feature_group_to_actual_dispatch/anchor_cn.md) · [Protocol](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/protocol_cn.md) · [近期结果索引](/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes/qwen3_crosscoder_tooling/20261018_routing_progress_cn.md) · [12张文本卡](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/text_cases_cn.md) · [四图术语](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/figures_cn.md)
+[一页正式概要](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/summary_cn.md) · [完整执行与解释](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/detailed_cn.md) · [Anchor](../../../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_19_feature_group_to_actual_dispatch/15_19_feature_group_to_actual_dispatch_anchor_cn.md) · [Protocol](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/protocol_cn.md) · [近期结果索引](/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes/qwen3_crosscoder_tooling/20261018_routing_progress_cn.md) · [12张文本卡](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/text_cases_cn.md) · [四图术语](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/figures_cn.md)
 
 ## 目的与必要模型
 
@@ -26,7 +26,7 @@ A的964项低频feature在两侧负责专家接收率全为0。EVAL同一批feat
 
 ![全局频率与负责专家内频率](../figures/routing_audit_figure2_global_vs_owner_frequency.png)
 
-图2每个点是一项feature。横轴p是全局激活频率，纵轴q是负责专家输入中的频率。A有9,560项因专家为空而NA，另外30项q确实为0。虚线q=p仅表示没有相对全局富集，不是学习合格线。原始整数及组汇总：[表](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/tables/group_summary.csv)。
+图2每个点是一项feature。横轴p是全局激活频率，纵轴q是负责专家输入中的频率。A有9,560项因专家为空而NA，另外30项q确实为0。虚线q=p仅表示没有相对全局富集，不是学习合格线。原始整数及组汇总：[表](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/tables/group_summary.csv)。
 
 ### 2．原组均分让低频命中失去评分竞争，但删除高频项不是解决方案
 
@@ -76,4 +76,4 @@ TRAIN含低频feature的位置中，原赢家比A0平均高0.567492；C项差额
 
 这轮认识更新可以说成：**昨天把分组名单当成可能的学习分工；今天发现必须先验证名单是否落实成输入接收。先缩窄并修清评分问题，保留分组冲突与学习效用两条未答边界。**
 
-图件为执行侧原图的逐字节日期副本，见[图件来源](../figures/SOURCES.md)。完整成本和执行状态见[Detailed](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/feature_group_to_actual_dispatch/20261018_routing_audit/detailed_cn.md)及执行目录回执。本轮交付后停止。
+图件为执行侧原图的逐字节日期副本，见[图件来源](../figures/SOURCES.md)。完整成本和执行状态见[Detailed](../../../Projects/from-attention-to-search/main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/detailed_cn.md)及执行目录回执。本轮交付后停止。

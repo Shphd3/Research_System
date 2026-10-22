@@ -196,7 +196,7 @@ def main(font):
                           "gradient": "four source averages; two SOURCE axes; same 16384 receiver positions; self-pairs masked for display"},
             "new_statistics": False,
             "sae_source": {
-                "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/shared_updates/domain_update_geometry/20260930/evidence/activation_pattern_distances.csv",
+                "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_12_domain_update_geometry/20260930/evidence/activation_pattern_distances.csv",
                 "sha256": inputs[str(EVI / "sae_activation_pattern_distances.csv")],
                 "transformation": "frequency mode only; plotted difference = 1 - existing cosine; no new estimation",
                 "boundary": "fit/readout activation panel differs from source/receiver finite-update panel; no pairwise prediction claim"
