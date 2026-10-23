@@ -10,6 +10,7 @@ reading snapshot from the live original.
 | Project / owner | What to read | Entry |
 |---|---|---|
 | from-attention-to-search / A17_04 | First/last list mappings; old accuracy falls to0% after reversed continuation while joint supervision learns both; R02 design, facts and dataset guide | [Reading package](from-attention-to-search/17_04/README.md) · [Short guide](../../assets/a17_list_rule_mapping.md) |
+| from-attention-to-search / A17_04 R05 | 165 tasks and89 formal endpoints; separate initial/R2 facts, qualification failures/evidence gaps, AI interpretation and delivery manifest; scientific acceptance Unknown | [R05 reading package](from-attention-to-search/17_04_R05/README.md) |
 
 Only named research records and necessary small metadata are synchronized.
 Raw datasets, models and execution caches remain in their registered storage.

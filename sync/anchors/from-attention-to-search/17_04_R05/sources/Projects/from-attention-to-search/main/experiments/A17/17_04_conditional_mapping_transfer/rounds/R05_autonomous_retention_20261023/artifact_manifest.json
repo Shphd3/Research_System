@@ -1,0 +1,327 @@
+{
+  "schema": "a17_r05_delivery_manifest_v1",
+  "created_at_utc": "2026-10-22T17:51:07.402588+00:00",
+  "execution_status": "COMPLETE",
+  "scientific_acceptance": "Unknown",
+  "question_closure": "Unknown",
+  "existing_focus_and_scientific_owner_state_unchanged": true,
+  "scope": "Stages 0 and A–F, all preregistered continuation orders, one FFN scientific qualification repair, and bounded original-frequency matching diagnostics.",
+  "canonical_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention",
+  "anchor_english": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor.md",
+  "anchor_chinese": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor_cn.md",
+  "read_first": [
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/summary_cn.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/ai_interpretation_cn.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/judgment_cards_cn.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/fairness_audit_cn.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/detailed_cn.md"
+  ],
+  "execution_counts": {
+    "required_tasks": 165,
+    "task_status_counts": {
+      "DONE": 165
+    },
+    "main_cases": 89,
+    "main_case_status_counts": {
+      "PASS": 89
+    },
+    "trained_main_trajectories": 85,
+    "zero_update_reference_cases": 4,
+    "main_training_updates": 86000,
+    "main_valid_training_targets": 1720000
+  },
+  "identity_boundaries": {
+    "model": "Qwen3-0.6B Base; local revision da87bfb608c14b7cf20ba1ce41287e8de496c0cd; exact bytes in model_identity.json",
+    "parent": "One E03 acquired-old checkpoint; continuation orders 29/43/71 are not independent old-acquisition seeds.",
+    "R1": "Original fixed protocol; D/E/F train native FFN down projections only.",
+    "R2": "One separately preregistered qualification repair; full native gate/up/down; separate config, caches and run root.",
+    "endpoint": "Fixed 1200/600/400 update contracts; no post-hoc endpoint selection; zero-update E references separately counted."
+  },
+  "resources": {
+    "profile": "h100-1-reserved",
+    "gpu_per_job": 1,
+    "maximum_concurrent_gpus": 4,
+    "subagents": "All three spawned with gpt-6.1-sol and high reasoning.",
+    "scope": "Local records and existing reserved resources; no external publication or Git commit/push."
+  },
+  "canonical_markdown": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/ai_interpretation.md",
+      "bytes": 6738,
+      "sha256": "7cea482a5d0e648e01d4df8338a2121466473856d9e2303850b7b4a30cbbc906"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/ai_interpretation_cn.md",
+      "bytes": 6187,
+      "sha256": "4041191fbbfb0b8e3d1000fd2140832924aedbbc0562388b81a1830458fc815b"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/amendments.md",
+      "bytes": 9167,
+      "sha256": "052887845d3f78094a4a7b31a00f54035da9bc8f3dec0bfb32a4711308260632"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/audits.md",
+      "bytes": 29178,
+      "sha256": "8860274dc3789a63a01f7a0c539721b66f69604c904c7c603b89fa52a537611f"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/audits_cn.md",
+      "bytes": 23005,
+      "sha256": "14b9383451309ce38a4da7ab4900110fd2fb252f8c173c3894883df35935535c"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/detailed.md",
+      "bytes": 13891,
+      "sha256": "b0526247eda18e1857c5b59c082c1353754fda7ce755be2c9e2dd37f32d3a73d"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/detailed_cn.md",
+      "bytes": 9954,
+      "sha256": "09a90891eac5a7c230c0baa4ea9095cea1df2e62656033a3eda61092c31688eb"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/fairness_audit.md",
+      "bytes": 14458,
+      "sha256": "a905ebfe555a932cafb3aa4dcc3fc1d667ea063f60fc8c40b37632e5380555f0"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/fairness_audit_cn.md",
+      "bytes": 13966,
+      "sha256": "178ebfc05bbf6a03dd4dd304261c3b8f8132d96155471c6cd5cfb628d45edb9b"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/judgment_cards.md",
+      "bytes": 7862,
+      "sha256": "33538c306adfd7c35cdb1bc8935c83791dc00d2b7befa9cf1192e35b306e525e"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/judgment_cards_cn.md",
+      "bytes": 7163,
+      "sha256": "4d8b4e476706dea911bca4f54a1da15931f120f3613a60f5acae0bef9346afba"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/protocol.md",
+      "bytes": 16023,
+      "sha256": "2c6c7cdddd13fe07f8fd2622918463d5e5f47e192ddd2212e876851688a69390"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/protocol_cn.md",
+      "bytes": 3197,
+      "sha256": "7cbd6930841b854debad681fb1c856afdbb0af0dbe5079b05bdb9407a64bcb2c"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/protocol_ffn_repair_v2.md",
+      "bytes": 5242,
+      "sha256": "5a1fca6307890b7a3dd2ac6122f7b6c1d49d2ab3276de3b5f504fd0ff123e715"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/protocol_ffn_repair_v2_cn.md",
+      "bytes": 1587,
+      "sha256": "ee1def511914865c9d889aac07b4f5ed01a75595c1ee14c51dd3adba15e45c2a"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/source_audit.md",
+      "bytes": 16348,
+      "sha256": "4d5f64b34a6e2de1508db390fe51ad2b18f876edb843280d680df40d7778634d"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/summary.md",
+      "bytes": 33888,
+      "sha256": "8cbfa35450f7fdda1073ccfb67134012284d4c094f9546babfdf62ff21661604"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/summary_cn.md",
+      "bytes": 31466,
+      "sha256": "4daacd4a8025ccefce90a00197fb32332c345b4b34d535a8d5786204528b109e"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor.md",
+      "bytes": 23839,
+      "sha256": "68caf378f1db32da2f5860787dfc966aed3f7b4e69aae111c7dd6e9004ac56dd"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor_cn.md",
+      "bytes": 18750,
+      "sha256": "8936bca9e7e5747ffb9e3c9cee3cdb2b6d6113043ada7ca10f396d572738a697"
+    }
+  ],
+  "execution_evidence": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/input_documents_manifest.json",
+      "bytes": 3801,
+      "sha256": "3d5aaf127b759d429d279eb4df4ab8bb3548a61bb8466fcc9ed9ea887b262d59"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/model_identity.json",
+      "bytes": 2083,
+      "sha256": "16e4964e659fb8f77e596ebc10010580ed07afed14d1351326e014db31109e5c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/reuse_decisions.json",
+      "bytes": 1651,
+      "sha256": "f5edcb5df63eccfc25e743ee8df01ebc22facfaface2c07f8b0b862c4fb7ebf5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/input_access.json",
+      "bytes": 12005,
+      "sha256": "e7e352ad4f0ea82b4f81067c2ba11b73a1d82767db27bbab54620e0d745f40b7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/natural_input_access.json",
+      "bytes": 3521,
+      "sha256": "5c76490839840e969a61224e7b5730c853c5996dbd833302c0cedd0959cf9ce7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/derived_input_access.json",
+      "bytes": 6222,
+      "sha256": "024fc06e8e3df44c557711fc9a2ab26ddebd8c7c16ea28e8ea27f911a65548e9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/auxiliary_compatibility.json",
+      "bytes": 8380,
+      "sha256": "b2604ca925256a5509af56130fc88f295f192c5646ff40025fd41ab5e25dc49b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/retention_vs_R02.patch",
+      "bytes": 88401,
+      "sha256": "c6221dff77163bc77c86c181725a6b2ebdf76fae73b8c0fcb8bdd80c960936bc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/execution_manifest.json",
+      "bytes": 315445,
+      "sha256": "88e3ba905887c3c4f8ead1e09cb3a014787adea829824e3cfcafffd706c99615"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/final_scope_check.json",
+      "bytes": 552,
+      "sha256": "32156b883bc021c4c176f5bf018c351e9920ac8720963a22eb39b123cd6cc8c5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/factual_results.json",
+      "bytes": 2616979,
+      "sha256": "489070b37c02a443a9c76845b6d44b7ad2b3701162cdce4025c14eb1022f83be"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/repair_full_ffn_factual.json",
+      "bytes": 648097,
+      "sha256": "97f4968cbdc8e97fa7093767283345612566c7a656785c81c9f40294b3aa305e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/fairness_checks.json",
+      "bytes": 2778301,
+      "sha256": "b7c03e93f46926c7ba90f123c54c7cc9a65117f6ef93482f39e5785aca756852"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/resource_audit.json",
+      "bytes": 24055,
+      "sha256": "a485e52283b7d95bd4e07d15b1f5eddd9c2309eb02d52048b4f29febb69ada9a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/queue_v2_compatibility_audit.json",
+      "bytes": 2701,
+      "sha256": "b0a278efdcce8d250e69d517e8a91b8adbf8adf0b3e665713964bd5a7cf43356"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/final_code_environment_audit.json",
+      "bytes": 5118,
+      "sha256": "48d7e260d62345efe33042f29e0d3dd2ed0c82892479bd64095aa3ebb48043b4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/R2_source_version_reconciliation.json",
+      "bytes": 9365,
+      "sha256": "3ecd01eedde4f2feb1099d19adb63b87deff55f2f50ca90b48c2f47d80a80141"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/natural_comparisons.json",
+      "bytes": 18193,
+      "sha256": "0c07336d9f1bd3870bc03a44f0896497d7d91c6513def51ae5d052fefc5a10dc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/natural_absolute_change_bootstrap.json",
+      "bytes": 13262,
+      "sha256": "096b667e5a55940ad70354239b64bb85b7964b71281ce04598e0da3e606af007"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/frequency_replay_summary.json",
+      "bytes": 38199,
+      "sha256": "5265bd34df474b4805d0c66e4fbca8d81bcad84275565a272e83a7e47b12983f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/ffn_generalization_panels.json",
+      "bytes": 5871,
+      "sha256": "9d60d6cec2e069854594c1a8ec394eb76e83970e558766f40c02538ee3aba6a7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/controller_task_claim_audit.json",
+      "bytes": 42335,
+      "sha256": "4c384acdbaec674312970e44af7e8e546f0ea7dee54f7acd4e2ed8941f71a71c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/worker0_queue_receipt_failure.json",
+      "bytes": 3081,
+      "sha256": "1de62b1d32d4652abd590a39e0522fddcbf3b39483c41e4b3445e042699043a5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/scheduler_migration.json",
+      "bytes": 772,
+      "sha256": "39c01d5c7724f05ca603ecf41d4c637fd4efc4e3ea96672d6c577c19658de04e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/source_review.json",
+      "bytes": 3011,
+      "sha256": "8fbfadcbb668afba050975cb438220fd720f1c5bbf14ecff826995e84585b55d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/ops/pipeline_v2_local_validation.json",
+      "bytes": 1271,
+      "sha256": "8baff7c0b99919dde3e95d5c5fa04f55d970c6c70000a041343331897e4d09ac"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/versions/moe_vs_full_ffn_repair.diff",
+      "bytes": 31854,
+      "sha256": "d51c30c6ed0f84cfca9780cec0bf323290b616388ead2d36cbf892a9e61f8323"
+    }
+  ],
+  "actual_saved_assets": {
+    "families": 105,
+    "state_files": 686,
+    "payload_bytes": 67408705989,
+    "requested_asset_entries": 210,
+    "registration_receipt": {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/audit/registration_receipt_20261022T174400242571Z.json",
+      "bytes": 73463,
+      "sha256": "a0cdfa1a5f73f87fd368524156890e2d6b31f1116cb4f3a5f6672dff0df09192"
+    },
+    "fresh_full_payload_validation_receipt": {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/audit/registration_receipt_20261022T173707087537Z.json",
+      "bytes": 76290,
+      "sha256": "cfe4535523e5598e7947090fddd4f79a32464b9085bd830d777d0ff5019dce05"
+    },
+    "strict_access_snapshot": {
+      "path": "/data/250010109/Research_System/assets/checks/20261022T174400242571Z_a17_r05_actual_outputs.json",
+      "bytes": 480215,
+      "sha256": "e9fa768c0f4e857bbc8d74ccfbb85da2883d1b457bc47ae72307865cb7dd10f2"
+    },
+    "access_check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+    "payload_validation": "The 17:37 fresh full scan verifies all 686 saved states. The later metadata-only source-evidence refresh explicitly reuses those unchanged member bytes and preserves immutable entries. Strict access itself is a lightweight access check."
+  },
+  "final_fairness_receipt": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/audit/final_fairness_receipt_20261022T174706217246Z.json",
+    "bytes": 6379,
+    "sha256": "196be64c152ecaa81f1fc952c5a5acd74d927df064999e8411133feefbb22f4d"
+  },
+  "code_configs_and_history": "analysis/execution_manifest.json lists current source/config/ops/version hashes. Per-task freezes and preserved engineering versions record execution snapshots; known limits on imported-source attribution are listed separately.",
+  "checkpoints_per_example_TB": "The execution manifest indexes actual final checkpoints, saved states, per-example evaluation files and TensorBoard files for all 89 formal cases. Family receipts additionally cover smoke and independent-process replay states.",
+  "recovery": "Restore the actual saved state with the original parent and matching config/source. Optimizer/RNG/cursor/bases are saved. Independent-process exact-resume evidence applies only to the actually tested structural families. No new job is queued.",
+  "bounded_records": [
+    "R1 D/E/F: 19 missing case-level environment version/precision receipts, explicitly BOUNDED.",
+    "R2 F/dense_protected: exact imported source bytes Unknown because task-freeze and environment disk hashes straddle a preserved guard-only repair. The changed oracle-single-expert branch is not used by F.",
+    "Optional acquired-old CrossCoder/SAE compatibility was not qualified; no large replacement dictionary was trained.",
+    "DEV was exposed; model pretraining exposure to the natural documents is Unknown; scientific mechanism acceptance remains researcher-owned."
+  ],
+  "final_source_check": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/final_reading_check.json",
+  "local_reading_copy": "/data/250010109/Research_System/sync/anchors/from-attention-to-search/17_04_R05",
+  "hash_boundary": "This JSON does not hash itself or its derived artifact_manifest Markdown pointers. The later source/link and local bundle verification receipts are derived audits, avoiding recursive hashes."
+}

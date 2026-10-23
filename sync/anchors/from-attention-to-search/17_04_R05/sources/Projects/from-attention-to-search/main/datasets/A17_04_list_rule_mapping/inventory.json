@@ -1,0 +1,2261 @@
+{
+  "created_at_utc": "2026-10-22T14:02:02.188501+00:00",
+  "scope": "A17_04 E01/R02 dataset inventory; five assets, four physical directories; read-only",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "asset_to_directory": {
+    "data_a17_list_rules_v1": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1",
+    "data_a17_conditional_mapping_v1": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1",
+    "data_a17_mapping_acquisition_diagnostic_v1": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1",
+    "data_a17_shared_routed_joint_v1": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/data/mapping_view_v1",
+    "data_a17_shared_routed_mode_partition_v1": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/data/mapping_view_v1"
+  },
+  "physical_directories": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1",
+      "asset_ids": [
+        "data_a17_list_rules_v1"
+      ],
+      "files": [
+        {
+          "name": "dev.jsonl",
+          "size_bytes": 440960,
+          "sha256": "3a3f2d5b9455dd746bd3eec0caf413f2684c87e3b2ce89a6b160f4c17a1bf048",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "path": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1/dev.jsonl",
+            "sha256": "3a3f2d5b9455dd746bd3eec0caf413f2684c87e3b2ce89a6b160f4c17a1bf048",
+            "size_bytes": 440960
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": true,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_list_rules_v1",
+              "expected": {},
+              "sha_matches": null,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 800,
+            "rule": {
+              "FIRST": 400,
+              "LAST": 400
+            },
+            "panel": {
+              "combination_new": 400,
+              "order_new": 400
+            },
+            "split": {
+              "dev": 800
+            },
+            "unique_list_ids": 400
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "manifest.json",
+          "size_bytes": 2968,
+          "sha256": "f6f8c04034f69acb35157bbca1d6b67f7e0a04c77b323df5ad38c1beff1ff858",
+          "manifest_expected": {},
+          "manifest_sha_matches": null,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_list_rules_v1",
+              "expected": {
+                "sha256": "f6f8c04034f69acb35157bbca1d6b67f7e0a04c77b323df5ad38c1beff1ff858"
+              },
+              "sha_matches": true
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "qualification.json",
+          "size_bytes": 1029,
+          "sha256": "e425a7c8d7a15f9f6f45992ae19c892299a14ebf818fdf0e8530b122fd8ba824",
+          "manifest_expected": {
+            "path": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1/qualification.json",
+            "sha256": "e425a7c8d7a15f9f6f45992ae19c892299a14ebf818fdf0e8530b122fd8ba824",
+            "size_bytes": 1029
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": true,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_list_rules_v1",
+              "expected": {},
+              "sha_matches": null
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "test.jsonl",
+          "size_bytes": 441760,
+          "sha256": "59b0fd517b29d4c874e1877c69e775afb5190cb1f87e320f66898319eebd8a9c",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "path": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1/test.jsonl",
+            "sha256": "59b0fd517b29d4c874e1877c69e775afb5190cb1f87e320f66898319eebd8a9c",
+            "size_bytes": 441760
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": true,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_list_rules_v1",
+              "expected": {},
+              "sha_matches": null,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "BYTES_SHA256_AND_LINE_COUNT_ONLY_NO_RECORD_PARSE"
+        },
+        {
+          "name": "train.jsonl",
+          "size_bytes": 2184800,
+          "sha256": "8f199a5ba928fc6e6a3ae1a33fd7af62d43f3c1f79c424b7ae651f0cff172522",
+          "nonparsed_line_count": 4000,
+          "manifest_expected": {
+            "path": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1/train.jsonl",
+            "sha256": "8f199a5ba928fc6e6a3ae1a33fd7af62d43f3c1f79c424b7ae651f0cff172522",
+            "size_bytes": 2184800
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": true,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_list_rules_v1",
+              "expected": {},
+              "sha_matches": null,
+              "expected_records": 4000,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 4000,
+            "rule": {
+              "FIRST": 2000,
+              "LAST": 2000
+            },
+            "panel": {
+              "train": 4000
+            },
+            "split": {
+              "train": 4000
+            },
+            "unique_list_ids": 2000
+          },
+          "manifest_count_matches": true
+        }
+      ],
+      "manifest_fields": [
+        "schema_version",
+        "data_asset_id",
+        "generation_seed",
+        "generator_sha256",
+        "tokenizer",
+        "files",
+        "counts",
+        "novelty_definitions",
+        "template",
+        "balanced_counts"
+      ],
+      "has_manifest": true,
+      "has_qualification": true,
+      "data_manifest_covers_all_jsonl": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1",
+      "asset_ids": [
+        "data_a17_conditional_mapping_v1"
+      ],
+      "files": [
+        {
+          "name": "dev.jsonl",
+          "size_bytes": 1677480,
+          "sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_conditional_mapping_v1",
+              "expected": {
+                "sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 2400,
+            "world": {
+              "consistent": 800,
+              "old": 800,
+              "reversed": 800
+            },
+            "mode": {
+              "1": 800,
+              "2": 1600
+            },
+            "command": {
+              "乙": 1200,
+              "甲": 1200
+            },
+            "rule": {
+              "FIRST": 1200,
+              "LAST": 1200
+            },
+            "panel": {
+              "combination_new": 1200,
+              "order_new": 1200
+            },
+            "split": {
+              "dev": 2400
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "consistent",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "consistent",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "consistent",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "consistent",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "manifest.json",
+          "size_bytes": 4728,
+          "sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+          "manifest_expected": {},
+          "manifest_sha_matches": null,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_conditional_mapping_v1",
+              "expected": {
+                "sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b"
+              },
+              "sha_matches": true
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "qualification.json",
+          "size_bytes": 269,
+          "sha256": "f8116acbe9274a6539a027d5b1e8760243a9a819553ce26f8d0f5fa193d1ec7f",
+          "manifest_expected": {},
+          "manifest_sha_matches": null,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_conditional_mapping_v1",
+              "expected": {},
+              "sha_matches": null
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "test.jsonl",
+          "size_bytes": 1682160,
+          "sha256": "963b4f75d6c835fffbfb79860dc1e85d687b734086103dfe53fef3b551a5f1da",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "sha256": "963b4f75d6c835fffbfb79860dc1e85d687b734086103dfe53fef3b551a5f1da"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_conditional_mapping_v1",
+              "expected": {
+                "sha256": "963b4f75d6c835fffbfb79860dc1e85d687b734086103dfe53fef3b551a5f1da"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "BYTES_SHA256_AND_LINE_COUNT_ONLY_NO_RECORD_PARSE"
+        },
+        {
+          "name": "train.jsonl",
+          "size_bytes": 5010240,
+          "sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+          "nonparsed_line_count": 7200,
+          "manifest_expected": {
+            "sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_conditional_mapping_v1",
+              "expected": {
+                "sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03"
+              },
+              "sha_matches": true,
+              "expected_records": 7200,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 7200,
+            "world": {
+              "consistent": 2400,
+              "old": 2400,
+              "reversed": 2400
+            },
+            "mode": {
+              "1": 2400,
+              "2": 4800
+            },
+            "command": {
+              "乙": 3600,
+              "甲": 3600
+            },
+            "rule": {
+              "FIRST": 3600,
+              "LAST": 3600
+            },
+            "panel": {
+              "train": 7200
+            },
+            "split": {
+              "train": 7200
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "consistent",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "consistent",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        }
+      ],
+      "manifest_fields": [
+        "schema",
+        "seed",
+        "counts",
+        "answer_words",
+        "answer_ids",
+        "tokenizer_asset_id",
+        "tokenizer_sha256",
+        "files",
+        "balance",
+        "split_rule",
+        "train_group_orbits",
+        "dev_group_orbits",
+        "test_group_orbits",
+        "worlds_are_separate_datasets",
+        "same_underlying_train_lists_across_modes",
+        "test_model_access"
+      ],
+      "has_manifest": true,
+      "has_qualification": true,
+      "data_manifest_covers_all_jsonl": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_mapping_acquisition_diagnostic/data/acquisition_v1",
+      "asset_ids": [
+        "data_a17_mapping_acquisition_diagnostic_v1"
+      ],
+      "files": [
+        {
+          "name": "dev_explicit.jsonl",
+          "size_bytes": 663160,
+          "sha256": "2a55e6f020e1c68d6eb4ffeff47f70244497b0a6f7c358ed3a71665706f06042",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "sha256": "2a55e6f020e1c68d6eb4ffeff47f70244497b0a6f7c358ed3a71665706f06042",
+            "records": 800,
+            "list_count": 400
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 400,
+                "records": 800,
+                "sha256": "2a55e6f020e1c68d6eb4ffeff47f70244497b0a6f7c358ed3a71665706f06042"
+              },
+              "sha_matches": true,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 800,
+            "world": {
+              "old": 800
+            },
+            "mode": {
+              "1": 800
+            },
+            "command": {
+              "乙": 400,
+              "甲": 400
+            },
+            "rule": {
+              "FIRST": 400,
+              "LAST": 400
+            },
+            "panel": {
+              "combination_new": 400,
+              "order_new": 400
+            },
+            "split": {
+              "dev": 800
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "dev_neutral.jsonl",
+          "size_bytes": 633960,
+          "sha256": "ccf3e7133c78bb9301d53ca7681649c8e9a48ea0cdbbfad43437257425964de6",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "sha256": "ccf3e7133c78bb9301d53ca7681649c8e9a48ea0cdbbfad43437257425964de6",
+            "records": 800,
+            "list_count": 400
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 400,
+                "records": 800,
+                "sha256": "ccf3e7133c78bb9301d53ca7681649c8e9a48ea0cdbbfad43437257425964de6"
+              },
+              "sha_matches": true,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 800,
+            "world": {
+              "old": 800
+            },
+            "mode": {
+              "1": 800
+            },
+            "command": {
+              "乙": 400,
+              "甲": 400
+            },
+            "rule": {
+              "FIRST": 400,
+              "LAST": 400
+            },
+            "panel": {
+              "combination_new": 400,
+              "order_new": 400
+            },
+            "split": {
+              "dev": 800
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "dev_normalized.jsonl",
+          "size_bytes": 639000,
+          "sha256": "cfbbdff78738c4e42ee69e9b31d9c9ef77bf13f09483b4b6f8ad790d7f21147e",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "sha256": "cfbbdff78738c4e42ee69e9b31d9c9ef77bf13f09483b4b6f8ad790d7f21147e",
+            "records": 800,
+            "list_count": 400
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 400,
+                "records": 800,
+                "sha256": "cfbbdff78738c4e42ee69e9b31d9c9ef77bf13f09483b4b6f8ad790d7f21147e"
+              },
+              "sha_matches": true,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 800,
+            "world": {
+              "old": 800
+            },
+            "mode": {
+              "1": 800
+            },
+            "command": {
+              "乙": 400,
+              "甲": 400
+            },
+            "rule": {
+              "FIRST": 400,
+              "LAST": 400
+            },
+            "panel": {
+              "combination_new": 400,
+              "order_new": 400
+            },
+            "split": {
+              "dev": 800
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "manifest.json",
+          "size_bytes": 11278,
+          "sha256": "05dfb9ac05ebf20dcf560b51d880acdb9472596b2a0a346aa8401d0dc9438a89",
+          "manifest_expected": {},
+          "manifest_sha_matches": null,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "sha256": "05dfb9ac05ebf20dcf560b51d880acdb9472596b2a0a346aa8401d0dc9438a89"
+              },
+              "sha_matches": true
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "qualification.json",
+          "size_bytes": 14382,
+          "sha256": "b99e40e05e8f551d78aa783807f517dc3db22865187da37c1a7a44c7f241cf03",
+          "manifest_expected": {
+            "sha256": "b99e40e05e8f551d78aa783807f517dc3db22865187da37c1a7a44c7f241cf03"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {},
+              "sha_matches": null
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "tiny_explicit.jsonl",
+          "size_bytes": 52908,
+          "sha256": "1cddff9028848185cc3b4cc9ac51e49163e6134fc2dc19f34f05f596556ac45a",
+          "nonparsed_line_count": 64,
+          "manifest_expected": {
+            "sha256": "1cddff9028848185cc3b4cc9ac51e49163e6134fc2dc19f34f05f596556ac45a",
+            "records": 64,
+            "list_count": 32
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 32,
+                "records": 64,
+                "sha256": "1cddff9028848185cc3b4cc9ac51e49163e6134fc2dc19f34f05f596556ac45a"
+              },
+              "sha_matches": true,
+              "expected_records": 64,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 64,
+            "world": {
+              "old": 64
+            },
+            "mode": {
+              "1": 64
+            },
+            "command": {
+              "乙": 32,
+              "甲": 32
+            },
+            "rule": {
+              "FIRST": 32,
+              "LAST": 32
+            },
+            "panel": {
+              "train": 64
+            },
+            "split": {
+              "train": 64
+            },
+            "unique_list_ids": 32,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 32
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 32
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "tiny_neutral.jsonl",
+          "size_bytes": 50572,
+          "sha256": "f17de459f3487c68ce490fb40790661c2e8c54d38996a9295057fa10f60d75be",
+          "nonparsed_line_count": 64,
+          "manifest_expected": {
+            "sha256": "f17de459f3487c68ce490fb40790661c2e8c54d38996a9295057fa10f60d75be",
+            "records": 64,
+            "list_count": 32
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 32,
+                "records": 64,
+                "sha256": "f17de459f3487c68ce490fb40790661c2e8c54d38996a9295057fa10f60d75be"
+              },
+              "sha_matches": true,
+              "expected_records": 64,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 64,
+            "world": {
+              "old": 64
+            },
+            "mode": {
+              "1": 64
+            },
+            "command": {
+              "乙": 32,
+              "甲": 32
+            },
+            "rule": {
+              "FIRST": 32,
+              "LAST": 32
+            },
+            "panel": {
+              "train": 64
+            },
+            "split": {
+              "train": 64
+            },
+            "unique_list_ids": 32,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 32
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 32
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "tiny_normalized.jsonl",
+          "size_bytes": 50990,
+          "sha256": "ddc1178f0dc0cfc9d8904813a683ecf9c11366b1a714ee0260efcb20637eddad",
+          "nonparsed_line_count": 64,
+          "manifest_expected": {
+            "sha256": "ddc1178f0dc0cfc9d8904813a683ecf9c11366b1a714ee0260efcb20637eddad",
+            "records": 64,
+            "list_count": 32
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 32,
+                "records": 64,
+                "sha256": "ddc1178f0dc0cfc9d8904813a683ecf9c11366b1a714ee0260efcb20637eddad"
+              },
+              "sha_matches": true,
+              "expected_records": 64,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 64,
+            "world": {
+              "old": 64
+            },
+            "mode": {
+              "1": 64
+            },
+            "command": {
+              "乙": 32,
+              "甲": 32
+            },
+            "rule": {
+              "FIRST": 32,
+              "LAST": 32
+            },
+            "panel": {
+              "train": 64
+            },
+            "split": {
+              "train": 64
+            },
+            "unique_list_ids": 32,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 32
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 32
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "train_explicit.jsonl",
+          "size_bytes": 1986880,
+          "sha256": "d8576af8988344d1cac37356c55b6c77e59e743c7a154420254b263b6545c587",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "sha256": "d8576af8988344d1cac37356c55b6c77e59e743c7a154420254b263b6545c587",
+            "records": 2400,
+            "list_count": 1200
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 1200,
+                "records": 2400,
+                "sha256": "d8576af8988344d1cac37356c55b6c77e59e743c7a154420254b263b6545c587"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 2400,
+            "world": {
+              "old": 2400
+            },
+            "mode": {
+              "1": 2400
+            },
+            "command": {
+              "乙": 1200,
+              "甲": 1200
+            },
+            "rule": {
+              "FIRST": 1200,
+              "LAST": 1200
+            },
+            "panel": {
+              "train": 2400
+            },
+            "split": {
+              "train": 2400
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "train_neutral.jsonl",
+          "size_bytes": 1899280,
+          "sha256": "0147146c13daff0db5ebb0633c657360cfc6b0b4397d6c692c607ef6d0890475",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "sha256": "0147146c13daff0db5ebb0633c657360cfc6b0b4397d6c692c607ef6d0890475",
+            "records": 2400,
+            "list_count": 1200
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 1200,
+                "records": 2400,
+                "sha256": "0147146c13daff0db5ebb0633c657360cfc6b0b4397d6c692c607ef6d0890475"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 2400,
+            "world": {
+              "old": 2400
+            },
+            "mode": {
+              "1": 2400
+            },
+            "command": {
+              "乙": 1200,
+              "甲": 1200
+            },
+            "rule": {
+              "FIRST": 1200,
+              "LAST": 1200
+            },
+            "panel": {
+              "train": 2400
+            },
+            "split": {
+              "train": 2400
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "train_normalized.jsonl",
+          "size_bytes": 1914400,
+          "sha256": "abcbf4cdb4a40b28bf553f2830b1b6952116c817daee15b5fbcb51a33b0b341e",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "sha256": "abcbf4cdb4a40b28bf553f2830b1b6952116c817daee15b5fbcb51a33b0b341e",
+            "records": 2400,
+            "list_count": 1200
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 1200,
+                "records": 2400,
+                "sha256": "abcbf4cdb4a40b28bf553f2830b1b6952116c817daee15b5fbcb51a33b0b341e"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 2400,
+            "world": {
+              "old": 2400
+            },
+            "mode": {
+              "1": 2400
+            },
+            "command": {
+              "乙": 1200,
+              "甲": 1200
+            },
+            "rule": {
+              "FIRST": 1200,
+              "LAST": 1200
+            },
+            "panel": {
+              "train": 2400
+            },
+            "split": {
+              "train": 2400
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "train_panel_explicit.jsonl",
+          "size_bytes": 331120,
+          "sha256": "26fc9db06bdf146114bcc0b449213de8ded6ba6491aaa08790b36320ab024239",
+          "nonparsed_line_count": 400,
+          "manifest_expected": {
+            "sha256": "26fc9db06bdf146114bcc0b449213de8ded6ba6491aaa08790b36320ab024239",
+            "records": 400,
+            "list_count": 200
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 200,
+                "records": 400,
+                "sha256": "26fc9db06bdf146114bcc0b449213de8ded6ba6491aaa08790b36320ab024239"
+              },
+              "sha_matches": true,
+              "expected_records": 400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 400,
+            "world": {
+              "old": 400
+            },
+            "mode": {
+              "1": 400
+            },
+            "command": {
+              "乙": 200,
+              "甲": 200
+            },
+            "rule": {
+              "FIRST": 200,
+              "LAST": 200
+            },
+            "panel": {
+              "train": 400
+            },
+            "split": {
+              "train": 400
+            },
+            "unique_list_ids": 200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "train_panel_neutral.jsonl",
+          "size_bytes": 316520,
+          "sha256": "809a0c931a343c9ffa1b6d76f32fc5037f4f8a231abbd05a37b547dc9301a1c4",
+          "nonparsed_line_count": 400,
+          "manifest_expected": {
+            "sha256": "809a0c931a343c9ffa1b6d76f32fc5037f4f8a231abbd05a37b547dc9301a1c4",
+            "records": 400,
+            "list_count": 200
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 200,
+                "records": 400,
+                "sha256": "809a0c931a343c9ffa1b6d76f32fc5037f4f8a231abbd05a37b547dc9301a1c4"
+              },
+              "sha_matches": true,
+              "expected_records": 400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 400,
+            "world": {
+              "old": 400
+            },
+            "mode": {
+              "1": 400
+            },
+            "command": {
+              "乙": 200,
+              "甲": 200
+            },
+            "rule": {
+              "FIRST": 200,
+              "LAST": 200
+            },
+            "panel": {
+              "train": 400
+            },
+            "split": {
+              "train": 400
+            },
+            "unique_list_ids": 200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "train_panel_normalized.jsonl",
+          "size_bytes": 319040,
+          "sha256": "e36caeb390e6a80b8fb975ab7de2614b96904979e4a7884c833e246304ac6302",
+          "nonparsed_line_count": 400,
+          "manifest_expected": {
+            "sha256": "e36caeb390e6a80b8fb975ab7de2614b96904979e4a7884c833e246304ac6302",
+            "records": 400,
+            "list_count": 200
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+              "expected": {
+                "list_count": 200,
+                "records": 400,
+                "sha256": "e36caeb390e6a80b8fb975ab7de2614b96904979e4a7884c833e246304ac6302"
+              },
+              "sha_matches": true,
+              "expected_records": 400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 400,
+            "world": {
+              "old": 400
+            },
+            "mode": {
+              "1": 400
+            },
+            "command": {
+              "乙": 200,
+              "甲": 200
+            },
+            "rule": {
+              "FIRST": 200,
+              "LAST": 200
+            },
+            "panel": {
+              "train": 400
+            },
+            "split": {
+              "train": 400
+            },
+            "unique_list_ids": 200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        }
+      ],
+      "manifest_fields": [
+        "schema",
+        "asset_id",
+        "parent_data_asset_id",
+        "tokenizer_asset_id",
+        "parent_files",
+        "parent_manifest",
+        "tokenizer_sha256",
+        "generator",
+        "contracts_at_generation",
+        "files",
+        "qualification_sha256",
+        "panel_selection",
+        "tiny_selection",
+        "prefix_examples",
+        "normalized_separator_qualification",
+        "controls_changed",
+        "scope",
+        "schema_fields",
+        "tiny_batch_contract",
+        "qualification"
+      ],
+      "has_manifest": true,
+      "has_qualification": true,
+      "data_manifest_covers_all_jsonl": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/data/mapping_view_v1",
+      "asset_ids": [
+        "data_a17_shared_routed_joint_v1",
+        "data_a17_shared_routed_mode_partition_v1"
+      ],
+      "files": [
+        {
+          "name": "joint_dev.jsonl",
+          "size_bytes": 1111120,
+          "sha256": "50ec27140bd926eff50ddf91d2d4c46552ce5a37fa4227143a5d583d462acecb",
+          "nonparsed_line_count": 1600,
+          "manifest_expected": {
+            "count": 1600,
+            "sha256": "50ec27140bd926eff50ddf91d2d4c46552ce5a37fa4227143a5d583d462acecb"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {
+                "count": 1600,
+                "sha256": "50ec27140bd926eff50ddf91d2d4c46552ce5a37fa4227143a5d583d462acecb"
+              },
+              "sha_matches": true,
+              "expected_records": 1600,
+              "count_matches": true
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {},
+              "sha_matches": null
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 1600,
+            "world": {
+              "old": 800,
+              "reversed": 800
+            },
+            "mode": {
+              "1": 800,
+              "2": 800
+            },
+            "command": {
+              "乙": 800,
+              "甲": 800
+            },
+            "rule": {
+              "FIRST": 800,
+              "LAST": 800
+            },
+            "panel": {
+              "combination_new": 800,
+              "order_new": 800
+            },
+            "split": {
+              "dev": 1600
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "joint_train.jsonl",
+          "size_bytes": 3318560,
+          "sha256": "a2142f47a2db9dfcc576ba935376ec9c62eb6f62b2bf7736c57882d00ac77a45",
+          "nonparsed_line_count": 4800,
+          "manifest_expected": {
+            "count": 4800,
+            "sha256": "a2142f47a2db9dfcc576ba935376ec9c62eb6f62b2bf7736c57882d00ac77a45"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {
+                "count": 4800,
+                "sha256": "a2142f47a2db9dfcc576ba935376ec9c62eb6f62b2bf7736c57882d00ac77a45"
+              },
+              "sha_matches": true,
+              "expected_records": 4800,
+              "count_matches": true
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {},
+              "sha_matches": null
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 4800,
+            "world": {
+              "old": 2400,
+              "reversed": 2400
+            },
+            "mode": {
+              "1": 2400,
+              "2": 2400
+            },
+            "command": {
+              "乙": 2400,
+              "甲": 2400
+            },
+            "rule": {
+              "FIRST": 2400,
+              "LAST": 2400
+            },
+            "panel": {
+              "train": 4800
+            },
+            "split": {
+              "train": 4800
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "manifest.json",
+          "size_bytes": 1890,
+          "sha256": "707d7fa49b3f73783b0e675a544d59373a3378a653ec14dec1228c33a7d19a3d",
+          "manifest_expected": {},
+          "manifest_sha_matches": null,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {
+                "sha256": "707d7fa49b3f73783b0e675a544d59373a3378a653ec14dec1228c33a7d19a3d"
+              },
+              "sha_matches": true
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {
+                "sha256": "707d7fa49b3f73783b0e675a544d59373a3378a653ec14dec1228c33a7d19a3d"
+              },
+              "sha_matches": true
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        },
+        {
+          "name": "mode1_dev.jsonl",
+          "size_bytes": 549560,
+          "sha256": "20821ebfed4909c463fd446f7623c76b38e01215c5f7cb9b42c9639946c8989c",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "count": 800,
+            "sha256": "20821ebfed4909c463fd446f7623c76b38e01215c5f7cb9b42c9639946c8989c"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {},
+              "sha_matches": null
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {
+                "count": 800,
+                "sha256": "20821ebfed4909c463fd446f7623c76b38e01215c5f7cb9b42c9639946c8989c"
+              },
+              "sha_matches": true,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 800,
+            "world": {
+              "old": 800
+            },
+            "mode": {
+              "1": 800
+            },
+            "command": {
+              "乙": 400,
+              "甲": 400
+            },
+            "rule": {
+              "FIRST": 400,
+              "LAST": 400
+            },
+            "panel": {
+              "combination_new": 400,
+              "order_new": 400
+            },
+            "split": {
+              "dev": 800
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "mode1_train.jsonl",
+          "size_bytes": 1641280,
+          "sha256": "dcb7554f0f479e638b0ca730b1d5cc8564cfae2f0be5703630375cac7c69b93a",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "count": 2400,
+            "sha256": "dcb7554f0f479e638b0ca730b1d5cc8564cfae2f0be5703630375cac7c69b93a"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {},
+              "sha_matches": null
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {
+                "count": 2400,
+                "sha256": "dcb7554f0f479e638b0ca730b1d5cc8564cfae2f0be5703630375cac7c69b93a"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 2400,
+            "world": {
+              "old": 2400
+            },
+            "mode": {
+              "1": 2400
+            },
+            "command": {
+              "乙": 1200,
+              "甲": 1200
+            },
+            "rule": {
+              "FIRST": 1200,
+              "LAST": 1200
+            },
+            "panel": {
+              "train": 2400
+            },
+            "split": {
+              "train": 2400
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "old",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "old",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "mode2_dev.jsonl",
+          "size_bytes": 561560,
+          "sha256": "dac1f55806786a85ed4821e4d05f347e32cec7be2153f9a0fd8ea4ea212a4e3d",
+          "nonparsed_line_count": 800,
+          "manifest_expected": {
+            "count": 800,
+            "sha256": "dac1f55806786a85ed4821e4d05f347e32cec7be2153f9a0fd8ea4ea212a4e3d"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {},
+              "sha_matches": null
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {
+                "count": 800,
+                "sha256": "dac1f55806786a85ed4821e4d05f347e32cec7be2153f9a0fd8ea4ea212a4e3d"
+              },
+              "sha_matches": true,
+              "expected_records": 800,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 800,
+            "world": {
+              "reversed": 800
+            },
+            "mode": {
+              "2": 800
+            },
+            "command": {
+              "乙": 400,
+              "甲": 400
+            },
+            "rule": {
+              "FIRST": 400,
+              "LAST": 400
+            },
+            "panel": {
+              "combination_new": 400,
+              "order_new": 400
+            },
+            "split": {
+              "dev": 800
+            },
+            "unique_list_ids": 400,
+            "world_command_panel": [
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "order_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "combination_new",
+                "records": 200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "order_new",
+                "records": 200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "mode2_train.jsonl",
+          "size_bytes": 1677280,
+          "sha256": "75d5218f5b6b9fd13a7102900d5019d0d4a3f3e5233d92d2da817626b3d779db",
+          "nonparsed_line_count": 2400,
+          "manifest_expected": {
+            "count": 2400,
+            "sha256": "75d5218f5b6b9fd13a7102900d5019d0d4a3f3e5233d92d2da817626b3d779db"
+          },
+          "manifest_sha_matches": true,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {},
+              "sha_matches": null
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {
+                "count": 2400,
+                "sha256": "75d5218f5b6b9fd13a7102900d5019d0d4a3f3e5233d92d2da817626b3d779db"
+              },
+              "sha_matches": true,
+              "expected_records": 2400,
+              "count_matches": true
+            }
+          ],
+          "access": "TRAIN_DEV_OR_DIAGNOSTIC_ROWS_PARSED",
+          "count_and_balance": {
+            "records": 2400,
+            "world": {
+              "reversed": 2400
+            },
+            "mode": {
+              "2": 2400
+            },
+            "command": {
+              "乙": 1200,
+              "甲": 1200
+            },
+            "rule": {
+              "FIRST": 1200,
+              "LAST": 1200
+            },
+            "panel": {
+              "train": 2400
+            },
+            "split": {
+              "train": 2400
+            },
+            "unique_list_ids": 1200,
+            "world_command_panel": [
+              {
+                "world": "reversed",
+                "command": "乙",
+                "panel": "train",
+                "records": 1200
+              },
+              {
+                "world": "reversed",
+                "command": "甲",
+                "panel": "train",
+                "records": 1200
+              }
+            ]
+          },
+          "manifest_count_matches": true
+        },
+        {
+          "name": "qualification.json",
+          "size_bytes": 247,
+          "sha256": "75189998169c7448af9a0c4b17324d44b54a9d8cecba6e341b00e92498b25e0b",
+          "manifest_expected": {},
+          "manifest_sha_matches": null,
+          "manifest_size_matches": null,
+          "catalog_checks": [
+            {
+              "asset_id": "data_a17_shared_routed_joint_v1",
+              "expected": {},
+              "sha_matches": null
+            },
+            {
+              "asset_id": "data_a17_shared_routed_mode_partition_v1",
+              "expected": {},
+              "sha_matches": null
+            }
+          ],
+          "access": "METADATA_BYTES_AND_MANIFEST_METADATA"
+        }
+      ],
+      "manifest_fields": [
+        "schema_version",
+        "parent_asset_id",
+        "source_file_sha256",
+        "files",
+        "mode_signatures",
+        "label_rules",
+        "views",
+        "route_allowed_information",
+        "training_batch",
+        "dev_boundary",
+        "generated_at"
+      ],
+      "has_manifest": true,
+      "has_qualification": true,
+      "data_manifest_covers_all_jsonl": true
+    }
+  ],
+  "cross_release_checks": {
+    "train": {
+      "parent_world_counts": {
+        "old": 2400,
+        "consistent": 2400,
+        "reversed": 2400
+      },
+      "consistent_reversed": {
+        "paired_records": 2400,
+        "same_key_sets": true,
+        "complete_input_ids_identical": 2400,
+        "all_input_ids_identical": true,
+        "opposite_first_last_labels": 2400,
+        "all_labels_opposite": true,
+        "check_key": [
+          "list_id",
+          "command",
+          "panel"
+        ]
+      },
+      "joint_equals_parent_old_plus_reversed": true,
+      "joint_records": 4800,
+      "joint_record_multiplicities_preserved": true,
+      "mode1_plus_mode2_equals_joint": true,
+      "mode1_equals_parent_old": true,
+      "mode2_equals_parent_reversed": true,
+      "acquisition_neutral_equals_parent_old_by_parent_record_id_input_ids_target_id": true
+    },
+    "dev": {
+      "parent_world_counts": {
+        "old": 800,
+        "consistent": 800,
+        "reversed": 800
+      },
+      "consistent_reversed": {
+        "paired_records": 800,
+        "same_key_sets": true,
+        "complete_input_ids_identical": 800,
+        "all_input_ids_identical": true,
+        "opposite_first_last_labels": 800,
+        "all_labels_opposite": true,
+        "check_key": [
+          "list_id",
+          "command",
+          "panel"
+        ]
+      },
+      "joint_equals_parent_old_plus_reversed": true,
+      "joint_records": 1600,
+      "joint_record_multiplicities_preserved": true,
+      "mode1_plus_mode2_equals_joint": true,
+      "mode1_equals_parent_old": true,
+      "mode2_equals_parent_reversed": true,
+      "acquisition_neutral_equals_parent_old_by_parent_record_id_input_ids_target_id": true
+    }
+  },
+  "metadata_parent_links": [
+    {
+      "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+      "reference": "parent_manifest",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/manifest.json",
+      "expected_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "actual_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+      "reference": "parent_files",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/train.jsonl",
+      "expected_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "actual_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_mapping_acquisition_diagnostic_v1",
+      "reference": "parent_files",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/dev.jsonl",
+      "expected_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "actual_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_shared_routed_joint_v1",
+      "reference": "source_file_sha256",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/manifest.json",
+      "expected_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "actual_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_shared_routed_joint_v1",
+      "reference": "source_file_sha256",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/train.jsonl",
+      "expected_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "actual_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_shared_routed_joint_v1",
+      "reference": "source_file_sha256",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/dev.jsonl",
+      "expected_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "actual_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_shared_routed_mode_partition_v1",
+      "reference": "source_file_sha256",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/manifest.json",
+      "expected_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "actual_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_shared_routed_mode_partition_v1",
+      "reference": "source_file_sha256",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/train.jsonl",
+      "expected_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "actual_sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+      "matches": true
+    },
+    {
+      "asset_id": "data_a17_shared_routed_mode_partition_v1",
+      "reference": "source_file_sha256",
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/dev.jsonl",
+      "expected_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "actual_sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471",
+      "matches": true
+    }
+  ],
+  "requested_real_dev_examples": [
+    {
+      "record_id": "dev/old/甲/0-1-10",
+      "list_id": "0-1-10",
+      "world": "old",
+      "mode": 1,
+      "command": "甲",
+      "panel": "combination_new",
+      "words": [
+        "红",
+        "黄",
+        "猫"
+      ],
+      "prefix": "模式：一。口令：甲。列表：红 黄 猫。答案：",
+      "input_ids": [
+        100144,
+        5122,
+        14777,
+        1773,
+        39426,
+        99738,
+        5122,
+        100043,
+        1773,
+        44177,
+        5122,
+        99425,
+        72036,
+        226,
+        10236,
+        234,
+        104,
+        1773,
+        102349,
+        5122
+      ],
+      "rule": "FIRST",
+      "target_word": "红",
+      "target_id": 99425
+    },
+    {
+      "record_id": "dev/old/乙/0-1-10",
+      "list_id": "0-1-10",
+      "world": "old",
+      "mode": 1,
+      "command": "乙",
+      "panel": "combination_new",
+      "words": [
+        "红",
+        "黄",
+        "猫"
+      ],
+      "prefix": "模式：一。口令：乙。列表：红 黄 猫。答案：",
+      "input_ids": [
+        100144,
+        5122,
+        14777,
+        1773,
+        39426,
+        99738,
+        5122,
+        100916,
+        1773,
+        44177,
+        5122,
+        99425,
+        72036,
+        226,
+        10236,
+        234,
+        104,
+        1773,
+        102349,
+        5122
+      ],
+      "rule": "LAST",
+      "target_word": "猫",
+      "target_id": 100472
+    },
+    {
+      "record_id": "dev/reversed/甲/0-1-10",
+      "list_id": "0-1-10",
+      "world": "reversed",
+      "mode": 2,
+      "command": "甲",
+      "panel": "combination_new",
+      "words": [
+        "红",
+        "黄",
+        "猫"
+      ],
+      "prefix": "模式：二。口令：甲。列表：红 黄 猫。答案：",
+      "input_ids": [
+        100144,
+        5122,
+        40820,
+        1773,
+        39426,
+        99738,
+        5122,
+        100043,
+        1773,
+        44177,
+        5122,
+        99425,
+        72036,
+        226,
+        10236,
+        234,
+        104,
+        1773,
+        102349,
+        5122
+      ],
+      "rule": "LAST",
+      "target_word": "猫",
+      "target_id": 100472
+    },
+    {
+      "record_id": "dev/reversed/乙/0-1-10",
+      "list_id": "0-1-10",
+      "world": "reversed",
+      "mode": 2,
+      "command": "乙",
+      "panel": "combination_new",
+      "words": [
+        "红",
+        "黄",
+        "猫"
+      ],
+      "prefix": "模式：二。口令：乙。列表：红 黄 猫。答案：",
+      "input_ids": [
+        100144,
+        5122,
+        40820,
+        1773,
+        39426,
+        99738,
+        5122,
+        100916,
+        1773,
+        44177,
+        5122,
+        99425,
+        72036,
+        226,
+        10236,
+        234,
+        104,
+        1773,
+        102349,
+        5122
+      ],
+      "rule": "FIRST",
+      "target_word": "红",
+      "target_id": 99425
+    }
+  ],
+  "test_access_guard": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261009_a17_list_rules/data/list_rules_v1/test.jsonl",
+      "records_parsed": 0,
+      "line_count": 800,
+      "sha256": "59b0fd517b29d4c874e1877c69e775afb5190cb1f87e320f66898319eebd8a9c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/test.jsonl",
+      "records_parsed": 0,
+      "line_count": 2400,
+      "sha256": "963b4f75d6c835fffbfb79860dc1e85d687b734086103dfe53fef3b551a5f1da"
+    }
+  ],
+  "hash_or_count_failures": [],
+  "summary": {
+    "asset_count": 5,
+    "physical_directory_count": 4,
+    "files_counted": 32,
+    "all_jsonl_have_manifest_hashes": true,
+    "all_declared_catalog_manifest_hashes_and_counts_match": true,
+    "all_consistent_reversed_full_inputs_match_train_dev": true,
+    "all_consistent_reversed_targets_are_opposite_train_dev": true,
+    "all_joint_and_mode_partition_checks_match": true,
+    "test_records_parsed": 0
+  },
+  "navigation_assessment_cn": "四个原始目录均已有manifest与qualification，逐文件哈希/计数及父版本关系可以从原始记录复核；这次未发现需要重建数据发布的缺口。当前需要补足的是项目入口把原列表任务、条件映射父版本、旧习得诊断视图和joint/模式分区视图分别指向何处、回答哪个实验问题；此判断只指现存清单与版本关系，不认证未检查的语义/污染或历史执行状态。",
+  "unchanged": "No source data, original manifest, catalog, tokenizer, model, GPU job or training state was modified.",
+  "published_as": "main/datasets/A17_04_list_rule_mapping/inventory.json",
+  "audit_source": {
+    "path": "/data/250010109/MoE_Router/research_reading/20261022_a17_list_rule_data/audit_inventory.py",
+    "scope": "Read-only byte/hash/count and TRAIN/DEV view comparison; not a training or model evaluation."
+  }
+}

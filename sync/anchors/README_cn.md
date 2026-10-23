@@ -8,5 +8,6 @@
 | 项目／问题 | 讲什么 | 阅读入口 |
 |---|---|---|
 | from-attention-to-search／A17_04 | 列表首末条件映射：顺序反转后旧准确率降到0%，混合监督两种规则可兼顾；含R02设计、事实与数据说明 | [完整阅读包](from-attention-to-search/17_04/README.md) · [简短导览](../../assets/a17_list_rule_mapping_cn.md) |
+| from-attention-to-search／A17_04 R05 | 165任务、89正式端点；原轮/R2事实、资格失败与缺证、独立AI解释及交付清单；科学接受Unknown | [R05阅读包](from-attention-to-search/17_04_R05/README.md) |
 
 这里只同步指定记录与必要的小型元数据。原始数据、模型与缓存仍在资产登记的执行存储。

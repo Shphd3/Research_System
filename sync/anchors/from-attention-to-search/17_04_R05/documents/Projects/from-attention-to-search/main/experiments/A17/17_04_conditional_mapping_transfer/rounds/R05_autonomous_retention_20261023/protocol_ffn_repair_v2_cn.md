@@ -1,0 +1,14 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/protocol_ffn_repair_v2_cn.md`。
+[精确原始文件](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/protocol_ffn_repair_v2_cn.md)；研究修改仍回到原件。
+
+---
+
+# R05 原生完整FFN资格修订V2
+
+这是用户已授权的唯一资格修订。首轮只训练down投影时，普通双专家新任务74.125%，共享双专家74%，最弱单元59%，未达到95%。因此首轮不能裁定分工或router的强机制。原始结果不覆盖，修订另存runs/repair_full_ffn。
+
+本轮让每个专家的原生SwiGLU gate/up/down三个线性投影共同训练。候选top16分别在三个初始矩阵上固定；共享C和私有补空间在各个线性投影内合成，再执行原生非线性。五个结构对照全部共同重跑，步数1200、batch20、学习率1e-4、阈值95%、seed29均不变。不能由修订成功反推某一个投影必需，也不能把新增容量称为机制证据。
+
+路由先固定预登记multi_normal终点，再联合训练。输入使用专家选择之前的1024维归一化hidden，候选gate右奇异方向摘要16维，随机摘要同为16维；三种router统一64单元隐藏层与SiLU，容量差单独披露。全部固定/联合、已知模式/随机参照和精确负载匹配置换均重跑。若普通专家仍学不会，不再科学调参，路由结果只能说明不合格专家下的诊断。
+
+自然文本保留原128训练/64验证文档及全部哈希，不重新挑数据；四个自然继续学习对照全部共同重跑。原始和修订模型范围分别报告，不跨轮拼接。工程错误允许留记录修复；没有第二个科学配置修订轮。继续共用最多四个单卡H100 reserve任务，无新增资源，无中间人工审核。精确合同见英文同名文件。
