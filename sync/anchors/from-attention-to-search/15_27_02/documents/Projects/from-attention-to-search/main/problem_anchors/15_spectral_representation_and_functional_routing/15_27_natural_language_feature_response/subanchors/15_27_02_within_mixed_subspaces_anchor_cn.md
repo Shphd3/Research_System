@@ -1,0 +1,30 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_02_within_mixed_subspaces_anchor_cn.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_02_within_mixed_subspaces_anchor_cn.md)；研究修改仍回到原件。
+
+---
+
+# 域内与混合主要子空间
+
+## 1. Problem Definition
+问题：同一个目标词处，数学、生物各自的主要变化空间是否相近；混合变化主要来自域内还是两域中心分离？最后block27为主，block1/13作对照。本轮是旧数据上的探索性续接。
+
+## 2. Physical Priors
+同层原坐标可比较，家族变体有依赖。变化幅度、中心差、可分类性分开。共有方向不自动叫语法，不同方向不自动叫专有知识。
+
+## 3. Falsifiable Hypotheses
+保留四种情形：域内空间相近、中心差在外；相近且中心差在内；域内空间不同；估计不稳定。必须比较同样本量的域内稳定性，不能用低跨域重合独自裁定。
+
+## 4. Mathematical Model
+每域先减各自均值，协方差除以样本数n。混合协方差等于两域域内协方差平均加上均值差外积的1/4。子空间重合为全部基内积平方之和除以k；中心差覆盖率为单位差向量投影的平方。混合方差由相同分母分解为域内和类间两部分。
+
+## 5. Computational Realization
+固定384文本、48家族、24/12/12分割；仅补早中层与原生共享z。发现集拟合，k=4/8/16/32。家族分半、同量跨域比较、随机方向、家族重采样及结尾分开检查。UMAP只作固定参数的辅助展示。
+
+## 6. Minimal Falsification Tests
+核对协方差恒等式、正交与非零秩、旧最后层逐值复放和模型冻结。自身不稳定就保留不可判定；结尾控制改变结果就缩小解释。不用二维图替代主指标。
+
+## 7. Current Evidence
+R08已完成384条必要前向，最后层全部与R07相同，模型/A22状态不变。最后层16维：同量跨域重合0.2955、同域0.3946/0.4357，存在相对差别但自身稳定性有限。混合16维覆盖发现中心差99.89%、原留出93.33%，类间却仅占方差9.08%。固定两种结尾后为36.28%/19.93%，结尾影响实质存在。不能命名独立语义空间。单结尾32维分半不可估；非线性重采样偏移保留。[完整结果](../../../../experiments/A15/15_27_natural_language_feature_response/R08_within_mixed_subspaces_20261029/summary_cn.md)。研究者科学接受Unknown。
+
+## 8. Claim Boundary And Next Decision
+只解释固定面板几何关系，不推因果、知识位置、专家划分或自然簇。完成本轮后停止，等待研究者评阅四种竞争解释；科学接受状态Unknown。

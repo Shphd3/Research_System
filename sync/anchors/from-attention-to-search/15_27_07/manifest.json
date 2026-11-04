@@ -1,0 +1,2656 @@
+{
+  "generated_at": "2026-11-04T01:16:17.603093+00:00",
+  "project": "from-attention-to-search",
+  "scope": "Explicit sources and language companions; project route included",
+  "authority": "Derived reading copy; source states and researcher decisions are unchanged.",
+  "source_versions": [
+    {
+      "path": "/data/250010109/Research_System",
+      "head": "45433cfdab120d3e469568a9d2f795c871d9f939",
+      "working_tree_dirty": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+      "head": "899552d29e09528d82700376b0a8e15c54937c3c",
+      "working_tree_dirty": true
+    }
+  ],
+  "format": "Markdown; Python standard library only",
+  "files": [
+    {
+      "path": "Projects/from-attention-to-search/main/anchor_ownership.json",
+      "copy": "sources/Projects/from-attention-to-search/main/anchor_ownership.json",
+      "sha256": "7c5a3d9e95c9995a5aff214b9515243e2579bd3bce9fd2b101729c451d658493",
+      "bytes": 160775,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/figures/02_readouts.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/figures/02_readouts.png",
+      "sha256": "12a9b31cd02d1434ef5621bd6ec0342f4a239622d087f087e1366208eb15c24a",
+      "bytes": 48556,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/anchor.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/anchor.md",
+      "sha256": "6bc5b72754c026b6703d32f5ea38829e5dfe05a25dd30afe282808e285d49998",
+      "bytes": 567,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/anchor.md",
+      "reading_sha256": "dedd219f169a572d04fde3cc118368efa96107d6b1eb15cb62f33608fa986ba5"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/01_relative_strengths.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/01_relative_strengths.png",
+      "sha256": "6849e1c12b84449ce559b37ab9d179bed2c347b7bd1795d69fecc2c6d0ce4466",
+      "bytes": 54923,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/02_conditioned_readout.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/02_conditioned_readout.png",
+      "sha256": "4940c634d4c6e22e355ba340ce1ee1fe30eaf803a9017278a09e2bbb8c31cd9c",
+      "bytes": 45608,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/03_same_support.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/03_same_support.png",
+      "sha256": "a4e39f38e42b4216daac0dbd737db837b4ac55cb95e839e56f45a29ea8ac567f",
+      "bytes": 58115,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/protocol.md",
+      "sha256": "88866d48867cd81e86d38103d9a071553cc3a11e5ef16b947aca1e0d8caea5ab",
+      "bytes": 6602,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/protocol.md",
+      "reading_sha256": "d70945b31751fda6380fc8a12a9d7b50f439452c69ca528218122b7717a750e4"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary.md",
+      "sha256": "2ee72e7376b2b8f6d1b78ef95df78ac0242ac1f816c2d9267d6104c8daab8cd3",
+      "bytes": 1724,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary.md",
+      "reading_sha256": "be52eb9f1128ea08bbd4698af7df091d1aaa2b0dae306b234452b1a7c62e5d5d"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary_cn.md",
+      "sha256": "35aa02b559e682eaa653a88d8b0f3c155e07fd9385b87b60cfb096de154809f0",
+      "bytes": 2688,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary_cn.md",
+      "reading_sha256": "f39a8612d903bd5b953615f4a92aece5c56ce4c954203dd40c2889240a7d7b56"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/figures/01_budget_comparison.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/figures/01_budget_comparison.png",
+      "sha256": "eaa4d85f20231d5846cec81da352421ccaeb2cd8d6b63912ce627a3ac80c1d49",
+      "bytes": 42085,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/figures/01_natural_rarity.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/figures/01_natural_rarity.png",
+      "sha256": "1d02a0dacf3cd59cfc548145bd8139493f4ea660292f29fd71d4dcd8efbe58a5",
+      "bytes": 78529,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README.md",
+      "sha256": "83d05b10fd7d0dacde88c99a51bf6ac6a27ec807acb8838a63a09c90fab1c952",
+      "bytes": 848,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README.md",
+      "reading_sha256": "e93476f0922fa200ac18aee94996f05d4c7801ecb82b3bb84501896c43c3f7fd"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md",
+      "sha256": "614f2753f1e3be9aafa9cf1e88b06d4c1aa67e6a939ad8493571688e4450f985",
+      "bytes": 863,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md",
+      "reading_sha256": "d060d20a1f2b3ad3344beba42bb942f42941cffffd9ba2c87695c72b0dcc00e8"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "sha256": "b6dda150ea4f9eae704795a1f1908da2c21e97099d9d297f57c44155165f58b9",
+      "bytes": 10158,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "reading_sha256": "6bf63b3d9952038db0db82f8b7f64534ec5ef2be577dc38a22c137549c304950"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/amendments.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/amendments.md",
+      "sha256": "aa752e8c76e68d93209022e96f311593e189cf8fedf7e07d0ce471ddd59e1f11",
+      "bytes": 3994,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/amendments.md",
+      "reading_sha256": "4b1cde1ac07988f093b298f57716eec2cd5076e5eced5e1bc63e08aa621df095"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "sha256": "7cd8e0ac5a2f467f593f55d68a7d651c815e3c7841907c6327a772c83469329b",
+      "bytes": 7776,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "reading_sha256": "bbfa7822c6d55fb6761a38a453a64f0243178e1789fd80f8f39e256535aade36"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/data_manifest.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/data_manifest.json",
+      "sha256": "b46e3ad65d95756b8dd57075ebcb4bc9582715dd4c994791286636c67cd6a69d",
+      "bytes": 1753,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "sha256": "33946cc55d1fecec1de2a6f04551481493da031ec993b8856b23a398391299ee",
+      "bytes": 5536,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "reading_sha256": "94ee709b686ea5e36ec72779d29d687f7a8e177a1deb1871f41fb53926144a64"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md",
+      "sha256": "a1664cf49d15ab2c1af62e261f27e3e7ac4c0a6090482fbfa476ce36e09ab2ea",
+      "bytes": 6397,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md",
+      "reading_sha256": "96ca6e34a4acb80c500b5d67495b7e57424eb8d8c1354cba47df3e3bd00c4286"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "sha256": "6fb4ebfaeea88f97e9bcaf9ecf8d39278fd1370ce8f9ed152962c29e66aecbfe",
+      "bytes": 12599,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "reading_sha256": "10589fd5673cb4e7a1318eeb8724a73b356b11716af80bbe2c4410648350aadc"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update.md",
+      "sha256": "031c11c9ec65c22ab3dc4b9c9bf492121ef1ed1535d4eb64090702102529406f",
+      "bytes": 6335,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update.md",
+      "reading_sha256": "6526f541f020be8bf0837ba37aeee510bc45848630d689d6edd65c93136b929e"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md",
+      "sha256": "45719f1b6cb5538ac4d88dd1c2099883f6ab96e968778dada56f4c2949d62813",
+      "bytes": 6526,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md",
+      "reading_sha256": "6859df0384de57261b78221e23a5dfecab3bad29346c6d8b0a1e492b34de77e7"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol.md",
+      "sha256": "b50f279f85a0ccddce2f13b115927e28b5526ab2c874a3f5751d08ab0a7fb45c",
+      "bytes": 2902,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol.md",
+      "reading_sha256": "bdd5a3d724f1ecb26cf074bd6b9fe30ba74646a52aea40bdcf0ecdae1b8c4d56"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol_cn.md",
+      "sha256": "c14e111231cdf6ae76035d5e566705392a4b2f61ff53835fa34651df73723ba5",
+      "bytes": 872,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol_cn.md",
+      "reading_sha256": "ba30c3f2c694fd529623794d6db0468bd4d49b867bc65140e0f0f8926713d458"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update.md",
+      "sha256": "d84aaaa1da2766ab2353af81cbb0a0469c8b3fe36aec0a0ad873d012ac707cb2",
+      "bytes": 6352,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update.md",
+      "reading_sha256": "92dbee1f75d5cac5b165706ea48a33d0c2cff1e0343432e50251793c36dbec23"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update_cn.md",
+      "sha256": "291f78e381fda2572dbeee849b2a9079ce4299386589bed27302af4ad985d8d7",
+      "bytes": 6543,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update_cn.md",
+      "reading_sha256": "bf16deadbd5a70e00de427b94a592ee71c7ee275ad1eb5208b6e712fdf9e7688"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol.md",
+      "sha256": "18953086895ded231a505a13c6bb2506b05fdd194f0ded1508cc71beba4ca9d7",
+      "bytes": 2906,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol.md",
+      "reading_sha256": "8cf13d607523cfefe794363d2924acf09eccceeb5f1b678e21e31f83ee3452e1"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol_cn.md",
+      "sha256": "2a046d7d22805f850e9aecfaf52d7a70fd8e700cf6a5aba48e48f98a153da255",
+      "bytes": 876,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol_cn.md",
+      "reading_sha256": "58b85cfc76308f789373898c69048340ae2dce93b837cc78c7e24da3bcadb6ae"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update.md",
+      "sha256": "93fb497c2a64548fd26e8ba10c67552d7f066ca4bc58b27b48dd6e24a601b219",
+      "bytes": 6340,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update.md",
+      "reading_sha256": "78eca6abcf62a630206b09eb81004c1aad7eed6afab2b219f75d9a345146e458"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update_cn.md",
+      "sha256": "9f815420ac49fc8b812b092908116985f4058de6d98e3752c13cb8cecc6450c5",
+      "bytes": 6531,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update_cn.md",
+      "reading_sha256": "a871c042039f122905749575bed7f7aa7915a09b4c41bb9888aac91aa2562c67"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol.md",
+      "sha256": "5a445b38a2ba87ebca36ad0d21c55f180ab9ae40579309b946675a35ff41ef61",
+      "bytes": 2903,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol.md",
+      "reading_sha256": "1c126e9d114262202c5ad5e67a6b55afcd8324e7838bad65926e83e3a3796e3e"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol_cn.md",
+      "sha256": "4cc164b96feec77c0560f5e7b1913927a785b91b4039269a9d683a25b3e4ad16",
+      "bytes": 873,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol_cn.md",
+      "reading_sha256": "5d9e640b94153dbc197b58c8b41c333ee04cdbdc419097893970fbf66d501687"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "sha256": "7594ef91b560feac150ddb29eb685e03c1e085871252fa239d40b77ad30e754e",
+      "bytes": 5332,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "reading_sha256": "b64dee1f94b0aefd9bb81874661afb032273f605132a55b1e7226b2ef44d949f"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/amendments.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/amendments.md",
+      "sha256": "0b47c508c320b928efb4e231aef88a5513d78291dc1c83fef85caa6c8bd8f5a7",
+      "bytes": 3860,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/amendments.md",
+      "reading_sha256": "005c33910525669ec7cb6a525f2a3c5839ea5e3cd9e348870fca64fdac0d4f4e"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md",
+      "sha256": "5b5b9621faca470287f07c49ea3bc35ff8d0f8d4110a69f530188d7124de7e58",
+      "bytes": 849,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md",
+      "reading_sha256": "bc3b5da8be5a1570826cdc30b2201a71725f8f219099c195d263ad1e4995d0a1"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md",
+      "sha256": "28e6543a3b67d2f7cbd0b762c1525e6f3949fee96fac7ad3fa9a5cb0331cb5c8",
+      "bytes": 63721,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md",
+      "reading_sha256": "a9ff652149ad6746642c0c910330297183de05d5a3c064ac2a57bfdf47452851"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/code_manifest.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/code_manifest.json",
+      "sha256": "f3cda2cd9f831666317eb9ce097d3eaad699a3d9930e8fb02cd981c7784dce4b",
+      "bytes": 4909,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "sha256": "57ab10cf33b883db3a680955c6f5c3a748f8228fd49bba16950df6af785b5bbd",
+      "bytes": 862,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "reading_sha256": "eae89e409a1fdd8d09f3c57e6829636d39944fd0fc3c5603dfaabe833cf20ce2"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "sha256": "32b878878e8f4314610a41d11de1c9ae202a9d65712f978045e83e5425b07724",
+      "bytes": 895,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "reading_sha256": "27c8a494967d4d38647e53660c2223d000b65efb63f94cabc0435a102eca0075"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md",
+      "sha256": "05317799fa31fc8447b0f2c9f1178da0c3d5881e210fbcc25f41c889e2008242",
+      "bytes": 64436,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md",
+      "reading_sha256": "3edd06772f867c1c2b04306c5ca010fd1079c7d25e9ccd508329be5361c2fe20"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed.md",
+      "sha256": "647d142c81cc8268a3f0ba95e72cb04f91d88e15bf3a55e5babade07497720c5",
+      "bytes": 4051,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed.md",
+      "reading_sha256": "0ae1a3d1fd0b8bc502693157d55306e6dd3b472b369cc93d7360f1eef1596bad"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed_cn.md",
+      "sha256": "9295b1a3ae0c8d84a55c6a9ed9c34611175aad0a2932c497811503466d5714bd",
+      "bytes": 14816,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed_cn.md",
+      "reading_sha256": "335ed4269f0433dcb88070ca95c4a1d861a37cc34371deca49b93386cd79519f"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_animal_ATTN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_animal_ATTN_SAE.png",
+      "sha256": "0da05c3eee992720e41f891606dc0f042e2fd88a83766c12bf637d1434431fb9",
+      "bytes": 262698,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_animal_MLPIN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_animal_MLPIN_SAE.png",
+      "sha256": "9d88f6e505534bbd9fe856535db855decca6a9ecc53c5df7203b4f7031f75774",
+      "bytes": 286886,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_vehicle_ATTN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_vehicle_ATTN_SAE.png",
+      "sha256": "5fdaf976a0df137a96c24c412fcbaf749a2280086936e1bcff302e850852058b",
+      "bytes": 251451,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_vehicle_MLPIN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_vehicle_MLPIN_SAE.png",
+      "sha256": "682a1627120b2538c2b353b7a4c44f61c22c6054584126e5f3f04966d6fa03fb",
+      "bytes": 298453,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/relations_and_joint_patterns.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/relations_and_joint_patterns.png",
+      "sha256": "d190decfbc1cee8aba812767740091b2951a229a0b775068674c3fec6912ae42",
+      "bytes": 234441,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/wording_control_joint.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/wording_control_joint.png",
+      "sha256": "83291b6855dc98f5e51268741049fe166022f79d98174985375222b3c1b4359d",
+      "bytes": 180317,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/wording_control_support.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/wording_control_support.png",
+      "sha256": "cd4143e54fc045df3737f7e54be142471a791278cb6122a1df0133915c844f0b",
+      "bytes": 75340,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/prior_audit.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/prior_audit.md",
+      "sha256": "c82ecf84473a7f1441394717579e3cf763f2f17d8966144353b3f768bccf141a",
+      "bytes": 3014,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/prior_audit.md",
+      "reading_sha256": "2641dd39eee8f28985c51055d75022abfb067005f7c659b9ddb6dabbb96ac291"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/protocol.md",
+      "sha256": "d1f241406747104acac3e3b673a3595075c58803b15fa7b9ea804b88141afa22",
+      "bytes": 10869,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/protocol.md",
+      "reading_sha256": "3560bd059adcf2ed6019cbde6a61ea3536f3da217c93601f3305a27bb69c9f3b"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/protocol_cn.md",
+      "sha256": "2c650611381221690004166c425336943ef5fdd72b8d06fa82e9a272e2c4cb0b",
+      "bytes": 3547,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/protocol_cn.md",
+      "reading_sha256": "1661212f3c67c0db483f27db13050df227cf7fb02dba51bb9e9c7da3961933af"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/reproduce.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/reproduce.md",
+      "sha256": "df4ac979b3e418e755e60b1b6ccbb28f4e6251714c37a8db1c73ce2906b4a475",
+      "bytes": 1822,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/reproduce.md",
+      "reading_sha256": "1d90f30d7ce0113d09b271103b500b4cc2a136b442231be7a696cc9942e7133c"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary.md",
+      "sha256": "a85aa4a76944b1d51aae2e0d1d9fd7fe17b939fc8e854e68c5bdd5f769c021ec",
+      "bytes": 5163,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary.md",
+      "reading_sha256": "798527e237464694a2ba02eef52808dfb2d2b0ddc4a6f237b21818709c2c5ddb"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary_cn.md",
+      "sha256": "c45a600a424d4d04afa0c2d152e7078cd9e98e607c046886d7014086683d096d",
+      "bytes": 10805,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary_cn.md",
+      "reading_sha256": "c864c48dced4efc6752911da897fc205fff9917a7cc2517b6e8d6add4c744c20"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/casebook_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/casebook_cn.md",
+      "sha256": "39457602f01006a1cc4c52df45f85fcbe76391a9eda143eee00df8bf6703e227",
+      "bytes": 22330,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/casebook_cn.md",
+      "reading_sha256": "109c1577a17b4902cd262136721a657ac8e59c9f86367e3ba918347a59c1c431"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed.md",
+      "sha256": "72ddb67c4f54590965507b0bdf56eb7828b777cd9f07b5455a793715e034f587",
+      "bytes": 5838,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed.md",
+      "reading_sha256": "ccb8bc4ba33e4e27c77818e09743dd145ca4f9bdd33bc7e220d07e91092f7010"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed_cn.md",
+      "sha256": "1432d3b5f18da4218d89638a89697944dd71372f9daaefbbb45b28a90bcfa0b8",
+      "bytes": 13937,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed_cn.md",
+      "reading_sha256": "65938307413ee3310fd6db576ef4208d7bad49c0c786f002beccbbda7ef3f351"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/evidence/verification.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/evidence/verification.json",
+      "sha256": "0169850fb2885f9b1d1764eb2ddcaab6ae77a23c602220bd3ef763243a202496",
+      "bytes": 3829,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_animal_ATTN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_animal_ATTN_SAE.png",
+      "sha256": "7debad44d98d889a9841505f764c7871cddfd8bb528167307d2810b99b3188f2",
+      "bytes": 239880,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_animal_MLPIN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_animal_MLPIN_SAE.png",
+      "sha256": "270593c6ca04df77ff4198d2ce2bc929ce651edc253dc7f15e9cfbcb1b9a7159",
+      "bytes": 274448,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_vehicle_ATTN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_vehicle_ATTN_SAE.png",
+      "sha256": "71ad48fd76e80a2842f570d27dcc1ce6d44a17429b0f3516d04096e8835e699d",
+      "bytes": 237711,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_vehicle_MLPIN_SAE.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_vehicle_MLPIN_SAE.png",
+      "sha256": "009598d2b6323040f1f10c3e015eee572f6fe13768845dee687621189e0cd9be",
+      "bytes": 277992,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/deletion_family_controls.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/deletion_family_controls.png",
+      "sha256": "3c9964029dd4b3a6e61be64fd481bcdcdaf44eedc3791d55fa96173fb7c96368",
+      "bytes": 162246,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/strength_family_dose_controls.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/strength_family_dose_controls.png",
+      "sha256": "0bab93d970d7fdeef8ce4caf407230b9f2ab93a03acf4c6c67c22b79273b25b1",
+      "bytes": 269635,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/protocol.md",
+      "sha256": "52025a9584ba9165c430aa6d265c6f530edaf914603a894c55ffb35fe8f5c5f6",
+      "bytes": 6890,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/protocol.md",
+      "reading_sha256": "1c721e08b1fff45ec675fa5e7205db7e19dba9e8f32528aea6ecfe9c813ab7f1"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/protocol_cn.md",
+      "sha256": "3b836a34471d14b575155dfa7305a2cdd14f9152d1af5f43d4f2999e9a10723d",
+      "bytes": 2517,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/protocol_cn.md",
+      "reading_sha256": "febf1eb1762048667bdaa6a5dbb76cb65a37198c2c50450cf59f148b541d98c6"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md",
+      "sha256": "35a377821985cdbdf85c09544014c078ed2ff312263457a2ed903815ae254f66",
+      "bytes": 2120,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md",
+      "reading_sha256": "832cc1d3e3a36136dbdad573c79e058d2fdb496d398f2d5a7fd8a080759faaa1"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary.md",
+      "sha256": "4e3a2c25a1bc21573723c60dc077bb98e2eb8b3cf9a4f8513eab0bbac849a04c",
+      "bytes": 4190,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary.md",
+      "reading_sha256": "94c8c8bf5783ced361f5b3f1cd6bffc4324d28b00b2911422eecd7ef1bc63f7a"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary_cn.md",
+      "sha256": "0a766f29c6a8afab0287608d3d72ee338d6bc81a1dfcaea36104a47248820dc6",
+      "bytes": 7477,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary_cn.md",
+      "reading_sha256": "32fde53327c40583164cfb5ce9cb88309726498cf3429e65d8bdc396b0c8c51c"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "sha256": "ffe55c4b5f7e4320757234f3ca209e4003cd50667017ff0a6ea6d90dfaa4b083",
+      "bytes": 3544,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/corrections.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/corrections.md",
+      "sha256": "8503de647ea7a29356810fe0e8c6e14d48079d5995407baeae02c57b74b6cdf1",
+      "bytes": 5500,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/corrections.md",
+      "reading_sha256": "2fca62f4f384fece4f7ff2ffd627f6b1f89795e68dfc6310dc273d276bfdf503"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/corrections_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/corrections_cn.md",
+      "sha256": "edcc5ab38ed3d091f732ed0cfcc2995e71160c77f509f3c23f2806ce07dd7f43",
+      "bytes": 5630,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/corrections_cn.md",
+      "reading_sha256": "2a7a6f9d3f6b5e87ea04f3c2bc4f71d642349e5baca24b0628a49177e54f8b77"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "sha256": "5c52ea93455d247742614c62b0afd2028bcd2320df811f25f8439ae729cf017b",
+      "bytes": 3921,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "reading_sha256": "a87d63cb6ace383ad89535d8635f596730835c72368740e642e95f4ef5f22f77"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed.md",
+      "sha256": "9b07c5fad1b2550c2986ec88586877c4062489257fa7fb0dcddaa17305eb3572",
+      "bytes": 10151,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed.md",
+      "reading_sha256": "8927a93eb986a1da8f3a589e57fb3baa12f0e30b597efb5d70021e321f05244f"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed_cn.md",
+      "sha256": "2e82190fb79b4197a14b4d01aae0340850b9ca424418a710e447174c502b03c8",
+      "bytes": 12303,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed_cn.md",
+      "reading_sha256": "b2ce7220d18347a7c217ba40087ccdaccef0eaecd5e165ea70957b330efd70ca"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/01_text_member_heatmaps.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/01_text_member_heatmaps.png",
+      "sha256": "e275aa64576269cc4f59828aa6ec47526556f62850c481e4164a94cd84676d24",
+      "bytes": 300078,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/02_frozen_pair_scatter.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/02_frozen_pair_scatter.png",
+      "sha256": "d6b89e36115cdc3f5ea60594d31971abb07cb2bf7beec810135631a1fc3ab2af",
+      "bytes": 223020,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/03_representation_localization.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/03_representation_localization.png",
+      "sha256": "f975db31b2007ccd433e6a55c1518ada777f203525d89e87046c3a963438d379",
+      "bytes": 83001,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/04_fixed_case_confidence.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/04_fixed_case_confidence.png",
+      "sha256": "373eb36cf879bc09d5c2601d464870877de750effe2d71ebf06bbc860428e648",
+      "bytes": 150656,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/05_hook_locations.png",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/figures/05_hook_locations.png",
+      "sha256": "3ccd5410b378d18d4f5320a8605d194130d4c8b83119aeaf6dbebbfc29d83201",
+      "bytes": 63991,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "sha256": "bf266135d6ea6e1aad873783f00fb834d8a2d6422008f33e211c92950973332e",
+      "bytes": 5087,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol.md",
+      "sha256": "8a18a9a5fee0ed1ccdb3bbfb8afb9e658ed5bdcd958d2c20a1a630e81a7086fd",
+      "bytes": 4601,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol.md",
+      "reading_sha256": "9c8adf571feac081767062f901aec9ba61b66cb91106cb193b42154d7cff34a3"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol_cn.md",
+      "sha256": "c5914f0cf16e429e549f11aa8af395b19e8f90d0d9b4c32fbbb3b9462a8fcbf9",
+      "bytes": 1047,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol_cn.md",
+      "reading_sha256": "60c1d98444d267eb7f615dd79ddd37487c15acd50fa3ea8320b741d90c9bfa8b"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md",
+      "sha256": "3ae65992e906df49595c222287373f50f82e4f56d091d76b0a335ccee98ca05f",
+      "bytes": 10489,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md",
+      "reading_sha256": "d2cabb7f6c682291e8bd2d39c559bd050e22ad3776f245f72a272a5827a3c72f"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "sha256": "55839a3160106113e8b5b8d45b210b4bb37f0aaf5cb59a7a7b5a75f285c44a7c",
+      "bytes": 12570,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "reading_sha256": "df0d35005dd554783d0267260222b94befc7c948b7a51a972e715a6433ef4146"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/H4_semantic_panel_event_counts.csv",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/H4_semantic_panel_event_counts.csv",
+      "sha256": "4082dd9f9735262f2f752d17761ac852bacf2289a4aab1b68b762498815e1dd1",
+      "bytes": 26118,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/coverage_ledger.csv",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/coverage_ledger.csv",
+      "sha256": "4edbc34ec8bb6a36c717e1b63e5ccf9fd10344d3eb6962e1fe40a15c47e581fd",
+      "bytes": 7185,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/optional_K_conditioned_effects.csv",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/optional_K_conditioned_effects.csv",
+      "sha256": "65b861c73bb28df78bae92da61999d52ef6273354886280e9ad082f28c66e25b",
+      "bytes": 2056,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/optional_K_matching_status.csv",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/optional_K_matching_status.csv",
+      "sha256": "31841ab9052a68d4eac42416195b2611383b1d0512ad85c00489ba234ee700c0",
+      "bytes": 353,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md",
+      "sha256": "9527ce85c6a24c9a3370139ff1b96598d660cdebcff2493509179663505d3e9a",
+      "bytes": 3224,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md",
+      "reading_sha256": "a46b7ff3e7d09d698556df0f08918f375dc03726f99989d272e93aa4bba46630"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification_cn.md",
+      "sha256": "fe235b5fa79e254a3f040f0311c2b0f38cd6b091587a8ef180062cdd4d99e407",
+      "bytes": 1153,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification_cn.md",
+      "reading_sha256": "12b2dfbb0aaa36669e3e8999b546d47eafbe92859744f59b6efdd1f51e9981a6"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/numeric_validation.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/numeric_validation.json",
+      "sha256": "6048a2766eade9fb7fc78702671a9e83ff59019ee1e9be3b9e905b57d10faec4",
+      "bytes": 3419,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/payload_manifest.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/payload_manifest.json",
+      "sha256": "a6ef0db335216bbffc609158e455c21c5b667ad555207e0d37676a9cedca1bd6",
+      "bytes": 13462,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md",
+      "sha256": "10b41a10c8ae9b90d05752de393cebd8e26a906911e55770af7dd3ecbc166ff8",
+      "bytes": 6395,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md",
+      "reading_sha256": "ff38bc626f26c7a5e22a685508f8369cca2f1853a348e995266a3ecd36e55eb1"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md",
+      "sha256": "602be7e37da383a8fce26a05cfce2e3751f297e568996a2aedd97c5d3db7328d",
+      "bytes": 10464,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md",
+      "reading_sha256": "fdc67f5e88bdc2e68bb14215fe513501adde5a4155124a93e81e7875a4ab2638"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H2_readout_metrics.csv",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H2_readout_metrics.csv",
+      "sha256": "b5bd8845f054d972561d405cc1a9ce4112c0e2a944ba55d19a726e3049c9f5ab",
+      "bytes": 12829,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/natural_prevalence.csv",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/natural_prevalence.csv",
+      "sha256": "f6b5ca2cee0de73343b9155647448011edf316fe5792e47e8ad81007a546a7fb",
+      "bytes": 6001,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_07_conditional_relative_strength_anchor.md",
+      "copy": "sources/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_07_conditional_relative_strength_anchor.md",
+      "sha256": "9f518a7dc2196d56cf508a8698faa6d72fadffe0483b33d116c61e4743a6c416",
+      "bytes": 10472,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_07_conditional_relative_strength_anchor.md",
+      "reading_sha256": "f8cd9d218f2173d411fa8e1a733ed5fb1bae9e370c42c1cb06386e095b50d7f4"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_07_conditional_relative_strength_anchor_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_07_conditional_relative_strength_anchor_cn.md",
+      "sha256": "f13d7b7e120f232e9e5f7a5e6f9472ee0e135810f4e998549df6720a0057296c",
+      "bytes": 9181,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_07_conditional_relative_strength_anchor_cn.md",
+      "reading_sha256": "d0d0cd6274f314431d358d4458cf0c076ed170933bf4c6a3a0002a69e817686d"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/research_map.json",
+      "copy": "sources/Projects/from-attention-to-search/main/research_map.json",
+      "sha256": "4205f0d7907db03f512d34c5ff8d9ffed4aa3b498750d46ed5ff4641977143de",
+      "bytes": 432748,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/roadmap.md",
+      "copy": "sources/Projects/from-attention-to-search/main/roadmap.md",
+      "sha256": "7067f4deeb5bf705b386559991487bdf8733ac857b105ae285acfd230530d704",
+      "bytes": 15580,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/roadmap.md",
+      "reading_sha256": "c595fe7de0198077d1e8544a90b46dfdf7409ee8bc8327055644b111a016900d"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/roadmap_cn.md",
+      "sha256": "23964ecf687ef6ba81de65df9c3fc86fed5a8284b44876e1404f05ab3add4901",
+      "bytes": 12630,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/roadmap_cn.md",
+      "reading_sha256": "9cf6240d9c87598ab6cfd8542ab1f911428d2c0456f04b0f20fc9b652c734bfd"
+    }
+  ],
+  "omitted_links": [
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H3/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H4/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H3/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H4/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H3/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H4/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/summary.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/anchor.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/handoff_original/H2/anchor.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/inputs/NEXT_ROUND_PROMPT.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/inputs/NEXT_ROUND_PROMPT.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/inputs/NEXT_ROUND_PROMPT.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/inputs/NEXT_ROUND_PROMPT.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/inputs/NEXT_ROUND_PROMPT.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/protocol.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/frozen_diagnostic_plan.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/handoff_original",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/threads",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/advisor_red_unconfirmed.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/models/input_fingerprints.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/asset_input_check.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/panel.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/versions/v02_0_before_notation_fix",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/versions/v02_1_before_disjoint_context_matching",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/final_numeric_validation.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/data/panel.jsonl",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/final_numeric_validation.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/results/blind_texts.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/evidence/blind_merge_map.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/fixed_case_raw.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/results/predictions.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results/predictions_diagnostic.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results/fitted_models.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results/predictions_diagnostic.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results/fitted_models.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results/predictions_diagnostic.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results/fitted_models.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/shared/H4_enrichment_views.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H3/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H4/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H3/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H4/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H3/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H4/conclusion_update_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/START_PROMPT.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/panel.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/data_manifest.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/models/input_fingerprints.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/rawcache",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/frequency/frequency_table.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/frequency/cache_fingerprints.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/config/candidates_frozen.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/results/configurations_frozen.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H3/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/results/blind_texts.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/results/semantic_labels.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/final_numeric_validation.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/versions",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/code",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results/predictions_diagnostic.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results/fitted_models.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results/predictions_diagnostic.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results/fitted_models.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results/predictions_diagnostic.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/conclusion_update.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results/fitted_models.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H3/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H4/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H3/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H4/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H3/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H4/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S01_explicit_singularity_36/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S01_explicit_singularity_36/casebook_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S02_animal_cat_dog_12/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S02_animal_cat_dog_12/casebook_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/data_casebook_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/data_casebook_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/focused_14602_3516_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/detailed_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/README.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/data_casebook_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H3/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H4/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H3/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H4/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H3/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H4/conclusion_update.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/inputs/NEXT_ROUND_PROMPT.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/input_recovery.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/shared",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/candidates_frozen_before_fresh.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/shared/cache",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results/native_fresh_locked.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results/native_corrected_old.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/shared/H4_enrichment_views.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/H4_source_retrieval.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/final_numeric_validation.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/final_numeric_validation.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/execution_certificate.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_update_20261104_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_update_20261031_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_context_relation_organization_use_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_18_context_relation_organization_use/15_18_context_relation_organization_use_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/protocol_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A01_common_operator",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A05",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A09",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A10",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A12",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A13",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A14",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A16",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/organization_migrations/20261022/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/datasets/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/stories",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/PROJECTS.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_crosscoder_context_computation_dependency_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_03_context_computation_dependency_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_natural_language_feature_response_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/15_27_natural_language_feature_response_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R06_fixed_target_semantics_20261028/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/summary_A02_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_sentence_feature_continuation_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_28_sentence_feature_continuation/15_28_sentence_feature_continuation_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_28_sentence_feature_continuation/R01_cached_sentence_pairs/one_page_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_within_mixed_domain_subspaces.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_02_within_mixed_subspaces_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R08_within_mixed_subspaces_20261029/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_03_domain_difference_decomposition_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_06_common_members_extra_responses_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_08_cross_frequency_complement_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_09_rare_configurations_content_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_update_20261104.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_update_20261031.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_context_relation_organization_use.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_18_context_relation_organization_use/15_18_context_relation_organization_use_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A01_common_operator",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A05",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A09",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A10",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A12",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A13",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A14",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A16",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/organization_migrations/20261022/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/datasets/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/stories",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/PROJECTS.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_crosscoder_context_computation_dependency_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_03_context_computation_dependency_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_natural_language_feature_response.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/15_27_natural_language_feature_response_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R06_fixed_target_semantics_20261028/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/summary_A02.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_sentence_feature_continuation.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_28_sentence_feature_continuation/15_28_sentence_feature_continuation_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_28_sentence_feature_continuation/R01_cached_sentence_pairs/one_page.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_fixed_target_domain_spectrum.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_01_fixed_target_domain_spectrum_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_within_mixed_domain_subspaces.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_02_within_mixed_subspaces_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R08_within_mixed_subspaces_20261029/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_03_domain_difference_decomposition_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_spectral_semantic_granularity.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_spectral_hierarchical_router_curriculum.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_29_spectral_hierarchical_router_curriculum/15_29_spectral_hierarchical_router_curriculum_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_29_spectral_hierarchical_router_curriculum/R01_progressive_vs_full/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/subanchors/15_27_05_01_checkpoint_spectral_dynamics_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_06_common_members_extra_responses_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_08_cross_frequency_complement_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_09_rare_configurations_content_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    }
+  ],
+  "limitations": [
+    "No recursive history or raw worker data is copied.",
+    "Owner fields, inline links and single-line reference definitions are inventoried. Other literal code paths remain source text.",
+    "Heading fragments are retained; support depends on the reader. Search headings or open the listed file path if needed.",
+    "Exact originals in sources/ retain original links. Use documents/ for rebased portable links.",
+    "Formulas retain original TeX. The bundle does not rewrite explanations or prove scientific correctness.",
+    "Inline remote images become source links. Reference-style remote images and raw HTML remain original source syntax; no browser is required."
+  ]
+}

@@ -1,0 +1,52 @@
+# A15_27_05_01: Dense checkpoint spectral dynamics, 0.5B–33B training tokens
+
+## 1. Problem Definition
+
+During the existing native Dense trajectory, do variance scale, variance allocation, principal subspaces, paired-text relations and externally labeled readability become approximately stable at the same training progress? The parent [spectral position and semantic granularity Anchor](../15_27_05_spectral_semantic_granularity_anchor.md) established only frozen Qwen observations. Its results cannot answer this Dense dynamics question. The researcher activated this bounded extension on 1 November 2026 and explicitly authorized design, audit, smoke and formal read-only analysis. Here B denotes one billion cumulative valid prediction tokens; the model has 281,431,040 parameters. No new language model or dictionary is trained. The decision is whether the observed temporal ordering warrants a dynamics explanation of the proposed head/middle/tail division; architecture utility remains separately untested.
+
+## 2. Physical Priors
+
+This analysis assumes paired inputs and compatible model coordinates along one documented training lineage. It does not assume that variance rank is a semantic hierarchy or that the last checkpoint is converged. Finite text sampling can produce apparent direction drift, particularly across nearly equal eigenvalues. A second live rival is coordinate rotation that preserves sample relations.
+
+## 3. Falsifiable Hypotheses
+
+The researcher asks three independent questions: A, whether variance scale and allocation stabilize; B, whether the directions carrying variance continue rotating; C, whether paired-text relations and classification information stabilize despite rotation. A possible head-before-middle/tail ordering is a conjecture, not a prerequisite. Continued changes, reversals, absent incremental readability or differences comparable to sampling variation weaken that explanation or leave it insufficient. No positive ordering is forced.
+
+## 4. Mathematical Model
+
+One observation is the hidden vector at a fixed natural token position in a fixed document prefix. At training progress t, reference vectors form H_t with N rows and 1024 columns. Its own reference mean is mu_t. The centered covariance and its ordered eigenvalues are
+
+\[
+X_t=H_t-\mathbf1\mu_t^T,\qquad C_t=X_t^TX_t/(N-1)=V_t\operatorname{diag}(\lambda_t)V_t^T.
+\]
+
+The singular values of X_t are s_i=sqrt((N-1)lambda_i), not lambda_i. Total variance is trace(C_t); normalized eigenvalues p_i=lambda_i/trace(C_t) describe allocation; effective rank is exp(-sum_i p_i log p_i). These are descriptive estimators, not learning objectives.
+
+For two equal-dimensional orthonormal bases U and V, singular values of U^TV give cosines of principal angles, and sqrt(1-||U^TV||_F^2/k) is the normalized projection distance. All 1024 dimensions span the entire space and are excluded as evidence of direction stability. Linear centered CKA compares paired evaluation sample relations. Reference-only orthogonal Procrustes minimizes ||X_t R-X_33||_F with R^TR=I and det(R)=+1; independent evaluation residuals retain scale differences because no scaling is fitted. Fixed V_33 projected variances diag(V_33^T C_t V_33) describe variance in endpoint directions and are not the early checkpoint's eigenvalues. Logistic readouts separately refit each checkpoint and basis on the same labeled TRAIN and DEVELOPMENT splits.
+
+## 5. Computational Realization
+
+Freeze the twelve actually readable compatible states and their source hashes in [manifest.json](../checkpoint_spectral_dynamics/manifest.json). Preserve absent payloads as missing. Use the native eight-block model's final_raw_h, the last block residual-post before norm. Existing pre_mlp_input caches are a different location and are not reused as this tensor. A 2,048-record N8 natural-text panel contributes 32 positions per 256-token prefix; 1,024 reference and 1,024 evaluation records give 32,768 vectors each, equal record weights. Paper-level identity is unavailable, so record grouping is an explicit approximation. Reference means, covariance bases and alignment never fit evaluation samples. R12's separate 96-document common-the panel retains its exact 192-token sequences, positions, labels and document-family splits. It supplies a Dense semantic bridge, not Qwen activations or a large covariance sample.
+
+Compare adjacent and endpoint-relative raw subspaces at ranks16/64/128/256 and equal 64D head1–64, middle481–544, tail961–1024. Compare raw drift, aligned drift and CKA side by side. Early/mid/late are fixed at0.5/17/33B; only these points receive block0/3 supplements and labeled readouts. Deterministic paired reference splits quantify estimator sensitivity. [Protocol](../../../../../experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/protocol.md) freezes computation, fit boundaries, controls, resource budget and stop rules.
+
+## 6. Minimal Falsification Tests
+
+Numerical calibration must separate identity, pure orthogonal rotation, scaling and sample permutation: equal spectra do not imply fixed raw directions; scale-invariant CKA does not imply equal variance. The primary descriptive evidence is the vector of adjacent distances and distances per actual billion training tokens, checked against paired document-split variability. No universal stability tolerance is justified, so this round reports curves and 0.5/1/2-times sampling-reference sensitivity, without declaring an onset time. Eight fixed paired reference splits at early/mid/late and a deterministically selected largest spectral-rate turn provide uncertainty references. This is sampling sensitivity, not eight model replicates or a calibrated population confidence interval. Positive readout increments require paired heldout intervals above zero and Holm correction across prespecified increments. Wide intervals, weak full-space readability, unresolved eigengaps or missing checkpoints yield explicit insufficiency.
+
+## 7. Current Evidence
+
+The bounded analysis is complete:12 readable Dense states,32768 reference and 32768 evaluation vectors,18 layer-states and 126 readout conditions.31→33B trace changes 86733.1→83565.4(−3.65%);normalized-spectrumTV0.03068 versus 33B half-split median 0.00721. Raw top 16/top 64 distances 0.4409/0.3948;middle/tail 0.8425/0.5991 versus sampling references 0.8800/0.6617, so the latter timing is not reliably resolved. Evaluation CKA0.95503 and raw/proper-rotation-aligned residual 0.60855/0.35742 show a rotational component with remaining change. Own-basis domain head accuracy 94.6/94.7/94.7% at 0.5/17/33B;math-fine full-space 61.1/88.9/83.3%, with insufficient first-point evidence;biology-fine full-space 83.3/100/100%.0/36 primary matched-dimension middle/tail increments pass Holm correction. These are observations and bounded AIinterpretation, not researcher mechanism acceptance.
+
+The[Summary](../../../../../experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/summary.md)explains the five separate answers;[Detailed](../../../../../experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/detailed.md)owns provenance, procedure, failures and amendments. A01 restricts alignment to det(R)=+1;A02 removes ungrounded nominal grid examples without changing the 12 measured states. Eight manifested missing payloads remain explicit.
+
+## 8. Claim Boundary And Next Decision
+
+A head-first, middle/tail-later stabilization order is not established, weakening its use as an already-proven dynamics explanation. The result does not rule out a real temporal division or judge unfinished routing-training utility. Claims concern this one Dense trajectory, fixed academic corpus and pre-final-norm interface. Record-level independence approximation, R12 historical exposure and small fine-task Hlimit semantic interpretation. Half-split sensitivity does not mean tail directions never stabilize. No onset is estimated;33B is not a final convergence truth. Readability, sample relations, original directions and native function remain separate.
+
+The one researcher decision is whether to retain the proposed temporal division as a dynamics hypothesis after reviewing curves, sampling and label limitations. Completion requires the researcher's bounded judgment;resume from the Summary and coverage ledger. Scientific acceptance and closure remain Unknown;engineering analysis is complete. No new experiment is automatically activated.
+
+
+### W01: user-activated native weight follow-up, 2026-11-01
+
+The researcher explicitly selected native model weights as the next object,distinct from text representations. All57unique2Dmatrices across the12readable checkpoints have a separate[Protocol](../../../../../experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/weight_spectral_dynamics/protocol.md) and[measurement record](../../../../../experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/weight_spectral_dynamics/summary.md);left/output and right/input singular directions and leading64spaces are measured separately without centering or text sampling. This navigation records activated scope and factual completion only. It does not replace the representation evidence above or confer scientific acceptance. Conditional tolerance times and unresolved leading directions remain in their owning tables;researcher interpretation and any final convergence judgment are pending interactive review.

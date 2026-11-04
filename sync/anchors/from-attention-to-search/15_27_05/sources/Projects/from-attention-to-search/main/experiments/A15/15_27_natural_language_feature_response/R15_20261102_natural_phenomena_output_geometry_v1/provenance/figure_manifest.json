@@ -1,0 +1,62 @@
+[
+  {
+    "figure": "01_phenomena_band_map",
+    "question": "哪些可见文本属性关联特定谱段，匹配后是否仍可复现？",
+    "sources": "validation_band_map.csv;validation_document_effects.csv;validation_matched_positions.csv",
+    "model": "frozen officialQwen3-0.6B-Base;A22joint14layers",
+    "unit": "document;nottoken",
+    "label_version": "1.2",
+    "source_claim": "DCLMwebpagecohorts;mayA22trainingexposed",
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl"
+  },
+  {
+    "figure": "02_representation_output_geometry",
+    "question": "表征方差方向与有效输出敏感方向如何对应？",
+    "sources": "representation_head_spectra.csv;representation_head_subspace_overlap.csv;head_gain_reference.json",
+    "model": "frozen officialQwen3-0.6B-Base;A22joint14layers",
+    "unit": "document;nottoken",
+    "label_version": "1.2",
+    "source_claim": "DCLMwebpagecohorts;mayA22trainingexposed",
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl"
+  },
+  {
+    "figure": "03_actual_text_change_output_gain",
+    "question": "真实语言现象配对的变化，是幅度大还是方向更容易被读出？",
+    "sources": "validation_actual_changes.csv;validation_matched_positions.csv;head_gain_reference.json",
+    "model": "frozen officialQwen3-0.6B-Base;A22joint14layers",
+    "unit": "document;nottoken",
+    "label_version": "1.2",
+    "source_claim": "DCLMwebpagecohorts;mayA22trainingexposed",
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl"
+  },
+  {
+    "figure": "04_frozen_explanations_validation",
+    "question": "发现的feature关联能否预测独立文本响应？",
+    "sources": "validation_selected_verdicts.csv;validation_selection_frozen.json;validation_source_robustness.csv",
+    "model": "frozen officialQwen3-0.6B-Base;A22joint14layers",
+    "unit": "document;nottoken",
+    "label_version": "1.2",
+    "source_claim": "DCLMwebpagecohorts;mayA22trainingexposed",
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl"
+  },
+  {
+    "figure": "A01_word_form_descriptive",
+    "question": "发现视图的数字／标点／空白响应有多大词面成分？",
+    "sources": "descriptive_token_category_summary.csv;descriptive_token_category_document_effects.csv",
+    "model": "frozen officialQwen3-0.6B-Base;A22joint14layers",
+    "unit": "document;nottoken",
+    "label_version": "1.2",
+    "source_claim": "DCLMwebpagecohorts;mayA22trainingexposed",
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl"
+  },
+  {
+    "figure": "05_signed_direction_exploratory",
+    "question": "能量表未建立集中，是否仍有正负方向的文本关联？",
+    "sources": "signed_direction_validation.csv;signed_direction_sensitivity.csv;amendmentsA6",
+    "model": "frozen officialQwen3-0.6B-Base;A22joint14layers",
+    "unit": "document;nottoken",
+    "label_version": "1.2",
+    "source_claim": "DCLMwebpagecohorts;mayA22trainingexposed",
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/documents.jsonl"
+  }
+]

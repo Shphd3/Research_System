@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "split": "discovery",
+      "ending": "example",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 1.527931984134258e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.00216512349782355
+    },
+    {
+      "split": "discovery",
+      "ending": "explanation",
+      "closure_max": 0.0,
+      "signed_closure_abs": 2.220446049250313e-16,
+      "mean_decode_commutation_abs": 1.4018333558196995e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.0018888942444032488
+    },
+    {
+      "split": "discovery",
+      "ending": "all",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 1.9010581621511306e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.0017212820520546815
+    },
+    {
+      "split": "development",
+      "ending": "example",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 1.3682214319105453e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.002366707667475724
+    },
+    {
+      "split": "development",
+      "ending": "explanation",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 8.264135422265623e-14,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.002876215108536191
+    },
+    {
+      "split": "development",
+      "ending": "all",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 1.1887816661452152e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.0020514738773096735
+    },
+    {
+      "split": "heldout",
+      "ending": "example",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 1.3587288577001196e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.002701670740028002
+    },
+    {
+      "split": "heldout",
+      "ending": "explanation",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 7.728106446650966e-14,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.003606706919426936
+    },
+    {
+      "split": "heldout",
+      "ending": "all",
+      "closure_max": 0.0,
+      "signed_closure_abs": 0.0,
+      "mean_decode_commutation_abs": 1.9308385818462273e-13,
+      "bf16_cpu_decode_rounding_relative_to_delta": 0.0025088980386366168
+    }
+  ],
+  "native_normalization_scale": 374.3495121024576,
+  "native_decoder": "FP32 saved learned decoder, FP64 linear analysis; BF16 weight-rounding discrepancy separately measured",
+  "no_forward": true,
+  "no_training": true,
+  "shared_z_shape": [
+    384,
+    16384
+  ],
+  "true_last_h_exact_R7": true,
+  "all_finite": true
+}

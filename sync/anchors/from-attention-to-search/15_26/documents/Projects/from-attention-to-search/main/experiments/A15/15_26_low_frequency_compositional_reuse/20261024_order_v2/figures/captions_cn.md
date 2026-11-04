@@ -1,0 +1,16 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/figures/captions_cn.md`。
+[精确原始文件](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/figures/captions_cn.md)；研究修改仍回到原件。
+
+---
+
+# 三张主图：来源、读法与边界
+
+图1｜每个面板是一个独立微调父种子；每点是对应组成任务的原生严格生成准确率，虚线为预定95%验证资格线。训练点只来自固定128例/项的训练措辞诊断；验证与测试分开。缺失点不补零。来源：tables/figure01_order_components.csv。读法：逐项比较，不能用其他任务高分补偿折扣等单项失败。训练高分与留出落差不单独定位内部原因，也不是内部复用证据。
+
+图2｜前四面板按实际metrics逐步累加new_examples，显示P-J直接联合学习轨迹的验证准确率；不含旧单项回放，连线只连接已保存评价点，点线不是未测步骤。四类各90%和总体95%须合取，图中90%虚线不代替总体条件。第五面板按折扣百分数列父模型固定终点S2a验证误答；分母见CSV。各种子独立显示。来源：tables/figure02_order_learning.csv。这里没有合格P/B/C迁移比较，不能由学习曲线称组成复用成立；折扣分层只能提供下一原因假设。
+
+图3｜前三类点评价相同256个单操作映射的训练措辞0、验证措辞1、测试措辞2，措辞留出不是知识留出。后两类点使用完整组合测试的额外两次原生调用，或给真实中间符号；其计算/信息优势须单列，不能当单次组合模型的公平基线。来源：tables/figure03_symbolic_controls.csv。缺失诊断不补零；同映射的措辞落差可约束“只看训练损失”的解释，但不证明新操作不可学或内部复用不存在。
+
+当前缺失：无缺失固定终点；具体诊断缺值仍按图保留。
+
+图像仅保存实际已到达终点/评价点，刷新不会选择最优点。v1负端点另存tables/figure_appendix_v1_fixed_endpoints.csv，不混入v2-expanded主图。

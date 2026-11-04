@@ -1,0 +1,34 @@
+{
+  "reference_positions": 65536,
+  "reference_windows": 256,
+  "reference_canonical_docs": 254,
+  "panel_positions": 19200,
+  "correlations": {
+    "all": {
+      "spearman": 0.021647413252785252,
+      "n": 32,
+      "document_bootstrap_interval": [
+        -0.013770730768999907,
+        0.04734905598615749
+      ]
+    },
+    "math": {
+      "spearman": -0.10007361060989424,
+      "n": 16,
+      "document_bootstrap_interval": [
+        -0.1605303655536629,
+        -0.05073584890847215
+      ]
+    },
+    "biology": {
+      "spearman": -0.014738429531859927,
+      "n": 16,
+      "document_bootstrap_interval": [
+        -0.0589973068344131,
+        0.025208002615229673
+      ]
+    }
+  },
+  "unseen_rule": "exclude unseen IDs from frequency quantiles; report unseen count/share separately; no pseudocount and never log(0)",
+  "example_rule": "two high, two median-active, up to two same-token low; maximum2 examples/document/member; only read prefix through current position"
+}

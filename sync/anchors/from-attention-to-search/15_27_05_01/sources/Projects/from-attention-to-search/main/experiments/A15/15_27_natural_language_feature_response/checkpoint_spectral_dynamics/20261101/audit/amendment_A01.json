@@ -1,0 +1,14 @@
+{
+  "amendment": "A01",
+  "time": "2026-11-01T03:07:47.968353+00:00",
+  "before": "R^TR=I;unconstrained orthogonal Procrustes O(d),allowing reflections",
+  "after": "R^TR=I and det(R)=+1;proper rotation SO(d);no fitted scaling",
+  "reason": "Implement researcher explicit rotation-only constraint literally;direction-sign indeterminacy is not permission to reflect the coordinate system",
+  "already_visible": "All raw activation caches and spectra;partial paired CKA/direction metrics;some saved R had negative determinant. No semantic readout result used for this correction.",
+  "affected": "Only aligned residuals and aligned subspace metrics for pairs with det(R)<0;raw spectra/directions/CKA,means,inputs,splits,readout capacity and selection unchanged.",
+  "authorization": "Existing explicit request requires rotation-only Procrustes and complete audited analysis;in-scope correction,no new model forwards or GPU allocation",
+  "eligibility": "Original negative-determinant aligned results superseded and excluded from final evidence;positive-det results numerically unchanged;all final R must pass det+1 audit",
+  "implementation": "R=U diag(1,...,det(UV^T)) V^T from reference crossmoment SVD;synthetic rotation calibration also restricted to positive determinant",
+  "resource": "Cached CPU recomputation only;original two-GPU allocation not expanded",
+  "initial_freeze": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/freeze.json"
+}

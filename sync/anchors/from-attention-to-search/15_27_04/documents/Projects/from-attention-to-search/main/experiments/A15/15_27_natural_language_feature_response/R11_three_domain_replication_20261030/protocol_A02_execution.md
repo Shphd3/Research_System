@@ -1,0 +1,22 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/protocol_A02_execution.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/protocol_A02_execution.md)；研究修改仍回到原件。
+
+---
+
+# R11 A02: execute the original three-domain contract
+
+[中文](protocol_A02_execution_cn.md) · [Original exact contract](../../../../../../../../UNAVAILABLE.md) · [Original numerical configuration](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/config.proposed.json)
+
+The researcher explicitly requested: continue qualifying math,biology,and physics data;complete the original three-domain experiment;replace the report's two-domain results with actual three-domain frequency,spectral-position,and all three pairwise-overlap results. This authorizes data completion,engineering checks,and the original bounded450-document study. It does not authorize training,new dictionaries,interventions,routing,extra domains,new compute reservations,or a larger forward budget.
+
+This amendment supersedes the original planning-only authorization snapshot. All scientific counts,selection/support rules,splits,operational margins,uncertainty procedures,and stop conditions remain as written in the original Protocol. Its proposed values are operationally adopted for this execution by “按原方案完成”,not retrospectively validated scientific truths. Scientific acceptance and closure remain Unknown.
+
+Execution folder: `/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02`. The global R11forward ledger remains one file in its parent,with a cap of462including failed attempts. A01historical-cache outputs remain intact and cannot substitute for new domain observations.
+
+Data completion is blind to new model responses. Collect bounded additional raw shards from the same public DCLM repository,pin the source revision,and collect public cross-domain QA sources where necessary. Save original source bytes,identities,extraction spans,and failures. Register actually downloaded sources before analysis reuse. No source/genre/topic quota is relaxed. Broad source-recall terms are not feature-screening thresholds. Independent content review is a separate activation-blind AI reading pass;do not claim human review that did not occur. Ambiguous or unusable text is rejected before inference with a reason. One original article/book/question family contributes one192-token excerpt only.
+
+Data must pass450-document,topic,genre,platform/family,old-family,near-duplicate,and independent-split gates before any model calls. The CC-only adapter reuses R04native joint encoding,shared z,TRAINnormalization,norm-weighted saved gate,BF16GEMMs,SDPA,and256/1024padding. Four exact old-document replay calls plus eight disjoint pilots consume the12engineering ceiling. A numerical mismatch stops for diagnosis without automatic tolerance relaxation. D/V precede membership,basis,and analysis freeze;Hforwards require verified freeze hashes.
+
+The existing single allocated GPU is the only GPU resource;no new reservation. Preserve the proposed2GPU-hour and12CPU-hour ceilings;record any resource-limited aggregate as insufficient under the original rule rather than report a truncated favorable interval. Persist completed independent descriptive statistics even if a dependent contrast lacks support.
+
+Three audit records will distinguish scientific identification,data/statistics,and implementation/numerics. At opening,all new model measurements are NOT RUN. Reports will present “认识更新” above supporting observations and clear plots,while preserving negative,empty,or insufficient groups. The user's screenshot specifies the communication target;its old numeric conclusions are not instructions to reproduce a positive result.

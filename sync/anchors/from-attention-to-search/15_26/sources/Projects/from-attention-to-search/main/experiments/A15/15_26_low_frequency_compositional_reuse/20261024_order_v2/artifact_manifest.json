@@ -1,0 +1,91 @@
+{
+  "created_at_utc": "2026-10-24T17:01:43.125383+00:00",
+  "scope": "Bounded curated evidence exception; no raw JSONL, model, cache, checkpoint or font is copied into the research project.",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2",
+  "producer": {
+    "figures": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/source/make_figures.py",
+    "paired_evidence": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/source/interpretation_support.py",
+    "scientific_body_sha256": "50517762ebf4be79d5f029f4e0234930ef529b72a7ffae1f30fa91f54cc2ddf3"
+  },
+  "selected_payloads": [
+    {
+      "path": "figures/01_order_component_qualification.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/figures/01_order_component_qualification.png",
+      "sha256": "4568b925bfaf633d3bcbd2ac8755648798b075fe962886c533664f43eef30615",
+      "bytes": 91839,
+      "purpose": "Static scientific figure, font excluded"
+    },
+    {
+      "path": "figures/02_order_joint_qualification.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/figures/02_order_joint_qualification.png",
+      "sha256": "71d964eff46df752d949312613986867124d9fecfae98f718eacd1665e318472",
+      "bytes": 239361,
+      "purpose": "Static scientific figure, font excluded"
+    },
+    {
+      "path": "figures/03_symbolic_wording_controls.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/figures/03_symbolic_wording_controls.png",
+      "sha256": "59ad793c9ed89e9278c35e49728ebd5ee8860d4037205c5ff0c4d0723338c518",
+      "bytes": 73643,
+      "purpose": "Static scientific figure, font excluded"
+    },
+    {
+      "path": "tables/figure01_order_components.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/tables/figure01_order_components.csv",
+      "sha256": "68dd554dd61f782c22080fc5c35a2623a1fad03f4c265cdf68ad4b04a2d170ce",
+      "bytes": 8828,
+      "purpose": "Small exact figure-source table"
+    },
+    {
+      "path": "tables/figure02_order_learning.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/tables/figure02_order_learning.csv",
+      "sha256": "3eb88a60a189c3fcbed4e49e7d92284499889caabe4be91fd78393cfa30e4c30",
+      "bytes": 25667,
+      "purpose": "Small exact figure-source table"
+    },
+    {
+      "path": "tables/figure03_symbolic_controls.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/tables/figure03_symbolic_controls.csv",
+      "sha256": "3ee01b422c38b3a0b657908cd6009a7a63a66845773211c9fdcf53a20676cc7b",
+      "bytes": 3319,
+      "purpose": "Small exact figure-source table"
+    },
+    {
+      "path": "tables/figure_appendix_v1_fixed_endpoints.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/tables/figure_appendix_v1_fixed_endpoints.csv",
+      "sha256": "7f6b163e0194060bf0ca443bcef7992c2b851c97053173a6ef556bba2084d628",
+      "bytes": 2309,
+      "purpose": "Small exact figure-source table"
+    },
+    {
+      "path": "tables/interpretation_support.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/analysis/interpretation_support.json",
+      "sha256": "f5907f68c71f9dd66bc0213b22b9cac3b12a4ca59f133d916acdcb0b34a44585",
+      "bytes": 9574,
+      "purpose": "Selected small final provenance/evidence; raw execution remains outside Git"
+    },
+    {
+      "path": "figures/captions_cn.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/figures/captions_cn.md",
+      "sha256": "4e92d8bb282062d8d96ef541b348d562d0664c5b2006c89e9f8d9bce2fc85f53",
+      "bytes": 1837,
+      "purpose": "Selected small final provenance/evidence; raw execution remains outside Git"
+    },
+    {
+      "path": "sources/final_audit_receipt.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/audit/final_audit_receipt.json",
+      "sha256": "cb86cbdd0ebb0aa811ea4a636d909263f58c4756c0d576843c0ebb222019d302",
+      "bytes": 3739,
+      "purpose": "Selected small final provenance/evidence; raw execution remains outside Git"
+    },
+    {
+      "path": "sources/result_manifest.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/result_manifest.json",
+      "sha256": "1f8ae00e5c2f14c5ee0101dbabb0d45fd581bc13b41b1ce968b1086be9a499e7",
+      "bytes": 8054,
+      "purpose": "Selected small final provenance/evidence; raw execution remains outside Git"
+    }
+  ],
+  "actual_asset_handoff": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/provenance/final_registration_handoff.json",
+  "eligibility": "Qualification and bounded descriptive results; no identified internal reuse or S4-S6 utility conclusion."
+}

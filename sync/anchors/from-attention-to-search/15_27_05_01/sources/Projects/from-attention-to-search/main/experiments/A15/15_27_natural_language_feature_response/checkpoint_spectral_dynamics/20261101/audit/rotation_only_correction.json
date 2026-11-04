@@ -1,0 +1,291 @@
+{
+  "status": "PASS_PROPER_ROTATIONS_ONLY",
+  "amendment": "A01",
+  "ended_at": "2026-11-01T03:11:55.593124+00:00",
+  "corrected_pairs": 6,
+  "all_unique_alignment_matrices": 30,
+  "deltas": [
+    {
+      "tokens": 10000000000,
+      "comparison_tokens": 33000000000,
+      "layer": 7,
+      "old_aligned_eval_residual": 0.6195714189178507,
+      "new_aligned_eval_residual": 0.6195826982173096,
+      "raw_metric_absolute_differences": {
+        "absolute_spectrum_l2": 0.0,
+        "relative_absolute_spectrum_l2": 0.0,
+        "normalized_spectrum_TV": 0.0,
+        "mean_drift": 0.0,
+        "raw_eval_relative_residual": 6.8833827526759706e-15,
+        "cka": 7.771561172376096e-15
+      }
+    },
+    {
+      "tokens": 1000000000,
+      "comparison_tokens": 33000000000,
+      "layer": 7,
+      "old_aligned_eval_residual": 0.7396339574421646,
+      "new_aligned_eval_residual": 0.7396326697525806,
+      "raw_metric_absolute_differences": {
+        "absolute_spectrum_l2": 3.637978807091713e-12,
+        "relative_absolute_spectrum_l2": 2.220446049250313e-16,
+        "normalized_spectrum_TV": 0.0,
+        "mean_drift": 5.684341886080802e-14,
+        "raw_eval_relative_residual": 3.26405569239796e-14,
+        "cka": 1.887379141862766e-15
+      }
+    },
+    {
+      "tokens": 15000000000,
+      "comparison_tokens": 33000000000,
+      "layer": 7,
+      "old_aligned_eval_residual": 0.5589381498874714,
+      "new_aligned_eval_residual": 0.5589393235697847,
+      "raw_metric_absolute_differences": {
+        "absolute_spectrum_l2": 9.094947017729282e-13,
+        "relative_absolute_spectrum_l2": 5.551115123125783e-17,
+        "normalized_spectrum_TV": 0.0,
+        "mean_drift": 2.842170943040401e-14,
+        "raw_eval_relative_residual": 1.2434497875801753e-14,
+        "cka": 6.439293542825908e-15
+      }
+    },
+    {
+      "tokens": 3000000000,
+      "comparison_tokens": 33000000000,
+      "layer": 7,
+      "old_aligned_eval_residual": 0.6890878958296832,
+      "new_aligned_eval_residual": 0.6890859960399582,
+      "raw_metric_absolute_differences": {
+        "absolute_spectrum_l2": 0.0,
+        "relative_absolute_spectrum_l2": 0.0,
+        "normalized_spectrum_TV": 0.0,
+        "mean_drift": 0.0,
+        "raw_eval_relative_residual": 3.2862601528904634e-14,
+        "cka": 2.886579864025407e-15
+      }
+    },
+    {
+      "tokens": 500000000,
+      "comparison_tokens": 17000000000,
+      "layer": 3,
+      "old_aligned_eval_residual": 0.9619210873370885,
+      "new_aligned_eval_residual": 0.9619212854250115,
+      "raw_metric_absolute_differences": {
+        "absolute_spectrum_l2": 3.637978807091713e-12,
+        "relative_absolute_spectrum_l2": 0.0,
+        "normalized_spectrum_TV": 0.0,
+        "mean_drift": 0.0,
+        "raw_eval_relative_residual": 1.554312234475219e-14,
+        "cka": 1.3183898417423734e-16
+      }
+    },
+    {
+      "tokens": 500000000,
+      "comparison_tokens": 33000000000,
+      "layer": 3,
+      "old_aligned_eval_residual": 0.9893115227248309,
+      "new_aligned_eval_residual": 0.9893112500783078,
+      "raw_metric_absolute_differences": {
+        "absolute_spectrum_l2": 7.275957614183426e-12,
+        "relative_absolute_spectrum_l2": 4.440892098500626e-15,
+        "normalized_spectrum_TV": 0.0,
+        "mean_drift": 7.105427357601002e-15,
+        "raw_eval_relative_residual": 1.8207657603852567e-14,
+        "cka": 4.579669976578771e-16
+      }
+    }
+  ],
+  "determinant_checks": [
+    {
+      "file": "10000000000_15000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 4.227868055650674e-14,
+      "orthogonality_error": 1.6909746035754237e-13
+    },
+    {
+      "file": "10000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -1.4488410471358293e-14,
+      "orthogonality_error": 1.749472221807574e-13
+    },
+    {
+      "file": "1000000000_3000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 3.5235703244040906e-14,
+      "orthogonality_error": 1.6248339593564473e-13
+    },
+    {
+      "file": "1000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -1.4788170688007085e-13,
+      "orthogonality_error": 1.6634577982114246e-13
+    },
+    {
+      "file": "15000000000_17000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -7.719519468096792e-15,
+      "orthogonality_error": 1.7370752437085928e-13
+    },
+    {
+      "file": "15000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -9.514611321037592e-14,
+      "orthogonality_error": 1.7490592909183614e-13
+    },
+    {
+      "file": "17000000000_19000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -2.877906246645523e-14,
+      "orthogonality_error": 1.736583542247546e-13
+    },
+    {
+      "file": "17000000000_33000000000_layer0.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 2.2537527399890678e-14,
+      "orthogonality_error": 1.6622887858507219e-13
+    },
+    {
+      "file": "17000000000_33000000000_layer3.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 2.615963001773025e-14,
+      "orthogonality_error": 1.7423063810219808e-13
+    },
+    {
+      "file": "17000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -7.528699885739343e-14,
+      "orthogonality_error": 1.6602952578467985e-13
+    },
+    {
+      "file": "19000000000_21000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 5.0345144719798895e-14,
+      "orthogonality_error": 1.681365508030237e-13
+    },
+    {
+      "file": "19000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -1.0935696792557792e-14,
+      "orthogonality_error": 1.7689268470726233e-13
+    },
+    {
+      "file": "21000000000_22018691584_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 8.47585890362268e-15,
+      "orthogonality_error": 1.695183665464734e-13
+    },
+    {
+      "file": "21000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 4.718447854656915e-15,
+      "orthogonality_error": 1.6936032440401004e-13
+    },
+    {
+      "file": "22018691584_31000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -3.679695437242003e-14,
+      "orthogonality_error": 1.747925885234572e-13
+    },
+    {
+      "file": "22018691584_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -5.33739719088544e-14,
+      "orthogonality_error": 1.6722423022688665e-13
+    },
+    {
+      "file": "3000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 1.1252110354575962e-13,
+      "orthogonality_error": 1.686555439816794e-13
+    },
+    {
+      "file": "3000000000_5000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -3.2807090377673376e-14,
+      "orthogonality_error": 1.7045656259542718e-13
+    },
+    {
+      "file": "31000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 7.011752289898254e-15,
+      "orthogonality_error": 1.7115852738431394e-13
+    },
+    {
+      "file": "33000000000_33000000000_layer0.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 0.0,
+      "orthogonality_error": 0.0
+    },
+    {
+      "file": "33000000000_33000000000_layer3.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 0.0,
+      "orthogonality_error": 0.0
+    },
+    {
+      "file": "33000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 0.0,
+      "orthogonality_error": 0.0
+    },
+    {
+      "file": "5000000000_10000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 3.788636071533347e-14,
+      "orthogonality_error": 1.6561750109977204e-13
+    },
+    {
+      "file": "5000000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -7.66053886991358e-15,
+      "orthogonality_error": 1.675455008384167e-13
+    },
+    {
+      "file": "500000000_1000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -4.063416270128073e-14,
+      "orthogonality_error": 1.6627063420852323e-13
+    },
+    {
+      "file": "500000000_17000000000_layer0.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 4.46975789714088e-13,
+      "orthogonality_error": 1.6064295594582728e-13
+    },
+    {
+      "file": "500000000_17000000000_layer3.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": 3.333999742949345e-13,
+      "orthogonality_error": 1.6792829976302598e-13
+    },
+    {
+      "file": "500000000_33000000000_layer0.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -6.3815619455454e-13,
+      "orthogonality_error": 1.6004720562238288e-13
+    },
+    {
+      "file": "500000000_33000000000_layer3.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -3.9879211044535623e-13,
+      "orthogonality_error": 1.7034824297716047e-13
+    },
+    {
+      "file": "500000000_33000000000_layer7.npz",
+      "determinant_sign": 1.0,
+      "log_absolute_determinant": -1.0302869668521453e-13,
+      "orthogonality_error": 1.6346014435134698e-13
+    }
+  ],
+  "language_model_updates": 0,
+  "new_forwards": 0,
+  "new_GPU_allocations": 0,
+  "compute": "CPU cached recomputation;no new parameter/split/threshold selection",
+  "old_metrics_code_sha256": "ed1eead57f9cd8e7f7359294a202a91567dad1fba35c26f22afd90f592bd976f",
+  "current_source_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/metrics.py": "ef036b53c6084e15e860bb1951c8a5de68a579fb984abed90a08907baf0c8544",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/calibrate.py": "3d86de203bc0df81e5f76193cea1cb9afc442ade60ebef2d59ced616a8b4bd80",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/correct_rotation_only.py": "09154a062911e3f84c4068cdcff13c50b1e679055cb42b3720693b13207fbff3"
+  }
+}

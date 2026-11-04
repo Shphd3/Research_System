@@ -1,0 +1,93 @@
+{
+  "UTC": "2026-11-03T14:43:22.616187+00:00",
+  "status": "PASS",
+  "body_changes": 0,
+  "old_files_unchanged": 212,
+  "candidate_reselection": 0,
+  "selection_unchanged": true,
+  "tokenization_rows": 24,
+  "candidate_token_sums": 48,
+  "H2_pair_replays": 72,
+  "direction_count_rows": 96,
+  "candidate_value_replays": 2304,
+  "support_transition_replays": 192,
+  "S03_H2_old_q_exact": true,
+  "sites": {
+    "ATTN_SAE": {
+      "rows": 24,
+      "all_positive_counts": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "zero_norm_by_list": {
+        "H1_common": 0,
+        "H1_added_cat": 9,
+        "H1_added_dog": 9,
+        "H2": 0
+      },
+      "min_Top32_margin": 6.67572021484375e-05,
+      "exact_Top32_boundary_ties": 0
+    },
+    "MLPIN_SAE": {
+      "rows": 24,
+      "all_positive_counts": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "zero_norm_by_list": {
+        "H1_common": 0,
+        "H1_added_cat": 4,
+        "H1_added_dog": 6,
+        "H2": 0
+      },
+      "min_Top32_margin": 0.0009655952453613281,
+      "exact_Top32_boundary_ties": 0
+    }
+  },
+  "scientific_acceptance": "Unknown",
+  "next_experiment": "NOT_RUN_WAIT_FOR_JOINT_REVIEW"
+}

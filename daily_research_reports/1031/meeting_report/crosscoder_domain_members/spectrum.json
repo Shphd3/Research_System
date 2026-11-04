@@ -1,0 +1,80 @@
+{
+  "groups": {
+    "math": {
+      "n": 16,
+      "PC1_64_mean": 0.20545254881973024,
+      "PC1_64_median": 0.18964469759497418,
+      "members_head_over_half": 0,
+      "top2_share_of_group_head": 0.26801950910116157,
+      "matched_PC1_64_mean_quantiles": [
+        0.0673125508107809,
+        0.0870761612053611,
+        0.11808865849945843
+      ]
+    },
+    "biology": {
+      "n": 16,
+      "PC1_64_mean": 0.19849429298701782,
+      "PC1_64_median": 0.1488627830290732,
+      "members_head_over_half": 1,
+      "top2_share_of_group_head": 0.34392211709604475
+    }
+  },
+  "geometry": {
+    "overlap_per_PC": 0.778437810055194,
+    "overlap_per_band": 0.9800140031056077,
+    "pair_abs_cosine_mean": 0.03044115631331342,
+    "pair_abs_cosine_max": 0.9784995175171316,
+    "subspace_principal_cosines": [
+      0.9793438328240047,
+      0.2518732313072498,
+      0.1966708108133389,
+      0.18586187359927517,
+      0.17933958391526902,
+      0.16891497424688207,
+      0.15331679260026718,
+      0.13516076862369336,
+      0.0936316292179534,
+      0.08333483172608946,
+      0.0630747007049007,
+      0.04478095527534332,
+      0.039261998546082394,
+      0.038859625223100616,
+      0.023433332178763377,
+      0.004398677181014113
+    ],
+    "subspace_trace_overlap_fraction": 0.0764727069367968,
+    "subspace_ranks": [
+      16,
+      16
+    ],
+    "matching_status": "NA_INSUFFICIENT_MATCHED_POOL",
+    "separate_group_matching": {
+      "math": {
+        "status": "DONE",
+        "draws": 1000,
+        "PC1_64_mean_quantiles": [
+          0.0673125508107809,
+          0.0870761612053611,
+          0.11808865849945843
+        ]
+      },
+      "biology": {
+        "status": "NA_INSUFFICIENT_MATCHED_POOL"
+      }
+    },
+    "uniform_unmatched_per_PC_quantiles": [
+      0.7791595960557836,
+      0.7966406460622851,
+      0.8077838945715485
+    ],
+    "uniform_unmatched_per_band_quantiles": [
+      0.928479017322303,
+      0.964132396882114,
+      0.9796802941168206
+    ],
+    "no_observed_CI": "Fixed-list geometry. Matched ranges are random-set composition ranges, not selection uncertainty or independent generalization CIs."
+  },
+  "full_dictionary_PC1_64_mean": 0.08850278817950595,
+  "full_dictionary_PC1_64_median": 0.07144865314385021
+}

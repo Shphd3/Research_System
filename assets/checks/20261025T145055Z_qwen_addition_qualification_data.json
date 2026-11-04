@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-25T14:50:55.311428+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-j42td",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6981,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "data_qwen_addition_qualification_20261025_seed20261025_v1",
+      "title_cn": "Qwen3 加法资格初筛固定无序数对数据（20261025）",
+      "category": "dataset_prepared",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PREPARED_DATA_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_frozen_data",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/dev_pairs.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17403,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/dev_tasks.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 143670,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11316,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/test_pairs.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17403,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/test_tasks.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 143667,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/train_pairs.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 139203,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261025_qwen_addition_qualification/data/train_tasks.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1149352,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

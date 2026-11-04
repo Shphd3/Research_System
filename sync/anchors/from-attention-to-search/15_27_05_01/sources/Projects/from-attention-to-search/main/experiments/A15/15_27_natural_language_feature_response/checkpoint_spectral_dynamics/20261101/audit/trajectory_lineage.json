@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "original_trajectory": "native_dense_seed17",
+  "first_continuation": {
+    "source": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/continuation_receipts/start_pointer.20260915T164611Z.json",
+    "loaded_tokens": 10000000000,
+    "loaded_step": 38150,
+    "source_checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_010000000000"
+  },
+  "last_continuation": {
+    "source": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/specs/dense.json",
+    "loaded_tokens": 22018691584,
+    "loaded_step": 84000,
+    "source_checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/checkpoints/step_00084000",
+    "source_manifest_sha256": "9caa7299acc3afe01fee6c7181de9d61d5d3b5c5cc490bd2092dfb1b48dd9584",
+    "uncheckpointed_tail_not_used": 22258029056
+  },
+  "monotonic_saved_progress": true,
+  "architecture_tokenizer_match": true,
+  "limits": "Only these documented saved-state lineage segments;does not imply uninterrupted runtime or convergence"
+}

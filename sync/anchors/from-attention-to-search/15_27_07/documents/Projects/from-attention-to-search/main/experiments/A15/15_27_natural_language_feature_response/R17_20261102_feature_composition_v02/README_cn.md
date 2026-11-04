@@ -1,0 +1,14 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/README_cn.md)；研究修改仍回到原件。
+
+---
+
+# R17：Feature组合四路线
+
+[先读总认识](summary_cn.md) · [详细方法与核验](detailed_cn.md) · [固定文本反例](casebook_cn.md) · [原始数据入口](dataset_guide.md) · [修订记录](amendments.md)。
+
+四路线适用计算均完成；当前采用19条符号修复后的384条面板及600篇既有自然文档。H1／H2／H4不足，H3不支持声明的双优势。留出已暴露；科学接受和下一决策Unknown。
+
+[H1认识更新](../../../../../../../../UNAVAILABLE.md) · [H2认识更新](H2/summary_cn.md) · [H3认识更新](../../../../../../../../UNAVAILABLE.md) · [H4认识更新](../../../../../../../../UNAVAILABLE.md)
+
+原始START_PROMPT与逐路线协议保留附件字节；其中“未执行”是冻结时状态，当前执行事实由Summary／Detailed拥有。代码、原始缓存和日志在执行侧。当前只有本地记录与阅读副本，没有commit／push／发布。

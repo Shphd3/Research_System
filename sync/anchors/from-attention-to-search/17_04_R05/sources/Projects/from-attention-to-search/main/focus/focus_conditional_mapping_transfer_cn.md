@@ -69,3 +69,11 @@ R01有限执行于 2026-10-11 完成。旧 DEV 逐口令／面板准确率为 33
 ## E04资格测试事实完成（2026-10-12）
 
 五组掩码／预算／Smoke／外部恢复均通过。五条单种子pilot完成1200步，各12,000旧＋12,000新答案；最弱DEV分项45.5%–78.5%，未达到95%。55个实际状态已登记。这是当前因子／优化配置下的学习资格失败，不是结构收益裁决。正式仍NOT_RUN，没有授权／执行新的修复训练。科学机制接受及问题关闭仍Unknown。[Summary](../experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget/summary_cn.md).
+
+## R06 已授权的有界续轮（2026-10-25）
+
+用户要求固定新任务曝光，比较U/S/F/D与旧监督0/4/36槽位，三个续训顺序、最多240步及4小时；普通实现与内部检查后直接执行。问题仍属于conditional_mapping_transfer，历史证据和科研状态不改写。依次检查行为差别、方向相对幅度控制、不同监督档的F−U收益；支持/不支持/不足按本轮冻结协议。结果见[R06协议](../experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/protocol_cn.md)。用户授权执行不等于机制接受或问题关闭。
+
+### R06事实交付
+
+36/36条240步轨迹完成，训练墙钟1510.916秒；固定新曝光下F仅在零旧重放目标档达到预定操作门槛，4槽档旧表现稳定低于U，36槽档无稳定额外收益。三个档位的相对收益不单调。这是冻结规则的AI有界解读，不更新研究者机制接受或总问题关闭。[结果](../experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/summary_cn.md)。

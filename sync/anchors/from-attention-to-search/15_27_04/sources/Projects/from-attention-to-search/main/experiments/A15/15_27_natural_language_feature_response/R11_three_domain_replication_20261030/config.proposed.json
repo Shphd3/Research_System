@@ -1,0 +1,137 @@
+{
+  "revision": "R11-plan-v1",
+  "document_status": "DRAFT_NOT_EXECUTABLE",
+  "grounding": "AI_PROPOSAL except user-confirmed domains/model/no-training",
+  "domains": [
+    "math",
+    "biology",
+    "physics"
+  ],
+  "documents_per_domain": {
+    "discovery": 60,
+    "development": 30,
+    "heldout": 60
+  },
+  "heldout_per_domain_source_strata": {
+    "same_platform_new_document_family": 30,
+    "new_platform_family": 30
+  },
+  "genre_per_domain": {
+    "discovery": {
+      "expository": 45,
+      "question_answer": 15
+    },
+    "development": {
+      "expository": 22,
+      "question_answer": 8
+    },
+    "heldout": {
+      "expository": 45,
+      "question_answer": 15
+    }
+  },
+  "study_documents": 450,
+  "original120_as_confirmation": false,
+  "language": "English",
+  "one_excerpt_per_document_family": true,
+  "topics_per_domain": 6,
+  "topic_documents": {
+    "discovery": 10,
+    "development": 5,
+    "heldout": 10
+  },
+  "input_positions": 192,
+  "analysis_start": 32,
+  "analysis_stop_exclusive": 192,
+  "LM_padded_length": 256,
+  "CC_padded_length": 1024,
+  "study_analysis_positions": 72000,
+  "study_real_input_positions": 86400,
+  "study_LM_padded_positions": 115200,
+  "checks_at_most": 12,
+  "forward_sequence_cap_including_retries": 462,
+  "all_calls_LM_padded_cap": 118272,
+  "all_calls_CC_padded_cap": 473088,
+  "new_forwards_actual": 0,
+  "training_updates_actual": 0,
+  "data_seed": 20261030,
+  "bootstrap_seed": 20261031,
+  "background_seed": 20261032,
+  "eligibility_active_docs_any_domain": 5,
+  "bias_domain_support_docs": 5,
+  "selection_score": "minimum pairwise oriented document-AUC against BOTH other domains; zero-inclusive document means, half-credit ties",
+  "main_threshold": 0.75,
+  "threshold_sensitivity": [
+    0.7,
+    0.8
+  ],
+  "topk_sensitivity": [
+    16,
+    64,
+    128
+  ],
+  "near_max_opponent_document_fraction": 0.05,
+  "near_max_opponent_documents_discovery_each": 3,
+  "near_preferred_positive_position_share": 0.95,
+  "near_share_sensitivity": [
+    0.9,
+    0.99
+  ],
+  "strict_opponent_active_documents_each": 0,
+  "legacy16_keep_all": true,
+  "legacy_retention_preferred_H_min_docs": 5,
+  "legacy_recurrent_physics_min_H_docs": 5,
+  "legacy_recurrent_physics_min_platforms": 2,
+  "reference_feature_frequency_positions": 65536,
+  "reference_min_hits": 20,
+  "reference_original_cuts": [
+    0.002593994140625,
+    0.0134429931640625
+  ],
+  "reference_log_cuts_sensitivity": [
+    0.0045172553628813825,
+    0.06686505701697326
+  ],
+  "primary_spectrum": "frozen R10 pooled discovery basis;1024PC",
+  "secondary_spectrum": "new three-domain pooledDcommon-meanPCA;not separate-domainPCA",
+  "secondary_pca_input_positions": 28800,
+  "matched_draws_main": 1000,
+  "matched_draws_each_selection_bootstrap": 100,
+  "matched_MC_draw_refinement": [
+    200,
+    400
+  ],
+  "matched_MC_audit_fraction": 0.1,
+  "matched_MC_median_tolerance": 0.005,
+  "selection_bootstrap_replicates": 3000,
+  "primary_contrasts": [
+    "F1mean(highMain-highEligible)",
+    "F2mean(log10(medianNear/medianMain))",
+    "Gminimum_allpairs(overlap-.80,overlap-matchedMedian+.05)"
+  ],
+  "primary_CI_coverage": 0.9833333333333333,
+  "primary_CI_quantiles": [
+    0.008333333333333333,
+    0.9916666666666667
+  ],
+  "min_classified_members_each_group_domain": 5,
+  "max_undefined_bootstrap_fraction": 0.05,
+  "overlap_operational_min": 0.8,
+  "overlap_background_gap_tolerance": 0.05,
+  "H_ranking_guard_median_minAUC_gt": 0.5,
+  "H_ranking_guard_member_fraction_minAUC_ge75": 0.5,
+  "same_token_primary_ID": 279,
+  "same_token_primary_min_document_pairs": 10,
+  "same_token_exploratory_min_document_pairs": 5,
+  "existing_resource_only": true,
+  "max_GPUs_proposed": 1,
+  "GPU_hour_cap_proposed": 2,
+  "offline_CPU_hour_cap_proposed": 12,
+  "runtime_ETA": "Unknown",
+  "execution_authorized": false,
+  "execution_output_root_proposed": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030",
+  "min_reference_classified_fraction_each_group_and_pool": 0.8,
+  "interval_conditioning": "fixed DCLM reference counts and sampled platform set; no reference-corpus or all-platform population sampling CI",
+  "legacy_surface_opportunity_original_topk": 3,
+  "legacy_surface_opportunity_min_opponent_H_documents": 5
+}

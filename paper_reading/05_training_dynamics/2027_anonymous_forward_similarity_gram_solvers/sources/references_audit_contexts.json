@@ -1,0 +1,287 @@
+[
+  {
+    "author_token": "Agrawal",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "precision solver appear interchangeable 037     with a higher-precision implementation. A solver inside an end-to-end learned model, however, also 038     supplies derivatives used by the optimizer (Amos & Kolter, 2017; Agrawal et al., 2019; Seeger 039      et al., 2017). Prediction agreement leaves the derivative computation untested: similar outputs do 040     not establish that the two implementations produce similar parameter updates. 041 "
+      },
+      {
+        "region": "body",
+        "context": "3    5  RELATED WORK 444 445     Differentiable solvers and learned linear operators.   Differentiable optimization and linear- 446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al., 447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine 448     episodic ridge regression with learned features and solver hyperparameters, use Woodbury’s"
+      }
+    ]
+  },
+  {
+    "author_token": "Akbarzadeh",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "d optimizer state.460 461 462    Forward–backward discrepancies in training.  Automatic differentiation faces numerical pit- 463       falls, including incompletely converged iterative solvers (H¨uckelheim et al., 2024; Akbarzadeh et al., 464     2020). Murray (2016) derives Cholesky differentiation rules; Hovland & H¨uckelheim (2024) com- 465     pare differentiating iterative solver implementations with differentiating the underlying equations,"
+      }
+    ]
+  },
+  {
+    "author_token": "Alpaydin",
+    "occurrences": [
+      {
+        "region": "appendix",
+        "context": "ource and diagnostic1021         optimizer protocols, clipping, and retry behavior are specified separately in Appendix A.1. 1022 1023   The independent ridge classifier uses scikit-learn digits (Pedregosa et al., 2011; Alpaydin & Kaynak, 1024    1998): flattened 8×8 images with pixels divided by 16 and a stratified 60/20/20 train/validation/test 1025     split. Each episode draws five of the ten classes, with five support and ten query example"
+      }
+    ]
+  },
+  {
+    "author_token": "Amos",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "oss can make a lower-precision solver appear interchangeable 037     with a higher-precision implementation. A solver inside an end-to-end learned model, however, also 038     supplies derivatives used by the optimizer (Amos & Kolter, 2017; Agrawal et al., 2019; Seeger 039      et al., 2017). Prediction agreement leaves the derivative computation untested: similar outputs do 040     not establish that the two implementations produce similar"
+      },
+      {
+        "region": "body",
+        "context": "     0.375 441 442 443    5  RELATED WORK 444 445     Differentiable solvers and learned linear operators.   Differentiable optimization and linear- 446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al., 447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine 448     episodic ridge regression with learned features and solver hyperpa"
+      }
+    ]
+  },
+  {
+    "author_token": "Bertinetto",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "tory differences from immediate evaluation arithmetic. 049   We study a language model using controlled Spectral Koopman Attention (SKA) (Sridhar & Jo- 050     hansen, 2026) and an independent episodic ridge classifier (Bertinetto et al., 2019). Both form a ma- 051      trix from learned feature inner products, add positive regularization, and solve a linear system. We 052     define a precision route by assigning FP32 or FP64 separately to stati"
+      },
+      {
+        "region": "body",
+        "context": "tiable optimization and linear- 446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al., 447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine 448     episodic ridge regression with learned features and solver hyperparameters, use Woodbury’s iden- 449      tity for smaller solves, and examine the task value of learning ridge. Our classifi"
+      }
+    ]
+  },
+  {
+    "author_token": "Blondel",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "   Differentiable solvers and learned linear operators.   Differentiable optimization and linear- 446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al., 447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine 448     episodic ridge regression with learned features and solver hyperparameters, use Woodbury’s iden- 449      tity for small"
+      }
+    ]
+  },
+  {
+    "author_token": "Carson",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "usch et al., 2018). 453 454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Carson 456   & Higham, 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike- 458     vicius"
+      }
+    ]
+  },
+  {
+    "author_token": "Eldan",
+    "occurrences": [
+      {
+        "region": "appendix",
+        "context": ". WikiText-2 (Merity et al., 2016) uses 8,000 training records and 1,000 1018    held-out records drawn from the filtered training split; the latter are not the official WikiText valida- 1019    tion split. TinyStories (Eldan & Li, 2023) uses 8,000 training and 1,000 validation records. Training 1020    uses batch size 32 for at most 5,000 steps, learning rate 10−3 and zero weight decay. Learned ridge           is initialized at 10−3 and the"
+      }
+    ]
+  },
+  {
+    "author_token": "Higham",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "he derivative computation untested: similar outputs do 040     not establish that the two implementations produce similar parameter updates. 041     Numerical sensitivity of solvers and their derivatives is established (Higham & Mary, 2022; Hov- 042     land & H¨uckelheim, 2024).  For training-time precision substitutions, however, derivative sensi- 043      tivity alone does not quantify optimizer-update discrepancies or differences retained"
+      },
+      {
+        "region": "body",
+        "context": "actorization and triangular solves. Higher-precision factorization cannot recon-          struct information already lost during Gram construction. Precision must therefore be specified by088         computational role (Higham & Mary, 2022). 089 090     Differentiating the exact system gives 091                     dW = G−1λ   (︁ dC −(dGλ)W )︁ , 092    where d denotes a differential and inverse notation denotes a solve. This identity is not a"
+      },
+      {
+        "region": "body",
+        "context": "18). 453 454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Carson 456   & Higham, 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike- 458     vicius et al., 2018; "
+      },
+      {
+        "region": "body",
+        "context": "   Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Carson 456   & Higham, 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike- 458     vicius et al., 2018; Kalamkar et al"
+      },
+      {
+        "region": "body",
+        "context": "rical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Carson 456   & Higham, 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike- 458     vicius et al., 2018; Kalamkar et al., 2019; Lee et al., 202"
+      }
+    ]
+  },
+  {
+    "author_token": "Hovland",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": " gradient depends on the gradient from the down- 094     stream loss, and the parameter update depends on the optimizer’s stored state. Forward agreement 095     alone does not establish agreement of these computations (Hovland & H¨uckelheim, 2024). 096 097    3  METHOD 098 099   We define the solvers and precision interventions below. Matched update comparisons assess local 100      training equivalence, with full-model gradients as an interm"
+      },
+      {
+        "region": "body",
+        "context": "differentiation faces numerical pit- 463       falls, including incompletely converged iterative solvers (H¨uckelheim et al., 2024; Akbarzadeh et al., 464     2020). Murray (2016) derives Cholesky differentiation rules; Hovland & H¨uckelheim (2024) com- 465     pare differentiating iterative solver implementations with differentiating the underlying equations,         primarily in forward mode. Matrix-decomposition methods also adjust backward"
+      }
+    ]
+  },
+  {
+    "author_token": "H¨uckelheim",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "ar outputs do 040     not establish that the two implementations produce similar parameter updates. 041     Numerical sensitivity of solvers and their derivatives is established (Higham & Mary, 2022; Hov- 042     land & H¨uckelheim, 2024).  For training-time precision substitutions, however, derivative sensi- 043      tivity alone does not quantify optimizer-update discrepancies or differences retained after training. 044   We therefore separate t"
+      },
+      {
+        "region": "body",
+        "context": "depends on the gradient from the down- 094     stream loss, and the parameter update depends on the optimizer’s stored state. Forward agreement 095     alone does not establish agreement of these computations (Hovland & H¨uckelheim, 2024). 096 097    3  METHOD 098 099   We define the solvers and precision interventions below. Matched update comparisons assess local 100      training equivalence, with full-model gradients as an intermediate diagnos"
+      },
+      {
+        "region": "body",
+        "context": "ers, in-          puts, and optimizer state.460 461 462    Forward–backward discrepancies in training.  Automatic differentiation faces numerical pit- 463       falls, including incompletely converged iterative solvers (H¨uckelheim et al., 2024; Akbarzadeh et al., 464     2020). Murray (2016) derives Cholesky differentiation rules; Hovland & H¨uckelheim (2024) com- 465     pare differentiating iterative solver implementations with differentiating "
+      },
+      {
+        "region": "body",
+        "context": "ation faces numerical pit- 463       falls, including incompletely converged iterative solvers (H¨uckelheim et al., 2024; Akbarzadeh et al., 464     2020). Murray (2016) derives Cholesky differentiation rules; Hovland & H¨uckelheim (2024) com- 465     pare differentiating iterative solver implementations with differentiating the underlying equations,         primarily in forward mode. Matrix-decomposition methods also adjust backward computations "
+      }
+    ]
+  },
+  {
+    "author_token": "Ionescu",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "ers and learned linear operators.   Differentiable optimization and linear- 446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al., 447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine 448     episodic ridge regression with learned features and solver hyperparameters, use Woodbury’s iden- 449      tity for smaller solves, and examine"
+      }
+    ]
+  },
+  {
+    "author_token": "Kalamkar",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": ", 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike- 458     vicius et al., 2018; Kalamkar et al., 2019; Lee et al., 2023). We compare solver-stage precision 459     choices through predictions, full-model gradients, and restored updates at matched parameters, in-          puts, and optimizer state.460 461 46"
+      }
+    ]
+  },
+  {
+    "author_token": "Lee",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "h, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike- 458     vicius et al., 2018; Kalamkar et al., 2019; Lee et al., 2023). We compare solver-stage precision 459     choices through predictions, full-model gradients, and restored updates at matched parameters, in-          puts, and optimizer state.460 461 462    Forward–backw"
+      }
+    ]
+  },
+  {
+    "author_token": "Lusch",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": " controlled SKA derives from Echo (Sridhar & Johansen, 2026), 451     within work on finite-dimensional Koopman approximations and learned dynamical representations 452     (Williams et al., 2015; Takeishi et al., 2017; Lusch et al., 2018). 453 454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Cars"
+      }
+    ]
+  },
+  {
+    "author_token": "Merity",
+    "occurrences": [
+      {
+        "region": "appendix",
+        "context": "language-model SKA instantiation uses sequence length T = 512, prefix 1016    length P = 256, embedding dimension d = 256, four heads, value dimension dh = 64 and per-head 1017    operator dimension r = 128. WikiText-2 (Merity et al., 2016) uses 8,000 training records and 1,000 1018    held-out records drawn from the filtered training split; the latter are not the official WikiText valida- 1019    tion split. TinyStories (Eldan & Li, 2023) us"
+      }
+    ]
+  },
+  {
+    "author_token": "Micikevicius",
+    "occurrences": []
+  },
+  {
+    "author_token": "Murray",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "orward–backward discrepancies in training.  Automatic differentiation faces numerical pit- 463       falls, including incompletely converged iterative solvers (H¨uckelheim et al., 2024; Akbarzadeh et al., 464     2020). Murray (2016) derives Cholesky differentiation rules; Hovland & H¨uckelheim (2024) com- 465     pare differentiating iterative solver implementations with differentiating the underlying equations,         primarily in forward "
+      }
+    ]
+  },
+  {
+    "author_token": "Pedregosa",
+    "occurrences": [
+      {
+        "region": "appendix",
+        "context": "approximately 0.9. The source and diagnostic1021         optimizer protocols, clipping, and retry behavior are specified separately in Appendix A.1. 1022 1023   The independent ridge classifier uses scikit-learn digits (Pedregosa et al., 2011; Alpaydin & Kaynak, 1024    1998): flattened 8×8 images with pixels divided by 16 and a stratified 60/20/20 train/validation/test 1025     split. Each episode draws five of the ten classes, with five suppor"
+      }
+    ]
+  },
+  {
+    "author_token": "Seeger",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "r interchangeable 037     with a higher-precision implementation. A solver inside an end-to-end learned model, however, also 038     supplies derivatives used by the optimizer (Amos & Kolter, 2017; Agrawal et al., 2019; Seeger 039      et al., 2017). Prediction agreement leaves the derivative computation untested: similar outputs do 040     not establish that the two implementations produce similar parameter updates. 041     Numerical sensiti"
+      },
+      {
+        "region": "body",
+        "context": " operators.   Differentiable optimization and linear- 446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al., 447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine 448     episodic ridge regression with learned features and solver hyperparameters, use Woodbury’s iden- 449      tity for smaller solves, and examine the task value of le"
+      }
+    ]
+  },
+  {
+    "author_token": "Song",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "olver implementations with differentiating the underlying equations,         primarily in forward mode. Matrix-decomposition methods also adjust backward computations for466           stability (Wang et al., 2019; 2022; Song et al., 2021). Our fixed-forward diagnostic tests solver- 467          derivative sensitivity.  Common-route evaluation separates endpoint differences from evaluation 468          arithmetic; ridge interventions disting"
+      }
+    ]
+  },
+  {
+    "author_token": "Sridhar",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "ained models through a common 048     solver implementation separates training-history differences from immediate evaluation arithmetic. 049   We study a language model using controlled Spectral Koopman Attention (SKA) (Sridhar & Jo- 050     hansen, 2026) and an independent episodic ridge classifier (Bertinetto et al., 2019). Both form a ma- 051      trix from learned feature inner products, add positive regularization, and solve a linear syst"
+      },
+      {
+        "region": "body",
+        "context": "map 110     within each formulation and use ordinary automatic differentiation; the backward substitution be- 111    low is a separate diagnostic. 112 113     3.2  SKA SOLVER INSTANTIATION 114 115    Our controlled SKA (Sridhar & Johansen, 2026) uses projected keys and queries kt, qt ∈Rr and 116     values vt ∈Rdh. The first P < T positions form the prefix. Suppressing batch and head indices, K 117    and V stack prefix keys and values as rows"
+      },
+      {
+        "region": "body",
+        "context": "ers, use Woodbury’s iden- 449      tity for smaller solves, and examine the task value of learning ridge. Our classifier studies precision 450      sensitivity in this construction. Our controlled SKA derives from Echo (Sridhar & Johansen, 2026), 451     within work on finite-dimensional Koopman approximations and learned dynamical representations 452     (Williams et al., 2015; Takeishi et al., 2017; Lusch et al., 2018). 453 454     Finite-pr"
+      }
+    ]
+  },
+  {
+    "author_token": "Takeishi",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": " this construction. Our controlled SKA derives from Echo (Sridhar & Johansen, 2026), 451     within work on finite-dimensional Koopman approximations and learned dynamical representations 452     (Williams et al., 2015; Takeishi et al., 2017; Lusch et al., 2018). 453 454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamot"
+      }
+    ]
+  },
+  {
+    "author_token": "Wang",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "fferentiating iterative solver implementations with differentiating the underlying equations,         primarily in forward mode. Matrix-decomposition methods also adjust backward computations for466           stability (Wang et al., 2019; 2022; Song et al., 2021). Our fixed-forward diagnostic tests solver- 467          derivative sensitivity.  Common-route evaluation separates endpoint differences from evaluation 468          arithmetic; ri"
+      }
+    ]
+  },
+  {
+    "author_token": "Williams",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "450      sensitivity in this construction. Our controlled SKA derives from Echo (Sridhar & Johansen, 2026), 451     within work on finite-dimensional Koopman approximations and learned dynamical representations 452     (Williams et al., 2015; Takeishi et al., 2017; Lusch et al., 2018). 453 454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precis"
+      }
+    ]
+  },
+  {
+    "author_token": "Yamamoto",
+    "occurrences": [
+      {
+        "region": "body",
+        "context": "akeishi et al., 2017; Lusch et al., 2018). 453 454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision 455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Carson 456   & Higham, 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses 457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (M"
+      }
+    ]
+  }
+]

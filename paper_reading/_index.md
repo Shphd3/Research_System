@@ -5,6 +5,7 @@ Use this file to track papers worth remembering.
 | Status | Category | Paper | Why I Read It | Relation To My Research | Need Deep Read |
 |---|---|---|---|---|---|
 | todo / reading / done |  |  |  |  | yes / no |
+| reading | 05_training_dynamics | [Forward Similarity Does Not Guarantee Training Equivalence](05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/README_cn.md) | Full translation and preliminary ICLR 2027 review requested | Project impact not assessed | yes |
 
 ## Status Meaning
 

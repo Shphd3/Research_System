@@ -1,0 +1,207 @@
+{
+  "agent": "/root/refs_20_28",
+  "audited_at_utc": "2026-10-20T04:35:16.039351+00:00",
+  "scope": "稿件参考文献20–28之真实性、书目信息、实际引用上下文与支持程度；不是逐篇研究结论的独立复现或全面质量认证。",
+  "summary": {
+    "references_checked": 9,
+    "primary_existence_confirmed": 9,
+    "confirmed_fabrications": 0,
+    "confirmed_material_misattributions": 0,
+    "confirmed_bibliographic_errors": 0,
+    "metadata_conflicts_not_errors": [
+      22,
+      25
+    ]
+  },
+  "network_limitations": [
+    "web工具CVF/ACM/IEEE部分请求失败；CVF由requests成功取得，ACM由出版者Crossref成功核实。",
+    "Wang TPAMI Crossref一次429；卷期通过PubMed索引补核，作者arXiv与作者仓库确认题名作者与DOI。"
+  ],
+  "entries": [
+    {
+      "reference_number": 20,
+      "short_name": "Pedregosa et al. 2011",
+      "title": "Scikit-learn: Machine Learning in Python",
+      "existence": "confirmed_primary",
+      "metadata": "作者16人、JMLR 12(85):2825–2830、2011均与JMLR正式条目一致。",
+      "primary_sources": [
+        "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+      ],
+      "manuscript_locations": [
+        "Appendix A data description, lines 1023–1024"
+      ],
+      "citation_claim": "独立岭分类器使用scikit-learn digits，并同时引用Alpaydin & Kaynak (1998)。",
+      "support": "作为软件来源引用合适；该JMLR论文不是digits数据集原始论文，但稿件已经同时给出数据集来源，不能因软件引用本身判为错误。",
+      "verification_depth": "JMLR正式条目和摘要；本地稿件全部Pedregosa出现位置。",
+      "issues": []
+    },
+    {
+      "reference_number": 21,
+      "short_name": "Seeger et al. 2017",
+      "title": "Auto-Differentiating Linear Algebra",
+      "existence": "confirmed_primary",
+      "metadata": "五位作者、题名及arXiv:1710.08717准确。2017是v1首次提交年份，当前v5修订于2019-08-14，二者不构成错误。稿件标作预印本而非会议论文，合适。",
+      "primary_sources": [
+        "https://arxiv.org/abs/1710.08717",
+        "https://arxiv.org/html/1710.08717v5"
+      ],
+      "manuscript_locations": [
+        "Introduction lines 37–40",
+        "Related work lines 445–447"
+      ],
+      "citation_claim": "可微线性代数层可以参与端到端学习，求解器也提供优化器使用的导数。",
+      "support": "直接支持。前作实现Cholesky/LQ/对称特征分解等可微原语，CPU/GPU、FP32/FP64，并给出GP和贝叶斯线性回归学习例子。该来源不直接验证本稿实际Adam更新差异，但原文没有据此声称已验证。",
+      "verification_depth": "arXiv元数据、全文相关章节（摘要、引言、§3、§4）。",
+      "issues": []
+    },
+    {
+      "reference_number": 22,
+      "short_name": "Song et al. 2021",
+      "title": "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?",
+      "existence": "confirmed_primary",
+      "metadata": "三位作者、ICCV2021、DOI准确。正式CVF页面及其BibTeX明确给1115–1123，与稿件相符。",
+      "primary_sources": [
+        "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+        "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+      ],
+      "manuscript_locations": [
+        "Related work lines 465–466"
+      ],
+      "citation_claim": "矩阵分解方法会为稳定性调整反向计算。",
+      "support": "直接支持。前作明确分析数据精度及梯度平滑性，并提出SVD前向、Padé近似反向的GCP层。作为概括性先例引用准确。",
+      "verification_depth": "正式CVF页面、摘要与BibTeX；本地稿件引用上下文。",
+      "issues": [
+        {
+          "type": "publisher_metadata_pagination_conflict_not_manuscript_error",
+          "detail": "此前登记系统出现1095–1103；本轮实时获取CVF HTTP200页面，其正式BibTeX pages={1115-1123}。不要把稿件页码标为错误。网页工具一次403，但requests及搜索索引均成功取得正式页面。"
+        }
+      ]
+    },
+    {
+      "reference_number": 23,
+      "short_name": "Sridhar and Johansen 2026",
+      "title": "Echo: KV-Cache-Free Associative Recall with Spectral Koopman Operators",
+      "existence": "confirmed_primary",
+      "metadata": "arXiv:2605.06997确认两位作者和2026-05-07预印本；出版者Crossref登记（本轮HTTP200）确认CAIS2026正式论文、2026-05-26、964–989、DOI 10.1145/3786335.3813146。",
+      "primary_sources": [
+        "https://arxiv.org/abs/2605.06997",
+        "https://arxiv.org/html/2605.06997v1",
+        "https://api.crossref.org/works/10.1145/3786335.3813146",
+        "https://doi.org/10.1145/3786335.3813146"
+      ],
+      "manuscript_locations": [
+        "Introduction lines 49–51",
+        "§3.2 line 115 onward",
+        "Related work lines 450–452"
+      ],
+      "citation_claim": "受控SKA来自Echo，并以Gram、ridge和Cholesky实现求解。",
+      "support": "直接支持架构来源。Echo§3.2有Gram及滞后一阶统计、ridge、Cholesky与查询白化、谱滤波；稿件明确称controlled SKA，没有声称复现完整Echo。Echo同时含SSM、谱归一化等更多结构，所以本稿结论不能直接推广为完整Echo缺陷；这是外推边界，不是引用虚假。",
+      "verification_depth": "arXiv元数据及全文§3.2、§6.1、Appendix F；出版者Crossref登记。",
+      "issues": []
+    },
+    {
+      "reference_number": 24,
+      "short_name": "Takeishi et al. 2017",
+      "title": "Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition",
+      "existence": "confirmed_primary",
+      "metadata": "三位作者、NeurIPS/NIPS卷30、2017均与正式会议条目一致。",
+      "primary_sources": [
+        "https://papers.nips.cc/paper_files/paper/2017/hash/3a835d3215755c435ef4fe9965a3f2a0-Abstract.html",
+        "https://papers.nips.cc/paper_files/paper/2017/file/3a835d3215755c435ef4fe9965a3f2a0-Paper.pdf"
+      ],
+      "manuscript_locations": [
+        "Related work lines 450–452"
+      ],
+      "citation_claim": "有限维Koopman近似与学习动力学表征的背景。",
+      "support": "直接支持背景性陈述；前作学习非线性观测函数使线性动力学拟合成立，并以神经网络实现。没有被用作本稿精度实验的直接证据。",
+      "verification_depth": "会议正式元数据和摘要、PDF引言。",
+      "issues": []
+    },
+    {
+      "reference_number": 25,
+      "short_name": "Wang et al. 2019",
+      "title": "Backpropagation-Friendly Eigendecomposition",
+      "existence": "confirmed_primary",
+      "metadata": "五位作者、卷32、2019与NeurIPS正式条目一致。稿件页码3156–3164与DBLP及作者后续论文参考文献一致；但官方Metadata.json另列3162–3170，官方BibTeX的pages为空，故分页有源间冲突，不能确认稿件错误。",
+      "primary_sources": [
+        "https://papers.nips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+        "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Metadata.json",
+        "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Bibtex.bib",
+        "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Paper.pdf"
+      ],
+      "corroborating_sources": [
+        "https://dblp.org/rec/conf/nips/0108DHFS19",
+        "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136610018.pdf"
+      ],
+      "manuscript_locations": [
+        "Related work lines 465–466"
+      ],
+      "citation_claim": "矩阵分解方法调整反向计算以改善稳定性。",
+      "support": "直接支持。前作§2固定稳定的SVD前向，使用PI推导计算反向；§2.5还明确讨论单/双精度和舍入导致的特征值问题。作为先例引用合适。",
+      "verification_depth": "正式会议条目、metadata全文与§2/§2.5；正式BibTeX。",
+      "issues": [
+        {
+          "type": "pagination_conflict_unresolved",
+          "detail": "官方Metadata.json:3162–3170；稿件及DBLP:3156–3164。应记录版本/数据库分页不一致，不应当作虚构文献证据。"
+        }
+      ]
+    },
+    {
+      "reference_number": 26,
+      "short_name": "Wang et al. 2022",
+      "title": "Robust Differentiable SVD",
+      "existence": "confirmed_primary",
+      "metadata": "五位作者、题名、DOI与作者arXiv条目一致。正式卷期44(9):5472–5487, 2022由PubMed出版索引确认；作者仓库与arXiv保留2021先行出版年份，不能据此说稿件2022错误。本轮Crossref请求429，未取得该API记录。",
+      "primary_sources": [
+        "https://arxiv.org/abs/2104.03821",
+        "https://github.com/WeiWangTrento/Robust-Differentiable-SVD",
+        "https://doi.org/10.1109/TPAMI.2021.3072422"
+      ],
+      "corroborating_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/33844626/"
+      ],
+      "manuscript_locations": [
+        "Related work lines 465–466"
+      ],
+      "citation_claim": "为矩阵分解反向计算的数值稳定性调整方法。",
+      "support": "直接支持。前作通过SVD梯度Taylor展开避免PI消去迭代累积误差，并在分类和风格迁移验证。",
+      "verification_depth": "作者arXiv元数据与摘要、作者代码仓库；PubMed卷期元数据。未绕过IEEE全文访问限制。",
+      "issues": []
+    },
+    {
+      "reference_number": 27,
+      "short_name": "Williams et al. 2015",
+      "title": "A Data–Driven Approximation of the Koopman Operator: Extending Dynamic Mode Decomposition",
+      "existence": "confirmed_primary",
+      "metadata": "三位作者、J Nonlinear Science 25(6):1307–1346、2015、DOI均与Springer正式页面及出版者Crossref登记一致；连字符/破折号差异仅排版。",
+      "primary_sources": [
+        "https://link.springer.com/article/10.1007/s00332-015-9258-5",
+        "https://api.crossref.org/works/10.1007/s00332-015-9258-5"
+      ],
+      "manuscript_locations": [
+        "Related work lines 450–452"
+      ],
+      "citation_claim": "有限维Koopman近似相关背景。",
+      "support": "直接支持。前作从snapshot pairs和标量观测函数字典逼近Koopman特征值、特征函数和模态，是EDMD来源。原文没有把该背景引用当作精度实验验证。",
+      "verification_depth": "出版者正式元数据、摘要及页面可读部分；全文主体有订阅限制，未宣称完整阅读全文。",
+      "issues": []
+    },
+    {
+      "reference_number": 28,
+      "short_name": "Yamamoto et al. 2015",
+      "title": "Roundoff error analysis of the CholeskyQR2 algorithm",
+      "existence": "confirmed_primary",
+      "metadata": "四位作者、ETNA卷44:306–326、2015均与期刊正式条目一致。",
+      "primary_sources": [
+        "https://etna.ricam.oeaw.ac.at/volumes/2011-2020/vol44/abstract.php?pages=306-326"
+      ],
+      "manuscript_locations": [
+        "Related work lines 454–456"
+      ],
+      "citation_claim": "Cholesky-based QR分析和混合精度求解器涉及条件数、舍入误差与精度配置（与三篇混合精度来源合并引用）。",
+      "support": "对CholeskyQR条件数/舍入分析直接支持。前作给出单次CholeskyQR的正交误差及CholeskyQR2的条件稳定性结果；不独立覆盖整个“混合精度/精度配置”范围，但并列的其他引用承担该部分，不能按逐篇都必须支持并列句全部内容判误引。",
+      "verification_depth": "ETNA正式元数据和详细摘要；本地稿件引用上下文。",
+      "issues": []
+    }
+  ]
+}

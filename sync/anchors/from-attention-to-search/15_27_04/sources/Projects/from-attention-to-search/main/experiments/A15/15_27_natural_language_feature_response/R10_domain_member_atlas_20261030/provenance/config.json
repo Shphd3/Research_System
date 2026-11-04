@@ -1,0 +1,82 @@
+{
+  "revision": "R10-v1",
+  "frozen_utc": "2026-10-30T02:41:30.403304+00:00",
+  "scope": "cache-only; zero model forwards; zero training; no old-output overwrite",
+  "dictionary": "A22 16384 native joint-14-layer shared-z; zero-index block27 residual-post",
+  "positions": [
+    32,
+    192
+  ],
+  "response": "within-document mean native z including zeros; equal documents and domains",
+  "support_min_docs_in_either_domain": 5,
+  "main_oriented_auc": 0.75,
+  "threshold_sensitivity": [
+    0.7,
+    0.8
+  ],
+  "top_k_per_direction": [
+    16,
+    64,
+    128
+  ],
+  "tie_break": "feature ID ascending; exclude exact AUC=.5 from directed rankings",
+  "bootstrap_reps": 1000,
+  "seed": 2026103004,
+  "heldout_replication": "discovery-fixed direction; oriented heldout AUC 95% document-bootstrap lower bound > .5; exploratory exposed data",
+  "frequency": {
+    "reference_positions": 65536,
+    "minimum_hits": 20,
+    "original_cuts": [
+      0.002593994140625,
+      0.0134429931640625
+    ],
+    "log_cuts": [
+      0.0045172553628813825,
+      0.06686505701697326
+    ],
+    "boundary": "cut belongs to lower bin; low support stays unclassified"
+  },
+  "spectrum": {
+    "source": "R04 true CC_h discovery 30math+30bio documents, positions32:192",
+    "dimension": 1024,
+    "weights": "1/2 per domain,1/30 per document,1/160 per position",
+    "center": "single pooled mean",
+    "basis": "reuse archived full PCA only after raw-h weighted covariance/eigen audit; sample-vs-population scalar does not alter directions",
+    "bands": 64,
+    "independent_reference": "R07 reuses this same basis; no independent reference claimed"
+  },
+  "matched_background": {
+    "reps": 1000,
+    "pool": "all support-eligible nonzero-decoder members INCLUDING selected; conservative conditional dictionary reference, not independent null",
+    "strata": "original frequency low/mid/high/insufficient x floor(total discovery positive-doc support/10)",
+    "draw": "same counts in each stratum; without replacement, math/bio draws disjoint; selected inclusion is reported",
+    "uncertainty": "reference distribution across matched dictionary draws; not selection/bootstrap/generalization interval"
+  },
+  "contribution": {
+    "input": "all 40 original heldout natural documents,160 positions each",
+    "vector": "sum native z times TRAIN-RMS-restored decoder before projection and squaring; bias excluded",
+    "aggregation": "token mean within doc, then doc mean within domain; normalize group/domain energy over full1024 PCs",
+    "zero_guard": "total mean squared vector norm <=1e-12 model-units squared -> no proportions"
+  },
+  "tokens": {
+    "frequency_panel": "all120 math+bio natural documents positions32:192; equal domain/doc lengths; no reference-DCLM token frequencies",
+    "bins": "quantiles1/3,2/3 of counts over distinct observed token IDs, higher empirical quantile; ties unsplit lower bin inclusive",
+    "special": "all valid input positions retained, including punctuation/subwords; report any special IDs explicitly",
+    "high_event": "strictly greater than per-feature 90th percentile of discovery positive native-z values",
+    "minimum_discovery_positive_events": 20,
+    "minimum_heldout_high_events": 5,
+    "minimum_heldout_high_documents": 2,
+    "aggregation": "per feature token-bin event proportions, then equal-feature mean; insufficient retained separately",
+    "examples": "first three discovery-ranked members per direction; at most one high example/document; same token ID low example in a different document if available; no future text"
+  },
+  "context": {
+    "cache": "384 R07/R08 target rows;24 discovery/12development/12heldout paired families x2domains x2wordings x2endings",
+    "A": "same target token within ending; family-paired math-bio z, per wording and ending; pointwise95% family bootstrap",
+    "context_recurrence": "at least one ending: both wordings discovery and heldout same nonzero direction; ending-averaged CI excludes0 in both splits; >=3 active families per split; record natural-direction agreement separately",
+    "suffix": "paired E1-E0 averaged domains/wordings; discovery and heldout same sign with pointwise95% CI excluding0 and >=3 active families",
+    "interaction": "difference of domain contrasts E1 minus E0; analogous pointwise recurrence",
+    "multiplicity": "exploratory per-member pointwise tags, no confirmatory multiple-member discoveries",
+    "B": "pure target-only replacement absent; example/explanation changes target AND suffix; NOT RUN; no extra forwards"
+  },
+  "scientific_acceptance": "Unknown"
+}

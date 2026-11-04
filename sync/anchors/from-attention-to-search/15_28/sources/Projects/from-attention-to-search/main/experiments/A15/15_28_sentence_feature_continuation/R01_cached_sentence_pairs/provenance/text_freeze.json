@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-28T07:35:13.257446+00:00",
+  "processing_agent": "Codex /root",
+  "model": "unknown",
+  "candidates": 787,
+  "accepted_sentences": 509,
+  "documents": 117,
+  "by_domain": {
+    "math": 260,
+    "biology": 249
+  },
+  "review_counts": {
+    "EXCLUDED": 298,
+    "ACCEPTED_OR_REPAIRED": 484,
+    "MERGED": 5
+  },
+  "boundary_token_exclusions": [],
+  "manifest_sha256": "59b0accba7117acbf7cd5850de2aeecf8c4b5bd6026cb1d674635345c3f47b70",
+  "decisions_sha256": "3a8422b1824a47273957877f693f690b09dd784e1e6918909c9054caeaec6059",
+  "pair_outcomes_opened": false,
+  "boundary": "First excerpt sentences without certified source start excluded, even when grammatical; ambiguous paragraph/formula/list fragments excluded. This restricts population, not proof of incomplete original sentences."
+}

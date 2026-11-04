@@ -29,3 +29,7 @@
 ## 大样本与跨层的token—feature联系
 
 [本轮结果](token_feature_layer_validation/results_cn.md)：逐feature总体趋势、逐输入画像与tokenID等权分开；DCLM大样本和SFT补充已完成，不训练。
+
+## 均值成分与频率路由：本轮冻结分析
+
+[今日讨论与完整项目结果](mean_component_frequency_routing/results_cn.md)。比值与减均值的接收表现不同；原表征中心化存在重建退化，没有学习收益结论。

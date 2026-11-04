@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "registered_at_utc": "2026-10-29T15:21:05.458467+00:00",
+  "processing_agent": "/root/canonical_records",
+  "owner": "15_27_03 / R09",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "output_asset_ids": [
+    "analysis_a15_27_03_r09_domain_difference_decomposition_20261029",
+    "analysis_a15_27_03_r09_frequency_family_20261029",
+    "data_a15_27_03_r09_controlled_distance_20261029",
+    "representation_a15_27_03_r09_distance_native_jointz_20261029",
+    "analysis_a15_27_03_r09_distance_response_20261029",
+    "analysis_a15_27_03_r09_supplement_abcd_20261029"
+  ],
+  "entries": [
+    {
+      "id": "analysis_a15_27_03_r09_domain_difference_decomposition_20261029",
+      "root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029",
+      "required_probe_count": 11
+    },
+    {
+      "id": "analysis_a15_27_03_r09_frequency_family_20261029",
+      "root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/frequency_family",
+      "required_probe_count": 10
+    },
+    {
+      "id": "data_a15_27_03_r09_controlled_distance_20261029",
+      "root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/distance",
+      "required_probe_count": 5
+    },
+    {
+      "id": "representation_a15_27_03_r09_distance_native_jointz_20261029",
+      "root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/distance",
+      "required_probe_count": 13
+    },
+    {
+      "id": "analysis_a15_27_03_r09_distance_response_20261029",
+      "root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/distance",
+      "required_probe_count": 9
+    },
+    {
+      "id": "analysis_a15_27_03_r09_supplement_abcd_20261029",
+      "root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029",
+      "required_probe_count": 18
+    }
+  ],
+  "input_asset_ids": [
+    "analysis_a15_27_r04_domain_discriminability_complete_A01_20261028",
+    "analysis_a15_27_r04_native_sae_joint_cc_domain_20261027",
+    "analysis_a15_27_r05_distance_attention_20261028",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "data_a15_27_01_r07_fixed_target_domain_panel_20261029",
+    "model_qwen3_0p6b_base",
+    "representation_a15_27_02_r08_fixed_target_layers_jointz_20261029"
+  ],
+  "access_snapshot": "/data/250010109/Research_System/assets/checks/20261029T152118Z_r09_actual_outputs.json",
+  "producer_manifests": [
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/artifact_manifest.json",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/frequency_family/artifact_manifest.json",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/distance/artifact_manifest.json",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/figure_A/artifact_manifest.json",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/background/artifact_manifest.json"
+  ],
+  "scientific_acceptance": "Unknown",
+  "registration_boundary": "Actual outputs only; payload bytes remain execution-side. Asset access and scientific acceptance are independent.",
+  "strict_output_access_passed": true
+}

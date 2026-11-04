@@ -1,0 +1,20 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/detailed_cn.md`。
+[精确原始文件](../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/detailed_cn.md)；研究修改仍回到原件。
+
+---
+
+# 执行细节与证据可用性
+
+目的：比较同一层相反谱操作对原生下一token预测的影响。假设头64可能体现共享模式，但不预设词频等于语义粒度。主比较保留/删除头64，当前位置/全前缀分开；随机删除仅控制维数。
+
+输入与划分：R16原模型、tokenizer、28套PCA、全部737位置原样复用；175篇700自然位置、37/the位置分开，共180篇物理文档，均为暴露探索面板。PCA训练参考60篇9600位置保持冻结，没有新拟合。固定9例先于新输出，另选四格各首UID案例，后选标签明确。
+
+执行：作业pt-ay14f1yi，资源profile5090-2-spot，image key shphd-lite-0911，激活原SM120torch2.8/cu128及Qwen3transformers4.53.3。两卡独立文档分片，没有分布式训练。smoke通过后全量运行，每卡90篇；评估340.63/329.96秒，峰值1.310/1.310GB。原生capture每篇一次，缓存层输出后运行原后缀；不干预padding、不跨条件复用KVcache。删除操作保留训练均值，最终norm仅由原网络正常施加。
+
+实现校准：空删除恒等；补空间与V后960列FP64误差最大3.1264e−13；删除全方向回均值；28层后缀不干预；1/14/28层完整模型hook与后缀、旧保留头64批形状重放均0误差；causal prefix检查通过。全量每文档核查28层目标状态与旧缓存完全一致，全部737原生NLL/原首选误差0，末层两个范围逐位置完全相同。
+
+统计：新增165825记录（含737基线）、复用41272保留记录，合计207097。按文档/组平均再文档等权，2000次配对逐点区间。逐位置四格和3种随机参照保留；不把随机种子当独立语料。独立重汇总误差1.78e−15，保留条件旧汇总误差4.55e−13。全部737完整前文与目标shift验证；最大概率并列至多7，显式argmax/候选排序一致。原始JSON、CSV、图和例子都有来源，实际目标NLL与保存概率最大误差1.41e−7。
+
+偏差与失败：首次本地CPU校验因tokenizers未在路径上失败，已指向同一原挂载包，无安装、无数据变化、无GPU重跑，失败日志保留。没有改变阈值、筛选成功样本或扩大计算。主结果并非能量匹配、语义因果识别或独立新数据确认。研究者接受和闭题Unknown。
+
+记录：协议拥有精确合同，Summary拥有完整观察与AI有边界解释，casebook拥有完整输入及候选；manifest/freeze/audits/logs/原始表均留执行目录。项目仅复制选定汇总与图，载荷清单记录来源。全局导航有7项既有组织/陈旧来源问题，未作无关修复，不以导航检查判断科学结果。没有提交、推送或发布。

@@ -1,6 +1,6 @@
 # 待讨论：归一化路由与学习闭环
 
-**阅读副本，来源项目：** `/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning`。事实冻结于本次交付；不授予下一轮执行权限，不替代研究者判断。
+**阅读副本，来源项目：** `/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning`。事实冻结于本次交付；不授予下一轮执行权限，不替代研究者判断。
 
 先读 [一页简版](one_page_cn.md)，再看 [完整报告](detailed_cn.md)、[逐图说明与术语](figures_cn.md)、[实际文本与评分项](text_profiles_cn.md)。
 

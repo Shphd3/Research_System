@@ -1,0 +1,9 @@
+# R03固定簇decoder与谱离线补测资产
+
+两个实际保存输出已登记：[analysis_fixed_group_decoder_geometry_spectrum_r03_20261027](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/summary_cn.md)与`representation_qwen3_layer27_reference_pca_r03_20261027`。前者含固定组signedcosine、999匹配随机组、谱投影及原36输入的离线对齐；后者含参考均值/协方差/谱基、512decoder方向和投影，均保留执行侧。
+
+输入为原R03组/频率/连续z与A22字典，及`representation_crosscoder_relation_learning_20261015t164000z`的同hook原始h。原Base路径与生产代码链可核，但旧raw-h缓存未独立记录历史Base权重hash；因此PCA结果保留BOUNDED_SOURCE_CHAIN_MATCH，不能因新缓存哈希匹配而提升为历史模型身份已证明。参考源文件与结构图VAL分开，但字典训练见过其TRAIN来源，原文档/近重复独立性Unknown。
+
+前向新增0，父累计1500/1500；模型/字典训练0，重新聚类0，分类器0，PCA统计拟合1。语义标签/rawh配对缺失，语义可分性未运行。[strict访问收据](checks/20261027_fixed_group_decoder_spectrum_outputs.json)只证明实际文件可读；[完整附录](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/appendix_cn.md)拥有资格边界。
+
+Execution root: `/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement`.

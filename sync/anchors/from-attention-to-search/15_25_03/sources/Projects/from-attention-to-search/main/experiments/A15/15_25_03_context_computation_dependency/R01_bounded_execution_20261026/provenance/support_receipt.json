@@ -1,0 +1,42 @@
+{
+  "status": "INSUFFICIENT_ELIGIBLE_TOKEN_CONTEXTS",
+  "utc": "2026-10-26T05:55:33.981917+00:00",
+  "TRAIN_file": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/train.jsonl",
+  "TRAIN_sha256": "5530f9676c3d7941150e404c045ad62815a11310d8b1ec4904c209121ddb8ad5",
+  "TRAIN_dialogues": 1024,
+  "valid_positions": 53390,
+  "unique_token_dialogue_contexts": 35546,
+  "exclusions": {
+    "current_piece_no_unicode_letter": 20262,
+    "fewer_than_16_future_answer_targets": 10872,
+    "special_current_or_next": 1024
+  },
+  "token_types_with_two_targets": 4024,
+  "tokens_passing_two_target_64docs_before_stratum": 0,
+  "tokens_passing_matching_and_64docs_each": 0,
+  "required_each_class": 64,
+  "best_same_stratum_support": {
+    "token_id": 304,
+    "token_text": " in",
+    "target_A": 279,
+    "target_A_text": " the",
+    "target_B": 264,
+    "target_B_text": " a",
+    "dedup_unique_A": 91,
+    "dedup_unique_B": 43,
+    "min_raw_unique_support_best_two": 59,
+    "same_stratum_balanced_unique_each_class": 23,
+    "shared_strata": 20,
+    "eligible_pre_stratum": false,
+    "eligible_after_matching": false
+  },
+  "largest_pre_stratum_balanced_support": 43,
+  "selected_tokens": [],
+  "model_sequence_forwards": 0,
+  "model_or_coder_loaded": false,
+  "cache_tensor_loaded": false,
+  "EVAL_or_TEST_read": false,
+  "threshold_relaxed": false,
+  "new_resources_or_training": false,
+  "gate": "stop before C/R feature selection and interventions if no eligible token"
+}

@@ -1,6 +1,16 @@
 # 研究资产库
 
-本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **514 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+> **2026-10-31 退役：** decommon旧训练运行及academic_writing已清理，评估工具/必要源码保留；订单MoE V2执行资产已删除，55条资产身份保留并标注PAYLOAD_MISSING。历史结果不改。[清理回执](/data/250010109/MoE_Router/storage_cleanup_receipts/20261031T033809Z_decommon_academic_order/completion.json)。
+
+
+> **2026-10-30 存储更新：** 研究者要求清理A3普通router与detach两臂模型。24个权重、续训状态及RNG文件已删除（20.393929 GiB）；代码、配置、日志、manifest和历史结果保留，共同随机初态保留。两臂现不可加载评估或续训，后续重点转向新的MoE训练。历史训练完成与NOT RUN判断不变。[逐项删除记录](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/README_cn.md)。
+
+[R10全字典领域成员分析](domain_member_atlas_r10_20261030_cn.md)：960主成员的频率、共同谱与输入响应，缓存统计完成，新前向与训练均0。
+
+
+本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **1043 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+
+[冻结领域区分成员的组会分析](domain_members_meeting_20261030_cn.md)：实际保存的16+16名单、五组图、token／上下文统计及匹配／覆盖缺口；没有新增前向或训练。
 
 [English](README.md) · [唯一机器可读目录](catalog.json) · [历史全库访问快照](checks/2026-10-09_access_v4.json) · [检查工具](../tools/check_assets.py) · [项目访问与旧路径处理](../docs/project_access_cn.md)
 
@@ -247,6 +257,56 @@ E04实际输出已登记10族／55状态，来自pt-1rb3s2t0。[严格输出可�
 
 注册资产 `analysis_crosscoder_token_feature_layer_validation_20261019`：复用DCLM发现/复核5,238,097/5,247,663位置及原Tulu，14层共享z上的解码幅度；无模型前向或训练。分开保留feature、位置、tokenID等权及旧池迁移。仅注册实际分析产物，不提升科学结论。
 
+
+[2026-10-20：频率混合表征与高频路径调用的实际8模型、smoke及analysis资产](frequency_composition_common_path.md)。本次selected access10/10通过；完整保存与科学支持分开。
+
 ## 列表首末规则与顺序遗忘
 
 [A17_04 E01/R02阅读入口](a17_list_rule_mapping_cn.md)（[English](a17_list_rule_mapping.md)）说明实际任务、顺序与混合结果、已登记数据版本和GitHub正式来源。只阅读Research_System也能理解该项内容；完整JSONL仍在执行存储。
+
+
+### A阶段工程恢复快照审计补证（2026-10-23）
+
+`checkpoint_family_a17_r05_A_step2_recovery_20261023_audit`补录21个原来已保存的第2步、40答案恢复快照，供只读补评价；本次没有生成新训练检查点。[当前严格访问回执](/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/audit/A_stage_20261023/step2_required_access.json)也核验了精确Base、旧任务适配器、数据/分词器及原生前缀缓存。[A阶段独立审计](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/a_stage_audit_cn.md)区分这次事后评价与原1200步主终点。
+
+
+### A阶段一轮小范围定位（2026-10-23）
+
+`analysis_a17_r05_A_localization_20261023`登记40次可逆干预、1次旧任务起点评价及54份既有U/TS读出的分析；没有训练或更换候选。[中文结果](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/summary_cn.md) · [选定输出strict访问检查](checks/20261023T031957Z_a17_r05_A_localization_output.json)。局部概率敏感不等于旧规则必要性或跨任务共同复用。
+
+
+### A阶段残差与整体计算冻结诊断（2026-10-23）
+
+`analysis_a17_r05_A_residual_spectral_20261023`登记54点权重谱、实际输入计算与66条件干预（59份新读出、7份复用）；零训练。[中文结果及认识更新](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/summary_cn.md) · [输出strict访问](checks/20261023T035628Z_a17_r05_A_residual_spectral_output.json)。参数补方向不等于输入输出子空间正交；靶向恢复旧表现伴随新学习损失，不建立整体谱中介。
+
+### 2026-10-24 订单V2与符号辅助交付
+
+[输入、实际输出与加载入口](symbolic_order_moe_v2_cn.md)记录14条实际训练、148个科学状态与4个工程状态、4个缓存和32个派生分析组；52个selected输出ID最终strict通过。有限流程以资格失败及依赖比较不适用的分支收束，内部复用与研究者科学接受另行保留。
+
+[Qwen3 加法资格初筛数据](qwen_addition_qualification_20261025_cn.md)：固定无序数对划分，零更新 DEV 资格未过，未训练、未进行 TEST 模型评测。数据在评测前锁定字节，资产登记随后补齐。
+
+[Qwen3 基础加法B01 LoRA状态](qwen_addition_base_b01_20261026_cn.md)：实际初始与step40资格确认终点；TEST/A/B未测，未来分支统一重置优化器。
+
+[Qwen3 加法I01独立终点](qwen_addition_i01_20261026_cn.md)：两个实际200步端点，目标资格未过、基础保持未建立；未混训、未进行TEST模型测量。
+
+[Qwen3 加法P01配对监督终点](qwen_addition_p01_20261026_cn.md)：六个固定200步状态，A系数与输入匹配；基础监督效应与A代价分别报告，未做TEST或内部机制证明。
+
+## A17 R06 actual outputs (2026-10-25 UTC)
+
+Registered checkpoint_family_a17_r06_functional_20261025 (288 actual states) and analysis_a17_r06_functional_20261025. [Results](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/summary_cn.md). Input identities, actual member digests and scope-specific current output access are retained in the round evidence index; payloads remain execution-side.
+
+A17 R06 bounded local dynamics: `analysis_a17_r06_local_dynamics_20261026`, six fixed step120 states,11424 sequence forwards, no continuation/candidatecheckpoint saves. [Current access](checks/20261026_a17_r06_local_dynamics_outputs.json) · [One-page result](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/local_dynamics_20261026/one_page_cn.md).
+
+
+[R06 fixed-target semantic response](fixed_target_semantics_r06_20261028_cn.md): actual517/528forwards,384near+128conditionalfar+5checks;52boundednearqualifications,farconditionalonly. Rawcache/outputIDs and independentaudit registered;no training/Attention/layer expansion.
+
+[R09 全字典分解、频率家族、距离与 A–D 实际产物](domain_difference_decomposition_r09_20261029_cn.md)：六个输出 ID、当前严格访问与精确接口、脚本和证据边界。没有训练，科学接受为 Unknown。
+
+
+[Dense checkpoint谱动态，2026-11-01](dense_checkpoint_spectral_dynamics_20261101_cn.md)：12个实际状态、固定位置缓存和完整几何/线性读出分析；缺失与不足保留，无语言模型训练。
+
+
+[原生谱解码资产入口](native_spectral_decoding_20261101_cn.md)：同权重／测点的5090重缓存与737位置×21条件；[本轮两项实际输出的访问检查](checks/2026-11-01_native_spectral_decoding_outputs.json)。这是局部快照，不替换全库检查。
+
+
+R17 Feature composition: [four-route results](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md); constructed384-row corrected panel, raw frozen responses and bounded H1–H4 analysis registered2026-11-02. Exposed holdout; scientific acceptanceUnknown.

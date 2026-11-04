@@ -1,0 +1,844 @@
+{
+  "generated_at": "2026-10-23T12:35:29.649956+00:00",
+  "project": "from-attention-to-search",
+  "scope": "Explicit sources and language companions; project route included",
+  "authority": "Derived reading copy; source states and researcher decisions are unchanged.",
+  "source_versions": [
+    {
+      "path": "/data/250010109/Research_System",
+      "head": "45433cfdab120d3e469568a9d2f795c871d9f939",
+      "working_tree_dirty": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+      "head": "899552d29e09528d82700376b0a8e15c54937c3c",
+      "working_tree_dirty": true
+    }
+  ],
+  "format": "Markdown; Python standard library only",
+  "files": [
+    {
+      "path": "Projects/from-attention-to-search/main/anchor_ownership.json",
+      "copy": "sources/Projects/from-attention-to-search/main/anchor_ownership.json",
+      "sha256": "7280ea7212350023bf7e40da3022295fcf0b683ea062a15342b6ba8f9017d3ea",
+      "bytes": 139629,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/README.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/README.md",
+      "sha256": "d8c5c615a9042b67e73086f4f5788d0ff19964a4767653db75baf8ade1d0af4c",
+      "bytes": 772,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/README.md",
+      "reading_sha256": "1dc96cf1573c31e63cae54d19251f5f85f78f0440b7f411aa524417266d85f5e"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/README_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/README_cn.md",
+      "sha256": "f64663bcfe80bd82d0355ab1dcddeb3a65aac1a49b0b41d369ee7aec9a587ffe",
+      "bytes": 775,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/README_cn.md",
+      "reading_sha256": "abce1ebaaa1e9d00757a35d8378db1521c06701a8001c0bc1cb2a5c3e99f2e7b"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/artifact_manifest.json",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/artifact_manifest.json",
+      "sha256": "cbf6b487ab7b44c4e60c5a8839ae0d11d6d06a3ea80d8e6f2a8cc9aff7492a40",
+      "bytes": 10086,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "sha256": "e480b7460edf401848a7d7566abc5a6d8dc3cf852f598a09fbd6c5e335f1683c",
+      "bytes": 23693,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "reading_sha256": "4e91537e8844889bfab4239f4bb01f0e0aca4c61d465c37b11268f96ab4717f0"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "sha256": "1d55fafd08dc6ed33eeac5f5819d45d43598a61e48fc2f33d68ea47fa76d4f4f",
+      "bytes": 23368,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "reading_sha256": "46e180445cb64553093896507218cb41d9ed54d2c87318ecb23a63f0def79b4f"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/protocol.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/protocol.md",
+      "sha256": "690645b2c13d6de540811d2cc196df337b787a0858576f8fa1e297346fc22703",
+      "bytes": 8175,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/protocol.md",
+      "reading_sha256": "866ccd482008d32f5359c0fb857e7318d912ce049bc6daa412c647f5d35e033f"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/protocol_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/protocol_cn.md",
+      "sha256": "4159e082acc216b43227fd5e4d551a9a88e2ad8f95098db0dd3f37113f0569cf",
+      "bytes": 6789,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/protocol_cn.md",
+      "reading_sha256": "47edc87345457fe93a683eca735b5539427b6f355fca3010c820ccd79c0f35de"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary.md",
+      "sha256": "c5947f4376114fc961f8a43f9c2ca235537bcfed26d39b02646506b85545f669",
+      "bytes": 7171,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary.md",
+      "reading_sha256": "3941f2a9e1fece0f85c02e1cbeaec23f089199b1d80ae363b4d6283fa407de80"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary_cn.md",
+      "sha256": "86c5c8750ee8d2434986fbed54dfa9cde44d73dbf6eb9b98761eef57a6f0f391",
+      "bytes": 6879,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary_cn.md",
+      "reading_sha256": "8ad9c297d0e1311c9aec73a4fd660f8f74449ebb1da2487c4174c1afe991683b"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "copy": "sources/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "sha256": "4145f30033e8b1d9b243ac1f703189b91adb4f684b3ff7f9d3382be9cf2aeab3",
+      "bytes": 10743,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "reading_sha256": "37d36d52196371c493a97967cad5a12b5064fa2436507d82c6b9dc8a25c7886c"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md",
+      "sha256": "5f15d136807ec5cdde1781bfd4697fe32bccf9b46aafcd051a12d7d1de95c449",
+      "bytes": 11046,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md",
+      "reading_sha256": "0168b9cd0c1370e07654bcc2732104e1306ef45f7c36528271792037a9b9198c"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/research_map.json",
+      "copy": "sources/Projects/from-attention-to-search/main/research_map.json",
+      "sha256": "a691359d255825cabac538b60e881a5ed0e9826bcc46665867afe1ce08a437f2",
+      "bytes": 303105,
+      "role": "referenced asset"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/roadmap.md",
+      "copy": "sources/Projects/from-attention-to-search/main/roadmap.md",
+      "sha256": "e0bae34a2efda77ecb37a4db38e42da5e0b620fcc8d25984022558e3f95d88aa",
+      "bytes": 6368,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/roadmap.md",
+      "reading_sha256": "2a70be7b036d86eb3e48dfcf3e47aa198b81077a9561c404f24caac32477926e"
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "copy": "sources/Projects/from-attention-to-search/main/roadmap_cn.md",
+      "sha256": "ae5338e92cb592e3112ef0769a37513f7840bf0f168dce0b4ab3b4f0ef2c1d06",
+      "bytes": 5854,
+      "role": "document",
+      "reading_copy": "documents/Projects/from-attention-to-search/main/roadmap_cn.md",
+      "reading_sha256": "52386542e02e87de5c94d37d091a65a6fd291230f2741e865aefddfd8c7974b2"
+    }
+  ],
+  "omitted_links": [
+    {
+      "source": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/15_24_frequency_composition_common_path_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes/frequency_routing_input_update_direction_20261023_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/15_24_frequency_composition_common_path_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes/frequency_routing_input_update_direction_20261023.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/primary_feature_paired_effects.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/results.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/frozen_documents/protocol_cn.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/frozen.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/design_freeze.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/audits.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/input_access.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/worker.py",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/run_start.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/seed11_measurements.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/seed22_measurements.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/verify_results.py",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/run.log",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed_cn.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/progress.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/primary_feature_paired_effects.csv",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/results.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/frozen_documents/protocol.md",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/frozen.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/design_freeze.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/audits.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/input_access.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/worker.py",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/run_start.json",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/seed11_measurements.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/seed22_measurements.npz",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/verify_results.py",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/run.log",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md",
+      "target": "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/progress.jsonl",
+      "reason": "outside allowed source workspace",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/summary_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_context_relation_organization_use_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_18_context_relation_organization_use/15_18_context_relation_organization_use_anchor_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/protocol_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A01_common_operator",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A05",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A09",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A10",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A12",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A13",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A14",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A16",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/organization_migrations/20261022/README_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/datasets/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/stories",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap_cn.md",
+      "target": "/data/250010109/Research_System/PROJECTS.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_map_cn.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/summary.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_context_relation_organization_use.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_18_context_relation_organization_use/15_18_context_relation_organization_use_anchor.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/protocol.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/01_common_operator_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A01_common_operator",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/05_failure_mechanism/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A05",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/06_geometry_proxy_preservation/research_map.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/09_common_rare_spectral_discrimination/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A09",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/10_optimizer_learning_rate_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A10",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/11_informative_future_branch_mechanism/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A11",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A12",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A13",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A14",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/16_load_control_gradient_interference/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A16",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/00_foundation_definition/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/organization_migrations/20261022/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/datasets/README.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/research_notes",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/Projects/from-attention-to-search/main/stories",
+      "reason": "source unavailable",
+      "kind": "link"
+    },
+    {
+      "source": "Projects/from-attention-to-search/main/roadmap.md",
+      "target": "/data/250010109/Research_System/PROJECTS.md",
+      "reason": "outside selected documents or asset/size limit",
+      "kind": "link"
+    }
+  ],
+  "limitations": [
+    "No recursive history or raw worker data is copied.",
+    "Owner fields, inline links and single-line reference definitions are inventoried. Other literal code paths remain source text.",
+    "Heading fragments are retained; support depends on the reader. Search headings or open the listed file path if needed.",
+    "Exact originals in sources/ retain original links. Use documents/ for rebased portable links.",
+    "Formulas retain original TeX. The bundle does not rewrite explanations or prove scientific correctness.",
+    "Inline remote images become source links. Reference-style remote images and raw HTML remain original source syntax; no browser is required."
+  ]
+}

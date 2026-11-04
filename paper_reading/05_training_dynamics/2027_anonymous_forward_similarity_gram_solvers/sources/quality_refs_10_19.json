@@ -1,0 +1,255 @@
+{
+  "audit_date_shanghai": "2026-10-21",
+  "agent": "/root/quality_refs_10_19",
+  "scope": "References 10–19, formal venue and review status, targeted public controversy/retraction/correction/reproducibility screening; no experiments or independent reproduction.",
+  "summary": {
+    "peer_reviewed": 7,
+    "unconfirmed_preprints": [
+      11,
+      14,
+      19
+    ],
+    "new_formal_venue_confirmation": 17,
+    "retractions_or_core_refutations_verified": 0,
+    "negative_search_boundary": "Not an exhaustive guarantee. PubPeer was searched via indexed web results, not a full authenticated PubPeer database; inaccessible OpenReview review threads were not evaluated."
+  },
+  "entries": [
+    {
+      "number": 10,
+      "title": "Exploiting Lower Precision Arithmetic in Solving Symmetric Positive Definite Linear Systems and Least Squares Problems",
+      "venue": "SIAM Journal on Scientific Computing 43(1), A258–A277, 2021",
+      "peer_review": "confirmed_journal",
+      "venue_assessment_cn": "SIAM 官方专业学会期刊，正规数值计算领域同行评审来源；不能把权威期刊理解为每项结论自动正确。",
+      "primary_urls": [
+        "https://epubs.siam.org/doi/10.1137/19M1298263",
+        "https://eprints.maths.manchester.ac.uk/2736/",
+        "https://eprints.maths.manchester.ac.uk/2736/1/paper.pdf"
+      ],
+      "policy_urls": [
+        "https://epubs.siam.org/sisc/instructions-for-referees",
+        "https://peerreview.siam.org/"
+      ],
+      "reliability_cn": "可作为有条件的混合精度线性代数背景。论文给出缩放、低精度 Cholesky 预条件与迭代改进；公开测试代码、随机种子和误差停止规则有利复核。",
+      "boundary_cn": "前提、精度组合和收敛判据重要；不是任意病态系统都成功，也没有验证本文的神经网络 Adam 更新。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "retain_peer_reviewed_with_scope"
+    },
+    {
+      "number": 11,
+      "title": "Differentiating Through Linear Solvers",
+      "venue": "arXiv:2404.17039v2, 2024",
+      "peer_review": "not_confirmed_beyond_preprint",
+      "venue_assessment_cn": "arXiv 是预印本存档，不是同行评审会议或期刊。当前记录未列正式 journal reference，题名加发表年份扩展检索也未确认正式版本。v1 的 ICML/PMLR 模板页脚不构成正式发表。",
+      "primary_urls": [
+        "https://arxiv.org/abs/2404.17039",
+        "https://arxiv.org/html/2404.17039v2"
+      ],
+      "policy_urls": [],
+      "reliability_cn": "可作为探索性实证背景；给出 65 个 SuiteSparse 矩阵上对不同求导方式的数值比较，但同行评审保障和独立复核尚未确认。",
+      "boundary_cn": "主要是迭代求解器与前向模式求导，不是 FP32/FP64 Cholesky 阶段比较或自适应优化器实验。作者排序差异来自 arXiv 元数据与 PDF 自身，不等于学术不端。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "extract_caution_preprint"
+    },
+    {
+      "number": 12,
+      "title": "A taxonomy of automatic differentiation pitfalls",
+      "venue": "WIREs Data Mining and Knowledge Discovery 14(6), e1555, 2024",
+      "peer_review": "confirmed_journal",
+      "venue_assessment_cn": "Wiley 正规综述期刊。官方 WIREs 政策为单匿名同行评审、通常两名审稿人加编辑评估；此文正式 PDF 载 Received/Revised/Accepted 时间。",
+      "primary_urls": [
+        "https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1555",
+        "https://uhra.herts.ac.uk/id/eprint/26445/3/WIREs_Data_Min_Knowl_-_2024_-_H_ckelheim_-_A_taxonomy_of_automatic_differentiation_pitfalls.pdf"
+      ],
+      "policy_urls": [
+        "https://wires.onlinelibrary.wiley.com/hub/for_authors"
+      ],
+      "reliability_cn": "作为 AD 的概念分类、反例和排查框架可靠。它区分数学函数、实现抽象和运算精度，有可检查示例。",
+      "boundary_cn": "分类综述不能证明所有 AD 不可靠，也不能替代本文特定模型的定量验证。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "retain_peer_reviewed_with_scope"
+    },
+    {
+      "number": 13,
+      "title": "Matrix Backpropagation for Deep Networks With Structured Layers",
+      "venue": "IEEE ICCV 2015, 2965–2973",
+      "peer_review": "confirmed_main_conference",
+      "venue_assessment_cn": "CVF/IEEE 的 ICCV 主会正式论文，官方 2015 政策载双匿名评审；是计算机视觉的重要同行评审来源。",
+      "primary_urls": [
+        "https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.html",
+        "https://openaccess.thecvf.com/content_iccv_2015/papers/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.pdf",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/7f2257d2b291b8d7e712c70b67e09412-Paper-Conference.pdf"
+      ],
+      "policy_urls": [
+        "https://iccv2015.thecvf.com/author_guidelines.php",
+        "https://iccv2015.thecvf.com/reviewer_guidelines.php"
+      ],
+      "reliability_cn": "结构化矩阵层和矩阵反传的历史来源可保留。",
+      "boundary_cn": "正式论文 p.2970 自承备选特征分解实现遇近重特征值时导数不稳定；后续正式研究仍采用该框架并用 Daleckii–Krein 型矩阵函数反传处理近重根。限制是数值适用边界，不是整篇论文被推翻。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。 额外检出原文自述和后续研究对近重特征值数值问题的处理；不能归类为造假、撤稿或一般理论失效。",
+      "flag": "retain_with_specific_numerical_caveat"
+    },
+    {
+      "number": 14,
+      "title": "A Study of BFLOAT16 for Deep Learning Training",
+      "venue": "arXiv:1905.12322v3, 2019",
+      "peer_review": "not_confirmed_beyond_preprint",
+      "venue_assessment_cn": "本轮只确认 arXiv 预印本，未确认同题正式会议或期刊版。容易与另文 Bfloat16 Processing for Neural Networks（ARITH 2019）混淆，二者不能互相替代。",
+      "primary_urls": [
+        "https://arxiv.org/abs/1905.12322",
+        "https://arxiv.org/html/1905.12322v3"
+      ],
+      "policy_urls": [],
+      "reliability_cn": "工业作者提供多类工作负载及 BF16 张量/FP32 累加的实验，足以作为历史经验来源；同行评审和独立重现实验未确认。",
+      "boundary_cn": "若干模型和舍入/累加规则下维持任务效果，不能外推为所有模型无需调参、所有梯度与轨迹相同。实验采用 BF16 模拟，对任意硬件的性能宣称应另证。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "extract_caution_preprint"
+    },
+    {
+      "number": 15,
+      "title": "Training with Mixed-Precision Floating-Point Assignments",
+      "venue": "Transactions on Machine Learning Research, June 2023",
+      "peer_review": "confirmed_journal",
+      "venue_assessment_cn": "正规 TMLR 正式发表；官方政策采用公开、双匿名评审，通常至少三位评审。不能因早期 DBLP CoRR 条目仍存在而误列为未评审预印本。",
+      "primary_urls": [
+        "https://openreview.net/pdf?id=ZoXi7n54OB",
+        "https://openreview.net/forum?id=ZoXi7n54OB",
+        "https://wonyeol.github.io/papers/2023-tmlr.pdf",
+        "https://github.com/wonyeol/mixed-prec-train"
+      ],
+      "policy_urls": [
+        "https://www.jmlr.org/tmlr/editorial-policies.html"
+      ],
+      "reliability_cn": "张量级精度分配和内存/准确率权衡的相关实证可保留，论文及代码可获取。",
+      "boundary_cn": "本文的主要任务是 CNN 图像分类；对现代大语言模型、Gram 求解器及真实硬件加速的普遍保证均不能由此直接推出。OpenReview 论坛触发浏览器校验，本轮未读其逐条公开审稿，不能声称审稿一致无异议。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "retain_peer_reviewed_with_scope"
+    },
+    {
+      "number": 16,
+      "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+      "venue": "Nature Communications 9, 4950, 2018",
+      "peer_review": "confirmed_journal",
+      "venue_assessment_cn": "Springer Nature 的正规同行评审期刊正式文章，记录有 2018-05-24 收稿、2018-10-10 接受、2018-11-23 发表。原文页面列出公开 Peer Review File，但直接访问触发 Nature 身份重定向，本轮没有读取该文件。",
+      "primary_urls": [
+        "https://www.nature.com/articles/s41467-018-07210-0",
+        "https://doi.org/10.1038/s41467-018-07210-0",
+        "https://arxiv.org/abs/1712.09707",
+        "https://github.com/BethanyL/DeepKoopman"
+      ],
+      "policy_urls": [],
+      "reliability_cn": "学习 Koopman 表示的背景来源可保留。公开代码和可重建数据是正面可复核线索，不等于本轮已复现。",
+      "boundary_cn": "标题 universal 不应被理解为任意非线性系统均有有限维、全局准确线性表示。作者自己指出训练覆盖、外推、潜变量维数与更复杂高维系统的局限。本文只把它当作表示学习背景，未借用其标题证明数值稳定性。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "retain_peer_reviewed_with_scope"
+    },
+    {
+      "number": 17,
+      "title": "Pointer Sentinel Mixture Models",
+      "venue": "ICLR 2017 main conference; manuscript cites 2016 arXiv:1609.07843",
+      "peer_review": "confirmed_main_conference_despite_preprint_citation",
+      "venue_assessment_cn": "正式 OpenReview PDF 头明示 Published as a conference paper at ICLR 2017。原稿引用 2016 预印本并不意味着该研究未通过同行评审。",
+      "primary_urls": [
+        "https://openreview.net/pdf?id=Byj72udxe",
+        "https://openreview.net/forum?id=Byj72udxe",
+        "https://arxiv.org/abs/1609.07843"
+      ],
+      "policy_urls": [
+        "https://iclr.cc/archive/www/doku.php%3Fid%3Diclr2017%3Amain.html",
+        "https://iclr.cc/FAQ/Proceedings"
+      ],
+      "reliability_cn": "作为 WikiText 数据集的原始出处可靠，应可更新成正式 ICLR 2017 引用以方便核验。",
+      "boundary_cn": "只用于数据归属；不能给本文从训练集抽内部 holdout 的方法背书，也不使其得分成为官方 benchmark 结果。OpenReview 论坛浏览器挑战，本轮未读审稿。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "retain_upgrade_bibliography_to_formal_version"
+    },
+    {
+      "number": 18,
+      "title": "Mixed Precision Training",
+      "venue": "ICLR 2018 main conference",
+      "peer_review": "confirmed_main_conference",
+      "venue_assessment_cn": "正式 OpenReview PDF 标记 ICLR 2018 conference paper，属于重要机器学习同行评审会议来源。",
+      "primary_urls": [
+        "https://openreview.net/pdf?id=r1gs9JgRZ",
+        "https://openreview.net/forum?id=r1gs9JgRZ",
+        "https://arxiv.org/abs/1710.03740"
+      ],
+      "policy_urls": [
+        "https://iclr.cc/FAQ/Proceedings"
+      ],
+      "reliability_cn": "FP32 主权重、损失缩放、较高精度累加的历史实证可保留。",
+      "boundary_cn": "报告多任务准确率相当，不等于数学上相同梯度/更新/逐步轨迹。检索遇到 Apex 用户单模型重复运行有微小差异的 issue（https://github.com/NVIDIA/apex/issues/989）；它没有复核原文所有设置，不能作为原文被证伪的证据。OpenReview 论坛本轮不可读。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "retain_peer_reviewed_with_scope"
+    },
+    {
+      "number": 19,
+      "title": "Differentiation of the Cholesky decomposition",
+      "venue": "arXiv:1602.07527, 2016 technical note",
+      "peer_review": "not_confirmed_beyond_preprint",
+      "venue_assessment_cn": "未确认独立会议/期刊版；作者出版列表也把它列为 2016 note，不应虚构正式 venue。",
+      "primary_urls": [
+        "https://arxiv.org/abs/1602.07527",
+        "https://homepages.inf.ed.ac.uk/imurray2/pub/16choldiff/choldiff.pdf",
+        "https://homepages.inf.ed.ac.uk/imurray2/pub/",
+        "https://github.com/imurray/chol-rev",
+        "https://github.com/Theano/Theano/blob/master/theano/tensor/slinalg.py"
+      ],
+      "policy_urls": [],
+      "reliability_cn": "缺少正式评审认证，但公式推导与伪代码可核查，Theano 正式源代码直接采用并引用其 Cholesky 反传公式；作者列出多框架采用。作为具体公式出处可用，不宜与未经验证的经验猜测同等看待。",
+      "boundary_cn": "作者伴随代码 README 说明测试不充分、存在粗糙边缘，仅支持某些三角设置，并提醒 BLAS 整数宽度等。软件状态不意味着公式错误；也不保证所有输入下数值稳定或所有环境的历史速度优势。",
+      "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+      "flag": "extract_caution_preprint_with_substantive_support"
+    }
+  ],
+  "search_queries": [
+    "\"Exploiting Lower Precision Arithmetic\" (retraction OR correction OR erratum OR criticism)",
+    "\"Differentiating Through Linear Solvers\" (retraction OR correction OR erratum OR criticism)",
+    "\"A taxonomy of automatic differentiation pitfalls\" (retraction OR correction OR erratum OR criticism)",
+    "\"Matrix Backpropagation for Deep Networks With Structured Layers\" (retraction OR correction OR erratum OR criticism)",
+    "\"A Study of BFLOAT16 for Deep Learning Training\" (publication OR conference OR erratum OR retraction OR criticism)",
+    "\"Training with Mixed-Precision Floating-Point Assignments\" (retraction OR correction OR erratum OR criticism OR reviews)",
+    "\"Deep learning for universal linear embeddings of nonlinear dynamics\" (retraction OR correction OR erratum OR criticism)",
+    "\"Pointer Sentinel Mixture Models\" (ICLR OR retraction OR erratum OR criticism)",
+    "\"Mixed Precision Training\" Micikevicius (retraction OR erratum OR correction OR critique OR reproduction)",
+    "\"Differentiation of the Cholesky decomposition\" Murray (retraction OR erratum OR correction OR error)",
+    "\"Pointer Sentinel Mixture Models\" (erratum OR correction OR criticism OR reproducibility)",
+    "\"Deep learning for universal linear embeddings\" \"retraction\"",
+    "\"Deep learning for universal linear embeddings\" \"correction\"",
+    "\"Deep learning for universal linear embeddings\" \"criticism\" OR \"limitation\" OR \"counterexample\"",
+    "\"Differentiating Through Linear Solvers\" publication Hovland Hückelheim 2025 2026",
+    "\"Murray\" \"Differentiation of the Cholesky decomposition\" \"published\"",
+    "\"Mixed Precision Training\" Micikevicius reproducibility failed reproduction",
+    "\"Differentiation of the Cholesky decomposition\" reproduction reproducibility error",
+    "\"Differentiating Through Linear Solvers\" erratum correction withdrawn",
+    "\"A Study of BFLOAT16 for Deep Learning Training\" erratum correction withdrawn",
+    "site:pubpeer.com \"Exploiting Lower Precision Arithmetic\"",
+    "site:pubpeer.com \"Differentiating Through Linear Solvers\"",
+    "site:pubpeer.com \"A taxonomy of automatic differentiation pitfalls\"",
+    "site:pubpeer.com \"Matrix Backpropagation\"",
+    "site:pubpeer.com \"A Study of BFLOAT16\"",
+    "site:pubpeer.com \"Training with Mixed-Precision Floating-Point Assignments\"",
+    "site:pubpeer.com \"Deep learning for universal linear embeddings\"",
+    "site:pubpeer.com \"Pointer Sentinel Mixture Models\"",
+    "site:pubpeer.com \"Mixed Precision Training\"",
+    "site:pubpeer.com \"Differentiation of the Cholesky decomposition\"",
+    "\"Deep learning for universal linear embeddings\" reproduction OR reproducibility OR reproduced",
+    "\"A Study of BFLOAT16 for Deep Learning Training\" reproduction OR reproducibility OR reproduced",
+    "\"Exploiting Lower Precision Arithmetic\" reproduction OR reproducibility OR reproduced",
+    "\"Differentiating Through Linear Solvers\" reproduction OR reproducibility OR reproduced",
+    "\"A taxonomy of automatic differentiation pitfalls\" reproduction OR reproducibility OR reproduced",
+    "\"Matrix Backpropagation for Deep Networks\" reproduction OR reproducibility OR reproduced",
+    "\"Training with Mixed-Precision Floating-Point Assignments\" reproduction OR reproducibility OR reproduced",
+    "\"Pointer Sentinel Mixture Models\" reproduction OR reproducibility OR reproduced"
+  ],
+  "venue_policy_queries": [
+    "site.siam.org publications journals peer review SIAM Journal Scientific Computing review process",
+    "site.wires.onlinelibrary.wiley.com \"WIREs Data Mining\" \"peer review\"",
+    "site.jmlr.org/tmlr \"review\" \"double\"",
+    "site.iccv2015.thecvf.com \"review\" \"double\""
+  ],
+  "access_limits": [
+    "OpenReview forums for ZoXi7n54OB, Byj72udxe, r1gs9JgRZ returned browser verification; final PDFs were indexed and readable.",
+    "Nature direct article URL returned identity-provider redirect; publisher-indexed text and arXiv used. Public Peer Review File not opened.",
+    "No venue impact-factor ranking or citation-count thresholds used; these do not certify scientific truth."
+  ]
+}

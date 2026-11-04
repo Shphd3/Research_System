@@ -6,6 +6,9 @@
 
 | 日期 | 内容 | 阅读入口 |
 |---|---|---|
+| 10-31 | 领域区分CrossCoder成员：统一名单与五项分析 | [进入](1031/README_cn.md) |
+| 10-23 | 参数方向保护与残差诊断：结论图表 | [进入](1023/README_cn.md) |
+| 10-22 | 回应10月21日组会：关系、表征与低维路由的问题和已有答案 | [进入](1022/README_cn.md) |
 | 10-19 | CrossCoder归一化分发、SFT、频率贡献与跨层复核 | [进入](1019/README_cn.md) |
 | 10-18 | CrossCoder逐feature分发诊断与φ关系 | [进入](1018/README_cn.md) |
 | 10-16 | CrossCoder关系分组、输入谱与学习记录 | [进入](1016/README_cn.md) |
@@ -29,3 +32,8 @@
 - [全部历史备份](backup/README_cn.md)
 
 旧对话、冻结回执中的原地址保留历史含义，可通过 `tools/research_paths.py` 解析现址；本次不改变科研结论，不包含commit/push。
+
+
+- 2026-11-02：[Feature组合四路线计算与认识更新](1102/README_cn.md)；正式记录由项目R17拥有，科学接受Unknown。
+
+- 2026-11-03：[双SAE四假设修正重测与讨论包](1103/README_cn.md)；R17_D1已完成，原结果保留，科学接受Unknown。

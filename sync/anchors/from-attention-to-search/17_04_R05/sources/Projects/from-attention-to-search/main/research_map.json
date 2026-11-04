@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "title": "研究问题地图",
-  "date": "2026-10-22",
+  "date": "2026-10-24",
   "big_question_cn": "哪些信息适合共同使用与学习，哪些需要分工？",
   "scope": "Derived reading map of registered question ownership. Source designs and result records retain scientific authority.",
-  "registry_sha256": "8914bc19ed4e21caf90446fb6c28a5090e9d16fbed29ebeae77e353d7612fb2b",
+  "registry_sha256": "325a6d7abbce379d607455a299622c0c2885fdadaeadf3a7788b9e4ef2c22e99",
   "source_revision": "b1b1e67aed39ae2ce044cdb8b6f6c7d9d510941c",
   "counts": {
     "lines": 13,
-    "parents": 80,
-    "subanchors": 66,
-    "anchors": 146
+    "parents": 82,
+    "subanchors": 70,
+    "anchors": 152
   },
   "lines": [
     {
@@ -62,8 +62,8 @@
       "id": "A10",
       "title_cn": "优化器与学习率的机制",
       "question_cn": "高增益共同方向怎样影响优化稳定性，学习率和优化器各起什么作用？",
-      "children_count": 2,
-      "owner_count": 2,
+      "children_count": 3,
+      "owner_count": 3,
       "subanchor_count": 0,
       "source": "main/problem_anchors/10_optimizer_learning_rate_mechanism/README.md"
     },
@@ -107,9 +107,9 @@
       "id": "A15",
       "title_cn": "表征组织、可读出与功能",
       "question_cn": "哪些信息能从表示读出来，模型怎样实际使用它们，它们何时对路由有用？",
-      "children_count": 25,
-      "owner_count": 68,
-      "subanchor_count": 43,
+      "children_count": 26,
+      "owner_count": 73,
+      "subanchor_count": 47,
       "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/README.md"
     },
     {
@@ -695,6 +695,25 @@
       "related_results": [
         "main/experiments/A10/A10_02_frequency_singular_sgd_instability/summary.md"
       ]
+    },
+    {
+      "id": "10_03",
+      "line": "A10",
+      "parent_id": null,
+      "title_cn": "Router 数值误差是否改变一次有限学习更新",
+      "question_cn": "固定同一模型、完整目标和优化器历史，等价的稳定数值计算是否改变超出回放误差的一步任务损失作用？",
+      "why_cn": "区分真实学习干扰与数值导数诱发的作用，不能只用梯度零和残差代替实际更新及有限损失。",
+      "approach_cn": "先审查实际精度、Top-K 归一化和目标分量，再从同一状态克隆原生/稳定/高精度参考更新，比较固定探针损失。",
+      "role_for_parent_cn": "A10 下的独立候选问题，补充共同方向与优化器分析的数值竞争解释；不是 A10_01/A10_02 的子检验，不继承其他实验授权。",
+      "evidence_state_cn": "AI_PROPOSAL：源码审查与60行合成校准完成；非归一化Top-1出现失真，归一化Top-2在这些案例中接近参考；真实token/已有优化器回放NOT RUN。",
+      "boundary_cn": "合成校准只证明实现上的可能性与抵消边界，尚不能解释真实Router塌缩、专家分工或长期收益。",
+      "source": "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_03_router_numerical_update_fidelity_anchor.md",
+      "source_sha256": "bd4ce119d6624981c053f1a817e8be860bac4e4bff2e5fe06b4d696d0fc6c0bc",
+      "evidence_sources": [
+        "main/research_notes/router_numerical_fidelity/20261024_scope_audit.md",
+        "main/research_notes/router_numerical_fidelity/20261024_scope_audit_cn.md"
+      ],
+      "related_results": []
     },
     {
       "id": "11_01",
@@ -2427,7 +2446,7 @@
       "approach_cn": "先检查token条件下激活变化、真实hidden的中心化PCA与有符号频带贡献，再以频率/匹配随机名单乘动态双路径/固定高频一路的四条件、两种子、等一epoch预算比较低频宏NLL及差中差。",
       "role_for_parent_cn": "独立调用与学习决策：它比较额外残差FFN的调用分配，不把15_23的均值解释作为先验结论，也不声称原模型已移除共同能力。",
       "evidence_state_cn": "表征分析和四个学习条件×两个种子均已完成。强制高频路径相对自由选择的低频损失差在两种子方向不一致，均值及交互未满足支持规则，变化也小于预定0.01 nat幅度；本轮不支持强制调用改善低频输入学习的假设。10月21日冻结诊断另有实际执行，结果受旧NLL重放差异限制，不代替主结果；研究者机制判断仍待审阅。",
-      "boundary_cn": "四条件同时改变调用、负载与更新曝光，差中差不是common中介效应；仅两种子、当前冻结表示/SFT/top-2条件，不能外推预训练容量或学习率优越性。",
+      "boundary_cn": "四条件同时改变调用、负载与更新曝光，差中差不是common中介效应；仅两种子、当前冻结表示/SFT/top-2条件，不能外推预训练容量或学习率优越性。 2026-10-23：前期候选的局部方向检验已由研究者要求建立 A15_24_02，24 项有界分析完成；事实与限制见子 Anchor 的 Summary。组合更新相容性仍未测试；机制判断等待阅读和讨论。 2026-10-24新增局部A15_24_03：频率关联测试40项完成，严格匹配与跨模型一致性不足，保留未决。",
       "line": "A15",
       "parent_id": null,
       "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/15_24_frequency_composition_common_path_anchor.md",
@@ -2443,7 +2462,19 @@
       "related_results": [
         "main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/summary.md",
         "main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/summary_cn.md"
-      ]
+      ],
+      "candidate_sources": [
+        "main/research_notes/frequency_routing_rank_one_20261022_candidate_anchor.md",
+        "main/research_notes/frequency_routing_rank_one_20261022_candidate_anchor_cn.md",
+        "main/research_notes/frequency_routing_input_update_direction_20261023.md",
+        "main/research_notes/frequency_routing_input_update_direction_20261023_cn.md"
+      ],
+      "candidate_source_sha256": {
+        "main/research_notes/frequency_routing_rank_one_20261022_candidate_anchor.md": "ddcb568654f279423d800dec64335195adaf32e9e752924cd2d854a84335f71f",
+        "main/research_notes/frequency_routing_rank_one_20261022_candidate_anchor_cn.md": "baef63e1fc84c48f56c85affac620307a57f0ec59d516a9a67eab4bc75ebdbf7",
+        "main/research_notes/frequency_routing_input_update_direction_20261023.md": "532c6a47b849aedd0a05e12f9310e27ac422b304a08c892d7e7d5a5aae54a068",
+        "main/research_notes/frequency_routing_input_update_direction_20261023_cn.md": "32463c8d6140e84713ab906b1f02119fff48fcb0b2fdc00337f60b550eef9663"
+      }
     },
     {
       "id": "15_24_01",
@@ -2469,6 +2500,58 @@
       "evidence_source_sha256": {
         "main/experiments/A15/15_24_frequency_composition_common_path/common_optimizer_coupling_20261022/summary.md": "1f8b7adaef51e51d70a1f9834119b2b4440412c77cf5b10dbff9be33d3fb30ec",
         "main/experiments/A15/15_24_frequency_composition_common_path/common_optimizer_coupling_20261022/detailed.md": "2e77b60d21a334ae9a60bba617422663849c2d453f8092e8a1f7e9248f4f9d88"
+      }
+    },
+    {
+      "id": "15_24_02",
+      "line": "A15",
+      "parent_id": "15_24",
+      "title_cn": "频率相关方向的保持与补空间局部更新",
+      "question_cn": "严格保留选定矩阵响应时，补空间限制的条件是什么；这样限制实际 AdamW 位移后，低频预测怎样变化？",
+      "why_cn": "保存参数与输入主方向的几何偏向尚未说明预测作用；需要分开已有方向回退和后续位移限制。",
+      "approach_cn": "原 T_F 两种子、仅 E0 up；固定 TRAIN PCA/随机基底，部分净变化回退、同状态临时 AdamW 提议、实际位移/梯度投影与范数匹配对照；全部 DEV 读出。",
+      "role_for_parent_cn": "父问题下的局部功能与实现检验；不转向一般遗忘，不混入新增 common，不重新设计路由。",
+      "evidence_state_cn": "24 项条件完成，数值资格通过。匹配范数 PCA 补空间比完整/随机更新损失略低，但均比原模型略高；回退损失也升高。仅投影梯度后实际位移仍有 V 分量。研究者机制判断 Unknown。",
+      "boundary_cn": "一个专家的一个矩阵；417 个低频 feature 有支持、1277 NA，支持中位数1；693 个受影响位置同时有高频 feature。已暴露 DEV、两个原种子、零接受连续训练步。先阅读、再讲解、讨论后更新认识。",
+      "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "source_sha256": "4145f30033e8b1d9b243ac1f703189b91adb4f684b3ff7f9d3382be9cf2aeab3",
+      "evidence_sources": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary.md",
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md"
+      ],
+      "related_results": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary.md",
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary_cn.md"
+      ],
+      "evidence_source_sha256": {
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/summary.md": "c5947f4376114fc961f8a43f9c2ca235537bcfed26d39b02646506b85545f669",
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023/detailed.md": "e480b7460edf401848a7d7566abc5a6d8dc3cf852f598a09fbd6c5e335f1683c"
+      }
+    },
+    {
+      "id": "15_24_03",
+      "line": "A15",
+      "parent_id": "15_24",
+      "title_cn": "参数方向干预的预测影响与特征频率",
+      "question_cn": "同一次参数改动的预测影响，是否在匹配条件后仍随特征TRAIN激活频率不同？",
+      "why_cn": "已有参数方向作用没有分离频率关联；重叠样本和指标权重可能造成表面差异。",
+      "approach_cn": "原T_F两种子只回退E0 up；2幅度、8同秩同范数随机基底；同对话/token/路由并配平5连续协变量，逐位置读出与独立复算。",
+      "role_for_parent_cn": "父频率分发问题下的局部条件关联检验；不把其他规则任务的重要方向移入，也不转向一般遗忘。",
+      "evidence_state_cn": "40项前向完成，原值/冻结/范数/独立重算通过。匹配11对/9对话，2项SMD超线；50% T=-0.000995/+0.003931nat，两区间跨零。主要关联证据不足，不能裁定无频率作用。",
+      "boundary_cn": "一个矩阵、2已有模型、已暴露DEV；693位置都同时含高低频成分，匹配侧标签不隔离单特征。没有训练频率随机化或长期收益证据，科学判断待研究者检查。",
+      "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor.md",
+      "source_sha256": "28e630dd960eeb4bf7f0ef5bb66bfd8b53d20884e73a20bcd9e38268f377ee48",
+      "evidence_sources": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/summary.md",
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/detailed.md"
+      ],
+      "related_results": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/summary.md",
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/summary_cn.md"
+      ],
+      "evidence_source_sha256": {
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/summary.md": "e61207760485c2b6c5dcbd5c42888700beb21e2c083f03872902e14a7c2f157c",
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/detailed.md": "686a6d8ddd92e1194f5c2fab3b760543d02050c9cea7ef658561e20be6744785"
       }
     },
     {
@@ -3013,6 +3096,71 @@
       "evidence_sources": [],
       "source_sha256": "f3dc63a03924ae402599721a2debe58e2faf78a609d5076d100ce27309e664b8",
       "related_results": []
+    },
+    {
+      "id": "15_25_01",
+      "line": "A15",
+      "parent_id": "15_25",
+      "title_cn": "布尔组合中的常见表征分量",
+      "question_cn": "反复出现的表征分量是否影响布尔组合预测，能否从单条件语境迁入？",
+      "why_cn": "把统计分量与可检验的作答作用连接起来，为后续研究保留有边界的候选对象。",
+      "approach_cn": "冻结模型与字典，按发现/复核家族选择分量，比较削弱、跨语境替换及匹配随机对照。",
+      "role_for_parent_cn": "A15_25 的局部功能检验；独立于供给数据和端点的其他 Anchor。",
+      "evidence_state_cn": "本条导航只登记已有 Anchor 与 Protocol；设计冻结时为 NOT RUN。",
+      "boundary_cn": "局部表征依赖和替换；不推出参数共享或学习收益。现有设计状态按来源保留。",
+      "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_01_component_reuse_anchor.md",
+      "source_sha256": "f8740218eb84aba6cbd35c31af9fe1c400058709feec7128c594a754c09a1795",
+      "related_results": []
+    },
+    {
+      "id": "15_25_02",
+      "line": "A15",
+      "parent_id": "15_25",
+      "title_cn": "学习经历与任务重要方向",
+      "question_cn": "学习经历如何改变条件规则的表征，以及哪些方向对任务作答最重要？",
+      "why_cn": "把统计分量与可检验的作答作用连接起来，为后续研究保留有边界的候选对象。",
+      "approach_cn": "在相同输入上比较 Base、学会 A、A 后只学 B、A 后混合学 A+B；用 CrossCoder 及原始变化子空间做冻结干预和等幅随机对照。",
+      "role_for_parent_cn": "A15_25 的局部功能检验；独立于供给数据和端点的其他 Anchor。",
+      "evidence_state_cn": "四状态各1600条提取与253条件干预完成。16维原始状态差转移使旧题0%→80.88%，等维等幅随机为0.12%，新题98.28%；CrossCoder整体重建资格均失败，候选系数转移未恢复旧题。已暴露DEV、seed29；研究者机制判断待定。",
+      "boundary_cn": "已暴露 DEV、一个训练种子、B 暴露不等；同输入跨状态替换不是跨任务复用，也不单独识别学习顺序的因果效应。",
+      "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_02_learning_history_representation_anchor.md",
+      "source_sha256": "274512eb672126397d2d3c1c4b5bac029b711c80eeb87fb53af72546714522a8",
+      "related_results": [
+        "main/experiments/A15/15_25_02_learning_history_representation/20261023/summary.md",
+        "main/experiments/A15/15_25_02_learning_history_representation/20261023/summary_cn.md"
+      ],
+      "evidence_sources": [
+        "main/experiments/A15/15_25_02_learning_history_representation/20261023/summary.md",
+        "main/experiments/A15/15_25_02_learning_history_representation/20261023/summary_cn.md"
+      ],
+      "evidence_source_sha256": {
+        "main/experiments/A15/15_25_02_learning_history_representation/20261023/summary.md": "44b8bb484e1706e5b197fa1d14a4c6859f48116441bdf2de43017892ac975199",
+        "main/experiments/A15/15_25_02_learning_history_representation/20261023/summary_cn.md": "aa450e06ea17d13bcae528fcc5ff091fede3f24d4e1829202f214ab49888c876"
+      }
+    },
+    {
+      "id": "15_26",
+      "line": "A15",
+      "parent_id": null,
+      "title_cn": "条件订单与低频组合中的已有计算复用",
+      "question_cn": "已学组成能力能否支持条件组合，更新与分支效用需要哪些资格证据？",
+      "why_cn": "学习更快、原功能保持与实际复用需要分别证明；单看冻结成功或干预后变差不能排除独立组合映射。",
+      "approach_cn": "订单V2按单项资格、迁移、更新、组合曝光与分支/选择器的有限链执行；另保留独立R01规则修订与内部交换合同。各自数据与结果分开。",
+      "role_for_parent_cn": "A15下独立父问题；与A15_24调用、A15_25关系/冻结分解及A17_04反转保留证据联系，不继承其局部裁决。",
+      "evidence_state_cn": "订单V2有限流程已收束：14实际训练、148科学保存状态；三种子单项全域资格未过，S3–S6主对照依约不适用。固定48题中29/27/30例五单项全对而组合错；内部复用Unknown。R01状态仍由其独立记录持有。 R01另完成82条符号轨迹；P/B/C均衡U测试3.82%/3.13%/2.08%，跨问法与组合资格失败，机制诊断为探索性。",
+      "boundary_cn": "任务资格、局部配对行为、内部机制、慢更新效用与专家收益分别记录。问题OPEN，研究者机制接受Unknown；两个任务的准确率和R01结果不合并。",
+      "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor.md",
+      "source_sha256": "ff97bb71a5ac3dee37b46a962a3f005108fe72985ddd92387cf5c4b3202f5fbe",
+      "evidence_sources": [
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary.md",
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/detailed.md",
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/summary.md"
+      ],
+      "related_results": [
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary.md",
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/detailed.md",
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/summary.md"
+      ]
     }
   ]
 }

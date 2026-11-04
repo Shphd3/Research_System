@@ -1,0 +1,136 @@
+{
+  "derived_from_existing_outputs_only": true,
+  "new_forwards": 0,
+  "subset_intersections": [
+    {
+      "candidate_population": "all141",
+      "total": 141,
+      "example_far": 37,
+      "explanation_far": 26,
+      "both_endings_far": 14,
+      "both_features": [
+        424,
+        2138,
+        2163,
+        3837,
+        4529,
+        5562,
+        7564,
+        8611,
+        8882,
+        9483,
+        11159,
+        13069,
+        13413,
+        16200
+      ]
+    },
+    {
+      "candidate_population": "domain_math64",
+      "total": 64,
+      "example_far": 10,
+      "explanation_far": 6,
+      "both_endings_far": 1,
+      "both_features": [
+        13069
+      ]
+    },
+    {
+      "candidate_population": "domain_biology64",
+      "total": 64,
+      "example_far": 22,
+      "explanation_far": 17,
+      "both_endings_far": 12,
+      "both_features": [
+        424,
+        2163,
+        3837,
+        4529,
+        5562,
+        7564,
+        8611,
+        8882,
+        9483,
+        11159,
+        13413,
+        16200
+      ]
+    },
+    {
+      "candidate_population": "domain128",
+      "total": 128,
+      "example_far": 32,
+      "explanation_far": 23,
+      "both_endings_far": 13,
+      "both_features": [
+        424,
+        2163,
+        3837,
+        4529,
+        5562,
+        7564,
+        8611,
+        8882,
+        9483,
+        11159,
+        13069,
+        13413,
+        16200
+      ]
+    },
+    {
+      "candidate_population": "original_replication36",
+      "total": 36,
+      "example_far": 11,
+      "explanation_far": 12,
+      "both_endings_far": 7,
+      "both_features": [
+        424,
+        2163,
+        3837,
+        4529,
+        5562,
+        7564,
+        16200
+      ]
+    }
+  ],
+  "both_ending_far_features_by_log_frequency": {
+    "low": [],
+    "middle": [
+      424,
+      2138,
+      3837,
+      4529,
+      5562,
+      8611,
+      9483,
+      13069,
+      16200
+    ],
+    "high": [
+      2163,
+      7564,
+      8882,
+      11159,
+      13413
+    ],
+    "low_support_or_unknown": []
+  },
+  "original_replication36_new_near_both_endings": 9,
+  "original_replication36_near_and_far_both_endings": 3,
+  "both_ending_far_and_near_features": [
+    424,
+    2138,
+    4529,
+    7564,
+    8611,
+    8882,
+    9483,
+    11159,
+    13069,
+    13413
+  ],
+  "summary_warning": "E is absolute response relative to one date control. It can be positive after domain preference reverses; use D direction separately. Ratio distributions use only reported denominator support and are not population labels.",
+  "distance_construction": "New framed240token panel; d16 also differs from original R08. Changes already present at d16 cannot be called loss across distance."
+}

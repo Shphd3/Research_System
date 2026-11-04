@@ -1,0 +1,18 @@
+{
+  "type": "REPORT_HANDOFF_WALLCLOCK_DEVIATION",
+  "training_start_utc": "2026-10-25T17:50:16.741554+00:00",
+  "training_terminal_utc": "2026-10-25T18:15:27.657718+00:00",
+  "core_analysis_saved_utc": "2026-10-25T18:16:05.067205+00:00",
+  "output_registration_utc": "2026-10-25T18:25:44.793985+00:00",
+  "scoped_core_delivery_check_utc": "2026-10-25T18:27:21.465857+00:00",
+  "final_package_continuation_utc": "2026-10-25T23:49:57.314501+00:00",
+  "deadline_utc": "2026-10-25T21:50:16.741539+00:00",
+  "training_wall_seconds": 1510.916221857071,
+  "total_elapsed_to_final_continuation_seconds": 21580.572962284088,
+  "training_within_budget": true,
+  "core_analysis_registration_within_budget": true,
+  "final_package_within_original_4h_window": false,
+  "new_training_after_terminal": false,
+  "additional_resource_request": false,
+  "note": "Final archival/packaging was completed in the later user-requested continuation; no claim of end-to-end4h completion. The elapsed gap is not excluded from the original wallclock."
+}

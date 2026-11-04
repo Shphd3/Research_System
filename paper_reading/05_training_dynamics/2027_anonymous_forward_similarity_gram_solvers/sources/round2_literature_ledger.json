@@ -1,0 +1,187 @@
+{
+  "date": "2026-10-19",
+  "scope": "Targeted expanded prior-art search, not exhaustive systematic review or proof of priority. All readings concern published sources; anonymous author identity not sought.",
+  "count_technical_works": 21,
+  "queries_representative_not_complete": [
+    "differentiable linear solver floating point forward accurate derivative inaccurate",
+    "Cholesky gradient precision placement Gram matrix training",
+    "ridge regression mixed precision gradient training numerical stability",
+    "differentiable ridge learned regularization Woodbury training",
+    "Low-precision arithmetic for fast Gaussian processes",
+    "Energy-Efficient Gaussian Processes Using Low-Precision Arithmetic",
+    "Why Approximate Matrix Square Root Outperforms Accurate SVD",
+    "automatic differentiation pitfalls precision function derivative",
+    "mixed precision Neural ODE adjoint",
+    "Low-Precision Random Fourier Features for Memory-Constrained Kernel Approximation"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "work": "Seeger，Auto-Differentiating Linear Algebra，2017／2019",
+      "primary_url": "https://arxiv.org/html/1710.08717v5",
+      "reading_depth": "全文 §3.3 及算子部分",
+      "relation_and_limits": "稳定可微分解、避免显式 Gram；无本文式 matched Adam 实验",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 2,
+      "work": "Hückelheim / Hovland，Differentiating Through Linear Solvers，2024",
+      "primary_url": "https://arxiv.org/html/2404.17039v2",
+      "reading_depth": "全文方法与图 1–4",
+      "relation_and_limits": "解／导数可靠性直接先例；主要为迭代求解和前向微分",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 3,
+      "work": "Hückelheim 等，AD pitfalls，WIREs 2024",
+      "primary_url": "https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1555",
+      "reading_depth": "正式全文 §3.4、图 6",
+      "relation_and_limits": "函数／导数浮点误差不同的直接例证",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 4,
+      "work": "Akbarzadeh 等，COAP 2020",
+      "primary_url": "https://link.springer.com/article/10.1007/s10589-020-00214-x",
+      "reading_depth": "正式全文引言、求导和实验结构",
+      "relation_and_limits": "不完全收敛的求解器导致伴随不一致；不等于精度析因",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 5,
+      "work": "Wang，Backpropagation-Friendly Eigendecomposition，NeurIPS 2019",
+      "primary_url": "https://papers.nips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+      "reading_depth": "全文方法与实验",
+      "relation_and_limits": "SVD 前向／PI 反向、任务验证；算子不同",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 6,
+      "work": "Wang，Robust Differentiable SVD，TPAMI 2022",
+      "primary_url": "https://arxiv.org/abs/2104.03821",
+      "reading_depth": "全文相关方法与实验",
+      "relation_and_limits": "前向 SVD／反向 Taylor，训练稳定性；不是 Gram solve",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 7,
+      "work": "Song，Why Approximate Matrix Square Root…，ICCV 2021",
+      "primary_url": "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+      "reading_depth": "全文 §3–5、表 1–5",
+      "relation_and_limits": "精度、固定前向换反向、条件数、任务与成本，强近邻",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 8,
+      "work": "Bertinetto，Meta-learning with Differentiable Closed-form Solvers，ICLR 2019",
+      "primary_url": "https://arxiv.org/abs/1805.08136",
+      "reading_depth": "全文 §3、实验、附录 B–C",
+      "relation_and_limits": "模型来源、dual、fixed / learned λ；无 matched precision replay",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 9,
+      "work": "Maddox，Low-precision arithmetic for fast Gaussian processes，UAI 2022",
+      "primary_url": "https://proceedings.mlr.press/v180/maddox22a.html",
+      "reading_depth": "全文相关方法／图表／式（6）–（7）",
+      "relation_and_limits": "低精度核谱、混合精度求解与梯度；本轮新增强近邻",
+      "cited_in_manuscript": false
+    },
+    {
+      "id": 10,
+      "work": "Alder，Energy-Efficient Gaussian Processes…，ICML 2024",
+      "primary_url": "https://proceedings.mlr.press/v235/alder24a.html",
+      "reading_depth": "全文 §3–5、表 1–2",
+      "relation_and_limits": "条件数／精度／预测／能耗；核超参数固定为高精度优化",
+      "cited_in_manuscript": false
+    },
+    {
+      "id": 11,
+      "work": "Lee，Training with Mixed-Precision Floating-Point Assignments，TMLR 2023",
+      "primary_url": "https://arxiv.org/abs/2301.13464",
+      "reading_depth": "全文问题定义、方法、实验设置",
+      "relation_and_limits": "精度分配与内存／准确率；不聚焦 Gram 或 replay",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 12,
+      "work": "Higham / Mary，Acta Numerica 2022",
+      "primary_url": "https://doi.org/10.1017/S0962492922000022",
+      "reading_depth": "正式摘要／书目信息",
+      "relation_and_limits": "混合精度数值分析大背景；不据此声称特定神经训练已完成",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 13,
+      "work": "Carson / Higham，SIAM SISC 2018",
+      "primary_url": "https://doi.org/10.1137/17M1140819",
+      "reading_depth": "DOI 元数据与问题定位",
+      "relation_and_limits": "三精度迭代改进；不作本文实验重复的证据",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 14,
+      "work": "Higham / Pranesh，SIAM SISC 2021",
+      "primary_url": "https://doi.org/10.1137/19M1298263",
+      "reading_depth": "DOI 元数据与问题定位",
+      "relation_and_limits": "SPD／最小二乘低精度求解；不作本文训练结论的证据",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 15,
+      "work": "Micikevicius，Mixed Precision Training，ICLR 2018",
+      "primary_url": "https://arxiv.org/abs/1710.03740",
+      "reading_depth": "作者摘要／方法定位",
+      "relation_and_limits": "训练梯度与更新需精度保护是已知方向",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 16,
+      "work": "Amos / Kolter，OptNet，ICML 2017",
+      "primary_url": "https://proceedings.mlr.press/v70/amos17a.html",
+      "reading_depth": "正式摘要",
+      "relation_and_limits": "可微优化层大背景",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 17,
+      "work": "Blondel，Efficient and Modular Implicit Differentiation，NeurIPS 2022",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/228b9279ecf9bbafe582406850c57115-Abstract-Conference.html",
+      "reading_depth": "正式摘要",
+      "relation_and_limits": "隐式微分大背景，不覆盖本文全部实证",
+      "cited_in_manuscript": true
+    },
+    {
+      "id": 18,
+      "work": "Gholami，ANODE，IJCAI 2019",
+      "primary_url": "https://www.ijcai.org/Proceedings/2019/0103.pdf",
+      "reading_depth": "全文有关方法／实验",
+      "relation_and_limits": "ODE 数值解与可靠反向的相邻先例；非同类 Gram 机制",
+      "cited_in_manuscript": false
+    },
+    {
+      "id": 19,
+      "work": "Zhang，Low-Precision Random Fourier Features…，AISTATS 2019",
+      "primary_url": "https://proceedings.mlr.press/v89/zhang19f.html",
+      "reading_depth": "正式摘要",
+      "relation_and_limits": "核近似误差与泛化并非简单对应，有理论与任务验证；非求解器训练重复",
+      "cited_in_manuscript": false
+    },
+    {
+      "id": 20,
+      "work": "Celledoni，Mixed Precision Training of Neural ODEs，arXiv 2025／2026 修订",
+      "primary_url": "https://arxiv.org/html/2510.23498v2",
+      "reading_depth": "作者摘要及全文结构",
+      "relation_and_limits": "前向／伴随精度分开；未确认正式评议状态，不作强制基线",
+      "cited_in_manuscript": false
+    },
+    {
+      "id": 21,
+      "work": "Rehmann，Mosaic，arXiv 2026",
+      "primary_url": "https://arxiv.org/abs/2606.27895",
+      "reading_depth": "作者摘要",
+      "relation_and_limits": "可微物理求解器梯度／成本比较；未确认评议状态，不作强制基线",
+      "cited_in_manuscript": false
+    }
+  ]
+}

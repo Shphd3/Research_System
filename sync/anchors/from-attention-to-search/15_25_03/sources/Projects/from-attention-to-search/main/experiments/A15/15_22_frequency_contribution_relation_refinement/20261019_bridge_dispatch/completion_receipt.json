@@ -1,0 +1,106 @@
+{
+  "task_state": "COMPLETE_WITH_RECORDED_INSUFFICIENCIES",
+  "question_state": "OPEN",
+  "design_state": "AUTHORIZED_A_TO_C_EXECUTED_FROZEN",
+  "result_state": "EXPLORATORY_BOUNDED",
+  "researcher_scientific_judgment": "Unknown; awaits discussion",
+  "run_id": "20261019T025630Z",
+  "completed_at_utc": "2026-10-19T03:17:06.338526+00:00",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z",
+  "project_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch",
+  "authorization": "User 2026-10-19: 认可，请开始推进分析。分析完了以后，给出你具体的分析结果的陈述和讲解。用白话要让我能听懂",
+  "scope_completed": [
+    "A1 existing full-dictionary TRAIN distributions and migration reused",
+    "A2 per-position four-band M/R/U profiles",
+    "A3 current-ID-frequency bridge and1000dialogue bootstrap",
+    "A4 fixed-ID differences and text insufficiencies",
+    "B current SFT within-band phi, fixed average-linkage,20matched random controls,split-half stability",
+    "C all42routing candidates and84split-condition exposure/consistency metrics",
+    "random and high-ranking texts, original-string validation, independent numeric checks"
+  ],
+  "expected_counts": {
+    "TRAIN_positions": 85548,
+    "EVAL_positions": 22446,
+    "groupings": 21,
+    "routing_conditions": 42,
+    "split_condition_metrics": 84,
+    "frequency_bands": 4,
+    "receiving_slots": 8,
+    "TRAIN_positive_features": 15477,
+    "TRAIN_zero_features": 907,
+    "low_features": 1694,
+    "EVAL_observed_low_features": 1198
+  },
+  "actual_counts": {
+    "groupings": 21,
+    "routing_npz": 42,
+    "exposure_npz": 84,
+    "figures": 6,
+    "figure_formats": 18,
+    "text_cards": 302,
+    "unique_text_positions": 174,
+    "independent_pair_checks": 160,
+    "independent_route_checks": 1024,
+    "independent_count_checks": 320,
+    "original_text_comparisons": 3840
+  },
+  "preserved_evidence_limits": [
+    "All EVAL reuse exploratory",
+    "All1694lowest-band features have<20TRAIN hits",
+    "Four of eight fixed IDs have no R1 contrast; two have low EVAL support",
+    "496lowest-band features unseen in EVAL retain receiptNA",
+    "Near-singleton groups, poor exchangeability in bands2/4 and unstable half-sample membership",
+    "Empty receiving slots and zero/infinite/NA quantities retained"
+  ],
+  "not_run_by_design": [
+    "H3 learning",
+    "expert training or adaptation",
+    "new inference or activation extraction",
+    "generation, function or spectral experiments",
+    "new GPU allocation",
+    "commit/push"
+  ],
+  "recovered_engineering_failures": [
+    "dispatch_failure_01.json: sparse matrix materialization fixed before condition outputs",
+    "text_failure_01.json: reuse validated byte-level decoder instead of absent transformers"
+  ],
+  "limits": {
+    "CPU_threads": 8,
+    "RSS_GiB": 16,
+    "new_disk_GiB": 1,
+    "analysis_active_wall_minutes": 30,
+    "overall_wall_minutes": 90
+  },
+  "core_completed_stage_wall_sum_seconds": 266.1364922169596,
+  "wall_since_freeze_seconds": 1203.99976,
+  "largest_logged_process_RSS_GiB": 2.4039535522460938,
+  "GPU_used": false,
+  "CPU_cgroup_quota_cores": 8,
+  "runtime": {
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "scipy": "1.12.0",
+    "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+    "pandas": "1.5.3"
+  },
+  "protocol_received_sha256": "74a652f03be13dfd3d2aac5a34e48f5b60f57a1c90f15e1905c99583d491f9e9",
+  "config_sha256": "c64db92488a7f31a414a4d06319ad3510f808a5e2225c3430ec04aa3b51ec8f8",
+  "code_sha256": {
+    "analyze.py": "e06a1dfa979db3ab8dfcfd4f5f6bdf97770261a3010271cdb5242ca1547844a9",
+    "annotate_texts.py": "9a39a130e00c8bddd366774fd4be13a311adbda3050c24e38dd14358711f5e86",
+    "figures.py": "601069a1c0d3c8b4ba60cc72d701ea8828aaff5f325b7f84cea1252ec98b91af",
+    "verify.py": "c8b7674376458a11e49fb85ff87c63f7d3a04f9f14c0eab20df35e8314773156",
+    "write_reports.py": "696113d1bf52bbb1e6c5c0bb161967a82e5e2f251995ab9bb411910b960c971b"
+  },
+  "input_checks": [
+    "assets/checks/2026-10-19_frequency_contribution_bridge_inputs.json",
+    "assets/checks/2026-10-19_frequency_contribution_bridge_tokenizer.json"
+  ],
+  "execution_file_bytes": 227315255,
+  "project_file_bytes": 11462297,
+  "new_bytes_including_project_bound": 239421330,
+  "final_validation_at_utc": "2026-10-19T03:18:47.332661+00:00",
+  "final_wall_seconds": 1304.969309,
+  "image_source_validation": "6PNG/6SVG/6PDF, project/run exact copies; all text cards counted",
+  "source_protocol_and_anchor_unchanged": true
+}

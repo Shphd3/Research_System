@@ -1,0 +1,14 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_29_spectral_hierarchical_router_curriculum/R01_progressive_vs_full/dataset_guide_cn.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_29_spectral_hierarchical_router_curriculum/R01_progressive_vs_full/dataset_guide_cn.md)；研究修改仍回到原件。
+
+---
+
+# 校准、teacher 与训练身份
+
+最终 v5 使用既有 DCLM 前30B训练视图与原 Qwen tokenizer。A/B/C5 分别取262144、262144、16384个有效位置，覆盖1152、1174、72个物理文档，每文档最多256位置，seed103121 for C5; retained A/Bseed103120。保留完整原始2048输入上下文。文档用实际151645分隔符识别；不改变训练 attention 或 mask。各分区上下文文档分离，C5 另排除旧 C1/C2/C3/C4。语义近重复分离未验证，不使用最终验证集。
+
+teacher 为精确33B Dense 固定 checkpoint。每层取实际 norm2 输出，即 FFN 输入，1024维。两卡5090以BF16前向、FP32保存表示，实际提取30.08秒，不含启动、载入、指纹和拟合。存在缓存不等于目标稳定；最终资格看执行端 offline_target_qualification_v5.json。v1–v4失败均保留。
+
+最终树是人为构造的上下文监督目标，不是天然语义层级，也不是 token ID 静态标签。正式训练以同一完整因果输入在线重算目标，不预缓存50B。P/F共用同一冻结树、尺度、温度和专家编号。训练顺序、mask、优化器与保存规则沿用修正 baseline；最终验证集为相同32序列，不更新 bias 或目标。小校准面板不能证明覆盖完整50B分布。
+
+原始数组、权重均留执行侧，登记和访问记录见英文同伴。

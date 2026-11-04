@@ -1,0 +1,1130 @@
+{
+  "audit_date_shanghai": "2026-10-20",
+  "manuscript": {
+    "title": "Forward Similarity Does Not Guarantee Training Equivalence: Precision Placement in Differentiable Gram Solvers",
+    "submission": 46026,
+    "sha256": "c382620be827e1154a2f6e9a49dd19dd953d7f03298d25bf100353c1b1079465",
+    "references_count": 28,
+    "pdf_reference_pages": [
+      10,
+      11,
+      12
+    ],
+    "manuscript_reference_lines": "508–606"
+  },
+  "scope": "Existence, bibliography and manuscript citation-use audit. Not full scientific validation, replication, exhaustive retraction checks, or AI attribution.",
+  "summary": {
+    "existence_confirmed": 28,
+    "confirmed_fabrications": 0,
+    "confirmed_substantive_bibliographic_errors": 0,
+    "clear_unsupported_citation_uses_detected": 0,
+    "source_conflicts_requiring_explanation": [
+      11,
+      22,
+      25
+    ],
+    "source_kind_as_cited_counts": {
+      "conference_or_journal": 21,
+      "arxiv_preprint": 6,
+      "dataset": 1
+    }
+  },
+  "interpretation": "Entries 11 and 25 contain unresolved primary-source differences. Entry 22 matches CVF official pages despite a different DOI registry pagination. These are not classified as established manuscript errors. All support assessments apply only to the actual contextual claim, not every claim/result in the cited paper.",
+  "entries": [
+    {
+      "number": 1,
+      "title": "Differentiable Convex Optimization Layers",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://papers.nips.cc/paper/2019/hash/9ce3c52fc54362e22053399d3181c638-Abstract.html",
+        "https://stanford.edu/~boyd/papers/diff_cvxpy.html"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 1,
+        "key": "Agrawal et al. (2019)",
+        "title": "Differentiable Convex Optimization Layers",
+        "verified_authors": [
+          "Akshay Agrawal",
+          "Brandon Amos",
+          "Shane Barratt",
+          "Stephen Boyd",
+          "Steven Diamond",
+          "J. Zico Kolter"
+        ],
+        "verified_year": 2019,
+        "verified_venue": "Advances in Neural Information Processing Systems 32",
+        "verified_pages": "9558–9570",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://papers.nips.cc/paper/2019/hash/9ce3c52fc54362e22053399d3181c638-Abstract.html",
+          "https://stanford.edu/~boyd/papers/diff_cvxpy.html"
+        ],
+        "citation_context": "稿件行038–040、445–447：可微优化层和线性代数层可置入端到端学习，求解器也向优化器提供导数。",
+        "support_status": "supported",
+        "support_detail": "正式论文介绍参数到问题数据、求解器、解到输出的可微组合，并实现端到端分析微分。引用用途与内容一致。",
+        "support_boundary": "不是本文的FP32/FP64阶段比较或恢复Adam状态实验的直接证据。",
+        "findings": [
+          "原稿的Shane T. Barratt、Stephen P. Boyd使用中间名首字母；正式NeurIPS索引省略首字母。属于姓名格式差异，无证据指向错误作者。",
+          "题名大小写差异不构成错引。"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "title": "Consistent treatment of incompletely converged iterative linear solvers in reverse-mode algorithmic differentiation",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://link.springer.com/article/10.1007/s10589-020-00214-x"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 2,
+        "key": "Akbarzadeh et al. (2020)",
+        "title": "Consistent treatment of incompletely converged iterative linear solvers in reverse-mode algorithmic differentiation",
+        "verified_authors": [
+          "Siamak Akbarzadeh",
+          "Jan Hückelheim",
+          "Jens-Dominik Müller"
+        ],
+        "verified_year": 2020,
+        "verified_venue": "Computational Optimization and Applications 77(2)",
+        "verified_pages": "597–616",
+        "verified_doi": "10.1007/s10589-020-00214-x",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://link.springer.com/article/10.1007/s10589-020-00214-x"
+        ],
+        "citation_context": "稿件行462–464：自动微分存在数值陷阱，包括未完全收敛的迭代求解器。",
+        "support_status": "supported",
+        "support_detail": "正式全文摘要、引言及第3节证明部分收敛下的反向替代求解会产生不一致导数，并给出校正项及流体实验。引文描述直接符合原文。",
+        "support_boundary": "主要问题是截断迭代与反向替代求解的一致性，不是Cholesky各阶段精度替换；原稿在此仅作数值陷阱背景，没有把两者说成同一个实验。",
+        "findings": [
+          "原稿未列期号2，但卷、页、年与DOI完全一致，期号省略不影响定位。",
+          "DOI跳转在web工具中一度报错；直接Springer文章页正常，不能把访问失败误判为DOI虚构。"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "title": "Optical Recognition of Handwritten Digits",
+      "exists": true,
+      "source_kind_as_cited": "dataset",
+      "primary_urls": [
+        "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+        "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 3,
+        "key": "Alpaydin & Kaynak (1998)",
+        "title": "Optical Recognition of Handwritten Digits",
+        "verified_authors": [
+          "E. Alpaydin",
+          "C. Kaynak"
+        ],
+        "verified_year": 1998,
+        "verified_venue": "UCI Machine Learning Repository [Dataset]",
+        "verified_doi": "10.24432/C50P49",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+          "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html"
+        ],
+        "citation_context": "稿件附录A.9行1023–1025：使用scikit-learn digits，8×8展平、像素除16，自定义分层60/20/20划分。",
+        "support_status": "supported_with_dataset_scope_note",
+        "support_detail": "UCI官方推荐引用与原稿一致。scikit-learn官方说明load_digits是UCI数据的测试集副本，1797条、8×8、64维、像素0–16；这支持稿件所述具体数据来源与预处理尺度。",
+        "support_boundary": "UCI主页总量5620，与scikit-learn的1797条不是同一规模。稿件明确说scikit-learn digits后自行再划分，不能误读为使用UCI原始官方训练/测试划分。",
+        "findings": [
+          "引用本身正确；为完全复现，方法或代码应明确1797条及分割种子。本项不据此断言代码是否满足，因为本轮未运行代码。"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "title": "OptNet: Differentiable Optimization as a Layer in Neural Networks",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://proceedings.mlr.press/v70/amos17a.html"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 4,
+        "key": "Amos & Kolter (2017)",
+        "title": "OptNet: Differentiable Optimization as a Layer in Neural Networks",
+        "verified_authors": [
+          "Brandon Amos",
+          "J. Zico Kolter"
+        ],
+        "verified_year": 2017,
+        "verified_venue": "Proceedings of the 34th International Conference on Machine Learning, PMLR 70",
+        "verified_pages": "136–145",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://proceedings.mlr.press/v70/amos17a.html"
+        ],
+        "citation_context": "稿件行038–040、445–447：可微优化求解器作为网络层，端到端提供梯度。",
+        "support_status": "supported",
+        "support_detail": "PMLR摘要及正式BibTeX确认题名、两位作者、2017、卷70和136–145页；方法明确利用敏感性分析、双层优化和隐式微分对二次规划层求导。",
+        "support_boundary": "不是训练精度路线比较或前向接近而Adam更新不同的直接实验来源。",
+        "findings": []
+      }
+    },
+    {
+      "number": 5,
+      "title": "Meta-learning with differentiable closed-form solvers",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://openreview.net/forum?id=HyxnZh0ct7",
+        "https://arxiv.org/html/1805.08136v3",
+        "https://ora.ox.ac.uk/objects/uuid%3A23adfe83-f098-4e7f-bb05-075e5878a291",
+        "https://github.com/bertinetto/r2d2"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 5,
+        "key": "Bertinetto et al. (2019)",
+        "title": "Meta-learning with differentiable closed-form solvers",
+        "verified_authors": [
+          "Luca Bertinetto",
+          "João F. Henriques",
+          "Philip H. S. Torr",
+          "Andrea Vedaldi"
+        ],
+        "verified_year": 2019,
+        "verified_venue": "International Conference on Learning Representations",
+        "verified_arxiv": "1805.08136",
+        "existence_status": "verified_primary",
+        "metadata_status": "match_with_nonmaterial_name_variants",
+        "primary_urls": [
+          "https://openreview.net/forum?id=HyxnZh0ct7",
+          "https://arxiv.org/html/1805.08136v3",
+          "https://ora.ox.ac.uk/objects/uuid%3A23adfe83-f098-4e7f-bb05-075e5878a291",
+          "https://github.com/bertinetto/r2d2"
+        ],
+        "citation_context": "稿件行050、447–450：episodic ridge结合学习特征和求解器超参数、Woodbury缩小求解，并研究学习ridge的任务价值。",
+        "support_status": "supported",
+        "support_detail": "原论文第3节明确用可微ridge做few-shot适配，Woodbury把特征维度求解改为样本维度求解；第3.4节与附录C明确比较学习/不学习lambda及校准参数，匹配稿件的三项概述。",
+        "support_boundary": "稿件分类器是受控变体，不是声称原封不动复现其benchmark架构；旧文关于lambda任务价值的特定结果不自动适用于本文所有设置。",
+        "findings": [
+          "OpenReview论坛当次触发浏览器验证，但作者公开仓库给出的标准BibTeX与原稿完全一致；Oxford作者存档确认2019 ICLR且peer-reviewed，arXiv全文核内容。",
+          "Joao省略葡文重音、Philip Torr省略H. S.，均属姓名变体。",
+          "arXiv首次发布2018，但引用正式ICLR2019版本年2019正确，不应以2018预印本年份认定错误。"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "title": "Efficient and Modular Implicit Differentiation",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2022/hash/228b9279ecf9bbafe582406850c57115-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/18604-/bibtex"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 6,
+        "key": "Blondel et al. (2022)",
+        "title": "Efficient and Modular Implicit Differentiation",
+        "verified_authors": [
+          "Mathieu Blondel",
+          "Quentin Berthet",
+          "Marco Cuturi",
+          "Roy Frostig",
+          "Stephan Hoyer",
+          "Felipe Llinares-López",
+          "Fabian Pedregosa",
+          "Jean-Philippe Vert"
+        ],
+        "verified_year": 2022,
+        "verified_venue": "Advances in Neural Information Processing Systems 35",
+        "verified_pages": "5230–5242",
+        "verified_doi": "10.52202/068431-0378",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2022/hash/228b9279ecf9bbafe582406850c57115-Abstract-Conference.html",
+          "https://proceedings.neurips.cc/paper_files/paper/18604-/bibtex"
+        ],
+        "citation_context": "稿件行445–447：可微优化与线性代数层把结构化求解嵌入端到端学习。",
+        "support_status": "supported",
+        "support_detail": "正式会议页与导出的BibTeX逐项确认8位作者顺序、卷35、5230–5242页、2022。文章以最优性条件F和隐函数定理自动微分优化解，与此背景引用相符。",
+        "support_boundary": "其主贡献是模块化隐式微分；稿件该句宽泛归类，没有声称它已经做本文精度或Adam更新实验。",
+        "findings": [
+          "正式会议网页作者索引的Llinares-Lopez未标重音，而PDF使用Llinares-López；同一作者，非错引。"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "title": "Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://epubs.siam.org/doi/abs/10.1137/17M1140819"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 7,
+        "key": "Carson & Higham (2018)",
+        "title": "Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions",
+        "verified_authors": [
+          "Erin Carson",
+          "Nicholas J. Higham"
+        ],
+        "verified_year": 2018,
+        "verified_venue": "SIAM Journal on Scientific Computing 40(2)",
+        "verified_pages": "A817–A847",
+        "verified_doi": "10.1137/17M1140819",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://epubs.siam.org/doi/abs/10.1137/17M1140819"
+        ],
+        "citation_context": "稿件行454–456：混合精度求解器研究条件性、舍入和精度分配。",
+        "support_status": "supported",
+        "support_detail": "正式摘要区分工作精度、校正方程求解精度、残差精度，给出舍入误差分析、收敛条件和前后向误差界；与稿件概括一致。正式页确认所有书目字段。",
+        "support_boundary": "这里的三种精度角色是迭代改进流程中的角色，不等于本文的Gram构造/Cholesky/求解侧三阶段；原稿未宣称二者相同。",
+        "findings": []
+      }
+    },
+    {
+      "number": 8,
+      "title": "TinyStories: How Small Can Language Models Be and Still Speak Coherent English?",
+      "exists": true,
+      "source_kind_as_cited": "arxiv_preprint",
+      "primary_urls": [
+        "https://arxiv.org/abs/2305.07759"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 8,
+        "key": "Eldan & Li (2023)",
+        "title": "TinyStories: How Small Can Language Models Be and Still Speak Coherent English?",
+        "verified_authors": [
+          "Ronen Eldan",
+          "Yuanzhi Li"
+        ],
+        "verified_year": 2023,
+        "verified_venue": "arXiv preprint",
+        "verified_arxiv": "2305.07759",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://arxiv.org/abs/2305.07759"
+        ],
+        "citation_context": "稿件附录A.9行1019：TinyStories作为字符语言模型数据源，使用8000训练及1000验证记录。",
+        "support_status": "supported_with_sampling_boundary",
+        "support_detail": "arXiv官方页确认题名、两位作者、编号及2023年首次/修订日期，确为TinyStories数据及小语言模型论文；原稿正确标作预印本。",
+        "support_boundary": "本引用提供数据集来源，不能独自验证本文抽取的8000/1000条记录与处理脚本；该抽样是稿件自己的实验设定，不是被引论文的原始规模。",
+        "findings": [
+          "题名English大小写不影响文献真实性。"
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "title": "Mixed precision algorithms in numerical linear algebra",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://www.cambridge.org/core/journals/acta-numerica/article/mixed-precision-algorithms-in-numerical-linear-algebra/43CA701BA29251B5790C653E66F46197",
+        "https://eprints.maths.manchester.ac.uk/2841/1/paper_eprint.pdf"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_1_9.json",
+      "detail": {
+        "number": 9,
+        "key": "Higham & Mary (2022)",
+        "title": "Mixed precision algorithms in numerical linear algebra",
+        "verified_authors": [
+          "Nicholas J. Higham",
+          "Theo Mary"
+        ],
+        "verified_year": 2022,
+        "verified_venue": "Acta Numerica 31",
+        "verified_pages": "347–414",
+        "verified_doi": "10.1017/S0962492922000022",
+        "existence_status": "verified_primary",
+        "metadata_status": "match",
+        "primary_urls": [
+          "https://www.cambridge.org/core/journals/acta-numerica/article/mixed-precision-algorithms-in-numerical-linear-algebra/43CA701BA29251B5790C653E66F46197",
+          "https://eprints.maths.manchester.ac.uk/2841/1/paper_eprint.pdf"
+        ],
+        "citation_context": "稿件行041–043、087–088、454–456：混合精度数值敏感性、精度按计算角色分配、更高精度后续计算无法一般性还原此前Gram构造已丢失的信息。",
+        "support_status": "supported_as_numerical_background",
+        "support_detail": "Cambridge正式页确认作者、2022、31卷347–414页及DOI。综述覆盖矩阵乘法、分解、线性求解、最小二乘及稳定性，直接支持混合精度角色和舍入背景。",
+        "support_boundary": "它不是本稿完整神经网络梯度/Adam更新差异的直接实验来源；引言关于导数的背景由同句另一篇Hovland/Hückelheim论文共同承担。",
+        "findings": [
+          "作者存档PDF日期为2021-12-20，正式期刊出版2022；稿件引用正式年份2022正确。",
+          "DOI跳转web一度报错，Cambridge正式页可访问且显示相同DOI，不能据此标为失效/虚构引用。"
+        ]
+      }
+    },
+    {
+      "number": 10,
+      "title": "Exploiting Lower Precision Arithmetic in Solving Symmetric Positive Definite Linear Systems and Least Squares Problems",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://epubs.siam.org/doi/10.1137/19M1298263"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 10,
+        "title": "Exploiting Lower Precision Arithmetic in Solving Symmetric Positive Definite Linear Systems and Least Squares Problems",
+        "authors": [
+          "Nicholas J. Higham",
+          "Srikara Pranesh"
+        ],
+        "year": 2021,
+        "venue": "SIAM Journal on Scientific Computing",
+        "volume": "43",
+        "issue": "1",
+        "pages": "A258–A277",
+        "id": "10.1137/19M1298263",
+        "status": "verified",
+        "primary_urls": [
+          "https://epubs.siam.org/doi/10.1137/19M1298263"
+        ],
+        "evidence": [
+          "Publisher gives matching title, two authors in this order, volume 43 issue 1, pages A258–A277; published online 19 January 2021.",
+          "Abstract describes low-precision Cholesky factors as preconditioners in GMRES iterative refinement, diagonal shifts/scaling, and extension to well-conditioned least squares through normal equations."
+        ],
+        "manuscript_use": "Related-work paragraph lines 454–456 cites conditioning, roundoff and precision allocation.",
+        "support_assessment": "Appropriate numerical-linear-algebra background.",
+        "boundary": "Does not establish this manuscript’s neural-model gradient/update discrepancies or FP32/FP64 stage-factorial results.",
+        "issues": []
+      }
+    },
+    {
+      "number": 11,
+      "title": "Differentiating Through Linear Solvers",
+      "exists": true,
+      "source_kind_as_cited": "arxiv_preprint",
+      "primary_urls": [
+        "https://arxiv.org/abs/2404.17039v1",
+        "https://arxiv.org/abs/2404.17039v2",
+        "https://arxiv.org/pdf/2404.17039v1",
+        "https://arxiv.org/pdf/2404.17039v2",
+        "https://arxiv.org/html/2404.17039v1",
+        "https://arxiv.org/html/2404.17039v2"
+      ],
+      "bibliography_assessment": "source_author_order_conflict_not_confirmed_error",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 11,
+        "title": "Differentiating Through Linear Solvers",
+        "authors_arxiv_metadata": [
+          "Paul Hovland",
+          "Jan Hückelheim"
+        ],
+        "authors_pdf_and_html": [
+          "Jan Hückelheim",
+          "Paul Hovland"
+        ],
+        "equal_contribution": true,
+        "year": 2024,
+        "venue": "arXiv preprint",
+        "id": "2404.17039",
+        "versions_checked": [
+          "v1: 25 April 2024",
+          "v2: 6 May 2024"
+        ],
+        "status": "verified_with_source_metadata_conflict",
+        "primary_urls": [
+          "https://arxiv.org/abs/2404.17039v1",
+          "https://arxiv.org/abs/2404.17039v2",
+          "https://arxiv.org/pdf/2404.17039v1",
+          "https://arxiv.org/pdf/2404.17039v2",
+          "https://arxiv.org/html/2404.17039v1",
+          "https://arxiv.org/html/2404.17039v2"
+        ],
+        "evidence": [
+          "Both arXiv abstract records list Paul Hovland then Jan Hückelheim; both PDFs and HTML bodies list Jan then Paul with equal contribution. The manuscript follows the abstract record, so its order cannot fairly be called a confirmed error.",
+          "The v1 PDF contains an ICML 2023 / PMLR 202 template footer, removed in v2. It is not evidence of publication in those proceedings; the cited arXiv 2024 status is appropriate.",
+          "Studies low-level differentiation through GMRES, TFQMR and BiCGStab versus equation-level differentiation on 65 SuiteSparse matrices; primarily forward mode."
+        ],
+        "manuscript_use": "Line 95 supports the warning that forward agreement does not establish derivative agreement; lines 464–465 explicitly describe implementation-versus-equation differentiation, primarily forward mode.",
+        "support_assessment": "Accurate description in related work; valid conceptual precedent for separating solution and derivative accuracy.",
+        "boundary": "Not an experiment on FP32 versus FP64 Cholesky stages, restored Adam/AdamW updates, or long-horizon learned-ridge training. Treating it as direct evidence for those details would overextend it.",
+        "issues": [
+          "Source-internal author order discrepancy. Recommend a version-specific link or note if exact author order needs resolution; do not penalize the manuscript solely for following arXiv metadata."
+        ]
+      }
+    },
+    {
+      "number": 12,
+      "title": "A taxonomy of automatic differentiation pitfalls",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://wires.onlinelibrary.wiley.com/doi/10.1002/widm.1555"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 12,
+        "title": "A taxonomy of automatic differentiation pitfalls",
+        "authors": [
+          "Jan Hückelheim",
+          "Harshitha Menon",
+          "William Moses",
+          "Bruce Christianson",
+          "Paul Hovland",
+          "Laurent Hascoët"
+        ],
+        "year": 2024,
+        "venue": "WIREs Data Mining and Knowledge Discovery",
+        "volume": "14",
+        "issue": "6",
+        "article": "e1555",
+        "id": "10.1002/widm.1555",
+        "status": "verified",
+        "primary_urls": [
+          "https://wires.onlinelibrary.wiley.com/doi/10.1002/widm.1555"
+        ],
+        "evidence": [
+          "Publisher lists these six authors in this order, first publication 2 September 2024, issue November/December 2024, 14(6):e1555.",
+          "Categorizes pitfalls involving functions, abstraction and operator precision, including linear solvers, discretization, fixed-point loops and floating-point effects."
+        ],
+        "manuscript_use": "Lines 462–464 cite numerical AD pitfalls, including incompletely converged iterative solvers.",
+        "support_assessment": "Relevant and supported.",
+        "boundary": "A taxonomy with examples is not a universal theorem that AD gradients are unreliable, and it does not measure this manuscript’s actual optimizer updates.",
+        "issues": []
+      }
+    },
+    {
+      "number": 13,
+      "title": "Matrix Backpropagation for Deep Networks With Structured Layers",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.html",
+        "https://openaccess.thecvf.com/ICCV2015.py"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 13,
+        "title": "Matrix Backpropagation for Deep Networks With Structured Layers",
+        "authors": [
+          "Catalin Ionescu",
+          "Orestis Vantzos",
+          "Cristian Sminchisescu"
+        ],
+        "year": 2015,
+        "venue": "Proceedings of the IEEE International Conference on Computer Vision (ICCV)",
+        "pages": "2965–2973",
+        "status": "verified",
+        "primary_urls": [
+          "https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.html",
+          "https://openaccess.thecvf.com/ICCV2015.py"
+        ],
+        "evidence": [
+          "CVF official paper page explicitly matches title, ordered authors, conference year and pages 2965–2973.",
+          "Develops matrix backpropagation for global structured operations, with second-order pooling and normalized-cut segmentation experiments.",
+          "arXiv 1509.07838 is an extended version with a different title; that title difference does not make the cited ICCV record wrong."
+        ],
+        "manuscript_use": "Lines 445–447 group it with structured linear-algebra layers embedded in end-to-end learning.",
+        "support_assessment": "Appropriate historical background for differentiable matrix computations.",
+        "boundary": "Does not by itself support specific Gram-solver precision-placement or optimizer-equivalence claims.",
+        "issues": []
+      }
+    },
+    {
+      "number": 14,
+      "title": "A Study of BFLOAT16 for Deep Learning Training",
+      "exists": true,
+      "source_kind_as_cited": "arxiv_preprint",
+      "primary_urls": [
+        "https://arxiv.org/abs/1905.12322",
+        "https://arxiv.org/html/1905.12322v3"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 14,
+        "title": "A Study of BFLOAT16 for Deep Learning Training",
+        "authors": [
+          "Dhiraj Kalamkar",
+          "Dheevatsa Mudigere",
+          "Naveen Mellempudi",
+          "Dipankar Das",
+          "Kunal Banerjee",
+          "Sasikanth Avancha",
+          "Dharma Teja Vooturi",
+          "Nataraj Jammalamadaka",
+          "Jianyu Huang",
+          "Hector Yuen",
+          "Jiyan Yang",
+          "Jongsoo Park",
+          "Alexander Heinecke",
+          "Evangelos Georganas",
+          "Sudarshan Srinivasan",
+          "Abhisek Kundu",
+          "Misha Smelyanskiy",
+          "Bharat Kaul",
+          "Pradeep Dubey"
+        ],
+        "year": 2019,
+        "venue": "arXiv preprint",
+        "id": "1905.12322",
+        "status": "verified",
+        "primary_urls": [
+          "https://arxiv.org/abs/1905.12322",
+          "https://arxiv.org/html/1905.12322v3"
+        ],
+        "evidence": [
+          "arXiv v1 29 May 2019, latest v3 13 June 2019; title, all 19 authors and order match, apart from manuscript inclusion of D. as the first author’s middle initial. This name variant is not a substantive discrepancy.",
+          "Studies BFLOAT16 tensors with FP32 accumulation/selected state across vision, language, GAN and recommendation workloads; broad comparable task results do not assert identical numerical trajectories."
+        ],
+        "manuscript_use": "Lines 457–458 group higher-precision accumulation, master weights, loss scaling and tensor assignment precedents.",
+        "support_assessment": "Supports mixed-precision tensor flow and accumulation background. The grouped sentence should not be read as saying each cited work advocates every listed technique.",
+        "boundary": "The BFLOAT16 paper emphasizes avoiding additional hyperparameter changes in its experiments; loss scaling in the grouped sentence is most directly associated with FP16 work such as Micikevicius. No citation mismatch established.",
+        "issues": []
+      }
+    },
+    {
+      "number": 15,
+      "title": "Training with Mixed-Precision Floating-Point Assignments",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://arxiv.org/abs/2301.13464",
+        "https://wonyeol.github.io/papers/2023-tmlr.pdf",
+        "https://github.com/wonyeol/mixed-prec-train",
+        "https://openreview.net/forum?id=ZoXi7n54OB"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 15,
+        "title": "Training with Mixed-Precision Floating-Point Assignments",
+        "authors": [
+          "Wonyeol Lee",
+          "Rahul Sharma",
+          "Alex Aiken"
+        ],
+        "year": 2023,
+        "venue": "Transactions on Machine Learning Research",
+        "id": "OpenReview ZoXi7n54OB; arXiv 2301.13464",
+        "status": "verified",
+        "primary_urls": [
+          "https://arxiv.org/abs/2301.13464",
+          "https://wonyeol.github.io/papers/2023-tmlr.pdf",
+          "https://github.com/wonyeol/mixed-prec-train",
+          "https://openreview.net/forum?id=ZoXi7n54OB"
+        ],
+        "access_notes": "OpenReview forum/PDF access returned browser challenge. arXiv says Published in TMLR; author-hosted final PDF says Published in Transactions on Machine Learning Research (06/2023) and gives the identical OpenReview ID.",
+        "evidence": [
+          "Ordered three authors and title match.",
+          "Studies tensor-level precision assignments and memory/accuracy tradeoffs for CNN training on CIFAR-10, CIFAR-100 and ImageNet."
+        ],
+        "manuscript_use": "Lines 457–458 cite tensor-level precision assignments.",
+        "support_assessment": "Directly appropriate.",
+        "boundary": "Not a direct prior test of Gram-stage Cholesky precision and matched restored adaptive-optimizer updates.",
+        "issues": []
+      }
+    },
+    {
+      "number": 16,
+      "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://doi.org/10.1038/s41467-018-07210-0",
+        "https://www.nature.com/articles/s41467-018-07210-0",
+        "https://arxiv.org/abs/1712.09707"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 16,
+        "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+        "authors": [
+          "Bethany Lusch",
+          "J. Nathan Kutz",
+          "Steven L. Brunton"
+        ],
+        "year": 2018,
+        "venue": "Nature Communications",
+        "volume": "9",
+        "article": "4950",
+        "id": "10.1038/s41467-018-07210-0",
+        "status": "verified",
+        "primary_urls": [
+          "https://doi.org/10.1038/s41467-018-07210-0",
+          "https://www.nature.com/articles/s41467-018-07210-0",
+          "https://arxiv.org/abs/1712.09707"
+        ],
+        "access_notes": "Direct Nature URL encountered an identity-provider redirect; publisher content retrieved through DOI search result and matched to primary arXiv record.",
+        "evidence": [
+          "Publisher record gives matching title, ordered authors, 9:4950, published 23 November 2018.",
+          "Uses modified autoencoders and an auxiliary network to learn Koopman eigenfunction representations including systems with continuous spectra."
+        ],
+        "manuscript_use": "Lines 450–452 cite finite-dimensional Koopman approximations and learned dynamical representations.",
+        "support_assessment": "Appropriate architectural/intellectual background.",
+        "boundary": "This citation is not evidence for numerical precision-induced training inequivalence; the manuscript uses it as representation background.",
+        "issues": []
+      }
+    },
+    {
+      "number": 17,
+      "title": "Pointer Sentinel Mixture Models",
+      "exists": true,
+      "source_kind_as_cited": "arxiv_preprint",
+      "primary_urls": [
+        "https://arxiv.org/abs/1609.07843"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 17,
+        "title": "Pointer Sentinel Mixture Models",
+        "authors": [
+          "Stephen Merity",
+          "Caiming Xiong",
+          "James Bradbury",
+          "Richard Socher"
+        ],
+        "year": 2016,
+        "venue": "arXiv preprint",
+        "id": "1609.07843",
+        "status": "verified",
+        "primary_urls": [
+          "https://arxiv.org/abs/1609.07843"
+        ],
+        "evidence": [
+          "arXiv v1 submitted 26 September 2016, with matching title and four authors in this order.",
+          "Introduces pointer-sentinel language modeling and the WikiText corpus."
+        ],
+        "manuscript_use": "Line 1017 attributes WikiText-2; manuscript explicitly says its 1,000 held-out records come from the filtered training split, not official validation.",
+        "support_assessment": "Appropriate dataset attribution.",
+        "boundary": "Citing the 2016 preprint is valid; it does not validate the manuscript’s custom split or imply benchmark-comparable official validation scores.",
+        "issues": []
+      }
+    },
+    {
+      "number": 18,
+      "title": "Mixed Precision Training",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://arxiv.org/abs/1710.03740",
+        "https://openreview.net/forum?id=r1gs9JgRZ"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 18,
+        "title": "Mixed Precision Training",
+        "authors": [
+          "Paulius Micikevicius",
+          "Sharan Narang",
+          "Jonah Alben",
+          "Gregory Diamos",
+          "Erich Elsen",
+          "David Garcia",
+          "Boris Ginsburg",
+          "Michael Houston",
+          "Oleksii Kuchaiev",
+          "Ganesh Venkatesh",
+          "Hao Wu"
+        ],
+        "year": 2018,
+        "venue": "International Conference on Learning Representations",
+        "id": "OpenReview r1gs9JgRZ; arXiv 1710.03740",
+        "status": "verified",
+        "primary_urls": [
+          "https://arxiv.org/abs/1710.03740",
+          "https://openreview.net/forum?id=r1gs9JgRZ"
+        ],
+        "access_notes": "OpenReview forum/PDF returned browser challenge. arXiv comments explicitly say Published as a conference paper at ICLR 2018; v3 dated 15 February 2018.",
+        "evidence": [
+          "Title and all 11 ordered authors match.",
+          "Uses half-precision training tensors, a single-precision master copy of weights and loss scaling; validates multiple network families."
+        ],
+        "manuscript_use": "Lines 457–458 cite mixed-precision accumulation/master weights/loss scaling.",
+        "support_assessment": "Directly supports the master-weight and loss-scaling background.",
+        "boundary": "Matching task accuracy under mixed precision does not assert exact gradients, updates or trajectories; do not read it as conflicting with the present paper merely because it reports comparable final accuracy.",
+        "issues": []
+      }
+    },
+    {
+      "number": 19,
+      "title": "Differentiation of the Cholesky decomposition",
+      "exists": true,
+      "source_kind_as_cited": "arxiv_preprint",
+      "primary_urls": [
+        "https://arxiv.org/abs/1602.07527"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_10_19.json",
+      "detail": {
+        "number": 19,
+        "title": "Differentiation of the Cholesky decomposition",
+        "authors": [
+          "Iain Murray"
+        ],
+        "year": 2016,
+        "venue": "arXiv preprint",
+        "id": "1602.07527",
+        "status": "verified",
+        "primary_urls": [
+          "https://arxiv.org/abs/1602.07527"
+        ],
+        "evidence": [
+          "arXiv v1 submitted 24 February 2016; matching title and sole author.",
+          "Derives symbolic and algorithmic Cholesky differentiation rules, with blocked algorithms based on LAPACK DPOTRF and BLAS matrix operations."
+        ],
+        "manuscript_use": "Line 464 says Murray derives Cholesky differentiation rules.",
+        "support_assessment": "Precise and directly supported.",
+        "boundary": "Derivative formula correctness does not certify numerical stability for every input or neural-training equivalence across precision routes.",
+        "issues": []
+      }
+    },
+    {
+      "number": 20,
+      "title": "Scikit-learn: Machine Learning in Python",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 20,
+        "short_name": "Pedregosa et al. 2011",
+        "title": "Scikit-learn: Machine Learning in Python",
+        "existence": "confirmed_primary",
+        "metadata": "作者16人、JMLR 12(85):2825–2830、2011均与JMLR正式条目一致。",
+        "primary_sources": [
+          "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+        ],
+        "manuscript_locations": [
+          "Appendix A data description, lines 1023–1024"
+        ],
+        "citation_claim": "独立岭分类器使用scikit-learn digits，并同时引用Alpaydin & Kaynak (1998)。",
+        "support": "作为软件来源引用合适；该JMLR论文不是digits数据集原始论文，但稿件已经同时给出数据集来源，不能因软件引用本身判为错误。",
+        "verification_depth": "JMLR正式条目和摘要；本地稿件全部Pedregosa出现位置。",
+        "issues": []
+      }
+    },
+    {
+      "number": 21,
+      "title": "Auto-Differentiating Linear Algebra",
+      "exists": true,
+      "source_kind_as_cited": "arxiv_preprint",
+      "primary_urls": [
+        "https://arxiv.org/abs/1710.08717",
+        "https://arxiv.org/html/1710.08717v5"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 21,
+        "short_name": "Seeger et al. 2017",
+        "title": "Auto-Differentiating Linear Algebra",
+        "existence": "confirmed_primary",
+        "metadata": "五位作者、题名及arXiv:1710.08717准确。2017是v1首次提交年份，当前v5修订于2019-08-14，二者不构成错误。稿件标作预印本而非会议论文，合适。",
+        "primary_sources": [
+          "https://arxiv.org/abs/1710.08717",
+          "https://arxiv.org/html/1710.08717v5"
+        ],
+        "manuscript_locations": [
+          "Introduction lines 37–40",
+          "Related work lines 445–447"
+        ],
+        "citation_claim": "可微线性代数层可以参与端到端学习，求解器也提供优化器使用的导数。",
+        "support": "直接支持。前作实现Cholesky/LQ/对称特征分解等可微原语，CPU/GPU、FP32/FP64，并给出GP和贝叶斯线性回归学习例子。该来源不直接验证本稿实际Adam更新差异，但原文没有据此声称已验证。",
+        "verification_depth": "arXiv元数据、全文相关章节（摘要、引言、§3、§4）。",
+        "issues": []
+      }
+    },
+    {
+      "number": 22,
+      "title": "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+        "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 22,
+        "short_name": "Song et al. 2021",
+        "title": "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?",
+        "existence": "confirmed_primary",
+        "metadata": "三位作者、ICCV2021、DOI准确。正式CVF页面及其BibTeX明确给1115–1123，与稿件相符。",
+        "primary_sources": [
+          "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+          "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+        ],
+        "manuscript_locations": [
+          "Related work lines 465–466"
+        ],
+        "citation_claim": "矩阵分解方法会为稳定性调整反向计算。",
+        "support": "直接支持。前作明确分析数据精度及梯度平滑性，并提出SVD前向、Padé近似反向的GCP层。作为概括性先例引用准确。",
+        "verification_depth": "正式CVF页面、摘要与BibTeX；本地稿件引用上下文。",
+        "issues": [
+          {
+            "type": "publisher_metadata_pagination_conflict_not_manuscript_error",
+            "detail": "此前登记系统出现1095–1103；本轮实时获取CVF HTTP200页面，其正式BibTeX pages={1115-1123}。不要把稿件页码标为错误。网页工具一次403，但requests及搜索索引均成功取得正式页面。"
+          }
+        ]
+      }
+    },
+    {
+      "number": 23,
+      "title": "Echo: KV-Cache-Free Associative Recall with Spectral Koopman Operators",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://arxiv.org/abs/2605.06997",
+        "https://arxiv.org/html/2605.06997v1",
+        "https://api.crossref.org/works/10.1145/3786335.3813146",
+        "https://doi.org/10.1145/3786335.3813146"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 23,
+        "short_name": "Sridhar and Johansen 2026",
+        "title": "Echo: KV-Cache-Free Associative Recall with Spectral Koopman Operators",
+        "existence": "confirmed_primary",
+        "metadata": "arXiv:2605.06997确认两位作者和2026-05-07预印本；出版者Crossref登记（本轮HTTP200）确认CAIS2026正式论文、2026-05-26、964–989、DOI 10.1145/3786335.3813146。",
+        "primary_sources": [
+          "https://arxiv.org/abs/2605.06997",
+          "https://arxiv.org/html/2605.06997v1",
+          "https://api.crossref.org/works/10.1145/3786335.3813146",
+          "https://doi.org/10.1145/3786335.3813146"
+        ],
+        "manuscript_locations": [
+          "Introduction lines 49–51",
+          "§3.2 line 115 onward",
+          "Related work lines 450–452"
+        ],
+        "citation_claim": "受控SKA来自Echo，并以Gram、ridge和Cholesky实现求解。",
+        "support": "直接支持架构来源。Echo§3.2有Gram及滞后一阶统计、ridge、Cholesky与查询白化、谱滤波；稿件明确称controlled SKA，没有声称复现完整Echo。Echo同时含SSM、谱归一化等更多结构，所以本稿结论不能直接推广为完整Echo缺陷；这是外推边界，不是引用虚假。",
+        "verification_depth": "arXiv元数据及全文§3.2、§6.1、Appendix F；出版者Crossref登记。",
+        "issues": []
+      }
+    },
+    {
+      "number": 24,
+      "title": "Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://papers.nips.cc/paper_files/paper/2017/hash/3a835d3215755c435ef4fe9965a3f2a0-Abstract.html",
+        "https://papers.nips.cc/paper_files/paper/2017/file/3a835d3215755c435ef4fe9965a3f2a0-Paper.pdf"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 24,
+        "short_name": "Takeishi et al. 2017",
+        "title": "Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition",
+        "existence": "confirmed_primary",
+        "metadata": "三位作者、NeurIPS/NIPS卷30、2017均与正式会议条目一致。",
+        "primary_sources": [
+          "https://papers.nips.cc/paper_files/paper/2017/hash/3a835d3215755c435ef4fe9965a3f2a0-Abstract.html",
+          "https://papers.nips.cc/paper_files/paper/2017/file/3a835d3215755c435ef4fe9965a3f2a0-Paper.pdf"
+        ],
+        "manuscript_locations": [
+          "Related work lines 450–452"
+        ],
+        "citation_claim": "有限维Koopman近似与学习动力学表征的背景。",
+        "support": "直接支持背景性陈述；前作学习非线性观测函数使线性动力学拟合成立，并以神经网络实现。没有被用作本稿精度实验的直接证据。",
+        "verification_depth": "会议正式元数据和摘要、PDF引言。",
+        "issues": []
+      }
+    },
+    {
+      "number": 25,
+      "title": "Backpropagation-Friendly Eigendecomposition",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://papers.nips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+        "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Metadata.json",
+        "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Bibtex.bib",
+        "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Paper.pdf"
+      ],
+      "bibliography_assessment": "pagination_conflict_unresolved",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 25,
+        "short_name": "Wang et al. 2019",
+        "title": "Backpropagation-Friendly Eigendecomposition",
+        "existence": "confirmed_primary",
+        "metadata": "五位作者、卷32、2019与NeurIPS正式条目一致。稿件页码3156–3164与DBLP及作者后续论文参考文献一致；但官方Metadata.json另列3162–3170，官方BibTeX的pages为空，故分页有源间冲突，不能确认稿件错误。",
+        "primary_sources": [
+          "https://papers.nips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+          "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Metadata.json",
+          "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Bibtex.bib",
+          "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Paper.pdf"
+        ],
+        "corroborating_sources": [
+          "https://dblp.org/rec/conf/nips/0108DHFS19",
+          "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136610018.pdf"
+        ],
+        "manuscript_locations": [
+          "Related work lines 465–466"
+        ],
+        "citation_claim": "矩阵分解方法调整反向计算以改善稳定性。",
+        "support": "直接支持。前作§2固定稳定的SVD前向，使用PI推导计算反向；§2.5还明确讨论单/双精度和舍入导致的特征值问题。作为先例引用合适。",
+        "verification_depth": "正式会议条目、metadata全文与§2/§2.5；正式BibTeX。",
+        "issues": [
+          {
+            "type": "pagination_conflict_unresolved",
+            "detail": "官方Metadata.json:3162–3170；稿件及DBLP:3156–3164。应记录版本/数据库分页不一致，不应当作虚构文献证据。"
+          }
+        ]
+      }
+    },
+    {
+      "number": 26,
+      "title": "Robust Differentiable SVD",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://arxiv.org/abs/2104.03821",
+        "https://github.com/WeiWangTrento/Robust-Differentiable-SVD",
+        "https://doi.org/10.1109/TPAMI.2021.3072422"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 26,
+        "short_name": "Wang et al. 2022",
+        "title": "Robust Differentiable SVD",
+        "existence": "confirmed_primary",
+        "metadata": "五位作者、题名、DOI与作者arXiv条目一致。正式卷期44(9):5472–5487, 2022由PubMed出版索引确认；作者仓库与arXiv保留2021先行出版年份，不能据此说稿件2022错误。本轮Crossref请求429，未取得该API记录。",
+        "primary_sources": [
+          "https://arxiv.org/abs/2104.03821",
+          "https://github.com/WeiWangTrento/Robust-Differentiable-SVD",
+          "https://doi.org/10.1109/TPAMI.2021.3072422"
+        ],
+        "corroborating_sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/33844626/"
+        ],
+        "manuscript_locations": [
+          "Related work lines 465–466"
+        ],
+        "citation_claim": "为矩阵分解反向计算的数值稳定性调整方法。",
+        "support": "直接支持。前作通过SVD梯度Taylor展开避免PI消去迭代累积误差，并在分类和风格迁移验证。",
+        "verification_depth": "作者arXiv元数据与摘要、作者代码仓库；PubMed卷期元数据。未绕过IEEE全文访问限制。",
+        "issues": []
+      }
+    },
+    {
+      "number": 27,
+      "title": "A Data–Driven Approximation of the Koopman Operator: Extending Dynamic Mode Decomposition",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://link.springer.com/article/10.1007/s00332-015-9258-5",
+        "https://api.crossref.org/works/10.1007/s00332-015-9258-5"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 27,
+        "short_name": "Williams et al. 2015",
+        "title": "A Data–Driven Approximation of the Koopman Operator: Extending Dynamic Mode Decomposition",
+        "existence": "confirmed_primary",
+        "metadata": "三位作者、J Nonlinear Science 25(6):1307–1346、2015、DOI均与Springer正式页面及出版者Crossref登记一致；连字符/破折号差异仅排版。",
+        "primary_sources": [
+          "https://link.springer.com/article/10.1007/s00332-015-9258-5",
+          "https://api.crossref.org/works/10.1007/s00332-015-9258-5"
+        ],
+        "manuscript_locations": [
+          "Related work lines 450–452"
+        ],
+        "citation_claim": "有限维Koopman近似相关背景。",
+        "support": "直接支持。前作从snapshot pairs和标量观测函数字典逼近Koopman特征值、特征函数和模态，是EDMD来源。原文没有把该背景引用当作精度实验验证。",
+        "verification_depth": "出版者正式元数据、摘要及页面可读部分；全文主体有订阅限制，未宣称完整阅读全文。",
+        "issues": []
+      }
+    },
+    {
+      "number": 28,
+      "title": "Roundoff error analysis of the CholeskyQR2 algorithm",
+      "exists": true,
+      "source_kind_as_cited": "conference_or_journal",
+      "primary_urls": [
+        "https://etna.ricam.oeaw.ac.at/volumes/2011-2020/vol44/abstract.php?pages=306-326"
+      ],
+      "bibliography_assessment": "matches_supported_primary_record",
+      "citation_use_assessment": "supported_for_current_background_or_attribution_use",
+      "source_audit_file": "refs_audit_agent_20_28.json",
+      "detail": {
+        "reference_number": 28,
+        "short_name": "Yamamoto et al. 2015",
+        "title": "Roundoff error analysis of the CholeskyQR2 algorithm",
+        "existence": "confirmed_primary",
+        "metadata": "四位作者、ETNA卷44:306–326、2015均与期刊正式条目一致。",
+        "primary_sources": [
+          "https://etna.ricam.oeaw.ac.at/volumes/2011-2020/vol44/abstract.php?pages=306-326"
+        ],
+        "manuscript_locations": [
+          "Related work lines 454–456"
+        ],
+        "citation_claim": "Cholesky-based QR分析和混合精度求解器涉及条件数、舍入误差与精度配置（与三篇混合精度来源合并引用）。",
+        "support": "对CholeskyQR条件数/舍入分析直接支持。前作给出单次CholeskyQR的正交误差及CholeskyQR2的条件稳定性结果；不独立覆盖整个“混合精度/精度配置”范围，但并列的其他引用承担该部分，不能按逐篇都必须支持并列句全部内容判误引。",
+        "verification_depth": "ETNA正式元数据和详细摘要；本地稿件引用上下文。",
+        "issues": []
+      }
+    }
+  ]
+}

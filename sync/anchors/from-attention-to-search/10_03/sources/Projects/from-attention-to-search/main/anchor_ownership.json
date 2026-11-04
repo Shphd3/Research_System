@@ -1,0 +1,2425 @@
+{
+  "schema_version": 1,
+  "scope": "Current project owners, numbered storage and direct reference validation; no scientific-state authority.",
+  "scientific_state_changed": false,
+  "lines": [
+    {
+      "id": "A01",
+      "anchor_root": "main/problem_anchors/01_common_operator_mechanism",
+      "experiment_root": "main/experiments/A01_common_operator",
+      "index": "main/problem_anchors/01_common_operator_mechanism/README.md",
+      "layout": "registered_flat"
+    },
+    {
+      "id": "A05",
+      "anchor_root": "main/problem_anchors/05_failure_mechanism",
+      "experiment_root": "main/experiments/A05",
+      "index": "main/problem_anchors/05_failure_mechanism/research_map.md",
+      "layout": "registered_flat"
+    },
+    {
+      "id": "A06",
+      "anchor_root": "main/problem_anchors/06_geometry_proxy_preservation",
+      "experiment_root": "main/experiments/A06",
+      "index": "main/problem_anchors/06_geometry_proxy_preservation/research_map.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A07",
+      "anchor_root": "main/problem_anchors/07_features_overlap",
+      "experiment_root": "main/experiments/A07",
+      "index": "main/problem_anchors/07_features_overlap/README.md",
+      "layout": "registered_flat"
+    },
+    {
+      "id": "A09",
+      "anchor_root": "main/problem_anchors/09_common_rare_spectral_discrimination",
+      "experiment_root": "main/experiments/A09",
+      "index": "main/problem_anchors/09_common_rare_spectral_discrimination/README.md",
+      "layout": "registered_flat"
+    },
+    {
+      "id": "A10",
+      "anchor_root": "main/problem_anchors/10_optimizer_learning_rate_mechanism",
+      "experiment_root": "main/experiments/A10",
+      "index": "main/problem_anchors/10_optimizer_learning_rate_mechanism/README.md",
+      "layout": "registered_flat"
+    },
+    {
+      "id": "A11",
+      "anchor_root": "main/problem_anchors/11_informative_future_branch_mechanism",
+      "experiment_root": "main/experiments/A11",
+      "index": "main/problem_anchors/11_informative_future_branch_mechanism/README.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A12",
+      "anchor_root": "main/problem_anchors/12_structured_compositional_mtp_workload",
+      "experiment_root": "main/experiments/A12",
+      "index": "main/problem_anchors/12_structured_compositional_mtp_workload/README.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A13",
+      "anchor_root": "main/problem_anchors/13_mtp_task_property_decomposition",
+      "experiment_root": "main/experiments/A13",
+      "index": "main/problem_anchors/13_mtp_task_property_decomposition/README.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A14",
+      "anchor_root": "main/problem_anchors/14_tree_low_rank_language_structure",
+      "experiment_root": "main/experiments/A14",
+      "index": "main/problem_anchors/14_tree_low_rank_language_structure/README.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A15",
+      "anchor_root": "main/problem_anchors/15_spectral_representation_and_functional_routing",
+      "experiment_root": "main/experiments/A15",
+      "index": "main/problem_anchors/15_spectral_representation_and_functional_routing/README.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A16",
+      "anchor_root": "main/problem_anchors/16_load_control_gradient_interference",
+      "experiment_root": "main/experiments/A16",
+      "index": "main/problem_anchors/16_load_control_gradient_interference/README.md",
+      "layout": "parent_subanchor"
+    },
+    {
+      "id": "A17",
+      "anchor_root": "main/problem_anchors/17_shared_and_interference_learning",
+      "experiment_root": "main/experiments/A17",
+      "index": "main/problem_anchors/17_shared_and_interference_learning/README.md",
+      "layout": "parent_subanchor"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "01_01",
+      "line": "A01",
+      "parent_id": null,
+      "path": "main/problem_anchors/01_common_operator_mechanism/01_01_common_operator_identifiability_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A01_common_operator/A01_01_common_operator_identifiability_full_run"
+      ],
+      "title": "Common Operator Identifiability Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "01_02",
+      "line": "A01",
+      "parent_id": null,
+      "path": "main/problem_anchors/01_common_operator_mechanism/01_02_ground_truth_projector_recovery_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "Ground-Truth Common Projector Recovery Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "01_03",
+      "line": "A01",
+      "parent_id": null,
+      "path": "main/problem_anchors/01_common_operator_mechanism/01_03_gradient_common_vs_activation_common_anchor.md",
+      "companions": [
+        "main/problem_anchors/01_common_operator_mechanism/01_03_gradient_common_vs_activation_common_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A01_common_operator/A01_03_gradient_common_vs_activation_common_full_run"
+      ],
+      "title": "Gradient Common Versus Activation Common Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "01_04",
+      "line": "A01",
+      "parent_id": null,
+      "path": "main/problem_anchors/01_common_operator_mechanism/01_04_feedback_common_preservation_bridge_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A01_common_operator/A01_04_feedback_common_preservation_bridge_controlled_full_run",
+        "main/experiments/A01_common_operator/A01_04_real_dclm_feedback_logit_bridge_bounded_run"
+      ],
+      "title": "Feedback Common Preservation Bridge Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_00",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_00_ntp_style_top1_router_lockin_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/05_00_ntp_style_top1_router_lockin"
+      ],
+      "title": "2x2 Top-1 Router Lock-In Anchor",
+      "legacy_aliases": [
+        "A02"
+      ],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_01",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_01_geometric_inhibition_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/A05_01_feature_axis_audit_existing_logs",
+        "main/experiments/A05/A05_01_feature_key_routing_stability_center_only",
+        "main/experiments/A05/A05_01_geometric_inhibition_center_separation",
+        "main/experiments/A05/A05_01_true_token_conditioned_inhibition_replay",
+        "main/experiments/A05/A05_01_uniform_feature_collapse_mechanism_audit"
+      ],
+      "title": "05_01 Inhibition And Early Lock-In Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_02",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_02_feature_assumption_relaxation_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/A05_02_P1_compositional_token_feature_routing",
+        "main/experiments/A05/A05_02_P3_same_expert_feature_relation"
+      ],
+      "title": "05_02 Feature Assumption Relaxation Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_03",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_03_uniform_collapse_common_offset_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/A05_03_no_pos_slot_init_inhibition",
+        "main/experiments/A05/A05_03_uniform_collapse_common_offset",
+        "main/experiments/A05/A05_03_uniform_collapse_position_template_source_ablation"
+      ],
+      "title": "05_03 Uniform Collapse Common-Offset Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_04_01",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_04_01_uniform_feature_specialization_after_position_removal_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/A05_04_01_no_position_forced_feature_init_trajectory",
+        "main/experiments/A05/A05_04_01_oracle_to_trainable_release",
+        "main/experiments/A05/A05_04_01_round1_slot_specialization_protocol",
+        "main/experiments/A05/A05_04_01_round1_slot_specialization_protocol_dot_product"
+      ],
+      "title": "Minimal Anchor Handwrite Draft",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_04_02",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_04_02_dotproduct_common_logit_causality_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/A05_04_02_common_source_b_path_and_no_b",
+        "main/experiments/A05/A05_04_02_no_attn_residual_b_routing",
+        "main/experiments/A05/A05_04_02_round2_dotproduct_common_logit"
+      ],
+      "title": "05_04_02 Dot-Product Common-Logit Causality Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "05_04_03",
+      "line": "A05",
+      "parent_id": null,
+      "path": "main/problem_anchors/05_failure_mechanism/05_04_03_real_text_common_logit_initialization_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A05/A05_04_03_real_text_common_logit_audit"
+      ],
+      "title": "05_04_03 Real-Text Common-Logit Initialization Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "06_00",
+      "line": "A06",
+      "parent_id": null,
+      "path": "main/problem_anchors/06_geometry_proxy_preservation/06_00_functional_specialization_contract/06_00_functional_specialization_contract_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A06/06_00_functional_specialization_contract/A06_00_01_E01_slot_context_dominance",
+        "main/experiments/A06/06_00_functional_specialization_contract/A06_00_01_E02_context_length_bridge",
+        "main/experiments/A06/06_00_functional_specialization_contract/A06_00_01_E03_router_feature_audit",
+        "main/experiments/A06/06_00_functional_specialization_contract/A06_00_02_E01_hierarchical_route_utility"
+      ],
+      "title": "A06_00 Functional Specialization Contract",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "06_01",
+      "line": "A06",
+      "parent_id": null,
+      "path": "main/problem_anchors/06_geometry_proxy_preservation/06_01_geometry_and_state_discovery/06_01_geometry_and_state_discovery_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_01_E01_common_filtered_spectrum",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_01_E02_cross_checkpoint_common_replay",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_01_E03_freeze_split_common_stability",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_01_E04_gate_norm_variation",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_01_E05_hidden_geometry_decomposition",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_01_E06_centered_residual_geometry",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_02_E01_oracle_partition_reachability",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_02_E02_slot_length_robustness",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E01_common_residual_controls",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E02_route_position_discovery",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E03_no_position_proxy_bridge",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E04_all_position_pool_audit",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E05_representation_selector_audit",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E06_margin_aware_center_search",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_03_E07_route_logit_common_estimator",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E01_real_proxy_operationalization",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E02_real_proxy_router_initialization",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E03_real_proxy_training_overwrite",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_04_E04_real_proxy_failure_decomposition",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_05_E01_warmup_spectral_reinit",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_05_E02_manifold_power_iteration",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_05_E03_gradient_fisher_selector",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_05_E04_full_lm_gradient_guard",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_05_E05_long_horizon_margin_audit",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_06_E01_singular_direction_convergence",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_06_E02_direction_as_gate_forward",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_06_E03_common_direction_reservoir",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_06_E04_iterative_reservoir_discovery",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_07_E01_static_2x2_geometry",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_07_E02_static_2x2_region_audit",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_07_E03_high_dimensional_static_geometry",
+        "main/experiments/A06/06_01_geometry_and_state_discovery/A06_01_07_E04_text_static_geometry_transfer"
+      ],
+      "title": "A06_01 Geometry And Route-Relevant State Discovery",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "06_02",
+      "line": "A06",
+      "parent_id": null,
+      "path": "main/problem_anchors/06_geometry_proxy_preservation/06_02_partition_preservation_dynamics/06_02_partition_preservation_dynamics_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E01_initial_training_basin",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E02_router_center_tracking",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E03_feature_drift_margin",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E04_forced_margin_crossing",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E05_margin_basin_robustness",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E06_margin_budget_audit",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E07_top1_margin_threshold",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E01_common_residual_trajectory",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E02_toy_common_rare_residual",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E03_transformer_common_rare",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_02_E04_dns_preservation_audit",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_03_E01_soft_router_advantage",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_03_E02_top1_counterfactual_correction",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_03_E03_background_boundary_pressure",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_04_E01_representation_router_optimizer",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_04_E02_optimizer_boundary_pressure",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_04_E03_router_update_norm",
+        "main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_04_E04_event_triggered_recovery"
+      ],
+      "title": "A06_02 Partition-Preservation Dynamics",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "06_03",
+      "line": "A06",
+      "parent_id": null,
+      "path": "main/problem_anchors/06_geometry_proxy_preservation/06_03_utility_binding_and_sparse_discovery/06_03_utility_binding_and_sparse_discovery_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E01_trainable_expert_utility",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_01_E02_router_release",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E01_wrong_rank_correction",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_02_E02_semantic_credit_sources",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_03_E01_rotating_challenger",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_04_E01_sparse_audition_duty_cycle",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_04_E02_mean_utility_stop",
+        "main/experiments/A06/06_03_utility_binding_and_sparse_discovery/A06_03_04_E03_tail_safe_certificate"
+      ],
+      "title": "A06_03 Utility Binding And Sparse Discovery",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "06_04",
+      "line": "A06",
+      "parent_id": null,
+      "path": "main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor.md",
+      "companions": [
+        "main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/06_04_real_workload_utility_headroom_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A06_04 Real-Workload Expert-Utility Headroom",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "06_04_01",
+      "line": "A06",
+      "parent_id": "06_04",
+      "path": "main/problem_anchors/06_geometry_proxy_preservation/06_04_real_workload_utility_headroom/subanchors/06_04_01_context_conditioned_expert_utility_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A06/06_04_real_workload_utility_headroom/A06_04_01_E01_context_conditioned_expert_utility"
+      ],
+      "title": "A06_04_01 Context-Conditioned Expert Utility in a Frozen Code MoE",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A07/A07_06a_common_subspace_absorption_diagnostic",
+        "main/experiments/A07/A07_06b_projected_moe_conflict_splitting"
+      ],
+      "title": "A07 Nested Singular Interference Mainline Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07_01",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07_01_common_rare_conflict_metric_audit_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A07/A07_01_common_rare_conflict_metric_audit",
+        "main/experiments/A07/A07_01_nested_common_backbone_reproduction"
+      ],
+      "title": "A07_01 Nested Common Backbone Reproduction Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07_02",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07_02_common_controlled_rare_interference_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A07/A07_02_common_controlled_rare_interference",
+        "main/experiments/A07/A07_02_nested_tail_common_subspace_control"
+      ],
+      "title": "A07_02 Nested Tail Common-Subspace Control Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07_03",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07_03_route_function_binding_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A07/A07_03_nested_route_function_binding",
+        "main/experiments/A07/A07_03_route_function_binding"
+      ],
+      "title": "A07_03 Nested Route-Function Binding Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07_04",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A07/A07_04_common_rare_gradient_conflict_splitting"
+      ],
+      "title": "A07_04 Common / Rare Gradient Conflict Splitting Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07_05",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07_05_common_update_interference_diagnostic_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A07/A07_05_common_update_interference_diagnostic"
+      ],
+      "title": "A07_05: Common-Update Interference Diagnostic",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "07_06",
+      "line": "A07",
+      "parent_id": null,
+      "path": "main/problem_anchors/07_features_overlap/07_06_projected_common_rare_conflict_splitting_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A07_06 Projected Common / Rare Conflict Splitting Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "09_00",
+      "line": "A09",
+      "parent_id": null,
+      "path": "main/problem_anchors/09_common_rare_spectral_discrimination/09_00_ntp_zipf_feature_factorization_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "NTP Zipf Feature Write-In And Router Factor Attribution",
+      "legacy_aliases": [
+        "A04"
+      ],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "09_01",
+      "line": "A09",
+      "parent_id": null,
+      "path": "main/problem_anchors/09_common_rare_spectral_discrimination/09_01_common_band_rare_discrimination_anchor.md",
+      "companions": [
+        "main/problem_anchors/09_common_rare_spectral_discrimination/09_01_common_band_rare_discrimination_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A09/A09_01_common_band_rare_discrimination"
+      ],
+      "title": "A09_01 Common High-Gain Band / Rare Discrimination Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "10_01",
+      "line": "A10",
+      "parent_id": null,
+      "path": "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_01_common_projected_sgd_lr_anchor.md",
+      "companions": [
+        "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_01_common_projected_sgd_lr_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A10/A10_01_common_projected_sgd_lr_synthetic"
+      ],
+      "title": "10_01 Common-Projected SGD Learning-Rate Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "10_02",
+      "line": "A10",
+      "parent_id": null,
+      "path": "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_02_frequency_singular_sgd_instability_anchor.md",
+      "companions": [
+        "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_02_frequency_singular_sgd_instability_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A10/A10_02_frequency_singular_sgd_instability"
+      ],
+      "title": "10_02 Frequency-Singular SGD Instability Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "10_03",
+      "line": "A10",
+      "parent_id": null,
+      "path": "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_03_router_numerical_update_fidelity_anchor.md",
+      "companions": [
+        "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_03_router_numerical_update_fidelity_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A10_03: Does Router numerical error change a finite learning update?",
+      "legacy_aliases": [],
+      "language_authority": "English canonical; Chinese companion. AI proposal pending researcher review; natural replay NOT RUN."
+    },
+    {
+      "id": "11_01",
+      "line": "A11",
+      "parent_id": null,
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_01_informative_horizon_supervision/11_01_informative_horizon_supervision_anchor.md",
+      "companions": [
+        "main/problem_anchors/11_informative_future_branch_mechanism/11_01_informative_horizon_supervision/11_01_informative_horizon_supervision_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "Informative-Horizon Supervision Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "11_01_01",
+      "line": "A11",
+      "parent_id": "11_01",
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_01_informative_horizon_supervision/subanchors/11_01_01_information_and_geometry_controls_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A11/11_01_informative_horizon_supervision/A11_01_01_E01_next_k_inclusion_law"
+      ],
+      "title": "Information Inclusion And Output-Geometry Controls",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "11_02",
+      "line": "A11",
+      "parent_id": null,
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_02_hidden_to_parameter_transmission/11_02_hidden_to_parameter_transmission_anchor.md",
+      "companions": [
+        "main/problem_anchors/11_informative_future_branch_mechanism/11_02_hidden_to_parameter_transmission/11_02_hidden_to_parameter_transmission_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "Hidden-to-Parameter Transmission Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "11_02_01",
+      "line": "A11",
+      "parent_id": "11_02",
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_02_hidden_to_parameter_transmission/subanchors/11_02_01_reachability_and_background_sign_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E01_semantic_tangent_transmission",
+        "main/experiments/A11/11_02_hidden_to_parameter_transmission/A11_02_01_E02_all_position_path_decomposition"
+      ],
+      "title": "Shared-Parameter Reachability And Background-Sign Control",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "11_03",
+      "line": "A11",
+      "parent_id": null,
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor.md",
+      "companions": [
+        "main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/11_03_cross_position_standard_head_use_boundary_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "Cross-Position Standard-Head Use Boundary Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "11_03_01",
+      "line": "A11",
+      "parent_id": "11_03",
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_01_cross_position_proxy_falsification_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E01_head_position_cross_kernel",
+        "main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_01_E02_end_to_end_use_boundary"
+      ],
+      "title": "Cross-Position Proxy Falsification",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "11_03_02",
+      "line": "A11",
+      "parent_id": "11_03",
+      "path": "main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor.md",
+      "companions": [
+        "main/problem_anchors/11_informative_future_branch_mechanism/11_03_cross_position_standard_head_use_boundary/subanchors/11_03_02_standard_head_causal_use_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E01_model_local_kv_causal_use",
+        "main/experiments/A11/11_03_cross_position_standard_head_use_boundary/A11_03_02_E02_exact_source_kv_information_audit"
+      ],
+      "title": "Informative-Future-Target Standard-Head Causal-Use Audit Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "12_01",
+      "line": "A12",
+      "parent_id": null,
+      "path": "main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor.md",
+      "companions": [
+        "main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "Compositional Workload And Capability-Gate Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "12_01_01",
+      "line": "A12",
+      "parent_id": "12_01",
+      "path": "main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E01_composition_calibration",
+        "main/experiments/A12/12_01_compositional_workload_capability_gate/A12_01_01_E02_explicit_binding_calibration"
+      ],
+      "title": "Workload Validity And Learner-Eligibility Guard",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "12_02",
+      "line": "A12",
+      "parent_id": null,
+      "path": "main/problem_anchors/12_structured_compositional_mtp_workload/12_02_interference_capacity_curriculum_boundary/12_02_interference_capacity_curriculum_boundary_anchor.md",
+      "companions": [
+        "main/problem_anchors/12_structured_compositional_mtp_workload/12_02_interference_capacity_curriculum_boundary/12_02_interference_capacity_curriculum_boundary_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "Interference, Capacity, And Curriculum Boundary Anchor",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "12_02_01",
+      "line": "A12",
+      "parent_id": "12_02",
+      "path": "main/problem_anchors/12_structured_compositional_mtp_workload/12_02_interference_capacity_curriculum_boundary/subanchors/12_02_01_rank_and_curriculum_controls_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E01_task_rank_competition",
+        "main/experiments/A12/12_02_interference_capacity_curriculum_boundary/A12_02_01_E02_curriculum_rank_boundary"
+      ],
+      "title": "Rank Competition And Curriculum Controls",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "12_03",
+      "line": "A12",
+      "parent_id": null,
+      "path": "main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor.md",
+      "companions": [
+        "main/problem_anchors/12_structured_compositional_mtp_workload/12_03_standard_head_causal_use/12_03_standard_head_causal_use_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A12/12_03_standard_head_causal_use/A12_03_E01_standard_head_causal_use"
+      ],
+      "title": "Intermediate-State Causal Use By The Standard Head",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "12_00",
+      "line": "A12",
+      "parent_id": null,
+      "path": "main/problem_anchors/12_structured_compositional_mtp_workload/12_00_short_range_single_vs_two_step_composition/12_00_short_range_single_vs_two_step_composition_anchor.md",
+      "companions": [
+        "main/problem_anchors/12_structured_compositional_mtp_workload/12_00_short_range_single_vs_two_step_composition/12_00_short_range_single_vs_two_step_composition_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A12/12_00_short_range_single_vs_two_step_composition"
+      ],
+      "title": "Anchor 12_0 — Short-Range Single-Step versus Two-Step Composition",
+      "legacy_aliases": [
+        "A12_0"
+      ],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00",
+      "line": "A13",
+      "parent_id": null,
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "Which Task Properties Convert Earlier Future Supervision Into Standard-Head Utility?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00_01",
+      "line": "A13",
+      "parent_id": "13_00",
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_01_query_conditioned_relay_carrier_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_01_E01_query_conditioned_relay_carrier",
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_01_E02_budget_extension",
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_01_E03_cosine_schedule",
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_01_E04_width_capacity"
+      ],
+      "title": "Is the Minimal Query-Conditioned Relay Carrier Valid and Learnable?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00_02",
+      "line": "A13",
+      "parent_id": "13_00",
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_02_single_value_relay_carrier_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_02_E01_single_value_relay_carrier",
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_02_E02_entropy_matched_carrier"
+      ],
+      "title": "Is Single-Value Relay a Valid Minimal Carrier?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00_03",
+      "line": "A13",
+      "parent_id": "13_00",
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_03_relay_necessity_objective_interaction_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_03_E01_relay_necessity_interaction",
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_03_E02_gate_coherent_confirmation"
+      ],
+      "title": "Does Relay Necessity Amplify the Standard-Head Utility of Next-2 Supervision?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00_04",
+      "line": "A13",
+      "parent_id": "13_00",
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_04_relay_target_localization_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_04_E01_relay_target_localization"
+      ],
+      "title": "Is the Answer-Aligned Relay Target the Local Cause of Next-2 Utility?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00_05",
+      "line": "A13",
+      "parent_id": "13_00",
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_05_task_relevant_relay_target_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_05_E01_task_relevant_target"
+      ],
+      "title": "Does Task Relevance, Not Target Variability, Cause Relay Utility?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "13_00_06",
+      "line": "A13",
+      "parent_id": "13_00",
+      "path": "main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_06_soft_relay_mtp_ntp_audit_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A13/13_00_task_properties_to_standard_head_utility/A13_00_06_E01_soft_relay_mtp_ntp_audit"
+      ],
+      "title": "Does MTP Utility Grow Continuously With Causal Relay Dependence?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "14_00",
+      "line": "A14",
+      "parent_id": null,
+      "path": "main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor.md",
+      "companions": [
+        "main/problem_anchors/14_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure/14_00_tree_low_rank_language_structure_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A14/14_00_tree_low_rank_language_structure",
+        "main/experiments/A14/14_00_tree_low_rank_language_structure/historical_support/legacy_line_experiments"
+      ],
+      "title": "A14_00 — When Does Hierarchical Language Composition Preserve a Shared Low-Rank State?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "14_01",
+      "line": "A14",
+      "parent_id": null,
+      "path": "main/problem_anchors/14_tree_low_rank_language_structure/14_01_relation_reuse_parameter_state_bridge/14_01_relation_reuse_parameter_state_bridge_anchor.md",
+      "companions": [
+        "main/problem_anchors/14_tree_low_rank_language_structure/14_01_relation_reuse_parameter_state_bridge/14_01_relation_reuse_parameter_state_bridge_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A14_01 — Does Relation Reuse Convert QK Functional Compression into Task-Sufficient State Compression?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "14_02",
+      "line": "A14",
+      "parent_id": null,
+      "path": "main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_anchor.md",
+      "companions": [
+        "main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/14_02_relation_reuse_root_effective_rank_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E01_shared_rule_vs_lookup_root_rank",
+        "main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E02_frequency_mapping_rank_separation",
+        "main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E03_rare_common_subspace_reuse",
+        "main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E04_shared_jacobian_path_image",
+        "main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E05_trajectory_jacobian_closure",
+        "main/experiments/A14/14_02_relation_reuse_root_effective_rank/A14_02_E06_reference_jacobian_vs_secant"
+      ],
+      "title": "A14_02 Shared Compositional Rules And Task-Functional Root-State Rank",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "14_02_01",
+      "line": "A14",
+      "parent_id": "14_02",
+      "path": "main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_01_frequency_mapping_rank_separation_anchor.md",
+      "companions": [
+        "main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_01_frequency_mapping_rank_separation_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A14_02_01 Frequency–Mapping Rank Separation",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "14_02_02",
+      "line": "A14",
+      "parent_id": "14_02",
+      "path": "main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_02_rare_common_subspace_reuse_anchor.md",
+      "companions": [
+        "main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/subanchors/14_02_02_rare_common_subspace_reuse_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A14_02_02 Rare–Common Subspace Reuse",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "14_03",
+      "line": "A14",
+      "parent_id": null,
+      "path": "main/problem_anchors/14_tree_low_rank_language_structure/14_03_state_parameter_functional_rank_demand/14_03_state_parameter_functional_rank_demand_anchor.md",
+      "companions": [
+        "main/problem_anchors/14_tree_low_rank_language_structure/14_03_state_parameter_functional_rank_demand/14_03_state_parameter_functional_rank_demand_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A14_03: Does Higher Task-State Functional Rank Require More Parameter Functional Directions?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_00",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/15_00_router_input_spectral_geometry_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/15_00_router_input_spectral_geometry_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_00_router_input_spectral_geometry/A15_00_E01_actual_router_input_spectral_access",
+        "main/experiments/A15/15_00_router_input_spectral_geometry/A15_00_E02_early_head_alignment_onset"
+      ],
+      "title": "A15_00 Router-Input Spectral Geometry",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_00_01",
+      "line": "A15",
+      "parent_id": "15_00",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_01_cross_document_subspace_stability_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_01_cross_document_subspace_stability_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_00_router_input_spectral_geometry/A15_00_01_E01_cross_document_subspace_stability"
+      ],
+      "title": "A15_00_01 Centered Common-Subspace Stability After De-meaning",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_00_02",
+      "line": "A15",
+      "parent_id": "15_00",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_02_gate_common_residual_preference_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_02_gate_common_residual_preference_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_00_router_input_spectral_geometry/A15_00_02_E01_gate_common_residual_preference"
+      ],
+      "title": "A15_00_02 Gate Preference For Pooled Common Versus Local Residual Modes",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_00_03",
+      "line": "A15",
+      "parent_id": "15_00",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_03_condition_local_residual_modes_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_00_router_input_spectral_geometry/subanchors/15_00_03_condition_local_residual_modes_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_00_router_input_spectral_geometry/A15_00_03_E01_condition_local_residual_modes"
+      ],
+      "title": "A15_00_03 Condition-Stratified Residual Modes",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_01",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/15_01_spectral_learning_and_feedback_dynamics_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/15_01_spectral_learning_and_feedback_dynamics_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E01_controlled_covariance_learning_speed",
+        "main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_E02_real_trajectory_spectral_formation"
+      ],
+      "title": "A15_01 Spectral Learning And Feedback Dynamics",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_01_01",
+      "line": "A15",
+      "parent_id": "15_01",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/subanchors/15_01_01_selected_expert_feedback_lockin_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/subanchors/15_01_01_selected_expert_feedback_lockin_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_01_E01_selected_expert_feedback_lockin"
+      ],
+      "title": "A15_01_01: Does Selected-Expert Feedback Lock In Head-First Routing?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_01_02",
+      "line": "A15",
+      "parent_id": "15_01",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/subanchors/15_01_02_low_variance_functional_delay_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_01_spectral_learning_and_feedback_dynamics/subanchors/15_01_02_low_variance_functional_delay_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_01_spectral_learning_and_feedback_dynamics/A15_01_02_E01_low_variance_functional_delay"
+      ],
+      "title": "A15_01_02: Is Low-Variance Routing Random-Like Or Merely Delayed?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/15_02_layerwise_representation_spectral_atlas_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/15_02_layerwise_representation_spectral_atlas_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E01_qwen3_residual_semantic_variance_atlas",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E02_qwen3_attention_head_semantic_atlas",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E03_qwen3_pre_o_proj_semantic_atlas",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E04_qwen3_post_o_proj_semantic_atlas",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_E05_pseudotaxonomy_specificity_control"
+      ],
+      "title": "A15_02 Layerwise Representation Spectral Atlas",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_01",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_01_controlled_layer_information_identity_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_01_controlled_layer_information_identity_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_01_E01_controlled_layer_information_profile"
+      ],
+      "title": "A15_02_01 Layer-Band Information Identity",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_02",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_02_natural_hierarchy_role_localization_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_02_natural_hierarchy_role_localization_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E01_natural_hierarchy_role_localization",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_02_E02_qwen3_independent_role_atlas"
+      ],
+      "title": "A15_02_02 Natural Hierarchy Token Spectral Localization",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_03",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_03_architectural_head_channel_concentration_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_03_architectural_head_channel_concentration_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_03_E01_architectural_head_channel_concentration"
+      ],
+      "title": "A15_02_03 Semantic Concentration in Fixed MLP-Input Groups versus True Attention Heads",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_04",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_04_compositional_attention_write_atlas_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_04_compositional_attention_write_atlas_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_04_E01_compositional_attention_write_atlas"
+      ],
+      "title": "A15_02_04 Compositional Semantic Rank Redistribution in Isolated Attention Writes",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_05",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_05_balanced_taxonomy_attention_write_atlas_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_05_balanced_taxonomy_attention_write_atlas_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_05_E01_balanced_taxonomy_attention_write_atlas"
+      ],
+      "title": "A15_02_05 Coarse--Fine Semantic Layerwise Spectral Localization",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_06",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_06_mlp_parameter_geometry_and_semantic_location_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_06_mlp_parameter_geometry_and_semantic_location_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E01_mlp_parameter_geometry_and_semantic_location",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E02_shared_parameter_basis_attention_projection",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E03_shared_basis_semantic_granularity",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E04_layer8_to9_shared_basis_growth",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E05_all_adjacent_depth_transitions",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_06_E05_multidepth_adjacent_pair_growth"
+      ],
+      "title": "A15_02_06 MLP Parameter Commonality And Attention-Write Semantic Location",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_02_07",
+      "line": "A15",
+      "parent_id": "15_02",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_07_matched_semantic_complexity_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_02_layerwise_representation_spectral_atlas/subanchors/15_02_07_matched_semantic_complexity_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E01_matched_taxonomy_full",
+        "main/experiments/A15/15_02_layerwise_representation_spectral_atlas/A15_02_07_E02_controlled_composition_full"
+      ],
+      "title": "A15_02_07 Matched Semantic Complexity In The Layerwise MLP Parameter Spectrum",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_04",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_04_tail_band_information/15_04_tail_band_information_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_04_tail_band_information/15_04_tail_band_information_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_04_tail_band_information/A15_04_E01_shared_tail_geometry",
+        "main/experiments/A15/15_04_tail_band_information/A15_04_E02_deep_tail_parameter_semantic_decoupling"
+      ],
+      "title": "A15_04 Does The Common Local-Rank Shift Enter A Cross-Layer Shared Broad Parameter Tail?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_05",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/15_05_functional_coordinate_admission_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/15_05_functional_coordinate_admission_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A15_05 Functional Coordinate Admission",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_05_01",
+      "line": "A15",
+      "parent_id": "15_05",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_01_shallow_feature_guidance_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_01_shallow_feature_guidance_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A15_05_01 Shallow Feature Guidance",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_05_02",
+      "line": "A15",
+      "parent_id": "15_05",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_02_shallow_feature_specificity_pilot_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_02_shallow_feature_specificity_pilot_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_05_functional_coordinate_admission/A15_05_02_E01_controlled_shallow_feature_pilot"
+      ],
+      "title": "A15_05_02 Controlled Four-Layer Shallow-Head Guidance Pilot",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_05_03",
+      "line": "A15",
+      "parent_id": "15_05",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_05_functional_coordinate_admission/A15_05_03_E01_progressive_band_source_routing_2b"
+      ],
+      "title": "A15_05_03 Progressive Band Source Routing",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_05_04",
+      "line": "A15",
+      "parent_id": "15_05",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_04_fixed_band_cross_update_compatibility_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_04_fixed_band_cross_update_compatibility_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_05_functional_coordinate_admission/A15_05_04_E01_cross_update_compatibility_gate"
+      ],
+      "title": "A15_05_04 Incremental Prediction Of Co-Training Compatibility",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_05_05",
+      "line": "A15",
+      "parent_id": "15_05",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_05_matched_fixed_band_dispatch_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_05_matched_fixed_band_dispatch_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_05_functional_coordinate_admission/A15_05_05_E01_2b_matched_band_dispatch"
+      ],
+      "title": "A15_05_05 Matched 2B Band-Dispatch Ablation",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_06",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E01_10b_online_spectral_routing",
+        "main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E02_local_random_identity_control",
+        "main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E03_30b_single_seed_extension",
+        "main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E04_30b_downstream_evaluation",
+        "main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E05_30b_differentiable_lb_restart",
+        "main/experiments/A15/15_06_online_spectral_routing_and_relay/A15_06_E06_2b_10b_router_expert_specialization_audit"
+      ],
+      "title": "A15_06 Online Spectral Routing And Relay",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_06_01",
+      "line": "A15",
+      "parent_id": "15_06",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_01_local_random_identity_control_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_01_local_random_identity_control_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A15_06_01 Local Random Identity Control",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_06_02",
+      "line": "A15",
+      "parent_id": "15_06",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_02_router_expert_specialization_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_02_router_expert_specialization_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A15_06_02 Router--Expert Specialization And Utilization",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_07",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_07_layerwise_conditional_fine_discriminant_directions/15_07_layerwise_conditional_fine_discriminant_directions_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces",
+        "main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E02_fixed_axis_and_learned_subspace_atlas"
+      ],
+      "title": "A15_07: Held-Out Function And Spectral Location Of Supervised Low-Rank Subspaces",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_07_01",
+      "line": "A15",
+      "parent_id": "15_07",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_07_layerwise_conditional_fine_discriminant_directions/subanchors/15_07_01_layerwise_domain_direction_atlas_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_07_layerwise_conditional_fine_discriminant_directions/subanchors/15_07_01_layerwise_domain_direction_atlas_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A15_07_01: Layerwise Domain Direction Atlas",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_08_E01_joint_ce_dual_dataset_conditional_utility",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E01_layer25_conditional_innovation_matrix",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E02_fresh_balanced_mismatch_repair",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E03_fresh_confirmation_freeze_repair",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair"
+      ],
+      "title": "A15_08 Target-Conditioned Layer Innovation",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_01",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_01_layerwise_long_range_compositional_innovation_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_01_E02_layerwise_long_range_gain_and_representation_rank_blocks_2_36"
+      ],
+      "title": "A15_08_01 Layerwise Long-Range Added Accessibility And Representation Rank",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_02",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_02_layerwise_conditional_fine_added_accessibility_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_02_layerwise_conditional_fine_added_accessibility_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_02_E01_layerwise_conditional_fine_added_accessibility"
+      ],
+      "title": "A15_08_02 Layerwise Conditional-Fine Added Accessibility",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_03",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_03_function_admitted_update_representation_rank_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_03_function_admitted_update_representation_rank_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_03_E01_function_admitted_update_spectral_rank_analysis"
+      ],
+      "title": "A15_08_03 Cross-Layer Function-Admitted Update Parameter-Spectral Location And Representation Rank",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_04",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_04_transition_object_spectrum_sensitivity_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_04_transition_object_spectrum_sensitivity_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_04_E01_dclm_transition_object_spectrum_comparison"
+      ],
+      "title": "A15_08_04 Transition-Object And RMSNorm Spectrum Sensitivity",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_05",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_05_aligned_geometric_rank_scale_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_05_aligned_geometric_rank_scale_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_05_E01_qwen06b_car_zx_ru_r90_alignment"
+      ],
+      "title": "A15_08_05: Does the apparent rank gap survive model, token, and metric alignment?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_06",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_06_qwen8b_geometric_rank_replication_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_06_qwen8b_geometric_rank_replication_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_06_E01_qwen8b_car_zx_ru_r90_replication"
+      ],
+      "title": "A15_08_06: Does Qwen3-8B reproduce the aligned broad transition spectra?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_07",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_07_semantic_conditioned_functional_subspace_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_07_semantic_conditioned_functional_subspace_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E01_clinc150_layerwise_conditional_intent_added_accessibility",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E01_clinc150_semantic_conditioned_functional_subspace",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E02_hierarchical_taxonomy_replication",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E03_aligned_hierarchical_taxonomy_replication",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E04_z_ru_hierarchical_geometry_comparison",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E05_contrast_corrected_shared_scaling",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E06_rank_specific_multirepresentation_shared_scaling"
+      ],
+      "title": "A15_08_06: Semantic-Conditioned Geometry And Low-Dimensional Functional Subspace",
+      "legacy_aliases": [
+        "A15_08_06_semantic_conditioned_functional_subspace"
+      ],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_08_09",
+      "line": "A15",
+      "parent_id": "15_08",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_09_random_projection_router_preservation_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E01_random_projection_router_preservation",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E02_qwen30b_all_layer_gain_and_preservation",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_09_E03_native_router_representation_controls"
+      ],
+      "title": "A15_08_09: Random-Projection Preservation Of Full-Update Linear Structure",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_09",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_09_layerwise_coarse_fine_reuse_geometry/15_09_layerwise_coarse_fine_reuse_geometry_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_E01_qwen3_30b_cross_depth_coarse_fine_reuse"
+      ],
+      "title": "A15_09: Layerwise Coarse--Fine Discriminant-Space Reuse Geometry",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_09_01",
+      "line": "A15",
+      "parent_id": "15_09",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_09_layerwise_coarse_fine_reuse_geometry/subanchors/15_09_01_native_g_domain_consensus_variance_atlas_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_09_layerwise_coarse_fine_reuse_geometry/A15_09_01_E01_native_g_domain_consensus_variance_atlas"
+      ],
+      "title": "A15_09_01: Native-Router Domain Consensus And Variance Atlas",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_10",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_10_cross_parent_fine_function_transfer/15_10_cross_parent_fine_function_transfer_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_10_cross_parent_fine_function_transfer/A15_10_E01_qwen3_30b_cross_parent_fine_function_transfer"
+      ],
+      "title": "A15_10: Cross-Parent Fine-Function Transfer",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_11",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_11_gradient_consistent_hierarchical_routing/15_11_gradient_consistent_hierarchical_routing_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E01H_qwen_native_router_access_gap_h100",
+        "main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E01_qwen_native_router_access_gap",
+        "main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E02H_synthetic_parent_first_moe_h100",
+        "main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E02_synthetic_parent_first_moe",
+        "main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03H_counterfactual_utility_residual_tree_h100",
+        "main/experiments/A15/15_11_gradient_consistent_hierarchical_routing/A15_11_E03_counterfactual_utility_residual_tree"
+      ],
+      "title": "A15_11: Counterfactual-Utility-Separable Residual Expert Growth",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_12",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_12_semantic_representation_separability/15_12_semantic_representation_separability_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_12_semantic_representation_separability/A15_12_E01_qwen3_30b_fixed_fact_expression_separability",
+        "main/experiments/A15/15_12_semantic_representation_separability/A15_12_E02_expression_bank_boundary_coverage_controls",
+        "main/experiments/A15/15_12_semantic_representation_separability/A15_12_E03_tax_c4a_unseen_fact_package_transfer"
+      ],
+      "title": "A15_12: Fixed-Fact Cross-Expression Semantic Representation Separability",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/15_13_semantic_supervision_middle_layer_formation_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E01_three_layer_semantic_supervision_residual_growth",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E02_repaired_rule_induction_teacher_entrance_and_full_semantic_supervision",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E03_qwen06b_clinc150_one_layer_backward_hierarchical_router",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E04_frozen_teacher_route_only_dynamic_expert_tree",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E05_clinc150_frozen_base_staged_semantic_lora_router",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E06_clinc150_hard_route_gradient_functional_audit",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E07_m2d2_learned_semantic_router_ntp",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E08_m2d2_hard_semantic_route_ntp",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E09_m2d2_baselines_last_layer_pseudolabel",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E10_m2d2_frozen_router_path_decomposition",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E12_m2d2_decommon_parent_freeze_ablation",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E13_qwen06b_mixed_answer_only_semantic_router",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P1_coarse_path_intervention",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P2_parent_router_supervision_repair",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P3_matched_training_semantic_comparison",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_P4_semantic_supervision_strength_localization",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E14_gmm_pseudolabel_oracle_gap",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E15_true_label_layerwise_static_audit",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E16_dclm_final_layer_topk_sae_teacher",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E17_dclm_sae_candidate_hierarchy_reproduction",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E18_dataset_conditioned_sae_semantic_hierarchy",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E19_ab_paired_router_input_readout_reaudit",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E21_dynamic_structural_teacher"
+      ],
+      "title": "A15_13: Can Frozen Final-Layer Semantics Organize an Effective Middle Representation Through a Growing Expert Tree?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_01",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_01_clinc150_one_layer_backward_hierarchical_router_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_01: Can a Final-to-Middle Semantic Chain Improve One-Layer Hierarchical Intent Representations?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_02",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_02_frozen_base_staged_semantic_lora_router_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_02: Can Frozen Base-Model Semantics Seed a Staged Coarse-to-Fine LoRA Router?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_03",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_03_semantic_gradient_functional_alignment_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_03: Do Fine Intents Align with Functional Task Gradients?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_04",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_04_m2d2_causal_lm_semantic_routing_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_04: Does Coarse-to-Fine Semantic Routing Have Functional Value in Causal Language Modeling?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_05",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_05_gmm_pseudolabel_oracle_gap_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_05: Does Semantic Supervision Improve a Sufficiently Trained Online Hierarchy?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_06",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_06_dclm_final_layer_topk_sae_teacher_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_06: Can a DCLM-Trained Final-Layer Top-K SAE Become a Qualified Hierarchical-Semantic Teacher Candidate?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_07",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_07_true_label_layerwise_static_audit_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15.13.07 — Gold-label layerwise static audit",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_08",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_08_dclm_sae_candidate_hierarchy_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_08: Does the Qualified Final-Layer SAE Admit a Reproducible Candidate Containment Hierarchy?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_09",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_09_dataset_conditioned_sae_semantic_hierarchy_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_09: Does the Replicated SAE Graph Encode the M2D2 Coarse--Fine Taxonomy?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_10",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_10_sae_flat_router_functional_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_10: Can Initial SAE/GMM Structure Improve Online Expert Routing?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_13_11",
+      "line": "A15",
+      "parent_id": "15_13",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_11_structural_routing_incremental_learning_anchor.md",
+      "companions": [],
+      "experiment_roots": [],
+      "title": "A15_13_11: Does Structural Routing Support Bounded Incremental Learning?",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_14",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_14_semantic_representation_geometric_form/15_14_semantic_representation_geometric_form_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E01_m2d2_direction_norm_covariance_atlas",
+        "main/experiments/A15/15_14_semantic_representation_geometric_form/A15_14_E02_m2d2_full_dimension_geometry_robustness"
+      ],
+      "title": "A15_14: Geometric Form of Natural-Language Semantics in Frozen Representations",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_15",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_15_layerwise_moe_insertion_validation/15_15_layerwise_moe_insertion_validation_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E01_layerwise_semantic_moe_insertion",
+        "main/experiments/A15/15_15_layerwise_moe_insertion_validation/A15_15_E02_exploratory_functional_candidate_test"
+      ],
+      "title": "A15.15 — Layerwise Readability-Guided MoE Insertion Validation",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_16",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_16_headwise_causal_semantic_retrieval/15_16_headwise_causal_semantic_retrieval_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_16_headwise_causal_semantic_retrieval/A15_16_E01_headwise_gold_label_linear_readability"
+      ],
+      "title": "A15.16 — Headwise causal semantic retrieval audit",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_17",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E01_three_model_sae_representation_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E02_gradient_parameter_and_local_utility_followup",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E03_sidecar_representation_gradient_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E04_layer8_attention_sidecar_trajectory",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E05_multimodel_fisher_gradient_coefficient_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E06_21b_sidecar_representation_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E07_15b_sidecar_persistence_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_E08_0_10b_sidecar_early_trajectory",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/supporting_records"
+      ],
+      "title": "A15_17: SAE Sidecar and Reusable Representation Organization",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_17_01",
+      "line": "A15",
+      "parent_id": "15_17",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_01_sae_shared_direction_reuse_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E01_shared_direction_reuse_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E02_s7_17b_training_history_reuse_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E03_lambda_transition_reuse_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_01_E04_15b_lambda_reuse_audit"
+      ],
+      "title": "Shared SAE Atom Reuse as a Candidate Explanation of S7's Low Effective Dimension",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_17_02",
+      "line": "A15",
+      "parent_id": "15_17",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/subanchors/15_17_02_sae_n8_separability_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E02_n8_15b17b_matrix",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E03_n8_21b_four_model_audit"
+      ],
+      "title": "A15_17_02: Native SAE Representation Concentration and N8 Domain Separability",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "16_00",
+      "line": "A16",
+      "parent_id": null,
+      "path": "main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/16_00_switch_lb_gradient_conflict_anchor.md",
+      "companions": [
+        "main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/16_00_switch_lb_gradient_conflict_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A16_00 Switch Load-Balance Gradient Conflict",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "16_00_01",
+      "line": "A16",
+      "parent_id": "16_00",
+      "path": "main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/subanchors/16_00_01_dc_sustainer_boundary_anchor.md",
+      "companions": [
+        "main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/subanchors/16_00_01_dc_sustainer_boundary_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A16/A16_00_01_E01_dc_sustainer_audit"
+      ],
+      "title": "A16_00_01 DC Sustainer Boundary",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "16_00_02",
+      "line": "A16",
+      "parent_id": "16_00",
+      "path": "main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/subanchors/16_00_02_multistage_gradient_pathway_anchor.md",
+      "companions": [
+        "main/problem_anchors/16_load_control_gradient_interference/16_00_switch_lb_gradient_conflict/subanchors/16_00_02_multistage_gradient_pathway_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A16/A16_00_02_E01_multistage_gradient_pathway_audit"
+      ],
+      "title": "A16_00_02 Multistage Gradient-Pathway Audit",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "16_01",
+      "line": "A16",
+      "parent_id": null,
+      "path": "main/problem_anchors/16_load_control_gradient_interference/16_01_incremental_information_lb_routing/16_01_incremental_information_lb_routing_anchor.md",
+      "companions": [
+        "main/problem_anchors/16_load_control_gradient_interference/16_01_incremental_information_lb_routing/16_01_incremental_information_lb_routing_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A16/A16_01_E01_30b_incremental_information_lb_routing"
+      ],
+      "title": "A16_01 Incremental-Information Routing Under Differentiable Load Balance",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "16_01_01",
+      "line": "A16",
+      "parent_id": "16_01",
+      "path": "main/problem_anchors/16_load_control_gradient_interference/16_01_incremental_information_lb_routing/subanchors/16_01_01_regret_distilled_conditional_innovation_anchor.md",
+      "companions": [
+        "main/problem_anchors/16_load_control_gradient_interference/16_01_incremental_information_lb_routing/subanchors/16_01_01_regret_distilled_conditional_innovation_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A16/A16_01_01_E01_frozen_regret_distillation_gate",
+        "main/experiments/A16/A16_01_01_E02_30b_conditional_innovation_confirmation"
+      ],
+      "title": "A16_01_01 Regret-Distilled Conditional-Innovation Routing",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_01",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_01_controlled_list_prediction_rules/17_01_controlled_list_prediction_rules_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_01_controlled_list_prediction_rules/17_01_controlled_list_prediction_rules_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_01_controlled_list_prediction_rules/A17_01_E01_stage1_smoke",
+        "main/experiments/A17/17_01_controlled_list_prediction_rules/A17_01_E02_restricted_update_calibration",
+        "main/experiments/A17/17_01_controlled_list_prediction_rules/A17_01_E03_fixed_pool_frequency",
+        "main/experiments/A17/17_01_controlled_list_prediction_rules/A17_01_E03_restricted_update_full"
+      ],
+      "title": "A17_01: Controlled List Rules And Shared Learning",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_01_01",
+      "line": "A17",
+      "parent_id": "17_01",
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_01_controlled_list_prediction_rules/subanchors/17_01_01_rule_conditioned_answer_margin_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_01_controlled_list_prediction_rules/subanchors/17_01_01_rule_conditioned_answer_margin_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A17_01_01: Rule-conditioned answer margin",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_02",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_02_fixed_pool_frequency/17_02_fixed_pool_frequency_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_02_fixed_pool_frequency/17_02_fixed_pool_frequency_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_02_fixed_pool_frequency/A17_02_E01_fixed_pool_frequency"
+      ],
+      "title": "A17_02: Fixed-Pool Frequency And Shared Learning",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_03",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_03_old_task_sensitive_update/17_03_old_task_sensitive_update_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_03_old_task_sensitive_update/17_03_old_task_sensitive_update_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_03_old_task_sensitive_update/A17_03_E01_sequential_projection",
+        "main/experiments/A17/17_03_old_task_sensitive_update/A17_03_E02_component_causality",
+        "main/experiments/A17/17_03_old_task_sensitive_update/A17_03_E03_trajectory_mechanism"
+      ],
+      "title": "A17_03: Old-task-sensitive updates in sequential learning",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_03_01",
+      "line": "A17",
+      "parent_id": "17_03",
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_03_old_task_sensitive_update/subanchors/17_03_01_component_causality_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_03_old_task_sensitive_update/subanchors/17_03_01_component_causality_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A17_03_01: Deletion, amplification and rule bias under sensitivity restriction",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_03_02",
+      "line": "A17",
+      "parent_id": "17_03",
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_03_old_task_sensitive_update/subanchors/17_03_02_trajectory_mechanism_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_03_old_task_sensitive_update/subanchors/17_03_02_trajectory_mechanism_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A17_03_02: Intermediate-state update effects on old-error repair",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_04",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor_cn.md",
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor.md",
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping",
+        "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis",
+        "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition",
+        "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget",
+        "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023"
+      ],
+      "title": "A17_04: Conditional mapping transfer",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only.",
+      "bounded_rounds": [
+        {
+          "round_id": "R05_autonomous_retention_20261023",
+          "anchor_companions": [
+            "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor.md",
+            "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor_cn.md"
+          ],
+          "experiment_root": "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023",
+          "role": "researcher-authorized inherited round design supplement; parent canonical identity preserved",
+          "scientific_state_changed": false,
+          "new_formal_owner_created": false
+        }
+      ]
+    },
+    {
+      "id": "17_04_01",
+      "line": "A17",
+      "parent_id": "17_04",
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_01_rule_acquisition_diagnosis_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_01_rule_acquisition_diagnosis_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A17_04_01: Diagnose acquisition of conditional list rules",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "17_04_02",
+      "line": "A17",
+      "parent_id": "17_04",
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_02_shared_routed_budget_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_02_shared_routed_budget_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A17_04_02: Shared versus mode-specific updates under a fixed budget",
+      "legacy_aliases": [],
+      "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
+    },
+    {
+      "id": "15_18",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_18_context_relation_organization_use/15_18_context_relation_organization_use_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_18_context_relation_organization_use/15_18_context_relation_organization_use_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_18_context_relation_organization_use"
+      ],
+      "title": "Context relations: composition, distance and prediction use",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Frozen official Qwen C/D representation and use audit; not sidecar-training effect, frequency intervention or common-parameter split. Pending researcher review."
+    },
+    {
+      "id": "15_19",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_19_feature_group_to_actual_dispatch/15_19_feature_group_to_actual_dispatch_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_19_feature_group_to_actual_dispatch/15_19_feature_group_to_actual_dispatch_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_19_feature_group_to_actual_dispatch"
+      ],
+      "title": "Anchor | From feature groups to actual expert reception",
+      "language_authority": {
+        "canonical": "Existing English companion for project navigation; researcher-supplied Chinese original scientific clauses remain controlling where the files explicitly say so",
+        "frozen_original": "Preserve existing anchor_cn.md content and source copies; path corrections must be tracked as relocation-only"
+      },
+      "claim_boundary": "Actual input reception diagnosis; not expert learning/capacity."
+    },
+    {
+      "id": "15_20",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_20_frequency_priority_actual_dispatch/15_20_frequency_priority_actual_dispatch_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_20_frequency_priority_actual_dispatch/15_20_frequency_priority_actual_dispatch_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_20_frequency_priority_actual_dispatch"
+      ],
+      "title": "Frequency first, coactivation second: from feature membership to actual input dispatch",
+      "language_authority": {
+        "canonical": "Existing English companion for project navigation; researcher-supplied Chinese original scientific clauses remain controlling where the files explicitly say so",
+        "frozen_original": "Preserve existing anchor_cn.md content and source copies; path corrections must be tracked as relocation-only"
+      },
+      "claim_boundary": "Fixed routing/list interventions O/F/T/Tphi/P; no expert learning."
+    },
+    {
+      "id": "15_21",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_21_activation_to_expert_learning/15_21_activation_to_expert_learning_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_21_activation_to_expert_learning/15_21_activation_to_expert_learning_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_21_activation_to_expert_learning"
+      ],
+      "title": "From activation profiles to fixed-route expert learning",
+      "language_authority": {
+        "canonical": "Existing English companion for project navigation; researcher-supplied Chinese original scientific clauses remain controlling where the files explicitly say so",
+        "frozen_original": "Preserve existing anchor_cn.md content and source copies; path corrections must be tracked as relocation-only"
+      },
+      "claim_boundary": "Frozen-representation finite-budget residual expert learning; reception, exposure and geometry do not establish mechanism."
+    },
+    {
+      "id": "15_22",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_22_frequency_contribution_relation_refinement/15_22_frequency_contribution_relation_refinement_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_22_frequency_contribution_relation_refinement/15_22_frequency_contribution_relation_refinement_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_22_frequency_contribution_relation_refinement"
+      ],
+      "title": "Frequency-Contribution Bridge and Within-Band Relation Refinement",
+      "language_authority": {
+        "canonical": "Existing English companion for project navigation; researcher-supplied Chinese original scientific clauses remain controlling where the files explicitly say so",
+        "frozen_original": "Preserve existing anchor_cn.md content and source copies; path corrections must be tracked as relocation-only"
+      },
+      "claim_boundary": "Last-layer contribution profiles and incremental within-band relation organization; preserves draft/NOT RUN registration and later factual records separately."
+    },
+    {
+      "id": "15_23",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_23_mean_component_frequency_routing/15_23_mean_component_frequency_routing_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_23_mean_component_frequency_routing/15_23_mean_component_frequency_routing_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_23_mean_component_frequency_routing"
+      ],
+      "title": "Anchor: representation mean, frequent features and expert selection",
+      "language_authority": {
+        "canonical": "Existing English companion for project navigation; researcher-supplied Chinese original scientific clauses remain controlling where the files explicitly say so",
+        "frozen_original": "Preserve existing anchor_cn.md content and source copies; path corrections must be tracked as relocation-only"
+      },
+      "claim_boundary": "True representation mean, subtractive score baseline, ratio calibration distinct; no learning improvement inferred."
+    },
+    {
+      "id": "15_24",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/15_24_frequency_composition_common_path_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/15_24_frequency_composition_common_path_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z"
+      ],
+      "title": "Anchor: Mixed-frequency representations and invocation of a high-frequency path",
+      "language_authority": {
+        "canonical": "Existing English companion for project navigation; researcher-supplied Chinese original scientific clauses remain controlling where the files explicitly say so",
+        "frozen_original": "Preserve existing anchor_cn.md content and source copies; path corrections must be tracked as relocation-only"
+      },
+      "claim_boundary": "Four top-2 routing/learning policies with high-frequency-path invocation; not original base common-function removal or accepted common mechanism."
+    },
+    {
+      "id": "15_24_01",
+      "line": "A15",
+      "parent_id": "15_24",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_01_common_optimizer_coupling_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_01_common_optimizer_coupling_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/common_optimizer_coupling_20261022"
+      ],
+      "title": "Common branch coupling through gradient clipping and AdamW history",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "User-authorized bounded optimizer-policy intervention in T_F plus common; fixed frozen representations and routes. Same-state update diagnostics and two paired seeds; exposed DEV is exploratory. No automatic scientific closure."
+    },
+    {
+      "id": "15_24_02",
+      "line": "A15",
+      "parent_id": "15_24",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023"
+      ],
+      "title": "Frequency-related direction preservation and local complement updates",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "Researcher-authorized local analysis of original T_F E0 up, two inherited seeds, fixed TRAIN PCA, finite rollback and nonaccumulating scratch AdamW proposals. Exposed DEV; no task-specific direction qualification, long-training claim or automatic scientific update."
+    },
+    {
+      "id": "17_05",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_05_shared_parameter_interference/17_05_shared_parameter_interference_anchor_cn.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A17/17_05_shared_parameter_interference"
+      ],
+      "title": "共享学习何时互相拖累：冻结模型上的两组数据适配",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Six-condition finite-budget two-group adaptation and local rollback; no SAE predictor or general sharing law."
+    },
+    {
+      "id": "17_06",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_06_update_compatibility/17_06_update_compatibility_anchor_cn.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A17/17_06_update_compatibility"
+      ],
+      "title": "更新兼容性是否比来源可分性更能提示参数隔离收益",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Gradient-screened two-pair contrast; SCREEN_NO_ELIGIBLE_CONTRAST and researcher stop retained; no formal learning result."
+    },
+    {
+      "id": "17_07",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_07_human_semantic_updates/17_07_human_semantic_updates_anchor_cn.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A17/17_07_human_semantic_updates"
+      ],
+      "title": "人类语义远近、更新相容性与共享训练后果",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Human topic-near/far and outer packaging mismatch with actual adaptation comparisons; independent of gradient-selected pair design."
+    },
+    {
+      "id": "17_08",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_08_atom_mechanism/17_08_atom_mechanism_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A17/17_08_atom_mechanism"
+      ],
+      "title": "Atom usage and local learning consequences",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Local equal-norm decoder-span update redirection; matchable atoms only, no semantic purity/long-term isolation."
+    },
+    {
+      "id": "17_09",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_09_direction_conflict/17_09_direction_conflict_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A17/17_09_direction_conflict"
+      ],
+      "title": "Directional conflict under shared local updates",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Constructed target-gradient reflections; controlled local sufficiency, not naturally occurring domain conflict."
+    },
+    {
+      "id": "17_10",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_10_shared_update_conditional_interference/17_10_shared_update_conditional_interference_anchor.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A17/17_10_shared_update_conditional_interference"
+      ],
+      "title": "Anchor：共享输入方向与预测规则如何调节局部跨任务作用",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Controlled shared input directions and same/flipped rules, ordinary source update and mandatory SAE diagnosis; MODULATION_WITHOUT_NET_HARM and pending human judgment retained."
+    },
+    {
+      "id": "17_11",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_11_natural_ntp_representation_compatibility/17_11_natural_ntp_representation_compatibility_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_11_natural_ntp_representation_compatibility/17_11_natural_ntp_representation_compatibility_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_11_natural_ntp_representation_compatibility"
+      ],
+      "title": "Anchor: Can natural NTP representations predict local update compatibility?",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Natural-prefix representation-only heldout compatibility prediction; not irreducible variance or long-term allocation."
+    },
+    {
+      "id": "17_12",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_12_domain_update_geometry/17_12_domain_update_geometry_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_12_domain_update_geometry/17_12_domain_update_geometry_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_12_domain_update_geometry"
+      ],
+      "title": "Anchor: common and domain-specific update geometry",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "33B last-attention update geometry by four historical domains; native gradient spectra separate from activation spectra, no semantics/route verdict."
+    },
+    {
+      "id": "17_13",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_13_ntp_statistics_local_compatibility/17_13_ntp_statistics_local_compatibility_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_13_ntp_statistics_local_compatibility/17_13_ntp_statistics_local_compatibility_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_13_ntp_statistics_local_compatibility"
+      ],
+      "title": "Anchor: natural-language statistics and local update structure",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Target-matched signed mean demands and model-Fisher/SAE sensitivity; independent mandatory branches; INSUFFICIENT remains."
+    },
+    {
+      "id": "17_14",
+      "line": "A17",
+      "parent_id": null,
+      "path": "main/problem_anchors/17_shared_and_interference_learning/17_14_s7_single_branch_retention/17_14_s7_single_branch_retention_anchor.md",
+      "companions": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_14_s7_single_branch_retention/17_14_s7_single_branch_retention_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A17/17_14_s7_single_branch_retention"
+      ],
+      "title": "Anchor: acquisition and retention with one Dense or routed LoRA branch",
+      "language_authority": {
+        "canonical": "English when present; Chinese-only existing originals remain authoritative; do not invent translation",
+        "companions": "Existing _cn companions remain the same question"
+      },
+      "claim_boundary": "Sequential Dense/MoE LoRA acquisition-retention phenomenon; formal scientific design/thresholds remain unapproved, Smoke not utility evidence."
+    },
+    {
+      "id": "15_25",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/15_25_joint_feature_graph_anchor_cn.md",
+      "companions": [],
+      "experiment_roots": [
+        "main/experiments/A15/15_25_joint_feature_graph"
+      ],
+      "title": "1014 特征关系分析与候选学习对象 Anchor",
+      "language_authority": {
+        "controlling_existing_source": "Chinese user-provided attached Anchor, preserve exact original bytes in sources/",
+        "project_canonical": "Restore the same existing scientific design and register A15_25; do not add hypotheses/thresholds/approval",
+        "translation": "English companion may be a faithful navigation/readout translation, never replace source authority"
+      },
+      "claim_boundary": "Joint statistical inclusion graph, reduced composition lists, candidates and layer decoder participation only. Later shared/separate learning H1 untested by phase one. Not fourteen independent layer graphs. Existing source is a design and source restoration is not new activation or execution approval."
+    },
+    {
+      "id": "15_25_01",
+      "line": "A15",
+      "parent_id": "15_25",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_01_component_reuse_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_01_component_reuse_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_25_01_component_reuse"
+      ],
+      "title": "Common representation components in Boolean compositions",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "User-authorized frozen Qwen3-0.6B final-residual dependence and transfer experiment. No model/dictionary/expert training or automatic scientific closure."
+    },
+    {
+      "id": "15_25_02",
+      "line": "A15",
+      "parent_id": "15_25",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_02_learning_history_representation_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_02_learning_history_representation_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_25_02_learning_history_representation"
+      ],
+      "title": "Learning history and task-important representation directions",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "Four saved states; frozen conditional-rule representation analysis and residual interventions. Exposed DEV, seed 29, unequal exposure; no curriculum causality or automatic question closure."
+    }
+  ],
+  "support_records": [
+    {
+      "path": "main/problem_anchors/00_foundation_definition",
+      "reason": "Historical definition reading index; no independent current Anchor."
+    },
+    {
+      "path": "main/organization_migrations/20261022",
+      "reason": "Relocation provenance; source designs/results retain authority."
+    }
+  ],
+  "legacy_experiments": []
+}

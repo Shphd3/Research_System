@@ -1,0 +1,97 @@
+{
+  "schema": "sentence_feature_reuse_preflight_v1",
+  "new_forwards": 0,
+  "documents": 120,
+  "document_groups": 120,
+  "reference_windows": 256,
+  "reference_fields": [
+    "source_line",
+    "url",
+    "host",
+    "text_sha256",
+    "warc_record_id",
+    "token_ids",
+    "text",
+    "rank",
+    "seq_id"
+  ],
+  "missing": [],
+  "cache_checks": {
+    "SAE": {
+      "cache_count": 120,
+      "positions": 23040,
+      "nnz": 737280,
+      "l0_min": 32,
+      "l0_max": 32,
+      "l0_mean": 32.0,
+      "schema_and_native_positive_sparse_values": "PASS"
+    },
+    "CC": {
+      "cache_count": 120,
+      "positions": 23040,
+      "nnz": 6806860,
+      "l0_min": 29,
+      "l0_max": 637,
+      "l0_mean": 295.43663194444446,
+      "schema_and_native_positive_sparse_values": "PASS"
+    }
+  },
+  "frequency": {
+    "SAE": {
+      "positions": 65536,
+      "rule": "reuse R05 >=20hits, quantile 1/3,2/3 with ties unsplit;low_support separate",
+      "cuts": [
+        0.0005950927734375,
+        0.0012359619140625
+      ],
+      "group_feature_counts": {
+        "1": 4800,
+        "-1": 15132,
+        "0": 5121,
+        "2": 4947
+      }
+    },
+    "CC": {
+      "positions": 65536,
+      "rule": "reuse R05 >=20hits, quantile 1/3,2/3 with ties unsplit;low_support separate",
+      "cuts": [
+        0.002593994140625,
+        0.0134429931640625
+      ],
+      "group_feature_counts": {
+        "-1": 3027,
+        "1": 4437,
+        "0": 4469,
+        "2": 4451
+      }
+    }
+  },
+  "data_reference_overlap": {
+    "canonical_URL": 0,
+    "WARC_record": 0,
+    "full_source_text_sha256": 0
+  },
+  "reference_document_groups": 254,
+  "old_CC_graph": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz",
+    "sha256": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1",
+    "D_edges": 214711,
+    "V_edges": 206136,
+    "self_loops": 0,
+    "bidirectional_edges": 0,
+    "all_frequency_doubling": true,
+    "acyclicity": "proved by every edge strictly increasing positive frequency; no cycle deletion",
+    "independent_semantic_hierarchy": false,
+    "frequency_correction_acceptance": false,
+    "max_out_degree": 91,
+    "max_in_degree": 15439,
+    "primary_proposal": "existing V-passed raw edges; reduced-V has distinct one-hop semantics and must not be selected after results"
+  },
+  "sentence_annotation": "R04 has token ids and full 192-token prefixes with source offsets; no stored sentence ids. Need freeze deterministic text boundary rule and manual audit ambiguous abbreviations/formulas before pair outcomes.",
+  "reference_grouping_rule": "reuse R04 (urlsplit(url).hostname,urlsplit(url).path.rstrip(/))",
+  "old_SAE_graph": {
+    "identity": "E17 using E16 same nominal dictionary, BF16 encoder+FP16 values and norm-outlier filtering",
+    "status": "INCOMPATIBLE_INTERFACE_UNQUALIFIED",
+    "reason": "R04 uses native FP32 Top32 z>0. Existing E17 counts take topk indices even if corresponding value may be zero; no current equality qualification or complete historical parent/source binding. Do not silently reuse as compatible; no rebuilt replacement."
+  }
+}

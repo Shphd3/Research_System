@@ -1,0 +1,19 @@
+# 1026 — Natural-language feature context responses and relationship groups
+
+Completed one bounded read-only analysis using the existing official Qwen3-0.6B and native E16 single-layer SAE:72 cases,288 prefixes and4 replay forwards. **Some context responses replicate. Whether the passing relationship groups exceed target-word support overlap remains unresolved.** The following are AI operational verdicts under frozen criteria; researcher mechanism acceptance and question closure remain Unknown.
+
+| Hypothesis | Answer | Decisive evidence and boundary |
+| --- | --- | --- |
+| H1 clue response across wording | **Support** |20 of64 candidates were estimable;10 passed directionality, unrelated-edit, interval and template checks. For f18711, mean absolute change was6.728 versus0.029 for unrelated edits, with16/16 evaluable directions agreeing(16/24 A/B cases),directions fixed separately by discovery panel×target,and q=.0064. This describes context responses in the constructed prefixes. |
+| H2 stable response groups | **Conditional support** |G02/G04 heldout mean correlations were.836/.656,95%CI[.754,.948]/[.499,.826], passing both nulls. Both groups concentrate on bass. Null groups did not match target-word conditional support, leaving the stronger beyond-lexical interpretation insufficient. |
+| H3 distance versus clue dependence | **Support for this relocation sensitivity** |f26149/f16240 passed, both q=.0288. For f26149 the near/far semantic contrasts were−5.670/−2.451. Token length/target position match, but distance and clause order change together. Pure distance and long-range exclusivity remain insufficient. |
+
+H1 passing features:18711,26149,3743,6401,12986,2453,20058,22464,16240,27076. G02={28673,23609,19601}; G04={1818,1205,29829,27173}. Of the other five groups,G03 fails discovery stability and four lack heldout member support. See per-item [H1](tables/H1_features.csv),[H2](tables/H2_groups.csv),[H3](tables/H3_features.csv).
+
+Only f12039 in the97-feature frozen activation-qualified pool passes mean-change equivalence. Its one-sided95%upper bound on mean absolute change is.154 discovery contribution RMS, below.2. All36 cases enter the average,including30 inactive cases; this does not establish per-case or active-case invariance. See the [full stability table](tables/stable_features.csv).
+
+The three fixed examples show raw contribution magnitudes: A01 river bank→savings bank changes f6401 from0 to4.045; B01 replaces a river-edge description with a financial clue while retaining the ending“The bank,” changing f12986 from0 to4.428; C01 preserves the river-edge relationship but relocates the clue, changing f26149 from4.144 to0. Counterexample:f24995 changes−10.574 in discovery C10, yet has only4 evaluable heldout directional groups,q=.107 and a50.7%largest-case share, so replication eligibility fails. G03 has heldout correlation.435 but discovery coassignment.487<.70, demonstrating why a visible block is insufficient. [Worked examples and procedure](detailed.md).
+
+Discovery/holdout mean reconstruction NMSE=.0762/.0668; four replay differences=0; parameter updates=0. Text is Codex-assistant constructed natural language with controlled edits, not raw natural-corpus excerpts. Candidate continuations have no unique functional-correctness label. Independent historical frequency retains a missing parent-weight digest and BF16-reference/FP32-current encoding limit. [Token figure](figures/figure1_token_feature_heatmaps.png) · [Relation figure](figures/figure2_response_relations.png) · [Near/far figure](figures/figure3_distance_pairs.png) · [Text and hashes](text_manifest.md) · [Traceable data](artifact_manifest.md).
+
+**One minimal AI-suggested next question:** with bass fixed and target-conditioned support matched, do G02/G04 relationships still replicate? No follow-up is executed; refine the relationship definition in the main conversation first.

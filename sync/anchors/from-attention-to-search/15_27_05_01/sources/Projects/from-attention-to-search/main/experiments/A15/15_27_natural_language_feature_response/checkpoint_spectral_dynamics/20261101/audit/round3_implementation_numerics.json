@@ -1,0 +1,35 @@
+{
+  "status": "PASS_WITH_ACTUAL_SMOKE",
+  "closed_form_trainable_parameters": 0,
+  "readout_parameters": "dimension+intercept;16TRAIN/8DEVper task",
+  "language_model_gradients": "NOT_APPLICABLE:inference_mode,requires_gradFalse,paramversionguards",
+  "numerics": {
+    "status": "PASS",
+    "checks": {
+      "identity_CKA": 4.440892098500626e-16,
+      "identity_subspace": 1.3323384067579027e-15,
+      "rotation_spectrum": 1.662472820176351e-14,
+      "rotation_CKA": 0.0,
+      "rotation_raw_direction": 0.8494069499838364,
+      "rotation_aligned_residual": 1.150451167721635e-15,
+      "scale_trace_ratio": 4.0,
+      "scale_CKA": 4.440892098500626e-16,
+      "permuted_CKA": 0.009301799804722377,
+      "stream_CKA_error": 4.440892098500626e-16,
+      "sv_lambda_error": 1.7763568394002505e-15
+    },
+    "note": "FP64projection distance evaluated by equivalent orthogonal residual to avoid cancellation;all matrix identities1e-8;not a scientific effect tolerance"
+  },
+  "native_hook": "norm prehook equality;block0/3 real module hooks",
+  "checkpoint_loading": "SHA256+internaltokens/step+strictmodelstate;sequentialrelease",
+  "source_reuse": "Reuse original Dense model+exact R12 labels;adapt collector to natural positions/pre-final-norm;reject old pre_mlp_input and Qwen caches",
+  "smoke": {
+    "status": "PASS",
+    "states": 3,
+    "records_per_state": 8,
+    "cache_reread": "PASS",
+    "interface": "final_raw_h==final_norm_input",
+    "counter_and_digest": "PASS"
+  },
+  "smoke_cache_count": 3
+}

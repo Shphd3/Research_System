@@ -1,0 +1,26 @@
+{
+  "url": "https://arxiv.org/html/2605.06997v1",
+  "access_date_shanghai": "2026-10-21",
+  "http_status": 200,
+  "note": "HTML excerpts verified against arXiv PDF pages 4,22,23 using web PDF text; full HTML is not saved to repository.",
+  "unconditional": {
+    "pattern": "The unconditional statement is false",
+    "found": true,
+    "context": "  \n            .6 are the strongest correct forms of the\n“no extra projection” intuition. The unconditional statement is false in\ngeneral, because B v B_{v} can be rank-deficient and A ^ w \\hat{A}_{w} can be\nsingular. The correct statement is that, in the full-rank regime, the SKA\nquery map remains full rank and its nonzero singular values are controlled\nby conditioning parameters, not by a softmax simplex factor. :contentReference[oaicite:2]index=2 𝕁 \\mathbb{J} .4. Koopman MLP We now analyze the spectral core of the Koopman MLP. For the nonlinear branch,\nwrite (114) a \\displaystyle a = W lift ​ h ∈ ℝ d k , \\displaystyle=W_{\\mathrm{lift}}h\\in\\mathbb{R}^{d_{k}}, (115) u \\displaystyle u = SiLU ⁡ ( a ) ∈ ℝ d k , \\displaystyle=\\operat"
+  },
+  "spectral": {
+    "pattern": "Each spectral block is isotropic scaling",
+    "found": true,
+    "context": "}+\\omega_{i}^{2}}. By construction, ρ i ≤ 1 \\rho_{i}\\leq 1 . Proposition 𝕁 \\mathbb{J} .7 (Each spectral block is isotropic scaling times rotation). For each i i , if ρ i > 0 \\rho_{i}>0 , then R i = ρ i ​ [ cos ⁡ θ i sin ⁡ θ i − sin ⁡ θ i cos ⁡ θ i ] R_{i}=\\rho_{i}\\begin{bmatrix}\\cos\\theta_{i}&\\sin\\theta_{i}\\\\\n-\\sin\\theta_{i}&\\cos\\theta_{i}\\end{bmatrix} for some angle θ i \\theta_{i} . Consequently, R i ⊤ ​ R i = ρ i 2 ​ I 2 , R_{i}^{\\top}R_{i}=\\rho_{i}^{2}I_{2}, so both singular values of R i R_{i} are equal to ρ i \\rho_{i} .\nTherefore ‖ R ‖ 2 = max i ⁡ ρ i ≤ 1 . \\|R\\|_{2}=\\max_{i}\\rho_{i}\\leq 1. Proof. If ρ i > 0 \\rho_{i}>0 , define cos ⁡ θ i = γ i ρ i , sin ⁡ θ i = ω i ρ i . \\cos\\theta_{i}=\\frac{\\gamma_{i}}{\\rho_{i}},\\qquad\\sin\\t"
+  },
+  "bodyrank": {
+    "pattern": "a product of full-rank matrices by construction",
+    "found": true,
+    "context": " SKA = B v ⋅ L ⋅ A w K ⋅ L − 1 J_{\\mathrm{SKA}}=B_{v}\\cdot L\\cdot A_{w}^{K}\\cdot L^{-1} , a product of full-rank matrices by construction.\nIn contrast, each softmax attention layer’s backward pass compresses gradients by its entropy-dependent effective rank ( Godey and Artzi, 2026 ) .\nCritically, these compressions compound across depth : a gradient passing through n a n_{a} attention layers suffers n a n_{a} successive rank bottlenecks, and since the rank of a matrix product is bounded by the minimum rank of any factor, even a single low-entropy attention layer can throttle gradient flow to all preceding layers.\nIn Echo the gradient encounters zero softmax compressions beyond the LM head: SKA contributes a full-rank r × r r\\times"
+  },
+  "bodyrotation": {
+    "pattern": "The block-diagonal rotation matrix",
+    "found": true,
+    "context": "ng parameters to SwiGLU parity while retaining spectral structure. Gradient preservation. The block-diagonal rotation matrix R R is orthogonal: ‖ R ‖ 2 = 1 \\|R\\|_{2}=1 , σ min ​ ( R ) = σ max ​ ( R ) = 1 \\sigma_{\\min}(R)=\\sigma_{\\max}(R)=1 .\nIt is exactly norm-preserving and rank-preserving in the backward pass.\nCombined with SKA’s full-rank Jacobian, Echo introduces zero additional rank compression beyond the LM head across the entire network depth.\nIn contrast, SwiGLU’s backward pass flows through three unconstrained weight matrices interleaved with a gating nonlinearity, where gradient magnitude depends on the learned weights without structural guarantees on conditioning. 3.4. Architecture and Baselines Echo (Mamba-2 + SKA + Ko"
+  }
+}

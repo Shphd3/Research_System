@@ -1,0 +1,1251 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-22T10:53:34.885437+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-nx2wd",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6944,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6368,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "checkpoint_shared_common_smoke_20261022t103833z_moe",
+      "title_cn": "MoE 加 common 的实际工程恢复状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/smoke",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/smoke/resume_step1.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 340645727,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/smoke/receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6370,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_moe_baseline_seed11",
+      "title_cn": "MoE baseline seed11 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100705800,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100706398,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100706398,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100706428,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 302888185,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2813,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed11/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2336,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_moe_baseline_seed22",
+      "title_cn": "MoE baseline seed22 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100705800,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100706398,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100706398,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100706428,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 302888185,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2811,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/baseline/seed22/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2336,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_moe_plus_common_seed11",
+      "title_cn": "MoE plus_common seed11 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113289663,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113290212,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113290212,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113290245,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 340640277,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2829,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed11/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2344,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_moe_plus_common_seed22",
+      "title_cn": "MoE plus_common seed22 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113289663,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113290212,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113290212,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113290245,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 340640277,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2828,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/plus_common/seed22/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2344,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_shared_common_20261022t103833z_moe",
+      "title_cn": "MoE 加 common 的配对最终预测分析",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2117,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/condition_results.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1898,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/paired_comparisons.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2095,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/base_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 173262,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/baseline_seed11_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 293016,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/baseline_seed11_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 706,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/baseline_seed22_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 293604,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/baseline_seed22_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 705,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed11_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 325482,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed11_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 731,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed11_common_off_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 325419,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed11_common_off_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 733,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed11_common_only_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 325552,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed11_common_only_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 738,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed22_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 324229,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed22_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 725,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed22_common_off_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 324244,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed22_common_off_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 727,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed22_common_only_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 324219,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/MoE/final_evaluation/plus_common_seed22_common_only_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 732,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_shared_common_smoke_20261022t103833z_t_f",
+      "title_cn": "T_F 加 common 的实际工程恢复状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/smoke",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/smoke/resume_step1.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 340546515,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/smoke/receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6325,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_t_f_baseline_seed11",
+      "title_cn": "T_F baseline seed11 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673035,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673564,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673564,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673593,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 302788998,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2998,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed11/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2519,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_t_f_baseline_seed22",
+      "title_cn": "T_F baseline seed22 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673035,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673564,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673564,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100673593,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 302788998,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2998,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/baseline/seed22/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2519,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_t_f_plus_common_seed11",
+      "title_cn": "T_F plus_common seed11 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113256770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113257378,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113257378,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113257410,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 340541089,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3014,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed11/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2527,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_shared_common_20261022t103833z_t_f_plus_common_seed22",
+      "title_cn": "T_F plus_common seed22 实际保存族",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/initial.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113256770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/model_step42.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113257378,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/model_step84.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113257378,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/model_step126.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 113257410,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/final_resumable.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 340541089,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/complete.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3014,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/plus_common/seed22/identity.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2527,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_shared_common_20261022t103833z_t_f",
+      "title_cn": "T_F 加 common 的配对最终预测分析",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2117,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/condition_results.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1893,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/paired_comparisons.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2099,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/base_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 173262,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/baseline_seed11_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 224865,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/baseline_seed11_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 503,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/baseline_seed22_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 224901,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/baseline_seed22_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 503,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed11_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 255873,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed11_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 521,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed11_common_off_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 255820,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed11_common_off_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 523,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed11_common_only_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 255905,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed11_common_only_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 528,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed22_full_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 255867,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed22_full_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 522,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed22_common_off_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 255905,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed22_common_off_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 524,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed22_common_only_dev.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 255905,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/training/T_F/final_evaluation/plus_common_seed22_common_only_routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 529,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_hierarchy_expert_mixture_20261022t103957z",
+      "title_cn": "原始统计层级在完整专家输入中的混合诊断",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/summary.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2800,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/input_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 10507,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/verification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1022,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/output_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2653,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/actual_input_composition.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 58599,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/position_mixture.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2149,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z/nominal_roster.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3312,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

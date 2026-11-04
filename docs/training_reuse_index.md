@@ -1,5 +1,8 @@
 # Model Training Reuse Index
 
+> **2026-10-31 storage retirement:** The old decommon runs, training configs and launchers were removed at the researcher's request. Only reusable model/data/checkpoint source and evaluation tools remain at the original sibling paths. Old scientific records below resolve to a byte-preserving archive; historical approvals do not authorize new work. Actual spectral routing is in the separate early spectral execution packages, not the decommon source. [Cleanup receipt](/data/250010109/MoE_Router/storage_cleanup_receipts/20261031T033809Z_decommon_academic_order/completion.json).
+
+
 Verified locally: 2026-09-12
 
 Read this file before proposing a new model-training implementation or whenever

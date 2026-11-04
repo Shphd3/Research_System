@@ -1,0 +1,105 @@
+# 高频路径的三个诊断：同位置结果与归因边界
+
+**三个检查均已执行。实际干预是替换搭档，逐位置收益与损失相互抵消，尚未找到跨种子稳定的受益群体。本地冻结前向出现“高频残差单独有收益、与搭档组合后没有稳定额外收益”的迹象；但与旧 GPU 结果的重放校准未通过，因此不能据此确定原负结果的机制。**
+
+这是原实验的事后诊断，不替换原主指标或原科学结论。[原 Summary](../summary_cn.md)；[本次检查范围](analysis_contract_cn.md)。未改模型、路由、训练数据或已训权重，未重新训练。
+
+## 1. 对象和比较
+
+使用原 T_F/T_H 的第168步终点、种子11/22，固定原 TRAIN 定义的 B1 feature。DEV 共10,340个答案预测位置、128条对话；含至少一个 B1 feature 的位置为1,701个，来自124条对话，每位置仅计一次。DEV 已暴露，本检查不是新的独立确认。
+
+NLL 是正确下一个答案 token 的负对数概率，单位为 nats，越低越好。本次逐位置差定义为 NLL(T_H)−NLL(T_F)，负数表示 H 改善。它与原逐 feature 等权宏平均不同，不替换原 primary。
+
+## 2. 实际干预：替换搭档，并非新增第三路
+
+F 自由选择两个频段；H 固定选择 B4，再从 B1–B3 选最高分档。段内选同一个原始幅度最高的 expert。因此：
+
+- 如果 F 已含 B4，H 调用同一对 expert。
+- 如果 F 不含 B4，H 保留 F 第一名，用 B4 expert 替换第二名。
+- 每个专家残差仍各乘1/2，加回完整原 hidden；H 不保证 B1 专家继续被调用。
+
+| DEV 面板 | 位置数 | 原已含 B4，路由不变 | 真正替换 | 替换掉 B1 / B2 / B3 |
+|---|---:|---:|---:|---:|
+| 全部位置 | 10,340 | 7,694 | 2,646 | 132 / 965 / 1,549 |
+| 含 B1 的位置 | 1,701 | 686（40.33%） | 1,015（59.67%） | 132 / 507 / 376 |
+
+132个 B1 位置丢掉低频专家，占全部 B1 位置7.76%，占真正替换位置13.00%。这确认了干预的机会成本结构；它本身不证明被替换的计算更有用。
+
+## 3. 同一批低频位置上，改善与恶化相互抵消
+
+下表先对两个固定种子的逐位置差取平均，再对位置等权。区间按完整对话共同重采样1,000次，仅是条件于这两个种子的探索性95%区间。
+
+| B1 位置的结构分层 | 位置数 | H−F 平均 NLL | 探索性区间 |
+|---|---:|---:|---|
+| 全部 B1 位置 | 1,701 | +0.000871 | [−0.002642, +0.004259] |
+| 路由相同 | 686 | +0.003501 | [+0.000373, +0.006784] |
+| 真正替换搭档 | 1,015 | −0.000906 | [−0.006140, +0.004017] |
+
+真正替换的部分没有显示稳定恶化；调用组合相同的部分也有跨模型差异。T_F/T_H 分别训练了权重，因此总差异不能全部归因于当前位置的即时换搭档。
+
+对1,701个位置，以1e−6 nats 为近似不变容差：
+
+- 两种子平均后，781个改善（45.91%）、879个恶化（51.68%）、41个近似不变（2.41%）。
+- 同一位置在两个种子下都改善的只有443个（26.04%）；两个种子都恶化511个（30.04%）；方向相反673个（39.56%）。
+- 逐位置差的中位数为+0.00000459，10%/90%分位数为−0.05966/+0.06135 nats。
+- 按全部1,701位置作分母，改善位置贡献−0.018718、恶化位置贡献+0.019589 nats，合起来只有+0.000871。
+
+因此，“平均值掩盖位置差异”得到描述性支持；“存在可稳定识别并利用的受益样本群”仍然未知。没有按答案或收益搜索新分组。
+
+本次位置均值的种子11/22分别为+0.000736/+0.001007；原逐 feature 宏平均为−0.000152/+0.002131。统计单位不同，不能据此重写原种子方向。
+
+## 4. 高频残差和搭档：本地观察与数值边界
+
+为隔离即时调用，固定同一已训 checkpoint。在真正替换位置，原调用为(a,b)，强制调用为(a,c)，c是所选 B4 专家。比较 Base、仅a/2、仅c/2、(a+b)/2、(a+c)/2；所有残差加回原 hidden，关掉一路不把其1/2补给另一条。
+
+“加高频的边际变化”比较(a+c)/2与仅a/2；“换搭档变化”比较(a+c)/2与(a+b)/2。另计算组合相对两个单独收益的非加性项；它是预测层面的 NLL 关系，不代表向量或梯度相消。
+
+先完成CPU BF16四个checkpoint的前向，发现重放精度不足。随后按用户要求，在本地H100 40GB MIG切片顺序复核四个checkpoint，24.27秒完成；峰值allocated显存约0.61GB，未更新参数。[本地执行修订](execution_amendment_local_cn.md)。
+
+下表是**同一套已训T_H权重、本地GPU算术、真正发生替换的1,015个位置**，两种子等权均值。区间仅按完整原DEV对话重采样500次，条件于两个固定种子与本地算术，不包含重放误差。
+
+| 冻结比较 | NLL差，两种子均值 | 读法 |
+|---|---:|---|
+| 仅高频c/2，相对Base | −0.002105 | 单独残差的点估计有收益 |
+| 保留a，再加入高频c/2 | +0.001284 | 没有显示稳定额外收益；区间[−0.004840,+0.006405] |
+| 高频搭档c替换原搭档b | −0.000614 | 并非稳定恶化；两种子分别+0.001455/−0.002683 |
+| 组合收益相对两个单独收益的非加性项 | +0.003390 | 本地组合收益少于单独收益之和；区间[+0.001487,+0.005576] |
+
+这组本地观察弱化“高频专家根本没有任何有用输出”的强解释，提示“单独贡献有用”不能保证“和当前搭档组合仍有额外收益”。但它没有说明向量相消、梯度冲突、过度修正或共同语义中的哪一种机制发生。换回原搭档也没有稳定更好。
+
+用已训T_F权重复核同一批真正替换位置，高频边际差为+0.000016，组合非加性项为+0.002474，区间分别[−0.005466,+0.004822]和[+0.000212,+0.004858]。它是第二种已训权重下的辅助观察，不是新的独立语料或新训练实验。
+
+**数值资格：BOUNDED，原结果机制归因仍Unknown。** 本地使用全DEV原顺序、原batch128及实际dispatch形状；直接逐字调用原evaluate，与新缓存实现的actual-route结果逐值完全一致。四份权重hash及代码身份匹配；Base的全10,340个NLL与旧记录完全一致。然而，T_H种子11/22在B1位置相对旧记录的平均绝对误差仍为0.000253/0.000557，最大误差0.06658/0.12167 nats，未通过执行前设置的重放门槛。T_F误差较小但也未全部通过最大误差门槛。现有检查排除了新缓存实现及inference_mode造成差异，尚未定位旧T_H记录与当前同源native前向不一致的原因。
+
+因此，表中数值是当前本地冻结函数的事后观察，不能作为原GPU负结果的确定机制证据。CPU失败结果、GPU失败门槛均保留；没有放宽门槛或混合不同执行面的数值。
+
+## 5. 执行次序与普通MoE恢复
+
+最初远端GPU创建返回`429 MEMBER_QUOTA_EXCEEDED`，该次未产生job。用户随后明确要求优先诊断再重提普通MoE；原普通MoE任务`pt-50sa30mo`在核对STARTING/replicas0/无实际进度后停止。远端诊断`pt-t9lutqt0`已接受提交，但随后用户要求本地诊断，因此该未启动诊断也已停止，避免重复执行。
+
+本地诊断已完成。普通MoE已按原配置重新提交为**`pt-0hi8ldns`**，仍为单节点4卡H100 Reserved。05:02:08 UTC核查为STARTING/replicas0，尚无训练进度或ETA。历史job与取消原因均保留，不把未启动任务算作训练。
+
+## 6. 对三个假设的当前回答
+
+| 假设 | 当前回答 | 判断边界 |
+|---|---|---|
+| 高频专家没有新增有用能力 | 本地未显示稳定新增收益；原结果归因Unknown | 单独残差的点估计有用；加到搭档上没有稳定收益，不能等同于完全没有能力 |
+| 强制路径的组合/替换抵消收益 | 替换结构确认；组合非加性有本地迹象 | 换搭档不稳定恶化；不能把机会成本结构或本地非加性当作已证原负结果机制 |
+| 整体掩盖部分位置收益 | 存在位置异质性 | 仅26.04%位置跨两个种子都改善，未识别稳定受益群 |
+
+原 Base 始终保留，因此这不是“低频输入完全失去共同计算”的实验。B4 是频率标签，尚未认证为共同语义模块。当前不能说加入共同路径普遍有害，也不能说负结果已由某一个假设解释。
+
+## 7. 证据与复现
+
+执行根目录为 `/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z`。
+
+- [逐位置事实说明](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/paired/facts_cn.md)：完整分层、种子、尾部及重采样边界。
+- [逐位置统计与区间](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/paired/results.json)；[结构源表](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/paired/panel_summary.csv)。
+- [输入身份与重算审计](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/paired/manifest.json)：原位置/target/route严格对齐，原逐 feature NLL/support全部重算一致，原文件只读。
+- [CPU冻结前向结果](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/ablation/receipt.json)；[数值校准](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/ablation/provenance/calibration.json)。
+- [本地GPU执行及失败门槛](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/ablation/local_gpu/receipt.json)；[本地比较及区间](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/ablation/local_gpu/tables/true_replacement_reading.md)。
+- [原evaluate逐字复核](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/ablation/local_gpu/provenance/literal_source_evaluate.json)：新实现与当前原实现一致，旧记录差异仍未定位。
+
+本记录只完成事实和证据边界；研究者的机制判断及下一科学决策保持 Unknown。不更新 Focus/Anchor，不提交或发布。
+
+诊断资产ID：`analysis_crosscoder_common_path_hypothesis_checks_20261021t045000z`；[当前strict访问](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/common_path_hypothesis_checks/20261021T045000Z/provenance/registered_access.json)通过。该登记明确保留`BOUNDED_REPLAY_GATE_FAILED`，仅确认实际产物可访问。

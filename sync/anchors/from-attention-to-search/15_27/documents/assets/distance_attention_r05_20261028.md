@@ -1,0 +1,18 @@
+派生阅读副本；原件位置：`assets/distance_attention_r05_20261028.md`。
+[精确原始文件](../../sources/assets/distance_attention_r05_20261028.md)；研究修改仍回到原件。
+
+---
+
+# R05 distance/Attention assets
+
+InputpanelID:data_a15_27_r05_five_distance_attention_20261028.OutputID:analysis_a15_27_r05_distance_attention_20261028.
+
+FrozenQwen3Base,nativeE16block27MLPinputSAE(FP32Top32),nativeA22joint14odd-blockresidual-postsharedz(BF16GEMM,savedTRAINnormalizer/gate). Noencoderbranchslicing. Rawparameter/native-scaleddecodernorms andlayercontributions separate.
+
+B:960constructedcontrolledprefixes,24families,two wordings,fivedistances,all240tokens,target239.A:120unchangedrealR04windows/originalsplits,192tokens,8queries each,all16block27heads. DCLMfull-coordinatez>0ratesreuse65536referencepositions;254canonicalURLbootstrapgroups,>=20hitsforfrequencyterciles,low-supportretained.Noadditionalreferenceforward.
+
+1096actualforwards=960B+120A+16checks/failedattempts.No training,interventions,newresources orsealedTEST. Rawarrays/text/code stayexecution-side;selectedevidenceonlyhere. Rejectedengineeringcheckreadoutsremainpreserved;everyofficialAcausalprobabilityreadoutvalidated,all120nativeCSRs exactlymatchR04.
+
+[Summary](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R05_distance_attention_20261028/summary.md)
+
+Execution: /data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028

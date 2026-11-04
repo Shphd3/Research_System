@@ -1,0 +1,13 @@
+{
+  "status": "REGISTERED_USER_REQUESTED_LAYOUT",
+  "anchor_id": "15_27_05_01",
+  "parent_id": "15_27_05",
+  "canonical": "subanchors/checkpoint_spectral_dynamics/anchor.md",
+  "reason": "Researcher explicitly requested checkpoint_spectral_dynamics subdirectory and anchor.md/protocol.md names; existing parent is a flat subanchor file. Preserve existing parent identity and exact requested Dense subdirectory.",
+  "checker_limits": [
+    "numbered filename rule flags anchor.md",
+    "grandchild rule expects parent-directory/subanchors and cannot model explicit named subdirectory"
+  ],
+  "scientific_boundary": "placement warnings do not change design or scientific state",
+  "unrelated_preexisting": "missing map15_29 not modified"
+}

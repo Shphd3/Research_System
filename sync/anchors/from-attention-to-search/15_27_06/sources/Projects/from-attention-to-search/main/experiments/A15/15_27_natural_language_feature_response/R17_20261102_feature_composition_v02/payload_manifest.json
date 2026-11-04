@@ -1,0 +1,250 @@
+{
+  "generated_utc": "2026-11-02T16:37:17.482054+00:00",
+  "purpose": "selected scientific figures and small decisive tables; raw model/data/response arrays remain execution-side",
+  "scope": "R17 four-route corrected analysis; no publication or scientific approval",
+  "figures": [
+    {
+      "route": "H1",
+      "file": "H1/figures/01_actual_responses.png",
+      "sha256": "9a330d9672b30e728030af51718438a780c0d3318060b21f9594493b2b60758f",
+      "bytes": 85203,
+      "sources": [
+        "H1/results/raw_atom_table.parquet"
+      ],
+      "caption": "Real responses show wording-dependent changes, not a stable one-atom semantic dictionary.",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/figures/01_actual_responses.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/figures/01_actual_responses.png"
+    },
+    {
+      "route": "H1",
+      "file": "H1/figures/02_readouts.png",
+      "sha256": "12a9b31cd02d1434ef5621bd6ec0342f4a239622d087f087e1366208eb15c24a",
+      "bytes": 48556,
+      "sources": [
+        "H1/results/readout_metrics.csv"
+      ],
+      "caption": "H1: added members do not provide robust incremental readability",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/figures/02_readouts.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/figures/02_readouts.png"
+    },
+    {
+      "route": "H1",
+      "file": "H1/figures/03_increment_intervals.png",
+      "sha256": "10e4d32496d295c8e5ab61c1e861535783d95860ab9873dfd3ebdf567e63094e",
+      "bytes": 34735,
+      "sources": [
+        "H1/results/bootstrap_intervals.csv",
+        "shared/diagnostic_intervals.csv"
+      ],
+      "caption": "H1: simultaneous 99% family intervals; 12 families / 3 theorem groups",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/figures/03_increment_intervals.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/figures/03_increment_intervals.png"
+    },
+    {
+      "route": "H2",
+      "file": "H2/figures/01_relative_strengths.png",
+      "sha256": "6849e1c12b84449ce559b37ab9d179bed2c347b7bd1795d69fecc2c6d0ce4466",
+      "bytes": 54923,
+      "sources": [
+        "H2/results/representations.parquet"
+      ],
+      "caption": "The same support can change strength; direction depends on wording.",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/01_relative_strengths.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H2/figures/01_relative_strengths.png"
+    },
+    {
+      "route": "H2",
+      "file": "H2/figures/02_conditioned_readout.png",
+      "sha256": "4940c634d4c6e22e355ba340ce1ee1fe30eaf803a9017278a09e2bbb8c31cd9c",
+      "bytes": 45608,
+      "sources": [
+        "H2/results/readout_metrics.csv"
+      ],
+      "caption": "H2: overall gain reverses on descriptions without answer terms",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/02_conditioned_readout.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H2/figures/02_conditioned_readout.png"
+    },
+    {
+      "route": "H2",
+      "file": "H2/figures/03_same_support.png",
+      "sha256": "a4e39f38e42b4216daac0dbd737db837b4ac55cb95e839e56f45a29ea8ac567f",
+      "bytes": 58115,
+      "sources": [
+        "H2/results/same_support_frozen_predictions.csv"
+      ],
+      "caption": "A strength change alone does not guarantee improved semantic readout.",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H2/figures/03_same_support.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H2/figures/03_same_support.png"
+    },
+    {
+      "route": "H3",
+      "file": "H3/figures/01_budget_comparison.png",
+      "sha256": "eaa4d85f20231d5846cec81da352421ccaeb2cd8d6b63912ce627a3ac80c1d49",
+      "bytes": 42085,
+      "sources": [
+        "H3/results/readout_metrics.csv"
+      ],
+      "caption": "H3: all arms contain 16 atoms; high-only beats the mixed arm",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/figures/01_budget_comparison.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H3/figures/01_budget_comparison.png"
+    },
+    {
+      "route": "H3",
+      "file": "H3/figures/02_dual_comparison.png",
+      "sha256": "3a996748f4f2d7b9db78bd4ce6d19a1c2f01657cadc548207c3053f80b6c8500",
+      "bytes": 31808,
+      "sources": [
+        "H3/results/bootstrap_intervals.csv",
+        "shared/diagnostic_intervals.csv"
+      ],
+      "caption": "H3: simultaneous 97.5% intervals; 12 families / 3 theorem groups",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/figures/02_dual_comparison.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H3/figures/02_dual_comparison.png"
+    },
+    {
+      "route": "H3",
+      "file": "H3/figures/03_frequency_composition.png",
+      "sha256": "df3812fcda51f2235591dc42e11033784a54891176169d3eca2ed9152acbfad9",
+      "bytes": 35805,
+      "sources": [
+        "H3/results/selected_arms.csv",
+        "shared/frequency/frequency_boundaries.json"
+      ],
+      "caption": "J contains8 high+4 middle+4 low; H16 high; M8 middle+8 low.",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H3/figures/03_frequency_composition.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H3/figures/03_frequency_composition.png"
+    },
+    {
+      "route": "H4",
+      "file": "H4/figures/01_natural_rarity.png",
+      "sha256": "1d02a0dacf3cd59cfc548145bd8139493f4ea660292f29fd71d4dcd8efbe58a5",
+      "bytes": 78529,
+      "sources": [
+        "H4/results/natural_prevalence.csv"
+      ],
+      "caption": "Low point frequency is insufficient when the upper bound or support gate fails.",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/figures/01_natural_rarity.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/figures/01_natural_rarity.png"
+    },
+    {
+      "route": "H4",
+      "file": "H4/figures/02_content_coverage.png",
+      "sha256": "1527dadb59a2892b5ff00247af07793b0f7b98aa8ea2fe9ceb5e5cd09bd3e7a9",
+      "bytes": 96208,
+      "sources": [
+        "H4/results/semantic_correspondence.csv",
+        "H4/results/content_prevalence.csv"
+      ],
+      "caption": "Zero invertibility labels in matched groups gives insufficient target coverage, not proof of no semantic relation.",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/figures/02_content_coverage.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/figures/02_content_coverage.png"
+    },
+    {
+      "route": "H4",
+      "file": "H4/figures/03_configuration_increment.png",
+      "sha256": "ffabf867844181efc002c807fd23cade22771e59a0cce38e10cbeea18a3b6039",
+      "bytes": 65579,
+      "sources": [
+        "H4/results/bootstrap_intervals.csv",
+        "shared/diagnostic_intervals.csv"
+      ],
+      "caption": "H4: additive contrast only; no configuration also beats matched controls",
+      "version": "notation-corrected exposed holdout; disjoint natural matches",
+      "selected_copy": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/figures/03_configuration_increment.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/figures/03_configuration_increment.png"
+    }
+  ],
+  "selected_tables": [
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H1_readout_metrics.csv",
+      "bytes": 38337,
+      "sha256": "96d920de5a96dd70a660658c55d74c1e727209964b324a741fdb3779350d0444"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H2_bootstrap_intervals.csv",
+      "bytes": 369,
+      "sha256": "62c4807045df7789169badf72e9509cbf2553239bf205129bbbaf49e3c6e828e"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H2_readout_metrics.csv",
+      "bytes": 12829,
+      "sha256": "b5bd8845f054d972561d405cc1a9ce4112c0e2a944ba55d19a726e3049c9f5ab"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H3_bootstrap_intervals.csv",
+      "bytes": 614,
+      "sha256": "4d23a4a8a82ef3bf734a79691f1e3542204246f19b8de9d3b94a508962e698e9"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H3_readout_metrics.csv",
+      "bytes": 43427,
+      "sha256": "4ad61798dd6c72f3cbcc530d50e8b0cbce4b8a3111635314511efb1555601d01"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H4_bootstrap_intervals.csv",
+      "bytes": 6435,
+      "sha256": "ca7c927a49a8a7901698770ba5ad0f65796d3733cc76e98bb947156bfb4294c2"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/H4_readout_metrics.csv",
+      "bytes": 281826,
+      "sha256": "8a1070b07e5e87a6676be951d0f3b183ee83e9bcb7392412fb8a1bb6ef6d017a"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/bootstrap_intervals.csv",
+      "bytes": 1427,
+      "sha256": "29ca50eb21f4400f5631c39e64a9b953d89f938ca9e3496349780e81b460913c"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/coarse_paired_deltas.csv",
+      "bytes": 29789,
+      "sha256": "c62ce96473544f4caf4523df5632232ed58ea368fe5f4aee4ab2d378af806727"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/content_prevalence.csv",
+      "bytes": 758,
+      "sha256": "2235084d97ae330277c4eb8e1f58361bcd291a4f58bddaeb6a39a0bf7c60e05d"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/diagnostic_intervals.csv",
+      "bytes": 4567,
+      "sha256": "2b2ba34465745ebe1816342a98c5fefabae892115ff2698b5638fb2d4a7fc5cd"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/natural_prevalence.csv",
+      "bytes": 6001,
+      "sha256": "f6b5ca2cee0de73343b9155647448011edf316fe5792e47e8ad81007a546a7fb"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/nuisance_diagnostics.csv",
+      "bytes": 3935,
+      "sha256": "6d281a812bd74313dd8a59bc52c46388adc832a2bc7859c33e25ac81dfd72757"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/same_support_frozen_predictions.csv",
+      "bytes": 2783,
+      "sha256": "e0079b777d1a355a066ccd42d309cf5004b0e1e055fec084610e0c8fefd35a67"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/selected_arms.csv",
+      "bytes": 4699,
+      "sha256": "9d384a9163a44470c845c910e7619e5898b075dcfcd6f4af106861086c1b7650"
+    },
+    {
+      "path": "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/tables/semantic_correspondence.csv",
+      "bytes": 681,
+      "sha256": "9285a117c4ea4aae48b4ee5c4b13a6eb924165ac872e083721bc2a40d53727a7"
+    }
+  ]
+}

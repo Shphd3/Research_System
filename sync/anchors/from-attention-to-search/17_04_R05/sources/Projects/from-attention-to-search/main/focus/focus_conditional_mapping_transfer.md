@@ -69,3 +69,11 @@ The researcher adopted E04 and authorized view registration, five-arm implementa
 ## E04 qualification factual completion (2026-10-12)
 
 Five masks/budgets/Smokes/external replays qualify. All five one-seed acquisition pilots finish1200 updates, each12,000 old and12,000 new targets; weakest DEV cells45.5%–78.5% miss95%. Fifty-five actual states are registered. This is learning-qualification failure in the tested factor/optimizer configuration, not an architecture-utility verdict. Formal remains NOT_RUN, no repair authorized/executed. Scientific mechanism acceptance/closure remain Unknown. [Summary](../experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget/summary.md).
+
+## R06 authorized bounded continuation (2026-10-25)
+
+The current user activates fixed-new-exposure U/S/F/D by0/4/36 old objective slots, three continuation orders, maximum240steps and4hours; routine implementation/internal checks and full bounded execution are explicitly authorized. Same problem_key and historical evidence remain. Three analysis steps: paired behavior, direction versus norm control, within-level F-U gains as old supervision changes. Supporting/non-supporting/insufficient branches are frozen in the[R06 Protocol](../experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/protocol.md). Execution permission does not imply mechanism acceptance or question closure.
+
+### R06 factual delivery
+
+36/36 step240 trajectories completed in1510.916seconds. Under fixed new exposure, F meets the registered operational criterion only with zero old replay in the objective; k4 consistently hurts old behavior relative to U, k36 adds no stable benefit. Relative gains are nonmonotonic. This bounded AI reading does not set researcher scientific acceptance or parent closure. [Results](../experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/summary.md).

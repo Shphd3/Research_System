@@ -1,0 +1,57 @@
+{
+  "revision": "R10-A01",
+  "checks_passed": 3000,
+  "strata": 182,
+  "same_frozen_main": true,
+  "main_freeze_sha256": "dbe0a02209a9f47ebf8fd15461777e3b3b48600fb946342993bb25a5ac917946",
+  "scientific_thresholds_changed": false,
+  "new_forwards": 0,
+  "all_results_v1_preserved": true,
+  "reference_ranges": {
+    "math": {
+      "n": 433,
+      "head_mean": 0.100294906267459,
+      "head_median": 0.06838536241395693,
+      "PC1_mean": 0.0005292197045611474,
+      "PC2_64_mean": 0.09976568656289786,
+      "head_background95": [
+        0.0910936002787134,
+        0.10212728609643333
+      ],
+      "PC1_background95": [
+        0.0006290642193510036,
+        0.0027875000193003613
+      ],
+      "PC2_64_background95": [
+        0.08992819172365622,
+        0.10059069307799338
+      ],
+      "background_selected_inclusion_mean": 0.3996581986143187
+    },
+    "biology": {
+      "n": 527,
+      "head_mean": 0.11523838613285109,
+      "head_median": 0.08785890424406698,
+      "PC1_mean": 0.001202638579420491,
+      "PC2_64_mean": 0.1140357475534306,
+      "head_background95": [
+        0.10593956855992388,
+        0.11758107415327056
+      ],
+      "PC1_background95": [
+        0.0009130738624925124,
+        0.0019381762496626558
+      ],
+      "PC2_64_background95": [
+        0.10471538802610397,
+        0.1162265491160852
+      ],
+      "background_selected_inclusion_mean": 0.4053263757115749
+    }
+  },
+  "overlap_pc_bg95": [
+    0.9466314237307063,
+    0.9576353077743067
+  ],
+  "timing": "offline method audit after original v1 outputs; descriptive robustness only"
+}

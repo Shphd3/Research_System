@@ -1,0 +1,137 @@
+{
+  "date_shanghai": "2026-10-20",
+  "records": [
+    {
+      "name": "hovland_abs",
+      "url": "https://arxiv.org/abs/2404.17039",
+      "status": 200,
+      "sha256": "2ac7fd83a0e3f84d64da2741de8f3b5be24cc71d2e9ae076b1303a83e5cdfa91",
+      "citation_metadata": {
+        "citation_title": [
+          "Differentiating Through Linear Solvers"
+        ],
+        "citation_author": [
+          "Hovland, Paul",
+          "Hückelheim, Jan"
+        ],
+        "citation_date": [
+          "2024/04/25"
+        ],
+        "citation_online_date": [
+          "2024/05/06"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2404.17039"
+        ],
+        "citation_arxiv_id": [
+          "2404.17039"
+        ],
+        "citation_abstract": [
+          "Computer programs containing calls to linear solvers are a known challenge for automatic differentiation. Previous publications advise against differentiating through the low-level solver implementation, and instead advocate for high-level approaches that express the derivative in terms of a modified linear system that can be solved with a separate solver call. Despite this ubiquitous advice, we are not aware of prior work comparing the accuracy of both approaches. With this article we thus empirically study a simple question: What happens if we ignore common wisdom, and differentiate through linear solvers?"
+        ]
+      }
+    },
+    {
+      "name": "hovland_html",
+      "url": "https://arxiv.org/html/2404.17039v2",
+      "status": 200,
+      "sha256": "761a9d2d0e004d263d85e327cbcd095c062cad904b4f5f9e66010ba2c0fb17df",
+      "citation_metadata": {}
+    },
+    {
+      "name": "song_cvf",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+      "status": 200,
+      "sha256": "be56729576f7dbf9a27bdd44567c504e76a89a8abdaef1fa7cfb630603b975b6",
+      "citation_metadata": {
+        "citation_title": [
+          "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?"
+        ],
+        "citation_author": [
+          "Song, Yue",
+          "Sebe, Nicu",
+          "Wang, Wei"
+        ],
+        "citation_publication_date": [
+          "2021"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the IEEE/CVF International Conference on Computer Vision"
+        ],
+        "citation_firstpage": [
+          "1115"
+        ],
+        "citation_lastpage": [
+          "1123"
+        ],
+        "citation_pdf_url": [
+          "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+        ]
+      },
+      "bibtex": [
+        " \n\n        Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?\n    \n\n Yue Song, Nicu Sebe, Wei Wang; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2021, pp. 1115-1123\n    \n\nAbstract\n\n\n\n    Global Covariance Pooling (GCP) aims at exploiting the second-order statistics of the convolutional feature. Its effectiveness has been demonstrated in boosting the classification performance of Convolutional Neural Networks (CNNs). Singular Value Decomposition (SVD) is used in GCP to compute the matrix square root. However, the approximate matrix square root calculated using Newton-Schulz iteration [??] outperforms the accurate one computed via SVD [??]. We empirically analyze the reason behind the performance gap from the perspectives of data precision and gradient smoothness. Various remedies for computing smooth SVD gradients are investigated. Based on our observation and analyses, a hybrid training protocol is proposed for SVD-based GCP meta-layers such that competitive performances can be achieved against Newton-Schulz iteration. Moreover, we propose a new GCP meta-layer that uses SVD in the forward pass, and Pade approximants in the backward propagation to compute the gradients. The proposed meta-layer has been integrated into different CNN models and achieves state-of-the-art performances on both large-scale and fine-grained datasets.\n    \n\nRelated Material\n\n \r\n[pdf]\r\n[supp]\r\n[arXiv]\r\n[bibtex]\n@InProceedings{Song_2021_ICCV,\n    author    = {Song, Yue and Sebe, Nicu and Wang, Wei},\n    title     = {Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {1115-1123}\n}\n\n",
+        "[bibtex]\n@InProceedings{Song_2021_ICCV,\n    author    = {Song, Yue and Sebe, Nicu and Wang, Wei},\n    title     = {Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {1115-1123}\n}\n",
+        "@InProceedings{Song_2021_ICCV,\n    author    = {Song, Yue and Sebe, Nicu and Wang, Wei},\n    title     = {Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {1115-1123}\n}"
+      ]
+    },
+    {
+      "name": "bf16",
+      "url": "https://arxiv.org/abs/1905.12322",
+      "status": 200,
+      "sha256": "d771d6990dced3f94eabce9795c01879894d24ea253afcf844f46935e1c9fba2",
+      "citation_metadata": {
+        "citation_title": [
+          "A Study of BFLOAT16 for Deep Learning Training"
+        ],
+        "citation_author": [
+          "Kalamkar, Dhiraj",
+          "Mudigere, Dheevatsa",
+          "Mellempudi, Naveen",
+          "Das, Dipankar",
+          "Banerjee, Kunal",
+          "Avancha, Sasikanth",
+          "Vooturi, Dharma Teja",
+          "Jammalamadaka, Nataraj",
+          "Huang, Jianyu",
+          "Yuen, Hector",
+          "Yang, Jiyan",
+          "Park, Jongsoo",
+          "Heinecke, Alexander",
+          "Georganas, Evangelos",
+          "Srinivasan, Sudarshan",
+          "Kundu, Abhisek",
+          "Smelyanskiy, Misha",
+          "Kaul, Bharat",
+          "Dubey, Pradeep"
+        ],
+        "citation_date": [
+          "2019/05/29"
+        ],
+        "citation_online_date": [
+          "2019/06/13"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/1905.12322"
+        ],
+        "citation_arxiv_id": [
+          "1905.12322"
+        ],
+        "citation_abstract": [
+          "This paper presents the first comprehensive empirical study demonstrating the efficacy of the Brain Floating Point (BFLOAT16) half-precision format for Deep Learning training across image classification, speech recognition, language modeling, generative networks and industrial recommendation systems. BFLOAT16 is attractive for Deep Learning training for two reasons: the range of values it can represent is the same as that of IEEE 754 floating-point format (FP32) and conversion to/from FP32 is simple. Maintaining the same range as FP32 is important to ensure that no hyper-parameter tuning is required for convergence; e.g., IEEE 754 compliant half-precision floating point (FP16) requires hyper-parameter tuning. In this paper, we discuss the flow of tensors and various key operations in mixed precision training, and delve into details of operations, such as the rounding modes for converting FP32 tensors to BFLOAT16. We have implemented a method to emulate BFLOAT16 operations in Tensorflow, Caffe2, IntelCaffe, and Neon for our experiments. Our results show that deep learning training using BFLOAT16 tensors achieves the same state-of-the-art (SOTA) results across domains as FP32 tensors in the same number of iterations and with no changes to hyper-parameters."
+        ]
+      }
+    },
+    {
+      "name": "wang2019_official",
+      "url": "https://papers.nips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Metadata.json",
+      "status": 200,
+      "retained_fields": {
+        "title": "Backpropagation-Friendly Eigendecomposition",
+        "book": "Advances in Neural Information Processing Systems",
+        "page_first": 3162,
+        "page_last": 3170
+      },
+      "note": "Full text returned by primary metadata endpoint was read but is not copied into repository."
+    }
+  ]
+}

@@ -1,0 +1,5189 @@
+{
+  "selection_rule": "SHA256 R13-text-validation|position_uid; first distinct4documents/domain, natural panel only, excluding all7 fixed-example documents; selection does not inspect output",
+  "cases": [
+    {
+      "position_uid": "natural:R11_A02_122:174",
+      "visible_prefix": "If you want the expected value, one answer is $n E[S_{(m)}]$, where $S_{(m)}$ is the $m$th order statistic of a sample of $n$ gamma$(k,1)$ random variables. While this expression may not have a simple closed form, you may be able to get a decent-sized approximate answer from the literature on moments of order statistics. (Edit: This appears to be the case, even when comparing with the known asymptotic expression for the case $m=n$. See discussion at end.)\n\nHere's the argument for $n E[S_{(m)}]$: Take a Poisson process $P$ with rate 1 and interarrival times $Z_1, Z_2, \\ldots$. Let each event in the process $P$ have probability of $1/n$ of",
+      "true_target_id": 1660,
+      "true_target_fragment": " being",
+      "metrics": {
+        "k1": {
+          "NLL": 7.470115661621094,
+          "target_rank": 106,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.13944070041179657
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.09583611786365509
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09583611786365509
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.08457507938146591
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.06586713343858719
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.05812754109501839
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.05812754109501839
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.024231165647506714
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.01887124963104725
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.016653820872306824
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.016653820872306824
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.014696945436298847
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.01010105200111866
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.00891414750367403
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.00891414750367403
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.00891414750367403
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.007866707630455494
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.006942344829440117
+            },
+            {
+              "id": 448,
+              "fragment": " with",
+              "probability": 0.006126597989350557
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.006126597989350557
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 5.451891899108887,
+          "target_rank": 24,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.3406527042388916
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.16091294586658478
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.07600987702608109
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.04068515822291374
+            },
+            {
+              "id": 892,
+              "fragment": " which",
+              "probability": 0.035904526710510254
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.01696009747684002
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.014967234805226326
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.014967234805226326
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.011656493879854679
+            },
+            {
+              "id": 419,
+              "fragment": " this",
+              "probability": 0.010286819189786911
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.010286819189786911
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.009078086353838444
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.00801138300448656
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.0070700207725167274
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.0070700207725167274
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.0062392707914114
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.0062392707914114
+            },
+            {
+              "id": 448,
+              "fragment": " with",
+              "probability": 0.0062392707914114
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.005506137385964394
+            },
+            {
+              "id": 432,
+              "fragment": " it",
+              "probability": 0.005506137385964394
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 1.9857242107391357,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 1660,
+              "fragment": " being",
+              "probability": 0.1372811645269394
+            },
+            {
+              "id": 3432,
+              "fragment": " having",
+              "probability": 0.07348130643367767
+            },
+            {
+              "id": 3259,
+              "fragment": " making",
+              "probability": 0.03933171182870865
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.0347101129591465
+            },
+            {
+              "id": 4633,
+              "fragment": " taking",
+              "probability": 0.030631566420197487
+            },
+            {
+              "id": 23163,
+              "fragment": " generating",
+              "probability": 0.030631566420197487
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.027032263576984406
+            },
+            {
+              "id": 30865,
+              "fragment": " occurring",
+              "probability": 0.023855887353420258
+            },
+            {
+              "id": 17387,
+              "fragment": " producing",
+              "probability": 0.01857898384332657
+            },
+            {
+              "id": 19558,
+              "fragment": " hitting",
+              "probability": 0.016395891085267067
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.014469324611127377
+            },
+            {
+              "id": 7086,
+              "fragment": " giving",
+              "probability": 0.014469324611127377
+            },
+            {
+              "id": 12482,
+              "fragment": " happening",
+              "probability": 0.014469324611127377
+            },
+            {
+              "id": 13391,
+              "fragment": " ending",
+              "probability": 0.014469324611127377
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.012769133783876896
+            },
+            {
+              "id": 3709,
+              "fragment": " getting",
+              "probability": 0.011268720962107182
+            },
+            {
+              "id": 11628,
+              "fragment": " sending",
+              "probability": 0.011268720962107182
+            },
+            {
+              "id": 12299,
+              "fragment": " passing",
+              "probability": 0.009944611229002476
+            },
+            {
+              "id": 13054,
+              "fragment": " turning",
+              "probability": 0.009944611229002476
+            },
+            {
+              "id": 14381,
+              "fragment": " causing",
+              "probability": 0.009944611229002476
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 1.747300624847412,
+          "target_rank": 2,
+          "top20": [
+            {
+              "id": 30865,
+              "fragment": " occurring",
+              "probability": 0.4179888367652893
+            },
+            {
+              "id": 1660,
+              "fragment": " being",
+              "probability": 0.17424365878105164
+            },
+            {
+              "id": 12482,
+              "fragment": " happening",
+              "probability": 0.044055696576833725
+            },
+            {
+              "id": 2983,
+              "fragment": " occ",
+              "probability": 0.026721131056547165
+            },
+            {
+              "id": 3432,
+              "fragment": " having",
+              "probability": 0.023581314831972122
+            },
+            {
+              "id": 51505,
+              "fragment": " triggering",
+              "probability": 0.020810438320040703
+            },
+            {
+              "id": 14381,
+              "fragment": " causing",
+              "probability": 0.018365144729614258
+            },
+            {
+              "id": 23163,
+              "fragment": " generating",
+              "probability": 0.01620718464255333
+            },
+            {
+              "id": 4633,
+              "fragment": " taking",
+              "probability": 0.014302791096270084
+            },
+            {
+              "id": 25377,
+              "fragment": " appearing",
+              "probability": 0.01113902498036623
+            },
+            {
+              "id": 5916,
+              "fragment": " starting",
+              "probability": 0.009830154478549957
+            },
+            {
+              "id": 6825,
+              "fragment": " creating",
+              "probability": 0.009830154478549957
+            },
+            {
+              "id": 17387,
+              "fragment": " producing",
+              "probability": 0.009830154478549957
+            },
+            {
+              "id": 32011,
+              "fragment": " arriving",
+              "probability": 0.009830154478549957
+            },
+            {
+              "id": 12942,
+              "fragment": " resulting",
+              "probability": 0.006756159942597151
+            },
+            {
+              "id": 537,
+              "fragment": " not",
+              "probability": 0.005261702928692102
+            },
+            {
+              "id": 7086,
+              "fragment": " giving",
+              "probability": 0.005261702928692102
+            },
+            {
+              "id": 3259,
+              "fragment": " making",
+              "probability": 0.004643436521291733
+            },
+            {
+              "id": 19558,
+              "fragment": " hitting",
+              "probability": 0.004643436521291733
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.004097818396985531
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_135:181",
+      "visible_prefix": "A useful rule of thumb in complex analysis is that holomorphic functions\n{f(z)}\nbehave like large degree polynomials\n{P(z)}\n. This can be evidenced for instance at a “local” level by the Taylor series expansion for a complex analytic function in the disk, or at a “global” level by factorisation theorems such as the\nWeierstrass factorisation theorem\n(or the closely related Hadamard factorisation theorem). One can truncate these theorems in a variety of ways (e.g., Taylor’s theorem with remainder) to be able to approximate a holomorphic function by a polynomial on various domains.\nIn some cases it can be convenient instead to work with polynomials\n{P(Z)}\nof another variable\n{Z}\nsuch as\n{Z = e^{2\\pi i z}}\n(or more generally\n{Z=e^{2\\pi i",
+      "true_target_id": 1147,
+      "true_target_fragment": " z",
+      "metrics": {
+        "k1": {
+          "NLL": 9.545467376708984,
+          "target_rank": 276,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.20029433071613312
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.1559893786907196
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09461233764886856
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.08349509537220001
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.07368416339159012
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.06502604484558105
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.04469170421361923
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.018630273640155792
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.018630273640155792
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.014509272761642933
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.012804387137293816
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.011299832724034786
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.011299832724034786
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.007766253314912319
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.007766253314912319
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.006853695027530193
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.006048364564776421
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.006048364564776421
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.005337662994861603
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.005337662994861603
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 7.875022888183594,
+          "target_rank": 83,
+          "top20": [
+            {
+              "id": 1124,
+              "fragment": " \\",
+              "probability": 0.6872735619544983
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.038773320615291595
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.038773320615291595
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.038773320615291595
+            },
+            {
+              "id": 59,
+              "fragment": "\\",
+              "probability": 0.034217335283756256
+            },
+            {
+              "id": 314,
+              "fragment": " {",
+              "probability": 0.00980343110859394
+            },
+            {
+              "id": 308,
+              "fragment": " n",
+              "probability": 0.008651497773826122
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.006737792864441872
+            },
+            {
+              "id": 856,
+              "fragment": " x",
+              "probability": 0.006737792864441872
+            },
+            {
+              "id": 1599,
+              "fragment": " X",
+              "probability": 0.005946081131696701
+            },
+            {
+              "id": 282,
+              "fragment": " f",
+              "probability": 0.005247398279607296
+            },
+            {
+              "id": 28152,
+              "fragment": " {\\",
+              "probability": 0.005247398279607296
+            },
+            {
+              "id": 61,
+              "fragment": "^",
+              "probability": 0.004630812909454107
+            },
+            {
+              "id": 90,
+              "fragment": "{",
+              "probability": 0.004630812909454107
+            },
+            {
+              "id": 595,
+              "fragment": " k",
+              "probability": 0.004630812909454107
+            },
+            {
+              "id": 3,
+              "fragment": "$",
+              "probability": 0.003606480546295643
+            },
+            {
+              "id": 284,
+              "fragment": " =",
+              "probability": 0.003606480546295643
+            },
+            {
+              "id": 296,
+              "fragment": " m",
+              "probability": 0.0026385574601590633
+            },
+            {
+              "id": 400,
+              "fragment": " $",
+              "probability": 0.0026385574601590633
+            },
+            {
+              "id": 760,
+              "fragment": " |",
+              "probability": 0.0026385574601590633
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 4.776312828063965,
+          "target_rank": 10,
+          "top20": [
+            {
+              "id": 1124,
+              "fragment": " \\",
+              "probability": 0.4060363173484802
+            },
+            {
+              "id": 59,
+              "fragment": "\\",
+              "probability": 0.21733558177947998
+            },
+            {
+              "id": 595,
+              "fragment": " k",
+              "probability": 0.06226767599582672
+            },
+            {
+              "id": 282,
+              "fragment": " f",
+              "probability": 0.054951030761003494
+            },
+            {
+              "id": 856,
+              "fragment": " x",
+              "probability": 0.04279590770602226
+            },
+            {
+              "id": 308,
+              "fragment": " n",
+              "probability": 0.013893797062337399
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.010820499621331692
+            },
+            {
+              "id": 431,
+              "fragment": " R",
+              "probability": 0.00954905804246664
+            },
+            {
+              "id": 435,
+              "fragment": " r",
+              "probability": 0.00954905804246664
+            },
+            {
+              "id": 1147,
+              "fragment": " z",
+              "probability": 0.008427013643085957
+            },
+            {
+              "id": 1599,
+              "fragment": " X",
+              "probability": 0.007436813320964575
+            },
+            {
+              "id": 14,
+              "fragment": "/",
+              "probability": 0.006562964990735054
+            },
+            {
+              "id": 281,
+              "fragment": " p",
+              "probability": 0.006562964990735054
+            },
+            {
+              "id": 451,
+              "fragment": " N",
+              "probability": 0.006562964990735054
+            },
+            {
+              "id": 61,
+              "fragment": "^",
+              "probability": 0.005791795905679464
+            },
+            {
+              "id": 434,
+              "fragment": " F",
+              "probability": 0.005791795905679464
+            },
+            {
+              "id": 90,
+              "fragment": "{",
+              "probability": 0.005111242178827524
+            },
+            {
+              "id": 575,
+              "fragment": " u",
+              "probability": 0.005111242178827524
+            },
+            {
+              "id": 2804,
+              "fragment": " q",
+              "probability": 0.00451065506786108
+            },
+            {
+              "id": 296,
+              "fragment": " m",
+              "probability": 0.003980639390647411
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 1.888188362121582,
+          "target_rank": 2,
+          "top20": [
+            {
+              "id": 282,
+              "fragment": " f",
+              "probability": 0.19433178007602692
+            },
+            {
+              "id": 1147,
+              "fragment": " z",
+              "probability": 0.15134574472904205
+            },
+            {
+              "id": 1124,
+              "fragment": " \\",
+              "probability": 0.1335621476173401
+            },
+            {
+              "id": 59,
+              "fragment": "\\",
+              "probability": 0.049134768545627594
+            },
+            {
+              "id": 259,
+              "fragment": " t",
+              "probability": 0.04336128383874893
+            },
+            {
+              "id": 608,
+              "fragment": " /",
+              "probability": 0.04336128383874893
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.038266196846961975
+            },
+            {
+              "id": 856,
+              "fragment": " x",
+              "probability": 0.023209622129797935
+            },
+            {
+              "id": 14,
+              "fragment": "/",
+              "probability": 0.018075672909617424
+            },
+            {
+              "id": 289,
+              "fragment": " w",
+              "probability": 0.018075672909617424
+            },
+            {
+              "id": 272,
+              "fragment": " c",
+              "probability": 0.015951724722981453
+            },
+            {
+              "id": 434,
+              "fragment": " F",
+              "probability": 0.01407734677195549
+            },
+            {
+              "id": 308,
+              "fragment": " n",
+              "probability": 0.010963449254631996
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.00967521034181118
+            },
+            {
+              "id": 34319,
+              "fragment": "/\\",
+              "probability": 0.00967521034181118
+            },
+            {
+              "id": 305,
+              "fragment": " h",
+              "probability": 0.008538342081010342
+            },
+            {
+              "id": 595,
+              "fragment": " k",
+              "probability": 0.008538342081010342
+            },
+            {
+              "id": 451,
+              "fragment": " N",
+              "probability": 0.007535060867667198
+            },
+            {
+              "id": 600,
+              "fragment": " i",
+              "probability": 0.007535060867667198
+            },
+            {
+              "id": 6663,
+              "fragment": "/f",
+              "probability": 0.007535060867667198
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_096:71",
+      "visible_prefix": "(2) If someone actually has disease D, then the test always comes back positive: Pr(+|D)=1.\n\n(3) But the test has a false positive rate of 5%. That is, if someone does NOT have D, there is a 5% chance the test still comes back positive: Pr(+|~D)=.0",
+      "true_target_id": 20,
+      "true_target_fragment": "5",
+      "metrics": {
+        "k1": {
+          "NLL": 11.021636962890625,
+          "target_rank": 1165,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.14098010957241058
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.09689411520957947
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09689411520957947
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.08550875633955002
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.06659428775310516
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.05876925215125084
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.05186368525028229
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.024498669430613518
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.019079582765698433
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.016837673261761665
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.016837673261761665
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.014859193935990334
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.010212564840912819
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.00901255663484335
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.00901255663484335
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.00901255663484335
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.007953553460538387
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.0070189861580729485
+            },
+            {
+              "id": 448,
+              "fragment": " with",
+              "probability": 0.006194233428686857
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.006194233428686857
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 2.766745090484619,
+          "target_rank": 4,
+          "top20": [
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.3617705702781677
+            },
+            {
+              "id": 17,
+              "fragment": "2",
+              "probability": 0.17088831961154938
+            },
+            {
+              "id": 15,
+              "fragment": "0",
+              "probability": 0.1508083939552307
+            },
+            {
+              "id": 18,
+              "fragment": "3",
+              "probability": 0.06286630034446716
+            },
+            {
+              "id": 20,
+              "fragment": "5",
+              "probability": 0.06286630034446716
+            },
+            {
+              "id": 19,
+              "fragment": "4",
+              "probability": 0.043207332491874695
+            },
+            {
+              "id": 21,
+              "fragment": "6",
+              "probability": 0.033649902790784836
+            },
+            {
+              "id": 22,
+              "fragment": "7",
+              "probability": 0.033649902790784836
+            },
+            {
+              "id": 23,
+              "fragment": "8",
+              "probability": 0.033649902790784836
+            },
+            {
+              "id": 24,
+              "fragment": "9",
+              "probability": 0.026206571608781815
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.00484772864729166
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.00427810475230217
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.003546673571690917
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.000616319477558136
+            },
+            {
+              "id": 12,
+              "fragment": "-",
+              "probability": 0.000510946789290756
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.0004509089922066778
+            },
+            {
+              "id": 4102,
+              "fragment": " ",
+              "probability": 0.0003738166415132582
+            },
+            {
+              "id": 25,
+              "fragment": ":",
+              "probability": 0.0003298922092653811
+            },
+            {
+              "id": 481,
+              "fragment": " -",
+              "probability": 0.00024135428247973323
+            },
+            {
+              "id": 26,
+              "fragment": ";",
+              "probability": 0.00021299441868904978
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 0.8393721580505371,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 20,
+              "fragment": "5",
+              "probability": 0.4319816827774048
+            },
+            {
+              "id": 17,
+              "fragment": "2",
+              "probability": 0.09638813883066177
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.08506222814321518
+            },
+            {
+              "id": 21,
+              "fragment": "6",
+              "probability": 0.07506715506315231
+            },
+            {
+              "id": 23,
+              "fragment": "8",
+              "probability": 0.06624653190374374
+            },
+            {
+              "id": 19,
+              "fragment": "4",
+              "probability": 0.05846235901117325
+            },
+            {
+              "id": 18,
+              "fragment": "3",
+              "probability": 0.05159285292029381
+            },
+            {
+              "id": 22,
+              "fragment": "7",
+              "probability": 0.05159285292029381
+            },
+            {
+              "id": 24,
+              "fragment": "9",
+              "probability": 0.0455305315554142
+            },
+            {
+              "id": 15,
+              "fragment": "0",
+              "probability": 0.027615664526820183
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.00397841352969408
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.002266831696033478
+            },
+            {
+              "id": 382,
+              "fragment": ".\n\n",
+              "probability": 0.0002881951804738492
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.00027073430828750134
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.00027073430828750134
+            },
+            {
+              "id": 271,
+              "fragment": "\n\n",
+              "probability": 0.00015425976016558707
+            },
+            {
+              "id": 151643,
+              "fragment": "<|endoftext|>",
+              "probability": 0.00012788583990186453
+            },
+            {
+              "id": 30,
+              "fragment": "?",
+              "probability": 0.00012013761443085968
+            },
+            {
+              "id": 59,
+              "fragment": "\\",
+              "probability": 9.959758608601987e-05
+            },
+            {
+              "id": 4102,
+              "fragment": " ",
+              "probability": 9.959758608601987e-05
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 0.0012171011185273528,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 20,
+              "fragment": "5",
+              "probability": 0.9987836480140686
+            },
+            {
+              "id": 19,
+              "fragment": "4",
+              "probability": 0.0002302794746356085
+            },
+            {
+              "id": 21,
+              "fragment": "6",
+              "probability": 0.0002302794746356085
+            },
+            {
+              "id": 15,
+              "fragment": "0",
+              "probability": 0.0001396715670125559
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.00010877632303163409
+            },
+            {
+              "id": 23,
+              "fragment": "8",
+              "probability": 9.59947647061199e-05
+            },
+            {
+              "id": 24,
+              "fragment": "9",
+              "probability": 7.476080645574257e-05
+            },
+            {
+              "id": 17,
+              "fragment": "2",
+              "probability": 6.59761717543006e-05
+            },
+            {
+              "id": 18,
+              "fragment": "3",
+              "probability": 5.822376988362521e-05
+            },
+            {
+              "id": 22,
+              "fragment": "7",
+              "probability": 5.822376988362521e-05
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 2.750296152953524e-05
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 2.750296152953524e-05
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 1.6681389752193354e-05
+            },
+            {
+              "id": 271,
+              "fragment": "\n\n",
+              "probability": 1.6681389752193354e-05
+            },
+            {
+              "id": 151643,
+              "fragment": "<|endoftext|>",
+              "probability": 9.504768968326971e-06
+            },
+            {
+              "id": 382,
+              "fragment": ".\n\n",
+              "probability": 8.928904208005406e-06
+            },
+            {
+              "id": 90,
+              "fragment": "{",
+              "probability": 3.28476039612724e-06
+            },
+            {
+              "id": 50,
+              "fragment": "S",
+              "probability": 2.120800672855694e-06
+            },
+            {
+              "id": 624,
+              "fragment": ".\n",
+              "probability": 1.6516812593181385e-06
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 1.5516110352109536e-06
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_134:144",
+      "visible_prefix": "In Disney’s 1959 film\nDonald in Mathmagic Land\n, Donald Duck, inspired by the narrator’s descriptions of the geometry of billiards,\nenergetically strikes the cue ball\n, sending it ricocheting around the table before it finally hits the intended balls. Donald asks, “How do you like that for mathematics?”\nBecause rectangular billiard tables have four walls meeting at right angles, billiard trajectories like Donald’s are predictable and well understood — even if they’re difficult to carry out in practice. However, research mathematicians still cannot answer basic questions about the possible trajectories of billiard balls on tables in the shape of other polygons (shapes with flat sides). Even triangles, the simplest of",
+      "true_target_id": 68159,
+      "true_target_fragment": " polygons",
+      "metrics": {
+        "k1": {
+          "NLL": 15.829972267150879,
+          "target_rank": 12877,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.18177735805511475
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.1415683478116989
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09729839861392975
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.07577607035636902
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.06687214970588684
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.06687214970588684
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.04596051201224327
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.02171020582318306
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.019159190356731415
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.014921192079782486
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.014921192079782486
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.013167906552553177
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.011620637029409409
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.009050161577761173
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.00798673927783966
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.007048272527754307
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.006220078095793724
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.006220078095793724
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.006220078095793724
+            },
+            {
+              "id": 4102,
+              "fragment": " ",
+              "probability": 0.006220078095793724
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 6.11168909072876,
+          "target_rank": 33,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.6146581172943115
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.05045421048998833
+            },
+            {
+              "id": 1378,
+              "fragment": " two",
+              "probability": 0.02700619399547577
+            },
+            {
+              "id": 2326,
+              "fragment": " three",
+              "probability": 0.02103244513273239
+            },
+            {
+              "id": 2477,
+              "fragment": " non",
+              "probability": 0.011257856152951717
+            },
+            {
+              "id": 42446,
+              "fragment": " triangles",
+              "probability": 0.009935022331774235
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.00876762717962265
+            },
+            {
+              "id": 52484,
+              "fragment": " geometric",
+              "probability": 0.00876762717962265
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.007737403269857168
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.005317834205925465
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.0046929726377129555
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.0046929726377129555
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.0046929726377129555
+            },
+            {
+              "id": 3040,
+              "fragment": " four",
+              "probability": 0.0046929726377129555
+            },
+            {
+              "id": 3654,
+              "fragment": " certain",
+              "probability": 0.0046929726377129555
+            },
+            {
+              "id": 4285,
+              "fragment": " simple",
+              "probability": 0.0046929726377129555
+            },
+            {
+              "id": 2155,
+              "fragment": " different",
+              "probability": 0.004141533747315407
+            },
+            {
+              "id": 15279,
+              "fragment": " parallel",
+              "probability": 0.004141533747315407
+            },
+            {
+              "id": 28824,
+              "fragment": " classical",
+              "probability": 0.004141533747315407
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.0036548904608935118
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 3.5034432411193848,
+          "target_rank": 7,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.3666149377822876
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.119022436439991
+            },
+            {
+              "id": 1493,
+              "fragment": " these",
+              "probability": 0.043785907328128815
+            },
+            {
+              "id": 2326,
+              "fragment": " three",
+              "probability": 0.043785907328128815
+            },
+            {
+              "id": 67986,
+              "fragment": " geomet",
+              "probability": 0.038640931248664856
+            },
+            {
+              "id": 20816,
+              "fragment": " shapes",
+              "probability": 0.034100499004125595
+            },
+            {
+              "id": 68159,
+              "fragment": " polygons",
+              "probability": 0.030093586072325706
+            },
+            {
+              "id": 52484,
+              "fragment": " geometric",
+              "probability": 0.023436907678842545
+            },
+            {
+              "id": 12396,
+              "fragment": " figures",
+              "probability": 0.01825268194079399
+            },
+            {
+              "id": 42446,
+              "fragment": " triangles",
+              "probability": 0.01825268194079399
+            },
+            {
+              "id": 2477,
+              "fragment": " non",
+              "probability": 0.014215203933417797
+            },
+            {
+              "id": 3040,
+              "fragment": " four",
+              "probability": 0.014215203933417797
+            },
+            {
+              "id": 1105,
+              "fragment": " them",
+              "probability": 0.012544873170554638
+            },
+            {
+              "id": 17047,
+              "fragment": " geometry",
+              "probability": 0.012544873170554638
+            },
+            {
+              "id": 11031,
+              "fragment": " plane",
+              "probability": 0.011070811189711094
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.009769956581294537
+            },
+            {
+              "id": 308,
+              "fragment": " n",
+              "probability": 0.0076088495552539825
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.0067147864028811455
+            },
+            {
+              "id": 4236,
+              "fragment": " five",
+              "probability": 0.005925778299570084
+            },
+            {
+              "id": 29136,
+              "fragment": " quadr",
+              "probability": 0.005925778299570084
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 0.9051856398582458,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 68159,
+              "fragment": " polygons",
+              "probability": 0.40446677803993225
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.35694068670272827
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.07964422553777695
+            },
+            {
+              "id": 29372,
+              "fragment": " polygon",
+              "probability": 0.04263048246502876
+            },
+            {
+              "id": 1493,
+              "fragment": " these",
+              "probability": 0.02013721503317356
+            },
+            {
+              "id": 20816,
+              "fragment": " shapes",
+              "probability": 0.02013721503317356
+            },
+            {
+              "id": 9861,
+              "fragment": " poly",
+              "probability": 0.015682877972722054
+            },
+            {
+              "id": 5792,
+              "fragment": " regular",
+              "probability": 0.0074080671183764935
+            },
+            {
+              "id": 52484,
+              "fragment": " geometric",
+              "probability": 0.006537596229463816
+            },
+            {
+              "id": 67986,
+              "fragment": " geomet",
+              "probability": 0.006537596229463816
+            },
+            {
+              "id": 11031,
+              "fragment": " plane",
+              "probability": 0.0030881420243531466
+            },
+            {
+              "id": 1105,
+              "fragment": " them",
+              "probability": 0.002405047183856368
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.002405047183856368
+            },
+            {
+              "id": 894,
+              "fragment": " any",
+              "probability": 0.002122446894645691
+            },
+            {
+              "id": 2477,
+              "fragment": " non",
+              "probability": 0.001652963226661086
+            },
+            {
+              "id": 65930,
+              "fragment": " convex",
+              "probability": 0.001652963226661086
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.0014587349724024534
+            },
+            {
+              "id": 12396,
+              "fragment": " figures",
+              "probability": 0.0014587349724024534
+            },
+            {
+              "id": 17047,
+              "fragment": " geometry",
+              "probability": 0.0012873291270807385
+            },
+            {
+              "id": 42446,
+              "fragment": " triangles",
+              "probability": 0.0011360639473423362
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_242:78",
+      "visible_prefix": "In December 2024, a comprehensive analysis published in Science by Adamala et al. highlighted unprecedented risks associated with mirror bacteria research. These artificially created organisms would represent a fundamental departure from all known life, utilizing reversed versions of the molecular building blocks found in natural organisms. The authors argue that this reversal could allow such organisms to evade existing biological controls and immune defenses, potentially affecting",
+      "true_target_id": 12677,
+      "true_target_fragment": " humans",
+      "metrics": {
+        "k1": {
+          "NLL": 13.208969116210938,
+          "target_rank": 2684,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.1927291303873062
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.17008286714553833
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.0910387933254242
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.0910387933254242
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.07090108096599579
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.0625699833035469
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.04300367832183838
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.017926601693034172
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.017926601693034172
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.013961250893771648
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.013961250893771648
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.012320761568844318
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.012320761568844318
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.008467926643788815
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.007472919300198555
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.006594827398657799
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.006594827398657799
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.0058199153281748295
+            },
+            {
+              "id": 4102,
+              "fragment": " ",
+              "probability": 0.0058199153281748295
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.005136057268828154
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 9.08966064453125,
+          "target_rank": 120,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.806815505027771
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.06622745841741562
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.010156309232115746
+            },
+            {
+              "id": 862,
+              "fragment": " their",
+              "probability": 0.006980322767049074
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.006160113029181957
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.0054362802766263485
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.0037362973671406507
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.003297270741313696
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.0029098312370479107
+            },
+            {
+              "id": 2176,
+              "fragment": " both",
+              "probability": 0.0029098312370479107
+            },
+            {
+              "id": 3654,
+              "fragment": " certain",
+              "probability": 0.0029098312370479107
+            },
+            {
+              "id": 1493,
+              "fragment": " these",
+              "probability": 0.0025679171085357666
+            },
+            {
+              "id": 5257,
+              "fragment": " various",
+              "probability": 0.0025679171085357666
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.0022661788389086723
+            },
+            {
+              "id": 2155,
+              "fragment": " different",
+              "probability": 0.0019998960196971893
+            },
+            {
+              "id": 3738,
+              "fragment": " human",
+              "probability": 0.0019998960196971893
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.001764901913702488
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.001764901913702488
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.001764901913702488
+            },
+            {
+              "id": 23275,
+              "fragment": " biological",
+              "probability": 0.001764901913702488
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 6.62586784362793,
+          "target_rank": 42,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.6060044765472412
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.049743879586458206
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.03418843448162079
+            },
+            {
+              "id": 3738,
+              "fragment": " human",
+              "probability": 0.03418843448162079
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.02349734492599964
+            },
+            {
+              "id": 5257,
+              "fragment": " various",
+              "probability": 0.018299750983715057
+            },
+            {
+              "id": 2176,
+              "fragment": " both",
+              "probability": 0.014251860789954662
+            },
+            {
+              "id": 862,
+              "fragment": " their",
+              "probability": 0.009795150719583035
+            },
+            {
+              "id": 2155,
+              "fragment": " different",
+              "probability": 0.00864419061690569
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.0076284706592559814
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.0076284706592559814
+            },
+            {
+              "id": 2272,
+              "fragment": " life",
+              "probability": 0.006732102017849684
+            },
+            {
+              "id": 23275,
+              "fragment": " biological",
+              "probability": 0.005242966581135988
+            },
+            {
+              "id": 1039,
+              "fragment": " our",
+              "probability": 0.00462690182030201
+            },
+            {
+              "id": 3654,
+              "fragment": " certain",
+              "probability": 0.00462690182030201
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.0040832264348864555
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.0036034344229847193
+            },
+            {
+              "id": 1128,
+              "fragment": " what",
+              "probability": 0.0036034344229847193
+            },
+            {
+              "id": 3807,
+              "fragment": " several",
+              "probability": 0.003180020023137331
+            },
+            {
+              "id": 43204,
+              "fragment": " organisms",
+              "probability": 0.003180020023137331
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 3.6322174072265625,
+          "target_rank": 6,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.19549560546875
+            },
+            {
+              "id": 3738,
+              "fragment": " human",
+              "probability": 0.15225215256214142
+            },
+            {
+              "id": 862,
+              "fragment": " their",
+              "probability": 0.06346812844276428
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.043620962649583817
+            },
+            {
+              "id": 2176,
+              "fragment": " both",
+              "probability": 0.03397203981876373
+            },
+            {
+              "id": 1039,
+              "fragment": " our",
+              "probability": 0.02645745314657688
+            },
+            {
+              "id": 12677,
+              "fragment": " humans",
+              "probability": 0.02645745314657688
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.023348618298768997
+            },
+            {
+              "id": 3644,
+              "fragment": " global",
+              "probability": 0.023348618298768997
+            },
+            {
+              "id": 537,
+              "fragment": " not",
+              "probability": 0.02060508541762829
+            },
+            {
+              "id": 21941,
+              "fragment": " humanity",
+              "probability": 0.02060508541762829
+            },
+            {
+              "id": 5257,
+              "fragment": " various",
+              "probability": 0.01604725606739521
+            },
+            {
+              "id": 60851,
+              "fragment": " ecosystems",
+              "probability": 0.01604725606739521
+            },
+            {
+              "id": 4453,
+              "fragment": " entire",
+              "probability": 0.011029107496142387
+            },
+            {
+              "id": 1449,
+              "fragment": " every",
+              "probability": 0.009733152575790882
+            },
+            {
+              "id": 5248,
+              "fragment": " multiple",
+              "probability": 0.009733152575790882
+            },
+            {
+              "id": 1105,
+              "fragment": " them",
+              "probability": 0.008589477278292179
+            },
+            {
+              "id": 4297,
+              "fragment": " everything",
+              "probability": 0.008589477278292179
+            },
+            {
+              "id": 9023,
+              "fragment": " critical",
+              "probability": 0.007580187171697617
+            },
+            {
+              "id": 11728,
+              "fragment": " millions",
+              "probability": 0.007580187171697617
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_255:117",
+      "visible_prefix": "Avoid seeds like the plague!\n\nGood luck, and I hope you have the speediest recovery possible. This is not what you need right now!\n\nYaya said...\n\nI hope the new meds and diet work!!!\n\nJust Jenn said...\n\nHe wants to use a pill cam to test for celiac?! While that test is good for sighting large abnormalities of the intestinal tract, such as ulcers and polyps, it does not diagnose celiac disease, gluten intolerance or other food sensitivities. Villi damage is microscopic which is why an upper intestinal tract biopsy is usually preformed.\n\nIn light of",
+      "true_target_id": 429,
+      "true_target_fragment": " that",
+      "metrics": {
+        "k1": {
+          "NLL": 4.6748504638671875,
+          "target_rank": 13,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.12875418365001678
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.10027386248111725
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.08849137276411057
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.08849137276411057
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.0689171552658081
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.053672730922698975
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.053672730922698975
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.02535320445895195
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.01974509470164776
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.01742498017847538
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.015377490781247616
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.015377490781247616
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.009326919913291931
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.009326919913291931
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.009326919913291931
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.009326919913291931
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.008230977691709995
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.006410291884094477
+            },
+            {
+              "id": 448,
+              "fragment": " with",
+              "probability": 0.006410291884094477
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.006410291884094477
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 5.846024990081787,
+          "target_rank": 9,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.8016965985298157
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.09574901312589645
+            },
+            {
+              "id": 419,
+              "fragment": " this",
+              "probability": 0.01885409653186798
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.0100918710231781
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.006936035118997097
+            },
+            {
+              "id": 432,
+              "fragment": " it",
+              "probability": 0.004767062608152628
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.0037125919479876757
+            },
+            {
+              "id": 1128,
+              "fragment": " what",
+              "probability": 0.0032763509079813957
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.002891369629651308
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.002891369629651308
+            },
+            {
+              "id": 1493,
+              "fragment": " these",
+              "probability": 0.002891369629651308
+            },
+            {
+              "id": 358,
+              "fragment": " I",
+              "probability": 0.002551624784246087
+            },
+            {
+              "id": 847,
+              "fragment": " my",
+              "probability": 0.002551624784246087
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.0015476386761292815
+            },
+            {
+              "id": 697,
+              "fragment": " your",
+              "probability": 0.0015476386761292815
+            },
+            {
+              "id": 862,
+              "fragment": " their",
+              "probability": 0.0013657861854881048
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.0013657861854881048
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.0012053021928295493
+            },
+            {
+              "id": 1181,
+              "fragment": " its",
+              "probability": 0.0012053021928295493
+            },
+            {
+              "id": 894,
+              "fragment": " any",
+              "probability": 0.0008283912902697921
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 2.1136229038238525,
+          "target_rank": 3,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.5413858890533447
+            },
+            {
+              "id": 419,
+              "fragment": " this",
+              "probability": 0.15510967373847961
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.12079952657222748
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.039217863231897354
+            },
+            {
+              "id": 697,
+              "fragment": " your",
+              "probability": 0.016348442062735558
+            },
+            {
+              "id": 1128,
+              "fragment": " what",
+              "probability": 0.009915831498801708
+            },
+            {
+              "id": 847,
+              "fragment": " my",
+              "probability": 0.008750690147280693
+            },
+            {
+              "id": 1493,
+              "fragment": " these",
+              "probability": 0.008750690147280693
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.006815045140683651
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.004683907143771648
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.00413353368639946
+            },
+            {
+              "id": 432,
+              "fragment": " it",
+              "probability": 0.003647830570116639
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.0028409333899617195
+            },
+            {
+              "id": 358,
+              "fragment": " I",
+              "probability": 0.0025071147829294205
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.0025071147829294205
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.002212520921602845
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.0019525430398061872
+            },
+            {
+              "id": 806,
+              "fragment": " his",
+              "probability": 0.0017231130041182041
+            },
+            {
+              "id": 1246,
+              "fragment": " how",
+              "probability": 0.0017231130041182041
+            },
+            {
+              "id": 1039,
+              "fragment": " our",
+              "probability": 0.0015206420794129372
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 2.360661268234253,
+          "target_rank": 3,
+          "top20": [
+            {
+              "id": 419,
+              "fragment": " this",
+              "probability": 0.29064249992370605
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.22635260224342346
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.09435780346393585
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.07348593324422836
+            },
+            {
+              "id": 697,
+              "fragment": " your",
+              "probability": 0.050506092607975006
+            },
+            {
+              "id": 806,
+              "fragment": " his",
+              "probability": 0.03933418542146683
+            },
+            {
+              "id": 1493,
+              "fragment": " these",
+              "probability": 0.0347122959792614
+            },
+            {
+              "id": 1128,
+              "fragment": " what",
+              "probability": 0.023857388645410538
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.011269430629909039
+            },
+            {
+              "id": 3213,
+              "fragment": " recent",
+              "probability": 0.009945237077772617
+            },
+            {
+              "id": 847,
+              "fragment": " my",
+              "probability": 0.008776641450822353
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.005323302000761032
+            },
+            {
+              "id": 1741,
+              "fragment": " such",
+              "probability": 0.004145792219787836
+            },
+            {
+              "id": 272,
+              "fragment": " c",
+              "probability": 0.0032287458889186382
+            },
+            {
+              "id": 22923,
+              "fragment": " Jenn",
+              "probability": 0.002849358133971691
+            },
+            {
+              "id": 1039,
+              "fragment": " our",
+              "probability": 0.0025145497638732195
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.0022190825548022985
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.0022190825548022985
+            },
+            {
+              "id": 2926,
+              "fragment": " Dr",
+              "probability": 0.0022190825548022985
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.001958333421498537
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_285:134",
+      "visible_prefix": "The prothallium develops from a germinating spore. It is a short-lived and inconspicuous heart-shaped structure typically 2-5 millimeters wide, with a number of rhizoids (root-like hairs) growing underneath, and the sex organs: archegonium (female) and antheridium (male). Appearance varies quite a lot between species. Some are green and conduct photosynthesis while others are colorless and nourish themselves underground as saprotrophs.\n\nAlternation of generations[edit]\n\nProthallus of the tree fern Dicksonia antarctica (note new moss plants for scale)\n\nSpore-bearing plants, like",
+      "true_target_id": 678,
+      "true_target_fragment": " all",
+      "metrics": {
+        "k1": {
+          "NLL": 6.160513877868652,
+          "target_rank": 29,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.19004133343696594
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.14800433814525604
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.10172180086374283
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.07922101765871048
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.06991229951381683
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.06169739365577698
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.04804997891187668
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.02003020979464054
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.02003020979464054
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.013766544871032238
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.013766544871032238
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.012148934416472912
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.012148934416472912
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.008349831216037273
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.0073687005788087845
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.006502855569124222
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.006502855569124222
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.005738750100135803
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.005738750100135803
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.005738750100135803
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 5.390659809112549,
+          "target_rank": 14,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.6766104698181152
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.03817174956202507
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.023152336478233337
+            },
+            {
+              "id": 10779,
+              "fragment": " plants",
+              "probability": 0.023152336478233337
+            },
+            {
+              "id": 67851,
+              "fragment": " algae",
+              "probability": 0.023152336478233337
+            },
+            {
+              "id": 80440,
+              "fragment": " fungi",
+              "probability": 0.01591234840452671
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.00965132750570774
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.008517266251146793
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.006633254233747721
+            },
+            {
+              "id": 862,
+              "fragment": " their",
+              "probability": 0.006633254233747721
+            },
+            {
+              "id": 6008,
+              "fragment": " plant",
+              "probability": 0.006633254233747721
+            },
+            {
+              "id": 6176,
+              "fragment": " green",
+              "probability": 0.005165983457118273
+            },
+            {
+              "id": 87549,
+              "fragment": " unic",
+              "probability": 0.005165983457118273
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.004558964166790247
+            },
+            {
+              "id": 23157,
+              "fragment": " bacteria",
+              "probability": 0.0035505250561982393
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.0031333272345364094
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.0031333272345364094
+            },
+            {
+              "id": 452,
+              "fragment": " al",
+              "probability": 0.002765151672065258
+            },
+            {
+              "id": 7249,
+              "fragment": " photos",
+              "probability": 0.002765151672065258
+            },
+            {
+              "id": 18433,
+              "fragment": " proto",
+              "probability": 0.002765151672065258
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 3.618438720703125,
+          "target_rank": 8,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.2883908152580261
+            },
+            {
+              "id": 77243,
+              "fragment": " moss",
+              "probability": 0.0826253592967987
+            },
+            {
+              "id": 10779,
+              "fragment": " plants",
+              "probability": 0.07291661202907562
+            },
+            {
+              "id": 80440,
+              "fragment": " fungi",
+              "probability": 0.06434869021177292
+            },
+            {
+              "id": 67851,
+              "fragment": " algae",
+              "probability": 0.05011481046676636
+            },
+            {
+              "id": 87024,
+              "fragment": " fern",
+              "probability": 0.05011481046676636
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.030396169051527977
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.026824524626135826
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.018436208367347717
+            },
+            {
+              "id": 10320,
+              "fragment": " seed",
+              "probability": 0.01435813307762146
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.012671008706092834
+            },
+            {
+              "id": 18813,
+              "fragment": " gym",
+              "probability": 0.012671008706092834
+            },
+            {
+              "id": 81239,
+              "fragment": " flowering",
+              "probability": 0.012671008706092834
+            },
+            {
+              "id": 6176,
+              "fragment": " green",
+              "probability": 0.011182126589119434
+            },
+            {
+              "id": 4268,
+              "fragment": " land",
+              "probability": 0.009868191555142403
+            },
+            {
+              "id": 6008,
+              "fragment": " plant",
+              "probability": 0.008708647452294827
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.006782302167266607
+            },
+            {
+              "id": 293,
+              "fragment": " b",
+              "probability": 0.006782302167266607
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.006782302167266607
+            },
+            {
+              "id": 6454,
+              "fragment": " ang",
+              "probability": 0.005985360126942396
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 1.6418893337249756,
+          "target_rank": 2,
+          "top20": [
+            {
+              "id": 77243,
+              "fragment": " moss",
+              "probability": 0.2486051619052887
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.19361388683319092
+            },
+            {
+              "id": 87024,
+              "fragment": " fern",
+              "probability": 0.1507866531610489
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.09145672619342804
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.03812483698129654
+            },
+            {
+              "id": 18813,
+              "fragment": " gym",
+              "probability": 0.026202790439128876
+            },
+            {
+              "id": 462,
+              "fragment": " pro",
+              "probability": 0.023123882710933685
+            },
+            {
+              "id": 10779,
+              "fragment": " plants",
+              "probability": 0.018008893355727196
+            },
+            {
+              "id": 67851,
+              "fragment": " algae",
+              "probability": 0.018008893355727196
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.015892792493104935
+            },
+            {
+              "id": 293,
+              "fragment": " b",
+              "probability": 0.009639466181397438
+            },
+            {
+              "id": 80440,
+              "fragment": " fungi",
+              "probability": 0.009639466181397438
+            },
+            {
+              "id": 12408,
+              "fragment": " trees",
+              "probability": 0.00850679911673069
+            },
+            {
+              "id": 4268,
+              "fragment": " land",
+              "probability": 0.005846631247550249
+            },
+            {
+              "id": 1846,
+              "fragment": " those",
+              "probability": 0.005159634631127119
+            },
+            {
+              "id": 10320,
+              "fragment": " seed",
+              "probability": 0.00455336133018136
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.004018327221274376
+            },
+            {
+              "id": 25506,
+              "fragment": " liver",
+              "probability": 0.004018327221274376
+            },
+            {
+              "id": 281,
+              "fragment": " p",
+              "probability": 0.0035461613442748785
+            },
+            {
+              "id": 326,
+              "fragment": " l",
+              "probability": 0.0035461613442748785
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_281:110",
+      "visible_prefix": "This question is difficult to answer. You can’t tell by eye which bacteria growing within a petri dish are the “good guys” versus ones that cause disease, and some pathogenic microbes, like viruses, can’t be detected within agar petri dishes.\n\nNevertheless, with the upcoming holiday travels, asking how to prevent the spread of disease-causing pathogens isn’t just for aspiring microbiologists but a great question for everyone.\n\nDo we really stand a chance of keeping our hands clean from germs?\n\nTwo-fisted approach\n\nThere are two main strategies.\n\n",
+      "true_target_id": 785,
+      "true_target_fragment": "The",
+      "metrics": {
+        "k1": {
+          "NLL": 11.210994720458984,
+          "target_rank": 1310,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.14071834087371826
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.09671420603990555
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09671420603990555
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.08534999191761017
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.06647064536809921
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.05866013467311859
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.05866013467311859
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.02445318177342415
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.01904415711760521
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.016806412488222122
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.014831607230007648
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.014831607230007648
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.010193604975938797
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.008995824493467808
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.008995824493467808
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.008995824493467808
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.007938787341117859
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.007005955558270216
+            },
+            {
+              "id": 448,
+              "fragment": " with",
+              "probability": 0.006182733923196793
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.006182733923196793
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 2.024035930633545,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 785,
+              "fragment": "The",
+              "probability": 0.13212116062641144
+            },
+            {
+              "id": 641,
+              "fragment": "In",
+              "probability": 0.11659650504589081
+            },
+            {
+              "id": 32,
+              "fragment": "A",
+              "probability": 0.07071936130523682
+            },
+            {
+              "id": 1986,
+              "fragment": "This",
+              "probability": 0.029480215162038803
+            },
+            {
+              "id": 2132,
+              "fragment": "It",
+              "probability": 0.017880653962492943
+            },
+            {
+              "id": 33,
+              "fragment": "B",
+              "probability": 0.01577962189912796
+            },
+            {
+              "id": 2461,
+              "fragment": "For",
+              "probability": 0.01577962189912796
+            },
+            {
+              "id": 4498,
+              "fragment": "When",
+              "probability": 0.013925468549132347
+            },
+            {
+              "id": 2121,
+              "fragment": "As",
+              "probability": 0.012289181351661682
+            },
+            {
+              "id": 2679,
+              "fragment": "If",
+              "probability": 0.012289181351661682
+            },
+            {
+              "id": 3862,
+              "fragment": "There",
+              "probability": 0.012289181351661682
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.010845164768397808
+            },
+            {
+              "id": 35,
+              "fragment": "D",
+              "probability": 0.010845164768397808
+            },
+            {
+              "id": 1249,
+              "fragment": "To",
+              "probability": 0.010845164768397808
+            },
+            {
+              "id": 2082,
+              "fragment": "An",
+              "probability": 0.010845164768397808
+            },
+            {
+              "id": 3838,
+              "fragment": "What",
+              "probability": 0.010845164768397808
+            },
+            {
+              "id": 3966,
+              "fragment": "One",
+              "probability": 0.010845164768397808
+            },
+            {
+              "id": 50,
+              "fragment": "S",
+              "probability": 0.009570823982357979
+            },
+            {
+              "id": 34,
+              "fragment": "C",
+              "probability": 0.008446223102509975
+            },
+            {
+              "id": 51,
+              "fragment": "T",
+              "probability": 0.008446223102509975
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 1.4133542776107788,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 785,
+              "fragment": "The",
+              "probability": 0.24332572519779205
+            },
+            {
+              "id": 641,
+              "fragment": "In",
+              "probability": 0.07899629324674606
+            },
+            {
+              "id": 32,
+              "fragment": "A",
+              "probability": 0.06152236834168434
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.047913674265146255
+            },
+            {
+              "id": 1249,
+              "fragment": "To",
+              "probability": 0.02564634196460247
+            },
+            {
+              "id": 1986,
+              "fragment": "This",
+              "probability": 0.0199733916670084
+            },
+            {
+              "id": 3966,
+              "fragment": "One",
+              "probability": 0.0199733916670084
+            },
+            {
+              "id": 2679,
+              "fragment": "If",
+              "probability": 0.015555291436612606
+            },
+            {
+              "id": 3862,
+              "fragment": "There",
+              "probability": 0.015555291436612606
+            },
+            {
+              "id": 2461,
+              "fragment": "For",
+              "probability": 0.013727497309446335
+            },
+            {
+              "id": 2132,
+              "fragment": "It",
+              "probability": 0.01211447361856699
+            },
+            {
+              "id": 3838,
+              "fragment": "What",
+              "probability": 0.01211447361856699
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.01069098524749279
+            },
+            {
+              "id": 40,
+              "fragment": "I",
+              "probability": 0.01069098524749279
+            },
+            {
+              "id": 1654,
+              "fragment": "We",
+              "probability": 0.01069098524749279
+            },
+            {
+              "id": 2610,
+              "fragment": "You",
+              "probability": 0.008326147682964802
+            },
+            {
+              "id": 5338,
+              "fragment": "First",
+              "probability": 0.008326147682964802
+            },
+            {
+              "id": 50,
+              "fragment": "S",
+              "probability": 0.007347799371927977
+            },
+            {
+              "id": 2121,
+              "fragment": "As",
+              "probability": 0.007347799371927977
+            },
+            {
+              "id": 12,
+              "fragment": "-",
+              "probability": 0.006484410259872675
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 1.32035231590271,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 785,
+              "fragment": "The",
+              "probability": 0.2670412063598633
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.1619686782360077
+            },
+            {
+              "id": 5338,
+              "fragment": "First",
+              "probability": 0.1429368555545807
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.0866955816745758
+            },
+            {
+              "id": 3966,
+              "fragment": "One",
+              "probability": 0.07650858908891678
+            },
+            {
+              "id": 6667,
+              "fragment": "•",
+              "probability": 0.02192007750272751
+            },
+            {
+              "id": 2610,
+              "fragment": "You",
+              "probability": 0.011732968501746655
+            },
+            {
+              "id": 1249,
+              "fragment": "To",
+              "probability": 0.007116405293345451
+            },
+            {
+              "id": 2679,
+              "fragment": "If",
+              "probability": 0.007116405293345451
+            },
+            {
+              "id": 641,
+              "fragment": "In",
+              "probability": 0.006280205678194761
+            },
+            {
+              "id": 10253,
+              "fragment": "Use",
+              "probability": 0.005542261525988579
+            },
+            {
+              "id": 1654,
+              "fragment": "We",
+              "probability": 0.004891029093414545
+            },
+            {
+              "id": 32,
+              "fragment": "A",
+              "probability": 0.003809137037023902
+            },
+            {
+              "id": 2461,
+              "fragment": "For",
+              "probability": 0.0033615517895668745
+            },
+            {
+              "id": 21453,
+              "fragment": "Try",
+              "probability": 0.0033615517895668745
+            },
+            {
+              "id": 12,
+              "fragment": "-",
+              "probability": 0.0029665592592209578
+            },
+            {
+              "id": 27529,
+              "fragment": "Clean",
+              "probability": 0.0029665592592209578
+            },
+            {
+              "id": 52116,
+              "fragment": "Avoid",
+              "probability": 0.0029665592592209578
+            },
+            {
+              "id": 2073,
+              "fragment": "“",
+              "probability": 0.0026179791893810034
+            },
+            {
+              "id": 8304,
+              "fragment": "Step",
+              "probability": 0.0026179791893810034
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_410:109",
+      "visible_prefix": "You've read a lot about 'invisibility' over the last few years.  Mathematicians and scientists have been working on various devices that enable invisibility cloaks which shield small objects from detection by microwaves or sound waves.\n\nAn international team has devised an amplifier that can boost light, sound or other waves while hiding them inside an invisible container. As a first application, the researchers propose manipulating matter waves, which are the mathematical description of particles in quantum mechanics. The researchers envision building a quantum microscope that could capture quantum waves, the",
+      "true_target_id": 16876,
+      "true_target_fragment": " waves",
+      "metrics": {
+        "k1": {
+          "NLL": 15.386672973632812,
+          "target_rank": 9376,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.18283462524414062
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.16135099530220032
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.0978643149137497
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.08636496216058731
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.06726109981536865
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.06726109981536865
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.0462278313934803
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.019270626828074455
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.019270626828074455
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.013244499452412128
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.013244499452412128
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.011688229627907276
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.011688229627907276
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.008033194579184055
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.0070892698131501675
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.0070892698131501675
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.006256258115172386
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.005521128419786692
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.005521128419786692
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.005521128419786692
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 9.863131523132324,
+          "target_rank": 1868,
+          "top20": [
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.11353643238544464
+            },
+            {
+              "id": 35972,
+              "fragment": " mathematical",
+              "probability": 0.022356649860739708
+            },
+            {
+              "id": 6961,
+              "fragment": " physical",
+              "probability": 0.015365485101938248
+            },
+            {
+              "id": 1156,
+              "fragment": " first",
+              "probability": 0.013559994287788868
+            },
+            {
+              "id": 5810,
+              "fragment": " natural",
+              "probability": 0.011966652236878872
+            },
+            {
+              "id": 501,
+              "fragment": " new",
+              "probability": 0.009319637902081013
+            },
+            {
+              "id": 1602,
+              "fragment": " very",
+              "probability": 0.009319637902081013
+            },
+            {
+              "id": 1616,
+              "fragment": " way",
+              "probability": 0.009319637902081013
+            },
+            {
+              "id": 4024,
+              "fragment": " original",
+              "probability": 0.009319637902081013
+            },
+            {
+              "id": 1036,
+              "fragment": " “",
+              "probability": 0.008224551565945148
+            },
+            {
+              "id": 1378,
+              "fragment": " two",
+              "probability": 0.008224551565945148
+            },
+            {
+              "id": 1293,
+              "fragment": " long",
+              "probability": 0.0072581409476697445
+            },
+            {
+              "id": 1879,
+              "fragment": " world",
+              "probability": 0.0072581409476697445
+            },
+            {
+              "id": 364,
+              "fragment": " '",
+              "probability": 0.006405286956578493
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.005652645602822304
+            },
+            {
+              "id": 1008,
+              "fragment": " other",
+              "probability": 0.005652645602822304
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.005652645602822304
+            },
+            {
+              "id": 1931,
+              "fragment": " real",
+              "probability": 0.005652645602822304
+            },
+            {
+              "id": 2613,
+              "fragment": " small",
+              "probability": 0.0049884426407516
+            },
+            {
+              "id": 738,
+              "fragment": " set",
+              "probability": 0.0044022854417562485
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 7.993803024291992,
+          "target_rank": 394,
+          "top20": [
+            {
+              "id": 1156,
+              "fragment": " first",
+              "probability": 0.064325250685215
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.044210053980350494
+            },
+            {
+              "id": 1616,
+              "fragment": " way",
+              "probability": 0.02088335156440735
+            },
+            {
+              "id": 6993,
+              "fragment": " nature",
+              "probability": 0.02088335156440735
+            },
+            {
+              "id": 35972,
+              "fragment": " mathematical",
+              "probability": 0.02088335156440735
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.01266639307141304
+            },
+            {
+              "id": 1887,
+              "fragment": " main",
+              "probability": 0.01266639307141304
+            },
+            {
+              "id": 4024,
+              "fragment": " original",
+              "probability": 0.01266639307141304
+            },
+            {
+              "id": 8037,
+              "fragment": " basis",
+              "probability": 0.01266639307141304
+            },
+            {
+              "id": 3920,
+              "fragment": " study",
+              "probability": 0.011178052984178066
+            },
+            {
+              "id": 1102,
+              "fragment": " result",
+              "probability": 0.00870547629892826
+            },
+            {
+              "id": 1850,
+              "fragment": " best",
+              "probability": 0.007682555355131626
+            },
+            {
+              "id": 4522,
+              "fragment": " idea",
+              "probability": 0.007682555355131626
+            },
+            {
+              "id": 773,
+              "fragment": " so",
+              "probability": 0.00677983183413744
+            },
+            {
+              "id": 1379,
+              "fragment": " size",
+              "probability": 0.00677983183413744
+            },
+            {
+              "id": 1879,
+              "fragment": " world",
+              "probability": 0.00677983183413744
+            },
+            {
+              "id": 6813,
+              "fragment": " components",
+              "probability": 0.00677983183413744
+            },
+            {
+              "id": 24632,
+              "fragment": " smallest",
+              "probability": 0.00677983183413744
+            },
+            {
+              "id": 803,
+              "fragment": " more",
+              "probability": 0.005983180366456509
+            },
+            {
+              "id": 2086,
+              "fragment": " second",
+              "probability": 0.005983180366456509
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 4.667647361755371,
+          "target_rank": 18,
+          "top20": [
+            {
+              "id": 24632,
+              "fragment": " smallest",
+              "probability": 0.06941533833742142
+            },
+            {
+              "id": 11811,
+              "fragment": " researchers",
+              "probability": 0.0477084182202816
+            },
+            {
+              "id": 4752,
+              "fragment": " building",
+              "probability": 0.04210253432393074
+            },
+            {
+              "id": 1156,
+              "fragment": " first",
+              "probability": 0.037155356258153915
+            },
+            {
+              "id": 18730,
+              "fragment": " particles",
+              "probability": 0.02893662080168724
+            },
+            {
+              "id": 8037,
+              "fragment": " basis",
+              "probability": 0.022535862401127815
+            },
+            {
+              "id": 15811,
+              "fragment": " fundamental",
+              "probability": 0.019887827336788177
+            },
+            {
+              "id": 29447,
+              "fragment": " invisible",
+              "probability": 0.019887827336788177
+            },
+            {
+              "id": 1379,
+              "fragment": " size",
+              "probability": 0.01755094714462757
+            },
+            {
+              "id": 30128,
+              "fragment": " quantum",
+              "probability": 0.01755094714462757
+            },
+            {
+              "id": 35972,
+              "fragment": " mathematical",
+              "probability": 0.01755094714462757
+            },
+            {
+              "id": 1616,
+              "fragment": " way",
+              "probability": 0.015488657169044018
+            },
+            {
+              "id": 1852,
+              "fragment": " same",
+              "probability": 0.015488657169044018
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.013668691739439964
+            },
+            {
+              "id": 13923,
+              "fragment": " scientists",
+              "probability": 0.013668691739439964
+            },
+            {
+              "id": 6770,
+              "fragment": " basic",
+              "probability": 0.012062577530741692
+            },
+            {
+              "id": 12060,
+              "fragment": " wave",
+              "probability": 0.010645187459886074
+            },
+            {
+              "id": 1602,
+              "fragment": " very",
+              "probability": 0.009394344873726368
+            },
+            {
+              "id": 3920,
+              "fragment": " study",
+              "probability": 0.009394344873726368
+            },
+            {
+              "id": 16876,
+              "fragment": " waves",
+              "probability": 0.009394344873726368
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_419:64",
+      "visible_prefix": "We know that light is a form of energy and can undergo various phenomena like diffraction, reflection, refraction, interference, and polarisation. Refraction is the phenomenon that takes place due to the bending of light when it travels from medium to another. In this article, let us briefly understand the process of refraction.\n",
+      "true_target_id": 3838,
+      "true_target_fragment": "What",
+      "metrics": {
+        "k1": {
+          "NLL": 14.208159446716309,
+          "target_rank": 6784,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.1599075198173523
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.12453609704971313
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09698880463838577
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.07553495466709137
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.07553495466709137
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.0666593685746193
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.05191436782479286
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.02164112776517868
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.019098229706287384
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.01685413159430027
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.014873718842864037
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.0131260110065341
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.011583664454519749
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.009021366946399212
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.007961328141391277
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.007961328141391277
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.007025847677141428
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.00620028842240572
+            },
+            {
+              "id": 4102,
+              "fragment": " ",
+              "probability": 0.00620028842240572
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.0054717352613806725
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 4.616793632507324,
+          "target_rank": 10,
+          "top20": [
+            {
+              "id": 785,
+              "fragment": "The",
+              "probability": 0.2549230754375458
+            },
+            {
+              "id": 32,
+              "fragment": "A",
+              "probability": 0.13645048439502716
+            },
+            {
+              "id": 641,
+              "fragment": "In",
+              "probability": 0.07303666323423386
+            },
+            {
+              "id": 1986,
+              "fragment": "This",
+              "probability": 0.030446214601397514
+            },
+            {
+              "id": 3862,
+              "fragment": "There",
+              "probability": 0.018466562032699585
+            },
+            {
+              "id": 2132,
+              "fragment": "It",
+              "probability": 0.016296684741973877
+            },
+            {
+              "id": 2679,
+              "fragment": "If",
+              "probability": 0.0143817737698555
+            },
+            {
+              "id": 2461,
+              "fragment": "For",
+              "probability": 0.012691870331764221
+            },
+            {
+              "id": 4498,
+              "fragment": "When",
+              "probability": 0.012691870331764221
+            },
+            {
+              "id": 40,
+              "fragment": "I",
+              "probability": 0.00988443847745657
+            },
+            {
+              "id": 2121,
+              "fragment": "As",
+              "probability": 0.00988443847745657
+            },
+            {
+              "id": 3838,
+              "fragment": "What",
+              "probability": 0.00988443847745657
+            },
+            {
+              "id": 3966,
+              "fragment": "One",
+              "probability": 0.00988443847745657
+            },
+            {
+              "id": 34,
+              "fragment": "C",
+              "probability": 0.008722986094653606
+            },
+            {
+              "id": 2082,
+              "fragment": "An",
+              "probability": 0.008722986094653606
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.0076980083249509335
+            },
+            {
+              "id": 37,
+              "fragment": "F",
+              "probability": 0.0076980083249509335
+            },
+            {
+              "id": 11613,
+              "fragment": "Two",
+              "probability": 0.0076980083249509335
+            },
+            {
+              "id": 33,
+              "fragment": "B",
+              "probability": 0.006793468724936247
+            },
+            {
+              "id": 35,
+              "fragment": "D",
+              "probability": 0.006793468724936247
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 3.753819704055786,
+          "target_rank": 6,
+          "top20": [
+            {
+              "id": 785,
+              "fragment": "The",
+              "probability": 0.32341474294662476
+            },
+            {
+              "id": 32,
+              "fragment": "A",
+              "probability": 0.08177205920219421
+            },
+            {
+              "id": 641,
+              "fragment": "In",
+              "probability": 0.0636841431260109
+            },
+            {
+              "id": 4498,
+              "fragment": "When",
+              "probability": 0.03862638771533966
+            },
+            {
+              "id": 1986,
+              "fragment": "This",
+              "probability": 0.034087665379047394
+            },
+            {
+              "id": 3838,
+              "fragment": "What",
+              "probability": 0.023428086191415787
+            },
+            {
+              "id": 2461,
+              "fragment": "For",
+              "probability": 0.018245816230773926
+            },
+            {
+              "id": 1249,
+              "fragment": "To",
+              "probability": 0.016101878136396408
+            },
+            {
+              "id": 2132,
+              "fragment": "It",
+              "probability": 0.012540154159069061
+            },
+            {
+              "id": 2679,
+              "fragment": "If",
+              "probability": 0.012540154159069061
+            },
+            {
+              "id": 3862,
+              "fragment": "There",
+              "probability": 0.009766281582415104
+            },
+            {
+              "id": 8420,
+              "fragment": "Here",
+              "probability": 0.008618713356554508
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.007605987600982189
+            },
+            {
+              "id": 50,
+              "fragment": "S",
+              "probability": 0.007605987600982189
+            },
+            {
+              "id": 3830,
+              "fragment": "From",
+              "probability": 0.007605987600982189
+            },
+            {
+              "id": 5338,
+              "fragment": "First",
+              "probability": 0.007605987600982189
+            },
+            {
+              "id": 40,
+              "fragment": "I",
+              "probability": 0.006712260656058788
+            },
+            {
+              "id": 49,
+              "fragment": "R",
+              "probability": 0.0059235491789877415
+            },
+            {
+              "id": 2082,
+              "fragment": "An",
+              "probability": 0.0059235491789877415
+            },
+            {
+              "id": 2121,
+              "fragment": "As",
+              "probability": 0.0059235491789877415
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 1.5685157775878906,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 3838,
+              "fragment": "What",
+              "probability": 0.208354189991951
+            },
+            {
+              "id": 785,
+              "fragment": "The",
+              "probability": 0.11152396351099014
+            },
+            {
+              "id": 3945,
+              "fragment": "Ref",
+              "probability": 0.11152396351099014
+            },
+            {
+              "id": 4498,
+              "fragment": "When",
+              "probability": 0.059694476425647736
+            },
+            {
+              "id": 641,
+              "fragment": "In",
+              "probability": 0.05268019065260887
+            },
+            {
+              "id": 4340,
+              "fragment": "How",
+              "probability": 0.0319521501660347
+            },
+            {
+              "id": 10061,
+              "fragment": "Let",
+              "probability": 0.021960370242595673
+            },
+            {
+              "id": 12,
+              "fragment": "-",
+              "probability": 0.019379958510398865
+            },
+            {
+              "id": 32,
+              "fragment": "A",
+              "probability": 0.019379958510398865
+            },
+            {
+              "id": 1654,
+              "fragment": "We",
+              "probability": 0.01710275374352932
+            },
+            {
+              "id": 13911,
+              "fragment": "Light",
+              "probability": 0.01710275374352932
+            },
+            {
+              "id": 1249,
+              "fragment": "To",
+              "probability": 0.013319638557732105
+            },
+            {
+              "id": 10234,
+              "fragment": "Why",
+              "probability": 0.013319638557732105
+            },
+            {
+              "id": 1986,
+              "fragment": "This",
+              "probability": 0.011754539795219898
+            },
+            {
+              "id": 16,
+              "fragment": "1",
+              "probability": 0.010373344644904137
+            },
+            {
+              "id": 693,
+              "fragment": "Re",
+              "probability": 0.009154444560408592
+            },
+            {
+              "id": 2121,
+              "fragment": "As",
+              "probability": 0.009154444560408592
+            },
+            {
+              "id": 2461,
+              "fragment": "For",
+              "probability": 0.009154444560408592
+            },
+            {
+              "id": 2132,
+              "fragment": "It",
+              "probability": 0.008078768849372864
+            },
+            {
+              "id": 3862,
+              "fragment": "There",
+              "probability": 0.00712948851287365
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_434:160",
+      "visible_prefix": "The ratio of reflected intensity to incident intensity is the X-ray reflectivity for the surface. If the interface is not perfectly sharp and smooth, the reflected intensity will deviate from that predicted by the law of Fresnel reflectivity. The deviations can then be analyzed to obtain the density profile of the interface normal to the surface. For films with multiple layers, X-ray reflectivity may show oscillations with wavelength, analogous to the Fabry-Pérot effect. These oscillations can be used to infer layer thicknesses and other properties.\n\n\n\nIn X-ray diffraction a beam strikes a crystal and diffracts into many specific directions. The angles and intensities of the diffracted beams indicate a three-dimensional density of electrons within the crystal. X-rays produce a diffraction pattern because their wavelength is typically the",
+      "true_target_id": 1852,
+      "true_target_fragment": " same",
+      "metrics": {
+        "k1": {
+          "NLL": 13.015142440795898,
+          "target_rank": 666,
+          "top20": [
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.3197733759880066
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.2821989953517914
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.09161658585071564
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.08085136115550995
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.05556827038526535
+            },
+            {
+              "id": 13,
+              "fragment": ".",
+              "probability": 0.015920575708150864
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.015920575708150864
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.015920575708150864
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.015920575708150864
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.012398957274854183
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.01094204094260931
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.005856852512806654
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.005856852512806654
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.005168654024600983
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.004561321344226599
+            },
+            {
+              "id": 271,
+              "fragment": "\n\n",
+              "probability": 0.004025351721793413
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.004025351721793413
+            },
+            {
+              "id": 481,
+              "fragment": " -",
+              "probability": 0.004025351721793413
+            },
+            {
+              "id": 4102,
+              "fragment": " ",
+              "probability": 0.004025351721793413
+            },
+            {
+              "id": 12,
+              "fragment": "-",
+              "probability": 0.002766581252217293
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 5.351036548614502,
+          "target_rank": 22,
+          "top20": [
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.22854168713092804
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.1779884397983551
+            },
+            {
+              "id": 1372,
+              "fragment": " number",
+              "probability": 0.027295416221022606
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.024088120087981224
+            },
+            {
+              "id": 1379,
+              "fragment": " size",
+              "probability": 0.021257691085338593
+            },
+            {
+              "id": 3084,
+              "fragment": " length",
+              "probability": 0.016555506736040115
+            },
+            {
+              "id": 1036,
+              "fragment": " “",
+              "probability": 0.010041422210633755
+            },
+            {
+              "id": 198,
+              "fragment": "\n",
+              "probability": 0.008861523121595383
+            },
+            {
+              "id": 8674,
+              "fragment": " relative",
+              "probability": 0.008861523121595383
+            },
+            {
+              "id": 364,
+              "fragment": " '",
+              "probability": 0.007820267230272293
+            },
+            {
+              "id": 1602,
+              "fragment": " very",
+              "probability": 0.006901361048221588
+            },
+            {
+              "id": 1973,
+              "fragment": " order",
+              "probability": 0.006901361048221588
+            },
+            {
+              "id": 4361,
+              "fragment": " whole",
+              "probability": 0.006901361048221588
+            },
+            {
+              "id": 308,
+              "fragment": " n",
+              "probability": 0.006090430077165365
+            },
+            {
+              "id": 3460,
+              "fragment": " large",
+              "probability": 0.006090430077165365
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.005374785978347063
+            },
+            {
+              "id": 1378,
+              "fragment": " two",
+              "probability": 0.005374785978347063
+            },
+            {
+              "id": 2477,
+              "fragment": " non",
+              "probability": 0.005374785978347063
+            },
+            {
+              "id": 3175,
+              "fragment": " single",
+              "probability": 0.005374785978347063
+            },
+            {
+              "id": 11341,
+              "fragment": " ratio",
+              "probability": 0.005374785978347063
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 3.248215675354004,
+          "target_rank": 5,
+          "top20": [
+            {
+              "id": 1379,
+              "fragment": " size",
+              "probability": 0.08223159611225128
+            },
+            {
+              "id": 8028,
+              "fragment": " minimum",
+              "probability": 0.07256913185119629
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.04401540383696556
+            },
+            {
+              "id": 24632,
+              "fragment": " smallest",
+              "probability": 0.04401540383696556
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.03884345665574074
+            },
+            {
+              "id": 1852,
+              "fragment": " same",
+              "probability": 0.03884345665574074
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.026696691289544106
+            },
+            {
+              "id": 3084,
+              "fragment": " length",
+              "probability": 0.023559747263789177
+            },
+            {
+              "id": 7772,
+              "fragment": " largest",
+              "probability": 0.023559747263789177
+            },
+            {
+              "id": 5452,
+              "fragment": " scale",
+              "probability": 0.02079140394926071
+            },
+            {
+              "id": 7192,
+              "fragment": " maximum",
+              "probability": 0.02079140394926071
+            },
+            {
+              "id": 1156,
+              "fragment": " first",
+              "probability": 0.018348349258303642
+            },
+            {
+              "id": 8037,
+              "fragment": " basis",
+              "probability": 0.018348349258303642
+            },
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.014289709739387035
+            },
+            {
+              "id": 11341,
+              "fragment": " ratio",
+              "probability": 0.014289709739387035
+            },
+            {
+              "id": 2086,
+              "fragment": " second",
+              "probability": 0.012610623612999916
+            },
+            {
+              "id": 3245,
+              "fragment": " least",
+              "probability": 0.012610623612999916
+            },
+            {
+              "id": 897,
+              "fragment": " value",
+              "probability": 0.011128837242722511
+            },
+            {
+              "id": 1973,
+              "fragment": " order",
+              "probability": 0.011128837242722511
+            },
+            {
+              "id": 1850,
+              "fragment": " best",
+              "probability": 0.00982116349041462
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 0.35606786608695984,
+          "target_rank": 1,
+          "top20": [
+            {
+              "id": 1852,
+              "fragment": " same",
+              "probability": 0.7004250884056091
+            },
+            {
+              "id": 1973,
+              "fragment": " order",
+              "probability": 0.07382425665855408
+            },
+            {
+              "id": 24632,
+              "fragment": " smallest",
+              "probability": 0.07382425665855408
+            },
+            {
+              "id": 1379,
+              "fragment": " size",
+              "probability": 0.02115100435912609
+            },
+            {
+              "id": 39143,
+              "fragment": " shortest",
+              "probability": 0.02115100435912609
+            },
+            {
+              "id": 3084,
+              "fragment": " length",
+              "probability": 0.012828735634684563
+            },
+            {
+              "id": 22032,
+              "fragment": " longest",
+              "probability": 0.011321320198476315
+            },
+            {
+              "id": 3245,
+              "fragment": " least",
+              "probability": 0.009991029277443886
+            },
+            {
+              "id": 45306,
+              "fragment": " wavelength",
+              "probability": 0.006059865467250347
+            },
+            {
+              "id": 7772,
+              "fragment": " largest",
+              "probability": 0.005347812548279762
+            },
+            {
+              "id": 8028,
+              "fragment": " minimum",
+              "probability": 0.004164880607277155
+            },
+            {
+              "id": 28583,
+              "fragment": " characteristic",
+              "probability": 0.0032436123583465815
+            },
+            {
+              "id": 1429,
+              "fragment": " most",
+              "probability": 0.002862477907910943
+            },
+            {
+              "id": 3638,
+              "fragment": " diff",
+              "probability": 0.002862477907910943
+            },
+            {
+              "id": 5452,
+              "fragment": " scale",
+              "probability": 0.002526127966120839
+            },
+            {
+              "id": 1172,
+              "fragment": " only",
+              "probability": 0.0017361806239932775
+            },
+            {
+              "id": 1850,
+              "fragment": " best",
+              "probability": 0.0017361806239932775
+            },
+            {
+              "id": 13578,
+              "fragment": " equivalent",
+              "probability": 0.001053046784363687
+            },
+            {
+              "id": 24456,
+              "fragment": " dominant",
+              "probability": 0.001053046784363687
+            },
+            {
+              "id": 1156,
+              "fragment": " first",
+              "probability": 0.0009293105104006827
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position_uid": "natural:R11_A02_422:151",
+      "visible_prefix": "Shedding light on the mystery of the superconducting dome\n\nShedding light on the mystery of the superconducting dome\nProf. dr. Justin Ye, Zernike Insititute of Advanced Materials, Faculty of Science and Engineering, University of Groningen Credit: ZIAM/University of Groningen\n\nUniversity of Groningen physicists, and colleagues from Nijmegen and Hong Kong, have induced superconductivity in a monolayer of tungsten disulfide. By using an increasing electric field, they were able to show how the material turns from an insulator into a superconductor and then back into a re-entrant insulator again. Their results show the typical dome-shaped superconducting phase, and finally provide",
+      "true_target_id": 458,
+      "true_target_fragment": " an",
+      "metrics": {
+        "k1": {
+          "NLL": 4.838435173034668,
+          "target_rank": 17,
+          "top20": [
+            {
+              "id": 320,
+              "fragment": " (",
+              "probability": 0.14037537574768066
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.09647849202156067
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.09647849202156067
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.08514197170734406
+            },
+            {
+              "id": 220,
+              "fragment": " ",
+              "probability": 0.0663086399435997
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.05851716548204422
+            },
+            {
+              "id": 323,
+              "fragment": " and",
+              "probability": 0.05851716548204422
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.024393582716584206
+            },
+            {
+              "id": 315,
+              "fragment": " of",
+              "probability": 0.018997741863131523
+            },
+            {
+              "id": 438,
+              "fragment": " as",
+              "probability": 0.016765447333455086
+            },
+            {
+              "id": 311,
+              "fragment": " to",
+              "probability": 0.014795455150306225
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.014795455150306225
+            },
+            {
+              "id": 476,
+              "fragment": " or",
+              "probability": 0.01016875822097063
+            },
+            {
+              "id": 374,
+              "fragment": " is",
+              "probability": 0.008973898366093636
+            },
+            {
+              "id": 429,
+              "fragment": " that",
+              "probability": 0.008973898366093636
+            },
+            {
+              "id": 518,
+              "fragment": " at",
+              "probability": 0.008973898366093636
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.007919436320662498
+            },
+            {
+              "id": 389,
+              "fragment": " on",
+              "probability": 0.006988878827542067
+            },
+            {
+              "id": 448,
+              "fragment": " with",
+              "probability": 0.006167663726955652
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.006167663726955652
+            }
+          ]
+        },
+        "k64": {
+          "NLL": 3.2156801223754883,
+          "target_rank": 3,
+          "top20": [
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.48885950446128845
+            },
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.23092088103294373
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.040128033608198166
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.010145955719053745
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.006973206531256437
+            },
+            {
+              "id": 803,
+              "fragment": " more",
+              "probability": 0.006153833586722612
+            },
+            {
+              "id": 1181,
+              "fragment": " its",
+              "probability": 0.005430738441646099
+            },
+            {
+              "id": 1378,
+              "fragment": " two",
+              "probability": 0.0047926101833581924
+            },
+            {
+              "id": 5089,
+              "fragment": " significant",
+              "probability": 0.004229463636875153
+            },
+            {
+              "id": 5904,
+              "fragment": " evidence",
+              "probability": 0.004229463636875153
+            },
+            {
+              "id": 11,
+              "fragment": ",",
+              "probability": 0.003732488490641117
+            },
+            {
+              "id": 330,
+              "fragment": " \"",
+              "probability": 0.003732488490641117
+            },
+            {
+              "id": 678,
+              "fragment": " all",
+              "probability": 0.003732488490641117
+            },
+            {
+              "id": 1657,
+              "fragment": " many",
+              "probability": 0.0032939095981419086
+            },
+            {
+              "id": 419,
+              "fragment": " this",
+              "probability": 0.0029068649746477604
+            },
+            {
+              "id": 1602,
+              "fragment": " very",
+              "probability": 0.0029068649746477604
+            },
+            {
+              "id": 3204,
+              "fragment": " possible",
+              "probability": 0.0029068649746477604
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.002565299393609166
+            },
+            {
+              "id": 537,
+              "fragment": " not",
+              "probability": 0.002565299393609166
+            },
+            {
+              "id": 1550,
+              "fragment": " high",
+              "probability": 0.002565299393609166
+            }
+          ]
+        },
+        "k256": {
+          "NLL": 2.3826920986175537,
+          "target_rank": 3,
+          "top20": [
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.4687470495700836
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.10459159314632416
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.09230175614356995
+            },
+            {
+              "id": 5904,
+              "fragment": " evidence",
+              "probability": 0.06343800574541092
+            },
+            {
+              "id": 501,
+              "fragment": " new",
+              "probability": 0.043600261211395264
+            },
+            {
+              "id": 4623,
+              "fragment": " further",
+              "probability": 0.020595306530594826
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.018175296485424042
+            },
+            {
+              "id": 803,
+              "fragment": " more",
+              "probability": 0.01415493618696928
+            },
+            {
+              "id": 20017,
+              "fragment": " insight",
+              "probability": 0.008585402742028236
+            },
+            {
+              "id": 5107,
+              "fragment": " additional",
+              "probability": 0.005900655407458544
+            },
+            {
+              "id": 22000,
+              "fragment": " experimental",
+              "probability": 0.004595435224473476
+            },
+            {
+              "id": 1376,
+              "fragment": " key",
+              "probability": 0.004055457189679146
+            },
+            {
+              "id": 1661,
+              "fragment": " good",
+              "probability": 0.004055457189679146
+            },
+            {
+              "id": 2797,
+              "fragment": " clear",
+              "probability": 0.004055457189679146
+            },
+            {
+              "id": 11064,
+              "fragment": " proof",
+              "probability": 0.0035789282992482185
+            },
+            {
+              "id": 25709,
+              "fragment": " insights",
+              "probability": 0.0035789282992482185
+            },
+            {
+              "id": 825,
+              "fragment": " one",
+              "probability": 0.002787272445857525
+            },
+            {
+              "id": 1995,
+              "fragment": " information",
+              "probability": 0.002787272445857525
+            },
+            {
+              "id": 11682,
+              "fragment": " detailed",
+              "probability": 0.002787272445857525
+            },
+            {
+              "id": 304,
+              "fragment": " in",
+              "probability": 0.0024597591254860163
+            }
+          ]
+        },
+        "identity": {
+          "NLL": 2.4232077598571777,
+          "target_rank": 3,
+          "top20": [
+            {
+              "id": 264,
+              "fragment": " a",
+              "probability": 0.35056546330451965
+            },
+            {
+              "id": 279,
+              "fragment": " the",
+              "probability": 0.1289658397436142
+            },
+            {
+              "id": 458,
+              "fragment": " an",
+              "probability": 0.0886368378996849
+            },
+            {
+              "id": 5904,
+              "fragment": " evidence",
+              "probability": 0.0609191469848156
+            },
+            {
+              "id": 20017,
+              "fragment": " insight",
+              "probability": 0.0609191469848156
+            },
+            {
+              "id": 501,
+              "fragment": " new",
+              "probability": 0.05376096069812775
+            },
+            {
+              "id": 25709,
+              "fragment": " insights",
+              "probability": 0.028776168823242188
+            },
+            {
+              "id": 22000,
+              "fragment": " experimental",
+              "probability": 0.017453627660870552
+            },
+            {
+              "id": 1045,
+              "fragment": " some",
+              "probability": 0.011995691806077957
+            },
+            {
+              "id": 4623,
+              "fragment": " further",
+              "probability": 0.010586160235106945
+            },
+            {
+              "id": 42675,
+              "fragment": " clues",
+              "probability": 0.008244509808719158
+            },
+            {
+              "id": 2989,
+              "fragment": " important",
+              "probability": 0.006420831196010113
+            },
+            {
+              "id": 30643,
+              "fragment": " hints",
+              "probability": 0.006420831196010113
+            },
+            {
+              "id": 369,
+              "fragment": " for",
+              "probability": 0.005666363053023815
+            },
+            {
+              "id": 3746,
+              "fragment": " strong",
+              "probability": 0.005666363053023815
+            },
+            {
+              "id": 803,
+              "fragment": " more",
+              "probability": 0.0050005484372377396
+            },
+            {
+              "id": 1995,
+              "fragment": " information",
+              "probability": 0.0050005484372377396
+            },
+            {
+              "id": 2797,
+              "fragment": " clear",
+              "probability": 0.0050005484372377396
+            },
+            {
+              "id": 11682,
+              "fragment": " detailed",
+              "probability": 0.0050005484372377396
+            },
+            {
+              "id": 11064,
+              "fragment": " proof",
+              "probability": 0.004412967711687088
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

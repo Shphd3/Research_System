@@ -1,0 +1,13 @@
+{
+  "revision": "R10-A01",
+  "reason": "method audit: original three occurrence classes are too broad for close matching, especially the high class",
+  "timing": "after v1 results; explicit offline method correction, not a preregistered confirmation",
+  "seed": 2026103005,
+  "reps": 1000,
+  "strata": "floor(2*log2(DCLM hits)), floor(total positive discovery documents/5), floor(max domain positive documents/5); zero hits separate",
+  "pool": "entire support eligible dictionary INCLUDING main; preserve exact per-stratum counts, same group sizes, no replacement, groups disjoint",
+  "occurrence_ratio_within_positive_stratum_max": 1.4142135623730951,
+  "support_total_max_difference": 4,
+  "support_maxdomain_max_difference": 4,
+  "frozen_main_sha256": "dbe0a02209a9f47ebf8fd15461777e3b3b48600fb946342993bb25a5ac917946"
+}

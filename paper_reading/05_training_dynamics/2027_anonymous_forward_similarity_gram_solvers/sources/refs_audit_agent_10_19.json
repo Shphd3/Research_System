@@ -1,0 +1,319 @@
+{
+  "audit_date": "2026-10-20",
+  "processing_agent": "/root/refs_10_19",
+  "scope": "Bibliography entries 10–19: existence, primary metadata, publication status, abstract/content fit. No execution or replication of cited experiments.",
+  "summary": {
+    "items": 10,
+    "existence_verified": 10,
+    "confirmed_substantive_bibliographic_errors": 0,
+    "source_internal_metadata_conflicts": 1,
+    "notes": [
+      "The arXiv abstract and paper bodies give opposite author order for entry 11; this is a source conflict, not evidence of an erroneous citation.",
+      "OpenReview forum/PDF endpoints returned browser challenges; entries 15 and 18 were instead checked against arXiv publication statements and, for 15, the author-hosted published PDF.",
+      "Title capitalization, accents, and inclusion of a middle initial are not counted as substantive errors."
+    ]
+  },
+  "references": [
+    {
+      "number": 10,
+      "title": "Exploiting Lower Precision Arithmetic in Solving Symmetric Positive Definite Linear Systems and Least Squares Problems",
+      "authors": [
+        "Nicholas J. Higham",
+        "Srikara Pranesh"
+      ],
+      "year": 2021,
+      "venue": "SIAM Journal on Scientific Computing",
+      "volume": "43",
+      "issue": "1",
+      "pages": "A258–A277",
+      "id": "10.1137/19M1298263",
+      "status": "verified",
+      "primary_urls": [
+        "https://epubs.siam.org/doi/10.1137/19M1298263"
+      ],
+      "evidence": [
+        "Publisher gives matching title, two authors in this order, volume 43 issue 1, pages A258–A277; published online 19 January 2021.",
+        "Abstract describes low-precision Cholesky factors as preconditioners in GMRES iterative refinement, diagonal shifts/scaling, and extension to well-conditioned least squares through normal equations."
+      ],
+      "manuscript_use": "Related-work paragraph lines 454–456 cites conditioning, roundoff and precision allocation.",
+      "support_assessment": "Appropriate numerical-linear-algebra background.",
+      "boundary": "Does not establish this manuscript’s neural-model gradient/update discrepancies or FP32/FP64 stage-factorial results.",
+      "issues": []
+    },
+    {
+      "number": 11,
+      "title": "Differentiating Through Linear Solvers",
+      "authors_arxiv_metadata": [
+        "Paul Hovland",
+        "Jan Hückelheim"
+      ],
+      "authors_pdf_and_html": [
+        "Jan Hückelheim",
+        "Paul Hovland"
+      ],
+      "equal_contribution": true,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "id": "2404.17039",
+      "versions_checked": [
+        "v1: 25 April 2024",
+        "v2: 6 May 2024"
+      ],
+      "status": "verified_with_source_metadata_conflict",
+      "primary_urls": [
+        "https://arxiv.org/abs/2404.17039v1",
+        "https://arxiv.org/abs/2404.17039v2",
+        "https://arxiv.org/pdf/2404.17039v1",
+        "https://arxiv.org/pdf/2404.17039v2",
+        "https://arxiv.org/html/2404.17039v1",
+        "https://arxiv.org/html/2404.17039v2"
+      ],
+      "evidence": [
+        "Both arXiv abstract records list Paul Hovland then Jan Hückelheim; both PDFs and HTML bodies list Jan then Paul with equal contribution. The manuscript follows the abstract record, so its order cannot fairly be called a confirmed error.",
+        "The v1 PDF contains an ICML 2023 / PMLR 202 template footer, removed in v2. It is not evidence of publication in those proceedings; the cited arXiv 2024 status is appropriate.",
+        "Studies low-level differentiation through GMRES, TFQMR and BiCGStab versus equation-level differentiation on 65 SuiteSparse matrices; primarily forward mode."
+      ],
+      "manuscript_use": "Line 95 supports the warning that forward agreement does not establish derivative agreement; lines 464–465 explicitly describe implementation-versus-equation differentiation, primarily forward mode.",
+      "support_assessment": "Accurate description in related work; valid conceptual precedent for separating solution and derivative accuracy.",
+      "boundary": "Not an experiment on FP32 versus FP64 Cholesky stages, restored Adam/AdamW updates, or long-horizon learned-ridge training. Treating it as direct evidence for those details would overextend it.",
+      "issues": [
+        "Source-internal author order discrepancy. Recommend a version-specific link or note if exact author order needs resolution; do not penalize the manuscript solely for following arXiv metadata."
+      ]
+    },
+    {
+      "number": 12,
+      "title": "A taxonomy of automatic differentiation pitfalls",
+      "authors": [
+        "Jan Hückelheim",
+        "Harshitha Menon",
+        "William Moses",
+        "Bruce Christianson",
+        "Paul Hovland",
+        "Laurent Hascoët"
+      ],
+      "year": 2024,
+      "venue": "WIREs Data Mining and Knowledge Discovery",
+      "volume": "14",
+      "issue": "6",
+      "article": "e1555",
+      "id": "10.1002/widm.1555",
+      "status": "verified",
+      "primary_urls": [
+        "https://wires.onlinelibrary.wiley.com/doi/10.1002/widm.1555"
+      ],
+      "evidence": [
+        "Publisher lists these six authors in this order, first publication 2 September 2024, issue November/December 2024, 14(6):e1555.",
+        "Categorizes pitfalls involving functions, abstraction and operator precision, including linear solvers, discretization, fixed-point loops and floating-point effects."
+      ],
+      "manuscript_use": "Lines 462–464 cite numerical AD pitfalls, including incompletely converged iterative solvers.",
+      "support_assessment": "Relevant and supported.",
+      "boundary": "A taxonomy with examples is not a universal theorem that AD gradients are unreliable, and it does not measure this manuscript’s actual optimizer updates.",
+      "issues": []
+    },
+    {
+      "number": 13,
+      "title": "Matrix Backpropagation for Deep Networks With Structured Layers",
+      "authors": [
+        "Catalin Ionescu",
+        "Orestis Vantzos",
+        "Cristian Sminchisescu"
+      ],
+      "year": 2015,
+      "venue": "Proceedings of the IEEE International Conference on Computer Vision (ICCV)",
+      "pages": "2965–2973",
+      "status": "verified",
+      "primary_urls": [
+        "https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.html",
+        "https://openaccess.thecvf.com/ICCV2015.py"
+      ],
+      "evidence": [
+        "CVF official paper page explicitly matches title, ordered authors, conference year and pages 2965–2973.",
+        "Develops matrix backpropagation for global structured operations, with second-order pooling and normalized-cut segmentation experiments.",
+        "arXiv 1509.07838 is an extended version with a different title; that title difference does not make the cited ICCV record wrong."
+      ],
+      "manuscript_use": "Lines 445–447 group it with structured linear-algebra layers embedded in end-to-end learning.",
+      "support_assessment": "Appropriate historical background for differentiable matrix computations.",
+      "boundary": "Does not by itself support specific Gram-solver precision-placement or optimizer-equivalence claims.",
+      "issues": []
+    },
+    {
+      "number": 14,
+      "title": "A Study of BFLOAT16 for Deep Learning Training",
+      "authors": [
+        "Dhiraj Kalamkar",
+        "Dheevatsa Mudigere",
+        "Naveen Mellempudi",
+        "Dipankar Das",
+        "Kunal Banerjee",
+        "Sasikanth Avancha",
+        "Dharma Teja Vooturi",
+        "Nataraj Jammalamadaka",
+        "Jianyu Huang",
+        "Hector Yuen",
+        "Jiyan Yang",
+        "Jongsoo Park",
+        "Alexander Heinecke",
+        "Evangelos Georganas",
+        "Sudarshan Srinivasan",
+        "Abhisek Kundu",
+        "Misha Smelyanskiy",
+        "Bharat Kaul",
+        "Pradeep Dubey"
+      ],
+      "year": 2019,
+      "venue": "arXiv preprint",
+      "id": "1905.12322",
+      "status": "verified",
+      "primary_urls": [
+        "https://arxiv.org/abs/1905.12322",
+        "https://arxiv.org/html/1905.12322v3"
+      ],
+      "evidence": [
+        "arXiv v1 29 May 2019, latest v3 13 June 2019; title, all 19 authors and order match, apart from manuscript inclusion of D. as the first author’s middle initial. This name variant is not a substantive discrepancy.",
+        "Studies BFLOAT16 tensors with FP32 accumulation/selected state across vision, language, GAN and recommendation workloads; broad comparable task results do not assert identical numerical trajectories."
+      ],
+      "manuscript_use": "Lines 457–458 group higher-precision accumulation, master weights, loss scaling and tensor assignment precedents.",
+      "support_assessment": "Supports mixed-precision tensor flow and accumulation background. The grouped sentence should not be read as saying each cited work advocates every listed technique.",
+      "boundary": "The BFLOAT16 paper emphasizes avoiding additional hyperparameter changes in its experiments; loss scaling in the grouped sentence is most directly associated with FP16 work such as Micikevicius. No citation mismatch established.",
+      "issues": []
+    },
+    {
+      "number": 15,
+      "title": "Training with Mixed-Precision Floating-Point Assignments",
+      "authors": [
+        "Wonyeol Lee",
+        "Rahul Sharma",
+        "Alex Aiken"
+      ],
+      "year": 2023,
+      "venue": "Transactions on Machine Learning Research",
+      "id": "OpenReview ZoXi7n54OB; arXiv 2301.13464",
+      "status": "verified",
+      "primary_urls": [
+        "https://arxiv.org/abs/2301.13464",
+        "https://wonyeol.github.io/papers/2023-tmlr.pdf",
+        "https://github.com/wonyeol/mixed-prec-train",
+        "https://openreview.net/forum?id=ZoXi7n54OB"
+      ],
+      "access_notes": "OpenReview forum/PDF access returned browser challenge. arXiv says Published in TMLR; author-hosted final PDF says Published in Transactions on Machine Learning Research (06/2023) and gives the identical OpenReview ID.",
+      "evidence": [
+        "Ordered three authors and title match.",
+        "Studies tensor-level precision assignments and memory/accuracy tradeoffs for CNN training on CIFAR-10, CIFAR-100 and ImageNet."
+      ],
+      "manuscript_use": "Lines 457–458 cite tensor-level precision assignments.",
+      "support_assessment": "Directly appropriate.",
+      "boundary": "Not a direct prior test of Gram-stage Cholesky precision and matched restored adaptive-optimizer updates.",
+      "issues": []
+    },
+    {
+      "number": 16,
+      "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+      "authors": [
+        "Bethany Lusch",
+        "J. Nathan Kutz",
+        "Steven L. Brunton"
+      ],
+      "year": 2018,
+      "venue": "Nature Communications",
+      "volume": "9",
+      "article": "4950",
+      "id": "10.1038/s41467-018-07210-0",
+      "status": "verified",
+      "primary_urls": [
+        "https://doi.org/10.1038/s41467-018-07210-0",
+        "https://www.nature.com/articles/s41467-018-07210-0",
+        "https://arxiv.org/abs/1712.09707"
+      ],
+      "access_notes": "Direct Nature URL encountered an identity-provider redirect; publisher content retrieved through DOI search result and matched to primary arXiv record.",
+      "evidence": [
+        "Publisher record gives matching title, ordered authors, 9:4950, published 23 November 2018.",
+        "Uses modified autoencoders and an auxiliary network to learn Koopman eigenfunction representations including systems with continuous spectra."
+      ],
+      "manuscript_use": "Lines 450–452 cite finite-dimensional Koopman approximations and learned dynamical representations.",
+      "support_assessment": "Appropriate architectural/intellectual background.",
+      "boundary": "This citation is not evidence for numerical precision-induced training inequivalence; the manuscript uses it as representation background.",
+      "issues": []
+    },
+    {
+      "number": 17,
+      "title": "Pointer Sentinel Mixture Models",
+      "authors": [
+        "Stephen Merity",
+        "Caiming Xiong",
+        "James Bradbury",
+        "Richard Socher"
+      ],
+      "year": 2016,
+      "venue": "arXiv preprint",
+      "id": "1609.07843",
+      "status": "verified",
+      "primary_urls": [
+        "https://arxiv.org/abs/1609.07843"
+      ],
+      "evidence": [
+        "arXiv v1 submitted 26 September 2016, with matching title and four authors in this order.",
+        "Introduces pointer-sentinel language modeling and the WikiText corpus."
+      ],
+      "manuscript_use": "Line 1017 attributes WikiText-2; manuscript explicitly says its 1,000 held-out records come from the filtered training split, not official validation.",
+      "support_assessment": "Appropriate dataset attribution.",
+      "boundary": "Citing the 2016 preprint is valid; it does not validate the manuscript’s custom split or imply benchmark-comparable official validation scores.",
+      "issues": []
+    },
+    {
+      "number": 18,
+      "title": "Mixed Precision Training",
+      "authors": [
+        "Paulius Micikevicius",
+        "Sharan Narang",
+        "Jonah Alben",
+        "Gregory Diamos",
+        "Erich Elsen",
+        "David Garcia",
+        "Boris Ginsburg",
+        "Michael Houston",
+        "Oleksii Kuchaiev",
+        "Ganesh Venkatesh",
+        "Hao Wu"
+      ],
+      "year": 2018,
+      "venue": "International Conference on Learning Representations",
+      "id": "OpenReview r1gs9JgRZ; arXiv 1710.03740",
+      "status": "verified",
+      "primary_urls": [
+        "https://arxiv.org/abs/1710.03740",
+        "https://openreview.net/forum?id=r1gs9JgRZ"
+      ],
+      "access_notes": "OpenReview forum/PDF returned browser challenge. arXiv comments explicitly say Published as a conference paper at ICLR 2018; v3 dated 15 February 2018.",
+      "evidence": [
+        "Title and all 11 ordered authors match.",
+        "Uses half-precision training tensors, a single-precision master copy of weights and loss scaling; validates multiple network families."
+      ],
+      "manuscript_use": "Lines 457–458 cite mixed-precision accumulation/master weights/loss scaling.",
+      "support_assessment": "Directly supports the master-weight and loss-scaling background.",
+      "boundary": "Matching task accuracy under mixed precision does not assert exact gradients, updates or trajectories; do not read it as conflicting with the present paper merely because it reports comparable final accuracy.",
+      "issues": []
+    },
+    {
+      "number": 19,
+      "title": "Differentiation of the Cholesky decomposition",
+      "authors": [
+        "Iain Murray"
+      ],
+      "year": 2016,
+      "venue": "arXiv preprint",
+      "id": "1602.07527",
+      "status": "verified",
+      "primary_urls": [
+        "https://arxiv.org/abs/1602.07527"
+      ],
+      "evidence": [
+        "arXiv v1 submitted 24 February 2016; matching title and sole author.",
+        "Derives symbolic and algorithmic Cholesky differentiation rules, with blocked algorithms based on LAPACK DPOTRF and BLAS matrix operations."
+      ],
+      "manuscript_use": "Line 464 says Murray derives Cholesky differentiation rules.",
+      "support_assessment": "Precise and directly supported.",
+      "boundary": "Derivative formula correctness does not certify numerical stability for every input or neural-training equivalence across precision routes.",
+      "issues": []
+    }
+  ]
+}

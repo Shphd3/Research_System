@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-29T16:32:35.936952+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-rrcqh",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11413,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_a15_27_meeting_domain_members_20261030",
+      "title_cn": "10月31日组会：A22领域区分成员冻结16+16及五项离线统计",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/freeze.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1981,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/source_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 36397,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/artifact_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6740,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/analysis/results.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11578,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/analysis/audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 210832,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/analysis/unit_decoder_geometry.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 757931,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/analysis/natural_selected_positions.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 361793,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/tables/master_members.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 10394,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/tables/real_token_examples.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 191713,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/meeting_five_20261030/tables/context_effects.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 28165,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

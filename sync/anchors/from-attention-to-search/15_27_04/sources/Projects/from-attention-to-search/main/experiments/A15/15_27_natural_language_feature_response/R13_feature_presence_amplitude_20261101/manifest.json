@@ -1,0 +1,186 @@
+{
+  "run_id": "R13_feature_presence_amplitude_20261101",
+  "parent_anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_04_domain_member_atlas_anchor.md",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101",
+  "scope": "approved existing-cache linear-readout/statistical analysis;no new dictionary/LMtraining;no new conversation",
+  "assets": {
+    "time_utc": "2026-11-01T02:38:55.555228+00:00",
+    "status": "PASS_CACHE_INTERFACE_AND_HASH_BINDINGS",
+    "model": "Qwen3-0.6B-Base official cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "dictionary": "A22 09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "z": "14joint residualpost layers1,3,...27;TRAINcenteredRMS;originalgate",
+    "decoder_h": "block27 residualpost prefinalnorm rawmodel units;TRAINRMS374.3495121024576",
+    "weight_hashes": "producer R11 checks verified full current files then;this cache round does not load base/CC weights",
+    "Dense_application": "NOT_APPLICABLE;no Dense model used",
+    "numeric_H_before_protocol": false,
+    "input_sha256": {
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_059.npz": "b64585977c4c05e48feee3ce465ae43b4526f40b3bf0e341dc8f1bed12271c82",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_015.npz": "c415936028e4ebde24cde594dc01ed0bab6cf998f01bd24fdead28c3cf7c8013",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_032.npz": "648faca18628f34f77550e7dd38153d1b35dd94ae05fabcc2967387fc9e61273",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_002.npz": "ae2264912e0e6fcf27066af355cf2942ef03ba9046fc54fc6be7570e626db0a4",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_057.npz": "0e978dd1ce3950cf09db61b77a8478302b2a9f7a8c4f96aec10ab27ad868698b",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_029.npz": "21759c99c99ecf66ad21e11352c1f2f30947dd23ec5391f56409b2be87e8d370",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_049.npz": "817e94b91f92a6f1068be724381c706624cd0372f246fd8923630409a61dead9",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_005.npz": "2b3a80f66548137a58e5e32b47c5344ff4854d2ae5f29f793a3c1469889cf598",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_205.npz": "27709f58e020002594fdcb93090b13075631b48993e448cdbc82a7a7b4e939ac",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_157.npz": "d395e8770054d8f28d98cd3430540b47284c061bd9a3b7561cf3be65a288376c",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_165.npz": "b1bc0344b0b6c1bce7e30e16fd6c41c09af0dff92539feea03e009dd3433762c",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_192.npz": "d7433aca0e8ec6ab4e58bf83d4bfbe4124f451c32a822e827a133e31873d7c0b",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_190.npz": "670f3da652f7e8e4762244f49871b6dd582806d8704421653c44c830b85783ad",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_156.npz": "0b4714062d651223613735025549572ba0b80e019961216b16b3239f5d89cd1e",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_181.npz": "c1cfbf629f80b6fe20da3d7f5438662699678acc4e9af02d464cd71574891488",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_202.npz": "d5049e4f920513773c6b3bbbe7aee8499a0ce67d50dd194cfe66eb15b1b1ae4b",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_016.npz": "a59f04ef4219c79622e346b743d5a4788f4f0175246c0e81a83163d8c6231a62",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_042.npz": "7a68b11c3edf29681bd2af4e068c9b8e0acbed6d8f609cea5638d24fb06a56bb",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_048.npz": "031db5bfd06e59761b18281022b94114a49f1678653e973a1838f2a189538944",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_026.npz": "04e48ebb6963e2cc11551b620a4f498972c38c6a5f1828cd3d8c883c3ba61389",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_011.npz": "1f79a2db5940c870adecc3fb09582e4629b72eb9ebfb15e93fbd824e8e9f1c9d",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_018.npz": "8e9f7cbe11da456f37a9f7894220d42440851af500f72aa7268d6cad76a266b5",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_037.npz": "f9b0906f8f1dd6bf8bec0d7a8581f8b0edab1f38e7a07eef4c48508eb57882d2",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_023.npz": "05de0d2667b78dee70fbb3f38200df8000d8b609914fa3c461338ab4c6544439",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_153.npz": "faed7d179385000127f7b2ad4150e7f28e5a453d0081ff13bab07b954128706f",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_195.npz": "977efe44d44d9452d504ae10f892024ca1d35b476fb64a7757e72ca8a1200b37",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_198.npz": "414ae49c44e6a11521a882693e0ff27ee91262fe9c1b0bce2e85e1f2fc7bee2f",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_184.npz": "45cc83236143ca1c4fcbf0b2a4dd8a2e4a5b2b28a214ef497f04584745658bd8",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_162.npz": "d9885500cf71e7a9e3680fe65c63b83a3ece7f2e0b942fc3bee5cf871d058ee4",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_197.npz": "6719f11f0fb665b564c728528ac6ef048fdd4020f4ed7c916d3872e42115d53a",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_186.npz": "6ad5823c7f70152e13e7cfb6cfdf574bb71fe974aa256850a85aad12b799ab7c",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV/R11_A02_174.npz": "ec21cbc29eb0a05ea395b1d362931a8ebfd9f235ab40b90212be385cd8c9cb46",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/data/selected_metadata.jsonl": "37d895897f76e5b85d4d8cf5576396ee115af1906b0a16a5b6892d0141252146",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/data/H_label_review.json": "7e6bf24cd524f79eeef5935cafb182ba6adcee8d98fa77b8a13ed871ed7107f6",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/data/fitted_document_ids.csv": "699351f863dbc9d6f82b571bcd7412593e8bb6131c32f01924357d2735719113",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/models/frozen.pkl": "44d53f4af515266f0389a8a2e8cd0e0165d735f372756ded45e02eb54e29bb76",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/analysis/bases.npz": "1764920546d3a3c4c6c27128b5a031bfefbfa7020c386cfb15148015b02e4dc5",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/analysis/decoder_and_scale.npz": "ea30020044c34682072f2a2395dfc050a5c7b103edd7fdf9a93e6afdd4c4c244",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R10_domain_member_atlas_20261030/tables/all_dictionary_screen.csv": "2a629b74c3ef25eb878ac96c096f1996bb29af2dc335cdfa34b394f49f604074",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/data/manifest.json": "c7d6abb9ad79ca2e732cdeeb3966812ffac4d4f90d54e7a11dc2757092f781c2",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/qualification.json": "e8eafeda5381cf22702ecb49459ed510403025057c8bbbf6a5293dfd8c094e9f",
+      "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/forward/DV_runtime.json": "dae29455e29de5a9d415425b2377c0505d9513cdfdbfa60b6075bdcc8a33c6e4"
+    },
+    "tasks": [
+      {
+        "task": "coarse",
+        "D": 16,
+        "V": 8,
+        "H": 37,
+        "D_positive_document_counts_by_frequency_low_mid_high": [
+          3,
+          45,
+          448
+        ],
+        "equal_member_count_k": 3,
+        "rule": "D-only>=3positive documents;reference>=20;k=min(32,nlow,nmid,floor(nhigh/2),floor((nlow+nmid)/3));fixed label-blind hash order;ML base balanced as possible;ML reserve from remaining union",
+        "H_numerical_accessed": false
+      },
+      {
+        "task": "math_fine",
+        "D": 16,
+        "V": 8,
+        "H": 17,
+        "D_positive_document_counts_by_frequency_low_mid_high": [
+          4,
+          54,
+          472
+        ],
+        "equal_member_count_k": 4,
+        "rule": "D-only>=3positive documents;reference>=20;k=min(32,nlow,nmid,floor(nhigh/2),floor((nlow+nmid)/3));fixed label-blind hash order;ML base balanced as possible;ML reserve from remaining union",
+        "H_numerical_accessed": false
+      },
+      {
+        "task": "bio_fine",
+        "D": 16,
+        "V": 8,
+        "H": 18,
+        "D_positive_document_counts_by_frequency_low_mid_high": [
+          10,
+          42,
+          397
+        ],
+        "equal_member_count_k": 10,
+        "rule": "D-only>=3positive documents;reference>=20;k=min(32,nlow,nmid,floor(nhigh/2),floor((nlow+nmid)/3));fixed label-blind hash order;ML base balanced as possible;ML reserve from remaining union",
+        "H_numerical_accessed": false
+      }
+    ],
+    "new_forwards": 0,
+    "GPU_usage": 0,
+    "native_gate_norm": "sum_l normalized_decoder_layer_L2norm;verified crosscoder/model.py164-169",
+    "preliminary_allocation_note": "Initial inventory allocation was diagnostic,not frozen selection;final reserve rule fixed before protocol and before any R13 readout"
+  },
+  "config": {
+    "seed_primary": 1101,
+    "seeds_sensitivity": [
+      1101,
+      1102,
+      1103,
+      1104,
+      1105,
+      1106,
+      1107,
+      1108,
+      1109,
+      1110
+    ],
+    "tasks": [
+      "coarse",
+      "math_fine",
+      "bio_fine"
+    ],
+    "C_grid": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "regularization": "L2 logistic regression,lbfgs,balanced class weights,intercept unpenalized,tol1e-10,maxiter10000",
+    "tuning": "development empirical logloss minimum,tie devBA maximum,then smallerC",
+    "D_V_per_class": [
+      8,
+      4
+    ],
+    "target_token_id": 279,
+    "position": "R12 exact last279in96..191;one position per document",
+    "support_min_D_docs": 3,
+    "positive_std_floor": 1e-08,
+    "column_std_floor": 1e-08,
+    "reference_positions": 65536,
+    "reference_min_hits": 20,
+    "reference_rate_cuts": [
+      0.002593994140625,
+      0.0134429931640625
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 11101,
+    "primary_comparisons_per_task": [
+      "H_BA-H_B",
+      "joint-H_BA",
+      "joint-ML_B",
+      "joint-H_reserve",
+      "joint-ML_reserve"
+    ],
+    "multiplicity": "15primary BA contrasts;95%pointwise and99.6666667%simultaneous Bonferroni percentile intervals;logloss95%pointwise",
+    "feature_seed_robust_fraction": 0.8,
+    "equal_k": {
+      "coarse": 3,
+      "math_fine": 4,
+      "bio_fine": 10
+    },
+    "full_groups_secondary": true,
+    "H_previously_exposed": true,
+    "new_LM_forwards": 0,
+    "new_LM_dictionary_training": 0,
+    "GPU_usage": 0,
+    "CPU_threads": 2,
+    "CPU_wall_budget_seconds": 7200,
+    "decision_A": "amplitude incremental if simultaneousBA lower>0,logloss_gain_low95>0,and>=8/10seeds positiveBA;mainly amplitude additionally requires logloss amplitude fraction lower95>.5",
+    "decision_B": "task-specific unique bilateral complement only if both gains and both same-dimension contrasts simultaneousBA lower>0,loglossgain_low95>0,and>=8/10seeds positiveBA;otherwise no unique complement established",
+    "known_cases": [
+      "R11_A02_282",
+      "R11_A02_292",
+      "R11_A02_262",
+      "R11_A02_297",
+      "R11_A02_090"
+    ]
+  },
+  "scientific_acceptance": "Unknown",
+  "numeric_R13_H_seen_at_protocol_creation": false
+}

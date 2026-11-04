@@ -1,0 +1,61 @@
+# A–D补充：把使用差异、方向几何与实际贡献接起来
+
+本补充承接R09现成缓存和141个冻结成员，不改原候选、不改原Protocol。图B复用合格旧图；A、C、D及全字典背景另存。新增模型前向、训练、新PCA均为0。逐图正文见[图解](figures_cn.md)，本文件保留推理、公式、选择效应和核验来源。
+
+B、D及背景中的低／中／高频沿用主log发生率分组，两个分界为0.451726%和6.686506%；至少20次参考命中的支持门槛不变。分组定义和三种口径的敏感性见[Summary](summary_cn.md)，组名不能脱离边界理解。
+
+## 从直觉到可检查的比较
+
+我们的目的不是给每个频率段预先分派功能，而是识别三步能否连接：某成员在领域之间使用不同；其decoder朝向某谱段；该成员的实际使用变化是否在那一段组成了真实领域差异。
+
+| 要审视的直觉／假设 | 区分它与竞争解释的比较 | 已有观察与认识更新 | 仍未排除的解释 |
+|---|---|---|---|
+| 候选响应跟随领域，换结尾、措辞和家族也保持 | A在固定名单上比较发现／原留出、两结尾及两措辞 | 36名满足原使用复现规则；7名有逐单元区间反向证据；98名不足。不能用发现集排序代替复现 | 术语、主题、来源／框架与领域共变；逐项区间不是正式成员确认 |
+| 领域差异主要由罕见成员组成 | B汇总全字典，不只看Top候选；家族分解另问领域／个体 | 当前净贡献主要来自中高频；低频在目标处覆盖很少。高频可以通过强度差参与领域区分 | 目标词和当前文本面板选择效应；低频缺少机会不等于没有功能 |
+| 候选前偏只是整套字典普遍前偏 | C与全字典、同频率档、同频率档且发现集活跃的非候选对照 | 轻度前偏确实普遍，强集中稀少；候选平均更高，但中位数低于均值 | 按领域贡献筛选直接关联decoder对齐；频率档内仍未连续匹配 |
+| B与C并列就能说明哪个频率贡献哪个谱段 | D直接计算频率组×谱段的有符号内积 | 该连接需要实际激活差与方向同时参与；D显示第一谱段的中高频贡献最突出 | 描述性向量分解不能证明原模型沿这套字典执行功能 |
+
+最后一行是计算依赖检查，不把代数恒等式或数值闭合称为新经验发现。背景控制缩小一般几何解释，却没有消除候选选择效应；不能宣称“已排除所有decoder偏置”。
+
+## 两种不同的分母
+
+设真实数学减生物均值差为 \(\delta\)，成员激活差为 \(\Delta z_f\)，最后层decoder为 \(d_f\)，训练还原尺度为 \(s\)。成员贡献向量是 \(c_f=s\Delta z_f d_f\)。每种结尾／划分分别计算这些量。原始z包含零值；家族和措辞等权。
+
+C只研究单位方向：
+
+\[
+e_{f,b}=\sum_{j\in b}\langle d_f/\|d_f\|,u_j\rangle^2,
+\qquad \sum_b e_{f,b}=1.
+\]
+
+这里 \(u_j\) 是R07独立自然文本参考PCA的正交方向，\(b\)是连续64个PC的谱段。分母来自每个decoder自己的长度。没有乘z、还原尺度或特征值。16,384个decoder均非零；C与结尾无关，因此只画同一套几何图。
+
+D先在频率组内合成 \(v_g=\sum_{f\in g}c_f\)，再计算：
+
+\[
+J_{g,b}=\frac{\langle P_bv_g,P_b\delta\rangle}{\|\delta\|^2},
+\qquad
+J_{r,b}=\frac{\langle P_br,P_b\delta\rangle}{\|\delta\|^2}.
+\]
+
+\(P_b\)表示投影到该谱段，\(r=\delta-\sum_gv_g\)。所有格子的共同分母是完整真实差异的平方长度；不能把各谱段分别归一到100%。每频率行之和等于B的净贡献，每列含残差之和等于真实差异在该段的平方投影份额，全部格子含残差之和为1。负格保留。C行和为1与D全图和为1来自不同对象，不能混读。
+
+原图4对真实／重建合成向量分别计算 \(\|P_bv\|^2/\|\delta\|^2\)，其中 \(v\)依次取 \(\delta\)和 \(\widehat\delta\)。**两条曲线都除以真实差异的平方长度**，重建柱之和无需为1。D把分子换为与真实差异的内积，分母仍相同；两种分子一般不同，不能互相替代。任何合成向量的平方都需保留成员间交叉项。
+
+## 一个成员串起三种读数
+
+A与C的第1页展示同一批固定前24人：f516的PC1–64方向能量为81.49%，但原留出explanation激活差0.003670的区间为［−0.001261，0.008618］，使用复现证据仍不足。f424在PC1–64仅有6.97%，两结尾激活差却都保留偏生物方向且合并措辞区间排零，满足原复现规则。这是同页可见的对照：方向集中与使用偏向复现不等价。
+
+高频f13964的独立发生率为98.97%。原留出两域、两结尾中它都在100%的文本上出现，故其领域偏向来自激活强弱差，而非出现／不出现。example数学／生物均值为0.033092／0.044375；explanation为0.094827／0.102423。数学减生物均为负，沿真实差异的贡献却为正，因为decoder方向也决定向量贡献。
+
+它的单位decoder有89.28%能量在PC1–64，而高频f13473只有9.61%；后者仍复现偏数学使用。f13964的explanation贡献区间还跨零，尽管使用偏向区间排零。这个例子阻止把“常出现”“使用偏向复现”“朝向谱前”“贡献可靠”压缩为一个标签。[真实文本与反例](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/frequency_family/examples_cn.md) · [逐成员方向](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/background/tables/all_unit_decoder_band_energy.csv)
+
+残差也有两种读数：example的残差沿真实差异方向份额为27.21%，完整残差长度却是真实差异长度的53.68%。后者同时包含沿方向与侧向误差，因此不能用B／D的方向份额代替原图1的长度误差。D中残差分布跨越谱段，并非只在谱尾。
+
+## 本补充的完整性与审计
+
+A：141固定成员，6页，1,692行均值／差异／区间；500次家族重采样；原36人的门槛照用。原128候选分为36／7／85，另外13人全部不足。C：同顺序6页及一张完整图，16,384×16方向矩阵用于背景。B/D：全字典四频率组＋残差，两结尾分别呈现；发现、开发、原留出数表全部保留。背景：两种匹配池各1,000个随机集合，配额1低／62中／78高均有支持，不换成员补缺。
+
+科学辨识审计：三类读数分离；没有把频率当语义、把几何当功能、把相加闭合当发现。数据／统计审计：冻结名单和排序不变；家族为复现单位；旧留出暴露、点位区间和筛选效应明确；随机成员集合区间不伪称家族置信区间。实现审计：纯缓存；C不乘系数；D共同分母且保留负号。三层审计通过代表测量与表述可用，不授予科学关闭。
+
+主核验：[联合闭合](evidence/supplement_ABCD_20261029/analysis/joint_audit.json) · [独立C/D审计](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/analysis/independent_CD_audit.json) · [背景独立审计](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/background/analysis/independent_audit.json) · [A核验](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/figure_A/summary.json)。配置与代码：[A](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/figure_A/config.json)、[背景](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/background/config.json)、[D](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/joint_config.json)、[D计算](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/compute_joint.py)、[C/D绘图](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD_20261029/render_CD.py)。原始Protocol及主执行前快照保持原身份。

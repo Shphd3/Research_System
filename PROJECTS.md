@@ -13,12 +13,13 @@ workstream/status table here.
 | from-attention-to-search | Default active research project; existing lines keep their own priorities | [Research route](Projects/from-attention-to-search/main/roadmap.md) · [中文](Projects/from-attention-to-search/main/roadmap_cn.md) |
 | diffusion-language-models | Incubating research; consult source decisions before execution | [Literature audit](Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md) |
 | router-representation-coupling | Independent temporary router-gradient comparison; execution delegated | [Research route](Projects/router-representation-coupling/main/roadmap.md) · [中文](Projects/router-representation-coupling/main/roadmap_cn.md) |
-| decommon-router-training | Implementation surface | `Projects/decommon-router-training/` |
-| decommon-router-evaluation | Evaluation and engineering qualification | `Projects/decommon-router-evaluation/` |
+| decommon-router-training | Retained model/data/checkpoint helpers; old training retired | `Projects/decommon-router-training/` |
+| decommon-router-evaluation | Retained evaluation tools; legacy loader requires explicit adaptation | `Projects/decommon-router-evaluation/` |
 | kv_cache | Reference; only xyDeng is managed, never push main | `Projects/kv_cache/` |
-| academic_writing | Course delivery | `Projects/academic_writing/` |
 
 ## Reading And Access
+
+- [Research map reading copies](sync/research_maps/README_cn.md): the refreshed question hierarchy, new-work overview and selected result records. Derived navigation; scientific ownership stays in the project.
 
 - [Synchronized Anchor reading copies](sync/anchors/README_cn.md): selected questions, designs, results and dataset guides readable without the original project checkout. [Sync workflow](docs/anchor_sync_cn.md).
 

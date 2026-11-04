@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-01T03:23:14.755036+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-xqbrg",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 13695,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "representation_dense_checkpoint_spectral_dynamics_20261101",
+      "title_cn": "Dense12checkpoint固定自然位置与同the表征缓存",
+      "category": "representation_cache",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache_index.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 25989,
+          "ok": true,
+          "role": "exact_completed_cache_members",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_000500000000_ec9f98a7e19f/bridge_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 393344,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_000500000000_ec9f98a7e19f/geometry_layer0.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_000500000000_ec9f98a7e19f/geometry_layer3.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_000500000000_ec9f98a7e19f/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_001000000000_d720531e9363/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_003000000000_961e50532a72/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_005000000000_72894dddfc35/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_010000000000_4ac2e30683e0/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_015000000000_ca1e4641783a/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_017000000000_09ff22a269e9/bridge_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 393344,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_017000000000_09ff22a269e9/geometry_layer0.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_017000000000_09ff22a269e9/geometry_layer3.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_017000000000_09ff22a269e9/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_019000000000_ac777640edaa/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_021000000000_42596a0bcb76/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_022018691584_7d5b4199011c/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_031000000000_ff7063d593c0/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_033000000000_015ab5626708/bridge_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 393344,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_033000000000_015ab5626708/geometry_layer0.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_033000000000_015ab5626708/geometry_layer3.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/cache/token_033000000000_015ab5626708/geometry_layer7.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 268435584,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_dense_checkpoint_spectral_dynamics_20261101",
+      "title_cn": "Dense0.5B–33B完整有界谱动态分析",
+      "category": "analysis_output",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_statistics",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 374,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/checkpoint_statistics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4074,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/spectrum.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1223409,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/pair_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12222,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/subspace_distances.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 61646,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/sampling_reference_summary.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5582,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/readout_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17828,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/increment_contrasts.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7848,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/analysis/coverage_ledger.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1889,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/figures",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_figures",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/figures/figure1_spectra_scale_shape.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 300293,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/figures/figure2_subspace_drift.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 254221,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/figures/figure3_rotation_and_relations.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 257749,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/figures/figure4_semantic_timing.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 344494,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/audit/rotation_only_correction.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 10325,
+          "ok": true,
+          "role": "final_proper_rotation_check",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

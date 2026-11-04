@@ -4,7 +4,7 @@
 
 这是本地讨论阅读副本。唯一canonical owner仍是：
 
-`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry`
+`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_epoch1_expert_geometry`
 
 130个充分暴露expert、49个本轮有留出收益证据；不保证收敛。epoch1事后选择，EVAL已查看；参数/输出方向不证明语义分工。附加CPU替换检查13/20数值受限，未用于主收益标签。
 

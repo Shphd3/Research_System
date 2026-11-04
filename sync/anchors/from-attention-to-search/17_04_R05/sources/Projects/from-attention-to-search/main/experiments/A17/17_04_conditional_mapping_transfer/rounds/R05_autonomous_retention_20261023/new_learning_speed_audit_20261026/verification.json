@@ -1,0 +1,860 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-26T02:07:18.073291+00:00",
+  "existing_audit": "R05 a_stage_audit_cn section3 already reports endpoint and first new four-cell95 qualification for all7methods; this audit independently recalculates from per-item outputs and adds90/95/99/99.5sensitivity, consecutive checks, descriptive time and separateR06check",
+  "original_qualified_rule": "all4new command×panel cells>=95%; qualified_both not used because it includesold cells",
+  "question_count_each": 800,
+  "all21paired_orders_equal": true,
+  "same20newtargets_per_step": true,
+  "primary_endpoint": 1200,
+  "same_acquired_old_model": true,
+  "additional_criteria": "posthoc descriptive only, not original preregistered endpoints",
+  "sparse_eval_limit": "eightoriginal points; step2posthoc audit results wereallbelownewqualification and earlyhighaccuracy thresholds; no unmeasured crossingtime inferred",
+  "TEST_opened": false,
+  "new_forward": false,
+  "training": false,
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00001.json",
+      "sha256": "028f0fec0edf1d9eb8fbd04a2a83e87d4f9fd88ba4d0ad9eae54cb1b73c463aa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00016.json",
+      "sha256": "363c4ba21eb1440260f72c83d92c6d9c0217b2ddf80ca37675ee11d002cd15ae"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00050.json",
+      "sha256": "1652abc59d6fc688afe7f2d9582d6e2751a1f9fea9648c96753273e52dee628c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00120.json",
+      "sha256": "a584f5461d6a428444d444650217da593f7cf2d5c39fba9f67a7ec97019a52ae"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00240.json",
+      "sha256": "912763e0d2c193a6c6f3ab0b8a5d6eaff42ccbeecbf565c3e8b7eb13851efa21"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_00600.json",
+      "sha256": "15ebfe9c8bb3f5333a1cce2aff12db3f1e08360808daa1a0a4f23478e4ace532"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/eval_01200.json",
+      "sha256": "7f93259bde6037e668b3a48ef7a214ab2f867a1d216d1442136e6e3bc0003013"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/metrics.jsonl",
+      "sha256": "6395bb1edb7adfab70b4f4fe6f6c55355aa0adc12616d3bd514cf9dcbcf97e4a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/completion.json",
+      "sha256": "1a91caa5a1aab3292b5dbd157c0f493f5e160a28969a1ef387a4d36e0c9a455d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00001.json",
+      "sha256": "1de4dce691084a91f61458b00f9582213294cea327e38bc1a63236068053dde7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00016.json",
+      "sha256": "40e6526f072299a505a27c593afa1689f1aae1de8cfbc1fdf710f295bc4d9b9e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00050.json",
+      "sha256": "13737d0bf6c9d9fd8e3842832e23c9c5a172ef87bb9c0bc131441d33d048ed91"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00120.json",
+      "sha256": "4b6e2180ba9de7140ca3214ff7839e8725adeabdf9201fbc1fc88acb020a53c2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00240.json",
+      "sha256": "bcd0855e98527e36ef0fe00c3e73cd96ec16d5420ad476d9adec9722c0be7acd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_00600.json",
+      "sha256": "6b19087e0867b217f057a18f8a1086aea2d3bb6a045a8627be2fa514b13c8dc9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/eval_01200.json",
+      "sha256": "71f06dd4ece3081b296ca9c419ad53afe0ab6fc2cbc0bb0f16502d6d3312d326"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/metrics.jsonl",
+      "sha256": "3749d185080d4ca09a506b85e90701e11547cc1b36a970aaee8d3b4a5e3a2d33"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/UL/completion.json",
+      "sha256": "e98fdc49ec111741751d79e24aefc1ce8a212e901d08c4971394f4887acd2b91"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00001.json",
+      "sha256": "1de4dce691084a91f61458b00f9582213294cea327e38bc1a63236068053dde7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00016.json",
+      "sha256": "df23bdb8e64ed6f99e6319e90f18e9b61e6214c0a180966f00283b01122446ff"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00050.json",
+      "sha256": "f94c795797e192e0a1ee4808c87c759dbc1bdf702d91ba66fa1b6c0484120538"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00120.json",
+      "sha256": "3e99983a0fd973453053d8b9b466276f4d1c96b9f3dc0f23559318dd5d5a7cfb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00240.json",
+      "sha256": "cf839e39b80e50495ff90855e945224fdcb4f295131a37e24161d80590eeb1d0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_00600.json",
+      "sha256": "3719103c8f1a46174934a897145a1f24e225cb2d79ee42e91c8e857a63450f56"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/eval_01200.json",
+      "sha256": "fa7445ad0f033bea8114ac88d1c51957c73f392c7dcd7a5fda2d7fba1aef4237"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/metrics.jsonl",
+      "sha256": "e350ef8649a2e6ac20efdc8a48fec0e3f0d1ada0afe2f9d1d3f8f019734787c0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/US/completion.json",
+      "sha256": "b27e60f6bc0230195304a77d31693e594b74a947bc9d9d00ec6421dc6b3e0067"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00001.json",
+      "sha256": "ef45f91ca8f21991fa02583121cc40386b94ea6ea1b1ce9e0e50978f939f0fc1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00016.json",
+      "sha256": "0116e2b86d087f0aecd0482c22cc1b6d7b7caffe07a431a92f3e49b23789b6b7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00050.json",
+      "sha256": "70494bda32d85f5ad2fb9a4157aa764a7998c075e58cdd71188279df7a28f417"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00120.json",
+      "sha256": "7b840ca2603f7bf13d1bd21a5e89f0df27c6915c3eb3f5ac12cbd7cf896c5824"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00240.json",
+      "sha256": "6fee3a112ad137ac838828cb70774d94130555ea26a62584f31e22a007858544"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_00600.json",
+      "sha256": "a7f63eac20410b6b0150b9dea85c620ae0c45ebbabadaef44abcd91562db96e6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/eval_01200.json",
+      "sha256": "53163a721807181372d7d27de7fd84c02dca67b798329c74a330675c7dffa35f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/metrics.jsonl",
+      "sha256": "7ea519811fa2584af654e4932ea149526917de4ed9abaa04be70df13a7bc22c9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TC/completion.json",
+      "sha256": "6b4c1f5ace72ef0d15a16ea2d5addaea7a05c6faaf866a0070fca5fcb4b6db79"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00001.json",
+      "sha256": "ef45f91ca8f21991fa02583121cc40386b94ea6ea1b1ce9e0e50978f939f0fc1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00016.json",
+      "sha256": "b9d260ec89835d6857f642793ee3b3ef1ff1381d26fbf6538d239dfcdb6ad348"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00050.json",
+      "sha256": "263900e190bf0300668480a79ed3661d5117ed831ee168597fa9e39fd2004119"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00120.json",
+      "sha256": "7eb46f20b18c5f2c8565524f3bc9761c4ae96ac4ef4cf6409b4dfdee46571726"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00240.json",
+      "sha256": "e1813388b9b71ca78e796fbfad957d53c1f0006f8df7e18f8f40896640bcbe94"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_00600.json",
+      "sha256": "56d43e52377dcaf7460cbca387f0ba5289b3c2415ed4d56a85a7ae6bc2d17893"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/eval_01200.json",
+      "sha256": "27d3848c66b7ba268da276752d22db9cfb6b0829f99934e3a8a09db3299bd41a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/metrics.jsonl",
+      "sha256": "800cedbc8b327ffaf506e76fbdd2a98903f601f46437771f779b1fa1be0b92c1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/completion.json",
+      "sha256": "3b7992a6609a27ec3847cff845123577b2abb6dc12a8dc18bd4b4f74ceb4434e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00001.json",
+      "sha256": "58d55ec8167aedcf6c73ba5b5bcc1c484e33d78bb35b43a5c449c3ddeed1a050"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00016.json",
+      "sha256": "bb67b6ef4c9b7d008458d021bf85f8f885ea038bac7aacfd26dc15d7b2f305e7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00050.json",
+      "sha256": "19e244d148cee4786ea92c31aa505fb9cb6a10a792d8c05102f059fcd013f4b0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00120.json",
+      "sha256": "557df0c0378487618bb1f9deac66e4c9d711b3716caee20d8fd4dce366dbdafd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00240.json",
+      "sha256": "59c78d857489f44f2095168949eafb45e053bf446b48dbe3a630bd106bc0567d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_00600.json",
+      "sha256": "4ceb351f0d83be2faf2e2ae7c72126c71e5cf45559fd195d8f872c3ef134167e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/eval_01200.json",
+      "sha256": "6b752cd2088b454183de5a37241e41b57d1fb6420186558fea20eb535705eb92"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/metrics.jsonl",
+      "sha256": "14c1370580c79256d8d2c26b5a4728e5eb1ac53c368f6142253322b9f265c10c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/RS/completion.json",
+      "sha256": "e9478545e36fcc08100a3ce0b038dc39b8dac856c3cd32862feabc1eeac2f661"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00001.json",
+      "sha256": "996bb057bdd8a2779d8a1d83bb9d44a68d3ab3e4581386a8d88929c932433991"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00016.json",
+      "sha256": "0eafc4690b871c1ed60fb134265e1932a6905ff82996298851615f2b7af51389"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00050.json",
+      "sha256": "daf312e21314415619dd2e3a739ba98daabd5ccb11ef1e68ca37e6b0f4511dff"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00120.json",
+      "sha256": "23802d3f378c5f22956761f6ba9cec2e7c3110526d79d8e66e469fef434cd04e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00240.json",
+      "sha256": "162fe19f329e2fd37b6e5a48f9700ea68f615f7a24ac596e063c0dd1c0d93b0c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_00600.json",
+      "sha256": "3895488b46d10154e6dc798761428e24ed186be9a6fe4ffb753680c0afa9f2b4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/eval_01200.json",
+      "sha256": "0d797eda0e7d42ef32cc17c329a465beb795d4cb975bd5dd8b48c84388be1bb9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/metrics.jsonl",
+      "sha256": "788f41c5bc885ad2609f28414b50fdbeda35cb9b609b2e41046b6dc83e30d9d5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/LS/completion.json",
+      "sha256": "8c7c57b14fefe2b9a62f312f15ebac1d84d0a7ec140c826c3f0759a19dd9d351"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00001.json",
+      "sha256": "b84b0d1a6749e97ba4408bf0a2545282d9fdba973ff9f6aec13c2f8d3c444bed"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00016.json",
+      "sha256": "bf7782bd5cad4b933c36fc858e7bdaba0c5c5734826696d6b292b1a504fce08d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00050.json",
+      "sha256": "d03da91fba3767649d7a7689fd12683848974cb9e8be2ab15cec2c541ef0df64"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00120.json",
+      "sha256": "e99a44f222b9a154c5a4cb5ee275a8ba67101dad701e81aa1b5411ed61b36490"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00240.json",
+      "sha256": "f1ad0a3660e9683399318d495921189da76622e8acbb43b2a7fb7498fe7cb384"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_00600.json",
+      "sha256": "8da132d3170f0e4edcede356d48b591e9cfdfcb1c0c5e7de8f13deb8a2a669b6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/eval_01200.json",
+      "sha256": "2f4eec4067be026722b5d0c5cd5a3b9a5b12cd8a6b2577ac55b9ddabaeee9c41"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/metrics.jsonl",
+      "sha256": "d3130c1271179b9339038bfd76e3c8c6a028411742163b19df845fbf45c5e8aa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/U/completion.json",
+      "sha256": "81037c56d4e4990639516a7ab75233e4912438ce691a5d87910960014b8fdbf7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00001.json",
+      "sha256": "172c7e82fa1d6726520ae037363fdf1c7cc6326fe001afaba599c58fcaee6a07"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00016.json",
+      "sha256": "759e229666e1335007ce6041203db51cafe9caa818511cca6e99c7d477eaf1df"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00050.json",
+      "sha256": "10a100fbbdd58710b32b926e225054683a76068e6cecfd033d0713560bf2d508"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00120.json",
+      "sha256": "390130c679a0dbd1b188bae4c67adc11758ea0eec08d0d2fa81d129e835b49a8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00240.json",
+      "sha256": "410e7f6a56388d50790beafc8a3fe0f51b2cc0fd385f416ed50af263218f7be0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_00600.json",
+      "sha256": "a43846cd8e4851bb125c9a0dcd6fadbe43bb3a1ba94148465614912e36cf93ec"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/eval_01200.json",
+      "sha256": "49545a3091e672ff2f90715a9d90f7a224994e2464c54c00d332880d3f8735bd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/metrics.jsonl",
+      "sha256": "7ce5277ac84b821953322c008a05d96e6d6e6a70d6afd55d8ffe42f5983dc051"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/UL/completion.json",
+      "sha256": "6861775c0ef7d2d12f4c1b84439395493e420357aa52675328e36e9014b4d321"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00001.json",
+      "sha256": "172c7e82fa1d6726520ae037363fdf1c7cc6326fe001afaba599c58fcaee6a07"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00016.json",
+      "sha256": "c84e719aa2e20d93cc80f46118dcc74e5d596c76885ef5c9c50f0c83e6b5508b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00050.json",
+      "sha256": "a14b856f4b893ef92411a6f120e4ea6e57b28428da8a7acfeb25c2463f5fa4d7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00120.json",
+      "sha256": "d407263a6361abe5c36814f1b7abf77847586c5bb615544a2eb6be5afbc4c4f1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00240.json",
+      "sha256": "bc070b0d7de97519d5d92778ccf97dd17299fe727211fc570ee36bc9b5f2e2c2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_00600.json",
+      "sha256": "96763ef909b7dd7a05bafd9582163256820af939dfd293d6c0e16b4c5fe38e30"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/eval_01200.json",
+      "sha256": "8a54db7e2a99cfeac27d1664896e6016828ecbbfaee7eb7d612af910159f0358"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/metrics.jsonl",
+      "sha256": "fa2e80dbaefd356af1f2795bfbaa772361c08c2c649aa958c034367034060efa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/US/completion.json",
+      "sha256": "f44bf07531ca6ed5d4c3ecaabc14e053e60021a68f74c5d45c14e3d5bc580546"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00001.json",
+      "sha256": "bc77bda6f02b9e7d5b656bbb704997c3afbb1285c1e03654dcbb5a6cc7ab2bb3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00016.json",
+      "sha256": "19b9c0971df14de012a351d9c999c5a61993bb069a4ad589dc8dd018a473ca65"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00050.json",
+      "sha256": "4e6304e137d66b9d55f24a443b9e0cf9432a1dbcd2e80fe1dc646adb488f7fde"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00120.json",
+      "sha256": "221cb08d243b41aa6020d8cbbe032ab4aab974e3fd653d7bd51c1a0b66c4c84a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00240.json",
+      "sha256": "3d4f0935251c8248718359878a1d48977f570419aa35710d4848f778e50c0b5a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_00600.json",
+      "sha256": "97cb2fee53830e9c9c50dae870c9370e4007bc5235cebcc40be3b547dfa1647f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/eval_01200.json",
+      "sha256": "86fa6ef984b1d6a1ada0f511618b6fb9a70134a7d7810792787cf29cacc24127"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/metrics.jsonl",
+      "sha256": "55122593c9c88f0ad4ade6cf19bf6d3824c3a5e2b4800c4e34454630d3727ae4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TC/completion.json",
+      "sha256": "eff4383dac223c24ff86e627ca305c9eb12db6496d85b1423a0598e0506d24e2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00001.json",
+      "sha256": "bc77bda6f02b9e7d5b656bbb704997c3afbb1285c1e03654dcbb5a6cc7ab2bb3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00016.json",
+      "sha256": "2604089a0a521851f9b194ce6904a7eb9f4b65d051d86ebd2b9836d6b50a24f0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00050.json",
+      "sha256": "fdf8a23ba98ae0766c2cec484006bafefda538c63d42d7718495241356a1a83d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00120.json",
+      "sha256": "65d0913f5cd9ef8a158df536df221eb8459e173963ae7f6a6e227d478564327f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00240.json",
+      "sha256": "7cd1838ad0eb05a61d40c4f3251ba0f926ee321ca50b5c11231fad3f1b32f4b2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_00600.json",
+      "sha256": "7202ea13260b91536f449b5eeb8e5df29ebe572cf91c6edc6c969a05fad8370e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/eval_01200.json",
+      "sha256": "dda81d423440de1eb6ed45e4ce3bc8722cc0c9180c4846cccac8010236a9d8a7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/metrics.jsonl",
+      "sha256": "0f1a504e95bc5b5f496cb41ad559c5ce94f0feba3e5499a07356d2c1877388d4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/TS/completion.json",
+      "sha256": "26967c972546aa29d58e80d1e935c3a08614333af630919b59a979cb1cfcb972"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00001.json",
+      "sha256": "9a05a2672cbd935bd1279efae95120138a9405fc279f36e272f78ae91cd87a25"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00016.json",
+      "sha256": "7647b1254ad0c1c8ffc9df637c6e791dbe32362556af9736e1e5e1fc71048f42"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00050.json",
+      "sha256": "ab930fb23fba71929c36f2958b3c5a6fea498aa153eb012091e069505af64f1c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00120.json",
+      "sha256": "8fd0a2c9ebd9588442b96e7f2bb7530605c6b057a66fd48ad9c785c6509d68ad"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00240.json",
+      "sha256": "0a8e64042f7cb044da8255338bb1bcb1cc5514e86a2cd4c91b67063ce272eac6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_00600.json",
+      "sha256": "583014f2288a607410a189e02ce85473da335b9450a9c5bc87d93e2ef63c32bb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/eval_01200.json",
+      "sha256": "3e5748fcdab5887d258fe5fc3e532f9bf93e939eb11d206b9d51c861914bc3fc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/metrics.jsonl",
+      "sha256": "613f0c0201bbf09d0716eecc67fa20093655c7350283e4297e6cd17bd334610f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/RS/completion.json",
+      "sha256": "69ef4e53dd8b0e8d611b47a45b3da2d97d14380f96e05f2af8afb6e85900bf5f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00001.json",
+      "sha256": "56729bbde0f33eaefc354abb4f3f528423a8337858f4b6345449783223d3025b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00016.json",
+      "sha256": "527b29c14636eea69dbea0c9f42bdca032dccd7a5e89334ae68ea161f99f0027"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00050.json",
+      "sha256": "9ccc43543e8f9fa579f78e49d5c56509d6d6fc09c0ba05251dc535ea0b7ff2fd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00120.json",
+      "sha256": "81de9797618219f311deb04180b0afaf2050440d70ac734f89bd81803487c48c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00240.json",
+      "sha256": "5487f669d89c2bd0e35423575ac04e3dce4d62db0da6b878ec2d70bb933ec872"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_00600.json",
+      "sha256": "5aa503c362d1a7fbfaa0cd8ad98171aaf72e40575761aa61209e4ac6e2f82c3e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/eval_01200.json",
+      "sha256": "27bb93b29e7b9ca5f95b072a6a6d7be1655973a16df73e1e50dfeb823f561286"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/metrics.jsonl",
+      "sha256": "764d822107c083a941ab0bae904e3ed85ecbd677749e966a85c96448303c98e3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_43/LS/completion.json",
+      "sha256": "bb7e2a6656b1160d5fe3f3adb660c1f2eb1e63f0edcba43a21ecb46af7c8714c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00001.json",
+      "sha256": "bc9031d8c9ecae4f81c66e18624938e66cd18ae76551bfe04b68895b46267e15"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00016.json",
+      "sha256": "2e19464e2ed7ca44ee44a6b3f2a662ebd56374d433e4e655a1b2cb3c8747acf1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00050.json",
+      "sha256": "60159b0041761bfc0e0e6904514d96ee2ef75aebb9a83b8c67f17fe8ff4a4ec6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00120.json",
+      "sha256": "82751da63f36c60209e4fbb86210a273eb9509459087c9936fc72bdc01e10007"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00240.json",
+      "sha256": "1ac3d95ac846e4abaf91262a0a0ca35aa6f0bcec8344ddeb9eb931bfe6a59b7f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_00600.json",
+      "sha256": "b38f978b7aac00c8bff7bd02e8b21f7f77cfbce8588a097fa82f18604d1bd6cf"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/eval_01200.json",
+      "sha256": "cc168b0345d2b2496316420388cb7ca58441be80f2e2dc418b720dd55d85be0f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/metrics.jsonl",
+      "sha256": "ccc29d8c616e6f488243f953af7d5a9043352959d1cf11298aa3486482d0b8e8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/U/completion.json",
+      "sha256": "f0619b877f9cc74b66401cfa6a3eb696c29a4862e85e0065843ac5f4e57187dc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00001.json",
+      "sha256": "b1356b0c3371cf8f51d44b45fb8d63ed395089adad19fef4686b075e24ed2418"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00016.json",
+      "sha256": "7ccbfad17420fb8eb92309c67863368dbad7b1fd8f5ca759a33a23a77022fe14"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00050.json",
+      "sha256": "4be04bd7e71d3a987834a52bc9fe3e78a1c99a0af795ef0b4f85087c2ab75c64"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00120.json",
+      "sha256": "f347e095ff5ab2840f67c6d94790ad3c6826112162edf37132f430fcb070f5fc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00240.json",
+      "sha256": "3a3e8ddf814be06f5d1bfefe69fd42f42875729592e0cebeb1503eaca63c2236"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_00600.json",
+      "sha256": "d73ea5a8a1dc0e53573567b786d0d978e36945eddc30af8d6ec0ff6c864abe95"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/eval_01200.json",
+      "sha256": "0e76a649ab382e18200ffc3111348267b17d9894bcac6f9152c87dc2746716b1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/metrics.jsonl",
+      "sha256": "50124838495412d8c3e196d5ac7775cf71d8a02121d7124e066b6f031e028a20"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/UL/completion.json",
+      "sha256": "123233f272746cdc101ab0307aee237ba12600d7c93d298b62cc48a5ae301f8a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00001.json",
+      "sha256": "b1356b0c3371cf8f51d44b45fb8d63ed395089adad19fef4686b075e24ed2418"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00016.json",
+      "sha256": "8bb5a2324eb0e01519d9cd575a99ad6a696cff91666feaf41aee7d4bd121580d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00050.json",
+      "sha256": "d715fb472013f59b1e634d173d4848fe61166df3ab9150747296fd95e7a18ce1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00120.json",
+      "sha256": "24537f55d8a2d3bc35bc891aa35f23609b1ef756c7a84babfea7cf41e8ad4f00"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00240.json",
+      "sha256": "5a624d6ada4bf21e765f9120f503e55fa6dfe97ff16aa976606688aa00967273"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_00600.json",
+      "sha256": "16412c5ebdea10872f2fd2fa105fc5948fd3efd1f92e7aba2d04e90438f0914a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/eval_01200.json",
+      "sha256": "97b731f6397a24f263aa1ae5eeb859e8032ec372c7a301982f5a9aa40882010d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/metrics.jsonl",
+      "sha256": "24d07adceb5e00385911dfefa6b51ba3338df2ebb5ed04c759a7158565d04357"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/US/completion.json",
+      "sha256": "7b24c7a7448b0b73850b4b51f90d02df9937615f0015cb009ef34c3d9c7f3f93"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00001.json",
+      "sha256": "09a4fa7d67e3095cea86ca790376abee6367649b6ad916ad15e367f97258b16f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00016.json",
+      "sha256": "09dc57d918c4daf2a0a74cb171b1241c97bdfc0cab7bd2473f25e64df1f319f6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00050.json",
+      "sha256": "98ed3ae13be3e29246fe7726454124fb8763204618b79a0ab2028758a7ae1bca"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00120.json",
+      "sha256": "9e22fa4202ab691300450a3d3502213132c10a6ccf256de8f21f7bb9a63ff5e8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00240.json",
+      "sha256": "ab0e856a91995af422245d981aa8056c6d3560c2265f3f3f5af00682bc027d75"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_00600.json",
+      "sha256": "425c286a6942f0dca21ac60b7fd899131765f72fcc0482705169eae024ac0444"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/eval_01200.json",
+      "sha256": "4d2a5f45f5e4f237d6fa3513e2d5e2027e2e1bb327ef1a0b0ebda96c429b4fcc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/metrics.jsonl",
+      "sha256": "8dadcadbfee4749fedadca5c46f622f26992b04d2eec2eb1d1df45675bb72b95"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TC/completion.json",
+      "sha256": "8e3f37391f72b8413ad688b167e89ee801419621070e7e14db24e9aaee3cb859"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00001.json",
+      "sha256": "09a4fa7d67e3095cea86ca790376abee6367649b6ad916ad15e367f97258b16f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00016.json",
+      "sha256": "2355741ab2c98f5ce142a90b99445007b9cc5ce1f845aa049366d95f0de2d8c1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00050.json",
+      "sha256": "1977a58db5d8bf2186a00b6581d746fcd949ec690e359f030dd66863170cf06a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00120.json",
+      "sha256": "e0e8d88caae2ca614c4555448f450266fae6bbe9e5c9ba37b44a207dc09ca1bb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00240.json",
+      "sha256": "aa4bf73cc1ea391f8f15baeff3b4cbd0de937d48c48fa8e0145f17ef448f3a2a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_00600.json",
+      "sha256": "6d1a7c9ce9d8c1eb53509814f5e2cc20d96b532eff870a4a1747f530f19abba0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/eval_01200.json",
+      "sha256": "1ac260ec54d867115f0bb73c701d1e67314bb145fbd5389291d15200be04a368"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/metrics.jsonl",
+      "sha256": "c6e1bcf070e4cdb328a54ff2e580fa2bd01b5a1ab9e9e5a07c47b2b9727a934e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/TS/completion.json",
+      "sha256": "19d3f3a6ce53123ec04531d2a2c24e81ecc9965946b65b5aab92bfa510697a96"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00001.json",
+      "sha256": "62fcab127d733acea0aa1005a9670d00e27e4513daa439e0738269ddf022e899"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00016.json",
+      "sha256": "0863976c2235e7f6e12b37269fc4a620438a7474dc5e0875fc1eb8f80e1cba3d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00050.json",
+      "sha256": "6df38a1a25a236894dbf61b69b806692e1a3ca94df1433a2ad8f93417c3fa134"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00120.json",
+      "sha256": "c055d5f1a9999d6a5af51c245323506ca5f21be3128f4b0190f8ee1334fb6150"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00240.json",
+      "sha256": "4cc5578de46cade3ba00c36d8d2b014f6d43ed8e6192971e01c63f34f9bd70eb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_00600.json",
+      "sha256": "ba38ac2bdc6f55da2a457a231e76b13eb4fc093c6879551bbea2cc1e775fccbf"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/eval_01200.json",
+      "sha256": "541f2420b3692c3b59a8e914c1fbe751bef5030e513f840429069c78a47d320c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/metrics.jsonl",
+      "sha256": "45247eedebb4e9db7cdf1c75912aabf954d5a5cc9c25b5b132948ebf52f321a1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/RS/completion.json",
+      "sha256": "4ac155335c0bd50a14aaa896c7ec48e51848c4eb2e364ff21d4e18b850b5bdd8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00000.json",
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00001.json",
+      "sha256": "2c8fea104431635e86a5a6286c9479c345c39511b8d032057d7ea65a8a1f46ee"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00016.json",
+      "sha256": "9982e838cc6fa5a03d40cce7b1f1550f4efdf67447428a6497d747a74ced4db6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00050.json",
+      "sha256": "413ad906252bfce444367348c4f66fb151badc0d15a6fee22a7f57c7ced28ba0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00120.json",
+      "sha256": "14465e7af03b4cb66c3fcd32422b95a03ee18404dd966102c428830edfb49feb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00240.json",
+      "sha256": "16fa01226ca1bd413282d68e5ccdcb5990663fd35f3d47c91a5bd5fc0a53a5d3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_00600.json",
+      "sha256": "8cd57bae7d18e98e72d507c3ee0423e1525c70de5b81dc7da5e4ea732f911f98"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/eval_01200.json",
+      "sha256": "04ac6f19850c5ac6a34382272cd333cd2944653e3300c449dd5b0e66c9c8c983"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/metrics.jsonl",
+      "sha256": "9b85840f9faf9ff8b7bfab3654e041bf91d98b5ad63ecca605d72771dc3f701d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_71/LS/completion.json",
+      "sha256": "8d1b6697b25f4f6a628a4e48998da94f522e4926bdae57754f65260373014589"
+    }
+  ],
+  "config_sha256": "89b72bc43a63126a176d6dbd1f88a0a1e2cf105655797cb7b623bbf8c3b1d68c",
+  "script_sha256": "7f88f98e908f0a6829cdf9418a56858ffd5a8f5d0a17bcd8819a83a1942167e7"
+}

@@ -1,0 +1,34 @@
+module,state,ledger,evidence,fresh_fine_rows,scientific_result,missing_dependency
+ATTN_SAE/H1,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/results,192.0,证据不足；保留共同响应和实际成员变化,none
+ATTN_SAE/H2,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/results,192.0,ATTN整体反对正增量；MLPIN整体小正增量，但无答案条件反对，故跨措辞命题不支持,none
+ATTN_SAE/H3,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H3/results,192.0,两SAE均未支持同时胜过两种等预算纯频率组,none
+ATTN_SAE/H4,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H4/results,192.0,证据不足：验证支持／稀有置信界、目标覆盖与匹配配置分别存在实测限制,none for prescribed primary calculation; H4 valid matched control absent
+MLPIN_SAE/H1,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/results,192.0,证据不足；保留共同响应和实际成员变化,none
+MLPIN_SAE/H2,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H2/results,192.0,ATTN整体反对正增量；MLPIN整体小正增量，但无答案条件反对，故跨措辞命题不支持,none
+MLPIN_SAE/H3,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H3/results,192.0,两SAE均未支持同时胜过两种等预算纯频率组,none
+MLPIN_SAE/H4,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H4/results,192.0,证据不足：验证支持／稀有置信界、目标覆盖与匹配配置分别存在实测限制,none for prescribed primary calculation; H4 valid matched control absent
+CC_CORRECTED/H1,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results,192.0,证据不足；保留共同响应和实际成员变化,none
+CC_CORRECTED/H2,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H2/results,192.0,ATTN整体反对正增量；MLPIN整体小正增量，但无答案条件反对，故跨措辞命题不支持,none
+CC_CORRECTED/H3,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H3/results,192.0,两SAE均未支持同时胜过两种等预算纯频率组,none
+CC_CORRECTED/H4,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H4/results,192.0,证据不足：验证支持／稀有置信界、目标覆盖与匹配配置分别存在实测限制,none for prescribed primary calculation; H4 valid matched control absent
+ATTN_SAE/description_selection_Kcurve,ACTUALLY_RUN,DONE_EXPLORATORY,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/shared/config/optional_branches.json,,,none
+MLPIN_SAE/description_selection_Kcurve,ACTUALLY_RUN,DONE_EXPLORATORY,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/shared/config/optional_branches.json,,,none
+CC_CORRECTED/description_selection_Kcurve,NOT_APPLICABLE_WITH_MEASURED_GATE,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/shared/config/optional_branches.json,,,old h did not outperform selected smallset at required gate
+ATTN_SAE/H4_matched_configuration_estimate,NOT_APPLICABLE_WITH_MEASURED_GATE,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H4/results/random_match.csv,,,"20/20 attempts failed finite frozen matching pool; no valid control, no fabricated estimate"
+MLPIN_SAE/H4_matched_configuration_estimate,NOT_APPLICABLE_WITH_MEASURED_GATE,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H4/results/random_match.csv,,,"20/20 attempts failed finite frozen matching pool; no valid control, no fabricated estimate"
+original_coefficient_replay,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+notation_path_decomposition,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+same384_correctedold,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+fresh288_and_factor48,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+native2formats_controls,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+questionposition,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+precision24,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+H4source600SHA,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+H4v4rulecontrols20,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+H4fullrelabel7roots,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+H4enrichment48,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+fivefigures,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+direct_between_site_effects,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+all_metric_model_replay,ACTUALLY_RUN,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results,,,none
+causal_intervention_LM_SAE_CC_router_training,NOT_RUN_BY_PROTOCOL,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/protocol.md,,,outside authorized protocol; not needed for descriptive round
+ATTN_SAE/description_K64_random_gain,NOT_APPLICABLE_WITH_MEASURED_GATE,DONE_VALID,/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results/optional_K_matching_status.csv,,,0/20complete equal64 matchedmember sets; no mean-model contrast exists; selected64probe ran

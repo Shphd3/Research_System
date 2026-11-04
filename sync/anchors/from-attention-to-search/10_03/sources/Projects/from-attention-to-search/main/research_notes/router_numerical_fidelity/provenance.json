@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "purpose": "R00 source and synthetic calibration lineage; natural replay NOT_RUN",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261024_router_numerical_fidelity",
+  "scope": "AST-compiled routing statements; full MoE/model not executed",
+  "training": false,
+  "asset_inputs": [],
+  "device": "cpu",
+  "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "row_count": 60,
+  "sources": {
+    "clean": {
+      "path": "/data/250010109/Research_System/Projects/decommon-router-training/src/decommon_router/model/moe.py",
+      "sha256": "08f241fe7b37c422d4448d9e751bc9dbb7ed075ab9db0566bd6d74dcb70e59fe"
+    },
+    "original": {
+      "path": "/data/250010109/MoE_Router/src/model/qwen3_moe/myqwen.py",
+      "sha256": "728ae7fac3e34fd1a1ccb71c7d32bb28d968cb76118203d0fbda1b1015ae0a03"
+    }
+  },
+  "execution_files": {
+    "calibrate.py": {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_router_numerical_fidelity/calibrate.py",
+      "sha256": "b7c33ee8dd0312d8f41a0c1a7aa5c6d41cb0f2b43e3e8e13c58e96d10face477",
+      "bytes": 7229
+    },
+    "spec.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_router_numerical_fidelity/spec.json",
+      "sha256": "e96361377bc671785b8cbeb721d3fc601711c267cb8b1b401981de6aea33c101",
+      "bytes": 1063
+    },
+    "results.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_router_numerical_fidelity/results.json",
+      "sha256": "3e31059034719c99866046bd175a16478b6ce9b36da0765665c27a7b00db0bc0",
+      "bytes": 37473
+    },
+    "manifest.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_router_numerical_fidelity/manifest.json",
+      "sha256": "fc232879ba28e118244139fc310be513d49d40a1872476ea918f08d63a074ccf",
+      "bytes": 3851
+    }
+  },
+  "process_local_environment": {
+    "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"
+  },
+  "preserved_failure": "First attempt failed during torch.optim import (ONNX/protobuf generated descriptor incompatibility), before calibration outputs; same script succeeded with process-local protobuf implementation setting.",
+  "rule_sources": {
+    "AGENTS.md": "f587c24c24c9e7857ff2c96228af4e45afeddfc354b6467be36c5d0cf9437d77",
+    "PROJECTS.md": "c7680be7673e0600315274f95b34c3278a9be76c02babaa745361e6edf9dd341",
+    "Projects/from-attention-to-search/AGENTS.md": "6b58d0325ddf9debebc303286218970c3fa734f8f00b15e32ae647c0ef297f62",
+    "docs/skills.md": "fdc794f13e9aed1cc6ab9000a81d90d9cdc06c1ec85d62fc618bd63d797d024c",
+    "docs/report_writing.md": "5e440124f65342f43b02b3077671e07af37f085e9b78a81f983de23f020c18a6",
+    "docs/markdown_math.md": "1a3b0cfbb64d8c21b5398f0830e6947538486a9194fb538c3274448bc22424c4",
+    "docs/methodology/research_exploration_kernel.md": "09d75d40a2e0946d320da9dd9e2d95ed591e38b6c075c7e543a301da1578da4e",
+    "docs/training_reuse_index.md": "ff056dc92aa6c04ead8cc64e1cd826cd436199142e022c6c57a9125bddcfd60b",
+    "docs/training_observability_contract.md": "9a3c714406062c12abbfe740bf4f3d5f955cb4445c9b48479137f1b04c3aae77",
+    "docs/research_analysis_review_contract.md": "a17141256703230fb06dcc6302c1eb576f5772e8067e8250f693036ec53dfc8f",
+    "docs/project_access.md": "3d511793641dd909dd86ec14afd9e8f5a600e1874acc9a7534f4c83f73a4c616",
+    "assets/README.md": "485e5f974e4e6997ff944f3d35ee499cbbfc1e5ece9d8cf5a30773ceb14e31fd",
+    "docs/execution_envelope.md": "583cb3da998a4e48daac94cf383b91dbea5116eec70829a07513db89ff9717c0",
+    "docs/anchor_sync.md": "a95a803814b01962f0d4ec3b79f347e85e3d7ae241622c16880ba8f8984553c7"
+  },
+  "paper_source": {
+    "url": "https://jonbarron.info/softmaxfix/",
+    "html_sha256": "23f2332ce71ae225b3a48efb87a77a24067d7ce488b2720fe80b25af0d8e1f91",
+    "read_scope": "all eight sections, code, table, figure descriptions"
+  }
+}

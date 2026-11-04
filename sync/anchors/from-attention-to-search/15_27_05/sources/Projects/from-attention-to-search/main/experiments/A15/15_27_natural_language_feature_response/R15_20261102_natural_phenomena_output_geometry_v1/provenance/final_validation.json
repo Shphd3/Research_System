@@ -1,0 +1,74 @@
+{
+  "positions_checked": 76800,
+  "cache_norm_replay_max_abs": 0,
+  "discovery_only_PCA_mean_error_max": 0.0,
+  "validation_document_mean_reaggregation_error": 2.220446049250313e-16,
+  "actual_change_direct_vs_Gram_relative_max": 7.072791774530446e-16,
+  "matched_rows_checked_directly": [
+    {
+      "positive_row": 14358,
+      "negative_row": 14455,
+      "direct_centered_logit_RMS": 3.510052688793722,
+      "Gram_centered_logit_RMS": 3.510052688793722,
+      "actual_BF16_centered_logit_RMS": 3.510040283203125,
+      "BF16_vs_FP64_RMS_relative_difference": 3.5343032418331607e-06,
+      "relative_error": 0.0
+    },
+    {
+      "positive_row": 16775,
+      "negative_row": 16830,
+      "direct_centered_logit_RMS": 1.638098246206833,
+      "Gram_centered_logit_RMS": 1.6380982462068325,
+      "actual_BF16_centered_logit_RMS": 1.6381419897079468,
+      "BF16_vs_FP64_RMS_relative_difference": 2.6703832456654108e-05,
+      "relative_error": 4.2831257266090365e-16
+    },
+    {
+      "positive_row": 33983,
+      "negative_row": 33977,
+      "direct_centered_logit_RMS": 1.47195417198591,
+      "Gram_centered_logit_RMS": 1.4719541719859093,
+      "actual_BF16_centered_logit_RMS": 1.4719901084899902,
+      "BF16_vs_FP64_RMS_relative_difference": 2.4414146014120503e-05,
+      "relative_error": 7.072791774530446e-16
+    },
+    {
+      "positive_row": 37346,
+      "negative_row": 37337,
+      "direct_centered_logit_RMS": 0.8183597678795657,
+      "Gram_centered_logit_RMS": 0.8183597678795654,
+      "actual_BF16_centered_logit_RMS": 0.8184248805046082,
+      "BF16_vs_FP64_RMS_relative_difference": 7.956479240350491e-05,
+      "relative_error": 2.860229767376726e-16
+    },
+    {
+      "positive_row": 54701,
+      "negative_row": 54696,
+      "direct_centered_logit_RMS": 2.2058379662703436,
+      "Gram_centered_logit_RMS": 2.2058379662703436,
+      "actual_BF16_centered_logit_RMS": 2.2058866024017334,
+      "BF16_vs_FP64_RMS_relative_difference": 2.2048823228874233e-05,
+      "relative_error": 0.0
+    },
+    {
+      "positive_row": 72673,
+      "negative_row": 72681,
+      "direct_centered_logit_RMS": 1.6905980770479103,
+      "Gram_centered_logit_RMS": 1.6905980770479105,
+      "actual_BF16_centered_logit_RMS": 1.6906416416168213,
+      "BF16_vs_FP64_RMS_relative_difference": 2.5768732084931377e-05,
+      "relative_error": 1.3404132664166218e-16
+    }
+  ],
+  "original_frozen_input_changes": [],
+  "effective_label_version": "1.2",
+  "effective_labels_sha256": "24f171a2691ff2cd2f9c46418eb8b9450eaf538b9a155632f91f717c79ac9c78",
+  "validation_response_statistics_after_selection_freeze": true,
+  "dictionary_NMSE_mean_all_positions": 0.0683516709389843,
+  "decomposition_max_absolute_error": 4.656612873077393e-10,
+  "h_PCA_trace_sum": 151881.28792688524,
+  "y_PCA_trace_sum": 8419.630234306109,
+  "head_eigen_residual": 1.6833413979551856e-15,
+  "effective_labels_and_selection_hashes_match": true,
+  "pass": true
+}

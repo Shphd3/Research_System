@@ -1,0 +1,64 @@
+{
+  "source_files": [
+    {
+      "role": "endpoints",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/a_stage_audit_tables/endpoint_21.csv",
+      "sha256": "d484a80427395233e3165b182ee00ba36d8eee2f45915ec35da15392e75602ea"
+    },
+    {
+      "role": "C_coordinates",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/tables/C_coordinate_stability_48.csv",
+      "sha256": "21285352596ec6630e20cda12ced9c0da639c18cb519cb756024a172ec004b9b"
+    },
+    {
+      "role": "candidate_probe",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/tables/probe_pooled_2.csv",
+      "sha256": "b222b9564263e736fb72262642fc29f0fa741eb7f93e912301f32aaa4ec55dbf"
+    },
+    {
+      "role": "interventions",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/intervention_behavior_66.csv",
+      "sha256": "5340342623bd7976d3223b39bfdd1db923334ba87ac184c34566f521a1426dbd"
+    },
+    {
+      "role": "spectral_screen",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/saved_point_screen_54.csv",
+      "sha256": "1e0dc6b53a468ebe36fb3d7ea2a3f826e11a76a785db95c1c552ad427420d771"
+    },
+    {
+      "role": "intervention_geometry",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/intervention_geometry_264.csv",
+      "sha256": "a169ed55ca2c063ad6da4611d3ecd27115cd958ab9823555288930b19192a17b"
+    },
+    {
+      "role": "actual_rank_norm",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/actual_norm_rank_matches_120.csv",
+      "sha256": "b58beab3822feb076d3b950989776b23204744e68373a3d9561e60b5ea83d538"
+    },
+    {
+      "role": "fixed_old_input_outputs",
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/fixed_inputs_432.csv",
+      "sha256": "b0c489507bc43e4f3a9eca6c0d6fafb11c4c84f2a9faa1b4aa934c10342ae4b6"
+    }
+  ],
+  "selection": {
+    "primary_endpoint": 1200,
+    "figure1": "all3orders,U/TS;Cnet/C0andold/newaccuracy;fulloldscalepluszoom",
+    "figure2_and_table2": "revised user conclusions: TS, all3orders; original endpoint,target,andall5randoms;dose series remains in canonical results, not main presentation",
+    "backup": "TSall3orders,all9savedpoints;maxsigma1andmaxsubspacelossnot sumofsingularvalues",
+    "table1": "all7methods x3orders;failedgatesretained",
+    "candidate_probe": "read for boundary only: localprobabilitysensitivity doesnotidentifycross-taskreuse; notneeded asathirdmainfigure",
+    "random_aggregation": "table2meanandminmaxof5fixeddraws;figure2groupsexactcoordinateoverlapsandlabelsallRindices;noartificialpointjitter",
+    "uncertainty": "nopopulationerrorbars;threeordersshareoneacquiredparent;minmaxarenotconfidenceintervals",
+    "original_results_changed": false,
+    "new_training_or_forward": false
+  },
+  "font": {
+    "font_url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "bytes": 16437364,
+    "license": "SIL Open Font License1.1; original LICENSE retained execution-side",
+    "font_binary_in_research_git": false
+  },
+  "reproduce_source_sha256": "7af6c54ee7e4122a8bf5b6898299e412a30c89ae0e487c7f72c9ed05f2178992"
+}

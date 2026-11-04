@@ -1,0 +1,290 @@
+{
+  "audit_date_shanghai": "2026-10-21",
+  "agent": "/root/quality_refs_20_28",
+  "scope": "References 20–28: venue legitimacy/maturity, formal review, retraction/correction and concrete criticism searches, citation role. No experimental reproduction or anonymous identity search.",
+  "standards": [
+    "venue reputation != individual proof correctness",
+    "ordinary review criticism != established invalidation",
+    "preprint/workshop/new venue != predatory or unreliable by default",
+    "negative web search != exhaustive guarantee"
+  ],
+  "entries": [
+    {
+      "number": 20,
+      "title": "Scikit-learn: Machine Learning in Python",
+      "venue": "JMLR 12(85), 2011",
+      "formal_review_status": "正式同行评审期刊论文；软件轨道",
+      "venue_quality_assessment": "JMLR是成熟机器学习专业期刊；正式条目与作者/审稿指南可核验。软件来源引用适合其用途。",
+      "controversy_and_reliability": [
+        "未发现针对该2011软件论文核心内容的实质反驳或正式撤稿通知。",
+        "持续更新的软件会有版本差异和普通bug；这些不等同于2011论文不可靠。"
+      ],
+      "role_in_manuscript": "Appendix A的scikit-learn digits软件来源；数据原始出处另有第3条。",
+      "risk_recommendation": "常规保留；复现应绑定实际scikit-learn版本，不能让2011论文证明任一未来版本无bug。",
+      "primary_urls": [
+        "https://www.jmlr.org/papers/v12/pedregosa11a.html",
+        "https://www.jmlr.org/author-info.html",
+        "https://scikit-learn.org/"
+      ],
+      "actual_search_queries": [
+        "\"Scikit-learn: Machine Learning in Python\" retraction OR erratum OR criticism OR correction",
+        "\"Scikit-learn: Machine Learning in Python\" \"retracted\" OR \"erratum\""
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+    },
+    {
+      "number": 21,
+      "title": "Auto-Differentiating Linear Algebra",
+      "venue": "arXiv:1710.08717；早期4作者短版NIPS 2017 Autodiff Workshop poster",
+      "formal_review_status": "确认非归档workshop选拔；未确认五作者完整v5通过正式主会/期刊同行评审",
+      "venue_quality_assessment": "arXiv是预印本平台；官方workshop列poster，但其CFP明确extended abstract 2–4页、non-archival、no proceedings，不能标NeurIPS主会论文。",
+      "controversy_and_reliability": [
+        "未找到可核实的正式后续期刊/主会版本。",
+        "未发现具体已证实技术错误/正式撤稿；推导、实现和版本历史可查；未在本轮运行实现。"
+      ],
+      "role_in_manuscript": "引言和相关工作中可微Cholesky/LQ/eigen及端到端学习背景。",
+      "risk_recommendation": "列入证据等级较低但可正常引用的来源；重要数值结论最好与正式文献及可检查推导交叉核实，不因预印本身份判为不可靠。",
+      "primary_urls": [
+        "https://arxiv.org/abs/1710.08717",
+        "https://arxiv.org/html/1710.08717v5",
+        "https://autodiff-workshop.github.io/",
+        "https://openreview.net/pdf?id=ByGGxCeAZ"
+      ],
+      "actual_search_queries": [
+        "\"Auto-Differentiating Linear Algebra\" journal conference published",
+        "\"Auto-Differentiating Linear Algebra\" \"ICLR\" rejected",
+        "\"Auto-Differentiating Linear Algebra\" correction OR erratum OR retraction OR review",
+        "\"Auto-Differentiating Linear Algebra\" \"accepted\" OR \"rejected\" OR \"ICLR 2018\"",
+        "\"Auto-Differentiating Linear Algebra\" \"Workshop\"",
+        "\"Auto-Differentiating Linear Algebra\" reproduction criticism"
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。",
+      "workshop_source_detail": "官网poster名单与CFP；OpenReview论坛遇浏览器验证，未声称读到评审分数。当前v5为2019-08-14，新增Eric Meissner；2017短版4作者。"
+    },
+    {
+      "number": 22,
+      "title": "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?",
+      "venue": "ICCV 2021主会",
+      "formal_review_status": "正式同行评审会议论文",
+      "venue_quality_assessment": "IEEE/CVF正式主会；CVF论文、补充材料和作者代码可查。",
+      "controversy_and_reliability": [
+        "未发现针对本论文的实质性外部证伪/撤稿记录。",
+        "作者提供可微SVD不同方法代码，但本轮未复现实验。",
+        "正式CVF页码与IEEE/Crossref页码有登记差异，属于书目来源问题，不能据此否定科学内容。"
+      ],
+      "role_in_manuscript": "相关工作中固定SVD前向并改变反向提高稳定性的先例。",
+      "risk_recommendation": "常规可靠引用；具体性能和机制只在作者测试范围内成立。",
+      "primary_urls": [
+        "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+        "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf",
+        "https://github.com/KingJamesSong/DifferentiableSVD"
+      ],
+      "actual_search_queries": [
+        "\"Why Approximate Matrix Square Root Outperforms Accurate SVD\" correction OR erratum OR retraction OR criticism OR reproduction"
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+    },
+    {
+      "number": 23,
+      "title": "Echo: KV-Cache-Free Associative Recall with Spectral Koopman Operators",
+      "venue": "ACM Conference on AI and Agentic Systems (CAIS 2026)，首届",
+      "formal_review_status": "正式研究轨道；官网CFP规定双盲、review/rebuttal/decision；AE为另行流程",
+      "venue_quality_assessment": "合法ACM主办的新专业会议；首届缺乏长期质量记录。ACM出版与名校委员会不自动等同顶会或论文本身可靠。",
+      "controversy_and_reliability": [
+        "外部检索未发现已核实的撤稿、独立失败复现或专门技术反驳；搜索中的AI摘要聚合站未作为独立科学评论采信。",
+        "本轮直接读PDF发现内部理论表述冲突：p4主文声称SKA Jacobian由构造保证满秩、MLP谱核正交且奇异值均1；p22–23附录J.5–J.8将满秩限定为P≥r、Cv满秩、Aw可逆等条件，并明确无条件说法一般为假；谱块只在每个rho_i=1时正交。",
+        "以上为本次独立文本/数学审读，不是已发表外部证伪，也不证明实验数据造假。"
+      ],
+      "role_in_manuscript": "架构来源与Gram-ridge-Cholesky SKA定义；本稿使用简化受控SKA，不是完整Echo复现。",
+      "risk_recommendation": "需要重点限定：架构来源可引用；主文无条件梯度秩保持/范数保持保证不宜当既定事实。不能以该问题自动否定本稿独立测得的局部精度差异。",
+      "primary_urls": [
+        "https://www.caisconf.org/",
+        "https://www.caisconf.org/pages/cfp/",
+        "https://acm-cais26.hotcrp.com/",
+        "https://www.caisconf.org/pages/cfa/",
+        "https://www.caisconf.org/program/2026/papers/constant-memory-retrieval-via-koopman-operator-estimation-for-mamba-3/",
+        "https://arxiv.org/pdf/2605.06997",
+        "https://arxiv.org/html/2605.06997v1",
+        "https://doi.org/10.1145/3786335.3813146"
+      ],
+      "actual_search_queries": [
+        "\"Echo: KV-Cache-Free Associative Recall\" criticism OR retraction OR correction OR review",
+        "CAIS 2026 ACM conference artificial intelligence systems peer review first conference",
+        "\"Echo: KV-Cache-Free\" review OR criticism OR bug OR issue OR reproduction",
+        "\"Echo\" \"3813146\"",
+        "\"Echo\" \"Koopman\" \"Sridhar\" \"github\"",
+        "\"Echo: KV-Cache-Free Associative Recall\" \"retraction\""
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。",
+      "conference_details": {
+        "sponsor": "ACM，官网页脚与CFP；ACM新闻稿由ACM供稿EurekAlert可搜索，直接获取403。",
+        "first_edition": true,
+        "review_process": "Research 9 pages sigconf double-column + references/appendices；double-blind，COI，4月review与rebuttal；4月21决定。",
+        "acceptance_evidence": "HotCRP公开页为61/167。官网当前主页63research、accepted页60research+3operational talks口径不同；不将任一口径写成精确统一录取率。",
+        "artifact_status": "会议有独立AE与ACM徽章机制；本轮未核实Echo取得任何徽章或独立results reproduced认证。",
+        "maturity_assessment": "可称正式新会议；不能凭出版者或官网premier宣传断言已成为公认顶会。"
+      },
+      "independent_math_check": {
+        "verified_against_pdf": true,
+        "pdf_pages_one_based": [
+          4,
+          22,
+          23
+        ],
+        "pdf_visual_screenshot": "工具截图失败；核对PDF提取文字及公式，与HTML一致。",
+        "counterexample": "对Cv=0或Aw=0的合法可学习参数，SKA query Jacobian可为0；ridge只保证Gram的Cholesky存在，不保证其他因子满秩。对rho_i<1，Ri^T Ri=rho_i^2 I≠I。",
+        "boundary": "仅指出一般理论保证和主文/附录不一致；未认证或否定实验数据。",
+        "version_boundary": "直接核对的是arXiv:2605.06997v1 PDF；ACM最终存档版是否同样保留该冲突未独立完整比对。"
+      }
+    },
+    {
+      "number": 24,
+      "title": "Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition",
+      "venue": "NIPS 2017主会",
+      "formal_review_status": "正式同行评审；官方公开review记录",
+      "venue_quality_assessment": "成熟机器学习主会；正式论文与公开评审记录可核验。",
+      "controversy_and_reliability": [
+        "官方审稿人提出网络耦合/损失与反向解释不清、噪声范围、baseline竞争力、定量指标和超参数细节问题；也有审稿人认为例子可信、写作清楚。",
+        "这些是公开评审的技术意见，不等同于事后证伪。",
+        "后续正式Automatica论文指出这一类学得的Koopman近似缺乏一般理论保证；属方法适用性边界，并非原论文撤稿。"
+      ],
+      "role_in_manuscript": "有限维Koopman近似与学得动力学表征的背景。",
+      "risk_recommendation": "可保留背景引用；不把有限经验成功外推为普遍存在精确有限维不变子空间。",
+      "primary_urls": [
+        "https://papers.neurips.cc/paper_files/paper/2017/hash/3a835d3215755c435ef4fe9965a3f2a0-Abstract.html",
+        "https://papers.neurips.cc/paper_files/paper/2017/file/3a835d3215755c435ef4fe9965a3f2a0-Reviews.html",
+        "https://github.com/n-takeishi/learning-kis",
+        "https://www.sciencedirect.com/science/article/am/pii/S0005109823001541"
+      ],
+      "actual_search_queries": [
+        "\"Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition\" criticism OR correction OR retraction",
+        "\"Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition\" retraction erratum"
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+    },
+    {
+      "number": 25,
+      "title": "Backpropagation-Friendly Eigendecomposition",
+      "venue": "NeurIPS 2019主会",
+      "formal_review_status": "正式同行评审；官方reviews、authorfeedback、metareview可查",
+      "venue_quality_assessment": "成熟机器学习主会；存在真实公开技术争论但最终接受。",
+      "controversy_and_reliability": [
+        "Reviewer 1质疑对称/协方差矩阵适用范围、epsilon正则与实用技巧导致比较不公平；Reviewer 2质疑近不可微处近似和任务收益。",
+        "Meta-review承认significance意见混合，但认为稳定界与实验证据足以构成有价值贡献。",
+        "同作者后续TPAMI第26条明确指出早期PI方案有累积舍入误差和运行成本，并以Taylor替代；属具体局限及改进，不是撤回全部结论。"
+      ],
+      "role_in_manuscript": "相关工作中固定稳定前向并修改反向的先例。",
+      "risk_recommendation": "列入有明确技术争论/适用条件须限定的来源，但不足判为整体不可靠；本稿背景引用仍成立。",
+      "primary_urls": [
+        "https://papers.neurips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+        "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Reviews.html",
+        "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-MetaReview.html",
+        "https://infoscience.epfl.ch/server/api/core/bitstreams/9c61c09e-8251-47f5-af10-52651850c546/content",
+        "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-AuthorFeedback.pdf"
+      ],
+      "actual_search_queries": [
+        "\"Backpropagation-Friendly Eigendecomposition\" correction OR erratum OR retraction OR criticism OR reproduction"
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。",
+      "author_response": "官方rebuttal：同意明确仅对称矩阵；解释SVD前向提供准确初始化与有限PI级数给梯度上界；称所有方法同epsilon=1e-4；为公平补跑SVD相同截断技巧，并给至d=128的成功率表；强调目标是稳定性而非优于SOTA准确率。该响应属作者报告，本轮未复现。"
+    },
+    {
+      "number": 26,
+      "title": "Robust Differentiable SVD",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence 44(9), 2022",
+      "formal_review_status": "正式同行评审期刊；2021先行/2022卷期",
+      "venue_quality_assessment": "IEEE Computer Society旗舰专业期刊；作者稿和代码可查。",
+      "controversy_and_reliability": [
+        "未找到正式撤稿/勘误。",
+        "第22条ICCV2021后续提出有限Taylor展开的条件/近似局限；这是方法间技术比较，不足以判此论文无效。",
+        "作者仓库issue #3问u_t与vT为何等价；作者说明协方差矩阵场景。该讨论是适用矩阵范围澄清，不是已证明实现bug或实验失败。"
+      ],
+      "role_in_manuscript": "矩阵分解的稳定反向处理先例。",
+      "risk_recommendation": "可靠但需限协方差/谱与截断设定；不得把Robust题名理解为所有矩形、复数、重复奇异值场景均给精确通用导数。",
+      "primary_urls": [
+        "https://doi.org/10.1109/TPAMI.2021.3072422",
+        "https://arxiv.org/abs/2104.03821",
+        "https://github.com/WeiWangTrento/Robust-Differentiable-SVD",
+        "https://github.com/WeiWangTrento/Robust-Differentiable-SVD/issues/3",
+        "https://www.computer.org/publications",
+        "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+      ],
+      "actual_search_queries": [
+        "\"Robust Differentiable SVD\" correction OR erratum OR retraction OR criticism OR reproduction",
+        "\"Robust Differentiable SVD\" \"Taylor\" \"converge\"",
+        "\"Robust Differentiable SVD\" \"retraction\" OR \"erratum\""
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+    },
+    {
+      "number": 27,
+      "title": "A Data–Driven Approximation of the Koopman Operator: Extending Dynamic Mode Decomposition",
+      "venue": "Journal of Nonlinear Science 25, 2015",
+      "formal_review_status": "正式同行评审期刊",
+      "venue_quality_assessment": "Springer成熟动力系统/应用数学专业期刊，非计算机顶会不等于低可靠。",
+      "controversy_and_reliability": [
+        "未找到本条目正式撤稿/勘误；正式页面仍列原文。",
+        "后续CPAM的ResDMD论文将避免spectral pollution作为改进；EDMD一般谱近似/有限字典限制不是对2015算法来源身份的否认。",
+        "只在特定条件下有投影/收敛意义，不能把任一有限矩阵谱视作原无限维Koopman谱的无条件保证。"
+      ],
+      "role_in_manuscript": "有限维Koopman近似/EDMD起源背景。",
+      "risk_recommendation": "常规可信背景引用；涉及普遍谱保证时需加条件，不列低可靠文章。",
+      "primary_urls": [
+        "https://link.springer.com/article/10.1007/s00332-015-9258-5",
+        "https://link.springer.com/journal/332",
+        "https://arxiv.org/abs/1408.4408",
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/cpa.22125"
+      ],
+      "actual_search_queries": [
+        "\"A Data-Driven Approximation of the Koopman Operator\" correction OR erratum OR retraction OR criticism OR spectral pollution",
+        "\"A Data–Driven Approximation of the Koopman Operator\" \"retraction\""
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+    },
+    {
+      "number": 28,
+      "title": "Roundoff error analysis of the CholeskyQR2 algorithm",
+      "venue": "Electronic Transactions on Numerical Analysis 44, 2015",
+      "formal_review_status": "正式同行评审期刊；官方Kent State投稿页明确all manuscripts refereed",
+      "venue_quality_assessment": "1993创刊数值分析专业期刊，Kent State与奥地利科学院RICAM合作；MathReviews/zbMATH/SCIE可查。领域专业性不能按ML顶会名气裁判。",
+      "controversy_and_reliability": [
+        "未找到该条目正式勘误/撤稿；后续算法发展与应用不是否认原定理。",
+        "论文自身明确满列秩且kappa不太大（O(u^-1/2)量级）的条件稳定性，不能扩成任意病态矩阵无条件稳定。"
+      ],
+      "role_in_manuscript": "CholeskyQR条件数、舍入误差分析背景。",
+      "risk_recommendation": "常规可信；尊重稳定性条件。",
+      "primary_urls": [
+        "https://etna.ricam.oeaw.ac.at/volumes/2011-2020/vol44/abstract.php?pages=306-326",
+        "https://etna.ricam.oeaw.ac.at/",
+        "https://etna.math.kent.edu/submissions/",
+        "https://people.maths.ox.ac.uk/nakatsukasa/research.htm"
+      ],
+      "actual_search_queries": [
+        "\"Roundoff error analysis of the CholeskyQR2 algorithm\" correction OR erratum OR retraction OR criticism",
+        "\"Roundoff error analysis of the CholeskyQR2 algorithm\" \"erratum\""
+      ],
+      "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+    }
+  ],
+  "direct_api_limits": "4 Crossref direct requests for update metadata failed SSL EOF this turn; no negative update assertions made from them. Root agent performs separate global registry checks.",
+  "access_limits": [
+    "OpenReview Seeger forum browser challenge; official workshop site and PDF readable",
+    "ACM DL access limited; conference official accepted page and DOI/arXiv publication record used",
+    "Echo PDF screenshot tool unavailable; PDF text directly readable",
+    "No subscription bypass or reproduction attempted"
+  ],
+  "highlighted_items": {
+    "scientific_claim_requires_correction": [
+      23
+    ],
+    "lower_review_certification": [
+      21
+    ],
+    "public_technical_debate_but_not_invalidated": [
+      24,
+      25,
+      26
+    ],
+    "no_confirmed_retraction_in_this_subtask": true
+  }
+}

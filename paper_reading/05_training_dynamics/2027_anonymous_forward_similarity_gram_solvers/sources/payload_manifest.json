@@ -1,0 +1,65 @@
+{
+  "purpose": "Selected small evidence payloads for the requested complete paper translation and reviewer-form interpretation. No model/data/checkpoint artifacts.",
+  "items": [
+    {
+      "path": "/data/250010109/Research_System/paper_reading/05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/figures/figure_01.png",
+      "bytes": 44792,
+      "sha256": "1491d534a76d8feaf7354c7774837f5ef610b079e59e2a508e599123598d9358",
+      "origin": "user-provided manuscript PDF",
+      "source_sha256": "c382620be827e1154a2f6e9a49dd19dd953d7f03298d25bf100353c1b1079465",
+      "pdf_page_one_based": 8,
+      "crop_box_pdf_points": [
+        105,
+        78,
+        495,
+        247
+      ],
+      "render_scale": 3,
+      "method": "PyMuPDF PDF vector-region rendering; no generative redraw or data alteration."
+    },
+    {
+      "path": "/data/250010109/Research_System/paper_reading/05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/figures/figure_02.png",
+      "bytes": 31394,
+      "sha256": "85168820b354baf54ae05d26c65c95198f8fed40ec09d87f59f10f0933c4b84d",
+      "origin": "user-provided manuscript PDF",
+      "source_sha256": "c382620be827e1154a2f6e9a49dd19dd953d7f03298d25bf100353c1b1079465",
+      "pdf_page_one_based": 29,
+      "crop_box_pdf_points": [
+        110,
+        80,
+        502,
+        192
+      ],
+      "render_scale": 3,
+      "method": "PyMuPDF PDF vector-region rendering; no generative redraw or data alteration."
+    },
+    {
+      "path": "/data/250010109/Research_System/paper_reading/05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/sources/iclr2027_review_form_user_provided.pdf",
+      "bytes": 113993,
+      "sha256": "ac47c43f47a2aec2978ca39e634e886b095386048b803659385042b4a580ab75",
+      "origin": "/root/.codex/attachments/d6d94d75-47de-493a-beca-e53a0f98ef64/Shang - Forward Similarity Does Not Guarantee Training Equivalence Precision Placement in Differentiable Gr.pdf",
+      "role": "Actual reviewer form, retained as primary scoring evidence."
+    },
+    {
+      "path": "/data/250010109/Research_System/paper_reading/05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/sources/iclr2027_reviewer_guidelines.html",
+      "bytes": 65374,
+      "sha256": "4f0790284253ba78885c625ddea7c1da3d8f5949399fc2901111abd34b1d043a",
+      "origin": "https://iclr.cc/Conferences/2027/ReviewerGuidelines",
+      "role": "Official source snapshot explicitly requested for review standards."
+    },
+    {
+      "path": "/data/250010109/Research_System/paper_reading/05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/sources/iclr2027_ai_policy_reviewers.html",
+      "bytes": 41344,
+      "sha256": "dfeca74fed861996437fb741ef116ded4e10cdbce09dd44cde8f611049b3a304",
+      "origin": "https://iclr.cc/Conferences/2027/AIPolicyForReviewers",
+      "role": "Official source snapshot explicitly requested for review standards."
+    },
+    {
+      "path": "/data/250010109/Research_System/paper_reading/05_training_dynamics/2027_anonymous_forward_similarity_gram_solvers/sources/iclr2027_author_guidelines.html",
+      "bytes": 67077,
+      "sha256": "24225dd8ba51583bcb2c136e242f8342c48c9bec6e5eac59619324d0526b34b7",
+      "origin": "https://iclr.cc/Conferences/2027/AuthorGuidelines",
+      "role": "Official source snapshot explicitly requested for review standards."
+    }
+  ]
+}

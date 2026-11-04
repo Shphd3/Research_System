@@ -1,0 +1,150 @@
+{
+  "created_utc": "2026-11-03T02:05:59.277019+00:00",
+  "authorization": "Direct current user request: start complete attachment experiment and incorporate every correction into both SAE sites H1-H4; preserve originals",
+  "oldroot": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02",
+  "canonical_round": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1",
+  "sites": {
+    "ATTN_SAE": {
+      "asset": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "hook": "block27.self_attn.o_proj output before residual addition",
+      "dictionary": 30000,
+      "k": 32
+    },
+    "MLPIN_SAE": {
+      "asset": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "hook": "block27.mlp input after post_attention_layernorm",
+      "dictionary": 30000,
+      "k": 32
+    },
+    "CC_CORRECTED": {
+      "asset": "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+      "hook": "joint odd blocks1..27 residual post; report raw block27 target",
+      "dictionary": 16384,
+      "rule": "saved threshold"
+    }
+  },
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "model_frozen": true,
+  "model_or_dictionary_training": false,
+  "fit": "CPU L2 logistic regression; only train/development old material fits/selects",
+  "probe_C": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "max_iter": 5000,
+  "bootstrap_n": 2000,
+  "bootstrap_seed": 20261103,
+  "random_seeds": [
+    11021,
+    11022,
+    11023,
+    11024,
+    11025,
+    11026,
+    11027,
+    11028,
+    11029,
+    11030,
+    11031,
+    11032,
+    11033,
+    11034,
+    11035,
+    11036,
+    11037,
+    11038,
+    11039,
+    11040
+  ],
+  "primary_dtype": "FP32 fixed in advance to remove BF16 shape dependence; BF16 measured only on predefined old24-row diagnostic",
+  "physical_shape": {
+    "panel": [
+      8,
+      128
+    ],
+    "precision_old": [
+      8,
+      64
+    ],
+    "natural": [
+      2,
+      512
+    ],
+    "native": [
+      4,
+      192
+    ]
+  },
+  "new_test_rows": 288,
+  "new_fine_rows": 192,
+  "auxiliary_rows": 48,
+  "new_test_role": "all fresh rows are locked test; never fit/select on new responses",
+  "corrected_old_rows": 384,
+  "old_splits": {
+    "determinant": "discovery",
+    "derived_operator": "discovery",
+    "uniqueness": "discovery",
+    "gram": "discovery",
+    "image": "discovery",
+    "factorization": "discovery",
+    "reversal": "development",
+    "kernel": "development",
+    "rank": "development",
+    "geometry": "heldout",
+    "elimination": "heldout",
+    "spectrum": "heldout"
+  },
+  "families_fresh": 24,
+  "theorem_groups_fresh": 12,
+  "multiplicity_groups": {
+    "H1_per_site": 5,
+    "H2_per_site": 1,
+    "H3_per_site": 2,
+    "H4_primary_config_per_site": 2,
+    "H4_exploratory_config_per_site": "2M retained, exploratory",
+    "cross_site_H1_H2_H3_effects": 5,
+    "representation_location": 6,
+    "answer_cue": 3,
+    "readout_schemes": 6,
+    "cross_site_H4_main_readout_gains": 2
+  },
+  "selection_gate": "Use only corrected old discovery and natural discovery before fresh responses; optional description16/K16,32,64 only if old h/z signal and fixed-set failure measured",
+  "H4_search": {
+    "max_atoms": 8,
+    "max_pairs": 20,
+    "max_configurations": 80,
+    "max_selected": 10,
+    "main": "first eligible ranked by absolute old-discovery fine effect; others exploratory",
+    "single_state_min_frequency": 0.01,
+    "joint_max_frequency": 0.005,
+    "min_positions": 30,
+    "min_documents": 10,
+    "cuts": "positive natural discovery q75",
+    "enrichment_max_target_per_class": 20,
+    "enrichment_max_control": 40
+  },
+  "native_formats": [
+    "Therefore, A is",
+    "Is A invertible or singular? Answer:"
+  ],
+  "native_candidates": [
+    " invertible.",
+    " singular."
+  ],
+  "native_main": "sum complete candidate token log probabilities, no length/prior correction",
+  "FP32_BF16_panel_selection": "first family in each12theorem groups, both labels, explicit/description alternating group index;24rows",
+  "free_generation": false,
+  "compute": "CPU preferred; at most one2x5090-spot allocation if useful; no H100, no unrelated chat/cloud research task",
+  "stops": "complete all applicable tests, including non-support; preserve actual blocked modules, do not optimize until positive",
+  "data_sha256": {
+    "corrected_old": "a0435e70c2f71b32d17e4a0777d6b562ac030aab53d419ba1e2dab34e12ef033",
+    "fresh_locked": "9a2de1074c44447926e5f67b6bc2b61ae5f55e20304cb57d2dfd352c1b3ffcb7",
+    "factor_appendix": "8462b6049bc0d411d5246437a3aefd1863596d4189731b74595e01bd036f29d5"
+  },
+  "before_after_native_diagnostic": "BothSAEs andFP32CC capture original384 and corrected384 old inputs; independent fits use same original split, compareoldheldout only asdiagnostic; fresh stayslocked",
+  "primary_four_hypothesis_scheme": "mixed_description_dev",
+  "modified_before_any_fresh_response_utc": "2026-11-03T02:19:24.357875+00:00"
+}

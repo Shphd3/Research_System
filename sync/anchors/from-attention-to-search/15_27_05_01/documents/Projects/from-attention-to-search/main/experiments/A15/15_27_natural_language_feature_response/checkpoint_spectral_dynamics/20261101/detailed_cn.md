@@ -1,0 +1,98 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/detailed_cn.md`。
+[精确原始文件](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/detailed_cn.md)；研究修改仍回到原件。
+
+---
+
+# Detailed：Dense checkpoint 谱动态，2026-11-01
+
+主设计：[Anchor](../../../../../problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/subanchors/15_27_05_01_checkpoint_spectral_dynamics_anchor_cn.md)。精确合约：[Protocol](protocol_cn.md)，初次冻结[freeze.json](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/freeze.json)，修订A01/A02见audit。结果首先读[Summary](summary_cn.md)。工程状态为完整有界分析完成；研究者科学接受和问题闭合Unknown。
+
+## 研究目的、假设与对照
+
+本轮分开看行为与因素控制、表征与层位组织、功能干预与测量质量三条路径。第一条只包含外部标签线性读出及维数/坐标对照；第二条拥有本轮主要谱和子空间结果；第三条检查数值、身份与抽样质量，没有功能干预。没有把缺席的因果实验写成已执行。
+
+目的为回答同一训练轨迹五类变化是否同步，并检验头先中尾后的猜测。改变的只有checkpoint；文本、位置、mask、测点、精度、参考/评估划分和分类器流程保持相同。均值/PCA/对齐来自参考文本，分类器参数/标准化来自标签TRAIN，C来自DEV；评估只做测量。规模变化、旋转、抽样和来源关联分别保留为竞争解释。
+
+## 实际执行过程与一个真实例子
+
+先核实原训练段和可读保存点，再固定2048条几何文本及96条the桥接。原10B启动指针与后续22.018691584B来源规范明确连接三段训练，见[轨迹核查](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/trajectory_lineage.json)。恢复后未保存的22.258029056B尾部没有被混入轨迹。12个权重逐个SHA256、状态内token/step、模型config和严格加载核验；token不是step乘常数，例如0.5B状态step1908，而1908×262144=500170752。模型代码及分词器文件与原训练记录逐字节摘要相符。
+
+主几何每记录取零基7/15/…/255，等32点，参考/评估各32768向量。每点使用自身参考均值，FP64累积协方差并分解；没有用末端均值构造伪“自身协方差”。规范化前residual幅度会变化，因此绝对特征值和归一化谱均保存。
+
+R11_A02_002是一个真实数学分析文档，已见前缀用摆的角度和速度说明状态空间，目标the位于零基183。所有checkpoint读取完全相同的192token序列；外部标签保留数学/分析。该点的实际隐藏向量如下：
+
+| 训练token B | 向量范数 | 坐标1 | 坐标2 | 坐标3 |
+| --- | --- | --- | --- | --- |
+| 0.5 | 166.932 | -12.132 | 2.827 | 7.334 |
+| 17.0 | 310.123 | -0.759 | -0.254 | -5.615 |
+| 33.0 | 309.897 | 1.294 | -1.135 | -8.663 |
+
+这张小表只证明同一输入位置的向量数值变化，不给三个坐标命名语义，也不替代跨文档谱。随后将该向量减去对应大N8参考均值、投到自身或固定末端谱基，再进入相同线性读出流程。大参考集与小同词语义面板各自承担不同任务。
+
+逐checkpoint加载后释放权重；三点smoke重复读取全部命中缓存。正式缓存、smoke、语义前向和当前统计对象计数见[actual_counts](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/actual_counts.json)：主几何24576条序列前向，桥接288条，smoke48条，总计24912；语言模型优化更新0次。主层786432位置向量，早中层补充393216向量，语义桥接288向量。缓存数组和大谱基不放入研究Git。
+
+## 全部相邻区间
+
+| 区间 B | 实际间隔 B | 绝对谱 L2 | 归一化谱TV | TV / B | 评估CKA |
+| --- | --- | --- | --- | --- | --- |
+| 0.5→1 | 0.500000 | 2856.865 | 0.04270 | 0.08540 | 0.87320 |
+| 1→3 | 2.000000 | 9238.737 | 0.06793 | 0.03397 | 0.85714 |
+| 3→5 | 2.000000 | 3729.725 | 0.03612 | 0.01806 | 0.93443 |
+| 5→10 | 5.000000 | 5181.378 | 0.05673 | 0.01135 | 0.92419 |
+| 10→15 | 5.000000 | 3335.991 | 0.03674 | 0.00735 | 0.92512 |
+| 15→17 | 2.000000 | 1175.089 | 0.02196 | 0.01098 | 0.94771 |
+| 17→19 | 2.000000 | 1966.721 | 0.02890 | 0.01445 | 0.95166 |
+| 19→21 | 2.000000 | 2114.323 | 0.03009 | 0.01504 | 0.94351 |
+| 21→22.0187 | 1.018692 | 1102.518 | 0.01667 | 0.01636 | 0.95052 |
+| 22.0187→31 | 8.981308 | 3649.369 | 0.06762 | 0.00753 | 0.90213 |
+| 31→33 | 2.000000 | 1916.102 | 0.03068 | 0.01534 | 0.95503 |
+
+来源：[pair_metrics](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/pair_metrics.csv)。原距离、对称相对绝对谱距离、归一化TV和每B变化率分别保存。归一化TV变化率从0.08540/B连续降至10→15B的0.00735/B，之后15→17、17→19、19→21、21→22.0187连续四次上升。末段先降再升；不能只用距末端减小称为趋稳。
+
+## 子空间、均值和抽样
+
+[子空间表](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/subspace_distances.csv)给前16/64/128/256与等64维头/中/尾的原始及对齐距离；执行侧principal_angles.csv给每个主夹角，isolated_vector_diagnostics.csv给孤立方向资格。归一化投影距离在实现中用等价正交残差范数计算，避免1减近1的消减误差。全1024维没有用于方向判断。
+
+均值与协方差分开。末段均值漂移131.263，33B文档拆分均值漂移参照中位数7.639；均值方向漂移是真实坐标观测，不能直接解释成功能变化。主层和block0/3所有统计见[checkpoint_statistics](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/checkpoint_statistics.csv)。层位补充只在0.5/17/33B，未扩展为全层全时刻图谱。
+
+按预先最大相邻谱变化率对数差规则，额外转折点选为3B，连同0.5/17/33B共4点。8次跨checkpoint配对的参考512/512文档拆分产生64个半集谱估计；原文档不独立重新抽样。[选择收据](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/uncertainty_selection.json)、[逐次拆分](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/within_checkpoint_split_sensitivity.csv)、[配对距末端](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/paired_endpoint_split_sensitivity.csv)、[汇总](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/sampling_reference_summary.csv)均保存。
+
+这些范围是半样本估计波动的描述性参照，不能冒充完整N=32768估计的置信区间，也不是8个训练模型。表[distance_sampling_ratio_sensitivity](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/distance_sampling_ratio_sensitivity.csv)保留0.5/1/2倍参照的敏感性，未插值未测点的噪声地板。没有达到“稳定”结论的通用阈值，因此趋稳起点按设计不估计。CKA/对齐残差没有重采样区间，不能据它们单独定起点。
+
+## 旋转约束修订与数值审计
+
+初版O(d)对齐允许反射，与研究者只允许旋转的要求不完全一致。A01改为SO(d)：对参考交叉矩SVD后，最后一维按det(UV^T)修正；不学习尺度。原流水线完成后，保留旧负行列式结果，纯CPU按缓存重算6个受影响比较，核验全部30个唯一对齐矩阵均det=+1且正交误差小于1e−8。主相邻比较原本均为正定向旋转，修订只改变部分距末端和早层补充对齐结果。原始谱/方向/CKA差异限于浮点舍入；见[修订](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/amendment_A01.json)及[最终旋转检查](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/rotation_only_correction.json)。没有新增前向、数据选择或GPU分配。
+
+A02移除初版清单里没有保存证据的7/9/11B名义网格例子，只将8个有原manifest但无payload状态计为缺失。12个实测状态与全部输入、位置和判定不变。初次冻结字节保存在audit/frozen_sources，避免修改后丢失初版证据。[A02](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/amendment_A02.json)。
+
+三轮审计分别为[科学识别](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/round1_scientific_identification.json)、[数据统计](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/round2_data_statistics.json)、[实现数值](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/round3_implementation_numerics.json)。合成恒等、正定向旋转、缩放、配对打乱均校准。实际smoke矩阵直接SVD与协方差分解相对误差2.42e−15，流式与小Gram CKA误差1.11e−15，见[独立缓存复核](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/independent_cached_numerics.json)。FP32前向误差没有被宣称为1e−15：该误差是FP64估计器代数核验，与参考文档抽样波动不同。全部18个层位状态保存特征分解残差和正交误差。
+
+图①曾有colorbar覆盖谱尾的布局问题，改为外置色条并核查实际PNG。图④加入既有全部几何变化率与三点分类/增量的时间对照，另有基选择敏感性图；没有改变统计对象。见[audit](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/figure_presentation_update.json)及[图源manifest](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/figures/figure_manifest.json)。数学仅做源码和数值核验，不声称核验Markdown公式的渲染。
+
+## 分类拟合、失败点和边界
+
+共126个读出条件，每个4个C候选，504次训练拟合；只训练线性分类器。均值/PCA/Procrustes均是无监督参考拟合，分类标准化只读TRAIN，DEV仅选C，H只评估。每条件参数为维数+截距，solver=lbfgs，max_iter3000、tol1e−8，全部收敛，见[拟合账本](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/fit_ledger.csv)。33B自身基与固定33B基完全相同，其全部读出结果必须一致；核验见最终交付检查。
+
+当前/末端基均只改变投影坐标，没有把33B训练的固定分类器移植早期。逐坐标标准化加L2会使有限样本读出对基选择敏感，尤其全空间结果也不能简单当作原生能力变化。机会基线50%，full-space可读性是解释单谱带弱读出的前提。完整[预测](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/readout_predictions.csv)与[增量](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/increment_contrasts.csv)保留负向和跨零例子；主36项均未建立正增量。区间固定分类器后对H记录分层配对重采样，未纳入TRAIN/标签/来源不确定性。
+
+R12的H已在历史研究暴露；数学/生物细类留出17/18条，严格来源/文体/位置匹配原先只有1/3对。本轮复用同样外部标签，不将它提升为全新语义确认。N8只有记录家族身份，论文级独立性不可用；未声称穷尽近重复检索。因此结果是固定面板下的探索性时间描述，不能从分类器分数反推原生因果使用。
+
+## 资源、证据和复用
+
+作业pt-0o94658v使用envelope的5090-2-spot/shphd-lite-0911和挂载SM120运行层，实际2张RTX5090各32607MiB。一个进程一次只用GPU0；GPU1属于同一两卡分配。提交前未见本人其他活动分析；原训练任务未修改。GPU权重提取完成即释放；A01修正只用CPU缓存。作业、镜像、起始冻结和日志路径见[执行证书](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/execution_certificate.json)，实际终止与CPU修订收据另记最终审计。没有新增Work/Codex对话。
+
+[cache_index.json](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/cache_index.json)给每checkpoint、层和面板的缓存键、路径、payload摘要、状态内部计数、加载与释放收据。键含checkpoint权重/manifest、文本位置、层、精度/预处理和collector版本；partial不复用。源码在[scripts](../../../../../../../../../UNAVAILABLE.md)，实际执行根为/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics，配置/小metadata在本目录。所有对齐、谱基和半集统计留执行侧，大文件未复制到Git。详细输出目录与SHA256见[artifact_manifest.json](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/artifact_manifest.json)。
+
+布局按研究者指定的checkpoint_spectral_dynamics与anchor.md保留，编号15_27_05_01和父15_27_05已登记。目录检查的“文件名必须带编号”和“祖孙目录必须再次叫subanchors”两条样式检查与此次指定命名不兼容，作为显式例外记录于[placement](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/placement.json)；不能声称该检查全通过。原有15_29地图缺项未改动。当前任务的文件链接、独立科学归属和英文/中文对应另行核验。
+
+## 覆盖与认识边界
+
+[完整覆盖账本](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/tables/coverage_ledger.csv)列所有适用项目。12个实际可读状态全部完成；8个历史缺权重状态保持BLOCKED，不插值。所有自身谱、方向、固定末端投影、配对关系、抽样、6个层位补充、126读出及36主增量均完成。没有Dense字典分析或语言模型训练；未估趋稳起点是冻结计划允许的结果。研究者科学接受/闭合Unknown，不阻止完成已授权事实记录。
+
+AI有界解释见Summary：当前数据没有建立头先中尾后的稳定顺序，削弱把它当成既成动力学事实的解释；不证明未来永无此顺序，不替未完成路由训练判效益。唯一后续研究者决策是是否保留该动力学解释作为待检验假设。没有未经请求的新实验建议或执行。
+
+补充统计限定：Holm输入来自固定留出重采样的双侧符号尾概率，是探索性bootstrap近似，并非重新置换标签的严格零假设检验；因此不声称严格家族错误率保证。0/36只是本方案没有建立正增量，不能证明所有真实增量为0。
+
+最终仓库级检查共报告4项：本轮指定布局的2项例外，另有15_29地图缺项和15_27_04派生地图滞后。后两项不在本轮改动范围；本轮链接和数值核验通过。完整输出见[audit/organization_check.txt](../../../../../../../../../UNAVAILABLE.md)。
+
+A03只补充统计缓存身份：登记入口在复用前校验12个checkpoint指纹、全部5个固定数据文件、层位/预处理与统计代码，并核验112个统计NPZ摘要。错误checkpoint或文本/位置指纹测试均被拒绝；本轮仅绑定已完成且已独立核验的结果，不新增前向、拟合或数值变换。见[audit/amendment_A03.json](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/amendment_A03.json)与[统计缓存上下文](../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/analysis_cache_context.json)。

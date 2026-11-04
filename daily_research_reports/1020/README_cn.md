@@ -1,16 +1,8 @@
-# 2026-10-20 临时研究迭代（Dxy）
+# 10月20日：频率混合表征与高频路径调用
 
-本日是临时研究文件夹：按导师 1019 两份指导与 feature(7).pdf 继续做 toy model
-可控实验，逐轮给出认识更新。研究沙箱（代码、原始产物、同步材料）在
-`Projects/dxy-local-research/`（本地，不入 Git）；本目录只放认识更新与索引。
+[本日唯一讨论入口](meeting_report/meeting_brief_frequency_composition_cn.md) · [项目Summary](../../Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/summary_cn.md) · [一页结论](../../Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/one_page_cn.md) · [English](README.md)。
 
-| 内容 | 入口 |
-|---|---|
-| 研究沙箱（结构与路线） | `Projects/dxy-local-research/README_cn.md` |
-| 材料综述（学长在前、Dxy 在后） | `Projects/dxy-local-research/main/research_notes/source_synthesis_20261020/synthesis_cn.md` |
-| 研究问题与下一步 | `Projects/dxy-local-research/main/focus/focus_frequency_capacity_reuse_cn.md` |
-| 实验协议 T01 | `Projects/dxy-local-research/main/experiments/T01_common_reuse/protocol_cn.md` |
-| 逐轮认识更新 | [updates_cn.md](updates_cn.md) |
+四条件×两配对种子学习完成。固定高频调用未获得预定低频学习增益支持。工程完成、统计限制与机制判断分开；下一研究决策等待讨论。原10月19日材料保持历史身份，不覆盖。
 
-说明：`sources/daily_sync/` 下同步了 0921、1014/candidates、1017 三个本地每日
-文件夹（约 220MB 原始产物），按 Dxy 决定暂不提交 Git，原位置保留未跟踪。
+
+[讨论资料包（小于20 MiB）](待讨论/frequency_composition_20261020_portable.zip) · [包大小、SHA与内容回执](待讨论/package_receipt.json)。代码、权重和缓存留执行项目。

@@ -1,0 +1,75 @@
+# Detailed: A15_28 R01 cached sentence pairs
+
+[Summary](summary.md), [frozen Protocol](protocol.md), [input/old-graph qualification](preflight.md). This record and linked machine-readable appendices own the evidence ledger; no final report or question closure was created.
+
+## Result and eligibility
+
+Completed: 509 complete spans, 13,573 cached tokens, 215,981 within-sentence pairs; native H1 for both dictionaries, forward/reverse CC H2, exact matching, paired-document uncertainty, incidence and degree nulls, three figure types and frozen case selection. SAE H2 remains interface-blocked.
+
+Seventy primary H1 cells have positive simultaneous matched intervals; 41 also exceed qualified fixed-margin envelopes: 15 SAE high-frequency, 12 CC middle-frequency, 14 CC high-frequency; 31 are different-ID cells. Two biology/high-frequency forward-H2 cells (distance 1 and 2–3) have small positive matched intervals, but neither exceeds the degree-preserving graph envelope. Fixed common-lost-source and all-source forward differences are zero across all defined T1 different-ID lexical comparisons. Thus bounded coordinate recurrence is supported; stable-source associated replacement is not established. Human mechanism acceptance/closure remain Unknown. [Complete 336-cell ledger](evidence/primary_336_final.csv), [primary nonrepeat nulls](evidence/primary_nonrepeat_nulls.csv).
+
+The three analysis paths are lexical/domain/activity controls; native representation organization; and measurement credibility. Behavior prediction, independent layerwise activations and functional intervention were not measured. The user explicitly requested conclusions before analysis; the Summary therefore supplies bounded AI interpretation without assigning human acceptance.
+
+## Actual objects and computation
+
+E16 SAE has 30,000 coordinates, native FP32 positive ReLU Top32 at block27 MLP input. A22 CC has 16,384 shared coordinates across residual-post blocks 1,3,…,27, preserving producer BF16, TRAIN centering/RMS and gate. Cached positive CSR entries define activity. No training, fitted parameters, optimizer, gradients, model loading or new forward is required.
+
+H1 divides source/target intersection by source count. H2 removes retained source coordinates, then counts each lost source at most once if an old outgoing/incoming edge reaches the target active set. Empty denominators are NA. All-source coverage and common-lost-source coverage are separate guards. Source frequency bins reuse the independent 65,536-position DCLM reference, hits≥20 tertiles with unsplit ties; low-support remains separate.
+
+The immutable CC passV raw graph has 206,136 directed edges over all 16,384 nodes including isolates. Its old same-token admission requires both counts≥200, joint count≥20, P(B|A)≥0.8, P(A|B)≤0.5, nB≥2nA. No independently validated semantic hierarchy follows. DeltaP/lift were not admission gates. Frequency doubling explains acyclicity. The older SAE graph's precision/filter/selected-index interface is not qualified for this positive-activation cache; no replacement graph was built.
+
+## Text, controls and support
+
+Inputs are the 120 existing 192-token R04 prefixes, 60/domain. Discovery/development/heldout labels remain exposed. Exact token IDs align in all documents. Text-only review of 787 candidates precedes outcomes; fragments, headings, list labels and bibliography are excluded, abbreviation/citation boundaries repaired, leaving math260/biology249 spans in117 documents. Uncertified first source boundaries are conservatively excluded, not claimed absent from the original documents. [Text freeze](provenance/text_freeze.json), [input hashes](provenance/input_file_hashes.json).
+
+All i<j same-sentence pairs are candidates. Each domain's original60 documents are sorted by source hash then shuffled into30 fixed donor blocks. T1 matches target token ID, sentence-relative decile, prefix quartile and L0 ratio [0.8,1.25]; ties rank count/relative/absolute-position discrepancies then frozen SHA256. T2 changes only exact ID to lexical class and equality state, only for T1-unmatched pairs. The narrower [0.9,1.1] sensitivity filters existing matches without rematching.
+
+Across all classes SAE has10,225 T1/147,301 T2/58,455 unmatched pairs; CC has7,602/117,792/90,587. T1 losses:60,719 lack that ID in any other-domain-matched document;97,789 have corpus support but no fixed-partner support;47,248 fail position strata; CC additionally loses2,623 by L0. These causes must remain distinct.
+
+Different-ID lexical T1 support is3,529/161,251 SAE and2,383/161,251 CC, only263/171 unique real targets and250/166 unique control targets. Maximum donor reuse is89. Five common function words account for about84% of target pair instances. Numeric tokens, same IDs, punctuation, whitespace, other, low-support, T2 and narrower L0 panels remain diagnostics, never replacements for primary failures. [Coverage/L0](evidence/matching_coverage.csv), [lexical/genre/host composition](evidence/lexical_support.json).
+
+## Aggregation, intervals and nulls
+
+Use identical paired eligibility masks. Weight pairs equally within sentence, sentences within source document, contributing documents within fixed block, then blocks within domain. One-document blocks are recorded. Resample all30 original blocks per domain5,000 times with shared indices across metrics. Retain336 primary cells;125 have nondegenerate simultaneous intervals, max-absolute standardized95% quantile3.668338. Fewer than2 contributing blocks, zero/nonfinite SE or any bootstrap draw with zero contributors invalidates that cell's interval. Do not remove bad draws or redraw. Raw curve bands are pointwise; primary contrast bands simultaneous. There are274 different-ID lexical64+ candidates but no T1 matches. CC/math32–63 has6 contributing blocks and some empty bootstrap draws, hence unavailable intervals.
+
+Incidence checkerboard switches preserve every token L0 and every feature count within dictionary/domain. Directed graph switches preserve every node's in/out-degree and edge count, allowing cycles. Graph nulls preserve node identity/frequency but not conditional-coactivation validity, endpoint frequency pairing or DAG constraints. Two chains each use5×edge-count burn-in attempts and ceil(edge-count/10) spacing for199 draws:398/job,1,990 total. Verify margins/degrees every draw and keep observed masks. Any required random empty denominator invalidates the entire corresponding cell-null envelope; never drop pairs, zero-fill or rematch. Envelopes are finite-draw diagnostics, not exact permutation p-values.
+
+| Null job | Draws | Acceptance range | Original-edge overlap after burn-in | Seconds |
+| --- | ---: | ---: | ---: | ---: |
+| graph | 398 | 0.069–0.069 | 0.745–0.746 | 383 |
+| incidence_CC_0 | 398 | 0.672–0.672 | 0.178–0.178 | 272 |
+| incidence_CC_1 | 398 | 0.663–0.663 | 0.184–0.185 | 283 |
+| incidence_SAE_0 | 398 | 0.731–0.731 | 0.147–0.148 | 136 |
+| incidence_SAE_1 | 398 | 0.748–0.748 | 0.137–0.137 | 146 |
+
+All five jobs pass the frozen acceptance/overlap/between-chain rules, which does not prove full mixing. Several lag-one probe correlations are high; full diagnostics remain available. Stronger attribution requires strictly exceeding the97.5% relevant envelope. [Job summary](evidence/null_jobs.csv); execution results/nulls contains every draw, invalid-pair count and probe.
+
+## H2 denominator composition and numerical correction
+
+Biology/high-frequency distance1:99.0099% real versus98.4203% control, +0.5895pp, simultaneous[0.2069,0.9722]. Distance2–3:+0.4173pp,[0.0907,0.7439]. Distance1 has mean226.12 source coordinates,125.00 real-lost,181.20 control-lost,114.16 common-lost. Common-lost coverage is99.5542% in both conditions; all-source coverage93.3986% in both. Every defined T1 different-ID lexical common/all-source forward difference is zero.
+
+The degree-null97.5% envelopes equal the two observed conditional excesses, so neither strictly exceeds the baseline. Final audit corrected a ~10^-18 false excess caused by using nested means for the observation versus a mathematically equivalent sparse operator for nulls. Both now use the same frozen operator; no threshold, sample, mask, seed, or draw changed. Provisional pre-correction verdicts remain INELIGIBLE in execution provenance. [Correction](provenance/aggregation_consistency_fix.md). Reverse H2 has no positive primary support; two biology/high-frequency intervals are below zero, without implying forgetting.
+
+## Figures and actual cases
+
+[Figure1 math](figures/figure1_math.png), [biology](figures/figure1_biology.png), [weak case](figures/figure1_counterexample.png): all tokens, maximum24 rows ranked by active-position count, summed native z, feature ID. Omitted union and per-token counts are recorded. In biology SAE f1004 appears at every one of13 positions;12 CC coordinates do so. None automatically denotes cell/division semantics. Many single-position coordinates are omitted by the fixed recurrence ranking. [Organization](evidence/case_organization.json), [all case details](evidence/selected_cases.json).
+
+[Figure2](figures/figure2_distance.png) plots raw persistence and real-minus-control versus distance. Farther positions come from longer sentences; descriptive curve decline is not a causal distance effect or a direct significant near/far difference.
+
+[Figure3](figures/figure3_distance.png) separates graph directions over lost-source denominators. Near-saturated forward coverage and low reverse coverage follow the old statistical construction, not semantic levels. [Actual-edge detail](figures/figure3_sentence_edges.png) shows the lexicographically first8 of680 qualifying cross-position edge instances among displayed coordinates, omitting672 and all undisplayed features. f4346 is active at `Cell`, absent at `pap`, yet points to common later coordinates already active elsewhere. This is not evidence of a new concept replacing an old one.
+
+The frozen math/biology/extreme-weak selections contain only5/3/4 eligible pairs with shared targets. All three contrasts nonpositive was not found; do not relabel the weakest case as that strict counterexample. [Worked pairs](evidence/case_pair_walkthrough.json), [Summary explanation](summary.md).
+
+## Conformance, audit and lineage
+
+Authorized scope is the user's2026-10-28 cache-only instruction, recorded in Protocol activation. [Outcome freeze](provenance/outcome_freeze.json) binds text/matching/code/config before outcomes. All actual values are exploratory, without fresh confirmation. H1 and CC H2/controls/figures are DONE_EXPLORATORY; SAE H2 is BLOCKED_INTERFACE; the strict triple-nonpositive counterexample was NOT_FOUND. No unrun branch supplies evidence.
+
+Synthetic direct-set checks covered4,900 metric comparisons. Actual32-pair/dictionary direct-set replay covered320 SAE and2,240 CC comparisons; every match, pair distance and frozen core hash passed. [Audit](provenance/results_audit.json). A numba type compilation issue was fixed before outcomes; a cold small-JIT runtime extrapolation was replaced with a domain-sized warmed synthetic benchmark without effort/cap changes. Final comparison operator correction is documented separately. No scientific thresholds were adjusted to outcomes.
+
+Lineage: native CSR → frozen text/token/match → pair metrics → sentence/document/block means → weights/bootstrap → complete336-cell ledger → same-operator null comparison → bounded claim. Full arrays, masks, failed-draw counts and unselected case scores remain under `/data/250010109/MoE_Router/experiments/20261028_sentence_feature_continuation/R01_cached_sentence_pairs`. This is the complete [execution directory](/data/250010109/MoE_Router/experiments/20261028_sentence_feature_continuation/R01_cached_sentence_pairs); data/, results/, figures/, code/, provenance/ retain their respective objects.
+
+Code copies and [config](code/config.json) are supplied. Reproduction order: prepare_sentence_pairs, freeze_text, build_matches, benchmark, analyze_cached_pairs, five run_nulls jobs, finalize_evidence, render_figures, support_diagnostics, audit_results. Use a new output root; do not overwrite the existing freeze. Python/library versions, source hashes and actual outputs are in artifact_manifest. Selected text/scripts/figures/tables are in payload_manifest; raw arrays stay execution-side. Local CPU only, at most4 workers; no training, forwards, clustering, intervention, commit or publication.
+
+The sole remaining scientific decision belongs to the researcher: whether a bounded residual merits a separate context-replacement design. Mechanism acceptance and question closure are Unknown.
+
+[Artifact manifest](artifact_manifest.json) · [Selected evidence payload manifest](selected_evidence_payload_manifest.json) · [Registered output access](provenance/output_access.json) · [Local execution certificate](provenance/execution_certificate.md) · [Delivery checks](provenance/delivery_checks.json).

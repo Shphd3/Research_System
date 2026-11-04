@@ -1,0 +1,17 @@
+{
+  "status": "PRESENTATION_ONLY",
+  "time": "2026-11-01T03:14:23.962147+00:00",
+  "before_plot_code_sha256": "2eff3a440a3b2b0af0e78f6a5cd59b87e73a31201656a889d09ca703abd5057e",
+  "after_plot_code_sha256": "698a53c96381e3c32af1a56c152f6dd68111b5edd5a9da82e5442e38b03034a7",
+  "issues": [
+    "figure1colorbar overlappednormalizedspectrum tail under tight_layout",
+    "figure4needed explicit geometry-versus-increment timing view"
+  ],
+  "changes": [
+    "dedicated external colorbar and reserved margins",
+    "add existing adjacent geometry rates beneath readout and incremental curves",
+    "supplement shows own versus fixed33B coordinate sensitivity"
+  ],
+  "analysis_values_or_choices_changed": false,
+  "initial_source_snapshot": "audit/frozen_sources/plot.py"
+}

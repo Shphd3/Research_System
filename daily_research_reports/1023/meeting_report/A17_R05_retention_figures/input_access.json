@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-23T04:42:22.396641+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-dljrp",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6368,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_a17_r05_A_localization_20261023",
+      "title_cn": "A阶段起点候选概率敏感性及已有轨迹规则覆盖定位",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "CACHE_DIRECTORY",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "saved raw readouts, perturbation bases, source, tablesandreceipts",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2050,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6626,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/analyze_probe.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6829,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7079,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/execution_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 25588,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 514,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/baseline.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1238436,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/directions.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3952866,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_analysis_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 545,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 501,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_pooled_2.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 718,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_54.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4448,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/verification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12332,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/review_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3515,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "bilingual canonical result supplement",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/protocol.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6646,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/protocol_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4891,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/summary.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6357,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/summary_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6308,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/detailed.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16201,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/detailed_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15482,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_a17_r05_A_residual_spectral_20261023",
+      "title_cn": "A阶段残差更新、整体谱与功能的冻结诊断",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "CACHE_DIRECTORY",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "rawreadouts,spectra,innerproducts,weight-onlyfactors,sourceandreceipts",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 689,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/execution_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 34559,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/verification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 86275,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/analysis_receipt.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 614,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/freeze_before_new_forward.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2506,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/intervention_factors.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 48925190,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/full_spectra.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4694792,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/direction_inner_products.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2673874,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/specificity_6.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2070,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "bilingualcanonicalrecordsandrecognitionupdate",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/protocol.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5085,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/protocol_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5458,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/summary.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8438,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/summary_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9102,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/detailed.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15929,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/detailed_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 19113,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/recognition_update.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2216,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/recognition_update_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2044,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

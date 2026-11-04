@@ -1,0 +1,7 @@
+# Natural-language feature response: actual saved assets
+
+[中文](natural_language_feature_response_20261026_cn.md) · [R01 Chinese conclusion](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/summary_cn.md) · [Current scoped output access](checks/20261026_natural_language_feature_response_outputs.json).
+
+Three newly saved objects remain in `/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/`: data_natural_language_feature_panel_20261026 (72 constructed cases/288 qualified prefixes),representation_natural_language_feature_response_20261026 (native single-layer E16 target activations/hooks/reconstructions),and analysis_natural_language_feature_response_20261026 (frozen discovery/holdout analysis). Exact inputs,loaders and hashes are in the catalog and execution manifests. Three current strict output checks pass; no new model or dictionary was trained.
+
+H1 has10 operationally passing features. H2 G02/G04 pass the registered structure criteria but concentrate on bass; target-conditioned support was not matched. H3 f26149/f16240 show distance/order sensitivity. Stable f12039 is panel-average equivalence with6/36 active cases. These are bounded response descriptions,not experts,causal modules or functional success. Frequency matching retains historical-parent-digest and BF16-reference/FP32-current TopK limits.

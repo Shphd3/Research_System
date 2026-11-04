@@ -1,0 +1,27 @@
+{
+  "early_mid_late": [
+    500000000,
+    17000000000,
+    33000000000
+  ],
+  "key_turn_tokens": 3000000000,
+  "rule": "largest absolute successive log normalized-spectrum-rate change, ties earliest; add its right endpoint to uncertainty set if not early/mid/late",
+  "selected": [
+    500000000,
+    3000000000,
+    17000000000,
+    33000000000
+  ],
+  "rate_log_changes": [
+    0.9220100212388402,
+    0.6315874532510142,
+    0.464888953542145,
+    0.43453489359716624,
+    0.40168796929477857,
+    0.27472723858697545,
+    0.0402447840372373,
+    0.08395440950982458,
+    0.7762427997414676,
+    0.7116914364845668
+  ]
+}

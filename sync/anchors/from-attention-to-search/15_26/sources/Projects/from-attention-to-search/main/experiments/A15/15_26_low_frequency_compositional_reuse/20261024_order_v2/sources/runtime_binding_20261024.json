@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-10-24T16:09:43.995743+00:00",
+  "scope": "Runtime provenance append only; scientific body unchanged",
+  "scientific_body_sha256": "50517762ebf4be79d5f029f4e0234930ef529b72a7ffae1f30fa91f54cc2ddf3",
+  "frozen_at": "2026-10-24T15:59:10.536987+00:00",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2",
+  "source_probes": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/configs/execution_freeze.json",
+      "sha256": "41e97c877b9a076068e585f87e362ccdbb1bacb79f63df5d2950bbd5a4f40ae1",
+      "bytes": 3181
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/provenance/protocol_frozen.md",
+      "sha256": "50517762ebf4be79d5f029f4e0234930ef529b72a7ffae1f30fa91f54cc2ddf3",
+      "bytes": 74579
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/provenance/symbolic_source_freeze.json",
+      "sha256": "b3502eb4b894a9a46b1317384e8fdeb6470c0f0e9ac5c3b4b56f242306581920",
+      "bytes": 2997
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/audit/smoke.json",
+      "sha256": "824edbe7961ffc0112f75f0e16885d75d50970d8ae1fc82922b210bc5ba12773",
+      "bytes": 1052
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/audit/data_audit.json",
+      "sha256": "34594f429564296518d757d13d21afe8b65cede080aa839261c4a05307f30295",
+      "bytes": 2195
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/audit/data_required_access.json",
+      "sha256": "12aca647e2c481e04168fc9e7121ac3933cd749725f916c144363a9e0bf87437",
+      "bytes": 22405
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/audit/symbolic_required_access.json",
+      "sha256": "231238ebfd886da564cba72dc0b34c85575e26c85a852e82420ac1aa49a28c89",
+      "bytes": 11046
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "pt-nanedkok",
+      "role": "engineering smoke",
+      "receipt": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/acp_receipts/submit-order-v2-engineering-smoke-1024-20261024T152444Z.json",
+      "receipt_sha256": "cedb8c8d8f0ebd93f787622864ed8540857bf9a929e0f0fba19d33926c215a1a",
+      "submitted_at": "2026-10-24T15:24:45Z",
+      "observed_state": "SMOKE_PASS_ARTIFACT_VERIFIED"
+    },
+    {
+      "job_id": "pt-b784zfqv",
+      "role": "order full finite pipeline",
+      "receipt": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/acp_receipts/submit-order-v2-full-1024-20261024T155941Z.json",
+      "receipt_sha256": "8f4ca757ef39ff21dd755119aa7ae8bceda6badbf8924f597fba0aa30b99f728",
+      "submitted_at": "2026-10-24T15:59:42Z",
+      "observed_state": "RUNNING_LAST_REPORTED;TERMINAL_NOT_VERIFIED"
+    },
+    {
+      "job_id": "pt-tvcwfc9w",
+      "role": "symbolic auxiliary pipeline",
+      "receipt": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/acp_receipts/submit-symbolic-v2-full-1024-20261024T155949Z.json",
+      "receipt_sha256": "bc5cff30be1cf30db3057be6773ce620949eb8e388bdb8a6c3ac09173d121578",
+      "submitted_at": "2026-10-24T15:59:50Z",
+      "observed_state": "RUNNING_LAST_REPORTED;TERMINAL_NOT_VERIFIED"
+    }
+  ],
+  "result_state": "RUNNING",
+  "scientific_acceptance": "Unknown",
+  "asset_output_registration": "PENDING_ACTUAL_SAVED_OUTPUT_AUDIT"
+}

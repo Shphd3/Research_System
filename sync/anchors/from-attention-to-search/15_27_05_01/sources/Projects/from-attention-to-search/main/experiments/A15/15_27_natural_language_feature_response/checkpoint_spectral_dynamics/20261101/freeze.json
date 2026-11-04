@@ -1,0 +1,39 @@
+{
+  "frozen_at": "2026-11-01T02:50:46.770157+00:00",
+  "status": "FROZEN_BEFORE_MODEL_FORWARDS",
+  "authorization": "researcher2026-11-01boundedcompleteanalysis",
+  "files": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/protocol.md": "943c225ed23bae3968f4a59de415af66a9b51485620f83a0c5d25b8e24eca0fa",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/protocol_cn.md": "5420a917d78dd005a1051d954cdab62e7452eb3b3c9280f64a16a8c8ebc21e9f",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/checkpoint_spectral_dynamics/anchor.md": "2dde241fa3911c54b6575b9f40beb18ced1c5c4d878c4ae810e12984b7230675",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/checkpoint_spectral_dynamics/anchor_cn.md": "4c894f5c5ae162a670ec6b9fb604d71b8c63891ef043d6783afef3092de52a0f",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/config.json": "c9f5bf0a3b95f065b95f0f01981ec2f4df2a689ea544da3faa38b8b92e5278e5",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/manifest.json": "24d71c56086a721ac739b8efe57cf8bfc133b93cfbab82ff95f9f4252e2b33b0",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/acp_workspace_compat_proxy.py": "186aefeb1e68ba32b57d256b48c71e6a88c4d81259bd544078d8d1d1ad58bf46",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/analyze.py": "f977c2d71e40dd4c271161f1d2c355dc58bd7e7022cf22b522bb6e255dcbb730",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/calibrate.py": "c7d6e943957b728c61a4daf9dd3b462b2225e53187b7c1f0fd58bc68d8992376",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/collect.py": "ec221027a11eda178c07d46b06e456cd2d8726e2c3cd42b851c2d538057e5a79",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/metrics.py": "ed1eead57f9cd8e7f7359294a202a91567dad1fba35c26f22afd90f592bd976f",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/plot.py": "2eff3a440a3b2b0af0e78f6a5cd59b87e73a31201656a889d09ca703abd5057e",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/prepare.py": "34734406ad97c90994d257e6e94fbe3e8f6ad76839aba989f13b38f061b2b257",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/run.sh": "690893a7f49837cab45d435b3626ca40a6c9bb40e999c8e34f387dbe8b7fba95"
+  },
+  "numerical_calibration": {
+    "status": "PASS",
+    "checks": {
+      "identity_CKA": 4.440892098500626e-16,
+      "identity_subspace": 1.3323384067579027e-15,
+      "rotation_spectrum": 1.662472820176351e-14,
+      "rotation_CKA": 0.0,
+      "rotation_raw_direction": 0.8494069499838364,
+      "rotation_aligned_residual": 1.150451167721635e-15,
+      "scale_trace_ratio": 4.0,
+      "scale_CKA": 4.440892098500626e-16,
+      "permuted_CKA": 0.009301799804722377,
+      "stream_CKA_error": 4.440892098500626e-16,
+      "sv_lambda_error": 1.7763568394002505e-15
+    },
+    "note": "FP64projection distance evaluated by equivalent orthogonal residual to avoid cancellation;all matrix identities1e-8;not a scientific effect tolerance"
+  },
+  "analysis_allocation": "one5090-2-spot allocation,shared analysis ceiling2;active own jobs inspected,no active other analysis at inspection"
+}

@@ -1,0 +1,43 @@
+{
+  "scope": "posthoc feasibility diagnosis, not intervention experiment or power analysis",
+  "token_id": 304,
+  "token": " in",
+  "fixed_targets": {
+    "279": " the",
+    "264": " a"
+  },
+  "data_sha256": "5530f9676c3d7941150e404c045ad62815a11310d8b1ec4904c209121ddb8ad5",
+  "stages": [
+    {
+      "stage": "01same_token_two_fixed_targets_before_16_future_filter",
+      "279_occurrences": 217,
+      "279_unique_dialogues": 149,
+      "264_occurrences": 88,
+      "264_unique_dialogues": 74
+    },
+    {
+      "stage": "02require_16_future_targets_and_512_complete_prefix",
+      "279_occurrences": 177,
+      "279_unique_dialogues": 124,
+      "264_occurrences": 71,
+      "264_unique_dialogues": 59
+    },
+    {
+      "stage": "03one_position_per_token_per_dialogue_fixed_SHA",
+      "279_occurrences": 91,
+      "279_unique_dialogues": 91,
+      "264_occurrences": 43,
+      "264_unique_dialogues": 43
+    }
+  ],
+  "matched_dialogues_each_class": {
+    "source_only": 43,
+    "source_and_answer_position_bin16": 34,
+    "source_and_answer_position16_and_prefix_length32": 23
+  },
+  "independence_boundary": "distinct first-user-prompt hashes, not proven statistical independence",
+  "model_forwards": 0,
+  "EVAL_TEST_read": false,
+  "original_protocol_modified": false,
+  "source_sha256": "a1340a5e2cd4b0f4846decb9262ad3022864c5ffcabb3717734a0bcfa5d057b1"
+}

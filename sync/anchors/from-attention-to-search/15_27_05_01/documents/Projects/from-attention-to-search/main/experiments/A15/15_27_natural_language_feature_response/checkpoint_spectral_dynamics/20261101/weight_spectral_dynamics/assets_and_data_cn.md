@@ -1,0 +1,12 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/weight_spectral_dynamics/assets_and_data_cn.md`。
+[精确原始文件](../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/weight_spectral_dynamics/assets_and_data_cn.md)；研究修改仍回到原件。
+
+---
+
+# 权重谱动态：资产与对象说明
+
+输入ID为`checkpoint_family_dense_spectral_dynamics_20261101`，精确12个checkpoint及8个缺权重状态见manifest。已先核查当前可读性，执行时再核验每个checkpoint的SHA256与内部token/step。这里没有使用文本、推理tokenizer、文档划分、表征缓存或分类器；原tokenizer仅作为训练轨迹身份的一部分。
+
+覆盖57个独立二维矩阵；每个checkpoint的33个一维norm增益单列为排除，不伪称漏测。共享embedding/输出权重151936×1024只计一次：按词表输出投影看，右侧为hidden坐标、左侧为词表坐标；输入embedding查表对应其转置方向。其他线性层按原生W[输出,输入]解读。
+
+完整奇异值和左右前65基留在执行根`/data/250010109/MoE_Router/experiments/20261101_dense_weight_spectral_dynamics/cache/`。项目只保存小型统计表、代码、图、冻结记录与来源清单。输出资产和完成状态只以实际保存为准，不将计划当作产物。

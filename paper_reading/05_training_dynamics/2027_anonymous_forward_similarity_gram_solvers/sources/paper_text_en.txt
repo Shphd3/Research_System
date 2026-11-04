@@ -1,0 +1,2478 @@
+=== PDF PAGE 1 ===
+       Under review as a conference paper at ICLR 2027
+
+
+000  FORWARD  SIMILARITY  DOES  NOT  GUARANTEE001
+
+002    TRAINING EQUIVALENCE:  PRECISION PLACEMENT
+003
+004   IN DIFFERENTIABLE GRAM SOLVERS
+005
+006
+       Anonymous authors
+007
+         Paper under double-blind review
+008
+009
+010
+011                            ABSTRACT
+012
+013            Changing the numerical precision of a differentiable Gram solver may leave pre-
+014               dictions nearly unchanged while altering the computation used to learn its param-
+015                eters. We study this distinction in controlled Spectral Koopman Attention (SKA)
+016            and an independent episodic ridge classifier, assigning FP32 or FP64 to separate
+017              solver stages without changing their exact-arithmetic definitions. Matched com-
+018              parisons fix the model, input, and optimizer state; separately trained endpoints are
+                 evaluated through a common precision route. For SKA, we compare q110 with the019
+                 higher-precision solver route q111, a numerical reference rather than mathematical
+020
+               ground truth. Across 18 matched SKA validation comparisons from three training
+021
+                  seeds, median relative discrepancies in logits, full-model gradients, and restored
+022         AdamW updates are 0.962%, 8.61%, and 9.88%, respectively, each normalized
+023            by its corresponding q111 reference norm.  Prediction agreement can therefore
+024             miss differences in the learning computation. In a seven-seed matched classifier
+025             comparison, imposing externally prescribed ridge schedules shared across routes
+026              within each seed during training reduces the absolute between-route spread in
+027               post-training regularized-Gram conditioning by 97.4% relative to learning ridge
+028              separately under each route. This shows that the observed conditioning separa-
+029               tion depends on the training-time ridge policy. Precision choices in these solvers
+                  therefore warrant checks of parameter updates alongside predictions, with end-030
+                 point conditioning and task outcomes assessed separately.
+031
+032
+033
+034    1  INTRODUCTION
+035
+036     Nearly unchanged logits or validation loss can make a lower-precision solver appear interchangeable
+037     with a higher-precision implementation. A solver inside an end-to-end learned model, however, also
+038     supplies derivatives used by the optimizer (Amos & Kolter, 2017; Agrawal et al., 2019; Seeger
+039      et al., 2017). Prediction agreement leaves the derivative computation untested: similar outputs do
+040     not establish that the two implementations produce similar parameter updates.
+041     Numerical sensitivity of solvers and their derivatives is established (Higham & Mary, 2022; Hov-
+042     land & H¨uckelheim, 2024).  For training-time precision substitutions, however, derivative sensi-
+043      tivity alone does not quantify optimizer-update discrepancies or differences retained after training.
+044   We therefore separate two questions: how much do precision settings change updates at fixed pa-
+045     rameters, inputs, and optimizer state, and which learned-state differences remain under a common
+046     evaluation implementation? Matched parameter changes assess local training equivalence, with
+047     full-model gradients as an intermediate diagnostic. Evaluating trained models through a common
+048     solver implementation separates training-history differences from immediate evaluation arithmetic.
+049   We study a language model using controlled Spectral Koopman Attention (SKA) (Sridhar & Jo-
+050     hansen, 2026) and an independent episodic ridge classifier (Bertinetto et al., 2019). Both form a ma-
+051      trix from learned feature inner products, add positive regularization, and solve a linear system. We
+052     define a precision route by assigning FP32 or FP64 separately to statistic construction, factorization,
+053    and solution-side computation. Within each solver, these assignments preserve the exact-arithmetic
+      map while changing its numerical implementation.
+
+
+                                              1
+              Reviewers: please read the Reviewer Guidelines (iclr.cc/Conferences/2027/ReviewerGuidelines) and the AI Policy for Reviewers (iclr.cc/Conferences/2027/AIPolicyForReviewers).
+                        If you used AI to expand, edit, or polish your review, please provide the input text to the LLM. Better still, consider skipping the LLM and submitting your original text: we,
+            and the authors, are much more interested in your unedited thoughts than in what an LLM has to say. AI-assisted or not, you are putting your name and reputation behind
+              your review: LLM-generated falsehoods, hallucinations or misrepresentations are subject to disciplinary action, which may include desk-rejecting all papers you have authored.
+
+=== PDF PAGE 2 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+054
+        Across 18 matched SKA validation comparisons from three training seeds, a mixed-precision route
+055     yields median relative discrepancies of 0.962% for logits, 8.61% for full-model gradients, and 9.88%
+056      for restored AdamW updates against a higher-precision solver reference. Each quantity uses its
+057    own reference norm. A fixed-checkpoint control uses the same 20 training batches on an Apple
+058   M4 Max CPU and an NVIDIA A100. Raising only factorization precision reduces gradient and
+059     update disagreement against each environment’s reference, with little change in logit discrepancy.
+060    Recomputing local solver derivatives at higher precision also improves agreement while retaining
+061     the forward outputs (Section 4.3).
+062     Equivalent reformulation provides a complementary implementation control.  At one classifier
+063     checkpoint, a comparison using five fixed episodes yields smaller mixed-precision discrepancies
+064     with the smaller, mathematically equivalent dual formulation than with the primal formulation, each
+065     measured against its own higher-precision route (Section 4.4). The fixed-state result shows that the
+066     observed sensitivity also depends on the algebraic implementation.
+067     After training, we examine ridge—the regularization strength—and regularized-Gram conditioning,
+068     a measure of linear-system sensitivity to perturbations. Common-route evaluation reveals regime-
+069     dependent endpoint separation relative to seed variation and differences in loss (Section 4.4). In
+070     a seven-seed classifier comparison, an externally prescribed ridge schedule is shared across routes
+071     within each seed, following that seed’s reference trajectory with a one-episode lag. Sharing the
+072     schedule reduces absolute between-route spread in post-training conditioning by 97.4% relative to
+073      route-specific ridge learning. A schedule fixed during development lowers the route-averaged con-
+074      dition number without establishing better or equivalent task performance (Section 4.6).
+075     Precision placement can change parameter updates despite close predictions, while the fixed-state
+076     dual control shows that equivalent reformulation can reduce the measured sensitivity. Separately
+077     trained endpoints exhibit regime-dependent differences, and ridge interventions change conditioning
+078     without establishing a task benefit. The experiments distinguish the effects of numerical implemen-
+079      tation on updates, learned-state statistics, and task outcomes: prediction agreement alone does not
+080      validate a precision substitution for training.
+081
+082    2  BACKGROUND
+083
+084     Let Z ∈Rn×r contain learned features as rows and let C ∈Rr×k be the right-hand side of a linear
+085     system. The regularized Gram solve obtains W ∈Rr×k from GλW = C, where Gλ = Z⊤Z +λIr
+086    and λ > 0. We call λ the ridge parameter.  In exact arithmetic, it makes Gλ positive definite,
+087     allowing Cholesky factorization and triangular solves. Higher-precision factorization cannot recon-
+         struct information already lost during Gram construction. Precision must therefore be specified by088
+        computational role (Higham & Mary, 2022).
+089
+090     Differentiating the exact system gives
+091                     dW = G−1λ   (︁ dC −(dGλ)W )︁ ,
+092    where d denotes a differential and inverse notation denotes a solve. This identity is not a finite-
+093     precision error bound (Appendix C). The model gradient depends on the gradient from the down-
+094     stream loss, and the parameter update depends on the optimizer’s stored state. Forward agreement
+095     alone does not establish agreement of these computations (Hovland & H¨uckelheim, 2024).
+096
+097    3  METHOD
+098
+099   We define the solvers and precision interventions below. Matched update comparisons assess local
+100      training equivalence, with full-model gradients as an intermediate diagnostic. Forward similarity
+101     concerns downstream outputs, not uniform agreement of internal solver quantities. Evaluation and
+102     optimizer protocols are specified in Section 4.1.
+103
+104     3.1  DIFFERENTIABLE GRAM SOLVER ABSTRACTION AND PRECISION STAGES
+105
+106    Both systems use the regularized Gram solve in Section 2, with a lower-triangular Cholesky factor
+        L. A precision route specifies the arithmetic assigned to three computational stages:107
+                      qpGpCpS,    pG, pC, pS ∈{0, 1},    0 = FP32,  1 = FP64.              (1)
+
+
+                                              2
+
+=== PDF PAGE 3 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+108
+       Here pG controls statistic construction, pC the Cholesky input cast and factorization, and pS
+109     solution-side computation, including triangular solves. Routes preserve the exact-arithmetic map
+110     within each formulation and use ordinary automatic differentiation; the backward substitution be-
+111    low is a separate diagnostic.
+112
+113     3.2  SKA SOLVER INSTANTIATION
+114
+115    Our controlled SKA (Sridhar & Johansen, 2026) uses projected keys and queries kt, qt ∈Rr and
+116     values vt ∈Rdh. The first P < T positions form the prefix. Suppressing batch and head indices, K
+117    and V stack prefix keys and values as rows; K−and K+ stack keys at positions 1, . . . , P −1 and
+         2, . . . , P. Thus M = K⊤+K−uses P −1 lag-one pairs, whereas Cv = V ⊤K and the Gram use all118
+     P prefix positions. Projection and stacking details are in Appendix A.8.
+119
+120                    λ = exp(θλ),    Gλ = K⊤K + λIr = LL⊤,
+121                                                                                                         (2)
+                  Aw = L−1ML−⊤,  Bv = L−⊤L−1C⊤v = G−1λ K⊤V.122
+123     Ridge is optimized jointly with the model. Inverse notation denotes triangular solves; no explicit
+124     inverse is formed. The prefix-derived L, Aw, Bv are reused at every position with fixed two-step
+125     propagation:
+126                                         {︃kt,   t ≤P,                                      st =                   ut = LA2wL−1st.                          (3)
+127                                              qt,   t > P,
+128
+       Here qt is a projected query, distinct from the route label q. Each head outputs o(h)t = (B(h)v  )⊤u(h)t   ,129
+        giving
+130
+                               ySKAt  = σ(α)WO Concath o(h)t   .                               (4)131
+132     This branch includes WO and the learned sigmoid gate, but excludes the vocabulary projection.
+133    Token embeddings pass directly through SKA and then that projection; cross-entropy uses suffix
+         positions only. We use Aused = Aw, with no spectral rescaling, downstream residual connection,134
+         additional sequence-model block, or MLP. The Gram, Cholesky, and solve path, including learned
+135
+         ridge, remains differentiable.
+136
+137
+        3.3  INDEPENDENT RIDGE SOLVER INSTANTIATION
+138
+139    The episodic classifier uses labeled support examples to fit a linear classifier and query examples to
+140     evaluate it. A shared encoder produces their features:
+141
+142                    Zs = fϕ(Xs),  Zq = fϕ(Xq),  Gc = Z⊤s Zs + λcI,
+                                                                                                            (5)
+143                    Cc = Z⊤s Ys,  W = G−1c  Cc,    ℓq = ZqW,  λc > 0.
+144
+       Here Ys contains episode-local five-way one-hot targets, and ℓq denotes query logits, distinct from145
+         scalar loss L. Query cross-entropy trains the encoder and ridge λc = exp(θc) jointly through
+146
+       Cholesky and triangular solves.  The encoder and feature normalization are specified in Ap-
+147     pendix A.8.
+148
+149     Endpoint and policy studies retain this primal implementation. A fixed-state control uses the dual
+       form Wd = Z⊤s (ZsZ⊤s + λcI25)−1Ys instead: a 25 × 25 rather than 64 × 64 solve, with the same150
+         exact-arithmetic W for λc > 0 (Appendix C.1).  Table 1 describes the primal stages; the dual151
+         configuration is discussed in Appendix A.11.
+152
+153
+        3.4  PRECISION ROUTES AND SOLVER-ASSOCIATED BACKWARD DIAGNOSTIC
+154
+155     Table 1 specifies which computations each bit controls.
+156
+157     Writing FP32/FP64 as 32/64, in stage order (pG, pC, pS):
+158                       q000 : (32, 32, 32),  q100 : (64, 32, 32),  q101 : (64, 32, 64),
+159                       q110 : (64, 64, 32),  q111 : (64, 64, 64).
+160
+161     In SKA, pS includes M, Cv construction as well as the associated solves; in the primal classifier, Cc
+        construction belongs to pG. For example, SKA’s q100 forms the regularized Gram in FP64 but casts
+
+
+                                              3
+
+=== PDF PAGE 4 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+162
+163     Table 1: Precision stages for SKA and the primal ridge classifier. Roles align across systems, but
+164     tensor assignments are solver specific.
+165      Stage   Computational role     SKA                             Primal ridge classifier
+166       pG       Routed-statistic         Gram-path key casting, K⊤K,     Gc, Cc construction
+167               construction              ridge addition
+168     pC      Cholesky factorization    Cholesky input and factorization    Cholesky input and factorization
+169     pS       Solution-side routed    M, Cv construction and             Triangular solves constructing W
+                 computation               transition/readout solves170
+171
+             it to FP32 before Cholesky. Thus q100 →q110 changes only Cholesky-stage precision; q110 →q111
+172
+        changes solution-side precision. The q101–q111 comparison instead isolates Cholesky precision with
+173     both other stages in FP64. The operational reference q111 uses FP64 in the three solver stages, not
+174     throughout the network or in exact arithmetic. Independent calibration covers selected outputs and
+175     directions (Appendix A.7).
+176
+177     Solver-associated backward diagnostic.  We retain the outputs emitted by q110 but replace how
+178     the loss gradient is propagated through the solver. Let Q collect projected queries, Fsel denote the
+179     q110 head-output map, Ffull the map recomputed through q111, and D the downstream model. The
+180     substituted vector–Jacobian product (VJP) is
+181                               z = (K, V, Q, λ),  h = Fsel(z),
+182                                                                                                         (6)
+                                                       ¯h = ∇hL(D(h)),    ¯z = JFfull(z)⊤¯h.183
+184    Here h is the per-head output before concatenation, WO, and gating. The incoming loss gradient
+185        ¯h comes from the retained forward. Automatic differentiation through the recomputed map sup-
+186      plies the VJP; the rest of the model differentiates normally. The replacement covers the full solver
+187     head-producing submap, not only Cholesky backward or the entire model. Detached inputs, recon-
+188      struction, casts, and gradient paths are detailed in Appendix A.3.
+189
+190    4  EXPERIMENTS
+191
+192   We evaluate precision substitutions at two levels: the computation of a single update and the out-
+193    comes of separate training runs. Matched comparisons hold model parameters, inputs, and optimizer
+194      state fixed; separately trained models are evaluated through a common solver route. Ridge interven-
+195      tions then examine how regularization affects conditioning and whether learning it online benefits
+196     the task, treating these as separate questions.
+197
+198     4.1  EXPERIMENTAL SETUP
+
+199
+       Systems and regimes.  SKA uses WikiText-2 and TinyStories with primary sequence/prefix200
+        lengths 512/256, four heads, operator rank 128, and initial learned ridge 10−3. WikiText held-
+201
+        out records are an internal division of the filtered training split, not the official validation split. The
+202
+        five-way digits classifier uses 25 support and 50 query examples with 64-dimensional features. Its
+203     baseline starts learned ridge at 10−3; the lower-ridge-initialization regime changes only this initial-
+204      ization to 10−4. Other settings remain fixed (Appendices A.9 and A.1).
+205
+206    Matched computations.  Each matched precision-route comparison fixes model parameters, in-
+207      put, algebraic formulation, ridge, and restored optimizer state. For a routed quantity xq and its
+208    matched reference x⋆, relative disagreement is
+209
+                                            ∥vec(xq) −vec(x⋆)∥2
+210                            E(xq; x⋆) =                                          max(∥vec(x⋆)∥2, 10−12).                           (7)211
+212   We compare full-model raw gradients and actual restored-step parameter changes ∆θq = θ+q −θ,
+213     under the stated optimizer and clipping protocols. Discrepancies are continuous measurements, not
+214     a universal equivalence threshold. Main tables display relative discrepancies as 100E (%). Each
+215     quantity uses its own reference norm; cross-space percentages are not amplification factors. Vector
+       and loss construction and sample manifests are detailed in Appendices A.5 and A.4.
+
+
+                                              4
+
+=== PDF PAGE 5 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+216
+      Common-route endpoints.  Step-5000 endpoints  trained under  q100, q110, q111  retain  their
+217     learned parameters, including ridge, and are evaluated under common q111.  This fixes immedi-
+218      ate evaluation arithmetic while preserving differences left by training. TinyStories uses seeds 0–2;
+219     WikiText and both classifier regimes use seeds 0–4. Each endpoint averages validation IDs 0–15;
+220     task CE then reports the across-seed mean and sample standard deviation within each training route.
+221    Matched differences and full reductions are in Appendix B.7.
+222
+223     Conditioning and  route-to-seed  separation.  The  semantic  condition  statistic  measures
+224     regularized-Gram conditioning, not semantic quality: SKA uses K⊤h Kh + λI, and the classifier
+225     uses support-only He = Z⊤s Zs + λcI. SKA takes the linearly interpolated 95th percentile across
+226     four heads within each probe, then averages 16 probes; the classifier averages 16 episode condi-
+227      tions. Both use FP64 spectral measurements, with symmetrization and numerical floors specified
+         in Appendix A.6. Because the classifier has 25 support examples and 64 features, rank(Z⊤s Zs) ≤228
+       25 < 64 and, in exact arithmetic, λmin(He) = λc (Appendix C). Ridge and minimum eigenvalue
+229
+         are therefore not independent mechanism evidence.
+230
+231   We use Rroute/seed(x; t) = ∆route(x; t)/ max(∆seed(x; t), 10−12): the numerator averages abso-
+232      lute pairwise route differences within seeds; the denominator averages pairwise seed differences
+233     within routes. Both use raw-scale common-route statistics, including λ rather than log λ. A large
+          ratio can reflect a large route spread, a small seed spread, or both. It is descriptive, not a significance234
+          test or variance decomposition (Appendices A.6 and B.1).
+235
+236
+        4.2  SOLVER FIDELITY DEPENDS ON PRECISION PLACEMENT237
+238     In the targeted 29-unit audit, each FP32-Gram route completes 21/29 units, with the same eight
+239      failing at Cholesky; each FP64-Gram route completes 29/29. These counts concern the specified
+240     forward, backward and restored-update path, not population failure rates or a certificate of finite
+241     values throughout (Appendix A.4). Table 2 separates Cholesky and solution-side interventions using
+242     unclipped restored AdamW updates.
+243
+        In one failed unit, the symmetrized FP32 regularized Gram has λmin ≈−1.5 × 10−4: rebuilding
+244    from the same keys in FP64 restores positive definiteness, but FP64 Cholesky on the existing Gram
+245     does not. This example does not explain every failure. Stage effects are not additive, and successful
+246      factorization alone does not validate the learning update.
+247
+248     Table 2: Stagewise SKA comparisons on 29 frozen state–single-example units. Entries are median
+249      relative disagreements against q111. Updates use checkpoint-restored AdamW.
+250     Comparison                                          Changed role N  Gradient AdamW update
+251
+         q101 vs. q111                                            Cholesky     29 39.27%  41.02%
+252     q110 vs. q111                                                 Solution side  29 13.45%  18.79%
+253
+254
+        4.3  DOWNSTREAM FORWARD SIMILARITY AND LOCAL TRAINING-STEP DISAGREEMENT
+255
+256     Cross-seed validation comparison.  Six checkpoints from training seeds 1–3 at steps 100 and
+257     1000, each crossed with three size-32 validation batches, give 18 matched q110–q111 comparisons.
+258     All complete. Across these units, median logit, raw-gradient and clipped restored-AdamW update
+259     disagreements are 0.962%, 8.61% and 9.88%; median absolute loss difference is 3.19 × 10−4.
+260     Gradient and clipped-update median cosines are 0.9961 and 0.9947: directions remain close despite
+261     vector disagreement. Table 3 gives six-unit medians for each seed; overall medians use all 18 units.
+       These units come from three training seeds, not 18 independent training runs. Norm-1 clipping262
+         activates in both routes of one unit (Appendix A.5); auxiliary summaries and repeatability controls
+263
+         are in Appendix B.6.
+264
+265      Earlier seed-0 training-input comparisons with restored Adam likewise show close downstream out-
+266     puts without a uniformly close internal Aw. Their nine-unit results and inactive-clipping follow-up
+267     are retained in Appendix B.8 and Figure 2.  Different optimizers and inputs preclude attributing
+        between-cohort magnitudes to seed alone.268
+269
+
+
+
+                                              5
+
+=== PDF PAGE 6 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+270
+271     Table 3: Cross-seed q110 versus q111 comparisons: six-unit medians per seed, in percent. Gradients
+272     precede clipping; restored AdamW updates include source-configuration norm-1 clipping.
+273                                                                    Clipped AdamW
+274                        Seed   Logit E (%)  Raw gradient E (%)    update E (%)
+275                         1           0.913                9.418             9.576
+276                         2           1.107                8.818            10.556
+277                         3           1.159                7.747             9.985
+
+278
+        Fixed-checkpoint comparison across computing environments.  Table 4 evaluates the same
+279
+         q111-trained seed-0, step-1000 checkpoint and 20 saved training batches on Apple M4 Max CPU
+280
+       and NVIDIA A100-SXM4-40GB. This is an offline control at one saved training state, not addi-
+281      tional training replication. Restoration and environment records are in Appendix A.10.
+282
+283     Table 4: Mean relative L2 discrepancies in percent over the same 20 training batches, relative to each
+284     environment’s q111. Every execution restores model and Adam state. Norm-1 clipping is configured
+285     but inactive in both controls.
+286     Environment                                     Route  Logit E (%)  Gradient E (%) Update E (%)
+287        Apple M4 Max CPU                                 q100       1.65461        36.7520       41.5114
+288     Apple M4 Max CPU                                 q110       1.68202        14.0616       14.2051
+289    A100-SXM4-40GB                                  q100       2.74925        37.7789       42.1973
+290    A100-SXM4-40GB                                  q110       2.67472        17.9418       17.4266
+291     Raising only Cholesky-stage precision (q100 →q110, pG = 1, pS = 0) reduces mean gradi-
+292     ent/update discrepancy by 61.7%/65.8% on CPU and 52.5%/58.7% on A100, computed from the
+293     reported means. Reference-relative logit discrepancy changes little; the routes need not emit iden-
+294      tical outputs. The pattern recurs in both environments, but hardware and software effects are not
+295     separated (Appendix B.11).
+296
+297     Separate custom-VJP diagnostic.  On the same 29 frozen units as Table 2, the diagnostic retains
+298     q110 forward values and substitutes the solver-head Jacobian recomputed through q111 (Eq. (6)).
+299     Gradient and update agreement improve in all 29/29 cases (Table 5); this comparison uses unclipped
+300     restored Adam, not the stagewise audit’s AdamW.
+
+301
+        Table 5: Fixed-forward solver-derivative diagnostic on 29 frozen units. Entries are median relative302
+        disagreements against native q111. Both columns emit the same q110 forward values; updates use303
+        unclipped checkpoint-restored Adam.
+304
+                                                                            Same forward
+305         Quantity                                                                   Native q110  + custom VJP
+306
+         Full-model gradient E (%)                                                    13.446          2.777
+307
+         Restored Adam update E (%)                                                  18.759          2.966
+308
+309    Improved agreement at unchanged prediction outputs exposes sensitivity in the differentiated solver
+310     pathway. The substitution covers the full solver-head map, so it neither isolates individual numerical
+311      error sources nor quantifies causal mediation (Appendix B.10).
+312    On four fixed solver traces, selected outputs and one analytic directional derivative per trace show
+313     production q111 discrepancies of approximately 10−7–10−6 against an 80-digit reference. Reference
+314     working-precision consistency is reported separately; these checks do not certify the full Jacobian,
+315     full-model gradients or optimizer updates (Appendix A.7).
+316
+317     4.4  LOCAL DISAGREEMENT AND REGIME-DEPENDENT ENDPOINT SEPARATION
+318
+319     In baseline ridge, local q110–q111 median gradient/update disagreements are 0.1821%/0.1099%
+        across 36 matched units, alongside modest endpoint separation (Appendix B.9). These units are320
+        not independent training seeds, and the local and endpoint comparisons do not track one perturba-
+321
+         tion through training. Table 6 separately compares four trained regimes, with larger route-to-seed
+322
+         ratios in WikiText and the lower-ridge-initialization classifier. Local disagreement warrants a sepa-
+323      rate endpoint assessment; modest ratios do not establish model equality.
+
+
+
+                                              6
+
+=== PDF PAGE 7 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+324
+325     Table 6: Step-5000 endpoints under common q111 evaluation. Panel (a) gives raw-scale ridge and
+326     condition route-to-seed ratios. Panel (b) identifies training routes: each endpoint first averages IDs
+327     0–15, then entries report mean ± sample SD across training seeds. Task CE is not a common cross-
+328     system performance scale; the two ridge regimes share the task and episode construction.
+329       (a) Regularized-Gram endpoint separation
+330     Regime                                                                      Nseed  Rλ  Rcond
+331
+         TinyStories SKA                                                            3    0.91   0.96
+332     WikiText SKA                                                             5    19.84  10.75
+333     Ridge (λ0 = 10−3)                                                          5    0.46   0.37
+334     Ridge (λ0 = 10−4)                                                          5    5.47   4.28
+335      (b) Task cross-entropy by training route
+336
+        Regime                     Nseed          q100                  q110                  q111
+337
+338      TinyStories SKA              3   2.259161 ± 0.006995 2.258135 ± 0.005344 2.258873 ± 0.005726
+        WikiText SKA               5   2.386080 ± 0.002150 2.386968 ± 0.001353 2.387161 ± 0.000976339
+        Ridge (λ0 = 10−3)            5   0.889881 ± 0.015265 0.889756 ± 0.014979 0.889679 ± 0.014929
+340
+        Ridge (λ0 = 10−4)            5   0.897302 ± 0.010427 0.889803 ± 0.013730 0.889559 ± 0.014046
+341
+342     Route-resolved task outcomes.  In the lower-ridge-initialization classifier, the same-seed mean
+343   CE difference from q111 is +0.007743 for q100 (higher in 4/5 seeds), but only +0.000245 for q110.
+344     WikiText instead has a q100 difference of −0.001081 (lower in 4/5 seeds). Thus q111 does not con-
+345      sistently attain the lowest observed task loss in these runs, and the classifier pattern does not extend
+346      to both selective routes. These observations establish neither statistical significance nor causation by
+347      local update discrepancies (Appendix B.7). Across four decreasing ridge initializations, local gradi-
+348     ent/update discrepancy and Rλ increase, but Rcond peaks at 2×10−4 and then falls (Appendix B.2).
+
+349
+        Algebraically equivalent ridge formulations.  At one classifier checkpoint (q111-trained, seed 0,350
+         step 5000; λc ≈1.4337369 × 10−3), the CPU/Accelerate control compares 64 × 64 primal and351
+       25 × 25 dual systems on validation episodes 0–4. All three measured discrepancies are smaller for
+352
+        dual (Table 7(a)); primal/dual update ratios are 26.0 and 8.9 for q100 and q110.
+353
+354     Table 7: Fixed-state primal/dual control; all discrepancies are in percent.  In (a), candidates use
+355      their own formulation’s q111. Logits are concatenated across five episodes; gradients and unclipped
+356     restored AdamW updates use one backward pass on the five-loss mean. In (b), dual-q111 is compared
+357     with primal-q111: logit is the maximum episode error, whereas gradient/update use the single global
+358      five-loss comparison.
+359       (a) Within-formulation precision discrepancies
+360
+       Form   Route                                            Logit E (%)  Gradient E (%)   Update E (%)
+361
+         Primal  q100                                            0.11198        0.76070        0.12004362
+        Dual    q100                                         0.0052788       0.012503      0.0046255
+363         Primal  q110                                           0.047281       0.093731       0.021761
+364     Dual    q110                                         0.0017635      0.0049657      0.0024490
+365
+          (b) Reference-implementation consistency
+366
+367     Observed E (%)                                    2.3819 × 10−5  1.1740 × 10−4  2.0194 × 10−4
+368   A standard equivalent formulation can therefore mitigate the observed local sensitivity without
+369     changing the mathematical ridge problem. The five specified reference-consistency criteria pass;
+370     the update observation has no prespecified threshold. These are implementation comparisons, not
+371     exact-error bounds; independent restore-repeatability and dual-trained endpoints are not established
+372    by this control (Appendices A.11 and B.12).
+373
+374     4.5  RIDGE DEPENDENCE OF ENDPOINT STATISTICS
+375
+376    Same-seed ridge transplantation.  For seeds 0–4, step-5000 q100/q110 recipients receive only
+          their same-seed, step-5000 q111 donor’s log-ridge. Non-ridge parameters remain fixed, no optimizer377
+         step occurs, and outputs are recomputed under common q111. Closure is the fraction of the absolute
+
+
+                                              7
+
+=== PDF PAGE 8 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+378                               Regularized-Gram condition (×106; logarithmic axes)
+379                       (A) WikiText SKA                               (B) Ridge (λ0 = 10−4)
+380
+381                                                   14
+          20382
+383                                                   12
+384       10
+385                                                   10
+386        5
+387
+388                                                    8
+           2389
+                 Native        Replaced       Reference           Native        Replaced       Reference
+390
+391                                                   q100          q110
+
+392
+393     Figure 1: Endpoint ridge transplantation at step 5000.  Native is the trained recipient; Replaced
+        changes only its log-ridge to the same-seed q111-trained endpoint’s value; Reference is that end-394
+         point. All configurations use q111 evaluation without optimization. Lines connect five-seed medians
+395
+        of means over IDs 0–15, not training trajectories; bars show min–max ranges, not confidence in-
+396
+          tervals. Replacement approaches the reference, increasing WikiText condition but decreasing ridge
+397     condition. Seed-level values and paired log-gap closures are in Appendix B.3.
+398
+399
+        log-conditioning gap to the reference closed by replacement. We report the median of five seed-level400
+         closures, computed from each endpoint’s 16-evaluation mean (Appendix B.3).
+401
+402    The q100/q110 closures are 98.8%/98.0% for WikiText and 98.1%/99.3% for the lower-ridge-
+403      initialization classifier (Figure 1). Approaching the reference raises WikiText condition but lowers
+404      classifier condition. This establishes strong conditioning dependence on ridge at fixed non-ridge
+405     parameters, not representation recovery or task improvement.
+406
+       WikiText training-time ridge controls.  With ridge externally fixed at 10−3 or replayed from the407
+       same seed’s q111 trajectory, only 0/5 and 1/5 q100 runs complete, respectively; the remaining runs
+408
+           fail at Cholesky (Table 27 in Appendix B.14). Failures remain in the denominators. Ridge replay
+409
+         therefore does not resolve this training-time failure boundary or establish WikiText training-time
+410     ridge mediation, despite close endpoint agreement after replacement.
+411
+412     4.6  TRAINING-TIME RIDGE INTERVENTIONS
+413
+414     Policies use the classifier with λ0 = 10−4, seeds 5–11 and routes q100, q110, q111. P1 learns log-
+415     ridge online. P2 replays each seed’s saved P1–q111 trajectory across that seed’s routes with the
+416     implementation’s one-episode lag (Appendix B.13). P5 assigns one development-locked log-ridge
+417     schedule across all seeds and routes.  P2/P5 do not optimize ridge.  Initial ridge is shared, but
+        subsequent P2 trajectories differ across seeds.418
+419
+      Matched seven-seed shared-ridge comparison.  P1/P2 step-5000 endpoints use common q111420
+         evaluation on identical episodes 0–15. Absolute condition route spread falls from 2,539,987.73 to
+421
+        65,379.40 (97.4%), and Rcond from 5.6939 to 0.1384. Unlike frozen-endpoint replacement, P2
+422     controls ridge throughout training while non-ridge parameters adapt under their assigned routes.
+423     This provides intervention evidence that the measured conditioning separation depends strongly on
+424     the training-time ridge policy; it does not decompose all route-dependent training effects.
+425
+426    Development-locked log-ridge schedule.  P5 was constructed from development seeds 0–2 and
+427     locked before confirmatory training on seeds 5–11, without online route-specific ridge adaptation.
+428     Held-out refers to seeds relative to policy development, not an unseen dataset. Locked knots and
+429      interpolation are provided in Appendix B.5. Table 8 retains the distinct condition and task evaluators.
+430    P5 lowers route-averaged condition in 7/7 seeds, but query loss is lower in 4/7 and higher in 3/7
+        (p = 0.375). No equivalence margin was specified: the task comparison establishes neither benefit431
+        nor equivalence. Online route-specific ridge learning is not required for the observed lower route-
+        averaged condition; these averages do not establish improvement on every route.
+
+                                              8
+
+=== PDF PAGE 9 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+432
+433     Table 8: P5 versus native learned ridge on seeds 5–11. Condition uses 16 episodes and query loss
+434     uses 200 within each route, followed by a three-route average under common q111.  Entries are
+435     seven-seed means; final columns count lower P5 seed values and report unadjusted exact two-sided
+436     paired sign-flip p-values with seed as the paired unit. The loss test is not an equivalence test. Paired
+        seed data and 95% bootstrap intervals appear in Appendix B.5 (Tables 17 and 18).437
+438     Metric                                                Native ridge     P5      Seeds lower  Paired p
+439     Semantic condition                                 1.131 × 107  9.159 × 106      7/7     0.015625
+440      Validation query loss                                 0.900022    0.899382       4/7       0.375
+441
+442
+443    5  RELATED WORK
+444
+445     Differentiable solvers and learned linear operators.   Differentiable optimization and linear-
+446     algebra layers embed structured solves in end-to-end learning (Amos & Kolter, 2017; Agrawal et al.,
+447     2019; Blondel et al., 2022; Ionescu et al., 2015; Seeger et al., 2017). Bertinetto et al. (2019) combine
+448     episodic ridge regression with learned features and solver hyperparameters, use Woodbury’s iden-
+449      tity for smaller solves, and examine the task value of learning ridge. Our classifier studies precision
+450      sensitivity in this construction. Our controlled SKA derives from Echo (Sridhar & Johansen, 2026),
+451     within work on finite-dimensional Koopman approximations and learned dynamical representations
+452     (Williams et al., 2015; Takeishi et al., 2017; Lusch et al., 2018).
+453
+454     Finite-precision numerical linear algebra.  Cholesky-based QR analysis and mixed-precision
+455     solvers address conditioning, roundoff, and precision allocation (Yamamoto et al., 2015; Carson
+456   & Higham, 2018; Higham & Pranesh, 2021; Higham & Mary, 2022). Mixed-precision training uses
+457     higher-precision accumulation, master weights, loss scaling, and tensor-level assignments (Micike-
+458     vicius et al., 2018; Kalamkar et al., 2019; Lee et al., 2023). We compare solver-stage precision
+459     choices through predictions, full-model gradients, and restored updates at matched parameters, in-
+         puts, and optimizer state.460
+461
+462    Forward–backward discrepancies in training.  Automatic differentiation faces numerical pit-
+463       falls, including incompletely converged iterative solvers (H¨uckelheim et al., 2024; Akbarzadeh et al.,
+464     2020). Murray (2016) derives Cholesky differentiation rules; Hovland & H¨uckelheim (2024) com-
+465     pare differentiating iterative solver implementations with differentiating the underlying equations,
+        primarily in forward mode. Matrix-decomposition methods also adjust backward computations for466
+          stability (Wang et al., 2019; 2022; Song et al., 2021). Our fixed-forward diagnostic tests solver-
+467
+         derivative sensitivity.  Common-route evaluation separates endpoint differences from evaluation
+468
+         arithmetic; ridge interventions distinguish conditioning effects from the task value of online adapta-
+469      tion.
+470
+471
+472    6  CONCLUSION
+473
+474     Forward agreement alone does not establish local training equivalence in differentiable Gram
+475      solvers.  Matched SKA comparisons, including three additional training seeds, show close pre-
+476     dictions alongside different gradients and actual parameter updates. The stage-specific pattern also
+477     appears in the fixed-checkpoint CPU/A100 control, while recomputing solver derivatives improves
+478     agreement without changing prediction outputs. In the separate classifier control, a standard equiva-
+479      lent dual formulation substantially reduces the measured discrepancies: their magnitude is not fixed
+480    by the mathematical problem alone.
+481     After training, ridge and conditioning separation vary across regimes. Sharing a reference ridge
+482     schedule during classifier training substantially reduces the measured between-route conditioning
+483     spread; lower conditioning under a separate locked schedule does not establish better or equivalent
+484     task performance.  Precision substitutions therefore need update checks in addition to prediction
+485     checks, and trained models require separate evaluation of conditioning and task outcomes. These
+         findings concern the two tested Gram solvers and their evaluated regimes.
+
+
+                                              9
+
+=== PDF PAGE 10 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+486
+      AI USE STATEMENT
+487
+488   We used ChatGPT and Codex to assist with drafting and revision, literature search and comparison,
+489    and code and artifact inspection. The authors are responsible for the manuscript’s claims, citations,
+490    and experimental analyses.
+491
+492    REPRODUCIBILITY STATEMENT
+493
+494     Section 3 specifies both solvers, the precision assignments, and the custom-VJP intervention.
+495     Section 4.1 defines the comparison populations, metrics, and endpoint evaluators.  Appendix A
+496     records experiment-specific optimizer and retry protocols, derivative reconstruction, the original
+        nine comparisons and their Adam clipping follow-up, the additional 18 comparisons with restored497
+     AdamW and source-configured clipping, and estimator details. Appendix A.2 reports recovered
+498
+        computing-environment records, their historical coverage, and the dependency-manifest limita-
+499
+          tion.  Appendix B.6 gives the additional local summaries, and Appendix B.7 reports task out-
+500    comes and same-seed differences under a common evaluator. Appendix A.7 describes the four-trace
+501     production-reference checks and pre-cast precision consistency of the reference. Appendix B also
+502     provides the descriptive endpoint criterion, ridge-sweep aggregation, seed-level transplant values,
+503     supplementary ridge-control protocols, and the P5 log-ridge knots. Appendix C gives the exact-
+504     arithmetic identities used to interpret the solver and ridge statistics. Evaluation units and aggregation
+505     orders remain distinct, and failed runs are retained in the completion counts. Cross-environment and
+506     primal/dual protocols and results are provided in Appendices A.10, B.11, A.11, and B.12.
+507
+508   REFERENCES
+509
+510    Akshay Agrawal, Brandon Amos, Shane T. Barratt, Stephen P. Boyd, Steven Diamond, and J. Zico
+511        Kolter. Differentiable convex optimization layers. In Advances in Neural Information Processing
+512       Systems, volume 32, pp. 9558–9570, 2019.
+513
+       Siamak Akbarzadeh, Jan H¨uckelheim, and Jens-Dominik M¨uller. Consistent treatment of incom-
+514
+            pletely converged iterative linear solvers in reverse-mode algorithmic differentiation. Computa-
+515        tional Optimization and Applications, 77:597–616, 2020. doi: 10.1007/s10589-020-00214-x.
+516
+517     E. Alpaydin and C. Kaynak.  Optical recognition of handwritten digits. UCI Machine Learning
+518        Repository, 1998. URL https://doi.org/10.24432/C50P49. Dataset.
+519
+520    Brandon Amos and J. Zico Kolter.  OptNet:  Differentiable optimization as a layer in neural
+521       networks.  In Proceedings of the 34th International Conference on Machine Learning, vol-
+        ume 70 of Proceedings of Machine Learning Research, pp. 136–145, 2017. URL https:522
+        //proceedings.mlr.press/v70/amos17a.html.
+523
+524
+       Luca Bertinetto, Joao F. Henriques, Philip Torr, and Andrea Vedaldi. Meta-learning with differen-
+525         tiable closed-form solvers. In International Conference on Learning Representations, 2019. URL
+526     https://openreview.net/forum?id=HyxnZh0ct7.
+527
+528     Mathieu Blondel, Quentin Berthet, Marco Cuturi, Roy Frostig, Stephan Hoyer, Felipe Llinares-
+529        L´opez, Fabian Pedregosa, and Jean-Philippe Vert. Efficient and modular implicit differentiation.
+530        In Advances in Neural Information Processing Systems, volume 35, pp. 5230–5242, 2022.
+531
+        Erin Carson and Nicholas J. Higham. Accelerating the solution of linear systems by iterative refine-
+532
+         ment in three precisions. SIAM Journal on Scientific Computing, 40(2):A817–A847, 2018. doi:
+533
+         10.1137/17M1140819.
+534
+535    Ronen Eldan and Yuanzhi Li.  TinyStories: How small can language models be and still speak
+536       coherent english?   arXiv preprint arXiv:2305.07759, 2023. URL https://arxiv.org/
+537     abs/2305.07759.
+538
+539     Nicholas J. Higham and Theo Mary. Mixed precision algorithms in numerical linear algebra. Acta
+          Numerica, 31:347–414, 2022. doi: 10.1017/S0962492922000022.
+
+
+                                              10
+
+=== PDF PAGE 11 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+540
+        Nicholas J. Higham and Srikara Pranesh.  Exploiting lower precision arithmetic in solving sym-
+541       metric positive definite linear systems and least squares problems. SIAM Journal on Scientific
+542       Computing, 43(1):A258–A277, 2021. doi: 10.1137/19M1298263.
+543
+544     Paul Hovland and Jan H¨uckelheim.   Differentiating through linear solvers.   arXiv preprint
+          arXiv:2404.17039, 2024. URL https://arxiv.org/abs/2404.17039.545
+546     Jan H¨uckelheim, Harshitha Menon, William Moses, Bruce Christianson, Paul Hovland, and Laurent
+547        Hasco¨et. A taxonomy of automatic differentiation pitfalls. WIREs Data Mining and Knowledge
+548       Discovery, 14(6):e1555, 2024. doi: 10.1002/widm.1555.
+549
+        Catalin Ionescu, Orestis Vantzos, and Cristian Sminchisescu. Matrix backpropagation for deep net-
+550
+         works with structured layers. In Proceedings of the IEEE International Conference on Computer
+551        Vision, pp. 2965–2973, 2015.
+552
+553     Dhiraj D. Kalamkar, Dheevatsa Mudigere, Naveen Mellempudi, Dipankar Das, Kunal Banerjee,
+554       Sasikanth Avancha, Dharma Teja Vooturi, Nataraj Jammalamadaka, Jianyu Huang, Hector Yuen,
+           Jiyan Yang, Jongsoo Park, Alexander Heinecke, Evangelos Georganas, Sudarshan Srinivasan,555
+         Abhisek Kundu, Misha Smelyanskiy, Bharat Kaul, and Pradeep Dubey. A study of BFLOAT16
+556
+            for deep learning training. arXiv preprint arXiv:1905.12322, 2019. URL https://arxiv.
+557
+        org/abs/1905.12322.
+558
+559    Wonyeol Lee, Rahul Sharma, and Alex Aiken. Training with mixed-precision floating-point assign-
+560       ments. Transactions on Machine Learning Research, 2023. URL https://openreview.
+561     net/forum?id=ZoXi7n54OB.
+562     Bethany Lusch,  J. Nathan Kutz, and Steven L. Brunton.  Deep learning for universal linear
+563       embeddings of nonlinear dynamics.  Nature Communications, 9:4950, 2018.  doi: 10.1038/
+564       s41467-018-07210-0.
+565
+        Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher.  Pointer sentinel mixture566
+          models. arXiv preprint arXiv:1609.07843, 2016. URL https://arxiv.org/abs/1609.
+567
+        07843.
+568
+569     Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory Diamos, Erich Elsen, David Garcia,
+570       Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and Hao Wu. Mixed
+571        precision training.   In International Conference on Learning Representations, 2018.  URL
+572     https://openreview.net/forum?id=r1gs9JgRZ.
+573      Iain Murray.  Differentiation of the Cholesky decomposition.  arXiv preprint arXiv:1602.07527,
+574       2016. URL https://arxiv.org/abs/1602.07527.
+575
+        Fabian Pedregosa, Ga¨el Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier576
+            Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas,
+577
+          Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and ´Edouard Duch-
+578
+           esnay.  Scikit-learn: Machine learning in Python.  Journal of Machine Learning Research, 12
+579
+          (85):2825–2830, 2011. URL https://www.jmlr.org/papers/v12/pedregosa11a.
+580      html.
+581
+582     Matthias Seeger, Asmus Hetzel, Zhenwen Dai, Eric Meissner, and Neil D. Lawrence.  Auto-
+583        differentiating linear algebra. arXiv preprint arXiv:1710.08717, 2017. URL https://arxiv.
+584     org/abs/1710.08717.
+585    Yue Song, Nicu Sebe, and Wei Wang. Why approximate matrix square root outperforms accurate
+586     SVD in global covariance pooling?  In Proceedings of the IEEE/CVF International Conference
+587      on Computer Vision, pp. 1115–1123, 2021. doi: 10.1109/ICCV48922.2021.00115.
+588
+      Anupama Sridhar and Alexander Johansen. Echo: KV-cache-free associative recall with spectral
+589
+        Koopman operators.  In Proceedings of the ACM Conference on AI and Agentic Systems, pp.
+590
+          964–989, 2026. doi: 10.1145/3786335.3813146.
+591
+592    Naoya Takeishi, Yoshinobu Kawahara, and Takehisa Yairi. Learning Koopman invariant subspaces
+593        for dynamic mode decomposition. In Advances in Neural Information Processing Systems, vol-
+        ume 30, 2017.
+
+
+                                              11
+
+=== PDF PAGE 12 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+594
+       Wei Wang, Zheng Dang, Yinlin Hu, Pascal Fua, and Mathieu Salzmann. Backpropagation-friendly
+595       eigendecomposition.  In Advances in Neural Information Processing Systems, volume 32, pp.
+596       3156–3164, 2019.
+597
+598    Wei Wang, Zheng Dang, Yinlin Hu, Pascal Fua, and Mathieu Salzmann. Robust differentiable SVD.
+        IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(9):5472–5487, 2022. doi:599
+         10.1109/TPAMI.2021.3072422.
+600
+601    Matthew O. Williams, Ioannis G. Kevrekidis, and Clarence W. Rowley. A data-driven approxima-
+602        tion of the Koopman operator: Extending dynamic mode decomposition. Journal of Nonlinear
+603        Science, 25(6):1307–1346, 2015. doi: 10.1007/s00332-015-9258-5.
+604
+       Yusaku Yamamoto, Yuji Nakatsukasa, Yuka Yanagisawa, and Takeshi Fukaya. Roundoff error anal-
+605        ysis of the CholeskyQR2 algorithm. Electronic Transactions on Numerical Analysis, 44:306–326,
+606       2015.
+607
+
+608
+609   A  ADDITIONAL EXPERIMENTAL DETAILS
+610
+611    A.1  EXPERIMENT-SPECIFIC OPTIMIZERS AND RETRY BEHAVIOR
+612
+       The training script that produced the original nine-comparison cohort’s WikiText checkpoints uses613
+      torch.optim.Adam, learning rate 10−3, β = (0.9, 0.999), ϵ = 10−8, zero weight decay, and
+614
+        global gradient-norm clipping at 1. It uses neither AMP/a gradient scaler nor a learning-rate sched-
+615
+          uler. The offline comparisons in this original cohort restore the checkpoint parameters and copy
+616     the Adam moments and hyperparameters for each route. Their original updates omit clipping; the
+617     follow-up in Appendix A.5 explicitly executes the source configuration’s clipping operation. The
+618    compared inputs need not be the next inputs in the source checkpoint’s shuffled training stream, so
+619     these measurements are matched restored updates rather than a replay of the actual next training
+620      step. Here, “norm-1 clipping” denotes global L2-norm clipping at threshold 1.
+621
+       The additional 18-unit cohort uses source-trained and restored AdamW with learning rate 0.001,
+622    β = (0.9, 0.999), ϵ = 10−8, and zero weight decay. The evaluator restores the model parameters
+623    and checkpoint optimizer state separately for each route, then applies backward, global norm-1
+624      clipping, and the optimizer step in that order. Updates are the actual parameter differences after
+625      this step. All six checkpoints have one parameter group containing 12 registered parameters and 11
+626     established optimizer-moment entries. Their established state counters are 100 or 1000, matching
+627     the checkpoint step. The parameter ska.log gamma is outside the effective gradient path and has
+628    no optimizer state; it remains in the metric vector with zero actual update. Parameter names, order,
+629    and shapes agree between the two routes. These details apply to this additional cohort only.
+630    The 29-unit stagewise diagnostic instead restores AdamW with weight decay explicitly zero. The
+631    custom-VJP diagnostic on those same units restores Adam. Both original diagnostics omit clipping.
+632     These optimizer identities are specific to the corresponding evaluators; they do not identify the
+633     optimizer for every historical SKA training run. Independent ridge training uses its separate AdamW
+634     configuration: learning rate 3 × 10−4, zero weight decay, and no gradient clipping.
+635    The relevant title-level source training implementation contains a 10−4 Cholesky retry branch. The
+636     corresponding reported checkpoint rows show no retry activation. The offline title-level route im-
+637     plementation has no retry, and all nine comparisons complete without factorization failure. This
+638     observation does not imply that every historical training step was retry-free.
+639
+640     Ridge-control initialization and assignment.  In the seven-seed policy study,  all 63 step-
+641    0 checkpoints across P1/P2/P5, routes q100, q110, q111, and seeds 5–11 store FP32 log-ridge
+642    -9.21034049987793, giving effective initial ridge 9.99999901978299e-05. Within each
+         seed, the nine policy–route initial model states agree. P1 learns log-ridge online and includes all643
+        seven parameter tensors in AdamW; P2 and P5 freeze and exclude log-ridge, leaving six tensors.
+644
+        All step-0 optimizer states are empty. The common hyperparameters are learning rate 3 × 10−4,
+645      β = (0.9, 0.999), ϵ = 10−8, and zero weight decay.
+646
+647    P2 uses the same seed’s saved P1–q111 trajectory with the implementation’s one-episode lag. For
+        zero-based episode j, let s[0] be the initial ridge and s[j + 1] the P1 ridge before episode j. P2
+
+
+                                              12
+
+=== PDF PAGE 13 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+648
+        episode j uses s[j]; saving or evaluating after t training steps assigns s[t]. Thus for j ≥1, training
+649     uses the preceding P1 episode’s pre-forward ridge. Exact replay refers to these stored values, not
+650     synchronous episode alignment. P5 instead uses one development-locked schedule across seeds and
+651     routes (Appendix B.5).
+652
+        Sharing ridge across routes within each seed makes Rλ = 0 by construction in the matched seven-
+653
+        seed comparison; it is not independent evidence of mechanism. This does not make the P2 trajecto-
+654
+          ries identical across seeds.
+655
+656    The WikiText fixed-ridge control stores FP32 log-ridge -6.907755374908447, giving effec-
+657      tive ridge 0.0009999999310821295. Before each forward pass, the fixed value is reassigned.
+        Log-ridge remains in the optimizer group; its gradient is computed and included in global norm-1658
+         clipping, then only log ridge.grad is set to None before the optimizer step. The assigned value
+659
+          is restored after the step. The replay control starts from the same value. Its same-seed q111 schedule
+660
+         entry s[t] represents ridge after exactly t optimizer updates: update t uses s[t −1] and restores s[t]
+661     afterward. This control has no P2-style one-episode lag. These assignments control ridge itself and
+662     are separate from Cholesky retry or jitter.
+663
+664     Fixed-checkpoint CPU/A100 restored-step protocol.  For the fixed-checkpoint SKA control,
+665     each route and input starts from the same saved model parameters and checkpoint Adam state. The
+666     reported update is the actual clipped restored parameter update, not a gradient scaled by a learning
+667      rate. The CPU record reports no clipping activation in all 60 route executions: every global gra-
+668     dient norm is below 1, so clipped and unclipped restored updates coincide. The subsequently sup-
+669     plied A100 CSV records 0/60 clipping activations, with coefficient 1 in every row and pre-clipping
+670     global norms between 0.2513375 and 0.5102349. The wrapper calls global L2 clipping at 1 before
+         the Adam step; the environment export records Adam with learning rate 10−3, β = (0.9, 0.999),671
+         ϵ = 10−8, zero weight decay, and amsgrad=False. The A100 clipped and unclipped updates
+672
+      come from separate restored executions; their recorded discrepancies differ slightly, so inactive clip-
+673
+        ping does not establish bitwise agreement between those executions. This offline control does not
+674     continue training or produce a new training trajectory; its optimizer and clipping statements are
+675     separate from the original nine-unit, additional 18-unit, and 29-unit protocols above.
+676
+677
+       A.2  COMPUTING ENVIRONMENT AND NUMERICAL SETTINGS
+678
+679     Table 9 separates code-requested settings from run-recorded platform and software information.
+680     Coverage differs across the experiments; task identifiers retain the correspondence to the original
+681     records.
+682
+683    Numerical configuration.  The routed FP32/FP64 assignments are specified in Table 1. The title-
+684      level SKA records report autocast disabled, and the Task 13 record specifies FP32 as the default
+685     dtype. Task 21 preflights record no CUDA, but differ in MPS availability between the offline and
+686     confirmatory stages. The inspected construction path selects CPU; accelerator availability is not
+         treated as evidence of accelerator execution. Optimizer processing, clipping, and retry behavior are687
+        described in Appendix A.1.
+688
+689
+        Historical coverage.  The records do not  fully  establish CPU model, memory,  historical690
+      BLAS/LAPACK backend, thread counts, matrix-multiplication precision, TF32 and deterministic-
+691
+        algorithm flags, or numerical environment variables. The original nine-pair evaluation and the clip-
+692
+        ping follow-up are separate executions; the table does not supply run-linked environment metadata
+693      for the follow-up. CPU FP64 conversion for gradient and update metrics does not identify the train-
+694     ing device. A separate current snapshot reports Apple Accelerate BLAS/LAPACK, but does not
+695      establish the backend used in the historical runs.
+696
+697    Dependency records.  The inspected pyproject.toml leaves dependencies unpinned and
+698      specifies Python < 3.14, whereas the later run records report Python 3.14.0. No resolved depen-
+699     dency lockfile was found in the inspected repository. The recorded interpreter therefore conflicts
+700     with the manifest’s Python constraint. The versions above document preserved run records; they
+701    do not constitute a tested installation recipe or establish that the current manifest reconstructs those
+        environments.
+
+
+                                              13
+
+=== PDF PAGE 14 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+702
+703     Table 9: Recovered environment information by experiment. “CPU requested” identifies a code
+704     configuration; other platform entries come from preserved run records. Unlisted fields remain un-
+705      established. Task identifiers link the reported experiments to their original records.
+706     Experiment group                 Execution and platform  Recorded software
+707                                        evidence
+708      Title-level SKA source training    CPU requested            Historical software and platform versions not
+709     and original nine-pair evaluation                              recovered.
+710     Stagewise and custom-VJP SKA   CPU requested       No run-linked environment export recovered.
+711      audits (Tasks 11 and 9;
+712     Appendices A.4 and A.3)
+713      TinyStories source runs         CPU requested          Python 3.14.0; PyTorch 2.11.0.
+714     Independent ridge (Task 13;       CPU; macOS 26.3;      Python 3.14.0; PyTorch 2.11.0; NumPy 2.4.4;
+715      Section 3.3)                    arm64                     scikit-learn 1.8.0.
+716
+         Five-seed shared-ridge evaluation   CPU; macOS 26.3;      Python 3.14.0; PyTorch 2.11.0.
+717     (Task 19; Appendix B.4)          arm64
+718
+        WikiText training-time ridge      CPU; macOS 26.3;      Python 3.14.0; PyTorch 2.11.0.
+719      controls (Task 20; Table 27)       arm64
+720
+         Seven-seed shared-ridge and      CPU requested by the    Python 3.14.0; PyTorch 2.11.0; NumPy 2.4.4;
+721
+         locked-policy comparisons (Task    construction path;       SciPy 1.17.1.
+722      21; Section 4.6)                macOS; arm64
+723
+724
+725
+       The additional 18-unit evaluation has its own environment export dated 2026-09-11: CPU, ma-726
+      cOS 26.3 arm64, Python 3.14.0, PyTorch 2.11.0, NumPy 2.4.4, pandas 3.0.2, and ten PyTorch
+727
+         threads. The separate pre-cast reference follow-up records CPU, the same listed OS and software
+728
+         versions, and mpmath 1.3.0. These exports document those offline executions, not earlier checkpoint
+729      training or the original nine-pair and 29-unit audits. The primal/dual control has an independent
+730     CPU/Accelerate export with macOS 26.3 arm64, Python 3.14.0, PyTorch 2.11.0, and NumPy 2.4.4.
+731
+732
+733    Reported environments for the new offline control.  The recovered CPU environment export
+          identifies Apple M4 Max, arm64, macOS 26.3, Python 3.14.0, PyTorch 2.11.0, no CUDA, and Apple734
+        Accelerate BLAS/LAPACK. The subsequently supplied A100 environment JSON is exported by the
+735
+         evaluator at the end of the run recorded on 2026-09-14.  It identifies NVIDIA A100-SXM4-40GB
+736
+        with 40 GB memory, driver 580.82.07, device cuda:0, and MIG Disabled. The nvidia-smi
+737   CUDA field is 13.0, whereas PyTorch is 2.11.0+cu128 with CUDA build 12.8; the raw cuDNN
+738     version field is 91900. The displayed CUDA field is not the PyTorch build version or a kernel-
+739     precision specification. The host record specifies Linux kernel 6.6.122+, x86 64, glibc 2.39,
+740    and Python 3.13.15.
+741
+        For this A100 execution, the export records default dtype FP32 and FP32 matrix-multiplication
+742
+         precision highest.  CUDA matmul TF32  is  disabled,  whereas cuDNN TF32  is  en-
+743     abled; cuDNN benchmark, cuDNN  deterministic mode,  deterministic  algorithms,  and de-
+744      terministic  warn-only mode  are  all  disabled.   The  linear-algebra backend  preference  is
+745    LinalgBackend.Default. The supplied wrapper contains no autocast or gradient-scaler call
+746    and declares amp or scaler=false in its export. Recovered dependency candidates permit
+747      static inspection of the model path, but are not a complete historical import manifest. The A100
+748     host CPU model and NumPy version, and both executions’ full thread configurations, remain un-
+749      established. These two exports do not establish the environments of earlier training, the primal/dual
+750      control, or the other offline evaluations above.
+751    The new A100 CSV  contains 60  unique  completed  route–batch  rows,  covering  routes
+752     q100, q110, q111 and batch IDs 0–19. Its log records all 20 batch completions and a final 60-row mes-
+753     sage. The original summary and manifest nevertheless retain CPU COMPLETE; A100 PENDING
+754    EXTERNAL A100 EXECUTION. The supplied script initializes this string and changes it to the
+755     both-complete status only when the same CSV contains both CPU and A100 rows; this CSV con-
+         tains only A100 rows. The retained status therefore does not negate A100 completion. The sepa-
+
+
+                                              14
+
+=== PDF PAGE 15 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+756
+757     Table 10: Compact manifest of the original nine-comparison cohort. Every row contributes three
+758    matched q110–q111 comparisons, each with batch size 32. The clipping follow-up reuses this entire
+759      set.
+760                 Checkpoint source          Seed   Step   Training-loader batch IDs
+761                   q111-trained WikiText        0    100              0, 9, 19
+762                   q111-trained WikiText        0    1000             0, 9, 19
+763                   Original-baseline WikiText    0    100              0, 9, 19
+764
+765
+766      rately recovered CPU CSV and log establish its own 60 completed route–batch rows. Original files
+767    and status strings are preserved; checking these saved artifacts is distinct from a new execution.
+768
+769    A.3  SOLVER DERIVATIVE RECONSTRUCTION
+770
+771    The custom backward in Eq. (6) saves detached K, V, Q, λ and reconstructs the complete map to
+772     the per-head solver output using the reference solver-stage route. In backward it rebuilds this FP64
+         solver graph and calls autograd.grad; it is distinct from the earlier hand-written VJP feasibility773
+        implementation. This reconstruction includes Gram construction and ridge addition, both cross-
+774
+       moments, Cholesky factorization, operator and readout solves, whitening, fixed two-step propaga-
+775
+          tion, unwhitening, value readout, and the required route output casts. The forward values emitted
+776      to the downstream model remain those of the selective route. The downstream graph supplies the
+777     incoming cotangent through ordinary differentiation; the substituted Jacobian is confined to this
+778     head-producing submap.
+779
+       The head-producing submap ends before head concatenation, WO, and gating, so its output h differs780
+       from the SKA branch output in Eq. (4). The incoming cotangent follows ordinary differentiation
+781
+        through head concatenation, WO, the sigmoid gate, vocabulary projection and suffix-only cross-
+782     entropy.
+783
+784
+       A.4  LOCAL COMPARISON POPULATIONS
+785
+786    The stagewise and custom-VJP evaluations share 29 fixed state–single-example units: 21 WikiText
+787    and eight TinyStories units from 14 source run/seed trajectories. Several trajectories contribute more
+788     than one checkpoint. The targeted historical categories comprise captured WikiText FP32-Gram
+789      failures, boundary failures, pre-failure checkpoints, healthy FP64-solver-trained WikiText check-
+790      points, and healthy TinyStories checkpoints. The configurations include both r = 128, T = 512
+791    and r = 256, T = 256. These fixed single-example inputs differ from the batch-size-32 title-level
+792      inputs. The manifest was fixed before the grouped factorial analysis, but the historical categories
+        already existed; this does not establish selection before all result inspection.793
+794     For this audit, completion means exception-free execution of the routed forward computation and
+795      loss, backward pass, gradient extraction, restored optimizer step, update extraction, and post-step
+796     diagnostics. The implementation does not separately apply explicit finite-value gates to every inter-
+797     mediate tensor. The same eight units terminate at Cholesky for each FP32-Gram route; each such
+798     route completes 21/29 units, whereas every FP64-Gram route completes 29/29. These are within-
+         audit counts rather than estimated failure probabilities.799
+800     Table 10 specifies the separate nine-comparison population. Each checkpoint is crossed with all
+801     three listed non-shuffled training-loader batches. The three checkpoints are script-fixed and use
+802     seed 0; neither the checkpoints nor the inputs constitute a random or held-out sample. There is no
+803     exact checkpoint-and-input overlap with the 29-unit audit.
+804    The separate baseline ridge local evaluation contains 36 selected state–episode entries from nine
+805      pilot q111-trained checkpoints: seeds 0–2, each at steps 100, 2000, and 5000. At each checkpoint,
+806    200 validation episodes are sorted by (κ, episode ID); quantiles u ∈{0, 0.5, 0.95, 1} select zero-
+807     based ranks int(round(u(200 −1))). The same checkpoint–episode pairs are reused across all
+808     eight routes. The full 200-item rankings were not separately saved. These pilot states differ from
+809     the non-pilot primal/dual checkpoint, and the 36 entries are not independent training replicates.
+       The corresponding TinyStories local-result files contain headers only, and the conditional Stage 3
+
+
+                                              15
+
+=== PDF PAGE 16 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+810
+811     Table 11: Original local measurements and the clipping follow-up on the same nine title-level com-
+812     parisons. Disagreements are raw relative fractions, not percentages; ranges are observed minima
+813    and maxima.
+814     Quantity                        Median E  Minimum E  Maximum E  Median cosine
+815    Raw gradient                      0.0561775    0.0488635      0.134304       0.998424
+816     Original restored update             0.0585428    0.0547923      0.138429       0.998300
+817     Restored update with clipping        0.0585428    0.0547923      0.138429       0.998300
+818
+819
+820      transfer analysis was not carried out. They do not support four completed local units. This branch
+821      is separate from the eight TinyStories units in the 29-unit audit and from the long-run endpoints.
+822    The additional cross-seed comparison contains 18 matched validation units from source seeds 1–
+823      3: each seed contributes checkpoints at steps 100 and 1000, and each checkpoint is crossed with
+824     three validation batches of size 32. Thus there are six q111-trained checkpoints and three source
+825      training seeds, rather than 18 independent training runs. The recovered source records identify Task
+826    12 training and the Task 19 redirection of seed 3 to a new checkpoint directory while calling the
+827    same task12.train run entry point. The evaluator uses the first three complete non-shuffled
+828     batches of texts[8000:9000], the internal validation partition of filtered WikiText training text.
+       These are batch IDs 0–2, with matching input hashes across seeds and steps; they are not the official829
+        WikiText validation split. These units are reported separately from the original nine comparisons
+830
+       and the 29-unit audit.
+831
+832
+       A.5  METRIC CONSTRUCTION AND CLIPPING FOLLOW-UP
+833
+834     For the original nine-comparison SKA diagnostic, let P index all registered model-parameter tensors
+835      in registration order. Define
+836
+                                     gq = concati∈P vec[FP64(∇θiLq)] ,
+837                                                                                                         (8)
+838                        ∆θq = concati∈P vec [︁FP64(︁ θ+i,q −θi )︁]︁ .
+839
+       Here θ+i,q is the parameter after the restored optimizer step. A zero tensor substitutes for an absent840
+         gradient, and zero updates remain in the update vector. FP64 conversion is for metric construction,
+841
+        not whole-network FP64 gradient computation.  Relative disagreement and cosine similarity use
+842     these same vectors.
+843
+844     In this original diagnostic, the parameter difference is formed in the parameter dtype before FP64
+        conversion. The baseline ridge and primal/dual controls likewise subtract FP32 parameters before845
+        converting the difference to FP64. The additional 18-unit SKA evaluation instead uses FP64(θ+i,q)−846
+       FP64(θi) inside the update vector, converting each endpoint before subtraction.  These cohort-847
+         specific metric implementations are not interchangeable descriptions of rounding.
+848
+849     For the original nine comparisons, the branch comparison uses the full 32 × 512 × 256 tensor,
+850     including every sequence position, WO, and the sigmoid gate. It excludes the vocabulary projection.
+851     Loss is mean cross-entropy over the 32 × 256 suffix tokens, with signed difference
+852                              δL = Lq110 −Lq111.                                     (9)
+853
+854    The clipping follow-up evaluates exactly the nine pairs in Table 10. All 18 route evaluations have
+855     pre-clipping global gradient norm below 1. The norm-1 clipping operation is executed, every clip-
+856     ping coefficient is 1.0, and every optimizer step completes. Clipped and unclipped restored updates
+857     are identical in every pair. Table 11 gives the reported raw-fraction summaries; the local main-text
+858     percentages round these relative fractions. This check establishes inactive clipping on these nine
+        comparisons only.859
+860     For the additional 18-unit cohort, gradients are measured before clipping. The main update mea-
+861     surement is the actual restored AdamW parameter change after the source configuration’s norm-1
+862     clipping; unclipped updates are an auxiliary diagnostic. Clipping activates only for seed 3, step 100,
+863     validation batch 0, in both compared routes (Table 12). This is one matched unit and two route exe-
+         cutions. Its relative update disagreement is 0.062974 without clipping and 0.061128 with clipping.
+
+
+                                              16
+
+=== PDF PAGE 17 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+864
+865     Table 12: The only clipping-active matched unit in the additional 18-unit cohort: seed 3, step 100,
+866     validation batch 0. Norms are global parameter-gradient norms before and after norm-1 clipping.
+867    Both route executions activate clipping.
+868                        Route   Pre-clipping norm   Post-clipping norm   Coefficient
+869                          q110            1.054906           0.999999    0.947951
+870                          q111            1.050154           0.999999    0.952240
+871
+
+872
+       Both routes remain below the clipping threshold in the other 17 units, where clipped and unclipped873
+        updates coincide. Six same-route repeatability controls have zero checked differences in loss, gradi-
+874
+         ents, and updates; this control does not establish absolute determinism of every backend operation.
+875
+        Logit disagreement in this cohort covers all 32 examples, all 512 sequence positions, and the full
+876     vocabulary; the loss averages cross-entropy over suffix positions only (zero-based indices 256–511).
+877
+
+878
+       A.6  ENDPOINT REDUCTIONS
+879
+880     For SKA, each probe and head define an FP64 regularized Gram matrix
+881                                                                 1
+                     Hh = K⊤h Kh + λI,       ˜︁Hh = 2(Hh + H⊤h ).                     (10)882
+        For each head, the condition statistic is
+883
+                                             λmax(˜︁Hh)          .                             (11)884                              κh =
+885                                    max(λmin(˜︁Hh), 10−30)
+886    Each probe’s condition statistic is the linearly interpolated 95th percentile across its four head condi-
+887      tions. If the sorted head conditions are κ(1), . . . , κ(4), this is 0.15κ(3)+0.85κ(4). Endpoint semantic
+888     condition is the arithmetic mean of these probe statistics over 16 fixed single-sequence evaluations,
+889     not a percentile across probes. The minimum-eigenvalue statistic takes the minimum across heads
+890     within each probe and then the mean over these 16 probes.
+891     For independent ridge, each validation episode defines
+892                                                  λmax(He)
+893                  He = Z⊤s Zs + λcI,     κe =                                                 max(λmin(He), 10−30),                (12)
+894
+        with He constructed in FP64. Only support embeddings enter this matrix. The standard endpoint895
+        condition statistic is the arithmetic mean of κe over fixed episodes 0–15. A separate full-validation
+896
+         evaluator uses the 95th percentile across all 200 validation episodes. We keep these evaluation sets
+897    and aggregations distinct.
+898
+899     For the four-regime task comparison, each step-5000 endpoint is evaluated under common q111
+         execution, and its task CE first averages evaluation IDs 0–15. SKA uses only the first sequence of900
+        each selected validation batch and suffix-only loss; ridge uses the 16 validation episodes. This is
+901
+        not full-corpus loss or the 200-episode evaluator. Within each training route, the endpoint values
+902
+         are then summarized by their mean and sample standard deviation across training seeds, using the
+903     Nseed −1 denominator. Same-seed route differences are formed before computing their across-seed
+904    mean and sample standard deviation (Appendix B.7). The grand task mean, which equally weights
+905     route–seed endpoint means, is retained only to reconcile the earlier aggregate results. The different
+906     task objectives are not a common cross-system performance scale.
+907
+908     Route-to-seed separation.  Let Q = {q100, q110, q111} and let S be the matched seed set, with
+909     |S| ≥2. Write xq,s,t for the common-route scalar statistic of route q, seed s and training step t, after
+910     averaging the 16 probe or episode values where applicable. We define
+                                          1911
+                               ∆route(x; t) =                               ∑︂  ∑︂    |xq,s,t −xq′,s,t|,
+912                                             |S|(︁32)︁ s∈S      Q                                                                {q,q′}∈( 2)913
+                                          1
+914                            ∆seed(x; t) =                               ∑︂  ∑︂    |xq,s,t −xq,s′,t|,                (13)
+915                                     3(︁|S|2 )︁ q∈Q       S                                                                {s,s′}∈( 2)
+916
+917                                                ∆route(x; t)
+                            Rroute/seed(x; t) =                                         max(∆seed(x; t), 10−12).
+
+
+                                              17
+
+=== PDF PAGE 18 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+918
+919     Table 13: Pre-cast consistency of the 50- and 80-digit references on the four fixed traces. Output
+920     differences use the Euclidean norm; directional differences concern the scalar analytic derivative for
+921     the recorded direction and cotangent. Relative differences normalize by the 80-digit output norm or
+922     absolute directional value, respectively. All differences are evaluated at 120 decimal digits before
+        binary64 conversion. The classifier labels identify initialization regimes.923
+                                                                                           (b) Analytic directional924
+                                                   (a) Output consistency                       consistency
+925
+926     Trace                             Absolute            Relative          Absolute            Relative
+927    SKA validation batch 0    1.560606 × 10−48 1.189587 × 10−48 2.787950 × 10−47 2.592224 × 10−49
+928    SKA validation batch 1    2.420707 × 10−48 2.697793 × 10−49 4.572866 × 10−47 2.764588 × 10−49
+929       Classifier, λ0 = 10−3      6.746417 × 10−49 4.017353 × 10−50 8.102818 × 10−50 1.740314 × 10−49
+930       Classifier, λ0 = 10−4      3.724996 × 10−48 2.268016 × 10−49 2.417442 × 10−48 1.846631 × 10−47
+931
+
+932
+933    The inner sums range over unordered pairs. Both spreads are raw-scale mean pairwise absolute
+934      differences; learned-ridge comparisons use λ, not log λ. A large ratio can reflect a large route spread,
+935     a small seed spread, or both. It is descriptive, not a significance test or variance decomposition. The
+        secondary four-part route-dominance criterion is documented in Appendix B.1; the main analysis936
+        uses continuous ratios and, for the matched intervention, absolute route spreads.
+937
+938
+939    A.7  INDEPENDENT REFERENCE CALIBRATION
+940
+        Inputs and checked quantities.  The calibration uses four fixed solver-input traces: SKA seed 1,
+941
+         step 100, validation batches 0 and 1, and seed-0, step-5000 validation episode 0 from each classifier
+942
+        regime initialized at λ0 = 10−3 and 10−4. These initialization values identify the regimes; the
+943     references use each saved trace’s actual ridge value.  For SKA, the checked quantity is the first
+944     head’s 64-dimensional first query output for example 0, not a prefix output or full-model logits. Each
+945     reference uses the saved inputs and mathematical map, with one recorded direction and cotangent
+946     per trace.
+947
+948     Production-route agreement with the independent reference.  The corrected production-
+949      calibration results compare q111 with the 80-digit reference. Reported forward relative discrepancies
+950     are approximately 1.27×10−7–9.38×10−7 for the two SKA traces, and approximately 2.30×10−7
+951    and 2.48 × 10−7 for the two classifier traces. The checked directional-derivative relative discrep-
+952     ancies are approximately 10−7–10−6. These summary values do not resolve the contribution of
+953      interface casts separately from solver computation, and are not attributed solely to FP32 conversion.
+954    They compare production execution with its independent reference, rather than two precision routes
+        or optimizer updates.955
+956
+957     Precision consistency of the reference.  The reference is computed separately at 50 and 80 deci-
+958    mal digits of working precision, and the resulting arbitrary-precision outputs and analytic directional
+         derivatives are compared at 120 digits before any Python or NumPy binary64 conversion. Table 13959
+         reports these reference-to-reference differences; their maximum relative output and directional dif-
+960
+        ferences are approximately 1.19 × 10−48 and 1.85 × 10−47, respectively. The earlier zero differ-
+961
+        ences described agreement after binary64 conversion; the pre-cast differences are nonzero. This
+962     checks the working-precision stability of the same mpmath implementation, separately from the
+963     production-route comparison above. These pre-cast relative differences have no denominator floor
+964    and are undefined for a zero reference denominator.
+965
+966    Scope and provenance.  These checks cover four fixed inputs, one direction and cotangent per
+967      input, and the selected solver outputs and analytic directional derivatives. They do not establish
+968      strict error bounds, full-Jacobian or full-model gradient and update accuracy, or task optimality of
+969     q111. The corrected four-trace v2 results are the direct production-calibration artifacts; the canon-
+970      ical table is a derived copy. Seven earlier attempts (three SKA and four ridge records) completed
+971     but were archived and excluded following one query-index correction. They are invalid earlier
+         outputs, not seven solver exceptions or seven independent bugs.  The corrected SKA index is
+
+
+                                              18
+
+=== PDF PAGE 19 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+972    heads[0,0,K.shape[0]]. The pre-cast follow-up recomputed only the high-precision ref-
+973     erences, without rerunning the cross-seed comparisons, endpoint evaluations, or production q111
+974     computations.
+975
+976     Reference evidence coverage.  Production q111 versus mp80: four fixed solver-input traces; se-
+977     lected outputs and one analytic directional derivative with its recorded direction and cotangent per
+978      trace. This supports numerical comparisons on those inputs, outputs, and directions, not certification
+979     of the full Jacobian, full-model gradient, or optimizer update, nor a matched reference-error bound
+980      for the five-episode dual control. mp50 versus mp80: the same four traces; arbitrary-precision out-
+981     puts and analytic directional derivatives compared pre-cast at 120 digits. This checks the reference’s
+982     working-precision consistency, not production q111 accuracy at 10−48. Primal-q111 versus dual-
+        q111: the five-episode control; maxima of per-episode internal W, logit and loss discrepancies, and983
+       one global gradient and restored-update comparison after averaging the five losses. The first five
+984
+        gate criteria pass; the observed update relative discrepancy is 2.019428×10−6, with no gate thresh-
+985
+        old or independent restore-repeatability record. This checks consistency between implementations,
+986     not error against mathematical truth. See Table 26 and Appendix A.11.
+987
+988
+       A.8  SOLVER CONSTRUCTION DETAILS
+989
+990    Shared regularized Gram form.  The exact-arithmetic Gram system underlying Section 3.1 is
+991
+992                       Gλ = Z⊤Z + λI = LL⊤,    λ > 0,                         (14)
+993    Here L is the lower-triangular Cholesky factor. A finite-precision construction may fail to be positive
+994      definite; solver-specific quantities are obtained through differentiable triangular solves.
+995
+996   SKA projections and prefix construction.  Let xt ∈Rd denote a sequence representation sup-
+997     plied to the SKA module. For head h,
+998
+999          k(h)t = WK(h) LN(xt) ∈Rr,   q(h)t = WQ(h) LN(xt) ∈Rr,  v(h)t = WV(h) LN(xt) ∈Rdh.
+1000
+       Here r and dh are the per-head operator and value dimensions; q(h)t   denotes a projected query,1001
+          distinct from the precision-route label q.
+1002
+1003    For prefix length P < T, suppressing head and batch indices, define
+1004
+           K = [k1, . . . , kP ]⊤,  V = [v1, . . . , vP ]⊤, K−= [k1, . . . , kP −1]⊤,1005
+1006          K+ = [k2, . . . , kP ]⊤, M = K⊤+K−,       Cv = V ⊤K.
+1007
+       The Gram matrix uses all P prefix keys, whereas M uses the P −1 observed lag-one pairs.
+1008
+
+1009
+       Independent classifier encoder.  The encoder maps 64-dimensional inputs through a 128-unit
+1010
+         linear layer, GELU, layer normalization, and a 64-unit output layer.  Output features are RMS-
+1011    normalized per example.
+1012
+1013
+       A.9  TRAINING CONFIGURATION
+1014
+1015   The controlled character-language-model SKA instantiation uses sequence length T = 512, prefix
+1016    length P = 256, embedding dimension d = 256, four heads, value dimension dh = 64 and per-head
+1017    operator dimension r = 128. WikiText-2 (Merity et al., 2016) uses 8,000 training records and 1,000
+1018    held-out records drawn from the filtered training split; the latter are not the official WikiText valida-
+1019    tion split. TinyStories (Eldan & Li, 2023) uses 8,000 training and 1,000 validation records. Training
+1020    uses batch size 32 for at most 5,000 steps, learning rate 10−3 and zero weight decay. Learned ridge
+          is initialized at 10−3 and the initial sigmoid gate is approximately 0.9. The source and diagnostic1021
+        optimizer protocols, clipping, and retry behavior are specified separately in Appendix A.1.
+1022
+1023   The independent ridge classifier uses scikit-learn digits (Pedregosa et al., 2011; Alpaydin & Kaynak,
+1024    1998): flattened 8×8 images with pixels divided by 16 and a stratified 60/20/20 train/validation/test
+1025     split. Each episode draws five of the ten classes, with five support and ten query examples per class,
+        giving 25 support and 50 query examples. Training uses one deterministic episode per step for 5,000
+
+
+                                              19
+
+=== PDF PAGE 20 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1026         steps, AdamW with learning rate 3×10−4, zero weight decay and no gradient clipping. The baseline
+1027     initializes learned ridge at 10−3. The lower-ridge-initialization regime (λ0 = 10−4) changes only
+1028     this initialization; ridge remains trainable. Architecture, feature dimension, data manifests, episodes,
+1029    optimizer, learning rate, training duration, routes and seeds are otherwise fixed.
+1030
+1031   A.10  FIXED-CHECKPOINT CROSS-ENVIRONMENT PROTOCOL
+1032
+1033   The SKA  control  uses one  q111-trained checkpoint  at seed  0,  step 1000,  with  operator
+1034    rank 128, sequence length 512,  prefix length 256, and batch size 32.   Its learned ridge  is
+1035   0.001112196064965833; this is the saved checkpoint value, not an initialization or a ridge
+1036    held fixed throughout training. The saved input bundle contains batch IDs 0–19; both x and y have
+        shape (32, 512) and dtype int64. The recovered loader uses the wikitext-2-raw-v1 train1037
+           split, retaining texts whose stripped length exceeds 10.  Its vocabulary uses the 50 most frequent
+1038
+         characters in the first 5,000 retained texts plus two special tokens. Training uses texts[:8000];
+1039
+         internal validation uses texts[8000:9000]. Sequences use length T + 1 and stride T/2. The
+1040    fixed bundle contains the first 20 non-shuffled training batches, not independent validation inputs.
+1041    Exact tensor overlap with the older title-level batches remains unresolved because their saved inputs
+1042    or hashes are unavailable. Fixing this bundle does not establish selection before all historical result
+1043    inspection.
+1044
+       Both environment exports identify the same saved checkpoint and input bundle. The preserved
+1045
+       package audit records matching byte hashes for both artifacts and the original SHA256SUMS entries.
+1046    These identities are separate from checking the saved scalar results and do not imply a new execution
+1047    of the evaluator. Line-break opportunities do not insert characters into the hashes.
+1048
+        Checkpoint SHA-256:1049
+1050   01d54221e347e67766fa905cbf2965f94457431853b90e97f3ae6e8a5fed9b99
+1051
+        Input-bundle SHA-256:
+1052
+1053   7ee682ebb4040f83dbbc826712a19bd3e48c9280178e3b45188865655979dd05
+1054    For each platform, q100 and q110 are compared with that platform’s own q111 execution. Each
+1055    quantity uses its corresponding reference vector and normalization. The 20 matched inputs yield
+1056   20 × 3 = 60 route executions per environment, not 60 independent training replicates; the two en-
+1057    vironments are not pooled with either earlier cohort. The main table reports arithmetic means of
+1058    the per-batch relative discrepancies, whereas the original nine-unit and additional 18-unit main re-
+1059     sults report medians. Appendix B.11 retains the supplied mean, median, 95th-percentile, minimum,
+1060    and maximum summaries. These compare routes within platforms, not CPU outputs against GPU
+1061    outputs.
+1062
+1063    Supplied artifacts and metric implementation.  The evidence index links the separate CPU and
+      A100 CSVs, summaries, logs, manifests and environment exports, together with the evaluator and1064
+        checkpoint/input identities. The evaluator computes each relative L2 error after flattening the sup-1065
+         plied tensors and casting them to FP64, using the corresponding platform-local q111 norm floored
+1066          at 10−12 as denominator. It obtains full-model raw gradients through its imported helper and mea-
+1067    sures the parameter vector after the optimizer step minus its restored pre-step value. Aggregation
+1068    follows per-batch error calculation: arithmetic mean, median, NumPy’s 0.95 quantile, minimum and
+1069   maximum over 20 batches. Re-aggregation of each platform’s saved CSV checks the 210 summary
+1070     entries across three routes, 14 metrics and five statistics without rerunning a solver.
+1071
+       Each recorded route–batch row includes one clipping-enabled restored step and an auxiliary, sepa-
+1072
+         rately restored unclipped step. The wrapper also performs one excluded warm-up per route. Thus
+1073    the 60 recorded rows are not a count of all internal step executions. Model and optimizer construc-
+1074     tion, gradient-vector ordering, and internal precision casts are delegated to an imported repository
+1075    module. Source candidates for the seven previously missing repository dependencies have been
+1076    recovered. Their availability permits static protocol inspection; historical file agreement does not
+1077    establish every runtime import or bind the Mac repository commit to Colab. The original A100 Git
+1078    and installation binding remain unestablished. Original A100 logits, gradient and update vectors
+1079    were not supplied; their saved scalar discrepancies can be reaggregated but do not reconstruct those
+         vectors.
+
+
+                                              20
+
+=== PDF PAGE 21 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1080
+       A.11  PRIMAL/DUAL CONTROL PROTOCOL
+1081
+1082   The independent classifier control uses one non-pilot q111-trained checkpoint, seed 0, step 5000,
+1083     initialized at λ0 = 10−3, and fixed validation episode IDs 0–4. Each five-way episode has 25 support
+1084    and 50 query examples with disjoint support/query indices. The underlying train/validation/test split
+1085    contains 1,078/359/360 examples. Both formulations use the same support features Zs ∈R25×64,
+1086     targets Ys ∈R25×5, positive ridge, mathematical output definition W, and task definition. The
+1087    primal and dual systems have dimensions 64 × 64 and 25 × 25, respectively. This is a fixed-state
+        implementation control with five inputs, not five training seeds or a dual retraining experiment.1088
+1089    Checkpoint SHA-256:
+1090
+      2554860c02b3dd4ed6d563a38cc45f5da5aeeb7d6e5ca63d7bca3ae7a7bdf2c1
+1091
+1092    Episode-manifest SHA-256:
+1093   d95b7a8766f6d140504b008ede4e36c8219f99848d8eaa533d7850c8b1e98ec1
+1094
+1095    Reference, reduction and restored update.  Each formulation’s mixed-precision routes are com-
+1096    pared with its own q111; only the consistency gate compares dual q111 with primal q111. For the
+1097    control, logits are flattened and concatenated in episode order 0–4 before computing relative error.
+1098   The five FP32 cross-entropy losses are averaged, followed by one backward pass and one restored
+1099   AdamW step. Thus the control CSV contains six formulation–route aggregates; the gradient/update
+1100    comparison repeated in the five-row equivalence CSV is one global measurement, not five indepen-
+1101    dent samples.
+1102   Each cell separately deep-copies the saved model and optimizer state and resets seed 0; this is
+1103    not independent verification of checkpoint RNG restoration. AdamW uses learning rate 3 × 10−4,
+1104   β = (0.9, 0.999), ϵ = 10−8 and zero weight decay, without clipping, AMP/scaling, retry, jitter
+1105    or fallback. Gradients follow named parameters order: log-ridge, first linear weight/bias, nor-
+1106    malization weight/bias, and second linear weight/bias. Absent gradients become zeros before FP64
+1107     flattening and concatenation. Updates subtract post-step and pre-step parameters in FP32, then con-
+1108    vert the difference to FP64.  Relative L2 errors use the corresponding reference norm floored at
+       10−12 and FP64 post-processing.1109
+1110
+1111   Dual precision stages and effective ridge.  All three dual routes construct the Gram matrix in
+       FP64. q100 uses FP32 Cholesky, solve and Z⊤s αd; q110 raises Cholesky to FP64 but keeps the solve1112
+       and final multiplication in FP32; q111 uses FP64 for all three. Every route casts W to FP32 for1113
+         the surrounding classifier. The checkpoint stores FP32 log-ridge -6.547471046447754.  Its
+1114
+        binary64 exponential is 0.0014337368713159366; the model instead exponentiates the FP32
+1115    parameter first, giving effective ridge 0.0014337368775159121, and then converts it to the
+1116   Gram dtype. The two values are compatible representations of this checkpoint; q111 does not re-
+1117   compute the exponential in FP64.
+1118
+1119    Consistency gate and residuals.  Table 26 uses five-episode maxima for internal FP64 W,
+1120     logit and loss discrepancies, and the single global gradient comparison and cosine for the av-
+1121    eraged loss.  Its five specified criteria pass.  The global restored-update relative discrepancy is
+1122    2.0194277280644333 × 10−6, but no update threshold was set and this observation did not en-
+1123     ter the gate. Independent restore-repeatability is not evidenced. This implementation-consistency
+1124    check is distinct from an arbitrary-precision reference or the exact-arithmetic identity.
+1125    Residuals are computed in FP64 as ∥HfactorWinternal −Bacc∥F / max(∥Bacc∥F , 10−12) for primal
+1126    and ∥Hfactorαd −Yacc∥F / max(∥Yacc∥F , 10−12) for dual.  Hfactor already includes the route’s
+1127    factorization-input rounding. Each cell reports the NumPy 0.95 quantile of its five residuals. The
+1128   two systems have different dimensions and right-hand sides, so these residuals do not directly rank
+1129    functional fidelity. The five per-episode q111 residuals are saved; the mixed routes retain only their
+1130   p95 aggregates.
+1131
+1132    Evidence index.  The accompanying claim evidence map.csv maps experiment groups and
+1133    manuscript labels to reported input/checkpoint identifiers and the availability of result artifacts, eval-
+         uator scripts, and environment records.  It distinguishes directly available result tables and scalar
+
+
+                                              21
+
+=== PDF PAGE 22 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1134
+         aggregates, historical source candidates, and locally retained binary artifacts represented only by
+1135    path/size/hash records. Neither a hash nor a later environment snapshot establishes complete exe-
+1136    cution provenance. Missing vectors and selected large audit tables limit what can be independently
+1137    reaggregated; they are not evidence that those experiments were never run.
+1138
+1139
+1140  B  ADDITIONAL RESULTS
+1141
+1142   B.1  DESCRIPTIVE ROUTE-DOMINANCE CRITERION
+1143
+1144   The Task 19/21 secondary criterion used in the final analysis applies to each scalar statistic separately
+1145    and requires all four conditions below, using the pairwise spreads in Equation 13:
+1146
+                1. Rroute/seed(x; 5000) > 2.1147
+1148           2. ∆route(x; 5000) > ∆route(x; 0).
+1149
+1150           3. At least two seeds have the same complete ascending ordering of the three endpoint values
+                  for q100, q110, q111.1151
+1152           4. ∆route(x; 500) > ∆route(x; 0) or ∆route(x; 2000) > ∆route(x; 0).
+1153
+1154    Matching one pairwise direction does not satisfy the full-ordering condition.  Task-performance
+1155    similarity is not part of the criterion. The rule is descriptive and is not treated as preregistered; the
+1156     ratio threshold alone is not the complete rule. Continuous endpoint statistics provide the primary
+1157    evidence. Task 19 skips scalar ordering for vector-valued statistics. Earlier Task 14 and Task 15
+1158    analyses use different descriptive rules; their classifications are not interchangeable with this four-
+        condition rule.1159
+1160   The raw learned-ridge spreads illustrate the denominator’s role.  For TinyStories, ∆route =
+1161    0.0020472726060284507 and ∆seed = 0.002254387156830894, giving R = 0.9081282. For Wiki-
+1162    Text, they are 0.012821787750969331 and 0.0006462138456602892, giving R = 19.8414005. A
+1163    large ratio can reflect the route spread, the seed denominator, or both; it is not a variance decompo-
+1164     sition or a significance test.
+
+1165
+1166   B.2  FOUR-LEVEL RIDGE-INITIALIZATION EVALUATION
+1167
+1168    Table 14 retains the four tested initializations. Only initial ridge changes between these regimes,
+1169    and ridge remains trainable. For each initialization, source training uses q100, q110, q111 and seeds
+1170   0–4 for 5000 training episodes. Local checkpoints are saved at steps 500, 2000, and 5000; the table
+         reports the step-5000 summaries on fixed validation episodes 0–15.1171
+1172    For each source checkpoint and evaluated route, the evaluator first averages the gradient vector
+1173    or restored-update vector over the 16 episodes, then computes its relative disagreement with the
+1174    corresponding q111 mean vector. The reported local value is the arithmetic mean of these disagree-
+1175    ments over three source routes, two candidate routes (q100, q110), and five seeds, giving 30 rows.
+1176   Thus it uses E(meane vq,e; meane v111,e), not meane E(vq,e; v111,e). For updates, each vq,e is the
+        parameter-change vector from its restored per-episode optimizer step; these update vectors are aver-1177
+       aged after the steps have been evaluated, rather than taking one step on an averaged gradient. These
+1178
+         local means are distinct from the 36-entry baseline audit medians.
+1179
+1180   The endpoint ratios use the raw-scale pairwise spreads in Equation 13. With five seeds and three
+1181    routes, ∆route averages 15 matched-seed route-pair differences and ∆seed averages 30 within-route
+1182    seed-pair differences.
+1183   The local means and Rλ increase as initialization decreases across these four settings.  The
+1184    minimum-eigenvalue ratios match Rλ at the reported precision, as expected from the rank-deficient
+1185    ridge design. In contrast, Rcond rises through 2 × 10−4 and then falls at 10−4. Absolute ridge and
+1186    minimum-eigenvalue route spreads are not monotonic. Changing ridge initialization also changes
+1187    regularization and training dynamics; these four values do not establish a continuous numerical law
+        or a universal threshold. Reused historical runs are not new independent replications.
+
+
+                                              22
+
+=== PDF PAGE 23 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1188
+1189    Table 14: Four-level ridge-initialization results. Local gradient and update disagreements are raw
+1190     fractions; the two right columns are endpoint route-to-seed ratios.
+1191             λ0     Mean local gradient E  Mean local update E      Rλ     Rcond
+1192           10−3             0.00352110         0.000421454   0.456240   0.367052
+1193             5 × 10−4            0.00780849         0.000922505   2.078835   1.662756
+1194          2 × 10−4            0.02567498         0.003105570   5.157735   4.992702
+1195           10−4             0.05562609         0.006692950   5.472349   4.280485
+1196
+1197
+1198   B.3  SEED-LEVEL RIDGE TRANSPLANTATION
+1199
+1200    Table 15 records all 20 seed-level native/replaced/reference triples underlying Figure 1. Each value
+1201     is already an arithmetic mean over matched IDs 0–15, evaluated under common q111. The recipient
+1202    and the separately trained reference have the same seed and step 5000. Only the recipient’s log-ridge
+1203    tensor is replaced; non-ridge recipient parameters are retained, features and outputs are recomputed,
+       and no optimizer step is taken. The reference column is the same-seed q111 endpoint, not a later1204
+         point in the recipient’s training trajectory.
+1205
+1206    For this intervention only, let θ denote the non-ridge parameters, with ridge written separately, and
+1207     let ¯ms(θ, λ) be the mean regularized-Gram condition over the 16 matched evaluations for seed s.
+1208    For a fixed recipient route q, define the native, ridge-replaced and reference statistics as
+1209                   as = ¯ms(θq, λq),   bs = ¯ms(θq, λ111),   cs = ¯ms(θ111, λ111).             (15)
+1210
+1211    With ψ(v) = log max(v, 10−30), define
+1212
+                               dnatives   = |ψ(as) −ψ(cs)|,      drepls  = |ψ(bs) −ψ(cs)|,1213
+                                                                                                    (16)1214                         Cs = 1 −drepl                                                  s     ,      dnatives   > 10−30.
+1215                                          dnatives
+1216
+        Closure is undefined otherwise and is not clipped. Zero denotes unchanged distance to the reference,
+1217    while one denotes zero remaining distance; defined closure may be negative but cannot exceed one.
+1218   We report the median of the five seed-level closures. Thus the 16 measurements are averaged before
+1219    taking logarithms, and seed aggregation follows closure calculation.
+1220
+       Ridge enters the measured matrix directly. For fixed feature matrix Z,
+1221
+1222                         λmin(Z⊤Z + λI) = λmin(Z⊤Z) + λ.
+1223
+        Replacing  ridge can  therefore change regularized-Gram  conditioning without changing  the1224
+         representation-generating parameters.
+1225
+1226   The WikiText median closures are 98.8% and 98.0% for q100 and q110; the lower-initialization ridge
+1227    values are 98.1% and 99.3%. These percentages concern regularized-Gram conditioning specifi-
+1228     cally. The reference is approached by increasing condition in WikiText and decreasing it in ridge.
+1229   Thus closure measures reference agreement rather than improvement or recovery of a representation.
+
+1230
+1231   B.4  PRELIMINARY FIVE-SEED SHARED-RIDGE EVALUATION
+1232
+        In the earlier independent-ridge control, each seed’s q111 ridge schedule  is replayed across1233
+         q100, q110, q111 while the non-ridge parameters continue training under their assigned routes. Seeds
+1234
+       0–4 use a one-episode lag: schedule entry 0 is the initial ridge, entry j + 1 stores native episode
+1235     j’s pre-forward ridge, and controlled episode j uses entry j.  Log-ridge is frozen and excluded
+1236    from AdamW. The 15 runs all complete 5000 episodes; the 165 saved rows comprise 150 trajec-
+1237    tory evaluations and 15 final endpoints. These endpoints are evaluated at step 5000 under common
+1238    q111 using the separate 200-validation-episode evaluator.  Its route-to-seed ratios are R(λc) = 0,
+1239   R(λmin) = 2.55 × 10−9, and R(κ) = 0.0472. All three ratios belong to this evaluator, whose con-
+1240    dition statistic uses the 95th percentile over 200 episodes. The minimum-eigenvalue statistic is the
+1241    evaluator’s minimum route-input positive-definiteness margin (route input pd margin min),
+        not the later 16-episode semantic mean. Final endpoints apply schedule entry 5000, whereas the last
+
+
+                                              23
+
+=== PDF PAGE 24 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1242
+1243    Table 15: Seed-level semantic conditions used in Figure 1. All values retain the precision of the
+1244    supplied figure data.  Reference values are repeated where both recipient routes share the same
+1245    donor.
+1246            System     Recipient  Seed         Native      Replaced     Reference
+1247             WikiText   q100          0    2537582.41   22165006.84   22317241.28
+1248             WikiText   q100          1    2594777.11   18283704.32   17860652.15
+1249             WikiText   q100          2    2878470.54   17747692.48   17190931.29
+1250             WikiText   q100          3    2706498.03   18844594.36   19017070.82
+1251             WikiText   q100          4    2596890.89   16955994.60   16582048.39
+1252             WikiText   q110          0    2622686.57   23063225.46   22317241.28
+                 WikiText   q110          1    2521156.26   18564659.00   17860652.151253
+                 WikiText   q110          2    2885258.59   18092166.07   17190931.291254
+                 WikiText   q110          3    2591961.01   19196551.53   19017070.82
+1255
+                 WikiText   q110          4    2584996.41   17593189.62   16582048.39
+1256
+1257             Ridge      q100          0   12629430.77    9214027.64    9156837.80
+                Ridge      q100          1   13007999.51    9197929.14    9250547.201258
+                Ridge      q100          2   11831824.47    9351954.29    9428435.981259
+                Ridge      q100          3   12206242.12    8646966.50    8577933.03
+1260
+                Ridge      q100          4   12077389.31    8085442.03    8023193.56
+1261             Ridge      q110          0   12719053.64    9177403.42    9156837.80
+1262             Ridge      q110          1   12891597.53    9242541.37    9250547.20
+1263             Ridge      q110          2   13064010.67    9435551.74    9428435.98
+1264             Ridge      q110          3   11896899.14    8552931.83    8577933.03
+1265             Ridge      q110          4   12641498.09    8059907.77    8023193.56
+1266
+
+1267
+1268
+         trajectory evaluation precedes the next schedule assignment; their final recorded ridge and loss need
+1269    not coincide.
+1270
+1271   No matching uncontrolled common-route baseline was retained for that evaluator. Consequently
+         these ratios do not support a reduction percentage computed against a baseline from another episode1272
+          set. The zero ridge ratio is imposed by the intervention; near-zero minimum-eigenvalue separation is
+1273
+         also structurally expected in this rank-deficient design. This preliminary evaluation is distinct from
+1274
+         the matched seven-seed, 16-episode intervention in the main text.
+1275
+1276
+1277   B.5  LOCKED POLICY CONSTRUCTION AND PAIRED AGGREGATION
+1278
+1279   The development-locked log-ridge schedule, internally labeled P5, uses q111 development trajecto-
+1280     ries from seeds 0–2. Table 16 lists its locked knots. Let θdevs  (t) be development log-ridge and let tj
+1281    denote the knot steps. Each knot is the pointwise median across the three development seeds. The
+        schedule interpolates linearly in log-ridge:1282
+1283
+1284               mj = medians∈{0,1,2} θdevs   (tj),
+1285                                                                     t −tj
+                      θP5(t) = (1 −a)mj + amj+1,    a =                ,   tj ≤t ≤tj+1.
+1286                                                        tj+1 −tj
+1287
+1288   The ridge used at training step t is λ(t) = exp(θP5(t)); interpolation is not performed directly in
+1289    λ. P5 was selected and locked after development, before confirmatory training on seeds 5–11. It is
+1290    frozen and non-trainable during that evaluation, with no route-specific online ridge adaptation. This
+         single development-derived schedule differs from replay of each confirmatory seed’s own reference1291
+          trajectory.
+1292
+1293    For condition, the seed-level statistic first averages the 16 episode conditions within each source
+1294    route and then averages the three source routes.  Task loss instead first averages 200 validation
+1295    episodes within each route and then the same three routes. Both evaluations use common q111
+         execution, and each reported grand mean averages the seven resulting seed values. In symbols, for
+
+
+                                              24
+
+=== PDF PAGE 25 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1296
+1297    Table 16: Knots of the development-locked log-ridge schedule (P5). Each value is the pointwise
+1298    median of q111 development log-ridge across seeds 0, 1, and 2. Interpolation between these knots is
+1299     linear in log-ridge.
+1300                                        Step       Locked log-ridge
+1301                                      0   −9.210340469997888
+1302                                    500   −9.154973978956892
+1303                                   1000   −9.107165324471913
+                                       2000    −9.035950630966271304
+                                       3000   −8.949161556929168
+1305                                       4000    −8.88258076605998
+1306                                   5000   −8.813025494781678
+1307
+1308
+1309    policy p,
+1310
+                         (︄    15         )︄                    (︄                  )︄1311           1      1                       1       1             ¯κs,p =  ∑︂   ∑︂ κq,s,p,e    ,        ¯ℓs,p =  ∑︂     ∑︂  ℓq,s,p,e    ,      |E200| = 200.
+1312           3      16                      3      200
+                q∈Q     e=0                   q∈Q       e∈E200
+1313
+1314   The paired tests use the seven native-versus-P5 seed differences and exact two-sided sign flips.
+1315    Neither the 21 route–seed rows nor the individual episodes serve as independent paired units. With
+1316    ds = xs,left−xs,right, the statistic is Tobs = | 17 ∑︁11s=5 ds|. All 27 = 128 sign vectors are enumerated,
+1317    including the original assignment and its global reversal. A permutation is counted when Tperm ≥
+1318    Tobs −τ, with τ = 10−15 max(1, Tobs); the p-value is the count divided by 128, with no plus-one
+         correction and zero differences retained. This is not the mean absolute difference. The sign-flip1319
+          test assumes that, under the null, the joint distribution of paired seed differences is invariant under
+1320
+        independent sign reversals.
+1321
+1322   The primary policy comparison is P1 versus P5 across five continuous metrics: validation and test
+1323    query loss, semantic minimum eigenvalue, semantic condition, and final ridge. P1 versus P2 and P2
+1324    versus P5 each use the same five metrics as secondary descriptive comparisons. All 15 continuous
+         contrasts are unadjusted for multiplicity.  Survival has no discordant seed pairs and no sign-flip1325
+         p-value. The validation-loss and condition contrasts have 48/128 and 2/128 extreme assignments,
+1326
+         respectively. The other primary contrasts have p = 0.09375 for test loss and p = 0.015625 for each
+1327
+        of minimum eigenvalue and final ridge; the latter two are structurally related in this rank-deficient
+1328     classifier. The 16 condition episodes are a subset of the 200 validation episodes. Individual losses for
+1329     all 200 episodes were not retained, so the first loss aggregation is supported by saved run aggregates.
+1330
+1331    Seven-seed paired outcomes and descriptive intervals.  Table 17 gives the saved seed-level P1
+1332    and P5 outcomes, using the episode and route aggregation above. We retain the original contrast
+1333     orientation, ds = xs,P1 −xs,P5: positive differences indicate lower P5 condition or query loss.
+1334    Differences and summaries are calculated before display rounding.
+1335    Table 18 reproduces the original descriptive percentile-bootstrap intervals from the seven paired
+1336    differences. For each metric, 100,000 resamples draw seven seed differences with replacement; the
+1337     interval endpoints are the 2.5th and 97.5th percentiles of the resampled means, using linear quantile
+1338    interpolation. The original NumPy generator, default rng(210021), is reset for each metric.
+1339   The resampling unit is the seed, not an episode or route. With only seven pairs, these intervals
+1340    are descriptive and unadjusted for multiplicity; they are neither exact sign-flip-test inversions nor
+1341    equivalence bounds.
+1342   Lower route-averaged condition in 7/7 seeds does not imply that every individual route improves.
+1343   The loss result is lower in 4/7 seeds and higher in 3/7, with p = 0.375 and no specified equivalence
+1344    margin; the task evidence does not establish equivalence.
+1345
+1346   B.6  CROSS-SEED LOCAL COMPARISONS
+1347
+1348    For the additional 18 matched validation units, median relative Aused disagreement is 33.78%,
+1349    gated-branch disagreement is 1.58%, and absolute loss difference is 3.19 × 10−4. Median gra-
+         dient and clipped-update cosine similarities are 0.9961 and 0.9947, respectively. Table 19 gives
+
+
+                                              25
+
+=== PDF PAGE 26 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1350
+1351
+
+1352
+1353
+1354
+1355
+1356    Table 17: P1 and P5 outcomes for all seven confirmatory seeds. Each entry first averages the spec-
+1357     ified episodes within each route and then the three routes under common q111 evaluation. Panel (a)
+        uses 16 condition episodes and displays values in units of 106; panel (b) uses 200 validation episodes1358
+       and unscaled query cross-entropy. Positive ds = P1 −P5 favors P5 for these lower-is-better out-
+1359
+       comes.
+1360
+                                        (a) Regularized-Gram condition (×106)
+1361
+1362                           Seed          P1          P5              ds
+1363                           5      11.553702      9.373051     +2.180650
+1364                           6      11.039621      8.727209     +2.312412
+                               7      11.124503      9.172382     +1.9521221365
+                               8      11.533823      9.078508     +2.455315
+1366                               9      11.170487      9.240831     +1.929656
+1367                           10      11.650213      9.349679     +2.300534
+1368                           11      11.124865      9.169809     +1.955056
+1369                       Mean    11.313888      9.158781     +2.155106
+1370
+                                      (b) Validation query loss
+1371
+1372                           Seed          P1          P5              ds
+1373                           5    0.900651166  0.899611967  +0.001039199
+1374                           6    0.918703179  0.915158812  +0.003544367
+                               7    0.890117036  0.891515187  −0.0013981511375
+                               8    0.900043733  0.900772159  −0.000728425
+1376                               9    0.894646508  0.894858813  −0.000212305
+1377                           10    0.903396749  0.902022109  +0.001374639
+1378                           11    0.892595649  0.891738230  +0.000857419
+1379                       Mean  0.900022003  0.899382468  +0.000639535
+1380
+
+1381
+1382
+1383
+1384
+1385
+1386
+
+1387
+1388
+1389
+1390
+1391
+        Table 18: P1-minus-P5 paired differences over seeds 5–11. Sample SD uses the seven paired dif-
+1392
+        ferences with denominator six. Intervals are 95% paired percentile-bootstrap intervals with 100,000
+1393    resamples. The final column reproduces the unadjusted exact two-sided sign-flip p-values from all
+1394   128 sign assignments; these tests and intervals are separate procedures. Condition values in this
+1395    table are scaled by 10−6 for readability; query loss is unscaled.
+1396    Metric                         Mean d   Sample SD       95% bootstrap interval  Paired p
+1397
+         Condition (×106)                    2.155106     0.211630          [2.012254, 2.300154] 0.015625
+1398
+        Query loss                      0.000639535 0.001629660 [−0.000414732, 0.001812570]   0.375
+1399
+1400
+1401
+1402
+1403
+
+
+
+                                              26
+
+=== PDF PAGE 27 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1404
+1405    Table 19: Additional forward summaries for the cross-seed local cohort. Each entry is a median over
+1406    six matched units for the indicated seed. Relative disagreements are raw fractions, not percentages;
+1407    absolute loss differences are not normalized.
+1408                            Seed   Aused E   Gated-branch E        |∆L|
+1409                            1     0.33658          0.01547   3.19 × 10−4
+1410                            2     0.35780          0.01801   2.76 × 10−4
+1411                            3     0.33569          0.01705   2.52 × 10−4
+
+1412
+1413
+1414    Table 20: Observed minimum–maximum disagreements and median cosine similarities over the six
+         units of each source seed. Disagreements are raw fractions, not percentages. Gradients are mea-1415
+        sured before clipping; updates use the source training configuration’s norm-1 clipping and restored
+1416
+     AdamW state.
+1417
+                       Seed   Quantity       Minimum E  Maximum E   Median cosine
+1418
+1419                    1   Raw gradient        0.06194       0.14871        0.99524
+                        2   Raw gradient        0.05920       0.12482        0.99578
+1420
+                        3   Raw gradient        0.04333       0.12800        0.99663
+1421
+                        1     Clipped update       0.05446       0.13450        0.994851422
+                        2     Clipped update       0.06302       0.15135        0.99374
+1423                        3     Clipped update       0.06113       0.15166        0.99447
+1424
+1425
+1426    the supplementary forward summaries by source seed, and Table 20 gives observed gradient and
+1427    clipped-update ranges and cosine summaries. Each seed contributes six units from two checkpoint
+1428    steps and three validation batches per checkpoint. These are descriptive within-seed summaries, not
+1429    independent training replicates or confidence intervals.
+1430
+       The auxiliary unclipped-update medians are 0.09576, 0.10556, and 0.09985 for seeds 1, 2, and
+1431
+         3, respectively. Each equals its corresponding clipped-update median at the reported precision,
+1432    although the individual clipping-active unit differs as documented in Appendix A.5. Gradient and
+1433    clipped-update median disagreements are 5.95% and 6.14% at step 100, versus 12.12% and 14.44%
+1434     at step 1000. These are observed differences between the two checkpoint steps; they do not establish
+1435    monotonic accumulation of error during training. Optimizer restoration, clipping, and the six same-
+1436    route repeatability controls are described in Appendices A.1 and A.5.
+1437
+       The high median cosine similarities do not support an interpretation as gradient reversal.
+1438
+1439
+       B.7  ROUTE-RESOLVED ENDPOINT TASK RESULTS
+1440
+1441   The task summaries use 54 existing step-5000 endpoints across training routes q100, q110, q111:
+1442    seeds 0–2 for TinyStories SKA and seeds 0–4 for WikiText SKA and each ridge regime. All end-
+1443    points use common q111 evaluation, and each endpoint task CE is the arithmetic mean over eval-
+1444    uation IDs 0–15. SKA uses only the first example in each selected validation batch and evaluates
+1445    loss on the query suffix; ridge uses the 16 selected validation episodes. These are not full-corpus
+1446    or 200-episode task losses. The 54/54 completed endpoint records represent a disaggregation of the
+1447    existing results, not 54 new training runs or independent seeds. These records are separate from
+1448    the WikiText fixed-ridge and schedule-replay controls in Table 27, whose failed runs remain in their
+        denominators. They also differ from the seeds 5–11 policy study, whose task loss averages 2001449
+         validation episodes.
+1450
+1451    For training route q and seed s, define the paired task difference
+1452
+                               dq,s = CE(q, s; eval = q111) −CE(q111, s; eval = q111).
+1453
+1454    Negative values indicate lower task CE for route q. Each route mean and sample standard deviation
+1455    in Table 6 is computed across endpoint seed values. For the paired summaries below, subtraction
+1456    precedes the across-seed reduction, and the sample standard deviation uses the Nseed −1 denom-
+1457     inator.  It is computed from the paired differences, not by combining two marginal route standard
+         deviations. The displayed route means and paired summaries are rounded separately.
+
+
+                                              27
+
+=== PDF PAGE 28 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1458
+1459    Table 21: Same-seed task CE differences relative to endpoints trained under q111. All endpoints
+1460    are evaluated under common q111 at step 5000, after averaging IDs 0–15 within each endpoint.
+1461   Means and sample standard deviations summarize paired seed differences. The final column counts
+1462    lower/equal/higher CE for the listed training route. These are descriptive summaries.
+1463                Regime           Route Nseed    Mean d Sample SD Lower/equal/higher
+1464                   TinyStories SKA    q100   3   +0.000288  0.001421        1/0/2
+1465                                      q110   3   −0.000738  0.000796        2/0/1
+1466                 WikiText SKA      q100   5   −0.001081  0.001658        4/0/1
+1467                                      q110   5   −0.000193  0.000683        3/0/2
+1468                     Ridge (λ0 = 10−3)  q100   5   +0.000201  0.001540        2/0/3
+1469                                      q110   5   +0.000077  0.000071        1/0/4
+1470
+                     Ridge (λ0 = 10−4)  q100   5   +0.007743  0.005214        1/0/4
+1471                                      q110   5   +0.000245  0.001209        2/0/3
+1472
+1473
+1474    For the lower-ridge-initialization q100 comparison, the paired differences in source-seed order are
+1475
+1476                       [0.010590, 0.007071, −0.000983, 0.009888, 0.012151].
+
+1477
+       Thus four seeds have higher CE and one has lower CE. The summaries do not establish task-
+1478
+        performance equivalence, statistical significance, or a route that is optimal across regimes.
+1479
+1480    For reconciliation with the earlier task aggregates, equal weighting of the route–seed endpoint means
+1481    gives 2.258723 for TinyStories SKA, 2.386736 for WikiText SKA, 0.889772 for ridge initialized at
+        10−3, and 0.892221 for ridge initialized at 10−4.  These correspond to the earlier four-decimal1482
+         entries 2.2587, 2.3867, 0.8898, and 0.8922, respectively; the route-resolved summaries retain dif-
+1483
+        ferences hidden by those grand means.
+1484
+1485
+1486   B.8  ORIGINAL NINE-COMPARISON RESULTS
+1487
+        Table 10 and Appendix A.4 specify the original nine q110–q111 comparisons, using script-fixed
+1488
+        seed-0 checkpoints and non-shuffled training inputs. All nine complete. Restored-update and retry
+1489    behavior are given in Appendix A.1; metric construction and the clipping follow-up are in Ap-
+1490    pendix A.5.
+1491
+         Internal solver quantities are not uniformly similar. The measured operator Aused has median rel-1492
+         ative disagreement of 20.929%. Downstream, branch disagreement has median 1.107% and maxi-
+1493
+     mum 2.531%, while logit disagreement has median 0.882% and range 0.772–1.686%. The median
+1494        signed loss difference δL is +3.24726 × 10−4; the median absolute difference is 3.61681 × 10−4,
+1495    with range 1.9312 × 10−5 to 1.056 × 10−3.
+1496
+1497   At the same matched states, median gradient disagreement is 5.618% with range 4.886–13.430%,
+       and median gradient cosine similarity is 0.998424. Median restored Adam-update disagreement1498
+          is 5.854% with range 5.479–13.843%, and median update cosine similarity is 0.998300. Figure 2
+1499
+       summarizes the downstream logit and local update measurements.
+1500
+1501    Executing the source training configuration’s norm-1 clipping leaves the updates unchanged on these
+1502   same nine comparisons because clipping is inactive throughout this set (Appendix A.5). Thus, close
+1503    downstream predictions coexist with route-dependent gradients and restored updates at the same
+       model state; the forward comparison alone leaves this learning-level discrepancy untested.1504
+1505
+1506   B.9  LOCAL CONTROLS IN MODEST-SEPARATION REGIMES
+1507
+       These local diagnostics and the multi-seed endpoints in Table 6 use distinct sampling populations;
+1508
+        they do not track a particular local perturbation along a training trajectory.
+1509
+1510   The historical TinyStories local functional, gradient and update tables contain headers only. Their
+1511    report records that the conditional local stage was not carried out after no Cholesky boundary was
+        found in the bounded search. We therefore do not retain numerical claims about four TinyStories
+
+
+                                              28
+
+=== PDF PAGE 29 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1512
+                       (A) Logits                       (B) Gradients                       (C) Updates
+1513
+               1.8                                                         15
+1514                                          12
+1515        (%)  1.2                                     (%)                                           (%) 10
+1516                                        8
+1517                                                                         5                           Elogit  0.6                                                           Egrad  4                                                                                   Eupdate1518
+1519          0                            0                             0
+1520
+               Median: 0.882%                  Median: 5.618%                  Median: 5.854%
+1521
+1522    Figure 2: Nine matched q110 versus q111 comparisons from three seed-0 WikiText-2 checkpoints and
+1523    training batches 0, 9 and 19. Points show medians; segments show observed minimum–maximum
+1524    ranges, not confidence intervals. Updates use restored Adam; reproducing norm-1 clipping leaves
+       them unchanged because clipping is inactive in all 18 route evaluations. Each quantity uses its own1525
+        reference norm and vertical scale; cross-panel ratios are not amplification factors.
+1526
+1527
+1528
+1529    Table 22: Local q110 versus q111 diagnostics in baseline ridge with modest endpoint route sepa-
+1530     ration. Entries are median relative disagreements; N counts matched local units, not independent
+1531    training replicates. Magnitudes are not a common cross-system effect-size scale. Endpoint results
+1532    and seed counts appear in Table 6.
+1533                              Regime     N  Gradient   Update
+1534                                 Ridge baseline  36  0.1821%  0.1099%
+1535
+1536
+
+1537
+1538    local units. The eight TinyStories states in the separate 29-unit stagewise audit and the long-run
+1539    endpoints in Table 6 do not replace these unavailable local records.
+1540   Appendix A.4 gives the nine-checkpoint and conditioning-based episode selection for the 36-entry
+1541    independent-ridge local audit; the selected checkpoint–episode pairs are reused across routes. All
+1542    eight routes complete all 36 entries, so hard Cholesky failure is not required for the detectable
+1543    baseline-ridge local effect; these entries are not independent training replicates. The ridge audit
+1544   shows local route disagreement alongside modest endpoint ridge and conditioning separation relative
+1545    to between-seed variation.
+1546
+1547
+1548   B.10  SEPARATE CUSTOM-VJP RESULTS
+1549
+1550   On the separate 29 frozen state–single-example units, we compare native selective-forward exe-
+1551    cution and selective-forward execution with the custom VJP against the full-route native-autograd
+1552    reference. Median gradient disagreement decreases from 13.446% to 2.777%, while median re-
+1553    stored Adam-update disagreement decreases from 18.759% to 2.966%. The reductions calculated
+1554    from these medians are 79.35% and 84.19%, respectively, and all 29/29 cases improve. This analysis
+        uses the same units as Table 2 with a distinct backward and optimizer protocol.1555
+1556    Retaining the selective forward outputs while substituting the recomputed solver-submap Jacobian
+1557    substantially improves gradient and update agreement.  This identifies sensitivity in the solver-
+1558    associated backward pathway that is not exposed by inspecting forward values alone. The sub-
+1559     stituted Jacobian covers the complete solver submap; the diagnostic does not isolate every backward
+1560    numerical effect, and its reductions are not causal mediation fractions.
+1561    This custom VJP saves semantic inputs, recomputes the solver submap with all solver stages in
+1562    FP64, and calls autograd.grad;  it is distinct from the separate hand-written VJP feasibility
+1563    study. All nine saved synthetic checks report an overall pass, but five explicitly skip native full-route
+1564    gradcheck. These records therefore do not establish nine executed native gradchecks. The historical
+1565    overall no-go decision also required component-error, runtime and memory criteria that were not
+        met; the local fidelity improvement does not establish a computationally advantageous replacement.
+
+
+                                              29
+
+=== PDF PAGE 30 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1566
+1567    Table 23: Apple M4 Max CPU distributions across the 20 fixed batches. Relative L2 errors use the
+1568    platform-local q111 reference; |∆L| is the absolute loss difference. Updates are clipped restored
+1569   Adam updates. Entries are recomputed from the saved scalar CSV and rounded to six significant
+1570     digits.
+1571            Route  Metric        Mean      Median         p95          Min      Max
+1572             q100   Elogit      0.0165461    0.0165594  0.0170860      0.0156941  0.0172604
+1573             q110   Elogit      0.0168202    0.0168068  0.0174741      0.0159067  0.0176722
+1574             q100  |∆L|     0.000861394 0.000831246 0.00161269 1.3113 × 10−5  0.00198913
+                  q110  |∆L|     0.000905108 0.000815272 0.00157380   0.000119448 0.002307651575
+                  q100   Egradient     0.367520     0.353094    0.473401       0.240584    0.477646
+1576                  q110   Egradient     0.140616     0.139540    0.162707       0.112533    0.176625
+1577             q100   Eupdate      0.415114     0.406302    0.481910       0.354073    0.510092
+1578             q110   Eupdate      0.142051     0.139378    0.156327       0.127634    0.158783
+1579
+
+1580
+1581    Table 24: A100-SXM4-40GB distributions across the same 20 fixed batches. Relative L2 errors use
+1582    the A100-local q111 reference; |∆L| is the absolute loss difference. Updates are clipped restored
+1583   Adam updates. Entries are recomputed from the saved scalar CSV and rounded to six significant
+1584     digits.
+1585              Route  Metric       Mean     Median         p95        Min      Max
+1586                q100   Elogit     0.0274925  0.0276125  0.0283178    0.0261905  0.0289932
+1587                q110   Elogit     0.0267472  0.0266414  0.0277291    0.0259735  0.0281922
+1588                q100  |∆L|     0.00193456 0.00203276 0.00289102 0.000291109 0.00293994
+1589                q110  |∆L|     0.00186611 0.00187945 0.00274930 0.000660658 0.00297308
+                    q100   Egradient    0.377789    0.373711    0.474872     0.282989    0.518496
+1590
+                    q110   Egradient    0.179418    0.177831    0.216740     0.137398    0.229581
+1591                q100   Eupdate     0.421973    0.415508    0.521355     0.346328    0.526931
+1592                q110   Eupdate     0.174266    0.175669    0.195955     0.155849    0.198414
+1593
+1594
+1595   B.11  CROSS-ENVIRONMENT LOCAL RESULTS
+1596
+1597    Tables 23 and 24 retain the complete core distributions from the supplied CPU and A100 scalar
+1598   CSVs. Each platform has 60/60 completed route executions at one fixed SKA checkpoint on the
+1599   same 20 saved sequential training batches, with each candidate compared with that environment’s
+1600   own q111 execution. Appendix A.10 specifies the saved state, inputs and reference.  These are
+1601    summaries over batches at one state, not independent training replicates, and are not pooled with the
+1602    original nine or additional 18 comparisons. The relative L2 values are raw fractions; loss differences
+         are absolute. Each mean averages 20 saved batch-level scalars; it is not an error computed after1603
+        averaging vectors.  Medians, linearly interpolated 95th percentiles, minima and maxima use the
+1604
+       same rows. These inputs come from the training split, not an independent validation cohort. No
+1605
+        standard deviation, confidence interval or significance test is added.
+1606
+1607   The tables now use the preserved scalar CSVs with one stated rounding rule. This supersedes four
+1608     last-digit entries in the earlier A100 report transcription; the historical CSV, JSON and report are
+        unchanged. The original generation chain for those four earlier entries remains unrecovered. No1609
+         original logits, gradients or updates are reconstructed from these scalar summaries.
+1610
+1611   The CPU CSV records no clipping activation in 60 route executions: all global gradient norms are
+1612    below one, and clipped and unclipped restored updates coincide for that CPU control. The supplied
+1613   A100 CSV also records 0/60 clipping activations, coefficient 1 throughout, and identical pre-/post-
+1614    clipping gradient norms within every row.  Its clipped and unclipped updates are obtained from
+         separate restored executions, whose recorded norm and discrepancy values differ slightly; inactive1615
+         clipping alone does not identify the source of those differences. This A100 result does not change
+1616
+         the separately recorded clipping-active unit in the 18-comparison cohort.
+1617
+1618   The gradient and update ranges are disjoint between the two candidates in both environments. On
+1619   CPU, the q110 maxima 0.176625 and 0.158783 are below the corresponding q100 minima 0.240584
+       and 0.354073; on A100 the comparisons are 0.229581 < 0.282989 and 0.198414 < 0.346328. Both
+
+
+                                              30
+
+=== PDF PAGE 31 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1620
+1621    Table 25: Primal/dual relative-L2 values from one classifier checkpoint and validation episodes 0–
+1622     4. Values are raw fractions against each formulation’s own q111. Logits are concatenated before
+1623    comparison; gradients and restored AdamW updates use one backward pass on the five-loss mean,
+1624    without clipping.
+1625                  Formulation   Route            Logit         Gradient   Restored update
+1626                  Primal        q100    1.1198 × 10−3   7.6070 × 10−3   1.2004 × 10−3
+1627                 Dual          q100    5.2788 × 10−5   1.2503 × 10−4   4.6255 × 10−5
+1628                  Primal        q110    4.7281 × 10−4   9.3731 × 10−4   2.1761 × 10−4
+1629                 Dual          q110    1.7635 × 10−5   4.9657 × 10−5   2.4490 × 10−5
+1630
+1631
+1632    Table 26: q111 implementation consistency: dual is compared with primal. The first three observa-
+1633    tions are maxima over five episodes; gradient and update observations use the single global five-loss
+1634    comparison. The original five gate criteria pass. An update observation exists, but no update thresh-
+1635    old was specified and it was not included in the gate decision.
+1636    Metric                                                      Observed      Threshold   Decision
+1637     Internal FP64 W relative L2                              6.4404 × 10−12     ≤10−9   Pass
+1638    Logit relative L2                                         2.3819 × 10−7  ≤2 × 10−6   Pass
+1639    Absolute loss difference                                  1.1921 × 10−7  ≤2 × 10−6   Pass
+1640    All-parameter gradient relative L2                          1.1740 × 10−6  ≤2 × 10−5   Pass
+         Gradient cosine                                     0.9999999999993   ≥0.999999   Pass1641
+         Restored AdamW update relative L2                        2.0194 × 10−6   Not specified   Not gated
+1642
+1643
+1644
+1645    supplied CSVs also show lower q110 gradient and update discrepancy in all 20 matched batches. This
+       row check is not a significance test. The measurements compare routes within each environment;1646
+        they are not CPU-versus-GPU vector discrepancies or a hardware-only intervention.
+1647
+1648
+1649   B.12  PRIMAL/DUAL LOCAL RESULTS
+1650
+1651    Formulation-specific reference comparisons.  The additional classifier control uses one q111-
+1652    trained seed-0 checkpoint at step 5000 and validation episodes 0–4, with initialization λ0 = 10−3
+       and no dual retraining. Table 25 retains the four candidate rows from the six formulation–route1653
+        aggregate records. Each candidate is compared with its own formulation’s q111, not a common1654
+        primal reference. Logits are flattened and concatenated in episode order before computing relative
+1655
+      L2 error. The five FP32 query losses are averaged for one backward pass and one independently
+1656    restored AdamW step, without clipping. The gradient and update comparisons are therefore global
+1657    five-episode quantities, not five independent samples. Relative errors use the reference-vector norm
+1658    with a 10−12 floor and FP64 postprocessing. Appendix A.11 gives the parameter order, FP32 update
+1659    subtraction, state restoration and precision-stage assignments.
+1660
+1661    Sensitivity reduction under the equivalent formulation.  Dividing the saved primal value by
+1662    the saved dual value within each route and metric gives, in logit/gradient/restored-update order,
+1663    approximately 21.2, 60.8, and 26.0 for q100, and 26.8, 18.9, and 8.9 for q110. These descriptive
+1664     ratios use the unrounded saved scalars and are then rounded; they are not averages of per-episode
+1665     ratios, task benefits or speedups.
+1666
+       The dual formulation substantially attenuates the measured mixed-precision discrepancies for both
+1667    candidate routes at this fixed checkpoint and episode set. An algebraically equivalent formula-
+1668    tion can therefore mitigate the observed sensitivity, and the primal magnitude is not formulation
+1669     invariant. The control does not establish that dual is always more accurate or faster. Residual dis-
+1670    crepancies remain nonzero, but no practical equivalence threshold or full dual training trajectory
+1671   was tested. Nonzero values alone do not establish a meaningful training impact. This local control
+1672    neither replaces the original primal endpoint and policy experiments nor tests an equivalent dual
+1673    implementation of SKA. It changes the algebraic computation path as well as system size, so system
+        dimension is not isolated as the cause.
+
+
+                                              31
+
+=== PDF PAGE 32 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+
+
+1674
+       The gate is an implementation-consistency check on tested inputs, distinct from the exact-arithmetic
+1675     identity in Appendix C.1 and the earlier independent high-precision calibration.   It does not
+1676     certify q111 as mathematical ground truth.  Appendix A.7 distinguishes the coverage of the
+1677    production–mp80, pre-cast mp50–mp80 and primal–dual checks.  The observed update relative
+1678   L2 is 2.0194277280644333 × 10−6; its absolute L2 is 2.0713025625865157 × 10−8 and cosine
+1679     is 0.9999999999979617. These values do not supply the unspecified update threshold or an inde-
+1680    pendent historical restore-repeatability check. Neither the gradient gate nor a reference floor from
+1681    another experiment supplies that missing update criterion.
+
+1682
+1683    System-specific solve residuals.  The primal and dual residuals use their own equations and right-
+1684    hand sides:
+1685
+1686                ∥HpfactorWinternal −Bacc∥F         ∥Hdfactorα −Yacc∥F                      rp =                                           ,     rd =1687                     max(∥Bacc∥F , 10−12)            max(∥Yacc∥F , 10−12).
+1688
+1689    Postprocessing uses FP64, but Hfactor can already contain FP32 rounding under q100.  Each
+1690    saved p95  is a linearly interpolated quantile of five episode residuals.   For q111, these are
+       2.054421808223476 × 10−15 for primal and 1.6057547159356287 × 10−13 for dual. The five q1111691
+         residuals are preserved; the candidate-route records retain only the residual p95, so their episode-1692
+         level reductions cannot be independently checked. The primal system has dimension 64 and the dual
+1693
+        system dimension 25. Their different equations and right-hand sides preclude ranking functional fi-
+1694
+         delity by comparing these residual magnitudes directly.
+1695
+1696
+1697   B.13  MATCHED SEVEN-SEED SHARED-RIDGE COMPARISON
+1698
+1699   The matched classifier comparison uses λ0 = 10−4, seeds 5–11, and routes q100, q110, q111. P1
+1700    learns log-ridge online. P2 replays the saved same-seed P1-q111 trajectory with a one-episode lag
+        across that seed’s routes: entry 0 is the common initial ridge, native episode j stores its pre-forward1701
+         ridge in entry j + 1, and P2 episode j uses entry j. Thus for j ≥1 it uses the preceding native
+1702
+        episode’s pre-forward ridge; saved step-s evaluation assigns entry s.  Exact replay refers to the
+1703
+         stored trajectory values, not same-episode synchronization.  Trajectories may differ across seeds.
+1704    Non-ridge parameters continue training under their assigned routes, and P2 does not update ridge
+1705    through the optimizer. Initialization and optimizer protocols are given in Appendix A.1. Step-5000
+1706    endpoints are evaluated under common q111 on the same validation episodes 0–15.
+1707
+       Using the spreads in Equation 13, the absolute condition route spread decreases from 2,539,987.73
+1708
+        under P1  to 65,379.40 under P2.   The  reported  reduction  is 97.4%,  calculated  as 1 −
+1709    ∆route(P2)/∆route(P1), and Rcond changes from 5.6939 to 0.1384. The percentage is the rela-
+1710     tive decrease in absolute between-route spread, not a reduction in mean condition, a fraction of the
+1711     full representation explained, or a causal mediation fraction. The earlier five-seed, 200-episode p95
+1712     results in Appendix B.4 are a separate evaluation and cannot serve as this comparison’s baseline.
+1713
+1714
+       B.14  WIKITEXT TRAINING-TIME RIDGE CONTROLS1715
+
+1716
+        Table 27 retains all five attempts per route for fixed nominal ridge 10−3 and same-seed q111 schedule
+1717
+         replay. The replay starts from the same ridge value. Every incomplete q100 run fails at Cholesky;
+1718
+        both other routes complete under each control. Assignment, optimizer, and clipping details are in
+1719   Appendix A.1. These controls are separate from the complete four-regime endpoints in Table 6.
+1720
+1721
+1722    Table 27: WikiText training-time ridge controls. Entries are completed runs out of five attempts per
+1723    route; failed runs remain in the denominator.
+1724     Intervention                                                                          q100  q110  q111
+1725
+         Fixed ridge (λfixed = 10−3)                                                              0/5   5/5   5/5
+1726
+        Matched q111 ridge-schedule replay                                                       1/5   5/5   5/5
+1727
+
+
+
+                                              32
+
+=== PDF PAGE 33 ===
+       Under review as a conference paper at ICLR 2027
+
+
+
+1728  C  ADDITIONAL DERIVATIONS
+1729
+1730    Differential of the regularized solve.  In exact arithmetic, differentiating GλW = C gives
+1731   (dGλ)W + GλdW = dC. Since λ > 0 makes the exact regularized Gram matrix invertible, left
+1732    multiplication by G−1λ  yields dW = G−1λ (dC −(dGλ)W). This identity describes the exact map;
+1733      it is neither a bound on floating-point differentiation error nor a prediction of observed optimizer
+1734    disagreement.
+1735
+1736   Minimum eigenvalue in the independent ridge design.  With 25 support examples and 64 fea-
+1737     tures, Z⊤s Zs has rank at most 25 and hence at least 39 zero eigenvalues in exact arithmetic. Adding
+1738    λcI shifts every eigenvalue by λc, so λmin(He) = λc and λmax(He) = σmax(Zs)2 + λc. The un-
+1739    floored spectral condition number is consequently 1 + σmax(Zs)2/λc. This explains why ridge and
+1740   minimum eigenvalue are not independent mechanistic evidence, while condition also depends on
+1741    the feature matrix. It does not remove finite-precision differences in the measured eigenspectrum.
+
+1742
+       Closure bounds and interpretation.  With a strictly positive native absolute log gap, the replace-1743
+       ment gap is nonnegative. Their ratio is therefore nonnegative, so defined closure 1−dreplaced/dnative1744
+        cannot exceed one. It can be negative if replacement moves the measured statistic farther from the
+1745
+         reference. No clipping is applied. The condition statistic depends directly on ridge, so closure of
+1746     this gap alone is not full training-time mediation.
+1747
+1748
+       C.1  PRIMAL–DUAL IDENTITY FOR POSITIVE RIDGE
+1749
+1750    For Z = Zs ∈R25×64, Y = Ys ∈R25×5 and λ = λc > 0, let Bp = Z⊤Y , Hp = Z⊤Z + λI64
+1751    and Hd = ZZ⊤+ λI25. Both matrices are positive definite in exact arithmetic and hence invertible.
+1752    Direct multiplication gives
+1753
+                        (Z⊤Z + λI64)Z⊤= Z⊤(ZZ⊤+ λI25).                        (17)1754
+1755    Multiplying HpZ⊤= Z⊤Hd on the left by H−1p  and on the right by H−1d Y yields
+1756
+1757             Wp = H−1p Bp = Z⊤H−1d Y = Z⊤αd = Wd,    αd = H−1d  Y.
+1758
+       The inverse notation denotes the mathematical solve, not explicit matrix inversion in the imple-
+1759
+        mentation. This identity equates the exact maps at fixed features, targets and positive ridge.  It is
+1760
+        not a finite-precision stability theorem or a guarantee for every input, and does not specify either
+1761    implementation’s precision-stage assignments.
+1762
+1763
+1764
+
+1765
+1766
+1767
+1768
+1769
+
+1770
+1771
+1772
+1773
+1774
+1775
+
+1776
+1777
+1778
+1779
+1780
+1781
+
+
+
+                                              33

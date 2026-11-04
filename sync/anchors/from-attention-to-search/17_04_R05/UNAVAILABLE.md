@@ -40,6 +40,10 @@
 
 - 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget/summary_cn.md`；原因：outside selected documents or asset/size limit。
 
+- 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/protocol_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/summary_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/protocol.md`；原因：outside selected documents or asset/size limit。
@@ -77,6 +81,10 @@
 - 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget/protocol.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget/summary.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/protocol.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/summary.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/summary_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/dynamic_projector_drift.json`；原因：outside allowed source workspace。
 
@@ -274,6 +282,12 @@
 
 - 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/PROJECTS.md`；原因：outside selected documents or asset/size limit。
 
+- 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/summary_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/README.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/README.md`；原因：outside selected documents or asset/size limit。
@@ -355,3 +369,9 @@
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/stories`；原因：source unavailable。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/PROJECTS.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/summary.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary.md`；原因：outside selected documents or asset/size limit。

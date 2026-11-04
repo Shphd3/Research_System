@@ -1,0 +1,184 @@
+{
+  "schema": "a15_24_03_artifact_manifest_v1",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association",
+  "created_at_utc": "2026-10-24T14:39:34.973211+00:00",
+  "input_assets": [
+    "model_qwen3_0p6b_base",
+    "data_tulu_sft_route_20261019t012300z",
+    "representation_tulu_sft_route_20261019t012300z",
+    "analysis_crosscoder_frequency_composition_common_path_20261019t164834z",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed11",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed22"
+  ],
+  "input_access": "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/input_access.json",
+  "frozen_design": {
+    "frozen_at_utc": "2026-10-24T14:34:17.846043+00:00",
+    "stage": "after covariate-only support inspection; before new functional outcomes",
+    "known_matching_insufficiency": "Primary covariate-only matching has11 pairs/9 dialogues, maxSMD0.1513; cross-dialogue diagnostic1pair/2dialogues. Primary support/balance is already insufficient before intervention outcomes. Independent finite interventions still execute; no relaxation to obtain a result.",
+    "sha256": {
+      "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor.md": "c63183d326afb6cec6e12d1ae7b80711d2b523b2874d2adc2127e7fdcf04cae4",
+      "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor_cn.md": "bf4333694b304f174763ffd4b700c03bf5e28e1b76ab6cf288f48de351931c74",
+      "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/protocol.md": "0ac79490ffa25755af5f7828f5521335faaa560a50bc5414126d8404e9588c4f",
+      "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/protocol_cn.md": "7b5d924b7aaa4296831a1500e8023890651ac60e30a0bc59d17311986f641314",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/frozen.json": "f13f48ac8a735af1cde22e7f5ab88663313a7e73d426950b05990e1a69da04b6",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/worker.py": "89e1d65cc30563b2ac4799fdad632379aa022dcdfae87d5142ea6d65965d5fc8",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching.py": "98ba7f77b13e98aefe15dc73923801420fc64e2207ba295bf4a43e22943e6352",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/event_covariates.npz": "570b5b01a355288eecc97351892fba65e81b16c4efa3691bba04e24de1850fff",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matched_pairs_within_dialogue.npz": "c48962892fd8137ac3ea67556025e66b5a1c541b46e2810fd1197d639b9db0ea",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matched_pairs_disjoint_dialogues.npz": "4bc83c91e0aa6cf75db61c09d8c09ff7773f97a3a5d130c66da64267156ee0e3",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching_preflight_within_dialogue.json": "6efa6414459e901eeb45b51ca2a97ae39b9b3fddf3f2f415a9e2322f77d92b8c",
+      "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching_preflight_disjoint_dialogues.json": "de8a83015857c9d361a02946571cacb9ac720ab58b610eed7cc5de6c80c765d2",
+      "/data/250010109/MoE_Router/experiments/20261023_frequency_complement/worker.py": "54ff1a1a3545c7f678fe4d7635e98c11f84bf8c54907f3c6546e2b076a812849",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/code/train_matched.py": "5bbbad26e2f3bdb65166bdbbbfb3a7b7cb3b6d97f699f3a5fd177fd4502d89e5",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/common.py": "c3a789dd59e84e7b1a9fb8cefff2a260c7b1417f4ef9466e25261c14e53c0afe",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/routes/groups.npz": "38fbddd9170d2a20ea83042e70af7200a119c9a665971d1ae13bddc6172d0e8e",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/routes/dev_T_F.npz": "8af0ae8aa28322e4e121f84c57d8e71149d37b76e5ee9f3f54b275341c834132",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/representation/train_pca.npz": "8e495771471b6633b4ded5cf75a567dd001c1e1cd87b27bf680e125875f4c513",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/dev.pt": "5194a80a0501e2d74b31e6b698bb9f9ae915ffbfac893656d69a5b949593c181",
+      "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/dev.jsonl": "56d6f03425dafffe7b5345e472a4e3d7c932a5914761d6867ef9791e07ac5b0a"
+    }
+  },
+  "frozen_document_locations": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor.md": "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/frozen_documents/15_24_03_frequency_effect_association_anchor.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor_cn.md": "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/frozen_documents/15_24_03_frequency_effect_association_anchor_cn.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/protocol.md": "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/frozen_documents/protocol.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024/protocol_cn.md": "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/frozen_documents/protocol_cn.md"
+  },
+  "artifacts": {
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/audits.json": {
+      "sha256": "e2d38efff14f4374a652127a5bbf6bd92b8c1a0ef1f9ed13e0521192e64c84c2",
+      "bytes": 5874
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/design_freeze.json": {
+      "sha256": "d80d54cd705fd8a9c044d154c5f8d64c3109205e8ec807b1d5c40b07f4fe9eab",
+      "bytes": 4670
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/event_covariates.npz": {
+      "sha256": "570b5b01a355288eecc97351892fba65e81b16c4efa3691bba04e24de1850fff",
+      "bytes": 5779127
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/feature_effects.csv": {
+      "sha256": "2476b985c4e44844861df0d4ba58289cafcccd098f4e76823cfa75c1c546c7c7",
+      "bytes": 4698671
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/frozen.json": {
+      "sha256": "f13f48ac8a735af1cde22e7f5ab88663313a7e73d426950b05990e1a69da04b6",
+      "bytes": 2298
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/implementation_repairs.json": {
+      "sha256": "9a02175a39bcf861a7401c2820c620a34a1470af71ee9cba9dffbeac40bec618",
+      "bytes": 601
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/input_access.json": {
+      "sha256": "c4189cfa4eb1a695671c1003a75ab0a675aeb6921f2584cab47a16602c16dd30",
+      "bytes": 19820
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matched_pairs.npz": {
+      "sha256": "c48962892fd8137ac3ea67556025e66b5a1c541b46e2810fd1197d639b9db0ea",
+      "bytes": 638
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matched_pairs_disjoint_dialogues.npz": {
+      "sha256": "4bc83c91e0aa6cf75db61c09d8c09ff7773f97a3a5d130c66da64267156ee0e3",
+      "bytes": 452
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matched_pairs_within_dialogue.npz": {
+      "sha256": "c48962892fd8137ac3ea67556025e66b5a1c541b46e2810fd1197d639b9db0ea",
+      "bytes": 638
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching.py": {
+      "sha256": "98ba7f77b13e98aefe15dc73923801420fc64e2207ba295bf4a43e22943e6352",
+      "bytes": 2640
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching_preflight.json": {
+      "sha256": "0286240e610beff0d5973b15994e80dfbc08ec9a7ef73a61c1246c02b451aee6",
+      "bytes": 911
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching_preflight_disjoint_dialogues.json": {
+      "sha256": "de8a83015857c9d361a02946571cacb9ac720ab58b610eed7cc5de6c80c765d2",
+      "bytes": 1021
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/matching_preflight_within_dialogue.json": {
+      "sha256": "6efa6414459e901eeb45b51ca2a97ae39b9b3fddf3f2f415a9e2322f77d92b8c",
+      "bytes": 1018
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/paired_effects.csv": {
+      "sha256": "1c0ca3183401d4372aa1fd639b1db784e38ee31362099d94d146d103dc1e5af9",
+      "bytes": 11503
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/preflight.json": {
+      "sha256": "5a61cd7c908e04089c7885a5ce27ee83cb908bb94792c7bf8d489564c2985e89",
+      "bytes": 259
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/preflight.py": {
+      "sha256": "98a8d4b39bcba29e308f18df0aa2da9d95d3467afb533427e75e98ec6293cc3c",
+      "bytes": 2676
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/preflight_attempt1.py": {
+      "sha256": "e0a49bcc72d17a67ec3566dc116075a438df4caa0c5bc9fb795794c433f89238",
+      "bytes": 2619
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/preflight_implementation_repair.json": {
+      "sha256": "87e6596ed617a491f90feaa96fdd0c09bb774dc2fd94905949270058e4c582a4",
+      "bytes": 251
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/progress.jsonl": {
+      "sha256": "b9ad08124067e48ed5627742bfbac0fa7fe9c20a904ed4df8654e516efa507d7",
+      "bytes": 4267
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/random_bases.npz": {
+      "sha256": "549752c7c3e1a7eeb74845e34c119761233a2e59bf120467386578fada8f6d67",
+      "bytes": 1006286
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/results.json": {
+      "sha256": "c086381b377da755b8f1fed0e2d76d35a3efaa176466b3259414fb3a285b0650",
+      "bytes": 30719
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/results.partial.json": {
+      "sha256": "c430ed25cdd7c0befd74db119f68aadf1363c50c2c928abd68fee48442c70c18",
+      "bytes": 30446
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/run.log": {
+      "sha256": "b9ad08124067e48ed5627742bfbac0fa7fe9c20a904ed4df8654e516efa507d7",
+      "bytes": 4267
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/run_start.json": {
+      "sha256": "ee60cba05970270f31f01b0a2246db9d3c31cebf91c07156e81e6d2f79a47b6e",
+      "bytes": 268
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/seed11_nll.npz": {
+      "sha256": "c454aa278d9d8ef2fad909980926e9adeb9ca39b1c65cb22557afb84893dc6bf",
+      "bytes": 64453
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/seed22_nll.npz": {
+      "sha256": "b2a42d808b472250e26cbd52cbc36ed0c52cf79189b977619fe31bf4838e0e51",
+      "bytes": 64398
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/verification.json": {
+      "sha256": "dcdbb615f155f40abb3c10c739758c603f37b3020b882689700a9d0272c650e7",
+      "bytes": 10405
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/verification.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/verification_final.log": {
+      "sha256": "a7cef1c2197304bd689bd309f9ca01c08ca76f5c0079572a6550c335ac8687c8",
+      "bytes": 1432
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/verify.py": {
+      "sha256": "796b00fbc22155c5a96bae861ef818ad5f0710fca9635e8fe1a0d04800312ee4",
+      "bytes": 6453
+    },
+    "/data/250010109/MoE_Router/experiments/20261024_frequency_effect_association/worker.py": {
+      "sha256": "89e1d65cc30563b2ac4799fdad632379aa022dcdfae87d5142ea6d65965d5fc8",
+      "bytes": 13401
+    }
+  },
+  "completion": "40/40readouts; primary association insufficient; zero training",
+  "scientific_judgment": "Unknown",
+  "reusable_checkpoint_outputs": "NOT_APPLICABLE; none created",
+  "unused_preflight_artifacts": [
+    "preflight_attempt1.py: stopped slow metadata-only implementation",
+    "matched_pairs.npz and matching_preflight.json: initial preflight copies; authoritative matches are matched_pairs_within_dialogue.npz and matched_pairs_disjoint_dialogues.npz"
+  ]
+}

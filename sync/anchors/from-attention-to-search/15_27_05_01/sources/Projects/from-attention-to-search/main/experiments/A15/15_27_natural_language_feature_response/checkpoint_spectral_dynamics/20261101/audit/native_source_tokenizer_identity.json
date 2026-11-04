@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-01T02:56:04.458876+00:00",
+  "rows": [
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/dense_sae/model/modeling_qwen3_sae.py",
+      "actual_sha256": "50650820ec36c2373c3b31265d29a0a803c7ea5cc01c902fa6bd7d36eb9771b2",
+      "training_source_sha256": "50650820ec36c2373c3b31265d29a0a803c7ea5cc01c902fa6bd7d36eb9771b2",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/dense_sae/model/configuration_qwen3_sae.py",
+      "actual_sha256": "7c953ce91df503eeb92f6ea109074000efb9cfd435c1c372b0c00de47b39799d",
+      "training_source_sha256": "7c953ce91df503eeb92f6ea109074000efb9cfd435c1c372b0c00de47b39799d",
+      "matches": true
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/dense_sae/model/sae.py",
+      "actual_sha256": "c8c22d29eb6ce0ace461fd3470e2952a1d55d1c5b82740cb8130984f9536e866",
+      "training_source_sha256": "c8c22d29eb6ce0ace461fd3470e2952a1d55d1c5b82740cb8130984f9536e866",
+      "matches": true
+    },
+    {
+      "file": "/data/share/Qwen3-0.6B-Base/config.json",
+      "actual_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "training_source_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "matches": true
+    },
+    {
+      "file": "/data/share/Qwen3-0.6B-Base/merges.txt",
+      "actual_sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "training_source_sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "matches": true
+    },
+    {
+      "file": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+      "actual_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "training_source_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "matches": true
+    },
+    {
+      "file": "/data/share/Qwen3-0.6B-Base/tokenizer_config.json",
+      "actual_sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "training_source_sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "matches": true
+    },
+    {
+      "file": "/data/share/Qwen3-0.6B-Base/vocab.json",
+      "actual_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "training_source_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "matches": true
+    }
+  ],
+  "note": "Current model/tokenizer sources match original training-resolved digests;does not certify checkpoint learning or untouched evaluation"
+}

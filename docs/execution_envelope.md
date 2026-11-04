@@ -35,6 +35,9 @@ default_profile: h100-4-reserved
 default_image: shphd-lite-0911
 
 researcher_decisions:
+  - date: "2026-11-01"
+    scope: r13_native_spectral_decoding
+    decision: "The researcher authorized frozen Qwen native spectral decoding on at most two approved RTX5090 Spot GPUs. Reuse registered5090-2-spot, embedded smoke before main analysis. No training, H100 use, new paid resource class, new conversation, commit, push or publication."
   - date: "2026-09-28"
     scope: resource_and_execution
     decision: "The researcher declared eight-H100 Spot capacity exhausted and instructed that both Dense and unit-weight SALL formal continuations move to separate single-node 5090-8-spot jobs. Stop the still-unallocated H100 formal jobs pt-qfgz4tjh and pt-c91mxih3 before replacement submission. Reuse the already exercised eight-rank microbatch 2 / accumulation 8 partition for both trajectories, preserving 262,144 valid targets/update and the registered complete source checkpoints; do not infer that the researcher's H100 mbs16 capacity judgment applies to 32GB RTX5090. Submit exactly two replacements with shphd-lite-0911 plus the mounted SM120 runtime. No new Smoke, larger unqualified RTX5090 microbatch, resource fallback, fresh initialization, objective/model/data/optimizer/CE change, old C/T launcher, commit, push, or publication is authorized."

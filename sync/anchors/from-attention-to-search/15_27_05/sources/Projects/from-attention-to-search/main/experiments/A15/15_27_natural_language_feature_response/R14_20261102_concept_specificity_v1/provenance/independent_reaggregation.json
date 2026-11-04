@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "checks": {
+    "no_reaggregation_errors": true,
+    "boundary_shift_mask_indices": true,
+    "frequency_groups_and_matched_controls": true,
+    "random_basis_ranks_and_orthogonality": true,
+    "new_smoke_pass": true,
+    "effective_frozen_inputs_unchanged": true,
+    "all_PC_bit_exact": true
+  },
+  "max_main_value_absolute_error": 1.7763568394002505e-15,
+  "reaggregated_conditions": 167,
+  "reaggregated_evaluation_families_per_condition": 36,
+  "reaggregated_primary_rows": 24,
+  "errors": [],
+  "random_orthogonality_max": {
+    "11021": 4.3890238665689196e-14,
+    "11022": 1.9297410891461197e-13,
+    "11023": 9.848545590163127e-14
+  },
+  "initial_protocol_preserved": true
+}

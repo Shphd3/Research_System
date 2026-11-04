@@ -1,0 +1,26 @@
+{
+  "owner": "A15_26",
+  "round": "R01",
+  "seeds": [
+    29,
+    43,
+    71
+  ],
+  "execution_surface": "acp",
+  "resource_profile": "h100-1-reserved",
+  "image_id": "shphd-lite-0911",
+  "budget_gpu_hours": null,
+  "user_budget": "no limit; single reserved preferred, four if necessary",
+  "atomic_steps": 1440,
+  "atomic_repair_steps": 2880,
+  "combination_steps": 1440,
+  "revision_steps": 1024,
+  "lr": 0.0001,
+  "batch": 32,
+  "microbatch": 8,
+  "adapter_rank": 32,
+  "capacity_repair_rank": 128,
+  "data_sha256": "a394a65379adeea6f9498ee6ae8768681405d3e88575e2a2c09f820241c1614f",
+  "protocol": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/R01_controlled_operations/protocol.md",
+  "frozen_at": "2026-10-24T15:53:59Z"
+}

@@ -27,3 +27,7 @@ Seven distribution strategies completed; P alone remains NOT RUN due to missing 
 ## Large-data and cross-layer token/feature validation
 
 [Chinese results](token_feature_layer_validation/results_cn.md): feature-level tendency versus position/ID-level profiles; cached CPU-only analysis, no training.
+
+## 均值成分与频率路由：本轮冻结分析
+
+[今日讨论与完整项目结果](mean_component_frequency_routing/results_cn.md)。比值与减均值的接收表现不同；原表征中心化存在重建退化，没有学习收益结论。

@@ -1,0 +1,235 @@
+===PAGE 1===
+Forward Similarity Does Not Guarantee Training Equivalence: Precision Placement in Differentiable Gram Solvers | OpenReview                   10/18/26, 6:50 PM
+
+
+
+
+                                                                                                                                                                                                                                             Li Shan…   OpenReview.net(/)    Search articles, authors and reviews...                    Notiﬁcations                   Activity           Tasks                                                                                                     (/notiﬁcations)                   (/activity)           (/tasks)
+
+     Back to Reviewers Console (/group?id=ICLR.cc/2027/Conference/Reviewers#assigned-submissions)
+
+
+                                                                                                                                                                            (/pdf?Forward Similarity Does Not Guarantee Training Equivalence:
+Precision Placement in Differentiable Gram Solvers                          id=o2BJPdnrm0)
+ICLR 2027 Conference Submission46026 Authors
+
+ 19 Sep 2026 (modiﬁed: 06 Oct 2026)  ICLR 2027 Conference Submission  Everyone  Revisions (/revisions?id=o2BJPdnrm0)  BibTeX
+ CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+Keywords: di!erentiable solvers, numerical precision, mixed precision, numerical linear algebra, optimization, training dynamics
+Abstract:
+Changing the numerical precision of a di!erentiable Gram solver may leave predictions nearly unchanged while altering the computation used to learn its parameters. We study this distinction in
+controlled Spectral Koopman Attention (SKA) and an independent episodic ridge classiﬁer, assigning FP32 or FP64 to separate solver stages without changing their exact-arithmetic deﬁnitions. Matched
+comparisons ﬁx the model, input, and optimizer state; separately trained endpoints are evaluated through a common precision route. For SKA, we compare q110 with the higher-precision solver route
+q111, a numerical reference rather than mathematical ground truth. Across 18 matched SKA validation comparisons from three training seeds, median relative discrepancies in logits, full-model gradients,
+and restored AdamW updates are 0.962, 8.61, and 9.88, respectively, each normalized by its corresponding q111 reference norm. Prediction agreement can therefore miss di!erences in the learning
+computation. In a seven-seed matched classiﬁer comparison, imposing externally prescribed ridge schedules shared across routes within each seed during training reduces the absolute between-route
+spread in post-training regularized-Gram conditioning by 97.4 relative to learning ridge separately under each route. This shows that the observed conditioning separation depends on the training-time
+ridge policy. Precision choices in these solvers therefore warrant checks of parameter updates alongside predictions, with endpoint conditioning and task outcomes assessed separately.
+
+Supplementary Material:  zip (/attachment?id=o2BJPdnrm0&name=supplementary_material)
+Primary Area: optimization
+Submission Number: 46026
+
+
+                                                                                                                                      Add:   O!cial Review    O!cial Comment
+
+ New O!cial Review
+
+ * denotes a required ﬁeld
+ AI Documentation For Reviewing
+ Use this box to provide a human-written assessment of the paper, and to document your interactions with any AI reviewing tools. If you used AI to expand, edit,
+ or polish your review, please provide the input text to the LLM. In this case, please consider skipping the LLM and submitting your original text directly! We, and
+ the authors, are much more interested in your unedited thoughts than what an LLM has to say.
+
+  This ﬁeld will not be shown to authors, but will be visible to ACs and SACs.
+
+    Write      Preview
+
+
+
+
+
+     TeX is supported (https://docs.openreview.net/reference/openreview-tex)
+
+                   ICLR 2027 Conference Program Chairs    ICLR 2027 Conference Submission46026 Senior Area Chairs
+
+  Visible only to:   ICLR 2027 Conference Submission46026 Area Chairs    signatures
+
+
+
+
+
+ Paper Summary*
+
+
+
+https://openreview.net/forum?id=o2BJPdnrm0&referrer=%5BReviewer…ICLR.cc%2F2027%2FConference%2FReviewers%23assigned-submissions)     Page 1 of 4
+===PAGE 2===
+Forward Similarity Does Not Guarantee Training Equivalence: Precision Placement in Differentiable Gram Solvers | OpenReview                   10/18/26, 6:50 PM
+
+
+ Please concisely summarize the paper, contributions, and validation as you understand them to be.
+
+    Write      Preview
+
+
+
+
+
+     TeX is supported (https://docs.openreview.net/reference/openreview-tex)
+
+ Presentation*
+  Is the paper clearly presented?
+    1: Di"cult to follow despite careful reading.
+    2: Generally understandable, but requires substantial e!ort in places.
+    3: Clear and easy to follow.
+
+ Informativeness*
+  Is the paper informative?
+    1: I learned little or nothing new from this paper.
+    2: I learned something interesting or useful.
+    3: I gained a substantially deeper understanding of the problem or question.
+
+ Soundness*
+  Is the paper sound?
+    1: I have signiﬁcant concerns about the paper’s soundness that do not appear easy to address.
+    2: I have minor or ﬁxable concerns about the paper’s soundness.
+    3: I have no substantive concerns about the paper’s soundness.
+
+ Critical Strengths*
+ Please identify one or two critical strengths of the paper that support acceptance. For each, explain brieﬂy why it is consequential to your overall assessment.
+ The goal is not to enumerate every positive point, but to identify and substantiate the considerations that most strongly determine your recommendation.
+ Enter “None” if no substantive strength can be identiﬁed.
+
+    Write      Preview
+
+
+
+
+
+     TeX is supported (https://docs.openreview.net/reference/openreview-tex)
+
+ Critical Weaknesses*
+
+
+
+
+
+https://openreview.net/forum?id=o2BJPdnrm0&referrer=%5BReviewer…ICLR.cc%2F2027%2FConference%2FReviewers%23assigned-submissions)     Page 2 of 4
+===PAGE 3===
+Forward Similarity Does Not Guarantee Training Equivalence: Precision Placement in Differentiable Gram Solvers | OpenReview                   10/18/26, 6:50 PM
+
+
+ Please identify one or two critical weaknesses of the paper that support rejection. For each, explain brieﬂy why it is consequential to your overall assessment.
+ The goal is not to enumerate every negative point, but to identify and substantiate the considerations that most strongly determine your recommendation.
+ Enter “None” if no material weakness can be identiﬁed.
+
+    Write      Preview
+
+
+
+
+
+ Questions For Authors*
+ Ask only questions whose answers could materially a!ect your assessment. Distinguish clariﬁcation requests from suggestions for future work.
+
+    Write      Preview
+
+
+
+
+
+     TeX is supported (https://docs.openreview.net/reference/openreview-tex)
+
+
+
+
+
+     TeX is supported (https://docs.openreview.net/reference/openreview-tex)
+
+
+
+
+
+ Flag For Ethics Review*
+ Please consider whether the submission raises any ethics concerns, including
+         discrimination/bias/fairness;
+         privacy, security, or safety;
+         legal compliance (e.g., GDPR, copyright, terms of use);
+         potentially harmful insights, methodologies, or applications;
+        responsible research practice (e.g., human subjects, data release);
+        research integrity (e.g., plagiarism, dual submission);
+        unprofessional behavior;
+        or other ethics-related concerns.
+
+   Yes
+   No
+
+ Details Of Ethics Concerns
+
+
+
+
+
+https://openreview.net/forum?id=o2BJPdnrm0&referrer=%5BReviewer…ICLR.cc%2F2027%2FConference%2FReviewers%23assigned-submissions)     Page 3 of 4
+===PAGE 4===
+Forward Similarity Does Not Guarantee Training Equivalence: Precision Placement in Differentiable Gram Solvers | OpenReview                   10/18/26, 6:50 PM
+
+
+  If you selected “Yes” for Ethics Review, please brieﬂy describe the concern(s).
+
+    Write      Preview
+
+
+ Rating*
+ Based on your overall assessment of the submission, what is your recommended decision? Consider the paper’s overall soundness, signiﬁcance, clarity, and
+  contribution.
+    1: Clear rejection
+    2: Weak rejection
+    3: Weak acceptance
+    4: Clear acceptance
+
+ Conﬁdence*
+ How strong is your subject-matter basis for this recommendation? Indicate your level of familiarity and research experience with the speciﬁc topic of the paper.
+    1:TeXI dois supportednot have (https://docs.openreview.net/reference/openreview-tex)su"cient expertise to assess this submission reliably and have alerted the AC.
+    2: I have broad familiarity with this ﬁeld but little or no direct research experience on this topic.
+    3: I am familiar with this topic and its relevant literature.
+    4: I have substantial direct research experience on this topic.
+
+ Readers*                ICLR 2027 Conference Program Chairs   ICLR 2027 Conference Submission46026 Senior Area Chairs
+
+                            ICLR 2027 Conference Submission46026 Area Chairs    signatures
+
+ Signatures*                signatures
+
+ Edit History
+
+ Readers*                  readers
+
+ Signatures*              ICLR 2027 Conference Submission46026 Reviewer pccq
+
+
+
+    Submit       Cancel
+
+
+
+
+                              About OpenReview (/about)              Contact (/contact)                    FAQ
+                                                                                                          (https://docs.openreview.net/getting-
+                                                                                                         started/frequently-asked-questions)
+                                 Hosting a Venue (/group?             Sponsors (/sponsors)        Terms of Use (/legal/terms) / Privacy
+                                id=OpenReview.net/Support)                                                     Policy (/legal/privacy)
+                                                All Venues (/venues)               Donate (/donate)                News (/group?
+                                                                                               id=OpenReview.net/News&referrer=
+                                                                                                             [Homepage](/))
+
+
+                       OpenReview (/about) is a long-term project to advance science through improved peer review with legal nonproﬁt status. We gratefully acknowledge
+                                                            the support of the OpenReview Sponsors (/sponsors). © 2026 OpenReview
+
+
+
+
+
+https://openreview.net/forum?id=o2BJPdnrm0&referrer=%5BReviewer…ICLR.cc%2F2027%2FConference%2FReviewers%23assigned-submissions)     Page 4 of 4

@@ -1,0 +1,27 @@
+派生阅读副本；原件位置：`assets/domain_difference_decomposition_r09_20261029.md`。
+[精确原始文件](../../sources/assets/domain_difference_decomposition_r09_20261029.md)；研究修改仍回到原件。
+
+---
+
+# R09 domain-difference decomposition: actual outputs
+
+[中文](domain_difference_decomposition_r09_20261029_cn.md) · [Canonical Summary](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/summary.md) · [Registration index](../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/asset_registration.json) · [Current strict access](../../sources/assets/checks/20261029T152118Z_r09_actual_outputs.json)
+
+Six actual output groups were registered after completion. All six passed current strict access on 2026-10-29 at 15:21 UTC. This establishes access to the registered payloads and probes; their scientific interpretation remains exploratory and researcher acceptance is Unknown. No model or CrossCoder checkpoint was trained.
+
+| Asset ID | Saved object and producer |
+| --- | --- |
+| `analysis_a15_27_03_r09_domain_difference_decomposition_20261029` | All 16,384 members over 384 original rows; 9 conditions and 147,456 member rows; true/reconstructed/residual vectors, restored decoder, frozen candidates, signed shares, Top-k and spectrum tables. Producer: `main/analyze.py`. |
+| `analysis_a15_27_03_r09_frequency_family_20261029` | Independent 65,536-position DCLM occurrence, three frozen binning schemes, 98,304 per-member variance rows, bootstrap indices and candidate joins. Producer: `frequency_family/analyze.py`. |
+| `data_a15_27_03_r09_controlled_distance_20261029` | 3,840 derived texts: 384 sources × 5 distances × 2 weekday variants. Every text has 240 tokens with target position 239. Producer: `distance/prepare.py`. |
+| `representation_a15_27_03_r09_distance_native_jointz_20261029` | Ten saved shards of true 14-layer residual vectors and native shared A22 activations, plus normalization and exact replay receipts. 3,840 analysis forwards plus 2 native replays. Producer: `distance/acquire.py`. |
+| `analysis_a15_27_03_r09_distance_response_20261029` | All-member signed responses, date-edit controls, family bootstrap intervals, fixed far comparison and explicit denominator/support limitations. Producer: `distance/analyze.py`. |
+| `analysis_a15_27_03_r09_supplement_abcd_20261029` | A: all 141 fixed candidates and raw activation differences. B: original all-member frequency totals. C: unit-decoder geometry and dictionary/matched backgrounds. D: additive frequency-by-spectral-band contributions, including residual. No new forwards or fitted models. |
+
+All payloads remain under [the execution owner](../../UNAVAILABLE.md). [The main manifest](../../UNAVAILABLE.md) records 67 main/supplement files and links branch manifests. Catalog digest fields distinguish copied manifest evidence from fresh local hashes. The [selected reading payload](../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/payload_manifest.json) is a derived delivery selection, not a second execution cache.
+
+Inputs retain frozen Qwen3-0.6B Base, the A22 checkpoint, R08's original 384-row joint cache, R04's DCLM occurrence reference and the independent natural-text basis reused by R07. True target vectors use zero-based block 27 residual-post before final normalization. A22 encodes all fourteen odd blocks into one shared 16,384-coordinate activation; it does not provide independent activations for each layer. Decoder restoration uses the frozen training RMS, 374.3495121024576 for block 27. The catalog contains exact parent IDs, hashes, layer list, gate and loader paths.
+
+The main analysis passed 1,166 independent numerical checks; distance data/statistics passed 16,239; C/D recomputation passed 2,141; background comparisons passed 26. C rows sum to one. D rows equal B's signed group totals, columns equal true-difference spectral energies, and all cells including residual sum to one. Residual contributions occur across spectral bands. These identities verify computation, not semantic specificity or causal importance.
+
+The original heldout families were exposed in R07/R08. Distance also changes filler order and framing, and a full domain-core edit differs in magnitude from the one-token weekday control. Original-discovery zero-RMS members retain NA normalized distance statistics. Frequency occurrence, activation-use replication, reconstruction contribution, decoder direction and distance response remain distinct evidence layers. Full definitions, actual texts and claim boundaries are in [Detailed](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/detailed.md) and [the separate A–D supplement](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R09_domain_difference_decomposition_20261029/supplement_ABCD.md).

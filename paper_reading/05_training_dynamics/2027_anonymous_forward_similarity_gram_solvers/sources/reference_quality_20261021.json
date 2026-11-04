@@ -1,0 +1,1251 @@
+{
+  "audit_date_shanghai": "2026-10-21",
+  "manuscript_sha256": "c382620be827e1154a2f6e9a49dd19dd953d7f03298d25bf100353c1b1079465",
+  "scope": "All 28 references: venue/formal status, indexed public controversy, reproduction reports, official reviews and source-specific reliability limits. Not exhaustive scientific validation.",
+  "summary": {
+    "references": 28,
+    "formal_conference_or_journal": 22,
+    "included_invited_review_process": 1,
+    "preprints_without_confirmed_formal_version": [
+      8,
+      11,
+      14,
+      19
+    ],
+    "nonarchival_workshop_early_version": [
+      21
+    ],
+    "dataset_record": [
+      3
+    ],
+    "new_formal_publication_confirmation": [
+      17
+    ],
+    "specific_theoretical_claims_to_restrict": [
+      23
+    ],
+    "dataset_quality_reports_to_check": [
+      8
+    ],
+    "external_critical_discussion_not_disqualification": [
+      5,
+      25
+    ],
+    "formal_retractions_or_verified_fatal_refutations_found_in_search": 0
+  },
+  "retraction_watch": {
+    "record_file": "quality_retraction_watch_check.json",
+    "download_bytes": 67642568,
+    "rows_scanned": 73315,
+    "titles_checked": 28,
+    "dois_checked": 13,
+    "matches": 0,
+    "sha256": "36dba07584e51943d2bf83fbf3265dcc68f5e0911366380b4796e6f6226477fc",
+    "version_commit_timestamp_verified": false,
+    "limits": "No-match is not proof of reliability. Dataset update commit could not be verified. Does not exhaustively cover errata or expressions of concern."
+  },
+  "access_limits": [
+    "13 per-DOI Crossref updates requests failed TLS; not counted as no-update results.",
+    "Some OpenReview/Nature review materials inaccessible.",
+    "CCF direct page retrieval hit WAF; no claim of complete current per-venue ranking verification.",
+    "No cited experiment run, no independent TinyStories subset data audit.",
+    "Echo contradiction verified in arXiv v1 PDF; ACM final text not fully compared."
+  ],
+  "entries": [
+    {
+      "number": 1,
+      "title": "Differentiable Convex Optimization Layers",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://papers.nips.cc/paper/2019/hash/9ce3c52fc54362e22053399d3181c638-Abstract.html",
+        "https://stanford.edu/~boyd/papers/diff_cvxpy.html"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 1,
+        "title": "Differentiable Convex Optimization Layers",
+        "venue_current_verified": "NeurIPS 2019 主会，Advances in Neural Information Processing Systems 32",
+        "publication_status": "正式同行评审会议论文",
+        "primary_publication_urls": [
+          "https://papers.nips.cc/paper/2019/hash/9ce3c52fc54362e22053399d3181c638-Abstract.html",
+          "https://stanford.edu/~boyd/papers/diff_cvxpy.html"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://neurips.cc/Conferences/2019/CallForPapers",
+            "observed": "2019官方CFP明确double-blind reviewing、technical quality/novelty/impact/clarity，公开reviews及meta-review。"
+          }
+        ],
+        "venue_assessment_cn": "成熟、正式的机器学习专业会议；声誉与公开审稿增加可追溯性，不是逐项结论正确性认证。",
+        "actual_search_queries": [
+          "\"Differentiable Convex Optimization Layers\" (retraction OR erratum OR correction OR criticism OR reproducibility)",
+          "\"Differentiable Convex Optimization Layers\" site:pubpeer.com"
+        ],
+        "public_findings": [
+          {
+            "kind": "ordinary_peer_review_criticism_not_fatal_postpublication_refutation",
+            "url": "https://proceedings.neurips.cc/paper/2019/file/9ce3c52fc54362e22053399d3181c638-Reviews.html",
+            "finding_cn": "评审提出不可微点行为说明不足、“exact”措辞过强、ASA表述不清等；另一评审指出补充softmax示例代码缺非负约束。整体技术判断为sound，反馈后有评审提高评价。"
+          },
+          {
+            "kind": "author_response",
+            "url": "https://proceedings.neurips.cc/paper/2019/file/9ce3c52fc54362e22053399d3181c638-AuthorFeedback.pdf",
+            "finding_cn": "作者承诺改成高精度求解措辞并补充不可微处理；不可逆系统用最小二乘返回值。不能将此误写成所有凸优化问题处处可微。"
+          },
+          {
+            "kind": "acceptance_metareview",
+            "url": "https://proceedings.neurips.cc/paper/2019/file/9ce3c52fc54362e22053399d3181c638-MetaReview.html",
+            "finding_cn": "AC汇总为评审一致认可其贡献，并要求兑现rebuttal修改。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "不可微、非唯一解和数值求解误差是适用条件，非该文被撤稿的证据。",
+          "未逐一核实所有camera-ready承诺；不把提交版本评语直接当最终稿残留缺陷。"
+        ],
+        "manuscript_role_cn": "稿件行038–040、445–447：可微优化层和线性代数层可置入端到端学习，求解器也向优化器提供导数。",
+        "reliability_for_manuscript_use_cn": "可保留为可微凸优化层的背景来源；不支持任意问题精确可微或本文精度实验已被验证的扩大陈述。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 2,
+      "title": "Consistent treatment of incompletely converged iterative linear solvers in reverse-mode algorithmic differentiation",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://link.springer.com/article/10.1007/s10589-020-00214-x"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 2,
+        "title": "Consistent treatment of incompletely converged iterative linear solvers in reverse-mode algorithmic differentiation",
+        "venue_current_verified": "Computational Optimization and Applications 77(2),597–616,2020，Springer",
+        "publication_status": "正式研究期刊论文",
+        "primary_publication_urls": [
+          "https://link.springer.com/article/10.1007/s10589-020-00214-x"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://link.springer.com/journal/10589/submission-guidelines",
+            "observed": "正式期刊、投稿和编辑政策入口。"
+          },
+          {
+            "url": "https://link.springer.com/brands/springer/journal-policies",
+            "observed": "出版社通行政策说明研究论文接受同行评审，通常至少两名独立专家；这是当前通行政策，不声称获得该2020论文的私有审稿记录。"
+          }
+        ],
+        "venue_assessment_cn": "正规的优化与计算专业期刊，出版社、编辑及审查流程可核验。",
+        "actual_search_queries": [
+          "\"Consistent treatment of incompletely converged iterative linear solvers\" (retraction OR erratum OR correction OR criticism)",
+          "\"Consistent treatment of incompletely converged\" retraction erratum correction"
+        ],
+        "public_findings": [
+          {
+            "kind": "primary_article_scope_and_evidence",
+            "url": "https://link.springer.com/article/10.1007/s10589-020-00214-x",
+            "finding_cn": "原文给出导数不一致来源、校正推导及两组数值验证，包括CFD；本轮页面未显示撤稿/更正提示，题名检索未找到明确致命反驳。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "分析针对未充分收敛的内层迭代和反向solver replacement，不能泛化为Cholesky所有精度配置。",
+          "作者的correction term是算法校正，不是论文勘误；题名+correction检索容易混淆。"
+        ],
+        "manuscript_role_cn": "稿件行462–464：自动微分存在数值陷阱，包括未完全收敛的迭代求解器。",
+        "reliability_for_manuscript_use_cn": "作为AD数值陷阱的特定先例可靠；其结论条件与本稿并不相同。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 3,
+      "title": "Optical Recognition of Handwritten Digits",
+      "current_status": "dataset_record",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+        "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 3,
+        "title": "Optical Recognition of Handwritten Digits",
+        "venue_current_verified": "UCI Machine Learning Repository 数据集；scikit-learn load_digits 提供其中1797样本副本",
+        "publication_status": "数据来源记录，非会议/期刊论文",
+        "primary_publication_urls": [
+          "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+          "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+            "observed": "UCI官方维护数据出处、任务、特征、DOI和使用说明。"
+          },
+          {
+            "url": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
+            "observed": "官方软件文档说明1797张8×8图像、64特征及0–16像素尺度。"
+          }
+        ],
+        "venue_assessment_cn": "有清楚出处的学术数据仓库，不能按会议/期刊同行评审等级判低质。",
+        "actual_search_queries": [
+          "\"Optical Recognition of Handwritten Digits\" (correction OR error OR criticism OR retraction)"
+        ],
+        "public_findings": [
+          {
+            "kind": "primary_data_provenance",
+            "url": "https://doi.org/10.24432/C50P49",
+            "finding_cn": "UCI原始数据有5620样本并说明43位书写者中的30/13训练测试划分；scikit-learn副本不应与该官方划分混同。检索主要返回用户软件错误及其他数据任务，未找到针对该数据集的正式撤销通知。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "本稿自行60/20/20分层划分scikit-learn子集，不能被表述为独立书写者泛化基准；这是设置边界而非数据伪造。",
+          "小规模简单数据只能支持受控数值诊断，不能独自支持真实大规模图像任务结论。"
+        ],
+        "manuscript_role_cn": "稿件附录A.9行1023–1025：使用scikit-learn digits，8×8展平、像素除16，自定义分层60/20/20划分。",
+        "reliability_for_manuscript_use_cn": "可保留为数据出处；需要检查本稿样本版本及划分，而不是用期刊等级评价数据。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 4,
+      "title": "OptNet: Differentiable Optimization as a Layer in Neural Networks",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://proceedings.mlr.press/v70/amos17a.html"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 4,
+        "title": "OptNet: Differentiable Optimization as a Layer in Neural Networks",
+        "venue_current_verified": "ICML 2017 主会，PMLR 70:136–145",
+        "publication_status": "正式同行评审会议论文",
+        "primary_publication_urls": [
+          "https://proceedings.mlr.press/v70/amos17a.html"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://icml.cc/Conferences/2017/CallForPapers",
+            "observed": "官方规定匿名投稿、reviewing criteria，要求客观建立的显著新结果；PMLR正式会议录可定位。"
+          }
+        ],
+        "venue_assessment_cn": "成熟正式机器学习会议；出版记录和作者实现可追溯。",
+        "actual_search_queries": [
+          "\"OptNet\" \"Differentiable Optimization\" (retraction OR erratum OR criticism OR reproducibility)",
+          "\"OptNet\" \"Amos\" \"Kolter\" (\"failure\" OR \"numerical instability\" OR \"erratum\")",
+          "site:github.com/locuslab/qpth/issues \"gradient\" \"wrong\""
+        ],
+        "public_findings": [
+          {
+            "kind": "author_disclosed_implementation_limits",
+            "url": "https://locuslab.github.io/qpth/",
+            "finding_cn": "作者项目页Caveats要求QP始终可行，并提醒不稳定时求解可能未足够准确，double相对float常有帮助。此为公开适用条件，非后续失败复现或撤稿。"
+          },
+          {
+            "kind": "official_reproducibility_resource",
+            "url": "https://github.com/locuslab/optnet",
+            "finding_cn": "作者公开复现实验代码。未运行代码，不能据此宣称独立复现通过。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "优化映射可微性、可行性和精度条件必须保留。",
+          "未查得针对主要结果的明确正式撤稿或致命反驳，搜索不构成所有软件错误不存在的证明。"
+        ],
+        "manuscript_role_cn": "稿件行038–040、445–447：可微优化求解器作为网络层，端到端提供梯度。",
+        "reliability_for_manuscript_use_cn": "可作为可微优化层先例；项目自身已承认浮点精度和收敛边界。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 5,
+      "title": "Meta-learning with differentiable closed-form solvers",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_qualified_external_criticism",
+      "primary_urls": [
+        "https://openreview.net/forum?id=HyxnZh0ct7",
+        "https://arxiv.org/html/1805.08136v3",
+        "https://ora.ox.ac.uk/objects/uuid%3A23adfe83-f098-4e7f-bb05-075e5878a291",
+        "https://github.com/bertinetto/r2d2"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 5,
+        "title": "Meta-learning with differentiable closed-form solvers",
+        "venue_current_verified": "ICLR 2019 正式会议论文；另有独立ReScience C 5(2),#1,2019复现报告",
+        "publication_status": "正式同行评审会议论文",
+        "primary_publication_urls": [
+          "https://openreview.net/forum?id=HyxnZh0ct7",
+          "https://arxiv.org/html/1805.08136v3",
+          "https://ora.ox.ac.uk/objects/uuid%3A23adfe83-f098-4e7f-bb05-075e5878a291",
+          "https://github.com/bertinetto/r2d2"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://iclr.cc/Conferences/2019/Reviewer_Guidelines",
+            "observed": "官方评审指南列质量、新意、可复现细节，明确double-blind。"
+          },
+          {
+            "url": "https://openreview.net/forum?id=HyxnZh0ct7",
+            "observed": "标准正式论坛标识；本轮正文访问触发browser challenge，未绕过。会议身份已有上轮正式来源核验，本轮不杜撰论坛私有评价。"
+          }
+        ],
+        "venue_assessment_cn": "正式机器学习会议，且有独立复现可增加实证可信度；应同时纳入复现者所指出的比较条件。",
+        "actual_search_queries": [
+          "\"Meta-learning with differentiable closed-form solvers\" (retraction OR erratum OR criticism OR reproducibility)",
+          "\"Meta-learning with differentiable closed-form solvers\" \"Devos\" \"10.5281\""
+        ],
+        "public_findings": [
+          {
+            "kind": "independent_replication_with_comparability_caveats",
+            "url": "https://zenodo.org/records/3160540",
+            "finding_cn": "Devos、Chatel、Grossglauser的独立复现正式存档（ReScience C 5(2),#1，DOI10.5281/zenodo.3160540）。主要结果在两个benchmark若干设置可复现，不能标作整体复现失败。"
+          },
+          {
+            "kind": "replication_specific_criticism",
+            "url": "https://infoscience.epfl.ch/server/api/core/bitstreams/1406731a-732f-4f74-ad02-fd8afb073a3a/content",
+            "finding_cn": "复现报告§4指出与MAML的特征提取器容量、训练类别/shot策略不同；早期原稿若干卷积选项及停止条件不足明确，特征维数未能完全匹配。报告称作者据反馈补细节并发布代码。此PDF含UNDER REVIEW标记，正式出版身份另由Zenodo记录确认。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "算法公式和benchmark排序是不同层级；不能把较大特征提取器下的优越性能全部归因于ridge求解器。",
+          "复现同时调整比较条件，不是对每个原始结果的精确同设置复验。"
+        ],
+        "manuscript_role_cn": "稿件行050、447–450：episodic ridge结合学习特征和求解器超参数、Woodbury缩小求解，并研究学习ridge的任务价值。",
+        "reliability_for_manuscript_use_cn": "可保留且相对有独立支持；若引用其benchmark优越性需附比较条件。本稿用于episodic ridge/Woodbury/学习lambda背景，以上质疑未推翻该用途。",
+        "extract_for_attention": true,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 6,
+      "title": "Efficient and Modular Implicit Differentiation",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2022/hash/228b9279ecf9bbafe582406850c57115-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/18604-/bibtex"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 6,
+        "title": "Efficient and Modular Implicit Differentiation",
+        "venue_current_verified": "NeurIPS 2022 主会，Advances in Neural Information Processing Systems35:5230–5242",
+        "publication_status": "正式同行评审会议论文",
+        "primary_publication_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2022/hash/228b9279ecf9bbafe582406850c57115-Abstract-Conference.html",
+          "https://proceedings.neurips.cc/paper_files/paper/18604-/bibtex"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://neurips.cc/Conferences/2022/CallForPapers",
+            "observed": "官方CFP明确double-blind、OpenReview管理及代码/数据/补充材料政策。"
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/228b9279ecf9bbafe582406850c57115-Abstract-Conference.html",
+            "observed": "明确Main Conference Track及DOI。"
+          }
+        ],
+        "venue_assessment_cn": "正式同行评审机器学习会议来源。",
+        "actual_search_queries": [
+          "\"Efficient and Modular Implicit Differentiation\" (retraction OR erratum OR correction OR criticism OR reproducibility)",
+          "\"Efficient and Modular Implicit Differentiation\" site:pubpeer.com",
+          "\"Efficient and Modular Implicit Differentiation\" (erratum OR corrigendum OR retracted)"
+        ],
+        "public_findings": [
+          {
+            "kind": "author_disclosed_theoretical_scope",
+            "url": "https://arxiv.org/html/2105.15183v5",
+            "finding_cn": "§2.2明确要求隐函数定理的可微与可逆条件；§3区分近似解处的Jacobian估计与对有限迭代程序本身求导，包含精度界。所检未找到正式撤稿/致命反驳。"
+          },
+          {
+            "kind": "software_lifecycle_not_scientific_refutation",
+            "url": "https://github.com/google/jaxopt",
+            "finding_cn": "作者实现仍公开，但README当前明确停止维护开发；不应以软件停止维护判定论文不可靠。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "不能将模块化框架理解为无条件适用于奇异或所有不可微情形。",
+          "未运行JAXopt，也未逐个审计其issue；版本兼容性与论文理论有效性分开。"
+        ],
+        "manuscript_role_cn": "稿件行445–447：可微优化与线性代数层把结构化求解嵌入端到端学习。",
+        "reliability_for_manuscript_use_cn": "可保留为隐式微分背景；引用时保留正则性条件。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 7,
+      "title": "Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://epubs.siam.org/doi/abs/10.1137/17M1140819"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 7,
+        "title": "Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions",
+        "venue_current_verified": "SIAM Journal on Scientific Computing40(2):A817–A847,2018",
+        "publication_status": "正式同行评审期刊论文",
+        "primary_publication_urls": [
+          "https://epubs.siam.org/doi/abs/10.1137/17M1140819"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://www.siam.org/publications/siam-journals/siam-journal-on-scientific-computing",
+            "observed": "学会正式期刊页面，数值方法范围及peer-review说明。"
+          },
+          {
+            "url": "https://epubs.siam.org/journal/sisc/instructions-for-authors",
+            "observed": "官方说明匿名专家审稿、编辑分工及利益冲突；当前政策不等于取得该篇私有审稿记录。"
+          }
+        ],
+        "venue_assessment_cn": "成熟的数值计算专业学会期刊，分析与本文问题直接相关。",
+        "actual_search_queries": [
+          "\"Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions\" (retraction OR erratum OR correction OR criticism)",
+          "\"Accelerating the Solution of Linear Systems\" \"erratum\""
+        ],
+        "public_findings": [
+          {
+            "kind": "formal_article_and_conditional_guarantees",
+            "url": "https://epubs.siam.org/doi/10.1137/17M1140819",
+            "finding_cn": "给出舍入误差分析、收敛充分条件及前后向误差界；摘要明确GMRES一般不保证快速收敛。所检未查得正式更正/撤稿或主要定理被推翻的证据。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "理论保证有条件数、算术与算法假设；潜在加速不等于每种硬件/矩阵上都加速。",
+          "三种精度角色是工作精度/校正求解/残差，不能直接等同于本稿Gram/Cholesky/求解三阶段。"
+        ],
+        "manuscript_role_cn": "稿件行454–456：混合精度求解器研究条件性、舍入和精度分配。",
+        "reliability_for_manuscript_use_cn": "可保留为混合精度线性求解和条件数分析的强背景来源。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 8,
+      "title": "TinyStories: How Small Can Language Models Be and Still Speak Coherent English?",
+      "current_status": "preprint_formal_review_not_confirmed",
+      "handling": "dataset_quality_check_required",
+      "primary_urls": [
+        "https://arxiv.org/abs/2305.07759"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 8,
+        "title": "TinyStories: How Small Can Language Models Be and Still Speak Coherent English?",
+        "venue_current_verified": "arXiv:2305.07759v2，作者机构Microsoft Research仍标arXiv",
+        "publication_status": "已核公开版本为预印本；本轮未核实到同题正式会议/期刊发表",
+        "primary_publication_urls": [
+          "https://arxiv.org/abs/2305.07759"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://arxiv.org/abs/2305.07759",
+            "observed": "官方页最新列2023-05-24v2，无journal-ref或期刊DOI字段；arXiv-issued DataCite DOI不是同行评审证明。"
+          },
+          {
+            "url": "https://www.microsoft.com/en-us/research/publication/tinystories-how-small-can-language-models-be-and-still-speak-coherent-english/",
+            "observed": "机构出版页仍标May2023/arXiv。"
+          }
+        ],
+        "venue_assessment_cn": "真实有公开数据资源的预印本；未有本轮核实的正式同行评审凭据，不能当成正式期刊论文，也不能仅据此判错。",
+        "actual_search_queries": [
+          "\"TinyStories\" (retraction OR erratum OR criticism OR \"peer review\" OR \"published in\")",
+          "\"TinyStories: How Small Can Language Models Be and Still Speak Coherent English?\" publication conference",
+          "\"TinyStories\" Eldan Li (criticism OR limitations OR \"data contamination\" OR reproducibility)",
+          "\"TinyStories\" (site:retractionwatch.com OR site:pubpeer.com)",
+          "\"TinyStories\" \"Eldan\" \"Li\" site:proceedings.neurips.cc",
+          "\"TinyStories\" \"Eldan\" site:proceedings.mlr.press",
+          "\"TinyStories\" \"Eldan\" site:aclanthology.org \"2023\"",
+          "\"TinyStories\" \"Eldan\" site:microsoft.com/en-us/research/publication"
+        ],
+        "public_findings": [
+          {
+            "kind": "public_user_report_not_independent_verification",
+            "url": "https://huggingface.co/datasets/roneneldan/TinyStories/discussions/12",
+            "finding_cn": "2023-11-13使用者报告训练集较多精确重复，并称tarball版本少得多；没有在本轮重算其数量或跨划分重叠。不能把训练内重复自动写成train/test泄漏。"
+          },
+          {
+            "kind": "public_user_cleaning_report_not_independent_verification",
+            "url": "https://huggingface.co/datasets/roneneldan/TinyStories/discussions/15",
+            "finding_cn": "2023-12-31使用者披露手工检查并提供清理脚本，称约每200故事删1条；这是用户的启发式清理报告，不是本轮独立测得噪声率。"
+          },
+          {
+            "kind": "public_user_report_with_indices",
+            "url": "https://huggingface.co/datasets/roneneldan/TinyStories/discussions/23",
+            "finding_cn": "2025-07-16使用者报告空样本并列索引（如33810等）。不能据此确定本文筛选8000/1000记录包含这些空样本。"
+          },
+          {
+            "kind": "author_declared_design",
+            "url": "https://arxiv.org/abs/2305.07759",
+            "finding_cn": "语料由GPT-3.5/GPT-4生成，部分能力评价用GPT-4评分；对生成能力/推理能力主张须区别人评或独立基准。本稿没有据此继承其能力评分。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "建议作者明确TinyStories具体文件/版本、空样本与重复处理、实际训练/验证子集重叠检查。",
+          "当前稿只借此作第二字符LM数据源；同输入同参数的数值比较不因故事语义噪声自动失效，但任务泛化和终点loss解释应受数据边界限制。",
+          "本轮未运行数据审计、未证实正式撤稿，更未证实该匿名稿的数据受污染。"
+        ],
+        "manuscript_role_cn": "稿件附录A.9行1019：TinyStories作为字符语言模型数据源，使用8000训练及1000验证记录。",
+        "reliability_for_manuscript_use_cn": "在本组中最需单列注意：预印本审查状态+实际公开数据质量报告。可用于受控实验数据来源，不能用其原始能力主张给当前稿增信。",
+        "extract_for_attention": true,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 9,
+      "title": "Mixed precision algorithms in numerical linear algebra",
+      "current_status": "formal_invited_review_editorial_process",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://www.cambridge.org/core/journals/acta-numerica/article/mixed-precision-algorithms-in-numerical-linear-algebra/43CA701BA29251B5790C653E66F46197",
+        "https://eprints.maths.manchester.ac.uk/2841/1/paper_eprint.pdf"
+      ],
+      "source_file": "quality_refs_1_9.json",
+      "detail": {
+        "number": 9,
+        "title": "Mixed precision algorithms in numerical linear algebra",
+        "venue_current_verified": "Acta Numerica31:347–414,2022，Cambridge University Press",
+        "publication_status": "正式邀请综述；编委会/编辑审查流程，不等同普通匿名投稿双盲",
+        "primary_publication_urls": [
+          "https://www.cambridge.org/core/journals/acta-numerica/article/mixed-precision-algorithms-in-numerical-linear-algebra/43CA701BA29251B5790C653E66F46197",
+          "https://eprints.maths.manchester.ac.uk/2841/1/paper_eprint.pdf"
+        ],
+        "venue_review_policy_evidence": [
+          {
+            "url": "https://www.cambridge.org/core/journals/acta-numerica/information/peer-review-information/review-process",
+            "observed": "官方明确编委会综合讨论后邀请作者写综述，写作时编辑与作者具名合作，主编接受后严格编辑；不公开评审信息。未声称普通外审模式。"
+          },
+          {
+            "url": "https://www.cambridge.org/core/journals/acta-numerica/information/journal-policies/publishing-ethics",
+            "observed": "正式出版伦理、作者/编辑/评审利益冲突及投诉渠道。"
+          }
+        ],
+        "venue_assessment_cn": "成熟专业数值分析综述期刊；权威性来自明确主题覆盖、专业编委审查与可追溯分析，不能误称其普通双盲评审。",
+        "actual_search_queries": [
+          "\"Mixed precision algorithms in numerical linear algebra\" (retraction OR erratum OR correction OR criticism)",
+          "\"Mixed precision algorithms in numerical linear algebra\" (erratum OR corrigendum OR retracted)",
+          "site.cambridge.org \"Acta Numerica\" \"peer review\""
+        ],
+        "public_findings": [
+          {
+            "kind": "formal_survey_and_author_stated_cautions",
+            "url": "https://www.cambridge.org/core/journals/acta-numerica/article/mixed-precision-algorithms-in-numerical-linear-algebra/43CA701BA29251B5790C653E66F46197",
+            "finding_cn": "正式期刊页确认综述范围及出版；所检未找到正式撤稿/更正/致命反驳。"
+          },
+          {
+            "kind": "author_disclosed_bound_limit",
+            "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/43CA701BA29251B5790C653E66F46197/S0962492922000022a.pdf/mixed-precision-algorithms-in-numerical-linear-algebra.pdf",
+            "finding_cn": "正文p361说明多数误差界是可悲观的最坏情形界，并讨论块算法/概率界。不能把这种作者明说的保守性当作理论被推翻。"
+          }
+        ],
+        "negative_search_boundary_cn": "检查题名检索结果、正式出版页及下列公开来源；未检出正式撤稿/勘误或致命反驳不等于不存在，未对所有数据库和所有软件问题作穷尽检索。",
+        "method_and_scope_cautions_cn": [
+          "综述是高质量背景整合，不能替代本稿对完整网络梯度/更新差异的直接证据。",
+          "具体定理若决定结论仍应回到原始研究和适用假设；本次不逐个复核综述引入的全部证明。"
+        ],
+        "manuscript_role_cn": "稿件行041–043、087–088、454–456：混合精度数值敏感性、精度按计算角色分配、更高精度后续计算无法一般性还原此前Gram构造已丢失的信息。",
+        "reliability_for_manuscript_use_cn": "可保留为可靠混合精度数值分析背景；本轮未发现需因来源质量排除的证据。",
+        "extract_for_attention": false,
+        "formal_retraction_or_fatal_refutation_found_in_this_search": false
+      }
+    },
+    {
+      "number": 10,
+      "title": "Exploiting Lower Precision Arithmetic in Solving Symmetric Positive Definite Linear Systems and Least Squares Problems",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://epubs.siam.org/doi/10.1137/19M1298263",
+        "https://eprints.maths.manchester.ac.uk/2736/",
+        "https://eprints.maths.manchester.ac.uk/2736/1/paper.pdf"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 10,
+        "title": "Exploiting Lower Precision Arithmetic in Solving Symmetric Positive Definite Linear Systems and Least Squares Problems",
+        "venue": "SIAM Journal on Scientific Computing 43(1), A258–A277, 2021",
+        "peer_review": "confirmed_journal",
+        "venue_assessment_cn": "SIAM 官方专业学会期刊，正规数值计算领域同行评审来源；不能把权威期刊理解为每项结论自动正确。",
+        "primary_urls": [
+          "https://epubs.siam.org/doi/10.1137/19M1298263",
+          "https://eprints.maths.manchester.ac.uk/2736/",
+          "https://eprints.maths.manchester.ac.uk/2736/1/paper.pdf"
+        ],
+        "policy_urls": [
+          "https://epubs.siam.org/sisc/instructions-for-referees",
+          "https://peerreview.siam.org/"
+        ],
+        "reliability_cn": "可作为有条件的混合精度线性代数背景。论文给出缩放、低精度 Cholesky 预条件与迭代改进；公开测试代码、随机种子和误差停止规则有利复核。",
+        "boundary_cn": "前提、精度组合和收敛判据重要；不是任意病态系统都成功，也没有验证本文的神经网络 Adam 更新。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "retain_peer_reviewed_with_scope"
+      }
+    },
+    {
+      "number": 11,
+      "title": "Differentiating Through Linear Solvers",
+      "current_status": "preprint_formal_review_not_confirmed",
+      "handling": "lower_external_review_assurance",
+      "primary_urls": [
+        "https://arxiv.org/abs/2404.17039",
+        "https://arxiv.org/html/2404.17039v2"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 11,
+        "title": "Differentiating Through Linear Solvers",
+        "venue": "arXiv:2404.17039v2, 2024",
+        "peer_review": "not_confirmed_beyond_preprint",
+        "venue_assessment_cn": "arXiv 是预印本存档，不是同行评审会议或期刊。当前记录未列正式 journal reference，题名加发表年份扩展检索也未确认正式版本。v1 的 ICML/PMLR 模板页脚不构成正式发表。",
+        "primary_urls": [
+          "https://arxiv.org/abs/2404.17039",
+          "https://arxiv.org/html/2404.17039v2"
+        ],
+        "policy_urls": [],
+        "reliability_cn": "可作为探索性实证背景；给出 65 个 SuiteSparse 矩阵上对不同求导方式的数值比较，但同行评审保障和独立复核尚未确认。",
+        "boundary_cn": "主要是迭代求解器与前向模式求导，不是 FP32/FP64 Cholesky 阶段比较或自适应优化器实验。作者排序差异来自 arXiv 元数据与 PDF 自身，不等于学术不端。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "extract_caution_preprint"
+      }
+    },
+    {
+      "number": 12,
+      "title": "A taxonomy of automatic differentiation pitfalls",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1555",
+        "https://uhra.herts.ac.uk/id/eprint/26445/3/WIREs_Data_Min_Knowl_-_2024_-_H_ckelheim_-_A_taxonomy_of_automatic_differentiation_pitfalls.pdf"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 12,
+        "title": "A taxonomy of automatic differentiation pitfalls",
+        "venue": "WIREs Data Mining and Knowledge Discovery 14(6), e1555, 2024",
+        "peer_review": "confirmed_journal",
+        "venue_assessment_cn": "Wiley 正规综述期刊。官方 WIREs 政策为单匿名同行评审、通常两名审稿人加编辑评估；此文正式 PDF 载 Received/Revised/Accepted 时间。",
+        "primary_urls": [
+          "https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1555",
+          "https://uhra.herts.ac.uk/id/eprint/26445/3/WIREs_Data_Min_Knowl_-_2024_-_H_ckelheim_-_A_taxonomy_of_automatic_differentiation_pitfalls.pdf"
+        ],
+        "policy_urls": [
+          "https://wires.onlinelibrary.wiley.com/hub/for_authors"
+        ],
+        "reliability_cn": "作为 AD 的概念分类、反例和排查框架可靠。它区分数学函数、实现抽象和运算精度，有可检查示例。",
+        "boundary_cn": "分类综述不能证明所有 AD 不可靠，也不能替代本文特定模型的定量验证。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "retain_peer_reviewed_with_scope"
+      }
+    },
+    {
+      "number": 13,
+      "title": "Matrix Backpropagation for Deep Networks With Structured Layers",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.html",
+        "https://openaccess.thecvf.com/content_iccv_2015/papers/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.pdf",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/7f2257d2b291b8d7e712c70b67e09412-Paper-Conference.pdf"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 13,
+        "title": "Matrix Backpropagation for Deep Networks With Structured Layers",
+        "venue": "IEEE ICCV 2015, 2965–2973",
+        "peer_review": "confirmed_main_conference",
+        "venue_assessment_cn": "CVF/IEEE 的 ICCV 主会正式论文，官方 2015 政策载双匿名评审；是计算机视觉的重要同行评审来源。",
+        "primary_urls": [
+          "https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.html",
+          "https://openaccess.thecvf.com/content_iccv_2015/papers/Ionescu_Matrix_Backpropagation_for_ICCV_2015_paper.pdf",
+          "https://proceedings.iclr.cc/paper_files/paper/2024/file/7f2257d2b291b8d7e712c70b67e09412-Paper-Conference.pdf"
+        ],
+        "policy_urls": [
+          "https://iccv2015.thecvf.com/author_guidelines.php",
+          "https://iccv2015.thecvf.com/reviewer_guidelines.php"
+        ],
+        "reliability_cn": "结构化矩阵层和矩阵反传的历史来源可保留。",
+        "boundary_cn": "正式论文 p.2970 自承备选特征分解实现遇近重特征值时导数不稳定；后续正式研究仍采用该框架并用 Daleckii–Krein 型矩阵函数反传处理近重根。限制是数值适用边界，不是整篇论文被推翻。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。 额外检出原文自述和后续研究对近重特征值数值问题的处理；不能归类为造假、撤稿或一般理论失效。",
+        "flag": "retain_with_specific_numerical_caveat"
+      }
+    },
+    {
+      "number": 14,
+      "title": "A Study of BFLOAT16 for Deep Learning Training",
+      "current_status": "preprint_formal_review_not_confirmed",
+      "handling": "lower_external_review_assurance",
+      "primary_urls": [
+        "https://arxiv.org/abs/1905.12322",
+        "https://arxiv.org/html/1905.12322v3"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 14,
+        "title": "A Study of BFLOAT16 for Deep Learning Training",
+        "venue": "arXiv:1905.12322v3, 2019",
+        "peer_review": "not_confirmed_beyond_preprint",
+        "venue_assessment_cn": "本轮只确认 arXiv 预印本，未确认同题正式会议或期刊版。容易与另文 Bfloat16 Processing for Neural Networks（ARITH 2019）混淆，二者不能互相替代。",
+        "primary_urls": [
+          "https://arxiv.org/abs/1905.12322",
+          "https://arxiv.org/html/1905.12322v3"
+        ],
+        "policy_urls": [],
+        "reliability_cn": "工业作者提供多类工作负载及 BF16 张量/FP32 累加的实验，足以作为历史经验来源；同行评审和独立重现实验未确认。",
+        "boundary_cn": "若干模型和舍入/累加规则下维持任务效果，不能外推为所有模型无需调参、所有梯度与轨迹相同。实验采用 BF16 模拟，对任意硬件的性能宣称应另证。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "extract_caution_preprint"
+      }
+    },
+    {
+      "number": 15,
+      "title": "Training with Mixed-Precision Floating-Point Assignments",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://openreview.net/pdf?id=ZoXi7n54OB",
+        "https://openreview.net/forum?id=ZoXi7n54OB",
+        "https://wonyeol.github.io/papers/2023-tmlr.pdf",
+        "https://github.com/wonyeol/mixed-prec-train"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 15,
+        "title": "Training with Mixed-Precision Floating-Point Assignments",
+        "venue": "Transactions on Machine Learning Research, June 2023",
+        "peer_review": "confirmed_journal",
+        "venue_assessment_cn": "正规 TMLR 正式发表；官方政策采用公开、双匿名评审，通常至少三位评审。不能因早期 DBLP CoRR 条目仍存在而误列为未评审预印本。",
+        "primary_urls": [
+          "https://openreview.net/pdf?id=ZoXi7n54OB",
+          "https://openreview.net/forum?id=ZoXi7n54OB",
+          "https://wonyeol.github.io/papers/2023-tmlr.pdf",
+          "https://github.com/wonyeol/mixed-prec-train"
+        ],
+        "policy_urls": [
+          "https://www.jmlr.org/tmlr/editorial-policies.html"
+        ],
+        "reliability_cn": "张量级精度分配和内存/准确率权衡的相关实证可保留，论文及代码可获取。",
+        "boundary_cn": "本文的主要任务是 CNN 图像分类；对现代大语言模型、Gram 求解器及真实硬件加速的普遍保证均不能由此直接推出。OpenReview 论坛触发浏览器校验，本轮未读其逐条公开审稿，不能声称审稿一致无异议。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "retain_peer_reviewed_with_scope"
+      }
+    },
+    {
+      "number": 16,
+      "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://www.nature.com/articles/s41467-018-07210-0",
+        "https://doi.org/10.1038/s41467-018-07210-0",
+        "https://arxiv.org/abs/1712.09707",
+        "https://github.com/BethanyL/DeepKoopman"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 16,
+        "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+        "venue": "Nature Communications 9, 4950, 2018",
+        "peer_review": "confirmed_journal",
+        "venue_assessment_cn": "Springer Nature 的正规同行评审期刊正式文章，记录有 2018-05-24 收稿、2018-10-10 接受、2018-11-23 发表。原文页面列出公开 Peer Review File，但直接访问触发 Nature 身份重定向，本轮没有读取该文件。",
+        "primary_urls": [
+          "https://www.nature.com/articles/s41467-018-07210-0",
+          "https://doi.org/10.1038/s41467-018-07210-0",
+          "https://arxiv.org/abs/1712.09707",
+          "https://github.com/BethanyL/DeepKoopman"
+        ],
+        "policy_urls": [],
+        "reliability_cn": "学习 Koopman 表示的背景来源可保留。公开代码和可重建数据是正面可复核线索，不等于本轮已复现。",
+        "boundary_cn": "标题 universal 不应被理解为任意非线性系统均有有限维、全局准确线性表示。作者自己指出训练覆盖、外推、潜变量维数与更复杂高维系统的局限。本文只把它当作表示学习背景，未借用其标题证明数值稳定性。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "retain_peer_reviewed_with_scope"
+      }
+    },
+    {
+      "number": 17,
+      "title": "Pointer Sentinel Mixture Models",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://openreview.net/pdf?id=Byj72udxe",
+        "https://openreview.net/forum?id=Byj72udxe",
+        "https://arxiv.org/abs/1609.07843"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 17,
+        "title": "Pointer Sentinel Mixture Models",
+        "venue": "ICLR 2017 main conference; manuscript cites 2016 arXiv:1609.07843",
+        "peer_review": "confirmed_main_conference_despite_preprint_citation",
+        "venue_assessment_cn": "正式 OpenReview PDF 头明示 Published as a conference paper at ICLR 2017。原稿引用 2016 预印本并不意味着该研究未通过同行评审。",
+        "primary_urls": [
+          "https://openreview.net/pdf?id=Byj72udxe",
+          "https://openreview.net/forum?id=Byj72udxe",
+          "https://arxiv.org/abs/1609.07843"
+        ],
+        "policy_urls": [
+          "https://iclr.cc/archive/www/doku.php%3Fid%3Diclr2017%3Amain.html",
+          "https://iclr.cc/FAQ/Proceedings"
+        ],
+        "reliability_cn": "作为 WikiText 数据集的原始出处可靠，应可更新成正式 ICLR 2017 引用以方便核验。",
+        "boundary_cn": "只用于数据归属；不能给本文从训练集抽内部 holdout 的方法背书，也不使其得分成为官方 benchmark 结果。OpenReview 论坛浏览器挑战，本轮未读审稿。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "retain_upgrade_bibliography_to_formal_version"
+      }
+    },
+    {
+      "number": 18,
+      "title": "Mixed Precision Training",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://openreview.net/pdf?id=r1gs9JgRZ",
+        "https://openreview.net/forum?id=r1gs9JgRZ",
+        "https://arxiv.org/abs/1710.03740"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 18,
+        "title": "Mixed Precision Training",
+        "venue": "ICLR 2018 main conference",
+        "peer_review": "confirmed_main_conference",
+        "venue_assessment_cn": "正式 OpenReview PDF 标记 ICLR 2018 conference paper，属于重要机器学习同行评审会议来源。",
+        "primary_urls": [
+          "https://openreview.net/pdf?id=r1gs9JgRZ",
+          "https://openreview.net/forum?id=r1gs9JgRZ",
+          "https://arxiv.org/abs/1710.03740"
+        ],
+        "policy_urls": [
+          "https://iclr.cc/FAQ/Proceedings"
+        ],
+        "reliability_cn": "FP32 主权重、损失缩放、较高精度累加的历史实证可保留。",
+        "boundary_cn": "报告多任务准确率相当，不等于数学上相同梯度/更新/逐步轨迹。检索遇到 Apex 用户单模型重复运行有微小差异的 issue（https://github.com/NVIDIA/apex/issues/989）；它没有复核原文所有设置，不能作为原文被证伪的证据。OpenReview 论坛本轮不可读。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "retain_peer_reviewed_with_scope"
+      }
+    },
+    {
+      "number": 19,
+      "title": "Differentiation of the Cholesky decomposition",
+      "current_status": "preprint_formal_review_not_confirmed",
+      "handling": "lower_external_review_assurance",
+      "primary_urls": [
+        "https://arxiv.org/abs/1602.07527",
+        "https://homepages.inf.ed.ac.uk/imurray2/pub/16choldiff/choldiff.pdf",
+        "https://homepages.inf.ed.ac.uk/imurray2/pub/",
+        "https://github.com/imurray/chol-rev",
+        "https://github.com/Theano/Theano/blob/master/theano/tensor/slinalg.py"
+      ],
+      "source_file": "quality_refs_10_19.json",
+      "detail": {
+        "number": 19,
+        "title": "Differentiation of the Cholesky decomposition",
+        "venue": "arXiv:1602.07527, 2016 technical note",
+        "peer_review": "not_confirmed_beyond_preprint",
+        "venue_assessment_cn": "未确认独立会议/期刊版；作者出版列表也把它列为 2016 note，不应虚构正式 venue。",
+        "primary_urls": [
+          "https://arxiv.org/abs/1602.07527",
+          "https://homepages.inf.ed.ac.uk/imurray2/pub/16choldiff/choldiff.pdf",
+          "https://homepages.inf.ed.ac.uk/imurray2/pub/",
+          "https://github.com/imurray/chol-rev",
+          "https://github.com/Theano/Theano/blob/master/theano/tensor/slinalg.py"
+        ],
+        "policy_urls": [],
+        "reliability_cn": "缺少正式评审认证，但公式推导与伪代码可核查，Theano 正式源代码直接采用并引用其 Cholesky 反传公式；作者列出多框架采用。作为具体公式出处可用，不宜与未经验证的经验猜测同等看待。",
+        "boundary_cn": "作者伴随代码 README 说明测试不充分、存在粗糙边缘，仅支持某些三角设置，并提醒 BLAS 整数宽度等。软件状态不意味着公式错误；也不保证所有输入下数值稳定或所有环境的历史速度优势。",
+        "public_concerns_cn": "截至 2026-10-21，逐题名检索撤稿、勘误、更正、批评和复现，并做 PubPeer 域限定检索，未检出针对该文核心结论的可靠撤稿或证伪记录。这是公开检索负结果，不是无争议或所有结果已独立复现的证明。",
+        "flag": "extract_caution_preprint_with_substantive_support"
+      }
+    },
+    {
+      "number": 20,
+      "title": "Scikit-learn: Machine Learning in Python",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://www.jmlr.org/papers/v12/pedregosa11a.html",
+        "https://www.jmlr.org/author-info.html",
+        "https://scikit-learn.org/"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 20,
+        "title": "Scikit-learn: Machine Learning in Python",
+        "venue": "JMLR 12(85), 2011",
+        "formal_review_status": "正式同行评审期刊论文；软件轨道",
+        "venue_quality_assessment": "JMLR是成熟机器学习专业期刊；正式条目与作者/审稿指南可核验。软件来源引用适合其用途。",
+        "controversy_and_reliability": [
+          "未发现针对该2011软件论文核心内容的实质反驳或正式撤稿通知。",
+          "持续更新的软件会有版本差异和普通bug；这些不等同于2011论文不可靠。"
+        ],
+        "role_in_manuscript": "Appendix A的scikit-learn digits软件来源；数据原始出处另有第3条。",
+        "risk_recommendation": "常规保留；复现应绑定实际scikit-learn版本，不能让2011论文证明任一未来版本无bug。",
+        "primary_urls": [
+          "https://www.jmlr.org/papers/v12/pedregosa11a.html",
+          "https://www.jmlr.org/author-info.html",
+          "https://scikit-learn.org/"
+        ],
+        "actual_search_queries": [
+          "\"Scikit-learn: Machine Learning in Python\" retraction OR erratum OR criticism OR correction",
+          "\"Scikit-learn: Machine Learning in Python\" \"retracted\" OR \"erratum\""
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+      }
+    },
+    {
+      "number": 21,
+      "title": "Auto-Differentiating Linear Algebra",
+      "current_status": "nonarchival_workshop_early_version_full_preprint_review_not_confirmed",
+      "handling": "lower_external_review_assurance",
+      "primary_urls": [
+        "https://arxiv.org/abs/1710.08717",
+        "https://arxiv.org/html/1710.08717v5",
+        "https://autodiff-workshop.github.io/",
+        "https://openreview.net/pdf?id=ByGGxCeAZ"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 21,
+        "title": "Auto-Differentiating Linear Algebra",
+        "venue": "arXiv:1710.08717；早期4作者短版NIPS 2017 Autodiff Workshop poster",
+        "formal_review_status": "确认非归档workshop选拔；未确认五作者完整v5通过正式主会/期刊同行评审",
+        "venue_quality_assessment": "arXiv是预印本平台；官方workshop列poster，但其CFP明确extended abstract 2–4页、non-archival、no proceedings，不能标NeurIPS主会论文。",
+        "controversy_and_reliability": [
+          "未找到可核实的正式后续期刊/主会版本。",
+          "未发现具体已证实技术错误/正式撤稿；推导、实现和版本历史可查；未在本轮运行实现。"
+        ],
+        "role_in_manuscript": "引言和相关工作中可微Cholesky/LQ/eigen及端到端学习背景。",
+        "risk_recommendation": "列入证据等级较低但可正常引用的来源；重要数值结论最好与正式文献及可检查推导交叉核实，不因预印本身份判为不可靠。",
+        "primary_urls": [
+          "https://arxiv.org/abs/1710.08717",
+          "https://arxiv.org/html/1710.08717v5",
+          "https://autodiff-workshop.github.io/",
+          "https://openreview.net/pdf?id=ByGGxCeAZ"
+        ],
+        "actual_search_queries": [
+          "\"Auto-Differentiating Linear Algebra\" journal conference published",
+          "\"Auto-Differentiating Linear Algebra\" \"ICLR\" rejected",
+          "\"Auto-Differentiating Linear Algebra\" correction OR erratum OR retraction OR review",
+          "\"Auto-Differentiating Linear Algebra\" \"accepted\" OR \"rejected\" OR \"ICLR 2018\"",
+          "\"Auto-Differentiating Linear Algebra\" \"Workshop\"",
+          "\"Auto-Differentiating Linear Algebra\" reproduction criticism"
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。",
+        "workshop_source_detail": "官网poster名单与CFP；OpenReview论坛遇浏览器验证，未声称读到评审分数。当前v5为2019-08-14，新增Eric Meissner；2017短版4作者。"
+      }
+    },
+    {
+      "number": 22,
+      "title": "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+        "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf",
+        "https://github.com/KingJamesSong/DifferentiableSVD"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 22,
+        "title": "Why Approximate Matrix Square Root Outperforms Accurate SVD in Global Covariance Pooling?",
+        "venue": "ICCV 2021主会",
+        "formal_review_status": "正式同行评审会议论文",
+        "venue_quality_assessment": "IEEE/CVF正式主会；CVF论文、补充材料和作者代码可查。",
+        "controversy_and_reliability": [
+          "未发现针对本论文的实质性外部证伪/撤稿记录。",
+          "作者提供可微SVD不同方法代码，但本轮未复现实验。",
+          "正式CVF页码与IEEE/Crossref页码有登记差异，属于书目来源问题，不能据此否定科学内容。"
+        ],
+        "role_in_manuscript": "相关工作中固定SVD前向并改变反向提高稳定性的先例。",
+        "risk_recommendation": "常规可靠引用；具体性能和机制只在作者测试范围内成立。",
+        "primary_urls": [
+          "https://openaccess.thecvf.com/content/ICCV2021/html/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.html",
+          "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf",
+          "https://github.com/KingJamesSong/DifferentiableSVD"
+        ],
+        "actual_search_queries": [
+          "\"Why Approximate Matrix Square Root Outperforms Accurate SVD\" correction OR erratum OR retraction OR criticism OR reproduction"
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+      }
+    },
+    {
+      "number": 23,
+      "title": "Echo: KV-Cache-Free Associative Recall with Spectral Koopman Operators",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "claim_specific_theory_caution",
+      "primary_urls": [
+        "https://www.caisconf.org/",
+        "https://www.caisconf.org/pages/cfp/",
+        "https://acm-cais26.hotcrp.com/",
+        "https://www.caisconf.org/pages/cfa/",
+        "https://www.caisconf.org/program/2026/papers/constant-memory-retrieval-via-koopman-operator-estimation-for-mamba-3/",
+        "https://arxiv.org/pdf/2605.06997",
+        "https://arxiv.org/html/2605.06997v1",
+        "https://doi.org/10.1145/3786335.3813146"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 23,
+        "title": "Echo: KV-Cache-Free Associative Recall with Spectral Koopman Operators",
+        "venue": "ACM Conference on AI and Agentic Systems (CAIS 2026)，首届",
+        "formal_review_status": "正式研究轨道；官网CFP规定双盲、review/rebuttal/decision；AE为另行流程",
+        "venue_quality_assessment": "合法ACM主办的新专业会议；首届缺乏长期质量记录。ACM出版与名校委员会不自动等同顶会或论文本身可靠。",
+        "controversy_and_reliability": [
+          "外部检索未发现已核实的撤稿、独立失败复现或专门技术反驳；搜索中的AI摘要聚合站未作为独立科学评论采信。",
+          "本轮直接读PDF发现内部理论表述冲突：p4主文声称SKA Jacobian由构造保证满秩、MLP谱核正交且奇异值均1；p22–23附录J.5–J.8将满秩限定为P≥r、Cv满秩、Aw可逆等条件，并明确无条件说法一般为假；谱块只在每个rho_i=1时正交。",
+          "以上为本次独立文本/数学审读，不是已发表外部证伪，也不证明实验数据造假。"
+        ],
+        "role_in_manuscript": "架构来源与Gram-ridge-Cholesky SKA定义；本稿使用简化受控SKA，不是完整Echo复现。",
+        "risk_recommendation": "需要重点限定：架构来源可引用；主文无条件梯度秩保持/范数保持保证不宜当既定事实。不能以该问题自动否定本稿独立测得的局部精度差异。",
+        "primary_urls": [
+          "https://www.caisconf.org/",
+          "https://www.caisconf.org/pages/cfp/",
+          "https://acm-cais26.hotcrp.com/",
+          "https://www.caisconf.org/pages/cfa/",
+          "https://www.caisconf.org/program/2026/papers/constant-memory-retrieval-via-koopman-operator-estimation-for-mamba-3/",
+          "https://arxiv.org/pdf/2605.06997",
+          "https://arxiv.org/html/2605.06997v1",
+          "https://doi.org/10.1145/3786335.3813146"
+        ],
+        "actual_search_queries": [
+          "\"Echo: KV-Cache-Free Associative Recall\" criticism OR retraction OR correction OR review",
+          "CAIS 2026 ACM conference artificial intelligence systems peer review first conference",
+          "\"Echo: KV-Cache-Free\" review OR criticism OR bug OR issue OR reproduction",
+          "\"Echo\" \"3813146\"",
+          "\"Echo\" \"Koopman\" \"Sridhar\" \"github\"",
+          "\"Echo: KV-Cache-Free Associative Recall\" \"retraction\""
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。",
+        "conference_details": {
+          "sponsor": "ACM，官网页脚与CFP；ACM新闻稿由ACM供稿EurekAlert可搜索，直接获取403。",
+          "first_edition": true,
+          "review_process": "Research 9 pages sigconf double-column + references/appendices；double-blind，COI，4月review与rebuttal；4月21决定。",
+          "acceptance_evidence": "HotCRP公开页为61/167。官网当前主页63research、accepted页60research+3operational talks口径不同；不将任一口径写成精确统一录取率。",
+          "artifact_status": "会议有独立AE与ACM徽章机制；本轮未核实Echo取得任何徽章或独立results reproduced认证。",
+          "maturity_assessment": "可称正式新会议；不能凭出版者或官网premier宣传断言已成为公认顶会。"
+        },
+        "independent_math_check": {
+          "verified_against_pdf": true,
+          "pdf_pages_one_based": [
+            4,
+            22,
+            23
+          ],
+          "pdf_visual_screenshot": "工具截图失败；核对PDF提取文字及公式，与HTML一致。",
+          "counterexample": "对Cv=0或Aw=0的合法可学习参数，SKA query Jacobian可为0；ridge只保证Gram的Cholesky存在，不保证其他因子满秩。对rho_i<1，Ri^T Ri=rho_i^2 I≠I。",
+          "boundary": "仅指出一般理论保证和主文/附录不一致；未认证或否定实验数据。",
+          "version_boundary": "直接核对的是arXiv:2605.06997v1 PDF；ACM最终存档版是否同样保留该冲突未独立完整比对。"
+        }
+      }
+    },
+    {
+      "number": 24,
+      "title": "Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://papers.neurips.cc/paper_files/paper/2017/hash/3a835d3215755c435ef4fe9965a3f2a0-Abstract.html",
+        "https://papers.neurips.cc/paper_files/paper/2017/file/3a835d3215755c435ef4fe9965a3f2a0-Reviews.html",
+        "https://github.com/n-takeishi/learning-kis",
+        "https://www.sciencedirect.com/science/article/am/pii/S0005109823001541"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 24,
+        "title": "Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition",
+        "venue": "NIPS 2017主会",
+        "formal_review_status": "正式同行评审；官方公开review记录",
+        "venue_quality_assessment": "成熟机器学习主会；正式论文与公开评审记录可核验。",
+        "controversy_and_reliability": [
+          "官方审稿人提出网络耦合/损失与反向解释不清、噪声范围、baseline竞争力、定量指标和超参数细节问题；也有审稿人认为例子可信、写作清楚。",
+          "这些是公开评审的技术意见，不等同于事后证伪。",
+          "后续正式Automatica论文指出这一类学得的Koopman近似缺乏一般理论保证；属方法适用性边界，并非原论文撤稿。"
+        ],
+        "role_in_manuscript": "有限维Koopman近似与学得动力学表征的背景。",
+        "risk_recommendation": "可保留背景引用；不把有限经验成功外推为普遍存在精确有限维不变子空间。",
+        "primary_urls": [
+          "https://papers.neurips.cc/paper_files/paper/2017/hash/3a835d3215755c435ef4fe9965a3f2a0-Abstract.html",
+          "https://papers.neurips.cc/paper_files/paper/2017/file/3a835d3215755c435ef4fe9965a3f2a0-Reviews.html",
+          "https://github.com/n-takeishi/learning-kis",
+          "https://www.sciencedirect.com/science/article/am/pii/S0005109823001541"
+        ],
+        "actual_search_queries": [
+          "\"Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition\" criticism OR correction OR retraction",
+          "\"Learning Koopman Invariant Subspaces for Dynamic Mode Decomposition\" retraction erratum"
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+      }
+    },
+    {
+      "number": 25,
+      "title": "Backpropagation-Friendly Eigendecomposition",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_qualified_external_criticism",
+      "primary_urls": [
+        "https://papers.neurips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+        "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Reviews.html",
+        "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-MetaReview.html",
+        "https://infoscience.epfl.ch/server/api/core/bitstreams/9c61c09e-8251-47f5-af10-52651850c546/content",
+        "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-AuthorFeedback.pdf"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 25,
+        "title": "Backpropagation-Friendly Eigendecomposition",
+        "venue": "NeurIPS 2019主会",
+        "formal_review_status": "正式同行评审；官方reviews、authorfeedback、metareview可查",
+        "venue_quality_assessment": "成熟机器学习主会；存在真实公开技术争论但最终接受。",
+        "controversy_and_reliability": [
+          "Reviewer 1质疑对称/协方差矩阵适用范围、epsilon正则与实用技巧导致比较不公平；Reviewer 2质疑近不可微处近似和任务收益。",
+          "Meta-review承认significance意见混合，但认为稳定界与实验证据足以构成有价值贡献。",
+          "同作者后续TPAMI第26条明确指出早期PI方案有累积舍入误差和运行成本，并以Taylor替代；属具体局限及改进，不是撤回全部结论。"
+        ],
+        "role_in_manuscript": "相关工作中固定稳定前向并修改反向的先例。",
+        "risk_recommendation": "列入有明确技术争论/适用条件须限定的来源，但不足判为整体不可靠；本稿背景引用仍成立。",
+        "primary_urls": [
+          "https://papers.neurips.cc/paper_files/paper/2019/hash/7dd0240cd412efde8bc165e864d3644f-Abstract.html",
+          "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-Reviews.html",
+          "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-MetaReview.html",
+          "https://infoscience.epfl.ch/server/api/core/bitstreams/9c61c09e-8251-47f5-af10-52651850c546/content",
+          "https://papers.neurips.cc/paper_files/paper/2019/file/7dd0240cd412efde8bc165e864d3644f-AuthorFeedback.pdf"
+        ],
+        "actual_search_queries": [
+          "\"Backpropagation-Friendly Eigendecomposition\" correction OR erratum OR retraction OR criticism OR reproduction"
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。",
+        "author_response": "官方rebuttal：同意明确仅对称矩阵；解释SVD前向提供准确初始化与有限PI级数给梯度上界；称所有方法同epsilon=1e-4；为公平补跑SVD相同截断技巧，并给至d=128的成功率表；强调目标是稳定性而非优于SOTA准确率。该响应属作者报告，本轮未复现。"
+      }
+    },
+    {
+      "number": 26,
+      "title": "Robust Differentiable SVD",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://doi.org/10.1109/TPAMI.2021.3072422",
+        "https://arxiv.org/abs/2104.03821",
+        "https://github.com/WeiWangTrento/Robust-Differentiable-SVD",
+        "https://github.com/WeiWangTrento/Robust-Differentiable-SVD/issues/3",
+        "https://www.computer.org/publications",
+        "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 26,
+        "title": "Robust Differentiable SVD",
+        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence 44(9), 2022",
+        "formal_review_status": "正式同行评审期刊；2021先行/2022卷期",
+        "venue_quality_assessment": "IEEE Computer Society旗舰专业期刊；作者稿和代码可查。",
+        "controversy_and_reliability": [
+          "未找到正式撤稿/勘误。",
+          "第22条ICCV2021后续提出有限Taylor展开的条件/近似局限；这是方法间技术比较，不足以判此论文无效。",
+          "作者仓库issue #3问u_t与vT为何等价；作者说明协方差矩阵场景。该讨论是适用矩阵范围澄清，不是已证明实现bug或实验失败。"
+        ],
+        "role_in_manuscript": "矩阵分解的稳定反向处理先例。",
+        "risk_recommendation": "可靠但需限协方差/谱与截断设定；不得把Robust题名理解为所有矩形、复数、重复奇异值场景均给精确通用导数。",
+        "primary_urls": [
+          "https://doi.org/10.1109/TPAMI.2021.3072422",
+          "https://arxiv.org/abs/2104.03821",
+          "https://github.com/WeiWangTrento/Robust-Differentiable-SVD",
+          "https://github.com/WeiWangTrento/Robust-Differentiable-SVD/issues/3",
+          "https://www.computer.org/publications",
+          "https://openaccess.thecvf.com/content/ICCV2021/papers/Song_Why_Approximate_Matrix_Square_Root_Outperforms_Accurate_SVD_in_Global_ICCV_2021_paper.pdf"
+        ],
+        "actual_search_queries": [
+          "\"Robust Differentiable SVD\" correction OR erratum OR retraction OR criticism OR reproduction",
+          "\"Robust Differentiable SVD\" \"Taylor\" \"converge\"",
+          "\"Robust Differentiable SVD\" \"retraction\" OR \"erratum\""
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+      }
+    },
+    {
+      "number": 27,
+      "title": "A Data–Driven Approximation of the Koopman Operator: Extending Dynamic Mode Decomposition",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://link.springer.com/article/10.1007/s00332-015-9258-5",
+        "https://link.springer.com/journal/332",
+        "https://arxiv.org/abs/1408.4408",
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/cpa.22125"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 27,
+        "title": "A Data–Driven Approximation of the Koopman Operator: Extending Dynamic Mode Decomposition",
+        "venue": "Journal of Nonlinear Science 25, 2015",
+        "formal_review_status": "正式同行评审期刊",
+        "venue_quality_assessment": "Springer成熟动力系统/应用数学专业期刊，非计算机顶会不等于低可靠。",
+        "controversy_and_reliability": [
+          "未找到本条目正式撤稿/勘误；正式页面仍列原文。",
+          "后续CPAM的ResDMD论文将避免spectral pollution作为改进；EDMD一般谱近似/有限字典限制不是对2015算法来源身份的否认。",
+          "只在特定条件下有投影/收敛意义，不能把任一有限矩阵谱视作原无限维Koopman谱的无条件保证。"
+        ],
+        "role_in_manuscript": "有限维Koopman近似/EDMD起源背景。",
+        "risk_recommendation": "常规可信背景引用；涉及普遍谱保证时需加条件，不列低可靠文章。",
+        "primary_urls": [
+          "https://link.springer.com/article/10.1007/s00332-015-9258-5",
+          "https://link.springer.com/journal/332",
+          "https://arxiv.org/abs/1408.4408",
+          "https://onlinelibrary.wiley.com/doi/full/10.1002/cpa.22125"
+        ],
+        "actual_search_queries": [
+          "\"A Data-Driven Approximation of the Koopman Operator\" correction OR erratum OR retraction OR criticism OR spectral pollution",
+          "\"A Data–Driven Approximation of the Koopman Operator\" \"retraction\""
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+      }
+    },
+    {
+      "number": 28,
+      "title": "Roundoff error analysis of the CholeskyQR2 algorithm",
+      "current_status": "formal_peer_reviewed_publication",
+      "handling": "retain_with_scope",
+      "primary_urls": [
+        "https://etna.ricam.oeaw.ac.at/volumes/2011-2020/vol44/abstract.php?pages=306-326",
+        "https://etna.ricam.oeaw.ac.at/",
+        "https://etna.math.kent.edu/submissions/",
+        "https://people.maths.ox.ac.uk/nakatsukasa/research.htm"
+      ],
+      "source_file": "quality_refs_20_28.json",
+      "detail": {
+        "number": 28,
+        "title": "Roundoff error analysis of the CholeskyQR2 algorithm",
+        "venue": "Electronic Transactions on Numerical Analysis 44, 2015",
+        "formal_review_status": "正式同行评审期刊；官方Kent State投稿页明确all manuscripts refereed",
+        "venue_quality_assessment": "1993创刊数值分析专业期刊，Kent State与奥地利科学院RICAM合作；MathReviews/zbMATH/SCIE可查。领域专业性不能按ML顶会名气裁判。",
+        "controversy_and_reliability": [
+          "未找到该条目正式勘误/撤稿；后续算法发展与应用不是否认原定理。",
+          "论文自身明确满列秩且kappa不太大（O(u^-1/2)量级）的条件稳定性，不能扩成任意病态矩阵无条件稳定。"
+        ],
+        "role_in_manuscript": "CholeskyQR条件数、舍入误差分析背景。",
+        "risk_recommendation": "常规可信；尊重稳定性条件。",
+        "primary_urls": [
+          "https://etna.ricam.oeaw.ac.at/volumes/2011-2020/vol44/abstract.php?pages=306-326",
+          "https://etna.ricam.oeaw.ac.at/",
+          "https://etna.math.kent.edu/submissions/",
+          "https://people.maths.ox.ac.uk/nakatsukasa/research.htm"
+        ],
+        "actual_search_queries": [
+          "\"Roundoff error analysis of the CholeskyQR2 algorithm\" correction OR erratum OR retraction OR criticism",
+          "\"Roundoff error analysis of the CholeskyQR2 algorithm\" \"erratum\""
+        ],
+        "notice_search_result": "在所执行精确题名检索与已访问官方页面中未发现该条目的正式撤稿、关注声明或勘误通知。这个负结果不证明全网没有问题。"
+      }
+    }
+  ]
+}

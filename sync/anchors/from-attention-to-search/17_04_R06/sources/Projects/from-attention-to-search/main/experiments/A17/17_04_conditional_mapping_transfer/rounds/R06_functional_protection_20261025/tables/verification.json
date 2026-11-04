@@ -1,0 +1,130 @@
+{
+  "evaluations_recomputed": 360,
+  "all_per_item_accuracy_denominators_800": true,
+  "all_cells_200": true,
+  "full_vocabulary_argmax_source": "engine.evaluate logits.argmax(-1), no candidate restriction",
+  "all_loss_objective_counters_checked": true,
+  "uncertainty": "continuation-order values/ranges conditional on one old model; no model-population confidence interval",
+  "complete_runs": 36,
+  "expected_runs": 36,
+  "step240_new_targets_per_complete_run": 8640,
+  "probe_gradient_label_uses_per_complete_run": 15360,
+  "probe_diagnostic_label_uses_per_complete_run": 640,
+  "probe_total_label_uses_per_complete_run": 16000,
+  "TEST_opened": false,
+  "decisions": [
+    {
+      "old_nonzero": 0,
+      "comparison": "F-U",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": 11.166666666666666,
+      "new_mean_difference_pp": -1.0416666666666667,
+      "old_all_positive": true,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": true
+    },
+    {
+      "old_nonzero": 0,
+      "comparison": "F-S",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": 11.083333333333334,
+      "new_mean_difference_pp": -0.9583333333333334,
+      "old_all_positive": true,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": true
+    },
+    {
+      "old_nonzero": 0,
+      "comparison": "F-D",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": 11.166666666666666,
+      "new_mean_difference_pp": -1.0,
+      "old_all_positive": true,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": true
+    },
+    {
+      "old_nonzero": 4,
+      "comparison": "F-U",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": -24.875,
+      "new_mean_difference_pp": -0.8333333333333334,
+      "old_all_positive": false,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": false
+    },
+    {
+      "old_nonzero": 4,
+      "comparison": "F-S",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": -19.291666666666668,
+      "new_mean_difference_pp": -0.75,
+      "old_all_positive": false,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": false
+    },
+    {
+      "old_nonzero": 4,
+      "comparison": "F-D",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": -21.625,
+      "new_mean_difference_pp": -1.0833333333333333,
+      "old_all_positive": false,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": false
+    },
+    {
+      "old_nonzero": 36,
+      "comparison": "F-U",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": 0.041666666666666664,
+      "new_mean_difference_pp": -0.6666666666666666,
+      "old_all_positive": false,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": false
+    },
+    {
+      "old_nonzero": 36,
+      "comparison": "F-S",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": -0.16666666666666666,
+      "new_mean_difference_pp": -0.375,
+      "old_all_positive": false,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": false
+    },
+    {
+      "old_nonzero": 36,
+      "comparison": "F-D",
+      "paired_seeds": 3,
+      "old_mean_difference_pp": 0.08333333333333333,
+      "new_mean_difference_pp": -0.25,
+      "old_all_positive": false,
+      "new_each_within_5pp": true,
+      "operational_rule_pass": false
+    }
+  ],
+  "trends": [
+    {
+      "seed": 29,
+      "F_minus_U_old_pp_k0": 7.75,
+      "F_minus_U_old_pp_k4": -30.0,
+      "F_minus_U_old_pp_k36": 0.0,
+      "advantage_larger_when_old_sparser": false
+    },
+    {
+      "seed": 43,
+      "F_minus_U_old_pp_k0": 5.5,
+      "F_minus_U_old_pp_k4": -9.625,
+      "F_minus_U_old_pp_k36": -0.125,
+      "advantage_larger_when_old_sparser": false
+    },
+    {
+      "seed": 71,
+      "F_minus_U_old_pp_k0": 20.25,
+      "F_minus_U_old_pp_k4": -35.0,
+      "F_minus_U_old_pp_k36": 0.25,
+      "advantage_larger_when_old_sparser": false
+    }
+  ]
+}

@@ -51,3 +51,8 @@
 正式 owner 的父目录是 `main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/`；R02记录位于 `main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/`。阅读顺序：[任务与边界](../sync/anchors/from-attention-to-search/17_04/documents/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor_cn.md) → [R02事实与对照](../sync/anchors/from-attention-to-search/17_04/documents/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/rounds/R02_single_layer_adamw/summary_cn.md) → [数据版本](../sync/anchors/from-attention-to-search/17_04/documents/Projects/from-attention-to-search/main/datasets/A17_04_list_rule_mapping/README_cn.md)。本页是来源导览，不另建 Anchor 或改变科研状态。
 
 原项目地址：[from-attention-to-search / Xingyu](https://github.com/BinaryCheater/from-attention-to-search/tree/Xingyu)。本仓库副本带来源路径和哈希；科研修改仍回该项目。
+
+
+### R06第120步：参数与Adam累积状态交换（2026-10-26）
+
+[一页中文](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/adam_swap_20261026/one_page_cn.md) · [逐种子逐批](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/adam_swap_20261026/appendix_cn.md)。已完成36次独立临时普通更新、10320条前向。固定F参数，换U矩状态的旧CE变化9/9次更有利，但新任务存在取舍，参数与矩状态也存在交互。未进行F投影、完整续训或TEST评价；不构成长期因果分解。资产：`analysis_a17_r06_adam_swap_20261026`；当前输出访问检查的持久回执保存在交付的`reproduce/output_access.json`。

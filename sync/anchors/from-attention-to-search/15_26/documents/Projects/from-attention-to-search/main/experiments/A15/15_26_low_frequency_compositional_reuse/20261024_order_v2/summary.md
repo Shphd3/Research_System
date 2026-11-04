@@ -1,0 +1,24 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_26_low_frequency_compositional_reuse/20261024_order_v2/summary.md)；研究修改仍回到原件。
+
+---
+
+# A15_26 Order V2: component qualification and context boundaries
+
+[中文](summary_cn.md) · [Observations](observations.md) · [Detailed evidence](detailed.md) · [Protocol](protocol.md)
+
+Final acceptance at `2026-10-25 01:02:30 Beijing time (UTC+8)`: the finite execution protocol is **COMPLETE**. Actual execution contains14 scientific training trajectories and148 scientific saved states. The129-row status ledger contains the original117 planned rows plus12 expanded-version registrations:14 actual trajectories and115 not-applicable or superseded rows. It does not represent117 executed trajectories.
+
+Stage states are `NEGATIVE_RESULT` for S1/S2, `NOT_APPLICABLE` for the S3–S6 main contrasts and symbolic main comparisons, and `COMPLETE` for audit. Final acceptance binds21 hashed evidence records. All52 actual output assets pass strict access, covering152 checkpoint paths,4 caches and32 derived-analysis groups without handoff gaps. All5 jobs are platform `SUCCEEDED`, with no active jobs. Sources:[final audit](../../../../../../../../UNAVAILABLE.md),[run/stage manifest](../../../../../../../../UNAVAILABLE.md),[final asset handoff](../../../../../../../../UNAVAILABLE.md). Execution completion is separate from scientific closure: question OPEN, researcher judgment Unknown.
+
+**The completed restricted fine-tuning runs do not establish the experimental starting point “components mastered, combination still missing.”** Order discounting remains numerically inaccurate even with the true base amount supplied. Symbolic lookup succeeds in its training wording and falls sharply in other wordings. The dependent transfer, slow-update, exposure and expert contrasts consequently have no identified result and follow the registered NOT_APPLICABLE branch. The question remains OPEN; researcher judgment is Unknown.
+
+The purpose is to test whether existing computation helps new conditional combinations, then whether slower parent updates or separate learning help. The actual system is Qwen3-0.6B Base generating a final amount for integer-cent order rules. P is trained on multiplication, discount, comparison and shipping addition; B receives no such fine-tuning and C instead receives budget-matched field copying. The expanded version updates last-layer attention plus FFN; J updates that range plus a new bottleneck branch. The hypotheses predict P help over B/C and, conditionally, favorable slow-update/private-branch tradeoffs. The decisive rival is unqualified component or cross-wording behavior.
+
+Order seed29/43/71 parent discount VAL is 38.28%/41.80%/46.88%, below the fixed 95% per-component rule. Fixed2000-update P-J joint-feasibility BOTH TEST is 8.98%/8.01%/5.66%; these trajectories have no P/B/C contrast and do not estimate transfer help. [Per-seed table](observations.md#s1-multiplication-qualification). Initial Base S1 first-line content accuracy is 92.50%, equal to seed29 trained strict S1; format adaptation and arithmetic change must be separated.
+
+For the three symbolic parents, original-wording atomic lookup is 100% over 256 mappings. Other-wording VAL is 16.41%/20.70%/15.63% and TEST is 6.25%/6.25%/7.03%. Two native calls and true-intermediate controls each reach 100% on 96 examples. With all 256 original-template mappings correct and symbol closure, this is expected external-chain calibration, not a new composition discovery or internal mechanism support. VAL has 224/228/213 valid outputs, of which 182/175/173 have wrong mappings. This is context-dependent behavior at a fixed checkpoint; extra-call controls do not locate single-pass internal mediation.[Per-seed evidence](observations.md#symbolic-auxiliary-same-mapping-different-wording).
+
+The matched behavior recurs at the three P-J endpoints: seed29/43/71 have29/27/30of all48frozen TEST orders with all five atomic answers correct and the complete BOTH answer wrong. Each denominator remains all48; component successes are not selected as a new qualified population. Atomic-answer conjunction and single-pass combination success differ here; the original component-parent P qualification remains failed.
+
+Analysis separates format, numerical error and context change before update-policy attribution. BOTH TEST has 512 questions but 32 independent numerical families, with a 93.945% never-charge-shipping shortcut. Reload/recovery audits validate saved computation and cannot supply absent scientific controls. AI cause judgments and next hypotheses are in the[separate AI interpretation](ai_interpretation_cn.md); final human judgment remains pending.

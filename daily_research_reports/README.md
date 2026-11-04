@@ -6,6 +6,9 @@ October remains on the active reading surface. September is archived in backup; 
 
 | Date | Topic | Reading entry |
 |---|---|---|
+| 10-31 | Domain-discriminating CrossCoder members: one frozen list and five analyses | [Open](1031/README.md) |
+| 10-23 | Parameter protection and residual diagnosis: conclusion figures | [Open](1023/README.md) |
+| 10-22 | Questions and current answers from the 21 October meeting: relations, representations and low-dimensional routing | [Open](1022/README.md) |
 | 10-19 | CrossCoder归一化分发、SFT、频率贡献与跨层复核 | [Open](1019/README.md) |
 | 10-18 | CrossCoder逐feature分发诊断与φ关系 | [Open](1018/README.md) |
 | 10-16 | CrossCoder关系分组、输入谱与学习记录 | [Open](1016/README.md) |
@@ -29,3 +32,8 @@ October remains on the active reading surface. September is archived in backup; 
 - [All historical backup](backup/README.md)
 
 Original paths in frozen receipts and conversation history retain their historical meaning and resolve through `tools/research_paths.py`. No scientific verdict, commit or push is part of this maintenance.
+
+
+- 2026-11-02：[Feature组合四路线计算与认识更新](1102/README.md)；正式记录由项目R17拥有，科学接受Unknown。
+
+- 2026-11-03：[双SAE四假设修正重测与讨论包](1103/README.md)；R17_D1已完成，原结果保留，科学接受Unknown。

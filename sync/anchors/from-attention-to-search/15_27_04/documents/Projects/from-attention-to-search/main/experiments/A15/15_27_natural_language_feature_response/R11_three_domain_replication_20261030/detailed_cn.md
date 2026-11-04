@@ -1,0 +1,76 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/detailed_cn.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/detailed_cn.md)；研究修改仍回到原件。
+
+---
+
+# R11详细阶段记录
+
+[结果与读图](summary_cn.md) · [English](detailed.md) · [方案](../../../../../../../../UNAVAILABLE.md) · [执行授权A01](execution_authorization_A01.md)
+
+## 问题、对象与资格
+
+问题是领域区分成员和本批严格单域成员占据哪些谱位置，两域是否重合。竞争解释是字典本身普遍前偏，或选择过程偏向特定频率／支持量。用固定字典、固定PCA和条件匹配参照区分这些解释，仍不能判断语义功能。
+
+本次实际执行为两个部分：C0旧缓存补统计已完成，证据为**BOUNDED**；S0新来源清点已完成但未满足数据资格。R11三域独立实证为**NOT RUN**。研究者科学判断Unknown；Summary中的认识更新为AI解释建议。原方案450篇与最多462次前向的预算没有消耗。
+
+| 条目 | 预期／约束 | 本次实际 | 资格影响 |
+|---|---|---|---|
+| 模型与字典 | 原Qwen3 Base和A22，不训练 | 仅读已登记缓存及decoder；训练0、前向0 | 缓存统计可用 |
+| 三域输入 | 每域150，60发现/30开发/60留出 | 合格450篇清单尚未形成 | 三域测试NOT RUN |
+| 原16名单 | 原编号不替换 | 数学7、生物9均保留 | 没有漂亮案例重筛 |
+| 共同谱 | 主参考固定R10；新三域谱作第二参考 | 仅固定R10谱 | 不能宣称新三域稳健性 |
+| 整体名单 | 433数学/527生物 | 原冻结名单 | 不能混用16名分母 |
+| 背景 | 同规模、频率和支持量 | 原发现支持匹配；另补全120篇支持匹配 | 后者是事后方法核查 |
+| 来源审核 | 原文档／家族独立、平台配额与主题 | 仅候选级清点 | 非已完成实验数据 |
+
+## C0：旧缓存补统计
+
+原输入为120篇文档，每域60，发现30、开发10、旧留出20；每篇192个真实token，分析索引32–191的160位置。严格16根据全部120篇对侧零观察定义，因此不能将开发或旧留出称新盲测。PCA只使用60篇发现文档×160=9,600位置，数学／生物等权、每文档位置数相等、一个共同均值，完整1024方向。来源核对表明R07是这份谱的同一来源，**不是独立自然文本谱**；不冒称额外独立验证。
+
+令单位decoder为u，PC列向量为p_j，成员比例q_j=(u·p_j)^2。逐成员全1024比例和为1；组分布是成员等权平均。每64维段求和，重合为两组对应比例较小者求和。没有激活值、特征值或范数加权。逐段中位数仅描述成员分布，不要求中位数曲线合计1。
+
+匹配参照使用原10,076支持合格候选池，含被选成员。每组规模和分层人数完全一致，同一抽样内两组互斥。原规则分层：DCLM命中次数的半倍频程、发现集两域总激活文档数每5篇一档、最大单域支持每5篇一档。整体参照复用R10已存1,000次抽样；严格16新抽1,000次，种子2026103008。范围是抽样均值的中央95%，不是文档重采样区间或独立零假设显著性检验。
+
+**事后支持核查。** 原16筛选用到全部120篇，而原背景只匹配发现集。因此另匹配DCLM半倍频程及全部60篇数学／60篇生物各自的激活支持量，每5篇一档，1,000次、种子2026103009。保留原结果，不替换主名单。参照大量包含原成员，Summary明确报告有限独立变化。浮点比较另采用1e-12容差：数学观察值与上界相差5.6e-17，不判“超过上界”；先前标记文件另存，所有数值、抽样与科学门槛未改。
+
+### 证据链
+
+执行目录：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030`。
+
+| 读数 | 原始统计／计算 | 结果 | 允许解释与边界 |
+|---|---|---|---|
+| 首64维占比 | cached_spectral_baseline/member_spectrum.csv、band_profiles.csv | 主数学10.03%、生物11.52%；严格数学36.33%、生物16.30% | 几何份额，不是实际激活能量 |
+| 逐PC重合 | overlap_comparison.csv | 主0.949256；严格0.652180 | 两域同谱分布，非ID或功能交集 |
+| 合段重合 | 同上 | 主0.968587；严格0.799756 | 分辨率降低，不能替代逐PC |
+| PC2–64内重归一化重合 | summary.json | 主0.919172；严格0.673922 | 仅段内形状，不能替代原全谱份额 |
+| 全文档支持敏感性 | support_matching_audit/summary.json | 严格PC参照0.655652–0.701692；数学首段观察在上界 | 事后诊断，稀疏参照限制 |
+| 实际decoder方向 | strict16_actual_directions.npz | 绝对余弦均值0.024742、最大0.095840 | 只是方向核查，没有匹配显著性 |
+| 实际子空间 | 同上 | 秩7/9；trace/minrank=0.009434 | 不等同谱分布重合；不推功能 |
+
+直接读取尺度还原decoder后重算全部被选投影，最大误差8.33e-17；零范数成员0。匹配规模／分层／组间互斥检查6,000项通过；逐成员全谱和为1；合段重合不小于逐PC。完整数值保存在原始统计，不由图上四舍五入值反推。Summary中的两个主图只用于说明；全16名热图与全部成员表是附录。
+
+### 复现
+
+使用现有`spectral-hier`环境，在研究仓库根目录运行，所有步骤CPU离线，无模型前向：
+
+```bash
+/root/anaconda3/envs/spectral-hier/bin/python Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/scripts/cached_spectral_baseline.py
+/root/anaconda3/envs/spectral-hier/bin/python Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/scripts/audit_strict_full_support.py
+/root/anaconda3/envs/spectral-hier/bin/python Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/scripts/plot_spectral_priority.py
+```
+
+这些入口复现已保存的计算，不是新实验授权；不可据此改写旧R10目录。脚本写R11自身的补统计目录，旧结果保持。
+
+## S0：来源清点和未运行部分
+
+[数据资格报告](data_gate_cn.md)记录59,812篇全扫描、两个预筛版本及当前不足。第一版1,940候选；第二版2,537候选。扩大主题词是模型响应读取前的来源召回核查，不涉及改分数、支持门槛或挑选feature。两版独立保存，不抹去初版。候选词命中不是领域真值，平台归并也仍待人工审阅。
+
+原模型、tokenizer、A22、R10、R09、R04、DCLM原始档案、M2D2原档的本次严格读取检查均通过。通过仅说明可读，不等于新数据清单满足来源、文档独立与划分规则。现有H100 MIG40GB切片可见，未新申请资源，未提交模型任务，不能给出前向完成ETA。
+
+未运行：450篇新文本模型前向；原16名在新数学／生物／物理留出复核；16,384坐标三域统一筛选；三域发现PCA；F1/F2/F3独立判据与文档重采样。不能将本次旧缓存数值填入这些判据。
+
+下一执行依赖是合格的新文档清单与来源／划分核验。若需修改配额或来源独立性定义，须由研究者选择，不由当前缓存图决定。研究任务未闭合。
+
+## 资产与交付清单
+
+[证据文件清单](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R11_three_domain_replication_20261030/evidence/payload_manifest.json)保存本地精选图、逐成员表、统计与执行侧出处的字节数及SHA256；执行侧`cached_spectral_baseline/source_manifest.json`绑定原输入，`artifact_manifest.json`绑定实际输出。数组、背景抽样和候选原文留执行目录，不复制进研究文本库。`execution_state.json`保存实际阶段与0前向。科学接受Unknown；没有提交、推送或外部发布。

@@ -1,0 +1,255 @@
+{
+  "created_at_beijing": "2026-10-23T12:52:52.083543+08:00",
+  "scope": "method-level overview: seven training methods andthree residual interventions; raw-order tables andfigures supporting only",
+  "speaking_entries": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/meeting_brief_A17_R05_retention_cn.md",
+      "bytes": 3779,
+      "sha256": "7c7754c71cc692b4e56a39188c78016a5c498aa440fe28bc1637ca89c7df7a22"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/meeting_brief_A17_R05_retention.md",
+      "bytes": 1389,
+      "sha256": "485c6d358ed71e38f47facf438af5eff5802f919a0cb22ffd2a8c80db8fee38c"
+    }
+  ],
+  "sources": {
+    "source_files": [
+      {
+        "role": "endpoints",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/a_stage_audit_tables/endpoint_21.csv",
+        "sha256": "d484a80427395233e3165b182ee00ba36d8eee2f45915ec35da15392e75602ea"
+      },
+      {
+        "role": "C_coordinates",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/tables/C_coordinate_stability_48.csv",
+        "sha256": "21285352596ec6630e20cda12ced9c0da639c18cb519cb756024a172ec004b9b"
+      },
+      {
+        "role": "candidate_probe",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/tables/probe_pooled_2.csv",
+        "sha256": "b222b9564263e736fb72262642fc29f0fa741eb7f93e912301f32aaa4ec55dbf"
+      },
+      {
+        "role": "interventions",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/intervention_behavior_66.csv",
+        "sha256": "5340342623bd7976d3223b39bfdd1db923334ba87ac184c34566f521a1426dbd"
+      },
+      {
+        "role": "spectral_screen",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/saved_point_screen_54.csv",
+        "sha256": "1e0dc6b53a468ebe36fb3d7ea2a3f826e11a76a785db95c1c552ad427420d771"
+      },
+      {
+        "role": "intervention_geometry",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/intervention_geometry_264.csv",
+        "sha256": "a169ed55ca2c063ad6da4611d3ecd27115cd958ab9823555288930b19192a17b"
+      },
+      {
+        "role": "actual_rank_norm",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/actual_norm_rank_matches_120.csv",
+        "sha256": "b58beab3822feb076d3b950989776b23204744e68373a3d9561e60b5ea83d538"
+      },
+      {
+        "role": "fixed_old_input_outputs",
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/tables/fixed_inputs_432.csv",
+        "sha256": "b0c489507bc43e4f3a9eca6c0d6fafb11c4c84f2a9faa1b4aa934c10342ae4b6"
+      }
+    ],
+    "selection": {
+      "primary_endpoint": 1200,
+      "figure1": "all3orders,U/TS;Cnet/C0andold/newaccuracy;fulloldscalepluszoom",
+      "figure2_and_table2": "revised user conclusions: TS, all3orders; original endpoint,target,andall5randoms;dose series remains in canonical results, not main presentation",
+      "backup": "TSall3orders,all9savedpoints;maxsigma1andmaxsubspacelossnot sumofsingularvalues",
+      "table1": "all7methods x3orders;failedgatesretained",
+      "candidate_probe": "read for boundary only: localprobabilitysensitivity doesnotidentifycross-taskreuse; notneeded asathirdmainfigure",
+      "random_aggregation": "table2meanandminmaxof5fixeddraws;figure2groupsexactcoordinateoverlapsandlabelsallRindices;noartificialpointjitter",
+      "uncertainty": "nopopulationerrorbars;threeordersshareoneacquiredparent;minmaxarenotconfidenceintervals",
+      "original_results_changed": false,
+      "new_training_or_forward": false
+    },
+    "font": {
+      "font_url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+      "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+      "bytes": 16437364,
+      "license": "SIL Open Font License1.1; original LICENSE retained execution-side",
+      "font_binary_in_research_git": false
+    },
+    "reproduce_source_sha256": "7af6c54ee7e4122a8bf5b6898299e412a30c89ae0e487c7f72c9ed05f2178992"
+  },
+  "verification": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/verification.json",
+    "bytes": 41127,
+    "sha256": "1790ead2fe9d5151d70d1580936e8757ecba4aedff2d496b95e4c599d14226ab"
+  },
+  "files": [
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/README.md",
+      "bytes": 387,
+      "sha256": "3b5340e0c03723d5f759495343d27db8f7dc0e5a3e9b26882b6c8e67ac50e265"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/README_cn.md",
+      "bytes": 642,
+      "sha256": "99aa79046dbc2fded572fc7dc175d7d28e415cdb199e6bcc4e6b8bb1851c9118"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figure_plan_and_sources.json",
+      "bytes": 4377,
+      "sha256": "653deb8a7dd86a434e9a1432f3e9deeb29a2f01a288a6671faf4d591e0c0430b"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure1_protection_and_retention.pdf",
+      "bytes": 22496,
+      "sha256": "9e7db5e12a3baea81613017a306e46c978b01380204075e471327601645bb6ed"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure1_protection_and_retention.png",
+      "bytes": 188626,
+      "sha256": "d1b871992c84a9a9d0010afdd725c477549f7c3edb7fbcf07ca41180f2e9a0ac"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure1_protection_and_retention.svg",
+      "bytes": 34828,
+      "sha256": "5ac3e8dd4a268a113a09bda0c0391953e4c15da5ea130746064046e35eea930e"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure2_residual_tradeoff.pdf",
+      "bytes": 19770,
+      "sha256": "78849ffc259e38dfe5f39dfa37a73949c9c3e522d627edebec46c8cc2564ac65"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure2_residual_tradeoff.png",
+      "bytes": 212139,
+      "sha256": "88c79321ed5ac7cce3357fd8951151e2abc0eded606d8237a8951fd2a60bb532"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure2_residual_tradeoff.svg",
+      "bytes": 47220,
+      "sha256": "cc02e136befc3014ea1158ee4bf4027c5bc16e9665b0dab4bc293237276985de"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure3_backup_spectral_timing.pdf",
+      "bytes": 24872,
+      "sha256": "b5ec46572387a80dfba82cfb8467cd19b6f8ee01d36c8ca7644f73014798e395"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure3_backup_spectral_timing.png",
+      "bytes": 294930,
+      "sha256": "f4f2646db9b5ce4cddbed0dc181fe851dade0e022469867ee65d671623d8d5e3"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/figures/figure3_backup_spectral_timing.svg",
+      "bytes": 71241,
+      "sha256": "4191622307a3eab4c12e9f24c5e4bad2c6a5203dbbdfe3bbb76544a6ce65e6ea"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/input_access.json",
+      "bytes": 18553,
+      "sha256": "7e24cb77e450cc3e8f38ddd2fada59bf102d5645313e4a4cce4314295468247e"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/method_overview_cn.md",
+      "bytes": 3571,
+      "sha256": "daf608b1db94c72a2d742542dfad143fa57baa14a4fd795532841e04a6f1a5e8"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/method_overview_verification.json",
+      "bytes": 437,
+      "sha256": "c368171413f77a87123364fe2465e0677929ea4f6131dc9f77bd175d00feec2b"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/plot_data/figure1_6.csv",
+      "bytes": 693,
+      "sha256": "dbfcbe33a2ad7040263433daf1e9e642ac8f2a9d7b8a3624195a6b5e342a1686"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/plot_data/figure2_TS_21.csv",
+      "bytes": 2331,
+      "sha256": "40bddbc714fda3a4818d1670a055ed1c424b5360b299c49a65a397ef97107e6f"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/plot_data/figure3_TS_27.csv",
+      "bytes": 3381,
+      "sha256": "836900249243301f31a51c3a517e93d4d756ff85f5406b195ff5c3c40a443560"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/reproduce/aggregate_methods.py",
+      "bytes": 10938,
+      "sha256": "22fad576cd20a75fd594a6777acc625ae23b4a3b66dcb078145f69b6f2d8f3d3"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/reproduce/build_figures.py",
+      "bytes": 13185,
+      "sha256": "7af6c54ee7e4122a8bf5b6898299e412a30c89ae0e487c7f72c9ed05f2178992"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/reproduce/font_provenance.json",
+      "bytes": 355,
+      "sha256": "b2df08581389671e38a4189465edbf7d92998512da16c68343482fceaecf7019"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/reproduce/verify_and_package.py",
+      "bytes": 9436,
+      "sha256": "599b4e4c78c335baeb0aef2c973a82406c2ee9e30a0935137e985da8f14db204"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/reproduce/write_brief.py",
+      "bytes": 20654,
+      "sha256": "3a165c658470367310a9c0774a9d89cca26e3253b5332ba430203c2bc5a72141"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table1_main_experiment.md",
+      "bytes": 1396,
+      "sha256": "397bcb1460195ea74d0e5cd07bfbf208b21afd9d3d6b9424751b9c6529236956"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table1_main_experiment_21.csv",
+      "bytes": 1627,
+      "sha256": "2843542553b2df2c247bf244213d16b20200e92308a9bd29cf344cd6daada752"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table1_main_experiment_cn.md",
+      "bytes": 2414,
+      "sha256": "389c34c59c0565e11919f9f05c5462d1aca4fb3000dfff11ebfbc91065d94070"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table1_method_overview_7.csv",
+      "bytes": 929,
+      "sha256": "acb9e0148c7c8d30b0e420759658e5bca54b651315430290de1b2f9569f1ca52"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table2_residual_interventions.md",
+      "bytes": 1122,
+      "sha256": "6cefbe8a5b695a0179d11a87bd49acc79389ec236ef70923f0a398f8a05c3eba"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table2_residual_interventions_9.csv",
+      "bytes": 1137,
+      "sha256": "a12672760fd438e66f70f983f229a4d7a5955eaba2ff18fc32855dcad52b6341"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table2_residual_interventions_cn.md",
+      "bytes": 2301,
+      "sha256": "14ab6dcf0369a272f8e3e0204bacd80dfa91187bb435a111dd7ba9d8f8f4f6d5"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/tables/table2_residual_overview_3.csv",
+      "bytes": 308,
+      "sha256": "1a6ed982a5f6b0831adbdbe64e066e37995f26965b21eae5397a90d0cd985064"
+    },
+    {
+      "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/verification.json",
+      "bytes": 41127,
+      "sha256": "1790ead2fe9d5151d70d1580936e8757ecba4aedff2d496b95e4c599d14226ab"
+    }
+  ],
+  "source_mutation": false,
+  "training_or_forward": false,
+  "publication": "local delivery only; no commit/push",
+  "method_aggregation_verification": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1023/meeting_report/A17_R05_retention_figures/method_overview_verification.json",
+    "bytes": 437,
+    "sha256": "c368171413f77a87123364fe2465e0677929ea4f6131dc9f77bd175d00feec2b"
+  }
+}

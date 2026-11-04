@@ -1,0 +1,16 @@
+task,status,count,evidence,boundary
+checkpoint_inventory,DONE_EXPLORATORY,12,../manifest.json,one trajectory;record independence approximation;historical exposure
+paired_geometry,DONE_EXPLORATORY,12,checkpoint_statistics.csv,one trajectory;record independence approximation;historical exposure
+own_covariance_spectrum,DONE_EXPLORATORY,12,spectrum.csv,one trajectory;record independence approximation;historical exposure
+original_and_aligned_subspaces,DONE_EXPLORATORY,23,subspace_distances.csv,one trajectory;record independence approximation;historical exposure
+fixed_endpoint_projection,DONE_EXPLORATORY,12,fixed_endpoint_projected_variance.csv,one trajectory;record independence approximation;historical exposure
+CKA_Procrustes,DONE_EXPLORATORY,23,pair_metrics.csv,one trajectory;record independence approximation;historical exposure
+mean_scale_shape_rates,DONE_EXPLORATORY,11,pair_metrics.csv,one trajectory;record independence approximation;historical exposure
+sampling_sensitivity,DONE_EXPLORATORY,4,sampling_reference_summary.csv,one trajectory;record independence approximation;historical exposure
+supplement_layers,DONE_EXPLORATORY,6,checkpoint_statistics.csv,one trajectory;record independence approximation;historical exposure
+semantic_readouts,DONE_EXPLORATORY,126,readout_metrics.csv,one trajectory;record independence approximation;historical exposure
+matched_dimension_increments,DONE_EXPLORATORY,36,increment_contrasts.csv,one trajectory;record independence approximation;historical exposure
+missing_checkpoint_payloads,BLOCKED,8,../manifest.json,source manifests remain;not interpolated
+Dense_dictionary_analysis,NOT_APPLICABLE,0,../protocol.md,not requested;no QwenCrossCoder use
+stability_onset,NOT_ESTIMATED_BY_DESIGN,0,../protocol.md,no scientifically justified universal tolerance
+scientific_acceptance,UNKNOWN,0,../anchor.md,researcher owns judgment

@@ -1,0 +1,64 @@
+{
+  "input_asset_ids": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "analysis_a15_27_r04_domain_discriminability_complete_A01_20261028",
+    "analysis_a15_27_03_r09_domain_difference_decomposition_20261029",
+    "analysis_a15_27_04_r10_domain_member_atlas_20261030",
+    "data_a15_27_r11_qualified_three_domain_A02_20261030",
+    "representation_a15_27_r11_A02_dv_native_jointz_h27_20261030",
+    "representation_a15_27_r11_A02_h_native_jointz_h27_20261030",
+    "analysis_a15_27_r11_qualified_three_domain_A02_20261030",
+    "analysis_a15_27_r04_native_sae_joint_cc_domain_20261027"
+  ],
+  "output_analysis_id": "analysis_a15_27_05_r12_spectral_semantic_granularity_20261031",
+  "actual_payload_root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031",
+  "new_model_forwards": 0,
+  "training_updates": 0,
+  "normalization_binding": {
+    "zero_based_layers": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+    ],
+    "hook": "block residual-post before final global norm",
+    "normalization": "x=(h-TRAIN_mean)/TRAIN_centered_vector_RMS",
+    "TRAIN_RMS_by_selected_layer": [
+      9.199149148102977,
+      219.15119109894857,
+      219.48164330627114,
+      219.7280287884526,
+      220.07150556862177,
+      221.1746785919074,
+      221.55500609273363,
+      222.7164018974171,
+      230.27726225474393,
+      246.76191192121357,
+      280.7813636505023,
+      328.2614950343001,
+      378.17061308948183,
+      374.3495121024576
+    ],
+    "TRAIN_mean_shape": [
+      14,
+      1024
+    ],
+    "TRAIN_mean_float64_bytes_sha256": "1f06c6c225fe0ae42f69cbf292e791b2321a507b17091c0004529fcf749b2893",
+    "block27_RMS": 374.3495121024576,
+    "R09_saved_rms27_exact_match": true,
+    "threshold": 0.051281172782182693,
+    "native_gate": "post_ReLU_value * decoder_norm_weights() > saved threshold;unchanged"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "seed": 20261028,
+  "seeds": {
+    "pairing": 20261028,
+    "ties": 20261029,
+    "bootstrap": 20261030,
+    "incidence": 20261031,
+    "graph": 20261032
+  },
+  "null_chains": 2,
+  "null_draws_per_chain": 199,
+  "burnin_factor": 5,
+  "spacing_factor": 0.1,
+  "bootstrap": 5000,
+  "threads": 4,
+  "ram_gib": 16,
+  "wall_hours": 4,
+  "output_gib": 5,
+  "dicts": [
+    "SAE",
+    "CC"
+  ],
+  "groups": [
+    "low",
+    "middle",
+    "high",
+    "low_support",
+    "all"
+  ],
+  "metrics": [
+    "identity",
+    "forward",
+    "reverse",
+    "all_forward",
+    "all_reverse",
+    "common_forward",
+    "common_reverse"
+  ],
+  "distances": [
+    "1",
+    "2-3",
+    "4-7",
+    "8-15",
+    "16-31",
+    "32-63",
+    "64+"
+  ],
+  "pair_columns": [
+    "i",
+    "j",
+    "doc",
+    "sid",
+    "block",
+    "domain",
+    "distance",
+    "distance_bin",
+    "class",
+    "same_id"
+  ],
+  "match_columns": [
+    "control",
+    "tier",
+    "narrow",
+    "global_id",
+    "partner_id",
+    "candidate_count"
+  ],
+  "token_columns": [
+    "doc",
+    "pos",
+    "sid",
+    "relative",
+    "length",
+    "decile",
+    "quartile",
+    "id",
+    "class",
+    "numeric",
+    "domain"
+  ],
+  "primary_family_cells": 336,
+  "text_sha256": "59b0accba7117acbf7cd5850de2aeecf8c4b5bd6026cb1d674635345c3f47b70",
+  "frozen_at": "2026-10-28T07:38:59.230049+00:00",
+  "outcomes_opened": false
+}

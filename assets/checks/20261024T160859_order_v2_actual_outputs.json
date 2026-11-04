@@ -1,0 +1,756 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-24T16:08:59.887816+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-bw65z",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6778,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "checkpoint_order_moe_v2_smoke_resume_20261024",
+      "title_cn": "订单V2工程Smoke实际续训状态",
+      "category": "adapter_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/audit/smoke_resume.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 25970620,
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_order_moe_v2_order_parent_train_v1_20261024",
+      "title_cn": "订单V2冻结Base前缀缓存 order_parent_train_v1",
+      "category": "representation_cache",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/cache/order_parent_train_v1.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 5802846106,
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_order_moe_v2_symbolic_parent_train_v1_20261024",
+      "title_cn": "订单V2冻结Base前缀缓存 symbolic_parent_train_v1",
+      "category": "representation_cache",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/cache/symbolic_parent_train_v1.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 20497090,
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_order_moe_v2_symbolic_train_v1_20261024",
+      "title_cn": "订单V2冻结Base前缀缓存 symbolic_train_v1",
+      "category": "representation_cache",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/cache/symbolic_train_v1.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 74455550,
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_order_seed29_P_P_balanced_replay_v1_20261024",
+      "title_cn": "订单V2实际状态 order_seed29_P_P_balanced_replay_v1",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 50349772,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00001.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100686192,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00010.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100686960,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00050.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100687664,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00100.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100688368,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00250.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100689136,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_00500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100689840,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_01000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100690608,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_01500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100691312,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_02000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100692080,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/order_seed29_P_P_balanced_replay_v1/checkpoints/step_03000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100692784,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_symbolic_seed29_P_J_balanced_replay_v2-expanded_20261024",
+      "title_cn": "订单V2实际状态 symbolic_seed29_P_J_balanced_replay_v2-expanded",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 126374378,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00001.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252740795,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00010.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252743355,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00050.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252745979,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00100.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252748539,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00250.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252751099,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_00500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252753659,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_01000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252756219,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_01500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252758843,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_J_balanced_replay_v2-expanded/checkpoints/step_02000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 252761403,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_symbolic_seed29_P_P_balanced_replay_v1_20261024",
+      "title_cn": "订单V2实际状态 symbolic_seed29_P_P_balanced_replay_v1",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 50349772,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00001.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100686832,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00010.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100687792,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00050.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100688816,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00100.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100689840,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00250.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100690864,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_00500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100691824,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_01000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100692848,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_01500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100693872,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_02000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100694896,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v1/checkpoints/step_03000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 100695920,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_symbolic_seed29_P_P_balanced_replay_v2-expanded_20261024",
+      "title_cn": "订单V2实际状态 symbolic_seed29_P_P_balanced_replay_v2-expanded",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 125848862,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00001.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251685981,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00010.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251687005,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00050.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251688029,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00100.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251689053,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00250.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251690077,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_00500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251691101,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_01000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251692125,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_01500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251693149,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_02000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251694173,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed29_P_P_balanced_replay_v2-expanded/checkpoints/step_03000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251695197,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_symbolic_seed43_P_P_balanced_replay_v2-expanded_20261024",
+      "title_cn": "订单V2实际状态 symbolic_seed43_P_P_balanced_replay_v2-expanded",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "actual_saved_payload",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 125848798,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00001.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251685981,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00010.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251686941,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00050.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251687965,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00100.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251688989,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00250.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251690013,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_00500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251691037,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_01000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251692061,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_01500.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251693085,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_02000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251694109,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261024_order_moe_v2/runs/symbolic_seed43_P_P_balanced_replay_v2-expanded/checkpoints/step_03000.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 251695133,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

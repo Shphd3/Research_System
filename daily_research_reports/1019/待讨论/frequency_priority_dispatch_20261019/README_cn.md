@@ -22,4 +22,4 @@ P因缺同位置原预处理14层联合H而NOT RUN；未用末层h或zD替代。
 
 这是便于离线阅读和核对最终图表的精选结果包，**不含模型权重、hidden/z激活缓存、原始bin语料、NPZ矩阵、原始日志或执行代码**。完整结果表按直接引用和讨论需求选择，不是整run复制；本包不能独立重做原始缓存统计。包外来源改为[明确清单](provenance/external_sources.md)，包内阅读链接均为相对路径。
 
-原正式结果仍在项目 `main/experiments/crosscoder_feature_relations/frequency_priority_actual_dispatch/20261019_dispatch/`。复制只改阅读链接，中文Anchor、Protocol和冻结原件保持原字节，统计与科研状态不变。
+原正式结果仍在项目 `main/experiments/A15/15_20_frequency_priority_actual_dispatch/20261019_dispatch/`。复制只改阅读链接，中文Anchor、Protocol和冻结原件保持原字节，统计与科研状态不变。

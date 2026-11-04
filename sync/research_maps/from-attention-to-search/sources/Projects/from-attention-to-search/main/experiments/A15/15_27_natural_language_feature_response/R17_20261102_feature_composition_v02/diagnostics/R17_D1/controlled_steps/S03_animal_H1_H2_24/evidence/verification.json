@@ -1,0 +1,41 @@
+{
+  "UTC": "2026-11-03T12:12:13.941404+00:00",
+  "status": "PASS",
+  "old_files_unchanged": 140,
+  "original_cat_dog_rows_identical": 12,
+  "all_target_token_ids": 264,
+  "within_family_absolute_target_positions_matched": true,
+  "replayed_transition_rows": 72,
+  "replayed_H2_differences": 72,
+  "replayed_candidate_values": 1152,
+  "candidate_gate_verified": true,
+  "protocol_and_selection_unchanged": true,
+  "sites": {
+    "ATTN_SAE": {
+      "rows": 24,
+      "atoms": 30000,
+      "all_active_counts": 32,
+      "min_Top32_positive_margin": 0.004713296890258789,
+      "Top32_boundary_ties": 0,
+      "full_support_equal_pairs": 0,
+      "candidate_support_equal_pairs": 6,
+      "min_decoder_norm": 0.9999990463256836,
+      "max_decoder_norm": 1.0000008344650269,
+      "h_min_norm": 70.94572448730469
+    },
+    "MLPIN_SAE": {
+      "rows": 24,
+      "atoms": 30000,
+      "all_active_counts": 32,
+      "min_Top32_positive_margin": 0.0007233619689941406,
+      "Top32_boundary_ties": 0,
+      "full_support_equal_pairs": 0,
+      "candidate_support_equal_pairs": 6,
+      "min_decoder_norm": 0.999998927116394,
+      "max_decoder_norm": 1.000001072883606,
+      "h_min_norm": 105.29637145996094
+    }
+  },
+  "scientific_acceptance": "Unknown",
+  "next_step": "NOT_RUN_WAIT_FOR_JOINT_REVIEW"
+}

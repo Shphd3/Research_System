@@ -1,0 +1,67 @@
+{
+  "figure1_spectra_scale_shape": {
+    "caption": "Each checkpoint uses its own reference mean; 32768 positions from1024reference records. Missing saved weights produce real gaps; no interpolation as measurements.",
+    "sources": {
+      "checkpoint_statistics.csv": "1bc603383506eb5e2bf275da8f5f0d4bb3c76feeacdbb6f4b1579f13cf5b8365",
+      "spectrum.csv": "72139e8c03463a143b00795523ec91928187caf771fec364f11b7f2079c8d7ec",
+      "pair_metrics.csv": "f72984e346d0a58fc705b153efcb6112c85731e4709271f2730c8e7a4d887be7"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  },
+  "figure1b_rates_mean_gaps": {
+    "caption": "Rates divide by actual token gaps; mean drift and centered covariance are separate. No onset time is estimated.",
+    "sources": {
+      "checkpoint_statistics.csv": "1bc603383506eb5e2bf275da8f5f0d4bb3c76feeacdbb6f4b1579f13cf5b8365",
+      "pair_metrics.csv": "f72984e346d0a58fc705b153efcb6112c85731e4709271f2730c8e7a4d887be7"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  },
+  "figure2_subspace_drift": {
+    "caption": "Lines:paired checkpoint changes. Crosses/ranges:within-checkpoint8fixedhalf-splits, descriptive2.5\u201397.5%range. Bands own-sorted; near-degenerate boundaries may be unresolved.",
+    "sources": {
+      "subspace_distances.csv": "2d8a919c52027342110e121717d138bb7b8d7711b3b74d0e604da8bcc199ba3a",
+      "sampling_reference_summary.csv": "a181c19f388e7db8d11c878b28a6fcec497ead76cc2ab41deecbc3bcdbbfcd10"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  },
+  "figure3_rotation_and_relations": {
+    "caption": "Procrustes fits only reference documents and no scale. Alignment deliberately removes rotation; raw drift retains its independent meaning. CKA is rotation and scale invariant.",
+    "sources": {
+      "pair_metrics.csv": "f72984e346d0a58fc705b153efcb6112c85731e4709271f2730c8e7a4d887be7",
+      "subspace_distances.csv": "2d8a919c52027342110e121717d138bb7b8d7711b3b74d0e604da8bcc199ba3a"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  },
+  "figure1c_fixed_basis": {
+    "caption": "Right panel is variance projected into fixed33B directions; it is not the early checkpoint eigenvalue spectrum.",
+    "sources": {
+      "spectrum.csv": "72139e8c03463a143b00795523ec91928187caf771fec364f11b7f2079c8d7ec",
+      "fixed_endpoint_projected_variance.csv": "407ec3cd9c4db341e1945dd2f1356970c11d938a6b1929afd40441ff78b9726d"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  },
+  "figure4_semantic_timing": {
+    "caption": "Top: independently refitted readouts. Middle: increments vs 128D head; 2000 paired heldout resamples. Bottom: geometry; dotted lines mark readout times.",
+    "sources": {
+      "readout_metrics.csv": "f81abf00fdd60f543ead95749fdfe5a74fb7a50ecafb3830770474acaaf784d7",
+      "increment_contrasts.csv": "b184417d3c0b092d4200027bf81d507a112d25e7eb8528777862f6c444856219",
+      "subspace_distances.csv": "2d8a919c52027342110e121717d138bb7b8d7711b3b74d0e604da8bcc199ba3a",
+      "pair_metrics.csv": "f72984e346d0a58fc705b153efcb6112c85731e4709271f2730c8e7a4d887be7"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  },
+  "figure4b_readout_basis_sensitivity": {
+    "caption": "Same checkpoint vectors and data splits; each classifier is refitted. Fixed33B axes use future reference geometry and are a coordinate diagnostic, not an early deployable policy.",
+    "sources": {
+      "readout_metrics.csv": "f81abf00fdd60f543ead95749fdfe5a74fb7a50ecafb3830770474acaaf784d7"
+    },
+    "independence": "documents/record groups,not checkpoint replicates",
+    "boundary": "single Dense trajectory; descriptive sampling ranges;33Bnot known convergence"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "amendment": "A02",
+  "type": "administrative_inventory_clarification",
+  "time": "2026-11-01T03:10:23.039978+00:00",
+  "before": "missing_milestones contained unmeasured nominal7/9/11B examples",
+  "after": "No invented checkpoint cadence;only8source-manifested unavailable payloads count as missing",
+  "reason": "The requested interval does not define a checkpoint grid. These examples were not known saved states and should not be presented as lost milestones.",
+  "removed": [
+    {
+      "tokens": 7000000000.0,
+      "reason": "not saved in inspected requested trajectory"
+    },
+    {
+      "tokens": 9000000000.0,
+      "reason": "not saved in inspected requested trajectory"
+    },
+    {
+      "tokens": 11000000000.0,
+      "reason": "not saved in inspected requested trajectory"
+    }
+  ],
+  "checkpoint_rows_changed": false,
+  "inputs_or_sample_positions_changed": false,
+  "metrics_or_selection_changed": false,
+  "eligibility_effect": "None for all12actual measured states;inventory wording corrected",
+  "initial_manifest_sha256": "24d71c56086a721ac739b8efe57cf8bfc133b93cfbab82ff95f9f4252e2b33b0",
+  "current_manifest_sha256": "b2f8a1d0feddaa54e8f5ff73f31b090d9ff3172d57df500c13490ababa7c37ee",
+  "current_prepare_sha256": "97f74b68e7da1a3e15eee33c3938fa2dff25898379b6edd7c5f47fa89f6ef676",
+  "authorization": "in-scope factual source-inventory correction"
+}

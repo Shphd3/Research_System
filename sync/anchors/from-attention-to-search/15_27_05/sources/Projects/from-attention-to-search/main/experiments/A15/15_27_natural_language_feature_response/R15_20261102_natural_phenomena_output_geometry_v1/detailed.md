@@ -1,0 +1,5 @@
+# R15 actual execution and audit
+
+[Complete Chinese execution record](detailed_cn.md) is the reader-facing factual companion. Same fixed Qwen/A22 identities,600documents/76800positions,discovery-onlyPCAandfrozenvalidationselection. Numericalaudit is [final_validation](provenance/final_validation.json).
+
+All originalfrozeninputs andamendmentsarepreserved. Signed quantitativecompletionA6 isexploratorybecauseitfollowedmainbandinspection;itdoesnotreplaceoriginalprimarynegativefindings. ConditionalconfirmationinterventionswereNOT_RUN_BY_PROTOCOL,since no developmentexplanationpassedthegate. ActualnativeCPU2threadsBF16,noGPU,noH100,nooptimization,noothermodel. ScientificacceptanceandquestionclosureUnknown. Exactsource/outputs/codesavedpathsareinmanifestandreproduce.

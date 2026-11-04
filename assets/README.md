@@ -1,6 +1,16 @@
 # Research asset registry
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **548 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+> **Retirement, 2026-10-31:** Old decommon runs and academic_writing were removed; evaluator/native helper sources remain. Order MoE V2 execution payloads were deleted; 55 retained asset identities are marked PAYLOAD_MISSING. Historical results are unchanged. [Cleanup receipt](/data/250010109/MoE_Router/storage_cleanup_receipts/20261031T033809Z_decommon_academic_order/completion.json).
+
+
+> **Storage update, 2026-10-30:** At the researcher's request, all 24 binary weight, training-state and RNG files from the two A3 formal arms were deleted (20.393929 GiB). Code, configs, logs, manifests, historical results and common initial-state inputs are retained. These trained arms are no longer available for evaluation or continuation; future work focuses on new MoE training. Historical completion and NOT RUN findings are unchanged. [Deletion receipt](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/completion.json).
+
+[R10 whole-dictionary member atlas](domain_member_atlas_r10_20261030.md): actual960-member cache-only screening, common-spectrum and input-response evidence; no new forwards/training.
+
+
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **1043 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+
+[Frozen domain-member meeting analysis](domain_members_meeting_20261030.md): actual cache-only 16+16 selection, five figure groups, token/context statistics and explicit matching/coverage gaps; no new forwards or training.
 
 [中文](README_cn.md) · [Sole machine-readable catalog](catalog.json) · [Historical whole-library access snapshot](checks/2026-10-09_access_v4.json) · [Checker](../tools/check_assets.py) · [Project access](../docs/project_access.md)
 
@@ -279,6 +289,62 @@ E04 actual save registration:10 families/55 states from pt-1rb3s2t0. [Strict out
 
 Registered `analysis_crosscoder_token_feature_layer_validation_20261019`: cached CPU analysis with corpus-local and fixed-pool comparisons, four figures and exact numeric tables. Read access is not independent scientific confirmation or next-run approval.
 
+
+[2026-10-20：频率混合表征与高频路径调用的实际8模型、smoke及analysis资产](frequency_composition_common_path.md)。本次selected access10/10通过；完整保存与科学支持分开。
+
 ## First/last list rules and sequential forgetting
 
 [A17_04 E01/R02 reading entry](a17_list_rule_mapping.md) ([中文](a17_list_rule_mapping_cn.md)) explains the actual task, sequential and joint results, registered dataset versions and GitHub sources. It is self-contained for a Research_System-only reader. Complete JSONL payloads remain execution-side.
+
+
+### A-stage recovery snapshot audit supplement (2026-10-23)
+
+`checkpoint_family_a17_r05_A_step2_recovery_20261023_audit` registers21 already saved step2/40-answer A recovery snapshots for read-only supplementary evaluation. No new training checkpoints were created. Current selected access also covers the exact Base, acquired adapter, dataset/tokenizer and native-prefix cache: [access receipt](/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/audit/A_stage_20261023/step2_required_access.json). [A-only audit](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/a_stage_audit.md) keeps this post-hoc readout separate from the original1200-step endpoint.
+
+
+### A-stage bounded localization (2026-10-23)
+
+`analysis_a17_r05_A_localization_20261023` registers 40 reversible perturbations plus one acquired-old baseline and analysis of 54 existing U/TS readouts. No training or candidate replacement occurred. [Result](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/summary.md) · [Selected strict output access](checks/20261023T031957Z_a17_r05_A_localization_output.json). Local probability sensitivity does not establish old-rule necessity or shared use.
+
+
+### A residual/whole-computation frozen diagnosis (2026-10-23)
+
+`analysis_a17_r05_A_residual_spectral_20261023` registers saved-point spectra, actual-input effects, and66 intervention conditions (59 new readouts,7 reused),with zero training. [Result and recognition update](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_residual_spectral_20261023/summary.md) · [Selected strict output access](checks/20261023T035628Z_a17_r05_A_residual_spectral_output.json). Parameter complement is not an input/output nullspace; targeted old recovery trades away new learning without establishing whole-weight spectral mediation.
+
+### 2026-10-24 Order V2 and symbolic auxiliary outputs
+
+[Input/output and loading guide](symbolic_order_moe_v2.md) covers14 actual trajectories,148 scientific states plus4 engineering states,4 caches and32 derived-analysis groups. The52 selected output IDs passed final strict access. The bounded workflow completed with qualification failure and not-applicable dependent comparisons; internal reuse and scientific acceptance remain separate.
+
+[A15_26 R01 controlled composition assets](a15_26_compositional_reuse.md) ([中文](a15_26_compositional_reuse_cn.md)) — actual saved states, prefix cache and complete bounded analysis; access and scientific eligibility remain separate.
+
+[Qwen3 addition qualification data](qwen_addition_qualification_20261025.md) ([中文](qwen_addition_qualification_20261025_cn.md)): frozen unordered-pair splits; zero-update DEV gate failed, with no training or TEST inference. Dataset registration followed the pre-inference byte freeze.
+
+[Qwen3 base-addition B01 LoRA states](qwen_addition_base_b01_20261026.md) ([中文](qwen_addition_base_b01_20261026_cn.md)): actual initial and step40 DEV-qualified endpoint; TEST/A/B unmeasured; future branches reset optimizers.
+
+[Qwen3 addition I01 independent endpoints](qwen_addition_i01_20261026.md) ([中文](qwen_addition_i01_20261026_cn.md)): two actual200-update states; both target gates failed and base retention was not maintained; no joint/TEST run.
+
+[Qwen3 addition P01 paired-supervision endpoints](qwen_addition_p01_20261026.md) ([中文](qwen_addition_p01_20261026_cn.md)): six fixed200 states, matched A coefficient/inputs; base-supervision effect with explicit A costs, no TEST or mechanism proof.
+
+## A17 R06 actual outputs (2026-10-25 UTC)
+
+Registered checkpoint_family_a17_r06_functional_20261025 (288 actual states) and analysis_a17_r06_functional_20261025. [Results](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/summary_cn.md). Input identities, actual member digests and scope-specific current output access are retained in the round evidence index; payloads remain execution-side.
+
+A17 R06 bounded local dynamics: `analysis_a17_r06_local_dynamics_20261026`, six fixed step120 states,11424 sequence forwards, no continuation/candidatecheckpoint saves. [Current access](checks/20261026_a17_r06_local_dynamics_outputs.json) · [One-page result](../Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/local_dynamics_20261026/one_page_cn.md).
+
+
+[R06 fixed-target semantic response](fixed_target_semantics_r06_20261028.md): actual517/528forwards,384near+128conditionalfar+5checks;52boundednearqualifications,farconditionalonly. Rawcache/outputIDs and independentaudit registered;no training/Attention/layer expansion.
+
+[R09 actual decomposition, frequency/family, distance and A–D outputs](domain_difference_decomposition_r09_20261029.md) ([中文](domain_difference_decomposition_r09_20261029_cn.md)): six output IDs, current strict access and exact interface/producer boundaries. No training; scientific acceptance Unknown.
+
+[R12 spectral granularity and CrossCoder residual inspection](spectral_semantic_granularity_r12_20261031.md): actual96common-token documents,three tasks,CPU-only cached analysis;hierarchy/increments not established,exposed-H/source limitations preserved.
+
+
+[Dense checkpoint谱动态，2026-11-01](dense_checkpoint_spectral_dynamics_20261101_cn.md)：12个实际状态、固定位置缓存和完整几何/线性读出分析；缺失与不足保留，无语言模型训练。
+
+
+[Native spectral decoding assets](native_spectral_decoding_20261101.md): same-model/interface5090 refresh and737×21 native conditions; [two-output access snapshot](checks/2026-11-01_native_spectral_decoding_outputs.json), scoped rather than whole-catalog refresh.
+
+[Dense native weight spectral dynamics, 2026-11-01](../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/weight_spectral_dynamics/assets_and_data.md): actual684module-state SVDs;[current selected output access](checks/2026-11-01_dense_weight_spectral_dynamics.json). Parameter and representation spectra remain distinct.
+
+
+R17 Feature composition: [four-route results](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md); constructed384-row corrected panel, raw frozen responses and bounded H1–H4 analysis registered2026-11-02. Exposed holdout; scientific acceptanceUnknown.

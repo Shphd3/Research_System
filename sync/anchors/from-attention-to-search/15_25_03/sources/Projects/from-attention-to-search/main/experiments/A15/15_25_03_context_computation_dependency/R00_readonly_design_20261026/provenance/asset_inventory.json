@@ -1,0 +1,901 @@
+{
+  "time_utc": "2026-10-26T04:28:24.060777+00:00",
+  "scope": "read-only source/config/manifest/stat and small-file hashes;no model or cache tensor deserialization;no forward",
+  "assets": [
+    {
+      "category": "model_checkpoint",
+      "id": "model_qwen3_0p6b_base",
+      "identity": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "intermediate_size": 3072,
+        "model_type": "qwen3",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 8,
+        "torch_dtype": "bfloat16",
+        "vocab_size": 151936
+      },
+      "kind": "pretrained_hf_model",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/share/Qwen3-0.6B-Base",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "config.json"
+            },
+            {
+              "expected": "file",
+              "path": "model.safetensors"
+            },
+            {
+              "expected": "file",
+              "path": "tokenizer_config.json"
+            }
+          ],
+          "required": true,
+          "role": "native_hf_model"
+        }
+      ],
+      "notes_cn": [
+        "这是28层预训练Qwen模型，不是8层从头训练fresh S7，也不是12层A3 MoE。",
+        "本轮只核对配置和读取文件；没有加载完整权重或重算权重hash。"
+      ],
+      "payload_status": "MODEL_STATE_PRESENT",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/share/Qwen3-0.6B-Base/config.json",
+        "/data/share/Qwen3-0.6B-Base/README.md"
+      ],
+      "storage_owner": "shared-storage",
+      "title_cn": "Qwen3-0.6B-Base原始预训练模型（28层）"
+    },
+    {
+      "category": "tokenizer",
+      "id": "tokenizer_qwen3_0p6b_base",
+      "identity": {
+        "tokenizer_is_separate_from_pretrained_model_weights": true,
+        "vocab_size_from_model_config": 151936
+      },
+      "kind": "tokenizer",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/share/Qwen3-0.6B-Base",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "tokenizer.json"
+            },
+            {
+              "expected": "file",
+              "path": "tokenizer_config.json"
+            },
+            {
+              "expected": "file",
+              "path": "vocab.json"
+            },
+            {
+              "expected": "file",
+              "path": "merges.txt"
+            }
+          ],
+          "required": true,
+          "role": "tokenizer_files"
+        }
+      ],
+      "notes_cn": [
+        "复用分词器不等于加载原Qwen预训练权重。",
+        "仍需按对应数据manifest核对分词器身份；目录相同不能替代hash验证。"
+      ],
+      "payload_status": "SOURCE_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "router-representation-coupling"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/share/Qwen3-0.6B-Base/tokenizer_config.json"
+      ],
+      "storage_owner": "shared-storage",
+      "title_cn": "Qwen3-0.6B-Base分词器（S7/A3数据身份）"
+    },
+    {
+      "category": "sae_checkpoint",
+      "id": "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+      "identity": {
+        "actual_saved_state": "FP32 BatchTopK CrossCoder and Adam moments; k/threshold/dead counters/completed updates; rank-local RNG/cursors; fixed TRAIN centered vector RMS normalization; no Base copy",
+        "checkpoint_bytes": 5637826757,
+        "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+        "continuation_stage": "A22 formal continuation of complete A21 step1000 state",
+        "contract_sha256": "dc00b1c05d81238680f910acdd43ab498cf7fa26aaf219676cde28a95578b263",
+        "data_manifest_sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+        "interface": {
+          "hidden_size": 1024,
+          "hook": "block residual-post before final global norm",
+          "layers": 14,
+          "parameter_count": 469792768,
+          "selected_block_indices_zero_based": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27
+          ],
+          "shared_features": 16384,
+          "sparsity": "global BatchTopK",
+          "target_mean_l0": 256,
+          "weights_tied": false
+        },
+        "measurement_quality": "UNKNOWN",
+        "parent_asset_ids": [
+          "model_qwen3_0p6b_base",
+          "tokenizer_qwen3_0p6b_base",
+          "dclm_crosscoder_direct_bins_1b_a15_20261013",
+          "crosscoder_qwen3_14layer_16384_bf16_a18_learning_check_a21_4096000_20261013"
+        ],
+        "position_exposures": 999997440,
+        "producer_job_id": "pt-2639gg8p",
+        "producer_status": "FORMAL_COMPLETE",
+        "scientific_question_answered": false,
+        "source_manifest_sha256": "574c395d93f220d92ba88ceea479cae7020e9e0d74759a747315d630c050de68"
+      },
+      "kind": "crosscoder_resumable_checkpoint",
+      "locations": [
+        {
+          "expected": "file",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+          "probes": [],
+          "required": true,
+          "role": "immutable_saved_state"
+        }
+      ],
+      "notes_cn": [
+        "登记实际保存的工程产物；测量质量和科学问题仍为Unknown。"
+      ],
+      "payload_status": "SOURCE_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/configuration.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/input_contract.json"
+      ],
+      "storage_owner": "moe-router-execution",
+      "title_cn": "冻结Qwen3抽样14层CrossCoder：999997440位置"
+    },
+    {
+      "category": "representation",
+      "id": "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+      "identity": {
+        "features": 16384,
+        "full_chunk_hashes": "fresh SHA256 at generation, per-chunk JSON; not recomputed in registry",
+        "inference_buffers_unchanged": true,
+        "interface": "global gated z from14 selected residual-post layers before global norm; layer numbers2,4,...28 one-based; no independent layer-specific feature activation",
+        "loader": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/features.py",
+        "mean_l0": 254.538978767395,
+        "nonzeros": 2669034642,
+        "original_document_independence": "UNKNOWN",
+        "original_validation_hit_counts": "16384/16384 exact match",
+        "parent_asset_ids": [
+          "model_qwen3_0p6b_base",
+          "tokenizer_qwen3_0p6b_base",
+          "dclm_crosscoder_direct_bins_1b_a15_20261013",
+          "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013"
+        ],
+        "positions": 10485760,
+        "producer_job_id": "pt-zwh6g95p",
+        "producer_run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+        "protocol_path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_joint_feature_graph/protocol.md",
+        "protocol_revision": "A1",
+        "source_positions": "canonical global VAL eligible index; joined to index_val records/prefix plus excluded IDs, source SHA and absolute token offset",
+        "state_binding": {
+          "F": 16384,
+          "SDPA": true,
+          "base_batch": 16,
+          "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+          "data_manifest_sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+          "layers_zero_based": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27
+          ],
+          "microbatch": 1024,
+          "normalization": "complete saved TRAIN state",
+          "precision": "original BF16 / FP32",
+          "threshold": "complete saved TRAIN EMA",
+          "window_positions": 10485760
+        },
+        "storage": "CSR: uint64 ptr; uint16 sorted feature IDs; FP32 positive gated z; logical row identity fixed global eligible index; source dictionary and offsets join from input indices",
+        "training_updates": 0
+      },
+      "kind": "crosscoder_sparse_gated_feature_cache",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank1/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank2/manifest.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank3/manifest.json"
+            }
+          ],
+          "required": true,
+          "role": "complete immutable sparse activation cache"
+        }
+      ],
+      "notes_cn": [
+        "同bin发现／复核，不是独立原始文档测试集；文档和近重复去重未验证。",
+        "完整冻结TRAIN阈值、归一化和原始16上下文／1024位置推理；仅供阶段一统计与文本核查，不证明因果或学习收益。",
+        "原始checkpoint可恢复训练；本缓存只是表征，不包含优化器或训练恢复状态。"
+      ],
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/run_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_manifest_v2.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/input_identity.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/original_validation_replay_check.json"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "最终14层CrossCoder阶段一完整VAL稀疏激活"
+    },
+    {
+      "category": "dataset",
+      "id": "data_tulu_sft_route_20261019t012300z",
+      "identity": {
+        "dedup": "normalized first user prompt exact only",
+        "manifest_sha256": "c56a492385c69251c9aa2e98e804da4673ff9dd04cec65df43e562de825e5088",
+        "near_duplicates": "Unknown",
+        "parent_asset": "hf_hub_allenai_tulu_v2_sft_mixture",
+        "revision": "6248b175d2ccb5ec7c4aeb22e6d8ee3b21b2c752",
+        "split_counts": {
+          "dev": {
+            "answer_targets": 10340,
+            "dialogues": 128,
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/dev.jsonl",
+            "rejections": {
+              "answer_not8to256": 112,
+              "prompt_over256": 98
+            },
+            "sha256": "56d6f03425dafffe7b5345e472a4e3d7c932a5914761d6867ef9791e07ac5b0a",
+            "source_counts": {
+              "code_alpaca": 18,
+              "cot": 33,
+              "flan_v2": 11,
+              "gpt4_alpaca": 14,
+              "lima": 1,
+              "oasst1": 6,
+              "science.scierc_ner": 1,
+              "sharegpt": 37,
+              "wizardlm": 7
+            }
+          },
+          "eval": {
+            "answer_targets": 22446,
+            "dialogues": 256,
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/eval.jsonl",
+            "rejections": {
+              "answer_not8to256": 152,
+              "prompt_over256": 137
+            },
+            "sha256": "63a31b625a8b55c709c777d50f12db44fa8ca05d6b611f8a1d2998485d320962",
+            "source_counts": {
+              "code_alpaca": 41,
+              "cot": 61,
+              "flan_v2": 22,
+              "gpt4_alpaca": 24,
+              "oasst1": 6,
+              "science.scierc_ner": 1,
+              "science.scierc_relation": 1,
+              "sharegpt": 76,
+              "wizardlm": 24
+            }
+          },
+          "train": {
+            "answer_targets": 85548,
+            "dialogues": 1024,
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/train.jsonl",
+            "rejections": {
+              "answer_not8to256": 629,
+              "prompt_over256": 626
+            },
+            "sha256": "5530f9676c3d7941150e404c045ad62815a11310d8b1ec4904c209121ddb8ad5",
+            "source_counts": {
+              "code_alpaca": 156,
+              "cot": 235,
+              "flan_v2": 99,
+              "gpt4_alpaca": 139,
+              "lima": 1,
+              "oasst1": 34,
+              "science.scierc_ner": 1,
+              "science.scitldr_aic": 1,
+              "sharegpt": 267,
+              "wizardlm": 91
+            }
+          }
+        }
+      },
+      "kind": "derived_sft_training_view",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/train.jsonl"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/dev.jsonl"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/eval.jsonl"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/manifest.json"
+            }
+          ],
+          "required": true,
+          "role": "frozen first-turn SFT split"
+        }
+      ],
+      "payload_status": "PREPARED_DATA_PRESENT",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_21_activation_to_expert_learning/20261019_tulu_sft/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/select_data.py"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "Tulu指令回答固定问题隔离复核数据"
+    },
+    {
+      "category": "representation",
+      "id": "representation_tulu_sft_route_20261019t012300z",
+      "identity": {
+        "data_asset": "data_tulu_sft_route_20261019t012300z",
+        "dictionary_asset": "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+        "fields": "hidden BF16 raw block28 residual-post before final norm [N,1024], full frozen gated shared z CSR F16384, target int64 next answer token including EOS, block_id dialogue, position_id source-local t",
+        "native_cached_receipt": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/provenance/extraction.json",
+        "normalization": "original frozen dictionary TRAIN centered RMS unchanged",
+        "parent_asset": "model_qwen3_0p6b_base",
+        "payload_hashes": "NOT_CHECKED; aligned source JSON hashes and full CPU label check available",
+        "source": {
+          "code": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/extract_sft.py",
+          "sha256": "8445535f498e61b56b8b39cd7374d8601b8dbad182d9702b3647928896f56a83"
+        },
+        "threshold": 0.051281172782182693
+      },
+      "kind": "paired_frozen_h_z_answer_cache",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/train.pt"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/dev.pt"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/eval.pt"
+            }
+          ],
+          "required": true,
+          "role": "actual frozen extraction"
+        }
+      ],
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/provenance/extraction.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/manifest.json"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "Tulu首轮问答冻结h/z与答案标签对齐缓存"
+    },
+    {
+      "category": "analysis",
+      "id": "analysis_crosscoder_frequency_contribution_bridge_20261019t025630z",
+      "identity": {
+        "EVAL_positions": 22446,
+        "TRAIN_positions": 85548,
+        "comparisons": "raw/calibrated x relation/20matched random;main random11",
+        "config_sha256": "c64db92488a7f31a414a4d06319ad3510f808a5e2225c3430ec04aa3b51ec8f8",
+        "contribution": "joint14-layer gated z times final normalized decoder norm; raw scale factor cancels",
+        "dictionary_features": 16384,
+        "frequency_bands": "4log-equal positive TRAIN p;907zero features unknown",
+        "parent_asset_ids": [
+          "model_qwen3_0p6b_base",
+          "tokenizer_qwen3_0p6b_base",
+          "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+          "representation_tulu_sft_route_20261019t012300z",
+          "analysis_dclm_sft_train_frequency_comparison_20261019"
+        ],
+        "protocol_sha256": "74a652f03be13dfd3d2aac5a34e48f5b60f57a1c90f15e1905c99583d491f9e9",
+        "result_boundary": "exploratory structure and dispatch; no learning,capacity,semantic or causal-function claim",
+        "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z",
+        "task_state": "COMPLETE_WITH_RECORDED_INSUFFICIENCIES"
+      },
+      "kind": "bounded_cached_frequency_contribution_relation_dispatch_analysis",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/config/frozen.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/bridge.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/dispatch.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/cache/groups.npz"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/exposure_eval_phi_calibrated.npz"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/provenance/verification.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/provenance/completion.json"
+            }
+          ],
+          "required": true,
+          "role": "full actual cached-analysis outputs"
+        },
+        {
+          "expected": "directory",
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary_cn.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/detailed_cn.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/completion_receipt.json"
+            }
+          ],
+          "required": true,
+          "role": "canonical readable result"
+        }
+      ],
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/execution_authorization_20261019.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/provenance/completion.json"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "末层频率贡献桥梁、关系细分与实际分发探索分析"
+    },
+    {
+      "category": "analysis",
+      "id": "analysis_crosscoder_token_feature_layer_validation_20261019",
+      "identity": {
+        "DCLM_reference_positions": 5238097,
+        "DCLM_review_positions": 5247663,
+        "SFT_reference_positions": 85548,
+        "SFT_review_positions": 22446,
+        "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+        "frequency_pools": "per-corpus D/TRAIN-local4log-bands; fixed old Tulu1694 sensitivity",
+        "frozen_code_sha256": "0a232e3915b5a26798567f50d5149242d0136ca03e022a4600ce974c8ed6e426",
+        "layers": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "measurements": "binary hits, decoder amplitude shares, feature/position/ID weighting, block stability",
+        "parent_asset_ids": [
+          "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+          "analysis_crosscoder_feature_relation_phase1_20261013t173130z",
+          "representation_tulu_sft_route_20261019t012300z",
+          "analysis_crosscoder_frequency_contribution_bridge_20261019t025630z"
+        ],
+        "result_boundary": "descriptive association only; same-bin and exposed review; original document independence UNKNOWN; no learning/causal/knowledge/capacity claim",
+        "shared_features": 16384,
+        "task_state": "COMPLETE_WITH_RECORDED_LIMITATIONS"
+      },
+      "kind": "cached_large_data_cross_layer_token_feature_frequency_association",
+      "locations": [
+        {
+          "expected": "directory",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/completion.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/provenance/frozen_execution.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/provenance/checks.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/provenance/code_audit.json"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/layer_metrics.csv"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/feature_correspondence_summary.csv"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/plot_provenance.json"
+            }
+          ],
+          "required": true,
+          "role": "full CPU cached analysis, code, logs and provenance"
+        },
+        {
+          "expected": "directory",
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation",
+          "probes": [
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/summary.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/summary_cn.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/detailed_cn.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/protocol_cn.md"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/tables/feature_memberships.csv"
+            },
+            {
+              "expected": "file",
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/figures/figure4_feature_level_correspondence.png"
+            }
+          ],
+          "required": true,
+          "role": "curated bilingual reports, four figures and exact tables"
+        }
+      ],
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "required_projects": [],
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/completion.json",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/protocol_cn.md"
+      ],
+      "storage_owner": "MoE_Router",
+      "title_cn": "大样本与跨层token—feature频率关联的有界复核"
+    }
+  ],
+  "weights": [
+    {
+      "name": "Base",
+      "path": "/data/share/Qwen3-0.6B-Base/model.safetensors",
+      "exists": true,
+      "bytes_current": 1192135096,
+      "saved_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "current_full_weight_hash": "NOT_RECOMPUTED",
+      "deserialized_this_stage": false
+    },
+    {
+      "name": "CrossCoder",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+      "exists": true,
+      "bytes_current": 5637826757,
+      "saved_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "current_full_weight_hash": "NOT_RECOMPUTED",
+      "deserialized_this_stage": false
+    }
+  ],
+  "base_config_identity_current_match": true,
+  "base_revision_saved": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+  "small_files_current_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/configuration.json": {
+      "exists": true,
+      "bytes": 13302,
+      "sha256_current": "341ae4bf0f1c200fdf915da85d310d5f2df64ee36c857c956540d528964925ec"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/input_contract.json": {
+      "exists": true,
+      "bytes": 758,
+      "sha256_current": "7d7bef2a549887d0591fc1bd11a4ae448548f3d0b582186d0ad94bbfcb9182d7"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/normalization.json": {
+      "exists": true,
+      "bytes": 391545,
+      "sha256_current": "63c83222f84c8720a56e63a2ac907130c3d9fcf3465dfaf68a0a668c4548a78d"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/terminal_receipt.json": {
+      "exists": true,
+      "bytes": 4677,
+      "sha256_current": "1655afea23d154d1097bef5b0ede0ca138e3ed08957b198079bd85df76fc3951"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/latest_checkpoint.json": {
+      "exists": true,
+      "bytes": 860,
+      "sha256_current": "4fc56db1b9a333f1b4bf95a1b89266275c4f6be18c0d9a5749513559901f9621"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/validation_000999997440.json": {
+      "exists": true,
+      "bytes": 1048856,
+      "sha256_current": "aa21b7216438a78141cbb7d186d80de645e06532990694ce6aa0312c610ba010"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/hook_qualification.json": {
+      "exists": true,
+      "bytes": 572,
+      "sha256_current": "9255e9680eafef0990fe41baa7b8550740bf6932cec3b7eb1b06c003d17a789b"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/input_identity.json": {
+      "exists": true,
+      "bytes": 4625,
+      "sha256_current": "cb5d65d45fcb345af207e767afbd429dcc45f71768e47a8139e280081cdd1113"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/cache_binding.json": {
+      "exists": true,
+      "bytes": 559,
+      "sha256_current": "f0808ca0dd060a97b2b4b3dcb219a45c2c60976cf63299507803152e52ec7ee8"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/original_validation_replay_check.json": {
+      "exists": true,
+      "bytes": 372,
+      "sha256_current": "6a59c18017d304906dd3994f9a817f20c023c28520b5c240fb80d923e54172c1"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/provenance/extraction.json": {
+      "exists": true,
+      "bytes": 785,
+      "sha256_current": "1801882de9e54903c2bd8dacd8f4be2c0a5242cce882829cc9f4ee77344fcd69"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/train.jsonl": {
+      "exists": true,
+      "bytes": 2322046,
+      "sha256_current": "5530f9676c3d7941150e404c045ad62815a11310d8b1ec4904c209121ddb8ad5"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/eval.jsonl": {
+      "exists": true,
+      "bytes": 577180,
+      "sha256_current": "63a31b625a8b55c709c777d50f12db44fa8ca05d6b611f8a1d2998485d320962"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/model.py": {
+      "exists": true,
+      "bytes": 8361,
+      "sha256_current": "ab34d7d57c15d3293c6e3b125b5df31c673a4ce252a3e4ac67d01706d0c14e73"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/batchtopk_a18.py": {
+      "exists": true,
+      "bytes": 18056,
+      "sha256_current": "6c9c7e9c4ad825517e3b910ef2b8253ebc47d68b4d10d213c4e94cfad48f1a8b"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/fast_batchtopk_a21.py": {
+      "exists": true,
+      "bytes": 4534,
+      "sha256_current": "7f2dc16cfc98f6246b0257fce90a7ee804ce5684c395cffc703ce6e8518ab9ad"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/extraction_a16.py": {
+      "exists": true,
+      "bytes": 13551,
+      "sha256_current": "df2931b3b961153331bfc26ad7b879dcffd41981b9f2aa8a88b975e48c7cef94"
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/features.py": {
+      "exists": true,
+      "bytes": 12728,
+      "sha256_current": "839b475881609057579ddd0205cac8544b2a594e9ed9f9113eeaa123b17c3450"
+    }
+  },
+  "Tulu_cache": [
+    {
+      "split": "train",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/train.pt",
+      "exists": true,
+      "bytes": 388181399,
+      "tensor_payload_loaded": false
+    },
+    {
+      "split": "dev",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/dev.pt",
+      "exists": true,
+      "bytes": 46954105,
+      "tensor_payload_loaded": false
+    },
+    {
+      "split": "eval",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/eval.pt",
+      "exists": true,
+      "bytes": 101373256,
+      "tensor_payload_loaded": false
+    }
+  ],
+  "normalization": {
+    "definition": "vector_L2_RMS",
+    "source": "TRAIN",
+    "count": 65536,
+    "mean_shape": [
+      14,
+      1024
+    ],
+    "rms": [
+      9.199149148102977,
+      219.15119109894857,
+      219.48164330627114,
+      219.7280287884526,
+      220.07150556862177,
+      221.1746785919074,
+      221.55500609273363,
+      222.7164018974171,
+      230.27726225474393,
+      246.76191192121357,
+      280.7813636505023,
+      328.2614950343001,
+      378.17061308948183,
+      374.3495121024576
+    ],
+    "per_layer_frozen_scalar": true
+  },
+  "historical_validation": {
+    "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/validation_000999997440.json",
+    "selected_layers_one_based": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28
+    ],
+    "FVE_per_layer": [
+      0.8975207348752765,
+      0.9993327561669031,
+      0.9987669206383846,
+      0.9981271871064101,
+      0.9974683375166458,
+      0.9959887827568198,
+      0.9947079226772279,
+      0.9926727860339568,
+      0.9856052843654112,
+      0.9753056236005356,
+      0.9605047758497447,
+      0.9437330538032356,
+      0.9164591198222333,
+      0.864722112763328
+    ],
+    "FVE_source14": 0.9947079226772279,
+    "FVE_target28": 0.864722112763328,
+    "not_current_Tulu_quality": true,
+    "parent_recorded_final_replacement_CE_excess_nat": 0.305962,
+    "replacement_CE_source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/15_25_joint_feature_graph_anchor_cn.md"
+  },
+  "local_measurement_status": {
+    "independent_per_layer_feature_encoder": "NOT_AVAILABLE_IN_SELECTED_CROSSCODER",
+    "source14_cached_raw_activation": "NOT_PRESENT_IN_SELECTED_TULU_CACHE",
+    "target28_raw_activation": "REGISTERED_IN_EXISTING_CACHE",
+    "joint_z_after_intervention": "FORBIDDEN_AS_PROPAGATION_READOUT",
+    "proposed_local_direction_readout": "CONSTRUCTIBLE_FROM_EXISTING_DECODERS_BUT_NOT_QUALIFIED",
+    "new_Tulu_replay": "NOT_RUN"
+  },
+  "split_status": {
+    "DCLM_original_document_independence": "UNKNOWN",
+    "Tulu_discovery": "existing TRAIN1024dialogues85548answerpositions",
+    "Tulu_heldout": "existing EVAL256dialogues22446answerpositions;PREVIOUSLY_EXPOSED_EXPLORATORY",
+    "near_duplicates": "UNKNOWN"
+  },
+  "resources": {
+    "new_allocations": 0,
+    "model_sequence_forwards_this_stage": 0,
+    "training_updates": 0,
+    "live_GPU_availability": "NOT_QUERIED;mustuseexistingavailableonlyafteruserinstruction"
+  }
+}

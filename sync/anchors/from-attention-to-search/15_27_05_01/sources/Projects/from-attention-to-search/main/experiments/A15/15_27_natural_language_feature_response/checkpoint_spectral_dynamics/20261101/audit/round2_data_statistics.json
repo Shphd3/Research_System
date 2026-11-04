@@ -1,0 +1,14 @@
+{
+  "status": "PASS_WITH_EXPLICIT_LIMITS",
+  "audit": "round2_data_statistics",
+  "reference_N": 32768,
+  "reference_docs": 1024,
+  "evaluation_N": 32768,
+  "evaluation_docs": 1024,
+  "independence": "record approximation;paper IDs absent",
+  "leakage": "No exact text/token/family overlap;no eval fitting;paired splits across time",
+  "bridge": "R12 exact96the points and original TRAIN/DEV/H task memberships",
+  "multiplicity": "Holm36head+band-versus-head128increments",
+  "uncertainty": "8reference splits descriptive ranges;2000stratified paired readout bootstraps",
+  "missing": "12states;explicitmissingpayloads,nointerpolation"
+}

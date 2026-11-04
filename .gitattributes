@@ -6,3 +6,6 @@
 *.sty text eol=lf
 *.bst text eol=lf
 *.gitignore text eol=lf
+
+# Reading bundles carry byte-exact sources and hashes.
+sync/** -text

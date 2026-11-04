@@ -543,6 +543,19 @@
       "language_authority": "Preserved original source and existing language companions; numbering changes organization only."
     },
     {
+      "id": "10_03",
+      "line": "A10",
+      "parent_id": null,
+      "path": "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_03_router_numerical_update_fidelity_anchor.md",
+      "companions": [
+        "main/problem_anchors/10_optimizer_learning_rate_mechanism/10_03_router_numerical_update_fidelity_anchor_cn.md"
+      ],
+      "experiment_roots": [],
+      "title": "A10_03: Does Router numerical error change a finite learning update?",
+      "legacy_aliases": [],
+      "language_authority": "English canonical; Chinese companion. AI proposal pending researcher review; natural replay NOT RUN."
+    },
+    {
       "id": "11_01",
       "line": "A11",
       "parent_id": null,
@@ -1962,14 +1975,17 @@
       "companions": [
         "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor_cn.md",
         "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor.md",
-        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor_cn.md"
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/anchor_cn.md",
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/anchor.md",
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/anchor_cn.md"
       ],
       "experiment_roots": [
         "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping",
         "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E02_rule_acquisition_diagnosis",
         "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition",
         "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E04_shared_routed_budget",
-        "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023"
+        "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023",
+        "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025"
       ],
       "title": "A17_04: Conditional mapping transfer",
       "legacy_aliases": [],
@@ -1983,6 +1999,17 @@
           ],
           "experiment_root": "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023",
           "role": "researcher-authorized inherited round design supplement; parent canonical identity preserved",
+          "scientific_state_changed": false,
+          "new_formal_owner_created": false
+        },
+        {
+          "round_id": "R06_functional_protection_20261025",
+          "anchor_companions": [
+            "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/anchor.md",
+            "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/anchor_cn.md"
+          ],
+          "experiment_root": "main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025",
+          "role": "explicitly user-authorized fixed-new-exposure local functional protection diagnostic",
           "scientific_state_changed": false,
           "new_formal_owner_created": false
         }
@@ -2157,6 +2184,42 @@
         "translation": "Chinese faithful companion"
       },
       "claim_boundary": "User-authorized bounded optimizer-policy intervention in T_F plus common; fixed frozen representations and routes. Same-state update diagnostics and two paired seeds; exposed DEV is exploratory. No automatic scientific closure."
+    },
+    {
+      "id": "15_24_02",
+      "line": "A15",
+      "parent_id": "15_24",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_02_frequency_complement_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_complement_20261023"
+      ],
+      "title": "Frequency-related direction preservation and local complement updates",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "Researcher-authorized local analysis of original T_F E0 up, two inherited seeds, fixed TRAIN PCA, finite rollback and nonaccumulating scratch AdamW proposals. Exposed DEV; no task-specific direction qualification, long-training claim or automatic scientific update."
+    },
+    {
+      "id": "15_24_03",
+      "line": "A15",
+      "parent_id": "15_24",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_24_frequency_composition_common_path/subanchors/15_24_03_frequency_effect_association_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/frequency_effect_association_20261024"
+      ],
+      "title": "Frequency association of finite direction-intervention effects",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "Researcher-authorized finite frozen T_F E0-up rollback with eight norm-matched random bases. Outcome-blind matched frequency events on exposed DEV;11pairs/9dialogues and imbalance make association insufficient. No frequency causation or continued-training claim."
     },
     {
       "id": "17_05",
@@ -2360,6 +2423,42 @@
         "translation": "Chinese faithful companion"
       },
       "claim_boundary": "User-authorized frozen Qwen3-0.6B final-residual dependence and transfer experiment. No model/dictionary/expert training or automatic scientific closure."
+    },
+    {
+      "id": "15_25_02",
+      "line": "A15",
+      "parent_id": "15_25",
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_02_learning_history_representation_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_25_joint_feature_graph/subanchors/15_25_02_learning_history_representation_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_25_02_learning_history_representation"
+      ],
+      "title": "Learning history and task-important representation directions",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "Four saved states; frozen conditional-rule representation analysis and residual interventions. Exposed DEV, seed 29, unequal exposure; no curriculum causality or automatic question closure."
+    },
+    {
+      "id": "15_26",
+      "line": "A15",
+      "parent_id": null,
+      "path": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor.md",
+      "companions": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_26_low_frequency_compositional_reuse/15_26_low_frequency_compositional_reuse_anchor_cn.md"
+      ],
+      "experiment_roots": [
+        "main/experiments/A15/15_26_low_frequency_compositional_reuse"
+      ],
+      "title": "Previously learned computations in low-frequency compositions",
+      "language_authority": {
+        "project_canonical": "English",
+        "translation": "Chinese faithful companion"
+      },
+      "claim_boundary": "Delegated complete R01 operationalization. Separate learning help, functional transfer, internal carrier and stronger freezing; result acceptance remains Unknown."
     }
   ],
   "support_records": [

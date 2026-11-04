@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-26T11:05:11.235308+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-vl8wn",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7929,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "data_natural_language_feature_panel_20261026",
+      "title_cn": "自然语言feature响应72案例288前缀冻结面板",
+      "category": "dataset_prepared_panel",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/qualified_cases.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 680115,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/tokenized_sequences.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 741417,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2123,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/exclusions.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1715,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_natural_language_feature_response_20261026",
+      "title_cn": "E16自然语言目标位置激活与重构",
+      "category": "representation_cache",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 890373,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 890391,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery_sequences.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 368097,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout_sequences.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 373320,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/forward_ledger.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 38930,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery_qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1573,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout_qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 981,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_natural_language_feature_response_20261026",
+      "title_cn": "自然语言feature响应关系留出检验",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/candidate_freeze.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15282,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/results.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12735,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H1_features.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15448,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H2_groups.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H3_features.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 20343,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/stable_features.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18664,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/reference_frequency_provenance.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1176,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}
