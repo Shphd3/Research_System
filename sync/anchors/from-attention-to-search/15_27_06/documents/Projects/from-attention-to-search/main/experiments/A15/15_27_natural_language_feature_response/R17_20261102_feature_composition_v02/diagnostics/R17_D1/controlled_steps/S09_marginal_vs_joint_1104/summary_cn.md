@@ -1,0 +1,56 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/summary_cn.md`。
+[精确原始文件](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/summary_cn.md)；研究修改仍回到原件。
+
+---
+
+# S09：频率能解释重叠，联合结构要另测
+
+**认识更新。** S08同域重叠更高，主要可由成员频率差异复制；它本身不能作为联合组合的充分证据。固定每位置32个成员、每feature次数和分位后，联合统计仍在独立留出文档上高于本源零模型，源间残差差异也复现。A与B可以同时成立。
+
+本轮的事实路径：行为/因素方面不做答案评分，仅复用文本和位置并检查token分层；表征方面分开统计频率/Jaccard与联合共同出现；功能方面没有干预、分类器或模型训练，零模型与独立复算仅用于审核测量可信度。科研接受与问题关闭Unknown，完成后等待研究者审阅。
+
+**A：平均Jaccard的大部分差值可由边际参照重现。** 原771篇不重新抽样，各源128发现/129留出，原8位置。发现集频率生成的独立Bernoulli参照，复制了真实“平均内部−跨域”差值的99.4%–127.7%；它每行期望32但实际10–64或12–60个成员，并含发现频率估计误差，不能当作严格Top32零模型。用留出集本身的频率、严格行32的条件零模型，差值比值为82.9%–97.0%。后者是描述性参照，不是发现集预测，也不是因果解释率；比值不裁剪。真实减条件参照的剩余差，5/6个文档区间跨0。
+
+| SAE | pair | real_gap | discovery_frequency_gap | fixed32_margin_gap | fixed32_ratio | remaining_gap_CI |
+|---|---|---|---|---|---|---|
+| ATTN_SAE | Magicoder/GSM8K | 0.014126 | 0.017108 | 0.013297 | 94.1% | [-0.000572,0.002301] |
+| ATTN_SAE | Magicoder/MMLU | 0.010565 | 0.011846 | 0.008760 | 82.9% | [0.000136,0.004108] |
+| ATTN_SAE | GSM8K/MMLU | 0.009900 | 0.012646 | 0.008845 | 89.3% | [-0.000719,0.003353] |
+| MLPIN_SAE | Magicoder/GSM8K | 0.046637 | 0.046341 | 0.045240 | 97.0% | [-0.001008,0.003852] |
+| MLPIN_SAE | Magicoder/MMLU | 0.029533 | 0.029801 | 0.027332 | 92.5% | [-0.000206,0.005047] |
+| MLPIN_SAE | GSM8K/MMLU | 0.026308 | 0.029499 | 0.025209 | 95.8% | [-0.001765,0.004574] |
+
+
+表中gap=两源内部均值的平均−跨域均值，单位为原始Jaccard。剩余区间给定发现划分/零模型中心；不是对所有估计阶段的无条件区间。[完整A表](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/tables/A_overlap_references.csv)分别保留A内、B内、跨域的真实值、两种参照及差值，不能只读上表合并差。
+
+![真实重叠与频率参照](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/figures/01_overlap_vs_frequency.png)
+
+蓝点是真实留出、黄三角是发现频率但行数目自由、绿方块是留出频率+严格32；蓝误差线为文档级95%区间，参照线为MC均值误差，不能当成新增文档。独立交集期望可求和，但本轮Jaccard均实际逐次计算。固定列次数后，完整内部文档对的平均交集严格相同；平均Jaccard仍会因交集分布不同而变。该恒等式已独立复核，最大误差0。
+
+**B：直接检验联合统计后，有留出复现。** 每套字典在发现集按频率/文档支持固定24成员，保留全部276对；每篇先平均8个位置的共同出现，再减本源严格边际零模型。发现集仅拟合其残差方向和各源差方向，之后冻结。留出本源结构6/6、源间差异6/6满足预设判据；两组六检验各自Holm校正，均p=0.023346。这个p来自256个条件零模型样本，原始最小p=1/257，分辨率有限。
+
+![联合统计、零模型与留出](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/figures/02_joint_null_and_holdout.png)
+
+灰色为固定次数零模型的95%范围；紫色是发现拟合值，不是验证；蓝色为留出值和整篇bootstrap区间；绿色为额外token分层的探索结果。纵轴是276对共同出现残差沿冻结单位权重的投影，**不是Jaccard、准确率或语义强度**。原始投影与零模型中心分别列于下表。
+
+| site | dataset | heldout_real_projection | heldout_null_projection | heldout_excess | doc_CI_lo | doc_CI_hi | Holm_p |
+|---|---|---|---|---|---|---|---|
+| ATTN_SAE | Magicoder | 0.186106 | 0.097805 | 0.088301 | 0.064902 | 0.110268 | 0.023346 |
+| ATTN_SAE | GSM8K | 0.216684 | 0.090062 | 0.126622 | 0.099632 | 0.155953 | 0.023346 |
+| ATTN_SAE | MMLU | 0.077154 | 0.027513 | 0.049641 | 0.036945 | 0.062883 | 0.023346 |
+| MLPIN_SAE | Magicoder | 0.383465 | -0.074431 | 0.457896 | 0.431771 | 0.483500 | 0.023346 |
+| MLPIN_SAE | GSM8K | 0.368308 | 0.053087 | 0.315221 | 0.275806 | 0.354469 | 0.023346 |
+| MLPIN_SAE | MMLU | 0.171067 | -0.240288 | 0.411355 | 0.399029 | 0.424048 | 0.023346 |
+
+
+**具体共同出现数据。** Attention的GSM8K候选#17625/#14773，发现集共同出现比例0.214844、本源零模型0.129898；留出真实221/1032位置=0.214147，零模型0.115708，超额0.098440，94/129篇文档至少出现一次。原文例子：On a moonless night, three fireflies danced in the evening breeze.  They were joined by four less than a dozen more fireflies, before two of the fireflies flew away.  How many fireflies remained? 原S08的GSM8K:train:row5923，位置19，token=' by'；两成员原激活分别9.756166、12.859011。这里观察的是两个ID的共现，不给它们自动命名概念。
+
+**相反例子也保留。** MLP输入#20989/#24338在GSM8K发现集中为低于零模型：真实2/1024、参照0.003948；留出却为高于零模型：真实12/1032=0.011628、参照0.003138，共8篇，差0.008490。该单对没有按发现方向复现；主联合向量复现不表示每对稳定。另有发现/留出支持为0的格，不能称为反向。[全部已选12对](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/tables/B_selected_pairs.csv)与[276对完整分量](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/tables/B_all276_components.csv)均保留，未只报最显著项。
+
+**零模型实际质量。** 每模式4链×64样本；burn100扫，每10扫取样。主留出每套字典提出4,617,600次行对交易，改变比例>99.999%；所有已检查快照行32/唯一ID和列次数精确满足，最大列误差0。判定统计的Rhat最高1.0276、ESS最低129.9，达到冻结阈值，无需延长。存在无法交换的固定成员：主留出Attention为1032/99072条激活边、MLP输入1677/99072，均已保留并逐层列ID。高交换率不被单独当成充分混合证据。
+
+**仍未排除。** 仅按数据集×分位固定边际；探索额外按发现最常用token ` the`、` of`、`.`及OTHER分层后，联合信号仍为正，但89个层中52个少于8行，部分约束近乎锁定。它没有匹配所有词面或格式。S08主要是格式描述，**没有独立格式匹配**，本轮同样未做。完整长度中位数252/56/50、代码围栏158/257对0/257对0/257、来源/题型/学科/近重复均保留为竞争解释。跨源差异是各自边际条件下的超额共现差，并不是把两源改成相同边际后比较统一依赖参数；可达效应量仍受边际支持范围影响。
+
+区间以文档为单位，给定发现方向和估计零模型中心，不整合发现选择、频率预测误差和所有零模型估计误差；MCSE另列。零模型打破跨位置的文档连贯性，不能理解为自然文本的因果替代。原S08文档已暴露，本轮只保证新候选未用留出联合值筛选，不声称外部新样本复现。Numina仍缺失。没有读出分类、功能或router结论。
+
+[详细报告](detailed_cn.md) · [协议](protocol_cn.md) · [约束](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/tables/null_constraints_summary.csv) · [混合](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/tables/null_mixing.csv) · [复算](reproduce.md)。本轮停止，等待审阅。

@@ -8,7 +8,7 @@
 [R10 whole-dictionary member atlas](domain_member_atlas_r10_20261030.md): actual960-member cache-only screening, common-spectrum and input-response evidence; no new forwards/training.
 
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **1043 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **1146 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
 
 [Frozen domain-member meeting analysis](domain_members_meeting_20261030.md): actual cache-only 16+16 selection, five figure groups, token/context statistics and explicit matching/coverage gaps; no new forwards or training.
 
@@ -348,3 +348,10 @@ A17 R06 bounded local dynamics: `analysis_a17_r06_local_dynamics_20261026`, six 
 
 
 R17 Feature composition: [four-route results](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md); constructed384-row corrected panel, raw frozen responses and bounded H1–H4 analysis registered2026-11-02. Exposed holdout; scientific acceptanceUnknown.
+
+
+### R18 near/far object-fact behavior, 2026-11-04
+
+Frozen official Base model/tokenizer,444constructed English prefixes,24heldout families and exact16/64/128main gaps. [Selected current output access](checks/2026-11-04_r18_behavior_outputs.json) covers dataset_r18_near_far_object_fact_pairs_20261104 and analysis_r18_near_far_object_fact_behavior_20261104, not a whole-library refresh. [Canonical Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/summary.md) owns observations and boundaries; all raw scores remain execution-side. No SAE/training/intervention or further execution authorization.
+
+[R19 remote-target/near-word composition](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md):292prefixes, two separately encoded native SAEs, discovery12/heldout12families, matched factorial, membership/strength and marginal-controlled joint evidence; no training or intervention.

@@ -99,3 +99,8 @@ R07、R08、R09、R10/R11分别由四个子Anchor持有；[完整范围与当前
 ## R17_D1：双SAE四假设修正重测（2026-11-03）
 
 [完整结果](experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md)。两SAE各H1–H4、独立CC、288新主面板及48附表、600自然文档、原生与位置诊断已完成；原结果保留。无答案细化仍受选择／读出／字典与H4覆盖限制。科学接受Unknown，无后续自动执行。
+
+
+## A15_27_10：近远物品事实行为
+
+[Focus](focus/focus_near_far_object_fact_use_cn.md) · [Anchor](problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_10_near_far_fact_use/anchor_cn.md) · [R18协议](experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol_cn.md)。用户明确激活的行为前置关卡；完整交付后共同审阅，不自动进入SAE。

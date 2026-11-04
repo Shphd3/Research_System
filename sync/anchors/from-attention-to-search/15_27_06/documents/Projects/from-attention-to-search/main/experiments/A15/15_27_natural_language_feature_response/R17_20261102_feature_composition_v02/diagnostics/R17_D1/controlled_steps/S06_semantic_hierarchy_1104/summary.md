@@ -58,4 +58,4 @@ Common features and replacement patterns are reported separately from relative-s
 
 AI mechanistic intuition: relative amplitude redistribution and encoder-rank competition can coexist. The current measurements do not establish native functional use. Lexical cues, remaining template/position effects, dictionary reconstruction and finite stimulus selection remain alternatives. One next researcher decision is whether any conditional fixed-list pattern merits an independently controlled lexical/position study; no such follow-up is started.
 
-[Complete procedure and audit](detailed.md) · [中文完整说明](detailed_cn.md) · [Literal cases and failures](casebook_cn.md) · [Protocol](protocol.md) · [Reproduction](reproduce.md)
+[Complete procedure and audit](detailed.md) · [中文完整说明](detailed_cn.md) · [Literal cases and failures](../../../../../../../../../../../../UNAVAILABLE.md) · [Protocol](protocol.md) · [Reproduction](reproduce.md)

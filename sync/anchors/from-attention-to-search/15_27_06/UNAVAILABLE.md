@@ -4,9 +4,19 @@
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/results`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/prior_audit.md`；原因：outside selected documents or asset/size limit。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md`；原因：outside selected documents or asset/size limit。
 
@@ -30,7 +40,17 @@
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H1/summary.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/results`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/summary.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/summary.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/reproduce.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/protocol_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/correction_ledger.json`；原因：outside allowed source workspace。
 
@@ -94,25 +114,31 @@
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/H4/summary_cn.md`；原因：outside selected documents or asset/size limit。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/data/panel.jsonl`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md`；原因：outside selected documents or asset/size limit。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/detailed.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence/final_numeric_validation.json`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/detailed.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/detailed.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/reproduce.md`；原因：outside selected documents or asset/size limit。
 
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/results/blind_texts.jsonl`；原因：outside allowed source workspace。
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/detailed.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md`；原因：outside selected documents or asset/size limit。
 
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H4/evidence/blind_merge_map.json`；原因：outside allowed source workspace。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/shared/fixed_case_raw.csv`；原因：outside allowed source workspace。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/H1/results/predictions.csv`；原因：outside allowed source workspace。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/casebook_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md`；原因：outside selected documents or asset/size limit。
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/results`；原因：outside allowed source workspace。
 
@@ -120,21 +146,21 @@
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/results/fitted_models.npz`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results/predictions_diagnostic.csv`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results/fitted_models.npz`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/results`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/results/predictions_diagnostic.csv`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/results/fitted_models.npz`；原因：outside allowed source workspace。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/results`；原因：outside allowed source workspace。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/shared/H4_enrichment_views.jsonl`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/conclusion_update_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H2/conclusion_update_cn.md`；原因：outside selected documents or asset/size limit。
 
@@ -194,17 +220,23 @@
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/dataset_guide.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/evidence`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/results`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/results/predictions_diagnostic.csv`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/ATTN_SAE/H1/results/fitted_models.npz`；原因：outside allowed source workspace。
 
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results/predictions_diagnostic.csv`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/CC_CORRECTED/H1/results/fitted_models.npz`；原因：outside allowed source workspace。
+
+- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/casebook.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/conclusion_update.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/MLPIN_SAE/H1/results`；原因：outside allowed source workspace。
 
@@ -251,10 +283,6 @@
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/final_numeric_validation.json`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/dataset_guide.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables`；原因：source unavailable。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/final_numeric_validation.json`；原因：outside allowed source workspace。
-
-- 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/verification.md`；目标：`/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/evidence/execution_certificate.json`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/README_cn.md`；原因：outside selected documents or asset/size limit。
 

@@ -5,7 +5,7 @@
 
 # R17_D1: feature composition and language relations, two native SAEs
 
-[中文](summary_cn.md) · [Detailed](detailed.md) · [Cases](casebook.md) · [Verification](verification.md)
+[中文](summary_cn.md) · [Detailed](detailed.md) · [Cases](../../../../../../../../../../UNAVAILABLE.md) · [Verification](../../../../../../../../../../UNAVAILABLE.md)
 
 Read along three analysis paths: (1) behavior and factor controls, (2) representations and location-specific organization, (3) functional interventions and quality. No causal intervention was run; path3 covers frozen-execution, precision and annotation quality.
 

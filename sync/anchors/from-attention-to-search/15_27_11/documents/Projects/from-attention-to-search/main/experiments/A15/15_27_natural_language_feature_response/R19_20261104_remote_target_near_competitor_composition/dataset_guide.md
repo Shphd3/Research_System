@@ -1,0 +1,20 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/dataset_guide.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/dataset_guide.md)；研究修改仍回到原件。
+
+---
+
+# Data, controls and reference frequency
+
+Qwen3-0.6B Base is used without chat formatting. Each prefix has320tokens. Capture p319, colon tokenID25, immediately before the candidate starts. Attention is block27.o_proj output before residual; MLP input is the actual block27.mlp pre-hook after residual and post-attention normalization. Each native dictionary has30000atoms and32positive retained coordinates. IDs are local to the dictionary.
+
+The gap is p−e−1, excluding both endpoints; e is the last evidence-item token. Main gaps16/64/128 imply e302/254/190. Absolute evidence position and filler order vary with main distance, so no pure-distance mechanism is identified. Complete candidate strings include a leading space, item and period. Every pair has equal token counts; no length averaging. Later candidate/period probabilities are not all localized at p319.
+
+The288formal prefixes comprise24families×12rows: main16/64/128×targetA/B, plus matched128×targetA/B×nearN/A/B. NearN says object or small object, not absence of the near clause. Matched128 fixes e190,p319,question and filler; only the designated role phrase changes. The old48opposite rows are byte-reused;96neutral/congruent supplements complete the factorial. Four existing smoke rows bring inference to292prefixes. Main-versus-old-opposite is confounded by changed filler/clause and is not a one-factor competition contrast.
+
+Clean pairing includes144content,144distance and96near-condition comparisons. A separate48-row audit retains legacy mismatches. The inherited local_suffix metadata is stale in96supplemental rows; the portable view rebuilds it from actual text and retains identical IDs/text/tokens. Numerical inputs and all scientific contrasts use literal text/roles, not that inherited field.
+
+Within each four-family old template group, the first two families are discovery and the last two are representation-heldout. All conditions of a family stay together:12/12families, six shared templates. This is new-family replication within shared templates. Prior behavior was exposed. Common C=6and responsive R≤6are selected on discovery only; strict geometry requires all Cactive in required rows. The nested first3and fixed-list-with-zeros are descriptive predeclared sensitivities.
+
+Frequency groups reuse each native R17_D1reference's300natural discovery documents/38400positions. Eligibility requires positive count≥20and coverage≥5documents. Attention count edges35/70; MLP-input33/62; ties go upward. Attention group sizes(high,middle,low,insufficient,zero)=(4377,4585,4158,15579,1301); MLP=(3429,3503,3299,19024,745). Counts and document coverage were replayed from the source sparse cache. These are reference-corpus frequencies, not training exposure or semantic meanings.
+
+panel_portable.jsonl contains complete literal prefixes/token IDs/offsets/role positions and complete candidate IDs. Its packet name is data/panel.jsonl; IDs/text/tokens are identity-checked against frozen input. The32indices/values per site/row reconstruct the30000post-TopK vector exactly, with all unlisted coordinates zero. Execution caches additionally retain1024-dimensional hook inputs; the packet lists those omitted payloads and their hashes. behavior_*.jsonl retains full per-token and summed candidate scores. sparse_activations.csv exposes every positive member; fixed_member_values.csv contains per-family raw/relative values and T/N/I. No missing family is replaced.

@@ -5,7 +5,7 @@
 
 # R17_D1：Feature组合与自然语言关系，双SAE四假设重测
 
-[English](summary.md) · [完整方法与审计](detailed_cn.md) · [逐例全文、token和响应](casebook_cn.md) · [核验](verification.md)
+[English](summary.md) · [完整方法与审计](detailed_cn.md) · [逐例全文、token和响应](../../../../../../../../../../UNAVAILABLE.md) · [核验](../../../../../../../../../../UNAVAILABLE.md)
 
 本轮按三个分析路径阅读：①行为和文本因素控制：同一数学证书在答案提示／改写／外壳变化时怎样改变预测；②表示和位置组织：两处真实hook及各自字典是否保留可读信号；③功能干预和质量：本轮没有实施因果干预，完成的是冻结前向、轻量读出、数值和标注质量核验。
 

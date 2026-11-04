@@ -5,7 +5,7 @@
 
 # R17_D1详细记录
 
-[Summary](summary_cn.md) · [Protocol](protocol_cn.md) · [修正](corrections_cn.md) · [案例](casebook_cn.md)
+[Summary](summary_cn.md) · [Protocol](protocol_cn.md) · [修正](corrections_cn.md) · [案例](../../../../../../../../../../UNAVAILABLE.md)
 
 ## 目的与识别范围
 
@@ -65,7 +65,7 @@ L2逻辑回归CPU拟合，lbfgs最多5000，class_weight balanced；旧发现fit
 
 ## 证据与状态
 
-八格SAE和四格校正CC的规定计算均实际完成。依赖失败有实际数量，统计不足不冒充没运行，没合格对照不冒充有效估计。全[模块台账](../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/coverage_ledger.csv)、[原始表索引](dataset_guide.md)、[数值核验](verification.md)可追溯。三项独立审计见执行evidence/audit_identification.md、audit_statistics.md、audit_implementation.md。科学接受、机制归因与问题关闭Unknown；没有commit/push、外部发布或持续监控。
+八格SAE和四格校正CC的规定计算均实际完成。依赖失败有实际数量，统计不足不冒充没运行，没合格对照不冒充有效估计。全[模块台账](../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/tables/coverage_ledger.csv)、[原始表索引](dataset_guide.md)、[数值核验](../../../../../../../../../../UNAVAILABLE.md)可追溯。三项独立审计见执行evidence/audit_identification.md、audit_statistics.md、audit_implementation.md。科学接受、机制归因与问题关闭Unknown；没有commit/push、外部发布或持续监控。
 
 
 ### 最终断点核对：有响应、有效对照与输出语境

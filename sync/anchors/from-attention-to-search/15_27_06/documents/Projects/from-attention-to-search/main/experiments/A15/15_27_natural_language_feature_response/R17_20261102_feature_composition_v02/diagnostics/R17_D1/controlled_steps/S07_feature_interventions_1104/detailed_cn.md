@@ -108,7 +108,7 @@ Attention动物alpha.5有小的同成员方向差，8家族一致，支持受限
 
 ## 具体例子、失败和图
 
-[完整F09猫／汽车、两SAE、原新z与全部候选分数、top词、反例](casebook_cn.md)给出每个值与原文的对应。F09猫cat首词rank变好但相对dog略弱，说明排名和判别边际不是同一量。
+[完整F09猫／汽车、两SAE、原新z与全部候选分数、top词、反例](../../../../../../../../../../../../UNAVAILABLE.md)给出每个值与原文的对应。F09猫cat首词rank变好但相对dog略弱，说明排名和判别边际不是同一量。
 
 ![case_animal_ATTN_SAE](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S07_feature_interventions_1104/figures/case_animal_ATTN_SAE.png)
 

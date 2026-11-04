@@ -1,0 +1,17 @@
+# Detailed: equal64 bands and reference-mean ablation
+
+Purpose: compare sixteen disjoint rank64 PCA bands across28 native residual-post sites, with affine TRAIN-mean restoration versus centered-component-only injection. Same Qwen3-0.6B Base/tokenizer and original layer-specific R16 bases, no refit/training.175documents/700natural positions plus37/the positions in a separate panel;180physicaldocuments total. Reference60TRAINdocuments x160positions=9600/layer, no evaluation fitting.
+
+For row h:1x1024, mu:1x1024 and Q:1024x64, coordinates(h-mu)Q:1x64. Restored vector mu+(h-mu)QQ^T versus centered component(h-mu)QQ^T; both outputs1x1024. Their difference ismu. RawhQQ^T is a third operation and not run. All-PC restored isidentity; all-PC withoutmean ish-mu. All16 centered components sum toh-mu; summing16 affine reconstructions incorrectly repeatsmu16times. Mean is a fixed reference baseline, not input-varying coordinates.
+
+Each condition intervenes at one block, then the native suffix/finalnorm/outputhead runs unchanged. Whole-prefix modifiesvalidrows, target-only modifiesexactlyone currentrow per replicatedsequence.192validtokens/paddingto256/causalmask as original. Whole-prefix additionally affects earlypositions outsideTRAINPCApositionrange; scope contrasts do not identify compensation.
+
+Primary:originaltop1IDpreservation, averaged within document then across documents. Secondary:true successor NLL/probability/rank, KL(full||condition), entropy, originaltop1P/rank, exacttop10IDs/P, centered band energy, actual norm and perturbation. Band energy excludes reference mean and is identical by definition between mean modes; equalrank is not equalenergy. Reference frequency labels are frozen original labels, not semantic grain.2000paired document bootstrap, pointwise exploratory intervals.
+
+Initial jobpt-xlcw32lz failed embedded smoke before evaluation on a batch1-versus-batch5 hook/suffix comparison(NLLdifference0.082834nat). Frozen failed code/receipt retained. E1compares matched batch shapes, retaining original0.5logit/0.05targetNLLguards, and separately audits batching. All28nooplogits and102batch contrasts atfixed1/14/28areexact, effectiveconditionbatch4. Matched-shapeactualhooks passed, but their individual errors were not serialized; do not report those as measuredzero. Platform disallows restarting failedjobs, so amendedjobpt-pi9i0qnx uses same2RTX5090spottuple afteroldFAILED;nooverlap/H100/training.
+
+Raw per-document NPZ contains alignedints/floats fieldnames, conditionnames andtop10arrays, atomicfreezeSHA and baseline/headreplay diagnostics. Compressedposition/documentCSVs, allcondition summaries and pairedcomparisons are execution-side; selected summaries/casebook/figures are research reading copies. See summary,manifest,protocol,casebook and execution_certificate. Scientific acceptance/closure remainUnknown. Final count/resource/verification receipt is appended after completion.
+
+
+## Verified completion
+1,403,985 unique records plus9,525 preserved replacement-version records. All737 original state/output and oldhead replays are exact after repairing five auxiliary-only singleton documents. Main summaries and intervals are unchanged (max difference3.637978807091713e-12). No original chunks were overwritten; chunk_index.csv binds paths/hashes and actual batch arithmetic. Main evaluation738.03/754.30seconds; repair44.97/31.55seconds. CPU-only repeated decompression was repaired without new model evaluations. See validation and completion manifests; scientific acceptanceUnknown.

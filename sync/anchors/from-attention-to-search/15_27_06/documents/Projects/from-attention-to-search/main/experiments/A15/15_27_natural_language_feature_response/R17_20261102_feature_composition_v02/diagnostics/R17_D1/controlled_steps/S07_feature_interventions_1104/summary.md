@@ -26,6 +26,6 @@ The final-block tail is exact for these post-attention single-prefix-position ed
 | MLPIN_SAE | vehicle | delete | -1.49317 | NA [NA, NA] | 0 | 1.00000 | INSUFFICIENT_MATCH_OR_SUPPORT |
 | MLPIN_SAE | vehicle | strength | -0.08476 | -0.11220 [-0.14623, -0.06980] | 5 | 1.00000 | INSUFFICIENT_MATCH_OR_SUPPORT |
 
-[完整中文解释](summary_cn.md) · [Detailed](detailed.md) · [Literal cases/ranks](casebook_cn.md) · [Reproduction](../../../../../../../../../../../../UNAVAILABLE.md)
+[完整中文解释](summary_cn.md) · [Detailed](detailed.md) · [Literal cases/ranks](../../../../../../../../../../../../UNAVAILABLE.md) · [Reproduction](../../../../../../../../../../../../UNAVAILABLE.md)
 
 Posthoc control-geometry audit: the two-member Attention-vehicle list has only one angular degree of freedom at fixed norm. Some matched shuffles coincide with or reverse actual target perturbations. The contrast concerns these chosen directions, not arbitrary independent compositional changes. Category differences can therefore reflect list dimension/control sensitivity. No original statistic or selection changed; per-text delta cosines are retained.

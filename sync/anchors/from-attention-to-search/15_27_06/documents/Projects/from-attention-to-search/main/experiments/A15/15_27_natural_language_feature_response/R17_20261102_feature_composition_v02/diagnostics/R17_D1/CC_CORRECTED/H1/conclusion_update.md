@@ -52,7 +52,7 @@ No-answer loss gains, with theorem-group2000-bootstrap simultaneous95% intervals
 - random_minus_union: -0.875456 [-2.111140, 0.003724]
 
 
-Resolved rivals: unbound n, cue/frame confounding, incorrect SAE hook identity, shared dictionary frequencies, mixed dtype and missing equal-budget baselines. Remaining: cue-biased candidate selection, theorem/paraphrase transfer, linear-model calibration, task-signal retention by each dictionary, and limited independent groups. Membership/magnitude are adjusted covariates with a same-support subset, not exact interventions. See [Detailed](../../detailed.md), [cases](../../casebook.md) and [corrections](../../corrections.md).
+Resolved rivals: unbound n, cue/frame confounding, incorrect SAE hook identity, shared dictionary frequencies, mixed dtype and missing equal-budget baselines. Remaining: cue-biased candidate selection, theorem/paraphrase transfer, linear-model calibration, task-signal retention by each dictionary, and limited independent groups. Membership/magnitude are adjusted covariates with a same-support subset, not exact interventions. See [Detailed](../../detailed.md), [cases](../../../../../../../../../../../../UNAVAILABLE.md) and [corrections](../../corrections.md).
 
 ## Conclusion
 

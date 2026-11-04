@@ -3768,7 +3768,7 @@
       "why_cn": "decoder谱投影不能直接给出输入语义，旧头尾领域读出也不裁定细类别；需用同任务和同维对照连接真实文本、重构与残差。",
       "approach_cn": "分开报告R12分类读出、R13最后层累计/分段原生输出、R14频率组删除、R15自然文本属性与输出几何、R16逐层单位置/全前缀投影。",
       "role_for_parent_cn": "A15_27的谱段语义和字典保留子问题；前置R07–R11保持原记录，MoE仅后续应用。",
-      "evidence_state_cn": "R12未确认粗细语义的统一谱排序。R13自然700位置保留头64时原首选保持23.0%，512维为61.4%；恢复顺序含词频/格式混杂。R15的128项预定能量检验无项通过全族规则，空行有符号方向为探索性。R16仅目标位置与全前缀头64干预差异很大，不能只按深浅排序。11月4日删除头64、保留960维补充只有协议，运行结果未登记。",
+      "evidence_state_cn": "R12未确认粗细语义的统一谱排序。R13自然700位置保留头64时原首选保持23.0%，512维为61.4%；恢复顺序含词频/格式混杂。R15的128项预定能量检验无项通过全族规则，空行有符号方向为探索性。R16仅目标位置与全前缀头64干预差异很大，不能只按深浅排序。11月4日删除头64、保留960维补充已交付：700自然位置第1层仅目标保持50.71%，全前缀5.86%；第28层均32.57%。保留头64为77.43%/21.00%和23.00%，两种操作维数和能量不同。",
       "boundary_cn": "方差谱位置、词项频率、外部语义标签和模型输出分别测量。随机64维未匹配头64保留能量，早层单位置结果含后续补偿；没有建立天然语义层级、层独立重要性或专家收益。",
       "related_results": [
         "main/experiments/A15/15_27_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/summary_cn.md",
@@ -3784,7 +3784,9 @@
         "main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/summary_cn.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/summary.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary_cn.md",
-        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary.md"
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/summary_cn.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/summary.md"
       ],
       "evidence_sources": [
         "main/experiments/A15/15_27_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/summary.md",
@@ -3805,7 +3807,9 @@
         "main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/summary.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary_cn.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary.md",
-        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/protocol.md"
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/protocol.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/summary_cn.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/summary.md"
       ],
       "evidence_sources_sha256": {
         "main/experiments/A15/15_27_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/summary.md": "058232a1e5f4371c8e8a7b07ae3c7567083f270577c37abecfc8756ee69dd580",
@@ -3826,9 +3830,11 @@
         "main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/summary.md": "33a3f40bb5b165debbcaf63d58bfa3c14c0cb12e3a4ce3d5bc7e4d1bb7dfaf55",
         "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary_cn.md": "557d70459b04bd62b9fd3c870c23e268b5f84af29a02ba98e995d269e7988e3e",
         "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/summary.md": "7961e34180ba9c4bd02bcea0b8ca4496a315444487a40e3b424e2b7fc3eba712",
-        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/protocol.md": "0e6e0cb9067a46d1e9bbe019a2995f7ce3c56b572d8a33eaac34feca6dc39205"
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/protocol.md": "0e6e0cb9067a46d1e9bbe019a2995f7ce3c56b572d8a33eaac34feca6dc39205",
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/summary_cn.md": "21f1fdc33cd8f5e0ae6470667b92fc9130cab0e3dda5492501f859c4e739a464",
+        "main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/summary.md": "d51726381e8fd06f93dd23536463a5ca8d953f055aac7ecb051023230ba00377"
       },
-      "source_sha256": "498cebb5dab4b32e7a563c37460850da301cb28444a0bd1f25a50f85e254e056",
+      "source_sha256": "142169b5c56674f37fb192936898e4f75d711ae24743070f2de1034e640995c5",
       "reviewed_on": "2026-11-04",
       "related_questions": [
         {
@@ -3923,10 +3929,10 @@
       "why_cn": "将具体文本对应、组合可读性与学习／因果主张分开，给研究者提供可核查的判断依据。",
       "approach_cn": "两独立30000成员Top32 SAE；旧384训练/定位，新288主面板与48附表；各字典600文档频率；条件与直接跨位置效应。 S06补充384条自然层级文本、16模板簇固定8/8、两字典独立成员／联合强弱及改写留出。",
       "role_for_parent_cn": "A15_27的具体组合观测子问题；独立冻结假设及结果分支，不继承训练授权。",
-      "evidence_state_cn": "原R17及双SAE D1重测完成；新无答案文本中，加入细类候选的完整增量未建立。S06显式家族的类内重叠有局部证据，但Top32内同时保留和更替，整份列表不稳定；动物属性猫仅3/8正确。S07做96前缀、14976条件干预；大共同组删除匹配0/8，不构成必要性证据。",
+      "evidence_state_cn": "原R17及双SAE D1重测完成；新无答案文本中，加入细类候选的完整增量未建立。S06显式家族的类内重叠有局部证据，但Top32内同时保留和更替，整份列表不稳定；动物属性猫仅3/8正确。S07做96前缀、14976条件干预；大共同组删除匹配0/8，不构成必要性证据。 S08新增三数据集各257题、共771题：两套SAE六个比较均为两侧内部成员重叠高于跨源；长度、格式、题型和词面混杂仍在，未测答案正确率或功能作用。",
       "boundary_cn": "H1主统计只检验类内相对跨类的重叠子预测；成员列表复现、额外读出和原生输出依赖是分别的比较。两套SAE独立分析，不按编号对应。",
       "source": "main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_06_common_members_extra_responses_anchor.md",
-      "source_sha256": "4b64d37cf63ef35e948f1caf5cf11edad7a50d93b587f5e20917bcbe4eba25a0",
+      "source_sha256": "ca52ee3e057ac897b8dd6fc14a2fd461561993967fa2442d6b033e4e31ea808c",
       "related_results": [
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md",
@@ -3943,7 +3949,10 @@
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary_cn.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary_cn.md",
-        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary.md"
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary_cn.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/summary_cn.md"
       ],
       "evidence_sources": [
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md",
@@ -3966,7 +3975,11 @@
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary_cn.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary.md",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary_cn.md",
-        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary.md"
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary_cn.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/detailed_cn.md",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/detailed.md"
       ],
       "evidence_sources_sha256": {
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md": "3ae65992e906df49595c222287373f50f82e4f56d091d76b0a335ccee98ca05f",
@@ -3989,7 +4002,11 @@
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary_cn.md": "a941602d8286e7b59121d16af0db3b2c7449ae6a40ebf44ea70c16c1d82a0763",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/summary.md": "32f286459c31ca834d509b2a7b639663fb2c23fe2079ebcc95e2aa970dd00ba5",
         "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary_cn.md": "7ebd43350a3e0bc2d663822d975c8ccfb35a22df21480ac02605ee6009b6fac0",
-        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary.md": "8cd684faa030a27e8f9379a945343b568ed8462b6cf5ad6dd65de9cf20b70ca9"
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/summary.md": "8cd684faa030a27e8f9379a945343b568ed8462b6cf5ad6dd65de9cf20b70ca9",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary_cn.md": "6398cb8a6c8b66cd3d5546a6eb68514fcbe24c81f7b0095b4f838083a3c7d881",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary.md": "032950ceb8776fa3480ada93aa7173056d1dcd8ab5d41a44dff8047e56a6ccd7",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/detailed_cn.md": "2613822bccfd3db97d3207021de26e5f7bfb2d50c2abc51ca484e2620dcbd89b",
+        "main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/detailed.md": "745a710e5fcf17a0262c7d962ef99156b88ac4495399d1a0d15039195c7976d5"
       },
       "reviewed_on": "2026-11-04",
       "change_kind": "bounded D1 evidence refresh; no scientificstate transition"
@@ -4183,7 +4200,7 @@
       {
         "title_cn": "谱位置能恢复什么输出",
         "question_cn": "恢复常见词的预测，是否等于先恢复粗语义？",
-        "observation_cn": "读出、累计投影、分段输出与逐层干预均已有结果；尚无统一粗细语义排序。仅改目标位置与改整段前文差异很大。",
+        "observation_cn": "读出、累计投影、分段输出与逐层干预均已有结果；尚无统一粗细语义排序。仅改目标位置与改整段前文差异很大。 删头64保留960维的反向补充已完成，维数和能量差异保留。",
         "ids": [
           "15_27_05"
         ]
@@ -4199,7 +4216,7 @@
       {
         "title_cn": "细概念怎样改变成员组合",
         "question_cn": "细类保留哪些共同成员，又换入或换出哪些？",
-        "observation_cn": "S06在动物和交通工具上观察到部分保留与更替；共同Top32并非只增不减，跨措辞和字典的资格各不相同。",
+        "observation_cn": "S06在动物和交通工具上观察到部分保留与更替；共同Top32并非只增不减，跨措辞和字典的资格各不相同。 新增S08三数据集各257题，两套SAE共六个比较均为源内重叠高于跨源；不直接归因领域知识。",
         "ids": [
           "15_27_06",
           "15_27_07"

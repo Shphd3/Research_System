@@ -310,3 +310,5 @@ A17 R06 bounded local dynamics: `analysis_a17_r06_local_dynamics_20261026`, six 
 
 
 R17 Feature composition: [four-route results](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md); constructed384-row corrected panel, raw frozen responses and bounded H1–H4 analysis registered2026-11-02. Exposed holdout; scientific acceptanceUnknown.
+
+[R19 remote-target/near-word composition](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md):292prefixes, two separately encoded native SAEs, discovery12/heldout12families, matched factorial, membership/strength and marginal-controlled joint evidence; no training or intervention.

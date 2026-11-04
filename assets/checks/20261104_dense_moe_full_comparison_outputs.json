@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-04T03:26:13.832462+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-qcfbf",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 16074,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_dense_moe_full_loss_comparison_20261104",
+      "title_cn": "Dense和MoE完整训练loss及10个同点验证补评估",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/CPU_GPU_validation_comparison.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1600,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/assemble_training.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3952,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/audit_late_order.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2389,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/coverage_ledger.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9880,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/data_order.log",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 781,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/data_statistics.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 871,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/dense_moe_full_comparison.pdf",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 64702,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/dense_moe_full_comparison.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 518823,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/evaluate_cpu.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3991,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/evaluation.log",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8650,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/evaluation_initial_python310_failure.log",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 448,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/evaluation_inputs.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15644,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/implementation_numerics.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 866,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/late_data_order_audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5106,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/late_training_zoom.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 196381,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/learning_rate_audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 223,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/render_report.py",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12158,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/report.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2352,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/report_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5024,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/scientific_identification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 835,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/summary.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1160,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/supplemental_evaluation.log",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 462,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/supplemental_input.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 647,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/supplemental_latest_Dense_validation.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3879,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/supplemental_validation_comparison.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 244,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/training.log",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2311,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/training_comparison.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 118611,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/training_corrected_preview.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 281081,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/training_windows100m.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 856,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_000500000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3872,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_001000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3890,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_003000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3900,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_005000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3892,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_010000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3884,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_015000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3909,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_017000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3908,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_021000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3912,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_031000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3902,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_Dense_033000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3908,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_000500000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3844,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_001000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3875,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_003000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3876,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_005000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3853,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_010000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3859,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_015000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3885,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_017000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3868,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_021000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3876,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_031000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3861,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/val_MoE_033000000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3875,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/validation_comparison.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 943,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/validation_comparison.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5579,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/artifact_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8624,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

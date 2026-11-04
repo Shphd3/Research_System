@@ -21,4 +21,4 @@ Full-coordinate paired differences split into disjoint retained-amplitude/recrui
 
 Scientific/data/implementation audits and coverage status are in evidence/. All source paths/hashes/sizes are indexed by output_manifest.json. The accompanying Detailed contains all candidate counts, wording replications, failed cases, figure explanations and live rivals. No causal, functional, router, training-benefit or general semantic-hierarchy conclusion is authorized by the present associations. Researcher scientific acceptance and closure: Unknown.
 
-[Complete Detailed](detailed_cn.md) · [Exact protocol](protocol.md) · [Summary](summary.md) · [Cases](casebook_cn.md) · [Reproduction](reproduce.md)
+[Complete Detailed](detailed_cn.md) · [Exact protocol](protocol.md) · [Summary](summary.md) · [Cases](../../../../../../../../../../../../UNAVAILABLE.md) · [Reproduction](reproduce.md)

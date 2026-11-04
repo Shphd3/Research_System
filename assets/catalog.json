@@ -258980,6 +258980,2460 @@
         "scientific_acceptance": "Unknown"
       },
       "notes": "OldR16input/PCA/outputs immutable. Newmeasurement hasnativeall28targetstateandoutputreplay. Headdeletevsrandomdelete matchesranknotenergy;keepvsdelete retains64vs960. No intrinsicimportance/semanticpartition/interaction claim."
+    },
+    {
+      "id": "analysis_s09_sae_marginal_joint_distinction_20261104",
+      "title_cn": "S09单成员频率与SAE联合结构区分检验",
+      "category": "analysis",
+      "kind": "discovery_fixed_degree_conditional_joint_audit",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "frozen_plan.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data/document_split.jsonl",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "tables/A_overlap_references.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "tables/B_own_structure.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "tables/B_dataset_differences.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/independent_verification.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/completed.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "parent_asset": "representation_s08_dual_sae_questions_20261104",
+        "source_documents": 771,
+        "per_source_discovery": 128,
+        "per_source_heldout": 129,
+        "SAE_sites": [
+          "ATTN_SAE",
+          "MLPIN_SAE"
+        ],
+        "k": 32,
+        "frequency_and_rowcount_preserved": true,
+        "chains": 4,
+        "null_panels": 256,
+        "training": false,
+        "scientific_acceptance": "Unknown"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/summary.md",
+        "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/frozen_plan.json"
+      ]
+    },
+    {
+      "id": "checkpoint_family_moe_baseline_saved_20261104",
+      "title_cn": "普通MoE实际已保存状态清单",
+      "category": "checkpoint_family",
+      "kind": "actual_checkpoint_family_metadata",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "saved_checkpoints_manifest.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_000000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_000500000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_001000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_003000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_005000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_010000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_013000238080",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_015000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_017000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_019000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_021000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_023000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_025000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_027000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_029000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_031000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_035000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_037000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/checkpoints/step_00141000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/checkpoints/step_00142000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "actual_member_manifest": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss/saved_checkpoints_manifest.json",
+        "latest_logged_tokens": 37449052672,
+        "latest_complete_recovery_tokens": 37221773824,
+        "progress_target": 50000000000,
+        "checkpoint_verification": "producer complete + payload size, copied digests; new recovery test NOT_CHECKED",
+        "use_boundary": "Actual partial progress, not50Bcompletion; SAE interface assessment only, no training approved/run"
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss/report_cn.md",
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss/statistics.json"
+      ]
+    },
+    {
+      "id": "analysis_moe_baseline_progress_loss_20261104",
+      "title_cn": "普通MoE最新loss、时间统计与SAE准备评估",
+      "category": "analysis",
+      "kind": "training_log_and_interface_audit",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "report.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "report_cn.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "statistics.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "baseline_loss_latest.png",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "baseline_loss_latest.pdf",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "saved_checkpoints_manifest.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "actual_member_manifest": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss/saved_checkpoints_manifest.json",
+        "latest_logged_tokens": 37449052672,
+        "latest_complete_recovery_tokens": 37221773824,
+        "progress_target": 50000000000,
+        "checkpoint_verification": "producer complete + payload size, copied digests; new recovery test NOT_CHECKED",
+        "use_boundary": "Actual partial progress, not50Bcompletion; SAE interface assessment only, no training approved/run"
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss/report_cn.md",
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_progress_loss/statistics.json"
+      ]
+    },
+    {
+      "id": "analysis_a15_27_05_equal64_bands_mean_control_20261104",
+      "category": "analysis",
+      "kind": "frozen_layerwise_equal_rank_PCA_native_decoding_and_reference_mean_ablation",
+      "title_cn": "逐层16段等维64方向原生预测与加/不加均值对照",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router execution",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "completion_manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "audit/validation.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "analysis/position_metrics.csv.gz",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "analysis/document_metrics.csv.gz",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "analysis/summary_metrics.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "analysis/chunk_index.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "analysis/chunks/R11_A02_134.npz",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "analysis/batch1_repair_chunks/R11_A02_090.npz",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "parent_asset_ids": [
+          "model_qwen3_0p6b_base_official_a5",
+          "tokenizer_qwen3_0p6b_base_official_a5",
+          "analysis_a15_27_05_layerwise_head64_intervention_20261102"
+        ],
+        "model_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+        "measurement": "same28 residual-post sites and TRAIN PCA; sixteen disjoint rank64 bands, mean-restored vs centered-only, target-only/whole-prefix with native suffix",
+        "physical_documents": 180,
+        "natural_documents": 175,
+        "natural_positions": 700,
+        "aux_positions": 37,
+        "unique_new_records": 1403985,
+        "additional_versioned_repair_records": 9525,
+        "PCA_refits": 0,
+        "training_updates": 0,
+        "old_head_replay_max_NLL_error": 0,
+        "scientific_acceptance": "Unknown"
+      },
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/protocol.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/amendments.md",
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/chunk_index.csv"
+      ],
+      "notes": "All original180chunks retained. Fiveaux-onlysingletondocuments haveversionedbatch1replacements; mainretention/CIunchanged. Samebasisreuseisnotindependentreplication. Equalrankisnotenergy-matched; nosemanticpartition orcompensationmechanism claim."
+    },
+    {
+      "id": "checkpoint_family_dense_moe_validation_inputs_20261104",
+      "title_cn": "Dense和MoE同token补验证实际输入检查点",
+      "category": "checkpoint_family",
+      "kind": "read_only_evaluation_inputs",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_000500000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_001000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_001000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_003000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_003000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_005000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_005000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_010000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_010000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_015000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_015000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_017000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_017000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_021000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_021000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_031000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_031000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/checkpoints/step_00130000",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "state.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "members_manifest": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/evaluation_inputs.json",
+        "evaluated_target": "same heldout prefix32x2048; not training",
+        "resume_capability": "NOT_CHECKED; only model evaluation needed",
+        "supplemental_latest_Dense_manifest": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/supplemental_input.json"
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/evaluation_inputs.json"
+      ]
+    },
+    {
+      "id": "dataset_r18_near_far_object_fact_pairs_20261104",
+      "title_cn": "R18近远容器物品事实配对行为文本",
+      "category": "dataset",
+      "kind": "constructed_english_paired_object_fact_panel",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "data/panel.jsonl",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data/families.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data/templates.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "config.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/freeze.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "model": "model_qwen3_0p6b_base_official_a5",
+        "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+        "families": 28,
+        "smoke_families": 4,
+        "heldout_families": 24,
+        "heldout_template_groups": 6,
+        "prefixes": 444,
+        "prefix_tokens": 320,
+        "main_gaps": [
+          16,
+          64,
+          128
+        ],
+        "gap": "p-e-1; both endpoints excluded; e last item token",
+        "dataset_sha256": "77594e13a72d16b340c34a21d04328a8dab1e3aa8276fdc9f04713a81ac100da",
+        "seed": 20261104,
+        "training": false,
+        "SAE_analysis": false,
+        "scientific_acceptance": "Unknown"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior/config.json"
+      ]
+    },
+    {
+      "id": "analysis_dense_moe_full_loss_comparison_20261104",
+      "title_cn": "Dense和MoE完整训练loss及10个同点验证补评估",
+      "category": "analysis",
+      "kind": "frozen_checkpoint_validation_and_loss_comparison",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "CPU_GPU_validation_comparison.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "assemble_training.py",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "audit_late_order.py",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "coverage_ledger.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data_order.log",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data_statistics.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "dense_moe_full_comparison.pdf",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "dense_moe_full_comparison.png",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evaluate_cpu.py",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evaluation.log",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evaluation_initial_python310_failure.log",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evaluation_inputs.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "implementation_numerics.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "late_data_order_audit.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "late_training_zoom.png",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "learning_rate_audit.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "render_report.py",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "report.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "report_cn.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "scientific_identification.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "summary.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "supplemental_evaluation.log",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "supplemental_input.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "supplemental_latest_Dense_validation.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "supplemental_validation_comparison.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "training.log",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "training_comparison.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "training_corrected_preview.png",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "training_windows100m.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_000500000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_001000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_003000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_005000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_010000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_015000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_017000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_021000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_031000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_Dense_033000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_000500000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_001000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_003000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_005000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_010000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_015000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_017000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_021000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_031000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "val_MoE_033000000000.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "validation_comparison.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "validation_comparison.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "artifact_manifest.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "input_checkpoint_family": "checkpoint_family_dense_moe_validation_inputs_20261104",
+        "data_asset": "dclm_pair_v1",
+        "tokenizer_asset": "tokenizer_qwen3_0p6b_base",
+        "primary_same_CPU_pairs": 10,
+        "validation_positions_each": 65536,
+        "checkpoint_SHA256_verified": true,
+        "new_model_training": false,
+        "GPU_used": false,
+        "heldout_prefix_exposure": "existing repeatedly exposed evaluation prefix; not a new finaltest",
+        "late_data_order_mismatch_after_tokens": 22018691584,
+        "use_boundary": "descriptive CE; no causal disentanglement claim, no cross-seed validation; missingweights listed",
+        "coverage_ledger": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/coverage_ledger.json",
+        "resume_capability": "NOT_APPLICABLE analysis"
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/artifact_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_dense_moe_full_comparison/report_cn.md"
+      ]
+    },
+    {
+      "id": "analysis_r18_near_far_object_fact_behavior_20261104",
+      "title_cn": "R18近远物品事实配对行为评分",
+      "category": "analysis",
+      "kind": "complete_candidate_sequence_paired_fact_switching",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "config.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "results/smoke.jsonl",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "results/heldout.jsonl",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "tables/family_pairs.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "tables/distance_summary.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/verification.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/completed.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "parent_dataset": "dataset_r18_near_far_object_fact_pairs_20261104",
+        "model": "model_qwen3_0p6b_base_official_a5",
+        "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+        "prefixes": 444,
+        "heldout_families": 24,
+        "main_gaps": [
+          16,
+          64,
+          128
+        ],
+        "full_candidate_chain": true,
+        "dtype": "float32",
+        "device": "cpu",
+        "training": false,
+        "SAE_analysis": false,
+        "intervention": false,
+        "scientific_acceptance": "Unknown"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/summary.md",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior/config.json"
+      ]
+    },
+    {
+      "id": "analysis_dense_continuation_sampler_root_cause_20261104",
+      "title_cn": "Dense22B续训采样偏离根因与离线对齐可行性审核",
+      "category": "analysis",
+      "kind": "read_only_training_lineage_and_index_audit",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_sampler_root_cause",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "report.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "report_cn.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "root_cause_evidence.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "ordering_scale.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "candidate_reference_alignment_to50b.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "source_hashes.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "artifact_manifest.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "method": "producer config/source hashes, original input-contract comparison, actual batch digest fromprioraudit, index/mask arithmetic only",
+        "new_tensor_payloads_loaded": false,
+        "training_changed": false,
+        "GPU_used": false,
+        "repair_source_token": 22018691584,
+        "future_index_updates_checked": 106749,
+        "use_boundary": "engineering rootcause + descriptive comparison eligibility; actual restart NOT_TESTED; no new run decision",
+        "recommendation": "Do not retrain now for descriptive early trend; repaired Dense branch needed only for future strict long-run control"
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_sampler_root_cause/artifact_manifest.json",
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/analysis/20261104_sampler_root_cause/report_cn.md"
+      ]
+    },
+    {
+      "id": "dataset_r19_matched_remote_target_near_competitor_20261104",
+      "title_cn": "R19远目标与近处词匹配文本矩阵",
+      "category": "dataset",
+      "kind": "constructed_english_role_matched_factorial_panel",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "config.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data/panel_portable.jsonl",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data/text_pairing.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/construction.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "model": "model_qwen3_0p6b_base_official_a5",
+        "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+        "parent_R18_dataset": "dataset_r18_near_far_object_fact_pairs_20261104",
+        "families": 24,
+        "discovery_families": 12,
+        "representation_heldout_families": 12,
+        "smoke_prefixes": 4,
+        "formal_prefixes": 288,
+        "total_prefixes": 292,
+        "matched_supplements": 96,
+        "prefix_tokens": 320,
+        "target_position": 319,
+        "gap": "p-e-1; both endpoints excluded",
+        "training": false,
+        "activation_interventions": false,
+        "scientific_acceptance": "Unknown",
+        "panel_sha256": "41b09e37083bc72cb7bd5508622c9bdcb398f8b42d104372113d28fcf2a250b0"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/config.json"
+      ]
+    },
+    {
+      "id": "representation_r19_native_dual_sae_composition_20261104",
+      "title_cn": "R19两原生SAE目标位置稀疏激活",
+      "category": "representation",
+      "kind": "native_dual_sae_answer_prefix_top32",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "cache/discovery.npz",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "cache/heldout.npz",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "results/behavior_heldout.jsonl",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "data/candidates.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/verification.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "model": "model_qwen3_0p6b_base_official_a5",
+        "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+        "parent_R18_dataset": "dataset_r18_near_far_object_fact_pairs_20261104",
+        "families": 24,
+        "discovery_families": 12,
+        "representation_heldout_families": 12,
+        "smoke_prefixes": 4,
+        "formal_prefixes": 288,
+        "total_prefixes": 292,
+        "matched_supplements": 96,
+        "prefix_tokens": 320,
+        "target_position": 319,
+        "gap": "p-e-1; both endpoints excluded",
+        "training": false,
+        "activation_interventions": false,
+        "scientific_acceptance": "Unknown",
+        "SAE_assets": [
+          "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+          "sae_qwen3_0p6b_e16_layer27_final_1b"
+        ],
+        "dictionaries_separate": true,
+        "post_topk": 32,
+        "native_features": 30000,
+        "selection_sha256": "eb12c020f995704530475cee00d58265bc76293b78ed27f9dff2e913de2b5ba0",
+        "parent_dataset": "dataset_r19_matched_remote_target_near_competitor_20261104"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/config.json"
+      ]
+    },
+    {
+      "id": "analysis_r19_remote_target_near_competitor_20261104",
+      "title_cn": "R19远目标近处竞争组合与行为分析",
+      "category": "analysis",
+      "kind": "family_paired_membership_strength_joint_and_behavior",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "tables/family_geometry.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "tables/membership_summary.csv",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "results/primary_hypotheses.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "results/joint_hypotheses.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "evidence/verification.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "model": "model_qwen3_0p6b_base_official_a5",
+        "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+        "parent_R18_dataset": "dataset_r18_near_far_object_fact_pairs_20261104",
+        "families": 24,
+        "discovery_families": 12,
+        "representation_heldout_families": 12,
+        "smoke_prefixes": 4,
+        "formal_prefixes": 288,
+        "total_prefixes": 292,
+        "matched_supplements": 96,
+        "prefix_tokens": 320,
+        "target_position": 319,
+        "gap": "p-e-1; both endpoints excluded",
+        "training": false,
+        "activation_interventions": false,
+        "scientific_acceptance": "Unknown",
+        "SAE_assets": [
+          "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+          "sae_qwen3_0p6b_e16_layer27_final_1b"
+        ],
+        "dictionaries_separate": true,
+        "post_topk": 32,
+        "native_features": 30000,
+        "selection_sha256": "eb12c020f995704530475cee00d58265bc76293b78ed27f9dff2e913de2b5ba0",
+        "parent_dataset": "dataset_r19_matched_remote_target_near_competitor_20261104"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/config.json"
+      ]
+    },
+    {
+      "id": "checkpoint_family_moe_gate_sae_smoke_20261104",
+      "title_cn": "冻结MoE33B末层router输入SAE：实际4H100 smoke与真实重启状态",
+      "category": "sae_checkpoint",
+      "kind": "engineering_sae_checkpoint_family",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "reference/checkpoints/recovery_0.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "reference/checkpoints/recovery_1.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "reference/checkpoints/sae_step_100.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "reference/checkpoints/trace_00060.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "reference/checkpoints/trace_00061.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "reference/sae_full_final.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/checkpoints/recovery_0.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/checkpoints/recovery_1.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/checkpoints/sae_step_100.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/checkpoints/trace_00060.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/checkpoints/trace_00061.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/sae_full_final.pt",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "resumed/sae_partial.pt",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "scope": "ENGINEERING_SMOKE_ONLY_NOT_1B_FORMAL",
+        "producer_job_id": "pt-3l4080ju",
+        "model_parent_asset_id": "checkpoint_family_moe_baseline_saved_20261104",
+        "model_parent_tokens": 33000000000,
+        "model_parent_checkpoint": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000",
+        "model_parent_state_sha256": "3e392157d5dd9a5cb1f3190dc7ebbd385baaa02d90ed4a9e4f5ac72997e5c795",
+        "required_inputs": [
+          "checkpoint_family_moe_baseline_saved_20261104",
+          "tokenizer_qwen3_0p6b_base",
+          "dclm_pair_v1"
+        ],
+        "interface": "native blocks.7.norm2 output = last linear router input before bias;1024D",
+        "SAE": {
+          "width": 30000,
+          "k": 32,
+          "parameters": 61471024,
+          "preprocessing": "E16 raw non-unit-normalized input; per-sequence normquantile0.999"
+        },
+        "actual_members": [
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/recovery_0.pt",
+            "bytes": 738800926,
+            "sha256_fresh": "b57146575fc23f5b9582cd38016418597ff6e00208f18b0689edc094098ec0c1",
+            "arm": "reference",
+            "saved_kind": "complete_resumable_state",
+            "step": 61,
+            "raw_positions": 249856,
+            "eligible_positions": 249369,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/recovery_0.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/recovery_1.pt",
+            "bytes": 738801182,
+            "sha256_fresh": "439ec1876c92a1cbbdddfcefbc176f5ff25628ca32b6b71b5f8b7ebfd57b1c8b",
+            "arm": "reference",
+            "saved_kind": "complete_resumable_state",
+            "step": 100,
+            "raw_positions": 409600,
+            "eligible_positions": 408802,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/recovery_1.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/sae_step_100.pt",
+            "bytes": 245887160,
+            "sha256_fresh": "3a7944c71f13008e3c6767ecdc9995efde88d4a0eaa65056be818484f0bb2050",
+            "arm": "reference",
+            "saved_kind": "SAE_weights_only",
+            "step": 100,
+            "raw_positions": 409600
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/trace_00060.pt",
+            "bytes": 738800926,
+            "sha256_fresh": "f388f09938a1afdb92974a9b1ec1f2248b773ce5a54130edc40f48cc6ae0c0a5",
+            "arm": "reference",
+            "saved_kind": "complete_resumable_state",
+            "step": 60,
+            "raw_positions": 245760,
+            "eligible_positions": 245281,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/trace_00060.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/trace_00061.pt",
+            "bytes": 738800926,
+            "sha256_fresh": "b57146575fc23f5b9582cd38016418597ff6e00208f18b0689edc094098ec0c1",
+            "arm": "reference",
+            "saved_kind": "complete_resumable_state",
+            "step": 61,
+            "raw_positions": 249856,
+            "eligible_positions": 249369,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/checkpoints/trace_00061.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/reference/sae_full_final.pt",
+            "bytes": 245890184,
+            "sha256_fresh": "0eec4e8068812a674470f571dd2a9bc887d83a00087f760d223b6a2b53fa603f",
+            "arm": "reference",
+            "saved_kind": "SAE_weights_only",
+            "step": 100,
+            "raw_positions": 409600,
+            "eligible_positions": 408802
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/recovery_0.pt",
+            "bytes": 738800926,
+            "sha256_fresh": "b57146575fc23f5b9582cd38016418597ff6e00208f18b0689edc094098ec0c1",
+            "arm": "resumed",
+            "saved_kind": "complete_resumable_state",
+            "step": 61,
+            "raw_positions": 249856,
+            "eligible_positions": 249369,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/recovery_0.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/recovery_1.pt",
+            "bytes": 738801502,
+            "sha256_fresh": "75dc20150e987cdaec10eee142c1829330461b6abc4cce300ea069a210723f20",
+            "arm": "resumed",
+            "saved_kind": "complete_resumable_state",
+            "step": 100,
+            "raw_positions": 409600,
+            "eligible_positions": 408802,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/recovery_1.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/sae_step_100.pt",
+            "bytes": 245887160,
+            "sha256_fresh": "3a7944c71f13008e3c6767ecdc9995efde88d4a0eaa65056be818484f0bb2050",
+            "arm": "resumed",
+            "saved_kind": "SAE_weights_only",
+            "step": 100,
+            "raw_positions": 409600
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/trace_00060.pt",
+            "bytes": 738800926,
+            "sha256_fresh": "f388f09938a1afdb92974a9b1ec1f2248b773ce5a54130edc40f48cc6ae0c0a5",
+            "arm": "resumed",
+            "saved_kind": "complete_resumable_state",
+            "step": 60,
+            "raw_positions": 245760,
+            "eligible_positions": 245281,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/trace_00060.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/trace_00061.pt",
+            "bytes": 738800926,
+            "sha256_fresh": "b57146575fc23f5b9582cd38016418597ff6e00208f18b0689edc094098ec0c1",
+            "arm": "resumed",
+            "saved_kind": "complete_resumable_state",
+            "step": 61,
+            "raw_positions": 249856,
+            "eligible_positions": 249369,
+            "completion_marker": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/checkpoints/trace_00061.json"
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/sae_full_final.pt",
+            "bytes": 245890184,
+            "sha256_fresh": "0eec4e8068812a674470f571dd2a9bc887d83a00087f760d223b6a2b53fa603f",
+            "arm": "resumed",
+            "saved_kind": "SAE_weights_only",
+            "step": 100,
+            "raw_positions": 409600,
+            "eligible_positions": 408802
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/resumed/sae_partial.pt",
+            "bytes": 245890160,
+            "sha256_fresh": "788b39fd3a978fd00f249b5ea0ed3eba18014dad323df7ae7927451a0c42965b",
+            "arm": "resumed",
+            "saved_kind": "SAE_weights_only",
+            "step": 60,
+            "raw_positions": 245760
+          }
+        ],
+        "reached_optimizer_step": 100,
+        "raw_positions_at100": 409600,
+        "valid_context_positions_at100": 409200,
+        "eligible_sae_positions_at100": 408802,
+        "resume_capability": "PASS_REAL_ALL4PROCESS_EXIT_RESTART; bitwise exact model/Adam/LR/allrankRNG/data/activity/bias at60/61/100 and all100losses",
+        "qualification": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/smoke/smoke_qualification.json",
+        "scientific_feature_utility": "Unknown",
+        "formal_training_target_not_reached": true
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/docs/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/audit/source_freeze.json",
+        "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/configs/smoke.json"
+      ],
+      "notes_cn": [
+        "实际保存状态，逐文件重新核对SHA256；不是1B正式端点。",
+        "独立SAE仅工程检查；冻结MoE及bias无更新。"
+      ]
+    },
+    {
+      "id": "analysis_moe_gate_sae_qualification_20261104",
+      "title_cn": "MoE33B gating输入独立SAE的配方核对、GPU smoke与真实恢复证据",
+      "category": "analysis",
+      "kind": "training_implementation_and_resume_qualification",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b",
+          "expected": "directory",
+          "required": true,
+          "probes": [
+            {
+              "path": "docs/protocol.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "docs/protocol_cn.md",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "configs/formal.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "audit/source_freeze.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "audit/recipe_alignment.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "audit/tokenizer_alignment.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "audit/data_order_alignment.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "runs/smoke/smoke_qualification.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "runs/smoke/reference/summary.json",
+              "expected": "file",
+              "required": true
+            },
+            {
+              "path": "runs/smoke/resumed/summary.json",
+              "expected": "file",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "identity": {
+        "producer_job": "pt-3l4080ju",
+        "parent_asset": "checkpoint_family_moe_gate_sae_smoke_20261104",
+        "qualification": {
+          "verdict": "PASS",
+          "gates": {
+            "restart_exact_sae": true,
+            "restart_exact_optimizer": true,
+            "restart_exact_scheduler": true,
+            "restart_exact_rank_states": true,
+            "restart_exact_frozen_load_bias": true,
+            "restart_exact_raw_activation_tokens_seen": true,
+            "restart_exact_eligible_sae_tokens_seen": true,
+            "restart_exact_valid_prediction_tokens_seen": true,
+            "restart_exact_next_step": true,
+            "boundary_60_sae_exact": true,
+            "boundary_60_optimizer_exact": true,
+            "boundary_60_scheduler_exact": true,
+            "boundary_60_rank_states_exact": true,
+            "boundary_61_sae_exact": true,
+            "boundary_61_optimizer_exact": true,
+            "boundary_61_scheduler_exact": true,
+            "boundary_61_rank_states_exact": true,
+            "reference_trainer": true,
+            "reference_sample_ids_and_input": true,
+            "reference_tensorboard_finite": true,
+            "reference_tensorboard_monotone": true,
+            "resumed_trainer": true,
+            "resumed_sample_ids_and_input": true,
+            "resumed_tensorboard_finite": true,
+            "resumed_tensorboard_monotone": true,
+            "four_ranks_restore_receipts": true,
+            "per_step_loss_sample_lr_exact": true
+          },
+          "numerical_tolerance": "bitwise exact tensors, optimizer, all-rank RNG, sample IDs and all100 step losses",
+          "real_process_restart": "three separate torchrun groups; all4 workers exit before next group; split after60; compare boundary60/61 and final100",
+          "steady_positions_per_second": 253847.80846292677,
+          "mean_peak_allocated_gib": 3.6299182176589966,
+          "mean_peak_reserved_gib": 4.111328125
+        },
+        "formal_job_id": "pt-zgngnz9q",
+        "formal_state": "SUBMITTED_PENDING_PLATFORM_VERIFICATION",
+        "scientific_acceptance": "Unknown"
+      },
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/docs/protocol.md",
+        "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/audit/authorization.json"
+      ]
     }
   ],
   "catalog_amendments": [
@@ -259890,6 +262344,22 @@
         "analysis_feature_composition_h1_h4_20261102_v02"
       ],
       "boundary": "exposed-holdout corrected analysis; no new model/CC checkpoint and no scientific acceptance"
+    },
+    {
+      "date": "2026-11-04T03:04:18.896455+00:00",
+      "reason": "Register actually completed R16 equal64 and mean control analysis with immutable original and repaired auxiliary arrays",
+      "asset_ids": [
+        "analysis_a15_27_05_equal64_bands_mean_control_20261104"
+      ]
+    },
+    {
+      "UTC": "2026-11-04T05:15:11.950058+00:00",
+      "action": "Register actually saved bounded R19 matched texts, native SAE sparse observations and analysis; no checkpoint training or scientific acceptance",
+      "asset_ids": [
+        "dataset_r19_matched_remote_target_near_competitor_20261104",
+        "representation_r19_native_dual_sae_composition_20261104",
+        "analysis_r19_remote_target_near_competitor_20261104"
+      ]
     }
   ],
   "created_at_utc": "2026-10-09T07:34:26.241550+00:00",

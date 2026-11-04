@@ -60,6 +60,8 @@
 
 - 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail/summary_cn.md`；原因：outside selected documents or asset/size limit。
 
+- 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary_cn.md`；原因：outside selected documents or asset/size limit。
+
 - 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/detailed.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/summary.md`；原因：outside selected documents or asset/size limit。
@@ -77,6 +79,14 @@
 - 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/anchor.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/protocol.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/anchor.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/protocol.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_05_spectral_semantic_granularity_anchor.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/detailed_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/amendments.md`；原因：outside selected documents or asset/size limit。
 
@@ -125,6 +135,12 @@
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/assets_and_data_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/analysis/output_type_fractions.csv`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/assets_and_data_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_delete_head64_keep960/analysis/token_transitions.csv`；原因：outside allowed source workspace。
+
+- 来源：`assets/native_spectral_decoding_20261101_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`assets/native_spectral_decoding_20261101_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/assets_and_data_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`assets/native_spectral_decoding_20261101_cn.md`；目标：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/completion_manifest.json`；原因：outside allowed source workspace。
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R14_20261102_concept_specificity_v1/assets_and_data.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R14_20261102_concept_specificity_v1/evidence/prefixes_effective_metadata.jsonl`；原因：outside selected documents or asset/size limit。
 
@@ -276,6 +292,12 @@
 
 - 来源：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/reproduce.md`；目标：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/validation_selection_frozen.json`；原因：outside allowed source workspace。
 
+- 来源：`assets/native_spectral_decoding_20261101.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`assets/native_spectral_decoding_20261101.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/assets_and_data.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`assets/native_spectral_decoding_20261101.md`；目标：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/completion_manifest.json`；原因：outside allowed source workspace。
+
 - 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/README_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/README_cn.md`；原因：outside selected documents or asset/size limit。
@@ -409,6 +431,12 @@
 - 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_09_rare_configurations_content_anchor_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_near_far_object_fact_use_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_10_near_far_fact_use/anchor_cn.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap_cn.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol_cn.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/README.md`；原因：outside selected documents or asset/size limit。
 
@@ -559,3 +587,9 @@
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_09_rare_configurations_content_anchor.md`；原因：outside selected documents or asset/size limit。
 
 - 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_near_far_object_fact_use.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_10_near_far_fact_use/anchor.md`；原因：outside selected documents or asset/size limit。
+
+- 来源：`Projects/from-attention-to-search/main/roadmap.md`；目标：`/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol.md`；原因：outside selected documents or asset/size limit。

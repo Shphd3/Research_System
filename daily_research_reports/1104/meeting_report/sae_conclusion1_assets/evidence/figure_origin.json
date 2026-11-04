@@ -1,0 +1,65 @@
+{
+  "UTC": "2026-11-04T05:21:40.254750+00:00",
+  "role": "Requested derived meeting presentation, first conclusion only",
+  "models_or_forward_new": false,
+  "original_research_files_changed": 0,
+  "source": "S06 explicit heldout8families; S08 natural questions257/source; S09 separate128/129split frequency-control reminder",
+  "figure1": {
+    "original_means_verified": true,
+    "new_errorbars": "Each original mean has its own20,000family-bootstrap percentile95%CI, seed20261104; original paired-differenceCIs not reused",
+    "family_level_pairs": [
+      3,
+      3,
+      9
+    ],
+    "heldout_families": [
+      "F09",
+      "F10",
+      "F11",
+      "F12",
+      "F13",
+      "F14",
+      "F15",
+      "F16"
+    ]
+  },
+  "figure2": {
+    "case": "F09",
+    "site": "ATTN_SAE",
+    "row_counts": [
+      32,
+      32
+    ],
+    "retained": 24,
+    "lost": 8,
+    "gained": 8,
+    "position_zero_based": 22,
+    "token_id": 25,
+    "text_edit": "an animal -> a cat, article also changes, token positions13and14change",
+    "coordinate_order": "Shared sortedIDs, lost sortedIDs, gained sortedIDs;40-column support union"
+  },
+  "font": {
+    "path": "/data/250010109/Research_System/daily_research_reports/backup/2026/09/0921/report_assets/fonts/NotoSansCJKsc-Regular.otf",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "redistributed": false,
+    "SVG_text_editable": true,
+    "outline_SVG_for_font_independent_display": true
+  },
+  "visual_review": "Actual rendered PNGs inspected; clean0-1axis, matching-column membership, raw text, reading-position arrows, category/article highlights and ID mapping checked",
+  "images": [
+    {
+      "name": "figure1_category_overlap.png",
+      "width": 3792,
+      "height": 1728,
+      "bytes": 312538,
+      "sha256": "d04ba37cf60c944e89e6108b89c20765d1c1241fce69ddbd29b59b7622c556c3"
+    },
+    {
+      "name": "figure2_F09_member_replacement.png",
+      "width": 4320,
+      "height": 2400,
+      "bytes": 619636,
+      "sha256": "adc11d717803e05a5e0468efb70f9c5add4d705515b4d42b5805b29a106fcb95"
+    }
+  ]
+}

@@ -135,7 +135,7 @@
 
 ## 来源与范围
 
-包含 63 份文档及 70 个引用资产；279 条未包含引用见 [UNAVAILABLE.md](UNAVAILABLE.md)。
+包含 63 份文档及 70 个引用资产；296 条未包含引用见 [UNAVAILABLE.md](UNAVAILABLE.md)。
 
 原始字节副本在 `sources/`；可移植阅读副本在 `documents/`，只调整链接并添加来源说明。版本与两类文件哈希见 [manifest.json](manifest.json)。
 

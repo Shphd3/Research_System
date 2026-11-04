@@ -126,7 +126,7 @@ native preactivation是encoder线性输出，ReLU后只保留32个。零值可�
 
 ## 反例、旧候选与图
 
-[完整F09及每接口／大类固定规则反例](casebook_cn.md)保留原文、全部token、具体成员z/q、换入／换出ID和行为失败。旧S03候选另在old_S03_candidates.csv全量报告，新名单不冒充旧名单。按预选F09展示不意味F09最好；同向时也显示最弱例并明确没有负例满足规则。
+[完整F09及每接口／大类固定规则反例](../../../../../../../../../../../../UNAVAILABLE.md)保留原文、全部token、具体成员z/q、换入／换出ID和行为失败。旧S03候选另在old_S03_candidates.csv全量报告，新名单不冒充旧名单。按预选F09展示不意味F09最好；同向时也显示最弱例并明确没有负例满足规则。
 
 ![case_animal_ATTN_SAE](../../../../../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/figures/case_animal_ATTN_SAE.png)
 

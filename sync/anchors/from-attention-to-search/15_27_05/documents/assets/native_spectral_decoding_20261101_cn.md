@@ -17,3 +17,6 @@
 全量执行根：`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/`。原始逐位置概率在analysis/raw_outputs.jsonl，全部新h在data/native_h27_fresh/，绑定索引为data/native_positions.jsonl。项目只保留明确选择的图、逐文档表、固定样例和审计，见selected_evidence_manifest.json。
 
 CPU复算：analyze.py → recovery_groups.py → validate.py → render.py；不调用模型。历史实际执行A4协议与事后A5/A6修订分开，不能把事后文本冒充输出前冻结版本。
+
+
+2026-11-04：新增资产`analysis_a15_27_05_equal64_bands_mean_control_20261104`，对应已完成的逐层等维谱段／均值对照。[结果](../../UNAVAILABLE.md)、[输入与原始数据](../../UNAVAILABLE.md)、[实际完成](../../UNAVAILABLE.md)。同R16模型、文本、PCA，无训练或重拟合；原始版及辅助文档数值修复版均保留，科学接受Unknown。

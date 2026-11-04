@@ -52,3 +52,9 @@
 - [R16 delete-head64 / keep960](from-attention-to-search/15_27_05_R16_delete/README.md): bounded arrival-round reading copy under the existing scientific owner.
 
 - [S08 dataset support overlap](from-attention-to-search/15_27_06_S08/README.md): bounded arrival-round reading copy under the existing scientific owner.
+
+- [R16等维谱段与参考均值对照](from-attention-to-search/15_27_05_R16_equal64/README.md)：原15_27_05主anchor的本轮有界阅读副本，含当前结果与必要旧R16／删除对照；这是阅读导航，不是新科研问题。
+
+- [A15_27_10：近远物品事实行为](from-attention-to-search/15_27_10/README.md)：本轮行为前置关卡，含完整原文、逐家族数据、操作门槛与不确定性；无SAE／训练／干预，科学接受Unknown，仅本地阅读副本。
+
+- [15_27_11: remote target / nearby competitor composition](from-attention-to-search/15_27_11/README.md): R19 factual results and raw-case reading; scientific acceptance Unknown; no training/intervention.

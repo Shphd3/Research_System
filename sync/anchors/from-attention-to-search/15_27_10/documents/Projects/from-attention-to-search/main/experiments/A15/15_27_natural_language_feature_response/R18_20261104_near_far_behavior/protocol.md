@@ -1,0 +1,63 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol.md)；研究修改仍回到原件。
+
+---
+
+# Protocol: R18 near/far object-fact behavior
+
+## 0. Approval Snapshot
+Document: APPROVED_FOR_BOUNDED_LOCAL_BEHAVIOR. Registered at 2026-11-04T03:03:05.616821+00:00. Scope approval: direct current user request, including implementation, smoke, full inference, controls, figure and raw delivery, then STOP. [Focus](../../../../focus/focus_near_far_object_fact_use.md) and [Anchor](../../../../../../../../UNAVAILABLE.md) carry the user-activated question. A–G scientific/data/model/metric/numerics/artifact/boundary checks: PASS under this same authorization; self-audit, not independent review or scientific acceptance. Role: operationalization of behavioral eligibility before SAE research. No training, feature analysis or intervention. Selected engineering settings below implement the delegated task; they are not independently researcher-confirmed mechanism judgments.
+
+## 1. Terminology / Definitions
+Family = one container/object pair/template instantiation. Versions and distances are repeated within a family. Six heldout template strata each contain4families. Zero-based evidence e is the last tokenizer token overlapping the whole item phrase; p=319 is the last prefix token. Gap d=p-e-1 excludes BOTH endpoints. Answer begins at token index320. Main actual gaps16/64/128. Natural paraphrase near gaps16/17/18 are kept with each row. Baseline has no identifiable factual item and only a nominal slot gap. “Far” is relative to this task's16gap, never a universal threshold.
+
+## 2. Anchor Alignment
+Question: can facts in the visible prefix control paired candidate choice at a fixed local question? This behavior is prerequisite evidence, separate from fixed-token feature sensitivity in R09. The sole next decision belongs to the researcher after raw delivery.
+
+## 3. Tested Hypothesis
+Both fact directions induce the correct candidate ordering on at least80%of heldout families at near and at least one predeclared far distance. Primary population is the24constructed families, not natural language or all possible templates.
+
+## 4. Rival Explanations
+One-candidate prior is checked using paired A/B and neutral unidentified-item baselines. Answer leakage is prohibited in main questions/filler; whole-word item matching and complete tokenizer offsets protect against substring matches. Nearest-object copying is diagnosed with a wrong candidate in a separate other-container fact near the question,128gap only. A/B in this lure condition also changes the opposing foil, so it is diagnostic and is not a clean single-fact treatment. Natural fact paraphrases test wording scope. Absolute fact position and order relative to filler co-vary with distance and remain inseparable in this manipulation.
+
+## 5. Data Construction And Provenance
+Frozen file: /data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior/data/panel.jsonl; SHA256 77594e13a72d16b340c34a21d04328a8dab1e3aa8276fdc9f04713a81ac100da. Family metadata: /data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior/data/families.json;24heldout+4smoke families,28distinct object pairs. Main/neutral baseline have168/84prefixes; heldout paraphrase/lure have144/48; total444. English templates, full actual texts, filler inventory and all token IDs/offsets are saved. Four smoke families use two S templates; six H templates appear only in heldout. No rewrite of a smoke skeleton crosses into heldout. Objects may recur across different pairs; the exact pairs are distinct and no weight fitting occurs. Shared generic task form limits independence beyond these named templates. Candidate phrases have a leading space and final period:25pairs have2tokens per candidate,3pairs have3tokens; all pairs match within family. No difficult item is removed after responses.
+
+## 6. Learning Task And Permitted Supervision
+Frozen causal inference only. Ground truth is generated from the explicit target fact; no discovery fit, labels as input, in-context demonstrations, chat template, BOS or thinking mode. Candidate names appear only in main fact and hypothetical scored completion. No free-generation correctness claim.
+
+## 7. Model / Architecture And Frozen Variants
+Asset IDs model_qwen3_0p6b_base_official_a5 and tokenizer_qwen3_0p6b_base_official_a5; path /data/250010109/model_cache/Qwen3-0.6B-Base-official. Architecture28layers,hidden1024,context32768,vocab151936,tied embeddings. Native AutoModelForCausalLM, eval, requires_grad(False), FP32 CPU, SDPA,2threads. Current strict access passed and full file hashes are in config.json; hash before and after each stage. Inspect/reuse S06 run.py native model and complete-sequence scoring; remove SAE hooks and keep no SAE in memory. No decommon or Dense model is substituted. Runtime dependencies use existing /data/250010109/dependency_packages/hf_transformers_qwen3; no downloads.
+
+## 8. Training Objective And Optimization
+NOT_APPLICABLE. Trainable parameters0; updates0; no optimizer, SAE, fitting, PCA or representation cache. Saved data are input tokens and output scores only.
+
+## 9. Conditions, Seeds, And Checkpoints
+Random seed20261104 for deterministic filler permutations and10000uncertainty resamples. Main/neutral at planned16,64,128. Paraphrase at all distances; lure128only. Prefix length320, physical scoring shape2x328with right padding, same position/mask convention. For a given family/mode, all distances have exactly the same token multiset and unchanged filler sentence inventory/order, with only the target fact's insertion point moving. Prefix length is fixed across all families/modes, but filler inventories can differ across families/modes. Candidate lengths are equal within pair. Config and scripts are frozen before smoke; no selection or tuning after smoke.
+
+## 10. Primary Metric And Frozen Analysis Plan
+For each candidate sum EVERY token log probability, including period, with teacher forcing of its own preceding candidate tokens. Preserve per-token values, token count, total, mean and item-only total. Correctness requires a strictly higher score; ties fail. For each family-distance pair, success=correct(A) AND correct(B), never simple change of choice. Primary switch rate=mean of these binary family outcomes. Also report family-mean accuracy and family-mean correct-minus-wrong margin (nat). Use95%Wilson family intervals for binary switch,10000paired-family bootstrap for mean margins and paired changes; use template-cluster bootstrap sensitivity with six heldout templates. Distances are paired, not independent. No multiple hypothesis significance claims; all three planned points reported, no best-distance search beyond this fixed set.
+
+## 11. Secondary Metrics And Guards
+Report raw accuracy A/B, candidate-only preferences under no identifiable fact, A/B preference delta, item-only/mean-score sensitivity, multi-token pair results, per-template results and every family. Baseline-centered margins are descriptive, never replacement primary scoring. The local-question suffix is byte-identical between A/B and across distances for each main family. Leakage guard treats an explicit foil as intentional only in lure. Keep no missing or failed condition silently; a technical failure blocks affected row, not a new template search.
+
+## 12. Known Good / Known Bad / Known Confusing Cases
+Ground truth in explicit fact pairs is directly readable; a neutral object has no identifiable A/B truth. The same candidates with different lexical priors can be confusing despite equal lengths. Implementation checks compare separate public full-forward token probabilities, candidate-prefix lane equality and prefix-only causal equality (tolerances2e-5for logprob,1e-5for hidden state). A separate toy-car/toy-truck multi-token calibration fixture verifies chain scoring without opening heldout behavioral results. Smoke is an implementation gate, not a model-accuracy filter.
+
+## 13. Scientific Procedure And Stage Contracts
+1. Prepare all444rows before inference: full tokenization, true endpoints, pair invariance, multiset, leakage and split checks. Failure stops construction and preserves development history.
+2. Freeze Anchor/Protocol/config/data/scripts by hash. Score only4smoke families36prefixes; independently verify public-forward scores and causal position. Smoke behavior cannot modify templates. Failures preserve logs and permit only implementation fixes with amendments.
+3. With implementation PASS, score the remaining408prefixes unchanged. CPU2threads,each stage<3600s; no remote job or GPU allocation. Report observed speed and stop if ceiling reached; no automatic costly escalation.
+4. Aggregate by family, write all scores/pairs/uncertainty, show success and failure cases according to fixed rule below, plot, verify and stop. No dependent SAE execution.
+
+## 14. Algorithm, Output, And Provenance Contract
+Scripts and config live at /data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior; text copies and canonical records at /data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior; sole Anchor at /data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_10_near_far_fact_use. Raw tokenized panel/JSONL outputs remain execution-side. Save immutable freeze receipt, input strict check, code/input hashes, stage timing and explicit no-update evidence. Display first heldout family with paired success at128, and first heldout family with a failed pair at128 (then64then16 if absent); if no failure, say none, without inventing one. Each selected case includes FULL A/B input, evidence/target IDs, per-token candidate scores and margins. Also show one lure failure if it exists. Full complete casebook covers all pairs.
+
+## 15. Success / Failure / Insufficient Evidence
+User numerical gate: paired switch>=.80 at near; a predeclared far condition additionally>=.80 with diverse families/pairs before becoming a candidate for main feature analysis. Sample/coverage fixed24families,24pairs,6templates, with the actual counts always shown. Numerical pass and evidential sufficiency are reported separately. AI conservative operationalization of “near threshold/evidence insufficient”: if a95%Wilson interval includes .80, mark stable eligibility INSUFFICIENT even if point gate passes. If upper bound<.80, current-task gate NOT_PASSED; if lower bound>.80 and coverage remains complete, evidence clears this bounded behavior gate. Equality at boundary is insufficient. No universal standard is claimed. Weak natural paraphrase/lure limits the usable task variant even if main passes. No template repair to chase threshold.
+
+## 16. What This Cannot Claim
+No general memory/understanding verdict; no isolated distance mechanism; no semantic/causal feature role; no permission for SAE, training, intervention, router work or scientific closure. Candidate ranking does not test unrestricted answer generation.
+
+## 17. Block Confirmation, Freeze, And Amendment Ledger
+Researcher directly authorized the same question, requested controls,80%point threshold and complete bounded execution in the current message. All routine numerical choices implement that request; scientific acceptance remainsUnknown. Self-audit A purpose/rival, B data/split, C frozen model, D metric, E numerics, F artifacts, G scope: PASS before first inference. Record freeze.json with timestamp and exact hashes. Preserve original scientific Protocol body after this point. Any later change appends amendment with UTC,before/after,reason,visible results,affected rows,authorization and eligibility. The earlier construction bug matched “cord” inside “According”; corrected to whole-word offset matching before any panel save/freeze/forward; old prepare.py retained in versions. No data deletion or response selection occurred.

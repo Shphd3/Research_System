@@ -55,3 +55,9 @@ Raw datasets, models and execution caches remain in their registered storage.
 - [R16 delete-head64 / keep960](from-attention-to-search/15_27_05_R16_delete/README.md): bounded arrival-round reading copy under the existing scientific owner.
 
 - [S08 dataset support overlap](from-attention-to-search/15_27_06_S08/README.md): bounded arrival-round reading copy under the existing scientific owner.
+
+- [R16 equal-rank bands and reference-mean control](from-attention-to-search/15_27_05_R16_equal64/README.md): bounded reading for the existing15_27_05owner, current round plus the necessary R16/complement evidence. This is navigation, not a new scientific Anchor.
+
+- [A15_27_10: near/far object-fact behavior](from-attention-to-search/15_27_10/README.md): bounded behavior prerequisite; paired raw examples, all family outcomes, thresholds and uncertainty; no SAE/training/intervention, scientific acceptanceUnknown. Local reading copy.
+
+- [15_27_11: remote target / nearby competitor composition](from-attention-to-search/15_27_11/README.md): R19 factual results and raw-case reading; scientific acceptance Unknown; no training/intervention.

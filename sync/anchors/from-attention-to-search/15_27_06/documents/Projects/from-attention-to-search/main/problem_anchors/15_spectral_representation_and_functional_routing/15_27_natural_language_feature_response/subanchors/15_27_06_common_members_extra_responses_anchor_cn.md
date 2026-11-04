@@ -48,6 +48,10 @@ D1实际观测模型：两处独立block27 SAE（30000成员、ReLU-Top32），�
 
 研究者要求检验自然数据集内部的 SAE 成员是否比跨数据集更重叠；不训练或做干预。实际可读数据为 Magicoder-OSS 的 problem、GSM8K 和 MMLU 的 question，各257篇去重文档，两套原生 SAE 独立统计。限定范围内未找到 Numina 和学长精确 SFT 数据路径。主指标为每个文档对8个对齐分位位置的二值 Jaccard 平均；文档级重采样和标签置换保留重复配对关系。六个主要合并差检验做 Holm 校正，另保留两侧各自差值。完整长度分箱、固定前缀和相同 token 对照检查上下文及词面解释。正结果仅支持数据集条件下成员更相似；来源、任务、格式、语言、主题和近重复仍与“领域知识”解释竞争。单侧相反或匹配样本不足要收窄结论。这扩展 S06 的重叠子预测，不替代旧的信息增益假设，也不产生 router 结论。[S08 协议](../../../../experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/protocol_cn.md)负责精确数据、配对、对照及判定。科研接受和问题关闭仍为 Unknown。
 
+### S09 marginal frequencies and joint structure · 2026-11-04
+
+A检验发现集单成员频率能复制多少留出Jaccard；B检验严格固定行32与列次数后，是否还有在留出复现的本源联合残差、以及源间残差差异。只用原S08缓存/文档，每源128发现/129留出，24成员/全部276对和残差方向仅在发现集固定。各源自身有联合结构不等于结构能区分源。竞争解释包括发现频率估计误差、平均Jaccard非线性、Top32、位置/当前token/格式/来源混合及零模型混合不足。S08没有独立格式匹配，本轮也不如此声称。条件零模型差异只支持表征联合关联，不能升级为语义或router机制。S09协议负责零模型诊断、对照和判定；科研接受/关闭Unknown。
+
 ## 6. Minimal Falsification Tests
 
 五项主比较为三项共同分数差与两项留出损失改善，使用 Bonferroni 同时区间。共同对应和额外成员增量分层裁定。
@@ -76,6 +80,10 @@ S07追加控制几何审核：Attention交通工具的2成员固定范数列表�
 ### S08 completed natural-dataset evidence · 2026-11-04
 
 三组可读语料各257篇问题，两套原生SAE，六个主要配对比较；6/6满足事前“双侧内部高于跨域”判据：ATTN_SAE:Magicoder/GSM8K,ATTN_SAE:Magicoder/MMLU,ATTN_SAE:GSM8K/MMLU,MLPIN_SAE:Magicoder/GSM8K,MLPIN_SAE:Magicoder/MMLU,MLPIN_SAE:GSM8K/MMLU。完整题干长度匹配仅11/59/121篇，词面控制覆盖有限；固定16/32token前缀只控制已见上下文。没有Numina或学长精确复现，无训练/干预。数据集条件下成员关联不识别领域知识。[S08中文Summary](../../../../experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/summary_cn.md)负责全部单侧结果、文档区间、对照和反例；科研接受/关闭Unknown。
+
+### S09 completed marginal/joint distinction · 2026-11-04
+
+原S08文件未改。每源128发现/129留出；严格feature次数/行32零模型在描述性意义上复制82.9%–97.0%重叠差，5/6剩余差文档区间跨0。另行冻结的276对联合统计，本源6/6、源间残差差6/6留出复现，各自Holm6p=.023346。这限定S08重叠主要是边际现象；联合结构需要独立统计。token分层仍有限，无独立格式匹配；反向成员对、锁定成员、有限混合与条件区间边界保留。[S09中文Summary](../../../../experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/summary_cn.md)负责精确数据；科研接受/关闭Unknown。
 
 ## 8. Claim Boundary And Next Decision
 

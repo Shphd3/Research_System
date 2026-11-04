@@ -1,0 +1,42 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_11_remote_target_near_competitor_composition_anchor_cn.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_11_remote_target_near_competitor_composition_anchor_cn.md)；研究修改仍回到原件。
+
+---
+
+# 远处目标与近处竞争物品的SAE组合
+
+## 1. Problem Definition
+
+本轮由研究者明确授权：在R18之后，看目标事实、距离和近处竞争信息如何共同改变被复用的SAE成员／强弱，及其与候选偏好的关系。旧R18主条件三档均24/24，竞争诊断17/24；但旧竞争A/B同步交换两个位置的物品，主／竞争的填充也不同。因此本轮补齐匹配的析因框架，再判定哪些组合描述在留出家族成立。R18文件不改；不训练、不做激活干预。
+
+## 2. Physical Priors
+
+可见词同时影响字典响应与模型分数，但重叠、相对强弱、词面响应和因果使用不是同一对象。Top32预算约束换入／换出，边际频率与单成员幅值也可制造搭配现象。它们是对照理由，不是预设feature语义。
+
+## 3. Falsifiable Hypotheses
+
+H1事实：发现侧固定的共同列表，在近处词固定时仍有可复现的目标事实差异。H2距离：同一列表的家族内A−B差异从16到128保持同向，超过远处标签交换参照。H3竞争：近处不明物品换成相反候选后，组合和对角事实差异改变，并与家族候选边际损失相关。H4联合识别：发现侧固定的少数成员对，在留出中有超出出现边际或正幅值边际的共同出现／联合强度。竞争解释是问题／词面／格式与边际统计即可描述现象。失败或不足不触发留出重选。
+
+## 4. Mathematical Model
+
+在答案前最后token p319分别读两套原生SAE的30000维非负Top32激活z。固定列表C有原始z_C和相对向量q_C=z_C除以列表L2范数。严格共同列表几何要求所需行的每个候选都为正，缺失／零值另报。家族A/B是两个实际物品词，不是跨家族统一语义轴；留出家族自身近距或中性A−B差只作配对参照，不冒充跨家族学出的预测器。
+
+匹配128框架中，x_ab表示远处目标a、近处词b下的固定列表向量；x_a0是近处不明物品。中性目标差delta0=x_A0−x_B0。T为固定近处词时目标A−B差的平均；N为固定目标时近处A−B差的平均；I是目标差随近处词改变的差。相反搭配的对角差x_AB−x_BA恒等于T−N，同向搭配为T+N。恒等式不是发现；需要测实际T、N、交互、与中性差的方向／投影和行为损失的关系。所选列表仍有同向目标差而答案错，只说明当前可观察量与判断分离。完整答案串分数还含后续候选token／句号，不能都定位在p319。
+
+## 5. Computational Realization
+
+复用官方Base模型／tokenizer及第28块Attention o_proj输出、归一化后MLP输入两套独立30000／Top32字典。复用144主文本、48旧相反搭配及4smoke；新增96条，补成远处A/B×近处不明/A/B。全前缀320token；主d16/64/128、匹配d128，d=p−e−1排除两端，e取物品最后token。匹配事实／近处对照只改对应位置词，保持e190、p319、问题和填充。旧主距离仍同时改变绝对位置与填充顺序，不声称纯距离机制。
+
+旧24行为家族按每4家族模板分层，前2发现、后2留出，各12。行为已接触；新留出SAE响应直到固定候选和联合方向后才读取。仅发现侧选主要6个共同成员、嵌套3个敏感性及最多6个响应成员。频率直接沿用旧300自然发现文档／38400位置的各字典计数与分组；高／中／低／支持不足／零均保留，不凑低频成员。
+
+## 6. Minimal Falsification Tests
+
+完整384个干净配对：H1看固定近处词时的目标差与中性目标差同向；H2看16→128配对差余弦与标签交换参照；H3看对角保留量降低、候选边际下降及两者家族相关。中性条件行为和共同列表覆盖先检查，完整评分／去句号敏感性分开。每字典H1–H3共6主检验Holm，家族区间、至少8/12资格及不足分支预定。H4另有二值／强度×两字典4项检验。Curveball保持每条件／划分全字典列次数和每行实际32；幅值重排保持实际支持与每成员正值多重集合。强制边际、混合不足、空候选和低支持保持证据不足，细节见Protocol。
+
+## 7. 当前证据
+
+R19于2026-11-04T05:15:11.039407+00:00完成事实记录。[Summary](../../../../experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary_cn.md)与[执行记录](../../../../experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/detailed_cn.md)拥有结果，[数值附录](../../../../experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/numeric_evidence.md)保留所有留出家族及预定敏感性。MLP输入H1支持（12家族，cos0.7449，Holm p0.001465），H2支持（11家族，cos0.9713，p0.002441）；H3仅局部支持（ρ0.6364，Holm p0.0568，模板内p0.25），保留反例。Attention六成员覆盖远矩阵5、近远6，低于8门槛，H1–H3证据不足。二元联合方向未复现；两幅值条件重排p0.01556通过，但家族区间跨0，H4稳定家族条件仍证据不足。288正式+4smoke全部完成，196旧评分精确重放，旧136源/owner文件字节保持。无训练或激活干预，科学接受Unknown。运行前owner/Protocol有哈希归档；仅更新事实状态并追加展示修正。
+
+## 8. Claim Boundary And Next Decision
+
+本轮只支持固定模型、构造物品词、两真实hook下的条件关联、成员复用与联合统计；不识别语义原子、唯一机制、因果必要性、跨字典同ID或训练／router收益。共享模板、词面包含、字典遗漏和小样本保留。完成全部适用统计、完整例／反例与小于20MB可复算包后停止，等待研究者共同审阅，再讨论功能干预或训练。科学接受与下一决定Unknown。

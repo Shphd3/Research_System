@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-04T03:04:19.554719+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-qcfbf",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15580,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "model_qwen3_0p6b_base_official_a5",
+      "title_cn": "原始 Qwen3-0.6B-Base official 本地副本（A5/A6/E16 lineage）",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "历史实际 parent",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 727,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1192135096,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "tokenizer_qwen3_0p6b_base_official_a5",
+      "title_cn": "Qwen3-0.6B-Base official tokenizer（A5/A6本地副本）",
+      "category": "tokenizer",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "实际tokenizer目录",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7031645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9678,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/merges.txt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1671853,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/vocab.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2776833,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_a15_27_05_layerwise_head64_intervention_20261102",
+      "title_cn": "Qwen3 Base逐层头64投影与后续网络原生预测",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6328,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/completion_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 873,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/audit/validation.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9045,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/analysis/summary_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4540702,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/analysis/position_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 89295371,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/analysis/raw_outputs.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 342762065,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/data/bases/layer01.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8406522,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/data/bases/layer28.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8406522,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/data/reference_documents.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 167006,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/data/positions.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1368081,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_a15_27_05_equal64_bands_mean_control_20261104",
+      "title_cn": "逐层16段等维64方向原生预测与加/不加均值对照",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 14490,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/completion_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2088,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/validation.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1279,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/position_metrics.csv.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 108440138,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/document_metrics.csv.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 151655117,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/summary_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7153736,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/chunk_index.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 103374,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/chunks/R11_A02_134.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 699598,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/batch1_repair_chunks/R11_A02_090.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 189532,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

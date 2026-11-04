@@ -111,3 +111,8 @@ Dense dynamics extension,1November2026: [15_27_05_01 Anchor](problem_anchors/15_
 ## R17_D1：双SAE四假设修正重测（2026-11-03）
 
 [完整结果](experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/summary.md)。两SAE各H1–H4、独立CC、288新主面板及48附表、600自然文档、原生与位置诊断已完成；原结果保留。无答案细化仍受选择／读出／字典与H4覆盖限制。科学接受Unknown，无后续自动执行。
+
+
+## A15_27_10: near/far object-fact behavior
+
+[Focus](focus/focus_near_far_object_fact_use.md) · [Anchor](problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_10_near_far_fact_use/anchor.md) · [R18 Protocol](experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol.md). User-activated behavior prerequisite; preserve all family outcomes, then stop for joint review before SAE work.
