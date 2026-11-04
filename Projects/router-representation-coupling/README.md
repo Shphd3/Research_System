@@ -1,5 +1,8 @@
 # Router-representation coupling: gradient feedback comparison
 
+> **Storage update, 2026-10-30:** At the researcher's request, all 24 binary weight, training-state and RNG files from the two A3 formal arms were deleted (20.393929 GiB). Code, configs, logs, manifests, historical results and common initial-state inputs are retained. These trained arms are no longer available for evaluation or continuation; future work focuses on new MoE training. Historical completion and NOT RUN findings are unchanged. [Deletion receipt](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/completion.json).
+
+
 Independent temporary researcher-delegated project. **Both common-balancing arms completed the full training budget/SUCCEEDED with endpoint artifacts and normal supervisor exits. A has slightly lower matched training CE; B lower balancing cost. Primary post-tests remain NOT_RUN; see current Summary for evidence and limits.**
 
 - [Current Summary](main/experiments/router_representation_gradient_feedback/summary.md): facts, evidence and boundaries.

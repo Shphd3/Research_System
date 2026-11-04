@@ -1,5 +1,8 @@
 # 路由—表征共同学习：梯度反馈对照
 
+> **2026-10-30 存储更新：** 研究者要求清理A3普通router与detach两臂模型。24个权重、续训状态及RNG文件已删除（20.393929 GiB）；代码、配置、日志、manifest和历史结果保留，共同随机初态保留。两臂现不可加载评估或续训，后续重点转向新的MoE训练。历史训练完成与NOT RUN判断不变。[逐项删除记录](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/README_cn.md)。
+
+
 研究者委托的独立临时项目。**共同均衡双臂均完成全预算并SUCCEEDED，终点保存及监督退出正常。A匹配训练CE略低，B均衡项更低；主终点后测NOT_RUN，事实与边界见当前Summary。**
 
 - [当前Summary](main/experiments/router_representation_gradient_feedback/summary_cn.md)：事实、决定性证据与边界。

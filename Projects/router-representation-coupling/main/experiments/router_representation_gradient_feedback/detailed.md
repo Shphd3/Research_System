@@ -1,5 +1,8 @@
 # Latest completion and reasoning audit: both training arms complete (2026-10-07T01:33:37.835761+00:00)
 
+> **Storage update, 2026-10-30:** At the researcher's request, all 24 binary weight, training-state and RNG files from the two A3 formal arms were deleted (20.393929 GiB). Code, configs, logs, manifests, historical results and common initial-state inputs are retained. These trained arms are no longer available for evaluation or continuation; future work focuses on new MoE training. Historical completion and NOT RUN findings are unchanged. [Deletion receipt](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/completion.json).
+
+
 [Summary](summary.md) owns the current conclusion. This supersedes the previous A-running snapshot; retain all dated history below. [Pre-update snapshots](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/analysis/progress_20261007T013337Z/canonical_before).
 
 ## Completion and conformance

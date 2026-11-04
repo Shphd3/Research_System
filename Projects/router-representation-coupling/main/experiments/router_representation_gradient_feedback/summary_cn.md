@@ -1,5 +1,8 @@
 # Summary：路由—表征梯度反馈对照
 
+> **2026-10-30 存储更新：** 研究者要求清理A3普通router与detach两臂模型。24个权重、续训状态及RNG文件已删除（20.393929 GiB）；代码、配置、日志、manifest和历史结果保留，共同随机初态保留。两臂现不可加载评估或续训，后续重点转向新的MoE训练。历史训练完成与NOT RUN判断不变。[逐项删除记录](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/README_cn.md)。
+
+
 **两臂均完整训练至7629次更新、1,999,896,576有效预测目标，平台SUCCEEDED，终点保存和监督退出均正常。最后64步平均预测损失A低于B 0.014371 nat/目标；B的负载均衡项更低。训练比较已完成，独立TEST与功能后测仍NOT_RUN。**
 
 [Anchor](../../problem_anchors/router_representation_gradient_feedback/anchor_cn.md) · [训练Protocol A3](protocol_cn.md) · [后测Protocol](analysis_protocol_cn.md) · [Detailed](detailed_cn.md)。核验快照：北京时间2026-10-07 09:33:37。

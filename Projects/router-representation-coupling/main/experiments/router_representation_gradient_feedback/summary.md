@@ -1,5 +1,8 @@
 # Summary: Router-to-representation gradient feedback
 
+> **Storage update, 2026-10-30:** At the researcher's request, all 24 binary weight, training-state and RNG files from the two A3 formal arms were deleted (20.393929 GiB). Code, configs, logs, manifests, historical results and common initial-state inputs are retained. These trained arms are no longer available for evaluation or continuation; future work focuses on new MoE training. Historical completion and NOT RUN findings are unchanged. [Deletion receipt](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/completion.json).
+
+
 **Both arms completed 7629 updates / 1,999,896,576 valid targets, platform SUCCEEDED, supervisor exit 0, with complete endpoint artifacts. A has lower final 64-update training CE by 0.014371 nat/target; B has lower balancing cost. Training comparison is complete; independent TEST and functional analyses remain NOT_RUN.**
 
 [Anchor](../../problem_anchors/router_representation_gradient_feedback/anchor.md), [Protocol A3](protocol.md), [analysis Protocol](analysis_protocol.md), [Detailed](detailed.md). Snapshot 2026-10-07T01:33:37.835761+00:00.

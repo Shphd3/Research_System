@@ -1,5 +1,8 @@
 # 最新执行与推理审计：双臂训练完整结束（2026-10-07 09:33:37北京时间）
 
+> **2026-10-30 存储更新：** 研究者要求清理A3普通router与detach两臂模型。24个权重、续训状态及RNG文件已删除（20.393929 GiB）；代码、配置、日志、manifest和历史结果保留，共同随机初态保留。两臂现不可加载评估或续训，后续重点转向新的MoE训练。历史训练完成与NOT RUN判断不变。[逐项删除记录](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/storage_cleanup_receipts/20261030T154131Z/README_cn.md)。
+
+
 [Summary](summary_cn.md)是当前结论入口。本节覆盖此前A仍运行的状态；下面原有日期记录作为历史完整保留，[改写前副本](/data/250010109/MoE_Router/experiments/20261006_router_representation_coupling_balanced/analysis/progress_20261007T013337Z/canonical_before)。
 
 ## 完成性与合同符合性
