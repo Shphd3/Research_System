@@ -25,8 +25,9 @@ evidence supporting each answer
 remaining bottleneck
 ```
 
-Each level must produce an answer, even when the answer is `not the cause`.
-Negative answers are progress when they remove false explanations.
+Record the answer each tested level supports, including `not the cause` or
+`Unknown`. Negative answers are progress when they remove false explanations;
+an unresolved cause need not block a test that separates the remaining ones.
 
 ## Common Checks
 
@@ -44,8 +45,33 @@ Is the metric rewarding the wrong behavior?
 Is a later stage hiding an earlier-stage failure?
 ```
 
-Only change the algorithm after the decomposition identifies a specific failed
-sub-problem. If several causes remain plausible, instrument them first.
+Claiming a root-cause fix requires localization evidence. When several causes
+remain plausible, a bounded algorithm intervention can be a distinguishing test
+within the authorized scope. State which rival outcomes it separates and what
+else changes; a candidate repair is not an established cause. Instrument first
+when the intervention would otherwise be uninterpretable. Avoid requiring proof
+of the cause before allowing the experiment needed to identify it.
+
+## Graded Interface Diagnosis
+
+When interface difficulty could hide the bottleneck, consider a short ladder:
+ideal interface -> controlled mixing/sharing -> real or learned interface.
+For addressing/routing, useful candidates are oracle addressing, fixed random
+sharing, structure-based sharing and learned routing. Choose only levels that
+separate live explanations; the ladder is not a required new experiment program.
+
+At each selected level, state the difficulty removed, the difficulties retained,
+permitted information and fairness of the comparison. Account for capacity,
+supervision, data exposure, initialization, update budget and interface changes.
+An oracle using unavailable truth is a diagnostic reference, not an ordinary
+performance baseline. Existing evidence may make an additional level unnecessary.
+
+Success after removing one difficulty localizes a candidate bottleneck only as
+far as the matched comparison permits. Failure under ideal addressing does not
+uniquely implicate reading: check viable alternatives such as capacity, writing
+or training, supervision, initialization, interface compatibility and task code.
+Pick the smallest separator among the remaining alternatives and retain Unknown
+where the levels change more than one relevant factor.
 
 ## Final Causal Path
 

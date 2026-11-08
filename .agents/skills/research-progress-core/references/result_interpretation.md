@@ -6,19 +6,28 @@ formal claims inspect assumptions and proof/counterexample scope. Ineligible
 evidence cannot support the claim. Return requested findings/status first;
 preserve negative and insufficient outcomes.
 
-State direct observation, proposed explanation, safest claim, remaining rival
-and researcher-owned decision separately. Use the decisive comparison, units and
+State direct observation, proposed explanation, strongest justified claim,
+remaining rival and researcher-owned decision separately. Use the decisive comparison, units and
 actual aggregation; repeated measurements are not automatically independent
 replications. With Summary, link it rather than duplicating its body.
 Include only necessary figures with a reading sentence and nearest boundary.
+
+When interpretation is requested, offer a candidate explanation with its
+conditions and a distinct prediction, even if the mechanism is not identified.
+Use the shared [review mode](../../../../docs/research_analysis_review_contract.md#review-mode).
+For each material limitation, retain what still follows and say whether repairing
+it could change the current decision. Repair only those needed now; unresolved
+broader claims do not erase a useful local result.
 
 For mechanism claims check the derivation, implementation and identified factor.
 Distinguish description, prediction, attribution, intervention and design benefit.
 Check approximation error at the claimed component's scale, not only the total.
 
-Localize failure before changing the method: invalid measurement, implementation,
+To claim a root-cause fix, localize failure: invalid measurement, implementation,
 proxy/operationalization, mathematical model, prior/boundary, question/importance,
-or insufficient evidence. Test the smallest live bottleneck. Use
+or insufficient evidence. A bounded method change may itself distinguish these
+causes; it need not wait for a confirmed root cause. Test the smallest live
+bottleneck. Use
 [failure decomposition](failure_decomposition.md) if several causes remain and
 [goal audit](goal_audit.md) only when the purpose/metric itself warrants review.
 

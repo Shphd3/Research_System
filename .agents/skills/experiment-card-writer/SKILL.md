@@ -33,7 +33,7 @@ read a frozen result contract. Preserve existing valid layouts and language role
 
 For a requested complete analysis matrix, first delivery of the researcher's own new results, or
 several fitting/learning protocols, apply the shared
-[coverage, fitting-audit and two-pass review contract](../../../docs/research_analysis_review_contract.md).
+[coverage, fitting-audit and review-mode contract](../../../docs/research_analysis_review_contract.md).
 Keep its task ledger and three recorded audit rounds proportionate; this adds
 no execution authority and does not force unrelated tasks into a full matrix.
 
@@ -44,6 +44,12 @@ observable, identification strategy and remaining confound. Do not say independe
 manipulated when several factors move together. Test a few known good/bad/confusing
 cases before costly sweeps; distinguish implementation calibration from confirmation.
 Retain stage-local evidence and finite-step/component error where material.
+For each main comparison, explain which possible outcome would change which
+judgment about the candidate model or rival. An informative joint effect can be
+worth testing when individual factors cannot be isolated; bound the claim to it.
+For a claim that a method works through a mediator, use
+[mechanism substitution controls](references/blockwise_protocol_audit.md#mechanism-substitution-controls)
+to distinguish that explanation from the method merely improving a proxy.
 
 Draft one `DRAFT_NOT_EXECUTABLE` Protocol, fill grounded fields and expose only
 critical proposed/blocked choices with the A-G ledger. Promotion/amendment follows
@@ -58,8 +64,7 @@ an explanation.
 
 Use the shared [writing rules](../../../docs/report_writing.md) for result delivery.
 With Summary link it first; deliver the decisive result, necessary figure/reading
-sentence and boundary. When researcher-first review is requested, keep mechanism
-judgment and scientific next steps pending until that review; otherwise include
-the next uncertainty. Unconfirmed proposals are `AI 建议`.
+sentence and boundary. Use the shared review mode for interpretation and next-step
+analysis. Unconfirmed proposals are `AI 建议`.
 Verify chosen contracts, links and repeated fields. Execution, publication and
 scientific transitions remain within explicit authority, without redundant gates.

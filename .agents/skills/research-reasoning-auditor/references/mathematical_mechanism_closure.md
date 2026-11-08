@@ -49,6 +49,14 @@ Single-sample factorization need not survive taking separate averages. A normali
 update does not imply a common learning rate across conditions. An identity test
 checks implementation; an empirical proposition requires independent evidence.
 
+Where they affect the claim, inspect units and normalization, limiting cases or
+counterexamples, mean and covariance terms, optimizer history, and the difference
+between a theoretical quantity and its finite-sample estimate. Resampling a fixed
+gradient library does not create new independent documents or establish its
+population mean. A variance contribution's sign depends on the downstream
+curvature; positivity requires an assumption or evidence. Select the relevant
+checks rather than returning a universal formula checklist.
+
 ## Locate The Empirical Obligation
 
 Map the decisive term to a measured quantity, manipulation/comparison, held-fixed
@@ -79,8 +87,11 @@ research sequence.
 ## Return Only The Decisive Finding
 
 Give the existing source, exact gap type, smallest missing arrow and maximum
-supported claim. Propose a separator only when needed, with support, non-support
-and insufficient outcomes. Keep scientific decisions with the researcher. Explain
+supported claim. If the original formula overreaches, give a usable conditional
+model and its observable prediction where possible. Preserve what it explains
+and locate the unsupported bridge rather than deleting the model. Propose a
+separator only when needed, with support, non-support and insufficient outcomes.
+Keep scientific decisions with the researcher. Explain
 a local gap in the reply; use the explainer for a requested deeper explanation,
 communication for a requested brief/Story/handoff, and the artifact owner for
 canonical edits. Do not load another skill merely to restate the finding.

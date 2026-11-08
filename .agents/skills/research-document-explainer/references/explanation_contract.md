@@ -27,6 +27,15 @@ user states a different background or names the point of confusion, adapt the
 vocabulary, example, and depth to that information without talking down to the
 reader.
 
+For guided research, locate the relation the user is trying to understand before
+adding detail. Use their stated interpretation to identify the missing link;
+when it is wrong, correct the specific inference with a concrete example or
+counterexample and explain how the corrected model changes a prediction. If
+confusion recurs, change the example or representation rather than repeating
+the same caveats. A useful next prediction can guide learning without a quiz or
+another document. Do not invent the user's beliefs or require them to answer
+before providing the requested explanation.
+
 Build each explanation layer in this order:
 
 ```text

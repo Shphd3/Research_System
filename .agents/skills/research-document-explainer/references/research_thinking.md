@@ -58,7 +58,20 @@ decision. Keep minor diagnostics and implementation chores out of the research
 idea list. Respect the one active core task; a useful non-active direction is
 not automatically the next experiment.
 
+Prefer the cheapest way to resolve the priority unknown. Existing evidence, a
+short derivation or a counterexample may answer it before a new experiment is
+needed. Explain why the recommended step can change the current judgment and
+why the other directions can wait. A mentor recommendation should reduce the
+researcher's decision burden while keeping their choices explicit.
+
 ## Close The Explanation
+
+For a knowledge update, identify the prior working explanation from the source
+or researcher; if absent, leave it unknown. Explain the specific relation the
+new evidence changes, which older observations it connects, and a new prediction.
+Then justify one priority next step and what can wait. A paraphrased result or
+a longer task list is not a knowledge update. Expand only the links the user
+needs; a factual or brief explanation does not require this whole sequence.
 
 End by separating:
 

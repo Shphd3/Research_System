@@ -264,8 +264,10 @@ checks, run history and raw-artifact indexes under the same Detailed owner.
 The primary reading path should identify what each appendix lets the reader
 verify. Full scope remains traceable without repeating the full audit in Summary.
 
-For the researcher's first review, separate the factual answer from a pending
-mechanism judgment throughout all three layers. The scientific content and
+Use the shared [review mode](research_analysis_review_contract.md#review-mode).
+For explicitly requested fact-first review, defer AI mechanism judgments
+throughout all three layers; otherwise distinguish facts from provisional AI
+explanations within the same delivery. The scientific content and
 recorded uncertainty are preserved when moving exposition between them.
 
 ## Direct writing and readable AI work
@@ -278,5 +280,5 @@ retain the conditions, adverse results and evidence distinctions the claim needs
 
 For AI work, report the completed change, evidence and next material step.
 Full commands, routine checks and execution history stay in the owning record.
-Requested coverage and researcher-first factual review remain intact. The
+Requested coverage and explicit factual-first review remain intact. The
 writing helper edits expression; Focus/Anchor/Protocol keep their authority.

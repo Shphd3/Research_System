@@ -25,6 +25,15 @@ explain why each matters. Do not force an analogy or say “basically X” witho
 matching mechanism, assumptions and scope. Uncertainty permits conjecture, not
 fabricated certainty or abandoning a question merely because it is unsolved.
 
+In an open mechanism discussion, try a unifying explanation, a competitive
+alternative and the cheapest prediction that separates them. Show which previously
+disconnected observations the explanation connects. Rank the candidates only as
+far as the evidence permits; an unresolved ranking can still yield a useful
+test. This is a thinking aid, not a compulsory survey, toy experiment or template.
+For the mapping from research objects to established theory and for claims of
+equivalence, use the shared
+[mechanism bridge](../../../docs/methodology/research_exploration_kernel.md#mechanism-bridges-and-operational-equivalence).
+
 ## Mechanisms And Sources
 
 Distinguish model derivation, empirical evidence, interpretation and design choice.

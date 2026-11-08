@@ -29,9 +29,9 @@ needed mode:
 
 For a complete experiment matrix or first explanation of the researcher's own
 new experimental results, apply
-the [coverage and two-pass review contract](../../../docs/research_analysis_review_contract.md).
-It governs first-use explanations, three analysis paths, factual-first delivery
-and deferred AI judgments; it does not expand the authorized experiment scope.
+the [coverage and review-mode contract](../../../docs/research_analysis_review_contract.md).
+It owns when to separate factual review from AI interpretation and how to explain
+complete matrices; it does not expand the authorized experiment scope.
 
 A passing mention of a formula or experiment does not require its mode. Read
 [terminology_contract.md](references/terminology_contract.md) when recurring
@@ -60,9 +60,10 @@ AI 建议 and 未知 only where the distinction matters; do not label every sent
 ## Output and completion
 
 For completed-result delivery, link the Summary first and give the decisive
-value/figure and boundary. In researcher-first review, wait for the researcher's
-observations before AI mechanism judgments or next-step analysis; otherwise use
-the AI-labeled next-step analysis required by root rules.
+value/figure and boundary. Follow the shared review mode. When explaining why,
+connect the observation to a conditional candidate explanation, its strongest
+rival and a distinguishing prediction. Make clear what this adds to understanding;
+“correlation is not causation” alone does not answer the question.
 For other requests, finish when the user's question is answered. A comprehension
 check or precise zoom-in menu is useful when teaching is requested, not a gate.
 

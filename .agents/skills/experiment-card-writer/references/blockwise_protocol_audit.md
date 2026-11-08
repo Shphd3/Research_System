@@ -74,6 +74,40 @@ Confirm treatment, controls, held-fixed variables, primary metric, guards,
 pass/fail/insufficient meanings, known good/bad/confusing cases, required
 figures or tables, and the rival separated by each condition.
 
+For fitted or sampled comparisons, separate independent source units from
+bootstrap or gradient-resampling counts. A finite-library mean is an empirical
+reference, not an exact population gradient. Record post-freeze selections as
+exploratory. Non-significance does not establish equivalence; an equivalence
+claim needs a justified, predeclared margin and an appropriate interval/test.
+
+#### Mechanism Substitution Controls
+
+When method A is hypothesized to improve outcome Y through mediator M, consider
+a different operation B that changes M, and an A variant that changes the method
+without improving M. Choose feasible controls that resolve the priority unknown;
+do not turn this into a mandatory extra experiment suite. Define M independently
+of Y and predeclare its measurement, comparison and matching rule. Do not select
+variants for favorable evaluation outcomes or assume M failed to improve without
+measuring it. State which possible observations support, weaken or still fail to
+distinguish the mechanism, and how each changes the next decision.
+
+If A and B produce comparable M and predicted Y changes, this supports a common
+explanation but does not uniquely identify mediation. If an A variant retains
+the outcome improvement despite no measured M improvement, the simple M-only
+account is weakened, subject to measurement sensitivity and other changed
+factors. Losing the outcome benefit when M improvement is prevented supports
+the explanation only as far as those other factors are controlled. If B
+cannot match the relevant M or other loss-relevant changes, report the remaining
+ambiguity rather than claiming the mechanism was refuted.
+
+For routing versus batch construction, specify the same checkpoint, parameter
+block, target evaluation path, gradient mean/variation and subsequent validation
+loss. Account for data exposure, expert load, gate weights, loss normalization,
+compute, update count and initial optimizer state. Record what is matched and
+what cannot be matched simultaneously. Gradient accumulation is a distinct
+operation; token correlations, rescaling, optimizer steps and routing changes
+can break equivalence. A local comparison does not identify a long-run cause.
+
 ### G. Execution And Reproducibility Boundary
 
 Confirm seeds, checkpoints, smoke boundary, resource ceiling, expected

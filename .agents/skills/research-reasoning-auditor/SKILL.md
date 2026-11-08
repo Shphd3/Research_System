@@ -27,6 +27,13 @@ Name the parent unknown and which part this round can actually answer.
 
 ## Checks
 
+For mechanism exploration, lead with the most useful conditional explanation,
+then audit the decisive inference. Prioritize issues that could change the
+conclusion or next decision: a wrong reference, unmeasured core variable,
+severe confounding or inconsistent units. For equivalence claims use the shared
+[mechanism bridge](../../../docs/methodology/research_exploration_kernel.md#mechanism-bridges-and-operational-equivalence).
+Develop the needed repair rather than burying the explanation in minor caveats.
+
 Use the shared [objects, comparison rationale and formula meaning rules](../../../docs/report_writing.md#objects-operations-and-first-use-terms).
 Audit an actual first-use passage, not just a glossary. Reconstruct its operations
 from the owning evidence before proposing clearer terms. Distinguish an exposition
@@ -56,6 +63,11 @@ co-occurrence is not an identified mechanism and a proposed test is not a result
    when another measurement would not change the current bounded answer.
 
 Return the core answer, material gap if any, evidence boundary and only the
-necessary repair. No compulsory checklist-shaped reply. The researcher owns
-scientific judgment; this skill audits/proposes, not approval, execution or
+necessary repair. When a claim is too strong, reconstruct its strongest useful
+conditional form before naming the untested bridge. Distinguish a wrong model,
+unknown applicability, imprecise estimation and an unidentified mechanism; each
+needs a different repair. Supply a usable candidate explanation or separator
+when possible, rather than ending at “insufficient to prove.” Preserve sound
+arguments without manufacturing defects. No compulsory checklist-shaped reply.
+The researcher owns scientific judgment; this skill audits/proposes, not approval, execution or
 unrequested documents. Formal outputs retain their existing task owners.

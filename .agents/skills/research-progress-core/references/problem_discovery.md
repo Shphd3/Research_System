@@ -8,6 +8,13 @@ consequence of leaving it unsolved, useful success and boundary of significance.
 Inspect existing work before naming the unresolved question. A prescribed tool
 may constrain the search; do not fabricate a problem to justify it.
 
+When several observations appear related, name the tension that one explanation
+must resolve. Try the smallest candidate model that connects them, a credible
+simpler rival, and an observation on which they differ. Explain the additional
+understanding this connection provides. If evidence cannot rank them, say so
+and recommend the most informative next comparison, rather than listing all
+possible projects. Do not force a unifying model onto unrelated observations.
+
 Describe stability/change, locality, sparsity/repetition, capacity, information
 availability, authority and costly errors before proposing an architecture.
 For consequential structure record observed/conjectured status, source or missing

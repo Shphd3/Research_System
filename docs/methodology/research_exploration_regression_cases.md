@@ -28,6 +28,17 @@ Use the relevant source/rule and judge the answer, not keyword presence alone.
 | R19 | Strict convexity on the real line is claimed to guarantee a minimizer | Separate existence from uniqueness; check assumptions using proof/counterexample | Invent an experiment or physical prior to assess a formal claim |
 | R20 | A group-average proxy fails, so all individual prediction routes are blocked | Justify necessity; allow a counterexample where averages cancel but individuals remain predictable | Chosen route becomes a universal prerequisite |
 | R21 | A prototype wins on one trace, so choose it for deployment | Bound the result; connect the workload/resource comparison to the intended decision and explain the open bridge | A benchmark win establishes general utility |
+| R22 | Mean cross-update helps, yet joint learning is slow | Explain the tension with a conditional model and a rival; derive a distinguishing prediction | Declare no interference or assert noise is the sole cause |
+| R23 | A routing-benefit or SNR formula overreaches | Recover a conditional derivation, counterexample and measurable terms; separate proxy from utility | Delete the formula and stop, or proclaim a universal law |
+| R24 | User asks why a measured pattern occurs | Give the strongest candidate explanation, credible rival and separator, at the evidence's scope | Reply only that correlation is not causation |
+| R25 | A difference is not statistically significant | State the effect interval, precision and remaining effect sizes; use a justified margin for equivalence | Claim no mechanism or equal performance from non-significance |
+| R26 | The needed derivation already exists but is not explained | Cite/reuse it and repair the reader's model | Replace explanation with a new broad measurement campaign |
+| R27 | One user asks facts first; another requests interpretation and a next step | Respect explicit fact-first scope; otherwise provide labeled analysis in the same reply, with no approval/state change | Always wait, or silently override an existing fact-first gate |
+| R28 | Several plausible next experiments compete | Recommend one for its decision value and separating prediction; defer the rest with reasons | Give an unranked checklist or activate every branch |
+| R29 | A local theoretical fit succeeds; real training has not run | State the conditional knowledge gain and open empirical bridge | Infer architecture benefit, or dismiss the local model as worthless |
+| R30 | No clear mean cross-update conflict; larger batches accompany lower one-step variation; ask whether structured routing could improve learning | Map routing-induced sample distributions to a reference-defined target-gradient equivalent batch; distinguish counts; propose substitution and mediator controls, rivals and one decision | Treat actual tokens as equivalent samples, assert an expert-count multiplier or a long-run root cause |
+| R31 | Say effective batch or equivalent capacity without a reference | Name reference, task/direction/block, invariants, metric, breakdown and a new prediction; bound or withdraw an undefined equivalence | A matching scalar proxy implies equal trajectories, generalization or cost |
+| R32 | Ideal addressing fails; attribute the failure uniquely to reading | Use selected ideal/controlled/real interface levels with removed/retained difficulties and fairness; retain capacity/training/interface rivals | Oracle failure proves a unique cause, or generate every possible level |
 
 ## Review Procedure
 
@@ -45,3 +56,13 @@ Historical shared-update discussions motivate R03-R06 and R14; they are examples
 not defaults for other domains. R19-R21 exercise formal reasoning, statistical
 proxies and systems decisions. No fixture changes historical scientific results
 or establishes generalization without actual behavior evidence.
+
+R22-R29 add constructive explanation and review-mode cases. Include other domains
+and a sound argument needing no repair when sampling them. A dated
+[author self-review](../skill_integrations/constructive_reasoning_20261108_cn.md)
+preserves actual answers and unrun evaluation limits; it is not an independent
+old/new model comparison.
+
+R30-R32 and their brief/facts-only variants have a separate
+[supplement review](../skill_integrations/mechanism_bridge_20261108_cn.md).
+Its recorded answers and author review do not constitute new model experiments.

@@ -46,6 +46,21 @@ needed for the belief update; link the existing Summary rather than maintain a
 second conclusion. A speaking order does not replace Summary's content coverage
 or its purpose-to-evidence reasoning.
 
+Check the spoken argument: the researcher's question -> prior understanding ->
+new evidence or derivation -> what can now be updated -> the proposed next test.
+Explain why a pattern could occur using the current model or a labeled candidate
+explanation, not just which value is higher. Keep real choices already confirmed;
+otherwise recommend a reasoned next step as `AI 建议`. Do not automatically end
+by asking the advisor to supply the model or choose from an unranked task list.
+
+A substantive knowledge update names the particular explanatory link that
+changed, connects previously separate observations and, where possible, gives
+a new prediction. State the prior understanding only when sourced; otherwise
+mark it unknown. Explain what the update makes worth doing next and what can
+wait. Retain decisive raw values and claim boundaries; candidate mechanisms
+remain labeled as such. Use these checks to improve the argument, not to impose
+four compulsory headings on a short factual brief.
+
 ## Rehearse Understanding
 
 Ask a first-time listener to restate the question, why the comparison or proof

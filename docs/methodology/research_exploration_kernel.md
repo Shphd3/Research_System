@@ -51,6 +51,36 @@ No evaluation-only truth may leak through pseudo-targets, selection or fitting.
 A bounded result does not settle a broader design choice. Name the comparison
 or assumption needed to bridge levels; do not require future-stage closure.
 
+For open questions, try the smallest explanation that connects the observed
+tension, explain what it adds beyond a credible rival, and derive a prediction
+that could separate them. Retain the strongest valid conditional model when a
+broader claim fails. Missing identification can motivate this exploration;
+it is not by itself a reason to withhold all explanation. Use the shared
+[review mode](../research_analysis_review_contract.md#review-mode).
+
+### Mechanism Bridges And Operational Equivalence
+
+For a consequential unexplained pattern, look for a useful connection to an
+established theory: for example effective sample size, gradient moments,
+information constraints, capacity or optimization dynamics. Map the actual
+research objects to the theory's quantities and assumptions; explain which
+observations this connects and derive a prediction the original account lacked.
+A shared name or analogy is not a mechanism bridge. Check applicability and
+relevant primary sources when needed; if no suitable bridge is found, say so.
+Explore only the one or two links that advance the current question, without
+forcing a theory survey or a fixed response template.
+
+When saying “equivalent to,” “effective batch” or “effective capacity,” specify
+the reference system, task/direction/parameter block, matched conditions, metric
+of equivalence, breakdown conditions and new testable prediction. Equivalence
+is relative to that metric and reference, not an identity of whole systems.
+Keep actual token count, target-related token count, independent sample count
+and reference-equivalent batch distinct. Correlated samples, weighting and loss
+normalization affect the mapping. A scalar signal-to-noise match need not match
+the signed mean update, other directions, optimizer state, training trajectory,
+generalization or cost. Ratios such as expert count divided by active experts
+are conditional model predictions, never universal batch multipliers.
+
 ## 3. Mechanism Choice And Computation
 
 For a material prior-art choice explain problem, input-to-output computation,

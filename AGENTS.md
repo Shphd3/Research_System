@@ -38,6 +38,10 @@ applicable references. Reuse instructions; refresh decision-bearing sources.
 The [method kernel](docs/methodology/research_exploration_kernel.md) guides open
 research, not routine tasks or a serial skill chain. Allow reasoned conjectures
 and counterexamples; apply the current stage without inventing future documents.
+When asked to advance understanding, offer a useful conditional explanation and
+a distinguishing prediction; an unresolved mechanism permits exploration. Follow
+the shared [review mode](docs/research_analysis_review_contract.md#review-mode)
+for interpretation timing; proposing an explanation does not confirm it.
 
 Check navigation with `python tools/check_current_entrypoints.py` before using
 active workstream paths; this does not validate science. Before new training implementation

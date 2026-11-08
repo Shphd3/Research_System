@@ -1,11 +1,29 @@
-# Complete analysis and researcher-first review
+# Complete analysis and result review
 
-Apply this contract to a requested complete experiment/analysis matrix. For
-first delivery of the researcher's own newly completed experiments, default to
-observations before AI mechanism judgments, following the researcher's standing
-preference; use a combined pass only when explicitly requested. Preserve the user's current scope and budget;
-this reference grants no execution authority. Narrow factual answers do not
-need the full delivery format.
+Apply coverage and fitting rules to a requested complete experiment/analysis
+matrix. Select the review mode below for result delivery; narrow factual answers
+do not need the full format. Preserve the user's scope and budget. This reference
+grants no execution authority.
+
+## Review mode
+
+When the researcher asks to inspect facts before AI interpretation, deliver the
+factual pass and wait within that requested scope. An explicit fact-first gate
+in an existing task or frozen Protocol remains effective until superseded.
+
+Otherwise, a request to interpret results, explain why or advance research uses
+one response: verified observations, a provisional AI explanation, a credible
+rival, a distinguishing prediction and a proposed next judgment or test. Give
+the strongest explanation the evidence permits, with its assumptions and what
+would overturn it. Do not add a mechanism discussion to a narrow status request.
+AI analysis neither records researcher acceptance nor changes canonical scientific
+state or execution approval. Missing acceptance remains `Unknown`.
+For an identity or established derivation, explain the relation without inventing
+a rival or empirical test.
+
+This section owns the review-mode rule. Skill entrypoints reference it rather
+than defining another default wait. Comprehension questions are useful for
+requested teaching or fact-first review, not an automatic gate on analysis.
 
 ## Coverage and independent dependencies
 
@@ -49,10 +67,11 @@ Use numerical and no-op checks that protect interpretation, without turning
 routine work into redundant approval stages. Repair within authorized limits;
 do not tune indefinitely or widen tolerances after observing an effect.
 
-## First delivery: measurements before mechanism judgment
+## Complete factual explanation
 
-Open the complete factual explanation with exactly these three analysis paths,
-once for the whole report:
+For a complete behavior/representation/intervention matrix, open with these
+three analysis paths once for the whole report. Other scopes use their own
+question's dependencies rather than forcing these categories:
 
 1. Behavior and factor controls: under which conditions predictions change.
 2. Representations and layerwise organization: what is observed or readable.
@@ -72,17 +91,21 @@ glossary alone cannot replace these local definitions. Follow a real example
 through the computation and include a real contrary/failed case where available;
 state when none exists. Never create a fictitious result for an unrun item.
 
-Keep observations, numerical/data eligibility and missingness visible. Defer
-support/refutation of mechanisms, architecture rankings, direction changes and
+Keep observations, numerical/data eligibility and missingness visible. In
+fact-first mode, defer support/refutation of mechanisms, architecture rankings, direction changes and
 next scientific choices until researcher review; do not hide them in a summary,
 appendix or suggested next step. Keep scientific conclusion pending. This delay
 does not stop other authorized frozen-plan analyses or reporting quality errors.
-End with the coverage table and one or two understanding questions, then wait.
+In fact-first mode, end with the coverage table and one or two understanding
+questions, then wait.
 Long explanations belong in the linked report; chat supplies the reading order.
 
-## Second delivery after review
+## Analysis, in the same response or after requested review
 
-Restate and correct the researcher's observations, then connect observation,
+After a requested fact-first review, restate and correct the researcher's
+observations. In either mode, connect observation,
 hypothesis supported/weakened, live rivals, evidence boundary and one proposed
 minimal next test. Label AI judgments and suggestions; do not attribute them to
-the researcher or change scientific state without authorization.
+the researcher or change scientific state without authorization. Explain the
+current knowledge gain and why the proposed next test matters more than the
+remaining alternatives; do not turn every limitation into a mandatory experiment.

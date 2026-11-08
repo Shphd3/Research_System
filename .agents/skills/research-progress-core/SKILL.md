@@ -9,6 +9,16 @@ Reduce one consequential uncertainty with the smallest test that can change a
 judgment. The researcher owns scientific choices; AI audits, proposes labeled
 alternatives and maintains authorized facts. `Unknown` is valid.
 
+For open research, find the tension among the observations and try a minimal
+explanation that connects them. State what it adds beyond the simplest rival,
+what would overturn it, and which one uncertainty is worth reducing next. A
+provisional explanation is useful work; labeling limits alone is not an answer
+to a request for understanding. Use the shared
+[review-mode rule](../../../docs/research_analysis_review_contract.md#review-mode)
+for when to deliver interpretation.
+For a material theory connection or equivalence claim, use the kernel's
+[mechanism bridge](../../../docs/methodology/research_exploration_kernel.md#mechanism-bridges-and-operational-equivalence).
+
 ## Select The Applicable Reference
 
 - New/reopened question: [discovery](references/problem_discovery.md).

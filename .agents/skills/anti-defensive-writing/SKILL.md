@@ -28,15 +28,16 @@ comparison and finding. Explain necessary terms at first use.
 This is an editing helper. The existing Focus, Anchor, experiment or meeting
 owner continues to determine purpose, evidence and scientific state. Use the
 [shared writing contract](../../../docs/report_writing.md) and the requested
-[researcher-first result review](../../../docs/research_analysis_review_contract.md).
+[result review mode](../../../docs/research_analysis_review_contract.md#review-mode).
 
 - Keep values, conditions, sample units, uncertainty, adverse results and
   NOT RUN/BLOCKED/INVALID distinctions. Separate observation from explanation.
 - A direct sentence cannot turn correlation into causation, numerical fit into
   a mechanism, or an unreviewed proposal into approval. Do not invent a paper
   contribution for an exploratory audit.
-- For the researcher's new experiment results, deliver the factual pass before
-  AI mechanism judgment. Clear prose preserves that review order.
+- Apply the shared review mode consistently across the reading layers. Preserve
+  explicit fact-first requests; otherwise clear prose can present provisional
+  AI explanations and rival predictions alongside the verified facts.
 - Keep requested coverage complete. Consolidate repeated presentation and move
   full checks/logs to their owning record; do not remove experiments from scope.
 - For AI work updates, say what changed or finished, its evidence and the next

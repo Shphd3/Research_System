@@ -47,6 +47,12 @@ A brief explanation or audit may finish in chat. Missing human interpretation do
 not block independent factual work. Scientific authority, execution and publication
 follow [AGENTS.md](../AGENTS.md); skill selection grants none of them.
 
+For result delivery, use the shared
+[review mode](research_analysis_review_contract.md#review-mode). Research reasoning
+should add a conditional explanation or a distinguishing prediction when asked,
+while preserving the researcher's scientific decisions. It need not create a
+Focus, Anchor, document or additional skill invocation for ordinary discussion.
+
 ## Read only what this task needs
 
 Read the selected `SKILL.md`, then its applicable references and named source
