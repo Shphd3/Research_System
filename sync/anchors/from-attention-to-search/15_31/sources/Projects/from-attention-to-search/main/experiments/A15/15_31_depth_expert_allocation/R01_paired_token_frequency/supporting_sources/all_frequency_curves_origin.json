@@ -1,0 +1,19 @@
+{
+  "producer": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/audit/plot_complete_frequency_curves.py",
+  "producer_sha256": "f9740adcd424327adf73ae6995d2f7bf60d52ef92adfed0992d3a8371f0ddbe7",
+  "input_analysis": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/analysis.json",
+  "input_sha256": "11a3166b033a72127d92c3d881458bdb3becb629d4a8077a382bee23cfafbcf8",
+  "source_csv": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/learning_curve_coordinates.csv",
+  "source_csv_sha256": "4b3935e61582e0f68006fdd9f02076e0ed8879a2d7b80a190d76efcd20d9d326",
+  "question": "Does depth allocation change low-frequency prediction and overall cost?",
+  "metric": "token-weighted frozen-test NLL; B minus A negative favors B",
+  "aggregation": "paired document bootstrap, 2000 replicates, percentile95%; one training seed",
+  "axes": "left NLL, right B-A intervals, bottom valid target tokens; top matrix-operation FLOPs only",
+  "count_basis": "2,000,027,648 matrix FLOPs/token from executed smoke operator shapes and exact matching formula; SDPA and nonmatrix total excluded",
+  "uncertainty_boundary": "document sampling interval does not capture training-seed uncertainty or all packed-stream dependence",
+  "files": {
+    "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/all_frequency_curves_and_differences.png": "9d20f51d72c45482cedf61c57fa5ba06ef062cc9a65d771d27b6d36eaf3135c7",
+    "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/all_frequency_curves_and_differences.pdf": "b4a510fdcc729890a9f925c4d2d00ebe85e7c1c05c88958329b1f347c1a2fb63",
+    "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/learning_curve_coordinates.csv": "4b3935e61582e0f68006fdd9f02076e0ed8879a2d7b80a190d76efcd20d9d326"
+  }
+}

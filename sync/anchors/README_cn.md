@@ -58,3 +58,9 @@
 - [A15_27_10：近远物品事实行为](from-attention-to-search/15_27_10/README.md)：本轮行为前置关卡，含完整原文、逐家族数据、操作门槛与不确定性；无SAE／训练／干预，科学接受Unknown，仅本地阅读副本。
 
 - [15_27_11: remote target / nearby competitor composition](from-attention-to-search/15_27_11/README.md): R19 factual results and raw-case reading; scientific acceptance Unknown; no training/intervention.
+
+- [15_27_12: distance-associated SAE combinations](from-attention-to-search/15_27_12/README.md): R20 complete observations/controls, raw cases and limits; scientific acceptance Unknown.
+
+- [A15_30 逐checkpoint近远证据使用](from-attention-to-search/15_30/README.md)：实际Dense／Baseline状态、冻结行为、控制与定义边界；科学判断待研究者审阅。
+
+- [A15_31：跨深度专家容量与低频 token 学习](from-attention-to-search/15_31/README.md)：单种子成对实验已完成；B−A低频NLL +0.217210、整体 +0.014258，本轮代理未见收益。仅本地副本，未发布；科学接受与机制判断Unknown。

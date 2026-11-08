@@ -1,0 +1,25 @@
+{
+  "completed_utc": "2026-11-05T16:25:45.035128+00:00",
+  "processing_agent": "/root/data_pipeline",
+  "factual_version": "v3",
+  "natural_text_version": "v3/natural_v3",
+  "source_fidelity": "ALL_SELECTED_PASS_BYTE_READBACK",
+  "selected_facts": 24096,
+  "eligible_fact_families": 47514,
+  "agent_sample_reviewed": 112,
+  "human_reviewed": 0,
+  "teacher_student_behavior_filter": "NOT_RUN_BY_DATA_AGENT",
+  "all_model_training": "NOT_RUN_BY_DATA_AGENT",
+  "main_data": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/data_prep/v3/data.jsonl",
+  "initial_AB": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/data_prep/v3/confirm_ab_2048.jsonl",
+  "general_LM": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/data_prep/v3/natural_v3/general_lm.jsonl",
+  "nonbiographical_gate_reference": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/data_prep/v3/natural_v3/nonbiographical_spectrum_reference.jsonl",
+  "all_earlier_versions_retained": true,
+  "scientific_judgment": "Unknown; data preparation does not establish architecture effectiveness",
+  "latest_quality_records": [
+    "validation_receipt.json",
+    "agent_review_receipt.json",
+    "natural_v3/natural_reference_manifest.json"
+  ],
+  "freeze_boundary": "Factual v3 and natural_v3 text/splits fixed before model behavior selection. Later audit files append evidence without changing frozen datasets."
+}

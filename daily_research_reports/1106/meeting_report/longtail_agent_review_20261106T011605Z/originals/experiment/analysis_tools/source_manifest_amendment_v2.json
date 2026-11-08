@@ -1,0 +1,73 @@
+{
+  "recorded_utc": "2026-11-05T16:59:35.170423+00:00",
+  "status": "QUALIFICATION_AMENDMENT_V2_CPU_VERIFIED_NO_ACTUAL_MODEL_RESULTS_READ",
+  "base_manifest": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/tool_manifest.json",
+  "base_manifest_sha256": "608869632101db4ba4717c2b490e845c75ad11116746d6eba6d324b48f87bb22",
+  "base_code_sha256": "dfccad089c8f3d2b03c9dd3b36ec24931154fcd2473958a7b9139f9adad3eb86",
+  "base_all_frozen_files_byte_identical": true,
+  "new_entrypoint": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/aggregate_facts.py",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/aggregate_facts.py",
+      "bytes": 34400,
+      "sha256": "2d5ad3bd04efa3b45fb18c68631646ead9c713e469f9f131c41b34c926b1ccfa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/qualification_helpers.py",
+      "bytes": 8078,
+      "sha256": "48cc84c59dfe18220d80e78dd1a1f9db679d77c293f3924c1409d79d0200262b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/test_aggregate_facts.py",
+      "bytes": 18311,
+      "sha256": "2ba3e6f460ccbf54de28bb50a9e069f12d1ddcc2a93992871eff65e47e427d5d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/README.md",
+      "bytes": 11692,
+      "sha256": "adfe979b9ca6d97b14ee5e04ae45068b16cbe79d3503f177537d02898807a46a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/README_cn.md",
+      "bytes": 4674,
+      "sha256": "2fe75fc80c5d898e1dc1cf6dba76474d579032ad7c7aaa70442d683e66904409"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/example_mapping.json",
+      "bytes": 27515,
+      "sha256": "8d5dea8b5cd7f8d0ae317b85142557fecbd8a932b47d35ce89c88b7a6d6029ba"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/cpu_test_receipt.json",
+      "bytes": 793,
+      "sha256": "d48890b8cc2e1ba99b8aa4c28b1c658a9f435d2fcc9b884f150bb14cffe3606d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/analysis_tools/v2/v1_preservation_receipt.json",
+      "bytes": 2146,
+      "sha256": "e0c392838ef37455ed1a037cc876f839fba02af0cdf5d358639ca5c558e5e109"
+    }
+  ],
+  "scope": [
+    "Conditional module/initial-ratio/basis/head-dimension configuration matching,including adapter",
+    "Actual measured parameter-count receipt in checkpoint run directory",
+    "Explicit CE0 vs KL.5 coefficient contract; declared head/random lambda; L2(head_dim/d_model)=.0625 at64/1024; unused raw penalties not falsely matched",
+    "Exact A-to-B launch argv + launch-time parent path/hash + mapped parent bytes + evaluatedA manifest bridge; phase_history alone insufficient",
+    "Same-arm A-to-B module/objective/optimizer/source/basis consistency"
+  ],
+  "unmodified_numerical_definitions": [
+    "fact denominators",
+    "two-heldout joint endpoint",
+    "unresolved lower/upper bounds",
+    "source-family paired5000 bootstrap and seeds",
+    "retention estimands",
+    "next-token weighting"
+  ],
+  "verified_tests": 14,
+  "synthetic_numeric_and_ci_v1_v2_parity": "PASS",
+  "formal_head_lambda": "Unknown until parent formal DEV freeze; example is null,not CLI default",
+  "independent_review": "Requested from /root/resource_audit; no final status claimed here",
+  "actual_model_output_access": "NONE",
+  "gpu_or_model_loads": 0,
+  "other_write_scopes_modified": false
+}

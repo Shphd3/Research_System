@@ -1,0 +1,160 @@
+{
+  "status": "FROZEN_BEFORE_CONFIRM_TRAINING",
+  "created_utc": "2026-11-05T17:45:00.299340+00:00",
+  "authority": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/user_execution_contract.md",
+  "user_contract_sha256": "ab37d9aa0d69f815da76ee4afe0c10f54912eb896c8bcd18bdfa0ba71d1a7db7",
+  "scientific_acceptance": "Unknown",
+  "question_state": "Open; no researcher scientific closure inferred",
+  "student": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "teacher": "/data/share/Qwen3-4B",
+  "source_manifest": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/source_manifest_amendment_v4.json",
+  "source_manifest_sha256": "e8d77b70e9c5e7530f9e77aae867e97dbb3f427f63eb131787ff2865fdf3504c",
+  "source_sha256": {
+    "cache_io.py": "cb85f36d442a4ebf2de7718e853a25246ebadbaf88c43b862e0a6cd405f8f475",
+    "evaluate_cached.py": "d8d9d05b2bec2ccafb2242de7bdd886c1fb28090c06225df24f0b41d979fe658",
+    "evaluate_live.py": "820e20eaf55c39a3c3964e1e4fb928613ca91b4493b29714d6d0acf2fd1b6024",
+    "fit_spectrum.py": "80f81175741d56781cbc972a370c08add3aa0861c1cabd7e4f52e11c403fd5bb",
+    "memory_core.py": "bf556f177c72eaa2326d564e15304d2ba867c128cb30e45519eca68450b63934",
+    "prepare_cache.py": "18b2bec5b7a46204807ae30e0eee815c94912aa3e51f777367b8e84f5ca4b363",
+    "prepare_lm_cache.py": "967277422f2648a37be6627d274346d1ee6dee3dac677afc3bbe67c15e3326c0",
+    "train_cached.py": "0952c94a262c9354958543d2fbc370214b241ecbb5853ba6a26be28b7d36ca99",
+    "verify_cache.py": "7d6f2ed8739d7a8d131e0c1b85668cda01e78897396d3d4df6c403b45a9d0d01"
+  },
+  "gpu_qualification_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/qualification/gpu_recovery_speed_semantic_v2/actualgpuQA.json",
+  "gpu_qualification_sha256": "8ad14b537a0d7035faadd2716a5dcd0fd498b03b37296898b29d1b450deb7a14",
+  "answer_mask_version": "semantic_content_v4",
+  "answer_mask_policy": "Only semantic answer tokens. Leading isolated whitespace moved to known teacher-forcing prefix; merged content tokens retained; complete model input IDs unchanged; EOS excluded. Free generation gets no gold prefix.",
+  "trainable_arms": [
+    "adapter",
+    "memory_ce",
+    "memory_kl",
+    "memory_head",
+    "memory_random",
+    "memory_l2"
+  ],
+  "baseline_arm": "none",
+  "learning_rate": 0.001,
+  "temperature": 2.0,
+  "kl_weight": 0.5,
+  "spectrum_weight": 3.107190799106226,
+  "l2_weight": 0.19419942494413914,
+  "spectrum": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/spectrum/biographical_v3/spectrum.pt",
+  "spectrum_sha256": "4f0fc777de324ca05eae889c4a9e4482cd80cb221b5c048da087943648b8720a",
+  "spectrum_scope": "Independent903-biography-family centered pre-finalnorm reference,32768positions. Generic94-family reference failed .7 stability and remains preserved.",
+  "global_batch": 16,
+  "grad_accum": 1,
+  "slots": 256,
+  "key_width": 64,
+  "gate_bias": -2.0,
+  "head_dim": 64,
+  "initial_delta_ratio": 0.001,
+  "optimizer": "AdamW beta(.9,.999),eps1e-8,weightdecay0,constantLR,clip1",
+  "seeds": [
+    1105,
+    1106
+  ],
+  "assignment_seed": 1105,
+  "swap_exposure_seeds": [
+    1106
+  ],
+  "fact_exposure_quotas": [
+    1,
+    8
+  ],
+  "scheduling": "Same data/order/actual quotas/globalbatch/updates per seed across all arms. Source/entity assignment units; final1vs8 presentations recency-paired when possible. Fresh same-seed initialization per independent scale.",
+  "generation": {
+    "greedy": true,
+    "max_new_tokens": 32,
+    "batch_size": 64,
+    "seed": 1105,
+    "explicit": {
+      "use_model_defaults": false,
+      "do_sample": false,
+      "num_beams": 1
+    },
+    "stop": "First completed nonempty answer line or nativeEOS"
+  },
+  "evaluation": "Full AB+128 nevertrained sentinel original+two unseen question templates at baseline/afterA/afterB; original-answer content NLL and independent128paragraph LM NLL; fixed192-fact active/off/keys-only/values-only controls with identically batched baseline.",
+  "main_contrasts": [
+    "memoryKL-minus-none acquisition",
+    "memoryKL-minus-parameter-matched-adapter",
+    "head-minus-KL and head-minus-random64",
+    "KL-minus-CE",
+    "head-minus-L2 secondary",
+    "A afterB-minus-afterA retention jointly with B acquisition"
+  ],
+  "statistical_policy": "Fact-level both-unseen-question success primary; original accuracy and content-token NLL separate. source-family paired5000-bootstrap CI, each seed/cohort/1vs8/phase separately; uncertainty outputs separate and conservative lower/upper bounds. No CI overconfidence from question replication.",
+  "teacher_cohorts": "Two fixed screening views closed correct preferred, otherwise two source-conditioned correct; student notbothcorrect and no unresolved. Metadata and all exclusion outputs retained. No heldout questions used for eligibility.",
+  "scales": [
+    2048,
+    8192,
+    20000
+  ],
+  "scale_gate": "First finish complete all-arm pilot, then expand all arms equally using measured end-to-end time/storage, never best-arm scores. Maximum actual balanced eligible<=20000; preserve missing/failed arms. Reuse baseline eligibility for previously screened facts.",
+  "natural_frequency": "Unknown. Controlled1vs8 supervision is not Qwen pretraining exposure.",
+  "limits": "One numeric birth-year relation; automatically extracted source spans,112agent fact sample reviews,0human review; template paraphrases. Frozen backbone with added shared parameters, not original-model knowledge or gradient-free dynamic writing.",
+  "dev_selection": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/dev_semantic_lr_selection.json",
+  "dev_selection_sha256": "dbae6f53d7da060aef53ab3297c8393159864dc0818f2c5f537264b103fa4d56",
+  "dev_gradient_calibration": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/dev_semantic_gradient_calibration.json",
+  "dev_gradient_calibration_sha256": "549b9883925fc700af3c4bc94dd2e0958b6b8acf9a2f7c46d22b8427b20c2729",
+  "penalty_calibration": {
+    "target_penalty_to_task_gradient_ratio": 0.1,
+    "uncapped_head_lambda": 3.107190799106226,
+    "lambda_cap": 1000.0,
+    "cap_bound": false,
+    "head_lambda": 3.107190799106226,
+    "random_lambda": 3.107190799106226,
+    "l2_lambda": 0.19419942494413914,
+    "l2_rule": "lambda_head * head_dim/d_model; isotropic expected energy matching, not guaranteed observed gradient matching",
+    "raw_median_penalty_to_task_gradient_ratios": {
+      "head": 0.03218341146889489,
+      "random": 0.01201829044015754,
+      "l2": 0.15389427222196767
+    },
+    "achieved_median_gradient_ratios": {
+      "head": 0.1,
+      "random": 0.03734312147664383,
+      "l2": 0.029886179167702927
+    },
+    "batch_achieved_gradient_ratios": {
+      "head": [
+        0.11394713001493197,
+        0.04981210276836344,
+        0.048168858915689915,
+        0.1266226195870878,
+        0.048608340357842506,
+        0.17355421933957785,
+        0.10272250524107061,
+        0.09727749475892936
+      ],
+      "random": [
+        0.04285873981644107,
+        0.018560449972380638,
+        0.017871467999545917,
+        0.04718099076831451,
+        0.01806847618863006,
+        0.06436449508790669,
+        0.038168101108883745,
+        0.036518141844403905
+      ],
+      "l2": [
+        0.0342492690252929,
+        0.014860536702179962,
+        0.014322341747864535,
+        0.037777660612987145,
+        0.014474331059893058,
+        0.05158643473174536,
+        0.030577416087856062,
+        0.029194942247549795
+      ]
+    },
+    "cap_failure": false,
+    "interpretation": "DEV recommendation only; head/random share exactly one lambda, L2 coefficient follows the stated isotropic rule. Retain actual achieved ratios and cap failures."
+  },
+  "failed_engineering_preserved": [
+    "4B originalDEV sampling override",
+    "standalone whitespace KL conflict; oldmaskDEV isolated",
+    "generic reference stability .679476<.7"
+  ],
+  "no_formal_scores_used_for_hyperparameters": true
+}

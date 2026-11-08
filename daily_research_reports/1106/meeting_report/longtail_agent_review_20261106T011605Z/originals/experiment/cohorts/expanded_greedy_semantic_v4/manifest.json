@@ -1,0 +1,63 @@
+{
+  "status": "FROZEN_PRETRAIN_SELECTION",
+  "time": "2026-11-05T19:35:24.708370+00:00",
+  "candidate_facts": 20000,
+  "eligible_facts": 19849,
+  "eligible_a": 9923,
+  "eligible_b": 9926,
+  "balanced_max_facts": 19846,
+  "counts": {
+    "ELIGIBLE": 19849,
+    "student_neither_view_correct": 19552,
+    "teacher_source_conditioned": 19557,
+    "teacher_closed_known": 372,
+    "student_mixed_correctness": 368,
+    "STUDENT_BOTH_CORRECT": 78,
+    "student_stable_correct": 78,
+    "TEACHER_NO_STABLE_VERIFIED_ANSWER": 71,
+    "teacher_None": 71,
+    "STUDENT_UNRESOLVED": 2,
+    "student_unresolved": 2
+  },
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/cohorts/expanded_greedy_semantic_v4/ab_2048.jsonl",
+      "facts": 2048,
+      "per_phase": 1024,
+      "sha256": "d586c1344a05c85425ea01e0c63fdd57c519ea952cf85bb474983da1e567e676",
+      "teacher_cohorts": {
+        "source_conditioned": 2010,
+        "closed_known": 38
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/cohorts/expanded_greedy_semantic_v4/ab_8192.jsonl",
+      "facts": 8192,
+      "per_phase": 4096,
+      "sha256": "42c49e7e10b02a5dda745dae94d5a828a2ecd4bca6eb064ac1ea8585a7458515",
+      "teacher_cohorts": {
+        "source_conditioned": 8039,
+        "closed_known": 153
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/cohorts/expanded_greedy_semantic_v4/ab_19846.jsonl",
+      "facts": 19846,
+      "per_phase": 9923,
+      "sha256": "6f329f7e6b269302c6d69ea13196b7da1400452c610ad8f7a0ea22c981daa16e",
+      "teacher_cohorts": {
+        "source_conditioned": 19482,
+        "closed_known": 364
+      }
+    }
+  ],
+  "data_sha256": "e8eb640c7e9127a9f403cb1be3e2a8627245c986c006873a9d035081cf0410dc",
+  "screen_inputs": {
+    "student": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/screen/all20000/student_closed",
+    "teacher_closed": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/screen/all20000/teacher_closed",
+    "teacher_source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/screen/all20000/teacher_source"
+  },
+  "rule": "Two fixed train/eligibility views; teacher closed both correct preferred, otherwise source both correct; exclude student both-correct or unresolved. No heldout question or posttraining score used. Neither-view-correct may include format failures; no missing-knowledge inference.",
+  "frequency": "Controlled supervision only; natural/pretraining exposure Unknown",
+  "unbalanced_eligible_not_used": 3
+}

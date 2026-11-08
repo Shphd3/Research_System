@@ -1,0 +1,3 @@
+# Rule-selected cases
+
+The fixed rule selects F11,F15,F27,F19. F11 is both relatively stable in membership and contrary to the average amplitude trend; the fourth uses the predeclared cross-site-disagreement fallback. All original prefixes, every member in the three-distance union, fixed frequency groups and literal candidate-token scores are stored once in the English raw cases: [F11](cases/F11.md), [F15](cases/F15.md), [F27](cases/F27.md), [F19](cases/F19.md). Chinese interpretation: [casebook](casebook_cn.md). [All supplemental failures](supplement_failures.md) remain. No illustrative selection changes the complete-family analysis.

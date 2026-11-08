@@ -1,0 +1,60 @@
+{
+  "status": "H100_CHECKPOINT_HANDOFF_AUTHORIZED",
+  "old_job_id": "pt-vbvlpop3",
+  "new_job_id": "pt-5gno22e6",
+  "time": "2026-11-06T00:37:31.592296+00:00",
+  "freeze_sha256": "e92dd33c7f3ce1c17f98efd8b3b224450005e1cff5f91e0de684797a82acbe01",
+  "source_sha256": {
+    "cache_io.py": "cb85f36d442a4ebf2de7718e853a25246ebadbaf88c43b862e0a6cd405f8f475",
+    "evaluate_cached.py": "d8d9d05b2bec2ccafb2242de7bdd886c1fb28090c06225df24f0b41d979fe658",
+    "evaluate_live.py": "820e20eaf55c39a3c3964e1e4fb928613ca91b4493b29714d6d0acf2fd1b6024",
+    "fit_spectrum.py": "80f81175741d56781cbc972a370c08add3aa0861c1cabd7e4f52e11c403fd5bb",
+    "memory_core.py": "bf556f177c72eaa2326d564e15304d2ba867c128cb30e45519eca68450b63934",
+    "prepare_cache.py": "18b2bec5b7a46204807ae30e0eee815c94912aa3e51f777367b8e84f5ca4b363",
+    "prepare_lm_cache.py": "967277422f2648a37be6627d274346d1ee6dee3dac677afc3bbe67c15e3326c0",
+    "train_cached.py": "0952c94a262c9354958543d2fbc370214b241ecbb5853ba6a26be28b7d36ca99",
+    "verify_cache.py": "7d6f2ed8739d7a8d131e0c1b85668cda01e78897396d3d4df6c403b45a9d0d01"
+  },
+  "qualification_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/qualification.json",
+  "qualification_sha256": "59e77c50dd80b795777d531f0194a2aa26e625bb32d91b54f9998a802a57bcbe",
+  "reservation_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/b_guard_reservation.json",
+  "old_blocked_step": "19846_train_B",
+  "new_worker_live_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/worker_live.json",
+  "old_worker_live_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/orchestration/worker_live.json",
+  "plan_paths": {
+    "pre_H100": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/plans/pre.json",
+    "after_A_H100": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/plans/after_A.json",
+    "train_B": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/plans/19846/train_B.json",
+    "after_B": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/plans/19846/after_B.json"
+  },
+  "batch_paths": {
+    "pre_H100": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/batch_logs/h100_pre",
+    "after_A_H100": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/batch_logs/h100_after_A",
+    "train_B": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_train_B",
+    "after_B": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_after_B"
+  },
+  "parent_checkpoint_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/adapter/A/checkpoints/final.pt": "716e983689ded5f531a20f5194d80c44c6a033053459b75fa0594b0d3ce5db21",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_ce/A/checkpoints/final.pt": "3771f658e77c533fa1a8061266f147e5ce1eb2db4b8da7fe18143f394417527b",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_kl/A/checkpoints/final.pt": "f4dc0192fc80750702edbc4d95c623735daf52ab62c7efc30087ef7332088c48",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_head/A/checkpoints/final.pt": "f166f9bd2078c2e2eda7056919545d055c5129c524be458ea102af5047aeff4e",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_random/A/checkpoints/final.pt": "a5dbb341344140a4edb6562598ed63f5bbb69a707628e35b289ee93ce6b5c1fb",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_l2/A/checkpoints/final.pt": "2ab4c5f5413d4a85954e517919fbeef606419e693f7962184251d86c2fb5f2db",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1106/adapter/A/checkpoints/final.pt": "c80c73d3cc34ac84ed7cb5101207d2efcbb837b445e89fc8a93a7893a8432d33",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1106/memory_ce/A/checkpoints/final.pt": "0ce9b4ad165f5c6b5c61ae965d50a0fd65a0fd4f66b5edf53d6cce87fe5ff9e0",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1106/memory_kl/A/checkpoints/final.pt": "97dd544054d0ba117ac05834ea84d603a757971543f748a29d130fc08fbe8ca3",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1106/memory_head/A/checkpoints/final.pt": "c0856f2098deee454fce2d20bfdbea98308e714ea90d76013e898c1e7f525fd0",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1106/memory_random/A/checkpoints/final.pt": "8caeb4a1592542cdf2aa9f6b55812e31d69ee379993b55394f4cef0e16408930",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1106/memory_l2/A/checkpoints/final.pt": "7fa513e52563fa761cde1d674e96dd1b72ee52e99f3b94595b5a1be947e42428"
+  },
+  "A_training_hardware": "2RTX5090spot",
+  "B_training_hardware": "4H100reserved_independent_world1_arms",
+  "cross_device_bitwise_training_equivalence": false,
+  "metrics_and_data_unchanged": true,
+  "driver_sha256": "5cdf7a90a7eff789ae4929faf4c4e8e30191813fc9a2b82be91e32d61afe8d96",
+  "formal_h100_guard_sha256": "7ce0eddac001d003a3c84c4df40105c3e6026fafb97ca0f42107c1a5cbdc6b1c",
+  "migration_decision_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/migration_decision.json",
+  "migration_decision_sha256": "81979e120d68e7920ce240f7082be59ca0900a9c21abde938886a9db4eec7bb8",
+  "single_writer_barrier_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/single_writer_barrier.json",
+  "single_writer_barrier_sha256": "91427bb3f504ed0690503a7056e2417b93e2d146364619ca598d3f0d3e65d5a8"
+}

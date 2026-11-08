@@ -1,0 +1,18 @@
+{
+  "script": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/audit/register_actual_outputs.py",
+  "script_sha256_current": "b549d728eedfd8db6e95e924934730c2820d946be76496129e4e83f87127a1ce",
+  "registered_ids": [
+    "checkpoint_family_depth_expert_allocation_smoke_20261106",
+    "data_depth_expert_allocation_formal_frequency_20261106"
+  ],
+  "current_strict_snapshot": "/data/250010109/Research_System/assets/checks/20261106T165550082522Z_depth_expert_allocation_smoke_outputs.json",
+  "checked_at_utc": "2026-11-06T16:58:26.051361+00:00",
+  "registration_receipt": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/audit/asset_registration_smoke_20261106T165550082522Z/registration_receipt.json",
+  "actual_checkpoint_members": 7,
+  "fresh_checkpoint_hash_bytes": 34545588066,
+  "diagnostic_scope": "Only saved Smoke states plus frozen formal stream frequency; no formal endpoints/analysis registered",
+  "io_overlap_boundary": "Registration performed fresh sequential reads of34.5GB of saved Smoke checkpoint bytes while formalA was beginning. This outside verification workload may affect observed systems time; it does not change token order, model updates or paired target budgets. No causal timing impact measured.",
+  "future_full_command": "python audit/register_actual_outputs.py --stage full --job-id pt-ds9bdaxb --commit",
+  "future_full_gate": "Requires pipeline COMPLETE, actualA/B endpoint counters equal frozen budget, required checkpoint members and complete results outputs; refuses conflicting existing IDs",
+  "scientific_acceptance": "Unknown"
+}

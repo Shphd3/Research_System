@@ -8,7 +8,7 @@
 [R10 whole-dictionary member atlas](domain_member_atlas_r10_20261030.md): actual960-member cache-only screening, common-spectrum and input-response evidence; no new forwards/training.
 
 
-This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **1146 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
+This directory maintains **storage addresses, identities, purposes and access evidence**. It registers **1206 entries and 10 project/storage roots** for current sharing/routing/SAE research, original pretrained Qwen3-0.6B assets and the inspected 109 cache. Entries include checkpoint families, revisions, case aliases and prepared formats, not an equal number of distinct datasets. Payloads remain in their original storage.
 
 [Frozen domain-member meeting analysis](domain_members_meeting_20261030.md): actual cache-only 16+16 selection, five figure groups, token/context statistics and explicit matching/coverage gaps; no new forwards or training.
 
@@ -355,3 +355,29 @@ R17 Feature composition: [four-route results](/data/250010109/Research_System/Pr
 Frozen official Base model/tokenizer,444constructed English prefixes,24heldout families and exact16/64/128main gaps. [Selected current output access](checks/2026-11-04_r18_behavior_outputs.json) covers dataset_r18_near_far_object_fact_pairs_20261104 and analysis_r18_near_far_object_fact_behavior_20261104, not a whole-library refresh. [Canonical Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/summary.md) owns observations and boundaries; all raw scores remain execution-side. No SAE/training/intervention or further execution authorization.
 
 [R19 remote-target/near-word composition](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md):292prefixes, two separately encoded native SAEs, discovery12/heldout12families, matched factorial, membership/strength and marginal-controlled joint evidence; no training or intervention.
+
+[R20distance and native SAE combinations](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/summary.md):144old main conditions plus228bounded forward controls; all native code magnitudes/directions and frequency opportunities, no training or intervention.
+
+
+### S10 shared/discriminative frequency audit, 2026-11-05
+
+Three actual outputs register16newhierarchyfamilies and384same-colon reference documents, native two-SAE sparse responses and bounded frequency/strength/joint analysis. IDs: `dataset_s10_hierarchy_frequency_reference_20261105`, `representation_s10_dual_sae_frequency_hierarchy_20261105`, `analysis_s10_shared_discriminative_frequency_20261105`. [Current selected access](/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/evidence/output_access.json) · [Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/summary.md). Frequency is source/position conditional; scientific acceptanceUnknown, no training/intervention.
+
+
+### S11 四组粗细类别相对频率（2026-11-05）
+
+实际新96家族/4608文本及12000独立参考文档、两原生SAE新激活和冻结统计登记为3项；未训练、未干预。频率轴与反向结果分别报告，科学接受Unknown。[结果](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/summary_cn.md) · [当前限定访问](/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/evidence/output_access.json)。
+
+
+### Checkpoint evidence-use behavior, 2026-11-05
+
+37 actual native states, frozen controlled texts and complete behavioral scores are registered under `checkpoint_family_evidence_use_dense_snapshot_20261105`, `checkpoint_family_evidence_use_baseline_snapshot_20261105`, `dataset_checkpoint_evidence_use_frozen_20261105` and `analysis_checkpoint_evidence_use_20261105`. The actual existing33BMoE router-input SAE final is backfilled as `sae_moe_baseline33b_gate_input_formal_1b_20261104`; its dictionary progress is separate from model progress. [Current inputs/SAE access](checks/2026-11-05_checkpoint_evidence_inputs_and_sae.json) · [Outputs](checks/2026-11-05_checkpoint_evidence_outputs.json) · [Factual report](../Projects/from-attention-to-search/main/experiments/A15/15_30_checkpoint_evidence_use/R01_behavior/summary.md). No training or scientific acceptance is implied.
+
+### Knowledge-learning infrastructure DEV and engineering Smoke (2026-11-05)
+
+Registered `dataset_knowledge_learning_dev40_20261105` (40 previously examined DEV facts) and `checkpoint_knowledge_phase1_norm_smoke_20261105` (parent-bound1024-parameter norm-only engineering delta, not a full trained model). [Scoped access](checks/2026-11-05_knowledge_phase1_smoke_outputs.json) and [execution report](/data/250010109/MoE_Router/experiments/20261105_long_tail_teacher_survey/phase1_base_infrastructure/phase1_report.md) retain the exact scope. No formal SFT/distillation or scientific acceptance follows.
+
+[Depth-allocation actual saved outputs](depth_expert_allocation_20261106.md): Smoke and formal identities stay separate; current scoped access and saved-state boundaries are in the guide.
+
+
+[S14 MoE hierarchy cross-model robustness](sae_moe_hierarchy_cross_model_s14_20261108.md): actual new MoE responses on reused S13 stimuli; independently remeasured Q/G frequency axes, one native SAE, no training/intervention. Directional agreement and eligibility limits separately reported.

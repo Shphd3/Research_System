@@ -1,0 +1,30 @@
+{
+  "status": "MIGRATE_NET_TIME_BENEFIT",
+  "time": "2026-11-06T00:36:36.564129+00:00",
+  "qualification_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/qualification.json",
+  "qualification_sha256": "59e77c50dd80b795777d531f0194a2aa26e625bb32d91b54f9998a802a57bcbe",
+  "new_job_id": "pt-5gno22e6",
+  "old_job_id": "pt-vbvlpop3",
+  "projection_source": "Fixed-plus-per-fact stagewall fit from complete2048+8192,actual19846baseline andpairedDEVhardwarethroughput",
+  "predicted_5090_full_stage_seconds": {
+    "after_A": 4473.786282931775,
+    "train_B": 4187.9033230088025,
+    "after_B": 5744.664421582637
+  },
+  "old_afterA_elapsed_seconds": 1515.981893,
+  "continue5090_predicted_remaining_seconds": 12890.372134523215,
+  "handoffH100_predicted_remaining_GPU_flow_seconds": 5499.07803074984,
+  "handoffH100_with20percent_safety_seconds": 6598.8936368998075,
+  "predicted_net_saved_seconds_with_safety": 6291.478497623408,
+  "extra_work_accounted": [
+    "H100newpre4tasks",
+    "H100newafterA36tasks",
+    "2minhandoff+coldcacheoverhead"
+  ],
+  "CPU_statistics_and_analysis_reserve_seconds": [
+    2700,
+    3600
+  ],
+  "smallDEV_projection_not_guarantee": true,
+  "models_data_hyperparameters_scoring_or_arms_changed": false
+}

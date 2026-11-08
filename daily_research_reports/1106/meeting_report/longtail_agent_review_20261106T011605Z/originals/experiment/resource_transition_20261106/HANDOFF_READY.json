@@ -1,0 +1,31 @@
+{
+  "status": "ROOT_REVIEWED_SAFE_HANDOFF_READY",
+  "time": "2026-11-06T00:37:22.838067+00:00",
+  "reviewer": "Codex /root",
+  "independent_reviewer": "completion_audit;singlewriter monotonic barrier and actualjob cert staticaudit PASS",
+  "source_and_plan_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/h100_driver.py": "5cdf7a90a7eff789ae4929faf4c4e8e30191813fc9a2b82be91e32d61afe8d96",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/run_formal_h100.py": "7ce0eddac001d003a3c84c4df40105c3e6026fafb97ca0f42107c1a5cbdc6b1c",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/plans/pre.json": "212ab7beb165456bd16ea637fb0f6eca2edd7f78ed2fedfd2648541d1334801f",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/plans/after_A.json": "7b14cfc9b510c0e1a214f0d3437b58908e04e3b80fb1495f060131feef1507bf",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/plans/19846/train_B.json": "edc9061c24769669cf66364f83a4a56d43d7bca088438d43fcb05badb69b105d",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/plans/19846/after_B.json": "48fa33d4615a3bd85056589bc72de2bb9b03cd49bdbf907bb5ac7701bdf377be",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/protocol_frozen.json": "e92dd33c7f3ce1c17f98efd8b3b224450005e1cff5f91e0de684797a82acbe01",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/qualification.json": "59e77c50dd80b795777d531f0194a2aa26e625bb32d91b54f9998a802a57bcbe",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/migration_decision.json": "81979e120d68e7920ce240f7082be59ca0900a9c21abde938886a9db4eec7bb8",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/cache_io.py": "cb85f36d442a4ebf2de7718e853a25246ebadbaf88c43b862e0a6cd405f8f475",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/evaluate_cached.py": "d8d9d05b2bec2ccafb2242de7bdd886c1fb28090c06225df24f0b41d979fe658",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/evaluate_live.py": "820e20eaf55c39a3c3964e1e4fb928613ca91b4493b29714d6d0acf2fd1b6024",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/fit_spectrum.py": "80f81175741d56781cbc972a370c08add3aa0861c1cabd7e4f52e11c403fd5bb",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/memory_core.py": "bf556f177c72eaa2326d564e15304d2ba867c128cb30e45519eca68450b63934",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/prepare_cache.py": "18b2bec5b7a46204807ae30e0eee815c94912aa3e51f777367b8e84f5ca4b363",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/prepare_lm_cache.py": "967277422f2648a37be6627d274346d1ee6dee3dac677afc3bbe67c15e3326c0",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/train_cached.py": "0952c94a262c9354958543d2fbc370214b241ecbb5853ba6a26be28b7d36ca99",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/source/verify_cache.py": "7d6f2ed8739d7a8d131e0c1b85668cda01e78897396d3d4df6c403b45a9d0d01"
+  },
+  "old_afterA_still_running": true,
+  "old_B_not_started": true,
+  "actual_H100_devices": 4,
+  "no_main_accuracy_read_or_hyperparameter_change": true,
+  "method": "StartBfromsavedAon4independentH100s;oldafterAreadersfinishthenexistingBguardfails;newH100pre/Aevalhardwarematched"
+}

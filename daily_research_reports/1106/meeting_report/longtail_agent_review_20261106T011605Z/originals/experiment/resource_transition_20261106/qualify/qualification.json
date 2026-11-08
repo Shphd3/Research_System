@@ -1,0 +1,377 @@
+{
+  "status": "H100_QUALIFICATION_PASS",
+  "checked_utc": "2026-11-06T00:34:41.943779+00:00",
+  "allocation_job_id": "pt-5gno22e6",
+  "gpu_count": 4,
+  "gpu_names": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "resume_or_state_transfer_checks": {
+    "pass_all": true,
+    "probes": [
+      {
+        "pass_exact_loaded_module": true,
+        "optimizer_loaded": true,
+        "optimizer_state_exact_loaded": true,
+        "optimizer_all_moments_finite": true,
+        "scheduler_loaded": true,
+        "scheduler_state_exact_loaded": true,
+        "CPU_RNG_exact_loaded": true,
+        "CUDA_RNG_exact_loaded": true,
+        "CPU_and_CUDA_RNG_restored": true,
+        "parent_sha256": "f4dc0192fc80750702edbc4d95c623735daf52ab62c7efc30087ef7332088c48",
+        "parent_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_kl/A/checkpoints/final.pt",
+        "parent_unchanged_after": true,
+        "parent_optimizer_step": 2792,
+        "note": "State load equivalence,not a claim that cross-hardware future updates are bitwise identical"
+      },
+      {
+        "pass_exact_loaded_module": true,
+        "optimizer_loaded": true,
+        "optimizer_state_exact_loaded": true,
+        "optimizer_all_moments_finite": true,
+        "scheduler_loaded": true,
+        "scheduler_state_exact_loaded": true,
+        "CPU_RNG_exact_loaded": true,
+        "CUDA_RNG_exact_loaded": true,
+        "CPU_and_CUDA_RNG_restored": true,
+        "parent_sha256": "f4dc0192fc80750702edbc4d95c623735daf52ab62c7efc30087ef7332088c48",
+        "parent_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_kl/A/checkpoints/final.pt",
+        "parent_unchanged_after": true,
+        "parent_optimizer_step": 2792,
+        "note": "State load equivalence,not a claim that cross-hardware future updates are bitwise identical"
+      },
+      {
+        "pass_exact_loaded_module": true,
+        "optimizer_loaded": true,
+        "optimizer_state_exact_loaded": true,
+        "optimizer_all_moments_finite": true,
+        "scheduler_loaded": true,
+        "scheduler_state_exact_loaded": true,
+        "CPU_RNG_exact_loaded": true,
+        "CUDA_RNG_exact_loaded": true,
+        "CPU_and_CUDA_RNG_restored": true,
+        "parent_sha256": "f4dc0192fc80750702edbc4d95c623735daf52ab62c7efc30087ef7332088c48",
+        "parent_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_kl/A/checkpoints/final.pt",
+        "parent_unchanged_after": true,
+        "parent_optimizer_step": 2792,
+        "note": "State load equivalence,not a claim that cross-hardware future updates are bitwise identical"
+      },
+      {
+        "pass_exact_loaded_module": true,
+        "optimizer_loaded": true,
+        "optimizer_state_exact_loaded": true,
+        "optimizer_all_moments_finite": true,
+        "scheduler_loaded": true,
+        "scheduler_state_exact_loaded": true,
+        "CPU_RNG_exact_loaded": true,
+        "CUDA_RNG_exact_loaded": true,
+        "CPU_and_CUDA_RNG_restored": true,
+        "parent_sha256": "f4dc0192fc80750702edbc4d95c623735daf52ab62c7efc30087ef7332088c48",
+        "parent_path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/runs/19846/seed1105/memory_kl/A/checkpoints/final.pt",
+        "parent_unchanged_after": true,
+        "parent_optimizer_step": 2792,
+        "note": "State load equivalence,not a claim that cross-hardware future updates are bitwise identical"
+      }
+    ],
+    "parent_unchanged": true
+  },
+  "forward_numerical": {
+    "pass_all": true,
+    "Base_BF16_native_greedy": true,
+    "finite_gradient_checks": true,
+    "nonzero_initial_gradient_source_guard": true
+  },
+  "speed": {
+    "measured": true,
+    "H100_over_5090_per_GPU_train_steady_ratio": 0.9677077115917249,
+    "H1004_over_5090_2_projected_training_node_ratio": 1.9354154231834497,
+    "H100_over_5090_per_GPU_Base_cold_generation_ratios": [
+      1.4999262713731087,
+      1.759531369597229,
+      1.5702734448140625,
+      1.7941763099142962
+    ],
+    "H1004_over_5090_2_projected_generation_node_ratio": 3.311953697849348,
+    "recommend_migration": true,
+    "definition": "Node projections multiply measured perGPU throughputs by4/2;not an actual rerun of full remaining matrix",
+    "boundary": "DEV128 cache;20steps;generation2batches*64 perGPU;CPU/IO/startup and main cold large-cache effects may differ. First generation pass matched to oldcold receipt;warm passes are separate.",
+    "qualification_wall_seconds": 68.38075870089233,
+    "reference": {
+      "hardware": "2RTX5090spot",
+      "train_steady_tokens_per_second": 343.61789721030624,
+      "train_fact_sequence_sha256": "dde4e408c0146f8df64bb855b7333841afe1d9f44734ae631f693be7658ab98f",
+      "generation": {
+        "0": {
+          "rows": 128,
+          "elapsed_seconds": 2.2117825355380774,
+          "data_sha256": "2bf69468bb1c2efde2692b24578ea19cc8bb9c4c5817383bb22020ae47fd7a2e",
+          "seed": 1105
+        },
+        "1": {
+          "rows": 128,
+          "elapsed_seconds": 2.1375971101224422,
+          "data_sha256": "2bf69468bb1c2efde2692b24578ea19cc8bb9c4c5817383bb22020ae47fd7a2e",
+          "seed": 1105
+        }
+      }
+    },
+    "probes": [
+      {
+        "train": {
+          "updates": 20,
+          "valid_tokens": 1280,
+          "steady_after5_valid_tokens": 960,
+          "steady_after5_seconds": 2.82344127073884,
+          "inner20_seconds": 4.933572953566909,
+          "source_process_wall_seconds": 29.58173111639917,
+          "trace_fact_sequence_sha256": "dde4e408c0146f8df64bb855b7333841afe1d9f44734ae631f693be7658ab98f",
+          "all_gradients_finite": true,
+          "source_guard_requires_nonzero_initial_gradients": true,
+          "peak_allocated_bytes": 521809920,
+          "saved_checkpoints": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_0/train/checkpoints/partial_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_0/train/checkpoints/update_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            }
+          ]
+        },
+        "generation": {
+          "native_Base_BF16_greedy_pass": true,
+          "native_Base_logits_finite": true,
+          "explicit_overrides": {
+            "do_sample": false,
+            "num_beams": 1,
+            "use_model_defaults": false
+          },
+          "DEV_only": true,
+          "generation_data_sha256": "2bf69468bb1c2efde2692b24578ea19cc8bb9c4c5817383bb22020ae47fd7a2e",
+          "slice_rank": 0,
+          "passes": [
+            {
+              "repeat": 0,
+              "rows": 128,
+              "generated_tokens": 1513,
+              "elapsed_seconds": 1.4745941702276468
+            },
+            {
+              "repeat": 1,
+              "rows": 128,
+              "generated_tokens": 1513,
+              "elapsed_seconds": 0.9804824590682983
+            },
+            {
+              "repeat": 2,
+              "rows": 128,
+              "generated_tokens": 1513,
+              "elapsed_seconds": 0.9846633747220039
+            }
+          ],
+          "accuracy_read_or_reported": false
+        }
+      },
+      {
+        "train": {
+          "updates": 20,
+          "valid_tokens": 1280,
+          "steady_after5_valid_tokens": 960,
+          "steady_after5_seconds": 2.877352502197027,
+          "inner20_seconds": 4.983706492930651,
+          "source_process_wall_seconds": 29.392553478479385,
+          "trace_fact_sequence_sha256": "dde4e408c0146f8df64bb855b7333841afe1d9f44734ae631f693be7658ab98f",
+          "all_gradients_finite": true,
+          "source_guard_requires_nonzero_initial_gradients": true,
+          "peak_allocated_bytes": 521809920,
+          "saved_checkpoints": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_1/train/checkpoints/partial_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_1/train/checkpoints/update_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            }
+          ]
+        },
+        "generation": {
+          "native_Base_BF16_greedy_pass": true,
+          "native_Base_logits_finite": true,
+          "explicit_overrides": {
+            "do_sample": false,
+            "num_beams": 1,
+            "use_model_defaults": false
+          },
+          "DEV_only": true,
+          "generation_data_sha256": "2bf69468bb1c2efde2692b24578ea19cc8bb9c4c5817383bb22020ae47fd7a2e",
+          "slice_rank": 1,
+          "passes": [
+            {
+              "repeat": 0,
+              "rows": 128,
+              "generated_tokens": 1122,
+              "elapsed_seconds": 1.2148672919720411
+            },
+            {
+              "repeat": 1,
+              "rows": 128,
+              "generated_tokens": 1122,
+              "elapsed_seconds": 0.8055243156850338
+            },
+            {
+              "repeat": 2,
+              "rows": 128,
+              "generated_tokens": 1122,
+              "elapsed_seconds": 0.8080399613827467
+            }
+          ],
+          "accuracy_read_or_reported": false
+        }
+      },
+      {
+        "train": {
+          "updates": 20,
+          "valid_tokens": 1280,
+          "steady_after5_valid_tokens": 960,
+          "steady_after5_seconds": 2.9762891829013824,
+          "inner20_seconds": 5.105557128787041,
+          "source_process_wall_seconds": 29.514418797567487,
+          "trace_fact_sequence_sha256": "dde4e408c0146f8df64bb855b7333841afe1d9f44734ae631f693be7658ab98f",
+          "all_gradients_finite": true,
+          "source_guard_requires_nonzero_initial_gradients": true,
+          "peak_allocated_bytes": 521809920,
+          "saved_checkpoints": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_2/train/checkpoints/partial_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_2/train/checkpoints/update_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            }
+          ]
+        },
+        "generation": {
+          "native_Base_BF16_greedy_pass": true,
+          "native_Base_logits_finite": true,
+          "explicit_overrides": {
+            "do_sample": false,
+            "num_beams": 1,
+            "use_model_defaults": false
+          },
+          "DEV_only": true,
+          "generation_data_sha256": "2bf69468bb1c2efde2692b24578ea19cc8bb9c4c5817383bb22020ae47fd7a2e",
+          "slice_rank": 0,
+          "passes": [
+            {
+              "repeat": 0,
+              "rows": 128,
+              "generated_tokens": 1513,
+              "elapsed_seconds": 1.408533362671733
+            },
+            {
+              "repeat": 1,
+              "rows": 128,
+              "generated_tokens": 1513,
+              "elapsed_seconds": 0.996651615947485
+            },
+            {
+              "repeat": 2,
+              "rows": 128,
+              "generated_tokens": 1513,
+              "elapsed_seconds": 1.0058985985815525
+            }
+          ],
+          "accuracy_read_or_reported": false
+        }
+      },
+      {
+        "train": {
+          "updates": 20,
+          "valid_tokens": 1280,
+          "steady_after5_valid_tokens": 960,
+          "steady_after5_seconds": 2.8710359409451485,
+          "inner20_seconds": 5.012969514355063,
+          "source_process_wall_seconds": 29.559409022331238,
+          "trace_fact_sequence_sha256": "dde4e408c0146f8df64bb855b7333841afe1d9f44734ae631f693be7658ab98f",
+          "all_gradients_finite": true,
+          "source_guard_requires_nonzero_initial_gradients": true,
+          "peak_allocated_bytes": 521809920,
+          "saved_checkpoints": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_3/train/checkpoints/partial_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/qualify/probe_3/train/checkpoints/update_00000020.pt",
+              "bytes": 16750418,
+              "sha256": "2b93bf476e25ed2652a5525b4c2aae1924953df346a335e7f543a638d14e802d"
+            }
+          ]
+        },
+        "generation": {
+          "native_Base_BF16_greedy_pass": true,
+          "native_Base_logits_finite": true,
+          "explicit_overrides": {
+            "do_sample": false,
+            "num_beams": 1,
+            "use_model_defaults": false
+          },
+          "DEV_only": true,
+          "generation_data_sha256": "2bf69468bb1c2efde2692b24578ea19cc8bb9c4c5817383bb22020ae47fd7a2e",
+          "slice_rank": 1,
+          "passes": [
+            {
+              "repeat": 0,
+              "rows": 128,
+              "generated_tokens": 1122,
+              "elapsed_seconds": 1.1914086136966944
+            },
+            {
+              "repeat": 1,
+              "rows": 128,
+              "generated_tokens": 1122,
+              "elapsed_seconds": 0.8009953275322914
+            },
+            {
+              "repeat": 2,
+              "rows": 128,
+              "generated_tokens": 1122,
+              "elapsed_seconds": 0.8000237811356783
+            }
+          ],
+          "accuracy_read_or_reported": false
+        }
+      }
+    ]
+  },
+  "main_training_updates": 0,
+  "qualification_module_optimizer_updates": 80,
+  "main_accuracy_read": false,
+  "source_sha256": {
+    "cache_io.py": "cb85f36d442a4ebf2de7718e853a25246ebadbaf88c43b862e0a6cd405f8f475",
+    "evaluate_cached.py": "d8d9d05b2bec2ccafb2242de7bdd886c1fb28090c06225df24f0b41d979fe658",
+    "evaluate_live.py": "820e20eaf55c39a3c3964e1e4fb928613ca91b4493b29714d6d0acf2fd1b6024",
+    "fit_spectrum.py": "80f81175741d56781cbc972a370c08add3aa0861c1cabd7e4f52e11c403fd5bb",
+    "memory_core.py": "bf556f177c72eaa2326d564e15304d2ba867c128cb30e45519eca68450b63934",
+    "prepare_cache.py": "18b2bec5b7a46204807ae30e0eee815c94912aa3e51f777367b8e84f5ca4b363",
+    "prepare_lm_cache.py": "967277422f2648a37be6627d274346d1ee6dee3dac677afc3bbe67c15e3326c0",
+    "train_cached.py": "0952c94a262c9354958543d2fbc370214b241ecbb5853ba6a26be28b7d36ca99",
+    "verify_cache.py": "7d6f2ed8739d7a8d131e0c1b85668cda01e78897396d3d4df6c403b45a9d0d01"
+  },
+  "code_sha256": "ef5874ad46034dbc2157754389a2abc25a9210e3685d8410cd15ab919a07216d",
+  "probe_code_sha256": "0c4d1176bd9118a0ecace5e54f39b9ae72a53a75c905d7513a452283a204fc8a"
+}

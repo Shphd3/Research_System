@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "UTC": "20261106T042955Z",
+  "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/delivery/20261106_Top32_turnover_20261106T042955Z.zip",
+  "bytes": 11575209,
+  "sha256": "27ef3727ac106399ccc8710c79b93b2098f85021b6512784bf28b69e9ee3cc10",
+  "members": 85,
+  "CRC": true,
+  "fresh_unpack": "/tmp/turnover_review_e_az9fac",
+  "portable": {
+    "status": "PASS",
+    "checks": 34720,
+    "all_primary_explicit_families": true,
+    "original16_field_strings_unchanged": true,
+    "case_native_z_and_preactivations": true,
+    "new_model_forward": 0,
+    "new_training": 0,
+    "new_intervention": 0
+  },
+  "outside_full_tables": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/results/nonshared_member_events.csv.gz",
+      "bytes": 52028597,
+      "sha256": "144fa4583b4bf00a89ded0ea9851315dd619536b98258aae53d8d17ad52dfd23",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/results/feature_turnover.csv.gz",
+      "bytes": 25740708,
+      "sha256": "9d6eb86cc6d6d1e4a98fc9fb8c86d9c957d9038a7243a7dba009bedec59e1079",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/results/family_turnover.csv.gz",
+      "bytes": 9372263,
+      "sha256": "322214ef795527186b9f97cc3f11a337abb0e45208c9b761c664aa7847bad6ea",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/results/category_coverage.csv.gz",
+      "bytes": 410795,
+      "sha256": "911eeb9f6e0b1b12fab9f86c6e19b650bac821258f13c93993455bf3cd0da9c0",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/versions/initial_diagnostic_columns/family_turnover.csv.gz",
+      "bytes": 9836981,
+      "sha256": "6a3ffe73595625e6a99f755c3b05e28de57f9a8ae2cbcda46800ff0bc7d61cf7",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/versions/initial_diagnostic_columns/feature_turnover.csv.gz",
+      "bytes": 20741070,
+      "sha256": "0084ac212eadb05f347e6c42111d01ffcf2153db4897edb35e297cd1563d1c26",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/versions/initial_diagnostic_columns/pair_summary.csv",
+      "bytes": 3126808,
+      "sha256": "a4e3a853e47e5c3fdbc4bdc42beb715ff1144abbdc40fa06804943324497e67f",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_turnover_audit_1106/versions/initial_diagnostic_columns/stable_candidate_checks.csv",
+      "bytes": 1433347,
+      "sha256": "b57193dbf0d9787393716fbd15dfeafbd302e95f1b1f40262300712a3bf263ec",
+      "reason": "complete all-pair/wording data outside compact packet;primary explicit slices and complete native controlled codes included"
+    }
+  ]
+}

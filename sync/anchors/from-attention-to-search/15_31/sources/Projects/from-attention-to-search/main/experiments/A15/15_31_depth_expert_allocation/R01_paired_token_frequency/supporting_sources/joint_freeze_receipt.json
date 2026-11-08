@@ -1,0 +1,88 @@
+{
+  "config": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/configs/common_frozen.json",
+  "final_test_model_evaluation_before_freeze": false,
+  "frequency": {
+    "bucket_names": [
+      "low",
+      "mid",
+      "high",
+      "unseen"
+    ],
+    "buckets_sha256": "9941656d064c63b82bc636c8e1168e68c037317c4e9b7a5a12cabcf2712de9da",
+    "count_rule": "exact supervised target occurrences in the frozen cyclic training stream",
+    "frequency_sha256": "8b6ead965e77bc6b78a173989b0773f241ecfbc023768ac0b0edbdda17fa37b3",
+    "quantile_rule": "tertiles of positive-frequency token types; integer ties kept together; zero separate",
+    "splits": {
+      "dev": {
+        "high": {
+          "coverage": 0.970464944158205,
+          "tokens": 612343
+        },
+        "low": {
+          "coverage": 0.0019858030140464263,
+          "tokens": 1253
+        },
+        "mid": {
+          "coverage": 0.02735273281678154,
+          "tokens": 17259
+        },
+        "unseen": {
+          "coverage": 0.0001965200109670845,
+          "tokens": 124
+        }
+      },
+      "test": {
+        "high": {
+          "coverage": 0.9680068884075127,
+          "tokens": 677902
+        },
+        "low": {
+          "coverage": 0.002114786800646002,
+          "tokens": 1481
+        },
+        "mid": {
+          "coverage": 0.029632718222151144,
+          "tokens": 20752
+        },
+        "unseen": {
+          "coverage": 0.0002456065696901502,
+          "tokens": 172
+        }
+      }
+    },
+    "target_tokens": 229113856,
+    "thresholds": {
+      "low_positive_max": 49,
+      "mid_max": 447
+    },
+    "type_counts": {
+      "high": 30056,
+      "low": 30259,
+      "mid": 29950,
+      "unseen": 61671
+    },
+    "vocabulary": 151936
+  },
+  "frozen_at_utc": "2026-11-06T16:50:35Z",
+  "resume_comparison": "uninterrupted step2->3 versus independent external-process resume from the same step2",
+  "sha256": "dd768489b9a58a49c09b85fedb9009bb80d7530a63dd235a9bb960265e16f3d5",
+  "smoke_attempts": [
+    {
+      "micro": 16,
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "hiermoe/__init__.py": "c034485387d75f24157012bfa28a65c36272f3677006ef555ca87d519a98b852",
+    "hiermoe/analyze.py": "d9ed1c5219f6df8068efa4962bf9951325a0afd738a9d71159c9db2b225a850a",
+    "hiermoe/data.py": "b430e0703a33b63f33aaf2a4a6af32df581cf4692671e42c2a290be2bdaa1e2f",
+    "hiermoe/evaluate.py": "ca24b7479365ba89ca0c0e7be560c7e5d49e9554bd2b48a01fbad38550efda79",
+    "hiermoe/model.py": "d02257e2359feabab2f214236ece83e524f2786b6d2357c30074208a95ba26c8",
+    "hiermoe/orchestrate.py": "d1cb7ab28b98bdacd4a55429c9cd75ddbbc16f6f5cbea3994b8163e8a2b739ae",
+    "hiermoe/smoke_replay_check.py": "75b25e436a447186b138ad28e5bdfa1b556b6e9ab5e52f4d30e6f3a72aebe56e",
+    "hiermoe/train.py": "e6bd1fc757da312ee1dd24b164470fea14c351bfd46cec35bc8111bf91693c5f"
+  },
+  "steps": 874,
+  "target_tokens": 229113856,
+  "test_metadata_and_examples_inspected": true
+}

@@ -1,0 +1,25 @@
+{
+  "job_platform": "SUCCEEDED",
+  "durable_pipeline": "COMPLETE",
+  "formal_arms": 2,
+  "updates_each": 874,
+  "valid_targets_each": 229113856,
+  "required_model_checkpoint_splits": 12,
+  "source_numeric_statistics_formal_initial_audits": "PASS",
+  "asset_registration_and_current_strict": "PASS",
+  "figure_visual_inspection": "PASS",
+  "scope": "One seed token-frequency proxy; no semantic or causal mechanism test",
+  "ui_rename": "UNAVAILABLE_NOT_COMPLETED",
+  "external_human_sample_review": "NOT_PERFORMED",
+  "optional_not_run": [
+    "entity/relation tasks",
+    "decreasing C",
+    "second seed",
+    "variable-width training",
+    "representation/causal intervention"
+  ],
+  "local_reading_refresh": "PASS_FIRST_SOURCE_SNAPSHOT; final owner-state refresh receipt is execution-side audit/final_reading_sync_completion.json",
+  "scientific_acceptance": "Unknown",
+  "artifact_and_reports_complete": true,
+  "first_reading_sync_receipt": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/audit/final_reading_sync_first_pass.json"
+}

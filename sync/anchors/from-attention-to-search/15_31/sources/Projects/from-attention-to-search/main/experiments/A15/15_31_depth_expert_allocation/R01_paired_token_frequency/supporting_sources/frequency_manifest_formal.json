@@ -1,0 +1,62 @@
+{
+  "target_tokens": 229113856,
+  "count_rule": "exact supervised target occurrences in the frozen cyclic training stream",
+  "thresholds": {
+    "low_positive_max": 49,
+    "mid_max": 447
+  },
+  "bucket_names": [
+    "low",
+    "mid",
+    "high",
+    "unseen"
+  ],
+  "quantile_rule": "tertiles of positive-frequency token types; integer ties kept together; zero separate",
+  "vocabulary": 151936,
+  "type_counts": {
+    "low": 30259,
+    "mid": 29950,
+    "high": 30056,
+    "unseen": 61671
+  },
+  "frequency_sha256": "8b6ead965e77bc6b78a173989b0773f241ecfbc023768ac0b0edbdda17fa37b3",
+  "buckets_sha256": "9941656d064c63b82bc636c8e1168e68c037317c4e9b7a5a12cabcf2712de9da",
+  "splits": {
+    "dev": {
+      "low": {
+        "tokens": 1253,
+        "coverage": 0.0019858030140464263
+      },
+      "mid": {
+        "tokens": 17259,
+        "coverage": 0.02735273281678154
+      },
+      "high": {
+        "tokens": 612343,
+        "coverage": 0.970464944158205
+      },
+      "unseen": {
+        "tokens": 124,
+        "coverage": 0.0001965200109670845
+      }
+    },
+    "test": {
+      "low": {
+        "tokens": 1481,
+        "coverage": 0.002114786800646002
+      },
+      "mid": {
+        "tokens": 20752,
+        "coverage": 0.029632718222151144
+      },
+      "high": {
+        "tokens": 677902,
+        "coverage": 0.9680068884075127
+      },
+      "unseen": {
+        "tokens": 172,
+        "coverage": 0.0002456065696901502
+      }
+    }
+  }
+}

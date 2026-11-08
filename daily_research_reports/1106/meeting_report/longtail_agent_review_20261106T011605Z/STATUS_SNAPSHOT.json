@@ -1,0 +1,92 @@
+{
+  "snapshot_utc": "2026-11-06T01:17:44.273809+00:00",
+  "snapshot_asia_shanghai": "2026-11-06T09:17:44.273809+08:00",
+  "inspection": "Local existing receipts only; no job operations",
+  "scales": {
+    "2048": {
+      "pre": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/2048_pre/summary.json",
+        "status": "COMPLETE"
+      },
+      "train_A": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/2048_train_A/summary.json",
+        "status": "COMPLETE"
+      },
+      "after_A": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/2048_after_A/summary.json",
+        "status": "COMPLETE"
+      },
+      "train_B": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/2048_train_B/summary.json",
+        "status": "COMPLETE"
+      },
+      "after_B": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/2048_after_B/summary.json",
+        "status": "COMPLETE"
+      }
+    },
+    "8192": {
+      "pre": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/8192_pre/summary.json",
+        "status": "COMPLETE"
+      },
+      "train_A": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/8192_train_A/summary.json",
+        "status": "COMPLETE"
+      },
+      "after_A": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/8192_after_A/summary.json",
+        "status": "COMPLETE"
+      },
+      "train_B": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/8192_train_B/summary.json",
+        "status": "COMPLETE"
+      },
+      "after_B": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/8192_after_B/summary.json",
+        "status": "COMPLETE"
+      }
+    },
+    "19846": {
+      "pre": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_pre/summary.json",
+        "status": "COMPLETE"
+      },
+      "train_A": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_train_A/summary.json",
+        "status": "COMPLETE"
+      },
+      "after_A": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_after_A/summary.json",
+        "status": "NO_COMPLETION_SUMMARY_AT_SNAPSHOT"
+      },
+      "train_B": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_train_B/summary.json",
+        "status": "COMPLETE"
+      },
+      "after_B": {
+        "source": "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_after_B/summary.json",
+        "status": "NO_COMPLETION_SUMMARY_AT_SNAPSHOT"
+      }
+    }
+  },
+  "h100_stages": {
+    "train_B": {
+      "status": "COMPLETE",
+      "start": "2026-11-06T00:37:31.607001+00:00",
+      "end": "2026-11-06T01:10:16.281616+00:00",
+      "elapsed_seconds": 1964.666265487671,
+      "exit_code": 0
+    },
+    "pre_H100": {
+      "status": "RUNNING",
+      "start": "2026-11-06T01:10:16.326388+00:00"
+    },
+    "after_A_H100": {
+      "status": "NO_STAGE_RECEIPT_AT_SNAPSHOT"
+    },
+    "after_B": {
+      "status": "NO_STAGE_RECEIPT_AT_SNAPSHOT"
+    }
+  }
+}

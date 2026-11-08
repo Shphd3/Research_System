@@ -8,7 +8,7 @@
 [R10全字典领域成员分析](domain_member_atlas_r10_20261030_cn.md)：960主成员的频率、共同谱与输入响应，缓存统计完成，新前向与训练均0。
 
 
-本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **1043 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
+本目录维护资产的**准确地址、身份、用途和访问证据**。当前登记 **1206 条资产、10 个项目／存储入口**，覆盖当前共享／路由／SAE研究、原始预训练Qwen3-0.6B相关资产和实查的109缓存。条目包含checkpoint家族、不同版本、大小写别名和准备格式，不能当成同等数量的独立数据集。原始数据、权重和表征保留在原存储位置。
 
 [冻结领域区分成员的组会分析](domain_members_meeting_20261030_cn.md)：实际保存的16+16名单、五组图、token／上下文统计及匹配／覆盖缺口；没有新增前向或训练。
 
@@ -312,3 +312,26 @@ A17 R06 bounded local dynamics: `analysis_a17_r06_local_dynamics_20261026`, six 
 R17 Feature composition: [four-route results](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/summary_cn.md); constructed384-row corrected panel, raw frozen responses and bounded H1–H4 analysis registered2026-11-02. Exposed holdout; scientific acceptanceUnknown.
 
 [R19 remote-target/near-word composition](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary.md):292prefixes, two separately encoded native SAEs, discovery12/heldout12families, matched factorial, membership/strength and marginal-controlled joint evidence; no training or intervention.
+
+[R20distance and native SAE combinations](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/summary.md):144old main conditions plus228bounded forward controls; all native code magnitudes/directions and frequency opportunities, no training or intervention.
+
+
+### S10共有/区分成员频率，2026-11-05
+
+登记实际16新家族、384同冒号频率参照及两原生SAE分析输出。[本次3输出访问检查](/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/evidence/output_access.json) · [中文Summary](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/summary_cn.md)。频率依赖语料与位置，非普适语义层级；科研接受Unknown，无训练/干预。
+
+
+### S11 四组粗细类别相对频率（2026-11-05）
+
+实际新96家族/4608文本及12000独立参考文档、两原生SAE新激活和冻结统计登记为3项；未训练、未干预。频率轴与反向结果分别报告，科学接受Unknown。[结果](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/summary_cn.md) · [当前限定访问](/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/evidence/output_access.json)。
+
+
+### 逐checkpoint近远证据行为，2026-11-05
+
+实际37个原生底模状态、冻结文本与完整行为分数登记为Dense／Baseline输入快照、数据和分析四项；实际已有33B普通MoE最后router输入SAE终点另作历史回填，字典训练进度不等于底模进度。[当前输入与SAE访问](checks/2026-11-05_checkpoint_evidence_inputs_and_sae.json) · [输出访问](checks/2026-11-05_checkpoint_evidence_outputs.json) · [中文事实报告](../Projects/from-attention-to-search/main/experiments/A15/15_30_checkpoint_evidence_use/R01_behavior/summary_cn.md)。本轮没有训练，科学接受Unknown。
+
+### 知识学习基建DEV与工程Smoke（2026-11-05）
+
+本任务登记 `dataset_knowledge_learning_dev40_20261105`（40条已看过的DEV事实）及 `checkpoint_knowledge_phase1_norm_smoke_20261105`（绑定精确Base的1024参数norm-only接口恢复凭据，并非完整训练模型）。[限定访问检查](checks/2026-11-05_knowledge_phase1_smoke_outputs.json)及[执行报告](/data/250010109/MoE_Router/experiments/20261105_long_tail_teacher_survey/phase1_base_infrastructure/phase1_report_cn.md)保留确切边界。未正式SFT/蒸馏，不产生科学接受。
+
+[分层专家分配实际保存输出](depth_expert_allocation_20261106_cn.md)：Smoke与正式身份分开；限定访问快照和保存／恢复边界见指南。

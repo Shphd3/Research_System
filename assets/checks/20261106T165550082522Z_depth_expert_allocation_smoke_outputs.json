@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-06T16:58:26.051361+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-bsxz8",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17730,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "router-representation-coupling",
+      "title_cn": "路由表征梯度反馈独立项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/router-representation-coupling",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/router-representation-coupling/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1364,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "dclm_pair_v1",
+      "title_cn": "DCLM paired train/validation view",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/training_data_views/dclm_pair_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "paired_training_view",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 754964,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 299003652,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/validation/validation.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 459952424,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "tokenizer_qwen3_0p6b_base",
+      "title_cn": "Qwen3-0.6B-Base分词器（S7/A3数据身份）",
+      "category": "tokenizer",
+      "projects": [
+        "from-attention-to-search",
+        "router-representation-coupling"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/share/Qwen3-0.6B-Base",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "tokenizer_files",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7031645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/tokenizer_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9678,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/vocab.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2776833,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/share/Qwen3-0.6B-Base/merges.txt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1671853,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "data_depth_expert_allocation_20261106",
+      "title_cn": "1106分层MoE成对实验文档去重语料",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1977,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/train.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 263067640,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/dev.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2523920,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/test.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2801232,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/train_documents.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15335607,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/dev_documents.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 149385,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/test_documents.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 153945,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_depth_expert_allocation_smoke_20261106",
+      "title_cn": "分层MoE实际Smoke完整状态家族",
+      "category": "checkpoint_family",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2032122324,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 481,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000002",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000002/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6096268626,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000002/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 486,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000003",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000003/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6096268626,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000003/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 486,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/checkpoints/step_000003",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/checkpoints/step_000003/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6096268626,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/checkpoints/step_000003/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 493,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000000",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000000/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2032122324,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000000/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 481,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000002",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000002/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6096268770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000002/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 486,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000003",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000003/state.pt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6096268770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/checkpoints/step_000003/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 486,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "data_depth_expert_allocation_formal_frequency_20261106",
+      "title_cn": "分层MoE正式共同预算真实目标token频率与冻结分桶",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PREPARED_DATA_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/frequency_formal",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/frequency_formal/frequency.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1215616,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/frequency_formal/buckets.npy",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 152064,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/frequency_formal/frequency_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1454,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/frequency_formal/samples_audited.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 58957,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

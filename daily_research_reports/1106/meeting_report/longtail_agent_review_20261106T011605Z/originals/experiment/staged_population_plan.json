@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-05T17:09:35.203571+00:00",
+  "candidate_pool": 20000,
+  "candidate_pool_frozen": "orchestration/candidate_freeze.json",
+  "initial_behavior_pool": 4096,
+  "initial_train_target": 2048,
+  "remaining_behavior_pool": 15904,
+  "rule": "Fixed original-source order. First2048A+2048B screen, freeze first1024 eligible per phase (or actual balanced smaller if needed), complete all major arms. Then screen remaining fixed15904 originalBase/teacher facts and merge disjoint prior screens, expand every arm equally to8192/maximum<=20000 eligible. All screening rules fixed before confirmation; no model-trained outcome influences eligibility/order/expansion.",
+  "baseline_models": "Original frozen student/teacher, never trained memory module; prior module experiments cannot alter their weights.",
+  "scale_gate": "Measured throughput/storage/time only, no best-arm choice; all primary results retained; expansion uses fresh same-seed initialization per scale"
+}

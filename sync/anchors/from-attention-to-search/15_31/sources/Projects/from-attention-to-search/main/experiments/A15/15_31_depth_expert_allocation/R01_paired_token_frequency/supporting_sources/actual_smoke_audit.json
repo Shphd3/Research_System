@@ -1,0 +1,587 @@
+{
+  "audited_at_utc": "2026-11-06T16:52:41.120806+00:00",
+  "boundaries": [
+    "No job query or polling; files form one bounded evidence snapshot.",
+    "Document-sum arithmetic and paired batches do not establish scientific acceptance.",
+    "Partial measured operator FLOPs exclude uncounted fused operations."
+  ],
+  "exact_paired_batch_steps": [
+    1,
+    2,
+    3
+  ],
+  "existing_exact_state_replay_receipt": {
+    "boundary": "Exact final-state and next-update replay under this measured four-rank environment; no cross-hardware reproducibility claim.",
+    "checked_leaf_counts": {
+      "contract_sha256": 1,
+      "gradient_bucket_fingerprint": 1,
+      "model": 282,
+      "model_config": 26,
+      "optimizer": 1088,
+      "optimizer_step": 1,
+      "rank_rng": 2536,
+      "scheduler": 10,
+      "tokens_seen": 1,
+      "variant": 1
+    },
+    "checkpoint_paths": [
+      "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/checkpoints/step_000003/state.pt",
+      "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/checkpoints/step_000003/state.pt"
+    ],
+    "comparison": "continuous_vs_external_resume",
+    "exact_floating_equality": true,
+    "exact_metric_fields": [
+      "optimizer_step",
+      "tokens_seen",
+      "effective_tokens_per_update",
+      "lm_loss",
+      "total_loss",
+      "learning_rate",
+      "learning_rate_next",
+      "gradient_norm",
+      "router_gradient_norms",
+      "rank_input_target_mask_sha256",
+      "actual_batch_sha256",
+      "layers",
+      "skipped_optimizer_update"
+    ],
+    "optimizer_step": 3,
+    "status": "PASS",
+    "tensorboard": {
+      "left": {
+        "coordinates_exact": true,
+        "files": [
+          "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/tensorboard/events.out.tfevents.1793983327.pt-e537607417a749a0936afe18763c90e1-worker-0.93.0"
+        ],
+        "finite": true,
+        "progress_steps": [
+          1,
+          2,
+          3
+        ],
+        "required_tags": [
+          "tokens/train_lm_loss",
+          "updates/train_lm_loss",
+          "tokens/train_total_loss",
+          "updates/train_total_loss",
+          "updates/learning_rate",
+          "progress/tokens_seen",
+          "progress/optimizer_step",
+          "progress/effective_tokens_per_update"
+        ],
+        "scalar_tags": 91
+      },
+      "right": {
+        "coordinates_exact": true,
+        "files": [
+          "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/tensorboard/resume_000002_1793983558922816084/events.out.tfevents.1793983558.pt-e537607417a749a0936afe18763c90e1-worker-0.460.0"
+        ],
+        "finite": true,
+        "progress_steps": [
+          3
+        ],
+        "required_tags": [
+          "tokens/train_lm_loss",
+          "updates/train_lm_loss",
+          "tokens/train_total_loss",
+          "updates/train_total_loss",
+          "updates/learning_rate",
+          "progress/tokens_seen",
+          "progress/optimizer_step",
+          "progress/effective_tokens_per_update"
+        ],
+        "scalar_tags": 91
+      }
+    },
+    "tokens_seen": 786432,
+    "tolerance_relaxed": false
+  },
+  "external_checkpoint_reload_evaluation": {
+    "arithmetic": {
+      "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/evaluations/dev_step_000003_documents.npz",
+      "documents": 8,
+      "exact_summary_reduction": true,
+      "metrics": {
+        "high": {
+          "nll": 10.429704798612793,
+          "perplexity": 33850.35611309299,
+          "tokens": 6515
+        },
+        "low": {
+          "nll": 12.111619401287722,
+          "perplexity": 181974.05506110084,
+          "tokens": 308
+        },
+        "mid": {
+          "nll": 11.927913469256776,
+          "perplexity": 151435.25748435385,
+          "tokens": 330
+        },
+        "overall": {
+          "nll": 10.613013043505745,
+          "perplexity": 40660.52680752249,
+          "tokens": 7331
+        },
+        "unseen": {
+          "nll": 12.2914698793647,
+          "perplexity": 217829.92557235874,
+          "tokens": 178
+        }
+      },
+      "optimizer_step": 3,
+      "split": "dev",
+      "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/evaluations/dev_step_000003.json",
+      "summary_sha256": "f9747ff53b2ea3d8439962b3ce92d9e4d25a8e677f64c422ef42c0298ecdbb82"
+    },
+    "documents": 8,
+    "json_all_values_exact": true,
+    "left": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000003.json",
+    "raw_document_arrays_exact": true,
+    "right": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_replay_micro16/evaluations/dev_step_000003.json",
+    "status": "PASS"
+  },
+  "left": {
+    "all_observed_updates_finite": true,
+    "all_valid_counts_and_assignments_exact": true,
+    "completion": {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/latest_checkpoint.json",
+      "completed_at_utc": "2026-11-06T16:45:03.180565+00:00",
+      "elapsed_seconds": 162.8875485099852,
+      "optimizer_step": 3,
+      "smoke_tokens_are_formal_training": false,
+      "status": "SMOKE_COMPLETE",
+      "tokens_seen": 786432,
+      "total_steps": 4,
+      "variant": "A"
+    },
+    "evaluations": [
+      {
+        "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000000_documents.npz",
+        "documents": 8,
+        "exact_summary_reduction": true,
+        "metrics": {
+          "high": {
+            "nll": 12.1191362596162,
+            "perplexity": 183347.08221271876,
+            "tokens": 6515
+          },
+          "low": {
+            "nll": 12.20059974472244,
+            "perplexity": 198908.40964598514,
+            "tokens": 308
+          },
+          "mid": {
+            "nll": 12.150157422730416,
+            "perplexity": 189123.85988980593,
+            "tokens": 330
+          },
+          "overall": {
+            "nll": 12.123549145121087,
+            "perplexity": 184157.95973311787,
+            "tokens": 7331
+          },
+          "unseen": {
+            "nll": 12.102412250604523,
+            "perplexity": 180306.28201622106,
+            "tokens": 178
+          }
+        },
+        "optimizer_step": 0,
+        "split": "dev",
+        "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000000.json",
+        "summary_sha256": "bb94657311e55b013bd1f6b4e507459a2ca2b620e0ef974ce5a937f0826267ce"
+      },
+      {
+        "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000002_documents.npz",
+        "documents": 8,
+        "exact_summary_reduction": true,
+        "metrics": {
+          "high": {
+            "nll": 11.168531023422206,
+            "perplexity": 70864.93521674899,
+            "tokens": 6515
+          },
+          "low": {
+            "nll": 12.135233058557882,
+            "perplexity": 186322.26454697808,
+            "tokens": 308
+          },
+          "mid": {
+            "nll": 12.112144883473714,
+            "perplexity": 182069.7043141365,
+            "tokens": 330
+          },
+          "overall": {
+            "nll": 11.276752552123012,
+            "perplexity": 78964.41225138844,
+            "tokens": 7331
+          },
+          "unseen": {
+            "nll": 12.203560384471764,
+            "perplexity": 199498.1784056783,
+            "tokens": 178
+          }
+        },
+        "optimizer_step": 2,
+        "split": "dev",
+        "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000002.json",
+        "summary_sha256": "7c8b6a4f889e7e619e8d6b4ee3829e11ca3db2c1e62f71806a08ac076f792375"
+      },
+      {
+        "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000003_documents.npz",
+        "documents": 8,
+        "exact_summary_reduction": true,
+        "metrics": {
+          "high": {
+            "nll": 10.429704798612793,
+            "perplexity": 33850.35611309299,
+            "tokens": 6515
+          },
+          "low": {
+            "nll": 12.111619401287722,
+            "perplexity": 181974.05506110084,
+            "tokens": 308
+          },
+          "mid": {
+            "nll": 11.927913469256776,
+            "perplexity": 151435.25748435385,
+            "tokens": 330
+          },
+          "overall": {
+            "nll": 10.613013043505745,
+            "perplexity": 40660.52680752249,
+            "tokens": 7331
+          },
+          "unseen": {
+            "nll": 12.2914698793647,
+            "perplexity": 217829.92557235874,
+            "tokens": 178
+          }
+        },
+        "optimizer_step": 3,
+        "split": "dev",
+        "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/evaluations/dev_step_000003.json",
+        "summary_sha256": "f9747ff53b2ea3d8439962b3ce92d9e4d25a8e677f64c422ef42c0298ecdbb82"
+      }
+    ],
+    "last_step": 3,
+    "last_tokens": 786432,
+    "observed_batches": {
+      "1": "95e6ad7b74be9f4c97da24566f82e6c97b376027b01841fe850b60b411f5d5bc",
+      "2": "1f7beae15902ff544d790e583e323993b81481b23d64fca557aad1d9afe10c77",
+      "3": "fd911fbbf4c76749a57f78c9a8db4079c08e5b3861a3620291624201f7ef2762"
+    },
+    "parameters": {
+      "experts": 301989888,
+      "router": 65536,
+      "shared": 205933568,
+      "theoretical_active": 281496576,
+      "total": 507988992,
+      "trainable": 507988992
+    },
+    "partial_operator_flops": {
+      "local_supervised_tokens": 65536,
+      "missing": "fused SDPA/backward, non-matmul/non-convolution kernels and communication are not fully counted; this is not total model FLOPs",
+      "operators": [
+        {
+          "calls": 679,
+          "flops": 3081568769,
+          "operator": "aten::add",
+          "self_cpu_microseconds": 7588.0,
+          "self_cuda_microseconds": 11117.0
+        },
+        {
+          "calls": 2404,
+          "flops": 37626628430,
+          "operator": "aten::mul",
+          "self_cpu_microseconds": 22226.0,
+          "self_cuda_microseconds": 111972.0
+        },
+        {
+          "calls": 3440,
+          "flops": 131073811939328,
+          "operator": "aten::mm",
+          "self_cpu_microseconds": 373971.0,
+          "self_cuda_microseconds": 343998.0
+        }
+      ],
+      "optimizer_step": 1,
+      "partial_measured_operator_flops": 131114520136527,
+      "partial_measured_operator_flops_per_local_token": 2000648805.7941742,
+      "profiled_rank": 0,
+      "profiler_flags": {
+        "record_shapes": true,
+        "with_flops": true
+      },
+      "scope": "rank0 first smoke update, forward/backward/optimizer and control collectives",
+      "timing_eligibility": "first update excluded from throughput budget selection",
+      "variant": "A"
+    },
+    "pipeline_complete": true,
+    "run": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16",
+    "tensorboard": {
+      "coordinates_exact": true,
+      "files": [
+        "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_A_micro16/tensorboard/events.out.tfevents.1793983327.pt-e537607417a749a0936afe18763c90e1-worker-0.93.0"
+      ],
+      "finite": true,
+      "required_tags": [
+        "tokens/train_lm_loss",
+        "updates/train_lm_loss",
+        "tokens/train_total_loss",
+        "updates/train_total_loss",
+        "updates/learning_rate",
+        "progress/tokens_seen",
+        "progress/optimizer_step",
+        "progress/effective_tokens_per_update"
+      ],
+      "steps": [
+        1,
+        2,
+        3
+      ],
+      "tags": 91
+    },
+    "token_drop": 0
+  },
+  "mode": "smoke",
+  "right": {
+    "all_observed_updates_finite": true,
+    "all_valid_counts_and_assignments_exact": true,
+    "completion": {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/latest_checkpoint.json",
+      "completed_at_utc": "2026-11-06T16:50:24.931650+00:00",
+      "elapsed_seconds": 153.2135542165488,
+      "optimizer_step": 3,
+      "smoke_tokens_are_formal_training": false,
+      "status": "SMOKE_COMPLETE",
+      "tokens_seen": 786432,
+      "total_steps": 4,
+      "variant": "B"
+    },
+    "evaluations": [
+      {
+        "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/evaluations/dev_step_000000_documents.npz",
+        "documents": 8,
+        "exact_summary_reduction": true,
+        "metrics": {
+          "high": {
+            "nll": 12.11462726212426,
+            "perplexity": 182522.23170081843,
+            "tokens": 6515
+          },
+          "low": {
+            "nll": 12.154128774420007,
+            "perplexity": 189876.4306227416,
+            "tokens": 308
+          },
+          "mid": {
+            "nll": 12.182305879303904,
+            "perplexity": 195302.68782285825,
+            "tokens": 330
+          },
+          "overall": {
+            "nll": 12.121046388902146,
+            "perplexity": 183697.63353653598,
+            "tokens": 7331
+          },
+          "unseen": {
+            "nll": 12.185178997811306,
+            "perplexity": 195864.62245562894,
+            "tokens": 178
+          }
+        },
+        "optimizer_step": 0,
+        "split": "dev",
+        "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/evaluations/dev_step_000000.json",
+        "summary_sha256": "614079cf1ae73d34e6560b8f207442acafabf3bbaaa407c38b352fb13d71842b"
+      },
+      {
+        "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/evaluations/dev_step_000002_documents.npz",
+        "documents": 8,
+        "exact_summary_reduction": true,
+        "metrics": {
+          "high": {
+            "nll": 11.137177781334128,
+            "perplexity": 68677.55959040273,
+            "tokens": 6515
+          },
+          "low": {
+            "nll": 12.140709437333145,
+            "perplexity": 187345.43491902287,
+            "tokens": 308
+          },
+          "mid": {
+            "nll": 12.112828104423754,
+            "perplexity": 182194.1406544082,
+            "tokens": 330
+          },
+          "overall": {
+            "nll": 11.249017642604883,
+            "perplexity": 76804.43329037962,
+            "tokens": 7331
+          },
+          "unseen": {
+            "nll": 12.198108490933194,
+            "perplexity": 198413.4950516384,
+            "tokens": 178
+          }
+        },
+        "optimizer_step": 2,
+        "split": "dev",
+        "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/evaluations/dev_step_000002.json",
+        "summary_sha256": "2cd9e475a9ed2ffaa7a32525b39d4b4cf3ffa75b588c4ec43ddb2012df907024"
+      },
+      {
+        "document_contributions": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/evaluations/dev_step_000003_documents.npz",
+        "documents": 8,
+        "exact_summary_reduction": true,
+        "metrics": {
+          "high": {
+            "nll": 10.4169243366098,
+            "perplexity": 33420.485745197075,
+            "tokens": 6515
+          },
+          "low": {
+            "nll": 12.102238673668403,
+            "perplexity": 180274.987720288,
+            "tokens": 308
+          },
+          "mid": {
+            "nll": 11.935982478748668,
+            "perplexity": 152662.1331935689,
+            "tokens": 330
+          },
+          "overall": {
+            "nll": 10.6018622598972,
+            "perplexity": 40209.64856637219,
+            "tokens": 7331
+          },
+          "unseen": {
+            "nll": 12.301272161890951,
+            "perplexity": 219975.65538947366,
+            "tokens": 178
+          }
+        },
+        "optimizer_step": 3,
+        "split": "dev",
+        "summary": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/evaluations/dev_step_000003.json",
+        "summary_sha256": "7bec3422bbdd96730db8bc9a52aa60b444ef68a8711f22262ec341263d4671ad"
+      }
+    ],
+    "last_step": 3,
+    "last_tokens": 786432,
+    "observed_batches": {
+      "1": "95e6ad7b74be9f4c97da24566f82e6c97b376027b01841fe850b60b411f5d5bc",
+      "2": "1f7beae15902ff544d790e583e323993b81481b23d64fca557aad1d9afe10c77",
+      "3": "fd911fbbf4c76749a57f78c9a8db4079c08e5b3861a3620291624201f7ef2762"
+    },
+    "parameters": {
+      "experts": 301989888,
+      "router": 65536,
+      "shared": 205933568,
+      "theoretical_active": 281496576,
+      "total": 507988992,
+      "trainable": 507988992
+    },
+    "partial_operator_flops": {
+      "local_supervised_tokens": 65536,
+      "missing": "fused SDPA/backward, non-matmul/non-convolution kernels and communication are not fully counted; this is not total model FLOPs",
+      "operators": [
+        {
+          "calls": 679,
+          "flops": 3081568769,
+          "operator": "aten::add",
+          "self_cpu_microseconds": 9142.0,
+          "self_cuda_microseconds": 11127.0
+        },
+        {
+          "calls": 2400,
+          "flops": 37693697334,
+          "operator": "aten::mul",
+          "self_cpu_microseconds": 23276.0,
+          "self_cuda_microseconds": 111949.0
+        },
+        {
+          "calls": 3440,
+          "flops": 131073811939328,
+          "operator": "aten::mm",
+          "self_cpu_microseconds": 388153.0,
+          "self_cuda_microseconds": 344540.0
+        }
+      ],
+      "optimizer_step": 1,
+      "partial_measured_operator_flops": 131114587205431,
+      "partial_measured_operator_flops_per_local_token": 2000649829.184433,
+      "profiled_rank": 0,
+      "profiler_flags": {
+        "record_shapes": true,
+        "with_flops": true
+      },
+      "scope": "rank0 first smoke update, forward/backward/optimizer and control collectives",
+      "timing_eligibility": "first update excluded from throughput budget selection",
+      "variant": "B"
+    },
+    "pipeline_complete": true,
+    "run": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16",
+    "tensorboard": {
+      "coordinates_exact": true,
+      "files": [
+        "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/smoke_B_micro16/tensorboard/events.out.tfevents.1793983659.pt-e537607417a749a0936afe18763c90e1-worker-0.833.0"
+      ],
+      "finite": true,
+      "required_tags": [
+        "tokens/train_lm_loss",
+        "updates/train_lm_loss",
+        "tokens/train_total_loss",
+        "updates/train_total_loss",
+        "updates/learning_rate",
+        "progress/tokens_seen",
+        "progress/optimizer_step",
+        "progress/effective_tokens_per_update"
+      ],
+      "steps": [
+        1,
+        2,
+        3
+      ],
+      "tags": 91
+    },
+    "token_drop": 0
+  },
+  "source_attribution": {
+    "boundary": "Hash matches tie current source bytes to recorded submission/amendment; execution identity additionally relies on launch and durable pod receipts.",
+    "records": [
+      {
+        "current_source_matches": {
+          "hiermoe/__init__.py": true,
+          "hiermoe/analyze.py": false,
+          "hiermoe/data.py": true,
+          "hiermoe/evaluate.py": true,
+          "hiermoe/model.py": true,
+          "hiermoe/orchestrate.py": false,
+          "hiermoe/smoke_replay_check.py": true,
+          "hiermoe/train.py": true
+        },
+        "receipt": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/audit/submission_source_identity.json",
+        "receipt_sha256": "46bdbdf56865e2c568364b542ba3f763ab1c2ba4c019d2b1a6b729b516c9cf65"
+      },
+      {
+        "current_source_matches": {
+          "hiermoe/__init__.py": true,
+          "hiermoe/analyze.py": true,
+          "hiermoe/data.py": true,
+          "hiermoe/evaluate.py": true,
+          "hiermoe/model.py": true,
+          "hiermoe/orchestrate.py": true,
+          "hiermoe/smoke_replay_check.py": true,
+          "hiermoe/train.py": true
+        },
+        "receipt": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/audit/pre_gpu_telemetry_amendment_1793983054803672056.json",
+        "receipt_sha256": "98158e9ad7a3ae690cb918d8ac1a404edb6736a0fff65421b7618dc1b6286254"
+      }
+    ],
+    "training_interfaces_current_hashes_attributed": true
+  },
+  "status": "PASS"
+}

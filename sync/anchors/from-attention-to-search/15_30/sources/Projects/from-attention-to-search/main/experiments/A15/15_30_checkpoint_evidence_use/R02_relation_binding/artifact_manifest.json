@@ -1,0 +1,162 @@
+{
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding",
+  "execution_manifest": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/artifact_manifest_final.json",
+  "execution_manifest_sha256": "68e7c0b00a22d62f9f8e8511e85b488cfd0421076c7c9d2c66e1731bcc1a137f",
+  "input_assets": [
+    "checkpoint_family_relation_binding_3_15_17b_20261105",
+    "dataset_relation_binding_swap_r02_20261105",
+    "tokenizer_qwen3_0p6b_base"
+  ],
+  "output_asset": "analysis_relation_binding_r02_20261105",
+  "protected_R01_verification": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/audit/verification.json",
+  "selected_payload_manifest": "evidence_payload_manifest.json",
+  "canonical_reports": [
+    "assets_and_data.md",
+    "assets_and_data_cn.md",
+    "cases.md",
+    "cases_cn.md",
+    "definitions.md",
+    "definitions_cn.md",
+    "detailed.md",
+    "detailed_cn.md",
+    "protocol.md",
+    "protocol_cn.md",
+    "reproduce.md",
+    "reproduce_cn.md",
+    "summary.md",
+    "summary_cn.md"
+  ],
+  "entries": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/analyze.py",
+      "bytes": 9716,
+      "sha256": "0cb421cdf8f4f7a41a2e790ceeef20dc01e3b638663286e80c8121462bcf9e3c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/audit_inputs.py",
+      "bytes": 2931,
+      "sha256": "abdb2f1007c4d52bb0fb2305bccdcbc032b9355269e524b32d5833d9729d98c8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/common.py",
+      "bytes": 1166,
+      "sha256": "e7600b82aeff8a70cedb42726c243e725224ad84993082001c66a78b2b5d37d1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/finalize.py",
+      "bytes": 6007,
+      "sha256": "2ce57dd52593f911bb7389c8bde84d825384c1b5758890cce5120677800f6912"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/finish_docs.py",
+      "bytes": 19015,
+      "sha256": "111b3b0098ac4a1ba9e52f8af82679328cb6362cf968c1019e0cf24173ee64e3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/prepare.py",
+      "bytes": 6458,
+      "sha256": "24f70e37cc53a31141d3e6d1fac3760dc8bb4d0cd05aa2e23b0b6934f4ec9f82"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/report.py",
+      "bytes": 28229,
+      "sha256": "a863b09de284525d96eeb303746fc040d93c9560ef234ab1bb58015a9852b74b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/run.py",
+      "bytes": 8783,
+      "sha256": "8d31b5763c1ea92c1f859f1421d105b5a24c876df48c15a99d99014086d694d2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/code/verify.py",
+      "bytes": 4132,
+      "sha256": "795ae69fb8ccd460c48664f126513ea814518b5493d1549fd2d664d6c3565302"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/data/panel.jsonl",
+      "bytes": 4261094,
+      "sha256": "e9c837d93e2b4e5350a5fa44c05b2e192eb157cea7b7c9491401cf54a6a338fa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/full/Baseline_003000000000.json",
+      "bytes": 274136,
+      "sha256": "3261f74203baa306f78854f4af956076038cec91fcde2fe756258c451e57779e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/full/Baseline_015000000000.json",
+      "bytes": 273289,
+      "sha256": "d9b973c84243bb8ef4be665f302d749f64e713fec6c8e1a08fefc2e5cd9adcfe"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/full/Baseline_017000000000.json",
+      "bytes": 273889,
+      "sha256": "4fdab627232c877783f923811334b0769793989f0384053b40b739e9c0249616"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/full/Dense_003000000000.json",
+      "bytes": 274116,
+      "sha256": "689bcfb5388a4b3ecdc015e26061d90addc5d7ea68dc7a57c94dd96fb34e0f49"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/full/Dense_015000000000.json",
+      "bytes": 273776,
+      "sha256": "2995b68aad62cf37951b777de205a943a18ad6bf765a5a05832db62bcd964fff"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/full/Dense_017000000000.json",
+      "bytes": 273758,
+      "sha256": "a58b55ff36afe1b19940f887376ac856bc8fcaa1298b7c520d047a70868aadea"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/smoke/Baseline_003000000000.json",
+      "bytes": 41494,
+      "sha256": "b4d90b4e77b347266133644073f7ff7b06f291f404573d54f06c8ca60a93def4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/results/smoke/Dense_003000000000.json",
+      "bytes": 41399,
+      "sha256": "7981e56e76476495783d0a74f3852a9844dca414123d07023f44951d790fb784"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/R01_FP32_comparison.csv",
+      "bytes": 2505,
+      "sha256": "11993760f4965119465c753fdc7f79f683d709bc73228658006034bb51b41798"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/analysis.json",
+      "bytes": 31441,
+      "sha256": "22847d35714f83cd98557752f24c62c889739c803af0c35ade798ddaa91415a4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/family_results.csv",
+      "bytes": 43103,
+      "sha256": "1b188204b215f8b7d2ecc5ad8ecaeb6d778a2687e0f97d8667eb8aed4fc02156"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/model_trajectory_difference.csv",
+      "bytes": 1682,
+      "sha256": "3898d79d440b4d48200677c1bebff1912e4ec8371ebaa242f96eb3521befd0f4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/near_far_paired.csv",
+      "bytes": 2989,
+      "sha256": "0380dcca01caac6b8da1002adb8f17ba903f035f18e06df6e3dc0091c38032b1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/sample_results.json",
+      "bytes": 900322,
+      "sha256": "adf0af623f9639bd061fc4160f6c77e04b9db18bd83ae450e9d561c15d14fbe7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/summary.csv",
+      "bytes": 4356,
+      "sha256": "586e5b25dc618815d3f4261e50a40d51d42a917bfd7650ddf3b688cde3fdcc74"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261105_checkpoint_evidence_use_r02_relation_binding/tables/template_type.csv",
+      "bytes": 6984,
+      "sha256": "c9e85363bd9c51b01a214577db3c5d7d4030925eb776f8f98b4b25131ac87ed9"
+    }
+  ],
+  "scientific_acceptance": "Unknown"
+}

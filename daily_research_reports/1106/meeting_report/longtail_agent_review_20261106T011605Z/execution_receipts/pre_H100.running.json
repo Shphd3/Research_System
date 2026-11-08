@@ -1,0 +1,17 @@
+{
+  "status": "RUNNING",
+  "start": "2026-11-06T01:10:16.326388+00:00",
+  "argv": [
+    "/usr/bin/python",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/orchestration/run_parallel.py",
+    "--plan",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/plans/pre.json",
+    "--out",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/batch_logs/h100_pre",
+    "--gpus",
+    "4"
+  ],
+  "new_job_id": "pt-5gno22e6",
+  "plan_sha256": "212ab7beb165456bd16ea637fb0f6eca2edd7f78ed2fedfd2648541d1334801f",
+  "stage": "pre_H100"
+}

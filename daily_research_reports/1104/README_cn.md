@@ -9,3 +9,5 @@
 - [S09单成员频率与联合结构：观察、对照、支持范围及边界](meeting_report/sae_marginal_joint_cn.md)；结果包：`20261104_SAE_marginal_joint.zip`。
 
 - [远处目标与近处竞争的SAE组合：真实例、反例、总体与边界](meeting_report/meeting_brief_R19_remote_target_competitor_cn.md)；结果包：`20261104_R19_remote_target_competitor_composition.zip`。
+
+- [距离与SAE组合：主图、反例及导师10秒/30秒讲法](meeting_report/meeting_brief_R20_distance_composition_cn.md)；R20结果包：`20261104_R20_distance_composition.zip`。

@@ -1,0 +1,20 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/dataset_guide_cn.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/dataset_guide_cn.md)；研究修改仍回到原件。
+
+---
+
+# 数据与计算定义
+
+实际372条件=144旧主任务+192新全文+36同文位置索引变体。固定e的远距24条复用旧行，不当新样本；4新smoke并入228控制前向，不重复；另6旧校准和1次无操作前向。旧h的288次SAE再编码不是语言模型前向。
+
+原始全文/token/offset/候选完整序列在panel.jsonl。两套原生字典分别30000维、ReLU/Top32，indices/values给出全部阳性，未列坐标为截断后实际零。缓存键pre_relu实际指relu(encoder(h))、即ReLU之后TopK之前的响应，不是带负数的线性pre-ReLU；仅作阈值诊断。h/reconstruction是1024维真实输入与原生decoder重构。父模型配置/接口已由checkpoint元数据核验，未训练或修改权重。
+
+距离d=p−e−1排除两端，e取物品最后token。主/反转/办公p319、e302/254/190；固定e190时p207/255/319；pos64保持真实文本/索引，只把position IDs统一+64，p319的供给编码ID383。后三者不能混叫物理文本位置平移。候选含前导空格、完整物品词和句号，族内等token数。后续候选/句号分数不能全归因于p319的feature。
+
+全部12旧留出保留，12发现仅探索；旧结果已暴露，六模板共享；每族A/B、距离与所有对照共同重采样，不能把372条件当372独立样本。四案例选择规则先冻结，全部其余家族仍保存。
+
+相对事实差异=||zA−zB||/sqrt((||zA||²+||zB||²)/2)，同时保留原始差范数/全码尺度/方向。固定六成员实际零不删，旧严格支持另作复核。完整坐标平方差分解与decoder列范数加权绝对差都不是隐藏能量、输出或因果贡献。
+
+频率原定义：独立自然参考300文档/38400位置，count≥20且doc≥5，Attention35/70、MLP33/62，边界并入较高组；不足与零单列。参考频率不是训练曝光、词频或谱位置。机会统计含字典基数、左端风险、旧排名四档匹配换出，以及自然/发现任务加权的换入期待；零期待是未校准，不算无穷富集。
+
+原冻结config继承的prefix_count292/new_prefixes96/旧panel哈希仅为未使用的R19元数据，实际代码用372/228与ID表。effective_config.json给出完整当前清单并隔离旧字段，A1记录澄清，原冻结配置不改。此修正没有改变文本、采样、评分或检验。

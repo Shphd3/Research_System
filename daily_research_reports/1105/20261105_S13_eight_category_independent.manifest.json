@@ -1,0 +1,32 @@
+{
+  "UTC": "2026-11-05T16:02:55.677381+00:00",
+  "status": "PASS",
+  "archive": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/delivery/20261105_S13_eight_category_2026-11-05T160228.735680_0000.zip",
+  "bytes": 18502887,
+  "sha256": "bcc757efa85a139f0e54d233268ebb47f6e4fcf72125fb42cea97fe72de0e7a5",
+  "members": 287,
+  "CRC": "PASS",
+  "fresh_unpack_hashes": "PASS",
+  "portable_replay": {
+    "status": "PASS",
+    "checks": 67472,
+    "check_types": {
+      "packaged_bytes": 286,
+      "native_shape": 2,
+      "context_units": 2,
+      "primary_mean": 128,
+      "member_sets": 62976,
+      "relation_four_cells": 2112,
+      "full_null_margins": 1792,
+      "readout_loss": 172,
+      "all_complete_behavior_rows": 1,
+      "full_answer_score_from_token_logprobs": 1
+    },
+    "scope": "Packaged byte identity, raw shared-frequency means, membership, four cells, saved exact-margin snapshots, and readout loss; no new model inference and no scientific acceptance."
+  },
+  "fresh_unpack": "/tmp/s13_review_unpacked_fqzwubwh",
+  "bundle_stage": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/delivery/bundle_2026-11-05T160228.735680_0000",
+  "original_model_weights_not_included": true,
+  "review_copy": "/data/250010109/Research_System/daily_research_reports/1105/20261105_S13_eight_category_independent.zip",
+  "review_copy_hash_verified": true
+}

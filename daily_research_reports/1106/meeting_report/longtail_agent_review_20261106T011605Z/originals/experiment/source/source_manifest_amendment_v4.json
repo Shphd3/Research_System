@@ -1,0 +1,29 @@
+{
+  "format": "implementation_amendment_v4",
+  "previous_manifest_sha256": "89aa2858d99b7f80867ee0fa2effa621bb65b7ff09b56a314e36949be8062fa8",
+  "timestamp_utc": "2026-11-05T17:33:00.705214+00:00",
+  "processing_agent": "/root/memory_impl",
+  "change": "Semantic CE/KL mask moves consecutive individually pure-whitespace leading tokens into known gold prefix while both complete model input-ID sequences stay identical. Merged content tokens retained; semantic-empty answers rejected. Prompt/generation/train loss implementations unchanged. CPU-only repack explicitly derived from deeply verified genuine GPU arrays. Previous-mask DEV training invalid for hyperparameter choice. New GPU exact-recovery qualification required.",
+  "answer_mask_version": "semantic_content_v4",
+  "exact_v3_snapshot_receipt": "source/history_v3_exact/snapshot_receipt.json",
+  "exact_v3_snapshot_receipt_sha256": "f339d483b4da0370d0ce6327143f4cec9162743bb6a93d0c214327326bd4890a",
+  "tests": "12 CPU tests passed on actual local Transformers4.53.3, including real tokenizer year/merged word/full-ID identity, blank rejection, and all previous regressions.",
+  "files": {
+    "source/cache_io.py": "cb85f36d442a4ebf2de7718e853a25246ebadbaf88c43b862e0a6cd405f8f475",
+    "source/evaluate_cached.py": "d8d9d05b2bec2ccafb2242de7bdd886c1fb28090c06225df24f0b41d979fe658",
+    "source/evaluate_live.py": "820e20eaf55c39a3c3964e1e4fb928613ca91b4493b29714d6d0acf2fd1b6024",
+    "source/fit_spectrum.py": "80f81175741d56781cbc972a370c08add3aa0861c1cabd7e4f52e11c403fd5bb",
+    "source/memory_core.py": "bf556f177c72eaa2326d564e15304d2ba867c128cb30e45519eca68450b63934",
+    "source/prepare_cache.py": "18b2bec5b7a46204807ae30e0eee815c94912aa3e51f777367b8e84f5ca4b363",
+    "source/prepare_lm_cache.py": "967277422f2648a37be6627d274346d1ee6dee3dac677afc3bbe67c15e3326c0",
+    "source/train_cached.py": "0952c94a262c9354958543d2fbc370214b241ecbb5853ba6a26be28b7d36ca99",
+    "source/verify_cache.py": "7d6f2ed8739d7a8d131e0c1b85668cda01e78897396d3d4df6c403b45a9d0d01",
+    "source/README.md": "864c7538c9970800fa9828f1afda9f6e7794a9b0a7fbf2fe7ce5c59cf4dcd50b",
+    "tests/test_generation_config.py": "81e30fb406974f60a3a84c36fc7b574f5a53c6ff6ea0a0611b7d26337d8d81f3",
+    "tests/test_gpu_qa_comparison.py": "c2cdaa589cae47fec71a98bcee2e3168082c92969fcccfe257641905edbf95ff",
+    "tests/test_gradient_calibration.py": "57d3919d57057bcce2432d7292c90c44c7b1dfc7f559693e45731d869d628b21",
+    "tests/test_interfaces.py": "ebb8b240e0b69d80859d1ed392095de3a7d8f5e4617ef1feb36092a69fc8a6ac",
+    "tests/test_semantic_mask.py": "e6bf4be9ea1a4eec216cb21bc5ee5d42af2810e7f3491dba040ba2e233d1ba96",
+    "dev_tools/repack_semantic_cache.py": "e0a062ca42bdeed1f2729f006835a2845cb5d917aa0176567c22ece616c3a114"
+  }
+}

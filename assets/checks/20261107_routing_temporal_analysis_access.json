@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-07T01:53:08.029903+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-6lhw6",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17730,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_depth_expert_allocation_20261106",
+      "title_cn": "分层MoE共同预算A/B频率桶与路由计算完整分析",
+      "category": "analysis_output",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/analysis.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 31797,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/analysis_provenance.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1041,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/routing.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 8355,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/document_examples.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5853,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/frequency_results.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5160,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/learning_curves.pdf",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 32633,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/results/learning_curves.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 96156,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/metrics.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 10564397,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/resolved_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4926,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 392,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/dev_step_000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 896,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/dev_step_000000_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 41047,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/test_step_000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 900,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/test_step_000000_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 42386,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/dev_step_000437.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 902,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/dev_step_000437_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 42749,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/test_step_000437.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 904,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/test_step_000437_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 44142,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/dev_step_000874.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 900,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/dev_step_000874_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 43009,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/test_step_000874.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 902,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_A/evaluations/test_step_000874_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 44426,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/metrics.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 10596372,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/resolved_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4929,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 391,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/dev_step_000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 894,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/dev_step_000000_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 41029,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/test_step_000000.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 894,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/test_step_000000_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 42356,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/dev_step_000437.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 906,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/dev_step_000437_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 42652,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/test_step_000437.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 904,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/test_step_000437_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 44078,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/dev_step_000874.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 899,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/dev_step_000874_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 43044,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/test_step_000874.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 903,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/runs/formal_B/evaluations/test_step_000874_documents.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 44417,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_depth_expert_allocation_routing_temporal_20261107",
+      "title_cn": "分层MoE逐层路由时间分布与瞬时零接收诊断",
+      "category": "analysis_output",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/artifact_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2841,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/summary.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 13039,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/layer_summary.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2930,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/layer_windows.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 11860,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/expert_distributions.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 56021,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/per_step_layer_metrics.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1667473,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/zero_receipt_events.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 752,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/routing_review.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 5547,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/routing_review_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 6368,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/expert_load_heatmaps.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 304005,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/routing_dynamics.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 745210,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/early_routing.png",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 128102,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/routing_audit_20261107/provenance.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3040,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

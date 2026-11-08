@@ -1,0 +1,106 @@
+{
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261106,
+  "budget_basis": {
+    "evaluation_and_io_reserve_seconds": 3600,
+    "measured_median_step_seconds": {
+      "A": 2.079833866097033,
+      "B": 2.038461056537926
+    },
+    "paired_measured_training_seconds": 3600,
+    "rule": "same even steps=floor(3600/(A_step+B_step)); clamp20..4000",
+    "wall_time_is_budget_selection_only": true
+  },
+  "checkpoint_steps": [
+    0,
+    437,
+    874
+  ],
+  "data_manifest_sha256": "3c0dc6748978ca190ba3334d77799ead1f485da3e1a242d2e4c579d940769ace",
+  "data_root": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data",
+  "epsilon": 1e-08,
+  "eval_document_limit_smoke": 8,
+  "eval_micro_batch_size": 1,
+  "evaluation_ce_chunk": 128,
+  "freeze_stage": "FROZEN_BEFORE_FINAL_TEST_AND_FORMAL_TRAINING",
+  "frequency_asset": "data_depth_expert_allocation_20261106",
+  "frequency_manifest_sha256": "dc809d9c0567f21e2391426292a37dd64abc17bd573976d0ff6224e0e0441f02",
+  "frequency_root": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/data/frequency_formal",
+  "fused_optimizer": true,
+  "grad_clip": 1.0,
+  "gradient_accumulation_steps": 2,
+  "initialization": "semantic-name-sha256 seed; common tensors and overlapping router rows aligned; all experts same normal(0,.02) rule",
+  "learning_rate": 0.0003,
+  "micro_batch_size": 16,
+  "model": {
+    "ce_chunk_tokens": 128,
+    "checkpoint_ce": true,
+    "experts_per_layer": null,
+    "gradient_checkpointing": false,
+    "head_dim": 128,
+    "hidden_size": 1024,
+    "initializer_range": 0.02,
+    "intermediate_size": 1536,
+    "load_bias_update_rate": 0.001,
+    "max_position_embeddings": 2048,
+    "num_attention_heads": 16,
+    "num_experts": 8,
+    "num_experts_per_tok": 2,
+    "num_hidden_layers": 8,
+    "num_key_value_heads": 8,
+    "rms_norm_eps": 1e-06,
+    "rope_theta": 1000000.0,
+    "tie_word_embeddings": true,
+    "vocab_size": 151936
+  },
+  "optimizer_reuse": "20261101_moe_baseline_speedup/speedup/train_fixed.py; warmup scaled explicitly after joint smoke",
+  "primary_metric": "test low-frequency token NLL B minus A",
+  "profile": "h100-4-reserved",
+  "required_input_assets": [
+    "dclm_pair_v1",
+    "dclm_token_bins_global01",
+    "model_qwen3_0p6b_base",
+    "data_depth_expert_allocation_20261106"
+  ],
+  "seed": 20261106,
+  "seq_len": 2048,
+  "smoke": false,
+  "target_tokens": 229113856,
+  "tokenizer_path": "/data/share/Qwen3-0.6B-Base",
+  "tokens_per_update": 262144,
+  "total_steps": 874,
+  "variants": {
+    "A": {
+      "experts_per_layer": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    "B": {
+      "experts_per_layer": [
+        6,
+        6,
+        6,
+        8,
+        8,
+        10,
+        10,
+        10
+      ]
+    }
+  },
+  "warmup_adaptation": "historical cap1000 updates; ten percent of bounded common budget, integer floor, min1",
+  "warmup_steps": 87,
+  "weight_decay": 0.1,
+  "world_size": 4
+}

@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE",
+  "start": "2026-11-06T00:37:31.607001+00:00",
+  "argv": [
+    "/usr/bin/python",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/resource_transition_20261106/run_formal_h100.py",
+    "--plan",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/plans/19846/train_B.json",
+    "--out",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/batch_logs/19846_train_B",
+    "--gpus",
+    "4",
+    "--freeze",
+    "/data/250010109/MoE_Router/experiments/20261105_last_layer_memory/protocol_frozen.json"
+  ],
+  "new_job_id": "pt-5gno22e6",
+  "plan_sha256": "edc9061c24769669cf66364f83a4a56d43d7bca088438d43fcb05badb69b105d",
+  "stage": "train_B",
+  "exit_code": 0,
+  "end": "2026-11-06T01:10:16.281616+00:00",
+  "elapsed_seconds": 1964.666265487671,
+  "log_sha256": "0706b95c2772638c9d1c59f07c2064b2ed1caed933efa9bf3ec9cfda4946b6b3",
+  "batch_summary_sha256": "fb1c0db76979b60bc076d6cb90c8149bf09cd7370974d2386ea308c65d295b22"
+}

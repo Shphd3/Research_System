@@ -1,0 +1,483 @@
+{
+  "checked_utc": "2026-11-05T18:01:51.716033+00:00",
+  "assets": [
+    {
+      "id": "model_s7_fresh_lambda0p1_33b",
+      "paths": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000",
+          "exists": true,
+          "bytes": null
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/resolved_config.json",
+          "exists": true,
+          "bytes": 11917
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/s7_fresh_lambda0p1_33b",
+          "exists": true,
+          "bytes": null
+        }
+      ],
+      "identity_from_prior_same_day_inventory": {
+        "attention_o_shape": [
+          1024,
+          2048
+        ],
+        "checkpoint_format": "native state.pt: model plus optimizer/counters; use corresponding dense_sae loader",
+        "hidden_size": 1024,
+        "layers": 8,
+        "manifest_complete_recorded": true,
+        "model_id": "s7_fresh_lambda0p1_33b",
+        "optimizer_step_recorded": 125894,
+        "original_native_code_root": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100",
+        "parameters_recorded": {
+          "backbone": 281431040,
+          "sae": 61471024,
+          "total": 342902064
+        },
+        "qualified_vendor_code_root": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/s7_fresh_lambda0p1_33b",
+        "runtime_load_this_inventory": "Unknown",
+        "sae_embedded_in_model_state": true,
+        "sae_hook_layers": [
+          7
+        ],
+        "sae_hook_tensor": "attention_output_after_o_before_residual_add",
+        "sae_mode": "sidecar",
+        "sae_topk": 32,
+        "sae_width": 30000,
+        "state_bytes_recorded": 4115421500,
+        "state_sha256_recorded": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+        "state_sha256_verified_this_inventory": "Unknown",
+        "state_size_matches_record": true,
+        "tokens_seen_recorded": 33000000000
+      },
+      "boundary": "No new GPU/model/SAE load in this mainexperiment"
+    },
+    {
+      "id": "model_dense_33b",
+      "paths": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000",
+          "exists": true,
+          "bytes": null
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/resolved_config.json",
+          "exists": true,
+          "bytes": 5136
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/dense_33b",
+          "exists": true,
+          "bytes": null
+        }
+      ],
+      "identity_from_prior_same_day_inventory": {
+        "attention_o_shape": [
+          1024,
+          2048
+        ],
+        "checkpoint_format": "native state.pt: model plus optimizer/counters; use corresponding dense_sae loader",
+        "hidden_size": 1024,
+        "layers": 8,
+        "manifest_complete_recorded": true,
+        "model_id": "dense_33b",
+        "optimizer_step_recorded": 125894,
+        "original_native_code_root": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining",
+        "parameters_recorded": {
+          "backbone": 281431040,
+          "sae": 0,
+          "total": 281431040
+        },
+        "qualified_vendor_code_root": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/dense_33b",
+        "runtime_load_this_inventory": "Unknown",
+        "sae_embedded_in_model_state": false,
+        "sae_hook_layers": [],
+        "sae_hook_tensor": null,
+        "sae_mode": "none",
+        "sae_topk": null,
+        "sae_width": null,
+        "state_bytes_recorded": 3377283823,
+        "state_sha256_recorded": "a0b21cb3b8c5217aa5638101ed60c28747edf474bd33ae62f91cda57952586cd",
+        "state_sha256_verified_this_inventory": "Unknown",
+        "state_size_matches_record": true,
+        "tokens_seen_recorded": 33000000000
+      },
+      "boundary": "No new GPU/model/SAE load in this mainexperiment"
+    },
+    {
+      "id": "model_sall_unit_weight_33b",
+      "paths": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/sall_unit_weight_continue_from_23b_8x5090/milestones/token_033000000000",
+          "exists": true,
+          "bytes": null
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/sall_unit_weight_continue_from_23b_8x5090/resolved_config.json",
+          "exists": true,
+          "bytes": 6191
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/sall_unit_weight_33b",
+          "exists": true,
+          "bytes": null
+        }
+      ],
+      "identity_from_prior_same_day_inventory": {
+        "attention_o_shape": [
+          1024,
+          2048
+        ],
+        "checkpoint_format": "native state.pt: model plus optimizer/counters; use corresponding dense_sae loader",
+        "hidden_size": 1024,
+        "layers": 8,
+        "manifest_complete_recorded": true,
+        "model_id": "sall_unit_weight_33b",
+        "optimizer_step_recorded": 125895,
+        "original_native_code_root": "/data/250010109/MoE_Router/experiments/20260918_attention_output_sidecar_all8_4h100_resume",
+        "parameters_recorded": {
+          "backbone": 281431040,
+          "sae": 491768192,
+          "total": 773199232
+        },
+        "qualified_vendor_code_root": "/data/250010109/MoE_Router/experiments/20261003_sharing_routing/vendor/models/sall_unit_weight_33b",
+        "runtime_load_this_inventory": "Unknown",
+        "sae_embedded_in_model_state": true,
+        "sae_hook_layers": [
+          7,
+          3,
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "sae_hook_tensor": "attention_output_after_o_before_residual_add",
+        "sae_mode": "sidecar",
+        "sae_topk": 32,
+        "sae_width": 30000,
+        "state_bytes_recorded": 9282392099,
+        "state_sha256_recorded": "80e2a46b88a8b831ee0c8d6bcd2d88dcb361127920754f2a82bc8494375a4ebc",
+        "state_sha256_verified_this_inventory": "Unknown",
+        "state_size_matches_record": true,
+        "tokens_seen_recorded": 33000000000
+      },
+      "boundary": "No new GPU/model/SAE load in this mainexperiment"
+    },
+    {
+      "id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "paths": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+          "exists": true,
+          "bytes": 245887459
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+          "exists": true,
+          "bytes": 10419
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/full_summary.json",
+          "exists": true,
+          "bytes": 3760
+        }
+      ],
+      "identity_from_prior_same_day_inventory": {
+        "activation": "encoder(x) -> ReLU -> topk positive values; no input unit norm normalization or decoder-bias subtraction",
+        "checkpoint_format": "a15_topk_sae_v1 config/state_dict/metadata; SAE weights only, no optimizer",
+        "d_model": 1024,
+        "data_asset": "dclm_pair_v1",
+        "decoder_normalization": "normalize decoder weight columns after each optimizer step",
+        "file_bytes_stat": 245887459,
+        "hook_module": "model.layers[27].mlp",
+        "hook_type": "forward_pre_hook(args[0])",
+        "input_tensor": "actual MLP input h after post_attention_layernorm; not attention W_O output or unnormalized incoming residual",
+        "layer_zero_based": 27,
+        "loader": "TopKSAE.from_pretrained",
+        "loader_path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+        "n_latents": 30000,
+        "optimizer_recorded": "AdamW lr0.0003 wd0; gradclip1; AuxK512 weight0.03125",
+        "outlier_filter": "per batch remove token rows above norm quantile 0.999",
+        "parent_asset": "model_qwen3_0p6b_base_official_a5",
+        "parent_hidden_size": 1024,
+        "parent_model_config_sha256_recorded": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+        "parent_model_layers": 28,
+        "parent_model_path_recorded": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+        "raw_tokens_seen_recorded": 1000001536,
+        "reload_exact_recorded_in_original_run": 0.0,
+        "runtime_load_this_inventory": "Unknown",
+        "sha256_recorded": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+        "sha256_verified_this_inventory": "Unknown",
+        "step_recorded": 244141,
+        "tokenizer_asset": "tokenizer_qwen3_0p6b_base_official_a5",
+        "topk": 32,
+        "trained_base_frozen_recorded": true,
+        "training_data_manifest_sha256_recorded": "a82ee6a3f6dd5b56259a6bc384481ddf6522c48307f57cb8569752f82886bbe4"
+      },
+      "boundary": "No new GPU/model/SAE load in this mainexperiment"
+    },
+    {
+      "id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "paths": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+          "exists": true,
+          "bytes": 245888648
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/summary.json",
+          "exists": true,
+          "bytes": 4822
+        }
+      ],
+      "identity_from_prior_same_day_inventory": {
+        "actual_final_counts": {
+          "eligible_sae_tokens": 999025471,
+          "raw_activation_tokens": 1000980480,
+          "reached_step": 244380,
+          "valid_prediction_tokens": 1000002960
+        },
+        "actual_job_id": "pt-h5t3h09w",
+        "actual_saved_kind": "SAE_weights_only",
+        "actual_saved_weight_members": [
+          {
+            "counter_source": "Actual milestone record; raw count is contract-exact step times raw tokens/update.",
+            "eligible_counter_boundary": "The frozen milestone record did not retain this counter; historical rolling resume slots were overwritten. No value was imputed.",
+            "eligible_counter_status": "NOT_RECORDED_IN_MILESTONE_WEIGHTS_OR_MANIFEST",
+            "eligible_sae_tokens": null,
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/checkpoints/sae_step_24438.pt",
+            "raw_activation_tokens": 100098048,
+            "raw_counter_status": "DERIVED_STEP_X_4096",
+            "state_sha256": "95c6f7c3b861c1458486dc1ef870d2dd25e8af877fd182415b6bb19fb014e817",
+            "step": 24438,
+            "valid_prediction_tokens": 100000296
+          },
+          {
+            "counter_source": "Actual milestone record; raw count is contract-exact step times raw tokens/update.",
+            "eligible_counter_status": "ACTUAL_FINAL_COUNTER_AT_SAME_TRAINING_STEP",
+            "eligible_sae_tokens": 999025471,
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/checkpoints/sae_step_244380.pt",
+            "raw_activation_tokens": 1000980480,
+            "raw_counter_status": "DERIVED_STEP_X_4096",
+            "state_sha256": "00de2bf0c248c8d51a4fe769de2c2c20d059936aaa5a3a57dd48d0a77a5142a6",
+            "step": 244380,
+            "valid_prediction_tokens": 1000002960
+          },
+          {
+            "counter_source": "Actual milestone record; raw count is contract-exact step times raw tokens/update.",
+            "eligible_counter_boundary": "The frozen milestone record did not retain this counter; historical rolling resume slots were overwritten. No value was imputed.",
+            "eligible_counter_status": "NOT_RECORDED_IN_MILESTONE_WEIGHTS_OR_MANIFEST",
+            "eligible_sae_tokens": null,
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/checkpoints/sae_step_73314.pt",
+            "raw_activation_tokens": 300294144,
+            "raw_counter_status": "DERIVED_STEP_X_4096",
+            "state_sha256": "d568a1a8055a0405890cfa334f746cb877ce7ee91a19f1cc775ceb4fc85df14b",
+            "step": 73314,
+            "valid_prediction_tokens": 300000888
+          },
+          {
+            "actual_saved_kind": "final_or_partial_SAE_weights",
+            "eligible_counter_status": "ACTUAL_FINAL_COUNTER_AT_SAME_TRAINING_STEP",
+            "eligible_sae_tokens": 999025471,
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+            "raw_activation_tokens": 1000980480,
+            "raw_counter_status": "ACTUAL_NATIVE_FINAL_COUNTER",
+            "state_sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+            "step": 244380,
+            "valid_prediction_tokens": 1000002960
+          }
+        ],
+        "checkpoint_sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+        "config_sha256": "f32871af8aee37a22f5a7c7496a43759b1129a287bd0b756e2db6c4acbd38230",
+        "eligible_sae_tokens": 999025471,
+        "engineering_verdict": "PASS",
+        "frozen_contract_path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/freeze_manifest.json",
+        "frozen_contract_sha256": "64ee50753d076dcc1c250f9eb4883375a4ff5f49238d33ccf1f8056648f092b0",
+        "full_telemetry_verdict": "PASS",
+        "hook": "model.layers.27.self_attn.o_proj output before residual addition",
+        "individual_trainer_verdict": "PASS",
+        "initial_random_SAE_weights": "NOT_SAVED; seed and initial validation recorded, not an existing checkpoint",
+        "manifest_path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/summary.json",
+        "manifest_sha256": "f2d077683cd34c77b78ccaa7998b0672d6c1511b896d62182231209cf2d683ad",
+        "model_parent_asset_id": "model_qwen3_0p6b_base_official_a5",
+        "overall_engineering_verdict": "PASS",
+        "platform_terminal_state": "SUCCEEDED",
+        "qualification_evidence": {
+          "enrichment_source": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/enrich_training_registration.py",
+            "sha256": "186d3e31198a3fca3937ac5f69a4533469785b246f49d6a3fa56741849fd1e5f",
+            "size_bytes": 14972
+          },
+          "freeze_manifest.json": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/freeze_manifest.json",
+            "sha256": "64ee50753d076dcc1c250f9eb4883375a4ff5f49238d33ccf1f8056648f092b0",
+            "size_bytes": 5460
+          },
+          "fresh_producer_export": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/registration_request_fresh_export_receipt_20261009T210148133580Z.json",
+            "sha256": "b828a816cee444abf4192c571691182a431508ec0d5daa9ac93dd701d792839a",
+            "size_bytes": 1302
+          },
+          "full_telemetry_qualification.json": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/full_telemetry_qualification.json",
+            "sha256": "e754046b10293f15346ae6fc957d60d7847099953ac09221965ea0d760076eae",
+            "size_bytes": 2777
+          },
+          "initial_producer_request_preserved": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/registration_request_initial.json",
+            "sha256": "f2d5c964a8d5ed6f439586d0f32cc8f298bba54f878409b2d055515c680e3a71",
+            "size_bytes": 14034
+          },
+          "milestones.json": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/milestones.json",
+            "sha256": "54a3b953f7f8742d0643a53858d7f144e55b5226079f0e890c55c2aff76e119b",
+            "size_bytes": 1105
+          },
+          "platform_terminal.json": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/platform_terminal.json",
+            "sha256": "8023cea3f129d30df4d1fde9f5d147bbb730ce4e9dee53292c42f903b5d69dce",
+            "size_bytes": 4071
+          },
+          "producer_registration_request": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/registration_request_fresh_20261009T210148133580Z.json",
+            "sha256": "f2d5c964a8d5ed6f439586d0f32cc8f298bba54f878409b2d055515c680e3a71",
+            "size_bytes": 14034
+          },
+          "summary.json": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/summary.json",
+            "sha256": "f2d077683cd34c77b78ccaa7998b0672d6c1511b896d62182231209cf2d683ad",
+            "size_bytes": 4822
+          },
+          "terminal_verification.json": {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/terminal_verification.json",
+            "sha256": "4a2f96c61d01cc4e13b30a4713a118c11892062383c6e3f5ded72bc3b898312f",
+            "size_bytes": 384
+          }
+        },
+        "raw_activation_tokens": 1000980480,
+        "reached_step": 244380,
+        "registration_agent": "Codex /root",
+        "registration_evidence_source": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/registration_request_enriched_root_bound.json",
+        "scope": "ACTUAL_FULL_OUTPUTS",
+        "source_sha256": "82c656e24b0114520ad7bb82c3f234eef7f5ecd7ecf0b466d3cb1ff1d7e75119",
+        "state_sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+        "summary_sha256": "f2d077683cd34c77b78ccaa7998b0672d6c1511b896d62182231209cf2d683ad",
+        "telemetry_event_files": [
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/tensorboard/events.out.tfevents.1791570168.pt-77ef1d4e21644ff0bf21ee532264a28f-worker-0.84.0",
+            "sha256": "8cb862eca26d340feefc7f68eb65afaa7249acc4cee76b3ec979c275d25f210c",
+            "size_bytes": 306146
+          }
+        ],
+        "valid_prediction_tokens": 1000002960
+      },
+      "boundary": "No new GPU/model/SAE load in this mainexperiment"
+    },
+    {
+      "id": "sae_moe_baseline33b_gate_input_formal_1b_20261104",
+      "paths": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/sae_full_final.pt",
+          "exists": true,
+          "bytes": 245890184
+        }
+      ],
+      "identity_from_prior_same_day_inventory": {
+        "parent_asset": "checkpoint_family_moe_baseline_saved_20261104",
+        "parent_checkpoint": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000",
+        "parent_tokens": 33000000000,
+        "layer_index_zero_based": 7,
+        "interface": "blocks.7.norm2 output: native linear router input",
+        "width": 30000,
+        "topk": 32,
+        "input_dim": 1024,
+        "dictionary_step": 244141,
+        "raw_activation_positions": 1000001536,
+        "eligible_sae_positions": 998050956,
+        "sha256_fresh": "36b45cd215eee8af2a800d9d59737010ce06c56dcd4cacec44f590db058d9d05",
+        "bytes": 245890184,
+        "loader": "20261104_moe_gate_input_sae_33b native SAE runner",
+        "resume_capability": "Weights-only final export; training recovery is a separate object",
+        "load_this_round": false,
+        "registration_type": "Historical actual-output backfill in current audit; no training performed",
+        "scientific_acceptance": "Unknown"
+      },
+      "boundary": "No new GPU/model/SAE load in this mainexperiment"
+    },
+    {
+      "id": "checkpoint_family_moe_baseline_saved_20261104",
+      "exact_33b_member_paths": [
+        "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000"
+      ],
+      "exists": [
+        true
+      ],
+      "model_parameters": 507988992,
+      "source_config": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/resolved_config.json",
+      "boundary": "33B means trained tokens, not parameters; SAE parent tied to exact33B snapshot"
+    }
+  ],
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/resolved_config.json",
+      "current_sha256": "786f40858da7d975217fa7896b1c784b0060c153343f4f847aed69b25da3a049",
+      "matches_same_day_inventory": true,
+      "final_validation": null,
+      "parameters": {
+        "experts": 301989888,
+        "router": 65536,
+        "shared": 205933568,
+        "total": 507988992
+      }
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/full_summary.json",
+      "current_sha256": "797ad263ad5538a9182731df3d0a481b288f9abbf6595c0d77492f3792164e73",
+      "matches_same_day_inventory": true,
+      "final_validation": {
+        "mean_outlier_filter_rate": 0.001953125,
+        "mean_positive_features_per_token": 32.0,
+        "normalized_reconstruction_mse": 0.053382092621177435
+      },
+      "parameters": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/summary.json",
+      "current_sha256": "f2d077683cd34c77b78ccaa7998b0672d6c1511b896d62182231209cf2d683ad",
+      "matches_same_day_inventory": true,
+      "final_validation": {
+        "e16_rank_mean_normalized_mse": 0.16524296253919601,
+        "eligible_sae_tokens": 16352,
+        "global_normalized_mse": 0.16841862781943798,
+        "positive_features_per_eligible_token": 32.0,
+        "raw_activation_tokens": 16384,
+        "removed_norm_outliers": 32
+      },
+      "parameters": null
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/summary.json",
+      "current_sha256": "4a6b0fcb95a89f83448c47b377d71b2f10b27ca52e09488ed5be820bf80ee268",
+      "matches_same_day_inventory": true,
+      "final_validation": {
+        "biased_top2_set_agreement": 0.8262704090992479,
+        "biased_top2_slot_overlap": 0.9127682993946065,
+        "eligible_sae_positions": 16353,
+        "filtered_positions": 31,
+        "global_normalized_mse": 0.22674461998775985,
+        "positive_features_per_eligible_position": 32.0,
+        "rank_mean_normalized_mse": 0.22616281267255545,
+        "raw_positions": 16384,
+        "router_probability_L1": 0.12107028376835242,
+        "router_raw_probability_KL": 0.012856362391296734
+      },
+      "parameters": null
+    }
+  ],
+  "claim": "Metadata/access refresh only; originalNMSE reflects originalhooks/data, never posttraining0.6B or thispre-finalnorm injection site"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "matrix_profiler_rank": 0,
+  "profiled_local_tokens": 65536,
+  "total_unique_active_parameter_convention": 281496576,
+  "non_matrix_norm_parameters": 19456,
+  "tied_output_head_matrix_parameters": 155582464,
+  "formula": "6*(P_active - norm_parameters) + 2*P_tied_output_head",
+  "explanation": "Three matrix passes for forward and backward; checkpointed CE recomputes output logits once. Norm affine weights are not matrix multiplies. Tied embedding/output weight counted once as the output matrix.",
+  "predicted_matrix_flops_per_token": 2000027648,
+  "measured_aten_mm_flops_per_token": 2000027648.0,
+  "exact_match": true,
+  "excluded": "fused SDPA QK/AV/backward, non-matrix kernels and communication; this is not total training FLOPs"
+}

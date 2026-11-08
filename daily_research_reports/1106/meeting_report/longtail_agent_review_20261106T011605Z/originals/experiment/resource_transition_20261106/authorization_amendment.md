@@ -1,0 +1,9 @@
+# User-authorized H100 checkpoint handoff, 2026-11-06
+
+The user reports reserved H100 availability and explicitly requests continuation from saved state on four H100s only if feasible and measurably faster. The user needs a report in approximately three hours. This is an execution amendment, not a change to data, objectives, hyperparameters, fact exposure, scoring, seeds or scientific acceptance.
+
+The existing 5090 job pt-vbvlpop3 remains active while a single h100-4-reserved node is acquired and qualified. This new allocation uses the canonical profile/image through the repository template, with the same mounted torch2.8+cu128/HF runtime as the current task. A disjoint H100 task queue first records four actual H100 devices and then performs bounded DEV-only throughput, loading and recovery checks. The old job will not be stopped before a verified handoff. No main training is restarted from random initialization, no original model is modified, and no other user's job is operated on.
+
+The current largest cohort phaseA is already trained. A later handoff may consume the exact saved phaseA module/Adam/scheduler/RNG/counter state and continue phaseB, preserving its global batch and all fact ledgers. Four GPUs will run four independent arms, not change per-arm training to four-rank DDP. Cross-architecture BF16 numerical equivalence is not assumed. Actual job/device provenance and any additional matched-device evaluations will be recorded. Old source, 0044 receipts and completed outputs remain immutable. Any deliberate old-run guard stop and replacement completion evidence will remain explicit rather than rewriting old FAILED as COMPLETE.
+
+Formal H100 continuation requires measured benefit and a new actual-allocation certificate; the old 5090-specific certificate is not valid proof of H100 allocation. The root processing agent owns the staged handoff and prevents duplicate phaseB writers.

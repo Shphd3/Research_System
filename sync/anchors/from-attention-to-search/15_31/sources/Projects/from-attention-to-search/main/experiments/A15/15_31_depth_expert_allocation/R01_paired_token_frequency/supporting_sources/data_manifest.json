@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "source_asset": "dclm_pair_v1",
+  "tokenizer_asset": "model_qwen3_0p6b_base",
+  "max_source_tokens": 67108864,
+  "source_tokens_scanned": 67108864,
+  "sources": [
+    {
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+      "resolved_path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+      "tokens_scanned": 67108864,
+      "scanned_prefix_sha256": "6b6f9ccb5ea29819723711ed19bdef51e86b9e3a08fb1c323489fee2a6102c2c"
+    }
+  ],
+  "document_boundary_token": 151645,
+  "document_boundary_decoded": "<|im_end|>",
+  "split_rule": "sha256(exact uint32 document bytes) first64bits modulo100: dev0,test1,train2..99",
+  "deduplication": "exact token document hashes globally; near-duplicate contamination NOT_CHECKED",
+  "discarded_fragment_or_short_tokens": 8827,
+  "duplicates_removed": 16,
+  "general_validation": "entire frozen dev and test splits, with overall unfiltered NLL; original 115M holdout not used",
+  "sample_scope": "deterministic prefix of existing trusted DCLM training view; not entire corpus",
+  "splits": {
+    "train": {
+      "documents": 53813,
+      "tokens": 65766910,
+      "sha256": "2d9f44eea9e42fa120af1fc505b00917cec1bcf3811d4c649b0733ee27a6addb",
+      "document_index_sha256": "1ebb5b823a6565a62651d3db0befbe7fa1ee25b1efac41e2e4dc2bcb00f8d8b0"
+    },
+    "dev": {
+      "documents": 528,
+      "tokens": 630980,
+      "sha256": "6fd8b999ea4572e15c00a906f6f13f6098b40a3876aba02a79de64014570f582",
+      "document_index_sha256": "247db28d05eb770651fc398b095f581901fa7c9ee48ed53c12a00fa70af0f48d"
+    },
+    "test": {
+      "documents": 544,
+      "tokens": 700308,
+      "sha256": "a07cf3d28a26022bfff20fce279aad09de8994adba78ed4467776ba525d3511e",
+      "document_index_sha256": "e98ae8d40c47c9f70920fa4ab46f06531eb9b1600439832a14be99df1c6a6cd2"
+    }
+  }
+}

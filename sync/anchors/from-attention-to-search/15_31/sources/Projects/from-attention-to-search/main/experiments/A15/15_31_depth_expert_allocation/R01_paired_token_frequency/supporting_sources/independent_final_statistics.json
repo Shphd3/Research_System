@@ -1,0 +1,758 @@
+{
+  "status": "PASS",
+  "method": "Independent paired document multiplicity weighting; same 2000 bootstrap draws from numpy default_rng(20261106), percentile interval",
+  "replicates": 2000,
+  "seed": 20261106,
+  "raw_NLL_and_delta_comparison": "exact floating equality for every split/step/bucket",
+  "CI_comparison": "FP64 alternative reduction order; maximum absolute difference reported; threshold2e-12, no training/replay tolerance changed",
+  "max_abs_CI_difference": 6.938893903907228e-18,
+  "final_test": [
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "low",
+      "tokens": 1481,
+      "A_nll": 12.694702056837114,
+      "B_nll": 12.911912129747956,
+      "delta": 0.2172100729108415,
+      "independent_CI": [
+        0.12596861910824345,
+        0.30035089638778223
+      ],
+      "production_CI": [
+        0.12596861910824345,
+        0.30035089638778223
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 246
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "mid",
+      "tokens": 20752,
+      "A_nll": 8.83768811704973,
+      "B_nll": 8.88686246180356,
+      "delta": 0.04917434475382976,
+      "independent_CI": [
+        0.03281899210747631,
+        0.06467861842008911
+      ],
+      "production_CI": [
+        0.03281899210747631,
+        0.06467861842008911
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 540
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "high",
+      "tokens": 677902,
+      "A_nll": 4.1293406987817285,
+      "B_nll": 4.142017415618032,
+      "delta": 0.012676716836303115,
+      "independent_CI": [
+        0.004328008593834988,
+        0.02449862040995237
+      ],
+      "production_CI": [
+        0.004328008593834988,
+        0.024498620409952376
+      ],
+      "max_abs_CI_reduction_order_difference": 6.938893903907228e-18,
+      "documents_with_bucket": 544
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "unseen",
+      "tokens": 172,
+      "A_nll": 15.847674319910448,
+      "B_nll": 16.134700176327726,
+      "delta": 0.2870258564172783,
+      "independent_CI": [
+        0.02768432068630932,
+        0.43304727244114416
+      ],
+      "production_CI": [
+        0.02768432068630932,
+        0.43304727244114416
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 46
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "overall",
+      "tokens": 700307,
+      "A_nll": 4.289853843985205,
+      "B_nll": 4.304112011138154,
+      "delta": 0.014258167152949142,
+      "independent_CI": [
+        0.006159870644017267,
+        0.0256768969077061
+      ],
+      "production_CI": [
+        0.006159870644017267,
+        0.0256768969077061
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 544
+    }
+  ],
+  "all30stats": [
+    {
+      "split": "dev",
+      "step": 0,
+      "bucket": "low",
+      "tokens": 1253,
+      "A_nll": 12.123833798639126,
+      "B_nll": 12.114658831408379,
+      "delta": -0.009174967230746844,
+      "independent_CI": [
+        -0.031375864613738876,
+        0.019469153965758032
+      ],
+      "production_CI": [
+        -0.031375864613738876,
+        0.019469153965758032
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 237
+    },
+    {
+      "split": "dev",
+      "step": 0,
+      "bucket": "mid",
+      "tokens": 17259,
+      "A_nll": 12.127656777285363,
+      "B_nll": 12.12662771882419,
+      "delta": -0.0010290584611727382,
+      "independent_CI": [
+        -0.007823077808941328,
+        0.005774371526452228
+      ],
+      "production_CI": [
+        -0.007823077808941328,
+        0.005774371526452228
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 524
+    },
+    {
+      "split": "dev",
+      "step": 0,
+      "bucket": "high",
+      "tokens": 612343,
+      "A_nll": 12.13571434081829,
+      "B_nll": 12.129492091022284,
+      "delta": -0.006222249796005386,
+      "independent_CI": [
+        -0.008683481023609324,
+        -0.003649240129842352
+      ],
+      "production_CI": [
+        -0.008683481023609324,
+        -0.003649240129842352
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 528
+    },
+    {
+      "split": "dev",
+      "step": 0,
+      "bucket": "unseen",
+      "tokens": 124,
+      "A_nll": 11.977433035450597,
+      "B_nll": 11.93658632616843,
+      "delta": -0.04084670928216738,
+      "independent_CI": [
+        -0.10595339875399093,
+        0.01650980779102863
+      ],
+      "production_CI": [
+        -0.10595339875399093,
+        0.01650980779102863
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 38
+    },
+    {
+      "split": "dev",
+      "step": 0,
+      "bucket": "overall",
+      "tokens": 630979,
+      "A_nll": 12.135439246575483,
+      "B_nll": 12.129346376840187,
+      "delta": -0.0060928697352959915,
+      "independent_CI": [
+        -0.00851955158758795,
+        -0.0035318686064230737
+      ],
+      "production_CI": [
+        -0.00851955158758795,
+        -0.0035318686064230737
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 528
+    },
+    {
+      "split": "dev",
+      "step": 437,
+      "bucket": "low",
+      "tokens": 1253,
+      "A_nll": 13.79934057500585,
+      "B_nll": 13.888605224734198,
+      "delta": 0.08926464972834758,
+      "independent_CI": [
+        -0.009011455151333675,
+        0.2177011790793355
+      ],
+      "production_CI": [
+        -0.009011455151333675,
+        0.2177011790793355
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 237
+    },
+    {
+      "split": "dev",
+      "step": 437,
+      "bucket": "mid",
+      "tokens": 17259,
+      "A_nll": 10.724088431437272,
+      "B_nll": 10.758402777209232,
+      "delta": 0.034314345771960575,
+      "independent_CI": [
+        0.01914887917438913,
+        0.050035993657291354
+      ],
+      "production_CI": [
+        0.01914887917438913,
+        0.050035993657291354
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 524
+    },
+    {
+      "split": "dev",
+      "step": 437,
+      "bucket": "high",
+      "tokens": 612343,
+      "A_nll": 4.730195967251094,
+      "B_nll": 4.748678948603968,
+      "delta": 0.018482981352874184,
+      "independent_CI": [
+        0.01577229388783627,
+        0.02128051577692681
+      ],
+      "production_CI": [
+        0.015772293887836273,
+        0.021280515776926814
+      ],
+      "max_abs_CI_reduction_order_difference": 3.469446951953614e-18,
+      "documents_with_bucket": 528
+    },
+    {
+      "split": "dev",
+      "step": 437,
+      "bucket": "unseen",
+      "tokens": 124,
+      "A_nll": 16.217554969172323,
+      "B_nll": 16.165172730722734,
+      "delta": -0.05238223844958867,
+      "independent_CI": [
+        -0.7215637682677268,
+        0.45399591153431085
+      ],
+      "production_CI": [
+        -0.7215637682677268,
+        0.45399591153431085
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 38
+    },
+    {
+      "split": "dev",
+      "step": 437,
+      "bucket": "overall",
+      "tokens": 630979,
+      "A_nll": 4.91441233697044,
+      "B_nll": 4.933454981421022,
+      "delta": 0.01904264445058157,
+      "independent_CI": [
+        0.016352399823994123,
+        0.021768366738694058
+      ],
+      "production_CI": [
+        0.016352399823994123,
+        0.021768366738694058
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 528
+    },
+    {
+      "split": "dev",
+      "step": 874,
+      "bucket": "low",
+      "tokens": 1253,
+      "A_nll": 12.708119797116742,
+      "B_nll": 12.912339930522947,
+      "delta": 0.2042201334062046,
+      "independent_CI": [
+        0.13382106823505718,
+        0.29290187943046897
+      ],
+      "production_CI": [
+        0.13382106823505718,
+        0.29290187943046897
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 237
+    },
+    {
+      "split": "dev",
+      "step": 874,
+      "bucket": "mid",
+      "tokens": 17259,
+      "A_nll": 9.048439550025607,
+      "B_nll": 9.102329933577298,
+      "delta": 0.053890383551690846,
+      "independent_CI": [
+        0.03154020701458225,
+        0.07534908380842817
+      ],
+      "production_CI": [
+        0.03154020701458225,
+        0.07534908380842817
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 524
+    },
+    {
+      "split": "dev",
+      "step": 874,
+      "bucket": "high",
+      "tokens": 612343,
+      "A_nll": 4.126327100763386,
+      "B_nll": 4.132331328643765,
+      "delta": 0.006004227880379354,
+      "independent_CI": [
+        0.003547541894766005,
+        0.00880497901261695
+      ],
+      "production_CI": [
+        0.003547541894766005,
+        0.00880497901261695
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 528
+    },
+    {
+      "split": "dev",
+      "step": 874,
+      "bucket": "unseen",
+      "tokens": 124,
+      "A_nll": 16.039733794427686,
+      "B_nll": 16.3268793705971,
+      "delta": 0.28714557616941505,
+      "independent_CI": [
+        0.0418704393822106,
+        0.55862189148705
+      ],
+      "production_CI": [
+        0.0418704393822106,
+        0.55862189148705
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 38
+    },
+    {
+      "split": "dev",
+      "step": 874,
+      "bucket": "overall",
+      "tokens": 630979,
+      "A_nll": 4.280343300098644,
+      "B_nll": 4.288106212844198,
+      "delta": 0.007762912745554296,
+      "independent_CI": [
+        0.005433451759116787,
+        0.010420700118413225
+      ],
+      "production_CI": [
+        0.005433451759116787,
+        0.010420700118413225
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 528
+    },
+    {
+      "split": "test",
+      "step": 0,
+      "bucket": "low",
+      "tokens": 1481,
+      "A_nll": 12.110443936257166,
+      "B_nll": 12.108812556888186,
+      "delta": -0.0016313793689803902,
+      "independent_CI": [
+        -0.028094514037835656,
+        0.03192292287706525
+      ],
+      "production_CI": [
+        -0.028094514037835656,
+        0.03192292287706525
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 246
+    },
+    {
+      "split": "test",
+      "step": 0,
+      "bucket": "mid",
+      "tokens": 20752,
+      "A_nll": 12.116739298576746,
+      "B_nll": 12.113861835729,
+      "delta": -0.0028774628477457043,
+      "independent_CI": [
+        -0.009434428663489838,
+        0.0029237510142167767
+      ],
+      "production_CI": [
+        -0.009434428663489838,
+        0.0029237510142167767
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 540
+    },
+    {
+      "split": "test",
+      "step": 0,
+      "bucket": "high",
+      "tokens": 677902,
+      "A_nll": 12.140312939243678,
+      "B_nll": 12.13189020004391,
+      "delta": -0.008422739199767548,
+      "independent_CI": [
+        -0.011396904044964188,
+        -0.005618614740533287
+      ],
+      "production_CI": [
+        -0.011396904044964188,
+        -0.005618614740533287
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 544
+    },
+    {
+      "split": "test",
+      "step": 0,
+      "bucket": "unseen",
+      "tokens": 172,
+      "A_nll": 12.197198207988295,
+      "B_nll": 12.20281567129978,
+      "delta": 0.005617463311484272,
+      "independent_CI": [
+        -0.06309690201016517,
+        0.05331243772891331
+      ],
+      "production_CI": [
+        -0.06309690201016517,
+        0.05331243772891331
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 46
+    },
+    {
+      "split": "test",
+      "step": 0,
+      "bucket": "overall",
+      "tokens": 700307,
+      "A_nll": 12.139565193014782,
+      "B_nll": 12.131324586070724,
+      "delta": -0.00824060694405837,
+      "independent_CI": [
+        -0.01112788683811394,
+        -0.005501543918092103
+      ],
+      "production_CI": [
+        -0.01112788683811394,
+        -0.005501543918092103
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 544
+    },
+    {
+      "split": "test",
+      "step": 437,
+      "bucket": "low",
+      "tokens": 1481,
+      "A_nll": 13.670386052308736,
+      "B_nll": 13.769559641290082,
+      "delta": 0.09917358898134587,
+      "independent_CI": [
+        0.023346073980569683,
+        0.16667214366417482
+      ],
+      "production_CI": [
+        0.023346073980569683,
+        0.16667214366417482
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 246
+    },
+    {
+      "split": "test",
+      "step": 437,
+      "bucket": "mid",
+      "tokens": 20752,
+      "A_nll": 10.614290434778104,
+      "B_nll": 10.673496345982944,
+      "delta": 0.05920591120483998,
+      "independent_CI": [
+        0.026604825834393872,
+        0.09205989923178556
+      ],
+      "production_CI": [
+        0.026604825834393872,
+        0.09205989923178556
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 540
+    },
+    {
+      "split": "test",
+      "step": 437,
+      "bucket": "high",
+      "tokens": 677902,
+      "A_nll": 4.751132791533262,
+      "B_nll": 4.763442236269799,
+      "delta": 0.012309444736536612,
+      "independent_CI": [
+        -0.00021761694691061574,
+        0.021132107197955115
+      ],
+      "production_CI": [
+        -0.00021761694691061574,
+        0.021132107197955115
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 544
+    },
+    {
+      "split": "test",
+      "step": 437,
+      "bucket": "unseen",
+      "tokens": 172,
+      "A_nll": 15.787790337274242,
+      "B_nll": 16.038729551226595,
+      "delta": 0.2509392139523534,
+      "independent_CI": [
+        0.08062801227212589,
+        0.39199818856533847
+      ],
+      "production_CI": [
+        0.08062801227212589,
+        0.39199818856533847
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 46
+    },
+    {
+      "split": "test",
+      "step": 437,
+      "bucket": "overall",
+      "tokens": 700307,
+      "A_nll": 4.946447084535751,
+      "B_nll": 4.960388507233497,
+      "delta": 0.01394142269774612,
+      "independent_CI": [
+        0.0020692903220644603,
+        0.022456062027266802
+      ],
+      "production_CI": [
+        0.0020692903220644603,
+        0.022456062027266802
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 544
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "low",
+      "tokens": 1481,
+      "A_nll": 12.694702056837114,
+      "B_nll": 12.911912129747956,
+      "delta": 0.2172100729108415,
+      "independent_CI": [
+        0.12596861910824345,
+        0.30035089638778223
+      ],
+      "production_CI": [
+        0.12596861910824345,
+        0.30035089638778223
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 246
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "mid",
+      "tokens": 20752,
+      "A_nll": 8.83768811704973,
+      "B_nll": 8.88686246180356,
+      "delta": 0.04917434475382976,
+      "independent_CI": [
+        0.03281899210747631,
+        0.06467861842008911
+      ],
+      "production_CI": [
+        0.03281899210747631,
+        0.06467861842008911
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 540
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "high",
+      "tokens": 677902,
+      "A_nll": 4.1293406987817285,
+      "B_nll": 4.142017415618032,
+      "delta": 0.012676716836303115,
+      "independent_CI": [
+        0.004328008593834988,
+        0.02449862040995237
+      ],
+      "production_CI": [
+        0.004328008593834988,
+        0.024498620409952376
+      ],
+      "max_abs_CI_reduction_order_difference": 6.938893903907228e-18,
+      "documents_with_bucket": 544
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "unseen",
+      "tokens": 172,
+      "A_nll": 15.847674319910448,
+      "B_nll": 16.134700176327726,
+      "delta": 0.2870258564172783,
+      "independent_CI": [
+        0.02768432068630932,
+        0.43304727244114416
+      ],
+      "production_CI": [
+        0.02768432068630932,
+        0.43304727244114416
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 46
+    },
+    {
+      "split": "test",
+      "step": 874,
+      "bucket": "overall",
+      "tokens": 700307,
+      "A_nll": 4.289853843985205,
+      "B_nll": 4.304112011138154,
+      "delta": 0.014258167152949142,
+      "independent_CI": [
+        0.006159870644017267,
+        0.0256768969077061
+      ],
+      "production_CI": [
+        0.006159870644017267,
+        0.0256768969077061
+      ],
+      "max_abs_CI_reduction_order_difference": 0.0,
+      "documents_with_bucket": 544
+    }
+  ],
+  "low_frequency_trajectories": {
+    "dev": {
+      "A": {
+        "steps": [
+          0,
+          437,
+          874
+        ],
+        "low_nll": [
+          12.123833798639126,
+          13.79934057500585,
+          12.708119797116742
+        ],
+        "endpoint_minus_initial": 0.5842859984776165,
+        "midpoint_minus_initial": 1.6755067763667242,
+        "endpoint_minus_midpoint": -1.0912207778891077,
+        "endpoint_worse_than_initial": true,
+        "shape": "rises at midpoint then falls; final still above initial"
+      },
+      "B": {
+        "steps": [
+          0,
+          437,
+          874
+        ],
+        "low_nll": [
+          12.114658831408379,
+          13.888605224734198,
+          12.912339930522947
+        ],
+        "endpoint_minus_initial": 0.797681099114568,
+        "midpoint_minus_initial": 1.7739463933258186,
+        "endpoint_minus_midpoint": -0.9762652942112506,
+        "endpoint_worse_than_initial": true,
+        "shape": "rises at midpoint then falls; final still above initial"
+      }
+    },
+    "test": {
+      "A": {
+        "steps": [
+          0,
+          437,
+          874
+        ],
+        "low_nll": [
+          12.110443936257166,
+          13.670386052308736,
+          12.694702056837114
+        ],
+        "endpoint_minus_initial": 0.584258120579948,
+        "midpoint_minus_initial": 1.5599421160515696,
+        "endpoint_minus_midpoint": -0.9756839954716217,
+        "endpoint_worse_than_initial": true,
+        "shape": "rises at midpoint then falls; final still above initial"
+      },
+      "B": {
+        "steps": [
+          0,
+          437,
+          874
+        ],
+        "low_nll": [
+          12.108812556888186,
+          13.769559641290082,
+          12.911912129747956
+        ],
+        "endpoint_minus_initial": 0.8030995728597699,
+        "midpoint_minus_initial": 1.660747084401896,
+        "endpoint_minus_midpoint": -0.857647511542126,
+        "endpoint_worse_than_initial": true,
+        "shape": "rises at midpoint then falls; final still above initial"
+      }
+    }
+  },
+  "boundaries": [
+    "Only1481 TEST low-frequency prediction positions, across documents as shown.",
+    "Intervals cover document sampling, not training seed variability.",
+    "Both architectures finish above their own initial low-frequency NLL; improvement of overall NLL is a separate observation.",
+    "This one negative architecture comparison does not settle all depth-varying capacity designs."
+  ]
+}

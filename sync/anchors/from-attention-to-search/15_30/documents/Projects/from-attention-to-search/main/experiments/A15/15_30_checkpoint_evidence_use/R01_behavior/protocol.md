@@ -1,0 +1,37 @@
+派生阅读副本；原件位置：`Projects/from-attention-to-search/main/experiments/A15/15_30_checkpoint_evidence_use/R01_behavior/protocol.md`。
+[精确原始文件](../../../../../../../../sources/Projects/from-attention-to-search/main/experiments/A15/15_30_checkpoint_evidence_use/R01_behavior/protocol.md)；研究修改仍回到原件。
+
+---
+
+# R01: frozen checkpoint behavior protocol
+
+State: APPROVED_FOR_BOUNDED_EXISTING_RESOURCE_EVALUATION under the current user's explicit design-and-execute request, conditional on asset, engineering and cost checks. Scientific acceptance: Unknown. Registered before first model behavior. One experiment; no optimization or representation analysis.
+
+## User scope and A–G audit
+A: inspect acquisition of evidence use; no premise that far is harder or equivalent to long tail. B: constructed English object/color/destination records;24content families nested in6templates;6separate engineering families. C: candidate continuation, two fact replacements with unique stated literal answer; no training. D: actual Dense and ordinary MoE native eight-layer models, original tokenizer,2048context; frozen weights and load bias. E: zero trainable parameters, no optimizer, no supervised exposure. F: all unique accessible trajectory states at inventory freeze, including initialization and pinned recovery; equivalent hashes are aliases. G: complete scores and controls, family uncertainty and template sensitivity; no checkpoint or text selection by performance. All A–G scope choices come from the explicit user request; exact values below are AI operational instantiations. Mechanism judgment and universal learned criterion remain Unknown.
+
+## Frozen task, comparison and score
+Main answer-prefix length1152; exact gaps16/256/1024, measured as last-prefix minus last-evidence-value minus1. These are0.78/12.5/50%of2048context. All ordinary main A/B pairs preserve question, candidates, total length, non-target bytes and filler token multiset across distance; evidence position and filler order still change.24families:8each object/color/destination,6templates,4families/template. Main condition has2fact versions; no-evidence has1neutral version, irrelevant condition has1wrong-entity fact carrying candidate A. No valid gold label for either control. Secondary frozen far-gap1024conditions reverse filler order at1152tokens or extend prefix to1408at fixed gap; each retains A/B.384evaluation prompts/state, plus96disjoint engineering prompts/state in smoke. No score-driven template replacement. Training-pattern exposure is unknown.
+
+Score the complete leading-space candidate followed by a period using the sum of conditional log probabilities in nats. Save each token, first-token, no-period and mean scores. Within each pair candidate token counts are equal; lexical and punctuation priors may remain. Primary family success requires BOTH fact versions rank their respective correct candidate higher; ties fail. Also report prompt accuracy, margins, signed preference change, wrong-entity/no-evidence preferences and all individual examples. Two-sided switch guards fixed-prior success; entity controls and score sensitivity bound shortcuts.
+
+## Statistics and timing
+At each actual checkpoint, report24family success indicators and means,95%Wilson intervals,10000paired family bootstrap intervals for margin and near-minus-far difference; bootstrap six template clusters as sensitivity. Rewrites are not independent samples. Report all type/template outcomes and counterexamples. Match actual training tokens only; list unmatched states. Descriptive first sampled crossing at60/80/90%and persistence at the following observed checkpoint are AI sensitivity summaries, not scientific acceptance. With no reliable near use, say timing unresolved. No interpolated checkpoint or claimed exact emergence. No significance-selected story across many states/metrics.
+
+## Identity, engineering and budget gates
+Inputs: canonical required-asset access receipt plus scoped full-checkpoint catalog and strict receipt under execution audit/. Before scoring verify state file size/SHA256, actual tokens_seen, strict native state load, architecture count and context. Parameter version counters and load-bias equality must remain fixed. Whole source files and data/config hashes are frozen before model use. Runtime is the existing container H100MIG3g.40gb, no new job or reservation; native FP32 parameters, BF16CUDA autocast, FP32logsoftmax, TF32off. Eight prompts/batch, two candidate lanes each.
+
+Smoke on actual Dense33B and Baseline33B: load/hash/strict checks, native already-shifted CE versus chain-rule score and prefix invariance, finite values and full96engineering prompts/model. Predeclared BF16 tolerances: CE-sum difference<0.03nat, prefix hidden maxdifference<0.15. Behavior quality does not decide whether templates survive. If projected full runtime exceeds3600seconds, stop at feasibility report; otherwise evaluate all37unique states sequentially, at most3600seconds for full stage. Keep partial/failed files and all missing-state rows. Never silently repair weights, resubmit training, broaden resources or tune the test. Artifact overhead is recorded separately.
+
+## Outcomes, deliverables and freeze
+Later far use: report task-specific interval and alternatives, no interference conclusion. Similar use: limits universal slower-learning premise, conditional on true evidence switching. Fluctuation: preserve all points and uncertainty. Task floor or missing evidence: timing unresolved. Dense/Baseline differences are conditional on unequal total capacity and data-order agreement only through22.018691584B. Deliver bilingual Summary/Detailed, Chinese reading report, actual texts/positions/raw scores, all-state ledger, reproducible scripts/config/cost and static curve with uncertainty. Candidate future state selection is an AI proposal; new SAE/CrossCoder/router/LM training excluded. Freeze config/panel/code hashes before smoke; any later consequential change is an append-only amendment with exposed-data status and eligibility impact.
+
+
+## Amendment A01 — runtime estimator correction
+
+After smoke and before full scores: the initial estimator scaled checkpoint load/SHA overhead by the fourfold prompt ratio. Corrected to one load per state plus fourfold score time, using actual14Dense/23Baseline composition. Estimate4579.790s→1394.601s; ceiling remains3600s. Texts, scoring, tolerances and state selection unchanged. Original receipt retained; [amendment](../../../../../../../../UNAVAILABLE.md). Implementation correction under the current execution request, no scientific criterion change.
+
+
+## Amendment A02 — post-hoc numerical verification
+
+After primary results were visible, recheck every main prompt with absolute BF16 correct-minus-other margin<0.06nat plus paired fact inFP32, fixed in code before launch;300s ceiling on existing resource. Original texts, thresholds and BF16 primary unchanged. Report all flips separately; never call the subset a fullFP32trajectory. [Scope and exposure record](../../../../../../../../UNAVAILABLE.md). Current user requested complete behavior and anomaly checking; no training or new remote resource.

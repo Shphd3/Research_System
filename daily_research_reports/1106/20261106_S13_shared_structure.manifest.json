@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "UTC": "20261106T030606Z",
+  "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_shared_structure_1106/delivery/20261106_S13_shared_structure_20261106T030606Z.zip",
+  "bytes": 18997021,
+  "sha256": "6c42905c0735ed9370c37a45806c0b737777bf8e114e5f234ba658a2ed7c9555",
+  "unique_members": 91,
+  "manifest_files": 90,
+  "CRC": true,
+  "fresh_unpack": "/tmp/s13_shared_review_8821l4d7",
+  "portable": {
+    "status": "PASS",
+    "checks": 2398777,
+    "full_member_event_z_and_q": true,
+    "all3072_set_conditions": true,
+    "new_forward": 0,
+    "new_training": 0,
+    "new_intervention": 0,
+    "CI_scope": "see original execution verification;portable focuses rawsets/frequency/allmembervalues"
+  },
+  "outside_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_shared_structure_1106/results/baseline_sensitivity_family.csv.gz",
+      "bytes": 1071860,
+      "sha256": "de760c98eb8a8ce7362aeff874285906b9a7e084f790abb64365718d597acd2d",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_shared_structure_1106/results/feature_label_statistics.csv.gz",
+      "bytes": 6467687,
+      "sha256": "f5817d2e71752cf21db5d98970c7efe32d1d643c6e074afe3b852e3ff620d48b",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_shared_structure_1106/versions/denominator_v1/set_group_family.csv.gz",
+      "bytes": 3121775,
+      "sha256": "a366b4b3cbf212ca3a60288bc4d8e832183dd03488f04863944c55ce4da6356a",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/posthoc_shared_structure_1106/versions/denominator_v1/set_group_summary.csv.gz",
+      "bytes": 239965,
+      "sha256": "182b4b9db0b9133fab2001cccf8e06036723c3c05b10f9a5d8d3dbcbd76c27fa",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/inputs/ATTN_SAE_general_colon_z_csr.npz",
+      "bytes": 1016738,
+      "sha256": "b1578b4c1d0ff8d8670cf988c93e48bc5ff8b7b4753cda38342594ad35eb8616",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/inputs/ATTN_SAE_questions_colon_z_csr.npz",
+      "bytes": 946919,
+      "sha256": "4e8956503b653cc0c53db0b46f36c6e2fdc276081ab7cb95f3ba7d5efc4cc2d2",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/inputs/MLPIN_SAE_general_colon_z_csr.npz",
+      "bytes": 945949,
+      "sha256": "481f186f204a5b290b778e6c46243eb06048bf687c53c08c1ce8381cc77df289",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/inputs/MLPIN_SAE_questions_colon_z_csr.npz",
+      "bytes": 859013,
+      "sha256": "79376e0a61f59394c32a3ce365232f03febf5a2b92f280106cf3b9ec0e6a507a",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/code/common.py",
+      "bytes": 3092,
+      "sha256": "b684643352caeea8d2aa6ae5a6e3e7e15638b493b028213b5e5231fc4063d593",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/ATTN_SAE_confirmation_z_csr.npz",
+      "bytes": 444914,
+      "sha256": "44e988b530f7b9eb461b4bf77cac21cef543de04efa2527a3a8d75195ec4b638",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/MLPIN_SAE_confirmation_z_csr.npz",
+      "bytes": 420435,
+      "sha256": "f9c484f623f3a84b987d410b7a3293a036b3b781ffde6dcc5485509ea81347e5",
+      "reason": "full derivative or exact original dependency outside compact packet"
+    }
+  ],
+  "omitted_full_derivative": "feature_label_statistics.csv.gz and baseline_sensitivity_family.csv.gz outside;explicit full and all-wording representative rows included;complete sparse native inputs included",
+  "reading_packet": "/data/250010109/Research_System/daily_research_reports/1106/20261106_S13_shared_structure.zip"
+}

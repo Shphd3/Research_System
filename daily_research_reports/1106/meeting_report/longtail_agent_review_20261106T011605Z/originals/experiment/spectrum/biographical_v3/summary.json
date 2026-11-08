@@ -1,0 +1,30 @@
+{
+  "format": "independent_centered_pre_finalnorm_spectrum_v1",
+  "student": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "parent_config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+  "parent_weight_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+  "reference_matrix_sha256": "c8cf7e3ec7a73ac2338668e0126158e804eced409f4146c6e70bcc2230557a6d",
+  "d_model": 1024,
+  "head_dim": 64,
+  "rows": 32768,
+  "documents": 903,
+  "position": "model.model.norm forward_pre_hook (last Transformer block output)",
+  "centering": "One global coordinate mean over selected reference token rows; covariance /(n-1); eigenspace equals centered-X SVD right singular vectors",
+  "half_document_split_rule": "source_family SHA256 parity",
+  "half_rows": [
+    17058,
+    15710
+  ],
+  "half_subspace_overlap": 0.8998475670814514,
+  "min_overlap": 0.7,
+  "effective_rank_threshold_relative": 1e-06,
+  "effective_rank": 1024,
+  "stable": true,
+  "reference_input_sha256": "5fde9dec412f83a90ffaa32e7efaec87d775d3ff8117b3e94c5003eff843c167",
+  "task_exclusion_sha256": "cfe8fc2cfc3287bca38bea5cf14af84d230679a1c4a2f9c9444a0ba000353df9",
+  "reference_manifest_sha256": "71577d5fdd4395988a03b6ea9b5a998369c134026dd7bd8849f4c8cf1e457773",
+  "random_seed": 1105001,
+  "code_sha256": "80f81175741d56781cbc972a370c08add3aa0861c1cabd7e4f52e11c403fd5bb",
+  "elapsed_seconds": 24.015329267829657,
+  "site": "post_last_block_pre_final_rmsnorm"
+}

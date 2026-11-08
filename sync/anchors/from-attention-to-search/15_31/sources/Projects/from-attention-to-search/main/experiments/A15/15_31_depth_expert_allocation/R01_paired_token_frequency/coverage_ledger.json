@@ -1,0 +1,245 @@
+[
+  {
+    "id": "01",
+    "item_en": "Conversation identity/UI rename",
+    "item_cn": "会话名／界面改名",
+    "status": "BLOCKED",
+    "evidence": "Task conversation memory and final Summary/brief",
+    "boundary_en": "UI-renaming tool unavailable; interface rename incomplete. User-supplied name used only in task memory.",
+    "boundary_cn": "界面改名工具不可用，UI未修改；用户指定名称已用于本任务记忆。"
+  },
+  {
+    "id": "02",
+    "item_en": "Conversation working memory",
+    "item_cn": "本任务研究记忆",
+    "status": "DONE_VALID",
+    "evidence": ".research/memory/conversations/1106-分层MoE长尾学习验证/memory.md",
+    "boundary_en": "Task-named append-only log exists; parent owns final factual checkpoint update.",
+    "boundary_cn": "同名append-only日志已建立，最终事实checkpoint由root追加。"
+  },
+  {
+    "id": "03",
+    "item_en": "Meeting/old model/SAE sources",
+    "item_cn": "会议／旧模型／SAE资料",
+    "status": "DONE_VALID",
+    "evidence": "source_review_cn.md; supporting_sources/source_manifest.json",
+    "boundary_en": "No audio; oral qualitative reports not quantified.",
+    "boundary_cn": "无音频，口头质性结果未量化。"
+  },
+  {
+    "id": "04",
+    "item_en": "Question/H1-H3/authority",
+    "item_cn": "问题／H1–H3／权限",
+    "status": "DONE_VALID",
+    "evidence": "Anchor EN/CN; Protocol; Focus",
+    "boundary_en": "Scientific acceptance/mechanism judgment Unknown.",
+    "boundary_cn": "科学接受与机制判断Unknown。"
+  },
+  {
+    "id": "05",
+    "item_en": "Live four-H100 reserved entry",
+    "item_cn": "指定4H100 reserved实际进入",
+    "status": "DONE_VALID",
+    "evidence": "execution_record; actual GPU-entry certificate",
+    "boundary_en": "Job pt-ds9bdaxb,actual4H100 verified; not merely queued.",
+    "boundary_cn": "已核验实际4H100，不仅排队。"
+  },
+  {
+    "id": "06",
+    "item_en": "Source reuse/data/tokenizer/assets",
+    "item_cn": "代码复用／数据tokenizer资产",
+    "status": "DONE_VALID",
+    "evidence": "source_review; actual access/provenance audit",
+    "boundary_en": "Old source/checkpoints unchanged; isolated package.",
+    "boundary_cn": "旧资产未改，新包隔离适配。"
+  },
+  {
+    "id": "07",
+    "item_en": "A/B full parameter ledger",
+    "item_cn": "A／B逐层完整参数账本",
+    "status": "DONE_VALID",
+    "evidence": "detailed; execution audit/parameter_ledger.json",
+    "boundary_en": "507988992 each; exact0% total gap; all E>top2.",
+    "boundary_cn": "两组507988992，差0%，各层E>top2。"
+  },
+  {
+    "id": "08",
+    "item_en": "Common initialization actual seed",
+    "item_cn": "真实种子共同初始化",
+    "status": "DONE_VALID",
+    "evidence": "supporting_sources/actual_initial_weight_match.json",
+    "boundary_en": "Actual seed20261106; initial seed17 artifact is implementation only.",
+    "boundary_cn": "实际seed20261106；旧seed17仅实现资格。"
+  },
+  {
+    "id": "09",
+    "item_en": "Exact document split/dedup",
+    "item_cn": "真实文档切分／去重",
+    "status": "DONE_VALID",
+    "evidence": "supporting_sources/data_manifest.json",
+    "boundary_en": "Exact duplicates removed; near duplicates not checked; deterministic prefix.",
+    "boundary_cn": "精确去重；近重复未查；确定性前缀限制。"
+  },
+  {
+    "id": "10",
+    "item_en": "Actual exposure buckets/coverage",
+    "item_cn": "真实曝光分桶／覆盖",
+    "status": "DONE_VALID",
+    "evidence": "joint_freeze; formal frequency manifest",
+    "boundary_en": "49/447 ties retained,unseen separate,lowtest1481.",
+    "boundary_cn": "阈值49／447保留ties，未见单列，低频test1481。"
+  },
+  {
+    "id": "11",
+    "item_en": "Sample spot-check timing",
+    "item_cn": "样例抽查与时序",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "supporting_sources/sample_review_timing.json",
+    "boundary_en": "Automatic examples pre-formal; explicit Codex bucket reading after formalA; no external human review/rule changes.",
+    "boundary_cn": "自动例正式前；Codex逐例读桶在formalA后；无人类review、未改规则。"
+  },
+  {
+    "id": "12",
+    "item_en": "Reliable entity/relation/fact task",
+    "item_cn": "可靠实体／关系／事实任务",
+    "status": "BLOCKED",
+    "evidence": "Protocol and Detailed NOT RUN",
+    "boundary_en": "No independently reliable occurrence/alias/split contract; token experiment remains independent.",
+    "boundary_cn": "无独立可信出现次数／别名／切分；不阻止token实验。"
+  },
+  {
+    "id": "13",
+    "item_en": "Dual smoke finite/load checks",
+    "item_cn": "两组短测有限性／负载检查",
+    "status": "DONE_VALID",
+    "evidence": "supporting_sources/actual_smoke_audit.json",
+    "boundary_en": "Observed3updates each; nominal4-step config distinction retained.",
+    "boundary_cn": "各观察3更新，保留名义4步配置区别。"
+  },
+  {
+    "id": "14",
+    "item_en": "Checkpoint/recovery/eval replay",
+    "item_cn": "checkpoint／恢复／评估复算",
+    "status": "DONE_VALID",
+    "evidence": "actual_smoke_audit; replay receipt",
+    "boundary_en": "Exact A external recovery/dev8doc; no blanket B/formal claim.",
+    "boundary_cn": "A外部恢复及dev8文档exact，不泛称B／正式恢复。"
+  },
+  {
+    "id": "15",
+    "item_en": "Frozen shared hyperparameters/budget",
+    "item_cn": "共同超参／预算冻结",
+    "status": "DONE_VALID",
+    "evidence": "joint_freeze; common_frozen.json",
+    "boundary_en": "874steps229113856targets each; warmup87; test metrics no selection.",
+    "boundary_cn": "各874步229113856目标，warmup87，test不选配置。"
+  },
+  {
+    "id": "16",
+    "item_en": "A full frozen training budget",
+    "item_cn": "A完整冻结预算训练",
+    "status": "DONE_VALID",
+    "evidence": "Formal A completion;final_numeric_audit;pipeline_completion",
+    "boundary_en": "Actually completed874updates/229113856targets; all paired batch hashes match.",
+    "boundary_cn": "真实完成874更新／229113856目标；全部成对batchhash一致。"
+  },
+  {
+    "id": "17",
+    "item_en": "B full frozen training budget",
+    "item_cn": "B完整冻结预算训练",
+    "status": "DONE_VALID",
+    "evidence": "Formal B completion;final_numeric_audit;pipeline_completion",
+    "boundary_en": "Actually completed874updates/229113856targets; all paired batch hashes match.",
+    "boundary_cn": "真实完成874更新／229113856目标；全部成对batchhash一致。"
+  },
+  {
+    "id": "18",
+    "item_en": "Start/mid/end full eval/paired CI",
+    "item_cn": "起中终点评估／成对区间",
+    "status": "DONE_VALID",
+    "evidence": "frequency_results.csv;independent_final_statistics PASS;figures",
+    "boundary_en": "12arm/checkpoint/split evaluations;30paired comparisons;2000draws CI audited,max rounding difference6.94e-18;low1481targets in246/544docs.",
+    "boundary_cn": "12组模型／checkpoint／split评估，30项成对比较，2000次区间复核最大归约差6.94e-18；低频1481位置分布246／544文档。"
+  },
+  {
+    "id": "19",
+    "item_en": "Routing/load/dead/drop",
+    "item_cn": "路由负载／死专家／drop",
+    "status": "DONE_VALID",
+    "evidence": "routing.json;Detailed full16layer expert receipts",
+    "boundary_en": "Every layer458227712assignments,drop0/dead entire-run0;load changes mixed,not causal.",
+    "boundary_cn": "每层458227712assignment，drop0／整轮dead0；逐层变化混合，仅相关。"
+  },
+  {
+    "id": "20",
+    "item_en": "FLOPs/throughput/memory/communication/time",
+    "item_cn": "FLOPs／吞吐／显存／通信／时间",
+    "status": "DONE_VALID",
+    "evidence": "analysis.systems;matrix_flops_formula_check;Detailed systems table",
+    "boundary_en": "Actual throughput/memory/communication/dispatch/wall recorded;matrix profiler counts actual shapes,SDPA total incomplete,IO boundary retained.",
+    "boundary_cn": "吞吐／显存／通信／dispatch／墙钟均记录；矩阵按实际算子形状计数，SDPA全量仍缺，保留IO边界。"
+  },
+  {
+    "id": "21",
+    "item_en": "Full hardware instruction FLOPs",
+    "item_cn": "完整硬件指令FLOPs",
+    "status": "BLOCKED",
+    "evidence": "matrix_flops_formula_check.json",
+    "boundary_en": "Profiler omits fused SDPA and other kernels; report partial measurement plus explicit estimates.",
+    "boundary_cn": "profiler缺融合SDPA等，报告部分实测与有假设估计。"
+  },
+  {
+    "id": "22",
+    "item_en": "Actual checkpoint asset registration",
+    "item_cn": "真实checkpoint资产注册",
+    "status": "DONE_VALID",
+    "evidence": "Strict full snapshot20261106T175506021038Z;formal initial audit",
+    "boundary_en": "Formal A/B checkpoint family IDs plus analysis_depth_expert_allocation_20261106 registered and strict PASS;each0/437/874states.",
+    "boundary_cn": "正式A/B家族与analysis_depth_expert_allocation_20261106已注册strict PASS，均含0／437／874状态。"
+  },
+  {
+    "id": "23",
+    "item_en": "Optional C/second seed",
+    "item_cn": "可选C／第二种子",
+    "status": "DONE_VALID",
+    "evidence": "Frozen scope excludes them to finish required A/B",
+    "boundary_en": "NOT RUN by planned prioritization; single-seed limitation retained.",
+    "boundary_cn": "按优先完成A/B计划未跑；单种子限制保留。"
+  },
+  {
+    "id": "24",
+    "item_en": "Next width-varying sketch ledger",
+    "item_cn": "下一版变宽草图账本",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "next_width_sketch EN/CN and CSV",
+    "boundary_en": "393283584formula-only; projections/tied head counted;NOT RUN.",
+    "boundary_cn": "393283584仅公式；含投影／绑定头；NOT RUN。"
+  },
+  {
+    "id": "25",
+    "item_en": "Final summary/detailed/readable talk",
+    "item_cn": "完整总结／详细／易读讲稿",
+    "status": "DONE_VALID",
+    "evidence": "Summary/Detailed EN+CN;single daily meeting brief;day README",
+    "boundary_en": "Complete raw/delta/CI/cost/route/negative-result report and speaking text;scientific judgment Unknown.",
+    "boundary_cn": "原值／差／区间／开销／路由／负结果及短讲稿齐；科学判断Unknown。"
+  },
+  {
+    "id": "26",
+    "item_en": "Final code/data/metrics provenance checks",
+    "item_cn": "最终代码／数据／指标可复核",
+    "status": "DONE_VALID",
+    "evidence": "Final numeric/source/statistics/formal-init audits PASS;small source manifests",
+    "boundary_en": "Frozen8code/5legacy/11provenance hashes pass;actual formal initial weights checked;root owns final aggregate artifact_manifest.",
+    "boundary_cn": "冻结8代码／5旧源／11来源hash通过；实际正式初态复核；最终合并artifact_manifest由root维护。"
+  },
+  {
+    "id": "27",
+    "item_en": "Reading bundle/day entry/task memory refresh",
+    "item_cn": "阅读包／日入口／记忆最终更新",
+    "status": "DONE_VALID",
+    "evidence": "artifact_manifest.json;delivery_completion_checks.json;execution audit/final_reading_sync_first_pass.json;conversation memory",
+    "boundary_en": "Local reading build and --check passed; final owner-state refresh retains exact source bytes. Local only, not published.",
+    "boundary_cn": "本地阅读构建及--check已通过；交接状态更新后再次按精确源字节刷新。仅本地，未发布。"
+  }
+]

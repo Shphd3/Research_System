@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-07T04:10:16.016942+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-6lhw6",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17730,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_depth_expert_allocation_bias_intervention_20261107",
+      "title_cn": "分层MoE固定权重负载偏置干预与频率条件选路",
+      "category": "analysis_output",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/artifact_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18671,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/completion.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18405,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/contract.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9094,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/review_cn.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9387,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/review.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7403,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/routing_comparison.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 111570,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/routing_comparison_input_frequency.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 127411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/expert_frequency_distributions.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2601559,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/nll_comparison.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7382,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/architecture_gap_comparison.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 3052,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/independent_numeric_audit.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 873,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/early_bias_order_bound_float32.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 245645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261106_depth_expert_allocation/analysis/bias_ablation_20261107_v3/formal_B_step_000874/routes.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12084401,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

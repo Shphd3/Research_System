@@ -61,3 +61,9 @@ Raw datasets, models and execution caches remain in their registered storage.
 - [A15_27_10: near/far object-fact behavior](from-attention-to-search/15_27_10/README.md): bounded behavior prerequisite; paired raw examples, all family outcomes, thresholds and uncertainty; no SAE/training/intervention, scientific acceptanceUnknown. Local reading copy.
 
 - [15_27_11: remote target / nearby competitor composition](from-attention-to-search/15_27_11/README.md): R19 factual results and raw-case reading; scientific acceptance Unknown; no training/intervention.
+
+- [15_27_12: distance-associated SAE combinations](from-attention-to-search/15_27_12/README.md): R20 complete observations/controls, raw cases and limits; scientific acceptance Unknown.
+
+- [A15_30 checkpoint evidence-use trajectories](from-attention-to-search/15_30/README.md): actual native Dense/Baseline states, frozen behavior, controls and definition limits; scientific judgment pending.
+
+- [A15_31: expert capacity across depth and token frequency](from-attention-to-search/15_31/README.md): completed paired single-seed token-frequency experiment; B−A low-frequency NLL +0.217210 and overall +0.014258; no benefit in this measured proxy. Local-only, not published; scientific acceptance and mechanism judgment Unknown.
