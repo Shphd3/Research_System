@@ -3,7 +3,7 @@
 Conversation name: 1108-教师特征与专家分发检查
 Processed by: Codex (harness: Codex desktop; model: unknown)
 Created at: 2026-11-08T04:56:59.889712+00:00
-Latest update at: 2026-11-08T13:16:31.236259+00:00
+Latest update at: 2026-11-08T14:32:39.295514+00:00
 Continues from: none
 Environment: repo=/data/250010109/Research_System; project=/data/250010109/Research_System/Projects/from-attention-to-search; exec=/data/250010109/MoE_Router; shared=/data/share (visible). Conversation ID: 01a1b972-1cf6-73c0-a76a-bc70f258201f.
 
@@ -58,3 +58,14 @@ Processed by: Codex (harness: Codex desktop; model: unknown).
 - Current work: R02 的已测证据支持当前 33B MoE 单 expert 单步更新的噪声标度；跨簇方向投影没有显示稳定冲突，主投影不确定。相同簇并不自动改善信噪比，长期长尾收益仍未验证。S18 表明类别对的判别性与跨类别使用范围应分开，约一半判别成员为复用型；共享成员的较低频率尚不能统一归因于父类嵌套。总结保留后验分析、噪声底、组间损失/gate 未匹配、两种模型资产不同等范围。
 - Next action: 交付认识更新主文；H2、新记忆前向诊断及交叉点重测均未在本轮执行，后续需以用户具体指示和相应 owner 为准。现有入口检查有 9 条 UNTRACKED 导航项，不代表科学结果失败，也未改变其 Git 状态。
 - References: Claude 原始记录 `/root/.claude/projects/-data-250010109-Research-System/e871db4c-abea-5ac9-b868-aa00226b01b6.jsonl`；项目 `Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/summary_cn.md`；S18 对应 `Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S18_nesting_reuse_1108/summary_cn.md`；执行根 `/data/250010109/MoE_Router/experiments/20261108_snr_mig_pilot/`。本轮核验其 5064 行原始表 SHA 与完成凭据一致，没有重新复算全部统计或模型前向。
+
+
+## 2026-11-08T14:32:39.295514+00:00 -- 用户授权全量研究更新提交与推送
+
+Processed by: Codex (harness: Codex desktop; model: unknown).
+
+- Summary: 用户直接要求将 Research_System、from 等已有更新 commit/push。本轮仅做 Git 同步及相应检查，不修改科学判断、模型或训练配置，不启动实验。
+- Current work: Research_System master 主提交 9dcad3a1（424文件）及 from Xingyu 提交 cf244797（404文件）已推送，并通过远端分支 SHA 核对。NTP main 的 cd2c6ea 已确认在远端，tracking 已刷新一致。Scholar-mode 9388aa9、SCO 445089b、diffusion 04ef1c5 均已本地提交；前者推送因 Shphd3 无写权限被拒，SCO 远端返回 Repository not found，diffusion 无 remote，未绕过限制或擅自改投其他仓库。
+- Validation: 两仓载荷检查、172入口、Anchor组织、JSON/Python解析通过；root297份Markdown源检查通过，from214份有9处数学排版告警。Sidecar类型/构建通过，测试73通过1失败，按WIP原样保存。SCO Skill与14链接、shell语法通过。保留证据CSV的CRLF和文件尾空行，不重写原始摘要。
+- Next action: 需补充工具仓库写权限/有效远端和diffusion远端地址，才能推送其本地提交。缺失academic_writing的130删除、原始results_completed、本地锁/依赖/构建/日志、push DISABLED参考仓库未纳入。用户对后续研究实验的批准状态不因本次同步改变。
+- References: 同步凭据 `/data/250010109/MoE_Router/research_reading/20261108_git_sync/publication_receipt.json`。本条记忆将单独提交同步，实际最终SHA由Git持有，不在本条自引用。
